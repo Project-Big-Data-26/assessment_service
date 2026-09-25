@@ -1,6 +1,7 @@
 # Environments
 venv/
 env/
+.venv/
 
 # Secrets & Configs
 .env
@@ -11,15 +12,45 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Data Storage
-data/
-*.csv
-*.json
+# Data Storage: keep only intentionally versioned examples/placeholders
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+!data/raw/json/
+!data/raw/json/.gitkeep
+!data/raw/csv/
+!data/raw/csv/.gitkeep
+!data/raw/pdf/
+!data/raw/pdf/.gitkeep
+!data/raw/images/
+!data/raw/images/.gitkeep
+!data/raw/latex/
+!data/raw/latex/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/sample/*
+!data/sample/questions.json
+!data/sample/math_questions_seed.json
+models/*
+!models/.gitkeep
 *.sqlite3
 *.db
 
+# Model and experiment artifacts
+*.pt
+*.pth
+*.bin
+*.safetensors
+outputs/
+runs/
+
 # Jupyter Notebook
 .ipynb_checkpoints/
+
+# Test and tooling caches
+.pytest_cache/
+.coverage
+htmlcov/
 
 # OS & IDE
 .vscode/

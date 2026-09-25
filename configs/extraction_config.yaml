@@ -1,0 +1,18 @@
+extraction:
+  # Pages with a usable text layer stay in PyMuPDF's fast text path.
+  ocr_enabled: true
+  ocr_language: ind+eng
+  ocr_dpi: 300
+  min_text_characters: 20
+  max_pdf_pages: 200
+  # Lossless WebP crops displayed as ordinary images in the platform UI.
+  question_preview_enabled: true
+  question_preview_dpi: 144
+  max_question_previews: 80
+  # Mathematical OCR: formula detection on the full page, conversion to LaTeX,
+  # then mapping back to each question crop. Models are cached after first use.
+  math_ocr_enabled: true
+  math_ocr_dpi: 300
+  math_ocr_max_pages: 20
+  math_ocr_layout_model: PP-DocLayout_plus-L
+  math_ocr_formula_model: PP-FormulaNet-S

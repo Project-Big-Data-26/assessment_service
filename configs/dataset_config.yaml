@@ -1,0 +1,20 @@
+dataset:
+  sample_path: data/sample/questions.json
+  raw_dir: data/raw
+  processed_dir: data/processed
+  required_columns:
+    - question_id
+    - question_text
+    - subject
+    - material_id
+    - bloom_label
+    - knowledge_label
+    - difficulty_label
+
+preprocessing:
+  unicode_normalization: NFKC
+  lowercase: false
+  collapse_whitespace: true
+
+output:
+  directory: data/processed

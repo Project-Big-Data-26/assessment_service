@@ -1,0 +1,20 @@
+model:
+  name: indobenchmark/indobert-base-p1
+  task: multi_task_text_classification
+  load_on_startup: false
+  bloom_labels: [C1, C2, C3, C4, C5, C6]
+  knowledge_labels: [factual, conceptual, procedural, metacognitive]
+  difficulty_labels: [Easy, Medium, Hard]
+  demo_baseline_enabled: true
+
+training:
+  enabled: true
+  random_seed: 42
+  batch_size: 8
+  learning_rate: 0.00002
+  epochs: 3
+
+inference:
+  confidence_threshold: 0.7
+  model_directory: models
+  artifact_name: indobert-multitask-v1
