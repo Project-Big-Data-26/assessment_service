@@ -240,7 +240,7 @@ function QuestionCard({ item, index, onViewPage }) {
           )}
         </div>
         <span className={`method-pill ${extraction.extraction_method}`}>
-          {extraction.extraction_method === "text_layer" ? "Text layer" : "OCR / review"}
+          {extraction.extraction_method === "text_layer" ? "Text layer" : "OCR"}
         </span>
       </div>
 
@@ -339,7 +339,7 @@ function QuestionCard({ item, index, onViewPage }) {
         <div>
           <span>{prediction?.prediction_source === "rules_baseline" ? "Baseline aturan" : "Model AI"}</span>
           {(prediction?.review_required || extraction.needs_review) && (
-            <span className="review-flag"><AlertTriangle size={14} /> Perlu review</span>
+            <span className="review-flag"><AlertTriangle size={14} /> Belum lolos quality gate</span>
           )}
         </div>
       </footer>
@@ -468,7 +468,7 @@ export default function PdfQuestionAnalyzer() {
           <h1>Unggah PDF, lihat struktur dan level setiap soal.</h1>
           <p>
             Sistem mengekstrak soal dari PDF lalu mengelompokkannya berdasarkan level Bloom,
-            dimensi pengetahuan, dan tingkat kesulitan. Hasil tetap perlu direview.
+            dimensi pengetahuan, dan tingkat kesulitan. Hasil di sini adalah pratinjau, bukan keputusan final.
           </p>
         </div>
 

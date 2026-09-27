@@ -13,6 +13,9 @@ def test_model_info_exposes_three_tasks_and_honest_runtime_status():
     assert response.status_code == 200
     assert response.json()["tasks"] == ["bloom_6", "knowledge_4", "difficulty_3"]
     assert response.json()["classifier"] in {"RuleBasedBaselineClassifier", "IndoBERTClassifier"}
+    if response.json()["classifier"] == "RuleBasedBaselineClassifier":
+        assert response.json()["artifact_ready"] is False
+        assert response.json()["provisional_eligible"] is False
 
 
 def test_extraction_info_reports_pdf_runtime_and_supported_formats():

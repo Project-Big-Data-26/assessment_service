@@ -4,6 +4,7 @@ from dataclasses import asdict
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from pydantic import BaseModel, Field
 from app.classification import RuleBasedBaselineClassifier
 from app.classification.indobert import IndoBERTClassifier
 from app.extraction import (
@@ -15,13 +16,14 @@ from app.extraction import (
 from app.pipeline import QuestionIntelligencePipeline
 from app.schemas.request import ClassificationRequest
 from app.schemas.response import ClassificationResponse, ExtractionResponse, HeadPrediction
+from app.verification.arithmetic import verify_arithmetic
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT_DIR = PROJECT_ROOT / "models" / "indobert-multitask-v1"
 EXTRACTION_SETTINGS = load_extraction_settings(PROJECT_ROOT / "configs" / "extraction_config.yaml")
 
 def create_classifier():
-    if (ARTIFACT_DIR / "manifest.json").is_file() and (ARTIFACT_DIR / "model.pt").is_file():
+    if all((ARTIFACT_DIR / name).exists() for name in ("manifest.json", "model.pt", "tokenizer")):
         return IndoBERTClassifier(ARTIFACT_DIR)
     return RuleBasedBaselineClassifier()
 
@@ -34,7 +36,22 @@ def health(): return {"status": "ok", "service": "question-intelligence"}
 
 @app.get("/v1/model-info")
 def model_info():
-    return {"classifier": classifier.__class__.__name__, "artifact_ready": ARTIFACT_DIR.is_dir(), "base_model": "indobenchmark/indobert-base-p1", "tasks": ["bloom_6", "knowledge_4", "difficulty_3"], "warning": "The rules baseline is advisory only when a trained artifact is absent."}
+    artifact_ready = isinstance(classifier, IndoBERTClassifier)
+    manifest = classifier.manifest if artifact_ready else {}
+    metrics = manifest.get("metrics", {})
+    provisional_eligible = (
+        artifact_ready
+        and manifest.get("approved_for_provisional") is True
+        and manifest.get("demo_only") is False
+        and isinstance(manifest.get("dataset_rows"), int)
+        and manifest["dataset_rows"] >= 60
+        and all(isinstance(metrics.get(head), dict) and metrics[head] for head in ("bloom", "knowledge", "difficulty"))
+    )
+    return {"classifier": classifier.__class__.__name__, "artifact_ready": artifact_ready,
+            "provisional_eligible": provisional_eligible, "model_version": manifest.get("model_version"),
+            "base_model": manifest.get("base_model", "indobenchmark/indobert-base-p1"),
+            "tasks": ["bloom_6", "knowledge_4", "difficulty_3"],
+            "warning": "Rules baseline and unapproved/demo model artifacts are advisory only."}
 
 @app.get("/v1/extraction-info")
 def extraction_info():
@@ -45,6 +62,15 @@ def extraction_info():
         "ocr_dpi": EXTRACTION_SETTINGS.ocr_dpi,
         "max_pdf_pages": EXTRACTION_SETTINGS.max_pdf_pages,
     }
+
+class AnswerVerificationRequest(BaseModel):
+    questionText: str = Field(min_length=1, max_length=10000)
+    options: list[dict[str, str]] = Field(default_factory=list)
+    answerSpec: dict
+
+@app.post("/v1/verify-answer")
+def verify_answer(request: AnswerVerificationRequest):
+    return verify_arithmetic(request.questionText, request.options, request.answerSpec)
 
 @app.post("/v1/classify", response_model=ClassificationResponse)
 def classify(request: ClassificationRequest):
