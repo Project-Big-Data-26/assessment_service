@@ -1,69 +1,67 @@
 const express = require('express');
-const Ajv = require('ajv');
-const mongoose = require('mongoose');
-const Question = require('../models/Question');
-const questionSchema = require('../schemas/question.schema');
-const { decideAnnotationStatus } = require('../services/annotationWorkflow');
+const { validateQuestion } = require('../services/questionValidation');
+const { repository, workflow } = require('../services/runtime');
 
-const router = express.Router(); const validate = new Ajv({ allErrors: true }).compile(questionSchema);
+const router = express.Router();
+const owner = () => process.env.LOCAL_TEACHER_ID || 'local-teacher';
 
-router.post('/validate', (req, res) => {
-  const valid = validate(req.body);
-  res.status(valid ? 200 : 422).json({ valid, errors: valid ? [] : validate.errors });
-});
+function requireIdempotency(req) {
+  const key = req.get('Idempotency-Key');
+  if (!key || !/^[a-zA-Z0-9-]{8,100}$/.test(key)) {
+    const error = new Error('Idempotency-Key wajib diisi.'); error.code = 'idempotency_key_required'; error.status = 400; throw error;
+  }
+  return key;
+}
+
+function requireValid(body) {
+  const result = validateQuestion(body);
+  if (!result.valid) {
+    const error = new Error('Konten soal tidak valid.'); error.code = 'validation_failed'; error.status = 422; error.details = result.errors; throw error;
+  }
+}
+
+router.post('/validate', (req, res) => res.json(validateQuestion(req.body)));
 
 router.post('/', async (req, res, next) => {
-  try {
-    if (!validate(req.body)) return res.status(422).json({ error: 'invalid_question', details: validate.errors });
-    if (req.body.questionType.startsWith('multiple') && (!Array.isArray(req.body.options) || req.body.options.length < 2)) {
-      return res.status(422).json({ error: 'invalid_options', message: 'Multiple-choice questions require at least two options.' });
-    }
-    const payload = { ...req.body, status: 'pending_review' };
-    if (mongoose.connection.readyState !== 1) return res.status(202).json({ ...payload, persistence: 'skipped_database_unavailable' });
-    const question = await Question.findOneAndUpdate({ questionId: payload.questionId }, payload, { upsert: true, new: true, runValidators: true });
-    res.status(201).json(question);
-  } catch (error) { next(error); }
+  try { requireValid(req.body); res.status(201).json(await repository.create(req.body, owner(), requireIdempotency(req))); }
+  catch (error) { next(error); }
+});
+
+router.get('/', async (req, res, next) => {
+  try { res.json({ items: await repository.list(owner(), req.query.status), nextCursor: null }); }
+  catch (error) { next(error); }
 });
 
 router.get('/:questionId', async (req, res, next) => {
   try {
-    if (mongoose.connection.readyState !== 1) return res.status(503).json({ error: 'database_unavailable' });
-    const question = await Question.findOne({ questionId: req.params.questionId }).lean();
-    if (!question) return res.status(404).json({ error: 'question_not_found' });
+    const question = await repository.get(req.params.questionId, owner());
+    if (!question) return res.status(404).json({ error: { code: 'question_not_found', message: 'Soal tidak ditemukan.', traceId: req.traceId } });
     res.json(question);
   } catch (error) { next(error); }
 });
 
-router.post('/:questionId/annotations', async (req, res, next) => {
+router.put('/:questionId/draft', async (req, res, next) => {
   try {
-    if (mongoose.connection.readyState !== 1) return res.status(503).json({ error: 'database_unavailable' });
-    const allowedRoles = ['independent_reviewer', 'adjudicator'];
-    const required = ['annotatorId', 'role', 'bloomLevel', 'knowledgeDimension', 'difficulty', 'justification', 'expertiseStatus'];
-    const missing = required.filter((field) => req.body[field] === undefined || req.body[field] === '');
-    if (missing.length) return res.status(422).json({ error: 'missing_annotation_fields', fields: missing });
-    if (!allowedRoles.includes(req.body.role)) return res.status(422).json({ error: 'invalid_annotation_role' });
-    if (req.body.expertiseStatus !== 'verified') return res.status(403).json({ error: 'verified_expertise_required' });
-    if (!['C1', 'C2', 'C3', 'C4', 'C5', 'C6'].includes(req.body.bloomLevel)
-      || !['factual', 'conceptual', 'procedural', 'metacognitive'].includes(req.body.knowledgeDimension)
-      || !['Easy', 'Medium', 'Hard'].includes(req.body.difficulty)) {
-      return res.status(422).json({ error: 'invalid_annotation_labels' });
-    }
+    requireValid(req.body);
+    const match = req.get('If-Match');
+    if (!match || !/^"?\d+"?$/.test(match)) return res.status(400).json({ error: { code: 'if_match_required', message: 'If-Match harus berisi contentVersion.', traceId: req.traceId } });
+    res.json(await repository.replace(req.params.questionId, owner(), Number(match.replaceAll('"', '')), req.body, requireIdempotency(req)));
+  } catch (error) { next(error); }
+});
 
-    const question = await Question.findOne({ questionId: req.params.questionId });
-    if (!question) return res.status(404).json({ error: 'question_not_found' });
-    if (question.annotations.some((item) => item.annotatorId === req.body.annotatorId && item.role === 'independent_reviewer')) {
-      return res.status(409).json({ error: 'duplicate_independent_reviewer' });
-    }
-    if (req.body.role === 'adjudicator' && question.status !== 'needs_adjudication') {
-      return res.status(409).json({ error: 'adjudication_not_required' });
-    }
+router.post('/:questionId/submit', async (req, res, next) => {
+  try {
+    const result = await repository.submit(req.params.questionId, owner(), requireIdempotency(req));
+    workflow.enqueue(result.workflowRunId);
+    res.status(202).json(result);
+  } catch (error) { next(error); }
+});
 
-    question.annotations.push(req.body);
-    const workflow = decideAnnotationStatus(question.annotations.map((item) => item.toObject()));
-    question.status = workflow.status;
-    question.finalLabels = workflow.finalLabels;
-    await question.save();
-    res.status(201).json({ questionId: question.questionId, annotationCount: question.annotations.length, ...workflow });
+router.get('/:questionId/ai-decisions', async (req, res, next) => {
+  try {
+    const question = await repository.get(req.params.questionId, owner());
+    if (!question) return res.status(404).json({ error: { code: 'question_not_found', message: 'Soal tidak ditemukan.', traceId: req.traceId } });
+    res.json({ questionId: question.questionId, contentVersion: question.contentVersion, workflowSummary: question.workflowSummary });
   } catch (error) { next(error); }
 });
 
