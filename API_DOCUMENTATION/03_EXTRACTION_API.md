@@ -2,7 +2,7 @@
 
 ## 1. Posisi modul
 
-Extraction API mengubah PDF, gambar, atau data terstruktur menjadi **authoring candidate**. Hasil ekstraksi bukan Question final, bukan bukti kunci benar, dan bukan label taksonomi.
+Extraction API mengubah PDF, gambar, atau data terstruktur menjadi **authoring candidate**. Hasil ekstraksi belum membuktikan kunci benar dan belum memberi label tiga head. OCR menjaga teks, rumus, tabel/grafik dan provenance karena bukti tersebut akan diperlukan IndoBERT dan annotator.
 
 Teacher dapat memperbaiki candidate di authoring UI sebelum menyimpannya sebagai draft. Tindakan tersebut adalah revisi input/authoring, bukan review atau adjudikasi.
 
@@ -17,7 +17,7 @@ GET /api/v1/extractions/{jobId}
 POST /api/v1/questions/from-extraction
 ```
 
-Endpoint compatibility prototype saat ini adalah `POST /api/v1/ai/extract`. Target resource-oriented API memakai job karena OCR dan formula recognition dapat berlangsung lama.
+Prototype FastAPI Python menyediakan ekstraksi sinkron; `POST /api/v1/ai/extract` adalah kontrak gateway lama yang sudah dihapus bersama `project_assessment`. Target resource-oriented API memakai job karena OCR dan formula recognition dapat berlangsung lama.
 
 ## 3. Input dan keamanan
 
@@ -162,5 +162,4 @@ UI tidak mengetahui PyMuPDF, Tesseract, Paddle, lokasi object storage, atau deta
 
 ## 10. Status implementasi
 
-Parser/OCR sinkron dan visual preview telah tersedia sebagai prototype. Job resource, object storage, MIME signature, antivirus, signed preview URL, dan retry orchestration masih target.
-
+Parser/OCR sinkron dan visual preview Python telah tersedia sebagai prototype. Job resource gateway, object storage, MIME signature, antivirus, signed preview URL, dan retry orchestration masih target. Setelah author memperbaiki candidate, validasi format dan kunci mendahului IndoBERT; KKO baru diekstrak dari canonical item yang telah diperbaiki.

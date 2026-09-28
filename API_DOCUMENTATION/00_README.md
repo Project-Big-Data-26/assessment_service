@@ -1,73 +1,55 @@
 # Dokumentasi API Nalar
 
-Folder ini adalah kontrak bersama antara frontend, API gateway, layanan AI, worker generation, worker psikometrik, database, dan QA. Kontrak sengaja tidak bergantung pada satu implementasi frontend sehingga UI prototype dapat dilepas dan diganti tanpa mengubah domain backend.
+Dokumen ini mendeskripsikan **arsitektur target** untuk soal matematika: ekstraksi → validasi format/kunci → IndoBERT → Claude → tiga annotator → pilot → psikometrik. Repo Python saat ini masih prototype dengan head Bloom C1–C6; banyak endpoint target belum ada. Istilah `target` dalam dokumen tidak berarti fitur sudah aktif.
 
-## Sumber kebenaran arsitektur
+## Keputusan domain yang berlaku
 
-- [`15_AUTONOMOUS_AI_PSYCHOMETRIC_LEARNING_ARCHITECTURE.md`](15_AUTONOMOUS_AI_PSYCHOMETRIC_LEARNING_ARCHITECTURE.md) adalah arsitektur target sistem utama.
-- [`16_CONTROLLED_QUESTION_VARIATION_GENERATION.md`](16_CONTROLLED_QUESTION_VARIATION_GENERATION.md) adalah arsitektur target subsistem generasi variasi soal.
-- Dokumen 01-14 menerjemahkan kedua arsitektur tersebut menjadi kontrak API, schema, UI adapter, dan aturan domain.
-- [`17_MONGODB_DATA_MODEL_ERD.md`](17_MONGODB_DATA_MODEL_ERD.md) mendefinisikan model data MongoDB dan relasi logisnya.
-- [`schemas/nalar-api.schema.json`](schemas/nalar-api.schema.json) adalah bundle JSON Schema machine-readable untuk DTO publik utama.
+- Head 1: `knowing/applying/reasoning` menurut domain kognitif matematika TIMSS dan AKM.
+- Head 2: `factual/conceptual/procedural/metacognitive` dari dimensi pengetahuan Revised Bloom.
+- Head 3: `Easy/Medium/Hard` sebagai *intended difficulty* yang dinilai sebelum pilot; difficulty empiris terpisah.
+- C1–C6 tidak menjadi target model. KKO adalah `features.lexical.detectedKKO` dan hanya petunjuk; label pakar mengikuti bukti penyelesaian.
+- IndoBERT memberi prediksi dan ketidakpastian. Claude mengaudit usulan IndoBERT. Keduanya merupakan satu pipeline berurutan.
+- Tiga pakar matematika membuat penilaian blind yang dikunci, lalu mereview proposal AI. Keputusan 3–0/2–1 dicatat per head; 1–1–1 atau bukti kurang melalui adjudikasi manusia.
+- Seed dataset untuk fine-tuning IndoBERT harus dibentuk dari penilaian blind manusia **sebelum** ada model produksi.
+- Pilot hanya untuk item expert-validated. Psikometrik mengukur perilaku item pada populasi tertentu dan tidak otomatis mengubah domain atau dimensi pengetahuan.
 
-## Peran teacher
+## Peta dokumen
 
-Teacher adalah **author**, bukan reviewer atau annotator. Teacher dapat:
-
-- membuat soal secara manual atau mengimpor sumber;
-- memperbaiki draft hasil ekstraksi;
-- mengubah authoring content miliknya;
-- mengirim versi soal ke workflow otomatis;
-- melihat status, warning, dan hasil screening yang aman ditampilkan.
-
-Teacher tidak menetapkan label final, tidak menjadi adjudikator, tidak melakukan approval publikasi, dan tidak dapat melewati quality gate. Konflik IndoBERT-LLM ditangani automated LLM adjudication; konflik yang tidak selesai masuk quarantine.
-
-## Daftar dokumen
-
-| File | Isi |
+| Nomor | Fokus |
 |---|---|
-| [`01_API_ARCHITECTURE.md`](01_API_ARCHITECTURE.md) | Topologi, role, boundary frontend, versioning, job, error, dan security. |
-| [`02_QUESTION_API.md`](02_QUESTION_API.md) | Teacher authoring, revision, submit, versioning, dan status soal. |
-| [`03_EXTRACTION_API.md`](03_EXTRACTION_API.md) | Ekstraksi sumber menjadi authoring candidate, bukan validasi final. |
-| [`04_CLASSIFICATION_API.md`](04_CLASSIFICATION_API.md) | IndoBERT-LLM screening dan klasifikasi taksonomi. |
-| [`05_AI_DECISION_ARBITRATION_API.md`](05_AI_DECISION_ARBITRATION_API.md) | AI agreement, risk routing, dan LLM adjudication otomatis. |
-| [`06_STUDENT_RESPONSE_API.md`](06_STUDENT_RESPONSE_API.md) | Delivery-bound response event dan server-side scoring. |
-| [`07_PSYCHOMETRICS_API.md`](07_PSYCHOMETRICS_API.md) | Analisis varian/family, CTT, dan automated item routing. |
-| [`08_ASSESSMENT_DELIVERY_API.md`](08_ASSESSMENT_DELIVERY_API.md) | Session, delivery instance, public item DTO, dan penyembunyian kunci. |
-| [`09_JSON_SCHEMA_REFERENCE.md`](09_JSON_SCHEMA_REFERENCE.md) | Aturan dan daftar JSON Schema publik. |
-| [`10_SWAGGER_POSTMAN_GUIDE.md`](10_SWAGGER_POSTMAN_GUIDE.md) | OpenAPI, Postman, mock, dan contract testing. |
-| [`11_FRONTEND_INTEGRATION_ADAPTER.md`](11_FRONTEND_INTEGRATION_ADAPTER.md) | Port/adapter frontend yang dapat dicopot-pasang. |
-| [`12_ENDPOINT_MASTER_REFERENCE.md`](12_ENDPOINT_MASTER_REFERENCE.md) | Master endpoint target, caller, side effect, dan idempotency. |
-| [`13_SYSTEM_ASPECTS_EXPLANATION.md`](13_SYSTEM_ASPECTS_EXPLANATION.md) | Rasional sistem, batas klaim, status implementasi, dan prioritas. |
-| [`14_TAXONOMY_6X4X3_MAP.md`](14_TAXONOMY_6X4X3_MAP.md) | Ruang 72 kombinasi dan penggunaannya sebagai target/screening. |
-| [`15_AUTONOMOUS_AI_PSYCHOMETRIC_LEARNING_ARCHITECTURE.md`](15_AUTONOMOUS_AI_PSYCHOMETRIC_LEARNING_ARCHITECTURE.md) | Arsitektur autonomous hybrid AI end-to-end. |
-| [`16_CONTROLLED_QUESTION_VARIATION_GENERATION.md`](16_CONTROLLED_QUESTION_VARIATION_GENERATION.md) | Controlled question variation generation. |
-| [`17_MONGODB_DATA_MODEL_ERD.md`](17_MONGODB_DATA_MODEL_ERD.md) | Koleksi, atribut, index, embedding/reference, dan ERD MongoDB. |
-| [`19_GEMINI_SMOKE_EVALUATION.md`](19_GEMINI_SMOKE_EVALUATION.md) | Prosedur, hasil, latency, konsistensi, dan keputusan smoke evaluation Gemini. |
+| [01](01_API_ARCHITECTURE.md) | Boundary, aktor, keamanan, status target |
+| [02](02_QUESTION_API.md) | Authoring, versi, lifecycle |
+| [03](03_EXTRACTION_API.md) | Ekstraksi dan authoring candidate |
+| [04](04_CLASSIFICATION_API.md) | Input, fitur KKO, IndoBERT, Claude |
+| [05](05_AI_DECISION_ARBITRATION_API.md) | Tiga annotator, konsensus dan adjudikasi |
+| [06](06_STUDENT_RESPONSE_API.md) | Event jawaban terikat delivery |
+| [07](07_PSYCHOMETRICS_API.md) | CTT, populasi, keputusan sesudah pilot |
+| [08](08_ASSESSMENT_DELIVERY_API.md) | Session dan item publik |
+| [09](09_JSON_SCHEMA_REFERENCE.md) | DTO dan versi schema |
+| [10](10_SWAGGER_POSTMAN_GUIDE.md) | OpenAPI, Postman, contract test |
+| [11](11_FRONTEND_INTEGRATION_ADAPTER.md) | Port frontend dan review UI |
+| [12](12_ENDPOINT_MASTER_REFERENCE.md) | Inventaris endpoint target |
+| [13](13_SYSTEM_ASPECTS_EXPLANATION.md) | Rasional dan kesiapan sistem |
+| [14](14_TAXONOMY_6X4X3_MAP.md) | Rubrik label 3 × 4 × 3; nama file lama dipertahankan |
+| [15](15_AUTONOMOUS_AI_PSYCHOMETRIC_LEARNING_ARCHITECTURE.md) | Arsitektur end to end dan model learning |
+| [16](16_CONTROLLED_QUESTION_VARIATION_GENERATION.md) | Generasi varian terkontrol, tahap lanjutan |
+| [17](17_MONGODB_DATA_MODEL_ERD.md) | Data model MongoDB dan ERD |
+| [18](18_CLAUDE_PROVIDER_SETUP.md) | Konfigurasi Claude dan migrasi environment |
+| [19](19_GEMINI_SMOKE_EVALUATION.md) | Catatan historis Gemini; bukan provider aktif |
+| [20](20_END_TO_END_VALIDATION_FLOW.md) | Diagram lengkap dari bootstrap model sampai psikometrik, dengan tech stack dan cabang error |
 
-## Status kontrak
+Schema target ada pada [bundle JSON](schemas/nalar-api.schema.json). Bila kode/schema lama belum bermigrasi, dokumen menyebutnya secara eksplisit. Setiap breaking semantic change membutuhkan versi rubric, dataset, model, API/schema, dan migration plan.
 
-Dokumentasi membedakan:
+## Peran dan status
 
-- `implemented`: tersedia pada repository dan dapat diuji;
-- `prototype`: tersedia, tetapi kontrak atau kontrol produksinya belum lengkap;
-- `target`: desain yang harus dikembangkan;
-- `future`: tidak termasuk MVP.
+Teacher menulis dan memperbaiki konten lalu submit. Teacher tidak memutuskan label final pada item sendiri. Tiga ahli matematika melakukan review dengan identitas, keahlian, konflik kepentingan dan alasan keputusan yang dapat diaudit. System admin mengelola operasi, bukan sumber gold pedagogis.
 
-Versi API target tetap `/api/v1`. Breaking change memakai `/api/v2`. Dokumentasi target tidak boleh dianggap sebagai bukti bahwa endpoint sudah aktif.
+Status: `implemented` = ada dan diuji dalam repo; `prototype` = terbatas; `target` = desain yang belum selesai; `future` = di luar MVP. Saat ini ekstraksi dan FastAPI klasifikasi/CTT adalah prototype. Gateway `project_assessment`, MongoDB persisten, integrasi Claude API, tiga annotator, delivery aman dan generator belum ada sebagai implementasi aktif di worktree.
 
-Kondisi implementasi tahap pertama:
+## Lingkungan dan folder lama
 
-- UI teacher dapat membuat, merevisi, membaca, dan submit draft; data tersimpan sebagai file di `data/local/`, tanpa MongoDB.
-- Worker lokal memiliki validasi schema/relasi, verifikasi aritmetika terbatas, adapter IndoBERT dan LLM, agreement/adjudication, risk gate, dan recovery run setelah restart.
-- Adapter AI hanya menghasilkan `provisional` jika artefak IndoBERT sungguhan telah dinyatakan layak, LLM sungguhan tersedia, dan risk policy per-head sudah dikalibrasi/disetujui. Tanpanya workflow `failed` dan draft tidak hilang. Simulasi hanya ada dalam tes.
-- PDF analyzer tetap prototype ekstraksi. MongoDB, generation service, secure student delivery, feedback psikometrik, dan model registry masih target.
-- Workflow dua reviewer manusia dan educator verification adalah desain lama dan tidak lagi menjadi target arsitektur.
+`project_assessment` sudah kosong; file tracked-nya sudah berstatus deleted sebelum pembaruan ini. Tidak ada `.env` atau URI MongoDB nyata di folder tersebut untuk dipindah. [Template root](../.env.example) kini memuat nama variabel target `ANTHROPIC_API_KEY`, `CLAUDE_MODEL`, `MONGODB_URI`, dan `AI_SERVICE_URL`. Jangan commit `.env`, token, atau URI yang mengandung kredensial. Instalasi Claude CLI lokal tidak dengan sendirinya membuktikan koneksi API worker; lihat dokumen 18.
 
-## Urutan baca
+## Landasan inti
 
-- Frontend: 01, 02, 03, 08, 09, 11, dan 12.
-- Backend/gateway: 01-12 dan 17.
-- AI/generation: 04, 05, 09, 14, 15, dan 16.
-- Data/psychometrics: 06, 07, 13, 15, 16, dan 17.
-- QA: 09, 10, 12, serta acceptance gate pada 15-16.
+[TIMSS 2023 matematika](https://timssandpirls.bc.edu/timss2023/frameworks/pdf/T23_Frameworks_Ch1_Mathematics.pdf), [AKM numerasi Pusmendik](https://pusmendik.kemdikbud.go.id/an/Framework_AKM_31032022.pdf), [Revised Bloom (Krathwohl, 2002)](https://eric.ed.gov/?id=EJ667155), [IndoNLU/IndoBERT](https://aclanthology.org/2020.aacl-main.85/), dan [Claude Messages API](https://platform.claude.com/docs/en/api/messages/create).

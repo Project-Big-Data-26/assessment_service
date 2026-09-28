@@ -12,11 +12,13 @@ Base path: `/api/v1/questions`.
 authoring content       -> ditulis teacher
 canonical content       -> hasil normalisasi sistem
 answer verification     -> bukti solver/rules
-AI decisions            -> IndoBERT, LLM, adjudicator, risk
+AI decisions            -> IndoBERT, Claude proposal dan uncertainty
+expert annotations      -> tiga penilaian blind dan tiga review AI
+expert decisions        -> consensus/adjudication manusia
 psychometric snapshots  -> bukti respons empiris
 ```
 
-Kelima sumber tidak boleh digabung menjadi satu field. Perubahan authoring content selalu menghasilkan `contentVersion` baru dan menjalankan ulang workflow yang relevan.
+Sumber-sumber tersebut tidak boleh digabung menjadi satu field. Perubahan authoring content selalu menghasilkan `contentVersion` baru dan menjalankan ulang workflow yang relevan.
 
 ## 3. Authoring content
 
@@ -47,7 +49,7 @@ Kelima sumber tidak boleh digabung menjadi satu field. Perubahan authoring conte
 }
 ```
 
-`teacherId`, tenant, dan role tidak diambil dari request body. Tahap lokal menggunakan `LOCAL_TEACHER_ID`; authentication context multi-user adalah target berikutnya. Teacher tidak wajib mengisi Bloom, knowledge dimension, atau difficulty.
+`teacherId`, tenant, dan role tidak diambil dari request body. Authentication context multi-user adalah target; gateway lama dengan `LOCAL_TEACHER_ID` sudah dihapus. Teacher tidak wajib mengisi domain kognitif, knowledge dimension, atau difficulty.
 
 ## 4. Validasi tanpa menyimpan
 
@@ -148,10 +150,13 @@ submitted
   -> canonicalization
   -> deterministic validation
   -> answer verification
-  -> IndoBERT and independent LLM screening
-  -> agreement/risk
-      -> LLM adjudication jika konflik
-  -> provisional atau quarantine/revision_required
+  -> ekstraksi KKO dan fitur deterministik
+  -> IndoBERT tiga head
+  -> Claude mengolah hasil IndoBERT
+  -> tiga annotator blind lalu review proposal AI
+  -> voting 3-0/2-1 atau adjudikasi manusia
+  -> expert_validated atau quarantine/revision_required
+  -> provisional untuk pilot jika policy lolos
 ```
 
 ## 8. Membaca resource
@@ -169,12 +174,12 @@ Contoh potongan resource (field `authoringContent`, `createdAt`, dan `updatedAt`
 {
   "questionId": "Q-4a039437-c106-4081-9a7a-cc12a73b6b23",
   "contentVersion": 2,
-  "status": "provisional",
+  "status": "expert_validated",
   "workflowSummary": {
     "answerVerified": true,
-    "decisionType": "ai_consensus",
+    "decisionType": "expert_validated",
     "taxonomy": {
-      "bloom": "C3",
+      "mathCognitiveDomain": "applying",
       "knowledgeDimension": "procedural",
       "intendedDifficulty": "Medium"
     },
@@ -191,6 +196,9 @@ author_draft
     -> processing
         -> revision_required -> teacher creates new version -> submitted
         -> quarantined       -> teacher may create new version
+        -> pending_expert_review
+            -> needs_expert_adjudication
+            -> expert_validated
         -> provisional
             -> pilot_active
             -> empirically_screened
@@ -206,13 +214,11 @@ Target enum:
 
 ```text
 multiple_choice | multiple_response | true_false | numeric
-short_answer | essay | matching
+short_answer | essay | matching | interactive_grid
 ```
 
 MVP generation dan server-side scoring sebaiknya memprioritaskan `multiple_choice`, `numeric`, dan `true_false`. Tipe lain membutuhkan scoring policy tambahan.
 
 ## 11. Status implementasi tahap lokal
 
-Endpoint authoring pada dokumen ini sudah berjalan dengan `FileQuestionRepository` di `data/local/`: identitas soal, versi konten immutable, workflow run, dan AI decision disimpan terpisah. `If-Match` dan `Idempotency-Key` dipakai untuk perubahan. Submit membuat run yang dapat dipoll dan worker lokal memproses satu per satu serta memulihkan run yang tertunda setelah restart.
-
-Identitas teacher saat ini berasal dari `LOCAL_TEACHER_ID`, bukan autentikasi multi-user. Artefak IndoBERT yang belum disetujui untuk provisional, LLM yang belum dikonfigurasi, atau risk policy yang belum dikalibrasi menghasilkan workflow `failed`, sedangkan draft tetap tersimpan. Ambang pada `configs/ai_risk_policy.json` harus ditentukan dari evaluasi per-head sebelum status provisional diaktifkan. MongoDB, delivery siswa, psikometrik, dan generation masih target berikutnya. Endpoint legacy prototype di luar jalur authoring ini belum dimigrasikan.
+Implementasi authoring Express/`FileQuestionRepository` lama telah dihapus bersama `project_assessment`; contoh endpoint di atas adalah kontrak **target**. FastAPI Python yang masih ada mempunyai schema/model lama C1–C6 dan belum menyediakan workflow tiga annotator. MongoDB, gateway baru, delivery siswa dan generation juga belum diimplementasikan. `configs/ai_risk_policy.json` masih memakai nama head lama dan harus dimigrasikan serta dikalibrasi sebelum pilot.

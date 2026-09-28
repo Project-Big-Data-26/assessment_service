@@ -1,0 +1,480 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="8640" viewBox="0 0 2500 8640" role="img" aria-labelledby="title desc">
+<title id="title">Alur validasi soal matematika dengan keputusan bersyarat</title>
+<desc id="desc">Flowchart berbahasa Indonesia dari soal guru, pilihan OCR, pemeriksaan format, IndoBERT, tiga run Claude, tiga ahli blind, voting manusia, pilot, CTT, dan IRT opsional. Cabang ya/tidak, simbol flowchart, serta teknologi pendukung ditampilkan terpisah.</desc>
+<defs>
+<symbol id="ic-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V3 M7 8l5-5 5 5 M4 17v4h16v-4"/></symbol>
+<symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6 M8 13h8 M8 17h8"/></symbol>
+<symbol id="ic-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V5a1 1 0 0 1 1-1h4 M15 4h4a1 1 0 0 1 1 1v4 M20 15v4a1 1 0 0 1-1 1h-4 M9 20H5a1 1 0 0 1-1-1v-4 M7 12h10"/></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 9l2 2 4-4 M8 16h8"/></symbol>
+<symbol id="ic-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9z M9 1v4 M15 1v4 M9 19v4 M15 19v4 M1 9h4 M1 15h4 M19 9h4 M19 15h4"/></symbol>
+<symbol id="ic-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.7 6.3L20 10l-6.3 1.7L12 18l-1.7-6.3L4 10l6.3-1.7z M19 17l.7 2.3L22 20l-2.3.7L19 23l-.7-2.3L16 20l2.3-.7z"/></symbol>
+<symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2z M17 5a3 3 0 0 1 0 6 M18 14a5 5 0 0 1 3 5v1"/></symbol>
+<symbol id="ic-vote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16l-2 10H6z M8 10V4h8v6 M10 15l2 2 4-4"/></symbol>
+<symbol id="ic-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5 M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+<symbol id="ic-screen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="15" rx="2"/><path d="M8 22h8 M12 18v4"/></symbol>
+<symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4 M4 20h16 M8 17v-5 M12 17V8 M16 17v-9 M20 17V5"/></symbol>
+<symbol id="ic-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5 M4 17v-5h5 M6 8a7 7 0 0 1 12-2l2 1 M18 16a7 7 0 0 1-12 2l-2-1"/></symbol>
+<symbol id="ic-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 8v8 M15 8v8"/></symbol>
+<marker id="arr-line" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11 Z" fill="#A9BED0"/></marker>
+<marker id="arr-blue" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11 Z" fill="#2879B9"/></marker>
+<marker id="arr-purple" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11 Z" fill="#7059AF"/></marker>
+<marker id="arr-green" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11 Z" fill="#158672"/></marker>
+<marker id="arr-orange" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11 Z" fill="#B97920"/></marker>
+<marker id="arr-red" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11 Z" fill="#BA4858"/></marker>
+</defs>
+<rect width="2500" height="8640" fill="#F7FAFD"/>
+<rect x="0" y="0" width="2500" height="213" fill="#122C46"/>
+<text x="80" y="75" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="800" fill="#FFFFFF">NALAR  /  ALUR VALIDASI SOAL MATEMATIKA</text>
+<text x="80" y="128" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="400" fill="#DDEBF8">Dari soal guru sampai keputusan pakar dan bukti psikometrik</text>
+<text x="80" y="173" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#BBD2E7">Diagram target • biru: input | ungu: AI | hijau: ahli | jingga: pilot &amp; empiris</text>
+<rect x="72" y="245" width="2350" height="161" rx="19" fill="#FFFFFF" stroke="#A9BED0" stroke-width="1.5"/>
+<text x="102" y="281" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" fill="#17304A">CARA MEMBACA</text>
+<rect x="112" y="306" width="120" height="52" rx="26" fill="#EAF5FC" stroke="#2879B9" stroke-width="2"/>
+<text x="172" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#2879B9">Mulai</text>
+<text x="246" y="340" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">awal/akhir</text>
+<polygon points="460,306 600,306 580,358 440,358" fill="#EAF5FC" stroke="#2879B9" stroke-width="2"/>
+<text x="520" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#2879B9">Soal</text>
+<text x="617" y="340" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">masukan</text>
+<rect x="786" y="306" width="125" height="52" rx="5" fill="#F1EFFA" stroke="#7059AF" stroke-width="2"/>
+<text x="848" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#7059AF">Model</text>
+<text x="926" y="340" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">proses</text>
+<polygon points="1160,305 1223,332 1160,359 1097,332" fill="#EAF8F3" stroke="#158672" stroke-width="2"/>
+<text x="1160" y="338" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#158672">?</text>
+<text x="1245" y="340" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">keputusan: ya/tidak</text>
+<ellipse cx="1680" cy="317" rx="74" ry="13" fill="#EAF8F3" stroke="#158672" stroke-width="2"/>
+<rect x="1606" y="317" width="148" height="37" rx="0" fill="#EAF8F3" stroke="#158672" stroke-width="2"/>
+<ellipse cx="1680" cy="354" rx="74" ry="13" fill="#EAF8F3" stroke="#158672" stroke-width="2"/>
+<text x="1772" y="340" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">data tersimpan</text>
+<text x="2050" y="340" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#4B6278">→ alur  - - → ulang</text>
+<rect x="75" y="430" width="2345" height="242" rx="20" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.8"/>
+<text x="108" y="472" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#7059AF">SEBELUM ALUR INI: SIAPKAN MODEL DAN RUBRIK</text>
+<rect x="108" y="502" width="675" height="121" rx="14" fill="#FFFFFF" stroke="#A9BED0" stroke-width="1.2"/>
+<text x="130" y="544" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#17304A">1  Tetapkan rubrik 3 × 4 × 3</text>
+<text x="130" y="582" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#4B6278">Gunakan contoh soal dan bukti solusi.</text>
+<rect x="851" y="502" width="675" height="121" rx="14" fill="#FFFFFF" stroke="#A9BED0" stroke-width="1.2"/>
+<text x="873" y="544" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#17304A">2  Tiga ahli menilai blind</text>
+<text x="873" y="582" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#4B6278">Bahas konflik; bekukan gold awal.</text>
+<rect x="1594" y="502" width="770" height="121" rx="14" fill="#FFFFFF" stroke="#A9BED0" stroke-width="1.2"/>
+<text x="1616" y="544" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#17304A">3  Latih dan uji IndoBERT</text>
+<text x="1616" y="582" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#4B6278">Split per keluarga; ukur F1/kalibrasi.</text>
+<path d="M790 563 L840 563" fill="none" stroke="#7059AF" stroke-width="3" marker-end="url(#arr-purple)"/>
+<path d="M1533 563 L1583 563" fill="none" stroke="#7059AF" stroke-width="3" marker-end="url(#arr-purple)"/>
+<text x="108" y="652" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700" fill="#7059AF">Gold awal berasal dari ahli; output model/Claude tidak menjadi label pelatihan secara otomatis.</text>
+<g transform="translate(0 300)">
+<path d="M 905 502 L 905 548" fill="none" stroke="#2879B9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M 905 700 L 905 758" fill="none" stroke="#2879B9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M 905 930 L 905 1178" fill="none" stroke="#2879B9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M 630 845 L 220 845 L 220 958" fill="none" stroke="#2879B9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M 220 1122 L 220 1148 L 905 1148 L 905 1178" fill="none" stroke="#2879B9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M 905 1352 L 905 1408" fill="none" stroke="#2879B9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M 905 1592 L 905 1638" fill="none" stroke="#2879B9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M 905 1812 L 905 1868" fill="none" stroke="#7059AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+<path d="M 1180 1725 L 1468 1725" fill="none" stroke="#BA4858" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-red)"/>
+<path d="M 1640 1638 L 1640 1314 L 1434 1314 L 1434 1265" fill="none" stroke="#BA4858" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="11 9" marker-end="url(#arr-red)"/>
+<path d="M 905 2222 L 905 2278" fill="none" stroke="#7059AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+<path d="M 905 2642 L 905 2698" fill="none" stroke="#7059AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+<path d="M 905 2872 L 905 2928" fill="none" stroke="#158672" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-green)"/>
+<path d="M 1180 2785 L 1468 2785" fill="none" stroke="#BA4858" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-red)"/>
+<path d="M 905 3112 L 905 3168" fill="none" stroke="#158672" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-green)"/>
+<path d="M 905 3342 L 905 3398" fill="none" stroke="#158672" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-green)"/>
+<path d="M 905 3592 L 905 3848" fill="none" stroke="#158672" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-green)"/>
+<path d="M 1185 3495 L 1468 3495" fill="none" stroke="#BA4858" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-red)"/>
+<path d="M 1635 3572 L 1635 3638" fill="none" stroke="#BA4858" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-red)"/>
+<path d="M 1470 3720 L 1370 3720 L 1370 3940 L 1295 3940" fill="none" stroke="#158672" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-green)"/>
+<path d="M 1635 3802 L 1635 3848" fill="none" stroke="#BA4858" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-red)"/>
+<path d="M 905 4032 L 905 4088" fill="none" stroke="#158672" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-green)"/>
+<path d="M 1180 4175 L 1468 4175" fill="none" stroke="#BA4858" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-red)"/>
+<path d="M 905 4262 L 905 4318" fill="none" stroke="#B97920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M 905 4492 L 905 4548" fill="none" stroke="#B97920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M 905 4712 L 905 4768" fill="none" stroke="#B97920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M 905 5120 L 905 5188" fill="none" stroke="#B97920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M 630 5275 L 372 5275" fill="none" stroke="#B97920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M 220 5200 L 220 4630 L 375 4630" fill="none" stroke="#B97920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="11 9" marker-end="url(#arr-orange)"/>
+<path d="M 905 5362 L 905 5418" fill="none" stroke="#B97920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M 1180 5510 L 1468 5510" fill="none" stroke="#B97920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M 905 5602 L 905 5668" fill="none" stroke="#7059AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+<path d="M 1635 5590 L 1635 6150 L 1185 6150" fill="none" stroke="#B97920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M 905 5990 L 905 6048" fill="none" stroke="#7059AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+<path d="M 1180 6145 L 1468 6145" fill="none" stroke="#BA4858" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-red)"/>
+<path d="M 905 6242 L 905 6318" fill="none" stroke="#158672" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-green)"/>
+<path d="M 905 6502 L 905 6558" fill="none" stroke="#158672" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-green)"/>
+<path d="M 905 6782 L 905 6828" fill="none" stroke="#158672" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-green)"/>
+<text x="86" y="456" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#2879B9">ALUR UTAMA</text>
+<text x="1850" y="456" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#4B6278">TEKNOLOGI PENDUKUNG</text>
+<text x="1850" y="481" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#4B6278">(kotak kanan bukan langkah alur)</text>
+<rect x="730.0" y="422" width="350" height="82" rx="41.0" fill="#EAF5FC" stroke="#2879B9" stroke-width="3"/>
+<text x="905" y="473.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800" fill="#2879B9">Mulai</text>
+<polygon points="432,550 1430,550 1378,700 380,700" fill="#EAF5FC" stroke="#2879B9" stroke-width="3"/>
+<circle cx="323" cy="625.0" r="30" fill="#2879B9"/>
+<text x="323" y="633.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">01</text>
+<use href="#ic-upload" x="473" y="578" width="48" height="48" color="#2879B9"/>
+<text x="539" y="609" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Soal masuk dari guru</text>
+<text x="475" y="651" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Guru mengetik soal, mengimpor data, atau mengunggah PDF/gambar.</text>
+<text x="475" y="682" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Tidak ada tahap koreksi guru yang wajib untuk setiap soal.</text>
+<polygon points="905,760 1180.0,845.0 905,930 630.0,845.0" fill="#EAF5FC" stroke="#2879B9" stroke-width="3"/>
+<circle cx="323" cy="845.0" r="30" fill="#2879B9"/>
+<text x="323" y="853.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">02</text>
+<text x="905" y="821" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#2879B9">Perlu baca dokumen?</text>
+<text x="905" y="851" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">PDF/gambar → YA</text>
+<text x="905" y="878" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Input langsung → TIDAK</text>
+<rect x="72" y="960" width="300" height="162" rx="18" fill="#EAF5FC" stroke="#2879B9" stroke-width="2"/>
+<use href="#ic-scan" x="91" y="979" width="36" height="36" color="#2879B9"/>
+<text x="134" y="1007" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#2879B9">Baca berkas</text>
+<text x="92" y="1038" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">OCR/ambil teks,</text>
+<text x="92" y="1065" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">opsi dan rumus.</text>
+<text x="92" y="1092" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Simpan tanda ragu.</text>
+<rect x="380" y="1180" width="1050" height="172" rx="18" fill="#FFFFFF" stroke="#2879B9" stroke-width="2.5"/>
+<rect x="380" y="1180" width="11" height="172" rx="5" fill="#2879B9"/>
+<circle cx="323" cy="1223" r="30" fill="#2879B9"/>
+<text x="323" y="1231" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">03</text>
+<use href="#ic-file" x="409" y="1207" width="45" height="45" color="#2879B9"/>
+<text x="471" y="1236" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Simpan versi soal</text>
+<text x="414" y="1279" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Satukan teks, opsi, gambar, kunci, solusi, kelas dan topik.</text>
+<text x="414" y="1310" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Setiap perubahan isi penting membuat versi soal baru.</text>
+<rect x="380" y="1410" width="1050" height="182" rx="18" fill="#FFFFFF" stroke="#2879B9" stroke-width="2.5"/>
+<rect x="380" y="1410" width="11" height="182" rx="5" fill="#2879B9"/>
+<circle cx="323" cy="1453" r="30" fill="#2879B9"/>
+<text x="323" y="1461" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">04</text>
+<use href="#ic-check" x="409" y="1437" width="45" height="45" color="#2879B9"/>
+<text x="471" y="1466" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Periksa format dan kunci jawaban</text>
+<text x="414" y="1509" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Cek kelengkapan, pilihan jawaban, rumus, dan soal ambigu.</text>
+<text x="414" y="1540" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Cocokkan kunci dengan solusi/rule matematika bila memungkinkan.</text>
+<polygon points="905,1640 1180.0,1726.0 905,1812 630.0,1726.0" fill="#EAF5FC" stroke="#2879B9" stroke-width="3"/>
+<text x="905" y="1701" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#2879B9">Soal siap?</text>
+<text x="905" y="1731" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Format + kunci valid?</text>
+<text x="905" y="1758" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">YA → model; TIDAK → perbaiki/tahan</text>
+<rect x="1470" y="1640" width="332" height="155" rx="18" fill="#FFF0F2" stroke="#BA4858" stroke-width="2"/>
+<use href="#ic-pause" x="1489" y="1659" width="36" height="36" color="#BA4858"/>
+<text x="1532" y="1687" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#BA4858">Perbaiki / tahan</text>
+<text x="1490" y="1718" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Guru revisi isi soal,</text>
+<text x="1490" y="1745" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">atau karantina.</text>
+<text x="1490" y="1772" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Versi baru diperiksa lagi.</text>
+<rect x="380" y="1870" width="1050" height="352" rx="18" fill="#FFFFFF" stroke="#7059AF" stroke-width="2.5"/>
+<rect x="380" y="1870" width="11" height="352" rx="5" fill="#7059AF"/>
+<circle cx="323" cy="1913" r="30" fill="#7059AF"/>
+<text x="323" y="1921" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">05</text>
+<use href="#ic-chip" x="409" y="1897" width="45" height="45" color="#7059AF"/>
+<text x="471" y="1926" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">IndoBERT memprediksi tiga hal</text>
+<circle cx="435" cy="1971" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="1978" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">1</text>
+<text x="471" y="1978" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Siapkan teks, opsi, solusi, kelas, topik, format; KKO = fitur kata.</text>
+<circle cx="435" cy="2025" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="2032" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">2</text>
+<text x="471" y="2032" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Tokenisasi → encoder IndoBERT membaca konteks bahasa soal.</text>
+<circle cx="435" cy="2079" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="2086" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">3</text>
+<text x="471" y="2086" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Tiga head → domain matematika (3), pengetahuan (4), kesulitan (3).</text>
+<circle cx="435" cy="2133" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="2140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">4</text>
+<text x="471" y="2140" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Simpan P(label), H = -Σ p log₂ p per head, OOD, modelVersion.</text>
+<text x="415" y="2200" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#7059AF">Tidak ada konversi langsung KKO → label dan tidak ada C1–C6.</text>
+<rect x="380" y="2280" width="1050" height="362" rx="18" fill="#FFFFFF" stroke="#7059AF" stroke-width="2.5"/>
+<rect x="380" y="2280" width="11" height="362" rx="5" fill="#7059AF"/>
+<circle cx="323" cy="2323" r="30" fill="#7059AF"/>
+<text x="323" y="2331" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">06</text>
+<use href="#ic-spark" x="409" y="2307" width="45" height="45" color="#7059AF"/>
+<text x="471" y="2336" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Claude: CoT + majority voting (N = 3)</text>
+<circle cx="435" cy="2381" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="2388" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">1</text>
+<text x="471" y="2388" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Tiga run terpisah: soal, rubrik, solusi, prediksi IndoBERT.</text>
+<circle cx="435" cy="2435" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="2442" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">2</text>
+<text x="471" y="2442" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">CoT/telaah bertahap: cek kunci, jalur solusi, bukti 3 head.</text>
+<circle cx="435" cy="2489" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="2496" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">3</text>
+<text x="471" y="2496" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">JSON tiap run: label, confirm/revise/abstain, flag, bukti.</text>
+<circle cx="435" cy="2543" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="2550" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">4</text>
+<text x="471" y="2550" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Majority vote per head: 3/3, 2/3; 1–1–1 → flag ke ahli.</text>
+<text x="415" y="2620" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#7059AF">3 run Claude bukan 3 pakar, confidence, atau gold label.</text>
+<polygon points="905,2700 1180.0,2786.0 905,2872 630.0,2786.0" fill="#F1EFFA" stroke="#7059AF" stroke-width="3"/>
+<text x="905" y="2761" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#7059AF">Tiga run sah?</text>
+<text x="905" y="2791" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Schema, versi, bukti valid?</text>
+<text x="905" y="2818" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Konflik label tetap lanjut ke ahli.</text>
+<rect x="1470" y="2710" width="332" height="155" rx="18" fill="#FFF0F2" stroke="#BA4858" stroke-width="2"/>
+<use href="#ic-pause" x="1489" y="2729" width="36" height="36" color="#BA4858"/>
+<text x="1532" y="2757" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#BA4858">Ulang / tahan</text>
+<text x="1490" y="2788" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Timeout, JSON rusak</text>
+<text x="1490" y="2815" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">atau tanpa bukti.</text>
+<text x="1490" y="2842" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Tidak boleh bypass LLM.</text>
+<rect x="380" y="2930" width="1050" height="182" rx="18" fill="#FFFFFF" stroke="#158672" stroke-width="2.5"/>
+<rect x="380" y="2930" width="11" height="182" rx="5" fill="#158672"/>
+<circle cx="323" cy="2973" r="30" fill="#158672"/>
+<text x="323" y="2981" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">07</text>
+<use href="#ic-users" x="409" y="2957" width="45" height="45" color="#158672"/>
+<text x="471" y="2986" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Tiga ahli menilai blind</text>
+<text x="414" y="3029" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Tidak melihat AI/suara ahli lain; catat keputusan awal tetap.</text>
+<text x="414" y="3060" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Cek cakupan, kejelasan, kunci, skor; lalu label 3 head + bukti.</text>
+<rect x="380" y="3170" width="1050" height="172" rx="18" fill="#FFFFFF" stroke="#158672" stroke-width="2.5"/>
+<rect x="380" y="3170" width="11" height="172" rx="5" fill="#158672"/>
+<circle cx="323" cy="3213" r="30" fill="#158672"/>
+<text x="323" y="3221" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">08</text>
+<use href="#ic-vote" x="409" y="3197" width="45" height="45" color="#158672"/>
+<text x="471" y="3226" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Tiga ahli melihat usulan AI</text>
+<text x="414" y="3269" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Sesudah pass blind terkunci, buka IndoBERT + 3 run Claude.</text>
+<text x="414" y="3300" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Terima/ubah/tolak per head; alasan dan perubahan disimpan.</text>
+<polygon points="905,3400 1185.0,3496.0 905,3592 625.0,3496.0" fill="#EAF8F3" stroke="#158672" stroke-width="3"/>
+<circle cx="323" cy="3496.0" r="30" fill="#158672"/>
+<text x="323" y="3504.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">09</text>
+<text x="905" y="3461" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#158672">Ada mayoritas?</text>
+<text x="905" y="3491" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Tiga ahli manusia, per head.</text>
+<text x="905" y="3518" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">3–0 / 2–1 → YA jika isi layak</text>
+<text x="905" y="3545" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">1–1–1 / abstain → adjudikasi</text>
+<rect x="1470" y="3420" width="332" height="152" rx="18" fill="#FFF0F2" stroke="#BA4858" stroke-width="2"/>
+<use href="#ic-users" x="1489" y="3439" width="36" height="36" color="#BA4858"/>
+<text x="1532" y="3467" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#BA4858">Diskusi pakar</text>
+<text x="1490" y="3498" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Baca rubrik dan</text>
+<text x="1490" y="3525" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">bukti soal; bila perlu</text>
+<text x="1490" y="3552" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">adjudicator senior.</text>
+<polygon points="1635,3640 1800.0,3721.0 1635,3802 1470.0,3721.0" fill="#EAF8F3" stroke="#158672" stroke-width="3"/>
+<text x="1635" y="3701" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#158672">Selesai?</text>
+<text x="1635" y="3731" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">YA → valid</text>
+<text x="1635" y="3758" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">TIDAK → tahan</text>
+<rect x="1470" y="3850" width="332" height="150" rx="18" fill="#FFF0F2" stroke="#BA4858" stroke-width="2"/>
+<use href="#ic-pause" x="1489" y="3869" width="36" height="36" color="#BA4858"/>
+<text x="1532" y="3897" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#BA4858">Tahan butir</text>
+<text x="1490" y="3928" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Belum jadi gold/pilot.</text>
+<text x="1490" y="3955" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Jika konflik masif, audit</text>
+<text x="1490" y="3982" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">rubrik per head.</text>
+<path d="M515.0,3875 C515.0,3842 1295.0,3842 1295.0,3875 L1295.0,4007 C1295.0,4040 515.0,4040 515.0,4007 Z" fill="#EAF8F3" stroke="#158672" stroke-width="3"/>
+<ellipse cx="905" cy="3875" rx="390.0" ry="25" fill="#EAF8F3" stroke="#158672" stroke-width="3"/>
+<circle cx="323" cy="3941.0" r="30" fill="#158672"/>
+<text x="323" y="3949.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">10</text>
+<use href="#ic-database" x="558.0" y="3915" width="42" height="42" color="#158672"/>
+<text x="617.0" y="3931" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#17304A">Bank soal tervalidasi ahli</text>
+<text x="617.0" y="3963" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#4B6278">Simpan keputusan per head, dissent, alasan dan versi soal.</text>
+<text x="617.0" y="3991" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#4B6278">Kesepakatan dua AI saja tidak cukup.</text>
+<polygon points="905,4090 1180.0,4176.0 905,4262 630.0,4176.0" fill="#EAF8F3" stroke="#158672" stroke-width="3"/>
+<text x="905" y="4151" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#158672">Boleh uji coba?</text>
+<text x="905" y="4181" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Keputusan ahli +</text>
+<text x="905" y="4208" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">kebijakan pilot lolos?</text>
+<rect x="1470" y="4100" width="332" height="155" rx="18" fill="#FFF0F2" stroke="#BA4858" stroke-width="2"/>
+<use href="#ic-pause" x="1489" y="4119" width="36" height="36" color="#BA4858"/>
+<text x="1532" y="4147" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#BA4858">Tahan dari pilot</text>
+<text x="1490" y="4178" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Kunci/izin/risiko</text>
+<text x="1490" y="4205" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">belum memenuhi</text>
+<text x="1490" y="4232" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">kebijakan.</text>
+<rect x="380" y="4320" width="1050" height="172" rx="18" fill="#FFFFFF" stroke="#B97920" stroke-width="2.5"/>
+<rect x="380" y="4320" width="11" height="172" rx="5" fill="#B97920"/>
+<circle cx="323" cy="4363" r="30" fill="#B97920"/>
+<text x="323" y="4371" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">11</text>
+<use href="#ic-screen" x="409" y="4347" width="45" height="45" color="#B97920"/>
+<text x="471" y="4376" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Tampilkan soal ke siswa</text>
+<text x="414" y="4419" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">LMS memberi versi soal yang terkunci; kunci tidak dikirim.</text>
+<text x="414" y="4450" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Pilihan ganda, benar/salah, matching, checkbox, click-box, dll.</text>
+<polygon points="432,4550 1430,4550 1378,4712 380,4712" fill="#FFF6E9" stroke="#B97920" stroke-width="3"/>
+<circle cx="323" cy="4631.0" r="30" fill="#B97920"/>
+<text x="323" y="4639.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">12</text>
+<use href="#ic-file" x="473" y="4578" width="48" height="48" color="#B97920"/>
+<text x="539" y="4609" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Jawaban siswa masuk</text>
+<text x="475" y="4651" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Simpan pilihan, waktu dan sesi; skor dihitung di server.</text>
+<text x="475" y="4682" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Data selalu terkait versi soal dan populasi uji.</text>
+<rect x="380" y="4770" width="1050" height="350" rx="18" fill="#FFFFFF" stroke="#B97920" stroke-width="2.5"/>
+<rect x="380" y="4770" width="11" height="350" rx="5" fill="#B97920"/>
+<circle cx="323" cy="4813" r="30" fill="#B97920"/>
+<text x="323" y="4821" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">13</text>
+<use href="#ic-chart" x="409" y="4797" width="45" height="45" color="#B97920"/>
+<text x="471" y="4826" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">CTT — analisis kualitas soal</text>
+<circle cx="435" cy="4871" r="17" fill="#FFF6E9" stroke="#B97920" stroke-width="1.5"/>
+<text x="435" y="4878" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#B97920">1</text>
+<text x="471" y="4878" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">p = Σ benar/N; Wilson CI menunjukkan ketidakpastian.</text>
+<circle cx="435" cy="4925" r="17" fill="#FFF6E9" stroke="#B97920" stroke-width="1.5"/>
+<text x="435" y="4932" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#B97920">2</text>
+<text x="471" y="4932" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">D = p_atas − p_bawah: discrimination index.</text>
+<circle cx="435" cy="4979" r="17" fill="#FFF6E9" stroke="#B97920" stroke-width="1.5"/>
+<text x="435" y="4986" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#B97920">3</text>
+<text x="471" y="4986" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">r_it = Corr(item, total tanpa item): daya beda terkoreksi.</text>
+<circle cx="435" cy="5033" r="17" fill="#FFF6E9" stroke="#B97920" stroke-width="1.5"/>
+<text x="435" y="5040" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#B97920">4</text>
+<text x="471" y="5040" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Cek distraktor, skor parsial, α form, waktu, missing.</text>
+<text x="415" y="5098" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#B97920">Hitung per versi, populasi, form, dan respons final yang eligible.</text>
+<polygon points="905,5190 1180.0,5276.0 905,5362 630.0,5276.0" fill="#FFF6E9" stroke="#B97920" stroke-width="3"/>
+<text x="905" y="5251" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#B97920">Data CTT cukup?</text>
+<text x="905" y="5281" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">N, sampel, CI dan form</text>
+<text x="905" y="5308" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">cukup untuk tafsir?</text>
+<rect x="72" y="5200" width="300" height="150" rx="18" fill="#FFF6E9" stroke="#B97920" stroke-width="2"/>
+<use href="#ic-loop" x="91" y="5219" width="36" height="36" color="#B97920"/>
+<text x="134" y="5247" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#B97920">Kumpulkan lagi</text>
+<text x="92" y="5278" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Belum klaim kualitas.</text>
+<text x="92" y="5305" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Lanjutkan pilot aman</text>
+<text x="92" y="5332" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">dengan versi yang sama.</text>
+<polygon points="905,5420 1180.0,5511.0 905,5602 630.0,5511.0" fill="#FFF6E9" stroke="#B97920" stroke-width="3"/>
+<text x="905" y="5481" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#B97920">IRT layak?</text>
+<text x="905" y="5511" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Sampel + asumsi +</text>
+<text x="905" y="5538" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">form terhubung?</text>
+<rect x="1470" y="5430" width="332" height="160" rx="18" fill="#FFF6E9" stroke="#B97920" stroke-width="2"/>
+<use href="#ic-chart" x="1489" y="5449" width="36" height="36" color="#B97920"/>
+<text x="1532" y="5477" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#B97920">CTT saja</text>
+<text x="1490" y="5508" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Simpan alasan IRT</text>
+<text x="1490" y="5535" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">belum layak; lanjut</text>
+<text x="1490" y="5562" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">ke telaah mutu.</text>
+<rect x="380" y="5670" width="1050" height="320" rx="18" fill="#FFFFFF" stroke="#7059AF" stroke-width="2.5"/>
+<rect x="380" y="5670" width="11" height="320" rx="5" fill="#7059AF"/>
+<circle cx="323" cy="5713" r="30" fill="#7059AF"/>
+<text x="323" y="5721" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">14</text>
+<use href="#ic-chart" x="409" y="5697" width="45" height="45" color="#7059AF"/>
+<text x="471" y="5726" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">IRT — kalibrasi opsional</text>
+<circle cx="435" cy="5771" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="5778" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">1</text>
+<text x="471" y="5778" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Cek unidimensi, independensi lokal dan model fit.</text>
+<circle cx="435" cy="5825" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="5832" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">2</text>
+<text x="471" y="5832" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">1PL: b; 2PL: a + b; 3PL: a + b + c (guessing).</text>
+<circle cx="435" cy="5879" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="5886" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">3</text>
+<text x="471" y="5886" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Skor parsial: PCM/GPCM dengan ambang kategori.</text>
+<circle cx="435" cy="5933" r="17" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.5"/>
+<text x="435" y="5940" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">4</text>
+<text x="471" y="5940" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="500" fill="#17304A">Estimasi θ, informasi item/tes dan kesalahan baku.</text>
+<text x="415" y="5968" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#7059AF">Jika fit/asumsi gagal: laporkan CTT saja, jangan paksa IRT.</text>
+<polygon points="905,6050 1180.0,6146.0 905,6242 630.0,6146.0" fill="#FFF6E9" stroke="#B97920" stroke-width="3"/>
+<text x="905" y="6111" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#B97920">Soal bermasalah?</text>
+<text x="905" y="6141" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Kunci, diskriminasi,</text>
+<text x="905" y="6168" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">distraktor atau fit?</text>
+<rect x="1470" y="6070" width="332" height="160" rx="18" fill="#FFF0F2" stroke="#BA4858" stroke-width="2"/>
+<use href="#ic-check" x="1489" y="6089" width="36" height="36" color="#BA4858"/>
+<text x="1532" y="6117" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#BA4858">Tinjau isi soal</text>
+<text x="1490" y="6148" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Tahan jika berisiko;</text>
+<text x="1490" y="6175" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">jika isi berubah,</text>
+<text x="1490" y="6202" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">buat versi baru.</text>
+<path d="M515.0,6345 C515.0,6312 1295.0,6312 1295.0,6345 L1295.0,6477 C1295.0,6510 515.0,6510 515.0,6477 Z" fill="#EAF8F3" stroke="#158672" stroke-width="3"/>
+<ellipse cx="905" cy="6345" rx="390.0" ry="25" fill="#EAF8F3" stroke="#158672" stroke-width="3"/>
+<circle cx="323" cy="6411.0" r="30" fill="#158672"/>
+<text x="323" y="6419.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">15</text>
+<use href="#ic-database" x="558.0" y="6385" width="42" height="42" color="#158672"/>
+<text x="617.0" y="6401" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#17304A">Simpan snapshot empiris</text>
+<text x="617.0" y="6433" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#4B6278">CTT/IRT, N, CI/SE, populasi, form dan versi.</text>
+<text x="617.0" y="6461" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#4B6278">Kesulitan empiris ≠ perkiraan awal; H1/H2 tetap.</text>
+<rect x="380" y="6560" width="1050" height="222" rx="18" fill="#FFFFFF" stroke="#158672" stroke-width="2.5"/>
+<rect x="380" y="6560" width="11" height="222" rx="5" fill="#158672"/>
+<circle cx="323" cy="6603" r="30" fill="#158672"/>
+<text x="323" y="6611" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">16</text>
+<use href="#ic-loop" x="409" y="6587" width="45" height="45" color="#158672"/>
+<text x="471" y="6616" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Gunakan bukti untuk perbaikan</text>
+<text x="414" y="6659" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Isi sama: statistik baru, tanpa voting ahli ulang rutin.</text>
+<text x="414" y="6690" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Isi berubah: versi baru → validasi dan pilot ulang.</text>
+<text x="414" y="6721" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Data ahli + pilot dapat melatih model penantang.</text>
+<text x="414" y="6763" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#158672">Model penantang dipakai sesudah diuji pada data terpisah.</text>
+<rect x="705.0" y="6830" width="400" height="82" rx="41.0" fill="#EAF8F3" stroke="#158672" stroke-width="3"/>
+<text x="905" y="6881.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800" fill="#158672">Selesai / pantau</text>
+<text x="453" y="828" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#2879B9">YA · dokumen</text>
+<text x="945" y="1060" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#2879B9">TIDAK · langsung</text>
+<text x="1260" y="1697" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#BA4858">TIDAK</text>
+<text x="944" y="1841" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#158672">YA</text>
+<text x="1255" y="2756" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#BA4858">TIDAK</text>
+<text x="944" y="2900" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#158672">YA</text>
+<text x="1240" y="3472" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#BA4858">TIDAK</text>
+<text x="945" y="3740" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#158672">YA</text>
+<text x="1370" y="3698" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#158672">YA</text>
+<text x="1660" y="3830" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#BA4858">TIDAK</text>
+<text x="1240" y="4150" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#BA4858">TIDAK</text>
+<text x="945" y="4292" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#158672">YA</text>
+<text x="420" y="5250" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#B97920">TIDAK</text>
+<text x="944" y="5390" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#158672">YA</text>
+<text x="1240" y="5482" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#B97920">TIDAK</text>
+<text x="944" y="5642" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#7059AF">YA</text>
+<text x="1505" y="5960" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#B97920">CTT SAJA</text>
+<text x="1240" y="6120" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#BA4858">YA</text>
+<text x="944" y="6280" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#158672">TIDAK</text>
+<rect x="1850" y="540" width="570" height="310" rx="19" fill="#EAF5FC" stroke="#A9BED0" stroke-width="1.5"/>
+<rect x="1850" y="540" width="10" height="310" rx="5" fill="#2879B9"/>
+<text x="1879" y="586" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#2879B9">01–03  SOAL MASUK</text>
+<text x="1879" y="626" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">UI guru + API gateway (target)</text>
+<text x="1879" y="660" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">OCR/PyMuPDF/Tesseract (sebagian ada)</text>
+<text x="1879" y="694" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">JSON Schema / Pydantic</text>
+<text x="1879" y="728" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">MongoDB: soal + versi (target)</text>
+<text x="1879" y="762" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">File sumber + jejak ekstraksi (target)</text>
+<rect x="1850" y="1385" width="570" height="225" rx="19" fill="#EAF5FC" stroke="#A9BED0" stroke-width="1.5"/>
+<rect x="1850" y="1385" width="10" height="225" rx="5" fill="#2879B9"/>
+<text x="1879" y="1431" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#2879B9">04  PENGECEKAN</text>
+<text x="1879" y="1471" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Rules + pemeriksa matematika</text>
+<text x="1879" y="1505" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">SymPy jika cocok (target)</text>
+<text x="1879" y="1539" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">workflow_runs / bukti kunci (target)</text>
+<rect x="1850" y="1860" width="570" height="370" rx="19" fill="#F1EFFA" stroke="#A9BED0" stroke-width="1.5"/>
+<rect x="1850" y="1860" width="10" height="370" rx="5" fill="#7059AF"/>
+<text x="1879" y="1906" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#7059AF">05–06  MODEL AI</text>
+<text x="1879" y="1946" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">PyTorch / Transformers / IndoBERT</text>
+<text x="1879" y="1980" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">3 head target, versi lama masih C1–C6</text>
+<text x="1879" y="2014" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Fitur KKO, probabilitas, entropy, OOD</text>
+<text x="1879" y="2048" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Claude CoT: telaah 3 run (target)</text>
+<text x="1879" y="2082" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Schema JSON + prompt/modelVersion</text>
+<text x="1879" y="2116" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Majority vote per head ≠ confidence/gold</text>
+<text x="1879" y="2150" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Secret manager; jangan kirim API key</text>
+<rect x="1850" y="2915" width="570" height="300" rx="19" fill="#EAF8F3" stroke="#A9BED0" stroke-width="1.5"/>
+<rect x="1850" y="2915" width="10" height="300" rx="5" fill="#158672"/>
+<text x="1879" y="2961" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#158672">07–10  AHLI MATEMATIKA</text>
+<text x="1879" y="3001" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">UI pakar + autentikasi/RBAC (target)</text>
+<text x="1879" y="3035" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Blind: isi/kunci + 3 label + alasan</text>
+<text x="1879" y="3069" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Review AI setelah suara awal dikunci</text>
+<text x="1879" y="3103" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Vote manusia ≠ 3 run Claude</text>
+<text x="1879" y="3137" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">MongoDB: suara, dissent, audit (target)</text>
+<rect x="1850" y="4305" width="570" height="225" rx="19" fill="#FFF6E9" stroke="#A9BED0" stroke-width="1.5"/>
+<rect x="1850" y="4305" width="10" height="225" rx="5" fill="#B97920"/>
+<text x="1879" y="4351" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#B97920">11–12  LMS &amp; RESPONS</text>
+<text x="1879" y="4391" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Gateway/LMS dan snapshot versi (target)</text>
+<text x="1879" y="4425" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">delivery_instances + response_events</text>
+<text x="1879" y="4459" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Skoring di server, bukan browser</text>
+<rect x="1850" y="4770" width="570" height="360" rx="19" fill="#FFF6E9" stroke="#A9BED0" stroke-width="1.5"/>
+<rect x="1850" y="4770" width="10" height="360" rx="5" fill="#B97920"/>
+<text x="1879" y="4816" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#B97920">13  CTT: ANALISIS ITEM</text>
+<text x="1879" y="4856" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Python, Pandas/NumPy/SciPy</text>
+<text x="1879" y="4890" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">CTT dasar sudah prototype</text>
+<text x="1879" y="4924" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">p = B/N; Wilson CI; q = 1−p</text>
+<text x="1879" y="4958" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">D = p_atas−p_bawah; r_it corrected</text>
+<text x="1879" y="4992" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Opsi/distraktor; skor parsial</text>
+<text x="1879" y="5026" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Alpha = konsistensi form, bukan item</text>
+<text x="1879" y="5060" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Waktu, missing, N, populasi, versi</text>
+<rect x="1850" y="5670" width="570" height="315" rx="19" fill="#F1EFFA" stroke="#A9BED0" stroke-width="1.5"/>
+<rect x="1850" y="5670" width="10" height="315" rx="5" fill="#7059AF"/>
+<text x="1879" y="5716" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#7059AF">14  IRT: OPSIONAL</text>
+<text x="1879" y="5756" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">1PL/Rasch: b; 2PL: a,b; 3PL: a,b,c</text>
+<text x="1879" y="5790" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">PCM/GPCM untuk skor parsial</text>
+<text x="1879" y="5824" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">θ siswa, informasi item/tes, SE</text>
+<text x="1879" y="5858" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Uji dimensi, local independence, fit</text>
+<text x="1879" y="5892" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Kalibrasi butuh data/asumsi layak</text>
+<rect x="1850" y="6560" width="570" height="225" rx="19" fill="#EAF8F3" stroke="#A9BED0" stroke-width="1.5"/>
+<rect x="1850" y="6560" width="10" height="225" rx="5" fill="#158672"/>
+<text x="1879" y="6606" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#158672">15–16  SNAPSHOT &amp; UMPAN BALIK</text>
+<text x="1879" y="6646" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">psychometric_snapshots (target)</text>
+<text x="1879" y="6680" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">JSONL/Parquet + manifest (target)</text>
+<text x="1879" y="6714" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Split dataset per keluarga soal</text>
+<text x="1879" y="6748" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Model registry/challenger (target)</text>
+<rect x="75" y="6970" width="2345" height="223" rx="22" fill="#EAF8F3" stroke="#158672" stroke-width="2"/>
+<use href="#ic-loop" x="108" y="7010" width="48" height="48" color="#158672"/>
+<text x="176" y="7046" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800" fill="#158672">CABANG OPSIONAL: BUAT VARIASI SOAL</text>
+<text x="112" y="7092" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#17304A">Mulai dari soal induk yang sudah disetujui ahli → tetapkan aturan perubahan → hasilkan varian → hitung ulang kunci.</text>
+<text x="112" y="7131" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#158672">Varian yang berubah isinya kembali ke langkah 03–10: periksa format, IndoBERT, Claude, dan 3 ahli sebelum pilot.</text>
+<text x="112" y="7170" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#4B6278">Label induk tidak diwariskan otomatis; semua varian satu keluarga berada pada split data yang sama.</text>
+<rect x="75" y="7225" width="2345" height="183" rx="18" fill="#FFFFFF" stroke="#A9BED0" stroke-width="1.4"/>
+<text x="108" y="7268" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#BA4858">CATATAN PENTING</text>
+<text x="108" y="7303" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">CoT Claude N=3: telaah bertahap dalam tiga run; simpan bukti ringkas, bukan jejak penalaran internal sebagai gold.</text>
+<text x="108" y="7337" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Majority voting Claude dan suara 3 ahli adalah dua keputusan berbeda; 3/3 Claude bukan probabilitas benar.</text>
+<text x="108" y="7371" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700" fill="#BA4858">Diagram target: IRT, Claude N=3, dan UI ahli belum berarti fitur produksi sudah aktif.</text>
+<rect x="75" y="7445" width="2345" height="630" rx="20" fill="#FFFFFF" stroke="#A9BED0" stroke-width="1.5"/>
+<text x="108" y="7492" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#122C46">RUMUS: APA YANG DIHITUNG, BUKAN AMBANG SEMBARANG</text>
+<rect x="108" y="7520" width="1090" height="515" rx="15" fill="#FFF6E9" stroke="#B97920" stroke-width="1.4"/>
+<use href="#ic-chart" x="132" y="7545" width="40" height="40" color="#B97920"/>
+<text x="187" y="7575" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="800" fill="#B97920">CTT — item + form tes</text>
+<text x="132" y="7622" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">p = Σ X/N; q = 1−p. p tinggi = lebih mudah di populasi itu.</text>
+<text x="132" y="7667" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">D = p_atas−p_bawah; grup diurut dari total tanpa item.</text>
+<text x="132" y="7712" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">r_it = Corr(X_item, T−X_item): corrected point-biserial.</text>
+<text x="132" y="7757" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Distraktor: n_opsi/N dan pola pilihan atas vs bawah.</text>
+<text x="132" y="7802" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Skor parsial: mean skor / skor maksimum; jangan paksa 0/1.</text>
+<text x="132" y="7847" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">α form = k/(k−1) × (1−ΣVar(X_i)/Var(T)).</text>
+<text x="132" y="7892" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Wilson CI untuk p; waktu median/IQR; missing terpisah.</text>
+<text x="132" y="7950" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#B97920">D negatif → audit kunci, distraktor, populasi dan skoring.</text>
+<text x="132" y="7990" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#B97920">Simpan N, versi, form, kelas/populasi dan jendela data.</text>
+<rect x="1230" y="7520" width="1157" height="515" rx="15" fill="#F1EFFA" stroke="#7059AF" stroke-width="1.4"/>
+<use href="#ic-chart" x="1255" y="7545" width="40" height="40" color="#7059AF"/>
+<text x="1310" y="7575" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="800" fill="#7059AF">IRT — kalibrasi opsional</text>
+<text x="1255" y="7622" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">L(z) = 1/(1+e^(−z)); θ = kemampuan laten siswa.</text>
+<text x="1255" y="7667" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">1PL: P=L(θ−b); b = kesulitan.</text>
+<text x="1255" y="7712" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">2PL: P=L[a(θ−b)]; a = daya beda.</text>
+<text x="1255" y="7757" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">3PL: P=c+(1−c)L[a(θ−b)]; c = asimtot bawah.</text>
+<text x="1255" y="7802" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">PCM/GPCM: peluang kategori skor 0…m (parsial).</text>
+<text x="1255" y="7847" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">I_i(θ)=[P'_i(θ)]²/[P_i(θ)(1−P_i(θ))].</text>
+<text x="1255" y="7892" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">I_tes(θ)=Σ I_i(θ); SE(θ) ≈ 1/√I_tes(θ).</text>
+<text x="1255" y="7950" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#7059AF">Uji dimensi, independensi lokal, fit, sampel &amp; linking.</text>
+<text x="1255" y="7990" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#7059AF">Jika syarat gagal: tetap CTT dengan CI; tanpa parameter IRT.</text>
+</g>
+</svg>

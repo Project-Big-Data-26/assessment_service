@@ -1,302 +1,59 @@
 # Penjelasan Sistem Nalar per Aspek
 
-## 1. Ringkasan posisi sistem
+## 1. Tujuan dan klaim
 
-Nalar adalah target sistem untuk:
+Sistem menerima soal matematika manual atau hasil ekstraksi, membentuk versi konten, memverifikasi format dan kunci, mengklasifikasikan tiga head dengan IndoBERT, meminta Claude mengolah usulan itu, lalu mengirimnya ke tiga annotator ahli matematika. Item yang disetujui masuk pilot; respons peserta menghasilkan bukti psikometrik. Ini adalah **arsitektur target**. Repo Python saat ini baru menyediakan bagian prototype ekstraksi, baseline/IndoBERT lama C1–C6, dan CTT dasar.
 
-1. menerima soal manual atau sumber file dari teacher;
-2. membentuk canonical question berversi;
-3. memverifikasi struktur dan jawaban secara otomatis;
-4. melakukan taxonomy screening melalui IndoBERT dan LLM;
-5. memakai LLM adjudicator bila model berbeda;
-6. menghasilkan variasi soal secara terkontrol;
-7. menyajikan item melalui secure delivery;
-8. mengukur kualitasnya dari response events;
-9. memperbaiki generator dan model dengan bukti empiris.
+## 2. Peran dan sumber bukti
 
-Teacher tetap berada dalam sistem sebagai author, tetapi tidak menjadi reviewer atau adjudikator.
+| Sumber | Menjawab pertanyaan | Batas |
+|---|---|---|
+| Teacher | Apa isi soal, opsi, kunci dan tujuan belajar? | Penulis tidak menjadi reviewer soal sendiri |
+| Deterministic gate | Apakah format, versi, opsi dan file valid? | Tidak membuktikan tuntutan kognitif |
+| Answer verifier | Apakah kunci/solusi konsisten? | Tidak membuktikan label pedagogis |
+| IndoBERT | Apa prediksi tiga head beserta uncertainty? | Prediksi statistik |
+| Claude | Apakah usulan IndoBERT didukung bukti soal/solusi? | Proposal AI, tanpa suara final |
+| Tiga ahli matematika | Apa label dan validitas konten yang disepakati? | Human gold memerlukan blind first pass |
+| Psikometrik | Bagaimana item bekerja pada populasi tertentu? | Tidak otomatis mengubah domain/knowledge |
 
-## 2. Mengapa teacher hanya author
+## 3. Authoring dan ekstraksi
 
-Teacher memahami soal yang ingin dimasukkan, sehingga teacher boleh:
+Teacher membuat soal manual atau memperbaiki authoring candidate dari PDF/gambar/JSON/CSV/TXT/LaTeX. OCR, formula recognition, segmentation dan preview menyimpan halaman, bbox, confidence, engine dan warning. Hasil ekstraksi tidak langsung menjadi item final. Submit mengunci `contentVersion`; revisi substansial membentuk versi baru.
 
-- menulis atau mengimpor konten;
-- memperbaiki OCR/formula/options;
-- memberi learning objective, topic, grade, kunci, dan penjelasan;
-- membuat revision setelah menerima warning sistem.
+## 4. Validasi sebelum model
 
-Teacher tidak diminta menilai output model agar:
+Canonicalization menghasilkan representasi konsisten untuk stem, opsi, rumus, visual, kunci, solusi, topik, kelas dan format. Deterministic validation memeriksa schema, referensi opsi, duplikasi, LaTeX, range dan integritas sumber. Answer verification memeriksa kunci/solusi dengan rule atau solver yang sesuai. Konflik jawaban menghentikan pipeline dan masuk quarantine.
 
-- frontend authoring tetap sederhana;
-- label tidak bergantung pada jumlah/ketersediaan reviewer;
-- keputusan otomatis dapat direplay dan diaudit;
-- peran input content tidak tercampur dengan sumber bukti klasifikasi.
+## 5. KKO, task analysis, dan tiga label
 
-Konsekuensinya, sistem tidak mempunyai expert gold label runtime. Klaimnya dibatasi menjadi `model_suggestion`, `ai_consensus`, `ai_adjudicated`, `provisional`, dan `empirically_screened`.
+KKO adalah fitur leksikal `features.lexical.detectedKKO` pada canonical item. KKO menjadi sinyal teks untuk IndoBERT; rubrik pakar memakai **analisis jalur penyelesaian minimal**. Bukti meliputi rutinitas prosedur, pemilihan strategi, perpindahan representasi, inferensi, generalisasi, justifikasi, objek pengetahuan dan kesesuaian kelas. Profil pakar tidak dimasukkan sebagai fitur input bila hanya diketahui sesudah anotasi.
 
-## 3. Sumber bukti yang dipisahkan
+Head 1 = domain TIMSS/AKM: `knowing/applying/reasoning`. Head 2 = knowledge dimension Revised Bloom: `factual/conceptual/procedural/metacognitive`. Head 3 = intended difficulty: `Easy/Medium/Hard`, relatif terhadap peserta sasaran. C1–C6 bukan target pipeline. Tipe soal pilihan ganda, benar/salah, matching, checkbox atau uraian tidak otomatis menetapkan domain. Rincian rubrik ada di [14](14_TAXONOMY_6X4X3_MAP.md).
 
-```text
-teacher authoring content
-    -> apa soal yang dimasukkan
+## 6. IndoBERT dan Claude
 
-deterministic validation
-    -> apakah bentuk/constraint pasti terpenuhi
+Seed dataset pertama dibuat dari penilaian blind pakar agar model dapat di-fine-tune tanpa belajar dari label yang berasal dari dirinya sendiri. Model memakai stem, opsi, solusi/kunci terverifikasi, grade, topik, tujuan belajar, format, representasi dan fitur deterministik yang memang tersedia saat inferensi. Uji ablation mengukur manfaat KKO eksplisit. Split dataset berdasarkan source/item family, lalu laporkan macro-F1, F1 per kelas, confusion matrix, calibration dan OOD.
 
-answer verification
-    -> apakah kunci konsisten dengan solver/rules
+Saat produksi, IndoBERT menghasilkan probabilitas tiga head; Claude menerima hasil itu dan memberi `confirm/revise/abstain` dengan bukti. Karena Claude melihat hasil IndoBERT, keduanya adalah satu pipeline sequential. Kesepakatan keduanya tidak membentuk label final. Provider error membuat run retryable; model ID, prompt, rubric dan input hash disimpan sebagai provenance.
 
-IndoBERT + LLM
-    -> klasifikasi teoretis dan uncertainty
+## 7. Tiga annotator
 
-psychometrics
-    -> perilaku item pada populasi/assessment tertentu
-```
+Ketiga ahli diverifikasi, menggunakan rubrik dan item versi yang sama. Mereka menilai secara blind dan submit immutable. Setelah itu mereka dapat melihat proposal AI dan merekam accept/revise/abstain. Keputusan per head: 3–0 bulat; 2–1 mayoritas dengan dissent; 1–1–1 atau bukti kurang masuk diskusi/senior adjudicator. Konflik kunci/konten tetap blocker meskipun label memiliki mayoritas. Agreement dihitung dari blind submissions sebelum diskusi. Blind consensus dipakai untuk train/eval; review akhir menjadi label operasional.
 
-Tidak ada satu sumber yang menjawab semua pertanyaan. Agreement AI tidak membuktikan kebenaran absolut; psikometrik tidak membuktikan Bloom; teacher input tidak menjadi label final.
+## 8. Pilot, respons, dan psikometrik
 
-## 4. Authoring dan extraction
+Hanya item `expert_validated` dengan kunci/solusi terverifikasi yang lolos policy pilot. Delivery menyimpan snapshot versi, menyembunyikan kunci, dan memberi public option IDs. Response terikat delivery instance serta dinilai server. CTT menyimpan `p` dan interval, discrimination, corrected point biserial bila total score tersedia, distraktor, waktu, ukuran sampel, populasi dan assessment family. IRT memerlukan data dan linking design yang memadai.
 
-Teacher mempunyai dua jalur:
+Intended difficulty tidak diganti langsung oleh empirical difficulty. Statistik buruk memicu pemeriksaan data, populasi, pengajaran, kunci, konten dan distraktor. Jika konten berubah, buat `contentVersion` baru dan ulang validasi; jika konten tidak berubah dan statistik stabil, validasi ahli penuh tidak perlu diulang.
 
-```text
-manual authoring
-    -> author_draft
+## 9. Generasi varian dan feedback
 
-file upload
-    -> extraction candidate
-    -> teacher corrects authoring content
-    -> author_draft
-```
+Generasi varian adalah tahap lanjutan dari parent yang sudah expert-validated. Parameter, invariant, range, seed, solver, distraktor dan lineage harus terversi. Tiap varian menjalani validasi konten, IndoBERT→Claude dan tiga ahli untuk versi substantif sebelum pilot. Psikometrik per varian/family dapat mengubah kebijakan generator dan model difficulty melalui proses evaluasi terkontrol; ia tidak otomatis mengganti label domain/knowledge.
 
-OCR adalah transformasi probabilistik. Teacher memperbaiki hasil sebagai penulis karena hanya teacher yang mengetahui teks yang ingin dimasukkan; tindakan ini bukan proses validasi pedagogis akhir.
+## 10. Data, keamanan, dan status
 
-Setelah submit, version dibekukan untuk satu workflow run. Perubahan berikutnya membuat content version baru.
+MongoDB target memisahkan `questions`, `question_versions`, `ai_decisions`, `expert_annotations`, `expert_decisions`, `delivery_instances`, `response_events` dan `psychometric_snapshots`. Event dan keputusan append-only; public DTO menyembunyikan kunci dan trace. Backend menyimpan Claude API key dan URI MongoDB di secret store, bukan browser atau repository. Folder gateway lama `project_assessment` sudah kosong, jadi seluruh gateway, expert UI, MongoDB dan Claude API adapter harus dibangun/migrasi. Detail koleksi ada pada [17](17_MONGODB_DATA_MODEL_ERD.md), konfigurasi provider pada [18](18_CLAUDE_PROVIDER_SETUP.md).
 
-## 5. Validasi otomatis berlapis
+## 11. Rujukan
 
-```text
-Layer 1: API/schema/security
-Layer 2: canonicalization dan deterministic structure
-Layer 3: answer verification
-Layer 4: IndoBERT dan independent LLM screening
-Layer 5: agreement/risk dan LLM adjudication
-Layer 6: provisional delivery/pilot
-Layer 7: empirical psychometric screening
-Layer 8: drift dan model/generator monitoring
-```
-
-Contoh routing:
-
-- schema salah dan dapat diperbaiki teacher -> `revision_required`;
-- key tidak cocok dengan SymPy -> `quarantine_answer_conflict`;
-- IndoBERT/LLM berbeda -> automated adjudication;
-- adjudication tidak stabil -> `quarantine_ai_conflict`;
-- item lolos seluruh gate -> `provisional`;
-- discrimination negatif setelah pilot -> auto-unpublish/quarantine.
-
-## 6. Klasifikasi taksonomi
-
-Model memprediksi tiga head:
-
-```text
-Bloom:       C1-C6
-Knowledge:   factual/conceptual/procedural/metacognitive
-Difficulty:  Easy/Medium/Hard (intended)
-```
-
-Input harus mencakup teks, opsi, objective, topic/subtopic, grade, formula, dan metadata relevan. KKO saja tidak cukup karena kata seperti “tentukan” dapat muncul pada proses kognitif berbeda.
-
-IndoBERT menyediakan probabilitas/uncertainty. LLM memakai rubric dan evidence span. Keduanya diproses independen sebelum agreement.
-
-## 7. LLM adjudicator
-
-LLM adjudicator bukan manusia digital yang selalu benar. Ia adalah tahap arbitration terkontrol:
-
-- dijalankan hanya jika ada disagreement/risk tertentu;
-- memakai prompt/rubric/model alternatif;
-- melihat bukti yang terversi;
-- mempunyai batas percobaan;
-- dapat abstain;
-- menghasilkan decision event dan provenance;
-- unresolved case selalu quarantine.
-
-Sistem tidak memilih label hanya berdasarkan confidence terbesar.
-
-## 8. Controlled generation
-
-Generasi soal dimulai dari `verified_parent_item`, bukan OCR mentah.
-
-```text
-verified parent
-    -> item model
-    -> parameter generator atau isomorphic candidate generator
-    -> recompute answer
-    -> misconception distractors
-    -> deterministic/construct gate
-    -> AI screen
-    -> provisional variant
-```
-
-Parameter generator bersifat deterministic-first. LLM dipakai untuk konteks/redaksi dan proposal miskonsepsi, bukan sebagai otoritas jawaban. Detail terdapat pada dokumen 16.
-
-## 9. Range dan difficulty
-
-Range angka bukan angka arbitrer. Allowed domain merupakan irisan:
-
-```text
-mathematical rules
-∩ construct policy
-∩ grade number profile
-∩ intended-difficulty profile
-∩ operational constraints
-```
-
-Generator memakai constructive strategy, misalnya memilih akar dahulu untuk membentuk persamaan kuadrat. Random hanya memilih dari domain yang sudah valid.
-
-Difficulty dibedakan:
-
-- `intendedDifficulty`: target desain/AI sebelum digunakan;
-- `empiricalDifficulty`: hasil response pada populasi dan assessment tertentu.
-
-Mismatch adalah informasi perbaikan, bukan alasan otomatis mengganti Bloom.
-
-## 10. Item family dan variant
-
-```text
-Question parent
-    -> Item family
-        -> Item model v1
-            -> Variant A
-            -> Variant B
-        -> Item model v2
-            -> Variant C
-```
-
-Setiap variant menyimpan parameter snapshot, seed, generator version, transformation trace, answer verification, dan decision. Statistik per variant tidak boleh hilang karena family aggregation.
-
-Seluruh sibling satu family ditempatkan pada split dataset yang sama untuk mencegah leakage.
-
-## 11. Delivery dan scoring
-
-Student UI hanya menerima public item DTO:
-
-- delivery instance;
-- question text/media;
-- public option IDs;
-- sequence/timing.
-
-Kunci, solution trace, misconception code, internal option ID, family relation, dan model trace tidak dikirim. Response menggunakan `deliveryInstanceId`; correctness dihitung server.
-
-## 12. Response dan privacy
-
-Response event menyimpan pseudonymous subject hash, version join, selected internal mapping, score, timing, answer changes, dan flags. Ia tidak menyimpan NISN/nama/email siswa.
-
-Idempotency mencegah retry menggandakan event. Event dan decision history append-only.
-
-## 13. Psychometrics
-
-MVP memakai Classical Test Theory:
-
-- difficulty index dan confidence interval;
-- upper-lower discrimination;
-- corrected point-biserial jika total score tersedia;
-- distractor selection/efficiency;
-- median/IQR response time;
-- rapid-guess/anomaly rate.
-
-Analisis selalu terikat population, assessment family, content/variant version, dan time window. IRT adalah future extension setelah linking design dan data memadai.
-
-## 14. Feedback loop
-
-Psychometric evidence dapat memperbaiki:
-
-- range dan probability parameter;
-- difficulty profile;
-- distractor rule;
-- transformation policy;
-- item-quality/difficulty model heads.
-
-Ia tidak digunakan secara buta untuk mengubah Bloom/knowledge. Snapshot dengan bukti lemah tetap `observation_only`.
-
-## 15. Frontend copot-pasang
-
-Frontend hanya bergantung pada gateway, generated DTO, dan empat port:
-
-- teacher authoring;
-- extraction;
-- workflow status;
-- assessment delivery/response.
-
-UI prototype boleh dibongkar setelah consumer contract test tersedia. Internal service dan MongoDB tidak berubah ketika frontend diganti.
-
-## 16. MongoDB
-
-MongoDB sesuai untuk aggregate document dan event yang berkembang, tetapi fleksibilitasnya tidak menggantikan schema. Prinsip penyimpanan:
-
-- embed data kecil dan bounded;
-- reference history/event yang unbounded;
-- question identity dipisahkan dari immutable versions;
-- response/decision/snapshot append-only;
-- index unik dan compound mengikuti join key;
-- public DTO tidak sama dengan database document.
-
-Detail terdapat pada dokumen 17.
-
-## 17. Security
-
-Sebelum production diperlukan:
-
-- authentication/authorization dan ownership;
-- service identity internal;
-- MIME signature, antivirus, checksum, size limit;
-- server-side scoring dan identity;
-- rate limit/idempotency;
-- audit, retention, encryption, secret management;
-- prompt/input/output logging dengan redaction;
-- dependency/model supply-chain policy.
-
-## 18. Status implementasi
-
-| Area | Status |
-|---|---|
-| FastAPI extraction/classification | Prototype tersedia |
-| Express gateway dan MongoDB Question/Response | Prototype tersedia, schema lama |
-| Rules baseline | Tersedia sebagai advisory |
-| IndoBERT definition/training code | Ada; production artifact belum menjadi bukti siap |
-| CTT dasar | Prototype tersedia |
-| Teacher/student UI | Prototype/debug surface |
-| Human annotation/educator verification | Legacy; dikeluarkan dari target |
-| Async job, answer verifier, LLM ensemble/adjudicator | Target |
-| Controlled generation | Target |
-| Secure delivery/server scoring | Target |
-| Immutable version/event model | Target |
-| Psychometric feedback training/deployment automation | Target/future |
-
-## 19. MVP yang disarankan
-
-```text
-teacher authoring + versioning
-    -> submit job
-    -> deterministic validation + SymPy answer verification
-    -> limited taxonomy screening
-    -> 2-3 deterministic item families
-    -> delivery instance + server scoring
-    -> response events
-    -> CTT per version/variant
-```
-
-LLM isomorphic generation, full adjudication, multi-provider, IRT, and automated champion-challenger ditambahkan setelah vertical slice stabil.
-
-## 20. Klaim yang aman
-
-Sistem boleh disebut prototype controlled generation dan automated screening. Hindari klaim:
-
-- menggantikan pakar secara absolut;
-- menghasilkan gold label;
-- semua variant isomorfik;
-- difficulty universal;
-- semua 72 kombinasi telah valid;
-- psychometrics membuktikan Bloom;
-- semua endpoint target sudah terimplementasi.
-
+[TIMSS 2023 matematika](https://timssandpirls.bc.edu/timss2023/frameworks/pdf/T23_Frameworks_Ch1_Mathematics.pdf); [Framework AKM numerasi](https://pusmendik.kemdikbud.go.id/an/Framework_AKM_31032022.pdf); [Revised Bloom](https://eric.ed.gov/?id=EJ667155); [IndoBERT/IndoNLU](https://aclanthology.org/2020.aacl-main.85/); [Claude Messages API](https://platform.claude.com/docs/en/api/messages/create).

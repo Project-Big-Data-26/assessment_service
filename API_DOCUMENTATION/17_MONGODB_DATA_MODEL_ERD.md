@@ -1,5 +1,7 @@
 # Model Data MongoDB dan ERD Logis
 
+Alur proses dan peta tech stack yang memakai koleksi-koleksi ini ada pada [diagram end-to-end](20_END_TO_END_VALIDATION_FLOW.md).
+
 ## 1. Tujuan
 
 Dokumen ini mendefinisikan target collection MongoDB, atribut, hubungan, index, versioning, dan keputusan embed/reference untuk arsitektur pada dokumen 15-16.
@@ -33,6 +35,14 @@ erDiagram
     QUESTIONS ||--o{ QUESTION_VERSIONS : has
     QUESTION_VERSIONS ||--o{ WORKFLOW_RUNS : processed_by
     WORKFLOW_RUNS ||--o{ AI_DECISIONS : produces
+    USERS ||--o| EXPERT_PROFILES : may_have
+    EXPERT_PROFILES ||--o{ EXPERT_ANNOTATIONS : authors
+    QUESTION_VERSIONS ||--o{ EXPERT_ANNOTATIONS : reviewed_by
+    WORKFLOW_RUNS ||--o{ EXPERT_ANNOTATIONS : requests
+    QUESTION_VERSIONS ||--o{ EXPERT_DECISIONS : validated_by
+    WORKFLOW_RUNS ||--o| EXPERT_DECISIONS : finalizes
+    EXPERT_DECISIONS ||--|{ EXPERT_ANNOTATIONS : considers
+    AI_DECISIONS ||--o{ EXPERT_DECISIONS : compared_in
 
     QUESTION_VERSIONS ||--o{ ITEM_FAMILIES : seeds
     ITEM_FAMILIES ||--o{ ITEM_MODELS : defines
@@ -52,6 +62,148 @@ erDiagram
 ```
 
 Satu delivery menggunakan `questionVersion` langsung atau `itemVariant`. Jika memakai variant, variant tetap membawa lineage ke parent question version.
+
+### 3.1 Flow ekstraksi sampai validasi ahli dan psikometrik
+
+Ekstraksi membentuk **authoring candidate**. Sesudah validasi format dan jawaban, IndoBERT mengklasifikasikan tiga head, Claude mengolah hasilnya, lalu tiga annotator ahli mereview dengan penilaian awal blind. Psikometrik dijalankan setelah pilot. Seed dataset untuk melatih IndoBERT pertama kali harus dinilai ahli sebelum flow produksi ini dapat berjalan.
+
+```mermaid
+flowchart TD
+    A[Upload sumber<br/>PDF, gambar, JSON, CSV, TXT, atau LaTeX]
+    B[(source_assets<br/>checksum dan provenance)]
+    C{Security gate<br/>ukuran, ekstensi, MIME,<br/>malware, dan duplikasi}
+    C_FAIL[Reject atau quarantine source]
+    D[(extraction_jobs<br/>queued lalu running)]
+
+    subgraph EXTRACT[Ekstraksi multimodal]
+        E{Jenis sumber}
+        F[PDF text layer<br/>PyMuPDF]
+        G{Teks cukup dan terurut?}
+        H[Render halaman<br/>OCR ind dan eng]
+        I[Image OCR]
+        J[Structured parser]
+        K[Math region detection<br/>dan formula OCR]
+        L[Normalisasi konservatif<br/>teks, LaTeX, halaman, bbox,<br/>confidence, dan method]
+        M[Segmentasi nomor soal<br/>stem dan opsi A sampai H]
+        N[Crop visual per soal<br/>dan simpan preview reference]
+    end
+
+    O{Candidate dapat dibaca?}
+    O_FAIL[completed_with_warnings<br/>atau needs_manual_review]
+    P[Authoring candidate<br/>bukan Question final]
+    Q[Teacher memperbaiki hasil ekstraksi<br/>tanpa menetapkan label final]
+    R[(questions dan question_versions<br/>author_draft dengan source lineage)]
+    S[Submit dan kunci contentVersion]
+
+    subgraph PRECHECK[Validasi sebelum model]
+        T[Canonicalization<br/>dan deterministic validation]
+        U{Schema, opsi, LaTeX,<br/>duplikasi, dan range valid?}
+        U_FAIL[revision_required]
+        V[Answer verification<br/>rule atau symbolic solver]
+        W{Kunci dan solusi terbukti?}
+        W_FAIL[quarantined<br/>answer conflict]
+    end
+
+    subgraph AI[Pipeline AI berurutan]
+        X[Ekstraksi fitur deterministik<br/>KKO, format, representasi,<br/>kelas dan topik]
+        Y[IndoBERT multi-head<br/>Knowing Applying Reasoning;<br/>knowledge; intended difficulty]
+        Z[Claude memeriksa prediksi IndoBERT<br/>confirm revise abstain per head]
+        AC[(ai_decisions<br/>input, model, prompt dan rubric versions)]
+    end
+
+    subgraph HUMAN[Validasi ahli]
+        AD[Annotator A<br/>label dan rationale blind]
+        AE[Annotator B<br/>label dan rationale blind]
+        AF[Annotator C<br/>label dan rationale blind]
+        AG[Freeze 3 initial annotations<br/>hitung agreement per head]
+        AH[Review proposal IndoBERT dan Claude<br/>accept revise abstain per head]
+        AI3{Voting manusia 3-0 atau 2-1?}
+        AJ[expert_consensus<br/>catat dissent]
+        AK[Diskusi terstruktur<br/>atau senior adjudicator]
+        AK2{Konflik terselesaikan?}
+        AL[unresolved atau quarantined]
+    end
+
+    AM[Evaluasi IndoBERT dan Claude<br/>terhadap human gold<br/>Macro-F1, per-class F1,<br/>agreement, dan calibration]
+    AN{Lolos policy untuk pilot?}
+    AN_FAIL[revision_required<br/>atau model_review]
+    AO[pilot_active]
+    AP[(delivery_instances<br/>dan response_events)]
+    AQ[(psychometric_snapshots<br/>p dan CI, D, rpbis,<br/>distraktor, waktu, populasi)]
+    AR{Post-pilot decision}
+    AS[empirically_screened<br/>atau active]
+    AT{Perlu perubahan konten,<br/>opsi, kunci, atau solusi?}
+    AU[Buat contentVersion baru<br/>validasi lama menjadi superseded]
+    AV[quarantined atau retired]
+
+    A --> B --> C
+    C -- gagal --> C_FAIL
+    C -- lolos --> D --> E
+    E -- PDF --> F --> G
+    G -- ya --> L
+    G -- tidak --> H --> K --> L
+    E -- gambar --> I --> K
+    I --> L
+    E -- terstruktur --> J --> L
+    L --> M --> N --> O
+    O -- tidak --> O_FAIL
+    O -- ya --> P --> Q --> R --> S --> T --> U
+    U -- tidak --> U_FAIL
+    U -- ya --> V --> W
+    W -- tidak --> W_FAIL
+    W -- ya --> X --> Y --> Z --> AC
+    W -- versi yang sama --> AD
+    W -- versi yang sama --> AE
+    W -- versi yang sama --> AF
+    AD --> AG
+    AE --> AG
+    AF --> AG
+    AG --> AH
+    AC --> AH
+    AH --> AI3
+    AI3 -- ya --> AJ
+    AI3 -- tidak --> AK --> AK2
+    AK2 -- ya --> AJ
+    AK2 -- tidak --> AL
+    AC --> AM
+    AJ --> AM
+    AM --> AN
+    AN -- tidak --> AN_FAIL
+    AN -- ya --> AO --> AP --> AQ --> AR
+    AR -- bukti memadai dan stabil --> AS
+    AR -- statistik bermasalah --> AT
+    AT -- ya --> AU --> T
+    AT -- tidak dan dapat diterima --> AS
+    AT -- tidak tetapi risiko tinggi --> AV
+```
+
+Aturan keputusan flow:
+
+1. `extraction_jobs` hanya menghasilkan kandidat beserta provenance, confidence, warning, dan visual preview. Ekstraktor tidak menetapkan jawaban benar atau label kognitif.
+2. Teacher boleh memperbaiki teks hasil ekstraksi sebelum membuat `question_versions`, tetapi teacher tetap berperan sebagai author dan bukan annotator/adjudikator.
+3. KKO berada pada `features.lexical.detectedKKO`; IndoBERT membaca soal, solusi terverifikasi dan metadata. Claude menerima hasil IndoBERT dan mengembalikan usulan `confirm/revise/abstain`. Keduanya bukan pengukuran independen.
+4. Tiga annotator tidak melihat AI atau peer pada putaran awal. Ketiga initial annotation disimpan immutable; setelahnya pakar mereview usulan Claude.
+5. Keputusan `3-0` atau `2-1` dicatat per head. `1-1-1` atau abstention memerlukan diskusi/adjudikasi manusia; jika tetap tidak selesai, `unresolved` atau `quarantined`.
+6. Agreement dihitung dari tiga initial annotation sebelum hasil AI dibuka. Blind consensus menjadi gold untuk pelatihan/evaluasi IndoBERT; keputusan setelah review menjadi label operasional final, dan keduanya disimpan terpisah.
+7. Full expert validation berlaku untuk satu `contentVersion`. Perubahan stem, opsi, kunci, solusi, learning objective, atau metadata konstruk membuat version baru dan membatalkan keputusan lama.
+8. Psychometric snapshot tidak otomatis mengubah domain kognitif atau knowledge dimension. `intendedDifficulty` tetap dipisahkan dari `empiricalDifficulty` yang terikat populasi, assessment family, dan time window.
+9. Post-pilot decision selalu dicatat. Double-annotation penuh tidak perlu diulang jika konten tidak berubah dan statistik stabil; item yang direvisi kembali ke deterministic validation sebagai version baru.
+
+Pemetaan artefak ke collection:
+
+| Tahap | Collection utama | Bukti yang wajib disimpan |
+|---|---|---|
+| Upload dan security gate | `source_assets` | checksum, MIME terdeteksi, malware status, owner, object key |
+| Ekstraksi | `extraction_jobs` | engine manifest, page provenance, method, confidence, warning, candidate |
+| Perbaikan authoring | `questions`, `question_versions` | immutable content, source lineage, content hash |
+| Validasi dan answer verification | `workflow_runs` | stage event, policy version, error/routing |
+| IndoBERT lalu Claude | `ai_decisions` | fitur KKO, prediksi, proposal Claude, model/prompt/rubric version |
+| Tiga annotator ahli | `expert_annotations` | label blind dan hasil review AI per head, rationale, rubric version |
+| Consensus/adjudikasi | `expert_decisions` | input annotation IDs, disputed heads, final labels, rationale, adjudicator |
+| Pilot | `delivery_instances`, `response_events` | exact delivered version, server score, population, response time |
+| Psikometrik | `psychometric_snapshots` | sample manifest, p dan CI, discrimination, distractor, time, routing |
+
+`expert_annotations` dan `expert_decisions` adalah target reference collections baru. Keduanya tidak boleh di-embed sebagai array tanpa batas pada `questions`, karena mempunyai lifecycle, audit trail, dan query agreement sendiri.
 
 ## 4. Aturan embed versus reference
 
@@ -78,6 +230,9 @@ Keputusan utama:
 | Question content versions | Reference collection | Immutable history dan delivery join |
 | Options dan answerSpec satu version | EMBED dalam question version | Selalu dibaca bersama konten |
 | AI samples/decision history | Reference collection | Besar, sensitif, terus bertambah |
+| Expert profiles | Reference collection | Verifikasi expertise dan lifecycle independen dari account |
+| Initial expert annotations | Reference collection | Immutable, blind, dipakai menghitung agreement |
+| Expert consensus/adjudication | Reference collection | Final human decision harus terpisah dari AI decision |
 | Item-model constraints | EMBED dalam item model version | Satu kesatuan executable spec |
 | Response events | Reference collection | Volume tinggi, append-only |
 | Psychometric snapshots | Reference collection | Banyak population/time/version |
@@ -85,26 +240,26 @@ Keputusan utama:
 
 ## 5. `users`
 
-Menyimpan account/subject operasional untuk teacher dan system admin. Student identity sebaiknya dikelola identity/session provider; response event hanya menyimpan pseudonymous hash.
+Menyimpan account/subject operasional untuk teacher, expert reviewer, psychometrician, system admin, dan service account. Student identity sebaiknya dikelola identity/session provider; response event hanya menyimpan pseudonymous hash.
 
 | Field | Tipe | Aturan |
 |---|---|---|
 | `userId` | string | `PK`, `UK` |
 | `tenantId` | string | `IDX`, wajib jika multi-tenant |
-| `role` | enum | `teacher`, `system_admin`, `service_account` |
+| `roles` | array enum | teacher/expert_reviewer/psychometrician/system_admin/service_account |
 | `displayName` | string | Tidak disalin ke event analytics |
 | `authSubject` | string | `UK` per auth provider |
 | `status` | enum | `active`, `disabled` |
 | `createdAt`, `updatedAt` | date | Wajib |
 
-Tidak ada `verifiedExpertise` karena teacher bukan annotator.
+Status expertise tidak di-embed pada `users`. Hak untuk membuat annotation/adjudication memerlukan role yang sesuai dan `expert_profiles` aktif. Role teacher tidak otomatis memberikan hak tersebut; author item juga dilarang menjadi annotator untuk version yang sama.
 
 Index:
 
 ```javascript
 { userId: 1 } unique
 { authSubject: 1 } unique
-{ tenantId: 1, role: 1, status: 1 }
+{ tenantId: 1, roles: 1, status: 1 }
 ```
 
 ## 6. `source_assets`
@@ -169,8 +324,9 @@ Aggregate identity dan current read model; bukan tempat menyimpan seluruh histor
 | `status` | enum | Lifecycle target |
 | `currentWorkflowRunId` | string/null | REF workflow_runs |
 | `activeDecisionId` | string/null | REF ai_decisions |
+| `activeExpertDecisionId` | string/null | REF expert_decisions |
 | `summary` | EMBED object | subject, grade, topic, subtopic, type, short text |
-| `safeAiSummary` | EMBED object/null | Label/routing aman untuk teacher UI |
+| `safeAiSummary` | EMBED object/null | Proposal AI dan status review; tidak disebut label final sebelum expert decision |
 | `createdAt`, `updatedAt` | date | Wajib |
 
 Index:
@@ -216,12 +372,12 @@ Update dilarang setelah version dipakai workflow/delivery. Koreksi membuat versi
 |---|---|---|
 | `workflowRunId` | string | `PK`, `UK` |
 | `questionId`, `contentVersion` | scalar | `REF`, compound index |
-| `status` | enum | queued/running/succeeded/failed/quarantined |
-| `currentStage` | enum | canonicalization/validation/answer/screen/adjudication/routing |
+| `status` | enum | queued/running/awaiting_experts/succeeded/failed/quarantined |
+| `currentStage` | enum | canonicalization/validation/answer/feature_extraction/indobert/claude/expert_blind/expert_ai_review/expert_adjudication/routing |
 | `stageEvents` | array bounded | Stage summary dan timestamps |
 | `policyVersions` | object | Validation/risk/routing policies |
 | `idempotencyKey` | string | `UK` bersama command scope |
-| `terminalRouting` | string/null | provisional/revision/quarantine/reject |
+| `terminalRouting` | string/null | expert_validated/revision/quarantine/reject |
 | `createdAt`, `updatedAt`, `completedAt` | date | Lifecycle |
 
 Index:
@@ -243,13 +399,13 @@ Decision event immutable. Raw prompt/sample besar dapat dipisahkan ke restricted
 | `workflowRunId` | string | `REF`, `IDX` |
 | `questionId`, `contentVersion` | scalar | `REF`, compound index |
 | `answerVerification` | EMBED object | status, method, version, evidence ref |
-| `indobert` | EMBED object | labels, probabilities, entropy, margin, OOD, modelVersion |
-| `llmEnsemble` | EMBED object | aggregate, self-consistency, rubric/prompt/model manifests |
-| `agreement` | EMBED object | Per-head flags |
+| `featureManifest` | EMBED object | KKO pada lexical features, format, metadata, input/provenance hash |
+| `indobert` | EMBED object | tiga head, probabilities, entropy, margin, OOD, modelVersion |
+| `claudeProposal` | EMBED object | confirm/revise/abstain per head, evidence, rubric/prompt/model manifests |
+| `pipelineComparison` | EMBED object | Perubahan usulan IndoBERT oleh Claude; bukan agreement independen |
 | `risk` | EMBED object | Score, band, reasons, policyVersion |
-| `adjudication` | EMBED object/null | Attempts, final labels, abstention |
-| `decisionType` | enum | model_suggestion/ai_consensus/ai_adjudicated/quarantined |
-| `finalRouting` | enum | provisional/revision_required/quarantine/rejected |
+| `decisionType` | enum | indobert_prediction/claude_proposal/ai_processing_failed |
+| `finalRouting` | enum | pending_expert_review/revision_required/quarantine |
 | `createdAt` | date | Wajib |
 
 Index:
@@ -261,6 +417,99 @@ Index:
 { decisionType: 1, finalRouting: 1 }
 ```
 
+### 11A. `expert_profiles`
+
+Profil keahlian terpisah dari account. Verifikasi dilakukan oleh pihak berwenang berdasarkan bukti yang terdokumentasi; pakar tidak dapat memverifikasi dirinya sendiri.
+
+| Field | Tipe | Aturan |
+|---|---|---|
+| `expertProfileId` | string | `PK`, `UK` |
+| `userId`, `tenantId` | string | `REF users`, compound index |
+| `subjects` | array enum/string | Minimal memuat Matematika untuk workflow ini |
+| `gradeBands`, `curriculumScopes` | array | Ruang lingkup item yang boleh dinilai |
+| `qualificationEvidenceRefs` | array | Restricted references, bukan dokumen publik |
+| `rubricTraining` | array | rubricVersion, completedAt, calibration result |
+| `verificationStatus` | enum | pending/verified/suspended/expired |
+| `verifiedByUserId` | string/null | Tidak boleh sama dengan `userId` |
+| `validFrom`, `validUntil` | date/null | Masa berlaku |
+| `createdAt`, `updatedAt` | date | Wajib |
+
+Index:
+
+```javascript
+{ expertProfileId: 1 } unique
+{ tenantId: 1, userId: 1 } unique
+{ tenantId: 1, subjects: 1, gradeBands: 1, verificationStatus: 1 }
+```
+
+### 11B. `expert_annotations`
+
+Initial annotation per pakar dan `questionVersion` bersifat immutable. UI wajib menyembunyikan prediksi IndoBERT, usulan Claude dan annotation pakar lain sampai submission awal dikunci. Review AI kedua disimpan sebagai event baru, bukan menimpa initial annotation.
+
+| Field | Tipe | Aturan |
+|---|---|---|
+| `annotationId` | string | `PK`, `UK` |
+| `workflowRunId` | string | `REF workflow_runs`, `IDX` |
+| `questionId`, `contentVersion`, `questionVersionId` | scalar | Version binding, compound index |
+| `expertProfileId` | string | `REF expert_profiles`, `IDX` |
+| `assignmentRole` | enum | primary_a/primary_b/primary_c/senior_adjudicator |
+| `phase` | enum | blind_initial/ai_review/adjudication |
+| `labels` | object | mathCognitiveDomain, knowledgeDimension, intendedDifficulty |
+| `rationales` | object | Alasan terpisah per head |
+| `aiReview` | object/null | action accept/revise/abstain per head, previousAnnotationId, evidence |
+| `contentChecks` | object | answer, clarity, curriculum, distractors, bias/ambiguity flags |
+| `rubricVersion` | string | Wajib |
+| `blindProtocol` | object | aiHidden, peerAnnotationsHidden, protocolVersion |
+| `status` | enum | submitted/withdrawn/superseded |
+| `contentHash` | string | Harus sama dengan version yang dinilai |
+| `submittedAt` | date | Wajib |
+
+Index:
+
+```javascript
+{ annotationId: 1 } unique
+{ questionVersionId: 1, expertProfileId: 1, rubricVersion: 1, phase: 1 } unique
+{ workflowRunId: 1, assignmentRole: 1 }
+{ expertProfileId: 1, submittedAt: -1 }
+```
+
+Annotator A, B dan C harus menggunakan `expertProfileId` berbeda. `createdByUserId` pada `question_versions` tidak boleh sama dengan user pemilik expert profile yang menilai version tersebut. Koreksi annotation tidak melakukan update in-place; record baru mereferensikan annotation sebelumnya. Audit harus bisa memisahkan kesepakatan blind dari perubahan setelah melihat AI.
+
+### 11C. `expert_decisions`
+
+Final human decision dibentuk setelah tiga initial annotation dan tiga review AI tersedia. Agreement per item disimpan sebagai pola suara per head; Fleiss' kappa atau Krippendorff's alpha yang sesuai dan interval ketidakpastian dihitung pada kumpulan item, bukan pada satu item.
+
+| Field | Tipe | Aturan |
+|---|---|---|
+| `expertDecisionId` | string | `PK`, `UK` |
+| `workflowRunId` | string | `REF workflow_runs`, `UK` per run |
+| `questionId`, `contentVersion`, `questionVersionId` | scalar | Version binding |
+| `aiDecisionId` | string/null | `REF ai_decisions`; untuk review AI, bukan suara manusia |
+| `initialAnnotationIds` | array | Tepat tiga annotation blind dari pakar berbeda |
+| `aiReviewAnnotationIds` | array | Tepat tiga review AI, terkait masing-masing initial annotation |
+| `blindConsensusLabels` | object/null | Gold rujukan untuk training/evaluasi jika terselesaikan dari bukti blind |
+| `agreement` | object | pola 3-0/2-1/1-1-1 per head sebelum dan sesudah AI |
+| `decisionType` | enum | unanimous_consensus/majority_consensus/expert_adjudicated/unresolved |
+| `adjudicatorAnnotationId` | string/null | Diisi bila senior adjudicator diperlukan |
+| `disputedHeads` | array enum | mathCognitiveDomain/knowledgeDimension/intendedDifficulty/content/answer |
+| `finalLabels` | object/null | Null jika unresolved |
+| `finalContentChecks` | object | Hasil akhir pemeriksaan isi dan kunci |
+| `rationale` | string | Wajib untuk adjudicated/unresolved |
+| `rubricVersion`, `policyVersion` | string | Wajib |
+| `contentHash` | string | Mengikat keputusan ke version |
+| `createdAt` | date | Wajib, immutable |
+
+Index:
+
+```javascript
+{ expertDecisionId: 1 } unique
+{ workflowRunId: 1 } unique
+{ questionVersionId: 1, createdAt: -1 }
+{ decisionType: 1, createdAt: -1 }
+```
+
+`unanimous_consensus` berarti 3-0; `majority_consensus` berarti 2-1 dan menyimpan dissent. Konflik 1-1-1 memerlukan diskusi atau senior adjudicator. `unresolved` tidak mempunyai `finalLabels` dan selalu dirutekan ke quarantine atau revision. Konflik konten/kunci tetap blocker walaupun tiga head memiliki mayoritas.
+
 ## 12. `item_families`
 
 | Field | Tipe | Aturan |
@@ -269,7 +518,7 @@ Index:
 | `parentQuestionId`, `parentContentVersion` | scalar | `REF question_versions` |
 | `targetConstruct` | string | Wajib |
 | `learningObjective` | string | Wajib |
-| `taxonomyTarget` | EMBED object | Bloom/knowledge/intended difficulty |
+| `taxonomyTarget` | EMBED object | mathCognitiveDomain/knowledgeDimension/intendedDifficulty |
 | `status` | enum | draft/active/quarantined/retired |
 | `activeItemModelVersion` | integer/null | Pointer |
 | `createdAt`, `updatedAt` | date | Wajib |
@@ -495,9 +744,11 @@ Transisi state divalidasi application service:
 
 ```text
 Question:
-author_draft -> submitted -> processing
-    -> revision_required | quarantined | provisional
-    -> pilot_active -> empirically_screened -> active -> retired
+author_draft -> submitted -> processing -> pending_expert_review
+pending_expert_review -> expert_validated (voting manusia 3-0 atau 2-1)
+pending_expert_review -> needs_expert_adjudication (1-1-1, abstain atau konflik konten)
+needs_expert_adjudication -> expert_validated | revision_required | quarantined
+expert_validated -> provisional -> pilot_active -> empirically_screened -> active -> retired
 
 Variant:
 candidate -> provisional -> pilot -> empirically_screened
@@ -512,6 +763,8 @@ Operasi yang memerlukan transaction atau compare-and-set:
 
 - membuat question version dan memperbarui `currentContentVersion`;
 - membuat workflow run dan mengubah status question ke submitted;
+- mengunci tiga initial expert annotations dan tiga review AI tanpa menimpa bukti awal;
+- mengikat `activeExpertDecisionId` hanya jika content hash dan version masih sama;
 - membuat response event dan mengikat `deliveryInstance.responseId`;
 - mempromosikan active item/model version;
 - auto-unpublish berdasarkan psychometric snapshot.
@@ -532,26 +785,30 @@ Public schema tidak langsung digunakan sebagai database validator karena field i
 
 ## 25. Migration dari prototype
 
-Model prototype saat ini menempelkan `annotations`, `finalLabels`, dan `psychometricSnapshot` pada Question. Target migration:
+Model prototype lama menempelkan `annotations`, `finalLabels`, dan `psychometricSnapshot` pada Question. Target migration:
 
 1. buat `questions` identity/current read model;
 2. salin konten menjadi `question_versions` version 1;
 3. pertahankan `modelSuggestion` lama sebagai legacy decision event bila masih diperlukan;
-4. jangan migrasikan human annotation menjadi `ai_consensus`;
-5. pindahkan response ke join delivery/version baru atau tandai `legacy_unbound`;
-6. buat snapshot psikometrik terpisah dengan population/version metadata jika tersedia;
-7. nonaktifkan endpoint annotation dan educator verification pada frontend baru.
+4. pindahkan human annotation lama yang mempunyai provenance memadai ke `expert_annotations` sebagai `legacy_evidence`; jangan menyebutnya gold blind tiga pakar tanpa bukti;
+5. bentuk `expert_decisions` hanya jika identity, expertise, rubric version, blind protocol, dan version binding dapat dibuktikan; selain itu tandai sebagai legacy evidence;
+6. pindahkan response ke join delivery/version baru atau tandai `legacy_unbound`;
+7. buat snapshot psikometrik terpisah dengan population/version metadata jika tersedia;
+8. ganti self-verification educator lama dengan assignment tiga pakar yang diverifikasi oleh admin berwenang.
 
 ## 26. Checklist ERD implementasi
 
 - Business ID unik dan tidak memakai `_id` di public API.
 - Question identity dipisahkan dari immutable content version.
-- AI decision, response, dan psychometric snapshot tidak di-embed tanpa batas.
+- AI decision, expert annotation, expert decision, response, dan psychometric snapshot tidak di-embed tanpa batas.
 - Teacher ownership berasal dari auth context.
+- Author tidak dapat menjadi annotator untuk content version yang sama.
+- Tiga initial annotation berasal dari expert profile berbeda dan dikunci sebelum hasil AI/peer dibuka.
+- Konflik 1-1-1 tidak diselesaikan oleh confidence AI; gunakan diskusi/senior adjudicator atau quarantine.
+- Agreement dihitung dari initial annotations sebelum consensus/adjudication.
 - Kunci tidak berada pada delivery DTO.
 - Semua response terikat delivery instance.
 - Variant selalu mempunyai family/model/run/parent lineage.
 - Compound index mengikuti aggregation key.
 - Event penting append-only dan mempunyai provenance/version.
 - Backup, retention, encryption, dan access control ditetapkan per collection.
-

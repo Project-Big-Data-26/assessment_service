@@ -4,7 +4,7 @@
 
 Delivery API adalah satu-satunya jalur soal menuju student UI. Ia membentuk snapshot tetap, mengacak opsi di server, menyembunyikan kunci, dan menghubungkan response ke versi konten yang tepat.
 
-Teacher authoring UI tidak mengirim Question langsung ke student UI. Hanya item `provisional` atau `empirically_screened` yang memenuhi assessment policy dapat dipilih assembly service.
+Teacher authoring UI tidak mengirim Question langsung ke student UI. Pilot hanya memakai item yang memiliki `expertDecision` valid untuk `contentVersion` yang dikirim. Item `provisional` atau `empirically_screened` dipilih assembly service sesuai policy; status AI saja tidak cukup.
 
 ## 2. Membuka session
 
@@ -86,7 +86,7 @@ Refresh halaman mengambil snapshot yang sama. Sistem tidak membuat parameter ata
 Pemilihan item mempertimbangkan:
 
 - grade/topic/subtopic blueprint;
-- target taxonomy dan intended difficulty;
+- target domain kognitif matematika, knowledge dimension dan intended difficulty;
 - empirical information jika tersedia;
 - item-family diversity;
 - exposure limit;
@@ -118,5 +118,4 @@ Student UI hanya bergantung pada interface tersebut. Ia tidak mengimpor seed lok
 
 ## 8. Status implementasi
 
-Student UI prototype masih memakai seed lokal dan client-side correctness. Session, delivery instance, public option mapping, server-side scoring, exposure control, dan assembly policy adalah target.
-
+Student UI lama pada `project_assessment` sudah dihapus. Session, delivery instance, public option mapping, server-side scoring, exposure control, dan assembly policy adalah target yang belum tersedia di repo Python.

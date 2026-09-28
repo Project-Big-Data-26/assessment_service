@@ -1,74 +1,33 @@
-# Nalar — tahap authoring soal lokal
+# Nalar — prototype pemrosesan soal matematika
 
-Repository ini menggabungkan FastAPI untuk ekstraksi/klasifikasi dan Express untuk API authoring. UI React pada `project_assessment/frontend` saat ini adalah studio input soal teacher sekaligus alat uji ekstraksi PDF. Kontrak target yang lebih luas ada di `API_DOCUMENTATION/`; tidak semua subsistem target sudah diimplementasikan.
+Repo aktif ini menyediakan **FastAPI Python** untuk ekstraksi, pemeriksaan jawaban terbatas, klasifikasi prototype, dan analisis CTT dasar. UI/gateway lama di `project_assessment` sudah tidak ada. Desain produk berikutnya dijelaskan di [API_DOCUMENTATION/00_README.md](API_DOCUMENTATION/00_README.md); kontrak di sana bertanda **target**, bukan endpoint yang sudah berjalan.
 
-## Menjalankan di Windows
+Lihat [diagram alur lengkap dan peta tech stack](API_DOCUMENTATION/20_END_TO_END_VALIDATION_FLOW.md) untuk urutan dari penyiapan gold dataset sampai keputusan sesudah pilot.
 
-Prasyarat: Python 3.12 dan Node.js. Jika belum ada virtual environment/dependensi, siapkan sekali dari root repository:
+## Menjalankan prototype lokal
+
+Prasyarat: Python 3.12 dan dependensi dalam [requirements.txt](requirements.txt). Dari root repo:
 
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-Set-Location project_assessment/backend; npm install
-Set-Location ../frontend; npm install
-Set-Location ../..
-```
-
-Lalu gunakan tiga terminal dari root repository:
-
-```powershell
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --port 8000
 ```
 
-```powershell
-Set-Location project_assessment/backend
-npm start
-```
+Buka `http://127.0.0.1:8000/docs` untuk kontrak **yang benar-benar tersedia**. Route Python meliputi `/health`, `/v1/model-info`, `/v1/extraction-info`, `/v1/verify-answer`, `/v1/classify`, dan `/v1/extract`. Endpoint gateway `/api/v1/...` dalam dokumen adalah rancangan migrasi. Menjalankan prototype tidak memerlukan MongoDB atau Claude.
 
-```powershell
-Set-Location project_assessment/frontend
-npm run dev
-```
+## Arsitektur yang disepakati, belum terimplementasi penuh
 
-Vite menampilkan alamat UI dan meneruskan `/api` ke Express pada port 5000. Authoring tidak memerlukan MongoDB. ID teacher lokal default adalah `local-teacher`; untuk menggantinya gunakan `LOCAL_TEACHER_ID` di environment backend. Jalankan satu proses gateway saja untuk file store ini. Ini bukan autentikasi multi-user atau konfigurasi produksi.
+Guru mengoreksi hasil ekstraksi; versi soal yang sudah lolos pemeriksaan format/kunci diprediksi oleh IndoBERT pada tiga head: domain kognitif matematika `knowing/applying/reasoning`, dimensi pengetahuan `factual/conceptual/procedural/metacognitive`, dan intended difficulty `Easy/Medium/Hard`. KKO hanya fitur leksikal. Claude mengaudit hasil IndoBERT secara berurutan, kemudian **tiga ahli matematika** memberi label blind dan review AI. Keputusan manusia yang sah mendahului pilot; data respons pilot memberi bukti psikometrik dan bukan pengganti validasi konten. Baca [arsitektur rinci](API_DOCUMENTATION/15_AUTONOMOUS_AI_PSYCHOMETRIC_LEARNING_ARCHITECTURE.md) dan [rubrik](API_DOCUMENTATION/14_TAXONOMY_6X4X3_MAP.md).
 
-## Alur yang sudah tersedia
+Kode `app/classification/indobert.py`, `app/training/train.py`, dan konfigurasi model masih memakai label Bloom C1–C6. **Jangan** menggunakan endpoint prototype sebagai implementasi kontrak 3 × 4 × 3 atau memberi izin pilot otomatis.
 
-Teacher membuat draft, menyimpannya ke `data/local/`, mengedit dengan versi konten baru, lalu submit. Express membuat workflow run yang bisa dipoll. Worker lokal melakukan validasi struktur, mencoba verifikasi jawaban aritmetika terbatas, memanggil IndoBERT dan LLM independen, membandingkan label, lalu menjalankan risk gate. Kegagalan layanan AI tidak menghapus draft dan tidak menaikkan statusnya ke `provisional`. PDF analyzer tetap tersedia pada tab terpisah.
+## Claude dan MongoDB
 
-File di `data/local/` diabaikan Git. Soal yang ditulis di UI bukan dataset training otomatis. Jika isi folder ini penting, lakukan backup sendiri sebelum memindahkan atau menghapusnya.
+[.env.example](.env.example) mencantumkan **nama variabel target** `ANTHROPIC_API_KEY`, `CLAUDE_MODEL`, `MONGODB_URI`, dan `AI_SERVICE_URL`. Belum ada loader/adapter Claude atau koneksi MongoDB aktif di Python. Instalasi CLI `claude` bukan bukti backend dapat memanggil Claude API. Jangan menaruh token atau URI berkredensial dalam Git; gunakan secret store untuk deployment. Tidak ada `.env` atau URI database aktual dari folder lama untuk dipindah. Lihat [panduan Claude](API_DOCUMENTATION/18_CLAUDE_PROVIDER_SETUP.md).
 
-## Agar keputusan AI sungguhan dapat selesai
-
-- Sediakan artefak IndoBERT hasil fine-tuning di `models/indobert-multitask-v1/` (`manifest.json`, `model.pt`, `tokenizer/`). Model demo atau baseline rules tidak boleh menghasilkan `provisional`. Manifest hasil training dimulai dengan `approved_for_provisional: false`; approval baru dilakukan setelah evaluasi dataset dan kualitas model secara terpisah, bukan hanya karena training selesai.
-- Adapter LLM telah dikonfigurasi untuk Gemini 3.8 Flash melalui endpoint OpenAI-compatible. Buat API key di Google AI Studio, buka `project_assessment/backend/.env`, lalu isi hanya nilai `GEMINI_API_KEY`. File `.env` diabaikan Git; jangan mengirim atau memasukkan key ke dokumentasi/source code.
-- Tetapkan ambang confidence dan konsistensi per-head dari evaluasi pada `configs/ai_risk_policy.json`, lalu setujui kebijakan tersebut. File ini secara default belum disetujui; angka ambang tidak boleh dianggap universal.
-- Verifier deterministik saat ini hanya mengenali ekspresi aritmetika sederhana. Soal lain memerlukan solver LLM; bila jawaban tidak bisa dibuktikan stabil, soal dikarantina.
-
-Setelah key diisi, uji koneksi tanpa menjalankan seluruh workflow:
-
-```powershell
-Set-Location project_assessment/backend
-npm run llm:check
-```
-
-Output berhasil hanya menampilkan provider, nama model, dan latency; API key tidak dicetak. Gemini memakai strict JSON Schema untuk solver, taxonomy screening, dan adjudicator. Saat ini ketiganya memakai `gemini-3.8-flash`, sampling screening `N=3`, dan reasoning effort `low`. Konfigurasi dapat diubah melalui `.env` setelah tersedia hasil evaluasi.
-
-Untuk menjalankan evaluasi terkontrol solver, screening `N=3`, dan adjudicator:
-
-```powershell
-Set-Location project_assessment/backend
-npm run llm:smoke
-```
-
-Runner memberi jarak request secara otomatis untuk proyek berkuota rendah, menggunakan retry terbatas, dan menyimpan hasil tanpa API key ke `data/local/evaluations/`. Hasil run 27 September 2026 didokumentasikan pada [`API_DOCUMENTATION/19_GEMINI_SMOKE_EVALUATION.md`](API_DOCUMENTATION/19_GEMINI_SMOKE_EVALUATION.md). Gemini menunjukkan hasil solver yang benar dan konsisten, tetapi kuota aktif belum cukup untuk menyelesaikan screening dan adjudication; integrasi belum boleh dipakai untuk keputusan `provisional`.
-
-MongoDB, Redis, delivery siswa, psikometrik, dan generator variasi belum termasuk tahap ini. Endpoint lama di luar jalur authoring dapat tetap bersifat prototype.
-
-## Tes
+## Tes prototype
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
-Set-Location project_assessment/backend; npm test
-Set-Location ../frontend; npm run build
 ```

@@ -2,14 +2,14 @@
 
 ## 1. Prinsip boundary
 
-Frontend hanya mengakses **Express API Gateway**. Browser tidak memanggil FastAPI, model provider, Redis worker, atau MongoDB secara langsung.
+Pada arsitektur target, frontend hanya mengakses **API Gateway**. Browser tidak memanggil FastAPI, Claude, Redis worker, atau MongoDB secara langsung. Implementasi Express lama berada di folder `project_assessment` yang sudah tidak ada di worktree; pemilihan runtime gateway baru masih keputusan implementasi.
 
 ```text
 Teacher UI / Student UI / Future Frontend
                   |
                   | HTTPS /api/v1
                   v
-          Express API Gateway
+             API Gateway
  auth | authorization | AJV | rate limit | public DTO | error mapping
           |              |               |
           v              v               v
@@ -34,7 +34,9 @@ Konsekuensinya:
 |---|---|---|
 | `teacher` | Membuat, mengubah, mengimpor, dan submit authoring draft miliknya; melihat status | Menetapkan label final, adjudikasi, override gate, mengirim item langsung ke siswa |
 | `student` | Membuka assessment session dan mengirim jawaban | Membaca kunci, internal option mapping, solution trace, atau AI decision |
-| `ai_service` | Ekstraksi, answer verification, klasifikasi, agreement, adjudikasi otomatis | Mengubah authoring content tanpa provenance/version |
+| `ai_service` | Ekstraksi, answer verification, IndoBERT, Claude proposal | Menetapkan gold atau label final tanpa ahli |
+| `expert_reviewer` | Tiga pakar memberi label blind dan mereview proposal Claude per versi | Menilai item sendiri, melihat AI/peer sebelum blind submission dikunci |
+| `senior_adjudicator` | Menyelesaikan 1-1-1 atau konflik konten yang belum selesai | Menimpa initial annotation |
 | `psychometric_worker` | Mengagregasi response dan membuat immutable snapshot | Mengubah response event lama |
 | `system_admin` | Operasional service/model, quarantine inspection, rollback | Menjadi sumber label pedagogis hanya karena role admin |
 
@@ -49,7 +51,8 @@ Identity diperoleh dari access token/session. Field seperti `teacherId`, `role`,
 | Extractions | `/api/v1/extractions` | Import file menjadi authoring candidate |
 | AI screens | `/api/v1/ai` | Screening/debug dan informasi model |
 | Workflow runs | `/api/v1/workflow-runs` | Status pipeline otomatis |
-| AI decisions | `/api/v1/ai-decisions` | Agreement, risk, dan adjudication result |
+| AI decisions | `/api/v1/ai-decisions` | Prediksi IndoBERT dan proposal Claude |
+| Expert annotations/decisions | `/api/v1/expert-annotations`, `/api/v1/expert-decisions` | Penilaian blind, review AI dan keputusan manusia |
 | Item models/families/variants | `/api/v1/item-models`, `/item-families`, `/variants` | Controlled generation |
 | Assessments/sessions | `/api/v1/assessments`, `/sessions` | Assembly dan delivery snapshot |
 | Responses | `/api/v1/responses` | Event jawaban yang terikat delivery instance |
@@ -60,7 +63,7 @@ Identity diperoleh dari access token/session. Field seperti `teacherId`, `role`,
 | Lingkungan | Gateway publik | Internal AI |
 |---|---|---|
 | Lokal | `http://localhost:5000/api/v1` | `http://localhost:8000` |
-| Docker | `http://backend:5000/api/v1` | `http://ai:8000` |
+| Docker target | Ditentukan deployment gateway baru | `http://ai:8000` bila nama service `ai` dipakai |
 | Frontend | `VITE_API_URL` atau `/api/v1` | tidak digunakan browser |
 
 ## 5. Public DTO dan penamaan
@@ -147,9 +150,9 @@ Semua endpoint target memakai bentuk yang sama:
 
 - Breaking API change memakai prefix baru.
 - Authoring revision menaikkan `contentVersion`.
-- Setiap workflow, AI decision, delivery, response, dan psychometric snapshot menyimpan versi konten yang dipakai.
+- Setiap workflow, AI decision, expert annotation/decision, delivery, response, dan psychometric snapshot menyimpan versi konten yang dipakai.
 - Active item tidak ditimpa. Revisi membuat version baru; delivery lama tetap dapat direproduksi.
-- Response event dan decision event bersifat append-only.
+- Response event, penilaian blind, review pakar dan decision event bersifat append-only.
 
 Join key minimum:
 
@@ -187,7 +190,8 @@ GET /api/v1/capabilities
   "features": {
     "extraction": true,
     "questionGeneration": false,
-    "llmAdjudication": false,
+    "claudePostprocessing": false,
+    "threeExpertReview": false,
     "psychometrics": true
   },
   "contracts": {
@@ -196,4 +200,3 @@ GET /api/v1/capabilities
   }
 }
 ```
-

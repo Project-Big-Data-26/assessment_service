@@ -32,6 +32,12 @@ export interface WorkflowPort {
   get(runId: string): Promise<WorkflowRun>;
 }
 
+export interface ExpertReviewPort {
+  submitBlind(input: BlindAnnotation, idempotencyKey: string): Promise<ExpertAnnotation>;
+  reviewAi(annotationId: string, input: AiReview, idempotencyKey: string): Promise<ExpertAnnotation>;
+  getDecision(decisionId: string): Promise<ExpertDecision>;
+}
+
 export interface AssessmentPort {
   start(assessmentId: string, idempotencyKey: string): Promise<AssessmentSession>;
   nextItem(sessionId: string): Promise<DeliveredItem>;
@@ -80,13 +86,16 @@ idle
           -> version_conflict
   -> submitting
       -> processing(job polling)
+          -> pending_expert_review
+          -> needs_expert_adjudication
+          -> expert_validated
           -> provisional
           -> revision_required
           -> quarantined
           -> failed
 ```
 
-`revision_required` menampilkan warning dan membuka editor versi baru. UI tidak menampilkan tombol "approve label" atau "adjudicate".
+`revision_required` menampilkan warning dan membuka editor versi baru. UI teacher tidak menampilkan tombol "approve label" atau "adjudicate". UI khusus pakar menyembunyikan prediksi AI/peer sampai blind submission terkunci, kemudian menampilkan proposal Claude untuk review per head.
 
 ## 5. Extraction state
 
@@ -136,6 +145,7 @@ src/
     extraction-import/
     student-assessment/
     status-dashboard/
+    expert-review/
   shared/
     MathText/
     ErrorNotice/
@@ -168,7 +178,7 @@ if (capabilities.features.questionGeneration) {
 ## 10. Cara mengganti frontend
 
 1. Generate/import public types.
-2. Implementasikan empat port utama.
+2. Implementasikan lima port utama, termasuk ExpertReviewPort pada aplikasi pakar.
 3. Jalankan consumer contract tests.
 4. Uji state terminal dan error envelope.
 5. Uji teacher ownership dan student key isolation.
@@ -177,7 +187,7 @@ if (capabilities.features.questionGeneration) {
 
 ## 11. Migration dari prototype
 
-Prototype saat ini memakai seed lokal dan client-side correctness. Sebelum frontend baru dipasang:
+Frontend prototype `project_assessment` sudah dihapus; struktur di atas adalah target. Sebelum frontend baru dipasang:
 
 - hapus import seed dari production path;
 - pindahkan seluruh network call ke adapter;
@@ -185,5 +195,4 @@ Prototype saat ini memakai seed lokal dan client-side correctness. Sebelum front
 - gunakan job polling;
 - gunakan delivery instance;
 - hilangkan `isCorrect` dari request browser;
-- jangan bergantung pada field legacy `annotations`, `finalLabels`, atau educator verification.
-
+- jangan bergantung pada field legacy `annotations`, `finalLabels`, atau educator verification; gunakan `expert_annotations` dan `expert_decisions` baru.

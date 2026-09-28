@@ -1,142 +1,96 @@
-# AI Taxonomy Screening API
+# Classification API: IndoBERT → Claude
 
-## 1. Tujuan
+## 1. Kontrak dan status
 
-Classification API menghasilkan evidence terstruktur untuk Bloom, knowledge dimension, dan intended difficulty. Hasilnya bukan gold label dan tidak ditetapkan teacher.
+Klasifikasi target adalah urutan `canonical item → validasi format/kunci → IndoBERT → Claude`. Hasil kedua model tetap usulan; keputusan final memerlukan tiga annotator manusia pada [dokumen 05](05_AI_DECISION_ARBITRATION_API.md). Implementasi Python yang tersedia masih memakai head Bloom 6 kelas dan baseline berbasis kata; kontrak 3 × 4 × 3 di bawah **belum terimplementasi**.
 
-Pipeline target memakai dua jalur independen:
-
-```text
-canonical question
-    |-- IndoBERT multi-head
-    `-- LLM rubric ensemble
-             |
-             v
-      agreement/risk engine
-```
-
-Konflik diteruskan ke automated LLM adjudication pada dokumen 05.
-
-## 2. Endpoint
-
-Endpoint target service/debug:
+Endpoint target internal/debug:
 
 ```http
-POST /api/v1/ai/classify-question
+POST /api/v1/internal/ai-decisions/screen
 GET  /api/v1/ai/model-info
 ```
 
-Pada alur normal, frontend tidak perlu memanggil klasifikasi secara langsung. `POST /questions/{questionId}/submit` membuat workflow yang memanggil service internal dan menyimpan decision event.
+Workflow normal dipicu `POST /api/v1/questions/{questionId}/submit`. UI tidak menyuplai label, fitur pakar, atau confidence model.
 
-## 3. Request
+## 2. Input dan provenance
+
+Input dibentuk server dari `questionId + contentVersion + contentHash` yang terkunci. Format terdiri dari stem, opsi atau response prompt, kunci dan solusi **terverifikasi**, kelas/fase, topik, tujuan belajar, tipe respons, serta teks hasil OCR dengan rujukan visual. Jika solusi belum ada, jangan mengarangnya; catat `solutionUnavailable` dan jalankan kebijakan abstention/review. IndoBERT tekstual tidak memahami gambar yang tidak memiliki representasi teks; item visual dengan transkripsi tidak memadai diarahkan ke review.
 
 ```json
 {
   "questionId": "Q-001",
   "contentVersion": 2,
-  "questionText": "Jika $x^2+5x+6=0$, tentukan akar-akarnya.",
-  "questionType": "multiple_choice",
-  "options": ["$-2$ dan $-3$", "$2$ dan $3$"],
-  "subject": "Matematika",
-  "grade": 10,
-  "topic": "Aljabar",
-  "subtopic": "Persamaan Kuadrat",
-  "learningObjective": "Menerapkan pemfaktoran",
-  "normalizedLatex": ["x^2+5x+6=0"]
+  "grade": 8,
+  "topic": "SPLDV",
+  "responseFormat": "multiple_choice",
+  "stem": "Perhatikan dua cara penyelesaian berikut...",
+  "options": [{"id": "a", "text": "..."}, {"id": "b", "text": "..."}],
+  "verifiedAnswer": {"optionIds": ["b"]},
+  "verifiedSolution": "Langkah kedua tidak ekuivalen karena ...",
+  "representations": ["text", "equation"]
 }
 ```
 
-Request service internal harus berasal dari canonical question snapshot, bukan body mentah browser.
+Kunci dan solusi dipakai untuk membaca tuntutan tugas, bukan sebagai jawaban label. Jika solusi berasal dari manusia, provenance dan status verifikasinya harus dicatat. Sampel Claude yang mengolah prediksi tidak boleh dipakai untuk membuat solusi input IndoBERT pada run yang sama.
 
-## 4. Respons screening
+## 3. Fitur sebelum IndoBERT
+
+| Kelompok | Contoh | Penggunaan |
+|---|---|---|
+| Teks | Stem, opsi, solusi terverifikasi | Input inti encoder |
+| Kurikulum | Kelas, fase, topik, tujuan | Konteks, khususnya difficulty |
+| Format dan representasi | Multiple choice, true/false, matching, checkbox, numeric, essay, grafik/tabel/rumus | Menjelaskan tugas dan bukti yang tersedia |
+| Linguistik deterministik | KKO, negasi, kuantifier, permintaan alasan, panjang teks | Audit; input eksplisit hanya bila eksperimen membuktikan manfaat |
+| Fitur pakar | Rutinitas, alasan domain, objek pengetahuan | Audit dan gold annotation; bukan input bila tidak tersedia otomatis saat inferensi |
+
+KKO disimpan sebagai `features.lexical.detectedKKO`. Pada baseline, IndoBERT sudah membaca kata tersebut di stem. Varian `[KKO]` diuji terpisah; tidak ada aturan `kata → label`. KKO terutama dapat membantu Head 1 dan tidak menetapkan Head 2 atau Head 3.
+
+## 4. Tiga head
+
+```text
+IndoBERT shared encoder
+  ├─ mathCognitiveDomain: knowing | applying | reasoning
+  ├─ knowledgeDimension: factual | conceptual | procedural | metacognitive
+  └─ intendedDifficulty: Easy | Medium | Hard
+```
+
+Rubrik per head berada di [dokumen 14](14_TAXONOMY_6X4X3_MAP.md). Difficulty adalah penilaian awal yang terikat populasi sasaran; versi pertama dapat memakai klasifikasi tiga kelas dan membandingkannya dengan ordinal loss sebagai eksperimen. Setiap head menyimpan label, distribusi probabilitas, entropy/margin, status kalibrasi, OOD flag dan versi model. Confidence mentah bukan jaminan kebenaran.
+
+Contoh output:
 
 ```json
 {
-  "questionId": "Q-001",
-  "contentVersion": 2,
   "decisionId": "AID-001",
-  "status": "screened",
-  "predictions": {
-    "bloom": {
-      "label": "C3",
-      "confidence": 0.84,
-      "entropy": 0.31,
-      "margin": 0.42
+  "indobert": {
+    "modelVersion": "indobert-math-3x4x3-v1",
+    "labels": {
+      "mathCognitiveDomain": "reasoning",
+      "knowledgeDimension": "procedural",
+      "intendedDifficulty": "Medium"
     },
-    "knowledgeDimension": {
-      "label": "procedural",
-      "confidence": 0.79,
-      "entropy": 0.38,
-      "margin": 0.34
+    "confidence": {
+      "mathCognitiveDomain": 0.78,
+      "knowledgeDimension": 0.69,
+      "intendedDifficulty": 0.61
     },
-    "intendedDifficulty": {
-      "label": "Medium",
-      "confidence": 0.68,
-      "entropy": 0.52,
-      "margin": 0.18
-    }
-  },
-  "ood": {"detected": false, "score": 0.11},
-  "model": {
-    "classifier": "indobert_multi_head",
-    "version": "indobert-taxonomy-0.3.0"
-  },
-  "warnings": []
-}
-```
-
-Confidence adalah output model yang harus dikalibrasi. Ia bukan probability bahwa label pasti benar.
-
-## 5. LLM ensemble output
-
-Setiap sampling LLM tahap lokal mengikuti strict schema berikut:
-
-```json
-{
-  "bloom": "C3",
-  "knowledgeDimension": "procedural",
-  "intendedDifficulty": "Medium",
-  "evidence": "Peserta menerapkan prosedur pemfaktoran untuk memperoleh akar."
-}
-```
-
-LLM utama tidak melihat prediksi IndoBERT. Sampling disimpan sebagai decision event, lalu aggregator menghitung vote/self-consistency per head.
-
-## 6. Model info
-
-```http
-GET /api/v1/ai/model-info
-```
-
-```json
-{
-  "taxonomyClassifier": {
-    "type": "rules_baseline",
-    "artifactReady": false,
-    "version": "rules-0.1.0"
-  },
-  "llmEnsemble": {
-    "configured": false
-  },
-  "answerVerifier": {
-    "sympyReady": false
+    "ood": {"detected": false}
   }
 }
 ```
 
-UI boleh menampilkan status kemampuan, tetapi tidak boleh mengubah workflow berdasarkan nama provider tertentu.
+## 5. Pelatihan awal dan evaluasi
 
-## 7. Keputusan dan batas klaim
+Sebelum model versi pertama, kumpulkan seed dataset yang dinilai tiga pakar matematika secara blind memakai rubrik berversi. Bekukan penilaian awal; konsensus/adjudikasi manusia membentuk gold. Setelah split berdasarkan sumber dan keluarga soal, fine-tune IndoBERT pada train saja. Periksa class coverage, kualitas OCR/solusi, error tiap format/topik, macro-F1, F1 per kelas, confusion matrix dan kalibrasi pada test beku. Perbandingan fitur: stem+opsi; tambah metadata; tambah solusi terverifikasi; lalu tambah KKO eksplisit. Challenge set harus memuat KKO yang sama dengan label berbeda. Tidak ada klaim siap produksi hanya karena training selesai.
 
-- Satu prediksi adalah `model_suggestion`.
-- Stable LLM vote tetap bukan gold.
-- IndoBERT-LLM agreement yang lolos risk gate adalah `ai_consensus`.
-- Disagreement yang selesai melalui LLM adjudicator adalah `ai_adjudicated`.
-- Unresolved disagreement adalah `quarantine_ai_conflict`.
-- Difficulty pada tahap ini adalah `intendedDifficulty`; difficulty empiris berasal dari response data.
+Landasan model: [IndoNLU/IndoBERT](https://aclanthology.org/2020.aacl-main.85/), [BERT fine-tuning](https://aclanthology.org/N19-1423/), [TIMSS 2023](https://timssandpirls.bc.edu/timss2023/frameworks/pdf/T23_Frameworks_Ch1_Mathematics.pdf).
 
-## 8. Status implementasi
+## 6. Claude sebagai pengolah hasil
 
-FastAPI classification/rules baseline dan definisi training IndoBERT tersedia. Express telah memiliki adapter Gemini 3.8 Flash untuk solver, independent taxonomy ensemble, dan automated adjudicator melalui endpoint OpenAI-compatible. Setiap peran memakai strict JSON Schema, timeout, retry terbatas, sampling N=3/N=5, serta menyimpan model/prompt/rubric version pada decision lokal.
+Claude menerima item yang sama, prediksi dan probabilitas IndoBERT, serta rubrik. Claude memeriksa bukti per head, dapat mengonfirmasi, merevisi, atau abstain, lalu mengembalikan JSON tervalidasi schema. Simpan `indobertLabels`, `claudeProposedLabels`, `actionPerHead`, `evidenceSpans`, alasan, model ID, prompt/rubric version, response ID, latency dan error. Panggilan berulang, bila dipakai, mengukur self-consistency Claude; bukan suara annotator.
 
-Adapter dianggap aktif hanya jika `GEMINI_API_KEY` tersedia secara lokal. API key tidak disimpan pada repository. Artefak IndoBERT layak-provisional, calibrated uncertainty/OOD, reference-set evaluation, dan risk policy yang disetujui masih belum tersedia; karena itu integrasi Gemini saja belum membuat soal boleh berstatus `provisional`.
+Claude melihat hasil IndoBERT sehingga kedua keluaran **bukan pengukuran independen**. Evaluasi terpisah melaporkan IndoBERT saja dan pipeline IndoBERT→Claude terhadap gold blind. Jika provider gagal, keputusan tidak dinaikkan menjadi final. Parameter API aktif berasal dari environment/config, tanpa nama model hard-coded di kontrak. Lihat [dokumen 18](18_CLAUDE_PROVIDER_SETUP.md).
+
+## 7. Batas implementasi
+
+`app/classification/indobert.py`, `app/training/train.py` dan `configs/model_config.yaml` masih memakai Bloom 6 kelas pada prototype. Bundle JSON Schema di folder dokumentasi sudah menggambarkan **target** 3 × 4 × 3, tetapi belum terhubung ke runtime. Migrasi kode, artefak, dan kontrak API aktif diperlukan sebelum endpoint ini mengklaim perilaku baru. Folder `project_assessment` lama tidak lagi menyediakan gateway Gemini. Dokumen target tidak membuktikan akses Claude API sudah berfungsi.

@@ -2,7 +2,7 @@
 
 ## 1. Tujuan
 
-Psychometric service mengukur perilaku empiris item. Ia tidak membuktikan Bloom atau knowledge dimension. Analisis dilakukan per version, population, assessment family, varian, dan item family.
+Psychometric service target mengukur perilaku empiris item **sesudah pilot** terhadap populasi sasaran. Ia tidak membuktikan `mathCognitiveDomain` atau `knowledgeDimension`. Pilot hanya menerima `contentVersion` dengan keputusan tiga ahli yang valid; analisis selalu diikat ke version, population, assessment family, varian, dan item family.
 
 ## 2. Endpoint target
 
@@ -100,16 +100,16 @@ stable and acceptable
     -> empirically_screened
 
 severe answer/discrimination/distractor flags
-    -> auto_unpublish + quarantined
+    -> hold_delivery + expert_content_review
 
 variant bad, family rule repairable
     -> needs_regeneration
 
-repeated failure
-    -> retired
+confirmed item defect or repeated failure
+    -> revision_required / quarantined / retired
 ```
 
-Threshold seperti minimum N, CI width, p category, dan discrimination cutoff berada dalam `policyVersion`, bukan di-hardcode pada frontend. Contoh kategori pada dokumentasi adalah default eksperimen, bukan hukum universal.
+Threshold seperti minimum N, CI width, p category, dan discrimination cutoff berada dalam `policyVersion`, bukan di-hardcode pada frontend. Statistik yang buruk memicu pemeriksaan populasi, pengajaran, sampling, kunci dan distraktor. Perubahan stem, opsi, kunci atau solusi membuat `contentVersion` baru dan mengulang validasi format, IndoBERT→Claude serta tiga pakar. Jika konten tetap sama dan statistik stabil, anotasi penuh tidak perlu diulang.
 
 ## 7. Variant dan family analysis
 
@@ -135,9 +135,8 @@ expected response time
 distractor effectiveness
 ```
 
-Snapshot dengan sampel lemah hanya `observation_only`. Psychometric signal tidak digunakan untuk mengganti Bloom/knowledge label secara langsung.
+Snapshot dengan sampel lemah hanya `observation_only`. Psychometric signal tidak digunakan untuk mengganti domain kognitif/knowledge label secara langsung. Label intended difficulty tetap tersimpan sebagai keputusan awal, sedangkan empirical difficulty adalah hasil pada populasi tertentu.
 
 ## 9. Status implementasi
 
-CTT dasar dan endpoint analisis/calibrate tersedia sebagai prototype, tetapi total-score join, immutable versioning, variant/family aggregation, Wilson CI policy, server-scored response, dan automated routing penuh masih target.
-
+Perhitungan CTT dasar tersedia di `app/evaluation/psychometrics.py` sebagai prototype. Gateway psikometrik, total-score join, immutable versioning, variant/family aggregation, Wilson CI policy, server-scored response, dan routing penuh masih target.

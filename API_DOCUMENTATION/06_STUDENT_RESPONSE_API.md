@@ -2,7 +2,7 @@
 
 ## 1. Tujuan
 
-Response API menerima event jawaban yang selalu terikat pada `deliveryInstanceId`. Browser tidak mengirim `isCorrect`; server mengambil immutable delivery snapshot dan menghitung correctness sendiri.
+Response API target menerima event jawaban yang selalu terikat pada `deliveryInstanceId`. Hanya versi item yang lolos tiga pakar dan policy pilot yang boleh diberikan. Browser tidak mengirim `isCorrect`; server mengambil immutable delivery snapshot dan menghitung correctness sendiri.
 
 ## 2. Endpoint
 
@@ -37,6 +37,8 @@ Untuk tipe `numeric` atau `short_answer`, request memakai salah satu field sesua
   "answerChanges": 0
 }
 ```
+
+Untuk `matching`, body memakai `matchingPairs: [{"leftId":"pub-left-1","rightId":"pub-right-2"}, ...]`; untuk `interactive_grid`/click-the-box memakai `selectedGridCellIds: ["pub-cell-3"]`. `true_false` memakai satu `selectedOptionIds`, sedangkan checkbox/`multiple_response` dapat memakai beberapa. `essay` memakai `textAnswer` dan status scoring menunggu penilai manusia. Seluruh ID dari browser adalah ID publik dalam delivery snapshot; server memetakan dan memvalidasinya.
 
 ## 4. Processing
 
@@ -117,5 +119,4 @@ Psychometric worker menentukan inclusion policy berversi dan menyimpan jumlah ev
 
 ## 9. Status implementasi
 
-Prototype menerima `questionId`, `studentHash`, dan `isCorrect` dari browser. Ini hanya cocok untuk demo. Target migration wajib menambahkan delivery instance, server-side identity/scoring, unique response ID, dan immutable version join.
-
+Backend gateway prototype yang dahulu menerima `questionId`, `studentHash`, dan `isCorrect` dari browser sudah tidak ada di worktree. FastAPI Python belum menyediakan delivery-bound response event. Target migration wajib menambahkan delivery instance, server-side identity/scoring, unique response ID, dan immutable version join.

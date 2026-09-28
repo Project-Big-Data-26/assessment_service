@@ -1,175 +1,64 @@
-# Peta Taksonomi 6 × 4 × 3
+# Peta Label Matematika 3 × 4 × 3
 
-## 1. Ruang kombinasi
+> Nama file lama memuat `6X4X3` untuk menjaga tautan. Kontrak target saat ini adalah 3 × 4 × 3. Matriks 72 sel Bloom sebelumnya tidak digunakan sebagai target model.
 
-```text
-6 proses kognitif
-× 4 dimensi pengetahuan
-× 3 intended difficulty
-= 72 kombinasi target label
-```
+## 1. Landasan dan batas
 
-Angka 72 adalah ruang label, bukan jumlah data yang cukup, bukan jaminan semua sel cocok untuk semua format soal, dan bukan bukti bahwa generator dapat menghasilkan seluruh sel secara valid.
-
-## 2. Tiga sumbu
-
-### Proses kognitif
-
-| Kode | Makna |
-|---|---|
-| C1 | Mengingat |
-| C2 | Memahami |
-| C3 | Menerapkan |
-| C4 | Menganalisis |
-| C5 | Mengevaluasi |
-| C6 | Mencipta |
-
-### Dimensi pengetahuan
-
-| Kode | Enum | Makna |
-|---|---|---|
-| FAC | `factual` | Fakta, istilah, simbol, detail |
-| CON | `conceptual` | Klasifikasi, prinsip, hubungan, model |
-| PRO | `procedural` | Algoritma, metode, teknik, kriteria penggunaan |
-| MET | `metacognitive` | Strategi, monitoring, dan pengetahuan tentang berpikir |
-
-### Difficulty
-
-| Kode | Enum | Makna awal |
-|---|---|---|
-| E | `Easy` | Intended easy |
-| M | `Medium` | Intended medium |
-| H | `Hard` | Intended hard |
-
-Difficulty empiris disimpan terpisah dan selalu terikat populasi/assessment.
-
-## 3. Kode sel
-
-Format:
-
-```text
-<Bloom>-<Knowledge>-<Difficulty>
-```
-
-Contoh `C3-PRO-M`: menerapkan pengetahuan prosedural dengan target difficulty Medium.
-
-## 4. Matriks 72 ID
-
-```text
-C1-FAC-E  C1-FAC-M  C1-FAC-H
-C1-CON-E  C1-CON-M  C1-CON-H
-C1-PRO-E  C1-PRO-M  C1-PRO-H
-C1-MET-E  C1-MET-M  C1-MET-H
-
-C2-FAC-E  C2-FAC-M  C2-FAC-H
-C2-CON-E  C2-CON-M  C2-CON-H
-C2-PRO-E  C2-PRO-M  C2-PRO-H
-C2-MET-E  C2-MET-M  C2-MET-H
-
-C3-FAC-E  C3-FAC-M  C3-FAC-H
-C3-CON-E  C3-CON-M  C3-CON-H
-C3-PRO-E  C3-PRO-M  C3-PRO-H
-C3-MET-E  C3-MET-M  C3-MET-H
-
-C4-FAC-E  C4-FAC-M  C4-FAC-H
-C4-CON-E  C4-CON-M  C4-CON-H
-C4-PRO-E  C4-PRO-M  C4-PRO-H
-C4-MET-E  C4-MET-M  C4-MET-H
-
-C5-FAC-E  C5-FAC-M  C5-FAC-H
-C5-CON-E  C5-CON-M  C5-CON-H
-C5-PRO-E  C5-PRO-M  C5-PRO-H
-C5-MET-E  C5-MET-M  C5-MET-H
-
-C6-FAC-E  C6-FAC-M  C6-FAC-H
-C6-CON-E  C6-CON-M  C6-CON-H
-C6-PRO-E  C6-PRO-M  C6-PRO-H
-C6-MET-E  C6-MET-M  C6-MET-H
-```
-
-## 5. Difficulty driver tanpa mengubah Bloom
-
-| Driver | Easy | Medium | Hard |
+| Head | Kerangka | Label | Pertanyaan |
 |---|---|---|---|
-| Bilangan | integer sederhana | kombinasi moderat | fraction/decimal relevan |
-| Langkah | pendek/linear | beberapa langkah | bercabang atau banyak constraint |
-| Representasi | satu bentuk | dua bentuk | multi-representasi/conversion |
-| Informasi | eksplisit | perlu dipilih/dihubungkan | padat/tersirat tetapi tetap relevan |
-| Familiaritas | rutin | variasi | transfer/nonrutin |
-| Scaffolding | kuat | sebagian | minimal |
-| Distraktor | error sederhana | misconception umum | misconception kuat/dekat |
+| 1 — domain kognitif matematika | TIMSS 2023 dan AKM numerasi | `knowing`, `applying`, `reasoning` | Proses matematika apa yang wajib dilakukan? |
+| 2 — dimensi pengetahuan | Revised Bloom, dimensi pengetahuan | `factual`, `conceptual`, `procedural`, `metacognitive` | Pengetahuan apa yang menjadi objek utama tugas? |
+| 3 — kesulitan yang diperkirakan | Penilaian tuntutan item relatif kelas sasaran | `Easy`, `Medium`, `Hard` | Seberapa berat item sebelum data respons tersedia? |
 
-Menaikkan difficulty tidak boleh diam-diam mengubah konstruk. C1-Hard tetap mengingat; C3-Hard tetap menerapkan; C6-Easy tetap mencipta dengan scaffold.
+Ketiga label ditetapkan **terpisah** oleh pakar. `reasoning` tidak dikonversi menjadi C4/C5, `applying` tidak selalu sama dengan C3, dan `difficulty` tidak diturunkan dari domain kognitif. Jika C1–C6 dibutuhkan oleh riset lain, anotasi ulang dilakukan dengan rubrik Bloom tersendiri; C1–C6 bukan keluaran pipeline ini. Dalam TIMSS, prosedur rutin masih dapat termasuk `knowing`, sehingga pemetaan satu-ke-satu ke Bloom keliru.
 
-## 6. Hubungan dengan authoring dan AI
+Landasan: [TIMSS 2023 Mathematics Framework](https://timssandpirls.bc.edu/timss2023/frameworks/pdf/T23_Frameworks_Ch1_Mathematics.pdf), [Framework AKM Pusmendik](https://pusmendik.kemdikbud.go.id/an/Framework_AKM_31032022.pdf), [Krathwohl (2002)](https://eric.ed.gov/?id=EJ667155).
 
-Teacher tidak wajib memilih salah satu dari 72 sel. Teacher memasukkan grade, topic, objective, konten, dan jawaban. Setelah submit:
+## 2. Rubrik Head 1
 
-```text
-IndoBERT multi-head
-    + independent LLM rubric
-    -> agreement/risk
-    -> LLM adjudication jika perlu
-    -> taxonomy decision + provenance
-```
+| Domain | Bukti pada jalur penyelesaian minimal |
+|---|---|
+| `knowing` | Mengingat, mengenali, mengklasifikasi, mengambil informasi langsung, atau menjalankan prosedur yang rutin dan jelas. |
+| `applying` | Memilih dan menerapkan operasi/strategi dalam situasi yang relatif familier; memformulasikan masalah atau membuat representasi yang sesuai. |
+| `reasoning` | Menganalisis hubungan, mengintegrasikan konsep/representasi, membuat inferensi atau generalisasi, mengevaluasi, atau membenarkan keputusan matematis. |
 
-Label hasil adalah `ai_consensus` atau `ai_adjudicated`, bukan gold.
+Annotator mencatat proses **yang diperlukan**, bukan seluruh cara alternatif yang mungkin. Sebuah soal dengan kata “tentukan” dapat masuk salah satu dari tiga domain. Kompleksitas hitungan tidak otomatis berarti `reasoning`.
 
-## 7. Hubungan dengan generation
+## 3. Rubrik Head 2
 
-Generator dapat menerima target taxonomy, tetapi target tidak menjamin hasil:
+| Dimensi | Objek yang dinilai |
+|---|---|
+| `factual` | Istilah, simbol, notasi, fakta atau detail khusus. |
+| `conceptual` | Hubungan, klasifikasi, prinsip, sifat, teori atau struktur matematika. |
+| `procedural` | Algoritma, teknik, metode dan kriteria kapan sebuah prosedur digunakan. |
+| `metacognitive` | Pengetahuan atau refleksi peserta tentang strategi dan proses berpikirnya sendiri. |
 
-```text
-target cell
-    -> item-model/construct constraints
-    -> generate candidate
-    -> classify generated candidate kembali
-    -> construct/taxonomy drift gate
-```
+Pengetahuan metakognitif tidak disimpulkan hanya dari “pilih strategi terbaik”: tugas itu sering menguji kriteria prosedural. Jika soal memuat dua dimensi, simpan satu `primaryKnowledgeDimension` dan `secondaryKnowledgeDimensions` sebagai bukti tambahan; model head tunggal mempelajari label primer yang disepakati pakar.
 
-Jika varian bergeser dari target, sistem regenerate, membuat family baru, atau quarantine. Generator tidak boleh memaksa label agar coverage 72 terlihat penuh.
+## 4. Rubrik Head 3
 
-## 8. Intended versus empirical difficulty
+`intendedDifficulty` dinilai relatif terhadap kelas/fase, kesempatan belajar, dan peserta sasaran. Pakar mencatat familiaritas, jumlah konsep/langkah, beban perhitungan, transformasi representasi, informasi pengganggu, kualitas distraktor dan dukungan/scaffold. Batas `Easy/Medium/Hard` dibuat dalam rubrik berversi dan dikalibrasi terhadap contoh jangkar. Tidak ada ambang universal. Setelah pilot, `empiricalDifficulty` dihitung dari respons pada populasi dan jendela waktu tertentu; keduanya tidak saling menimpa.
 
-Contoh:
+## 5. KKO dan evidence profile
+
+KKO berada pada `features.lexical.detectedKKO`. Stem asli sudah dibaca tokenizer IndoBERT; penambahan tag `[KKO]` merupakan varian eksperimen yang harus diuji melalui ablation. KKO tidak menjadi label, tidak dikonversi melalui tabel kata kerja, dan tidak menjadi fitur khusus Head 2/3.
+
+Evidence profile anotasi mencakup `minimalSolution`, `routineStatus`, `strategySelection`, `representationTransfer`, `reasoningOperations`, `knowledgeObject`, `targetGrade`, dan `difficultyRationale`. Profil pakar ini disimpan untuk audit. Fitur yang sudah menyiratkan label, seperti `reasoningRequired=true`, tidak dimasukkan ke model bila hanya tersedia dari anotasi manusia.
+
+## 6. Format respons
+
+Pilihan ganda, benar/salah, matching, dan checkbox dapat menguji `knowing`, `applying`, atau `reasoning`; bentuk klik tidak menetapkan domain. Uraian, isian, dan konstruksi interaktif memerlukan kebijakan penskoran masing-masing. `Metacognitive` hanya diberikan ketika tugas benar-benar mengamati refleksi strategi. Tidak ada kewajiban menyeimbangkan seluruh 36 kombinasi; beberapa kombinasi tidak sesuai dengan format atau populasi.
+
+## 7. Contoh label
 
 ```json
 {
-  "taxonomy": {
-    "bloom": "C4",
-    "knowledgeDimension": "conceptual",
-    "intendedDifficulty": "Hard"
-  },
-  "psychometrics": {
-    "populationId": "GRADE-8-REFERENCE",
-    "difficultyIndex": 0.78,
-    "empiricalDifficulty": "Easy"
-  }
+  "mathCognitiveDomain": "reasoning",
+  "knowledgeDimension": "procedural",
+  "intendedDifficulty": "Medium",
+  "evidence": ["membandingkan dua prosedur", "menentukan langkah yang tidak valid"],
+  "rubricVersion": "math-3x4x3-v1"
 }
 ```
 
-Mismatch tidak otomatis mengubah C4/Conceptual. Yang diperiksa adalah difficulty driver, population, instruction exposure, distractor, dan kualitas item.
-
-## 9. Coverage dan dataset
-
-| Tahap | Makna |
-|---|---|
-| Satu contoh per sel | Hanya smoke test schema/UI |
-| Beberapa family per sel | Eksperimen generator/rubric |
-| Banyak source/family/variant terkontrol | Kandidat dataset model |
-| Frozen family-grouped validation/test | Evaluasi tanpa leakage |
-
-Split dilakukan berdasarkan source, question lineage, dan `itemFamilyId`, bukan variant acak.
-
-## 10. Batas format soal
-
-Tidak semua sel cocok diukur dengan multiple-choice sederhana. C5/C6 dan metacognitive sering memerlukan response lebih kaya, rubric scoring, atau evidence proses. Jika scoring/validation untuk format tersebut belum tersedia, sistem harus:
-
-- membatasi generation coverage;
-- menyatakan sel belum didukung;
-- tidak membuat pilihan ganda dangkal hanya untuk mengisi matriks.
-
-## 11. Schema enum
-
-Enum machine-readable didefinisikan di [`schemas/nalar-api.schema.json`](schemas/nalar-api.schema.json). Perubahan label adalah breaking semantic change dan harus memicu rubric/model/dataset version baru.
-
+Untuk pelatihan, pisahkan train/validation/test berdasarkan sumber, lineage dan `itemFamilyId`. Uji Head 1, 2, dan 3 secara terpisah dengan macro-F1, F1 per kelas, confusion matrix dan kalibrasi; bandingkan varian input tanpa/dengan fitur KKO eksplisit.

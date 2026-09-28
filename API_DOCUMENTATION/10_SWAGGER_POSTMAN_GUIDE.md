@@ -112,7 +112,10 @@ Collection internal menggunakan service token terpisah:
 submit workflow
     -> answer verification
     -> IndoBERT/LLM screen
-    -> agreement/adjudication
+    -> Claude mengolah prediksi IndoBERT
+    -> tiga expert initial annotation blind
+    -> tiga AI review
+    -> voting/adjudikasi manusia
     -> create generation job
     -> inspect variant
     -> psychometric screen
@@ -129,8 +132,9 @@ Minimum CI checks:
 3. Pastikan public `DeliveredItem` tidak memiliki forbidden fields.
 4. Pastikan semua endpoint target memakai common error envelope.
 5. Pastikan enum status sama antara docs, schema, dan backend.
-6. Jalankan consumer contract test untuk `TeacherAuthoringPort` dan `AssessmentPort`.
-7. Bandingkan schema hash; breaking change tanpa API version baru menggagalkan CI.
+6. Pastikan proposal Claude tidak dapat menaikkan status menjadi `expert_validated` tanpa tiga pakar, dan initial annotation terkunci sebelum AI/peer ditampilkan.
+7. Jalankan consumer contract test untuk `TeacherAuthoringPort`, `ExpertReviewPort`, dan `AssessmentPort`.
+8. Bandingkan schema hash; breaking change tanpa API version baru menggagalkan CI.
 
 ## 9. Mock frontend
 
@@ -147,5 +151,4 @@ Mock tidak boleh menjadi sumber kontrak kedua. Fixture harus divalidasi terhadap
 
 ## 10. Kondisi repository
 
-FastAPI mempunyai Swagger/ReDoc bawaan dan Express mempunyai Swagger prototype. Keduanya belum menjadi satu OpenAPI gateway yang konsisten. Penyatuan OpenAPI, status extension, generated types, dan CI schema check adalah target migrasi.
-
+FastAPI Python mempunyai Swagger/ReDoc bawaan. Express Swagger lama berada di `project_assessment` yang sudah dihapus. OpenAPI gateway baru, schema 3 × 4 × 3, reviewer endpoints, generated types dan CI schema check adalah target migrasi. Collection Postman pada dokumen ini belum merupakan artefak yang dapat dijalankan.

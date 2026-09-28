@@ -12,11 +12,12 @@
         "numeric",
         "short_answer",
         "essay",
-        "matching"
+        "matching",
+        "interactive_grid"
       ]
     },
-    "BloomLevel": {
-      "enum": ["C1", "C2", "C3", "C4", "C5", "C6"]
+    "MathCognitiveDomain": {
+      "enum": ["knowing", "applying", "reasoning"]
     },
     "KnowledgeDimension": {
       "enum": ["factual", "conceptual", "procedural", "metacognitive"]
@@ -73,11 +74,72 @@
         "caseSensitive": {"type": "boolean", "default": false}
       }
     },
+    "MatchingPair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["leftId", "rightId"],
+      "properties": {
+        "leftId": {"type": "string", "minLength": 1, "maxLength": 64},
+        "rightId": {"type": "string", "minLength": 1, "maxLength": 64}
+      }
+    },
+    "MatchingAnswerSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "pairs"],
+      "properties": {
+        "kind": {"const": "matching_pairs"},
+        "pairs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/MatchingPair"}
+        }
+      }
+    },
+    "GridAnswerSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "cellIds"],
+      "properties": {
+        "kind": {"const": "grid_cell_ids"},
+        "cellIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1, "maxLength": 64}
+        }
+      }
+    },
+    "RubricAnswerSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "rubric"],
+      "properties": {
+        "kind": {"const": "rubric"},
+        "rubric": {"type": "string", "minLength": 10, "maxLength": 10000}
+      }
+    },
+    "GridCell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "x", "y", "width", "height"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "maxLength": 64},
+        "label": {"type": ["string", "null"], "maxLength": 500},
+        "x": {"type": "number", "minimum": 0, "maximum": 1},
+        "y": {"type": "number", "minimum": 0, "maximum": 1},
+        "width": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "height": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      }
+    },
     "AnswerSpec": {
       "oneOf": [
         {"$ref": "#/$defs/OptionAnswerSpec"},
         {"$ref": "#/$defs/NumericAnswerSpec"},
-        {"$ref": "#/$defs/TextAnswerSpec"}
+        {"$ref": "#/$defs/TextAnswerSpec"},
+        {"$ref": "#/$defs/MatchingAnswerSpec"},
+        {"$ref": "#/$defs/GridAnswerSpec"},
+        {"$ref": "#/$defs/RubricAnswerSpec"}
       ]
     },
     "QuestionSource": {
@@ -119,6 +181,10 @@
           "maxItems": 8,
           "items": {"$ref": "#/$defs/Option"}
         },
+        "matchingLeft": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/Option"}},
+        "matchingRight": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/Option"}},
+        "gridCells": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/GridCell"}},
+        "gridAssetId": {"type": "string", "minLength": 1, "maxLength": 200},
         "answerSpec": {"$ref": "#/$defs/AnswerSpec"},
         "explanation": {"type": ["string", "null"], "maxLength": 10000},
         "source": {"$ref": "#/$defs/QuestionSource"}
@@ -127,15 +193,75 @@
         {
           "if": {
             "properties": {
-              "questionType": {"enum": ["multiple_choice", "multiple_response"]}
+              "questionType": {"const": "multiple_choice"}
             },
             "required": ["questionType"]
           },
           "then": {
             "required": ["options"],
             "properties": {
-              "answerSpec": {"$ref": "#/$defs/OptionAnswerSpec"}
+              "answerSpec": {
+                "allOf": [
+                  {"$ref": "#/$defs/OptionAnswerSpec"},
+                  {"properties": {"optionIds": {"maxItems": 1}}}
+                ]
+              }
             }
+          }
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "multiple_response"}}, "required": ["questionType"]},
+          "then": {
+            "required": ["options"],
+            "properties": {
+              "answerSpec": {
+                "allOf": [
+                  {"$ref": "#/$defs/OptionAnswerSpec"},
+                  {"properties": {"optionIds": {"minItems": 2}}}
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "true_false"}}, "required": ["questionType"]},
+          "then": {
+            "required": ["options"],
+            "properties": {
+              "options": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/Option"}},
+              "answerSpec": {
+                "allOf": [
+                  {"$ref": "#/$defs/OptionAnswerSpec"},
+                  {"properties": {"optionIds": {"maxItems": 1}}}
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "numeric"}}, "required": ["questionType"]},
+          "then": {"properties": {"answerSpec": {"$ref": "#/$defs/NumericAnswerSpec"}}}
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "short_answer"}}, "required": ["questionType"]},
+          "then": {"properties": {"answerSpec": {"$ref": "#/$defs/TextAnswerSpec"}}}
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "essay"}}, "required": ["questionType"]},
+          "then": {"properties": {"answerSpec": {"$ref": "#/$defs/RubricAnswerSpec"}}}
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "matching"}}, "required": ["questionType"]},
+          "then": {
+            "required": ["matchingLeft", "matchingRight"],
+            "properties": {"answerSpec": {"$ref": "#/$defs/MatchingAnswerSpec"}}
+          }
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "interactive_grid"}}, "required": ["questionType"]},
+          "then": {
+            "required": ["gridCells", "gridAssetId"],
+            "properties": {"answerSpec": {"$ref": "#/$defs/GridAnswerSpec"}}
           }
         }
       ]
@@ -147,14 +273,14 @@
       "properties": {
         "answerVerified": {"type": "boolean"},
         "decisionType": {
-          "enum": ["model_suggestion", "ai_consensus", "ai_adjudicated", "quarantined"]
+          "enum": ["indobert_prediction", "claude_proposal", "expert_validated", "quarantined"]
         },
         "taxonomy": {
           "type": ["object", "null"],
           "additionalProperties": false,
-          "required": ["bloom", "knowledgeDimension", "intendedDifficulty"],
+          "required": ["mathCognitiveDomain", "knowledgeDimension", "intendedDifficulty"],
           "properties": {
-            "bloom": {"$ref": "#/$defs/BloomLevel"},
+            "mathCognitiveDomain": {"$ref": "#/$defs/MathCognitiveDomain"},
             "knowledgeDimension": {"$ref": "#/$defs/KnowledgeDimension"},
             "intendedDifficulty": {"$ref": "#/$defs/Difficulty"}
           }
@@ -184,6 +310,9 @@
             "author_draft",
             "submitted",
             "processing",
+            "pending_expert_review",
+            "needs_expert_adjudication",
+            "expert_validated",
             "revision_required",
             "quarantined",
             "provisional",
@@ -332,6 +461,9 @@
             "questionType": {"$ref": "#/$defs/QuestionType"},
             "questionText": {"type": "string", "minLength": 1, "maxLength": 10000},
             "options": {"type": "array", "items": {"$ref": "#/$defs/PublicOption"}},
+            "matchingLeft": {"type": "array", "items": {"$ref": "#/$defs/PublicOption"}},
+            "matchingRight": {"type": "array", "items": {"$ref": "#/$defs/PublicOption"}},
+            "gridCells": {"type": "array", "items": {"$ref": "#/$defs/GridCell"}},
             "media": {"type": "array", "items": {"type": "object"}}
           }
         },
@@ -370,6 +502,17 @@
         },
         "numericAnswer": {"type": "number"},
         "textAnswer": {"type": "string", "maxLength": 10000},
+        "matchingPairs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/MatchingPair"}
+        },
+        "selectedGridCellIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1, "maxLength": 100}
+        },
         "responseTimeMs": {"type": "integer", "minimum": 0, "maximum": 86400000},
         "answerChanges": {"type": "integer", "minimum": 0, "maximum": 1000},
         "clientSubmittedAt": {"type": "string", "format": "date-time"}
@@ -377,7 +520,9 @@
       "oneOf": [
         {"required": ["selectedOptionIds"]},
         {"required": ["numericAnswer"]},
-        {"required": ["textAnswer"]}
+        {"required": ["textAnswer"]},
+        {"required": ["matchingPairs"]},
+        {"required": ["selectedGridCellIds"]}
       ]
     },
     "PsychometricSnapshot": {
