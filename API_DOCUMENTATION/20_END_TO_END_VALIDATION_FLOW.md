@@ -2,7 +2,7 @@
 
 > **Rancangan target, bukan klaim bahwa seluruh komponen sudah berjalan.** [Buka diagram SVG](20_END_TO_END_VALIDATION_FLOW.svg) untuk diperbesar tanpa pecah, atau [PNG](20_END_TO_END_VALIDATION_FLOW.png). Gambar dibuat dari [skrip yang dapat diedit](../scripts/build_combined_architecture_diagram.py). Bagian bawah dokumen ini membedakan fitur prototype dari fitur yang masih direncanakan.
 
-![Alur soal guru, ekstraksi bersyarat, IndoBERT, tiga penilaian Claude, tiga ahli matematika, pilot, CTT, dan IRT opsional](20_END_TO_END_VALIDATION_FLOW.svg)
+![Alur input soal atau batch Buku Siswa dan Guru, ekstraksi agentic bersyarat, IndoBERT, tiga penilaian Claude runtime, tiga ahli matematika, pilot, CTT, dan IRT opsional](20_END_TO_END_VALIDATION_FLOW.svg)
 
 ## Keputusan desain yang tidak boleh tercampur
 
@@ -27,6 +27,8 @@ Definisikan *unit anotasi* (satu butir dan versi isinya), cakupan kelas/topik, d
 2. **Pilih cara membaca.** Masukan terstruktur langsung diterima; PDF digital memakai ekstraksi teks; halaman berupa gambar memakai OCR/penanganan rumus bila diperlukan. Jangan OCR ulang setiap siswa menjawab. Rumus, diagram, tabel, dan koordinat interaktif perlu dipertahankan sebagai aset/referensi, bukan diratakan menjadi teks yang mungkin salah. OCR yang ragu diberi flag untuk verifikasi. [PyMuPDF: OCR hanya bila bermanfaat dan hasilnya dipakai ulang](https://pymupdf.readthedocs.io/en/latest/recipes-ocr.html).
 3. **Simpan versi soal.** Satu versi mengikat stem, opsi, gambar/rumus, kunci, aturan skor, solusi, kelas, dan topik. Perubahan substantif pada bagian tersebut membuat versi baru; jawaban siswa dan hasil model selalu menunjuk versi yang benar.
 4. **Gate format dan kunci.** Cek skema jenis soal (PG, benar/salah, matching, checkbox, click-the-box), opsi/target, duplikasi, kunci, skor parsial bila ada, dan konsistensi solusi. Pemeriksaan simbolik boleh membantu tetapi tidak membuktikan semua soal matematika. Jika cacat atau ekstraksi meragukan, minta perbaikan/peninjauan sebelum model. Guru tidak wajib mengoreksi setiap hasil ekstraksi; pemeriksaan manusia ditargetkan pada kasus berisiko.
+
+Untuk batch pretest Buku Siswa/Buku Guru, langkah 1–4 sekarang mempunyai prototype lokal yang lebih spesifik: `convert.py` menghasilkan Markdown per halaman dan indeks; Claude Code bekerja satu bab per agen; `babNN.json` menyimpan stimulus, provenance, pengerjaan agen, kutipan kunci guru dan alasan distraktor; `validate.py` menolak pelanggaran schema, perubahan angka/teks, kunci tidak terbukti, opsi duplikat/senilai dan gambar hilang. Status `draft`, `needs_review_kunci`, `needs_review_soal`, dan `needs_image` hanya status staging. Hasil yang lolos tetap harus diadaptasi menjadi `QuestionVersion`; ia tidak boleh melompati gate IndoBERT, Claude runtime dan ahli. Lihat [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).
 
 ### 5. IndoBERT menghasilkan tiga distribusi label
 
@@ -148,4 +150,6 @@ Gabungkan **label manusia yang independen** dengan snapshot empiris yang memenuh
 
 ## Status implementasi dan batas dokumen
 
-Ekstraksi Python dan CTT dasar tersedia sebagai **prototype**. Kode IndoBERT aktif masih memakai head C1–C6 lama, bukan ketiga head di atas. Orkestrasi tiga run Claude, UI/penyimpanan tiga ahli, statistik CTT penuh, kalibrasi IRT, MongoDB persisten, gateway LMS, dan pemantauan otomatis di diagram adalah **rancangan target**. Definisi endpoint saat ini pada [dokumen keputusan AI](05_AI_DECISION_ARBITRATION_API.md), [psikometrik](07_PSYCHOMETRICS_API.md), dan [ERD](17_MONGODB_DATA_MODEL_ERD.md) perlu disinkronkan dengan pemisahan baru `N_claude=3` versus tiga ahli sebelum implementasi lintas layanan; dokumen 20 ini menjelaskan alur yang diinginkan, bukan menyatakan API tersebut sudah berubah.
+Ekstraksi umum, pipeline agentic 1.254 candidate, dan CTT dasar tersedia. Fondasi IndoBERT v2 kini mencakup importer langsung `babNN.json`, Atlas repository, UI blind, consensus/adjudication, snapshot group split, baseline, LoRA, kalibrasi, artefak checksum, dan `/v2`; ia belum diprovision dan belum memiliki gold/model final. C1–C6 tetap hanya `/v1`. Claude Code ekstraksi bukan orkestrasi Claude API `N_claude=3`.
+
+Orkestrasi tiga run Claude runtime, statistik CTT penuh, kalibrasi IRT, gateway LMS, dan pemantauan otomatis tetap **rancangan target**. UI/penyimpanan tiga ahli sudah diimplementasikan tetapi menunggu provisioning. [Dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md) menjelaskan ekstraksi; [dokumen 22](22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md) menjelaskan operasi v2 aktual.

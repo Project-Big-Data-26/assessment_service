@@ -2,7 +2,9 @@
 
 ## Status audit lokal
 
-Perintah `claude` ditemukan di mesin ini. Proses saat audit tidak memiliki `ANTHROPIC_API_KEY` maupun `MONGODB_URI`, dan root `.env` tidak ada. Folder `project_assessment` sudah kosong; karena itu tidak ada rahasia yang bisa dipindahkan. CLI interaktif dapat menggunakan autentikasi tersendiri dan **tidak membuktikan** worker backend sudah dapat memanggil Claude API. API integration, smoke test, dan kesiapan produksi belum terverifikasi.
+Perintah `claude` ditemukan di mesin ini dan merge terbaru menambahkan `.claude/agents/ekstraktor-soal-pretest.md` serta skill `ekstrak-soal-pretest`. Claude Code kini benar-benar dipakai sebagai **development-time extraction agent** yang membaca Markdown/PNG dan menulis `babNN.json`. Penggunaan tersebut berjalan melalui sesi tooling pengembang, bukan melalui adapter backend, dan tidak mempunyai kontrak availability, billing, retry, audit response ID atau secret handling seperti service runtime.
+
+Proses saat audit tidak memiliki `ANTHROPIC_API_KEY` maupun `MONGODB_URI`, root `.env` tidak ada, dan belum ada import/SDK Anthropic pada `app/`. Karena itu **Claude API untuk pipeline IndoBERT masih target**. Keberhasilan ekstraksi oleh Claude Code tidak boleh dipakai sebagai bukti bahwa worker backend dapat memanggil Messages API. Detail pemisahan kedua penggunaan Claude ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).
 
 ## Konfigurasi target
 

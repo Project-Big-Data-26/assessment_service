@@ -1,5 +1,23 @@
 # Master Reference Endpoint
 
+## Endpoint implementasi fase IndoBERT v2
+
+| Method | Path | Akses | Status | Fungsi |
+|---|---|---|---|---|
+| POST | `/v2/classify` | service/client | implemented, 503 tanpa artefak | Inferensi calibrated 3×4×3 tanpa fallback |
+| GET | `/v2/model-info` | public-read | implemented | Metadata dan kesiapan artefak |
+| GET | `/v2/health/ready` | platform | implemented | Readiness checksum/model |
+| POST | `/internal/v2/auth/login` | invite-only | implemented_unprovisioned | Sesi opaque Argon2id |
+| POST | `/internal/v2/auth/logout` | authenticated + CSRF | implemented_unprovisioned | Revoke sesi |
+| GET | `/internal/v2/assignments/next` | expert | implemented_unprovisioned | Assignment blind berikutnya |
+| GET | `/internal/v2/assignments/{id}` | owner expert | implemented_unprovisioned | Soal/provenance tanpa AI/peer |
+| POST | `/internal/v2/assignments/{id}/submit` | owner expert + CSRF | implemented_unprovisioned | Submission immutable |
+| GET | `/internal/v2/adjudications` | senior | implemented_unprovisioned | Queue setelah diskusi unresolved |
+| POST | `/internal/v2/adjudications/{id}/discussion` | coordinator + CSRF | implemented_unprovisioned | Catat diskusi tiga ahli |
+| POST | `/internal/v2/adjudications/{id}/decision` | senior + CSRF | implemented_unprovisioned | Putusan ahli keempat |
+
+Path `/api/v1/...` pada tabel selanjutnya adalah arsitektur gateway fase lebih luas dan tidak identik dengan route FastAPI v2 di atas.
+
 ## 1. Legenda
 
 | Visibility | Arti |
@@ -154,3 +172,16 @@ POST /api/v1/internal/ai-decisions/{decisionId}/adjudicate
 ```
 
 Endpoint tersebut berasal dari gateway lama yang sudah dihapus, bukan bagian arsitektur target. Endpoint `expert-annotations` baru berbeda karena mewajibkan tiga identitas pakar, blind lock, dan version binding.
+
+## 14. Modul batch lokal yang bukan endpoint
+
+| Modul/perintah | Fungsi | Status HTTP |
+|---|---|---|
+| `agentic.convert` | PDF ke Markdown/INDEX/PNG | CLI lokal, bukan endpoint |
+| Claude Code skill `ekstrak-soal-pretest` | Ekstraksi semantik satu bab | Workflow pengembang |
+| `agentic.validate` | Validasi schema dan evidence sumber | CLI lokal |
+| `agentic.export` | Ekspor seluruh candidate valid | CLI lokal |
+| `agentic.pretest` | Pilih subset sesi pretest | CLI lokal |
+| `scripts/review_app.py` | Viewer read-only output legacy | Tool lokal terpisah |
+
+Belum ada endpoint upload buku, progress per bab, import candidate, seed MongoDB atau publish sesi pretest. Saat endpoint tersebut dirancang, gunakan resource job/import berversi; jangan mengeksekusi skill interaktif langsung dari request sinkron. Lihat [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).

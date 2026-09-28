@@ -221,4 +221,10 @@ MVP generation dan server-side scoring sebaiknya memprioritaskan `multiple_choic
 
 ## 11. Status implementasi tahap lokal
 
-Implementasi authoring Express/`FileQuestionRepository` lama telah dihapus bersama `project_assessment`; contoh endpoint di atas adalah kontrak **target**. FastAPI Python yang masih ada mempunyai schema/model lama C1–C6 dan belum menyediakan workflow tiga annotator. MongoDB, gateway baru, delivery siswa dan generation juga belum diimplementasikan. `configs/ai_risk_policy.json` masih memakai nama head lama dan harus dimigrasikan serta dikalibrasi sebelum pilot.
+Implementasi authoring Express/`FileQuestionRepository` lama telah dihapus bersama `project_assessment`; contoh endpoint authoring publik di atas tetap kontrak **target**. FastAPI kini mempunyai workflow internal tiga annotator dan penyimpanan `question_versions` v2 melalui Atlas repository/CLI, tetapi Atlas belum diprovision. Delivery siswa dan generation belum diimplementasikan. Policy aktif fase IndoBERT berada di `configs/model_v2_risk_policy.json`; konfigurasi C1–C6 lama hanya berlaku untuk `/v1`.
+
+## 12. Import candidate dari pipeline pretest
+
+Merge terbaru menghasilkan `babNN.json`, `soal_pretest.json`, `soal_pretest_db.json` dan `sesi_pretest.json`. Tidak satu pun otomatis menjadi `QuestionResource`. Importer target harus membuat `questionId` server-side, menyimpan ID agentic sebagai `source.externalId`, membuat `contentVersion=1`, memindahkan kunci ke private answer specification, dan mempertahankan halaman/section/gambar sebagai provenance.
+
+Perubahan `pertanyaan_disesuaikan=true` merupakan perubahan konten yang harus terlihat pada preview author/reviewer. `status_kunci!=cocok` dan `needs_image` memblokir submit ke klasifikasi. `tingkat_kesulitan` 1–5 hanya metadata seleksi sementara dan tidak mengisi label `intendedDifficulty`. Pemetaan lengkap ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).

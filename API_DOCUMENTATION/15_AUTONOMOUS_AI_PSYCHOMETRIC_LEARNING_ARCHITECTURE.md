@@ -50,7 +50,7 @@ Urutan teknis tahap pra-model: **ingestion → ekstraksi → koreksi guru → ca
 
 Unit keputusan adalah `questionId + contentVersion`. Simpan checksum teks, opsi, gambar/formula, kunci, solusi, tujuan pembelajaran, grade, sumber, format, serta waktu dan actor perubahan. Jangan menimpa versi yang sudah dianotasi atau disajikan. Semua model output, tiga penilaian awal, review sesudah AI, hasil voting, adjudikasi, dan snapshot psikometrik mempunyai ID, waktu, dan versi rubrik tersendiri.
 
-Penyimpanan target memakai `questions`, `question_versions`, `ai_decisions`, `expert_annotations`, `expert_decisions`, `delivery_instances`, `response_events`, dan `psychometric_snapshots`; lihat [ERD](17_MONGODB_DATA_MODEL_ERD.md). MongoDB persisten dan gateway baru belum tersedia pada worktree ini.
+Repository Atlas async untuk `questions`, `question_versions`, assignment, anotasi, keputusan, snapshot, run, model version, session, dan audit sudah tersedia tetapi belum diprovision. Collection Claude, delivery, response, dan psychometric snapshot tetap fase berikutnya; lihat [ERD](17_MONGODB_DATA_MODEL_ERD.md) dan [runbook](22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md).
 
 ## 4. Validasi format dan matematis
 
@@ -105,9 +105,11 @@ Training head 1–2 memakai label pakar beradjudikasi; head 3 dapat memakai labe
 
 ## 10. Status implementasi dan urutan kerja
 
-Saat ini repo Python mempunyai prototype ekstraksi, klasifikasi lama C1–C6 dan CTT dasar. `project_assessment` lama sudah kosong dalam worktree, sehingga gateway/collection MongoDB lama bukan implementasi aktif. Claude CLI terdeteksi di mesin, tetapi API key dan `MONGODB_URI` tidak ada pada environment audit; worker Claude dan workflow tiga ahli belum terpasang. Dokumen ini tidak boleh digunakan untuk mengklaim layanan sudah siap produksi.
+Repo mempunyai ekstraksi umum, pipeline agentic 1.254 candidate, legacy C1–C6, CTT dasar, dan vertical slice IndoBERT v2. Importer, Atlas repository, UI tiga ahli, consensus/adjudication, snapshot, baseline, LoRA, calibration, artifact loader, dan `/v2` sudah berupa kode teruji. Source asset privat, Atlas/PaaS/S3, akun ahli, gold, dan model final belum tersedia; Claude runtime juga sengaja di luar fase. Dokumen ini tidak boleh digunakan untuk mengklaim layanan siap produksi.
 
 Urutan implementasi yang dapat diuji: (1) kunci rubrik dan dataset blind awal; (2) migrasi schema/model menjadi tiga head; (3) canonical format/answer gate; (4) Claude adapter dengan kontrak output dan smoke test; (5) penyimpanan immutable dan UI tiga ahli; (6) pilot delivery aman; (7) CTT/monitoring; (8) empirical challenger. Setiap tahap punya integration test dan status eksplisit `implemented/prototype/target`.
+
+Pipeline pretest menambahkan pekerjaan sebelum langkah (3): tetapkan manifest sumber, jalur agentic kanonis, schema staging, stale-output detection, dan adapter idempotent dari `babNN.json` ke immutable `QuestionVersion`. Jangan melatih IndoBERT dari `tingkat_kesulitan` atau status agen. Detailnya ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).
 
 ## Landasan
 

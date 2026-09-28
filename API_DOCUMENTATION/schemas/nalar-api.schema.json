@@ -2,6 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://nalar.local/schemas/nalar-api.schema.json",
   "title": "Nalar Public API DTO Bundle",
+  "$comment": "Target public API contract. This bundle does not validate internal pretest agentic files (babNN.json, soal_pretest.json, soal_pretest_db.json, or sesi_pretest.json). Those files are staging artifacts governed by app/services/pretest/agentic/schema.py and must pass an import adapter before becoming QuestionVersion resources.",
   "type": "object",
   "$defs": {
     "QuestionType": {

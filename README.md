@@ -1,12 +1,12 @@
-# Nalar — prototype pemrosesan soal matematika
+# Nalar — ekstraksi dan validasi soal matematika
 
-Repo aktif ini menyediakan **FastAPI Python** untuk ekstraksi, pemeriksaan jawaban terbatas, klasifikasi prototype, dan analisis CTT dasar. UI/gateway lama di `project_assessment` sudah tidak ada. Desain produk berikutnya dijelaskan di [API_DOCUMENTATION/00_README.md](API_DOCUMENTATION/00_README.md); kontrak di sana bertanda **target**, bukan endpoint yang sudah berjalan.
+Repo ini menyediakan FastAPI untuk ekstraksi soal, klasifikasi legacy, dan fondasi riset IndoBERT 3×4×3. Implementasi v2 mencakup import candidate, penyimpanan Atlas, anotasi blind, konsensus/adjudikasi, snapshot dataset, baseline, LoRA training, kalibrasi, artefak, dan API advisory.
 
-Lihat [diagram alur lengkap dan peta tech stack](API_DOCUMENTATION/20_END_TO_END_VALIDATION_FLOW.md) untuk urutan dari penyiapan gold dataset sampai keputusan sesudah pilot.
+Hasil riset belum boleh diklaim: gold manusia, deployment cloud, dan artefak model final belum ada sampai intervensi eksternal diselesaikan.
 
-## Menjalankan prototype lokal
+## Menjalankan lokal
 
-Prasyarat: Python 3.12 dan dependensi dalam [requirements.txt](requirements.txt). Dari root repo:
+Prasyarat: Python 3.12 dan dependensi dalam [requirements.txt](requirements.txt).
 
 ```powershell
 py -3.12 -m venv .venv
@@ -14,19 +14,34 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --port 8000
 ```
 
-Buka `http://127.0.0.1:8000/docs` untuk kontrak **yang benar-benar tersedia**. Route Python meliputi `/health`, `/v1/model-info`, `/v1/extraction-info`, `/v1/verify-answer`, `/v1/classify`, dan `/v1/extract`. Endpoint gateway `/api/v1/...` dalam dokumen adalah rancangan migrasi. Menjalankan prototype tidak memerlukan MongoDB atau Claude.
+Buka `http://127.0.0.1:8000/docs`. Route legacy tetap berada pada `/v1`. Route baru adalah:
 
-## Arsitektur yang disepakati, belum terimplementasi penuh
+- `POST /v2/classify`;
+- `GET /v2/model-info`;
+- `GET /v2/health/ready`;
+- UI/API tertutup `/internal/v2`.
 
-Guru mengoreksi hasil ekstraksi; versi soal yang sudah lolos pemeriksaan format/kunci diprediksi oleh IndoBERT pada tiga head: domain kognitif matematika `knowing/applying/reasoning`, dimensi pengetahuan `factual/conceptual/procedural/metacognitive`, dan intended difficulty `Easy/Medium/Hard`. KKO hanya fitur leksikal. Claude mengaudit hasil IndoBERT secara berurutan, kemudian **tiga ahli matematika** memberi label blind dan review AI. Keputusan manusia yang sah mendahului pilot; data respons pilot memberi bukti psikometrik dan bukan pengganti validasi konten. Baca [arsitektur rinci](API_DOCUMENTATION/15_AUTONOMOUS_AI_PSYCHOMETRIC_LEARNING_ARCHITECTURE.md) dan [rubrik](API_DOCUMENTATION/14_TAXONOMY_6X4X3_MAP.md).
+Tanpa artefak terverifikasi, classify/readiness v2 sengaja menjawab HTTP 503 dan tidak memakai rules sebagai fallback.
 
-Kode `app/classification/indobert.py`, `app/training/train.py`, dan konfigurasi model masih memakai label Bloom C1–C6. **Jangan** menggunakan endpoint prototype sebagai implementasi kontrak 3 × 4 × 3 atau memberi izin pilot otomatis.
+## Arsitektur fase IndoBERT
 
-## Claude dan MongoDB
+Candidate dari `babNN.json` diperiksa kontennya, lalu tiga ahli memberi label blind pada:
 
-[.env.example](.env.example) mencantumkan **nama variabel target** `ANTHROPIC_API_KEY`, `CLAUDE_MODEL`, `MONGODB_URI`, dan `AI_SERVICE_URL`. Belum ada loader/adapter Claude atau koneksi MongoDB aktif di Python. Instalasi CLI `claude` bukan bukti backend dapat memanggil Claude API. Jangan menaruh token atau URI berkredensial dalam Git; gunakan secret store untuk deployment. Tidak ada `.env` atau URI database aktual dari folder lama untuk dipindah. Lihat [panduan Claude](API_DOCUMENTATION/18_CLAUDE_PROVIDER_SETUP.md).
+- domain kognitif matematika `knowing | applying | reasoning`;
+- dimensi pengetahuan `factual | conceptual | procedural | metacognitive`;
+- intended difficulty `Easy | Medium | Hard`.
 
-## Tes prototype
+KKO hanya fitur eksperimen. Konflik yang tidak selesai masuk ahli senior keempat. Training v2 memakai snapshot gold yang terkunci dan LoRA pada IndoBERT.
+
+Kode [indobert.py](app/classification/indobert.py) dan [train.py](app/training/train.py) tetap legacy C1–C6 khusus `/v1`. Implementasi baru berada di `app/classification/v2`, `app/training/v2`, `app/annotation`, dan `app/ingestion`. Output v2 tidak menetapkan gold atau publish otomatis; `reviewRequired` selalu benar pada fase ini.
+
+## Atlas dan fase berikutnya
+
+[.env.example](.env.example) memuat nama variabel Atlas, session, allowed host/origin, artefak, dan private object storage. Repository memakai satu `AsyncMongoClient` sepanjang lifecycle aplikasi. Jangan commit `.env`, token, atau URI berkredensial.
+
+Claude N=3, delivery siswa, CTT, dan IRT berada di fase berikutnya dan tidak diaktifkan oleh implementasi ini. Urutan operasional dan seluruh perintah ada di [runbook IndoBERT v2](API_DOCUMENTATION/22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md).
+
+## Tes
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q

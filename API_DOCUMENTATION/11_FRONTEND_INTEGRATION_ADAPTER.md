@@ -1,5 +1,7 @@
 # Frontend Integration Adapter Copot-Pasang
 
+UI reviewer blind minimal kini tersedia di `/internal/v2/ui/login` dan `/internal/v2/ui`. UI memakai cookie `HttpOnly`, menyimpan CSRF token hanya pada `sessionStorage`, mengambil assignment milik reviewer, dan tidak menerima prediksi AI/peer/consensus. Ini adalah UI operasional fase anotasi, bukan frontend delivery siswa.
+
 ## 1. Tujuan
 
 Frontend boleh dibangun ulang tanpa mengubah backend selama implementasi baru memenuhi port dan DTO publik. Komponen React tidak boleh memanggil `fetch` langsung, membaca MongoDB shape, atau mengetahui provider/model AI.
@@ -196,3 +198,9 @@ Frontend prototype `project_assessment` sudah dihapus; struktur di atas adalah t
 - gunakan delivery instance;
 - hilangkan `isCorrect` dari request browser;
 - jangan bergantung pada field legacy `annotations`, `finalLabels`, atau educator verification; gunakan `expert_annotations` dan `expert_decisions` baru.
+
+## 12. UI review untuk output agentic
+
+`scripts/review_app.py` yang masuk bersama merge masih membaca output pipeline lama pada `output/`/`output_mcq/`; ia belum memahami `output/pretest/<book>/babNN.json`, status baru, sesi, atau provenance gambar. Karena itu ia bukan implementasi `ExpertReviewPort`.
+
+UI staging yang baru, bila dibuat, perlu menampilkan berdampingan: halaman Buku Siswa, stimulus/pertanyaan, halaman/kutipan Buku Guru, pengerjaan agen, opsi + alasan, flag notasi/gambar, status kunci, catatan penyesuaian dan hasil validator. Aksi staging hanya `accept_for_import`, `request_content_fix`, atau `reject_candidate`; aksi tersebut tidak boleh disebut voting tiga ahli. Frontend siswa tetap hanya mengonsumsi delivery DTO tanpa kunci.

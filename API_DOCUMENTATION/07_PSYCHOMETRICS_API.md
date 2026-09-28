@@ -140,3 +140,9 @@ Snapshot dengan sampel lemah hanya `observation_only`. Psychometric signal tidak
 ## 9. Status implementasi
 
 Perhitungan CTT dasar tersedia di `app/evaluation/psychometrics.py` sebagai prototype. Gateway psikometrik, total-score join, immutable versioning, variant/family aggregation, Wilson CI policy, server-scored response, dan routing penuh masih target.
+
+## 10. Hubungan dengan pretest agentic
+
+Angka `tingkat_kesulitan` 1–5 pada `babNN.json` adalah judgment agen yang dipakai sementara untuk assembly; ia bukan CTT difficulty index, parameter IRT `b`, maupun `intendedDifficulty` gold. Jumlah 1.254 soal juga bukan ukuran sampel siswa. Psikometrik baru berjalan setelah item diimpor, lolos tiga ahli, dikirim melalui immutable delivery snapshot, dan menerima response event sah.
+
+Aturan assembly `2 soal/subbab + 1 soal/bab prasyarat` dapat membentuk blueprint awal, tetapi belum menjamin kecukupan tes, content balance, reliabilitas form atau identifiability IRT. Simpan ID item agentic sebagai lineage agar snapshot kelak dapat ditautkan, tanpa menimpa version yang benar-benar diberikan kepada siswa.

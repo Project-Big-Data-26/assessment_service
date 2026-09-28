@@ -892,3 +892,9 @@ Verified parent item
 ```
 
 Prinsip utama arsitektur ini adalah **deterministic-first dan LLM-assisted**. LLM menangani bahasa dan variasi semantik, sedangkan constraint, jawaban, scoring, versioning, dan acceptance gate tetap dikendalikan oleh mekanisme yang dapat diuji dan diaudit.
+
+## 19. Batas terhadap distraktor pipeline ekstraksi
+
+Tiga distraktor pada `babNN.json` dibuat untuk mengubah/menormalkan soal sumber menjadi candidate pilihan ganda. Aktivitas tersebut bukan generasi varian item family: tidak ada parameter transformasi, equivalence claim, exposure policy, atau pewarisan statistik. Setiap opsi tetap harus diperiksa terhadap jawaban benar; validator saat ini mendeteksi duplikasi teks dan sebagian nilai numerik senilai, tetapi belum membuktikan semua ekuivalensi simbolik/semantik.
+
+Jika candidate agentic kelak menjadi parent untuk generator terkontrol, ia harus lebih dahulu diimpor, diberi content version, lolos gate jawaban, IndoBERT→Claude dan tiga ahli. Lineage generator dimulai dari version tervalidasi tersebut, bukan dari file batch mentah.

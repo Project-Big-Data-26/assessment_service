@@ -2,7 +2,7 @@
 
 ## 1. Tujuan dan klaim
 
-Sistem menerima soal matematika manual atau hasil ekstraksi, membentuk versi konten, memverifikasi format dan kunci, mengklasifikasikan tiga head dengan IndoBERT, meminta Claude mengolah usulan itu, lalu mengirimnya ke tiga annotator ahli matematika. Item yang disetujui masuk pilot; respons peserta menghasilkan bukti psikometrik. Ini adalah **arsitektur target**. Repo Python saat ini baru menyediakan bagian prototype ekstraksi, baseline/IndoBERT lama C1–C6, dan CTT dasar.
+Arsitektur penuh menerima soal, membentuk versi konten, memverifikasi format/kunci, membangun gold blind, melatih IndoBERT, lalu pada fase berikutnya menambahkan Claude, review AI, pilot, dan psikometrik. Repo sekarang sudah menyediakan vertical slice kode IndoBERT 3×4×3 beserta anotasi blind, tetapi cloud, gold manusia, model final, Claude runtime, dan pilot belum tersedia. `/v1` C1–C6 tetap legacy.
 
 ## 2. Peran dan sumber bukti
 
@@ -57,3 +57,9 @@ MongoDB target memisahkan `questions`, `question_versions`, `ai_decisions`, `exp
 ## 11. Rujukan
 
 [TIMSS 2023 matematika](https://timssandpirls.bc.edu/timss2023/frameworks/pdf/T23_Frameworks_Ch1_Mathematics.pdf); [Framework AKM numerasi](https://pusmendik.kemdikbud.go.id/an/Framework_AKM_31032022.pdf); [Revised Bloom](https://eric.ed.gov/?id=EJ667155); [IndoBERT/IndoNLU](https://aclanthology.org/2020.aacl-main.85/); [Claude Messages API](https://platform.claude.com/docs/en/api/messages/create).
+
+## 12. Kalibrasi sistem setelah merge
+
+Repository kini memiliki subsistem batch pretest yang cukup matang pada lapisan ekstraksi: provenance per halaman, stimulus, cross-check Buku Guru, tiga distraktor beralasan, validator deterministik, status risiko, progress file, dan assembly berbasis kurikulum/prasyarat. Ia meningkatkan kualitas candidate, tetapi belum menambah endpoint produksi, penyimpanan MongoDB, gold label, delivery, atau respons siswa.
+
+Arsitektur harus mempertahankan empat batas: (1) evidence sumber vs konten kanonis; (2) agen ekstraksi vs Claude reviewer IndoBERT; (3) heuristik assembly vs label/pengukuran psikometrik; dan (4) status staging vs lifecycle API. Ringkasan teknis serta gap dependensi/reproduksibilitas ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).

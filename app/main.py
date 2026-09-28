@@ -1,9 +1,12 @@
-"""FastAPI entry point for classification and multimodal extraction."""
+"""FastAPI entry point for legacy v1 and research-grade advisory v2."""
 from __future__ import annotations
-from dataclasses import asdict
+from contextlib import asynccontextmanager
+import os
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.trustedhost import TrustedHostMiddleware
 from pydantic import BaseModel, Field
 from app.classification import RuleBasedBaselineClassifier
 from app.classification.indobert import IndoBERTClassifier
@@ -17,9 +20,16 @@ from app.pipeline import QuestionIntelligencePipeline
 from app.schemas.request import ClassificationRequest
 from app.schemas.response import ClassificationResponse, ExtractionResponse, HeadPrediction
 from app.verification.arithmetic import verify_arithmetic
+from app.annotation.repository import MongoAnnotationRepository
+from app.annotation.routes import router as annotation_router
+from app.annotation.assets import PrivateAssetSigner
+from app.api.v2 import router as v2_router
+from app.classification.v2.runtime import V2ClassifierRuntime
+from app.llm import GeminiReviewRuntime
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT_DIR = PROJECT_ROOT / "models" / "indobert-multitask-v1"
+V2_ARTIFACT_DIR = Path(os.getenv("INDOBERT_V2_ARTIFACT_DIR", PROJECT_ROOT / "models" / "indobert-3x4x3-v1"))
 EXTRACTION_SETTINGS = load_extraction_settings(PROJECT_ROOT / "configs" / "extraction_config.yaml")
 
 def create_classifier():
@@ -29,7 +39,83 @@ def create_classifier():
 
 classifier = create_classifier()
 pipeline = QuestionIntelligencePipeline(classifier)
-app = FastAPI(title="Nalar Question Intelligence", version="1.0.0")
+
+
+def create_v2_runtime() -> tuple[V2ClassifierRuntime | None, str | None]:
+    try:
+        return V2ClassifierRuntime(V2_ARTIFACT_DIR), None
+    except (FileNotFoundError, ImportError, RuntimeError, ValueError) as exc:
+        return None, f"{type(exc).__name__}: {exc}"
+
+
+def create_gemini_runtime() -> tuple[GeminiReviewRuntime | None, str | None]:
+    """Build the client without making a network request or consuming tokens."""
+    try:
+        return GeminiReviewRuntime.from_environment(), None
+    except (ImportError, RuntimeError, ValueError) as exc:
+        return None, f"{type(exc).__name__}: {exc}"
+
+
+annotation_repository = MongoAnnotationRepository.from_environment()
+asset_signer = PrivateAssetSigner.from_environment()
+v2_runtime, v2_runtime_error = create_v2_runtime()
+gemini_runtime, gemini_runtime_error = create_gemini_runtime()
+
+
+@asynccontextmanager
+async def lifespan(application: FastAPI):
+    application.state.annotation_repository = annotation_repository
+    application.state.asset_signer = asset_signer
+    application.state.annotation_repository_error = None
+    application.state.v2_runtime = v2_runtime
+    application.state.v2_runtime_error = v2_runtime_error
+    application.state.gemini_runtime = gemini_runtime
+    application.state.gemini_runtime_error = gemini_runtime_error
+    if annotation_repository is not None:
+        try:
+            await annotation_repository.ping()
+            await annotation_repository.ensure_indexes()
+        except Exception as exc:  # keep public v1/v2 diagnostics available
+            application.state.annotation_repository_error = f"{type(exc).__name__}: {exc}"
+            application.state.annotation_repository = None
+    try:
+        yield
+    finally:
+        if annotation_repository is not None:
+            await annotation_repository.close()
+
+
+app = FastAPI(title="Nalar Question Intelligence", version="2.0.0", lifespan=lifespan)
+# Defaults also support test clients that do not enter a lifespan context.
+app.state.annotation_repository = annotation_repository
+app.state.asset_signer = asset_signer
+app.state.annotation_repository_error = None
+app.state.v2_runtime = v2_runtime
+app.state.v2_runtime_error = v2_runtime_error
+app.state.gemini_runtime = gemini_runtime
+app.state.gemini_runtime_error = gemini_runtime_error
+app.include_router(v2_router)
+app.include_router(annotation_router)
+allowed_hosts = [item.strip() for item in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1,testserver").split(",") if item.strip()]
+allowed_origins = [item.strip() for item in os.getenv("ALLOWED_ORIGINS", "http://localhost:8000").split(",") if item.strip()]
+app.add_middleware(TrustedHostMiddleware, allowed_hosts=allowed_hosts)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allowed_origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type", "X-CSRF-Token"],
+)
+
+
+@app.middleware("http")
+async def security_headers(request, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "no-referrer"
+    response.headers["Cache-Control"] = "no-store" if request.url.path.startswith("/internal/v2") else response.headers.get("Cache-Control", "")
+    return response
 
 @app.get("/health")
 def health(): return {"status": "ok", "service": "question-intelligence"}

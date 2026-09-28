@@ -62,3 +62,9 @@ Pilihan ganda, benar/salah, matching, dan checkbox dapat menguji `knowing`, `app
 ```
 
 Untuk pelatihan, pisahkan train/validation/test berdasarkan sumber, lineage dan `itemFamilyId`. Uji Head 1, 2, dan 3 secara terpisah dengan macro-F1, F1 per kelas, confusion matrix dan kalibrasi; bandingkan varian input tanpa/dengan fitur KKO eksplisit.
+
+## 8. Field agentic yang bukan label taksonomi
+
+Output pretest hasil merge belum berisi label tiga head atau KKO terstruktur. `tingkat_kesulitan: 1..5` beserta `alasan_kesulitan` adalah estimasi agen untuk memilih soal pretest; jangan memetakan `1–2=Easy`, `3=Medium`, `4–5=Hard` tanpa studi dan adjudikasi ahli. `source_section`, tipe latihan, panjang soal, atau status kunci juga tidak boleh dijadikan shortcut label.
+
+Setelah import canonical, KKO dideteksi sebagai fitur leksikal dari stimulus + pertanyaan, sementara label Head 1 ditentukan dari proses penyelesaian minimum. Head 2 memerlukan objek/relasi pengetahuan, dan Head 3 menggunakan tuntutan relatif terhadap populasi sasaran. Tiga ahli menilai ulang ketiganya; pengerjaan agen hanya dapat ditampilkan sebagai evidence setelah pass blind bila kebijakan review mengizinkan.

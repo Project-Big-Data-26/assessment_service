@@ -119,3 +119,7 @@ Student UI hanya bergantung pada interface tersebut. Ia tidak mengimpor seed lok
 ## 8. Status implementasi
 
 Student UI lama pada `project_assessment` sudah dihapus. Session, delivery instance, public option mapping, server-side scoring, exposure control, dan assembly policy adalah target yang belum tersedia di repo Python.
+
+## 9. `sesi_pretest.json` bukan delivery session
+
+File tersebut hanya menyimpan rancangan pemilihan ID soal per bab/subbab/prasyarat dan audit sumber. Sebelum menjadi assessment, sistem harus me-resolve ID staging ke `questionVersionId` yang sudah `expert_validated`, menolak item review/gambar hilang, membekukan blueprint dan scoring policy, lalu membuat `delivery_instances` dengan pengacakan opsi per attempt. Posisi A–D yang diseimbangkan oleh exporter membantu authoring, tetapi tidak menggantikan option mapping aman pada delivery.

@@ -129,6 +129,12 @@ Semua endpoint target memakai bentuk yang sama:
 }
 ```
 
+## 12. Boundary pipeline pretest hasil merge
+
+Pipeline `app/services/pretest/agentic/` berada **di luar request path publik**. Ia adalah batch authoring/import lokal yang membaca aset Buku Siswa/Buku Guru, memakai Claude Code untuk interpretasi per bab, kemudian menjalankan validator deterministik. FastAPI tidak mengimpor modul tersebut dan belum memiliki endpoint untuk menjalankan, memantau atau mengimpor hasilnya.
+
+Karena itu `features.extraction=true` pada capability runtime hanya boleh merujuk endpoint `/v1/extract` yang benar-benar aktif, bukan menyiratkan batch agentic tersedia melalui HTTP. Jika pipeline batch kelak dijadikan service, pisahkan role `ingestion_operator`, queue, tenant boundary, object storage, manifest/checksum sumber, sandbox dokumen, audit agent run dan import adapter. Jangan menjalankan Claude Code interaktif di dalam worker API. Lihat [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).
+
 | Code HTTP | Makna |
 |---:|---|
 | `200` | Read/validate/analysis sinkron berhasil |

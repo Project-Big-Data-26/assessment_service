@@ -2,7 +2,7 @@
 
 ## 1. Tanggung jawab
 
-Sistem menyimpan hasil IndoBERT dan proposal Claude secara berurutan, kemudian meminta tiga ahli matematika mereview item dan proposal tersebut. Claude tidak melakukan adjudikasi final. Gold untuk melatih dan menguji IndoBERT diambil dari penilaian ahli sebelum paparan AI.
+Gold untuk melatih dan menguji IndoBERT diambil dari penilaian tiga ahli sebelum paparan AI. Pass blind, diskusi, dan adjudikator senior sudah diimplementasikan sebagai fase saat ini. Penyimpanan hasil IndoBERT, proposal Claude N=3, dan pass review AI adalah fase berikutnya; Claude tidak pernah menjadi adjudikator final.
 
 ## 2. Alur target
 
@@ -85,4 +85,10 @@ Diskusi tidak menimpa catatan awal. Konflik konten/kunci menghalangi pilot walau
 
 ## 7. Status implementasi
 
-Seluruh endpoint expert di atas adalah target. Python prototype yang tersedia belum mempunyai penyimpanan `expert_annotations`, konsensus tiga pakar, gateway Claude, ataupun route pilot. Desain Gemini/automated LLM adjudicator terdahulu telah digantikan; file lama `project_assessment` sudah tidak ada di worktree.
+Endpoint arsitektur `/api/v1/...` di atas tetap target. Implementasi fase blind tersedia pada `/internal/v2/auth/*`, `/internal/v2/assignments/*`, `/internal/v2/adjudications`, endpoint discussion/decision, MongoDB `expert_annotations`/`expert_decisions`, dan skrip agreement/consensus. Ia berstatus `implemented_unprovisioned` karena Atlas dan akun ahli belum tersedia. Gateway Claude, pass review AI, dan route pilot belum diimplementasikan. Desain Gemini/automated LLM adjudicator terdahulu telah digantikan.
+
+## 8. Evidence ekstraksi bukan annotation
+
+`jawaban_agen`, `status_kunci`, `kunci_guru`, `catatan` dan `tingkat_kesulitan` pada output agentic tidak dihitung sebagai annotation manusia maupun run Claude klasifikasi. Bahkan bila `status_kunci=cocok`, item baru memenuhi pemeriksaan evidence ekstraksi. Ketiga pakar tetap melakukan pass blind pada canonical version dan tidak melihat pengerjaan agen, prediksi IndoBERT atau usulan Claude sebelum initial submission dikunci.
+
+Flag `needs_review_kunci`, `needs_review_soal` dan `needs_image` harus diselesaikan sebelum assignment normal. Konflik isi/kunci dapat diarahkan ke content/key specialist, tetapi hasilnya tetap disimpan terpisah dari voting tiga head. Lihat [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).

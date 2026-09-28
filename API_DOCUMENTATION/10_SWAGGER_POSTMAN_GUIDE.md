@@ -1,5 +1,7 @@
 # OpenAPI, Swagger, Postman, dan Contract Testing
 
+FastAPI aktif menerbitkan OpenAPI di `/openapi.json` dan Swagger UI di `/docs`. Kontrak implementasi `/v2/*` dan `/internal/v2/*` berasal langsung dari Pydantic; bundle schema dokumentasi mencakup arsitektur target yang lebih luas. Endpoint anotasi tetap 503 sampai Atlas dikonfigurasi, dan endpoint klasifikasi tetap 503 sampai artefak model checksum-valid tersedia.
+
 ## 1. Sumber kontrak
 
 Target kontrak harus mempunyai tiga representasi yang sinkron:
@@ -152,3 +154,9 @@ Mock tidak boleh menjadi sumber kontrak kedua. Fixture harus divalidasi terhadap
 ## 10. Kondisi repository
 
 FastAPI Python mempunyai Swagger/ReDoc bawaan. Express Swagger lama berada di `project_assessment` yang sudah dihapus. OpenAPI gateway baru, schema 3 × 4 × 3, reviewer endpoints, generated types dan CI schema check adalah target migrasi. Collection Postman pada dokumen ini belum merupakan artefak yang dapat dijalankan.
+
+## 11. Kalibrasi untuk pipeline batch
+
+Modul `agentic.convert`, `validate`, `export`, dan `pretest` adalah CLI, sehingga tidak dimasukkan ke Swagger/Postman seolah-olah endpoint. Tesnya dijalankan melalui `.venv/Scripts/python -m pytest tests/test_pretest_agentic.py -q`; snapshot audit menghasilkan 23 tes lulus. Tes tersebut memakai fixture sintetis dan belum menggantikan integration test terhadap PDF/Markdown fixture mini.
+
+Jika nanti dibuat import API, contract test minimum harus menguji dry-run, checksum sumber, idempotency ID eksternal, mapping schema, stale output detection, penolakan `needs_image`/kunci konflik, serta bahwa field kunci tidak bocor ke DTO publik.

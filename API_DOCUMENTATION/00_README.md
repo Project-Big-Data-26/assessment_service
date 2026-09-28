@@ -1,6 +1,6 @@
 # Dokumentasi API Nalar
 
-Dokumen ini mendeskripsikan **arsitektur target** untuk soal matematika: ekstraksi → validasi format/kunci → IndoBERT → Claude → tiga annotator → pilot → psikometrik. Repo Python saat ini masih prototype dengan head Bloom C1–C6; banyak endpoint target belum ada. Istilah `target` dalam dokumen tidak berarti fitur sudah aktif.
+Dokumen ini mendeskripsikan arsitektur bertahap: ekstraksi → qualification dan gold blind → IndoBERT → fase Claude berikutnya → pilot → psikometrik. Repo Python mempertahankan `/v1` Bloom C1–C6 sebagai legacy, sedangkan fondasi `/v2` 3×4×3 sudah diimplementasikan tetapi belum diprovision dan belum memiliki gold/model final. Istilah `target` tidak berarti fitur sudah aktif; lihat status nyata pada [dokumen 22](22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md).
 
 ## Keputusan domain yang berlaku
 
@@ -37,6 +37,8 @@ Dokumen ini mendeskripsikan **arsitektur target** untuk soal matematika: ekstrak
 | [18](18_CLAUDE_PROVIDER_SETUP.md) | Konfigurasi Claude dan migrasi environment |
 | [19](19_GEMINI_SMOKE_EVALUATION.md) | Catatan historis Gemini; bukan provider aktif |
 | [20](20_END_TO_END_VALIDATION_FLOW.md) | Diagram lengkap dari bootstrap model sampai psikometrik, dengan tech stack dan cabang error |
+| [21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md) | Pipeline agentic pretest hasil merge, kontrak staging, progres dan adapter ke API target |
+| [22](22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md) | Implementasi aktual 3×4×3, keamanan anotasi, perintah operasional dan gate eksternal |
 
 Schema target ada pada [bundle JSON](schemas/nalar-api.schema.json). Bila kode/schema lama belum bermigrasi, dokumen menyebutnya secara eksplisit. Setiap breaking semantic change membutuhkan versi rubric, dataset, model, API/schema, dan migration plan.
 
@@ -44,7 +46,9 @@ Schema target ada pada [bundle JSON](schemas/nalar-api.schema.json). Bila kode/s
 
 Teacher menulis dan memperbaiki konten lalu submit. Teacher tidak memutuskan label final pada item sendiri. Tiga ahli matematika melakukan review dengan identitas, keahlian, konflik kepentingan dan alasan keputusan yang dapat diaudit. System admin mengelola operasi, bukan sumber gold pedagogis.
 
-Status: `implemented` = ada dan diuji dalam repo; `prototype` = terbatas; `target` = desain yang belum selesai; `future` = di luar MVP. Saat ini ekstraksi dan FastAPI klasifikasi/CTT adalah prototype. Gateway `project_assessment`, MongoDB persisten, integrasi Claude API, tiga annotator, delivery aman dan generator belum ada sebagai implementasi aktif di worktree.
+Status: `implemented` = ada dan diuji dalam repo; `implemented_unprovisioned` = kodenya ada tetapi membutuhkan cloud/akun/data manusia; `implemented_local` = batch/CLI lokal; `prototype` = terbatas; `target` = belum selesai; `future` = di luar fase. Importer 1.254 candidate, kontrak 3×4×3, Atlas repository, UI blind, consensus/adjudication, snapshot/split, baseline, LoRA trainer, kalibrasi, packaging, dan route `/v2` kini tersedia. Gold label, training final, deployment PaaS, dan pembukaan frozen test belum dapat dilakukan tanpa ahli, secrets, aset privat, dan persetujuan dosen.
+
+Snapshot artefak hasil merge memuat 1.254 soal pada 46 file bab: 45 bab valid menurut status tersimpan, satu gagal, dan 951 item berstatus staging `draft`. Status tersebut berarti candidate ekstraksi siap menuju gate berikutnya, bukan `expert_validated`. Detail dan batas reproduksibilitas ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).
 
 ## Lingkungan dan folder lama
 

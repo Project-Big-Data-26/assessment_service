@@ -1,0 +1,28 @@
+{
+  "policyVersion": "indobert-3x4x3-risk-v1",
+  "phase": "research_pilot",
+  "reviewRequiredAlways": true,
+  "automaticGoldLabel": false,
+  "automaticPublish": false,
+  "selectivePrediction": {
+    "targetAccuracy": 0.80,
+    "minimumCoverage": 0.70,
+    "thresholdSource": "validation_only"
+  },
+  "forcedAbstention": [
+    "grade_outside_sd_v1",
+    "content_not_qualified",
+    "answer_key_not_verified",
+    "minimal_solution_not_verified",
+    "essential_visual_transcript_missing"
+  ],
+  "promotionGates": {
+    "mathCognitiveDomainMacroF1": 0.70,
+    "knowledgeDimensionMacroF1": 0.70,
+    "intendedDifficultyMacroF1": 0.65,
+    "minimumPerClassF1": 0.50,
+    "maximumECEEachHead": 0.10,
+    "mustBeatEveryBaselineByPointEstimate": true,
+    "meanThreeHeadImprovementBootstrap95CILowerBound": 0.0
+  }
+}

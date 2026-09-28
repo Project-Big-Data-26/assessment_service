@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2500" height="8640" viewBox="0 0 2500 8640" role="img" aria-labelledby="title desc">
 <title id="title">Alur validasi soal matematika dengan keputusan bersyarat</title>
-<desc id="desc">Flowchart berbahasa Indonesia dari soal guru, pilihan OCR, pemeriksaan format, IndoBERT, tiga run Claude, tiga ahli blind, voting manusia, pilot, CTT, dan IRT opsional. Cabang ya/tidak, simbol flowchart, serta teknologi pendukung ditampilkan terpisah.</desc>
+<desc id="desc">Flowchart berbahasa Indonesia dari input langsung atau batch Buku Siswa dan Guru, ekstraksi agentic lokal, pemeriksaan format, IndoBERT, tiga run Claude runtime, tiga ahli blind, voting manusia, pilot, CTT, dan IRT opsional.</desc>
 <defs>
 <symbol id="ic-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V3 M7 8l5-5 5 5 M4 17v4h16v-4"/></symbol>
 <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6 M8 13h8 M8 17h8"/></symbol>
@@ -108,9 +108,9 @@
 <circle cx="323" cy="625.0" r="30" fill="#2879B9"/>
 <text x="323" y="633.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">01</text>
 <use href="#ic-upload" x="473" y="578" width="48" height="48" color="#2879B9"/>
-<text x="539" y="609" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Soal masuk dari guru</text>
-<text x="475" y="651" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Guru mengetik soal, mengimpor data, atau mengunggah PDF/gambar.</text>
-<text x="475" y="682" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Tidak ada tahap koreksi guru yang wajib untuk setiap soal.</text>
+<text x="539" y="609" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Soal masuk / batch buku</text>
+<text x="475" y="651" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Input langsung, impor data, PDF, atau pasangan Buku Siswa dan Guru.</text>
+<text x="475" y="682" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Batch agentic berjalan lokal; belum menjadi endpoint API.</text>
 <polygon points="905,760 1180.0,845.0 905,930 630.0,845.0" fill="#EAF5FC" stroke="#2879B9" stroke-width="3"/>
 <circle cx="323" cy="845.0" r="30" fill="#2879B9"/>
 <text x="323" y="853.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">02</text>
@@ -120,25 +120,25 @@
 <rect x="72" y="960" width="300" height="162" rx="18" fill="#EAF5FC" stroke="#2879B9" stroke-width="2"/>
 <use href="#ic-scan" x="91" y="979" width="36" height="36" color="#2879B9"/>
 <text x="134" y="1007" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#2879B9">Baca berkas</text>
-<text x="92" y="1038" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">OCR/ambil teks,</text>
-<text x="92" y="1065" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">opsi dan rumus.</text>
-<text x="92" y="1092" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">Simpan tanda ragu.</text>
+<text x="92" y="1038" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">PDF → Markdown,</text>
+<text x="92" y="1065" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">agen per bab + PNG,</text>
+<text x="92" y="1092" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#17304A">simpan bukti sumber.</text>
 <rect x="380" y="1180" width="1050" height="172" rx="18" fill="#FFFFFF" stroke="#2879B9" stroke-width="2.5"/>
 <rect x="380" y="1180" width="11" height="172" rx="5" fill="#2879B9"/>
 <circle cx="323" cy="1223" r="30" fill="#2879B9"/>
 <text x="323" y="1231" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">03</text>
 <use href="#ic-file" x="409" y="1207" width="45" height="45" color="#2879B9"/>
-<text x="471" y="1236" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Simpan versi soal</text>
-<text x="414" y="1279" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Satukan teks, opsi, gambar, kunci, solusi, kelas dan topik.</text>
-<text x="414" y="1310" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Setiap perubahan isi penting membuat versi soal baru.</text>
+<text x="471" y="1236" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Bentuk candidate dan versi soal</text>
+<text x="414" y="1279" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Batch: babNN.json + provenance; API: immutable QuestionVersion.</text>
+<text x="414" y="1310" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Status staging bukan validasi ahli atau izin penyajian.</text>
 <rect x="380" y="1410" width="1050" height="182" rx="18" fill="#FFFFFF" stroke="#2879B9" stroke-width="2.5"/>
 <rect x="380" y="1410" width="11" height="182" rx="5" fill="#2879B9"/>
 <circle cx="323" cy="1453" r="30" fill="#2879B9"/>
 <text x="323" y="1461" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">04</text>
 <use href="#ic-check" x="409" y="1437" width="45" height="45" color="#2879B9"/>
 <text x="471" y="1466" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="800" fill="#17304A">Periksa format dan kunci jawaban</text>
-<text x="414" y="1509" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Cek kelengkapan, pilihan jawaban, rumus, dan soal ambigu.</text>
-<text x="414" y="1540" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Cocokkan kunci dengan solusi/rule matematika bila memungkinkan.</text>
+<text x="414" y="1509" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Cek schema, verbatim, angka, opsi senilai, rumus, dan gambar.</text>
+<text x="414" y="1540" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#4B6278">Cocokkan bukti Buku Guru dengan pengerjaan agen; tahan konflik.</text>
 <polygon points="905,1640 1180.0,1726.0 905,1812 630.0,1726.0" fill="#EAF5FC" stroke="#2879B9" stroke-width="3"/>
 <text x="905" y="1701" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#2879B9">Soal siap?</text>
 <text x="905" y="1731" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Format + kunci valid?</text>
@@ -380,8 +380,8 @@
 <rect x="1850" y="540" width="10" height="310" rx="5" fill="#2879B9"/>
 <text x="1879" y="586" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#2879B9">01–03  SOAL MASUK</text>
 <text x="1879" y="626" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">UI guru + API gateway (target)</text>
-<text x="1879" y="660" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">OCR/PyMuPDF/Tesseract (sebagian ada)</text>
-<text x="1879" y="694" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">JSON Schema / Pydantic</text>
+<text x="1879" y="660" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Agentic: PyMuPDF4LLM + Claude Code</text>
+<text x="1879" y="694" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">babNN.json + Pydantic validator (lokal)</text>
 <text x="1879" y="728" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">MongoDB: soal + versi (target)</text>
 <text x="1879" y="762" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">File sumber + jejak ekstraksi (target)</text>
 <rect x="1850" y="1385" width="570" height="225" rx="19" fill="#EAF5FC" stroke="#A9BED0" stroke-width="1.5"/>
@@ -449,7 +449,7 @@
 <text x="108" y="7268" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800" fill="#BA4858">CATATAN PENTING</text>
 <text x="108" y="7303" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">CoT Claude N=3: telaah bertahap dalam tiga run; simpan bukti ringkas, bukan jejak penalaran internal sebagai gold.</text>
 <text x="108" y="7337" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" fill="#17304A">Majority voting Claude dan suara 3 ahli adalah dua keputusan berbeda; 3/3 Claude bukan probabilitas benar.</text>
-<text x="108" y="7371" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700" fill="#BA4858">Diagram target: IRT, Claude N=3, dan UI ahli belum berarti fitur produksi sudah aktif.</text>
+<text x="108" y="7371" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700" fill="#BA4858">Yang aktif lokal: ekstraksi agentic; Claude API N=3, UI ahli, delivery, MongoDB, dan IRT masih target.</text>
 <rect x="75" y="7445" width="2345" height="630" rx="20" fill="#FFFFFF" stroke="#A9BED0" stroke-width="1.5"/>
 <text x="108" y="7492" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800" fill="#122C46">RUMUS: APA YANG DIHITUNG, BUKAN AMBANG SEMBARANG</text>
 <rect x="108" y="7520" width="1090" height="515" rx="15" fill="#FFF6E9" stroke="#B97920" stroke-width="1.4"/>

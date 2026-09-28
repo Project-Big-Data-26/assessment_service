@@ -162,4 +162,6 @@ UI tidak mengetahui PyMuPDF, Tesseract, Paddle, lokasi object storage, atau deta
 
 ## 10. Status implementasi
 
-Parser/OCR sinkron dan visual preview Python telah tersedia sebagai prototype. Job resource gateway, object storage, MIME signature, antivirus, signed preview URL, dan retry orchestration masih target. Setelah author memperbaiki candidate, validasi format dan kunci mendahului IndoBERT; KKO baru diekstrak dari canonical item yang telah diperbaiki.
+Ada dua implementasi ekstraksi Python yang perlu dibedakan. `POST /v1/extract` pada `app/main.py` adalah parser/OCR sinkron umum. Pipeline `app/services/pretest/agentic/` adalah batch lokal khusus pasangan Buku Siswa/Buku Guru: `pymupdf4llm` membuat Markdown per halaman dan indeks, Claude Code menyusun `babNN.json`, lalu validator memeriksa teks verbatim, angka, bukti kunci, opsi senilai, subbab dan gambar. Pipeline lama regex + Ollama masih tersimpan tetapi bukan jalur kanonis baru.
+
+Output agentic adalah **staging evidence**, bukan gold. `app/ingestion/pretest_import.py` dan `scripts/load_candidates_to_atlas.py` kini membentuk identity/content version immutable, hash, provenance, opsi stabil, serta routing qualification langsung dari `babNN.json`. `draft` agentic tetap tidak berarti validasi ahli. Private signed preview sudah tersedia untuk assignment, sedangkan job gateway publik, MIME signature, antivirus, dan retry orchestration masih target. Kontrak dan pemetaan lengkap ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).

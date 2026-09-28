@@ -1,0 +1,48 @@
+model:
+  base_id: indobenchmark/indobert-base-p1
+  base_revision: c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2
+  labels:
+    mathCognitiveDomain: [knowing, applying, reasoning]
+    knowledgeDimension: [factual, conceptual, procedural, metacognitive]
+    intendedDifficulty: [Easy, Medium, Hard]
+  input_schema_version: math-question-text-v1
+  default_input_representation: solution
+  kko_requires_validation_ablation_and_challenge_pass: true
+
+lora:
+  target_modules: [query, value]
+  rank_candidates: [8, 16]
+  alpha: 16
+  dropout: 0.10
+  bias: none
+
+training:
+  device: cpu
+  dtype: float32
+  max_length_initial: 256
+  max_length_if_truncation_over_5_percent: 384
+  physical_batch_size: 2
+  gradient_accumulation: 8
+  effective_batch_size: 16
+  lora_learning_rate_candidates: [0.0001, 0.0002]
+  head_learning_rate: 0.001
+  weight_decay: 0.01
+  warmup_ratio: 0.10
+  gradient_clip: 1.0
+  maximum_epochs: 12
+  early_stopping_patience: 2
+  search_seed: 42
+  final_seeds: [13, 42, 73]
+
+split:
+  train: 0.70
+  validation: 0.15
+  test: 0.15
+  seed: 42
+  minimum_each_class_validation_and_test: 15
+  frozen_test_open_once: true
+
+scope:
+  subject: Matematika
+  grades: [1, 2, 3, 4, 5, 6]
+  expansion_grades: [7, 10]

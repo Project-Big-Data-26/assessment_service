@@ -100,4 +100,17 @@ psychometric policy
 
 JSON Schema tidak boleh dipakai untuk mengklaim soal benar secara matematis atau pedagogis.
 
-Bundle JSON di folder ini adalah **schema target**. FastAPI dan konfigurasi model yang ada masih memakai Bloom C1–C6; perubahan ini breaking semantic change dan membutuhkan migrasi implementasi serta versi kontrak baru sebelum public API aktif.
+Bundle JSON di folder ini mencakup schema arsitektur lebih luas. FastAPI `/v2` kini memiliki kontrak Pydantic 3×4×3 sendiri, sedangkan `/v1` tetap Bloom C1–C6. Endpoint fase lanjut yang belum ada tetap berstatus target; OpenAPI runtime adalah sumber kebenaran endpoint yang benar-benar aktif.
+
+## 8. Schema staging pretest
+
+Output agentic tidak divalidasi oleh `schemas/nalar-api.schema.json`. Sumber kebenarannya saat ini adalah Pydantic strict model pada `app/services/pretest/agentic/schema.py`, sedangkan validasi lintas-file/sumber berada pada `validate.py`. Pemisahan ini disengaja:
+
+```text
+BabFile/Soal (internal staging, snake_case)
+    -> validator evidence terhadap halaman buku
+    -> import adapter
+    -> QuestionCreate/QuestionVersion (public/target, camelCase)
+```
+
+Importer `app/ingestion/pretest_import.py` menolak unknown field melalui Pydantic staging, menyimpan pipeline version, hash/provenance, dan menghasilkan content version dari `babNN.json`. `soal_pretest_db.json` tidak menjadi sumber kanonis dan model Beanie lama tidak dipakai oleh workflow v2. Rincian kontrak ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).

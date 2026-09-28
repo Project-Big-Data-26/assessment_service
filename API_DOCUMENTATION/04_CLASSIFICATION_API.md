@@ -2,7 +2,7 @@
 
 ## 1. Kontrak dan status
 
-Klasifikasi target adalah urutan `canonical item → validasi format/kunci → IndoBERT → Claude`. Hasil kedua model tetap usulan; keputusan final memerlukan tiga annotator manusia pada [dokumen 05](05_AI_DECISION_ARBITRATION_API.md). Implementasi Python yang tersedia masih memakai head Bloom 6 kelas dan baseline berbasis kata; kontrak 3 × 4 × 3 di bawah **belum terimplementasi**.
+Arsitektur jangka panjang adalah `canonical item → validasi format/kunci → IndoBERT → Claude`, tetapi fase yang diimplementasikan sekarang berhenti pada IndoBERT advisory. Kontrak `/v2` 3×4×3, gold blind, training, kalibrasi, dan artefak sudah tersedia dalam kode; Atlas, anotasi nyata, dan model final belum tersedia. Claude tetap fase berikutnya. Implementasi Bloom 6 kelas hanya legacy `/v1`.
 
 Endpoint target internal/debug:
 
@@ -93,4 +93,10 @@ Claude melihat hasil IndoBERT sehingga kedua keluaran **bukan pengukuran indepen
 
 ## 7. Batas implementasi
 
-`app/classification/indobert.py`, `app/training/train.py` dan `configs/model_config.yaml` masih memakai Bloom 6 kelas pada prototype. Bundle JSON Schema di folder dokumentasi sudah menggambarkan **target** 3 × 4 × 3, tetapi belum terhubung ke runtime. Migrasi kode, artefak, dan kontrak API aktif diperlukan sebelum endpoint ini mengklaim perilaku baru. Folder `project_assessment` lama tidak lagi menyediakan gateway Gemini. Dokumen target tidak membuktikan akses Claude API sudah berfungsi.
+`app/classification/indobert.py`, `app/training/train.py` dan `configs/model_config.yaml` tetap memakai Bloom 6 kelas khusus legacy `/v1`. Runtime terpisah `app/classification/v2`, trainer `app/training/v2`, konfigurasi v2, dan endpoint `/v2` sudah memakai kontrak 3×4×3. `/v2/classify` tetap 503 sampai artefak gold terlatih tersedia dan tidak fallback ke rules. Folder `project_assessment` lama tidak lagi menyediakan gateway Gemini; Claude API bukan bagian fase implementasi ini.
+
+## 8. Hubungan dengan ekstraksi agentic pretest
+
+Pipeline agentic yang baru belum memanggil classifier. Field `tingkat_kesulitan` 1–5 dibuat agen untuk memilih soal sesi dan tidak boleh dijadikan label latihan Head 3. Demikian pula `jawaban_agen`, `status_kunci` dan alasan distraktor adalah evidence staging, bukan gold tiga head.
+
+Setelah adapter membuat canonical `QuestionVersion`, classifier menerima teks stimulus + pertanyaan, opsi, solusi/kunci yang telah melewati gate, metadata kelas/topik/subbab dan provenance visual yang dapat direpresentasikan. Record klasifikasi harus mereferensikan content hash/version hasil import; jangan mengklasifikasikan `soal_pretest_db.json` secara lepas karena file itu kehilangan sebagian provenance kaya dari `babNN.json`. Claude Code pada tahap ekstraksi berbeda dari Claude API postprocessor pada bagian 6. Lihat [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).

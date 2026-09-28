@@ -120,3 +120,7 @@ Psychometric worker menentukan inclusion policy berversi dan menyimpan jumlah ev
 ## 9. Status implementasi
 
 Backend gateway prototype yang dahulu menerima `questionId`, `studentHash`, dan `isCorrect` dari browser sudah tidak ada di worktree. FastAPI Python belum menyediakan delivery-bound response event. Target migration wajib menambahkan delivery instance, server-side identity/scoring, unique response ID, dan immutable version join.
+
+## 10. Batas terhadap artefak pretest lokal
+
+`soal_pretest_db.json` dan `sesi_pretest.json` adalah hasil perakitan authoring lokal, bukan log administrasi siswa. Keduanya tidak berisi `deliveryInstanceId`, option mapping per siswa, identity pseudonim, response ID, timing, atau server-scored correctness. File tersebut tidak boleh dipakai langsung untuk menghitung CTT/IRT dan tidak boleh dikirim sebagai respons siswa karena memuat kunci/alasan opsi. Setelah import dan validasi ahli, delivery service membuat snapshot baru sesuai dokumen 08.

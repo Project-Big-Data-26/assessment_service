@@ -6,6 +6,8 @@ Alur proses dan peta tech stack yang memakai koleksi-koleksi ini ada pada [diagr
 
 Dokumen ini mendefinisikan target collection MongoDB, atribut, hubungan, index, versioning, dan keputusan embed/reference untuk arsitektur pada dokumen 15-16.
 
+Subset fase IndoBERT sudah diterapkan dengan Pydantic + `pymongo.AsyncMongoClient`: `users`, `expert_profiles`, `questions`, `question_versions`, `annotation_assignments`, `expert_annotations`, `expert_decisions`, `dataset_snapshots`, `training_runs`, `model_versions`, `audit_events`, dan `sessions`. Collection Claude/delivery/psikometrik pada ERD tetap target. Atlas belum diprovision, sehingga ini adalah `implemented_unprovisioned`.
+
 MongoDB tidak menerapkan foreign key seperti database relasional. ERD di bawah adalah **relasi logis** yang dijaga oleh application service, schema validation, unique index, idempotency, dan reconciliation job.
 
 ## 2. Notasi
@@ -812,3 +814,22 @@ Model prototype lama menempelkan `annotations`, `finalLabels`, dan `psychometric
 - Compound index mengikuti aggregation key.
 - Event penting append-only dan mempunyai provenance/version.
 - Backup, retention, encryption, dan access control ditetapkan per collection.
+
+## 27. Integrasi data pretest hasil merge
+
+Model Beanie `app/db/questions_pretest.py` dan file `soal_pretest_db.json` tetap bukan kontrak v2. Workflow v2 sengaja melewatinya dan mengimpor `babNN.json` melalui `app/ingestion/pretest_import.py` ke Pydantic document + PyMongo. Karena itu jangan melakukan bulk insert langsung dari `soal_pretest_db.json`.
+
+Gunakan staging/import boundary:
+
+| Sumber agentic | Target logis | Catatan |
+|---|---|---|
+| `book`, PDF, halaman, section, item | `source_assets` + provenance pada `question_versions` | Simpan checksum/versi aset |
+| ID `kelasN-bNN-pNNNN-*` | `source.externalId` | Bukan Mongo `_id` publik |
+| stimulus + pertanyaan | `question_versions.content` | Hash setelah normalisasi terkontrol |
+| opsi + jawaban | private content/answer spec | Jangan bocor ke delivery DTO |
+| kunci guru + `jawaban_agen` | extraction evidence/import audit | Bukan expert annotation |
+| status/flags staging | extraction/import review record | Bukan lifecycle final |
+| `tingkat_kesulitan` 1–5 | legacy heuristic metadata | Jangan isi head difficulty |
+| `sesi_pretest.json` | assessment blueprint candidate | Resolve hanya version tervalidasi |
+
+Jika volume audit besar, tambahkan collection bounded `ingestion_imports` dan `ingestion_candidates`, atau simpan payload mentah di object storage dengan pointer/hash. Setelah import sukses, `questions`/`question_versions` menjadi sumber kebenaran; file JSON tetap artefak lineage, bukan database paralel. Import wajib dry-run, idempotent, melaporkan konflik dan menolak output stale. Lihat [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).
