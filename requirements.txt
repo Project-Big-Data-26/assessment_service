@@ -23,7 +23,10 @@ sentencepiece==0.2.2
 # Multimodal ingestion. Tesseract engine itself is installed by Docker/OS.
 Pillow==11.3.0
 pytesseract==0.3.13
-PyMuPDF==1.26.4
+# 1.28.2 wajib: pymupdf4llm mengunci versi PyMuPDF yang sama persis
+PyMuPDF==1.28.2
+# PDF -> Markdown per halaman untuk pipeline pretest agentic (tabel & layout)
+pymupdf4llm==1.28.2
 python-multipart==0.0.20
 
 # Mathematical OCR: page layout detection + image-to-LaTeX recognition.
