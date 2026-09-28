@@ -77,22 +77,23 @@ Status bab: `-` belum | `GAGAL` ada error validasi | `OK` lolos validasi
 | bab | hal. siswa | status | soal | draft | review | dilewati |
 |---|---|---|---|---|---|---|
 | Bab 1 - Bilangan Bulat | 23-56 | OK | 43 | 42 | 1 | 26 |
-| Bab 2 - Bilangan Rasional | 57-104 | - |  |  |  |  |
+| Bab 2 - Bilangan Rasional | 57-104 | OK | 16 | 12 | 4 | 2 |
 | Bab 3 - Rasio | 105-144 | OK | 46 | 43 | 3 | 20 |
-| Bab 4 - Bentuk Aljabar | 145-180 | - |  |  |  |  |
+| Bab 4 - Bentuk Aljabar | 145-180 | OK | 37 | 35 | 2 | 24 |
 | Bab 5 - Kesebangunan | 181-206 | OK | 32 | 29 | 3 | 16 |
-| Bab 6 - Data dan Diagram | 207-272 | GAGAL | 84 | 72 | 12 | 22 |
+| Bab 6 - Data dan Diagram | 207-272 | OK | 84 | 72 | 12 | 22 |
 
 ## kelas8 (SMP)
-- BELUM DIKONVERSI (siswa=False, guru=False) -> `python -m app.services.pretest.agentic.convert --book kelas8`
+- BELUM DIKONVERSI (siswa=False, guru=True) -> `python -m app.services.pretest.agentic.convert --book kelas8`
 
 ## kelas9 (SMP)
+- catatan buku: `output/pretest/kelas9/CATATAN.md` (BACA dulu)
 | bab | hal. siswa | status | soal | draft | review | dilewati |
 |---|---|---|---|---|---|---|
-| Bab 1 - Sistem Persamaan Linear Dua Variabel | 17-60 | - |  |  |  |  |
-| Bab 2 - Bangun Ruang | 61-154 | - |  |  |  |  |
-| Bab 3 - Transformasi Geometri | 155-234 | - |  |  |  |  |
-| Bab 4 - Peluang dan Pemilihan Sampel | 235-320 | - |  |  |  |  |
+| Bab 1 - Sistem Persamaan Linear Dua Variabel | 17-60 | OK | 4 | 4 | 0 | 0 |
+| Bab 2 - Bangun Ruang | 61-154 | OK | 12 | 11 | 1 | 18 |
+| Bab 3 - Transformasi Geometri | 155-234 | OK | 10 | 7 | 3 | 15 |
+| Bab 4 - Peluang dan Pemilihan Sampel | 235-320 | OK | 8 | 7 | 1 | 10 |
 
 ## kelas10 (SMA)
 - catatan buku: `output/pretest/kelas10/CATATAN.md` (BACA dulu)
@@ -139,4 +140,4 @@ Status bab: `-` belum | `GAGAL` ada error validasi | `OK` lolos validasi
 | Bab 3 - Integral | 175-236 | - |  |  |  |  |
 | Bab 4 - Analisis Data dan Peluang | 237-320 | - |  |  |  |  |
 
-**Total: 1254 soal, 951 siap (draft)**
+**Total: 1341 soal, 1027 siap (draft)**
