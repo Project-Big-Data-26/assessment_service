@@ -11,12 +11,12 @@ class Pertanyaan(Document):
     subbab_id: Optional[PydanticObjectId] = None
     kelas_id: Optional[PydanticObjectId] = None
 
-    pertanyaan_text: str
+    soal_text: str
     image_url: Optional[str] = None
     image_urls: List[str] = []
-    pertanyaan_type: str = ["pilihan_ganda"]
+    soal_type: str = ["pilihan_ganda"]
     options: List[Option] = []
-    correct_answer: Optional[str] = None
+    jawaban: Optional[str] = None
 
     cognitive_level: Optional[str] = None
     cognitive_score: Optional[int] = None
@@ -41,11 +41,11 @@ class Pertanyaan(Document):
     updated_at: datetime = Field(default_factory=datetime.utcnow)
 
     class Settings:
-        name = "pertanyaan"
+        name = "soal"
         indexes = [
             "subbab_id",
             "kelas_id",
             "status",
             "source_file",
-            "pertanyaan_type",
+            "soal_type",
         ]
