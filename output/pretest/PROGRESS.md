@@ -84,7 +84,15 @@ Status bab: `-` belum | `GAGAL` ada error validasi | `OK` lolos validasi
 | Bab 6 - Data dan Diagram | 207-272 | OK | 84 | 72 | 12 | 22 |
 
 ## kelas8 (SMP)
-- BELUM DIKONVERSI (siswa=False, guru=True) -> `python -m app.services.pretest.agentic.convert --book kelas8`
+- catatan buku: `output/pretest/kelas8/CATATAN.md` (BACA dulu)
+| bab | hal. siswa | status | soal | draft | review | dilewati |
+|---|---|---|---|---|---|---|
+| Bab 1 - Bilangan Berpangkat | 21-64 | OK | 6 | 6 | 0 | 21 |
+| Bab 2 - Teorema Pythagoras | 65-116 | OK | 10 | 7 | 3 | 10 |
+| Bab 3 - Persamaan Linier dan Pertidaksamaan Linier Satu Variabel | 117-156 | OK | 10 | 7 | 3 | 10 |
+| Bab 4 - Relasi dan Fungsi | 157-226 | OK | 6 | 6 | 0 | 22 |
+| Bab 5 - Persamaan Garis Lurus | 227-274 | OK | 6 | 5 | 1 | 28 |
+| Bab 6 - Statistika | 275-344 | OK | 6 | 5 | 1 | 32 |
 
 ## kelas9 (SMP)
 - catatan buku: `output/pretest/kelas9/CATATAN.md` (BACA dulu)
@@ -99,45 +107,49 @@ Status bab: `-` belum | `GAGAL` ada error validasi | `OK` lolos validasi
 - catatan buku: `output/pretest/kelas10/CATATAN.md` (BACA dulu)
 | bab | hal. siswa | status | soal | draft | review | dilewati |
 |---|---|---|---|---|---|---|
-| Bab 1 - Eksponen | 19-52 | - |  |  |  |  |
-| Bab 2 - Barisan dan Deret | 53-88 | OK | 8 | 7 | 1 | 6 |
-| Bab 3 - Perbandingan Trigonometri | 89-124 | - |  |  |  |  |
-| Bab 4 - Sistem Persamaan dan Pertidaksamaan Linear | 125-146 | - |  |  |  |  |
-| Bab 5 - Persamaan dan Fungsi Kuadrat | 147-194 | - |  |  |  |  |
-| Bab 6 - Representasi dan Interpretasi Data | 195-256 | - |  |  |  |  |
-| Bab 7 - Peluang | 257-312 | OK | 9 | 9 | 0 | 2 |
+| Bab 1 - Eksponen | 19-52 | OK | 8 | 7 | 1 | 10 |
+| Bab 2 - Barisan dan Deret | 53-88 | OK | 12 | 11 | 1 | 24 |
+| Bab 3 - Perbandingan Trigonometri | 89-124 | OK | 4 | 4 | 0 | 10 |
+| Bab 4 - Sistem Persamaan dan Pertidaksamaan Linear | 125-146 | OK | 4 | 4 | 0 | 15 |
+| Bab 5 - Persamaan dan Fungsi Kuadrat | 147-194 | OK | 4 | 2 | 2 | 18 |
+| Bab 6 - Representasi dan Interpretasi Data | 195-256 | OK | 6 | 6 | 0 | 37 |
+| Bab 7 - Peluang | 257-312 | OK | 13 | 13 | 0 | 13 |
 
 ## kelas11 (SMA)
+- catatan buku: `output/pretest/kelas11/CATATAN.md` (BACA dulu)
 | bab | hal. siswa | status | soal | draft | review | dilewati |
 |---|---|---|---|---|---|---|
-| Bab 1 - Komposisi Fungsi dan Fungsi Invers | 5-62 | - |  |  |  |  |
-| Bab 2 - Lingkaran | 63-96 | - |  |  |  |  |
-| Bab 3 - Statistika | 97-168 | - |  |  |  |  |
+| Bab 1 - Komposisi Fungsi dan Fungsi Invers | 5-62 | OK | 6 | 5 | 1 | 6 |
+| Bab 2 - Lingkaran | 63-96 | OK | 6 | 6 | 0 | 2 |
+| Bab 3 - Statistika | 97-168 | OK | 6 | 3 | 3 | 7 |
 
 ## kelas11_tl (SMA)
+- catatan buku: `output/pretest/kelas11_tl/CATATAN.md` (BACA dulu)
 | bab | hal. siswa | status | soal | draft | review | dilewati |
 |---|---|---|---|---|---|---|
-| Bab 1 - Matriks | 15-60 | - |  |  |  |  |
-| Bab 2 - Polinomial | 61-112 | - |  |  |  |  |
-| Bab 3 - Fungsi Trigonometri | 113-172 | - |  |  |  |  |
-| Bab 4 - Vektor | 173-214 | - |  |  |  |  |
-| Bab 5 - Transformasi Geometri | 215-256 | - |  |  |  |  |
-| Bab 6 - Fungsi dan Pemodelannya | 257-320 | - |  |  |  |  |
+| Bab 1 - Matriks | 15-60 | OK | 10 | 10 | 0 | 0 |
+| Bab 2 - Polinomial | 61-112 | OK | 10 | 9 | 1 | 24 |
+| Bab 3 - Fungsi Trigonometri | 113-172 | OK | 10 | 9 | 1 | 31 |
+| Bab 4 - Vektor | 173-214 | OK | 6 | 4 | 2 | 21 |
+| Bab 5 - Transformasi Geometri | 215-256 | OK | 8 | 8 | 0 | 3 |
+| Bab 6 - Fungsi dan Pemodelannya | 257-320 | OK | 10 | 10 | 0 | 2 |
 
 ## kelas12 (SMA)
+- catatan buku: `output/pretest/kelas12/CATATAN.md` (BACA dulu)
 | bab | hal. siswa | status | soal | draft | review | dilewati |
 |---|---|---|---|---|---|---|
-| Bab 1 - Barisan dan Deret | 11-52 | - |  |  |  |  |
-| Bab 2 - Investasi dan Pinjaman | 53-98 | - |  |  |  |  |
-| Bab 3 - Kaidah Pencacahan | 99-140 | - |  |  |  |  |
-| Bab 4 - Peluang | 141-216 | - |  |  |  |  |
+| Bab 1 - Barisan dan Deret | 11-52 | OK | 39 | 30 | 9 | 5 |
+| Bab 2 - Investasi dan Pinjaman | 53-98 | OK | 26 | 19 | 7 | 22 |
+| Bab 3 - Kaidah Pencacahan | 99-140 | OK | 23 | 18 | 5 | 15 |
+| Bab 4 - Peluang | 141-216 | OK | 19 | 18 | 1 | 20 |
 
 ## kelas12_tl (SMA)
+- catatan buku: `output/pretest/kelas12_tl/CATATAN.md` (BACA dulu)
 | bab | hal. siswa | status | soal | draft | review | dilewati |
 |---|---|---|---|---|---|---|
-| Bab 1 - Lingkaran, Elips, dan Garis Singgung Lingkaran | 12-94 | - |  |  |  |  |
-| Bab 2 - Turunan Fungsi | 95-174 | - |  |  |  |  |
-| Bab 3 - Integral | 175-236 | - |  |  |  |  |
-| Bab 4 - Analisis Data dan Peluang | 237-320 | - |  |  |  |  |
+| Bab 1 - Lingkaran, Elips, dan Garis Singgung Lingkaran | 12-94 | OK | 31 | 26 | 5 | 8 |
+| Bab 2 - Turunan Fungsi | 95-174 | OK | 23 | 22 | 1 | 1 |
+| Bab 3 - Integral | 175-236 | OK | 17 | 14 | 3 | 6 |
+| Bab 4 - Analisis Data dan Peluang | 237-320 | OK | 19 | 14 | 5 | 3 |
 
-**Total: 1341 soal, 1027 siap (draft)**
+**Total: 1688 soal, 1319 siap (draft)**

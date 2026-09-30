@@ -41,6 +41,12 @@ from typing import Dict, List, Optional
 from app.services.pretest.agentic.books import Book, discover, get_book, page_md_path, rel
 
 CHUNK_PAGES = 20
+# Halaman dengan drawing vektor melebihi ini (mis. dekorasi pembuka bab)
+# membuat pymupdf4llm.to_markdown() hang (bug hulu: page.get_textpage() MuPDF
+# jadi pathological di atas ~100rb path). Halaman seperti ini dilewati dari
+# pymupdf4llm dan diambil teksnya polos saja -- notasi/layout-nya tetap harus
+# dicek lewat render PNG (flag GRAFIK_KOMPLEKS di header halaman).
+HEAVY_GRAPHICS_LIMIT = 5000
 
 _ROMAN = {"I": 1, "V": 5, "X": 10}
 
@@ -267,17 +273,36 @@ def convert_book(book: Book, kind: str, force: bool = False, log=print) -> Optio
     t0 = time.time()
     for c in range(0, len(todo), CHUNK_PAGES):
         chunk = todo[c:c + CHUNK_PAGES]
+        heavy: Dict[int, int] = {}
+        normal_chunk = []
+        for pno in chunk:
+            try:
+                n = len(doc[pno].get_drawings())
+            except Exception:
+                n = 0
+            if n > HEAVY_GRAPHICS_LIMIT:
+                heavy[pno] = n
+            else:
+                normal_chunk.append(pno)
         chunks = pymupdf4llm.to_markdown(
-            doc, pages=chunk, page_chunks=True, write_images=True,
+            doc, pages=normal_chunk, page_chunks=True, write_images=True,
             image_path=img_dir, image_format="png", dpi=110, show_progress=False,
-        )
-        for pno, ch in zip(chunk, chunks):
+        ) if normal_chunk else []
+        for pno, ch in zip(normal_chunk, chunks):
             page = doc[pno]
             md = ch["text"]
             # path gambar absolut -> relatif terhadap folder halaman
             md = IMG_LINK_RE.sub(lambda m: f"![](img/{os.path.basename(m.group(1))})", md)
             index[str(pno + 1)] = _page_meta(md, page)
             _write_page(page_md_path(book, kind, pno + 1), "", md)  # header diisi di finalize
+        for pno, n in heavy.items():
+            page = doc[pno]
+            md = page.get_text()
+            meta = _page_meta(md, page)
+            meta["grafik_kompleks"] = n
+            index[str(pno + 1)] = meta
+            _write_page(page_md_path(book, kind, pno + 1), "", md)
+            log(f"[{book.key}/{kind}] p{pno + 1} dilewati dari pymupdf4llm (grafik={n}), pakai teks polos")
         done = min(c + CHUNK_PAGES, len(todo))
         log(f"[{book.key}/{kind}] {done}/{len(todo)} halaman ({time.time() - t0:.0f}s)")
     doc.close()
@@ -351,6 +376,8 @@ def finalize_index(book: Book, kind: str, index: Dict[str, dict], pdf: str) -> d
             continue
         body = _read_page_body(path)
         flags = []
+        if meta.get("grafik_kompleks"):
+            flags.append(f"GRAFIK_KOMPLEKS={meta['grafik_kompleks']} (teks polos, WAJIB lihat PNG)")
         if meta["risiko_matematika"]:
             flags.append("RISIKO_MATEMATIKA=" + ",".join(meta["risiko_matematika"]) + " (cek PNG)")
         if meta.get("teks_dalam_gambar"):
@@ -387,6 +414,7 @@ def render_index_md(book: Book, kind: str, data: dict) -> str:
         f"PDF: `{data['pdf']}` ({data['n_pages']} halaman). File halaman: `p0001.md` ... (nomor = halaman PDF).",
         "Legenda: [M] notasi matematika mungkin rusak -> WAJIB lihat PNG | "
         "[T] soal/kunci tercetak di dalam gambar -> lihat PNG | [G] ada gambar | "
+        "[GK] grafik vektor kompleks, teks polos saja -> WAJIB lihat PNG | "
         + ("★ heading latihan" if kind == "siswa" else "[K] ada kunci/alternatif jawaban"),
         "",
     ]
@@ -397,7 +425,7 @@ def render_index_md(book: Book, kind: str, data: dict) -> str:
             if not meta:
                 continue
             tags = (("[M]" if meta["risiko_matematika"] else "") + ("[T]" if meta.get("teks_dalam_gambar") else "")
-                    + ("[G]" if meta["caption_gambar"] else ""))
+                    + ("[G]" if meta["caption_gambar"] else "") + ("[GK]" if meta.get("grafik_kompleks") else ""))
             if kind == "siswa":
                 if not meta["latihan"]:
                     continue
