@@ -1,0 +1,357 @@
+{
+ "book": "kelas11_tl",
+ "bab": "Bab 5 - Transformasi Geometri",
+ "bab_no": 5,
+ "halaman_siswa": [
+  215,
+  256
+ ],
+ "soal": [
+  {
+   "id": "kelas11_tl-b05-p0238-latihan-a-4b",
+   "subbab": "A",
+   "tingkat_kesulitan": 3,
+   "alasan_kesulitan": "harus menghitung jarak titik ke garis lalu memantulkannya (dua langkah)",
+   "sumber_soal": "siswa",
+   "source_page": 238,
+   "source_section": "Latihan A Transformasi pada Bidang Kartesius · Penerapan Konsep",
+   "source_item_no": "4b",
+   "stimulus": "Tentukan peta dari transformasi geometri berikut.",
+   "pertanyaan": "Titik (3, 5) yang dicerminkan terhadap garis $2x + 3y + 5 = 0$.",
+   "pertanyaan_disesuaikan": false,
+   "catatan_penyesuaian": null,
+   "notasi_dari_png": true,
+   "butuh_gambar": false,
+   "image_refs": [],
+   "jawaban_benar": "(–5, –7)",
+   "alasan_benar": "nilai 2x+3y+5 di titik = 26, jarak berarah 26/13 = 2, peta = (3,5) - 4(2,3) = (–5, –7)",
+   "distraktor": [
+    {
+     "teks": "(–1, –1)",
+     "alasan": "hanya menghitung kaki tegak lurus (proyeksi) titik pada garis, tidak sampai bayangan"
+    },
+    {
+     "teks": "(11, 17)",
+     "alasan": "arah pergeseran terbalik: (3,5) + 4(2,3)"
+    },
+    {
+     "teks": "(–3, –5)",
+     "alasan": "memakai pencerminan terhadap titik asal, bukan terhadap garis"
+    }
+   ],
+   "kunci_guru": {
+    "halaman": 244,
+    "kutipan": "titik (3, 5) yang dicerminkan terhadap garis 2 _x_ + 3 _y_ + 5 = 0 menghasilkan titik (–5, –7)"
+   },
+   "jawaban_agen": "(–5, –7): P' = P - 2(ax+by+c)/(a^2+b^2) (a,b) = (3,5) - 4(2,3)",
+   "status_kunci": "cocok",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-p0238-latihan-a-4c",
+   "subbab": "A",
+   "tingkat_kesulitan": 2,
+   "alasan_kesulitan": "satu operasi: menjumlahkan vektor translasi ke tiap titik sudut",
+   "sumber_soal": "siswa",
+   "source_page": 238,
+   "source_section": "Latihan A Transformasi pada Bidang Kartesius · Penerapan Konsep",
+   "source_item_no": "4c",
+   "stimulus": "Tentukan peta dari transformasi geometri berikut.",
+   "pertanyaan": "Segitiga ABC dengan A(1, 2), B(3, –1), dan C(–2, –3) yang ditranslasikan oleh vektor $\\begin{pmatrix} -5 \\\\ 3 \\end{pmatrix}$.",
+   "pertanyaan_disesuaikan": false,
+   "catatan_penyesuaian": null,
+   "notasi_dari_png": true,
+   "butuh_gambar": false,
+   "image_refs": [],
+   "jawaban_benar": "A'(–4, 5), B'(–2, 2), C'(–7, 0)",
+   "alasan_benar": "tiap titik ditambah (–5, 3): (1–5, 2+3), (3–5, –1+3), (–2–5, –3+3)",
+   "distraktor": [
+    {
+     "teks": "A'(6, –1), B'(8, –4), C'(3, –6)",
+     "alasan": "vektor translasi dikurangkan (tanda dibalik)"
+    },
+    {
+     "teks": "A'(4, –3), B'(6, –6), C'(1, –8)",
+     "alasan": "komponen vektor tertukar: memakai (3, –5)"
+    },
+    {
+     "teks": "A'(–4, 2), B'(–2, –1), C'(–7, –3)",
+     "alasan": "hanya menambahkan komponen x, komponen y lupa digeser"
+    }
+   ],
+   "kunci_guru": {
+    "halaman": 244,
+    "kutipan": "segitiga peta _A_ ' _B_ ' _C_ ' memiliki titik sudut _A_ '(–4, 5), B'(–2, 2), dan _C_ '(–7, 0)"
+   },
+   "jawaban_agen": "A'(–4,5), B'(–2,2), C'(–7,0)",
+   "status_kunci": "cocok",
+   "catatan": "Vektor translasi dibaca dari PNG siswa hal. 238 (vektor bersusun rusak di Markdown)."
+  },
+  {
+   "id": "kelas11_tl-b05-p0238-latihan-a-4d",
+   "subbab": "A",
+   "tingkat_kesulitan": 4,
+   "alasan_kesulitan": "harus memahami rotasi 180 derajat sebagai (x,y)->(-x,-y) lalu menyubstitusikannya ke persamaan garis",
+   "sumber_soal": "siswa",
+   "source_page": 238,
+   "source_section": "Latihan A Transformasi pada Bidang Kartesius · Penerapan Konsep",
+   "source_item_no": "4d",
+   "stimulus": "Tentukan peta dari transformasi geometri berikut.",
+   "pertanyaan": "Garis $3x - 2y + 5 = 0$ yang ditransformasi oleh rotasi 180° terhadap titik asal (0, 0).",
+   "pertanyaan_disesuaikan": false,
+   "catatan_penyesuaian": null,
+   "notasi_dari_png": true,
+   "butuh_gambar": false,
+   "image_refs": [],
+   "jawaban_benar": "–3x + 2y + 5 = 0",
+   "alasan_benar": "(x,y)->(–x,–y) sehingga x=–x', y=–y'; substitusi ke 3x–2y+5=0 memberi –3x'+2y'+5=0",
+   "distraktor": [
+    {
+     "teks": "3x – 2y + 5 = 0",
+     "alasan": "menganggap garis tidak berubah setelah rotasi"
+    },
+    {
+     "teks": "–3x – 2y + 5 = 0",
+     "alasan": "hanya membalik tanda x, tanda y tidak dibalik"
+    },
+    {
+     "teks": "3x – 2y – 5 = 0",
+     "alasan": "hanya membalik tanda konstanta"
+    }
+   ],
+   "kunci_guru": {
+    "halaman": 245,
+    "kutipan": "3 _x_ – 2 _y_ + 5 = 0 sehingga diperoleh –3 _x_ ' + 2 _y_ ' + 5 = 0"
+   },
+   "jawaban_agen": "–3x + 2y + 5 = 0",
+   "status_kunci": "cocok",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-p0247-latihan-b-5a",
+   "subbab": "B",
+   "tingkat_kesulitan": 2,
+   "alasan_kesulitan": "satu operasi: mengalikan matriks 2x2 dengan vektor posisi titik",
+   "sumber_soal": "siswa",
+   "source_page": 247,
+   "source_section": "Latihan B Kaitan Matriks dengan Transformasi · Penerapan Konsep",
+   "source_item_no": "5a",
+   "stimulus": "Tentukan peta dari beberapa operasi transformasi berikut.",
+   "pertanyaan": "Titik (3, 7) yang ditransformasikan dengan matriks $\\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$.",
+   "pertanyaan_disesuaikan": false,
+   "catatan_penyesuaian": null,
+   "notasi_dari_png": true,
+   "butuh_gambar": false,
+   "image_refs": [],
+   "jawaban_benar": "(–7, 3)",
+   "alasan_benar": "$\\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}\\begin{bmatrix} 3 \\\\ 7 \\end{bmatrix} = \\begin{bmatrix} -7 \\\\ 3 \\end{bmatrix}$",
+   "distraktor": [
+    {
+     "teks": "(7, –3)",
+     "alasan": "memakai matriks kebalikan (rotasi –90°), bukan matriks yang diberikan"
+    },
+    {
+     "teks": "(–3, –7)",
+     "alasan": "menerapkan matriks seolah pencerminan terhadap titik asal"
+    },
+    {
+     "teks": "(7, 3)",
+     "alasan": "tertukar urutan komponen tanpa memperhatikan tanda"
+    }
+   ],
+   "kunci_guru": {
+    "halaman": 246,
+    "kutipan": "(–7, 3)",
+    "dari_png": true
+   },
+   "jawaban_agen": "(–7, 3): [0*3 + (–1)*7, 1*3 + 0*7]",
+   "status_kunci": "cocok",
+   "catatan": "Kunci hanya berupa matriks kolom di gambar Buku Guru hal. 246 (dibaca dari PNG)."
+  },
+  {
+   "id": "kelas11_tl-b05-p0247-latihan-b-5d",
+   "subbab": "B",
+   "tingkat_kesulitan": 4,
+   "alasan_kesulitan": "harus mencari hubungan (x,y) dan (x',y') dari matriks lalu menyubstitusikannya ke persamaan garis",
+   "sumber_soal": "siswa",
+   "source_page": 247,
+   "source_section": "Latihan B Kaitan Matriks dengan Transformasi · Penerapan Konsep",
+   "source_item_no": "5d",
+   "stimulus": "Tentukan peta dari beberapa operasi transformasi berikut.",
+   "pertanyaan": "Garis $x - 2y + 3 = 0$ yang ditransformasikan oleh $\\begin{bmatrix} 3 & 0 \\\\ 0 & 3 \\end{bmatrix}$.",
+   "pertanyaan_disesuaikan": false,
+   "catatan_penyesuaian": null,
+   "notasi_dari_png": true,
+   "butuh_gambar": false,
+   "image_refs": [],
+   "jawaban_benar": "x – 2y + 9 = 0",
+   "alasan_benar": "(x',y') = (3x,3y) sehingga x = x'/3, y = y'/3; substitusi memberi x'/3 – 2y'/3 + 3 = 0, dikali 3: x' – 2y' + 9 = 0",
+   "distraktor": [
+    {
+     "teks": "x – 2y + 1 = 0",
+     "alasan": "memakai (x',y') = (x/3, y/3), yaitu mengalikan dengan 1/3 bukan 3"
+    },
+    {
+     "teks": "3x – 2y + 3 = 0",
+     "alasan": "hanya mengalikan variabel x dengan 3"
+    },
+    {
+     "teks": "x – 2y + 27 = 0",
+     "alasan": "mengalikan konstanta dengan 9 setelah menyederhanakan"
+    }
+   ],
+   "kunci_guru": {
+    "halaman": 246,
+    "kutipan": "x – 2y + 9 = 0",
+    "dari_png": true
+   },
+   "jawaban_agen": "x – 2y + 9 = 0",
+   "status_kunci": "cocok",
+   "catatan": "Kunci ada di Buku Guru hal. 246; kutipan dibaca dari PNG (pecahan garbled di Markdown)."
+  },
+  {
+   "id": "kelas11_tl-b05-p0251-latihan-c-4a",
+   "subbab": "C",
+   "tingkat_kesulitan": 3,
+   "alasan_kesulitan": "harus menyusun dua pencerminan berurutan lalu mengenali transformasi tunggal yang ekuivalen",
+   "sumber_soal": "siswa",
+   "source_page": 251,
+   "source_section": "Latihan C Komposisi Transformasi dengan Matriks · Penerapan Konsep",
+   "source_item_no": "4a",
+   "stimulus": "Misalkan $T_1$ menyatakan operasi pencerminan terhadap sumbu-$x$ dan $T_2$ menyatakan operasi pencerminan terhadap sumbu-$y$.",
+   "pertanyaan": "Transformasi tunggal apakah yang ekuivalen dengan $T_2$ ◦ $T_1$?",
+   "pertanyaan_disesuaikan": false,
+   "catatan_penyesuaian": null,
+   "notasi_dari_png": true,
+   "butuh_gambar": false,
+   "image_refs": [],
+   "jawaban_benar": "Rotasi terhadap titik pusat (0, 0) sebesar 180°",
+   "alasan_benar": "(x,y)->(x,–y)->(–x,–y), yaitu rotasi 180° terhadap titik asal",
+   "distraktor": [
+    {
+     "teks": "Pencerminan terhadap garis y = x",
+     "alasan": "mengira dua pencerminan sumbu menghasilkan pencerminan garis diagonal"
+    },
+    {
+     "teks": "Rotasi terhadap titik pusat (0, 0) sebesar 90°",
+     "alasan": "salah menentukan sudut rotasi hasil komposisi"
+    },
+    {
+     "teks": "Identitas (setiap titik tidak berubah)",
+     "alasan": "mengira dua pencerminan saling meniadakan (berlaku hanya untuk sumbu yang sama)"
+    }
+   ],
+   "kunci_guru": {
+    "halaman": 247,
+    "kutipan": "Rotasi terhadap titik pusat (0, 0) sebesar 180°"
+   },
+   "jawaban_agen": "rotasi 180° terhadap titik asal",
+   "status_kunci": "cocok",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-p0251-latihan-c-4b",
+   "subbab": "C",
+   "tingkat_kesulitan": 3,
+   "alasan_kesulitan": "harus menyusun komposisi dua pencerminan lalu menerapkannya pada titik umum",
+   "sumber_soal": "siswa",
+   "source_page": 251,
+   "source_section": "Latihan C Komposisi Transformasi dengan Matriks · Penerapan Konsep",
+   "source_item_no": "4b",
+   "stimulus": "Misalkan $T_1$ menyatakan operasi pencerminan terhadap sumbu-$x$ dan $T_2$ menyatakan operasi pencerminan terhadap sumbu-$y$. a. Transformasi tunggal apakah yang ekuivalen dengan $T_2$ ◦ $T_1$?",
+   "pertanyaan": "Apa peta dari P(a, b) dari transformasi tersebut?",
+   "pertanyaan_disesuaikan": false,
+   "catatan_penyesuaian": null,
+   "notasi_dari_png": true,
+   "butuh_gambar": false,
+   "image_refs": [],
+   "jawaban_benar": "P'(–a, –b)",
+   "alasan_benar": "T1: (a,b)->(a,–b); T2: (a,–b)->(–a,–b)",
+   "distraktor": [
+    {
+     "teks": "P'(a, –b)",
+     "alasan": "hanya menerapkan T1 (pencerminan sumbu-x)"
+    },
+    {
+     "teks": "P'(–a, b)",
+     "alasan": "hanya menerapkan T2 (pencerminan sumbu-y)"
+    },
+    {
+     "teks": "P'(b, a)",
+     "alasan": "mengira hasilnya pencerminan terhadap garis y = x"
+    }
+   ],
+   "kunci_guru": {
+    "halaman": 247,
+    "kutipan": "(–a, –b)"
+   },
+   "jawaban_agen": "P'(–a, –b)",
+   "status_kunci": "cocok",
+   "catatan": "Soal b merujuk soal a; stimulus memuat soal induk dan a (salinan verbatim)."
+  },
+  {
+   "id": "kelas11_tl-b05-p0251-latihan-c-5",
+   "subbab": "C",
+   "tingkat_kesulitan": 4,
+   "alasan_kesulitan": "harus mengalikan dua matriks transformasi dengan urutan yang benar",
+   "sumber_soal": "siswa",
+   "source_page": 251,
+   "source_section": "Latihan C Komposisi Transformasi dengan Matriks · Penerapan Konsep",
+   "source_item_no": "5",
+   "stimulus": null,
+   "pertanyaan": "Carilah matriks yang berkaitan dengan pencerminan terhadap sumbu-y dilanjutkan dengan rotasi 180° terhadap titik pusat.",
+   "pertanyaan_disesuaikan": false,
+   "catatan_penyesuaian": null,
+   "notasi_dari_png": true,
+   "butuh_gambar": false,
+   "image_refs": [],
+   "jawaban_benar": "$\\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$",
+   "alasan_benar": "$\\begin{bmatrix} -1 & 0 \\\\ 0 & -1 \\end{bmatrix}\\begin{bmatrix} -1 & 0 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$",
+   "distraktor": [
+    {
+     "teks": "$\\begin{bmatrix} -1 & 0 \\\\ 0 & -1 \\end{bmatrix}$",
+     "alasan": "hanya matriks rotasi 180°, pencerminan sumbu-y terlupa"
+    },
+    {
+     "teks": "$\\begin{bmatrix} -1 & 0 \\\\ 0 & 1 \\end{bmatrix}$",
+     "alasan": "hanya matriks pencerminan sumbu-y, rotasi terlupa"
+    },
+    {
+     "teks": "$\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$",
+     "alasan": "mengira komposisi kedua transformasi menghasilkan identitas"
+    }
+   ],
+   "kunci_guru": {
+    "halaman": 247,
+    "kutipan": "1 0 0 -1",
+    "dari_png": true
+   },
+   "jawaban_agen": "$\\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$",
+   "status_kunci": "cocok",
+   "catatan": "Kunci berupa gambar matriks di Buku Guru hal. 247 (dibaca dari PNG)."
+  }
+ ],
+ "dilewati": [
+  {
+   "source_page": 238,
+   "source_section": "Latihan A",
+   "source_item_no": "1-3",
+   "alasan": "lainnya",
+   "keterangan": "Benar/Salah tunggal; subbab A sudah tercukupi (pola bab lain)"
+  },
+  {
+   "source_page": 247,
+   "source_section": "Latihan B",
+   "source_item_no": "1-3",
+   "alasan": "lainnya",
+   "keterangan": "Benar/Salah tunggal; subbab B sudah tercukupi"
+  },
+  {
+   "source_page": 251,
+   "source_section": "Latihan C",
+   "source_item_no": "1-3",
+   "alasan": "lainnya",
+   "keterangan": "Benar/Salah tunggal; subbab C sudah tercukupi"
+  }
+ ]
+}
