@@ -2,9 +2,97 @@
   "book": "kelas10",
   "bab": "Bab 7 - Peluang",
   "bab_no": 7,
-  "mode": "prasyarat",
+  "mode": "lengkap",
   "halaman_siswa": [257, 312],
   "soal": [
+    {
+      "id": "kelas10-b07-p0262-latihan-7-1-1a",
+      "subbab": "A", "tingkat_kesulitan": 2,
+      "alasan_kesulitan": "cukup menjumlahkan dua peluang yang saling lepas dari ruang sampel 36 titik",
+      "sumber_soal": "siswa",
+      "source_page": 262, "source_section": "Latihan 7.1", "source_item_no": "1a",
+      "stimulus": "Coba kamu tentukan peluang untuk kejadian berikut. Misalnya, Tabel 7.2 distribusi peluang di bawah ini menunjukkan semua kemungkinan jumlah yang dapat diperoleh dari lemparan dua dadu.",
+      "pertanyaan": "a. jumlah 2 atau 3",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": false, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$\\frac{3}{36}$",
+      "alasan_benar": "P(jumlah 2) = 1/36 dan P(jumlah 3) = 2/36, keduanya saling lepas sehingga dijumlahkan menjadi 3/36",
+      "distraktor": [
+        {"teks": "$\\frac{1}{36}$", "alasan": "hanya menghitung peluang jumlah 2, lupa menambahkan jumlah 3"},
+        {"teks": "$\\frac{2}{36}$", "alasan": "hanya menghitung peluang jumlah 3, lupa menambahkan jumlah 2"},
+        {"teks": "$\\frac{6}{36}$", "alasan": "ikut menghitung jumlah 4 (menganggap 'atau' berarti jumlah 4 ke bawah)"}
+      ],
+      "kunci_guru": {"halaman": 259, "kutipan": "1. a. 3/36 = 0,083"},
+      "jawaban_agen": "1/36 + 2/36 = 3/36",
+      "status_kunci": "cocok",
+      "catatan": "Nilai dibaca dari PNG Buku Guru hal. 259 (markdown mentah rusak: '363 = ,0 083')."
+    },
+    {
+      "id": "kelas10-b07-p0262-latihan-7-1-1b",
+      "subbab": "A", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "harus menjumlahkan peluang sembilan nilai jumlah (4 sampai 12) atau memakai komplemen dari jumlah 2 dan 3",
+      "sumber_soal": "siswa",
+      "source_page": 262, "source_section": "Latihan 7.1", "source_item_no": "1b",
+      "stimulus": "Coba kamu tentukan peluang untuk kejadian berikut. Misalnya, Tabel 7.2 distribusi peluang di bawah ini menunjukkan semua kemungkinan jumlah yang dapat diperoleh dari lemparan dua dadu.",
+      "pertanyaan": "b. jumlah lebih besar daripada 3",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": false, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$\\frac{33}{36}$",
+      "alasan_benar": "P(jumlah > 3) = 1 - P(jumlah 2 atau 3) = 1 - 3/36 = 33/36",
+      "distraktor": [
+        {"teks": "$\\frac{35}{36}$", "alasan": "hanya mengeluarkan jumlah 2, lupa jumlah 3 juga harus dikeluarkan"},
+        {"teks": "$\\frac{34}{36}$", "alasan": "hanya mengeluarkan jumlah 3, lupa jumlah 2 juga harus dikeluarkan"},
+        {"teks": "$\\frac{3}{36}$", "alasan": "tertukar dengan peluang jumlah tidak lebih besar dari 3 (lupa mengambil komplemennya)"}
+      ],
+      "kunci_guru": {"halaman": 259, "kutipan": "b. 33/36 = 0,917", "dari_png": true},
+      "jawaban_agen": "1 - 3/36 = 33/36",
+      "status_kunci": "cocok",
+      "catatan": "Nilai dibaca dari PNG Buku Guru hal. 259 (markdown mentah rusak: '3336 = ,0 917', token '33' dan '36' tergabung jadi satu)."
+    },
+    {
+      "id": "kelas10-b07-p0272-latihan-7-4-1",
+      "subbab": "B", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "harus menyadari dua kejadian saling lepas (dobel selalu genap, tak mungkin berjumlah 5) sebelum menjumlahkan dua peluang",
+      "sumber_soal": "siswa",
+      "source_page": 272, "source_section": "Latihan 7.4", "source_item_no": "1",
+      "stimulus": "Gunakan aturan penjumlahan untuk soal-soal berikut mengenai sepasang dadu yang dilempar.",
+      "pertanyaan": "Tentukan peluang mendapatkan dua angka sama atau berjumlah 5.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$\\frac{10}{36}$",
+      "alasan_benar": "kedua kejadian saling lepas (dobel selalu berjumlah genap sehingga tidak mungkin berjumlah 5); P(A atau B) = P(A) + P(B) = 6/36 + 4/36 = 10/36",
+      "distraktor": [
+        {"teks": "$\\frac{6}{36}$", "alasan": "hanya menghitung peluang dua angka sama (dobel) saja"},
+        {"teks": "$\\frac{4}{36}$", "alasan": "hanya menghitung peluang berjumlah 5 saja"},
+        {"teks": "$\\frac{9}{36}$", "alasan": "menganggap kedua kejadian tidak saling lepas dan mengurangkan irisan yang sebenarnya kosong (6/36+4/36-1/36)"}
+      ],
+      "kunci_guru": {"halaman": 276, "kutipan": "Dua kejadian ini saling lepas. P(A)=6/36. P(B)=4/36. P(A∪B)=P(A)+P(B)=6/36+4/36=10/36", "dari_png": true},
+      "jawaban_agen": "6/36 + 4/36 = 10/36",
+      "status_kunci": "cocok",
+      "catatan": "Nilai dibaca dari PNG Buku Guru hal. 276 (markdown mentah kosong/berupa titik-titik, RISIKO_MATEMATIKA)."
+    },
+    {
+      "id": "kelas10-b07-p0272-latihan-7-4-2",
+      "subbab": "B", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "harus menyadari kedua kejadian TIDAK saling lepas (jumlah 2 hanya dari dobel 1,1) lalu mengurangkan irisannya",
+      "sumber_soal": "siswa",
+      "source_page": 272, "source_section": "Latihan 7.4", "source_item_no": "2",
+      "stimulus": "Gunakan aturan penjumlahan untuk soal-soal berikut mengenai sepasang dadu yang dilempar.",
+      "pertanyaan": "Tentukan peluang mendapatkan dua angka sama atau berjumlah 2.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$\\frac{6}{36}$",
+      "alasan_benar": "kedua kejadian tidak saling lepas karena jumlah 2 hanya berasal dari (1,1) yang juga termasuk dobel; P(A atau B) = P(A) + P(B) - P(A dan B) = 6/36 + 1/36 - 1/36 = 6/36",
+      "distraktor": [
+        {"teks": "$\\frac{7}{36}$", "alasan": "menjumlahkan langsung tanpa mengurangkan irisannya (6/36+1/36)"},
+        {"teks": "$\\frac{5}{36}$", "alasan": "menganggap banyak dobel hanya 5 (lupa satu kombinasi dobel)"},
+        {"teks": "$\\frac{1}{36}$", "alasan": "hanya menghitung peluang irisannya (dobel dan berjumlah 2 sekaligus) saja"}
+      ],
+      "kunci_guru": {"halaman": 276, "kutipan": "kejadian yang tidak saling lepas. P(A∪B)=P(A)+P(B)-P(A∩B). P(A)=6/36, P(B)=1/36, P(A∩B)=1/36. P(A∪B)=6/36+1/36-1/36=6/36", "dari_png": true},
+      "jawaban_agen": "6/36 + 1/36 - 1/36 = 6/36",
+      "status_kunci": "cocok",
+      "catatan": "Nilai dibaca dari PNG Buku Guru hal. 276 (markdown mentah kosong/berupa titik-titik, RISIKO_MATEMATIKA)."
+    },
     {
       "id": "kelas10-b07-p0276-latihan-7-5-1a",
       "subbab": "C", "tingkat_kesulitan": 2,
@@ -203,9 +291,31 @@
     }
   ],
   "dilewati": [
+    {"source_page": 259, "source_section": "Ayo, Berdiskusi / Ayo, Berpikir Kritis", "source_item_no": "2-5",
+     "alasan": "lainnya", "keterangan": "diskusi/eksplorasi lanjutan (semua hasil sama kemungkinan?, peluang setidaknya satu dadu angka 5, dst.); kuota subbab A sudah terpenuhi dari Latihan 7.1"},
+    {"source_page": 263, "source_section": "Latihan 7.2", "source_item_no": "1,2",
+     "alasan": "isian_banyak", "keterangan": "melengkapi tabel distribusi peluang (angka yang lebih besar & nilai mutlak selisih dua dadu) dari gambar; kuota subbab A sudah terpenuhi"},
+    {"source_page": 264, "source_section": "Ayo, Mencoba", "source_item_no": "-",
+     "alasan": "isian_banyak", "keterangan": "melengkapi tabel distribusi peluang jumlah gambar pada dua uang logam; kuota subbab A sudah terpenuhi"},
+    {"source_page": 264, "source_section": "Ayo, Berpikir Kritis / Ayo, Berdiskusi", "source_item_no": "-",
+     "alasan": "soal_terbuka", "keterangan": "menilai pendapat teman tentang peluang genap vs ganjil hasil kali dua dadu, jawaban berupa penjelasan"},
+    {"source_page": 268, "source_section": "Ayo, Berpikir Kritis", "source_item_no": "a-d",
+     "alasan": "lainnya", "keterangan": "mengidentifikasi pasangan kejadian saling lepas (dadu, transportasi) untuk diskusi berpasangan; kuota subbab B sudah terpenuhi dari Latihan 7.4"},
+    {"source_page": 268, "source_section": "Ayo, Berpikir Kritis", "source_item_no": "-",
+     "alasan": "lainnya", "keterangan": "contoh frekuensi relatif yang sudah dijawab langsung di teks buku (8/20=2/5), bukan soal latihan"},
+    {"source_page": 269, "source_section": "Latihan 7.3", "source_item_no": "1a,1b,1c",
+     "alasan": "lainnya", "keterangan": "soal frekuensi relatif & frekuensi harapan (bukan langsung aturan penjumlahan); kuota subbab B sudah terpenuhi dari Latihan 7.4"},
+    {"source_page": 273, "source_section": "Ayo, Berpikir Kreatif", "source_item_no": "-",
+     "alasan": "soal_terbuka", "keterangan": "memberi contoh dua kejadian saling lepas versi sendiri, jawaban bervariasi"},
     {"source_page": 277, "source_section": "Latihan 7.5", "source_item_no": "4a",
      "alasan": "isian_banyak", "keterangan": "mendaftar semua kemungkinan percobaan"},
     {"source_page": 279, "source_section": "Latihan 7.6", "source_item_no": "7",
-     "alasan": "soal_terbuka", "keterangan": "meminta penjelasan benar/tidak; kunci Guru hanya argumen kualitatif tanpa nilai peluang"}
+     "alasan": "soal_terbuka", "keterangan": "meminta penjelasan benar/tidak; kunci Guru hanya argumen kualitatif tanpa nilai peluang"},
+    {"source_page": 281, "source_section": "Asesmen Diri", "source_item_no": "-",
+     "alasan": "lainnya", "keterangan": "tabel checklist refleksi diri (Bisa Mandiri/Bisa dengan Bantuan/Belum Bisa), bukan soal dengan jawaban benar/salah"},
+    {"source_page": 282, "source_section": "Uji Kompetensi", "source_item_no": "1-3",
+     "alasan": "lainnya", "keterangan": "soal campuran subbab A/B/C (dadu oktahedral) bagus tapi kuota semua subbab sudah terpenuhi dari Latihan lain"},
+    {"source_page": 283, "source_section": "Pengayaan - Percobaan Jarum Buffon", "source_item_no": "-",
+     "alasan": "proyek_atau_aktivitas", "keterangan": "proyek aktivitas ICT menggunakan spreadsheet, bukan soal PG"}
   ]
 }

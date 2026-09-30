@@ -1,0 +1,494 @@
+{
+  "book": "kelas12_tl", "bab": "Bab 2 - Turunan Fungsi", "bab_no": 2,
+  "halaman_siswa": [95, 174],
+  "soal": [
+    {
+      "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-1a",
+      "subbab": "A", "tingkat_kesulitan": 2,
+      "alasan_kesulitan": "substitusi langsung nilai x ke fungsi, satu langkah",
+      "sumber_soal": "siswa",
+      "source_page": 118, "source_section": "Latihan Soal Definisi Turunan Fungsi", "source_item_no": "1a",
+      "stimulus": "Gunakanlah sifat-sifat limit untuk menyelesaikan masalah berikut.",
+      "pertanyaan": "Tentukan nilai dari $\\displaystyle\\lim_{x\\to 3}(x^2+2)$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$11$",
+      "alasan_benar": "substitusi x=3: $3^2+2=9+2=11$",
+      "distraktor": [
+        {"teks": "$25$", "alasan": "menjumlahkan dulu (3+2) baru dikuadratkan"},
+        {"teks": "$5$", "alasan": "lupa mengkuadratkan x, hanya menjumlahkan 3+2"},
+        {"teks": "$7$", "alasan": "salah hitung 3^2 dianggap 5 lalu ditambah 2"}
+      ],
+      "kunci_guru": {"halaman": 148, "kutipan": "32 + 2 = 11 (Sifat Limit 6, 1)", "dari_png": false},
+      "jawaban_agen": "lim x->3 (x^2+2) = 3^2+2 = 11",
+      "status_kunci": "cocok", "catatan": "Soal 1-4 di hal.118 seluruhnya berupa satu gambar tanpa OCR teks; pertanyaan ditulis ulang dalam LaTeX (notasi_dari_png=true) mengikuti pola bab01 buku ini."
+    },
+    {
+      "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-1c",
+      "subbab": "A", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "substitusi lalu menyederhanakan pecahan di dalam akar",
+      "sumber_soal": "siswa",
+      "source_page": 118, "source_section": "Latihan Soal Definisi Turunan Fungsi", "source_item_no": "1c",
+      "stimulus": "Gunakanlah sifat-sifat limit untuk menyelesaikan masalah berikut.",
+      "pertanyaan": "Tentukan nilai dari $\\displaystyle\\lim_{y\\to 2}\\sqrt{\\dfrac{y^2}{2y^2+7y+3}}$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$\\frac{2}{5}$",
+      "alasan_benar": "substitusi y=2: $\\sqrt{4/(8+14+3)}=\\sqrt{4/25}=2/5$",
+      "distraktor": [
+        {"teks": "$-\\frac{2}{5}$", "alasan": "salah tanda saat mengambil akar (memilih akar negatif)"},
+        {"teks": "$\\frac{4}{25}$", "alasan": "lupa mengambil akar kuadrat dari seluruh pecahan"},
+        {"teks": "$\\frac{1}{5}$", "alasan": "salah hitung penyebut 2(2)^2+7(2)+3 dianggap 20"}
+      ],
+      "kunci_guru": {"halaman": 149, "kutipan": "2/5", "dari_png": true},
+      "jawaban_agen": "y=2: y^2=4, 2y^2+7y+3=8+14+3=25, sqrt(4/25)=2/5",
+      "status_kunci": "cocok", "catatan": "Kunci hal.149 seluruhnya gambar (tanpa OCR); dibaca dari PNG."
+    },
+    {
+      "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-1d",
+      "subbab": "A", "tingkat_kesulitan": 5,
+      "alasan_kesulitan": "perlu identitas trigonometri dan pemfaktoran sebelum substitusi",
+      "sumber_soal": "siswa",
+      "source_page": 118, "source_section": "Latihan Soal Definisi Turunan Fungsi", "source_item_no": "1d",
+      "stimulus": "Gunakanlah sifat-sifat limit untuk menyelesaikan masalah berikut.",
+      "pertanyaan": "Tentukan nilai dari $\\displaystyle\\lim_{x\\to \\frac{\\pi}{4}}\\left(\\dfrac{\\sin x-\\cos x}{1-\\tan x}\\right)$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$-\\frac{1}{2}\\sqrt{2}$",
+      "alasan_benar": "setelah difaktorkan, limit menjadi $-\\cos(\\pi/4)=-\\frac{1}{2}\\sqrt2$",
+      "distraktor": [
+        {"teks": "$\\frac{1}{2}\\sqrt{2}$", "alasan": "salah tanda, lupa tanda negatif dari -cos x"},
+        {"teks": "$-\\frac{1}{2}$", "alasan": "berhenti sebelum menghitung cos(pi/4), dianggap cos(pi/4)=1/2"},
+        {"teks": "$-\\sqrt{2}$", "alasan": "lupa faktor 1/2 saat menuliskan cos(pi/4)"}
+      ],
+      "kunci_guru": {"halaman": 149, "kutipan": "-1/2 √2", "dari_png": true},
+      "jawaban_agen": "1 - tanx = (cosx - sinx)/cosx, sehingga limit = lim (sinx-cosx)cosx/(cosx-sinx) = lim -cosx = -cos(pi/4) = -1/2 sqrt2",
+      "status_kunci": "cocok", "catatan": "Kunci hal.149 seluruhnya gambar (tanpa OCR); dibaca dari PNG."
+    },
+    {
+      "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-2",
+      "subbab": "A", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "menggunakan sifat limit pada fungsi abstrak g(x) sebelum substitusi",
+      "sumber_soal": "siswa",
+      "source_page": 118, "source_section": "Latihan Soal Definisi Turunan Fungsi", "source_item_no": "2",
+      "stimulus": "",
+      "pertanyaan": "Diketahui $\\displaystyle\\lim_{x\\to3}g(x)=2$. Tentukan $\\displaystyle\\lim_{x\\to3}\\left(g(x)\\cdot\\dfrac{-3}{\\sqrt{x}+\\sqrt{3}}\\right)$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$-\\sqrt3$",
+      "alasan_benar": "$2\\cdot(-3)/(\\sqrt3+\\sqrt3)=-6/(2\\sqrt3)=-\\sqrt3$",
+      "distraktor": [
+        {"teks": "$\\sqrt3$", "alasan": "salah tanda, lupa tanda negatif pada -3"},
+        {"teks": "$-2\\sqrt3$", "alasan": "lupa menjumlahkan akar(3)+akar(3)=2akar(3), hanya menulis akar(3) di penyebut"},
+        {"teks": "$-3$", "alasan": "mengabaikan bentuk akar di penyebut dan langsung menyederhanakan jadi 2(-3)/2"}
+      ],
+      "kunci_guru": {"halaman": 150, "kutipan": "-√3", "dari_png": true},
+      "jawaban_agen": "lim g(x)*(-3)/(sqrt(x)+sqrt(3)) = 2*(-3)/(2 sqrt3) = -6/(2 sqrt3) = -sqrt3",
+      "status_kunci": "cocok", "catatan": "Kunci hal.149-150 seluruhnya gambar (tanpa OCR); kesimpulan akhir -√3 tampak di bagian atas hal.150."
+    },
+    {
+      "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-3",
+      "subbab": "A", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "memeriksa kekontinuan fungsi tak-linear di suatu titik memakai definisi limit",
+      "sumber_soal": "siswa",
+      "source_page": 118, "source_section": "Latihan Soal Definisi Turunan Fungsi", "source_item_no": "3",
+      "stimulus": "Diberikan fungsi $g(x)=\\begin{cases}-x+3, & x\\le 2\\\\ x^2-3, & x>2\\end{cases}$.",
+      "pertanyaan": "Kontinukah $g(x)$ di $R$?",
+      "pertanyaan_disesuaikan": true,
+      "catatan_penyesuaian": "Soal asli 'Apakah g(x) kontinu di R?' (jawaban ya/tidak) diubah menjadi PG dengan opsi pernyataan kontinu/tidak kontinu beserta alasannya.",
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Ya, $g(x)$ kontinu di $R$",
+      "alasan_benar": "g(x) kontinu untuk x<2, x>2, dan di x=2 karena limit kiri = limit kanan = g(2) = 1",
+      "distraktor": [
+        {"teks": "Tidak, $g(x)$ tidak kontinu di $x=2$ karena limit kiri dan kanan berbeda", "alasan": "keliru menghitung limit kanan di x=2, padahal keduanya sama-sama bernilai 1"},
+        {"teks": "Tidak, $g(x)$ tidak kontinu untuk $x>2$ karena bentuknya kuadrat", "alasan": "mengira fungsi kuadrat otomatis tidak kontinu"},
+        {"teks": "Tidak, $g(x)$ tidak kontinu untuk $x\\le 2$ karena bentuknya linear terpotong", "alasan": "mengira fungsi linear pada domain terbatas otomatis tidak kontinu"}
+      ],
+      "kunci_guru": {"halaman": 151, "kutipan": "g(x) kontinu di R", "dari_png": true},
+      "jawaban_agen": "g(2)=1, limit kiri=limit kanan=1 di x=2, dan g(x) kontinu di x<2 serta x>2, sehingga g(x) kontinu di R",
+      "status_kunci": "cocok", "catatan": "Kesimpulan akhir 'g(x) kontinu di R' hanya ada di gambar hal.151 (teks Markdown hal.150-151 hanya memuat langkah pembuktian, bukan kesimpulan akhirnya)."
+    },
+    {
+      "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-4a",
+      "subbab": "A", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "menurunkan fungsi kuadrat dari definisi limit lalu mensubstitusi dua nilai x",
+      "sumber_soal": "siswa",
+      "source_page": 118, "source_section": "Latihan Soal Definisi Turunan Fungsi", "source_item_no": "4a",
+      "stimulus": "",
+      "pertanyaan": "$f'(-2)$ dan $f'(0)$ untuk $f(x)=-2x^2$?",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$f'(-2)=8$ dan $f'(0)=0$",
+      "alasan_benar": "$f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}=-4x$, sehingga $f'(-2)=8$ dan $f'(0)=0$",
+      "distraktor": [
+        {"teks": "$f'(-2)=-8$ dan $f'(0)=0$", "alasan": "salah tanda saat mensubstitusi x=-2 ke f'(x)=-4x"},
+        {"teks": "$f'(-2)=16$ dan $f'(0)=0$", "alasan": "salah menurunkan menjadi f'(x)=-8x, bukan -4x"},
+        {"teks": "$f'(-2)=8$ dan $f'(0)=-4$", "alasan": "keliru menghitung f'(0) dengan menyisakan konstanta -4 dari langkah antara"}
+      ],
+      "kunci_guru": {"halaman": 151, "kutipan": "f'(-2)=8 dan f'(0)=0", "dari_png": true},
+      "jawaban_agen": "f'(x)=lim h->0 [-2(x+h)^2-(-2x^2)]/h = -4x; f'(-2)=8, f'(0)=0",
+      "status_kunci": "cocok", "catatan": "Kunci soal no.4 seluruhnya di gambar hal.151."
+    },
+    {
+      "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-4b",
+      "subbab": "A", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "menurunkan fungsi kuadrat berkoefisien pecahan dari definisi limit lalu mensubstitusi",
+      "sumber_soal": "siswa",
+      "source_page": 118, "source_section": "Latihan Soal Definisi Turunan Fungsi", "source_item_no": "4b",
+      "stimulus": "",
+      "pertanyaan": "$f'(-2)$ dan $f'(0)$ untuk $f(x)=\\frac{1}{2}x^2$?",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$f'(-2)=-2$ dan $f'(0)=0$",
+      "alasan_benar": "$f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}=x$, sehingga $f'(-2)=-2$ dan $f'(0)=0$",
+      "distraktor": [
+        {"teks": "$f'(-2)=2$ dan $f'(0)=0$", "alasan": "salah tanda saat mensubstitusi x=-2 ke f'(x)=x"},
+        {"teks": "$f'(-2)=-4$ dan $f'(0)=0$", "alasan": "lupa koefisien 1/2 sehingga menurunkan f(x)=x^2 menjadi f'(x)=2x"},
+        {"teks": "$f'(-2)=-2$ dan $f'(0)=-2$", "alasan": "keliru mengira f'(0) sama dengan f'(-2) karena fungsinya sama"}
+      ],
+      "kunci_guru": {"halaman": 151, "kutipan": "f'(-2)=-2 dan f'(0)=0", "dari_png": true},
+      "jawaban_agen": "f'(x)=lim h->0 [(1/2)(x+h)^2-(1/2)x^2]/h = x; f'(-2)=-2, f'(0)=0",
+      "status_kunci": "cocok", "catatan": "Kunci soal no.4 seluruhnya di gambar hal.151."
+    },
+    {
+      "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1a",
+      "subbab": "B", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "aturan hasil kali dua fungsi (polinomial dan trigonometri)",
+      "sumber_soal": "siswa",
+      "source_page": 142, "source_section": "Latihan Soal Sifat-Sifat Turunan Fungsi", "source_item_no": "1a",
+      "stimulus": "Tentukan turunan fungsi berikut ini.",
+      "pertanyaan": "Turunan dari $y=(3x^2-5)\\cos x$?",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$y'=6x\\cos x-(3x^2-5)\\sin x$",
+      "alasan_benar": "aturan hasil kali: $u'v+uv'$ dengan $u=3x^2-5, u'=6x, v=\\cos x, v'=-\\sin x$",
+      "distraktor": [
+        {"teks": "$y'=6x\\cos x+(3x^2-5)\\sin x$", "alasan": "lupa tanda negatif pada turunan cos x"},
+        {"teks": "$y'=6x\\cos x$", "alasan": "hanya menurunkan faktor pertama, lupa suku kedua aturan hasil kali"},
+        {"teks": "$y'=-(3x^2-5)\\sin x$", "alasan": "hanya menurunkan faktor kedua, lupa suku pertama aturan hasil kali"}
+      ],
+      "kunci_guru": {"halaman": 152, "kutipan": "y'=6xcosx-(3x^2-5)sinx", "dari_png": true},
+      "jawaban_agen": "u=3x^2-5,u'=6x; v=cosx,v'=-sinx; y'=u'v+uv'=6xcosx-(3x^2-5)sinx",
+      "status_kunci": "cocok", "catatan": "Soal 1(a-f) hal.142 seluruhnya satu gambar tanpa OCR teks."
+    },
+    {
+      "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1c",
+      "subbab": "B", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "menulis ulang akar sebagai pangkat pecahan lalu memakai aturan rantai",
+      "sumber_soal": "siswa",
+      "source_page": 142, "source_section": "Latihan Soal Sifat-Sifat Turunan Fungsi", "source_item_no": "1c",
+      "stimulus": "Tentukan turunan fungsi berikut ini.",
+      "pertanyaan": "Turunan dari $y=\\sqrt{\\dfrac{1}{(2x+3)^3}}$?",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$y'=-\\dfrac{3}{(2x+3)^{5/2}}$",
+      "alasan_benar": "$y=(2x+3)^{-3/2}$, $y'=(-3/2)(2x+3)^{-5/2}\\cdot2=-3(2x+3)^{-5/2}$",
+      "distraktor": [
+        {"teks": "$y'=\\dfrac{3}{(2x+3)^{5/2}}$", "alasan": "lupa tanda negatif dari pangkat -3/2"},
+        {"teks": "$y'=-\\dfrac{3}{(2x+3)^{3/2}}$", "alasan": "lupa mengurangi 1 dari pangkat (aturan pangkat)"},
+        {"teks": "$y'=-\\dfrac{3}{2(2x+3)^{5/2}}$", "alasan": "lupa mengalikan dengan turunan (2x+3) yaitu 2 (aturan rantai)"}
+      ],
+      "kunci_guru": {"halaman": 152, "kutipan": "y'=-3/(2x+3)^{5/2}", "dari_png": true},
+      "jawaban_agen": "y=(2x+3)^(-3/2); y'=(-3/2)(2x+3)^(-5/2)*2=-3(2x+3)^(-5/2)",
+      "status_kunci": "cocok", "catatan": "Soal 1(a-f) hal.142 seluruhnya satu gambar tanpa OCR teks."
+    },
+    {
+      "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1e",
+      "subbab": "B", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "aturan rantai dua lapis: fungsi eksponensial dan fungsi akar",
+      "sumber_soal": "siswa",
+      "source_page": 142, "source_section": "Latihan Soal Sifat-Sifat Turunan Fungsi", "source_item_no": "1e",
+      "stimulus": "Tentukan turunan fungsi berikut ini.",
+      "pertanyaan": "Turunan dari $y=e^{\\sqrt{x-7}}$?",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$y'=\\dfrac{e^{\\sqrt{x-7}}}{2\\sqrt{x-7}}$",
+      "alasan_benar": "$y=e^{(x-7)^{1/2}}$, $y'=e^{(x-7)^{1/2}}\\cdot\\frac12(x-7)^{-1/2}=\\frac{e^{\\sqrt{x-7}}}{2\\sqrt{x-7}}$",
+      "distraktor": [
+        {"teks": "$y'=e^{\\sqrt{x-7}}$", "alasan": "lupa mengalikan dengan turunan fungsi dalam akar (aturan rantai)"},
+        {"teks": "$y'=\\dfrac{e^{\\sqrt{x-7}}}{\\sqrt{x-7}}$", "alasan": "lupa faktor 1/2 dari turunan akar"},
+        {"teks": "$y'=e^{\\sqrt{x-7}}\\cdot\\dfrac{\\sqrt{x-7}}{2}$", "alasan": "mengalikan bukan membagi dengan turunan fungsi akar"}
+      ],
+      "kunci_guru": {"halaman": 152, "kutipan": "y'=e^{sqrt(x-7)}/(2 sqrt(x-7))", "dari_png": true},
+      "jawaban_agen": "y=e^((x-7)^(1/2)); y'=e^((x-7)^(1/2)) * (1/2)(x-7)^(-1/2) = e^sqrt(x-7)/(2sqrt(x-7))",
+      "status_kunci": "cocok", "catatan": "Soal 1(a-f) hal.142 seluruhnya satu gambar tanpa OCR teks."
+    },
+    {
+      "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-2a",
+      "subbab": "B", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "laju terkait: turunan luas bola terhadap waktu dengan aturan rantai",
+      "sumber_soal": "siswa",
+      "source_page": 142, "source_section": "Latihan Soal Sifat-Sifat Turunan Fungsi", "source_item_no": "2a",
+      "stimulus": "Jari-jari sebuah bola bertambah panjang dengan laju 2 cm per detik. Misalkan jari-jari bola tersebut 30 cm.",
+      "pertanyaan": "Tentukan laju bertambahnya luas permukaan bola.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": false, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$480\\pi$ cm²/detik",
+      "alasan_benar": "$L=4\\pi r^2$, $dL/dt=8\\pi r\\cdot dr/dt=8\\pi(30)(2)=480\\pi$",
+      "distraktor": [
+        {"teks": "$240\\pi$ cm²/detik", "alasan": "lupa mengalikan dengan dr/dt=2, hanya memakai dr/dt=1"},
+        {"teks": "$960\\pi$ cm²/detik", "alasan": "keliru memakai turunan L=16πr, bukan 8πr"},
+        {"teks": "$8\\pi$ cm²/detik", "alasan": "lupa mensubstitusi nilai r=30 dan dr/dt=2"}
+      ],
+      "kunci_guru": {"halaman": 153, "kutipan": "8π(30)(2)=480π cm2/detik", "dari_png": true},
+      "jawaban_agen": "dL/dt = 8*pi*r*(dr/dt) = 8*pi*30*2 = 480 pi cm2/detik",
+      "status_kunci": "cocok", "catatan": "Soal induk no.2 satu kalimat memuat dua pertanyaan (luas & volume), dipecah jadi 2a/2b (masing-masing substring verbatim)."
+    },
+    {
+      "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-2b",
+      "subbab": "B", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "laju terkait: turunan volume bola terhadap waktu dengan aturan rantai",
+      "sumber_soal": "siswa",
+      "source_page": 142, "source_section": "Latihan Soal Sifat-Sifat Turunan Fungsi", "source_item_no": "2b",
+      "stimulus": "Jari-jari sebuah bola bertambah panjang dengan laju 2 cm per detik. Misalkan jari-jari bola tersebut 30 cm.",
+      "pertanyaan": "Tentukan laju bertambahnya volume bola.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": false, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$7.200\\pi$ cm³/detik",
+      "alasan_benar": "$V=\\frac43\\pi r^3$, $dV/dt=4\\pi r^2\\cdot dr/dt=4\\pi(30)^2(2)=7.200\\pi$",
+      "distraktor": [
+        {"teks": "$3.600\\pi$ cm³/detik", "alasan": "lupa mengalikan dengan dr/dt=2, hanya memakai dr/dt=1"},
+        {"teks": "$240\\pi$ cm³/detik", "alasan": "memakai r, bukan r^2, dalam turunan volume"},
+        {"teks": "$480\\pi$ cm³/detik", "alasan": "tertukar dengan jawaban laju pertambahan luas permukaan bola"}
+      ],
+      "kunci_guru": {"halaman": 153, "kutipan": "4π(30)^2(2)=7.200π cm3/detik", "dari_png": true},
+      "jawaban_agen": "dV/dt = 4*pi*r^2*(dr/dt) = 4*pi*900*2 = 7200 pi cm3/detik",
+      "status_kunci": "cocok", "catatan": "Soal induk no.2 satu kalimat memuat dua pertanyaan (luas & volume), dipecah jadi 2a/2b (masing-masing substring verbatim)."
+    },
+    {
+      "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-3a",
+      "subbab": "B", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "aturan rantai pada fungsi trigonometri sinus",
+      "sumber_soal": "siswa",
+      "source_page": 142, "source_section": "Latihan Soal Sifat-Sifat Turunan Fungsi", "source_item_no": "3a",
+      "stimulus": "Diketahui persamaan fungsi trigonometri $f(x)=2-2\\sin\\left(\\frac{1}{2}\\pi x\\right)$ didefinisikan pada daerah asal $D_f=\\{x\\mid 0\\le x\\le 4, x\\in R\\}$.",
+      "pertanyaan": "Tentukan turunan pertama dari $f(x)$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$f'(x)=-\\pi\\cos\\left(\\frac12\\pi x\\right)$",
+      "alasan_benar": "$f'(x)=-2\\cos(\\frac12\\pi x)\\cdot\\frac12\\pi=-\\pi\\cos(\\frac12\\pi x)$",
+      "distraktor": [
+        {"teks": "$f'(x)=\\pi\\cos\\left(\\frac12\\pi x\\right)$", "alasan": "lupa tanda negatif turunan sin x"},
+        {"teks": "$f'(x)=-2\\cos\\left(\\frac12\\pi x\\right)$", "alasan": "lupa mengalikan dengan turunan (1/2)πx (aturan rantai)"},
+        {"teks": "$f'(x)=-\\pi\\sin\\left(\\frac12\\pi x\\right)$", "alasan": "keliru menganggap turunan sin adalah sin, bukan cos"}
+      ],
+      "kunci_guru": {"halaman": 153, "kutipan": "f'(x)=-π(cos(1/2 πx))", "dari_png": true},
+      "jawaban_agen": "f'(x) = -2cos(1/2 pi x) * (1/2 pi) = -pi cos(1/2 pi x)",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-3b",
+      "subbab": "B", "tingkat_kesulitan": 5,
+      "alasan_kesulitan": "mencari akar persamaan trigonometri pada suatu domain lalu menggabungkan dua hasil",
+      "sumber_soal": "siswa",
+      "source_page": 142, "source_section": "Latihan Soal Sifat-Sifat Turunan Fungsi", "source_item_no": "3b",
+      "stimulus": "Diketahui persamaan fungsi trigonometri $f(x)=2-2\\sin\\left(\\frac{1}{2}\\pi x\\right)$ didefinisikan pada daerah asal $D_f=\\{x\\mid 0\\le x\\le 4, x\\in R\\}$.",
+      "pertanyaan": "Jika $f'(x)$ bernilai nol pada $x=x_1$ dan $x=x_2$, tentukan nilai dari $x_1^2+x_2^2$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$10$",
+      "alasan_benar": "$\\cos(\\frac12\\pi x)=0$ pada $D_f$ dipenuhi $x=1$ dan $x=3$, sehingga $1^2+3^2=10$",
+      "distraktor": [
+        {"teks": "$4$", "alasan": "keliru menyamakan sin (bukan cos) dengan nol, memperoleh x=0 dan x=2, sehingga 0^2+2^2=4"},
+        {"teks": "$20$", "alasan": "keliru menyamakan sin (bukan cos) dengan nol, memperoleh x=2 dan x=4, sehingga 2^2+4^2=20"},
+        {"teks": "$17$", "alasan": "salah satu akar dianggap x=4 (batas domain), bukan x=3, sehingga 1^2+4^2=17"}
+      ],
+      "kunci_guru": {"halaman": 153, "kutipan": "x1^2+x2^2=1^2+3^2=10", "dari_png": true},
+      "jawaban_agen": "cos(1/2 pi x)=0 pada [0,4] -> x=1, x=3; x1^2+x2^2=1+9=10",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas12_tl-b02-p0162-latihan-soal-aplikasi-turunan-fungsi-6a",
+      "subbab": "C", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "menentukan tanda turunan pertama pada tiap interval untuk menyimpulkan fungsi naik/turun",
+      "sumber_soal": "siswa",
+      "source_page": 162, "source_section": "Latihan Soal Aplikasi Turunan Fungsi", "source_item_no": "6a",
+      "stimulus": "Tentukan interval fungsi naik dan fungsi turun pada setiap kurva berikut.",
+      "pertanyaan": "Tentukan interval fungsi naik dan fungsi turun pada kurva $f(x)=x^3-3x^2-15$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Naik untuk $x<0$ atau $x>2$; turun untuk $0<x<2$",
+      "alasan_benar": "$f'(x)=3x^2-6x=3x(x-2)$, positif di $x<0$ atau $x>2$, negatif di $0<x<2$",
+      "distraktor": [
+        {"teks": "Naik untuk $0<x<2$; turun untuk $x<0$ atau $x>2$", "alasan": "tertukar arah pertidaksamaan tanda f'(x), naik dan turun tertukar"},
+        {"teks": "Naik untuk $x<0$ atau $x>6$; turun untuk $0<x<6$", "alasan": "lupa membagi -6x dengan koefisien 3, sehingga akar-akarnya dianggap 0 dan 6"},
+        {"teks": "Naik untuk semua $x$ kecuali $x=0$ dan $x=2$", "alasan": "mengira fungsi naik di semua interval kecuali titik kritis, tanpa menguji tanda f'(x)"}
+      ],
+      "kunci_guru": {"halaman": 159, "kutipan": "interval fungsi naik pada _x_ 1 0 atau _x_ 2 2 dan interval fungsi turun pada 0 1 _x_ 1 2", "dari_png": false},
+      "jawaban_agen": "f'(x)=3x^2-6x=3x(x-2); naik: x<0 atau x>2; turun: 0<x<2",
+      "status_kunci": "cocok", "catatan": "Kutipan kunci OCR-nya rusak (tanda < dan > tercetak sebagai angka 1 dan 2), tapi teks aslinya (bukan gambar) sudah memuat kesimpulan lengkap."
+    },
+    {
+      "id": "kelas12_tl-b02-p0163-latihan-soal-aplikasi-turunan-fungsi-11a",
+      "subbab": "C", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "menentukan titik ekstrem fungsi kubik memakai turunan pertama dan kedua",
+      "sumber_soal": "siswa",
+      "source_page": 163, "source_section": "Latihan Soal Aplikasi Turunan Fungsi", "source_item_no": "11a",
+      "stimulus": "Tentukan titik balik maksimum dan minimum dari:",
+      "pertanyaan": "Titik balik maksimum dan minimum dari $f(x)=x^3-6x^2+9x+4$?",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Titik balik maksimum $(1,8)$ dan titik balik minimum $(3,4)$",
+      "alasan_benar": "$f'(x)=3x^2-12x+9=3(x-1)(x-3)$; $f''(1)=-6<0$ (maks), $f''(3)=6>0$ (min); $f(1)=8, f(3)=4$",
+      "distraktor": [
+        {"teks": "Titik balik maksimum $(3,4)$ dan titik balik minimum $(1,8)$", "alasan": "tertukar, mengira f''(x) positif berarti maksimum (seharusnya minimum)"},
+        {"teks": "Titik balik maksimum $(1,-6)$ dan titik balik minimum $(3,6)$", "alasan": "menuliskan nilai f''(x) sebagai ordinat, bukan mensubstitusi x ke f(x)"},
+        {"teks": "Titik balik maksimum $(1,4)$ dan titik balik minimum $(3,8)$", "alasan": "tertukar saat mensubstitusi x=1 dan x=3 ke f(x)"}
+      ],
+      "kunci_guru": {"halaman": 163, "kutipan": "titik balik maksimumnya adalah (1,8), titik balik minimumnya adalah (3,4)", "dari_png": true},
+      "jawaban_agen": "f'(x)=3x^2-12x+9=3(x-1)(x-3); x=1 maks (f''<0), x=3 min (f''>0); f(1)=8, f(3)=4",
+      "status_kunci": "cocok", "catatan": "Kesimpulan akhir (1,8) dan (3,4) hanya ada di gambar hal.163."
+    },
+    {
+      "id": "kelas12_tl-b02-p0163-latihan-soal-aplikasi-turunan-fungsi-11b",
+      "subbab": "C", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "menentukan titik ekstrem fungsi kuadrat memakai turunan pertama dan kedua",
+      "sumber_soal": "siswa",
+      "source_page": 163, "source_section": "Latihan Soal Aplikasi Turunan Fungsi", "source_item_no": "11b",
+      "stimulus": "Tentukan titik balik maksimum dan minimum dari:",
+      "pertanyaan": "Titik balik maksimum dan minimum dari $f(x)=2x^2+x+3$?",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Titik balik minimum $\\left(-\\frac14,\\frac{23}{8}\\right)$",
+      "alasan_benar": "$f'(x)=4x+1=0\\Rightarrow x=-\\frac14$, $f''(x)=4>0$ (min), $f(-\\frac14)=\\frac{23}{8}$",
+      "distraktor": [
+        {"teks": "Titik balik maksimum $\\left(-\\frac14,\\frac{23}{8}\\right)$", "alasan": "keliru mengira f''(x)>0 menunjukkan maksimum"},
+        {"teks": "Titik balik minimum $\\left(\\frac14,\\frac{23}{8}\\right)$", "alasan": "salah tanda saat menyelesaikan 4x+1=0"},
+        {"teks": "Titik balik minimum $\\left(-\\frac14,3\\right)$", "alasan": "salah hitung nilai f(-1/4), lupa menjumlahkan pecahan dengan benar"}
+      ],
+      "kunci_guru": {"halaman": 163, "kutipan": "titik (-1/4,23/8) merupakan titik balik minimum", "dari_png": true},
+      "jawaban_agen": "f'(x)=4x+1=0 -> x=-1/4; f''(x)=4>0 min; f(-1/4)=2(1/16)-1/4+3=23/8",
+      "status_kunci": "cocok", "catatan": "Kesimpulan akhir hanya ada di gambar hal.163."
+    },
+    {
+      "id": "kelas12_tl-b02-p0163-latihan-soal-aplikasi-turunan-fungsi-11c",
+      "subbab": "C", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "menentukan titik ekstrem fungsi kuadrat sederhana memakai turunan pertama dan kedua",
+      "sumber_soal": "siswa",
+      "source_page": 163, "source_section": "Latihan Soal Aplikasi Turunan Fungsi", "source_item_no": "11c",
+      "stimulus": "Tentukan titik balik maksimum dan minimum dari:",
+      "pertanyaan": "Titik balik maksimum dan minimum dari $f(x)=\\frac14 x^2-2$?",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Titik balik minimum $(0,-2)$",
+      "alasan_benar": "$f'(x)=\\frac12 x=0\\Rightarrow x=0$, $f''(x)=\\frac12>0$ (min), $f(0)=-2$",
+      "distraktor": [
+        {"teks": "Titik balik maksimum $(0,-2)$", "alasan": "keliru mengira f''(x)>0 menunjukkan maksimum"},
+        {"teks": "Titik balik minimum $(0,2)$", "alasan": "lupa tanda negatif konstanta -2 pada f(x)"},
+        {"teks": "Tidak ada titik balik karena f(x) fungsi linear", "alasan": "keliru mengira 1/2 x adalah f(x), bukan turunan f'(x)"}
+      ],
+      "kunci_guru": {"halaman": 163, "kutipan": "titik (0,-2) merupakan titik balik minimum", "dari_png": true},
+      "jawaban_agen": "f'(x)=(1/2)x=0 -> x=0; f''(x)=1/2>0 min; f(0)=-2",
+      "status_kunci": "cocok", "catatan": "Kesimpulan akhir hanya ada di gambar hal.163-164."
+    },
+    {
+      "id": "kelas12_tl-b02-p0163-latihan-soal-aplikasi-turunan-fungsi-13a",
+      "subbab": "C", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "menentukan nilai ekstrem dan jenisnya memakai turunan pertama dan kedua",
+      "sumber_soal": "siswa",
+      "source_page": 163, "source_section": "Latihan Soal Aplikasi Turunan Fungsi", "source_item_no": "13a",
+      "stimulus": "Tentukan nilai ekstrem dan jenis titik ekstremnya dari setiap fungsi berikut.",
+      "pertanyaan": "Nilai ekstrem dan jenis titik ekstrem dari $f(x)=x^2-5x+6$?",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Nilai ekstrem minimum $-\\frac14$ pada $x=\\frac52$",
+      "alasan_benar": "$f'(x)=2x-5=0\\Rightarrow x=\\frac52$, $f''(x)=2>0$ (min), $f(\\frac52)=-\\frac14$",
+      "distraktor": [
+        {"teks": "Nilai ekstrem maksimum $-\\frac14$ pada $x=\\frac52$", "alasan": "keliru mengira f''(x)>0 menunjukkan maksimum"},
+        {"teks": "Nilai ekstrem minimum $\\frac14$ pada $x=\\frac52$", "alasan": "salah tanda saat menghitung f(5/2)"},
+        {"teks": "Nilai ekstrem minimum $-\\frac14$ pada $x=-\\frac52$", "alasan": "salah tanda saat menyelesaikan 2x-5=0"}
+      ],
+      "kunci_guru": {"halaman": 165, "kutipan": "titik ekstrem (5/2,-1/4) merupakan titik balik minimum dan f(5/2)=-1/4 merupakan nilai balik minimum", "dari_png": true},
+      "jawaban_agen": "f'(x)=2x-5=0 -> x=5/2; f''(x)=2>0 min; f(5/2)=25/4-25/2+6=-1/4",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas12_tl-b02-p0169-latihan-soal-aplikasi-turunan-fungsi-di-berbagai-bidang-ilmu-2",
+      "subbab": "D", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "soal optimasi: memodelkan lalu memakai turunan untuk meminimumkan jumlah dua bilangan dengan hasil kali tetap",
+      "sumber_soal": "siswa",
+      "source_page": 169, "source_section": "Latihan Soal Aplikasi Turunan Fungsi di Berbagai Bidang Ilmu", "source_item_no": "2",
+      "stimulus": "",
+      "pertanyaan": "Tentukan dua bilangan real positif dengan jumlah kedua bilangan itu minimum dan mempunyai hasil kali 80.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": false, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Kedua bilangan bernilai sama, yaitu $4\\sqrt5$",
+      "alasan_benar": "misal $A=x+80/x$, $A'=1-80/x^2=0\\Rightarrow x^2=80\\Rightarrow x=4\\sqrt5=y$",
+      "distraktor": [
+        {"teks": "Kedua bilangan adalah $8$ dan $10$", "alasan": "menebak bilangan bulat berhasil kali 80 tanpa memeriksa syarat A'(x)=0"},
+        {"teks": "Kedua bilangan bernilai sama, yaitu $\\sqrt{40}$", "alasan": "salah menyelesaikan A'=1-80/x^2=0, keliru menuliskan x^2=40"},
+        {"teks": "Kedua bilangan bernilai sama, yaitu $10$", "alasan": "mengira x=80/8=10 tanpa menurunkan A=x+80/x dengan benar"}
+      ],
+      "kunci_guru": {"halaman": 167, "kutipan": "kedua bilangan real positif tersebut bernilai sama, yaitu 4 5", "dari_png": false},
+      "jawaban_agen": "A=x+80/x; A'=1-80/x^2=0 -> x^2=80 -> x=4sqrt5; y=80/x=4sqrt5",
+      "status_kunci": "cocok", "catatan": "Kutipan kunci OCR-nya kehilangan simbol akar (tercetak '4 5' bukan '4√5')."
+    },
+    {
+      "id": "kelas12_tl-b02-p0169-latihan-soal-aplikasi-turunan-fungsi-di-berbagai-bidang-ilmu-3",
+      "subbab": "D", "tingkat_kesulitan": 5,
+      "alasan_kesulitan": "soal optimasi: memodelkan luas penampang sebagai fungsi satu variabel lalu memaksimumkan dengan turunan",
+      "sumber_soal": "siswa",
+      "source_page": 169, "source_section": "Latihan Soal Aplikasi Turunan Fungsi di Berbagai Bidang Ilmu", "source_item_no": "3",
+      "stimulus": "Sebuah talang air akan dibuat dari sebuah pelat seng selebar 30 cm. Caranya adalah dengan melipat kedua sisi pelat seng sama panjang.",
+      "pertanyaan": "Tentukan ukuran penampang tegak talang air tersebut sehingga talang dapat dialiri air semaksimal mungkin.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": false, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Panjang $15$ cm dan lebar $7,5$ cm",
+      "alasan_benar": "$L(x)=(30-2x)x=30x-2x^2$, $L'(x)=30-4x=0\\Rightarrow x=7,5$; panjang $=30-2(7,5)=15$",
+      "distraktor": [
+        {"teks": "Panjang $7,5$ cm dan lebar $15$ cm", "alasan": "tertukar antara ukuran panjang (30-2x) dan lebar (x)"},
+        {"teks": "Panjang $20$ cm dan lebar $5$ cm", "alasan": "salah menurunkan L(x)=30x-2x^2, memperoleh x=5 bukan 7,5"},
+        {"teks": "Panjang $10$ cm dan lebar $10$ cm", "alasan": "mengira penampang optimal selalu berbentuk persegi sama sisi"}
+      ],
+      "kunci_guru": {"halaman": 167, "kutipan": "p = 30 - 2 x = 30 - 2^7, 5h = 15 cm. l = x = 7, 5 cm.", "dari_png": false},
+      "jawaban_agen": "L(x)=(30-2x)x; L'(x)=30-4x=0 -> x=7,5; panjang=30-2(7,5)=15, lebar=7,5",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas12_tl-b02-p0169-latihan-soal-aplikasi-turunan-fungsi-di-berbagai-bidang-ilmu-4",
+      "subbab": "D", "tingkat_kesulitan": 5,
+      "alasan_kesulitan": "soal optimasi geometris: memodelkan luas persegi panjang di bawah kurva parabola lalu memaksimumkan",
+      "sumber_soal": "siswa",
+      "source_page": 169, "source_section": "Latihan Soal Aplikasi Turunan Fungsi di Berbagai Bidang Ilmu", "source_item_no": "4",
+      "stimulus": "Suatu kurva mempunyai persamaan $y=12-x^2$. Sebuah persegi panjang $ABCD$ dibentuk dengan kedua titik berada pada kurva tersebut, seperti pada Gambar 2.22.",
+      "pertanyaan": "Tentukan luas maksimum persegi panjang $ABCD$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": true, "image_refs": ["img/panduan_siswa_kelas12_peminatan.pdf-0169-06.png"],
+      "jawaban_benar": "$32$ satuan luas",
+      "alasan_benar": "$L(x)=2x(12-x^2)=24x-2x^3$, $L'(x)=24-6x^2=0\\Rightarrow x=2$ (di kuadran positif), $L(2)=32$",
+      "distraktor": [
+        {"teks": "$-32$ satuan luas", "alasan": "memilih titik kritis x=-2 sehingga luas bernilai negatif, seharusnya diambil x=2"},
+        {"teks": "$24$ satuan luas", "alasan": "lupa mengalikan dengan 2 (lebar 2x), hanya menghitung x(12-x^2) pada x=2"},
+        {"teks": "$48$ satuan luas", "alasan": "lupa mengurangi suku 2x^3, hanya menghitung 24x pada x=2"}
+      ],
+      "kunci_guru": {"halaman": 168, "kutipan": "Jadi, luas maksimum persegi panjang ABCD adalah 32 satuan luas.", "dari_png": false},
+      "jawaban_agen": "L(x)=2x(12-x^2)=24x-2x^3; L'(x)=24-6x^2=0 -> x=2 (ambil positif); L(2)=48-16=32",
+      "status_kunci": "cocok", "catatan": "Gambar 2.22 dipakai untuk memastikan D,C di kurva dan A,B di sumbu-x (konfigurasi persegi panjang)."
+    },
+    {
+      "id": "kelas12_tl-b02-p0169-latihan-soal-aplikasi-turunan-fungsi-di-berbagai-bidang-ilmu-5",
+      "subbab": "D", "tingkat_kesulitan": 5,
+      "alasan_kesulitan": "soal optimasi ekonomi: membentuk fungsi total keuntungan dari fungsi keuntungan per barang lalu memaksimumkan",
+      "sumber_soal": "siswa",
+      "source_page": 169, "source_section": "Latihan Soal Aplikasi Turunan Fungsi di Berbagai Bidang Ilmu", "source_item_no": "5",
+      "stimulus": "Keuntungan produksi sebuah barang dalam suatu perusahaan dinyatakan dengan fungsi $f(x)=225x-x^2$, dengan $f(x)$ dalam rupiah dan $x$ menyatakan banyak barang.",
+      "pertanyaan": "Tentukan jumlah barang yang harus diproduksi agar keuntungan mencapai maksimum.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$150$ buah",
+      "alasan_benar": "$g(x)=f(x)\\cdot x=225x^2-x^3$, $g'(x)=450x-3x^2=-3x(x-150)=0\\Rightarrow x=150$ (bukan 0)",
+      "distraktor": [
+        {"teks": "$0$ buah", "alasan": "memilih akar x=0 dari g'(x)=-3x(x-150)=0, padahal itu titik minimum bukan maksimum"},
+        {"teks": "$225$ buah", "alasan": "tertukar dengan koefisien 225 pada fungsi f(x)=225x-x^2"},
+        {"teks": "$75$ buah", "alasan": "salah faktor g'(x)=450x-3x^2, memperoleh x=450/6=75"}
+      ],
+      "kunci_guru": {"halaman": 168, "kutipan": "Jadi, banyak barang yang diproduksi agar keuntungan maksimum adalah 150 buah.", "dari_png": false},
+      "jawaban_agen": "g(x)=f(x)*x=225x^2-x^3; g'(x)=450x-3x^2=-3x(x-150)=0 -> x=0 atau x=150; maksimum di x=150",
+      "status_kunci": "cocok", "catatan": null
+    }
+  ],
+  "dilewati": [
+    {"source_page": 169, "source_section": "Latihan Soal Aplikasi Turunan Fungsi di Berbagai Bidang Ilmu", "source_item_no": "1",
+     "alasan": "teks_tidak_terbaca", "keterangan": "Buku Siswa mencetak biaya y=3x-900+120/x, tapi kunci Guru menyelesaikannya sebagai y=(3x-900+120/x)*x=3x^2-900x+120 (dikalikan x) untuk mendapat x=150 hari; kalimat soal yang menjelaskan perkalian dengan x ini tidak terbaca di Markdown Siswa (mungkin OCR/redaksi berbeda), jadi soal tidak dipakai untuk menghindari pertanyaan yang membingungkan siswa."}
+  ]
+}
