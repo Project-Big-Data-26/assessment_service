@@ -1,6 +1,6 @@
 # Peta Label Matematika 3 × 4 × 3
 
-> Nama file lama memuat `6X4X3` untuk menjaga tautan. Kontrak target saat ini adalah 3 × 4 × 3. Matriks 72 sel Bloom sebelumnya tidak digunakan sebagai target model.
+> Nama file lama memuat `6X4X3` untuk menjaga tautan. Kontrak v2 aktif adalah 3 × 4 × 3; Head 3 default training memakai ordinal grade-aware. Matriks 72 sel Bloom sebelumnya hanya legacy. CTT p dan IRT b tetap bukti empirical terpisah; lihat [07](07_PSYCHOMETRICS_API.md).
 
 ## 1. Landasan dan batas
 
@@ -10,7 +10,7 @@
 | 2 — dimensi pengetahuan | Revised Bloom, dimensi pengetahuan | `factual`, `conceptual`, `procedural`, `metacognitive` | Pengetahuan apa yang menjadi objek utama tugas? |
 | 3 — kesulitan yang diperkirakan | Penilaian tuntutan item relatif kelas sasaran | `Easy`, `Medium`, `Hard` | Seberapa berat item sebelum data respons tersedia? |
 
-Ketiga label ditetapkan **terpisah** oleh pakar. `reasoning` tidak dikonversi menjadi C4/C5, `applying` tidak selalu sama dengan C3, dan `difficulty` tidak diturunkan dari domain kognitif. Jika C1–C6 dibutuhkan oleh riset lain, anotasi ulang dilakukan dengan rubrik Bloom tersendiri; C1–C6 bukan keluaran pipeline ini. Dalam TIMSS, prosedur rutin masih dapat termasuk `knowing`, sehingga pemetaan satu-ke-satu ke Bloom keliru.
+Ketiga gold label ditetapkan **terpisah** oleh pakar. `reasoning` tidak dikonversi menjadi C4/C5, `applying` tidak selalu sama dengan C3, dan `difficulty` tidak diturunkan dengan tabel tetap dari domain kognitif. Model boleh memakai distribusi probabilitas Head 1 dan Head 2 sebagai fitur tambahan Head 3, tetapi tetap membaca representasi penuh soal dan harus diuji melalui ablation; hubungan statistik ini bukan definisi rubrik. Jika C1–C6 dibutuhkan oleh riset lain, anotasi ulang dilakukan dengan rubrik Bloom tersendiri; C1–C6 bukan keluaran pipeline ini. Dalam TIMSS, prosedur rutin masih dapat termasuk `knowing`, sehingga pemetaan satu-ke-satu ke Bloom keliru.
 
 Landasan: [TIMSS 2023 Mathematics Framework](https://timssandpirls.bc.edu/timss2023/frameworks/pdf/T23_Frameworks_Ch1_Mathematics.pdf), [Framework AKM Pusmendik](https://pusmendik.kemdikbud.go.id/an/Framework_AKM_31032022.pdf), [Krathwohl (2002)](https://eric.ed.gov/?id=EJ667155).
 

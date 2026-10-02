@@ -1,12 +1,31 @@
 # Model Data MongoDB dan ERD Logis
 
-Alur proses dan peta tech stack yang memakai koleksi-koleksi ini ada pada [diagram end-to-end](20_END_TO_END_VALIDATION_FLOW.md).
+Alur aktual ada pada [diagram empiris](23_EMPIRICAL_VALIDATION_FEEDBACK_FLOW.md) dan [training/LLM](24_INDOBERT_FINETUNING_LLM_REASONING_DETAIL.md). ERD koleksi luas di bawah tetap desain target; penyimpanan pilot aktif menggunakan SQLite.
+
+## Penyimpanan operasional API 2.1.0
+
+MongoDB question versions, expert annotations/decisions, dataset snapshots dan staff auth tetap sumber human gold. Frozen snapshot dipindahkan ke blueprint setelah checksum/provenance diverifikasi. SQLite `ASSESSMENT_DB_PATH` menyimpan:
+
+| Tabel aktual | Kunci / fungsi |
+|---|---|
+| `metadata` | Stable HMAC secret lokal; tidak ada di DTO |
+| `assessments` | ID unik, hash blueprint, snapshot/version/key immutable |
+| `participants` | Token hash, assessment, HMAC subject; kode tidak disimpan |
+| `sessions` | ID, subject/form/start key unik, TTL, completion |
+| `deliveries` | ID dan session/sequence unik, public DTO + mapping privat |
+| `responses` | ID/delivery unik, request hash, event server-scored append-only |
+| `snapshots` | ID/hash unik, policy/matrix/sample hashes, population/grade/window, CTT/IRT |
+| `empirical_decisions` | ID/key unik, snapshot/item unik, expert/rationale/action |
+
+Transaksi menyelesaikan ownership/idempotency/mutation. Relasi antartabel diperiksa service; tidak semua memakai SQL foreign-key constraints. Koleksi MongoDB delivery/psychometric pada ERD adalah target migrasi, bukan mirror aktif. SQLite default untuk pilot satu host; shared multihost repository/retention/reconciliation merupakan pekerjaan deployment berikutnya.
+
+Empirical decision tidak menulis gold MongoDB in-place. Revise/quarantine menahan delivery; `freeze_dataset_v2.py` mengecualikan source/gold version yang held melalui store yang sama. Versi baru perlu review manusia. Detail [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md).
 
 ## 1. Tujuan
 
 Dokumen ini mendefinisikan target collection MongoDB, atribut, hubungan, index, versioning, dan keputusan embed/reference untuk arsitektur pada dokumen 15-16.
 
-Subset fase IndoBERT sudah diterapkan dengan Pydantic + `pymongo.AsyncMongoClient`: `users`, `expert_profiles`, `questions`, `question_versions`, `annotation_assignments`, `expert_annotations`, `expert_decisions`, `dataset_snapshots`, `training_runs`, `model_versions`, `audit_events`, dan `sessions`. Collection Claude/delivery/psikometrik pada ERD tetap target. Atlas belum diprovision, sehingga ini adalah `implemented_unprovisioned`.
+Subset IndoBERT memakai Pydantic + `pymongo.AsyncMongoClient`: `users`, `expert_profiles`, `questions`, `question_versions`, `annotation_assignments`, `expert_annotations`, `expert_decisions`, `dataset_snapshots`, `training_runs`, `model_versions`, `audit_events`, dan `sessions`. Provisioning/akun/data perlu diverifikasi operator. Koleksi Claude/delivery/psychometric ERD tetap target; delivery/CTT/IRT sudah diimplementasikan melalui SQLite di atas.
 
 MongoDB tidak menerapkan foreign key seperti database relasional. ERD di bawah adalah **relasi logis** yang dijaga oleh application service, schema validation, unique index, idempotency, dan reconciliation job.
 
@@ -402,7 +421,7 @@ Decision event immutable. Raw prompt/sample besar dapat dipisahkan ke restricted
 | `questionId`, `contentVersion` | scalar | `REF`, compound index |
 | `answerVerification` | EMBED object | status, method, version, evidence ref |
 | `featureManifest` | EMBED object | KKO pada lexical features, format, metadata, input/provenance hash |
-| `indobert` | EMBED object | tiga head, probabilities, entropy, margin, OOD, modelVersion |
+| `indobert` | EMBED object | tiga head, probabilities, confidence, normalized entropy, action/reasons, `architectureVersion`, `routingPolicyVersion`, modelVersion |
 | `claudeProposal` | EMBED object | confirm/revise/abstain per head, evidence, rubric/prompt/model manifests |
 | `pipelineComparison` | EMBED object | Perubahan usulan IndoBERT oleh Claude; bukan agreement independen |
 | `risk` | EMBED object | Score, band, reasons, policyVersion |

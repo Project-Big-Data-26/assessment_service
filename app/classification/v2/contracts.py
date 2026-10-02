@@ -101,6 +101,8 @@ class ModelTrace(BaseModel):
     calibrationVersion: str
     inputSchemaVersion: str
     inputHash: str
+    architectureVersion: str = "parallel-v1"
+    routingPolicyVersion: str = "confidence-only-v1"
 
 
 class V2ClassificationResponse(BaseModel):

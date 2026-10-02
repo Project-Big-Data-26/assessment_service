@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from typing import Any
 
 import torch
@@ -15,16 +16,93 @@ BASE_MODEL_ID = "indobenchmark/indobert-base-p1"
 # AutoModel.from_pretrained.
 BASE_MODEL_REVISION = "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2"
 
+PARALLEL_ARCHITECTURE = "parallel-v1"
+CONDITIONED_DIFFICULTY_ARCHITECTURE = "conditioned-difficulty-v1"
+GRADE_AWARE_ORDINAL_ARCHITECTURE = "grade-aware-ordinal-v2"
+SUPPORTED_ARCHITECTURES = {
+    PARALLEL_ARCHITECTURE,
+    CONDITIONED_DIFFICULTY_ARCHITECTURE,
+    GRADE_AWARE_ORDINAL_ARCHITECTURE,
+}
+
+
+class GradeAwareOrdinalDifficultyHead(nn.Module):
+    """Cumulative-link head with ordered cutpoints for Easy < Medium < Hard."""
+
+    def __init__(self, hidden_size: int, grade_embedding_dim: int = 16) -> None:
+        super().__init__()
+        self.in_features = hidden_size + grade_embedding_dim
+        self.grade_embedding_dim = grade_embedding_dim
+        self.grade_embedding = nn.Embedding(6, grade_embedding_dim)
+        self.scorer = nn.Linear(self.in_features, 1)
+        self.first_cutpoint = nn.Parameter(torch.tensor(-0.5))
+        # Start with a two-logit-unit interval so the middle category has a
+        # meaningful decision region instead of being dominated by both tails.
+        self.cutpoint_gap = nn.Parameter(torch.tensor(math.log(math.expm1(2.0))))
+
+    def ordered_cutpoints(self) -> torch.Tensor:
+        second = self.first_cutpoint + torch.nn.functional.softplus(self.cutpoint_gap) + 1e-4
+        return torch.stack((self.first_cutpoint, second))
+
+    def forward(
+        self, pooled: torch.Tensor, grades: torch.Tensor
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        if grades.ndim != 1 or grades.shape[0] != pooled.shape[0]:
+            raise ValueError("grades must be a one-dimensional tensor matching the batch")
+        if bool(((grades < 1) | (grades > 6)).any()):
+            raise ValueError("grade-aware ordinal head supports grades 1-6")
+        embedded_grade = self.grade_embedding(grades.long() - 1)
+        score = self.scorer(torch.cat((pooled, embedded_grade), dim=-1)).squeeze(-1)
+        cumulative_logits = score.unsqueeze(-1) - self.ordered_cutpoints().unsqueeze(0)
+        above = torch.sigmoid(cumulative_logits)
+        probabilities = torch.stack(
+            (1.0 - above[:, 0], above[:, 0] - above[:, 1], above[:, 1]), dim=-1
+        )
+        probabilities = probabilities.clamp_min(torch.finfo(probabilities.dtype).eps)
+        probabilities = probabilities / probabilities.sum(dim=-1, keepdim=True)
+        return probabilities.log(), cumulative_logits
+
 
 class ThreeHeadIndoBERT(nn.Module):
-    def __init__(self, encoder: nn.Module, hidden_size: int, dropout: float = 0.10) -> None:
+    def __init__(
+        self,
+        encoder: nn.Module,
+        hidden_size: int,
+        dropout: float = 0.10,
+        *,
+        architecture_version: str = PARALLEL_ARCHITECTURE,
+        detach_difficulty_conditioning: bool = True,
+        grade_embedding_dim: int = 16,
+    ) -> None:
         super().__init__()
+        if architecture_version not in SUPPORTED_ARCHITECTURES:
+            raise ValueError(f"unsupported architecture: {architecture_version}")
         self.encoder = encoder
         self.dropout = nn.Dropout(dropout)
+        self.architecture_version = architecture_version
+        self.detach_difficulty_conditioning = detach_difficulty_conditioning
+        difficulty_input_size = hidden_size
+        if architecture_version == CONDITIONED_DIFFICULTY_ARCHITECTURE:
+            difficulty_input_size += len(HEAD_LABELS["mathCognitiveDomain"])
+            difficulty_input_size += len(HEAD_LABELS["knowledgeDimension"])
+        difficulty_head: nn.Module
+        if architecture_version == GRADE_AWARE_ORDINAL_ARCHITECTURE:
+            difficulty_head = GradeAwareOrdinalDifficultyHead(
+                hidden_size, grade_embedding_dim=grade_embedding_dim
+            )
+        else:
+            difficulty_head = nn.Linear(
+                difficulty_input_size, len(HEAD_LABELS["intendedDifficulty"])
+            )
         self.heads = nn.ModuleDict(
             {
-                name: nn.Linear(hidden_size, len(labels))
-                for name, labels in HEAD_LABELS.items()
+                "mathCognitiveDomain": nn.Linear(
+                    hidden_size, len(HEAD_LABELS["mathCognitiveDomain"])
+                ),
+                "knowledgeDimension": nn.Linear(
+                    hidden_size, len(HEAD_LABELS["knowledgeDimension"])
+                ),
+                "intendedDifficulty": difficulty_head,
             }
         )
 
@@ -38,6 +116,9 @@ class ThreeHeadIndoBERT(nn.Module):
         alpha: int = 16,
         dropout: float = 0.10,
         local_files_only: bool = False,
+        architecture_version: str = PARALLEL_ARCHITECTURE,
+        detach_difficulty_conditioning: bool = True,
+        grade_embedding_dim: int = 16,
     ) -> "ThreeHeadIndoBERT":
         from peft import LoraConfig, TaskType, get_peft_model
         from transformers import AutoConfig, AutoModel
@@ -60,7 +141,14 @@ class ThreeHeadIndoBERT(nn.Module):
             bias="none",
         )
         encoder = get_peft_model(base, lora)
-        model = cls(encoder, config.hidden_size, dropout=dropout)
+        model = cls(
+            encoder,
+            config.hidden_size,
+            dropout=dropout,
+            architecture_version=architecture_version,
+            detach_difficulty_conditioning=detach_difficulty_conditioning,
+            grade_embedding_dim=grade_embedding_dim,
+        )
         model.assert_trainable_parameters()
         return model
 
@@ -80,10 +168,37 @@ class ThreeHeadIndoBERT(nn.Module):
         input_ids: torch.Tensor,
         attention_mask: torch.Tensor,
         token_type_ids: torch.Tensor | None = None,
+        grades: torch.Tensor | None = None,
     ) -> dict[str, torch.Tensor]:
         inputs: dict[str, Any] = {"input_ids": input_ids, "attention_mask": attention_mask}
         if token_type_ids is not None:
             inputs["token_type_ids"] = token_type_ids
         outputs = self.encoder(**inputs)
         pooled = self.dropout(outputs.last_hidden_state[:, 0])
-        return {name: head(pooled) for name, head in self.heads.items()}
+        cognitive_logits = self.heads["mathCognitiveDomain"](pooled)
+        knowledge_logits = self.heads["knowledgeDimension"](pooled)
+        difficulty_input = pooled
+        if self.architecture_version == CONDITIONED_DIFFICULTY_ARCHITECTURE:
+            cognitive_probabilities = torch.softmax(cognitive_logits, dim=-1)
+            knowledge_probabilities = torch.softmax(knowledge_logits, dim=-1)
+            if self.detach_difficulty_conditioning:
+                cognitive_probabilities = cognitive_probabilities.detach()
+                knowledge_probabilities = knowledge_probabilities.detach()
+            difficulty_input = torch.cat(
+                [pooled, cognitive_probabilities, knowledge_probabilities], dim=-1
+            )
+        result = {
+            "mathCognitiveDomain": cognitive_logits,
+            "knowledgeDimension": knowledge_logits,
+        }
+        if self.architecture_version == GRADE_AWARE_ORDINAL_ARCHITECTURE:
+            if grades is None:
+                raise ValueError("grades are required by grade-aware-ordinal-v2")
+            difficulty_logits, ordinal_logits = self.heads["intendedDifficulty"](
+                pooled, grades
+            )
+            result["intendedDifficultyOrdinalLogits"] = ordinal_logits
+        else:
+            difficulty_logits = self.heads["intendedDifficulty"](difficulty_input)
+        result["intendedDifficulty"] = difficulty_logits
+        return result

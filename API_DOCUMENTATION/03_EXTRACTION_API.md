@@ -1,5 +1,7 @@
 # Extraction API
 
+Implementasi aktual: `/v1/extract` sinkron dan agentic CLI menghasilkan staging, lalu import/qualification manusia. Pilot server-scored dan CTT/IRT kini tersedia setelah gold dibekukan; [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md). Async extraction jobs/authoring gateway pada contoh di bawah tetap target.
+
 ## 1. Posisi modul
 
 Extraction API mengubah PDF, gambar, atau data terstruktur menjadi **authoring candidate**. Hasil ekstraksi belum membuktikan kunci benar dan belum memberi label tiga head. OCR menjaga teks, rumus, tabel/grafik dan provenance karena bukti tersebut akan diperlukan IndoBERT dan annotator.

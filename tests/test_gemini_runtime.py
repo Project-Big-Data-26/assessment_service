@@ -168,6 +168,29 @@ def test_adapter_uses_structured_schema_and_returns_sanitized_record():
     assert config.thinking_config.include_thoughts is False
 
 
+def test_adapter_normalizes_harmless_structured_output_deviations():
+    raw = review_payload().model_dump(mode="json")
+    raw["mathCognitiveDomain"]["proposedLabel"] = "reasoning"
+    raw["mathCognitiveDomain"]["evidenceSpans"] = ["x" * 300] * 5
+    raw["mathCognitiveDomain"]["rationale"] = "y" * 700
+
+    class FakeModels:
+        def generate_content(self, **kwargs):
+            return SimpleNamespace(parsed=raw, response_id=None, usage_metadata=None)
+
+    adapter = GeminiReviewAdapter(
+        settings(live=True), client=SimpleNamespace(models=FakeModels())
+    )
+    result = adapter.review_once(
+        question(), prediction(), rubric_version="rubric-v1", run_index=1
+    )
+    head = result.review.mathCognitiveDomain
+    assert head.proposedLabel is None
+    assert len(head.evidenceSpans) == 4
+    assert all(len(value) == 240 for value in head.evidenceSpans)
+    assert len(head.rationale) == 600
+
+
 def test_three_runs_are_self_consistency_not_gold_or_human_majority():
     outputs = [review_payload(), review_payload(), review_payload(difficulty="Easy")]
 

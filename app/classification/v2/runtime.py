@@ -40,7 +40,17 @@ class V2ClassifierRuntime:
         config = AutoConfig.from_pretrained(base_path, local_files_only=True)
         base = AutoModel.from_pretrained(base_path, config=config, local_files_only=True)
         encoder = PeftModel.from_pretrained(base, self.artifact_dir / "adapter", is_trainable=False)
-        self.model = ThreeHeadIndoBERT(encoder, config.hidden_size)
+        self.model = ThreeHeadIndoBERT(
+            encoder,
+            config.hidden_size,
+            architecture_version=self.manifest.architectureVersion,
+            detach_difficulty_conditioning=self.manifest.detachDifficultyConditioning,
+            grade_embedding_dim=(
+                self.manifest.gradeEmbeddingDimension
+                if self.manifest.difficultyHeadType == "ordinal"
+                else 16
+            ),
+        )
         weights = load_file(str(self.artifact_dir / "heads.safetensors"), device="cpu")
         self.model.heads.load_state_dict(weights, strict=True)
         self.model.eval()
@@ -56,6 +66,8 @@ class V2ClassifierRuntime:
             calibrationVersion=manifest.calibrationVersion,
             inputSchemaVersion=manifest.inputSchemaVersion,
             inputHash=classification_input_hash(request, representation=manifest.inputRepresentation),
+            architectureVersion=manifest.architectureVersion,
+            routingPolicyVersion=manifest.routingPolicyVersion,
         )
 
     @staticmethod
@@ -121,30 +133,45 @@ class V2ClassifierRuntime:
         )
         if int(encoded["input_ids"].shape[1]) >= self.manifest.maxLength:
             reasons.append("input_reached_truncation_limit")
+        encoded["grades"] = torch.tensor([request.grade], dtype=torch.long)
         with torch.inference_mode():
             outputs = self.model(**encoded)
         head_results: dict[str, HeadResult] = {}
         for head, labels in HEAD_LABELS.items():
             logits = outputs[head].detach().cpu().numpy()
-            calibration = self.manifest.calibration[head]
+            global_calibration = self.manifest.calibration[head]
+            calibration = global_calibration.perGrade.get(
+                str(request.grade), global_calibration
+            )
             probabilities = softmax(logits, calibration.temperature)[0]
             if not np.all(np.isfinite(probabilities)) or not math.isclose(float(probabilities.sum()), 1.0, abs_tol=1e-6):
                 self.failed_reason = f"invalid_probability:{head}"
                 raise FloatingPointError(self.failed_reason)
             index = int(np.argmax(probabilities))
             confidence = float(probabilities[index])
+            entropy = normalized_entropy(probabilities)
             threshold = calibration.confidenceThreshold
-            action = "predict" if threshold is not None and confidence >= threshold and not reasons else "review"
             head_reasons = list(reasons)
-            if threshold is None:
-                head_reasons.append("selective_threshold_gate_not_met")
-            elif confidence < threshold:
-                head_reasons.append("confidence_below_validation_threshold")
+            if self.manifest.routingPolicyVersion == "confidence-entropy-v1":
+                entropy_threshold = calibration.entropyThreshold
+                if threshold is None or threshold <= 0 or entropy_threshold is None:
+                    head_reasons.append("selective_threshold_gate_not_met")
+                else:
+                    if confidence < threshold:
+                        head_reasons.append("confidence_below_validation_threshold")
+                    if entropy > entropy_threshold:
+                        head_reasons.append("entropy_above_validation_threshold")
+            else:
+                if threshold is None or threshold <= 0:
+                    head_reasons.append("selective_threshold_gate_not_met")
+                elif confidence < threshold:
+                    head_reasons.append("confidence_below_validation_threshold")
+            action = "predict" if not head_reasons else "review"
             head_results[head] = HeadResult(
                 label=labels[index],
                 probabilities={label: float(probabilities[pos]) for pos, label in enumerate(labels)},
                 calibratedConfidence=confidence,
-                normalizedEntropy=normalized_entropy(probabilities),
+                normalizedEntropy=entropy,
                 action=action,
                 reasons=head_reasons,
             )

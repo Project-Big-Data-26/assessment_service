@@ -76,6 +76,43 @@ def test_manifest_verifies_every_tracked_checksum(tmp_path):
         load_and_verify_manifest(tmp_path)
 
 
+def test_manifest_servable_requires_approval_and_all_safety_gates():
+    payload = manifest({})
+    model = ModelManifest.model_validate(payload)
+    assert model.servable is False
+    payload.update(
+        {
+            "approvedForProvisional": True,
+            "researchOnly": False,
+            "dataGatesPassed": True,
+            "antiCollapsePassed": True,
+            "promotionGates": {"passed": True},
+        }
+    )
+    assert ModelManifest.model_validate(payload).servable is True
+
+
+def test_manifest_rejects_per_grade_calibration_outside_sd_scope():
+    payload = manifest({})
+    payload["routingPolicyVersion"] = "confidence-entropy-v1"
+    payload["calibration"]["intendedDifficulty"] = {
+        "temperature": 1.0,
+        "confidenceThreshold": 0.7,
+        "entropyThreshold": 0.5,
+        "perGrade": {
+            "7": {
+                "temperature": 1.0,
+                "confidenceThreshold": 0.7,
+                "entropyThreshold": 0.5,
+            }
+        },
+    }
+    for head in ("mathCognitiveDomain", "knowledgeDimension"):
+        payload["calibration"][head]["entropyThreshold"] = 0.5
+    with pytest.raises(ValueError, match="unsupported grades"):
+        ModelManifest.model_validate(payload)
+
+
 def test_argon2id_passwords_and_opaque_session_material():
     stored = password_hash("correct horse battery staple")
     assert stored.startswith("$argon2id$")

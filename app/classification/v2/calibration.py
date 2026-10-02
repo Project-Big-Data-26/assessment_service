@@ -109,3 +109,54 @@ def select_confidence_threshold(
         if selected.mean() >= minimum_coverage and selected.any() and correct[selected].mean() >= target_accuracy:
             feasible.append(threshold)
     return min(feasible) if feasible else None
+
+
+def select_routing_thresholds(
+    probabilities: np.ndarray,
+    labels: np.ndarray,
+    *,
+    target_accuracy: float = 0.80,
+    minimum_coverage: float = 0.70,
+    require_all_classes: bool = False,
+    minimum_class_support: int = 1,
+    allow_zero_threshold: bool = True,
+) -> tuple[float | None, float | None]:
+    """Select a joint confidence floor and normalized-entropy ceiling on validation only.
+
+    The feasible pair with the highest coverage wins. Ties prefer the less
+    restrictive pair so routing does not reject extra items without evidence.
+    """
+    probabilities = np.asarray(probabilities, dtype=np.float64)
+    labels = np.asarray(labels, dtype=np.int64)
+    if probabilities.ndim != 2 or len(probabilities) != len(labels) or len(labels) == 0:
+        raise ValueError("probabilities and labels have incompatible shapes")
+    if require_all_classes:
+        supports = np.bincount(labels, minlength=probabilities.shape[1])
+        if bool((supports < minimum_class_support).any()):
+            return None, None
+    confidence = probabilities.max(axis=1)
+    entropy = np.asarray([normalized_entropy(row) for row in probabilities])
+    correct = probabilities.argmax(axis=1) == labels
+    confidence_candidates = sorted({0.0, *map(float, confidence)})
+    if not allow_zero_threshold:
+        confidence_candidates = [value for value in confidence_candidates if value > 0.0]
+    # Use observed validation entropies rather than a universal ceiling of 1.0.
+    # This keeps the policy data-derived and makes the entropy gate meaningful
+    # for future samples that are more ambiguous than every accepted example.
+    entropy_candidates = sorted(set(map(float, entropy)), reverse=True)
+    feasible: list[tuple[float, float, float, float]] = []
+    for confidence_threshold in confidence_candidates:
+        for entropy_threshold in entropy_candidates:
+            selected = (confidence >= confidence_threshold) & (entropy <= entropy_threshold)
+            coverage = float(selected.mean())
+            if coverage < minimum_coverage or not selected.any():
+                continue
+            accuracy = float(correct[selected].mean())
+            if accuracy >= target_accuracy:
+                feasible.append(
+                    (coverage, -confidence_threshold, entropy_threshold, accuracy)
+                )
+    if not feasible:
+        return None, None
+    _, negative_confidence, entropy_threshold, _ = max(feasible)
+    return -negative_confidence, entropy_threshold

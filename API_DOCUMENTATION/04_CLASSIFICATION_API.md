@@ -1,102 +1,35 @@
-# Classification API: IndoBERT → Claude
+# Classification API: IndoBERT Grade-Aware dan Blind LLM
 
-## 1. Kontrak dan status
+Pipeline aktif mengikuti [25](25_GRADE_AWARE_ORDINAL_PIPELINE.md): silver advisory diperoleh dari review Gemini blind **sebelum** prediksi IndoBERT dibuka, kemudian disagreement dibandingkan offline. Review LLM anchored setelah prediksi adalah jalur legacy opt-in, bukan protokol validasi baru. Claude API belum diimplementasikan.
 
-Arsitektur jangka panjang adalah `canonical item → validasi format/kunci → IndoBERT → Claude`, tetapi fase yang diimplementasikan sekarang berhenti pada IndoBERT advisory. Kontrak `/v2` 3×4×3, gold blind, training, kalibrasi, dan artefak sudah tersedia dalam kode; Atlas, anotasi nyata, dan model final belum tersedia. Claude tetap fase berikutnya. Implementasi Bloom 6 kelas hanya legacy `/v1`.
+## Endpoint aktual
 
-Endpoint target internal/debug:
+- `POST /v2/classify`: kontrak `V2ClassificationRequest` → `V2ClassificationResponse`;
+- `GET /v2/model-info`: metadata arsitektur, routing, research/gate/approval;
+- `GET /v2/health/ready`: 503 bila model tidak servable;
+- `GET /v2/llm-info`: konfigurasi Gemini lokal, tanpa network call;
+- `POST /v1/classify`: baseline/legacy Bloom C1–C6, tetap advisory.
 
-```http
-POST /api/v1/internal/ai-decisions/screen
-GET  /api/v1/ai/model-info
-```
+Input v2 mengikat question ID, version/hash, grade, stimulus/stem, opsi, topik/subtopik, solusi terverifikasi, visual transcript, KKO eksperimen dan provenance flags. Server runtime mengecek hash dan artifact integrity; unknown fields ditolak. Kontrak tepat tersedia di [schema implementasi](schemas/implemented-api.schema.json).
 
-Workflow normal dipicu `POST /api/v1/questions/{questionId}/submit`. UI tidak menyuplai label, fitur pakar, atau confidence model.
+## Tiga head dan training
 
-## 2. Input dan provenance
+Head 1 knowing/applying/reasoning; Head 2 factual/conceptual/procedural/metacognitive; Head 3 intended difficulty Easy/Medium/Hard. KKO bukan label atau pemetaan deterministik.
 
-Input dibentuk server dari `questionId + contentVersion + contentHash` yang terkunci. Format terdiri dari stem, opsi atau response prompt, kunci dan solusi **terverifikasi**, kelas/fase, topik, tujuan belajar, tipe respons, serta teks hasil OCR dengan rujukan visual. Jika solusi belum ada, jangan mengarangnya; catat `solutionUnavailable` dan jalankan kebijakan abstention/review. IndoBERT tekstual tidak memahami gambar yang tidak memiliki representasi teks; item visual dengan transkripsi tidak memadai diarahkan ke review.
+Arsitektur default baru `grade-aware-ordinal-v2`: shared IndoBERT + LoRA query/value; Head 1/2 multiclass; Head 3 cumulative ordinal dengan grade embedding dan ordered cutpoints. `parallel-v1` dan `conditioned-difficulty-v1` tetap tersedia untuk reproduksi/ablation. Conditioning 775 fitur hanya mekanisme legacy, bukan default terbaru.
 
-```json
-{
-  "questionId": "Q-001",
-  "contentVersion": 2,
-  "grade": 8,
-  "topic": "SPLDV",
-  "responseFormat": "multiple_choice",
-  "stem": "Perhatikan dua cara penyelesaian berikut...",
-  "options": [{"id": "a", "text": "..."}, {"id": "b", "text": "..."}],
-  "verifiedAnswer": {"optionIds": ["b"]},
-  "verifiedSolution": "Langkah kedua tidak ekuivalen karena ...",
-  "representations": ["text", "equation"]
-}
-```
+Gold berasal dari penilaian manusia blind, bukan prediksi sendiri atau jawaban siswa. Freeze memakai group-aware 70/15/15, source/stimulus/duplicate family tidak melintasi split. Class weight hanya train. Validation memilih checkpoint, temperature per head dan confidence+entropy routing. Frozen test terpisah dan terkunci sesuai gate. Detail [22](22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md), [24](24_INDOBERT_FINETUNING_LLM_REASONING_DETAIL.md).
 
-Kunci dan solusi dipakai untuk membaca tuntutan tugas, bukan sebagai jawaban label. Jika solusi berasal dari manusia, provenance dan status verifikasinya harus dicatat. Sampel Claude yang mengolah prediksi tidak boleh dipakai untuk membuat solusi input IndoBERT pada run yang sama.
+Artifact silver/research, tanpa approval, atau gagal data/anti-collapse/promotion gate tidak servable. Tidak ada fallback rules pada `/v2`. `reviewRequired=true` pada fase penelitian.
 
-## 3. Fitur sebelum IndoBERT
+## Gemini dan manusia
 
-| Kelompok | Contoh | Penggunaan |
-|---|---|---|
-| Teks | Stem, opsi, solusi terverifikasi | Input inti encoder |
-| Kurikulum | Kelas, fase, topik, tujuan | Konteks, khususnya difficulty |
-| Format dan representasi | Multiple choice, true/false, matching, checkbox, numeric, essay, grafik/tabel/rumus | Menjelaskan tugas dan bukti yang tersedia |
-| Linguistik deterministik | KKO, negasi, kuantifier, permintaan alasan, panjang teks | Audit; input eksplisit hanya bila eksperimen membuktikan manfaat |
-| Fitur pakar | Rutinitas, alasan domain, objek pengetahuan | Audit dan gold annotation; bukan input bila tidak tersedia otomatis saat inferensi |
+Generator silver melakukan tiga review terpisah tanpa prediksi IndoBERT, agent difficulty atau vote lain. Tiga suara sepakat diterima sebagai silver; 2–1/abstain/conflict/content concern memerlukan adjudikasi AI terpisah. Audit hash mengunci checkpoint sebelum comparison. Agreement bukan calibrated confidence atau gold.
 
-KKO disimpan sebagai `features.lexical.detectedKKO`. Pada baseline, IndoBERT sudah membaca kata tersebut di stem. Varian `[KKO]` diuji terpisah; tidak ada aturan `kata → label`. KKO terutama dapat membantu Head 1 dan tidak menetapkan Head 2 atau Head 3.
+Runtime menyimpan JSON keputusan/bukti dan alasan singkat, bukan hidden chain-of-thought. Provider/model/config berasal dari environment; live generation memerlukan opt-in. Source image/key/solution evidence tetap dibutuhkan. Blind human annotations tidak melihat AI/peer pada suara awal.
 
-## 4. Tiga head
+## Hubungan dengan psikometrik
 
-```text
-IndoBERT shared encoder
-  ├─ mathCognitiveDomain: knowing | applying | reasoning
-  ├─ knowledgeDimension: factual | conceptual | procedural | metacognitive
-  └─ intendedDifficulty: Easy | Medium | Hard
-```
+`/api/v1/internal/psychometrics/screen` menghasilkan p/CI CTT dan a/b/c IRT per versi/populasi/grade. Ia tidak mengganti domain, knowledge atau intended difficulty. Review empiris manusia dapat menahan versi; freeze dataset mengecualikan held version. Revisi harus melewati validasi manusia/versioning sebelum training baru. Lihat [07](07_PSYCHOMETRICS_API.md) dan [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md).
 
-Rubrik per head berada di [dokumen 14](14_TAXONOMY_6X4X3_MAP.md). Difficulty adalah penilaian awal yang terikat populasi sasaran; versi pertama dapat memakai klasifikasi tiga kelas dan membandingkannya dengan ordinal loss sebagai eksperimen. Setiap head menyimpan label, distribusi probabilitas, entropy/margin, status kalibrasi, OOD flag dan versi model. Confidence mentah bukan jaminan kebenaran.
-
-Contoh output:
-
-```json
-{
-  "decisionId": "AID-001",
-  "indobert": {
-    "modelVersion": "indobert-math-3x4x3-v1",
-    "labels": {
-      "mathCognitiveDomain": "reasoning",
-      "knowledgeDimension": "procedural",
-      "intendedDifficulty": "Medium"
-    },
-    "confidence": {
-      "mathCognitiveDomain": 0.78,
-      "knowledgeDimension": 0.69,
-      "intendedDifficulty": 0.61
-    },
-    "ood": {"detected": false}
-  }
-}
-```
-
-## 5. Pelatihan awal dan evaluasi
-
-Sebelum model versi pertama, kumpulkan seed dataset yang dinilai tiga pakar matematika secara blind memakai rubrik berversi. Bekukan penilaian awal; konsensus/adjudikasi manusia membentuk gold. Setelah split berdasarkan sumber dan keluarga soal, fine-tune IndoBERT pada train saja. Periksa class coverage, kualitas OCR/solusi, error tiap format/topik, macro-F1, F1 per kelas, confusion matrix dan kalibrasi pada test beku. Perbandingan fitur: stem+opsi; tambah metadata; tambah solusi terverifikasi; lalu tambah KKO eksplisit. Challenge set harus memuat KKO yang sama dengan label berbeda. Tidak ada klaim siap produksi hanya karena training selesai.
-
-Landasan model: [IndoNLU/IndoBERT](https://aclanthology.org/2020.aacl-main.85/), [BERT fine-tuning](https://aclanthology.org/N19-1423/), [TIMSS 2023](https://timssandpirls.bc.edu/timss2023/frameworks/pdf/T23_Frameworks_Ch1_Mathematics.pdf).
-
-## 6. Claude sebagai pengolah hasil
-
-Claude menerima item yang sama, prediksi dan probabilitas IndoBERT, serta rubrik. Claude memeriksa bukti per head, dapat mengonfirmasi, merevisi, atau abstain, lalu mengembalikan JSON tervalidasi schema. Simpan `indobertLabels`, `claudeProposedLabels`, `actionPerHead`, `evidenceSpans`, alasan, model ID, prompt/rubric version, response ID, latency dan error. Panggilan berulang, bila dipakai, mengukur self-consistency Claude; bukan suara annotator.
-
-Claude melihat hasil IndoBERT sehingga kedua keluaran **bukan pengukuran independen**. Evaluasi terpisah melaporkan IndoBERT saja dan pipeline IndoBERT→Claude terhadap gold blind. Jika provider gagal, keputusan tidak dinaikkan menjadi final. Parameter API aktif berasal dari environment/config, tanpa nama model hard-coded di kontrak. Lihat [dokumen 18](18_CLAUDE_PROVIDER_SETUP.md).
-
-## 7. Batas implementasi
-
-`app/classification/indobert.py`, `app/training/train.py` dan `configs/model_config.yaml` tetap memakai Bloom 6 kelas khusus legacy `/v1`. Runtime terpisah `app/classification/v2`, trainer `app/training/v2`, konfigurasi v2, dan endpoint `/v2` sudah memakai kontrak 3×4×3. `/v2/classify` tetap 503 sampai artefak gold terlatih tersedia dan tidak fallback ke rules. Folder `project_assessment` lama tidak lagi menyediakan gateway Gemini; Claude API bukan bagian fase implementasi ini.
-
-## 8. Hubungan dengan ekstraksi agentic pretest
-
-Pipeline agentic yang baru belum memanggil classifier. Field `tingkat_kesulitan` 1–5 dibuat agen untuk memilih soal sesi dan tidak boleh dijadikan label latihan Head 3. Demikian pula `jawaban_agen`, `status_kunci` dan alasan distraktor adalah evidence staging, bukan gold tiga head.
-
-Setelah adapter membuat canonical `QuestionVersion`, classifier menerima teks stimulus + pertanyaan, opsi, solusi/kunci yang telah melewati gate, metadata kelas/topik/subbab dan provenance visual yang dapat direpresentasikan. Record klasifikasi harus mereferensikan content hash/version hasil import; jangan mengklasifikasikan `soal_pretest_db.json` secara lepas karena file itu kehilangan sebagian provenance kaya dari `babNN.json`. Claude Code pada tahap ekstraksi berbeda dari Claude API postprocessor pada bagian 6. Lihat [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).
+Artefak `babNN.json`/hasil AI tetap staging/research; angka agent difficulty 1–5 bukan label gold atau parameter IRT.

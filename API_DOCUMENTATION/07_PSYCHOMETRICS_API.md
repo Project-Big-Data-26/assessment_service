@@ -1,148 +1,77 @@
-# Psychometrics API
+# Psychometrics API: CTT dan IRT
 
-## 1. Tujuan
+CTT batch serta IRT **Rasch, 2PL dan 3PL sudah diimplementasikan** di `app/psychometrics`. Analisis offline tidak membutuhkan IndoBERT, MongoDB atau LLM. Screening pilot membaca event server dan menyimpan snapshot immutable di SQLite. Runbook: [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md).
 
-Psychometric service target mengukur perilaku empiris item **sesudah pilot** terhadap populasi sasaran. Ia tidak membuktikan `mathCognitiveDomain` atau `knowledgeDimension`. Pilot hanya menerima `contentVersion` dengan keputusan tiga ahli yang valid; analisis selalu diikat ke version, population, assessment family, varian, dan item family.
+## Endpoint aktif
 
-## 2. Endpoint target
+| Method | Path | Fungsi |
+|---|---|---|
+| GET | `/v2/psychometrics-info` | Kesiapan/model/minimum data; tanpa network call |
+| POST | `/api/v1/internal/psychometrics/item-analysis` | Matriks eksternal/sintetis, stateless |
+| POST | `/api/v1/internal/psychometrics/screen` | Normalisasi respons pilot dan persist snapshot |
+| GET | `/api/v1/internal/psychometrics/snapshots/{snapshot_id}` | Snapshot staff termasuk EAP pseudonim |
+| GET | `/api/v1/psychometrics/items/{question_id}/snapshots` | Agregat terautentikasi tanpa estimasi peserta |
+| GET/POST | `/api/v1/internal/psychometrics/snapshots/{snapshot_id}/decisions` | Keputusan empiris ahli |
 
-```http
-POST /api/v1/internal/psychometrics/items/{questionId}/screen
-GET  /api/v1/psychometrics/items/{questionId}/snapshots
-GET  /api/v1/psychometrics/variants/{variantId}/snapshots
-GET  /api/v1/psychometrics/families/{itemFamilyId}/snapshots
+Analisis/agregat memerlukan `X-Internal-API-Key` yang cocok dengan `PSYCHOMETRICS_API_TOKEN` (≥32 karakter), atau cookie staff. Mutation cookie memerlukan CSRF. POST keputusan memerlukan cookie + CSRF + profil/role ahli; service token tidak cukup. Tidak ada hasil individual publik. Endpoint family/variant dan screening per question pada desain lama masih target.
 
-POST /api/v1/internal/psychometrics/item-analysis
-```
+## Matriks dan normalisasi
 
-Command screening hanya service-to-service. Teacher/public frontend menggunakan GET summary yang sudah direduksi.
+`MatrixAnalysisInput`: population, assessment family, grade, item references, subject IDs unik, matriks `0|1|null`, model, data origin dan assumption review. Contoh executable dibuat CLI demo. [Schema aktual](schemas/implemented-api.schema.json#/$defs/MatrixAnalysisInput).
 
-## 3. Aggregation key
+Kolom diikat ke `questionId/questionVersionId/contentVersion/contentHash` dan intended difficulty. Satu question tidak boleh muncul dengan dua versi. Boolean, string angka, nonbinary, dimensi salah dan nonfinite ditolak. Batas: 10.000 peserta, 200 item, 500.000 sel. Upload tidak boleh mengklaim `server_scored`; gunakan screening.
 
-```text
-questionId + contentVersion
-variantId + variantVersion
-populationId + assessmentFamily + timeWindow
-```
-
-Respons dari versi/populasi berbeda tidak dicampur kecuali ada linking design yang eksplisit.
-
-## 4. Metrik CTT
-
-Difficulty index:
-
-\[
-p=\frac{B}{N}
-\]
-
-Simpan Wilson confidence interval agar ketidakpastian terlihat. Intended difficulty dan empirical difficulty tetap terpisah.
-
-Discrimination:
-
-- upper-lower discrimination;
-- corrected point-biserial jika total score tersedia;
-- negative discrimination flag.
-
-Distraktor:
-
-- selection rate;
-- non-functional distractor;
-- correlation/pattern terhadap total score;
-- misconception-code effectiveness untuk generated variants.
-
-Timing:
-
-- median dan IQR;
-- rapid-guess candidate rate;
-- missing/late response rate.
-
-## 5. Snapshot
+Screening menerima:
 
 ```json
 {
-  "snapshotId": "PSY-001",
-  "entityType": "variant",
-  "entityId": "VAR-014",
-  "questionId": "Q-001",
-  "contentVersion": 2,
-  "variantVersion": 1,
-  "populationId": "GRADE-8-REFERENCE",
-  "assessmentFamily": "PILOT-SMP8-GEO",
-  "validResponseCount": 240,
-  "metrics": {
-    "difficultyIndex": 0.62,
-    "difficultyCi95": [0.56, 0.68],
-    "empiricalDifficulty": "Medium",
-    "discrimination": 0.36,
-    "correctedPointBiserial": 0.41,
-    "distractorEfficiency": 0.67,
-    "medianResponseTimeMs": 84000,
-    "rapidGuessRate": 0.03
-  },
-  "quality": {
-    "sampleStatus": "sufficient",
-    "stability": "stable",
-    "flags": [],
-    "recommendedRouting": "empirically_screened"
-  },
-  "policyVersion": "ctt-screening-1.0.0",
-  "createdAt": "2026-09-27T12:00:00Z"
+  "assessmentId": "pilot-kelas1-v1",
+  "model": "rasch",
+  "attemptPolicy": "first",
+  "fromTime": "2026-10-01T00:00:00Z",
+  "toTime": "2026-11-01T00:00:00Z",
+  "assumptionReview": {
+    "reviewedBy": "<pemeriksa desain psikometrik>",
+    "evidence": "<bukti dimensi, independensi lokal dan sampling yang telah ditinjau>",
+    "unidimensional": true,
+    "localIndependence": true,
+    "representativeSample": true
+  }
 }
 ```
 
-## 6. Automated routing
+Time window memakai **session completedAt**, awal inklusif/akhir eksklusif. First/last memilih satu session lengkap per subject. Duplicate/conflicting IDs, versi/populasi/grade salah, invalid/rapid guess, unscored/malformed event dicatat dalam exclusions. Skip tetap null; incorrect menjadi 0. Tanpa session lengkap, screening memberi 409. CTT tetap tersedia ketika gate IRT gagal.
 
-```text
-insufficient sample/CI wide
-    -> collect_more_events
+## CTT
 
-stable and acceptable
-    -> empirically_screened
+Metrik: proporsi benar + Wilson CI95, empirical band, missing rate, upper/lower discrimination, corrected item–total correlation, KR-20, distribusi opsi/distraktor, median/IQR waktu server bila event tersedia. Total score, correlation dan KR-20 menggunakan **complete cases**, tanpa imputasi nol. N lengkap dicantumkan; variance nol/data kurang menghasilkan null.
 
-severe answer/discrimination/distractor flags
-    -> hold_delivery + expert_content_review
+Discrimination memakai **rest score** (total tanpa item), cutoff kuantil 27/73%; ties tidak dibelah arbitrer. KR-20 memakai sample item/total variance yang konsisten. Distraktor memakai verified key, termasuk bila semua respons salah. Tanpa log opsi/waktu, metrik tersebut null.
 
-variant bad, family rule repairable
-    -> needs_regeneration
+Band CTT: `p>0.7` Easy, `p<0.3` Hard, selainnya Medium. Disagreement hanya di-flag ketika seluruh Wilson CI berada pada satu band berbeda dari intended difficulty. Label asli tidak diubah.
 
-confirmed item defect or repeated failure
-    -> revision_required / quarantined / retired
-```
+## Gate dan estimator IRT
 
-Threshold seperti minimum N, CI width, p category, dan discrimination cutoff berada dalam `policyVersion`, bukan di-hardcode pada frontend. Statistik yang buruk memicu pemeriksaan populasi, pengajaran, sampling, kunci dan distraktor. Perubahan stem, opsi, kunci atau solusi membuat `contentVersion` baru dan mengulang validasi format, IndoBERT→Claude serta tiga pakar. Jika konten tetap sama dan statistik stabil, anotasi penuh tidak perlu diulang.
+| Model | Minimum peserta eligible | Minimum item | Parameter |
+|---|---:|---:|---|
+| `rasch` | 100 | 5 | a=1, b estimated, c=0 |
+| `2pl` | 300 | 10 | a,b estimated, c=0 |
+| `3pl` | 1.000 | 20 | a,b,c estimated |
 
-## 7. Variant dan family analysis
+[Policy aktif](../configs/psychometrics_policy.json): setiap item ≥50 respons, ≥5 benar dan ≥5 salah; peserta >30% missing dikeluarkan dari fit; coverage eligible ≥70%; desain item terhubung. Asumsi dimensi, independensi lokal dan sampling wajib ditinjau/didukung. Minimum ini kebijakan penelitian proyek, bukan standar universal atau bukti identifiability.
 
-Family-level analysis memeriksa:
+`P(θ)=c+(1−c)sigmoid[a(θ−b)]`; D=1, skala θ~N(0,1). **Regularized marginal likelihood**, Gauss-Hermite 41 titik dan L-BFGS-B. Missing tidak memberi likelihood. Prior b~N(0,3²), log(a)~N(0,0.75²), c~Beta(5,17) untuk 3PL. Bounds b∈[-5,5], a∈[0.2,4], c∈[0.001,0.35]. c diestimasi, bukan otomatis 1/jumlah opsi.
 
-- variasi difficulty antarvariant;
-- kestabilan discrimination;
-- distractor-rule performance;
-- apakah parameter/transformasi tertentu menggeser difficulty;
-- differential child-item behavior.
+Keluaran: convergence/iteration, likelihood, AIC/BIC deskriptif, a/b/c, curvature posterior SD/interval b bila teridentifikasi, EAP/posterior SD, infit/outfit candidate, residual adjusted-Q3 dan test information curve. AIC/BIC regularized bukan approval pemilihan model; posterior-curvature interval bukan frequentist SE tanpa penalti. Prior memengaruhi estimasi, khususnya 3PL.
 
-Family aggregation tidak menghapus statistik per variant. Satu variant buruk dapat di-retire tanpa menyimpulkan seluruh family buruk.
+Band b: b<-1 Easy, b>1 Hard, selainnya Medium pada skala lokal. Tidak ada pooling lintas grade/populasi/form/version. Multi-group linking, DIF, equating, CAT dan polytomous masih target.
 
-## 8. Feedback ke generator/model
+Referensi algoritmik: [estimasi/model IRT mirt](https://philchalmers.github.io/mirt/docs/reference/mirt.html), [L-BFGS-B SciPy](https://docs.scipy.org/doc/scipy/reference/optimize.minimize-lbfgsb.html). Kode proyek memakai SciPy/quadrature sendiri, bukan paket mirt.
 
-Eligible snapshot dapat menghasilkan target:
+## Snapshot dan feedback
 
-```text
-empirical p/hardness
-discrimination
-item-quality risk
-expected response time
-distractor effectiveness
-```
+Snapshot menyimpan policy lengkap + hash, matrix hash, manifest sampel + hash, population/family/grade, time window, cleaning, CTT, gate dan IRT. Rerun input/policy identik mengambil snapshot yang sama. Data/policy berubah menghasilkan snapshot baru.
 
-Snapshot dengan sampel lemah hanya `observation_only`. Psychometric signal tidak digunakan untuk mengganti domain kognitif/knowledge label secara langsung. Label intended difficulty tetap tersimpan sebagai keputusan awal, sedangkan empirical difficulty adalah hasil pada populasi tertentu.
+IRT statuses: waiting_for_data, waiting_for_assumption_review, estimated, estimated_with_warnings, failed. Nonconvergence, boundary, uncertainty gagal dan residual dependence tetap membutuhkan review. Semua hasil `researchOnly=true, reviewRequired=true, goldLabelAuthority=false`.
 
-## 9. Status implementasi
-
-Perhitungan CTT dasar tersedia di `app/evaluation/psychometrics.py` sebagai prototype. Gateway psikometrik, total-score join, immutable versioning, variant/family aggregation, Wilson CI policy, server-scored response, dan routing penuh masih target.
-
-## 10. Hubungan dengan pretest agentic
-
-Angka `tingkat_kesulitan` 1–5 pada `babNN.json` adalah judgment agen yang dipakai sementara untuk assembly; ia bukan CTT difficulty index, parameter IRT `b`, maupun `intendedDifficulty` gold. Jumlah 1.254 soal juga bukan ukuran sampel siswa. Psikometrik baru berjalan setelah item diimpor, lolos tiga ahli, dikirim melalui immutable delivery snapshot, dan menerima response event sah.
-
-Aturan assembly `2 soal/subbab + 1 soal/bab prasyarat` dapat membentuk blueprint awal, tetapi belum menjamin kecukupan tes, content balance, reliabilitas form atau identifiability IRT. Simpan ID item agentic sebagai lineage agar snapshot kelak dapat ditautkan, tanpa menimpa version yang benar-benar diberikan kepada siswa.
+Routing item: collect_more_events, expert_review, observation_only. Ahli memilih retain/revise/quarantine dengan rationale append-only terikat snapshot/hash/version. Revise/quarantine menahan delivery dan dikecualikan oleh freeze gold berikutnya. Domain, knowledge dan intended difficulty tidak diganti otomatis. Revisi → content version baru → validasi manusia → freeze snapshot → training terkontrol; jawaban siswa mentah tidak menjadi teks training.

@@ -159,7 +159,13 @@ def main() -> None:
     frozen = None if args.skip_frozen_indobert else frozen_predictions(train_rows, test_rows)
     strongest_predictions: dict[str, np.ndarray] = {}
 
-    report: dict[str, object] = {"split": "frozen_test", "heads": {}}
+    report: dict[str, object] = {
+        "split": "frozen_test",
+        "modelVersion": runtime.manifest.modelVersion,
+        "architectureVersion": runtime.manifest.architectureVersion,
+        "routingPolicyVersion": runtime.manifest.routingPolicyVersion,
+        "heads": {},
+    }
     technical_gates: list[bool] = []
     for head, labels in HEAD_LABELS.items():
         head_report = classification_report(

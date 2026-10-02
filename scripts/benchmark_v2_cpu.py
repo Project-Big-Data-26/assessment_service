@@ -45,6 +45,8 @@ def main() -> None:
         "device": "cpu",
         "workers": 1,
         "modelVersion": runtime.manifest.modelVersion,
+        "architectureVersion": runtime.manifest.architectureVersion,
+        "routingPolicyVersion": runtime.manifest.routingPolicyVersion,
         "startupSeconds": startup_seconds,
         "latencyMilliseconds": {
             "p50": float(np.percentile(latencies, 50)),

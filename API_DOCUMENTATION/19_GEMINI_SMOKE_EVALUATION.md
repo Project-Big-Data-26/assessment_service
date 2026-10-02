@@ -1,19 +1,9 @@
-# Arsip Smoke Evaluation Gemini
+# Catatan Smoke Gemini Historis dan Runtime Aktif
 
-> Dokumen historis. Gemini tidak lagi menjadi provider LLM target; Claude dipilih untuk pipeline IndoBERT→LLM→tiga annotator. Evaluasi berikut tidak dapat digunakan untuk menyatakan Claude sudah terpasang, memiliki API key, atau memenuhi kualitas model.
+Smoke backend lama untuk solver/Bloom C1–C6/adjudikator AI adalah **histori**: dua dari enam kasus selesai, empat tidak terukur karena 429/provider failure. Rasio 2/6 bukan akurasi. Runner/fixture Express lama sudah dihapus; hasil tersebut tidak menjadi gold atau bukti validitas pipeline ordinal.
 
-## Hasil historis 27 September 2026
+Runtime saat ini memakai **Gemini adapter** pada app/llm untuk blind silver N=3/adjudikasi sebelum comparison IndoBERT. GET /v2/llm-info memberi konfigurasi lokal tanpa network check. Model ID/settings berasal dari environment; configured tidak berarti quota/availability provider sudah diverifikasi. Live generation tetap opt-in.
 
-Prototype backend lama pernah menjalankan smoke test Gemini untuk solver, klasifikasi C1–C6 dan adjudikator AI. Dua dari enam kasus selesai dan lolos; empat kasus tidak terukur karena HTTP 429/gangguan provider. Rasio 2/6 bukan akurasi. Hasil ini hanya menunjukkan sebagian koneksi prototype pada konfigurasi lama. Folder `project_assessment` beserta runner/fixture lama sudah tidak ada di worktree, sehingga perintah lama tidak boleh dipakai.
+Pipeline agentic Claude Code untuk ekstraksi, Ollama legacy, Gemini blind labeling, dan Claude Messages API target adalah penggunaan berbeda. Koneksi atau keberhasilan salah satunya tidak membuktikan yang lain.
 
-| Kasus | Catatan |
-|---|---|
-| Fakta pi dan luas lingkaran | Solver lama menghasilkan jawaban yang diharapkan pada sampel selesai |
-| Soal tidak lengkap, klasifikasi dan adjudikasi | Tidak terukur lengkap akibat gangguan akses |
-| Kesiapan produksi | Tidak pernah dibuktikan oleh smoke test ini |
-
-Output lama, jika masih ada pada lingkungan lain, hanya artefak historis dan tidak boleh dijadikan gold label. Catatan infrastruktur baru ada di [18_CLAUDE_PROVIDER_SETUP.md](18_CLAUDE_PROVIDER_SETUP.md). Evaluasi baru harus memakai rubrik 3 × 4 × 3 dan gold tiga pakar; jangan memindahkan verdict Gemini menjadi verdict Claude.
-
-## Hubungan dengan merge terbaru
-
-Pipeline pretest agentic yang baru tidak mengaktifkan kembali Gemini. Jalur barunya memakai Claude Code untuk ekstraksi lokal, sedangkan file `llm_backend.py` pada jalur legacy masih menunjuk Ollama `qwen3:4b`. Keduanya terpisah dari Claude Messages API target untuk audit hasil IndoBERT. Dengan demikian arsip smoke Gemini tetap historis dan tidak menjadi pembanding langsung bagi kualitas ekstraksi 1.254 soal yang baru.
+Batch advisory terkini tersedia pada [indeks validasi](../output/pretest/README.md) dan [26](26_KELAS2_BLIND_VALIDATION.md). Gold manusia, review blind, frozen test dan promotion tetap diperlukan. IRT/CTT berjalan pada respons siswa yang sah, bukan jumlah run LLM; [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md).
