@@ -10,7 +10,7 @@ from app.classification.v2.runtime import ContentConflictError, V2ClassifierRunt
 router = APIRouter(prefix="/v2", tags=["indobert-3x4x3"])
 
 
-def runtime_or_503(request: Request) -> V2ClassifierRuntime:
+def runtime_or_503(request: Request, *, require_servable: bool = True) -> V2ClassifierRuntime:
     runtime = getattr(request.app.state, "v2_runtime", None)
     error = getattr(request.app.state, "v2_runtime_error", None)
     if runtime is None or runtime.failed_reason:
@@ -18,6 +18,11 @@ def runtime_or_503(request: Request) -> V2ClassifierRuntime:
         if error and request.app.debug:
             detail = f"{detail}: {error}"
         raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, detail)
+    if require_servable and not runtime.manifest.servable:
+        raise HTTPException(
+            status.HTTP_503_SERVICE_UNAVAILABLE,
+            "v2 model artifact is research-only, unapproved, or failed promotion gates",
+        )
     return runtime
 
 
@@ -36,11 +41,21 @@ def model_info(request: Request):
     return {
         "artifactReady": runtime.failed_reason is None,
         "approvedForProvisional": manifest.approvedForProvisional,
+        "servable": manifest.servable,
+        "researchOnly": manifest.researchOnly,
+        "dataGatesPassed": manifest.dataGatesPassed,
+        "antiCollapsePassed": manifest.antiCollapsePassed,
+        "promotionGatesPassed": manifest.promotionGates.get("passed") is True,
         "modelVersion": manifest.modelVersion,
         "baseModel": manifest.baseModel,
         "baseRevision": manifest.baseRevision,
         "datasetSnapshot": manifest.datasetSnapshot,
         "rubricVersion": manifest.rubricVersion,
+        "architectureVersion": manifest.architectureVersion,
+        "routingPolicyVersion": manifest.routingPolicyVersion,
+        "inputRepresentation": manifest.inputRepresentation,
+        "difficultyHeadType": manifest.difficultyHeadType,
+        "gradeEmbeddingDimension": manifest.gradeEmbeddingDimension,
         "tasks": ["mathCognitiveDomain_3", "knowledgeDimension_4", "intendedDifficulty_3"],
         "reviewRequired": True,
     }
@@ -61,7 +76,7 @@ def llm_info(request: Request):
     return {
         "configured": True,
         **runtime.settings.public_info(),
-        "purpose": "advisory_review_after_indobert",
+        "purpose": "blind_silver_labeling_before_indobert_comparison",
         "goldLabelAuthority": False,
         "networkChecked": False,
     }
@@ -73,6 +88,8 @@ def ready(request: Request):
     return {
         "status": "ready",
         "modelVersion": runtime.manifest.modelVersion,
+        "architectureVersion": runtime.manifest.architectureVersion,
+        "routingPolicyVersion": runtime.manifest.routingPolicyVersion,
         "artifactChecksumsVerified": True,
     }
 

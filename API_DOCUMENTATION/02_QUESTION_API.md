@@ -221,10 +221,10 @@ MVP generation dan server-side scoring sebaiknya memprioritaskan `multiple_choic
 
 ## 11. Status implementasi tahap lokal
 
-Implementasi authoring Express/`FileQuestionRepository` lama telah dihapus bersama `project_assessment`; contoh endpoint authoring publik di atas tetap kontrak **target**. FastAPI kini mempunyai workflow internal tiga annotator dan penyimpanan `question_versions` v2 melalui Atlas repository/CLI, tetapi Atlas belum diprovision. Delivery siswa dan generation belum diimplementasikan. Policy aktif fase IndoBERT berada di `configs/model_v2_risk_policy.json`; konfigurasi C1–C6 lama hanya berlaku untuk `/v1`.
+Implementasi authoring Express/`FileQuestionRepository` lama telah dihapus; endpoint authoring publik di atas tetap kontrak **target**. Workflow internal tiga annotator dan `question_versions` tersedia melalui Atlas repository/CLI, bergantung provisioning. Delivery single-choice, scoring server dan CTT/IRT kini tersedia melalui [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md); generation masih target. Human-gold version/checksum diperlukan untuk blueprint pilot. Policy classifier aktif `configs/model_v2_risk_policy.json`; legacy C1–C6 hanya `/v1`.
 
 ## 12. Import candidate dari pipeline pretest
 
-Merge terbaru menghasilkan `babNN.json`, `soal_pretest.json`, `soal_pretest_db.json` dan `sesi_pretest.json`. Tidak satu pun otomatis menjadi `QuestionResource`. Importer target harus membuat `questionId` server-side, menyimpan ID agentic sebagai `source.externalId`, membuat `contentVersion=1`, memindahkan kunci ke private answer specification, dan mempertahankan halaman/section/gambar sebagai provenance.
+Artefak staging `babNN.json`, `soal_pretest.json`, `soal_pretest_db.json` dan `sesi_pretest.json` tidak otomatis menjadi `QuestionResource` atau respons siswa. Importer aktif `app/ingestion/pretest_import.py` membuat identity/version/hash dan provenance dari `babNN.json`. Kunci tetap privat; anotasi manusia dan freeze gold diperlukan sebelum delivery.
 
 Perubahan `pertanyaan_disesuaikan=true` merupakan perubahan konten yang harus terlihat pada preview author/reviewer. `status_kunci!=cocok` dan `needs_image` memblokir submit ke klasifikasi. `tingkat_kesulitan` 1–5 hanya metadata seleksi sementara dan tidak mengisi label `intendedDifficulty`. Pemetaan lengkap ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).

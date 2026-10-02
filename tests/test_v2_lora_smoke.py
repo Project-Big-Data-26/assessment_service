@@ -2,7 +2,12 @@ import torch
 from transformers import BertConfig, BertModel, BertTokenizer
 from safetensors.torch import save_file
 
-from app.classification.v2.model import ThreeHeadIndoBERT
+from app.classification.v2.model import (
+    CONDITIONED_DIFFICULTY_ARCHITECTURE,
+    GRADE_AWARE_ORDINAL_ARCHITECTURE,
+    GradeAwareOrdinalDifficultyHead,
+    ThreeHeadIndoBERT,
+)
 from app.classification.v2.artifact import CalibrationSpec, new_manifest, sha256_file, write_manifest
 from app.classification.v2.contracts import HEAD_LABELS, V2ClassificationRequest
 from app.classification.v2.runtime import V2ClassifierRuntime
@@ -61,6 +66,115 @@ def test_only_lora_and_heads_receive_gradients_and_tiny_fixture_overfits(tmp_pat
     assert final < initial * 0.35
 
 
+def test_conditioned_difficulty_uses_soft_head_probabilities_without_backpropagating_into_heads(tmp_path):
+    torch.manual_seed(8)
+    config = BertConfig(
+        vocab_size=32,
+        hidden_size=16,
+        num_hidden_layers=1,
+        num_attention_heads=4,
+        intermediate_size=24,
+        max_position_embeddings=32,
+    )
+    BertModel(config).save_pretrained(tmp_path, safe_serialization=True)
+    model = ThreeHeadIndoBERT.from_pretrained_with_lora(
+        str(tmp_path),
+        local_files_only=True,
+        rank=4,
+        alpha=8,
+        dropout=0.0,
+        architecture_version=CONDITIONED_DIFFICULTY_ARCHITECTURE,
+    )
+    assert model.heads["intendedDifficulty"].in_features == 16 + 3 + 4
+    input_ids = torch.tensor([[1, 5, 6, 2]], dtype=torch.long)
+    attention_mask = torch.ones_like(input_ids)
+    output = model(input_ids=input_ids, attention_mask=attention_mask)
+    assert output["mathCognitiveDomain"].shape == (1, 3)
+    assert output["knowledgeDimension"].shape == (1, 4)
+    assert output["intendedDifficulty"].shape == (1, 3)
+
+    model.zero_grad(set_to_none=True)
+    output["intendedDifficulty"].sum().backward()
+    assert model.heads["intendedDifficulty"].weight.grad is not None
+    assert model.heads["mathCognitiveDomain"].weight.grad is None
+    assert model.heads["knowledgeDimension"].weight.grad is None
+
+
+def test_grade_aware_ordinal_head_has_ordered_cutpoints_and_valid_probabilities(tmp_path):
+    torch.manual_seed(12)
+    config = BertConfig(
+        vocab_size=32,
+        hidden_size=16,
+        num_hidden_layers=1,
+        num_attention_heads=4,
+        intermediate_size=24,
+        max_position_embeddings=32,
+    )
+    BertModel(config).save_pretrained(tmp_path, safe_serialization=True)
+    model = ThreeHeadIndoBERT.from_pretrained_with_lora(
+        str(tmp_path),
+        local_files_only=True,
+        rank=4,
+        alpha=8,
+        dropout=0.0,
+        architecture_version=GRADE_AWARE_ORDINAL_ARCHITECTURE,
+        grade_embedding_dim=6,
+    )
+    model.eval()
+    output = model(
+        input_ids=torch.tensor([[1, 5, 6, 2], [1, 6, 7, 2]], dtype=torch.long),
+        attention_mask=torch.ones((2, 4), dtype=torch.long),
+        grades=torch.tensor([1, 6]),
+    )
+    probabilities = output["intendedDifficulty"].exp()
+    assert probabilities.shape == (2, 3)
+    assert torch.all(probabilities >= 0)
+    assert torch.allclose(probabilities.sum(dim=-1), torch.ones(2), atol=1e-6)
+    cutpoints = model.heads["intendedDifficulty"].ordered_cutpoints()
+    assert cutpoints[1] > cutpoints[0]
+    output["intendedDifficultyOrdinalLogits"].sum().backward()
+    assert model.heads["intendedDifficulty"].scorer.weight.grad is not None
+    state = {key: value.detach().clone() for key, value in model.heads.state_dict().items()}
+    clone = ThreeHeadIndoBERT.from_pretrained_with_lora(
+        str(tmp_path),
+        local_files_only=True,
+        rank=4,
+        alpha=8,
+        dropout=0.0,
+        architecture_version=GRADE_AWARE_ORDINAL_ARCHITECTURE,
+        grade_embedding_dim=6,
+    )
+    clone.heads.load_state_dict(state, strict=True)
+    clone.eval()
+    assert torch.allclose(
+        clone.heads["intendedDifficulty"].ordered_cutpoints(), cutpoints.detach()
+    )
+    clone_output = clone(
+        input_ids=torch.tensor([[1, 5, 6, 2], [1, 6, 7, 2]], dtype=torch.long),
+        attention_mask=torch.ones((2, 4), dtype=torch.long),
+        grades=torch.tensor([1, 6]),
+    )["intendedDifficulty"].exp()
+    assert torch.allclose(clone_output, probabilities.detach(), atol=1e-6)
+
+
+def test_ordinal_label_mapping_has_easy_medium_and_hard_regions():
+    head = GradeAwareOrdinalDifficultyHead(hidden_size=1, grade_embedding_dim=1)
+    with torch.no_grad():
+        head.grade_embedding.weight.zero_()
+        head.scorer.weight.zero_()
+        head.first_cutpoint.fill_(-1.0)
+        head.cutpoint_gap.fill_(torch.log(torch.expm1(torch.tensor(2.0))))
+    pooled = torch.zeros((1, 1))
+    grade = torch.tensor([1])
+    labels = []
+    for score in (-5.0, 0.0, 5.0):
+        with torch.no_grad():
+            head.scorer.bias.fill_(score)
+            log_probabilities, _ = head(pooled, grade)
+        labels.append(int(log_probabilities.argmax(dim=-1).item()))
+    assert labels == [0, 1, 2]
+
+
 def test_packaged_adapter_heads_and_tokenizer_load_fully_offline(tmp_path):
     torch.manual_seed(9)
     artifact = tmp_path / "artifact"
@@ -77,7 +191,12 @@ def test_packaged_adapter_heads_and_tokenizer_load_fully_offline(tmp_path):
     )
     BertModel(config).save_pretrained(base_path, safe_serialization=True)
     model = ThreeHeadIndoBERT.from_pretrained_with_lora(
-        str(base_path), local_files_only=True, rank=4, alpha=8, dropout=0.0
+        str(base_path),
+        local_files_only=True,
+        rank=4,
+        alpha=8,
+        dropout=0.0,
+        architecture_version=CONDITIONED_DIFFICULTY_ARCHITECTURE,
     )
     model.encoder.save_pretrained(adapter_path, safe_serialization=True)
     save_file(
@@ -104,8 +223,14 @@ def test_packaged_adapter_heads_and_tokenizer_load_fully_offline(tmp_path):
         rubricVersion="math-rubric-3x4x3-v1",
         calibrationVersion="fixture-cal-v1",
         inputRepresentation="solution",
+        architectureVersion=CONDITIONED_DIFFICULTY_ARCHITECTURE,
+        routingPolicyVersion="confidence-entropy-v1",
         calibration={
-            head: CalibrationSpec(temperature=1.0, confidenceThreshold=0.99)
+            head: CalibrationSpec(
+                temperature=1.0,
+                confidenceThreshold=0.99,
+                entropyThreshold=0.25,
+            )
             for head in HEAD_LABELS
         },
         maxLength=64,

@@ -308,9 +308,9 @@ side(1470, 1640, 332, 155, "Perbaiki / tahan", [
 detailed(380, 1870, 1050, 352, "IndoBERT memprediksi tiga hal", [
     "Siapkan teks, opsi, solusi, kelas, topik, format; KKO = fitur kata.",
     "Tokenisasi → encoder IndoBERT membaca konteks bahasa soal.",
-    "Tiga head → domain matematika (3), pengetahuan (4), kesulitan (3).",
-    "Simpan P(label), H = -Σ p log₂ p per head, OOD, modelVersion.",
-], "Tidak ada konversi langsung KKO → label dan tidak ada C1–C6.", "purple", 5, "chip")
+    "Head 1/2 → P_kognitif (3) dan P_pengetahuan (4).",
+    "[CLS] + stopgrad(P1,P2) = 775 fitur → Head difficulty (3).",
+], "Confidence floor DAN entropy ceiling dipilih per head pada validation.", "purple", 5, "chip")
 detailed(380, 2280, 1050, 362, "Claude: CoT + majority voting (N = 3)", [
     "Tiga run terpisah: soal, rubrik, solusi, prediksi IndoBERT.",
     "CoT/telaah bertahap: cek kunci, jalur solusi, bukti 3 head.",
@@ -462,8 +462,9 @@ stack(1385, 225, "04  PENGECEKAN", [
 ], "blue")
 stack(1860, 370, "05–06  MODEL AI", [
     "PyTorch / Transformers / IndoBERT",
-    "3 head target, versi lama masih C1–C6",
-    "Fitur KKO, probabilitas, entropy, OOD",
+    "Conditioned difficulty; parallel-v1 = baseline",
+    "3 head, probabilitas, confidence, entropy",
+    "Routing threshold per head dari validation",
     "Claude CoT: telaah 3 run (target)",
     "Schema JSON + prompt/modelVersion",
     "Majority vote per head ≠ confidence/gold",

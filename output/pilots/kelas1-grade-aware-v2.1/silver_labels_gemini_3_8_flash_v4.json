@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "gemini-silver-labels-v3-blind-key-verified",
+  "source": "output/pilots/kelas1-grade-aware-v2.1/questions.json",
+  "sourceHash": "dc573fc95f443fbc6bb3e6f010b71b8f0832ab3f5f44a541154a7e64c9644b69",
+  "sourceGrade": 1,
+  "provider": "gemini",
+  "model": "gemini-3.8-flash",
+  "promptVersion": "gemini-silver-math-3x4x3-v4-blind-key-verified",
+  "adjudicationPromptVersion": "gemini-silver-math-3x4x3-v4-adjudication",
+  "rubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "requestedRuns": 3,
+  "createdAt": "2026-10-02T03:00:12.150221+00:00",
+  "updatedAt": "2026-10-02T03:00:41.006520+00:00",
+  "items": {
+    "kelas1-b01-p0039-ayo-berlatih-1a": {
+      "index": 1,
+      "questionId": "kelas1-b01-p0039-ayo-berlatih-1a",
+      "inputHash": "e60f445e70ffd1f11d8886a8845e3f523365f56d471a595e125f5a5454f8d694",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ClientError:429",
+          "responseId": null,
+          "responseHash": null,
+          "latencyMs": 2023,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ServerError:503",
+          "responseId": null,
+          "responseHash": null,
+          "latencyMs": 4150,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ClientError:429",
+          "responseId": null,
+          "responseHash": null,
+          "latencyMs": 2005,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 0,
+        "requiredMajority": 2,
+        "contentStatus": null,
+        "contentConcerns": [],
+        "answerKeyStatus": null,
+        "verifiedAnswerKey": null,
+        "visualTranscript": null,
+        "verifiedMinimalSolution": null,
+        "heads": {},
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": false
+      },
+      "adjudication": null
+    }
+  },
+  "summary": {
+    "itemsProcessed": 1,
+    "itemsEligibleForTraining": 0,
+    "successfulRuns": 0,
+    "failedRuns": 3,
+    "adjudicatedItems": 0,
+    "pendingAdjudication": 0,
+    "difficultyDistribution": {
+      "Easy": 0,
+      "Medium": 0,
+      "Hard": 0
+    },
+    "dominantDifficultyShare": 0.0,
+    "boundaryAnalysisRequired": true,
+    "promptTokens": 0,
+    "outputTokens": 0,
+    "thinkingTokens": 0,
+    "totalTokens": 0
+  }
+}

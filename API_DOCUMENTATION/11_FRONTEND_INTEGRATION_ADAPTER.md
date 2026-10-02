@@ -1,206 +1,34 @@
-# Frontend Integration Adapter Copot-Pasang
+# Frontend Integration Adapter
 
-UI reviewer blind minimal kini tersedia di `/internal/v2/ui/login` dan `/internal/v2/ui`. UI memakai cookie `HttpOnly`, menyimpan CSRF token hanya pada `sessionStorage`, mengambil assignment milik reviewer, dan tidak menerima prediksi AI/peer/consensus. Ini adalah UI operasional fase anotasi, bukan frontend delivery siswa.
+UI anotasi blind tersedia pada `/internal/v2/ui/login` dan `/internal/v2/ui`. UI siswa/teacher authoring baru masih target, tetapi backend delivery fixed-form dan CTT/IRT kini tersedia. Frontend memakai kontrak [OpenAPI aktual](schemas/openapi.json).
 
-## 1. Tujuan
-
-Frontend boleh dibangun ulang tanpa mengubah backend selama implementasi baru memenuhi port dan DTO publik. Komponen React tidak boleh memanggil `fetch` langsung, membaca MongoDB shape, atau mengetahui provider/model AI.
-
-```text
-UI components
-    -> application hooks/use-cases
-        -> domain ports
-            -> HTTP adapter atau mock adapter
-```
-
-## 2. Port utama
+## Port siswa
 
 ```ts
-export interface TeacherAuthoringPort {
-  validate(content: QuestionAuthoringContent): Promise<ValidationResult>;
-  create(content: QuestionAuthoringContent, idempotencyKey: string): Promise<QuestionResource>;
-  replaceDraft(questionId: string, version: number, content: QuestionAuthoringContent): Promise<QuestionResource>;
-  submit(questionId: string, idempotencyKey: string): Promise<JobAccepted>;
-  get(questionId: string): Promise<QuestionResource>;
-}
-
-export interface ExtractionPort {
-  create(file: File, idempotencyKey: string): Promise<JobAccepted>;
-  get(jobId: string): Promise<ExtractionJob>;
-  createDraft(input: CreateQuestionFromExtraction): Promise<QuestionResource>;
-}
-
-export interface WorkflowPort {
-  get(runId: string): Promise<WorkflowRun>;
-}
-
-export interface ExpertReviewPort {
-  submitBlind(input: BlindAnnotation, idempotencyKey: string): Promise<ExpertAnnotation>;
-  reviewAi(annotationId: string, input: AiReview, idempotencyKey: string): Promise<ExpertAnnotation>;
-  getDecision(decisionId: string): Promise<ExpertDecision>;
-}
-
-export interface AssessmentPort {
-  start(assessmentId: string, idempotencyKey: string): Promise<AssessmentSession>;
-  nextItem(sessionId: string): Promise<DeliveredItem>;
-  submitResponse(input: ResponseCreate, idempotencyKey: string): Promise<ResponseReceipt>;
-  complete(sessionId: string, idempotencyKey: string): Promise<SessionResult>;
-}
+type AssessmentPort = {
+  start(assessmentId: string, idempotencyKey: string): Promise<SessionReceipt>;
+  nextItem(sessionId: string): Promise<DeliveredItem | DeliveryFinished>;
+  submitResponse(input: ResponseCreate): Promise<ResponseReceipt>;
+  complete(sessionId: string, idempotencyKey: string): Promise<SessionCompleted>;
+};
 ```
 
-## 3. Adapter HTTP
+Adapter memakai participant Bearer pada Authorization. Start/complete membawa Idempotency-Key; submit memakai responseId yang sama pada header/body. Saat retry, ID dan body dipertahankan. Pilihan UI memakai opaque public ID, bukan label A/B atau internal key.
 
-Satu modul menangani:
+Student state hanya berisi session/delivery, teks/stimulus, opsi dan timing. Tidak ada correctAnswer, AI label, intended difficulty atau solution. Receipt tidak menampilkan correctness. Skip merupakan aksi eksplisit dengan skipped=true dan selectedOptionIds kosong.
 
-- base URL;
-- bearer token;
-- idempotency key;
-- `If-Match`;
-- JSON parsing;
-- common error envelope;
-- snake/camel mapping jika internal compatibility masih diperlukan;
-- request timeout/cancellation;
-- schema validation optional pada development.
+Alur: start → GET next → pilih satu opsi/skip → submit → next; finished=true → complete. Refresh GET mempertahankan delivery yang sama. Token tidak boleh dipakai lintas assessment. Penanganan 409 menampilkan expired/finalized/held state, bukan membuat jawaban atau opsi baru sendiri.
 
-Komponen UI hanya menerima domain error:
+## Port operator dan ahli
 
-```ts
-type DomainErrorCode =
-  | "validation_failed"
-  | "version_conflict"
-  | "forbidden"
-  | "job_failed"
-  | "quarantined"
-  | "session_expired"
-  | "network_unavailable"
-  | "unknown";
-```
+Operator menyediakan assessment dan participant code. Service credential hanya pada backend/operator terpercaya, tidak dipaketkan dalam frontend siswa. Capabilities tersedia pada `/api/v1/capabilities`; psychometrics-info memberi local readiness tanpa network call.
 
-## 4. Teacher authoring state
+Staff membaca snapshot/agregat; ahli membaca flags/CI/IRT diagnostics lalu memutuskan retain/revise/quarantine dengan cookie + CSRF. UI tidak otomatis mempromosikan item atau model dari estimated status. Gold initial annotation tetap blind: keluaran AI/peer/empirical bukan isi assignment awal.
 
-```text
-idle
-  -> editing
-  -> validating
-      -> validation_error
-      -> saving
-          -> saved(author_draft)
-          -> version_conflict
-  -> submitting
-      -> processing(job polling)
-          -> pending_expert_review
-          -> needs_expert_adjudication
-          -> expert_validated
-          -> provisional
-          -> revision_required
-          -> quarantined
-          -> failed
-```
+Cookie auth path kini /, HttpOnly/SameSite lax, Secure di luar development. CSRF disimpan sesuai UI internal yang ada; jangan menyimpan credential pada dokumentasi/artefak publik. Route /api/v1 memakai Cache-Control no-store.
 
-`revision_required` menampilkan warning dan membuka editor versi baru. UI teacher tidak menampilkan tombol "approve label" atau "adjudicate". UI khusus pakar menyembunyikan prediksi AI/peer sampai blind submission terkunci, kemudian menampilkan proposal Claude untuk review per head.
+## Batas fitur
 
-## 5. Extraction state
+Backend aktif mendukung single-choice tekstual, transkripsi visual, fixed form dan completion seluruh item. Aset siswa privat, essay/numeric/grid/matching/multiple-response, CAT, exposure control, public authoring dan controlled generator masih target.
 
-```text
-idle -> selecting -> uploading -> processing
-                              -> candidates
-                                  -> editing authoring content
-                                  -> create draft
-                              -> failed/quarantined
-```
-
-Teacher memperbaiki teks, formula, opsi, dan answer input sebagai author. Hasil ekstraksi tidak langsung disubmit ke AI workflow tanpa teacher command.
-
-## 6. Student state
-
-```text
-select assessment
-    -> start session
-    -> load delivered item
-    -> answer locally
-    -> submit response
-    -> next item
-    -> complete session
-```
-
-Student state tidak memiliki `correctAnswer`. Feedback hanya berasal dari response receipt jika assessment policy mengizinkan.
-
-## 7. Struktur folder frontend
-
-```text
-src/
-  domain/
-    contracts/
-    models/
-    errors/
-  application/
-    teacher/
-    extraction/
-    assessment/
-  infrastructure/
-    http/
-    adapters/
-    generated/
-    mock/
-  features/
-    teacher-authoring/
-    extraction-import/
-    student-assessment/
-    status-dashboard/
-    expert-review/
-  shared/
-    MathText/
-    ErrorNotice/
-    JobProgress/
-```
-
-`infrastructure/generated` berasal dari OpenAPI/JSON Schema dan tidak diedit manual. Feature component tidak mengimpor file dari backend repository.
-
-## 8. Capability-driven UI
-
-Frontend membaca `/capabilities` saat bootstrap. Fitur target yang belum aktif disembunyikan atau menggunakan adapter mock pada development. UI tidak mendeteksi kemampuan berdasarkan error acak atau nama model.
-
-Contoh:
-
-```ts
-if (capabilities.features.questionGeneration) {
-  registerGenerationStatusPanel();
-}
-```
-
-## 9. Rendering safety
-
-- Render LaTeX melalui KaTeX dengan konfigurasi aman.
-- Jangan memakai raw HTML dari source/LLM tanpa sanitization.
-- Diagram menggunakan resource URL/SVG policy yang tervalidasi.
-- Preview upload memakai object URL dan direvoke.
-- Tampilkan warning sebagai teks, bukan HTML.
-- Jangan log token, answer key, raw prompt, atau student identity.
-
-## 10. Cara mengganti frontend
-
-1. Generate/import public types.
-2. Implementasikan lima port utama, termasuk ExpertReviewPort pada aplikasi pakar.
-3. Jalankan consumer contract tests.
-4. Uji state terminal dan error envelope.
-5. Uji teacher ownership dan student key isolation.
-6. Jalankan against mock lalu staging gateway.
-7. Ganti deployment frontend tanpa mengubah internal AI/database.
-
-## 11. Migration dari prototype
-
-Frontend prototype `project_assessment` sudah dihapus; struktur di atas adalah target. Sebelum frontend baru dipasang:
-
-- hapus import seed dari production path;
-- pindahkan seluruh network call ke adapter;
-- gunakan Question authoring DTO baru;
-- gunakan job polling;
-- gunakan delivery instance;
-- hilangkan `isCorrect` dari request browser;
-- jangan bergantung pada field legacy `annotations`, `finalLabels`, atau educator verification; gunakan `expert_annotations` dan `expert_decisions` baru.
-
-## 12. UI review untuk output agentic
-
-`scripts/review_app.py` yang masuk bersama merge masih membaca output pipeline lama pada `output/`/`output_mcq/`; ia belum memahami `output/pretest/<book>/babNN.json`, status baru, sesi, atau provenance gambar. Karena itu ia bukan implementasi `ExpertReviewPort`.
-
-UI staging yang baru, bila dibuat, perlu menampilkan berdampingan: halaman Buku Siswa, stimulus/pertanyaan, halaman/kutipan Buku Guru, pengerjaan agen, opsi + alasan, flag notasi/gambar, status kunci, catatan penyesuaian dan hasil validator. Aksi staging hanya `accept_for_import`, `request_content_fix`, atau `reject_candidate`; aksi tersebut tidak boleh disebut voting tiga ahli. Frontend siswa tetap hanya mengonsumsi delivery DTO tanpa kunci.
+`scripts/review_app.py` tetap UI staging legacy, bukan workflow gold atau delivery. `soal_pretest_db.json` tidak boleh diberikan langsung ke browser karena mengandung kunci. Lihat [06](06_STUDENT_RESPONSE_API.md), [08](08_ASSESSMENT_DELIVERY_API.md), [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md).

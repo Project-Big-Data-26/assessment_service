@@ -1,125 +1,87 @@
 # Assessment Delivery API
 
-## 1. Tujuan
+Delivery fixed-form sudah tersedia di FastAPI. SQLite menyimpan assessment immutable, token hash peserta, session, delivery dengan mapping privat, response event, snapshot psikometrik dan keputusan empiris ahli. MongoDB tetap menyimpan anotasi/gold snapshot. UI siswa belum dibangun; API tersedia untuk frontend atau Swagger.
 
-Delivery API adalah satu-satunya jalur soal menuju student UI. Ia membentuk snapshot tetap, mengacak opsi di server, menyembunyikan kunci, dan menghubungkan response ke versi konten yang tepat.
-
-Teacher authoring UI tidak mengirim Question langsung ke student UI. Pilot hanya memakai item yang memiliki `expertDecision` valid untuk `contentVersion` yang dikirim. Item `provisional` atau `empirically_screened` dipilih assembly service sesuai policy; status AI saja tidak cukup.
-
-## 2. Membuka session
+## Membekukan assessment
 
 ```http
-POST /api/v1/assessments/{assessmentId}/sessions
-Idempotency-Key: <uuid>
+POST /api/v1/internal/assessments
+X-Internal-API-Key: <token operator>
 ```
 
 ```json
 {
-  "sessionId": "SES-001",
-  "assessmentId": "ASM-001",
-  "status": "active",
-  "expiresAt": "2026-09-27T13:00:00Z",
-  "nextItemUrl": "/api/v1/sessions/SES-001/items/next"
+  "assessmentId": "pilot-kelas1-v1",
+  "snapshotId": "<snapshot human_gold>",
+  "questionVersionIds": ["<questionVersionId pertama>", "<questionVersionId kedua>"],
+  "populationId": "kelas1-sekolah-a-2026",
+  "assessmentFamily": "numerasi-kelas1-pilot-v1",
+  "grade": 1,
+  "sessionTtlMinutes": 120,
+  "rapidGuessMs": null
 }
 ```
 
-Subject identity dan population assignment ditentukan server/session policy.
+API membaca snapshot MongoDB; CLI [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md) dapat membaca JSON lokal. Keduanya memvalidasi SHA-256 isi, `human_gold`, keputusan `gold_ready|adjudicated`, key/solusi, grade, versi unik dan opsi single-choice. Silver/`researchOnly` ditolak. Gate training/test model terpisah dari kelayakan konten pilot.
 
-## 3. Mengambil item berikutnya
+Satu assessment berisi satu grade/populasi. Blueprint, urutan soal, versi/kunci dan scoring policy immutable. ID sama dengan konten berbeda menghasilkan 409. Versi yang ditahan ahli ditolak. Opsi diacak per delivery; urutan soal mengikuti blueprint.
+
+## Provision peserta
 
 ```http
-GET /api/v1/sessions/{sessionId}/items/next
+POST /api/v1/internal/assessments/{assessment_id}/participants
+X-Internal-API-Key: <token operator>
+Content-Type: application/json
 ```
 
-Public DTO:
+```json
+{"participantCode": "kode-pseudonim-001"}
+```
+
+Receipt berisi `participantToken` acak. Operator memberikan token kepada peserta yang sesuai. Database menyimpan hash token dan HMAC kode; kode sama dalam populasi sama mengenali subject yang sama. Token terikat satu assessment. Integrasi identity provider dan rotasi/revokasi invite masih target.
+
+## Session dan item
+
+```http
+POST /api/v1/assessments/{assessment_id}/sessions
+Authorization: Bearer <participantToken>
+Idempotency-Key: start-0001
+
+GET /api/v1/sessions/{session_id}/items/next
+Authorization: Bearer <participantToken>
+```
+
+TTL 5–1440 menit, default 120. Retry start mengambil session yang sama; key baru membuat attempt baru. Refresh GET mempertahankan pending delivery/opsi/urutan. Transaksi mencegah request paralel membuat dua delivery.
 
 ```json
 {
-  "deliveryInstanceId": "DLV-001",
-  "sessionId": "SES-001",
+  "deliveryInstanceId": "<opaque ID>",
+  "sessionId": "<session ID>",
   "item": {
-    "publicItemId": "PUB-001",
+    "publicItemId": "<opaque ID>",
     "questionType": "multiple_choice",
-    "questionText": "Hitung luas trapesium berikut.",
-    "options": [
-      {"id": "pub-opt-1", "text": "156 cm²"},
-      {"id": "pub-opt-2", "text": "78 cm²"},
-      {"id": "pub-opt-3", "text": "18 cm²"},
-      {"id": "pub-opt-4", "text": "60 cm²"}
-    ],
+    "questionText": "Hitung 2 + 1.",
+    "stimulus": null,
+    "options": [{"id": "<opaque option ID>", "text": "3"}, {"id": "<opaque option ID>", "text": "4"}],
     "media": []
   },
-  "sequence": {"current": 3, "total": 10},
-  "timing": {"deliveredAt": "2026-09-27T10:15:00Z", "timeLimitMs": null}
+  "sequence": {"current": 1, "total": 5},
+  "timing": {"deliveredAt": "2026-10-02T03:00:00Z", "expiresAt": "2026-10-02T05:00:00Z"}
 }
 ```
 
-DTO tidak memuat:
+DTO tidak berisi key, label, solusi, hash/version internal atau mapping opsi. Delivery saat ini tekstual; transkripsi visual terverifikasi dapat disertakan. Rendering aset privat siswa, exposure budget, assembly adaptif/CAT dan varian belum diimplementasikan.
 
-- correct answer;
-- internal option ID;
-- solution trace;
-- distractor misconception code;
-- parent/family relation yang dapat membocorkan pola;
-- AI decision/raw confidence;
-- generator seed/parameter jika tidak dibutuhkan siswa.
-
-## 4. Delivery snapshot internal
-
-Server menyimpan:
-
-```text
-deliveryInstanceId
-session/assessment/population
-questionId + contentVersion
-variantId + variantVersion
-public-to-internal option mapping
-option order
-scoring policy version
-delivery timestamp/expiry
-```
-
-Refresh halaman mengambil snapshot yang sama. Sistem tidak membuat parameter atau urutan baru di tengah attempt.
-
-## 5. Assembly policy
-
-Pemilihan item mempertimbangkan:
-
-- grade/topic/subtopic blueprint;
-- target domain kognitif matematika, knowledge dimension dan intended difficulty;
-- empirical information jika tersedia;
-- item-family diversity;
-- exposure limit;
-- status/risk;
-- larangan menampilkan terlalu banyak sibling dari satu family.
-
-Assembly policy berversi dan tidak ditentukan komponen React.
-
-## 6. Menyelesaikan session
+## Completion dan hold
 
 ```http
-POST /api/v1/sessions/{sessionId}/complete
+POST /api/v1/sessions/{session_id}/complete
+Authorization: Bearer <participantToken>
+Idempotency-Key: complete-0001
 ```
 
-Command ini finalizes session setelah response yang diperlukan diterima. Retry memakai idempotency key.
+Semua item harus dijawab atau di-skip. Completion adalah transisi satu kali dan aman diulang. GET setelah seluruh respons menghasilkan `finished=true, item=null`. Detail: [06](06_STUDENT_RESPONSE_API.md).
 
-## 7. Frontend interface
+Keputusan empiris `revise|quarantine` menahan delivery versi tersebut, termasuk refresh pending item. Blueprint tidak diganti diam-diam. Revisi memerlukan versi konten, validasi manusia dan assessment baru.
 
-```ts
-type AssessmentPort = {
-  start(assessmentId: string): Promise<AssessmentSession>;
-  nextItem(sessionId: string): Promise<DeliveredItem>;
-  submitResponse(input: ResponseCreate): Promise<ResponseReceipt>;
-  complete(sessionId: string): Promise<SessionResult>;
-};
-```
-
-Student UI hanya bergantung pada interface tersebut. Ia tidak mengimpor seed lokal atau membandingkan jawaban dengan `correctAnswer` di browser.
-
-## 8. Status implementasi
-
-Student UI lama pada `project_assessment` sudah dihapus. Session, delivery instance, public option mapping, server-side scoring, exposure control, dan assembly policy adalah target yang belum tersedia di repo Python.
-
-## 9. `sesi_pretest.json` bukan delivery session
-
-File tersebut hanya menyimpan rancangan pemilihan ID soal per bab/subbab/prasyarat dan audit sumber. Sebelum menjadi assessment, sistem harus me-resolve ID staging ke `questionVersionId` yang sudah `expert_validated`, menolak item review/gambar hilang, membekukan blueprint dan scoring policy, lalu membuat `delivery_instances` dengan pengacakan opsi per attempt. Posisi A–D yang diseimbangkan oleh exporter membantu authoring, tetapi tidak menggantikan option mapping aman pada delivery.
+`sesi_pretest.json` adalah blueprint candidate, bukan delivery session. Resolve staging ID ke gold `questionVersionId` sebelum pilot.

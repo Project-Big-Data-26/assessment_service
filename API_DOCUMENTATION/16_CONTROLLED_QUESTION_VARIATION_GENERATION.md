@@ -1,5 +1,7 @@
 # Arsitektur Controlled Question Variation Generation
 
+Dokumen ini adalah **desain generator varian**, belum endpoint runtime. CTT/Rasch/2PL/3PL dan fixed-form pilot sudah tersedia pada [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md); API aktif tidak membuat varian, family aggregation, equating atau CAT. Skema/pseudocode generator di bawah tidak boleh diperlakukan sebagai kontrak pilot aktif.
+
 ## 1. Tujuan dan ruang lingkup
 
 Dokumen ini mendefinisikan arsitektur **tahap lanjutan** untuk membuat variasi soal dari induk yang telah lolos verifikasi jawaban **dan validasi tiga ahli**. Setiap varian substantif memerlukan keputusan ahli sendiri sebelum pilot; label induk hanya acuan pembanding.

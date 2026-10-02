@@ -1,4 +1,9 @@
-"""Resumable Gemini N=3 advisory review of packaged IndoBERT predictions."""
+"""Legacy anchored review retained only for historical reproduction.
+
+New experiments must lock blind silver labels first and then use
+``compare_blind_labels_to_predictions.py``. This script exposes model output to
+the reviewer and is therefore intentionally disabled unless explicitly opted in.
+"""
 
 from __future__ import annotations
 
@@ -98,8 +103,16 @@ def main() -> int:
     parser.add_argument("--runs", type=int, choices=(1, 3), default=3)
     parser.add_argument("--attempts", type=int, default=4)
     parser.add_argument("--workers", type=int, choices=(1, 2, 3), default=3)
+    parser.add_argument("--pause", type=float, default=0.0)
+    parser.add_argument("--allow-legacy-anchored-review", action="store_true")
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
+    if not args.allow_legacy_anchored_review:
+        raise SystemExit(
+            "anchored post-prediction review is disabled; use blind silver labeling, "
+            "lock it with audit_grade_aware_pilot.py, then compare with "
+            "compare_blind_labels_to_predictions.py"
+        )
     if not args.execute:
         raise SystemExit("live generation requires --execute")
 
@@ -172,7 +185,7 @@ def main() -> int:
             return last
 
         if args.workers == 1 or len(pending) <= 1:
-            completed_results = [execute(value) for value in pending]
+            completed_results = (execute(value) for value in pending)
         else:
             with ThreadPoolExecutor(max_workers=min(args.workers, len(pending))) as executor:
                 futures = [executor.submit(execute, value) for value in pending]
@@ -195,6 +208,8 @@ def main() -> int:
                 f"status={result.status} total_tokens={result.usage.totalTokens}",
                 flush=True,
             )
+            if args.pause > 0:
+                time.sleep(args.pause)
         typed = [GeminiRunResult.model_validate(value) for value in record["runs"]]
         record["aggregate"] = aggregate_record(typed, prediction, settings, row.rubricVersion)
         checkpoint["summary"] = summarize(checkpoint)

@@ -91,6 +91,8 @@ class DatasetSnapshot(BaseModel):
     splitManifest: list[SplitEntry]
     splitManifestHash: str
     testUnlockStatus: Literal["locked", "eligible_to_unlock"]
+    researchOnly: bool = False
+    labelProvenance: str = "human_gold"
     gateFailures: list[str] = Field(default_factory=list)
     exclusionSummary: dict[str, int] = Field(default_factory=dict)
 
@@ -150,7 +152,7 @@ def assign_near_duplicate_families(rows: list[GoldTrainingRow], threshold: float
 
 
 def _leakage_safe_group_ids(rows: list[GoldTrainingRow], family_map: dict[str, str]) -> dict[str, str]:
-    """Union rows sharing either an exercise/source group or duplicate family."""
+    """Union rows sharing a source, stimulus, exact, or near-duplicate family."""
     parents = list(range(len(rows)))
 
     def find(index: int) -> int:
@@ -166,6 +168,7 @@ def _leakage_safe_group_ids(rows: list[GoldTrainingRow], family_map: dict[str, s
 
     first_by_source: dict[str, int] = {}
     first_by_family: dict[str, int] = {}
+    first_by_stimulus: dict[str, int] = {}
     for index, row in enumerate(rows):
         family = row.duplicateFamily or family_map[row.questionVersionId]
         if row.sourceGroup in first_by_source:
@@ -176,6 +179,19 @@ def _leakage_safe_group_ids(rows: list[GoldTrainingRow], family_map: dict[str, s
             union(index, first_by_family[family])
         else:
             first_by_family[family] = index
+        if row.stimulus:
+            normalized_stimulus = re.sub(
+                r"\s+",
+                " ",
+                unicodedata.normalize("NFC", row.stimulus).casefold(),
+            ).strip()
+            stimulus_family = hashlib.sha256(
+                normalized_stimulus.encode("utf-8")
+            ).hexdigest()[:20]
+            if stimulus_family in first_by_stimulus:
+                union(index, first_by_stimulus[stimulus_family])
+            else:
+                first_by_stimulus[stimulus_family] = index
     members: dict[int, list[str]] = defaultdict(list)
     for index, row in enumerate(rows):
         members[find(index)].append(row.questionVersionId)
@@ -251,8 +267,13 @@ def deterministic_group_split(
     ]
 
 
-def validate_test_minimums(
-    rows: list[GoldTrainingRow], manifest: list[SplitEntry], minimum: int = 15
+def validate_split_minimums(
+    rows: list[GoldTrainingRow],
+    manifest: list[SplitEntry],
+    *,
+    minimum_train_per_class: int = 30,
+    minimum_evaluation_per_class: int = 15,
+    required_grades: tuple[int, ...] = (1, 2, 3, 4, 5, 6),
 ) -> list[str]:
     by_id = {row.questionVersionId: row for row in rows}
     failures: list[str] = []
@@ -261,14 +282,68 @@ def validate_test_minimums(
         "knowledgeDimension": tuple(item.value for item in KnowledgeDimension),
         "intendedDifficulty": tuple(item.value for item in IntendedDifficulty),
     }
-    for split in ("validation", "test"):
+    for split in ("train", "validation", "test"):
         selected = [by_id[entry.questionVersionId] for entry in manifest if entry.split == split]
+        minimum = (
+            minimum_train_per_class if split == "train" else minimum_evaluation_per_class
+        )
         for field, labels in dimensions.items():
             counts = Counter(getattr(row, field).value for row in selected)
             for label in labels:
                 if counts[label] < minimum:
                     failures.append(f"{split}:{field}:{label}={counts[label]}<{minimum}")
+        grade_counts = Counter(row.grade for row in selected)
+        for grade in required_grades:
+            if grade_counts[grade] == 0:
+                failures.append(f"{split}:grade:{grade}=0<1")
     return failures
+
+
+def validate_split_integrity(
+    rows: list[GoldTrainingRow], manifest: list[SplitEntry]
+) -> list[str]:
+    failures: list[str] = []
+    expected_ids = {row.questionVersionId for row in rows}
+    manifest_ids = [entry.questionVersionId for entry in manifest]
+    counts = Counter(manifest_ids)
+    for question_id, count in sorted(counts.items()):
+        if count > 1:
+            failures.append(f"split_manifest_duplicate:{question_id}={count}")
+    for question_id in sorted(expected_ids - set(manifest_ids)):
+        failures.append(f"split_manifest_missing:{question_id}")
+    for question_id in sorted(set(manifest_ids) - expected_ids):
+        failures.append(f"split_manifest_unknown:{question_id}")
+    if failures:
+        return failures
+
+    split_by_id = {entry.questionVersionId: entry.split for entry in manifest}
+    family_map = assign_near_duplicate_families(rows)
+    leakage_groups = _leakage_safe_group_ids(rows, family_map)
+    splits_by_group: dict[str, set[str]] = defaultdict(set)
+    for row in rows:
+        splits_by_group[leakage_groups[row.questionVersionId]].add(
+            split_by_id[row.questionVersionId]
+        )
+    for group_id, splits in sorted(splits_by_group.items()):
+        if len(splits) > 1:
+            failures.append(
+                f"split_leakage:{group_id}={','.join(sorted(splits))}"
+            )
+    return failures
+
+
+def validate_test_minimums(
+    rows: list[GoldTrainingRow], manifest: list[SplitEntry], minimum: int = 15
+) -> list[str]:
+    """Backward-compatible validation/test gate used by older callers."""
+    failures = validate_split_minimums(
+        rows,
+        manifest,
+        minimum_train_per_class=0,
+        minimum_evaluation_per_class=minimum,
+        required_grades=(),
+    )
+    return [failure for failure in failures if not failure.startswith("train:")]
 
 
 def build_snapshot(
@@ -277,6 +352,10 @@ def build_snapshot(
     snapshot_id: str,
     seed: int = 42,
     minimum_per_class: int = 15,
+    minimum_train_per_class: int = 30,
+    required_grades: tuple[int, ...] = (1, 2, 3, 4, 5, 6),
+    research_only: bool = False,
+    label_provenance: str = "human_gold",
     exclusion_summary: dict[str, int] | None = None,
 ) -> DatasetSnapshot:
     main = sorted(
@@ -286,7 +365,14 @@ def build_snapshot(
         (row for row in rows if row.grade > 6), key=lambda item: item.questionVersionId
     )
     manifest = deterministic_group_split(main, seed=seed)
-    failures = validate_test_minimums(main, manifest, minimum_per_class)
+    failures = validate_split_minimums(
+        main,
+        manifest,
+        minimum_train_per_class=minimum_train_per_class,
+        minimum_evaluation_per_class=minimum_per_class,
+        required_grades=required_grades,
+    )
+    failures.extend(validate_split_integrity(main, manifest))
     snapshot_payload = [row.model_dump(mode="json") for row in sorted(main, key=lambda item: item.questionVersionId)]
     manifest_payload = [entry.model_dump(mode="json") for entry in manifest]
     return DatasetSnapshot(
@@ -299,6 +385,8 @@ def build_snapshot(
         splitManifest=manifest,
         splitManifestHash=canonical_json_hash(manifest_payload),
         testUnlockStatus="eligible_to_unlock" if not failures else "locked",
+        researchOnly=research_only,
+        labelProvenance=label_provenance,
         gateFailures=failures,
         exclusionSummary=exclusion_summary or {},
     )
@@ -306,6 +394,8 @@ def build_snapshot(
 
 def save_snapshot(snapshot: DatasetSnapshot, path: str | Path) -> None:
     destination = Path(path)
+    if destination.exists():
+        raise FileExistsError(f"refusing to overwrite immutable snapshot: {destination}")
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(snapshot.model_dump_json(indent=2), encoding="utf-8")
 
@@ -317,6 +407,7 @@ def serialized_training_examples(
     return [
         {
             "questionVersionId": row.questionVersionId,
+            "grade": row.grade,
             "text": serialize_question(row.inference_request(), representation=representation),
             "mathCognitiveDomain": row.mathCognitiveDomain.value,
             "knowledgeDimension": row.knowledgeDimension.value,

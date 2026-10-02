@@ -68,6 +68,7 @@ async def login(payload: LoginInput, response: Response, repo: MongoAnnotationRe
     token, token_hash, csrf, csrf_hash = create_session_material()
     await repo.create_session(user, token_hash, csrf_hash)
     await repo.audit("auth.login_succeeded", user["userId"])
+    response.delete_cookie(SESSION_COOKIE, path="/internal/v2")
     response.set_cookie(
         SESSION_COOKIE,
         token,
@@ -75,7 +76,7 @@ async def login(payload: LoginInput, response: Response, repo: MongoAnnotationRe
         httponly=True,
         secure=os.getenv("APP_ENV", "development") != "development",
         samesite="lax",
-        path="/internal/v2",
+        path="/",
     )
     return {"userId": user["userId"], "roles": user.get("roles", []), "csrfToken": csrf}
 
@@ -91,6 +92,7 @@ async def logout(
     if token:
         await repo.revoke_session(token)
     await repo.audit("auth.logout", session["userId"])
+    response.delete_cookie(SESSION_COOKIE, path="/")
     response.delete_cookie(SESSION_COOKIE, path="/internal/v2")
 
 

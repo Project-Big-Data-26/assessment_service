@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import time
+from copy import deepcopy
 from typing import Any
 
 from google import genai
@@ -68,10 +69,46 @@ def build_review_prompt(
         "Untuk setiap head: confirm jika label IndoBERT didukung bukti soal; revise jika "
         "label lain lebih tepat; abstain jika bukti tidak cukup. Kutip maksimal empat "
         "potongan bukti singkat dari soal. Berikan alasan ringkas, bukan chain-of-thought. "
+        "Aturan schema wajib: proposedLabel harus null untuk confirm/abstain dan wajib "
+        "berisi label yang BERBEDA dari prediksi untuk revise; evidenceSpans berisi 1-4 "
+        "kutipan pendek untuk confirm/revise; rationale maksimal 600 karakter. "
         "Jangan menetapkan gold label dan jangan mengarang informasi yang tidak tersedia.\n\n"
         f"ITEM KANONIS:\n{serialize_question(question)}\n\n"
         f"PREDIKSI INDOBERT:\n{prediction_json}"
     )
+
+
+def _normalize_provider_payload(value: Any) -> Any:
+    """Normalize harmless provider deviations before strict validation.
+
+    Gemini's JSON schema mode can still return an irrelevant proposedLabel for
+    confirm/abstain or text just over our storage limits. Removing that ignored
+    label and truncating bounded audit text does not alter the decision.
+    Missing evidence or a missing revise label remains invalid.
+    """
+    if not isinstance(value, dict):
+        return value
+    payload = deepcopy(value)
+    concerns = payload.get("contentConcerns")
+    if isinstance(concerns, list):
+        payload["contentConcerns"] = [str(item)[:600] for item in concerns[:6]]
+    for head in (
+        "mathCognitiveDomain",
+        "knowledgeDimension",
+        "intendedDifficulty",
+    ):
+        decision = payload.get(head)
+        if not isinstance(decision, dict):
+            continue
+        if decision.get("action") != "revise":
+            decision["proposedLabel"] = None
+        evidence = decision.get("evidenceSpans")
+        if isinstance(evidence, list):
+            decision["evidenceSpans"] = [str(item)[:240] for item in evidence[:4]]
+        rationale = decision.get("rationale")
+        if isinstance(rationale, str):
+            decision["rationale"] = rationale[:600]
+    return payload
 
 
 class GeminiReviewAdapter:
@@ -124,9 +161,14 @@ class GeminiReviewAdapter:
             if isinstance(parsed, GeminiReviewOutput):
                 review = parsed
             elif parsed is not None:
-                review = GeminiReviewOutput.model_validate(parsed)
+                review = GeminiReviewOutput.model_validate(
+                    _normalize_provider_payload(parsed)
+                )
             elif getattr(response, "text", None):
-                review = GeminiReviewOutput.model_validate_json(response.text)
+                raw = json.loads(response.text)
+                review = GeminiReviewOutput.model_validate(
+                    _normalize_provider_payload(raw)
+                )
             else:
                 raise GeminiProviderError("empty_response")
             self._validate_against_prediction(review, prediction)

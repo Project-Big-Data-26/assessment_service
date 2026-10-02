@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import os
 from collections import Counter
 from pathlib import Path
 import sys
+from dotenv import load_dotenv
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -16,6 +18,7 @@ from app.classification.v2.serializer import canonical_json_hash
 from app.classification.v2.kko import detect_kko
 from app.annotation.repository import utc_now
 from app.training.v2.dataset import GoldTrainingRow, build_snapshot, save_snapshot
+from app.assessment.store import AssessmentStore
 
 
 def resolved_key_solution(decision: dict) -> tuple[str | None, str | None]:
@@ -150,26 +153,37 @@ def gold_from_documents(question: dict, decision: dict) -> GoldTrainingRow | Non
 
 
 async def run() -> None:
+    load_dotenv(Path(__file__).resolve().parents[1] / ".env", override=False)
     parser = argparse.ArgumentParser()
     parser.add_argument("--snapshot-id", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--minimum-per-class", type=int, default=15)
+    parser.add_argument("--assessment-db", default=os.getenv("ASSESSMENT_DB_PATH", "data/local/assessments.sqlite3"),
+                        help="Exclude versions held by post-pilot human empirical review, when the store exists")
     args = parser.parse_args()
     repository = MongoAnnotationRepository.from_environment()
     if repository is None:
         raise SystemExit("MONGODB_URI and MONGODB_DATABASE must be configured")
     rows = []
     excluded = Counter()
+    empirical_store = AssessmentStore(args.assessment_db) if Path(args.assessment_db).exists() else None
     try:
         cursor = repository.db.expert_decisions.find(
             {"status": {"$in": ["gold_ready", "adjudicated"]}}, {"_id": 0}
         )
         async for decision in cursor:
+            version_ids = [decision["questionVersionId"], decision.get("goldQuestionVersionId")]
+            if empirical_store and any(empirical_store.is_held(version) for version in version_ids if version):
+                excluded["empirical_expert_hold"] += 1
+                continue
             question = await repository.db.question_versions.find_one(
                 {"questionVersionId": decision["questionVersionId"]}, {"_id": 0}
             )
             if question:
                 question = await ensure_qualified_content_version(repository, question, decision)
+                if empirical_store and empirical_store.is_held(question["questionVersionId"]):
+                    excluded["empirical_expert_hold"] += 1
+                    continue
             row = gold_from_documents(question, decision) if question else None
             if row:
                 rows.append(row)

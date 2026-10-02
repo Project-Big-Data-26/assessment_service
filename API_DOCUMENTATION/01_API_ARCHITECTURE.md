@@ -1,208 +1,34 @@
 # Arsitektur dan Konvensi API
 
-## 1. Prinsip boundary
+Implementasi API **2.1.0** memakai FastAPI sebagai boundary lokal untuk legacy `/v1`, classifier `/v2`, anotasi `/internal/v2`, dan pilot/psikometrik `/api/v1`. Gateway Express lama sudah dihapus; Redis/Node gateway baru belum tersedia.
 
-Pada arsitektur target, frontend hanya mengakses **API Gateway**. Browser tidak memanggil FastAPI, Claude, Redis worker, atau MongoDB secara langsung. Implementasi Express lama berada di folder `project_assessment` yang sudah tidak ada di worktree; pemilihan runtime gateway baru masih keputusan implementasi.
-
-```text
-Teacher UI / Student UI / Future Frontend
-                  |
-                  | HTTPS /api/v1
-                  v
-             API Gateway
- auth | authorization | AJV | rate limit | public DTO | error mapping
-          |              |               |
-          v              v               v
-       MongoDB      Redis job queue   Internal services
-                                      FastAPI AI
-                                      generation worker
-                                      psychometric worker
-                                      object storage
+```mermaid
+flowchart LR
+  O[Operator dan ahli] --> A[FastAPI]
+  S[Student frontend atau API client] -->|Participant Bearer| A
+  A -->|Gold, annotation, staff session| M[(MongoDB)]
+  A -->|Blueprint, delivery, responses, snapshots| D[(SQLite pilot)]
+  A --> P[CTT dan IRT CPU]
+  A --> I[IndoBERT v2 checksum + promotion gates]
+  B[Blind silver CLI] --> G[Gemini adapter]
+  B --> R[Research artifact]
+  R -->|Tidak memberi kewenangan gold| I
 ```
 
-Konsekuensinya:
+API lokal: `http://127.0.0.1:8000`; Swagger `/docs`, ReDoc `/redoc`, OpenAPI `/openapi.json`. Tidak ada keharusan port 5000/gateway Node untuk menjalankan pilot.
 
-- frontend dapat diganti selama mematuhi OpenAPI/JSON Schema;
-- nama provider/model, lokasi service, dan credential tidak bocor ke browser;
-- response MongoDB tidak dikirim mentah sebagai public DTO;
-- perubahan implementasi AI tidak memaksa perubahan komponen UI;
-- proses lambat dikembalikan sebagai job/resource, bukan koneksi HTTP panjang.
+## Boundary dan aktor
 
-## 2. Aktor dan kewenangan
+Participant Bearer hanya untuk assessment yang diprovision operator. Subject/population/scoring berasal dari server, bukan body. Staff memakai cookie invite-only atau service credential `X-Internal-API-Key`; mutation cookie memerlukan CSRF. Keputusan empiris manusia memerlukan cookie, CSRF, profil ahli dan role yang sesuai; admin/service token saja tidak cukup.
 
-| Aktor | Boleh | Tidak boleh |
-|---|---|---|
-| `teacher` | Membuat, mengubah, mengimpor, dan submit authoring draft miliknya; melihat status | Menetapkan label final, adjudikasi, override gate, mengirim item langsung ke siswa |
-| `student` | Membuka assessment session dan mengirim jawaban | Membaca kunci, internal option mapping, solution trace, atau AI decision |
-| `ai_service` | Ekstraksi, answer verification, IndoBERT, Claude proposal | Menetapkan gold atau label final tanpa ahli |
-| `expert_reviewer` | Tiga pakar memberi label blind dan mereview proposal Claude per versi | Menilai item sendiri, melihat AI/peer sebelum blind submission dikunci |
-| `senior_adjudicator` | Menyelesaikan 1-1-1 atau konflik konten yang belum selesai | Menimpa initial annotation |
-| `psychometric_worker` | Mengagregasi response dan membuat immutable snapshot | Mengubah response event lama |
-| `system_admin` | Operasional service/model, quarantine inspection, rollback | Menjadi sumber label pedagogis hanya karena role admin |
+Cookie staff `HttpOnly` kini memakai path `/` agar auth anotasi dapat dipakai pada empirical review. Secure aktif di luar development. Opsi publik opaque; key/solution/mapping internal tidak disertakan pada delivery maupun receipt siswa. Route `/api/v1` dan internal memakai Cache-Control no-store.
 
-Identity diperoleh dari access token/session. Field seperti `teacherId`, `role`, dan `studentId` tidak dipercaya dari body request.
+Allowed host/origin dikonfigurasi lewat environment. CORS menerima Authorization, Idempotency-Key, X-CSRF-Token, X-Internal-API-Key dan Content-Type; service credential tetap berada pada backend/operator.
 
-## 3. Topologi resource
+## Operasi dan kontrak
 
-| Resource | Prefix | Fungsi |
-|---|---|---|
-| Health/capabilities | `/api/v1/health`, `/api/v1/capabilities` | Liveness dan kemampuan kontrak aktif |
-| Questions | `/api/v1/questions` | Teacher authoring, revision, submit, status |
-| Extractions | `/api/v1/extractions` | Import file menjadi authoring candidate |
-| AI screens | `/api/v1/ai` | Screening/debug dan informasi model |
-| Workflow runs | `/api/v1/workflow-runs` | Status pipeline otomatis |
-| AI decisions | `/api/v1/ai-decisions` | Prediksi IndoBERT dan proposal Claude |
-| Expert annotations/decisions | `/api/v1/expert-annotations`, `/api/v1/expert-decisions` | Penilaian blind, review AI dan keputusan manusia |
-| Item models/families/variants | `/api/v1/item-models`, `/item-families`, `/variants` | Controlled generation |
-| Assessments/sessions | `/api/v1/assessments`, `/sessions` | Assembly dan delivery snapshot |
-| Responses | `/api/v1/responses` | Event jawaban yang terikat delivery instance |
-| Psychometrics | `/api/v1/psychometrics` | Snapshot kualitas item/family |
+JSON camelCase dan unknown request fields ditolak. Error aktif memakai `{"detail": ...}`, bukan envelope gateway target. Mutation start/response/complete memakai Idempotency-Key; response key sama dengan responseId. Event, blueprint dan snapshot tidak ditimpa. Completion adalah transisi monotonic.
 
-## 4. Base URL
+CTT/IRT dijalankan di threadpool agar pekerjaan numerik/SQLite tidak memblokir event loop. Endpoint saat ini synchronous request/response, bukan job 202. Batas matriks 500.000 sel. Redis queue, async jobs, multihost store, rate limits platform, rotation/revocation invite, authoring frontend dan gateway generation masih target.
 
-| Lingkungan | Gateway publik | Internal AI |
-|---|---|---|
-| Lokal | `http://localhost:5000/api/v1` | `http://localhost:8000` |
-| Docker target | Ditentukan deployment gateway baru | `http://ai:8000` bila nama service `ai` dipakai |
-| Frontend | `VITE_API_URL` atau `/api/v1` | tidak digunakan browser |
-
-## 5. Public DTO dan penamaan
-
-- Public API memakai `camelCase` secara konsisten.
-- Internal FastAPI/model record boleh memakai `snake_case`.
-- Mapping hanya dilakukan pada gateway/adapter.
-- `_id`, provider prompt, model credential, internal correct-option mapping, dan stack trace tidak masuk public DTO.
-- Penambahan field bersifat backward-compatible; frontend wajib mengabaikan field yang tidak dikenal.
-
-## 6. Request headers
-
-```http
-Authorization: Bearer <token>
-Accept: application/json
-Content-Type: application/json
-Idempotency-Key: <uuid>          # command create/submit/response
-If-Match: "<contentVersion>"    # revision concurrency control
-X-Request-Id: <uuid>             # opsional dari client
-```
-
-Upload menggunakan `multipart/form-data`; browser tidak menetapkan boundary secara manual.
-
-## 7. Asynchronous job
-
-Extraction, submit workflow, batch generation, screening, dan psychometric calibration dapat mengembalikan `202 Accepted`:
-
-```json
-{
-  "jobId": "JOB-001",
-  "jobType": "question_screening",
-  "status": "queued",
-  "statusUrl": "/api/v1/workflow-runs/JOB-001"
-}
-```
-
-Status job:
-
-```text
-queued -> running -> succeeded
-                  -> failed
-                  -> quarantined
-                  -> cancelled
-```
-
-Frontend melakukan polling dengan backoff atau menggunakan event transport tambahan. Business result tetap dibaca dari resource URL; frontend tidak bergantung pada Redis/Celery.
-
-## 8. Error envelope
-
-Semua endpoint target memakai bentuk yang sama:
-
-```json
-{
-  "error": {
-    "code": "content_version_conflict",
-    "message": "Draft telah berubah. Muat versi terbaru sebelum menyimpan.",
-    "details": {
-      "expectedVersion": 2,
-      "actualVersion": 3
-    },
-    "traceId": "TRC-001"
-  }
-}
-```
-
-## 12. Boundary pipeline pretest hasil merge
-
-Pipeline `app/services/pretest/agentic/` berada **di luar request path publik**. Ia adalah batch authoring/import lokal yang membaca aset Buku Siswa/Buku Guru, memakai Claude Code untuk interpretasi per bab, kemudian menjalankan validator deterministik. FastAPI tidak mengimpor modul tersebut dan belum memiliki endpoint untuk menjalankan, memantau atau mengimpor hasilnya.
-
-Karena itu `features.extraction=true` pada capability runtime hanya boleh merujuk endpoint `/v1/extract` yang benar-benar aktif, bukan menyiratkan batch agentic tersedia melalui HTTP. Jika pipeline batch kelak dijadikan service, pisahkan role `ingestion_operator`, queue, tenant boundary, object storage, manifest/checksum sumber, sandbox dokumen, audit agent run dan import adapter. Jangan menjalankan Claude Code interaktif di dalam worker API. Lihat [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).
-
-| Code HTTP | Makna |
-|---:|---|
-| `200` | Read/validate/analysis sinkron berhasil |
-| `201` | Resource dibuat |
-| `202` | Command diterima sebagai job |
-| `400` | Request tidak dapat dipahami |
-| `401` | Belum terautentikasi |
-| `403` | Role/ownership tidak mengizinkan |
-| `404` | Resource tidak ditemukan |
-| `409` | Version/state/idempotency conflict |
-| `413` | Upload terlalu besar |
-| `415` | Media type tidak didukung |
-| `422` | Schema valid secara JSON tetapi melanggar kontrak/domain |
-| `429` | Rate limit |
-| `502` | Dependency memberi respons invalid |
-| `503` | Dependency wajib tidak siap |
-
-## 9. Versioning dan immutability
-
-- Breaking API change memakai prefix baru.
-- Authoring revision menaikkan `contentVersion`.
-- Setiap workflow, AI decision, expert annotation/decision, delivery, response, dan psychometric snapshot menyimpan versi konten yang dipakai.
-- Active item tidak ditimpa. Revisi membuat version baru; delivery lama tetap dapat direproduksi.
-- Response event, penilaian blind, review pakar dan decision event bersifat append-only.
-
-Join key minimum:
-
-```text
-questionId + contentVersion
-variantId + variantVersion
-deliveryInstanceId
-populationId + assessmentFamily
-```
-
-## 10. Security dan privacy target
-
-- authentication dan role/ownership authorization pada gateway;
-- server-side identity, scoring, option mapping, dan idempotency;
-- MIME signature, checksum, antivirus, size limit, dan object-storage policy;
-- pseudonymous subject hash; tidak menyimpan NISN/nama siswa pada response event;
-- field-level redaction untuk kunci dan internal AI trace;
-- rate limit, audit event, retention, encryption in transit/at rest;
-- teacher hanya dapat mengubah soal miliknya kecuali ada policy tenancy lain.
-
-Implementasi prototype saat ini belum memenuhi seluruh kontrol tersebut dan tidak boleh dibuka ke internet tanpa hardening.
-
-## 11. Health dan capabilities
-
-```http
-GET /api/v1/health
-GET /api/v1/capabilities
-```
-
-`health` menunjukkan liveness/readiness. `capabilities` membantu frontend memasang fitur secara dinamis:
-
-```json
-{
-  "apiVersion": "v1",
-  "features": {
-    "extraction": true,
-    "questionGeneration": false,
-    "claudePostprocessing": false,
-    "threeExpertReview": false,
-    "psychometrics": true
-  },
-  "contracts": {
-    "openApiUrl": "/api-docs/openapi.json",
-    "jsonSchemaUrl": "/api-docs/schemas/nalar-api.schema.json"
-  }
-}
-```
+Readiness model dan data dipisahkan: IndoBERT unapproved/research-only tetap 503; IRT kurang data/asumsi menghasilkan CTT dan status waiting. Gold manusia tetap prasyarat delivery. Lihat [12 endpoint aktual](12_ENDPOINT_MASTER_REFERENCE.md), [07 psikometrik](07_PSYCHOMETRICS_API.md), [27 runbook](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md).

@@ -1,126 +1,52 @@
 # Student Response API
 
-## 1. Tujuan
+Implementasi aktif berada di `app/assessment`, dengan event transaksional di SQLite. Respons terikat delivery, versi soal, populasi, grade, dan assessment. Identitas serta correctness berasal dari server. Runbook: [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md).
 
-Response API target menerima event jawaban yang selalu terikat pada `deliveryInstanceId`. Hanya versi item yang lolos tiga pakar dan policy pilot yang boleh diberikan. Browser tidak mengirim `isCorrect`; server mengambil immutable delivery snapshot dan menghitung correctness sendiri.
-
-## 2. Endpoint
+## Submit jawaban
 
 ```http
 POST /api/v1/responses
-Idempotency-Key: <responseId>
+Authorization: Bearer <participantToken>
+Idempotency-Key: response-0001
+Content-Type: application/json
 ```
-
-## 3. Request
 
 ```json
 {
-  "responseId": "RESP-001",
-  "deliveryInstanceId": "DLV-001",
-  "selectedOptionIds": ["pub-opt-2"],
+  "responseId": "response-0001",
+  "deliveryInstanceId": "<ID dari GET items/next>",
+  "selectedOptionIds": ["<ID opsi publik>"],
   "responseTimeMs": 42000,
-  "answerChanges": 1,
-  "clientSubmittedAt": "2026-09-27T10:20:00Z"
+  "answerChanges": 1
 }
 ```
 
-Identity siswa, assessment, session, question/variant version, dan option mapping berasal dari authenticated session serta delivery instance, bukan body.
+Header harus sama dengan `responseId`, 8–128 karakter. Pilot aktif mendukung satu jawaban `multiple_choice`. Numeric, essay, matching, multiple response, interactive grid dan scoring polytomous masih target; field tersebut ditolak dengan 422.
 
-Untuk tipe `numeric` atau `short_answer`, request memakai salah satu field sesuai schema:
+Skip eksplisit memakai `selectedOptionIds: []` dan `skipped: true`. Skor/correctness menjadi `null` dan matriks menjadi `NA`. Salah menjadi `0`; skip tidak dihitung salah.
 
-```json
-{
-  "responseId": "RESP-002",
-  "deliveryInstanceId": "DLV-002",
-  "numericAnswer": 78,
-  "responseTimeMs": 35000,
-  "answerChanges": 0
-}
-```
+Server menolak `isCorrect`, `studentHash`, `questionId`, `populationId`, dan field tambahan. Session peserta lain menghasilkan 404. Opsi di luar delivery ditolak dengan 422. Session selesai/kedaluwarsa dan respons kedua untuk delivery yang sama menghasilkan 409.
 
-Untuk `matching`, body memakai `matchingPairs: [{"leftId":"pub-left-1","rightId":"pub-right-2"}, ...]`; untuk `interactive_grid`/click-the-box memakai `selectedGridCellIds: ["pub-cell-3"]`. `true_false` memakai satu `selectedOptionIds`, sedangkan checkbox/`multiple_response` dapat memakai beberapa. `essay` memakai `textAnswer` dan status scoring menunggu penilai manusia. Seluruh ID dari browser adalah ID publik dalam delivery snapshot; server memetakan dan memvalidasinya.
-
-## 4. Processing
-
-```text
-validate schema and idempotency
-    -> resolve authenticated session
-    -> load delivery snapshot
-    -> ensure item not expired/already finalized
-    -> map public option IDs to internal option IDs
-    -> server-side score
-    -> derive timing/anomaly flags
-    -> append response event
-```
-
-## 5. Respons
+## Receipt dan retry
 
 ```json
 {
-  "responseId": "RESP-001",
+  "responseId": "response-0001",
   "accepted": true,
-  "scoring": {
-    "status": "scored",
-    "isCorrect": true,
-    "score": 1
-  },
-  "nextItemUrl": "/api/v1/sessions/SES-001/items/next"
+  "nextItemUrl": "/api/v1/sessions/<sessionId>/items/next"
 }
 ```
 
-Feedback benar/salah dapat ditunda sesuai assessment policy. Untuk tes formal, response boleh hanya mengembalikan `accepted`.
+Correctness dan kunci tidak ditampilkan. Retry dengan ID/body identik menghasilkan receipt yang sama, termasuk setelah completion. Penggunaan ulang ID dengan body berbeda menghasilkan 409. Response event tidak ditimpa.
 
-## 6. Stored event
+## Event internal dan timing
 
-```json
-{
-  "responseId": "RESP-001",
-  "deliveryInstanceId": "DLV-001",
-  "sessionId": "SES-001",
-  "assessmentId": "ASM-001",
-  "assessmentFamily": "PILOT-SMP8-GEO",
-  "populationId": "GRADE-8-REFERENCE",
-  "subjectHash": "hmac:...",
-  "questionId": "Q-001",
-  "contentVersion": 2,
-  "variantId": "VAR-014",
-  "variantVersion": 1,
-  "selectedInternalOptionIds": ["opt-correct"],
-  "isCorrect": true,
-  "score": 1,
-  "responseTimeMs": 42000,
-  "answerChanges": 1,
-  "flags": [],
-  "submittedAt": "2026-09-27T10:20:00Z"
-}
-```
+Event menyimpan response/delivery/session/assessment ID, population, family, grade, HMAC subject, question version/hash, opsi internal, skor, scoring policy, timing dan flag. Nama/NISN/email, kode peserta, serta bearer token tidak disimpan pada event.
 
-Event tersimpan bersifat append-only. Koreksi administratif membuat compensating event, bukan mengubah histori tanpa jejak.
+`subjectHash` adalah HMAC population + kode peserta. Kode hanya dipakai saat provisioning. `responseTimeMs` internal adalah waktu server sejak delivery; klaim browser disimpan sebagai `clientResponseTimeMs` dan tidak menentukan rapid-guess exclusion.
 
-## 7. Validasi timing
+Cutoff `rapidGuessMs` dibekukan pada assessment, default `null`. Respons rapid guess diberi flag dan dikeluarkan dari analisis. Respons setelah versi item ditahan ahli tetap tercatat dengan `item_held_after_delivery` dan tidak valid untuk analisis.
 
-Sistem mencatat tetapi tidak langsung membuang berdasarkan satu cutoff global. Flag dapat meliputi:
+Screening memilih satu **session lengkap** per peserta sesuai `first|last`; jawaban dari beberapa attempt tidak dicampur. Session incomplete dikeluarkan. Filter waktu memakai waktu completion UTC.
 
-- `rapid_guess_candidate` berdasarkan item/time policy;
-- `inactive_session`;
-- `duplicate_submission`;
-- `late_submission`;
-- `invalid_option_mapping`;
-- `automation_pattern_suspected`.
-
-Psychometric worker menentukan inclusion policy berversi dan menyimpan jumlah event yang dikeluarkan.
-
-## 8. Privacy
-
-- `subjectHash` dibuat server dengan keyed HMAC/rotating policy;
-- NISN, nama, email, dan token tidak disimpan pada response event;
-- population metadata cukup untuk analisis tetapi tidak mengidentifikasi individu;
-- retention dan access policy wajib dibedakan antara response raw dan aggregate.
-
-## 9. Status implementasi
-
-Backend gateway prototype yang dahulu menerima `questionId`, `studentHash`, dan `isCorrect` dari browser sudah tidak ada di worktree. FastAPI Python belum menyediakan delivery-bound response event. Target migration wajib menambahkan delivery instance, server-side identity/scoring, unique response ID, dan immutable version join.
-
-## 10. Batas terhadap artefak pretest lokal
-
-`soal_pretest_db.json` dan `sesi_pretest.json` adalah hasil perakitan authoring lokal, bukan log administrasi siswa. Keduanya tidak berisi `deliveryInstanceId`, option mapping per siswa, identity pseudonim, response ID, timing, atau server-scored correctness. File tersebut tidak boleh dipakai langsung untuk menghitung CTT/IRT dan tidak boleh dikirim sebagai respons siswa karena memuat kunci/alasan opsi. Setelah import dan validasi ahli, delivery service membuat snapshot baru sesuai dokumen 08.
+`soal_pretest_db.json`, `sesi_pretest.json` dan bundle `hasil_validasi` adalah data authoring/AI, bukan log siswa atau sampel IRT. Lihat [08 delivery](08_ASSESSMENT_DELIVERY_API.md) dan [07 psikometrik](07_PSYCHOMETRICS_API.md).

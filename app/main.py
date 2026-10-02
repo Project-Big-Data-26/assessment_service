@@ -26,6 +26,9 @@ from app.annotation.assets import PrivateAssetSigner
 from app.api.v2 import router as v2_router
 from app.classification.v2.runtime import V2ClassifierRuntime
 from app.llm import GeminiReviewRuntime
+from app.assessment.routes import router as assessment_router, info_router as psychometrics_info_router
+from app.assessment.store import AssessmentStore
+from app.psychometrics.analysis import load_policy
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT_DIR = PROJECT_ROOT / "models" / "indobert-multitask-v1"
@@ -60,6 +63,14 @@ annotation_repository = MongoAnnotationRepository.from_environment()
 asset_signer = PrivateAssetSigner.from_environment()
 v2_runtime, v2_runtime_error = create_v2_runtime()
 gemini_runtime, gemini_runtime_error = create_gemini_runtime()
+psychometrics_policy = load_policy(os.getenv("PSYCHOMETRICS_POLICY_PATH", PROJECT_ROOT / "configs" / "psychometrics_policy.json"))
+
+
+def create_assessment_store():
+    return AssessmentStore(
+        os.getenv("ASSESSMENT_DB_PATH", PROJECT_ROOT / "data" / "local" / "assessments.sqlite3"),
+        subject_secret=os.getenv("ASSESSMENT_SUBJECT_SECRET") or None,
+    )
 
 
 @asynccontextmanager
@@ -71,6 +82,8 @@ async def lifespan(application: FastAPI):
     application.state.v2_runtime_error = v2_runtime_error
     application.state.gemini_runtime = gemini_runtime
     application.state.gemini_runtime_error = gemini_runtime_error
+    if getattr(application.state, "assessment_store", None) is None:
+        application.state.assessment_store = create_assessment_store()
     if annotation_repository is not None:
         try:
             await annotation_repository.ping()
@@ -85,7 +98,7 @@ async def lifespan(application: FastAPI):
             await annotation_repository.close()
 
 
-app = FastAPI(title="Nalar Question Intelligence", version="2.0.0", lifespan=lifespan)
+app = FastAPI(title="Nalar Question Intelligence", version="2.1.0", lifespan=lifespan)
 # Defaults also support test clients that do not enter a lifespan context.
 app.state.annotation_repository = annotation_repository
 app.state.asset_signer = asset_signer
@@ -94,8 +107,12 @@ app.state.v2_runtime = v2_runtime
 app.state.v2_runtime_error = v2_runtime_error
 app.state.gemini_runtime = gemini_runtime
 app.state.gemini_runtime_error = gemini_runtime_error
+app.state.psychometrics_policy = psychometrics_policy
+app.state.assessment_store = None
 app.include_router(v2_router)
 app.include_router(annotation_router)
+app.include_router(assessment_router)
+app.include_router(psychometrics_info_router)
 allowed_hosts = [item.strip() for item in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1,testserver").split(",") if item.strip()]
 allowed_origins = [item.strip() for item in os.getenv("ALLOWED_ORIGINS", "http://localhost:8000").split(",") if item.strip()]
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=allowed_hosts)
@@ -104,7 +121,7 @@ app.add_middleware(
     allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["GET", "POST"],
-    allow_headers=["Content-Type", "X-CSRF-Token"],
+    allow_headers=["Content-Type", "X-CSRF-Token", "Authorization", "Idempotency-Key", "X-Internal-API-Key"],
 )
 
 
@@ -114,7 +131,8 @@ async def security_headers(request, call_next):
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["X-Frame-Options"] = "DENY"
     response.headers["Referrer-Policy"] = "no-referrer"
-    response.headers["Cache-Control"] = "no-store" if request.url.path.startswith("/internal/v2") else response.headers.get("Cache-Control", "")
+    if request.url.path.startswith(("/internal/v2", "/api/v1")):
+        response.headers["Cache-Control"] = "no-store"
     return response
 
 @app.get("/health")

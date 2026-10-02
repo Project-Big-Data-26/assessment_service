@@ -7,6 +7,8 @@ model:
     intendedDifficulty: [Easy, Medium, Hard]
   input_schema_version: math-question-text-v1
   default_input_representation: solution
+  architecture: grade-aware-ordinal-v2
+  grade_embedding_dimension: 16
   kko_requires_validation_ablation_and_challenge_pass: true
 
 lora:
@@ -40,6 +42,8 @@ split:
   test: 0.15
   seed: 42
   minimum_each_class_validation_and_test: 15
+  minimum_each_class_train: 30
+  require_each_grade_each_split: true
   frozen_test_open_once: true
 
 scope:

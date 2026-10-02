@@ -11,10 +11,11 @@ Dokumen ini mengkalibrasi dokumentasi API terhadap merge commit `42647a4`. Ia me
 | Validator verbatim, angka, kunci, opsi dan gambar | `implemented_local`, diuji unit | `agentic/validate.py`, 23 tes lulus |
 | Ekstraksi semantik oleh Claude Code per bab | `development_workflow` | `.claude/agents/` dan `.claude/skills/` |
 | Ekspor bank soal dan perakitan sesi pretest | `implemented_local` | `agentic/export.py`, `agentic/pretest.py` |
-| Import hasil ke MongoDB | `target` | Belum ada seeder/repository aktif dan kontrak belum selaras |
+| Import hasil ke MongoDB | `implemented_unprovisioned` | `app/ingestion/pretest_import.py`, `scripts/load_candidates_to_atlas.py` dan Atlas repository |
 | Endpoint agentic di FastAPI/gateway | `target` | Belum ada route; modul dipanggil melalui CLI |
 | Claude API untuk audit hasil IndoBERT | `target` | Berbeda dari Claude Code yang menjalankan ekstraksi |
-| Tiga ahli, delivery siswa, CTT penuh dan IRT | `target`/`prototype` sesuai dokumen terkait | Belum terhubung ke hasil pretest |
+| Tiga ahli dan gold | `implemented_unprovisioned` | Blind annotation, consensus/discussion/adjudication; data manusia tetap diperlukan |
+| Delivery, server-scored response, CTT dan Rasch/2PL/3PL | `implemented_local` | `app/assessment`, `app/psychometrics`; gold → pilot → empirical snapshot, lihat [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md) |
 
 `implemented_local` berarti fungsi tersedia untuk batch lokal, bukan layanan produksi, endpoint publik, atau proses yang aman untuk multi-tenant.
 
