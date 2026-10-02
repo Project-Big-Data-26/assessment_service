@@ -5,10 +5,16 @@ uvicorn==0.53.0
 
 # Data and configuration
 numpy==2.3.5
+scipy>=1.16,<2
 pandas==3.0.6
 PyYAML==6.0.2
+python-dotenv==1.2.1
+
+# Provider LLM advisory (Gemini API; credentials stay in .env/secret store)
+google-genai==2.25.0
 
 # Machine learning and evaluation
+sympy==1.14.0
 scikit-learn==1.9.1
 matplotlib==3.11.2
 seaborn==0.13.2
@@ -18,6 +24,14 @@ torch==2.14.0
 transformers==5.17.0
 datasets==5.0.1
 sentencepiece==0.2.2
+peft>=0.18,<0.19
+safetensors>=0.6,<0.9
+
+# Atlas annotation backend and invite-only authentication
+pymongo>=4.15,<5
+argon2-cffi>=25,<26
+jinja2>=3.1,<4
+boto3>=1.40,<2
 
 # Multimodal ingestion. Tesseract engine itself is installed by Docker/OS.
 Pillow==11.3.0

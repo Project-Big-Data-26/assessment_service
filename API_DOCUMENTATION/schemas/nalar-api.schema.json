@@ -1,0 +1,587 @@
+{
+  "$comment": "Gateway-wide target design; not the runtime pilot validator. Actual API 2.1.0 contracts are exported from FastAPI into implemented-api.schema.json and openapi.json.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nalar.local/schemas/nalar-api.schema.json",
+  "title": "Nalar Public API DTO Bundle",
+  "$comment": "Target public API contract. This bundle does not validate internal pretest agentic files (babNN.json, soal_pretest.json, soal_pretest_db.json, or sesi_pretest.json). Those files are staging artifacts governed by app/services/pretest/agentic/schema.py and must pass an import adapter before becoming QuestionVersion resources.",
+  "type": "object",
+  "$defs": {
+    "QuestionType": {
+      "enum": [
+        "multiple_choice",
+        "multiple_response",
+        "true_false",
+        "numeric",
+        "short_answer",
+        "essay",
+        "matching",
+        "interactive_grid"
+      ]
+    },
+    "MathCognitiveDomain": {
+      "enum": ["knowing", "applying", "reasoning"]
+    },
+    "KnowledgeDimension": {
+      "enum": ["factual", "conceptual", "procedural", "metacognitive"]
+    },
+    "Difficulty": {
+      "enum": ["Easy", "Medium", "Hard"]
+    },
+    "Option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "maxLength": 64},
+        "text": {"type": "string", "minLength": 1, "maxLength": 2000}
+      }
+    },
+    "OptionAnswerSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "optionIds"],
+      "properties": {
+        "kind": {"const": "option_ids"},
+        "optionIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1, "maxLength": 64}
+        }
+      }
+    },
+    "NumericAnswerSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {"const": "numeric"},
+        "value": {"type": "number"},
+        "tolerance": {"type": "number", "minimum": 0},
+        "unit": {"type": ["string", "null"], "maxLength": 64}
+      }
+    },
+    "TextAnswerSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "acceptedAnswers"],
+      "properties": {
+        "kind": {"const": "text"},
+        "acceptedAnswers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1, "maxLength": 2000}
+        },
+        "caseSensitive": {"type": "boolean", "default": false}
+      }
+    },
+    "MatchingPair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["leftId", "rightId"],
+      "properties": {
+        "leftId": {"type": "string", "minLength": 1, "maxLength": 64},
+        "rightId": {"type": "string", "minLength": 1, "maxLength": 64}
+      }
+    },
+    "MatchingAnswerSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "pairs"],
+      "properties": {
+        "kind": {"const": "matching_pairs"},
+        "pairs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/MatchingPair"}
+        }
+      }
+    },
+    "GridAnswerSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "cellIds"],
+      "properties": {
+        "kind": {"const": "grid_cell_ids"},
+        "cellIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1, "maxLength": 64}
+        }
+      }
+    },
+    "RubricAnswerSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "rubric"],
+      "properties": {
+        "kind": {"const": "rubric"},
+        "rubric": {"type": "string", "minLength": 10, "maxLength": 10000}
+      }
+    },
+    "GridCell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "x", "y", "width", "height"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "maxLength": 64},
+        "label": {"type": ["string", "null"], "maxLength": 500},
+        "x": {"type": "number", "minimum": 0, "maximum": 1},
+        "y": {"type": "number", "minimum": 0, "maximum": 1},
+        "width": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "height": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      }
+    },
+    "AnswerSpec": {
+      "oneOf": [
+        {"$ref": "#/$defs/OptionAnswerSpec"},
+        {"$ref": "#/$defs/NumericAnswerSpec"},
+        {"$ref": "#/$defs/TextAnswerSpec"},
+        {"$ref": "#/$defs/MatchingAnswerSpec"},
+        {"$ref": "#/$defs/GridAnswerSpec"},
+        {"$ref": "#/$defs/RubricAnswerSpec"}
+      ]
+    },
+    "QuestionSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin"],
+      "properties": {
+        "origin": {"enum": ["manual", "extraction", "import", "generated"]},
+        "reference": {"type": ["string", "null"], "maxLength": 1000},
+        "externalId": {"type": ["string", "null"], "maxLength": 200},
+        "extractionJobId": {"type": ["string", "null"], "maxLength": 100}
+      }
+    },
+    "QuestionAuthoringContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject",
+        "grade",
+        "topic",
+        "subtopic",
+        "learningObjective",
+        "questionType",
+        "questionText",
+        "answerSpec",
+        "source"
+      ],
+      "properties": {
+        "subject": {"const": "Matematika"},
+        "grade": {"type": "integer", "minimum": 1, "maximum": 12},
+        "topic": {"type": "string", "minLength": 1, "maxLength": 200},
+        "subtopic": {"type": "string", "minLength": 1, "maxLength": 200},
+        "learningObjective": {"type": "string", "minLength": 3, "maxLength": 1000},
+        "questionType": {"$ref": "#/$defs/QuestionType"},
+        "questionText": {"type": "string", "minLength": 10, "maxLength": 10000},
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "items": {"$ref": "#/$defs/Option"}
+        },
+        "matchingLeft": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/Option"}},
+        "matchingRight": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/Option"}},
+        "gridCells": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/GridCell"}},
+        "gridAssetId": {"type": "string", "minLength": 1, "maxLength": 200},
+        "answerSpec": {"$ref": "#/$defs/AnswerSpec"},
+        "explanation": {"type": ["string", "null"], "maxLength": 10000},
+        "source": {"$ref": "#/$defs/QuestionSource"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "questionType": {"const": "multiple_choice"}
+            },
+            "required": ["questionType"]
+          },
+          "then": {
+            "required": ["options"],
+            "properties": {
+              "answerSpec": {
+                "allOf": [
+                  {"$ref": "#/$defs/OptionAnswerSpec"},
+                  {"properties": {"optionIds": {"maxItems": 1}}}
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "multiple_response"}}, "required": ["questionType"]},
+          "then": {
+            "required": ["options"],
+            "properties": {
+              "answerSpec": {
+                "allOf": [
+                  {"$ref": "#/$defs/OptionAnswerSpec"},
+                  {"properties": {"optionIds": {"minItems": 2}}}
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "true_false"}}, "required": ["questionType"]},
+          "then": {
+            "required": ["options"],
+            "properties": {
+              "options": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/Option"}},
+              "answerSpec": {
+                "allOf": [
+                  {"$ref": "#/$defs/OptionAnswerSpec"},
+                  {"properties": {"optionIds": {"maxItems": 1}}}
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "numeric"}}, "required": ["questionType"]},
+          "then": {"properties": {"answerSpec": {"$ref": "#/$defs/NumericAnswerSpec"}}}
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "short_answer"}}, "required": ["questionType"]},
+          "then": {"properties": {"answerSpec": {"$ref": "#/$defs/TextAnswerSpec"}}}
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "essay"}}, "required": ["questionType"]},
+          "then": {"properties": {"answerSpec": {"$ref": "#/$defs/RubricAnswerSpec"}}}
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "matching"}}, "required": ["questionType"]},
+          "then": {
+            "required": ["matchingLeft", "matchingRight"],
+            "properties": {"answerSpec": {"$ref": "#/$defs/MatchingAnswerSpec"}}
+          }
+        },
+        {
+          "if": {"properties": {"questionType": {"const": "interactive_grid"}}, "required": ["questionType"]},
+          "then": {
+            "required": ["gridCells", "gridAssetId"],
+            "properties": {"answerSpec": {"$ref": "#/$defs/GridAnswerSpec"}}
+          }
+        }
+      ]
+    },
+    "AiDecisionSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["answerVerified", "decisionType", "warnings"],
+      "properties": {
+        "answerVerified": {"type": "boolean"},
+        "decisionType": {
+          "enum": ["indobert_prediction", "claude_proposal", "expert_validated", "quarantined"]
+        },
+        "taxonomy": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["mathCognitiveDomain", "knowledgeDimension", "intendedDifficulty"],
+          "properties": {
+            "mathCognitiveDomain": {"$ref": "#/$defs/MathCognitiveDomain"},
+            "knowledgeDimension": {"$ref": "#/$defs/KnowledgeDimension"},
+            "intendedDifficulty": {"$ref": "#/$defs/Difficulty"}
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {"type": "string", "maxLength": 500}
+        }
+      }
+    },
+    "QuestionResource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "questionId",
+        "contentVersion",
+        "status",
+        "authoringContent",
+        "createdAt",
+        "updatedAt"
+      ],
+      "properties": {
+        "questionId": {"type": "string", "minLength": 3, "maxLength": 100},
+        "contentVersion": {"type": "integer", "minimum": 1},
+        "status": {
+          "enum": [
+            "author_draft",
+            "submitted",
+            "processing",
+            "pending_expert_review",
+            "needs_expert_adjudication",
+            "expert_validated",
+            "revision_required",
+            "quarantined",
+            "provisional",
+            "pilot_active",
+            "empirically_screened",
+            "active",
+            "retired"
+          ]
+        },
+        "authoringContent": {"$ref": "#/$defs/QuestionAuthoringContent"},
+        "workflowRunId": {"type": ["string", "null"]},
+        "workflowSummary": {
+          "oneOf": [
+            {"$ref": "#/$defs/AiDecisionSummary"},
+            {"type": "null"}
+          ]
+        },
+        "createdAt": {"type": "string", "format": "date-time"},
+        "updatedAt": {"type": "string", "format": "date-time"}
+      }
+    },
+    "ValidationResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valid", "errors", "warnings"],
+      "properties": {
+        "valid": {"type": "boolean"},
+        "errors": {"type": "array", "items": {"$ref": "#/$defs/ValidationIssue"}},
+        "warnings": {"type": "array", "items": {"$ref": "#/$defs/ValidationIssue"}}
+      }
+    },
+    "ValidationIssue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "code", "message"],
+      "properties": {
+        "path": {"type": "string"},
+        "code": {"type": "string"},
+        "message": {"type": "string"}
+      }
+    },
+    "WorkflowRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["workflowRunId", "questionId", "contentVersion", "status", "stage", "createdAt", "updatedAt"],
+      "properties": {
+        "workflowRunId": {"type": "string"},
+        "questionId": {"type": "string"},
+        "contentVersion": {"type": "integer", "minimum": 1},
+        "status": {"enum": ["queued", "running", "succeeded", "failed"]},
+        "stage": {"type": "string"},
+        "error": {"type": ["object", "null"]},
+        "decisionId": {"type": ["string", "null"]},
+        "createdAt": {"type": "string", "format": "date-time"},
+        "updatedAt": {"type": "string", "format": "date-time"}
+      }
+    },
+    "JobAccepted": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jobId", "jobType", "status", "statusUrl"],
+      "properties": {
+        "jobId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "jobType": {"type": "string", "minLength": 1, "maxLength": 100},
+        "status": {"const": "queued"},
+        "statusUrl": {"type": "string", "minLength": 1, "maxLength": 500}
+      }
+    },
+    "ExtractionCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidateId", "questionText", "options", "pageNumbers", "warnings"],
+      "properties": {
+        "candidateId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "questionText": {"type": "string", "maxLength": 10000},
+        "options": {"type": "array", "items": {"$ref": "#/$defs/Option"}},
+        "latexCandidates": {"type": "array", "items": {"type": "string", "maxLength": 2000}},
+        "pageNumbers": {"type": "array", "items": {"type": "integer", "minimum": 1}},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "warnings": {"type": "array", "items": {"type": "string", "maxLength": 500}}
+      }
+    },
+    "ExtractionJob": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jobId", "status"],
+      "properties": {
+        "jobId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "status": {
+          "enum": ["queued", "running", "completed", "completed_with_warnings", "failed", "quarantined"]
+        },
+        "candidates": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/ExtractionCandidate"}
+        },
+        "warnings": {"type": "array", "items": {"type": "string", "maxLength": 500}}
+      }
+    },
+    "GenerationRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "itemModelId",
+        "itemModelVersion",
+        "generationMode",
+        "variantCount",
+        "targetGrade",
+        "targetIntendedDifficulty",
+        "seed"
+      ],
+      "properties": {
+        "itemModelId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "itemModelVersion": {"type": "integer", "minimum": 1},
+        "generationMode": {
+          "enum": ["numeric_parameterization", "contextual_isomorphic", "representation_isomorphic", "mixed_controlled"]
+        },
+        "variantCount": {"type": "integer", "minimum": 1, "maximum": 1000},
+        "targetGrade": {"type": "integer", "minimum": 1, "maximum": 12},
+        "targetIntendedDifficulty": {"$ref": "#/$defs/Difficulty"},
+        "seed": {"type": "integer", "minimum": 0},
+        "maxRegenerationAttempts": {"type": "integer", "minimum": 1, "maximum": 100, "default": 5}
+      }
+    },
+    "PublicOption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "maxLength": 100},
+        "text": {"type": "string", "minLength": 1, "maxLength": 2000}
+      }
+    },
+    "DeliveredItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["deliveryInstanceId", "sessionId", "item", "sequence", "timing"],
+      "properties": {
+        "deliveryInstanceId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "sessionId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "item": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["publicItemId", "questionType", "questionText", "options", "media"],
+          "properties": {
+            "publicItemId": {"type": "string", "minLength": 1, "maxLength": 100},
+            "questionType": {"$ref": "#/$defs/QuestionType"},
+            "questionText": {"type": "string", "minLength": 1, "maxLength": 10000},
+            "options": {"type": "array", "items": {"$ref": "#/$defs/PublicOption"}},
+            "matchingLeft": {"type": "array", "items": {"$ref": "#/$defs/PublicOption"}},
+            "matchingRight": {"type": "array", "items": {"$ref": "#/$defs/PublicOption"}},
+            "gridCells": {"type": "array", "items": {"$ref": "#/$defs/GridCell"}},
+            "media": {"type": "array", "items": {"type": "object"}}
+          }
+        },
+        "sequence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["current", "total"],
+          "properties": {
+            "current": {"type": "integer", "minimum": 1},
+            "total": {"type": "integer", "minimum": 1}
+          }
+        },
+        "timing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["deliveredAt"],
+          "properties": {
+            "deliveredAt": {"type": "string", "format": "date-time"},
+            "timeLimitMs": {"type": ["integer", "null"], "minimum": 1}
+          }
+        }
+      }
+    },
+    "ResponseCreate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["responseId", "deliveryInstanceId", "responseTimeMs", "answerChanges"],
+      "properties": {
+        "responseId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "deliveryInstanceId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "selectedOptionIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1, "maxLength": 100}
+        },
+        "numericAnswer": {"type": "number"},
+        "textAnswer": {"type": "string", "maxLength": 10000},
+        "matchingPairs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/MatchingPair"}
+        },
+        "selectedGridCellIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1, "maxLength": 100}
+        },
+        "responseTimeMs": {"type": "integer", "minimum": 0, "maximum": 86400000},
+        "answerChanges": {"type": "integer", "minimum": 0, "maximum": 1000},
+        "clientSubmittedAt": {"type": "string", "format": "date-time"}
+      },
+      "oneOf": [
+        {"required": ["selectedOptionIds"]},
+        {"required": ["numericAnswer"]},
+        {"required": ["textAnswer"]},
+        {"required": ["matchingPairs"]},
+        {"required": ["selectedGridCellIds"]}
+      ]
+    },
+    "PsychometricSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotId",
+        "entityType",
+        "entityId",
+        "populationId",
+        "assessmentFamily",
+        "validResponseCount",
+        "metrics",
+        "policyVersion",
+        "createdAt"
+      ],
+      "properties": {
+        "snapshotId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "entityType": {"enum": ["question", "variant", "item_family"]},
+        "entityId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "populationId": {"type": "string", "minLength": 1, "maxLength": 100},
+        "assessmentFamily": {"type": "string", "minLength": 1, "maxLength": 100},
+        "validResponseCount": {"type": "integer", "minimum": 0},
+        "metrics": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "difficultyIndex": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+            "empiricalDifficulty": {
+              "oneOf": [{"$ref": "#/$defs/Difficulty"}, {"type": "null"}]
+            },
+            "discrimination": {"type": ["number", "null"], "minimum": -1, "maximum": 1},
+            "distractorEfficiency": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+            "medianResponseTimeMs": {"type": ["integer", "null"], "minimum": 0}
+          }
+        },
+        "policyVersion": {"type": "string", "minLength": 1, "maxLength": 100},
+        "createdAt": {"type": "string", "format": "date-time"}
+      }
+    },
+    "ErrorEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["error"],
+      "properties": {
+        "error": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["code", "message", "traceId"],
+          "properties": {
+            "code": {"type": "string", "minLength": 1, "maxLength": 100},
+            "message": {"type": "string", "minLength": 1, "maxLength": 1000},
+            "details": {"type": ["object", "array", "null"]},
+            "traceId": {"type": "string", "minLength": 1, "maxLength": 100}
+          }
+        }
+      }
+    }
+  }
+}

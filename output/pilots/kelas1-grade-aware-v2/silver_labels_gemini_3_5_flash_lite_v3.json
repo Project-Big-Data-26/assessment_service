@@ -1,0 +1,301 @@
+{
+  "schemaVersion": "gemini-silver-labels-v2-blind-adjudicated",
+  "source": "output/pilots/kelas1-grade-aware-v2/questions.json",
+  "sourceHash": "fa9e25bb6e10472cef7ce16d304f516a6180962a359b5934eb3ac000fb76cd4c",
+  "sourceGrade": 1,
+  "provider": "gemini",
+  "model": "gemini-3.8-flash",
+  "promptVersion": "gemini-silver-math-3x4x3-v3-blind-evidence",
+  "adjudicationPromptVersion": "gemini-silver-math-3x4x3-v3-adjudication",
+  "rubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "requestedRuns": 3,
+  "createdAt": "2026-10-02T02:44:49.168135+00:00",
+  "updatedAt": "2026-10-02T02:47:35.321685+00:00",
+  "items": {
+    "kelas1-b01-p0039-ayo-berlatih-1a": {
+      "index": 1,
+      "questionId": "kelas1-b01-p0039-ayo-berlatih-1a",
+      "inputHash": "b9468407dca67eb195be54f742e882c58b5e7d4ae948684a648e5ce5b0a29c33",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Urutan bilangan membilang maju satu-satu: 1, 2, berikutnya adalah 3 (pilihan C).",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Lengkapi urutan bilangan berikut: 1, 2, ...."
+              ],
+              "rationale": "Soal menuntut pengenalan urutan bilangan cacah maju yang paling mendasar.",
+              "label": "knowing"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "1, 2, ...."
+              ],
+              "rationale": "Mengetahui urutan fakta dasar bilangan asli/cacah (membilang 1, 2, 3).",
+              "label": "factual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Lengkapi urutan bilangan berikut: 1, 2, ...."
+              ],
+              "rationale": "Hanya membutuhkan satu langkah membilang bilangan berikutnya setelah angka 2, sangat rutin dan berbeban rendah untuk kelas 1.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Membilang maju bilangan 1 sampai 5",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "strong",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Keterampilan membilang 1 sampai 3 adalah materi paling awal di awal kelas 1 SD."
+              }
+            }
+          },
+          "errorCode": null,
+          "responseId": "txq_aovaILCqjuMPze3I6Q0",
+          "responseHash": "6df518d117e7ff1b05892c604c3c93659573217d1a9c5d150f5c65b865c878ea",
+          "latencyMs": 12167,
+          "usage": {
+            "promptTokens": 586,
+            "outputTokens": 454,
+            "thinkingTokens": 0,
+            "totalTokens": 1040
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Urutan bilangan membilang maju satu-satu: 1, 2, berikutnya adalah 3 (pilihan C).",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Lengkapi urutan bilangan berikut: 1, 2, ...."
+              ],
+              "rationale": "Soal hanya meminta siswa mengingat dan melanjutkan urutan bilangan asli dasar (membilang maju).",
+              "label": "knowing"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "1, 2, ...."
+              ],
+              "rationale": "Materi mencakup fakta dasar urutan lambang bilangan cacah/asli sederhana.",
+              "label": "factual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Lengkapi urutan bilangan berikut: 1, 2, ...."
+              ],
+              "rationale": "Merupakan tugas rutin yang sangat mendasar bagi siswa kelas 1 dengan satu langkah langsung membilang maju.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Membilang bilangan cacah 1 sampai 5",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "strong",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Melanjutkan urutan 1, 2 ke 3 adalah kompetensi paling awal di semester ganjil kelas 1 SD."
+              }
+            }
+          },
+          "errorCode": null,
+          "responseId": "6Rq_apiAGZmIjuMPmNe58Ak",
+          "responseHash": "c50b782575dacdd5d6367d48e062ae3628051f3207fca5299c5a4d69e7448b87",
+          "latencyMs": 5405,
+          "usage": {
+            "promptTokens": 586,
+            "outputTokens": 450,
+            "thinkingTokens": 0,
+            "totalTokens": 1036
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Urutan bilangan bertambah 1: 1, 2, 3. Bilangan berikutnya adalah 3 (Pilihan C).",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Lengkapi urutan bilangan berikut: 1, 2, ...."
+              ],
+              "rationale": "Soal meminta mengenali atau melanjutkan urutan membilang maju paling dasar (1, 2, 3), yang merupakan recalling fakta bilangan berurutan.",
+              "label": "knowing"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "1, 2, ...."
+              ],
+              "rationale": "Soal menguji pengetahuan faktual tentang urutan simbol bilangan cacah paling dasar untuk kelas 1.",
+              "label": "factual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "1, 2, ...."
+              ],
+              "rationale": "Sangat mudah bagi siswa kelas 1 karena hanya membilang maju dari 1 dan 2 menuju 3.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Mengenal urutan bilangan dasar 1 sampai 5",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Melanjutkan urutan 1, 2 ke 3 adalah kompetensi dasar awal semester di kelas 1 dengan beban kognitif minimal."
+              }
+            }
+          },
+          "errorCode": null,
+          "responseId": "rhq_avqnJMGlg8UP4uT-qAQ",
+          "responseHash": "def0b45765ec3d668981f27e8301053103017bb8a103c20cd5d9ece6d87a1d2d",
+          "latencyMs": 9365,
+          "usage": {
+            "promptTokens": 586,
+            "outputTokens": 465,
+            "thinkingTokens": 0,
+            "totalTokens": 1051
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Urutan bilangan membilang maju satu-satu: 1, 2, berikutnya adalah 3 (pilihan C).",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "knowing",
+            "voteCounts": {
+              "knowing": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "factual",
+            "voteCounts": {
+              "factual": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Easy": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    },
+    "kelas1-b01-p0048-evaluasi-2b": {
+      "index": 2,
+      "questionId": "kelas1-b01-p0048-evaluasi-2b",
+      "inputHash": "bd1b24816bad759f99bd06c7a438e687c37673267f7c877560b0aaaefbdad232",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ClientError:429",
+          "responseId": null,
+          "responseHash": null,
+          "latencyMs": 2495,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ClientError:429",
+          "responseId": null,
+          "responseHash": null,
+          "latencyMs": 2698,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 0,
+        "requiredMajority": 2,
+        "contentStatus": null,
+        "contentConcerns": [],
+        "visualTranscript": null,
+        "verifiedMinimalSolution": null,
+        "heads": {},
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": false
+      },
+      "adjudication": null
+    }
+  },
+  "summary": {
+    "itemsProcessed": 2,
+    "itemsEligibleForTraining": 1,
+    "successfulRuns": 3,
+    "failedRuns": 2,
+    "adjudicatedItems": 0,
+    "pendingAdjudication": 0,
+    "difficultyDistribution": {
+      "Easy": 1,
+      "Medium": 0,
+      "Hard": 0
+    },
+    "dominantDifficultyShare": 1.0,
+    "boundaryAnalysisRequired": true,
+    "promptTokens": 1758,
+    "outputTokens": 1369,
+    "thinkingTokens": 0,
+    "totalTokens": 3127
+  }
+}

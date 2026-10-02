@@ -7,6 +7,8 @@ import pytest
     "module_name",
     [
         "datasets",
+        "dotenv",
+        "google.genai",
         "matplotlib",
         "numpy",
         "pandas",

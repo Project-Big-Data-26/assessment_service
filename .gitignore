@@ -28,6 +28,7 @@ data/raw/*
 !data/raw/latex/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
+data/local/
 data/sample/*
 !data/sample/questions.json
 !data/sample/math_questions_seed.json
@@ -43,6 +44,12 @@ models/*
 *.safetensors
 outputs/
 runs/
+reports/
+output/psychometrics/
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+FROZEN_TEST_OPENED.json
 
 # Jupyter Notebook
 .ipynb_checkpoints/
@@ -64,3 +71,6 @@ data/sma/
 data/bab_prasyarat
 data/processed
 data/tabel_database
+
+/tmp/
+/.tmp-pytest-*/

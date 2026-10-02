@@ -1,0 +1,46 @@
+rubric_version: math-rubric-3x4x3-v2-grade-aware
+scope: Matematika SD kelas 1-6
+principle: Nilai tuntutan minimum yang benar-benar diperlukan relatif terhadap kelas sasaran, bukan panjang stem atau kata kerja.
+
+mathCognitiveDomain:
+  knowing: Mengingat, mengenali, membaca, atau menjalankan prosedur yang sangat langsung.
+  applying: Memilih dan memakai konsep atau prosedur pada konteks rutin.
+  reasoning: Menentukan strategi nonrutin, mengintegrasikan hubungan, menyimpulkan, menggeneralisasi, atau membenarkan.
+
+knowledgeDimension:
+  factual: Fakta, istilah, simbol, dan elemen dasar.
+  conceptual: Hubungan, kategori, prinsip, dan struktur konsep.
+  procedural: Algoritme, teknik, metode, dan kriteria penggunaannya.
+  metacognitive: Pemilihan atau pemantauan strategi berpikir yang diminta secara eksplisit.
+
+intendedDifficulty:
+  evidence_profile:
+    - expectedPrerequisite
+    - dependentSteps
+    - routineStatus
+    - strategySelection
+    - representationTransfer
+    - relevantInformationUnits
+    - interactingConstraints
+    - calculationLoad
+    - scaffoldLevel
+    - distractorQuality
+    - gradeRelativeRationale
+  Easy: Prosedur familiar dan langsung, satu keputusan utama, representasi familiar, dan beban rendah.
+  Medium: Beberapa langkah rutin yang saling terkait, pemilihan prosedur, atau satu perpindahan representasi.
+  Hard: Strategi nonrutin, banyak constraint saling terkait, justifikasi, atau integrasi representasi kompleks.
+
+decision_rules:
+  - Evidence profile wajib diisi, tetapi label bukan hasil penjumlahan skor otomatis.
+  - Nilai relatif terhadap kesempatan belajar dan prasyarat wajar kelas sasaran.
+  - KKO, tingkat kesulitan agen, panjang soal, dan label model bukan bukti penentu.
+  - Reviewer blind tidak boleh melihat prediksi AI, vote lain, konsensus, atau distribusi target.
+  - Abstain bila kunci, visual, notasi, solusi minimum, atau konteks kelas tidak cukup.
+  - Intended difficulty tidak boleh ditimpa empirical difficulty dari respons siswa.
+
+content_verification:
+  answer_key_status: [verified, conflict, unverifiable]
+  rules:
+    - Status verified hanya sah bila verifiedMinimalSolution membuktikan verifiedAnswerKey.
+    - Konflik atau kunci yang tidak dapat diverifikasi wajib masuk adjudikasi dan tidak boleh menjadi training row.
+    - Content concern dan insufficient evidence tidak boleh lolos qualification dataset.

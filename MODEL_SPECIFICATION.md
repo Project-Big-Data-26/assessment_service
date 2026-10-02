@@ -1,77 +1,50 @@
-# Spesifikasi Model Question Intelligence
+# Spesifikasi IndoBERT 3×4×3
 
-## Tujuan
+## Batas sistem
 
-Model memberikan tiga prediksi yang terpisah dan bersifat advisory:
+Model v2 adalah classifier advisory untuk soal matematika SD kelas 1–6. Tiga targetnya:
 
-1. Proses kognitif Bloom: `C1`–`C6`.
-2. Dimensi pengetahuan: `factual`, `conceptual`, `procedural`, `metacognitive`.
-3. Intended difficulty: `Easy`, `Medium`, `Hard`.
+1. `mathCognitiveDomain`: `knowing | applying | reasoning`;
+2. `knowledgeDimension`: `factual | conceptual | procedural | metacognitive`;
+3. `intendedDifficulty`: `Easy | Medium | Hard`.
 
-Difficulty empiris tidak diprediksi sebagai kebenaran final. Setelah soal digunakan, label final mempertimbangkan difficulty index, discrimination, distraktor, waktu, populasi, dan keputusan reviewer.
+KKO adalah fitur eksperimen, bukan target dan bukan penentu gold. `/v1/classify` C1–C6 tetap legacy. `/v2/classify` tidak pernah fallback ke rules jika artefak tidak ada atau rusak.
 
-## Arsitektur
+## Arsitektur v2
 
 ```text
-question_text + options + learning objective + topic + metadata
-                              │
-                     IndoBERT tokenizer
-                              │
-              indobenchmark/indobert-base-p1
-                              │
-                    pooled [CLS] embedding
-                  ┌───────────┼───────────┐
-                  │           │           │
-             Bloom head   Knowledge   Difficulty
-               6 kelas      4 kelas      3 kelas
+serializer math-question-text-v1
+            │
+IndoBERT base p1 @ revision 789e955…
+            │
+ LoRA attention query/value (r=8 atau 16)
+            │
+ pooled token [CLS]
+   ┌────────┼───────────┐
+   │        │           │
+ 3 kelas   4 kelas     3 kelas
+ domain   knowledge   difficulty
 ```
 
-Loss pelatihan awal adalah jumlah tiga cross-entropy loss. Pada eksperimen lanjutan, bobot task harus dipilih dari validation set, bukan diasumsikan sama.
+Base encoder dibekukan. Hanya adapter LoRA dan tiga classification head yang mendapat gradient. Training memakai float32 CPU, dynamic padding, physical batch 2, gradient accumulation 8, weighted cross-entropy dari distribusi train, maksimum 12 epoch, dan early stopping dari rata-rata macro-F1 validation.
 
-## Input
+## Gold dan split
 
-- Teks pertanyaan dan pilihan.
-- Tujuan pembelajaran.
-- Jenjang/kelas, topik, subtopik.
-- Jenis soal dan jumlah langkah penalaran.
-- Teks hasil OCR serta kode LaTeX yang sudah dinormalisasi.
+Gold hanya berasal dari tiga ahli matematika blind. Keputusan 3–0 dan 2–1 dapat menjadi gold; 1–1–1, abstain, konflik kunci, atau bukti tidak cukup masuk pembahasan/adjudikasi ahli senior keempat. Prediksi model, KKO, tingkat kesulitan agen, dan jawaban agen tidak menjadi gold.
 
-Gambar asli tidak langsung masuk ke IndoBERT. Adapter OCR/Math OCR mengubah sumber multimodal menjadi representasi teks sambil mempertahankan sumber, confidence, dan status review.
-
-## Dataset
-
-- Split dilakukan sebelum augmentasi dan menghindari soal duplikat/varian dekat lintas split.
-- Gold label berasal dari dua annotator independen serta adjudikasi konflik.
-- Bloom, dimensi pengetahuan, dan difficulty mempunyai metrik terpisah.
-- Seeder 24 soal hanya memeriksa coverage pipeline; bukan dataset validasi performa.
-
-## Metrik penerimaan
-
-- Macro F1 dan F1 per kelas untuk ketiga head.
-- Confusion matrix.
-- Expected calibration error atau reliability curve pada tahap berikutnya.
-- Low-confidence rate.
-- Agreement model–gold dan agreement antarannotator dilaporkan terpisah.
-
-Kriteria rilis tidak boleh ditetapkan sebelum tersedia validation set representatif. Default `confidence_threshold=0.70` hanya routing awal ke human review.
+Snapshot SD memakai split deterministik 70/15/15 berbasis kelompok. Source exercise, stimulus bersama, exact duplicate, dan near-duplicate family tidak boleh bocor antar-split. SMP/SMA disimpan sebagai expansion/shift set.
 
 ## Artefak
 
 ```text
-models/indobert-multitask-v1/
-├── model.pt
-├── manifest.json
-└── tokenizer/
+models/indobert-3x4x3-v1/
+├── adapter/                 # LoRA safetensors
+├── heads.safetensors        # tiga classification head
+├── base_model/              # snapshot revision untuk offline load
+├── tokenizer/
+└── manifest.json            # checksum, label, calibration, threshold, provenance
 ```
 
-Manifest mencatat base model, versi, waktu, hash dataset, jumlah baris, label map, status demo, dan metrik evaluasi.
+Loader memverifikasi seluruh checksum sebelum model dianggap ready. Temperature scaling dan selective threshold berasal hanya dari validation. `approvedForProvisional` tetap `false` sampai gate teknis dan persetujuan penelitian selesai.
 
-## Perintah
-
-```powershell
-.\.venv\Scripts\python.exe -m app.training.train `
-  --dataset data\raw\json\questions-approved.json `
-  --output-dir models\indobert-multitask-v1
-```
-
-Untuk smoke test dengan dataset kecil, flag `--allow-small-demo` tersedia, tetapi artefaknya otomatis ditandai `demo_only` dan tidak boleh dipakai untuk klaim akademik atau produksi.
+Konfigurasi kanonik berada di [model_v2_config.yaml](configs/model_v2_config.yaml), [rubric_math_3x4x3_v1.yaml](configs/rubric_math_3x4x3_v1.yaml), dan [model_v2_risk_policy.json](configs/model_v2_risk_policy.json). Runbook lengkap ada di [dokumen implementasi](API_DOCUMENTATION/22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md).

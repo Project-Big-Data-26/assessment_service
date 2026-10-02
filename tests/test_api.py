@@ -13,6 +13,52 @@ def test_model_info_exposes_three_tasks_and_honest_runtime_status():
     assert response.status_code == 200
     assert response.json()["tasks"] == ["bloom_6", "knowledge_4", "difficulty_3"]
     assert response.json()["classifier"] in {"RuleBasedBaselineClassifier", "IndoBERTClassifier"}
+    if response.json()["classifier"] == "RuleBasedBaselineClassifier":
+        assert response.json()["artifact_ready"] is False
+        assert response.json()["provisional_eligible"] is False
+
+
+def test_v2_model_info_exposes_versioned_architecture_and_routing_when_ready():
+    response = client.get("/v2/model-info")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["tasks"] == [
+        "mathCognitiveDomain_3",
+        "knowledgeDimension_4",
+        "intendedDifficulty_3",
+    ]
+    if payload["artifactReady"]:
+        assert payload["architectureVersion"] in {
+            "parallel-v1",
+            "conditioned-difficulty-v1",
+            "grade-aware-ordinal-v2",
+        }
+        assert payload["routingPolicyVersion"] in {
+            "confidence-only-v1",
+            "confidence-entropy-v1",
+        }
+
+
+def test_unapproved_v2_artifact_is_not_publicly_servable():
+    response = client.post(
+        "/v2/classify",
+        json={
+            "questionId": "q-guard",
+            "contentVersion": 1,
+            "contentHash": "a" * 64,
+            "grade": 1,
+            "questionType": "multiple_choice",
+            "stem": "Berapakah 1 + 1?",
+            "options": [{"label": "A", "text": "2"}],
+            "verifiedMinimalSolution": "1 + 1 = 2",
+            "provenanceStatus": {
+                "contentQualified": True,
+                "answerKeyVerified": True,
+                "solutionVerified": True,
+            },
+        },
+    )
+    assert response.status_code == 503
 
 
 def test_extraction_info_reports_pdf_runtime_and_supported_formats():

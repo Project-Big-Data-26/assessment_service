@@ -68,7 +68,7 @@ def train(args):
     output = Path(args.output_dir); output.mkdir(parents=True, exist_ok=True); tokenizer.save_pretrained(output / "tokenizer")
     torch.save(model.cpu().state_dict(), output / "model.pt")
     digest = hashlib.sha256(Path(args.dataset).read_bytes()).hexdigest()
-    manifest = {"model_version": args.model_version, "base_model": args.base_model, "created_at": datetime.now(timezone.utc).isoformat(), "dataset_sha256": digest, "dataset_rows": len(rows), "demo_only": len(rows) < 60, "labels": {"bloom": BLOOM_LABELS, "knowledge": KNOWLEDGE_LABELS, "difficulty": DIFFICULTY_LABELS}, "metrics": metrics}
+    manifest = {"model_version": args.model_version, "base_model": args.base_model, "created_at": datetime.now(timezone.utc).isoformat(), "dataset_sha256": digest, "dataset_rows": len(rows), "demo_only": len(rows) < 60, "approved_for_provisional": False, "labels": {"bloom": BLOOM_LABELS, "knowledge": KNOWLEDGE_LABELS, "difficulty": DIFFICULTY_LABELS}, "metrics": metrics}
     (output / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     return manifest
 

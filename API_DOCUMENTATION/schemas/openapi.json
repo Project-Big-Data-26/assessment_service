@@ -1,0 +1,4607 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Nalar Question Intelligence",
+    "version": "2.1.0"
+  },
+  "paths": {
+    "/v2/model-info": {
+      "get": {
+        "tags": [
+          "indobert-3x4x3"
+        ],
+        "summary": "Model Info",
+        "operationId": "model_info_v2_model_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/llm-info": {
+      "get": {
+        "tags": [
+          "indobert-3x4x3"
+        ],
+        "summary": "Llm Info",
+        "description": "Report local Gemini readiness without contacting Google or spending tokens.",
+        "operationId": "llm_info_v2_llm_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/health/ready": {
+      "get": {
+        "tags": [
+          "indobert-3x4x3"
+        ],
+        "summary": "Ready",
+        "operationId": "ready_v2_health_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/classify": {
+      "post": {
+        "tags": [
+          "indobert-3x4x3"
+        ],
+        "summary": "Classify",
+        "operationId": "classify_v2_classify_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/V2ClassificationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/V2ClassificationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/auth/login": {
+      "post": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Login",
+        "operationId": "login_internal_v2_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/auth/logout": {
+      "post": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Logout",
+        "operationId": "logout_internal_v2_auth_logout_post",
+        "parameters": [
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/assignments/next": {
+      "get": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Next Assignment",
+        "operationId": "next_assignment_internal_v2_assignments_next_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/assignments/{assignment_id}": {
+      "get": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Get Assignment",
+        "operationId": "get_assignment_internal_v2_assignments__assignment_id__get",
+        "parameters": [
+          {
+            "name": "assignment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Assignment Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/assignments/{assignment_id}/submit": {
+      "post": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Submit Assignment",
+        "operationId": "submit_assignment_internal_v2_assignments__assignment_id__submit_post",
+        "parameters": [
+          {
+            "name": "assignment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Assignment Id"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpertAnnotationInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/assignments/{assignment_id}/assets/{asset_key}": {
+      "get": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Assignment Asset",
+        "operationId": "assignment_asset_internal_v2_assignments__assignment_id__assets__asset_key__get",
+        "parameters": [
+          {
+            "name": "assignment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Assignment Id"
+            }
+          },
+          {
+            "name": "asset_key",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Asset Key"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/adjudications/{adjudication_id}/discussion": {
+      "post": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Record Discussion",
+        "operationId": "record_discussion_internal_v2_adjudications__adjudication_id__discussion_post",
+        "parameters": [
+          {
+            "name": "adjudication_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Adjudication Id"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscussionOutcomeInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/adjudications": {
+      "get": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "List Adjudications",
+        "operationId": "list_adjudications_internal_v2_adjudications_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/adjudications/{adjudication_id}/decision": {
+      "post": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Decide Adjudication",
+        "operationId": "decide_adjudication_internal_v2_adjudications__adjudication_id__decision_post",
+        "parameters": [
+          {
+            "name": "adjudication_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Adjudication Id"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdjudicationDecisionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/ui": {
+      "get": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Annotation Ui",
+        "description": "No-build reviewer UI; owned-assignment APIs remain the sole data source.",
+        "operationId": "annotation_ui_internal_v2_ui_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/internal/v2/ui/login": {
+      "get": {
+        "tags": [
+          "blind-annotation"
+        ],
+        "summary": "Annotation Login Ui",
+        "operationId": "annotation_login_ui_internal_v2_ui_login_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/health": {
+      "get": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Health",
+        "operationId": "health_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/capabilities": {
+      "get": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Capabilities",
+        "operationId": "capabilities_api_v1_capabilities_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/assessments": {
+      "post": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Create Assessment",
+        "operationId": "create_assessment_api_v1_internal_assessments_post",
+        "parameters": [
+          {
+            "name": "x-internal-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Internal-Api-Key"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssessmentCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssessmentReceipt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/assessments/{assessment_id}/participants": {
+      "post": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Create Participant",
+        "operationId": "create_participant_api_v1_internal_assessments__assessment_id__participants_post",
+        "parameters": [
+          {
+            "name": "assessment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Assessment Id"
+            }
+          },
+          {
+            "name": "x-internal-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Internal-Api-Key"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParticipantCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParticipantReceipt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/assessments/{assessment_id}/sessions": {
+      "post": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Start",
+        "operationId": "start_api_v1_assessments__assessment_id__sessions_post",
+        "parameters": [
+          {
+            "name": "assessment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Assessment Id"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          },
+          {
+            "name": "idempotency-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128,
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionReceipt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sessions/{session_id}/items/next": {
+      "get": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Next Item",
+        "operationId": "next_item_api_v1_sessions__session_id__items_next_get",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/DeliveredItem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/DeliveryFinished"
+                    }
+                  ],
+                  "title": "Response Next Item Api V1 Sessions  Session Id  Items Next Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/responses": {
+      "post": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Response",
+        "operationId": "response_api_v1_responses_post",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          },
+          {
+            "name": "idempotency-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128,
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResponseCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseReceipt"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sessions/{session_id}/complete": {
+      "post": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Complete",
+        "operationId": "complete_api_v1_sessions__session_id__complete_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          },
+          {
+            "name": "idempotency-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128,
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionCompleted"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/psychometrics/item-analysis": {
+      "post": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Item Analysis",
+        "operationId": "item_analysis_api_v1_internal_psychometrics_item_analysis_post",
+        "parameters": [
+          {
+            "name": "x-internal-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Internal-Api-Key"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatrixAnalysisInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpiricalAnalysisResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/psychometrics/screen": {
+      "post": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Screen",
+        "operationId": "screen_api_v1_internal_psychometrics_screen_post",
+        "parameters": [
+          {
+            "name": "x-internal-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Internal-Api-Key"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScreeningInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpiricalAnalysisResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/psychometrics/snapshots/{snapshot_id}": {
+      "get": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Snapshot",
+        "operationId": "snapshot_api_v1_internal_psychometrics_snapshots__snapshot_id__get",
+        "parameters": [
+          {
+            "name": "snapshot_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Snapshot Id"
+            }
+          },
+          {
+            "name": "x-internal-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Internal-Api-Key"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpiricalAnalysisResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/psychometrics/items/{question_id}/snapshots": {
+      "get": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Item Snapshots",
+        "operationId": "item_snapshots_api_v1_psychometrics_items__question_id__snapshots_get",
+        "parameters": [
+          {
+            "name": "question_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Question Id"
+            }
+          },
+          {
+            "name": "x-internal-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Internal-Api-Key"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/internal/psychometrics/snapshots/{snapshot_id}/decisions": {
+      "post": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Decide",
+        "operationId": "decide_api_v1_internal_psychometrics_snapshots__snapshot_id__decisions_post",
+        "parameters": [
+          {
+            "name": "snapshot_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Snapshot Id"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpiricalDecisionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Decisions",
+        "operationId": "decisions_api_v1_internal_psychometrics_snapshots__snapshot_id__decisions_get",
+        "parameters": [
+          {
+            "name": "snapshot_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Snapshot Id"
+            }
+          },
+          {
+            "name": "x-internal-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Internal-Api-Key"
+            }
+          },
+          {
+            "name": "x-csrf-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Csrf-Token"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/psychometrics-info": {
+      "get": {
+        "tags": [
+          "empirical-assessment"
+        ],
+        "summary": "Info",
+        "operationId": "info_v2_psychometrics_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/model-info": {
+      "get": {
+        "summary": "Model Info",
+        "operationId": "model_info_v1_model_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/extraction-info": {
+      "get": {
+        "summary": "Extraction Info",
+        "operationId": "extraction_info_v1_extraction_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/verify-answer": {
+      "post": {
+        "summary": "Verify Answer",
+        "operationId": "verify_answer_v1_verify_answer_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnswerVerificationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/classify": {
+      "post": {
+        "summary": "Classify",
+        "operationId": "classify_v1_classify_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClassificationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClassificationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/extract": {
+      "post": {
+        "summary": "Extract",
+        "operationId": "extract_v1_extract_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_extract_v1_extract_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractionResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdjudicationDecisionInput": {
+        "properties": {
+          "idempotencyKey": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 8,
+            "title": "Idempotencykey"
+          },
+          "mathCognitiveDomain": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CognitiveDomain"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "knowledgeDimension": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/KnowledgeDimension"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "intendedDifficulty": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IntendedDifficulty"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "contentEligible": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contenteligible"
+          },
+          "verifiedAnswerKey": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verifiedanswerkey"
+          },
+          "verifiedMinimalSolution": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 8000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verifiedminimalsolution"
+          },
+          "rationale": {
+            "type": "string",
+            "maxLength": 8000,
+            "minLength": 3,
+            "title": "Rationale"
+          },
+          "insufficientEvidence": {
+            "type": "boolean",
+            "title": "Insufficientevidence",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "idempotencyKey",
+          "rationale"
+        ],
+        "title": "AdjudicationDecisionInput"
+      },
+      "AnalysisPolicy": {
+        "properties": {
+          "policyVersion": {
+            "type": "string",
+            "title": "Policyversion",
+            "default": "empirical-dichotomous-v1"
+          },
+          "minPersons": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Minpersons"
+          },
+          "minItems": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Minitems"
+          },
+          "minResponsesPerItem": {
+            "type": "integer",
+            "minimum": 8.0,
+            "title": "Minresponsesperitem",
+            "default": 50
+          },
+          "minOutcomeCount": {
+            "type": "integer",
+            "minimum": 2.0,
+            "title": "Minoutcomecount",
+            "default": 5
+          },
+          "minCoverage": {
+            "type": "number",
+            "maximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Mincoverage",
+            "default": 0.7
+          },
+          "maxPersonMissingRate": {
+            "type": "number",
+            "exclusiveMaximum": 1.0,
+            "minimum": 0.0,
+            "title": "Maxpersonmissingrate",
+            "default": 0.3
+          },
+          "easyP": {
+            "type": "number",
+            "exclusiveMaximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Easyp",
+            "default": 0.7
+          },
+          "hardP": {
+            "type": "number",
+            "exclusiveMaximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Hardp",
+            "default": 0.3
+          },
+          "easyB": {
+            "type": "number",
+            "title": "Easyb",
+            "default": -1.0
+          },
+          "hardB": {
+            "type": "number",
+            "title": "Hardb",
+            "default": 1.0
+          },
+          "maxCiWidth": {
+            "type": "number",
+            "maximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Maxciwidth",
+            "default": 0.3
+          },
+          "distractorMinRate": {
+            "type": "number",
+            "exclusiveMaximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Distractorminrate",
+            "default": 0.05
+          },
+          "quadraturePoints": {
+            "type": "integer",
+            "maximum": 81.0,
+            "minimum": 21.0,
+            "title": "Quadraturepoints",
+            "default": 41
+          },
+          "maxIterations": {
+            "type": "integer",
+            "maximum": 1000.0,
+            "minimum": 1.0,
+            "title": "Maxiterations",
+            "default": 300
+          },
+          "tolerance": {
+            "type": "number",
+            "maximum": 0.01,
+            "exclusiveMinimum": 0.0,
+            "title": "Tolerance",
+            "default": 1e-06
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "AnalysisPolicy"
+      },
+      "AnswerVerificationRequest": {
+        "properties": {
+          "questionText": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Questiontext"
+          },
+          "options": {
+            "items": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Options"
+          },
+          "answerSpec": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Answerspec"
+          }
+        },
+        "type": "object",
+        "required": [
+          "questionText",
+          "answerSpec"
+        ],
+        "title": "AnswerVerificationRequest"
+      },
+      "AssessmentCreate": {
+        "properties": {
+          "assessmentId": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 3,
+            "title": "Assessmentid"
+          },
+          "snapshotId": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Snapshotid"
+          },
+          "questionVersionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 200,
+            "minItems": 1,
+            "title": "Questionversionids"
+          },
+          "populationId": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Populationid"
+          },
+          "assessmentFamily": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Assessmentfamily"
+          },
+          "grade": {
+            "type": "integer",
+            "maximum": 6.0,
+            "minimum": 1.0,
+            "title": "Grade"
+          },
+          "sessionTtlMinutes": {
+            "type": "integer",
+            "maximum": 1440.0,
+            "minimum": 5.0,
+            "title": "Sessionttlminutes",
+            "default": 120
+          },
+          "rapidGuessMs": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 60000.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rapidguessms"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "assessmentId",
+          "snapshotId",
+          "questionVersionIds",
+          "populationId",
+          "assessmentFamily",
+          "grade"
+        ],
+        "title": "AssessmentCreate"
+      },
+      "AssessmentReceipt": {
+        "properties": {
+          "assessmentId": {
+            "type": "string",
+            "title": "Assessmentid"
+          },
+          "assessmentHash": {
+            "type": "string",
+            "title": "Assessmenthash"
+          },
+          "itemCount": {
+            "type": "integer",
+            "title": "Itemcount"
+          },
+          "status": {
+            "type": "string",
+            "const": "ready",
+            "title": "Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "assessmentId",
+          "assessmentHash",
+          "itemCount",
+          "status"
+        ],
+        "title": "AssessmentReceipt"
+      },
+      "AssumptionReview": {
+        "properties": {
+          "reviewedBy": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 3,
+            "title": "Reviewedby"
+          },
+          "evidence": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Evidence"
+          },
+          "unidimensional": {
+            "type": "boolean",
+            "title": "Unidimensional"
+          },
+          "localIndependence": {
+            "type": "boolean",
+            "title": "Localindependence"
+          },
+          "representativeSample": {
+            "type": "boolean",
+            "title": "Representativesample"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "reviewedBy",
+          "evidence",
+          "unidimensional",
+          "localIndependence",
+          "representativeSample"
+        ],
+        "title": "AssumptionReview"
+      },
+      "Body_extract_v1_extract_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_extract_v1_extract_post"
+      },
+      "ClassificationRequest": {
+        "properties": {
+          "question_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Question Id"
+          },
+          "question_text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 10,
+            "title": "Question Text"
+          },
+          "question_type": {
+            "type": "string",
+            "title": "Question Type",
+            "default": "multiple_choice"
+          },
+          "subject": {
+            "type": "string",
+            "title": "Subject",
+            "default": "Matematika"
+          },
+          "grade": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 12.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Grade"
+          },
+          "topic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Topic"
+          },
+          "subtopic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subtopic"
+          },
+          "options": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "title": "Options"
+          },
+          "learning_objective": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Learning Objective"
+          },
+          "reasoning_steps": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 10.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reasoning Steps"
+          }
+        },
+        "type": "object",
+        "required": [
+          "question_id",
+          "question_text"
+        ],
+        "title": "ClassificationRequest"
+      },
+      "ClassificationResponse": {
+        "properties": {
+          "question_id": {
+            "type": "string",
+            "title": "Question Id"
+          },
+          "bloom": {
+            "$ref": "#/components/schemas/HeadPrediction"
+          },
+          "knowledge_dimension": {
+            "$ref": "#/components/schemas/HeadPrediction"
+          },
+          "difficulty": {
+            "$ref": "#/components/schemas/HeadPrediction"
+          },
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Version"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "prediction_source": {
+            "type": "string",
+            "title": "Prediction Source"
+          },
+          "rationale": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Rationale"
+          },
+          "review_required": {
+            "type": "boolean",
+            "title": "Review Required"
+          }
+        },
+        "type": "object",
+        "required": [
+          "question_id",
+          "bloom",
+          "knowledge_dimension",
+          "difficulty",
+          "model_version",
+          "status",
+          "prediction_source",
+          "rationale",
+          "review_required"
+        ],
+        "title": "ClassificationResponse"
+      },
+      "CognitiveDomain": {
+        "type": "string",
+        "enum": [
+          "knowing",
+          "applying",
+          "reasoning"
+        ],
+        "title": "CognitiveDomain"
+      },
+      "CttItemMetrics": {
+        "properties": {
+          "validResponseCount": {
+            "type": "integer",
+            "title": "Validresponsecount"
+          },
+          "correctCount": {
+            "type": "integer",
+            "title": "Correctcount"
+          },
+          "difficultyIndex": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficultyindex"
+          },
+          "difficultyCi95": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "number"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficultyci95"
+          },
+          "empiricalDifficulty": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IntendedDifficulty"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "discrimination": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Discrimination"
+          },
+          "correctedPointBiserial": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Correctedpointbiserial"
+          },
+          "totalScoreJoin": {
+            "type": "string",
+            "const": "complete_cases_only",
+            "title": "Totalscorejoin"
+          },
+          "totalScoreSample": {
+            "type": "integer",
+            "title": "Totalscoresample"
+          },
+          "missingRate": {
+            "type": "number",
+            "title": "Missingrate"
+          },
+          "optionSelectionCounts": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "integer"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Optionselectioncounts"
+          },
+          "distractorEfficiency": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Distractorefficiency"
+          },
+          "nonFunctioningDistractors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Nonfunctioningdistractors"
+          },
+          "medianResponseTimeMs": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Medianresponsetimems"
+          },
+          "responseTimeIqrMs": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Responsetimeiqrms"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "validResponseCount",
+          "correctCount",
+          "difficultyIndex",
+          "difficultyCi95",
+          "empiricalDifficulty",
+          "discrimination",
+          "correctedPointBiserial",
+          "totalScoreJoin",
+          "totalScoreSample",
+          "missingRate",
+          "optionSelectionCounts",
+          "distractorEfficiency",
+          "nonFunctioningDistractors",
+          "medianResponseTimeMs",
+          "responseTimeIqrMs"
+        ],
+        "title": "CttItemMetrics"
+      },
+      "DeliveredItem": {
+        "properties": {
+          "deliveryInstanceId": {
+            "type": "string",
+            "title": "Deliveryinstanceid"
+          },
+          "sessionId": {
+            "type": "string",
+            "title": "Sessionid"
+          },
+          "item": {
+            "$ref": "#/components/schemas/PublicItem"
+          },
+          "sequence": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Sequence"
+          },
+          "timing": {
+            "additionalProperties": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "type": "object",
+            "title": "Timing"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "deliveryInstanceId",
+          "sessionId",
+          "item",
+          "sequence",
+          "timing"
+        ],
+        "title": "DeliveredItem"
+      },
+      "DeliveryFinished": {
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "title": "Sessionid"
+          },
+          "finished": {
+            "type": "boolean",
+            "const": true,
+            "title": "Finished"
+          },
+          "item": {
+            "type": "null",
+            "title": "Item"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "sessionId",
+          "finished",
+          "item"
+        ],
+        "title": "DeliveryFinished"
+      },
+      "DiscussionOutcomeInput": {
+        "properties": {
+          "idempotencyKey": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 8,
+            "title": "Idempotencykey"
+          },
+          "mathCognitiveDomain": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CognitiveDomain"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "knowledgeDimension": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/KnowledgeDimension"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "intendedDifficulty": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IntendedDifficulty"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "contentEligible": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contenteligible"
+          },
+          "verifiedAnswerKey": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verifiedanswerkey"
+          },
+          "verifiedMinimalSolution": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 8000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verifiedminimalsolution"
+          },
+          "rationale": {
+            "type": "string",
+            "maxLength": 8000,
+            "minLength": 3,
+            "title": "Rationale"
+          },
+          "insufficientEvidence": {
+            "type": "boolean",
+            "title": "Insufficientevidence",
+            "default": false
+          },
+          "participantExpertIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 3,
+            "title": "Participantexpertids"
+          },
+          "unresolvedAfterDiscussion": {
+            "type": "boolean",
+            "title": "Unresolvedafterdiscussion"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "idempotencyKey",
+          "rationale",
+          "participantExpertIds",
+          "unresolvedAfterDiscussion"
+        ],
+        "title": "DiscussionOutcomeInput"
+      },
+      "DocumentMetadata": {
+        "properties": {
+          "page_count": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page Count"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "author": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Author"
+          },
+          "is_encrypted": {
+            "type": "boolean",
+            "title": "Is Encrypted",
+            "default": false
+          }
+        },
+        "type": "object",
+        "title": "DocumentMetadata"
+      },
+      "EmpiricalAnalysisResult": {
+        "properties": {
+          "schemaVersion": {
+            "type": "string",
+            "const": "empirical-analysis-v1",
+            "title": "Schemaversion"
+          },
+          "policyVersion": {
+            "type": "string",
+            "title": "Policyversion"
+          },
+          "policyHash": {
+            "type": "string",
+            "title": "Policyhash"
+          },
+          "policy": {
+            "$ref": "#/components/schemas/AnalysisPolicy"
+          },
+          "populationId": {
+            "type": "string",
+            "title": "Populationid"
+          },
+          "assessmentFamily": {
+            "type": "string",
+            "title": "Assessmentfamily"
+          },
+          "grade": {
+            "type": "integer",
+            "title": "Grade"
+          },
+          "dataOrigin": {
+            "type": "string",
+            "enum": [
+              "server_scored",
+              "external_scored",
+              "synthetic"
+            ],
+            "title": "Dataorigin"
+          },
+          "researchOnly": {
+            "type": "boolean",
+            "const": true,
+            "title": "Researchonly"
+          },
+          "reviewRequired": {
+            "type": "boolean",
+            "const": true,
+            "title": "Reviewrequired"
+          },
+          "goldLabelAuthority": {
+            "type": "boolean",
+            "const": false,
+            "title": "Goldlabelauthority"
+          },
+          "matrixHash": {
+            "type": "string",
+            "title": "Matrixhash"
+          },
+          "normalization": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Normalization"
+          },
+          "readiness": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Readiness"
+          },
+          "ctt": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Ctt"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/EmpiricalItemResult"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "irt": {
+            "$ref": "#/components/schemas/IrtResult"
+          },
+          "cleaning": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cleaning"
+          },
+          "assessmentId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Assessmentid"
+          },
+          "timeWindow": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timewindow"
+          },
+          "sampleManifestHash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Samplemanifesthash"
+          },
+          "snapshotHash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Snapshothash"
+          },
+          "snapshotId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Snapshotid"
+          },
+          "createdAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Createdat"
+          },
+          "persisted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Persisted"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "policyVersion",
+          "policyHash",
+          "policy",
+          "populationId",
+          "assessmentFamily",
+          "grade",
+          "dataOrigin",
+          "researchOnly",
+          "reviewRequired",
+          "goldLabelAuthority",
+          "matrixHash",
+          "normalization",
+          "readiness",
+          "ctt",
+          "items",
+          "irt"
+        ],
+        "title": "EmpiricalAnalysisResult"
+      },
+      "EmpiricalDecisionInput": {
+        "properties": {
+          "idempotencyKey": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 8,
+            "title": "Idempotencykey"
+          },
+          "questionVersionId": {
+            "type": "string",
+            "maxLength": 250,
+            "minLength": 1,
+            "title": "Questionversionid"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "retain",
+              "revise",
+              "quarantine"
+            ],
+            "title": "Action"
+          },
+          "rationale": {
+            "type": "string",
+            "maxLength": 8000,
+            "minLength": 20,
+            "title": "Rationale"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "idempotencyKey",
+          "questionVersionId",
+          "action",
+          "rationale"
+        ],
+        "title": "EmpiricalDecisionInput"
+      },
+      "EmpiricalItemResult": {
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "title": "Questionid"
+          },
+          "questionVersionId": {
+            "type": "string",
+            "title": "Questionversionid"
+          },
+          "contentVersion": {
+            "type": "integer",
+            "title": "Contentversion"
+          },
+          "contentHash": {
+            "type": "string",
+            "title": "Contenthash"
+          },
+          "intendedDifficulty": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IntendedDifficulty"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ctt": {
+            "$ref": "#/components/schemas/CttItemMetrics"
+          },
+          "irt": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IrtItemParameters"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reviewFlags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Reviewflags"
+          },
+          "recommendedRouting": {
+            "type": "string",
+            "enum": [
+              "collect_more_events",
+              "expert_review",
+              "observation_only"
+            ],
+            "title": "Recommendedrouting"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "questionId",
+          "questionVersionId",
+          "contentVersion",
+          "contentHash",
+          "intendedDifficulty",
+          "ctt",
+          "irt",
+          "reviewFlags",
+          "recommendedRouting"
+        ],
+        "title": "EmpiricalItemResult"
+      },
+      "ExpertAnnotationInput": {
+        "properties": {
+          "idempotencyKey": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 8,
+            "title": "Idempotencykey"
+          },
+          "contentValid": {
+            "type": "string",
+            "enum": [
+              "valid",
+              "revision_required",
+              "excluded",
+              "insufficient_evidence"
+            ],
+            "title": "Contentvalid"
+          },
+          "answerKeyStatus": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "incorrect",
+              "ambiguous",
+              "insufficient_evidence"
+            ],
+            "title": "Answerkeystatus"
+          },
+          "verifiedAnswerKey": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verifiedanswerkey"
+          },
+          "minimalSolution": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 8000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Minimalsolution"
+          },
+          "mathCognitiveDomain": {
+            "$ref": "#/components/schemas/HeadAnnotation"
+          },
+          "knowledgeDimension": {
+            "$ref": "#/components/schemas/HeadAnnotation"
+          },
+          "intendedDifficulty": {
+            "$ref": "#/components/schemas/HeadAnnotation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "idempotencyKey",
+          "contentValid",
+          "answerKeyStatus",
+          "mathCognitiveDomain",
+          "knowledgeDimension",
+          "intendedDifficulty"
+        ],
+        "title": "ExpertAnnotationInput"
+      },
+      "ExtractedMathFormula": {
+        "properties": {
+          "latex": {
+            "type": "string",
+            "title": "Latex"
+          },
+          "page_number": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Page Number"
+          },
+          "bbox": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "maxItems": 4,
+            "minItems": 4,
+            "title": "Bbox"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "latex_renderable": {
+            "type": "boolean",
+            "title": "Latex Renderable",
+            "default": true
+          },
+          "visual_data_url": {
+            "type": "string",
+            "title": "Visual Data Url"
+          },
+          "visual_width": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Visual Width"
+          },
+          "visual_height": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Visual Height"
+          }
+        },
+        "type": "object",
+        "required": [
+          "latex",
+          "page_number",
+          "bbox",
+          "source",
+          "visual_data_url",
+          "visual_width",
+          "visual_height"
+        ],
+        "title": "ExtractedMathFormula"
+      },
+      "ExtractedOption": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label",
+          "text"
+        ],
+        "title": "ExtractedOption"
+      },
+      "ExtractedPage": {
+        "properties": {
+          "page_number": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Page Number"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "method": {
+            "type": "string",
+            "title": "Method"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "type": "object",
+        "required": [
+          "page_number",
+          "text",
+          "method"
+        ],
+        "title": "ExtractedPage"
+      },
+      "ExtractedQuestion": {
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "title": "Candidate Id"
+          },
+          "question_number": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question Number"
+          },
+          "question_text": {
+            "type": "string",
+            "title": "Question Text"
+          },
+          "classification_text": {
+            "type": "string",
+            "title": "Classification Text",
+            "default": ""
+          },
+          "options": {
+            "items": {
+              "$ref": "#/components/schemas/ExtractedOption"
+            },
+            "type": "array",
+            "title": "Options"
+          },
+          "page_numbers": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Page Numbers"
+          },
+          "extraction_method": {
+            "type": "string",
+            "title": "Extraction Method"
+          },
+          "needs_review": {
+            "type": "boolean",
+            "title": "Needs Review"
+          },
+          "review_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Review Reasons"
+          },
+          "visual_previews": {
+            "items": {
+              "$ref": "#/components/schemas/ExtractedVisualPreview"
+            },
+            "type": "array",
+            "title": "Visual Previews"
+          },
+          "math_formulas": {
+            "items": {
+              "$ref": "#/components/schemas/ExtractedMathFormula"
+            },
+            "type": "array",
+            "title": "Math Formulas"
+          }
+        },
+        "type": "object",
+        "required": [
+          "candidate_id",
+          "question_text",
+          "extraction_method",
+          "needs_review"
+        ],
+        "title": "ExtractedQuestion"
+      },
+      "ExtractedVisualPreview": {
+        "properties": {
+          "page_number": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Page Number"
+          },
+          "mime_type": {
+            "type": "string",
+            "title": "Mime Type"
+          },
+          "data_url": {
+            "type": "string",
+            "title": "Data Url"
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Width"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Height"
+          },
+          "crop_method": {
+            "type": "string",
+            "title": "Crop Method"
+          }
+        },
+        "type": "object",
+        "required": [
+          "page_number",
+          "mime_type",
+          "data_url",
+          "width",
+          "height",
+          "crop_method"
+        ],
+        "title": "ExtractedVisualPreview"
+      },
+      "ExtractionResponse": {
+        "properties": {
+          "filename": {
+            "type": "string",
+            "title": "Filename"
+          },
+          "media_type": {
+            "type": "string",
+            "title": "Media Type"
+          },
+          "extracted_text": {
+            "type": "string",
+            "title": "Extracted Text"
+          },
+          "latex_candidates": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Latex Candidates"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "review_required": {
+            "type": "boolean",
+            "title": "Review Required",
+            "default": false
+          },
+          "document_metadata": {
+            "$ref": "#/components/schemas/DocumentMetadata"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/ExtractedPage"
+            },
+            "type": "array",
+            "title": "Pages"
+          },
+          "questions": {
+            "items": {
+              "$ref": "#/components/schemas/ExtractedQuestion"
+            },
+            "type": "array",
+            "title": "Questions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "filename",
+          "media_type",
+          "extracted_text",
+          "status"
+        ],
+        "title": "ExtractionResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HeadAnnotation": {
+        "properties": {
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "evidence": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Evidence"
+          },
+          "abstain": {
+            "type": "boolean",
+            "title": "Abstain",
+            "default": false
+          },
+          "abstainReason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abstainreason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "HeadAnnotation"
+      },
+      "HeadPrediction": {
+        "properties": {
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label"
+        ],
+        "title": "HeadPrediction"
+      },
+      "HeadResult": {
+        "properties": {
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "probabilities": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Probabilities"
+          },
+          "calibratedConfidence": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calibratedconfidence"
+          },
+          "normalizedEntropy": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Normalizedentropy"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "predict",
+              "review",
+              "abstain"
+            ],
+            "title": "Action"
+          },
+          "reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Reasons"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "label",
+          "probabilities",
+          "action"
+        ],
+        "title": "HeadResult"
+      },
+      "IntendedDifficulty": {
+        "type": "string",
+        "enum": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ],
+        "title": "IntendedDifficulty"
+      },
+      "IrtItemParameters": {
+        "properties": {
+          "a": {
+            "type": "number",
+            "title": "A"
+          },
+          "b": {
+            "type": "number",
+            "title": "B"
+          },
+          "c": {
+            "type": "number",
+            "title": "C"
+          },
+          "bPosteriorSd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bposteriorsd"
+          },
+          "bInterval95": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "number"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Binterval95"
+          },
+          "infit": {
+            "type": "number",
+            "title": "Infit"
+          },
+          "outfit": {
+            "type": "number",
+            "title": "Outfit"
+          },
+          "empiricalDifficulty": {
+            "$ref": "#/components/schemas/IntendedDifficulty"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "a",
+          "b",
+          "c",
+          "bPosteriorSd",
+          "bInterval95",
+          "infit",
+          "outfit",
+          "empiricalDifficulty"
+        ],
+        "title": "IrtItemParameters"
+      },
+      "IrtResult": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "estimated",
+              "estimated_with_warnings",
+              "waiting_for_data",
+              "waiting_for_assumption_review",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "model": {
+            "type": "string",
+            "enum": [
+              "rasch",
+              "2pl",
+              "3pl"
+            ],
+            "title": "Model"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/IrtItemParameters"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "persons": {
+            "items": {
+              "$ref": "#/components/schemas/PersonEstimate"
+            },
+            "type": "array",
+            "title": "Persons"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "method": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Method"
+          },
+          "scale": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scale"
+          },
+          "priors": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Priors"
+          },
+          "converged": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Converged"
+          },
+          "iterations": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Iterations"
+          },
+          "logLikelihood": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Loglikelihood"
+          },
+          "aic": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Aic"
+          },
+          "bic": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bic"
+          },
+          "informationCriteriaCaveat": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Informationcriteriacaveat"
+          },
+          "testInformation": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "type": "array"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Testinformation"
+          },
+          "localDependenceScreen": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Localdependencescreen"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "model",
+          "items",
+          "persons",
+          "warnings"
+        ],
+        "title": "IrtResult"
+      },
+      "ItemReference": {
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Questionid"
+          },
+          "questionVersionId": {
+            "type": "string",
+            "maxLength": 250,
+            "minLength": 1,
+            "title": "Questionversionid"
+          },
+          "contentVersion": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Contentversion"
+          },
+          "contentHash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Contenthash"
+          },
+          "intendedDifficulty": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IntendedDifficulty"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "optionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Optionids"
+          },
+          "answerKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answerkey"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "questionId",
+          "questionVersionId",
+          "contentVersion",
+          "contentHash"
+        ],
+        "title": "ItemReference"
+      },
+      "KnowledgeDimension": {
+        "type": "string",
+        "enum": [
+          "factual",
+          "conceptual",
+          "procedural",
+          "metacognitive"
+        ],
+        "title": "KnowledgeDimension"
+      },
+      "LoginInput": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Username"
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 1024,
+            "minLength": 8,
+            "title": "Password"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "title": "LoginInput"
+      },
+      "MatrixAnalysisInput": {
+        "properties": {
+          "populationId": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Populationid"
+          },
+          "assessmentFamily": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Assessmentfamily"
+          },
+          "grade": {
+            "type": "integer",
+            "maximum": 12.0,
+            "minimum": 1.0,
+            "title": "Grade"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ItemReference"
+            },
+            "type": "array",
+            "maxItems": 200,
+            "minItems": 1,
+            "title": "Items"
+          },
+          "subjectIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 10000,
+            "minItems": 1,
+            "title": "Subjectids"
+          },
+          "matrix": {
+            "items": {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "maxItems": 10000,
+            "minItems": 1,
+            "title": "Matrix"
+          },
+          "model": {
+            "type": "string",
+            "enum": [
+              "rasch",
+              "2pl",
+              "3pl"
+            ],
+            "title": "Model",
+            "default": "rasch"
+          },
+          "dataOrigin": {
+            "type": "string",
+            "enum": [
+              "server_scored",
+              "external_scored",
+              "synthetic"
+            ],
+            "title": "Dataorigin",
+            "default": "external_scored"
+          },
+          "assumptionReview": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssumptionReview"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "populationId",
+          "assessmentFamily",
+          "grade",
+          "items",
+          "subjectIds",
+          "matrix"
+        ],
+        "title": "MatrixAnalysisInput"
+      },
+      "ModelTrace": {
+        "properties": {
+          "modelVersion": {
+            "type": "string",
+            "title": "Modelversion"
+          },
+          "baseModel": {
+            "type": "string",
+            "title": "Basemodel"
+          },
+          "baseRevision": {
+            "type": "string",
+            "title": "Baserevision"
+          },
+          "datasetSnapshot": {
+            "type": "string",
+            "title": "Datasetsnapshot"
+          },
+          "rubricVersion": {
+            "type": "string",
+            "title": "Rubricversion"
+          },
+          "calibrationVersion": {
+            "type": "string",
+            "title": "Calibrationversion"
+          },
+          "inputSchemaVersion": {
+            "type": "string",
+            "title": "Inputschemaversion"
+          },
+          "inputHash": {
+            "type": "string",
+            "title": "Inputhash"
+          },
+          "architectureVersion": {
+            "type": "string",
+            "title": "Architectureversion",
+            "default": "parallel-v1"
+          },
+          "routingPolicyVersion": {
+            "type": "string",
+            "title": "Routingpolicyversion",
+            "default": "confidence-only-v1"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "modelVersion",
+          "baseModel",
+          "baseRevision",
+          "datasetSnapshot",
+          "rubricVersion",
+          "calibrationVersion",
+          "inputSchemaVersion",
+          "inputHash"
+        ],
+        "title": "ModelTrace"
+      },
+      "ParticipantCreate": {
+        "properties": {
+          "participantCode": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 3,
+            "title": "Participantcode"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "participantCode"
+        ],
+        "title": "ParticipantCreate"
+      },
+      "ParticipantReceipt": {
+        "properties": {
+          "assessmentId": {
+            "type": "string",
+            "title": "Assessmentid"
+          },
+          "participantToken": {
+            "type": "string",
+            "title": "Participanttoken"
+          },
+          "tokenType": {
+            "type": "string",
+            "const": "Bearer",
+            "title": "Tokentype"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "assessmentId",
+          "participantToken",
+          "tokenType"
+        ],
+        "title": "ParticipantReceipt"
+      },
+      "PersonEstimate": {
+        "properties": {
+          "thetaEap": {
+            "type": "number",
+            "title": "Thetaeap"
+          },
+          "posteriorSd": {
+            "type": "number",
+            "title": "Posteriorsd"
+          },
+          "answeredItems": {
+            "type": "integer",
+            "title": "Answereditems"
+          },
+          "subjectId": {
+            "type": "string",
+            "title": "Subjectid"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "thetaEap",
+          "posteriorSd",
+          "answeredItems",
+          "subjectId"
+        ],
+        "title": "PersonEstimate"
+      },
+      "ProvenanceStatus": {
+        "properties": {
+          "contentQualified": {
+            "type": "boolean",
+            "title": "Contentqualified"
+          },
+          "answerKeyVerified": {
+            "type": "boolean",
+            "title": "Answerkeyverified"
+          },
+          "solutionVerified": {
+            "type": "boolean",
+            "title": "Solutionverified"
+          },
+          "visualEssential": {
+            "type": "boolean",
+            "title": "Visualessential",
+            "default": false
+          },
+          "visualTranscriptVerified": {
+            "type": "boolean",
+            "title": "Visualtranscriptverified",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contentQualified",
+          "answerKeyVerified",
+          "solutionVerified"
+        ],
+        "title": "ProvenanceStatus"
+      },
+      "PublicItem": {
+        "properties": {
+          "publicItemId": {
+            "type": "string",
+            "title": "Publicitemid"
+          },
+          "questionType": {
+            "type": "string",
+            "const": "multiple_choice",
+            "title": "Questiontype"
+          },
+          "questionText": {
+            "type": "string",
+            "title": "Questiontext"
+          },
+          "stimulus": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stimulus"
+          },
+          "options": {
+            "items": {
+              "$ref": "#/components/schemas/PublicOption"
+            },
+            "type": "array",
+            "title": "Options"
+          },
+          "media": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Media"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "publicItemId",
+          "questionType",
+          "questionText",
+          "stimulus",
+          "options",
+          "media"
+        ],
+        "title": "PublicItem"
+      },
+      "PublicOption": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "text"
+        ],
+        "title": "PublicOption"
+      },
+      "QuestionOption": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Label"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "label",
+          "text"
+        ],
+        "title": "QuestionOption"
+      },
+      "ResponseCreate": {
+        "properties": {
+          "responseId": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 8,
+            "title": "Responseid"
+          },
+          "deliveryInstanceId": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Deliveryinstanceid"
+          },
+          "selectedOptionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 1,
+            "title": "Selectedoptionids"
+          },
+          "skipped": {
+            "type": "boolean",
+            "title": "Skipped",
+            "default": false
+          },
+          "responseTimeMs": {
+            "type": "integer",
+            "maximum": 86400000.0,
+            "minimum": 0.0,
+            "title": "Responsetimems"
+          },
+          "answerChanges": {
+            "type": "integer",
+            "maximum": 10000.0,
+            "minimum": 0.0,
+            "title": "Answerchanges",
+            "default": 0
+          },
+          "clientSubmittedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Clientsubmittedat"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "responseId",
+          "deliveryInstanceId",
+          "responseTimeMs"
+        ],
+        "title": "ResponseCreate"
+      },
+      "ResponseReceipt": {
+        "properties": {
+          "responseId": {
+            "type": "string",
+            "title": "Responseid"
+          },
+          "accepted": {
+            "type": "boolean",
+            "const": true,
+            "title": "Accepted"
+          },
+          "nextItemUrl": {
+            "type": "string",
+            "title": "Nextitemurl"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "responseId",
+          "accepted",
+          "nextItemUrl"
+        ],
+        "title": "ResponseReceipt"
+      },
+      "ScreeningInput": {
+        "properties": {
+          "assessmentId": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Assessmentid"
+          },
+          "model": {
+            "type": "string",
+            "enum": [
+              "rasch",
+              "2pl",
+              "3pl"
+            ],
+            "title": "Model",
+            "default": "rasch"
+          },
+          "attemptPolicy": {
+            "type": "string",
+            "enum": [
+              "first",
+              "last"
+            ],
+            "title": "Attemptpolicy",
+            "default": "first"
+          },
+          "fromTime": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fromtime"
+          },
+          "toTime": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Totime"
+          },
+          "assumptionReview": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssumptionReview"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "assessmentId"
+        ],
+        "title": "ScreeningInput"
+      },
+      "SessionCompleted": {
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "title": "Sessionid"
+          },
+          "status": {
+            "type": "string",
+            "const": "completed",
+            "title": "Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "sessionId",
+          "status"
+        ],
+        "title": "SessionCompleted"
+      },
+      "SessionReceipt": {
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "title": "Sessionid"
+          },
+          "assessmentId": {
+            "type": "string",
+            "title": "Assessmentid"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "completed"
+            ],
+            "title": "Status"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Expiresat"
+          },
+          "nextItemUrl": {
+            "type": "string",
+            "title": "Nextitemurl"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "sessionId",
+          "assessmentId",
+          "status",
+          "expiresAt",
+          "nextItemUrl"
+        ],
+        "title": "SessionReceipt"
+      },
+      "V2ClassificationRequest": {
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Questionid"
+          },
+          "contentVersion": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Contentversion"
+          },
+          "contentHash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Contenthash"
+          },
+          "grade": {
+            "type": "integer",
+            "maximum": 12.0,
+            "minimum": 1.0,
+            "title": "Grade"
+          },
+          "topic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Topic"
+          },
+          "subtopic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subtopic"
+          },
+          "questionType": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Questiontype"
+          },
+          "stimulus": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stimulus"
+          },
+          "stem": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Stem"
+          },
+          "options": {
+            "items": {
+              "$ref": "#/components/schemas/QuestionOption"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "title": "Options"
+          },
+          "verifiedMinimalSolution": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verifiedminimalsolution"
+          },
+          "detectedKko": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Detectedkko"
+          },
+          "visualTranscript": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Visualtranscript"
+          },
+          "provenanceStatus": {
+            "$ref": "#/components/schemas/ProvenanceStatus"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "questionId",
+          "contentVersion",
+          "contentHash",
+          "grade",
+          "questionType",
+          "stem",
+          "provenanceStatus"
+        ],
+        "title": "V2ClassificationRequest"
+      },
+      "V2ClassificationResponse": {
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "title": "Questionid"
+          },
+          "contentVersion": {
+            "type": "integer",
+            "title": "Contentversion"
+          },
+          "contentHash": {
+            "type": "string",
+            "title": "Contenthash"
+          },
+          "scopeStatus": {
+            "type": "string",
+            "enum": [
+              "in_scope",
+              "out_of_scope"
+            ],
+            "title": "Scopestatus"
+          },
+          "mathCognitiveDomain": {
+            "$ref": "#/components/schemas/HeadResult"
+          },
+          "knowledgeDimension": {
+            "$ref": "#/components/schemas/HeadResult"
+          },
+          "intendedDifficulty": {
+            "$ref": "#/components/schemas/HeadResult"
+          },
+          "reviewRequired": {
+            "type": "boolean",
+            "const": true,
+            "title": "Reviewrequired",
+            "default": true
+          },
+          "reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Reasons"
+          },
+          "trace": {
+            "$ref": "#/components/schemas/ModelTrace"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "questionId",
+          "contentVersion",
+          "contentHash",
+          "scopeStatus",
+          "mathCognitiveDomain",
+          "knowledgeDimension",
+          "intendedDifficulty",
+          "trace"
+        ],
+        "title": "V2ClassificationResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
