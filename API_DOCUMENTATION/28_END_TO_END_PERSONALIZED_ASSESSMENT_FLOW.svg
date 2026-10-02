@@ -1,0 +1,767 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4800" height="7940" viewBox="0 0 4800 7940" role="img" aria-labelledby="title desc">
+<title id="title">Nalar: alur teknis end-to-end dan personalisasi per siswa</title>
+<desc id="desc">32 tahap dengan judul Inggris, deskripsi Indonesia sebelum poin teknis: ekstraksi, label silver blind, training IndoBERT, pilot silver terisolasi, psikometrik, feedback silver, dan target personalisasi siswa.</desc>
+<metadata>{"schemaVersion": "end-to-end-diagram-v1", "date": "2026-10-02", "apiVersion": "2.1.0", "nodes": [{"id": "A1", "status": "L", "title": "SOURCE MANIFEST", "description": "Mencatat asal soal dan sidik berkas (hash), agar setiap hasil ekstraksi dapat ditelusuri ke sumbernya.", "descriptionLanguage": "id"}, {"id": "A2", "status": "L", "title": "AGENTIC EXTRACTION", "description": "Agen AI memisahkan soal dari buku menjadi data terstruktur, termasuk pilihan jawaban dan bukti kunci.", "descriptionLanguage": "id"}, {"id": "A3", "status": "L", "title": "VALIDATION AND REPORT", "description": "Memeriksa format dan isi ekstraksi, lalu membuat laporan error, warning, status, dan provenance sebelum ekspor.", "descriptionLanguage": "id"}, {"id": "A4", "status": "I", "title": "CANONICAL VERSION", "description": "Memberi identitas dan versi tetap pada soal yang lolos pemeriksaan, agar revisi tidak menimpa riwayat lama.", "descriptionLanguage": "id"}, {"id": "B1", "status": "L", "title": "INITIAL BLIND PROMPT", "description": "Prompt awal memuat soal, kelas, rubrik, kunci, solusi, opsi, dan gambar tanpa prediksi model atau vote lain.", "descriptionLanguage": "id"}, {"id": "B2", "status": "R", "title": "THREE INITIAL RUNS", "description": "Gemini menilai soal dalam tiga panggilan terpisah; hasil awal tiap panggilan tidak melihat keputusan panggilan lain.", "descriptionLanguage": "id"}, {"id": "B3", "status": "R", "title": "VOTING AND AI ADJUDICATION", "description": "Menerima kesepakatan penuh yang bebas masalah, lalu meminta AI meninjau hasil yang berbeda atau bermasalah.", "descriptionLanguage": "id"}, {"id": "B4", "status": "R", "title": "AUDIT AND SILVER FREEZE", "description": "Memeriksa kelengkapan label dan mengunci dataset dengan hash sebelum hasilnya dibandingkan dengan IndoBERT.", "descriptionLanguage": "id"}, {"id": "C1", "status": "I", "title": "SILVER SNAPSHOT AND SPLIT", "description": "Membagi dataset silver tetap menjadi data latih, validasi, dan uji, tanpa membocorkan soal sekeluarga antarbagian.", "descriptionLanguage": "id"}, {"id": "C2", "status": "I", "title": "JSON-TO-TEXT AND THREE HEADS", "description": "JSON valid diubah menjadi teks kanonis sesuai manifest, ditokenisasi, lalu dibaca IndoBERT oleh tiga kepala prediksi.", "descriptionLanguage": "id"}, {"id": "C3", "status": "I", "title": "TRAINING AND CALIBRATION", "description": "Melatih model dan menyesuaikan probabilitasnya dengan data validasi, agar prediksi dan tingkat keyakinan dapat dievaluasi.", "descriptionLanguage": "id"}, {"id": "C4", "status": "R", "title": "RESEARCH ARTIFACT", "description": "Mengemas model, konfigurasi, dan hasil evaluasi sebagai artefak berversi yang hanya dapat dipakai melalui mode riset.", "descriptionLanguage": "id"}, {"id": "D1", "status": "T", "title": "SILVER DELIVERY ADAPTER", "description": "Adapter yang masih perlu dibangun agar soal silver dapat masuk pilot riset terisolasi dengan audit dan kebijakan akses.", "descriptionLanguage": "id"}, {"id": "D2", "status": "I", "title": "PARTICIPANT AND SESSION", "description": "Membuat akses peserta dan sesi miliknya. Komponen ini dapat dipakai pada pilot silver setelah adapter D1 tersedia.", "descriptionLanguage": "id"}, {"id": "D3", "status": "I", "title": "IMMUTABLE DELIVERY", "description": "Mengirim soal tanpa kunci dan membekukan susunan opsi untuk satu percobaan, sehingga muat ulang tetap konsisten.", "descriptionLanguage": "id"}, {"id": "D4", "status": "I", "title": "SERVER-SCORED RESPONSE", "description": "Server mencocokkan jawaban dengan versi soal yang diterima siswa dan menyimpan skor tanpa menggandakan kiriman ulang.", "descriptionLanguage": "id"}, {"id": "E1", "status": "I", "title": "SESSION CLEANING AND MATRIX", "description": "Menyaring sesi selesai dan menyusun matriks siswa–versi soal; jawaban kosong tetap dibedakan dari jawaban salah.", "descriptionLanguage": "id"}, {"id": "E2", "status": "I", "title": "CTT AND READINESS GATES", "description": "Menghitung statistik tes klasik dan memeriksa kecukupan data; analisis IRT menunggu jika syarat belum terpenuhi.", "descriptionLanguage": "id"}, {"id": "E3", "status": "R", "title": "IRT FIT AND DIAGNOSTICS", "description": "Mengestimasi karakteristik soal dan kemampuan siswa pada skala lokal, lalu memeriksa kecocokan model terhadap data.", "descriptionLanguage": "id"}, {"id": "E4", "status": "R", "title": "IMMUTABLE EMPIRICAL SNAPSHOT", "description": "Menyimpan hasil analisis bersama jejak data dan kebijakan, agar hasil yang sama dapat direproduksi dan diaudit.", "descriptionLanguage": "id"}, {"id": "F1", "status": "R", "title": "EMPIRICAL ROUTING", "description": "Menandai soal yang perlu ditinjau berdasarkan respons siswa; statistik menjadi bukti pemeriksaan, bukan label pengganti.", "descriptionLanguage": "id"}, {"id": "F2", "status": "T", "title": "VERSION HOLD POLICY", "description": "Kebijakan target untuk menahan versi soal berisiko dari pilot berikutnya, dengan alasan dan bukti yang tersimpan.", "descriptionLanguage": "id"}, {"id": "F3", "status": "L", "title": "NEW SILVER BATCH", "description": "Mengirim soal yang direvisi ke penilaian blind dan audit baru, sehingga pembaruan silver memiliki riwayat tersendiri.", "descriptionLanguage": "id"}, {"id": "F4", "status": "L", "title": "CHALLENGER MODEL CYCLE", "description": "Melatih calon model pengganti dari silver baru dan membandingkan hasil evaluasinya dengan model sebelumnya.", "descriptionLanguage": "id"}, {"id": "G1", "status": "T", "title": "LEARNER IDENTITY AND PROFILE", "description": "Rancangan profil berversi yang menghubungkan akun siswa dengan riwayat jawaban dan bukti belajar miliknya.", "descriptionLanguage": "id"}, {"id": "G2", "status": "T", "title": "TOPIC-LEVEL DIAGNOSIS", "description": "Rancangan diagnosis untuk mengenali kekuatan dan kesulitan tiap topik, disertai jumlah bukti dan ketidakpastian.", "descriptionLanguage": "id"}, {"id": "G3", "status": "T", "title": "CONSTRAINED ITEM SELECTOR", "description": "Rancangan pemilih soal yang menyaring kelayakan terlebih dahulu, lalu menyesuaikan tantangan dengan kebutuhan siswa.", "descriptionLanguage": "id"}, {"id": "G4", "status": "T", "title": "ADAPTIVE PRACTICE LOOP", "description": "Rancangan siklus latihan: jawaban dinilai server, bukti belajar terkumpul, lalu profil dan pilihan soal diperbarui.", "descriptionLanguage": "id"}, {"id": "H1", "status": "T", "title": "PRACTICE AND TUTORING", "description": "Rancangan pendampingan belajar dengan penjelasan dan petunjuk sesuai kesulitan siswa, memakai konten tervalidasi.", "descriptionLanguage": "id"}, {"id": "H2", "status": "T", "title": "INDIVIDUAL REPORTING", "description": "Rancangan laporan perkembangan per siswa yang menjelaskan capaian, kebutuhan belajar, dan batas kepastian hasil.", "descriptionLanguage": "id"}, {"id": "H3", "status": "T", "title": "CAT AND ADAPTIVE TESTING", "description": "Rancangan tes yang memilih soal dari bank terkalibrasi sesuai estimasi kemampuan terkini dan aturan penghentian.", "descriptionLanguage": "id"}, {"id": "H4", "status": "T", "title": "PRODUCTION OPERATIONS", "description": "Rancangan layanan operasional dengan akses pengguna, penyimpanan bersama, pemantauan, dan pemulihan data.", "descriptionLanguage": "id"}], "edges": [{"source": "A1", "target": "A2", "role": "flow", "dashed": false}, {"source": "A2", "target": "A3", "role": "flow", "dashed": false}, {"source": "A3", "target": "A4", "role": "flow", "dashed": false}, {"source": "B1", "target": "B2", "role": "flow", "dashed": false}, {"source": "B2", "target": "B3", "role": "flow", "dashed": false}, {"source": "B3", "target": "B4", "role": "flow", "dashed": false}, {"source": "C1", "target": "C2", "role": "flow", "dashed": false}, {"source": "C2", "target": "C3", "role": "flow", "dashed": false}, {"source": "C3", "target": "C4", "role": "flow", "dashed": false}, {"source": "D1", "target": "D2", "role": "flow", "dashed": true}, {"source": "D2", "target": "D3", "role": "flow", "dashed": false}, {"source": "D3", "target": "D4", "role": "flow", "dashed": false}, {"source": "E1", "target": "E2", "role": "flow", "dashed": false}, {"source": "E2", "target": "E3", "role": "flow", "dashed": false}, {"source": "E3", "target": "E4", "role": "flow", "dashed": false}, {"source": "F1", "target": "F2", "role": "flow", "dashed": true}, {"source": "F2", "target": "F3", "role": "flow", "dashed": true}, {"source": "F3", "target": "F4", "role": "flow", "dashed": false}, {"source": "G1", "target": "G2", "role": "flow", "dashed": true}, {"source": "G2", "target": "G3", "role": "flow", "dashed": true}, {"source": "G3", "target": "G4", "role": "flow", "dashed": true}, {"source": "A4", "target": "B1", "role": "flow", "dashed": false}, {"source": "D4", "target": "D3", "role": "next_item_until_completed", "dashed": false}, {"source": "E2", "target": "E4", "role": "waiting_without_irt_fit", "dashed": false}, {"source": "B4", "target": "C1", "role": "flow", "dashed": false}, {"source": "C4", "target": "D1", "role": "flow", "dashed": true}, {"source": "D4", "target": "E1", "role": "flow", "dashed": false}, {"source": "E4", "target": "F1", "role": "flow", "dashed": false}, {"source": "F3", "target": "B1", "role": "new_blind_silver_cycle", "dashed": false}, {"source": "F4", "target": "C1", "role": "next_silver_model_cycle", "dashed": false}, {"source": "D4", "target": "G1", "role": "future_individual_response_link", "dashed": true}, {"source": "E4", "target": "G1", "role": "future_released_calibration_link", "dashed": true}, {"source": "G4", "target": "G2", "role": "future_practice_profile_update", "dashed": true}]}</metadata>
+<defs><marker id="arrow-line" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 11 6 L 0 11 Z" fill="#7891A9"/></marker><marker id="arrow-I" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 11 6 L 0 11 Z" fill="#08786D"/></marker><marker id="arrow-R" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 11 6 L 0 11 Z" fill="#7650A5"/></marker><marker id="arrow-T" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 11 6 L 0 11 Z" fill="#A35F0B"/></marker></defs>
+<rect width="4800" height="7940" fill="#F3F6FB"/>
+<rect x="118" y="510" width="4564" height="780" rx="28" fill="#FFFFFF" stroke="#DDE5EE" stroke-width="3"/>
+<rect x="118" y="1320" width="4564" height="780" rx="28" fill="#FFFFFF" stroke="#DDE5EE" stroke-width="3"/>
+<rect x="118" y="2130" width="4564" height="780" rx="28" fill="#FFFFFF" stroke="#DDE5EE" stroke-width="3"/>
+<rect x="118" y="2940" width="4564" height="780" rx="28" fill="#FFFFFF" stroke="#DDE5EE" stroke-width="3"/>
+<rect x="118" y="3750" width="4564" height="780" rx="28" fill="#FFFFFF" stroke="#DDE5EE" stroke-width="3"/>
+<rect x="118" y="4560" width="4564" height="780" rx="28" fill="#FFFFFF" stroke="#DDE5EE" stroke-width="3"/>
+<rect x="118" y="5370" width="4564" height="780" rx="28" fill="#FFFFFF" stroke="#DDE5EE" stroke-width="3"/>
+<rect x="118" y="6180" width="4564" height="780" rx="28" fill="#FFFFFF" stroke="#DDE5EE" stroke-width="3"/>
+<path data-source="A1" data-target="A2" data-role="flow" d="M 1210 942 L 1310 942" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="A2" data-target="A3" data-role="flow" d="M 2350 942 L 2450 942" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="A3" data-target="A4" data-role="flow" d="M 3490 942 L 3590 942" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="B1" data-target="B2" data-role="flow" d="M 1210 1752 L 1310 1752" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="B2" data-target="B3" data-role="flow" d="M 2350 1752 L 2450 1752" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="B3" data-target="B4" data-role="flow" d="M 3490 1752 L 3590 1752" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="C1" data-target="C2" data-role="flow" d="M 1210 2562 L 1310 2562" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="C2" data-target="C3" data-role="flow" d="M 2350 2562 L 2450 2562" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="C3" data-target="C4" data-role="flow" d="M 3490 2562 L 3590 2562" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="D1" data-target="D2" data-role="flow" d="M 1210 3372 L 1310 3372" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<path data-source="D2" data-target="D3" data-role="flow" d="M 2350 3372 L 2450 3372" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="D3" data-target="D4" data-role="flow" d="M 3490 3372 L 3590 3372" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="E1" data-target="E2" data-role="flow" d="M 1210 4182 L 1310 4182" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="E2" data-target="E3" data-role="flow" d="M 2350 4182 L 2450 4182" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="E3" data-target="E4" data-role="flow" d="M 3490 4182 L 3590 4182" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="F1" data-target="F2" data-role="flow" d="M 1210 4992 L 1310 4992" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<path data-source="F2" data-target="F3" data-role="flow" d="M 2350 4992 L 2450 4992" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<path data-source="F3" data-target="F4" data-role="flow" d="M 3490 4992 L 3590 4992" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="G1" data-target="G2" data-role="flow" d="M 1210 5802 L 1310 5802" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<path data-source="G2" data-target="G3" data-role="flow" d="M 2350 5802 L 2450 5802" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<path data-source="G3" data-target="G4" data-role="flow" d="M 3490 5802 L 3590 5802" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<path data-source="A4" data-target="B1" data-role="flow" d="M 4110 1242 L 4110 1309 L 135 1309 L 135 1752 L 170 1752" fill="none" stroke="#7650A5" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-R)"/>
+<path data-source="D4" data-target="D3" data-role="next_item_until_completed" d="M 4110 3672 L 4110 3684 L 2970 3684 L 2970 3672" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="E2" data-target="E4" data-role="waiting_without_irt_fit" d="M 1830 4482 L 1830 4494 L 4110 4494 L 4110 4482" fill="none" stroke="#7650A5" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-R)"/>
+<path data-source="B4" data-target="C1" data-role="flow" d="M 4110 2052 L 4110 2119 L 135 2119 L 135 2562 L 170 2562" fill="none" stroke="#7650A5" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-R)"/>
+<path data-source="C4" data-target="D1" data-role="flow" d="M 4110 2862 L 4110 2929 L 135 2929 L 135 3372 L 170 3372" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<path data-source="D4" data-target="E1" data-role="flow" d="M 4110 3672 L 4110 3739 L 135 3739 L 135 4182 L 170 4182" fill="none" stroke="#7891A9" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-line)"/>
+<path data-source="E4" data-target="F1" data-role="flow" d="M 4110 4482 L 4110 4549 L 135 4549 L 135 4992 L 170 4992" fill="none" stroke="#7650A5" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-R)"/>
+<path data-source="F3" data-target="B1" data-role="new_blind_silver_cycle" d="M 2970 5292 L 2970 5369 L 48 5369 L 48 1752 L 170 1752" fill="none" stroke="#08786D" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-I)"/>
+<path data-source="F4" data-target="C1" data-role="next_silver_model_cycle" d="M 4110 5292 L 4110 5369 L 65 5369 L 65 2562 L 170 2562" fill="none" stroke="#08786D" stroke-width="5" stroke-linejoin="round" marker-end="url(#arrow-I)"/>
+<path data-source="D4" data-target="G1" data-role="future_individual_response_link" d="M 4630 3372 L 4750 3372 L 4750 5480 L 690 5480 L 690 5502" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<path data-source="E4" data-target="G1" data-role="future_released_calibration_link" d="M 4110 4482 L 4110 4559 L 90 4559 L 90 5802 L 170 5802" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<path data-source="G4" data-target="G2" data-role="future_practice_profile_update" d="M 4110 6102 L 4110 6114 L 1830 6114 L 1830 6102" fill="none" stroke="#A35F0B" stroke-width="5" stroke-linejoin="round" stroke-dasharray="18 14" marker-end="url(#arrow-T)"/>
+<text x="150" y="145" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="82" font-weight="700" fill="#142D46">NALAR  |  SILVER END-TO-END FLOW</text>
+<text x="150" y="214" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="42" font-weight="400" fill="#496077">Dari sumber soal ke silver, model, respons siswa, bukti empiris dan personalisasi</text>
+<text x="150" y="278" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="400" fill="#496077">Baseline kode: API 2.1.0  •  2 Oktober 2026  •  Jalur aktual dan ekstensi target diberi status berbeda</text>
+<rect x="150" y="326" width="272.984375" height="60" rx="14" fill="#E4F4EF" stroke="#08786D" stroke-width="3"/>
+<text x="173" y="366" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="26" font-weight="700" fill="#08786D">I  KODE TERSEDIA</text>
+<rect x="462.984375" y="326" width="321.96875" height="60" rx="14" fill="#E9F2FB" stroke="#2266A4" stroke-width="3"/>
+<text x="485.984375" y="366" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="26" font-weight="700" fill="#2266A4">L  WORKFLOW LOKAL</text>
+<rect x="824.953125" y="326" width="310.0" height="60" rx="14" fill="#F0EBF8" stroke="#7650A5" stroke-width="3"/>
+<text x="847.953125" y="366" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="26" font-weight="700" fill="#7650A5">R  RISET / ADVISORY</text>
+<rect x="1174.953125" y="326" width="407.96875" height="60" rx="14" fill="#FFF2DA" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<text x="1197.953125" y="366" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="26" font-weight="700" fill="#A35F0B">T  TARGET PENGEMBANGAN</text>
+<text x="150" y="446" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="31" font-weight="400" fill="#496077">Panah solid = alur tersedia / lokal; orange putus-putus = target; judul Inggris dan seluruh poin berbahasa Indonesia.</text>
+<text x="154" y="565" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#142D46">A  |  SOURCE, EXTRACTION AND QUALIFICATION</text>
+<text x="154" y="607" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Mengubah soal dari buku menjadi data terstruktur, memeriksa kelengkapannya, lalu menyimpan versi yang dapat ditelusuri.</text>
+<g id="node-A1" data-status="L">
+<rect x="170" y="642" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#2266A4" stroke-width="3"/>
+<rect x="194" y="662" width="74" height="48" rx="12" fill="#2266A4" stroke="#2266A4" stroke-width="3"/>
+<text x="206" y="696" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">A1</text>
+<rect x="953.0" y="662" width="232.0" height="48" rx="12" fill="#E9F2FB" stroke="#E9F2FB" stroke-width="3"/>
+<text x="968.0" y="694" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#2266A4">WORKFLOW LOKAL</text>
+<text x="200" y="759" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">SOURCE MANIFEST</text>
+<g class="node-description" lang="id">
+<text x="200" y="806" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Mencatat asal soal dan sidik berkas (hash), agar setiap hasil ekstraksi dapat</text>
+<text x="200" y="844" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">ditelusuri ke sumbernya.</text>
+</g>
+<g class="node-points">
+<circle cx="206.5" cy="885.5" r="4.5" fill="#2266A4"/>
+<text x="228" y="896" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">PDF siswa dan guru; tabel bab prasyarat.</text>
+<circle cx="206.5" cy="937.5" r="4.5" fill="#2266A4"/>
+<text x="228" y="948" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Kelas, bab, halaman, sumber eksternal dan hash.</text>
+<circle cx="206.5" cy="989.5" r="4.5" fill="#2266A4"/>
+<text x="228" y="1000" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Konversi ke Markdown, indeks dan gambar.</text>
+<circle cx="206.5" cy="1041.5" r="4.5" fill="#2266A4"/>
+<text x="228" y="1052" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Referensi sumber dipertahankan untuk setiap item.</text>
+</g></g>
+<g id="node-A2" data-status="L">
+<rect x="1310" y="642" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#2266A4" stroke-width="3"/>
+<rect x="1334" y="662" width="74" height="48" rx="12" fill="#2266A4" stroke="#2266A4" stroke-width="3"/>
+<text x="1346" y="696" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">A2</text>
+<rect x="2093.0" y="662" width="232.0" height="48" rx="12" fill="#E9F2FB" stroke="#E9F2FB" stroke-width="3"/>
+<text x="2108.0" y="694" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#2266A4">WORKFLOW LOKAL</text>
+<text x="1340" y="759" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">AGENTIC EXTRACTION</text>
+<g class="node-description" lang="id">
+<text x="1340" y="806" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Agen AI memisahkan soal dari buku menjadi data terstruktur, termasuk pilihan</text>
+<text x="1340" y="844" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">jawaban dan bukti kunci.</text>
+</g>
+<g class="node-points">
+<circle cx="1346.5" cy="885.5" r="4.5" fill="#2266A4"/>
+<text x="1368" y="896" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Workflow Claude Code dijalankan per bab.</text>
+<circle cx="1346.5" cy="937.5" r="4.5" fill="#2266A4"/>
+<text x="1368" y="948" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Stem, stimulus, opsi dan bukti kunci diekstrak.</text>
+<circle cx="1346.5" cy="989.5" r="4.5" fill="#2266A4"/>
+<text x="1368" y="1000" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Gambar ditranskripsi dan solusi minimal dibuat.</text>
+<circle cx="1346.5" cy="1041.5" r="4.5" fill="#2266A4"/>
+<text x="1368" y="1052" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Difficulty agen 1–5 hanya heuristik staging.</text>
+</g></g>
+<g id="node-A3" data-status="L">
+<rect x="2450" y="642" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#2266A4" stroke-width="3"/>
+<rect x="2474" y="662" width="74" height="48" rx="12" fill="#2266A4" stroke="#2266A4" stroke-width="3"/>
+<text x="2486" y="696" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">A3</text>
+<rect x="3233.0" y="662" width="232.0" height="48" rx="12" fill="#E9F2FB" stroke="#E9F2FB" stroke-width="3"/>
+<text x="3248.0" y="694" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#2266A4">WORKFLOW LOKAL</text>
+<text x="2480" y="759" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">VALIDATION AND REPORT</text>
+<g class="node-description" lang="id">
+<text x="2480" y="806" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Memeriksa format dan isi ekstraksi, lalu membuat laporan error, warning,</text>
+<text x="2480" y="844" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">status, dan provenance sebelum ekspor.</text>
+</g>
+<g class="node-points">
+<circle cx="2486.5" cy="885.5" r="4.5" fill="#2266A4"/>
+<text x="2508" y="896" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Schema, verbatim, angka, kunci dan media diperiksa.</text>
+<circle cx="2486.5" cy="937.5" r="4.5" fill="#2266A4"/>
+<text x="2508" y="948" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">ERROR memblokir; warning disimpan untuk audit.</text>
+<circle cx="2486.5" cy="989.5" r="4.5" fill="#2266A4"/>
+<text x="2508" y="1000" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Report mencatat alasan, status dan provenance item.</text>
+<circle cx="2486.5" cy="1041.5" r="4.5" fill="#2266A4"/>
+<text x="2508" y="1052" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Candidate bank diekspor setelah gate terpenuhi.</text>
+</g></g>
+<g id="node-A4" data-status="I">
+<rect x="3590" y="642" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#08786D" stroke-width="3"/>
+<rect x="3614" y="662" width="74" height="48" rx="12" fill="#08786D" stroke="#08786D" stroke-width="3"/>
+<text x="3626" y="696" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">A4</text>
+<rect x="4409.015625" y="662" width="195.984375" height="48" rx="12" fill="#E4F4EF" stroke="#E4F4EF" stroke-width="3"/>
+<text x="4424.015625" y="694" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#08786D">KODE TERSEDIA</text>
+<text x="3620" y="759" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">CANONICAL VERSION</text>
+<g class="node-description" lang="id">
+<text x="3620" y="806" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Memberi identitas dan versi tetap pada soal yang lolos pemeriksaan, agar revisi</text>
+<text x="3620" y="844" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">tidak menimpa riwayat lama.</text>
+</g>
+<g class="node-points">
+<circle cx="3626.5" cy="885.5" r="4.5" fill="#08786D"/>
+<text x="3648" y="896" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Import idempotent dan qualification konten.</text>
+<circle cx="3626.5" cy="937.5" r="4.5" fill="#08786D"/>
+<text x="3648" y="948" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Simpan questionId, versionId dan contentHash.</text>
+<circle cx="3626.5" cy="989.5" r="4.5" fill="#08786D"/>
+<text x="3648" y="1000" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Kelas, opsi, transkrip visual dan lineage dicatat.</text>
+<circle cx="3626.5" cy="1041.5" r="4.5" fill="#08786D"/>
+<text x="3648" y="1052" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Kunci atau visual yang tidak lengkap ditahan.</text>
+</g></g>
+<text x="154" y="1283" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#496077">A4 → B1. Candidate belum menjadi label silver sebelum melewati blind review dan audit.</text>
+<text x="154" y="1375" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#142D46">B  |  BLIND LLM SILVER LABELING</text>
+<text x="154" y="1417" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Membentuk label silver dari tiga penilaian awal Gemini yang terpisah, menyelesaikan konflik lewat AI, lalu mengunci hasil audit.</text>
+<g id="node-B1" data-status="L">
+<rect x="170" y="1452" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#2266A4" stroke-width="3"/>
+<rect x="194" y="1472" width="74" height="48" rx="12" fill="#2266A4" stroke="#2266A4" stroke-width="3"/>
+<text x="206" y="1506" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">B1</text>
+<rect x="953.0" y="1472" width="232.0" height="48" rx="12" fill="#E9F2FB" stroke="#E9F2FB" stroke-width="3"/>
+<text x="968.0" y="1504" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#2266A4">WORKFLOW LOKAL</text>
+<text x="200" y="1569" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">INITIAL BLIND PROMPT</text>
+<g class="node-description" lang="id">
+<text x="200" y="1616" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Prompt awal memuat soal, kelas, rubrik, kunci, solusi, opsi, dan gambar tanpa</text>
+<text x="200" y="1654" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">prediksi model atau vote lain.</text>
+</g>
+<g class="node-points">
+<circle cx="206.5" cy="1695.5" r="4.5" fill="#2266A4"/>
+<text x="228" y="1706" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Pilot dipilih deterministik dan distratifikasi.</text>
+<circle cx="206.5" cy="1747.5" r="4.5" fill="#2266A4"/>
+<text x="228" y="1758" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Schema output memaksa label, evidence dan rationale.</text>
+<circle cx="206.5" cy="1799.5" r="4.5" fill="#2266A4"/>
+<text x="228" y="1810" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Label agen, prediksi model dan distribusi disembunyikan.</text>
+<circle cx="206.5" cy="1851.5" r="4.5" fill="#2266A4"/>
+<text x="228" y="1862" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Bukti kurang menghasilkan abstain, bukan label default.</text>
+</g></g>
+<g id="node-B2" data-status="R">
+<rect x="1310" y="1452" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#7650A5" stroke-width="3"/>
+<rect x="1334" y="1472" width="74" height="48" rx="12" fill="#7650A5" stroke="#7650A5" stroke-width="3"/>
+<text x="1346" y="1506" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">B2</text>
+<rect x="2106.0" y="1472" width="219.0" height="48" rx="12" fill="#F0EBF8" stroke="#F0EBF8" stroke-width="3"/>
+<text x="2121.0" y="1504" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#7650A5">RISET / ADVISORY</text>
+<text x="1340" y="1569" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">THREE INITIAL RUNS</text>
+<g class="node-description" lang="id">
+<text x="1340" y="1616" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Gemini menilai soal dalam tiga panggilan terpisah; hasil awal tiap panggilan</text>
+<text x="1340" y="1654" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">tidak melihat keputusan panggilan lain.</text>
+</g>
+<g class="node-points">
+<circle cx="1346.5" cy="1695.5" r="4.5" fill="#7650A5"/>
+<text x="1368" y="1706" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Tiga panggilan menghasilkan JSON per head.</text>
+<circle cx="1346.5" cy="1747.5" r="4.5" fill="#7650A5"/>
+<text x="1368" y="1758" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Status konten dan kunci disertai bukti ringkas.</text>
+<circle cx="1346.5" cy="1799.5" r="4.5" fill="#7650A5"/>
+<text x="1368" y="1810" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Schema, error provider dan retry diperiksa.</text>
+<circle cx="1346.5" cy="1851.5" r="4.5" fill="#7650A5"/>
+<text x="1368" y="1862" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Checkpoint dapat dilanjutkan; run gagal bukan label.</text>
+</g></g>
+<g id="node-B3" data-status="R">
+<rect x="2450" y="1452" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#7650A5" stroke-width="3"/>
+<rect x="2474" y="1472" width="74" height="48" rx="12" fill="#7650A5" stroke="#7650A5" stroke-width="3"/>
+<text x="2486" y="1506" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">B3</text>
+<rect x="3246.0" y="1472" width="219.0" height="48" rx="12" fill="#F0EBF8" stroke="#F0EBF8" stroke-width="3"/>
+<text x="3261.0" y="1504" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#7650A5">RISET / ADVISORY</text>
+<text x="2480" y="1569" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">VOTING AND AI ADJUDICATION</text>
+<g class="node-description" lang="id">
+<text x="2480" y="1616" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Menerima kesepakatan penuh yang bebas masalah, lalu meminta AI meninjau</text>
+<text x="2480" y="1654" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">hasil yang berbeda atau bermasalah.</text>
+</g>
+<g class="node-points">
+<circle cx="2486.5" cy="1695.5" r="4.5" fill="#7650A5"/>
+<text x="2508" y="1706" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Keputusan 3–0 tanpa blocker diterima sebagai silver.</text>
+<circle cx="2486.5" cy="1747.5" r="4.5" fill="#7650A5"/>
+<text x="2508" y="1758" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Hasil 2–1, abstain atau konflik masuk adjudikasi.</text>
+<circle cx="2486.5" cy="1799.5" r="4.5" fill="#7650A5"/>
+<text x="2508" y="1810" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Riwayat initial runs tetap dipertahankan.</text>
+<circle cx="2486.5" cy="1851.5" r="4.5" fill="#7650A5"/>
+<text x="2508" y="1862" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Hidden chain-of-thought tidak disimpan.</text>
+</g></g>
+<g id="node-B4" data-status="R">
+<rect x="3590" y="1452" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#7650A5" stroke-width="3"/>
+<rect x="3614" y="1472" width="74" height="48" rx="12" fill="#7650A5" stroke="#7650A5" stroke-width="3"/>
+<text x="3626" y="1506" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">B4</text>
+<rect x="4386.0" y="1472" width="219.0" height="48" rx="12" fill="#F0EBF8" stroke="#F0EBF8" stroke-width="3"/>
+<text x="4401.0" y="1504" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#7650A5">RISET / ADVISORY</text>
+<text x="3620" y="1569" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">AUDIT AND SILVER FREEZE</text>
+<g class="node-description" lang="id">
+<text x="3620" y="1616" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Memeriksa kelengkapan label dan mengunci dataset dengan hash sebelum</text>
+<text x="3620" y="1654" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">hasilnya dibandingkan dengan IndoBERT.</text>
+</g>
+<g class="node-points">
+<circle cx="3626.5" cy="1695.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="1706" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Kelengkapan dan boundary distribution diaudit.</text>
+<circle cx="3626.5" cy="1747.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="1758" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">SHA-256 mengunci checkpoint dan provenance.</text>
+<circle cx="3626.5" cy="1799.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="1810" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Item tidak eligible dipisahkan dari training set.</text>
+<circle cx="3626.5" cy="1851.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="1862" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Prediksi model baru dibandingkan setelah lock.</text>
+</g></g>
+<text x="154" y="2093" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#496077">B4 menghasilkan silver terkunci. Agreement N=3 adalah self-consistency, bukan confidence terkalibrasi.</text>
+<text x="154" y="2185" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#142D46">C  |  INDOBERT TRAINING AND RESEARCH INFERENCE</text>
+<text x="154" y="2227" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Melatih IndoBERT dari silver terkunci untuk memprediksi karakteristik soal; model dan penggunaannya tetap berstatus riset.</text>
+<g id="node-C1" data-status="I">
+<rect x="170" y="2262" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#08786D" stroke-width="3"/>
+<rect x="194" y="2282" width="74" height="48" rx="12" fill="#08786D" stroke="#08786D" stroke-width="3"/>
+<text x="206" y="2316" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">C1</text>
+<rect x="989.015625" y="2282" width="195.984375" height="48" rx="12" fill="#E4F4EF" stroke="#E4F4EF" stroke-width="3"/>
+<text x="1004.015625" y="2314" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#08786D">KODE TERSEDIA</text>
+<text x="200" y="2379" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">SILVER SNAPSHOT AND SPLIT</text>
+<g class="node-description" lang="id">
+<text x="200" y="2426" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Membagi dataset silver tetap menjadi data latih, validasi, dan uji, tanpa</text>
+<text x="200" y="2464" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">membocorkan soal sekeluarga antarbagian.</text>
+</g>
+<g class="node-points">
+<circle cx="206.5" cy="2505.5" r="4.5" fill="#08786D"/>
+<text x="228" y="2516" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Gabungkan snapshot silver kelas yang lolos audit.</text>
+<circle cx="206.5" cy="2557.5" r="4.5" fill="#08786D"/>
+<text x="228" y="2568" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Split group-aware 70 / 15 / 15 secara deterministik.</text>
+<circle cx="206.5" cy="2609.5" r="4.5" fill="#08786D"/>
+<text x="228" y="2620" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Source, stimulus dan duplicate family tidak bocor.</text>
+<circle cx="206.5" cy="2661.5" r="4.5" fill="#08786D"/>
+<text x="228" y="2672" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Class support dan frozen test gate diperiksa.</text>
+</g></g>
+<g id="node-C2" data-status="I">
+<rect x="1310" y="2262" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#08786D" stroke-width="3"/>
+<rect x="1334" y="2282" width="74" height="48" rx="12" fill="#08786D" stroke="#08786D" stroke-width="3"/>
+<text x="1346" y="2316" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">C2</text>
+<rect x="2129.015625" y="2282" width="195.984375" height="48" rx="12" fill="#E4F4EF" stroke="#E4F4EF" stroke-width="3"/>
+<text x="2144.015625" y="2314" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#08786D">KODE TERSEDIA</text>
+<text x="1340" y="2379" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">JSON-TO-TEXT AND THREE HEADS</text>
+<g class="node-description" lang="id">
+<text x="1340" y="2426" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">JSON valid diubah menjadi teks kanonis sesuai manifest, ditokenisasi, lalu</text>
+<text x="1340" y="2464" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">dibaca IndoBERT oleh tiga kepala prediksi.</text>
+</g>
+<g class="node-points">
+<circle cx="1346.5" cy="2505.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="2516" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Fitur teks: metadata, stimulus, soal, opsi dan visual.</text>
+<circle cx="1346.5" cy="2557.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="2568" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Solution dan KKO masuk hanya jika representation memilihnya.</text>
+<circle cx="1346.5" cy="2609.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="2620" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">IndoBERT + LoRA menghasilkan representasi [CLS].</text>
+<circle cx="1346.5" cy="2661.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="2672" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Difficulty ordinal memakai grade embedding terpisah.</text>
+</g></g>
+<g id="node-C3" data-status="I">
+<rect x="2450" y="2262" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#08786D" stroke-width="3"/>
+<rect x="2474" y="2282" width="74" height="48" rx="12" fill="#08786D" stroke="#08786D" stroke-width="3"/>
+<text x="2486" y="2316" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">C3</text>
+<rect x="3269.015625" y="2282" width="195.984375" height="48" rx="12" fill="#E4F4EF" stroke="#E4F4EF" stroke-width="3"/>
+<text x="3284.015625" y="2314" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#08786D">KODE TERSEDIA</text>
+<text x="2480" y="2379" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">TRAINING AND CALIBRATION</text>
+<g class="node-description" lang="id">
+<text x="2480" y="2426" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Melatih model dan menyesuaikan probabilitasnya dengan data validasi, agar</text>
+<text x="2480" y="2464" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">prediksi dan tingkat keyakinan dapat dievaluasi.</text>
+</g>
+<g class="node-points">
+<circle cx="2486.5" cy="2505.5" r="4.5" fill="#08786D"/>
+<text x="2508" y="2516" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Loss multiclass dan cumulative ordinal digunakan.</text>
+<circle cx="2486.5" cy="2557.5" r="4.5" fill="#08786D"/>
+<text x="2508" y="2568" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Anti-collapse dan weakest-head macro-F1 diperiksa.</text>
+<circle cx="2486.5" cy="2609.5" r="4.5" fill="#08786D"/>
+<text x="2508" y="2620" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Temperature, confidence dan entropy dari validation.</text>
+<circle cx="2486.5" cy="2661.5" r="4.5" fill="#08786D"/>
+<text x="2508" y="2672" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Kalibrasi per kelas hanya jika support cukup.</text>
+</g></g>
+<g id="node-C4" data-status="R">
+<rect x="3590" y="2262" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#7650A5" stroke-width="3"/>
+<rect x="3614" y="2282" width="74" height="48" rx="12" fill="#7650A5" stroke="#7650A5" stroke-width="3"/>
+<text x="3626" y="2316" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">C4</text>
+<rect x="4386.0" y="2282" width="219.0" height="48" rx="12" fill="#F0EBF8" stroke="#F0EBF8" stroke-width="3"/>
+<text x="4401.0" y="2314" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#7650A5">RISET / ADVISORY</text>
+<text x="3620" y="2379" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">RESEARCH ARTIFACT</text>
+<g class="node-description" lang="id">
+<text x="3620" y="2426" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Mengemas model, konfigurasi, dan hasil evaluasi sebagai artefak berversi yang</text>
+<text x="3620" y="2464" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">hanya dapat dipakai melalui mode riset.</text>
+</g>
+<g class="node-points">
+<circle cx="3626.5" cy="2505.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="2516" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Adapter, heads, tokenizer dan manifest dikemas.</text>
+<circle cx="3626.5" cy="2557.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="2568" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Checksum, metrik dan calibration disimpan.</text>
+<circle cx="3626.5" cy="2609.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="2620" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Artifact silver tetap researchOnly dan unapproved.</text>
+<circle cx="3626.5" cy="2661.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="2672" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Inference riset membutuhkan opt-in eksplisit.</text>
+</g></g>
+<text x="154" y="2903" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#496077">C4 → D1 untuk pilot silver terisolasi. /v2/classify publik tetap 503 selama guard research-only aktif.</text>
+<text x="154" y="2995" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#142D46">D  |  SILVER PILOT DELIVERY</text>
+<text x="154" y="3037" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Merancang pilot silver terisolasi: peserta menerima soal melalui sesi, sedangkan server menjaga versi, jawaban, dan penilaian.</text>
+<g id="node-D1" data-status="T">
+<rect x="170" y="3072" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="194" y="3092" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="206" y="3126" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">D1</text>
+<rect x="880.015625" y="3092" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="895.015625" y="3124" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="200" y="3189" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">SILVER DELIVERY ADAPTER</text>
+<g class="node-description" lang="id">
+<text x="200" y="3236" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Adapter yang masih perlu dibangun agar soal silver dapat masuk pilot riset</text>
+<text x="200" y="3274" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">terisolasi dengan audit dan kebijakan akses.</text>
+</g>
+<g class="node-points">
+<circle cx="206.5" cy="3315.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="3326" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Tambahkan mode research-silver yang terisolasi.</text>
+<circle cx="206.5" cy="3367.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="3378" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Wajib audit hash, kunci, solusi dan version lineage.</text>
+<circle cx="206.5" cy="3419.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="3430" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Pisahkan ID, policy dan storage dari assessment resmi.</text>
+<circle cx="206.5" cy="3471.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="3482" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Jangan menghapus guard produksi secara global.</text>
+</g></g>
+<g id="node-D2" data-status="I">
+<rect x="1310" y="3072" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#08786D" stroke-width="3"/>
+<rect x="1334" y="3092" width="74" height="48" rx="12" fill="#08786D" stroke="#08786D" stroke-width="3"/>
+<text x="1346" y="3126" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">D2</text>
+<rect x="2129.015625" y="3092" width="195.984375" height="48" rx="12" fill="#E4F4EF" stroke="#E4F4EF" stroke-width="3"/>
+<text x="2144.015625" y="3124" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#08786D">KODE TERSEDIA</text>
+<text x="1340" y="3189" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">PARTICIPANT AND SESSION</text>
+<g class="node-description" lang="id">
+<text x="1340" y="3236" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Membuat akses peserta dan sesi miliknya. Komponen ini dapat dipakai pada</text>
+<text x="1340" y="3274" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">pilot silver setelah adapter D1 tersedia.</text>
+</g>
+<g class="node-points">
+<circle cx="1346.5" cy="3315.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="3326" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Operator membuat Bearer token per assessment.</text>
+<circle cx="1346.5" cy="3367.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="3378" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">SubjectHash dibentuk dari populasi dan kode peserta.</text>
+<circle cx="1346.5" cy="3419.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="3430" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Start idempotent; ownership dan expiry diperiksa.</text>
+<circle cx="1346.5" cy="3471.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="3482" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Akun siswa longitudinal masih target.</text>
+</g></g>
+<g id="node-D3" data-status="I">
+<rect x="2450" y="3072" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#08786D" stroke-width="3"/>
+<rect x="2474" y="3092" width="74" height="48" rx="12" fill="#08786D" stroke="#08786D" stroke-width="3"/>
+<text x="2486" y="3126" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">D3</text>
+<rect x="3269.015625" y="3092" width="195.984375" height="48" rx="12" fill="#E4F4EF" stroke="#E4F4EF" stroke-width="3"/>
+<text x="3284.015625" y="3124" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#08786D">KODE TERSEDIA</text>
+<text x="2480" y="3189" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">IMMUTABLE DELIVERY</text>
+<g class="node-description" lang="id">
+<text x="2480" y="3236" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Mengirim soal tanpa kunci dan membekukan susunan opsi untuk satu</text>
+<text x="2480" y="3274" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">percobaan, sehingga muat ulang tetap konsisten.</text>
+</g>
+<g class="node-points">
+<circle cx="2486.5" cy="3315.5" r="4.5" fill="#08786D"/>
+<text x="2508" y="3326" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Item fixed-form dikirim sesuai blueprint silver.</text>
+<circle cx="2486.5" cy="3367.5" r="4.5" fill="#08786D"/>
+<text x="2508" y="3378" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Opsi diacak dan public ID dibuat opaque.</text>
+<circle cx="2486.5" cy="3419.5" r="4.5" fill="#08786D"/>
+<text x="2508" y="3430" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Refresh mempertahankan delivery dan mapping.</text>
+<circle cx="2486.5" cy="3471.5" r="4.5" fill="#08786D"/>
+<text x="2508" y="3482" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Kunci, solusi dan reasoning tidak dikirim.</text>
+</g></g>
+<g id="node-D4" data-status="I">
+<rect x="3590" y="3072" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#08786D" stroke-width="3"/>
+<rect x="3614" y="3092" width="74" height="48" rx="12" fill="#08786D" stroke="#08786D" stroke-width="3"/>
+<text x="3626" y="3126" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">D4</text>
+<rect x="4409.015625" y="3092" width="195.984375" height="48" rx="12" fill="#E4F4EF" stroke="#E4F4EF" stroke-width="3"/>
+<text x="4424.015625" y="3124" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#08786D">KODE TERSEDIA</text>
+<text x="3620" y="3189" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">SERVER-SCORED RESPONSE</text>
+<g class="node-description" lang="id">
+<text x="3620" y="3236" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Server mencocokkan jawaban dengan versi soal yang diterima siswa dan</text>
+<text x="3620" y="3274" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">menyimpan skor tanpa menggandakan kiriman ulang.</text>
+</g>
+<g class="node-points">
+<circle cx="3626.5" cy="3315.5" r="4.5" fill="#08786D"/>
+<text x="3648" y="3326" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Identity dan correctness dihitung oleh server.</text>
+<circle cx="3626.5" cy="3367.5" r="4.5" fill="#08786D"/>
+<text x="3648" y="3378" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Benar 1, salah 0 dan skip null / NA.</text>
+<circle cx="3626.5" cy="3419.5" r="4.5" fill="#08786D"/>
+<text x="3648" y="3430" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Retry payload sama tidak membuat event baru.</text>
+<circle cx="3626.5" cy="3471.5" r="4.5" fill="#08786D"/>
+<text x="3648" y="3482" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Session selesai setelah semua item dijawab / skip.</text>
+</g></g>
+<text x="154" y="3713" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#496077">D1 masih perlu dibuat karena AssessmentStore aktif menolak snapshot silver. D2–D4 memakai komponen pilot yang sudah tersedia.</text>
+<text x="154" y="3805" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#142D46">E  |  CTT, IRT AND EMPIRICAL EVIDENCE</text>
+<text x="154" y="3847" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Mengolah jawaban siswa menjadi statistik tes klasik (CTT) dan, jika syarat data terpenuhi, estimasi teori respons butir (IRT).</text>
+<g id="node-E1" data-status="I">
+<rect x="170" y="3882" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#08786D" stroke-width="3"/>
+<rect x="194" y="3902" width="74" height="48" rx="12" fill="#08786D" stroke="#08786D" stroke-width="3"/>
+<text x="206" y="3936" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">E1</text>
+<rect x="989.015625" y="3902" width="195.984375" height="48" rx="12" fill="#E4F4EF" stroke="#E4F4EF" stroke-width="3"/>
+<text x="1004.015625" y="3934" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#08786D">KODE TERSEDIA</text>
+<text x="200" y="3999" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">SESSION CLEANING AND MATRIX</text>
+<g class="node-description" lang="id">
+<text x="200" y="4046" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Menyaring sesi selesai dan menyusun matriks siswa–versi soal; jawaban kosong</text>
+<text x="200" y="4084" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">tetap dibedakan dari jawaban salah.</text>
+</g>
+<g class="node-points">
+<circle cx="206.5" cy="4125.5" r="4.5" fill="#08786D"/>
+<text x="228" y="4136" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Pilih satu completed attempt per subject.</text>
+<circle cx="206.5" cy="4177.5" r="4.5" fill="#08786D"/>
+<text x="228" y="4188" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Window memakai completion time; attempt tidak dicampur.</text>
+<circle cx="206.5" cy="4229.5" r="4.5" fill="#08786D"/>
+<text x="228" y="4240" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Event invalid, mismatch dan rapid guess dikeluarkan.</text>
+<circle cx="206.5" cy="4281.5" r="4.5" fill="#08786D"/>
+<text x="228" y="4292" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Matriks siswa × versi memakai 0, 1 atau NA.</text>
+</g></g>
+<g id="node-E2" data-status="I">
+<rect x="1310" y="3882" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#08786D" stroke-width="3"/>
+<rect x="1334" y="3902" width="74" height="48" rx="12" fill="#08786D" stroke="#08786D" stroke-width="3"/>
+<text x="1346" y="3936" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">E2</text>
+<rect x="2129.015625" y="3902" width="195.984375" height="48" rx="12" fill="#E4F4EF" stroke="#E4F4EF" stroke-width="3"/>
+<text x="2144.015625" y="3934" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#08786D">KODE TERSEDIA</text>
+<text x="1340" y="3999" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">CTT AND READINESS GATES</text>
+<g class="node-description" lang="id">
+<text x="1340" y="4046" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Menghitung statistik tes klasik dan memeriksa kecukupan data; analisis IRT</text>
+<text x="1340" y="4084" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">menunggu jika syarat belum terpenuhi.</text>
+</g>
+<g class="node-points">
+<circle cx="1346.5" cy="4125.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="4136" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Hitung p, Wilson CI, discrimination dan KR-20.</text>
+<circle cx="1346.5" cy="4177.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="4188" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Periksa sample, outcomes, coverage dan desain terhubung.</text>
+<circle cx="1346.5" cy="4229.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="4240" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Missing tetap NA dan tidak diubah menjadi nol.</text>
+<circle cx="1346.5" cy="4281.5" r="4.5" fill="#08786D"/>
+<text x="1368" y="4292" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Assumption review diperlukan sebelum fit IRT.</text>
+</g></g>
+<g id="node-E3" data-status="R">
+<rect x="2450" y="3882" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#7650A5" stroke-width="3"/>
+<rect x="2474" y="3902" width="74" height="48" rx="12" fill="#7650A5" stroke="#7650A5" stroke-width="3"/>
+<text x="2486" y="3936" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">E3</text>
+<rect x="3246.0" y="3902" width="219.0" height="48" rx="12" fill="#F0EBF8" stroke="#F0EBF8" stroke-width="3"/>
+<text x="3261.0" y="3934" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#7650A5">RISET / ADVISORY</text>
+<text x="2480" y="3999" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">IRT FIT AND DIAGNOSTICS</text>
+<g class="node-description" lang="id">
+<text x="2480" y="4046" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Mengestimasi karakteristik soal dan kemampuan siswa pada skala lokal, lalu</text>
+<text x="2480" y="4084" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">memeriksa kecocokan model terhadap data.</text>
+</g>
+<g class="node-points">
+<circle cx="2486.5" cy="4125.5" r="4.5" fill="#7650A5"/>
+<text x="2508" y="4136" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Rasch 100×5; 2PL 300×10; 3PL 1000×20.</text>
+<circle cx="2486.5" cy="4177.5" r="4.5" fill="#7650A5"/>
+<text x="2508" y="4188" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Regularized MML dan quadrature pada theta N(0,1).</text>
+<circle cx="2486.5" cy="4229.5" r="4.5" fill="#7650A5"/>
+<text x="2508" y="4240" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Estimasi a, b, c, EAP, posterior SD dan information.</text>
+<circle cx="2486.5" cy="4281.5" r="4.5" fill="#7650A5"/>
+<text x="2508" y="4292" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Periksa convergence, bounds, infit, outfit dan Q3.</text>
+</g></g>
+<g id="node-E4" data-status="R">
+<rect x="3590" y="3882" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#7650A5" stroke-width="3"/>
+<rect x="3614" y="3902" width="74" height="48" rx="12" fill="#7650A5" stroke="#7650A5" stroke-width="3"/>
+<text x="3626" y="3936" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">E4</text>
+<rect x="4386.0" y="3902" width="219.0" height="48" rx="12" fill="#F0EBF8" stroke="#F0EBF8" stroke-width="3"/>
+<text x="4401.0" y="3934" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#7650A5">RISET / ADVISORY</text>
+<text x="3620" y="3999" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">IMMUTABLE EMPIRICAL SNAPSHOT</text>
+<g class="node-description" lang="id">
+<text x="3620" y="4046" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Menyimpan hasil analisis bersama jejak data dan kebijakan, agar hasil yang</text>
+<text x="3620" y="4084" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">sama dapat direproduksi dan diaudit.</text>
+</g>
+<g class="node-points">
+<circle cx="3626.5" cy="4125.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="4136" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Policy, matrix, sample hash dan exclusion disimpan.</text>
+<circle cx="3626.5" cy="4177.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="4188" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Input identik direplay; perubahan membuat snapshot baru.</text>
+<circle cx="3626.5" cy="4229.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="4240" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Hasil tetap research-only dan review-required.</text>
+<circle cx="3626.5" cy="4281.5" r="4.5" fill="#7650A5"/>
+<text x="3648" y="4292" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">EAP dibatasi untuk akses internal.</text>
+</g></g>
+<text x="154" y="4523" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#496077">E2 gate gagal → E4 dengan CTT dan status IRT waiting. E4 → F1 untuk feedback silver terkendali.</text>
+<text x="154" y="4615" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#142D46">F  |  CONTROLLED SILVER FEEDBACK</text>
+<text x="154" y="4657" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Memakai hasil analisis untuk menandai masalah, menahan versi berisiko, dan membentuk silver baru tanpa mengubah riwayat lama.</text>
+<g id="node-F1" data-status="R">
+<rect x="170" y="4692" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#7650A5" stroke-width="3"/>
+<rect x="194" y="4712" width="74" height="48" rx="12" fill="#7650A5" stroke="#7650A5" stroke-width="3"/>
+<text x="206" y="4746" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">F1</text>
+<rect x="966.0" y="4712" width="219.0" height="48" rx="12" fill="#F0EBF8" stroke="#F0EBF8" stroke-width="3"/>
+<text x="981.0" y="4744" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#7650A5">RISET / ADVISORY</text>
+<text x="200" y="4809" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">EMPIRICAL ROUTING</text>
+<g class="node-description" lang="id">
+<text x="200" y="4856" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Menandai soal yang perlu ditinjau berdasarkan respons siswa; statistik menjadi</text>
+<text x="200" y="4894" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">bukti pemeriksaan, bukan label pengganti.</text>
+</g>
+<g class="node-points">
+<circle cx="206.5" cy="4935.5" r="4.5" fill="#7650A5"/>
+<text x="228" y="4946" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Bandingkan intended dan empirical difficulty.</text>
+<circle cx="206.5" cy="4987.5" r="4.5" fill="#7650A5"/>
+<text x="228" y="4998" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Tandai sample lemah, misfit dan diskriminasi negatif.</text>
+<circle cx="206.5" cy="5039.5" r="4.5" fill="#7650A5"/>
+<text x="228" y="5050" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Periksa kunci, distraktor, populasi dan konten.</text>
+<circle cx="206.5" cy="5091.5" r="4.5" fill="#7650A5"/>
+<text x="228" y="5102" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Flag adalah evidence, bukan label pengganti.</text>
+</g></g>
+<g id="node-F2" data-status="T">
+<rect x="1310" y="4692" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="1334" y="4712" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="1346" y="4746" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">F2</text>
+<rect x="2020.015625" y="4712" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="2035.015625" y="4744" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="1340" y="4809" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">VERSION HOLD POLICY</text>
+<g class="node-description" lang="id">
+<text x="1340" y="4856" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Kebijakan target untuk menahan versi soal berisiko dari pilot berikutnya,</text>
+<text x="1340" y="4894" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">dengan alasan dan bukti yang tersimpan.</text>
+</g>
+<g class="node-points">
+<circle cx="1346.5" cy="4935.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="4946" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Policy research menahan versi berisiko dari pilot.</text>
+<circle cx="1346.5" cy="4987.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="4998" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Hold menyimpan alasan, snapshot dan versi policy.</text>
+<circle cx="1346.5" cy="5039.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="5050" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Delivery historis tidak ditulis ulang.</text>
+<circle cx="1346.5" cy="5091.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="5102" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Mode resmi tetap dipisahkan dari eksperimen silver.</text>
+</g></g>
+<g id="node-F3" data-status="L">
+<rect x="2450" y="4692" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#2266A4" stroke-width="3"/>
+<rect x="2474" y="4712" width="74" height="48" rx="12" fill="#2266A4" stroke="#2266A4" stroke-width="3"/>
+<text x="2486" y="4746" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">F3</text>
+<rect x="3233.0" y="4712" width="232.0" height="48" rx="12" fill="#E9F2FB" stroke="#E9F2FB" stroke-width="3"/>
+<text x="3248.0" y="4744" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#2266A4">WORKFLOW LOKAL</text>
+<text x="2480" y="4809" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">NEW SILVER BATCH</text>
+<g class="node-description" lang="id">
+<text x="2480" y="4856" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Mengirim soal yang direvisi ke penilaian blind dan audit baru, sehingga</text>
+<text x="2480" y="4894" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">pembaruan silver memiliki riwayat tersendiri.</text>
+</g>
+<g class="node-points">
+<circle cx="2486.5" cy="4935.5" r="4.5" fill="#2266A4"/>
+<text x="2508" y="4946" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Konten yang dikoreksi mendapat versi baru.</text>
+<circle cx="2486.5" cy="4987.5" r="4.5" fill="#2266A4"/>
+<text x="2508" y="4998" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Jalankan kembali blind N=3 dan adjudikasi AI.</text>
+<circle cx="2486.5" cy="5039.5" r="4.5" fill="#2266A4"/>
+<text x="2508" y="5050" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Audit dan hash baru wajib sebelum digunakan.</text>
+<circle cx="2486.5" cy="5091.5" r="4.5" fill="#2266A4"/>
+<text x="2508" y="5102" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Checkpoint dan snapshot lama tetap immutable.</text>
+</g></g>
+<g id="node-F4" data-status="L">
+<rect x="3590" y="4692" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#2266A4" stroke-width="3"/>
+<rect x="3614" y="4712" width="74" height="48" rx="12" fill="#2266A4" stroke="#2266A4" stroke-width="3"/>
+<text x="3626" y="4746" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">F4</text>
+<rect x="4373.0" y="4712" width="232.0" height="48" rx="12" fill="#E9F2FB" stroke="#E9F2FB" stroke-width="3"/>
+<text x="4388.0" y="4744" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#2266A4">WORKFLOW LOKAL</text>
+<text x="3620" y="4809" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">CHALLENGER MODEL CYCLE</text>
+<g class="node-description" lang="id">
+<text x="3620" y="4856" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Melatih calon model pengganti dari silver baru dan membandingkan hasil</text>
+<text x="3620" y="4894" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">evaluasinya dengan model sebelumnya.</text>
+</g>
+<g class="node-points">
+<circle cx="3626.5" cy="4935.5" r="4.5" fill="#2266A4"/>
+<text x="3648" y="4946" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Bangun snapshot silver versi berikutnya.</text>
+<circle cx="3626.5" cy="4987.5" r="4.5" fill="#2266A4"/>
+<text x="3648" y="4998" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Train, calibrate dan evaluate challenger.</text>
+<circle cx="3626.5" cy="5039.5" r="4.5" fill="#2266A4"/>
+<text x="3648" y="5050" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Bandingkan dengan baseline dan artifact sebelumnya.</text>
+<circle cx="3626.5" cy="5091.5" r="4.5" fill="#2266A4"/>
+<text x="3648" y="5102" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Tidak ada auto-retrain atau auto-publish.</text>
+</g></g>
+<text x="154" y="5333" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#496077">F2/F3 → B1 untuk blind silver batch baru; F4 → C1 untuk challenger model berikutnya.</text>
+<text x="154" y="5425" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#142D46">G  |  PER-STUDENT PERSONALIZATION</text>
+<text x="154" y="5467" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Target: memakai riwayat tiap siswa untuk mengenali kebutuhan belajar, memilih soal berikutnya, dan memperbarui profil bertahap.</text>
+<g id="node-G1" data-status="T">
+<rect x="170" y="5502" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="194" y="5522" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="206" y="5556" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">G1</text>
+<rect x="880.015625" y="5522" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="895.015625" y="5554" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="200" y="5619" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">LEARNER IDENTITY AND PROFILE</text>
+<g class="node-description" lang="id">
+<text x="200" y="5666" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Rancangan profil berversi yang menghubungkan akun siswa dengan riwayat</text>
+<text x="200" y="5704" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">jawaban dan bukti belajar miliknya.</text>
+</g>
+<g class="node-points">
+<circle cx="206.5" cy="5745.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="5756" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Akun longitudinal, sekolah, tenant dan izin akses.</text>
+<circle cx="206.5" cy="5797.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="5808" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Link berizin ke subjectHash dan riwayat session.</text>
+<circle cx="206.5" cy="5849.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="5860" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Respons D4 dan estimasi E4 memakai release policy.</text>
+<circle cx="206.5" cy="5901.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="5912" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Versi profil, evidence dan uncertainty disimpan.</text>
+</g></g>
+<g id="node-G2" data-status="T">
+<rect x="1310" y="5502" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="1334" y="5522" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="1346" y="5556" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">G2</text>
+<rect x="2020.015625" y="5522" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="2035.015625" y="5554" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="1340" y="5619" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">TOPIC-LEVEL DIAGNOSIS</text>
+<g class="node-description" lang="id">
+<text x="1340" y="5666" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Rancangan diagnosis untuk mengenali kekuatan dan kesulitan tiap topik,</text>
+<text x="1340" y="5704" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">disertai jumlah bukti dan ketidakpastian.</text>
+</g>
+<g class="node-points">
+<circle cx="1346.5" cy="5745.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="5756" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Gunakan pretest, kelas, topik dan prasyarat.</text>
+<circle cx="1346.5" cy="5797.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="5808" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Mastery sementara disertai jumlah bukti dan uncertainty.</text>
+<circle cx="1346.5" cy="5849.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="5860" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Theta global belum membuktikan mastery tiap topik.</text>
+<circle cx="1346.5" cy="5901.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="5912" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Data sedikit menghasilkan status provisional.</text>
+</g></g>
+<g id="node-G3" data-status="T">
+<rect x="2450" y="5502" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="2474" y="5522" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="2486" y="5556" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">G3</text>
+<rect x="3160.015625" y="5522" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="3175.015625" y="5554" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="2480" y="5619" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">CONSTRAINED ITEM SELECTOR</text>
+<g class="node-description" lang="id">
+<text x="2480" y="5666" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Rancangan pemilih soal yang menyaring kelayakan terlebih dahulu, lalu</text>
+<text x="2480" y="5704" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">menyesuaikan tantangan dengan kebutuhan siswa.</text>
+</g>
+<g class="node-points">
+<circle cx="2486.5" cy="5745.5" r="4.5" fill="#A35F0B"/>
+<text x="2508" y="5756" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Pool hanya memuat silver eligible dan non-held.</text>
+<circle cx="2486.5" cy="5797.5" r="4.5" fill="#A35F0B"/>
+<text x="2508" y="5808" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Filter objective, kelas, prasyarat dan exposure.</text>
+<circle cx="2486.5" cy="5849.5" r="4.5" fill="#A35F0B"/>
+<text x="2508" y="5860" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Tingkat tantangan mengikuti profil individual.</text>
+<circle cx="2486.5" cy="5901.5" r="4.5" fill="#A35F0B"/>
+<text x="2508" y="5912" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Policy version dan alasan pemilihan dicatat.</text>
+</g></g>
+<g id="node-G4" data-status="T">
+<rect x="3590" y="5502" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="3614" y="5522" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="3626" y="5556" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">G4</text>
+<rect x="4300.015625" y="5522" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="4315.015625" y="5554" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="3620" y="5619" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">ADAPTIVE PRACTICE LOOP</text>
+<g class="node-description" lang="id">
+<text x="3620" y="5666" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Rancangan siklus latihan: jawaban dinilai server, bukti belajar terkumpul, lalu</text>
+<text x="3620" y="5704" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">profil dan pilihan soal diperbarui.</text>
+</g>
+<g class="node-points">
+<circle cx="3626.5" cy="5745.5" r="4.5" fill="#A35F0B"/>
+<text x="3648" y="5756" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Scoring tetap dilakukan oleh server.</text>
+<circle cx="3626.5" cy="5797.5" r="4.5" fill="#A35F0B"/>
+<text x="3648" y="5808" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Profil diperbarui setelah beberapa evidence.</text>
+<circle cx="3626.5" cy="5849.5" r="4.5" fill="#A35F0B"/>
+<text x="3648" y="5860" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Feedback latihan dipisahkan dari measurement.</text>
+<circle cx="3626.5" cy="5901.5" r="4.5" fill="#A35F0B"/>
+<text x="3648" y="5912" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Perubahan profil tidak mengubah label silver item.</text>
+</g></g>
+<text x="154" y="6143" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#A35F0B">G4 → G2/G3 membentuk loop latihan. Selector adaptif terpisah dari fixed-form pilot.</text>
+<text x="154" y="6235" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#142D46">H  |  PRODUCT AND OPERATIONS</text>
+<text x="154" y="6277" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Target pengembangan paralel: pendampingan belajar, laporan individual, tes adaptif, serta layanan yang siap dioperasikan.</text>
+<g id="node-H1" data-status="T">
+<rect x="170" y="6312" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="194" y="6332" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="206" y="6366" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">H1</text>
+<rect x="880.015625" y="6332" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="895.015625" y="6364" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="200" y="6429" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">PRACTICE AND TUTORING</text>
+<g class="node-description" lang="id">
+<text x="200" y="6476" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Rancangan pendampingan belajar dengan penjelasan dan petunjuk sesuai</text>
+<text x="200" y="6514" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">kesulitan siswa, memakai konten tervalidasi.</text>
+</g>
+<g class="node-points">
+<circle cx="206.5" cy="6555.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="6566" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Penjelasan mengikuti evidence miskonsepsi.</text>
+<circle cx="206.5" cy="6607.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="6618" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Konten dan solusi yang digunakan harus tervalidasi.</text>
+<circle cx="206.5" cy="6659.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="6670" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Hint dan assisted attempt dicatat terpisah.</text>
+<circle cx="206.5" cy="6711.5" r="4.5" fill="#A35F0B"/>
+<text x="228" y="6722" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Setiap varian menjalani validasi dan versioning.</text>
+</g></g>
+<g id="node-H2" data-status="T">
+<rect x="1310" y="6312" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="1334" y="6332" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="1346" y="6366" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">H2</text>
+<rect x="2020.015625" y="6332" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="2035.015625" y="6364" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="1340" y="6429" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">INDIVIDUAL REPORTING</text>
+<g class="node-description" lang="id">
+<text x="1340" y="6476" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Rancangan laporan perkembangan per siswa yang menjelaskan capaian,</text>
+<text x="1340" y="6514" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">kebutuhan belajar, dan batas kepastian hasil.</text>
+</g>
+<g class="node-points">
+<circle cx="1346.5" cy="6555.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="6566" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Progress dan gap per topik disertai uncertainty.</text>
+<circle cx="1346.5" cy="6607.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="6618" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Akses siswa dan guru dibatasi ownership.</text>
+<circle cx="1346.5" cy="6659.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="6670" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Raw percentage paket berbeda tidak langsung setara.</text>
+<circle cx="1346.5" cy="6711.5" r="4.5" fill="#A35F0B"/>
+<text x="1368" y="6722" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">EAP lokal bukan percentile lintas populasi.</text>
+</g></g>
+<g id="node-H3" data-status="T">
+<rect x="2450" y="6312" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="2474" y="6332" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="2486" y="6366" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">H3</text>
+<rect x="3160.015625" y="6332" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="3175.015625" y="6364" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="2480" y="6429" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">CAT AND ADAPTIVE TESTING</text>
+<g class="node-description" lang="id">
+<text x="2480" y="6476" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Rancangan tes yang memilih soal dari bank terkalibrasi sesuai estimasi</text>
+<text x="2480" y="6514" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">kemampuan terkini dan aturan penghentian.</text>
+</g>
+<g class="node-points">
+<circle cx="2486.5" cy="6555.5" r="4.5" fill="#A35F0B"/>
+<text x="2508" y="6566" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Bank terkalibrasi membutuhkan release eksplisit.</text>
+<circle cx="2486.5" cy="6607.5" r="4.5" fill="#A35F0B"/>
+<text x="2508" y="6618" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Online theta, information dan stopping policy dibangun.</text>
+<circle cx="2486.5" cy="6659.5" r="4.5" fill="#A35F0B"/>
+<text x="2508" y="6670" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Blueprint, exposure dan dependencies dikendalikan.</text>
+<circle cx="2486.5" cy="6711.5" r="4.5" fill="#A35F0B"/>
+<text x="2508" y="6722" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">CAT, equating, linking dan DIF belum tersedia.</text>
+</g></g>
+<g id="node-H4" data-status="T">
+<rect x="3590" y="6312" width="1040" height="600" rx="22" fill="#FFFFFF" stroke="#A35F0B" stroke-width="3" stroke-dasharray="15 13"/>
+<rect x="3614" y="6332" width="74" height="48" rx="12" fill="#A35F0B" stroke="#A35F0B" stroke-width="3"/>
+<text x="3626" y="6366" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">H4</text>
+<rect x="4300.015625" y="6332" width="304.984375" height="48" rx="12" fill="#FFF2DA" stroke="#FFF2DA" stroke-width="3"/>
+<text x="4315.015625" y="6364" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#A35F0B">TARGET PENGEMBANGAN</text>
+<text x="3620" y="6429" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="35" font-weight="700" fill="#142D46">PRODUCTION OPERATIONS</text>
+<g class="node-description" lang="id">
+<text x="3620" y="6476" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">Rancangan layanan operasional dengan akses pengguna, penyimpanan</text>
+<text x="3620" y="6514" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="400" fill="#496077">bersama, pemantauan, dan pemulihan data.</text>
+</g>
+<g class="node-points">
+<circle cx="3626.5" cy="6555.5" r="4.5" fill="#A35F0B"/>
+<text x="3648" y="6566" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Bangun UI siswa, durable auth dan token lifecycle.</text>
+<circle cx="3626.5" cy="6607.5" r="4.5" fill="#A35F0B"/>
+<text x="3648" y="6618" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Gunakan shared transactional backend dan queue.</text>
+<circle cx="3626.5" cy="6659.5" r="4.5" fill="#A35F0B"/>
+<text x="3648" y="6670" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Tambahkan audit, monitoring, backup dan retention.</text>
+<circle cx="3626.5" cy="6711.5" r="4.5" fill="#A35F0B"/>
+<text x="3648" y="6722" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Validasi operasional memakai data nyata.</text>
+</g></g>
+<text x="154" y="6953" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#A35F0B">G4 → H1; G1/G2 → H2; released calibration + online selector → H3; shared backend → H4.</text>
+<rect x="150" y="7060" width="4500" height="690" rx="28" fill="#E6EDF6" stroke="#CCD8E6" stroke-width="3"/>
+<text x="190" y="7126" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#142D46">BOUNDARY, STORAGE DAN SYARAT VALIDITAS</text>
+<text x="190" y="7190" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Silver: label blind LLM N=3 + adjudikasi AI + audit hash. Artifact, delivery dan hasil empiris tetap diberi provenance riset.</text>
+<text x="190" y="7247" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Guard backend aktif masih menolak snapshot researchOnly pada AssessmentStore; D1 adalah adapter target yang harus dibuat secara terisolasi.</text>
+<text x="190" y="7304" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">SQLite lokal menyimpan assessment, peserta, session, delivery, response dan snapshot; MongoDB tetap menyimpan candidate/version bila dipakai.</text>
+<text x="190" y="7361" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">p CTT = performa populasi; b IRT = parameter item lokal; theta = estimasi individual lokal; intendedDifficulty = label awal relatif kelas.</text>
+<text x="190" y="7418" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Grade conditioning berbeda dari personalisasi: profil siswa dan selector adaptif tidak mengganti label silver item secara otomatis.</text>
+<text x="190" y="7475" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Calibration release, online scoring, CAT, mastery per topik, linking, DIF, varian, UI dan multi-tenant memerlukan validasi tersendiri.</text>
+<text x="190" y="7532" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">R1: F3 → B1 untuk blind silver baru. R2: F4 → C1 untuk challenger model. R3: G4 → G2/G3 untuk loop latihan target.</text>
+<text x="190" y="7589" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="29" font-weight="400" fill="#142D46">Referensi utama: dokumen 21 / 24 / 25 / 27. Detail lengkap dan boundary implementasi ada pada Markdown dokumen 28.</text>
+<text x="150" y="7860" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="30" font-weight="400" fill="#496077">SVG vektor editable + JPG 4800 × 7940  •  Dibangun lokal tanpa data pribadi siswa</text>
+</svg>

@@ -1,0 +1,59 @@
+rubric_version: math-rubric-3x4x3-v4-smp8-grade-aware
+scope: Matematika SMP kelas 8
+supported_grades: [8]
+status: research_advisory_requires_expert_review
+principle: Nilai tuntutan minimum penyelesaian relatif terhadap siswa kelas 8 dan materi pada soal, dengan bukti solusi, bukan panjang teks atau besar bilangan.
+
+grade_context: |
+  Gunakan konteks SMP kelas 8 dan subtopik sumber sebagai acuan kesempatan belajar.
+  Topik korpus mencakup pangkat bulat, bentuk akar dan bentuk baku, operasi rasional,
+  Teorema Pythagoras/tripel/segitiga istimewa dan penerapannya, jarak koordinat,
+  kesebangunan dan garis bagi, persamaan/pertidaksamaan linier satu variabel,
+  pemodelan aljabar, relasi/fungsi, korespondensi satu-satu, persamaan garis lurus
+  dan kemiringan, serta pemusatan/penyebaran data dan pemilihan diagram.
+  Materi berlabel pengayaan tidak otomatis Hard. Nyatakan prasyarat yang benar-benar
+  dipakai pada solusi minimum; jangan menganggap seluruh siswa telah menguasai
+  materi lanjutan di luar konteks soal. Abstain bila bukti tidak cukup.
+  Pangkat besar, akar, simbol variabel, koordinat negatif, dan faktorial tidak
+  otomatis Hard. Substitusi rumus familiar atau operasi langsung dapat Easy;
+  beberapa langkah rutin terkait/pemilihan prosedur dapat Medium; strategi
+  nonrutin, kendala saling terkait, generalisasi, atau pembuktian yang benar-benar
+  diperlukan dapat Hard. Kata "buktikan" bukan bukti tunggal reasoning/Hard.
+  Periksa hipotenusa, orientasi gambar, satuan, pertidaksamaan dan pembulatan jumlah
+  angkut, domain/kodomain, serta pengurutan data dan konvensi kuartil. Perbedaan
+  konvensi kuartil yang memengaruhi opsi harus dicatat sebagai persoalan konten.
+  Periksa karakter hasil ekstraksi yang rusak (misalnya simbol pengganti), simbol
+  operasi/sudut, tabel, dan gambar. Jangan menebak simbol atau data yang tidak
+  terbaca tanpa bukti yang cukup. Konflik kunci/ambigu atau visual kurang adalah
+  persoalan konten; jangan menaikkan difficulty hanya karena persoalan tersebut.
+  VerifiedMinimalSolution harus ringkas, maksimal 700 karakter, cukup untuk
+  membuktikan hasil. Rationale maksimal 700 karakter; tiap evidence span maksimal
+  260 karakter; visualTranscript maksimal 1800 karakter. Jika solusi tidak dapat
+  diverifikasi, nyatakan masalah/batas bukti secara ringkas tanpa mengarang solusi.
+
+mathCognitiveDomain:
+  knowing: Mengenali fakta atau menjalankan prosedur sangat langsung.
+  applying: Memilih dan menerapkan konsep/prosedur pada konteks rutin.
+  reasoning: Menentukan strategi nonrutin, mengintegrasikan hubungan, menyimpulkan, menggeneralisasi, atau membenarkan.
+knowledgeDimension:
+  factual: Fakta, istilah, simbol, dan elemen dasar.
+  conceptual: Hubungan, kategori, prinsip, dan struktur konsep.
+  procedural: Algoritme, teknik, metode, dan kriteria penggunaannya.
+  metacognitive: Pemilihan atau pemantauan strategi berpikir yang diminta secara eksplisit.
+intendedDifficulty:
+  Easy: Prosedur familiar dan langsung, satu keputusan utama, representasi familiar, dan beban rendah bagi kelas 8.
+  Medium: Beberapa langkah rutin yang terkait, pemilihan prosedur, atau perpindahan representasi bagi kelas 8.
+  Hard: Strategi nonrutin, banyak kendala saling terkait, justifikasi, atau integrasi representasi kompleks bagi kelas 8.
+  evidence_profile: [expectedPrerequisite, dependentSteps, routineStatus, strategySelection, representationTransfer, relevantInformationUnits, interactingConstraints, calculationLoad, scaffoldLevel, distractorQuality, gradeRelativeRationale]
+decision_rules:
+  - Reviewer blind tidak menerima prediksi IndoBERT, vote run lain, estimasi agen, konsensus, atau distribusi target.
+  - Label mengikuti solusi minimum dan bukti pada soal; kategori kosong tetap sah dicatat.
+  - Evidence profile wajib untuk klasifikasi difficulty, tetapi bukan penjumlahan skor otomatis.
+  - Run 3-0 diterima sebagai silver; ketidaksepakatan, abstain, dan masalah konten/kunci masuk adjudikasi AI terpisah.
+  - Intended difficulty tetap terpisah dari empirical difficulty CTT/IRT.
+content_verification:
+  answer_key_status: [verified, conflict, unverifiable]
+  rules:
+    - Status verified memerlukan verifiedAnswerKey dan verifiedMinimalSolution yang mendukungnya.
+    - Konflik kunci, visual tidak cukup, atau content concern tidak boleh menjadi training row.
+    - Label selalu advisory; keputusan ahli diperlukan sebelum gold atau publishing.

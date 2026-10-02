@@ -14,10 +14,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from app.llm.silver import (  # noqa: E402
-    RUBRIC_VERSION,
-    SILVER_PROMPT_VERSION,
+    SUPPORTED_SILVER_GRADES,
     build_silver_prompt,
     rubric_file_hash,
+    silver_rubric,
 )
 
 HEADS = ("mathCognitiveDomain", "knowledgeDimension", "intendedDifficulty")
@@ -40,6 +40,7 @@ def audit(
     grade: int,
     boundary_analysis: Path | None = None,
 ) -> dict:
+    rubric = silver_rubric(grade)
     questions = json.loads(source.read_text(encoding="utf-8"))
     silver = json.loads(checkpoint.read_text(encoding="utf-8"))
     records_by_id = silver.get("items") or {}
@@ -62,9 +63,10 @@ def audit(
     )
     checkpoint_source_matches = silver.get("sourceHash") == source_hash
     versions_match = bool(
-        silver.get("promptVersion") == SILVER_PROMPT_VERSION
-        and silver.get("rubricVersion") == RUBRIC_VERSION
-        and silver.get("rubricHash") == rubric_file_hash()
+        silver.get("promptVersion") == rubric.prompt_version
+        and silver.get("rubricVersion") == rubric.version
+        and silver.get("rubricHash") == rubric_file_hash(grade)
+        and silver.get("sourceGrade", grade) == grade
     )
 
     rendered = [build_silver_prompt(item, grade=grade) for item in questions]
@@ -213,11 +215,11 @@ def audit(
         "checkpointLockedByAudit": True,
         "grade": grade,
         "promptVersion": silver.get("promptVersion"),
-        "expectedPromptVersion": SILVER_PROMPT_VERSION,
+        "expectedPromptVersion": rubric.prompt_version,
         "rubricVersion": silver.get("rubricVersion"),
-        "expectedRubricVersion": RUBRIC_VERSION,
+        "expectedRubricVersion": rubric.version,
         "rubricHash": silver.get("rubricHash"),
-        "expectedRubricHash": rubric_file_hash(),
+        "expectedRubricHash": rubric_file_hash(grade),
         "expectedItemCount": expected_count,
         "itemCount": len(records),
         "missingQuestionIds": missing_ids,
@@ -272,7 +274,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)
-    parser.add_argument("--grade", type=int, choices=range(1, 7), required=True)
+    parser.add_argument("--grade", type=int, choices=SUPPORTED_SILVER_GRADES, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument(
         "--boundary-analysis",

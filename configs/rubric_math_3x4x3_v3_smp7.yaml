@@ -1,0 +1,49 @@
+rubric_version: math-rubric-3x4x3-v3-smp7-grade-aware
+scope: Matematika SMP kelas 7
+supported_grades: [7]
+status: research_advisory_requires_expert_review
+principle: Nilai tuntutan minimum penyelesaian relatif terhadap siswa kelas 7 dan materi pada soal, dengan bukti solusi, bukan panjang teks atau besar bilangan.
+
+grade_context: |
+  Gunakan konteks SMP kelas 7 dan subtopik sumber sebagai acuan kesempatan belajar.
+  Topik korpus mencakup bilangan bulat dan rasional, operasi bertanda dan pecahan,
+  faktor prima/KPK/FPB, rasio dan skala, laju satuan, bentuk dan pemodelan aljabar,
+  hubungan sudut/kesebangunan, serta pembacaan dan penyajian data/diagram.
+  Tuliskan prasyarat yang benar-benar dipakai pada solusi minimum. Jangan menganggap
+  seluruh siswa telah menguasai topik lanjutan di luar konteks soal; abstain bila
+  tuntutan materi atau informasi sumber tidak cukup jelas untuk penilaian kelas 7.
+  Bilangan negatif, pecahan, simbol variabel, atau notasi sudut tidak otomatis Hard.
+  Operasi langsung atau substitusi familiar dapat Easy; hubungan beberapa langkah
+  rutin atau perpindahan representasi dapat Medium; pemilihan strategi nonrutin,
+  kendala saling terkait, generalisasi, atau pembuktian yang benar-benar diperlukan
+  dapat Hard. Kata kerja seperti "jelaskan" bukan bukti tunggal reasoning/Hard.
+  Periksa tanda negatif, pembilang/penyebut, satuan, label sudut, skala, dan data
+  pada gambar. Konflik kunci, gambar tidak cukup, atau soal ambigu adalah persoalan
+  konten; jangan menaikkan difficulty hanya karena persoalan tersebut.
+
+mathCognitiveDomain:
+  knowing: Mengenali fakta atau menjalankan prosedur sangat langsung.
+  applying: Memilih dan menerapkan konsep/prosedur pada konteks rutin.
+  reasoning: Menentukan strategi nonrutin, mengintegrasikan hubungan, menyimpulkan, menggeneralisasi, atau membenarkan.
+knowledgeDimension:
+  factual: Fakta, istilah, simbol, dan elemen dasar.
+  conceptual: Hubungan, kategori, prinsip, dan struktur konsep.
+  procedural: Algoritme, teknik, metode, dan kriteria penggunaannya.
+  metacognitive: Pemilihan atau pemantauan strategi berpikir yang diminta secara eksplisit.
+intendedDifficulty:
+  Easy: Prosedur familiar dan langsung, satu keputusan utama, representasi familiar, dan beban rendah bagi kelas 7.
+  Medium: Beberapa langkah rutin yang terkait, pemilihan prosedur, atau perpindahan representasi bagi kelas 7.
+  Hard: Strategi nonrutin, banyak kendala saling terkait, justifikasi, atau integrasi representasi kompleks bagi kelas 7.
+  evidence_profile: [expectedPrerequisite, dependentSteps, routineStatus, strategySelection, representationTransfer, relevantInformationUnits, interactingConstraints, calculationLoad, scaffoldLevel, distractorQuality, gradeRelativeRationale]
+decision_rules:
+  - Reviewer blind tidak menerima prediksi IndoBERT, vote run lain, estimasi agen, konsensus, atau distribusi target.
+  - Label mengikuti solusi minimum dan bukti pada soal; kategori kosong tetap sah dicatat.
+  - Evidence profile wajib untuk klasifikasi difficulty, tetapi bukan penjumlahan skor otomatis.
+  - Run 3-0 diterima sebagai silver; ketidaksepakatan, abstain, dan masalah konten/kunci masuk adjudikasi AI terpisah.
+  - Intended difficulty tetap terpisah dari empirical difficulty CTT/IRT.
+content_verification:
+  answer_key_status: [verified, conflict, unverifiable]
+  rules:
+    - Status verified memerlukan verifiedAnswerKey dan verifiedMinimalSolution yang mendukungnya.
+    - Konflik kunci, visual tidak cukup, atau content concern tidak boleh menjadi training row.
+    - Label selalu advisory; keputusan ahli diperlukan sebelum gold atau publishing.

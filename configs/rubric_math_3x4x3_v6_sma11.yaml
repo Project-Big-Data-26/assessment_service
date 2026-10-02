@@ -1,0 +1,64 @@
+rubric_version: math-rubric-3x4x3-v6-sma11-grade-aware
+scope: Matematika SMA kelas 11
+supported_grades: [11]
+status: research_advisory_requires_expert_review
+principle: Nilai tuntutan minimum penyelesaian relatif terhadap siswa kelas 11 dan materi soal, dengan bukti solusi, bukan panjang teks atau besar bilangan.
+
+grade_context: |
+  Gunakan konteks SMA kelas 11 dan subtopik sumber sebagai acuan kesempatan belajar.
+  Topik korpus mencakup fungsi/komposisi/invers/domain-range, fungsi kuadrat
+  dan korespondensi satu-satu, lingkaran/busur/sudut pusat-keliling,
+  garis singgung/tali busur, volume tabung, diagram pencar, regresi linear,
+  analisis korelasi/koefisien determinasi dan pencilan.
+  Periksa urutan komposisi f(g(x)) vs perkalian f(x)g(x), keberadaan invers,
+  pembatasan domain/range, serta satuan dan informasi pada sumber.
+  Pada lingkaran, periksa diameter/jari-jari, busur yang dihadap,
+  posisi sudut pusat/keliling dan garis singgung dari gambar; jangan menebak
+  relasi geometris yang tidak dinyatakan atau tidak terlihat.
+  Pada regresi/korelasi, bedakan variabel bebas/terikat, slope/intersep,
+  korelasi dari sebab-akibat, serta r dari r^2 dan persen variansi dijelaskan.
+  Jangan menyimpulkan korelasi pasti hanya dari dugaan kontekstual tanpa data.
+  Komposisi, fungsi invers, simbol lingkaran, atau regresi tidak otomatis Hard.
+  Substitusi atau prosedur familiar dapat Easy relatif kelas 11; label mengikuti
+  tuntutan nyata soal, termasuk bukti yang diperlukan dan dukungan yang diberikan.
+  Nyatakan prasyarat yang benar-benar dipakai; jangan menganggap semua siswa
+  menguasai materi lanjutan di luar konteks soal. Abstain bila bukti tidak cukup.
+  Easy adalah prosedur familiar/langsung dengan beban rendah; Medium memerlukan
+  beberapa langkah rutin terkait/pemilihan prosedur/perpindahan representasi;
+  Hard memerlukan strategi nonrutin, kendala terkait, generalisasi, pembuktian,
+  atau integrasi representasi kompleks yang benar-benar dibutuhkan.
+  Kata kerja "jelaskan" atau "buktikan" bukan bukti tunggal reasoning/Hard.
+  Periksa kunci, data, satuan, karakter ekstraksi rusak, label/angka gambar,
+  dan pembulatan. Konflik kunci atau visual/data kurang adalah masalah konten;
+  jangan menaikkan difficulty karenanya atau mengarang informasi yang hilang.
+  verifiedMinimalSolution dan setiap rationale maksimal 700 karakter; tiap
+  evidence span maksimal 260 karakter; visualTranscript maksimal 1800 karakter.
+  Solusi harus ringkas dan cukup membuktikan hasil; bila tidak dapat diverifikasi,
+  nyatakan batas bukti secara ringkas tanpa mengarang solusi.
+
+mathCognitiveDomain:
+  knowing: Mengenali fakta atau menjalankan prosedur sangat langsung.
+  applying: Memilih dan menerapkan konsep/prosedur pada konteks rutin.
+  reasoning: Menentukan strategi nonrutin, mengintegrasikan hubungan, menyimpulkan, menggeneralisasi, atau membenarkan.
+knowledgeDimension:
+  factual: Fakta, istilah, simbol, dan elemen dasar.
+  conceptual: Hubungan, kategori, prinsip, dan struktur konsep.
+  procedural: Algoritme, teknik, metode, dan kriteria penggunaannya.
+  metacognitive: Pemilihan atau pemantauan strategi berpikir yang diminta secara eksplisit.
+intendedDifficulty:
+  Easy: Prosedur familiar dan langsung, satu keputusan utama, representasi familiar, dan beban rendah bagi kelas 11.
+  Medium: Beberapa langkah rutin terkait, pemilihan prosedur, atau perpindahan representasi bagi kelas 11.
+  Hard: Strategi nonrutin, banyak kendala terkait, justifikasi, atau integrasi representasi kompleks bagi kelas 11.
+  evidence_profile: [expectedPrerequisite, dependentSteps, routineStatus, strategySelection, representationTransfer, relevantInformationUnits, interactingConstraints, calculationLoad, scaffoldLevel, distractorQuality, gradeRelativeRationale]
+decision_rules:
+  - Reviewer blind tidak menerima prediksi IndoBERT, vote run lain, estimasi agen, konsensus, atau distribusi target.
+  - Label mengikuti solusi minimum dan bukti soal; kategori kosong tetap sah dicatat.
+  - Evidence profile wajib untuk difficulty, tetapi bukan penjumlahan skor otomatis.
+  - Run 3-0 diterima sebagai silver; ketidaksepakatan, abstain, atau masalah konten/kunci masuk adjudikasi AI terpisah.
+  - Intended difficulty tetap terpisah dari empirical difficulty CTT/IRT.
+content_verification:
+  answer_key_status: [verified, conflict, unverifiable]
+  rules:
+    - Status verified memerlukan verifiedAnswerKey dan verifiedMinimalSolution yang mendukungnya.
+    - Konflik kunci, visual kurang, atau content concern tidak boleh menjadi training row.
+    - Label selalu advisory; keputusan ahli diperlukan sebelum gold atau publishing.

@@ -1,4 +1,5 @@
 from copy import deepcopy
+import re
 
 import pytest
 
@@ -106,19 +107,40 @@ def test_grade_two_groups_keep_empty_categories_and_content_blockers():
         difficulty_groups(questions, decisions, 1)
 
 
-def test_grade_two_report_uses_checkpoint_grade_and_all_difficulty_links():
+@pytest.mark.parametrize("grade", [2, 7, 8, 9, 10, 11, 12])
+def test_report_uses_checkpoint_grade_and_all_difficulty_links(grade):
     summary = {
         "itemCount": 0, "advisoryLabelDistributions": {"intendedDifficulty": {}},
         "contentQualifiedAdvisoryLabelDistributions": {"intendedDifficulty": {}}, "routingCounts": {},
     }
     checkpoint = {
-        "sourceGrade": 2, "model": "test", "promptVersion": "blind", "rubricVersion": "grade-aware",
+        "sourceGrade": grade, "model": "test", "promptVersion": "blind", "rubricVersion": "grade-aware",
         "summary": {"successfulRuns": 0, "totalTokens": 0},
     }
     model = {"modelVersion": "test", "architectureVersion": "parallel-v1", "inputRepresentation": "metadata"}
     report = render_report([], [], summary, checkpoint, model)
-    assert "Validasi ulang soal kelas 2" in report
-    assert "rubrik kelas 2" in report
-    assert "rubrik kelas 1" not in report
+    assert f"Validasi ulang soal kelas {grade}" in report
+    assert f"rubrik kelas {grade}" in report
+    assert not re.search(r"\brubrik kelas 1\b", report)
     for label in ("Easy", "Medium", "Hard"):
         assert f"[{label}.json](difficulty/{label}.json)" in report
+    if grade >= 7:
+        level = "SMP" if grade <= 9 else "SMA"
+        assert f"rubrik {level} kelas {grade}" in report
+        assert "`out_of_scope`" in report and "`abstain`" in report
+
+
+def test_partial_report_clearly_marks_quota_stop_and_incomplete_distribution():
+    summary = {
+        "itemCount": 42, "advisoryLabelDistributions": {"intendedDifficulty": {}},
+        "contentQualifiedAdvisoryLabelDistributions": {"intendedDifficulty": {}}, "routingCounts": {},
+    }
+    checkpoint = {
+        "sourceGrade": 8, "model": "test", "promptVersion": "blind", "rubricVersion": "grade-aware",
+        "executionStatus": "blocked_provider_daily_quota",
+        "summary": {"successfulRuns": 8, "totalTokens": 0, "pendingAdjudication": 1},
+    }
+    model = {"modelVersion": "test", "architectureVersion": "parallel-v1", "inputRepresentation": "metadata"}
+    report = render_report([], [], summary, checkpoint, model)
+    assert "Batch belum selesai" in report and "8/126" in report
+    assert "kuota harian" in report and "Distribusi berikut masih sementara" in report

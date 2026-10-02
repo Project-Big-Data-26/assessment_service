@@ -1,0 +1,66 @@
+rubric_version: math-rubric-3x4x3-v6-sma12-grade-aware
+scope: Matematika SMA kelas 12
+supported_grades: [12]
+status: research_advisory_requires_expert_review
+principle: Nilai tuntutan minimum penyelesaian relatif terhadap siswa kelas 12 dan materi soal, dengan bukti solusi, bukan panjang teks atau besar bilangan.
+
+grade_context: |
+  Gunakan konteks SMA kelas 12 dan subtopik sumber sebagai acuan kesempatan belajar.
+  Topik korpus mencakup barisan/deret, bunga tunggal/majemuk, suku bunga,
+  investasi/anuitas, pinjaman dan angsuran, parameter investasi/pinjaman,
+  aturan pengisian tempat, permutasi/kombinasi dan penerapan, serta peluang
+  kejadian tunggal/majemuk, pengembalian dan peluang bersyarat.
+  Pada keuangan matematika, periksa bunga per bulan vs per tahun, lama periode,
+  konversi persen, bunga tunggal vs majemuk, pokok tetap vs anuitas, waktu setoran
+  awal/akhir periode, dan informasi tabel. Jangan menganggap istilah "pinjaman"
+  selalu berarti majemuk. Bila model bunga/arus kas tidak ditentukan dan dapat
+  mengubah jawaban, catat ambiguitas atau abstain, bukan memilih asumsi diam-diam.
+  Pada pencacahan, periksa apakah urutan penting, objek berulang, kapasitas mobil,
+  pengemudi tetap, syarat minimum/larangan, dan makna posisi yang dibedakan.
+  Pada peluang, periksa ruang sampel berurutan, independensi, pengembalian,
+  probabilitas bersyarat setelah perpindahan objek, dan tepat vs sedikitnya.
+  Periksa pola barisan yang kurang ditentukan serta grafik/bagan sumber.
+  Faktorial, anuitas, angka uang besar, atau cerita panjang tidak otomatis Hard.
+  Prosedur familiar dapat Easy; pemilihan/integrasi beberapa prosedur rutin
+  dapat Medium; syarat nonrutin yang saling terkait dapat Hard relatif kelas 12.
+  Nyatakan prasyarat yang benar-benar dipakai; jangan menganggap semua siswa
+  menguasai materi lanjutan di luar konteks soal. Abstain bila bukti tidak cukup.
+  Easy adalah prosedur familiar/langsung dengan beban rendah; Medium memerlukan
+  beberapa langkah rutin terkait/pemilihan prosedur/perpindahan representasi;
+  Hard memerlukan strategi nonrutin, kendala terkait, generalisasi, pembuktian,
+  atau integrasi representasi kompleks yang benar-benar dibutuhkan.
+  Kata kerja "jelaskan" atau "buktikan" bukan bukti tunggal reasoning/Hard.
+  Periksa kunci, data, satuan, karakter ekstraksi rusak, label/angka gambar,
+  dan pembulatan. Konflik kunci atau visual/data kurang adalah masalah konten;
+  jangan menaikkan difficulty karenanya atau mengarang informasi yang hilang.
+  verifiedMinimalSolution dan setiap rationale maksimal 700 karakter; tiap
+  evidence span maksimal 260 karakter; visualTranscript maksimal 1800 karakter.
+  Solusi harus ringkas dan cukup membuktikan hasil; bila tidak dapat diverifikasi,
+  nyatakan batas bukti secara ringkas tanpa mengarang solusi.
+
+mathCognitiveDomain:
+  knowing: Mengenali fakta atau menjalankan prosedur sangat langsung.
+  applying: Memilih dan menerapkan konsep/prosedur pada konteks rutin.
+  reasoning: Menentukan strategi nonrutin, mengintegrasikan hubungan, menyimpulkan, menggeneralisasi, atau membenarkan.
+knowledgeDimension:
+  factual: Fakta, istilah, simbol, dan elemen dasar.
+  conceptual: Hubungan, kategori, prinsip, dan struktur konsep.
+  procedural: Algoritme, teknik, metode, dan kriteria penggunaannya.
+  metacognitive: Pemilihan atau pemantauan strategi berpikir yang diminta secara eksplisit.
+intendedDifficulty:
+  Easy: Prosedur familiar dan langsung, satu keputusan utama, representasi familiar, dan beban rendah bagi kelas 12.
+  Medium: Beberapa langkah rutin terkait, pemilihan prosedur, atau perpindahan representasi bagi kelas 12.
+  Hard: Strategi nonrutin, banyak kendala terkait, justifikasi, atau integrasi representasi kompleks bagi kelas 12.
+  evidence_profile: [expectedPrerequisite, dependentSteps, routineStatus, strategySelection, representationTransfer, relevantInformationUnits, interactingConstraints, calculationLoad, scaffoldLevel, distractorQuality, gradeRelativeRationale]
+decision_rules:
+  - Reviewer blind tidak menerima prediksi IndoBERT, vote run lain, estimasi agen, konsensus, atau distribusi target.
+  - Label mengikuti solusi minimum dan bukti soal; kategori kosong tetap sah dicatat.
+  - Evidence profile wajib untuk difficulty, tetapi bukan penjumlahan skor otomatis.
+  - Run 3-0 diterima sebagai silver; ketidaksepakatan, abstain, atau masalah konten/kunci masuk adjudikasi AI terpisah.
+  - Intended difficulty tetap terpisah dari empirical difficulty CTT/IRT.
+content_verification:
+  answer_key_status: [verified, conflict, unverifiable]
+  rules:
+    - Status verified memerlukan verifiedAnswerKey dan verifiedMinimalSolution yang mendukungnya.
+    - Konflik kunci, visual kurang, atau content concern tidak boleh menjadi training row.
+    - Label selalu advisory; keputusan ahli diperlukan sebelum gold atau publishing.

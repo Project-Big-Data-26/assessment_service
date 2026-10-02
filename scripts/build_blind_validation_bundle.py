@@ -24,6 +24,7 @@ from app.classification.v2.contracts import HEAD_LABELS, V2ClassificationRequest
 from app.classification.v2.kko import detect_kko  # noqa: E402
 from app.classification.v2.runtime import V2ClassifierRuntime  # noqa: E402
 from app.classification.v2.serializer import canonical_json_hash, serialize_question  # noqa: E402
+from app.llm.silver import silver_rubric  # noqa: E402
 from scripts.build_validation_bundle_kelas1 import structural_validation  # noqa: E402
 
 HEADS = tuple(HEAD_LABELS)
@@ -106,8 +107,37 @@ def difficulty_groups(questions: list[dict], decisions: list[dict], grade: int) 
     }
 
 
+def batch_completion_note(checkpoint: dict, item_count: int) -> str:
+    successful = int(checkpoint["summary"]["successfulRuns"])
+    expected = item_count * 3
+    pending = int(checkpoint["summary"].get("pendingAdjudication", 0))
+    if successful >= expected and not pending:
+        return ""
+    reason = (
+        " Provider berhenti karena kuota harian; checkpoint kerja dapat dilanjutkan saat kuota tersedia."
+        if checkpoint.get("executionStatus") in ("blocked_provider_daily_quota", "waiting_provider_daily_quota") else ""
+    )
+    return (
+        f"**Batch belum selesai:** {successful}/{expected} run awal sukses; "
+        f"{pending} item tercatat membutuhkan adjudikasi setelah run lengkap. "
+        f"Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.{reason}"
+    )
+
+
 def render_report(questions, decisions, summary, checkpoint, model, *, output_dir=None) -> str:
     grade = int(checkpoint["sourceGrade"])
+    rubric = silver_rubric(grade)
+    beyond_sd = rubric.education_level != "SD"
+    diagnostic_overview = (
+        f"Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Model SD berada di luar cakupan kelas {grade}, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind."
+        if beyond_sd else
+        "Checkpoint dikunci dengan SHA-256 sebelum inferensi IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Prediksi model lama dipakai untuk menunjukkan ketidaksepakatan; tidak diberikan kembali ke Gemini."
+    )
+    probability_overview = (
+        f"Untuk kelas {grade}, encoder dan head IndoBERT tidak dijalankan karena scope model hanya kelas 1–6. Probabilitas kosong, label/confidence/entropy null, dan action abstain berasal dari pemeriksaan scope runtime. Suara Gemini adalah bukti penilaian advisory, bukan probabilitas IndoBERT."
+        if beyond_sd else
+        "Encoder menghasilkan representasi [CLS], lalu tiga head menghasilkan logits. Probabilitas adalah pᵢ = exp(zᵢ/T) / Σⱼ exp(zⱼ/T), dengan temperature sesuai manifest. Confidence = max(pᵢ). Entropy H = −Σᵢ pᵢ ln(pᵢ) / ln(K). Probabilitas, confidence, entropy, dan action di bawah berasal dari inferensi lokal; tidak dibuat oleh Gemini."
+    )
     lines = [
         f"# Validasi ulang soal kelas {grade} — Gemini blind N=3 dan diagnostik IndoBERT",
         "",
@@ -115,7 +145,7 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
         "",
         f"Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas {grade} tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan bukan keputusan ahli manusia.",
         "",
-        "Checkpoint dikunci dengan SHA-256 sebelum inferensi IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Prediksi model lama dipakai untuk menunjukkan ketidaksepakatan; tidak diberikan kembali ke Gemini.",
+        diagnostic_overview,
         "",
         f"Jumlah soal: {summary['itemCount']}; distribusi label advisory: `{json.dumps(summary['advisoryLabelDistributions'], ensure_ascii=False)}`.",
         f"Distribusi hanya pada soal tanpa blocker konten: `{json.dumps(summary['contentQualifiedAdvisoryLabelDistributions'], ensure_ascii=False)}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.",
@@ -137,11 +167,19 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
         "",
         "## Perhitungan yang dipakai",
         "",
-        "Encoder menghasilkan representasi [CLS], lalu tiga head menghasilkan logits. Probabilitas adalah pᵢ = exp(zᵢ/T) / Σⱼ exp(zⱼ/T), dengan temperature sesuai manifest. Confidence = max(pᵢ). Entropy H = −Σᵢ pᵢ ln(pᵢ) / ln(K). Probabilitas, confidence, entropy, dan action di bawah berasal dari inferensi lokal; tidak dibuat oleh Gemini.",
+        probability_overview,
         "",
         "Suara awal LLM dihitung dari label yang benar-benar diberikan tiap run; abstain tidak menjadi suara kelas. Policy saat ini menerima 3–0 langsung dan meminta adjudikasi untuk kasus lainnya. Majority awal minimal 2/3 dicatat sebagai bukti, bukan confidence probabilistik. Label adjudikasi yang berbeda dari mayoritas awal tetap disimpan dengan alasan dan tidak disamarkan menjadi voting 3–0.",
         "",
     ]
+    completion_note = batch_completion_note(checkpoint, summary["itemCount"])
+    if completion_note:
+        lines[2:2] = [completion_note, ""]
+    if beyond_sd:
+        lines.extend([
+            f"Model IndoBERT lama hanya mendukung SD kelas 1–6. Untuk kelas {grade}, diagnostik mengembalikan `out_of_scope` dan `abstain`: label, confidence, dan entropy null serta probabilitas kosong. Label advisory mengikuti Gemini blind dengan rubrik {rubric.education_level} kelas {grade}. Tidak ada inferensi SD yang dipaksakan sebagai prediksi {rubric.education_level}.",
+            "",
+        ])
     for index, (q, d) in enumerate(zip(questions, decisions), 1):
         llm = d["llmAdvisory"]
         lines.extend([f"## {index}. Soal `{q['questionId']}`", "", md(q["stem"]), "", "| Opsi | Isi |", "|---|---|"])
@@ -197,7 +235,13 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
             if profile:
                 lines.extend(["", "Profil difficulty hasil adjudikasi:", "", "| Parameter | Nilai |", "|---|---|"])
                 lines.extend(f"| {md(k)} | {md(v)} |" for k, v in profile.items())
-        lines.extend(["", "### 4. Diagnostik IndoBERT setelah label blind dikunci", "", f"Model membaca representation `{model['inputRepresentation']}`; token input {d['featureManifest']['untruncatedTokenCount']}/{model['maxLength']}; truncation: `{d['featureManifest']['wouldTruncate']}`.", "", "| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |", "|---|---|---|---:|---:|---|"])
+        scope = d["indobert"]["scopeStatus"]
+        diagnostic_note = (
+            f"Scope model: `{scope}`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit."
+            if scope == "out_of_scope" else
+            f"Model membaca representation `{model['inputRepresentation']}`; token input {d['featureManifest']['untruncatedTokenCount']}/{model['maxLength']}; truncation: `{d['featureManifest']['wouldTruncate']}`."
+        )
+        lines.extend(["", "### 4. Diagnostik IndoBERT setelah label blind dikunci", "", diagnostic_note, "", "| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |", "|---|---|---|---:|---:|---|"])
         for head, h in d["indobert"]["heads"].items():
             ps = h["probabilities"]
             confidence = "—" if h["calibratedConfidence"] is None else f"{h['calibratedConfidence']:.6f}"
@@ -208,7 +252,8 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
             if ps:
                 entropy_sum = -sum(p * math.log(p) for p in ps.values() if p)
                 lines.append(f"\n{TITLES[head]}: Σp = {sum(ps.values()):.8f}; confidence = max(p) = {max(ps.values()):.6f}; −Σp ln(p) = {entropy_sum:.6f}; H = {entropy_sum:.6f}/ln({len(ps)}) = {h['normalizedEntropy']:.6f}; T = {model['calibration'][head]['temperature']:.6f}.\n")
-        lines.extend(["", "<details><summary>Input sebenarnya yang dibaca model</summary>", "", "```text", d["featureManifest"]["serializedInput"], "```", "", "</details>", "", "### 5. Keputusan batch", "", f"Label advisory blind: `{json.dumps(llm['advisoryLabels'], ensure_ascii=False)}`. Routing: `{d['finalRouting']}`.", f"Status konten: `{llm['contentAssessment']['status']}`. Catatan konten: {md('; '.join(llm['contentAssessment']['concerns']))}.", f"Perbedaan model dan blind: `{json.dumps(d['modelComparison'], ensure_ascii=False)}`.", "Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.", ""])
+        input_title = "Input terserialisasi untuk audit; encoder tidak dijalankan" if scope == "out_of_scope" else "Input sebenarnya yang dibaca model"
+        lines.extend(["", f"<details><summary>{input_title}</summary>", "", "```text", d["featureManifest"]["serializedInput"], "```", "", "</details>", "", "### 5. Keputusan batch", "", f"Label advisory blind: `{json.dumps(llm['advisoryLabels'], ensure_ascii=False)}`. Routing: `{d['finalRouting']}`.", f"Status konten: `{llm['contentAssessment']['status']}`. Catatan konten: {md('; '.join(llm['contentAssessment']['concerns']))}.", f"Perbedaan model dan blind: `{json.dumps(d['modelComparison'], ensure_ascii=False)}`.", "Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.", ""])
     return "\n".join(lines)
 
 
@@ -224,8 +269,9 @@ def main() -> int:
         raise FileExistsError("refusing to overwrite an existing blind validation bundle")
     source, checkpoint, audit = load(args.source), load(args.checkpoint), load(args.audit)
     grade = int(checkpoint["sourceGrade"])
-    if grade not in range(1, 7) or audit["grade"] != grade:
-        raise ValueError("checkpoint/audit grade mismatch or outside SD scope")
+    rubric = silver_rubric(grade)
+    if audit["grade"] != grade:
+        raise ValueError("checkpoint/audit grade mismatch")
     if checkpoint.get("requestedRuns") != 3:
         raise ValueError("blind validation bundle requires N=3")
     if any(item.get("kelas_id") not in (None, grade) for item in source):
@@ -258,7 +304,7 @@ def main() -> int:
         content_hash = canonical_json_hash(content)
         request = V2ClassificationRequest(
             questionId=diagnostic_qid, contentVersion=2, contentHash=content_hash,
-            grade=grade, topic=f"Matematika SD Kelas {grade}", subtopic=item.get("subbab_id"),
+            grade=grade, topic=f"Matematika {rubric.education_level} Kelas {grade}", subtopic=item.get("subbab_id"),
             questionType="multiple_choice", stimulus=item.get("stimulus"), stem=item["soal_text"],
             options=[{"label": o["option_id"], "text": o["text"]} for o in item["options"]],
             verifiedMinimalSolution=solution, detectedKko=detect_kko(item["soal_text"]), visualTranscript=transcript,
@@ -327,6 +373,15 @@ def main() -> int:
     (args.output_dir / "LAPORAN_VALIDASI.md").write_text(render_report(questions, decisions, summary, checkpoint, model, output_dir=args.output_dir), encoding="utf-8")
     readme = f"# Hasil validasi ulang kelas 1\n\nModel LLM: `{checkpoint['model']}`; metode blind N=3, rubrik kelas sasaran, verifikasi kunci/solusi, dan adjudikasi AI bila diperlukan. Label terkunci sebelum diagnostik IndoBERT.\n\nGunakan [validation_results.json](validation_results.json) untuk data hasil dan `items[].llmAdvisory.advisoryLabels` bersama `finalRouting`. Baca [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk soal, perhitungan confidence/entropy, tiga suara, profil difficulty, adjudikasi, serta hasil akhir per soal. [questions.json](questions.json) memuat sumber dan spesifikasi jawaban terbatas; [indobert_predictions.json](indobert_predictions.json) memuat diagnostik model lama.\n\nDistribusi: `{json.dumps(summary['advisoryLabelDistributions'], ensure_ascii=False)}`. Routing: `{json.dumps(summary['routingCounts'], ensure_ascii=False)}`.\n\nToken sukses tercatat: {checkpoint['summary']['totalTokens']:,}; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Gold ahli tetap null; CTT/IRT belum dihitung. IndoBERT belum dilatih ulang dan hasil diagnostiknya tidak menentukan label blind.\n\nAudit tidak menyetujui ekspansi/training bila gate belum lolos. Gate batch: `{json.dumps(audit['gates'], ensure_ascii=False)}`.\n"
     readme = readme.replace("# Hasil validasi ulang kelas 1", f"# Hasil validasi ulang kelas {grade}")
+    completion_note = batch_completion_note(checkpoint, len(source))
+    if completion_note:
+        readme = readme.replace(
+            f"# Hasil validasi ulang kelas {grade}\n",
+            f"# Hasil validasi ulang kelas {grade}\n\n{completion_note}\n",
+            1,
+        )
+    if rubric.education_level != "SD":
+        readme += f"\nKelas {grade} memakai rubrik {rubric.education_level}. Model IndoBERT lama berada di luar cakupan: semua head abstain dengan label/confidence/entropy null dan probabilitas kosong. Tidak ada prediksi atau perbandingan ketepatan IndoBERT yang sah untuk grade ini; label akhir mengikuti penilaian blind Gemini.\n"
     readme += "\nKelompok difficulty tersedia di [difficulty_groups.json](difficulty_groups.json), [Easy](difficulty/Easy.json), [Medium](difficulty/Medium.json), dan [Hard](difficulty/Hard.json). `contentQualified` hanya menandai soal tanpa blocker konten; seluruh soal tetap menunggu ahli. Kategori kosong tetap diekspor. Item tanpa keputusan tersedia di [undecided](difficulty/undecided.json).\n"
     (args.output_dir / "README.md").write_text(readme, encoding="utf-8")
     filenames = ["questions.json", "validation_results.json", "indobert_predictions.json", "LAPORAN_VALIDASI.md", "README.md", "difficulty_groups.json", *[f"difficulty/{label}.json" for label in grouped["groups"]]]

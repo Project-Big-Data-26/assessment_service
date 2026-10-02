@@ -6,12 +6,14 @@ import hashlib
 import json
 import time
 from collections import Counter
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Annotated, Any, Literal
 
 from google import genai
 from google.genai import types
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator
+import yaml
 
 from app.classification.v2.contracts import (
     CognitiveDomain,
@@ -26,6 +28,53 @@ SILVER_PROMPT_VERSION = "gemini-silver-math-3x4x3-v4-blind-key-verified"
 SILVER_ADJUDICATION_PROMPT_VERSION = "gemini-silver-math-3x4x3-v4-adjudication"
 RUBRIC_VERSION = "math-rubric-3x4x3-v2-grade-aware"
 RUBRIC_PATH = Path(__file__).resolve().parents[2] / "configs/rubric_math_3x4x3_v2.yaml"
+SUPPORTED_SILVER_GRADES = tuple(range(1, 13))
+
+
+@dataclass(frozen=True)
+class SilverRubric:
+    prompt_version: str
+    adjudication_version: str
+    version: str
+    path: Path
+    education_level: str
+
+
+def silver_rubric(grade: int = 1) -> SilverRubric:
+    if grade in range(1, 7):
+        return SilverRubric(
+            SILVER_PROMPT_VERSION, SILVER_ADJUDICATION_PROMPT_VERSION,
+            RUBRIC_VERSION, RUBRIC_PATH, "SD",
+        )
+    if grade == 7:
+        return SilverRubric(
+            "gemini-silver-math-3x4x3-v5-blind-smp7-key-verified",
+            "gemini-silver-math-3x4x3-v5-adjudication-smp7",
+            "math-rubric-3x4x3-v3-smp7-grade-aware",
+            RUBRIC_PATH.with_name("rubric_math_3x4x3_v3_smp7.yaml"), "SMP",
+        )
+    if grade == 8:
+        return SilverRubric(
+            "gemini-silver-math-3x4x3-v6-blind-smp8-key-verified",
+            "gemini-silver-math-3x4x3-v6-adjudication-smp8",
+            "math-rubric-3x4x3-v4-smp8-grade-aware",
+            RUBRIC_PATH.with_name("rubric_math_3x4x3_v4_smp8.yaml"), "SMP",
+        )
+    if grade == 9:
+        return SilverRubric(
+            "gemini-silver-math-3x4x3-v7-blind-smp9-key-verified",
+            "gemini-silver-math-3x4x3-v7-adjudication-smp9",
+            "math-rubric-3x4x3-v5-smp9-grade-aware",
+            RUBRIC_PATH.with_name("rubric_math_3x4x3_v5_smp9.yaml"), "SMP",
+        )
+    if grade in (10, 11, 12):
+        return SilverRubric(
+            f"gemini-silver-math-3x4x3-v8-blind-sma{grade}-key-verified",
+            f"gemini-silver-math-3x4x3-v8-adjudication-sma{grade}",
+            f"math-rubric-3x4x3-v6-sma{grade}-grade-aware",
+            RUBRIC_PATH.with_name(f"rubric_math_3x4x3_v6_sma{grade}.yaml"), "SMA",
+        )
+    raise ValueError("silver review supports grade 1-6 (SD), grade 7-9 (SMP), and grade 10-12 (SMA)")
 
 ShortText = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=700)]
 EvidenceText = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=260)]
@@ -151,8 +200,7 @@ class SilverAdjudicationResult(BaseModel):
 
 
 def build_silver_prompt(item: dict[str, Any], *, grade: int = 1) -> str:
-    if not 1 <= grade <= 6:
-        raise ValueError("silver SD review requires grade 1-6")
+    rubric = silver_rubric(grade)
     options = "\n".join(
         f"{option['option_id']}. {option['text']} | catatan sumber: {option.get('alasan') or '-'}"
         for option in item["options"]
@@ -163,7 +211,7 @@ def build_silver_prompt(item: dict[str, Any], *, grade: int = 1) -> str:
         if item.get("image_url") else
         "Tidak ada gambar terlampir; visualTranscript harus null."
     )
-    return f"""Klasifikasikan satu soal matematika kelas {grade} sebagai SILVER LABEL penelitian awal.
+    prompt = f"""Klasifikasikan satu soal matematika kelas {grade} sebagai SILVER LABEL penelitian awal.
 
 PENILAIAN INI BLIND. Jangan menebak atau meminta prediksi model, vote reviewer lain,
 konsensus, distribusi label, atau estimasi kesulitan agen. Informasi tersebut sengaja tidak diberikan.
@@ -208,10 +256,19 @@ Pilihan dan catatan ekstraksi:
 
 Kunci pada sumber: {item.get('jawaban') or '-'}
 """
+    if rubric.education_level in ("SMP", "SMA"):
+        configuration = yaml.safe_load(rubric.path.read_text(encoding="utf-8"))
+        context = configuration["grade_context"]
+        prompt = prompt.replace(
+            "Gunakan rubrik berikut.",
+            f"Jenjang sasaran: {rubric.education_level} kelas {grade}.\n{context}\n\nGunakan rubrik berikut.",
+            1,
+        )
+    return prompt
 
 
-def rubric_file_hash() -> str:
-    return hashlib.sha256(RUBRIC_PATH.read_bytes()).hexdigest()
+def rubric_file_hash(grade: int = 1) -> str:
+    return hashlib.sha256(silver_rubric(grade).path.read_bytes()).hexdigest()
 
 
 def provider_quota_details(exc: Exception) -> dict[str, Any]:

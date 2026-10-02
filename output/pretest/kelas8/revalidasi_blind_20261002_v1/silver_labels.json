@@ -1,0 +1,724 @@
+{
+  "schemaVersion": "gemini-silver-labels-v3-blind-key-verified",
+  "source": "output/pretest/kelas8/soal_pretest_db.json",
+  "sourceHash": "a0e4625d81e79745117847233166fb745925d664ff5969f7fb5e47d6f3bc90a8",
+  "sourceGrade": 8,
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "promptVersion": "gemini-silver-math-3x4x3-v6-blind-smp8-key-verified",
+  "adjudicationPromptVersion": "gemini-silver-math-3x4x3-v6-adjudication-smp8",
+  "rubricVersion": "math-rubric-3x4x3-v4-smp8-grade-aware",
+  "rubricHash": "c32c97b5617645fa299e0b746313d96576f83bfaab5c33ef063ad17e6a2846d4",
+  "educationLevel": "SMP",
+  "requestedRuns": 3,
+  "createdAt": "2026-10-02T13:22:33.586443+00:00",
+  "updatedAt": "2026-10-02T13:23:50.849080+00:00",
+  "items": {
+    "93921cd412ef4ff1b28e79c7": {
+      "index": 1,
+      "questionId": "93921cd412ef4ff1b28e79c7",
+      "inputHash": "fb131f54cbfdee7df511876febff2c8efc383f69d15b523b4dc1aafadb94a1fc",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Rahagi memiliki angka 4. Pasangan yang mungkin adalah Byoma(6), Pranawa(5), Lestari(7), Bathari(8), Dwi(3). Kita membandingkan 4^x atau x^4 untuk setiap x. Pasangan dengan Bathari(8) menghasilkan 4^8 = 65.536 atau 8^4 = 4.096. Nilai terbesar adalah 65.536.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Siapa yang harus diajak berpasangan oleh Rahagi agar kelompoknya menghasilkan angka terbesar jika angka Rahagi dipangkatkan dengan pasangannya atau sebaliknya?"
+              ],
+              "rationale": "Siswa perlu memahami konsep perpangkatan dan membandingkan hasil operasi bilangan berpangkat untuk menentukan nilai terbesar, yang merupakan penerapan konsep dalam situasi rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "angka Rahagi dipangkatkan dengan pasangannya atau sebaliknya"
+              ],
+              "rationale": "Siswa menggunakan prinsip operasi perpangkatan (konseptual) untuk membandingkan hasil dari berbagai kemungkinan pasangan.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Rahagi mengambil angka 4",
+                "Bathari mengambil kartu angka 8",
+                "menghasilkan angka terbesar jika angka Rahagi dipangkatkan dengan pasangannya atau sebaliknya"
+              ],
+              "rationale": "Soal ini memerlukan perbandingan nilai perpangkatan sederhana. Siswa hanya perlu mengidentifikasi pasangan yang menghasilkan nilai terbesar dengan membandingkan hasil operasi yang familiar.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang operasi perpangkatan bilangan bulat positif.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 8 sudah sangat familiar dengan operasi perpangkatan. Tugas ini hanya meminta perbandingan nilai sederhana tanpa kompleksitas aljabar yang tinggi."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "HLC_apmhM5ayg8UP0oOl-AQ",
+          "promptHash": "79b883b31b06162e8ba231d8b9b43afea479748c9b1bd13e3fb0c9c3acb4fa98",
+          "responseHash": "ae3269873766fcf1275077aa55eb59b49838a953ebd0138d8ba35d8f244e7d93",
+          "latencyMs": 7036,
+          "usage": {
+            "promptTokens": 1363,
+            "outputTokens": 625,
+            "thinkingTokens": 111,
+            "totalTokens": 2099
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Rahagi memiliki angka 4. Pasangan yang mungkin adalah 3, 5, 6, 7, 8. Kita membandingkan 4^x atau x^4 untuk setiap x. Pasangan dengan Bathari (8) menghasilkan 4^8 = 65.536 atau 8^4 = 4.096. Nilai terbesar adalah 65.536. Pasangan lain: 4^7=16.384, 4^6=4.096, 4^5=1.024, 4^3=64. Maka, Bathari adalah pasangan yang tepat.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Siapa yang harus diajak berpasangan oleh Rahagi agar kelompoknya menghasilkan angka terbesar jika angka Rahagi dipangkatkan dengan pasangannya atau sebaliknya?"
+              ],
+              "rationale": "Siswa perlu menerapkan konsep perpangkatan untuk membandingkan hasil dari beberapa kemungkinan pasangan, yang merupakan penerapan konsep pada situasi rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "angka Rahagi dipangkatkan dengan pasangannya atau sebaliknya"
+              ],
+              "rationale": "Siswa menggunakan prinsip operasi perpangkatan (konsep) untuk menentukan nilai terbesar dari berbagai kombinasi.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Byoma mengambil kartu angka 6, Pranawa mengambil angka 5, Lestari mengambil kartu angka 7, Rahagi mengambil kartu angka 4, Bathari mengambil kartu angka 8, dan Dwi mengambil kartu angka 3."
+              ],
+              "rationale": "Soal memerlukan perbandingan beberapa hasil perpangkatan sederhana. Prosedurnya rutin dan familiar bagi siswa kelas 8.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar operasi perpangkatan bilangan bulat.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 8 sudah terbiasa dengan operasi perpangkatan dan perbandingan nilai bilangan, sehingga soal ini termasuk kategori mudah."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "I7C_atXhKouyg8UPvYvhqQg",
+          "promptHash": "79b883b31b06162e8ba231d8b9b43afea479748c9b1bd13e3fb0c9c3acb4fa98",
+          "responseHash": "f5552ca3ffed80fcc8b5eb0f94446e827201e4fa7f6073242099fe19c4350e19",
+          "latencyMs": 7086,
+          "usage": {
+            "promptTokens": 1363,
+            "outputTokens": 656,
+            "thinkingTokens": 112,
+            "totalTokens": 2131
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Rahagi memiliki angka 4. Pasangan yang mungkin adalah Byoma(6), Pranawa(5), Lestari(7), Bathari(8), Dwi(3). Kita bandingkan nilai terbesar dari pasangan (4,x) yaitu max(4^x, x^4): 4^6=4096, 4^5=1024, 4^7=16384, 4^8=65536, 4^3=64. Nilai terbesar adalah 65536 saat berpasangan dengan Bathari (8).",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Siapa yang harus diajak berpasangan oleh Rahagi agar kelompoknya menghasilkan angka terbesar jika angka Rahagi dipangkatkan dengan pasangannya atau sebaliknya?"
+              ],
+              "rationale": "Siswa perlu memahami konsep perpangkatan dan membandingkan hasil operasi bilangan berpangkat untuk menentukan nilai terbesar, yang merupakan penerapan konsep dasar.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "angka Rahagi dipangkatkan dengan pasangannya atau sebaliknya"
+              ],
+              "rationale": "Siswa menggunakan prinsip operasi bilangan berpangkat (konsep) untuk memecahkan masalah perbandingan nilai.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Rahagi (4) dengan siswa lain",
+                "4^8 = 65.536 adalah nilai terbesar"
+              ],
+              "rationale": "Soal ini melibatkan perbandingan beberapa hasil perpangkatan sederhana. Siswa hanya perlu melakukan perhitungan rutin dan membandingkan hasilnya untuk menemukan nilai maksimum.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi perpangkatan bilangan bulat positif.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 8 sudah familiar dengan operasi perpangkatan. Tugas membandingkan hasil perpangkatan adalah prosedur rutin yang sesuai untuk tingkat kesulitan rendah."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "LbC_apKeMvSiqfkP1uq70AQ",
+          "promptHash": "79b883b31b06162e8ba231d8b9b43afea479748c9b1bd13e3fb0c9c3acb4fa98",
+          "responseHash": "5cc57123f95f116863bea58ff2596560f8ee88871854c50f4805bfe169b21687",
+          "latencyMs": 5467,
+          "usage": {
+            "promptTokens": 1363,
+            "outputTokens": 633,
+            "thinkingTokens": 110,
+            "totalTokens": 2106
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "A",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Rahagi memiliki angka 4. Pasangan yang mungkin adalah Byoma(6), Pranawa(5), Lestari(7), Bathari(8), Dwi(3). Kita membandingkan 4^x atau x^4 untuk setiap x. Pasangan dengan Bathari(8) menghasilkan 4^8 = 65.536 atau 8^4 = 4.096. Nilai terbesar adalah 65.536.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "conceptual",
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Easy": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    },
+    "864dfc1e16dfcf65cd20bd5a": {
+      "index": 2,
+      "questionId": "864dfc1e16dfcf65cd20bd5a",
+      "inputHash": "dbe8a895a15d8ba98f6fa11bbae4e9c30dc4b131a4965772a7ea1731fce4fac0",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "C",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Lestari memiliki angka 7. Siswa lain memiliki angka: Byoma(6), Pranawa(5), Rahagi(4), Bathari(8), Dwi(3). Kita membandingkan hasil perpangkatan: 7^x atau x^7. Pasangan dengan Dwi (3) menghasilkan 3^7 = 2.187 atau 7^3 = 343. Pasangan lain: 7^4=2.401, 7^5=16.807, 7^6=117.649, 7^8=5.764.801. Nilai terkecil dari semua kemungkinan pasangan Lestari adalah 343 (dari 7^3). Maka Dwi adalah pasangan yang tepat.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Siapa yang harus diajak berpasangan oleh Lestari agar kelompoknya menghasilkan angka terkecil jika angka Lestari dipangkatkan dengan pasangannya atau sebaliknya?"
+              ],
+              "rationale": "Siswa perlu membandingkan hasil operasi perpangkatan dari berbagai pasangan bilangan untuk menentukan nilai minimum. Ini melibatkan penerapan konsep perpangkatan dalam situasi perbandingan.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "angka Lestari dipangkatkan dengan pasangannya atau sebaliknya"
+              ],
+              "rationale": "Siswa menggunakan prinsip operasi perpangkatan (konsep) untuk memecahkan masalah perbandingan nilai.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "6 orang siswa mengambil satu kartu angka secara acak",
+                "angka Lestari dipangkatkan dengan pasangannya atau sebaliknya"
+              ],
+              "rationale": "Soal memerlukan perhitungan perbandingan nilai perpangkatan dari beberapa pasangan bilangan. Prosedurnya rutin namun memerlukan ketelitian dalam membandingkan hasil.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman konsep bilangan berpangkat bulat positif dan perbandingan bilangan.",
+                "dependentSteps": 3,
+                "routineStatus": "routine_selection",
+                "strategySelection": true,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 8 sudah mempelajari bilangan berpangkat. Soal ini menuntut siswa melakukan komputasi perbandingan sederhana namun cukup banyak untuk menentukan nilai terkecil."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "NrC_av_CDPq2juMPvbjaoAk",
+          "promptHash": "648de02b994e6c259dcf97f399ad1c2a9384b945a3920dfd4675b7f92f652ce6",
+          "responseHash": "8022ff7ed2312823c6ea60b24d3512a1123cc3fe3623b7c1d9962da3f8f2d64a",
+          "latencyMs": 6366,
+          "usage": {
+            "promptTokens": 1361,
+            "outputTokens": 690,
+            "thinkingTokens": 112,
+            "totalTokens": 2163
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "C",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Lestari memegang angka 7. Pasangan yang mungkin adalah: 7^6 (Byoma), 7^5 (Pranawa), 7^4 (Rahagi), 7^8 (Bathari), 7^3 (Dwi). Atau sebaliknya: 6^7, 5^7, 4^7, 8^7, 3^7. Membandingkan basis dan eksponen, nilai terkecil dihasilkan oleh 3^7 = 2.187. Pasangan Lestari (7) dengan Dwi (3) menghasilkan nilai terkecil.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Siapa yang harus diajak berpasangan oleh Lestari agar kelompoknya menghasilkan angka terkecil jika angka Lestari dipangkatkan dengan pasangannya atau sebaliknya?"
+              ],
+              "rationale": "Siswa perlu memahami konsep perpangkatan dan membandingkan nilai hasil perpangkatan untuk menentukan nilai terkecil dari beberapa kemungkinan pasangan.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "angka Lestari dipangkatkan dengan pasangannya atau sebaliknya"
+              ],
+              "rationale": "Siswa menerapkan prinsip operasi perpangkatan (konseptual) untuk membandingkan hasil dari berbagai kombinasi pasangan.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "6 orang siswa mengambil satu kartu angka secara acak",
+                "angka Lestari dipangkatkan dengan pasangannya atau sebaliknya"
+              ],
+              "rationale": "Soal memerlukan perbandingan nilai perpangkatan dengan basis dan eksponen yang berbeda. Siswa harus menguji beberapa kemungkinan pasangan untuk menemukan nilai terkecil.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar operasi perpangkatan bilangan bulat positif.",
+                "dependentSteps": 3,
+                "routineStatus": "routine_selection",
+                "strategySelection": true,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 2,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 8 diharapkan mampu membandingkan nilai bilangan berpangkat. Soal ini menuntut ketelitian dalam membandingkan hasil operasi tanpa harus menghitung semua nilai secara eksak."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "P7C_aqWXIfe4g8UPhP-CiQo",
+          "promptHash": "648de02b994e6c259dcf97f399ad1c2a9384b945a3920dfd4675b7f92f652ce6",
+          "responseHash": "3c6e3557ff7ec8b337f1f7416d09f34c672dd8704893f8cb2ecfe3220569f64a",
+          "latencyMs": 5044,
+          "usage": {
+            "promptTokens": 1361,
+            "outputTokens": 649,
+            "thinkingTokens": 112,
+            "totalTokens": 2122
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "C",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Lestari memiliki angka 7. Siswa lain memiliki angka: Byoma(6), Pranawa(5), Rahagi(4), Bathari(8), Dwi(3). Kita membandingkan hasil perpangkatan: 7^x atau x^7. Pasangan dengan Dwi (3) menghasilkan 3^7 = 2.187 atau 7^3 = 343. Pasangan dengan Rahagi (4) menghasilkan 4^7 = 16.384 atau 7^4 = 2.401. Pasangan dengan Pranawa (5) menghasilkan 5^7 = 78.125 atau 7^5 = 16.807. Pasangan dengan Byoma (6) menghasilkan 6^7 = 279.936 atau 7^6 = 117.649. Pasangan dengan Bathari (8) menghasilkan 8^7 = 2.097.152 atau 7^8 = 5.764.801. Nilai terkecil dari semua kemungkinan adalah 343 (dari 7^3). Maka, pasangan yang menghasilkan nilai terkecil adalah Dwi.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Siapa yang harus diajak berpasangan oleh Lestari agar kelompoknya menghasilkan angka terkecil jika angka Lestari dipangkatkan dengan pasangannya atau sebaliknya?"
+              ],
+              "rationale": "Siswa perlu membandingkan hasil perpangkatan dari berbagai pasangan angka yang tersedia untuk menentukan nilai terkecil. Ini melibatkan penerapan konsep perpangkatan dalam situasi perbandingan.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "angka Lestari dipangkatkan dengan pasangannya atau sebaliknya"
+              ],
+              "rationale": "Siswa menggunakan prinsip perpangkatan (konsep) untuk membandingkan hasil operasi bilangan.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Byoma mengambil kartu angka 6, Pranawa mengambil angka 5, Lestari mengambil kartu angka 7, Rahagi mengambil kartu angka 4, Bathari mengambil kartu angka 8, dan Dwi mengambil kartu angka 3."
+              ],
+              "rationale": "Soal memerlukan perbandingan beberapa hasil perpangkatan. Meskipun angkanya sederhana, siswa harus melakukan beberapa perhitungan rutin dan membandingkannya untuk menemukan nilai minimum.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang operasi perpangkatan bilangan bulat.",
+                "dependentSteps": 3,
+                "routineStatus": "routine_selection",
+                "strategySelection": true,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 8 diharapkan mampu melakukan operasi perpangkatan dan membandingkan nilai bilangan, namun soal ini menuntut ketelitian dalam membandingkan beberapa kemungkinan pasangan."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "R7C_ap_bJPXeg8UP66CxmQU",
+          "promptHash": "648de02b994e6c259dcf97f399ad1c2a9384b945a3920dfd4675b7f92f652ce6",
+          "responseHash": "0d5a7e0489fff3d620cc8de2a918af9662a38037496a02f27af13d97451023a5",
+          "latencyMs": 6414,
+          "usage": {
+            "promptTokens": 1361,
+            "outputTokens": 805,
+            "thinkingTokens": 112,
+            "totalTokens": 2278
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "C",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Lestari memiliki angka 7. Siswa lain memiliki angka: Byoma(6), Pranawa(5), Rahagi(4), Bathari(8), Dwi(3). Kita membandingkan hasil perpangkatan: 7^x atau x^7. Pasangan dengan Dwi (3) menghasilkan 3^7 = 2.187 atau 7^3 = 343. Pasangan lain: 7^4=2.401, 7^5=16.807, 7^6=117.649, 7^8=5.764.801. Nilai terkecil dari semua kemungkinan pasangan Lestari adalah 343 (dari 7^3). Maka Dwi adalah pasangan yang tepat.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "conceptual",
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Medium",
+            "voteCounts": {
+              "Medium": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    },
+    "9eeb60ca1e3ebdc6a02a1999": {
+      "index": 3,
+      "questionId": "9eeb60ca1e3ebdc6a02a1999",
+      "inputHash": "ad6251b41aaea02ffe55e8034405dd1ce2dee1ba0e360d332dd93ad0c41e137e",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "3√2 × 6√6 = (3 × 6) × √(2 × 6) = 18√12 = 18 × 2√3 = 36√3",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3√2 × 6√6"
+              ],
+              "rationale": "Siswa diminta menerapkan aturan perkalian bentuk akar (a√(b) × c√(d) = ac√(bd)) dan menyederhanakan hasilnya. Ini adalah penerapan prosedur standar.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3√2 × 6√6"
+              ],
+              "rationale": "Soal ini menguji penguasaan algoritma perkalian bentuk akar dan penyederhanaan akar kuadrat.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3√2 × 6√6"
+              ],
+              "rationale": "Soal ini merupakan prosedur rutin yang langsung, melibatkan perkalian koefisien dan radikan, serta penyederhanaan akar kuadrat dasar yang umum di kelas 8.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Perkalian bentuk akar dan penyederhanaan akar kuadrat.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Operasi ini adalah standar kurikulum kelas 8 untuk materi bentuk akar, tidak memerlukan strategi non-rutin."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "UbC_av6gAo70g8UP3876gAo",
+          "promptHash": "7ae74203a1dfb72537e34e31ce1c6180cb37d7d23950b5d2ab24b67e5fe517ae",
+          "responseHash": "e0ea28d3f61a0d4f9e9ebef29d90ba232e0ada2a9ee61781c06b18352507e57c",
+          "latencyMs": 6519,
+          "usage": {
+            "promptTokens": 1337,
+            "outputTokens": 639,
+            "thinkingTokens": 567,
+            "totalTokens": 2543
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "3√2 × 6√6 = (3 × 6) × √(2 × 6) = 18√12 = 18 × 2√3 = 36√3",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3√2 × 6√6"
+              ],
+              "rationale": "Siswa perlu menerapkan aturan perkalian bentuk akar (a√(b) × c√(d) = ac√(bd)) dan menyederhanakan hasil akar.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3√2 × 6√6"
+              ],
+              "rationale": "Soal ini menguji pemahaman prosedural tentang algoritma perkalian pada bilangan bentuk akar.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3√2 × 6√6"
+              ],
+              "rationale": "Soal ini merupakan prosedur rutin perkalian bentuk akar yang langsung, tidak memerlukan strategi non-rutin atau integrasi konsep yang kompleks.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Sifat perkalian bentuk akar dan penyederhanaan akar kuadrat.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Perkalian bentuk akar adalah materi standar kelas 8 yang bersifat rutin."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "WrC_arLmIOXEg8UPw__h4Ak",
+          "promptHash": "7ae74203a1dfb72537e34e31ce1c6180cb37d7d23950b5d2ab24b67e5fe517ae",
+          "responseHash": "0ef7f8e53bf52383cabc5d949a7f3d7033038efccf9f1f4352f8d942b96a244a",
+          "latencyMs": 8922,
+          "usage": {
+            "promptTokens": 1337,
+            "outputTokens": 615,
+            "thinkingTokens": 987,
+            "totalTokens": 2939
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ClientError:429",
+          "quotaDailyExhausted": true,
+          "quotaLimits": [
+            {
+              "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+              "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+              "quotaValue": "500"
+            }
+          ],
+          "providerFailureReason": null,
+          "responseId": null,
+          "promptHash": "7ae74203a1dfb72537e34e31ce1c6180cb37d7d23950b5d2ab24b67e5fe517ae",
+          "responseHash": null,
+          "latencyMs": 332,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 2,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "B",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "3√2 × 6√6 = (3 × 6) × √(2 × 6) = 18√12 = 18 × 2√3 = 36√3",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "voteCounts": {
+              "applying": 2
+            },
+            "supportingRuns": 2,
+            "status": "needs_adjudication"
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "voteCounts": {
+              "procedural": 2
+            },
+            "supportingRuns": 2,
+            "status": "needs_adjudication"
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "voteCounts": {
+              "Easy": 2
+            },
+            "supportingRuns": 2,
+            "status": "needs_adjudication"
+          }
+        },
+        "needsAdjudication": true,
+        "adjudicated": false,
+        "eligibleForTraining": false
+      },
+      "adjudication": null
+    }
+  },
+  "summary": {
+    "itemsProcessed": 3,
+    "itemsEligibleForTraining": 2,
+    "successfulRuns": 8,
+    "failedRuns": 1,
+    "adjudicatedItems": 0,
+    "pendingAdjudication": 1,
+    "difficultyDistribution": {
+      "Easy": 1,
+      "Medium": 1,
+      "Hard": 0
+    },
+    "dominantDifficultyShare": 0.5,
+    "boundaryAnalysisRequired": true,
+    "promptTokens": 10846,
+    "outputTokens": 5312,
+    "thinkingTokens": 2223,
+    "totalTokens": 18381
+  },
+  "executionStatus": "blocked_provider_daily_quota",
+  "stopReason": {
+    "errorCode": "ClientError:429",
+    "quotaLimits": [
+      {
+        "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+        "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+        "quotaValue": "500"
+      }
+    ],
+    "providerFailureReason": null
+  }
+}

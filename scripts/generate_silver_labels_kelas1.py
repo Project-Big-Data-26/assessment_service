@@ -18,14 +18,13 @@ sys.path.insert(0, str(ROOT))
 
 from app.llm.config import GeminiSettings  # noqa: E402
 from app.llm.silver import (  # noqa: E402
-    RUBRIC_VERSION,
-    SILVER_ADJUDICATION_PROMPT_VERSION,
-    SILVER_PROMPT_VERSION,
+    SUPPORTED_SILVER_GRADES,
     GeminiSilverAdapter,
     SilverAdjudicationResult,
     SilverRunResult,
     aggregate_silver_runs,
     rubric_file_hash,
+    silver_rubric,
 )
 
 SOURCE = ROOT / "output/pretest/kelas1/soal_pretest_db.json"
@@ -68,15 +67,16 @@ def store_run_result(record: dict, result: dict) -> None:
 def load_checkpoint(
     path: Path, source: Path, source_hash: str, model: str, runs: int, grade: int
 ) -> dict:
+    rubric = silver_rubric(grade)
     if path.is_file():
         checkpoint = json.loads(path.read_text(encoding="utf-8"))
         if checkpoint.get("sourceHash") != source_hash:
             raise ValueError("checkpoint sourceHash does not match current question file")
         if checkpoint.get("model") != model or checkpoint.get("requestedRuns") != runs:
             raise ValueError("checkpoint model/run configuration differs; use another output path")
-        if checkpoint.get("sourceGrade", 1) != grade or checkpoint.get("promptVersion") != SILVER_PROMPT_VERSION:
+        if checkpoint.get("sourceGrade", 1) != grade or checkpoint.get("promptVersion") != rubric.prompt_version:
             raise ValueError("checkpoint grade/prompt version differs; preserve history and use another output path")
-        if checkpoint.get("rubricHash") != rubric_file_hash():
+        if checkpoint.get("rubricVersion") != rubric.version or checkpoint.get("rubricHash") != rubric_file_hash(grade):
             raise ValueError("checkpoint rubric hash differs; preserve history and use another output path")
         return checkpoint
     return {
@@ -86,10 +86,11 @@ def load_checkpoint(
         "sourceGrade": grade,
         "provider": "gemini",
         "model": model,
-        "promptVersion": SILVER_PROMPT_VERSION,
-        "adjudicationPromptVersion": SILVER_ADJUDICATION_PROMPT_VERSION,
-        "rubricVersion": RUBRIC_VERSION,
-        "rubricHash": rubric_file_hash(),
+        "promptVersion": rubric.prompt_version,
+        "adjudicationPromptVersion": rubric.adjudication_version,
+        "rubricVersion": rubric.version,
+        "rubricHash": rubric_file_hash(grade),
+        "educationLevel": rubric.education_level,
         "requestedRuns": runs,
         "createdAt": datetime.now(timezone.utc).isoformat(),
         "updatedAt": None,
@@ -154,7 +155,7 @@ def summarize(checkpoint: dict) -> dict:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, default=SOURCE)
-    parser.add_argument("--grade", type=int, choices=range(1, 7), default=1)
+    parser.add_argument("--grade", type=int, choices=SUPPORTED_SILVER_GRADES, default=1)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--runs", type=int, default=3, choices=(1, 3))
     parser.add_argument("--limit", type=int)
@@ -189,6 +190,7 @@ def main() -> int:
     )
     checkpoint["executionStatus"] = "running"
     checkpoint.pop("stopReason", None)
+    checkpoint.pop("blockedByGrade", None)
 
     def save_progress() -> None:
         checkpoint["updatedAt"] = datetime.now(timezone.utc).isoformat()

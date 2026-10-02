@@ -4,11 +4,12 @@ Dokumentasi ini mengikuti backend **API 2.1.0**: ekstraksi → qualification/pen
 
 ## Mulai menggunakan sistem
 
+- [28 diagram teknis end-to-end berbasis silver dan personalisasi siswa](28_END_TO_END_PERSONALIZED_ASSESSMENT_FLOW.md): sumber, blind silver N=3, training, delivery riset, CTT/IRT, feedback dataset dan rancangan profil/selector/CAT; SVG dan JPG lengkap.
 - [27 runbook CTT/IRT dan pilot](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md): demo Rasch/2PL/3PL langsung, matriks nyata, API, gold-only delivery dan empirical review.
 - [12 endpoint aktual](12_ENDPOINT_MASTER_REFERENCE.md): dihasilkan dari kode FastAPI, bukan daftar target.
 - [09 kontrak/schema](09_JSON_SCHEMA_REFERENCE.md): OpenAPI dan JSON Schema aktual.
 - [25 pipeline ordinal](25_GRADE_AWARE_ORDINAL_PIPELINE.md): training, blind silver, audit, calibration dan promotion.
-- [Indeks hasil validasi kelas 1–6](../output/pretest/README.md): bundle advisory; bukan gold manusia atau data respons siswa.
+- [Indeks hasil validasi kelas 1–12](../output/pretest/README.md): bundle advisory; kelas 7–9 memakai rubrik SMP, kelas 10–12 SMA, dan IndoBERT abstain di luar cakupan SD. Batch kelas 8–12 tertahan kuota provider; kelas 9–12 belum memiliki penilaian AI sukses. Bukan gold manusia atau data respons siswa.
 
 ## Keputusan domain dan proses
 
@@ -50,8 +51,13 @@ Pilot memakai human-gold checksum/version/key/solution. Identity dan correctness
 | [25](25_GRADE_AWARE_ORDINAL_PIPELINE.md) | Gate/audit/training ordinal |
 | [26](26_KELAS2_BLIND_VALIDATION.md) | Status batch advisory kelas 2 |
 | [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md) | Eksekusi CTT/IRT dan pilot |
+| [28](28_END_TO_END_PERSONALIZED_ASSESSMENT_FLOW.md) | Diagram teknis end-to-end berbasis silver, model/pilot riset dan target personalisasi per siswa |
+| [29](29_KELAS7_BLIND_VALIDATION.md) | Validasi blind SMP kelas 7, rubrik versi tersendiri, resume, dan diagnostik IndoBERT di luar cakupan |
+| [30](30_KELAS8_BLIND_VALIDATION.md) | Validasi blind SMP kelas 8, rubrik berdasarkan materi korpus, audit, dan diagnostik IndoBERT di luar cakupan |
+| [31](31_KELAS9_BLIND_VALIDATION.md) | Validasi blind SMP kelas 9, rubrik materi korpus, checkpoint resume, dan laporan status kuota |
+| [32](32_KELAS10_11_12_BLIND_VALIDATION.md) | Validasi blind SMA 10–12, rubrik per kelas, pelaksana batch serial, blok kuota bersama dan resume |
 
-Diagram end-to-end lama bernomor 20 telah dihapus pada worktree; tautan aktif memakai 23/24. `schemas/nalar-api.schema.json` tetap desain gateway luas. Kontrak implementasi ada pada `schemas/openapi.json` dan `schemas/implemented-api.schema.json`.
+Diagram end-to-end lengkap tersedia pada 28, dengan detail terpisah pada 23/24. Diagram lama bernomor 20 telah dihapus pada worktree. `schemas/nalar-api.schema.json` tetap desain gateway luas. Kontrak implementasi ada pada `schemas/openapi.json` dan `schemas/implemented-api.schema.json`.
 
 ## Kesiapan
 

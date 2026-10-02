@@ -6,15 +6,16 @@ from app.llm.silver import (
     build_silver_prompt,
 )
 import pytest
+import re
 
 
-@pytest.mark.parametrize("grade", [2, 3])
+@pytest.mark.parametrize("grade", [2, 3, 7, 8, 9, 10, 11, 12])
 def test_silver_prompt_uses_the_actual_grade_for_difficulty(grade):
     item = {"_id": "q", "options": [], "soal_text": "12 x 3 = ..."}
     prompt = build_silver_prompt(item, grade=grade)
     assert f"matematika kelas {grade}" in prompt
     assert f"bagi siswa kelas {grade}" in prompt
-    assert "kelas 1" not in prompt
+    assert not re.search(r"\bkelas 1\b", prompt)
     assert "PREDIKSI INDOBERT" not in prompt
     assert "tingkat_kesulitan" not in prompt
     assert "agentDifficulty" not in prompt
@@ -22,9 +23,10 @@ def test_silver_prompt_uses_the_actual_grade_for_difficulty(grade):
     assert "answerKeyStatus=verified" in prompt
 
 
-def test_silver_rejects_a_grade_outside_sd_scope():
+@pytest.mark.parametrize("grade", [-1, 0, 13, 15])
+def test_silver_rejects_an_unsupported_grade(grade):
     with pytest.raises(ValueError, match="grade 1-6"):
-        build_silver_prompt({}, grade=7)
+        build_silver_prompt({}, grade=grade)
 
 
 def silver_output(difficulty: str) -> SilverLabelOutput:

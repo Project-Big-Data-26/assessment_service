@@ -125,7 +125,8 @@ def test_argon2id_passwords_and_opaque_session_material():
     assert not csrf_matches("wrong", csrf_hash)
 
 
-def test_runtime_out_of_scope_has_null_labels_and_registered_conflicts_are_rejected():
+@pytest.mark.parametrize("grade", [7, 8, 9, 10, 11, 12])
+def test_runtime_out_of_scope_has_null_labels_and_registered_conflicts_are_rejected(grade):
     payload = manifest({})
     payload["contentRegistry"] = {"q-1": {"contentVersion": 1, "contentHash": "a" * 64}}
     runtime = V2ClassifierRuntime.__new__(V2ClassifierRuntime)
@@ -135,7 +136,7 @@ def test_runtime_out_of_scope_has_null_labels_and_registered_conflicts_are_rejec
     runtime.tokenizer = None
 
     request_payload = valid_request()
-    request_payload["grade"] = 7
+    request_payload["grade"] = grade
     from app.classification.v2.contracts import V2ClassificationRequest
 
     response = runtime.predict(V2ClassificationRequest.model_validate(request_payload))
