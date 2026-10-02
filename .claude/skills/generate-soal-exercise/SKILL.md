@@ -18,7 +18,9 @@ semua soal pretest dan batch sebelumnya (validator memeriksanya).
 - Yang tampil ke siswa (level mana, soal mana) diputuskan Backend. Tugas di sini hanya bank soalnya.
 - Hanya pilihan ganda, **teks saja** (soal bergambar belum didukung): data yang dibutuhkan
   soal (angka, tabel, bacaan) harus ditulis di `stimulus`/`pertanyaan`.
-- Semua soal `inactive` sampai lolos sampling manusia; export menulis `status: inactive`.
+- Export ke `soal_exercise_db.json` mengosongkan `cognitive_level`, `cognitive_score`, `confidence_score`, dan
+  `status` (null); itu diisi tahap validasi sistem berikutnya. Nilai usulan kita (level target, skor target,
+  confidence_hitung) ada di `soal_exercise_meta.json`. `subbab_id` = nama subbab di buku panduan.
 
 ## Mode orkestrator (sesi utama)
 

@@ -7,8 +7,9 @@ Hasil per batch:
   output/exercise/<buku>/batch<NN>/soal_exercise_meta.json  info internal (tipe_generate, acuan, flag, ...)
 
 Penanda sementara (dipetakan ke ObjectId oleh Backend):
-  subbab_id = bab_id + kode subbab ("SMP9-B1-A"), kelas_id = kunci buku ("kelas9"), berkas_id = null.
-status = "inactive" sampai lolos sampling & di-push (sampling.py).
+  subbab_id = NAMA subbab di buku panduan, kelas_id = kunci buku ("kelas9"), berkas_id = null.
+cognitive_level, cognitive_score, confidence_score, status = null: diisi tahap validasi sistem berikutnya.
+Nilai usulan kita (level target, skor target, confidence_hitung) disimpan di soal_exercise_meta.json.
 
   python -m app.services.exercise.export --book kelas9 --batch 1
 """
@@ -65,14 +66,15 @@ def export_batch(book: str, batch: int) -> dict:
             skor = hitung(s, v, jarak_terdekat(s, pool, data.soal), warns)
             options, benar = opsi[s.id]
             rows.append({
-                "_id": _oid(s.id), "berkas_id": None, "subbab_id": f"{bab.bab_id}-{data.subbab}",
+                "_id": _oid(s.id), "berkas_id": None, "subbab_id": bab.subbab_nama(data.subbab),
                 "kelas_id": book, "soal_text": soal_text(s.stimulus, s.pertanyaan), "image_url": [],
                 "soal_type": "Pilihan Ganda", "options": options, "matching_pairs": None, "jawaban": benar,
-                "cognitive_level": data.level, "cognitive_score": spec["score"], "status": "inactive",
-                "created_at": now, "updated_at": now, "confidence_score": skor,
+                "cognitive_level": None, "cognitive_score": None, "status": None,
+                "created_at": now, "updated_at": now, "confidence_score": None,
             })
             meta[_oid(s.id)] = {
-                "id": s.id, "batch": data.batch, "tipe_generate": s.tipe_generate, "variasi_cara": s.variasi_cara,
+                "id": s.id, "batch": data.batch, "bab_id": bab.bab_id, "subbab_kode": data.subbab,
+                "level_target": data.level, "cognitive_score_target": spec["score"], "confidence_hitung": skor, "tipe_generate": s.tipe_generate, "variasi_cara": s.variasi_cara,
                 "acuan": s.acuan.model_dump(exclude_none=True), "cognitive_c": s.cognitive_c,
                 "jumlah_langkah": s.jumlah_langkah, "solver_cocok": bool(v and v["cocok"]),
                 "pembahasan": s.pembahasan, "catatan": s.catatan,
