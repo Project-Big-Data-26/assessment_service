@@ -1,0 +1,217 @@
+{
+  "book": "kelas11_tl", "bab": "Bab 1 - Matriks", "bab_no": 1,
+  "halaman_siswa": [15, 60],
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-p0023-latihan-a-5a",
+      "subbab": "A", "tingkat_kesulitan": 2,
+      "alasan_kesulitan": "cukup mengenali ordo matriks (2x3, baris < kolom) untuk menentukan jenisnya",
+      "sumber_soal": "siswa",
+      "source_page": 23, "source_section": "Latihan A Jenis-Jenis Matriks", "source_item_no": "5a",
+      "stimulus": "$A = \\begin{bmatrix} -3 & 2 & 0 \\\\ 1 & 3 & 5 \\end{bmatrix}$",
+      "pertanyaan": "Tentukan jenis matriks-matriks berikut.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Matriks datar",
+      "alasan_benar": "Matriks A berordo 2 x 3 (banyak baris lebih sedikit daripada banyak kolom), sehingga disebut matriks datar.",
+      "distraktor": [
+        {"teks": "Matriks tegak", "alasan": "keliru membalik ordo menjadi 3x2 sehingga dikira baris lebih banyak dari kolom"},
+        {"teks": "Matriks persegi", "alasan": "menganggap banyak baris dan kolom sama padahal 2 tidak sama dengan 3"},
+        {"teks": "Matriks segitiga atas", "alasan": "menerapkan konsep matriks segitiga padahal matriks A bukan matriks persegi"}
+      ],
+      "kunci_guru": {"halaman": 61, "kutipan": "Matriks _A_ adalah matriks datar"},
+      "jawaban_agen": "Matriks A berordo 2x3 (baris < kolom) sehingga termasuk matriks datar (bisa juga disebut matriks persegi panjang)",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-p0023-latihan-a-5b",
+      "subbab": "A", "tingkat_kesulitan": 2,
+      "alasan_kesulitan": "cukup memeriksa elemen di bawah diagonal utama untuk mengenali matriks segitiga atas",
+      "sumber_soal": "siswa",
+      "source_page": 23, "source_section": "Latihan A Jenis-Jenis Matriks", "source_item_no": "5b",
+      "stimulus": "$B = \\begin{bmatrix} 2 & 9 & -1 \\\\ 0 & 1 & 2 \\\\ 0 & 0 & 1 \\end{bmatrix}$",
+      "pertanyaan": "Tentukan jenis matriks-matriks berikut.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "Matriks segitiga atas",
+      "alasan_benar": "Semua elemen di bawah diagonal utama matriks B bernilai nol, sehingga B disebut matriks segitiga atas.",
+      "distraktor": [
+        {"teks": "Matriks segitiga bawah", "alasan": "tertukar arah, mengira elemen di atas diagonal yang harus nol"},
+        {"teks": "Matriks diagonal", "alasan": "mengabaikan elemen 9 dan -1 di atas diagonal yang tidak nol"},
+        {"teks": "Matriks identitas", "alasan": "keliru menganggap semua elemen diagonal harus bernilai 1 seperti matriks identitas"}
+      ],
+      "kunci_guru": {"halaman": 61, "kutipan": "Matriks _B_ adalah matriks segitiga atas"},
+      "jawaban_agen": "Elemen di bawah diagonal utama matriks B semua bernilai 0 sehingga B adalah matriks segitiga atas",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-p0026-latihan-b-4",
+      "subbab": "B", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "perlu menyelesaikan persamaan kuadrat dan linear sekaligus lalu menjumlahkan dua variabel",
+      "sumber_soal": "siswa",
+      "source_page": 26, "source_section": "Latihan B Kesamaan Dua Matriks", "source_item_no": "4",
+      "stimulus": "Jika $A = \\begin{bmatrix} -x-3y & 0 \\\\ (x-2y)^2 & 1 \\end{bmatrix}$ dan $I$ adalah matriks identitas berordo 2 × 2 dengan $A = I$.",
+      "pertanyaan": "Tentukan nilai x + y.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "-3/5",
+      "alasan_benar": "Dari (x-2y)^2=0 diperoleh x=2y, disubstitusikan ke -x-3y=1 menghasilkan y=-1/5 dan x=-2/5, sehingga x+y=-3/5.",
+      "distraktor": [
+        {"teks": "3/5", "alasan": "salah tanda saat menuliskan persamaan -x-3y=1 sebagai x-3y=1"},
+        {"teks": "-1/5", "alasan": "hanya menjawab nilai y saja, lupa menjumlahkan dengan x"},
+        {"teks": "-2/5", "alasan": "hanya menjawab nilai x saja, lupa menjumlahkan dengan y"}
+      ],
+      "kunci_guru": {"halaman": 63, "kutipan": "Jadi, nilai x + y = -2/5 + (-1/5) = -3/5", "dari_png": true},
+      "jawaban_agen": "Dari A=I: (x-2y)^2=0 -> x=2y; substitusi ke -x-3y=1 -> -5y=1 -> y=-1/5, x=-2/5, x+y=-3/5",
+      "status_kunci": "cocok", "catatan": "notasi pecahan rusak di Markdown Guru hal. 63 (fraksi tercampur jadi angka seperti '35'); kunci dibaca dari PNG Guru hal. 63"
+    },
+    {
+      "id": "kelas11_tl-b01-p0026-latihan-b-5",
+      "subbab": "B", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "sistem dua pasang persamaan linear yang diselesaikan dengan eliminasi-substitusi",
+      "sumber_soal": "siswa",
+      "source_page": 26, "source_section": "Latihan B Kesamaan Dua Matriks", "source_item_no": "5",
+      "stimulus": "$\\begin{bmatrix} a+2b & 2a+b \\\\ c+d & 2c+d \\end{bmatrix} = \\begin{bmatrix} 3 & -3 \\\\ 7 & 1 \\end{bmatrix}$",
+      "pertanyaan": "Hitunglah nilai a + b + c + d yang memenuhi kesamaan matriks berikut.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "7",
+      "alasan_benar": "Dari a+2b=3 dan 2a+b=-3 diperoleh a=-3, b=3; dari c+d=7 dan 2c+d=1 diperoleh c=-6, d=13; sehingga a+b+c+d=7.",
+      "distraktor": [
+        {"teks": "-7", "alasan": "salah tanda pada seluruh hasil akhir penjumlahan"},
+        {"teks": "1", "alasan": "tertukar tanda saat mengeliminasi variabel c dan d"},
+        {"teks": "13", "alasan": "hanya menjawab nilai d saja, lupa menjumlahkan a, b, dan c"}
+      ],
+      "kunci_guru": {"halaman": 63, "kutipan": "Jadi, nilai _a_ + _b_ + _c_ + _d_ = –3 + 3 + (–6) + 13 = 7"},
+      "jawaban_agen": "Eliminasi a+2b=3 & 2a+b=-3 -> a=-3, b=3; eliminasi c+d=7 & 2c+d=1 -> c=-6, d=13; jumlah = -3+3-6+13 = 7",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-p0035-latihan-c-4",
+      "subbab": "C", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "menyelesaikan persamaan matriks dengan tiga variabel dari operasi penjumlahan dan pengurangan matriks",
+      "sumber_soal": "siswa",
+      "source_page": 35, "source_section": "Latihan C Penjumlahan dan Pengurangan Antarmatriks", "source_item_no": "4",
+      "stimulus": "$\\begin{bmatrix} 2x & y \\\\ 3z & z \\end{bmatrix} - \\begin{bmatrix} 6 & -x \\\\ 2y & 7 \\end{bmatrix} + \\begin{bmatrix} 2 & 1 \\\\ -9 & 6 \\end{bmatrix} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix}$",
+      "pertanyaan": "Tentukan $x, y$, dan $z$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "x = 2, y = -3, z = 1",
+      "alasan_benar": "Dari elemen (1,1): 2x-6+2=0 -> x=2; elemen (1,2): y+x+1=0 -> y=-3; elemen (2,2): z-7+6=0 -> z=1.",
+      "distraktor": [
+        {"teks": "x = 2, y = 3, z = 1", "alasan": "salah tanda saat menyelesaikan y+x+1=0"},
+        {"teks": "x = -2, y = -3, z = 1", "alasan": "salah tanda saat menyelesaikan 2x-6+2=0"},
+        {"teks": "x = 2, y = -3, z = -1", "alasan": "salah tanda saat menyelesaikan z-7+6=0"}
+      ],
+      "kunci_guru": {"halaman": 65, "kutipan": "Jadi, nilai _x_ = 2, _y_ = –3, dan _z_ = 1"},
+      "jawaban_agen": "Elemen (1,1): 2x-6+2=0 -> x=2; elemen (1,2): y+x+1=0 -> y=-3; elemen (2,2): z-7+6=0 -> z=1",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-p0035-latihan-c-5",
+      "subbab": "C", "tingkat_kesulitan": 3,
+      "alasan_kesulitan": "sistem dua persamaan linear dua variabel diselesaikan dengan eliminasi",
+      "sumber_soal": "siswa",
+      "source_page": 35, "source_section": "Latihan C Penjumlahan dan Pengurangan Antarmatriks", "source_item_no": "5",
+      "stimulus": "$\\begin{bmatrix} 3a \\\\ 3b \\end{bmatrix}+\\begin{bmatrix} 4b \\\\ 4a \\end{bmatrix}=\\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix}$",
+      "pertanyaan": "Tentukan $a$ dan $b$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "a = -1, b = 1",
+      "alasan_benar": "Dari 3a+4b=1 dan 4a+3b=-1, eliminasi menghasilkan b=1 dan a=-1.",
+      "distraktor": [
+        {"teks": "a = 1, b = -1", "alasan": "nilai a dan b tertukar"},
+        {"teks": "a = -1, b = -1", "alasan": "salah tanda pada nilai b"},
+        {"teks": "a = 1, b = 1", "alasan": "salah tanda pada nilai a"}
+      ],
+      "kunci_guru": {"halaman": 65, "kutipan": "Substitusikan nilai _b_ ke persamaan 1 sehingga diperoleh _a_ = –1. Jadi, nilai _a_ = –1 dan _b_ = 1."},
+      "jawaban_agen": "3a+4b=1 dan 4a+3b=-1; eliminasi -> 7b=7 -> b=1, lalu 3a+4=1 -> a=-1",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-p0041-latihan-d-4",
+      "subbab": "D", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "menyelesaikan persamaan matriks P-2X=3Q yang melibatkan operasi pengurangan dan perkalian skalar matriks",
+      "sumber_soal": "siswa",
+      "source_page": 41, "source_section": "Latihan D Perkalian Matriks", "source_item_no": "4",
+      "stimulus": "$P = \\begin{bmatrix} 1 & -8 \\\\ -1 & -2 \\end{bmatrix}$, $Q = \\begin{bmatrix} 3 & 2 \\\\ -1 & 2 \\end{bmatrix}$, $X \\text{ matriks berordo } 2\\times 2 \\text{ yang memenuhi } P - 2X = 3Q$",
+      "pertanyaan": "Tentukan matriks $X$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$X = \\begin{bmatrix} -4 & -7 \\\\ 1 & -4 \\end{bmatrix}$",
+      "alasan_benar": "X = (P-3Q)/2 = ((1-9,-8-6),(-1+3,-2-6))/2 = (-8,-14,2,-8)/2 = (-4,-7,1,-4).",
+      "distraktor": [
+        {"teks": "$X = \\begin{bmatrix} -8 & -14 \\\\ 2 & -8 \\end{bmatrix}$", "alasan": "lupa membagi (P-3Q) dengan 2"},
+        {"teks": "$X = \\begin{bmatrix} 5 & -1 \\\\ -2 & 2 \\end{bmatrix}$", "alasan": "salah tanda, memakai P+3Q bukan P-3Q"},
+        {"teks": "$X = \\begin{bmatrix} 4 & 7 \\\\ -1 & 4 \\end{bmatrix}$", "alasan": "tertukar tanda pada seluruh elemen hasil akhir"}
+      ],
+      "kunci_guru": {"halaman": 66, "kutipan": "X = [-4 -7; 1 -4]", "dari_png": true},
+      "jawaban_agen": "2X = P-3Q = (1-9,-8-6,-1+3,-2-6) = (-8,-14,2,-8); X = (-4,-7,1,-4)",
+      "status_kunci": "cocok", "catatan": "hasil matriks X hanya tercetak di PNG Guru hal. 66 (tidak ada di teks Markdown); kunci dibaca dari PNG"
+    },
+    {
+      "id": "kelas11_tl-b01-p0041-latihan-d-5",
+      "subbab": "D", "tingkat_kesulitan": 4,
+      "alasan_kesulitan": "perkalian dua matriks 2x2 menghasilkan dua persamaan yang harus diselesaikan sekaligus",
+      "sumber_soal": "siswa",
+      "source_page": 41, "source_section": "Latihan D Perkalian Matriks", "source_item_no": "5",
+      "stimulus": "Diketahui $\\begin{bmatrix} x-2 & 9 \\\\ -3 & 0 \\end{bmatrix}\\begin{bmatrix} -4 & 0 \\\\ 1 & y+1 \\end{bmatrix} = \\begin{bmatrix} -3 & -9 \\\\ 12 & 0 \\end{bmatrix}$.",
+      "pertanyaan": "Tentukan $x+y$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "3",
+      "alasan_benar": "Hasil kali matriks memberi -4x+17=-3 sehingga x=5, dan 9y+9=-9 sehingga y=-2; x+y=3.",
+      "distraktor": [
+        {"teks": "7", "alasan": "salah tanda pada persamaan 9y+9=-9 sehingga dikira y=2"},
+        {"teks": "5", "alasan": "hanya menjawab nilai x saja, lupa menghitung y"},
+        {"teks": "-7", "alasan": "salah tanda pada persamaan -4x+17=-3 sehingga dikira x=-5"}
+      ],
+      "kunci_guru": {"halaman": 66, "kutipan": "Jadi, nilai _x_ + _y_ = 5 + (–2) = 3"},
+      "jawaban_agen": "Perkalian matriks -> -4x+17=-3 -> x=5; 9y+9=-9 -> y=-2; x+y=3",
+      "status_kunci": "cocok", "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-p0052-latihan-e-4",
+      "subbab": "E", "tingkat_kesulitan": 5,
+      "alasan_kesulitan": "memerlukan penalaran sifat determinan (det(AC)=det(A)det(C)) untuk mencari determinan C tanpa mencari C secara eksplisit dulu",
+      "sumber_soal": "siswa",
+      "source_page": 52, "source_section": "Latihan E Determinan Matriks dan Invers Matriks", "source_item_no": "4",
+      "stimulus": "$A = \\begin{bmatrix} 2 & 5 \\\\ 1 & 2 \\end{bmatrix}$, $B = \\begin{bmatrix} 2 & 2 \\\\ -3 & 1 \\end{bmatrix}$, $C \\text{ memenuhi } AC = B$",
+      "pertanyaan": "Tentukan determinan $C$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "-8",
+      "alasan_benar": "Karena AC=B maka det(C)=det(B)/det(A) = 8/(-1) = -8.",
+      "distraktor": [
+        {"teks": "8", "alasan": "lupa bahwa det(A) bernilai negatif sehingga tanda hasil bagi salah"},
+        {"teks": "-4", "alasan": "salah menghitung det(B) sebagai 4 (salah tanda pada perkalian silang 2x(-3))"},
+        {"teks": "-1/8", "alasan": "tertukar rumus, menghitung det(A)/det(B) bukan det(B)/det(A)"}
+      ],
+      "kunci_guru": {"halaman": 67, "kutipan": "Jadi, nilai determinan C adalah -8", "dari_png": true},
+      "jawaban_agen": "det(A)=2*2-5*1=-1; det(B)=2*1-2*(-3)=8; det(C)=det(B)/det(A)=8/-1=-8",
+      "status_kunci": "cocok", "catatan": "jawaban hanya tercetak di PNG Guru hal. 67 (tidak ada di teks Markdown); kunci dibaca dari PNG"
+    },
+    {
+      "id": "kelas11_tl-b01-p0052-latihan-e-5",
+      "subbab": "E", "tingkat_kesulitan": 5,
+      "alasan_kesulitan": "memerlukan pemahaman sifat invers perkalian matriks (AB^-1)^-1 = B A^-1 sebelum melakukan perkalian matriks",
+      "sumber_soal": "siswa",
+      "source_page": 52, "source_section": "Latihan E Determinan Matriks dan Invers Matriks", "source_item_no": "5",
+      "stimulus": null,
+      "pertanyaan": "Tentukan $(AB^{-1})^{-1}$ jika diketahui $A^{-1} = \\begin{bmatrix} 1 & 4 \\\\ 2 & 3 \\end{bmatrix}$ dan $B = \\begin{bmatrix} 5 & 1 \\\\ 1 & 3 \\end{bmatrix}$.",
+      "pertanyaan_disesuaikan": false, "catatan_penyesuaian": null,
+      "notasi_dari_png": true, "butuh_gambar": false, "image_refs": [],
+      "jawaban_benar": "$\\begin{bmatrix} 7 & 23 \\\\ 7 & 13 \\end{bmatrix}$",
+      "alasan_benar": "(AB^-1)^-1 = B A^-1 = [[5,1],[1,3]] x [[1,4],[2,3]] = [[7,23],[7,13]].",
+      "distraktor": [
+        {"teks": "$\\begin{bmatrix} 9 & 13 \\\\ 13 & 11 \\end{bmatrix}$", "alasan": "tertukar urutan perkalian, menghitung A^-1 B bukan B A^-1"},
+        {"teks": "$\\begin{bmatrix} 7 & 7 \\\\ 23 & 13 \\end{bmatrix}$", "alasan": "tertukar posisi baris dan kolom hasil kali (transpos jawaban benar)"},
+        {"teks": "$\\begin{bmatrix} 13 & 9 \\\\ 11 & 13 \\end{bmatrix}$", "alasan": "tertukar urutan perkalian sekaligus tertukar baris dan kolom"}
+      ],
+      "kunci_guru": {"halaman": 67, "kutipan": "(AB-1)-1 = BA-1 = [[7,23],[7,13]]", "dari_png": true},
+      "jawaban_agen": "(AB^-1)^-1 = B A^-1; B A^-1 = [[5,1],[1,3]]x[[1,4],[2,3]] = [[5+2,20+3],[1+6,4+9]] = [[7,23],[7,13]]",
+      "status_kunci": "cocok", "catatan": "jawaban hanya tercetak di PNG Guru hal. 67 (tidak ada di teks Markdown); kunci dibaca dari PNG"
+    }
+  ],
+  "dilewati": []
+}

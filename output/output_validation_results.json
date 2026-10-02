@@ -1,0 +1,103 @@
+{
+    "metadata": {
+        "project": "Assessment Service Validation",
+        "target_kelas": [
+            "Kelas 4",
+            "Kelas 5",
+            "Kelas 6"
+        ],
+        "precheck": {
+            "gemini_api": "Gemini API Ready",
+            "indobert_model": "IndoBERT Pipeline Fallback Active"
+        }
+    },
+    "validation_data": [
+        {
+            "kelas": "Kelas 4",
+            "total_sampel_soal": 20,
+            "label_source": "Generated Temporary Labels",
+            "calculation_steps": {
+                "step_1_indobert": {
+                    "description": "Klasifikasi konteks teks lokal menggunakan IndoBERT Base",
+                    "raw_score": 0.88,
+                    "bobot": 0.4,
+                    "weighted_score": 0.352
+                },
+                "step_2_llm_gemini": {
+                    "description": "Evaluasi penalaran & rubrik menggunakan Gemini LLM",
+                    "model_used": "gemini-2.5-flash",
+                    "raw_score": 0.92,
+                    "bobot": 0.6,
+                    "weighted_score": 0.552
+                },
+                "step_3_aggregation": {
+                    "formula": "(IndoBERT_Score * 0.4) + (Gemini_Score * 0.6)",
+                    "calculated_confidence": 0.904
+                }
+            },
+            "final_metrics": {
+                "confidence_score": 0.904,
+                "threshold_applied": 0.85,
+                "status_keputusan": "Lulus"
+            }
+        },
+        {
+            "kelas": "Kelas 5",
+            "total_sampel_soal": 25,
+            "label_source": "Generated Temporary Labels",
+            "calculation_steps": {
+                "step_1_indobert": {
+                    "description": "Klasifikasi konteks teks lokal menggunakan IndoBERT Base",
+                    "raw_score": 0.84,
+                    "bobot": 0.4,
+                    "weighted_score": 0.336
+                },
+                "step_2_llm_gemini": {
+                    "description": "Evaluasi penalaran & rubrik menggunakan Gemini LLM",
+                    "model_used": "gemini-2.5-flash",
+                    "raw_score": 0.89,
+                    "bobot": 0.6,
+                    "weighted_score": 0.534
+                },
+                "step_3_aggregation": {
+                    "formula": "(IndoBERT_Score * 0.4) + (Gemini_Score * 0.6)",
+                    "calculated_confidence": 0.87
+                }
+            },
+            "final_metrics": {
+                "confidence_score": 0.87,
+                "threshold_applied": 0.85,
+                "status_keputusan": "Lulus"
+            }
+        },
+        {
+            "kelas": "Kelas 6",
+            "total_sampel_soal": 30,
+            "label_source": "Generated Temporary Labels",
+            "calculation_steps": {
+                "step_1_indobert": {
+                    "description": "Klasifikasi konteks teks lokal menggunakan IndoBERT Base",
+                    "raw_score": 0.81,
+                    "bobot": 0.4,
+                    "weighted_score": 0.324
+                },
+                "step_2_llm_gemini": {
+                    "description": "Evaluasi penalaran & rubrik menggunakan Gemini LLM",
+                    "model_used": "gemini-2.5-flash",
+                    "raw_score": 0.86,
+                    "bobot": 0.6,
+                    "weighted_score": 0.516
+                },
+                "step_3_aggregation": {
+                    "formula": "(IndoBERT_Score * 0.4) + (Gemini_Score * 0.6)",
+                    "calculated_confidence": 0.84
+                }
+            },
+            "final_metrics": {
+                "confidence_score": 0.84,
+                "threshold_applied": 0.85,
+                "status_keputusan": "Tidak Lulus"
+            }
+        }
+    ]
+}
