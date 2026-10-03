@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "blind-difficulty-subset-v1",
+  "sourceClass": 12,
+  "intendedDifficulty": null,
+  "researchOnly": true,
+  "advisoryCount": 1,
+  "contentQualifiedCount": 0,
+  "items": [
+    {
+      "question": {
+        "questionId": "052c617a1f0c63d479f466ab",
+        "questionVersionId": "052c617a1f0c63d479f466ab:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "66d2e7e5eaf3ed34e9fe2fc485461247ebd0ccff8c88faf6e843661c0f8f9df9",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Aturan Pengisian Tempat",
+        "questionType": "multiple_choice",
+        "stem": "Sepuluh orang siswa memiliki tinggi yang berbeda. Guru olahraga menginginkan mereka berbaris menyamping dengan syarat tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya. Berapa banyaknya cara membuat barisan sesuai ketentuan itu?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "1.024 cara"
+          },
+          {
+            "label": "B",
+            "text": "256 cara"
+          },
+          {
+            "label": "C",
+            "text": "512 cara"
+          },
+          {
+            "label": "D",
+            "text": "3.628.800 cara"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan siswa diurutkan dari terpendek ke tertinggi (h1 < h2 < ... < h10). Siswa terpendek (h1) harus berada di ujung (kiri atau kanan). Setelah h1 ditempatkan, h2 juga harus berada di ujung barisan yang tersisa (kiri atau kanan), dan seterusnya hingga h9. Siswa tertinggi (h10) akan mengisi posisi terakhir yang tersisa. Untuk setiap siswa dari h1 hingga h9, terdapat 2 pilihan posisi (ujung kiri atau ujung kanan dari barisan yang terbentuk). Maka total cara adalah 2^(10-1) = 2^9 = 512.",
+        "verificationProvenance": "llm_silver_not_expert_verified",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "512",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "052c617a1f0c63d479f466ab",
+          "subchapter": "Aturan Pengisian Tempat",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas12",
+          "optionExtractionNotes": {
+            "A": "Salah: salah pangkat, memakai 2^10 (menghitung siswa ke-10 juga punya 2 pilihan, padahal tersisa 1 posisi)",
+            "B": "Salah: salah pangkat, memakai 2^8 (kurang satu langkah)",
+            "C": "Benar: setiap siswa (dari yang terpendek) selalu punya 2 pilihan posisi ujung yang tersisa, kecuali siswa terakhir, sehingga 2^9 = 512",
+            "D": "Salah: menghitung 10! seolah semua urutan bebas tanpa syarat"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": null
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "contentQualified": false,
+      "humanReviewRequired": true,
+      "isGoldLabel": false
+    }
+  ]
+}

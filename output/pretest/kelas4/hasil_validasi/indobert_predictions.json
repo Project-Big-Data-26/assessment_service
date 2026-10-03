@@ -1,9 +1,9 @@
 {
   "schemaVersion": "indobert-blind-diagnostics-v1",
-  "createdAt": "2026-10-03T07:34:30.374257+00:00",
+  "createdAt": "2026-10-03T09:26:04.948570+00:00",
   "researchOnlyRun": true,
   "reviewRequired": true,
-  "blindDecisionLockedAt": "2026-10-03T07:34:17.217425+00:00",
+  "blindDecisionLockedAt": "2026-10-03T09:25:51.625621+00:00",
   "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
   "model": {
     "artifactFormatVersion": "indobert-3x4x3-artifact-v1",
@@ -651,18 +651,15 @@
     "itemCount": 18,
     "predictionDistribution": {
       "mathCognitiveDomain": {
-        "abstain": 6,
-        "knowing": 4,
-        "applying": 8
+        "applying": 14,
+        "knowing": 4
       },
       "knowledgeDimension": {
-        "abstain": 6,
-        "factual": 4,
-        "conceptual": 8
+        "conceptual": 13,
+        "factual": 5
       },
       "intendedDifficulty": {
-        "abstain": 6,
-        "Easy": 12
+        "Easy": 18
       }
     }
   },
@@ -672,53 +669,62 @@
       "questionId": "bc95fc44d6c120fad4812c7c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas4:bc95fc44d6c120fad4812c7c:content-v2",
       "questionVersionId": "bc95fc44d6c120fad4812c7c:content-v2:blind-revalidation",
-      "contentHash": "46ba65bf6ce31bd9c24a2af1efea7f63ecc4db00b231fadbb93bb50c098bcd11",
+      "contentHash": "6b27c2f7d25735b6a0b981a28c8f8f3f4ae849de36e9f14b608dc29ae7088355",
       "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Faktor dan Kelipatan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Slamet membantu ibu membagikan beras kepada masyarakat kurang mampu. Total beras yang dibagikan oleh Ibu Slamet 10 kg. Ibu Slamet akan membagikan semua beras ke beberapa orang dengan berat yang sama. Bantulah ibu Slamet untuk membagikan beras tersebut. Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?\nPilihan: A. 1 orang, 2 orang, 5 orang, atau 10 orang\nB. 10 orang, 20 orang, 30 orang, atau 40 orang\nC. 1 orang, 2 orang, 3 orang, 5 orang, atau 10 orang\nD. 2 orang, 3 orang, 4 orang, atau 5 orang\nTranskripsi visual: -",
       "untruncatedTokenCount": 150,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.205,
+      "latencyMs": 315.027,
       "prediction": {
         "questionId": "bc95fc44d6c120fad4812c7c",
         "contentVersion": 2,
-        "contentHash": "46ba65bf6ce31bd9c24a2af1efea7f63ecc4db00b231fadbb93bb50c098bcd11",
+        "contentHash": "6b27c2f7d25735b6a0b981a28c8f8f3f4ae849de36e9f14b608dc29ae7088355",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "applying",
+          "probabilities": {
+            "knowing": 4.59308442608668e-10,
+            "applying": 0.9999999995406916,
+            "reasoning": 2.3490726157751447e-44
+          },
+          "calibratedConfidence": 0.9999999995406916,
+          "normalizedEntropy": 9.407355715191452e-09,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+            "selective_threshold_gate_not_met"
           ]
         },
         "knowledgeDimension": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "conceptual",
+          "probabilities": {
+            "factual": 0.007631452623231277,
+            "conceptual": 0.9616037747162514,
+            "procedural": 0.030764772429854037,
+            "metacognitive": 2.3066353289425584e-10
+          },
+          "calibratedConfidence": 0.9616037747162514,
+          "normalizedEntropy": 0.1312567302044764,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+            "selective_threshold_gate_not_met"
           ]
         },
         "intendedDifficulty": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "Easy",
+          "probabilities": {
+            "Easy": 0.7361250929298828,
+            "Medium": 0.25723181569007025,
+            "Hard": 0.006643091380046757
+          },
+          "calibratedConfidence": 0.7361250929298828,
+          "normalizedEntropy": 0.5535064574643758,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+            "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
-        "reasons": [
-          "content_not_qualified",
-          "answer_key_not_verified",
-          "minimal_solution_not_verified"
-        ],
+        "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
           "baseModel": "indobenchmark/indobert-base-p1",
@@ -743,7 +749,7 @@
       "untruncatedTokenCount": 76,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 121.264,
+      "latencyMs": 113.006,
       "prediction": {
         "questionId": "51d112e2cf5ac0ac6feceb42",
         "contentVersion": 2,
@@ -813,53 +819,62 @@
       "questionId": "d8e3e19d701550680f504300",
       "diagnosticInferenceQuestionId": "diagnostic:kelas4:d8e3e19d701550680f504300:content-v2",
       "questionVersionId": "d8e3e19d701550680f504300:content-v2:blind-revalidation",
-      "contentHash": "fb41769e2d07a162dfab8b00429a23834178b67c42acd054d55a71e7b46197aa",
+      "contentHash": "41d994a548594c488bb3903242f0f8e758aee9cc32fa75104b60b45a7c44c6e6",
       "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Pembagian Bilangan Cacah sampai 100\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan pembagian berikut sebagai pengurangan berulang!\n\n16 : 4 = .....\nPilihan: A. 3 kali (16-4-4-4=4)\nB. 4 kali (16-4-4-4-4=0)\nC. 5 kali (20-4-4-4-4-4=0)\nD. 12 kali (16-4=12, dianggap tiap kali kurang 1)\nTranskripsi visual: -",
       "untruncatedTokenCount": 122,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.162,
+      "latencyMs": 160.327,
       "prediction": {
         "questionId": "d8e3e19d701550680f504300",
         "contentVersion": 2,
-        "contentHash": "fb41769e2d07a162dfab8b00429a23834178b67c42acd054d55a71e7b46197aa",
+        "contentHash": "41d994a548594c488bb3903242f0f8e758aee9cc32fa75104b60b45a7c44c6e6",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "applying",
+          "probabilities": {
+            "knowing": 6.230026060315102e-05,
+            "applying": 0.9999376997393968,
+            "reasoning": 5.040927402908043e-46
+          },
+          "calibratedConfidence": 0.9999376997393968,
+          "normalizedEntropy": 0.0006058422071743876,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+            "selective_threshold_gate_not_met"
           ]
         },
         "knowledgeDimension": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "conceptual",
+          "probabilities": {
+            "factual": 0.027435980418873067,
+            "conceptual": 0.9551205963085421,
+            "procedural": 0.017443423266476042,
+            "metacognitive": 6.108819857813192e-12
+          },
+          "calibratedConfidence": 0.9551205963085421,
+          "normalizedEntropy": 0.15374711197851668,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+            "selective_threshold_gate_not_met"
           ]
         },
         "intendedDifficulty": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "Easy",
+          "probabilities": {
+            "Easy": 0.8408809079109164,
+            "Medium": 0.15659670612659055,
+            "Hard": 0.0025223859624930235
+          },
+          "calibratedConfidence": 0.8408809079109164,
+          "normalizedEntropy": 0.4106657371658809,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+            "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
-        "reasons": [
-          "content_not_qualified",
-          "answer_key_not_verified",
-          "minimal_solution_not_verified"
-        ],
+        "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
           "baseModel": "indobenchmark/indobert-base-p1",
@@ -884,7 +899,7 @@
       "untruncatedTokenCount": 84,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 113.918,
+      "latencyMs": 112.532,
       "prediction": {
         "questionId": "f01f2f8c93ea076e4331abae",
         "contentVersion": 2,
@@ -959,7 +974,7 @@
       "untruncatedTokenCount": 86,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 114.037,
+      "latencyMs": 140.378,
       "prediction": {
         "questionId": "87c4b5ff5d1524fbd581c451",
         "contentVersion": 2,
@@ -1029,54 +1044,62 @@
       "questionId": "764036b9759f6277bc4dca51",
       "diagnosticInferenceQuestionId": "diagnostic:kelas4:764036b9759f6277bc4dca51:content-v2",
       "questionVersionId": "764036b9759f6277bc4dca51:content-v2:blind-revalidation",
-      "contentHash": "70b0ede376650a6ac66cc1b7760b57ed2730ecbed19fe91295fbe403167d5d09",
-      "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Seperempat dari Benda Utuh\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar yang diwarnai berikut. Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat.\nPilihan: A. Gambar 3 (bentuk anak panah)\nB. Gambar 1 (segitiga)\nC. Gambar 2 (segi enam memanjang)\nD. Gambar 4 (kotak berpetak)\nTranskripsi visual: -",
-      "untruncatedTokenCount": 89,
+      "contentHash": "b263f6a66f8e939cae1c46b1660655716d03c39dcbbeca3b0e619dea58d71434",
+      "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Seperempat dari Benda Utuh\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar yang diwarnai berikut. Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat.\nPilihan: A. Gambar 3 (bentuk anak panah)\nB. Gambar 1 (segitiga)\nC. Gambar 2 (segi enam memanjang)\nD. Gambar 4 (kotak berpetak)\nTranskripsi visual: Terdapat empat gambar bangun datar yang masing-masing dibagi menjadi empat bagian oleh garis vertikal dan horizontal. Gambar 1 (segitiga) dibagi tidak simetris. Gambar 2 (segi enam) dibagi menjadi empat bagian yang tampak sama besar. Gambar 3 (bentuk panah) dibagi tidak simetris. Gambar 4 (persegi panjang) dibagi menjadi empat bagian yang tidak sama besar.",
+      "untruncatedTokenCount": 156,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.243,
+      "latencyMs": 189.271,
       "prediction": {
         "questionId": "764036b9759f6277bc4dca51",
         "contentVersion": 2,
-        "contentHash": "70b0ede376650a6ac66cc1b7760b57ed2730ecbed19fe91295fbe403167d5d09",
+        "contentHash": "b263f6a66f8e939cae1c46b1660655716d03c39dcbbeca3b0e619dea58d71434",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "applying",
+          "probabilities": {
+            "knowing": 1.5478802393352835e-05,
+            "applying": 0.9999845211976066,
+            "reasoning": 2.24782609815134e-42
+          },
+          "calibratedConfidence": 0.9999845211976066,
+          "normalizedEntropy": 0.00017014419408674432,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+            "selective_threshold_gate_not_met"
           ]
         },
         "knowledgeDimension": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "conceptual",
+          "probabilities": {
+            "factual": 0.0019052554165748805,
+            "conceptual": 0.9958038931535225,
+            "procedural": 0.002290851392349891,
+            "metacognitive": 3.75526944812317e-11
+          },
+          "calibratedConfidence": 0.9958038931535225,
+          "normalizedEntropy": 0.021673515126566,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+            "selective_threshold_gate_not_met"
           ]
         },
         "intendedDifficulty": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "Easy",
+          "probabilities": {
+            "Easy": 0.6879889519808827,
+            "Medium": 0.30480196495951306,
+            "Hard": 0.007209083059604227
+          },
+          "calibratedConfidence": 0.6879889519808827,
+          "normalizedEntropy": 0.5961949422639045,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+            "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
-        "reasons": [
-          "content_not_qualified",
-          "answer_key_not_verified",
-          "minimal_solution_not_verified",
-          "essential_visual_transcript_missing"
-        ],
+        "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
           "baseModel": "indobenchmark/indobert-base-p1",
@@ -1085,7 +1108,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "ab88ad0c5acd031d8903480fe48c8d346ef00e2cfa761b5d99372b03525f8c4c",
+          "inputHash": "2fd1dd3b828045e4d172dd777b98b868758f68bfca2dd45775aed86abf6b4d87",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1101,7 +1124,7 @@
       "untruncatedTokenCount": 79,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 113.353,
+      "latencyMs": 110.583,
       "prediction": {
         "questionId": "bcd1ec2726d4dc3e37ec631d",
         "contentVersion": 2,
@@ -1176,7 +1199,7 @@
       "untruncatedTokenCount": 67,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 101.371,
+      "latencyMs": 92.962,
       "prediction": {
         "questionId": "8639aa720008550cb79af345",
         "contentVersion": 2,
@@ -1246,54 +1269,62 @@
       "questionId": "c5e424e9914591b1d5286ef0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas4:c5e424e9914591b1d5286ef0:content-v2",
       "questionVersionId": "c5e424e9914591b1d5286ef0:content-v2:blind-revalidation",
-      "contentHash": "bb6a7ff30b6bd77340a5e25d9f6f99f9903359d31373d2b6f246b46d438fdbe6",
-      "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Pola\nTipe soal: multiple_choice\nStimulus: -\nSoal: Amati setiap pola berikut. Mana lanjutan pola pada gambar berikutnya.\n\nAmati setiap pola berikut (baris b).\nPilihan: A. bunga\nB. kelinci\nC. heksagon\nD. kupu-kupu\nTranskripsi visual: -",
-      "untruncatedTokenCount": 71,
+      "contentHash": "ca4ab35d2999d7d652c554aac7f36bf09b560c1ff1aac1c8b80693bba610127f",
+      "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Pola\nTipe soal: multiple_choice\nStimulus: -\nSoal: Amati setiap pola berikut. Mana lanjutan pola pada gambar berikutnya.\n\nAmati setiap pola berikut (baris b).\nPilihan: A. bunga\nB. kelinci\nC. heksagon\nD. kupu-kupu\nTranskripsi visual: Baris b menunjukkan urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu, elemen berikutnya dalam pola adalah kelinci.",
+      "untruncatedTokenCount": 131,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.188,
+      "latencyMs": 174.968,
       "prediction": {
         "questionId": "c5e424e9914591b1d5286ef0",
         "contentVersion": 2,
-        "contentHash": "bb6a7ff30b6bd77340a5e25d9f6f99f9903359d31373d2b6f246b46d438fdbe6",
+        "contentHash": "ca4ab35d2999d7d652c554aac7f36bf09b560c1ff1aac1c8b80693bba610127f",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "applying",
+          "probabilities": {
+            "knowing": 2.2258745265995404e-06,
+            "applying": 0.9999977741254733,
+            "reasoning": 3.6352541716486133e-48
+          },
+          "calibratedConfidence": 0.9999977741254733,
+          "normalizedEntropy": 2.8396215980522635e-05,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+            "selective_threshold_gate_not_met"
           ]
         },
         "knowledgeDimension": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "conceptual",
+          "probabilities": {
+            "factual": 0.015671307937323468,
+            "conceptual": 0.9800973285556501,
+            "procedural": 0.004231363455326566,
+            "metacognitive": 5.1699694478289334e-11
+          },
+          "calibratedConfidence": 0.9800973285556501,
+          "normalizedEntropy": 0.07787482231826806,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+            "selective_threshold_gate_not_met"
           ]
         },
         "intendedDifficulty": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "Easy",
+          "probabilities": {
+            "Easy": 0.6963173508019108,
+            "Medium": 0.2973183054421148,
+            "Hard": 0.006364343755974462
+          },
+          "calibratedConfidence": 0.6963173508019108,
+          "normalizedEntropy": 0.586967302336283,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+            "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
-        "reasons": [
-          "content_not_qualified",
-          "answer_key_not_verified",
-          "minimal_solution_not_verified",
-          "essential_visual_transcript_missing"
-        ],
+        "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
           "baseModel": "indobenchmark/indobert-base-p1",
@@ -1302,7 +1333,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "8d0b754ef12d7bb8906e7e1d292a19e9cc0a719d7f61dc5d0230637ef1e9d306",
+          "inputHash": "c3690951fe4da42c26b1b6d05ab680274a22ec7d1f8f23e862df752660fcb934",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1313,53 +1344,62 @@
       "questionId": "4088b8d020de84282c07a2b3",
       "diagnosticInferenceQuestionId": "diagnostic:kelas4:4088b8d020de84282c07a2b3:content-v2",
       "questionVersionId": "4088b8d020de84282c07a2b3:content-v2:blind-revalidation",
-      "contentHash": "5505e883c807164a32e17296b0d4d973b8ac205b17b0cc37b4887e09794c1faf",
+      "contentHash": "322d370123711ca6357a7f498488f75a4280986062adf22cb0397eb18ac87a2e",
       "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Pengukuran Volume\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah tangki air berisi 2.225 liter air. Pada siang hari 975 liter 325 ml air dipompa keluar dari tangki. Berapa banyak air yang tersisa di tangki?\nPilihan: A. 1.250 liter 675 ml\nB. 1.249 liter 675 ml\nC. 1.249 liter 325 ml\nD. 1.250 liter 325 ml\nTranskripsi visual: -",
       "untruncatedTokenCount": 103,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.177,
+      "latencyMs": 147.203,
       "prediction": {
         "questionId": "4088b8d020de84282c07a2b3",
         "contentVersion": 2,
-        "contentHash": "5505e883c807164a32e17296b0d4d973b8ac205b17b0cc37b4887e09794c1faf",
+        "contentHash": "322d370123711ca6357a7f498488f75a4280986062adf22cb0397eb18ac87a2e",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "applying",
+          "probabilities": {
+            "knowing": 0.0134986825279822,
+            "applying": 0.9865013174720177,
+            "reasoning": 5.432490154727883e-50
+          },
+          "calibratedConfidence": 0.9865013174720177,
+          "normalizedEntropy": 0.06510139603919575,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+            "selective_threshold_gate_not_met"
           ]
         },
         "knowledgeDimension": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "factual",
+          "probabilities": {
+            "factual": 0.8110472619160737,
+            "conceptual": 0.16953035809361927,
+            "procedural": 0.019422379960509262,
+            "metacognitive": 2.9797918076663665e-11
+          },
+          "calibratedConfidence": 0.8110472619160737,
+          "normalizedEntropy": 0.3947763607109607,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+            "selective_threshold_gate_not_met"
           ]
         },
         "intendedDifficulty": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "Easy",
+          "probabilities": {
+            "Easy": 0.8856813578425671,
+            "Medium": 0.11105682735027976,
+            "Hard": 0.0032618148071530905
+          },
+          "calibratedConfidence": 0.8856813578425671,
+          "normalizedEntropy": 0.3370310605568551,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+            "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
-        "reasons": [
-          "content_not_qualified",
-          "answer_key_not_verified",
-          "minimal_solution_not_verified"
-        ],
+        "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
           "baseModel": "indobenchmark/indobert-base-p1",
@@ -1384,7 +1424,7 @@
       "untruncatedTokenCount": 78,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 111.021,
+      "latencyMs": 113.937,
       "prediction": {
         "questionId": "8a6222ad2919585a4e0febed",
         "contentVersion": 2,
@@ -1459,7 +1499,7 @@
       "untruncatedTokenCount": 93,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 135.349,
+      "latencyMs": 129.864,
       "prediction": {
         "questionId": "1a9d9923445f71c78d74086d",
         "contentVersion": 2,
@@ -1529,54 +1569,62 @@
       "questionId": "8fe432cf4c0a120aab6def21",
       "diagnosticInferenceQuestionId": "diagnostic:kelas4:8fe432cf4c0a120aab6def21:content-v2",
       "questionVersionId": "8fe432cf4c0a120aab6def21:content-v2:blind-revalidation",
-      "contentHash": "e504abeab9f088b0ffdff62714c76690f12465c1f79bc631ae0da98d9a37137a",
-      "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Komposisi dan Dekomposisi Bangun Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: |**No**|**Nama Bangun Datar**|**Gambar**|**Banyaknya**|\n|---|---|---|---|\n|1<br>2|Segitiga<br>...|...|...<br>...|\n\nTentukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :\nPilihan: A. Segitiga 4, jajargenjang 1, persegi 1\nB. Segitiga 5, trapesium 1, persegi 1\nC. Segitiga 6, persegi 1\nD. Segitiga 5, jajargenjang 1, persegi 1\nTranskripsi visual: -",
-      "untruncatedTokenCount": 170,
+      "contentHash": "2b07bfd8c62e3cd843014833d9a84455bbeef36a34c8be8f46d610cb947192d6",
+      "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Komposisi dan Dekomposisi Bangun Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: |**No**|**Nama Bangun Datar**|**Gambar**|**Banyaknya**|\n|---|---|---|---|\n|1<br>2|Segitiga<br>...|...|...<br>...|\n\nTentukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :\nPilihan: A. Segitiga 4, jajargenjang 1, persegi 1\nB. Segitiga 5, trapesium 1, persegi 1\nC. Segitiga 6, persegi 1\nD. Segitiga 5, jajargenjang 1, persegi 1\nTranskripsi visual: Gambar menunjukkan sebuah perahu yang tersusun dari 7 keping bangun datar berwarna: 1 segitiga biru besar, 1 segitiga merah besar, 1 segitiga hijau tua, 1 segitiga oranye, 1 segitiga merah muda, 1 persegi hijau muda, dan 1 jajargenjang kuning.",
+      "untruncatedTokenCount": 219,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.389,
+      "latencyMs": 241.645,
       "prediction": {
         "questionId": "8fe432cf4c0a120aab6def21",
         "contentVersion": 2,
-        "contentHash": "e504abeab9f088b0ffdff62714c76690f12465c1f79bc631ae0da98d9a37137a",
+        "contentHash": "2b07bfd8c62e3cd843014833d9a84455bbeef36a34c8be8f46d610cb947192d6",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "applying",
+          "probabilities": {
+            "knowing": 0.40805444690945925,
+            "applying": 0.5919455530905408,
+            "reasoning": 1.394474303010603e-34
+          },
+          "calibratedConfidence": 0.5919455530905408,
+          "normalizedEntropy": 0.6154515219788889,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+            "selective_threshold_gate_not_met"
           ]
         },
         "knowledgeDimension": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "conceptual",
+          "probabilities": {
+            "factual": 0.019819533996059877,
+            "conceptual": 0.9710229354601905,
+            "procedural": 0.009157529166743027,
+            "metacognitive": 1.3770065240896353e-09
+          },
+          "calibratedConfidence": 0.9710229354601905,
+          "normalizedEntropy": 0.10765764577209642,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+            "selective_threshold_gate_not_met"
           ]
         },
         "intendedDifficulty": {
-          "label": null,
-          "probabilities": {},
-          "calibratedConfidence": null,
-          "normalizedEntropy": null,
-          "action": "abstain",
+          "label": "Easy",
+          "probabilities": {
+            "Easy": 0.713617473003325,
+            "Medium": 0.27747981036996944,
+            "Hard": 0.008902716626705384
+          },
+          "calibratedConfidence": 0.713617473003325,
+          "normalizedEntropy": 0.5812284881406986,
+          "action": "review",
           "reasons": [
-            "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+            "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
-        "reasons": [
-          "content_not_qualified",
-          "answer_key_not_verified",
-          "minimal_solution_not_verified",
-          "essential_visual_transcript_missing"
-        ],
+        "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
           "baseModel": "indobenchmark/indobert-base-p1",
@@ -1585,7 +1633,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "0c21c0b3f77f01b1da2ebea59e14e5304fc58a2644d729f267b610a17c19bda4",
+          "inputHash": "375390e4d4b45e31a458e4ab1247d0270a3e77ade9f44a58889b35ae5ec0bca3",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1601,7 +1649,7 @@
       "untruncatedTokenCount": 219,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 268.465,
+      "latencyMs": 198.976,
       "prediction": {
         "questionId": "f068d3ebd6b847a2ae99e0d2",
         "contentVersion": 2,
@@ -1676,7 +1724,7 @@
       "untruncatedTokenCount": 153,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 203.364,
+      "latencyMs": 142.936,
       "prediction": {
         "questionId": "f311bf91df38724a90b35b69",
         "contentVersion": 2,
@@ -1751,7 +1799,7 @@
       "untruncatedTokenCount": 132,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 176.241,
+      "latencyMs": 121.077,
       "prediction": {
         "questionId": "177f5534f5d559f72a66d033",
         "contentVersion": 2,
@@ -1826,7 +1874,7 @@
       "untruncatedTokenCount": 124,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 160.788,
+      "latencyMs": 172.002,
       "prediction": {
         "questionId": "4515f80b96eb86e33ab16d92",
         "contentVersion": 2,
@@ -1901,7 +1949,7 @@
       "untruncatedTokenCount": 89,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 122.153,
+      "latencyMs": 87.344,
       "prediction": {
         "questionId": "631ea2e9a2d5222d502bdf5c",
         "contentVersion": 2,

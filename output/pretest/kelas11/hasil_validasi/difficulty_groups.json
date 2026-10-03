@@ -1281,6 +1281,136 @@
         "contentQualified": true,
         "humanReviewRequired": true,
         "isGoldLabel": false
+      },
+      {
+        "question": {
+          "questionId": "2071d19215ee9fcf4926b805",
+          "questionVersionId": "2071d19215ee9fcf4926b805:content-v2:blind-revalidation",
+          "contentVersion": 2,
+          "contentHash": "6acdfba8fa2b949acd4e0e1877259ab08800430abcc10bc79e6834f53ce31009",
+          "grade": 11,
+          "topic": "Matematika SMA Kelas 11",
+          "subtopic": "Analisis Korelasi",
+          "questionType": "multiple_choice",
+          "stem": "Diagram pencar berikut menunjukkan tingkat IQ seseorang terhadap lingkar kepalanya dalam cm dari sampel 20 orang. Rata-rata IQ adalah 101 dan rata-rata lingkar kepala adalah 56,125 cm. Nilai koefisien korelasinya adalah 0,138.\n\nBerapa persentase IQ yang diterangkan oleh variabel-variabel lainnya?",
+          "stimulus": null,
+          "options": [
+            {
+              "label": "A",
+              "text": "0,981%"
+            },
+            {
+              "label": "B",
+              "text": "99,1%"
+            },
+            {
+              "label": "C",
+              "text": "98,1%"
+            },
+            {
+              "label": "D",
+              "text": "1,9%"
+            }
+          ],
+          "visualAssets": [],
+          "visualAssetHashes": {},
+          "visualTranscript": null,
+          "verifiedMinimalSolution": "Koefisien determinasi r^2 = (0,138)^2 = 0,019044 atau 1,9%. Persentase variansi yang diterangkan variabel lain = 100% - r^2 = 100% - 1,9% = 98,1%.",
+          "verificationProvenance": "llm_silver_not_expert_verified",
+          "detectedKko": [
+            "menghitung"
+          ],
+          "privateAnswerSpecification": {
+            "answerKey": "C",
+            "verifiedAnswerKey": "C",
+            "answerKeyStatus": "verified",
+            "visibility": "restricted"
+          },
+          "source": {
+            "externalId": "2071d19215ee9fcf4926b805",
+            "subchapter": "Analisis Korelasi",
+            "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11",
+            "optionExtractionNotes": {
+              "A": "Salah: salah menempatkan koma saat mengonversi hasil pengurangan menjadi persen",
+              "B": "Salah: salah hitung pengurangan 100% - 1,9% (lupa proses meminjam pada pengurangan desimal)",
+              "C": "Benar: persentase yang diterangkan variabel lain = 100% - r² = 100% - 1,9% = 98,1%",
+              "D": "Salah: tertukar dengan jawaban persentase yang diterangkan oleh lingkar kepala (soal sebelumnya)"
+            }
+          }
+        },
+        "advisoryLabels": {
+          "mathCognitiveDomain": "applying",
+          "knowledgeDimension": "conceptual",
+          "intendedDifficulty": "Medium"
+        },
+        "finalRouting": "pending_expert_review",
+        "contentQualified": true,
+        "humanReviewRequired": true,
+        "isGoldLabel": false
+      },
+      {
+        "question": {
+          "questionId": "d6d3b4c5f9819d69d4c859d0",
+          "questionVersionId": "d6d3b4c5f9819d69d4c859d0:content-v2:blind-revalidation",
+          "contentVersion": 2,
+          "contentHash": "95e64485464599c16f9649dae1a0fd6228e0f6cfe2143cd2eac9c1c80d8ef7b0",
+          "grade": 11,
+          "topic": "Matematika SMA Kelas 11",
+          "subtopic": "Representasi Data Lanjutan",
+          "questionType": "multiple_choice",
+          "stem": "Dalam upaya untuk mempromosikan penggunaan energi yang efisien, sebuah kota melakukan survei terhadap konsumsi listrik bulanan (dalam kWh) dari 10 rumah tangga diperoleh data sebagai berikut. 300, 320, 310, 305, 315, 320, 750, 310, 325, 315\n\nMengapa angka 750 kWh dapat dianggap sebagai pencilan?",
+          "stimulus": null,
+          "options": [
+            {
+              "label": "A",
+              "text": "Karena 750 kWh lebih dari 1,5 kali median data (315 kWh)"
+            },
+            {
+              "label": "B",
+              "text": "Karena 750 kWh adalah satu-satunya data yang jumlah angkanya lebih dari tiga digit"
+            },
+            {
+              "label": "C",
+              "text": "Karena 750 kWh lebih besar dari nilai data lainnya yang tertinggi (325 kWh)"
+            },
+            {
+              "label": "D",
+              "text": "Karena 750 kWh lebih besar dari batas atas IQR (335 kWh), sehingga berada di luar rentang wajar data"
+            }
+          ],
+          "visualAssets": [],
+          "visualAssetHashes": {},
+          "visualTranscript": null,
+          "verifiedMinimalSolution": "Data terurut: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1=310, Q3=320. IQR=Q3-Q1=10. Batas atas=Q3+1.5*IQR=320+15=335. Karena 750 > 335, maka 750 adalah pencilan.",
+          "verificationProvenance": "llm_silver_not_expert_verified",
+          "detectedKko": [],
+          "privateAnswerSpecification": {
+            "answerKey": "D",
+            "verifiedAnswerKey": "D",
+            "answerKeyStatus": "verified",
+            "visibility": "restricted"
+          },
+          "source": {
+            "externalId": "d6d3b4c5f9819d69d4c859d0",
+            "subchapter": "Representasi Data Lanjutan",
+            "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11",
+            "optionExtractionNotes": {
+              "A": "Salah: memakai median sebagai acuan kelipatan, bukan IQR dan batas atas yang benar",
+              "B": "Salah: alasan tidak berdasar secara statistik, hanya melihat banyak digit angka",
+              "C": "Salah: hanya membandingkan dengan nilai maksimum data lain, tanpa menghitung batas atas IQR",
+              "D": "Benar: sesuai kunci Guru: Q1=310, Q3=320, IQR=10, batas bawah=295, batas atas=335, dan 750 > 335 sehingga 750 kWh dinyatakan pencilan"
+            }
+          }
+        },
+        "advisoryLabels": {
+          "mathCognitiveDomain": "applying",
+          "knowledgeDimension": "procedural",
+          "intendedDifficulty": "Medium"
+        },
+        "finalRouting": "pending_expert_review",
+        "contentQualified": true,
+        "humanReviewRequired": true,
+        "isGoldLabel": false
       }
     ],
     "Hard": [
@@ -1349,138 +1479,7 @@
         "isGoldLabel": false
       }
     ],
-    "undecided": [
-      {
-        "question": {
-          "questionId": "2071d19215ee9fcf4926b805",
-          "questionVersionId": "2071d19215ee9fcf4926b805:content-v2:blind-revalidation",
-          "contentVersion": 2,
-          "contentHash": "6acdfba8fa2b949acd4e0e1877259ab08800430abcc10bc79e6834f53ce31009",
-          "grade": 11,
-          "topic": "Matematika SMA Kelas 11",
-          "subtopic": "Analisis Korelasi",
-          "questionType": "multiple_choice",
-          "stem": "Diagram pencar berikut menunjukkan tingkat IQ seseorang terhadap lingkar kepalanya dalam cm dari sampel 20 orang. Rata-rata IQ adalah 101 dan rata-rata lingkar kepala adalah 56,125 cm. Nilai koefisien korelasinya adalah 0,138.\n\nBerapa persentase IQ yang diterangkan oleh variabel-variabel lainnya?",
-          "stimulus": null,
-          "options": [
-            {
-              "label": "A",
-              "text": "0,981%"
-            },
-            {
-              "label": "B",
-              "text": "99,1%"
-            },
-            {
-              "label": "C",
-              "text": "98,1%"
-            },
-            {
-              "label": "D",
-              "text": "1,9%"
-            }
-          ],
-          "visualAssets": [],
-          "visualAssetHashes": {},
-          "visualTranscript": null,
-          "verifiedMinimalSolution": "Koefisien determinasi r^2 = (0,138)^2 = 0,019044 atau 1,9%. Persentase variansi yang diterangkan variabel lain = 100% - r^2 = 100% - 1,9% = 98,1%.",
-          "verificationProvenance": "llm_silver_not_expert_verified",
-          "detectedKko": [
-            "menghitung"
-          ],
-          "privateAnswerSpecification": {
-            "answerKey": "C",
-            "verifiedAnswerKey": "C",
-            "answerKeyStatus": "verified",
-            "visibility": "restricted"
-          },
-          "source": {
-            "externalId": "2071d19215ee9fcf4926b805",
-            "subchapter": "Analisis Korelasi",
-            "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11",
-            "optionExtractionNotes": {
-              "A": "Salah: salah menempatkan koma saat mengonversi hasil pengurangan menjadi persen",
-              "B": "Salah: salah hitung pengurangan 100% - 1,9% (lupa proses meminjam pada pengurangan desimal)",
-              "C": "Benar: persentase yang diterangkan variabel lain = 100% - r² = 100% - 1,9% = 98,1%",
-              "D": "Salah: tertukar dengan jawaban persentase yang diterangkan oleh lingkar kepala (soal sebelumnya)"
-            }
-          }
-        },
-        "advisoryLabels": {
-          "mathCognitiveDomain": null,
-          "knowledgeDimension": null,
-          "intendedDifficulty": null
-        },
-        "finalRouting": "llm_retry_or_manual_review",
-        "contentQualified": false,
-        "humanReviewRequired": true,
-        "isGoldLabel": false
-      },
-      {
-        "question": {
-          "questionId": "d6d3b4c5f9819d69d4c859d0",
-          "questionVersionId": "d6d3b4c5f9819d69d4c859d0:content-v2:blind-revalidation",
-          "contentVersion": 2,
-          "contentHash": "31c1b2c091a427804603e51b0a82d319bd38f9ea744aec3ede748b23d5c1814d",
-          "grade": 11,
-          "topic": "Matematika SMA Kelas 11",
-          "subtopic": "Representasi Data Lanjutan",
-          "questionType": "multiple_choice",
-          "stem": "Dalam upaya untuk mempromosikan penggunaan energi yang efisien, sebuah kota melakukan survei terhadap konsumsi listrik bulanan (dalam kWh) dari 10 rumah tangga diperoleh data sebagai berikut. 300, 320, 310, 305, 315, 320, 750, 310, 325, 315\n\nMengapa angka 750 kWh dapat dianggap sebagai pencilan?",
-          "stimulus": null,
-          "options": [
-            {
-              "label": "A",
-              "text": "Karena 750 kWh lebih dari 1,5 kali median data (315 kWh)"
-            },
-            {
-              "label": "B",
-              "text": "Karena 750 kWh adalah satu-satunya data yang jumlah angkanya lebih dari tiga digit"
-            },
-            {
-              "label": "C",
-              "text": "Karena 750 kWh lebih besar dari nilai data lainnya yang tertinggi (325 kWh)"
-            },
-            {
-              "label": "D",
-              "text": "Karena 750 kWh lebih besar dari batas atas IQR (335 kWh), sehingga berada di luar rentang wajar data"
-            }
-          ],
-          "visualAssets": [],
-          "visualAssetHashes": {},
-          "visualTranscript": null,
-          "verifiedMinimalSolution": null,
-          "verificationProvenance": "llm_silver_not_expert_verified",
-          "detectedKko": [],
-          "privateAnswerSpecification": {
-            "answerKey": "D",
-            "verifiedAnswerKey": null,
-            "answerKeyStatus": null,
-            "visibility": "restricted"
-          },
-          "source": {
-            "externalId": "d6d3b4c5f9819d69d4c859d0",
-            "subchapter": "Representasi Data Lanjutan",
-            "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11",
-            "optionExtractionNotes": {
-              "A": "Salah: memakai median sebagai acuan kelipatan, bukan IQR dan batas atas yang benar",
-              "B": "Salah: alasan tidak berdasar secara statistik, hanya melihat banyak digit angka",
-              "C": "Salah: hanya membandingkan dengan nilai maksimum data lain, tanpa menghitung batas atas IQR",
-              "D": "Benar: sesuai kunci Guru: Q1=310, Q3=320, IQR=10, batas bawah=295, batas atas=335, dan 750 > 335 sehingga 750 kWh dinyatakan pencilan"
-            }
-          }
-        },
-        "advisoryLabels": {
-          "mathCognitiveDomain": null,
-          "knowledgeDimension": null,
-          "intendedDifficulty": null
-        },
-        "finalRouting": "llm_retry_or_manual_review",
-        "contentQualified": false,
-        "humanReviewRequired": true,
-        "isGoldLabel": false
-      }
-    ]
+    "undecided": []
   },
   "summary": {
     "Easy": {
@@ -1488,15 +1487,15 @@
       "contentQualifiedCount": 15
     },
     "Medium": {
-      "advisoryCount": 4,
-      "contentQualifiedCount": 4
+      "advisoryCount": 6,
+      "contentQualifiedCount": 6
     },
     "Hard": {
       "advisoryCount": 1,
       "contentQualifiedCount": 0
     },
     "undecided": {
-      "advisoryCount": 2,
+      "advisoryCount": 0,
       "contentQualifiedCount": 0
     }
   }

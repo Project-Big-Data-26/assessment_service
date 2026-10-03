@@ -1,17 +1,15 @@
 # Validasi ulang soal kelas 5 — Gemini blind N=3 dan diagnostik IndoBERT
 
-**Batch belum selesai:** 114/216 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
-
 Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v4-blind-key-verified`. Rubrik: `math-rubric-3x4x3-v2-grade-aware`.
 
 Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas 5 tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan bukan keputusan ahli manusia.
 
 Checkpoint dikunci dengan SHA-256 sebelum inferensi IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Prediksi model lama dipakai untuk menunjukkan ketidaksepakatan; tidak diberikan kembali ke Gemini.
 
-Jumlah soal: 72; distribusi label advisory: `{"mathCognitiveDomain": {"undecided": 34, "knowing": 9, "reasoning": 6, "applying": 23}, "knowledgeDimension": {"undecided": 34, "factual": 4, "conceptual": 18, "procedural": 16, "metacognitive": 0}, "intendedDifficulty": {"undecided": 34, "Easy": 23, "Hard": 2, "Medium": 13}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 9, "reasoning": 6, "applying": 23}, "knowledgeDimension": {"factual": 4, "conceptual": 18, "procedural": 16, "metacognitive": 0}, "intendedDifficulty": {"Easy": 23, "Hard": 2, "Medium": 13}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"llm_retry_or_manual_review": 34, "pending_expert_review": 38}`.
-Run awal sukses: 114/216; adjudikasi: 11; token sukses tercatat: 250,563.
+Jumlah soal: 72; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 17, "applying": 47, "reasoning": 8}, "knowledgeDimension": {"conceptual": 34, "factual": 4, "procedural": 34, "metacognitive": 0}, "intendedDifficulty": {"Easy": 48, "Hard": 2, "Medium": 22}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 16, "applying": 46, "reasoning": 8}, "knowledgeDimension": {"conceptual": 33, "factual": 4, "procedural": 33, "metacognitive": 0}, "intendedDifficulty": {"Easy": 47, "Hard": 2, "Medium": 21}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"pending_expert_review": 70, "revision_required": 2}`.
+Run awal sukses: 216/216; adjudikasi: 28; token sukses tercatat: 530,838.
 
 Seluruh label masih silver/advisory, gold manusia tetap null, dan publishing otomatis tidak diaktifkan. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -24,8 +22,8 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 23 | 23 | [Easy.json](difficulty/Easy.json) |
-| Medium | 13 | 13 | [Medium.json](difficulty/Medium.json) |
+| Easy | 48 | 47 | [Easy.json](difficulty/Easy.json) |
+| Medium | 22 | 21 | [Medium.json](difficulty/Medium.json) |
 | Hard | 2 | 2 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
@@ -45,27 +43,115 @@ Kecamatan Kayu Tanam terletak di Kabupaten Padang Pariaman, Provinsi Sumatra Bar
 | C | 130.578 (1 ratus ribuan, 3 puluh ribuan, 0 ribuan, 5 ratusan, 7 puluhan, 8 satuan) |
 | D | 13.578 (1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan) |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Teks menyebutkan jumlah perempuan adalah 'tiga belas ribu lima ratus tujuh puluh delapan', yang ditulis sebagai 13.578. Nilai tempatnya adalah 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `51bfd42a97dbada665dd7f7bd16c6106ea21ae89cfac85ef8747d3532b18a7c3`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7bce225aab6978f06c3b0a450a03c797b0bff8a45352aba993c38ca5e3584889`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 1660 |
+| 2 | success | valid / verified | knowing | factual | Easy | 1716 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 1720 |
+
+Run 1 — solusi: Teks menyatakan jumlah perempuan adalah tiga belas ribu lima ratus tujuh puluh delapan, yang ditulis sebagai 13.578. Nilai tempatnya: 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan.
+- Domain kognitif `classify/knowing`: Siswa perlu menerjemahkan representasi verbal bilangan ke dalam notasi angka dan mengidentifikasi nilai tempat setiap digitnya, yang merupakan proses langsung.. Bukti: tiga belas ribu lima ratus tujuh puluh delapan; tentukan nilai tempatnya
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang sistem nilai tempat dan cara menuliskan bilangan cacah sesuai dengan nama bilangannya.. Bukti: tiga belas ribu lima ratus tujuh puluh delapan; 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 5 karena hanya meminta konversi dari bentuk verbal ke numerik dan identifikasi nilai tempat standar.. Bukti: tiga belas ribu lima ratus tujuh puluh delapan; 13.578
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman sistem nilai tempat sampai puluhan ribu dan cara membaca/menulis bilangan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi membaca dan menulis bilangan cacah sampai 100.000 adalah kompetensi dasar kelas 4/5 yang bersifat prosedural dan familiar. |
+
+Run 2 — solusi: Teks menyatakan jumlah perempuan adalah 'tiga belas ribu lima ratus tujuh puluh delapan', yang ditulis sebagai 13.578. Nilai tempatnya: 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan.
+- Domain kognitif `classify/knowing`: Siswa diminta menerjemahkan representasi verbal bilangan menjadi numerik dan mengidentifikasi nilai tempatnya. Ini adalah proses langsung yang melibatkan pengenalan fakta bilangan.. Bukti: tiga belas ribu lima ratus tujuh puluh delapan; 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan
+- Dimensi pengetahuan `classify/factual`: Soal menguji pemahaman tentang sistem nilai tempat dan cara penulisan bilangan cacah (fakta dasar matematika).. Bukti: tiga belas ribu lima ratus tujuh puluh delapan; 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung, hanya memerlukan pemahaman dasar tentang penulisan bilangan dan nilai tempat tanpa operasi hitung yang kompleks atau strategi non-rutin.. Bukti: tiga belas ribu lima ratus tujuh puluh delapan; 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 100.000. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, membaca dan menulis bilangan sampai 100.000 adalah materi dasar yang sudah dikuasai, sehingga soal ini tergolong mudah. |
+
+Run 3 — solusi: Teks menyatakan jumlah perempuan adalah 'tiga belas ribu lima ratus tujuh puluh delapan', yang ditulis sebagai 13.578. Nilai tempatnya: 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan.
+- Domain kognitif `classify/knowing`: Siswa perlu menerjemahkan representasi verbal bilangan ke dalam bentuk numerik dan menguraikan nilai tempatnya. Ini adalah proses langsung yang melibatkan pengenalan fakta dan prosedur standar.. Bukti: tiga belas ribu lima ratus tujuh puluh delapan; 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang sistem nilai tempat dan cara penulisan bilangan cacah, yang merupakan pengetahuan konseptual dasar.. Bukti: tiga belas ribu lima ratus tujuh puluh delapan; 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu melakukan konversi dari bentuk kata ke angka dan mengidentifikasi nilai tempat sesuai dengan prosedur yang sudah dipelajari di kelas 5.. Bukti: tiga belas ribu lima ratus tujuh puluh delapan; 1 puluh ribuan, 3 ribuan, 5 ratusan, 7 puluhan, 8 satuan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman sistem nilai tempat bilangan cacah sampai 100.000. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi membaca dan menulis bilangan sampai 100.000 adalah materi dasar kelas 4/5. Soal ini tidak memerlukan operasi hitung kompleks, hanya pemahaman notasi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"conceptual": 2, "factual": 1} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3232`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa diminta menerjemahkan representasi verbal bilangan ke dalam notasi angka dan mengidentifikasi nilai tempat setiap digitnya. Ini adalah proses langsung yang bersifat pengenalan dan penerapan prosedur standar.
+- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman tentang sistem nilai tempat dan cara penulisan bilangan cacah, yang merupakan pengetahuan konseptual dasar dalam matematika.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu melakukan konversi dari bentuk kata ke angka dan mengidentifikasi nilai tempat sesuai dengan prosedur yang sudah dipelajari di kelas 5.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman sistem nilai tempat bilangan cacah sampai 100.000. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi membaca dan menulis bilangan sampai 100.000 adalah materi dasar kelas 4/5. Soal ini tidak memerlukan operasi hitung kompleks, hanya pemahaman notasi. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73,9 +159,18 @@ Model membaca representation `metadata`; token input 214/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.000062; applying=0.999938; reasoning=0.000000 | applying | 0.999938 | 0.000607 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.004800; conceptual=0.954657; procedural=0.040543; metacognitive=0.000000 | conceptual | 0.954657 | 0.144186 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.704270; Medium=0.285973; Hard=0.009757 | Easy | 0.704270 | 0.591732 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999938; −Σp ln(p) = 0.000667; H = 0.000667/ln(3) = 0.000607; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.954657; −Σp ln(p) = 0.199884; H = 0.199884/ln(4) = 0.144186; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.704270; −Σp ln(p) = 0.650084; H = 0.650084/ln(3) = 0.591732; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -101,9 +196,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 2. Soal `a58707d1174175358f6a4012`
@@ -262,27 +357,93 @@ Isilah titik-titik dengan bilangan-bilangan yang sesuai.<br><br>b. ....   50.000
 | C | 60.000 dan 80.000 |
 | D | 30.000 dan 80.000 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Selisih antara 50.000 dan 70.000 adalah 20.000. Pola bilangan adalah penambahan 20.000. Maka, bilangan sebelum 50.000 adalah 50.000 - 20.000 = 30.000, dan bilangan setelah 70.000 adalah 70.000 + 20.000 = 90.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b8b4869f26a6751fcab0201b0caa6508568189e8eec2585ecde8745ee662b9c5`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2e9da6f6c283edf25bbb9781ac84834543033d6701cb9053ed157e8cffda5326`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 1600 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 1529 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 1492 |
+
+Run 1 — solusi: Selisih antara 50.000 dan 70.000 adalah 20.000. Pola bilangan adalah penambahan 20.000. Maka, bilangan sebelum 50.000 adalah 50.000 - 20.000 = 30.000, dan bilangan setelah 70.000 adalah 70.000 + 20.000 = 90.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola aritmetika sederhana (penambahan konstan) dari dua bilangan yang diberikan untuk menentukan suku sebelum dan sesudahnya. Ini adalah penerapan prosedur rutin.. Bukti: 50.000 70.000; Isilah titik-titik dengan bilangan-bilangan yang sesuai
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur urutan bilangan dan hubungan antar bilangan dalam pola aritmetika.. Bukti: 50.000 70.000
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena pola bilangan (selisih 20.000) sangat jelas dan langsung terlihat dari dua angka yang diberikan. Siswa hanya perlu melakukan satu operasi aritmetika dasar untuk menemukan angka yang hilang.. Bukti: 50.000 70.000; Isilah titik-titik dengan bilangan-bilangan yang sesuai
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 100.000 dan operasi penjumlahan/pengurangan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, mengidentifikasi pola bilangan dengan selisih tetap adalah keterampilan dasar yang sudah dipelajari di kelas sebelumnya. |
+
+Run 2 — solusi: Pola bilangan adalah penambahan 20.000 secara konstan. 50.000 - 20.000 = 30.000 dan 70.000 + 20.000 = 90.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola penambahan (konsep) dan menerapkan operasi aritmatika dasar untuk menentukan suku sebelum dan sesudah dalam urutan bilangan.. Bukti: 50.000 70.000; Isilah titik-titik dengan bilangan-bilangan yang sesuai
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang urutan bilangan dan pola penambahan (konseptual) serta kemampuan melakukan operasi hitung untuk melengkapi pola tersebut (prosedural).. Bukti: 50.000 70.000
+- Intended difficulty `classify/Easy`: Soal ini termasuk mudah karena pola penambahan 20.000 sangat jelas dan rutin bagi siswa kelas 5.. Bukti: 50.000 70.000
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat dan operasi penjumlahan/pengurangan bilangan cacah. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa dengan pola bilangan dan operasi hitung dasar pada rentang 100.000. |
+
+Run 3 — solusi: Pola bilangan adalah penambahan 20.000 secara konstan. 50.000 - 20.000 = 30.000 dan 70.000 + 20.000 = 90.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola aritmetika sederhana (selisih 20.000) dan menerapkan pola tersebut untuk melengkapi urutan.. Bukti: 50.000 70.000
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang urutan bilangan dan konsep pola bilangan (konseptual) serta prosedur penambahan/pengurangan untuk menemukan suku berikutnya.. Bukti: 50.000 70.000
+- Intended difficulty `classify/Easy`: Soal ini termasuk mudah karena pola bilangan yang diberikan sangat jelas dan linear, hanya memerlukan satu operasi aritmetika dasar untuk menentukan bilangan sebelum dan sesudah.. Bukti: 50.000 70.000
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 100.000 dan operasi penjumlahan/pengurangan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, mengidentifikasi pola bilangan dengan selisih tetap adalah materi dasar yang rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -290,9 +451,18 @@ Model membaca representation `metadata`; token input 107/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.135439; applying=0.864561; reasoning=0.000000 | applying | 0.864561 | 0.360997 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.594681; conceptual=0.377596; procedural=0.027723; metacognitive=0.000000 | factual | 0.594681 | 0.559929 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.912188; Medium=0.085388; Hard=0.002425 | Easy | 0.912188 | 0.280847 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.864561; −Σp ln(p) = 0.396596; H = 0.396596/ln(3) = 0.360997; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.594681; −Σp ln(p) = 0.776226; H = 0.776226/ln(4) = 0.559929; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.912188; −Σp ln(p) = 0.308542; H = 0.308542/ln(3) = 0.280847; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -316,9 +486,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 4. Soal `6b5ab982a459198c7d3f10b6`
@@ -332,27 +502,115 @@ Isilah titik-titik dengan bilangan-bilangan yang sesuai.<br><br>c. 85.350   ....
 | C | 86.350 dan 86.450 |
 | D | 85.400 dan 85.500 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Pola bilangan adalah penambahan 50 pada setiap langkah. 85.350 + 50 = 85.400; 85.450 + 50 = 85.500. Maka urutannya adalah 85.350, 85.400, 85.450, 85.500, 85.550.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4a36080d78828b44217521e6b151c6a29779208dcb6b10aef252b1b7c773fccc`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f88a89fea2da9f7a7cb09cf2cc31894953f7a4c441568c26601a730b087cb33e`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 1611 |
+| 2 | success | valid / verified | applying | procedural | Easy | 1522 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 1506 |
+
+Run 1 — solusi: Pola bilangan adalah penambahan 100 pada setiap langkah (85.350 + 100 = 85.450; 85.450 + 100 = 85.550). Namun, soal meminta mengisi titik-titik di antara bilangan tersebut. Selisih antara 85.350 dan 85.450 adalah 100. Titik tengahnya adalah 85.350 + 50 = 85.400. Maka urutannya: 85.350, 85.400, 85.450, 85.500, 85.550. Jawaban D benar.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola penambahan (interval) antar bilangan yang diberikan untuk menentukan bilangan yang hilang di antara dua bilangan yang diketahui.. Bukti: Isilah titik-titik dengan bilangan-bilangan yang sesuai.; 85.350 .... 85.450 .... 85.550
+- Dimensi pengetahuan `classify/conceptual`: Memerlukan pemahaman tentang struktur sistem bilangan cacah dan hubungan urutan antar bilangan.. Bukti: 85.350 .... 85.450 .... 85.550
+- Intended difficulty `classify/Easy`: Soal ini melibatkan prosedur rutin untuk menentukan nilai tengah atau interval dalam urutan bilangan yang familiar bagi siswa kelas 5.. Bukti: 85.350 .... 85.450 .... 85.550
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 100.000 dan operasi penjumlahan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi mengurutkan dan melengkapi pola bilangan cacah adalah standar kompetensi kelas 5 yang bersifat rutin. |
+
+Run 2 — solusi: Pola bilangan adalah penambahan 50. 85.350 + 50 = 85.400; 85.450 + 50 = 85.500. Jadi, bilangan yang tepat adalah 85.400 dan 85.500.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola penambahan konstan (50) di antara bilangan yang diberikan untuk mengisi titik-titik, yang merupakan penerapan prosedur rutin.. Bukti: 85.350 .... 85.450 .... 85.550
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang urutan bilangan dan pola penambahan, yang merupakan pengetahuan prosedural dalam mengurutkan bilangan cacah.. Bukti: 85.350 .... 85.450 .... 85.550
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan identifikasi selisih antar bilangan dan menerapkan pola tersebut.. Bukti: 85.350 .... 85.450 .... 85.550
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 100.000 dan operasi penjumlahan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, mengurutkan bilangan cacah hingga 100.000 adalah materi dasar yang sudah familiar. |
+
+Run 3 — solusi: Pola bilangan adalah penambahan 50 pada setiap suku. 85.350 + 50 = 85.400; 85.450 + 50 = 85.500. Jadi, bilangan yang tepat adalah 85.400 dan 85.500.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola penambahan konstan (50) di antara bilangan yang diberikan untuk menentukan nilai yang hilang.. Bukti: 85.350 .... 85.450 .... 85.550
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur sistem bilangan cacah dan hubungan urutan (pola bilangan).. Bukti: 85.350 .... 85.450 .... 85.550
+- Intended difficulty `classify/Easy`: Soal ini termasuk mudah karena pola penambahan konstan sangat terlihat dan prosedurnya langsung.. Bukti: 85.350 .... 85.450 .... 85.550
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 100.000 dan operasi penjumlahan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, mengidentifikasi pola bilangan dengan selisih konstan adalah keterampilan dasar yang diharapkan sudah dikuasai. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3096`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengidentifikasi pola penambahan konstan (interval 50) di antara bilangan yang diberikan untuk menentukan nilai yang hilang, yang merupakan penerapan prosedur rutin.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman tentang urutan bilangan dan pola penambahan, yang merupakan pengetahuan prosedural dalam mengurutkan bilangan cacah.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan identifikasi selisih antar bilangan dan menerapkan pola tersebut.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 100.000 dan operasi penjumlahan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, mengurutkan bilangan cacah hingga 100.000 dan melengkapi pola bilangan adalah materi dasar yang sudah familiar. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -360,9 +618,18 @@ Model membaca representation `metadata`; token input 111/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.151006; applying=0.848994; reasoning=0.000000 | applying | 0.848994 | 0.386352 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.728262; conceptual=0.251327; procedural=0.020411; metacognitive=0.000000 | factual | 0.728262 | 0.474245 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.925403; Medium=0.072403; Hard=0.002194 | Easy | 0.925403 | 0.250563 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.848994; −Σp ln(p) = 0.424451; H = 0.424451/ln(3) = 0.386352; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.728262; −Σp ln(p) = 0.657443; H = 0.657443/ln(4) = 0.474245; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.925403; −Σp ln(p) = 0.275272; H = 0.275272/ln(3) = 0.250563; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -386,9 +653,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 5. Soal `e05bf2067c83ab344656d352`
@@ -1167,27 +1434,93 @@ Manakah yang termasuk 5 bilangan kelipatan 6.
 | C | 1, 2, 3, 6, 12 |
 | D | 6, 12, 18, 24, 32 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Kelipatan 6 diperoleh dengan mengalikan 6 dengan bilangan asli berurutan: 6x1=6, 6x2=12, 6x3=18, 6x4=24, 6x5=30.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6b34b2ef51b111cf86b154cccca1b32b7133bc067ec4d9bd89e6bc448f1f7fb4`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `93cdada2376707b37c7f5e8d96be9834da3cacfc25d95b4b6fab74a1017ac9b4`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 1428 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 1395 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 1377 |
+
+Run 1 — solusi: Kelipatan 6 diperoleh dengan mengalikan 6 dengan bilangan asli berurutan: 6x1=6, 6x2=12, 6x3=18, 6x4=24, 6x5=30.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengenali deret bilangan yang merupakan hasil perkalian 6 dengan bilangan asli, yang merupakan proses langsung dalam memahami konsep kelipatan.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 6.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang konsep dasar kelipatan suatu bilangan.. Bukti: kelipatan 6
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 5, hanya memerlukan pengenalan pola kelipatan sederhana tanpa langkah kompleks.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 6.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep perkalian dasar dan kelipatan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi kelipatan adalah materi dasar kelas 4/5, soal ini tidak menuntut analisis mendalam. |
+
+Run 2 — solusi: Kelipatan 6 diperoleh dengan mengalikan 6 dengan bilangan asli berurutan: 6x1=6, 6x2=12, 6x3=18, 6x4=24, 6x5=30.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses langsung (perkalian dasar) untuk mengenali deret kelipatan 6.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 6
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang definisi atau konsep dasar kelipatan bilangan.. Bukti: 5 bilangan kelipatan 6
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan prosedur rutin yang familiar bagi siswa kelas 5 tanpa ada kompleksitas tambahan.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 6
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep perkalian dasar dan kelipatan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi kelipatan adalah topik dasar kelas 4/5 yang bersifat prosedural langsung. |
+
+Run 3 — solusi: Kelipatan 6 diperoleh dengan mengalikan 6 dengan bilangan asli berurutan: 6x1=6, 6x2=12, 6x3=18, 6x4=24, 6x5=30.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan menerapkan definisi dasar kelipatan bilangan, yang merupakan proses rutin.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 6
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep kelipatan sebagai hasil perkalian bilangan dengan bilangan asli.. Bukti: 5 bilangan kelipatan 6
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pemahaman konsep kelipatan satu angka tanpa langkah kompleks atau konteks cerita.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 6
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep perkalian dasar dan kelipatan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi kelipatan adalah materi dasar kelas 4/5, soal ini bersifat langsung dan tidak memerlukan strategi pemecahan masalah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1195,9 +1528,18 @@ Model membaca representation `metadata`; token input 85/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.783856; applying=0.216144; reasoning=0.000000 | knowing | 0.783856 | 0.475130 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.485040; conceptual=0.483915; procedural=0.031045; metacognitive=0.000000 | factual | 0.485040 | 0.584280 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.873165; Medium=0.124450; Hard=0.002385 | Easy | 0.873165 | 0.356963 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.783856; −Σp ln(p) = 0.521984; H = 0.521984/ln(3) = 0.475130; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.485040; −Σp ln(p) = 0.809984; H = 0.809984/ln(4) = 0.584280; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.873165; −Σp ln(p) = 0.392164; H = 0.392164/ln(3) = 0.356963; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -1219,9 +1561,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 11. Soal `832752421f3344f9b02244e9`
@@ -1235,27 +1577,93 @@ Manakah yang termasuk 5 bilangan kelipatan 8.
 | C | 8, 16, 24, 32, 40 |
 | D | 8, 18, 28, 38, 48 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Kelipatan 8 diperoleh dengan mengalikan 8 dengan bilangan asli berurutan: 8x1=8, 8x2=16, 8x3=24, 8x4=32, 8x5=40.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a40c79c2802dfc3ef0d1360024717dca2ab6e69bcf814ad0fbfecc12e7d34198`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `908cb897f26ef11c3215d8e1d960e5f08f9e7e1f77a9be90360153b08290ee7e`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 1433 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 1382 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 1430 |
+
+Run 1 — solusi: Kelipatan 8 diperoleh dengan mengalikan 8 dengan bilangan asli berurutan: 8x1=8, 8x2=16, 8x3=24, 8x4=32, 8x5=40.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengenali dan mengidentifikasi urutan bilangan yang merupakan hasil perkalian 8, yang merupakan proses langsung dalam memahami konsep kelipatan.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 8
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang definisi atau konsep dasar kelipatan suatu bilangan.. Bukti: 5 bilangan kelipatan 8
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan pemahaman dasar tentang kelipatan tanpa langkah kompleks atau strategi non-rutin.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 8
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep perkalian dasar dan definisi kelipatan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah sangat familiar dengan konsep kelipatan sebagai materi dasar aritmatika. |
+
+Run 2 — solusi: Kelipatan 8 diperoleh dengan mengalikan 8 dengan bilangan asli berurutan: 8x1=8, 8x2=16, 8x3=24, 8x4=32, 8x5=40.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses perkalian dasar atau penjumlahan berulang untuk mengenali kelipatan, yang merupakan proses langsung.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 8
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang definisi kelipatan sebagai konsep dasar dalam aritmatika.. Bukti: 5 bilangan kelipatan 8
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan ingatan tentang tabel perkalian atau konsep kelipatan sederhana tanpa langkah kompleks.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 8
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep perkalian dasar dan kelipatan bilangan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi kelipatan adalah topik dasar kelas 4-5, soal ini tidak menuntut analisis lebih lanjut. |
+
+Run 3 — solusi: Kelipatan 8 diperoleh dengan mengalikan 8 dengan bilangan asli berurutan: 8x1=8, 8x2=16, 8x3=24, 8x4=32, 8x5=40.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengenali atau menghasilkan urutan kelipatan dasar, yang merupakan proses langsung tanpa memerlukan strategi kompleks.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 8.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang definisi kelipatan bilangan, yang merupakan konsep dasar dalam aritmatika.. Bukti: 5 bilangan kelipatan 8
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan pemahaman dasar tentang konsep kelipatan.. Bukti: Manakah yang termasuk 5 bilangan kelipatan 8.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep perkalian dasar dan definisi kelipatan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, konsep kelipatan adalah materi dasar yang sudah dipelajari sebelumnya, sehingga soal ini tergolong mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1263,9 +1671,18 @@ Model membaca representation `metadata`; token input 83/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.842054; applying=0.157946; reasoning=0.000000 | knowing | 0.842054 | 0.397091 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.540879; conceptual=0.431375; procedural=0.027746; metacognitive=0.000000 | factual | 0.540879 | 0.573150 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.874725; Medium=0.122991; Hard=0.002284 | Easy | 0.874725 | 0.353825 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.842054; −Σp ln(p) = 0.436249; H = 0.436249/ln(3) = 0.397091; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.540879; −Σp ln(p) = 0.794554; H = 0.794554/ln(4) = 0.573150; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.874725; −Σp ln(p) = 0.388716; H = 0.388716/ln(3) = 0.353825; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -1287,9 +1704,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 12. Soal `b0a4a7a0fbc116f18ee73c8b`
@@ -1591,27 +2008,115 @@ tentukan faktor-faktor dari bilangan 72
 | C | 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72 |
 | D | 1, 2, 3, 4, 6, 8, 12, 18, 24, 36, 72 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Faktor dari 72 adalah semua bilangan yang membagi habis 72. Pasangan faktor: 1x72, 2x36, 3x24, 4x18, 6x12, 8x9. Himpunan faktor: {1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4aadc74f17f7f25ed30cb2bfad03f064a8151a549453aa52f7e24f6405a9cada`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `da745825a45854a9c29d0f424a887e9cd5cde0c086eb3eb2acb61de65a73c573`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 1529 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 1505 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 1558 |
+
+Run 1 — solusi: Faktor dari 72 adalah semua bilangan yang membagi habis 72: 1x72, 2x36, 3x24, 4x18, 6x12, 8x9. Himpunan faktornya adalah {1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72}.
+- Domain kognitif `classify/applying`: Siswa diminta untuk melakukan proses prosedural standar untuk menentukan faktor dari sebuah bilangan, yang merupakan tugas rutin di kelas 5.. Bukti: tentukan faktor-faktor dari bilangan 72
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau teknik mencari faktor bilangan (prosedural) berdasarkan definisi faktor (konseptual).. Bukti: faktor-faktor dari bilangan 72
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 5, melibatkan satu konsep utama (faktor) dengan beban kalkulasi yang rendah.. Bukti: tentukan faktor-faktor dari bilangan 72
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman perkalian dasar dan pembagian. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Mencari faktor bilangan adalah materi standar kelas 5 yang bersifat rutin. |
+
+Run 2 — solusi: Faktor dari 72 adalah bilangan yang membagi habis 72. Pasangan faktor: 1x72, 2x36, 3x24, 4x18, 6x12, 8x9. Himpunan faktor: {1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72}.
+- Domain kognitif `classify/knowing`: Siswa diminta melakukan proses prosedural standar untuk menentukan faktor dari sebuah bilangan, yang merupakan tugas rutin.. Bukti: tentukan faktor-faktor dari bilangan 72
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang definisi faktor dan penerapan algoritma pembagian atau pencarian pasangan faktor.. Bukti: faktor-faktor dari bilangan 72
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 5. Prosedur pencarian faktor adalah materi dasar yang familiar, dengan beban komputasi rendah dan satu keputusan utama (menentukan semua pembagi).. Bukti: tentukan faktor-faktor dari bilangan 72
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman perkalian dasar dan konsep pembagian. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Mencari faktor bilangan dua digit adalah kompetensi standar kelas 5 yang bersifat rutin. |
+
+Run 3 — solusi: Faktor dari 72 adalah semua bilangan yang membagi habis 72: 1x72, 2x36, 3x24, 4x18, 6x12, 8x9. Himpunan faktornya: {1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72}.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan prosedur rutin menentukan faktor bilangan, yang merupakan proses langsung tanpa perlu strategi nonrutin atau pembenaran kompleks.. Bukti: tentukan faktor-faktor dari bilangan 72
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang definisi dan algoritma mencari faktor suatu bilangan, yang merupakan pengetahuan prosedural.. Bukti: faktor-faktor dari bilangan 72
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 5, melibatkan satu konsep dasar (faktor) dengan beban kalkulasi rendah dan representasi yang sangat familiar.. Bukti: tentukan faktor-faktor dari bilangan 72
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pembagian dan perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan faktor bilangan adalah materi standar kelas 4-5 SD yang bersifat prosedural dan rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 1, "knowing": 2} | majority_2_of_3 / adjudicated | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `2906`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa diminta melakukan prosedur rutin untuk menentukan faktor bilangan. Ini adalah proses langsung yang tidak memerlukan strategi nonrutin atau integrasi informasi yang kompleks.
+- Dimensi pengetahuan `procedural`: Soal ini menguji penerapan algoritma atau teknik pencarian faktor (prosedural) berdasarkan definisi faktor (konseptual).
+- Intended difficulty `Easy`: Soal ini bersifat rutin, melibatkan satu konsep dasar dengan beban kalkulasi rendah dan representasi yang sangat familiar bagi siswa kelas 5.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pembagian dan perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan faktor bilangan adalah materi standar kelas 4-5 SD yang bersifat prosedural dan rutin. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1619,9 +2124,18 @@ Model membaca representation `metadata`; token input 138/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.870602; applying=0.129398; reasoning=0.000000 | knowing | 0.870602 | 0.350662 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.097878; conceptual=0.884619; procedural=0.017503; metacognitive=0.000000 | conceptual | 0.884619 | 0.293394 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.771643; Medium=0.223126; Hard=0.005231 | Easy | 0.771643 | 0.511742 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.870602; −Σp ln(p) = 0.385242; H = 0.385242/ln(3) = 0.350662; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.884619; −Σp ln(p) = 0.406730; H = 0.406730/ln(4) = 0.293394; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.771643; −Σp ln(p) = 0.562206; H = 0.562206/ln(3) = 0.511742; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -1643,9 +2157,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 15. Soal `5d06ae960e3abd045c974c60`
@@ -1659,27 +2173,93 @@ Tentukan faktor-faktor dari bilangan berikut 24
 | C | 1, 2, 3, 4, 6, 8, 12, 16, 24 |
 | D | 2, 3, 4, 6, 8, 12 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Faktor dari 24 adalah semua bilangan yang membagi habis 24: 1x24, 2x12, 3x8, 4x6. Maka faktornya adalah 1, 2, 3, 4, 6, 8, 12, 24.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c0d95ae397ff38564ec123e901070e3d448eeea7a0e59617fac9d5ddafd05526`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `288c77f75ce98568542a9d66865abb98efe72be03b6e838cd1746c2cf4fdf93b`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 1389 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 1398 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 1414 |
+
+Run 1 — solusi: Faktor dari 24 adalah semua bilangan yang membagi habis 24: 1x24, 2x12, 3x8, 4x6. Maka faktornya adalah 1, 2, 3, 4, 6, 8, 12, 24.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan proses rutin menentukan faktor bilangan, yang merupakan prosedur standar dalam kurikulum kelas 5.. Bukti: Tentukan faktor-faktor dari bilangan berikut 24
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang definisi faktor dan penerapan algoritma pembagian sederhana untuk menemukan pasangan faktor.. Bukti: Tentukan faktor-faktor dari bilangan berikut 24
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan pemahaman dasar tentang faktor bilangan tanpa langkah kompleks atau strategi nonrutin.. Bukti: Tentukan faktor-faktor dari bilangan berikut 24
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar perkalian dan pembagian bilangan cacah. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan faktor bilangan adalah materi standar kelas 4-5 yang bersifat prosedural dan rutin. |
+
+Run 2 — solusi: Faktor dari 24 adalah semua bilangan yang membagi habis 24: 1x24, 2x12, 3x8, 4x6. Jadi faktornya adalah 1, 2, 3, 4, 6, 8, 12, 24.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan prosedur rutin mencari faktor dari bilangan bulat, yang merupakan proses langsung tanpa perlu strategi kompleks.. Bukti: Tentukan faktor-faktor dari bilangan berikut 24
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menentukan faktor suatu bilangan.. Bukti: Tentukan faktor-faktor dari bilangan berikut 24
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan ingatan tentang konsep faktor dan pembagian dasar.. Bukti: Tentukan faktor-faktor dari bilangan berikut 24
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pembagian dan perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan faktor bilangan adalah materi standar kelas 4-5 yang bersifat prosedural dasar. |
+
+Run 3 — solusi: Faktor dari 24 adalah bilangan yang membagi habis 24, yaitu 1, 2, 3, 4, 6, 8, 12, dan 24.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan prosedur rutin menentukan faktor bilangan, yang merupakan proses langsung tanpa perlu strategi kompleks.. Bukti: Tentukan faktor-faktor dari bilangan berikut 24
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara mencari faktor suatu bilangan.. Bukti: Tentukan faktor-faktor dari bilangan berikut 24
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan satu langkah prosedural untuk kelas 5.. Bukti: Tentukan faktor-faktor dari bilangan berikut 24
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pembagian dan perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan faktor bilangan adalah materi standar kelas 5 yang bersifat rutin dan prosedural. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1687,9 +2267,18 @@ Model membaca representation `metadata`; token input 99/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.948768; applying=0.051232; reasoning=0.000000 | knowing | 0.948768 | 0.183983 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.470912; conceptual=0.514524; procedural=0.014563; metacognitive=0.000000 | conceptual | 0.514524 | 0.546880 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.889939; Medium=0.107517; Hard=0.002544 | Easy | 0.889939 | 0.326541 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.948768; −Σp ln(p) = 0.202126; H = 0.202126/ln(3) = 0.183983; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.514524; −Σp ln(p) = 0.758137; H = 0.758137/ln(4) = 0.546880; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.889939; −Σp ln(p) = 0.358742; H = 0.358742/ln(3) = 0.326541; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -1711,9 +2300,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 16. Soal `ced0037808c936917602ebcb`
@@ -2306,37 +2895,134 @@ Bandingkan kedua gambar berikut ini, kemudian pilihlah tanda <, =, atau > untuk 
 ![Gambar sumber soal 20](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0091-00.png>)
 
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0091-00.png. Transkripsi visual: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Membandingkan pecahan 3/4 dan 9/16 dengan menyamakan penyebut: 3/4 = 12/16. Karena 12/16 > 9/16, maka 3/4 > 9/16.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0091-00.png. Transkripsi visual: Gambar menunjukkan tiga baris perbandingan pecahan (b, c, d). Baris b: segitiga dengan bagian diarsir. Baris c: segitiga dengan pola fraktal. Baris d: persegi panjang dengan bagian diarsir. Pilihan jawaban merujuk pada pecahan 3/4 dan 9/16.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `430d297936493498582f996f3fa3fdfef3c102a623703e34d1fa161923fec7bf`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1f976c132278a2fefbee91cf2c9c34f0993c2670c4df717829d087d4837f7345`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2581 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 2691 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2651 |
+
+Run 1 — solusi: Membandingkan pecahan 3/4 dan 9/16 dengan menyamakan penyebut: 3/4 = 12/16. Karena 12/16 > 9/16, maka 3/4 > 9/16.
+- Domain kognitif `classify/applying`: Siswa diminta untuk membandingkan dua nilai pecahan. Meskipun ada ketidaksesuaian visual, tugas utamanya adalah menerapkan prosedur perbandingan pecahan.. Bukti: Bandingkan kedua gambar berikut ini; pilihlah tanda <, =, atau >
+- Dimensi pengetahuan `classify/procedural`: Memerlukan pemahaman tentang konsep pecahan senilai dan prosedur membandingkan pecahan dengan penyebut berbeda.. Bukti: 3/4 > 9/16
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan perbandingan dua pecahan sederhana yang merupakan materi dasar kelas 5.. Bukti: 3/4 > 9/16
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman pecahan senilai dan perbandingan pecahan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Membandingkan pecahan adalah kompetensi standar kelas 5. |
+
+Run 2 — solusi: Gambar kiri menunjukkan 3 dari 4 bagian diarsir (3/4). Gambar kanan menunjukkan 9 dari 16 bagian diarsir (9/16). Menyamakan penyebut: 3/4 = 12/16. Karena 12/16 > 9/16, maka 3/4 > 9/16.
+- Domain kognitif `classify/applying`: Siswa perlu menginterpretasikan representasi visual pecahan, mengubahnya menjadi simbol numerik, dan melakukan perbandingan pecahan dengan penyebut berbeda.. Bukti: Bandingkan kedua gambar berikut ini; 3/4 > 9/16
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami konsep pecahan senilai untuk membandingkan dua pecahan dengan penyebut yang berbeda.. Bukti: 3/4 = 12/16; lebih besar dari 9/16
+- Intended difficulty `classify/Medium`: Soal ini memerlukan konversi representasi visual ke numerik dan prosedur perbandingan pecahan yang rutin bagi siswa kelas 5.. Bukti: 3/4 > 9/16; menyamakan penyebut
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar pecahan sebagai bagian dari keseluruhan dan konsep pecahan senilai. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah mampu membandingkan pecahan dengan penyebut berbeda menggunakan metode menyamakan penyebut atau visualisasi. |
+
+Run 3 — solusi: Soal memiliki ketidaksesuaian antara visual dan angka. Jika mengacu pada angka 3/4 dan 9/16, maka 3/4 = 12/16, sehingga 12/16 > 9/16.
+- Domain kognitif `classify/applying`: Siswa diminta untuk membandingkan dua nilai pecahan. Meskipun ada ketidaksesuaian visual, proses kognitif yang diharapkan adalah menerapkan prosedur perbandingan pecahan.. Bukti: Bandingkan kedua gambar berikut ini; pilihlah tanda <, =, atau >
+- Dimensi pengetahuan `classify/conceptual`: Memerlukan pemahaman tentang konsep pecahan senilai atau penyamaan penyebut untuk membandingkan dua pecahan dengan penyebut berbeda.. Bukti: 3/4 > 9/16
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena membandingkan pecahan adalah materi rutin kelas 5. Namun, karena adanya ketidaksesuaian visual, siswa mungkin bingung, tetapi secara prosedural ini adalah tugas standar.. Bukti: 3/4 > 9/16
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman pecahan senilai dan perbandingan pecahan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Membandingkan pecahan dengan penyebut berbeda adalah kompetensi dasar kelas 5. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 2, "Medium": 1} | majority_2_of_3 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3997`.
+Konten: `valid`; kunci: `verified`; masalah: Soal ini ambigu karena menampilkan tiga baris perbandingan visual (b, c, d) namun tidak secara spesifik merujuk pada baris mana yang harus dibandingkan. Namun, berdasarkan pilihan jawaban yang tersedia (3/4 dan 9/16), siswa dapat menyimpulkan bahwa soal merujuk pada perbandingan pecahan secara numerik yang mungkin diwakili oleh salah satu visual tersebut atau hanya sebagai ilustrasi umum..
+- Domain kognitif `applying`: Siswa diminta untuk menerapkan prosedur perbandingan pecahan pada dua nilai yang diberikan. Meskipun ada ambiguitas visual, tugas utamanya adalah menerapkan prosedur matematika untuk menentukan hubungan antara dua pecahan.
+- Dimensi pengetahuan `procedural`: Memerlukan pemahaman konsep pecahan senilai (conceptual) dan prosedur untuk membandingkan pecahan dengan penyebut berbeda (procedural). Mengingat fokus utama adalah melakukan perbandingan, dimensi prosedural lebih dominan.
+- Intended difficulty `Easy`: Soal ini tergolong mudah karena membandingkan pecahan adalah materi rutin kelas 5. Prosedur menyamakan penyebut adalah langkah standar yang diharapkan dikuasai siswa.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman pecahan senilai dan perbandingan pecahan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Membandingkan pecahan dengan penyebut berbeda adalah kompetensi standar kelas 5. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 153/256; truncation: `False`.
+Model membaca representation `metadata`; token input 208/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.462825; applying=0.537175; reasoning=0.000000 | applying | 0.537175 | 0.628412 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.000140; conceptual=0.993770; procedural=0.006089; metacognitive=0.000000 | conceptual | 0.993770 | 0.027785 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.533403; Medium=0.459124; Hard=0.007474 | Easy | 0.533403 | 0.663768 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.537175; −Σp ln(p) = 0.690381; H = 0.690381/ln(3) = 0.628412; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.993770; −Σp ln(p) = 0.038519; H = 0.038519/ln(4) = 0.027785; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.533403; −Σp ln(p) = 0.729224; H = 0.729224/ln(3) = 0.663768; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -2351,16 +3037,16 @@ Pilihan: A. $\frac{3}{4} = \frac{9}{16}$
 B. $\frac{3}{4} > \frac{9}{16}$
 C. $\frac{1}{4} > \frac{7}{16}$
 D. $\frac{3}{4} < \frac{9}{16}$
-Transkripsi visual: -
+Transkripsi visual: Gambar menunjukkan tiga baris perbandingan pecahan (b, c, d). Baris b: segitiga dengan bagian diarsir. Baris c: segitiga dengan pola fraktal. Baris d: persegi panjang dengan bagian diarsir. Pilihan jawaban merujuk pada pecahan 3/4 dan 9/16.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: Soal ini ambigu karena menampilkan tiga baris perbandingan visual (b, c, d) namun tidak secara spesifik merujuk pada baris mana yang harus dibandingkan. Namun, berdasarkan pilihan jawaban yang tersedia (3/4 dan 9/16), siswa dapat menyimpulkan bahwa soal merujuk pada perbandingan pecahan secara numerik yang mungkin diwakili oleh salah satu visual tersebut atau hanya sebagai ilustrasi umum..
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 21. Soal `0a7f58a69ba9ec033899af2c`
@@ -3237,27 +3923,115 @@ Aku berlari mengelilingi tepian lapangan bola. Perhatikan kembali lintasan berla
 | C | 100 + 50 + 100 + 50 = 300 m |
 | D | 100 + 50 = 150 m |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Keliling adalah jumlah panjang seluruh sisi bangun datar. Untuk lapangan berbentuk persegi panjang dengan panjang 100 m dan lebar 50 m, kelilingnya adalah 100 + 50 + 100 + 50 = 300 m.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7be7229f1fc0904e8cc25c1e67eb33a604a963c02af666670152f96298c068a1`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b9a82be348a9d25e0571d29b0efb3f8cf9554c9915c14a23e5b0004598abbe9a`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 1516 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 1544 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 1485 |
+
+Run 1 — solusi: Keliling persegi panjang adalah jumlah seluruh sisi tepinya: 100 + 50 + 100 + 50 = 300 m.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep keliling bangun datar (persegi panjang) pada situasi rutin lapangan bola. Ini adalah penerapan prosedur standar.. Bukti: Bagaimana menentukan panjang lintasan berlarinya?; 100 + 50 + 100 + 50 = 300 m
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau urutan langkah untuk menghitung keliling bangun datar.. Bukti: Apakah Keliling Bangun Datar Itu?; 100 + 50 + 100 + 50 = 300 m
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan pemahaman dasar tentang keliling sebagai jumlah sisi-sisi luar bangun datar.. Bukti: 100 m; 50 m; 100 + 50 + 100 + 50 = 300 m
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang penjumlahan dan konsep keliling sebagai total panjang sisi luar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 5 karena keliling bangun datar adalah materi dasar yang sudah diperkenalkan dan dipraktikkan secara rutin. |
+
+Run 2 — solusi: Keliling persegi panjang adalah jumlah seluruh panjang sisi-sisinya. Lapangan memiliki dua sisi panjang (100 m) dan dua sisi lebar (50 m). Maka, 100 + 50 + 100 + 50 = 300 m.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep keliling bangun datar (persegi panjang) pada situasi kontekstual sederhana. Ini adalah penerapan prosedur rutin.. Bukti: Bagaimana menentukan panjang lintasan berlarinya?; 100 + 50 + 100 + 50 = 300 m
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip keliling sebagai jumlah panjang sisi-sisi bangun datar.. Bukti: Apakah Keliling Bangun Datar Itu?; 100 + 50 + 100 + 50 = 300 m
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan pemahaman dasar tentang keliling persegi panjang tanpa variasi atau jebakan yang kompleks.. Bukti: Aku berlari mengelilingi tepian lapangan bola.; 100 + 50 + 100 + 50 = 300 m
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep keliling sebagai jumlah sisi-sisi bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 5 karena keliling bangun datar adalah materi dasar yang sudah diperkenalkan dan dipraktikkan secara rutin. |
+
+Run 3 — solusi: Keliling persegi panjang adalah jumlah seluruh sisi tepinya: 100 m + 50 m + 100 m + 50 m = 300 m.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan konsep keliling pada situasi nyata (lapangan) yang merupakan prosedur rutin bagi siswa kelas 5.. Bukti: mengelilingi tepian lapangan bola; Bagaimana menentukan panjang lintasan berlarinya?
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip bahwa keliling adalah jumlah panjang sisi-sisi pembatas bangun datar.. Bukti: Apakah Keliling Bangun Datar Itu?; 100 + 50 + 100 + 50 = 300 m
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, menguji pemahaman dasar tentang keliling persegi panjang dengan angka yang sederhana.. Bukti: 50 m; 100 m; 100 + 50 + 100 + 50 = 300 m
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa dengan konsep keliling bangun datar sederhana seperti persegi panjang. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3804`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa menerapkan konsep keliling pada situasi rutin (lapangan bola) dengan memilih prosedur penjumlahan sisi yang tepat.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang apa itu keliling (jumlah sisi luar) dibandingkan dengan konsep lain seperti luas.
+- Intended difficulty `Easy`: Soal ini bersifat rutin, menggunakan angka sederhana, dan langsung menguji pemahaman dasar keliling tanpa kompleksitas tambahan.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi keliling bangun datar adalah standar kurikulum kelas 5, soal ini tidak memerlukan strategi non-rutin. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3265,9 +4039,18 @@ Model membaca representation `metadata`; token input 114/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.001028; applying=0.998972; reasoning=0.000000 | applying | 0.998972 | 0.007372 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.690649; conceptual=0.271514; procedural=0.037838; metacognitive=0.000000 | factual | 0.690649 | 0.529114 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.868100; Medium=0.129409; Hard=0.002491 | Easy | 0.868100 | 0.366223 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.998972; −Σp ln(p) = 0.008099; H = 0.008099/ln(3) = 0.007372; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.690649; −Σp ln(p) = 0.733508; H = 0.733508/ln(4) = 0.529114; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.868100; −Σp ln(p) = 0.402337; H = 0.402337/ln(3) = 0.366223; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3293,9 +4076,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 28. Soal `cc5fd01ffa204b51f2db5c54`
@@ -3312,37 +4095,134 @@ Sekarang, perhatikan gambar-gambar berikut. Tentukan berapa kelilingnya?.
 ![Gambar sumber soal 28](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0130-06.png>)
 
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0130-06.png. Transkripsi visual: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Keliling adalah jumlah seluruh panjang sisi tepi bangun. Untuk bangun kedua (trapesium), keliling = 4 cm + 5 cm + 5 cm + 5 cm = 19 cm.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0130-06.png. Transkripsi visual: Terdapat dua bangun datar. Bangun pertama adalah persegi dengan panjang sisi 4 cm. Bangun kedua adalah trapesium dengan panjang sisi atas 4 cm, sisi bawah 5 cm, sisi kiri 5 cm, dan sisi kanan 5 cm.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['mengidentifikasi', 'menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2164b3a1c6897f40e5a3c096fb82507e5c949c77b1b536538677eb74bdab48e6`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `923fd842f5bc360df0c06e930b33177e7f3626884e7e1925290e9571ede3dc3f`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2577 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2527 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2563 |
+
+Run 1 — solusi: Keliling adalah jumlah seluruh panjang sisi tepi bangun. Untuk bangun kedua (trapesium), keliling = 4 cm + 5 cm + 5 cm + 5 cm = 19 cm.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi keliling (penjumlahan sisi-sisi) pada bangun datar yang diberikan. Ini adalah penerapan prosedur rutin pada situasi yang sudah jelas.. Bukti: Tentukan berapa kelilingnya?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung keliling bangun datar dengan menjumlahkan panjang sisi-sisinya.. Bukti: Tentukan berapa kelilingnya?
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi panjang sisi-sisi pada gambar dan menjumlahkannya. Tidak ada jebakan atau strategi kompleks.. Bukti: Tentukan berapa kelilingnya?; 4 + 5 + 5 + 5 = 19 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung keliling bangun datar sederhana dengan menjumlahkan sisi-sisinya adalah materi dasar yang sudah sangat familiar. |
+
+Run 2 — solusi: Keliling adalah jumlah seluruh sisi luar. Untuk bangun kedua (trapesium), keliling = 4 cm + 5 cm + 5 cm + 5 cm = 19 cm.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi keliling (penjumlahan sisi) pada bangun datar yang diberikan. Ini adalah penerapan prosedur rutin.. Bukti: Tentukan berapa kelilingnya?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang keliling sebagai total panjang sisi-sisi bangun datar.. Bukti: keliling = jumlah panjang sisi-sisinya
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 5. Siswa hanya perlu menjumlahkan panjang sisi yang sudah tertera secara eksplisit pada gambar.. Bukti: 4 + 5 + 5 + 5 = 19 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang operasi penjumlahan dan konsep keliling sebagai total panjang sisi. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung keliling bangun datar dengan sisi yang sudah diketahui adalah tugas rutin yang sangat mudah. |
+
+Run 3 — solusi: Keliling adalah jumlah seluruh sisi luar bangun datar. Untuk bangun kedua (trapesium), keliling = 4 cm + 5 cm + 5 cm + 5 cm = 19 cm.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi keliling (penjumlahan sisi-sisi) pada bangun datar yang diberikan. Ini adalah penerapan prosedur rutin.. Bukti: Tentukan berapa kelilingnya?
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang prosedur menghitung keliling dengan menjumlahkan panjang sisi-sisi bangun datar.. Bukti: Tentukan berapa kelilingnya?
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menjumlahkan angka-angka yang sudah tertera pada gambar. Tidak ada jebakan atau strategi kompleks yang diperlukan.. Bukti: Tentukan berapa kelilingnya?; 4 + 5 + 5 + 5 = 19 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung keliling bangun datar dengan sisi yang sudah diketahui adalah tugas yang sangat mendasar dan rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3840`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa diminta menerapkan definisi keliling (penjumlahan sisi-sisi) pada bangun datar yang diberikan. Ini adalah penerapan prosedur rutin pada situasi yang sudah jelas.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung keliling bangun datar dengan menjumlahkan panjang sisi-sisinya.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi panjang sisi-sisi pada gambar dan menjumlahkannya. Tidak ada jebakan atau strategi kompleks.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung keliling bangun datar sederhana dengan menjumlahkan sisi-sisinya adalah materi dasar yang sudah sangat familiar. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 98/256; truncation: `False`.
+Model membaca representation `metadata`; token input 140/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.399853; applying=0.600147; reasoning=0.000000 | applying | 0.600147 | 0.612547 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.203517; conceptual=0.779590; procedural=0.016893; metacognitive=0.000000 | conceptual | 0.779590 | 0.423464 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.806338; Medium=0.190668; Hard=0.002994 | Easy | 0.806338 | 0.461440 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.600147; −Σp ln(p) = 0.672952; H = 0.672952/ln(3) = 0.612547; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.779590; −Σp ln(p) = 0.587046; H = 0.587046/ln(4) = 0.423464; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.806338; −Σp ln(p) = 0.506944; H = 0.506944/ln(3) = 0.461440; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3357,16 +4237,16 @@ Pilihan: A. Keliling = 4 × 4 = 16 cm
 B. Keliling = 4 + 5 + 5 = 14 cm
 C. Keliling = 4 × 5 = 20 cm
 D. Keliling = 4 + 5 + 5 + 5 = 19 cm
-Transkripsi visual: -
+Transkripsi visual: Terdapat dua bangun datar. Bangun pertama adalah persegi dengan panjang sisi 4 cm. Bangun kedua adalah trapesium dengan panjang sisi atas 4 cm, sisi bawah 5 cm, sisi kiri 5 cm, dan sisi kanan 5 cm.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 29. Soal `c234ac355c404df57cd80cef`
@@ -3383,37 +4263,112 @@ Bagaimana cara menghitung keliling bangun datar tersebut?
 ![Gambar sumber soal 29](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0133-06.png>)
 
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0133-06.png. Transkripsi visual: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Keliling segitiga adalah jumlah panjang ketiga sisinya: 6 cm + 6 cm + 4 cm = 16 cm.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0133-06.png. Transkripsi visual: Sebuah segitiga dengan panjang sisi 6 cm, 6 cm, dan 4 cm. Terdapat tanda garis pada dua sisi yang menunjukkan panjangnya sama (6 cm).
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `43f1532f51a1f3473fbae2752e2cdb371416f9fe689bcc42a9f2537308fd84f8`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d0936f29cf4f30b029966c3fb1e825db1bbaf8d7015f0f27d13087eda08763c3`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2450 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2504 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2497 |
+
+Run 1 — solusi: Keliling segitiga adalah jumlah panjang ketiga sisinya: 6 cm + 6 cm + 4 cm = 16 cm.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan definisi keliling (jumlah seluruh sisi) pada bangun segitiga yang diberikan. Ini adalah penerapan prosedur rutin.. Bukti: Bagaimana cara menghitung keliling bangun datar tersebut?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep keliling sebagai penjumlahan sisi-sisi bangun datar dan menerapkan algoritma penjumlahan sederhana.. Bukti: Keliling = 6 + 6 + 4 = 16 cm
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 5, melibatkan identifikasi panjang sisi dan penjumlahan sederhana tanpa kompleksitas tambahan.. Bukti: 6 cm, 6 cm, dan 4 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang keliling bangun datar dan penjumlahan bilangan cacah. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah sangat familiar dengan konsep keliling segitiga dan operasi penjumlahan dasar. |
+
+Run 2 — solusi: Keliling segitiga adalah jumlah panjang ketiga sisinya: 6 cm + 6 cm + 4 cm = 16 cm.
+- Domain kognitif `classify/applying`: Soal ini meminta siswa untuk menerapkan konsep dasar keliling (penjumlahan sisi-sisi) pada bangun segitiga yang sudah diketahui panjang sisinya. Ini adalah penerapan prosedur rutin.. Bukti: Bagaimana cara menghitung keliling bangun datar tersebut?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep keliling sebagai jumlah panjang sisi-sisi bangun datar dan menerapkan algoritma penjumlahan sederhana.. Bukti: Keliling = 6 + 6 + 4 = 16 cm
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu mengidentifikasi ketiga panjang sisi dari gambar dan menjumlahkannya. Tidak ada langkah kompleks atau jebakan yang signifikan.. Bukti: 6 cm, 6 cm, dan 4 cm; Keliling = 6 + 6 + 4 = 16 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang keliling bangun datar dan penjumlahan bilangan cacah. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung keliling segitiga dengan panjang sisi yang sudah diketahui secara eksplisit adalah tugas yang sangat mendasar dan rutin. |
+
+Run 3 — solusi: Keliling segitiga adalah jumlah ketiga sisinya: 6 cm + 6 cm + 4 cm = 16 cm.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep dasar keliling (penjumlahan sisi-sisi) pada bangun datar yang diberikan. Ini adalah prosedur rutin.. Bukti: Bagaimana cara menghitung keliling bangun datar tersebut?
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma atau teknik menghitung keliling segitiga dengan menjumlahkan panjang sisi-sisinya.. Bukti: Keliling = 6 + 6 + 4 = 16 cm
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung, menggunakan representasi visual yang jelas, dan hanya memerlukan satu operasi penjumlahan sederhana yang familiar bagi siswa kelas 5.. Bukti: 6 cm, 6 cm, dan 4 cm; Keliling = 6 + 6 + 4 = 16 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah sangat familiar dengan konsep keliling segitiga dan operasi penjumlahan dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 84/256; truncation: `False`.
+Model membaca representation `metadata`; token input 113/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.027515; applying=0.972485; reasoning=0.000000 | applying | 0.972485 | 0.114686 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.577947; conceptual=0.405623; procedural=0.016430; metacognitive=0.000000 | factual | 0.577947 | 0.541287 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.905432; Medium=0.092171; Hard=0.002397 | Easy | 0.905432 | 0.295061 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.972485; −Σp ln(p) = 0.125995; H = 0.125995/ln(3) = 0.114686; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.577947; −Σp ln(p) = 0.750383; H = 0.750383/ln(4) = 0.541287; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.905432; −Σp ln(p) = 0.324158; H = 0.324158/ln(3) = 0.295061; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3428,16 +4383,16 @@ Pilihan: A. Keliling = 6 × 4 = 24 cm
 B. Keliling = 3 × 6 = 18 cm
 C. Keliling = 6 + 4 = 10 cm
 D. Keliling = 6 + 6 + 4 = 16 cm
-Transkripsi visual: -
+Transkripsi visual: Sebuah segitiga dengan panjang sisi 6 cm, 6 cm, dan 4 cm. Terdapat tanda garis pada dua sisi yang menunjukkan panjangnya sama (6 cm).
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 30. Soal `b1b0e3eb7042a38fd736f941`
@@ -3600,37 +4555,134 @@ Bagaimana cara menghitung keliling bangun datar berikut?
 ![Gambar sumber soal 31](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0135-05.png>)
 
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0135-05.png. Transkripsi visual: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Keliling jajar genjang adalah jumlah seluruh sisinya: 5 + 3 + 5 + 3 = 16 cm, atau (2 x 5) + (2 x 3) = 16 cm.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0135-05.png. Transkripsi visual: Gambar a menunjukkan sebuah jajar genjang dengan panjang sisi atas dan bawah 5 cm, serta panjang sisi kiri dan kanan 3 cm. Gambar b menunjukkan layang-layang dengan label sisi 2 cm dan 4 cm, namun soal spesifik menanyakan keliling bangun datar pada gambar a.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `74de990bc621114c813e70a15fe80ed7cfe822ee138f6197b27da27256820dc7`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `36bfed3b847aae7c70bd3e9a8ba986431dcf700cbe25b33084cc7dd5d0a107d1`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2602 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2593 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2571 |
+
+Run 1 — solusi: Keliling jajar genjang adalah jumlah seluruh sisinya: 5 + 3 + 5 + 3 = 16 cm, atau (2 x 5) + (2 x 3) = 16 cm.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus keliling yang sudah dipelajari (konsep dasar keliling) pada bangun datar yang diberikan. Ini adalah penerapan prosedur rutin.. Bukti: Bagaimana cara menghitung keliling bangun datar berikut?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami hubungan antara sisi-sisi jajar genjang dan menerapkan rumus keliling (prosedur) untuk mendapatkan hasil.. Bukti: Keliling = (2 × 5) + (2 × 3) = 16 cm
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi panjang sisi dan menerapkan rumus keliling yang umum untuk kelas 5.. Bukti: 5 cm; 3 cm; Keliling = (2 × 5) + (2 × 3) = 16 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah mahir menghitung keliling bangun datar sederhana seperti jajar genjang dengan prosedur standar. |
+
+Run 2 — solusi: Keliling jajar genjang = 2 x (panjang + lebar) = 2 x (5 + 3) = 2 x 8 = 16 cm.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus keliling bangun datar (jajar genjang) yang sudah dipelajari secara rutin.. Bukti: Bagaimana cara menghitung keliling bangun datar berikut?
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep keliling sebagai jumlah seluruh sisi bangun datar dan menerapkan prosedur penjumlahan sisi-sisi tersebut.. Bukti: Keliling = (2 × 5) + (2 × 3) = 16 cm
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin untuk kelas 5, melibatkan satu bangun datar standar, dan prosedur yang langsung.. Bukti: Bagaimana cara menghitung keliling bangun datar berikut?; 5 cm; 3 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah mampu menghitung keliling jajar genjang dengan data panjang sisi yang diberikan secara eksplisit. |
+
+Run 3 — solusi: Keliling jajar genjang adalah jumlah seluruh sisinya: 5 + 3 + 5 + 3 = 16 cm, atau 2 x (5 + 3) = 16 cm.
+- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus keliling bangun datar (jajar genjang) yang sudah diketahui panjang sisinya. Siswa hanya perlu menerapkan prosedur rutin.. Bukti: Bagaimana cara menghitung keliling bangun datar berikut?
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang prosedur menghitung keliling sebagai jumlah panjang sisi-sisi bangun datar.. Bukti: Keliling = (2 × 5) + (2 × 3) = 16 cm
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi panjang sisi dan menjumlahkannya. Tidak ada jebakan atau strategi kompleks.. Bukti: 5 cm; 3 cm; Keliling = (2 × 5) + (2 × 3) = 16 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 5 karena menghitung keliling bangun datar sederhana adalah materi dasar yang sudah familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3917`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Soal meminta siswa menerapkan rumus keliling yang sudah dipelajari (konsep dasar keliling) pada bangun datar yang diberikan. Ini adalah penerapan prosedur rutin.
+- Dimensi pengetahuan `procedural`: Siswa perlu memahami hubungan antara sisi-sisi jajar genjang dan menerapkan rumus keliling (prosedur) untuk mendapatkan hasil.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi panjang sisi dan menerapkan rumus keliling yang umum untuk kelas 5.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah panjang sisi-sisi bangun datar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah mahir menghitung keliling bangun datar sederhana seperti jajar genjang dengan prosedur standar. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 91/256; truncation: `False`.
+Model membaca representation `metadata`; token input 142/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.018807; applying=0.981193; reasoning=0.000000 | applying | 0.981193 | 0.084980 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.363324; conceptual=0.595323; procedural=0.041353; metacognitive=0.000000 | conceptual | 0.595323 | 0.583102 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.843018; Medium=0.153915; Hard=0.003067 | Easy | 0.843018 | 0.409369 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.981193; −Σp ln(p) = 0.093360; H = 0.093360/ln(3) = 0.084980; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.595323; −Σp ln(p) = 0.808351; H = 0.808351/ln(4) = 0.583102; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.843018; −Σp ln(p) = 0.449738; H = 0.449738/ln(3) = 0.409369; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3645,16 +4697,16 @@ Pilihan: A. Keliling = 5 × 3 = 15 cm
 B. Keliling = 5 + 3 = 8 cm
 C. Keliling = (2 × 5) + (2 × 3) = 16 cm
 D. Keliling = 4 × 5 = 20 cm
-Transkripsi visual: -
+Transkripsi visual: Gambar a menunjukkan sebuah jajar genjang dengan panjang sisi atas dan bawah 5 cm, serta panjang sisi kiri dan kanan 3 cm. Gambar b menunjukkan layang-layang dengan label sisi 2 cm dan 4 cm, namun soal spesifik menanyakan keliling bangun datar pada gambar a.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 32. Soal `f1bf25d82612cb22f80e24e7`
@@ -3817,37 +4869,134 @@ Bagaimana cara mencari keliling bangun tersebut?
 ![Gambar sumber soal 33](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0138-06.png>)
 
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0138-06.png. Transkripsi visual: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bangun tersebut adalah segi lima beraturan dengan 5 sisi yang masing-masing panjangnya 3 cm. Keliling = 5 x 3 cm = 15 cm.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0138-06.png. Transkripsi visual: Gambar menunjukkan sebuah bangun datar segi lima beraturan dengan lima sisi yang sama panjang, di mana setiap sisi diberi label panjang 3 cm.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7208010c1a1a7abafaf3ca78f68a3c6ef5b4a03304a4d51e8f0be3920de76a10`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bdc82d005c8c7ee5781bffd5117082490b50a34ebd8ac7bb5b25348ec7787465`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2521 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2535 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 2505 |
+
+Run 1 — solusi: Bangun tersebut adalah segi lima beraturan dengan 5 sisi yang masing-masing panjangnya 3 cm. Keliling = 5 x 3 cm = 15 cm.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi konsep keliling pada bangun datar sederhana dan menerapkan prosedur perkalian dasar untuk menghitungnya. Ini adalah penerapan langsung dari definisi keliling.. Bukti: Bagaimana cara mencari keliling bangun tersebut?; segi lima beraturan punya 5 sisi 3 cm
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang prosedur menghitung keliling (jumlah panjang sisi-sisi) pada bangun datar.. Bukti: Keliling = 5 × 3 = 15 cm
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 5, melibatkan pengenalan bangun dan operasi perkalian sederhana yang rutin.. Bukti: segi lima beraturan; 3 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah panjang sisi dan kemampuan perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi keliling bangun datar adalah topik standar kelas 4-5. Soal ini bersifat langsung tanpa jebakan atau kompleksitas tambahan. |
+
+Run 2 — solusi: Bangun tersebut adalah segi lima beraturan dengan 5 sisi yang sama panjang (3 cm). Keliling = 5 x 3 cm = 15 cm.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi jumlah sisi pada bangun datar dan menerapkan rumus keliling sederhana (penjumlahan sisi-sisi atau perkalian sisi dengan jumlah sisi). Ini adalah proses rutin yang langsung.. Bukti: Bagaimana cara mencari keliling bangun tersebut?; segi lima beraturan punya 5 sisi 3 cm
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep keliling sebagai jumlah panjang sisi-sisi bangun datar dan penggunaan prosedur perkalian untuk bangun beraturan.. Bukti: Keliling = 5 × 3 = 15 cm
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 5, melibatkan pengenalan bentuk sederhana dan operasi hitung satu langkah yang rutin.. Bukti: segi lima beraturan punya 5 sisi 3 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep keliling bangun datar dan perkalian bilangan cacah. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi keliling bangun datar adalah topik standar kelas 4-5 SD. Soal ini tidak menuntut analisis kompleks, hanya pengenalan bentuk dan operasi dasar. |
+
+Run 3 — solusi: Bangun tersebut adalah segi lima beraturan dengan 5 sisi yang sama panjang (3 cm). Keliling = 5 x 3 cm = 15 cm.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali bangun sebagai segi lima dan menerapkan definisi keliling (jumlah panjang sisi) secara langsung.. Bukti: Bagaimana cara mencari keliling bangun tersebut?; segi lima beraturan punya 5 sisi 3 cm
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dasar tentang cara menghitung keliling bangun datar dengan menjumlahkan atau mengalikan panjang sisi-sisinya.. Bukti: Keliling = 5 × 3 = 15 cm
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan bentuk dan operasi perkalian sederhana yang sudah dikuasai di kelas 5.. Bukti: segi lima beraturan punya 5 sisi 3 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah panjang sisi dan operasi perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah sangat familiar dengan konsep keliling bangun datar sederhana dan operasi perkalian. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 1, "knowing": 2} | majority_2_of_3 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3822`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengidentifikasi bangun datar (segi lima) dan menerapkan prosedur keliling (penjumlahan sisi atau perkalian sisi dengan jumlah sisi). Ini adalah penerapan konsep dasar pada situasi rutin.
+- Dimensi pengetahuan `procedural`: Soal ini menguji penggunaan algoritma atau prosedur perkalian untuk menghitung keliling bangun datar beraturan.
+- Intended difficulty `Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan bentuk dan operasi perkalian sederhana yang sudah dikuasai di kelas 5.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah panjang sisi dan operasi perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi keliling bangun datar adalah topik standar kelas 4-5. Soal ini bersifat langsung tanpa jebakan atau kompleksitas tambahan. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 82/256; truncation: `False`.
+Model membaca representation `metadata`; token input 106/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.620492; applying=0.379508; reasoning=0.000000 | knowing | 0.620492 | 0.604237 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.792214; conceptual=0.193917; procedural=0.013869; metacognitive=0.000000 | factual | 0.792214 | 0.405359 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.902153; Medium=0.095041; Hard=0.002806 | Easy | 0.902153 | 0.303163 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.620492; −Σp ln(p) = 0.663823; H = 0.663823/ln(3) = 0.604237; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.792214; −Σp ln(p) = 0.561947; H = 0.561947/ln(4) = 0.405359; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.902153; −Σp ln(p) = 0.333058; H = 0.333058/ln(3) = 0.303163; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3862,16 +5011,16 @@ Pilihan: A. Keliling = 4 × 3 = 12 cm
 B. Keliling = 6 × 3 = 18 cm
 C. Keliling = 5 × 3 = 15 cm
 D. Keliling = 3 × 3 = 9 cm
-Transkripsi visual: -
+Transkripsi visual: Gambar menunjukkan sebuah bangun datar segi lima beraturan dengan lima sisi yang sama panjang, di mana setiap sisi diberi label panjang 3 cm.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 34. Soal `15decc9f68f755794c576412`
@@ -3888,37 +5037,134 @@ Tentukan keliling bangun berikut.
 ![Gambar sumber soal 34](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0146-03.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0146-03.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bangun nomor 3 adalah segi delapan beraturan dengan panjang sisi 10 cm. Keliling = 8 sisi × 10 cm = 80 cm.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0146-03.png. Transkripsi visual: Gambar menunjukkan lima bangun datar bernomor. Bangun nomor 3 adalah segi delapan beraturan dengan keterangan panjang salah satu sisinya adalah 10 cm.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c21c4aa49775d6c700c3e46bcc58f41a92734b6aad6be706f97a7e190d3a2be2`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f5fab086df76874b811b65a6d1eed9380a482d1a5eea9f8a42e08b16f45da3ff`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2492 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2467 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2459 |
+
+Run 1 — solusi: Bangun tersebut adalah segi delapan beraturan dengan panjang sisi 10 cm. Keliling = 8 x 10 cm = 80 cm.
+- Domain kognitif `classify/applying`: Siswa hanya perlu mengenali bangun sebagai segi delapan beraturan dan menerapkan rumus keliling (jumlah sisi dikali panjang sisi), yang merupakan proses rutin.. Bukti: Tentukan keliling bangun berikut.; segi delapan beraturan dengan panjang satu sisi 10 cm
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep keliling bangun datar dan prosedur menghitung keliling poligon beraturan.. Bukti: keliling bangun; segi delapan beraturan
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung, hanya memerlukan identifikasi jumlah sisi dan perkalian sederhana. Cocok untuk tingkat kelas 5 sebagai latihan rutin.. Bukti: Tentukan keliling bangun berikut.; segi delapan beraturan dengan panjang satu sisi 10 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah panjang sisi-sisi bangun datar dan perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 5 karena menghitung keliling poligon beraturan adalah materi standar yang bersifat rutin. |
+
+Run 2 — solusi: Bangun nomor 3 adalah segi delapan beraturan. Keliling = 8 sisi × 10 cm/sisi = 80 cm.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus keliling bangun datar (segi banyak beraturan) yang merupakan prosedur rutin.. Bukti: Tentukan keliling bangun berikut.; segi delapan beraturan dengan panjang satu sisi 10 cm
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep keliling sebagai jumlah panjang sisi-sisi bangun datar dan penerapan algoritma perkalian untuk bangun beraturan.. Bukti: keliling bangun; segi delapan beraturan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, hanya memerlukan identifikasi jumlah sisi dan operasi perkalian dasar, sesuai untuk kelas 5.. Bukti: segi delapan beraturan; 10 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah sisi dan perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa menghitung keliling bangun datar sederhana dengan rumus atau penjumlahan sisi. |
+
+Run 3 — solusi: Segi delapan beraturan memiliki 8 sisi yang sama panjang. Keliling = 8 x 10 cm = 80 cm.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menerapkan rumus keliling bangun datar (segi delapan beraturan) yang merupakan prosedur rutin.. Bukti: Tentukan keliling bangun berikut.; segi delapan beraturan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep keliling sebagai jumlah panjang sisi-sisi bangun datar dan penerapan rumus untuk bangun beraturan.. Bukti: keliling bangun; segi delapan beraturan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan satu langkah perhitungan langsung, menggunakan representasi visual yang jelas dan familiar bagi siswa kelas 5.. Bukti: segi delapan beraturan; 10 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling bangun datar dan perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa menghitung keliling bangun datar sederhana dengan menjumlahkan sisi atau mengalikan panjang sisi pada bangun beraturan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3751`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengidentifikasi bangun sebagai segi delapan beraturan dan menerapkan rumus keliling (jumlah sisi dikali panjang sisi), yang merupakan prosedur rutin.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman tentang konsep keliling sebagai jumlah panjang sisi-sisi bangun datar dan penerapan algoritma perkalian untuk bangun beraturan.
+- Intended difficulty `Easy`: Soal ini bersifat rutin, hanya memerlukan identifikasi jumlah sisi dan operasi perkalian dasar, sesuai untuk kelas 5.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling sebagai jumlah panjang sisi-sisi bangun datar dan perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa menghitung keliling bangun datar sederhana dengan rumus atau penjumlahan sisi. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 56/256; truncation: `False`.
+Model membaca representation `metadata`; token input 79/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.994343; applying=0.005657; reasoning=0.000000 | knowing | 0.994343 | 0.031782 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.392866; conceptual=0.597741; procedural=0.009393; metacognitive=0.000000 | conceptual | 0.597741 | 0.518281 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.884362; Medium=0.112653; Hard=0.002985 | Easy | 0.884362 | 0.338614 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.994343; −Σp ln(p) = 0.034916; H = 0.034916/ln(3) = 0.031782; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.597741; −Σp ln(p) = 0.718490; H = 0.718490/ln(4) = 0.518281; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.884362; −Σp ln(p) = 0.372005; H = 0.372005/ln(3) = 0.338614; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3933,16 +5179,16 @@ Pilihan: A. 80 cm
 B. 60 cm
 C. 100 cm
 D. 40 cm
-Transkripsi visual: -
+Transkripsi visual: Gambar menunjukkan lima bangun datar bernomor. Bangun nomor 3 adalah segi delapan beraturan dengan keterangan panjang salah satu sisinya adalah 10 cm.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 35. Soal `4b98e16cdb2f561fb46c8068`
@@ -3959,37 +5205,134 @@ Tentukan keliling bangun berikut.
 ![Gambar sumber soal 35](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0146-03.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0146-03.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Keliling adalah jumlah panjang seluruh sisi luar bangun. Sisi-sisinya adalah 12 cm + 12 cm + 12 cm + 20 cm = 56 cm. Namun, berdasarkan opsi jawaban yang tersedia (A=72), terdapat ketidaksesuaian antara visual dan label soal. Jika kita mengasumsikan sisi atas yang tidak berlabel adalah 16 cm (sejajar dengan garis putus-putus), maka kelilingnya adalah 12 + 16 + 12 + 12 + 20 = 72 cm. Kunci A benar dengan asumsi tersebut.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0146-03.png. Transkripsi visual: Gambar nomor 4 menunjukkan sebuah bangun datar gabungan. Sisi-sisi luar bangun tersebut memiliki panjang 12 cm, 12 cm, 12 cm, dan 20 cm. Terdapat garis putus-putus horizontal di dalam bangun dengan panjang 16 cm yang berfungsi sebagai garis bantu.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f4806be807469ecebe571771df8850fc779971a6f71b36e47a964460b498c6f4`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0595dfb15b7681bdf2dab21b7d741cf75ead041fa6935ddf79c98ab24fe6a3b7`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2659 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2643 |
+| 3 | success | valid / verified | applying | procedural | Medium | 2653 |
+
+Run 1 — solusi: Keliling adalah jumlah seluruh sisi luar bangun. Sisi-sisinya adalah 12 cm + 16 cm + 12 cm + 12 cm + 20 cm = 72 cm. Garis putus-putus di dalam bangun tidak dihitung.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi sisi-sisi luar bangun dan membedakannya dari garis bantu (putus-putus) di dalam bangun, kemudian menerapkan konsep penjumlahan keliling.. Bukti: Tentukan keliling bangun berikut.; 12 + 16 + 12 + 12 + 20 = 72 cm
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami konsep keliling sebagai jumlah panjang sisi luar (konseptual) dan menerapkan prosedur penjumlahan (prosedural).. Bukti: keliling bangun berikut; garis putus-putus bukan bagian keliling
+- Intended difficulty `classify/Easy`: Soal ini memerlukan ketelitian untuk membedakan sisi luar dan garis bantu. Ini adalah tugas rutin bagi siswa kelas 5 yang sudah mempelajari keliling bangun datar.. Bukti: 12 + 16 + 12 + 12 + 20 = 72 cm; garis putus-putus bukan bagian keliling
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang keliling bangun datar dan kemampuan menjumlahkan bilangan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah mampu menghitung keliling bangun gabungan sederhana dengan membedakan sisi luar dan garis bantu. |
+
+Run 2 — solusi: Keliling adalah jumlah seluruh sisi luar bangun. Sisi-sisinya adalah 12 + 16 + 12 + 12 + 20 = 72 cm. Garis putus-putus 16 cm di dalam tidak dihitung.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi sisi mana yang membentuk keliling bangun (batas luar) dan membedakannya dengan garis bantu internal (putus-putus). Ini adalah penerapan prosedur rutin pada situasi yang sedikit dimodifikasi.. Bukti: Tentukan keliling bangun berikut.; garis putus-putus bukan bagian keliling
+- Dimensi pengetahuan `classify/procedural`: Siswa harus memahami konsep keliling sebagai jumlah panjang sisi luar dan menerapkan prosedur penjumlahan panjang sisi-sisi tersebut.. Bukti: Tentukan keliling bangun berikut.; sisi luar 12 + 16 + 12 + 12 + 20 = 72 cm
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pemahaman dasar tentang keliling bangun datar dan kemampuan membedakan garis tepi dengan garis bantu internal.. Bukti: Tentukan keliling bangun berikut.; garis putus-putus bukan bagian keliling
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling bangun datar dan penjumlahan bilangan cacah. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa menghitung keliling bangun gabungan sederhana dengan membedakan sisi luar dan garis bantu. |
+
+Run 3 — solusi: Keliling adalah jumlah seluruh sisi luar bangun. Sisi-sisinya adalah 12 cm, 16 cm, 12 cm, 12 cm, dan 20 cm. Keliling = 12 + 16 + 12 + 12 + 20 = 72 cm.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi sisi-sisi luar bangun gabungan dan menjumlahkannya, serta membedakan antara sisi luar (keliling) dan garis bantu (garis putus-putus). Ini adalah penerapan prosedur rutin pada situasi yang sedikit dimodifikasi.. Bukti: Tentukan keliling bangun berikut.; Gambar nomor 4
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang konsep keliling sebagai jumlah panjang sisi-sisi luar suatu bangun datar.. Bukti: Tentukan keliling bangun berikut.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan seleksi informasi (mengabaikan garis putus-putus) dan melakukan penjumlahan beberapa sisi yang nilainya sudah diketahui.. Bukti: Gambar nomor 4; 12 cm, 16 cm, 12 cm, 12 cm, 20 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep keliling bangun datar dan penjumlahan bilangan cacah. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa dengan konsep keliling bangun datar gabungan sederhana. Soal ini menuntut ketelitian dalam memilih sisi yang akan dijumlahkan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 2, "Medium": 1} | majority_2_of_3 / adjudicated | Medium |
+
+Adjudikasi AI: `success`; token `4196`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengidentifikasi sisi-sisi luar bangun, termasuk menyimpulkan panjang sisi yang tidak tertulis secara eksplisit berdasarkan informasi garis bantu, lalu menerapkan prosedur penjumlahan keliling.
+- Dimensi pengetahuan `conceptual`: Siswa harus memahami konsep keliling sebagai jumlah panjang sisi luar (konseptual) dan menerapkan prosedur penjumlahan (prosedural).
+- Intended difficulty `Medium`: Soal ini memerlukan ketelitian untuk membedakan sisi luar dan garis bantu, serta kemampuan inferensi sederhana untuk menentukan panjang sisi yang tidak berlabel.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang keliling bangun datar dan kemampuan menjumlahkan bilangan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah mampu menghitung keliling bangun gabungan sederhana dengan membedakan sisi luar dan garis bantu, serta melakukan inferensi panjang sisi. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 56/256; truncation: `False`.
+Model membaca representation `metadata`; token input 104/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.200964; applying=0.799036; reasoning=0.000000 | applying | 0.799036 | 0.456700 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.435802; conceptual=0.554916; procedural=0.009282; metacognitive=0.000000 | conceptual | 0.554916 | 0.528179 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.894549; Medium=0.102474; Hard=0.002977 | Easy | 0.894549 | 0.318995 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.799036; −Σp ln(p) = 0.501736; H = 0.501736/ln(3) = 0.456700; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.554916; −Σp ln(p) = 0.732212; H = 0.732212/ln(4) = 0.528179; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.894549; −Σp ln(p) = 0.350452; H = 0.350452/ln(3) = 0.318995; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4004,16 +5347,16 @@ Pilihan: A. 72 cm
 B. 56 cm
 C. 88 cm
 D. 60 cm
-Transkripsi visual: -
+Transkripsi visual: Gambar nomor 4 menunjukkan sebuah bangun datar gabungan. Sisi-sisi luar bangun tersebut memiliki panjang 12 cm, 12 cm, 12 cm, dan 20 cm. Terdapat garis putus-putus horizontal di dalam bangun dengan panjang 16 cm yang berfungsi sebagai garis bantu.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 36. Soal `4d698768a13668ccb860a20d`
@@ -4030,37 +5373,112 @@ Tentukan keliling bangun berikut.
 ![Gambar sumber soal 36](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0146-03.png>)
 
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0146-03.png. Transkripsi visual: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bangun tersebut dapat dipandang sebagai persegi panjang dengan panjang 11 cm (8+3) dan lebar 12 cm. Keliling bangun L yang sisi-sisinya tegak lurus sama dengan keliling persegi panjang pembungkusnya, yaitu 2 x (11 + 12) = 46 cm.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0146-03.png. Transkripsi visual: Gambar nomor 5 menunjukkan sebuah bangun datar berbentuk L yang berada di dalam bingkai persegi panjang putus-putus. Sisi vertikal kiri memiliki panjang 12 cm. Sisi horizontal atas memiliki panjang 8 cm dan 3 cm (total 11 cm). Sisi horizontal bagian dalam memiliki panjang 7 cm. Sisi-sisi luar bangun tersebut membentuk persegi panjang dengan lebar 12 cm dan panjang 11 cm (8+3). Keliling bangun adalah jumlah dari semua sisi luarnya: 12 + 8 + 3 + 3 + 7 + 12 = 45 cm? Tunggu, mari hitung ulang: Sisi kiri=12, atas=8, vertikal turun=3, horizontal kanan=3, vertikal turun=7, horizontal bawah=11. Keliling = 12 + 8 + 3 + 3 + 7 + 11 = 44 cm. Koreksi: Berdasarkan gambar, sisi vertikal kiri 12 cm, sisi horizontal atas 8 cm, sisi vertikal turun 3 cm, sisi horizontal kanan 3 cm, sisi vertikal turun 7 cm, sisi horizontal bawah 11 cm. Total keliling = 12 + 8 + 3 + 3 + 7 + 11 = 44 cm. Namun, jika sisi horizontal bawah adalah 8+3=11 dan sisi vertikal kiri adalah 12, maka kelilingnya adalah 2*(12+11) = 46 cm. Ini adalah teknik 'geser sisi' untuk bangun L.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a86dfa51abdbbac53c9080bac18908dbf27bbbf1963b510c938c8353b3e55886`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1e8995589975d19f927ff51592170171a6d286542c3dfdc420decb7b2a90ae60`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2946 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 2754 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 2683 |
+
+Run 1 — solusi: Bangun tersebut dapat dipandang sebagai persegi panjang dengan panjang 11 cm (8+3) dan lebar 12 cm. Keliling bangun L yang sisi-sisinya tegak lurus sama dengan keliling persegi panjang pembungkusnya, yaitu 2 x (11 + 12) = 46 cm.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep keliling pada bangun gabungan yang tidak beraturan dengan menggunakan strategi 'menggeser' sisi untuk membentuk persegi panjang, yang merupakan penerapan prosedur pada situasi rutin.. Bukti: Tentukan keliling bangun berikut.; sisi-sisi luar bersesuaian dengan persegi panjang 12 cm × (8 + 3) cm
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman tentang hubungan antara sisi-sisi bangun gabungan dan bagaimana mereka membentuk struktur persegi panjang, yang merupakan pengetahuan konseptual.. Bukti: Tentukan keliling bangun berikut.; sisi-sisi luar bersesuaian dengan persegi panjang
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konsep keliling bangun gabungan dan kemampuan untuk melakukan transformasi mental (menggeser sisi) untuk menyederhanakan perhitungan, bukan sekadar menjumlahkan angka yang ada.. Bukti: Tentukan keliling bangun berikut.; Gambar nomor 5
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang keliling persegi panjang dan penjumlahan bilangan cacah. |
+| dependentSteps | 2 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 5 karena menuntut pemahaman geometri dasar tentang keliling bangun datar gabungan yang sering diajarkan di tingkat ini. |
+
+Run 2 — solusi: Keliling bangun gabungan ini sama dengan keliling persegi panjang yang melingkupinya. Panjang sisi vertikal total = 12 cm. Panjang sisi horizontal total = 8 cm + 3 cm = 11 cm. Keliling = 2 x (12 + 11) = 2 x 23 = 46 cm.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa keliling bangun gabungan ini dapat diselesaikan dengan memindahkan segmen garis ke sisi luar untuk membentuk persegi panjang, yang merupakan penerapan konsep keliling pada situasi rutin.. Bukti: Tentukan keliling bangun berikut; sisi-sisi luar bersesuaian dengan persegi panjang 12 cm × (8 + 3) cm
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara sisi-sisi bangun gabungan dan bagaimana mereka membentuk keliling persegi panjang, yang merupakan pengetahuan konseptual.. Bukti: Keliling bangun gabungan; 2 × 12 + 2 × 11 = 46 cm
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konsep bahwa keliling bangun L dapat dihitung dengan memproyeksikan sisi-sisinya menjadi persegi panjang, bukan sekadar menjumlahkan angka yang terlihat.. Bukti: Keliling bangun gabungan; 8 cm; 3 cm; 12 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang keliling persegi panjang dan penjumlahan bilangan cacah. |
+| dependentSteps | 2 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, memahami bahwa keliling bangun gabungan dapat disederhanakan menjadi keliling persegi panjang adalah tantangan yang sesuai untuk tingkat menengah. |
+
+Run 3 — solusi: Keliling bangun L dapat dihitung dengan menjumlahkan semua sisi luarnya. Sisi-sisi tersebut setara dengan keliling persegi panjang dengan panjang 12 cm dan lebar (8+3) = 11 cm. Keliling = 2 x (12 + 11) = 46 cm.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi sisi-sisi yang membentuk keliling bangun gabungan dan menerapkan konsep keliling (penjumlahan sisi luar) pada situasi rutin.. Bukti: Tentukan keliling bangun berikut; bangun datar berbentuk L
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang keliling sebagai total panjang sisi luar bangun datar dan prosedur untuk menghitungnya.. Bukti: keliling bangun berikut; bangun datar berbentuk L
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus memahami bahwa keliling bangun gabungan dapat dihitung dengan memproyeksikan sisi-sisi ke bentuk persegi panjang yang lebih besar, yang merupakan langkah rutin namun memerlukan pemahaman konsep keliling yang lebih dari sekadar menjumlahkan angka yang tertulis.. Bukti: bangun datar berbentuk L; 8 cm; 3 cm; 12 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep keliling bangun datar sederhana dan penjumlahan bilangan cacah. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa dengan konsep keliling, namun soal ini menuntut kemampuan visualisasi untuk mengenali sisi-sisi yang membentuk keliling bangun gabungan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 56/256; truncation: `False`.
+Model membaca representation `metadata`; token input 311/256; truncation: `True`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.000124; applying=0.999876; reasoning=0.000000 | applying | 0.999876 | 0.001129 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.015425; conceptual=0.952797; procedural=0.031778; metacognitive=0.000000 | conceptual | 0.952797 | 0.158713 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.598322; Medium=0.389947; Hard=0.011731 | Easy | 0.598322 | 0.661465 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999876; −Σp ln(p) = 0.001241; H = 0.001241/ln(3) = 0.001129; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.952797; −Σp ln(p) = 0.220023; H = 0.220023/ln(4) = 0.158713; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.598322; −Σp ln(p) = 0.726694; H = 0.726694/ln(3) = 0.661465; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4075,16 +5493,16 @@ Pilihan: A. 23 cm
 B. 33 cm
 C. 40 cm
 D. 46 cm
-Transkripsi visual: -
+Transkripsi visual: Gambar nomor 5 menunjukkan sebuah bangun datar berbentuk L yang berada di dalam bingkai persegi panjang putus-putus. Sisi vertikal kiri memiliki panjang 12 cm. Sisi horizontal atas memiliki panjang 8 cm dan 3 cm (total 11 cm). Sisi horizontal bagian dalam memiliki panjang 7 cm. Sisi-sisi luar bangun tersebut membentuk persegi panjang dengan lebar 12 cm dan panjang 11 cm (8+3). Keliling bangun adalah jumlah dari semua sisi luarnya: 12 + 8 + 3 + 3 + 7 + 12 = 45 cm? Tunggu, mari hitung ulang: Sisi kiri=12, atas=8, vertikal turun=3, horizontal kanan=3, vertikal turun=7, horizontal bawah=11. Keliling = 12 + 8 + 3 + 3 + 7 + 11 = 44 cm. Koreksi: Berdasarkan gambar, sisi vertikal kiri 12 cm, sisi horizontal atas 8 cm, sisi vertikal turun 3 cm, sisi horizontal kanan 3 cm, sisi vertikal turun 7 cm, sisi horizontal bawah 11 cm. Total keliling = 12 + 8 + 3 + 3 + 7 + 11 = 44 cm. Namun, jika sisi horizontal bawah adalah 8+3=11 dan sisi vertikal kiri adalah 12, maka kelilingnya adalah 2*(12+11) = 46 cm. Ini adalah teknik 'geser sisi' untuk bangun L.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 37. Soal `8fe432cf4c0a120aab6def21`
@@ -4251,37 +5669,125 @@ Perhatikan bangun-bangun datar berikut.<br><br>Hitunglah luas daerah bangun-bang
 ![Gambar sumber soal 38](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0158-07.png>)
 
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0158-07.png. Transkripsi visual: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `9 satuan luas`.
+Solusi minimum hasil AI: Bangun E adalah segitiga dengan alas 6 satuan dan tinggi 3 satuan. Luas = 1/2 x alas x tinggi = 1/2 x 6 x 3 = 9 satuan luas.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0158-07.png. Transkripsi visual: Terdapat tujuh bangun datar pada kertas berpetak yang diberi label A, B, C, D, E, F, dan G. Bangun E adalah segitiga siku-siku dengan alas 6 satuan dan tinggi 3 satuan. Luas segitiga E = 0.5 * 6 * 3 = 9 satuan luas. Pilihan jawaban D (9) konsisten dengan luas bangun E.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5c25f9d1425014e16ad97dbf0e06f65eac5ed2b38fd94aa79089eb3900f22f65`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `439f365489a6539d014d9b42ea755e53ac3dd4f351148cbf8e1a645682453de0`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / conflict | applying | procedural | Medium | 2758 |
+| 2 | success | concern / verified | applying | procedural | Medium | 3746 |
+| 3 | success | valid / conflict | applying | procedural | Easy | 2631 |
+
+Run 1 — solusi: Soal tidak valid karena meminta luas 'bangun-bangun' (jamak) tetapi hanya menyediakan satu jawaban. Jika merujuk pada bangun E (segitiga), luasnya adalah 1/2 x alas x tinggi = 1/2 x 6 x 3 = 9 satuan luas.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus luas segitiga atau melakukan dekomposisi/komposisi pada petak satuan untuk menentukan luas bangun E, yang merupakan prosedur rutin dalam geometri dasar.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan pemahaman tentang konsep luas sebagai jumlah satuan luas (petak) dan menerapkan prosedur perhitungan luas bangun datar.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut.
+- Intended difficulty `classify/Medium`: Tugas ini melibatkan perhitungan luas bangun datar sederhana pada grid. Meskipun ada ambiguitas pada soal, tingkat kesulitan proseduralnya tergolong menengah karena siswa harus mengidentifikasi bangun yang dimaksud dan menerapkan rumus atau metode penghitungan luas yang sesuai.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep luas sebagai satuan petak dan rumus luas bangun datar dasar (segitiga/persegi panjang). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan mampu menghitung luas bangun datar sederhana menggunakan grid atau rumus. |
+
+Run 2 — solusi: Luas segitiga E = 1/2 x alas x tinggi = 1/2 x 6 x 3 = 9 satuan luas.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus luas segitiga pada bangun yang disajikan dalam bentuk grid, yang merupakan penerapan prosedur rutin.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penggunaan algoritma atau rumus luas segitiga untuk menyelesaikan masalah.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan transfer representasi (mengidentifikasi panjang alas dan tinggi dari grid) sebelum menerapkan rumus.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep luas sebagai jumlah satuan persegi dan rumus luas segitiga. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan mampu menghitung luas bangun datar sederhana pada grid. Tingkat kesulitan sedang karena siswa harus mengidentifikasi dimensi dari grid dan menerapkan rumus. |
+
+Run 3 — solusi: Luas segitiga E = 1/2 x alas x tinggi = 1/2 x 6 x 3 = 9 satuan luas. Soal tidak spesifik menunjuk bangun mana yang harus dihitung, namun 9 adalah luas untuk bangun E.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus luas bangun datar (segitiga) pada situasi rutin di kertas berpetak.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan rumus luas (prosedur) untuk menyelesaikan masalah.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut
+- Intended difficulty `classify/Easy`: Tugas ini melibatkan identifikasi bangun dan penerapan rumus luas dasar. Meskipun ada ambiguitas pada instruksi soal, tingkat kognitif yang diharapkan adalah prosedur rutin.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep luas sebagai satuan persegi dan rumus luas segitiga dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan mampu menghitung luas bangun datar sederhana pada kertas berpetak. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
+| Intended difficulty | {"Medium": 2, "Easy": 1} | majority_2_of_3 / adjudicated | Medium |
+
+Adjudikasi AI: `success`; token `3932`.
+Konten: `concern`; kunci: `verified`; masalah: Soal bersifat ambigu karena instruksi 'Hitunglah luas daerah bangun-bangun datar tersebut' (jamak) tidak spesifik menunjuk bangun mana yang harus dihitung, sementara pilihan jawaban hanya menyediakan satu nilai numerik.; Gambar menyajikan tujuh bangun datar (A-G), namun soal tidak memberikan instruksi spesifik mengenai bangun mana yang dimaksud, sehingga siswa harus menebak maksud soal..
+- Domain kognitif `applying`: Siswa perlu menerapkan rumus luas segitiga pada bangun yang disajikan dalam bentuk grid, yang merupakan penerapan prosedur rutin.
+- Dimensi pengetahuan `procedural`: Siswa menggunakan pemahaman tentang konsep luas sebagai jumlah satuan luas (petak) dan menerapkan prosedur perhitungan luas bangun datar.
+- Intended difficulty `Medium`: Tugas ini melibatkan perhitungan luas bangun datar sederhana pada grid. Tingkat kesulitan proseduralnya tergolong menengah karena siswa harus mengidentifikasi bangun yang dimaksud dan menerapkan rumus atau metode penghitungan luas yang sesuai.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep luas sebagai satuan petak dan rumus luas bangun datar dasar (segitiga). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan mampu menghitung luas bangun datar sederhana menggunakan grid atau rumus. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 74/256; truncation: `False`.
+Model membaca representation `metadata`; token input 143/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified |
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4298,16 +5804,16 @@ Pilihan: A. 5 satuan luas
 B. 18 satuan luas
 C. 12 satuan luas
 D. 9 satuan luas
-Transkripsi visual: -
+Transkripsi visual: Terdapat tujuh bangun datar pada kertas berpetak yang diberi label A, B, C, D, E, F, dan G. Bangun E adalah segitiga siku-siku dengan alas 6 satuan dan tinggi 3 satuan. Luas segitiga E = 0.5 * 6 * 3 = 9 satuan luas. Pilihan jawaban D (9) konsisten dengan luas bangun E.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `revision_required`.
+Status konten: `concern`. Catatan konten: Soal bersifat ambigu karena instruksi 'Hitunglah luas daerah bangun-bangun datar tersebut' (jamak) tidak spesifik menunjuk bangun mana yang harus dihitung, sementara pilihan jawaban hanya menyediakan satu nilai numerik.; Gambar menyajikan tujuh bangun datar (A-G), namun soal tidak memberikan instruksi spesifik mengenai bangun mana yang dimaksud, sehingga siswa harus menebak maksud soal..
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 39. Soal `d7e4c01422c15450739e2b0a`
@@ -4324,37 +5830,112 @@ Perhatikan bangun-bangun datar berikut.<br><br>Hitunglah luas daerah bangun-bang
 ![Gambar sumber soal 39](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0158-07.png>)
 
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0158-07.png. Transkripsi visual: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bangun D terdiri dari bagian atas (2x2=4 kotak) dan bagian bawah (4x2=8 kotak) atau dapat dihitung dengan membagi menjadi dua persegi panjang: (2x2) + (4x3) = 4 + 12 = 16 satuan luas.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0158-07.png. Transkripsi visual: Terdapat grid persegi dengan 7 bangun datar (A-G). Bangun D adalah bangun gabungan berbentuk L yang terdiri dari persegi panjang vertikal 2x2 di atas dan persegi panjang horizontal 4x2 di bawah, atau secara total menempati 16 kotak satuan.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `081fb61b94976c8ebecd41c64edd5a438bc9b092bed6f6578b56f31313674cbb`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `136137903c1e57384648866d5af64284a7bc93baeb9ae9b557e4ff36ed803e08`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2695 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2637 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2735 |
+
+Run 1 — solusi: Bangun D terdiri dari bagian atas (2x2=4 kotak) dan bagian bawah (4x2=8 kotak) atau dapat dihitung dengan membagi menjadi dua persegi panjang: (2x2) + (4x3) = 4 + 12 = 16 satuan luas.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep luas bangun datar pada grid dengan melakukan dekomposisi bangun komposit menjadi bagian-bagian yang lebih sederhana (persegi panjang) dan menjumlahkannya.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut; bagian atas 4 kotak + bagian bawah 12 kotak = 16 kotak satuan
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur dekomposisi bangun datar untuk menghitung luas, yang merupakan penerapan prinsip luas pada struktur bangun komposit.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut; bagian atas 4 kotak + bagian bawah 12 kotak = 16 kotak satuan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan penghitungan kotak pada grid atau dekomposisi sederhana menjadi dua persegi panjang. Prosedurnya sangat rutin bagi siswa kelas 5.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut; bagian atas 4 kotak + bagian bawah 12 kotak = 16 kotak satuan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang luas sebagai jumlah satuan kotak (grid) dan rumus luas persegi panjang. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah sangat familiar dengan penghitungan luas menggunakan satuan petak/grid. |
+
+Run 2 — solusi: Bangun D terdiri dari dua persegi panjang: bagian atas (2x2=4 satuan) dan bagian bawah (4x3=12 satuan). Total luas = 4 + 12 = 16 satuan luas.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur menghitung luas bangun komposit dengan memecahnya menjadi bagian-bagian yang lebih sederhana (persegi panjang). Ini adalah penerapan konsep luas pada situasi rutin.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut; bagian atas 4 kotak + bagian bawah 12 kotak = 16 kotak satuan
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur menghitung luas bangun datar dengan menjumlahkan luas bagian-bagian penyusunnya.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut
+- Intended difficulty `classify/Easy`: Soal ini melibatkan bangun komposit sederhana yang dapat dihitung dengan menjumlahkan luas dua persegi panjang. Prosedurnya familiar bagi siswa kelas 5.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut; bagian atas 4 kotak + bagian bawah 12 kotak = 16 kotak satuan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep luas sebagai jumlah satuan kotak dan rumus luas persegi panjang. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa menghitung luas bangun datar pada petak satuan, termasuk bangun komposit sederhana. |
+
+Run 3 — solusi: Bangun L dapat dipecah menjadi dua persegi panjang: bagian atas (2x2=4 satuan) dan bagian bawah (6x2=12 satuan). Total luas = 4 + 12 = 16 satuan luas.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur menghitung luas bangun datar komposit dengan memecahnya menjadi bagian-bagian yang lebih sederhana (persegi panjang) atau menghitung kotak satuan. Ini adalah penerapan prosedur rutin pada situasi yang diberikan.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut; bagian atas 4 kotak + bagian bawah 12 kotak = 16 kotak satuan
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan teknik atau algoritma untuk menghitung luas (penjumlahan luas bagian-bagian bangun), yang merupakan pengetahuan prosedural.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut; bagian atas 4 kotak + bagian bawah 12 kotak = 16 kotak satuan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan penghitungan luas bangun komposit sederhana pada kisi-kisi, yang merupakan prosedur standar di kelas 5.. Bukti: Hitunglah luas daerah bangun-bangun datar tersebut; bagian atas 4 kotak + bagian bawah 12 kotak = 16 kotak satuan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep luas sebagai jumlah satuan kotak dan kemampuan memecah bangun komposit menjadi bangun sederhana. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa menghitung luas bangun datar pada petak satuan. Soal ini tidak memerlukan strategi kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 74/256; truncation: `False`.
+Model membaca representation `metadata`; token input 122/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.107987; applying=0.892013; reasoning=0.000000 | applying | 0.892013 | 0.311562 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.359445; conceptual=0.618381; procedural=0.022174; metacognitive=0.000000 | conceptual | 0.618381 | 0.540624 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.841895; Medium=0.155467; Hard=0.002638 | Easy | 0.841895 | 0.409544 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.892013; −Σp ln(p) = 0.342286; H = 0.342286/ln(3) = 0.311562; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.618381; −Σp ln(p) = 0.749464; H = 0.749464/ln(4) = 0.540624; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.841895; −Σp ln(p) = 0.449930; H = 0.449930/ln(3) = 0.409544; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4371,16 +5952,16 @@ Pilihan: A. 24 satuan luas
 B. 12 satuan luas
 C. 16 satuan luas
 D. 4 satuan luas
-Transkripsi visual: -
+Transkripsi visual: Terdapat grid persegi dengan 7 bangun datar (A-G). Bangun D adalah bangun gabungan berbentuk L yang terdiri dari persegi panjang vertikal 2x2 di atas dan persegi panjang horizontal 4x2 di bawah, atau secara total menempati 16 kotak satuan.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: Soal meminta menghitung luas 'bangun-bangun datar tersebut' (jamak), namun pilihan jawaban hanya merujuk pada satu nilai (16 satuan luas). Berdasarkan visual, terdapat 7 bangun (A-G). Soal ambigu karena tidak spesifik menanyakan bangun yang mana, meskipun konteks pilihan jawaban mengarah pada bangun D.; Soal meminta menghitung luas 'bangun-bangun datar tersebut' (jamak), namun pilihan jawaban hanya merujuk pada satu nilai tunggal. Berdasarkan opsi, soal ini secara implisit meminta luas bangun yang berbentuk huruf L (yang diidentifikasi sebagai D pada gambar).; Soal meminta menghitung luas 'bangun-bangun datar tersebut' (jamak), namun pilihan jawaban hanya merujuk pada satu nilai tunggal. Berdasarkan opsi, soal ini secara implisit meminta luas bangun yang berbentuk huruf L (yang diidentifikasi sebagai bangun D pada gambar). Instruksi soal kurang spesifik dalam mengarahkan siswa ke bangun mana yang harus dihitung..
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 40. Soal `dacf45a93c564182ea5cb7dc`
@@ -4397,37 +5978,134 @@ Perhatikan bangun-bangun persegi panjang berikut. Temukan cara menghitung luas d
 ![Gambar sumber soal 40](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0160-06.png>)
 
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0160-06.png. Transkripsi visual: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bangun C memiliki panjang 4 satuan dan lebar 3 satuan. Luas = panjang × lebar = 4 × 3 = 12 satuan luas.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0160-06.png. Transkripsi visual: Gambar menampilkan empat persegi panjang (A, B, C, D) yang digambar di atas kertas berpetak. Bangun A memiliki panjang 2 petak dan lebar 1 petak. Bangun B memiliki panjang 5 petak dan lebar 2 petak. Bangun C memiliki panjang 4 petak dan lebar 3 petak. Bangun D memiliki panjang 2 petak dan lebar 3 petak.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `52a4a4f319e215e4c960802006f41221d5bd7896b79df1e96bf8538d90deaf7f`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6e729f3277f7bd774fe399bce6d9810840654fbd85a55c09ac3c597b78f843e0`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2722 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2777 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2681 |
+
+Run 1 — solusi: Bangun C memiliki panjang 4 satuan dan lebar 3 satuan. Luas = panjang x lebar = 4 x 3 = 12 satuan luas.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas persegi panjang (panjang x lebar) pada bangun yang diberikan di grid, yang merupakan prosedur rutin.. Bukti: Temukan cara menghitung luas daerahnya; Hitunglah panjang, lebar, dan luas daerah setiap kotak
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau teknik menghitung luas persegi panjang dengan mengalikan panjang dan lebar.. Bukti: Luas Daerah; 2 × 1 = 2
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menghitung jumlah petak pada panjang dan lebar, lalu mengalikannya. Tidak ada strategi non-rutin atau kendala kompleks.. Bukti: Perhatikan bangun-bangun persegi panjang berikut; Hitunglah panjang, lebar, dan luas daerah setiap kotak
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep luas sebagai jumlah satuan petak dan rumus luas persegi panjang. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung luas persegi panjang dari grid adalah materi dasar yang sudah familiar dan prosedural. |
+
+Run 2 — solusi: Luas persegi panjang = panjang × lebar. Untuk bangun C, panjang = 4 satuan, lebar = 3 satuan, maka luas = 4 × 3 = 12 satuan luas.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas persegi panjang (panjang x lebar) pada objek visual yang diberikan. Ini adalah penerapan prosedur rutin pada situasi yang sudah dikenal.. Bukti: Temukan cara menghitung luas daerahnya; Hitunglah panjang, lebar, dan luas daerah setiap kotak di atas
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau teknik menghitung luas persegi panjang dengan mengalikan panjang dan lebar.. Bukti: Luas Daerah Bangun Datar; 2 × 1 = 2
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menghitung jumlah petak untuk menentukan panjang dan lebar, lalu mengalikannya. Tidak ada kendala kompleks atau strategi non-rutin.. Bukti: Perhatikan bangun-bangun persegi panjang berikut; Hitunglah panjang, lebar, dan luas daerah setiap kotak di atas
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep luas sebagai jumlah satuan petak dan perkalian dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung luas persegi panjang dengan bantuan grid adalah materi dasar yang sangat familiar dan rutin. |
+
+Run 3 — solusi: Bangun C memiliki panjang 4 satuan dan lebar 3 satuan. Luas = panjang × lebar = 4 × 3 = 12 satuan luas.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas persegi panjang (panjang x lebar) pada bangun yang diberikan di grid, yang merupakan prosedur rutin.. Bukti: Temukan cara menghitung luas daerahnya; Hitunglah panjang, lebar, dan luas daerah setiap kotak di atas
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep luas sebagai hasil kali panjang dan lebar pada bangun datar.. Bukti: Luas Daerah = panjang × lebar
+- Intended difficulty `classify/Easy`: Soal ini meminta siswa mengidentifikasi dimensi dari representasi visual (grid) dan menerapkan rumus dasar. Ini adalah tugas rutin bagi siswa kelas 5.. Bukti: Hitunglah panjang, lebar, dan luas daerah setiap kotak di atas
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep luas sebagai unit persegi dan perkalian dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah sangat familiar dengan konsep luas persegi panjang dan penggunaan grid sebagai alat bantu visual. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4042`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa diminta menerapkan rumus luas persegi panjang (panjang x lebar) pada bangun yang diberikan di grid, yang merupakan prosedur rutin.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman tentang algoritma atau teknik menghitung luas persegi panjang dengan mengalikan panjang dan lebar.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menghitung jumlah petak pada panjang dan lebar, lalu mengalikannya. Tidak ada strategi non-rutin atau kendala kompleks.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep luas sebagai jumlah satuan petak dan rumus luas persegi panjang. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung luas persegi panjang dari grid adalah materi dasar yang sudah familiar dan prosedural. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 249/256; truncation: `False`.
+Model membaca representation `metadata`; token input 315/256; truncation: `True`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.999076; applying=0.000924; reasoning=0.000000 | knowing | 0.999076 | 0.006718 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.007676; conceptual=0.689561; procedural=0.302762; metacognitive=0.000000 | conceptual | 0.689561 | 0.472794 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.457657; Medium=0.532470; Hard=0.009873 | Medium | 0.532470 | 0.672569 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999076; −Σp ln(p) = 0.007381; H = 0.007381/ln(3) = 0.006718; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.689561; −Σp ln(p) = 0.655432; H = 0.655432/ln(4) = 0.472794; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.532470; −Σp ln(p) = 0.738892; H = 0.738892/ln(3) = 0.672569; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4451,16 +6129,16 @@ Pilihan: A. Panjang 4 satuan, lebar 3 satuan, luas 14 satuan luas
 B. Panjang 4 satuan, lebar 3 satuan, luas 7 satuan luas
 C. Panjang 4 satuan, lebar 3 satuan, luas 12 satuan luas
 D. Panjang 5 satuan, lebar 4 satuan, luas 20 satuan luas
-Transkripsi visual: -
+Transkripsi visual: Gambar menampilkan empat persegi panjang (A, B, C, D) yang digambar di atas kertas berpetak. Bangun A memiliki panjang 2 petak dan lebar 1 petak. Bangun B memiliki panjang 5 petak dan lebar 2 petak. Bangun C memiliki panjang 4 petak dan lebar 3 petak. Bangun D memiliki panjang 2 petak dan lebar 3 petak.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Medium", "blindLabel": "Easy", "agreement": false}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 41. Soal `ee75e145108e35883906fd59`
@@ -4477,37 +6155,112 @@ Hitung luas daerah bangun gabungan berikut.<br><br>1
 ![Gambar sumber soal 41](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0178-03.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0178-03.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Luas layang-layang = 1/2 x d1 x d2 = 1/2 x 18 cm x 24 cm = 9 x 24 cm = 216 cm².
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0178-03.png. Transkripsi visual: Gambar 1 menunjukkan bangun datar layang-layang dengan panjang diagonal vertikal 18 cm dan diagonal horizontal 24 cm.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c98c0ea7db594c1beb3f563cd44b538ad78a6419bf69ef9b56732a41a29a3920`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `58f0626cecb5378118233f157703631cb7127dc07afa330693516eb73864faa7`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2521 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2491 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2514 |
+
+Run 1 — solusi: Luas layang-layang = 1/2 x d1 x d2 = 1/2 x 18 cm x 24 cm = 9 x 24 cm = 216 cm².
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas bangun datar (layang-layang) yang sudah diketahui secara langsung pada data yang diberikan.. Bukti: Hitung luas daerah bangun gabungan berikut.; 18 cm; 24 cm
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap rumus atau algoritma untuk menghitung luas bangun datar tertentu.. Bukti: luas layang-layang = 1/2 x 24 x 18
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan satu langkah penerapan rumus luas layang-layang tanpa modifikasi atau integrasi kompleks.. Bukti: Hitung luas daerah bangun gabungan berikut.; 18 cm; 24 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus luas layang-layang dan operasi perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah mempelajari luas bangun datar. Soal ini adalah aplikasi langsung dari rumus standar. |
+
+Run 2 — solusi: Luas layang-layang = 1/2 x d1 x d2 = 1/2 x 18 cm x 24 cm = 9 x 24 cm² = 216 cm².
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas layang-layang yang sudah dipelajari secara rutin pada data yang diberikan langsung.. Bukti: Hitung luas daerah bangun gabungan berikut.; 18 cm; 24 cm
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penggunaan algoritma atau rumus luas bangun datar (layang-layang).. Bukti: luas layang-layang = 1/2 x 24 x 18
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, hanya memerlukan satu langkah penerapan rumus luas layang-layang dengan data yang sudah tersedia jelas.. Bukti: 18 cm; 24 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus luas layang-layang dan operasi perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah menguasai rumus luas bangun datar sederhana seperti layang-layang. |
+
+Run 3 — solusi: Luas layang-layang = 1/2 x d1 x d2 = 1/2 x 18 cm x 24 cm = 9 cm x 24 cm = 216 cm².
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas layang-layang yang sudah dipelajari pada situasi rutin (soal langsung).. Bukti: Hitung luas daerah bangun gabungan berikut.; 18 cm; 24 cm
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma atau rumus luas bangun datar (layang-layang).. Bukti: luas layang-layang = 1/2 x 24 x 18
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan rumus standar yang familiar bagi siswa kelas 5 dengan beban perhitungan yang rendah.. Bukti: Hitung luas daerah bangun gabungan berikut.; 18 cm; 24 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus luas layang-layang dan operasi perkalian dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah menguasai rumus luas bangun datar sederhana seperti layang-layang. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 61/256; truncation: `False`.
+Model membaca representation `metadata`; token input 80/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.980012; applying=0.019988; reasoning=0.000000 | knowing | 0.980012 | 0.089195 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.951008; conceptual=0.034601; procedural=0.014391; metacognitive=0.000000 | factual | 0.951008 | 0.162448 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.932475; Medium=0.064090; Hard=0.003436 | Easy | 0.932475 | 0.237363 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.980012; −Σp ln(p) = 0.097991; H = 0.097991/ln(3) = 0.089195; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.951008; −Σp ln(p) = 0.225200; H = 0.225200/ln(4) = 0.162448; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.932475; −Σp ln(p) = 0.260770; H = 0.260770/ln(3) = 0.237363; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4524,16 +6277,16 @@ Pilihan: A. 216 cm²
 B. 84 cm²
 C. 42 cm²
 D. 432 cm²
-Transkripsi visual: -
+Transkripsi visual: Gambar 1 menunjukkan bangun datar layang-layang dengan panjang diagonal vertikal 18 cm dan diagonal horizontal 24 cm.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 42. Soal `e4a5a859b3d314d36c30b33a`
@@ -4550,37 +6303,112 @@ Hitung luas daerah bangun gabungan berikut.<br><br>3
 ![Gambar sumber soal 42](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0178-03.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0178-03.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Luas = (4x4) + (0.5x1x4) + (0.5x2x4) = 16 + 2 + 4 = 22 satuan luas.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0178-03.png. Transkripsi visual: Gambar 3 menunjukkan sebuah bangun datar yang digambar pada kertas berpetak. Bangun tersebut terdiri dari persegi panjang berukuran 4x4 satuan di bagian bawah, sebuah segitiga siku-siku di sisi kiri (alas 1, tinggi 4), dan sebuah segitiga siku-siku di sisi kanan (alas 2, tinggi 4).
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2f72bd83f969f9efdf07c15e804ea1aa28f49921b2d6e5419055d5dfbbccd627`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `028345a141aaf87cfb19143e1994ae67d6161eeba9be5bf3c2e8d614b10f1baf`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2560 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2655 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2696 |
+
+Run 1 — solusi: Luas = (4x4) + (0.5x1x4) + (0.5x2x4) = 16 + 2 + 4 = 22 satuan luas.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi komponen bangun datar (persegi panjang dan dua segitiga) dari gambar pada kertas berpetak, lalu menerapkan rumus luas masing-masing dan menjumlahkannya.. Bukti: Hitung luas daerah bangun gabungan berikut.; Gambar 3
+- Dimensi pengetahuan `classify/procedural`: Siswa harus menggunakan prosedur perhitungan luas bangun datar (persegi panjang dan segitiga) dan memahami konsep dekomposisi bangun gabungan.. Bukti: Hitung luas daerah bangun gabungan berikut.; Gambar 3
+- Intended difficulty `classify/Easy`: Soal ini melibatkan dekomposisi bangun sederhana pada grid yang familiar bagi siswa kelas 5. Prosedur rutin dan beban kognitif rendah.. Bukti: Gambar 3; Hitung luas daerah bangun gabungan berikut.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus luas persegi panjang dan segitiga, pemahaman grid satuan. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa menghitung luas bangun gabungan sederhana menggunakan bantuan grid. |
+
+Run 2 — solusi: Bangun dapat didekomposisi menjadi persegi panjang 4x4 (luas 16), segitiga siku-siku kiri (alas 2, tinggi 4, luas 4), dan segitiga siku-siku kanan (alas 1, tinggi 4, luas 2). Total luas = 16 + 4 + 2 = 22 satuan luas.
+- Domain kognitif `classify/applying`: Siswa perlu melakukan dekomposisi bangun komposit menjadi bangun-bangun sederhana (persegi panjang dan segitiga) dan menerapkan rumus luas masing-masing, yang merupakan penerapan prosedur rutin.. Bukti: Hitung luas daerah bangun gabungan berikut.; Gambar 3 menunjukkan bangun datar pada kertas berpetak.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan luas bangun datar dan bagaimana menggabungkan luas bagian-bagian penyusunnya.. Bukti: Hitung luas daerah bangun gabungan berikut.; Gambar 3 menunjukkan bangun datar pada kertas berpetak.
+- Intended difficulty `classify/Easy`: Soal ini melibatkan dekomposisi bangun yang relatif sederhana pada grid, yang merupakan tugas rutin untuk kelas 5.. Bukti: Hitung luas daerah bangun gabungan berikut.; Gambar 3 menunjukkan bangun datar pada kertas berpetak.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep luas persegi panjang dan segitiga, serta kemampuan menghitung luas pada grid. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa dengan perhitungan luas bangun datar sederhana dan dekomposisi bangun pada kertas berpetak. |
+
+Run 3 — solusi: Bangun terdiri dari persegi panjang 4x4 (16 satuan), segitiga kiri (alas 1, tinggi 4, luas 2 satuan), dan segitiga kanan (alas 2, tinggi 4, luas 4 satuan). Total luas = 16 + 2 + 4 = 22 satuan luas.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bangun-bangun penyusun (persegi panjang dan segitiga) pada kertas berpetak dan menerapkan rumus luas masing-masing untuk kemudian dijumlahkan.. Bukti: Hitung luas daerah bangun gabungan berikut.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur rutin untuk menghitung luas bangun datar gabungan dengan memecahnya menjadi bentuk-bentuk dasar.. Bukti: Hitung luas daerah bangun gabungan berikut.
+- Intended difficulty `classify/Easy`: Soal ini melibatkan dekomposisi bangun datar pada grid yang merupakan prosedur standar kelas 5. Tingkat kesulitan rendah karena representasi grid memudahkan perhitungan tanpa perlu rumus kompleks.. Bukti: Hitung luas daerah bangun gabungan berikut.; Gambar 3
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep luas persegi panjang dan segitiga, serta kemampuan menghitung luas pada kertas berpetak. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 5 karena menggunakan media grid yang menyederhanakan perhitungan luas bangun gabungan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 64/256; truncation: `False`.
+Model membaca representation `metadata`; token input 125/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.015440; applying=0.984560; reasoning=0.000000 | applying | 0.984560 | 0.072560 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.231855; conceptual=0.757527; procedural=0.010618; metacognitive=0.000000 | conceptual | 0.757527 | 0.431013 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.849505; Medium=0.147489; Hard=0.003006 | Easy | 0.849505 | 0.398962 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.984560; −Σp ln(p) = 0.079715; H = 0.079715/ln(3) = 0.072560; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.757527; −Σp ln(p) = 0.597511; H = 0.597511/ln(4) = 0.431013; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.849505; −Σp ln(p) = 0.438304; H = 0.438304/ln(3) = 0.398962; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4597,16 +6425,16 @@ Pilihan: A. 22 satuan luas
 B. 20 satuan luas
 C. 28 satuan luas
 D. 16 satuan luas
-Transkripsi visual: -
+Transkripsi visual: Gambar 3 menunjukkan sebuah bangun datar yang digambar pada kertas berpetak. Bangun tersebut terdiri dari persegi panjang berukuran 4x4 satuan di bagian bawah, sebuah segitiga siku-siku di sisi kiri (alas 1, tinggi 4), dan sebuah segitiga siku-siku di sisi kanan (alas 2, tinggi 4).
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 43. Soal `201997c9ac57959886dabd86`
@@ -4623,37 +6451,134 @@ Hitung luas daerah bangun gabungan berikut.<br><br>2
 ![Gambar sumber soal 43](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0178-03.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0178-03.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Luas total = Luas jajargenjang + Luas segitiga = (alas x tinggi) + (1/2 x alas x tinggi) = (16 x 8) + (1/2 x 16 x 12) = 128 + 96 = 224 cm².
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0178-03.png. Transkripsi visual: Gambar 2 menunjukkan bangun gabungan yang terdiri dari jajargenjang di bagian atas dan segitiga di bagian bawah. Jajargenjang memiliki alas 16 cm dan tinggi 8 cm. Segitiga memiliki alas 16 cm (garis putus-putus horizontal yang sama dengan alas jajargenjang) dan tinggi 12 cm (garis vertikal ke bawah).
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0c7205e5344ea3bb49f1ddb4b32fb220a4b68d78b567ebd8fda3f5991c2a50c3`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9b4c0b959451bd48129b9d8b87c808eeeaacfd843487e16a16716d931ae991ba`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2684 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 2607 |
+| 3 | success | valid / verified | applying | procedural | Medium | 2690 |
+
+Run 1 — solusi: Luas = Luas jajargenjang + Luas segitiga = (alas x tinggi) + (1/2 x alas x tinggi) = (16 x 8) + (1/2 x 16 x 12) = 128 + 96 = 224 cm².
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dua bangun datar penyusun (jajargenjang dan segitiga), memilih rumus luas yang tepat untuk masing-masing, dan menjumlahkannya. Ini adalah penerapan prosedur rutin pada situasi gabungan.. Bukti: Hitung luas daerah bangun gabungan berikut.; 16 x 8 + 1/2 x 16 x 12
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang rumus luas bangun datar dan bagaimana menerapkannya dalam urutan langkah yang sistematis untuk menyelesaikan masalah bangun gabungan.. Bukti: 16 x 8 + 1/2 x 16 x 12
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena melibatkan dua bangun datar yang harus dihitung secara terpisah lalu dijumlahkan. Siswa harus mengenali komponen bangun dan menerapkan dua rumus berbeda, yang sedikit lebih kompleks daripada soal satu bangun tunggal.. Bukti: Hitung luas daerah bangun gabungan berikut.; 16 x 8 + 1/2 x 16 x 12
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus luas jajargenjang dan segitiga, serta operasi hitung dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung luas bangun gabungan adalah standar kompetensi yang diharapkan. Soal ini menuntut ketelitian dalam memisahkan komponen bangun. |
+
+Run 2 — solusi: Luas = Luas jajargenjang + Luas segitiga = (alas x tinggi) + (1/2 x alas x tinggi) = (16 x 8) + (1/2 x 16 x 12) = 128 + 96 = 224 cm².
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dua bangun datar penyusun (jajargenjang dan segitiga), memilih rumus yang tepat untuk masing-masing, dan menjumlahkannya. Ini adalah penerapan prosedur rutin pada situasi gabungan.. Bukti: Hitung luas daerah bangun gabungan berikut; 16 x 8 + 1/2 x 16 x 12
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang rumus luas bangun datar dan bagaimana mengintegrasikannya dalam bangun komposit.. Bukti: Luas jajargenjang; Luas segitiga
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman tentang dekomposisi bangun datar menjadi bagian-bagian yang lebih sederhana (jajargenjang dan segitiga) dan menerapkan rumus luas yang relevan untuk setiap bagian.. Bukti: bangun gabungan; 16 x 8 + 1/2 x 16 x 12
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus luas jajargenjang dan segitiga. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah mempelajari luas bangun datar sederhana. Menggabungkan dua bangun datar adalah langkah logis untuk tingkat kesulitan menengah. |
+
+Run 3 — solusi: Luas = Luas jajargenjang + Luas segitiga = (alas x tinggi) + (1/2 x alas x tinggi) = (16 x 8) + (1/2 x 16 x 12) = 128 + 96 = 224 cm².
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dua bangun datar penyusun (jajargenjang dan segitiga), memilih rumus yang tepat untuk masing-masing, dan menjumlahkannya. Ini adalah penerapan prosedur rutin pada situasi gabungan.. Bukti: Hitung luas daerah bangun gabungan berikut.; 16 x 8 + 1/2 x 16 x 12
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang rumus luas bangun datar (konseptual) dan kemampuan menerapkan algoritma perhitungan luas (prosedural) dalam konteks bangun gabungan.. Bukti: Hitung luas daerah bangun gabungan berikut.; 16 x 8 + 1/2 x 16 x 12
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemecahan masalah menjadi dua bagian (jajargenjang dan segitiga) dan melakukan dua operasi hitung yang berbeda, yang merupakan standar untuk kelas 5.. Bukti: Hitung luas daerah bangun gabungan berikut.; 16 x 8 + 1/2 x 16 x 12
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus luas jajargenjang dan segitiga, serta operasi perkalian dan penjumlahan dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan mampu menghitung luas bangun gabungan sederhana dengan memecahnya menjadi bangun-bangun dasar yang sudah dipelajari. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
+
+Adjudikasi AI: `success`; token `4275`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengidentifikasi dua bangun datar penyusun (jajargenjang dan segitiga), memilih rumus luas yang tepat untuk masing-masing, dan menjumlahkannya. Ini adalah penerapan prosedur rutin pada situasi gabungan.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman tentang rumus luas bangun datar dan bagaimana menerapkannya dalam urutan langkah yang sistematis untuk menyelesaikan masalah bangun gabungan.
+- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena melibatkan dua bangun datar yang harus dihitung secara terpisah lalu dijumlahkan. Siswa harus mengenali komponen bangun dan menerapkan dua rumus berbeda, yang sedikit lebih kompleks daripada soal satu bangun tunggal.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus luas jajargenjang dan segitiga, serta operasi hitung dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menghitung luas bangun gabungan adalah standar kompetensi yang diharapkan. Soal ini menuntut ketelitian dalam memisahkan komponen bangun. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 60/256; truncation: `False`.
+Model membaca representation `metadata`; token input 124/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.000234; applying=0.999766; reasoning=0.000000 | applying | 0.999766 | 0.001996 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.521416; conceptual=0.450419; procedural=0.028165; metacognitive=0.000000 | factual | 0.521416 | 0.576598 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.896144; Medium=0.101038; Hard=0.002818 | Easy | 0.896144 | 0.315323 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999766; −Σp ln(p) = 0.002193; H = 0.002193/ln(3) = 0.001996; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.521416; −Σp ln(p) = 0.799334; H = 0.799334/ln(4) = 0.576598; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.896144; −Σp ln(p) = 0.346418; H = 0.346418/ln(3) = 0.315323; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4670,16 +6595,16 @@ Pilihan: A. 224 cm²
 B. 128 cm²
 C. 320 cm²
 D. 160 cm²
-Transkripsi visual: -
+Transkripsi visual: Gambar 2 menunjukkan bangun gabungan yang terdiri dari jajargenjang di bagian atas dan segitiga di bagian bawah. Jajargenjang memiliki alas 16 cm dan tinggi 8 cm. Segitiga memiliki alas 16 cm (garis putus-putus horizontal yang sama dengan alas jajargenjang) dan tinggi 12 cm (garis vertikal ke bawah).
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 44. Soal `0d61de45054218c7d9af6710`
@@ -4693,27 +6618,93 @@ Bapak memiliki kawat sepanjang 60 cm. Dengan menggunakan kawat tersebut, Bapak i
 | C | Panjang 20 cm dan lebar 10 cm (luas 200 cm²) |
 | D | Panjang 18 cm dan lebar 12 cm (luas 216 cm²) |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Keliling persegi panjang = 2(p+l) = 60 cm, maka p+l = 30 cm. Luas = p x l. Untuk p+l tetap, luas maksimum dicapai saat p=l (persegi). Maka p=15, l=15, Luas = 15x15 = 225 cm².
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `10cbdd62236b806b4cc87906665a5767e7783149baf1322003083eec3c1ef10c`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0da953a5c5ab76f61cfe8a73e7bf637e18204f5d5544d1d9430cca8b503eb891`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 1537 |
+| 2 | success | valid / verified | reasoning | conceptual | Medium | 1524 |
+| 3 | success | valid / verified | reasoning | conceptual | Medium | 1489 |
+
+Run 1 — solusi: Keliling persegi panjang = 2(p+l) = 60 cm, maka p+l = 30 cm. Luas = p x l. Untuk p+l tetap, luas maksimum dicapai saat p=l (persegi). Maka p=15, l=15, Luas = 15x15 = 225 cm².
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep keliling dan luas, serta memahami hubungan antara dimensi persegi panjang dengan luas maksimum (konsep optimasi sederhana), yang melampaui sekadar prosedur rutin.. Bukti: Manakah yang menghasilkan kerangka yang terluas?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana perubahan dimensi pada keliling tetap mempengaruhi luas.. Bukti: Hubungan Keliling dan Luas Daerah Bangun Datar
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman bahwa persegi adalah persegi panjang khusus dan prinsip luas maksimum, yang merupakan tantangan berpikir bagi siswa kelas 5.. Bukti: Bapak memiliki kawat sepanjang 60 cm.; Manakah yang menghasilkan kerangka yang terluas?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep keliling dan luas persegi panjang, operasi perkalian dasar. |
+| dependentSteps | 2 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 5 sudah mempelajari luas dan keliling, namun konsep optimasi (luas maksimum) biasanya merupakan tantangan tingkat menengah yang memerlukan penalaran lebih dari sekadar menghitung. |
+
+Run 2 — solusi: Keliling persegi panjang adalah 2(p+l) = 60 cm, sehingga p+l = 30 cm. Luas = p x l. Untuk jumlah dua bilangan tetap, hasil kali maksimum dicapai saat kedua bilangan sama (p=l). Maka p=l=15 cm. Luas = 15 x 15 = 225 cm².
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep keliling dan luas, serta memahami hubungan antara panjang dan lebar untuk memaksimalkan luas, yang melampaui sekadar menghitung luas satu bangun.. Bukti: Manakah yang menghasilkan kerangka yang terluas?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara keliling tetap dan luas maksimum pada persegi panjang.. Bukti: Bapak memiliki kawat sepanjang 60 cm; Manakah yang menghasilkan kerangka yang terluas?
+- Intended difficulty `classify/Medium`: Soal ini menuntut siswa untuk membandingkan beberapa kemungkinan dimensi yang memenuhi syarat keliling, yang merupakan tugas rutin namun memerlukan pemahaman relasional.. Bukti: Bapak memiliki kawat sepanjang 60 cm; Manakah yang menghasilkan kerangka yang terluas?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus keliling dan luas persegi panjang, serta konsep dasar optimasi sederhana. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 5 sudah mempelajari luas dan keliling. Membandingkan beberapa opsi untuk menemukan luas terbesar adalah tugas yang sesuai untuk tingkat menengah. |
+
+Run 3 — solusi: Keliling kawat 60 cm berarti panjang + lebar = 30 cm. Luas persegi panjang dengan keliling tetap adalah maksimum saat panjang = lebar (persegi). Maka 15 cm x 15 cm = 225 cm².
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep keliling dan luas, serta memahami prinsip bahwa untuk keliling tetap, persegi memberikan luas maksimum. Ini melampaui prosedur rutin sederhana.. Bukti: Manakah yang menghasilkan kerangka yang terluas?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara properti geometris (keliling dan luas) dan bagaimana perubahan dimensi mempengaruhi luas.. Bukti: Hubungan Keliling dan Luas Daerah Bangun Datar
+- Intended difficulty `classify/Medium`: Soal ini menuntut siswa untuk menguji beberapa kemungkinan atau memahami prinsip optimasi sederhana. Meskipun prosedurnya bisa dilakukan dengan mencoba angka, konsep dasarnya memerlukan pemahaman relasional.. Bukti: Bapak memiliki kawat sepanjang 60 cm.; Manakah yang menghasilkan kerangka yang terluas?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus keliling dan luas persegi panjang, serta konsep dasar optimasi luas. |
+| dependentSteps | 2 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Untuk kelas 5, membandingkan luas dari berbagai kemungkinan dimensi dengan keliling tetap adalah tantangan yang sesuai untuk tingkat menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"reasoning": 3} | unanimous_3_0 / unanimous | reasoning |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4721,9 +6712,18 @@ Model membaca representation `metadata`; token input 123/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.010410; applying=0.989590; reasoning=0.000000 | applying | 0.989590 | 0.052684 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.546288; conceptual=0.429900; procedural=0.023812; metacognitive=0.000000 | factual | 0.546288 | 0.564247 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.914447; Medium=0.083056; Hard=0.002497 | Easy | 0.914447 | 0.276177 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.989590; −Σp ln(p) = 0.057879; H = 0.057879/ln(3) = 0.052684; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.546288; −Σp ln(p) = 0.782212; H = 0.782212/ln(4) = 0.564247; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.914447; −Σp ln(p) = 0.303411; H = 0.303411/ln(3) = 0.276177; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4747,9 +6747,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "reasoning", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 45. Soal `fbc3163f1b8a4e5fbfc4eaae`
@@ -4763,27 +6763,115 @@ Bapak memiliki kawat sepanjang 60 cm. Dengan menggunakan kawat tersebut, Bapak i
 | C | Lebar 12 cm, luas 30 cm² |
 | D | Lebar 12 cm, luas 216 cm² |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Keliling = 2(p + l) = 60, maka p + l = 30. Jika p = 18, maka l = 30 - 18 = 12 cm. Luas = p x l = 18 x 12 = 216 cm².
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a399028162fd03d2ad70e0ad973bce212a5339f71ab46a46c53c74b366d736f4`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d563e02bcc6f37281ae7ae4aeec690584ab240e072ec03534991be3838e14a36`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 1493 |
+| 2 | success | valid / verified | applying | procedural | Medium | 1497 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 1482 |
+
+Run 1 — solusi: Keliling = 2(p + l) = 60, maka p + l = 30. Jika p = 18, maka l = 30 - 18 = 12. Luas = p x l = 18 x 12 = 216 cm².
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep keliling persegi panjang untuk mencari lebar, kemudian menerapkan rumus luas. Ini adalah prosedur rutin yang menghubungkan dua konsep geometri.. Bukti: Bapak memiliki kawat sepanjang 60 cm; panjang kerangka 18 cm, berapa lebar dan luas
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara keliling dan luas pada bangun datar persegi panjang.. Bukti: kawat sepanjang 60 cm; kerangka berbentuk persegi panjang
+- Intended difficulty `classify/Medium`: Soal ini melibatkan dua langkah rutin (mencari lebar dari keliling, lalu menghitung luas) yang umum untuk kelas 5.. Bukti: kawat sepanjang 60 cm; panjang kerangka 18 cm; berapa lebar dan luas
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus keliling dan luas persegi panjang serta operasi hitung dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah mempelajari hubungan keliling dan luas. Soal ini memerlukan pemahaman bahwa keliling adalah 2(p+l), bukan sekadar p+l. |
+
+Run 2 — solusi: Keliling = 2 x (p + l) = 60. Maka p + l = 30. Jika p = 18, maka l = 30 - 18 = 12 cm. Luas = p x l = 18 x 12 = 216 cm².
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep keliling persegi panjang untuk mencari lebar, kemudian menggunakan prosedur perkalian untuk mencari luas. Ini adalah penerapan prosedur rutin pada situasi yang diberikan.. Bukti: Bapak memiliki kawat sepanjang 60 cm; panjang kerangka 18 cm, berapa lebar dan luas kerangka tersebut
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang hubungan antara rumus keliling dan luas persegi panjang (konsep) serta langkah-langkah perhitungan (prosedural).. Bukti: kawat sepanjang 60 cm; kerangka berbentuk persegi panjang
+- Intended difficulty `classify/Medium`: Soal ini melibatkan dua langkah rutin (mencari lebar dari keliling, lalu menghitung luas) yang umum bagi siswa kelas 5.. Bukti: kawat sepanjang 60 cm; panjang kerangka 18 cm
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus keliling dan luas persegi panjang, serta operasi dasar aritmatika. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 5 yang mencakup geometri bangun datar dan hubungan keliling-luas. |
+
+Run 3 — solusi: Keliling = 2(p + l) = 60. Maka p + l = 30. Jika p = 18, maka l = 30 - 18 = 12 cm. Luas = p x l = 18 x 12 = 216 cm².
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep keliling persegi panjang untuk mencari lebar, kemudian menerapkan rumus luas. Ini adalah penerapan prosedur rutin pada situasi yang diberikan.. Bukti: Bapak memiliki kawat sepanjang 60 cm; Jika panjang kerangka 18 cm, berapa lebar dan luas kerangka tersebut?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara rumus keliling dan luas bangun datar persegi panjang.. Bukti: keliling; luas kerangka
+- Intended difficulty `classify/Medium`: Soal ini melibatkan dua langkah rutin (mencari lebar dari keliling, lalu mencari luas) yang umum untuk kelas 5.. Bukti: kawat sepanjang 60 cm; panjang kerangka 18 cm; berapa lebar dan luas
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus keliling dan luas persegi panjang, serta operasi dasar aritmatika. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 5 karena menggabungkan dua konsep dasar (keliling dan luas) dalam satu masalah kontekstual. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
+
+Adjudikasi AI: `success`; token `2909`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu menerapkan konsep keliling persegi panjang untuk mencari lebar, kemudian menerapkan rumus luas. Ini adalah penerapan prosedur rutin pada situasi yang diberikan.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman tentang hubungan antara rumus keliling dan luas persegi panjang (konsep) serta langkah-langkah perhitungan (prosedural).
+- Intended difficulty `Medium`: Soal ini melibatkan dua langkah rutin (mencari lebar dari keliling, lalu menghitung luas) yang umum bagi siswa kelas 5.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus keliling dan luas persegi panjang, serta operasi dasar aritmatika. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 5 yang mencakup geometri bangun datar dan hubungan keliling-luas. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4791,9 +6879,18 @@ Model membaca representation `metadata`; token input 117/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.388981; applying=0.611019; reasoning=0.000000 | applying | 0.611019 | 0.608304 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.585788; conceptual=0.384481; procedural=0.029731; metacognitive=0.000000 | factual | 0.585788 | 0.566480 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.915089; Medium=0.082117; Hard=0.002794 | Easy | 0.915089 | 0.275701 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.611019; −Σp ln(p) = 0.668290; H = 0.668290/ln(3) = 0.608304; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.585788; −Σp ln(p) = 0.785308; H = 0.785308/ln(4) = 0.566480; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.915089; −Σp ln(p) = 0.302888; H = 0.302888/ln(3) = 0.275701; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4817,9 +6914,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 46. Soal `4088b8d020de84282c07a2b3`
@@ -4833,27 +6930,93 @@ Sebuah tangki air berisi 2.225 liter air. Pada siang hari 975 liter 325 ml air d
 | C | 1.249 liter 675 ml |
 | D | 1.250 liter 325 ml |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: 2.225 liter = 2.224 liter 1.000 ml. (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `66548fc238b9b4770e9b31c0ae084324a74b34d431efab6e850a41e1fab20c77`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4e50c06251a83072482ff31a94b5d75475b64451c43155af300cd0c1b55b7a56`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 1576 |
+| 2 | success | valid / verified | applying | procedural | Medium | 1607 |
+| 3 | success | valid / verified | applying | procedural | Medium | 1588 |
+
+Run 1 — solusi: 2.225 liter = 2.224 liter 1.000 ml. (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan dengan konversi satuan volume (liter ke mililiter) yang merupakan prosedur rutin dalam pengukuran.. Bukti: 2.225 liter; 975 liter 325 ml; Berapa banyak air yang tersisa
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma pengurangan yang melibatkan konversi satuan (1 liter = 1.000 ml).. Bukti: 2.225 liter; 975 liter 325 ml
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman tentang sistem satuan volume dan teknik meminjam dalam pengurangan yang melibatkan konversi satuan, yang merupakan standar kompetensi kelas 5.. Bukti: 2.225 liter; 975 liter 325 ml
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konversi satuan volume (1 liter = 1.000 ml) dan operasi pengurangan bersusun. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan mampu melakukan operasi hitung campuran satuan volume. Distraktor dirancang untuk menjebak kesalahan umum dalam proses meminjam satuan. |
+
+Run 2 — solusi: 2.225 L - 975 L 325 mL = 2.224 L 1.000 mL - 975 L 325 mL = (2.224 - 975) L + (1.000 - 325) mL = 1.249 L 675 mL.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan dengan konversi satuan volume (liter ke mililiter) yang melibatkan teknik meminjam (regrouping) pada satuan yang berbeda.. Bukti: 2.225 liter air; 975 liter 325 ml air dipompa keluar
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi pengurangan pada besaran yang memiliki satuan campuran dan memerlukan pemahaman konseptual tentang hubungan 1 liter = 1.000 ml.. Bukti: 2.225 liter; 975 liter 325 ml
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah rutin: melakukan konversi satuan (meminjam 1 liter menjadi 1.000 ml) dan melakukan pengurangan bilangan bulat serta desimal/satuan yang terkait.. Bukti: 2.225 liter; 975 liter 325 ml
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konversi satuan volume (liter ke ml) dan pengurangan bersusun dengan teknik meminjam. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan mampu melakukan operasi hitung campuran dengan satuan ukuran. Soal ini menuntut ketelitian dalam regrouping satuan, yang merupakan standar kompetensi kelas 5. |
+
+Run 3 — solusi: 2.225 liter = 2.224 liter 1.000 ml. (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan satuan volume yang melibatkan konversi unit (liter ke mililiter) untuk menyelesaikan masalah rutin.. Bukti: 2.225 liter; 975 liter 325 ml; Berapa banyak air yang tersisa
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma pengurangan dengan satuan campuran yang memerlukan teknik meminjam antar satuan.. Bukti: 2.225 liter; 975 liter 325 ml
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah rutin: konversi satuan (meminjam 1 liter menjadi 1.000 ml) dan pengurangan bilangan desimal/satuan campuran yang memerlukan ketelitian.. Bukti: 2.225 liter; 975 liter 325 ml; Berapa banyak air yang tersisa
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konversi satuan volume (1 liter = 1.000 ml) dan pengurangan bersusun. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Sesuai untuk kelas 5 karena melibatkan operasi hitung satuan volume yang merupakan standar kompetensi dasar pengukuran. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4861,9 +7024,18 @@ Model membaca representation `metadata`; token input 103/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.020880; applying=0.979120; reasoning=0.000000 | applying | 0.979120 | 0.092338 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.784812; conceptual=0.194082; procedural=0.021106; metacognitive=0.000000 | factual | 0.784812 | 0.425446 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.880745; Medium=0.115963; Hard=0.003292 | Easy | 0.880745 | 0.346349 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.979120; −Σp ln(p) = 0.101444; H = 0.101444/ln(3) = 0.092338; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.784812; −Σp ln(p) = 0.589793; H = 0.589793/ln(4) = 0.425446; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.880745; −Σp ln(p) = 0.380503; H = 0.380503/ln(3) = 0.346349; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4885,9 +7057,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 47. Soal `5b39909f145e4cc23b6e544c`
@@ -4904,37 +7076,112 @@ Perhatikan bangun datar berikut. Temukan banyaknya sudut siku-siku pada setiap b
 ![Gambar sumber soal 47](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0185-10.png>)
 
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0185-10.png. Transkripsi visual: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bangun 5 adalah persegi yang diputar. Persegi memiliki 4 sudut siku-siku (90 derajat).
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0185-10.png. Transkripsi visual: Terdapat enam bangun datar yang diberi nomor 1 sampai 6. Bangun nomor 5 adalah sebuah segiempat (persegi) yang diputar 45 derajat. Keempat sudutnya membentuk sudut siku-siku.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5b250204ae9057bc350f72d467a016a2a35973f212d663877d25a1da1c2a450d`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7a91cc7c59611b5d7e450ade6fa2d62585b2944b0eb44d7682f8d82e74ff22de`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2440 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2481 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2457 |
+
+Run 1 — solusi: Bangun 5 adalah persegi yang diputar. Persegi memiliki 4 sudut siku-siku (90 derajat).
+- Domain kognitif `classify/applying`: Siswa perlu mengenali properti sudut siku-siku pada bangun datar meskipun orientasinya diputar (tidak sejajar sumbu horizontal/vertikal). Ini melibatkan penerapan konsep sudut pada situasi rutin.. Bukti: Temukan banyaknya sudut siku-siku pada setiap bangun berikut; Bangun 5
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang definisi sudut siku-siku yang tidak bergantung pada orientasi visual bangun.. Bukti: Temukan banyaknya sudut siku-siku pada setiap bangun berikut
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya meminta identifikasi properti dasar bangun datar (persegi) yang sudah dikenal siswa kelas 5, meskipun ada sedikit tantangan visual berupa rotasi.. Bukti: Bangun 5
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang sudut siku-siku dan sifat-sifat persegi. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah mampu mengidentifikasi sudut siku-siku pada berbagai orientasi bangun datar sederhana. |
+
+Run 2 — solusi: Bangun 5 adalah persegi yang diputar. Persegi memiliki empat sudut siku-siku (90 derajat). Oleh karena itu, terdapat 4 sudut siku-siku.
+- Domain kognitif `classify/applying`: Siswa perlu mengenali properti sudut siku-siku pada bangun datar yang posisinya tidak standar (diputar). Ini melibatkan penerapan konsep sudut siku-siku pada situasi rutin.. Bukti: Temukan banyaknya sudut siku-siku pada setiap bangun berikut. Bangun 5
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang definisi sudut siku-siku yang tetap berlaku meskipun orientasi bangun datar berubah.. Bukti: sudut siku-siku; Bangun 5
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya meminta identifikasi properti dasar bangun datar (persegi) yang sudah dikenal siswa kelas 5, meskipun ada sedikit tantangan visual karena rotasi.. Bukti: Bangun 5; Temukan banyaknya sudut siku-siku
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang sudut siku-siku dan sifat-sifat persegi. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 seharusnya sudah sangat familiar dengan konsep sudut siku-siku dan bentuk persegi, sehingga rotasi bangun tidak menjadi hambatan yang signifikan. |
+
+Run 3 — solusi: Bangun 5 adalah persegi. Persegi memiliki empat sudut siku-siku, terlepas dari orientasi rotasinya.
+- Domain kognitif `classify/applying`: Siswa perlu mengenali properti sudut siku-siku pada bangun datar yang posisinya tidak standar (diputar), yang memerlukan pemahaman konsep dasar geometri.. Bukti: Temukan banyaknya sudut siku-siku pada setiap bangun berikut. Bangun 5
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep tentang sifat-sifat bangun datar (persegi) dan definisi sudut siku-siku.. Bukti: Temukan banyaknya sudut siku-siku pada setiap bangun berikut.
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya meminta identifikasi properti dasar bangun datar yang sudah dikenal siswa kelas 5, meskipun ada sedikit tantangan visual karena rotasi.. Bukti: Bangun 5; Temukan banyaknya sudut siku-siku
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang sudut siku-siku dan sifat-sifat persegi. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan sudah mampu mengidentifikasi sudut siku-siku pada berbagai orientasi bangun datar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 66/256; truncation: `False`.
+Model membaca representation `metadata`; token input 100/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.175703; applying=0.824297; reasoning=0.000000 | applying | 0.824297 | 0.423092 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.062415; conceptual=0.923232; procedural=0.014353; metacognitive=0.000000 | conceptual | 0.923232 | 0.222025 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.853388; Medium=0.143474; Hard=0.003138 | Easy | 0.853388 | 0.393180 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.824297; −Σp ln(p) = 0.464814; H = 0.464814/ln(3) = 0.423092; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.923232; −Σp ln(p) = 0.307792; H = 0.307792/ln(4) = 0.222025; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.853388; −Σp ln(p) = 0.431952; H = 0.431952/ln(3) = 0.393180; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4951,16 +7198,16 @@ Pilihan: A. 0
 B. 4
 C. 3
 D. 2
-Transkripsi visual: -
+Transkripsi visual: Terdapat enam bangun datar yang diberi nomor 1 sampai 6. Bangun nomor 5 adalah sebuah segiempat (persegi) yang diputar 45 derajat. Keempat sudutnya membentuk sudut siku-siku.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 48. Soal `ff6d8a6a3950529913ba071e`
@@ -4977,37 +7224,125 @@ Perhatikan bangun datar berikut. Temukan banyaknya sudut siku-siku pada setiap b
 ![Gambar sumber soal 48](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0185-09.png>)
 
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0185-09.png. Transkripsi visual: —
+Kunci sumber: `B`; status AI: `conflict`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: Bangun 1 (persegi panjang) memiliki 4 sudut siku-siku, bangun 2 (trapesium) memiliki 2 sudut siku-siku, dan bangun 3 (belah ketupat) memiliki 0 sudut siku-siku. Kunci jawaban '4' tidak mencakup seluruh instruksi soal.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0185-09.png. Transkripsi visual: Terdapat tiga bangun datar. Bangun pertama adalah persegi panjang (4 sudut siku-siku). Bangun kedua adalah trapesium siku-siku (2 sudut siku-siku di bagian bawah). Bangun ketiga adalah belah ketupat (0 sudut siku-siku).
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `050547f72c35836fa7eaeffa5d96844da0263d25b3f080e62c1ebc4361a24b3b`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5e139205b4b96d8cc544d34969ce910760c0965d695d03f5d357fe88174391d5`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / conflict | knowing | conceptual | Easy | 2542 |
+| 2 | success | valid / conflict | knowing | conceptual | Easy | 2506 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2467 |
+
+Run 1 — solusi: Bangun 1 adalah persegi panjang yang memiliki 4 sudut siku-siku. Kunci jawaban B (4) hanya berlaku untuk bangun pertama, namun soal meminta analisis untuk 'setiap bangun', sehingga kunci jawaban tidak lengkap/ambigu.
+- Domain kognitif `classify/knowing`: Siswa perlu mengenali dan mengidentifikasi properti sudut siku-siku pada bangun datar yang diberikan, yang merupakan proses langsung.. Bukti: Temukan banyaknya sudut siku-siku pada setiap bangun berikut.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang definisi dan pengenalan visual dari konsep sudut siku-siku.. Bukti: sudut siku-siku
+- Intended difficulty `classify/Easy`: Tugas ini sangat rutin dan prosedural untuk kelas 5, hanya memerlukan pengenalan visual sederhana terhadap bentuk dasar.. Bukti: Perhatikan bangun datar berikut.; Temukan banyaknya sudut siku-siku
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang sudut siku-siku dan bentuk bangun datar (persegi panjang). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Mengidentifikasi sudut siku-siku pada bangun datar sederhana adalah materi standar kelas 4-5 yang bersifat rutin. |
+
+Run 2 — solusi: Bangun pertama (persegi panjang) memiliki 4 sudut siku-siku. Kunci jawaban B (4) hanya merujuk pada bangun pertama, mengabaikan bangun kedua dan ketiga.
+- Domain kognitif `classify/knowing`: Siswa perlu mengenali dan mengidentifikasi properti sudut siku-siku pada bangun datar yang diberikan. Ini adalah proses pengenalan langsung.. Bukti: Temukan banyaknya sudut siku-siku pada setiap bangun berikut.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang definisi dan pengenalan visual dari konsep sudut siku-siku.. Bukti: sudut siku-siku
+- Intended difficulty `classify/Easy`: Tugas ini sangat rutin bagi siswa kelas 5, hanya melibatkan pengenalan visual bentuk dasar.. Bukti: Perhatikan bangun datar berikut. Temukan banyaknya sudut siku-siku
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang sudut siku-siku dan bentuk bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Mengidentifikasi sudut siku-siku pada persegi panjang adalah materi dasar geometri kelas rendah hingga menengah. |
+
+Run 3 — solusi: Bangun pertama adalah persegi panjang. Persegi panjang memiliki empat sudut yang masing-masing besarnya 90 derajat (sudut siku-siku).
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi dan menghitung properti geometris (sudut siku-siku) pada bangun datar yang diberikan, yang merupakan proses pengenalan langsung.. Bukti: Temukan banyaknya sudut siku-siku pada setiap bangun berikut
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang definisi dan pengenalan konsep sudut siku-siku pada bangun datar.. Bukti: Temukan banyaknya sudut siku-siku pada setiap bangun berikut
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan pengenalan visual langsung pada bangun datar standar (persegi panjang) yang sudah sangat familiar bagi siswa kelas 5.. Bukti: Perhatikan bangun datar berikut. Temukan banyaknya sudut siku-siku
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang definisi sudut siku-siku dan pengenalan bentuk bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi pengenalan sudut siku-siku pada bangun datar adalah materi dasar yang sudah dipelajari di kelas rendah, sehingga untuk kelas 5 ini tergolong sangat mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3856`.
+Konten: `concern`; kunci: `conflict`; masalah: Soal meminta siswa untuk menemukan banyaknya sudut siku-siku pada 'setiap bangun', namun hanya menyediakan satu jawaban tunggal (B. 4) yang hanya relevan untuk bangun pertama (persegi panjang).; Soal tidak memberikan format jawaban yang memungkinkan siswa menjawab untuk ketiga bangun yang ditampilkan (misalnya, dalam bentuk daftar atau tabel), sehingga kunci jawaban menjadi ambigu dan tidak lengkap..
+- Domain kognitif `knowing`: Siswa perlu mengenali dan mengidentifikasi properti sudut siku-siku pada berbagai bangun datar, yang merupakan proses pengenalan langsung.
+- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman tentang definisi dan pengenalan visual dari konsep sudut siku-siku.
+- Intended difficulty `Easy`: Tugas ini bersifat rutin dan prosedural, namun karena instruksi soal tidak selaras dengan format pilihan ganda yang disediakan, tingkat kesulitan teknis menjadi tidak relevan karena cacat pada desain soal.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang definisi sudut siku-siku dan pengenalan bentuk bangun datar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Mengidentifikasi sudut siku-siku pada bangun datar adalah materi dasar geometri yang sangat familiar bagi siswa kelas 5. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 66/256; truncation: `False`.
+Model membaca representation `metadata`; token input 115/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5024,16 +7359,16 @@ Pilihan: A. 0
 B. 4
 C. 2
 D. 3
-Transkripsi visual: -
+Transkripsi visual: Terdapat tiga bangun datar. Bangun pertama adalah persegi panjang (4 sudut siku-siku). Bangun kedua adalah trapesium siku-siku (2 sudut siku-siku di bagian bawah). Bangun ketiga adalah belah ketupat (0 sudut siku-siku).
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `revision_required`.
+Status konten: `concern`. Catatan konten: Soal meminta siswa untuk menemukan banyaknya sudut siku-siku pada 'setiap bangun', namun hanya menyediakan satu jawaban tunggal (B. 4) yang hanya relevan untuk bangun pertama (persegi panjang).; Soal tidak memberikan format jawaban yang memungkinkan siswa menjawab untuk ketiga bangun yang ditampilkan (misalnya, dalam bentuk daftar atau tabel), sehingga kunci jawaban menjadi ambigu dan tidak lengkap..
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 49. Soal `fd335c551b48bcf09d6a8482`
@@ -5050,37 +7385,112 @@ Sudut apakah yang terbentuk oleh jarum pendek dan panjang saat jam menunjukkan p
 ![Gambar sumber soal 49](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0188-07.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0188-07.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Pada pukul 08.00, jarum panjang di angka 12 dan jarum pendek di angka 8. Jarak antar angka pada jam adalah 30 derajat. Sudut yang terbentuk adalah 4 x 30 derajat = 120 derajat. Karena 90 derajat < 120 derajat < 180 derajat, maka sudut tersebut adalah sudut tumpul.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0188-07.png. Transkripsi visual: Gambar jam analog menunjukkan jarum panjang di angka 12 dan jarum pendek di angka 8. Terdapat busur merah yang menandai sudut antara kedua jarum tersebut.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d1319558c57b504ecc2aed4a228cd851d1a520fe76111cc65c96b2c0249a5e20`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c36759a53f995a1cf9f85140fda3e2c77c802f85b5507de0cc058745821f2e91`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2539 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2609 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2571 |
+
+Run 1 — solusi: Pada pukul 08.00, jarum panjang di angka 12 dan jarum pendek di angka 8. Jarak antar angka pada jam adalah 30 derajat. Sudut yang terbentuk adalah 4 x 30 derajat = 120 derajat. Karena 90 derajat < 120 derajat < 180 derajat, maka sudut tersebut adalah sudut tumpul.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi jenis sudut berdasarkan representasi visual jam analog, yang melibatkan penerapan konsep klasifikasi sudut (lancip, siku-siku, tumpul) pada situasi rutin.. Bukti: Sudut apakah yang terbentuk oleh jarum pendek dan panjang saat jam menunjukkan pukul 08.00.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang definisi dan klasifikasi sudut (konsep) yang diterapkan pada objek nyata (jam).. Bukti: Sudut apakah yang terbentuk oleh jarum pendek dan panjang
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pengenalan visual atau pengetahuan dasar tentang klasifikasi sudut pada jam analog yang merupakan konteks sangat familiar bagi siswa kelas 5.. Bukti: pukul 08.00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jenis-jenis sudut (lancip, siku-siku, tumpul) dan cara membaca jam. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah sangat familiar dengan konsep sudut dasar dan jam analog, sehingga ini adalah tugas rutin. |
+
+Run 2 — solusi: Pada pukul 08.00, jarum jam menunjuk angka 12 dan 8. Jarak antar angka pada jam adalah 30 derajat (360/12). Sudut yang terbentuk adalah 4 x 30 derajat = 120 derajat. Karena 90 < 120 < 180, maka sudut tersebut adalah sudut tumpul.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi jenis sudut berdasarkan representasi visual jam. Ini melibatkan penerapan konsep klasifikasi sudut (lancip, siku-siku, tumpul) pada situasi rutin yang familiar.. Bukti: Sudut apakah yang terbentuk oleh jarum pendek dan panjang saat jam menunjukkan pukul 08.00.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang definisi sudut (lancip, siku-siku, tumpul) dan bagaimana mereka dikategorikan berdasarkan besaran derajatnya.. Bukti: Sudut apakah yang terbentuk; pukul 08.00
+- Intended difficulty `classify/Easy`: Soal ini termasuk kategori mudah karena menggunakan representasi jam yang sangat umum dalam kurikulum kelas 5 untuk mengajarkan sudut. Prosedur penentuan jenis sudutnya langsung dan tidak memerlukan perhitungan kompleks.. Bukti: Sudut apakah yang terbentuk oleh jarum pendek dan panjang saat jam menunjukkan pukul 08.00.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jenis-jenis sudut (lancip, siku-siku, tumpul) dan pembacaan jam analog. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah terbiasa dengan konsep sudut pada jam analog sebagai contoh konkret sudut dalam kehidupan sehari-hari. |
+
+Run 3 — solusi: Pada pukul 08.00, jarum panjang di angka 12 dan jarum pendek di angka 8. Jarak antar angka pada jam adalah 30 derajat (360/12). Sudut yang terbentuk adalah 4 x 30 derajat = 120 derajat. Karena 90 < 120 < 180, maka sudut tersebut adalah sudut tumpul.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi jenis sudut berdasarkan representasi visual jam dan menerapkan pengetahuan tentang klasifikasi sudut (lancip, siku-siku, tumpul). Ini adalah penerapan konsep dasar pada situasi rutin.. Bukti: Sudut apakah yang terbentuk oleh jarum pendek dan panjang saat jam menunjukkan pukul 08.00
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai definisi dan klasifikasi sudut (konsep) yang diterapkan pada objek nyata (jam).. Bukti: Sudut apakah yang terbentuk
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena menggunakan representasi jam yang sangat familiar bagi siswa kelas 5. Prosedur penentuan jenis sudut (membandingkan dengan 90 derajat) adalah rutin.. Bukti: pukul 08.00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jenis-jenis sudut (lancip, siku-siku, tumpul) dan cara membaca jam. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah sangat familiar dengan konsep sudut dan pembacaan jam, sehingga soal ini merupakan latihan rutin yang sesuai dengan tingkat kelas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 66/256; truncation: `False`.
+Model membaca representation `metadata`; token input 92/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.998968; applying=0.001032; reasoning=0.000000 | knowing | 0.998968 | 0.007397 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.421446; conceptual=0.566035; procedural=0.012520; metacognitive=0.000000 | conceptual | 0.566035 | 0.534611 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.877643; Medium=0.118887; Hard=0.003470 | Easy | 0.877643 | 0.352606 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.998968; −Σp ln(p) = 0.008126; H = 0.008126/ln(3) = 0.007397; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.566035; −Σp ln(p) = 0.741128; H = 0.741128/ln(4) = 0.534611; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.877643; −Σp ln(p) = 0.387378; H = 0.387378/ln(3) = 0.352606; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5095,16 +7505,16 @@ Pilihan: A. Tumpul
 B. Lurus
 C. Siku-siku
 D. Lancip
-Transkripsi visual: -
+Transkripsi visual: Gambar jam analog menunjukkan jarum panjang di angka 12 dan jarum pendek di angka 8. Terdapat busur merah yang menandai sudut antara kedua jarum tersebut.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 50. Soal `2b5db81c155e3ca6e5058b47`
@@ -5121,37 +7531,112 @@ Apa jenis sudut pada pojokan jendela.
 ![Gambar sumber soal 50](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0189-01.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0189-01.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Pojok jendela berbentuk persegi panjang, yang secara definisi memiliki sudut 90 derajat atau sudut siku-siku.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0189-01.png. Transkripsi visual: Gambar menunjukkan tabel dengan beberapa contoh sudut. Baris terakhir (f) menampilkan ilustrasi jendela berbentuk persegi panjang dengan tanda sudut siku-siku yang jelas pada setiap pojokannya.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e15906882a8c5499a2aa6d58dd1bf46284053a54c853b5e35b5419652ed5665f`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `09c78e2fb2abe5d9e5d2fc426cdfad500568b16c246d0ff7ec3015e496597c2d`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2460 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2453 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2449 |
+
+Run 1 — solusi: Pojok jendela berbentuk persegi panjang, yang secara definisi memiliki sudut 90 derajat atau sudut siku-siku.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan mengklasifikasikan jenis sudut berdasarkan representasi visual yang sangat umum dan familiar (pojok jendela). Ini adalah proses pengenalan langsung tanpa perlu strategi kompleks.. Bukti: Apa jenis sudut pada pojokan jendela.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami definisi konseptual dari sudut siku-siku dan mengaitkannya dengan objek nyata (pojok jendela).. Bukti: Apa jenis sudut pada pojokan jendela.
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 5. Mengidentifikasi sudut siku-siku pada benda di sekitar adalah keterampilan awal dalam geometri.. Bukti: Apa jenis sudut pada pojokan jendela.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jenis-jenis sudut (siku-siku, lancip, tumpul). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi pengenalan sudut biasanya diajarkan di kelas 3 atau 4, sehingga untuk kelas 5 ini dikategorikan mudah. |
+
+Run 2 — solusi: Pojokan jendela berbentuk persegi panjang, yang secara definisi memiliki sudut 90 derajat atau sudut siku-siku.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi jenis sudut berdasarkan pengamatan visual langsung pada objek geometris yang familiar (jendela). Ini adalah proses pengenalan fakta geometris dasar.. Bukti: Apa jenis sudut pada pojokan jendela.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami definisi dan kategori sudut (siku-siku, lancip, tumpul) untuk mengklasifikasikan sudut yang terlihat pada gambar.. Bukti: Apa jenis sudut pada pojokan jendela.
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan pengenalan visual langsung dari bentuk geometris yang sangat umum (persegi panjang/jendela) tanpa memerlukan perhitungan atau strategi kompleks.. Bukti: Apa jenis sudut pada pojokan jendela.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jenis-jenis sudut (siku-siku, lancip, tumpul). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, mengidentifikasi sudut siku-siku pada benda di sekitar adalah materi yang sangat dasar dan rutin. |
+
+Run 3 — solusi: Pojok jendela berbentuk persegi panjang, yang secara definisi memiliki sudut 90 derajat atau sudut siku-siku.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan mengklasifikasikan jenis sudut berdasarkan representasi visual yang sangat umum dan familiar (pojok jendela). Ini adalah proses pengenalan langsung terhadap fakta geometris.. Bukti: Apa jenis sudut pada pojokan jendela.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami definisi dan kategori sudut (siku-siku) untuk mengidentifikasi properti geometris dari objek yang diberikan.. Bukti: Apa jenis sudut pada pojokan jendela.
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan familiar bagi siswa kelas 5. Tidak ada langkah perhitungan atau strategi kompleks yang diperlukan.. Bukti: Apa jenis sudut pada pojokan jendela.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jenis-jenis sudut (siku-siku, lancip, tumpul). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Mengenali sudut siku-siku pada benda di sekitar adalah materi dasar geometri kelas 4-5. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 57/256; truncation: `False`.
+Model membaca representation `metadata`; token input 88/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.304034; applying=0.695966; reasoning=0.000000 | applying | 0.695966 | 0.559109 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.100605; conceptual=0.893154; procedural=0.006242; metacognitive=0.000000 | conceptual | 0.893154 | 0.262321 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.902882; Medium=0.094068; Hard=0.003050 | Easy | 0.902882 | 0.302439 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.695966; −Σp ln(p) = 0.614244; H = 0.614244/ln(3) = 0.559109; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.893154; −Σp ln(p) = 0.363654; H = 0.363654/ln(4) = 0.262321; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.902882; −Σp ln(p) = 0.332263; H = 0.332263/ln(3) = 0.302439; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5166,16 +7651,16 @@ Pilihan: A. Siku-siku
 B. Lancip
 C. Lurus
 D. Tumpul
-Transkripsi visual: -
+Transkripsi visual: Gambar menunjukkan tabel dengan beberapa contoh sudut. Baris terakhir (f) menampilkan ilustrasi jendela berbentuk persegi panjang dengan tanda sudut siku-siku yang jelas pada setiap pojokannya.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 51. Soal `08c456eda435cd6d336fd7d0`
@@ -5338,27 +7823,115 @@ Tentukan besar sudut terkecil yang dibentuk oleh jarum pendek dan jarum panjang 
 | C | $150^\circ$ |
 | D | $70^\circ$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Satu putaran penuh jam adalah 360 derajat, dibagi 12 angka, sehingga tiap angka bernilai 360/12 = 30 derajat. Pada pukul 07.00, jarum panjang di angka 12 dan jarum pendek di angka 7. Jarak terpendek adalah 5 bagian (dari 7 ke 12). Maka, sudut terkecil = 5 x 30 derajat = 150 derajat.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ffd72bb62d123ab487aa5133dccbfef98c4e3c44e99f85fb1fb7aea47e31869c`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `beb05648c083bf982cfddc1610c6f0ccf9e1a1e3455a6aeb825f3e2a3125d4f2`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 1430 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 1447 |
+| 3 | success | valid / conflict | applying | conceptual | Easy | 1373 |
+
+Run 1 — solusi: Pada pukul 07.00, jarum pendek di angka 7 dan jarum panjang di angka 12. Jarak antara angka 12 ke 7 adalah 5 bagian. Setiap bagian bernilai 360/12 = 30 derajat. Maka, sudut terkecil = 5 x 30 derajat = 150 derajat.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep sudut pada jam (30 derajat per jam) untuk menyelesaikan masalah rutin yang sudah familiar.. Bukti: Tentukan besar sudut terkecil yang dibentuk oleh jarum pendek dan jarum panjang pada jam saat menunjukkan pukul 07.00
+- Dimensi pengetahuan `classify/conceptual`: Memerlukan pemahaman tentang hubungan antara posisi jarum jam dan besar sudut (konsep geometri dasar).. Bukti: jarum pendek dan jarum panjang pada jam saat menunjukkan pukul 07.00
+- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur standar yang rutin bagi siswa kelas 5 untuk menghitung sudut pada jam.. Bukti: pukul 07.00; besar sudut terkecil
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman bahwa satu putaran jam adalah 360 derajat dan dibagi menjadi 12 bagian sama besar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung sudut pada jam adalah materi geometri dasar yang sesuai untuk kelas 5. |
+
+Run 2 — solusi: Pada pukul 07.00, jarum pendek di angka 7 dan jarum panjang di angka 12. Jarak antara angka 12 ke 7 adalah 5 bagian. Setiap bagian bernilai 360/12 = 30 derajat. Maka, sudut terkecil = 5 * 30 = 150 derajat.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep pengukuran sudut pada jam (konsep 30 derajat per jam) untuk menyelesaikan situasi rutin.. Bukti: Tentukan besar sudut terkecil yang dibentuk oleh jarum pendek dan jarum panjang pada jam saat menunjukkan pukul 07.00
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara posisi jarum jam dan besar sudut (konsep geometri lingkaran).. Bukti: Tentukan besar sudut terkecil yang dibentuk oleh jarum pendek dan jarum panjang
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena melibatkan prosedur rutin yang sudah familiar bagi siswa kelas 5 terkait pembagian sudut lingkaran pada jam.. Bukti: Tentukan besar sudut terkecil yang dibentuk oleh jarum pendek dan jarum panjang pada jam saat menunjukkan pukul 07.00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang lingkaran (360 derajat) dan pembagian jam menjadi 12 bagian. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi sudut pada jam adalah topik standar kelas 5 yang menggunakan prosedur rutin. |
+
+Run 3 — solusi: Pada pukul 07.00, jarum pendek di angka 7 dan jarum panjang di angka 12. Jarak antara angka 12 ke 7 adalah 5 bagian. Setiap bagian bernilai 360/12 = 30 derajat. Maka, sudut terkecil = 5 x 30 derajat = 150 derajat.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep hubungan antara posisi jarum jam dengan besar sudut (30 derajat per jam) untuk menyelesaikan masalah rutin.. Bukti: Tentukan besar sudut terkecil; pukul 07.00
+- Dimensi pengetahuan `classify/conceptual`: Memerlukan pemahaman tentang prinsip geometri lingkaran dan pembagian sudut pada jam.. Bukti: besar sudut; jarum pendek dan jarum panjang
+- Intended difficulty `classify/Easy`: Soal ini melibatkan prosedur rutin yang familiar bagi siswa kelas 5, yaitu menghitung sudut pada jam dengan satu langkah logika utama.. Bukti: pukul 07.00; sudut terkecil
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang lingkaran (360 derajat) dan pembagian jam menjadi 12 bagian. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi sudut pada jam adalah topik standar kelas 5 yang menggunakan prosedur perkalian sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `2861`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa menerapkan prosedur rutin yang sudah dipelajari (konsep sudut pada jam) untuk menyelesaikan masalah yang familiar.
+- Dimensi pengetahuan `conceptual`: Memerlukan pemahaman tentang hubungan antara posisi jarum jam dan pembagian sudut lingkaran (konsep geometri).
+- Intended difficulty `Easy`: Soal ini merupakan prosedur rutin yang standar untuk kelas 5, dengan beban perhitungan rendah dan langkah-langkah yang jelas.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman bahwa satu putaran jam adalah 360 derajat dan dibagi menjadi 12 bagian sama besar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung sudut pada jam adalah materi geometri dasar yang sesuai untuk kelas 5. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5366,9 +7939,18 @@ Model membaca representation `metadata`; token input 88/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.085369; applying=0.914631; reasoning=0.000000 | applying | 0.914631 | 0.265508 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.033330; conceptual=0.941817; procedural=0.024854; metacognitive=0.000000 | conceptual | 0.941817 | 0.188740 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.832381; Medium=0.165261; Hard=0.002358 | Easy | 0.832381 | 0.422793 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.914631; −Σp ln(p) = 0.291690; H = 0.291690/ln(3) = 0.265508; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.941817; −Σp ln(p) = 0.261649; H = 0.261649/ln(4) = 0.188740; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.832381; −Σp ln(p) = 0.464486; H = 0.464486/ln(3) = 0.422793; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5390,9 +7972,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 53. Soal `aacaa86c1fc9990161672c5c`
@@ -5898,27 +8480,93 @@ Perhatikan tabel berikut.<br>\|No.\|Sedotan (cm) a\|b\|c\|Membentuk Segitiga?\|b
 | C | Pada kelompok yang tidak dapat dibuat segitiga, ada dua sedotan yang sama panjang |
 | D | Pada kelompok yang tidak dapat dibuat segitiga, ada jumlah panjang dua sisi yang tidak lebih dari sisi ketiga |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Syarat pembentukan segitiga adalah jumlah panjang dua sisi harus lebih besar dari sisi ketiga. Pada baris 2 (4,6,6), 4+6>6 (bisa). Pada baris 3 (5,4,12), 5+4=9 < 12 (tidak bisa). Pada baris 4 (10,5,15), 10+5=15 (tidak bisa). Pada baris 5 (5,12,13), 5+12>13 (bisa). Kelompok yang tidak bisa membentuk segitiga memenuhi kondisi jumlah dua sisi tidak lebih dari (kurang dari atau sama dengan) sisi ketiga.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9a9121e462282e26e5236420e15de74b58d93ce67a66b17ea9b2a4cd3877cf08`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8050c2ba8615507e6b4a2cf891eafdf708873cc34eef5b08bf6ef682d6cfbd93`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 1713 |
+| 2 | success | valid / verified | reasoning | conceptual | Medium | 1599 |
+| 3 | success | valid / verified | reasoning | conceptual | Medium | 1710 |
+
+Run 1 — solusi: Syarat pembentukan segitiga adalah jumlah panjang dua sisi harus lebih besar dari sisi ketiga. Pada baris 2 (4,6,6), 4+6>6 (bisa). Pada baris 3 (5,4,12), 5+4=9 < 12 (tidak bisa). Pada baris 4 (10,5,15), 10+5=15 (tidak bisa). Pada baris 5 (5,12,13), 5+12>13 (bisa). Kelompok yang tidak bisa membentuk segitiga memenuhi kondisi jumlah dua sisi tidak lebih dari (kurang dari atau sama dengan) sisi ketiga.
+- Domain kognitif `classify/reasoning`: Siswa perlu menganalisis pola dari data tabel untuk menyimpulkan aturan umum (teorema ketidaksamaan segitiga) yang membedakan kedua kelompok tersebut.. Bukti: Apakah perbedaan antara kelompok yang dapat dibuat segitiga dan kelompok yang tidak dapat dibuat segitiga?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara panjang sisi-sisi segitiga, bukan sekadar menghafal fakta atau prosedur rutin.. Bukti: Perhatikan jumlah panjang sisi-sisinya di kolom sebelah kanan.
+- Intended difficulty `classify/Medium`: Soal memerlukan analisis data tabel untuk menggeneralisasi aturan segitiga. Ini melibatkan pemahaman hubungan antar variabel (jumlah sisi) yang melampaui prosedur rutin.. Bukti: Perhatikan tabel berikut.; Apakah perbedaan antara kelompok yang dapat dibuat segitiga dan kelompok yang tidak dapat dibuat segitiga?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan cacah dan pemahaman dasar tentang bentuk segitiga. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | partial |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, menggeneralisasi aturan dari tabel data merupakan tugas yang menantang namun sesuai dengan standar penalaran geometri tingkat dasar. |
+
+Run 2 — solusi: Syarat pembentukan segitiga adalah jumlah dua sisi harus lebih besar dari sisi ketiga (a+b>c, a+c>b, b+c>a). Pada baris 3 (5,4,12), 5+4=9 < 12. Pada baris 4 (10,5,15), 10+5=15 (tidak lebih besar). Maka, kelompok yang tidak bisa membentuk segitiga memiliki jumlah dua sisi yang tidak lebih dari sisi ketiga.
+- Domain kognitif `classify/reasoning`: Siswa perlu menganalisis pola dari tabel dan menggeneralisasi aturan ketidaksamaan segitiga berdasarkan data yang diberikan.. Bukti: Apakah perbedaan antara kelompok yang dapat dibuat segitiga dan kelompok yang tidak dapat dibuat segitiga?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang syarat pembentukan segitiga melalui analisis data tabel.. Bukti: Perhatikan tabel berikut.; Apakah perbedaan antara kelompok yang dapat dibuat segitiga dan kelompok yang tidak dapat dibuat segitiga?
+- Intended difficulty `classify/Medium`: Soal memerlukan analisis pola dari data yang diberikan untuk menyimpulkan aturan geometris, yang merupakan tugas standar untuk kelas 5.. Bukti: Perhatikan tabel berikut.; Apakah perbedaan antara kelompok yang dapat dibuat segitiga dan kelompok yang tidak dapat dibuat segitiga?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang panjang sisi segitiga dan operasi penjumlahan sederhana. |
+| dependentSteps | 2 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 diharapkan mampu mengidentifikasi pola dari tabel dan menghubungkannya dengan konsep geometri sederhana. |
+
+Run 3 — solusi: Syarat pembentukan segitiga adalah jumlah dua sisi harus lebih besar dari sisi ketiga. Pada baris 2 (4,6,6), 4+6>6 (bisa). Pada baris 3 (5,4,12), 5+4=9 < 12 (tidak bisa). Pada baris 4 (10,5,15), 10+5=15 (tidak bisa). Pada baris 5 (5,12,13), 5+12>13 (bisa). Kelompok yang tidak bisa membentuk segitiga memiliki jumlah dua sisi yang tidak lebih besar dari sisi ketiga.
+- Domain kognitif `classify/reasoning`: Siswa perlu menganalisis pola dari data tabel untuk menyimpulkan aturan (teorema ketaksamaan segitiga) yang membedakan kedua kelompok tersebut.. Bukti: Apakah perbedaan antara kelompok yang dapat dibuat segitiga dan kelompok yang tidak dapat dibuat segitiga?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip atau aturan geometris (syarat pembentukan segitiga) yang mendasari hubungan antara panjang sisi-sisi.. Bukti: Perhatikan tabel berikut.; Apakah perbedaan antara kelompok yang dapat dibuat segitiga dan kelompok yang tidak dapat dibuat segitiga?
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman konsep ketaksamaan segitiga dan kemampuan menggeneralisasi pola dari data yang diberikan, yang merupakan tuntutan kognitif menengah untuk kelas 5.. Bukti: Perhatikan tabel berikut.; Apakah perbedaan antara kelompok yang dapat dibuat segitiga dan kelompok yang tidak dapat dibuat segitiga?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan cacah dan pemahaman dasar tentang bentuk segitiga. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | partial |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 biasanya baru mengenal sifat segitiga. Menggeneralisasi aturan dari tabel memerlukan penalaran lebih daripada sekadar menghitung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"reasoning": 3} | unanimous_3_0 / unanimous | reasoning |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5926,9 +8574,18 @@ Model membaca representation `metadata`; token input 257/256; truncation: `True`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.000037; applying=0.999963; reasoning=0.000000 | applying | 0.999963 | 0.000376 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.000939; conceptual=0.903168; procedural=0.095894; metacognitive=0.000000 | conceptual | 0.903168 | 0.233249 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.591575; Medium=0.397482; Hard=0.010943 | Easy | 0.591575 | 0.661459 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999963; −Σp ln(p) = 0.000413; H = 0.000413/ln(3) = 0.000376; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.903168; −Σp ln(p) = 0.323352; H = 0.323352/ln(4) = 0.233249; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.591575; −Σp ln(p) = 0.726687; H = 0.726687/ln(3) = 0.661459; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5960,9 +8617,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "reasoning", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 57. Soal `30f40c729a52410a063b5714`
@@ -7128,37 +9785,112 @@ Perhatikan diagram batang berikut.<br><br>Kandungan Kalori Per 100 Gram Makanan<
 ![Gambar sumber soal 64](<../../../images/kelas5_panduan_siswa_kelas5.pdf-0282-04.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0282-04.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Nasi putih: 3 x 130 = 390 kkal. Daging ayam: 2 x 260 = 520 kkal. Sayuran hijau: 1 x 60 = 60 kkal. Makanan ringan: 300 kkal. Mi instan: 350 kkal. Total = 390 + 520 + 60 + 300 + 350 = 1.620 kkal. Lukas (laki-laki) butuh 2.100 kkal. 1.620 < 2.100, jadi tidak berlebihan.
+Gambar sumber: images/kelas5_panduan_siswa_kelas5.pdf-0282-04.png. Transkripsi visual: Diagram batang menunjukkan kalori per 100 gram makanan: Nasi putih (130 kkal), Nasi jagung (150 kkal), Daging Sapi (290 kkal), Daging Ayam (260 kkal), Tahu goreng (270 kkal), Tempe goreng (240 kkal), Sayuran hijau (60 kkal).
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3f37da6c80f6f25e3ea30e46694ee60887d83ae632af480ec3a2de7c5feda9fb`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fa58f717a9a9119e6aa4b705565c9e1492e6f64012895871965c32d8697bc653`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3084 |
+| 2 | success | valid / verified | applying | procedural | Medium | 3002 |
+| 3 | success | valid / verified | applying | procedural | Medium | 2962 |
+
+Run 1 — solusi: Nasi putih: 3 x 130 = 390 kkal. Daging ayam: 2 x 260 = 520 kkal. Sayuran hijau: 1 x 60 = 60 kkal. Makanan ringan: 300 kkal. Mi instan: 350 kkal. Total = 390 + 520 + 60 + 300 + 350 = 1.620 kkal. Lukas (laki-laki) butuh 2.100 kkal. 1.620 < 2.100, jadi tidak berlebihan.
+- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan data dari grafik (membaca nilai per 100g), melakukan perhitungan proporsional (mengalikan dengan berat porsi), menjumlahkan total kalori, dan membandingkannya dengan ambang batas yang diberikan untuk menarik kesimpulan.. Bukti: Lukas makan 300 gram nasi putih, 200 gram daging ayam, dan 100 gram sayuran hijau; Ia masih makan makanan ringan yang mengandung 300 kkal dan 1 bungkus mi instan yang mengandung 350 kkal; Apakah makanan yang dimakan Lukas kalorinya berlebihan?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut penerapan prosedur aritmatika (perkalian dan penjumlahan) dalam konteks interpretasi data grafik yang terstruktur.. Bukti: Kandungan Kalori Per 100 Gram Makanan; 300 gram nasi putih, 200 gram daging ayam, dan 100 gram sayuran hijau
+- Intended difficulty `classify/Medium`: Soal ini memerlukan beberapa langkah rutin (membaca grafik, perkalian porsi, penjumlahan total) yang saling terkait. Meskipun langkahnya banyak, setiap langkah bersifat rutin bagi siswa kelas 5.. Bukti: 300 gram nasi putih, 200 gram daging ayam, dan 100 gram sayuran hijau; 300 kkal dan 1 bungkus mi instan yang mengandung 350 kkal; Apakah makanan yang dimakan Lukas kalorinya berlebihan?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Membaca diagram batang, perkalian bilangan cacah, penjumlahan bilangan cacah, perbandingan bilangan. |
+| dependentSteps | 5 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 7 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 5 sudah diajarkan membaca data dan operasi hitung campuran. Soal ini menuntut ketelitian dalam mengelola banyak informasi (data grafik + data teks) dan melakukan perhitungan bertahap. |
+
+Run 2 — solusi: Nasi putih: 3 x 130 = 390 kkal. Daging ayam: 2 x 260 = 520 kkal. Sayuran hijau: 1 x 60 = 60 kkal. Makanan ringan: 300 kkal. Mi instan: 350 kkal. Total = 390 + 520 + 60 + 300 + 350 = 1.620 kkal. Karena 1.620 < 2.100, maka tidak berlebihan.
+- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan data dari grafik (membaca nilai per 100g), melakukan perhitungan perkalian berdasarkan porsi, menjumlahkan total kalori, dan membandingkannya dengan ambang batas yang diberikan.. Bukti: Lukas makan 300 gram nasi putih, 200 gram daging ayam, dan 100 gram sayuran hijau; masih makan makanan ringan yang mengandung 300 kkal dan 1 bungkus mi instan yang mengandung 350 kkal
+- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prosedur perhitungan aritmatika (perkalian dan penjumlahan) pada data yang disajikan secara visual untuk menyelesaikan masalah kontekstual.. Bukti: Kandungan Kalori Per 100 Gram Makanan; Apakah makanan yang dimakan Lukas kalorinya berlebihan?
+- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah perhitungan (membaca grafik, perkalian porsi, penjumlahan total) dan perbandingan nilai, yang sesuai untuk tingkat kelas 5.. Bukti: 300 gram nasi putih, 200 gram daging ayam, dan 100 gram sayuran hijau; 300 kkal dan 1 bungkus mi instan yang mengandung 350 kkal
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membaca diagram batang, perkalian bilangan cacah, dan penjumlahan bilangan ribuan. |
+| dependentSteps | 5 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 7 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini menuntut ketelitian dalam mengolah data multi-sumber (grafik dan teks) serta melakukan operasi hitung campuran yang relevan dengan kurikulum kelas 5. |
+
+Run 3 — solusi: Nasi putih: 3 x 130 = 390 kkal. Daging ayam: 2 x 260 = 520 kkal. Sayuran hijau: 1 x 60 = 60 kkal. Makanan ringan: 300 kkal. Mi instan: 350 kkal. Total: 390 + 520 + 60 + 300 + 350 = 1.620 kkal. Karena 1.620 < 2.100, maka tidak berlebihan.
+- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan data dari diagram batang dengan informasi teks, melakukan perhitungan perkalian dan penjumlahan, serta membandingkan hasilnya dengan ambang batas yang diberikan untuk menarik kesimpulan.. Bukti: Lukas makan 300 gram nasi putih, 200 gram daging ayam, dan 100 gram sayuran hijau; Apakah makanan yang dimakan Lukas kalorinya berlebihan?
+- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prosedur perhitungan aritmatika (perkalian dan penjumlahan) berdasarkan data yang diperoleh dari representasi visual (diagram batang) untuk menyelesaikan masalah kontekstual.. Bukti: Kandungan Kalori Per 100 Gram Makanan; Lukas makan 300 gram nasi putih, 200 gram daging ayam, dan 100 gram sayuran hijau
+- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah rutin (membaca diagram, mengalikan dengan porsi, menjumlahkan total, membandingkan). Ini adalah tugas standar untuk kelas 5.. Bukti: Lukas makan 300 gram nasi putih, 200 gram daging ayam, dan 100 gram sayuran hijau; Ia masih makan makanan ringan yang mengandung 300 kkal dan 1 bungkus mi instan yang mengandung 350 kkal
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membaca diagram batang, perkalian dasar, dan penjumlahan bilangan ratusan. |
+| dependentSteps | 5 |
+| routineStatus | routine_selection |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 7 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tingkat kesulitan sesuai untuk kelas 5 karena melibatkan pengolahan data multi-langkah yang rutin namun memerlukan ketelitian dalam mengintegrasikan berbagai sumber informasi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 255/256; truncation: `False`.
+Model membaca representation `metadata`; token input 320/256; truncation: `True`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.000018; applying=0.999982; reasoning=0.000000 | applying | 0.999982 | 0.000192 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.032997; conceptual=0.629087; procedural=0.337916; metacognitive=0.000000 | conceptual | 0.629087 | 0.555986 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.708771; Medium=0.278518; Hard=0.012710 | Easy | 0.708771 | 0.596645 | review / input_reached_truncation_limit; selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999982; −Σp ln(p) = 0.000211; H = 0.000211/ln(3) = 0.000192; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.629087; −Σp ln(p) = 0.770761; H = 0.770761/ln(4) = 0.555986; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.708771; −Σp ln(p) = 0.655481; H = 0.655481/ln(3) = 0.596645; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -7179,16 +9911,16 @@ Pilihan: A. Tidak, karena totalnya 1.620 kkal, di bawah kebutuhan 2.100 kkal
 B. Ya, karena totalnya 1.620 kkal, di atas kebutuhan 1.500 kkal
 C. Ya, karena totalnya 2.270 kkal, di atas kebutuhan 2.100 kkal
 D. Tidak, karena totalnya 970 kkal, di bawah kebutuhan 2.100 kkal
-Transkripsi visual: -
+Transkripsi visual: Diagram batang menunjukkan kalori per 100 gram makanan: Nasi putih (130 kkal), Nasi jagung (150 kkal), Daging Sapi (290 kkal), Daging Ayam (260 kkal), Tahu goreng (270 kkal), Tempe goreng (240 kkal), Sayuran hijau (60 kkal).
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 65. Soal `690a0d172f3a4c63acbfca28`
@@ -7528,27 +10260,115 @@ Nyatakan bilangan berikut dalam bentuk angka.<br><br> Sembilan ratus ribu tiga p
 | C | 930.403 |
 | D | 933.430 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Sembilan ratus ribu (900.000) + tiga puluh tiga ribu (33.000) + empat ratus tiga (403) = 933.403.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `be36408917bbcc894404a480dd1177866f99345c7f810323c9dc97e5bd3a798a`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `44e955de7544e93e11535d0955c252362cdcb8a70151ec3c8a5e7b8e450108b7`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2004 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 1427 |
+| 3 | success | valid / verified | knowing | factual | Easy | 1443 |
+
+Run 1 — solusi: Sembilan ratus ribu (900.000) ditambah tiga puluh tiga ribu (33.000) ditambah empat ratus tiga (403) menghasilkan 933.403.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu menerjemahkan representasi verbal bilangan ke dalam bentuk angka standar (notasi posisional) secara langsung.. Bukti: Sembilan ratus ribu tiga puluh tiga ribu empat ratus tiga
+- Dimensi pengetahuan `classify/conceptual`: Memahami sistem nilai tempat dan notasi bilangan cacah merupakan pengetahuan konseptual dasar.. Bukti: Sembilan ratus ribu tiga puluh tiga ribu empat ratus tiga
+- Intended difficulty `classify/Easy`: Tugas ini adalah prosedur rutin untuk siswa kelas 5, tidak memerlukan strategi kompleks atau pemecahan masalah.. Bukti: Sembilan ratus ribu tiga puluh tiga ribu empat ratus tiga
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 1.000.000. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menulis bilangan dari nama bilangan adalah keterampilan dasar yang diharapkan dikuasai siswa kelas 5. |
+
+Run 2 — solusi: Sembilan ratus ribu (900.000) ditambah tiga puluh tiga ribu (33.000) ditambah empat ratus tiga (403) sama dengan 933.403.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk menerjemahkan representasi verbal bilangan menjadi representasi numerik standar. Ini adalah proses langsung yang melibatkan pengenalan nilai tempat dan penulisan angka, sehingga masuk dalam kategori knowing.. Bukti: Nyatakan bilangan berikut dalam bentuk angka; Sembilan ratus ribu tiga puluh tiga ribu empat ratus tiga
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang sistem penulisan bilangan (notasi posisi) dan nilai tempat, yang merupakan pengetahuan konseptual dasar dalam matematika.. Bukti: Sembilan ratus ribu tiga puluh tiga ribu empat ratus tiga
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung bagi siswa kelas 5. Tidak ada langkah kompleks atau strategi non-rutin yang diperlukan, hanya pemahaman dasar tentang nilai tempat.. Bukti: Sembilan ratus ribu tiga puluh tiga ribu empat ratus tiga
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 1.000.000. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Membaca dan menulis bilangan hingga 1.000.000 adalah materi standar kelas 5. Soal ini menguji kemampuan dasar tanpa jebakan yang rumit. |
+
+Run 3 — solusi: Sembilan ratus ribu (900.000) ditambah tiga puluh tiga ribu (33.000) ditambah empat ratus tiga (403) sama dengan 933.403.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk menerjemahkan representasi verbal bilangan menjadi representasi numerik standar, yang merupakan proses langsung dalam mengenali dan menuliskan bilangan.. Bukti: Nyatakan bilangan berikut dalam bentuk angka; Sembilan ratus ribu tiga puluh tiga ribu empat ratus tiga
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang sistem penulisan bilangan (notasi posisi) yang merupakan pengetahuan faktual dasar mengenai simbol dan nilai tempat.. Bukti: Sembilan ratus ribu tiga puluh tiga ribu empat ratus tiga
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung, menggunakan prosedur familiar untuk menuliskan angka berdasarkan nama bilangannya tanpa memerlukan strategi kompleks atau langkah ganda yang rumit.. Bukti: Sembilan ratus ribu tiga puluh tiga ribu empat ratus tiga
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat hingga ratusan ribu dan cara menuliskan bilangan cacah. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 5 karena penulisan bilangan hingga 1.000.000 adalah materi dasar yang sudah dikuasai pada jenjang ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"conceptual": 2, "factual": 1} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `2754`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa hanya perlu melakukan konversi langsung dari representasi verbal ke representasi numerik (notasi posisional). Tidak ada proses pemecahan masalah atau strategi non-rutin yang diperlukan.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang sistem nilai tempat dan konvensi penulisan bilangan, yang merupakan pengetahuan konseptual dasar dalam matematika.
+- Intended difficulty `Easy`: Tugas ini adalah prosedur rutin yang sangat familiar bagi siswa kelas 5. Tidak ada beban kognitif tinggi atau langkah-langkah kompleks yang terlibat.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan cacah sampai 1.000.000. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Membaca dan menulis bilangan hingga 1.000.000 adalah materi dasar yang sudah dikuasai pada jenjang kelas 5. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7556,9 +10376,18 @@ Model membaca representation `metadata`; token input 93/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.171817; applying=0.828183; reasoning=0.000000 | applying | 0.828183 | 0.417578 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.612873; conceptual=0.371886; procedural=0.015242; metacognitive=0.000000 | factual | 0.612873 | 0.527801 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.918325; Medium=0.079598; Hard=0.002076 | Easy | 0.918325 | 0.266259 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.828183; −Σp ln(p) = 0.458756; H = 0.458756/ln(3) = 0.417578; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.612873; −Σp ln(p) = 0.731687; H = 0.731687/ln(4) = 0.527801; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.918325; −Σp ln(p) = 0.292515; H = 0.292515/ln(3) = 0.266259; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -7582,9 +10411,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 68. Soal `ad1de3f95f757ac7d08e4e4d`
@@ -7763,27 +10592,93 @@ Isilah .... dengan bilangan-bilangan yang urutannya sesuai.<br><br> ....   500.0
 | C | 400.000, 800.000, dan 900.000 |
 | D | 300.000, 900.000, dan 1.100.000 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Pola bilangan adalah penambahan 200.000. Bilangan sebelum 500.000 adalah 500.000 - 200.000 = 300.000. Bilangan setelah 700.000 adalah 700.000 + 200.000 = 900.000, dan setelahnya 900.000 + 200.000 = 1.100.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 5 / Matematika SD Kelas 5. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c087b65efec1d9a1857025fea04048f0c144c1579358370a07566d1e757294f5`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6bd0387b3ec54b110c03b2d59d80eda06fb08475c84ab2f8e5bb35a4a3a038d8`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 1674 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 1748 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 1639 |
+
+Run 1 — solusi: Pola bilangan adalah penambahan 200.000. Bilangan sebelum 500.000 adalah 500.000 - 200.000 = 300.000. Bilangan setelah 700.000 adalah 700.000 + 200.000 = 900.000, dan setelahnya 900.000 + 200.000 = 1.100.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola penambahan konstan (200.000) dari dua bilangan yang diberikan untuk menentukan suku-suku lainnya. Ini termasuk dalam kategori applying karena menerapkan pemahaman pola bilangan pada situasi rutin.. Bukti: 500.000 700.000
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur urutan bilangan dan prinsip penambahan dalam deret aritmetika sederhana.. Bukti: urutannya sesuai
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan identifikasi satu pola aritmetika sederhana dengan satu operasi (penambahan 200.000) yang konsisten di seluruh deret.. Bukti: .... 500.000 700.000 .... ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat dan operasi penjumlahan/pengurangan bilangan sampai 1.000.000. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, mengidentifikasi pola bilangan dengan selisih tetap adalah keterampilan dasar yang diharapkan sudah dikuasai. |
+
+Run 2 — solusi: Pola bilangan memiliki selisih tetap sebesar 200.000 (700.000 - 500.000 = 200.000). Maka, bilangan sebelum 500.000 adalah 500.000 - 200.000 = 300.000. Bilangan setelah 700.000 adalah 700.000 + 200.000 = 900.000, dan setelahnya 900.000 + 200.000 = 1.100.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola aritmetika sederhana (menambah 200.000) dan menerapkan pola tersebut untuk melengkapi urutan bilangan. Ini termasuk dalam kategori applying karena menggunakan konsep urutan bilangan rutin.. Bukti: 500.000 700.000; Isilah .... dengan bilangan-bilangan yang urutannya sesuai
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antar bilangan dalam urutan (pola bilangan), yang merupakan konsep dasar dalam sistem bilangan.. Bukti: 500.000 700.000
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena pola penambahan (200.000) bersifat konstan dan langsung terlihat dari dua angka yang berdekatan. Tidak ada jebakan kompleks atau strategi non-rutin yang diperlukan.. Bukti: .... 500.000 700.000 .... ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat dan operasi penjumlahan dasar hingga 1.000.000. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, mengidentifikasi pola bilangan dengan selisih tetap adalah keterampilan dasar yang diharapkan sudah dikuasai. |
+
+Run 3 — solusi: Pola bilangan adalah penambahan 200.000. Maka: 500.000 - 200.000 = 300.000 (awal), 700.000 + 200.000 = 900.000, dan 900.000 + 200.000 = 1.100.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola aritmatika sederhana (selisih tetap) dari dua angka yang diberikan dan menerapkannya untuk melengkapi urutan.. Bukti: 500.000 700.000
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep urutan bilangan dan pola penambahan (konseptual) yang diterapkan dalam prosedur aritmatika.. Bukti: urutannya sesuai
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena pola penambahan 200.000 sangat jelas dari dua angka yang berdekatan dan hanya memerlukan operasi penjumlahan/pengurangan dasar.. Bukti: 500.000 700.000
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan dan pengurangan bilangan cacah sampai 1.000.000. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 5, mengidentifikasi pola bilangan dengan selisih tetap adalah keterampilan dasar yang rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7791,9 +10686,18 @@ Model membaca representation `metadata`; token input 138/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.004773; applying=0.995227; reasoning=0.000000 | applying | 0.995227 | 0.027553 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.079923; conceptual=0.886649; procedural=0.033428; metacognitive=0.000000 | conceptual | 0.886649 | 0.304560 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.798876; Medium=0.196607; Hard=0.004517 | Easy | 0.798876 | 0.476572 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.995227; −Σp ln(p) = 0.030270; H = 0.030270/ln(3) = 0.027553; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.886649; −Σp ln(p) = 0.422210; H = 0.422210/ln(4) = 0.304560; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.798876; −Σp ln(p) = 0.523568; H = 0.523568/ln(3) = 0.476572; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -7817,9 +10721,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 70. Soal `2af433502475b5d052206497`

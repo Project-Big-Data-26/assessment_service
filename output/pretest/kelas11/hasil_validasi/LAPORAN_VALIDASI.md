@@ -1,17 +1,15 @@
 # Validasi ulang soal kelas 11 — Gemini blind N=3 dan diagnostik IndoBERT
 
-**Batch belum selesai:** 62/66 run awal sukses; 1 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided. Provider berhenti karena kuota harian; checkpoint kerja dapat dilanjutkan saat kuota tersedia.
-
 Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v8-blind-sma11-key-verified`. Rubrik: `math-rubric-3x4x3-v6-sma11-grade-aware`.
 
 Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas 11 tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan bukan keputusan ahli manusia.
 
 Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Model SD berada di luar cakupan kelas 11, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
 
-Jumlah soal: 22; distribusi label advisory: `{"mathCognitiveDomain": {"applying": 18, "knowing": 2, "undecided": 2, "reasoning": 0}, "knowledgeDimension": {"conceptual": 10, "procedural": 9, "factual": 1, "undecided": 2, "metacognitive": 0}, "intendedDifficulty": {"Medium": 4, "Easy": 15, "Hard": 1, "undecided": 2}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 17, "knowing": 2, "reasoning": 0}, "knowledgeDimension": {"conceptual": 9, "procedural": 9, "factual": 1, "metacognitive": 0}, "intendedDifficulty": {"Medium": 4, "Easy": 15, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"pending_expert_review": 19, "revision_required": 1, "llm_retry_or_manual_review": 2}`.
-Run awal sukses: 62/66; adjudikasi: 7; token sukses tercatat: 183,917.
+Jumlah soal: 22; distribusi label advisory: `{"mathCognitiveDomain": {"applying": 20, "knowing": 2, "reasoning": 0}, "knowledgeDimension": {"conceptual": 11, "procedural": 10, "factual": 1, "metacognitive": 0}, "intendedDifficulty": {"Medium": 6, "Easy": 15, "Hard": 1}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 19, "knowing": 2, "reasoning": 0}, "knowledgeDimension": {"conceptual": 10, "procedural": 10, "factual": 1, "metacognitive": 0}, "intendedDifficulty": {"Medium": 6, "Easy": 15, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"pending_expert_review": 21, "revision_required": 1}`.
+Run awal sukses: 66/66; adjudikasi: 7; token sukses tercatat: 196,226.
 
 Seluruh label masih silver/advisory, gold manusia tetap null, dan publishing otomatis tidak diaktifkan. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -25,7 +23,7 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
 | Easy | 15 | 15 | [Easy.json](difficulty/Easy.json) |
-| Medium | 4 | 4 | [Medium.json](difficulty/Medium.json) |
+| Medium | 6 | 6 | [Medium.json](difficulty/Medium.json) |
 | Hard | 1 | 0 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
@@ -2941,7 +2939,7 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 |---:|---|---|---|---|---|---:|
 | 1 | success | valid / verified | applying | conceptual | Medium | 3081 |
 | 2 | success | valid / verified | applying | conceptual | Medium | 3091 |
-| 3 | failed | — / — | — | — | — | 0 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 3063 |
 
 Run 1 — solusi: Koefisien determinasi r^2 = (0,138)^2 = 0,019044 atau 1,9%. Persentase variansi yang diterangkan variabel lain = 100% - r^2 = 100% - 1,9% = 98,1%.
 - Domain kognitif `classify/applying`: Siswa perlu memahami konsep koefisien determinasi (r^2) sebagai proporsi variansi yang dijelaskan dan menghitung komplemennya (1 - r^2) untuk mencari variansi yang dijelaskan oleh faktor lain.. Bukti: Nilai koefisien korelasinya adalah 0,138; Berapa persentase IQ yang diterangkan oleh variabel-variabel lainnya?
@@ -2985,15 +2983,36 @@ Profil difficulty run ini:
 | distractorQuality | plausible |
 | gradeRelativeRationale | Materi regresi dan korelasi diajarkan di kelas 11. Soal ini menguji pemahaman konsep dasar koefisien determinasi. |
 
-Run 3 gagal: `ClientError:429`; tidak dihitung sebagai suara.
+Run 3 — solusi: Koefisien determinasi r^2 = (0,138)^2 = 0,019044 atau 1,9%. Persentase variansi yang diterangkan oleh variabel lain adalah 1 - r^2 = 1 - 0,019044 = 0,980956 atau 98,1%.
+- Domain kognitif `classify/applying`: Siswa perlu memahami hubungan antara koefisien korelasi (r), koefisien determinasi (r^2), dan variansi yang tidak dijelaskan (1-r^2) untuk menjawab pertanyaan.. Bukti: Nilai koefisien korelasinya adalah 0,138; Berapa persentase IQ yang diterangkan oleh variabel-variabel lainnya?
+- Dimensi pengetahuan `classify/conceptual`: Memerlukan pemahaman konseptual tentang apa yang diukur oleh koefisien korelasi dan determinasi dalam konteks regresi linear.. Bukti: Nilai koefisien korelasinya adalah 0,138; persentase IQ yang diterangkan oleh variabel-variabel lainnya
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman konsep statistik (koefisien determinasi) dan perhitungan sederhana. Ini adalah prosedur rutin dalam analisis korelasi.. Bukti: Nilai koefisien korelasinya adalah 0,138; persentase IQ yang diterangkan oleh variabel-variabel lainnya
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang koefisien korelasi dan koefisien determinasi. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 11 dalam materi statistika inferensial/analisis korelasi. |
+
+Histori retry: run 3 sebelumnya `failed` / `ClientError:429`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 2} | majority_2_of_3 / needs_adjudication | — |
-| Dimensi pengetahuan | {"conceptual": 2} | majority_2_of_3 / needs_adjudication | — |
-| Intended difficulty | {"Medium": 2} | majority_2_of_3 / needs_adjudication | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3027,9 +3046,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 22. Soal `d6d3b4c5f9819d69d4c859d0`
@@ -3043,27 +3062,93 @@ Dalam upaya untuk mempromosikan penggunaan energi yang efisien, sebuah kota mela
 | C | Karena 750 kWh lebih besar dari nilai data lainnya yang tertinggi (325 kWh) |
 | D | Karena 750 kWh lebih besar dari batas atas IQR (335 kWh), sehingga berada di luar rentang wajar data |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data terurut: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1=310, Q3=320. IQR=Q3-Q1=10. Batas atas=Q3+1.5*IQR=320+15=335. Karena 750 > 335, maka 750 adalah pencilan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `31c1b2c091a427804603e51b0a82d319bd38f9ea744aec3ede748b23d5c1814d`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `95e64485464599c16f9649dae1a0fd6228e0f6cfe2143cd2eac9c1c80d8ef7b0`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3314 |
+| 2 | success | valid / verified | applying | procedural | Medium | 2897 |
+| 3 | success | valid / verified | applying | procedural | Medium | 3035 |
+
+Run 1 — solusi: Data terurut: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1=310, Q3=320. IQR=Q3-Q1=10. Batas atas=Q3+1.5*IQR=320+15=335. Karena 750 > 335, maka 750 adalah pencilan.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan prosedur statistik standar (aturan 1.5*IQR) untuk mengidentifikasi pencilan, yang merupakan penerapan konsep pada situasi rutin.. Bukti: Mengapa angka 750 kWh dapat dianggap sebagai pencilan?; Karena 750 kWh lebih besar dari batas atas IQR (335 kWh)
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu mengikuti urutan langkah algoritma statistik (mengurutkan data, mencari kuartil, menghitung IQR, menentukan batas atas) untuk menyelesaikan masalah.. Bukti: 300, 320, 310, 305, 315, 320, 750, 310, 325, 315; Karena 750 kWh lebih besar dari batas atas IQR (335 kWh)
+- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah rutin (mengurutkan, menghitung kuartil, menghitung IQR, membandingkan) yang merupakan prosedur standar di kelas 11.. Bukti: 300, 320, 310, 305, 315, 320, 750, 310, 325, 315; Karena 750 kWh lebih besar dari batas atas IQR (335 kWh)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang kuartil, IQR, dan kriteria pencilan statistik. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 10 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu melakukan prosedur deteksi pencilan menggunakan IQR sebagai bagian dari analisis data statistik. |
+
+Run 2 — solusi: Data terurut: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1=310, Q3=320, IQR=10. Batas atas = Q3 + 1,5*IQR = 320 + 15 = 335. Karena 750 > 335, maka 750 adalah pencilan.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur statistik standar (menentukan kuartil dan batas pencilan) untuk memvalidasi pernyataan, yang merupakan penerapan konsep pada situasi rutin.. Bukti: Mengapa angka 750 kWh dapat dianggap sebagai pencilan?
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penggunaan algoritma atau teknik statistik (aturan IQR) untuk menentukan pencilan.. Bukti: Mengapa angka 750 kWh dapat dianggap sebagai pencilan?
+- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah rutin: mengurutkan data, menghitung Q1 dan Q3, menghitung IQR, dan menerapkan formula batas atas. Ini adalah tugas rutin yang memerlukan ketelitian.. Bukti: 300, 320, 310, 305, 315, 320, 750, 310, 325, 315; Mengapa angka 750 kWh dapat dianggap sebagai pencilan?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang kuartil, IQR, dan definisi statistik pencilan. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 10 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 11, melibatkan prosedur statistik yang diajarkan dalam analisis data. |
+
+Run 3 — solusi: Data terurut: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1=310, Q3=320. IQR=Q3-Q1=10. Batas atas = Q3 + 1,5*IQR = 320 + 15 = 335. Karena 750 > 335, maka 750 adalah pencilan.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur statistik standar (menghitung kuartil, IQR, dan batas atas) untuk memverifikasi definisi pencilan pada data.. Bukti: Mengapa angka 750 kWh dapat dianggap sebagai pencilan?; Karena 750 kWh lebih besar dari batas atas IQR (335 kWh)
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma atau urutan langkah untuk menentukan pencilan menggunakan metode IQR.. Bukti: data sebagai berikut. 300, 320, 310, 305, 315, 320, 750, 310, 325, 315; batas atas IQR (335 kWh)
+- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah rutin: mengurutkan data, menentukan kuartil, menghitung IQR, dan menerapkan rumus batas atas.. Bukti: 10 rumah tangga; 300, 320, 310, 305, 315, 320, 750, 310, 325, 315
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang kuartil, IQR, dan kriteria pencilan statistik. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 10 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 11 mengenai analisis data statistik deskriptif. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3097,7 +3182,7 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.

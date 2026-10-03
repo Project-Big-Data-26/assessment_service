@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dokumentasi interaktif aliran soal JSON, labeling LLM, IndoBERT, respons siswa, CTT/IRT, dan pembaruan versi dengan rujukan implementasi.">
+  <title>Nalar · Animasi aliran data & perhitungan</title>
+  <link rel="stylesheet" href="interactive/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="interactive/flow.css">
+  <script defer src="interactive/vendor/katex/katex.min.js"></script>
+  <script defer src="interactive/math.js"></script>
+  <script defer src="interactive/quadrature.js"></script>
+  <script defer src="interactive/model-stages.js"></script>
+  <script defer src="interactive/assessment-stages.js"></script>
+  <script defer src="interactive/feedback-stages.js"></script>
+  <script defer src="interactive/presentation-summary.js"></script>
+  <script defer src="interactive/explain.js"></script>
+  <script defer src="interactive/flow.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#stage-detail">Langsung ke penjelasan tahap</a>
+  <header class="site-header">
+    <a class="brand" href="00_README.md" aria-label="Indeks dokumentasi Nalar"><span class="brand-mark">n</span><span>NALAR <small>API DOCUMENTATION / 33</small></span></a>
+    <nav aria-label="Dokumentasi terkait"><a href="33_ANIMATED_DATA_FLOW.md">Panduan lengkap</a><a href="27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md">Runbook IRT</a><a href="schemas/openapi.json">OpenAPI</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">DARI SATU SOAL KE BUKTI HASIL BELAJAR</p><h1>Satu soal, banyak tahap.<br><span>Mari ikuti alasannya.</span></h1><p class="intro">Perjalanan dimulai ketika soal disimpan dalam JSON, yaitu format data yang mudah dibaca program. Setelah isinya diperiksa, AI memberi usulan label dan IndoBERT mempelajari pola dari contoh yang sudah dinilai.</p><p class="intro">Selanjutnya, soal yang disetujui ahli dapat dikerjakan siswa. Jawaban mereka menjadi bukti untuk menghitung kualitas dan kesulitan soal. Bukti ini ditinjau kembali agar soal dan model pada versi berikutnya dapat diperbaiki.</p></div>
+      <aside class="hero-note"><span class="small-label">IKUTI ALUR, LALU BACA ALASANNYA</span><p><b>Hijau</b>: fungsi sudah ada di kode.<br><b>Kuning</b>: ada syarat yang harus dipenuhi.<br><b>Ungu</b>: masih berupa rancangan.</p><p>Jawaban siswa langsung disimpan. Perhitungan IRT dilakukan dari <b>snapshot</b>, yaitu salinan kumpulan jawaban pada waktu tertentu. Dengan begitu, hasilnya memiliki batas data yang jelas.</p><small>Ditelaah terhadap kode lokal · 3 Oktober 2026</small></aside>
+    </section>
+    <div class="truth-strip"><strong>Dari usulan ke persetujuan</strong><span><b>Silver</b> berarti usulan label AI untuk penelitian. <b>Human gold</b> berarti label yang ditetapkan melalui penilaian ahli manusia. Sistem siswa saat ini menggunakan human gold; usulan AI harus melalui jalur penilaian manusia tersendiri.</span></div>
+    <nav class="view-tabs" aria-label="Tampilan dokumentasi">
+      <button type="button" data-view="flow" aria-pressed="true">01 · Animasi alur</button>
+      <button type="button" data-view="lab" aria-pressed="false">02 · Coba perhitungannya</button>
+      <button type="button" data-view="summary" aria-pressed="false">03 · Ringkasan untuk PPT</button>
+      <button type="button" data-view="reference" aria-pressed="false">04 · Detail teknis</button>
+    </nav>
+
+    <section id="view-flow" class="view-panel" aria-label="Animasi aliran data">
+      <div class="playback">
+        <div class="transport"><button id="previous" type="button" title="Tahap sebelumnya">← Sebelumnya</button><button id="play" type="button" class="primary" aria-label="Putar animasi">▶ Putar</button><button id="next" type="button" title="Tahap berikutnya">Berikutnya →</button><button id="restart" type="button" aria-label="Kembali ke tahap pertama">↺ Ulang</button></div>
+        <label class="speed-label">Jeda per tahap <select id="speed"><option value="8000">8 detik</option><option value="15000" selected>15 detik</option><option value="30000">30 detik</option></select></label>
+        <span id="step-counter" class="step-counter" aria-live="polite">Memuat tahap…</span>
+      </div>
+      <div class="progress-track"><div id="progress"></div></div>
+      <div class="flow-layout">
+        <section class="map-panel" aria-label="Peta tahap yang dapat dipilih">
+          <div class="panel-title"><h2>Peta perjalanan soal</h2><span>Klik satu node untuk melihat detail</span></div>
+          <div id="phase-filter" class="phase-filter" aria-label="Pilih bagian alur"></div>
+          <div id="flow-board" class="flow-board"><svg id="connectors" aria-hidden="true"></svg><div id="nodes" class="nodes"></div></div>
+          <div class="legend"><span><i class="dot implemented"></i>Kode tersedia</span><span><i class="dot conditional"></i>Bersyarat</span><span><i class="dot planned"></i>Rancangan</span><span class="gate-legend">⇢ Batas jalur / gate</span></div>
+          <p class="map-caption">Panah menunjukkan urutan penjelasan. Label pada batas jalur menyatakan syarat yang harus dipenuhi; panah itu tidak berarti sistem menjalankan semuanya otomatis.</p>
+        </section>
+        <article id="stage-detail" class="detail-panel" tabindex="-1" aria-label="Penjelasan tahap terpilih"><p>Memuat rujukan implementasi…</p></article>
+      </div>
+    </section>
+
+    <section id="view-lab" class="view-panel" hidden aria-label="Simulasi perhitungan">
+      <div class="section-intro"><p class="eyebrow">UBAH ANGKANYA, LIHAT HUBUNGANNYA</p><h2>Kenali arti rumusnya sebelum menghitung.</h2><p>Setelah melihat alurnya, Anda dapat mencoba perhitungan berikut untuk memahami mengapa keputusan sistem bisa berubah. Setiap rumus dilengkapi arti simbol dan alasan penggunaannya. Angka di sini adalah contoh belajar yang dihitung lokal di browser.</p><p class="fine-print">Klik “Kode LaTeX” di bawah persamaan jika ingin menyalin rumus ke editor persamaan atau bahan presentasi. Simulasi ini tidak memanggil LLM, menyimpan jawaban siswa, atau melatih model.</p></div>
+      <div class="lab-grid">
+        <article class="lab-card" id="classification-lab"><p class="eyebrow">A / MEMBACA HASIL PREDIKSI</p><h3>Seberapa yakin model memilih sebuah label?</h3><p>Setelah membaca soal, IndoBERT menghasilkan <b>logit</b>, yaitu skor mentah untuk setiap label. Softmax mengubah skor itu menjadi probabilitas. <b>Confidence</b> menunjukkan probabilitas label tertinggi, sedangkan <b>entropy</b> menunjukkan seberapa tersebar pilihan model. Keduanya membantu menentukan kapan hasil perlu ditinjau.</p>
+          <div class="field-row"><label>Logit Easy <input id="logit-easy" type="number" value="2" min="-20" max="20" step="0.1"></label><label>Logit Medium <input id="logit-medium" type="number" value="1" min="-20" max="20" step="0.1"></label><label>Logit Hard <input id="logit-hard" type="number" value="0" min="-20" max="20" step="0.1"></label></div>
+          <div class="field-row"><label>Temperature T <input id="temperature" type="number" value="1" min="0.05" max="10" step="0.05"></label><label>Confidence minimum <input id="confidence-floor" type="number" value="0.7" min="0" max="1" step="0.01"></label><label>Entropy maksimum <input id="entropy-ceiling" type="number" value="0.65" min="0" max="1" step="0.01"></label></div>
+          <label class="full-label">Routing <select id="routing"><option value="confidence-entropy-v1">confidence-entropy-v1</option><option value="confidence-only-v1">confidence-only-v1</option></select></label>
+          <div id="probability-bars" class="probability-bars"></div><div id="classification-result" class="calculation-result" aria-live="polite"></div><p class="fine-print">Batas pada contoh ini bisa diubah. Batas model sebenarnya dipilih dari validation, yaitu data untuk memeriksa model setelah training. Jika confidenceThreshold belum sah (null atau ≤ 0), runtime meminta review. Hasil klasifikasi tetap berupa usulan yang membutuhkan peninjauan.</p>
+          <details><summary>Mengapa difficulty bisa memakai urutan Easy → Medium → Hard?</summary><p><b>Ordinal</b> berarti kategorinya memiliki urutan. Head ordinal menggunakan dua batas skor yang tetap berurutan agar kategori sedang berada di antara mudah dan sulit. <b>Head</b> adalah bagian akhir model yang mengubah representasi soal menjadi prediksi tertentu.</p><div class="field-row"><label>Skor s <input id="ordinal-score" type="number" value="0.5" step="0.1" min="-10" max="10"></label><label>Batas pertama t₁ <input id="ordinal-first" type="number" value="-0.5" step="0.1" min="-10" max="10"></label><label>Parameter jarak batas <input id="ordinal-gap" type="number" value="1.854586542" step="0.1" min="-10" max="10"></label></div><div id="ordinal-result" class="calculation-result" aria-live="polite"></div><p class="fine-print">Varian ordinal tersedia dalam kode. Arsitektur yang digunakan sebuah model tetap mengikuti manifest, yaitu catatan konfigurasi dan versi model tersebut. Browser memakai double precision; clamp epsilon torch mengikuti dtype model dan dapat berbeda pada angka ekstrem.</p></details>
+        </article>
+
+        <article class="lab-card" id="snapshot-lab"><p class="eyebrow">B / SISWA DATANG BERTAHAP</p><h3>Berapa siswa yang dipakai dalam perhitungan?</h3><p>Setelah siswa selesai mengerjakan, sistem memilih sesi dalam <b>window</b>, yaitu rentang waktu analisis. Satu siswa dihitung satu kali. Lalu jawaban yang cukup lengkap dipilih untuk membentuk <b>snapshot</b>, salinan data yang akan dihitung. Jadi, jumlah siswa masa depan tidak perlu ditebak.</p>
+          <div class="field-row"><label>Peserta unik selesai N_selected <input id="sample-count" type="number" value="80" min="0" max="10000" step="1"></label><label>Baris lolos cleaning N_fit <input id="eligible-count" type="number" value="80" min="0" max="10000" step="1"></label><label>Item dalam form <input id="item-count" type="number" value="5" min="1" max="200" step="1"></label><label>Coverage pada matriks fit <input id="coverage" type="number" value="1" min="0" max="1" step="0.01"></label></div>
+          <div class="field-row"><label>Model IRT <select id="irt-model"><option value="rasch">Rasch / 1PL</option><option value="2pl">2PL</option><option value="3pl">3PL</option></select></label><label>Proporsi benar (contoh homogen) <input id="correct-rate" type="number" value="0.6" min="0" max="1" step="0.01"></label></div>
+          <label class="check-label"><input id="assumptions" type="checkbox"> Review asumsi eksplisit tersedia: unidimensional, independensi lokal, sampel representatif</label>
+          <div class="transport"><button id="arrival" type="button">+ 10 peserta baru</button><button id="freeze-snapshot" type="button" class="primary">Bekukan snapshot contoh</button></div>
+          <div id="snapshot-result" class="calculation-result" aria-live="polite"></div><div id="frozen-result" class="frozen-result" aria-live="polite">Belum ada snapshot contoh yang dibekukan.</div>
+          <p class="fine-print">Ringkasan agregat ini bukan readiness engine backend. Masukkan N_fit setelah cleaning; N_fit tidak dapat disimpulkan dari coverage rata-rata. Respons per item di sini adalah pendekatan homogen. Backend memeriksa pola per siswa/per item, connectedness, variasi outcome per item, versi, origin dan metadata sesi. Snapshot lama tetap sama ketika N bertambah; screening berikutnya menghasilkan snapshot baru.</p>
+        </article>
+
+        <article class="lab-card" id="irt-lab"><p class="eyebrow">C / HUBUNGAN SISWA DAN SOAL</p><h3>Mengapa soal yang sama bisa terasa berbeda?</h3><p>Setelah data cukup, <b>IRT</b> (Item Response Theory, teori respons butir) memodelkan hubungan kemampuan siswa dan karakteristik soal. Kemampuan ditulis <b>θ</b>, kesulitan soal <b>b</b>, daya pembeda <b>a</b>, dan batas bawah peluang benar <b>c</b>. Ketika kemampuan lebih tinggi daripada kesulitan, peluang benar cenderung naik.</p>
+          <div class="field-row"><label>θ siswa <input id="theta" type="range" min="-3" max="3" step="0.05" value="0"><output id="theta-value">0.00</output></label><label>a item <input id="irt-a" type="number" value="1" min="0.2" max="4" step="0.1"></label><label>b item <input id="irt-b" type="number" value="0.5" min="-5" max="5" step="0.1"></label><label>c item <input id="irt-c" type="number" value="0" min="0" max="0.35" step="0.01"></label></div>
+          <svg id="icc-chart" role="img" aria-label="Kurva probabilitas benar terhadap kemampuan theta" viewBox="0 0 560 255"></svg><div id="irt-result" class="calculation-result" aria-live="polite"></div><p class="fine-print"><b>Informasi item</b> menunjukkan seberapa peka soal dalam mengukur kemampuan di titik tertentu. Informasi tes adalah jumlah informasi semua item. Ketidakpastian berbasis informasi berbeda dari simpangan baku posterior EAP dan ketidakpastian b yang dihitung backend.</p>
+        </article>
+
+        <article class="lab-card" id="eap-lab"><p class="eyebrow">D / MENAKSIR KEMAMPUAN</p><h3>Mengapa hasil kemampuan disertai ketidakpastian?</h3><p>Setelah karakteristik soal diketahui, pola jawaban membantu menaksir kemampuan siswa. <b>EAP</b> (Expected A Posteriori) mengambil rata-rata kemampuan menurut <b>posterior</b>, yaitu keyakinan yang sudah diperbarui oleh jawaban. Cara ini menghasilkan nilai yang terbatas untuk pola semua benar atau semua salah, sekaligus menunjukkan seberapa pasti hasilnya.</p><p>Ubah lima jawaban di bawah. Parameter itemnya sudah ditetapkan sebagai contoh. Panel menghitung posterior dengan 41 titik Gauss–Hermite, yaitu pendekatan numerik terhadap integral; panel ini tidak mengestimasi ulang parameter soal.</p>
+          <div id="response-pattern" class="response-pattern"></div><div id="eap-result" class="calculation-result" aria-live="polite"></div>
+          <details><summary>Lihat posterior dan kontribusi likelihood</summary><div id="eap-table" class="table-wrap"></div></details>
+          <p class="fine-print">Missing/null dikeluarkan dari likelihood, bukan dianggap salah. Semua missing menghasilkan prior N(0,1); backend mengecualikan baris tanpa jawaban dari fit. Online EAP dengan bank parameter tetap merupakan rancangan; endpoint saat ini menghitung EAP setelah fit snapshot.</p>
+        </article>
+
+        <article class="lab-card full-width" id="comparison-lab"><p class="eyebrow">E / LABEL LAMA DAN BUKTI BARU</p><h3>Bukti empiris memicu review, lalu keputusan ahli menentukan langkah berikutnya.</h3>
+          <div class="field-row"><label>Intended difficulty lama <select id="old-label"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></label><label>Respons benar r <input id="correct-count" type="number" value="85" min="0" max="10000" step="1"></label><label>Respons valid n <input id="valid-count" type="number" value="100" min="1" max="10000" step="1"></label><label>b hasil IRT contoh <input id="comparison-b" type="number" value="-1.3" min="-5" max="5" step="0.1"></label><label>Keputusan ahli <select id="expert-decision"><option value="retain">retain</option><option value="revise">revise</option><option value="quarantine">quarantine</option></select></label></div>
+          <div id="comparison-result" class="calculation-result" aria-live="polite"></div><p class="fine-print"><b>Intended difficulty</b> adalah kesulitan yang dinilai dari tuntutan isi soal untuk kelas sasaran. <b>Empirical difficulty</b> adalah kesulitan berdasarkan jawaban siswa. Seluruh interval Wilson harus berada dalam satu kategori sebelum dianggap stabil. Perbedaan memicu review, bukan penggantian label otomatis; keputusan empiris tetap affectsGoldLabels=false.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="view-summary" class="view-panel" hidden aria-label="Ringkasan dan alasan metode untuk PPT">
+      <div class="section-intro"><p class="eyebrow">BAHAN PRESENTASI YANG SIAP DISALIN</p><h2>Apa yang dilakukan sistem, dan mengapa?</h2><p id="summary-intro">Ringkasan alur, alasan pemilihan metode, dan arti istilah untuk menjelaskan sistem dengan bahasa sederhana.</p><div class="summary-tools"><button id="copy-conclusion" type="button" class="primary">Salin kesimpulan</button><button id="copy-summary" type="button">Salin seluruh bahan PPT</button><a href="34_PPT_SUMMARY.md">Buka versi Markdown</a><button id="print-summary" type="button">Cetak ringkasan</button></div><p class="fine-print">Setiap kartu berisi pesan utama dan poin slide. Alasan, istilah, serta catatan pembicara membantu Anda menjawab pertanyaan saat presentasi.</p></div>
+      <article id="summary-conclusion" class="conclusion-card"></article>
+      <div id="ppt-slides" class="ppt-slides"></div>
+      <details class="summary-reference"><summary>Mengapa setiap metode dipilih? Lihat perbandingannya</summary><div id="method-decisions" class="table-wrap"></div></details>
+      <details class="summary-reference"><summary>Arti istilah dan alasan istilah itu digunakan</summary><div id="summary-glossary" class="glossary-grid"></div></details>
+    </section>
+
+    <section id="view-reference" class="view-panel" hidden aria-label="Referensi seluruh tahap">
+      <div class="section-intro"><p class="eyebrow">BACA UTUH ATAU CETAK</p><h2>Kontrak, batas implementasi, dan seluruh tahap.</h2><p>Setiap kartu dapat dibuka untuk input, proses, perhitungan dan output. Gunakan panduan Markdown untuk konteks tambahan.</p><button id="expand-reference" type="button">Buka seluruh tahap</button><button id="print-reference" type="button">Cetak / simpan PDF</button></div>
+      <div class="boundary-grid"><article><h3>Silver bukan human gold</h3><p>Label AI, 3 run, confidence model dan IRT tidak menjadi gold otomatis. Create assessment aktif menolak sumber selain human_gold dan researchOnly=true.</p></article><article><h3>Validasi LLM bukan transkrip CoT</h3><p>Kode menyimpan keputusan terstruktur, evidenceSpans dan rationale singkat. Prompt meminta alasan ringkas dan include_thoughts=false.</p></article><article><h3>IRT bukan fitur IndoBERT aktif</h3><p>Request dan serializer belum memuat a, b, c, θ atau SE. Feedback berjalan melalui review, versi baru, dataset freeze, training offline dan evaluasi artifact.</p></article></div>
+      <h3 class="reference-heading">Endpoint yang menghubungkan tahap</h3>
+      <div class="table-wrap"><table><thead><tr><th>Operasi</th><th>Endpoint aktual</th><th>Efek / batas</th></tr></thead><tbody>
+        <tr><td>Inferensi advisory</td><td><code>POST /v2/classify</code></td><td>Gate artifact; dapat 503; kelas 7–12 abstain pada runtime SD.</td></tr>
+        <tr><td>Kesiapan model</td><td><code>GET /v2/model-info</code></td><td>Manifest, researchOnly, servable, arsitektur, representation.</td></tr>
+        <tr><td>Label blind / review LLM</td><td>Script batch / runtime Python</td><td>Tidak ada endpoint publik LLM labeling/review pada /v2.</td></tr>
+        <tr><td>Form asesmen</td><td><code>POST /api/v1/internal/assessments</code></td><td>Internal API key atau sesi staf + CSRF; human gold yang memenuhi gate.</td></tr>
+        <tr><td>Peserta</td><td><code>POST /api/v1/internal/assessments/{assessment_id}/participants</code></td><td>Participant token; identitas ditentukan server.</td></tr>
+        <tr><td>Mulai sesi</td><td><code>POST /api/v1/assessments/{assessment_id}/sessions</code></td><td>Bearer peserta dan Idempotency-Key.</td></tr>
+        <tr><td>Item berikutnya</td><td><code>GET /api/v1/sessions/{session_id}/items/next</code></td><td>Fixed form, mapping pilihan disimpan; bukan CAT.</td></tr>
+        <tr><td>Jawaban / completion</td><td><code>POST /api/v1/responses</code><br><code>POST /api/v1/sessions/{session_id}/complete</code></td><td>Server scoring dan persist; tidak otomatis fit IRT.</td></tr>
+        <tr><td>Screening batch</td><td><code>POST /api/v1/internal/psychometrics/screen</code></td><td>Window + first/last attempt; snapshot CTT/IRT persisted.</td></tr>
+        <tr><td>Snapshot staf</td><td><code>GET /api/v1/internal/psychometrics/snapshots/{snapshot_id}</code></td><td>Dapat berisi EAP individual, hanya internal.</td></tr>
+        <tr><td>Agregat item</td><td><code>GET /api/v1/psychometrics/items/{question_id}/snapshots</code></td><td>Agregat tanpa subject / EAP individual; tetap internal auth saat ini.</td></tr>
+      </tbody></table></div>
+      <div id="all-stages" class="all-stages"></div>
+    </section>
+    <noscript><p class="truth-strip">Animasi membutuhkan JavaScript. Buka <a href="33_ANIMATED_DATA_FLOW.md">panduan Markdown</a> untuk penjelasan teks.</p></noscript>
+  </main>
+  <div id="copy-status" class="copy-status" role="status" aria-live="polite"></div>
+  <div id="manual-copy" class="manual-copy" hidden><label>Teks siap disalin <textarea id="manual-copy-text" readonly rows="6"></textarea></label><p>Tekan Ctrl+C atau salin teks yang dipilih.</p><button id="close-copy" type="button">Tutup</button></div>
+  <footer><span>Nalar / Alur data yang dapat ditelusuri ke kode.</span><a href="33_ANIMATED_DATA_FLOW.md">Panduan & sumber</a><span>Angka contoh untuk belajar · berjalan offline</span></footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "blind-difficulty-subset-v1",
+  "sourceClass": 11,
+  "intendedDifficulty": "Hard",
+  "researchOnly": true,
+  "advisoryCount": 1,
+  "contentQualifiedCount": 0,
+  "items": [
+    {
+      "question": {
+        "questionId": "cb666d7ac7a8bdfb36335e5a",
+        "questionVersionId": "cb666d7ac7a8bdfb36335e5a:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "e0810b5a763e3b67006264286ffd00404dbb23345415697961773a0a7b705204",
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Regresi Linear",
+        "questionType": "multiple_choice",
+        "stem": "Tabel berikut menunjukkan banyak tempat duduk terhadap biaya per jam dari tiga model pesawat terbang yang digunakan oleh maskapai Garuda Indonesia.\n\n|Model Pesawat|Banyak tempat duduk|Biaya (rupiah/jam)|\n|---|---|---|\n|A|50|1.100.000,00|\n|B|100|2.100.000,00|\n|C|150|2.700.000,00|\n\nPersamaan garis regresi mana yang lebih tepat untuk memprediksi banyak tempat duduk terhadap biaya, yˆ = 367000 + 16000x atau yˆ = 300000 + 16000x?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "yˆ = 300000 + 16000x"
+          },
+          {
+            "label": "B",
+            "text": "yˆ = 367000 + 16000x"
+          },
+          {
+            "label": "C",
+            "text": "Tidak dapat ditentukan tanpa menggambar diagram pencarnya"
+          },
+          {
+            "label": "D",
+            "text": "Keduanya sama tepat karena mempunyai gradien (b) yang sama"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Soal memiliki cacat logika variabel. Jika x=biaya (dalam rupiah) dan y=tempat duduk, model y=367000+16000x menghasilkan nilai y yang tidak masuk akal (ratusan ribu). Jika x=biaya (dalam jutaan), model tetap tidak masuk akal. Karena model yang diberikan tidak sesuai dengan data (50, 100, 150), perhitungan residu yang diberikan sumber tidak dapat diverifikasi sebagai model regresi yang valid secara kontekstual.",
+        "verificationProvenance": "llm_silver_not_expert_verified",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": null,
+          "answerKeyStatus": "conflict",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "cb666d7ac7a8bdfb36335e5a",
+          "subchapter": "Regresi Linear",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11",
+          "optionExtractionNotes": {
+            "A": "Salah: terkecoh karena garis ini melewati tepat 2 dari 3 titik data (residu 0), padahal jumlah kuadrat residu totalnya justru lebih besar",
+            "B": "Benar: jumlah kuadrat residu yˆ = 367000+16000x adalah 26.667.000.000, lebih kecil dari jumlah kuadrat residu yˆ = 300000+16000x yaitu 40.000.000.000, sehingga yˆ = 367000+16000x lebih tepat",
+            "C": "Salah: mengira ketepatan garis regresi hanya bisa dinilai secara visual, padahal bisa dihitung dengan jumlah kuadrat residu",
+            "D": "Salah: mengabaikan pengaruh titik potong sumbu-y (a) terhadap ketepatan garis, hanya melihat kesamaan gradien"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "revision_required",
+      "contentQualified": false,
+      "humanReviewRequired": true,
+      "isGoldLabel": false
+    }
+  ]
+}

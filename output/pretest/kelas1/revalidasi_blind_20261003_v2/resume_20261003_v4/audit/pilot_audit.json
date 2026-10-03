@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "grade-aware-pilot-audit-v1",
+  "generatedAt": "2026-10-03T10:02:02.311706+00:00",
+  "source": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas1/soal_pretest_db.json",
+  "sourceSha256": "d845fa210b28a0644c5fa0a0c1c92cdcc089f94b68e72800067b227992aed176",
+  "checkpoint": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas1/revalidasi_blind_20261003_v2/resume_20261003_v4/silver_labels.json",
+  "checkpointSha256": "bdfb3293d4aa32fdfd9caca5bc4c26a50182a69b0f11149c7fb382552d0e516e",
+  "checkpointLockedByAudit": true,
+  "grade": 1,
+  "promptVersion": "gemini-silver-math-3x4x3-v4-blind-key-verified",
+  "expectedPromptVersion": "gemini-silver-math-3x4x3-v4-blind-key-verified",
+  "rubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "expectedRubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "rubricHash": "77b63b9417c7122becfff3ba4451d03aade96f672e05e5bcd2d29b150cf850aa",
+  "expectedRubricHash": "77b63b9417c7122becfff3ba4451d03aade96f672e05e5bcd2d29b150cf850aa",
+  "expectedItemCount": 50,
+  "itemCount": 50,
+  "missingQuestionIds": [],
+  "extraQuestionIds": [],
+  "inputHashFailures": [],
+  "threeSuccessfulRuns": 50,
+  "threeSuccessfulRunsShare": 1.0,
+  "insufficientOrAbstained": 0,
+  "insufficientOrAbstainedShare": 0.0,
+  "labelDistributions": {
+    "mathCognitiveDomain": {
+      "knowing": 27,
+      "applying": 23
+    },
+    "knowledgeDimension": {
+      "procedural": 17,
+      "factual": 11,
+      "conceptual": 22
+    },
+    "intendedDifficulty": {
+      "Easy": 48,
+      "Medium": 2
+    }
+  },
+  "dominantDifficultyShare": 0.96,
+  "blindLeakageTokens": [],
+  "evidenceFailures": [],
+  "boundaryAnalysisRequired": true,
+  "boundaryAnalysisReasons": [
+    "dominant_difficulty_share=0.960>0.90",
+    "difficulty_Hard_absent"
+  ],
+  "boundaryAnalysisAccepted": false,
+  "boundaryAnalysisRationale": null,
+  "gates": {
+    "allExpectedItemsPresent": true,
+    "threeSuccessfulRunsAtLeast90Percent": true,
+    "insufficientOrAbstainedBelow10Percent": true,
+    "blindPromptLeakageAbsent": true,
+    "checkpointSourceAndInputsMatch": true,
+    "promptAndRubricVersionMatch": true,
+    "requiredEvidenceComplete": true,
+    "boundaryAnalysisClear": false
+  },
+  "readyForExpansion": false
+}

@@ -4,6 +4,8 @@ Dokumentasi ini mengikuti backend **API 2.1.0**: ekstraksi → qualification/pen
 
 ## Mulai menggunakan sistem
 
+- [33 animasi interaktif aliran data dan perhitungan](33_ANIMATED_DATA_FLOW.html): narasi yang saling terhubung, definisi dan alasan tiap tahap, rumus LaTeX, kalkulator serta tab ringkasan untuk PPT. [Panduan teks/offline](33_ANIMATED_DATA_FLOW.md).
+- [34 ringkasan untuk PPT](34_PPT_SUMMARY.md): 12 bagian dengan pesan utama, poin slide, alasan pemilihan metode, catatan pembicara dan arti istilah.
 - [28 diagram teknis end-to-end berbasis silver dan personalisasi siswa](28_END_TO_END_PERSONALIZED_ASSESSMENT_FLOW.md): sumber, blind silver N=3, training, delivery riset, CTT/IRT, feedback dataset dan rancangan profil/selector/CAT; SVG dan JPG lengkap.
 - [27 runbook CTT/IRT dan pilot](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md): demo Rasch/2PL/3PL langsung, matriks nyata, API, gold-only delivery dan empirical review.
 - [12 endpoint aktual](12_ENDPOINT_MASTER_REFERENCE.md): dihasilkan dari kode FastAPI, bukan daftar target.
@@ -56,6 +58,8 @@ Pilot memakai human-gold checksum/version/key/solution. Identity dan correctness
 | [30](30_KELAS8_BLIND_VALIDATION.md) | Validasi blind SMP kelas 8, rubrik berdasarkan materi korpus, audit, dan diagnostik IndoBERT di luar cakupan |
 | [31](31_KELAS9_BLIND_VALIDATION.md) | Validasi blind SMP kelas 9, rubrik materi korpus, checkpoint resume, dan laporan status kuota |
 | [32](32_KELAS10_11_12_BLIND_VALIDATION.md) | Validasi blind SMA 10–12, rubrik per kelas, pelaksana batch serial, blok kuota bersama dan resume |
+| [33](33_ANIMATED_DATA_FLOW.md) · [Animasi](33_ANIMATED_DATA_FLOW.html) | Aliran data interaktif, rumus teknis, simulasi dan batas implementasi dari JSON sampai umpan balik model |
+| [34](34_PPT_SUMMARY.md) | Ringkasan presentasi berbahasa sederhana, alasan setiap metode, glosarium dan rumus LaTeX |
 
 Diagram end-to-end lengkap tersedia pada 28, dengan detail terpisah pada 23/24. Diagram lama bernomor 20 telah dihapus pada worktree. `schemas/nalar-api.schema.json` tetap desain gateway luas. Kontrak implementasi ada pada `schemas/openapi.json` dan `schemas/implemented-api.schema.json`.
 

@@ -1,6 +1,8 @@
 # Melanjutkan validasi AI yang tertunda
 
-Status terbaru dan daftar ID soal ada di [PENDING_AI_VALIDATION.json](PENDING_AI_VALIDATION.json). Kelas 8–10 selesai dinilai AI. Kelas 11 tertahan pada run ketiga soal ke-21, dan kelas 12 belum dinilai. Kelas 1–5 memakai checkpoint baru karena 102 soal/gambar berubah setelah penilaian lama; run yang masih cocok telah dipertahankan.
+Status 3 Oktober 2026: seluruh backlog kuota kelas reguler selesai (0 soal/run/adjudikasi tersisa). Lihat [verifikasi akhir](resume_20261003_final_execution.json). Perintah di bawah dapat digunakan jika ada backlog baru; batch lengkap dilewati.
+
+Status terbaru dan daftar ID soal ada di [PENDING_AI_VALIDATION.json](PENDING_AI_VALIDATION.json). Laporan aktif ada di `kelasN/hasil_validasi/`. Checkpoint kerja kelas 1?5 telah dipisahkan dari bukti lama karena sumber soal/gambar berubah; hanya run yang masih cocok dipertahankan.
 
 Gunakan model yang tercatat di checkpoint (`gemini-3.1-flash-lite`), rubrik yang sama, N=3, satu worker, dan output maksimal 4096 token. Kuota harian provider terakhir dilaporkan sebesar 500 request per project per model. Setelah kuota tersedia, perintah berikut melanjutkan checkpoint kerja, melewati batch lengkap, dan berhenti jika provider kembali memblokir. Jalankan dari root proyek.
 
@@ -23,6 +25,8 @@ foreach ($aiBatch in $aiBacklog.grades) {
 
 Jangan resume checkpoint lama kelas 1–5 di `hasil_validasi/bukti_validasi/`: bukti itu terikat sumber sebelum koreksi. Jangan mengubah rubrik/sumber/model saat batch sedang berjalan atau resume snapshot di folder `seed_snapshot_20261003_v1`, `resume_20261003_v1`, dan `partial-v1`. File rubrik SD harus mempertahankan byte LF yang sesuai hash checkpoint; checkout Windows dengan CRLF dapat menyebabkan penolakan hash walaupun teks sama.
 
-Setelah penilaian selesai, salin checkpoint kerja ke snapshot versi baru, lalu jalankan `scripts/audit_grade_aware_pilot.py` dan `scripts/build_blind_validation_bundle.py` terhadap snapshot tersebut. Audit exit code 2 berarti gate penelitian belum lolos; tetap boleh membangun laporan konten/label, tetapi tidak menyetujui training. Arsipkan laporan aktif sebelum menggantinya, lalu verifikasi seluruh hash manifest, sumber, opsi, kunci, aset, dan ekspor ID soal. Jangan menimpa snapshot atau audit lama.
+Untuk memperbarui laporan secara offline setelah penilaian, jalankan `.\.venv\Scripts\python.exe scripts/refresh_ai_validation_reports.py` (tambahkan `--grades 1 2` bila hanya ingin membangun kelas tertentu). Script membuat snapshot baru, memeriksa run sukses lama, menjalankan audit dan packaging, mengarsipkan laporan aktif, memverifikasi seluruh hash/ID/sumber/aset, lalu memperbarui daftar backlog dan README. Tidak ada API call pada pembaruan laporan.
+
+Alternatif manual: setelah penilaian selesai, salin checkpoint kerja ke snapshot versi baru, lalu jalankan `scripts/audit_grade_aware_pilot.py` dan `scripts/build_blind_validation_bundle.py` terhadap snapshot tersebut. Audit exit code 2 berarti gate penelitian belum lolos; tetap boleh membangun laporan konten/label, tetapi tidak menyetujui training. Arsipkan laporan aktif sebelum menggantinya, lalu verifikasi seluruh hash manifest, sumber, opsi, kunci, aset, dan ekspor ID soal. Jangan menimpa snapshot atau audit lama.
 
 Kelengkapan AI berbeda dari kelayakan konten. Soal yang selesai dinilai dapat tetap berstatus `revision_required` atau `pending_expert_review`; gold ahli tidak diisi otomatis. Model IndoBERT tetap diagnostik dan tidak menggantikan keputusan Gemini.

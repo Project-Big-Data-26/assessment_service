@@ -6,6 +6,7 @@ import hashlib
 import json
 import time
 from collections import Counter
+from copy import deepcopy
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Annotated, Any, Literal
@@ -164,6 +165,33 @@ class SilverLabelOutput(BaseModel):
         if self.answerKeyStatus == "unverifiable" and self.verifiedAnswerKey is not None:
             raise ValueError("unverifiable answer key must not invent verifiedAnswerKey")
         return self
+
+
+def silver_provider_schema() -> dict[str, Any]:
+    """Encode head validators in the provider schema, preserving abstention.
+
+    Pydantic after validators are absent from model_json_schema. Without the
+    conditional branches, the provider can repeatedly classify with no evidence.
+    Local validation still checks the unmodified SilverLabelOutput contract.
+    """
+    schema = SilverLabelOutput.model_json_schema()
+    for name in ("SilverCognitiveHead", "SilverKnowledgeHead", "SilverDifficultyHead"):
+        original = schema["$defs"][name]
+        classify, abstain = deepcopy(original), deepcopy(original)
+        classify["properties"]["action"] = {"type": "string", "enum": ["classify"]}
+        classify["properties"]["evidenceSpans"]["minItems"] = 1
+        classify["required"] = list(dict.fromkeys([*classify["required"], "label", "evidenceSpans"]))
+        classify["properties"]["label"] = next(
+            branch for branch in original["properties"]["label"]["anyOf"] if branch.get("type") != "null"
+        )
+        abstain["properties"]["action"] = {"type": "string", "enum": ["abstain"]}
+        abstain["properties"]["label"] = {"type": "null"}
+        if name == "SilverDifficultyHead":
+            classify["properties"]["profile"] = {"$ref": "#/$defs/DifficultyEvidenceProfile"}
+            classify["required"].append("profile")
+            abstain["properties"]["profile"] = {"type": "null"}
+        schema["$defs"][name] = {"anyOf": [classify, abstain]}
+    return schema
 
 
 class SilverRunResult(BaseModel):
@@ -349,7 +377,7 @@ class GeminiSilverAdapter:
                     # additionalProperties as an unsupported snake_case field
                     # for the Gemini API. response_json_schema preserves the
                     # accepted JSON Schema spelling and is validated again below.
-                    response_json_schema=SilverLabelOutput.model_json_schema(),
+                    response_json_schema=silver_provider_schema(),
                     thinking_config=types.ThinkingConfig(
                         include_thoughts=False,
                         thinking_level=types.ThinkingLevel.LOW,
@@ -436,7 +464,7 @@ class GeminiSilverAdapter:
                     temperature=0.0,
                     max_output_tokens=self.settings.max_output_tokens,
                     response_mime_type="application/json",
-                    response_json_schema=SilverLabelOutput.model_json_schema(),
+                    response_json_schema=silver_provider_schema(),
                     thinking_config=types.ThinkingConfig(
                         include_thoughts=False,
                         thinking_level=types.ThinkingLevel.LOW,

@@ -1,69 +1,65 @@
 {
   "schemaVersion": "ai-decision-bundle-v2-blind",
   "collectionTarget": "ai_decisions",
-  "createdAt": "2026-10-03T07:34:30.374257+00:00",
+  "createdAt": "2026-10-03T09:26:04.948570+00:00",
   "sourceClass": 4,
   "summary": {
     "itemCount": 18,
     "routingCounts": {
-      "llm_retry_or_manual_review": 6,
-      "pending_expert_review": 12
+      "pending_expert_review": 18
     },
     "goldLabelCount": 0,
     "humanReviewRequiredCount": 18,
     "advisoryLabelDistributions": {
       "mathCognitiveDomain": {
-        "undecided": 6,
-        "applying": 11,
+        "applying": 17,
         "knowing": 1,
         "reasoning": 0
       },
       "knowledgeDimension": {
-        "undecided": 6,
-        "procedural": 6,
-        "conceptual": 6,
+        "conceptual": 10,
+        "procedural": 8,
         "factual": 0,
         "metacognitive": 0
       },
       "intendedDifficulty": {
-        "undecided": 6,
-        "Easy": 9,
-        "Medium": 3,
+        "Easy": 14,
+        "Medium": 4,
         "Hard": 0
       }
     },
     "contentQualifiedAdvisoryLabelDistributions": {
       "mathCognitiveDomain": {
-        "applying": 11,
+        "applying": 17,
         "knowing": 1,
         "reasoning": 0
       },
       "knowledgeDimension": {
-        "procedural": 6,
-        "conceptual": 6,
+        "conceptual": 10,
+        "procedural": 8,
         "factual": 0,
         "metacognitive": 0
       },
       "intendedDifficulty": {
-        "Easy": 9,
-        "Medium": 3,
+        "Easy": 14,
+        "Medium": 4,
         "Hard": 0
       }
     },
     "modelDisagreementCounts": {
       "mathCognitiveDomain": 5,
-      "knowledgeDimension": 8,
-      "intendedDifficulty": 3
+      "knowledgeDimension": 10,
+      "intendedDifficulty": 4
     }
   },
   "items": [
     {
-      "decisionId": "AID-444eb8e7f7913baec8ed02d2",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-80069a27c70cbb04530d4644",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "bc95fc44d6c120fad4812c7c",
       "questionVersionId": "bc95fc44d6c120fad4812c7c:content-v2:blind-revalidation",
       "contentVersion": 2,
-      "contentHash": "46ba65bf6ce31bd9c24a2af1efea7f63ecc4db00b231fadbb93bb50c098bcd11",
+      "contentHash": "6b27c2f7d25735b6a0b981a28c8f8f3f4ae849de36e9f14b608dc29ae7088355",
       "decisionType": "blind_silver_advisory",
       "inputValidation": {
         "status": "pass",
@@ -88,33 +84,46 @@
         "diagnosticInferenceQuestionId": "diagnostic:kelas4:bc95fc44d6c120fad4812c7c:content-v2",
         "heads": {
           "mathCognitiveDomain": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "applying",
+            "probabilities": {
+              "knowing": 4.59308442608668e-10,
+              "applying": 0.9999999995406916,
+              "reasoning": 2.3490726157751447e-44
+            },
+            "calibratedConfidence": 0.9999999995406916,
+            "normalizedEntropy": 9.407355715191452e-09,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+              "selective_threshold_gate_not_met"
             ]
           },
           "knowledgeDimension": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "conceptual",
+            "probabilities": {
+              "factual": 0.007631452623231277,
+              "conceptual": 0.9616037747162514,
+              "procedural": 0.030764772429854037,
+              "metacognitive": 2.3066353289425584e-10
+            },
+            "calibratedConfidence": 0.9616037747162514,
+            "normalizedEntropy": 0.1312567302044764,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+              "selective_threshold_gate_not_met"
             ]
           },
           "intendedDifficulty": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "Easy",
+            "probabilities": {
+              "Easy": 0.7361250929298828,
+              "Medium": 0.25723181569007025,
+              "Hard": 0.006643091380046757
+            },
+            "calibratedConfidence": 0.7361250929298828,
+            "normalizedEntropy": 0.5535064574643758,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+              "selective_threshold_gate_not_met"
             ]
           }
         },
@@ -132,7 +141,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 0.205
+        "latencyMs": 315.027
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -143,64 +152,307 @@
         "blindToModelPredictions": true,
         "requestedRuns": 3,
         "requiredVotes": 2,
-        "successfulRuns": 0,
+        "successfulRuns": 3,
         "contentAssessment": {
-          "status": null,
+          "status": "valid",
           "concerns": []
         },
         "answerKeyAssessment": {
-          "status": null,
-          "verifiedAnswerKey": null
+          "status": "verified",
+          "verifiedAnswerKey": "A"
         },
-        "runs": [],
+        "runs": [
+          {
+            "runIndex": 1,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "DsnAapaRFpKzg8UP6sGw6AQ",
+            "promptHash": "800657c592a18429f33085e81ed09a66e1a656c859f3773d1aec7fc89e7f0aa5",
+            "responseHash": "58c2a8d023d5c17094cf38329b021fa628fed5b95eb0e7de691fdb99ebd9bc3d",
+            "latencyMs": 3010,
+            "usage": {
+              "promptTokens": 849,
+              "outputTokens": 500,
+              "thinkingTokens": 150,
+              "totalTokens": 1499
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "verifiedMinimalSolution": "Mencari faktor dari 10. Bilangan yang membagi habis 10 adalah 1, 2, 5, dan 10.",
+            "visualTranscript": null,
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?"
+                ],
+                "rationale": "Siswa perlu menerapkan konsep faktor bilangan untuk menentukan pembagi dari 10 agar pembagian beras sama rata tanpa sisa.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu menerapkan konsep faktor bilangan untuk menentukan pembagi dari 10 agar pembagian beras sama rata tanpa sisa."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?"
+                ],
+                "rationale": "Soal ini menguji pemahaman konsep faktor sebagai pembagi bilangan bulat yang menghasilkan sisa nol.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman konsep faktor sebagai pembagi bilangan bulat yang menghasilkan sisa nol."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Total beras yang dibagikan oleh Ibu Slamet 10 kg.",
+                  "Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras"
+                ],
+                "rationale": "Soal ini tergolong mudah karena hanya meminta identifikasi faktor dari bilangan kecil (10) yang merupakan prosedur rutin di kelas 4.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman dasar tentang pembagian dan konsep faktor bilangan.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 1,
+                  "interactingConstraints": 1,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Mencari faktor bilangan adalah materi standar kelas 4 yang bersifat rutin."
+                },
+                "reasoningSummary": "Soal ini tergolong mudah karena hanya meminta identifikasi faktor dari bilangan kecil (10) yang merupakan prosedur rutin di kelas 4."
+              }
+            }
+          },
+          {
+            "runIndex": 2,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "FMnAaoDaEeW8mNMPz_-E6A0",
+            "promptHash": "800657c592a18429f33085e81ed09a66e1a656c859f3773d1aec7fc89e7f0aa5",
+            "responseHash": "7173a290e2dad6c88ee25551543f332b314b8b3b2cdd797f788fdeeb67584eba",
+            "latencyMs": 3474,
+            "usage": {
+              "promptTokens": 849,
+              "outputTokens": 520,
+              "thinkingTokens": 125,
+              "totalTokens": 1494
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "verifiedMinimalSolution": "Mencari faktor dari 10 kg beras agar pembagian sama rata tanpa sisa. Faktor dari 10 adalah 1, 2, 5, dan 10.",
+            "visualTranscript": null,
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?"
+                ],
+                "rationale": "Siswa perlu menerapkan konsep faktor bilangan untuk memecahkan masalah pembagian yang sama rata (tanpa sisa) dalam konteks kehidupan sehari-hari.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu menerapkan konsep faktor bilangan untuk memecahkan masalah pembagian yang sama rata (tanpa sisa) dalam konteks kehidupan sehari-hari."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "membagikan semua beras ke beberapa orang dengan berat yang sama"
+                ],
+                "rationale": "Soal ini menguji pemahaman konseptual tentang hubungan antara pembagian bilangan bulat dan faktor bilangan.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman konseptual tentang hubungan antara pembagian bilangan bulat dan faktor bilangan."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Total beras yang dibagikan oleh Ibu Slamet 10 kg",
+                  "Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras"
+                ],
+                "rationale": "Soal ini tergolong mudah karena melibatkan bilangan kecil (10) dan konsep faktor yang merupakan materi dasar kelas 4, dengan prosedur yang langsung.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman dasar tentang pembagian dan konsep faktor bilangan.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 2,
+                  "interactingConstraints": 1,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Mencari faktor dari bilangan 10 adalah tugas standar untuk siswa kelas 4 dalam topik kelipatan dan faktor."
+                },
+                "reasoningSummary": "Soal ini tergolong mudah karena melibatkan bilangan kecil (10) dan konsep faktor yang merupakan materi dasar kelas 4, dengan prosedur yang langsung."
+              }
+            }
+          },
+          {
+            "runIndex": 3,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "GsnAavWXLdi6juMPqaLB4Qk",
+            "promptHash": "800657c592a18429f33085e81ed09a66e1a656c859f3773d1aec7fc89e7f0aa5",
+            "responseHash": "a1845634b4754c051a5f23e2cb3a11e5bf0695e68532f1c0ea87786fe14a190a",
+            "latencyMs": 2781,
+            "usage": {
+              "promptTokens": 849,
+              "outputTokens": 477,
+              "thinkingTokens": 150,
+              "totalTokens": 1476
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "verifiedMinimalSolution": "Mencari faktor dari 10. Bilangan yang membagi habis 10 adalah 1, 2, 5, dan 10.",
+            "visualTranscript": null,
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?"
+                ],
+                "rationale": "Siswa perlu menerapkan konsep faktor bilangan untuk menentukan pembagi dari 10 agar pembagian beras sama rata tanpa sisa.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu menerapkan konsep faktor bilangan untuk menentukan pembagi dari 10 agar pembagian beras sama rata tanpa sisa."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "membagikan semua beras ke beberapa orang dengan berat yang sama"
+                ],
+                "rationale": "Soal ini menguji pemahaman konsep faktor sebagai pembagi bilangan yang menghasilkan sisa nol.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman konsep faktor sebagai pembagi bilangan yang menghasilkan sisa nol."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Total beras yang dibagikan oleh Ibu Slamet 10 kg",
+                  "membagikan semua beras ke beberapa orang dengan berat yang sama"
+                ],
+                "rationale": "Soal ini tergolong mudah karena melibatkan bilangan kecil (10) dan prosedur dasar mencari faktor yang sudah dipelajari di kelas 4.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman konsep pembagian dan faktor bilangan.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 2,
+                  "interactingConstraints": 1,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Mencari faktor dari bilangan 10 adalah materi standar kelas 4 SD."
+                },
+                "reasoningSummary": "Soal ini tergolong mudah karena melibatkan bilangan kecil (10) dan prosedur dasar mencari faktor yang sudah dipelajari di kelas 4."
+              }
+            }
+          }
+        ],
         "votes": {
           "mathCognitiveDomain": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "applying": 3
+            },
+            "advisoryLabel": "applying",
+            "initialMajorityLabel": "applying",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?"
+              ],
+              "rationale": "Siswa perlu menerapkan konsep faktor bilangan untuk menentukan pembagi dari 10 agar pembagian beras sama rata tanpa sisa.",
+              "label": "applying"
+            }
           },
           "knowledgeDimension": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "advisoryLabel": "conceptual",
+            "initialMajorityLabel": "conceptual",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?"
+              ],
+              "rationale": "Soal ini menguji pemahaman konsep faktor sebagai pembagi bilangan bulat yang menghasilkan sisa nol.",
+              "label": "conceptual"
+            }
           },
           "intendedDifficulty": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "Easy": 3
+            },
+            "advisoryLabel": "Easy",
+            "initialMajorityLabel": "Easy",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Total beras yang dibagikan oleh Ibu Slamet 10 kg.",
+                "Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras"
+              ],
+              "rationale": "Soal ini tergolong mudah karena hanya meminta identifikasi faktor dari bilangan kecil (10) yang merupakan prosedur rutin di kelas 4.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang pembagian dan konsep faktor bilangan.",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 1,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Mencari faktor bilangan adalah materi standar kelas 4 yang bersifat rutin."
+              }
+            }
           }
         },
         "adjudication": null,
         "advisoryLabels": {
-          "mathCognitiveDomain": null,
-          "knowledgeDimension": null,
-          "intendedDifficulty": null
+          "mathCognitiveDomain": "applying",
+          "knowledgeDimension": "conceptual",
+          "intendedDifficulty": "Easy"
         },
-        "eligibleForTraining": false,
+        "eligibleForTraining": true,
         "isGoldLabel": false,
         "retryHistory": []
       },
@@ -209,30 +461,30 @@
         "goldLabels": null,
         "status": "not_started"
       },
-      "finalRouting": "llm_retry_or_manual_review",
+      "finalRouting": "pending_expert_review",
       "modelComparison": {
         "mathCognitiveDomain": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "applying",
+          "blindLabel": "applying",
+          "agreement": true
         },
         "knowledgeDimension": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "conceptual",
+          "blindLabel": "conceptual",
+          "agreement": true
         },
         "intendedDifficulty": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "Easy",
+          "blindLabel": "Easy",
+          "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-9cf381e43f636eebf33a684e",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-e1e69c937ed45bb7c9d8bf8c",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "51d112e2cf5ac0ac6feceb42",
       "questionVersionId": "51d112e2cf5ac0ac6feceb42:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -318,7 +570,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 121.264
+        "latencyMs": 113.006
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -714,16 +966,16 @@
           "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-f03ef75fdaadc585b2b9bcbf",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-f4764838633997c04af55a22",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "d8e3e19d701550680f504300",
       "questionVersionId": "d8e3e19d701550680f504300:content-v2:blind-revalidation",
       "contentVersion": 2,
-      "contentHash": "fb41769e2d07a162dfab8b00429a23834178b67c42acd054d55a71e7b46197aa",
+      "contentHash": "41d994a548594c488bb3903242f0f8e758aee9cc32fa75104b60b45a7c44c6e6",
       "decisionType": "blind_silver_advisory",
       "inputValidation": {
         "status": "pass",
@@ -748,33 +1000,46 @@
         "diagnosticInferenceQuestionId": "diagnostic:kelas4:d8e3e19d701550680f504300:content-v2",
         "heads": {
           "mathCognitiveDomain": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "applying",
+            "probabilities": {
+              "knowing": 6.230026060315102e-05,
+              "applying": 0.9999376997393968,
+              "reasoning": 5.040927402908043e-46
+            },
+            "calibratedConfidence": 0.9999376997393968,
+            "normalizedEntropy": 0.0006058422071743876,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+              "selective_threshold_gate_not_met"
             ]
           },
           "knowledgeDimension": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "conceptual",
+            "probabilities": {
+              "factual": 0.027435980418873067,
+              "conceptual": 0.9551205963085421,
+              "procedural": 0.017443423266476042,
+              "metacognitive": 6.108819857813192e-12
+            },
+            "calibratedConfidence": 0.9551205963085421,
+            "normalizedEntropy": 0.15374711197851668,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+              "selective_threshold_gate_not_met"
             ]
           },
           "intendedDifficulty": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "Easy",
+            "probabilities": {
+              "Easy": 0.8408809079109164,
+              "Medium": 0.15659670612659055,
+              "Hard": 0.0025223859624930235
+            },
+            "calibratedConfidence": 0.8408809079109164,
+            "normalizedEntropy": 0.4106657371658809,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+              "selective_threshold_gate_not_met"
             ]
           }
         },
@@ -792,7 +1057,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 0.162
+        "latencyMs": 160.327
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -803,64 +1068,307 @@
         "blindToModelPredictions": true,
         "requestedRuns": 3,
         "requiredVotes": 2,
-        "successfulRuns": 0,
+        "successfulRuns": 3,
         "contentAssessment": {
-          "status": null,
+          "status": "valid",
           "concerns": []
         },
         "answerKeyAssessment": {
-          "status": null,
-          "verifiedAnswerKey": null
+          "status": "verified",
+          "verifiedAnswerKey": "B"
         },
-        "runs": [],
+        "runs": [
+          {
+            "runIndex": 1,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "IMnAauSqIJazg8UPn-K-mQo",
+            "promptHash": "8cbe8413aa2d2e200a422730404d80bf9874b3e8c17d5efcfaaaee0a55ed1037",
+            "responseHash": "6a2b1a4dcb534d4fa4d42281ac2f5e9b0ae4a79425f41850668184ae99ca80ba",
+            "latencyMs": 2740,
+            "usage": {
+              "promptTokens": 763,
+              "outputTokens": 508,
+              "thinkingTokens": 116,
+              "totalTokens": 1387
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "verifiedMinimalSolution": "16 : 4 berarti 16 dikurangi 4 secara berulang sampai hasilnya 0. Langkahnya: 16 - 4 = 12, 12 - 4 = 8, 8 - 4 = 4, 4 - 4 = 0. Ada 4 kali pengurangan.",
+            "visualTranscript": null,
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan pembagian berikut sebagai pengurangan berulang!",
+                  "16 : 4 = ....."
+                ],
+                "rationale": "Siswa diminta menerapkan konsep pembagian sebagai pengurangan berulang, yang merupakan prosedur standar untuk memahami pembagian di kelas 4.",
+                "label": "applying",
+                "reasoningSummary": "Siswa diminta menerapkan konsep pembagian sebagai pengurangan berulang, yang merupakan prosedur standar untuk memahami pembagian di kelas 4."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan pembagian berikut sebagai pengurangan berulang!"
+                ],
+                "rationale": "Soal ini menguji pemahaman tentang algoritma atau teknik pengurangan berulang sebagai representasi dari operasi pembagian.",
+                "label": "procedural",
+                "reasoningSummary": "Soal ini menguji pemahaman tentang algoritma atau teknik pengurangan berulang sebagai representasi dari operasi pembagian."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "16 : 4 = ....."
+                ],
+                "rationale": "Soal ini bersifat rutin, menggunakan angka kecil, dan langsung menguji pemahaman konsep dasar pembagian yang diajarkan di kelas 4.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman konsep pengurangan dan pembagian dasar.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 2,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Sesuai untuk kelas 4 karena pembagian sebagai pengurangan berulang adalah materi dasar yang sering dilatih."
+                },
+                "reasoningSummary": "Soal ini bersifat rutin, menggunakan angka kecil, dan langsung menguji pemahaman konsep dasar pembagian yang diajarkan di kelas 4."
+              }
+            }
+          },
+          {
+            "runIndex": 2,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "JsnAauONErjnqfkPlpmvqQc",
+            "promptHash": "8cbe8413aa2d2e200a422730404d80bf9874b3e8c17d5efcfaaaee0a55ed1037",
+            "responseHash": "a825a105fad4e7caea87af2df4261e5744f98e84c0fadad8c7699b46c9d24a40",
+            "latencyMs": 2723,
+            "usage": {
+              "promptTokens": 763,
+              "outputTokens": 505,
+              "thinkingTokens": 116,
+              "totalTokens": 1384
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "verifiedMinimalSolution": "16 : 4 berarti 16 dikurangi 4 secara berulang sampai hasilnya 0. Langkahnya: 16 - 4 = 12, 12 - 4 = 8, 8 - 4 = 4, 4 - 4 = 0. Ada 4 kali pengurangan.",
+            "visualTranscript": null,
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan pembagian berikut sebagai pengurangan berulang!",
+                  "16 : 4 = ....."
+                ],
+                "rationale": "Siswa diminta menerapkan konsep pembagian sebagai pengurangan berulang, yang merupakan prosedur standar untuk memahami pembagian di kelas 4.",
+                "label": "applying",
+                "reasoningSummary": "Siswa diminta menerapkan konsep pembagian sebagai pengurangan berulang, yang merupakan prosedur standar untuk memahami pembagian di kelas 4."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan pembagian berikut sebagai pengurangan berulang!"
+                ],
+                "rationale": "Soal ini menguji pemahaman tentang algoritma atau teknik pengurangan berulang sebagai representasi dari operasi pembagian.",
+                "label": "procedural",
+                "reasoningSummary": "Soal ini menguji pemahaman tentang algoritma atau teknik pengurangan berulang sebagai representasi dari operasi pembagian."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "16 : 4 = ....."
+                ],
+                "rationale": "Soal ini sangat mendasar, menggunakan angka kecil, dan mengikuti prosedur rutin yang diajarkan di kelas 4.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman konsep pengurangan dan pembagian dasar.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 2,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Sesuai untuk kelas 4 karena pembagian sebagai pengurangan berulang adalah materi pengenalan awal pembagian."
+                },
+                "reasoningSummary": "Soal ini sangat mendasar, menggunakan angka kecil, dan mengikuti prosedur rutin yang diajarkan di kelas 4."
+              }
+            }
+          },
+          {
+            "runIndex": 3,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "LMnAat52l6aDxQ-k79TICQ",
+            "promptHash": "8cbe8413aa2d2e200a422730404d80bf9874b3e8c17d5efcfaaaee0a55ed1037",
+            "responseHash": "89b725c7b20e9a0ba867f1afb3a8dbe50cff53220baa725dd313570168a3e5af",
+            "latencyMs": 2625,
+            "usage": {
+              "promptTokens": 763,
+              "outputTokens": 509,
+              "thinkingTokens": 112,
+              "totalTokens": 1384
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "verifiedMinimalSolution": "16 : 4 berarti 16 dikurangi 4 secara berulang sampai hasilnya 0. Langkahnya: 16-4=12, 12-4=8, 8-4=4, 4-4=0. Ada 4 kali pengurangan.",
+            "visualTranscript": null,
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan pembagian berikut sebagai pengurangan berulang!",
+                  "16 : 4 = ....."
+                ],
+                "rationale": "Siswa diminta menerapkan konsep pembagian sebagai pengurangan berulang, yang merupakan prosedur rutin yang diajarkan di kelas 4.",
+                "label": "applying",
+                "reasoningSummary": "Siswa diminta menerapkan konsep pembagian sebagai pengurangan berulang, yang merupakan prosedur rutin yang diajarkan di kelas 4."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan pembagian berikut sebagai pengurangan berulang!"
+                ],
+                "rationale": "Soal ini menguji pemahaman tentang algoritma atau teknik pengurangan berulang untuk menyelesaikan pembagian.",
+                "label": "procedural",
+                "reasoningSummary": "Soal ini menguji pemahaman tentang algoritma atau teknik pengurangan berulang untuk menyelesaikan pembagian."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "16 : 4 = ....."
+                ],
+                "rationale": "Soal ini bersifat langsung, menggunakan bilangan kecil, dan merupakan prosedur standar yang familiar bagi siswa kelas 4.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman konsep pengurangan dan pembagian dasar.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 2,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Sesuai dengan kurikulum kelas 4 untuk mengenalkan pembagian sebagai pengurangan berulang dengan angka sederhana."
+                },
+                "reasoningSummary": "Soal ini bersifat langsung, menggunakan bilangan kecil, dan merupakan prosedur standar yang familiar bagi siswa kelas 4."
+              }
+            }
+          }
+        ],
         "votes": {
           "mathCognitiveDomain": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "applying": 3
+            },
+            "advisoryLabel": "applying",
+            "initialMajorityLabel": "applying",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan pembagian berikut sebagai pengurangan berulang!",
+                "16 : 4 = ....."
+              ],
+              "rationale": "Siswa diminta menerapkan konsep pembagian sebagai pengurangan berulang, yang merupakan prosedur standar untuk memahami pembagian di kelas 4.",
+              "label": "applying"
+            }
           },
           "knowledgeDimension": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "procedural": 3
+            },
+            "advisoryLabel": "procedural",
+            "initialMajorityLabel": "procedural",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan pembagian berikut sebagai pengurangan berulang!"
+              ],
+              "rationale": "Soal ini menguji pemahaman tentang algoritma atau teknik pengurangan berulang sebagai representasi dari operasi pembagian.",
+              "label": "procedural"
+            }
           },
           "intendedDifficulty": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "Easy": 3
+            },
+            "advisoryLabel": "Easy",
+            "initialMajorityLabel": "Easy",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "16 : 4 = ....."
+              ],
+              "rationale": "Soal ini bersifat rutin, menggunakan angka kecil, dan langsung menguji pemahaman konsep dasar pembagian yang diajarkan di kelas 4.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman konsep pengurangan dan pembagian dasar.",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Sesuai untuk kelas 4 karena pembagian sebagai pengurangan berulang adalah materi dasar yang sering dilatih."
+              }
+            }
           }
         },
         "adjudication": null,
         "advisoryLabels": {
-          "mathCognitiveDomain": null,
-          "knowledgeDimension": null,
-          "intendedDifficulty": null
+          "mathCognitiveDomain": "applying",
+          "knowledgeDimension": "procedural",
+          "intendedDifficulty": "Easy"
         },
-        "eligibleForTraining": false,
+        "eligibleForTraining": true,
         "isGoldLabel": false,
         "retryHistory": []
       },
@@ -869,30 +1377,30 @@
         "goldLabels": null,
         "status": "not_started"
       },
-      "finalRouting": "llm_retry_or_manual_review",
+      "finalRouting": "pending_expert_review",
       "modelComparison": {
         "mathCognitiveDomain": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "applying",
+          "blindLabel": "applying",
+          "agreement": true
         },
         "knowledgeDimension": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "conceptual",
+          "blindLabel": "procedural",
+          "agreement": false
         },
         "intendedDifficulty": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "Easy",
+          "blindLabel": "Easy",
+          "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-67005f7bb13b6602301baddc",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-540d684d03365374d588deea",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "f01f2f8c93ea076e4331abae",
       "questionVersionId": "f01f2f8c93ea076e4331abae:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -979,7 +1487,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 113.918
+        "latencyMs": 112.532
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -1323,12 +1831,12 @@
           "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-52d2db68dac25d4b2868d6a0",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-9873512f9c87c3c0e0261442",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "87c4b5ff5d1524fbd581c451",
       "questionVersionId": "87c4b5ff5d1524fbd581c451:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -1415,7 +1923,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 114.037
+        "latencyMs": 140.378
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -1761,16 +2269,16 @@
           "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-fcfc2a4ada0e4596bc5d76b2",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-be82dfdd94330570e09c7518",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "764036b9759f6277bc4dca51",
       "questionVersionId": "764036b9759f6277bc4dca51:content-v2:blind-revalidation",
       "contentVersion": 2,
-      "contentHash": "70b0ede376650a6ac66cc1b7760b57ed2730ecbed19fe91295fbe403167d5d09",
+      "contentHash": "b263f6a66f8e939cae1c46b1660655716d03c39dcbbeca3b0e619dea58d71434",
       "decisionType": "blind_silver_advisory",
       "inputValidation": {
         "status": "pass",
@@ -1783,8 +2291,8 @@
         "subtopic": "Seperempat dari Benda Utuh",
         "questionType": "multiple_choice",
         "detectedKko": [],
-        "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Seperempat dari Benda Utuh\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar yang diwarnai berikut. Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat.\nPilihan: A. Gambar 3 (bentuk anak panah)\nB. Gambar 1 (segitiga)\nC. Gambar 2 (segi enam memanjang)\nD. Gambar 4 (kotak berpetak)\nTranskripsi visual: -",
-        "untruncatedTokenCount": 89,
+        "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Seperempat dari Benda Utuh\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar yang diwarnai berikut. Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat.\nPilihan: A. Gambar 3 (bentuk anak panah)\nB. Gambar 1 (segitiga)\nC. Gambar 2 (segi enam memanjang)\nD. Gambar 4 (kotak berpetak)\nTranskripsi visual: Terdapat empat gambar bangun datar yang masing-masing dibagi menjadi empat bagian oleh garis vertikal dan horizontal. Gambar 1 (segitiga) dibagi tidak simetris. Gambar 2 (segi enam) dibagi menjadi empat bagian yang tampak sama besar. Gambar 3 (bentuk panah) dibagi tidak simetris. Gambar 4 (persegi panjang) dibagi menjadi empat bagian yang tidak sama besar.",
+        "untruncatedTokenCount": 156,
         "maxLength": 256,
         "wouldTruncate": false
       },
@@ -1793,33 +2301,46 @@
         "diagnosticInferenceQuestionId": "diagnostic:kelas4:764036b9759f6277bc4dca51:content-v2",
         "heads": {
           "mathCognitiveDomain": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "applying",
+            "probabilities": {
+              "knowing": 1.5478802393352835e-05,
+              "applying": 0.9999845211976066,
+              "reasoning": 2.24782609815134e-42
+            },
+            "calibratedConfidence": 0.9999845211976066,
+            "normalizedEntropy": 0.00017014419408674432,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+              "selective_threshold_gate_not_met"
             ]
           },
           "knowledgeDimension": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "conceptual",
+            "probabilities": {
+              "factual": 0.0019052554165748805,
+              "conceptual": 0.9958038931535225,
+              "procedural": 0.002290851392349891,
+              "metacognitive": 3.75526944812317e-11
+            },
+            "calibratedConfidence": 0.9958038931535225,
+            "normalizedEntropy": 0.021673515126566,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+              "selective_threshold_gate_not_met"
             ]
           },
           "intendedDifficulty": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "Easy",
+            "probabilities": {
+              "Easy": 0.6879889519808827,
+              "Medium": 0.30480196495951306,
+              "Hard": 0.007209083059604227
+            },
+            "calibratedConfidence": 0.6879889519808827,
+            "normalizedEntropy": 0.5961949422639045,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+              "selective_threshold_gate_not_met"
             ]
           }
         },
@@ -1831,13 +2352,13 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "ab88ad0c5acd031d8903480fe48c8d346ef00e2cfa761b5d99372b03525f8c4c",
+          "inputHash": "2fd1dd3b828045e4d172dd777b98b868758f68bfca2dd45775aed86abf6b4d87",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 0.243
+        "latencyMs": 189.271
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -1848,64 +2369,304 @@
         "blindToModelPredictions": true,
         "requestedRuns": 3,
         "requiredVotes": 2,
-        "successfulRuns": 0,
+        "successfulRuns": 3,
         "contentAssessment": {
-          "status": null,
+          "status": "valid",
           "concerns": []
         },
         "answerKeyAssessment": {
-          "status": null,
-          "verifiedAnswerKey": null
+          "status": "verified",
+          "verifiedAnswerKey": "Gambar 2 (segi enam) adalah satu-satunya yang menunjukkan seperempat karena dibagi menjadi empat bagian yang sama besar."
         },
-        "runs": [],
+        "runs": [
+          {
+            "runIndex": 1,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "McnAapj3KoajqfkP4K3O6Ak",
+            "promptHash": "a937cf37773b72df21e579309f38d09c2198a82dd359ba5283b07e4b49372d07",
+            "responseHash": "a35919170cdad090540fe0fc8a9d745331b2f8669bee7d68b271e2c6abd1c072",
+            "latencyMs": 11023,
+            "usage": {
+              "promptTokens": 5123,
+              "outputTokens": 597,
+              "thinkingTokens": 130,
+              "totalTokens": 5850
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "Gambar 2 (segi enam) adalah satu-satunya yang menunjukkan seperempat karena dibagi menjadi empat bagian yang sama besar.",
+            "verifiedMinimalSolution": "Seperempat berarti satu dari empat bagian yang sama besar. Hanya gambar 2 yang memenuhi syarat luas bagian yang diarsir sama dengan tiga bagian lainnya.",
+            "visualTranscript": "Terdapat empat gambar bangun datar yang masing-masing dibagi menjadi empat bagian oleh garis vertikal dan horizontal. Gambar 1 (segitiga) dibagi tidak simetris. Gambar 2 (segi enam) dibagi menjadi empat bagian yang tampak sama besar. Gambar 3 (bentuk panah) dibagi tidak simetris. Gambar 4 (persegi panjang) dibagi menjadi empat bagian yang tidak sama besar.",
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Mana gambar yang menunjukkan seperempat"
+                ],
+                "rationale": "Siswa perlu menerapkan konsep pecahan (seperempat) untuk mengidentifikasi apakah pembagian bangun datar menghasilkan bagian yang sama besar.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu menerapkan konsep pecahan (seperempat) untuk mengidentifikasi apakah pembagian bangun datar menghasilkan bagian yang sama besar."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "seperempat dari benda utuh"
+                ],
+                "rationale": "Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' (bagian yang sama besar) dalam konteks geometri.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' (bagian yang sama besar) dalam konteks geometri."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat."
+                ],
+                "rationale": "Soal ini tergolong mudah karena hanya memerlukan pemahaman visual dasar tentang pembagian area yang sama besar, yang merupakan materi standar kelas 4.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan yang sama besar.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 4,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Siswa kelas 4 diharapkan sudah mampu membedakan pembagian area yang sama besar dan tidak sama besar secara visual."
+                },
+                "reasoningSummary": "Soal ini tergolong mudah karena hanya memerlukan pemahaman visual dasar tentang pembagian area yang sama besar, yang merupakan materi standar kelas 4."
+              }
+            }
+          },
+          {
+            "runIndex": 2,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "P8nAarCGO6bRg8UPlfaGsQo",
+            "promptHash": "a937cf37773b72df21e579309f38d09c2198a82dd359ba5283b07e4b49372d07",
+            "responseHash": "fefab07ac03de7d194d8d557823ec2bf3b5314fd69dd566b06b3aab845e165cc",
+            "latencyMs": 18534,
+            "usage": {
+              "promptTokens": 5123,
+              "outputTokens": 644,
+              "thinkingTokens": 115,
+              "totalTokens": 5882
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "Gambar 2 (segi enam memanjang) adalah satu-satunya gambar yang menunjukkan seperempat (1/4) karena dibagi menjadi empat bagian yang sama besar.",
+            "verifiedMinimalSolution": "Gambar 2 menunjukkan pembagian bangun datar menjadi empat bagian yang kongruen (sama besar dan sama bentuk), yang merupakan definisi visual dari seperempat.",
+            "visualTranscript": "Terdapat empat gambar yang dibagi menjadi empat bagian dengan satu bagian diarsir. Gambar 1: Segitiga dibagi garis vertikal dan horizontal, bagian diarsir tidak sama besar. Gambar 2: Segi enam memanjang dibagi garis vertikal dan horizontal tepat di tengah, menghasilkan empat bagian sama besar. Gambar 3: Bentuk seperti anak panah dibagi menjadi empat bagian yang tidak simetris. Gambar 4: Persegi panjang dibagi menjadi empat bagian dengan ukuran petak yang berbeda.",
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat."
+                ],
+                "rationale": "Siswa perlu menerapkan pemahaman konsep pecahan (seperempat) untuk mengevaluasi apakah pembagian pada setiap gambar menghasilkan bagian yang sama besar.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu menerapkan pemahaman konsep pecahan (seperempat) untuk mengevaluasi apakah pembagian pada setiap gambar menghasilkan bagian yang sama besar."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "seperempat dari benda utuh"
+                ],
+                "rationale": "Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' dalam konteks geometri (pembagian area menjadi bagian yang sama besar), bukan sekadar menghafal fakta.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' dalam konteks geometri (pembagian area menjadi bagian yang sama besar), bukan sekadar menghafal fakta."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Perhatikan gambar yang diwarnai berikut.",
+                  "Mana gambar yang menunjukkan seperempat."
+                ],
+                "rationale": "Soal ini tergolong mudah karena hanya memerlukan pengamatan visual langsung terhadap pembagian area tanpa perhitungan numerik yang kompleks.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan dan konsep kesamaan luas/ukuran.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 4,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Siswa kelas 4 diharapkan sudah mampu mengidentifikasi pecahan sederhana melalui representasi visual bangun datar."
+                },
+                "reasoningSummary": "Soal ini tergolong mudah karena hanya memerlukan pengamatan visual langsung terhadap pembagian area tanpa perhitungan numerik yang kompleks."
+              }
+            }
+          },
+          {
+            "runIndex": 3,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "VcnAas6uGoijqfkPpIuf6QQ",
+            "promptHash": "a937cf37773b72df21e579309f38d09c2198a82dd359ba5283b07e4b49372d07",
+            "responseHash": "1f8643ca63ad9bb69e8782bbdd3e0fb15c4242c272b7868609d420158ce523c1",
+            "latencyMs": 31705,
+            "usage": {
+              "promptTokens": 5123,
+              "outputTokens": 635,
+              "thinkingTokens": 101,
+              "totalTokens": 5859
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "Gambar 2 (segi enam memanjang) adalah satu-satunya gambar yang dibagi menjadi empat bagian yang sama besar (kongruen), sehingga satu bagian yang diarsir mewakili seperempat.",
+            "verifiedMinimalSolution": "Seperempat berarti satu dari empat bagian yang sama besar. Hanya Gambar 2 yang memiliki empat bagian dengan luas yang identik.",
+            "visualTranscript": "Terdapat empat gambar bangun datar yang masing-masing dibagi menjadi empat bagian oleh garis vertikal dan horizontal. Gambar 1 adalah segitiga yang dibagi tidak simetris. Gambar 2 adalah segi enam memanjang yang dibagi oleh garis tegak dan mendatar tepat di tengah, menghasilkan empat bagian yang sama besar. Gambar 3 adalah bentuk panah yang dibagi tidak simetris. Gambar 4 adalah persegi panjang yang dibagi menjadi empat bagian dengan ukuran yang berbeda-beda.",
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat."
+                ],
+                "rationale": "Siswa perlu menerapkan pemahaman konsep pecahan (seperempat) untuk mengevaluasi apakah pembagian pada setiap bangun datar menghasilkan bagian-bagian yang sama besar.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu menerapkan pemahaman konsep pecahan (seperempat) untuk mengevaluasi apakah pembagian pada setiap bangun datar menghasilkan bagian-bagian yang sama besar."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "seperempat dari benda utuh"
+                ],
+                "rationale": "Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' dalam konteks luas daerah, yaitu pembagian menjadi bagian-bagian yang sama besar.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' dalam konteks luas daerah, yaitu pembagian menjadi bagian-bagian yang sama besar."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat."
+                ],
+                "rationale": "Soal ini tergolong mudah karena hanya memerlukan pemahaman visual dasar tentang kesamaan luas bagian dalam pecahan, tanpa perhitungan numerik yang kompleks.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan dan konsep kesamaan luas.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 4,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Siswa kelas 4 diharapkan sudah mampu mengidentifikasi pecahan sederhana melalui representasi visual bangun datar."
+                },
+                "reasoningSummary": "Soal ini tergolong mudah karena hanya memerlukan pemahaman visual dasar tentang kesamaan luas bagian dalam pecahan, tanpa perhitungan numerik yang kompleks."
+              }
+            }
+          }
+        ],
         "votes": {
           "mathCognitiveDomain": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "applying": 3
+            },
+            "advisoryLabel": "applying",
+            "initialMajorityLabel": "applying",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Mana gambar yang menunjukkan seperempat"
+              ],
+              "rationale": "Siswa perlu menerapkan konsep pecahan (seperempat) untuk mengidentifikasi apakah pembagian bangun datar menghasilkan bagian yang sama besar.",
+              "label": "applying"
+            }
           },
           "knowledgeDimension": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "advisoryLabel": "conceptual",
+            "initialMajorityLabel": "conceptual",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "seperempat dari benda utuh"
+              ],
+              "rationale": "Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' (bagian yang sama besar) dalam konteks geometri.",
+              "label": "conceptual"
+            }
           },
           "intendedDifficulty": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "Easy": 3
+            },
+            "advisoryLabel": "Easy",
+            "initialMajorityLabel": "Easy",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat."
+              ],
+              "rationale": "Soal ini tergolong mudah karena hanya memerlukan pemahaman visual dasar tentang pembagian area yang sama besar, yang merupakan materi standar kelas 4.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan yang sama besar.",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 4 diharapkan sudah mampu membedakan pembagian area yang sama besar dan tidak sama besar secara visual."
+              }
+            }
           }
         },
         "adjudication": null,
         "advisoryLabels": {
-          "mathCognitiveDomain": null,
-          "knowledgeDimension": null,
-          "intendedDifficulty": null
+          "mathCognitiveDomain": "applying",
+          "knowledgeDimension": "conceptual",
+          "intendedDifficulty": "Easy"
         },
-        "eligibleForTraining": false,
+        "eligibleForTraining": true,
         "isGoldLabel": false,
         "retryHistory": []
       },
@@ -1914,30 +2675,30 @@
         "goldLabels": null,
         "status": "not_started"
       },
-      "finalRouting": "llm_retry_or_manual_review",
+      "finalRouting": "pending_expert_review",
       "modelComparison": {
         "mathCognitiveDomain": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "applying",
+          "blindLabel": "applying",
+          "agreement": true
         },
         "knowledgeDimension": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "conceptual",
+          "blindLabel": "conceptual",
+          "agreement": true
         },
         "intendedDifficulty": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "Easy",
+          "blindLabel": "Easy",
+          "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-d9628f57fa897fb25fe5d050",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-879dd54fe7fd1550447de1ac",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "bcd1ec2726d4dc3e37ec631d",
       "questionVersionId": "bcd1ec2726d4dc3e37ec631d:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -2023,7 +2784,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 113.353
+        "latencyMs": 110.583
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -2424,12 +3185,12 @@
           "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-7b5a7f3a7ee28f7f1e964538",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-2cbbb915b8ee591b6b4ae022",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "8639aa720008550cb79af345",
       "questionVersionId": "8639aa720008550cb79af345:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -2515,7 +3276,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 101.371
+        "latencyMs": 92.962
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -2854,16 +3615,16 @@
           "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-0624821c35d6a614e8f0c706",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-9af6d281d38ece1116d3d1f3",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "c5e424e9914591b1d5286ef0",
       "questionVersionId": "c5e424e9914591b1d5286ef0:content-v2:blind-revalidation",
       "contentVersion": 2,
-      "contentHash": "bb6a7ff30b6bd77340a5e25d9f6f99f9903359d31373d2b6f246b46d438fdbe6",
+      "contentHash": "ca4ab35d2999d7d652c554aac7f36bf09b560c1ff1aac1c8b80693bba610127f",
       "decisionType": "blind_silver_advisory",
       "inputValidation": {
         "status": "pass",
@@ -2876,8 +3637,8 @@
         "subtopic": "Pola",
         "questionType": "multiple_choice",
         "detectedKko": [],
-        "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Pola\nTipe soal: multiple_choice\nStimulus: -\nSoal: Amati setiap pola berikut. Mana lanjutan pola pada gambar berikutnya.\n\nAmati setiap pola berikut (baris b).\nPilihan: A. bunga\nB. kelinci\nC. heksagon\nD. kupu-kupu\nTranskripsi visual: -",
-        "untruncatedTokenCount": 71,
+        "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Pola\nTipe soal: multiple_choice\nStimulus: -\nSoal: Amati setiap pola berikut. Mana lanjutan pola pada gambar berikutnya.\n\nAmati setiap pola berikut (baris b).\nPilihan: A. bunga\nB. kelinci\nC. heksagon\nD. kupu-kupu\nTranskripsi visual: Baris b menunjukkan urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu, elemen berikutnya dalam pola adalah kelinci.",
+        "untruncatedTokenCount": 131,
         "maxLength": 256,
         "wouldTruncate": false
       },
@@ -2886,33 +3647,46 @@
         "diagnosticInferenceQuestionId": "diagnostic:kelas4:c5e424e9914591b1d5286ef0:content-v2",
         "heads": {
           "mathCognitiveDomain": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "applying",
+            "probabilities": {
+              "knowing": 2.2258745265995404e-06,
+              "applying": 0.9999977741254733,
+              "reasoning": 3.6352541716486133e-48
+            },
+            "calibratedConfidence": 0.9999977741254733,
+            "normalizedEntropy": 2.8396215980522635e-05,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+              "selective_threshold_gate_not_met"
             ]
           },
           "knowledgeDimension": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "conceptual",
+            "probabilities": {
+              "factual": 0.015671307937323468,
+              "conceptual": 0.9800973285556501,
+              "procedural": 0.004231363455326566,
+              "metacognitive": 5.1699694478289334e-11
+            },
+            "calibratedConfidence": 0.9800973285556501,
+            "normalizedEntropy": 0.07787482231826806,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+              "selective_threshold_gate_not_met"
             ]
           },
           "intendedDifficulty": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "Easy",
+            "probabilities": {
+              "Easy": 0.6963173508019108,
+              "Medium": 0.2973183054421148,
+              "Hard": 0.006364343755974462
+            },
+            "calibratedConfidence": 0.6963173508019108,
+            "normalizedEntropy": 0.586967302336283,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+              "selective_threshold_gate_not_met"
             ]
           }
         },
@@ -2924,13 +3698,13 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "8d0b754ef12d7bb8906e7e1d292a19e9cc0a719d7f61dc5d0230637ef1e9d306",
+          "inputHash": "c3690951fe4da42c26b1b6d05ab680274a22ec7d1f8f23e862df752660fcb934",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 0.188
+        "latencyMs": 174.968
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -2941,64 +3715,312 @@
         "blindToModelPredictions": true,
         "requestedRuns": 3,
         "requiredVotes": 2,
-        "successfulRuns": 0,
+        "successfulRuns": 3,
         "contentAssessment": {
-          "status": null,
+          "status": "valid",
           "concerns": []
         },
         "answerKeyAssessment": {
-          "status": null,
-          "verifiedAnswerKey": null
+          "status": "verified",
+          "verifiedAnswerKey": "B"
         },
-        "runs": [],
+        "runs": [
+          {
+            "runIndex": 1,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "eMnAaqHKB_vHg8UP3bi8iQo",
+            "promptHash": "bc885b14d2d509c20e038c809df65a3d4f2ee0b5ac00ca4c44551b07bedd690d",
+            "responseHash": "511b047698ef33c8c3788801a783a34f3e21cc5bd0dca7b3920a190331032c9c",
+            "latencyMs": 3772,
+            "usage": {
+              "promptTokens": 1863,
+              "outputTokens": 603,
+              "thinkingTokens": 104,
+              "totalTokens": 2570
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "verifiedMinimalSolution": "Pola berulang adalah (kupu-kupu, kelinci, kelinci). Urutan yang diberikan berakhir pada kupu-kupu, sehingga elemen berikutnya adalah kelinci.",
+            "visualTranscript": "Baris b menunjukkan urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu, elemen berikutnya dalam pola adalah kelinci.",
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Amati setiap pola berikut (baris b).",
+                  "pola berulang tiga gambar (kupu-kupu, kelinci, kelinci)"
+                ],
+                "rationale": "Siswa perlu mengidentifikasi unit pengulangan dalam pola visual dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah proses penerapan konsep pola yang rutin.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu mengidentifikasi unit pengulangan dalam pola visual dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah proses penerapan konsep pola yang rutin."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Amati setiap pola berikut",
+                  "pola berulang tiga gambar"
+                ],
+                "rationale": "Soal ini menguji pemahaman tentang struktur pola berulang, yang merupakan konsep dasar dalam matematika pola.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman tentang struktur pola berulang, yang merupakan konsep dasar dalam matematika pola."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Amati setiap pola berikut (baris b).",
+                  "pola berulang tiga gambar (kupu-kupu, kelinci, kelinci)"
+                ],
+                "rationale": "Soal ini melibatkan pengenalan pola visual sederhana dengan unit pengulangan yang jelas. Tidak ada strategi non-rutin yang diperlukan.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Kemampuan mengenali urutan visual dan pola berulang sederhana.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 1,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Pola visual berulang adalah materi standar kelas 4 yang bersifat rutin dan langsung."
+                },
+                "reasoningSummary": "Soal ini melibatkan pengenalan pola visual sederhana dengan unit pengulangan yang jelas. Tidak ada strategi non-rutin yang diperlukan."
+              }
+            }
+          },
+          {
+            "runIndex": 2,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "f8nAarG1D7mkg8UP55SMqQQ",
+            "promptHash": "bc885b14d2d509c20e038c809df65a3d4f2ee0b5ac00ca4c44551b07bedd690d",
+            "responseHash": "042c3aa3f979da1eb700720fce53b7b1b97c5acfbabbb996d41ce8448e0c788a",
+            "latencyMs": 3533,
+            "usage": {
+              "promptTokens": 1863,
+              "outputTokens": 572,
+              "thinkingTokens": 99,
+              "totalTokens": 2534
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "verifiedMinimalSolution": "Pola baris b berulang setiap 3 gambar: (kupu-kupu, kelinci, kelinci). Karena urutan terakhir adalah kupu-kupu, maka gambar selanjutnya adalah kelinci.",
+            "visualTranscript": "Baris b menampilkan urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu, elemen berikutnya dalam pola adalah kelinci.",
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Amati setiap pola berikut (baris b)."
+                ],
+                "rationale": "Siswa perlu mengidentifikasi aturan pengulangan dalam urutan gambar (pola berulang) dan menerapkan aturan tersebut untuk menentukan elemen berikutnya.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu mengidentifikasi aturan pengulangan dalam urutan gambar (pola berulang) dan menerapkan aturan tersebut untuk menentukan elemen berikutnya."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Amati setiap pola berikut"
+                ],
+                "rationale": "Soal ini menguji pemahaman tentang struktur pola berulang, yang merupakan konsep dasar dalam aljabar awal.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman tentang struktur pola berulang, yang merupakan konsep dasar dalam aljabar awal."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Amati setiap pola berikut (baris b)."
+                ],
+                "rationale": "Soal ini melibatkan identifikasi pola visual sederhana yang berulang. Siswa hanya perlu mengenali unit pengulangan dan menerapkannya, yang merupakan tugas rutin bagi siswa kelas 4.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Kemampuan mengenali urutan dan pengulangan objek visual.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 3,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Pola berulang adalah materi dasar yang sudah diperkenalkan sejak kelas rendah, sehingga untuk kelas 4 ini dikategorikan mudah."
+                },
+                "reasoningSummary": "Soal ini melibatkan identifikasi pola visual sederhana yang berulang. Siswa hanya perlu mengenali unit pengulangan dan menerapkannya, yang merupakan tugas rutin bagi siswa kelas 4."
+              }
+            }
+          },
+          {
+            "runIndex": 3,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "hcnAas2qH6zSqfkPpuz2kAQ",
+            "promptHash": "bc885b14d2d509c20e038c809df65a3d4f2ee0b5ac00ca4c44551b07bedd690d",
+            "responseHash": "66b04b19d36e8f0a341a368666456cf20e52699ba98725fb92d9a0defa2d2633",
+            "latencyMs": 8357,
+            "usage": {
+              "promptTokens": 1863,
+              "outputTokens": 633,
+              "thinkingTokens": 103,
+              "totalTokens": 2599
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "verifiedMinimalSolution": "Pola baris b adalah pengulangan tiga gambar: kupu-kupu, kelinci, kelinci. Karena urutan terakhir adalah kupu-kupu, maka gambar berikutnya adalah kelinci.",
+            "visualTranscript": "Baris b menampilkan urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu, elemen berikutnya dalam pola adalah kelinci.",
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Amati setiap pola berikut (baris b).",
+                  "pola berulang tiga gambar (kupu-kupu, kelinci, kelinci)"
+                ],
+                "rationale": "Siswa perlu mengidentifikasi aturan pengulangan dalam urutan visual dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah proses menerapkan konsep pola yang sudah dipelajari.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu mengidentifikasi aturan pengulangan dalam urutan visual dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah proses menerapkan konsep pola yang sudah dipelajari."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Amati setiap pola berikut",
+                  "pola berulang tiga gambar"
+                ],
+                "rationale": "Soal ini menguji pemahaman siswa tentang struktur pola berulang (konsep), bukan sekadar menghafal fakta atau melakukan prosedur perhitungan.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman siswa tentang struktur pola berulang (konsep), bukan sekadar menghafal fakta atau melakukan prosedur perhitungan."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Amati setiap pola berikut (baris b).",
+                  "pola berulang tiga gambar (kupu-kupu, kelinci, kelinci)"
+                ],
+                "rationale": "Soal ini melibatkan pengenalan pola visual sederhana dengan unit pengulangan yang jelas. Siswa kelas 4 sudah sangat familiar dengan tugas semacam ini.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Kemampuan mengenali urutan visual dan pola berulang sederhana.",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 3,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Tugas mengidentifikasi pola visual adalah materi dasar yang sudah dikuasai siswa kelas 4, sehingga tingkat kesulitannya rendah."
+                },
+                "reasoningSummary": "Soal ini melibatkan pengenalan pola visual sederhana dengan unit pengulangan yang jelas. Siswa kelas 4 sudah sangat familiar dengan tugas semacam ini."
+              }
+            }
+          }
+        ],
         "votes": {
           "mathCognitiveDomain": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "applying": 3
+            },
+            "advisoryLabel": "applying",
+            "initialMajorityLabel": "applying",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Amati setiap pola berikut (baris b).",
+                "pola berulang tiga gambar (kupu-kupu, kelinci, kelinci)"
+              ],
+              "rationale": "Siswa perlu mengidentifikasi unit pengulangan dalam pola visual dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah proses penerapan konsep pola yang rutin.",
+              "label": "applying"
+            }
           },
           "knowledgeDimension": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "advisoryLabel": "conceptual",
+            "initialMajorityLabel": "conceptual",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Amati setiap pola berikut",
+                "pola berulang tiga gambar"
+              ],
+              "rationale": "Soal ini menguji pemahaman tentang struktur pola berulang, yang merupakan konsep dasar dalam matematika pola.",
+              "label": "conceptual"
+            }
           },
           "intendedDifficulty": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "Easy": 3
+            },
+            "advisoryLabel": "Easy",
+            "initialMajorityLabel": "Easy",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Amati setiap pola berikut (baris b).",
+                "pola berulang tiga gambar (kupu-kupu, kelinci, kelinci)"
+              ],
+              "rationale": "Soal ini melibatkan pengenalan pola visual sederhana dengan unit pengulangan yang jelas. Tidak ada strategi non-rutin yang diperlukan.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Kemampuan mengenali urutan visual dan pola berulang sederhana.",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 1,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Pola visual berulang adalah materi standar kelas 4 yang bersifat rutin dan langsung."
+              }
+            }
           }
         },
         "adjudication": null,
         "advisoryLabels": {
-          "mathCognitiveDomain": null,
-          "knowledgeDimension": null,
-          "intendedDifficulty": null
+          "mathCognitiveDomain": "applying",
+          "knowledgeDimension": "conceptual",
+          "intendedDifficulty": "Easy"
         },
-        "eligibleForTraining": false,
+        "eligibleForTraining": true,
         "isGoldLabel": false,
         "retryHistory": []
       },
@@ -3007,34 +4029,34 @@
         "goldLabels": null,
         "status": "not_started"
       },
-      "finalRouting": "llm_retry_or_manual_review",
+      "finalRouting": "pending_expert_review",
       "modelComparison": {
         "mathCognitiveDomain": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "applying",
+          "blindLabel": "applying",
+          "agreement": true
         },
         "knowledgeDimension": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "conceptual",
+          "blindLabel": "conceptual",
+          "agreement": true
         },
         "intendedDifficulty": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "Easy",
+          "blindLabel": "Easy",
+          "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-5e2604ea5058489a173596f5",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-6dc510c37deefb9b555ce986",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "4088b8d020de84282c07a2b3",
       "questionVersionId": "4088b8d020de84282c07a2b3:content-v2:blind-revalidation",
       "contentVersion": 2,
-      "contentHash": "5505e883c807164a32e17296b0d4d973b8ac205b17b0cc37b4887e09794c1faf",
+      "contentHash": "322d370123711ca6357a7f498488f75a4280986062adf22cb0397eb18ac87a2e",
       "decisionType": "blind_silver_advisory",
       "inputValidation": {
         "status": "pass",
@@ -3059,33 +4081,46 @@
         "diagnosticInferenceQuestionId": "diagnostic:kelas4:4088b8d020de84282c07a2b3:content-v2",
         "heads": {
           "mathCognitiveDomain": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "applying",
+            "probabilities": {
+              "knowing": 0.0134986825279822,
+              "applying": 0.9865013174720177,
+              "reasoning": 5.432490154727883e-50
+            },
+            "calibratedConfidence": 0.9865013174720177,
+            "normalizedEntropy": 0.06510139603919575,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+              "selective_threshold_gate_not_met"
             ]
           },
           "knowledgeDimension": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "factual",
+            "probabilities": {
+              "factual": 0.8110472619160737,
+              "conceptual": 0.16953035809361927,
+              "procedural": 0.019422379960509262,
+              "metacognitive": 2.9797918076663665e-11
+            },
+            "calibratedConfidence": 0.8110472619160737,
+            "normalizedEntropy": 0.3947763607109607,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+              "selective_threshold_gate_not_met"
             ]
           },
           "intendedDifficulty": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "Easy",
+            "probabilities": {
+              "Easy": 0.8856813578425671,
+              "Medium": 0.11105682735027976,
+              "Hard": 0.0032618148071530905
+            },
+            "calibratedConfidence": 0.8856813578425671,
+            "normalizedEntropy": 0.3370310605568551,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified"
+              "selective_threshold_gate_not_met"
             ]
           }
         },
@@ -3103,7 +4138,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 0.177
+        "latencyMs": 147.203
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -3114,64 +4149,317 @@
         "blindToModelPredictions": true,
         "requestedRuns": 3,
         "requiredVotes": 2,
-        "successfulRuns": 0,
+        "successfulRuns": 3,
         "contentAssessment": {
-          "status": null,
+          "status": "valid",
           "concerns": []
         },
         "answerKeyAssessment": {
-          "status": null,
-          "verifiedAnswerKey": null
+          "status": "verified",
+          "verifiedAnswerKey": "B"
         },
-        "runs": [],
+        "runs": [
+          {
+            "runIndex": 1,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "kMnAas3uL5Wzg8UP3N_m0Ak",
+            "promptHash": "d4ab3567d655ffadfc583fd81e8064c5e18041e56b03a0884b138d329483840b",
+            "responseHash": "b207227a4b367371e51b989507a0822350203b9418f675e0c74d9fc52e3da54c",
+            "latencyMs": 6833,
+            "usage": {
+              "promptTokens": 853,
+              "outputTokens": 626,
+              "thinkingTokens": 109,
+              "totalTokens": 1588
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "verifiedMinimalSolution": "2.225 liter - 975 liter 325 ml = (2.224 liter + 1.000 ml) - (975 liter + 325 ml) = (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.",
+            "visualTranscript": null,
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "975 liter 325 ml air dipompa keluar",
+                  "Berapa banyak air yang tersisa"
+                ],
+                "rationale": "Siswa perlu menerapkan prosedur pengurangan dengan melakukan konversi satuan (meminjam 1 liter menjadi 1.000 ml) untuk menyelesaikan masalah pengurangan volume yang melibatkan dua satuan berbeda.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu menerapkan prosedur pengurangan dengan melakukan konversi satuan (meminjam 1 liter menjadi 1.000 ml) untuk menyelesaikan masalah pengurangan volume yang melibatkan dua satuan berbeda."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "2.225 liter",
+                  "975 liter 325 ml"
+                ],
+                "rationale": "Soal ini menguji pemahaman prosedural tentang operasi pengurangan pada satuan volume yang berbeda dan teknik meminjam (regrouping) antar satuan.",
+                "label": "procedural",
+                "reasoningSummary": "Soal ini menguji pemahaman prosedural tentang operasi pengurangan pada satuan volume yang berbeda dan teknik meminjam (regrouping) antar satuan."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "2.225 liter",
+                  "975 liter 325 ml"
+                ],
+                "rationale": "Soal ini memerlukan pemahaman tentang hubungan antar satuan (1 liter = 1.000 ml) dan prosedur pengurangan dengan teknik meminjam, yang merupakan standar kompetensi kelas 4.",
+                "label": "Medium",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman konversi satuan volume (liter ke ml) dan pengurangan bersusun dengan teknik meminjam.",
+                  "dependentSteps": 2,
+                  "routineStatus": "routine_selection",
+                  "strategySelection": false,
+                  "representationTransfer": true,
+                  "relevantInformationUnits": 2,
+                  "interactingConstraints": 1,
+                  "calculationLoad": "moderate",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "strong",
+                  "gradeRelativeRationale": "Siswa kelas 4 diharapkan mampu melakukan operasi hitung campuran pada satuan ukuran. Tingkat kesulitan medium karena adanya kebutuhan melakukan konversi satuan saat melakukan pengurangan."
+                },
+                "reasoningSummary": "Soal ini memerlukan pemahaman tentang hubungan antar satuan (1 liter = 1.000 ml) dan prosedur pengurangan dengan teknik meminjam, yang merupakan standar kompetensi kelas 4."
+              }
+            }
+          },
+          {
+            "runIndex": 2,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "msnAaqHFJeS2g8UPlem6sQ8",
+            "promptHash": "d4ab3567d655ffadfc583fd81e8064c5e18041e56b03a0884b138d329483840b",
+            "responseHash": "6ab9618368052fd3303354f470a497da64282c6b9ba47928437b1f90765a793d",
+            "latencyMs": 3555,
+            "usage": {
+              "promptTokens": 853,
+              "outputTokens": 655,
+              "thinkingTokens": 105,
+              "totalTokens": 1613
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "verifiedMinimalSolution": "2.225 liter - 975 liter 325 ml = (2.224 liter + 1.000 ml) - (975 liter + 325 ml) = (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.",
+            "visualTranscript": null,
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "975 liter 325 ml air dipompa keluar",
+                  "Berapa banyak air yang tersisa"
+                ],
+                "rationale": "Siswa perlu menerapkan prosedur pengurangan satuan volume (liter dan mililiter) yang melibatkan teknik meminjam (regrouping) antar satuan, yang merupakan penerapan rutin dari konsep pengukuran.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu menerapkan prosedur pengurangan satuan volume (liter dan mililiter) yang melibatkan teknik meminjam (regrouping) antar satuan, yang merupakan penerapan rutin dari konsep pengukuran."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "2.225 liter",
+                  "975 liter 325 ml"
+                ],
+                "rationale": "Soal ini menuntut pemahaman tentang algoritma pengurangan dengan satuan campuran dan konversi antar satuan (1 liter = 1.000 ml) untuk menyelesaikan operasi.",
+                "label": "procedural",
+                "reasoningSummary": "Soal ini menuntut pemahaman tentang algoritma pengurangan dengan satuan campuran dan konversi antar satuan (1 liter = 1.000 ml) untuk menyelesaikan operasi."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "2.225 liter",
+                  "975 liter 325 ml",
+                  "dipompa keluar"
+                ],
+                "rationale": "Soal ini dikategorikan Medium karena memerlukan dua langkah rutin: melakukan pengurangan liter dan melakukan konversi/regrouping satuan mililiter (meminjam 1 liter menjadi 1.000 ml) untuk menyelesaikan pengurangan.",
+                "label": "Medium",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman hubungan 1 liter = 1.000 ml dan pengurangan bersusun.",
+                  "dependentSteps": 2,
+                  "routineStatus": "routine_selection",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 2,
+                  "interactingConstraints": 1,
+                  "calculationLoad": "moderate",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "strong",
+                  "gradeRelativeRationale": "Siswa kelas 4 sudah mempelajari satuan volume dan operasi hitung campuran, namun melakukan pengurangan dengan 'meminjam' antar satuan yang berbeda (liter ke ml) merupakan tantangan prosedural yang sesuai untuk tingkat menengah."
+                },
+                "reasoningSummary": "Soal ini dikategorikan Medium karena memerlukan dua langkah rutin: melakukan pengurangan liter dan melakukan konversi/regrouping satuan mililiter (meminjam 1 liter menjadi 1.000 ml) untuk menyelesaikan pengurangan."
+              }
+            }
+          },
+          {
+            "runIndex": 3,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "ocnAaq_ICoK5g8UPpZbPwQk",
+            "promptHash": "d4ab3567d655ffadfc583fd81e8064c5e18041e56b03a0884b138d329483840b",
+            "responseHash": "0154887cc438bdab09944af4925ecdacb63d51ccb810774beb5867317d8600b6",
+            "latencyMs": 8069,
+            "usage": {
+              "promptTokens": 853,
+              "outputTokens": 635,
+              "thinkingTokens": 118,
+              "totalTokens": 1606
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "verifiedMinimalSolution": "2.225 liter - 975 liter 325 ml = (2.224 liter + 1.000 ml) - (975 liter + 325 ml) = (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.",
+            "visualTranscript": null,
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "2.225 liter",
+                  "975 liter 325 ml",
+                  "Berapa banyak air yang tersisa"
+                ],
+                "rationale": "Siswa perlu menerapkan prosedur pengurangan dengan melakukan konversi satuan (meminjam 1 liter menjadi 1.000 ml) untuk menyelesaikan masalah pengurangan volume yang melibatkan satuan campuran.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu menerapkan prosedur pengurangan dengan melakukan konversi satuan (meminjam 1 liter menjadi 1.000 ml) untuk menyelesaikan masalah pengurangan volume yang melibatkan satuan campuran."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "2.225 liter",
+                  "975 liter 325 ml"
+                ],
+                "rationale": "Soal ini menguji pemahaman prosedural tentang operasi pengurangan pada satuan volume yang berbeda (liter dan mililiter) yang memerlukan teknik meminjam antar satuan.",
+                "label": "procedural",
+                "reasoningSummary": "Soal ini menguji pemahaman prosedural tentang operasi pengurangan pada satuan volume yang berbeda (liter dan mililiter) yang memerlukan teknik meminjam antar satuan."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "2.225 liter",
+                  "975 liter 325 ml"
+                ],
+                "rationale": "Soal ini dikategorikan Medium karena melibatkan beberapa langkah rutin (pengurangan liter dan pengurangan mililiter) serta memerlukan pemahaman konversi satuan (1 liter = 1.000 ml) saat melakukan pengurangan.",
+                "label": "Medium",
+                "profile": {
+                  "expectedPrerequisite": "Pemahaman hubungan 1 liter = 1.000 ml dan pengurangan bersusun.",
+                  "dependentSteps": 3,
+                  "routineStatus": "routine_selection",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 2,
+                  "interactingConstraints": 1,
+                  "calculationLoad": "moderate",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "strong",
+                  "gradeRelativeRationale": "Siswa kelas 4 sudah mempelajari satuan volume dan operasi hitung campuran, namun soal ini menuntut ketelitian dalam melakukan konversi satuan saat meminjam."
+                },
+                "reasoningSummary": "Soal ini dikategorikan Medium karena melibatkan beberapa langkah rutin (pengurangan liter dan pengurangan mililiter) serta memerlukan pemahaman konversi satuan (1 liter = 1.000 ml) saat melakukan pengurangan."
+              }
+            }
+          }
+        ],
         "votes": {
           "mathCognitiveDomain": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "applying": 3
+            },
+            "advisoryLabel": "applying",
+            "initialMajorityLabel": "applying",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "975 liter 325 ml air dipompa keluar",
+                "Berapa banyak air yang tersisa"
+              ],
+              "rationale": "Siswa perlu menerapkan prosedur pengurangan dengan melakukan konversi satuan (meminjam 1 liter menjadi 1.000 ml) untuk menyelesaikan masalah pengurangan volume yang melibatkan dua satuan berbeda.",
+              "label": "applying"
+            }
           },
           "knowledgeDimension": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "procedural": 3
+            },
+            "advisoryLabel": "procedural",
+            "initialMajorityLabel": "procedural",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "2.225 liter",
+                "975 liter 325 ml"
+              ],
+              "rationale": "Soal ini menguji pemahaman prosedural tentang operasi pengurangan pada satuan volume yang berbeda dan teknik meminjam (regrouping) antar satuan.",
+              "label": "procedural"
+            }
           },
           "intendedDifficulty": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "unanimous",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "Medium": 3
+            },
+            "advisoryLabel": "Medium",
+            "initialMajorityLabel": "Medium",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "2.225 liter",
+                "975 liter 325 ml"
+              ],
+              "rationale": "Soal ini memerlukan pemahaman tentang hubungan antar satuan (1 liter = 1.000 ml) dan prosedur pengurangan dengan teknik meminjam, yang merupakan standar kompetensi kelas 4.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman konversi satuan volume (liter ke ml) dan pengurangan bersusun dengan teknik meminjam.",
+                "dependentSteps": 2,
+                "routineStatus": "routine_selection",
+                "strategySelection": false,
+                "representationTransfer": true,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "strong",
+                "gradeRelativeRationale": "Siswa kelas 4 diharapkan mampu melakukan operasi hitung campuran pada satuan ukuran. Tingkat kesulitan medium karena adanya kebutuhan melakukan konversi satuan saat melakukan pengurangan."
+              }
+            }
           }
         },
         "adjudication": null,
         "advisoryLabels": {
-          "mathCognitiveDomain": null,
-          "knowledgeDimension": null,
-          "intendedDifficulty": null
+          "mathCognitiveDomain": "applying",
+          "knowledgeDimension": "procedural",
+          "intendedDifficulty": "Medium"
         },
-        "eligibleForTraining": false,
+        "eligibleForTraining": true,
         "isGoldLabel": false,
         "retryHistory": []
       },
@@ -3180,30 +4468,30 @@
         "goldLabels": null,
         "status": "not_started"
       },
-      "finalRouting": "llm_retry_or_manual_review",
+      "finalRouting": "pending_expert_review",
       "modelComparison": {
         "mathCognitiveDomain": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "applying",
+          "blindLabel": "applying",
+          "agreement": true
         },
         "knowledgeDimension": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "factual",
+          "blindLabel": "procedural",
+          "agreement": false
         },
         "intendedDifficulty": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "Easy",
+          "blindLabel": "Medium",
+          "agreement": false
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-8766ccc56b27e1a97ca785e4",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-53b9ebb2babb98abca1f9a32",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "8a6222ad2919585a4e0febed",
       "questionVersionId": "8a6222ad2919585a4e0febed:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -3287,7 +4575,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 111.021
+        "latencyMs": 113.937
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -3625,12 +4913,12 @@
           "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-237b3eda72e1c445c1019525",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-d3844fa542b4973888aa3576",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "1a9d9923445f71c78d74086d",
       "questionVersionId": "1a9d9923445f71c78d74086d:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -3716,7 +5004,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 135.349
+        "latencyMs": 129.864
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -4065,16 +5353,16 @@
           "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-d26c4f5ba2574b523e72f621",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-5afe161a241cf79726931899",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "8fe432cf4c0a120aab6def21",
       "questionVersionId": "8fe432cf4c0a120aab6def21:content-v2:blind-revalidation",
       "contentVersion": 2,
-      "contentHash": "e504abeab9f088b0ffdff62714c76690f12465c1f79bc631ae0da98d9a37137a",
+      "contentHash": "2b07bfd8c62e3cd843014833d9a84455bbeef36a34c8be8f46d610cb947192d6",
       "decisionType": "blind_silver_advisory",
       "inputValidation": {
         "status": "pass",
@@ -4089,8 +5377,8 @@
         "detectedKko": [
           "mengidentifikasi"
         ],
-        "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Komposisi dan Dekomposisi Bangun Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: |**No**|**Nama Bangun Datar**|**Gambar**|**Banyaknya**|\n|---|---|---|---|\n|1<br>2|Segitiga<br>...|...|...<br>...|\n\nTentukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :\nPilihan: A. Segitiga 4, jajargenjang 1, persegi 1\nB. Segitiga 5, trapesium 1, persegi 1\nC. Segitiga 6, persegi 1\nD. Segitiga 5, jajargenjang 1, persegi 1\nTranskripsi visual: -",
-        "untruncatedTokenCount": 170,
+        "serializedInput": "Kelas: 4\nTopik: Matematika SD Kelas 4\nSubtopik: Komposisi dan Dekomposisi Bangun Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: |**No**|**Nama Bangun Datar**|**Gambar**|**Banyaknya**|\n|---|---|---|---|\n|1<br>2|Segitiga<br>...|...|...<br>...|\n\nTentukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :\nPilihan: A. Segitiga 4, jajargenjang 1, persegi 1\nB. Segitiga 5, trapesium 1, persegi 1\nC. Segitiga 6, persegi 1\nD. Segitiga 5, jajargenjang 1, persegi 1\nTranskripsi visual: Gambar menunjukkan sebuah perahu yang tersusun dari 7 keping bangun datar berwarna: 1 segitiga biru besar, 1 segitiga merah besar, 1 segitiga hijau tua, 1 segitiga oranye, 1 segitiga merah muda, 1 persegi hijau muda, dan 1 jajargenjang kuning.",
+        "untruncatedTokenCount": 219,
         "maxLength": 256,
         "wouldTruncate": false
       },
@@ -4099,33 +5387,46 @@
         "diagnosticInferenceQuestionId": "diagnostic:kelas4:8fe432cf4c0a120aab6def21:content-v2",
         "heads": {
           "mathCognitiveDomain": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "applying",
+            "probabilities": {
+              "knowing": 0.40805444690945925,
+              "applying": 0.5919455530905408,
+              "reasoning": 1.394474303010603e-34
+            },
+            "calibratedConfidence": 0.5919455530905408,
+            "normalizedEntropy": 0.6154515219788889,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+              "selective_threshold_gate_not_met"
             ]
           },
           "knowledgeDimension": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "conceptual",
+            "probabilities": {
+              "factual": 0.019819533996059877,
+              "conceptual": 0.9710229354601905,
+              "procedural": 0.009157529166743027,
+              "metacognitive": 1.3770065240896353e-09
+            },
+            "calibratedConfidence": 0.9710229354601905,
+            "normalizedEntropy": 0.10765764577209642,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+              "selective_threshold_gate_not_met"
             ]
           },
           "intendedDifficulty": {
-            "label": null,
-            "probabilities": {},
-            "calibratedConfidence": null,
-            "normalizedEntropy": null,
-            "action": "abstain",
+            "label": "Easy",
+            "probabilities": {
+              "Easy": 0.713617473003325,
+              "Medium": 0.27747981036996944,
+              "Hard": 0.008902716626705384
+            },
+            "calibratedConfidence": 0.713617473003325,
+            "normalizedEntropy": 0.5812284881406986,
+            "action": "review",
             "reasons": [
-              "content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing"
+              "selective_threshold_gate_not_met"
             ]
           }
         },
@@ -4137,13 +5438,13 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "0c21c0b3f77f01b1da2ebea59e14e5304fc58a2644d729f267b610a17c19bda4",
+          "inputHash": "375390e4d4b45e31a458e4ab1247d0270a3e77ade9f44a58889b35ae5ec0bca3",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 0.389
+        "latencyMs": 241.645
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -4154,64 +5455,365 @@
         "blindToModelPredictions": true,
         "requestedRuns": 3,
         "requiredVotes": 2,
-        "successfulRuns": 0,
+        "successfulRuns": 3,
         "contentAssessment": {
-          "status": null,
+          "status": "valid",
           "concerns": []
         },
         "answerKeyAssessment": {
-          "status": null,
-          "verifiedAnswerKey": null
+          "status": "verified",
+          "verifiedAnswerKey": "D"
         },
-        "runs": [],
+        "runs": [
+          {
+            "runIndex": 1,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "rMnAat-pE6nEg8UPh53EsQk",
+            "promptHash": "689e98d469eb7da15ade48c603b25a1d77f1b5bcb468d606feaaa2c435dc313b",
+            "responseHash": "eb80acfec1d0df8050bce7226f4c54cb6289dcc9631a90b6222b2b779cb60769",
+            "latencyMs": 5713,
+            "usage": {
+              "promptTokens": 1935,
+              "outputTokens": 573,
+              "thinkingTokens": 94,
+              "totalTokens": 2602
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "verifiedMinimalSolution": "Menghitung jumlah kepingan berdasarkan bentuk geometrisnya: 5 segitiga, 1 persegi, dan 1 jajargenjang.",
+            "visualTranscript": "Gambar menunjukkan susunan bangun datar membentuk perahu. Terdapat 5 segitiga (biru, merah, hijau tua, oranye, merah muda), 1 persegi (hijau), dan 1 jajargenjang (kuning).",
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan dekomposisi berbagai macam bangun datar"
+                ],
+                "rationale": "Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris dari komponen penyusun gambar, yang merupakan proses pengenalan dan penerapan konsep dasar bangun datar.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris dari komponen penyusun gambar, yang merupakan proses pengenalan dan penerapan konsep dasar bangun datar."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "dekomposisi berbagai macam bangun datar"
+                ],
+                "rationale": "Soal ini menguji pemahaman tentang kategori bangun datar (segitiga, persegi, jajargenjang) dan bagaimana mereka menyusun sebuah bentuk yang lebih besar.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman tentang kategori bangun datar (segitiga, persegi, jajargenjang) dan bagaimana mereka menyusun sebuah bentuk yang lebih besar."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar"
+                ],
+                "rationale": "Soal ini meminta siswa melakukan observasi visual dan klasifikasi bentuk sederhana. Tingkat kesulitannya rendah karena hanya memerlukan pengenalan bentuk dasar pada tangram.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Mengenal sifat-sifat dasar bangun datar (segitiga, persegi, jajargenjang).",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": false,
+                  "relevantInformationUnits": 7,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Siswa kelas 4 sudah familiar dengan tangram dan klasifikasi bangun datar sederhana. Tugas ini bersifat langsung tanpa memerlukan perhitungan kompleks."
+                },
+                "reasoningSummary": "Soal ini meminta siswa melakukan observasi visual dan klasifikasi bentuk sederhana. Tingkat kesulitannya rendah karena hanya memerlukan pengenalan bentuk dasar pada tangram."
+              }
+            }
+          },
+          {
+            "runIndex": 2,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "tcnAaojsBa23g8UPw_-biQw",
+            "promptHash": "689e98d469eb7da15ade48c603b25a1d77f1b5bcb468d606feaaa2c435dc313b",
+            "responseHash": "cad4562f64e6ff2a50eae633b98fa05c4890ac6ff621d6766b8c7b81656c626c",
+            "latencyMs": 5698,
+            "usage": {
+              "promptTokens": 1935,
+              "outputTokens": 651,
+              "thinkingTokens": 94,
+              "totalTokens": 2680
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "verifiedMinimalSolution": "Menghitung jumlah keping berdasarkan bentuk geometris: 5 segitiga (biru, merah, hijau tua, oranye, merah muda), 1 persegi (hijau muda), dan 1 jajargenjang (kuning).",
+            "visualTranscript": "Gambar menunjukkan sebuah perahu yang tersusun dari 7 keping bangun datar: 1 segitiga besar biru, 1 segitiga besar merah, 1 segitiga hijau tua, 1 segitiga oranye, 1 segitiga merah muda, 1 persegi hijau muda, dan 1 jajargenjang kuning. Total terdapat 5 segitiga, 1 persegi, dan 1 jajargenjang.",
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar"
+                ],
+                "rationale": "Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris dari komponen penyusun gambar kompleks (tangram), yang merupakan proses penerapan konsep bangun datar pada situasi visual.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris dari komponen penyusun gambar kompleks (tangram), yang merupakan proses penerapan konsep bangun datar pada situasi visual."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "dekomposisi berbagai macam bangun datar"
+                ],
+                "rationale": "Soal ini menguji pemahaman siswa tentang struktur dan kategori bangun datar (segitiga, persegi, jajargenjang) dalam konteks komposisi bentuk.",
+                "label": "conceptual",
+                "reasoningSummary": "Soal ini menguji pemahaman siswa tentang struktur dan kategori bangun datar (segitiga, persegi, jajargenjang) dalam konteks komposisi bentuk."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar"
+                ],
+                "rationale": "Soal ini dikategorikan Medium karena siswa harus melakukan dekomposisi visual pada gambar yang terdiri dari beberapa bagian, membedakan bentuk yang mirip (seperti jajargenjang vs trapesium), dan menghitung jumlah masing-masing bentuk dengan teliti.",
+                "label": "Medium",
+                "profile": {
+                  "expectedPrerequisite": "Mengenal sifat-sifat dasar bangun datar (segitiga, persegi, jajargenjang).",
+                  "dependentSteps": 3,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": true,
+                  "relevantInformationUnits": 7,
+                  "interactingConstraints": 2,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Siswa kelas 4 diharapkan mampu mengidentifikasi bangun datar sederhana dalam komposisi yang lebih kompleks seperti tangram."
+                },
+                "reasoningSummary": "Soal ini dikategorikan Medium karena siswa harus melakukan dekomposisi visual pada gambar yang terdiri dari beberapa bagian, membedakan bentuk yang mirip (seperti jajargenjang vs trapesium), dan menghitung jumlah masing-masing bentuk dengan teliti."
+              }
+            }
+          },
+          {
+            "runIndex": 3,
+            "status": "success",
+            "errorCode": null,
+            "quotaDailyExhausted": false,
+            "quotaLimits": [],
+            "providerFailureReason": null,
+            "responseId": "vcnAasecK4mog8UP9v_06QQ",
+            "promptHash": "689e98d469eb7da15ade48c603b25a1d77f1b5bcb468d606feaaa2c435dc313b",
+            "responseHash": "2e2c854a33725c54a3dd2aea1a6bb1328d809836f7d740e544a52edda50fc0cc",
+            "latencyMs": 6789,
+            "usage": {
+              "promptTokens": 1935,
+              "outputTokens": 618,
+              "thinkingTokens": 118,
+              "totalTokens": 2671
+            },
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "verifiedMinimalSolution": "Perahu terdiri dari 7 keping: 5 segitiga (biru, merah, hijau tua, oranye, merah muda), 1 persegi (hijau muda), dan 1 jajargenjang (kuning). Pilihan D sesuai dengan hitungan ini.",
+            "visualTranscript": "Gambar menunjukkan sebuah perahu yang tersusun dari 7 keping tangram: 1 segitiga biru besar, 1 segitiga merah besar, 1 segitiga hijau tua sedang, 1 persegi hijau muda, 1 segitiga oranye kecil, 1 jajargenjang kuning, dan 1 segitiga merah muda kecil.",
+            "heads": {
+              "mathCognitiveDomain": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut"
+                ],
+                "rationale": "Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris individual yang menyusun gambar kompleks (dekomposisi). Ini melibatkan pengenalan sifat bangun datar.",
+                "label": "applying",
+                "reasoningSummary": "Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris individual yang menyusun gambar kompleks (dekomposisi). Ini melibatkan pengenalan sifat bangun datar."
+              },
+              "knowledgeDimension": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan dekomposisi berbagai macam bangun datar"
+                ],
+                "rationale": "Siswa menerapkan pengetahuan konseptual tentang sifat-sifat bangun datar (segitiga, persegi, jajargenjang) untuk mengkategorikan bagian-bagian dari gambar.",
+                "label": "conceptual",
+                "reasoningSummary": "Siswa menerapkan pengetahuan konseptual tentang sifat-sifat bangun datar (segitiga, persegi, jajargenjang) untuk mengkategorikan bagian-bagian dari gambar."
+              },
+              "intendedDifficulty": {
+                "action": "classify",
+                "evidenceSpans": [
+                  "Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut"
+                ],
+                "rationale": "Soal ini meminta siswa untuk melakukan dekomposisi visual yang memerlukan ketelitian dalam mengenali bentuk, namun prosedurnya bersifat rutin bagi siswa kelas 4 yang sudah mempelajari tangram atau komposisi bangun datar.",
+                "label": "Easy",
+                "profile": {
+                  "expectedPrerequisite": "Mengenal sifat-sifat bangun datar dasar (segitiga, persegi, jajargenjang).",
+                  "dependentSteps": 1,
+                  "routineStatus": "familiar_routine",
+                  "strategySelection": false,
+                  "representationTransfer": true,
+                  "relevantInformationUnits": 7,
+                  "interactingConstraints": 0,
+                  "calculationLoad": "low",
+                  "scaffoldLevel": "none",
+                  "distractorQuality": "plausible",
+                  "gradeRelativeRationale": "Siswa kelas 4 diharapkan mampu mengidentifikasi bentuk-bentuk geometris dasar dalam komposisi visual sederhana."
+                },
+                "reasoningSummary": "Soal ini meminta siswa untuk melakukan dekomposisi visual yang memerlukan ketelitian dalam mengenali bentuk, namun prosedurnya bersifat rutin bagi siswa kelas 4 yang sudah mempelajari tangram atau komposisi bangun datar."
+              }
+            }
+          }
+        ],
         "votes": {
           "mathCognitiveDomain": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "adjudicated",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "applying": 3
+            },
+            "advisoryLabel": "applying",
+            "initialMajorityLabel": "applying",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar"
+              ],
+              "rationale": "Siswa perlu menerapkan pengetahuan tentang sifat-sifat bangun datar untuk mengidentifikasi dan mengklasifikasikan setiap komponen penyusun gambar (tangram). Ini adalah proses penerapan konsep pada situasi visual.",
+              "label": "applying"
+            }
           },
           "knowledgeDimension": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "adjudicated",
+            "votePattern": "unanimous_3_0",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 3,
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "advisoryLabel": "conceptual",
+            "initialMajorityLabel": "conceptual",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "dekomposisi berbagai macam bangun datar"
+              ],
+              "rationale": "Soal ini menguji pemahaman konseptual tentang kategori bangun datar (segitiga, persegi, jajargenjang) dan bagaimana mereka membentuk struktur yang lebih besar.",
+              "label": "conceptual"
+            }
           },
           "intendedDifficulty": {
-            "status": "incomplete",
-            "votePattern": "no_consensus",
+            "status": "adjudicated",
+            "votePattern": "majority_2_of_3",
             "requestedRuns": 3,
-            "successfulRuns": 0,
+            "successfulRuns": 3,
             "requiredVotes": 2,
-            "supportingVotes": 0,
-            "voteCounts": {},
-            "advisoryLabel": null,
-            "initialMajorityLabel": null,
+            "supportingVotes": 2,
+            "voteCounts": {
+              "Easy": 2,
+              "Medium": 1
+            },
+            "advisoryLabel": "Easy",
+            "initialMajorityLabel": "Easy",
             "policy": "unanimity_else_ai_adjudication",
-            "lockedEvidence": {}
+            "lockedEvidence": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar"
+              ],
+              "rationale": "Tugas ini bersifat rutin bagi siswa kelas 4 yang sudah mempelajari tangram. Tidak ada perhitungan kompleks, hanya observasi visual dan klasifikasi bentuk dasar.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Mengenal sifat-sifat dasar bangun datar (segitiga, persegi, jajargenjang).",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 7,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 4 sudah familiar dengan tangram dan klasifikasi bangun datar sederhana. Tugas ini bersifat langsung tanpa memerlukan perhitungan kompleks."
+              }
+            }
           }
         },
-        "adjudication": null,
-        "advisoryLabels": {
-          "mathCognitiveDomain": null,
-          "knowledgeDimension": null,
-          "intendedDifficulty": null
+        "adjudication": {
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": "Gambar menunjukkan sebuah perahu yang tersusun dari 7 keping bangun datar berwarna: 1 segitiga biru besar, 1 segitiga merah besar, 1 segitiga hijau tua, 1 segitiga oranye, 1 segitiga merah muda, 1 persegi hijau muda, dan 1 jajargenjang kuning.",
+            "verifiedMinimalSolution": "Menghitung kepingan berdasarkan bentuk: 5 segitiga (biru, merah, hijau tua, oranye, merah muda), 1 persegi (hijau muda), dan 1 jajargenjang (kuning). Total 7 keping.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar"
+              ],
+              "rationale": "Siswa perlu menerapkan pengetahuan tentang sifat-sifat bangun datar untuk mengidentifikasi dan mengklasifikasikan setiap komponen penyusun gambar (tangram). Ini adalah proses penerapan konsep pada situasi visual.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "dekomposisi berbagai macam bangun datar"
+              ],
+              "rationale": "Soal ini menguji pemahaman konseptual tentang kategori bangun datar (segitiga, persegi, jajargenjang) dan bagaimana mereka membentuk struktur yang lebih besar.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar"
+              ],
+              "rationale": "Tugas ini bersifat rutin bagi siswa kelas 4 yang sudah mempelajari tangram. Tidak ada perhitungan kompleks, hanya observasi visual dan klasifikasi bentuk dasar.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Mengenal sifat-sifat dasar bangun datar (segitiga, persegi, jajargenjang).",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 7,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 4 sudah familiar dengan tangram dan klasifikasi bangun datar sederhana. Tugas ini bersifat langsung tanpa memerlukan perhitungan kompleks."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "x8nAarfxKp7-4-EPnKCn4Ak",
+          "promptHash": "27d2c7f4694e9093af0f1c4b0e129a188539f92a633bb755f16979aa65c02c1b",
+          "responseHash": "68be3ec73018b958d8266ffd6fffb064f303f14ff50d1bce3d336627b0acfe78",
+          "latencyMs": 21101,
+          "usage": {
+            "promptTokens": 3321,
+            "outputTokens": 614,
+            "thinkingTokens": 111,
+            "totalTokens": 4046
+          }
         },
-        "eligibleForTraining": false,
+        "advisoryLabels": {
+          "mathCognitiveDomain": "applying",
+          "knowledgeDimension": "conceptual",
+          "intendedDifficulty": "Easy"
+        },
+        "eligibleForTraining": true,
         "isGoldLabel": false,
         "retryHistory": []
       },
@@ -4220,30 +5822,30 @@
         "goldLabels": null,
         "status": "not_started"
       },
-      "finalRouting": "llm_retry_or_manual_review",
+      "finalRouting": "pending_expert_review",
       "modelComparison": {
         "mathCognitiveDomain": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "applying",
+          "blindLabel": "applying",
+          "agreement": true
         },
         "knowledgeDimension": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "conceptual",
+          "blindLabel": "conceptual",
+          "agreement": true
         },
         "intendedDifficulty": {
-          "modelLabel": null,
-          "blindLabel": null,
-          "agreement": null
+          "modelLabel": "Easy",
+          "blindLabel": "Easy",
+          "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-3231667711de85cf46de681c",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-f3df7cedb5dee4daa2308352",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "f068d3ebd6b847a2ae99e0d2",
       "questionVersionId": "f068d3ebd6b847a2ae99e0d2:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -4327,7 +5929,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 268.465
+        "latencyMs": 198.976
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -4661,12 +6263,12 @@
           "agreement": false
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-018e1c619d07ef20fa22c1b0",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-0a4cb365bc4aed641f0425f8",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "f311bf91df38724a90b35b69",
       "questionVersionId": "f311bf91df38724a90b35b69:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -4750,7 +6352,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 203.364
+        "latencyMs": 142.936
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -5084,12 +6686,12 @@
           "agreement": false
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-432abfcc8b10ba5c1f82693e",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-00fa721f72e1311b1e07a1e4",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "177f5534f5d559f72a66d033",
       "questionVersionId": "177f5534f5d559f72a66d033:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -5175,7 +6777,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 176.241
+        "latencyMs": 121.077
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -5517,12 +7119,12 @@
           "agreement": false
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-4c933b6151ed268fcf5ccd90",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-8c3cef18fa7c04caa1c83011",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "4515f80b96eb86e33ab16d92",
       "questionVersionId": "4515f80b96eb86e33ab16d92:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -5606,7 +7208,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 160.788
+        "latencyMs": 172.002
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -6004,12 +7606,12 @@
           "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     },
     {
-      "decisionId": "AID-b8c4ae6c0ce12f384c5648da",
-      "workflowRunId": "WF-e7e3c98b7dc52191313464ec",
+      "decisionId": "AID-a155abf207368632438eb52f",
+      "workflowRunId": "WF-bbf1577c661cd338195c00fd",
       "questionId": "631ea2e9a2d5222d502bdf5c",
       "questionVersionId": "631ea2e9a2d5222d502bdf5c:content-v2:blind-revalidation",
       "contentVersion": 2,
@@ -6095,7 +7697,7 @@
         },
         "scopeStatus": "in_scope",
         "reviewRequired": true,
-        "latencyMs": 122.153
+        "latencyMs": 87.344
       },
       "llmAdvisory": {
         "provider": "gemini",
@@ -6429,8 +8031,8 @@
           "agreement": true
         }
       },
-      "blindCheckpointHash": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
-      "createdAt": "2026-10-03T07:34:30.374257+00:00"
+      "blindCheckpointHash": "bbf1577c661cd338195c00fd63eaf44036bdadc317b1d1fd563755c74f70c5f0",
+      "createdAt": "2026-10-03T09:26:04.948570+00:00"
     }
   ]
 }

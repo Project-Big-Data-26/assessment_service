@@ -12,7 +12,7 @@
   "educationLevel": "SMA",
   "requestedRuns": 3,
   "createdAt": "2026-10-02T14:34:40.003392+00:00",
-  "updatedAt": "2026-10-03T08:04:59.607254+00:00",
+  "updatedAt": "2026-10-03T09:20:51.247274+00:00",
   "items": {
     "6e23a873d17dbf71c29d8901": {
       "index": 1,
@@ -5485,6 +5485,114 @@
         },
         {
           "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "C",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Koefisien determinasi r^2 = (0,138)^2 = 0,019044 atau 1,9%. Persentase variansi yang diterangkan oleh variabel lain adalah 1 - r^2 = 1 - 0,019044 = 0,980956 atau 98,1%.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Nilai koefisien korelasinya adalah 0,138",
+                "Berapa persentase IQ yang diterangkan oleh variabel-variabel lainnya?"
+              ],
+              "rationale": "Siswa perlu memahami hubungan antara koefisien korelasi (r), koefisien determinasi (r^2), dan variansi yang tidak dijelaskan (1-r^2) untuk menjawab pertanyaan.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Nilai koefisien korelasinya adalah 0,138",
+                "persentase IQ yang diterangkan oleh variabel-variabel lainnya"
+              ],
+              "rationale": "Memerlukan pemahaman konseptual tentang apa yang diukur oleh koefisien korelasi dan determinasi dalam konteks regresi linear.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Nilai koefisien korelasinya adalah 0,138",
+                "persentase IQ yang diterangkan oleh variabel-variabel lainnya"
+              ],
+              "rationale": "Soal ini memerlukan pemahaman konsep statistik (koefisien determinasi) dan perhitungan sederhana. Ini adalah prosedur rutin dalam analisis korelasi.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang koefisien korelasi dan koefisien determinasi.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 0,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Sesuai untuk kelas 11 dalam materi statistika inferensial/analisis korelasi."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "ysjAauzHJIHljuMP5rGl6AQ",
+          "promptHash": "eef71b1b9c8a8b0289d92868d0f89c6004cb0dd457d9328ef164179127ceb570",
+          "responseHash": "e4ca8d182db388cce98171dff79cbc791d90b4a8c177145d39778a34e4256039",
+          "latencyMs": 8636,
+          "usage": {
+            "promptTokens": 1389,
+            "outputTokens": 634,
+            "thinkingTokens": 1040,
+            "totalTokens": 3063
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "C",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Koefisien determinasi r^2 = (0,138)^2 = 0,019044 atau 1,9%. Persentase variansi yang diterangkan variabel lain = 100% - r^2 = 100% - 1,9% = 98,1%.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "conceptual",
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Medium",
+            "voteCounts": {
+              "Medium": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null,
+      "retryHistory": [
+        {
+          "runIndex": 3,
           "status": "failed",
           "output": null,
           "errorCode": "ClientError:429",
@@ -5508,78 +5616,270 @@
             "totalTokens": 0
           }
         }
+      ]
+    },
+    "d6d3b4c5f9819d69d4c859d0": {
+      "index": 22,
+      "questionId": "d6d3b4c5f9819d69d4c859d0",
+      "inputHash": "f6a3ddb1a33603432ae4546193570e876e3faa89b2b9393d0c771fb4a8de634f",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Data terurut: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1=310, Q3=320. IQR=Q3-Q1=10. Batas atas=Q3+1.5*IQR=320+15=335. Karena 750 > 335, maka 750 adalah pencilan.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Mengapa angka 750 kWh dapat dianggap sebagai pencilan?",
+                "Karena 750 kWh lebih besar dari batas atas IQR (335 kWh)"
+              ],
+              "rationale": "Soal meminta siswa menerapkan prosedur statistik standar (aturan 1.5*IQR) untuk mengidentifikasi pencilan, yang merupakan penerapan konsep pada situasi rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "300, 320, 310, 305, 315, 320, 750, 310, 325, 315",
+                "Karena 750 kWh lebih besar dari batas atas IQR (335 kWh)"
+              ],
+              "rationale": "Siswa perlu mengikuti urutan langkah algoritma statistik (mengurutkan data, mencari kuartil, menghitung IQR, menentukan batas atas) untuk menyelesaikan masalah.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "300, 320, 310, 305, 315, 320, 750, 310, 325, 315",
+                "Karena 750 kWh lebih besar dari batas atas IQR (335 kWh)"
+              ],
+              "rationale": "Soal memerlukan beberapa langkah rutin (mengurutkan, menghitung kuartil, menghitung IQR, membandingkan) yang merupakan prosedur standar di kelas 11.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman tentang kuartil, IQR, dan kriteria pencilan statistik.",
+                "dependentSteps": 4,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 10,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 11 diharapkan mampu melakukan prosedur deteksi pencilan menggunakan IQR sebagai bagian dari analisis data statistik."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "1cjAapO4MviiqfkPjcLZ4QQ",
+          "promptHash": "5e8298d9ea8d428b088e7da8de9aab83d0a4c608ea174f6f7c93cfcfd6cff9ac",
+          "responseHash": "881424eff743b82595e4765767c9f8730f2d401217b8a9b127eb45c618a3238f",
+          "latencyMs": 8478,
+          "usage": {
+            "promptTokens": 1479,
+            "outputTokens": 749,
+            "thinkingTokens": 1086,
+            "totalTokens": 3314
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Data terurut: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1=310, Q3=320, IQR=10. Batas atas = Q3 + 1,5*IQR = 320 + 15 = 335. Karena 750 > 335, maka 750 adalah pencilan.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Mengapa angka 750 kWh dapat dianggap sebagai pencilan?"
+              ],
+              "rationale": "Siswa perlu menerapkan prosedur statistik standar (menentukan kuartil dan batas pencilan) untuk memvalidasi pernyataan, yang merupakan penerapan konsep pada situasi rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Mengapa angka 750 kWh dapat dianggap sebagai pencilan?"
+              ],
+              "rationale": "Soal menuntut penggunaan algoritma atau teknik statistik (aturan IQR) untuk menentukan pencilan.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "300, 320, 310, 305, 315, 320, 750, 310, 325, 315",
+                "Mengapa angka 750 kWh dapat dianggap sebagai pencilan?"
+              ],
+              "rationale": "Soal memerlukan beberapa langkah rutin: mengurutkan data, menghitung Q1 dan Q3, menghitung IQR, dan menerapkan formula batas atas. Ini adalah tugas rutin yang memerlukan ketelitian.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman tentang kuartil, IQR, dan definisi statistik pencilan.",
+                "dependentSteps": 4,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 10,
+                "interactingConstraints": 2,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Sesuai untuk kelas 11, melibatkan prosedur statistik yang diajarkan dalam analisis data."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "4cjAaoX3E_SiqfkP1uq70AQ",
+          "promptHash": "5e8298d9ea8d428b088e7da8de9aab83d0a4c608ea174f6f7c93cfcfd6cff9ac",
+          "responseHash": "84b423136e9109c608045f595b35ebc80c866f618a22d789c40853752379526f",
+          "latencyMs": 4855,
+          "usage": {
+            "promptTokens": 1479,
+            "outputTokens": 652,
+            "thinkingTokens": 766,
+            "totalTokens": 2897
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Data terurut: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1=310, Q3=320. IQR=Q3-Q1=10. Batas atas = Q3 + 1,5*IQR = 320 + 15 = 335. Karena 750 > 335, maka 750 adalah pencilan.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Mengapa angka 750 kWh dapat dianggap sebagai pencilan?",
+                "Karena 750 kWh lebih besar dari batas atas IQR (335 kWh)"
+              ],
+              "rationale": "Siswa perlu menerapkan prosedur statistik standar (menghitung kuartil, IQR, dan batas atas) untuk memverifikasi definisi pencilan pada data.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "data sebagai berikut. 300, 320, 310, 305, 315, 320, 750, 310, 325, 315",
+                "batas atas IQR (335 kWh)"
+              ],
+              "rationale": "Soal menguji pemahaman tentang algoritma atau urutan langkah untuk menentukan pencilan menggunakan metode IQR.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "10 rumah tangga",
+                "300, 320, 310, 305, 315, 320, 750, 310, 325, 315"
+              ],
+              "rationale": "Soal memerlukan beberapa langkah rutin: mengurutkan data, menentukan kuartil, menghitung IQR, dan menerapkan rumus batas atas.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman tentang kuartil, IQR, dan kriteria pencilan statistik.",
+                "dependentSteps": 4,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 10,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Sesuai dengan kurikulum kelas 11 mengenai analisis data statistik deskriptif."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "6cjAaquOGsK6g8UPsbOi-QQ",
+          "promptHash": "5e8298d9ea8d428b088e7da8de9aab83d0a4c608ea174f6f7c93cfcfd6cff9ac",
+          "responseHash": "26ff301819cf1084fc4ab6e6292de618e18e143f2e689042fb3bba12354f92d5",
+          "latencyMs": 5880,
+          "usage": {
+            "promptTokens": 1479,
+            "outputTokens": 688,
+            "thinkingTokens": 868,
+            "totalTokens": 3035
+          }
+        }
       ],
       "aggregate": {
-        "successfulRuns": 2,
+        "successfulRuns": 3,
         "requiredMajority": 2,
         "contentStatus": "valid",
         "contentConcerns": [],
         "answerKeyStatus": "verified",
-        "verifiedAnswerKey": "C",
+        "verifiedAnswerKey": "D",
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Koefisien determinasi r^2 = (0,138)^2 = 0,019044 atau 1,9%. Persentase variansi yang diterangkan variabel lain = 100% - r^2 = 100% - 1,9% = 98,1%.",
+        "verifiedMinimalSolution": "Data terurut: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1=310, Q3=320. IQR=Q3-Q1=10. Batas atas=Q3+1.5*IQR=320+15=335. Karena 750 > 335, maka 750 adalah pencilan.",
         "heads": {
           "mathCognitiveDomain": {
-            "label": null,
+            "label": "applying",
             "voteCounts": {
-              "applying": 2
+              "applying": 3
             },
-            "supportingRuns": 2,
-            "status": "needs_adjudication"
+            "supportingRuns": 3,
+            "status": "unanimous"
           },
           "knowledgeDimension": {
-            "label": null,
+            "label": "procedural",
             "voteCounts": {
-              "conceptual": 2
+              "procedural": 3
             },
-            "supportingRuns": 2,
-            "status": "needs_adjudication"
+            "supportingRuns": 3,
+            "status": "unanimous"
           },
           "intendedDifficulty": {
-            "label": null,
+            "label": "Medium",
             "voteCounts": {
-              "Medium": 2
+              "Medium": 3
             },
-            "supportingRuns": 2,
-            "status": "needs_adjudication"
+            "supportingRuns": 3,
+            "status": "unanimous"
           }
         },
-        "needsAdjudication": true,
+        "needsAdjudication": false,
         "adjudicated": false,
-        "eligibleForTraining": false
+        "eligibleForTraining": true
       },
       "adjudication": null
     }
   },
   "summary": {
-    "itemsProcessed": 21,
-    "itemsEligibleForTraining": 19,
-    "successfulRuns": 62,
-    "failedRuns": 1,
+    "itemsProcessed": 22,
+    "itemsEligibleForTraining": 21,
+    "successfulRuns": 66,
+    "failedRuns": 0,
     "adjudicatedItems": 7,
-    "pendingAdjudication": 1,
+    "pendingAdjudication": 0,
     "difficultyDistribution": {
       "Easy": 15,
-      "Medium": 4,
+      "Medium": 6,
       "Hard": 0
     },
-    "dominantDifficultyShare": 0.7894736842105263,
+    "dominantDifficultyShare": 0.7142857142857143,
     "boundaryAnalysisRequired": true,
-    "promptTokens": 126447,
-    "outputTokens": 44994,
-    "thinkingTokens": 12476,
-    "totalTokens": 183917
+    "promptTokens": 132273,
+    "outputTokens": 47717,
+    "thinkingTokens": 16236,
+    "totalTokens": 196226
   },
-  "executionStatus": "blocked_provider_daily_quota",
-  "stopReason": {
-    "errorCode": "ClientError:429",
-    "quotaLimits": [
-      {
-        "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
-        "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
-        "quotaValue": "500"
-      }
-    ],
-    "providerFailureReason": null
-  }
+  "executionStatus": "completed_batch"
 }

@@ -1,17 +1,15 @@
 # Validasi ulang soal kelas 1 — Gemini blind N=3 dan diagnostik IndoBERT
 
-**Batch belum selesai:** 72/150 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
-
 Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v4-blind-key-verified`. Rubrik: `math-rubric-3x4x3-v2-grade-aware`.
 
 Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas 1 tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan bukan keputusan ahli manusia.
 
 Checkpoint dikunci dengan SHA-256 sebelum inferensi IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Prediksi model lama dipakai untuk menunjukkan ketidaksepakatan; tidak diberikan kembali ke Gemini.
 
-Jumlah soal: 50; distribusi label advisory: `{"mathCognitiveDomain": {"undecided": 26, "knowing": 13, "applying": 11, "reasoning": 0}, "knowledgeDimension": {"undecided": 26, "factual": 6, "conceptual": 7, "procedural": 11, "metacognitive": 0}, "intendedDifficulty": {"undecided": 26, "Easy": 22, "Medium": 2, "Hard": 0}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 13, "applying": 11, "reasoning": 0}, "knowledgeDimension": {"factual": 6, "conceptual": 7, "procedural": 11, "metacognitive": 0}, "intendedDifficulty": {"Easy": 22, "Medium": 2, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"llm_retry_or_manual_review": 26, "pending_expert_review": 24}`.
-Run awal sukses: 72/150; adjudikasi: 11; token sukses tercatat: 153,306.
+Jumlah soal: 50; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 27, "applying": 23, "reasoning": 0}, "knowledgeDimension": {"procedural": 17, "factual": 11, "conceptual": 22, "metacognitive": 0}, "intendedDifficulty": {"Easy": 48, "Medium": 2, "Hard": 0}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 27, "applying": 23, "reasoning": 0}, "knowledgeDimension": {"procedural": 17, "factual": 11, "conceptual": 22, "metacognitive": 0}, "intendedDifficulty": {"Easy": 48, "Medium": 2, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"pending_expert_review": 50}`.
+Run awal sukses: 150/150; adjudikasi: 22; token sukses tercatat: 346,361.
 
 Seluruh label masih silver/advisory, gold manusia tetap null, dan publishing otomatis tidak diaktifkan. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -24,7 +22,7 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 22 | 22 | [Easy.json](difficulty/Easy.json) |
+| Easy | 48 | 48 | [Easy.json](difficulty/Easy.json) |
 | Medium | 2 | 2 | [Medium.json](difficulty/Medium.json) |
 | Hard | 0 | 0 | [Hard.json](difficulty/Hard.json) |
 
@@ -48,37 +46,134 @@ Ayo menghitung banyak mainan. Wei pergi ke toko mainan. Wei melihat banyak maina
 ![Gambar sumber soal 1](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0027-06.png>)
 
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0027-06.png. Transkripsi visual: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Menghitung satu per satu boneka kelinci pada rak paling atas: 1, 2, 3, 4, 5, 6. Jumlahnya adalah 6.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0027-06.png. Transkripsi visual: A girl is looking at a toy store. On a shelf, there are three rows of toys. The top row contains 6 pink rabbit dolls. The middle row contains 4 blue airplanes. The bottom row contains 5 blue spinning tops. To the left, there is a stepped display with 7 red toy cars. To the right, there is a pink bin containing 5 colorful balls.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8d73a0dc86e145659daadb63288a1d70870a55db73f3f5d3df1e99597c5564fa`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5a78aa7081386b0e06112a332c38761d0c5b335583ab7dbaaad2d6051cb5f83f`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 2448 |
+| 2 | success | valid / verified | knowing | factual | Easy | 2442 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 2506 |
+
+Run 1 — solusi: Menghitung satu per satu boneka kelinci pada rak paling atas: 1, 2, 3, 4, 5, 6. Jumlahnya adalah 6.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses menghitung objek secara langsung (counting) yang merupakan keterampilan dasar.. Bukti: Ayo menghitung banyak mainan; Ada .... (boneka kelinci). Berapa banyaknya?
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji kemampuan dasar dalam menghitung jumlah objek konkret, yang merupakan pengetahuan faktual tentang bilangan.. Bukti: Ayo menghitung banyak mainan
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan penghitungan objek yang terlihat jelas dalam satu kelompok (rak atas).. Bukti: Ada .... (boneka kelinci). Berapa banyaknya?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung benda konkret 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena fokus pada keterampilan menghitung dasar (counting) yang merupakan kompetensi inti awal. |
+
+Run 2 — solusi: Menghitung satu per satu boneka kelinci pada rak paling atas: 1, 2, 3, 4, 5, 6.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan proses penghitungan langsung (counting) terhadap objek yang terlihat secara visual. Ini adalah proses dasar dalam matematika.. Bukti: Ayo menghitung banyak mainan; Ada .... (boneka kelinci). Berapa banyaknya?
+- Dimensi pengetahuan `classify/factual`: Tugas ini melibatkan penggunaan konsep dasar bilangan (kuantitas) dan teknik menghitung (counting) yang merupakan pengetahuan faktual/prosedural dasar.. Bukti: Ayo menghitung banyak mainan
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, hanya memerlukan penghitungan objek konkret yang tersusun rapi tanpa distraksi yang rumit.. Bukti: Ada .... (boneka kelinci). Berapa banyaknya?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1-10 secara berurutan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD untuk materi membilang benda konkret. |
+
+Run 3 — solusi: Menghitung jumlah boneka kelinci pada rak paling atas satu per satu: 1, 2, 3, 4, 5, 6. Totalnya adalah 6.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan proses menghitung objek secara langsung (counting) yang merupakan keterampilan dasar dalam domain knowing.. Bukti: Ayo menghitung banyak mainan; Ada .... (boneka kelinci). Berapa banyaknya?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji kemampuan siswa dalam menerapkan prosedur menghitung (counting) untuk menentukan kuantitas objek, yang merupakan pengetahuan prosedural dasar.. Bukti: Ayo menghitung banyak mainan
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan penghitungan objek konkret yang tersusun rapi dalam satu baris, sesuai dengan tingkat perkembangan kelas 1.. Bukti: Ayo bantu Wei. Ada .... (boneka kelinci). Berapa banyaknya?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1-10 secara berurutan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung objek konkret adalah kompetensi inti kelas 1 awal. Soal ini tidak memiliki jebakan kompleks, hanya menuntut ketelitian menghitung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"factual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3760`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa hanya perlu melakukan proses menghitung objek secara langsung (counting) yang merupakan keterampilan dasar dalam domain knowing.
+- Dimensi pengetahuan `procedural`: Tugas ini melibatkan penggunaan konsep dasar bilangan (kuantitas) dan teknik menghitung (counting) yang merupakan pengetahuan prosedural dasar.
+- Intended difficulty `Easy`: Soal ini sangat mendasar, melibatkan penghitungan objek konkret yang tersusun rapi dalam satu baris, sesuai dengan tingkat perkembangan kelas 1.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1-10 secara berurutan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung objek konkret adalah kompetensi inti kelas 1 awal. Soal ini tidak memiliki jebakan kompleks, hanya menuntut ketelitian menghitung. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 93/256; truncation: `False`.
+Model membaca representation `metadata`; token input 189/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.000541; applying=0.999459; reasoning=0.000000 | applying | 0.999459 | 0.004197 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.021067; conceptual=0.953852; procedural=0.025082; metacognitive=0.000000 | conceptual | 0.953852 | 0.157851 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.655815; Medium=0.322920; Hard=0.021265 | Easy | 0.655815 | 0.658624 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999459; −Σp ln(p) = 0.004611; H = 0.004611/ln(3) = 0.004197; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.953852; −Σp ln(p) = 0.218827; H = 0.218827/ln(4) = 0.157851; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.655815; −Σp ln(p) = 0.723572; H = 0.723572/ln(3) = 0.658624; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -95,16 +190,16 @@ Pilihan: A. 5
 B. 7
 C. 9
 D. 6
-Transkripsi visual: -
+Transkripsi visual: A girl is looking at a toy store. On a shelf, there are three rows of toys. The top row contains 6 pink rabbit dolls. The middle row contains 4 blue airplanes. The bottom row contains 5 blue spinning tops. To the left, there is a stepped display with 7 red toy cars. To the right, there is a pink bin containing 5 colorful balls.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 2. Soal `e91b53ee437d36556aa832b8`
@@ -575,27 +670,93 @@ Lengkapi urutan bilangan berikut: 1, 2, ....
 | C | 0 |
 | D | 4 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Urutan bilangan 1, 2 menunjukkan pola penambahan 1 (maju), sehingga bilangan berikutnya adalah 2 + 1 = 3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ddcfd7d6d5a4d5a0899e283323fb1644eed9d7e98bea8881d36266c4cdb7dbc1`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `87e9ac4734983dd9522c0d00f6e50ad6ae63ba63a274a79cdd72b7578fd66103`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 1237 |
+| 2 | success | valid / verified | knowing | factual | Easy | 1263 |
+| 3 | success | valid / verified | knowing | factual | Easy | 1257 |
+
+Run 1 — solusi: Urutan bilangan 1, 2 menunjukkan pola penambahan 1 (maju), sehingga bilangan berikutnya adalah 2 + 1 = 3.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan sederhana dan melanjutkan urutan tersebut, yang merupakan proses langsung.. Bukti: Lengkapi urutan bilangan berikut: 1, 2, ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan dasar (fakta numerik) dalam konteks berhitung maju.. Bukti: 1, 2, ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan pola yang sangat familiar dan satu langkah penyelesaian.. Bukti: 1, 2, ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1 sampai 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD mengenai pengenalan urutan bilangan cacah. |
+
+Run 2 — solusi: Urutan bilangan 1, 2 menunjukkan pola penambahan 1 (maju). Bilangan setelah 2 adalah 2 + 1 = 3.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan dasar yang sudah familiar (1, 2, 3) dan melanjutkan urutan tersebut secara langsung.. Bukti: Lengkapi urutan bilangan berikut: 1, 2, ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan dasar (fakta numerik) yang merupakan pengetahuan faktual dalam matematika awal.. Bukti: 1, 2, ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, menggunakan urutan bilangan yang paling umum dipelajari di kelas 1, dengan beban kognitif yang sangat rendah.. Bukti: 1, 2, ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal urutan bilangan cacah 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD untuk pengenalan pola bilangan sederhana. |
+
+Run 3 — solusi: Urutan bilangan 1, 2 menunjukkan pola penambahan 1 (maju). Bilangan setelah 2 adalah 2 + 1 = 3.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan dasar (1, 2, 3) yang merupakan proses langsung.. Bukti: Lengkapi urutan bilangan berikut: 1, 2, ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan dasar (fakta numerik) dalam konteks menghitung maju.. Bukti: 1, 2, ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan prosedur familiar (menghitung maju satu-satu) dengan beban kognitif yang sangat rendah.. Bukti: 1, 2, ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1 sampai 3. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD untuk pengenalan urutan bilangan dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"factual": 3} | unanimous_3_0 / unanimous | factual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -603,9 +764,18 @@ Model membaca representation `metadata`; token input 61/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=1.000000; applying=0.000000; reasoning=0.000000 | knowing | 1.000000 | 0.000001 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.878503; conceptual=0.105707; procedural=0.015790; metacognitive=0.000000 | factual | 0.878503 | 0.300681 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.909591; Medium=0.088220; Hard=0.002189 | Easy | 0.909591 | 0.285623 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000001; H = 0.000001/ln(3) = 0.000001; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.878503; −Σp ln(p) = 0.416832; H = 0.416832/ln(4) = 0.300681; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.909591; −Σp ln(p) = 0.313788; H = 0.313788/ln(3) = 0.285623; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -627,9 +797,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "factual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 6. Soal `593cbed3be61dd6c967e770c`
@@ -643,27 +813,93 @@ Lengkapi urutan bilangan berikut: 4, 5, ....
 | C | 6 |
 | D | 7 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Urutan bilangan 4, 5 menunjukkan pola penambahan 1 (menghitung maju). Bilangan setelah 5 dengan pola tersebut adalah 5 + 1 = 6.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3f9988a477ab817186a366186859ee85deabd180003a5c075e17927ef680856e`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9fe9be503affcc15959049b5ad2edf1f4088fbe863530b5d135ca277c99393ec`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 1289 |
+| 2 | success | valid / verified | knowing | factual | Easy | 1279 |
+| 3 | success | valid / verified | knowing | factual | Easy | 1274 |
+
+Run 1 — solusi: Urutan bilangan 4, 5 menunjukkan pola penambahan 1 (menghitung maju). Bilangan setelah 5 dengan pola tersebut adalah 5 + 1 = 6.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan sederhana (menghitung maju) dan menentukan bilangan berikutnya, yang merupakan proses langsung.. Bukti: Lengkapi urutan bilangan berikut: 4, 5, ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan sebagai fakta dasar dalam berhitung.. Bukti: Lengkapi urutan bilangan berikut: 4, 5, ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan pola urutan yang sangat familiar dengan beban kognitif yang rendah.. Bukti: 4, 5, ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1-10 secara berurutan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD untuk pengenalan pola bilangan sederhana. |
+
+Run 2 — solusi: Urutan bilangan 4, 5 menunjukkan pola penambahan 1 (menghitung maju). Bilangan setelah 5 adalah 5 + 1 = 6.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan sederhana dan melanjutkan urutan tersebut dengan satu langkah langsung.. Bukti: Lengkapi urutan bilangan berikut: 4, 5, ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan dasar (fakta numerik) dalam konteks menghitung maju.. Bukti: 4, 5, ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, hanya melibatkan satu langkah logis dalam urutan bilangan yang familiar.. Bukti: 4, 5, ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1-10 secara berurutan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD untuk pengenalan urutan bilangan dasar. |
+
+Run 3 — solusi: Urutan bilangan 4, 5 menunjukkan pola penambahan 1 (menghitung maju). Bilangan setelah 5 adalah 5 + 1 = 6.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan sederhana dan menerapkan prosedur menghitung maju satu langkah, yang merupakan proses langsung.. Bukti: Lengkapi urutan bilangan berikut: 4, 5, ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan sebagai fakta dasar dalam sistem bilangan.. Bukti: 4, 5, ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan pola yang sangat familiar dan satu langkah penyelesaian langsung.. Bukti: 4, 5, ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1-10 secara berurutan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 awal yang menekankan pengenalan urutan bilangan dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"factual": 3} | unanimous_3_0 / unanimous | factual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -671,9 +907,18 @@ Model membaca representation `metadata`; token input 61/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=1.000000; applying=0.000000; reasoning=0.000000 | knowing | 1.000000 | 0.000001 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.901465; conceptual=0.086746; procedural=0.011789; metacognitive=0.000000 | factual | 0.901465 | 0.258196 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.915153; Medium=0.082765; Hard=0.002083 | Easy | 0.915153 | 0.273280 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000001; H = 0.000001/ln(3) = 0.000001; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.901465; −Σp ln(p) = 0.357936; H = 0.357936/ln(4) = 0.258196; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.915153; −Σp ln(p) = 0.300228; H = 0.300228/ln(3) = 0.273280; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -695,9 +940,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "factual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 7. Soal `82267daa87c52ac8b3876098`
@@ -714,37 +959,112 @@ Temukan pasangan bilangan berikut.<br><br>Temukan pasangan bilangan berikut. Bil
 ![Gambar sumber soal 7](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0043-04.png>)
 
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0043-04.png. Transkripsi visual: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Menghitung jumlah objek pada kotak kiri (4) dan kotak kanan (5). Total 4 + 5 = 9. Pasangan bilangan untuk 9 adalah 4 dan 5.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0043-04.png. Transkripsi visual: Terdapat dua kotak berisi objek. Kotak kiri berisi 4 buah jeruk. Kotak kanan berisi 5 buah salak. Di bawahnya terdapat diagram pasangan bilangan (number bond) dengan angka 9 di lingkaran utama yang terhubung ke dua lingkaran kosong.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3828053e57b2a542f836eebbac2cc6260de24986adf123e526a4f7597dfe1403`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bd135fcf0454301d6053e5300a93b5b746e11d6cd6043cc0bf2c740a5603e92d`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2545 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2521 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2490 |
+
+Run 1 — solusi: Menghitung jumlah objek pada kotak kiri (4) dan kotak kanan (5). Total 4 + 5 = 9. Pasangan bilangan untuk 9 adalah 4 dan 5.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi jumlah objek dalam dua kelompok visual yang berbeda dan menghubungkannya dengan konsep komposisi bilangan (pasangan bilangan). Ini adalah proses menerapkan konsep dasar penjumlahan/komposisi pada situasi visual yang rutin.. Bukti: Bilangan 9 dipasangkan menjadi dua bilangan berapa dan berapa?; 4 jeruk dan 5 buah lainnya
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur komposisi bilangan (number bonds), yang merupakan prinsip dasar dalam aritmatika awal.. Bukti: pasangan bilangan; 9 dipasangkan menjadi dua bilangan
+- Intended difficulty `classify/Easy`: Soal ini sangat sesuai untuk kelas 1 karena menggunakan representasi visual konkret (gambar) untuk mendukung pemahaman konsep pasangan bilangan (number bonds) yang merupakan materi standar.. Bukti: Temukan pasangan bilangan berikut; 4 jeruk; 5 buah lainnya
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung benda konkret sampai 10 dan pemahaman dasar tentang komposisi bilangan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi pasangan bilangan (number bonds) adalah kurikulum inti kelas 1. Soal ini menggunakan representasi visual yang membantu siswa, sehingga tingkat kesulitannya rendah. |
+
+Run 2 — solusi: Menghitung jumlah objek pada kotak kiri (4) dan kotak kanan (5), sehingga 9 dapat dipecah menjadi pasangan 4 dan 5.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi jumlah objek dalam dua kelompok yang berbeda dan menghubungkannya dengan konsep komposisi bilangan (pasangan bilangan). Ini adalah proses menerapkan pemahaman konsep bilangan ke situasi visual rutin.. Bukti: Temukan pasangan bilangan berikut; 4 jeruk dan 5 buah lainnya
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan bagian-keseluruhan (part-whole relationship) dalam bilangan, yang merupakan konsep dasar aritmatika.. Bukti: Bilangan 9 dipasangkan menjadi dua bilangan
+- Intended difficulty `classify/Easy`: Soal ini sangat sesuai untuk kelas 1 karena menggunakan representasi visual konkret (gambar objek) untuk mendukung pemahaman abstrak tentang pasangan bilangan. Prosedurnya langsung dan familiar.. Bukti: Temukan pasangan bilangan berikut; 4 jeruk; 5 buah lainnya
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang benda konkret sampai 10 dan memahami konsep penjumlahan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tugas memecah bilangan (number bonds) adalah kurikulum standar kelas 1. Penggunaan gambar membuat tugas ini mudah diakses. |
+
+Run 3 — solusi: Menghitung jumlah objek pada kotak kiri (4) dan kotak kanan (5), lalu memverifikasi bahwa 4 + 5 = 9.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi jumlah objek dalam dua kelompok visual dan menghubungkannya dengan konsep pasangan bilangan (number bond) untuk angka 9. Ini adalah penerapan konsep dasar penjumlahan.. Bukti: Temukan pasangan bilangan berikut; 4 jeruk dan 5 buah lainnya
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang komposisi bilangan (part-part-whole), yang merupakan konsep fundamental dalam aritmatika dasar.. Bukti: pasangan bilangan; 9 dipasangkan menjadi dua bilangan
+- Intended difficulty `classify/Easy`: Soal ini sangat sesuai untuk kelas 1 karena menggunakan representasi visual konkret untuk mendukung pemahaman abstrak tentang pasangan bilangan.. Bukti: 4 jeruk; 5 buah lainnya; 9 dipasangkan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung objek hingga 10 dan pemahaman dasar tentang penjumlahan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah latihan standar untuk kelas 1 mengenai dekomposisi bilangan menggunakan bantuan visual. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 74/256; truncation: `False`.
+Model membaca representation `metadata`; token input 116/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.003529; applying=0.996471; reasoning=0.000000 | applying | 0.996471 | 0.021343 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.077624; conceptual=0.913567; procedural=0.008809; metacognitive=0.000000 | conceptual | 0.913567 | 0.232754 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.842938; Medium=0.153543; Hard=0.003519 | Easy | 0.842938 | 0.411076 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.996471; −Σp ln(p) = 0.023448; H = 0.023448/ln(3) = 0.021343; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.913567; −Σp ln(p) = 0.322665; H = 0.322665/ln(4) = 0.232754; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.842938; −Σp ln(p) = 0.451613; H = 0.451613/ln(3) = 0.411076; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -761,16 +1081,16 @@ Pilihan: A. 5 dan 3
 B. 4 dan 4
 C. 3 dan 6
 D. 4 dan 5
-Transkripsi visual: -
+Transkripsi visual: Terdapat dua kotak berisi objek. Kotak kiri berisi 4 buah jeruk. Kotak kanan berisi 5 buah salak. Di bawahnya terdapat diagram pasangan bilangan (number bond) dengan angka 9 di lingkaran utama yang terhubung ke dua lingkaran kosong.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 8. Soal `ddae4518c6926e380356e576`
@@ -784,27 +1104,115 @@ Pasangkan dua bilangan yang jumlahnya 6. Bilangan berapa yang berpasangan dengan
 | C | 4 |
 | D | 1 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: 4 + x = 6, maka x = 2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `209e1846f8094d890ec9788ba369d7a66077a4e955b6c8a8dbdf9514b591a0b6`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `40068de1e3104dd5d5f2dce13b1742a9b41e3b4e32d17eb61a054f795d89758e`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 1316 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 1308 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 1327 |
+
+Run 1 — solusi: 4 + x = 6, maka x = 6 - 4 = 2.
+- Domain kognitif `classify/knowing`: Siswa diminta melakukan operasi penjumlahan dasar atau pengurangan untuk melengkapi pasangan bilangan, yang merupakan proses langsung dalam konteks kelas 1.. Bukti: Pasangkan dua bilangan yang jumlahnya 6; Bilangan berapa yang berpasangan dengan 4?
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang fakta dasar penjumlahan (number bonds) yang merupakan pengetahuan faktual tentang hubungan antar bilangan.. Bukti: jumlahnya 6; berpasangan dengan 4
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan satu operasi aritmatika sederhana dengan angka kecil (di bawah 10).. Bukti: jumlahnya 6; berpasangan dengan 4
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan pasangan bilangan (number bonds) hingga 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 yang menekankan penguasaan pasangan bilangan (number bonds) sebagai fondasi aritmatika. |
+
+Run 2 — solusi: Jumlah pasangan bilangan adalah 6. Jika salah satu bilangan adalah 4, maka 6 - 4 = 2.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep penjumlahan dasar untuk mencari pasangan bilangan yang memenuhi syarat jumlah tertentu (6). Ini adalah penerapan prosedur rutin.. Bukti: Pasangkan dua bilangan yang jumlahnya 6; Bilangan berapa yang berpasangan dengan 4?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antar bilangan (komposisi bilangan 6) yang merupakan pengetahuan konseptual dasar.. Bukti: jumlahnya 6; berpasangan dengan 4
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan satu operasi pengurangan atau penjumlahan sederhana untuk menemukan pasangan bilangan.. Bukti: jumlahnya 6; berpasangan dengan 4
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dan pengurangan dasar hingga 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD mengenai komposisi bilangan (number bonds) hingga 10. |
+
+Run 3 — solusi: Untuk mendapatkan jumlah 6, kita mencari bilangan x sehingga 4 + x = 6. Maka x = 6 - 4 = 2.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep penjumlahan dasar untuk menemukan pasangan bilangan yang membentuk jumlah tertentu (6). Ini adalah penerapan prosedur rutin.. Bukti: Pasangkan dua bilangan yang jumlahnya 6; Bilangan berapa yang berpasangan dengan 4?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antar bilangan (komposisi bilangan 6) yang merupakan pengetahuan konseptual dasar.. Bukti: jumlahnya 6; berpasangan dengan 4
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan satu operasi penjumlahan/pengurangan sederhana dengan angka kecil.. Bukti: Pasangkan dua bilangan yang jumlahnya 6; Bilangan berapa yang berpasangan dengan 4?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan pasangan bilangan hingga 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 yang menekankan pada pengenalan pasangan bilangan (number bonds) hingga 10. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 1, "applying": 2} | majority_2_of_3 / adjudicated | applying |
+| Dimensi pengetahuan | {"factual": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `2531`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa menerapkan prosedur rutin penjumlahan/pengurangan dasar untuk menemukan pasangan bilangan yang membentuk jumlah tertentu (6).
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang komposisi bilangan (number bonds), yang merupakan hubungan konseptual antar bilangan.
+- Intended difficulty `Easy`: Soal ini merupakan tugas rutin yang sangat mendasar untuk kelas 1, melibatkan satu operasi aritmatika sederhana dengan angka kecil.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dan pengurangan dasar hingga 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD mengenai penguasaan pasangan bilangan (number bonds) sebagai fondasi aritmatika. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -812,9 +1220,18 @@ Model membaca representation `metadata`; token input 61/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.999928; applying=0.000072; reasoning=0.000000 | knowing | 0.999928 | 0.000695 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.741863; conceptual=0.228809; procedural=0.029328; metacognitive=0.000000 | factual | 0.741863 | 0.477880 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.882585; Medium=0.115501; Hard=0.001913 | Easy | 0.882585 | 0.338169 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999928; −Σp ln(p) = 0.000763; H = 0.000763/ln(3) = 0.000695; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.741863; −Σp ln(p) = 0.662482; H = 0.662482/ln(4) = 0.477880; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.882585; −Σp ln(p) = 0.371516; H = 0.371516/ln(3) = 0.338169; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -836,9 +1253,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 9. Soal `ef1c6489a0d0caf13ccb067e`
@@ -1020,27 +1437,115 @@ Ada 4 anak bermain lompat tali. Datang lagi 2 anak untuk ikut bermain. Mereka be
 | C | 8 |
 | D | 4 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: 4 + 2 = 6
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `543cbc7d1e12c8d882ad7e98fbc0d77d0b2ef8a69606fff0c5b910530f96bc3e`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d5ffecf23fb2b9f68b0ebb04b5fe092e632969167daa48bbd8301ba26bc7a6da`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 1278 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 1294 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 1308 |
+
+Run 1 — solusi: 4 + 2 = 6
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan operasi penjumlahan dasar pada situasi cerita rutin yang diberikan.. Bukti: Ada 4 anak bermain lompat tali. Datang lagi 2 anak untuk ikut bermain.; Berapa jumlah anak sekarang?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi penjumlahan dasar untuk menyelesaikan masalah kontekstual.. Bukti: Ada 4 anak; Datang lagi 2 anak
+- Intended difficulty `classify/Easy`: Soal ini merupakan masalah penjumlahan satu langkah yang sangat familiar bagi siswa kelas 1 dengan konteks yang sederhana.. Bukti: Ada 4 anak; Datang lagi 2 anak; Berapa jumlah anak sekarang?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan pengenalan angka 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 untuk operasi penjumlahan dasar dalam konteks cerita sehari-hari. |
+
+Run 2 — solusi: 4 anak + 2 anak = 6 anak.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan operasi penjumlahan dasar pada situasi cerita yang rutin dan langsung.. Bukti: Ada 4 anak bermain lompat tali. Datang lagi 2 anak untuk ikut bermain.; Berapa jumlah anak sekarang?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep penjumlahan sebagai penggabungan dua kelompok benda (anak).. Bukti: Ada 4 anak bermain lompat tali. Datang lagi 2 anak untuk ikut bermain.
+- Intended difficulty `classify/Easy`: Soal ini merupakan masalah penjumlahan satu langkah yang sangat familiar bagi siswa kelas 1 dengan angka kecil.. Bukti: Ada 4 anak bermain lompat tali. Datang lagi 2 anak untuk ikut bermain.; Berapa jumlah anak sekarang?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan pengenalan angka 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD untuk materi penjumlahan dasar dalam konteks cerita sederhana. |
+
+Run 3 — solusi: 4 anak awal + 2 anak yang datang = 6 anak.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan operasi penjumlahan dasar pada situasi cerita rutin yang sangat sederhana.. Bukti: Ada 4 anak bermain lompat tali. Datang lagi 2 anak; Berapa jumlah anak sekarang?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep penjumlahan sebagai penggabungan dua kelompok benda (anak).. Bukti: Ada 4 anak; Datang lagi 2 anak; jumlah anak sekarang
+- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur penjumlahan satu langkah yang sangat familiar bagi siswa kelas 1, dengan beban kognitif rendah.. Bukti: 4 anak; Datang lagi 2 anak; Berapa jumlah anak sekarang?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan membilang sampai 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 untuk operasi penjumlahan dasar dalam konteks cerita sehari-hari. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `2457`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa diminta menerapkan operasi penjumlahan dasar pada situasi cerita rutin yang sangat sederhana.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konsep penjumlahan sebagai penggabungan dua kelompok benda (anak).
+- Intended difficulty `Easy`: Soal ini merupakan masalah penjumlahan satu langkah yang sangat familiar bagi siswa kelas 1 dengan konteks yang sederhana dan angka kecil.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan pengenalan angka 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 untuk operasi penjumlahan dasar dalam konteks cerita sehari-hari. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1048,9 +1553,18 @@ Model membaca representation `metadata`; token input 70/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.841757; applying=0.158243; reasoning=0.000000 | knowing | 0.841757 | 0.397542 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.539800; conceptual=0.449691; procedural=0.010510; metacognitive=0.000000 | factual | 0.539800 | 0.533858 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.856081; Medium=0.141014; Hard=0.002905 | Easy | 0.856081 | 0.387969 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.841757; −Σp ln(p) = 0.436745; H = 0.436745/ln(3) = 0.397542; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.539800; −Σp ln(p) = 0.740084; H = 0.740084/ln(4) = 0.533858; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.856081; −Σp ln(p) = 0.426227; H = 0.426227/ln(3) = 0.387969; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -1074,9 +1588,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 11. Soal `bfe710d81f98780c622d6066`
@@ -1735,27 +2249,115 @@ Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan un
 | C | 2 |
 | D | 7 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: 9 - x = 7, maka x = 9 - 7 = 2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e69bfbbb915266dc2802de5c5fac0f94f9a35c017ce9629399639880be5b69ea`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6657e5a7dd374fc5a9e591aecdccfe82c5b50bccde64092b3db398bb05cefd79`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 1257 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 1259 |
+| 3 | success | valid / verified | knowing | factual | Easy | 1248 |
+
+Run 1 — solusi: 9 - x = 7, maka x = 9 - 7 = 2.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melengkapi operasi pengurangan dasar yang melibatkan fakta pengurangan sederhana, yang merupakan proses langsung.. Bukti: 9 - ... = 7
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang hubungan antara angka dalam operasi pengurangan dasar (fakta pengurangan).. Bukti: 9 - ... = 7
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, menggunakan angka kecil di bawah 10, dan merupakan prosedur rutin yang familiar bagi siswa kelas 1.. Bukti: 9 - ... = 7
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan bilangan 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini sesuai dengan standar kelas 1 untuk pengenalan operasi pengurangan dasar dengan angka kecil. |
+
+Run 2 — solusi: 9 - x = 7, maka x = 9 - 7 = 2.
+- Domain kognitif `classify/knowing`: Siswa diminta melakukan operasi pengurangan dasar untuk mencari nilai yang hilang (missing subtrahend), yang merupakan proses rutin dalam aritmatika dasar.. Bukti: 9 - ... = 7
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang hubungan antara angka dalam operasi pengurangan dasar.. Bukti: 9 - ... = 7
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan satu langkah operasi pengurangan sederhana yang familiar bagi siswa kelas 1.. Bukti: 9 - ... = 7
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan sampai 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 yang menekankan penguasaan fakta dasar pengurangan. |
+
+Run 3 — solusi: 9 - 2 = 7
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan operasi pengurangan dasar atau mencari selisih antara 9 dan 7 untuk melengkapi kalimat matematika tersebut.. Bukti: 9 - ... = 7
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang fakta dasar pengurangan dan hubungan antara angka-angka dalam operasi pengurangan.. Bukti: 9 - ... = 7
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan operasi pengurangan satu digit yang familiar bagi siswa kelas 1, dengan beban kognitif yang rendah.. Bukti: 9 - ... = 7
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan sampai 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 yang fokus pada pengenalan operasi pengurangan dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"factual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `2358`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa diminta untuk melengkapi operasi pengurangan dasar dengan mencari nilai yang hilang (missing subtrahend). Ini adalah proses langsung yang mengandalkan fakta pengurangan dasar.
+- Dimensi pengetahuan `procedural`: Soal ini menguji penguasaan fakta pengurangan dasar dan hubungan antar angka dalam operasi pengurangan, yang merupakan pengetahuan prosedural dasar.
+- Intended difficulty `Easy`: Soal ini sangat mendasar, melibatkan satu langkah operasi pengurangan sederhana yang familiar bagi siswa kelas 1, dengan beban kognitif yang rendah.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan sampai 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 yang menekankan penguasaan fakta dasar pengurangan. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1763,9 +2365,18 @@ Model membaca representation `metadata`; token input 59/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.999688; applying=0.000312; reasoning=0.000000 | knowing | 0.999688 | 0.002579 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.665510; conceptual=0.288354; procedural=0.046135; metacognitive=0.000000 | factual | 0.665510 | 0.556523 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.897543; Medium=0.100066; Hard=0.002390 | Easy | 0.897543 | 0.311113 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999688; −Σp ln(p) = 0.002834; H = 0.002834/ln(3) = 0.002579; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.665510; −Σp ln(p) = 0.771504; H = 0.771504/ln(4) = 0.556523; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.897543; −Σp ln(p) = 0.341793; H = 0.341793/ln(3) = 0.311113; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -1787,9 +2398,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 16. Soal `91118c063eea5c139d44fcfe`
@@ -1970,27 +2581,115 @@ Isilah titik-titik di bawah ini.<br><br> 6 – 4 = .... . Tulis hasil penguranga
 | C | 6 |
 | D | 3 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: 6 - 4 = 2
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8c8ee6ef1826b625d07900b4b96792702edfaa04425f7d03e4c40d071d46f0ce`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `835f811062828a40c317f03ace17b2abc7bb05f5af01135f575237879175a5b3`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 1240 |
+| 2 | success | valid / verified | knowing | factual | Easy | 1254 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 1216 |
+
+Run 1 — solusi: 6 dikurangi 4 sama dengan 2.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan operasi pengurangan dasar yang sudah dipelajari, yang merupakan proses langsung.. Bukti: 6 – 4 = ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang fakta dasar pengurangan (fakta aritmatika).. Bukti: 6 – 4 = ....
+- Intended difficulty `classify/Easy`: Soal ini merupakan operasi pengurangan satu digit yang sangat mendasar dan rutin bagi siswa kelas 1.. Bukti: 6 – 4 = ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan bilangan 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi pengurangan 6-4 adalah materi standar kelas 1 yang bersifat prosedural langsung tanpa memerlukan strategi kompleks. |
+
+Run 2 — solusi: 6 dikurangi 4 sama dengan 2.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan operasi pengurangan dasar yang sudah dipelajari, yang merupakan proses langsung.. Bukti: 6 – 4 = ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman terhadap fakta dasar pengurangan (operasi aritmatika dasar).. Bukti: 6 – 4 = ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan satu operasi pengurangan satu digit yang familiar bagi siswa kelas 1.. Bukti: 6 – 4 = ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta bilangan 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 yang baru mulai mempelajari pengurangan bilangan di bawah 10. |
+
+Run 3 — solusi: 6 dikurangi 4 sama dengan 2.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa melakukan operasi pengurangan dasar secara langsung, yang termasuk dalam kategori knowing.. Bukti: 6 – 4 = ....
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan prosedur pengurangan dasar untuk menyelesaikan soal.. Bukti: 6 – 4 = ....
+- Intended difficulty `classify/Easy`: Soal ini merupakan operasi pengurangan satu digit yang sangat mendasar dan familiar bagi siswa kelas 1.. Bukti: 6 – 4 = ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan bilangan 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi pengurangan 6-4 adalah materi standar kelas 1 yang bersifat rutin dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"factual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `2262`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Soal ini meminta siswa melakukan operasi pengurangan dasar secara langsung tanpa memerlukan strategi atau pemecahan masalah yang kompleks.
+- Dimensi pengetahuan `procedural`: Siswa perlu menerapkan prosedur pengurangan dasar untuk mendapatkan hasil.
+- Intended difficulty `Easy`: Soal ini adalah operasi aritmatika dasar satu digit yang sangat rutin dan familiar bagi siswa kelas 1.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan bilangan 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi pengurangan 6-4 adalah materi standar kelas 1 yang bersifat rutin dan langsung. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1998,9 +2697,18 @@ Model membaca representation `metadata`; token input 71/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.999457; applying=0.000543; reasoning=0.000000 | knowing | 0.999457 | 0.004213 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.693774; conceptual=0.160236; procedural=0.145990; metacognitive=0.000000 | factual | 0.693774 | 0.597258 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.915849; Medium=0.081123; Hard=0.003028 | Easy | 0.915849 | 0.274739 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999457; −Σp ln(p) = 0.004629; H = 0.004629/ln(3) = 0.004213; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.693774; −Σp ln(p) = 0.827975; H = 0.827975/ln(4) = 0.597258; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.915849; −Σp ln(p) = 0.301832; H = 0.301832/ln(3) = 0.274739; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -2024,9 +2732,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 18. Soal `dde0b5654f117861d23c7988`
@@ -2040,27 +2748,93 @@ Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan un
 | C | 6 |
 | D | 5 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: 9 dikurangi 3 sama dengan 6. Menggunakan garis bilangan: mulai dari 9, mundur 3 langkah ke kiri (8, 7, 6).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `aba0a211ca4c61f8fcd0d4ff83d32c10a32c7e60b62bd2f05225d953c9fcf005`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `95acbbfd9c8e3f1fed341b3ff0b32ca584a67d6fca30ce5fd142dfd51e265df0`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 1282 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 1264 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 1254 |
+
+Run 1 — solusi: 9 dikurangi 3 sama dengan 6. Menggunakan garis bilangan: mulai dari 9, mundur 3 langkah ke kiri (8, 7, 6).
+- Domain kognitif `classify/knowing`: Siswa diminta melakukan operasi pengurangan dasar yang merupakan prosedur rutin dan langsung.. Bukti: Hitunglah. 9 – 3 =
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau teknik pengurangan dasar.. Bukti: 9 – 3 =
+- Intended difficulty `classify/Easy`: Soal ini merupakan operasi pengurangan satu digit yang sangat mendasar dan familiar bagi siswa kelas 1.. Bukti: 9 – 3 =
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan urutan bilangan 0-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi pengurangan 9-3 adalah standar kompetensi dasar kelas 1 SD. |
+
+Run 2 — solusi: 9 dikurangi 3 sama dengan 6. Menggunakan garis bilangan: mulai dari 9, mundur 3 langkah (8, 7, 6), berhenti di 6.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan operasi pengurangan dasar yang merupakan prosedur rutin dan langsung.. Bukti: Hitunglah. 9 – 3 =
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji kemampuan siswa dalam melakukan algoritma pengurangan dasar.. Bukti: 9 – 3 =
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan operasi satu langkah dengan angka kecil.. Bukti: 9 – 3 =
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan penggunaan garis bilangan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi pengurangan dalam rentang 10 adalah materi standar kelas 1 yang bersifat prosedural langsung. |
+
+Run 3 — solusi: 9 dikurangi 3 sama dengan 6.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan operasi pengurangan dasar yang merupakan prosedur rutin.. Bukti: Hitunglah. 9 – 3 =
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji kemampuan prosedural dasar dalam melakukan operasi pengurangan.. Bukti: 9 – 3 =
+- Intended difficulty `classify/Easy`: Soal ini adalah operasi pengurangan satu digit yang sangat mendasar dan familiar bagi siswa kelas 1.. Bukti: 9 – 3 =
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan pengenalan angka 0-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi pengurangan 9-3 adalah standar kompetensi dasar kelas 1. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2068,9 +2842,18 @@ Model membaca representation `metadata`; token input 66/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.999282; applying=0.000718; reasoning=0.000000 | knowing | 0.999282 | 0.005383 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.885192; conceptual=0.055372; procedural=0.059435; metacognitive=0.000000 | factual | 0.885192 | 0.314477 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.930516; Medium=0.067243; Hard=0.002241 | Easy | 0.930516 | 0.238667 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999282; −Σp ln(p) = 0.005914; H = 0.005914/ln(3) = 0.005383; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.885192; −Σp ln(p) = 0.435958; H = 0.435958/ln(4) = 0.314477; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.930516; −Σp ln(p) = 0.262202; H = 0.262202/ln(3) = 0.238667; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -2094,9 +2877,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 19. Soal `b32a5eeea2898efe65526fe5`
@@ -2255,27 +3038,115 @@ Isilah titik-titik di bawah ini.<br><br>2 + 6 = ....
 | C | 9 |
 | D | 8 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: 2 + 6 = 8
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c25499890891f690a4b418ceb036b0654e7265713dbe1afcc396d6e20405d369`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e59716108118ba012471da0433065edb7f88876dde2a106c07d6b59230d383f7`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 1224 |
+| 2 | success | valid / verified | knowing | factual | Easy | 1224 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 1237 |
+
+Run 1 — solusi: 2 + 6 = 8
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan operasi penjumlahan dasar satu digit yang merupakan proses langsung.. Bukti: 2 + 6 = ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang fakta dasar penjumlahan (fakta aritmatika).. Bukti: 2 + 6 = ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan prosedur familiar satu langkah tanpa kompleksitas tambahan.. Bukti: 2 + 6 = ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan pengenalan angka 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD untuk pengenalan operasi penjumlahan dasar. |
+
+Run 2 — solusi: 2 + 6 = 8
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan operasi penjumlahan dasar satu digit yang bersifat langsung dan rutin.. Bukti: 2 + 6 = ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang fakta dasar penjumlahan (fakta aritmatika).. Bukti: 2 + 6 = ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan operasi penjumlahan satu digit yang merupakan prosedur familiar bagi siswa kelas 1.. Bukti: 2 + 6 = ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan pengenalan angka 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi penjumlahan 2+6 adalah standar kurikulum kelas 1 awal yang bersifat rutin dan tidak memerlukan strategi kompleks. |
+
+Run 3 — solusi: 2 + 6 = 8
+- Domain kognitif `classify/knowing`: Soal meminta siswa melakukan operasi penjumlahan dasar secara langsung tanpa memerlukan strategi kompleks atau penalaran mendalam.. Bukti: 2 + 6 = ....
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritma penjumlahan dasar yang sudah dipelajari sebagai prosedur rutin.. Bukti: 2 + 6 = ....
+- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur aritmatika dasar yang sangat familiar bagi siswa kelas 1, hanya melibatkan satu langkah operasi tanpa kendala tambahan.. Bukti: 2 + 6 = ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan fakta bilangan 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi penjumlahan satu digit adalah standar kompetensi dasar kelas 1 yang bersifat rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"factual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | factual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `2256`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Soal ini meminta siswa melakukan operasi penjumlahan dasar satu digit secara langsung, yang merupakan proses mengingat fakta aritmatika atau prosedur yang sangat rutin.
+- Dimensi pengetahuan `factual`: Soal ini menguji fakta dasar penjumlahan (fakta aritmatika) yang harus dikuasai siswa kelas 1.
+- Intended difficulty `Easy`: Soal ini adalah prosedur aritmatika satu langkah yang sangat familiar dan rutin bagi siswa kelas 1, dengan beban kognitif yang rendah.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan pengenalan angka 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi penjumlahan 2+6 adalah standar kurikulum kelas 1 awal yang bersifat rutin dan mendasar. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2283,9 +3154,18 @@ Model membaca representation `metadata`; token input 65/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.999968; applying=0.000032; reasoning=0.000000 | knowing | 0.999968 | 0.000329 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.616499; conceptual=0.348460; procedural=0.035041; metacognitive=0.000000 | factual | 0.616499 | 0.564807 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.900719; Medium=0.097314; Hard=0.001967 | Easy | 0.900719 | 0.303254 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999968; −Σp ln(p) = 0.000361; H = 0.000361/ln(3) = 0.000329; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.616499; −Σp ln(p) = 0.782989; H = 0.782989/ln(4) = 0.564807; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.900719; −Σp ln(p) = 0.333159; H = 0.333159/ln(3) = 0.303254; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -2309,9 +3189,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "factual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 21. Soal `63d056eda46964278255c543`
@@ -2640,37 +3520,112 @@ Apa bentuk dari gambar berikut?
 ![Gambar sumber soal 23](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0134-03.png>)
 
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0134-03.png. Transkripsi visual: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Gambar memiliki tiga sisi lurus dan tiga sudut, yang merupakan ciri khas dari bentuk segitiga.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0134-03.png. Transkripsi visual: Gambar menunjukkan sebuah bangun datar berwarna ungu dengan tiga sisi lurus dan tiga sudut, yang secara geometris merupakan segitiga.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `88c0c04d66c7a48f680c9cc89217f37588da950474a0b9fa73a9f03f7fd5b80f`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cf0be1293ee3cfb1d576b73a203b2ddeaf75ab981c91802b291171180fd58330`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 2432 |
+| 2 | success | valid / verified | knowing | factual | Easy | 2455 |
+| 3 | success | valid / verified | knowing | factual | Easy | 2445 |
+
+Run 1 — solusi: Gambar memiliki tiga sisi lurus dan tiga sudut, yang merupakan ciri khas dari bentuk segitiga.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan mengidentifikasi bentuk geometris dasar (segitiga) dari representasi visual yang diberikan. Ini adalah proses pengenalan langsung.. Bukti: Apa bentuk dari gambar berikut?; Gambar menunjukkan sebuah bangun datar berwarna ungu dengan tiga sisi lurus dan tiga sudut
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang nama-nama bentuk dasar (segitiga) dan pengenalan visual terhadap bentuk tersebut.. Bukti: Apa bentuk dari gambar berikut?
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan pengenalan bentuk visual sederhana tanpa langkah prosedural yang kompleks.. Bukti: Apa bentuk dari gambar berikut?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal nama-nama bangun datar dasar (segitiga, segi empat, lingkaran). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 1 diharapkan sudah mampu mengidentifikasi bentuk dasar seperti segitiga secara visual. |
+
+Run 2 — solusi: Gambar memiliki tiga sisi lurus dan tiga sudut, yang merupakan definisi visual dari segitiga.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan mengidentifikasi bentuk geometris dasar (segitiga) berdasarkan atribut visual langsung.. Bukti: Apa bentuk dari gambar berikut?; Gambar menunjukkan sebuah bangun datar berwarna ungu dengan tiga sisi lurus dan tiga sudut
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang nama-nama bentuk dasar (segitiga).. Bukti: Apa bentuk dari gambar berikut?; Gambar menunjukkan sebuah bangun datar berwarna ungu dengan tiga sisi lurus dan tiga sudut
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan visual langsung terhadap bentuk geometri yang umum diajarkan di kelas 1.. Bukti: Apa bentuk dari gambar berikut?; Gambar menunjukkan sebuah bangun datar berwarna ungu dengan tiga sisi lurus dan tiga sudut
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk-bentuk dasar (segitiga, lingkaran, segi empat). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya menuntut pengenalan visual bentuk dasar tanpa operasi atau analisis kompleks. |
+
+Run 3 — solusi: Gambar memiliki tiga sisi lurus dan tiga sudut, yang merupakan definisi visual dari segitiga.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan mengidentifikasi bentuk geometris dasar (segitiga) berdasarkan atribut visual langsung.. Bukti: Apa bentuk dari gambar berikut?; Gambar menunjukkan sebuah bangun datar berwarna ungu dengan tiga sisi lurus dan tiga sudut
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang nama-nama bentuk bangun datar dasar.. Bukti: Apa bentuk dari gambar berikut?; Gambar menunjukkan sebuah bangun datar berwarna ungu dengan tiga sisi lurus dan tiga sudut
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan visual langsung terhadap bentuk geometri standar yang diajarkan di kelas 1.. Bukti: Apa bentuk dari gambar berikut?; Gambar menunjukkan sebuah bangun datar berwarna ungu dengan tiga sisi lurus dan tiga sudut
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal nama-nama bangun datar dasar (segitiga, segi empat, lingkaran). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD yang fokus pada pengenalan bentuk bangun datar sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"factual": 3} | unanimous_3_0 / unanimous | factual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 57/256; truncation: `False`.
+Model membaca representation `metadata`; token input 78/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.986166; applying=0.013834; reasoning=0.000000 | knowing | 0.986166 | 0.066409 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.846495; conceptual=0.149835; procedural=0.003670; metacognitive=0.000000 | factual | 0.846495 | 0.321770 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.896061; Medium=0.101122; Hard=0.002817 | Easy | 0.896061 | 0.315485 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.986166; −Σp ln(p) = 0.072958; H = 0.072958/ln(3) = 0.066409; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.846495; −Σp ln(p) = 0.446068; H = 0.446068/ln(4) = 0.321770; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.896061; −Σp ln(p) = 0.346596; H = 0.346596/ln(3) = 0.315485; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -2685,16 +3640,16 @@ Pilihan: A. Bentuk bintang
 B. Segi empat
 C. Segitiga
 D. Bentuk lengkung
-Transkripsi visual: -
+Transkripsi visual: Gambar menunjukkan sebuah bangun datar berwarna ungu dengan tiga sisi lurus dan tiga sudut, yang secara geometris merupakan segitiga.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "factual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 24. Soal `83dd4d12892fc170e56f4e1b`
@@ -2866,37 +3821,134 @@ Pilih jawaban yang benar. Bangun yang satu kelompok dengan gambar di atas.
 ![Gambar sumber soal 25](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0143-05.png>)
 
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0143-05.png. Transkripsi visual: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Ketiga gambar acuan adalah segitiga. Pilihan B adalah satu-satunya segitiga, sehingga termasuk dalam kelompok yang sama berdasarkan bentuk.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0143-05.png. Transkripsi visual: Terdapat tiga bangun datar di dalam kotak: segitiga siku-siku berwarna ungu, segitiga sama kaki berwarna oranye, dan segitiga sama kaki yang lebih tinggi berwarna merah muda. Ketiganya memiliki bentuk dasar segitiga namun berbeda warna dan ukuran.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4843635a3ce1ce4733ab943370829f0690fd516e1b19e3a19c2c5f663e8a753e`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3ea66dc81c2f32ec95e120e20f7d66a8c4015760c512915e0176141242fadb8a`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2566 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 2575 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2551 |
+
+Run 1 — solusi: Ketiga gambar acuan adalah segitiga. Pilihan B adalah satu-satunya segitiga, sehingga termasuk dalam kelompok yang sama berdasarkan bentuk.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi atribut pembeda (bentuk) dan mengabaikan atribut pengecoh (warna/ukuran) untuk mengklasifikasikan objek ke dalam kelompok yang benar.. Bukti: Bangun yang satu kelompok dengan gambar di atas; Ketiga bangun acuan... sama-sama berbentuk segitiga
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang klasifikasi bangun datar berdasarkan sifat geometris (bentuk) daripada atribut visual permukaan (warna).. Bukti: Mengelompokkan Benda; sama-sama berbentuk segitiga
+- Intended difficulty `classify/Easy`: Soal ini menuntut siswa untuk melakukan abstraksi bentuk sederhana. Meskipun ada pengecoh warna, konsep segitiga adalah materi dasar kelas 1.. Bukti: Bangun yang satu kelompok dengan gambar di atas; Ketiga bangun acuan (ungu, oranye, merah muda) sama-sama berbentuk segitiga
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk dasar bangun datar (segitiga). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 1 sudah diajarkan untuk mengelompokkan benda berdasarkan ciri fisik. Membedakan bentuk dari warna adalah tugas rutin pada tingkat ini. |
+
+Run 2 — solusi: Ketiga gambar acuan adalah segitiga. Pilihan B adalah satu-satunya segitiga, sehingga termasuk dalam kelompok yang sama berdasarkan bentuk.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi atribut pembeda (bentuk) di antara berbagai atribut (warna, ukuran) untuk mengelompokkan objek. Ini melibatkan penerapan konsep klasifikasi bangun datar.. Bukti: Bangun yang satu kelompok dengan gambar di atas; Ketiga bangun acuan... sama-sama berbentuk segitiga
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang atribut bangun datar (segitiga) sebagai dasar pengelompokan, bukan sekadar menghafal fakta.. Bukti: Mengelompokkan Benda; sama-sama berbentuk segitiga
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium untuk kelas 1 karena siswa harus mengabaikan distraktor visual yang kuat (warna) dan fokus pada atribut bentuk yang konsisten di antara tiga contoh yang berbeda ukuran dan orientasi.. Bukti: Mengelompokkan Benda; tiga buah bangun datar... warna dan ukurannya berbeda
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk dasar segitiga dan kemampuan membedakan atribut objek (warna vs bentuk). |
+| dependentSteps | 2 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Untuk kelas 1, kemampuan mengabstraksi bentuk di tengah variasi warna dan ukuran adalah tantangan kognitif yang sesuai untuk tingkat menengah. |
+
+Run 3 — solusi: Ketiga gambar acuan adalah segitiga dengan warna dan ukuran berbeda. Maka, kelompok tersebut didasarkan pada bentuk (segitiga). Opsi B adalah satu-satunya segitiga.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi atribut pembeda (bentuk vs warna) untuk mengelompokkan objek. Ini melibatkan penerapan konsep klasifikasi bentuk.. Bukti: Bangun yang satu kelompok dengan gambar di atas; Ketiga bangun acuan... sama-sama berbentuk segitiga
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip klasifikasi berdasarkan atribut bentuk, mengabaikan atribut irelevan seperti warna atau ukuran.. Bukti: Mengelompokkan Benda; sama-sama berbentuk segitiga meski warna dan ukurannya berbeda
+- Intended difficulty `classify/Easy`: Soal ini menuntut siswa kelas 1 untuk melakukan abstraksi bentuk sederhana. Ini adalah tugas rutin dalam kurikulum awal.. Bukti: Mengelompokkan Benda; tiga bangun acuan... sama-sama berbentuk segitiga
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk dasar (segitiga) dan kemampuan membedakan atribut objek (warna vs bentuk). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena menguji kemampuan klasifikasi dasar yang merupakan kompetensi inti geometri awal. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 2, "Medium": 1} | majority_2_of_3 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3921`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengidentifikasi atribut pembeda (bentuk) dan mengabaikan atribut pengecoh (warna/ukuran) untuk mengklasifikasikan objek ke dalam kelompok yang benar.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang klasifikasi bangun datar berdasarkan sifat geometris (bentuk) daripada atribut visual permukaan (warna).
+- Intended difficulty `Easy`: Soal ini menuntut siswa kelas 1 untuk melakukan abstraksi bentuk sederhana. Meskipun ada pengecoh warna, konsep segitiga adalah materi dasar kelas 1.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk dasar bangun datar (segitiga). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 1 sudah diajarkan untuk mengelompokkan benda berdasarkan ciri fisik. Membedakan bentuk dari warna adalah tugas rutin pada tingkat ini. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 70/256; truncation: `False`.
+Model membaca representation `metadata`; token input 112/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.002169; applying=0.997831; reasoning=0.000000 | applying | 0.997831 | 0.014081 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.418030; conceptual=0.575849; procedural=0.006121; metacognitive=0.000000 | conceptual | 0.575849 | 0.514766 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.873393; Medium=0.124150; Hard=0.002457 | Easy | 0.873393 | 0.356816 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.997831; −Σp ln(p) = 0.015469; H = 0.015469/ln(3) = 0.014081; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.575849; −Σp ln(p) = 0.713618; H = 0.713618/ln(4) = 0.514766; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.873393; −Σp ln(p) = 0.392002; H = 0.392002/ln(3) = 0.356816; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -2911,16 +3963,16 @@ Pilihan: A. Persegi panjang berwarna ungu
 B. Segitiga terbalik berwarna ungu
 C. Persegi berwarna ungu
 D. Oval berwarna ungu
-Transkripsi visual: -
+Transkripsi visual: Terdapat tiga bangun datar di dalam kotak: segitiga siku-siku berwarna ungu, segitiga sama kaki berwarna oranye, dan segitiga sama kaki yang lebih tinggi berwarna merah muda. Ketiganya memiliki bentuk dasar segitiga namun berbeda warna dan ukuran.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 26. Soal `7bde28fb9ff374327ad9c3ae`
@@ -2937,37 +3989,112 @@ Bangun yang satu warna dengan gambar di atas.
 ![Gambar sumber soal 26](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0144-00.png>)
 
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0144-00.png. Transkripsi visual: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Gambar acuan berisi bangun-bangun berwarna merah muda. Pilihan D adalah satu-satunya bangun yang berwarna merah muda, sehingga sesuai dengan kriteria warna.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0144-00.png. Transkripsi visual: Terdapat kotak berisi tiga bangun datar berwarna merah muda: persegi panjang, segitiga siku-siku, dan persegi panjang vertikal. Di bawahnya terdapat tiga pilihan bangun: segitiga terbalik berwarna merah muda, persegi berwarna ungu, dan oval berwarna hijau.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e483808428b8b4e4d5d873472db0917eca372d133b6f07d9dba09789a8f76eb1`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d7d5a29d7aa50223a7b8e662b6fbc06eb39fdedb7fab88ffac5ffe33fe4ccadf`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2475 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2493 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2498 |
+
+Run 1 — solusi: Gambar acuan berisi bangun-bangun berwarna merah muda. Pilihan D adalah satu-satunya bangun yang berwarna merah muda, sehingga sesuai dengan kriteria warna.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali atribut warna (merah muda) dan mencocokkannya dengan pilihan yang tersedia. Ini adalah proses pengenalan visual langsung tanpa perlu strategi kompleks.. Bukti: Bangun yang satu warna dengan gambar di atas.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang atribut dasar benda (warna) sebagai kategori pengelompokan.. Bukti: Bangun yang satu warna dengan gambar di atas.
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan pengenalan atribut visual tunggal (warna) dengan pilihan yang jelas.. Bukti: Bangun yang satu warna dengan gambar di atas.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan warna dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan observasi visual sederhana untuk mengelompokkan benda berdasarkan satu atribut yang menonjol. |
+
+Run 2 — solusi: Tiga bangun di kotak atas berwarna merah muda. Pilihan D adalah satu-satunya bangun yang berwarna merah muda.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali atribut warna (merah muda) dari sekumpulan objek dan mencocokkannya dengan pilihan yang tersedia. Ini adalah proses pengenalan langsung.. Bukti: Bangun yang satu warna dengan gambar di atas.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang atribut warna sebagai dasar pengelompokan atau klasifikasi benda, yang merupakan pengetahuan konseptual dasar.. Bukti: Bangun yang satu warna dengan gambar di atas.
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, hanya melibatkan satu atribut visual (warna) tanpa distraktor yang rumit.. Bukti: Bangun yang satu warna dengan gambar di atas.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mampu membedakan warna dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya menuntut kemampuan observasi visual sederhana untuk mengelompokkan benda berdasarkan satu atribut fisik yang jelas. |
+
+Run 3 — solusi: Gambar acuan di dalam kotak semuanya berwarna merah muda. Pilihan D adalah satu-satunya bangun yang berwarna merah muda, sehingga sesuai dengan kriteria warna.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali atribut warna (merah muda) dan mencocokkannya dengan pilihan yang tersedia. Ini adalah proses pengenalan visual langsung tanpa perlu strategi kompleks.. Bukti: Bangun yang satu warna dengan gambar di atas.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep atribut warna sebagai dasar pengelompokan benda.. Bukti: Bangun yang satu warna dengan gambar di atas.
+- Intended difficulty `classify/Easy`: Tugas ini sangat mendasar untuk kelas 1, melibatkan pengenalan atribut visual sederhana (warna) dengan satu kriteria yang jelas.. Bukti: Bangun yang satu warna dengan gambar di atas.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan warna dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan observasi visual sederhana untuk mengelompokkan benda berdasarkan satu atribut fisik yang menonjol. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 66/256; truncation: `False`.
+Model membaca representation `metadata`; token input 110/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.006266; applying=0.993734; reasoning=0.000000 | applying | 0.993734 | 0.034619 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.441449; conceptual=0.554535; procedural=0.004017; metacognitive=0.000000 | conceptual | 0.554535 | 0.512228 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.886667; Medium=0.110618; Hard=0.002716 | Easy | 0.886667 | 0.333370 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.993734; −Σp ln(p) = 0.038033; H = 0.038033/ln(3) = 0.034619; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.554535; −Σp ln(p) = 0.710098; H = 0.710098/ln(4) = 0.512228; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.886667; −Σp ln(p) = 0.366244; H = 0.366244/ln(3) = 0.333370; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -2982,16 +4109,16 @@ Pilihan: A. Persegi berwarna ungu
 B. Oval berwarna hijau
 C. Persegi panjang berwarna biru
 D. Segitiga terbalik berwarna merah muda
-Transkripsi visual: -
+Transkripsi visual: Terdapat kotak berisi tiga bangun datar berwarna merah muda: persegi panjang, segitiga siku-siku, dan persegi panjang vertikal. Di bawahnya terdapat tiga pilihan bangun: segitiga terbalik berwarna merah muda, persegi berwarna ungu, dan oval berwarna hijau.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 27. Soal `aaf396a280df35704272b0d3`
@@ -3008,37 +4135,134 @@ Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berap
 ![Gambar sumber soal 27](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png>)
 
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png. Transkripsi visual: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Identifikasi bentuk dengan sisi lengkung: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada badan (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png. Transkripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri. Bentuk dengan sisi lengkung terdiri dari: 1 lingkaran hitam kecil sebagai hidung, 1 lingkaran hitam kecil sebagai mata, 1 oval merah sebagai telinga, dan 2 lingkaran merah sebagai bercak pada badan. Total ada 5 bentuk dengan sisi lengkung.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a37bb22d388aceb1ce772d24c29f18062135ea70dfc416ae2353ea0b24ce3927`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c9dc178abbc569f53d8ecf37fcd4a14f0e3273f52844010895152a4e1daea702`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2520 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2551 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2552 |
+
+Run 1 — solusi: Identifikasi bentuk lengkung pada gambar: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada badan (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengenali dan menghitung objek berdasarkan atribut visual (bentuk lengkung) yang spesifik, yang merupakan proses pengenalan langsung.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap kategori bentuk geometri (lengkung vs tidak lengkung/poligon).. Bukti: Bentuk lengkung ada berapa?
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pengamatan visual langsung dan penghitungan sederhana (subitizing/counting) untuk siswa kelas 1.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan bentuk lengkung dan bentuk bersudut, serta kemampuan berhitung 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena fokus pada pengenalan bentuk dasar dan berhitung sederhana dalam konteks visual yang konkret. |
+
+Run 2 — solusi: Mengidentifikasi dan menghitung bentuk dengan sisi lengkung: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada badan (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi dan menghitung objek berdasarkan atribut visual (sisi lengkung) yang spesifik, yang merupakan proses pengenalan dan klasifikasi langsung.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang atribut bentuk (lengkung vs lurus) dan kemampuan mengkategorikan objek berdasarkan atribut tersebut.. Bukti: Bentuk lengkung ada berapa?
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pengamatan visual langsung dan penghitungan sederhana (counting) untuk siswa kelas 1, tanpa strategi kompleks.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan bentuk lengkung dan lurus, serta kemampuan berhitung 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tugas menghitung objek berdasarkan atribut visual adalah standar untuk kelas 1, dengan beban kognitif yang rendah. |
+
+Run 3 — solusi: Mengidentifikasi dan menghitung bentuk dengan sisi lengkung: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak di badan (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
+- Domain kognitif `classify/applying`: Siswa perlu mengenali atribut bentuk (lengkung vs lurus) dan melakukan penghitungan sederhana. Ini adalah proses applying karena menerapkan konsep klasifikasi bentuk pada situasi rutin.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami kategori bentuk (lengkung vs tidak lengkung) untuk mengklasifikasikan objek yang ada.. Bukti: Bentuk lengkung ada berapa?
+- Intended difficulty `classify/Easy`: Soal ini meminta siswa untuk membedakan atribut visual (lengkung) dari sekumpulan bentuk geometris. Ini adalah tugas rutin untuk kelas 1.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mampu membedakan bentuk dasar (lingkaran/oval vs persegi/persegi panjang) dan menghitung sampai 5. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tugas menghitung objek berdasarkan atribut visual adalah standar untuk kelas 1, dengan beban kognitif yang rendah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 2, "applying": 1} | majority_2_of_3 / adjudicated | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3940`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa diminta untuk mengenali dan menghitung objek berdasarkan atribut visual (bentuk lengkung) yang spesifik, yang merupakan proses pengenalan langsung.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman siswa terhadap kategori bentuk geometri (lengkung vs tidak lengkung/poligon).
+- Intended difficulty `Easy`: Soal ini tergolong mudah karena hanya memerlukan pengamatan visual langsung dan penghitungan sederhana (counting) untuk siswa kelas 1.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan bentuk lengkung dan bentuk bersudut, serta kemampuan berhitung 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena fokus pada pengenalan bentuk dasar dan berhitung sederhana dalam konteks visual yang konkret. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 63/256; truncation: `False`.
+Model membaca representation `metadata`; token input 116/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.002566; applying=0.997434; reasoning=0.000000 | applying | 0.997434 | 0.016266 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.398982; conceptual=0.564298; procedural=0.036720; metacognitive=0.000000 | conceptual | 0.564298 | 0.584879 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.851136; Medium=0.145555; Hard=0.003309 | Easy | 0.851136 | 0.397411 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.997434; −Σp ln(p) = 0.017870; H = 0.017870/ln(3) = 0.016266; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.564298; −Σp ln(p) = 0.810814; H = 0.810814/ln(4) = 0.584879; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.851136; −Σp ln(p) = 0.436601; H = 0.436601/ln(3) = 0.397411; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3053,16 +4277,16 @@ Pilihan: A. 6
 B. 8
 C. 4
 D. 5
-Transkripsi visual: -
+Transkripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri. Bentuk dengan sisi lengkung terdiri dari: 1 lingkaran hitam kecil sebagai hidung, 1 lingkaran hitam kecil sebagai mata, 1 oval merah sebagai telinga, dan 2 lingkaran merah sebagai bercak pada badan. Total ada 5 bentuk dengan sisi lengkung.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 28. Soal `595d20d8c4a6f9418dc496b0`
@@ -3079,37 +4303,134 @@ Hitunglah banyaknya bentuk bangun pada gambar berikut. Segitiga ada berapa?
 ![Gambar sumber soal 28](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png>)
 
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png. Transkripsi visual: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Mengidentifikasi bentuk pada gambar: hanya ekor anjing yang memiliki tiga sisi lurus (segitiga). Jumlah segitiga = 1.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png. Transkripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri: kepala dan tubuh berbentuk persegi/persegi panjang, telinga berbentuk oval, mata dan bintik tubuh berbentuk lingkaran, kaki berbentuk persegi panjang, dan ekor berbentuk segitiga.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d42d8749fa7ba544250b1aa0b4b5a5e705274c150d716a27c9bff97cdd0b183f`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b0590ed47eb0abea4b5e1cf540638b492ed303832685851ec5e16ef01f4f1a78`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2512 |
+| 2 | success | valid / verified | knowing | factual | Easy | 2463 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2436 |
+
+Run 1 — solusi: Mengidentifikasi bentuk geometri pada gambar: kepala, tubuh, dan kaki adalah persegi/persegi panjang, telinga adalah oval, mata/bintik adalah lingkaran, dan hanya ekor yang memiliki tiga sisi lurus (segitiga). Jumlah segitiga = 1.
+- Domain kognitif `classify/applying`: Siswa perlu mengenali properti bentuk geometri (segitiga) dan membedakannya dari bentuk lain (persegi, lingkaran, oval) dalam komposisi gambar yang lebih kompleks.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Segitiga ada berapa?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang atribut yang mendefinisikan bentuk segitiga (tiga sisi lurus) dibandingkan dengan bentuk lain.. Bukti: Segitiga ada berapa?
+- Intended difficulty `classify/Easy`: Soal ini menuntut siswa untuk melakukan diskriminasi visual di antara berbagai bentuk yang digabungkan menjadi satu objek (anjing), yang merupakan tugas standar untuk kelas 1.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Segitiga ada berapa?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk dasar (segitiga, persegi, lingkaran). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 1 diharapkan mampu mengidentifikasi bentuk dasar dalam gambar komposit sederhana. |
+
+Run 2 — solusi: Mengidentifikasi bentuk segitiga pada gambar. Hanya ekor anjing yang memiliki bentuk segitiga. Jumlahnya adalah 1.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengenali dan menghitung bentuk geometri spesifik (segitiga) dari sekumpulan bentuk yang membentuk gambar anjing. Ini adalah proses pengenalan visual langsung.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Segitiga ada berapa?
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang ciri-ciri bentuk geometri dasar (segitiga) dan kemampuan untuk membedakannya dari bentuk lain (persegi, lingkaran, oval).. Bukti: Segitiga ada berapa?
+- Intended difficulty `classify/Easy`: Tugas ini sangat langsung bagi siswa kelas 1, hanya memerlukan pengenalan bentuk dasar dan penghitungan sederhana (1 objek).. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Segitiga ada berapa?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk geometri dasar (segitiga, lingkaran, persegi). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan identifikasi visual bentuk dasar tanpa operasi matematika kompleks. |
+
+Run 3 — solusi: Mengidentifikasi bentuk segitiga pada gambar: hanya ekor anjing yang berbentuk segitiga. Jumlah = 1.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengenali dan menghitung objek dengan properti geometris tertentu (segitiga) dari sekumpulan bentuk lain. Ini adalah proses pengenalan visual langsung.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Segitiga ada berapa?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang definisi dan karakteristik bentuk dasar (segitiga) dibandingkan dengan bentuk lain seperti lingkaran atau persegi.. Bukti: Segitiga ada berapa?
+- Intended difficulty `classify/Easy`: Tugas ini sangat langsung bagi siswa kelas 1, hanya memerlukan identifikasi visual satu bentuk spesifik di antara bentuk-bentuk dasar lainnya.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Segitiga ada berapa?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk-bentuk geometri dasar (segitiga, lingkaran, persegi). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena fokus pada pengenalan bentuk dasar dalam konteks visual sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 1, "knowing": 2} | majority_2_of_3 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 2, "factual": 1} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3747`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu melakukan diskriminasi visual untuk mengenali properti geometris segitiga di antara bentuk-bentuk lain (lingkaran, persegi, oval) dalam komposisi gambar. Ini adalah proses pengenalan dan penerapan kriteria bentuk.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang atribut yang mendefinisikan bentuk segitiga (tiga sisi) dibandingkan dengan bentuk geometri lainnya.
+- Intended difficulty `Easy`: Tugas ini sangat langsung bagi siswa kelas 1, hanya memerlukan pengenalan bentuk dasar dan penghitungan sederhana.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk geometri dasar (segitiga, lingkaran, persegi). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 1 diharapkan mampu mengidentifikasi bentuk dasar dalam gambar komposit sederhana tanpa operasi matematika kompleks. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 62/256; truncation: `False`.
+Model membaca representation `metadata`; token input 101/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.949543; applying=0.050457; reasoning=0.000000 | knowing | 0.949543 | 0.181919 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.466649; conceptual=0.515657; procedural=0.017694; metacognitive=0.000000 | conceptual | 0.515657 | 0.554415 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.867764; Medium=0.129412; Hard=0.002824 | Easy | 0.867764 | 0.367985 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.949543; −Σp ln(p) = 0.199858; H = 0.199858/ln(3) = 0.181919; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.515657; −Σp ln(p) = 0.768582; H = 0.768582/ln(4) = 0.554415; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.867764; −Σp ln(p) = 0.404273; H = 0.404273/ln(3) = 0.367985; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3124,16 +4445,16 @@ Pilihan: A. 8
 B. 0
 C. 1
 D. 2
-Transkripsi visual: -
+Transkripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri: kepala dan tubuh berbentuk persegi/persegi panjang, telinga berbentuk oval, mata dan bintik tubuh berbentuk lingkaran, kaki berbentuk persegi panjang, dan ekor berbentuk segitiga.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 29. Soal `4d125a6ed9a2701db41cdcd1`
@@ -3604,27 +4925,93 @@ Lengkapi urutan bilangan berikut.<br><br>20, ...., 18
 | C | 21 |
 | D | 17 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Urutan bilangan mundur dari 20 ke 18 adalah 20, 19, 18. Bilangan yang hilang adalah 19.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8451484d6a55d894bb4f646cb11d0a956810da4c10644b1dc2460364668cb20b`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `be4cda6dfe446ecbd86a0acbadda0ae520d3fc7972d0a1997680f7111438c7ab`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 1311 |
+| 2 | success | valid / verified | knowing | factual | Easy | 1281 |
+| 3 | success | valid / verified | knowing | factual | Easy | 1303 |
+
+Run 1 — solusi: Urutan bilangan mundur dari 20 ke 18 adalah 20, 19, 18. Bilangan yang hilang adalah 19.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan mundur sederhana dan mengisi satu angka yang hilang, yang merupakan proses langsung.. Bukti: Lengkapi urutan bilangan berikut. 20, ...., 18
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan (fakta dasar matematika) dalam rentang 1-20.. Bukti: 20, ...., 18
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan satu langkah pengisian angka dalam urutan mundur yang familiar.. Bukti: 20, ...., 18
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung mundur dari 20. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD mengenai pengenalan urutan bilangan hingga 20. |
+
+Run 2 — solusi: Urutan bilangan mundur dari 20 ke 18 adalah 20, 19, 18. Jadi, bilangan yang hilang adalah 19.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan mundur sederhana dan mengisi satu angka yang hilang, yang merupakan proses langsung.. Bukti: Lengkapi urutan bilangan berikut. 20, ...., 18
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan (fakta dasar matematika) dalam konteks menghitung mundur.. Bukti: Lengkapi urutan bilangan berikut. 20, ...., 18
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan prosedur menghitung mundur satu langkah yang sangat familiar.. Bukti: 20, ...., 18
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung mundur bilangan 1-20. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD untuk pengenalan urutan bilangan. |
+
+Run 3 — solusi: Urutan bilangan mundur dari 20 ke 18 adalah 20, 19, 18. Maka bilangan yang hilang adalah 19.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan mundur sederhana (20, 19, 18) yang merupakan proses langsung.. Bukti: Lengkapi urutan bilangan berikut. 20, ...., 18
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan (fakta dasar matematika) dalam konteks menghitung mundur.. Bukti: 20, ...., 18
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan satu langkah pengisian bilangan dalam urutan yang sangat familiar.. Bukti: 20, ...., 18
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung mundur bilangan 20-1. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 yang menekankan pengenalan urutan bilangan hingga 20. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"factual": 3} | unanimous_3_0 / unanimous | factual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3632,9 +5019,18 @@ Model membaca representation `metadata`; token input 61/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.999999; applying=0.000001; reasoning=0.000000 | knowing | 0.999999 | 0.000009 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.855945; conceptual=0.130357; procedural=0.013698; metacognitive=0.000000 | factual | 0.855945 | 0.330025 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.916232; Medium=0.081517; Hard=0.002250 | Easy | 0.916232 | 0.271466 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999999; −Σp ln(p) = 0.000010; H = 0.000010/ln(3) = 0.000009; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.855945; −Σp ln(p) = 0.457512; H = 0.457512/ln(4) = 0.330025; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.916232; −Σp ln(p) = 0.298235; H = 0.298235/ln(3) = 0.271466; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3658,9 +5054,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "factual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 33. Soal `fb13c7e49793c36315b9e324`
@@ -3677,37 +5073,112 @@ Isilah titik-titik dalam tabel. Lengkapi juga nilai tempatnya.<br><br>.... puluh
 ![Gambar sumber soal 33](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0175-03.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0175-03.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Gambar menunjukkan 1 kelompok berisi 10 telur (1 puluhan) dan 5 telur lepas (5 satuan), sehingga membentuk bilangan 15.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0175-03.png. Transkripsi visual: Gambar menunjukkan satu karton berisi 10 telur (dikelompokkan sebagai satu puluhan) dan 5 telur lepas (sebagai satuan). Terdapat tabel dengan kolom 'Puluhan' dan 'Satuan', serta kalimat rumpang '... puluhan dan ... satuan = ...'.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `61306683a0edc24150d1a8cb5178bccd1b30067d54baed477f0e772565c65b1e`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ce0161e57dcd5cdba352fad8bd7a31425378587b767320fc2f98faa108b5ba56`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2595 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2536 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2551 |
+
+Run 1 — solusi: Gambar menunjukkan 1 kelompok berisi 10 telur (1 puluhan) dan 5 telur lepas (5 satuan), sehingga membentuk bilangan 15.
+- Domain kognitif `classify/knowing`: Siswa diminta mengenali representasi visual (kelompok 10 dan satuan) dan menerjemahkannya langsung ke dalam format nilai tempat (puluhan dan satuan). Ini adalah proses pengenalan konsep dasar.. Bukti: Isilah titik-titik dalam tabel; 1 puluhan dan 5 satuan = 15
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana angka dibentuk melalui pengelompokan sepuluh (base-ten system) pada tingkat dasar.. Bukti: Nilai Tempat; 1 puluhan dan 5 satuan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, menggunakan representasi visual yang umum untuk kelas 1 (benda konkret dikelompokkan).. Bukti: Isilah titik-titik dalam tabel; 1 puluhan dan 5 satuan = 15
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang menghitung benda sampai 20 dan konsep pengelompokan sepuluh. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena menggunakan manipulatif visual (telur) untuk memperkenalkan konsep nilai tempat puluhan dan satuan secara konkret. |
+
+Run 2 — solusi: Gambar menunjukkan 1 kelompok berisi 10 telur (1 puluhan) dan 5 telur lepas (5 satuan), sehingga membentuk bilangan 15.
+- Domain kognitif `classify/knowing`: Siswa diminta mengenali dan mengelompokkan objek konkret ke dalam konsep nilai tempat (puluhan dan satuan) yang merupakan proses langsung.. Bukti: Isilah titik-titik dalam tabel. Lengkapi juga nilai tempatnya.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur nilai tempat (puluhan dan satuan) sebagai konsep dasar bilangan.. Bukti: .... puluhan dan .... satuan = ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, menggunakan representasi visual yang familiar dan prosedur pengelompokan yang rutin.. Bukti: 1 puluhan dan 5 satuan = 15
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang menghitung benda sampai 20 dan konsep pengelompokan sepuluh. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena menggunakan objek konkret (telur) untuk menjelaskan konsep abstrak nilai tempat. |
+
+Run 3 — solusi: Wadah berisi 10 telur dihitung sebagai 1 puluhan, dan 5 telur lepas dihitung sebagai 5 satuan. Jadi, 1 puluhan dan 5 satuan = 15.
+- Domain kognitif `classify/knowing`: Siswa diminta mengenali representasi visual (kelompok sepuluh dan satuan) dan memetakan jumlah tersebut ke dalam format nilai tempat yang sudah familiar.. Bukti: Isilah titik-titik dalam tabel. Lengkapi juga nilai tempatnya.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep dasar nilai tempat (puluhan dan satuan) sebagai struktur bilangan.. Bukti: .... puluhan dan .... satuan = ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, menggunakan representasi konkret yang umum (telur dalam wadah) untuk mengajarkan konsep nilai tempat.. Bukti: 1 puluhan dan 5 satuan = 15
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung benda hingga 20 dan memahami pengelompokan sepuluh. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena menggunakan objek konkret untuk memvisualisasikan konsep abstrak nilai tempat. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 99/256; truncation: `False`.
+Model membaca representation `metadata`; token input 152/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.000000; applying=1.000000; reasoning=0.000000 | applying | 1.000000 | 0.000000 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.001662; conceptual=0.985109; procedural=0.013228; metacognitive=0.000000 | conceptual | 0.985109 | 0.059609 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.775085; Medium=0.219548; Hard=0.005367 | Easy | 0.775085 | 0.508288 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000000; H = 0.000000/ln(3) = 0.000000; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.985109; −Σp ln(p) = 0.082635; H = 0.082635/ln(4) = 0.059609; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.775085; −Σp ln(p) = 0.558411; H = 0.558411/ln(3) = 0.508288; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3724,16 +5195,16 @@ Pilihan: A. 1 puluhan dan 5 satuan = 15
 B. 0 puluhan dan 15 satuan = 15
 C. 1 puluhan dan 6 satuan = 16
 D. 1 puluhan dan 4 satuan = 14
-Transkripsi visual: -
+Transkripsi visual: Gambar menunjukkan satu karton berisi 10 telur (dikelompokkan sebagai satu puluhan) dan 5 telur lepas (sebagai satuan). Terdapat tabel dengan kolom 'Puluhan' dan 'Satuan', serta kalimat rumpang '... puluhan dan ... satuan = ...'.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 34. Soal `daa41e2808537d493a6c0994`
@@ -3750,37 +5221,134 @@ Hitunglah dan isi tabelnya.<br><br>Nilai tempat 14 = .... puluhan dan .... satua
 ![Gambar sumber soal 34](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0175-04.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0175-04.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Angka 14 terdiri dari 1 kelompok sepuluh (1 puluhan) dan 4 satuan.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0175-04.png. Transkripsi visual: Gambar menunjukkan satu ikat pensil berisi 10 buah dan 4 pensil lepas di sampingnya. Terdapat tabel dengan kolom 'Puluhan' dan 'Satuan' yang harus diisi. Teks soal meminta untuk menentukan nilai tempat dari angka 14.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e1d6b3efb1b98365fcbe91dc0a04d24d8711117e404ae57ffecde17a44544423`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ac71205aa65564d67d8d073358f8194e5eeba65645fcebacd78f2782b85cdd15`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2476 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2503 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2494 |
+
+Run 1 — solusi: Angka 14 terdiri dari 1 puluhan (10) dan 4 satuan (4).
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan pemahaman konsep nilai tempat pada objek konkret yang sudah dikelompokkan (bundling 10). Ini adalah penerapan prosedur rutin.. Bukti: Nilai tempat 14 = .... puluhan dan .... satuan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur sistem bilangan desimal (nilai tempat), yang merupakan konsep dasar dalam matematika.. Bukti: Nilai tempat 14
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, menggunakan representasi visual yang jelas (bundling) untuk membedakan puluhan dan satuan.. Bukti: Nilai tempat 14 = .... puluhan dan .... satuan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal konsep bilangan 11-20 dan pengelompokan sepuluh. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD mengenai pengenalan nilai tempat bilangan cacah sampai 20. |
+
+Run 2 — solusi: Angka 14 terdiri dari 1 kelompok sepuluh (1 puluhan) dan 4 satuan.
+- Domain kognitif `classify/knowing`: Siswa diminta mengenali dan menerapkan pemahaman dasar tentang nilai tempat (puluhan dan satuan) pada angka 14 yang direpresentasikan secara konkret.. Bukti: Nilai tempat 14 = .... puluhan dan .... satuan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep dasar tentang bagaimana angka dua digit disusun berdasarkan nilai tempat (puluhan dan satuan).. Bukti: Nilai tempat 14
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, menggunakan representasi visual yang familiar (benda dikelompokkan sepuluh-sepuluh), dan hanya memerlukan satu langkah identifikasi langsung.. Bukti: Nilai tempat 14 = .... puluhan dan .... satuan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bilangan 11-20 dan pengelompokan sepuluh. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD mengenai pengenalan nilai tempat bilangan cacah sampai 20. |
+
+Run 3 — solusi: 14 terdiri dari 1 kelompok sepuluh (1 puluhan) dan 4 satuan.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan pemahaman konsep nilai tempat pada objek konkret yang sudah dikelompokkan (bundling). Ini adalah penerapan prosedur standar dalam konteks rutin.. Bukti: Nilai tempat 14 = .... puluhan dan .... satuan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur sistem bilangan desimal (konsep nilai tempat), yaitu bagaimana angka 14 dikategorikan ke dalam puluhan dan satuan.. Bukti: Nilai tempat 14
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, menggunakan representasi visual yang eksplisit (bundling) untuk membantu siswa memahami konsep puluhan dan satuan.. Bukti: Hitunglah dan isi tabelnya; Nilai tempat 14
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang menghitung benda sampai 20 dan konsep pengelompokan sepuluh. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD yang memperkenalkan konsep nilai tempat melalui benda konkret. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 2, "knowing": 1} | majority_2_of_3 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3710`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa diminta menerapkan pemahaman konsep nilai tempat pada objek konkret yang sudah dikelompokkan (bundling). Ini adalah penerapan prosedur standar dalam konteks rutin.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang struktur sistem bilangan desimal (konsep nilai tempat), yaitu bagaimana angka 14 dikategorikan ke dalam puluhan dan satuan.
+- Intended difficulty `Easy`: Soal ini sangat mendasar untuk kelas 1, menggunakan representasi visual yang eksplisit (bundling) untuk membantu siswa memahami konsep puluhan dan satuan.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang menghitung benda sampai 20 dan konsep pengelompokan sepuluh. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan kurikulum kelas 1 SD yang memperkenalkan konsep nilai tempat melalui benda konkret. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 84/256; truncation: `False`.
+Model membaca representation `metadata`; token input 124/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.000150; applying=0.999850; reasoning=0.000000 | applying | 0.999850 | 0.001342 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.011010; conceptual=0.983025; procedural=0.005965; metacognitive=0.000000 | conceptual | 0.983025 | 0.069990 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.796064; Medium=0.199934; Hard=0.004002 | Easy | 0.796064 | 0.478336 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999850; −Σp ln(p) = 0.001474; H = 0.001474/ln(3) = 0.001342; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.983025; −Σp ln(p) = 0.097026; H = 0.097026/ln(4) = 0.069990; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.796064; −Σp ln(p) = 0.525505; H = 0.525505/ln(3) = 0.478336; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -3797,16 +5365,16 @@ Pilihan: A. 1 puluhan dan 4 satuan
 B. 1 puluhan dan 3 satuan
 C. 4 puluhan dan 1 satuan
 D. 0 puluhan dan 14 satuan
-Transkripsi visual: -
+Transkripsi visual: Gambar menunjukkan satu ikat pensil berisi 10 buah dan 4 pensil lepas di sampingnya. Terdapat tabel dengan kolom 'Puluhan' dan 'Satuan' yang harus diisi. Teks soal meminta untuk menentukan nilai tempat dari angka 14.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 35. Soal `76bd2315ce21573dfa2ea8d7`
@@ -5051,37 +6619,134 @@ Perhatikan gambar berikut.<br><br>Urutan bunga dari paling pendek: ...., ...., .
 ![Gambar sumber soal 43](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0218-01.png>)
 
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0218-01.png. Transkripsi visual: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Berdasarkan pengamatan visual, tinggi bunga adalah A < C < B. Maka urutan dari yang paling pendek adalah A, C, B.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0218-01.png. Transkripsi visual: Terdapat tiga bunga matahari yang berjejer di atas garis tanah yang sama, masing-masing diberi label A, B, dan C. Bunga A adalah yang paling pendek, bunga C memiliki tinggi sedang, dan bunga B adalah yang paling tinggi.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1d71dc20dffa0c1ca39268b9f0ca03cfbff8e9996ad0a1b4f91e7f3f88fde840`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bb866c2af831fa0410e3b49aa3df3b442a36ea6328c7468124d78b7a390c80da`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2475 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2478 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2494 |
+
+Run 1 — solusi: Berdasarkan pengamatan visual, tinggi bunga adalah A < C < B. Maka urutan dari yang paling pendek adalah A, C, B.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan perbandingan visual langsung dan mengurutkan objek berdasarkan atribut panjang (tinggi), yang merupakan proses rutin dalam domain kognitif knowing.. Bukti: Urutan bunga dari paling pendek
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep dasar tentang urutan dan perbandingan panjang (atribut fisik), yang termasuk dalam dimensi pengetahuan konseptual.. Bukti: Urutan bunga dari paling pendek
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan perbandingan visual langsung tanpa perhitungan kompleks atau strategi non-rutin.. Bukti: Urutan bunga dari paling pendek
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan panjang/tinggi benda secara visual. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan observasi visual langsung terhadap tiga objek yang sejajar. |
+
+Run 2 — solusi: Berdasarkan pengamatan visual, tinggi bunga adalah A < C < B. Maka urutan dari yang paling pendek adalah A, C, B.
+- Domain kognitif `classify/knowing`: Siswa perlu melakukan perbandingan visual langsung dan mengurutkan objek berdasarkan atribut panjang/tinggi, yang merupakan proses rutin dalam domain kognitif knowing.. Bukti: Urutan bunga dari paling pendek
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep dasar tentang urutan dan perbandingan panjang, yang termasuk dalam pengetahuan konseptual.. Bukti: Urutan bunga dari paling pendek
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan perbandingan visual langsung dari tiga objek yang sudah disejajarkan pada garis dasar yang sama.. Bukti: Urutan bunga dari paling pendek
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan tinggi benda secara visual. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan observasi visual sederhana tanpa perhitungan atau manipulasi kompleks. |
+
+Run 3 — solusi: Berdasarkan pengamatan visual, tinggi bunga adalah A < C < B. Maka urutan dari yang paling pendek adalah A, C, B.
+- Domain kognitif `classify/applying`: Siswa perlu melakukan perbandingan visual langsung dan mengurutkan objek berdasarkan atribut panjang/tinggi, yang merupakan proses rutin dalam domain kognitif applying.. Bukti: Urutan bunga dari paling pendek
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep dasar tentang urutan (seriasi) berdasarkan atribut fisik (tinggi), yang termasuk dalam dimensi pengetahuan konseptual.. Bukti: Urutan bunga dari paling pendek
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan perbandingan visual langsung tanpa perhitungan kompleks atau strategi non-rutin.. Bukti: Urutan bunga dari paling pendek: ...., ...., ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan tinggi benda secara visual. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan observasi visual langsung terhadap tiga objek yang diletakkan pada garis dasar yang sama. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 2, "applying": 1} | majority_2_of_3 / adjudicated | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3663`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa diminta untuk melakukan perbandingan visual langsung dan mengurutkan objek berdasarkan atribut panjang (tinggi), yang merupakan proses rutin dalam domain kognitif knowing.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konsep dasar tentang urutan (seriasi) berdasarkan atribut fisik (tinggi), yang termasuk dalam dimensi pengetahuan konseptual.
+- Intended difficulty `Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan perbandingan visual langsung dari tiga objek yang sudah disejajarkan pada garis dasar yang sama.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan tinggi benda secara visual. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan observasi visual sederhana tanpa perhitungan atau manipulasi kompleks. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 90/256; truncation: `False`.
+Model membaca representation `metadata`; token input 137/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.738380; applying=0.261620; reasoning=0.000000 | knowing | 0.738380 | 0.523155 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.017097; conceptual=0.981615; procedural=0.001287; metacognitive=0.000000 | conceptual | 0.981615 | 0.069500 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.731651; Medium=0.264472; Hard=0.003877 | Easy | 0.731651 | 0.547861 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.738380; −Σp ln(p) = 0.574744; H = 0.574744/ln(3) = 0.523155; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.981615; −Σp ln(p) = 0.096348; H = 0.096348/ln(4) = 0.069500; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.731651; −Σp ln(p) = 0.601886; H = 0.601886/ln(3) = 0.547861; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5098,16 +6763,16 @@ Pilihan: A. B, C, A
 B. C, A, B
 C. A, C, B
 D. A, B, C
-Transkripsi visual: -
+Transkripsi visual: Terdapat tiga bunga matahari yang berjejer di atas garis tanah yang sama, masing-masing diberi label A, B, dan C. Bunga A adalah yang paling pendek, bunga C memiliki tinggi sedang, dan bunga B adalah yang paling tinggi.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 44. Soal `dc65bbd6611c904972206f6c`
@@ -5124,37 +6789,112 @@ Burung yang terbang paling tinggi adalah ....
 ![Gambar sumber soal 44](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0219-07.png>)
 
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0219-07.png. Transkripsi visual: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Secara visual, posisi vertikal burung C berada paling atas dibandingkan burung A dan B, sehingga burung C terbang paling tinggi.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0219-07.png. Transkripsi visual: Terdapat tiga burung yang diberi label A, B, dan C. Burung C berada di posisi paling atas (paling tinggi). Burung A berada di posisi tengah. Burung B berada di posisi paling bawah.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ec82e7cefc25d0cab1a9df99ae2fb76321cb94b7471b8163427372c81c67d0b1`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4e42f565fcd0f0f0a43d26b54e036b6d5944a2817b449744122a85a477e00ce5`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2419 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2411 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2430 |
+
+Run 1 — solusi: Secara visual, posisi vertikal burung C berada paling atas dibandingkan burung A dan B, sehingga burung C terbang paling tinggi.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan observasi visual langsung untuk membandingkan posisi benda (burung) dalam ruang dua dimensi, yang merupakan proses pengenalan sederhana.. Bukti: Burung yang terbang paling tinggi adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep dasar tentang perbandingan posisi atau ketinggian (konseptual) dalam konteks visual.. Bukti: paling tinggi
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan persepsi visual langsung tanpa perhitungan atau strategi kompleks.. Bukti: Burung yang terbang paling tinggi adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan posisi atas dan bawah secara visual. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena membandingkan posisi benda secara visual adalah materi awal yang rutin. |
+
+Run 2 — solusi: Berdasarkan posisi vertikal pada gambar, burung C berada pada posisi paling atas dibandingkan burung A dan B.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali posisi relatif objek (tinggi/rendah) secara visual tanpa melakukan perhitungan atau strategi kompleks.. Bukti: Burung yang terbang paling tinggi adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep dasar tentang perbandingan posisi atau ketinggian (konseptual) dalam konteks visual.. Bukti: paling tinggi
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan observasi visual langsung terhadap posisi objek.. Bukti: Burung yang terbang paling tinggi adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan posisi atas dan bawah secara visual. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya melibatkan pengamatan visual sederhana untuk membandingkan posisi benda. |
+
+Run 3 — solusi: Secara visual, posisi burung C berada paling tinggi dibandingkan burung A dan B.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan observasi visual langsung untuk mengenali posisi objek tertinggi, yang merupakan proses kognitif tingkat dasar.. Bukti: Burung yang terbang paling tinggi adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep dasar tentang perbandingan posisi atau ketinggian (tinggi/rendah) secara visual.. Bukti: Membandingkan dan Mengurutkan Panjang Benda
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana, hanya memerlukan pengamatan visual langsung tanpa perhitungan atau prosedur kompleks, cocok untuk tingkat kelas 1.. Bukti: Burung yang terbang paling tinggi adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membedakan posisi atas dan bawah secara visual. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya melibatkan identifikasi visual sederhana pada objek yang konkret. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 64/256; truncation: `False`.
+Model membaca representation `metadata`; token input 103/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.036980; applying=0.963020; reasoning=0.000000 | applying | 0.963020 | 0.144022 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.182157; conceptual=0.808423; procedural=0.009420; metacognitive=0.000000 | conceptual | 0.808423 | 0.379473 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.869730; Medium=0.127816; Hard=0.002455 | Easy | 0.869730 | 0.363259 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.963020; −Σp ln(p) = 0.158224; H = 0.158224/ln(3) = 0.144022; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.808423; −Σp ln(p) = 0.526062; H = 0.526062/ln(4) = 0.379473; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.869730; −Σp ln(p) = 0.399081; H = 0.399081/ln(3) = 0.363259; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5169,16 +6909,16 @@ Pilihan: A. Ketiga burung terbang sama tinggi
 B. C
 C. B
 D. A
-Transkripsi visual: -
+Transkripsi visual: Terdapat tiga burung yang diberi label A, B, dan C. Burung C berada di posisi paling atas (paling tinggi). Burung A berada di posisi tengah. Burung B berada di posisi paling bawah.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 45. Soal `75434d44f2b377da3027e153`
@@ -5195,37 +6935,112 @@ Temukan panjang pensil berikut. Panjang pensil A = 4 kotak. Panjang pensil B = 8
 ![Gambar sumber soal 45](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0225-04.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0225-04.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Membandingkan nilai panjang: 4 (A) < 5 (C) < 8 (B). Urutan dari terpendek adalah A, C, B.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0225-04.png. Transkripsi visual: Terdapat tiga pensil di atas kertas berpetak. Pensil A memiliki panjang 4 kotak. Pensil B memiliki panjang 8 kotak. Pensil C memiliki panjang 5 kotak.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2291dd26f064247473b2e7252879b9ebfdffb6c55588d472c42480f892122f13`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fac1c33fefe109b5b046e32578f85e535f1ca195f06b0664b2e0963cf742afa5`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2610 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2565 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2555 |
+
+Run 1 — solusi: Membandingkan nilai panjang: 4 (A) < 5 (C) < 8 (B). Urutan dari terpendek adalah A, C, B.
+- Domain kognitif `classify/applying`: Siswa perlu mengurutkan nilai yang sudah diberikan (4, 5, 8) dari yang terkecil ke terbesar. Ini adalah proses rutin yang menerapkan konsep perbandingan bilangan dasar.. Bukti: Urutan pensil dari paling pendek; Panjang pensil A = 4 kotak. Panjang pensil B = 8 kotak. Panjang pensil C = 5 kotak.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan bilangan dan panjang benda yang direpresentasikan oleh satuan kotak.. Bukti: Panjang pensil A = 4 kotak. Panjang pensil B = 8 kotak. Panjang pensil C = 5 kotak.
+- Intended difficulty `classify/Easy`: Soal ini sangat sesuai untuk kelas 1 karena menggunakan angka kecil (di bawah 10) dan prosedur pengurutan yang langsung.. Bukti: Panjang pensil A = 4 kotak. Panjang pensil B = 8 kotak. Panjang pensil C = 5 kotak.; Urutan pensil dari paling pendek
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami konsep panjang dan membandingkan bilangan 1-10. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tugas mengurutkan tiga benda berdasarkan panjang yang sudah terukur (diberikan dalam soal) adalah tugas standar untuk kelas 1. |
+
+Run 2 — solusi: Membandingkan nilai panjang: A=4, C=5, B=8. Urutan dari yang terkecil adalah 4, 5, 8, yaitu A, C, B.
+- Domain kognitif `classify/applying`: Siswa perlu membandingkan nilai numerik yang diberikan (4, 8, 5) dan mengurutkannya. Ini adalah proses rutin yang menerapkan konsep perbandingan bilangan.. Bukti: Urutan pensil dari paling pendek
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan besaran panjang yang direpresentasikan oleh angka.. Bukti: Panjang pensil A = 4 kotak. Panjang pensil B = 8 kotak. Panjang pensil C = 5 kotak.
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena nilai panjang sudah diberikan secara eksplisit, sehingga siswa hanya perlu mengurutkan tiga bilangan satu digit.. Bukti: Panjang pensil A = 4 kotak. Panjang pensil B = 8 kotak. Panjang pensil C = 5 kotak.; Urutan pensil dari paling pendek
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membandingkan dan mengurutkan bilangan cacah 1-10. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya melibatkan perbandingan bilangan dasar yang sudah diberikan nilainya. |
+
+Run 3 — solusi: Membandingkan nilai panjang: 4 (A) < 5 (C) < 8 (B). Urutan dari terpendek adalah A, C, B.
+- Domain kognitif `classify/applying`: Siswa perlu membandingkan nilai numerik yang diberikan (4, 8, 5) dan mengurutkannya. Ini adalah proses rutin yang menerapkan konsep perbandingan bilangan.. Bukti: Urutan pensil dari paling pendek
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep urutan dan perbandingan panjang yang direpresentasikan oleh angka.. Bukti: Panjang pensil A = 4 kotak. Panjang pensil B = 8 kotak. Panjang pensil C = 5 kotak.
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan perbandingan langsung dari tiga bilangan satu digit yang sudah disediakan nilainya.. Bukti: Panjang pensil A = 4 kotak. Panjang pensil B = 8 kotak. Panjang pensil C = 5 kotak.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membandingkan dan mengurutkan bilangan cacah 1-10. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan pengurutan bilangan sederhana yang sudah diketahui nilainya. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 109/256; truncation: `False`.
+Model membaca representation `metadata`; token input 138/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.220782; applying=0.779218; reasoning=0.000000 | applying | 0.779218 | 0.480511 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.011593; conceptual=0.984981; procedural=0.003426; metacognitive=0.000000 | conceptual | 0.984981 | 0.062054 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.731540; Medium=0.264504; Hard=0.003956 | Easy | 0.731540 | 0.548267 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.779218; −Σp ln(p) = 0.527895; H = 0.527895/ln(3) = 0.480511; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.984981; −Σp ln(p) = 0.086025; H = 0.086025/ln(4) = 0.062054; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.731540; −Σp ln(p) = 0.602332; H = 0.602332/ln(3) = 0.548267; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5242,16 +7057,16 @@ Pilihan: A. A, C, B
 B. A, B, C
 C. B, C, A
 D. C, A, B
-Transkripsi visual: -
+Transkripsi visual: Terdapat tiga pensil di atas kertas berpetak. Pensil A memiliki panjang 4 kotak. Pensil B memiliki panjang 8 kotak. Pensil C memiliki panjang 5 kotak.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 46. Soal `62785ac6ff0622ab70a94b13`
@@ -5268,37 +7083,112 @@ Temukan panjang pita berikut. Panjang pita B = 5 kotak. Panjang pita C = 4 kotak
 ![Gambar sumber soal 46](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0228-03.png>)
 
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0228-03.png. Transkripsi visual: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Pita B = 5 kotak, Pita C = 4 kotak. Karena 5 > 4, maka pita B lebih panjang dari pita C.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0228-03.png. Transkripsi visual: Terdapat gambar pita B (oranye) yang panjangnya 5 kotak pada grid dan pita C (ungu) yang panjangnya 4 kotak pada grid. Soal meminta membandingkan panjang pita B dengan pita C.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `51883b3ef28433f2693e1b4d34528365a822cd3235648eb1fdd339c8c194af84`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `19e852392e031c6c1cab2462628810eeb957eca3e9cb140a2cb7b4fa608cdbda`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2513 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2524 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2535 |
+
+Run 1 — solusi: Pita B = 5 kotak, Pita C = 4 kotak. Karena 5 > 4, maka pita B lebih panjang dari pita C.
+- Domain kognitif `classify/applying`: Siswa perlu membandingkan dua nilai yang sudah diberikan (5 dan 4) untuk menentukan hubungan 'lebih panjang'. Ini adalah proses applying karena menerapkan konsep perbandingan dasar pada situasi rutin.. Bukti: Panjang pita B = 5 kotak. Panjang pita C = 4 kotak.; Pita B lebih .... dari pita C.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang perbandingan panjang (lebih panjang/pendek) menggunakan satuan tidak baku (kotak).. Bukti: Panjang pita B = 5 kotak; Pita B lebih .... dari pita C
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, hanya memerlukan perbandingan dua bilangan bulat sederhana dalam konteks pengukuran panjang yang familiar.. Bukti: Panjang pita B = 5 kotak. Panjang pita C = 4 kotak.; Pita B lebih .... dari pita C.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami konsep perbandingan bilangan (lebih besar/kecil) dan istilah panjang. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena menggunakan satuan grid yang konkret dan perbandingan bilangan dasar. |
+
+Run 2 — solusi: Pita B memiliki panjang 5 kotak dan pita C memiliki panjang 4 kotak. Karena 5 > 4, maka pita B lebih panjang daripada pita C.
+- Domain kognitif `classify/applying`: Siswa diminta untuk membandingkan dua nilai panjang yang sudah diketahui (5 dan 4) dan memilih kata sifat pembanding yang tepat. Ini adalah proses menerapkan konsep perbandingan dasar pada situasi rutin.. Bukti: Panjang pita B = 5 kotak. Panjang pita C = 4 kotak.; Pita B lebih .... dari pita C.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan perbandingan panjang (lebih panjang/pendek) antara dua objek.. Bukti: Pita B lebih .... dari pita C.
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, melibatkan perbandingan langsung antara dua bilangan bulat kecil (5 dan 4) dalam konteks pengukuran sederhana.. Bukti: Panjang pita B = 5 kotak. Panjang pita C = 4 kotak.; Pita B lebih .... dari pita C.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami konsep panjang dan perbandingan bilangan dasar (lebih dari/kurang dari). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan perbandingan bilangan sederhana dalam konteks pengukuran panjang yang konkret. |
+
+Run 3 — solusi: Pita B memiliki panjang 5 kotak dan pita C memiliki panjang 4 kotak. Karena 5 > 4, maka pita B lebih panjang dari pita C.
+- Domain kognitif `classify/applying`: Siswa perlu membandingkan dua nilai numerik yang sudah diberikan (5 dan 4) untuk menentukan hubungan perbandingan (lebih panjang). Ini adalah proses penerapan konsep perbandingan dasar.. Bukti: Panjang pita B = 5 kotak. Panjang pita C = 4 kotak.; Pita B lebih .... dari pita C.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang perbandingan panjang antara dua objek yang diukur dengan satuan tidak baku (kotak).. Bukti: Panjang pita B = 5 kotak. Panjang pita C = 4 kotak.
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, hanya memerlukan perbandingan dua bilangan bulat sederhana yang sudah disediakan dalam teks.. Bukti: Panjang pita B = 5 kotak. Panjang pita C = 4 kotak.; Pita B lebih .... dari pita C.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami konsep perbandingan bilangan dasar (lebih dari/kurang dari) dan kosakata perbandingan panjang. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya melibatkan perbandingan langsung dari data yang sudah eksplisit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 77/256; truncation: `False`.
+Model membaca representation `metadata`; token input 112/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.594059; applying=0.405941; reasoning=0.000000 | knowing | 0.594059 | 0.614728 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.039744; conceptual=0.953516; procedural=0.006740; metacognitive=0.000000 | conceptual | 0.953516 | 0.149513 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.823523; Medium=0.173768; Hard=0.002710 | Easy | 0.823523 | 0.436929 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.594059; −Σp ln(p) = 0.675347; H = 0.675347/ln(3) = 0.614728; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.953516; −Σp ln(p) = 0.207270; H = 0.207270/ln(4) = 0.149513; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.823523; −Σp ln(p) = 0.480015; H = 0.480015/ln(3) = 0.436929; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5315,16 +7205,16 @@ Pilihan: A. panjang
 B. pendek
 C. tinggi
 D. besar
-Transkripsi visual: -
+Transkripsi visual: Terdapat gambar pita B (oranye) yang panjangnya 5 kotak pada grid dan pita C (ungu) yang panjangnya 4 kotak pada grid. Soal meminta membandingkan panjang pita B dengan pita C.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 47. Soal `5e007b54e25f6f72efa82174`
@@ -5341,37 +7231,112 @@ Amati gambar buah-buahan. Lengkapi daftarnya. Daftar Buah-buahan: Ada ... buah j
 ![Gambar sumber soal 47](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0238-11.png>)
 
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0238-11.png. Transkripsi visual: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Menghitung jumlah masing-masing buah: jeruk ada 5, apel ada 4, mangga ada 6. Karena 6 adalah jumlah terbanyak, maka mangga adalah jawabannya.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0238-11.png. Transkripsi visual: Terdapat 15 buah dalam susunan 3x5. Baris 1: jeruk, apel, mangga, jeruk, mangga. Baris 2: apel, mangga, jeruk, mangga, apel. Baris 3: jeruk, mangga, apel, jeruk, mangga. Total jeruk: 5. Total apel: 4. Total mangga: 6.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `55a6a7a04534dfd6ed401ca7c1ddf6e1ac73b9b3a6fa83f28ac19cdcbd8674f7`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a5856533e5edb309fc524d04840e1d79ae8a55bf1e417f26300eb419fb70f3be`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2562 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2578 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2559 |
+
+Run 1 — solusi: Menghitung jumlah masing-masing buah: jeruk ada 5, apel ada 4, mangga ada 6. Karena 6 adalah jumlah terbanyak, maka mangga adalah jawabannya.
+- Domain kognitif `classify/applying`: Siswa perlu melakukan proses penghitungan (counting) dan membandingkan hasil hitung untuk menentukan nilai maksimum. Ini adalah penerapan prosedur dasar dalam situasi rutin.. Bukti: Amati gambar buah-buahan. Lengkapi daftarnya.; Buah yang paling banyak adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung objek dan membandingkan kuantitas (data sederhana).. Bukti: Amati gambar buah-buahan.; Lengkapi daftarnya.
+- Intended difficulty `classify/Easy`: Soal ini melibatkan prosedur menghitung yang familiar bagi siswa kelas 1, dengan jumlah objek yang kecil dan terstruktur, sehingga beban kognitifnya rendah.. Bukti: Amati gambar buah-buahan.; Lengkapi daftarnya.; Buah yang paling banyak adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1-10 dan membandingkan dua bilangan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya memerlukan penghitungan objek konkret dan perbandingan sederhana. |
+
+Run 2 — solusi: Menghitung jumlah masing-masing buah: jeruk (5), apel (4), mangga (6). Membandingkan jumlah tersebut (6 > 5 > 4), maka mangga adalah yang paling banyak.
+- Domain kognitif `classify/applying`: Siswa perlu melakukan proses penghitungan (counting) dan membandingkan kuantitas untuk menentukan nilai maksimum. Ini adalah penerapan prosedur dasar dalam situasi rutin.. Bukti: Amati gambar buah-buahan; Lengkapi daftarnya; Buah yang paling banyak adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan teknik menghitung (prosedural) untuk mengorganisasi data visual ke dalam kategori dan membandingkannya.. Bukti: Lengkapi daftarnya; Buah yang paling banyak adalah
+- Intended difficulty `classify/Easy`: Soal ini meminta siswa melakukan tugas rutin (menghitung dan membandingkan) dengan representasi visual yang jelas. Beban kognitif rendah.. Bukti: Amati gambar buah-buahan; Lengkapi daftarnya; Buah yang paling banyak adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1-10 dan membandingkan dua bilangan (lebih banyak/sedikit). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena melibatkan penghitungan objek konkret/gambar dan perbandingan sederhana yang merupakan kompetensi dasar awal. |
+
+Run 3 — solusi: Menghitung jumlah setiap jenis buah: jeruk (5), apel (4), mangga (6). Membandingkan jumlah tersebut (6 > 5 > 4), maka mangga adalah yang paling banyak.
+- Domain kognitif `classify/applying`: Siswa perlu melakukan proses penghitungan (counting) dan perbandingan (comparing) sederhana untuk menentukan nilai maksimum dari data yang disajikan secara visual.. Bukti: Amati gambar buah-buahan. Lengkapi daftarnya.; Buah yang paling banyak adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dalam menghitung objek dan mengorganisasikannya ke dalam kategori sederhana (data grouping).. Bukti: Amati gambar buah-buahan. Lengkapi daftarnya.
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan penghitungan objek konkret yang familiar dan perbandingan langsung, sesuai dengan kemampuan dasar siswa kelas 1.. Bukti: Amati gambar buah-buahan.; Lengkapi daftarnya.; Buah yang paling banyak adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang 1-10 dan membandingkan dua bilangan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tugas menghitung dan membandingkan jumlah benda konkret adalah standar kompetensi dasar untuk kelas 1 SD. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 92/256; truncation: `False`.
+Model membaca representation `metadata`; token input 154/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.003223; applying=0.996777; reasoning=0.000000 | applying | 0.996777 | 0.019762 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.014018; conceptual=0.981245; procedural=0.004737; metacognitive=0.000000 | conceptual | 0.981245 | 0.074842 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.734189; Medium=0.259363; Hard=0.006448 | Easy | 0.734189 | 0.554697 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.996777; −Σp ln(p) = 0.021711; H = 0.021711/ln(3) = 0.019762; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.981245; −Σp ln(p) = 0.103753; H = 0.103753/ln(4) = 0.074842; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.734189; −Σp ln(p) = 0.609397; H = 0.609397/ln(3) = 0.554697; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5388,16 +7353,16 @@ Pilihan: A. Apel
 B. Mangga
 C. Jambu
 D. Jeruk
-Transkripsi visual: -
+Transkripsi visual: Terdapat 15 buah dalam susunan 3x5. Baris 1: jeruk, apel, mangga, jeruk, mangga. Baris 2: apel, mangga, jeruk, mangga, apel. Baris 3: jeruk, mangga, apel, jeruk, mangga. Total jeruk: 5. Total apel: 4. Total mangga: 6.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 48. Soal `17ba235cdc9fddc600303514`
@@ -5414,37 +7379,112 @@ Perhatikan tabel dan jawablah pertanyaannya.<br><br>Apa nama kue yang paling dis
 ![Gambar sumber soal 48](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0238-12.png>)
 
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0238-12.png. Transkripsi visual: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Membandingkan nilai pada baris 'Banyak anak': 3, 5, 5, 6. Nilai terbesar adalah 6, yang berkorespondensi dengan Kue Bugis.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0238-12.png. Transkripsi visual: Tabel berjudul 'Tabel Kue Kesukaan' berisi data: Kue Talam (5), Kue Cucur (3), Kue Lapis (5), Kue Bugis (6).
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `388c5236d41289b516a985e749bc73f59a80dd55fc98d42adfbe02b2fe2231d4`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7dd9ed153f68cfbda631d333ebc7c6746431643841089bca6c837075152c0e2e`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2464 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2462 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2450 |
+
+Run 1 — solusi: Membandingkan nilai pada baris 'Banyak anak': 3, 5, 5, 6. Nilai terbesar adalah 6, yang berkorespondensi dengan Kue Bugis.
+- Domain kognitif `classify/applying`: Siswa perlu membaca data dari tabel dan melakukan perbandingan sederhana untuk menentukan nilai maksimum. Ini adalah proses applying karena menerapkan konsep perbandingan bilangan pada data yang disajikan.. Bukti: Apa nama kue yang paling disukai?; Tabel Kue Kesukaan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang bagaimana data diorganisir dalam tabel dan bagaimana menginterpretasikan hubungan antar nilai (konsep 'paling banyak').. Bukti: Tabel Kue Kesukaan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pembacaan tabel sederhana dan perbandingan bilangan satu digit yang familiar bagi siswa kelas 1.. Bukti: Tabel Kue Kesukaan; Apa nama kue yang paling disukai?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membaca tabel sederhana dan membandingkan bilangan 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 1 sudah diajarkan membaca tabel sederhana dan membandingkan jumlah benda/data. |
+
+Run 2 — solusi: Membandingkan nilai pada baris 'Banyak anak': 3, 5, 5, 6. Nilai terbesar adalah 6, yang berkorespondensi dengan Kue Bugis.
+- Domain kognitif `classify/applying`: Siswa perlu membaca data dari tabel dan membandingkan nilai untuk menentukan nilai maksimum (paling banyak). Ini adalah proses applying karena menggunakan konsep perbandingan data sederhana dalam situasi rutin.. Bukti: Apa nama kue yang paling disukai?; Tabel Kue Kesukaan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang bagaimana data diorganisir dalam tabel dan bagaimana menginterpretasikan nilai-nilai tersebut (konsep perbandingan).. Bukti: Tabel Kue Kesukaan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah untuk kelas 1 karena hanya memerlukan pembacaan tabel sederhana dan perbandingan angka satu digit secara langsung.. Bukti: Tabel Kue Kesukaan; Apa nama kue yang paling disukai?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membaca tabel sederhana dan membandingkan bilangan cacah sampai 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena melibatkan interpretasi data visual dasar yang sudah diajarkan di tingkat awal. |
+
+Run 3 — solusi: Membandingkan nilai pada baris 'Banyak anak': 6 > 5 > 3. Nilai terbesar adalah 6, yang berkorespondensi dengan Kue Bugis.
+- Domain kognitif `classify/applying`: Siswa perlu membaca data dari tabel dan membandingkan nilai untuk menentukan nilai maksimum (paling disukai). Ini adalah proses applying karena menerapkan konsep perbandingan bilangan pada data yang disajikan.. Bukti: Apa nama kue yang paling disukai?; Tabel Kue Kesukaan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang cara membaca dan menginterpretasikan tabel sederhana (konsep data).. Bukti: Tabel Kue Kesukaan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah untuk kelas 1 karena hanya memerlukan pembacaan tabel sederhana dan perbandingan bilangan satu digit yang langsung terlihat.. Bukti: Tabel Kue Kesukaan; Apa nama kue yang paling disukai?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mampu membaca tabel sederhana dan membandingkan bilangan 1-10. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 SD dalam topik pengumpulan dan penyajian data sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 66/256; truncation: `False`.
+Model membaca representation `metadata`; token input 101/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.000012; applying=0.999988; reasoning=0.000000 | applying | 0.999988 | 0.000135 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.159027; conceptual=0.831974; procedural=0.008999; metacognitive=0.000000 | conceptual | 0.831974 | 0.351898 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.869253; Medium=0.126905; Hard=0.003842 | Easy | 0.869253 | 0.368775 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999988; −Σp ln(p) = 0.000149; H = 0.000149/ln(3) = 0.000135; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.831974; −Σp ln(p) = 0.487835; H = 0.487835/ln(4) = 0.351898; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.869253; −Σp ln(p) = 0.405141; H = 0.405141/ln(3) = 0.368775; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5461,16 +7501,16 @@ Pilihan: A. Kue Cucur
 B. Kue Lapis
 C. Kue Talam
 D. Kue Bugis
-Transkripsi visual: -
+Transkripsi visual: Tabel berjudul 'Tabel Kue Kesukaan' berisi data: Kue Talam (5), Kue Cucur (3), Kue Lapis (5), Kue Bugis (6).
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 49. Soal `e7d8a29f2e3a28f99529dfc8`
@@ -5487,37 +7527,112 @@ Diagram berikut menunjukkan jenis buah kesukaan anak-anak. Lengkapi setiap kalim
 ![Gambar sumber soal 49](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0246-04.png>)
 
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0246-04.png. Transkripsi visual: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Jumlah anak suka belimbing adalah 7. Jumlah anak suka apel adalah 4. Selisihnya adalah 7 - 4 = 3.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0246-04.png. Transkripsi visual: Diagram batang gambar (pictograph) dengan 4 kolom buah: jeruk (6 bintang), apel (4 bintang), belimbing (7 bintang), jambu air (5 bintang). Keterangan: 1 bintang mewakili 1 anak.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `60fe0ae5c4b6f1dad9839e96494ac97dad362fabf0bbd115f3a6caf7b2eef12e`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f8c09af4703b188f8ba0f790af556645d169716369cf66fd943a1ed7f0869967`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2479 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2513 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2485 |
+
+Run 1 — solusi: Jumlah anak suka belimbing adalah 7. Jumlah anak suka apel adalah 4. Selisihnya adalah 7 - 4 = 3.
+- Domain kognitif `classify/applying`: Siswa perlu membaca data dari diagram (7 dan 4) lalu melakukan operasi pengurangan sederhana untuk menemukan selisih. Ini adalah penerapan prosedur rutin pada data yang diberikan.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan teknik membaca diagram gambar (pictograph) dan menerapkan algoritma pengurangan dasar untuk menyelesaikan masalah.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak.
+- Intended difficulty `classify/Easy`: Soal ini sesuai untuk kelas 1 karena melibatkan pembacaan data visual sederhana dan operasi pengurangan dasar (di bawah 10).. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung objek (bintang) dan operasi pengurangan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 1 sudah diajarkan membaca diagram gambar sederhana dan melakukan pengurangan bilangan cacah hingga 10. |
+
+Run 2 — solusi: Jumlah anak yang suka belimbing adalah 7, jumlah anak yang suka apel adalah 4. Selisihnya adalah 7 - 4 = 3.
+- Domain kognitif `classify/applying`: Siswa perlu menginterpretasikan diagram gambar untuk mendapatkan data, lalu melakukan operasi pengurangan sederhana untuk menemukan selisih. Ini adalah penerapan prosedur rutin pada situasi yang diberikan.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan pengetahuan prosedural tentang cara membaca diagram gambar (menghitung simbol) dan melakukan operasi pengurangan dasar.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak.
+- Intended difficulty `classify/Easy`: Soal ini sesuai untuk kelas 1 karena melibatkan pembacaan data sederhana dan operasi pengurangan dasar dalam konteks yang familiar.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung objek (korespondensi satu-satu) dan operasi pengurangan dasar dalam lingkup 10. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 1 diharapkan mampu membaca diagram gambar sederhana dan melakukan perbandingan jumlah (selisih) dengan angka di bawah 10. |
+
+Run 3 — solusi: Jumlah anak suka belimbing adalah 7, jumlah anak suka apel adalah 4. Selisihnya adalah 7 - 4 = 3.
+- Domain kognitif `classify/applying`: Siswa perlu membaca data dari piktogram (menghitung bintang) dan melakukan operasi pengurangan sederhana untuk menemukan selisih. Ini adalah penerapan prosedur rutin pada situasi yang diberikan.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan teknik menghitung dan algoritma pengurangan untuk memproses informasi dalam diagram.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak.
+- Intended difficulty `classify/Easy`: Soal ini sesuai untuk kelas 1 karena melibatkan pembacaan data visual sederhana dan operasi pengurangan dasar (di bawah 10).. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung benda konkret (bintang) dan konsep pengurangan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 1 sudah diajarkan membaca piktogram sederhana dan melakukan pengurangan bilangan cacah di bawah 10. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 76/256; truncation: `False`.
+Model membaca representation `metadata`; token input 122/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Domain kognitif | knowing=0.000007; applying=0.999993; reasoning=0.000000 | applying | 0.999993 | 0.000078 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.085859; conceptual=0.911510; procedural=0.002631; metacognitive=0.000000 | conceptual | 0.911510 | 0.224246 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.795873; Medium=0.197843; Hard=0.006284 | Easy | 0.795873 | 0.486185 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999993; −Σp ln(p) = 0.000086; H = 0.000086/ln(3) = 0.000078; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.911510; −Σp ln(p) = 0.310871; H = 0.310871/ln(4) = 0.224246; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.795873; −Σp ln(p) = 0.534129; H = 0.534129/ln(3) = 0.486185; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5534,16 +7649,16 @@ Pilihan: A. 2
 B. 3
 C. 4
 D. 1
-Transkripsi visual: -
+Transkripsi visual: Diagram batang gambar (pictograph) dengan 4 kolom buah: jeruk (6 bintang), apel (4 bintang), belimbing (7 bintang), jambu air (5 bintang). Keterangan: 1 bintang mewakili 1 anak.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 50. Soal `8812007076d1edea9f050f6f`
@@ -5557,27 +7672,93 @@ Ibu membeli buah di pasar. Ibu membeli 6 jeruk, 3 apel, 4 mangga, dan 5 belimbin
 | C | Apel |
 | D | Mangga |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Membandingkan jumlah buah: 3 (apel) < 4 (mangga) < 5 (belimbing) < 6 (jeruk). Jumlah terkecil adalah 3, yaitu apel.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 1 / Matematika SD Kelas 1. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ca139453787190dec36bb8912ebd55ff4531e3c662175dee41f326c70b921322`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `62e5bf71864b713843ee1d0df624c082ad2add7d3816e5d9868a03034580dfb9`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 1356 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 1310 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 1308 |
+
+Run 1 — solusi: Membandingkan jumlah buah: 3 (apel) < 4 (mangga) < 5 (belimbing) < 6 (jeruk). Jumlah terkecil adalah 3, yaitu apel.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi nilai dari setiap kategori buah dan membandingkannya untuk menentukan nilai minimum. Ini adalah proses applying karena menerapkan konsep perbandingan bilangan pada data yang diberikan.. Bukti: Ibu membeli 6 jeruk, 3 apel, 4 mangga, dan 5 belimbing.; Buah yang paling sedikit adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep urutan dan perbandingan bilangan (lebih dari/kurang dari) dalam konteks data sederhana.. Bukti: 6 jeruk, 3 apel, 4 mangga, dan 5 belimbing
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan perbandingan langsung dari empat bilangan bulat kecil yang sudah eksplisit disebutkan dalam teks.. Bukti: 6 jeruk, 3 apel, 4 mangga, dan 5 belimbing
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membandingkan bilangan cacah 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena membandingkan jumlah benda konkret (buah) adalah materi dasar yang familiar. |
+
+Run 2 — solusi: Membandingkan jumlah buah: 3 (apel) < 4 (mangga) < 5 (belimbing) < 6 (jeruk). Jumlah terkecil adalah 3, yaitu apel.
+- Domain kognitif `classify/applying`: Siswa perlu membandingkan nilai bilangan untuk menentukan urutan terkecil, yang merupakan proses penerapan konsep dasar perbandingan.. Bukti: Buah yang paling sedikit adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan dan perbandingan besaran bilangan dalam konteks data sederhana.. Bukti: 6 jeruk, 3 apel, 4 mangga, dan 5 belimbing
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 1, hanya memerlukan perbandingan langsung dari empat nilai bilangan yang diberikan tanpa langkah tambahan yang kompleks.. Bukti: 6 jeruk, 3 apel, 4 mangga, dan 5 belimbing; Buah yang paling sedikit adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membandingkan bilangan cacah 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 1 karena hanya melibatkan perbandingan langsung dari sekumpulan data kecil yang sudah terstruktur. |
+
+Run 3 — solusi: Membandingkan jumlah buah: 3 (apel) < 4 (mangga) < 5 (belimbing) < 6 (jeruk). Nilai terkecil adalah 3, yaitu apel.
+- Domain kognitif `classify/applying`: Siswa perlu membandingkan nilai numerik dari empat kategori buah untuk menentukan nilai minimum, yang merupakan proses penerapan konsep perbandingan dasar.. Bukti: Buah yang paling sedikit adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan dan perbandingan besaran bilangan dalam konteks data sederhana.. Bukti: 6 jeruk, 3 apel, 4 mangga, dan 5 belimbing
+- Intended difficulty `classify/Easy`: Soal ini sangat sesuai untuk kelas 1 karena hanya melibatkan perbandingan bilangan satu digit yang familiar dan langsung.. Bukti: 6 jeruk, 3 apel, 4 mangga, dan 5 belimbing; Buah yang paling sedikit adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membandingkan bilangan cacah 1-10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tugas membandingkan empat bilangan satu digit adalah standar kompetensi dasar untuk kelas 1 SD. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5585,9 +7766,18 @@ Model membaca representation `metadata`; token input 75/256; truncation: `False`
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif | knowing=0.001439; applying=0.998561; reasoning=0.000000 | applying | 0.998561 | 0.009882 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.370495; conceptual=0.614093; procedural=0.015412; metacognitive=0.000000 | conceptual | 0.614093 | 0.527748 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.894204; Medium=0.101535; Hard=0.004261 | Easy | 0.894204 | 0.323583 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.998561; −Σp ln(p) = 0.010857; H = 0.010857/ln(3) = 0.009882; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.614093; −Σp ln(p) = 0.731615; H = 0.731615/ln(4) = 0.527748; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.894204; −Σp ln(p) = 0.355493; H = 0.355493/ln(3) = 0.323583; T = 0.953328.
+
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -5611,7 +7801,7 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.

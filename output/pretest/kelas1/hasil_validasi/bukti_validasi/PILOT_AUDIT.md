@@ -4,7 +4,7 @@ Status: **BERHENTI UNTUK ANALISIS**
 
 - Item diproses: 50/50
 - Tiga run sukses: 100.0%
-- Insufficient/abstain: 6.0%
+- Insufficient/abstain: 0.0%
 - Dominasi difficulty: 96.0%
 - Distribusi difficulty: `{"Easy": 48, "Medium": 2}`
 
@@ -16,7 +16,7 @@ Status: **BERHENTI UNTUK ANALISIS**
 - PASS -- `blindPromptLeakageAbsent`
 - PASS -- `checkpointSourceAndInputsMatch`
 - PASS -- `promptAndRubricVersionMatch`
-- FAIL -- `requiredEvidenceComplete`
+- PASS -- `requiredEvidenceComplete`
 - FAIL -- `boundaryAnalysisClear`
 
 ## Boundary analysis wajib

@@ -1,12 +1,12 @@
 # Audit Pilot Klasifikasi Grade-Aware
 
-Status: **LOLOS**
+Status: **BERHENTI UNTUK ANALISIS**
 
 - Item diproses: 72/72
 - Tiga run sukses: 100.0%
-- Insufficient/abstain: 0.0%
-- Dominasi difficulty: 65.3%
-- Distribusi difficulty: `{"Easy": 47, "Hard": 2, "Medium": 23}`
+- Insufficient/abstain: 2.8%
+- Dominasi difficulty: 66.7%
+- Distribusi difficulty: `{"Easy": 48, "Hard": 2, "Medium": 22}`
 
 ## Gate
 
@@ -16,5 +16,5 @@ Status: **LOLOS**
 - PASS -- `blindPromptLeakageAbsent`
 - PASS -- `checkpointSourceAndInputsMatch`
 - PASS -- `promptAndRubricVersionMatch`
-- PASS -- `requiredEvidenceComplete`
+- FAIL -- `requiredEvidenceComplete`
 - PASS -- `boundaryAnalysisClear`
