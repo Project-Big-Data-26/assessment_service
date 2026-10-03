@@ -1,6 +1,6 @@
 ---
 name: generate-soal-exercise
-description: Generate bank soal LATIHAN (exercise) pilihan ganda per subbab per level (easy/medium/hard) dari Buku Siswa + Buku Guru SD-SMA, dengan validasi mekanis, verifikasi buta, confidence_score, dan sampling. Pakai saat user minta generate / lanjutkan latihan soal, mis. "/generate-soal-exercise kelas9 bab 1 A easy", "/generate-soal-exercise kelas9 easy", atau "/generate-soal-exercise lanjut".
+description: Generate bank soal LATIHAN (exercise) pilihan ganda per subbab per level (easy/medium/hard) dari Buku Siswa + Buku Guru SD-SMA, dengan pagar format mekanis (validasi mutu oleh tim lain). Pakai saat user minta generate / lanjutkan latihan soal, mis. "/generate-soal-exercise kelas9 bab 1 A easy", "/generate-soal-exercise kelas9 easy", atau "/generate-soal-exercise lanjut".
 ---
 
 # Generate bank soal latihan (agentic)
@@ -20,7 +20,7 @@ semua soal pretest dan batch sebelumnya (validator memeriksanya).
   soal (angka, tabel, bacaan) harus ditulis di `stimulus`/`pertanyaan`.
 - Export ke `soal_exercise_db.json` mengosongkan `cognitive_level`, `cognitive_score`, `confidence_score`, dan
   `status` (null); itu diisi tahap validasi sistem berikutnya. Nilai usulan kita (level target, skor target,
-  confidence_hitung) ada di `soal_exercise_meta.json`. `subbab_id` = nama subbab di buku panduan.
+  jenis soal, acuan, pembahasan) ada di `soal_exercise_meta.json`. `subbab_id` = nama subbab di buku panduan.
 
 ## Mode orkestrator (sesi utama)
 
@@ -33,17 +33,12 @@ Untuk SETIAP (subbab, level):
    Subbab berbeda boleh paralel.
 2. Validasi sendiri (jangan percaya laporan agen):
    `venv/Scripts/python -m app.services.exercise.validate <file>`
-3. Verifikasi buta: `venv/Scripts/python -m app.services.exercise.verify prepare <file>`, lalu
-   jalankan subagent `penyelesai-soal-exercise` dengan prompt `blind=<file>.blind.json` (path `.blind.json`
-   hasil prepare; agen menulis `.solver.json`), lalu
-   `venv/Scripts/python -m app.services.exercise.verify compare <file>`.
-   Soal yang tidak cocok: kembalikan ke generator untuk diperbaiki atau diganti, ulangi langkah 2-3.
-   Jangan membuka `.solver.json`/`.blind.json` di sesi generator.
-4. Setelah semua file satu batch selesai:
+3. Setelah semua file satu batch selesai, ekspor ke format tabel `soal`:
    `venv/Scripts/python -m app.services.exercise.export --book <buku> --batch <B>`
-   `venv/Scripts/python -m app.services.exercise.sampling --book <buku> --batch <B>`
-5. Laporkan: jumlah soal per level, rasio variasi/orisinal, hasil verifikasi buta, sebaran confidence,
-   jumlah soal wajib cek, dan WARNING yang tersisa.
+4. Validasi mutu (kebenaran kunci, sampling manusia, `confidence_score`, push ke DB) dikerjakan anggota
+   tim lain, BUKAN bagian skill ini. `validate.py` di sini hanya pagar generator (format, kuota, duplikat,
+   acuan ada di buku) supaya hasil rapi saat diserahkan.
+5. Laporkan: jumlah soal per level, rasio variasi/orisinal, sebaran jenis soal, dan WARNING yang tersisa.
 
 ## Prosedur per (subbab, level) -- dikerjakan subagent generator
 
@@ -70,8 +65,8 @@ Untuk SETIAP (subbab, level):
 | medium | C3-C4 | 2-4 | menerapkan/menganalisis: dua-tiga langkah, ubah bentuk dulu, soal cerita sederhana |
 | hard   | C5-C6 | 3-8 | mengevaluasi/mencipta: banyak konsep, jebakan, bandingkan beberapa kemungkinan |
 `jumlah_langkah` = jumlah langkah penyelesaian minimal. Jangan menaikkan level hanya dengan angka besar.
-`alasan_level` = satu kalimat kenapa soal ini pantas di level itu. Penyelesai buta akan menghitung
-langkahnya sendiri; selisih besar menurunkan confidence.
+`alasan_level` = satu kalimat kenapa soal ini pantas di level itu. Tulis jujur: validator tim lain akan
+membandingkan.
 
 ### Aturan harga mati
 1. **Kerjakan soalnya DULU, baru tulis kunci.** Hitung ulang dua kali untuk soal berhitung. Satu kunci
@@ -86,7 +81,11 @@ langkahnya sendiri; selisih besar menurunkan confidence.
 6. **Tidak ada soal kembar.** Soal baru wajib beda dari soal pretest, batch lain, dan soal lain di file ini.
    Variasi yang hanya mengganti satu angka kecil dianggap buruk: ubah struktur nilainya.
 7. Jangan menyusun posisi A-D; kode yang mengacak. `jawaban_benar` dan `distraktor` hanya teks.
-8. Variasikan jenis pertanyaan dalam satu level (jangan 15 soal yang sama bentuknya).
+8. **Keragaman jenis soal.** Isi `jenis_soal` (label singkat, mis. "mengenali bentuk", "menentukan nilai
+   variabel", "menyusun model", "menafsirkan penyelesaian", "membandingkan") di SEMUA soal. Validator menolak
+   bila satu jenis > 1/3 kuota level atau jenisnya < 3. Rencanakan sebaran jenis SEBELUM menulis, lihat jenis
+   yang sudah dipakai level sebelumnya di subbab yang sama, dan cakup konsep subbab secara merata
+   (bukan hanya pola soal latihan yang paling banyak).
 
 ### Langkah
 1. Muat memori (hemat token): `output/pretest/<buku>/CATATAN.md` (pola halaman/notasi buku ini) dan
@@ -117,7 +116,7 @@ langkahnya sendiri; selisih besar menurunkan confidence.
       "id": "kelas9-b01-a-easy-bt01-001",
       "tipe_generate": "variasi", "variasi_cara": "angka",
       "acuan": {"sumber": "pretest", "id": "kelas9-b01-p0025-ayo-mencoba-1"},
-      "cognitive_c": "C2", "jumlah_langkah": 2,
+      "cognitive_c": "C2", "jumlah_langkah": 2, "jenis_soal": "menyusun model",
       "alasan_level": "menerjemahkan keliling segitiga ke bentuk 2x + y = K, satu pemodelan langsung",
       "stimulus": null,
       "pertanyaan": "Keliling sebuah segitiga sama kaki adalah 54 cm. Model matematika ... adalah ....",

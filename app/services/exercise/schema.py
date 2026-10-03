@@ -47,6 +47,9 @@ class Soal(_Strict):
     variasi_cara: Optional[Literal["angka", "konteks"]] = None
     acuan: Acuan
     cognitive_c: Kognitif
+    # label bebas jenis pertanyaan ("menyusun model", "menentukan nilai variabel", ...);
+    # dipakai validator untuk membatasi dominasi satu jenis dalam satu level.
+    jenis_soal: Optional[str] = Field(None, min_length=3, max_length=60)
     jumlah_langkah: int = Field(ge=1, le=8, description="langkah penyelesaian minimal yang dibutuhkan siswa")
     alasan_level: str = Field(min_length=5, description="satu kalimat kenapa soal ini pantas di level ini")
     stimulus: Optional[str] = None

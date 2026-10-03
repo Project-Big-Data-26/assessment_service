@@ -27,6 +27,7 @@ LEVEL_SPEC = {
 PORSI_VARIASI = {"easy": 0.6, "medium": 0.5, "hard": 0.3}
 TOLERANSI_PORSI = 2
 
+MAKS_JENIS_PER_LEVEL = 1 / 3           # satu jenis_soal maks sepertiga kuota level
 MAKS_VARIASI_PER_ACUAN = 2          # satu soal acuan maksimal dipakai N kali per level
 VARIASI_ANGKA_MAKS_SAMA = 0.5       # maks. porsi angka soal baru yang sama dengan acuan
 VARIASI_KONTEKS_MAKS_MIRIP = 0.6    # maks. kemiripan kata (SequenceMatcher) untuk variasi konteks
