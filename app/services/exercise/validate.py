@@ -9,6 +9,7 @@ ERROR (file ditolak):
   - variasi: angka terlalu banyak yang sama dengan acuan / konteks terlalu mirip / jawaban sama
   - satu acuan dipakai > MAKS_VARIASI_PER_ACUAN kali
   - opsi tidak unik atau ada dua opsi bernilai sama; soal merujuk gambar yang tidak ada
+  - jenis_soal: satu jenis > 1/3 kuota, atau < 3 jenis berbeda (bila diisi)
   - soal kembar dengan pretest / batch lain / soal lain di file ini
 WARNING: jawaban benar jauh lebih panjang dari distraktor, soal mirip (acuan beda), dsb.
 
@@ -19,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sys
 from difflib import SequenceMatcher
@@ -155,6 +157,17 @@ def validate_file(path: str, partial: bool = False):
     for k, v in pakai.items():
         if v > C.MAKS_VARIASI_PER_ACUAN:
             errors.append(f"acuan {k} dipakai {v}x (maks {C.MAKS_VARIASI_PER_ACUAN})")
+
+    jenis = [s.jenis_soal.strip().lower() for s in data.soal if s.jenis_soal]
+    if jenis:   # file lama (easy pertama) belum punya jenis_soal -> lewati
+        if len(jenis) != len(data.soal):
+            errors.append("jenis_soal harus diisi di SEMUA soal (atau tidak sama sekali)")
+        batas = max(1, math.ceil(kuota * C.MAKS_JENIS_PER_LEVEL))
+        for j in sorted(set(jenis)):
+            if jenis.count(j) > batas:
+                errors.append(f"jenis_soal '{j}' muncul {jenis.count(j)}x (maks {batas} dari {kuota}); variasikan jenis soal")
+        if len(set(jenis)) < 3 and len(data.soal) >= 6:
+            errors.append(f"hanya {len(set(jenis))} jenis_soal berbeda; minimal 3")
 
     pool = [r for r in pretest.values() if r.bab_no == data.bab_no and r.subbab == data.subbab]
     pool += load_exercise(data.book, data.bab_no, data.subbab, exclude=path)

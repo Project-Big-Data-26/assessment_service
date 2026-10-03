@@ -26,14 +26,17 @@ def pilih(book: str, batch: int) -> dict:
         rows = json.load(f)["items"]
     with open(os.path.join(base, "soal_exercise_meta.json"), encoding="utf-8") as f:
         meta = json.load(f)
-    rendah = [r for r in rows if (r["confidence_score"] or 0) < C.CONFIDENCE_SAMPLING_BATAS]
+    def skor(r):
+        return meta[r["_id"]]["confidence_hitung"]
+
+    rendah = [r for r in rows if skor(r) < C.CONFIDENCE_SAMPLING_BATAS]
     sisa = [r for r in rows if r not in rendah]
     k = math.ceil(len(sisa) * C.SAMPLING_ACAK_PERSEN) if sisa else 0
     acak = random.Random(f"sampling-{book}-{batch}").sample(sisa, k)
     out = {"batas": C.CONFIDENCE_SAMPLING_BATAS, "total": len(rows),
-           "wajib_cek": [{"_id": r["_id"], "id": meta[r["_id"]]["id"], "confidence_score": r["confidence_score"],
+           "wajib_cek": [{"_id": r["_id"], "id": meta[r["_id"]]["id"], "confidence_score": skor(r),
                           "alasan": "confidence rendah"} for r in rendah],
-           "acak": [{"_id": r["_id"], "id": meta[r["_id"]]["id"], "confidence_score": r["confidence_score"],
+           "acak": [{"_id": r["_id"], "id": meta[r["_id"]]["id"], "confidence_score": skor(r),
                      "alasan": "sampel acak"} for r in acak]}
     with open(os.path.join(base, "sampling.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
