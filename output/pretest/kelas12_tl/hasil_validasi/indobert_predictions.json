@@ -1,0 +1,3290 @@
+{
+  "schemaVersion": "indobert-blind-diagnostics-v1",
+  "createdAt": "2026-10-03T13:40:07.038332+00:00",
+  "researchOnlyRun": true,
+  "reviewRequired": true,
+  "blindDecisionLockedAt": "2026-10-03T13:39:52.724695+00:00",
+  "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
+  "model": {
+    "artifactFormatVersion": "indobert-3x4x3-artifact-v1",
+    "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+    "createdAt": "2026-09-28T20:00:29.167831+00:00",
+    "baseModel": "indobenchmark/indobert-base-p1",
+    "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+    "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+    "datasetHash": "8a41381aa7e3fdb4e21617b9091e6747d29e5bd3f01e3c992ce9895b823f35c1",
+    "splitManifestHash": "681c8a0a6afea9d23b71e1f315543751ebb259645c01f10a4db3fd2d90b634df",
+    "rubricVersion": "math-rubric-3x4x3-v1",
+    "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+    "inputSchemaVersion": "math-question-text-v1",
+    "inputRepresentation": "metadata",
+    "architectureVersion": "parallel-v1",
+    "detachDifficultyConditioning": true,
+    "difficultyHeadType": "multiclass",
+    "gradeEmbeddingDimension": 0,
+    "routingPolicyVersion": "confidence-only-v1",
+    "labels": {
+      "mathCognitiveDomain": [
+        "knowing",
+        "applying",
+        "reasoning"
+      ],
+      "knowledgeDimension": [
+        "factual",
+        "conceptual",
+        "procedural",
+        "metacognitive"
+      ],
+      "intendedDifficulty": [
+        "Easy",
+        "Medium",
+        "Hard"
+      ]
+    },
+    "calibration": {
+      "mathCognitiveDomain": {
+        "temperature": 0.05,
+        "confidenceThreshold": 0.0,
+        "entropyThreshold": null,
+        "perGrade": {}
+      },
+      "knowledgeDimension": {
+        "temperature": 0.20979985858964298,
+        "confidenceThreshold": null,
+        "entropyThreshold": null,
+        "perGrade": {}
+      },
+      "intendedDifficulty": {
+        "temperature": 0.9533279648066687,
+        "confidenceThreshold": 0.0,
+        "entropyThreshold": null,
+        "perGrade": {}
+      }
+    },
+    "maxLength": 256,
+    "loraRank": 8,
+    "files": {
+      "heads.safetensors": "2132dd6e49ce124c52287afec65f7c92a7cecf948c9af02fad76fe4437e9122b",
+      "adapter/adapter_config.json": "ca129a9e7cadb708d860d35d6ce8db1442f291485bd0bfcbf755b6a1f047478c",
+      "adapter/adapter_model.safetensors": "7fd4975e5c599e0b2bff865836964822fc9dbb0ad685e60776048c620eab8ed8",
+      "adapter/README.md": "d25eb7a292cc74330f9f3dd9a701f8e44d68d5ba33ee0d4023c21035d63ef747",
+      "base_model/config.json": "351f0eec3f7ed95d24c7d7ba6f6e9f5ef813ba585af175fd5c9418c94319ee9c",
+      "base_model/model.safetensors": "7ab790f1b029e78a13498b1a50702f0066c27e85769daa31ba385d9d9daae092",
+      "reports/reliability-intendedDifficulty.png": "c0f27d2850994b9c3105b03c966d42215c168a38b523e06ac4ea4d8cb0b7afdf",
+      "reports/reliability-knowledgeDimension.png": "0eabada5a2b99abd1bc4571bfd8310d5b33f5c061919bedc3c998c352a274739",
+      "reports/reliability-mathCognitiveDomain.png": "36feed7c894bb7a4f0c9e900b3cadafbc7f5846359fd4c48198bc3a325fd69f1",
+      "tokenizer/tokenizer.json": "11a3382bc3f2e408398c6d021e08a6e2228589e049171bd4c6e509521c341ee4",
+      "tokenizer/tokenizer_config.json": "81d76ff64c6837a77a26739668e51d61831f35d35e8a7043673b2c614a43c982"
+    },
+    "metrics": {
+      "validation": {
+        "mathCognitiveDomain": {
+          "knowing": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "applying": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "reasoning": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6666666666666666,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 7.0
+          },
+          "confusionMatrix": [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "knowledgeDimension": {
+          "factual": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6666666666666666,
+            "support": 3.0
+          },
+          "conceptual": {
+            "precision": 0.75,
+            "recall": 0.75,
+            "f1-score": 0.75,
+            "support": 4.0
+          },
+          "procedural": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "metacognitive": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 0.7142857142857143,
+          "macro avg": {
+            "precision": 0.35416666666666663,
+            "recall": 0.35416666666666663,
+            "f1-score": 0.35416666666666663,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.7142857142857143,
+            "recall": 0.7142857142857143,
+            "f1-score": 0.7142857142857143,
+            "support": 7.0
+          },
+          "confusionMatrix": [
+            [
+              2,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "intendedDifficulty": {
+          "Easy": {
+            "precision": 0.8571428571428571,
+            "recall": 1.0,
+            "f1-score": 0.9230769230769231,
+            "support": 6.0
+          },
+          "Medium": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "Hard": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 0.8571428571428571,
+          "macro avg": {
+            "precision": 0.2857142857142857,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3076923076923077,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.7346938775510203,
+            "recall": 0.8571428571428571,
+            "f1-score": 0.7912087912087912,
+            "support": 7.0
+          },
+          "confusionMatrix": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "trainingHistory": [
+          {
+            "epoch": 0,
+            "trainingLoss": 3.399817188580831,
+            "validationMeanMacroF1": 0.3205775705775706,
+            "seconds": 11.017980599994189
+          },
+          {
+            "epoch": 1,
+            "trainingLoss": 2.375427563985189,
+            "validationMeanMacroF1": 0.2816886816886817,
+            "seconds": 10.48932199999399
+          },
+          {
+            "epoch": 2,
+            "trainingLoss": 2.12866120868259,
+            "validationMeanMacroF1": 0.3683048433048433,
+            "seconds": 10.221215600002324
+          },
+          {
+            "epoch": 3,
+            "trainingLoss": 2.0961578157213,
+            "validationMeanMacroF1": 0.4428418803418803,
+            "seconds": 10.479732700012391
+          },
+          {
+            "epoch": 4,
+            "trainingLoss": 2.092327356338501,
+            "validationMeanMacroF1": 0.4428418803418803,
+            "seconds": 10.517899699989357
+          },
+          {
+            "epoch": 5,
+            "trainingLoss": 1.9487591783205669,
+            "validationMeanMacroF1": 0.38545651878985215,
+            "seconds": 10.426200499990955
+          }
+        ],
+        "meanMacroF1": 0.4428418803418803
+      },
+      "calibration": {
+        "mathCognitiveDomain": {
+          "temperature": 0.05,
+          "nllBefore": 0.5604614134746388,
+          "nllAfter": 0.0434861348191148,
+          "brier": 0.013467247450181926,
+          "ece": 0.039572424849240666,
+          "reliabilityBins": [
+            {
+              "lower": 0.0,
+              "upper": 0.06666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.06666666666666667,
+              "upper": 0.13333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.13333333333333333,
+              "upper": 0.2,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.26666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.26666666666666666,
+              "upper": 0.3333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.3333333333333333,
+              "upper": 0.4,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.4666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4666666666666667,
+              "upper": 0.5333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.5333333333333333,
+              "upper": 0.6,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.6666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6666666666666666,
+              "upper": 0.7333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.7333333333333333,
+              "upper": 0.8,
+              "count": 1,
+              "meanConfidence": 0.7876759564367969,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.8666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.8666666666666667,
+              "upper": 0.9333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.9333333333333333,
+              "upper": 1.0,
+              "count": 6,
+              "meanConfidence": 0.9892195116030864,
+              "accuracy": 1.0
+            }
+          ],
+          "selectiveThreshold": 0.0
+        },
+        "knowledgeDimension": {
+          "temperature": 0.20979985858964298,
+          "nllBefore": 0.824072269022019,
+          "nllAfter": 0.5547382181342851,
+          "brier": 0.384840873863088,
+          "ece": 0.3630052657565072,
+          "reliabilityBins": [
+            {
+              "lower": 0.0,
+              "upper": 0.06666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.06666666666666667,
+              "upper": 0.13333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.13333333333333333,
+              "upper": 0.2,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.26666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.26666666666666666,
+              "upper": 0.3333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.3333333333333333,
+              "upper": 0.4,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.4666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4666666666666667,
+              "upper": 0.5333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.5333333333333333,
+              "upper": 0.6,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.6666666666666666,
+              "count": 2,
+              "meanConfidence": 0.6454620374468271,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.6666666666666666,
+              "upper": 0.7333333333333333,
+              "count": 2,
+              "meanConfidence": 0.7151735883715677,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.7333333333333333,
+              "upper": 0.8,
+              "count": 1,
+              "meanConfidence": 0.7358779847147356,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.8666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.8666666666666667,
+              "upper": 0.9333333333333333,
+              "count": 1,
+              "meanConfidence": 0.8815996231039566,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.9333333333333333,
+              "upper": 1.0,
+              "count": 1,
+              "meanConfidence": 0.9809086337352385,
+              "accuracy": 1.0
+            }
+          ],
+          "selectiveThreshold": null
+        },
+        "intendedDifficulty": {
+          "temperature": 0.9533279648066687,
+          "nllBefore": 0.38385543706616715,
+          "nllAfter": 0.3833844046929877,
+          "brier": 0.23268309793845401,
+          "ece": 0.17050577890441565,
+          "reliabilityBins": [
+            {
+              "lower": 0.0,
+              "upper": 0.06666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.06666666666666667,
+              "upper": 0.13333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.13333333333333333,
+              "upper": 0.2,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.26666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.26666666666666666,
+              "upper": 0.3333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.3333333333333333,
+              "upper": 0.4,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.4666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4666666666666667,
+              "upper": 0.5333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.5333333333333333,
+              "upper": 0.6,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.6666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6666666666666666,
+              "upper": 0.7333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.7333333333333333,
+              "upper": 0.8,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.8666666666666667,
+              "count": 2,
+              "meanConfidence": 0.8333221195632852,
+              "accuracy": 0.5
+            },
+            {
+              "lower": 0.8666666666666667,
+              "upper": 0.9333333333333333,
+              "count": 5,
+              "meanConfidence": 0.8946207573591322,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.9333333333333333,
+              "upper": 1.0,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            }
+          ],
+          "selectiveThreshold": 0.0
+        }
+      }
+    },
+    "promotionGates": {
+      "macroF1Head1And2": 0.7,
+      "macroF1Head3": 0.65,
+      "perClassF1": 0.5,
+      "eceEachHead": 0.1,
+      "selectiveAccuracy": 0.8,
+      "minimumCoverage": 0.7
+    },
+    "approvedForProvisional": false,
+    "researchOnly": false,
+    "dataGatesPassed": false,
+    "antiCollapsePassed": false,
+    "promptVersion": null,
+    "labelProvenance": "unknown",
+    "gitCommit": "42647a4d8557f5c3c03675dfb1033416805eb58b"
+  },
+  "summary": {
+    "itemCount": 41,
+    "predictionDistribution": {
+      "mathCognitiveDomain": {
+        "abstain": 41
+      },
+      "knowledgeDimension": {
+        "abstain": 41
+      },
+      "intendedDifficulty": {
+        "abstain": 41
+      }
+    }
+  },
+  "items": [
+    {
+      "index": 1,
+      "questionId": "5faf4ffecb76e0e311ebef4d",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:5faf4ffecb76e0e311ebef4d:content-v2",
+      "questionVersionId": "5faf4ffecb76e0e311ebef4d:content-v2:blind-revalidation",
+      "contentHash": "ba1c72259e9290cc19fd3b788e1acb2125b5765b77b09aae16272720b6156ca2",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui sebuah lingkaran $L_1\\equiv x^2+y^2-6x+8y-39=0$. Akan dibuat lingkaran kedua $L_2$ dengan titik pusat lingkaran $L_1$ dicerminkan terhadap sumbu-$x$ dan jari-jarinya diperbesar tiga kali dari jari-jari $L_1$. Tentukan persamaan lingkaran $L_2$ tersebut.\nPilihan: A. pusat $(3,4)$, jari-jari $24$\nB. pusat $(3,4)$, jari-jari $8$\nC. pusat $(3,4)$, jari-jari $11$\nD. pusat $(-3,-4)$, jari-jari $24$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 188,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.787,
+      "prediction": {
+        "questionId": "5faf4ffecb76e0e311ebef4d",
+        "contentVersion": 2,
+        "contentHash": "ba1c72259e9290cc19fd3b788e1acb2125b5765b77b09aae16272720b6156ca2",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "6b82d2ab91afc11b3bd051599dcb201dad0efa83f698a59db6b8128ca348a607",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "questionId": "9d2c41327363766288766657",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:9d2c41327363766288766657:content-v2",
+      "questionVersionId": "9d2c41327363766288766657:content-v2:blind-revalidation",
+      "contentHash": "f18180a1445b3328a6b09123af7816144ffdecdbad92b7221881cb5b69a4ce56",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui pusat lingkaran terletak pada titik pusat $O(0,0)$.\n\nTentukan persamaan lingkaran tersebut jika jari-jari $r=\\sqrt{15}$.\nPilihan: A. $x^2+y^2=15$\nB. $x^2+y^2=\\sqrt{15}$\nC. $x^2+y^2=225$\nD. $x+y=15$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 123,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.131,
+      "prediction": {
+        "questionId": "9d2c41327363766288766657",
+        "contentVersion": 2,
+        "contentHash": "f18180a1445b3328a6b09123af7816144ffdecdbad92b7221881cb5b69a4ce56",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "267eb8ce4a754d247c24b561a8874137475a6afafb5cf3ab8dd2fa8176bf21c4",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "questionId": "9abb5ee08760d5ba15421eeb",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:9abb5ee08760d5ba15421eeb:content-v2",
+      "questionVersionId": "9abb5ee08760d5ba15421eeb:content-v2:blind-revalidation",
+      "contentHash": "aa53378d302b60b79d33c0a1eb13367723c3ada34bde830bafe39ad658d0161f",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Elips\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui koordinat titik fokus suatu elips adalah $F_1(8,-1)$ dan $F_2(-4,-1)$ serta salah satu koordinat ujung sumbu minornya adalah $(2,7)$. Tentukan persamaan elips tersebut.\nPilihan: A. $\\dfrac{(x-2)^2}{100}+\\dfrac{(y-1)^2}{64}=1$\nB. $\\dfrac{(x-2)^2}{100}+\\dfrac{(y+1)^2}{64}=1$\nC. $\\dfrac{(x-2)^2}{64}+\\dfrac{(y+1)^2}{100}=1$\nD. $\\dfrac{(x-2)^2}{36}+\\dfrac{(y+1)^2}{64}=1$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 239,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.103,
+      "prediction": {
+        "questionId": "9abb5ee08760d5ba15421eeb",
+        "contentVersion": 2,
+        "contentHash": "aa53378d302b60b79d33c0a1eb13367723c3ada34bde830bafe39ad658d0161f",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "15b099221529529002b3d5718d9e14c200a470895fab1e37620c0f3829f63bc3",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "questionId": "d4b6313f54c1e2d6eabb94d4",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:d4b6313f54c1e2d6eabb94d4:content-v2",
+      "questionVersionId": "d4b6313f54c1e2d6eabb94d4:content-v2:blind-revalidation",
+      "contentHash": "04c64a0b13c8f819230f591b17d0af6354b37c8013c5e443f628b472b84c16bb",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Elips\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu elips memiliki titik pusat $O(0,0)$. Salah satu fokusnya terletak pada titik $(0,3)$ dan panjang sumbu mayornya adalah 10. Tentukan persamaan elips tersebut.\nPilihan: A. $\\dfrac{x^2}{25}+\\dfrac{y^2}{16}=1$\nB. $\\dfrac{x^2}{16}+\\dfrac{y^2}{9}=1$\nC. $\\dfrac{x^2}{4}+\\dfrac{y^2}{25}=1$\nD. $\\dfrac{x^2}{16}+\\dfrac{y^2}{25}=1$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 195,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.108,
+      "prediction": {
+        "questionId": "d4b6313f54c1e2d6eabb94d4",
+        "contentVersion": 2,
+        "contentHash": "04c64a0b13c8f819230f591b17d0af6354b37c8013c5e443f628b472b84c16bb",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "640e98f11daa18a04b9a8050993bfe90054c7a65c7e99c7810d896d286284448",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "questionId": "09343175fbd7eabe7e201500",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:09343175fbd7eabe7e201500:content-v2",
+      "questionVersionId": "09343175fbd7eabe7e201500:content-v2:blind-revalidation",
+      "contentHash": "e122f032f0ee6d129f4873de3b99afe63465abed1f4dd48bd8595a880f0597be",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Kedudukan Titik dan Garis terhadap Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan nilai $p$ agar garis $y=-x+p$ menyinggung lingkaran $L\\equiv x^2+y^2-2x-4y+3=0$.\nPilihan: A. $p=1$ atau $p=3$\nB. $p=1$ atau $p=5$\nC. $p=-1$ atau $p=-5$\nD. $p=3$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 129,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.087,
+      "prediction": {
+        "questionId": "09343175fbd7eabe7e201500",
+        "contentVersion": 2,
+        "contentHash": "e122f032f0ee6d129f4873de3b99afe63465abed1f4dd48bd8595a880f0597be",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "f73c91868aeba9464e4d2feb7c083206d5caf5168462895cd0bdda5b3bf71514",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "questionId": "7e7333f61e09f38a74e01269",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:7e7333f61e09f38a74e01269:content-v2",
+      "questionVersionId": "7e7333f61e09f38a74e01269:content-v2:blind-revalidation",
+      "contentHash": "d5d9c65810f985befd4eb6500d33e177c59c1948923d3e6f1f16edc6c0867683",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Kedudukan Titik dan Garis terhadap Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui persamaan lingkaran $L\\equiv x^2+y^2+4x-y+1=0$. Tentukan kedudukan garis berikut terhadap lingkaran $L$.\n\nTentukan kedudukan garis $k: x=0$ terhadap lingkaran $L\\equiv x^2+y^2+4x-y+1=0$.\nPilihan: A. menyinggung lingkaran ($D=0$)\nB. berimpit dengan lingkaran\nC. tidak memotong maupun menyinggung ($D<0$)\nD. memotong di dua titik ($D>0$)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 154,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.079,
+      "prediction": {
+        "questionId": "7e7333f61e09f38a74e01269",
+        "contentVersion": 2,
+        "contentHash": "d5d9c65810f985befd4eb6500d33e177c59c1948923d3e6f1f16edc6c0867683",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "bd1a7b54225d419743580ada9d3d34c0dcd057b09cf9791942e929698307ca37",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "questionId": "e8b13b3498b760177a7fe083",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:e8b13b3498b760177a7fe083:content-v2",
+      "questionVersionId": "e8b13b3498b760177a7fe083:content-v2:blind-revalidation",
+      "contentHash": "956f0700a38aaa37aa29afc5e2418b7d2d071c16dd920e7d8b200fdd14d6860f",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Persamaan Garis Singgung Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui persamaan lingkaran $L\\equiv \\left(x-\\tfrac12\\right)^2+\\left(y+1\\tfrac12\\right)^2-16=0$. Tentukan persamaan garis singgung suatu lingkaran $L$ jika kemiringannya diketahui.\n\nTentukan persamaan garis singgung lingkaran $L\\equiv \\left(x-\\tfrac12\\right)^2+\\left(y+1\\tfrac12\\right)^2-16=0$ jika kemiringannya $2$.\nPilihan: A. $y=2x-\\tfrac52+4\\sqrt3$ dan $y=2x-\\tfrac52-4\\sqrt3$\nB. $y=\\tfrac12x-\\tfrac52+4\\sqrt5$ dan $y=\\tfrac12x-\\tfrac52-4\\sqrt5$\nC. $y=2x+\\tfrac52+4\\sqrt5$ dan $y=2x+\\tfrac52-4\\sqrt5$\nD. $y=2x-\\tfrac52+4\\sqrt5$ dan $y=2x-\\tfrac52-4\\sqrt5$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 309,
+      "maxLength": 256,
+      "wouldTruncate": true,
+      "latencyMs": 0.171,
+      "prediction": {
+        "questionId": "e8b13b3498b760177a7fe083",
+        "contentVersion": 2,
+        "contentHash": "956f0700a38aaa37aa29afc5e2418b7d2d071c16dd920e7d8b200fdd14d6860f",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "eff37bad049129f8fa15ba9fd6a4aa32ca779ae5254b7f1f8ad7bdf80b8f7a44",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "questionId": "900355eb77ace3e6da74cb01",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:900355eb77ace3e6da74cb01:content-v2",
+      "questionVersionId": "900355eb77ace3e6da74cb01:content-v2:blind-revalidation",
+      "contentHash": "5b7d0eedaa06ac1e71c597285ee2b47349c68ecdf1e82063f6e45b800c1ba4e3",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Persamaan Garis Singgung Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tunjukkan bahwa titik $A(6,-8)$ terletak pada lingkaran $L\\equiv x^2+y^2=100$, kemudian tentukan persamaan garis singgungnya.\nPilihan: A. $6x-8y-100=0$\nB. $6x-8y+100=0$\nC. $8x-6y-100=0$\nD. $6x+8y-100=0$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 129,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.108,
+      "prediction": {
+        "questionId": "900355eb77ace3e6da74cb01",
+        "contentVersion": 2,
+        "contentHash": "5b7d0eedaa06ac1e71c597285ee2b47349c68ecdf1e82063f6e45b800c1ba4e3",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "438fea9bf266aa0962ad7f697e8a5ede1fdf8ed7d5b39896322014fa43eca94a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "questionId": "9d3b005f20ecd5dabca2aa9e",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:9d3b005f20ecd5dabca2aa9e:content-v2",
+      "questionVersionId": "9d3b005f20ecd5dabca2aa9e:content-v2:blind-revalidation",
+      "contentHash": "ab545119d728fd45aeefbc174fccf8eb5d5befa74ec9b00d6615fedf7e20fdf6",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Lingkaran dan Tali Busur\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika AD = 3 cm dan BE = AD, tentukan:\n\nbesar `∠` BAE\nPilihan: A. 45°\nB. 90°\nC. 120°\nD. 60°\nTranskripsi visual: Sebuah lingkaran dengan pusat A. Titik D, E, dan B terletak pada keliling lingkaran. Ruas garis AD adalah jari-jari. Ruas garis AE dan AB juga jari-jari. Segitiga ABE terbentuk dengan sisi AE, AB, dan BE.",
+      "untruncatedTokenCount": 114,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.115,
+      "prediction": {
+        "questionId": "9d3b005f20ecd5dabca2aa9e",
+        "contentVersion": 2,
+        "contentHash": "ab545119d728fd45aeefbc174fccf8eb5d5befa74ec9b00d6615fedf7e20fdf6",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "99acaaddde4785205ae0924ec572d25e040d66af6ee854a2707ed5d675b32c2d",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "questionId": "a74ab5c43d2351a59d9fc0af",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:a74ab5c43d2351a59d9fc0af:content-v2",
+      "questionVersionId": "a74ab5c43d2351a59d9fc0af:content-v2:blind-revalidation",
+      "contentHash": "b27b31882181bd6a033daa69fca591e11316e0da937aa91a885fb7ee7241498a",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Definisi Turunan Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Gunakanlah sifat-sifat limit untuk menyelesaikan masalah berikut.\n\nTentukan nilai dari $\\displaystyle\\lim_{x\\to \\frac{\\pi}{4}}\\left(\\dfrac{\\sin x-\\cos x}{1-\\tan x}\\right)$.\nPilihan: A. $-\\frac{1}{2}\\sqrt{2}$\nB. $-\\sqrt{2}$\nC. $\\frac{1}{2}\\sqrt{2}$\nD. $-\\frac{1}{2}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 165,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.088,
+      "prediction": {
+        "questionId": "a74ab5c43d2351a59d9fc0af",
+        "contentVersion": 2,
+        "contentHash": "b27b31882181bd6a033daa69fca591e11316e0da937aa91a885fb7ee7241498a",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "2ec34cec91011e6246ac1ed03fdc0cfb4d44250d26ed341132853845c6bc9b3d",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "questionId": "915c9b6e3d6efd2eb9ea0a6c",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:915c9b6e3d6efd2eb9ea0a6c:content-v2",
+      "questionVersionId": "915c9b6e3d6efd2eb9ea0a6c:content-v2:blind-revalidation",
+      "contentHash": "ad9d90f24c09c160b71299d96d1a9bb735869eac8d11c65bf09d0b36810b357c",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Definisi Turunan Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Gunakanlah sifat-sifat limit untuk menyelesaikan masalah berikut.\n\nTentukan nilai dari $\\displaystyle\\lim_{x\\to 3}(x^2+2)$.\nPilihan: A. $5$\nB. $11$\nC. $7$\nD. $25$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 93,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.069,
+      "prediction": {
+        "questionId": "915c9b6e3d6efd2eb9ea0a6c",
+        "contentVersion": 2,
+        "contentHash": "ad9d90f24c09c160b71299d96d1a9bb735869eac8d11c65bf09d0b36810b357c",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "2d2e8034d05e9041f2b133c7ed0dda7c3593586f5333dbdafedd58d4c648df51",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "questionId": "f55a3e3b176f4ad014bc0992",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:f55a3e3b176f4ad014bc0992:content-v2",
+      "questionVersionId": "f55a3e3b176f4ad014bc0992:content-v2:blind-revalidation",
+      "contentHash": "40c7e14960f0eb0e091773ad479d5c0b26945132d500922c30768a0bbb6f58fe",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Sifat-Sifat Turunan Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui persamaan fungsi trigonometri $f(x)=2-2\\sin\\left(\\frac{1}{2}\\pi x\\right)$ didefinisikan pada daerah asal $D_f=\\{x\\mid 0\\le x\\le 4, x\\in R\\}$.\n\nJika $f'(x)$ bernilai nol pada $x=x_1$ dan $x=x_2$, tentukan nilai dari $x_1^2+x_2^2$.\nPilihan: A. $4$\nB. $17$\nC. $10$\nD. $20$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 170,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.094,
+      "prediction": {
+        "questionId": "f55a3e3b176f4ad014bc0992",
+        "contentVersion": 2,
+        "contentHash": "40c7e14960f0eb0e091773ad479d5c0b26945132d500922c30768a0bbb6f58fe",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "1ca3b5a55f329ac6f1d6813bdf6fca52a3c99cf476a5aa5336d23005a4e3322a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "questionId": "dc30e9ea3f84a3de8881e431",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:dc30e9ea3f84a3de8881e431:content-v2",
+      "questionVersionId": "dc30e9ea3f84a3de8881e431:content-v2:blind-revalidation",
+      "contentHash": "4da7cb2739cdbce3279cb53d6cf0c955c4b2cd71797e1a85ce4cef566360e5a9",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Sifat-Sifat Turunan Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui persamaan fungsi trigonometri $f(x)=2-2\\sin\\left(\\frac{1}{2}\\pi x\\right)$ didefinisikan pada daerah asal $D_f=\\{x\\mid 0\\le x\\le 4, x\\in R\\}$.\n\nTentukan turunan pertama dari $f(x)$.\nPilihan: A. $f'(x)=-\\pi\\cos\\left(\\frac12\\pi x\\right)$\nB. $f'(x)=-2\\cos\\left(\\frac12\\pi x\\right)$\nC. $f'(x)=-\\pi\\sin\\left(\\frac12\\pi x\\right)$\nD. $f'(x)=\\pi\\cos\\left(\\frac12\\pi x\\right)$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 231,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.069,
+      "prediction": {
+        "questionId": "dc30e9ea3f84a3de8881e431",
+        "contentVersion": 2,
+        "contentHash": "4da7cb2739cdbce3279cb53d6cf0c955c4b2cd71797e1a85ce4cef566360e5a9",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "816179e639f559d354d4327fd64483d0aa3bfef3ba700c16d676018b84773536",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "questionId": "351e16aaccd3ba782ef3e8cb",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:351e16aaccd3ba782ef3e8cb:content-v2",
+      "questionVersionId": "351e16aaccd3ba782ef3e8cb:content-v2:blind-revalidation",
+      "contentHash": "01ee825adcfc07b254d44db451502eb9ba5bc521dd75ad14ccbe8d3321cf242a",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Aplikasi Turunan Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan interval fungsi naik dan fungsi turun pada setiap kurva berikut.\n\nTentukan interval fungsi naik dan fungsi turun pada kurva $f(x)=x^3-3x^2-15$.\nPilihan: A. Naik untuk $x<0$ atau $x>2$; turun untuk $0<x<2$\nB. Naik untuk $0<x<2$; turun untuk $x<0$ atau $x>2$\nC. Naik untuk $x<0$ atau $x>6$; turun untuk $0<x<6$\nD. Naik untuk semua $x$ kecuali $x=0$ dan $x=2$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 171,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.083,
+      "prediction": {
+        "questionId": "351e16aaccd3ba782ef3e8cb",
+        "contentVersion": 2,
+        "contentHash": "01ee825adcfc07b254d44db451502eb9ba5bc521dd75ad14ccbe8d3321cf242a",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "b08f70f2e58f949bf3eecc9892e9bbc02122260030357153baf5c19494907204",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "questionId": "2bbe6539fc13ec9fb083c7b0",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:2bbe6539fc13ec9fb083c7b0:content-v2",
+      "questionVersionId": "2bbe6539fc13ec9fb083c7b0:content-v2:blind-revalidation",
+      "contentHash": "2553ebd929dca8dd3ec80e4e048b5b8b35f2e552caac9100222998f21298e2fa",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Aplikasi Turunan Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan nilai ekstrem dan jenis titik ekstremnya dari setiap fungsi berikut.\n\nNilai ekstrem dan jenis titik ekstrem dari $f(x)=x^2-5x+6$?\nPilihan: A. Nilai ekstrem minimum $-\\frac14$ pada $x=-\\frac52$\nB. Nilai ekstrem maksimum $-\\frac14$ pada $x=\\frac52$\nC. Nilai ekstrem minimum $\\frac14$ pada $x=\\frac52$\nD. Nilai ekstrem minimum $-\\frac14$ pada $x=\\frac52$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 157,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.081,
+      "prediction": {
+        "questionId": "2bbe6539fc13ec9fb083c7b0",
+        "contentVersion": 2,
+        "contentHash": "2553ebd929dca8dd3ec80e4e048b5b8b35f2e552caac9100222998f21298e2fa",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "d3f4d2a2c35aae955ed31ab08929b2edbf697a56e070cd31bb0cfae69e2a04ba",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 16,
+      "questionId": "1a7617d4eabc8a84d287b87c",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:1a7617d4eabc8a84d287b87c:content-v2",
+      "questionVersionId": "1a7617d4eabc8a84d287b87c:content-v2:blind-revalidation",
+      "contentHash": "a13b1eec470b80d48c469764f23cd92a4f93a1fce04239044a0b1403aabde265",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Aplikasi Turunan Fungsi di Berbagai Bidang Ilmu\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah talang air akan dibuat dari sebuah pelat seng selebar 30 cm. Caranya adalah dengan melipat kedua sisi pelat seng sama panjang.\n\nTentukan ukuran penampang tegak talang air tersebut sehingga talang dapat dialiri air semaksimal mungkin.\nPilihan: A. Panjang $20$ cm dan lebar $5$ cm\nB. Panjang $7,5$ cm dan lebar $15$ cm\nC. Panjang $10$ cm dan lebar $10$ cm\nD. Panjang $15$ cm dan lebar $7,5$ cm\nTranskripsi visual: -",
+      "untruncatedTokenCount": 137,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.095,
+      "prediction": {
+        "questionId": "1a7617d4eabc8a84d287b87c",
+        "contentVersion": 2,
+        "contentHash": "a13b1eec470b80d48c469764f23cd92a4f93a1fce04239044a0b1403aabde265",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "4473b51016618fc1b2304bc59cb7497070b4545c300d7c4e1b31519a357ff625",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 17,
+      "questionId": "1375fa6e6d9514008130880c",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:1375fa6e6d9514008130880c:content-v2",
+      "questionVersionId": "1375fa6e6d9514008130880c:content-v2:blind-revalidation",
+      "contentHash": "d800b0ef743d2676d31a462282587657b66b1f3d4e0c0cf7be26e2955fe12106",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Aplikasi Turunan Fungsi di Berbagai Bidang Ilmu\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan dua bilangan real positif dengan jumlah kedua bilangan itu minimum dan mempunyai hasil kali 80.\nPilihan: A. Kedua bilangan bernilai sama, yaitu $10$\nB. Kedua bilangan bernilai sama, yaitu $\\sqrt{40}$\nC. Kedua bilangan bernilai sama, yaitu $4\\sqrt5$\nD. Kedua bilangan adalah $8$ dan $10$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 112,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.237,
+      "prediction": {
+        "questionId": "1375fa6e6d9514008130880c",
+        "contentVersion": 2,
+        "contentHash": "d800b0ef743d2676d31a462282587657b66b1f3d4e0c0cf7be26e2955fe12106",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "5a52d08f297b7970352a39a5ebdf27aa87be2471e0a440dad2e08f871971495e",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 18,
+      "questionId": "f2de3a4198c1c8c13c51a92a",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:f2de3a4198c1c8c13c51a92a:content-v2",
+      "questionVersionId": "f2de3a4198c1c8c13c51a92a:content-v2:blind-revalidation",
+      "contentHash": "4b81516b005637d2e64911588722bce4c33090f8a45c8d72fda48530f42e0ec1",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Fungsi Invers\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui f (x) = 2x + b dan f (f (x)) = 4x + 6. Tentukan nilai b dan f-1 (x).\nPilihan: A. b = 2, f^-1(x) = (x + 2)/2\nB. b = 2, f^-1(x) = (x - 2)/2\nC. b = 3, f^-1(x) = (x - 3)/2\nD. b = 6, f^-1(x) = (x - 6)/2\nTranskripsi visual: -",
+      "untruncatedTokenCount": 156,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.133,
+      "prediction": {
+        "questionId": "f2de3a4198c1c8c13c51a92a",
+        "contentVersion": 2,
+        "contentHash": "4b81516b005637d2e64911588722bce4c33090f8a45c8d72fda48530f42e0ec1",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "64445503d40a107557882bdea7120e94d6354d1b05a0a83ad633815906754b0a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 19,
+      "questionId": "501a9296524cbcfb62ba4aee",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:501a9296524cbcfb62ba4aee:content-v2",
+      "questionVersionId": "501a9296524cbcfb62ba4aee:content-v2:blind-revalidation",
+      "contentHash": "e27bd5603bcdf0b7028ffc3a88c360ca667d65f9bff58058e4bfcbd66342ef4e",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Integral Tak Tentu\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dalam 10 hari pertama bulan Desember, sebuah sel suatu tanaman bertumbuh sedemikian rupa sehingga pada $t$ hari sesudah tanggal 1 Desember, volume sel itu bertambah dengan kecepatan $(12-t)^{-2}$ mikrometer kubik per hari.\n\nJika pada tanggal 3 Desember volume sel itu adalah 3 mikrometer kubik, berapa volumenya pada tanggal 8 Desember?\nPilihan: A. 2,9 mikrometer kubik\nB. 0,2 mikrometer kubik\nC. 2,7 mikrometer kubik\nD. 3,1 mikrometer kubik\nTranskripsi visual: -",
+      "untruncatedTokenCount": 140,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.119,
+      "prediction": {
+        "questionId": "501a9296524cbcfb62ba4aee",
+        "contentVersion": 2,
+        "contentHash": "e27bd5603bcdf0b7028ffc3a88c360ca667d65f9bff58058e4bfcbd66342ef4e",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "6513c8af91ddf00ef63fcee1c5443bfcd1ab0e9ce3105168f675d283d7042f4a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "questionId": "acb3cf7a6b854bfb9850f6a1",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:acb3cf7a6b854bfb9850f6a1:content-v2",
+      "questionVersionId": "acb3cf7a6b854bfb9850f6a1:content-v2:blind-revalidation",
+      "contentHash": "13c47bb72c851372421b8e2911d2cc31c102b1c1f35b70feedab4b90cced509f",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Integral Tak Tentu\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan integral tak tentu berikut.\n\n$\\int 2x^7\\,dx$\nPilihan: A. $\\frac{1}{8}x^8+C$\nB. $14x^6+C$\nC. $\\frac{1}{4}x^8+C$\nD. $2x^8+C$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 110,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.093,
+      "prediction": {
+        "questionId": "acb3cf7a6b854bfb9850f6a1",
+        "contentVersion": 2,
+        "contentHash": "13c47bb72c851372421b8e2911d2cc31c102b1c1f35b70feedab4b90cced509f",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "6e52856b183d2944fefbf0eb281b5eed8051c49e89844e96a8e1392fc9405b90",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 21,
+      "questionId": "dd99d4ea24732659174ae27b",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:dd99d4ea24732659174ae27b:content-v2",
+      "questionVersionId": "dd99d4ea24732659174ae27b:content-v2:blind-revalidation",
+      "contentHash": "18d8225e28ebf76a6437fb62cff57d7f9ffa8c972dffbf48dfcfea5bd7ab2175",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Integral Tentu\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui fungsi $f(x)=x^2+4x+5$ pada interval $[1,4]$.\n\nTentukan integral tentu dari $f(x)$ pada interval $[1,4]$ atau $\\int_1^4(x^2+4x+5)\\,dx$.\nPilihan: A. $56$\nB. $66$\nC. $96$\nD. $\\frac{87}{2}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 133,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.1,
+      "prediction": {
+        "questionId": "dd99d4ea24732659174ae27b",
+        "contentVersion": 2,
+        "contentHash": "18d8225e28ebf76a6437fb62cff57d7f9ffa8c972dffbf48dfcfea5bd7ab2175",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "32b82960151a03a9dbc8201c361face1ee366c1d2451f129bb0ec542c16877ff",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 22,
+      "questionId": "55be764addd8f2e1a44c48b3",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:55be764addd8f2e1a44c48b3:content-v2",
+      "questionVersionId": "55be764addd8f2e1a44c48b3:content-v2:blind-revalidation",
+      "contentHash": "5918866e11d7c2dd15bdaee6339b559b7b41088e8b42c7805ecf23aa2e67f5fb",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Integral Tentu\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui fungsi $f(x)=x^2-x+4$ pada interval $[0,4]$.\n\nTentukan integral tentu dari $f(x)$ pada interval $[0,4]$ atau $\\int_0^4(x^2-x+4)\\,dx$.\nPilihan: A. $\\frac{88}{3}$\nB. $\\frac{40}{3}$\nC. $\\frac{136}{3}$\nD. $\\frac{52}{3}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 155,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.101,
+      "prediction": {
+        "questionId": "55be764addd8f2e1a44c48b3",
+        "contentVersion": 2,
+        "contentHash": "5918866e11d7c2dd15bdaee6339b559b7b41088e8b42c7805ecf23aa2e67f5fb",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "0813ebe40e0d9f16481dd5b554d273c9ff7c574823ccd6bcdff3bfe9dc4f7a73",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 23,
+      "questionId": "f064d8080e4b3fccc44ce182",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:f064d8080e4b3fccc44ce182:content-v2",
+      "questionVersionId": "f064d8080e4b3fccc44ce182:content-v2:blind-revalidation",
+      "contentHash": "6dfaff95794ce756192ea1a95733ec26a636dd15c90803297b4fe5d3daf25776",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Penerapan Integral\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan luas daerah yang dibatasi oleh kurva $y^2=2x-2$ dan $y=x-5$.\nPilihan: A. $12$ satuan luas\nB. $18$ satuan luas\nC. $36$ satuan luas\nD. $9$ satuan luas\nTranskripsi visual: -",
+      "untruncatedTokenCount": 90,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.1,
+      "prediction": {
+        "questionId": "f064d8080e4b3fccc44ce182",
+        "contentVersion": 2,
+        "contentHash": "6dfaff95794ce756192ea1a95733ec26a636dd15c90803297b4fe5d3daf25776",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "74bc4c2e9f499c41feb0b7916dd68a9ac7772787fd95b13210baa1ecd4414683",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 24,
+      "questionId": "7be8d2f041b6970727503e68",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:7be8d2f041b6970727503e68:content-v2",
+      "questionVersionId": "7be8d2f041b6970727503e68:content-v2:blind-revalidation",
+      "contentHash": "2e45db5cbbccbbfadc3e5f26e7370d9564dc41eca210d3f5de081d090907e152",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Penerapan Integral\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan luas daerah yang dibatasi oleh kurva $y=x^2$ dan $y=-x^2+4x$.\nPilihan: A. $8$ satuan luas\nB. $\\frac{16}{3}$ satuan luas\nC. $\\frac{8}{3}$ satuan luas\nD. $\\frac{4}{3}$ satuan luas\nTranskripsi visual: -",
+      "untruncatedTokenCount": 115,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.094,
+      "prediction": {
+        "questionId": "7be8d2f041b6970727503e68",
+        "contentVersion": 2,
+        "contentHash": "2e45db5cbbccbbfadc3e5f26e7370d9564dc41eca210d3f5de081d090907e152",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "f79a943b2198b0bfe8bde09a05daf1a70811c7ecc60b40d44c3bb745aff2b7ca",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 25,
+      "questionId": "6e4f3d4c7a6cc32991a4f045",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:6e4f3d4c7a6cc32991a4f045:content-v2",
+      "questionVersionId": "6e4f3d4c7a6cc32991a4f045:content-v2:blind-revalidation",
+      "contentHash": "edd8f60e60633cc41b73a3a69a8e9bf2e2d459042da00db4d0e7b271acc4ef71",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Variabel Acak\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dari 5 mobil yang dikirim sebuah pabrik, sebanyak 2 mobil tiba dalam keadaan tergores. Sebuah toko menerima 3 mobil secara acak. Misalkan T menyatakan ruang sampel, G untuk kondisi mobil “tergores”, dan B untuk kondisi mobil yang “baik”. Variabel acak X menyatakan banyak mobil terkena goresan yang diterima oleh toko tersebut.\n\nTentukan nilai x yang mungkin dari variabel acak X .\nPilihan: A. {1, 2}\nB. {0, 1, 2}\nC. {1, 2, 3}\nD. {0, 1, 2, 3}\nTranskripsi visual: -",
+      "untruncatedTokenCount": 146,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.132,
+      "prediction": {
+        "questionId": "6e4f3d4c7a6cc32991a4f045",
+        "contentVersion": 2,
+        "contentHash": "edd8f60e60633cc41b73a3a69a8e9bf2e2d459042da00db4d0e7b271acc4ef71",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "2492e3b64a7ba342aefa89d1574f7996e475f1bbced5b06487011506fc9826b0",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 26,
+      "questionId": "1804f5048753053398ea92f2",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:1804f5048753053398ea92f2:content-v2",
+      "questionVersionId": "1804f5048753053398ea92f2:content-v2:blind-revalidation",
+      "contentHash": "7948ddb8b499337f495d502a23feb1a15ad5facf5e286c1889557a8d1b6ccc03",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Variabel Acak\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seorang teknisi sepeda motor sedang melakukan pemeriksaan terhadap tiga suku cadang busi motor. Hasil pengamatan dikategorikan dalam suku cadang busi ‘baik’ dan ‘cacat’. X adalah variabel acak yang menyatakan banyak busi cacat.\n\nTentukan nilai x yang mungkin dari variabel acak X .\nPilihan: A. {1, 2, 3}\nB. {0, 1, 2, 3}\nC. {0, 1, 2}\nD. {0, 1, 2, 3, 4}\nTranskripsi visual: -",
+      "untruncatedTokenCount": 127,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.156,
+      "prediction": {
+        "questionId": "1804f5048753053398ea92f2",
+        "contentVersion": 2,
+        "contentHash": "7948ddb8b499337f495d502a23feb1a15ad5facf5e286c1889557a8d1b6ccc03",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "84ffd09f0236ba1517493d22c39071dd100981f8dab33228a27c712b63c2e091",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 27,
+      "questionId": "66254f59ca28abbc368aed22",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:66254f59ca28abbc368aed22:content-v2",
+      "questionVersionId": "66254f59ca28abbc368aed22:content-v2:blind-revalidation",
+      "contentHash": "2ae0bea77f761764b4631d01629a08ba2f3b36f9e36ec5f834a51dd23dbe1eab",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Variabel Acak Diskret\nTipe soal: multiple_choice\nStimulus: -\nSoal: Misalkan dilakukan sebuah percobaan melempar dua buah dadu seimbang.\n\nJika variabel X menyatakan jumlah mata dadu, tentukan nilai-nilai dari variabel X .\nPilihan: A. {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}\nB. {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}\nC. {1, 2, 3, 4, 5, 6}\nD. {2, 3, 4, 5, 6, 7, 8, 9, 10, 11}\nTranskripsi visual: -",
+      "untruncatedTokenCount": 154,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.149,
+      "prediction": {
+        "questionId": "66254f59ca28abbc368aed22",
+        "contentVersion": 2,
+        "contentHash": "2ae0bea77f761764b4631d01629a08ba2f3b36f9e36ec5f834a51dd23dbe1eab",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "4bb4487b11a9e0d080b57972b711c1436e38697c97315a0273e6e1c68daeb6cd",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 28,
+      "questionId": "09777b6fa2aa7e26f2af2198",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:09777b6fa2aa7e26f2af2198:content-v2",
+      "questionVersionId": "09777b6fa2aa7e26f2af2198:content-v2:blind-revalidation",
+      "contentHash": "bee83f7d7119e4774a20e49ff7aeb285b101a3aa8841200f998d58cf332cc8bc",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Variabel Acak Diskret\nTipe soal: multiple_choice\nStimulus: -\nSoal: Manakah dari variabel acak berikut yang merupakan variabel acak diskret?\nPilihan: A. Berat bagasi penumpang pesawat\nB. Berat badan siswa SMA Maju Jaya\nC. Produksi gabah per hektar\nD. Jumlah penduduk perempuan di kota B\nTranskripsi visual: -",
+      "untruncatedTokenCount": 78,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.076,
+      "prediction": {
+        "questionId": "09777b6fa2aa7e26f2af2198",
+        "contentVersion": 2,
+        "contentHash": "bee83f7d7119e4774a20e49ff7aeb285b101a3aa8841200f998d58cf332cc8bc",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "a11ac65025d648cadb8764ba7496c934865b216f633c2aa4384d546826fd5921",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 29,
+      "questionId": "0037f3f74a623f62a7255394",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:0037f3f74a623f62a7255394:content-v2",
+      "questionVersionId": "0037f3f74a623f62a7255394:content-v2:blind-revalidation",
+      "contentHash": "d8f2184d8f28075002e9d2e09d6e281069cd227a60400c60055986d496b1a644",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Variabel Acak Kontinu\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada musim kemarau suhu udara harian di sebuah kota berkisar dari 25,5˚C hingga 30˚C. Misalkan X adalah variabel acak yang menyatakan suhu udara harian dalam derajat Celsius.\n\nBuatlah taksiran bentuk ruang sampel dari variabel acak suhu harian tersebut.\nPilihan: A. $S=\\{x \\mid 25,5 \\le x \\le 30,\\ x \\in \\mathbb{R}\\}$\nB. $S=\\{x \\mid 25,5 \\le x \\le 30,\\ x \\in \\mathbb{Z}\\}$\nC. $S=\\{25,5;\\ 30\\}$\nD. $S=\\{26, 27, 28, 29, 30\\}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 183,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.095,
+      "prediction": {
+        "questionId": "0037f3f74a623f62a7255394",
+        "contentVersion": 2,
+        "contentHash": "d8f2184d8f28075002e9d2e09d6e281069cd227a60400c60055986d496b1a644",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "3b37866fe133cf1942c2e03fe4fec6a033090c4cac429b84ce1378b8d1deffef",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 30,
+      "questionId": "a975e5253d6dc458eae4244b",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:a975e5253d6dc458eae4244b:content-v2",
+      "questionVersionId": "a975e5253d6dc458eae4244b:content-v2:blind-revalidation",
+      "contentHash": "c30cc76f9eee03efb972202eef6facaa0cf31a2e49088c566735c4623384dd68",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Variabel Acak Kontinu\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada musim kemarau suhu udara harian di sebuah kota berkisar dari 25,5˚C hingga 30˚C. Misalkan X adalah variabel acak yang menyatakan suhu udara harian dalam derajat Celsius.\n\nApakah semua nilai dalam ruang sampel tersebut dapat dihitung satu per satu? Jelaskan alasanmu.\nPilihan: A. Ya, karena suhu hanya berkisar dari 25,5˚C hingga 30˚C sehingga nilainya terbatas\nB. Ya, karena suhu selalu dapat dibulatkan menjadi bilangan bulat sehingga dapat dicacah\nC. Tidak, karena ruang sampel memuat semua bilangan real dalam rentang itu sehingga nilainya tak terhitung\nD. Tidak, karena suhu udara harian dapat bernilai negatif maupun positif\nTranskripsi visual: -",
+      "untruncatedTokenCount": 153,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.094,
+      "prediction": {
+        "questionId": "a975e5253d6dc458eae4244b",
+        "contentVersion": 2,
+        "contentHash": "c30cc76f9eee03efb972202eef6facaa0cf31a2e49088c566735c4623384dd68",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "d7e2ff364fcc2efb9c0257f06a49f8a014e11d1468162876f4f1d5fe3ba77cac",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 31,
+      "questionId": "d8a1f35b897fbd2b2a14ac0e",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:d8a1f35b897fbd2b2a14ac0e:content-v2",
+      "questionVersionId": "d8a1f35b897fbd2b2a14ac0e:content-v2:blind-revalidation",
+      "contentHash": "6baa323f1e0a0dbb24d7f29b254a1786c194e972fdb8a572660812d5c17d8fa4",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Fungsi Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah kantong berisi 5 bola putih, 2 bola hitam, dan 3 bola merah. Sebanyak 3 bola diambil satu demi satu secara acak.\n\nTentukan distribusi peluang variabel acak diskret terambilnya bola merah.\nPilihan: A. y = 0, 1, 2, 3 dengan f(y) = 7/24, 21/40, 7/40, 1/120\nB. y = 0, 1, 2, 3 dengan f(y) = 1/4, 1/4, 1/4, 1/4\nC. y = 0, 1, 2, 3 dengan f(y) = 1/120, 7/40, 21/40, 7/24\nD. y = 0, 1, 2, 3 dengan f(y) = 343/1000, 441/1000, 189/1000, 27/1000\nTranskripsi visual: -",
+      "untruncatedTokenCount": 205,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.077,
+      "prediction": {
+        "questionId": "d8a1f35b897fbd2b2a14ac0e",
+        "contentVersion": 2,
+        "contentHash": "6baa323f1e0a0dbb24d7f29b254a1786c194e972fdb8a572660812d5c17d8fa4",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "e610d46b9c9db5e71d273e26fb9a051e3514150a5f1923546c38d6c497373650",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 32,
+      "questionId": "9133baff53cec4911da232b1",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:9133baff53cec4911da232b1:content-v2",
+      "questionVersionId": "9133baff53cec4911da232b1:content-v2:blind-revalidation",
+      "contentHash": "87cc176c6621eeff03b48dbc157d722570f6980ace14eec28693976b1d4cd5a7",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Fungsi Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dalam Ulangan Tengah Semester, diberikan 3 soal yang masing-masing jawabannya benar atau salah. Jika X menyatakan jawaban benar dari 3 soal tersebut,\n\nsusunlah distribusi peluang variabel acak X.\nPilihan: A. x = 0, 1, 2, 3 dengan f(x) = 0,375; 0,125; 0,125; 0,375\nB. x = 0, 1, 2, 3 dengan f(x) = 0,125; 0,125; 0,375; 0,375\nC. x = 0, 1, 2, 3 dengan f(x) = 0,125; 0,375; 0,375; 0,125\nD. x = 0, 1, 2, 3 dengan f(x) = 0,25; 0,25; 0,25; 0,25\nTranskripsi visual: -",
+      "untruncatedTokenCount": 199,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.077,
+      "prediction": {
+        "questionId": "9133baff53cec4911da232b1",
+        "contentVersion": 2,
+        "contentHash": "87cc176c6621eeff03b48dbc157d722570f6980ace14eec28693976b1d4cd5a7",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "ad4a3ab9284a25dca29f5507d4ca8578812be222d4fb67b89cb69d92a0fb178f",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 33,
+      "questionId": "7733fb51a5db0b2c47e439d3",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:7733fb51a5db0b2c47e439d3:content-v2",
+      "questionVersionId": "7733fb51a5db0b2c47e439d3:content-v2:blind-revalidation",
+      "contentHash": "a26b8d3cb28a6fb0d2ffae74c165ae624a13a9138218e6263ef2ffbfb54cf200",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Fungsi Densitas Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu variabel acak kontinu X, untuk nilai-nilai di antara $x=1$ dan $x=5$, dinyatakan dengan fungsi peluang $f(x)=\\frac{x+2}{20}$.\n\nHitunglah $P(X<4)$.\nPilihan: A. 0,3\nB. 0,8\nC. 0,325\nD. 0,675\nTranskripsi visual: -",
+      "untruncatedTokenCount": 117,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.062,
+      "prediction": {
+        "questionId": "7733fb51a5db0b2c47e439d3",
+        "contentVersion": 2,
+        "contentHash": "a26b8d3cb28a6fb0d2ffae74c165ae624a13a9138218e6263ef2ffbfb54cf200",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "95eb866949757d5d9d7eeb07dbf96ccd81d56daa5e4b214b8c4d7ef578376126",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 34,
+      "questionId": "8ed8a4e5fac590ce4f348150",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:8ed8a4e5fac590ce4f348150:content-v2",
+      "questionVersionId": "8ed8a4e5fac590ce4f348150:content-v2:blind-revalidation",
+      "contentHash": "d6a02adb84cc360044903e533e211b1132d4cd117d245753662729dce9270bf9",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Fungsi Densitas Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dalam masa pandemi Covid-19, suatu toko hanya beroperasi selama 180 menit, yaitu mulai pukul 08.00 hingga pukul 11.00. Pembeli tidak diperbolehkan berada di dalam toko tersebut sebelum pukul 08.00. Pembeli juga harus meninggalkan toko paling lambat pukul 11.00. Misalkan X adalah variabel acak yang menyatakan lama pembeli berada di dalam toko (dalam menit). Fungsi densitas peluang X dinyatakan dengan $f(x)=\\begin{cases}\\frac{1}{180}, & 0 \\le x \\le 180\\\\ 0, & x<0 \\text{ atau } x>180\\end{cases}$\n\nBerapakah peluang seorang pembeli berada di toko pada rentang waktu antara 15 dan 60 menit\nPilihan: A. $\\frac{1}{2}$\nB. $\\frac{1}{3}$\nC. $\\frac{1}{4}$\nD. $\\frac{1}{12}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 238,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.125,
+      "prediction": {
+        "questionId": "8ed8a4e5fac590ce4f348150",
+        "contentVersion": 2,
+        "contentHash": "d6a02adb84cc360044903e533e211b1132d4cd117d245753662729dce9270bf9",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "3b85c20d53e2f3b381bc6cd1ac91e6a7f0b7398c202ed9ca8ee9b290c7ad2936",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 35,
+      "questionId": "2eb0a51b5ee19090bc76ed99",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:2eb0a51b5ee19090bc76ed99:content-v2",
+      "questionVersionId": "2eb0a51b5ee19090bc76ed99:content-v2:blind-revalidation",
+      "contentHash": "4eec156927a3589c1c9d44519d87a056e6d35202f99de98959eee859535a3ff9",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Distribusi Binomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Misalkan sepasang dadu seimbang dilemparkan sebanyak 6 kali.\n\nBerapa peluang memperoleh jumlah mata dadu 9 sebanyak dua kali?\nPilihan: A. 0,116\nB. 0,146\nC. 0,111\nD. 0,012\nTranskripsi visual: -",
+      "untruncatedTokenCount": 80,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.086,
+      "prediction": {
+        "questionId": "2eb0a51b5ee19090bc76ed99",
+        "contentVersion": 2,
+        "contentHash": "4eec156927a3589c1c9d44519d87a056e6d35202f99de98959eee859535a3ff9",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "d10ab89a59ef617c2bc95ef9efd9f3b06f427e34e3ed05080f8ca43715bb8f50",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 36,
+      "questionId": "57b2d8d6cb57c48eed4725a0",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:57b2d8d6cb57c48eed4725a0:content-v2",
+      "questionVersionId": "57b2d8d6cb57c48eed4725a0:content-v2:blind-revalidation",
+      "contentHash": "c085505b64f91004b63e5358f7a873058525d48dd294232d7bf2bae0c860ab62",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Distribusi Binomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Peluang seorang siswa menyelesaikan studi pada sebuah sekolah adalah 0,9. Misalkan terdapat 5 siswa di sekolah tersebut.\n\nTentukan peluang paling sedikit satu siswa yang menyelesaikan studi.\nPilihan: A. 0,00001\nB. 0,00046\nC. 0,99999\nD. 0,59049\nTranskripsi visual: -",
+      "untruncatedTokenCount": 94,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.061,
+      "prediction": {
+        "questionId": "57b2d8d6cb57c48eed4725a0",
+        "contentVersion": 2,
+        "contentHash": "c085505b64f91004b63e5358f7a873058525d48dd294232d7bf2bae0c860ab62",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "951888f3e9fe8f1884708940686bb37a8c62828e5cfa9a2eb6823d6baf72dab6",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 37,
+      "questionId": "fd90910a9859f703910d6647",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:fd90910a9859f703910d6647:content-v2",
+      "questionVersionId": "fd90910a9859f703910d6647:content-v2:blind-revalidation",
+      "contentHash": "a858a08a0503a8854f9ccce614cd04750187fc8e45525122eceee645384ade39",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Distribusi Normal\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dua siswa menerima informasi bahwa mereka masing-masing mendapat nilai 0,8 dan 0,4 pada tes matematika pilihan ganda. Jika skor masing-masing adalah 88 dan 64, tentukan rata-rata dan nilai standar dari skor tes.\nPilihan: A. rata-rata 76 dan nilai standar (simpangan baku) 12\nB. rata-rata 60 dan nilai standar (simpangan baku) 40\nC. rata-rata 40 dan nilai standar (simpangan baku) 24\nD. rata-rata 40 dan nilai standar (simpangan baku) 60\nTranskripsi visual: -",
+      "untruncatedTokenCount": 141,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.089,
+      "prediction": {
+        "questionId": "fd90910a9859f703910d6647",
+        "contentVersion": 2,
+        "contentHash": "a858a08a0503a8854f9ccce614cd04750187fc8e45525122eceee645384ade39",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "7ee24aa9bee9c43135276a01411f1c5fe943fad16a41d1688ca27961fb7beebf",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 38,
+      "questionId": "24f43ff9447508b7453ba292",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:24f43ff9447508b7453ba292:content-v2",
+      "questionVersionId": "24f43ff9447508b7453ba292:content-v2:blind-revalidation",
+      "contentHash": "c125fba49e6294efd9cf499d35c985b52ef266e441e7336271cd3e99ceb40d6a",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Distribusi Normal\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.\nPilihan: A. 0,0935\nB. 0,3023\nC. 0,5111\nD. 0,8023\nTranskripsi visual: -",
+      "untruncatedTokenCount": 98,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.072,
+      "prediction": {
+        "questionId": "24f43ff9447508b7453ba292",
+        "contentVersion": 2,
+        "contentHash": "c125fba49e6294efd9cf499d35c985b52ef266e441e7336271cd3e99ceb40d6a",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "aaa902f937015f38a98d4191b92a2e9120d497330822b8092c0b5d7fc62c93a1",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 39,
+      "questionId": "6353e1b1ac73792bd65d8bcc",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:6353e1b1ac73792bd65d8bcc:content-v2",
+      "questionVersionId": "6353e1b1ac73792bd65d8bcc:content-v2:blind-revalidation",
+      "contentHash": "179055e4b4c1e2da03251e6b666b4ef7a73f544b6655b6b89975d9ebbedd5645",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Aturan Perkalian\nTipe soal: multiple_choice\nStimulus: -\nSoal: Kirana sedang memainkan sebuah permainan yang menggunakan dadu. Dia harus melemparkan sepasang dadu dan mendapatkan angka dobel dan pada lemparan kedua mendapatkan jumlah enam. Dia ingin tahu berapa peluang ini dapat terjadi.\n\nJelaskan mengapa aturan perkalian dapat digunakan untuk menentukan peluang ini? Berapa peluangnya?\nPilihan: A. Kedua lemparan saling bebas; peluangnya $\\frac{11}{36}$\nB. Kedua lemparan saling bebas; peluangnya $\\frac{1}{36}$\nC. Kedua lemparan saling bebas; peluangnya $\\frac{5}{36}$\nD. Kedua lemparan saling bebas; peluangnya $\\frac{5}{216}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 167,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.133,
+      "prediction": {
+        "questionId": "6353e1b1ac73792bd65d8bcc",
+        "contentVersion": 2,
+        "contentHash": "179055e4b4c1e2da03251e6b666b4ef7a73f544b6655b6b89975d9ebbedd5645",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "36478cfefe22f4f24a72855ed8a353724438d4e53d7af3cd6934cbb14bea38b7",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 40,
+      "questionId": "5a713d72bd575400bbc8e916",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:5a713d72bd575400bbc8e916:content-v2",
+      "questionVersionId": "5a713d72bd575400bbc8e916:content-v2:blind-revalidation",
+      "contentHash": "867ffecb44aa59bdbc3fd0c99fceb1ff0cd3bcdbf47c8acba02d22e3e58b2109",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Analisis Korelasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diagram pencar berikut menunjukkan tingkat IQ seseorang terhadap lingkar kepalanya dalam cm dari sampel 20 orang. Rata-rata IQ adalah 101 dan rata-rata lingkar kepala adalah 56,125 cm. Nilai koefisien korelasinya adalah 0,138.\n\nBerapa persentase IQ yang diterangkan oleh lingkar kepala?\nPilihan: A. 13,8%\nB. 1,9%\nC. 0,19%\nD. 98,1%\nTranskripsi visual: -",
+      "untruncatedTokenCount": 114,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.08,
+      "prediction": {
+        "questionId": "5a713d72bd575400bbc8e916",
+        "contentVersion": 2,
+        "contentHash": "867ffecb44aa59bdbc3fd0c99fceb1ff0cd3bcdbf47c8acba02d22e3e58b2109",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "e5ee66a4c4bb67c7a345b1a0fa11e53ed3a47ec2a24c64775f61a87d0e78df5f",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 41,
+      "questionId": "d4a29da533d9881db57e7c74",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas12:d4a29da533d9881db57e7c74:content-v2",
+      "questionVersionId": "d4a29da533d9881db57e7c74:content-v2:blind-revalidation",
+      "contentHash": "a77cd857411ce0423aea4b7181c833c27ac234307d6dfd4701d43a81c6088679",
+      "serializedInput": "Kelas: 12\nTopik: Matematika Tingkat Lanjut SMA Kelas 12\nSubtopik: Penerapan Permutasi dan Kombinasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tim futsal SMA Abhipraya dijadwalkan mengikuti 3 pertandingan awal dalam turnamen dengan sistem poin. Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6 berdasarkan data latihan dan uji coba. Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama.\nPilihan: A. 0,36\nB. 0,432\nC. 0,6\nD. 0,216\nTranskripsi visual: -",
+      "untruncatedTokenCount": 106,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.075,
+      "prediction": {
+        "questionId": "d4a29da533d9881db57e7c74",
+        "contentVersion": 2,
+        "contentHash": "a77cd857411ce0423aea4b7181c833c27ac234307d6dfd4701d43a81c6088679",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "078d21d0d14a1bbd782f0109b1773610f33fad09b35dbdc7f9766835eeec6724",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    }
+  ]
+}

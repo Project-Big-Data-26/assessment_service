@@ -65,18 +65,21 @@ def store_run_result(record: dict, result: dict) -> None:
 
 
 def load_checkpoint(
-    path: Path, source: Path, source_hash: str, model: str, runs: int, grade: int
+    path: Path, source: Path, source_hash: str, model: str, runs: int, grade: int,
+    *, track: str = "regular",
 ) -> dict:
-    rubric = silver_rubric(grade)
+    rubric = silver_rubric(grade, track=track)
     if path.is_file():
         checkpoint = json.loads(path.read_text(encoding="utf-8"))
+        if checkpoint.get("subjectTrack", "regular") != track:
+            raise ValueError("checkpoint subject track differs; use another output path")
         if checkpoint.get("sourceHash") != source_hash:
             raise ValueError("checkpoint sourceHash does not match current question file")
         if checkpoint.get("model") != model or checkpoint.get("requestedRuns") != runs:
             raise ValueError("checkpoint model/run configuration differs; use another output path")
         if checkpoint.get("sourceGrade", 1) != grade or checkpoint.get("promptVersion") != rubric.prompt_version:
             raise ValueError("checkpoint grade/prompt version differs; preserve history and use another output path")
-        if checkpoint.get("rubricVersion") != rubric.version or checkpoint.get("rubricHash") != rubric_file_hash(grade):
+        if checkpoint.get("rubricVersion") != rubric.version or checkpoint.get("rubricHash") != rubric_file_hash(grade, track=track):
             raise ValueError("checkpoint rubric hash differs; preserve history and use another output path")
         return checkpoint
     return {
@@ -84,12 +87,13 @@ def load_checkpoint(
         "source": source.relative_to(ROOT).as_posix(),
         "sourceHash": source_hash,
         "sourceGrade": grade,
+        "subjectTrack": track,
         "provider": "gemini",
         "model": model,
         "promptVersion": rubric.prompt_version,
         "adjudicationPromptVersion": rubric.adjudication_version,
         "rubricVersion": rubric.version,
-        "rubricHash": rubric_file_hash(grade),
+        "rubricHash": rubric_file_hash(grade, track=track),
         "educationLevel": rubric.education_level,
         "requestedRuns": runs,
         "createdAt": datetime.now(timezone.utc).isoformat(),
@@ -156,6 +160,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, default=SOURCE)
     parser.add_argument("--grade", type=int, choices=SUPPORTED_SILVER_GRADES, default=1)
+    parser.add_argument("--track", choices=("regular", "tl"), default="regular")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--runs", type=int, default=3, choices=(1, 3))
     parser.add_argument("--limit", type=int)
@@ -174,6 +179,8 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    track = getattr(args, "track", "regular")
+    silver_rubric(args.grade, track=track)
     if not args.execute:
         raise SystemExit("live generation requires --execute")
     args.source = args.source.resolve()
@@ -186,7 +193,8 @@ def main() -> int:
     settings = replace(GeminiSettings.from_environment(), live_enabled=True)
     adapter = GeminiSilverAdapter(settings)
     checkpoint = load_checkpoint(
-        args.output, args.source, source_hash, settings.model, args.runs, args.grade
+        args.output, args.source, source_hash, settings.model, args.runs, args.grade,
+        track=track,
     )
     checkpoint["executionStatus"] = "running"
     checkpoint.pop("stopReason", None)
@@ -223,7 +231,10 @@ def main() -> int:
         def execute_run(run_index: int) -> SilverRunResult:
             result: SilverRunResult | None = None
             for attempt in range(1, args.attempts + 1):
-                result = adapter.label_once(item, image_paths, run_index=run_index, grade=args.grade)
+                result = adapter.label_once(
+                    item, image_paths, run_index=run_index, grade=args.grade,
+                    **({"track": track} if track != "regular" else {}),
+                )
                 if result.status == "success" or result.quotaDailyExhausted or result.providerFailureReason:
                     break
                 if attempt < args.attempts:
@@ -282,7 +293,8 @@ def main() -> int:
                 adjudication: SilverAdjudicationResult | None = None
                 for attempt in range(1, args.attempts + 1):
                     adjudication = adapter.adjudicate_once(
-                        item, image_paths, typed_runs, grade=args.grade
+                        item, image_paths, typed_runs, grade=args.grade,
+                        **({"track": track} if track != "regular" else {}),
                     )
                     if adjudication.status == "success" or adjudication.quotaDailyExhausted or adjudication.providerFailureReason:
                         break

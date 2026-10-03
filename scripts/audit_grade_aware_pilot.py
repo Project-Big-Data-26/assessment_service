@@ -40,9 +40,10 @@ def audit(
     grade: int,
     boundary_analysis: Path | None = None,
 ) -> dict:
-    rubric = silver_rubric(grade)
     questions = json.loads(source.read_text(encoding="utf-8"))
     silver = json.loads(checkpoint.read_text(encoding="utf-8"))
+    track = silver.get("subjectTrack", "regular")
+    rubric = silver_rubric(grade, track=track)
     records_by_id = silver.get("items") or {}
     question_by_id = {str(item["_id"]): item for item in questions}
     missing_ids = sorted(set(question_by_id) - set(records_by_id))
@@ -65,11 +66,11 @@ def audit(
     versions_match = bool(
         silver.get("promptVersion") == rubric.prompt_version
         and silver.get("rubricVersion") == rubric.version
-        and silver.get("rubricHash") == rubric_file_hash(grade)
+        and silver.get("rubricHash") == rubric_file_hash(grade, track=track)
         and silver.get("sourceGrade", grade) == grade
     )
 
-    rendered = [build_silver_prompt(item, grade=grade) for item in questions]
+    rendered = [build_silver_prompt(item, grade=grade, track=track) for item in questions]
     leakage = sorted(
         token
         for token in FORBIDDEN_BLIND_TEXT
@@ -214,12 +215,13 @@ def audit(
         "checkpointSha256": checkpoint_hash,
         "checkpointLockedByAudit": True,
         "grade": grade,
+        "subjectTrack": track,
         "promptVersion": silver.get("promptVersion"),
         "expectedPromptVersion": rubric.prompt_version,
         "rubricVersion": silver.get("rubricVersion"),
         "expectedRubricVersion": rubric.version,
         "rubricHash": silver.get("rubricHash"),
-        "expectedRubricHash": rubric_file_hash(grade),
+        "expectedRubricHash": rubric_file_hash(grade, track=track),
         "expectedItemCount": expected_count,
         "itemCount": len(records),
         "missingQuestionIds": missing_ids,

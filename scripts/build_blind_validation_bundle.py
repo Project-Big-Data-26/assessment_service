@@ -126,7 +126,8 @@ def batch_completion_note(checkpoint: dict, item_count: int) -> str:
 
 def render_report(questions, decisions, summary, checkpoint, model, *, output_dir=None) -> str:
     grade = int(checkpoint["sourceGrade"])
-    rubric = silver_rubric(grade)
+    rubric = silver_rubric(grade, track=checkpoint.get("subjectTrack", "regular"))
+    class_label = f"{grade} TL" if checkpoint.get("subjectTrack") == "tl" else str(grade)
     beyond_sd = rubric.education_level != "SD"
     diagnostic_overview = (
         f"Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Model SD berada di luar cakupan kelas {grade}, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind."
@@ -139,7 +140,7 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
         "Encoder menghasilkan representasi [CLS], lalu tiga head menghasilkan logits. Probabilitas adalah pᵢ = exp(zᵢ/T) / Σⱼ exp(zⱼ/T), dengan temperature sesuai manifest. Confidence = max(pᵢ). Entropy H = −Σᵢ pᵢ ln(pᵢ) / ln(K). Probabilitas, confidence, entropy, dan action di bawah berasal dari inferensi lokal; tidak dibuat oleh Gemini."
     )
     lines = [
-        f"# Validasi ulang soal kelas {grade} — Gemini blind N=3 dan diagnostik IndoBERT",
+        f"# Validasi ulang soal kelas {class_label} — Gemini blind N=3 dan diagnostik IndoBERT",
         "",
         f"Model penilai: `{checkpoint['model']}`. Prompt: `{checkpoint['promptVersion']}`. Rubrik: `{checkpoint['rubricVersion']}`.",
         "",
@@ -269,9 +270,11 @@ def main() -> int:
         raise FileExistsError("refusing to overwrite an existing blind validation bundle")
     source, checkpoint, audit = load(args.source), load(args.checkpoint), load(args.audit)
     grade = int(checkpoint["sourceGrade"])
-    rubric = silver_rubric(grade)
+    rubric = silver_rubric(grade, track=checkpoint.get("subjectTrack", "regular"))
     if audit["grade"] != grade:
         raise ValueError("checkpoint/audit grade mismatch")
+    if audit.get("subjectTrack", "regular") != checkpoint.get("subjectTrack", "regular"):
+        raise ValueError("checkpoint/audit subject track mismatch")
     if checkpoint.get("requestedRuns") != 3:
         raise ValueError("blind validation bundle requires N=3")
     if any(item.get("kelas_id") not in (None, grade) for item in source):
@@ -304,7 +307,7 @@ def main() -> int:
         content_hash = canonical_json_hash(content)
         request = V2ClassificationRequest(
             questionId=diagnostic_qid, contentVersion=2, contentHash=content_hash,
-            grade=grade, topic=f"Matematika {rubric.education_level} Kelas {grade}", subtopic=item.get("subbab_id"),
+            grade=grade, topic=f"Matematika {('Tingkat Lanjut ' if checkpoint.get('subjectTrack') == 'tl' else '')}{rubric.education_level} Kelas {grade}", subtopic=item.get("subbab_id"),
             questionType="multiple_choice", stimulus=item.get("stimulus"), stem=item["soal_text"],
             options=[{"label": o["option_id"], "text": o["text"]} for o in item["options"]],
             verifiedMinimalSolution=solution, detectedKko=detect_kko(item["soal_text"]), visualTranscript=transcript,
@@ -359,20 +362,25 @@ def main() -> int:
                 summary[distribution_key][head].setdefault(label, 0)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     grouped = difficulty_groups(questions, decisions, grade)
+    if checkpoint.get("subjectTrack") == "tl":
+        grouped["subjectTrack"] = "tl"
     write(args.output_dir / "difficulty_groups.json", grouped)
     (args.output_dir / "difficulty").mkdir()
     for label, items in grouped["groups"].items():
         write(args.output_dir / "difficulty" / f"{label}.json", {
             "schemaVersion": "blind-difficulty-subset-v1", "sourceClass": grade,
+            "subjectTrack": checkpoint.get("subjectTrack", "regular"),
             "intendedDifficulty": None if label == "undecided" else label,
             "researchOnly": True, **grouped["summary"][label], "items": items,
         })
     write(args.output_dir / "questions.json", {"schemaVersion": "question-validation-input-v2-blind", "createdAt": created, "visibility": "restricted_contains_answer_key", "items": questions})
-    write(args.output_dir / "validation_results.json", {"schemaVersion": "ai-decision-bundle-v2-blind", "collectionTarget": "ai_decisions", "createdAt": created, "sourceClass": checkpoint["sourceGrade"], "summary": summary, "items": decisions})
+    write(args.output_dir / "validation_results.json", {"schemaVersion": "ai-decision-bundle-v2-blind", "collectionTarget": "ai_decisions", "createdAt": created, "sourceClass": checkpoint["sourceGrade"], "subjectTrack": checkpoint.get("subjectTrack", "regular"), "summary": summary, "items": decisions})
     write(args.output_dir / "indobert_predictions.json", {"schemaVersion": "indobert-blind-diagnostics-v1", "createdAt": created, "researchOnlyRun": True, "reviewRequired": True, "blindDecisionLockedAt": audit["generatedAt"], "artifact": args.artifact.as_posix(), "model": model, "summary": {"itemCount": len(predictions), "predictionDistribution": {h: dict(Counter(x["prediction"][h]["label"] or "abstain" for x in predictions)) for h in HEADS}}, "items": predictions})
     (args.output_dir / "LAPORAN_VALIDASI.md").write_text(render_report(questions, decisions, summary, checkpoint, model, output_dir=args.output_dir), encoding="utf-8")
     readme = f"# Hasil validasi ulang kelas 1\n\nModel LLM: `{checkpoint['model']}`; metode blind N=3, rubrik kelas sasaran, verifikasi kunci/solusi, dan adjudikasi AI bila diperlukan. Label terkunci sebelum diagnostik IndoBERT.\n\nGunakan [validation_results.json](validation_results.json) untuk data hasil dan `items[].llmAdvisory.advisoryLabels` bersama `finalRouting`. Baca [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk soal, perhitungan confidence/entropy, tiga suara, profil difficulty, adjudikasi, serta hasil akhir per soal. [questions.json](questions.json) memuat sumber dan spesifikasi jawaban terbatas; [indobert_predictions.json](indobert_predictions.json) memuat diagnostik model lama.\n\nDistribusi: `{json.dumps(summary['advisoryLabelDistributions'], ensure_ascii=False)}`. Routing: `{json.dumps(summary['routingCounts'], ensure_ascii=False)}`.\n\nToken sukses tercatat: {checkpoint['summary']['totalTokens']:,}; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Gold ahli tetap null; CTT/IRT belum dihitung. IndoBERT belum dilatih ulang dan hasil diagnostiknya tidak menentukan label blind.\n\nAudit tidak menyetujui ekspansi/training bila gate belum lolos. Gate batch: `{json.dumps(audit['gates'], ensure_ascii=False)}`.\n"
     readme = readme.replace("# Hasil validasi ulang kelas 1", f"# Hasil validasi ulang kelas {grade}")
+    if checkpoint.get("subjectTrack") == "tl":
+        readme += "\nMata pelajaran: Matematika Tingkat Lanjut (TL), dengan rubrik khusus TL.\n"
     completion_note = batch_completion_note(checkpoint, len(source))
     if completion_note:
         readme = readme.replace(

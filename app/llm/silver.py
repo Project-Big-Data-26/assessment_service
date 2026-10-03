@@ -41,7 +41,18 @@ class SilverRubric:
     education_level: str
 
 
-def silver_rubric(grade: int = 1) -> SilverRubric:
+def silver_rubric(grade: int = 1, *, track: str = "regular") -> SilverRubric:
+    if track not in ("regular", "tl"):
+        raise ValueError("silver track must be regular or tl")
+    if track == "tl":
+        if grade not in (11, 12):
+            raise ValueError("Matematika Tingkat Lanjut supports grade 11 or 12")
+        return SilverRubric(
+            f"gemini-silver-math-3x4x3-v9-blind-sma{grade}-tl-key-verified",
+            f"gemini-silver-math-3x4x3-v9-adjudication-sma{grade}-tl",
+            f"math-rubric-3x4x3-v7-sma{grade}-tl-grade-aware",
+            RUBRIC_PATH.with_name(f"rubric_math_3x4x3_v7_sma{grade}_tl.yaml"), "SMA",
+        )
     if grade in range(1, 7):
         return SilverRubric(
             SILVER_PROMPT_VERSION, SILVER_ADJUDICATION_PROMPT_VERSION,
@@ -227,8 +238,8 @@ class SilverAdjudicationResult(BaseModel):
     usage: TokenUsage = Field(default_factory=TokenUsage)
 
 
-def build_silver_prompt(item: dict[str, Any], *, grade: int = 1) -> str:
-    rubric = silver_rubric(grade)
+def build_silver_prompt(item: dict[str, Any], *, grade: int = 1, track: str = "regular") -> str:
+    rubric = silver_rubric(grade, track=track)
     options = "\n".join(
         f"{option['option_id']}. {option['text']} | catatan sumber: {option.get('alasan') or '-'}"
         for option in item["options"]
@@ -295,8 +306,8 @@ Kunci pada sumber: {item.get('jawaban') or '-'}
     return prompt
 
 
-def rubric_file_hash(grade: int = 1) -> str:
-    return hashlib.sha256(silver_rubric(grade).path.read_bytes()).hexdigest()
+def rubric_file_hash(grade: int = 1, *, track: str = "regular") -> str:
+    return hashlib.sha256(silver_rubric(grade, track=track).path.read_bytes()).hexdigest()
 
 
 def provider_quota_details(exc: Exception) -> dict[str, Any]:
@@ -353,9 +364,10 @@ class GeminiSilverAdapter:
         )
 
     def label_once(
-        self, item: dict[str, Any], image_paths: list[Path], *, run_index: int, grade: int = 1
+        self, item: dict[str, Any], image_paths: list[Path], *, run_index: int, grade: int = 1,
+        track: str = "regular",
     ) -> SilverRunResult:
-        prompt = build_silver_prompt(item, grade=grade)
+        prompt = build_silver_prompt(item, grade=grade, track=track)
         prompt_hash = hashlib.sha256(prompt.encode("utf-8")).hexdigest()
         contents: list[Any] = [prompt]
         for image_path in image_paths:
@@ -425,6 +437,7 @@ class GeminiSilverAdapter:
         runs: list[SilverRunResult],
         *,
         grade: int,
+        track: str = "regular",
     ) -> SilverAdjudicationResult:
         successful = [run for run in runs if run.status == "success" and run.output]
         evidence = [
@@ -441,7 +454,7 @@ class GeminiSilverAdapter:
             for run in successful
         ]
         prompt = (
-            build_silver_prompt(item, grade=grade)
+            build_silver_prompt(item, grade=grade, track=track)
             + "\n\nADJUDIKASI SILVER: nilai ulang soal secara independen, lalu gunakan bukti run blind "
             "berikut hanya untuk menemukan sumber perbedaan. Jangan melakukan voting mekanis. "
             "Tidak ada prediksi IndoBERT atau estimasi kesulitan agen di dalam data ini.\n"

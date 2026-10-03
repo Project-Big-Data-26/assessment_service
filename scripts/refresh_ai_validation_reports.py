@@ -37,13 +37,14 @@ def write(path: Path, value: dict) -> None:
 
 def verify_evidence(source: Path, checkpoint: Path, grade: int) -> None:
     silver = load(checkpoint)
-    load_checkpoint(checkpoint, source, digest(source), silver["model"], 3, grade)
+    track = silver.get("subjectTrack", "regular")
+    load_checkpoint(checkpoint, source, digest(source), silver["model"], 3, grade, track=track)
     questions = {str(q["_id"]): q for q in load(source)}
     assert set(silver["items"]) <= set(questions), "checkpoint contains unknown questions"
     for qid, record in silver["items"].items():
         question = questions[qid]
         assert record["inputHash"] == input_hash(question), qid
-        prompt = build_silver_prompt(question, grade=grade)
+        prompt = build_silver_prompt(question, grade=grade, track=track)
         for run in record.get("runs", []):
             if run["status"] != "success":
                 continue

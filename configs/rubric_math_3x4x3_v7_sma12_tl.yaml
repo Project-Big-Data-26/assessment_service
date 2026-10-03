@@ -1,0 +1,65 @@
+rubric_version: math-rubric-3x4x3-v7-sma12-tl-grade-aware
+scope: Matematika Tingkat Lanjut SMA kelas 12
+subject_track: tl
+supported_grades: [12]
+status: research_advisory_requires_expert_review
+principle: Nilai tuntutan minimum penyelesaian relatif terhadap siswa kelas 12 dan materi soal, dengan bukti solusi, bukan panjang teks atau besar bilangan.
+
+grade_context: |
+  Gunakan konteks SMA kelas 12 Matematika Tingkat Lanjut (TL), bukan matematika umum.
+  Topik korpus mencakup lingkaran/elips, kedudukan titik/garis dan garis singgung,
+  definisi/sifat/aplikasi turunan fungsi, integral tak tentu/tentu dan penerapan,
+  variabel acak diskret/kontinu, fungsi peluang/densitas, distribusi binomial dan
+  normal. Soal prasyarat tali busur, fungsi invers, aturan perkalian, korelasi,
+  permutasi/kombinasi tetap dinilai dari tuntutan aktual pada kelas 12 TL.
+  Pada lingkaran/elips periksa pusat, sumbu utama, parameter kuadrat, fokus,
+  kedudukan titik/garis, diskriminan dan syarat garis singgung. Bedakan persamaan
+  yang diminta dengan opsi yang hanya menyebut pusat/jari-jari; jangan mengabaikan
+  ketidaksesuaian bentuk jawaban. Pada turunan periksa domain, aturan rantai/hasil
+  kali/hasil bagi, titik kritis, batas interval dan syarat ekstrem. Pada integral
+  periksa konstanta integrasi, batas, tanda, substitusi dan luas vs integral
+  bertanda; pecah interval jika kurva berpotongan. Pada peluang periksa normalisasi
+  massa/densitas, dukungan variabel, batas integral, independensi percobaan,
+  parameter binomial, rerata/simpangan baku, standardisasi normal dan pembacaan
+  tabel. Korelasi tidak membuktikan kausalitas. Kalkulus atau distribusi normal
+  bukan alasan otomatis memberi Hard; prosedur familiar dalam kurikulum TL dapat Easy.
+  Easy adalah prosedur familiar/langsung dengan beban rendah; Medium memerlukan
+  beberapa langkah rutin terkait/pemilihan prosedur/perpindahan representasi;
+  Hard memerlukan strategi nonrutin, kendala terkait, generalisasi, pembuktian,
+  atau integrasi representasi kompleks yang benar-benar dibutuhkan.
+  Kata kerja jelaskan/buktikan dan simbol lanjutan bukan bukti tunggal reasoning/Hard.
+  Periksa kunci, opsi, data, satuan, notasi ekstraksi, gambar dan pembulatan.
+  Konflik kunci atau informasi kurang adalah masalah konten, bukan alasan menaikkan
+  difficulty. Jangan memperbaiki sumber diam-diam atau mengarang informasi hilang.
+  Gunakan abstain bila bukti tidak cukup. Label advisory, bukan gold ahli atau CTT/IRT.
+  verifiedMinimalSolution dan setiap rationale maksimal 700 karakter; tiap
+  evidence span maksimal 260 karakter; visualTranscript maksimal 1800 karakter.
+  Solusi harus ringkas dan cukup membuktikan hasil. Bila tidak dapat diverifikasi,
+  nyatakan batas bukti secara ringkas tanpa mengarang solusi.
+
+mathCognitiveDomain:
+  knowing: Mengenali fakta atau menjalankan prosedur sangat langsung.
+  applying: Memilih dan menerapkan konsep/prosedur pada konteks rutin.
+  reasoning: Menentukan strategi nonrutin, mengintegrasikan hubungan, menyimpulkan, menggeneralisasi, atau membenarkan.
+knowledgeDimension:
+  factual: Fakta, istilah, simbol, dan elemen dasar.
+  conceptual: Hubungan, kategori, prinsip, dan struktur konsep.
+  procedural: Algoritme, teknik, metode, dan kriteria penggunaannya.
+  metacognitive: Pemilihan atau pemantauan strategi berpikir yang diminta secara eksplisit.
+intendedDifficulty:
+  Easy: Prosedur familiar dan langsung, satu keputusan utama, representasi familiar, dan beban rendah bagi kelas 12.
+  Medium: Beberapa langkah rutin terkait, pemilihan prosedur, atau perpindahan representasi bagi kelas 12.
+  Hard: Strategi nonrutin, banyak kendala terkait, justifikasi, atau integrasi representasi kompleks bagi kelas 12.
+  evidence_profile: [expectedPrerequisite, dependentSteps, routineStatus, strategySelection, representationTransfer, relevantInformationUnits, interactingConstraints, calculationLoad, scaffoldLevel, distractorQuality, gradeRelativeRationale]
+decision_rules:
+  - Reviewer blind tidak menerima prediksi IndoBERT, vote run lain, estimasi agen, konsensus, atau distribusi target.
+  - Label mengikuti solusi minimum dan bukti soal; kategori kosong tetap sah dicatat.
+  - Evidence profile wajib untuk difficulty, tetapi bukan penjumlahan skor otomatis.
+  - Run 3-0 diterima sebagai silver; ketidaksepakatan, abstain, atau masalah konten/kunci masuk adjudikasi AI terpisah.
+  - Intended difficulty tetap terpisah dari empirical difficulty CTT/IRT.
+content_verification:
+  answer_key_status: [verified, conflict, unverifiable]
+  rules:
+    - Status verified memerlukan verifiedAnswerKey dan verifiedMinimalSolution yang mendukungnya.
+    - Konflik kunci, visual kurang, atau content concern tidak boleh menjadi training row.
+    - Label selalu advisory; keputusan ahli diperlukan sebelum gold atau publishing.

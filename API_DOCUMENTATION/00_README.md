@@ -60,6 +60,7 @@ Pilot memakai human-gold checksum/version/key/solution. Identity dan correctness
 | [32](32_KELAS10_11_12_BLIND_VALIDATION.md) | Validasi blind SMA 10–12, rubrik per kelas, pelaksana batch serial, blok kuota bersama dan resume |
 | [33](33_ANIMATED_DATA_FLOW.md) · [Animasi](33_ANIMATED_DATA_FLOW.html) | Aliran data interaktif, rumus teknis, simulasi dan batas implementasi dari JSON sampai umpan balik model |
 | [34](34_PPT_SUMMARY.md) | Ringkasan presentasi berbahasa sederhana, alasan setiap metode, glosarium dan rumus LaTeX |
+| [35](35_KELAS11_12_TL_BLIND_VALIDATION.md) | Validasi blind Matematika Tingkat Lanjut 11–12, rubrik TL, resume, audit dan laporan terpisah |
 
 Diagram end-to-end lengkap tersedia pada 28, dengan detail terpisah pada 23/24. Diagram lama bernomor 20 telah dihapus pada worktree. `schemas/nalar-api.schema.json` tetap desain gateway luas. Kontrak implementasi ada pada `schemas/openapi.json` dan `schemas/implemented-api.schema.json`.
 

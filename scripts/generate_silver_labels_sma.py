@@ -39,20 +39,27 @@ def save(checkpoint: dict, path: Path) -> None:
     atomic_write(checkpoint, path)
 
 
-def run_batches(source_base: Path, batch_name: str, grades: list[int], *, model: str) -> int:
+def run_batches(
+    source_base: Path, batch_name: str, grades: list[int], *, model: str,
+    track: str = "regular",
+) -> int:
     if not re.fullmatch(r"[A-Za-z0-9_-]+", batch_name):
         raise ValueError("batch name must be a single directory name")
     if not grades or len(set(grades)) != len(grades) or any(g not in (10, 11, 12) for g in grades):
         raise ValueError("select unique SMA grades 10, 11, and/or 12")
+    if track not in ("regular", "tl") or (track == "tl" and any(g not in (11, 12) for g in grades)):
+        raise ValueError("TL batches support only grades 11 and 12")
     source_base = source_base.resolve()
     batches = []
     for grade in grades:
-        source = source_base / f"kelas{grade}/soal_pretest_db.json"
+        suffix = "_tl" if track == "tl" else ""
+        source = source_base / f"kelas{grade}{suffix}/soal_pretest_db.json"
         questions = json.loads(source.read_text(encoding="utf-8"))
         output = source.parent / batch_name / "silver_labels.json"
         output.parent.mkdir(parents=True, exist_ok=True)
         checkpoint = load_checkpoint(
-            output, source, hashlib.sha256(source.read_bytes()).hexdigest(), model, 3, grade
+            output, source, hashlib.sha256(source.read_bytes()).hexdigest(), model, 3, grade,
+            track=track,
         )
         if not output.exists():
             checkpoint["executionStatus"] = "queued"
@@ -64,6 +71,7 @@ def run_batches(source_base: Path, batch_name: str, grades: list[int], *, model:
             "schemaVersion": "sma-blind-batch-execution-v1",
             "updatedAt": datetime.now(timezone.utc).isoformat(),
             "model": model, "serialExecution": True,
+            "subjectTrack": track,
             "stopAllOnSharedProviderBlock": True,
             "batches": [{
                 "grade": grade, "questionCount": count, "requestedRuns": count * 3,
@@ -72,7 +80,7 @@ def run_batches(source_base: Path, batch_name: str, grades: list[int], *, model:
                 "summary": read(output).get("summary"),
                 "blockedByGrade": read(output).get("blockedByGrade"),
             } for grade, _, output, count in batches],
-        }, source_base / f"{batch_name}_sma_execution.json")
+        }, source_base / f"{batch_name}_sma{('_tl' if track == 'tl' else '')}_execution.json")
 
     save_execution()
     for index, (grade, source, output, count) in enumerate(batches):
@@ -82,6 +90,7 @@ def run_batches(source_base: Path, batch_name: str, grades: list[int], *, model:
         result = subprocess.run([
             sys.executable, str(ROOT / "scripts/generate_silver_labels_kelas1.py"),
             "--source", str(source), "--grade", str(grade), "--output", str(output),
+            "--track", track,
             "--runs", "3", "--workers", "1", "--pause", "3", "--attempts", "3", "--execute",
         ], check=False)
         checkpoint = read(output)
@@ -109,11 +118,15 @@ def main() -> int:
     parser.add_argument("--source-base", type=Path, default=ROOT / "output/pretest")
     parser.add_argument("--batch-name", required=True)
     parser.add_argument("--grades", type=int, nargs="+", choices=(10, 11, 12), default=[10, 11, 12])
+    parser.add_argument("--track", choices=("regular", "tl"), default="regular")
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
     if not args.execute:
         parser.error("live generation requires --execute")
-    return run_batches(args.source_base, args.batch_name, args.grades, model=GeminiSettings.from_environment().model)
+    return run_batches(
+        args.source_base, args.batch_name, args.grades,
+        model=GeminiSettings.from_environment().model, track=args.track,
+    )
 
 
 if __name__ == "__main__":
