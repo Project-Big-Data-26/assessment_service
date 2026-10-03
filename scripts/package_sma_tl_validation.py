@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from scripts.refresh_ai_validation_reports import (  # noqa: E402
-    digest, load, run_script, verify_bundle, verify_evidence, write,
+    digest, load, run_script, verify_bundle, verify_evidence, write, write_active_index,
 )
 
 
@@ -81,6 +81,7 @@ def main() -> int:
             parser.error("batch and snapshot names must be single directory names")
     for grade in args.grades:
         package(grade, args.batch_name, args.snapshot_name)
+    write_active_index()
     return 0
 
 

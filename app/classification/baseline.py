@@ -1,4 +1,4 @@
-"""Transparent baseline used for demos and as a benchmark, never as a gold label."""
+"""Transparent baseline used for demos and as a benchmark, never as a silver label."""
 from __future__ import annotations
 import re
 from app.classification.base import ClassificationPrediction

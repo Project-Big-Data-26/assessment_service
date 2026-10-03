@@ -1,10 +1,10 @@
 # Extraction API
 
-Implementasi aktual: `/v1/extract` sinkron dan agentic CLI menghasilkan staging, lalu import/qualification manusia. Pilot server-scored dan CTT/IRT kini tersedia setelah gold dibekukan; [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md). Async extraction jobs/authoring gateway pada contoh di bawah tetap target.
+Implementasi aktual: `/v1/extract` sinkron dan agentic CLI menghasilkan staging, lalu import dan qualification AI silver. Pilot server-scored dan CTT/IRT kini tersedia setelah silver dibekukan; [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md). Async extraction jobs/authoring gateway pada contoh di bawah tetap target.
 
 ## 1. Posisi modul
 
-Extraction API mengubah PDF, gambar, atau data terstruktur menjadi **authoring candidate**. Hasil ekstraksi belum membuktikan kunci benar dan belum memberi label tiga head. OCR menjaga teks, rumus, tabel/grafik dan provenance karena bukti tersebut akan diperlukan IndoBERT dan annotator.
+Extraction API mengubah PDF, gambar, atau data terstruktur menjadi **authoring candidate**. Hasil ekstraksi belum membuktikan kunci benar dan belum memberi label tiga head. OCR menjaga teks, rumus, tabel/grafik dan provenance karena bukti tersebut akan diperlukan IndoBERT dan penilaian AI.
 
 Teacher dapat memperbaiki candidate di authoring UI sebelum menyimpannya sebagai draft. Tindakan tersebut adalah revisi input/authoring, bukan review atau adjudikasi.
 
@@ -166,4 +166,4 @@ UI tidak mengetahui PyMuPDF, Tesseract, Paddle, lokasi object storage, atau deta
 
 Ada dua implementasi ekstraksi Python yang perlu dibedakan. `POST /v1/extract` pada `app/main.py` adalah parser/OCR sinkron umum. Pipeline `app/services/pretest/agentic/` adalah batch lokal khusus pasangan Buku Siswa/Buku Guru: `pymupdf4llm` membuat Markdown per halaman dan indeks, Claude Code menyusun `babNN.json`, lalu validator memeriksa teks verbatim, angka, bukti kunci, opsi senilai, subbab dan gambar. Pipeline lama regex + Ollama masih tersimpan tetapi bukan jalur kanonis baru.
 
-Output agentic adalah **staging evidence**, bukan gold. `app/ingestion/pretest_import.py` dan `scripts/load_candidates_to_atlas.py` kini membentuk identity/content version immutable, hash, provenance, opsi stabil, serta routing qualification langsung dari `babNN.json`. `draft` agentic tetap tidak berarti validasi ahli. Private signed preview sudah tersedia untuk assignment, sedangkan job gateway publik, MIME signature, antivirus, dan retry orchestration masih target. Kontrak dan pemetaan lengkap ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).
+Output agentic adalah **staging evidence**, bukan silver. `app/ingestion/pretest_import.py` dan `scripts/load_candidates_to_atlas.py` kini membentuk identity/content version immutable, hash, provenance, opsi stabil, serta routing qualification langsung dari `babNN.json`. `draft` agentic tetap tidak berarti validasi AI. Private asset signer tersedia sebagai helper sumber, sedangkan job gateway publik, MIME signature, antivirus, dan retry orchestration masih target. Kontrak dan pemetaan lengkap ada pada [dokumen 21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md).

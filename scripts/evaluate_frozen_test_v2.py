@@ -85,7 +85,7 @@ def main() -> None:
     parser.add_argument("--skip-frozen-indobert", action="store_true")
     args = parser.parse_args()
     if not args.unlock_frozen_test:
-        raise SystemExit("frozen test remains locked; pass --unlock-frozen-test only after signed approval")
+        raise SystemExit("frozen test remains locked; pass --unlock-frozen-test only after technical readiness gates pass")
     destination = Path(args.output)
     destination.parent.mkdir(parents=True, exist_ok=True)
     marker = destination.parent / "FROZEN_TEST_OPENED.json"

@@ -1,36 +1,32 @@
-# Hasil validasi kelas 1–12
+# Validasi AI silver semua kelas
 
-Gunakan `kelasN/hasil_validasi/` sebagai laporan aktif untuk versi soal saat ini. Label AI tetap silver/advisory dan membutuhkan pemeriksaan ahli.
+Laporan aktif mencakup **580 soal** reguler kelas 1-12 dan TL kelas 11-12: **1,740/1,740 run awal sukses**, **0 adjudikasi tertunda**. Label operasional memakai `ai_silver` tanpa persetujuan pelabel manusia.
 
-Pembaruan 3 Oktober 2026: backlog kuota untuk kelas 1?5, 11, dan 12 selesai. Seluruh **484 soal kelas reguler 1?12** telah memperoleh penilaian blind N=3 (**1452/1452 run awal sukses**), dan seluruh adjudikasi yang diperlukan selesai. Hasil sukses lama dipertahankan; audit, kelompok difficulty, dan laporan aktif diperbarui.
+**571 soal silver_ready**, **9 soal revision_required**, **0 soal needs_ai_review**. Soal yang memerlukan revisi atau penilaian ulang ditahan dari snapshot delivery.
 
-**Koreksi sumber kelas 1?5:** 102 soal berubah setelah penilaian sebelumnya, termasuk perubahan gambar. Hanya run dengan input, prompt, dan byte gambar yang masih cocok dipertahankan. Seluruh soal yang berubah telah dinilai ulang melalui checkpoint `revalidasi_blind_20261003_v2/`; snapshot penilaian sebelumnya tetap utuh.
+Label kesulitan seluruh soal: **414 Easy, 161 Medium, 5 Hard, 0 undecided**.
 
-| Kelas | Soal | Run sukses / target | Easy | Medium | Hard | Undecided | Soal perlu AI | Status |
-|---|---:|---:|---:|---:|---:|---:|---:|---|
-| [1](kelas1/hasil_validasi/README.md) | 50 | 150/150 | 48 | 2 | 0 | 0 | 0 | Validasi AI lengkap |
-| [2](kelas2/hasil_validasi/README.md) | 44 | 132/132 | 38 | 6 | 0 | 0 | 0 | Validasi AI lengkap |
-| [3](kelas3/hasil_validasi/README.md) | 42 | 126/126 | 33 | 9 | 0 | 0 | 0 | Validasi AI lengkap |
-| [4](kelas4/hasil_validasi/README.md) | 18 | 54/54 | 14 | 4 | 0 | 0 | 0 | Validasi AI lengkap |
-| [5](kelas5/hasil_validasi/README.md) | 72 | 216/216 | 48 | 22 | 2 | 0 | 0 | Validasi AI lengkap |
-| [6](kelas6/hasil_validasi/README.md) | 25 | 75/75 | 16 | 9 | 0 | 0 | 0 | Validasi AI lengkap |
-| [7](kelas7/hasil_validasi/README.md) | 49 | 147/147 | 28 | 20 | 1 | 0 | 0 | Validasi AI lengkap |
-| [8](kelas8/hasil_validasi/README.md) | 42 | 126/126 | 24 | 17 | 1 | 0 | 0 | Validasi AI lengkap |
-| [9](kelas9/hasil_validasi/README.md) | 42 | 126/126 | 28 | 14 | 0 | 0 | 0 | Validasi AI lengkap |
-| [10](kelas10/hasil_validasi/README.md) | 46 | 138/138 | 29 | 17 | 0 | 0 | 0 | Validasi AI lengkap |
-| [11](kelas11/hasil_validasi/README.md) | 22 | 66/66 | 15 | 6 | 1 | 0 | 0 | Validasi AI lengkap |
-| [12](kelas12/hasil_validasi/README.md) | 32 | 96/96 | 19 | 13 | 0 | 0 | 0 | Validasi AI lengkap |
+| Kelas | Soal | Run sukses | Easy | Medium | Hard | Silver siap | Revisi | AI review |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [kelas1](kelas1/hasil_validasi/README.md) | 50 | 150 | 48 | 2 | 0 | 50 | 0 | 0 |
+| [kelas2](kelas2/hasil_validasi/README.md) | 44 | 132 | 38 | 6 | 0 | 43 | 1 | 0 |
+| [kelas3](kelas3/hasil_validasi/README.md) | 42 | 126 | 33 | 9 | 0 | 41 | 1 | 0 |
+| [kelas4](kelas4/hasil_validasi/README.md) | 18 | 54 | 14 | 4 | 0 | 18 | 0 | 0 |
+| [kelas5](kelas5/hasil_validasi/README.md) | 72 | 216 | 48 | 22 | 2 | 70 | 2 | 0 |
+| [kelas6](kelas6/hasil_validasi/README.md) | 25 | 75 | 16 | 9 | 0 | 25 | 0 | 0 |
+| [kelas7](kelas7/hasil_validasi/README.md) | 49 | 147 | 28 | 20 | 1 | 49 | 0 | 0 |
+| [kelas8](kelas8/hasil_validasi/README.md) | 42 | 126 | 24 | 17 | 1 | 42 | 0 | 0 |
+| [kelas9](kelas9/hasil_validasi/README.md) | 42 | 126 | 28 | 14 | 0 | 41 | 1 | 0 |
+| [kelas10](kelas10/hasil_validasi/README.md) | 46 | 138 | 29 | 17 | 0 | 46 | 0 | 0 |
+| [kelas11](kelas11/hasil_validasi/README.md) | 22 | 66 | 15 | 6 | 1 | 21 | 1 | 0 |
+| [kelas11_tl](kelas11_tl/hasil_validasi/README.md) | 55 | 165 | 44 | 11 | 0 | 54 | 1 | 0 |
+| [kelas12](kelas12/hasil_validasi/README.md) | 32 | 96 | 19 | 13 | 0 | 31 | 1 | 0 |
+| [kelas12_tl](kelas12_tl/hasil_validasi/README.md) | 41 | 123 | 30 | 11 | 0 | 40 | 1 | 0 |
 
-Sisa backlog kuota: **0 soal**, **0 run awal**, **0 adjudikasi**. [Bukti verifikasi akhir](resume_20261003_final_execution.json). [Daftar tepat per kelas, ID soal, dan run yang belum ada](PENDING_AI_VALIDATION.json). [Petunjuk resume](RESUME_AI_VALIDATION.md).
+[Snapshot silver](silver_operational/dataset_snapshot_v2.json) `operational-silver-20261003-v2` memuat **571 versi qualified**. Jika laporan berubah, bangun dan daftarkan snapshot baru melalui `scripts/build_operational_silver.py`; snapshot yang sudah terdaftar tetap immutable. Gate training/test dan dukungan tiap label tetap berlaku.
 
-Kelas 1–5 menggunakan batch `revalidasi_blind_20261003_v2/`. Kelas 6 mempertahankan bukti di `hasil_validasi/bukti_validasi/`. Kelas 7–12 menggunakan `revalidasi_blind_20261002_v1/`. Semua checkpoint kerja dapat dilanjutkan; snapshot di folder audit dan laporan tidak di-resume.
+[Bukti migrasi](silver_operational_migration.json), [bukti verifikasi integritas](silver_operational/verification.json), dan [panduan integrasi](../../API_DOCUMENTATION/36_SILVER_OPERATIONAL_INTEGRATION.md).
 
-`undecided` tidak disamakan dengan kegagalan konten. Lihat `finalRouting`: soal yang sudah dinilai AI dapat tetap membutuhkan revisi atau pemeriksaan ahli. Nol Easy/Medium/Hard pada batch belum lengkap bukan distribusi akhir.
+Checkpoint dan laporan historis tetap immutable. Arsip lokal pra-migrasi berada di `archive/pre_silver_operational_v1`. Buku Guru tetap sumber bukti kunci. IRT memakai respons siswa nyata dan menyimpan difficulty empiris terpisah dari `intendedDifficulty`.
 
-Model penilai tetap Gemini yang sama, metode blind N=3, verifikasi kunci/solusi/visual, dan adjudikasi AI bila diperlukan. Sumber soal dan opsi dipertahankan; satu gambar kelas 1 yang hilang dipulihkan dari salinan yang tersedia di proyek, dengan [provenance](kelas1/revalidasi_blind_20261003_v2/asset_recovery.json).
-
-IndoBERT lama hanya mendukung kelas 1–6; seluruh diagnostik kelas 7–12 tetap `out_of_scope`/`abstain`. Kelengkapan validasi AI tidak otomatis meloloskan gate training. Gold ahli tetap null; tidak ada training, publikasi soal, CTT, atau IRT dalam pembaruan ini.
-
-Dua adjudikasi sempat gagal karena respons klasifikasi tidak memuat bukti. Schema yang dikirim ke provider kini mewajibkan bukti untuk `classify`, sambil tetap mengizinkan `abstain` tanpa bukti. Validator lokal, model, rubrik, dan hash prompt tetap sama. Kedua adjudikasi telah diulang dengan hasil valid; 63 tes terkait lulus.
-
-**Di luar backlog kuota ini:** `kelas11_tl` (55 soal) dan `kelas12_tl` (41 soal) belum pernah mendapat validasi AI. Keduanya belum dimasukkan ke batch kelas reguler ini.
+Laporan aktif `hasil_validasi/validation_results.json` memakai format soal ringkas: `items[].cognitive_level` dan delapan field `items[].ai_metadata`. Bukti lengkap tersimpan di `hasil_validasi/bukti_validasi/decision_audit.json`. Filter delivery memakai `ai_metadata.validation_status = silver_ready`. [Verifikasi format ringkas](silver_operational/compact_format_verification.json) mencatat preservasi sumber, audit dan identitas snapshot.

@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from app.annotation.security import create_session_material, csrf_matches, password_hash, password_verify
-from app.annotation.assets import PrivateAssetSigner
+from app.staff.security import create_session_material, csrf_matches, password_hash, password_verify
+from app.staff.assets import PrivateAssetSigner
 from app.classification.v2.artifact import ModelManifest, load_and_verify_manifest
 from app.classification.v2.contracts import HEAD_LABELS
 from app.classification.v2.runtime import ContentConflictError, V2ClassifierRuntime

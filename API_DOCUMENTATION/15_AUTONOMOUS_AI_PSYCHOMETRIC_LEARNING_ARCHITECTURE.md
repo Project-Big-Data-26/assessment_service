@@ -1,38 +1,28 @@
-# Arsitektur AI dan Feedback Psikometrik Terkontrol
+# Arsitektur AI dan feedback otomatis silver
 
-Implementasi saat ini menghubungkan validasi soal manusia, pilot server-scored, CTT/IRT dan keputusan empiris. Pembaruan label/model tetap memerlukan versioning dan ahli; sistem tidak melakukan self-training otomatis dari respons siswa.
+Alur aktif menghubungkan validasi AI, snapshot silver, delivery siswa, scoring server dan CTT/IRT. Tidak ada pelabelan manusia atau pembentukan gold dalam jalur operasional.
 
 ```mermaid
 flowchart TD
-  E[Ekstraksi / babNN.json] --> Q[Import dan qualification]
-  Q --> H[Tiga ahli blind]
-  H --> C[Consensus / diskusi / senior adjudicator]
-  C --> G[Human-gold snapshot immutable]
-  G --> T[Group-aware train / validation / test]
-  T --> I[IndoBERT ordinal grade-aware + kalibrasi]
-  I --> P[Promotion gates + approval; silver tetap research]
-  G --> A[Assessment fixed-form satu grade/populasi]
-  A --> D[Delivery opaque + scoring server]
-  D --> R[Completed sessions + event immutable]
-  R --> M[Cleaning; 0 / 1 / NA; whole attempt]
-  M --> B[CTT + gate IRT]
-  B -->|Data/asumsi memadai| F[Rasch / 2PL / 3PL]
-  B -->|Kurang data/asumsi| W[CTT observation; collect/review]
-  F --> X[Snapshot dan flags advisory]
-  W --> X
-  X --> V[Ahli retain / revise / quarantine]
-  V -->|Hold| S[Hentikan delivery versi lama; exclude freeze]
-  V -->|Revisi versi baru| Q
-  L[Gemini blind silver N=3] --> O[Audit hash dan comparison offline]
-  O --> N[Research artifact; bukan gold]
+ E[Ekstraksi JSON] --> L[Gemini blind N=3 dan adjudikasi AI]
+ L --> Q[Qualification silver]
+ Q --> S[Snapshot immutable ai_silver]
+ S --> D[Assessment dan delivery]
+ D --> R[Scoring server dan completed sessions]
+ R --> M[Cleaning matriks 0/1/null]
+ M --> C[CTT dan readiness IRT]
+ C --> I[IRT bila bukti/data cukup]
+ I --> F[Feedback sistem otomatis]
+ C --> F
+ F -->|masalah kualitas| H[Hold dan AI revalidation]
+ H --> E
+ S --> T[Training dan evaluation gate]
 ```
 
-Kode aktif: `app/annotation`, `app/training/v2`, `app/classification/v2`, `app/assessment`, `app/psychometrics`. MongoDB menyimpan keputusan/gold; SQLite menyimpan pilot/empirical. [07](07_PSYCHOMETRICS_API.md) menjelaskan statistik, [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md) menjelaskan eksekusi.
+`app/silver`, `app/llm`, `app/training/v2`, `app/classification/v2`, `app/assessment` dan `app/psychometrics` menyediakan alur. `app/staff` hanya auth operator dan MongoDB opsional. SQLite menyimpan dataset, form, sesi, event, snapshot empiris dan feedback.
 
-LLM blind dilakukan sebelum prediksi model untuk silver penelitian. Tiga run AI bukan tiga annotator manusia. Review anchored legacy tidak menjadi validasi baru. Hidden chain-of-thought tidak disimpan; alasan terstruktur dapat diaudit.
+Tiga run model yang sama dapat salah bersama. Silver qualification mempertahankan bukti, kunci, solusi dan visual; metrik model terhadap silver dilaporkan sebagai kecocokan rujukan AI. IRT memberikan bukti respons terpisah dari penilaian isi.
 
-Judgment difficulty agen 1–5, label intended Easy/Medium/Hard, p CTT dan b IRT mempunyai makna berbeda. Tidak ada mapping otomatis antarfield. Version/population/grade/time-window/policy tetap melekat pada bukti empiris.
+Difficulty agen, intended label, CTT p dan IRT b tidak saling ditimpa. Feedback menahan masalah kualitas dan menyimpan riwayat; perubahan konten memerlukan versi baru serta penilaian AI baru. Integrasi mengatur scheduler screen, bukan setiap respons memicu recalibration.
 
-Calibrated confidence classifier, agreement LLM dan posterior uncertainty IRT juga berbeda. Model promotion tidak mengikuti convergence IRT atau voting AI. Semua keputusan empirical advisory tetap researchOnly=true.
-
-Generator varian, multigroup linking, DIF/equating, CAT, continuous scheduled retraining, Redis jobs, Claude API dan public authoring lengkap masih desain lanjutan. Tidak ada klaim bahwa setiap blok arsitektur target sudah berjalan di deployment.
+Generator varian, CAT, learner profile, equating/DIF, continuous retraining dan release calibration masih pengembangan berikutnya.

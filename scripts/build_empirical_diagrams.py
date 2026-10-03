@@ -84,18 +84,18 @@ class Diagram:
 
 
 def empirical():
-    diagram = Diagram("VALIDASI EMPIRIS: DELIVERY, CTT / IRT, DAN REVIEW AHLI",
+    diagram = Diagram("VALIDASI EMPIRIS: DELIVERY, CTT / IRT, DAN FEEDBACK SISTEM",
                       "Backend tersedia • data siswa nyata tetap diperlukan • version / population / grade tidak dicampur")
     content = [
-        ("01  GOLD DAN BLUEPRINT", ["Human-gold snapshot + checksum.", "Kunci/solusi dan versi terverifikasi.", "Fixed form, satu grade/populasi.", "Silver / research tidak boleh delivery."], "green"),
+        ("01  SILVER DAN BLUEPRINT", ["AI-silver snapshot + checksum.", "Kunci/solusi dan versi terverifikasi.", "Fixed form, satu grade/populasi.", "Silver qualified dapat masuk delivery."], "green"),
         ("02  DELIVERY IMMUTABLE", ["Participant Bearer terikat assessment.", "Opsi diacak, public IDs opaque.", "Refresh memakai snapshot yang sama.", "Key / solution tidak masuk DTO siswa."], "blue"),
         ("03  RESPONS SERVER", ["Benar = 1; salah = 0; skip = NA.", "Identity, version, scoring dari server.", "Event immutable; retry tanpa duplikasi.", "Server timing dan anomaly flags."], "blue"),
         ("04  CLEANING DAN MATRIKS", ["Satu completed attempt per subject.", "First / last; completion time window.", "Exclude mismatch, invalid, rapid guess.", "Missing tetap NA, tanpa imputasi nol."], "blue"),
         ("05  CTT DAN GATE IRT", ["p / Wilson CI, rest-score D dan r_it.", "KR-20 menggunakan complete cases.", "N, coverage, variasi, connected design.", "Review dimensi, local independence, sampling."], "orange"),
         ("06  RASCH / 2PL / 3PL", ["Regularized marginal likelihood; θ~N(0,1).", "Gauss-Hermite; missing tanpa likelihood.", "a / b / c, EAP, uncertainty, information.", "Convergence, bounds, infit/outfit, Q3.", "Gate gagal: CTT + waiting status."], "purple"),
-        ("07  SNAPSHOT ADVISORY", ["Immutable policy / matrix / sample hashes.", "Populasi, family, grade, time window.", "CTT / IRT tetap empirical difficulty.", "Disagreement hanya review flag.", "Research-only; bukan gold otomatis."], "purple"),
-        ("08  KEPUTUSAN AHLI", ["Authenticated expert + CSRF + rationale.", "Retain / revise / quarantine append-only.", "Hold delivery pada versi terkait.", "Exclude held version dari freeze berikutnya.", "Label awal dan histori tetap tersimpan."], "green"),
-        ("09  VERSIONING / TRAINING", ["Revisi → versi baru → review manusia.", "Freeze gold baru, group-aware split.", "IndoBERT ordinal grade-aware + calibration.", "Technical gates + approval model.", "Respons siswa bukan training text."], "green"),
+        ("07  SNAPSHOT ADVISORY", ["Immutable policy / matrix / sample hashes.", "Populasi, family, grade, time window.", "CTT / IRT tetap empirical difficulty.", "Disagreement hanya review flag.", "Intended label tetap silver; empiris terpisah."], "purple"),
+        ("08  FEEDBACK OTOMATIS", ["Actor system + policy version + flags.", "Retain / collect_more_events / needs_ai_review.", "Hold delivery pada versi terkait.", "Exclude held version dari freeze berikutnya.", "Label awal dan histori tetap tersimpan."], "green"),
+        ("09  VERSIONING / TRAINING", ["Revisi → versi baru → review AI.", "Freeze silver baru, group-aware split.", "IndoBERT ordinal grade-aware + calibration.", "Technical gates + approval model.", "Respons siswa bukan training text."], "green"),
     ]
     positions = [(100, 300), (1340, 300), (2580, 300), (2580, 850), (1340, 850), (100, 850),
                  (100, 1400), (1340, 1400), (2580, 1400)]
@@ -110,27 +110,27 @@ def empirical():
             start, end = (x + width / 2, y + height + 10), (nx + width / 2, ny - 10)
         diagram.arrow(start, end)
     diagram.rectangle(100, 1940, 3640, 130, "#e6edf7")
-    diagram.text(135, 1958, "FastAPI + MongoDB gold/auth + SQLite pilot + NumPy/SciPy • API 2.1.0 • Dokumen 07 / 27", 36, bold=True)
+    diagram.text(135, 1958, "FastAPI + MongoDB silver/auth + SQLite pilot + NumPy/SciPy • API 2.2.0 • Dokumen 07 / 27", 36, bold=True)
     diagram.text(135, 2011, "Minimum proyek: Rasch 100×5; 2PL 300×10; 3PL 1000×20. Tidak ada pooling, auto-label, CAT atau equating.", 31)
     diagram.save("23_EMPIRICAL_VALIDATION_FEEDBACK_FLOW")
 
 
 def ai_detail():
     diagram = Diagram("INDOBERT ORDINAL GRADE-AWARE DAN BLIND LLM N=3",
-                      "Protokol terbaru: label blind dikunci sebelum comparison; gold manusia tetap otoritas label")
+                      "Protokol terbaru: label blind dikunci sebelum comparison; silver AI menjadi label operasional")
     left = [
-        ("A1  SNAPSHOT DAN SPLIT", ["Gold manusia atau silver research: provenance terpisah.", "Hash lock; group-aware 70/15/15; source / stimulus / duplicate family."]),
+        ("A1  SNAPSHOT DAN SPLIT", ["Snapshot silver qualified: ai_silver.", "Hash lock; group-aware 70/15/15; source / stimulus / duplicate family."]),
         ("A2  SERIALIZER DAN ENCODER", ["Stem, stimulus, metadata grade, opsi, solusi/visual terverifikasi.", "Serializer tunggal; IndoBERT shared encoder + LoRA query/value."]),
         ("A3  TIGA HEAD", ["Head 1: knowing / applying / reasoning; Head 2: empat knowledge classes.", "Head 3: cumulative ordinal + grade embedding + ordered cutpoints."]),
         ("A4  LOSS DAN CALIBRATION", ["Multiclass + ordinal loss; train-only class weights; anti-collapse.", "Validation temperature / confidence+entropy; per-grade bila support cukup."]),
-        ("A5  PACKAGING DAN PROMOTION", ["Adapter / heads / tokenizer / label map / hashes / version / metrics.", "Gold + technical gates + approval; silver tetap research-only, API 503."]),
+        ("A5  PACKAGING DAN PROMOTION", ["Adapter / heads / tokenizer / label map / hashes / version / metrics.", "Silver qualification + technical evaluation gates."]),
     ]
     right = [
         ("B1  INPUT BLIND", ["Gemini menerima soal, grade, rubrik, key / solution / image evidence.", "Tanpa prediksi IndoBERT, agent difficulty, vote lain atau target distribution."]),
         ("B2  TIGA INITIAL RUNS", ["Tiga panggilan terpisah; structured JSON dan bukti/rationale ringkas.", "Hidden chain-of-thought tidak disimpan; schema/error status diperiksa."]),
         ("B3  VOTING DAN ADJUDICATION", ["Hanya 3–0 diterima langsung sebagai silver advisory.", "2–1, abstain, key/visual/content conflict → adjudikasi AI terpisah."]),
         ("B4  CHECKPOINT DAN AUDIT", ["Resume memakai run sukses; failure/history tidak menjadi label.", "Audit hash mengunci checkpoint; boundary/data gate sebelum expansion."]),
-        ("B5  COMPARISON OFFLINE", ["Prediksi dibuat setelah blind labels terkunci; join disagreement offline.", "Tidak ada anchored review baru; agreement bukan confidence atau human gold."]),
+        ("B5  COMPARISON OFFLINE", ["Prediksi dibuat setelah blind labels terkunci; join disagreement offline.", "Tidak ada anchored review baru; agreement bukan calibrated confidence."]),
     ]
     for column, cards, color in [(100, left, "blue"), (2000, right, "purple")]:
         for index, (title, body) in enumerate(cards):
@@ -138,8 +138,8 @@ def ai_detail():
             if index < 4:
                 diagram.arrow((column + 870, 575 + index * 310), (column + 870, 600 + index * 310))
     diagram.rectangle(100, 1910, 3640, 170, "#e5f3ee")
-    diagram.text(140, 1930, "CTT / IRT → review manusia → retain / revise / quarantine → versi/gold baru → training terkontrol", 39, bold=True, color="green")
-    diagram.text(140, 1995, "Parallel-v1 / conditioned-difficulty-v1 adalah legacy ablation. Jawaban siswa mentah dan label AI bukan gold training.", 34)
+    diagram.text(140, 1930, "CTT / IRT → feedback sistem → retain / collect_more_events / needs_ai_review → versi baru", 36, bold=True, color="green")
+    diagram.text(140, 1995, "Parallel-v1 / conditioned-difficulty-v1 adalah legacy ablation. Jawaban siswa mentah bukan teks training.", 34)
     diagram.save("24_INDOBERT_FINETUNING_LLM_REASONING_DETAIL")
 
 

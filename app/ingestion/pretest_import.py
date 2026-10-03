@@ -1,4 +1,4 @@
-"""Import babNN.json records without treating agent judgments as gold labels."""
+"""Import babNN.json records without treating agent judgments as qualified silver labels."""
 
 from __future__ import annotations
 

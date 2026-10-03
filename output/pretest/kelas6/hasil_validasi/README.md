@@ -1,23 +1,9 @@
-# Hasil validasi kelas 6
+# Validasi AI silver — kelas6
 
-Folder ini adalah satu-satunya hasil validasi aktif untuk kelas ini.
+25 soal, 75 run blind sukses. Routing: `{'silver_ready': 25}`. Label: `{'Easy': 16, 'Medium': 9, 'Hard': 0}`.
 
-Jumlah soal: **25**. Easy: **16**, Medium: **9**, Hard: **0**, belum diputuskan: **0**.
+Gunakan [validation_results.json](validation_results.json) untuk keputusan silver, [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk bukti, dan [difficulty_groups.json](difficulty_groups.json) untuk kelompok kesulitan.
 
-Mulai dari [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk penjelasan per soal. Label hasil ada di `items[].llmAdvisory.advisoryLabels` pada [validation_results.json](validation_results.json); periksa juga `finalRouting`.
+Alur operasional memakai AI silver tanpa persetujuan pelabel manusia. Hanya `silver_ready` masuk snapshot delivery; `revision_required` dan `needs_ai_review` ditahan untuk AI revalidation. Jalankan `scripts/build_operational_silver.py` untuk snapshot yang memverifikasi checkpoint, kunci, solusi dan aset. IRT menyimpan difficulty empiris terpisah. Gate training, evaluasi dan mutu estimasi tetap berlaku. Prompt, rubrik, jawaban dan label blind terdahulu tetap terkunci.
 
-| Isi | Kegunaan |
-|---|---|
-| [questions.json](questions.json) | Soal, opsi, dan spesifikasi jawaban |
-| [indobert_predictions.json](indobert_predictions.json) | Diagnostik model setelah label blind dikunci |
-| [difficulty_groups.json](difficulty_groups.json) | Semua kelompok kesulitan |
-| [Easy](difficulty/Easy.json), [Medium](difficulty/Medium.json), [Hard](difficulty/Hard.json), [undecided](difficulty/undecided.json) | Subset soal per kesulitan |
-| [Checkpoint](bukti_validasi/silver_labels.json) | Tiga run Gemini dan adjudikasi final, byte tetap |
-| [Audit](bukti_validasi/PILOT_AUDIT.md) | Gate validasi dan hash checkpoint |
-| [manifest.json](manifest.json) | Lokasi sumber dan SHA-256 seluruh berkas hasil |
-
-Metode: Gemini blind N=3, rubrik kelas sasaran, verifikasi kunci dan solusi, adjudikasi AI bila diperlukan, lalu diagnostik IndoBERT. Seluruh label tetap silver/advisory; gold ahli null dan review ahli wajib. Tidak ada training ulang atau pengiriman ke siswa.
-
-Routing: `{"pending_expert_review": 25}`. `readyForExpansion=false`.
-
-Sumber ekstraksi dan gambar berada satu tingkat di atas folder ini. Checkpoint dan audit disalin tanpa mengubah byte; path di dalam audit mencatat lokasi historis saat penilaian. Lokasi berkas yang berlaku saat ini mengikuti manifest. Hasil lama, checkpoint sementara, dan salinan bundle telah dibersihkan.
+Format `validation_results.json`: `items[]` mempertahankan field soal sumber, dengan `cognitive_level` dari label final AI dan delapan field `ai_metadata`. `cognitive_score` dan `confidence_score` bernilai null. Hanya `ai_metadata.validation_status = silver_ready` dapat dipakai untuk delivery; ID versi/hash memakai identitas snapshot operasional. Item yang ditahan memiliki ID versi/hash null. Bukti keputusan lengkap tersedia di [decision_audit.json](bukti_validasi/decision_audit.json), ditautkan melalui `ai_metadata.decision_id`. File ini memuat kunci jawaban dan hanya untuk backend.

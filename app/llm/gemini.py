@@ -72,7 +72,7 @@ def build_review_prompt(
         "Aturan schema wajib: proposedLabel harus null untuk confirm/abstain dan wajib "
         "berisi label yang BERBEDA dari prediksi untuk revise; evidenceSpans berisi 1-4 "
         "kutipan pendek untuk confirm/revise; rationale maksimal 600 karakter. "
-        "Jangan menetapkan gold label dan jangan mengarang informasi yang tidak tersedia.\n\n"
+        "Berikan keputusan advisory AI dan jangan mengarang informasi yang tidak tersedia.\n\n"
         f"ITEM KANONIS:\n{serialize_question(question)}\n\n"
         f"PREDIKSI INDOBERT:\n{prediction_json}"
     )

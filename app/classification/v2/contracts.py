@@ -115,6 +115,7 @@ class V2ClassificationResponse(BaseModel):
     mathCognitiveDomain: HeadResult
     knowledgeDimension: HeadResult
     intendedDifficulty: HeadResult
-    reviewRequired: Literal[True] = True
+    reviewRequired: bool = True
+    reviewMode: Literal["automated_ai"] = "automated_ai"
     reasons: list[str] = Field(default_factory=list)
     trace: ModelTrace

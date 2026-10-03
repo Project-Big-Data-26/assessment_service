@@ -67,8 +67,8 @@ def main():
     analyze = commands.add_parser("analyze", help="Analyze a trusted offline 0/1/null matrix")
     analyze.add_argument("--input", required=True)
     analyze.add_argument("--output", required=True)
-    create = commands.add_parser("create-assessment", help="Freeze a local human-gold snapshot as a pilot blueprint")
-    create.add_argument("--gold-snapshot", required=True)
+    create = commands.add_parser("create-assessment", help="Freeze a local AI silver snapshot as a pilot blueprint")
+    create.add_argument("--silver-snapshot", required=True)
     create.add_argument("--assessment-config", required=True)
     create.add_argument("--db", default=os.getenv("ASSESSMENT_DB_PATH", "data/local/assessments.sqlite3"))
     create.add_argument("--output", required=True)
@@ -97,7 +97,7 @@ def main():
         result = analyze_matrix(payload, policy)
     elif args.command == "create-assessment":
         payload = AssessmentCreate.model_validate_json(Path(args.assessment_config).read_text(encoding="utf-8"))
-        snapshot = DatasetSnapshot.model_validate_json(Path(args.gold_snapshot).read_text(encoding="utf-8"))
+        snapshot = DatasetSnapshot.model_validate_json(Path(args.silver_snapshot).read_text(encoding="utf-8"))
         result = AssessmentStore(args.db, subject_secret=os.getenv("ASSESSMENT_SUBJECT_SECRET") or None).create_assessment(payload, snapshot)
     elif args.command == "create-participant":
         result = AssessmentStore(args.db, subject_secret=os.getenv("ASSESSMENT_SUBJECT_SECRET") or None).participant(args.assessment_id, args.participant_code)

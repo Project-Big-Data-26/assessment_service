@@ -18,10 +18,10 @@ def artifacts():
     definitions = schema["components"]["schemas"]
     # OpenAPI references become standalone JSON Schema references.
     raw = json.dumps(definitions, ensure_ascii=False).replace("#/components/schemas/", "#/$defs/")
-    bundle = {"$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:nalar:implemented-api:2.1.0",
+    bundle = {"$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:nalar:implemented-api:2.2.0",
               "title": "Nalar implemented FastAPI contracts", "$defs": json.loads(raw)}
     document = ["# Master Reference Endpoint", "",
-                "Inventaris ini dihasilkan dari `app.main:app` oleh `scripts/export_api_contracts.py`. Versi API: **2.1.0**. "
+                "Inventaris ini dihasilkan dari `app.main:app` oleh `scripts/export_api_contracts.py`. Versi API: **2.2.0**. "
                 "Semua path dalam tabel tersedia dalam kode; readiness data, storage, provider, dan model tetap diperiksa pada runtime.", "",
                 "| Method | Path | Akses | Ringkasan |", "|---|---|---|---|"]
     for path, operations in sorted(schema["paths"].items()):
@@ -35,9 +35,7 @@ def artifacts():
             elif path == "/internal/v2/auth/logout":
                 access = "staff cookie + CSRF"
             elif path.startswith("/internal/v2"):
-                access = "staff/expert cookie; CSRF untuk mutation"
-            elif "/decisions" in path and path.startswith("/api/v1/internal/psychometrics") and method == "post":
-                access = "expert cookie + CSRF; service token tidak cukup"
+                access = "operator cookie; CSRF untuk mutation"
             elif path.startswith("/api/v1/internal") or path.startswith("/api/v1/psychometrics"):
                 access = "staff cookie atau X-Internal-API-Key" + ("; CSRF untuk cookie" if method == "post" else "")
             elif path.startswith(("/api/v1/assessments/", "/api/v1/sessions/", "/api/v1/responses")):
@@ -51,7 +49,7 @@ def artifacts():
                  "Claude API, dan promotion otomatis tetap desain lanjutan. Mereka tidak ada dalam inventaris implementasi ini.", "",
                  "OpenAPI aktual: `/openapi.json`; salinan terversi: [schemas/openapi.json](schemas/openapi.json). "
                  "Bundle kontrak aktual: [schemas/implemented-api.schema.json](schemas/implemented-api.schema.json). "
-                 "`nalar-api.schema.json` adalah desain gateway luas, bukan validator endpoint pilot aktif.", "",
+                 "`nalar-api.schema.json` menunjuk bundle kontrak aktual untuk kompatibilitas.", "",
                  "HTTP error FastAPI memakai `{\"detail\": ...}` dengan 401/403/404/409/422/503 sesuai penyebab. "
                  "`/v2/classify` tetap 503 ketika artefak research-only/unapproved/gagal gate. "
                  "CTT tetap dihitung jika data IRT kurang; respons analisis membawa `readiness.failures` dan status menunggu.", ""]

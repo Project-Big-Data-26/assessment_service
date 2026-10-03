@@ -230,11 +230,11 @@ def build_decision(
     if input_validation["status"] != "pass":
         routing = "revision_required"
     elif not complete or content["status"] in {None, "insufficient_evidence"}:
-        routing = "llm_retry_or_manual_review"
+        routing = "needs_ai_review"
     elif content["status"] == "concern":
         routing = "revision_required"
     else:
-        routing = "pending_expert_review"
+        routing = "silver_ready"
 
     stored_runs = []
     for run in runs:
@@ -302,13 +302,9 @@ def build_decision(
             "runs": stored_runs,
             "votes": votes,
             "advisoryLabels": advisory_labels,
-            "isGoldLabel": False,
+            "labelProvenance": "ai_silver",
         },
-        "humanValidation": {
-            "required": True,
-            "goldLabels": None,
-            "status": "not_started",
-        },
+        "labelProvenance": "ai_silver", "reviewMode": "automated_ai",
         "finalRouting": routing,
         "createdAt": generated_at,
     }
@@ -328,12 +324,12 @@ def render_report(
         f"# Hasil Validasi Soal Kelas {grade} — IndoBERT dan Gemini N=3",
         "",
         f"> Dibuat: `{generated_at}`  ",
-        "> Status: **advisory berbasis silver label; bukan gold label ahli.**  ",
+        "> Status: **advisory berbasis silver label; bukan label silver yang qualified.**  ",
         "> CTT dan IRT tidak dijalankan karena belum ada respons siswa.",
         "",
         "## Cara membaca laporan",
         "",
-        "Setiap soal melewati validasi struktur, klasifikasi IndoBERT tiga head, lalu review Gemini sebanyak tiga run. Gemini memberikan bukti dan alasan singkat yang dapat diaudit; sistem tidak menyimpan atau menampilkan chain-of-thought internal. Hasil tiga run digabung dengan majority vote minimal 2 dari 3. Hasil akhirnya tetap proposal AI dan wajib diperiksa ahli sebelum menjadi gold label.",
+        "Setiap soal melewati validasi struktur, klasifikasi IndoBERT tiga head, lalu review Gemini sebanyak tiga run. Gemini memberikan bukti dan alasan singkat yang dapat diaudit; sistem tidak menyimpan atau menampilkan chain-of-thought internal. Hasil tiga run digabung dengan majority vote minimal 2 dari 3. Hasil akhirnya tetap proposal AI dan memerlukan qualification konten sebelum masuk snapshot silver.",
         "",
         "## Ringkasan",
         "",
@@ -346,8 +342,8 @@ def render_report(
         f"| Konfigurasi voting | N={review['requestedRuns']}, mayoritas minimal 2 suara |",
         f"| Run LLM sukses | {review['summary']['successfulRuns']}/{len(decisions) * review['requestedRuns']} |",
         f"| Token historis pada checkpoint LLM | {review['summary']['totalTokens']:,} |",
-        f"| Menunggu ahli | {route_counts['pending_expert_review']} |",
-        f"| Perlu retry/review manual | {route_counts['llm_retry_or_manual_review']} |",
+        f"| Silver qualified | {route_counts['silver_ready']} |",
+        f"| Perlu retry/review manual | {route_counts['needs_ai_review']} |",
         f"| Perlu revisi konten | {route_counts['revision_required']} |",
         "",
         "## Rumus yang digunakan",
@@ -359,7 +355,7 @@ def render_report(
         "- Majority vote LLM: pasangan `(aksi, label)` harus memperoleh minimal `2/3` suara.",
         "- Jumlah token yang dilaporkan berasal dari run sukses pada checkpoint. Percobaan gagal/retry yang tidak menyimpan usage bisa menambah pemakaian di dashboard provider.",
         "",
-        "Input menggunakan konten dan solusi hasil ekstraksi/silver. Kunci, solusi, dan transkripsi tersebut masih perlu diperiksa ahli. Model aktif serta dataset training asal tercatat pada manifest prediksi; menjalankan inferensi pada kelas ini tidak berarti model telah dilatih ulang dengan data kelas ini.",
+        "Input menggunakan konten dan solusi hasil ekstraksi/silver. Kunci, solusi, dan transkripsi tersebut diperiksa AI sebelum qualification. Model aktif serta dataset training asal tercatat pada manifest prediksi; menjalankan inferensi pada kelas ini tidak berarti model telah dilatih ulang dengan data kelas ini.",
         "",
         "## Hasil per soal",
         "",
@@ -480,7 +476,7 @@ def render_report(
                 "",
                 f"**Routing akhir:** `{decision['finalRouting']}`.",
                 "",
-                "> Label advisory bukan gold label. Tiga ahli blind tetap menjadi otoritas label penelitian.",
+                "> Label advisory bukan silver label. Label operasional berasal dari validasi AI.",
                 "",
                 "---",
                 "",
@@ -491,7 +487,7 @@ def render_report(
             lines.extend([
                 "### Audit tambahan — Label silver awal sebelum melihat IndoBERT",
                 "",
-                "Label awal dibuat Gemini dari soal dan aset sumber. Review di atas dibuat setelah Gemini melihat prediksi IndoBERT. Perbedaan di tabel ini membantu ahli menilai perubahan label dan kemungkinan pengaruh prediksi awal; kesesuaian tidak dihitung sebagai akurasi terhadap gold.",
+                "Label awal dibuat Gemini dari soal dan aset sumber. Review di atas dibuat setelah Gemini melihat prediksi IndoBERT. Perbedaan di tabel ini membantu AI menilai perubahan label dan kemungkinan pengaruh prediksi awal; kesesuaian tidak dihitung sebagai akurasi terhadap silver.",
                 "",
                 "| Head | Silver awal | Vote silver | IndoBERT | Advisory sesudah review |",
                 "|---|---|---:|---|---|",
@@ -586,7 +582,7 @@ def main() -> int:
                 "aggregate": initial["aggregate"],
                 "sourceInputHash": initial["inputHash"],
                 "responseHashes": [run.get("responseHash") for run in initial["runs"] if run.get("status") == "success"],
-                "isGoldLabel": False,
+                "labelProvenance": "ai_silver",
             }
     if len({item["decisionId"] for item in decisions}) != len(decisions):
         raise ValueError("decisionId collision")
@@ -614,8 +610,8 @@ def main() -> int:
             "summary": {
                 "itemCount": len(decisions),
                 "routingCounts": dict(Counter(item["finalRouting"] for item in decisions)),
-                "goldLabelCount": 0,
-                "humanReviewRequiredCount": len(decisions),
+                "labelProvenance": "ai_silver",
+                "silverReadyCount": sum(d["finalRouting"] == "silver_ready" for d in decisions),
             },
             "items": decisions,
         },
@@ -648,8 +644,8 @@ def main() -> int:
             for path in files
         },
         "limitations": [
-            "LLM results are advisory and are not gold labels.",
-            "Consensus is based on three samples of one LLM and is not three independent experts.",
+            "Legacy model-aware LLM review is diagnostic; operational qualification uses blind silver.",
+            "Consensus is based on three samples of one LLM and is not three independent models.",
             "Provider usage may exceed checkpoint totals when unsuccessful attempts have no recorded usage.",
             "No student response data were used, so CTT and IRT were not calculated.",
         ],

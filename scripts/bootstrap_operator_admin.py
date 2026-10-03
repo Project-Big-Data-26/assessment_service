@@ -11,15 +11,15 @@ import uuid
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.annotation.repository import MongoAnnotationRepository, utc_now
-from app.annotation.security import password_hash
+from app.staff.repository import MongoRepository, utc_now
+from app.staff.security import password_hash
 
 
 async def run() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--username", required=True)
     args = parser.parse_args()
-    repository = MongoAnnotationRepository.from_environment()
+    repository = MongoRepository.from_environment()
     if repository is None:
         raise SystemExit("MONGODB_URI and MONGODB_DATABASE must be configured")
     password = getpass.getpass("Bootstrap password: ")

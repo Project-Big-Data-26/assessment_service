@@ -1,61 +1,18 @@
-# Nalar — ekstraksi dan validasi soal matematika
+# Nalar Question Intelligence
 
-Repo ini menyediakan FastAPI untuk ekstraksi soal, klasifikasi legacy, riset IndoBERT 3×4×3 grade-aware ordinal, serta pilot server-scored dan analisis CTT/IRT. Implementasi mencakup import candidate, Atlas, anotasi blind, konsensus/adjudikasi, snapshot dataset, LoRA training, kalibrasi, delivery fixed-form, SQLite response events dan snapshot empiris immutable.
+Sistem ekstraksi dan klasifikasi soal matematika memakai **label silver AI**, tanpa gate pelabelan guru atau gold. Alur: ekstraksi -> Gemini blind N=3/adjudikasi -> qualification silver -> snapshot immutable -> delivery siswa -> scoring server -> CTT/IRT -> feedback otomatis.
 
-Hasil riset belum boleh diklaim: gold manusia, deployment cloud, dan artefak model final belum ada sampai intervensi eksternal diselesaikan.
-
-Hasil validasi kelas 1-6 tersedia di [indeks hasil validasi](output/pretest/README.md). Gunakan `output/pretest/kelasN/hasil_validasi/` untuk laporan dan label final tiap kelas; checkpoint serta audit final berada di subfolder `bukti_validasi/`.
-
-## Menjalankan lokal
-
-Prasyarat: Python 3.12 dan dependensi dalam [requirements.txt](requirements.txt).
+[Dokumentasi API](API_DOCUMENTATION/00_README.md), [integrasi silver](API_DOCUMENTATION/36_SILVER_OPERATIONAL_INTEGRATION.md), [hasil validasi semua kelas](output/pretest/README.md), dan [animasi](API_DOCUMENTATION/33_ANIMATED_DATA_FLOW.html).
 
 ```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m uvicorn app.main:app --env-file .env --port 8000
+.\.venv\Scripts\python.exe scripts/build_operational_silver.py --snapshot-id silver-next --output tmp/silver-next.json
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --env-file .env --host 127.0.0.1 --port 8000
 ```
 
-Buka `http://127.0.0.1:8000/docs`. Route legacy tetap berada pada `/v1`. Route baru adalah:
+API 2.2.0 menyediakan registrasi dataset silver, blueprint, peserta, session, respons dan analisis. Service credential serta SQLite cukup untuk pilot; MongoDB opsional untuk akun operator dan metadata sumber/model. Endpoint pelabelan manusia telah dihapus.
 
-- `POST /v2/classify`;
-- `GET /v2/model-info`;
-- `GET /v2/health/ready`;
-- `GET /v2/llm-info` dan `/v2/psychometrics-info`;
-- delivery/respons `/api/v1/assessments`, `/api/v1/sessions`, `/api/v1/responses`;
-- analisis internal `/api/v1/internal/psychometrics`;
-- UI/API tertutup `/internal/v2`.
+Seluruh 580 soal punya tiga run AI sukses; konten bermasalah tetap ditahan. Label silver tidak menjamin semua soal lolos qualification. Label kesulitan awal dan hasil CTT/IRT disimpan terpisah.
 
-Tanpa artefak terverifikasi, classify/readiness v2 sengaja menjawab HTTP 503 dan tidak memakai rules sebagai fallback.
+Classifier v2 mendukung SD 1-6. Validasi AI/delivery mencakup reguler 1-12 dan TL 11-12. Training, calibration, anti-collapse dan evaluation gate tetap berlaku; migrasi tidak retrain atau mempromosikan artifact. CTT/IRT menunggu respons siswa dan bukti asumsi; demo numerik adalah synthetic.
 
-## Arsitektur fase IndoBERT
-
-Candidate dari `babNN.json` diperiksa kontennya, lalu tiga ahli memberi label blind pada:
-
-- domain kognitif matematika `knowing | applying | reasoning`;
-- dimensi pengetahuan `factual | conceptual | procedural | metacognitive`;
-- intended difficulty `Easy | Medium | Hard`.
-
-KKO hanya fitur eksperimen. Konflik yang tidak selesai masuk ahli senior keempat. Training v2 memakai snapshot gold yang terkunci dan LoRA pada IndoBERT.
-
-Kode [indobert.py](app/classification/indobert.py) dan [train.py](app/training/train.py) tetap legacy C1–C6 khusus `/v1`. Implementasi baru berada di `app/classification/v2`, `app/training/v2`, `app/annotation`, dan `app/ingestion`. Output v2 tidak menetapkan gold atau publish otomatis; `reviewRequired` selalu benar pada fase ini.
-
-## Atlas dan fase berikutnya
-
-[.env.example](.env.example) memuat nama variabel Atlas, session, allowed host/origin, artefak, dan private object storage. Repository memakai satu `AsyncMongoClient` sepanjang lifecycle aplikasi. Jangan commit `.env`, token, atau URI berkredensial.
-
-Gemini blind N=3 tersedia untuk silver advisory sebelum comparison IndoBERT. Pipeline baru memakai Head 3 ordinal + grade embedding; Claude API tetap target. Delivery single-choice, CTT batch, Rasch/2PL/3PL dan review empiris tersedia. Gold manusia, respons siswa memadai dan asumsi yang didukung tetap diperlukan untuk pilot nyata.
-
-Jalankan IRT sekarang pada simulasi eksplisit, tanpa provider/database:
-
-```powershell
-.\.venv\Scripts\python.exe scripts\psychometrics.py demo --model rasch --output output\psychometrics\demo-rasch-v1.json
-```
-
-Demo juga mendukung `--model 2pl` dan `--model 3pl`. Semua output menolak overwrite. Perintah pilot/analisis nyata ada di [runbook CTT/IRT](API_DOCUMENTATION/27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md), training pada [runbook IndoBERT v2](API_DOCUMENTATION/22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md). [Endpoint](API_DOCUMENTATION/12_ENDPOINT_MASTER_REFERENCE.md) dan [schema aktual](API_DOCUMENTATION/schemas/implemented-api.schema.json) dihasilkan dari kode melalui `scripts/export_api_contracts.py`.
-
-## Tes
-
-```powershell
-.\.venv\Scripts\python.exe -m pytest -q
-```
+Tes: `.\.venv\Scripts\python.exe -m pytest -q`. Kontrak: `scripts/export_api_contracts.py --check`. `v1` C1-C6 tetap legacy; v2 memakai knowing/applying/reasoning -> empat knowledge -> Easy/Medium/Hard.

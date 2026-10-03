@@ -25,50 +25,58 @@
   },
   "outputs": {
     "questions.json": {
-      "sha256": "a777952c196b159e2f435240f7eeeb28db8761d6ad4765587386f50ec88b13ef",
-      "bytes": 172273
+      "sha256": "15c87f9152b8abd6b85929e2939d13a5fed8be30f39d594ad53cc9480b291429",
+      "bytes": 170761
     },
     "validation_results.json": {
-      "sha256": "2d68406ec7a39b0477dbedbb069111a1105a0bffb00ac4849df5c647130def3d",
-      "bytes": 1639583
+      "sha256": "1ac086b68af797bca2e4157acd4dd057f8b87662f972f0cdb227fd17d25ee430",
+      "bytes": 141756
     },
     "indobert_predictions.json": {
       "sha256": "7d5c7f81ac161b45ad88cc1eb1179ed7b63f866f77d936942db3754d96dc09b2",
       "bytes": 273402
     },
     "LAPORAN_VALIDASI.md": {
-      "sha256": "3673cf290f60c5fc6ef703d0e809eb960e2c5f39e9f3eb8cd51647c8626a06cd",
-      "bytes": 703419
+      "sha256": "1c89702f1ba0d8c4b35741adaf3d8ce7e3f96ef01e832af09e0c4e10e899079c",
+      "bytes": 702731
     },
     "README.md": {
-      "sha256": "a157a61aea591f1975020e7de2645ee578d1a1228dbc0a477d7a2c1f5196fe92",
-      "bytes": 2063
+      "sha256": "b7e3fbdc416e2c6f0e54f46f90b7b74cb28650ef28f8dbd1942d85967ee5593c",
+      "bytes": 1462
     },
     "difficulty_groups.json": {
-      "sha256": "47f7fa7e8f654c8471ad60c9398eb7adfd00fbfb47dbf9c8ec998e7c949fd44c",
-      "bytes": 214556
+      "sha256": "21a0eb6fa74b032119473c56446c11960c3946772554870e584812f95c2fe4d2",
+      "bytes": 213236
     },
     "difficulty/Easy.json": {
-      "sha256": "f5baaa69b9e9ebabce3432108ddc098052d1b9b3248ca9942669ab0f498ed631",
-      "bytes": 131705
+      "sha256": "d33987b66e6d542134df8dec6f8eb3c19f214ccab0bda6238d4c92abd2b28843",
+      "bytes": 130842
     },
     "difficulty/Medium.json": {
-      "sha256": "593204a758b92981b49e8c6a35b04537f821c24ef7c44cd6f89c4a7f0602e600",
-      "bytes": 66829
+      "sha256": "cffc803890c762e2e2211050da08450fc2d5ecf9e726cbec1c850b3f2c80c1c6",
+      "bytes": 66460
     },
     "difficulty/Hard.json": {
-      "sha256": "b26ebaabfdbadf43333df33a75251253a99e5e6ed05ede598d344cb4b50947c3",
-      "bytes": 6438
+      "sha256": "909e281504076c8fdfebf5b254ad29d60b171e09058f6c965aeea4685d152087",
+      "bytes": 6440
     },
     "difficulty/undecided.json": {
-      "sha256": "1f385249518e068614b97cf2f81130171f93f0dece75a496b82926a80e8a73ec",
-      "bytes": 202
+      "sha256": "2e8e35a52ab5ea19472fee1bcd9eea1583c17b3038ca9406ebeefdb23a1c434e",
+      "bytes": 242
+    },
+    "bukti_validasi/decision_audit.json": {
+      "sha256": "e581f9535b83d8852e680fc8b674907adc7e3e472eebbdeb892fd962102b3d8a",
+      "bytes": 1635966
     }
   },
   "limitations": [
-    "AI silver labels are not expert gold labels.",
-    "N=3 and adjudication use one Gemini model, not independent human experts.",
-    "The legacy IndoBERT difficulty head has class-collapse risk and is diagnostic only.",
-    "No training, student delivery, CTT or IRT was performed."
-  ]
+    "Silver labels originate from repeated judgments by one AI model.",
+    "Model promotion remains subject to technical evaluation gates.",
+    "Empirical difficulty requires student response data."
+  ],
+  "operationalPolicyVersion": "ai-silver-operational-v1",
+  "labelProvenance": "ai_silver",
+  "reviewMode": "automated_ai",
+  "operationalUpdatedAt": "2026-10-03T14:37:26.184142+00:00",
+  "validationResultsSchemaVersion": "validated-question-bundle-v1-ai-metadata"
 }

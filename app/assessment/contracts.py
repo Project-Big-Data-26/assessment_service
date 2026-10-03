@@ -14,12 +14,15 @@ class AssessmentCreate(StrictRecord):
     questionVersionIds: list[str] = Field(min_length=1, max_length=200)
     populationId: str = Field(min_length=1, max_length=100)
     assessmentFamily: str = Field(min_length=1, max_length=100)
-    grade: int = Field(ge=1, le=6)
+    grade: int = Field(ge=1, le=12)
+    subjectTrack: Literal["regular", "tl"] = "regular"
     sessionTtlMinutes: int = Field(default=120, ge=5, le=1440)
     rapidGuessMs: int | None = Field(default=None, ge=0, le=60000)
 
     @model_validator(mode="after")
     def unique_versions(self):
+        if self.subjectTrack == "tl" and self.grade not in (11, 12):
+            raise ValueError("TL assessments require grade 11 or 12")
         if len(set(self.questionVersionIds)) != len(self.questionVersionIds):
             raise ValueError("assessment item versions must be unique")
         return self
@@ -45,13 +48,6 @@ class ResponseCreate(StrictRecord):
         if self.clientSubmittedAt and self.clientSubmittedAt.utcoffset() is None:
             raise ValueError("clientSubmittedAt requires a timezone")
         return self
-
-
-class EmpiricalDecisionInput(StrictRecord):
-    idempotencyKey: str = Field(min_length=8, max_length=128)
-    questionVersionId: str = Field(min_length=1, max_length=250)
-    action: Literal["retain", "revise", "quarantine"]
-    rationale: str = Field(min_length=20, max_length=8000)
 
 
 class AssessmentReceipt(StrictRecord):

@@ -1,73 +1,26 @@
-# Dokumentasi API Nalar
+# Dokumentasi API Nalar 2.2.0
 
-Dokumentasi ini mengikuti backend **API 2.1.0**: ekstraksi → qualification/penilaian manusia blind → gold snapshot → IndoBERT grade-aware ordinal, serta gold → pilot server-scored → CTT/IRT → review empiris manusia. Gemini blind N=3 tersedia untuk silver penelitian; Claude API tetap target.
+Alur operasional: ekstraksi -> Gemini blind N=3 -> adjudikasi AI bila diperlukan -> qualification silver -> snapshot immutable -> delivery siswa -> scoring server -> CTT/IRT -> feedback otomatis dan validasi ulang AI.
 
-## Mulai menggunakan sistem
+Sistem menggunakan **label silver AI**. Persetujuan pelabel manusia, assignment anotasi dan pembentukan label gold sudah dihapus dari API aktif. Operator mengelola data, kredensial dan pekerjaan komputasi; operator tidak memberi label pedagogis.
 
-- [33 animasi interaktif aliran data dan perhitungan](33_ANIMATED_DATA_FLOW.html): narasi yang saling terhubung, definisi dan alasan tiap tahap, rumus LaTeX, kalkulator serta tab ringkasan untuk PPT. [Panduan teks/offline](33_ANIMATED_DATA_FLOW.md).
-- [34 ringkasan untuk PPT](34_PPT_SUMMARY.md): 12 bagian dengan pesan utama, poin slide, alasan pemilihan metode, catatan pembicara dan arti istilah.
-- [28 diagram teknis end-to-end berbasis silver dan personalisasi siswa](28_END_TO_END_PERSONALIZED_ASSESSMENT_FLOW.md): sumber, blind silver N=3, training, delivery riset, CTT/IRT, feedback dataset dan rancangan profil/selector/CAT; SVG dan JPG lengkap.
-- [27 runbook CTT/IRT dan pilot](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md): demo Rasch/2PL/3PL langsung, matriks nyata, API, gold-only delivery dan empirical review.
-- [12 endpoint aktual](12_ENDPOINT_MASTER_REFERENCE.md): dihasilkan dari kode FastAPI, bukan daftar target.
-- [09 kontrak/schema](09_JSON_SCHEMA_REFERENCE.md): OpenAPI dan JSON Schema aktual.
-- [25 pipeline ordinal](25_GRADE_AWARE_ORDINAL_PIPELINE.md): training, blind silver, audit, calibration dan promotion.
-- [Indeks hasil validasi kelas 1–12](../output/pretest/README.md): bundle advisory; kelas 7–9 memakai rubrik SMP, kelas 10–12 SMA, dan IndoBERT abstain di luar cakupan SD. Batch kelas 8–12 tertahan kuota provider; kelas 9–12 belum memiliki penilaian AI sukses. Bukan gold manusia atau data respons siswa.
+Label `intendedDifficulty` berasal dari penilaian isi soal relatif kelas. `ctt.empiricalDifficulty` dan `irt.empiricalDifficulty` berasal dari respons siswa dan tetap terpisah. Perbedaan ketiganya tidak menimpa label awal.
 
-## Keputusan domain dan proses
-
-Head 1 knowing/applying/reasoning; Head 2 factual/conceptual/procedural/metacognitive; Head 3 Easy/Medium/Hard sebagai intended difficulty relatif grade. C1–C6 hanya legacy /v1. KKO petunjuk eksperimen, bukan label.
-
-Default training grade-aware-ordinal-v2: IndoBERT/LoRA shared, dua multiclass heads dan ordinal difficulty + grade embedding. Parallel/conditioned tetap ablation. Artifact silver/research-only, unapproved atau gagal promotion tidak servable.
-
-Tiga run LLM blind/adjudikasi menghasilkan silver advisory sebelum comparison model. Tiga ahli manusia membentuk gold dari penilaian awal blind yang dikunci, consensus/discussion dan senior adjudication bila diperlukan. Agreement AI bukan calibrated confidence/gold.
-
-Pilot memakai human-gold checksum/version/key/solution. Identity dan correctness server; opsi publik opaque; skip/missing null. CTT/IRT mengukur populasi/family/grade/form/time window tertentu. Empirical result tidak mengubah domain/knowledge/intended difficulty otomatis. Ahli retain/revise/quarantine; held version dikecualikan dari delivery dan freeze berikutnya.
-
-## Peta dokumen
-
-| Dokumen | Fokus |
+| Panduan | Isi |
 |---|---|
-| [01](01_API_ARCHITECTURE.md) | Boundary FastAPI, auth, storage dan target lanjutan |
-| [02](02_QUESTION_API.md) | Authoring target dan immutable version |
-| [03](03_EXTRACTION_API.md) | Ekstraksi/staging/import |
-| [04](04_CLASSIFICATION_API.md) | Classifier ordinal dan blind LLM |
-| [05](05_AI_DECISION_ARBITRATION_API.md) | Blind manusia, consensus/discussion/adjudication |
-| [06](06_STUDENT_RESPONSE_API.md) | Single-choice server-scored dan NA |
-| [07](07_PSYCHOMETRICS_API.md) | CTT, gate, estimator/diagnostics IRT |
-| [08](08_ASSESSMENT_DELIVERY_API.md) | Gold blueprint, peserta/session/delivery |
-| [09](09_JSON_SCHEMA_REFERENCE.md) | Kontrak implementasi vs gateway target |
-| [10](10_SWAGGER_POSTMAN_GUIDE.md) | Smoke API dan contract checks |
-| [11](11_FRONTEND_INTEGRATION_ADAPTER.md) | Port siswa/operator/ahli |
-| [12](12_ENDPOINT_MASTER_REFERENCE.md) | Inventaris endpoint aktual otomatis |
-| [13](13_SYSTEM_ASPECTS_EXPLANATION.md) | Aspek sistem dan batas kesiapan |
-| [14](14_TAXONOMY_6X4X3_MAP.md) | Rubrik 3×4×3; nama legacy tetap |
-| [15](15_AUTONOMOUS_AI_PSYCHOMETRIC_LEARNING_ARCHITECTURE.md) | Feedback learning terkontrol |
-| [16](16_CONTROLLED_QUESTION_VARIATION_GENERATION.md) | Generator varian target |
-| [17](17_MONGODB_DATA_MODEL_ERD.md) | MongoDB gold/auth + SQLite pilot, ERD target |
-| [18](18_CLAUDE_PROVIDER_SETUP.md) | Claude target dan pemisahan provider aktif |
-| [19](19_GEMINI_SMOKE_EVALUATION.md) | Smoke legacy, berbeda dari Gemini blind aktif |
-| [21](21_PRETEST_AGENTIC_PIPELINE_INTEGRATION.md) | Pipeline agentic dan adapter impor |
-| [22](22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md) | Operasi anotasi/gold/model |
-| [23](23_EMPIRICAL_VALIDATION_FEEDBACK_FLOW.md) | Diagram aktual delivery → CTT/IRT → ahli |
-| [24](24_INDOBERT_FINETUNING_LLM_REASONING_DETAIL.md) | Diagram 4K ordinal training dan blind LLM |
-| [25](25_GRADE_AWARE_ORDINAL_PIPELINE.md) | Gate/audit/training ordinal |
-| [26](26_KELAS2_BLIND_VALIDATION.md) | Status batch advisory kelas 2 |
-| [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md) | Eksekusi CTT/IRT dan pilot |
-| [28](28_END_TO_END_PERSONALIZED_ASSESSMENT_FLOW.md) | Diagram teknis end-to-end berbasis silver, model/pilot riset dan target personalisasi per siswa |
-| [29](29_KELAS7_BLIND_VALIDATION.md) | Validasi blind SMP kelas 7, rubrik versi tersendiri, resume, dan diagnostik IndoBERT di luar cakupan |
-| [30](30_KELAS8_BLIND_VALIDATION.md) | Validasi blind SMP kelas 8, rubrik berdasarkan materi korpus, audit, dan diagnostik IndoBERT di luar cakupan |
-| [31](31_KELAS9_BLIND_VALIDATION.md) | Validasi blind SMP kelas 9, rubrik materi korpus, checkpoint resume, dan laporan status kuota |
-| [32](32_KELAS10_11_12_BLIND_VALIDATION.md) | Validasi blind SMA 10–12, rubrik per kelas, pelaksana batch serial, blok kuota bersama dan resume |
-| [33](33_ANIMATED_DATA_FLOW.md) · [Animasi](33_ANIMATED_DATA_FLOW.html) | Aliran data interaktif, rumus teknis, simulasi dan batas implementasi dari JSON sampai umpan balik model |
-| [34](34_PPT_SUMMARY.md) | Ringkasan presentasi berbahasa sederhana, alasan setiap metode, glosarium dan rumus LaTeX |
-| [35](35_KELAS11_12_TL_BLIND_VALIDATION.md) | Validasi blind Matematika Tingkat Lanjut 11–12, rubrik TL, resume, audit dan laporan terpisah |
+| [04 klasifikasi](04_CLASSIFICATION_API.md) | Kontrak tiga head dan runtime model |
+| [05 keputusan silver](05_AI_DECISION_ARBITRATION_API.md) | N=3, adjudikasi dan qualification |
+| [06 respons siswa](06_STUDENT_RESPONSE_API.md) | Event, scoring, idempotensi dan privasi |
+| [08 delivery](08_ASSESSMENT_DELIVERY_API.md) | Registrasi silver dan assessment |
+| [12 endpoint](12_ENDPOINT_MASTER_REFERENCE.md) | Inventaris dari OpenAPI aktual |
+| [17 data](17_MONGODB_DATA_MODEL_ERD.md) | SQLite operasional dan MongoDB opsional |
+| [22 runbook](22_INDOBERT_V2_IMPLEMENTATION_RUNBOOK.md) | Freeze dan gate training |
+| [27 CTT/IRT](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md) | Kesiapan data dan analisis |
+| [28 flow](28_END_TO_END_PERSONALIZED_ASSESSMENT_FLOW.md) | Alur terhubung dan batas implementasi |
+| [33 animasi](33_ANIMATED_DATA_FLOW.html) | Penjelasan interaktif |
+| [34 PPT](34_PPT_SUMMARY.md) | Materi presentasi |
+| [36 migrasi](36_SILVER_OPERATIONAL_INTEGRATION.md) | Perubahan kontrak dan contoh integrasi |
 
-Diagram end-to-end lengkap tersedia pada 28, dengan detail terpisah pada 23/24. Diagram lama bernomor 20 telah dihapus pada worktree. `schemas/nalar-api.schema.json` tetap desain gateway luas. Kontrak implementasi ada pada `schemas/openapi.json` dan `schemas/implemented-api.schema.json`.
+Seluruh 580 soal reguler kelas 1-12 dan kelas 11-12 TL memiliki 1.740 run awal sukses. `silver_ready` hanya diberikan pada konten yang memenuhi qualification; soal yang membutuhkan revisi tetap ditahan. Lihat [laporan aktif](../output/pretest/README.md).
 
-## Kesiapan
-
-Implemented berarti kode/tes tersedia, bukan bahwa cloud, ahli, gold/model final atau respons siswa telah tersedia. SQLite pilot lokal dapat berjalan tanpa MongoDB untuk CLI assessment dari gold JSON; analisis matriks/demo tidak memerlukan database/provider. Anotasi dan keputusan ahli API membutuhkan provisioning MongoDB/auth. Hasil simulasi diberi origin synthetic.
-
-UI siswa, generation/variants, public authoring, CAT, DIF/equating/linking, model polytomous, Redis jobs dan multihost deployment tetap target. Tidak ada publish/retrain otomatis. Secret dibaca dari environment atau .env privat sesuai [template](../.env.example); jangan commit credentials atau event/estimasi individual.
-
-Jumlah soal hasil ekstraksi dan jumlah run LLM bukan ukuran sampel siswa. Snapshot staging historis berisi 1.254 soal/46 file bab; status draft bukan expert-validated.
+Implementasi tersedia tidak berarti model baru sudah dilatih atau respons siswa nyata sudah terkumpul. Rasch/2PL/3PL menunggu data dan bukti asumsi. CAT, mastery per topik, linking/equating dan pembaruan model online masih rancangan. Snapshot, prompt dan laporan historis disimpan sebagai audit.

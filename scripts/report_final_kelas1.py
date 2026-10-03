@@ -45,7 +45,7 @@ def majority_fraction(aggregate: dict, head: str) -> str:
 def review_final(prediction: dict, aggregate: dict, head: str) -> tuple[str | None, str]:
     decision = aggregate.get(head) or {}
     if decision.get("status") != "consistent":
-        return None, "review_manual"
+        return None, "needs_ai_review"
     action = decision.get("suggestedAction")
     if action == "confirm":
         return prediction[head].get("label"), "llm_confirm"
@@ -142,7 +142,7 @@ def main() -> int:
         "# Hasil Kategorisasi dan Validasi Fiks — Bootstrap Silver Kelas 1",
         "",
         f"> Dibuat: {datetime.now().astimezone().isoformat(timespec='seconds')}",
-        "> Status: **hasil eksperimen sementara (silver), bukan gold label manusia dan belum layak dipakai sebagai klaim akurasi final.**",
+        "> Status: **hasil eksperimen sementara (silver), bukan rujukan AI yang qualified dan belum layak dipakai sebagai klaim akurasi final.**",
         "",
         "## Ringkasan eksekusi",
         "",
@@ -164,9 +164,9 @@ def main() -> int:
         "",
         "1. **Gemini silver N=3** membaca soal (serta gambar bila ada) tiga kali secara terpisah. Label mayoritas minimal 2/3 menjadi target bootstrap. Angka 2/3 atau 3/3 adalah konsistensi vote, bukan confidence model dan bukan akurasi.",
         "2. **IndoBERT** menerima teks kanonis yang sama untuk training dan inferensi. Encoder IndoBERT bersama menghasilkan representasi, lalu tiga classification head menghasilkan logits. Temperature scaling validation mengubah logits menjadi probabilitas terkalibrasi.",
-        "3. **Confidence IndoBERT** adalah probabilitas tertinggi pada suatu head: `confidence = max(P(label))`. Ini keyakinan model untuk satu soal, bukan ukuran benar-salah terhadap gold.",
+        "3. **Confidence IndoBERT** adalah probabilitas tertinggi pada suatu head: `confidence = max(P(label))`. Ini keyakinan model untuk satu soal, bukan ukuran benar-salah terhadap silver.",
         "4. **Normalized entropy** dihitung dengan `H = -Σ pᵢ ln(pᵢ) / ln(K)`, rentang 0–1. Makin kecil berarti distribusi makin tegas; makin besar berarti makin ambigu.",
-        "5. **Gemini reviewer N=3** melihat soal dan distribusi probabilitas IndoBERT, lalu setiap run memilih `confirm`, `revise`, atau `abstain`. Mayoritas menghasilkan hasil validasi advisory; manusia tetap diperlukan untuk gold label.",
+        "5. **Gemini reviewer N=3** melihat soal dan distribusi probabilitas IndoBERT, lalu setiap run memilih `confirm`, `revise`, atau `abstain`. Mayoritas menghasilkan hasil validasi advisory; qualification silver diperlukan sebelum delivery.",
         "",
         "## Ringkasan hasil model",
         "",
@@ -181,7 +181,7 @@ def main() -> int:
         )
     lines += [
         "",
-        "\\* Kesesuaian ini dihitung terhadap silver label Gemini dan mencakup seluruh split, sehingga **bukan test accuracy terhadap ahli**. Angka evaluasi validation di manifest juga hanya proxy terhadap label AI.",
+        "\\* Kesesuaian ini dihitung terhadap silver label Gemini dan mencakup seluruh split, sehingga **bukan test accuracy terhadap AI**. Angka evaluasi validation di manifest juga hanya proxy terhadap label AI.",
         "",
         "### Gate data yang belum terpenuhi",
         "",
@@ -350,7 +350,7 @@ def main() -> int:
             )
         lines += [
             "",
-            "> Keputusan di atas tetap `reviewRequired=true`. Hanya tiga ahli blind dan adjudikator yang boleh mengubahnya menjadi gold label penelitian.",
+            "> Keputusan di atas tetap `reviewRequired=true`. Review dilakukan AI; hasil tetap silver dengan provenance tercatat.",
             "",
             "---",
             "",
@@ -359,9 +359,9 @@ def main() -> int:
     lines += [
         "## Kesimpulan penggunaan",
         "",
-        "Pipeline sudah benar-benar menghasilkan artefak dan prediksi, tetapi status ilmiahnya masih **bootstrap silver**. File ini layak dipakai untuk demonstrasi teknis, inspeksi kesalahan, dan memilih sampel yang harus diprioritaskan kepada ahli. Ia belum menggantikan anotasi ahli, belum membuktikan generalisasi, dan belum memuat validitas empiris siswa.",
+        "Pipeline sudah benar-benar menghasilkan artefak dan prediksi, tetapi status ilmiahnya masih **bootstrap silver**. File ini layak dipakai untuk demonstrasi teknis, inspeksi kesalahan, dan memilih sampel yang harus diprioritaskan kepada AI. Ia belum menggantikan anotasi AI, belum membuktikan generalisasi, dan belum memuat validitas empiris siswa.",
         "",
-        "Prioritas berikutnya adalah meminta ahli memeriksa item dengan confidence rendah, entropy tinggi, vote Gemini tidak bulat, atau keputusan Gemini yang merevisi IndoBERT. Sesudah gold label tersedia, model harus dilatih ulang dan frozen test dibuka sesuai gate yang telah ditetapkan.",
+        "Prioritas berikutnya adalah meminta AI memeriksa item dengan confidence rendah, entropy tinggi, vote Gemini tidak bulat, atau keputusan Gemini yang merevisi IndoBERT. Sesudah silver label tersedia, model harus dilatih ulang dan frozen test dibuka sesuai gate yang telah ditetapkan.",
     ]
     args.output.write_text("\n".join(lines), encoding="utf-8")
     print(f"wrote {args.output} ({len(lines)} lines)")

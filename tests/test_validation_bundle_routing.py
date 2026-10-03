@@ -30,7 +30,7 @@ def decision(action="confirm", *, bad_key=False):
 
 def test_three_abstentions_do_not_create_complete_advisory_labels():
     result = decision("abstain")
-    assert result["finalRouting"] == "llm_retry_or_manual_review"
+    assert result["finalRouting"] == "needs_ai_review"
     assert result["decisionType"] == "llm_advisory_incomplete"
     assert all(label is None for label in result["llmAdvisory"]["advisoryLabels"].values())
 
@@ -39,7 +39,7 @@ def test_invalid_answer_key_blocks_even_unanimous_ai_votes():
     assert decision(bad_key=True)["finalRouting"] == "revision_required"
 
 
-def test_complete_votes_still_require_human_review():
+def test_complete_votes_use_silver_routing():
     result = decision()
-    assert result["finalRouting"] == "pending_expert_review"
-    assert result["humanValidation"]["goldLabels"] is None
+    assert result["finalRouting"] == "silver_ready"
+    assert result["labelProvenance"] == "ai_silver"

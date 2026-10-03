@@ -714,9 +714,9 @@ async def record_training_run(
     selected: TrialConfig,
 ) -> None:
     """Persist metadata only when Atlas is configured; never logs dataset content or secrets."""
-    from app.annotation.repository import MongoAnnotationRepository, utc_now
+    from app.staff.repository import MongoRepository, utc_now
 
-    repository = MongoAnnotationRepository.from_environment()
+    repository = MongoRepository.from_environment()
     if repository is None:
         return
     try:
@@ -871,7 +871,6 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
             args.allow_research_incomplete
             or snapshot.researchOnly
             or snapshot.gateFailures
-            or any(row.decisionProvenance.get("notGold") for row in snapshot.rows)
             or not metrics.get("candidateDiagnostics", {}).get("passed", False)
         ),
     )

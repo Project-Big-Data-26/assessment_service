@@ -7,11 +7,11 @@ import os
 from fastapi import APIRouter, Depends, Header, HTTPException, Request
 from starlette.concurrency import run_in_threadpool
 
-from app.annotation.routes import active_session, mutation_session, repository
+from app.staff.routes import active_session, mutation_session, repository
 from app.psychometrics.analysis import analyze_matrix
 from app.psychometrics.contracts import EmpiricalAnalysisResult, MatrixAnalysisInput, ScreeningInput
 from app.training.v2.dataset import DatasetSnapshot
-from .contracts import (AssessmentCreate, EmpiricalDecisionInput, ParticipantCreate, ResponseCreate,
+from .contracts import (AssessmentCreate, ParticipantCreate, ResponseCreate,
                         AssessmentReceipt, ParticipantReceipt, SessionReceipt, DeliveredItem,
                         DeliveryFinished, ResponseReceipt, SessionCompleted)
 from .store import AssessmentError, AssessmentStore
@@ -37,9 +37,7 @@ async def staff(request: Request, x_internal_api_key: str | None = Header(defaul
     # Reuse invite-only staff sessions and CSRF for cookie-authenticated writes.
     repo = repository(request)
     session = await active_session(request, repo)
-    allowed = {"admin", "research_coordinator", "psychometrician", "senior_adjudicator"}
-    if request.method == "GET":
-        allowed |= {"primary_annotator", "expert_reviewer"}
+    allowed = {"admin", "operator", "research_coordinator", "psychometrician"}
     if not (allowed & set(session.get("roles", []))):
         raise HTTPException(403, "empirical assessment staff role required")
     if request.method != "GET":
@@ -71,7 +69,7 @@ def info(request: Request):
             "models": ["rasch", "2pl", "3pl"], "policyVersion": policy.policyVersion,
             "minimumPersons": policy.minPersons, "minimumItems": policy.minItems,
             "scoring": "server_scored_single_choice", "researchOnly": True,
-            "reviewRequired": True, "goldLabelAuthority": False}
+            "reviewRequired": False, "reviewMode": "automated_ai", "labelProvenance": "ai_silver"}
 
 
 @router.get("/health")
@@ -81,22 +79,17 @@ def health():
 
 @router.get("/capabilities")
 def capabilities(request: Request):
-    return {"apiVersion": "2.1.0", "openApiUrl": "/openapi.json", "delivery": "fixed_form_single_choice",
+    return {"apiVersion": "2.2.0", "openApiUrl": "/openapi.json", "delivery": "fixed_form_single_choice",
             "studentResponses": "server_scored", "psychometrics": ["ctt", "rasch", "2pl", "3pl"],
             "assessmentStorageReady": getattr(request.app.state, "assessment_store", None) is not None,
-            "questionAuthoring": "internal_annotation_and_cli", "variantGeneration": False,
-            "modelPromotion": "human_gold_and_technical_gates_required"}
+            "questionAuthoring": "silver_validation_and_cli", "variantGeneration": False,
+            "modelPromotion": "silver_and_technical_gates_required"}
 
 
 @router.post("/internal/assessments", status_code=201, response_model=AssessmentReceipt)
 async def create_assessment(payload: AssessmentCreate, request: Request, actor=Depends(staff), db=Depends(store)):
-    repo = repository(request)
-    document = await repo.db.dataset_snapshots.find_one({"snapshotId": payload.snapshotId}, {"_id": 0})
-    if document is None:
-        raise HTTPException(404, "human-gold dataset snapshot not found")
-    snapshot = DatasetSnapshot.model_validate(document)
+    snapshot = await call_store(db.dataset_snapshot, payload.snapshotId)
     result = await call_store(db.create_assessment, payload, snapshot)
-    await repo.audit("assessment.created", actor["userId"], {"assessmentId": payload.assessmentId})
     return result
 
 
@@ -154,18 +147,16 @@ async def item_snapshots(question_id: str, actor=Depends(staff), db=Depends(stor
     return {"snapshots": await call_store(db.list_snapshots, question_id)}
 
 
-@router.post("/internal/psychometrics/snapshots/{snapshot_id}/decisions", status_code=201)
-async def decide(snapshot_id: str, payload: EmpiricalDecisionInput, request: Request,
-                 x_csrf_token: str | None = Header(default=None), db=Depends(store)):
-    # Service credentials never confer human gold/decision authority.
-    repo = repository(request)
-    actor = await active_session(request, repo)
-    actor = await mutation_session(actor, x_csrf_token)
-    if not actor.get("expertId") or not ({"primary_annotator", "expert_reviewer", "senior_adjudicator", "psychometrician"} & set(actor.get("roles", []))):
-        raise HTTPException(403, "authenticated expert role and profile required")
-    return await call_store(db.decide, snapshot_id, payload, actor["expertId"])
-
-
 @router.get("/internal/psychometrics/snapshots/{snapshot_id}/decisions")
 async def decisions(snapshot_id: str, actor=Depends(staff), db=Depends(store)):
     return {"decisions": await call_store(db.decisions, snapshot_id)}
+
+
+@router.post("/internal/silver/snapshots", status_code=201)
+async def register_silver_snapshot(payload: DatasetSnapshot, actor=Depends(staff), db=Depends(store)):
+    return await call_store(db.register_snapshot, payload)
+
+
+@router.get("/internal/silver/snapshots/{snapshot_id}", response_model=DatasetSnapshot)
+async def silver_snapshot(snapshot_id: str, actor=Depends(staff), db=Depends(store)):
+    return await call_store(db.dataset_snapshot, snapshot_id)

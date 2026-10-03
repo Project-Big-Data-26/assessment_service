@@ -28,7 +28,7 @@ def main() -> int:
         DatasetSnapshot.model_validate_json(path.read_text(encoding="utf-8"))
         for path in args.snapshot
     ]
-    rows = [row for snapshot in inputs for row in snapshot.rows]
+    rows = [row for snapshot in inputs for row in [*snapshot.rows, *snapshot.expansionRows]]
     duplicate_ids = [item for item, count in Counter(row.questionVersionId for row in rows).items() if count > 1]
     if duplicate_ids:
         raise ValueError(f"duplicate questionVersionId across snapshots: {duplicate_ids[:5]}")
@@ -40,7 +40,7 @@ def main() -> int:
         minimum_per_class=15,
         required_grades=(1, 2, 3, 4, 5, 6),
         research_only=any(item.researchOnly for item in inputs),
-        label_provenance=";".join(sorted({item.labelProvenance for item in inputs})),
+        label_provenance="ai_silver",
         exclusion_summary=dict(
             sum((Counter(item.exclusionSummary) for item in inputs), Counter())
         ),

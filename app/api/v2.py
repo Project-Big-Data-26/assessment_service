@@ -57,7 +57,7 @@ def model_info(request: Request):
         "difficultyHeadType": manifest.difficultyHeadType,
         "gradeEmbeddingDimension": manifest.gradeEmbeddingDimension,
         "tasks": ["mathCognitiveDomain_3", "knowledgeDimension_4", "intendedDifficulty_3"],
-        "reviewRequired": True,
+        "reviewMode": "automated_ai",
     }
 
 
@@ -77,7 +77,8 @@ def llm_info(request: Request):
         "configured": True,
         **runtime.settings.public_info(),
         "purpose": "blind_silver_labeling_before_indobert_comparison",
-        "goldLabelAuthority": False,
+        "labelProvenance": "ai_silver",
+        "reviewMode": "automated_ai",
         "networkChecked": False,
     }
 

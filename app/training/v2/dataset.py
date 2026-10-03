@@ -1,4 +1,4 @@
-"""Gold snapshot construction with deterministic group-aware 70/15/15 splits."""
+"""Silver snapshot construction with deterministic group-aware 70/15/15 splits."""
 
 from __future__ import annotations
 
@@ -24,7 +24,7 @@ from app.classification.v2.contracts import (
 from app.classification.v2.serializer import INPUT_SCHEMA_VERSION, canonical_json_hash, serialize_question
 
 
-class GoldTrainingRow(BaseModel):
+class TrainingRow(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     questionId: str
@@ -34,6 +34,7 @@ class GoldTrainingRow(BaseModel):
     sourceGroup: str
     duplicateFamily: str | None = None
     grade: int
+    subjectTrack: Literal["regular", "tl"] = "regular"
     topic: str
     subtopic: str | None = None
     questionType: str
@@ -86,25 +87,26 @@ class DatasetSnapshot(BaseModel):
     inputSchemaVersion: str = INPUT_SCHEMA_VERSION
     seed: int
     splitRatios: dict[str, float]
-    rows: list[GoldTrainingRow]
-    expansionRows: list[GoldTrainingRow]
+    rows: list[TrainingRow]
+    expansionRows: list[TrainingRow]
     splitManifest: list[SplitEntry]
     splitManifestHash: str
     testUnlockStatus: Literal["locked", "eligible_to_unlock"]
+    expansionHash: str | None = None
     researchOnly: bool = False
-    labelProvenance: str = "human_gold"
+    labelProvenance: str = "ai_silver"
     gateFailures: list[str] = Field(default_factory=list)
     exclusionSummary: dict[str, int] = Field(default_factory=dict)
 
 
-def normalized_duplicate_text(row: GoldTrainingRow) -> str:
+def normalized_duplicate_text(row: TrainingRow) -> str:
     option_texts = sorted(option.text for option in row.options)
     value = " ".join(filter(None, [row.stimulus, row.stem, *option_texts]))
     value = unicodedata.normalize("NFC", value).casefold()
     return re.sub(r"\s+", " ", value).strip()
 
 
-def exact_content_family(row: GoldTrainingRow) -> str:
+def exact_content_family(row: TrainingRow) -> str:
     return hashlib.sha256(normalized_duplicate_text(row).encode("utf-8")).hexdigest()[:20]
 
 
@@ -113,7 +115,7 @@ def _trigrams(value: str) -> set[str]:
     return {compact[index : index + 3] for index in range(max(0, len(compact) - 2))}
 
 
-def assign_near_duplicate_families(rows: list[GoldTrainingRow], threshold: float = 0.90) -> dict[str, str]:
+def assign_near_duplicate_families(rows: list[TrainingRow], threshold: float = 0.90) -> dict[str, str]:
     """Cluster within source group using transitive Jaccard similarity."""
     parents = list(range(len(rows)))
 
@@ -151,7 +153,7 @@ def assign_near_duplicate_families(rows: list[GoldTrainingRow], threshold: float
     return {row.questionVersionId: family_by_root[find(index)] for index, row in enumerate(rows)}
 
 
-def _leakage_safe_group_ids(rows: list[GoldTrainingRow], family_map: dict[str, str]) -> dict[str, str]:
+def _leakage_safe_group_ids(rows: list[TrainingRow], family_map: dict[str, str]) -> dict[str, str]:
     """Union rows sharing a source, stimulus, exact, or near-duplicate family."""
     parents = list(range(len(rows)))
 
@@ -202,7 +204,7 @@ def _leakage_safe_group_ids(rows: list[GoldTrainingRow], family_map: dict[str, s
     return {row.questionVersionId: labels[find(index)] for index, row in enumerate(rows)}
 
 
-def _label_counts(rows: list[GoldTrainingRow]) -> Counter[str]:
+def _label_counts(rows: list[TrainingRow]) -> Counter[str]:
     values: Counter[str] = Counter()
     for row in rows:
         values.update(
@@ -217,14 +219,14 @@ def _label_counts(rows: list[GoldTrainingRow]) -> Counter[str]:
 
 
 def deterministic_group_split(
-    rows: list[GoldTrainingRow], *, seed: int = 42
+    rows: list[TrainingRow], *, seed: int = 42
 ) -> list[SplitEntry]:
     if not rows:
         return []
     rows = sorted(rows, key=lambda item: item.questionVersionId)
     family_map = assign_near_duplicate_families(rows)
     group_map = _leakage_safe_group_ids(rows, family_map)
-    groups: dict[str, list[GoldTrainingRow]] = defaultdict(list)
+    groups: dict[str, list[TrainingRow]] = defaultdict(list)
     for row in rows:
         groups[group_map[row.questionVersionId]].append(row)
     rng = random.Random(seed)
@@ -233,7 +235,7 @@ def deterministic_group_split(
     group_items.sort(key=lambda item: len(item[1]), reverse=True)
     targets = {"train": 0.70 * len(rows), "validation": 0.15 * len(rows), "test": 0.15 * len(rows)}
     global_labels = _label_counts(rows)
-    assigned: dict[str, list[GoldTrainingRow]] = {name: [] for name in targets}
+    assigned: dict[str, list[TrainingRow]] = {name: [] for name in targets}
     split_groups: dict[str, str] = {}
     for group_id, members in group_items:
         group_labels = _label_counts(members)
@@ -268,7 +270,7 @@ def deterministic_group_split(
 
 
 def validate_split_minimums(
-    rows: list[GoldTrainingRow],
+    rows: list[TrainingRow],
     manifest: list[SplitEntry],
     *,
     minimum_train_per_class: int = 30,
@@ -300,7 +302,7 @@ def validate_split_minimums(
 
 
 def validate_split_integrity(
-    rows: list[GoldTrainingRow], manifest: list[SplitEntry]
+    rows: list[TrainingRow], manifest: list[SplitEntry]
 ) -> list[str]:
     failures: list[str] = []
     expected_ids = {row.questionVersionId for row in rows}
@@ -333,7 +335,7 @@ def validate_split_integrity(
 
 
 def validate_test_minimums(
-    rows: list[GoldTrainingRow], manifest: list[SplitEntry], minimum: int = 15
+    rows: list[TrainingRow], manifest: list[SplitEntry], minimum: int = 15
 ) -> list[str]:
     """Backward-compatible validation/test gate used by older callers."""
     failures = validate_split_minimums(
@@ -347,7 +349,7 @@ def validate_test_minimums(
 
 
 def build_snapshot(
-    rows: list[GoldTrainingRow],
+    rows: list[TrainingRow],
     *,
     snapshot_id: str,
     seed: int = 42,
@@ -355,7 +357,7 @@ def build_snapshot(
     minimum_train_per_class: int = 30,
     required_grades: tuple[int, ...] = (1, 2, 3, 4, 5, 6),
     research_only: bool = False,
-    label_provenance: str = "human_gold",
+    label_provenance: str = "ai_silver",
     exclusion_summary: dict[str, int] | None = None,
 ) -> DatasetSnapshot:
     main = sorted(
@@ -378,6 +380,7 @@ def build_snapshot(
     return DatasetSnapshot(
         snapshotId=snapshot_id,
         snapshotHash=canonical_json_hash(snapshot_payload),
+        expansionHash=canonical_json_hash([row.model_dump(mode="json") for row in expansion]),
         seed=seed,
         splitRatios={"train": 0.70, "validation": 0.15, "test": 0.15},
         rows=main,
@@ -385,7 +388,7 @@ def build_snapshot(
         splitManifest=manifest,
         splitManifestHash=canonical_json_hash(manifest_payload),
         testUnlockStatus="eligible_to_unlock" if not failures else "locked",
-        researchOnly=research_only,
+        researchOnly=research_only or bool(failures),
         labelProvenance=label_provenance,
         gateFailures=failures,
         exclusionSummary=exclusion_summary or {},

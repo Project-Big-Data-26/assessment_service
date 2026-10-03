@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from app.llm.silver import SilverLabelOutput, build_silver_prompt  # noqa: E402
+from app.silver.exports import COMPACT_SCHEMA, compact_items, load_decision_bundle
 from scripts.generate_silver_labels_kelas1 import input_hash, load_checkpoint  # noqa: E402
 
 BASE = ROOT / "output/pretest"
@@ -88,7 +89,13 @@ def verify_bundle(source: Path, bundle: Path) -> None:
         assert (bundle / name).stat().st_size == info["bytes"], name
     questions = {str(q["_id"]): q for q in load(source)}
     exported = load(bundle / "questions.json")["items"]
-    results = load(bundle / "validation_results.json")["items"]
+    document = load(bundle / "validation_results.json")
+    results = load_decision_bundle(bundle)["items"]
+    if document.get("schemaVersion") == COMPACT_SCHEMA:
+        checkpoint = load(Path(manifest["sourceFiles"]["blindCheckpoint"]["path"]))
+        expected_items = compact_items(list(questions.values()), results, exported, checkpoint, source.parent.name)
+        assert document["items"] == expected_items, "compact export differs from source or locked evidence"
+        assert document["summary"] == load_decision_bundle(bundle)["summary"]
     expected = Counter({qid: 1 for qid in questions})
     assert Counter(q["questionId"] for q in exported) == expected
     assert Counter(q["questionId"] for q in results) == expected
@@ -186,19 +193,70 @@ def refresh_backlog(backlog: dict) -> None:
     backlog["pendingAIQuestionCount"] = sum(g["pendingAIQuestionCount"] for g in backlog["grades"])
     backlog["pendingInitialRunCount"] = sum(g["pendingInitialRunCount"] for g in backlog["grades"])
     write(BASE / "PENDING_AI_VALIDATION.json", backlog)
-    readme = (BASE / "README.md").read_text(encoding="utf-8")
-    start = readme.index("| Kelas |")
-    end = readme.index("\n\nKelas 1–5 menggunakan batch", start)
-    rows = ["| Kelas | Soal | Run sukses / target | Easy | Medium | Hard | Undecided | Soal perlu AI | Status |",
-            "|---|---:|---:|---:|---:|---:|---:|---:|---|"]
-    for g in backlog["grades"]:
-        n = g["grade"]
-        counts = g["difficultyDistribution"]
-        status = "Validasi AI lengkap" if not g["pendingAIQuestionCount"] else g["executionStatus"]
-        values = " | ".join(str(counts[k]) for k in ("Easy", "Medium", "Hard", "undecided"))
-        rows.append(f"| [{n}](kelas{n}/hasil_validasi/README.md) | {g['questionCount']} | {g['successfulRuns']}/{g['targetRuns']} | {values} | {g['pendingAIQuestionCount']} | {status} |")
-    rows.extend(["", f"Sisa: **{backlog['pendingAIQuestionCount']} soal**, **{backlog['pendingInitialRunCount']} run awal**, ditambah adjudikasi yang diperlukan. [Daftar tepat per kelas, ID soal, dan run yang belum ada](PENDING_AI_VALIDATION.json). [Petunjuk resume](RESUME_AI_VALIDATION.md)."])
-    (BASE / "README.md").write_text(readme[:start] + "\n".join(rows) + readme[end:], encoding="utf-8")
+    write_active_index()
+
+
+def write_active_index(base: Path = BASE) -> None:
+    """Rebuild the index from every active class, including TL, without text markers."""
+    entries = []
+    totals = Counter()
+    distribution = Counter()
+    sources = sorted(base.glob("kelas*/soal_pretest_db.json"), key=lambda p:
+                     (int(p.parent.name[5:].split("_")[0]), "_tl" in p.parent.name))
+    for source in sources:
+        active = source.parent / "hasil_validasi"
+        if not (active / "manifest.json").exists():
+            continue
+        manifest = load(active / "manifest.json")
+        result = load_decision_bundle(active)
+        checkpoint = load(Path(manifest["sourceFiles"]["blindCheckpoint"]["path"]))
+        routes = Counter(item["finalRouting"] for item in result["items"])
+        counts = Counter(item["llmAdvisory"]["advisoryLabels"]["intendedDifficulty"] or "undecided"
+                         for item in result["items"])
+        count = len(result["items"])
+        successful = checkpoint["summary"]["successfulRuns"]
+        totals.update({"items": count, "runs": successful,
+                       "pendingAdjudication": checkpoint["summary"].get("pendingAdjudication", 0), **routes})
+        distribution.update(counts)
+        entries.append((source.parent.name, count, successful, counts, routes))
+    rows = ["# Validasi AI silver semua kelas", "",
+            f"Laporan aktif mencakup **{totals['items']} soal** reguler kelas 1-12 dan TL kelas 11-12: "
+            f"**{totals['runs']:,}/{totals['items'] * 3:,} run awal sukses**, "
+            f"**{totals['pendingAdjudication']} adjudikasi tertunda**. "
+            "Label operasional memakai `ai_silver` tanpa persetujuan pelabel manusia.", "",
+            f"**{totals['silver_ready']} soal silver_ready**, **{totals['revision_required']} soal revision_required**, "
+            f"**{totals['needs_ai_review']} soal needs_ai_review**. "
+            "Soal yang memerlukan revisi atau penilaian ulang ditahan dari snapshot delivery.", "",
+            f"Label kesulitan seluruh soal: **{distribution['Easy']} Easy, {distribution['Medium']} Medium, "
+            f"{distribution['Hard']} Hard, {distribution['undecided']} undecided**.", "",
+            "| Kelas | Soal | Run sukses | Easy | Medium | Hard | Silver siap | Revisi | AI review |",
+            "|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
+    for name, count, successful, counts, routes in entries:
+        values = [count, successful, *(counts[k] for k in ("Easy", "Medium", "Hard")),
+                  *(routes[k] for k in ("silver_ready", "revision_required", "needs_ai_review"))]
+        rows.append(f"| [{name}]({name}/hasil_validasi/README.md) | " + " | ".join(map(str, values)) + " |")
+    snapshot_path = base / "silver_operational/dataset_snapshot_v2.json"
+    if snapshot_path.exists():
+        snapshot = load(snapshot_path)
+        count = len(snapshot["rows"]) + len(snapshot.get("expansionRows", []))
+        rows.extend(["", f"[Snapshot silver](silver_operational/dataset_snapshot_v2.json) "
+                     f"`{snapshot['snapshotId']}` memuat **{count} versi qualified**. "
+                     "Jika laporan berubah, bangun dan daftarkan snapshot baru melalui "
+                     "`scripts/build_operational_silver.py`; snapshot yang sudah terdaftar tetap immutable. "
+                     "Gate training/test dan dukungan tiap label tetap berlaku."])
+    rows.extend(["", "[Bukti migrasi](silver_operational_migration.json), "
+                 "[bukti verifikasi integritas](silver_operational/verification.json), "
+                 "dan [panduan integrasi](../../API_DOCUMENTATION/36_SILVER_OPERATIONAL_INTEGRATION.md).", "",
+                 "Checkpoint dan laporan historis tetap immutable. Arsip lokal pra-migrasi berada di "
+                 "`archive/pre_silver_operational_v1`. Buku Guru tetap sumber bukti kunci. "
+                 "IRT memakai respons siswa nyata dan menyimpan difficulty empiris terpisah dari `intendedDifficulty`."])
+    rows.extend(["", "Laporan aktif `hasil_validasi/validation_results.json` memakai format soal ringkas: "
+                 "`items[].cognitive_level` dan delapan field `items[].ai_metadata`. "
+                 "Bukti lengkap tersimpan di `hasil_validasi/bukti_validasi/decision_audit.json`. "
+                 "Filter delivery memakai `ai_metadata.validation_status = silver_ready`. "
+                 "[Verifikasi format ringkas](silver_operational/compact_format_verification.json) "
+                 "mencatat preservasi sumber, audit dan identitas snapshot."])
+    (base / "README.md").write_text("\n".join(rows) + "\n", encoding="utf-8")
 
 
 def main() -> int:

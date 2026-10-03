@@ -1,34 +1,19 @@
-# Frontend Integration Adapter
+# Adapter frontend silver
 
-UI anotasi blind tersedia pada `/internal/v2/ui/login` dan `/internal/v2/ui`. UI siswa/teacher authoring baru masih target, tetapi backend delivery fixed-form dan CTT/IRT kini tersedia. Frontend memakai kontrak [OpenAPI aktual](schemas/openapi.json).
+Frontend operator mengelola snapshot, assessment, peserta dan pekerjaan analisis. Frontend siswa hanya mengirim pilihan opaque, waktu jawaban dan skip. Pelabelan pedagogis dilakukan AI; halaman assignment dan adjudikasi pelabel manusia sudah dihapus.
 
-## Port siswa
+| Operasi | Endpoint | Kredensial |
+|---|---|---|
+| Registrasi silver | `POST /api/v1/internal/silver/snapshots` | Service key atau cookie operator + CSRF |
+| Blueprint | `POST /api/v1/internal/assessments` | Service key atau cookie operator + CSRF |
+| Peserta | `POST /api/v1/internal/assessments/{id}/participants` | Service key atau cookie operator + CSRF |
+| Mulai sesi | `POST /api/v1/assessments/{id}/sessions` | Participant Bearer + Idempotency-Key |
+| Ambil soal | `GET /api/v1/sessions/{id}/items/next` | Participant Bearer |
+| Jawaban | `POST /api/v1/responses` | Participant Bearer + Idempotency-Key=responseId |
+| Selesai | `POST /api/v1/sessions/{id}/complete` | Participant Bearer + Idempotency-Key |
+| Analisis | `POST /api/v1/internal/psychometrics/screen` | Service key atau cookie operator + CSRF |
+| Feedback sistem | `GET /api/v1/internal/psychometrics/snapshots/{id}/decisions` | Service key atau cookie operator |
 
-```ts
-type AssessmentPort = {
-  start(assessmentId: string, idempotencyKey: string): Promise<SessionReceipt>;
-  nextItem(sessionId: string): Promise<DeliveredItem | DeliveryFinished>;
-  submitResponse(input: ResponseCreate): Promise<ResponseReceipt>;
-  complete(sessionId: string, idempotencyKey: string): Promise<SessionCompleted>;
-};
-```
+Service key disimpan di backend integrasi, bukan pada browser siswa. Respons API error memakai `detail`. Retry mengirim body dan idempotency key yang sama. Snapshot yang sama tidak dapat didaftarkan dengan isi berbeda.
 
-Adapter memakai participant Bearer pada Authorization. Start/complete membawa Idempotency-Key; submit memakai responseId yang sama pada header/body. Saat retry, ID dan body dipertahankan. Pilihan UI memakai opaque public ID, bukan label A/B atau internal key.
-
-Student state hanya berisi session/delivery, teks/stimulus, opsi dan timing. Tidak ada correctAnswer, AI label, intended difficulty atau solution. Receipt tidak menampilkan correctness. Skip merupakan aksi eksplisit dengan skipped=true dan selectedOptionIds kosong.
-
-Alur: start → GET next → pilih satu opsi/skip → submit → next; finished=true → complete. Refresh GET mempertahankan delivery yang sama. Token tidak boleh dipakai lintas assessment. Penanganan 409 menampilkan expired/finalized/held state, bukan membuat jawaban atau opsi baru sendiri.
-
-## Port operator dan ahli
-
-Operator menyediakan assessment dan participant code. Service credential hanya pada backend/operator terpercaya, tidak dipaketkan dalam frontend siswa. Capabilities tersedia pada `/api/v1/capabilities`; psychometrics-info memberi local readiness tanpa network call.
-
-Staff membaca snapshot/agregat; ahli membaca flags/CI/IRT diagnostics lalu memutuskan retain/revise/quarantine dengan cookie + CSRF. UI tidak otomatis mempromosikan item atau model dari estimated status. Gold initial annotation tetap blind: keluaran AI/peer/empirical bukan isi assignment awal.
-
-Cookie auth path kini /, HttpOnly/SameSite lax, Secure di luar development. CSRF disimpan sesuai UI internal yang ada; jangan menyimpan credential pada dokumentasi/artefak publik. Route /api/v1 memakai Cache-Control no-store.
-
-## Batas fitur
-
-Backend aktif mendukung single-choice tekstual, transkripsi visual, fixed form dan completion seluruh item. Aset siswa privat, essay/numeric/grid/matching/multiple-response, CAT, exposure control, public authoring dan controlled generator masih target.
-
-`scripts/review_app.py` tetap UI staging legacy, bukan workflow gold atau delivery. `soal_pretest_db.json` tidak boleh diberikan langsung ke browser karena mengandung kunci. Lihat [06](06_STUDENT_RESPONSE_API.md), [08](08_ASSESSMENT_DELIVERY_API.md), [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md).
+Tampilkan kesulitan awal silver dan kesulitan empiris sebagai field berbeda pada UI operator. UI siswa tidak menerima kunci, solusi, label internal atau identity version. `reviewRequired` berarti kebutuhan pemeriksaan otomatis AI/teknis dan tidak membuka tugas guru.

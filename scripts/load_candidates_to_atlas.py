@@ -9,7 +9,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.annotation.repository import MongoAnnotationRepository, utc_now
+from app.staff.repository import MongoRepository, utc_now
 from app.ingestion.pretest_import import import_directory
 
 
@@ -17,7 +17,7 @@ async def run() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", default="output/pretest")
     args = parser.parse_args()
-    repository = MongoAnnotationRepository.from_environment()
+    repository = MongoRepository.from_environment()
     if repository is None:
         raise SystemExit("MONGODB_URI and MONGODB_DATABASE must be configured")
     inserted = unchanged = 0

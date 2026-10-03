@@ -25,6 +25,7 @@ from app.classification.v2.kko import detect_kko  # noqa: E402
 from app.classification.v2.runtime import V2ClassifierRuntime  # noqa: E402
 from app.classification.v2.serializer import canonical_json_hash, serialize_question  # noqa: E402
 from app.llm.silver import silver_rubric  # noqa: E402
+from app.silver.policy import POLICY_VERSION, qualification  # noqa: E402
 from scripts.build_validation_bundle_kelas1 import structural_validation  # noqa: E402
 
 HEADS = tuple(HEAD_LABELS)
@@ -58,16 +59,8 @@ def select_evidence(record: dict, head: str, label: str | None) -> dict:
     return {}
 
 
-def blind_outcome(record: dict, structure: dict) -> tuple[dict, str]:
-    aggregate = record.get("aggregate") or {}
-    labels = {head: (aggregate.get("heads", {}).get(head) or {}).get("label") for head in HEADS}
-    if structure["status"] != "pass" or aggregate.get("contentStatus") == "concern" or aggregate.get("answerKeyStatus") == "conflict":
-        route = "revision_required"
-    elif aggregate.get("eligibleForTraining") and all(labels.values()):
-        route = "pending_expert_review"
-    else:
-        route = "llm_retry_or_manual_review"
-    return labels, route
+def blind_outcome(record: dict, structure: dict, question: dict | None = None) -> tuple[dict, str]:
+    return qualification(record, structure, question)
 
 
 def verify_probability(head: dict) -> None:
@@ -93,9 +86,9 @@ def difficulty_groups(questions: list[dict], decisions: list[dict], grade: int) 
             "question": question,
             "advisoryLabels": decision["llmAdvisory"]["advisoryLabels"],
             "finalRouting": decision["finalRouting"],
-            "contentQualified": decision["finalRouting"] == "pending_expert_review",
-            "humanReviewRequired": True,
-            "isGoldLabel": False,
+            "contentQualified": decision["finalRouting"] == "silver_ready",
+            "reviewMode": "automated_ai",
+            "labelProvenance": "ai_silver",
         })
     return {
         "schemaVersion": "blind-difficulty-groups-v1", "sourceClass": grade,
@@ -144,7 +137,7 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
         "",
         f"Model penilai: `{checkpoint['model']}`. Prompt: `{checkpoint['promptVersion']}`. Rubrik: `{checkpoint['rubricVersion']}`.",
         "",
-        f"Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas {grade} tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan bukan keputusan ahli manusia.",
+        f"Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas {grade} tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan menjadi keputusan silver operasional.",
         "",
         diagnostic_overview,
         "",
@@ -153,14 +146,14 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
         f"Routing: `{json.dumps(summary['routingCounts'], ensure_ascii=False)}`.",
         f"Run awal sukses: {checkpoint['summary']['successfulRuns']}/{summary['itemCount'] * 3}; adjudikasi: {checkpoint['summary'].get('adjudicatedItems', 0)}; token sukses tercatat: {checkpoint['summary']['totalTokens']:,}.",
         "",
-        "Seluruh label masih silver/advisory, gold manusia tetap null, dan publishing otomatis tidak diaktifkan. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.",
+        "Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.",
         "",
         f"IndoBERT aktif: `{model['modelVersion']}`, arsitektur `{model['architectureVersion']}`, representation `{model['inputRepresentation']}`. Artifact belum disetujui; tidak ada training ulang dalam batch ini. Difficulty model lama dapat mengalami class collapse. Confidence dari kalibrasi kelas 1 yang kecil belum membuktikan ketepatan label.",
         f"KKO eksplisit masuk input encoder: `{model['inputRepresentation'] == 'kko'}`. Solusi minimum masuk input encoder: `{model['inputRepresentation'] in {'solution', 'kko'}}`. KKO/solusi tetap dicatat untuk audit; jangan menyatakan fitur itu dipakai model bila serializer artefak tidak memasukkannya.",
         "",
         "## Kelompok difficulty",
         "",
-        "Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampilkan; label tidak diubah untuk memenuhi kuota. Soal tanpa blocker konten tetap memerlukan pemeriksaan ahli.",
+        "Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampilkan; label tidak diubah untuk memenuhi kuota. Soal tanpa blocker konten dapat masuk snapshot silver operasional.",
         "",
         "| Difficulty | Semua usulan | Tanpa blocker konten | Data soal |",
         "|---|---:|---:|---|",
@@ -199,7 +192,7 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
             "### 1. Pemeriksaan input dan fitur",
             "",
             f"Struktur: `{d['inputValidation']['status']}`; alasan: `{d['inputValidation']['reasons']}`. Grade/topik: kelas {q['grade']} / {md(q['topic'])}. KKO: `{q['detectedKko']}`; KKO hanya petunjuk bantu.",
-            f"Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: {q['contentVersion']}; hash: `{q['contentHash']}`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.",
+            f"Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: {q['contentVersion']}; hash: `{q['contentHash']}`. Bukti verifikasi AI tetap tercatat sebagai silver.",
             "",
             "### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT",
             "",
@@ -254,7 +247,7 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
                 entropy_sum = -sum(p * math.log(p) for p in ps.values() if p)
                 lines.append(f"\n{TITLES[head]}: Σp = {sum(ps.values()):.8f}; confidence = max(p) = {max(ps.values()):.6f}; −Σp ln(p) = {entropy_sum:.6f}; H = {entropy_sum:.6f}/ln({len(ps)}) = {h['normalizedEntropy']:.6f}; T = {model['calibration'][head]['temperature']:.6f}.\n")
         input_title = "Input terserialisasi untuk audit; encoder tidak dijalankan" if scope == "out_of_scope" else "Input sebenarnya yang dibaca model"
-        lines.extend(["", f"<details><summary>{input_title}</summary>", "", "```text", d["featureManifest"]["serializedInput"], "```", "", "</details>", "", "### 5. Keputusan batch", "", f"Label advisory blind: `{json.dumps(llm['advisoryLabels'], ensure_ascii=False)}`. Routing: `{d['finalRouting']}`.", f"Status konten: `{llm['contentAssessment']['status']}`. Catatan konten: {md('; '.join(llm['contentAssessment']['concerns']))}.", f"Perbedaan model dan blind: `{json.dumps(d['modelComparison'], ensure_ascii=False)}`.", "Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.", ""])
+        lines.extend(["", f"<details><summary>{input_title}</summary>", "", "```text", d["featureManifest"]["serializedInput"], "```", "", "</details>", "", "### 5. Keputusan batch", "", f"Label advisory blind: `{json.dumps(llm['advisoryLabels'], ensure_ascii=False)}`. Routing: `{d['finalRouting']}`.", f"Status konten: `{llm['contentAssessment']['status']}`. Catatan konten: {md('; '.join(llm['contentAssessment']['concerns']))}.", f"Perbedaan model dan blind: `{json.dumps(d['modelComparison'], ensure_ascii=False)}`.", "Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.", ""])
     return "\n".join(lines)
 
 
@@ -296,7 +289,7 @@ def main() -> int:
         aggregate = record.get("aggregate") or {}
         assert not record or record["inputHash"] == canonical_json_hash(item)
         structure = structural_validation(item, args.source.parent)
-        labels, route = blind_outcome(record, structure)
+        labels, route = blind_outcome(record, structure, item)
         transcript = aggregate.get("visualTranscript")
         solution = aggregate.get("verifiedMinimalSolution")
         # Preserve the source business ID in exports. Only the diagnostic request
@@ -327,7 +320,7 @@ def main() -> int:
             "grade": grade, "topic": request.topic, "subtopic": request.subtopic, "questionType": request.questionType,
             "stem": request.stem, "stimulus": request.stimulus, "options": [o.model_dump() for o in request.options],
             "visualAssets": item.get("image_url") or [], "visualAssetHashes": content["visualAssetHashes"], "visualTranscript": transcript,
-            "verifiedMinimalSolution": solution, "verificationProvenance": "llm_silver_not_expert_verified",
+            "verifiedMinimalSolution": solution, "verificationProvenance": "ai_silver",
             "detectedKko": request.detectedKko, "privateAnswerSpecification": {"answerKey": item.get("jawaban"), "verifiedAnswerKey": aggregate.get("verifiedAnswerKey"), "answerKeyStatus": aggregate.get("answerKeyStatus"), "visibility": "restricted"},
             "source": {"externalId": external_id, "subchapter": item.get("subbab_id"), "assetBasePath": args.source.parent.as_posix(), "optionExtractionNotes": {o["option_id"]: o.get("alasan") for o in item["options"] if o.get("alasan")}},
         })
@@ -348,14 +341,14 @@ def main() -> int:
             "decisionType": "blind_silver_advisory", "inputValidation": structure,
             "featureManifest": {"grade": grade, "topic": request.topic, "subtopic": request.subtopic, "questionType": request.questionType, "detectedKko": request.detectedKko, "serializedInput": serialized, "untruncatedTokenCount": tokens, "maxLength": model["maxLength"], "wouldTruncate": tokens > model["maxLength"]},
             "indobert": {"diagnosticOnly": True, "diagnosticInferenceQuestionId": diagnostic_qid, "heads": {h: prediction[h] for h in HEADS}, "trace": prediction["trace"], "scopeStatus": prediction["scopeStatus"], "reviewRequired": True, "latencyMs": latency},
-            "llmAdvisory": {"provider": checkpoint["provider"], "model": checkpoint["model"], "promptVersion": checkpoint["promptVersion"], "rubricVersion": checkpoint["rubricVersion"], "method": "blind_n3_with_ai_adjudication", "blindToModelPredictions": True, "requestedRuns": 3, "requiredVotes": 2, "successfulRuns": sum(r["status"] == "success" for r in runs), "contentAssessment": {"status": aggregate.get("contentStatus"), "concerns": aggregate.get("contentConcerns") or []}, "answerKeyAssessment": {"status": aggregate.get("answerKeyStatus"), "verifiedAnswerKey": aggregate.get("verifiedAnswerKey")}, "runs": runs, "votes": votes, "adjudication": record.get("adjudication"), "advisoryLabels": labels, "eligibleForTraining": aggregate.get("eligibleForTraining", False), "isGoldLabel": False},
-            "humanValidation": {"required": True, "goldLabels": None, "status": "not_started"}, "finalRouting": route,
+            "llmAdvisory": {"provider": checkpoint["provider"], "model": checkpoint["model"], "promptVersion": checkpoint["promptVersion"], "rubricVersion": checkpoint["rubricVersion"], "method": "blind_n3_with_ai_adjudication", "blindToModelPredictions": True, "requestedRuns": 3, "requiredVotes": 2, "successfulRuns": sum(r["status"] == "success" for r in runs), "contentAssessment": {"status": aggregate.get("contentStatus"), "concerns": aggregate.get("contentConcerns") or []}, "answerKeyAssessment": {"status": aggregate.get("answerKeyStatus"), "verifiedAnswerKey": aggregate.get("verifiedAnswerKey")}, "runs": runs, "votes": votes, "adjudication": record.get("adjudication"), "advisoryLabels": labels, "eligibleForTraining": aggregate.get("eligibleForTraining", False), "labelProvenance": "ai_silver"},
+            "labelProvenance": "ai_silver", "reviewMode": "automated_ai", "finalRouting": route,
             "modelComparison": comparison, "blindCheckpointHash": audit["checkpointSha256"], "createdAt": created,
         })
         decisions[-1]["llmAdvisory"]["retryHistory"] = record.get("retryHistory") or []
         predictions.append({"index": index, "questionId": qid, "diagnosticInferenceQuestionId": diagnostic_qid, "questionVersionId": qversion, "contentHash": content_hash, "serializedInput": serialized, "untruncatedTokenCount": tokens, "maxLength": model["maxLength"], "wouldTruncate": tokens > model["maxLength"], "latencyMs": latency, "prediction": prediction})
         print(f"diagnostic={index}/{len(source)} route={route}", flush=True)
-    summary = {"itemCount": len(decisions), "routingCounts": dict(Counter(d["finalRouting"] for d in decisions)), "goldLabelCount": 0, "humanReviewRequiredCount": len(decisions), "advisoryLabelDistributions": {h: dict(Counter(d["llmAdvisory"]["advisoryLabels"][h] or "undecided" for d in decisions)) for h in HEADS}, "contentQualifiedAdvisoryLabelDistributions": {h: dict(Counter(d["llmAdvisory"]["advisoryLabels"][h] or "undecided" for d in decisions if d["finalRouting"] == "pending_expert_review")) for h in HEADS}, "modelDisagreementCounts": {h: sum(d["modelComparison"][h]["agreement"] is False for d in decisions) for h in HEADS}}
+    summary = {"itemCount": len(decisions), "routingCounts": dict(Counter(d["finalRouting"] for d in decisions)), "labelProvenance": "ai_silver", "silverReadyCount": sum(d["finalRouting"] == "silver_ready" for d in decisions), "advisoryLabelDistributions": {h: dict(Counter(d["llmAdvisory"]["advisoryLabels"][h] or "undecided" for d in decisions)) for h in HEADS}, "contentQualifiedAdvisoryLabelDistributions": {h: dict(Counter(d["llmAdvisory"]["advisoryLabels"][h] or "undecided" for d in decisions if d["finalRouting"] == "silver_ready")) for h in HEADS}, "modelDisagreementCounts": {h: sum(d["modelComparison"][h]["agreement"] is False for d in decisions) for h in HEADS}}
     for distribution_key in ("advisoryLabelDistributions", "contentQualifiedAdvisoryLabelDistributions"):
         for head, labels in HEAD_LABELS.items():
             for label in labels:
@@ -377,7 +370,7 @@ def main() -> int:
     write(args.output_dir / "validation_results.json", {"schemaVersion": "ai-decision-bundle-v2-blind", "collectionTarget": "ai_decisions", "createdAt": created, "sourceClass": checkpoint["sourceGrade"], "subjectTrack": checkpoint.get("subjectTrack", "regular"), "summary": summary, "items": decisions})
     write(args.output_dir / "indobert_predictions.json", {"schemaVersion": "indobert-blind-diagnostics-v1", "createdAt": created, "researchOnlyRun": True, "reviewRequired": True, "blindDecisionLockedAt": audit["generatedAt"], "artifact": args.artifact.as_posix(), "model": model, "summary": {"itemCount": len(predictions), "predictionDistribution": {h: dict(Counter(x["prediction"][h]["label"] or "abstain" for x in predictions)) for h in HEADS}}, "items": predictions})
     (args.output_dir / "LAPORAN_VALIDASI.md").write_text(render_report(questions, decisions, summary, checkpoint, model, output_dir=args.output_dir), encoding="utf-8")
-    readme = f"# Hasil validasi ulang kelas 1\n\nModel LLM: `{checkpoint['model']}`; metode blind N=3, rubrik kelas sasaran, verifikasi kunci/solusi, dan adjudikasi AI bila diperlukan. Label terkunci sebelum diagnostik IndoBERT.\n\nGunakan [validation_results.json](validation_results.json) untuk data hasil dan `items[].llmAdvisory.advisoryLabels` bersama `finalRouting`. Baca [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk soal, perhitungan confidence/entropy, tiga suara, profil difficulty, adjudikasi, serta hasil akhir per soal. [questions.json](questions.json) memuat sumber dan spesifikasi jawaban terbatas; [indobert_predictions.json](indobert_predictions.json) memuat diagnostik model lama.\n\nDistribusi: `{json.dumps(summary['advisoryLabelDistributions'], ensure_ascii=False)}`. Routing: `{json.dumps(summary['routingCounts'], ensure_ascii=False)}`.\n\nToken sukses tercatat: {checkpoint['summary']['totalTokens']:,}; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Gold ahli tetap null; CTT/IRT belum dihitung. IndoBERT belum dilatih ulang dan hasil diagnostiknya tidak menentukan label blind.\n\nAudit tidak menyetujui ekspansi/training bila gate belum lolos. Gate batch: `{json.dumps(audit['gates'], ensure_ascii=False)}`.\n"
+    readme = f"# Hasil validasi ulang kelas 1\n\nModel LLM: `{checkpoint['model']}`; metode blind N=3, rubrik kelas sasaran, verifikasi kunci/solusi, dan adjudikasi AI bila diperlukan. Label terkunci sebelum diagnostik IndoBERT.\n\nGunakan [validation_results.json](validation_results.json) untuk data hasil dan `items[].llmAdvisory.advisoryLabels` bersama `finalRouting`. Baca [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk soal, perhitungan confidence/entropy, tiga suara, profil difficulty, adjudikasi, serta hasil akhir per soal. [questions.json](questions.json) memuat sumber dan spesifikasi jawaban terbatas; [indobert_predictions.json](indobert_predictions.json) memuat diagnostik model lama.\n\nDistribusi: `{json.dumps(summary['advisoryLabelDistributions'], ensure_ascii=False)}`. Routing: `{json.dumps(summary['routingCounts'], ensure_ascii=False)}`.\n\nToken sukses tercatat: {checkpoint['summary']['totalTokens']:,}; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Label tetap silver AI; CTT/IRT belum dihitung. IndoBERT belum dilatih ulang dan hasil diagnostiknya tidak menentukan label blind.\n\nAudit tidak menyetujui ekspansi/training bila gate belum lolos. Gate batch: `{json.dumps(audit['gates'], ensure_ascii=False)}`.\n"
     readme = readme.replace("# Hasil validasi ulang kelas 1", f"# Hasil validasi ulang kelas {grade}")
     if checkpoint.get("subjectTrack") == "tl":
         readme += "\nMata pelajaran: Matematika Tingkat Lanjut (TL), dengan rubrik khusus TL.\n"
@@ -390,10 +383,12 @@ def main() -> int:
         )
     if rubric.education_level != "SD":
         readme += f"\nKelas {grade} memakai rubrik {rubric.education_level}. Model IndoBERT lama berada di luar cakupan: semua head abstain dengan label/confidence/entropy null dan probabilitas kosong. Tidak ada prediksi atau perbandingan ketepatan IndoBERT yang sah untuk grade ini; label akhir mengikuti penilaian blind Gemini.\n"
-    readme += "\nKelompok difficulty tersedia di [difficulty_groups.json](difficulty_groups.json), [Easy](difficulty/Easy.json), [Medium](difficulty/Medium.json), dan [Hard](difficulty/Hard.json). `contentQualified` hanya menandai soal tanpa blocker konten; seluruh soal tetap menunggu ahli. Kategori kosong tetap diekspor. Item tanpa keputusan tersedia di [undecided](difficulty/undecided.json).\n"
+    readme += "\nKelompok difficulty tersedia di [difficulty_groups.json](difficulty_groups.json), [Easy](difficulty/Easy.json), [Medium](difficulty/Medium.json), dan [Hard](difficulty/Hard.json). `contentQualified` hanya menandai soal tanpa blocker konten; soal silver_ready dapat masuk snapshot operasional. Kategori kosong tetap diekspor. Item tanpa keputusan tersedia di [undecided](difficulty/undecided.json).\n"
     (args.output_dir / "README.md").write_text(readme, encoding="utf-8")
     filenames = ["questions.json", "validation_results.json", "indobert_predictions.json", "LAPORAN_VALIDASI.md", "README.md", "difficulty_groups.json", *[f"difficulty/{label}.json" for label in grouped["groups"]]]
-    write(args.output_dir / "manifest.json", {"schemaVersion": "validation-bundle-manifest-v2-blind", "createdAt": created, "class": checkpoint["sourceGrade"], "offlineBuild": True, "newLlmCalls": 0, "method": "blind_n3_with_ai_adjudication_then_offline_model_diagnostics", "historicalBlindRecordedTokens": checkpoint["summary"]["totalTokens"], "historicalBlindSuccessfulRuns": checkpoint["summary"]["successfulRuns"], "blindDecisionLockedAt": audit["generatedAt"], "readyForExpansion": audit["readyForExpansion"], "sourceFiles": {name: {"path": path.as_posix(), "sha256": digest(path)} for name, path in (("source", args.source), ("blindCheckpoint", args.checkpoint), ("blindAudit", args.audit))}, "outputs": {name: {"sha256": digest(args.output_dir / name), "bytes": (args.output_dir / name).stat().st_size} for name in filenames}, "limitations": ["AI silver labels are not expert gold labels.", "N=3 and adjudication use one Gemini model, not independent human experts.", "The legacy IndoBERT difficulty head has class-collapse risk and is diagnostic only.", "No training, student delivery, CTT or IRT was performed."]})
+    write(args.output_dir / "manifest.json", {"schemaVersion": "validation-bundle-manifest-v2-blind", "createdAt": created, "class": checkpoint["sourceGrade"], "offlineBuild": True, "newLlmCalls": 0, "operationalPolicyVersion": POLICY_VERSION, "labelProvenance": "ai_silver", "reviewMode": "automated_ai", "method": "blind_n3_with_ai_adjudication_then_offline_model_diagnostics", "historicalBlindRecordedTokens": checkpoint["summary"]["totalTokens"], "historicalBlindSuccessfulRuns": checkpoint["summary"]["successfulRuns"], "blindDecisionLockedAt": audit["generatedAt"], "readyForExpansion": audit["readyForExpansion"], "sourceFiles": {name: {"path": path.as_posix(), "sha256": digest(path)} for name, path in (("source", args.source), ("blindCheckpoint", args.checkpoint), ("blindAudit", args.audit))}, "outputs": {name: {"sha256": digest(args.output_dir / name), "bytes": (args.output_dir / name).stat().st_size} for name in filenames}, "limitations": ["Operational labels use AI silver provenance.", "N=3 and adjudication use one Gemini model; repeated judgments are correlated.", "The legacy IndoBERT difficulty head has class-collapse risk and is diagnostic only.", "No training, student delivery, CTT or IRT was performed."]})
+    from scripts.compact_validation_results import compact_bundle
+    compact_bundle(args.source, args.output_dir)
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0
 

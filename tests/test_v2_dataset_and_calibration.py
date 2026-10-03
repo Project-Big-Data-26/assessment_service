@@ -11,7 +11,7 @@ from app.classification.v2.calibration import (
 )
 from app.classification.v2.contracts import IntendedDifficulty, QuestionOption
 from app.training.v2.dataset import (
-    GoldTrainingRow,
+    TrainingRow,
     SplitEntry,
     build_snapshot,
     deterministic_group_split,
@@ -26,7 +26,7 @@ from app.training.v2.train_lora import (
 
 
 def row(index: int, source: str, family: str | None = None):
-    return GoldTrainingRow(
+    return TrainingRow(
         questionId=f"q-{index}",
         questionVersionId=f"q-{index}:v1",
         contentVersion=1,
@@ -226,6 +226,6 @@ def test_snapshot_stays_locked_when_grades_or_classes_are_missing():
     ]
     snapshot = build_snapshot(rows, snapshot_id="locked-fixture")
     assert snapshot.testUnlockStatus == "locked"
-    assert snapshot.researchOnly is False
+    assert snapshot.researchOnly is True
     assert any("intendedDifficulty:Hard" in failure for failure in snapshot.gateFailures)
     assert any("grade:6=0<1" in failure for failure in snapshot.gateFailures)

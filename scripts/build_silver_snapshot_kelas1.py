@@ -1,7 +1,7 @@
 """Build a reproducible class-1 training snapshot from Gemini N=3 silver labels.
 
-This is deliberately separate from ``freeze_dataset_v2.py``: it never claims
-that machine-produced labels are expert gold labels.
+Legacy research builder. Operational snapshots use ``build_operational_silver.py``
+to verify the complete bundle, checkpoint, answer mapping and delivery provenance.
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ from app.classification.v2.contracts import QuestionOption  # noqa: E402
 from app.classification.v2.kko import detect_kko  # noqa: E402
 from app.classification.v2.serializer import canonical_json_hash  # noqa: E402
 from app.llm.silver import SILVER_PROMPT_VERSION  # noqa: E402
-from app.training.v2.dataset import GoldTrainingRow, build_snapshot, save_snapshot  # noqa: E402
+from app.training.v2.dataset import TrainingRow, build_snapshot, save_snapshot  # noqa: E402
 
 SOURCE = ROOT / "output/pretest/kelas1/soal_pretest_db.json"
 SILVER = ROOT / "output/pretest/kelas1/silver_labels_gemini_3_5_flash_lite.json"
@@ -68,8 +68,8 @@ def build_rows(
     grade: int,
     topic: str,
     id_namespace: str | None = None,
-) -> tuple[list[GoldTrainingRow], Counter[str]]:
-    rows: list[GoldTrainingRow] = []
+) -> tuple[list[TrainingRow], Counter[str]]:
+    rows: list[TrainingRow] = []
     excluded: Counter[str] = Counter()
     for ordinal, item in enumerate(source, start=1):
         item_id = str(item["_id"])
@@ -117,7 +117,7 @@ def build_rows(
             None,
         )
         rows.append(
-            GoldTrainingRow(
+            TrainingRow(
                 questionId=question_id,
                 questionVersionId=f"{question_id}:silver-v2",
                 contentVersion=1,
@@ -137,8 +137,7 @@ def build_rows(
                     QuestionOption(label=option["option_id"], text=option["text"])
                     for option in item["options"]
                 ],
-                # This source-derived explanation satisfies the technical field,
-                # but its provenance below explicitly says it is not expert gold.
+                # The operational builder additionally verifies delivery provenance.
                 verifiedMinimalSolution=(
                     aggregate.get("verifiedMinimalSolution") or minimal_solution(item)
                 ),
@@ -147,7 +146,7 @@ def build_rows(
                 rubricVersion=silver["rubricVersion"],
                 decisionProvenance={
                     "kind": "gemini_n3_blind_adjudicated_silver",
-                    "notGold": True,
+
                     "provider": silver["provider"],
                     "model": silver["model"],
                     "promptVersion": silver["promptVersion"],
@@ -234,7 +233,7 @@ def main() -> int:
         seed=42,
         minimum_per_class=15,
         research_only=True,
-        label_provenance="llm_silver_blind_v4",
+        label_provenance="ai_silver",
         exclusion_summary=dict(excluded),
     )
     save_snapshot(snapshot, args.output)

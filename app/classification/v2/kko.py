@@ -1,4 +1,4 @@
-"""Transparent lexical KKO detector; never used as a gold-label rule."""
+"""Transparent lexical KKO detector; never used as a silver-label rule."""
 
 from __future__ import annotations
 

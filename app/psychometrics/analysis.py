@@ -242,13 +242,13 @@ def analyze_matrix(payload: MatrixAnalysisInput, policy: AnalysisPolicy | None =
         kr20 = float(matrix.shape[1] / (matrix.shape[1] - 1) * (1 - np.var(complete, axis=0, ddof=1).sum() / np.var(totals, ddof=1)))
     for item in item_results:
         weak = {"insufficient_item_sample", "wide_difficulty_interval", "no_response_variation"} & set(item["reviewFlags"])
-        item["recommendedRouting"] = "collect_more_events" if weak else "expert_review" if item["reviewFlags"] else "observation_only"
+        item["recommendedRouting"] = "collect_more_events" if weak else "ai_review" if {"negative_discrimination", "non_functioning_distractor", "irt_misfit_candidate"} & set(item["reviewFlags"]) else "observation_only"
     return {
         "schemaVersion": "empirical-analysis-v1", "policyVersion": policy.policyVersion,
         "policyHash": canonical_json_hash(policy.model_dump(mode="json")),
         "policy": policy.model_dump(mode="json"),
         "populationId": payload.populationId, "assessmentFamily": payload.assessmentFamily, "grade": payload.grade,
-        "dataOrigin": payload.dataOrigin, "researchOnly": True, "reviewRequired": True, "goldLabelAuthority": False,
+        "dataOrigin": payload.dataOrigin, "researchOnly": True, "reviewRequired": any(item["recommendedRouting"] == "ai_review" for item in item_results), "reviewMode": "automated_ai", "labelProvenance": "ai_silver",
         "matrixHash": canonical_json_hash(payload.model_dump(mode="json")),
         "normalization": {"persons": len(matrix), "items": matrix.shape[1], "observedCells": int(observed.sum()),
                           "missingCells": int((~observed).sum()), "coverage": coverage,

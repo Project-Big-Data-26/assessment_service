@@ -181,5 +181,5 @@ def test_presentation_copy_explains_choices_and_preserves_scope(js_results):
         assert 3 <= len(slide["bullets"]) <= 4
     assert len(presentation["glossary"]) >= 20
     copy = json.dumps(presentation, ensure_ascii=False)
-    for required in ("human gold", "snapshot", "confidence", "entropy", "CTT", "IRT", "versi"):
+    for required in ("silver", "snapshot", "confidence", "entropy", "CTT", "IRT", "versi"):
         assert required.lower() in copy.lower()

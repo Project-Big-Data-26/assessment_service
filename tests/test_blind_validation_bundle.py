@@ -25,7 +25,7 @@ def valid_record():
 def test_final_difficulty_uses_locked_blind_label_without_a_model_vote():
     labels, route = blind_outcome(valid_record(), {"status": "pass"})
     assert labels["intendedDifficulty"] == "Medium"
-    assert route == "pending_expert_review"
+    assert route == "silver_ready"
 
 
 @pytest.mark.parametrize("blocker", ["structure", "content", "key"])
@@ -53,13 +53,13 @@ def test_adjudication_evidence_is_used_instead_of_an_earlier_vote():
     assert evidence["profile"]["dependentSteps"] == 2
 
 
-def test_unresolved_labels_require_manual_review():
+def test_unresolved_labels_require_ai_review():
     record = valid_record()
     record["aggregate"]["eligibleForTraining"] = False
     record["aggregate"]["heads"]["intendedDifficulty"]["label"] = None
     labels, route = blind_outcome(record, {"status": "pass"})
     assert labels["intendedDifficulty"] is None
-    assert route == "llm_retry_or_manual_review"
+    assert route == "needs_ai_review"
 
 
 def test_diagnostic_probability_check_rejects_fabricated_confidence():
@@ -92,9 +92,9 @@ def test_grade_two_groups_keep_empty_categories_and_content_blockers():
     decisions = [
         {"questionId": str(i), "llmAdvisory": {"advisoryLabels": {"intendedDifficulty": label}}, "finalRouting": route}
         for i, (label, route) in enumerate([
-            ("Medium", "pending_expert_review"),
+            ("Medium", "silver_ready"),
             ("Medium", "revision_required"),
-            (None, "llm_retry_or_manual_review"),
+            (None, "needs_ai_review"),
         ])
     ]
     grouped = difficulty_groups(questions, decisions, 2)
@@ -102,7 +102,7 @@ def test_grade_two_groups_keep_empty_categories_and_content_blockers():
     assert grouped["summary"]["Medium"] == {"advisoryCount": 2, "contentQualifiedCount": 1}
     assert grouped["groups"]["Easy"] == grouped["groups"]["Hard"] == []
     assert len(grouped["groups"]["undecided"]) == 1
-    assert all(item["humanReviewRequired"] and not item["isGoldLabel"] for items in grouped["groups"].values() for item in items)
+    assert all(item["reviewMode"] == "automated_ai" and item["labelProvenance"] == "ai_silver" for items in grouped["groups"].values() for item in items)
     with pytest.raises(ValueError, match="grade mismatch"):
         difficulty_groups(questions, decisions, 1)
 

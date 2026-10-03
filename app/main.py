@@ -20,9 +20,9 @@ from app.pipeline import QuestionIntelligencePipeline
 from app.schemas.request import ClassificationRequest
 from app.schemas.response import ClassificationResponse, ExtractionResponse, HeadPrediction
 from app.verification.arithmetic import verify_arithmetic
-from app.annotation.repository import MongoAnnotationRepository
-from app.annotation.routes import router as annotation_router
-from app.annotation.assets import PrivateAssetSigner
+from app.staff.repository import MongoRepository
+from app.staff.routes import router as staff_router
+from app.staff.assets import PrivateAssetSigner
 from app.api.v2 import router as v2_router
 from app.classification.v2.runtime import V2ClassifierRuntime
 from app.llm import GeminiReviewRuntime
@@ -59,7 +59,7 @@ def create_gemini_runtime() -> tuple[GeminiReviewRuntime | None, str | None]:
         return None, f"{type(exc).__name__}: {exc}"
 
 
-annotation_repository = MongoAnnotationRepository.from_environment()
+staff_repository = MongoRepository.from_environment()
 asset_signer = PrivateAssetSigner.from_environment()
 v2_runtime, v2_runtime_error = create_v2_runtime()
 gemini_runtime, gemini_runtime_error = create_gemini_runtime()
@@ -75,34 +75,34 @@ def create_assessment_store():
 
 @asynccontextmanager
 async def lifespan(application: FastAPI):
-    application.state.annotation_repository = annotation_repository
+    application.state.staff_repository = staff_repository
     application.state.asset_signer = asset_signer
-    application.state.annotation_repository_error = None
+    application.state.staff_repository_error = None
     application.state.v2_runtime = v2_runtime
     application.state.v2_runtime_error = v2_runtime_error
     application.state.gemini_runtime = gemini_runtime
     application.state.gemini_runtime_error = gemini_runtime_error
     if getattr(application.state, "assessment_store", None) is None:
         application.state.assessment_store = create_assessment_store()
-    if annotation_repository is not None:
+    if staff_repository is not None:
         try:
-            await annotation_repository.ping()
-            await annotation_repository.ensure_indexes()
+            await staff_repository.ping()
+            await staff_repository.ensure_indexes()
         except Exception as exc:  # keep public v1/v2 diagnostics available
-            application.state.annotation_repository_error = f"{type(exc).__name__}: {exc}"
-            application.state.annotation_repository = None
+            application.state.staff_repository_error = f"{type(exc).__name__}: {exc}"
+            application.state.staff_repository = None
     try:
         yield
     finally:
-        if annotation_repository is not None:
-            await annotation_repository.close()
+        if staff_repository is not None:
+            await staff_repository.close()
 
 
-app = FastAPI(title="Nalar Question Intelligence", version="2.1.0", lifespan=lifespan)
+app = FastAPI(title="Nalar Question Intelligence", version="2.2.0", lifespan=lifespan)
 # Defaults also support test clients that do not enter a lifespan context.
-app.state.annotation_repository = annotation_repository
+app.state.staff_repository = staff_repository
 app.state.asset_signer = asset_signer
-app.state.annotation_repository_error = None
+app.state.staff_repository_error = None
 app.state.v2_runtime = v2_runtime
 app.state.v2_runtime_error = v2_runtime_error
 app.state.gemini_runtime = gemini_runtime
@@ -110,7 +110,7 @@ app.state.gemini_runtime_error = gemini_runtime_error
 app.state.psychometrics_policy = psychometrics_policy
 app.state.assessment_store = None
 app.include_router(v2_router)
-app.include_router(annotation_router)
+app.include_router(staff_router)
 app.include_router(assessment_router)
 app.include_router(psychometrics_info_router)
 allowed_hosts = [item.strip() for item in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1,testserver").split(",") if item.strip()]

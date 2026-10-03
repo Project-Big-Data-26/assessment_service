@@ -11,9 +11,9 @@ CTT batch serta IRT **Rasch, 2PL dan 3PL sudah diimplementasikan** di `app/psych
 | POST | `/api/v1/internal/psychometrics/screen` | Normalisasi respons pilot dan persist snapshot |
 | GET | `/api/v1/internal/psychometrics/snapshots/{snapshot_id}` | Snapshot staff termasuk EAP pseudonim |
 | GET | `/api/v1/psychometrics/items/{question_id}/snapshots` | Agregat terautentikasi tanpa estimasi peserta |
-| GET/POST | `/api/v1/internal/psychometrics/snapshots/{snapshot_id}/decisions` | Keputusan empiris ahli |
+| GET | `/api/v1/internal/psychometrics/snapshots/{snapshot_id}/decisions` | Keputusan empiris AI |
 
-Analisis/agregat memerlukan `X-Internal-API-Key` yang cocok dengan `PSYCHOMETRICS_API_TOKEN` (≥32 karakter), atau cookie staff. Mutation cookie memerlukan CSRF. POST keputusan memerlukan cookie + CSRF + profil/role ahli; service token tidak cukup. Tidak ada hasil individual publik. Endpoint family/variant dan screening per question pada desain lama masih target.
+Analisis/agregat memerlukan `X-Internal-API-Key` yang cocok dengan `PSYCHOMETRICS_API_TOKEN` (≥32 karakter), atau cookie staff. Mutation cookie memerlukan CSRF. POST keputusan memerlukan cookie + CSRF + profil/role AI; service token tidak cukup. Tidak ada hasil individual publik. Endpoint family/variant dan screening per question pada desain lama masih target.
 
 ## Matriks dan normalisasi
 
@@ -72,6 +72,6 @@ Referensi algoritmik: [estimasi/model IRT mirt](https://philchalmers.github.io/m
 
 Snapshot menyimpan policy lengkap + hash, matrix hash, manifest sampel + hash, population/family/grade, time window, cleaning, CTT, gate dan IRT. Rerun input/policy identik mengambil snapshot yang sama. Data/policy berubah menghasilkan snapshot baru.
 
-IRT statuses: waiting_for_data, waiting_for_assumption_review, estimated, estimated_with_warnings, failed. Nonconvergence, boundary, uncertainty gagal dan residual dependence tetap membutuhkan review. Semua hasil `researchOnly=true, reviewRequired=true, goldLabelAuthority=false`.
+IRT statuses: waiting_for_data, waiting_for_assumption_review, estimated, estimated_with_warnings, failed. Nonconvergence, boundary, uncertainty gagal dan residual dependence tetap membutuhkan review. Hasil memakai `researchOnly=true`, `reviewMode=automated_ai`, `labelProvenance=ai_silver`; `reviewRequired` menunjukkan kebutuhan AI review.
 
-Routing item: collect_more_events, expert_review, observation_only. Ahli memilih retain/revise/quarantine dengan rationale append-only terikat snapshot/hash/version. Revise/quarantine menahan delivery dan dikecualikan oleh freeze gold berikutnya. Domain, knowledge dan intended difficulty tidak diganti otomatis. Revisi → content version baru → validasi manusia → freeze snapshot → training terkontrol; jawaban siswa mentah tidak menjadi teks training.
+Routing item: collect_more_events, ai_review, observation_only. Sistem otomatis menyimpan retain/collect_more_events/needs_ai_review terikat snapshot/hash/version. needs_ai_review menahan delivery dan dikecualikan oleh builder silver yang memakai assessment database. Domain, knowledge dan intended difficulty tidak diganti otomatis. Revisi → content version baru → validasi AI → freeze snapshot → training terkontrol; jawaban siswa mentah tidak menjadi teks training.

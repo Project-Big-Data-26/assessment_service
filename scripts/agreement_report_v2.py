@@ -13,8 +13,8 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.annotation.consensus import fleiss_kappa, krippendorff_alpha_nominal, percent_agreement
-from app.annotation.repository import MongoAnnotationRepository
+from app.evaluation.agreement import fleiss_kappa, krippendorff_alpha_nominal, percent_agreement
+from app.staff.repository import MongoRepository
 from app.classification.v2.contracts import HEAD_LABELS
 
 
@@ -46,46 +46,24 @@ def bootstrap(matrix: list[list[str | None]], labels: tuple[str, ...], samples: 
     }
 
 
-async def run() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--rubric-version", default="math-rubric-3x4x3-v1")
+def run() -> None:
+    parser = argparse.ArgumentParser(description="Agreement among three blind AI runs")
+    parser.add_argument("--checkpoint", required=True)
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
-    repository = MongoAnnotationRepository.from_environment()
-    if repository is None:
-        raise SystemExit("MONGODB_URI and MONGODB_DATABASE must be configured")
-    grouped = defaultdict(list)
-    try:
-        cursor = repository.db.expert_annotations.find(
-            {"rubricVersion": args.rubric_version}, {"_id": 0}
-        ).sort([("questionVersionId", 1), ("expertId", 1)])
-        async for document in cursor:
-            grouped[document["questionVersionId"]].append(document)
-        report = {"rubricVersion": args.rubric_version, "itemsWithThreeInitialVotes": 0, "heads": {}}
-        complete = [records for records in grouped.values() if len(records) == 3]
-        report["itemsWithThreeInitialVotes"] = len(complete)
-        for head, labels in HEAD_LABELS.items():
-            matrix = [
-                [None if record[head]["abstain"] else record[head]["label"] for record in records]
-                for records in complete
-            ]
-            patterns = Counter(
-                "-".join(sorted(str(value or "abstain") for value in row)) for row in matrix
-            )
-            report["heads"][head] = {
-                **metrics(matrix, labels),
-                "bootstrap95CI": bootstrap(matrix, labels),
-                "disagreementPatterns": dict(patterns),
-            }
-        destination = Path(args.output)
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_text(
-            json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8"
-        )
-        print(f"Agreement report written to {destination}.")
-    finally:
-        await repository.close()
+    cp = json.loads(Path(args.checkpoint).read_text(encoding="utf-8"))
+    complete = [[r for r in item["runs"] if r["status"] == "success"] for item in cp["items"].values()]
+    complete = [runs for runs in complete if len(runs) == 3]
+    report = {"labelProvenance": "ai_silver", "itemsWithThreeInitialVotes": len(complete), "heads": {}}
+    for head, labels in HEAD_LABELS.items():
+        matrix = [[r["output"][head].get("label") for r in runs] for runs in complete]
+        report["heads"][head] = {**metrics(matrix, labels), "bootstrap95CI": bootstrap(matrix, labels)}
+    destination = Path(args.output)
+    if destination.exists():
+        raise FileExistsError("choose a new immutable report path")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
 
 
 if __name__ == "__main__":
-    asyncio.run(run())
+    run()

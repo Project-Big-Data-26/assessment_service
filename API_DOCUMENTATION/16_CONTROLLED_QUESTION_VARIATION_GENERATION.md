@@ -4,7 +4,7 @@ Dokumen ini adalah **desain generator varian**, belum endpoint runtime. CTT/Rasc
 
 ## 1. Tujuan dan ruang lingkup
 
-Dokumen ini mendefinisikan arsitektur **tahap lanjutan** untuk membuat variasi soal dari induk yang telah lolos verifikasi jawaban **dan validasi tiga ahli**. Setiap varian substantif memerlukan keputusan ahli sendiri sebelum pilot; label induk hanya acuan pembanding.
+Dokumen ini mendefinisikan arsitektur **tahap lanjutan** untuk membuat variasi soal dari induk yang telah lolos verifikasi jawaban **dan validasi tiga run AI**. Setiap varian substantif memerlukan keputusan sistem sendiri sebelum pilot; label induk hanya acuan pembanding.
 
 Ruang lingkup dokumen hanya mencakup:
 
@@ -20,18 +20,18 @@ Ruang lingkup dokumen hanya mencakup:
 
 Dokumen ini merupakan **target architecture**. Keberadaan komponen di dalam dokumen tidak berarti seluruhnya sudah tersedia pada repository.
 
-Teacher dapat menyediakan dan merevisi parent sebagai author. Generation, answer verification, IndoBERT dan Claude menghasilkan kandidat serta usulan; tiga ahli memutuskan kelayakan sebelum pilot. Kandidat yang tidak dapat dipastikan masuk `quarantined`, `rejected`, atau keluarga soal baru.
+Teacher dapat menyediakan dan merevisi parent sebagai author. Generation, answer verification, IndoBERT dan Claude menghasilkan kandidat serta usulan; tiga run AI memutuskan kelayakan sebelum pilot. Kandidat yang tidak dapat dipastikan masuk `quarantined`, `rejected`, atau keluarga soal baru.
 
 ## 2. Istilah dan batas klaim
 
 Istilah utama:
 
-- `verified_parent_item`: soal induk dengan struktur, jawaban dan keputusan tiga ahli valid pada contentVersion terkunci;
+- `verified_parent_item`: soal induk dengan struktur, jawaban dan keputusan tiga run AI valid pada contentVersion terkunci;
 - `item_model`: template formal yang menentukan bagian tetap, bagian yang boleh berubah, constraint, dan aturan penyelesaian;
 - `item_family`: kumpulan soal yang berasal dari item model dan konstruk yang sama;
 - `parameter_variant`: varian yang terutama mengubah angka, satuan, atau nilai variabel;
 - `isomorphic_candidate`: varian konteks atau representasi yang diduga mempertahankan konstruk dan langkah penyelesaian;
-- `provisional_item`: varian yang lolos gate otomatis, validasi tiga ahli, dan policy pilot;
+- `provisional_item`: varian yang lolos gate otomatis, validasi tiga run AI, dan policy pilot;
 - `empirically_screened`: varian yang sudah mempunyai bukti psikometrik memadai.
 
 Sistem boleh mengklaim bahwa varian:
@@ -39,16 +39,16 @@ Sistem boleh mengklaim bahwa varian:
 - memenuhi schema dan constraint;
 - mempunyai jawaban yang dihitung ulang dan diverifikasi;
 - mempertahankan invariant sesuai pemeriksaan otomatis;
-- memiliki prediksi IndoBERT, proposal Claude, dan keputusan tiga ahli yang terpisah;
+- memiliki prediksi IndoBERT, proposal Claude, dan keputusan tiga run AI yang terpisah;
 - mempunyai kualitas empiris tertentu setelah respons mencukupi.
 
 Sistem tidak boleh langsung mengklaim bahwa:
 
 - semua varian dari satu template pasti setara secara psikometrik;
 - perubahan konteks pasti tidak mengubah kesulitan;
-- persetujuan Claude pada IndoBERT adalah human gold atau izin pilot;
+- persetujuan Claude pada IndoBERT adalah AI silver atau izin pilot;
 - `intended_difficulty` sama dengan tingkat kesulitan empiris;
-- varian otomatis adalah `gold item`.
+- varian otomatis adalah `silver item`.
 
 ## 3. Flow end-to-end
 
@@ -87,9 +87,9 @@ flowchart TD
     NF([Kandidat keluarga soal baru])
 
     M[IndoBERT 3 head<br/>lalu Claude memeriksa proposal]
-    N[Tiga ahli memberi label blind<br/>lalu review AI]
+    N[Tiga run AI memberi label blind<br/>lalu review AI]
     QC([Karantina:<br/>bukti tidak cukup atau OOD])
-    NG{Keputusan manusia<br/>dan policy pilot lolos?}
+    NG{Keputusan AI<br/>dan policy pilot lolos?}
     P[(Provisional item bank)]
     S[Secure delivery<br/>snapshot berversi + scoring di server]
     T[(Response events)]
@@ -126,7 +126,7 @@ flowchart TD
     Z -.-> B
 ```
 
-Alur utama bersifat **deterministic-first** untuk parameter, jawaban dan constraint. Claude dapat membantu bahasa, konteks dan usulan miskonsepsi; keputusan pedagogis final memerlukan tiga ahli. File gambar lama dihapus dan diagram Mermaid di atas menjadi rujukan.
+Alur utama bersifat **deterministic-first** untuk parameter, jawaban dan constraint. Claude dapat membantu bahasa, konteks dan usulan miskonsepsi; keputusan pedagogis final memerlukan tiga run AI. File gambar lama dihapus dan diagram Mermaid di atas menjadi rujukan.
 
 ## 4. Verified parent question
 
@@ -138,7 +138,7 @@ Generator hanya boleh menerima soal yang sudah mempunyai:
 - jawaban induk yang sudah diverifikasi;
 - topik, subtopik, kelas, dan tujuan pembelajaran;
 - formula atau jejak penyelesaian jika tersedia;
-- klasifikasi `mathCognitiveDomain`, `knowledgeDimension`, dan `intendedDifficulty` dari keputusan tiga ahli;
+- klasifikasi `mathCognitiveDomain`, `knowledgeDimension`, dan `intendedDifficulty` dari keputusan tiga run AI;
 - provenance sumber.
 
 Jika jawaban belum stabil, ekstraksi memiliki warning kritis, atau tujuan pembelajaran tidak diketahui, item masuk `quarantine_parent` dan tidak diteruskan ke generator.
@@ -548,7 +548,7 @@ parameters
     -> verified computed answer
 ```
 
-Untuk matematika deterministik, SymPy dan rule verifier menjadi pemeriksa utama. Claude dapat memberi bukti tambahan pada kasus yang tidak dapat diselesaikan secara simbolik, tetapi hasilnya bukan verifikasi independen atau pengganti ahli matematika; kasus yang masih ambigu ditahan untuk review manusia.
+Untuk matematika deterministik, SymPy dan rule verifier menjadi pemeriksa utama. Claude dapat memberi bukti tambahan pada kasus yang tidak dapat diselesaikan secara simbolik, tetapi hasilnya bukan verifikasi independen atau pengganti AI matematika; kasus yang masih ambigu ditahan untuk review AI.
 
 Distraktor dibuat dari pola kesalahan, bukan angka acak. Contoh:
 
@@ -603,7 +603,7 @@ Routing:
 
 ```text
 semua gate lolos
-    -> lanjut ke IndoBERT → Claude → tiga ahli
+    -> lanjut ke IndoBERT → Claude → tiga run AI
 
 kesalahan dapat diperbaiki dan retry < Rmax
     -> regenerate bagian yang gagal
@@ -617,7 +617,7 @@ jawaban konflik, schema rusak, atau retry habis
 
 Threshold dan bobot construct drift harus ditentukan dari eksperimen. Nilainya bukan konstanta universal.
 
-## 9. IndoBERT → Claude → tiga ahli
+## 9. IndoBERT → Claude → tiga run AI
 
 Setiap varian diklasifikasikan ulang. Label soal induk hanya menjadi referensi, bukan label otomatis bagi varian.
 
@@ -625,7 +625,7 @@ IndoBERT mengeluarkan tiga distribusi probabilitas terpisah: domain matematika `
 
 Claude menerima item dan hasil IndoBERT, memeriksa kecocokan solusi, tujuan pembelajaran, representasi dan invariant, lalu mengusulkan `confirm/revise/abstain` per head dengan bukti. Keduanya tidak independen dan kesepakatannya tidak memberi izin pilot. Bila Claude gagal atau kontrak output tidak valid, item tertahan.
 
-Tiga ahli matematika menilai varian secara blind dahulu, lalu meninjau usulan AI. Mayoritas 2 dari 3 per head dapat membentuk keputusan bila bukti dan kunci sah; split 1-1-1, abstain, atau keberatan validitas matematika memerlukan diskusi/adjudikasi manusia. Hanya `expert_validated` yang boleh menjadi `provisional` menurut policy. Prosedur lengkap pada [05](05_AI_DECISION_ARBITRATION_API.md).
+Tiga run AI matematika menilai varian secara blind dahulu, lalu meninjau usulan AI. Mayoritas 2 dari 3 per head dapat membentuk keputusan bila bukti dan kunci sah; split 1-1-1, abstain, atau keberatan validitas matematika memerlukan diskusi/adjudikasi AI. Hanya `silver_ready` yang boleh menjadi `provisional` menurut policy. Prosedur lengkap pada [05](05_AI_DECISION_ARBITRATION_API.md).
 
 ## 10. Kontrak generation request dan hasil varian
 
@@ -708,7 +708,7 @@ Koleksi utama:
 | `item_variants` | Konten varian, parameter snapshot, answer, status, lineage |
 | `generation_runs` | Request, seed, retry, kegagalan, versi generator dan LLM |
 | `workflow_runs` dan `ai_decisions` | Hasil structural, mathematical, construct, prediksi IndoBERT dan usulan Claude |
-| `expert_annotations` dan `expert_decisions` | Tiga label blind, review AI, voting, dan adjudikasi manusia |
+| `silver_runs` dan `silver_decisions` | Tiga run blind AI, bukti dan adjudikasi AI |
 | `delivery_instances` | Snapshot varian dan urutan opsi untuk satu attempt |
 | `response_events` | Pilihan, correctness server-side, waktu, dan perubahan jawaban |
 | `psychometric_snapshots` | Statistik per varian, keluarga, populasi, dan versi |
@@ -745,7 +745,7 @@ Hasil psikometrik dapat memperbaiki:
 - transformation policy;
 - pola yang harus langsung ditolak.
 
-Varian dengan data belum cukup tetap berstatus `collect_more_events`. Severe flags dapat memicu penangguhan penyajian otomatis untuk keselamatan, tetapi keputusan revisi konten, regenerasi, atau pensiun memerlukan audit manusia dan version baru bila konten berubah.
+Varian dengan data belum cukup tetap berstatus `collect_more_events`. Severe flags dapat memicu penangguhan penyajian otomatis untuk keselamatan, tetapi keputusan revisi konten, regenerasi, atau pensiun memerlukan audit AI dan version baru bila konten berubah.
 
 Seluruh varian dalam satu `item_family_id` harus berada pada split dataset yang sama agar tidak terjadi train/test leakage.
 
@@ -767,11 +767,11 @@ generation_requested
     -> indobert_screening
     -> claude_review
         -> quarantine_ai_failure
-    -> expert_blind_annotation
-    -> expert_ai_review
-        -> human_adjudication
-        -> quarantine_expert_conflict
-    -> expert_validated
+    -> blind_ai_validation
+    -> AI_ai_review
+        -> AI_adjudication
+        -> quarantine_AI_conflict
+    -> silver_ready
     -> provisional
     -> pilot_active
     -> collecting_responses
@@ -797,7 +797,7 @@ generation_requested
 | Semantic generator | Claude adapter | Konteks, redaksi, dan proposal miskonsepsi |
 | Structured LLM output | JSON Schema + Pydantic | Menolak keluaran LLM yang tidak sesuai |
 | Taxonomy screening | IndoBERT, PyTorch, Hugging Face | Domain matematika, knowledge, difficulty, uncertainty |
-| Expert review | Tiga ahli dan audit trail | Keputusan manusia sebelum pilot |
+| AI review | Tiga run AI dan audit trail | Keputusan AI sebelum pilot |
 | Similarity | sentence-transformers, FAISS | Near duplicate dan sinyal semantic drift |
 | Queue | Redis + Celery/RQ | Batch generation asynchronous |
 | Operational store | MongoDB | Model, family, variant, run, delivery, response |
@@ -815,7 +815,7 @@ Angka dan parameter       -> Python constraint generator
 Jawaban matematika        -> SymPy dan rule verifier
 Distraktor matematika     -> misconception rules, dibantu LLM
 Konteks dan redaksi       -> LLM dengan transformation policy
-Klasifikasi taksonomi     -> IndoBERT → Claude → tiga ahli
+Klasifikasi taksonomi     -> IndoBERT → Claude → tiga run AI
 Validitas struktur        -> deterministic quality gate
 Kualitas nyata varian     -> psychometric evidence
 ```
@@ -855,7 +855,7 @@ Topik awal yang sesuai antara lain operasi bilangan, persamaan linear, persamaan
 - LLM structured transformation;
 - transformation policy;
 - construct drift screening;
-- review Claude atas IndoBERT dan validasi tiga ahli;
+- review Claude atas IndoBERT dan validasi tiga run AI;
 - context dan representation variation.
 
 Urutan ini membuat generator deterministik menjadi fondasi. LLM ditambahkan setelah answer engine, constraint, versioning, dan delivery sudah stabil.
@@ -869,7 +869,7 @@ Urutan ini membuat generator deterministik menjadi fondasi. LLM ditambahkan sete
 | Jawaban induk disalin ke varian | Kunci salah | Recompute setiap varian dengan SymPy/rules |
 | Distraktor acak atau tidak masuk akal | Opsi mudah ditebak | Misconception rules dan distractor analysis |
 | Lebih dari satu opsi benar | Scoring tidak sah | Evaluate semua opsi terhadap solution rule |
-| IndoBERT dan Claude salah tetapi sepakat | False acceptance | Pemeriksaan deterministik, blind gold tiga ahli, adjudikasi, OOD gate, pilot |
+| IndoBERT dan Claude salah tetapi sepakat | False acceptance | Pemeriksaan deterministik, blind silver tiga run AI, adjudikasi, OOD gate, pilot |
 | Varian dianggap data independen | Leakage dan metrik terlalu optimistis | Group split berdasarkan `item_family_id` |
 | Varian berubah saat attempt | Respons tidak dapat direproduksi | Delivery snapshot, seed, content version |
 | Kunci dikirim ke browser | Kebocoran jawaban | Server-side scoring dan public delivery DTO |
@@ -885,7 +885,7 @@ Verified parent item
     -> answer recomputation
     -> misconception-based distractors
     -> deterministic and construct quality gates
-    -> IndoBERT → Claude → tiga ahli
+    -> IndoBERT → Claude → tiga run AI
     -> provisional item bank
     -> secure platform delivery
     -> response collection
@@ -899,4 +899,4 @@ Prinsip utama arsitektur ini adalah **deterministic-first dan LLM-assisted**. LL
 
 Tiga distraktor pada `babNN.json` dibuat untuk mengubah/menormalkan soal sumber menjadi candidate pilihan ganda. Aktivitas tersebut bukan generasi varian item family: tidak ada parameter transformasi, equivalence claim, exposure policy, atau pewarisan statistik. Setiap opsi tetap harus diperiksa terhadap jawaban benar; validator saat ini mendeteksi duplikasi teks dan sebagian nilai numerik senilai, tetapi belum membuktikan semua ekuivalensi simbolik/semantik.
 
-Jika candidate agentic kelak menjadi parent untuk generator terkontrol, ia harus lebih dahulu diimpor, diberi content version, lolos gate jawaban, IndoBERT→Claude dan tiga ahli. Lineage generator dimulai dari version tervalidasi tersebut, bukan dari file batch mentah.
+Jika candidate agentic kelak menjadi parent untuk generator terkontrol, ia harus lebih dahulu diimpor, diberi content version, lolos gate jawaban, IndoBERT→Claude dan tiga run AI. Lineage generator dimulai dari version tervalidasi tersebut, bukan dari file batch mentah.

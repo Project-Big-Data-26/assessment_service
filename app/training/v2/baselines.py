@@ -48,7 +48,7 @@ def tfidf_logistic_baseline(
 
 
 def cognitive_rules_baseline(evaluation_rows: list[dict[str, Any]]) -> dict[str, Any]:
-    """Deliberately simple KKO baseline; it is not a gold-label generator."""
+    """Deliberately simple KKO baseline; it is not a silver-label generator."""
     actual: list[str] = []
     predicted: list[str] = []
     for row in evaluation_rows:

@@ -33,7 +33,7 @@ def password_hash(password: str) -> str:
     try:
         from argon2 import PasswordHasher
     except ImportError as exc:  # pragma: no cover - deployment dependency guard
-        raise RuntimeError("argon2-cffi is required for annotation authentication") from exc
+        raise RuntimeError("argon2-cffi is required for operator authentication") from exc
     return PasswordHasher(time_cost=3, memory_cost=65536, parallelism=2).hash(password)
 
 
@@ -42,7 +42,7 @@ def password_verify(stored_hash: str, password: str) -> bool:
         from argon2 import PasswordHasher
         from argon2.exceptions import InvalidHashError, VerifyMismatchError
     except ImportError as exc:  # pragma: no cover - deployment dependency guard
-        raise RuntimeError("argon2-cffi is required for annotation authentication") from exc
+        raise RuntimeError("argon2-cffi is required for operator authentication") from exc
     try:
         return PasswordHasher().verify(stored_hash, password)
     except (InvalidHashError, VerifyMismatchError):

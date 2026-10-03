@@ -1,87 +1,32 @@
-# Assessment Delivery API
+# Delivery siswa dari snapshot silver
 
-Delivery fixed-form sudah tersedia di FastAPI. SQLite menyimpan assessment immutable, token hash peserta, session, delivery dengan mapping privat, response event, snapshot psikometrik dan keputusan empiris ahli. MongoDB tetap menyimpan anotasi/gold snapshot. UI siswa belum dibangun; API tersedia untuk frontend atau Swagger.
+Delivery menerima snapshot `labelProvenance=ai_silver` yang sudah memenuhi qualification. Tidak ada gate persetujuan pelabel manusia. Flag `researchOnly` tidak menjadi larangan memakai silver untuk pilot; gate kualitas konten dan checksum tetap wajib.
 
-## Membekukan assessment
+## Urutan integrasi
 
-```http
-POST /api/v1/internal/assessments
-X-Internal-API-Key: <token operator>
-```
+1. Bekukan dataset memakai `scripts/build_operational_silver.py`.
+2. Daftarkan JSON `DatasetSnapshot` melalui `POST /api/v1/internal/silver/snapshots`.
+3. Buat form melalui `POST /api/v1/internal/assessments` dengan `snapshotId` dan daftar `questionVersionIds`.
+4. Provision participant melalui `POST /api/v1/internal/assessments/{assessment_id}/participants`.
+5. Siswa memulai session, mengambil item berikutnya, mengirim respons, lalu menyelesaikan session.
 
-```json
-{
-  "assessmentId": "pilot-kelas1-v1",
-  "snapshotId": "<snapshot human_gold>",
-  "questionVersionIds": ["<questionVersionId pertama>", "<questionVersionId kedua>"],
-  "populationId": "kelas1-sekolah-a-2026",
-  "assessmentFamily": "numerasi-kelas1-pilot-v1",
-  "grade": 1,
-  "sessionTtlMinutes": 120,
-  "rapidGuessMs": null
-}
-```
-
-API membaca snapshot MongoDB; CLI [27](27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md) dapat membaca JSON lokal. Keduanya memvalidasi SHA-256 isi, `human_gold`, keputusan `gold_ready|adjudicated`, key/solusi, grade, versi unik dan opsi single-choice. Silver/`researchOnly` ditolak. Gate training/test model terpisah dari kelayakan konten pilot.
-
-Satu assessment berisi satu grade/populasi. Blueprint, urutan soal, versi/kunci dan scoring policy immutable. ID sama dengan konten berbeda menghasilkan 409. Versi yang ditahan ahli ditolak. Opsi diacak per delivery; urutan soal mengikuti blueprint.
-
-## Provision peserta
-
-```http
-POST /api/v1/internal/assessments/{assessment_id}/participants
-X-Internal-API-Key: <token operator>
-Content-Type: application/json
-```
-
-```json
-{"participantCode": "kode-pseudonim-001"}
-```
-
-Receipt berisi `participantToken` acak. Operator memberikan token kepada peserta yang sesuai. Database menyimpan hash token dan HMAC kode; kode sama dalam populasi sama mengenali subject yang sama. Token terikat satu assessment. Integrasi identity provider dan rotasi/revokasi invite masih target.
-
-## Session dan item
-
-```http
-POST /api/v1/assessments/{assessment_id}/sessions
-Authorization: Bearer <participantToken>
-Idempotency-Key: start-0001
-
-GET /api/v1/sessions/{session_id}/items/next
-Authorization: Bearer <participantToken>
-```
-
-TTL 5–1440 menit, default 120. Retry start mengambil session yang sama; key baru membuat attempt baru. Refresh GET mempertahankan pending delivery/opsi/urutan. Transaksi mencegah request paralel membuat dua delivery.
+Registrasi dan pembuatan assessment dapat berjalan dengan service credential dan SQLite tanpa MongoDB. Operator cookie tetap alternatif ketika layanan akun dikonfigurasi.
 
 ```json
 {
-  "deliveryInstanceId": "<opaque ID>",
-  "sessionId": "<session ID>",
-  "item": {
-    "publicItemId": "<opaque ID>",
-    "questionType": "multiple_choice",
-    "questionText": "Hitung 2 + 1.",
-    "stimulus": null,
-    "options": [{"id": "<opaque option ID>", "text": "3"}, {"id": "<opaque option ID>", "text": "4"}],
-    "media": []
-  },
-  "sequence": {"current": 1, "total": 5},
-  "timing": {"deliveredAt": "2026-10-02T03:00:00Z", "expiresAt": "2026-10-02T05:00:00Z"}
+  "assessmentId": "pilot-kelas11-tl-v1",
+  "snapshotId": "operational-silver-20261003-v2",
+  "questionVersionIds": ["<versi yang tersedia dalam snapshot>"],
+  "populationId": "kelas11-tl-sekolah-a",
+  "assessmentFamily": "matematika-kelas11-tl",
+  "grade": 11,
+  "subjectTrack": "tl",
+  "sessionTtlMinutes": 120
 }
 ```
 
-DTO tidak berisi key, label, solusi, hash/version internal atau mapping opsi. Delivery saat ini tekstual; transkripsi visual terverifikasi dapat disertakan. Rendering aset privat siswa, exposure budget, assembly adaptif/CAT dan varian belum diimplementasikan.
+Grade delivery mendukung 1-12. Track `tl` hanya untuk kelas 11-12 dan tidak dicampur dengan reguler. Scope classifier IndoBERT saat ini tetap SD 1-6; dukungan delivery tidak memperluas scope model.
 
-## Completion dan hold
+Snapshot memiliki checksum terpisah untuk `rows` dan `expansionRows`. Semua versi harus punya provenance keputusan AI, tiga run sukses, hash checkpoint/input/respons, key verified dan solusi. Gambar essential memerlukan transkripsi AI terverifikasi karena pilot aktif memakai delivery teks.
 
-```http
-POST /api/v1/sessions/{session_id}/complete
-Authorization: Bearer <participantToken>
-Idempotency-Key: complete-0001
-```
-
-Semua item harus dijawab atau di-skip. Completion adalah transisi satu kali dan aman diulang. GET setelah seluruh respons menghasilkan `finished=true, item=null`. Detail: [06](06_STUDENT_RESPONSE_API.md).
-
-Keputusan empiris `revise|quarantine` menahan delivery versi tersebut, termasuk refresh pending item. Blueprint tidak diganti diam-diam. Revisi memerlukan versi konten, validasi manusia dan assessment baru.
-
-`sesi_pretest.json` adalah blueprint candidate, bukan delivery session. Resolve staging ID ke gold `questionVersionId` sebelum pilot.
+Pilihan ganda satu jawaban saja. Server membuat mapping opsi opaque dan menyimpan kunci privat. `skip` adalah missing/null. Versi yang ditahan feedback empiris ditolak pada create, next item dan respond. Rancangan media asli dan CAT belum diaktifkan.

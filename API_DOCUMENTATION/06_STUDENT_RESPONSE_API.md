@@ -45,7 +45,7 @@ Event menyimpan response/delivery/session/assessment ID, population, family, gra
 
 `subjectHash` adalah HMAC population + kode peserta. Kode hanya dipakai saat provisioning. `responseTimeMs` internal adalah waktu server sejak delivery; klaim browser disimpan sebagai `clientResponseTimeMs` dan tidak menentukan rapid-guess exclusion.
 
-Cutoff `rapidGuessMs` dibekukan pada assessment, default `null`. Respons rapid guess diberi flag dan dikeluarkan dari analisis. Respons setelah versi item ditahan ahli tetap tercatat dengan `item_held_after_delivery` dan tidak valid untuk analisis.
+Cutoff `rapidGuessMs` dibekukan pada assessment, default `null`. Respons rapid guess diberi flag dan dikeluarkan dari analisis. Respons setelah versi item ditahan AI tetap tercatat dengan `item_held_after_delivery` dan tidak valid untuk analisis.
 
 Screening memilih satu **session lengkap** per peserta sesuai `first|last`; jawaban dari beberapa attempt tidak dicampur. Session incomplete dikeluarkan. Filter waktu memakai waktu completion UTC.
 

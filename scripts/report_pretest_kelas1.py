@@ -184,15 +184,15 @@ def render(records: list[dict], source_digest: str) -> str:
         "Match berdasarkan stem, teks jawaban, dan referensi gambar; sisanya ambigu |",
         "| Status ekstraksi sumber | "
         + ", ".join(f"`{name}`: {count}" for name, count in sorted(extraction_counts.items()))
-        + " | Status pipeline ekstraksi; belum keputusan ahli |",
-        "| Validasi konten/kunci/solusi oleh ahli | **Belum** | Kunci yang menunjuk opsi belum membuktikan opsi itu benar secara matematika |",
+        + " | Status pipeline ekstraksi; belum keputusan AI |",
+        "| Validasi konten/kunci/solusi oleh AI | **Belum** | Kunci yang menunjuk opsi belum membuktikan opsi itu benar secara matematika |",
         "| Klasifikasi IndoBERT 3×4×3 | **Belum** | Artefak model terlatih tidak tersedia; `/v2/classify` belum menghasilkan prediksi |",
-        "| Confidence IndoBERT | **Belum** | Memerlukan logits model serta suhu kalibrasi yang ditetapkan dari validation gold |",
+        "| Confidence IndoBERT | **Belum** | Memerlukan logits model serta suhu kalibrasi yang ditetapkan dari validation silver |",
         "| Gemini silver label / review | **Belum** | Belum ada hasil generasi per soal pada laporan ini |",
         "| CTT / IRT | **Tidak diterapkan** | Belum ada jawaban siswa |",
         "",
         "Tanda **—** pada tabel di bawah berarti hasil belum dihasilkan; itu bukan skor nol atau "
-        "prediksi `knowing`. Pemeriksaan struktur tidak memberi gold label. `cognitive_level`, "
+        "prediksi `knowing`. Pemeriksaan struktur tidak memberi silver label. `cognitive_level`, "
         "`cognitive_score`, dan `confidence_score` pada sumber saat ini kosong.",
         "",
         "## Ringkasan masalah format",
@@ -263,7 +263,7 @@ def render(records: list[dict], source_digest: str) -> str:
              f"status kunci sumber `{source['key_status']}`, status ekstraksi "
              f"`{source['extraction_status']}`, jawaban agen "
              f"{'cocok' if source['agent_answer_match'] else 'berbeda'}. "
-             "Ini bukti ekstraksi, belum verifikasi ahli."
+             "Ini bukti ekstraksi, belum verifikasi AI."
              if source else
              f"- Provenance: {record['source_match_count']} kandidat dari `babNN.json`; "
              "asal tunggal belum dapat dipastikan dari file ringkasan ini."),
@@ -305,7 +305,7 @@ def render(records: list[dict], source_digest: str) -> str:
         "5. Probabilitas per head dihitung `softmax(logits / temperature_head)`. Label tertinggi "
         "dan probabilitasnya menjadi `calibratedConfidence`. Normalized entropy, truncation, "
         "scope, dan provenance menentukan `predict`, `review`, atau `abstain`.",
-        "6. Temperature dan threshold harus dipilih pada validation set gold manusia. Tanpa gold, "
+        "6. Temperature dan threshold harus dipilih pada validation set silver AI. Tanpa silver, "
         "angka probabilitas model bootstrap tidak boleh disebut terkalibrasi atau akurasi ilmiah.",
         "",
         "Parameter yang dipakai model: tugas matematika yang benar-benar diminta, struktur "
@@ -316,12 +316,12 @@ def render(records: list[dict], source_digest: str) -> str:
         "",
         "## Cara Gemini akan bekerja",
         "",
-        "1. Untuk bootstrap tanpa gold, Gemini dapat mengusulkan tiga label sebagai **silver** "
+        "1. Untuk bootstrap tanpa silver, Gemini dapat mengusulkan tiga label sebagai **silver** "
         "melalui prompt dan structured JSON. Output menyertakan bukti singkat, alasan dan "
         "`abstain` bila soal tidak cukup jelas.",
         "2. Jika N=3 diaktifkan, tiga run model dan konfigurasi yang sama dikumpulkan. "
         "3 sama → konsisten; 2 sama → mayoritas dengan dissent; 1–1–1 atau abstain "
-        "tanpa mayoritas → antrean review. N=3 mengukur kestabilan Gemini, bukan voting ahli.",
+        "tanpa mayoritas → antrean review. N=3 mengukur kestabilan Gemini, bukan voting AI.",
         "3. Setelah IndoBERT benar-benar ada, reviewer Gemini dapat melihat item, prediksi, "
         "probabilitas per head dan rubrik; keluarannya `confirm/revise/abstain` per head. "
         "Runtime reviewer yang ada tidak dapat menghasilkan hasil ini ketika prediksi "
@@ -332,14 +332,14 @@ def render(records: list[dict], source_digest: str) -> str:
         "",
         "Gemini yang membentuk silver dan kemudian mereview IndoBERT memberi dua hasil "
         "yang tidak independen. Agreement keduanya dapat dipakai untuk diagnosis pipeline, "
-        "bukan sebagai bukti gold atau kualitas model.",
+        "bukan sebagai bukti silver atau kualitas model.",
         "",
         "## Batas dan langkah berikutnya",
         "",
         "- Semua 50 item memerlukan verifikasi konten dan kunci. Prioritaskan item visual "
         "serta stem yang masih merujuk gambar. File gambar tersedia, tetapi isi gambarnya "
         "belum diperiksa dalam audit ini.",
-        "- Untuk menjalankan klasifikasi IndoBERT, perlu gold/silver dataset yang diberi "
+        "- Untuk menjalankan klasifikasi IndoBERT, perlu silver dataset yang diberi "
         "provenance jelas, training, kalibrasi yang layak, dan artefak manifest terverifikasi. "
         "Laporan ini belum memuat angka model karena artefak tidak tersedia.",
         "- Panggilan Gemini memerlukan konfigurasi live dan akan memakai kuota. "

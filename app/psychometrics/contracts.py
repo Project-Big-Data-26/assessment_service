@@ -151,7 +151,7 @@ class EmpiricalItemResult(StrictRecord):
     ctt: CttItemMetrics
     irt: IrtItemParameters | None
     reviewFlags: list[str]
-    recommendedRouting: Literal["collect_more_events", "expert_review", "observation_only"]
+    recommendedRouting: Literal["collect_more_events", "ai_review", "observation_only"]
 
 
 class PersonEstimate(StrictRecord):
@@ -190,8 +190,9 @@ class EmpiricalAnalysisResult(StrictRecord):
     grade: int
     dataOrigin: Literal["server_scored", "external_scored", "synthetic"]
     researchOnly: Literal[True]
-    reviewRequired: Literal[True]
-    goldLabelAuthority: Literal[False]
+    reviewRequired: bool
+    reviewMode: Literal["automated_ai"]
+    labelProvenance: Literal["ai_silver"]
     matrixHash: str
     normalization: dict
     readiness: dict

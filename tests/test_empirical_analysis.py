@@ -20,7 +20,7 @@ def test_rasch_recovers_item_order_and_finite_person_estimates_with_missing():
     assert np.mean(np.abs(np.array(estimates) - truth["b"])) < .35
     assert all(item["a"] == 1 and item["c"] == 0 for item in result["irt"]["items"])
     assert all(np.isfinite(person["thetaEap"]) and person["posteriorSd"] > 0 for person in result["irt"]["persons"])
-    assert result["researchOnly"] and result["goldLabelAuthority"] is False
+    assert result["researchOnly"] and result["labelProvenance"] == "ai_silver"
     assert result["normalization"]["missingCells"] > 0
 
 

@@ -1,50 +1,40 @@
-/* Kode dokumentasi lokal. Contoh numerik ilustratif/sintetis; bukan respons siswa. */
+/* Silver operational flow; numerical examples remain educational. */
 window.FLOW_ASSESSMENT_STAGES = [
   {
-    "id": "assessment-gold-gate",
+    "id": "assessment-silver-gate",
     "phase": "Siswa",
-    "title": "Gerbang assessment: hanya gold manusia",
-    "subtitle": "Sebelum soal dikirim, pastikan ahli sudah menyetujui isi, kunci, dan labelnya",
-    "status": "conditional",
-    "summary": "Setelah penilaian AI, soal masih berupa usulan. Untuk jalur siswa yang tersedia sekarang, sistem memakai soal yang sudah disetujui manusia, lalu mengunci daftar soalnya agar isi dan kunci yang dipakai siswa tidak berubah di tengah tes.",
+    "title": "Gerbang assessment: silver yang qualified",
+    "subtitle": "Snapshot AI langsung terhubung ke delivery",
+    "status": "implemented",
+    "summary": "Snapshot silver didaftarkan ke SQLite. Assessment memakai grade dan track yang cocok tanpa menunggu persetujuan pelabel manusia.",
     "learning": {
-      "story": "Setelah labeling dan pemeriksaan model, kita belum langsung mengirim hasil silver kepada siswa. Sistem lebih dahulu mencari snapshot human gold: salinan soal dengan keputusan ahli, kunci, dan solusi yang sudah diverifikasi. Dari salinan itu, sistem menyusun blueprint atau daftar tetap soal tes; penghubung delivery silver masih rancangan terpisah.",
+      "story": "Snapshot silver didaftarkan ke SQLite. Assessment memakai grade dan track yang cocok tanpa menunggu persetujuan pelabel manusia.",
       "terms": [
         {
-          "term": "Human gold",
-          "meaning": "Label serta keputusan konten yang berasal dari workflow ahli manusia, bukan kesepakatan AI.",
-          "why": "Delivery aktif menggunakannya agar kunci dan isi yang dipakai untuk menilai siswa memiliki otoritas yang jelas."
+          "term": "Silver AI",
+          "meaning": "Label awal dari validasi AI dengan bukti terkunci.",
+          "why": "Mencatat sumber label tanpa gate pelabel manusia."
         },
         {
-          "term": "Blueprint / fixed-form",
-          "meaning": "Daftar versi soal dan urutan yang sudah ditentukan sebelum siswa mulai.",
-          "why": "Server dapat memastikan respons dinilai terhadap paket dan versi yang sama; ini belum tes adaptif."
-        },
-        {
-          "term": "Immutable",
-          "meaning": "Catatan yang identitasnya tidak boleh dipakai untuk isi berbeda; perubahan membutuhkan catatan baru.",
-          "why": "Paket yang sudah dipakai siswa tetap dapat diaudit ketika soal atau label berikutnya direvisi."
-        },
-        {
-          "term": "Hash",
-          "meaning": "Sidik jari digital dari isi data yang disusun secara konsisten.",
-          "why": "Perubahan isi terdeteksi, tetapi hash sendiri tidak membuktikan jawaban atau label benar."
+          "term": "Qualification",
+          "meaning": "Pemeriksaan konten, kunci, solusi, visual dan provenance.",
+          "why": "Mencegah soal bermasalah masuk delivery."
         }
       ],
-      "why": "Mengunci isi sebelum pengukuran mencegah respons versi lama tercampur dengan kunci atau redaksi versi baru. Gerbang human gold adalah aturan delivery yang diterapkan kode, sedangkan hash mengecek integritas salinannya.",
-      "next": "Sesudah blueprint siap, operator membuat identitas peserta yang dapat dihubungkan ke sesi tanpa menyimpan nama siswa pada response event."
+      "why": "Snapshot silver didaftarkan ke SQLite. Assessment memakai grade dan track yang cocok tanpa menunggu persetujuan pelabel manusia.",
+      "next": "Snapshot kelas 11 TL dapat dipakai assessment kelas 11 TL meskipun scope IndoBERT lama hanya SD."
     },
     "latex": [
       {
         "title": "Sidik jari paket tes",
-        "tex": String.raw`H_{\mathrm{assessment}}=\operatorname{SHA256}\!\left(\operatorname{canonicalJSON}(B)\right)`,
+        "tex": "H_{\\mathrm{assessment}}=\\operatorname{SHA256}\\!\\left(\\operatorname{canonicalJSON}(B)\\right)",
         "symbols": [
           {
-            "symbol": String.raw`B`,
+            "symbol": "B",
             "meaning": "Blueprint lengkap: konfigurasi, versi soal, kunci privat, dan kebijakan scoring/delivery."
           },
           {
-            "symbol": String.raw`H_{\mathrm{assessment}}`,
+            "symbol": "H_{\\mathrm{assessment}}",
             "meaning": "Hash yang mengikat identitas assessment ke isi blueprint."
           }
         ],
@@ -52,59 +42,34 @@ window.FLOW_ASSESSMENT_STAGES = [
       }
     ],
     "input": {
-      "endpoint": "POST /api/v1/internal/assessments",
-      "assessmentId": "ilustrasi-kelas1-v1",
-      "snapshotId": "<snapshot human_gold yang sah>",
-      "questionVersionIds": [
-        "<versi gold 1>",
-        "<versi gold 2>",
-        "<versi gold 3>",
-        "<versi gold 4>",
-        "<versi gold 5>"
-      ],
-      "populationId": "kelas1-sekolah-a-2026",
-      "assessmentFamily": "numerasi-kelas1-v1",
-      "grade": 1,
-      "sessionTtlMinutes": 120,
-      "rapidGuessMs": null
+      "snapshotId": "silver-v2",
+      "labelProvenance": "ai_silver",
+      "grade": 11,
+      "subjectTrack": "tl"
     },
     "process": [
-      "API membaca dataset_snapshots di MongoDB; CLI operator dapat membaca snapshot lokal yang terpercaya.",
-      "Urutkan rows berdasarkan questionVersionId lalu cek canonical_json_hash(rows) == snapshotHash; snapshot ID juga harus sama.",
-      "Wajib labelProvenance=human_gold dan researchOnly=false. Setiap versi harus sesuai grade serta memiliki keputusan gold_ready/adjudicated, decisionId, verifiedAnswerKey dan verifiedMinimalSolution yang tidak kosong.",
-      "Pilot hanya mendukung multiple_choice satu jawaban, minimal dua opsi berlabel unik. Kunci harus merujuk opsi. Satu assessment tidak boleh memuat dua versi dari questionId yang sama.",
-      "Visual disajikan melalui visualTranscript yang digabung ke stem; delivery aktif berupa teks dengan media=[]. Versi held ditolak.",
-      "Simpan blueprint, snapshotHash, scoringPolicyVersion dan deliveryPolicyVersion. assessmentId yang sama hanya dapat di-replay bila hash blueprint sama."
+      "POST internal/silver/snapshots memeriksa checksum rows dan expansionRows serta provenance.",
+      "POST internal/assessments membaca snapshot terdaftar.",
+      "Pilih versi pada grade/track yang sesuai; tolak held versions dan kunci/solusi tidak qualified."
     ],
-    "formula": "assessmentHash = SHA256(canonical JSON blueprint lengkap)\nscoringPolicyVersion = single-choice-dichotomous-v1\ndeliveryPolicyVersion = fixed-form-pilot-v1",
-    "example": "Bundle output/pretest/.../hasil_validasi dengan provenance silver/research tidak langsung diterima oleh create-assessment. Receipt ilustratif untuk lima versi gold berisi itemCount=5 dan status=ready.",
+    "formula": "deliveryEligible = ai_silver ∧ qualified ∧ checksum valid ∧ grade/track cocok ∧ tidak held",
+    "example": "Snapshot kelas 11 TL dapat dipakai assessment kelas 11 TL meskipun scope IndoBERT lama hanya SD.",
     "output": {
-      "assessmentId": "ilustrasi-kelas1-v1",
-      "assessmentHash": "<hash blueprint>",
-      "itemCount": 5,
-      "status": "ready"
+      "status": "ready",
+      "labelProvenance": "ai_silver"
     },
     "cautions": [
-      "AssessmentCreate aktif membatasi grade 1–6; kontrak analisis matriks menerima grade 1–12. Jalur delivery kelas 7–12 belum tersedia melalui kontrak ini.",
-      "Jangan mengubah flag provenance untuk melewati gerbang. Adapter silver adalah target terpisah, bukan fitur yang sudah aktif.",
-      "Blueprint siap tidak berarti model IndoBERT atau bank IRT sudah dirilis."
+      "Delivery teks memerlukan transkripsi gambar essential.",
+      "Service key berada di backend integrasi."
     ],
     "sources": [
       {
-        "path": "app/assessment/contracts.py",
-        "symbol": String.raw`AssessmentCreate`
+        "path": "app/assessment/routes.py",
+        "symbol": "register_silver_snapshot / create_assessment"
       },
       {
         "path": "app/assessment/store.py",
-        "symbol": String.raw`AssessmentStore.create_assessment`
-      },
-      {
-        "path": "app/assessment/routes.py",
-        "symbol": String.raw`create_assessment`
-      },
-      {
-        "path": "API_DOCUMENTATION/28_END_TO_END_PERSONALIZED_ASSESSMENT_FLOW.md",
-        "symbol": String.raw`D1 — Research Silver Delivery Adapter`
+        "symbol": "validate_snapshot / register_snapshot / create_assessment"
       }
     ]
   },
@@ -145,30 +110,30 @@ window.FLOW_ASSESSMENT_STAGES = [
     "latex": [
       {
         "title": "Identitas peserta dan waktu sesi",
-        "tex": String.raw`\begin{aligned}h_s&=\operatorname{HMAC\!\text{-}\!SHA256}(K,P\Vert\text{NUL}\Vert C)\\t_{\mathrm{expiry}}&=t_{\mathrm{start}}+\Delta t\end{aligned}`,
+        "tex": "\\begin{aligned}h_s&=\\operatorname{HMAC\\!\\text{-}\\!SHA256}(K,P\\Vert\\text{NUL}\\Vert C)\\\\t_{\\mathrm{expiry}}&=t_{\\mathrm{start}}+\\Delta t\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`h_s`,
+            "symbol": "h_s",
             "meaning": "Subject hash peserta."
           },
           {
-            "symbol": String.raw`K`,
+            "symbol": "K",
             "meaning": "Secret stabil milik store."
           },
           {
-            "symbol": String.raw`P`,
+            "symbol": "P",
             "meaning": "Population ID."
           },
           {
-            "symbol": String.raw`C`,
+            "symbol": "C",
             "meaning": "Kode peserta yang dikelola operator."
           },
           {
-            "symbol": String.raw`\text{NUL}`,
+            "symbol": "\\text{NUL}",
             "meaning": "Pemisah U+0000 agar gabungan input tidak ambigu."
           },
           {
-            "symbol": String.raw`\Delta t`,
+            "symbol": "\\Delta t",
             "meaning": "Durasi sesi; default 120 menit."
           }
         ],
@@ -209,15 +174,15 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "app/assessment/store.py",
-        "symbol": String.raw`AssessmentStore.participant / start / _owned_session / connection`
+        "symbol": "AssessmentStore.participant / start / _owned_session / connection"
       },
       {
         "path": "app/assessment/routes.py",
-        "symbol": String.raw`participant_token / start`
+        "symbol": "participant_token / start"
       },
       {
         "path": "tests/test_assessment_empirical_flow.py",
-        "symbol": String.raw`test_store_survives_restart_and_rejects_secret_rotation`
+        "symbol": "test_store_survives_restart_and_rejects_secret_rotation"
       }
     ]
   },
@@ -258,22 +223,22 @@ window.FLOW_ASSESSMENT_STAGES = [
     "latex": [
       {
         "title": "Pilihan publik kembali ke opsi internal",
-        "tex": String.raw`\begin{aligned}o_{\mathrm{internal}}&=m(o_{\mathrm{public}})\\k&=\#\{\text{delivery yang sudah dibuat pada sesi}\}\end{aligned}`,
+        "tex": "\\begin{aligned}o_{\\mathrm{internal}}&=m(o_{\\mathrm{public}})\\\\k&=\\#\\{\\text{delivery yang sudah dibuat pada sesi}\\}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`m`,
+            "symbol": "m",
             "meaning": "Mapping privat milik delivery tertentu."
           },
           {
-            "symbol": String.raw`o_{\mathrm{public}}`,
+            "symbol": "o_{\\mathrm{public}}",
             "meaning": "ID pilihan yang dikirim siswa."
           },
           {
-            "symbol": String.raw`o_{\mathrm{internal}}`,
+            "symbol": "o_{\\mathrm{internal}}",
             "meaning": "Label opsi internal yang dipakai scoring."
           },
           {
-            "symbol": String.raw`k`,
+            "symbol": "k",
             "meaning": "Indeks berikutnya pada blueprint, mulai dari nol."
           }
         ],
@@ -325,15 +290,15 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "app/assessment/store.py",
-        "symbol": String.raw`AssessmentStore.next_item`
+        "symbol": "AssessmentStore.next_item"
       },
       {
         "path": "app/assessment/contracts.py",
-        "symbol": String.raw`PublicItem / DeliveredItem`
+        "symbol": "PublicItem / DeliveredItem"
       },
       {
         "path": "tests/test_assessment_empirical_flow.py",
-        "symbol": String.raw`test_concurrent_next_item_returns_one_immutable_delivery`
+        "symbol": "test_concurrent_next_item_returns_one_immutable_delivery"
       }
     ]
   },
@@ -374,30 +339,30 @@ window.FLOW_ASSESSMENT_STAGES = [
     "latex": [
       {
         "title": "Skor respons dan waktu server",
-        "tex": String.raw`\begin{aligned}X_{ij}&=\begin{cases}1&\text{jawaban valid dan benar}\\0&\text{jawaban valid dan salah}\\\varnothing&\text{skip / missing}\end{cases}\\\tau&=t_{\mathrm{server}}-t_{\mathrm{delivery}}\\\Delta t_{\mathrm{ms}}&=\max\!\left(0,\left\lfloor1000\tau\right\rfloor\right)\end{aligned}`,
+        "tex": "\\begin{aligned}X_{ij}&=\\begin{cases}1&\\text{jawaban valid dan benar}\\\\0&\\text{jawaban valid dan salah}\\\\\\varnothing&\\text{skip / missing}\\end{cases}\\\\\\tau&=t_{\\mathrm{server}}-t_{\\mathrm{delivery}}\\\\\\Delta t_{\\mathrm{ms}}&=\\max\\!\\left(0,\\left\\lfloor1000\\tau\\right\\rfloor\\right)\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`X_{ij}`,
+            "symbol": "X_{ij}",
             "meaning": "Skor peserta i pada item j."
           },
           {
-            "symbol": String.raw`\varnothing`,
+            "symbol": "\\varnothing",
             "meaning": "Null; bukan skor 0."
           },
           {
-            "symbol": String.raw`t_{\mathrm{server}}`,
+            "symbol": "t_{\\mathrm{server}}",
             "meaning": "Waktu penerimaan respons menurut server."
           },
           {
-            "symbol": String.raw`t_{\mathrm{delivery}}`,
+            "symbol": "t_{\\mathrm{delivery}}",
             "meaning": "Waktu pengiriman delivery yang disimpan."
           },
           {
-            "symbol": String.raw`\Delta t_{\mathrm{ms}}`,
+            "symbol": "\\Delta t_{\\mathrm{ms}}",
             "meaning": "Response time server dalam milidetik."
           },
           {
-            "symbol": String.raw`\tau`,
+            "symbol": "\\tau",
             "meaning": "Selisih waktu penerimaan dan pengiriman dalam detik."
           }
         ],
@@ -465,19 +430,19 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "app/assessment/contracts.py",
-        "symbol": String.raw`ResponseCreate`
+        "symbol": "ResponseCreate"
       },
       {
         "path": "app/assessment/routes.py",
-        "symbol": String.raw`response`
+        "symbol": "response"
       },
       {
         "path": "app/assessment/store.py",
-        "symbol": String.raw`AssessmentStore.respond / _receipt`
+        "symbol": "AssessmentStore.respond / _receipt"
       },
       {
         "path": "tests/test_assessment_empirical_flow.py",
-        "symbol": String.raw`test_delivery_scoring_retry_privacy_and_skipped_missing`
+        "symbol": "test_delivery_scoring_retry_privacy_and_skipped_missing"
       }
     ]
   },
@@ -513,14 +478,14 @@ window.FLOW_ASSESSMENT_STAGES = [
     "latex": [
       {
         "title": "Syarat menutup sesi",
-        "tex": String.raw`n_{\mathrm{final\ responses}}=J`,
+        "tex": "n_{\\mathrm{final\\ responses}}=J",
         "symbols": [
           {
-            "symbol": String.raw`n_{\mathrm{final\ responses}}`,
+            "symbol": "n_{\\mathrm{final\\ responses}}",
             "meaning": "Jumlah respons final sesi, termasuk explicit skip."
           },
           {
-            "symbol": String.raw`J`,
+            "symbol": "J",
             "meaning": "Jumlah item blueprint."
           }
         ],
@@ -554,15 +519,15 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "app/assessment/store.py",
-        "symbol": String.raw`AssessmentStore.complete`
+        "symbol": "AssessmentStore.complete"
       },
       {
         "path": "app/assessment/routes.py",
-        "symbol": String.raw`complete`
+        "symbol": "complete"
       },
       {
         "path": "tests/test_assessment_empirical_flow.py",
-        "symbol": String.raw`test_delivery_scoring_retry_privacy_and_skipped_missing`
+        "symbol": "test_delivery_scoring_retry_privacy_and_skipped_missing"
       }
     ]
   },
@@ -603,22 +568,22 @@ window.FLOW_ASSESSMENT_STAGES = [
     "latex": [
       {
         "title": "Window dan jumlah observasi",
-        "tex": String.raw`\begin{aligned}t_{\mathrm{from}}&\le t_{\mathrm{completed}}<t_{\mathrm{to}}\\N_{\mathrm{selected}}&=\left|\{\text{subject unik terpilih}\}\right|\\n_j&=\sum_{i=1}^{N_{\mathrm{selected}}}O_{ij}\end{aligned}`,
+        "tex": "\\begin{aligned}t_{\\mathrm{from}}&\\le t_{\\mathrm{completed}}<t_{\\mathrm{to}}\\\\N_{\\mathrm{selected}}&=\\left|\\{\\text{subject unik terpilih}\\}\\right|\\\\n_j&=\\sum_{i=1}^{N_{\\mathrm{selected}}}O_{ij}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`t_{\mathrm{completed}}`,
+            "symbol": "t_{\\mathrm{completed}}",
             "meaning": "Waktu completion sesi; bukan waktu satu respons."
           },
           {
-            "symbol": String.raw`N_{\mathrm{selected}}`,
+            "symbol": "N_{\\mathrm{selected}}",
             "meaning": "Jumlah peserta unik terpilih."
           },
           {
-            "symbol": String.raw`O_{ij}`,
+            "symbol": "O_{ij}",
             "meaning": "1 bila sel i,j mempunyai skor valid 0/1 setelah cleaning, selainnya 0."
           },
           {
-            "symbol": String.raw`n_j`,
+            "symbol": "n_j",
             "meaning": "Jumlah observasi valid item j; dapat berbeda antaritem."
           }
         ],
@@ -632,7 +597,7 @@ window.FLOW_ASSESSMENT_STAGES = [
       "attemptPolicy": "first",
       "fromTime": "2026-10-01T00:00:00+07:00",
       "toTime": "2026-10-03T00:00:00+07:00",
-      "assumptionReview": "<review ahli bila sudah tersedia>"
+      "assumptionReview": "<review AI bila sudah tersedia>"
     },
     "process": [
       "Ambil status=completed hanya untuk assessmentId yang diminta, urutkan started_at lalu id.",
@@ -667,15 +632,15 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "app/assessment/store.py",
-        "symbol": String.raw`AssessmentStore.screen`
+        "symbol": "AssessmentStore.screen"
       },
       {
         "path": "app/psychometrics/contracts.py",
-        "symbol": String.raw`ScreeningInput.time_window`
+        "symbol": "ScreeningInput.time_window"
       },
       {
         "path": "tests/test_assessment_empirical_flow.py",
-        "symbol": String.raw`test_attempt_policy_selects_whole_session_and_expert_hold_does_not_relabel`
+        "symbol": "test_attempt_policy_selects_whole_session_and_AI_hold_does_not_relabel"
       }
     ]
   },
@@ -716,30 +681,30 @@ window.FLOW_ASSESSMENT_STAGES = [
     "latex": [
       {
         "title": "Coverage dan missing per item",
-        "tex": String.raw`\begin{aligned}O_{ij}&=\mathbf{1}\{X_{ij}\in\{0,1\}\}\\C&=\frac{\sum_i\sum_jO_{ij}}{N_{\mathrm{selected}}J}\\M_j&=1-\frac{n_j}{N_{\mathrm{selected}}}\end{aligned}`,
+        "tex": "\\begin{aligned}O_{ij}&=\\mathbf{1}\\{X_{ij}\\in\\{0,1\\}\\}\\\\C&=\\frac{\\sum_i\\sum_jO_{ij}}{N_{\\mathrm{selected}}J}\\\\M_j&=1-\\frac{n_j}{N_{\\mathrm{selected}}}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`O_{ij}`,
+            "symbol": "O_{ij}",
             "meaning": "Observed mask setelah cleaning."
           },
           {
-            "symbol": String.raw`C`,
+            "symbol": "C",
             "meaning": "Coverage matriks sebelum filter peserta IRT."
           },
           {
-            "symbol": String.raw`N_{\mathrm{selected}}`,
+            "symbol": "N_{\\mathrm{selected}}",
             "meaning": "Jumlah baris peserta terpilih."
           },
           {
-            "symbol": String.raw`J`,
+            "symbol": "J",
             "meaning": "Jumlah kolom item."
           },
           {
-            "symbol": String.raw`M_j`,
+            "symbol": "M_j",
             "meaning": "Missing rate item j."
           },
           {
-            "symbol": String.raw`n_j`,
+            "symbol": "n_j",
             "meaning": "Jumlah skor valid 0/1 pada item j."
           }
         ],
@@ -799,15 +764,15 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "app/psychometrics/analysis.py",
-        "symbol": String.raw`normalize_events / analyze_matrix`
+        "symbol": "normalize_events / analyze_matrix"
       },
       {
         "path": "app/psychometrics/contracts.py",
-        "symbol": String.raw`MatrixAnalysisInput.rectangular_binary_matrix`
+        "symbol": "MatrixAnalysisInput.rectangular_binary_matrix"
       },
       {
         "path": "app/assessment/routes.py",
-        "symbol": String.raw`item_analysis`
+        "symbol": "item_analysis"
       }
     ]
   },
@@ -848,18 +813,18 @@ window.FLOW_ASSESSMENT_STAGES = [
     "latex": [
       {
         "title": "Proporsi benar dan band CTT",
-        "tex": String.raw`\begin{aligned}p_j&=\frac{k_j}{n_j}\\\operatorname{band}(p_j)&=\begin{cases}\text{Easy}&p_j>0.7\\\text{Hard}&p_j<0.3\\\text{Medium}&0.3\le p_j\le0.7\end{cases}\end{aligned}`,
+        "tex": "\\begin{aligned}p_j&=\\frac{k_j}{n_j}\\\\\\operatorname{band}(p_j)&=\\begin{cases}\\text{Easy}&p_j>0.7\\\\\\text{Hard}&p_j<0.3\\\\\\text{Medium}&0.3\\le p_j\\le0.7\\end{cases}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`k_j`,
+            "symbol": "k_j",
             "meaning": "Jumlah respons benar item j."
           },
           {
-            "symbol": String.raw`n_j`,
+            "symbol": "n_j",
             "meaning": "Jumlah skor valid 0/1 item j."
           },
           {
-            "symbol": String.raw`p_j`,
+            "symbol": "p_j",
             "meaning": "Proporsi benar pada populasi/window ini."
           }
         ],
@@ -867,22 +832,22 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Interval Wilson 95%",
-        "tex": String.raw`\begin{aligned}d&=1+\frac{z^2}{n}\\\mu_W&=\frac{p+z^2/(2n)}{d}\\m_W&=\frac{z}{d}\sqrt{\frac{p(1-p)}{n}+\frac{z^2}{4n^2}}\\\mathrm{CI}_{95}&=[\max(0,\mu_W-m_W),\min(1,\mu_W+m_W)]\end{aligned}`,
+        "tex": "\\begin{aligned}d&=1+\\frac{z^2}{n}\\\\\\mu_W&=\\frac{p+z^2/(2n)}{d}\\\\m_W&=\\frac{z}{d}\\sqrt{\\frac{p(1-p)}{n}+\\frac{z^2}{4n^2}}\\\\\\mathrm{CI}_{95}&=[\\max(0,\\mu_W-m_W),\\min(1,\\mu_W+m_W)]\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`z`,
+            "symbol": "z",
             "meaning": "1.96 untuk interval 95% yang dipakai kode."
           },
           {
-            "symbol": String.raw`n`,
+            "symbol": "n",
             "meaning": "Jumlah respons valid item."
           },
           {
-            "symbol": String.raw`\mu_W`,
+            "symbol": "\\mu_W",
             "meaning": "Titik tengah interval Wilson."
           },
           {
-            "symbol": String.raw`m_W`,
+            "symbol": "m_W",
             "meaning": "Setengah lebar interval."
           }
         ],
@@ -890,22 +855,22 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Hubungan item dengan skor lain",
-        "tex": String.raw`\begin{aligned}r_{\mathrm{pb},j}&=\operatorname{Corr}(X_j,T-X_j)\\D_j&=\overline{X_j\mid T-X_j\ge q_{0.73}}\\&\quad-\overline{X_j\mid T-X_j\le q_{0.27}}\end{aligned}`,
+        "tex": "\\begin{aligned}r_{\\mathrm{pb},j}&=\\operatorname{Corr}(X_j,T-X_j)\\\\D_j&=\\overline{X_j\\mid T-X_j\\ge q_{0.73}}\\\\&\\quad-\\overline{X_j\\mid T-X_j\\le q_{0.27}}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`T`,
+            "symbol": "T",
             "meaning": "Total skor complete-case peserta."
           },
           {
-            "symbol": String.raw`r_{\mathrm{pb},j}`,
+            "symbol": "r_{\\mathrm{pb},j}",
             "meaning": "Corrected point-biserial: correlation skor item dengan rest score."
           },
           {
-            "symbol": String.raw`D_j`,
+            "symbol": "D_j",
             "meaning": "Selisih proporsi benar kelompok rest-score tinggi dan rendah."
           },
           {
-            "symbol": String.raw`q_{0.27},\ q_{0.73}`,
+            "symbol": "q_{0.27},\\ q_{0.73}",
             "meaning": "Quantile rest score; ties dapat mengubah ukuran kelompok."
           }
         ],
@@ -913,22 +878,22 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "KR-20 dengan variansi sampel konsisten",
-        "tex": String.raw`\begin{aligned}\mathrm{KR20}&=\frac{J}{J-1}\left(1-\frac{\sum_{j=1}^{J}s_j^2}{s_T^2}\right)\\s^2&=\frac{\sum_{i=1}^{n_c}(x_i-\bar{x})^2}{n_c-1}\end{aligned}`,
+        "tex": "\\begin{aligned}\\mathrm{KR20}&=\\frac{J}{J-1}\\left(1-\\frac{\\sum_{j=1}^{J}s_j^2}{s_T^2}\\right)\\\\s^2&=\\frac{\\sum_{i=1}^{n_c}(x_i-\\bar{x})^2}{n_c-1}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`J`,
+            "symbol": "J",
             "meaning": "Jumlah item; minimal dua."
           },
           {
-            "symbol": String.raw`s_j^2`,
+            "symbol": "s_j^2",
             "meaning": "Variansi sampel item j pada complete cases."
           },
           {
-            "symbol": String.raw`s_T^2`,
+            "symbol": "s_T^2",
             "meaning": "Variansi total skor complete cases; harus positif."
           },
           {
-            "symbol": String.raw`n_c`,
+            "symbol": "n_c",
             "meaning": "Jumlah complete cases; kode memerlukan minimal delapan."
           }
         ],
@@ -947,7 +912,7 @@ window.FLOW_ASSESSMENT_STAGES = [
       "Discrimination = mean(X_j pada rest score ≥ quantile_0.73) − mean(X_j pada rest score ≤ quantile_0.27), complete cases ≥8 dan quantile bawah < atas. Ties dapat membuat kelompok bukan tepat 27%.",
       "KR-20 proyek = J/(J−1) × (1 − Σ sample item variance / sample total-score variance), complete cases ≥8, J≥2, variansi total positif. Semua variansi memakai ddof=1.",
       "Dari events: hitung optionSelectionCounts, distractor yang dipilih <5% seluruh jawaban valid, distractorEfficiency, median responseTimeMs dan IQR=P75−P25. Matriks eksternal tanpa events menghasilkan timing/distractor null.",
-      "Review flags: sample per item <50, lebar CI>0.3, semua benar/salah, diskriminasi negatif, disagreement stabil, distractor tidak berfungsi. Routing collect_more_events jika sample/CI/variation lemah; jika flags lainnya expert_review; tanpa flags observation_only."
+      "Review flags: sample per item <50, lebar CI>0.3, semua benar/salah, diskriminasi negatif, disagreement stabil, distractor tidak berfungsi. Routing collect_more_events jika sample/CI/variation lemah; jika flags lainnya ai_review; tanpa flags observation_only."
     ],
     "formula": "p=k/n; d=1+z²/n\nWilson center=(p+z²/(2n))/d\nWilson margin=z√[(p(1−p)+z²/(4n))/n]/d\nCI=[max(0,center−margin),min(1,center+margin)]\nr_pb=Corr(X_j, T−X_j)\nD=mean(X_j|rest≥q.73)−mean(X_j|rest≤q.27)\nKR20=J/(J−1)·[1−Σ Var_sample(X_j)/Var_sample(T)]\ndistractorEfficiency=1−nonFunctioningCount/distractorCount",
     "example": "Ilustrasi 80 benar dari 100: p=0.80, Wilson CI95=[0.711169,0.866634], band=Easy. Karena lower CI>0.7, intendedDifficulty=Medium mendapat intended_empirical_disagreement. Label awal tetap Medium sampai workflow review/versioning selesai. Distractor A,B,C selain key: satu dipilih 2/100 (<0.05) → satu non-functioning; efficiency=2/3.",
@@ -981,15 +946,15 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "app/psychometrics/analysis.py",
-        "symbol": String.raw`analyze_matrix / _correlation`
+        "symbol": "analyze_matrix / _correlation"
       },
       {
         "path": "app/evaluation/psychometrics.py",
-        "symbol": String.raw`wilson_interval`
+        "symbol": "wilson_interval"
       },
       {
         "path": "configs/psychometrics_policy.json",
-        "symbol": String.raw`easyP / hardP / maxCiWidth / distractorMinRate`
+        "symbol": "easyP / hardP / maxCiWidth / distractorMinRate"
       }
     ]
   },
@@ -1030,22 +995,22 @@ window.FLOW_ASSESSMENT_STAGES = [
     "latex": [
       {
         "title": "Peserta eligible dan coverage fit",
-        "tex": String.raw`\begin{aligned}E_i&=\mathbf{1}\!\left\{\frac{\sum_jO_{ij}}{J}\ge0.70\right\}\\N_{\mathrm{eligible}}&=\sum_iE_i\\C_{\mathrm{fit}}&=\frac{\sum_i\sum_jE_iO_{ij}}{N_{\mathrm{eligible}}J}\ge0.70\end{aligned}`,
+        "tex": "\\begin{aligned}E_i&=\\mathbf{1}\\!\\left\\{\\frac{\\sum_jO_{ij}}{J}\\ge0.70\\right\\}\\\\N_{\\mathrm{eligible}}&=\\sum_iE_i\\\\C_{\\mathrm{fit}}&=\\frac{\\sum_i\\sum_jE_iO_{ij}}{N_{\\mathrm{eligible}}J}\\ge0.70\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`E_i`,
+            "symbol": "E_i",
             "meaning": "1 jika peserta i memenuhi batas missing default, selainnya 0."
           },
           {
-            "symbol": String.raw`O_{ij}`,
+            "symbol": "O_{ij}",
             "meaning": "Penanda skor valid 0/1."
           },
           {
-            "symbol": String.raw`N_{\mathrm{eligible}}`,
+            "symbol": "N_{\\mathrm{eligible}}",
             "meaning": "Jumlah peserta yang dipakai fit."
           },
           {
-            "symbol": String.raw`C_{\mathrm{fit}}`,
+            "symbol": "C_{\\mathrm{fit}}",
             "meaning": "Coverage sesudah filter peserta; dicek bila ada peserta eligible."
           }
         ],
@@ -1053,18 +1018,18 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Minimum menurut model dan per item",
-        "tex": String.raw`\begin{gathered}\begin{array}{c|rr}\text{Model}&N_{\min}&J_{\min}\\\hline\text{Rasch}&100&5\\\text{2PL}&300&10\\\text{3PL}&1000&20\end{array}\\n_{j,\mathrm{fit}}\ge50,\quad k_{j,\mathrm{fit}}\ge5\\n_{j,\mathrm{fit}}-k_{j,\mathrm{fit}}\ge5\end{gathered}`,
+        "tex": "\\begin{gathered}\\begin{array}{c|rr}\\text{Model}&N_{\\min}&J_{\\min}\\\\\\hline\\text{Rasch}&100&5\\\\\\text{2PL}&300&10\\\\\\text{3PL}&1000&20\\end{array}\\\\n_{j,\\mathrm{fit}}\\ge50,\\quad k_{j,\\mathrm{fit}}\\ge5\\\\n_{j,\\mathrm{fit}}-k_{j,\\mathrm{fit}}\\ge5\\end{gathered}",
         "symbols": [
           {
-            "symbol": String.raw`N_{\min},\ J_{\min}`,
+            "symbol": "N_{\\min},\\ J_{\\min}",
             "meaning": "Minimum peserta eligible dan item dari policy aktif."
           },
           {
-            "symbol": String.raw`n_{j,\mathrm{fit}}`,
+            "symbol": "n_{j,\\mathrm{fit}}",
             "meaning": "Observed responses item j setelah filter peserta."
           },
           {
-            "symbol": String.raw`k_{j,\mathrm{fit}}`,
+            "symbol": "k_{j,\\mathrm{fit}}",
             "meaning": "Jumlah benar pada item j setelah filter peserta."
           }
         ],
@@ -1072,14 +1037,14 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Keterhubungan antaritem",
-        "tex": String.raw`G_{jk}=\mathbf{1}\!\left\{\sum_{i:E_i=1}O_{ij}O_{ik}>0\right\}`,
+        "tex": "G_{jk}=\\mathbf{1}\\!\\left\\{\\sum_{i:E_i=1}O_{ij}O_{ik}>0\\right\\}",
         "symbols": [
           {
-            "symbol": String.raw`G_{jk}`,
+            "symbol": "G_{jk}",
             "meaning": "Ada sisi graph jika minimal satu peserta eligible mengamati kedua item."
           },
           {
-            "symbol": String.raw`O_{ij}O_{ik}`,
+            "symbol": "O_{ij}O_{ik}",
             "meaning": "1 bila peserta i punya skor valid pada item j dan k."
           }
         ],
@@ -1103,7 +1068,7 @@ window.FLOW_ASSESSMENT_STAGES = [
       "minCoverage": 0.7,
       "maxPersonMissingRate": 0.3,
       "assumptionReview": {
-        "reviewedBy": "<ahli peninjau>",
+        "reviewedBy": "<AI peninjau>",
         "evidence": "<bukti empiris yang benar-benar ditinjau>",
         "unidimensional": true,
         "localIndependence": true,
@@ -1115,7 +1080,7 @@ window.FLOW_ASSESSMENT_STAGES = [
       "N_eligible harus memenuhi minPersons model; jumlah kolom J harus memenuhi minItems model.",
       "Coverage setelah filter peserta harus ≥0.7. Setiap item pada fit matrix memerlukan ≥50 observed responses, ≥5 benar dan ≥5 salah.",
       "Graph item co-observation harus connected: pasangan item terhubung bila ada peserta eligible yang menjawab keduanya; seluruh item harus terjangkau.",
-      "assumptionReview wajib tersedia dan ketiga booleans harus true. Ini review ahli atas unidimensionality, local independence dan representative sample, bukan pemeriksaan otomatis yang terbukti hanya dari boolean.",
+      "assumptionReview wajib tersedia dan ketiga booleans harus true. Ini review AI atas unidimensionality, local independence dan representative sample, bukan pemeriksaan otomatis yang terbukti hanya dari boolean.",
       "Jika asumsi belum ditinjau/tidak didukung, status waiting_for_assumption_review; jika gate data gagal tetapi asumsi lolos, waiting_for_data. Semua failures tetap dilaporkan.",
       "Bila semua gate lolos baru panggil fit_irt. Tidak ada pengisian estimate a,b,c atau theta buatan saat gate gagal."
     ],
@@ -1146,19 +1111,19 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "configs/psychometrics_policy.json",
-        "symbol": String.raw`seluruh policy readiness`
+        "symbol": "seluruh policy readiness"
       },
       {
         "path": "app/psychometrics/analysis.py",
-        "symbol": String.raw`analyze_matrix / _connected`
+        "symbol": "analyze_matrix / _connected"
       },
       {
         "path": "app/psychometrics/contracts.py",
-        "symbol": String.raw`AssumptionReview / AnalysisPolicy`
+        "symbol": "AssumptionReview / AnalysisPolicy"
       },
       {
         "path": "tests/test_empirical_analysis.py",
-        "symbol": String.raw`test_disconnected_forms_and_excess_missing_cannot_be_calibrated`
+        "symbol": "test_disconnected_forms_and_excess_missing_cannot_be_calibrated"
       }
     ]
   },
@@ -1199,22 +1164,22 @@ window.FLOW_ASSESSMENT_STAGES = [
     "latex": [
       {
         "title": "Kurva probabilitas IRT",
-        "tex": String.raw`\begin{aligned}P_j(\theta)&=c_j+(1-c_j)\sigma\!\left(a_j(\theta-b_j)\right)\\\sigma(z)&=\frac{1}{1+e^{-z}}\\P_j(b_j)&=\frac{1+c_j}{2}\end{aligned}`,
+        "tex": "\\begin{aligned}P_j(\\theta)&=c_j+(1-c_j)\\sigma\\!\\left(a_j(\\theta-b_j)\\right)\\\\\\sigma(z)&=\\frac{1}{1+e^{-z}}\\\\P_j(b_j)&=\\frac{1+c_j}{2}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`a_j`,
+            "symbol": "a_j",
             "meaning": "Kemiringan/diskriminasi item; Rasch menetapkan a=1."
           },
           {
-            "symbol": String.raw`b_j`,
+            "symbol": "b_j",
             "meaning": "Lokasi difficulty pada skala theta lokal."
           },
           {
-            "symbol": String.raw`c_j`,
+            "symbol": "c_j",
             "meaning": "Lower asymptote; Rasch/2PL c=0, 3PL mengestimasi c."
           },
           {
-            "symbol": String.raw`\theta`,
+            "symbol": "\\theta",
             "meaning": "Kemampuan laten; D=1 dalam logistic ini."
           }
         ],
@@ -1222,22 +1187,22 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Integrasi marginal dengan Gauss–Hermite",
-        "tex": String.raw`\begin{aligned}t_q&=\sqrt{2}\,h_q,\quad v_q=\frac{w_q}{\sqrt{\pi}}\\L_i&\approx\sum_{q=1}^{41}v_q\prod_{j:O_{ij}=1}P_j(t_q)^{X_{ij}}\bigl(1-P_j(t_q)\bigr)^{1-X_{ij}}\end{aligned}`,
+        "tex": "\\begin{aligned}t_q&=\\sqrt{2}\\,h_q,\\quad v_q=\\frac{w_q}{\\sqrt{\\pi}}\\\\L_i&\\approx\\sum_{q=1}^{41}v_q\\prod_{j:O_{ij}=1}P_j(t_q)^{X_{ij}}\\bigl(1-P_j(t_q)\\bigr)^{1-X_{ij}}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`h_q,\ w_q`,
+            "symbol": "h_q,\\ w_q",
             "meaning": "Nodes dan weights dari numpy.hermgauss(41)."
           },
           {
-            "symbol": String.raw`t_q,\ v_q`,
+            "symbol": "t_q,\\ v_q",
             "meaning": "Grid theta dan bobot prior untuk N(0,1)."
           },
           {
-            "symbol": String.raw`L_i`,
+            "symbol": "L_i",
             "meaning": "Marginal likelihood pola respons peserta i."
           },
           {
-            "symbol": String.raw`O_{ij}`,
+            "symbol": "O_{ij}",
             "meaning": "Observed mask; hanya skor valid ikut produk."
           }
         ],
@@ -1245,30 +1210,30 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Objective dan prior optimizer",
-        "tex": String.raw`\begin{aligned}\mathcal{J}&=-\sum_i\log L_i+\sum_j\frac{b_j^2}{18}\\&\quad+\delta_A\sum_j\frac{(\log a_j)^2}{2(0.75)^2}\\&\quad-\delta_C\sum_j\bigl[4\log c_j+16\log(1-c_j)\bigr]\end{aligned}`,
+        "tex": "\\begin{aligned}\\mathcal{J}&=-\\sum_i\\log L_i+\\sum_j\\frac{b_j^2}{18}\\\\&\\quad+\\delta_A\\sum_j\\frac{(\\log a_j)^2}{2(0.75)^2}\\\\&\\quad-\\delta_C\\sum_j\\bigl[4\\log c_j+16\\log(1-c_j)\\bigr]\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`𝒥`,
+            "symbol": "𝒥",
             "meaning": "Negative marginal log-likelihood ditambah penalty prior; diminimalkan."
           },
           {
-            "symbol": String.raw`\delta_A`,
+            "symbol": "\\delta_A",
             "meaning": "1 untuk 2PL/3PL, 0 untuk Rasch."
           },
           {
-            "symbol": String.raw`\delta_C`,
+            "symbol": "\\delta_C",
             "meaning": "1 untuk 3PL, selainnya 0."
           },
           {
-            "symbol": String.raw`\sum_j b_j^2/18`,
+            "symbol": "\\sum_j b_j^2/18",
             "meaning": "Penalty b~N(0,3²)."
           },
           {
-            "symbol": String.raw`\sum_j\frac{(\log a_j)^2}{2(0.75)^2}`,
+            "symbol": "\\sum_j\\frac{(\\log a_j)^2}{2(0.75)^2}",
             "meaning": "Prior log a~N(0,0.75²)."
           },
           {
-            "symbol": String.raw`-\sum_j[4\log c_j+16\log(1-c_j)]`,
+            "symbol": "-\\sum_j[4\\log c_j+16\\log(1-c_j)]",
             "meaning": "Prior Beta(5,17), dengan batas c dari kode."
           }
         ],
@@ -1276,18 +1241,18 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Inisialisasi bukan hasil akhir b",
-        "tex": String.raw`\begin{aligned}p_{0j}&=\frac{k_j+0.5}{n_j+1}\\b_{0j}&=\operatorname{clip}\!\left(\log\frac{1-p_{0j}}{p_{0j}},-3,3\right)\end{aligned}`,
+        "tex": "\\begin{aligned}p_{0j}&=\\frac{k_j+0.5}{n_j+1}\\\\b_{0j}&=\\operatorname{clip}\\!\\left(\\log\\frac{1-p_{0j}}{p_{0j}},-3,3\\right)\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`k_j,\ n_j`,
+            "symbol": "k_j,\\ n_j",
             "meaning": "Benar dan observed count pada fit matrix."
           },
           {
-            "symbol": String.raw`p_{0j}`,
+            "symbol": "p_{0j}",
             "meaning": "Proporsi dengan smoothing untuk initializer."
           },
           {
-            "symbol": String.raw`b_{0j}`,
+            "symbol": "b_{0j}",
             "meaning": "Parameter awal sebelum optimisasi seluruh pola respons."
           }
         ],
@@ -1331,15 +1296,15 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "app/psychometrics/irt.py",
-        "symbol": String.raw`response_probability / fit_irt / posterior / objective`
+        "symbol": "response_probability / fit_irt / posterior / objective"
       },
       {
         "path": "scripts/psychometrics.py",
-        "symbol": String.raw`simulated_matrix`
+        "symbol": "simulated_matrix"
       },
       {
         "path": "configs/psychometrics_policy.json",
-        "symbol": String.raw`quadraturePoints / maxIterations / tolerance`
+        "symbol": "quadraturePoints / maxIterations / tolerance"
       }
     ]
   },
@@ -1375,31 +1340,31 @@ window.FLOW_ASSESSMENT_STAGES = [
         }
       ],
       "why": "Rata-rata posterior menggabungkan pola jawaban dengan prior dan SD menjelaskan keterbatasan evidence. Optimizer yang converged belum menjamin model sesuai asumsi atau penggunaannya, sehingga diagnostics diperiksa. Test information menunjukkan wilayah theta tempat item lebih informatif; AIC/BIC di sini hanya deskriptif.",
-      "next": "Hasil dan diagnostics disimpan bersama sampel serta policy dalam snapshot immutable untuk ditinjau ahli."
+      "next": "Hasil dan diagnostics disimpan bersama sampel serta policy dalam snapshot immutable untuk ditinjau AI."
     },
     "latex": [
       {
         "title": "Posterior, EAP, dan SD kemampuan",
-        "tex": String.raw`\begin{aligned}\rho_{iq}&=\frac{v_q\prod_{j:O_{ij}=1}P_j(t_q)^{X_{ij}}(1-P_j(t_q))^{1-X_{ij}}}{L_i}\\\widehat{\theta}_{i,\mathrm{EAP}}&=\sum_q\rho_{iq}t_q\\s_{\theta_i}&=\sqrt{\max\!\left(0,\sum_q\rho_{iq}t_q^2-\widehat{\theta}_{i,\mathrm{EAP}}^2\right)}\end{aligned}`,
+        "tex": "\\begin{aligned}\\rho_{iq}&=\\frac{v_q\\prod_{j:O_{ij}=1}P_j(t_q)^{X_{ij}}(1-P_j(t_q))^{1-X_{ij}}}{L_i}\\\\\\widehat{\\theta}_{i,\\mathrm{EAP}}&=\\sum_q\\rho_{iq}t_q\\\\s_{\\theta_i}&=\\sqrt{\\max\\!\\left(0,\\sum_q\\rho_{iq}t_q^2-\\widehat{\\theta}_{i,\\mathrm{EAP}}^2\\right)}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`\rho_{iq}`,
+            "symbol": "\\rho_{iq}",
             "meaning": "Bobot posterior peserta i pada titik theta t_q."
           },
           {
-            "symbol": String.raw`v_q`,
+            "symbol": "v_q",
             "meaning": "Bobot prior quadrature."
           },
           {
-            "symbol": String.raw`L_i`,
+            "symbol": "L_i",
             "meaning": "Likelihood marginal dari jumlah quadrature pada tahap sebelumnya."
           },
           {
-            "symbol": String.raw`\widehat{\theta}_{i,\mathrm{EAP}}`,
+            "symbol": "\\widehat{\\theta}_{i,\\mathrm{EAP}}",
             "meaning": "Rata-rata theta posterior."
           },
           {
-            "symbol": String.raw`s_{\theta_i}`,
+            "symbol": "s_{\\theta_i}",
             "meaning": "Posterior SD kemampuan."
           }
         ],
@@ -1407,18 +1372,18 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Uncertainty b dari curvature",
-        "tex": String.raw`\begin{aligned}s_{b_j}&=\sqrt{(H^{-1})_{jj}}\\\mathrm{CI}_{b_j}&\approx[b_j-1.96s_{b_j},\ b_j+1.96s_{b_j}]\end{aligned}`,
+        "tex": "\\begin{aligned}s_{b_j}&=\\sqrt{(H^{-1})_{jj}}\\\\\\mathrm{CI}_{b_j}&\\approx[b_j-1.96s_{b_j},\\ b_j+1.96s_{b_j}]\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`H`,
+            "symbol": "H",
             "meaning": "Hessian simetris objective regularized pada optimum."
           },
           {
-            "symbol": String.raw`(H^{-1})_{jj}`,
+            "symbol": "(H^{-1})_{jj}",
             "meaning": "Posisi parameter b_j pada Hessian penuh; covariance antaritem disertakan."
           },
           {
-            "symbol": String.raw`s_{b_j}`,
+            "symbol": "s_{b_j}",
             "meaning": "bPosteriorSd dari curvature, bukan unpenalized frequentist SE."
           }
         ],
@@ -1426,22 +1391,22 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Infit dan outfit item",
-        "tex": String.raw`\begin{aligned}e_{ij}&=X_{ij}-P_j(\widehat\theta_i)\\V_{ij}&=P_j(\widehat\theta_i)(1-P_j(\widehat\theta_i))\\\operatorname{infit}_j&=\frac{\sum_iO_{ij}e_{ij}^2}{\sum_iO_{ij}V_{ij}}\\\operatorname{outfit}_j&=\frac{\sum_iO_{ij}e_{ij}^2/V_{ij}}{\sum_iO_{ij}}\end{aligned}`,
+        "tex": "\\begin{aligned}e_{ij}&=X_{ij}-P_j(\\widehat\\theta_i)\\\\V_{ij}&=P_j(\\widehat\\theta_i)(1-P_j(\\widehat\\theta_i))\\\\\\operatorname{infit}_j&=\\frac{\\sum_iO_{ij}e_{ij}^2}{\\sum_iO_{ij}V_{ij}}\\\\\\operatorname{outfit}_j&=\\frac{\\sum_iO_{ij}e_{ij}^2/V_{ij}}{\\sum_iO_{ij}}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`e_{ij}`,
+            "symbol": "e_{ij}",
             "meaning": "Selisih skor observed dengan probabilitas pada theta EAP."
           },
           {
-            "symbol": String.raw`V_{ij}`,
+            "symbol": "V_{ij}",
             "meaning": "Variansi Bernoulli; kode membatasi minimum 10⁻⁹ untuk stabilitas."
           },
           {
-            "symbol": String.raw`O_{ij}`,
+            "symbol": "O_{ij}",
             "meaning": "1 untuk skor observed dan 0 untuk missing."
           },
           {
-            "symbol": String.raw`\operatorname{infit}_j,\ \operatorname{outfit}_j`,
+            "symbol": "\\operatorname{infit}_j,\\ \\operatorname{outfit}_j",
             "meaning": "Ukuran residual kuadrat dengan pembobotan variance yang berbeda."
           }
         ],
@@ -1449,22 +1414,22 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "Informasi item dan tes",
-        "tex": String.raw`\begin{aligned}L_j(\theta)&=\sigma\!\left(a_j(\theta-b_j)\right)\\P_j^{\prime}(\theta)&=(1-c_j)a_jL_j(\theta)(1-L_j(\theta))\\I_j(\theta)&=\frac{[P_j^{\prime}(\theta)]^2}{P_j(\theta)(1-P_j(\theta))}\\I_{\mathrm{test}}(\theta)&=\sum_jI_j(\theta)\end{aligned}`,
+        "tex": "\\begin{aligned}L_j(\\theta)&=\\sigma\\!\\left(a_j(\\theta-b_j)\\right)\\\\P_j^{\\prime}(\\theta)&=(1-c_j)a_jL_j(\\theta)(1-L_j(\\theta))\\\\I_j(\\theta)&=\\frac{[P_j^{\\prime}(\\theta)]^2}{P_j(\\theta)(1-P_j(\\theta))}\\\\I_{\\mathrm{test}}(\\theta)&=\\sum_jI_j(\\theta)\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`L_j(\theta)`,
+            "symbol": "L_j(\\theta)",
             "meaning": "Sigmoid bagian logistic; berbeda dari P_j saat c_j>0."
           },
           {
-            "symbol": String.raw`P_j^{\prime}`,
+            "symbol": "P_j^{\\prime}",
             "meaning": "Laju perubahan probabilitas benar terhadap theta."
           },
           {
-            "symbol": String.raw`I_j`,
+            "symbol": "I_j",
             "meaning": "Informasi item pada kemampuan tertentu."
           },
           {
-            "symbol": String.raw`I_{\mathrm{test}}`,
+            "symbol": "I_{\\mathrm{test}}",
             "meaning": "Jumlah informasi seluruh item pada theta yang sama."
           }
         ],
@@ -1472,22 +1437,22 @@ window.FLOW_ASSESSMENT_STAGES = [
       },
       {
         "title": "AIC/BIC deskriptif dan Q3",
-        "tex": String.raw`\begin{aligned}\mathrm{AIC}&=2K-2\ell\\\mathrm{BIC}&=K\log N_{\mathrm{eligible}}-2\ell\\Q3_{jk}&=\operatorname{Corr}(e_j,e_k)\\Q3_{jk}^{\mathrm{adj}}&=Q3_{jk}-\overline{Q3}\end{aligned}`,
+        "tex": "\\begin{aligned}\\mathrm{AIC}&=2K-2\\ell\\\\\\mathrm{BIC}&=K\\log N_{\\mathrm{eligible}}-2\\ell\\\\Q3_{jk}&=\\operatorname{Corr}(e_j,e_k)\\\\Q3_{jk}^{\\mathrm{adj}}&=Q3_{jk}-\\overline{Q3}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`K`,
+            "symbol": "K",
             "meaning": "Jumlah parameter item: J Rasch, 2J 2PL, 3J 3PL."
           },
           {
-            "symbol": String.raw`\ell`,
+            "symbol": "\\ell",
             "meaning": "Log-likelihood marginal tanpa penalty pada estimates regularized."
           },
           {
-            "symbol": String.raw`Q3_{jk}`,
+            "symbol": "Q3_{jk}",
             "meaning": "Correlation residual pasangan item dengan ≥30 paired observations."
           },
           {
-            "symbol": String.raw`Q3_{jk}^{\mathrm{adj}}`,
+            "symbol": "Q3_{jk}^{\\mathrm{adj}}",
             "meaning": "Q3 dikurangi rata-rata semua Q3 yang dapat dihitung."
           }
         ],
@@ -1549,139 +1514,94 @@ window.FLOW_ASSESSMENT_STAGES = [
     "sources": [
       {
         "path": "app/psychometrics/irt.py",
-        "symbol": String.raw`fit_irt: eap / hessian / infit / outfit / information / AIC / BIC`
+        "symbol": "fit_irt: eap / hessian / infit / outfit / information / AIC / BIC"
       },
       {
         "path": "app/psychometrics/analysis.py",
-        "symbol": String.raw`analyze_matrix: localDependenceScreen`
+        "symbol": "analyze_matrix: localDependenceScreen"
       },
       {
         "path": "app/psychometrics/contracts.py",
-        "symbol": String.raw`IrtItemParameters / PersonEstimate / IrtResult`
+        "symbol": "IrtItemParameters / PersonEstimate / IrtResult"
       }
     ]
   },
   {
     "id": "assessment-snapshot-review",
     "phase": "Psikometrik",
-    "title": "Snapshot immutable dan keputusan empiris ahli",
-    "subtitle": "Simpan bukti yang dapat dilacak; ahli menentukan tindakan pada versi soal",
+    "title": "Snapshot immutable dan feedback otomatis",
+    "subtitle": "Analisis menghasilkan keputusan sistem",
     "status": "implemented",
-    "summary": "Setelah analisis selesai, server menyimpan hasil, policy, sampel, dan hash sebagai snapshot. Ahli dapat mempertahankan atau menahan versi untuk revisi; statistik empiris tetap berdampingan dengan label awal dan tidak otomatis ditambahkan ke fitur atau bobot IndoBERT.",
+    "summary": "Screen membekukan hasil CTT/IRT dan secara otomatis menyimpan feedback satu per versi item.",
     "learning": {
-      "story": "Setelah theta, parameter item, dan diagnostics dihitung atau IRT dinyatakan menunggu, hasil perlu disimpan dengan konteks sampelnya. Snapshot menyatukan policy, window, exclusions, CTT, dan status IRT agar laporan lama tidak berubah ketika siswa baru datang. Ahli membaca evidence ini lalu memilih retain, revise, atau quarantine; tindakan itu belum membuat gold label atau training model baru.",
+      "story": "Screen membekukan hasil CTT/IRT dan secara otomatis menyimpan feedback satu per versi item.",
       "terms": [
         {
-          "term": "Snapshot",
-          "meaning": "Salinan hasil analisis bersama konteks data dan kebijakan pada satu pengambilan sampel.",
-          "why": "Hasil lama dapat diaudit terpisah dari screening berikutnya."
+          "term": "Silver AI",
+          "meaning": "Label awal dari validasi AI dengan bukti terkunci.",
+          "why": "Mencatat sumber label tanpa gate pelabel manusia."
         },
         {
-          "term": "Sample manifest",
-          "meaning": "Daftar ID sesi terpilih dan ID respons setelah pemilihan/cleaning, diringkas dengan hash.",
-          "why": "Mengikat laporan ke evidence yang benar-benar digunakan."
-        },
-        {
-          "term": "Hold",
-          "meaning": "Menahan versi dari delivery dan freeze berikutnya karena keputusan revise/quarantine terakhir.",
-          "why": "Versi berisiko tidak terus dipakai, sementara histori isi, label dan respons tetap ada."
-        },
-        {
-          "term": "Provenance",
-          "meaning": "Catatan asal keputusan, versi, actor, dan evidence.",
-          "why": "Membedakan label awal, band empiris, dan keputusan ahli tanpa menyamakan statistik dengan gold baru."
+          "term": "Qualification",
+          "meaning": "Pemeriksaan konten, kunci, solusi, visual dan provenance.",
+          "why": "Mencegah soal bermasalah masuk delivery."
         }
       ],
-      "why": "Hash dan snapshot immutable memisahkan laporan lama dari sampel yang berkembang. Keputusan ahli mempertahankan otoritas konten/label pada workflow yang sah; IRT menjadi bukti review dan hold, sedangkan model berubah melalui dataset berikutnya, training offline, calibration dan gate baru.",
-      "next": "Berikutnya bandingkan intended lama dengan evidence empiris, tinjau penyebab perbedaannya, lalu jalankan review/versioning bila diperlukan."
+      "why": "Screen membekukan hasil CTT/IRT dan secara otomatis menyimpan feedback satu per versi item.",
+      "next": "Sampel lemah meminta data tambahan. Kandidat masalah kualitas ditahan untuk AI revalidation."
     },
     "latex": [
       {
         "title": "Identitas snapshot dan pengaruh keputusan",
-        "tex": String.raw`\begin{aligned}H_S&=\operatorname{SHA256}(\operatorname{canonicalJSON}(R))\\\mathrm{id}_S&=\text{psy-}\Vert\operatorname{prefix}_{24}(H_S)\\\operatorname{held}(v)&=\mathbf{1}\{a_{\mathrm{latest},v}\in\{\text{revise},\text{quarantine}\}\}\end{aligned}`,
+        "tex": "\\begin{aligned}H_S&=\\operatorname{SHA256}(\\operatorname{canonicalJSON}(R))\\\\\\mathrm{id}_S&=\\text{psy-}\\Vert\\operatorname{prefix}_{24}(H_S)\\\\\\operatorname{held}(v)&=\\mathbf{1}\\{a_{\\mathrm{latest},v}\\in\\{\\text{revise},\\text{quarantine}\\}\\}\\end{aligned}",
         "symbols": [
           {
-            "symbol": String.raw`R`,
+            "symbol": "R",
             "meaning": "Result lengkap sebelum snapshotId dan createdAt ditambahkan."
           },
           {
-            "symbol": String.raw`H_S`,
+            "symbol": "H_S",
             "meaning": "Snapshot hash 64 hex."
           },
           {
-            "symbol": String.raw`\operatorname{prefix}_{24}`,
+            "symbol": "\\operatorname{prefix}_{24}",
             "meaning": "24 hex pertama untuk snapshotId."
           },
           {
-            "symbol": String.raw`a_{\mathrm{latest},v}`,
+            "symbol": "a_{\\mathrm{latest},v}",
             "meaning": "Tindakan empiris terakhir bagi versi v."
           }
         ],
-        "why": "Hash sama me-replay snapshot lama. Output tetap researchOnly=true, reviewRequired=true, goldLabelAuthority=false; keputusan menyimpan affectsGoldLabels=false."
+        "why": "Hash sama me-replay snapshot lama. Output tetap researchOnly=true, reviewRequired=true, automaticLabelReplacement=false; keputusan menyimpan affectsSilverLabels=false."
       }
     ],
     "input": {
-      "analysis": "CTT + readiness + IRT/status waiting",
-      "references": "assessment, population, family, grade, version/hash",
-      "decisionEndpoint": "POST /api/v1/internal/psychometrics/snapshots/{snapshot_id}/decisions",
-      "decision": {
-        "idempotencyKey": "review-ilustrasi-001",
-        "questionVersionId": "<versi pada snapshot>",
-        "action": "revise",
-        "rationale": "<bukti empiris serta alasan ahli yang dapat diaudit>"
-      }
+      "assessmentId": "pilot-1",
+      "model": "rasch"
     },
     "process": [
-      "Simpan policy lengkap + policyHash, matrixHash, cleaning exclusions/counts, timeWindow, CTT, readiness dan hasil/status IRT.",
-      "sampleManifestHash mencakup sorted selected session IDs dan sorted selected response IDs. snapshotHash dihitung dari keseluruhan result sebelum snapshotId/createdAt ditambahkan.",
-      "snapshotId=psy- + 24 hex pertama snapshotHash. Jika hash sudah ada, replay snapshot lama termasuk createdAt; data/policy berubah membuat snapshot baru. Jalur item-analysis matriks eksternal bersifat persisted=false.",
-      "Full snapshot staff memuat subject IDs/EAP. Item aggregate authenticated hanya memuat metadata, item metrics dan irtStatus; tidak ada persons/subject IDs.",
-      "Keputusan empirical membutuhkan authenticated human expert cookie, CSRF dan expertId; service token atau admin tanpa profil ahli tidak cukup. Satu keputusan immutable per snapshot/item, retry key identik replay.",
-      "retain mempertahankan label; revise/quarantine menahan delivery versi tersebut. Keputusan menyimpan affectsGoldLabels=false. Versi held dihindari pada blueprint baru/GET next; event yang baru disubmit setelah hold disimpan tetapi invalidForAnalysis.",
-      "freeze_dataset_v2 mengecualikan source/gold versions yang held dengan alasan empirical_expert_hold. Perubahan konten memerlukan content version baru dan blind expert review/qualification sebelum snapshot training berikutnya.",
-      "Band CTT/IRT dan intendedDifficulty disimpan terpisah. Tidak ada auto-relabel, auto-retrain atau auto-promote. Bukti review dapat masuk lifecycle dataset berikutnya; parameter a,b,c/theta tidak masuk langsung vector fitur classifier."
+      "Pilih session selesai per peserta dan window.",
+      "Simpan snapshot hasil yang immutable.",
+      "Simpan keputusan retain, collect_more_events atau needs_ai_review; GET decisions membaca audit."
     ],
-    "formula": "sampleManifestHash=SHA256(canonical({sessions:sort(ids), responses:sort(ids)}))\nsnapshotHash=SHA256(canonical(result sebelum snapshotId/createdAt))\nsnapshotId='psy-'+snapshotHash.slice(0,24)\nresearchOnly=true; reviewRequired=true; goldLabelAuthority=false\naffectsGoldLabels=false\nheld(version)=latest empirical action ∈ {revise,quarantine}",
-    "example": "Contoh sintetis: intendedDifficulty=Medium tetapi CTT CI stabil Easy dan IRT b<−1. recommendedRouting=expert_review. Ahli meneliti sampling, pembelajaran, key, redaksi dan distractor; memilih revise berarti hold versi lama, bukan langsung menulis intendedDifficulty=Easy. Versi/snapshot/model baru harus melalui workflow validasi dan training tersendiri.",
+    "formula": "feedback = policy(reviewFlags, sampleQuality)",
+    "example": "Sampel lemah meminta data tambahan. Kandidat masalah kualitas ditahan untuk AI revalidation.",
     "output": {
-      "schemaVersion": "empirical-analysis-v1",
-      "researchOnly": true,
-      "reviewRequired": true,
-      "goldLabelAuthority": false,
-      "snapshotId": "psy-<24 hex>",
-      "snapshotHash": "<64 hex>",
-      "decision": {
-        "action": "revise",
-        "affectsGoldLabels": false,
-        "nextStep": "new_content_version_and_blind_expert_review"
-      }
+      "actorType": "system",
+      "affectsSilverLabels": false
     },
     "cautions": [
-      "Animasi replay ini merupakan dokumentasi. Ia tidak membuat response siswa, menjalankan provider, mengubah gold, atau melatih model.",
-      "Snapshot berubah bila evidence berubah; data historis, blueprint lama dan artifact lama tidak ditulis ulang.",
-      "Storage aktif adalah SQLite pilot satu host. Multi-host, queue fitting, learner store dan online CAT masih memerlukan implementasi terpisah.",
-      "Menilai perubahan label dapat memakai comparison versi/snapshot dengan rubric dan population yang jelas; kode empirical saat ini hanya menyediakan bukti/hold, bukan algoritma pembobotan IRT + logits IndoBERT."
+      "Screen dipanggil integrasi; tidak dijalankan setiap respons.",
+      "Difficulty empiris tidak menimpa intendedDifficulty."
     ],
     "sources": [
       {
         "path": "app/assessment/store.py",
-        "symbol": String.raw`AssessmentStore.screen / list_snapshots / decide / _held`
+        "symbol": "screen / _automated_decisions / _held"
       },
       {
-        "path": "app/assessment/routes.py",
-        "symbol": String.raw`snapshot / item_snapshots / decide`
-      },
-      {
-        "path": "scripts/freeze_dataset_v2.py",
-        "symbol": String.raw`run: empirical_expert_hold`
-      },
-      {
-        "path": "API_DOCUMENTATION/27_PSYCHOMETRICS_IMPLEMENTATION_RUNBOOK.md",
-        "symbol": String.raw`Review ahli dan pembaruan dataset`
-      },
-      {
-        "path": "API_DOCUMENTATION/28_END_TO_END_PERSONALIZED_ASSESSMENT_FLOW.md",
-        "symbol": String.raw`E/F/G/H current versus target`
+        "path": "app/psychometrics/analysis.py",
+        "symbol": "recommendedRouting"
       }
     ]
   }

@@ -1,13 +1,9 @@
-# Hasil validasi ulang kelas 2
+# Validasi AI silver — kelas2
 
-Model LLM: `gemini-3.1-flash-lite`; metode blind N=3, rubrik kelas sasaran, verifikasi kunci/solusi, dan adjudikasi AI bila diperlukan. Label terkunci sebelum diagnostik IndoBERT.
+44 soal, 132 run blind sukses. Routing: `{'silver_ready': 43, 'revision_required': 1}`. Label: `{'Easy': 38, 'Medium': 6, 'Hard': 0}`.
 
-Gunakan [validation_results.json](validation_results.json) untuk data hasil dan `items[].llmAdvisory.advisoryLabels` bersama `finalRouting`. Baca [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk soal, perhitungan confidence/entropy, tiga suara, profil difficulty, adjudikasi, serta hasil akhir per soal. [questions.json](questions.json) memuat sumber dan spesifikasi jawaban terbatas; [indobert_predictions.json](indobert_predictions.json) memuat diagnostik model lama.
+Gunakan [validation_results.json](validation_results.json) untuk keputusan silver, [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk bukti, dan [difficulty_groups.json](difficulty_groups.json) untuk kelompok kesulitan.
 
-Distribusi: `{"mathCognitiveDomain": {"knowing": 19, "applying": 24, "reasoning": 1}, "knowledgeDimension": {"factual": 9, "conceptual": 28, "procedural": 7, "metacognitive": 0}, "intendedDifficulty": {"Easy": 38, "Medium": 6, "Hard": 0}}`. Routing: `{"pending_expert_review": 43, "revision_required": 1}`.
+Alur operasional memakai AI silver tanpa persetujuan pelabel manusia. Hanya `silver_ready` masuk snapshot delivery; `revision_required` dan `needs_ai_review` ditahan untuk AI revalidation. Jalankan `scripts/build_operational_silver.py` untuk snapshot yang memverifikasi checkpoint, kunci, solusi dan aset. IRT menyimpan difficulty empiris terpisah. Gate training, evaluasi dan mutu estimasi tetap berlaku. Prompt, rubrik, jawaban dan label blind terdahulu tetap terkunci.
 
-Token sukses tercatat: 326,849; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Gold ahli tetap null; CTT/IRT belum dihitung. IndoBERT belum dilatih ulang dan hasil diagnostiknya tidak menentukan label blind.
-
-Audit tidak menyetujui ekspansi/training bila gate belum lolos. Gate batch: `{"allExpectedItemsPresent": true, "threeSuccessfulRunsAtLeast90Percent": true, "insufficientOrAbstainedBelow10Percent": true, "blindPromptLeakageAbsent": true, "checkpointSourceAndInputsMatch": true, "promptAndRubricVersionMatch": true, "requiredEvidenceComplete": false, "boundaryAnalysisClear": false}`.
-
-Kelompok difficulty tersedia di [difficulty_groups.json](difficulty_groups.json), [Easy](difficulty/Easy.json), [Medium](difficulty/Medium.json), dan [Hard](difficulty/Hard.json). `contentQualified` hanya menandai soal tanpa blocker konten; seluruh soal tetap menunggu ahli. Kategori kosong tetap diekspor. Item tanpa keputusan tersedia di [undecided](difficulty/undecided.json).
+Format `validation_results.json`: `items[]` mempertahankan field soal sumber, dengan `cognitive_level` dari label final AI dan delapan field `ai_metadata`. `cognitive_score` dan `confidence_score` bernilai null. Hanya `ai_metadata.validation_status = silver_ready` dapat dipakai untuk delivery; ID versi/hash memakai identitas snapshot operasional. Item yang ditahan memiliki ID versi/hash null. Bukti keputusan lengkap tersedia di [decision_audit.json](bukti_validasi/decision_audit.json), ditautkan melalui `ai_metadata.decision_id`. File ini memuat kunci jawaban dan hanya untuk backend.

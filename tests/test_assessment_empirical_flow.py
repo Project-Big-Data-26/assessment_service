@@ -5,33 +5,35 @@ from fastapi.testclient import TestClient
 import numpy as np
 import pytest
 
-from app.assessment.contracts import AssessmentCreate, EmpiricalDecisionInput, ResponseCreate
+from app.assessment.contracts import AssessmentCreate, ResponseCreate
 from app.assessment.store import AssessmentError, AssessmentStore
 from app.classification.v2.serializer import canonical_json_hash
 from app.main import app
-from app.annotation.security import SESSION_COOKIE, hash_secret, password_hash
+from app.staff.security import SESSION_COOKIE, hash_secret, password_hash
 from app.psychometrics.analysis import load_policy
 from app.psychometrics.contracts import ScreeningInput
-from app.training.v2.dataset import GoldTrainingRow, build_snapshot
+from app.training.v2.dataset import TrainingRow, build_snapshot
 
 
-def gold_snapshot():
-    rows = [GoldTrainingRow(
+def silver_snapshot():
+    rows = [TrainingRow(
         questionId=f"q-{i}", questionVersionId=f"q-{i}:v2", contentVersion=2,
         contentHash=canonical_json_hash({"content": i}), sourceGroup=f"source-{i}", grade=1, topic="Bilangan",
         questionType="multiple_choice", stem=f"Hitung {i} + 1.",
         options=[{"label": "A", "text": str(i + 1)}, {"label": "B", "text": str(i + 2)}],
         verifiedMinimalSolution=f"{i} + 1 = {i + 1}", mathCognitiveDomain="knowing", knowledgeDimension="procedural",
         intendedDifficulty="Medium", rubricVersion="math-rubric-3x4x3-v2",
-        decisionProvenance={"decisionId": f"human-{i}", "kind": "gold_ready", "verifiedAnswerKey": "A"},
+        decisionProvenance={"decisionId": f"ai-{i}", "kind": "ai_silver", "verifiedAnswerKey": "A", "successfulRuns": 3,
+                            "contentStatus": "valid", "answerKeyStatus": "verified", "checkpointHash": "a" * 64,
+                            "sourceInputHash": "b" * 64, "sourceResponseHashes": ["c" * 64] * 3},
     ) for i in range(5)]
-    return build_snapshot(rows, snapshot_id="human-gold-test", minimum_per_class=0, minimum_train_per_class=0, required_grades=())
+    return build_snapshot(rows, snapshot_id="ai-silver-test", minimum_per_class=0, minimum_train_per_class=0, required_grades=())
 
 
 @pytest.fixture
 def local_store(tmp_path):
     db = AssessmentStore(tmp_path / "pilot.sqlite3")
-    snapshot = gold_snapshot()
+    snapshot = silver_snapshot()
     config = AssessmentCreate(assessmentId="pilot-1", snapshotId=snapshot.snapshotId,
                               questionVersionIds=[row.questionVersionId for row in snapshot.rows],
                               populationId="grade-1-school-1", assessmentFamily="math-grade-1", grade=1)
@@ -102,12 +104,13 @@ def test_idor_invalid_mapping_and_internal_auth(api, local_store):
     assert api.post("/api/v1/internal/psychometrics/screen", json={"assessmentId": "pilot-1"}, headers={"X-Internal-API-Key": "bad"}).status_code == 401
 
 
-def test_silver_and_modified_gold_cannot_be_delivered(local_store):
-    snapshot = gold_snapshot()
+def test_qualified_silver_is_delivered_and_modified_snapshot_is_rejected(local_store):
+    snapshot = silver_snapshot()
     payload = AssessmentCreate(assessmentId="new-pilot", snapshotId=snapshot.snapshotId,
                                questionVersionIds=[row.questionVersionId for row in snapshot.rows], populationId="p", assessmentFamily="f", grade=1)
-    with pytest.raises(AssessmentError, match="human-gold"):
-        local_store.create_assessment(payload, snapshot.model_copy(update={"researchOnly": True}))
+    assert local_store.create_assessment(payload, snapshot)["itemCount"] == 5
+    with pytest.raises(AssessmentError, match="AI silver"):
+        local_store.create_assessment(payload, snapshot.model_copy(update={"labelProvenance": "unqualified"}))
     snapshot.rows[0].stem = "Changed after freeze"
     with pytest.raises(AssessmentError, match="checksum"):
         local_store.create_assessment(payload, snapshot)
@@ -158,7 +161,7 @@ def test_end_to_end_real_server_event_path_calibrates_and_persists_immutable_sna
     assert "subjectId" not in json.dumps(aggregates)
 
 
-def test_attempt_policy_selects_whole_session_and_expert_hold_does_not_relabel(local_store):
+def test_attempt_policy_and_automatic_feedback_preserve_initial_labels(local_store):
     complete_attempt(local_store, "retry-subject", 1, [1, 0, 1, 0, 1])
     complete_attempt(local_store, "retry-subject", 2, [0, 1, 0, 1, 0])
     first = local_store.screen(ScreeningInput(assessmentId="pilot-1", attemptPolicy="first"), load_policy())
@@ -166,43 +169,30 @@ def test_attempt_policy_selects_whole_session_and_expert_hold_does_not_relabel(l
     assert first["normalization"]["persons"] == 1
     assert first["items"][0]["ctt"]["difficultyIndex"] == 1
     assert last["items"][0]["ctt"]["difficultyIndex"] == 0
-    decision = EmpiricalDecisionInput(idempotencyKey="expert-key-1", questionVersionId="q-0:v2", action="quarantine", rationale="The expert identified ambiguous wording and holds this version for content review.")
-    result = local_store.decide(first["snapshotId"], decision, "expert-1")
-    assert result["affectsGoldLabels"] is False
-    assert local_store.decide(first["snapshotId"], decision, "expert-1") == result
-    token = local_store.participant("pilot-1", "held-subject")["participantToken"]
-    sid = local_store.start("pilot-1", token, "held-start-1")["sessionId"]
-    with pytest.raises(AssessmentError, match="held"):
-        local_store.next_item(sid, token)
+    decisions = local_store.decisions(first["snapshotId"])
+    assert len(decisions) == 5
+    assert all(d["actorType"] == "system" and d["affectsSilverLabels"] is False for d in decisions)
+    assert all(d["action"] == "collect_more_events" for d in decisions)
     assert local_store.snapshot(first["snapshotId"])["items"][0]["intendedDifficulty"] == "Medium"
 
 
-def test_empirical_decision_requires_human_cookie_csrf_and_is_immutable(api, local_store, monkeypatch):
-    complete_attempt(local_store, "review-subject", 1, [1, 0, 1, 0, 1])
-    snapshot = local_store.screen(ScreeningInput(assessmentId="pilot-1"), load_policy())
-    actor = {"userId": "user-expert", "expertId": "expert-1", "roles": ["primary_annotator"], "csrfHash": hash_secret("csrf-test")}
+def test_human_labeling_and_manual_empirical_decision_routes_are_absent(api, local_store):
+    paths = api.get("/openapi.json").json()["paths"]
+    assert not any("assignments" in path or "adjudications" in path for path in paths)
+    assert all("post" not in operations for path, operations in paths.items() if path.endswith("/decisions"))
+    assert api.post("/api/v1/internal/psychometrics/snapshots/unknown/decisions", json={}).status_code == 405
 
-    class FakeAuth:
-        async def get_session(self, token):
-            return actor if token == "expert-session" else None
 
-    monkeypatch.setattr(app.state, "annotation_repository", FakeAuth())
-    path = f"/api/v1/internal/psychometrics/snapshots/{snapshot['snapshotId']}/decisions"
-    body = {"idempotencyKey": "review-decision-1", "questionVersionId": "q-0:v2", "action": "revise",
-            "rationale": "The expert identified a content ambiguity requiring a new validated version."}
-    assert api.post(path, json=body, headers={"X-Internal-API-Key": "internal-secret-token-for-tests-123456"}).status_code == 401
-    api.cookies.set(SESSION_COOKIE, "expert-session")
-    assert api.post(path, json=body).status_code == 403
-    result = api.post(path, json=body, headers={"X-CSRF-Token": "csrf-test"})
-    assert result.status_code == 201, result.text
-    assert result.json()["expertId"] == "expert-1"
-    assert local_store.is_held("q-0:v2")
-    assert api.post(path, json=body, headers={"X-CSRF-Token": "csrf-test"}).json() == result.json()
-    changed = {**body, "action": "retain"}
-    assert api.post(path, json=changed, headers={"X-CSRF-Token": "csrf-test"}).status_code == 409
-    actor["expertId"] = None
-    actor["roles"] = ["admin"]
-    assert api.post(path, json=body, headers={"X-CSRF-Token": "csrf-test"}).status_code == 403
+def test_service_can_register_silver_and_create_assessment_without_mongo(api, monkeypatch):
+    monkeypatch.setattr(app.state, "staff_repository", None)
+    auth = {"X-Internal-API-Key": "internal-secret-token-for-tests-123456"}
+    snapshot = silver_snapshot()
+    path = "/api/v1/internal/silver/snapshots"
+    assert api.post(path, json=snapshot.model_dump(mode="json")).status_code == 503
+    assert api.post(path, json=snapshot.model_dump(mode="json"), headers=auth).status_code == 201
+    body = {"assessmentId": "api-silver-pilot", "snapshotId": snapshot.snapshotId,
+            "questionVersionIds": [r.questionVersionId for r in snapshot.rows], "populationId": "p", "assessmentFamily": "f", "grade": 1}
+    assert api.post("/api/v1/internal/assessments", json=body, headers=auth).status_code == 201
 
 
 def test_store_survives_restart_and_rejects_secret_rotation(local_store):
@@ -217,7 +207,7 @@ def test_store_survives_restart_and_rejects_secret_rotation(local_store):
 
 def test_lifespan_initializes_default_assessment_backend_without_mongo(tmp_path, monkeypatch):
     import app.main as main_module
-    monkeypatch.setattr(main_module, "annotation_repository", None)
+    monkeypatch.setattr(main_module, "staff_repository", None)
     monkeypatch.setattr(app.state, "assessment_store", None)
     monkeypatch.setenv("ASSESSMENT_DB_PATH", str(tmp_path / "startup.sqlite3"))
     with TestClient(app) as client:
@@ -228,7 +218,7 @@ def test_lifespan_initializes_default_assessment_backend_without_mongo(tmp_path,
 
 
 def test_login_migrates_legacy_cookie_path_for_empirical_review(api, monkeypatch):
-    user = {"userId": "staff-1", "expertId": "expert-1", "roles": ["primary_annotator"],
+    user = {"userId": "staff-1", "roles": ["operator"],
             "passwordHash": password_hash("test-password-123")}
 
     class FakeLogin:
@@ -244,8 +234,8 @@ def test_login_migrates_legacy_cookie_path_for_empirical_review(api, monkeypatch
         async def audit(self, *args):
             pass
 
-    monkeypatch.setattr(app.state, "annotation_repository", FakeLogin())
-    response = api.post("/internal/v2/auth/login", json={"username": "expert", "password": "test-password-123"})
+    monkeypatch.setattr(app.state, "staff_repository", FakeLogin())
+    response = api.post("/internal/v2/auth/login", json={"username": "operator", "password": "test-password-123"})
     assert response.status_code == 200
     cookies = response.headers.get_list("set-cookie")
     assert any("Path=/internal/v2" in cookie and "Max-Age=0" in cookie for cookie in cookies)

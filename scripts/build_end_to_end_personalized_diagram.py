@@ -72,12 +72,12 @@ PHASES = (
         Card("C1", "SILVER SNAPSHOT AND SPLIT", "I", "Membagi dataset silver tetap menjadi data latih, validasi, dan uji, tanpa membocorkan soal sekeluarga antarbagian.", ("Gabungkan snapshot silver kelas yang lolos audit.", "Split group-aware 70 / 15 / 15 secara deterministik.", "Source, stimulus dan duplicate family tidak bocor.", "Class support dan frozen test gate diperiksa.")),
         Card("C2", "JSON-TO-TEXT AND THREE HEADS", "I", "JSON valid diubah menjadi teks kanonis sesuai manifest, ditokenisasi, lalu dibaca IndoBERT oleh tiga kepala prediksi.", ("Fitur teks: metadata, stimulus, soal, opsi dan visual.", "Solution dan KKO masuk hanya jika representation memilihnya.", "IndoBERT + LoRA menghasilkan representasi [CLS].", "Difficulty ordinal memakai grade embedding terpisah.")),
         Card("C3", "TRAINING AND CALIBRATION", "I", "Melatih model dan menyesuaikan probabilitasnya dengan data validasi, agar prediksi dan tingkat keyakinan dapat dievaluasi.", ("Loss multiclass dan cumulative ordinal digunakan.", "Anti-collapse dan weakest-head macro-F1 diperiksa.", "Temperature, confidence dan entropy dari validation.", "Kalibrasi per kelas hanya jika support cukup.")),
-        Card("C4", "RESEARCH ARTIFACT", "R", "Mengemas model, konfigurasi, dan hasil evaluasi sebagai artefak berversi yang hanya dapat dipakai melalui mode riset.", ("Adapter, heads, tokenizer dan manifest dikemas.", "Checksum, metrik dan calibration disimpan.", "Artifact silver tetap researchOnly dan unapproved.", "Inference riset membutuhkan opt-in eksplisit.")),
+        Card("C4", "RESEARCH ARTIFACT", "R", "Mengemas model, konfigurasi, dan hasil evaluasi sebagai artefak berversi yang hanya dapat dipakai melalui mode riset.", ("Adapter, heads, tokenizer dan manifest dikemas.", "Checksum, metrik dan calibration disimpan.", "Artifact yang belum lolos gate tetap researchOnly.", "Inference riset membutuhkan opt-in eksplisit.")),
     )),
-    Phase("D  |  SILVER PILOT DELIVERY", "Merancang pilot silver terisolasi: peserta menerima soal melalui sesi, sedangkan server menjaga versi, jawaban, dan penilaian.",
-          "D1 masih perlu dibuat karena AssessmentStore aktif menolak snapshot silver. D2–D4 memakai komponen pilot yang sudah tersedia.", (
-        Card("D1", "SILVER DELIVERY ADAPTER", "T", "Adapter yang masih perlu dibangun agar soal silver dapat masuk pilot riset terisolasi dengan audit dan kebijakan akses.", ("Tambahkan mode research-silver yang terisolasi.", "Wajib audit hash, kunci, solusi dan version lineage.", "Pisahkan ID, policy dan storage dari assessment resmi.", "Jangan menghapus guard produksi secara global.")),
-        Card("D2", "PARTICIPANT AND SESSION", "I", "Membuat akses peserta dan sesi miliknya. Komponen ini dapat dipakai pada pilot silver setelah adapter D1 tersedia.", ("Operator membuat Bearer token per assessment.", "SubjectHash dibentuk dari populasi dan kode peserta.", "Start idempotent; ownership dan expiry diperiksa.", "Akun siswa longitudinal masih target.")),
+    Phase("D  |  SILVER PILOT DELIVERY", "Menjalankan pilot silver qualified: peserta menerima soal melalui sesi, sedangkan server menjaga versi, jawaban, dan penilaian.",
+          "D1 registry silver tersedia; D2-D4 menyediakan jalur siswa dan scoring server.", (
+        Card("D1", "SILVER SNAPSHOT REGISTRY", "I", "Mendaftarkan snapshot silver qualified ke SQLite dan menghubungkannya ke assessment siswa.", ("Verifikasi hash rows dan expansionRows.", "Wajib bukti AI, kunci, solusi dan versi.", "Cocokkan grade dan subjectTrack.", "Service key tidak membutuhkan akun pelabel.")),
+        Card("D2", "PARTICIPANT AND SESSION", "I", "Membuat akses peserta dan sesi miliknya. Komponen ini dapat dipakai pada pilot silver melalui registry D1.", ("Operator membuat Bearer token per assessment.", "SubjectHash dibentuk dari populasi dan kode peserta.", "Start idempotent; ownership dan expiry diperiksa.", "Akun siswa longitudinal masih target.")),
         Card("D3", "IMMUTABLE DELIVERY", "I", "Mengirim soal tanpa kunci dan membekukan susunan opsi untuk satu percobaan, sehingga muat ulang tetap konsisten.", ("Item fixed-form dikirim sesuai blueprint silver.", "Opsi diacak dan public ID dibuat opaque.", "Refresh mempertahankan delivery dan mapping.", "Kunci, solusi dan reasoning tidak dikirim.")),
         Card("D4", "SERVER-SCORED RESPONSE", "I", "Server mencocokkan jawaban dengan versi soal yang diterima siswa dan menyimpan skor tanpa menggandakan kiriman ulang.", ("Identity dan correctness dihitung oleh server.", "Benar 1, salah 0 dan skip null / NA.", "Retry payload sama tidak membuat event baru.", "Session selesai setelah semua item dijawab / skip.")),
     )),
@@ -86,12 +86,12 @@ PHASES = (
         Card("E1", "SESSION CLEANING AND MATRIX", "I", "Menyaring sesi selesai dan menyusun matriks siswa–versi soal; jawaban kosong tetap dibedakan dari jawaban salah.", ("Pilih satu completed attempt per subject.", "Window memakai completion time; attempt tidak dicampur.", "Event invalid, mismatch dan rapid guess dikeluarkan.", "Matriks siswa × versi memakai 0, 1 atau NA.")),
         Card("E2", "CTT AND READINESS GATES", "I", "Menghitung statistik tes klasik dan memeriksa kecukupan data; analisis IRT menunggu jika syarat belum terpenuhi.", ("Hitung p, Wilson CI, discrimination dan KR-20.", "Periksa sample, outcomes, coverage dan desain terhubung.", "Missing tetap NA dan tidak diubah menjadi nol.", "Assumption review diperlukan sebelum fit IRT.")),
         Card("E3", "IRT FIT AND DIAGNOSTICS", "R", "Mengestimasi karakteristik soal dan kemampuan siswa pada skala lokal, lalu memeriksa kecocokan model terhadap data.", ("Rasch 100×5; 2PL 300×10; 3PL 1000×20.", "Regularized MML dan quadrature pada theta N(0,1).", "Estimasi a, b, c, EAP, posterior SD dan information.", "Periksa convergence, bounds, infit, outfit dan Q3.")),
-        Card("E4", "IMMUTABLE EMPIRICAL SNAPSHOT", "R", "Menyimpan hasil analisis bersama jejak data dan kebijakan, agar hasil yang sama dapat direproduksi dan diaudit.", ("Policy, matrix, sample hash dan exclusion disimpan.", "Input identik direplay; perubahan membuat snapshot baru.", "Hasil tetap research-only dan review-required.", "EAP dibatasi untuk akses internal.")),
+        Card("E4", "IMMUTABLE EMPIRICAL SNAPSHOT", "R", "Menyimpan hasil analisis bersama jejak data dan kebijakan, agar hasil yang sama dapat direproduksi dan diaudit.", ("Policy, matrix, sample hash dan exclusion disimpan.", "Input identik direplay; perubahan membuat snapshot baru.", "Feedback otomatis menyimpan actorType system.", "EAP dibatasi untuk akses internal.")),
     )),
     Phase("F  |  CONTROLLED SILVER FEEDBACK", "Memakai hasil analisis untuk menandai masalah, menahan versi berisiko, dan membentuk silver baru tanpa mengubah riwayat lama.",
           "F2/F3 → B1 untuk blind silver batch baru; F4 → C1 untuk challenger model berikutnya.", (
         Card("F1", "EMPIRICAL ROUTING", "R", "Menandai soal yang perlu ditinjau berdasarkan respons siswa; statistik menjadi bukti pemeriksaan, bukan label pengganti.", ("Bandingkan intended dan empirical difficulty.", "Tandai sample lemah, misfit dan diskriminasi negatif.", "Periksa kunci, distraktor, populasi dan konten.", "Flag adalah evidence, bukan label pengganti.")),
-        Card("F2", "VERSION HOLD POLICY", "T", "Kebijakan target untuk menahan versi soal berisiko dari pilot berikutnya, dengan alasan dan bukti yang tersimpan.", ("Policy research menahan versi berisiko dari pilot.", "Hold menyimpan alasan, snapshot dan versi policy.", "Delivery historis tidak ditulis ulang.", "Mode resmi tetap dipisahkan dari eksperimen silver.")),
+        Card("F2", "AUTOMATIC HOLD POLICY", "I", "Sistem menahan versi yang memiliki kandidat masalah kualitas berdasarkan feedback empiris.", ("Screen menyimpan keputusan otomatis.", "Sample lemah meminta respons tambahan.", "Hold menolak create, next item dan response.", "Freeze dengan assessment DB mengecualikan hold.")),
         Card("F3", "NEW SILVER BATCH", "L", "Mengirim soal yang direvisi ke penilaian blind dan audit baru, sehingga pembaruan silver memiliki riwayat tersendiri.", ("Konten yang dikoreksi mendapat versi baru.", "Jalankan kembali blind N=3 dan adjudikasi AI.", "Audit dan hash baru wajib sebelum digunakan.", "Checkpoint dan snapshot lama tetap immutable.")),
         Card("F4", "CHALLENGER MODEL CYCLE", "L", "Melatih calon model pengganti dari silver baru dan membandingkan hasil evaluasinya dengan model sebelumnya.", ("Bangun snapshot silver versi berikutnya.", "Train, calibrate dan evaluate challenger.", "Bandingkan dengan baseline dan artifact sebelumnya.", "Tidak ada auto-retrain atau auto-publish.")),
     )),
@@ -302,7 +302,7 @@ class Renderer:
             f'orient="auto-start-reverse"><path d="M 0 1 L 11 6 L 0 11 Z" fill="{COLORS[key]}"/></marker>'
             for key in ("line", "I", "R", "T")
         )
-        graph = {"schemaVersion": "end-to-end-diagram-v1", "date": "2026-10-02", "apiVersion": "2.1.0",
+        graph = {"schemaVersion": "end-to-end-diagram-v1", "date": "2026-10-02", "apiVersion": "2.2.0",
                  "nodes": [{"id": card.id, "status": card.status, "title": card.title,
                             "description": card.description, "descriptionLanguage": "id"}
                            for phase in PHASES for card in phase.cards],
@@ -328,7 +328,7 @@ def build():
     renderer = Renderer()
     renderer.text(150, 145, "NALAR  |  SILVER END-TO-END FLOW", 82, bold=True)
     renderer.text(150, 214, "Dari sumber soal ke silver, model, respons siswa, bukti empiris dan personalisasi", 42, color="muted")
-    renderer.text(150, 278, "Baseline kode: API 2.1.0  •  2 Oktober 2026  •  Jalur aktual dan ekstensi target diberi status berbeda", 35, color="muted")
+    renderer.text(150, 278, "Baseline kode: API 2.2.0  •  2 Oktober 2026  •  Jalur aktual dan ekstensi target diberi status berbeda", 35, color="muted")
     x = 150
     for status in STATUS:
         value = f"{status}  {STATUS[status]}"
@@ -381,8 +381,8 @@ def build():
     renderer.rect(150, footer_y, 4500, 690, "#E6EDF6", border="#CCD8E6", radius=28)
     renderer.text(190, footer_y + 66, "BOUNDARY, STORAGE DAN SYARAT VALIDITAS", 43, bold=True)
     notes = (
-        "Silver: label blind LLM N=3 + adjudikasi AI + audit hash. Artifact, delivery dan hasil empiris tetap diberi provenance riset.",
-        "Guard backend aktif masih menolak snapshot researchOnly pada AssessmentStore; D1 adalah adapter target yang harus dibuat secara terisolasi.",
+        "Silver: blind LLM N=3 + adjudikasi AI + audit hash. Delivery qualified memakai provenance ai_silver; model tunduk gate teknis.",
+        "Registry silver dan qualification tersedia; grade/track, source evidence dan checksum tetap wajib.",
         "SQLite lokal menyimpan assessment, peserta, session, delivery, response dan snapshot; MongoDB tetap menyimpan candidate/version bila dipakai.",
         "p CTT = performa populasi; b IRT = parameter item lokal; theta = estimasi individual lokal; intendedDifficulty = label awal relatif kelas.",
         "Grade conditioning berbeda dari personalisasi: profil siswa dan selector adaptif tidak mengganti label silver item secara otomatis.",

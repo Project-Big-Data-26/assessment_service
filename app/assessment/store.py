@@ -1,6 +1,6 @@
 """Transactional SQLite store for the local pilot; no raw student identity.
 
-MongoDB remains the source of human gold. A reviewed frozen snapshot is copied
+A qualified AI silver snapshot is copied
 into an immutable assessment. SQLite permits operation without provisioning a
 second remote service. One connection per transaction works across threads.
 """
@@ -20,7 +20,8 @@ from app.classification.v2.serializer import canonical_json_hash
 from app.psychometrics.analysis import analyze_matrix, normalize_events
 from app.psychometrics.contracts import AnalysisPolicy, ScreeningInput
 from app.training.v2.dataset import DatasetSnapshot
-from .contracts import AssessmentCreate, EmpiricalDecisionInput, ResponseCreate
+from .contracts import AssessmentCreate, ResponseCreate
+from app.silver.policy import LABEL_PROVENANCE, POLICY_VERSION, validate_provenance
 
 
 def now():
@@ -48,6 +49,7 @@ class AssessmentStore:
         with self.connection() as db:
             db.executescript("""
                 CREATE TABLE IF NOT EXISTS metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+                CREATE TABLE IF NOT EXISTS dataset_snapshots (id TEXT PRIMARY KEY, hash TEXT NOT NULL, document TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS assessments (id TEXT PRIMARY KEY, hash TEXT NOT NULL, document TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS participants (token_hash TEXT PRIMARY KEY, assessment_id TEXT NOT NULL, subject_hash TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS sessions (id TEXT PRIMARY KEY, assessment_id TEXT NOT NULL, subject_hash TEXT NOT NULL,
@@ -99,27 +101,22 @@ class AssessmentStore:
     def create_assessment(self, payload: AssessmentCreate, snapshot: DatasetSnapshot) -> dict:
         if snapshot.snapshotId != payload.snapshotId:
             raise AssessmentError("snapshot ID mismatch")
-        rows = [row.model_dump(mode="json") for row in sorted(snapshot.rows, key=lambda row: row.questionVersionId)]
-        if canonical_json_hash(rows) != snapshot.snapshotHash:
-            raise AssessmentError("gold snapshot checksum mismatch")
-        if snapshot.researchOnly or snapshot.labelProvenance != "human_gold":
-            raise AssessmentError("pilot delivery requires a human-gold snapshot; silver/research artifacts are ineligible")
+        self.validate_snapshot(snapshot)
+        rows = [row.model_dump(mode="json") for row in [*snapshot.rows, *snapshot.expansionRows]]
         row_by_id = {row["questionVersionId"]: row for row in rows}
         items = []
         for version in payload.questionVersionIds:
             row = row_by_id.get(version)
-            if row is None or row["grade"] != payload.grade:
+            if row is None or row["grade"] != payload.grade or row["subjectTrack"] != payload.subjectTrack:
                 raise AssessmentError("item is missing or outside the assessment grade")
             provenance = row["decisionProvenance"]
-            if provenance.get("kind") not in {"gold_ready", "adjudicated"} or not provenance.get("decisionId"):
-                raise AssessmentError("every delivered version requires a completed human decision")
             key = provenance.get("verifiedAnswerKey")
             option_ids = [option["label"] for option in row["options"]]
             if row["questionType"] != "multiple_choice" or key not in option_ids or len(option_ids) < 2 or len(set(option_ids)) != len(option_ids):
                 raise AssessmentError("this pilot supports single-answer multiple_choice with a verified key")
             if not row["verifiedMinimalSolution"].strip():
                 raise AssessmentError("a verified solution is required")
-            # Text-only delivery is explicit: visual items need expert transcription.
+            # Text-only delivery is explicit: visual items need an AI-verified transcription.
             if row.get("visualTranscript"):
                 question_text = row["stem"] + "\n" + row["visualTranscript"]
             else:
@@ -129,7 +126,7 @@ class AssessmentStore:
                 "contentHash": row["contentHash"], "intendedDifficulty": row["intendedDifficulty"],
                 "optionIds": option_ids, "answerKey": key, "stem": question_text,
                 "stimulus": row.get("stimulus"), "options": row["options"],
-                "expertDecisionId": provenance["decisionId"],
+                "silverDecisionId": provenance["decisionId"], "labelProvenance": LABEL_PROVENANCE,
             })
         if len({item["questionId"] for item in items}) != len(items):
             raise AssessmentError("an assessment cannot contain two versions of the same question")
@@ -138,7 +135,7 @@ class AssessmentStore:
         digest = canonical_json_hash(document)
         with self.connection() as db:
             if any(self._held(db, item["questionVersionId"]) for item in items):
-                raise AssessmentError("assessment contains an item version held by an empirical expert decision")
+                raise AssessmentError("assessment contains an item version held by an automated empirical decision")
             existing = db.execute("SELECT hash FROM assessments WHERE id=?", (payload.assessmentId,)).fetchone()
             if existing and existing[0] != digest:
                 raise AssessmentError("assessment ID already refers to a different immutable blueprint")
@@ -198,14 +195,14 @@ class AssessmentStore:
             if pending:
                 delivery = json.loads(pending[0])
                 if self._held(db, delivery["item"]["questionVersionId"]):
-                    raise AssessmentError("item version is held for expert revision")
+                    raise AssessmentError("item version is held for AI revalidation")
                 return delivery["public"]
             sequence = db.execute("SELECT COUNT(*) FROM deliveries WHERE session_id=?", (session_id,)).fetchone()[0]
             if sequence >= len(assessment["items"]):
                 return {"sessionId": session_id, "finished": True, "item": None}
             item = assessment["items"][sequence]
             if self._held(db, item["questionVersionId"]):
-                raise AssessmentError("item version is held for expert revision; this assessment needs a new blueprint")
+                raise AssessmentError("item version is held for AI revalidation; this assessment needs a new blueprint")
             options = list(item["options"]); secrets.SystemRandom().shuffle(options)
             mapping = {secrets.token_urlsafe(12): option["label"] for option in options}
             public_options = [{"id": public, "text": option["text"]} for public, option in zip(mapping, options, strict=True)]
@@ -318,6 +315,7 @@ class AssessmentStore:
             if existing:
                 return json.loads(existing[0])
             db.execute("INSERT INTO snapshots VALUES (?,?,?,?,?)", (result["snapshotId"], digest, payload.assessmentId, result["createdAt"], encode(result)))
+            self._automated_decisions(db, result)
         return result
 
     def snapshot(self, snapshot_id):
@@ -337,7 +335,7 @@ class AssessmentStore:
     @staticmethod
     def _held(db, question_version_id):
         row = db.execute("SELECT document FROM empirical_decisions WHERE question_version_id=? ORDER BY rowid DESC LIMIT 1", (question_version_id,)).fetchone()
-        return row is not None and json.loads(row[0])["action"] in {"revise", "quarantine"}
+        return row is not None and json.loads(row[0])["action"] in {"revise", "quarantine", "needs_ai_review"}
 
     def is_held(self, question_version_id: str) -> bool:
         with self.connection() as db:
@@ -348,22 +346,67 @@ class AssessmentStore:
             self._document(db, "snapshots", snapshot_id)
             return [json.loads(row[0]) for row in db.execute("SELECT document FROM empirical_decisions WHERE snapshot_id=? ORDER BY rowid", (snapshot_id,))]
 
-    def decide(self, snapshot_id: str, payload: EmpiricalDecisionInput, expert_id: str):
+    @staticmethod
+    def validate_snapshot(snapshot: DatasetSnapshot) -> None:
+        main = [row.model_dump(mode="json") for row in sorted(snapshot.rows, key=lambda r: r.questionVersionId)]
+        expansion = [row.model_dump(mode="json") for row in sorted(snapshot.expansionRows, key=lambda r: r.questionVersionId)]
+        if canonical_json_hash(main) != snapshot.snapshotHash:
+            raise AssessmentError("silver snapshot checksum mismatch")
+        if expansion and canonical_json_hash(expansion) != snapshot.expansionHash:
+            raise AssessmentError("silver expansion checksum mismatch")
+        if snapshot.labelProvenance != LABEL_PROVENANCE:
+            raise AssessmentError("delivery requires a qualified AI silver snapshot")
+        rows = [*snapshot.rows, *snapshot.expansionRows]
+        if not rows or len({row.questionVersionId for row in rows}) != len(rows):
+            raise AssessmentError("silver snapshot must contain unique item versions")
+        for row in rows:
+            try:
+                validate_provenance(row.decisionProvenance)
+            except ValueError as exc:
+                raise AssessmentError(str(exc)) from exc
+            if row.subjectTrack == "tl" and row.grade not in (11, 12):
+                raise AssessmentError("invalid TL grade")
+            labels = [option.label for option in row.options]
+            if (row.questionType != "multiple_choice" or len(labels) < 2 or len(set(labels)) != len(labels)
+                    or row.decisionProvenance.get("verifiedAnswerKey") not in labels
+                    or not row.verifiedMinimalSolution.strip() or not row.stem.strip()):
+                raise AssessmentError("silver content requires a verified key, solution and distinct options")
+            if row.decisionProvenance.get("visualEssential") and not row.visualTranscript:
+                raise AssessmentError("essential visual transcript is missing")
+
+    def register_snapshot(self, snapshot: DatasetSnapshot) -> dict:
+        self.validate_snapshot(snapshot)
+        digest = canonical_json_hash(snapshot.model_dump(mode="json"))
         with self.connection() as db:
-            snapshot = self._document(db, "snapshots", snapshot_id)
-            if payload.questionVersionId not in {item["questionVersionId"] for item in snapshot["items"]}:
-                raise AssessmentError("item version is not part of the snapshot", 404)
-            document = {**payload.model_dump(mode="json"), "snapshotId": snapshot_id, "snapshotHash": snapshot["snapshotHash"],
-                        "expertId": expert_id, "affectsGoldLabels": False,
-                        "nextStep": "new_content_version_and_blind_expert_review" if payload.action == "revise" else "hold_delivery" if payload.action == "quarantine" else "retain_current_labels"}
-            existing = db.execute("SELECT document FROM empirical_decisions WHERE idempotency_key=?", (payload.idempotencyKey,)).fetchone()
-            if existing:
-                original = json.loads(existing[0])
-                if any(original.get(key) != value for key, value in document.items()):
-                    raise AssessmentError("decision idempotency key conflicts with another decision")
-                return original
-            if db.execute("SELECT 1 FROM empirical_decisions WHERE snapshot_id=? AND question_version_id=?", (snapshot_id, payload.questionVersionId)).fetchone():
-                raise AssessmentError("this snapshot/item already has an immutable expert decision")
-            document.update(decisionId=str(uuid.uuid4()), createdAt=now().isoformat())
-            db.execute("INSERT INTO empirical_decisions VALUES (?,?,?,?,?)", (document["decisionId"], snapshot_id, payload.questionVersionId, payload.idempotencyKey, encode(document)))
-        return document
+            existing = db.execute("SELECT hash FROM dataset_snapshots WHERE id=?", (snapshot.snapshotId,)).fetchone()
+            if existing and existing[0] != digest:
+                raise AssessmentError("snapshot ID already refers to a different immutable silver dataset")
+            db.execute("INSERT OR IGNORE INTO dataset_snapshots VALUES (?,?,?)",
+                       (snapshot.snapshotId, digest, encode(snapshot.model_dump(mode="json"))))
+        return {"snapshotId": snapshot.snapshotId, "labelProvenance": LABEL_PROVENANCE,
+                "itemCount": len(snapshot.rows) + len(snapshot.expansionRows), "status": "silver_ready"}
+
+    def dataset_snapshot(self, snapshot_id: str) -> DatasetSnapshot:
+        with self.connection() as db:
+            return DatasetSnapshot.model_validate(self._document(db, "dataset_snapshots", snapshot_id))
+
+    @staticmethod
+    def _automated_decisions(db, result):
+        for item in result["items"]:
+            route = item["recommendedRouting"]
+            action = "needs_ai_review" if route == "ai_review" else "collect_more_events" if route == "collect_more_events" else "retain"
+            # Statistical changes cannot release a version pending AI revalidation.
+            # A corrected, newly validated version has a different immutable ID.
+            if AssessmentStore._held(db, item["questionVersionId"]):
+                action = "needs_ai_review"
+            key = f"auto:{result['snapshotId']}:{item['questionVersionId']}"
+            decision = {"decisionId": str(uuid.uuid4()), "idempotencyKey": key,
+                        "snapshotId": result["snapshotId"], "snapshotHash": result["snapshotHash"],
+                        "questionVersionId": item["questionVersionId"], "action": action,
+                        "actorType": "system", "policyVersion": POLICY_VERSION,
+                        "reviewFlags": item["reviewFlags"], "affectsSilverLabels": False,
+                        "nextStep": "new_content_version_and_blind_ai_validation" if action == "needs_ai_review"
+                                    else "collect_more_events" if action == "collect_more_events" else "retain_silver_labels",
+                        "createdAt": now().isoformat()}
+            db.execute("INSERT OR IGNORE INTO empirical_decisions VALUES (?,?,?,?,?)",
+                       (decision["decisionId"], result["snapshotId"], item["questionVersionId"], key, encode(decision)))

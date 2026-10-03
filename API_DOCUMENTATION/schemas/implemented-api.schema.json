@@ -1,101 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:nalar:implemented-api:2.1.0",
+  "$id": "urn:nalar:implemented-api:2.2.0",
   "title": "Nalar implemented FastAPI contracts",
   "$defs": {
-    "AdjudicationDecisionInput": {
-      "properties": {
-        "idempotencyKey": {
-          "type": "string",
-          "maxLength": 128,
-          "minLength": 8,
-          "title": "Idempotencykey"
-        },
-        "mathCognitiveDomain": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/CognitiveDomain"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "knowledgeDimension": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/KnowledgeDimension"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "intendedDifficulty": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/IntendedDifficulty"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "contentEligible": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Contenteligible"
-        },
-        "verifiedAnswerKey": {
-          "anyOf": [
-            {
-              "type": "string",
-              "maxLength": 100
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Verifiedanswerkey"
-        },
-        "verifiedMinimalSolution": {
-          "anyOf": [
-            {
-              "type": "string",
-              "maxLength": 8000
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Verifiedminimalsolution"
-        },
-        "rationale": {
-          "type": "string",
-          "maxLength": 8000,
-          "minLength": 3,
-          "title": "Rationale"
-        },
-        "insufficientEvidence": {
-          "type": "boolean",
-          "title": "Insufficientevidence",
-          "default": false
-        }
-      },
-      "additionalProperties": false,
-      "type": "object",
-      "required": [
-        "idempotencyKey",
-        "rationale"
-      ],
-      "title": "AdjudicationDecisionInput"
-    },
     "AnalysisPolicy": {
       "properties": {
         "policyVersion": {
@@ -275,9 +182,18 @@
         },
         "grade": {
           "type": "integer",
-          "maximum": 6.0,
+          "maximum": 12.0,
           "minimum": 1.0,
           "title": "Grade"
+        },
+        "subjectTrack": {
+          "type": "string",
+          "enum": [
+            "regular",
+            "tl"
+          ],
+          "title": "Subjecttrack",
+          "default": "regular"
         },
         "sessionTtlMinutes": {
           "type": "integer",
@@ -718,6 +634,115 @@
       ],
       "title": "CttItemMetrics"
     },
+    "DatasetSnapshot": {
+      "properties": {
+        "snapshotId": {
+          "type": "string",
+          "title": "Snapshotid"
+        },
+        "snapshotHash": {
+          "type": "string",
+          "title": "Snapshothash"
+        },
+        "inputSchemaVersion": {
+          "type": "string",
+          "title": "Inputschemaversion",
+          "default": "math-question-text-v1"
+        },
+        "seed": {
+          "type": "integer",
+          "title": "Seed"
+        },
+        "splitRatios": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "type": "object",
+          "title": "Splitratios"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/TrainingRow"
+          },
+          "type": "array",
+          "title": "Rows"
+        },
+        "expansionRows": {
+          "items": {
+            "$ref": "#/$defs/TrainingRow"
+          },
+          "type": "array",
+          "title": "Expansionrows"
+        },
+        "splitManifest": {
+          "items": {
+            "$ref": "#/$defs/SplitEntry"
+          },
+          "type": "array",
+          "title": "Splitmanifest"
+        },
+        "splitManifestHash": {
+          "type": "string",
+          "title": "Splitmanifesthash"
+        },
+        "testUnlockStatus": {
+          "type": "string",
+          "enum": [
+            "locked",
+            "eligible_to_unlock"
+          ],
+          "title": "Testunlockstatus"
+        },
+        "expansionHash": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Expansionhash"
+        },
+        "researchOnly": {
+          "type": "boolean",
+          "title": "Researchonly",
+          "default": false
+        },
+        "labelProvenance": {
+          "type": "string",
+          "title": "Labelprovenance",
+          "default": "ai_silver"
+        },
+        "gateFailures": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "title": "Gatefailures"
+        },
+        "exclusionSummary": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "type": "object",
+          "title": "Exclusionsummary"
+        }
+      },
+      "type": "object",
+      "required": [
+        "snapshotId",
+        "snapshotHash",
+        "seed",
+        "splitRatios",
+        "rows",
+        "expansionRows",
+        "splitManifest",
+        "splitManifestHash",
+        "testUnlockStatus"
+      ],
+      "title": "DatasetSnapshot"
+    },
     "DeliveredItem": {
       "properties": {
         "deliveryInstanceId": {
@@ -782,114 +807,6 @@
         "item"
       ],
       "title": "DeliveryFinished"
-    },
-    "DiscussionOutcomeInput": {
-      "properties": {
-        "idempotencyKey": {
-          "type": "string",
-          "maxLength": 128,
-          "minLength": 8,
-          "title": "Idempotencykey"
-        },
-        "mathCognitiveDomain": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/CognitiveDomain"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "knowledgeDimension": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/KnowledgeDimension"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "intendedDifficulty": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/IntendedDifficulty"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "contentEligible": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Contenteligible"
-        },
-        "verifiedAnswerKey": {
-          "anyOf": [
-            {
-              "type": "string",
-              "maxLength": 100
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Verifiedanswerkey"
-        },
-        "verifiedMinimalSolution": {
-          "anyOf": [
-            {
-              "type": "string",
-              "maxLength": 8000
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Verifiedminimalsolution"
-        },
-        "rationale": {
-          "type": "string",
-          "maxLength": 8000,
-          "minLength": 3,
-          "title": "Rationale"
-        },
-        "insufficientEvidence": {
-          "type": "boolean",
-          "title": "Insufficientevidence",
-          "default": false
-        },
-        "participantExpertIds": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array",
-          "maxItems": 3,
-          "minItems": 3,
-          "title": "Participantexpertids"
-        },
-        "unresolvedAfterDiscussion": {
-          "type": "boolean",
-          "title": "Unresolvedafterdiscussion"
-        }
-      },
-      "additionalProperties": false,
-      "type": "object",
-      "required": [
-        "idempotencyKey",
-        "rationale",
-        "participantExpertIds",
-        "unresolvedAfterDiscussion"
-      ],
-      "title": "DiscussionOutcomeInput"
     },
     "DocumentMetadata": {
       "properties": {
@@ -982,13 +899,17 @@
         },
         "reviewRequired": {
           "type": "boolean",
-          "const": true,
           "title": "Reviewrequired"
         },
-        "goldLabelAuthority": {
-          "type": "boolean",
-          "const": false,
-          "title": "Goldlabelauthority"
+        "reviewMode": {
+          "type": "string",
+          "const": "automated_ai",
+          "title": "Reviewmode"
+        },
+        "labelProvenance": {
+          "type": "string",
+          "const": "ai_silver",
+          "title": "Labelprovenance"
         },
         "matrixHash": {
           "type": "string",
@@ -1133,7 +1054,8 @@
         "dataOrigin",
         "researchOnly",
         "reviewRequired",
-        "goldLabelAuthority",
+        "reviewMode",
+        "labelProvenance",
         "matrixHash",
         "normalization",
         "readiness",
@@ -1142,46 +1064,6 @@
         "irt"
       ],
       "title": "EmpiricalAnalysisResult"
-    },
-    "EmpiricalDecisionInput": {
-      "properties": {
-        "idempotencyKey": {
-          "type": "string",
-          "maxLength": 128,
-          "minLength": 8,
-          "title": "Idempotencykey"
-        },
-        "questionVersionId": {
-          "type": "string",
-          "maxLength": 250,
-          "minLength": 1,
-          "title": "Questionversionid"
-        },
-        "action": {
-          "type": "string",
-          "enum": [
-            "retain",
-            "revise",
-            "quarantine"
-          ],
-          "title": "Action"
-        },
-        "rationale": {
-          "type": "string",
-          "maxLength": 8000,
-          "minLength": 20,
-          "title": "Rationale"
-        }
-      },
-      "additionalProperties": false,
-      "type": "object",
-      "required": [
-        "idempotencyKey",
-        "questionVersionId",
-        "action",
-        "rationale"
-      ],
-      "title": "EmpiricalDecisionInput"
     },
     "EmpiricalItemResult": {
       "properties": {
@@ -1235,7 +1117,7 @@
           "type": "string",
           "enum": [
             "collect_more_events",
-            "expert_review",
+            "ai_review",
             "observation_only"
           ],
           "title": "Recommendedrouting"
@@ -1255,80 +1137,6 @@
         "recommendedRouting"
       ],
       "title": "EmpiricalItemResult"
-    },
-    "ExpertAnnotationInput": {
-      "properties": {
-        "idempotencyKey": {
-          "type": "string",
-          "maxLength": 128,
-          "minLength": 8,
-          "title": "Idempotencykey"
-        },
-        "contentValid": {
-          "type": "string",
-          "enum": [
-            "valid",
-            "revision_required",
-            "excluded",
-            "insufficient_evidence"
-          ],
-          "title": "Contentvalid"
-        },
-        "answerKeyStatus": {
-          "type": "string",
-          "enum": [
-            "verified",
-            "incorrect",
-            "ambiguous",
-            "insufficient_evidence"
-          ],
-          "title": "Answerkeystatus"
-        },
-        "verifiedAnswerKey": {
-          "anyOf": [
-            {
-              "type": "string",
-              "maxLength": 100
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Verifiedanswerkey"
-        },
-        "minimalSolution": {
-          "anyOf": [
-            {
-              "type": "string",
-              "maxLength": 8000
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Minimalsolution"
-        },
-        "mathCognitiveDomain": {
-          "$ref": "#/$defs/HeadAnnotation"
-        },
-        "knowledgeDimension": {
-          "$ref": "#/$defs/HeadAnnotation"
-        },
-        "intendedDifficulty": {
-          "$ref": "#/$defs/HeadAnnotation"
-        }
-      },
-      "additionalProperties": false,
-      "type": "object",
-      "required": [
-        "idempotencyKey",
-        "contentValid",
-        "answerKeyStatus",
-        "mathCognitiveDomain",
-        "knowledgeDimension",
-        "intendedDifficulty"
-      ],
-      "title": "ExpertAnnotationInput"
     },
     "ExtractedMathFormula": {
       "properties": {
@@ -1655,53 +1463,6 @@
       },
       "type": "object",
       "title": "HTTPValidationError"
-    },
-    "HeadAnnotation": {
-      "properties": {
-        "label": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Label"
-        },
-        "evidence": {
-          "anyOf": [
-            {
-              "type": "string",
-              "maxLength": 4000
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Evidence"
-        },
-        "abstain": {
-          "type": "boolean",
-          "title": "Abstain",
-          "default": false
-        },
-        "abstainReason": {
-          "anyOf": [
-            {
-              "type": "string",
-              "maxLength": 1000
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Abstainreason"
-        }
-      },
-      "additionalProperties": false,
-      "type": "object",
-      "title": "HeadAnnotation"
     },
     "HeadPrediction": {
       "properties": {
@@ -2744,6 +2505,184 @@
       ],
       "title": "SessionReceipt"
     },
+    "SplitEntry": {
+      "properties": {
+        "questionVersionId": {
+          "type": "string",
+          "title": "Questionversionid"
+        },
+        "groupId": {
+          "type": "string",
+          "title": "Groupid"
+        },
+        "split": {
+          "type": "string",
+          "enum": [
+            "train",
+            "validation",
+            "test"
+          ],
+          "title": "Split"
+        }
+      },
+      "type": "object",
+      "required": [
+        "questionVersionId",
+        "groupId",
+        "split"
+      ],
+      "title": "SplitEntry"
+    },
+    "TrainingRow": {
+      "properties": {
+        "questionId": {
+          "type": "string",
+          "title": "Questionid"
+        },
+        "questionVersionId": {
+          "type": "string",
+          "title": "Questionversionid"
+        },
+        "contentVersion": {
+          "type": "integer",
+          "title": "Contentversion"
+        },
+        "contentHash": {
+          "type": "string",
+          "title": "Contenthash"
+        },
+        "sourceGroup": {
+          "type": "string",
+          "title": "Sourcegroup"
+        },
+        "duplicateFamily": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Duplicatefamily"
+        },
+        "grade": {
+          "type": "integer",
+          "title": "Grade"
+        },
+        "subjectTrack": {
+          "type": "string",
+          "enum": [
+            "regular",
+            "tl"
+          ],
+          "title": "Subjecttrack",
+          "default": "regular"
+        },
+        "topic": {
+          "type": "string",
+          "title": "Topic"
+        },
+        "subtopic": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Subtopic"
+        },
+        "questionType": {
+          "type": "string",
+          "title": "Questiontype"
+        },
+        "stimulus": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Stimulus"
+        },
+        "stem": {
+          "type": "string",
+          "title": "Stem"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/QuestionOption"
+          },
+          "type": "array",
+          "title": "Options"
+        },
+        "verifiedMinimalSolution": {
+          "type": "string",
+          "title": "Verifiedminimalsolution"
+        },
+        "detectedKko": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "title": "Detectedkko"
+        },
+        "visualTranscript": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Visualtranscript"
+        },
+        "mathCognitiveDomain": {
+          "$ref": "#/$defs/CognitiveDomain"
+        },
+        "knowledgeDimension": {
+          "$ref": "#/$defs/KnowledgeDimension"
+        },
+        "intendedDifficulty": {
+          "$ref": "#/$defs/IntendedDifficulty"
+        },
+        "rubricVersion": {
+          "type": "string",
+          "title": "Rubricversion"
+        },
+        "decisionProvenance": {
+          "additionalProperties": true,
+          "type": "object",
+          "title": "Decisionprovenance"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "questionId",
+        "questionVersionId",
+        "contentVersion",
+        "contentHash",
+        "sourceGroup",
+        "grade",
+        "topic",
+        "questionType",
+        "stem",
+        "options",
+        "verifiedMinimalSolution",
+        "mathCognitiveDomain",
+        "knowledgeDimension",
+        "intendedDifficulty",
+        "rubricVersion",
+        "decisionProvenance"
+      ],
+      "title": "TrainingRow"
+    },
     "V2ClassificationRequest": {
       "properties": {
         "questionId": {
@@ -2898,9 +2837,14 @@
         },
         "reviewRequired": {
           "type": "boolean",
-          "const": true,
           "title": "Reviewrequired",
           "default": true
+        },
+        "reviewMode": {
+          "type": "string",
+          "const": "automated_ai",
+          "title": "Reviewmode",
+          "default": "automated_ai"
         },
         "reasons": {
           "items": {
