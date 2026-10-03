@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "grade-aware-pilot-audit-v1",
+  "generatedAt": "2026-10-03T07:29:40.352141+00:00",
+  "source": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas1/soal_pretest_db.json",
+  "sourceSha256": "d845fa210b28a0644c5fa0a0c1c92cdcc089f94b68e72800067b227992aed176",
+  "checkpoint": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas1/revalidasi_blind_20261003_v2/seed_snapshot_20261003_v1/silver_labels.json",
+  "checkpointSha256": "fa405bb0f8280ed5dc536d73048217185c35dafaf125803ddecfd4db7bad8d65",
+  "checkpointLockedByAudit": true,
+  "grade": 1,
+  "promptVersion": "gemini-silver-math-3x4x3-v4-blind-key-verified",
+  "expectedPromptVersion": "gemini-silver-math-3x4x3-v4-blind-key-verified",
+  "rubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "expectedRubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "rubricHash": "77b63b9417c7122becfff3ba4451d03aade96f672e05e5bcd2d29b150cf850aa",
+  "expectedRubricHash": "77b63b9417c7122becfff3ba4451d03aade96f672e05e5bcd2d29b150cf850aa",
+  "expectedItemCount": 50,
+  "itemCount": 24,
+  "missingQuestionIds": [
+    "02bd8bfdfd682bd80aa5f426",
+    "17ba235cdc9fddc600303514",
+    "1f52d8dff6bbb1b9be6a4516",
+    "355049fbd1c523a25cd2de3d",
+    "593cbed3be61dd6c967e770c",
+    "595d20d8c4a6f9418dc496b0",
+    "5e007b54e25f6f72efa82174",
+    "62785ac6ff0622ab70a94b13",
+    "75434d44f2b377da3027e153",
+    "7aa38a3601f61c91adbf30d4",
+    "7bde28fb9ff374327ad9c3ae",
+    "82267daa87c52ac8b3876098",
+    "8812007076d1edea9f050f6f",
+    "98891851d1e28d6d8482ab94",
+    "a035dee2caefafa52096496e",
+    "aaf396a280df35704272b0d3",
+    "adaec31c66c75d9c825ad888",
+    "daa41e2808537d493a6c0994",
+    "dc65bbd6611c904972206f6c",
+    "ddae4518c6926e380356e576",
+    "dde0b5654f117861d23c7988",
+    "e7d8a29f2e3a28f99529dfc8",
+    "f00f8cf40ab22284c6d216e4",
+    "f6fcf5836947ff740007f70e",
+    "fb13c7e49793c36315b9e324",
+    "ff83d65211d6e4aa98e13b06"
+  ],
+  "extraQuestionIds": [],
+  "inputHashFailures": [],
+  "threeSuccessfulRuns": 24,
+  "threeSuccessfulRunsShare": 0.48,
+  "insufficientOrAbstained": 26,
+  "insufficientOrAbstainedShare": 0.52,
+  "labelDistributions": {
+    "mathCognitiveDomain": {
+      "knowing": 13,
+      "applying": 11
+    },
+    "knowledgeDimension": {
+      "factual": 6,
+      "conceptual": 7,
+      "procedural": 11
+    },
+    "intendedDifficulty": {
+      "Easy": 22,
+      "Medium": 2
+    }
+  },
+  "dominantDifficultyShare": 0.9166666666666666,
+  "blindLeakageTokens": [],
+  "evidenceFailures": [],
+  "boundaryAnalysisRequired": true,
+  "boundaryAnalysisReasons": [
+    "dominant_difficulty_share=0.917>0.90",
+    "difficulty_Hard_absent"
+  ],
+  "boundaryAnalysisAccepted": false,
+  "boundaryAnalysisRationale": null,
+  "gates": {
+    "allExpectedItemsPresent": false,
+    "threeSuccessfulRunsAtLeast90Percent": false,
+    "insufficientOrAbstainedBelow10Percent": false,
+    "blindPromptLeakageAbsent": true,
+    "checkpointSourceAndInputsMatch": true,
+    "promptAndRubricVersionMatch": true,
+    "requiredEvidenceComplete": true,
+    "boundaryAnalysisClear": false
+  },
+  "readyForExpansion": false
+}

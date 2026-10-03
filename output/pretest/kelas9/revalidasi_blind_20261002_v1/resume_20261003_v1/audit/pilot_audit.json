@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "grade-aware-pilot-audit-v1",
+  "generatedAt": "2026-10-03T07:33:19.776778+00:00",
+  "source": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas9/soal_pretest_db.json",
+  "sourceSha256": "b138ff3b11bce2373c9a83f70cb0d247d99dad97fb927153de82c497c85fd97f",
+  "checkpoint": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas9/revalidasi_blind_20261002_v1/resume_20261003_v1/silver_labels.json",
+  "checkpointSha256": "cdd1d722b0a3bdfc2eafc1a873123657e4eb25ff2c8b1dc58d3d435a0ce9413f",
+  "checkpointLockedByAudit": true,
+  "grade": 9,
+  "promptVersion": "gemini-silver-math-3x4x3-v7-blind-smp9-key-verified",
+  "expectedPromptVersion": "gemini-silver-math-3x4x3-v7-blind-smp9-key-verified",
+  "rubricVersion": "math-rubric-3x4x3-v5-smp9-grade-aware",
+  "expectedRubricVersion": "math-rubric-3x4x3-v5-smp9-grade-aware",
+  "rubricHash": "acd9be38d23c5cf0809ba56799cd177502b754cfbb7a2e55f4c9be07bed2cc1d",
+  "expectedRubricHash": "acd9be38d23c5cf0809ba56799cd177502b754cfbb7a2e55f4c9be07bed2cc1d",
+  "expectedItemCount": 42,
+  "itemCount": 42,
+  "missingQuestionIds": [],
+  "extraQuestionIds": [],
+  "inputHashFailures": [],
+  "threeSuccessfulRuns": 42,
+  "threeSuccessfulRunsShare": 1.0,
+  "insufficientOrAbstained": 1,
+  "insufficientOrAbstainedShare": 0.023809523809523808,
+  "labelDistributions": {
+    "mathCognitiveDomain": {
+      "applying": 27,
+      "knowing": 11,
+      "reasoning": 4
+    },
+    "knowledgeDimension": {
+      "conceptual": 20,
+      "procedural": 21,
+      "factual": 1
+    },
+    "intendedDifficulty": {
+      "Easy": 28,
+      "Medium": 14
+    }
+  },
+  "dominantDifficultyShare": 0.6666666666666666,
+  "blindLeakageTokens": [],
+  "evidenceFailures": [
+    "49861bd79ef9562f45188055:answer_key_not_verified",
+    "49861bd79ef9562f45188055:answer_key_not_verified",
+    "49861bd79ef9562f45188055:answer_key_not_verified",
+    "49861bd79ef9562f45188055:adjudication_answer_key_not_verified",
+    "b09a24b57d973871a9f482c8:answer_key_not_verified",
+    "b09a24b57d973871a9f482c8:answer_key_not_verified"
+  ],
+  "boundaryAnalysisRequired": true,
+  "boundaryAnalysisReasons": [
+    "difficulty_Hard_absent"
+  ],
+  "boundaryAnalysisAccepted": false,
+  "boundaryAnalysisRationale": null,
+  "gates": {
+    "allExpectedItemsPresent": true,
+    "threeSuccessfulRunsAtLeast90Percent": true,
+    "insufficientOrAbstainedBelow10Percent": true,
+    "blindPromptLeakageAbsent": true,
+    "checkpointSourceAndInputsMatch": true,
+    "promptAndRubricVersionMatch": true,
+    "requiredEvidenceComplete": false,
+    "boundaryAnalysisClear": false
+  },
+  "readyForExpansion": false
+}

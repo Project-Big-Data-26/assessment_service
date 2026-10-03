@@ -1,23 +1,15 @@
-# Hasil validasi kelas 5
+# Hasil validasi ulang kelas 5
 
-Folder ini adalah satu-satunya hasil validasi aktif untuk kelas ini.
+**Batch belum selesai:** 114/216 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
 
-Jumlah soal: **72**. Easy: **47**, Medium: **23**, Hard: **2**, belum diputuskan: **0**.
+Model LLM: `gemini-3.1-flash-lite`; metode blind N=3, rubrik kelas sasaran, verifikasi kunci/solusi, dan adjudikasi AI bila diperlukan. Label terkunci sebelum diagnostik IndoBERT.
 
-Mulai dari [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk penjelasan per soal. Label hasil ada di `items[].llmAdvisory.advisoryLabels` pada [validation_results.json](validation_results.json); periksa juga `finalRouting`.
+Gunakan [validation_results.json](validation_results.json) untuk data hasil dan `items[].llmAdvisory.advisoryLabels` bersama `finalRouting`. Baca [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk soal, perhitungan confidence/entropy, tiga suara, profil difficulty, adjudikasi, serta hasil akhir per soal. [questions.json](questions.json) memuat sumber dan spesifikasi jawaban terbatas; [indobert_predictions.json](indobert_predictions.json) memuat diagnostik model lama.
 
-| Isi | Kegunaan |
-|---|---|
-| [questions.json](questions.json) | Soal, opsi, dan spesifikasi jawaban |
-| [indobert_predictions.json](indobert_predictions.json) | Diagnostik model setelah label blind dikunci |
-| [difficulty_groups.json](difficulty_groups.json) | Semua kelompok kesulitan |
-| [Easy](difficulty/Easy.json), [Medium](difficulty/Medium.json), [Hard](difficulty/Hard.json), [undecided](difficulty/undecided.json) | Subset soal per kesulitan |
-| [Checkpoint](bukti_validasi/silver_labels.json) | Tiga run Gemini dan adjudikasi final, byte tetap |
-| [Audit](bukti_validasi/PILOT_AUDIT.md) | Gate validasi dan hash checkpoint |
-| [manifest.json](manifest.json) | Lokasi sumber dan SHA-256 seluruh berkas hasil |
+Distribusi: `{"mathCognitiveDomain": {"undecided": 34, "knowing": 9, "reasoning": 6, "applying": 23}, "knowledgeDimension": {"undecided": 34, "factual": 4, "conceptual": 18, "procedural": 16, "metacognitive": 0}, "intendedDifficulty": {"undecided": 34, "Easy": 23, "Hard": 2, "Medium": 13}}`. Routing: `{"llm_retry_or_manual_review": 34, "pending_expert_review": 38}`.
 
-Metode: Gemini blind N=3, rubrik kelas sasaran, verifikasi kunci dan solusi, adjudikasi AI bila diperlukan, lalu diagnostik IndoBERT. Seluruh label tetap silver/advisory; gold ahli null dan review ahli wajib. Tidak ada training ulang atau pengiriman ke siswa.
+Token sukses tercatat: 250,563; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Gold ahli tetap null; CTT/IRT belum dihitung. IndoBERT belum dilatih ulang dan hasil diagnostiknya tidak menentukan label blind.
 
-Routing: `{"pending_expert_review": 72}`. `readyForExpansion=true`.
+Audit tidak menyetujui ekspansi/training bila gate belum lolos. Gate batch: `{"allExpectedItemsPresent": false, "threeSuccessfulRunsAtLeast90Percent": false, "insufficientOrAbstainedBelow10Percent": false, "blindPromptLeakageAbsent": true, "checkpointSourceAndInputsMatch": true, "promptAndRubricVersionMatch": true, "requiredEvidenceComplete": true, "boundaryAnalysisClear": true}`.
 
-Sumber ekstraksi dan gambar berada satu tingkat di atas folder ini. Checkpoint dan audit disalin tanpa mengubah byte; path di dalam audit mencatat lokasi historis saat penilaian. Lokasi berkas yang berlaku saat ini mengikuti manifest. Hasil lama, checkpoint sementara, dan salinan bundle telah dibersihkan.
+Kelompok difficulty tersedia di [difficulty_groups.json](difficulty_groups.json), [Easy](difficulty/Easy.json), [Medium](difficulty/Medium.json), dan [Hard](difficulty/Hard.json). `contentQualified` hanya menandai soal tanpa blocker konten; seluruh soal tetap menunggu ahli. Kategori kosong tetap diekspor. Item tanpa keputusan tersedia di [undecided](difficulty/undecided.json).

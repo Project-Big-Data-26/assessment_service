@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "grade-aware-pilot-audit-v1",
+  "generatedAt": "2026-10-03T07:33:59.376229+00:00",
+  "source": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas3/soal_pretest_db.json",
+  "sourceSha256": "73931eadeabe208f7014e3acaaa000dc419ce90d5cf402e3d77effa813411938",
+  "checkpoint": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas3/revalidasi_blind_20261003_v2/seed_snapshot_20261003_v1/silver_labels.json",
+  "checkpointSha256": "77386aa1a6164d6b4dbf159cf93ab2eb2cfbd5e07dacbde4ca33da8846951b80",
+  "checkpointLockedByAudit": true,
+  "grade": 3,
+  "promptVersion": "gemini-silver-math-3x4x3-v4-blind-key-verified",
+  "expectedPromptVersion": "gemini-silver-math-3x4x3-v4-blind-key-verified",
+  "rubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "expectedRubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "rubricHash": "77b63b9417c7122becfff3ba4451d03aade96f672e05e5bcd2d29b150cf850aa",
+  "expectedRubricHash": "77b63b9417c7122becfff3ba4451d03aade96f672e05e5bcd2d29b150cf850aa",
+  "expectedItemCount": 42,
+  "itemCount": 31,
+  "missingQuestionIds": [
+    "076b46a03e171eb8019de109",
+    "0b7434eea7cad7663b154cc2",
+    "0c970a6aff64277c753f7671",
+    "655cea6ab3fa2ff165080502",
+    "75434d44f2b377da3027e153",
+    "80e0cb21740609959b756bf3",
+    "8de4f21dafd4452f79f06e71",
+    "a33c3cd30e2555b8f613b155",
+    "af80792faa77f2a7be932750",
+    "d0868911a2fc9547f4f8231b",
+    "e5989dcabcf5ead62a6aec0b"
+  ],
+  "extraQuestionIds": [],
+  "inputHashFailures": [],
+  "threeSuccessfulRuns": 31,
+  "threeSuccessfulRunsShare": 0.7380952380952381,
+  "insufficientOrAbstained": 12,
+  "insufficientOrAbstainedShare": 0.2857142857142857,
+  "labelDistributions": {
+    "mathCognitiveDomain": {
+      "knowing": 5,
+      "applying": 26
+    },
+    "knowledgeDimension": {
+      "factual": 4,
+      "procedural": 17,
+      "conceptual": 10
+    },
+    "intendedDifficulty": {
+      "Easy": 22,
+      "Medium": 9
+    }
+  },
+  "dominantDifficultyShare": 0.7096774193548387,
+  "blindLeakageTokens": [],
+  "evidenceFailures": [
+    "8daba6059f9c3edf55ee4254:answer_key_not_verified",
+    "8daba6059f9c3edf55ee4254:answer_key_not_verified",
+    "8daba6059f9c3edf55ee4254:answer_key_not_verified",
+    "8daba6059f9c3edf55ee4254:adjudication_answer_key_not_verified"
+  ],
+  "boundaryAnalysisRequired": true,
+  "boundaryAnalysisReasons": [
+    "difficulty_Hard_absent"
+  ],
+  "boundaryAnalysisAccepted": false,
+  "boundaryAnalysisRationale": null,
+  "gates": {
+    "allExpectedItemsPresent": false,
+    "threeSuccessfulRunsAtLeast90Percent": false,
+    "insufficientOrAbstainedBelow10Percent": false,
+    "blindPromptLeakageAbsent": true,
+    "checkpointSourceAndInputsMatch": true,
+    "promptAndRubricVersionMatch": true,
+    "requiredEvidenceComplete": false,
+    "boundaryAnalysisClear": false
+  },
+  "readyForExpansion": false
+}

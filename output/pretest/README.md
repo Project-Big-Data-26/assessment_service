@@ -1,48 +1,32 @@
-# Hasil validasi kelas 1-12
+# Hasil validasi kelas 1–12
 
-Gunakan **`kelasN/hasil_validasi/`** sebagai laporan aktif untuk setiap kelas. Label masih silver/advisory dan membutuhkan pemeriksaan ahli. **Kelas 8–12 tertahan kuota harian Gemini: kelas 8 baru 8/126 run awal sukses, sedangkan kelas 9–12 belum memiliki penilaian AI berhasil.**
+Gunakan `kelasN/hasil_validasi/` sebagai laporan aktif untuk versi soal saat ini. Label AI tetap silver/advisory dan membutuhkan pemeriksaan ahli.
 
-| Kelas | Soal | Easy | Medium | Hard | Belum diputuskan | Laporan |
-|---|---:|---:|---:|---:|---:|---|
-| [1](kelas1/hasil_validasi/README.md) | 50 | 48 | 2 | 0 | 0 | [Laporan](kelas1/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [2](kelas2/hasil_validasi/README.md) | 44 | 37 | 6 | 0 | 1 | [Laporan](kelas2/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [3](kelas3/hasil_validasi/README.md) | 42 | 33 | 9 | 0 | 0 | [Laporan](kelas3/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [4](kelas4/hasil_validasi/README.md) | 18 | 14 | 4 | 0 | 0 | [Laporan](kelas4/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [5](kelas5/hasil_validasi/README.md) | 72 | 47 | 23 | 2 | 0 | [Laporan](kelas5/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [6](kelas6/hasil_validasi/README.md) | 25 | 16 | 9 | 0 | 0 | [Laporan](kelas6/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [7](kelas7/hasil_validasi/README.md) | 49 | 28 | 20 | 1 | 0 | [Laporan](kelas7/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [8 (sementara)](kelas8/hasil_validasi/README.md) | 42 | 1 | 1 | 0 | 40 | [Laporan sementara](kelas8/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [9 (belum dinilai)](kelas9/hasil_validasi/README.md) | 42 | 0 | 0 | 0 | 42 | [Laporan status](kelas9/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [10 (belum dinilai)](kelas10/hasil_validasi/README.md) | 46 | 0 | 0 | 0 | 46 | [Laporan status](kelas10/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [11 (menunggu kuota)](kelas11/hasil_validasi/README.md) | 22 | 0 | 0 | 0 | 22 | [Laporan status](kelas11/hasil_validasi/LAPORAN_VALIDASI.md) |
-| [12 (menunggu kuota)](kelas12/hasil_validasi/README.md) | 32 | 0 | 0 | 0 | 32 | [Laporan status](kelas12/hasil_validasi/LAPORAN_VALIDASI.md) |
+Pembaruan 3 Oktober 2026: validasi kelas 8–12 dilanjutkan dari checkpoint setelah reset kuota. Run sukses lama dipertahankan; audit dan laporan aktif diperbarui setelah setiap batch.
 
-```text
-kelas1/ ... kelas12/
-  hasil_validasi/
-    LAPORAN_VALIDASI.md
-    validation_results.json
-    questions.json
-    indobert_predictions.json
-    difficulty_groups.json
-    difficulty/
-    bukti_validasi/
-    manifest.json
-    README.md
-  images/
-  bab*.json
-  soal_pretest_db.json
-  sesi_pretest.json
-  CATATAN.md
-  _status.json
-```
+**Koreksi sumber kelas 1–5:** 102 soal berubah setelah penilaian sebelumnya, termasuk perubahan gambar. Hanya run dengan input, prompt, dan byte gambar yang masih cocok dipertahankan. Soal yang berubah ditandai `undecided` dan masuk checkpoint baru `revalidasi_blind_20261003_v2/`; snapshot penilaian sebelumnya tetap utuh.
 
-`images`, `bab*.json`, `soal_pretest_db.json`, dan `sesi_pretest.json` adalah sumber ekstraksi, bukan hasil validasi lama. Untuk kelas 1-6, checkpoint dan audit final ada di `hasil_validasi/bukti_validasi/`; arsip, hasil penilaian lama, checkpoint sementara, dan bundle duplikat telah dihapus. Snapshot training model aktif ada di `models/indobert-3x4x3-v1/training_provenance/`.
+| Kelas | Soal | Run sukses / target | Easy | Medium | Hard | Undecided | Soal perlu AI | Status |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| [1](kelas1/hasil_validasi/README.md) | 50 | 72/150 | 22 | 2 | 0 | 26 | 26 | Revalidasi koreksi sumber; menunggu kuota |
+| [2](kelas2/hasil_validasi/README.md) | 44 | 57/132 | 15 | 4 | 0 | 25 | 25 | Revalidasi koreksi sumber; menunggu kuota |
+| [3](kelas3/hasil_validasi/README.md) | 42 | 93/126 | 22 | 9 | 0 | 11 | 11 | Revalidasi koreksi sumber; menunggu kuota |
+| [4](kelas4/hasil_validasi/README.md) | 18 | 36/54 | 9 | 3 | 0 | 6 | 6 | Revalidasi koreksi sumber; menunggu kuota |
+| [5](kelas5/hasil_validasi/README.md) | 72 | 114/216 | 23 | 13 | 2 | 34 | 34 | Revalidasi koreksi sumber; menunggu kuota |
+| [6](kelas6/hasil_validasi/README.md) | 25 | 75/75 | 16 | 9 | 0 | 0 | 0 | Validasi AI lengkap |
+| [7](kelas7/hasil_validasi/README.md) | 49 | 147/147 | 28 | 20 | 1 | 0 | 0 | Validasi AI lengkap |
+| [8](kelas8/hasil_validasi/README.md) | 42 | 126/126 | 24 | 17 | 1 | 0 | 0 | Validasi AI lengkap |
+| [9](kelas9/hasil_validasi/README.md) | 42 | 126/126 | 28 | 14 | 0 | 0 | 0 | Validasi AI lengkap |
+| [10](kelas10/hasil_validasi/README.md) | 46 | 138/138 | 29 | 17 | 0 | 0 | 0 | Validasi AI lengkap |
+| [11](kelas11/hasil_validasi/README.md) | 22 | 62/66 | 15 | 4 | 1 | 2 | 2 | Belum lengkap; menunggu kuota |
+| [12](kelas12/hasil_validasi/README.md) | 32 | 0/96 | 0 | 0 | 0 | 32 | 32 | Belum lengkap; menunggu kuota |
 
-Kelas 7 memakai rubrik SMP dan blind N=3 dengan 147 run sukses serta 16 adjudikasi AI. Bukti batch dan audit terkunci disimpan di [revalidasi_blind_20261002_v1](kelas7/revalidasi_blind_20261002_v1/README.md). Semua soal masih `pending_expert_review`; gate ekspansi/training belum lolos karena satu run soal ke-37 menandai konflik kunci. IndoBERT lama hanya mendukung kelas 1-6, sehingga seluruh diagnostik kelas 7 `out_of_scope`/`abstain`. Label kelas 7 mengikuti Gemini blind, bukan prediksi IndoBERT.
+Sisa: **136 soal**, **406 run awal**, ditambah adjudikasi yang diperlukan. [Daftar tepat per kelas, ID soal, dan run yang belum ada](PENDING_AI_VALIDATION.json). [Ringkasan checkpoint](resume_20261003_v1_execution.json). [Petunjuk resume](RESUME_AI_VALIDATION.md).
 
-Kelas 8 memakai rubrik SMP tersendiri. Dua soal memiliki tiga run lengkap; soal ketiga baru dua run sukses; 39 soal belum dinilai. Angka Easy/Medium/Hard di atas masih sementara dan tidak menggambarkan distribusi akhir kelas 8. Checkpoint kerja tetap resumable; snapshot bukti yang dikunci berada di [partial-v1](kelas8/revalidasi_blind_20261002_v1/README.md). Seluruh 42 soal diekspor; 40 yang belum memiliki keputusan tetap `undecided`/`llm_retry_or_manual_review`. IndoBERT juga abstain di luar cakupan kelas 8.
+Kelas 1–5 menggunakan batch `revalidasi_blind_20261003_v2/`. Kelas 6 mempertahankan bukti di `hasil_validasi/bukti_validasi/`. Kelas 7–12 menggunakan `revalidasi_blind_20261002_v1/`. Semua checkpoint kerja dapat dilanjutkan; snapshot di folder audit dan laporan tidak di-resume.
 
-Kelas 9 telah disiapkan dengan rubrik SMP kelas 9. Panggilan AI pertama gagal karena kuota harian; seluruh 42 soal belum dinilai, sehingga nol Easy/Medium/Hard tidak menunjukkan distribusi difficulty. Checkpoint resume dan snapshot audit tersedia di [batch kelas 9](kelas9/revalidasi_blind_20261002_v1/README.md). Seluruh soal tetap `undecided`/`llm_retry_or_manual_review`; IndoBERT kelas 9 `out_of_scope`/`abstain`.
+`undecided` tidak disamakan dengan kegagalan konten. Lihat `finalRouting`: soal yang sudah dinilai AI dapat tetap membutuhkan revisi atau pemeriksaan ahli. Nol Easy/Medium/Hard pada batch belum lengkap bukan distribusi akhir.
 
-Kelas 10–12 memakai rubrik SMA per kelas dan [pelaksana batch serial](../../scripts/generate_silver_labels_sma.py). Panggilan pertama kelas 10 terkena kuota; kelas 11–12 ditandai menunggu blok yang sama tanpa panggilan API tambahan. Semua 100 soal belum dinilai dan tetap `undecided`, dengan target 300 run awal. Nol Easy/Medium/Hard bukan distribusi difficulty korpus. Lihat [status batch bersama](revalidasi_blind_20261002_v1_sma_execution.json) dan [runbook SMA](../../API_DOCUMENTATION/32_KELAS10_11_12_BLIND_VALIDATION.md) untuk resume. Semua diagnostik SMA `out_of_scope`/`abstain`; scope IndoBERT tetap SD 1–6.
+Model penilai tetap Gemini yang sama, metode blind N=3, verifikasi kunci/solusi/visual, dan adjudikasi AI bila diperlukan. Sumber soal dan opsi dipertahankan; satu gambar kelas 1 yang hilang dipulihkan dari salinan yang tersedia di proyek, dengan [provenance](kelas1/revalidasi_blind_20261003_v2/asset_recovery.json).
+
+IndoBERT lama hanya mendukung kelas 1–6; seluruh diagnostik kelas 7–12 tetap `out_of_scope`/`abstain`. Kelengkapan validasi AI tidak otomatis meloloskan gate training. Gold ahli tetap null; tidak ada training, publikasi soal, CTT, atau IRT dalam pembaruan ini.

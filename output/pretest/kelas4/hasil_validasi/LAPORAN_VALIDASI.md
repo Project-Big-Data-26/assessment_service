@@ -1,15 +1,17 @@
 # Validasi ulang soal kelas 4 — Gemini blind N=3 dan diagnostik IndoBERT
 
+**Batch belum selesai:** 36/54 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
+
 Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v4-blind-key-verified`. Rubrik: `math-rubric-3x4x3-v2-grade-aware`.
 
 Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas 4 tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan bukan keputusan ahli manusia.
 
 Checkpoint dikunci dengan SHA-256 sebelum inferensi IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Prediksi model lama dipakai untuk menunjukkan ketidaksepakatan; tidak diberikan kembali ke Gemini.
 
-Jumlah soal: 18; distribusi label advisory: `{"mathCognitiveDomain": {"applying": 17, "knowing": 1, "reasoning": 0}, "knowledgeDimension": {"conceptual": 10, "procedural": 8, "factual": 0, "metacognitive": 0}, "intendedDifficulty": {"Easy": 14, "Medium": 4, "Hard": 0}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 17, "knowing": 1, "reasoning": 0}, "knowledgeDimension": {"conceptual": 10, "procedural": 8, "factual": 0, "metacognitive": 0}, "intendedDifficulty": {"Easy": 14, "Medium": 4, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"pending_expert_review": 18}`.
-Run awal sukses: 54/54; adjudikasi: 4; token sukses tercatat: 126,681.
+Jumlah soal: 18; distribusi label advisory: `{"mathCognitiveDomain": {"undecided": 6, "applying": 11, "knowing": 1, "reasoning": 0}, "knowledgeDimension": {"undecided": 6, "procedural": 6, "conceptual": 6, "factual": 0, "metacognitive": 0}, "intendedDifficulty": {"undecided": 6, "Easy": 9, "Medium": 3, "Hard": 0}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 11, "knowing": 1, "reasoning": 0}, "knowledgeDimension": {"procedural": 6, "conceptual": 6, "factual": 0, "metacognitive": 0}, "intendedDifficulty": {"Easy": 9, "Medium": 3, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"llm_retry_or_manual_review": 6, "pending_expert_review": 12}`.
+Run awal sukses: 36/54; adjudikasi: 2; token sukses tercatat: 72,352.
 
 Seluruh label masih silver/advisory, gold manusia tetap null, dan publishing otomatis tidak diaktifkan. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -22,8 +24,8 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 14 | 14 | [Easy.json](difficulty/Easy.json) |
-| Medium | 4 | 4 | [Medium.json](difficulty/Medium.json) |
+| Easy | 9 | 9 | [Easy.json](difficulty/Easy.json) |
+| Medium | 3 | 3 | [Medium.json](difficulty/Medium.json) |
 | Hard | 0 | 0 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
@@ -34,7 +36,7 @@ Suara awal LLM dihitung dari label yang benar-benar diberikan tiap run; abstain 
 
 ## 1. Soal `bc95fc44d6c120fad4812c7c`
 
-Slamet membantu ibu membagikan beras kepada masyarakat kurang mampu. Total beras yang dibagikan oleh Ibu Slamet 10 kg. Ibu Slamet akan membagikan semua beras ke beberapa orang dengan berat yang sama. Bantulah ibu Slamet untuk membagikan beras tersebut. Tuliskan kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?
+Slamet membantu ibu membagikan beras kepada masyarakat kurang mampu. Total beras yang dibagikan oleh Ibu Slamet 10 kg. Ibu Slamet akan membagikan semua beras ke beberapa orang dengan berat yang sama. Bantulah ibu Slamet untuk membagikan beras tersebut. Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?
 
 | Opsi | Isi |
 |---|---|
@@ -43,93 +45,27 @@ Slamet membantu ibu membagikan beras kepada masyarakat kurang mampu. Total beras
 | C | 1 orang, 2 orang, 3 orang, 5 orang, atau 10 orang |
 | D | 2 orang, 3 orang, 4 orang, atau 5 orang |
 
-Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Mencari faktor dari 10. Faktor dari 10 adalah bilangan yang membagi habis 10, yaitu 1, 2, 5, dan 10.
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
-Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 4 / Matematika SD Kelas 4. KKO: `['menyebutkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `56b7d5202cd0a57da10f942f1dd9a3f7184f89588de81d2019d0a6f2559b1f35`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 4 / Matematika SD Kelas 4. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `46ba65bf6ce31bd9c24a2af1efea7f63ecc4db00b231fadbb93bb50c098bcd11`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 1478 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 1476 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 1486 |
-
-Run 1 — solusi: Mencari faktor dari 10. Faktor dari 10 adalah bilangan yang membagi habis 10, yaitu 1, 2, 5, dan 10.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep faktor untuk menyelesaikan masalah pembagian rata (tanpa sisa) dalam situasi kontekstual yang rutin.. Bukti: Bantulah ibu Slamet untuk membagikan beras tersebut. Tuliskan kemungkinan banyaknya orang
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara pembagian dan faktor bilangan (konsep faktor).. Bukti: kemungkinan banyaknya orang yang akan mendapat pembagian beras
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya meminta siswa mengidentifikasi faktor dari bilangan kecil (10) yang merupakan prosedur standar di kelas 4.. Bukti: Total beras yang dibagikan oleh Ibu Slamet 10 kg; membagikan semua beras ke beberapa orang dengan berat yang sama
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang operasi pembagian dan konsep faktor bilangan. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Mencari faktor bilangan adalah materi standar kelas 4. Soal ini menggunakan angka kecil (10) sehingga beban kognitif rendah. |
-
-Run 2 — solusi: Mencari faktor dari 10. Faktor dari 10 adalah bilangan yang dapat membagi habis 10, yaitu 1, 2, 5, dan 10.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep faktor untuk memecahkan masalah pembagian yang sama rata, yang merupakan prosedur rutin dalam konteks kelas 4.. Bukti: Bantulah ibu Slamet untuk membagikan beras tersebut. Tuliskan kemungkinan banyaknya orang
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang hubungan antara pembagian dan faktor bilangan (konsep faktor).. Bukti: kemungkinan banyaknya orang yang akan mendapat pembagian beras
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena melibatkan bilangan kecil (10) dan konsep faktor dasar yang sudah dipelajari di kelas 4.. Bukti: Total beras yang dibagikan oleh Ibu Slamet 10 kg; membagikan semua beras ke beberapa orang dengan berat yang sama
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pembagian dan konsep faktor bilangan. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 4 karena fokus pada penerapan konsep faktor pada bilangan kecil dalam konteks sehari-hari. |
-
-Run 3 — solusi: Mencari faktor dari 10 (bilangan yang membagi habis 10) yaitu 1, 2, 5, dan 10.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep faktor untuk memecahkan masalah pembagian yang habis dibagi (tanpa sisa) dalam konteks kehidupan sehari-hari.. Bukti: Bantulah ibu Slamet untuk membagikan beras tersebut. Tuliskan kemungkinan banyaknya orang
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara pembagian dan faktor bilangan.. Bukti: kemungkinan banyaknya orang yang akan mendapat pembagian beras
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya meminta siswa mengidentifikasi faktor dari bilangan kecil (10) yang merupakan prosedur rutin di kelas 4.. Bukti: Total beras yang dibagikan oleh Ibu Slamet 10 kg; membagikan semua beras ke beberapa orang dengan berat yang sama
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang operasi pembagian dan konsep faktor bilangan. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Mencari faktor bilangan adalah materi standar kelas 4 SD. Soal ini langsung menanyakan faktor dari 10 tanpa kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {} | no_consensus / incomplete | — |
+| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
+| Intended difficulty | {} | no_consensus / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -137,18 +73,9 @@ Model membaca representation `metadata`; token input 150/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000000; applying=1.000000; reasoning=0.000000 | applying | 1.000000 | 0.000000 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.007635; conceptual=0.963250; procedural=0.029115; metacognitive=0.000000 | conceptual | 0.963250 | 0.127140 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.739697; Medium=0.253541; Hard=0.006762 | Easy | 0.739697 | 0.550452 | review / selective_threshold_gate_not_met |
-
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000000; H = 0.000000/ln(3) = 0.000000; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.963250; −Σp ln(p) = 0.176253; H = 0.176253/ln(4) = 0.127140; T = 0.209800.
-
-
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.739697; −Σp ln(p) = 0.604733; H = 0.604733/ln(3) = 0.550452; T = 0.953328.
-
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -158,7 +85,7 @@ Topik: Matematika SD Kelas 4
 Subtopik: Faktor dan Kelipatan
 Tipe soal: multiple_choice
 Stimulus: -
-Soal: Slamet membantu ibu membagikan beras kepada masyarakat kurang mampu. Total beras yang dibagikan oleh Ibu Slamet 10 kg. Ibu Slamet akan membagikan semua beras ke beberapa orang dengan berat yang sama. Bantulah ibu Slamet untuk membagikan beras tersebut. Tuliskan kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?
+Soal: Slamet membantu ibu membagikan beras kepada masyarakat kurang mampu. Total beras yang dibagikan oleh Ibu Slamet 10 kg. Ibu Slamet akan membagikan semua beras ke beberapa orang dengan berat yang sama. Bantulah ibu Slamet untuk membagikan beras tersebut. Berapa kemungkinan banyaknya orang yang akan mendapat pembagian beras dari Ibu Slamet?
 Pilihan: A. 1 orang, 2 orang, 5 orang, atau 10 orang
 B. 10 orang, 20 orang, 30 orang, atau 40 orang
 C. 1 orang, 2 orang, 3 orang, 5 orang, atau 10 orang
@@ -170,9 +97,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
-Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 2. Soal `51d112e2cf5ac0ac6feceb42`
@@ -344,7 +271,7 @@ Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan un
 
 ## 3. Soal `d8e3e19d701550680f504300`
 
-Tulislah pembagian berikut sebagai pengurangan berulang!<br><br>16 : 4 = .....
+Tentukan pembagian berikut sebagai pengurangan berulang!<br><br>16 : 4 = .....
 
 | Opsi | Isi |
 |---|---|
@@ -353,134 +280,37 @@ Tulislah pembagian berikut sebagai pengurangan berulang!<br><br>16 : 4 = .....
 | C | 5 kali (20-4-4-4-4-4=0) |
 | D | 12 kali (16-4=12, dianggap tiap kali kurang 1) |
 
-Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Pembagian 16 : 4 berarti mengurangi 16 dengan 4 secara berulang sampai hasilnya 0. Langkahnya: 16 - 4 = 12, 12 - 4 = 8, 8 - 4 = 4, 4 - 4 = 0. Terdapat 4 kali pengurangan.
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
-Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 4 / Matematika SD Kelas 4. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1bc872bfabbec90ffb6b49b93e5840f04d99b0d4bb6cc35e4c98e50d597e9bca`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 4 / Matematika SD Kelas 4. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fb41769e2d07a162dfab8b00429a23834178b67c42acd054d55a71e7b46197aa`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 1409 |
-| 2 | success | valid / verified | applying | procedural | Easy | 1403 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 1406 |
-
-Run 1 — solusi: Pembagian 16 : 4 berarti mengurangi 16 dengan 4 secara berulang sampai hasilnya 0. Langkahnya: 16 - 4 = 12, 12 - 4 = 8, 8 - 4 = 4, 4 - 4 = 0. Ada 4 kali pengurangan.
-- Domain kognitif `classify/knowing`: Siswa diminta mengenali representasi konsep pembagian sebagai pengurangan berulang, yang merupakan prosedur dasar dalam memahami operasi pembagian.. Bukti: Tulislah pembagian berikut sebagai pengurangan berulang! 16 : 4 = .....
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai hubungan antara konsep pembagian dan prosedur pengurangan berulang.. Bukti: Tulislah pembagian berikut sebagai pengurangan berulang!
-- Intended difficulty `classify/Easy`: Soal ini bersifat prosedural langsung dengan angka kecil yang familiar bagi siswa kelas 4, tidak memerlukan strategi kompleks.. Bukti: 16 : 4 = .....
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar pengurangan dan konsep pembagian sebagai pengurangan berulang. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 4 karena pembagian dengan pengurangan berulang adalah materi dasar yang diajarkan di tingkat ini. |
-
-Run 2 — solusi: Pembagian 16 : 4 berarti mengurangi 16 dengan 4 secara berulang sampai hasilnya 0. Langkahnya: 16 - 4 = 12, 12 - 4 = 8, 8 - 4 = 4, 4 - 4 = 0. Ada 4 kali pengurangan.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep pembagian sebagai pengurangan berulang, yang merupakan prosedur rutin yang diajarkan di kelas 4.. Bukti: Tulislah pembagian berikut sebagai pengurangan berulang!; 16 : 4 = .....
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau teknik pembagian melalui pengurangan berulang.. Bukti: Tulislah pembagian berikut sebagai pengurangan berulang!
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung, menggunakan angka kecil, dan mengikuti prosedur standar yang familiar bagi siswa kelas 4.. Bukti: 16 : 4 = .....; 16-4-4-4-4=0
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep pengurangan dan pembagian dasar. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 4 untuk memahami pembagian sebagai pengurangan berulang. |
-
-Run 3 — solusi: Pembagian 16 : 4 berarti mengurangi 16 dengan 4 secara berulang sampai hasilnya 0. Langkahnya: 16 - 4 = 12, 12 - 4 = 8, 8 - 4 = 4, 4 - 4 = 0. Ada 4 kali pengurangan.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep dasar pembagian sebagai pengurangan berulang, yang merupakan prosedur rutin yang diajarkan di kelas 4.. Bukti: Tulislah pembagian berikut sebagai pengurangan berulang! 16 : 4
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara operasi pembagian dan algoritma pengurangan berulang.. Bukti: Tulislah pembagian berikut sebagai pengurangan berulang!
-- Intended difficulty `classify/Easy`: Soal ini bersifat prosedural langsung dengan angka kecil yang familiar bagi siswa kelas 4, tidak memerlukan strategi kompleks.. Bukti: 16 : 4 = .....
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep pengurangan dan pembagian dasar. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 4 karena pembagian sebagai pengurangan berulang adalah materi dasar yang rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 1, "applying": 2} | majority_2_of_3 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `2711`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa diminta menerapkan prosedur rutin (pengurangan berulang) untuk menyelesaikan operasi pembagian dasar. Ini adalah penerapan konsep yang sudah dipelajari.
-- Dimensi pengetahuan `procedural`: Soal ini secara spesifik menguji pemahaman siswa tentang algoritma atau teknik pengurangan berulang sebagai representasi dari operasi pembagian.
-- Intended difficulty `Easy`: Soal ini bersifat prosedural langsung, menggunakan angka kecil, dan mengikuti pola rutin yang diajarkan di kelas 4.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep pengurangan dan pembagian dasar. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 4 untuk memahami pembagian sebagai pengurangan berulang. |
+| Domain kognitif | {} | no_consensus / incomplete | — |
+| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
+| Intended difficulty | {} | no_consensus / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 123/256; truncation: `False`.
+Model membaca representation `metadata`; token input 122/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000071; applying=0.999929; reasoning=0.000000 | applying | 0.999929 | 0.000684 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.026982; conceptual=0.956172; procedural=0.016845; metacognitive=0.000000 | conceptual | 0.956172 | 0.150848 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.853302; Medium=0.144405; Hard=0.002293 | Easy | 0.853302 | 0.390264 | review / selective_threshold_gate_not_met |
-
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999929; −Σp ln(p) = 0.000752; H = 0.000752/ln(3) = 0.000684; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.956172; −Σp ln(p) = 0.209119; H = 0.209119/ln(4) = 0.150848; T = 0.209800.
-
-
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.853302; −Σp ln(p) = 0.428749; H = 0.428749/ln(3) = 0.390264; T = 0.953328.
-
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -490,7 +320,7 @@ Topik: Matematika SD Kelas 4
 Subtopik: Pembagian Bilangan Cacah sampai 100
 Tipe soal: multiple_choice
 Stimulus: -
-Soal: Tulislah pembagian berikut sebagai pengurangan berulang!
+Soal: Tentukan pembagian berikut sebagai pengurangan berulang!
 
 16 : 4 = .....
 Pilihan: A. 3 kali (16-4-4-4=4)
@@ -504,9 +334,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
-Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 4. Soal `f01f2f8c93ea076e4331abae`
@@ -797,7 +627,7 @@ Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan un
 
 ## 6. Soal `764036b9759f6277bc4dca51`
 
-Perhatikan gambar yang diwarnai berikut. Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat. Berilah tanda silang pada gambar yang tidak menunjukkan seperempat.<br><br>Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat.
+Perhatikan gambar yang diwarnai berikut. Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat.
 
 | Opsi | Isi |
 |---|---|
@@ -806,124 +636,49 @@ Perhatikan gambar yang diwarnai berikut. Berilah tanda centang (✓) pada gambar
 | C | Gambar 2 (segi enam memanjang) |
 | D | Gambar 4 (kotak berpetak) |
 
-![Gambar sumber soal 6](<../images/kelas2_panduan_siswa_kelas2.pdf-0159-10.png>)
+![Gambar sumber soal 6](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0159-10.png>)
 
 
-![Gambar sumber soal 6](<../images/kelas2_panduan_siswa_kelas2.pdf-0159-11.png>)
+![Gambar sumber soal 6](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0159-11.png>)
 
 
-![Gambar sumber soal 6](<../images/kelas2_panduan_siswa_kelas2.pdf-0159-12.png>)
+![Gambar sumber soal 6](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0159-12.png>)
 
 
-![Gambar sumber soal 6](<../images/kelas2_panduan_siswa_kelas2.pdf-0159-13.png>)
+![Gambar sumber soal 6](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0159-13.png>)
 
 
-Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `Gambar 2 (segi enam memanjang)`.
-Solusi minimum hasil AI: Seperempat (1/4) dari suatu benda utuh harus terdiri dari empat bagian yang sama besar (kongruen). Hanya pada Gambar 2, garis pembagi vertikal dan horizontal membagi bangun tersebut menjadi empat bagian yang sama besar.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0159-10.png, images/kelas2_panduan_siswa_kelas2.pdf-0159-11.png, images/kelas2_panduan_siswa_kelas2.pdf-0159-12.png, images/kelas2_panduan_siswa_kelas2.pdf-0159-13.png. Transkripsi visual: Terdapat empat gambar bangun datar yang dibagi menjadi empat bagian dengan garis, beberapa bagian diarsir. Gambar 1: Segitiga dengan garis pembagi tidak simetris. Gambar 2: Segi enam memanjang dengan garis pembagi vertikal dan horizontal tepat di tengah, satu bagian diarsir. Gambar 3: Bangun menyerupai anak panah dengan pembagian tidak simetris. Gambar 4: Persegi panjang dengan pembagian tidak sama besar.
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0159-10.png, images/kelas2_panduan_siswa_kelas2.pdf-0159-11.png, images/kelas2_panduan_siswa_kelas2.pdf-0159-12.png, images/kelas2_panduan_siswa_kelas2.pdf-0159-13.png. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 4 / Matematika SD Kelas 4. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5273ff0dcdc35dd6dfcf6adf867a90d8dc10b12c1c9cefe72d0b25220f7c1182`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `70b0ede376650a6ac66cc1b7760b57ed2730ecbed19fe91295fbe403167d5d09`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 5906 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 5894 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 5926 |
-
-Run 1 — solusi: Seperempat (1/4) dari suatu benda utuh harus terdiri dari empat bagian yang sama besar (kongruen). Hanya pada Gambar 2, garis pembagi vertikal dan horizontal membagi bangun tersebut menjadi empat bagian yang sama besar.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep pecahan (seperempat) untuk mengidentifikasi apakah pembagian bangun datar menghasilkan bagian-bagian yang sama besar.. Bukti: Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang syarat pecahan (bagian yang sama besar) pada representasi visual.. Bukti: menunjukkan seperempat
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pemahaman visual dasar tentang pembagian benda menjadi bagian yang sama besar, yang merupakan materi standar kelas 4.. Bukti: Perhatikan gambar yang diwarnai berikut; Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan yang sama besar. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 4 diharapkan sudah mampu membedakan pembagian wilayah yang sama besar dan tidak sama besar secara visual. |
-
-Run 2 — solusi: Seperempat berarti satu dari empat bagian yang sama besar. Hanya pada Gambar 2, garis pembagi membagi bangun menjadi empat bagian dengan luas yang identik.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan pemahaman konsep pecahan (seperempat) untuk mengidentifikasi apakah pembagian bangun datar menghasilkan bagian-bagian yang sama besar.. Bukti: Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa yang dimaksud dengan 'seperempat' (bagian yang sama besar) dalam konteks geometri.. Bukti: menunjukkan seperempat; gambar yang diwarnai
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu melakukan inspeksi visual sederhana untuk membandingkan ukuran bagian-bagian bangun datar tanpa perhitungan kompleks.. Bukti: Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat.; Berilah tanda silang pada gambar yang tidak menunjukkan seperempat.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan yang sama besar. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 4 sudah familiar dengan konsep pecahan sederhana dan representasi visual bangun datar yang dibagi menjadi bagian-bagian. |
-
-Run 3 — solusi: Siswa harus mengidentifikasi bahwa 'seperempat' memerlukan pembagian benda menjadi 4 bagian yang sama besar (kongruen). Hanya Gambar 2 yang memenuhi kriteria ini.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan pemahaman konsep pecahan (seperempat) untuk mengevaluasi apakah pembagian pada setiap gambar menghasilkan bagian yang sama besar.. Bukti: Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' (bagian yang sama besar dari keseluruhan) dibandingkan sekadar menghafal prosedur.. Bukti: menunjukkan seperempat
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pengamatan visual langsung terhadap konsep dasar pecahan sebagai bagian dari keseluruhan yang sama besar, tanpa perhitungan kompleks.. Bukti: Perhatikan gambar yang diwarnai berikut.; Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan yang sama besar. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 4 diharapkan sudah memahami konsep pecahan sederhana dan dapat membedakan pembagian yang sama besar dan tidak sama besar secara visual. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {} | no_consensus / incomplete | — |
+| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
+| Intended difficulty | {} | no_consensus / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 183/256; truncation: `False`.
+Model membaca representation `metadata`; token input 89/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.003480; applying=0.996520; reasoning=0.000000 | applying | 0.996520 | 0.021095 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.013727; conceptual=0.976562; procedural=0.009711; metacognitive=0.000000 | conceptual | 0.976562 | 0.091635 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.772764; Medium=0.220913; Hard=0.006322 | Easy | 0.772764 | 0.514097 | review / selective_threshold_gate_not_met |
-
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.996520; −Σp ln(p) = 0.023175; H = 0.023175/ln(3) = 0.021095; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.976562; −Σp ln(p) = 0.127033; H = 0.127033/ln(4) = 0.091635; T = 0.209800.
-
-
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.772764; −Σp ln(p) = 0.564793; H = 0.564793/ln(3) = 0.514097; T = 0.953328.
-
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -933,23 +688,21 @@ Topik: Matematika SD Kelas 4
 Subtopik: Seperempat dari Benda Utuh
 Tipe soal: multiple_choice
 Stimulus: -
-Soal: Perhatikan gambar yang diwarnai berikut. Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat. Berilah tanda silang pada gambar yang tidak menunjukkan seperempat.
-
-Berilah tanda centang (✓) pada gambar yang menunjukkan seperempat.
+Soal: Perhatikan gambar yang diwarnai berikut. Mana gambar yang menunjukkan seperempat. Mana gambar yang tidak menunjukkan seperempat.
 Pilihan: A. Gambar 3 (bentuk anak panah)
 B. Gambar 1 (segitiga)
 C. Gambar 2 (segi enam memanjang)
 D. Gambar 4 (kotak berpetak)
-Transkripsi visual: Terdapat empat gambar bangun datar yang dibagi menjadi empat bagian dengan garis, beberapa bagian diarsir. Gambar 1: Segitiga dengan garis pembagi tidak simetris. Gambar 2: Segi enam memanjang dengan garis pembagi vertikal dan horizontal tepat di tengah, satu bagian diarsir. Gambar 3: Bangun menyerupai anak panah dengan pembagian tidak simetris. Gambar 4: Persegi panjang dengan pembagian tidak sama besar.
+Transkripsi visual: -
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
-Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 7. Soal `bcd1ec2726d4dc3e37ec631d`
@@ -1250,7 +1003,7 @@ Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan un
 
 ## 9. Soal `c5e424e9914591b1d5286ef0`
 
-Amati setiap pola berikut. Lanjutkan polanya dengan melingkari gambar berikutnya.<br><br>Amati setiap pola berikut (baris b). Lanjutkan polanya dengan melingkari gambar berikutnya.
+Amati setiap pola berikut. Mana lanjutan pola pada gambar berikutnya.<br><br>Amati setiap pola berikut (baris b).
 
 | Opsi | Isi |
 |---|---|
@@ -1259,115 +1012,40 @@ Amati setiap pola berikut. Lanjutkan polanya dengan melingkari gambar berikutnya
 | C | heksagon |
 | D | kupu-kupu |
 
-![Gambar sumber soal 9](<../images/kelas2_panduan_siswa_kelas2.pdf-0131-01.png>)
+![Gambar sumber soal 9](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0131-01.png>)
 
 
-Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Pola berulang adalah (kupu-kupu, kelinci, kelinci). Karena urutan terakhir adalah kupu-kupu, maka gambar berikutnya adalah kelinci.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0131-01.png. Transkripsi visual: Baris b menampilkan urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu, gambar berikutnya dalam pola adalah kelinci.
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0131-01.png. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 4 / Matematika SD Kelas 4. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `01909eecf3105ab67fdd2b48bb18895214df049a5a604da9e5b25ec8b2633851`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bb6a7ff30b6bd77340a5e25d9f6f99f9903359d31373d2b6f246b46d438fdbe6`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2566 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 3236 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2561 |
-
-Run 1 — solusi: Pola berulang adalah (kupu-kupu, kelinci, kelinci). Karena urutan terakhir adalah kupu-kupu, maka gambar berikutnya adalah kelinci.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali aturan pengulangan dalam pola visual dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah proses menerapkan konsep pola yang sudah dipelajari.. Bukti: Lanjutkan polanya dengan melingkari gambar berikutnya
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur pola berulang, yang merupakan konsep dasar dalam matematika pola.. Bukti: Amati setiap pola berikut
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 4. Pola visual yang diberikan bersifat repetitif dan langsung, tidak memerlukan strategi kompleks atau banyak kendala.. Bukti: Lanjutkan polanya dengan melingkari gambar berikutnya
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan mengenali urutan dan pengulangan gambar sederhana. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Tingkat kesulitan ini sangat rendah untuk siswa kelas 4, karena pola visual berulang adalah materi dasar yang biasanya sudah dikuasai di kelas-kelas awal. |
-
-Run 2 — solusi: Pola baris b berulang setiap 3 gambar: (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu terakhir, gambar berikutnya adalah kelinci.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali aturan pengulangan dalam urutan gambar (pola berulang). Ini adalah proses menerapkan pemahaman pola pada situasi rutin.. Bukti: Amati setiap pola berikut (baris b). Lanjutkan polanya
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami hubungan antara elemen-elemen dalam urutan untuk menentukan elemen berikutnya. Ini melibatkan pemahaman konsep pola.. Bukti: Amati setiap pola berikut (baris b).
-- Intended difficulty `classify/Easy`: Tugas ini meminta siswa mengidentifikasi pola berulang sederhana. Ini adalah tugas rutin yang sesuai untuk kelas 4.. Bukti: Amati setiap pola berikut (baris b). Lanjutkan polanya dengan melingkari gambar berikutnya.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan mengenali urutan visual sederhana. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Tugas pola berulang adalah materi dasar yang sudah dikuasai siswa kelas 4. |
-
-Run 3 — solusi: Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu, gambar berikutnya adalah kelinci.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi unit pola yang berulang (kupu-kupu, kelinci, kelinci) dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah proses penerapan konsep pola pada situasi rutin.. Bukti: Lanjutkan polanya dengan melingkari gambar berikutnya
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang struktur pola berulang, yang merupakan prinsip dasar dalam matematika pola.. Bukti: Amati setiap pola berikut
-- Intended difficulty `classify/Easy`: Tugas ini sangat rutin bagi siswa kelas 4. Polanya sederhana, berulang, dan hanya memerlukan satu langkah deduksi untuk menentukan elemen berikutnya.. Bukti: Lanjutkan polanya dengan melingkari gambar berikutnya
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan mengenali urutan visual dan pola berulang sederhana. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Tugas ini terlalu mendasar untuk standar kelas 4, lebih sesuai untuk kelas awal SD (1-2), namun secara teknis valid sebagai soal pola. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {} | no_consensus / incomplete | — |
+| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
+| Intended difficulty | {} | no_consensus / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 142/256; truncation: `False`.
+Model membaca representation `metadata`; token input 71/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000001; applying=0.999999; reasoning=0.000000 | applying | 0.999999 | 0.000008 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.012059; conceptual=0.983421; procedural=0.004520; metacognitive=0.000000 | conceptual | 0.983421 | 0.067895 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.676607; Medium=0.315219; Hard=0.008174 | Easy | 0.676607 | 0.607615 | review / selective_threshold_gate_not_met |
-
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999999; −Σp ln(p) = 0.000009; H = 0.000009/ln(3) = 0.000008; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.983421; −Σp ln(p) = 0.094123; H = 0.094123/ln(4) = 0.067895; T = 0.209800.
-
-
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.676607; −Σp ln(p) = 0.667534; H = 0.667534/ln(3) = 0.607615; T = 0.953328.
-
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -1377,28 +1055,28 @@ Topik: Matematika SD Kelas 4
 Subtopik: Pola
 Tipe soal: multiple_choice
 Stimulus: -
-Soal: Amati setiap pola berikut. Lanjutkan polanya dengan melingkari gambar berikutnya.
+Soal: Amati setiap pola berikut. Mana lanjutan pola pada gambar berikutnya.
 
-Amati setiap pola berikut (baris b). Lanjutkan polanya dengan melingkari gambar berikutnya.
+Amati setiap pola berikut (baris b).
 Pilihan: A. bunga
 B. kelinci
 C. heksagon
 D. kupu-kupu
-Transkripsi visual: Baris b menampilkan urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu, gambar berikutnya dalam pola adalah kelinci.
+Transkripsi visual: -
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
-Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 10. Soal `4088b8d020de84282c07a2b3`
 
-3. Sebuah tangki air berisi 2.225 liter air. Pada siang hari 975 liter 325 ml air dipompa keluar dari tangki. Berapa banyak air yang tersisa di tangki?
+Sebuah tangki air berisi 2.225 liter air. Pada siang hari 975 liter 325 ml air dipompa keluar dari tangki. Berapa banyak air yang tersisa di tangki?
 
 | Opsi | Isi |
 |---|---|
@@ -1407,112 +1085,37 @@ Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan un
 | C | 1.249 liter 325 ml |
 | D | 1.250 liter 325 ml |
 
-Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: 2.225 liter 0 ml - 975 liter 325 ml = (2.224 liter + 1.000 ml) - 975 liter 325 ml = (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 4 / Matematika SD Kelas 4. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `98fd52e9b2ad7e3553db2134b98d8a5aa51d9c13a589b5a71067154c5294669a`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5505e883c807164a32e17296b0d4d973b8ac205b17b0cc37b4887e09794c1faf`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 1598 |
-| 2 | success | valid / verified | applying | procedural | Medium | 1638 |
-| 3 | success | valid / verified | applying | procedural | Medium | 1558 |
-
-Run 1 — solusi: 2.225 liter 0 ml - 975 liter 325 ml = (2.224 liter + 1.000 ml) - 975 liter 325 ml = (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan satuan volume yang melibatkan konversi unit (liter ke mililiter) untuk menyelesaikan pengurangan yang tidak langsung.. Bukti: 975 liter 325 ml air dipompa keluar; Berapa banyak air yang tersisa
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi pengurangan dengan satuan campuran (liter dan mililiter) yang memerlukan teknik meminjam antar satuan.. Bukti: 2.225 liter; 975 liter 325 ml
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa kelas 4 harus melakukan operasi pengurangan dengan satuan campuran yang memerlukan konversi 1 liter menjadi 1.000 ml, yang merupakan langkah rutin namun membutuhkan ketelitian.. Bukti: 2.225 liter; 975 liter 325 ml; Berapa banyak air yang tersisa
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman hubungan 1 liter = 1.000 ml dan pengurangan bersusun. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Sesuai untuk kelas 4 karena melibatkan operasi hitung satuan volume yang merupakan materi standar, dengan pengecoh yang dirancang untuk menguji pemahaman konsep meminjam satuan. |
-
-Run 2 — solusi: 2.225 liter = 2.224 liter 1.000 ml. 2.224 liter 1.000 ml - 975 liter 325 ml = (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan dengan konversi satuan volume (liter ke mililiter) yang melibatkan teknik meminjam (regrouping) dalam sistem satuan yang berbeda.. Bukti: 2.225 liter; 975 liter 325 ml; Berapa banyak air yang tersisa
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi pengurangan yang melibatkan konversi satuan volume (1 liter = 1.000 ml).. Bukti: 2.225 liter; 975 liter 325 ml
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konversi satuan (1 liter = 1.000 ml) dan prosedur pengurangan dengan meminjam (regrouping) yang melintasi batas satuan, yang merupakan langkah rutin namun membutuhkan ketelitian.. Bukti: 2.225 liter; 975 liter 325 ml; Berapa banyak air yang tersisa
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman hubungan liter dan mililiter, serta operasi pengurangan bersusun dengan teknik meminjam. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Untuk kelas 4, operasi pengurangan dengan konversi satuan (regrouping) adalah standar kompetensi yang menantang namun sesuai dengan kurikulum. |
-
-Run 3 — solusi: 2.225 liter - 975 liter 325 ml = 2.224 liter 1.000 ml - 975 liter 325 ml = 1.249 liter 675 ml.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan dengan melakukan konversi satuan (meminjam 1 liter menjadi 1.000 ml) untuk menyelesaikan operasi pengurangan yang melibatkan satuan campuran.. Bukti: 2.225 liter - 975 liter 325 ml
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang algoritma pengurangan dengan satuan yang berbeda (liter dan mililiter) dan konsep konversi satuan dasar.. Bukti: 2.225 liter; 975 liter 325 ml
-- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman tentang konversi satuan (1 liter = 1.000 ml) dalam konteks pengurangan, yang merupakan langkah rutin namun memerlukan ketelitian dalam manajemen satuan.. Bukti: 2.225 liter - 975 liter 325 ml
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konversi satuan volume (liter ke mililiter) dan pengurangan bersusun. |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 4 diharapkan mampu melakukan operasi hitung campuran dengan satuan volume. Soal ini menuntut ketelitian dalam meminjam satuan, yang merupakan tantangan standar untuk tingkat ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
+| Domain kognitif | {} | no_consensus / incomplete | — |
+| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
+| Intended difficulty | {} | no_consensus / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 105/256; truncation: `False`.
+Model membaca representation `metadata`; token input 103/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.006381; applying=0.993619; reasoning=0.000000 | applying | 0.993619 | 0.035148 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.708102; conceptual=0.259939; procedural=0.031959; metacognitive=0.000000 | factual | 0.708102 | 0.508316 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.884548; Medium=0.112017; Hard=0.003435 | Easy | 0.884548 | 0.339719 | review / selective_threshold_gate_not_met |
-
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.993619; −Σp ln(p) = 0.038614; H = 0.038614/ln(3) = 0.035148; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.708102; −Σp ln(p) = 0.704675; H = 0.704675/ln(4) = 0.508316; T = 0.209800.
-
-
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.884548; −Σp ln(p) = 0.373220; H = 0.373220/ln(3) = 0.339719; T = 0.953328.
-
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -1522,7 +1125,7 @@ Topik: Matematika SD Kelas 4
 Subtopik: Pengukuran Volume
 Tipe soal: multiple_choice
 Stimulus: -
-Soal: 3. Sebuah tangki air berisi 2.225 liter air. Pada siang hari 975 liter 325 ml air dipompa keluar dari tangki. Berapa banyak air yang tersisa di tangki?
+Soal: Sebuah tangki air berisi 2.225 liter air. Pada siang hari 975 liter 325 ml air dipompa keluar dari tangki. Berapa banyak air yang tersisa di tangki?
 Pilihan: A. 1.250 liter 675 ml
 B. 1.249 liter 675 ml
 C. 1.249 liter 325 ml
@@ -1534,9 +1137,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `pending_expert_review`.
-Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 11. Soal `8a6222ad2919585a4e0febed`
@@ -1829,7 +1432,7 @@ Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan un
 
 ## 13. Soal `8fe432cf4c0a120aab6def21`
 
-\|**No**\|**Nama Bangun Datar**\|**Gambar**\|**Banyaknya**\|<br>\|---\|---\|---\|---\|<br>\|1<br>2\|Segitiga<br>...\|...\|...<br>...\|<br><br>Lakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :
+\|**No**\|**Nama Bangun Datar**\|**Gambar**\|**Banyaknya**\|<br>\|---\|---\|---\|---\|<br>\|1<br>2\|Segitiga<br>...\|...\|...<br>...\|<br><br>Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :
 
 | Opsi | Isi |
 |---|---|
@@ -1838,137 +1441,40 @@ Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan un
 | C | Segitiga 6, persegi 1 |
 | D | Segitiga 5, jajargenjang 1, persegi 1 |
 
-![Gambar sumber soal 13](<../images/kelas4_panduan_siswa_kelas4.pdf-0184-10.png>)
+![Gambar sumber soal 13](<../../../images/kelas4_panduan_siswa_kelas4.pdf-0184-10.png>)
 
 
-Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Identifikasi visual kepingan: 5 segitiga (biru, merah, hijau tua, oranye, merah muda), 1 persegi (hijau muda), dan 1 jajargenjang (kuning). Total 7 keping sesuai opsi D.
-Gambar sumber: images/kelas4_panduan_siswa_kelas4.pdf-0184-10.png. Transkripsi visual: Gambar menunjukkan sebuah perahu yang tersusun dari 7 keping tangram: 1 segitiga biru besar, 1 segitiga merah besar, 1 segitiga hijau tua sedang, 1 persegi hijau muda, 1 segitiga oranye kecil, 1 jajargenjang kuning, dan 1 segitiga merah muda.
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: images/kelas4_panduan_siswa_kelas4.pdf-0184-10.png. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
-Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 4 / Matematika SD Kelas 4. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `25bc2dd185e987965bb6154fb46c9c80142da37bd73dbd8c1de4f01eeb43c969`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 4 / Matematika SD Kelas 4. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e504abeab9f088b0ffdff62714c76690f12465c1f79bc631ae0da98d9a37137a`. Bukti verifikasi AI tidak sama dengan verifikasi ahli.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2652 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2674 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 2692 |
-
-Run 1 — solusi: Perahu terdiri dari 7 keping: 5 segitiga (biru, merah, hijau tua, oranye, merah muda), 1 persegi (hijau), dan 1 jajargenjang (kuning).
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris secara visual dari komposisi yang diberikan, yang merupakan proses penerapan konsep bangun datar pada situasi rutin.. Bukti: Lakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang kategori dan sifat-sifat bangun datar (segitiga, persegi, jajargenjang) dalam konteks dekomposisi.. Bukti: Nama Bangun Datar; Banyaknya
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pengenalan bentuk dasar dan penghitungan jumlah kepingan yang terlihat jelas, sesuai dengan materi kelas 4.. Bukti: Lakukan dekomposisi berbagai macam bangun datar; Pilihan Ganda
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal sifat-sifat dasar bangun datar (segitiga, persegi, jajargenjang). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 7 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 4 diharapkan mampu mengidentifikasi bentuk-bentuk geometri dasar dalam komposisi sederhana. |
-
-Run 2 — solusi: Menghitung jumlah keping berdasarkan bentuk geometrisnya: terdapat 5 segitiga (biru, merah, hijau tua, oranye, merah muda), 1 persegi (hijau), dan 1 jajargenjang (kuning).
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris dari setiap komponen penyusun gambar (tangram) secara akurat, yang merupakan proses penerapan konsep bangun datar pada situasi visual.. Bukti: Lakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai karakteristik dan kategori bangun datar (segitiga, persegi, jajargenjang) dalam konteks komposisi bentuk.. Bukti: Lakukan dekomposisi berbagai macam bangun datar
-- Intended difficulty `classify/Easy`: Soal ini meminta siswa melakukan identifikasi visual yang rutin pada bentuk-bentuk dasar. Tingkat kesulitan rendah karena bentuk-bentuk tersebut cukup jelas dan merupakan materi standar kelas 4.. Bukti: Lakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal sifat-sifat dasar bangun datar (segitiga, persegi, jajargenjang). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 7 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 4 sudah terbiasa dengan pengenalan bentuk geometri dasar dan dekomposisi sederhana, sehingga tugas ini sesuai dengan tingkat perkembangan mereka. |
-
-Run 3 — solusi: Identifikasi visual: 5 segitiga (biru, merah, hijau tua, oranye, merah muda), 1 persegi (hijau muda), dan 1 jajargenjang (kuning). Total 7 keping sesuai opsi D.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris yang menyusun gambar kompleks (tangram), yang merupakan proses penerapan konsep bangun datar pada situasi rutin.. Bukti: Lakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang sifat-sifat dan kategori bangun datar (persegi, segitiga, jajargenjang) dalam konteks komposisi bentuk.. Bukti: Nama Bangun Datar; dekomposisi berbagai macam bangun datar
-- Intended difficulty `classify/Medium`: Soal ini memerlukan ketelitian visual untuk membedakan bentuk-bentuk geometris yang tersusun rapat, namun prosedurnya bersifat rutin bagi siswa kelas 4 yang sudah mempelajari tangram.. Bukti: Lakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal sifat-sifat dasar bangun datar (segitiga, persegi, jajargenjang). |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | True |
-| relevantInformationUnits | 7 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 4 diharapkan mampu melakukan dekomposisi bangun datar sederhana. Tingkat kesulitan medium karena memerlukan ketelitian dalam menghitung jumlah keping dan mengidentifikasi bentuk yang menempel. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 2, "Medium": 1} | majority_2_of_3 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `4059`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu mengidentifikasi dan mengklasifikasikan bentuk geometris dari setiap komponen penyusun gambar (tangram) secara akurat, yang merupakan proses penerapan konsep bangun datar pada situasi visual rutin.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman siswa mengenai karakteristik dan kategori bangun datar (segitiga, persegi, jajargenjang) dalam konteks komposisi bentuk.
-- Intended difficulty `Easy`: Soal ini meminta siswa melakukan identifikasi visual yang rutin pada bentuk-bentuk dasar. Tingkat kesulitan rendah karena bentuk-bentuk tersebut cukup jelas dan merupakan materi standar kelas 4.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal sifat-sifat dasar bangun datar (segitiga, persegi, jajargenjang). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 7 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 4 sudah terbiasa dengan pengenalan bentuk geometri dasar dan dekomposisi sederhana, sehingga tugas ini sesuai dengan tingkat perkembangan mereka. |
+| Domain kognitif | {} | no_consensus / incomplete | — |
+| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
+| Intended difficulty | {} | no_consensus / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 220/256; truncation: `False`.
+Model membaca representation `metadata`; token input 170/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.096032; applying=0.903968; reasoning=0.000000 | applying | 0.903968 | 0.287888 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.011580; conceptual=0.978939; procedural=0.009481; metacognitive=0.000000 | conceptual | 0.978939 | 0.084134 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.692207; Medium=0.298284; Hard=0.009510 | Easy | 0.692207 | 0.600531 | review / selective_threshold_gate_not_met |
-
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.903968; −Σp ln(p) = 0.316277; H = 0.316277/ln(3) = 0.287888; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.978939; −Σp ln(p) = 0.116634; H = 0.116634/ln(4) = 0.084134; T = 0.209800.
-
-
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.692207; −Σp ln(p) = 0.659751; H = 0.659751/ln(3) = 0.600531; T = 0.953328.
-
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified;essential_visual_transcript_missing |
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -1982,21 +1488,21 @@ Soal: |**No**|**Nama Bangun Datar**|**Gambar**|**Banyaknya**|
 |---|---|---|---|
 |1<br>2|Segitiga<br>...|...|...<br>...|
 
-Lakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :
+Tentukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :
 Pilihan: A. Segitiga 4, jajargenjang 1, persegi 1
 B. Segitiga 5, trapesium 1, persegi 1
 C. Segitiga 6, persegi 1
 D. Segitiga 5, jajargenjang 1, persegi 1
-Transkripsi visual: Gambar menunjukkan sebuah perahu yang tersusun dari 7 keping tangram: 1 segitiga biru besar, 1 segitiga merah besar, 1 segitiga hijau tua sedang, 1 persegi hijau muda, 1 segitiga oranye kecil, 1 jajargenjang kuning, dan 1 segitiga merah muda.
+Transkripsi visual: -
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `pending_expert_review`.
-Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `llm_retry_or_manual_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
 Gold ahli tetap null; human review wajib. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 14. Soal `f068d3ebd6b847a2ae99e0d2`
@@ -2010,7 +1516,7 @@ Lakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :<b
 | C | Segitiga siku-siku, persegi, jajargenjang, dan lingkaran |
 | D | Segitiga siku-siku, persegi, jajargenjang, dan trapesium |
 
-![Gambar sumber soal 14](<../images/kelas4_panduan_siswa_kelas4.pdf-0185-06.png>)
+![Gambar sumber soal 14](<../../../images/kelas4_panduan_siswa_kelas4.pdf-0185-06.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
@@ -2158,7 +1664,7 @@ Perhatikan huruf-huruf berikut ini.<br><br>Huruf manakah yang hanya memiliki sat
 | C | Huruf T |
 | D | Tidak ada |
 
-![Gambar sumber soal 15](<../images/kelas3_panduan_siswa_kelas3.pdf-0198-01.png>)
+![Gambar sumber soal 15](<../../../images/kelas3_panduan_siswa_kelas3.pdf-0198-01.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
@@ -2306,7 +1812,7 @@ Diagram batang berikut menunjukan banyak siswa di SD Permata.<br><br>Apabila jum
 | C | 54 siswa |
 | D | 154 siswa |
 
-![Gambar sumber soal 16](<../images/kelas4_panduan_guru_kelas4.pdf-0244-06.png>)
+![Gambar sumber soal 16](<../../../images/kelas4_panduan_guru_kelas4.pdf-0244-06.png>)
 
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
@@ -2456,7 +1962,7 @@ Diberikan diagram batang untuk data siswa yang mengikuti lomba PORSENI tingkat k
 | C | Renang |
 | D | Lari |
 
-![Gambar sumber soal 17](<../images/kelas4_panduan_siswa_kelas4.pdf-0205-08.png>)
+![Gambar sumber soal 17](<../../../images/kelas4_panduan_siswa_kelas4.pdf-0205-08.png>)
 
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.

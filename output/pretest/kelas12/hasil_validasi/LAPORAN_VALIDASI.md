@@ -2001,7 +2001,7 @@ Mahira mulai mengunduh jadwal pertandingan sepak bola Piala Dunia yang akan data
 | C | 0,175 |
 | D | 1 |
 
-![Gambar sumber soal 29](<../images/kelas12_panduan_siswa_kelas12.pdf-0154-01.png>)
+![Gambar sumber soal 29](<../../../images/kelas12_panduan_siswa_kelas12.pdf-0154-01.png>)
 
 
 Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.

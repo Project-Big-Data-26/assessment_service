@@ -1,0 +1,3864 @@
+{
+  "schemaVersion": "ai-decision-bundle-v2-blind",
+  "collectionTarget": "ai_decisions",
+  "createdAt": "2026-10-02T14:39:26.633142+00:00",
+  "sourceClass": 11,
+  "summary": {
+    "itemCount": 22,
+    "routingCounts": {
+      "llm_retry_or_manual_review": 22
+    },
+    "goldLabelCount": 0,
+    "humanReviewRequiredCount": 22,
+    "advisoryLabelDistributions": {
+      "mathCognitiveDomain": {
+        "undecided": 22,
+        "knowing": 0,
+        "applying": 0,
+        "reasoning": 0
+      },
+      "knowledgeDimension": {
+        "undecided": 22,
+        "factual": 0,
+        "conceptual": 0,
+        "procedural": 0,
+        "metacognitive": 0
+      },
+      "intendedDifficulty": {
+        "undecided": 22,
+        "Easy": 0,
+        "Medium": 0,
+        "Hard": 0
+      }
+    },
+    "contentQualifiedAdvisoryLabelDistributions": {
+      "mathCognitiveDomain": {
+        "knowing": 0,
+        "applying": 0,
+        "reasoning": 0
+      },
+      "knowledgeDimension": {
+        "factual": 0,
+        "conceptual": 0,
+        "procedural": 0,
+        "metacognitive": 0
+      },
+      "intendedDifficulty": {
+        "Easy": 0,
+        "Medium": 0,
+        "Hard": 0
+      }
+    },
+    "modelDisagreementCounts": {
+      "mathCognitiveDomain": 0,
+      "knowledgeDimension": 0,
+      "intendedDifficulty": 0
+    }
+  },
+  "items": [
+    {
+      "decisionId": "AID-64ecb65d00ef8f616348e4cc",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "6e23a873d17dbf71c29d8901",
+      "questionVersionId": "6e23a873d17dbf71c29d8901:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "f283f034c03f64b4396906d4a3d8f6c0672e9ab9185a8e57d9287263a0cc22ff",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Fungsi",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berdasarkan data, pada tahun 2001 perusahaan A mampu menjual 9 laptop. Pada tahun 2002 dan 2003 perusahaan A mampu menjual masing-masing 27 dan 81 laptop. Apabila relasi antara tahun dan jumlah penjualan laptop membentuk fungsi eksponensial, berapa penjualan laptop pada tahun 2007?\nPilihan: A. 6.561 laptop (3^8)\nB. 2.187 (3^7)\nC. 486 (9, 27, 81, ... ditambah 81 tiap tahun sampai 2007)\nD. 19.683 (3^9)\nTranskripsi visual: -",
+        "untruncatedTokenCount": 138,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:6e23a873d17dbf71c29d8901:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "9f0c0bc32743574ed394f8aa1eaa839fd5ddf11fe2978d5bf6d3ecf89cedfd77",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.447
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-0366013c1295c094252b19a5",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "84e4a0b4e7fdc64998b248b3",
+      "questionVersionId": "84e4a0b4e7fdc64998b248b3:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "9ee8387e2c87579d93608cbf1519f066d116046e246a2bef4db20c96423e08eb",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Fungsi",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "menganalisis",
+          "menjelaskan"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Satuan energi adalah Joule dan kalori dengan 1 J = 2,4 kal. Apakah hubungan antara Joule dan kalori merupakan suatu fungsi? Jelaskan.\nPilihan: A. Ya, merupakan fungsi karena setiap nilai Joule berkorespondensi dengan tepat satu nilai kalori\nB. Tidak, karena rumus 1 J = 2,4 kal hanya berlaku untuk bilangan bulat\nC. Tidak, karena satu nilai Joule dapat menghasilkan lebih dari satu nilai kalori\nD. Ya, tetapi hanya berlaku jika satuannya diubah ke kalori terlebih dahulu\nTranskripsi visual: -",
+        "untruncatedTokenCount": 131,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:84e4a0b4e7fdc64998b248b3:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "e427c38989776d9907bb92ade5a97108af1db6fc121b4fe0b07a4942765ab54f",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.121
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-53830dfa8032b5ed7a32dcc8",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "f772da841c280f238b1bbb15",
+      "questionVersionId": "f772da841c280f238b1bbb15:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "ec13258fe684c3db23172e1177526382e985ac07d6739dcb4841accd01a2af31",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Komposisi Fungsi",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Komposisi Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika f (3) = 7, g (3) = 6, f (6) = 13, g (6) = 12, tentukan (f o g) (3).\nPilihan: A. 13\nB. 7\nC. 6\nD. 42\nTranskripsi visual: -",
+        "untruncatedTokenCount": 85,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:f772da841c280f238b1bbb15:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "d4fd3266951eb45dc5d3ada42ead8ce498521cdf2d864bf58b734b84b78a6866",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.115
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-67cf302cc91ec00f31636503",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "f69622cd0a44a030d0eca055",
+      "questionVersionId": "f69622cd0a44a030d0eca055:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "b1c3baa5ccaefe5b0981d2eb6d85a35d8fc5581a59b804f676f7399bd76c4d83",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Komposisi Fungsi",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Komposisi Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika f (3) = 7, g (3) = 6, f (6) = 13, g (6) = 12, tentukan\n\nf (3) × g(3)\nPilihan: A. 13\nB. 42\nC. 1\nD. 78\nTranskripsi visual: -",
+        "untruncatedTokenCount": 85,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:f69622cd0a44a030d0eca055:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "92c51208b79258b257c8e5359b6681d9bac7a42d68b336b0f640d89c663fcdaa",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.116
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-feed3df0750ede872579ee49",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "f2de3a4198c1c8c13c51a92a",
+      "questionVersionId": "f2de3a4198c1c8c13c51a92a:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "b5ca3120d698a310b9e2ac0abf813a276621684676bdeba0f34e357c80409684",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Fungsi Invers",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Fungsi Invers\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui f (x) = 2x + b dan f (f (x)) = 4x + 6. Tentukan nilai b dan f-1 (x).\nPilihan: A. b = 3, f^-1(x) = (x - 3)/2\nB. b = 6, f^-1(x) = (x - 6)/2\nC. b = 2, f^-1(x) = (x + 2)/2\nD. b = 2, f^-1(x) = (x - 2)/2\nTranskripsi visual: -",
+        "untruncatedTokenCount": 154,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:f2de3a4198c1c8c13c51a92a:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "f0867c599838b610bac5eed89dc178603e94b2399d6a61f9beaf42f8296237db",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.076
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-ffff1951da7118c2533ea146",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "7b396c45f8b99915cc10dc7b",
+      "questionVersionId": "7b396c45f8b99915cc10dc7b:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "7c9c2b9ce39ede79212db5c8087fa50f9ba5d5f32dacb377d114fa865c679f41",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Fungsi Invers",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Fungsi Invers\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan fungsi invers (jika ada) dari f (x) = akar(x - 3), juga domain dan range-nya.\nPilihan: A. f^-1(x) = x^2 - 3, domain: semua bilangan riil >= 0, range: semua bilangan riil >= 3\nB. f^-1(x) = x^2 + 3, domain: semua bilangan riil, range: semua bilangan riil\nC. f^-1(x) = x^2 + 3, domain: semua bilangan riil >= 0, range: semua bilangan riil >= 3\nD. f^-1(x) = akar(x) - 3, domain: semua bilangan riil >= 0, range: semua bilangan riil >= 3\nTranskripsi visual: -",
+        "untruncatedTokenCount": 190,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:7b396c45f8b99915cc10dc7b:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "89ad574550df2a6cce8a4df2bdc56263ec37e8e991551cdb43bdedb7366c3fa4",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.075
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-e4e9be7cd56a66ed0f71dc50",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "d590344d18abe3ebd38fb8ed",
+      "questionVersionId": "d590344d18abe3ebd38fb8ed:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "2663e4aa5086572662f61adfb1398f67c0703dda06b341e6b27e49352bee58ff",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Fungsi Kuadrat",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi",
+          "menjelaskan"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Fungsi Kuadrat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tabel di bawah menunjukkan jarak tempuh sebuah mobil pada setiap waktu.\n\n|Waktu (Detik)|0|1|2|3|4|5|6|\n|---|---|---|---|---|---|---|---|\n|Jarak (m)|0|5|8|9|8|5|0|\n\nTanpa menggambar grafik, tentukan apakah grafik fungsi kuadrat terbuka ke atas atau ke bawah. Jelaskan alasanmu.\nPilihan: A. Terbuka ke bawah, karena nilai fungsi (jarak) naik kemudian turun lagi.\nB. Terbuka ke atas, karena nilai fungsi naik kemudian turun lagi.\nC. Terbuka ke bawah, karena nilai fungsi turun kemudian naik lagi.\nD. Tidak dapat ditentukan tanpa menggambar grafiknya.\nTranskripsi visual: -",
+        "untruncatedTokenCount": 194,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:d590344d18abe3ebd38fb8ed:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "3d12201ed8167bab4767fd9a496b652e19fb2f985d987f98db5fb2e60af35b90",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.14
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-b06892dfd52a65485d589efc",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "72d9df20cc708f4143b713d0",
+      "questionVersionId": "72d9df20cc708f4143b713d0:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "22753e6a5a815739037aae5bb0f8f9eb7e401c418fab617d36428846fe0ab1a0",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Korespondensi Satu-satu (Pengayaan)",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Korespondensi Satu-satu (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apabila diketahui banyak anggota dua himpunan seperti berikut ini, maka ada berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B? a. n(A) = n(B) = 12\n\nAda berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B jika n(A) = n(B) = 12?\nPilihan: A. 12 x 12 = 144\nB. 12 + 11 + 10 + ... + 2 + 1 = 78\nC. 12\nD. 12! = 479.001.600\nTranskripsi visual: -",
+        "untruncatedTokenCount": 151,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:72d9df20cc708f4143b713d0:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "8d9a45b60c83a8cf8d1afdeecf977b6f76bf086feda224625c2fcbd8c3d12707",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.096
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-9f628a6e6101337e98a01edb",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "280f78ecf94b2c1b0d7d8f4a",
+      "questionVersionId": "280f78ecf94b2c1b0d7d8f4a:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "c84e593e9bc5d6c0c789eff46fbfbf8721ff8c905abbd4f1c1e856b53de4303a",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Lingkaran dan Busur Lingkaran",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Lingkaran dan Busur Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: AB adalah diameter pada lingkaran berikut. Jari-jari lingkaran 8,5 cm dan panjang AC = 8 cm. Tentukan:\n\npanjang BC\nPilihan: A. 9 cm\nB. 18,8 cm\nC. 17 cm\nD. 15 cm\nTranskripsi visual: -",
+        "untruncatedTokenCount": 80,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:280f78ecf94b2c1b0d7d8f4a:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "25033820710f4235bf09e0b940661212b00d9b9d2e6f4ff1b8ccc9c109bee0a0",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.116
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-497f9507735e7b650115f65f",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "f6239979bb0b323db2b28a03",
+      "questionVersionId": "f6239979bb0b323db2b28a03:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "7b93f1cbfe5d3a011e2cb6cfebbdc51320729fed0ee810fbc575f03560b66038",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Lingkaran dan Busur Lingkaran",
+        "questionType": "multiple_choice",
+        "detectedKko": [],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Lingkaran dan Busur Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika `∠` BOC = 90`◦` , berapakah besar `∠` BEC ?\nPilihan: A. 22,5°\nB. 45°\nC. 90°\nD. 180°\nTranskripsi visual: -",
+        "untruncatedTokenCount": 68,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:f6239979bb0b323db2b28a03:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "92780f915787ce3d35e77e1ea7b9eaa441a8c0283fc1e06e862f0b7579bdb0c7",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.136
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-7bb7445378bcd9b0ae1a408b",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "838b526b72b79e514bd4fe62",
+      "questionVersionId": "838b526b72b79e514bd4fe62:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "f7efbda2f82b8a096023f0e8587e876669de06bed242804d37b0612c9a87d8e3",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Lingkaran dan Garis Singgung",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Lingkaran dan Garis Singgung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada gambar berikut, BD dan CD adalah garis singgung lingkaran A. Jika `∠` BAC = 147`◦` , tentukan besar `∠` BDC.\nPilihan: A. 33°\nB. 57°\nC. 147°\nD. 90°\nTranskripsi visual: -",
+        "untruncatedTokenCount": 82,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:838b526b72b79e514bd4fe62:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "32b9aae5caf3d040a659e29174c8903036ed26a3f6991f01b675b07cbd51377f",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.091
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-adc0efd2675478c666d08f69",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "a0be320297e2f3ecca60fa01",
+      "questionVersionId": "a0be320297e2f3ecca60fa01:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "4a79debde6a1c9aa0ea83c449a85099553fe2c279e81b5e56c7f8d8ae3f87d3f",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Lingkaran dan Garis Singgung",
+        "questionType": "multiple_choice",
+        "detectedKko": [],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Lingkaran dan Garis Singgung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika jari-jari lingkaran A adalah 7 cm dan titik P berjarak 25 cm dari titik A, berapakah panjang garis singgung PB ?\nPilihan: A. 18 cm\nB. 25 cm\nC. 24 cm\nD. 26 cm\nTranskripsi visual: -",
+        "untruncatedTokenCount": 79,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:a0be320297e2f3ecca60fa01:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "e4d124c3e082df24ea7a761902495f8ef9e93b78e8d8df369e9dae43a9d11aab",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.087
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-ace0584d4f7f364875a8ce67",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "9d3b005f20ecd5dabca2aa9e",
+      "questionVersionId": "9d3b005f20ecd5dabca2aa9e:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "03f691a4939d470ee4e71c1c640bb8c6b786d3fc66fc4d391f6b14e8053f3cf4",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Lingkaran dan Tali Busur",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Lingkaran dan Tali Busur\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika AD = 3 cm dan BE = AD, tentukan:\n\nbesar `∠` BAE\nPilihan: A. 90°\nB. 60°\nC. 45°\nD. 120°\nTranskripsi visual: -",
+        "untruncatedTokenCount": 65,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:9d3b005f20ecd5dabca2aa9e:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "7108cb778dd4169512ecf085bb6111e77ad7989a2dc375b61d22ad7ac89bf962",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.112
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-5111787659a5e73a80bd43fe",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "b9acc681a7567cd1039ff751",
+      "questionVersionId": "b9acc681a7567cd1039ff751:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "d3b47862859c4e97c7de18acdeb87a7508a5fc3fd25c64287ade29556b5cfb4a",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Lingkaran dan Tali Busur",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Lingkaran dan Tali Busur\nTipe soal: multiple_choice\nStimulus: -\nSoal: Lingkaran yang berpusat di titik O dan jari-jarinya 5 cm. Berapa panjang tali busurnya yang paling panjang?\nPilihan: A. 10 cm\nB. 15 cm\nC. 20 cm\nD. 5 cm\nTranskripsi visual: -",
+        "untruncatedTokenCount": 74,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:b9acc681a7567cd1039ff751:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "72b45199388e7d27d47dada1f87187c2d8bd5a9f04bff9e02dab5ab27c556e68",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.166
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-2b052c623b5da8c4108ed76a",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "1ef6efc5863938a14b737897",
+      "questionVersionId": "1ef6efc5863938a14b737897:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "2dc682d6fdacc200fbd012d28bf61005a3728910231d2cac3d7fcac4b33af10f",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Volume Bangun Ruang Sisi Lengkung",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Volume Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berapa liter gas bumi yang dapat ditampung dengan truk yang memiliki tabung penyimpanan besar seperti Gambar 2.77 dengan diameter 2 meter dan panjang 12 meter?\nPilihan: A. 37,68 liter\nB. 150.720 liter\nC. 37.680 liter\nD. 36.000 liter\nTranskripsi visual: -",
+        "untruncatedTokenCount": 90,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:1ef6efc5863938a14b737897:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "31622d70f78a414ea9108d83ef00d972a923640ee313dd3d80651f20b483b529",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.126
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-ce032e26ba41ae19e7f27e5d",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "9bee88ce31163c95d6276272",
+      "questionVersionId": "9bee88ce31163c95d6276272:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "954ac77164f15396df49be9638c12294c98d0111a9828ea1736928753c7ae520",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Diagram Pencar atau Diagram Scatter",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi",
+          "menganalisis",
+          "menjelaskan"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Diagram Pencar atau Diagram Scatter\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan pasangan-pasangan variabel di bawah ini. Tentukan bagaimana hubungan mereka dan berikan alasan kalian.\n\nBagaimana hubungan antara banyak kendaraan bermotor dan tingkat polusi udara? Berikan alasan kalian.\nPilihan: A. Semakin banyak kendaraan bermotor, semakin menurun tingkat polusi udara (korelasi negatif)\nB. Semakin banyak kendaraan bermotor, semakin meningkat tingkat polusi udara (korelasi positif)\nC. Tidak ada hubungan antara banyak kendaraan bermotor dan tingkat polusi udara\nD. Hubungan keduanya tidak dapat ditentukan tanpa data numerik\nTranskripsi visual: -",
+        "untruncatedTokenCount": 129,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:9bee88ce31163c95d6276272:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "a73725df9fc482936173a7bdd5a219edbe123f6421914fe02c40f691d23f7e12",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.15
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-789c23789140078f08961555",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "954fcaa8282f462df30d7e71",
+      "questionVersionId": "954fcaa8282f462df30d7e71:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "b28c10c4471499fb6531aa0aecf7b88f9fcf96dc562984ec03c4241e57d4110e",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Diagram Pencar atau Diagram Scatter",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "mengidentifikasi",
+          "menganalisis",
+          "menjelaskan"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Diagram Pencar atau Diagram Scatter\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan pasangan-pasangan variabel di bawah ini. Tentukan bagaimana hubungan mereka dan berikan alasan kalian.\n\nBagaimana hubungan antara jarak yang ditempuh oleh sebuah motor dan volume bensin dalam tangki bensin? Berikan alasan kalian.\nPilihan: A. Tidak ada hubungan antara jarak tempuh dan volume bensin\nB. Hubungan keduanya tidak dapat ditentukan tanpa data numerik\nC. Semakin jauh jarak yang ditempuh oleh sebuah motor, semakin berkurang volume bensin dalam tangki bensin (korelasi negatif)\nD. Semakin jauh jarak yang ditempuh oleh sebuah motor, semakin bertambah volume bensin dalam tangki bensin (korelasi positif)\nTranskripsi visual: -",
+        "untruncatedTokenCount": 144,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:954fcaa8282f462df30d7e71:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "0fa241ffde0fee3d6a7b8875ac6379f49c81a50ec9c7a4e1effada88590a852d",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.143
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-dea91a6b469a317d0993e8bc",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "cc594209724affd13041e475",
+      "questionVersionId": "cc594209724affd13041e475:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "96ed89b0b065cdb47de720ddbe3627eb7bff3643900dfe1d30ae31347f734366",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Regresi Linear",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Regresi Linear\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada saat kondisi mendadak, para pengendara mobil memerlukan waktu yang berbeda-beda untuk dapat bereaksi untuk menginjak rem mobil. Jarak yang diperlukan hingga terjadi reaksi menginjak rem disebut sebagai jarak reaksi. Tabel berikut ini memberikan informasi mengenai jarak reaksi dari mobil yang melaju dengan kecepatan yang berbeda-beda. Kecepatan (km/jam): 20, 30, 40, 50, 60, 70. Jarak Reaksi (m): 4,1; 6,2; 8,3; 10,1; 12,4; 14,5.\n\nHitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam.\nPilihan: A. 8,3 m\nB. 7,2 m\nC. 12,4 m\nD. 11,34 m\nTranskripsi visual: -",
+        "untruncatedTokenCount": 177,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:cc594209724affd13041e475:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "c5993f114e2192188fbaae44f9d704f8349f2c4dedcb1e42249928659cf49de3",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.125
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-01db53b623d35ac2d8be8202",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "cb666d7ac7a8bdfb36335e5a",
+      "questionVersionId": "cb666d7ac7a8bdfb36335e5a:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "3ef115343361bd354f1a50594374a7c14169c15bc3b675506f1ef27bec8e7de7",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Regresi Linear",
+        "questionType": "multiple_choice",
+        "detectedKko": [],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Regresi Linear\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tabel berikut menunjukkan banyak tempat duduk terhadap biaya per jam dari tiga model pesawat terbang yang digunakan oleh maskapai Garuda Indonesia.\n\n|Model Pesawat|Banyak tempat duduk|Biaya (rupiah/jam)|\n|---|---|---|\n|A|50|1.100.000,00|\n|B|100|2.100.000,00|\n|C|150|2.700.000,00|\n\nPersamaan garis regresi mana yang lebih tepat untuk memprediksi banyak tempat duduk terhadap biaya, yˆ = 367000 + 16000x atau yˆ = 300000 + 16000x?\nPilihan: A. yˆ = 300000 + 16000x\nB. yˆ = 367000 + 16000x\nC. Tidak dapat ditentukan tanpa menggambar diagram pencarnya\nD. Keduanya sama tepat karena mempunyai gradien (b) yang sama\nTranskripsi visual: -",
+        "untruncatedTokenCount": 199,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:cb666d7ac7a8bdfb36335e5a:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "d88676944989d7768cf65009a66a9045febf652c5d8da805289a2a92e5d7468d",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.112
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-6ac77d2d339980229e86ea97",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "5a713d72bd575400bbc8e916",
+      "questionVersionId": "5a713d72bd575400bbc8e916:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "2e7c3b076694ab6bc78722dfed8b99b0a533d378af69e6ee2587109140e26a81",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Analisis Korelasi",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Analisis Korelasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diagram pencar berikut menunjukkan tingkat IQ seseorang terhadap lingkar kepalanya dalam cm dari sampel 20 orang. Rata-rata IQ adalah 101 dan rata-rata lingkar kepala adalah 56,125 cm. Nilai koefisien korelasinya adalah 0,138.\n\nBerapa persentase IQ yang diterangkan oleh lingkar kepala?\nPilihan: A. 13,8%\nB. 0,19%\nC. 98,1%\nD. 1,9%\nTranskripsi visual: -",
+        "untruncatedTokenCount": 112,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:5a713d72bd575400bbc8e916:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "cb9c42c762cdd9e06a6949a6fbf78e0e761858761e061a492f48f83558e063c9",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.071
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-28bedbb4c0059cf1716d0a18",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "2071d19215ee9fcf4926b805",
+      "questionVersionId": "2071d19215ee9fcf4926b805:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "6881c85f0c9e63f82266d0f5366880c202ac7cc19cb73d35d4f59f42a106b831",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Analisis Korelasi",
+        "questionType": "multiple_choice",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Analisis Korelasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diagram pencar berikut menunjukkan tingkat IQ seseorang terhadap lingkar kepalanya dalam cm dari sampel 20 orang. Rata-rata IQ adalah 101 dan rata-rata lingkar kepala adalah 56,125 cm. Nilai koefisien korelasinya adalah 0,138.\n\nBerapa persentase IQ yang diterangkan oleh variabel-variabel lainnya?\nPilihan: A. 0,981%\nB. 99,1%\nC. 98,1%\nD. 1,9%\nTranskripsi visual: -",
+        "untruncatedTokenCount": 115,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:2071d19215ee9fcf4926b805:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "d579395a666c0103761cbc561d74ea2d45a04418b5bfa32d0530f4c5e6d68fbf",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.14
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    },
+    {
+      "decisionId": "AID-070ea82ccab2657a73e44b65",
+      "workflowRunId": "WF-582a3c1d5f3336c2720ee685",
+      "questionId": "d6d3b4c5f9819d69d4c859d0",
+      "questionVersionId": "d6d3b4c5f9819d69d4c859d0:content-v2:blind-revalidation",
+      "contentVersion": 2,
+      "contentHash": "31c1b2c091a427804603e51b0a82d319bd38f9ea744aec3ede748b23d5c1814d",
+      "decisionType": "blind_silver_advisory",
+      "inputValidation": {
+        "status": "pass",
+        "reasons": [],
+        "missingAssets": []
+      },
+      "featureManifest": {
+        "grade": 11,
+        "topic": "Matematika SMA Kelas 11",
+        "subtopic": "Representasi Data Lanjutan",
+        "questionType": "multiple_choice",
+        "detectedKko": [],
+        "serializedInput": "Kelas: 11\nTopik: Matematika SMA Kelas 11\nSubtopik: Representasi Data Lanjutan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dalam upaya untuk mempromosikan penggunaan energi yang efisien, sebuah kota melakukan survei terhadap konsumsi listrik bulanan (dalam kWh) dari 10 rumah tangga diperoleh data sebagai berikut. 300, 320, 310, 305, 315, 320, 750, 310, 325, 315\n\nMengapa angka 750 kWh dapat dianggap sebagai pencilan?\nPilihan: A. Karena 750 kWh lebih dari 1,5 kali median data (315 kWh)\nB. Karena 750 kWh adalah satu-satunya data yang jumlah angkanya lebih dari tiga digit\nC. Karena 750 kWh lebih besar dari nilai data lainnya yang tertinggi (325 kWh)\nD. Karena 750 kWh lebih besar dari batas atas IQR (335 kWh), sehingga berada di luar rentang wajar data\nTranskripsi visual: -",
+        "untruncatedTokenCount": 170,
+        "maxLength": 256,
+        "wouldTruncate": false
+      },
+      "indobert": {
+        "diagnosticOnly": true,
+        "diagnosticInferenceQuestionId": "diagnostic:kelas11:d6d3b4c5f9819d69d4c859d0:content-v2",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "knowledgeDimension": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          },
+          "intendedDifficulty": {
+            "label": null,
+            "probabilities": {},
+            "calibratedConfidence": null,
+            "normalizedEntropy": null,
+            "action": "abstain",
+            "reasons": [
+              "grade_outside_sd_v1"
+            ]
+          }
+        },
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "90130e71ac6fc9ca18e74ce5e98c79463873c3cba54b94e37304c339f18bb32e",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        },
+        "scopeStatus": "out_of_scope",
+        "reviewRequired": true,
+        "latencyMs": 0.124
+      },
+      "llmAdvisory": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
+        "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
+        "method": "blind_n3_with_ai_adjudication",
+        "blindToModelPredictions": true,
+        "requestedRuns": 3,
+        "requiredVotes": 2,
+        "successfulRuns": 0,
+        "contentAssessment": {
+          "status": null,
+          "concerns": []
+        },
+        "answerKeyAssessment": {
+          "status": null,
+          "verifiedAnswerKey": null
+        },
+        "runs": [],
+        "votes": {
+          "mathCognitiveDomain": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "knowledgeDimension": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          },
+          "intendedDifficulty": {
+            "status": "incomplete",
+            "votePattern": "no_consensus",
+            "requestedRuns": 3,
+            "successfulRuns": 0,
+            "requiredVotes": 2,
+            "supportingVotes": 0,
+            "voteCounts": {},
+            "advisoryLabel": null,
+            "initialMajorityLabel": null,
+            "policy": "unanimity_else_ai_adjudication",
+            "lockedEvidence": {}
+          }
+        },
+        "adjudication": null,
+        "advisoryLabels": {
+          "mathCognitiveDomain": null,
+          "knowledgeDimension": null,
+          "intendedDifficulty": null
+        },
+        "eligibleForTraining": false,
+        "isGoldLabel": false,
+        "retryHistory": []
+      },
+      "humanValidation": {
+        "required": true,
+        "goldLabels": null,
+        "status": "not_started"
+      },
+      "finalRouting": "llm_retry_or_manual_review",
+      "modelComparison": {
+        "mathCognitiveDomain": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "knowledgeDimension": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        },
+        "intendedDifficulty": {
+          "modelLabel": null,
+          "blindLabel": null,
+          "agreement": null
+        }
+      },
+      "blindCheckpointHash": "582a3c1d5f3336c2720ee68514eded0d063c6209f87331e7afa0c94c6b1497db",
+      "createdAt": "2026-10-02T14:39:26.633142+00:00"
+    }
+  ]
+}

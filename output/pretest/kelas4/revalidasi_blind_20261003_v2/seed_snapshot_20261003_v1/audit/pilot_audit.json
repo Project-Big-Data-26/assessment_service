@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "grade-aware-pilot-audit-v1",
+  "generatedAt": "2026-10-03T07:34:17.217425+00:00",
+  "source": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas4/soal_pretest_db.json",
+  "sourceSha256": "aa64e658d0250e0c3a66be822da6435fb21810c968aac40b62c64f39bde9d6bd",
+  "checkpoint": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas4/revalidasi_blind_20261003_v2/seed_snapshot_20261003_v1/silver_labels.json",
+  "checkpointSha256": "e7e3c98b7dc52191313464ec947f50b7dccd70d19b5be2f1697367fb803b8e16",
+  "checkpointLockedByAudit": true,
+  "grade": 4,
+  "promptVersion": "gemini-silver-math-3x4x3-v4-blind-key-verified",
+  "expectedPromptVersion": "gemini-silver-math-3x4x3-v4-blind-key-verified",
+  "rubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "expectedRubricVersion": "math-rubric-3x4x3-v2-grade-aware",
+  "rubricHash": "77b63b9417c7122becfff3ba4451d03aade96f672e05e5bcd2d29b150cf850aa",
+  "expectedRubricHash": "77b63b9417c7122becfff3ba4451d03aade96f672e05e5bcd2d29b150cf850aa",
+  "expectedItemCount": 18,
+  "itemCount": 12,
+  "missingQuestionIds": [
+    "4088b8d020de84282c07a2b3",
+    "764036b9759f6277bc4dca51",
+    "8fe432cf4c0a120aab6def21",
+    "bc95fc44d6c120fad4812c7c",
+    "c5e424e9914591b1d5286ef0",
+    "d8e3e19d701550680f504300"
+  ],
+  "extraQuestionIds": [],
+  "inputHashFailures": [],
+  "threeSuccessfulRuns": 12,
+  "threeSuccessfulRunsShare": 0.6666666666666666,
+  "insufficientOrAbstained": 6,
+  "insufficientOrAbstainedShare": 0.3333333333333333,
+  "labelDistributions": {
+    "mathCognitiveDomain": {
+      "applying": 11,
+      "knowing": 1
+    },
+    "knowledgeDimension": {
+      "procedural": 6,
+      "conceptual": 6
+    },
+    "intendedDifficulty": {
+      "Easy": 9,
+      "Medium": 3
+    }
+  },
+  "dominantDifficultyShare": 0.75,
+  "blindLeakageTokens": [],
+  "evidenceFailures": [],
+  "boundaryAnalysisRequired": true,
+  "boundaryAnalysisReasons": [
+    "difficulty_Hard_absent"
+  ],
+  "boundaryAnalysisAccepted": false,
+  "boundaryAnalysisRationale": null,
+  "gates": {
+    "allExpectedItemsPresent": false,
+    "threeSuccessfulRunsAtLeast90Percent": false,
+    "insufficientOrAbstainedBelow10Percent": false,
+    "blindPromptLeakageAbsent": true,
+    "checkpointSourceAndInputsMatch": true,
+    "promptAndRubricVersionMatch": true,
+    "requiredEvidenceComplete": true,
+    "boundaryAnalysisClear": false
+  },
+  "readyForExpansion": false
+}
