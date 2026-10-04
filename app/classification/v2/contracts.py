@@ -60,6 +60,7 @@ class V2ClassificationRequest(BaseModel):
     contentVersion: Annotated[int, Field(ge=1)]
     contentHash: Annotated[str, StringConstraints(pattern=r"^[a-f0-9]{64}$")]
     grade: Annotated[int, Field(ge=1, le=12)]
+    subjectTrack: Literal["regular", "tl"] = "regular"
     topic: str | None = None
     subtopic: str | None = None
     questionType: NonBlank
@@ -73,6 +74,8 @@ class V2ClassificationRequest(BaseModel):
 
     @model_validator(mode="after")
     def require_unique_option_labels(self) -> "V2ClassificationRequest":
+        if self.subjectTrack == "tl" and self.grade not in (11, 12):
+            raise ValueError("TL classification supports grades 11 and 12 only")
         labels = [option.label.casefold() for option in self.options]
         if len(labels) != len(set(labels)):
             raise ValueError("option labels must be unique")

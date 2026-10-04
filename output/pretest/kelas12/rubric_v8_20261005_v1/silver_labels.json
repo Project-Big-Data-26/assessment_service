@@ -1,0 +1,595 @@
+{
+  "schemaVersion": "gemini-silver-labels-v3-blind-key-verified",
+  "source": "output/pretest/kelas12/soal_pretest_db.json",
+  "sourceHash": "086fe5310aab2fafc691ede89aef2851bdf28a2929aa5deb6cd7b808f19863a7",
+  "sourceGrade": 12,
+  "subjectTrack": "regular",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "promptVersion": "gemini-silver-math-3x4x3-v10-blind-sma12-key-verified",
+  "adjudicationPromptVersion": "gemini-silver-math-3x4x3-v10-adjudication-sma12",
+  "rubricVersion": "math-rubric-3x4x3-v8-sma12-grade-aware",
+  "rubricHash": "a6b0bd3a412d73072a1a75f71fb4931922f2b7529b341909594f01f1a5c83a0d",
+  "educationLevel": "SMA",
+  "requestedRuns": 3,
+  "createdAt": "2026-10-04T17:54:07.284190+00:00",
+  "updatedAt": "2026-10-04T18:04:25.446181+00:00",
+  "items": {
+    "a4ded83d90999b1517dcec47": {
+      "index": 1,
+      "questionId": "a4ded83d90999b1517dcec47",
+      "inputHash": "690adb58ccef888444402e99d5f04a222b89f6048dda2d1fc0e1be36494e905b",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "C",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Pendapatan bersih lama = 120jt - (10*4jt) - 25jt = 55jt. Target pendapatan bersih baru = 2 * 55jt = 110jt. Tambahan pendapatan bersih yang diperlukan = 110jt - 55jt = 55jt. Beban tambahan dari cabang baru = gaji 5 karyawan (5*4jt = 20jt) + cicilan pinjaman (8.745.148). Omzet minimal cabang baru = 55jt + 20jt + 8.745.148 = 83.745.148.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?"
+              ],
+              "rationale": "Siswa perlu mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk merumuskan model pendapatan bersih baru dan menentukan nilai omzet yang diperlukan. Ini melibatkan pemahaman hubungan antar variabel keuangan.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya"
+              ],
+              "rationale": "Soal ini menguji pemahaman konseptual tentang bagaimana komponen pendapatan dan pengeluaran (termasuk cicilan dan gaji) membentuk pendapatan bersih dalam konteks bisnis.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Bu Tania merekrut 5 orang karyawan tambahan",
+                "Andaikan Bu Tania mengambil pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat, yaitu 12 bulan",
+                "Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?"
+              ],
+              "rationale": "Soal memerlukan perencanaan langkah yang saling bergantung: menghitung pendapatan bersih awal, menentukan target baru, mengidentifikasi beban tambahan (gaji dan cicilan), dan menyusun persamaan omzet. Siswa harus mengintegrasikan data dari teks dan tabel secara cermat.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Operasi aritmetika dasar, pemahaman konsep pendapatan bersih (laba), dan pembacaan tabel angsuran.",
+                "dependentSteps": 4,
+                "routineStatus": "routine_selection",
+                "strategySelection": true,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 3,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 12 diharapkan mampu mengelola variabel keuangan majemuk seperti ini. Tingkat kesulitan Medium tepat karena memerlukan ketelitian dalam mengidentifikasi semua komponen beban baru (gaji + cicilan) terhadap target pendapatan bersih."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "C5XCat2LIImog8UP9v_06QQ",
+          "promptHash": "961714fda56bc53236d3a974413eb8f00713c77a7a9772214adee719d317a4e6",
+          "responseHash": "a687f9a3ca41d545205d9439c53a7a313b2fa7323582c1ae4d7065cbfd793c4a",
+          "latencyMs": 4135,
+          "usage": {
+            "promptTokens": 3232,
+            "outputTokens": 781,
+            "thinkingTokens": 168,
+            "totalTokens": 4181
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "C",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Pendapatan bersih lama = 120jt - (10*4jt) - 25jt = 55jt. Target pendapatan bersih baru = 2 * 55jt = 110jt. Tambahan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = gaji 5 karyawan (5*4jt = 20jt) + cicilan pinjaman (8.745.148). Omzet minimal cabang baru = 55jt + 20jt + 8.745.148 = 83.745.148.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?"
+              ],
+              "rationale": "Siswa perlu mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk merumuskan model pendapatan bersih baru dan menentukan target omzet. Ini melibatkan pemilihan prosedur yang tepat untuk memecahkan masalah kontekstual.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya"
+              ],
+              "rationale": "Soal menuntut pemahaman konseptual tentang hubungan antara omzet, beban operasional, dan cicilan dalam menentukan pendapatan bersih, serta bagaimana perubahan variabel tersebut memengaruhi target akhir.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Bu Tania merekrut 5 orang karyawan tambahan",
+                "cicilan pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat, yaitu 12 bulan",
+                "pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya"
+              ],
+              "rationale": "Soal memerlukan perencanaan langkah yang saling bergantung: menghitung pendapatan bersih awal, menentukan target pendapatan bersih baru, mengidentifikasi beban tambahan (gaji dan cicilan), dan akhirnya menghitung omzet yang diperlukan. Siswa harus mengelola beberapa kendala (gaji karyawan baru dan cicilan) secara bersamaan.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Operasi aritmetika dasar, pemahaman konsep pendapatan bersih (omzet - beban), dan pembacaan tabel angsuran.",
+                "dependentSteps": 4,
+                "routineStatus": "routine_selection",
+                "strategySelection": true,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 3,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Tingkat kesulitan Medium sesuai untuk kelas 12 karena menuntut integrasi beberapa variabel keuangan (gaji, cicilan, target pendapatan) dalam satu masalah cerita yang tidak langsung, namun prosedurnya tetap familiar."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "D5XCauT7N4ajqfkP3K3O6Ak",
+          "promptHash": "961714fda56bc53236d3a974413eb8f00713c77a7a9772214adee719d317a4e6",
+          "responseHash": "2d917caaed84c9f50156718f36b27e5765025a227a99581046ce7b507d111161",
+          "latencyMs": 3956,
+          "usage": {
+            "promptTokens": 3232,
+            "outputTokens": 778,
+            "thinkingTokens": 170,
+            "totalTokens": 4180
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "C",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Pendapatan bersih awal = 120jt - (10*4jt) - 25jt = 55jt. Target pendapatan bersih total = 2*55jt = 110jt. Tambahan pendapatan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = gaji 5 karyawan (5*4jt = 20jt) + cicilan pinjaman 100jt tenor 12 bulan (8.745.148). Omzet minimal cabang baru = 55jt + 20jt + 8.745.148 = 83.745.148.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?"
+              ],
+              "rationale": "Siswa harus mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk merumuskan persamaan pendapatan bersih baru dan menentukan omzet yang diperlukan. Ini melibatkan pemahaman hubungan antar variabel keuangan.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya"
+              ],
+              "rationale": "Siswa menerapkan prinsip aritmatika keuangan dasar (pendapatan bersih = omzet - beban) dalam konteks skenario bisnis yang diberikan.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "omzet rata-rata sebesar Rp120.000.000,00 per bulan",
+                "gaji rata-rata Rp4.000.000,00",
+                "pengeluaran rutin lainnya sebesar Rp25.000.000,00",
+                "pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat, yaitu 12 bulan"
+              ],
+              "rationale": "Soal memerlukan integrasi beberapa variabel (gaji, cicilan, target pendapatan) yang saling terkait. Siswa harus mengidentifikasi beban baru (gaji karyawan tambahan dan cicilan) dan menambahkannya ke target pendapatan bersih untuk mendapatkan omzet. Meskipun prosedural, terdapat beberapa langkah yang harus direncanakan dengan cermat.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Operasi aritmatika dasar, pemahaman konsep pendapatan bersih, dan pembacaan tabel angsuran.",
+                "dependentSteps": 4,
+                "routineStatus": "familiar_routine",
+                "strategySelection": true,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 2,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Soal ini sesuai untuk kelas 12 karena menggabungkan literasi keuangan dengan perhitungan aritmatika yang memerlukan ketelitian dalam mengidentifikasi komponen beban."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "FJXCapCXGNapg8UPwKiAyA0",
+          "promptHash": "961714fda56bc53236d3a974413eb8f00713c77a7a9772214adee719d317a4e6",
+          "responseHash": "44446af8ca9d9112e05f92b2e40d52cfbf36afca425c2751b8e1c7c3fc7db615",
+          "latencyMs": 3715,
+          "usage": {
+            "promptTokens": 3232,
+            "outputTokens": 802,
+            "thinkingTokens": 166,
+            "totalTokens": 4200
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "C",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pendapatan bersih awal = 120jt - (10*4jt) - 25jt = 55jt. Target pendapatan bersih total = 2 * 55jt = 110jt. Tambahan pendapatan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = gaji 5 karyawan (5*4jt = 20jt) + cicilan pinjaman 100jt tenor 12 bulan (8.745.148). Omzet minimal cabang baru = 55jt + 20jt + 8.745.148 = 83.745.148.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "adjudicated",
+            "adjudicationRationale": "Siswa perlu mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk merumuskan model pendapatan bersih baru dan menentukan nilai omzet yang diperlukan. Ini melibatkan pemahaman hubungan antar variabel keuangan dalam skenario bisnis."
+          },
+          "knowledgeDimension": {
+            "label": "conceptual",
+            "voteCounts": {
+              "conceptual": 2,
+              "procedural": 1
+            },
+            "supportingRuns": 2,
+            "status": "adjudicated",
+            "adjudicationRationale": "Soal ini menguji pemahaman konseptual tentang bagaimana komponen pendapatan dan pengeluaran (termasuk cicilan dan gaji) membentuk pendapatan bersih dalam konteks bisnis."
+          },
+          "intendedDifficulty": {
+            "label": "Medium",
+            "voteCounts": {
+              "Medium": 3
+            },
+            "supportingRuns": 3,
+            "status": "adjudicated",
+            "adjudicationRationale": "Soal memerlukan perencanaan langkah yang saling bergantung: menghitung pendapatan bersih awal, menentukan target baru, mengidentifikasi beban tambahan (gaji dan cicilan), dan menyusun persamaan omzet. Siswa harus mengintegrasikan data dari teks dan tabel secara cermat."
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": true,
+        "eligibleForTraining": true
+      },
+      "adjudication": {
+        "status": "success",
+        "output": {
+          "contentStatus": "valid",
+          "contentConcerns": [],
+          "answerKeyStatus": "verified",
+          "verifiedAnswerKey": "C",
+          "visualTranscript": null,
+          "verifiedMinimalSolution": "Pendapatan bersih awal = 120jt - (10*4jt) - 25jt = 55jt. Target pendapatan bersih total = 2 * 55jt = 110jt. Tambahan pendapatan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = gaji 5 karyawan (5*4jt = 20jt) + cicilan pinjaman 100jt tenor 12 bulan (8.745.148). Omzet minimal cabang baru = 55jt + 20jt + 8.745.148 = 83.745.148.",
+          "mathCognitiveDomain": {
+            "action": "classify",
+            "evidenceSpans": [
+              "Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?"
+            ],
+            "rationale": "Siswa perlu mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk merumuskan model pendapatan bersih baru dan menentukan nilai omzet yang diperlukan. Ini melibatkan pemahaman hubungan antar variabel keuangan dalam skenario bisnis.",
+            "label": "applying"
+          },
+          "knowledgeDimension": {
+            "action": "classify",
+            "evidenceSpans": [
+              "pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya"
+            ],
+            "rationale": "Soal ini menguji pemahaman konseptual tentang bagaimana komponen pendapatan dan pengeluaran (termasuk cicilan dan gaji) membentuk pendapatan bersih dalam konteks bisnis.",
+            "label": "conceptual"
+          },
+          "intendedDifficulty": {
+            "action": "classify",
+            "evidenceSpans": [
+              "Bu Tania merekrut 5 orang karyawan tambahan",
+              "Andaikan Bu Tania mengambil pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat, yaitu 12 bulan",
+              "Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?"
+            ],
+            "rationale": "Soal memerlukan perencanaan langkah yang saling bergantung: menghitung pendapatan bersih awal, menentukan target baru, mengidentifikasi beban tambahan (gaji dan cicilan), dan menyusun persamaan omzet. Siswa harus mengintegrasikan data dari teks dan tabel secara cermat.",
+            "label": "Medium",
+            "profile": {
+              "expectedPrerequisite": "Operasi aritmetika dasar, pemahaman konsep pendapatan bersih (laba), dan pembacaan tabel angsuran.",
+              "dependentSteps": 4,
+              "routineStatus": "routine_selection",
+              "strategySelection": true,
+              "representationTransfer": false,
+              "relevantInformationUnits": 6,
+              "interactingConstraints": 3,
+              "calculationLoad": "moderate",
+              "scaffoldLevel": "none",
+              "distractorQuality": "plausible",
+              "gradeRelativeRationale": "Siswa kelas 12 diharapkan mampu mengelola variabel keuangan majemuk seperti ini. Tingkat kesulitan Medium tepat karena memerlukan ketelitian dalam mengidentifikasi semua komponen beban baru (gaji + cicilan) terhadap target pendapatan bersih."
+            }
+          }
+        },
+        "errorCode": null,
+        "errorDetails": [],
+        "quotaDailyExhausted": false,
+        "quotaLimits": [],
+        "providerFailureReason": null,
+        "responseId": "GJXCav2jJee_g8UPzqHM6QQ",
+        "promptHash": "7a5013c5f1d397dabeac97c31f8fdf731052c30fbe9940f21720c30aac7daeed",
+        "responseHash": "8f32202ca5edad8741c111cfac368e37cae3f8d5cec9622485be1c687b163cbd",
+        "latencyMs": 3643,
+        "usage": {
+          "promptTokens": 5309,
+          "outputTokens": 792,
+          "thinkingTokens": 96,
+          "totalTokens": 6197
+        }
+      }
+    },
+    "b5d6c979c2045301a3560ae7": {
+      "index": 2,
+      "questionId": "b5d6c979c2045301a3560ae7",
+      "inputHash": "1d18bce6a97612568b9ef4011b3010c8a3b33d21f92f47aeaccb6374f0f8c67c",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel pada bulan ke-1: 8 + 14 = 22. Pada bulan ke-2: 6,88 + 15,12 = 22. Pada bulan ke-3: 5,7604 + 16,32 = 22,0804. Terdapat ketidakkonsistenan pembulatan pada tabel, namun nilai anuitas yang konsisten secara konsep adalah 22 (satuan Rp100.000,00) = Rp2.200.000,00.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Besar anuitas pada sistem angsuran tersebut adalah"
+              ],
+              "rationale": "Siswa perlu memahami konsep anuitas sebagai jumlah dari bunga dan angsuran pokok pada periode yang sama, kemudian menerapkan pemahaman tersebut dengan membaca data dari tabel yang disediakan.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Besar anuitas pada sistem angsuran tersebut adalah"
+              ],
+              "rationale": "Soal ini menguji pemahaman konseptual tentang komponen anuitas (bunga + angsuran) dalam konteks tabel rencana pelunasan pinjaman.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Besar anuitas pada sistem angsuran tersebut adalah"
+              ],
+              "rationale": "Soal ini tergolong Easy karena siswa hanya perlu memahami definisi anuitas dan melakukan operasi penjumlahan sederhana dari data yang sudah tersedia secara eksplisit dalam tabel. Tidak ada perencanaan langkah yang kompleks atau kendala yang berinteraksi.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang komponen anuitas (bunga dan angsuran pokok).",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 12 seharusnya sudah familiar dengan tabel anuitas dan konsep dasarnya. Soal ini hanya memerlukan pembacaan data dan penjumlahan sederhana."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "HJXCaqyUF6O1g8UPk4bkuQo",
+          "promptHash": "34f62ebfed77bddcff4f2ee193a94760a75210de05ebf4af2fc0997829f5de86",
+          "responseHash": "b7764ea33ac48246511f91d75a2299715ffa976a73e319308078cc61ece50653",
+          "latencyMs": 3315,
+          "usage": {
+            "promptTokens": 2200,
+            "outputTokens": 661,
+            "thinkingTokens": 110,
+            "totalTokens": 2971
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel, pada bulan ke-2: Bunga = 6,88 dan Angsuran = 15,12. Maka Anuitas = 6,88 + 15,12 = 22 (dalam satuan Rp100.000,00), sehingga Rp2.200.000,00.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Besar anuitas pada sistem angsuran tersebut adalah"
+              ],
+              "rationale": "Siswa perlu memahami konsep dasar anuitas sebagai penjumlahan bunga dan angsuran pokok pada periode yang sama, lalu menerapkan pemahaman tersebut dengan membaca data dari tabel yang disediakan.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Besar anuitas pada sistem angsuran tersebut adalah"
+              ],
+              "rationale": "Soal menguji pemahaman konseptual tentang komponen anuitas (bunga + angsuran) dan kemampuan prosedural dalam membaca serta mengolah data dari tabel rencana angsuran.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Besar anuitas pada sistem angsuran tersebut adalah",
+                "Berikut dalam tabel rencana angsuran pinjaman tersebut hingga anuitas ke-3"
+              ],
+              "rationale": "Soal ini tergolong mudah karena siswa hanya perlu memahami definisi anuitas dan melakukan satu operasi penjumlahan sederhana dari data yang sudah tersedia secara eksplisit di dalam tabel. Tidak ada perencanaan langkah yang kompleks atau kendala yang saling berinteraksi.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang komponen anuitas (bunga dan angsuran pokok) dan kemampuan membaca tabel.",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 12 seharusnya sudah familiar dengan tabel angsuran dan konsep anuitas. Soal ini hanya menuntut pembacaan data dan penjumlahan sederhana, sehingga beban kognitifnya rendah."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "IJXCaq_XB_q2juMPvbjaoAk",
+          "promptHash": "34f62ebfed77bddcff4f2ee193a94760a75210de05ebf4af2fc0997829f5de86",
+          "responseHash": "16943712fbecc40f59c7292f023864f7b91437aeebd081e4e3a9a91cb3ed0c2e",
+          "latencyMs": 4205,
+          "usage": {
+            "promptTokens": 2200,
+            "outputTokens": 654,
+            "thinkingTokens": 125,
+            "totalTokens": 2979
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel, pada bulan ke-2: Bunga = 6,88; Angsuran = 15,12. Anuitas = 6,88 + 15,12 = 22 (dalam satuan Rp100.000,00). Jadi, anuitas = 22 * Rp100.000,00 = Rp2.200.000,00.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Besar anuitas pada sistem angsuran tersebut adalah"
+              ],
+              "rationale": "Siswa diminta untuk memahami konsep anuitas sebagai jumlah bunga dan angsuran pokok, kemudian menerapkan pemahaman tersebut dengan mengambil data yang tepat dari tabel yang disediakan.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Besar anuitas pada sistem angsuran tersebut adalah"
+              ],
+              "rationale": "Soal menguji pemahaman konseptual tentang definisi anuitas dalam konteks tabel angsuran pinjaman.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Besar anuitas pada sistem angsuran tersebut adalah",
+                "Bunga Pinjaman | Angsuran Pinjaman"
+              ],
+              "rationale": "Soal ini tergolong mudah karena siswa hanya perlu memahami definisi anuitas (bunga + angsuran) dan membaca data dari tabel yang sudah tersedia. Tidak ada perhitungan kompleks atau perencanaan strategi yang rumit.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang komponen angsuran pinjaman (bunga dan angsuran pokok).",
+                "dependentSteps": 1,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 12 seharusnya sudah familiar dengan tabel angsuran. Tugas utama hanyalah membaca tabel dan melakukan penjumlahan sederhana."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "JJXCas6jNMO0g8UPgdCdkAo",
+          "promptHash": "34f62ebfed77bddcff4f2ee193a94760a75210de05ebf4af2fc0997829f5de86",
+          "responseHash": "c237b5c31dc80285c693533a940acc571501591ea30b4ef89a89525e08a60171",
+          "latencyMs": 4013,
+          "usage": {
+            "promptTokens": 2200,
+            "outputTokens": 627,
+            "thinkingTokens": 125,
+            "totalTokens": 2952
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "D",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel pada bulan ke-1: 8 + 14 = 22. Pada bulan ke-2: 6,88 + 15,12 = 22. Pada bulan ke-3: 5,7604 + 16,32 = 22,0804. Terdapat ketidakkonsistenan pembulatan pada tabel, namun nilai anuitas yang konsisten secara konsep adalah 22 (satuan Rp100.000,00) = Rp2.200.000,00.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "conceptual",
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Easy": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    }
+  },
+  "summary": {
+    "itemsProcessed": 2,
+    "itemsEligibleForTraining": 2,
+    "successfulRuns": 6,
+    "failedRuns": 0,
+    "adjudicatedItems": 1,
+    "pendingAdjudication": 0,
+    "difficultyDistribution": {
+      "Easy": 1,
+      "Medium": 1,
+      "Hard": 0
+    },
+    "dominantDifficultyShare": 0.5,
+    "boundaryAnalysisRequired": true,
+    "promptTokens": 21605,
+    "outputTokens": 5095,
+    "thinkingTokens": 960,
+    "totalTokens": 27660
+  },
+  "executionStatus": "completed_batch",
+  "apiAttempts": 7
+}

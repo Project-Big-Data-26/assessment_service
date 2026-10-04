@@ -4,7 +4,7 @@ Status: **BERHENTI UNTUK ANALISIS**
 
 - Item diproses: 42/42
 - Tiga run sukses: 100.0%
-- Insufficient/abstain: 2.4%
+- Insufficient/abstain: 4.8%
 - Dominasi difficulty: 78.6%
 - Distribusi difficulty: `{"Easy": 33, "Medium": 9}`
 

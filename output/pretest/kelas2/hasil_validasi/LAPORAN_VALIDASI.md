@@ -1,19 +1,19 @@
 # Validasi ulang soal kelas 2 — Gemini blind N=3 dan diagnostik IndoBERT
 
-Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v4-blind-key-verified`. Rubrik: `math-rubric-3x4x3-v2-grade-aware`.
+Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v10-blind-key-verified`. Rubrik: `math-rubric-3x4x3-v8-sd-grade-aware`.
 
 Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas 2 tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan menjadi keputusan silver operasional.
 
-Checkpoint dikunci dengan SHA-256 sebelum inferensi IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Prediksi model lama dipakai untuk menunjukkan ketidaksepakatan; tidak diberikan kembali ke Gemini.
+Checkpoint dikunci dengan SHA-256 sebelum inferensi IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Prediksi model dipakai sebagai diagnostik; tidak diberikan kembali ke Gemini.
 
-Jumlah soal: 44; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 19, "applying": 24, "reasoning": 1}, "knowledgeDimension": {"factual": 9, "conceptual": 28, "procedural": 7, "metacognitive": 0}, "intendedDifficulty": {"Easy": 38, "Medium": 6, "Hard": 0}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 18, "applying": 24, "reasoning": 1}, "knowledgeDimension": {"factual": 9, "conceptual": 27, "procedural": 7}, "intendedDifficulty": {"Easy": 37, "Medium": 6}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Jumlah soal: 44; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 24, "reasoning": 1, "applying": 19}, "knowledgeDimension": {"factual": 10, "conceptual": 25, "procedural": 9, "metacognitive": 0}, "intendedDifficulty": {"Easy": 38, "Hard": 1, "Medium": 5}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 23, "reasoning": 1, "applying": 19}, "knowledgeDimension": {"factual": 10, "conceptual": 24, "procedural": 9, "metacognitive": 0}, "intendedDifficulty": {"Easy": 37, "Hard": 1, "Medium": 5}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
 Routing: `{"silver_ready": 43, "revision_required": 1}`.
-Run awal sukses: 132/132; adjudikasi: 17; token sukses tercatat: 326,849.
+Run awal sukses: 132/132; adjudikasi: 13; token sukses tercatat: 452,791.
 
 Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
-IndoBERT aktif: `indobert-3x4x3-silver-kelas1-v1`, arsitektur `parallel-v1`, representation `metadata`. Artifact belum disetujui; tidak ada training ulang dalam batch ini. Difficulty model lama dapat mengalami class collapse. Confidence dari kalibrasi kelas 1 yang kecil belum membuktikan ketepatan label.
+Artifact diagnostik IndoBERT: `indobert-3x4x3-silver-kelas1-v1`, arsitektur `parallel-v1`, representation `metadata`. Dataset training: `kelas1-gemini-silver-n3-v1`. Approval provisional: `False`; research-only: `False`; gate data: `False`; anti-collapse: `False`; gate promosi: `False`. Packaging ini tidak melakukan training atau promosi model.
 KKO eksplisit masuk input encoder: `False`. Solusi minimum masuk input encoder: `False`. KKO/solusi tetap dicatat untuk audit; jangan menyatakan fitur itu dipakai model bila serializer artefak tidak memasukkannya.
 
 ## Kelompok difficulty
@@ -23,8 +23,8 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
 | Easy | 38 | 37 | [Easy.json](difficulty/Easy.json) |
-| Medium | 6 | 6 | [Medium.json](difficulty/Medium.json) |
-| Hard | 0 | 0 | [Hard.json](difficulty/Hard.json) |
+| Medium | 5 | 5 | [Medium.json](difficulty/Medium.json) |
+| Hard | 1 | 1 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
 
@@ -44,32 +44,32 @@ Lengkapi urutan bilangan di bawah ini.<br><br>28 ... 30 ... ...
 | D | 29, 31, 33 |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Urutan bilangan adalah 28, 29, 30, 31, 32. Jadi, bilangan yang hilang adalah 29, 31, dan 32.
+Solusi minimum hasil AI: Urutan bilangan adalah 28, 29, 30, 31, 32. Titik-titik yang kosong harus diisi dengan bilangan yang berurutan setelah 28 dan setelah 30, yaitu 29, 31, dan 32.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9dae8db58bc38d1bdbc2fe9233bc23fe9ed77529637e9fa22dbf2d3a7d764218`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9677e699a5ffb0ca2d0cba7e47916de77a2fd949c87e625105831929fe73a745`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 1403 |
-| 2 | success | valid / verified | knowing | factual | Easy | 1431 |
-| 3 | success | valid / verified | knowing | factual | Easy | 1418 |
+| 1 | success | valid / verified | knowing | factual | Easy | 2313 |
+| 2 | success | valid / verified | knowing | factual | Easy | 2317 |
+| 3 | success | valid / verified | knowing | factual | Easy | 2300 |
 
-Run 1 — solusi: Urutan bilangan adalah 28, 29, 30, 31, 32. Jadi, bilangan yang hilang adalah 29, 31, dan 32.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan cacah (menambah 1) dan mengisi bagian yang kosong secara langsung.. Bukti: Lengkapi urutan bilangan di bawah ini. 28 ... 30 ... ...
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan (fakta dasar dalam sistem bilangan).. Bukti: 28 ... 30 ... ...
-- Intended difficulty `classify/Easy`: Soal ini sangat rutin dan langsung, hanya memerlukan pengenalan urutan bilangan dasar.. Bukti: 28 ... 30 ... ...
+Run 1 — solusi: Urutan bilangan adalah 28, 29, 30, 31, 32. Titik-titik yang kosong harus diisi dengan bilangan yang berurutan setelah 28 dan setelah 30, yaitu 29, 31, dan 32.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengenali pola urutan bilangan cacah sederhana dan mengisi bagian yang hilang, yang merupakan prosedur langsung dalam pemahaman bilangan kelas 2.. Bukti: Lengkapi urutan bilangan di bawah ini. 28 ... 30 ... ...
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman faktual tentang urutan bilangan cacah dan konsep dasar berhitung maju.. Bukti: 28 ... 30 ... ...
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2. Tidak ada kendala yang berinteraksi atau perencanaan kompleks; siswa hanya perlu melanjutkan urutan bilangan 28, 29, 30, 31, 32.. Bukti: 28 ... 30 ... ...
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan menghitung maju bilangan 1-50. |
+| expectedPrerequisite | Kemampuan berhitung maju dan mengenal urutan bilangan cacah hingga 50. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -79,12 +79,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD yang menekankan pengenalan urutan bilangan cacah. |
+| gradeRelativeRationale | Mengisi urutan bilangan adalah materi standar kelas 2 yang bersifat rutin dan tidak memerlukan penalaran tingkat tinggi. |
 
-Run 2 — solusi: Urutan bilangan adalah 28, 29, 30, 31, 32. Jadi, bilangan yang hilang adalah 29, 31, dan 32.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan cacah sederhana (menambah 1) dan mengisi bagian yang kosong secara langsung.. Bukti: Lengkapi urutan bilangan di bawah ini. 28 ... 30 ... ...
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan (fakta dasar) dalam sistem bilangan cacah.. Bukti: 28 ... 30 ... ...
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, menggunakan representasi angka yang familiar, dan hanya memerlukan pemahaman urutan bilangan dasar yang sesuai untuk kelas 2.. Bukti: 28 ... 30 ... ...
+Run 2 — solusi: Urutan bilangan adalah 28, 29, 30, 31, 32. Titik-titik yang kosong diisi dengan 29, 31, dan 32.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengenali pola urutan bilangan cacah sederhana (bertambah 1) dan melengkapi bagian yang hilang. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.. Bukti: Lengkapi urutan bilangan di bawah ini. 28 ... 30 ... ...
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan (fakta dasar matematika) dalam rentang sampai 50.. Bukti: 28 ... 30 ... ...
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2. Pola urutan bilangan 28, 29, 30, 31, 32 adalah materi rutin yang familiar. Tidak ada kendala yang berinteraksi atau kebutuhan perencanaan yang kompleks.. Bukti: 28 ... 30 ... ...
 
 Profil difficulty run ini:
 
@@ -95,23 +95,23 @@ Profil difficulty run ini:
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 3 |
+| relevantInformationUnits | 2 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD untuk materi urutan bilangan. |
+| gradeRelativeRationale | Mengurutkan bilangan adalah kompetensi dasar kelas 2. Soal ini tidak menuntut penalaran lebih lanjut selain melanjutkan urutan yang sudah jelas. |
 
-Run 3 — solusi: Urutan bilangan adalah 28, 29, 30, 31, 32. Jadi, bilangan yang hilang adalah 29, 31, dan 32.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola urutan bilangan cacah sederhana (menambah 1) dan mengisi bagian yang kosong, yang merupakan proses langsung.. Bukti: Lengkapi urutan bilangan di bawah ini. 28 ... 30 ... ...
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan (fakta dasar dalam sistem bilangan).. Bukti: 28 ... 30 ... ...
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan urutan bilangan yang familiar dengan satu aturan sederhana.. Bukti: 28 ... 30 ... ...
+Run 3 — solusi: Urutan bilangan adalah 28, 29, 30, 31, 32. Titik-titik yang kosong diisi dengan 29, 31, dan 32.
+- Domain kognitif `classify/knowing`: Siswa diminta mengenali pola urutan bilangan cacah sederhana (bertambah satu) dan melengkapinya. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.. Bukti: Lengkapi urutan bilangan di bawah ini. 28 ... 30 ... ...
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan (fakta dasar matematika) dalam rentang sampai 50.. Bukti: 28 ... 30 ... ...
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2. Pola urutan bilangan (n+1) adalah materi rutin yang familiar. Tidak ada kendala yang berinteraksi atau kebutuhan perencanaan yang kompleks.. Bukti: 28 ... 30 ... ...
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membilang 1-50 secara berurutan. |
+| expectedPrerequisite | Kemampuan membilang urutan bilangan cacah sampai 50. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -121,13 +121,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD untuk materi urutan bilangan sampai 50. |
-
-Histori retry: run 3 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 2 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+| gradeRelativeRationale | Mengurutkan bilangan adalah kompetensi dasar kelas 2. Soal ini tidak menuntut penalaran lebih lanjut selain melanjutkan urutan yang sudah jelas. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -195,32 +189,32 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | D | tiga puluh enam |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Angka 35 terdiri dari angka 3 di posisi puluhan dan 5 di posisi satuan, sehingga dibaca 'tiga puluh lima'.
+Solusi minimum hasil AI: Angka 35 terdiri dari 3 puluhan dan 5 satuan, sehingga dibaca tiga puluh lima.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0fdd0ee6ff02ca4c71dc8639d96ef5e14e00f4ccd1bc93c9422df6820dbca7e1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d2f538700945bada8a01683db66eb3ab7bf8ef12c2d5e40a4aa8b3ca2af47e15`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 1268 |
-| 2 | success | valid / verified | knowing | factual | Easy | 1175 |
-| 3 | success | valid / verified | knowing | factual | Easy | 1288 |
+| 1 | success | valid / verified | knowing | factual | Easy | 2839 |
+| 2 | success | valid / verified | knowing | factual | Easy | 2155 |
+| 3 | success | valid / verified | knowing | factual | Easy | 2160 |
 
-Run 1 — solusi: Angka 35 terdiri dari angka 3 di posisi puluhan dan 5 di posisi satuan, sehingga dibaca 'tiga puluh lima'.
-- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengingat dan menerapkan pengetahuan dasar tentang cara membaca lambang bilangan, yang merupakan proses langsung.. Bukti: 35 dibaca ....
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang sistem penamaan bilangan (fakta dasar) dalam sistem desimal.. Bukti: 35 dibaca ....
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan simbol angka dan padanan katanya dalam bahasa Indonesia tanpa langkah prosedural yang kompleks.. Bukti: 35 dibaca ....
+Run 1 — solusi: Angka 35 terdiri dari 3 puluhan dan 5 satuan, sehingga dibaca tiga puluh lima.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menyebutkan nama bilangan dari simbol angka yang diberikan tanpa memerlukan prosedur atau penalaran tambahan.. Bukti: 35 dibaca ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual mengenai nama bilangan dalam sistem numerasi.. Bukti: 35 dibaca ....
+- Intended difficulty `classify/Easy`: Soal ini merupakan tugas pengenalan langsung nama bilangan yang merupakan materi dasar kelas 2. Tidak ada langkah kompleks atau perencanaan yang diperlukan.. Bukti: 35 dibaca ....
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membaca lambang bilangan dua digit. |
+| expectedPrerequisite | Pemahaman nilai tempat puluhan dan satuan. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -230,18 +224,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Membaca bilangan adalah kompetensi dasar kelas 2 yang bersifat rutin dan langsung. |
+| gradeRelativeRationale | Membaca bilangan sampai 50 adalah kompetensi dasar kelas 2 yang bersifat rutin. |
 
-Run 2 — solusi: Angka 35 terdiri dari angka 3 di posisi puluhan (tiga puluh) dan 5 di posisi satuan (lima), sehingga dibaca tiga puluh lima.
-- Domain kognitif `classify/knowing`: Soal ini hanya memerlukan pengenalan langsung terhadap lambang bilangan dan cara membacanya sesuai dengan nilai tempat, yang merupakan proses kognitif dasar.. Bukti: 35 dibaca ....
-- Dimensi pengetahuan `classify/factual`: Siswa perlu memahami konvensi penamaan bilangan (fakta dasar) dalam sistem bilangan desimal.. Bukti: 35 dibaca ....
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan pengenalan simbol angka yang sudah familiar bagi siswa kelas 2 tanpa memerlukan langkah perhitungan atau strategi kompleks.. Bukti: 35 dibaca ....
+Run 2 — solusi: Angka 35 terdiri dari angka 3 di posisi puluhan dan 5 di posisi satuan, sehingga dibaca 'tiga puluh lima'.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa untuk membaca atau menyebutkan nama bilangan berdasarkan simbol angka yang diberikan. Ini adalah tugas pengenalan langsung terhadap simbol bilangan.. Bukti: 35 dibaca ....
+- Dimensi pengetahuan `classify/factual`: Siswa perlu mengetahui fakta tentang bagaimana simbol angka (35) dipetakan ke dalam nama bilangan dalam bahasa Indonesia.. Bukti: 35 dibaca ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2. Tidak ada langkah yang saling bergantung atau strategi yang perlu dipilih. Ini adalah pengenalan langsung.. Bukti: 35 dibaca ....
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman nilai tempat puluhan dan satuan serta nama bilangan 1-50. |
+| expectedPrerequisite | Mengenal lambang bilangan dan nama bilangan dasar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -251,18 +245,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Membaca bilangan dua digit adalah kompetensi dasar yang diharapkan dikuasai siswa kelas 2 di awal atau pertengahan semester. |
+| gradeRelativeRationale | Membaca bilangan dua digit adalah kompetensi dasar yang diharapkan sudah dikuasai di kelas 2. |
 
-Run 3 — solusi: Angka 35 terdiri dari angka 3 di posisi puluhan (tiga puluh) dan 5 di posisi satuan (lima), sehingga dibaca 'tiga puluh lima'.
-- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa untuk mengingat dan mengenali nama bilangan dari simbol angka yang diberikan, yang merupakan proses kognitif tingkat dasar.. Bukti: 35 dibaca ....
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan tentang simbol angka dan cara membacanya, yang termasuk dalam kategori fakta dasar dalam sistem bilangan.. Bukti: 35 dibaca ....
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung, menggunakan representasi yang sangat familiar bagi siswa kelas 2, dan tidak memerlukan langkah pemrosesan tambahan.. Bukti: 35 dibaca ....
+Run 3 — solusi: Angka 35 terdiri dari angka 3 di posisi puluhan (tiga puluh) dan angka 5 di posisi satuan (lima), sehingga dibaca tiga puluh lima.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali simbol angka dan menyebutkan nama bilangannya sesuai dengan sistem nilai tempat yang sudah dipelajari di kelas 2.. Bukti: 35 dibaca ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual mengenai nama bilangan dan simbol angka.. Bukti: 35 dibaca ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan merupakan pengenalan langsung terhadap simbol angka yang sudah dipelajari di kelas 2.. Bukti: 35 dibaca ....
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membaca nama bilangan dasar 1-50. |
+| expectedPrerequisite | Mengenal lambang bilangan 1-50. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -272,13 +266,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Membaca bilangan dua digit adalah kompetensi dasar yang diharapkan sudah dikuasai siswa kelas 2 secara rutin. |
-
-Histori retry: run 1 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 3 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 2 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+| gradeRelativeRationale | Membaca bilangan dua digit adalah kompetensi dasar kelas 2 yang bersifat rutin dan tidak memerlukan langkah penyelesaian kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -344,32 +332,53 @@ Isilah titik-titik berikut dengan bilangan yang tepat.<br><br>24 = ... puluhan +
 | D | 20 puluhan + 4 satuan |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Bilangan 24 terdiri dari 2 puluhan (20) dan 4 satuan (4).
+Solusi minimum hasil AI: Bilangan 24 terdiri dari angka 2 di tempat puluhan dan angka 4 di tempat satuan. Jadi, 24 = 2 puluhan + 4 satuan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `52d327efb14fbd6990464a71cb743e56f625fa6ee64d600f2c06bf7bee93b09b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `00b4c0f8771d77ea72b415086ca707711f88d164729dfcd6ff2126c967862989`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 1181 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 1231 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 1231 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2238 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2234 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2216 |
 
-Run 1 — solusi: Bilangan 24 terdiri dari 2 puluhan (20) dan 4 satuan (4).
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menerapkan pemahaman dasar tentang nilai tempat bilangan dua digit secara langsung.. Bukti: 24 = ... puluhan + ... satuan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur nilai tempat (puluhan dan satuan) sebagai konsep dasar bilangan.. Bukti: 24 = ... puluhan + ... satuan
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2, melibatkan prosedur familiar tanpa langkah kompleks.. Bukti: 24 = ... puluhan + ... satuan
+Run 1 — solusi: Bilangan 24 terdiri dari angka 2 di tempat puluhan (bernilai 20) dan angka 4 di tempat satuan (bernilai 4). Maka, 24 = 2 puluhan + 4 satuan.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menguraikan bilangan dua angka berdasarkan nilai tempatnya. Ini adalah penerapan langsung dari konsep nilai tempat yang sudah dipelajari di kelas 2.. Bukti: 24 = ... puluhan + ... satuan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur nilai tempat (puluhan dan satuan) pada bilangan dua angka, yang merupakan konsep dasar dalam aritmatika.. Bukti: 24 = ... puluhan + ... satuan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi digit puluhan dan satuan dari bilangan 24 tanpa langkah tambahan atau integrasi yang kompleks.. Bukti: 24 = ... puluhan + ... satuan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar nilai tempat bilangan dua digit. |
+| expectedPrerequisite | Pemahaman dasar tentang nilai tempat bilangan dua angka (puluhan dan satuan). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 2, menguraikan bilangan dua angka menjadi puluhan dan satuan adalah materi standar yang bersifat rutin dan tidak memerlukan perencanaan langkah yang rumit. |
+
+Run 2 — solusi: Bilangan 24 terdiri dari angka 2 di posisi puluhan (bernilai 20) dan angka 4 di posisi satuan (bernilai 4). Maka, 24 = 2 puluhan + 4 satuan.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi nilai tempat dari angka-angka dalam bilangan dua digit (24). Ini adalah prosedur langsung yang sudah dipelajari di kelas 2 mengenai dekomposisi bilangan berdasarkan nilai tempat.. Bukti: 24 = ... puluhan + ... satuan
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep nilai tempat (puluhan dan satuan) sebagai struktur dasar bilangan dua digit.. Bukti: 24 = ... puluhan + ... satuan
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 2. Tidak ada langkah yang saling bergantung atau kendala yang kompleks; siswa hanya perlu mengenali posisi digit.. Bukti: 24 = ... puluhan + ... satuan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang nilai tempat bilangan dua digit (puluhan dan satuan). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -379,63 +388,58 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi nilai tempat adalah kurikulum standar kelas 2 SD, soal ini bersifat langsung dan rutin. |
+| gradeRelativeRationale | Materi nilai tempat adalah kurikulum standar kelas 2. Soal ini menguji pemahaman dasar tanpa memerlukan perencanaan atau integrasi langkah yang rumit. |
 
-Run 2 — solusi: Bilangan 24 terdiri dari angka 2 di tempat puluhan (bernilai 20) dan angka 4 di tempat satuan (bernilai 4). Maka, 24 = 2 puluhan + 4 satuan.
-- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi nilai tempat dari angka yang diberikan, yang merupakan proses langsung dalam mengenali struktur bilangan.. Bukti: 24 = ... puluhan + ... satuan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai konsep nilai tempat (puluhan dan satuan) dalam sistem bilangan desimal.. Bukti: Nilai Tempat
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan prosedur familiar dengan satu langkah identifikasi nilai tempat tanpa kompleksitas tambahan.. Bukti: 24 = ... puluhan + ... satuan
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang nilai tempat puluhan dan satuan untuk bilangan dua angka. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi nilai tempat adalah kurikulum inti kelas 2. Soal ini bersifat langsung dan tidak memerlukan strategi pemecahan masalah yang kompleks. |
-
-Run 3 — solusi: Bilangan 24 terdiri dari angka 2 di tempat puluhan (bernilai 20) dan angka 4 di tempat satuan (bernilai 4). Jadi, 24 = 2 puluhan + 4 satuan.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menerapkan pemahaman dasar tentang nilai tempat (puluhan dan satuan) pada bilangan dua digit secara langsung.. Bukti: 24 = ... puluhan + ... satuan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur nilai tempat dalam sistem bilangan desimal, yang merupakan konsep dasar.. Bukti: 24 = ... puluhan + ... satuan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan pemahaman dasar nilai tempat untuk bilangan dua digit tanpa langkah tambahan.. Bukti: 24 = ... puluhan + ... satuan
+Run 3 — solusi: Bilangan 24 terdiri dari angka 2 di tempat puluhan (bernilai 20) dan angka 4 di tempat satuan (bernilai 4). Maka, 24 = 2 puluhan + 4 satuan.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk menguraikan bilangan dua angka berdasarkan nilai tempatnya. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.. Bukti: 24 = ... puluhan + ... satuan
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang konsep nilai tempat (puluhan dan satuan) sebagai elemen dasar dalam sistem bilangan.. Bukti: 24 = ... puluhan + ... satuan
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2. Siswa hanya perlu mengidentifikasi digit puluhan dan satuan dari bilangan 24 tanpa langkah tambahan atau kendala yang kompleks.. Bukti: 24 = ... puluhan + ... satuan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar nilai tempat bilangan dua digit (puluhan dan satuan). |
+| expectedPrerequisite | Pemahaman dasar tentang nilai tempat bilangan dua angka (puluhan dan satuan). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
+| relevantInformationUnits | 1 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD yang fokus pada pengenalan nilai tempat bilangan cacah sampai 100. |
-
-Histori retry: run 2 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 3 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+| gradeRelativeRationale | Menguraikan bilangan dua angka menjadi puluhan dan satuan adalah materi standar kelas 2 yang bersifat rutin dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"applying": 1, "knowing": 2} | majority_2_of_3 / adjudicated | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3532`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Soal ini meminta siswa untuk mengidentifikasi dan menempatkan digit bilangan ke dalam kategori nilai tempat yang sesuai. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang konsep nilai tempat (puluhan dan satuan) sebagai struktur dasar bilangan dua angka.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan sangat mendasar bagi siswa kelas 2. Tidak ada langkah yang saling bergantung, kendala yang kompleks, atau kebutuhan untuk merencanakan strategi. Siswa hanya perlu mengenali posisi digit.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang nilai tempat bilangan dua angka (puluhan dan satuan). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menguraikan bilangan dua angka menjadi puluhan dan satuan adalah materi standar kelas 2 yang bersifat rutin dan langsung. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -495,47 +499,26 @@ Isilah dengan bilangan yang tepat.<br><br>28 =    puluhan +    satuan
 | D | 8 puluhan + 2 satuan |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Angka 28 terdiri dari 2 puluhan (20) dan 8 satuan (8). Maka, 28 = 2 puluhan + 8 satuan.
+Solusi minimum hasil AI: Bilangan 28 terdiri dari angka 2 di tempat puluhan (bernilai 20) dan angka 8 di tempat satuan (bernilai 8). Maka, 28 = 2 puluhan + 8 satuan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b5353ac4f4ab27e97a77f5d16b9a44286e0af9185f2fb9ac2420b2151f41ed20`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `49b1f49d43bbde036ae2f749cd0569466e0f6c3fb4e9080a934dfeee4a5653a8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 1343 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 1323 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 1325 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2208 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2215 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2206 |
 
-Run 1 — solusi: Angka 28 terdiri dari 2 puluhan (20) dan 8 satuan (8). Maka, 28 = 2 puluhan + 8 satuan.
-- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi nilai tempat dari angka 28, yang merupakan proses langsung dalam memahami struktur bilangan dua digit.. Bukti: 28 =    puluhan +    satuan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur sistem bilangan desimal (nilai tempat), yang merupakan konsep dasar dalam matematika.. Bukti: 28 =    puluhan +    satuan
-- Intended difficulty `classify/Easy`: Soal ini bersifat prosedural dasar dan familiar bagi siswa kelas 2, hanya memerlukan pengenalan nilai tempat tanpa langkah tambahan yang kompleks.. Bukti: 28 =    puluhan +    satuan
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang nilai tempat untuk bilangan dua digit (puluhan dan satuan). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD yang menekankan pemahaman komposisi bilangan berdasarkan nilai tempat. |
-
-Run 2 — solusi: Angka 28 terdiri dari 2 puluhan (20) dan 8 satuan (8). Maka, 28 = 2 puluhan + 8 satuan.
-- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi nilai tempat dari angka 28, yang merupakan proses langsung dalam memahami konsep dasar nilai tempat.. Bukti: 28 =    puluhan +    satuan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai struktur nilai tempat (puluhan dan satuan) sebagai konsep dasar bilangan.. Bukti: 28 =    puluhan +    satuan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan pemahaman dasar tentang komposisi bilangan dua digit.. Bukti: 28 =    puluhan +    satuan
+Run 1 — solusi: Bilangan 28 terdiri dari angka 2 di tempat puluhan (bernilai 20) dan angka 8 di tempat satuan (bernilai 8). Maka, 28 = 2 puluhan + 8 satuan.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk menguraikan bilangan dua digit berdasarkan nilai tempatnya. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2, sehingga termasuk dalam domain knowing.. Bukti: 28 =    puluhan +    satuan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur nilai tempat (puluhan dan satuan) yang merupakan konsep dasar dalam sistem bilangan.. Bukti: 28 =    puluhan +    satuan
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 2. Tidak ada langkah yang saling bergantung atau strategi kompleks yang diperlukan.. Bukti: 28 =    puluhan +    satuan
 
 Profil difficulty run ini:
 
@@ -551,28 +534,49 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena merupakan pengenalan dasar nilai tempat yang diajarkan di tingkat tersebut. |
+| gradeRelativeRationale | Menguraikan bilangan 28 menjadi puluhan dan satuan adalah materi standar kelas 2 yang bersifat prosedural dan familiar. |
 
-Run 3 — solusi: Angka 28 terdiri dari 2 puluhan (20) dan 8 satuan (8). Maka, 28 = 2 puluhan + 8 satuan.
-- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi nilai tempat dari angka 28, yang merupakan proses langsung dalam memahami konsep dasar nilai tempat.. Bukti: 28 =    puluhan +    satuan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur nilai tempat (puluhan dan satuan) sebagai konsep dasar bilangan.. Bukti: 28 =    puluhan +    satuan
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan satu langkah identifikasi nilai tempat tanpa kompleksitas tambahan.. Bukti: 28 =    puluhan +    satuan
+Run 2 — solusi: Bilangan 28 terdiri dari angka 2 di tempat puluhan (bernilai 20) dan angka 8 di tempat satuan (bernilai 8). Maka, 28 = 2 puluhan + 8 satuan.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk menguraikan bilangan dua digit berdasarkan nilai tempatnya. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2, sehingga termasuk dalam domain knowing.. Bukti: 28 =    puluhan +    satuan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur nilai tempat (puluhan dan satuan) sebagai konsep dasar dalam sistem bilangan desimal.. Bukti: 28 =    puluhan +    satuan
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 2. Tidak ada langkah yang saling bergantung atau strategi kompleks yang harus dipilih.. Bukti: 28 =    puluhan +    satuan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang nilai tempat (puluhan dan satuan) untuk bilangan dua digit. |
+| expectedPrerequisite | Pemahaman dasar tentang nilai tempat bilangan dua digit (puluhan dan satuan). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 1 |
+| relevantInformationUnits | 2 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD mengenai pengenalan nilai tempat bilangan cacah sampai 100. |
+| gradeRelativeRationale | Menguraikan bilangan 28 menjadi 2 puluhan dan 8 satuan adalah materi standar kelas 2 yang bersifat prosedural dan familiar. |
+
+Run 3 — solusi: Bilangan 28 terdiri dari angka 2 di tempat puluhan (bernilai 20) dan angka 8 di tempat satuan (bernilai 8). Maka, 28 = 2 puluhan + 8 satuan.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk menguraikan bilangan dua digit berdasarkan nilai tempatnya. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2, sehingga termasuk dalam domain knowing.. Bukti: 28 =    puluhan +    satuan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur nilai tempat (puluhan dan satuan) sebagai konsep dasar dalam sistem bilangan.. Bukti: 28 =    puluhan +    satuan
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 2. Tidak ada langkah yang saling bergantung atau strategi kompleks yang diperlukan.. Bukti: 28 =    puluhan +    satuan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar nilai tempat bilangan dua digit (puluhan dan satuan). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menguraikan bilangan dua digit menjadi puluhan dan satuan adalah materi standar kelas 2 yang bersifat prosedural dan rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -652,41 +656,20 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 1534 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 1559 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 1532 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 2500 |
+| 2 | success | valid / verified | reasoning | conceptual | Hard | 2500 |
+| 3 | success | valid / verified | reasoning | conceptual | Hard | 2458 |
 
-Run 1 — solusi: Diketahui Kira = 34. Lili = 34 - 2 = 32. Malosi = 32 + 3 = 35. Urutan dari terkecil ke terbesar: Lili (32), Kira (34), Malosi (35).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur aritmatika dasar (penjumlahan dan pengurangan) secara berurutan untuk menentukan nilai setiap anak sebelum mengurutkannya.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Kira memegang kartu bilangan 34.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa tentang hubungan antar bilangan (lebih dari/kurang dari) dan penggunaan algoritma penjumlahan/pengurangan sederhana.. Bukti: 3 lebihnya dari; 2 kurangnya dari
-- Intended difficulty `classify/Medium`: Soal memerlukan dua langkah perhitungan berantai (menentukan nilai Lili, lalu Malosi) dan satu langkah pengurutan, yang sesuai untuk tingkat kelas 2.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Urutkan bilangan mereka dari nilai terkecil ke terbesar.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Penjumlahan dan pengurangan bilangan dua digit, konsep urutan bilangan. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 2 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Tingkat kesulitan menengah karena melibatkan penalaran berantai (multi-step) untuk menentukan nilai sebelum mengurutkan, namun operasi aritmatikanya masih dasar. |
-
-Run 2 — solusi: Kira = 34. Lili = 34 - 2 = 32. Malosi = 32 + 3 = 35. Urutan terkecil ke terbesar: Lili (32), Kira (34), Malosi (35).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur aritmatika dasar untuk menentukan nilai setiap anak berdasarkan hubungan yang diberikan, kemudian mengurutkan hasilnya. Ini adalah proses penerapan konsep pada situasi rutin.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Urutkan bilangan mereka dari nilai terkecil ke terbesar.
-- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan hubungan antar bilangan (konsep lebih dari/kurang dari) untuk menentukan nilai yang tidak diketahui.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.
-- Intended difficulty `classify/Medium`: Soal memerlukan dua langkah deduksi logis (menentukan nilai Lili, lalu Malosi) dan satu langkah pengurutan. Ini adalah tugas rutin bagi siswa kelas 2 yang sudah memahami operasi penjumlahan/pengurangan dasar.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Kira memegang kartu bilangan 34.
+Run 1 — solusi: Kira = 34. Lili = 34 - 2 = 32. Malosi = 32 + 3 = 35. Urutan dari terkecil ke terbesar: Lili (32), Kira (34), Malosi (35).
+- Domain kognitif `classify/applying`: Siswa perlu mengolah informasi relasional untuk menentukan nilai setiap anak sebelum mengurutkannya. Ini melibatkan penerapan konsep operasi dasar (penjumlahan/pengurangan) dalam konteks rutin, sehingga masuk dalam domain applying.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Kira memegang kartu bilangan 34.; Urutkan bilangan mereka dari nilai terkecil ke terbesar.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antarbilangan (lebih dari/kurang dari) dan menerjemahkannya ke dalam operasi aritmatika, yang merupakan pemahaman konseptual.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.
+- Intended difficulty `classify/Medium`: Soal ini menuntut siswa melakukan dua langkah perhitungan berantai (menentukan Lili, lalu Malosi) dan mengurutkan hasilnya. Meskipun prosedurnya rutin, ketergantungan langkah (nilai Malosi bergantung pada nilai Lili yang harus dihitung terlebih dahulu) memberikan tuntutan sedang bagi kelas 2.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Kira memegang kartu bilangan 34.; Urutkan bilangan mereka dari nilai terkecil ke terbesar.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Penjumlahan dan pengurangan bilangan dua angka, pemahaman konsep urutan bilangan. |
+| expectedPrerequisite | Penjumlahan dan pengurangan bilangan dua angka, pemahaman konsep 'lebih dari' dan 'kurang dari'. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -696,18 +679,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Tingkat kesulitan menengah karena siswa harus melakukan dua operasi berurutan sebelum mengurutkan, yang merupakan tantangan standar untuk kelas 2. |
+| gradeRelativeRationale | Siswa kelas 2 sudah belajar membandingkan dan mengurutkan bilangan, namun melakukan perhitungan berantai untuk menentukan nilai sebelum mengurutkan meningkatkan beban kognitif ke tingkat menengah. |
 
-Run 3 — solusi: Kira=34. Lili=34-2=32. Malosi=32+3=35. Urutan: 32, 34, 35 (Lili, Kira, Malosi).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep perbandingan dan operasi aritmatika dasar untuk menentukan nilai setiap anak, kemudian mengurutkannya. Ini melibatkan penerapan prosedur rutin pada situasi yang diberikan.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili; Bilangan Lili 2 kurangnya dari bilangan Kira; Urutkan bilangan mereka dari nilai terkecil ke terbesar
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antar bilangan dan urutan (konseptual) serta penggunaan operasi aritmatika dasar (prosedural) untuk menemukan nilai yang tidak diketahui.. Bukti: 3 lebihnya dari; 2 kurangnya dari; Urutkan bilangan
-- Intended difficulty `classify/Medium`: Soal ini memerlukan beberapa langkah logis (menghitung nilai Lili, lalu Malosi, lalu mengurutkan), yang merupakan tuntutan standar untuk kelas 2.. Bukti: Kira memegang kartu bilangan 34; Bilangan Malosi 3 lebihnya dari bilangan Lili; Bilangan Lili 2 kurangnya dari bilangan Kira
+Run 2 — solusi: Kira = 34. Lili = 34 - 2 = 32. Malosi = 32 + 3 = 35. Urutan dari terkecil ke terbesar: Lili (32), Kira (34), Malosi (35).
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan informasi relasional antarbilangan untuk menentukan nilai masing-masing sebelum mengurutkannya. Ini melampaui sekadar mengingat fakta atau prosedur rutin satu langkah, karena melibatkan penalaran logis untuk menghubungkan tiga variabel.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Kira memegang kartu bilangan 34.; Urutkan bilangan mereka dari nilai terkecil ke terbesar.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang hubungan 'lebih dari' dan 'kurang dari' serta bagaimana hubungan tersebut membentuk nilai bilangan dalam konteks perbandingan.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.
+- Intended difficulty `classify/Hard`: Soal ini menuntut perencanaan langkah yang saling bergantung (menentukan Lili dulu, baru Malosi) dan integrasi informasi. Bagi siswa kelas 2, mengelola tiga variabel dengan relasi yang berbeda dan mengurutkannya adalah tugas yang menantang.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Kira memegang kartu bilangan 34.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Penjumlahan dan pengurangan bilangan dua digit, konsep urutan bilangan. |
+| expectedPrerequisite | Penjumlahan dan pengurangan dasar (hingga 50), pemahaman konsep urutan bilangan. |
 | dependentSteps | 3 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -717,43 +700,58 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Tingkat kesulitan ini sesuai untuk kelas 2 karena melibatkan pemecahan masalah multi-langkah yang masih dalam lingkup operasi aritmatika dasar. |
+| gradeRelativeRationale | Meskipun operasi hitungnya sederhana, siswa kelas 2 harus membangun sendiri urutan langkah penyelesaian (Kira -> Lili -> Malosi) dan mengintegrasikan relasi yang diberikan tanpa bantuan langkah perantara. |
 
-Histori retry: run 2 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+Run 3 — solusi: Kira=34. Lili=34-2=32. Malosi=32+3=35. Urutan terkecil ke terbesar: Lili(32), Kira(34), Malosi(35).
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan informasi yang saling bergantung untuk menentukan nilai setiap anak sebelum mengurutkannya. Ini melampaui sekadar membaca atau menjalankan prosedur langsung, karena siswa harus membangun hubungan antarbilangan secara berurutan.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Kira memegang kartu bilangan 34.
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman tentang hubungan antarbilangan (lebih dari/kurang dari) dan prinsip pengurutan bilangan, yang merupakan konsep relasional dalam matematika.. Bukti: Urutkan bilangan mereka dari nilai terkecil ke terbesar.
+- Intended difficulty `classify/Hard`: Soal ini menuntut perencanaan langkah yang saling bergantung (menentukan Lili dulu, baru Malosi) dan integrasi informasi sebelum melakukan pengurutan. Bagi siswa kelas 2, ini memerlukan penalaran yang lebih dari sekadar prosedur rutin satu langkah.. Bukti: Bilangan Malosi 3 lebihnya dari bilangan Lili.; Bilangan Lili 2 kurangnya dari bilangan Kira.; Kira memegang kartu bilangan 34.
 
-Histori retry: run 1 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 3 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-### 3. Voting awal dan adjudikasi
-
-| Head | Suara awal | Pola / status akhir | Label akhir advisory |
-|---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
-
-Adjudikasi AI: `success`; token `3065`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa harus menerapkan prosedur aritmatika dasar secara berurutan untuk menentukan nilai yang tidak diketahui, kemudian menerapkan konsep urutan bilangan untuk menyusun jawaban akhir.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang hubungan antar bilangan (konseptual) dan penggunaan operasi aritmatika dasar (prosedural) untuk memecahkan masalah.
-- Intended difficulty `Medium`: Soal memerlukan beberapa langkah deduksi logis dan perhitungan berantai, yang merupakan tantangan rutin namun memerlukan ketelitian bagi siswa kelas 2.
-
-Profil difficulty hasil adjudikasi:
+Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Penjumlahan dan pengurangan bilangan dua digit, konsep urutan bilangan. |
+| expectedPrerequisite | Penjumlahan dan pengurangan bilangan dua digit, pemahaman konsep perbandingan (lebih dari/kurang dari). |
 | dependentSteps | 3 |
 | routineStatus | routine_selection |
-| strategySelection | False |
+| strategySelection | True |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 2 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Tingkat kesulitan menengah karena melibatkan penalaran berantai (multi-step) untuk menentukan nilai sebelum mengurutkan, namun operasi aritmatikanya masih dasar. |
+| gradeRelativeRationale | Meskipun operasi hitungnya sederhana, siswa kelas 2 harus mengelola ketergantungan antarvariabel (Lili bergantung pada Kira, Malosi bergantung pada Lili) dan melakukan pengurutan akhir. Ini adalah tuntutan kognitif yang tinggi untuk tingkat kelas 2. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1, "reasoning": 2} | majority_2_of_3 / adjudicated | reasoning |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Medium": 1, "Hard": 2} | majority_2_of_3 / adjudicated | Hard |
+
+Adjudikasi AI: `success`; token `4252`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `reasoning`: Siswa harus mengintegrasikan informasi relasional yang diberikan untuk menentukan nilai setiap anak secara berurutan sebelum melakukan pengurutan. Proses ini memerlukan penalaran untuk menghubungkan variabel-variabel yang saling bergantung, bukan sekadar menjalankan prosedur rutin satu langkah.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan 'lebih dari' dan 'kurang dari' serta bagaimana hubungan tersebut membentuk nilai bilangan dalam konteks perbandingan dan pengurutan.
+- Intended difficulty `Hard`: Meskipun operasi hitungnya sederhana, siswa kelas 2 harus merencanakan langkah yang saling bergantung (Kira -> Lili -> Malosi) dan mengintegrasikan relasi tanpa bantuan langkah perantara. Mengelola tiga variabel dengan relasi yang berbeda dan mengurutkannya adalah tugas yang menantang bagi tingkat kelas 2.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan dan pengurangan dasar (hingga 50), pemahaman konsep urutan bilangan. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 harus membangun sendiri urutan langkah penyelesaian dan mengintegrasikan relasi yang diberikan. Ketergantungan antarvariabel (Lili bergantung pada Kira, Malosi bergantung pada Lili) membuat soal ini memiliki tuntutan perencanaan yang tinggi untuk kelas 2. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -796,9 +794,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Hard"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "reasoning", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Hard", "agreement": false}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 6. Soal `f8b50899e6f07b82441104f3`
@@ -813,26 +811,47 @@ Perhatikan keempat bilangan berikut. 25 12 35 21<br><br>Bilangan mana yang palin
 | D | 21 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Membandingkan nilai tempat puluhan dari 25 (2 puluhan), 12 (1 puluhan), 35 (3 puluhan), dan 21 (2 puluhan). Karena 3 puluhan adalah yang terbesar, maka 35 adalah bilangan terbesar.
+Solusi minimum hasil AI: Membandingkan nilai tempat puluhan dari bilangan 25, 12, 35, dan 21. Bilangan 35 memiliki angka puluhan 3, yang merupakan nilai terbesar dibandingkan angka puluhan 2, 1, dan 2 dari bilangan lainnya.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `693077b19cbf834f75f8f389dcb70bcc8651e0bfe5f841a3e7b31e004f6e6b44`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `554f9762d1d2359d244e0954b6163dc201d7ad343fca69302379839e4a42df3e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 1383 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 1352 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 1363 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2282 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2326 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2267 |
 
-Run 1 — solusi: Membandingkan nilai tempat puluhan dari bilangan 25 (2 puluhan), 12 (1 puluhan), 35 (3 puluhan), dan 21 (2 puluhan). Nilai 3 puluhan adalah yang terbesar, sehingga 35 adalah bilangan terbesar.
-- Domain kognitif `classify/applying`: Siswa perlu membandingkan nilai tempat puluhan dari sekumpulan bilangan untuk menentukan mana yang terbesar. Ini adalah proses rutin dalam membandingkan bilangan.. Bukti: Bilangan mana yang paling besar?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang sistem nilai tempat (puluhan dan satuan) untuk mengurutkan atau membandingkan besaran bilangan.. Bukti: 25 12 35 21
-- Intended difficulty `classify/Easy`: Soal ini merupakan tugas rutin bagi siswa kelas 2 untuk membandingkan bilangan dua digit dengan melihat nilai tempat puluhan.. Bukti: Perhatikan keempat bilangan berikut. 25 12 35 21; Bilangan mana yang paling besar?
+Run 1 — solusi: Membandingkan nilai tempat puluhan dari bilangan 25, 12, 35, dan 21. Bilangan 35 memiliki angka puluhan 3, yang merupakan nilai terbesar dibandingkan angka puluhan 2, 1, dan 2 dari bilangan lainnya.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk membandingkan nilai tempat puluhan dari sekumpulan bilangan untuk menentukan mana yang terbesar. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.. Bukti: Bilangan mana yang paling besar?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang nilai tempat (puluhan dan satuan) sebagai konsep dasar untuk membandingkan besaran bilangan.. Bukti: 25 12 35 21
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu membandingkan nilai puluhan dari empat bilangan yang diberikan. Tidak ada langkah tersembunyi atau kendala yang berinteraksi.. Bukti: Perhatikan keempat bilangan berikut. 25 12 35 21; Bilangan mana yang paling besar?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat puluhan dan satuan untuk bilangan dua angka. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Membandingkan bilangan dua angka adalah materi standar kelas 2. Soal ini tidak menuntut perencanaan kompleks, hanya pengenalan langsung terhadap nilai tempat. |
+
+Run 2 — solusi: Membandingkan nilai tempat puluhan dari bilangan 25, 12, 35, dan 21. Bilangan 35 memiliki angka puluhan 3, yang merupakan nilai terbesar dibandingkan 2 (pada 25 dan 21) dan 1 (pada 12). Maka, 35 adalah bilangan terbesar.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk membandingkan nilai tempat puluhan dari sekumpulan bilangan dua digit untuk menentukan mana yang terbesar. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.. Bukti: Perhatikan keempat bilangan berikut. 25 12 35 21; Bilangan mana yang paling besar?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang nilai tempat (puluhan dan satuan) sebagai konsep dasar untuk membandingkan besaran bilangan.. Bukti: 25 12 35 21; Bilangan mana yang paling besar?
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu membandingkan angka puluhan dari empat bilangan yang diberikan. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: 25 12 35 21; Bilangan mana yang paling besar?
 
 Profil difficulty run ini:
 
@@ -848,12 +867,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Membandingkan bilangan dua digit adalah materi standar kelas 2 SD. Soal ini langsung dan tidak memerlukan langkah kompleks. |
+| gradeRelativeRationale | Membandingkan bilangan dua digit adalah materi standar kelas 2. Tugas ini merupakan penerapan langsung dari konsep nilai tempat tanpa memerlukan perencanaan langkah tambahan. |
 
-Run 2 — solusi: Membandingkan nilai tempat puluhan dari bilangan 25 (2 puluhan), 12 (1 puluhan), 35 (3 puluhan), dan 21 (2 puluhan). Karena 3 puluhan adalah yang terbesar, maka 35 adalah bilangan terbesar.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur perbandingan nilai tempat (puluhan) untuk menentukan bilangan terbesar di antara sekumpulan bilangan yang diberikan.. Bukti: Bilangan mana yang paling besar?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang sistem nilai tempat (puluhan dan satuan) sebagai prinsip dasar dalam membandingkan bilangan.. Bukti: 25 12 35 21
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan perbandingan langsung nilai tempat puluhan pada empat bilangan dua digit yang familiar bagi siswa kelas 2.. Bukti: 25 12 35 21; Bilangan mana yang paling besar?
+Run 3 — solusi: Membandingkan nilai tempat puluhan dari bilangan 25, 12, 35, dan 21. Angka puluhan adalah 2, 1, 3, dan 2. Nilai puluhan terbesar adalah 3, sehingga 35 adalah bilangan terbesar.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi bilangan terbesar dari sekumpulan bilangan dua digit. Ini adalah prosedur langsung membandingkan nilai tempat puluhan, yang merupakan tugas rutin bagi siswa kelas 2.. Bukti: Bilangan mana yang paling besar?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep nilai tempat (puluhan dan satuan) untuk membandingkan besaran bilangan.. Bukti: 25 12 35 21
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin. Siswa hanya perlu membandingkan nilai puluhan dari empat bilangan yang diberikan. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: 25 12 35 21; Bilangan mana yang paling besar?
 
 Profil difficulty run ini:
 
@@ -869,64 +888,15 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan membandingkan bilangan dua digit dengan melihat nilai puluhannya. Soal ini adalah latihan rutin yang sesuai dengan kurikulum. |
-
-Run 3 — solusi: Membandingkan nilai tempat puluhan dari bilangan 25 (2 puluhan), 12 (1 puluhan), 35 (3 puluhan), dan 21 (2 puluhan). Karena 3 > 2 dan 3 > 1, maka 35 adalah bilangan terbesar.
-- Domain kognitif `classify/knowing`: Siswa diminta untuk membandingkan sekumpulan bilangan dua angka dan menentukan nilai maksimum, yang merupakan proses langsung dalam domain knowing.. Bukti: Bilangan mana yang paling besar?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang nilai tempat (puluhan dan satuan) sebagai prinsip dasar untuk membandingkan bilangan.. Bukti: 25 12 35 21
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin untuk kelas 2, melibatkan perbandingan langsung nilai tempat puluhan tanpa langkah tambahan yang kompleks.. Bukti: 25 12 35 21; Bilangan mana yang paling besar?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman nilai tempat bilangan dua angka (puluhan dan satuan). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Membandingkan bilangan dua angka adalah standar kompetensi dasar kelas 2 yang rutin dilakukan. |
-
-Histori retry: run 1 sebelumnya `failed` / `ClientError:429`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 3 sebelumnya `failed` / `ClientError:429`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 2 sebelumnya `failed` / `ClientError:429`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+| gradeRelativeRationale | Membandingkan bilangan dua digit adalah materi standar kelas 2. Tugas ini tidak memerlukan perencanaan langkah atau integrasi konsep yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 2, "knowing": 1} | majority_2_of_3 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `2682`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan prosedur perbandingan nilai tempat (puluhan) untuk menentukan bilangan terbesar di antara sekumpulan bilangan yang diberikan. Ini adalah tugas rutin.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang sistem nilai tempat (puluhan dan satuan) sebagai prinsip dasar untuk membandingkan besaran bilangan.
-- Intended difficulty `Easy`: Soal ini bersifat rutin untuk kelas 2, melibatkan perbandingan langsung nilai tempat puluhan tanpa langkah tambahan yang kompleks.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman nilai tempat bilangan dua digit (puluhan dan satuan). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Membandingkan bilangan dua digit adalah materi standar kelas 2 SD. Soal ini langsung dan tidak memerlukan langkah kompleks. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -969,9 +939,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 7. Soal `76bd2315ce21573dfa2ea8d7`
@@ -986,32 +956,32 @@ Perhatikan bilangan berikut. 13 11 18<br><br>Urutan mulai dari bilangan terkecil
 | D | 11, 18, 13 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Membandingkan nilai satuan dari bilangan 11, 13, dan 18 karena nilai puluhannya sama (1). Urutan dari terkecil adalah 11, 13, 18.
+Solusi minimum hasil AI: Membandingkan nilai tempat puluhan dan satuan dari 13, 11, 18. Ketiganya memiliki puluhan yang sama (1). Membandingkan angka satuan: 1, 3, 8. Urutan dari terkecil ke terbesar adalah 1, 3, 8. Maka urutan bilangan adalah 11, 13, 18.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ce7c64b1a0d4378e6b5f5dc31f9cfc78555f3619798859e7fa4f04d256111bdd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c93e31b8b449b410e75bd2906351b0fc0a2c7f40bc9ad1ec9b099286724e63f8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | procedural | Easy | 1443 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 1400 |
-| 3 | success | valid / verified | knowing | procedural | Easy | 1438 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2199 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2368 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2350 |
 
-Run 1 — solusi: Membandingkan nilai tempat puluhan dan satuan: 11 (1 puluhan, 1 satuan), 13 (1 puluhan, 3 satuan), 18 (1 puluhan, 8 satuan). Urutan dari terkecil adalah 11, 13, 18.
-- Domain kognitif `classify/knowing`: Siswa diminta melakukan proses langsung mengurutkan bilangan yang diberikan berdasarkan nilai tempat, yang merupakan prosedur rutin.. Bukti: Urutan mulai dari bilangan terkecil
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang urutan bilangan (prosedural) dan perbandingan nilai bilangan (konseptual), namun fokus utamanya adalah eksekusi urutan.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan bilangan dua digit yang familiar dan prosedur pengurutan langsung tanpa jebakan kompleks.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
+Run 1 — solusi: Membandingkan nilai tempat puluhan (semua 1) dan satuan (3, 1, 8). Urutan dari terkecil: 1 (dari 11), 3 (dari 13), 8 (dari 18). Jadi, 11, 13, 18.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur membandingkan dan mengurutkan bilangan cacah dua angka yang sudah dipelajari di kelas 2. Ini adalah penerapan langsung dari konsep nilai tempat.. Bukti: Urutan mulai dari bilangan terkecil: .... , .... , ....; 13 11 18
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang algoritma pengurutan bilangan berdasarkan nilai tempat.. Bukti: Urutan mulai dari bilangan terkecil
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu membandingkan tiga bilangan dua angka yang sederhana dan mengurutkannya. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman nilai tempat bilangan dua digit dan konsep lebih kecil/lebih besar. |
+| expectedPrerequisite | Memahami nilai tempat bilangan cacah sampai 20 dan membandingkan dua bilangan. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1021,18 +991,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Mengurutkan tiga bilangan dua digit adalah standar kompetensi dasar kelas 2 SD. |
+| gradeRelativeRationale | Mengurutkan tiga bilangan dua angka adalah standar kompetensi kelas 2 yang bersifat rutin dan langsung. |
 
-Run 2 — solusi: Membandingkan nilai tempat puluhan dan satuan: 11 < 13 < 18. Urutan dari terkecil adalah 11, 13, 18.
-- Domain kognitif `classify/knowing`: Siswa diminta melakukan proses langsung yaitu mengurutkan tiga bilangan dua digit yang diberikan berdasarkan nilai besarnya.. Bukti: Urutan mulai dari bilangan terkecil
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep urutan bilangan (magnitude) yang merupakan pengetahuan konseptual dasar.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, hanya melibatkan tiga bilangan dua digit, dan tidak memerlukan strategi kompleks.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
+Run 2 — solusi: Membandingkan nilai tempat puluhan dan satuan: 11 (1 puluhan, 1 satuan), 13 (1 puluhan, 3 satuan), 18 (1 puluhan, 8 satuan). Karena puluhan sama, urutkan berdasarkan satuan: 1 < 3 < 8. Maka urutan terkecil ke terbesar adalah 11, 13, 18.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengurutkan tiga bilangan dua angka yang diberikan. Tugas ini merupakan penerapan langsung dari konsep perbandingan bilangan yang sudah dipelajari di kelas 2, sehingga termasuk domain applying.. Bukti: Urutan mulai dari bilangan terkecil: .... , .... , ....; 13 11 18
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang prinsip urutan bilangan (konseptual) dan prosedur membandingkan nilai tempat untuk menentukan urutan (prosedural). Karena fokus utamanya adalah menerapkan prosedur pengurutan, ini diklasifikasikan sebagai procedural.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu membandingkan tiga bilangan dua angka yang sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi nonrutin.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Memahami nilai tempat bilangan cacah sampai 20 dan konsep perbandingan lebih besar/kecil. |
+| expectedPrerequisite | Memahami nilai tempat bilangan dua angka dan perbandingan bilangan. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1042,18 +1012,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena mengurutkan bilangan dua digit adalah kompetensi dasar yang sudah diajarkan. |
+| gradeRelativeRationale | Mengurutkan tiga bilangan dua angka adalah tugas standar kelas 2. Tidak ada kompleksitas tambahan. |
 
-Run 3 — solusi: Membandingkan nilai tempat puluhan dan satuan: 11 (puluhan 1, satuan 1), 13 (puluhan 1, satuan 3), 18 (puluhan 1, satuan 8). Urutan dari terkecil: 11, 13, 18.
-- Domain kognitif `classify/knowing`: Siswa diminta melakukan proses langsung mengurutkan bilangan berdasarkan nilai tempat, yang merupakan prosedur rutin.. Bukti: Urutan mulai dari bilangan terkecil
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara mengurutkan bilangan cacah dua angka.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan bilangan dua digit yang familiar dan prosedur pengurutan langsung tanpa jebakan kompleks.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
+Run 3 — solusi: Membandingkan nilai tempat puluhan dan satuan: 11 (1 puluhan, 1 satuan), 13 (1 puluhan, 3 satuan), 18 (1 puluhan, 8 satuan). Karena puluhan sama, urutkan berdasarkan satuan: 1 < 3 < 8. Maka urutan terkecil adalah 11, 13, 18.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengurutkan tiga bilangan dua angka yang diberikan. Tugas ini merupakan penerapan langsung dari konsep perbandingan bilangan yang sudah dipelajari di kelas 2, yaitu membandingkan nilai tempat puluhan dan satuan untuk menentukan urutan.. Bukti: Urutan mulai dari bilangan terkecil: .... , .... , ....; 13 11 18
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan bilangan (konsep lebih kecil/lebih besar) dan prosedur membandingkan bilangan dua angka.. Bukti: Urutan mulai dari bilangan terkecil
+- Intended difficulty `classify/Easy`: Soal ini termasuk kategori mudah karena siswa hanya perlu membandingkan tiga bilangan dua angka yang sederhana. Prosedurnya rutin dan tidak memerlukan perencanaan langkah yang kompleks.. Bukti: 13 11 18; Urutan mulai dari bilangan terkecil
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Memahami nilai tempat bilangan cacah sampai 20 dan konsep perbandingan lebih kecil/besar. |
+| expectedPrerequisite | Memahami nilai tempat bilangan dua angka (puluhan dan satuan) dan konsep perbandingan bilangan. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1063,27 +1033,27 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Mengurutkan tiga bilangan dua digit adalah kompetensi standar kelas 2 awal. |
+| gradeRelativeRationale | Untuk siswa kelas 2, mengurutkan tiga bilangan dua angka adalah tugas standar yang rutin dan langsung, tidak memerlukan penalaran tingkat tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
 | Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `2694`.
+Adjudikasi AI: `success`; token `3867`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Siswa hanya perlu melakukan proses langsung mengurutkan bilangan berdasarkan nilai tempat, yang merupakan prosedur rutin tanpa perlu strategi nonrutin.
-- Dimensi pengetahuan `procedural`: Soal ini menguji penerapan algoritma atau urutan langkah untuk mengurutkan bilangan cacah, yang merupakan pengetahuan prosedural.
-- Intended difficulty `Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan bilangan dua digit yang familiar dan prosedur pengurutan langsung tanpa jebakan kompleks.
+- Domain kognitif `applying`: Siswa menerapkan prosedur perbandingan bilangan yang sudah dipelajari untuk mengurutkan tiga bilangan dua angka. Ini adalah penerapan langsung dari konsep nilai tempat.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman prosedural tentang algoritma pengurutan bilangan berdasarkan nilai tempat.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu membandingkan tiga bilangan dua angka yang sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi nonrutin.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman nilai tempat bilangan dua digit dan konsep perbandingan lebih kecil/lebih besar. |
+| expectedPrerequisite | Memahami nilai tempat bilangan dua angka dan perbandingan bilangan. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1093,7 +1063,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Mengurutkan tiga bilangan dua digit adalah standar kompetensi dasar kelas 2 SD. |
+| gradeRelativeRationale | Mengurutkan tiga bilangan dua angka adalah tugas standar kelas 2 yang bersifat rutin dan langsung. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1136,9 +1106,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 8. Soal `5bde2df393a963ef6574cd85`
@@ -1153,32 +1123,32 @@ Hitunglah operasi penjumlahan berikut dengan menghitung maju.<br><br>11 + 9 = .�
 | D | 20 |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Menghitung maju 9 langkah dari 11: 12, 13, 14, 15, 16, 17, 18, 19, 20.
+Solusi minimum hasil AI: Mulai dari 11, hitung maju 9 langkah: 12, 13, 14, 15, 16, 17, 18, 19, 20.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d61997e6473ec722fdcfc0b4c0fa088be29e038dcb9de958234e8a8886516848`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ea87c510906035a7f15c41c53a858137e00aa8ce33724a7b108fd5bfbed33776`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 1312 |
-| 2 | success | valid / verified | applying | procedural | Easy | 1309 |
-| 3 | success | valid / verified | applying | procedural | Easy | 1297 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 3157 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 2229 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2253 |
 
-Run 1 — solusi: Menghitung maju 9 langkah dari 11: 12, 13, 14, 15, 16, 17, 18, 19, 20.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur penjumlahan spesifik (menghitung maju) yang merupakan teknik rutin untuk operasi dasar.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji penguasaan algoritma atau teknik menghitung maju untuk menyelesaikan penjumlahan.. Bukti: 11 + 9 = .…
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur standar penjumlahan satu digit dengan bilangan dua digit yang familiar bagi siswa kelas 2.. Bukti: 11 + 9; menghitung maju
+Run 1 — solusi: Mulai dari 11, hitung maju 9 langkah: 12, 13, 14, 15, 16, 17, 18, 19, 20.
+- Domain kognitif `classify/knowing`: Soal meminta siswa melakukan prosedur penjumlahan dasar dengan metode menghitung maju yang sudah dipelajari, sehingga masuk kategori knowing.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju.
+- Dimensi pengetahuan `classify/procedural`: Soal menguji penerapan algoritma atau metode menghitung maju untuk menyelesaikan penjumlahan.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju.
+- Intended difficulty `classify/Easy`: Soal adalah penerapan langsung prosedur penjumlahan dasar. Tidak ada kendala kompleks atau perencanaan strategi yang diperlukan.. Bukti: 11 + 9 = .…
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman urutan bilangan hingga 20 dan konsep penjumlahan sebagai penambahan nilai. |
+| expectedPrerequisite | Pemahaman konsep penjumlahan dan kemampuan berhitung maju. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1188,18 +1158,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Penjumlahan 11+9 adalah standar kurikulum kelas 2, menggunakan strategi menghitung maju yang diajarkan secara eksplisit. |
+| gradeRelativeRationale | Penjumlahan dua bilangan dengan metode hitung maju adalah materi standar kelas 2 yang bersifat rutin dan langsung. |
 
 Run 2 — solusi: Menghitung maju 9 langkah dari 11: 12, 13, 14, 15, 16, 17, 18, 19, 20.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur menghitung maju yang sudah dipelajari untuk menyelesaikan operasi penjumlahan dasar.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau teknik menghitung maju sebagai prosedur penjumlahan.. Bukti: 11 + 9 = .…
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur standar penjumlahan satu digit dengan bilangan dua digit yang familiar bagi siswa kelas 2.. Bukti: 11 + 9 = .…
+- Domain kognitif `classify/knowing`: Soal meminta siswa melakukan prosedur penjumlahan sederhana dengan metode spesifik (menghitung maju) yang merupakan prosedur rutin di kelas 2.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju. 11 + 9 = .…
+- Dimensi pengetahuan `classify/procedural`: Siswa diminta menerapkan algoritma atau metode penghitungan (menghitung maju) untuk menyelesaikan operasi penjumlahan.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju. 11 + 9 = .…
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari prosedur menghitung maju yang familiar bagi siswa kelas 2. Tidak ada langkah yang saling bergantung atau kendala kompleks.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju. 11 + 9 = .…
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan menghitung urutan bilangan (counting on) hingga 20. |
+| expectedPrerequisite | Kemampuan berhitung maju dari bilangan dua digit. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1209,18 +1179,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Penjumlahan 11+9 adalah standar kurikulum kelas 2, menggunakan strategi menghitung maju yang diajarkan di tingkat awal. |
+| gradeRelativeRationale | Penjumlahan 11 + 9 dengan metode menghitung maju adalah materi standar kelas 2 yang bersifat rutin dan langsung. |
 
-Run 3 — solusi: Menghitung maju 9 langkah dari 11: 12, 13, 14, 15, 16, 17, 18, 19, 20.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur menghitung maju yang sudah dipelajari untuk menyelesaikan operasi penjumlahan dasar.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji kemampuan siswa dalam menerapkan algoritma atau teknik menghitung maju untuk mendapatkan hasil penjumlahan.. Bukti: 11 + 9 = .…
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur standar yang diajarkan di kelas 2. Langkah-langkahnya rutin dan langsung, dengan beban kognitif yang rendah.. Bukti: 11 + 9 = .…; menghitung maju
+Run 3 — solusi: Menghitung maju 9 langkah dari 11: 12, 13, 14, 15, 16, 17, 18, 19, 20. Hasilnya adalah 20.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur penjumlahan sederhana menggunakan strategi menghitung maju yang sudah dipelajari di kelas 2.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju. 11 + 9 = .…
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa tentang algoritma atau metode penjumlahan (menghitung maju) sebagai teknik dasar.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju.
+- Intended difficulty `classify/Easy`: Soal ini adalah penerapan langsung dari prosedur penjumlahan dasar yang familiar bagi siswa kelas 2. Jalur penyelesaiannya tunggal dan jelas tanpa kendala yang saling berinteraksi.. Bukti: 11 + 9 = .…
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan berhitung urutan bilangan hingga 20. |
+| expectedPrerequisite | Pemahaman konsep penjumlahan dan kemampuan membilang maju. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1230,15 +1200,37 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Penjumlahan dasar dengan teknik menghitung maju adalah materi inti kelas 2 yang bersifat rutin. |
+| gradeRelativeRationale | Penjumlahan dua bilangan dengan hasil di bawah 30 adalah materi standar kelas 2. Strategi menghitung maju adalah prosedur rutin yang diajarkan di tingkat ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"knowing": 2, "applying": 1} | majority_2_of_3 / adjudicated | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3442`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Soal meminta siswa menjalankan prosedur penjumlahan dasar dengan metode spesifik (menghitung maju) yang sudah dipelajari, sehingga masuk kategori knowing.
+- Dimensi pengetahuan `procedural`: Soal menguji penerapan algoritma atau metode menghitung maju untuk menyelesaikan penjumlahan.
+- Intended difficulty `Easy`: Soal adalah penerapan langsung prosedur penjumlahan dasar. Tidak ada kendala kompleks atau perencanaan strategi yang diperlukan.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep penjumlahan dan kemampuan berhitung maju. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Penjumlahan dua bilangan dengan metode hitung maju adalah materi standar kelas 2 yang bersifat rutin dan langsung. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1281,9 +1273,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 9. Soal `dee5237101a9a4d500e44455`
@@ -1298,32 +1290,32 @@ Hitunglah operasi penjumlahan berikut dengan menghitung maju.<br><br>10 + 7 = ..
 | D | 16 |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Menghitung maju dari 10 sebanyak 7 langkah: 11, 12, 13, 14, 15, 16, 17.
+Solusi minimum hasil AI: Menghitung maju dari 10 sebanyak 7 langkah: 11, 12, 13, 14, 15, 16, 17. Hasilnya adalah 17.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ee6fb3f5143bf998a9e840fd8b74dca4321da433892bfc6ca1a50d537f75a82c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3a1c35753bf25eba99295631b2ee53b2aaf4eae53d0a47885e9a8c6c7124a614`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 1281 |
-| 2 | success | valid / verified | knowing | factual | Easy | 1258 |
-| 3 | success | valid / verified | knowing | procedural | Easy | 1288 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 2201 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 2206 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 2237 |
 
-Run 1 — solusi: Menghitung maju dari 10 sebanyak 7 langkah: 11, 12, 13, 14, 15, 16, 17.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur penjumlahan dasar dengan strategi spesifik (menghitung maju), yang merupakan penerapan rutin dari konsep penjumlahan.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju; 10 + 7 = ..
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji penguasaan algoritma atau teknik penjumlahan dasar (menghitung maju).. Bukti: 10 + 7 = ..
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, menggunakan angka yang familiar (puluhan dan satuan), dan hanya memerlukan satu langkah prosedur penjumlahan langsung.. Bukti: 10 + 7 = ..
+Run 1 — solusi: Menghitung maju dari 10 sebanyak 7 langkah: 11, 12, 13, 14, 15, 16, 17. Hasilnya adalah 17.
+- Domain kognitif `classify/knowing`: Soal meminta siswa melakukan prosedur penjumlahan dasar dengan strategi spesifik (menghitung maju) yang sudah diajarkan di kelas 2. Ini adalah penerapan prosedur langsung.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju. 10 + 7 = ....
+- Dimensi pengetahuan `classify/procedural`: Soal menguji penguasaan algoritma atau teknik penjumlahan dasar (menghitung maju) yang merupakan prosedur standar.. Bukti: 10 + 7 = ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2. Prosedur menghitung maju dari 10 adalah strategi yang sangat familiar dan rutin. Tidak ada kendala yang berinteraksi atau kebutuhan perencanaan yang kompleks.. Bukti: 10 + 7 = ....
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan urutan bilangan hingga 20. |
+| expectedPrerequisite | Pemahaman konsep bilangan sampai 20 dan kemampuan menghitung maju. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1333,12 +1325,33 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Penjumlahan 10 dengan satuan adalah materi standar kelas 2 yang bersifat prosedural langsung. |
+| gradeRelativeRationale | Penjumlahan dasar dengan angka 10 (bilangan dasar) sangat sesuai dengan kurikulum kelas 2 awal. Tidak ada tuntutan kognitif tambahan selain melakukan prosedur yang diminta. |
 
-Run 2 — solusi: 10 + 7 = 17. Menghitung maju dari 10 sebanyak 7 langkah menghasilkan 17.
-- Domain kognitif `classify/knowing`: Siswa diminta melakukan operasi penjumlahan dasar menggunakan strategi menghitung maju yang sudah diajarkan secara langsung.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju; 10 + 7 = ..
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang fakta penjumlahan dasar dan prosedur menghitung maju.. Bukti: 10 + 7 = ..
-- Intended difficulty `classify/Easy`: Operasi penjumlahan dasar dengan bilangan 10 (puluhan) dan satuan adalah prosedur yang sangat familiar dan rutin bagi siswa kelas 2.. Bukti: 10 + 7 = ..
+Run 2 — solusi: Menghitung maju 7 langkah dari 10: 11, 12, 13, 14, 15, 16, 17.
+- Domain kognitif `classify/knowing`: Siswa diminta menerapkan strategi 'menghitung maju' (counting on) yang merupakan prosedur dasar untuk menyelesaikan penjumlahan sederhana. Tidak ada tuntutan untuk merancang strategi baru atau melakukan penalaran kompleks.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju. 10 + 7 = ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap prosedur penjumlahan dasar dan penggunaan strategi menghitung maju sebagai metode komputasi.. Bukti: 10 + 7 = ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2. Strategi menghitung maju adalah prosedur rutin yang diajarkan di awal kelas. Tidak ada kendala yang saling berinteraksi atau kebutuhan untuk perencanaan langkah yang kompleks.. Bukti: 10 + 7 = ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bilangan 1-20 dan kemampuan menghitung maju. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Penjumlahan 10 + 7 adalah operasi dasar yang diharapkan sudah dikuasai siswa kelas 2 dengan strategi menghitung maju. |
+
+Run 3 — solusi: Mulai dari 10, hitung maju sebanyak 7 langkah: 11, 12, 13, 14, 15, 16, 17. Hasilnya adalah 17.
+- Domain kognitif `classify/knowing`: Soal meminta siswa melakukan prosedur penjumlahan dasar menggunakan strategi 'menghitung maju' yang merupakan prosedur standar yang diajarkan di kelas 2. Tidak ada tuntutan untuk merancang strategi baru atau memecahkan masalah non-rutin.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju. 10 + 7 = ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi penjumlahan dasar dan penggunaan strategi menghitung maju sebagai metode untuk menyelesaikannya.. Bukti: 10 + 7 = ....
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung, menggunakan angka yang familiar (puluhan dan satuan), dan meminta prosedur yang sudah diajarkan secara eksplisit. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan langkah yang kompleks.. Bukti: 10 + 7 = ....
 
 Profil difficulty run ini:
 
@@ -1353,59 +1366,16 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Penjumlahan 10 dengan satuan adalah materi dasar kelas 2 yang bersifat rutin dan tidak memerlukan strategi kompleks. |
-
-Run 3 — solusi: 10 ditambah 7 dengan menghitung maju dari 10 adalah 11, 12, 13, 14, 15, 16, 17. Hasilnya adalah 17.
-- Domain kognitif `classify/knowing`: Siswa diminta melakukan operasi penjumlahan dasar menggunakan strategi menghitung maju yang merupakan prosedur rutin.. Bukti: Hitunglah operasi penjumlahan berikut dengan menghitung maju. 10 + 7 = ....
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma penjumlahan dasar dan fakta penjumlahan.. Bukti: 10 + 7 = ....
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, melibatkan operasi penjumlahan satu digit dengan sepuluh yang merupakan prosedur familiar bagi siswa kelas 2.. Bukti: 10 + 7 = ....
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan kemampuan menghitung maju. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Penjumlahan 10 dengan bilangan satu digit adalah materi standar kelas 2 yang bersifat rutin dan langsung. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Penjumlahan 10 + 7 adalah operasi dasar yang sesuai dengan kurikulum kelas 2. Siswa diharapkan sudah lancar melakukan penjumlahan sederhana dengan strategi menghitung maju. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 1, "knowing": 2} | majority_2_of_3 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 2, "factual": 1} | majority_2_of_3 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `2513`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Soal ini meminta siswa melakukan prosedur penjumlahan dasar dengan strategi spesifik (menghitung maju). Ini adalah penerapan rutin dari konsep penjumlahan yang sudah dipelajari.
-- Dimensi pengetahuan `procedural`: Soal ini menguji penguasaan algoritma atau teknik penjumlahan dasar (menghitung maju), yang merupakan pengetahuan prosedural.
-- Intended difficulty `Easy`: Soal ini sangat mendasar, menggunakan angka yang familiar (puluhan dan satuan), dan hanya memerlukan satu langkah prosedur penjumlahan langsung.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan urutan bilangan hingga 20. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Penjumlahan 10 dengan satuan adalah materi standar kelas 2 yang bersifat prosedural langsung. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1448,9 +1418,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 10. Soal `c9d5c58f9bea9fbc5724dae7`
@@ -1465,26 +1435,26 @@ Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan.<br><br>17 �
 | D | 4 |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: 17 = 10 + 7; 12 = 10 + 2; (10 - 10) + (7 - 2) = 0 + 5 = 5.
+Solusi minimum hasil AI: 17 = 10 + 7; 12 = 10 + 2. (10 - 10) + (7 - 2) = 0 + 5 = 5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `85de4cd9f9f3e204e0b6936498b0cc3d6916e172daaa6452ac2ec2c629451c18`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cf5ecdb6a29ae095d029f868a5aebc581ba492bd3113a8e7ea7d402f9dae1408`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 1393 |
-| 2 | success | valid / verified | applying | procedural | Easy | 1412 |
-| 3 | success | valid / verified | applying | procedural | Easy | 1396 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3007 |
+| 2 | success | valid / verified | applying | procedural | Easy | 3032 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2256 |
 
-Run 1 — solusi: 17 = 10 + 7; 12 = 10 + 2; (10 - 10) + (7 - 2) = 0 + 5 = 5.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur dekomposisi bilangan (pasangan bilangan) untuk menyelesaikan pengurangan, yang merupakan penerapan prosedur rutin pada kelas 2.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan; 17 – 12 = ....
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa tentang teknik atau algoritma dekomposisi bilangan (pasangan bilangan) untuk melakukan pengurangan.. Bukti: menggunakan pasangan bilangan
-- Intended difficulty `classify/Easy`: Soal ini melibatkan prosedur pengurangan dasar dengan dekomposisi yang familiar bagi siswa kelas 2, dengan beban kognitif rendah.. Bukti: 17 – 12 = ....
+Run 1 — solusi: 17 = 10 + 7; 12 = 10 + 2. (10 - 10) + (7 - 2) = 0 + 5 = 5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan metode dekomposisi (pasangan bilangan) untuk menyelesaikan pengurangan dua bilangan dua digit. Ini adalah penerapan prosedur yang sudah dipelajari.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan; 17 – 12 = ....
+- Dimensi pengetahuan `classify/procedural`: Soal secara eksplisit meminta penggunaan metode atau teknik tertentu (pasangan bilangan/dekomposisi) untuk menyelesaikan operasi pengurangan.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan
+- Intended difficulty `classify/Easy`: Soal meminta penerapan langsung metode dekomposisi yang familiar bagi kelas 2. Jalur penyelesaian sangat jelas, tidak ada kendala yang berinteraksi, dan beban kognitif rendah.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan; 17 – 12 = ....
 
 Profil difficulty run ini:
 
@@ -1500,19 +1470,19 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Pengurangan bilangan dua digit dengan dekomposisi adalah materi standar kelas 2 yang bersifat rutin. |
+| gradeRelativeRationale | Metode dekomposisi adalah materi standar kelas 2. Tidak ada langkah kompleks atau kendala yang harus diintegrasikan. |
 
-Run 2 — solusi: 17 - 12 = (10 + 7) - (10 + 2) = (10 - 10) + (7 - 2) = 0 + 5 = 5.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur pengurangan dengan metode dekomposisi (pasangan bilangan) yang telah dipelajari, yang merupakan penerapan rutin dari konsep nilai tempat.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan.; 17 – 12 = ....
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma pengurangan berbasis nilai tempat (dekomposisi bilangan menjadi puluhan dan satuan).. Bukti: menggunakan pasangan bilangan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin untuk kelas 2, melibatkan operasi dasar dengan angka di bawah 20 tanpa teknik meminjam yang kompleks jika menggunakan metode pasangan bilangan.. Bukti: 17 – 12 = ....
+Run 2 — solusi: 17 = 10 + 7; 12 = 10 + 2. (10 - 10) + (7 - 2) = 0 + 5 = 5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan metode dekomposisi (pasangan bilangan) untuk menyelesaikan pengurangan dua digit. Ini adalah penerapan prosedur yang sudah dipelajari di kelas 2.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan.; 17 – 12 = ....
+- Dimensi pengetahuan `classify/procedural`: Soal secara eksplisit meminta penggunaan metode atau teknik 'pasangan bilangan' (dekomposisi) untuk melakukan pengurangan.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan.
+- Intended difficulty `classify/Easy`: Soal ini adalah latihan rutin pengurangan dua digit dengan metode dekomposisi yang umum diajarkan di kelas 2. Langkah-langkahnya langsung dan tidak memerlukan perencanaan kompleks.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan.; 17 – 12 = ....
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman nilai tempat (puluhan dan satuan) dan pengurangan dasar 1-10. |
-| dependentSteps | 2 |
+| expectedPrerequisite | Pemahaman nilai tempat (puluhan dan satuan) dan pengurangan dasar 1-digit. |
+| dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
@@ -1521,18 +1491,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 yang menekankan strategi pengurangan selain algoritma standar, seperti dekomposisi. |
+| gradeRelativeRationale | Soal ini merupakan penerapan langsung dari metode dekomposisi yang sudah dipelajari siswa kelas 2. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi baru. |
 
 Run 3 — solusi: 17 = 10 + 7; 12 = 10 + 2. (10 - 10) + (7 - 2) = 0 + 5 = 5.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur pengurangan dengan metode dekomposisi (pasangan bilangan) yang telah dipelajari, bukan sekadar mengingat fakta dasar.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan; 17 – 12 = ....
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma pengurangan berbasis nilai tempat (dekomposisi bilangan).. Bukti: menggunakan pasangan bilangan; 17 adalah 10 dan 7; 12 adalah 10 dan 2
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur standar kelas 2 yang familiar, melibatkan satu operasi utama dengan angka kecil, sehingga beban kognitifnya rendah.. Bukti: 17 – 12 = ....
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur pengurangan dengan metode dekomposisi (pasangan bilangan) yang merupakan metode standar untuk kelas 2. Ini adalah penerapan prosedur yang sudah dipelajari.. Bukti: Hitunglah operasi pengurangan berikut menggunakan pasangan bilangan. 17 – 12 = ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa tentang algoritme pengurangan melalui dekomposisi nilai tempat (pasangan bilangan), yang merupakan pengetahuan prosedural.. Bukti: menggunakan pasangan bilangan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 2. Prosedur dekomposisi (17=10+7, 12=10+2) adalah metode familiar. Tidak ada kendala yang berinteraksi atau kebutuhan perencanaan yang kompleks.. Bukti: 17 – 12 = ....
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman nilai tempat (puluhan dan satuan) dan pengurangan dasar 1-10. |
+| expectedPrerequisite | Pemahaman nilai tempat (puluhan dan satuan) dan pengurangan dasar. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1542,7 +1512,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 yang menekankan strategi pengurangan dengan dekomposisi bilangan. |
+| gradeRelativeRationale | Pengurangan dua digit dengan dekomposisi adalah materi standar kelas 2. Langkah-langkahnya langsung dan familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -1610,68 +1580,26 @@ Hitunglah operasi pengurangan berikut dengan menghitung mundur.<br><br>15 – 4 
 | D | 12 |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Menghitung mundur 4 langkah dari 15: 14, 13, 12, 11.
+Solusi minimum hasil AI: Menghitung mundur 4 langkah dari 15: 14 (1), 13 (2), 12 (3), 11 (4). Hasilnya adalah 11.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6832c2edca614e32e4ffabc45911b768873265f85c5ba65b66b7bab1df93834f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `eb3fe0fc2b586e0652cd229910a9fcbcb3caf00ca5008f3e21259c71f1302d0d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 1295 |
-| 2 | success | valid / verified | applying | procedural | Easy | 1284 |
-| 3 | success | valid / verified | knowing | procedural | Easy | 1274 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 2198 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 2218 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 2239 |
 
-Run 1 — solusi: Menghitung mundur 4 langkah dari 15: 14, 13, 12, 11.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur pengurangan spesifik (menghitung mundur) yang merupakan prosedur rutin di kelas 2.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur; 15 – 4 = ....
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji penguasaan algoritma atau teknik pengurangan melalui metode menghitung mundur.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur
-- Intended difficulty `classify/Easy`: Soal ini melibatkan operasi pengurangan dasar satu digit dengan angka di bawah 20, yang merupakan standar kompetensi kelas 2.. Bukti: 15 – 4 = ....
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan menghitung mundur dari 15 sebanyak 4 langkah. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Operasi pengurangan dasar dalam rentang 20 adalah materi inti kelas 2 yang bersifat rutin. |
-
-Run 2 — solusi: Menghitung mundur 4 langkah dari 15: 14 (1), 13 (2), 12 (3), 11 (4). Hasilnya adalah 11.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur pengurangan spesifik (menghitung mundur) yang sudah dipelajari di kelas 2.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur; 15 – 4 = ..
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau teknik pengurangan melalui metode menghitung mundur.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur dasar pengurangan satu digit dari dua digit yang sangat familiar bagi siswa kelas 2.. Bukti: 15 – 4 = ..
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan menghitung mundur bilangan 1-20. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Operasi pengurangan dasar dalam rentang 20 adalah standar kompetensi kelas 2 yang bersifat rutin. |
-
-Run 3 — solusi: Menghitung mundur 4 langkah dari 15: 14, 13, 12, 11.
-- Domain kognitif `classify/knowing`: Siswa diminta melakukan prosedur pengurangan dasar menggunakan strategi spesifik (menghitung mundur) yang sudah diajarkan di kelas 2.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur; 15 – 4 = ..
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji penerapan algoritma atau teknik menghitung mundur untuk menyelesaikan operasi pengurangan.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur standar satu langkah yang sangat familiar bagi siswa kelas 2, dengan beban kognitif yang rendah.. Bukti: 15 – 4 = ..
+Run 1 — solusi: Menghitung mundur 4 langkah dari 15: 14 (1), 13 (2), 12 (3), 11 (4). Hasilnya adalah 11.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan prosedur pengurangan sederhana dengan metode spesifik (menghitung mundur) yang merupakan prosedur langsung yang diajarkan di kelas 2.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur. 15 – 4 = ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penerapan algoritma atau metode pengurangan (menghitung mundur) yang merupakan prosedur standar.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur.
+- Intended difficulty `classify/Easy`: Soal ini adalah penerapan langsung dari metode pengurangan yang familiar bagi siswa kelas 2. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: 15 – 4 = ....
 
 Profil difficulty run ini:
 
@@ -1687,27 +1615,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Operasi pengurangan dasar dalam rentang 20 adalah materi standar kelas 2 yang bersifat rutin. |
+| gradeRelativeRationale | Operasi pengurangan dasar dalam rentang 20 adalah materi standar kelas 2. Metode menghitung mundur adalah prosedur rutin yang diajarkan. |
 
-### 3. Voting awal dan adjudikasi
+Run 2 — solusi: Menghitung mundur 4 langkah dari 15: 14 (1), 13 (2), 12 (3), 11 (4). Hasilnya adalah 11.
+- Domain kognitif `classify/knowing`: Siswa diminta menjalankan prosedur pengurangan spesifik (menghitung mundur) yang sudah dipelajari sebagai metode dasar untuk memahami pengurangan.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur. 15 – 4 = ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji penguasaan prosedur atau algoritma pengurangan sederhana melalui metode menghitung mundur.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur.
+- Intended difficulty `classify/Easy`: Soal ini adalah penerapan langsung dari prosedur menghitung mundur yang familiar bagi siswa kelas 2. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: 15 – 4 = ....
 
-| Head | Suara awal | Pola / status akhir | Label akhir advisory |
-|---|---|---|---|
-| Domain kognitif | {"applying": 2, "knowing": 1} | majority_2_of_3 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `2472`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa diminta menerapkan prosedur pengurangan spesifik (menghitung mundur) yang merupakan prosedur rutin di kelas 2.
-- Dimensi pengetahuan `procedural`: Soal ini menguji penguasaan algoritma atau teknik pengurangan melalui metode menghitung mundur.
-- Intended difficulty `Easy`: Soal ini melibatkan operasi pengurangan dasar satu digit dengan angka di bawah 20, yang merupakan standar kompetensi kelas 2.
-
-Profil difficulty hasil adjudikasi:
+Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan menghitung mundur dari 15 sebanyak 4 langkah. |
+| expectedPrerequisite | Kemampuan menghitung mundur dari bilangan 15. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1717,7 +1636,36 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Operasi pengurangan dasar dalam rentang 20 adalah materi inti kelas 2 yang bersifat rutin. |
+| gradeRelativeRationale | Pengurangan dalam lingkup 20 dengan metode hitung mundur adalah materi standar kelas 2. Soal bersifat langsung tanpa jebakan atau integrasi konsep. |
+
+Run 3 — solusi: Menghitung mundur 4 langkah dari 15: 14, 13, 12, 11.
+- Domain kognitif `classify/knowing`: Siswa diminta melakukan prosedur pengurangan sederhana (15-4) menggunakan strategi spesifik yang diarahkan oleh soal, yaitu menghitung mundur. Ini adalah penerapan langsung dari prosedur yang sudah dipelajari.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur. 15 – 4 = ....
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman dan penerapan algoritma atau metode pengurangan dasar (menghitung mundur) yang merupakan bagian dari keterampilan prosedural matematika dasar.. Bukti: Hitunglah operasi pengurangan berikut dengan menghitung mundur
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2. Strategi (menghitung mundur) ditentukan secara eksplisit, langkah penyelesaiannya tunggal dan langsung, serta tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi sendiri.. Bukti: 15 – 4 = ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan berhitung mundur dari angka 15. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | strong |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Operasi pengurangan dalam lingkup 20 dengan strategi yang diarahkan adalah materi standar kelas 2. Tidak ada kompleksitas tambahan. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1760,9 +1708,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 12. Soal `86ef303fdabf175f3223919d`
@@ -1789,20 +1737,20 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 1487 |
-| 2 | success | valid / verified | applying | procedural | Medium | 1516 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 1491 |
+| 1 | success | valid / verified | applying | procedural | Medium | 2349 |
+| 2 | success | valid / verified | applying | procedural | Medium | 2373 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 2400 |
 
 Run 1 — solusi: Kupu-kupu merah = 5. Kupu-kupu hijau = 6. Kupu-kupu kuning = 5 + 2 = 7. Total = 5 + 6 + 7 = 18.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi informasi implisit (jumlah kuning) lalu menerapkan operasi penjumlahan berantai, yang termasuk dalam kategori applying.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah; Berapa jumlah semua kupu-kupu?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman hubungan antar kuantitas (konseptual) dan penerapan algoritma penjumlahan (prosedural). Fokus utama adalah memahami struktur hubungan 'lebih dari' untuk menentukan nilai yang hilang.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah; Berapa jumlah semua kupu-kupu?
-- Intended difficulty `classify/Medium`: Soal ini memerlukan dua tahap operasi: menentukan nilai variabel yang tidak diketahui (kuning) dan menjumlahkan tiga variabel. Ini adalah standar untuk kelas 2.. Bukti: Ada 5 kupu-kupu merah; Ada 6 kupu-kupu hijau; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur penjumlahan setelah menentukan nilai yang belum diketahui (kuning) melalui operasi sederhana. Ini adalah penerapan konsep penjumlahan pada konteks rutin.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.; Berapa jumlah semua kupu-kupu?
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritma penjumlahan dasar dan pemahaman hubungan 'lebih dari' untuk menyelesaikan masalah.. Bukti: Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Intended difficulty `classify/Medium`: Soal memerlukan dua langkah: menentukan jumlah kupu-kupu kuning, lalu menjumlahkan ketiganya. Ini adalah tugas rutin bagi kelas 2.. Bukti: Ada 5 kupu-kupu merah.; Ada 6 kupu-kupu hijau.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Penjumlahan dasar dan pemahaman konsep 'lebih dari'. |
+| expectedPrerequisite | Penjumlahan dasar hingga 20 dan pemahaman konsep 'lebih dari'. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1811,19 +1759,19 @@ Profil difficulty run ini:
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 2 diharapkan mampu melakukan operasi penjumlahan bertahap dan memahami hubungan kuantitas sederhana dalam soal cerita. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan soal cerita penjumlahan bertahap. Soal ini menuntut ketelitian dalam mengidentifikasi semua variabel sebelum menjumlahkan. |
 
 Run 2 — solusi: Kupu-kupu merah = 5. Kupu-kupu hijau = 6. Kupu-kupu kuning = 5 + 2 = 7. Total = 5 + 6 + 7 = 18.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi informasi yang diberikan, melakukan operasi penjumlahan sederhana untuk menentukan jumlah kupu-kupu kuning, lalu menjumlahkan ketiga kelompok kupu-kupu tersebut. Ini adalah penerapan prosedur rutin dalam konteks soal cerita.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.; Berapa jumlah semua kupu-kupu?
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep penjumlahan dan hubungan antar kuantitas (lebih dari) yang diselesaikan dengan algoritma penjumlahan dasar.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.; Berapa jumlah semua kupu-kupu?
-- Intended difficulty `classify/Medium`: Soal ini melibatkan beberapa langkah rutin (menentukan nilai kuning, lalu menjumlahkan ketiganya) yang sesuai untuk tingkat kelas 2. Tidak ada strategi non-rutin yang diperlukan.. Bukti: Ada 5 kupu-kupu merah.; Ada 6 kupu-kupu hijau.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur penjumlahan dasar setelah menentukan nilai yang belum diketahui (kuning) melalui operasi sederhana. Ini adalah penerapan konsep penjumlahan dalam konteks rutin.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.; Berapa jumlah semua kupu-kupu?
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritme penjumlahan dasar dan pemahaman relasi 'lebihnya dari' untuk menyelesaikan masalah.. Bukti: Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Intended difficulty `classify/Medium`: Soal ini memerlukan dua langkah: mencari jumlah kupu-kupu kuning, lalu menjumlahkan ketiganya. Langkah-langkahnya jelas dan familiar bagi siswa kelas 2.. Bukti: Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Penjumlahan dasar dan pemahaman konsep 'lebih dari'. |
+| expectedPrerequisite | Penjumlahan dasar sampai 20 dan pemahaman konsep 'lebih dari'. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1833,18 +1781,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal cerita multi-langkah sederhana adalah standar untuk kelas 2, menuntut ketelitian dalam mengolah informasi yang diberikan secara bertahap. |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan soal cerita penjumlahan bertahap. Meskipun ada dua langkah, alurnya sangat linear dan tidak memerlukan strategi non-rutin. |
 
 Run 3 — solusi: Kupu-kupu merah = 5. Kupu-kupu hijau = 6. Kupu-kupu kuning = 5 + 2 = 7. Total = 5 + 6 + 7 = 18.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi hubungan antar variabel (kuning = merah + 2) dan menerapkan prosedur penjumlahan berantai untuk menyelesaikan masalah rutin.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah; Berapa jumlah semua kupu-kupu?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini memerlukan pemahaman konsep penjumlahan dan hubungan antar kuantitas (lebih dari) untuk menentukan nilai yang belum diketahui sebelum menjumlahkan.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah; Berapa jumlah semua kupu-kupu?
-- Intended difficulty `classify/Medium`: Soal ini melibatkan beberapa langkah rutin (menentukan nilai kuning, lalu menjumlahkan ketiganya) yang sesuai untuk tingkat kelas 2.. Bukti: 5 kupu-kupu merah; 6 kupu-kupu hijau; kuning 2 lebihnya dari banyak kupu-kupu merah
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi informasi yang diberikan, melakukan satu operasi hitung sederhana untuk menentukan jumlah kupu-kupu kuning, lalu menjumlahkan ketiga kelompok tersebut. Ini adalah penerapan prosedur penjumlahan pada konteks rutin.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.; Berapa jumlah semua kupu-kupu?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antar kuantitas (konsep 'lebih dari') dan penggunaan algoritme penjumlahan dasar.. Bukti: Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Intended difficulty `classify/Medium`: Soal ini melibatkan dua langkah sederhana: menentukan jumlah kupu-kupu kuning (5+2) dan menjumlahkan total (5+6+7). Langkah-langkahnya berurutan dan jelas, tidak memerlukan perencanaan strategi yang kompleks bagi siswa kelas 2.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.; Berapa jumlah semua kupu-kupu?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Penjumlahan dasar dan pemahaman konsep 'lebih dari'. |
+| expectedPrerequisite | Penjumlahan dasar sampai 20 dan pemahaman konsep 'lebih dari'. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1854,27 +1802,27 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Tingkat kesulitan sesuai untuk kelas 2 karena memerlukan dua langkah operasi (menentukan nilai kuning lalu total) yang masih dalam lingkup operasi dasar. |
+| gradeRelativeRationale | Meskipun hanya penjumlahan, siswa harus melakukan langkah perantara (mencari jumlah kuning) sebelum menjumlahkan total, yang sedikit lebih menuntut daripada soal satu langkah langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | conceptual |
+| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
 | Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
 
-Adjudikasi AI: `success`; token `3003`.
+Adjudikasi AI: `success`; token `3972`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa harus menerapkan prosedur penjumlahan setelah menentukan nilai variabel yang tidak diketahui secara eksplisit (kuning). Ini adalah penerapan konsep penjumlahan dalam konteks soal cerita rutin.
-- Dimensi pengetahuan `conceptual`: Soal ini menuntut pemahaman hubungan antar kuantitas (konseptual) untuk menentukan nilai yang hilang sebelum melakukan operasi penjumlahan (prosedural).
-- Intended difficulty `Medium`: Soal ini memerlukan dua langkah rutin: menentukan nilai variabel kuning dan menjumlahkan tiga kelompok. Ini sesuai dengan ekspektasi kelas 2.
+- Domain kognitif `applying`: Siswa perlu menerapkan prosedur penjumlahan setelah menentukan nilai yang belum diketahui (kuning) melalui operasi sederhana. Ini adalah penerapan konsep penjumlahan pada konteks rutin.
+- Dimensi pengetahuan `procedural`: Siswa menggunakan algoritme penjumlahan dasar dan pemahaman relasi 'lebih dari' untuk menyelesaikan masalah.
+- Intended difficulty `Medium`: Soal memerlukan dua langkah: menentukan jumlah kupu-kupu kuning, lalu menjumlahkan ketiganya. Meskipun prosedurnya rutin, siswa harus mengelola dua langkah yang saling bergantung, yang sedikit lebih menuntut daripada soal satu langkah langsung bagi kelas 2.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Penjumlahan dasar dan pemahaman konsep 'lebih dari'. |
+| expectedPrerequisite | Penjumlahan dasar hingga 20 dan pemahaman konsep 'lebih dari'. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1883,8 +1831,8 @@ Profil difficulty hasil adjudikasi:
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 2 diharapkan mampu melakukan operasi penjumlahan bertahap dan memahami hubungan kuantitas sederhana dalam soal cerita. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan soal cerita penjumlahan bertahap. Soal ini menuntut ketelitian dalam mengidentifikasi semua variabel sebelum menjumlahkan. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1927,9 +1875,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 13. Soal `c0bf29e80c730eba9378deaf`
@@ -1944,26 +1892,47 @@ Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah.
 | D | 6 |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Kupu-kupu kuning = Kupu-kupu merah + 2 = 5 + 2 = 7.
+Solusi minimum hasil AI: Kupu-kupu kuning = kupu-kupu merah + 2 = 5 + 2 = 7.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `902fdb5b759a7723fc29ed1c84d267b0afd97206590f50dfad3b1a75812f887b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `876bfada9ec83c93933d5842eaf055714547b7db488e7de9780a9de15330fff2`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 1305 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 1329 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 1339 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2229 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2256 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2226 |
 
-Run 1 — solusi: Kupu-kupu kuning = Kupu-kupu merah + 2 = 5 + 2 = 7.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep penjumlahan dasar untuk menyelesaikan masalah rutin yang diberikan dalam bentuk cerita sederhana.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep penjumlahan sebagai penambahan nilai (lebih dari) pada kuantitas yang diketahui.. Bukti: 5 kupu-kupu merah; 2 lebihnya
-- Intended difficulty `classify/Easy`: Soal ini merupakan masalah rutin satu langkah yang melibatkan operasi penjumlahan dasar dengan informasi yang jelas.. Bukti: Ada 5 kupu-kupu merah.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+Run 1 — solusi: Kupu-kupu kuning = kupu-kupu merah + 2 = 5 + 2 = 7.
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan kalimat '2 lebihnya dari' menjadi operasi penjumlahan sederhana (5 + 2). Ini adalah penerapan konsep penjumlahan pada konteks rutin.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan pemahaman konseptual tentang hubungan 'lebih dari' untuk menentukan operasi yang diperlukan.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu mengidentifikasi nilai merah (5) dan menerapkan operasi penambahan (2) sesuai instruksi. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: Ada 5 kupu-kupu merah.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan dasar bilangan cacah sampai 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 2, soal cerita satu langkah dengan operasi penjumlahan dasar adalah materi standar yang rutin. |
+
+Run 2 — solusi: Banyak kupu-kupu kuning adalah 2 lebihnya dari kupu-kupu merah. Diketahui kupu-kupu merah = 5. Maka, kupu-kupu kuning = 5 + 2 = 7.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep penjumlahan dasar untuk menentukan jumlah objek berdasarkan informasi perbandingan yang diberikan secara eksplisit. Ini adalah penerapan prosedur penjumlahan dalam konteks rutin.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan 'lebih dari' sebagai operasi penjumlahan.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu mengidentifikasi nilai dasar (5) dan menerapkan operasi penjumlahan (5+2) berdasarkan kata kunci 'lebihnya'. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: Ada 5 kupu-kupu merah.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
 
 Profil difficulty run ini:
 
@@ -1979,18 +1948,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena hanya melibatkan satu operasi penjumlahan sederhana dengan angka kecil. |
+| gradeRelativeRationale | Untuk kelas 2, soal ini adalah penerapan langsung dari operasi penjumlahan dasar dengan satu langkah penyelesaian yang jelas. |
 
-Run 2 — solusi: Kupu-kupu kuning = kupu-kupu merah + 2 = 5 + 2 = 7.
-- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan kalimat '2 lebihnya dari' menjadi operasi penjumlahan sederhana (5 + 2). Ini adalah penerapan prosedur rutin pada situasi soal cerita.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep penjumlahan sebagai penambahan kuantitas ('lebihnya dari') yang merupakan pengetahuan konseptual dasar.. Bukti: 5 kupu-kupu merah; 2 lebihnya
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan satu langkah operasi penjumlahan sederhana yang sesuai untuk tingkat kelas 2.. Bukti: Ada 5 kupu-kupu merah; 2 lebihnya dari banyak kupu-kupu merah
+Run 3 — solusi: Kupu-kupu kuning = 5 (merah) + 2 = 7.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep penjumlahan dasar untuk menentukan jumlah objek berdasarkan informasi perbandingan yang diberikan secara eksplisit.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan 'lebih dari' dalam konteks penjumlahan sederhana.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu mengidentifikasi nilai dasar (5) dan menerapkan operasi penjumlahan (5+2) sesuai instruksi '2 lebihnya'. Tidak ada langkah yang saling bergantung atau kendala kompleks.. Bukti: Ada 5 kupu-kupu merah.; Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan kemampuan membaca soal cerita sederhana. |
+| expectedPrerequisite | Penjumlahan dasar sampai 10 dan pemahaman konsep 'lebih dari'. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2000,28 +1969,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal cerita satu langkah dengan operasi penjumlahan dasar adalah standar kompetensi kelas 2. |
-
-Run 3 — solusi: Kupu-kupu kuning = kupu-kupu merah + 2 = 5 + 2 = 7.
-- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan kalimat '2 lebihnya dari' menjadi operasi penjumlahan sederhana (5 + 2). Ini adalah proses penerapan konsep penjumlahan dasar pada situasi rutin.. Bukti: Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep penjumlahan sebagai penambahan nilai (lebihnya dari) terhadap suatu kuantitas yang diketahui.. Bukti: Ada 5 kupu-kupu merah; 2 lebihnya dari
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur satu langkah yang sangat rutin untuk siswa kelas 2, dengan beban kognitif rendah.. Bukti: Ada 5 kupu-kupu merah; 2 lebihnya dari
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep penjumlahan dasar dan kemampuan membaca kalimat matematika sederhana. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Operasi penjumlahan 5+2 adalah standar kompetensi kelas 2 yang sangat mendasar dan familiar. |
+| gradeRelativeRationale | Untuk kelas 2, soal ini adalah penerapan langsung dari operasi penjumlahan dasar dalam konteks cerita sederhana yang familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2089,26 +2037,26 @@ Ibu membeli 13 bolu kukus. Malosi memakan 2 bolu kukus.<br><br>Berapakah sisa bo
 | D | 10 |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: 13 - 2 = 11
+Solusi minimum hasil AI: Ibu memiliki 13 bolu, dimakan 2. Sisa bolu = 13 - 2 = 11.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1b0995a8c7f302ab560760d1cdb60521432252a4ab2ac7797d0cdb8e83a29b5d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4fda78da588c41f8e418bb3a3ae6b68e1b06841cb5470444a286fffacb7d2304`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 1323 |
-| 2 | success | valid / verified | knowing | procedural | Easy | 1309 |
-| 3 | success | valid / verified | applying | procedural | Easy | 1286 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 2255 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 2267 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2250 |
 
-Run 1 — solusi: 13 - 2 = 11
-- Domain kognitif `classify/applying`: Siswa diminta melakukan operasi pengurangan dasar yang merupakan prosedur rutin untuk menyelesaikan masalah kontekstual sederhana.. Bukti: Ibu membeli 13 bolu kukus. Malosi memakan 2 bolu kukus.; Berapakah sisa bolu kukus Ibu sekarang?
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma pengurangan dasar (prosedural) dalam konteks cerita.. Bukti: 13 bolu kukus; memakan 2 bolu kukus
-- Intended difficulty `classify/Easy`: Soal ini melibatkan operasi pengurangan satu digit dari bilangan dua digit yang familiar bagi siswa kelas 2, dengan satu langkah penyelesaian langsung.. Bukti: 13 bolu kukus; memakan 2 bolu kukus
+Run 1 — solusi: Ibu membeli 13 bolu, dimakan 2. Sisa bolu = 13 - 2 = 11.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan operasi pengurangan dasar (13 - 2) yang merupakan prosedur rutin dan langsung dalam konteks kehidupan sehari-hari yang familiar bagi siswa kelas 2.. Bukti: Ibu membeli 13 bolu kukus. Malosi memakan 2 bolu kukus.; Berapakah sisa bolu kukus Ibu sekarang?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dasar tentang operasi pengurangan untuk menyelesaikan masalah kontekstual sederhana.. Bukti: 13 bolu kukus; memakan 2 bolu kukus
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dengan satu langkah penyelesaian (pengurangan). Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: Ibu membeli 13 bolu kukus. Malosi memakan 2 bolu kukus.; Berapakah sisa bolu kukus Ibu sekarang?
 
 Profil difficulty run ini:
 
@@ -2124,18 +2072,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Operasi pengurangan 13-2 adalah standar kompetensi kelas 2 yang bersifat langsung dan rutin. |
+| gradeRelativeRationale | Operasi pengurangan 13-2 adalah standar kompetensi kelas 2. Soal disajikan secara eksplisit tanpa jebakan atau langkah tambahan yang rumit. |
 
-Run 2 — solusi: 13 - 2 = 11
-- Domain kognitif `classify/knowing`: Siswa diminta melakukan operasi pengurangan dasar secara langsung untuk menyelesaikan masalah kontekstual sederhana.. Bukti: Ibu membeli 13 bolu kukus. Malosi memakan 2 bolu kukus.; Berapakah sisa bolu kukus Ibu sekarang?
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dasar tentang operasi pengurangan bilangan cacah.. Bukti: 13 bolu kukus; memakan 2 bolu kukus
-- Intended difficulty `classify/Easy`: Soal ini merupakan masalah pengurangan satu langkah yang sangat rutin dan familiar bagi siswa kelas 2.. Bukti: 13 bolu kukus; memakan 2 bolu kukus
+Run 2 — solusi: Ibu memiliki 13 bolu, dimakan 2, maka sisa bolu adalah 13 - 2 = 11.
+- Domain kognitif `classify/knowing`: Soal meminta siswa melakukan operasi pengurangan dasar (13-2) yang merupakan prosedur rutin dan langsung dalam konteks kehidupan sehari-hari yang sudah dipelajari di kelas 2.. Bukti: Ibu membeli 13 bolu kukus. Malosi memakan 2 bolu kukus.; Berapakah sisa bolu kukus Ibu sekarang?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritma pengurangan dasar untuk menyelesaikan masalah yang melibatkan fakta numerik dan operasi hitung sederhana.. Bukti: 13 bolu kukus; memakan 2 bolu kukus
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari konsep pengurangan dasar. Tidak ada langkah yang saling bergantung atau kendala yang kompleks. Siswa hanya perlu melakukan satu operasi hitung sederhana.. Bukti: 13 bolu kukus; memakan 2 bolu kukus; Berapakah sisa bolu kukus Ibu sekarang?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan bilangan 1-20. |
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan kemampuan menghitung mundur atau pengurangan bilangan cacah di bawah 20. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2145,18 +2093,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Operasi pengurangan dalam lingkup 20 adalah standar kompetensi kelas 2 yang bersifat rutin. |
+| gradeRelativeRationale | Untuk kelas 2, pengurangan bilangan di bawah 20 adalah materi dasar yang rutin. Soal tidak memiliki jebakan atau kompleksitas tambahan. |
 
-Run 3 — solusi: 13 - 2 = 11
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan operasi pengurangan dasar pada konteks cerita sederhana yang sudah familiar.. Bukti: Ibu membeli 13 bolu kukus; Malosi memakan 2 bolu kukus; Berapakah sisa bolu kukus Ibu sekarang?
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma pengurangan dasar.. Bukti: 13 - 2 = 11
-- Intended difficulty `classify/Easy`: Soal ini menggunakan operasi pengurangan satu digit dari bilangan belasan yang merupakan prosedur standar kelas 2.. Bukti: 13 bolu kukus; memakan 2; sisa
+Run 3 — solusi: Ibu membeli 13 bolu, dimakan 2. Sisa bolu = 13 - 2 = 11.
+- Domain kognitif `classify/applying`: Siswa diminta melakukan operasi pengurangan dasar (13 - 2) dalam konteks cerita sederhana. Ini adalah penerapan langsung dari prosedur pengurangan yang sudah dipelajari di kelas 2.. Bukti: Ibu membeli 13 bolu kukus. Malosi memakan 2 bolu kukus.; Berapakah sisa bolu kukus Ibu sekarang?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi pengurangan dasar untuk menyelesaikan masalah sehari-hari.. Bukti: 13 bolu kukus; memakan 2 bolu kukus
+- Intended difficulty `classify/Easy`: Soal ini merupakan masalah pengurangan satu langkah yang sangat rutin bagi siswa kelas 2. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: 13 bolu kukus; memakan 2 bolu kukus; Berapakah sisa bolu kukus Ibu sekarang?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan bilangan 1-20. |
+| expectedPrerequisite | Pemahaman konsep pengurangan dasar dan fakta pengurangan bilangan di bawah 20. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2166,21 +2114,21 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Operasi pengurangan dalam lingkup 20 adalah kompetensi dasar kelas 2 yang bersifat rutin. |
+| gradeRelativeRationale | Operasi pengurangan 13-2 adalah standar kurikulum kelas 2. Soal disajikan secara langsung tanpa jebakan atau kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 2, "knowing": 1} | majority_2_of_3 / adjudicated | applying |
+| Domain kognitif | {"knowing": 2, "applying": 1} | majority_2_of_3 / adjudicated | applying |
 | Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `2496`.
+Adjudikasi AI: `success`; token `3698`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa diminta menerapkan operasi pengurangan dasar pada konteks cerita sederhana yang sudah familiar, yang merupakan prosedur rutin.
-- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman siswa terhadap algoritma pengurangan dasar (prosedural) dalam konteks cerita.
-- Intended difficulty `Easy`: Soal ini merupakan masalah pengurangan satu langkah yang sangat rutin dan familiar bagi siswa kelas 2, dengan beban kognitif yang rendah.
+- Domain kognitif `applying`: Soal ini meminta siswa untuk melakukan operasi pengurangan dasar (13 - 2) dalam konteks cerita sederhana. Ini adalah penerapan langsung dari prosedur pengurangan yang sudah dipelajari di kelas 2.
+- Dimensi pengetahuan `procedural`: Siswa perlu menerapkan algoritma pengurangan dasar untuk menyelesaikan masalah yang melibatkan fakta numerik dan operasi hitung sederhana.
+- Intended difficulty `Easy`: Soal ini merupakan masalah pengurangan satu langkah yang sangat rutin bagi siswa kelas 2. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.
 
 Profil difficulty hasil adjudikasi:
 
@@ -2196,7 +2144,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Operasi pengurangan 13-2 adalah standar kompetensi kelas 2 yang bersifat langsung dan rutin. |
+| gradeRelativeRationale | Operasi pengurangan 13-2 adalah standar kurikulum kelas 2. Soal disajikan secara langsung tanpa jebakan atau kompleksitas tambahan. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2255,30 +2203,51 @@ Tulislah nama bangun datar berikut.
 | C | Lingkaran |
 | D | Segi lima |
 
-![Gambar sumber soal 15](<../images/kelas2_panduan_siswa_kelas2.pdf-0089-03.png>)
+![Gambar sumber soal 15](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0089-03.png>)
 
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Bangun tersebut memiliki 3 sisi lurus dan 3 sudut, yang merupakan definisi dari segitiga.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0089-03.png. Transkripsi visual: Gambar menunjukkan sebuah bangun datar berwarna merah muda berbentuk segitiga dengan tiga sisi lurus dan tiga sudut.
+Solusi minimum hasil AI: Bangun datar tersebut memiliki 3 sisi lurus dan 3 sudut, yang merupakan definisi dari segitiga.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0089-03.png. Transkripsi visual: Sebuah gambar bangun datar berwarna merah muda berbentuk segitiga sama kaki dengan tiga sisi lurus dan tiga sudut.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `271058b9e489d4a0d4187634516e0c521b35972c224354585bbfdd1e9f22b854`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f4e9a728d53c66ce859ca218e426009cd075d62808fde8e2861ef3e317693f13`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 2375 |
-| 2 | success | valid / verified | knowing | factual | Easy | 2401 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 2398 |
+| 1 | success | valid / verified | knowing | factual | Easy | 3315 |
+| 2 | success | valid / verified | knowing | factual | Easy | 3298 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3321 |
 
-Run 1 — solusi: Bangun tersebut memiliki 3 sisi lurus dan 3 sudut, yang merupakan definisi dari segitiga.
-- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan menamai bangun datar berdasarkan karakteristik visualnya yang sangat mendasar, yang merupakan proses pengenalan langsung.. Bukti: Tulislah nama bangun datar berikut.
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami definisi atau kategori bangun datar (segitiga) untuk dapat menjawab soal ini.. Bukti: Tulislah nama bangun datar berikut.
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan pengenalan bentuk geometris standar tanpa kompleksitas tambahan.. Bukti: Tulislah nama bangun datar berikut.
+Run 1 — solusi: Bangun datar tersebut memiliki 3 sisi lurus dan 3 sudut, yang merupakan definisi dari segitiga.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengenali dan menamai bangun datar berdasarkan karakteristik visualnya (jumlah sisi). Ini adalah proses pengenalan langsung terhadap objek geometris dasar yang sudah dipelajari.. Bukti: Tulislah nama bangun datar berikut.; gambar bangun datar berwarna merah muda berbentuk segitiga
+- Dimensi pengetahuan `classify/factual`: Siswa perlu mengetahui fakta tentang nama-nama bangun datar dan karakteristik dasarnya (jumlah sisi) untuk mengidentifikasi gambar tersebut.. Bukti: nama bangun datar; bangun datar berwarna merah muda berbentuk segitiga
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 2. Tidak ada langkah kompleks atau integrasi konsep yang diperlukan, hanya pengenalan bentuk dasar.. Bukti: Tulislah nama bangun datar berikut.; gambar bangun datar berwarna merah muda berbentuk segitiga
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal nama-nama bangun datar sederhana (segitiga, segi empat, lingkaran). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan untuk mengidentifikasi bangun datar berdasarkan jumlah sisi. Soal ini adalah penerapan langsung dari pengetahuan tersebut. |
+
+Run 2 — solusi: Bangun datar tersebut memiliki 3 sisi garis lurus. Bangun dengan 3 sisi disebut segitiga.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi nama bangun datar berdasarkan pengamatan visual langsung terhadap jumlah sisi. Ini adalah tugas pengenalan bentuk dasar yang sudah dipelajari di kelas 2.. Bukti: Tulislah nama bangun datar berikut.; bangun dibatasi oleh 3 sisi garis lurus
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang nama-nama bangun datar dasar (segitiga, segi empat, lingkaran) berdasarkan ciri visualnya.. Bukti: Tulislah nama bangun datar berikut.
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana dan langsung. Siswa hanya perlu mengenali bentuk visual yang sangat umum (segitiga) tanpa perlu melakukan perhitungan atau perencanaan langkah yang kompleks.. Bukti: Tulislah nama bangun datar berikut.
 
 Profil difficulty run ini:
 
@@ -2293,19 +2262,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Pengenalan bangun datar sederhana adalah materi standar kelas 2 SD yang bersifat rutin. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Pengenalan bentuk dasar adalah materi standar kelas 2. Soal ini tidak memerlukan analisis mendalam, hanya pengenalan visual langsung. |
 
-Run 2 — solusi: Bangun tersebut memiliki 3 sisi lurus dan 3 sudut, yang merupakan ciri khas dari segitiga.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menyebutkan nama bangun datar berdasarkan ciri visual yang sangat dasar (jumlah sisi).. Bukti: Tulislah nama bangun datar berikut.; bangun dibatasi oleh 3 sisi garis lurus
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang nama-nama bangun datar dasar.. Bukti: Tulislah nama bangun datar berikut.
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, hanya memerlukan pengenalan visual langsung tanpa proses perhitungan atau strategi kompleks.. Bukti: Tulislah nama bangun datar berikut.; bangun dibatasi oleh 3 sisi garis lurus
+Run 3 — solusi: Bangun datar tersebut memiliki 3 sisi lurus dan 3 sudut, yang merupakan ciri khas dari segitiga.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi nama bangun datar berdasarkan pengamatan visual langsung terhadap ciri-ciri geometris dasar (jumlah sisi). Ini adalah proses pengenalan bentuk yang sudah dipelajari.. Bukti: Tulislah nama bangun datar berikut.; Gambar menunjukkan sebuah bangun datar berwarna merah muda berbentuk segitiga
+- Dimensi pengetahuan `classify/factual`: Siswa perlu mengetahui fakta tentang nama-nama bangun datar dasar dan ciri-cirinya (jumlah sisi) untuk menjawab soal ini.. Bukti: Tulislah nama bangun datar berikut.; Gambar menunjukkan sebuah bangun datar berwarna merah muda berbentuk segitiga
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan merupakan pengenalan bentuk dasar yang umum di kelas 2. Tidak ada langkah kompleks atau integrasi konsep yang diperlukan.. Bukti: Tulislah nama bangun datar berikut.; Gambar menunjukkan sebuah bangun datar berwarna merah muda berbentuk segitiga
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mengenal bentuk-bentuk geometri dasar (segitiga, segi empat, lingkaran). |
+| expectedPrerequisite | Mengenal bentuk-bentuk dasar (segitiga, segi empat, lingkaran). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2315,76 +2284,33 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan untuk mengidentifikasi bangun datar sederhana berdasarkan jumlah sisi. |
-
-Run 3 — solusi: Bangun tersebut memiliki 3 sisi lurus, sehingga disebut segitiga.
-- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan menamai bangun datar berdasarkan karakteristik visualnya yang sangat mendasar.. Bukti: Tulislah nama bangun datar berikut.
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami definisi dan kategori bangun datar (segitiga) untuk menjawab soal ini.. Bukti: Tulislah nama bangun datar berikut.
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan pengenalan bentuk geometris standar tanpa langkah tambahan.. Bukti: Tulislah nama bangun datar berikut.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal bentuk-bentuk dasar geometri (segitiga, segi empat, lingkaran). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD yang menekankan pengenalan bangun datar sederhana. |
+| gradeRelativeRationale | Siswa kelas 2 diharapkan sudah mampu mengidentifikasi bangun datar sederhana seperti segitiga secara visual tanpa kesulitan berarti. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
-| Dimensi pengetahuan | {"conceptual": 2, "factual": 1} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3496`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Soal ini meminta siswa untuk mengenali dan menamai bangun datar berdasarkan karakteristik visualnya yang sangat mendasar, yang merupakan proses pengenalan langsung (knowing).
-- Dimensi pengetahuan `conceptual`: Siswa perlu memahami kategori atau konsep bentuk geometri (segitiga) untuk dapat mengklasifikasikan gambar tersebut.
-- Intended difficulty `Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan pengenalan bentuk geometris standar tanpa kompleksitas tambahan.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal bentuk-bentuk dasar geometri (segitiga, segi empat, lingkaran). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Pengenalan bangun datar sederhana adalah materi standar kelas 2 SD yang bersifat rutin. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"factual": 3} | unanimous_3_0 / unanimous | factual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 72/256; truncation: `False`.
+Model membaca representation `metadata`; token input 73/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.999815; applying=0.000185; reasoning=0.000000 | knowing | 0.999815 | 0.001614 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.865225; conceptual=0.130241; procedural=0.004534; metacognitive=0.000000 | factual | 0.865225 | 0.299505 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.913601; Medium=0.082891; Hard=0.003508 | Easy | 0.913601 | 0.281083 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.999835; applying=0.000165; reasoning=0.000000 | knowing | 0.999835 | 0.001460 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.879416; conceptual=0.115268; procedural=0.005316; metacognitive=0.000000 | factual | 0.879416 | 0.281238 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.903546; Medium=0.093249; Hard=0.003205 | Easy | 0.903546 | 0.301549 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999815; −Σp ln(p) = 0.001774; H = 0.001774/ln(3) = 0.001614; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.865225; −Σp ln(p) = 0.415202; H = 0.415202/ln(4) = 0.299505; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999835; −Σp ln(p) = 0.001604; H = 0.001604/ln(3) = 0.001460; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.913601; −Σp ln(p) = 0.308801; H = 0.308801/ln(3) = 0.281083; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.879416; −Σp ln(p) = 0.389878; H = 0.389878/ln(4) = 0.281238; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.903546; −Σp ln(p) = 0.331285; H = 0.331285/ln(3) = 0.301549; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -2400,16 +2326,16 @@ Pilihan: A. Segitiga
 B. Segi empat
 C. Lingkaran
 D. Segi lima
-Transkripsi visual: Gambar menunjukkan sebuah bangun datar berwarna merah muda berbentuk segitiga dengan tiga sisi lurus dan tiga sudut.
+Transkripsi visual: Sebuah gambar bangun datar berwarna merah muda berbentuk segitiga sama kaki dengan tiga sisi lurus dan tiga sudut.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "factual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 16. Soal `13edcfffbf7fe9b6f346ad87`
@@ -2423,72 +2349,30 @@ Tulislah nama bangun datar berikut.
 | C | Segi enam |
 | D | Segitiga |
 
-![Gambar sumber soal 16](<../images/kelas2_panduan_siswa_kelas2.pdf-0089-06.png>)
+![Gambar sumber soal 16](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0089-06.png>)
 
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Bangun datar tersebut memiliki satu sisi lengkung yang tertutup dan tidak memiliki sudut, yang merupakan definisi dari lingkaran.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0089-06.png. Transkripsi visual: Gambar menunjukkan sebuah bangun datar berwarna ungu berbentuk lingkaran sempurna.
+Solusi minimum hasil AI: Bangun datar tersebut memiliki satu sisi lengkung yang tertutup dan tidak memiliki sudut, yang merupakan ciri khas dari lingkaran.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0089-06.png. Transkripsi visual: Sebuah gambar bangun datar berwarna ungu berbentuk lingkaran sempurna.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `debb60be99d15dc7ca183eeec496783d24bacdc371a63ed1ca5b96455e0892ff`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `58793b30aeda7bd130cfb5f9fe91113bce1c2d95b8aa558e5310a98dda7f478b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 2413 |
-| 2 | success | valid / verified | knowing | factual | Easy | 2415 |
-| 3 | success | valid / verified | knowing | factual | Easy | 2393 |
+| 1 | success | valid / verified | knowing | factual | Easy | 3266 |
+| 2 | success | valid / verified | knowing | factual | Easy | 3353 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3251 |
 
-Run 1 — solusi: Bangun datar tersebut memiliki satu sisi lengkung yang tertutup dan tidak memiliki sudut, yang merupakan definisi dari lingkaran.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan mengidentifikasi bentuk visual dasar (lingkaran) berdasarkan pengetahuan yang sudah dipelajari sebelumnya.. Bukti: Tulislah nama bangun datar berikut.
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang nama-nama bangun datar dasar.. Bukti: Tulislah nama bangun datar berikut.
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan visual langsung tanpa proses perhitungan atau analisis kompleks.. Bukti: Tulislah nama bangun datar berikut.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal nama-nama bangun datar dasar (lingkaran, segitiga, segiempat). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | weak |
-| gradeRelativeRationale | Untuk siswa kelas 2, mengidentifikasi bentuk lingkaran adalah materi dasar yang sangat familiar dan rutin. |
-
-Run 2 — solusi: Bangun datar tersebut memiliki satu sisi lengkung yang tertutup dan tidak memiliki sudut, yang merupakan definisi dari lingkaran.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan mengidentifikasi bentuk visual dasar berdasarkan pengetahuan faktual tentang nama-nama bangun datar.. Bukti: Tulislah nama bangun datar berikut
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang terminologi dasar geometri (nama bentuk).. Bukti: nama bangun datar
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan visual langsung tanpa proses perhitungan atau strategi kompleks.. Bukti: Tulislah nama bangun datar berikut
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal nama-nama bangun datar dasar (lingkaran, segitiga, segiempat). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 diharapkan sudah sangat familiar dengan pengenalan bentuk dasar seperti lingkaran sebagai bagian dari kurikulum awal geometri. |
-
-Run 3 — solusi: Gambar tersebut adalah lingkaran karena memiliki satu sisi lengkung tertutup tanpa sudut.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menamai bentuk geometris dasar yang disajikan secara visual.. Bukti: Tulislah nama bangun datar berikut.
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang nama-nama bangun datar dasar.. Bukti: Tulislah nama bangun datar berikut.
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan visual langsung terhadap bentuk yang sangat familiar bagi siswa kelas 2.. Bukti: Tulislah nama bangun datar berikut.
+Run 1 — solusi: Bangun datar tersebut memiliki satu sisi lengkung yang tertutup dan tidak memiliki sudut, yang merupakan ciri khas dari lingkaran.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menamai bangun datar berdasarkan ciri visual yang sangat mendasar dan familiar.. Bukti: Tulislah nama bangun datar berikut.; gambar bangun datar berwarna ungu berbentuk lingkaran
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual mengenai nama dan bentuk dasar bangun datar.. Bukti: Tulislah nama bangun datar berikut.
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana karena hanya meminta identifikasi visual langsung dari bentuk dasar yang sudah dipelajari di kelas 2.. Bukti: Tulislah nama bangun datar berikut.; gambar bangun datar berwarna ungu berbentuk lingkaran
 
 Profil difficulty run ini:
 
@@ -2503,8 +2387,50 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena pengenalan bentuk adalah materi awal geometri yang bersifat rutin dan langsung. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 2 sudah sangat familiar dengan bentuk lingkaran sebagai bentuk dasar geometri. |
+
+Run 2 — solusi: Gambar tersebut adalah bentuk geometri yang dibatasi oleh satu garis lengkung tertutup yang jaraknya sama dari titik pusat, yang dikenal sebagai lingkaran.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi dan menamai bangun datar berdasarkan pengenalan visual langsung. Ini adalah proses pengenalan bentuk dasar yang sudah dipelajari.. Bukti: Tulislah nama bangun datar berikut.; Gambar tersebut adalah bentuk geometri yang dibatasi oleh satu garis lengkung
+- Dimensi pengetahuan `classify/factual`: Siswa perlu mengetahui fakta tentang nama-nama bangun datar dasar (lingkaran, segitiga, dll) untuk menjawab soal ini.. Bukti: Tulislah nama bangun datar berikut.
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana dan langsung. Siswa hanya perlu mengenali bentuk visual yang sangat familiar (lingkaran) dan memilih opsi yang sesuai. Tidak ada langkah kompleks atau penalaran yang diperlukan.. Bukti: Tulislah nama bangun datar berikut.; Gambar tersebut adalah bentuk geometri yang dibatasi oleh satu garis lengkung
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk-bentuk geometri dasar seperti lingkaran, segitiga, dan segiempat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk kelas 2, mengenali bentuk dasar seperti lingkaran adalah materi awal yang sangat mendasar dan rutin. |
+
+Run 3 — solusi: Gambar tersebut adalah lingkaran karena memiliki satu sisi lengkung yang tertutup dan tidak memiliki sudut.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menyebutkan nama bangun datar berdasarkan pengamatan visual langsung.. Bukti: Tulislah nama bangun datar berikut.; Gambar tersebut adalah lingkaran
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual mengenai nama-nama bangun datar dasar.. Bukti: Tulislah nama bangun datar berikut.
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana, hanya memerlukan pengenalan visual terhadap bentuk dasar yang sudah sangat familiar bagi siswa kelas 2.. Bukti: Tulislah nama bangun datar berikut.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bentuk-bentuk bangun datar dasar (lingkaran, segitiga, segiempat). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Pengenalan bentuk lingkaran adalah materi dasar kelas 1 dan 2. Tidak ada langkah kompleks atau penalaran yang diperlukan. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2516,21 +2442,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 65/256; truncation: `False`.
+Model membaca representation `metadata`; token input 64/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.999998; applying=0.000002; reasoning=0.000000 | knowing | 0.999998 | 0.000020 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.787466; conceptual=0.207740; procedural=0.004794; metacognitive=0.000000 | factual | 0.787466 | 0.389680 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.915183; Medium=0.081872; Hard=0.002946 | Easy | 0.915183 | 0.275959 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.999999; applying=0.000001; reasoning=0.000000 | knowing | 0.999999 | 0.000010 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.780643; conceptual=0.212101; procedural=0.007256; metacognitive=0.000000 | factual | 0.780643 | 0.402484 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.907099; Medium=0.090105; Hard=0.002796 | Easy | 0.907099 | 0.292866 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999998; −Σp ln(p) = 0.000022; H = 0.000022/ln(3) = 0.000020; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.787466; −Σp ln(p) = 0.540211; H = 0.540211/ln(4) = 0.389680; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999999; −Σp ln(p) = 0.000011; H = 0.000011/ln(3) = 0.000010; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.915183; −Σp ln(p) = 0.303172; H = 0.303172/ln(3) = 0.275959; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.780643; −Σp ln(p) = 0.557961; H = 0.557961/ln(4) = 0.402484; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.907099; −Σp ln(p) = 0.321746; H = 0.321746/ln(3) = 0.292866; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -2546,7 +2472,7 @@ Pilihan: A. Segi lima
 B. Lingkaran
 C. Segi enam
 D. Segitiga
-Transkripsi visual: Gambar menunjukkan sebuah bangun datar berwarna ungu berbentuk lingkaran sempurna.
+Transkripsi visual: Sebuah gambar bangun datar berwarna ungu berbentuk lingkaran sempurna.
 ```
 
 </details>
@@ -2569,57 +2495,36 @@ Susun bangun datar berikut menjadi satu bentuk. Bentuk apa hasil susunannya?
 | C | Berbentuk seperti anak panah tunggal |
 | D | Berbentuk seperti tangga (undakan) |
 
-![Gambar sumber soal 17](<../images/kelas2_panduan_siswa_kelas2.pdf-0097-12.png>)
+![Gambar sumber soal 17](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0097-12.png>)
 
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Menempelkan sisi tegak segitiga pada salah satu sisi pendek persegi panjang akan membentuk bangun menyerupai anak panah (arrow).
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0097-12.png. Transkripsi visual: Terdapat dua bangun datar: sebuah persegi panjang di sebelah kiri dan sebuah segitiga sama sisi di sebelah kanan.
+Solusi minimum hasil AI: Menyusun persegi panjang dan segitiga dengan menempelkan sisi tegak segitiga pada salah satu sisi pendek persegi panjang akan membentuk bangun gabungan yang menyerupai anak panah (panah tunggal).
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0097-12.png. Transkripsi visual: Terdapat dua bangun datar yang terpisah: sebuah persegi panjang di sebelah kiri dan sebuah segitiga sama sisi di sebelah kanan. Jika persegi panjang ditempelkan pada sisi tegak segitiga, akan terbentuk bangun menyerupai anak panah yang menunjuk ke kanan.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `421307fe3ba13e1b737c8546561628890eac2bd2af49c7766b4ce1258cefe905`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f06857818cddb7144213e9111d74b67efaf73ed7188524dc10e3f949deeb84ff`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2458 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2452 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2515 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 3419 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 3395 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 3376 |
 
-Run 1 — solusi: Menempelkan sisi tegak segitiga pada salah satu sisi pendek persegi panjang akan membentuk bangun menyerupai anak panah (arrow).
-- Domain kognitif `classify/applying`: Siswa perlu melakukan visualisasi mental untuk menggabungkan dua bangun datar (persegi panjang dan segitiga) menjadi bentuk baru, yang merupakan proses applying konsep geometri dasar.. Bukti: Susun bangun datar berikut menjadi satu bentuk
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antar bangun datar dan bagaimana mereka dapat dikomposisikan menjadi bentuk yang lebih kompleks.. Bukti: Mengurai dan Menyusun Bangun Datar
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan dua bangun dasar yang umum dikenal siswa kelas 2 dan memerlukan satu langkah manipulasi mental sederhana.. Bukti: Susun bangun datar berikut menjadi satu bentuk
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal bentuk dasar (persegi panjang dan segitiga). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | True |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan visual dan manipulasi bentuk sederhana yang merupakan bagian dari kurikulum geometri awal. |
-
-Run 2 — solusi: Menempelkan sisi tegak segitiga pada salah satu sisi pendek persegi panjang akan membentuk bangun menyerupai anak panah (arrow).
-- Domain kognitif `classify/applying`: Siswa perlu melakukan visualisasi mental untuk menggabungkan dua bangun datar (persegi panjang dan segitiga) menjadi bentuk baru, yang merupakan proses applying konsep geometri dasar.. Bukti: Susun bangun datar berikut menjadi satu bentuk
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang hubungan antar bangun datar dan bagaimana mereka dapat disusun untuk membentuk struktur baru (konsep komposisi bangun).. Bukti: Susun bangun datar berikut menjadi satu bentuk
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan dua bangun dasar yang familiar dan satu langkah penyusunan visual yang sederhana.. Bukti: Susun bangun datar berikut menjadi satu bentuk
+Run 1 — solusi: Menyusun persegi panjang dan segitiga dengan menempelkan sisi tegak segitiga pada salah satu sisi pendek persegi panjang akan membentuk bangun gabungan yang menyerupai anak panah (panah tunggal).
+- Domain kognitif `classify/applying`: Siswa diminta untuk melakukan visualisasi mental atau manipulasi spasial sederhana untuk menggabungkan dua bangun datar yang sudah dikenal (persegi panjang dan segitiga) menjadi bentuk baru yang familiar. Ini adalah penerapan konsep komposisi bangun datar.. Bukti: Susun bangun datar berikut menjadi satu bentuk; Bentuk apa hasil susunannya?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bangun datar dapat disusun atau dikomposisikan untuk membentuk bangun baru yang lebih kompleks.. Bukti: Susun bangun datar berikut menjadi satu bentuk
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan dua bangun dasar yang sangat umum. Visualisasi penggabungan keduanya menjadi bentuk panah adalah tugas rutin dalam kurikulum geometri kelas 2.. Bukti: Susun bangun datar berikut menjadi satu bentuk; Bentuk apa hasil susunannya?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mengenal bentuk dasar (persegi panjang dan segitiga). |
+| expectedPrerequisite | Mengenal bentuk dasar (persegi panjang, segitiga) dan konsep penggabungan bangun datar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2629,18 +2534,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan visual dan manipulasi bentuk sederhana tanpa perhitungan numerik. |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan aktivitas menyusun bangun datar (tangram atau puzzle sederhana). Tugas ini tidak memerlukan perencanaan kompleks, hanya pengenalan visual langsung. |
 
-Run 3 — solusi: Menempelkan sisi segitiga pada sisi persegi panjang membentuk bangun gabungan yang menyerupai anak panah (panah tunggal).
-- Domain kognitif `classify/applying`: Siswa perlu melakukan visualisasi mental untuk menggabungkan dua bangun datar sederhana menjadi bentuk baru yang familiar. Ini melibatkan proses applying karena siswa menerapkan pemahaman tentang sifat bangun datar dalam situasi rutin (komposisi bentuk).. Bukti: Susun bangun datar berikut menjadi satu bentuk
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bangun datar dapat disusun atau didekomposisi untuk membentuk bangun lain yang lebih kompleks.. Bukti: Susun bangun datar berikut menjadi satu bentuk
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan dua bangun dasar yang umum dikenal siswa kelas 2 dan tugasnya adalah penggabungan visual sederhana.. Bukti: Susun bangun datar berikut menjadi satu bentuk
+Run 2 — solusi: Menempelkan sisi tegak segitiga ke salah satu sisi lebar persegi panjang akan membentuk bangun gabungan yang menyerupai anak panah (panah ke kanan).
+- Domain kognitif `classify/applying`: Siswa diminta untuk melakukan visualisasi mental atau manipulasi spasial sederhana untuk menggabungkan dua bangun datar (persegi panjang dan segitiga) menjadi satu bentuk baru yang familiar. Ini adalah proses menerapkan pemahaman konsep komposisi bangun datar.. Bukti: Susun bangun datar berikut menjadi satu bentuk; Bentuk apa hasil susunannya?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bentuk-bentuk dasar dapat disusun atau dikomposisikan untuk membentuk bentuk yang lebih kompleks.. Bukti: Susun bangun datar berikut menjadi satu bentuk
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan penggabungan dua bangun sederhana yang secara visual jelas membentuk pola anak panah. Tidak ada kendala rumit atau langkah bertingkat yang diperlukan.. Bukti: Susun bangun datar berikut menjadi satu bentuk
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mengenal bentuk dasar (persegi panjang, segitiga) dan konsep penggabungan bentuk. |
+| expectedPrerequisite | Mengenal bentuk bangun datar dasar (persegi panjang dan segitiga). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2650,7 +2555,28 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan tentang komposisi bangun datar sederhana. Tugas ini bersifat visual dan langsung, sesuai dengan tingkat perkembangan kognitif mereka. |
+| gradeRelativeRationale | Untuk kelas 2, tugas menyusun bangun datar sederhana adalah materi standar yang rutin. Visualisasi penggabungan dua bentuk dasar ini tidak menuntut perencanaan kompleks. |
+
+Run 3 — solusi: Menempelkan sisi tegak segitiga ke sisi kanan persegi panjang menghasilkan bentuk yang menyerupai anak panah tunggal yang menunjuk ke kanan.
+- Domain kognitif `classify/applying`: Siswa diminta untuk melakukan visualisasi mental atau manipulasi spasial sederhana untuk menggabungkan dua bangun datar menjadi satu bentuk baru. Ini adalah penerapan konsep komposisi bangun datar yang rutin.. Bukti: Susun bangun datar berikut menjadi satu bentuk; Bentuk apa hasil susunannya?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bentuk-bentuk dasar dapat disusun atau dikomposisikan untuk membentuk bentuk yang lebih kompleks.. Bukti: Susun bangun datar berikut menjadi satu bentuk
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan penggabungan dua bangun datar sederhana yang familiar. Tidak ada kendala yang rumit atau langkah-langkah yang saling bergantung yang kompleks.. Bukti: Susun bangun datar berikut menjadi satu bentuk
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengenal bangun datar dasar (persegi panjang dan segitiga). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 2, tugas menyusun dua bangun datar sederhana adalah aktivitas rutin dalam geometri dasar yang sesuai dengan tingkat perkembangan kognitif mereka. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2662,21 +2588,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 106/256; truncation: `False`.
+Model membaca representation `metadata`; token input 128/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.085283; applying=0.914717; reasoning=0.000000 | applying | 0.914717 | 0.265323 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.583779; conceptual=0.403880; procedural=0.012341; metacognitive=0.000000 | factual | 0.583779 | 0.529915 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.893646; Medium=0.103910; Hard=0.002444 | Easy | 0.893646 | 0.319001 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.141558; applying=0.858442; reasoning=0.000000 | applying | 0.858442 | 0.371178 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.156347; conceptual=0.832845; procedural=0.010808; metacognitive=0.000000 | conceptual | 0.832845 | 0.354468 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.796196; Medium=0.199347; Hard=0.004457 | Easy | 0.796196 | 0.479767 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.914717; −Σp ln(p) = 0.291487; H = 0.291487/ln(3) = 0.265323; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.583779; −Σp ln(p) = 0.734619; H = 0.734619/ln(4) = 0.529915; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.858442; −Σp ln(p) = 0.407781; H = 0.407781/ln(3) = 0.371178; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.893646; −Σp ln(p) = 0.350459; H = 0.350459/ln(3) = 0.319001; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.832845; −Σp ln(p) = 0.491397; H = 0.491397/ln(4) = 0.354468; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.796196; −Σp ln(p) = 0.527078; H = 0.527078/ln(3) = 0.479767; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -2692,7 +2618,7 @@ Pilihan: A. Berbentuk seperti anak panah dua arah (kiri dan kanan)
 B. Berbentuk persegi (kotak)
 C. Berbentuk seperti anak panah tunggal
 D. Berbentuk seperti tangga (undakan)
-Transkripsi visual: Terdapat dua bangun datar: sebuah persegi panjang di sebelah kiri dan sebuah segitiga sama sisi di sebelah kanan.
+Transkripsi visual: Terdapat dua bangun datar yang terpisah: sebuah persegi panjang di sebelah kiri dan sebuah segitiga sama sisi di sebelah kanan. Jika persegi panjang ditempelkan pada sisi tegak segitiga, akan terbentuk bangun menyerupai anak panah yang menunjuk ke kanan.
 ```
 
 </details>
@@ -2701,7 +2627,7 @@ Transkripsi visual: Terdapat dua bangun datar: sebuah persegi panjang di sebelah
 
 Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "conceptual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 18. Soal `2188dcf71c96bfe0666fa262`
@@ -2715,36 +2641,36 @@ Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa 
 | C | Menjadi 2 persegi panjang berbeda ukuran |
 | D | Menjadi 2 segitiga |
 
-![Gambar sumber soal 18](<../images/kelas2_panduan_siswa_kelas2.pdf-0098-09.png>)
+![Gambar sumber soal 18](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0098-09.png>)
 
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Bangun huruf T dapat dipotong secara horizontal tepat di bawah batang mendatar, menghasilkan satu persegi panjang horizontal (batang atas) dan satu persegi panjang vertikal (batang bawah) dengan ukuran yang berbeda.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0098-09.png. Transkripsi visual: Gambar menunjukkan sebuah bangun datar berbentuk huruf T kapital yang simetris secara vertikal. Bangun ini dapat diurai menjadi dua bagian persegi panjang: satu persegi panjang horizontal di bagian atas dan satu persegi panjang vertikal di bagian bawah.
+Solusi minimum hasil AI: Bangun huruf T dapat dipotong menjadi dua bagian persegi panjang: satu persegi panjang horizontal (batang atas) dan satu persegi panjang vertikal (batang bawah). Keduanya memiliki dimensi yang berbeda, sehingga membentuk 2 persegi panjang berbeda ukuran.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0098-09.png. Transkripsi visual: Gambar menunjukkan sebuah bangun datar berbentuk huruf T kapital. Bangun ini memiliki bagian horizontal di atas dan bagian vertikal di bawah yang menyatu. Secara visual, bangun ini dapat diurai menjadi dua persegi panjang: satu persegi panjang horizontal yang lebih lebar di bagian atas dan satu persegi panjang vertikal yang lebih panjang di bagian bawah.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5297e93513abbd45e18ed3eb6d1bd3cb8e29b0c946401f54bf168002de05bebc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6626c7f4981d75583d9a8a5a8aff038b719fba465dfaabed2780848838127ecb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2502 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2508 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2513 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 3453 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 3430 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 3408 |
 
-Run 1 — solusi: Bangun huruf T dapat dipotong secara horizontal tepat di bawah batang mendatar, menghasilkan satu persegi panjang horizontal (batang atas) dan satu persegi panjang vertikal (batang bawah) dengan ukuran yang berbeda.
-- Domain kognitif `classify/applying`: Siswa perlu melakukan dekomposisi visual pada bangun komposit menjadi bangun dasar (persegi panjang), yang merupakan proses penerapan konsep geometri dasar.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antar bangun datar dan bagaimana bangun kompleks disusun dari bangun-bangun sederhana (konsep dekomposisi).. Bukti: Mengurai dan Menyusun Bangun Datar
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena melibatkan pengenalan visual langsung terhadap bentuk dasar (persegi panjang) yang membentuk bangun komposit sederhana (huruf T).. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?
+Run 1 — solusi: Bangun huruf T dapat dipotong menjadi dua bagian persegi panjang: satu persegi panjang horizontal (batang atas) dan satu persegi panjang vertikal (batang bawah). Keduanya memiliki dimensi yang berbeda, sehingga membentuk 2 persegi panjang berbeda ukuran.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengenali komponen penyusun bangun datar kompleks (huruf T) dengan melakukan dekomposisi visual. Ini adalah penerapan konsep dasar bangun datar yang sudah dipelajari di kelas 2.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?; bangun huruf T terdiri dari batang mendatar dan batang tegak berupa 2 persegi panjang berbeda ukuran
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bangun datar dapat dibentuk dari gabungan bangun datar yang lebih sederhana.. Bukti: Mengurai dan Menyusun Bangun Datar; bentuk apa hasilnya?
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu melakukan visualisasi sederhana untuk membagi bentuk T menjadi dua persegi panjang. Tidak ada perhitungan rumit atau kendala yang saling berinteraksi.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian; bangun huruf T
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mengenal bentuk dasar persegi panjang. |
+| expectedPrerequisite | Mengenal bentuk dasar (persegi panjang) dan konsep bagian dari keseluruhan. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2753,19 +2679,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan untuk mengidentifikasi dan mengurai bangun datar sederhana menjadi bentuk-bentuk yang lebih dasar. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan pengenalan bentuk dasar. Membagi bangun T menjadi dua persegi panjang adalah tugas visual langsung yang sesuai dengan tingkat perkembangan kognitif kelas 2. |
 
-Run 2 — solusi: Bangun huruf T dapat dipotong secara horizontal tepat di bawah batang mendatar, menghasilkan satu persegi panjang horizontal (batang atas) dan satu persegi panjang vertikal (batang bawah) dengan ukuran yang berbeda.
-- Domain kognitif `classify/applying`: Siswa perlu melakukan dekomposisi visual pada bangun komposit menjadi bentuk-bentuk dasar (persegi panjang), yang merupakan proses penerapan konsep bangun datar pada situasi rutin.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur bangun datar dan bagaimana bangun kompleks dapat disusun atau diurai dari bangun-bangun yang lebih sederhana (konsep persegi panjang).. Bukti: Mengurai dan Menyusun Bangun Datar
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena melibatkan pengenalan bentuk dasar yang familiar (persegi panjang) dalam bangun komposit sederhana yang sering ditemui di kelas 2.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?
+Run 2 — solusi: Bangun huruf T dapat dipotong menjadi dua bagian persegi panjang: satu bagian horizontal di atas dan satu bagian vertikal di bawah. Kedua persegi panjang ini memiliki ukuran yang berbeda (panjang dan lebar berbeda), sehingga sesuai dengan opsi C.
+- Domain kognitif `classify/applying`: Siswa diminta untuk melakukan dekomposisi visual pada bangun datar komposit menjadi bentuk-bentuk dasar yang lebih sederhana (persegi panjang). Ini melibatkan pengenalan bentuk dan pemahaman spasial, yang merupakan penerapan konsep dasar geometri.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?; Gambar menunjukkan sebuah bangun datar berbentuk huruf T kapital.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bangun datar yang lebih kompleks dapat dibentuk dari atau diurai menjadi bangun datar yang lebih sederhana (persegi panjang).. Bukti: Mengurai dan Menyusun Bangun Datar
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena hanya memerlukan pengenalan visual sederhana terhadap bentuk dasar. Tidak ada perhitungan kompleks atau kendala yang saling berinteraksi. Siswa kelas 2 sudah familiar dengan bentuk persegi panjang.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang bentuk persegi panjang. |
+| expectedPrerequisite | Mengenal bentuk bangun datar dasar seperti persegi dan persegi panjang. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2774,19 +2700,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan untuk mengenali dan mengurai bangun datar sederhana. Tugas ini hanya memerlukan visualisasi pemotongan sederhana. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Tugas mengurai bangun datar sederhana menjadi komponen dasarnya adalah materi standar kelas 2 yang bersifat langsung dan visual. |
 
-Run 3 — solusi: Bangun huruf T dapat dipotong secara horizontal atau vertikal menjadi dua bagian persegi panjang. Pilihan C menyatakan '2 persegi panjang berbeda ukuran', yang secara visual akurat karena batang horizontal dan vertikal memiliki dimensi panjang dan lebar yang berbeda.
-- Domain kognitif `classify/applying`: Siswa perlu melakukan dekomposisi visual pada bangun komposit menjadi bangun-bangun dasar (persegi panjang). Ini melibatkan penerapan konsep bentuk dasar pada situasi rutin, sehingga masuk dalam kategori applying.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur bangun datar dan bagaimana bangun kompleks dapat disusun atau diurai menjadi bentuk-bentuk dasar (persegi panjang), yang merupakan pengetahuan konseptual.. Bukti: mengurai (dipotong) menjadi beberapa bagian
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena melibatkan pengenalan bentuk dasar yang familiar (persegi panjang) dalam bangun komposit sederhana yang sering ditemui di kelas 2.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?
+Run 3 — solusi: Bangun huruf T dapat dipotong secara horizontal atau vertikal menjadi dua bagian persegi panjang. Misalnya, memotong bagian batang tegak dari bagian mendatar akan menghasilkan dua persegi panjang dengan ukuran yang berbeda.
+- Domain kognitif `classify/applying`: Siswa diminta untuk melakukan dekomposisi visual pada bangun datar komposit menjadi bentuk-bentuk dasar (persegi panjang). Ini melibatkan pengenalan sifat bangun dan kemampuan memvisualisasikan pemotongan, yang merupakan penerapan konsep dasar geometri.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?; Gambar menunjukkan sebuah bangun datar berbentuk huruf T
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bangun datar yang lebih kompleks dapat disusun dari atau diurai menjadi bangun datar yang lebih sederhana (persegi panjang).. Bukti: Mengurai dan Menyusun Bangun Datar
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena tugas dekomposisi bangun T menjadi dua persegi panjang adalah prosedur visual yang sangat standar dan familiar dalam kurikulum geometri kelas 2. Tidak ada kendala yang berinteraksi secara kompleks atau kebutuhan untuk strategi non-rutin.. Bukti: Jika bangun datar berikut diurai (dipotong) menjadi beberapa bagian, bentuk apa hasilnya?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mengenal bentuk bangun datar dasar (persegi panjang). |
+| expectedPrerequisite | Mengenal bentuk bangun datar dasar seperti persegi dan persegi panjang. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2795,8 +2721,8 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Dekomposisi bangun datar sederhana adalah materi standar kelas 2. Soal ini tidak memerlukan perhitungan kompleks, hanya pengenalan visual. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Dekomposisi bangun datar sederhana adalah materi dasar kelas 2. Visualisasi pemotongan bangun T menjadi dua persegi panjang adalah tugas rutin yang tidak menuntut perencanaan tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2808,21 +2734,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 123/256; truncation: `False`.
+Model membaca representation `metadata`; token input 142/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.096626; applying=0.903374; reasoning=0.000000 | applying | 0.903374 | 0.289096 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.425515; conceptual=0.559453; procedural=0.015032; metacognitive=0.000000 | conceptual | 0.559453 | 0.542172 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.864676; Medium=0.131924; Hard=0.003400 | Easy | 0.864676 | 0.375262 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.031986; applying=0.968014; reasoning=0.000000 | applying | 0.968014 | 0.128871 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.092057; conceptual=0.883263; procedural=0.024681; metacognitive=0.000000 | conceptual | 0.883263 | 0.303392 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.769411; Medium=0.223679; Hard=0.006911 | Easy | 0.769411 | 0.519777 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.903374; −Σp ln(p) = 0.317605; H = 0.317605/ln(3) = 0.289096; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.559453; −Σp ln(p) = 0.751610; H = 0.751610/ln(4) = 0.542172; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.968014; −Σp ln(p) = 0.141579; H = 0.141579/ln(3) = 0.128871; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.864676; −Σp ln(p) = 0.412267; H = 0.412267/ln(3) = 0.375262; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.883263; −Σp ln(p) = 0.420590; H = 0.420590/ln(4) = 0.303392; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.769411; −Σp ln(p) = 0.571033; H = 0.571033/ln(3) = 0.519777; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -2838,7 +2764,7 @@ Pilihan: A. Menjadi 2 persegi sama besar
 B. Menjadi 2 segitiga dan 1 persegi panjang
 C. Menjadi 2 persegi panjang berbeda ukuran
 D. Menjadi 2 segitiga
-Transkripsi visual: Gambar menunjukkan sebuah bangun datar berbentuk huruf T kapital yang simetris secara vertikal. Bangun ini dapat diurai menjadi dua bagian persegi panjang: satu persegi panjang horizontal di bagian atas dan satu persegi panjang vertikal di bagian bawah.
+Transkripsi visual: Gambar menunjukkan sebuah bangun datar berbentuk huruf T kapital. Bangun ini memiliki bagian horizontal di atas dan bagian vertikal di bawah yang menyatu. Secara visual, bangun ini dapat diurai menjadi dua persegi panjang: satu persegi panjang horizontal yang lebih lebar di bagian atas dan satu persegi panjang vertikal yang lebih panjang di bagian bawah.
 ```
 
 </details>
@@ -2861,51 +2787,72 @@ Toni sedang menyusun mainan balok.<br><br>Ada berapa banyak balok satuan pada ma
 | C | 7 |
 | D | 6 |
 
-![Gambar sumber soal 19](<../images/kelas2_panduan_siswa_kelas2.pdf-0110-06.png>)
+![Gambar sumber soal 19](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0110-06.png>)
 
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Struktur terdiri dari 2 baris. Baris depan memiliki 3 balok. Baris belakang memiliki 5 balok (2 di bawah, 2 di atas, 1 di sisi kanan). Total = 3 + 5 = 8 balok.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0110-06.png. Transkripsi visual: Gambar menunjukkan susunan balok satuan berwarna hijau. Struktur terdiri dari dua baris ke belakang. Baris depan memiliki 3 balok (satu di kiri, satu di tengah, satu di kanan). Baris belakang memiliki 5 balok (dua balok di kiri bawah, dua balok di atasnya, dan satu balok di kanan bawah). Total balok yang terlihat dan tersusun adalah 8.
+Solusi minimum hasil AI: Menghitung jumlah balok: baris depan bawah (3) + baris depan atas (2) + baris belakang bawah (3) = 8 balok.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0110-06.png. Transkripsi visual: Gambar menunjukkan susunan balok satuan. Baris depan terdiri dari 3 balok di bawah dan 2 balok di atasnya (total 5 balok terlihat di depan). Baris belakang memiliki 3 balok yang menopang balok-balok di atasnya. Secara total, terdapat 8 balok satuan yang membentuk struktur tersebut.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `921371151511dd9ed76e30011fdf7faf88343e23a9599623d1a120102b4615e3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `57caa0f275a8737386fef56dbb68295374fd013bf231500595aeb8a089958405`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 2598 |
-| 2 | success | valid / verified | reasoning | conceptual | Medium | 2585 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 2596 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 3472 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 3502 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 3468 |
 
-Run 1 — solusi: Menghitung total balok: baris depan (3) + tingkat kedua (2) + baris belakang (3) = 8 balok.
-- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan informasi visual tentang balok yang terlihat dan menyimpulkan keberadaan balok yang tersembunyi untuk menghitung total objek, yang melampaui sekadar pengenalan visual langsung.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
-- Dimensi pengetahuan `classify/conceptual`: Siswa menerapkan pemahaman tentang struktur ruang dan prinsip bahwa objek 3D memiliki volume yang menempati ruang, meskipun sebagian tidak terlihat.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
-- Intended difficulty `classify/Medium`: Soal ini menuntut siswa untuk melakukan penalaran spasial sederhana untuk membayangkan bagian yang tersembunyi, yang merupakan langkah di atas sekadar menghitung objek yang terlihat.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
+Run 1 — solusi: Menghitung jumlah balok: baris depan bawah (3) + baris depan atas (2) + baris belakang bawah (3) = 8 balok.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dan menghitung objek 3D yang sebagian tersembunyi. Ini memerlukan penerapan pemahaman spasial dasar untuk membayangkan bagian yang tidak terlihat, yang merupakan penerapan konsep bangun ruang.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang struktur bangun ruang yang disusun dari balok-balok satuan.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa kelas 2 harus melakukan penalaran spasial untuk menghitung balok yang tidak terlihat sepenuhnya (tersembunyi di belakang). Meskipun prosedurnya sederhana (menghitung), tuntutan untuk membayangkan struktur 3D dari gambar 2D meningkatkan kompleksitas bagi siswa kelas 2.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang objek 3D dan kemampuan menghitung benda konkret. |
+| expectedPrerequisite | Pemahaman dasar tentang bangun ruang dan kemampuan membilang. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | True |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Untuk kelas 2, membayangkan objek tersembunyi dalam struktur 3D adalah tantangan kognitif yang sesuai untuk tingkat menengah, karena memerlukan lebih dari sekadar menghitung apa yang terlihat langsung. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 umumnya sudah mengenal balok, namun visualisasi objek 3D yang memiliki bagian tersembunyi memerlukan kemampuan spasial yang sedikit lebih tinggi dari sekadar menghitung objek yang terlihat utuh. |
 
-Run 2 — solusi: Susunan terdiri dari 2 baris. Baris depan memiliki 4 balok. Baris belakang memiliki 4 balok. Total = 4 + 4 = 8 balok.
-- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan informasi visual tentang balok yang terlihat dengan penalaran spasial untuk menyimpulkan keberadaan balok yang tersembunyi di bagian belakang struktur.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang struktur objek 3D yang tersusun dari unit-unit dasar, bukan sekadar menghafal fakta atau mengikuti algoritma prosedural murni.. Bukti: Toni sedang menyusun mainan balok.
-- Intended difficulty `classify/Medium`: Soal ini menuntut siswa untuk membayangkan struktur 3D secara utuh. Meskipun jumlah balok kecil, siswa kelas 2 sering kesulitan dengan objek yang memiliki bagian tersembunyi (hidden cubes), sehingga ini dikategorikan Medium.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
+Run 2 — solusi: Menghitung balok: baris depan bawah ada 4 balok. Di atasnya ada 2 balok. Di belakang baris depan bawah, terdapat 2 balok yang menopang balok tingkat kedua. Total = 4 + 2 + 2 = 8.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengenali dan menghitung objek dalam susunan 3D. Ini memerlukan pemahaman spasial dasar untuk mengidentifikasi balok yang tidak terlihat secara langsung, yang merupakan penerapan konsep volume/susunan bangun ruang sederhana.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang struktur bangun ruang yang tersusun dari satuan-satuan kubus, bukan sekadar menghitung benda 2D.. Bukti: Ada berapa banyak balok satuan
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa kelas 2 harus melakukan penalaran spasial untuk membayangkan balok yang tersembunyi di balik struktur yang terlihat. Meskipun prosedurnya sederhana (menghitung), integrasi antara apa yang terlihat dan apa yang tersirat memerlukan ketelitian lebih daripada sekadar menghitung objek yang tampak sepenuhnya.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bangun ruang dan kemampuan menghitung objek. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 2, membayangkan objek 3D yang tersembunyi adalah tantangan kognitif yang sesuai untuk tingkat Medium, karena memerlukan visualisasi mental di luar apa yang tampak langsung di gambar. |
+
+Run 3 — solusi: Menghitung jumlah balok: baris depan bawah (3) + baris depan atas (2) + baris belakang bawah (3) = 8 balok.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menghitung objek 3D yang sebagian tersembunyi. Ini memerlukan penerapan konsep visualisasi spasial untuk mengenali balok yang tidak terlihat langsung, yang merupakan penerapan konsep dasar geometri.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang struktur bangun ruang yang tersusun dari unit-unit dasar (balok satuan).. Bukti: Ada berapa banyak balok satuan
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena menuntut siswa untuk melakukan visualisasi spasial guna mengidentifikasi balok yang tersembunyi di balik struktur yang terlihat. Meskipun prosedurnya sederhana (menghitung), siswa harus memahami struktur 3D secara utuh, bukan sekadar menghitung apa yang tampak di permukaan.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
 
 Profil difficulty run ini:
 
@@ -2913,84 +2860,41 @@ Profil difficulty run ini:
 |---|---|
 | expectedPrerequisite | Pemahaman dasar tentang objek 3D dan kemampuan menghitung benda konkret. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | True |
-| relevantInformationUnits | 2 |
+| relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 2, membayangkan balok yang tidak terlihat di balik struktur adalah tantangan kognitif yang sesuai untuk tingkat menengah. |
-
-Run 3 — solusi: Susunan terdiri dari 3 balok di baris depan dan 5 balok di baris belakang (2 balok tumpuk di atas 2 balok dasar, ditambah 1 balok dasar di sisi kanan). Total = 3 + 5 = 8 balok.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dan menghitung objek 3D yang sebagian tersembunyi, yang memerlukan penerapan konsep spasial dasar.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang struktur objek 3D dan bagaimana balok-balok tersebut tersusun dalam ruang.. Bukti: Ada berapa banyak balok satuan
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa kelas 2 harus melakukan visualisasi spasial untuk menghitung balok yang tidak terlihat sepenuhnya (tersembunyi di belakang), bukan sekadar menghitung objek yang terlihat langsung.. Bukti: Ada berapa banyak balok satuan pada mainan yang Toni susun?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan menghitung benda konkret dan pemahaman dasar tentang susunan objek 3D. |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 8 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 2, membayangkan objek yang tersembunyi di balik objek lain dalam susunan 3D merupakan tantangan kognitif yang sesuai untuk tingkat kesulitan menengah. |
+| gradeRelativeRationale | Untuk kelas 2, membayangkan objek tersembunyi dalam susunan balok merupakan tantangan kognitif yang sesuai untuk tingkat Medium, karena memerlukan penalaran spasial melampaui pengamatan visual langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 2, "reasoning": 1} | majority_2_of_3 / adjudicated | reasoning |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
-
-Adjudikasi AI: `success`; token `3989`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `reasoning`: Siswa perlu melakukan penalaran spasial untuk mengidentifikasi balok yang tidak terlihat sepenuhnya (tersembunyi di balik balok lain) dan mengintegrasikan informasi visual tersebut untuk mendapatkan total yang benar.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang struktur objek 3D dan bagaimana unit-unit balok membentuk volume, bukan sekadar menghitung objek yang terlihat secara langsung.
-- Intended difficulty `Medium`: Tingkat kesulitan Medium tepat untuk kelas 2 karena siswa harus melakukan visualisasi spasial untuk menghitung balok yang tersembunyi, yang merupakan langkah kognitif lebih tinggi daripada sekadar menghitung objek yang terlihat jelas.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang objek 3D dan kemampuan menghitung benda konkret. |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 8 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Membayangkan objek tersembunyi dalam struktur 3D adalah tantangan kognitif yang sesuai untuk tingkat menengah bagi siswa kelas 2. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 131/256; truncation: `False`.
+Model membaca representation `metadata`; token input 115/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000001; applying=0.999999; reasoning=0.000000 | applying | 0.999999 | 0.000013 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.054190; conceptual=0.943696; procedural=0.002113; metacognitive=0.000000 | conceptual | 0.943696 | 0.162796 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.752479; Medium=0.244020; Hard=0.003501 | Easy | 0.752479 | 0.526102 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000001; applying=0.999999; reasoning=0.000000 | applying | 0.999999 | 0.000010 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.334359; conceptual=0.657006; procedural=0.008635; metacognitive=0.000000 | conceptual | 0.657006 | 0.492912 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.822750; Medium=0.174020; Hard=0.003230 | Easy | 0.822750 | 0.439952 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999999; −Σp ln(p) = 0.000014; H = 0.000014/ln(3) = 0.000013; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.943696; −Σp ln(p) = 0.225684; H = 0.225684/ln(4) = 0.162796; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999999; −Σp ln(p) = 0.000011; H = 0.000011/ln(3) = 0.000010; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.752479; −Σp ln(p) = 0.577982; H = 0.577982/ln(3) = 0.526102; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.657006; −Σp ln(p) = 0.683321; H = 0.683321/ln(4) = 0.492912; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.822750; −Σp ln(p) = 0.483336; H = 0.483336/ln(3) = 0.439952; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -3008,16 +2912,16 @@ Pilihan: A. 8
 B. 14
 C. 7
 D. 6
-Transkripsi visual: Gambar menunjukkan susunan balok satuan berwarna hijau. Struktur terdiri dari dua baris ke belakang. Baris depan memiliki 3 balok (satu di kiri, satu di tengah, satu di kanan). Baris belakang memiliki 5 balok (dua balok di kiri bawah, dua balok di atasnya, dan satu balok di kanan bawah). Total balok yang terlihat dan tersusun adalah 8.
+Transkripsi visual: Gambar menunjukkan susunan balok satuan. Baris depan terdiri dari 3 balok di bawah dan 2 balok di atasnya (total 5 balok terlihat di depan). Baris belakang memiliki 3 balok yang menopang balok-balok di atasnya. Secara total, terdapat 8 balok satuan yang membentuk struktur tersebut.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "reasoning", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 20. Soal `b752c451c1f2a955262fabf4`
@@ -3031,30 +2935,30 @@ Berilah nama pada bangun ruang berikut.
 | C | Kerucut |
 | D | Tabung |
 
-![Gambar sumber soal 20](<../images/kelas2_panduan_siswa_kelas2.pdf-0110-04.png>)
+![Gambar sumber soal 20](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0110-04.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Bangun ruang tersebut memiliki dua sisi berbentuk lingkaran dan satu sisi lengkung, yang merupakan ciri khas bangun ruang tabung.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0110-04.png. Transkripsi visual: Gambar menunjukkan sebuah bangun ruang berbentuk silinder dengan alas dan tutup berbentuk lingkaran serta selimut melengkung.
+Solusi minimum hasil AI: Gambar tersebut adalah bangun ruang yang memiliki alas dan tutup berbentuk lingkaran serta selimut melengkung, yang secara geometris disebut tabung.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0110-04.png. Transkripsi visual: Gambar menunjukkan sebuah bangun ruang berbentuk silinder (tabung) dengan dua sisi datar berbentuk lingkaran di bagian atas dan bawah serta satu sisi lengkung yang menyelimuti. Terdapat kotak teks di bawah gambar dengan tulisan 'Nama = ___'.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a19660186baa53d7d5f532ae90a125e0e5461f209d9e91edae639a0b8e97d12a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3126b3e3e3c1614a4442c4b07a19f074f7f2cf10e33745db9c2a1959679b526c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 2417 |
-| 2 | success | valid / verified | knowing | factual | Easy | 2451 |
-| 3 | success | valid / verified | knowing | factual | Easy | 2424 |
+| 1 | success | valid / verified | knowing | factual | Easy | 3337 |
+| 2 | success | valid / verified | knowing | factual | Easy | 3338 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3344 |
 
-Run 1 — solusi: Bangun ruang tersebut memiliki dua sisi berbentuk lingkaran dan satu sisi lengkung, yang merupakan ciri khas bangun ruang tabung.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menyebutkan nama bangun ruang berdasarkan karakteristik visual yang diberikan, yang merupakan proses kognitif tingkat knowing.. Bukti: Berilah nama pada bangun ruang berikut
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang terminologi dan identifikasi bentuk dasar bangun ruang.. Bukti: Berilah nama pada bangun ruang berikut
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan visual langsung terhadap bentuk geometri yang umum dipelajari di kelas 2.. Bukti: Berilah nama pada bangun ruang berikut
+Run 1 — solusi: Gambar tersebut adalah bangun ruang yang memiliki alas dan tutup berbentuk lingkaran serta selimut melengkung, yang secara geometris disebut tabung.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menyebutkan nama bangun ruang berdasarkan ciri visual yang terlihat langsung. Tidak ada proses analisis atau penerapan prosedur kompleks.. Bukti: Berilah nama pada bangun ruang berikut.
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual mengenai nama-nama bangun ruang dasar yang dipelajari di kelas 2.. Bukti: Berilah nama pada bangun ruang berikut.
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan hanya memerlukan pengenalan visual terhadap bangun ruang dasar yang umum diajarkan di kelas 2.. Bukti: Berilah nama pada bangun ruang berikut.
 
 Profil difficulty run ini:
 
@@ -3070,18 +2974,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD yang menekankan pengenalan bentuk bangun ruang sederhana melalui pengamatan visual. |
+| gradeRelativeRationale | Pengenalan bangun ruang adalah materi standar kelas 2. Soal ini tidak memerlukan langkah tambahan selain identifikasi visual langsung. |
 
-Run 2 — solusi: Gambar tersebut adalah tabung karena memiliki dua sisi berbentuk lingkaran dan satu sisi lengkung yang menyelimuti.
-- Domain kognitif `classify/knowing`: Soal hanya meminta siswa untuk mengenali dan menyebutkan nama bangun ruang berdasarkan representasi visualnya, yang merupakan proses mengingat atau mengenali fakta.. Bukti: Berilah nama pada bangun ruang berikut
-- Dimensi pengetahuan `classify/factual`: Siswa perlu mengetahui istilah atau label nama untuk objek geometris tertentu (bangun ruang).. Bukti: Berilah nama pada bangun ruang berikut
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan visual langsung terhadap bentuk geometri yang umum dipelajari di kelas 2.. Bukti: Berilah nama pada bangun ruang berikut
+Run 2 — solusi: Gambar tersebut adalah tabung karena memiliki dua sisi berbentuk lingkaran dan satu sisi lengkung yang menyelimutinya. Pilihan D adalah tabung.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi dan menamai bangun ruang berdasarkan representasi visualnya. Ini adalah proses pengenalan langsung terhadap objek geometri yang sudah dipelajari.. Bukti: Berilah nama pada bangun ruang berikut.; Gambar menunjukkan sebuah bangun ruang berbentuk silinder
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang nama-nama bangun ruang dasar.. Bukti: Berilah nama pada bangun ruang berikut.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 2. Siswa hanya perlu mengenali bentuk visual dan mencocokkannya dengan istilah yang tepat.. Bukti: Berilah nama pada bangun ruang berikut.; Gambar menunjukkan sebuah bangun ruang berbentuk silinder
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mengenal bentuk-bentuk bangun ruang dasar (bola, tabung, kerucut, balok). |
+| expectedPrerequisite | Mengenal nama dan ciri dasar bangun ruang (tabung, bola, balok, kerucut). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3091,18 +2995,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan visual bangun ruang dasar tanpa operasi kompleks. |
+| gradeRelativeRationale | Pengenalan bangun ruang dasar adalah materi standar kelas 2. Tidak ada langkah kompleks atau penalaran yang diperlukan, hanya pengenalan visual langsung. |
 
-Run 3 — solusi: Bangun ruang tersebut memiliki dua sisi berbentuk lingkaran dan satu sisi lengkung yang menyelimuti, yang merupakan ciri khas tabung.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan menyebutkan nama bangun ruang berdasarkan ciri visual langsung tanpa perlu melakukan analisis atau strategi kompleks.. Bukti: Berilah nama pada bangun ruang berikut
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual tentang nama-nama bangun ruang dasar yang diajarkan di kelas 2.. Bukti: Berilah nama pada bangun ruang berikut
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengenalan visual terhadap bentuk geometris yang umum dipelajari di kelas 2.. Bukti: Berilah nama pada bangun ruang berikut
+Run 3 — solusi: Bangun ruang tersebut memiliki dua sisi berbentuk lingkaran yang sejajar dan satu sisi lengkung, yang merupakan ciri khas dari bangun ruang tabung.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi dan menamai bangun ruang berdasarkan representasi visualnya. Ini adalah proses pengenalan langsung terhadap objek geometri yang sudah dipelajari.. Bukti: Berilah nama pada bangun ruang berikut.; Gambar menunjukkan sebuah bangun ruang berbentuk silinder
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual siswa mengenai nama-nama bangun ruang dasar.. Bukti: Berilah nama pada bangun ruang berikut.
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan hanya memerlukan pengenalan visual terhadap bangun ruang yang umum dipelajari di kelas 2. Tidak ada langkah kompleks atau integrasi konsep yang diperlukan.. Bukti: Berilah nama pada bangun ruang berikut.; Gambar menunjukkan sebuah bangun ruang berbentuk silinder
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mengenal bentuk-bentuk bangun ruang dasar (bola, tabung, kerucut, balok). |
+| expectedPrerequisite | Mengenal bentuk-bentuk bangun ruang dasar (bola, tabung, kerucut, balok, kubus). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3112,7 +3016,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena hanya menuntut pengenalan visual langsung terhadap objek geometri yang sudah diperkenalkan di kurikulum. |
+| gradeRelativeRationale | Siswa kelas 2 diharapkan sudah mampu membedakan bangun ruang dasar secara visual. Soal ini adalah tugas pengenalan langsung tanpa manipulasi atau analisis tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -3124,21 +3028,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 69/256; truncation: `False`.
+Model membaca representation `metadata`; token input 96/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.999439; applying=0.000561; reasoning=0.000000 | knowing | 0.999439 | 0.004335 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.789956; conceptual=0.207258; procedural=0.002786; metacognitive=0.000000 | factual | 0.789956 | 0.381466 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.906165; Medium=0.090659; Hard=0.003176 | Easy | 0.906165 | 0.296007 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000153; applying=0.999847; reasoning=0.000000 | applying | 0.999847 | 0.001361 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.124364; conceptual=0.862539; procedural=0.013097; metacognitive=0.000000 | conceptual | 0.862539 | 0.319968 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.811252; Medium=0.185430; Hard=0.003318 | Easy | 0.811252 | 0.456121 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999439; −Σp ln(p) = 0.004762; H = 0.004762/ln(3) = 0.004335; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.789956; −Σp ln(p) = 0.528825; H = 0.528825/ln(4) = 0.381466; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999847; −Σp ln(p) = 0.001496; H = 0.001496/ln(3) = 0.001361; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.906165; −Σp ln(p) = 0.325197; H = 0.325197/ln(3) = 0.296007; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.862539; −Σp ln(p) = 0.443569; H = 0.443569/ln(4) = 0.319968; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.811252; −Σp ln(p) = 0.501100; H = 0.501100/ln(3) = 0.456121; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -3154,7 +3058,7 @@ Pilihan: A. Bola
 B. Balok
 C. Kerucut
 D. Tabung
-Transkripsi visual: Gambar menunjukkan sebuah bangun ruang berbentuk silinder dengan alas dan tutup berbentuk lingkaran serta selimut melengkung.
+Transkripsi visual: Gambar menunjukkan sebuah bangun ruang berbentuk silinder (tabung) dengan dua sisi datar berbentuk lingkaran di bagian atas dan bawah serta satu sisi lengkung yang menyelimuti. Terdapat kotak teks di bawah gambar dengan tulisan 'Nama = ___'.
 ```
 
 </details>
@@ -3163,7 +3067,7 @@ Transkripsi visual: Gambar menunjukkan sebuah bangun ruang berbentuk silinder de
 
 Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "factual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "factual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 21. Soal `aaf396a280df35704272b0d3`
@@ -3177,36 +3081,36 @@ Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berap
 | C | 4 |
 | D | 5 |
 
-![Gambar sumber soal 21](<../images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png>)
+![Gambar sumber soal 21](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Identifikasi bentuk lengkung: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada badan (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png. Transkripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri. Bentuk lengkung yang terlihat: 1 lingkaran hitam kecil sebagai hidung, 1 lingkaran hitam kecil sebagai mata, 1 oval merah sebagai telinga, dan 2 lingkaran merah sebagai bercak pada badan. Total ada 5 bentuk lengkung.
+Solusi minimum hasil AI: Mengidentifikasi dan menghitung bentuk lengkung pada gambar: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada tubuh (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0150-03.png. Transkripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri. Bentuk lengkung yang terlihat adalah: 1 lingkaran hitam kecil sebagai hidung, 1 lingkaran hitam kecil sebagai mata, 1 oval merah sebagai telinga, dan 2 lingkaran merah pada tubuh anjing. Total ada 5 bentuk lengkung.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dec70edd0cd25a8efe18bee7b8a5d08a734c37025084787b7b91e49afd3a0ab7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `83ef434ce391437dcc0532fc3700c652daf7e0cd27669fe40a99f5504e3b7367`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 2555 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2533 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2536 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3443 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3463 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 3455 |
 
-Run 1 — solusi: Identifikasi bentuk lengkung pada gambar: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada badan (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
-- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi dan menghitung objek dengan karakteristik visual tertentu (lengkung) dari sekumpulan bentuk geometri. Ini adalah proses klasifikasi dan penghitungan langsung.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep bentuk lengkung (seperti lingkaran dan oval) untuk membedakannya dari bentuk bersudut (seperti persegi atau segitiga) dalam konteks visual.. Bukti: Bentuk lengkung ada berapa?
-- Intended difficulty `classify/Easy`: Soal ini meminta siswa melakukan observasi visual sederhana dan penghitungan dasar. Tidak ada strategi kompleks atau manipulasi yang diperlukan.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+Run 1 — solusi: Mengidentifikasi dan menghitung bentuk lengkung pada gambar: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada tubuh (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi dan menghitung objek dengan karakteristik tertentu (lengkung) dari sebuah gambar komposit. Ini adalah prosedur langsung untuk mengenali dan menghitung bentuk.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang konsep bentuk dasar (lingkaran/oval vs bangun datar bersudut) dan kemampuan untuk mengkategorikan elemen visual ke dalam konsep tersebut.. Bukti: Bentuk lengkung ada berapa?
+- Intended difficulty `classify/Easy`: Tugas ini memerlukan ketelitian visual untuk membedakan bentuk lengkung dari bentuk bersudut (persegi/persegi panjang). Tidak ada langkah perencanaan yang kompleks atau integrasi konsep yang sulit bagi siswa kelas 2.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mengenal bentuk dasar (lingkaran, oval) dan kemampuan berhitung 1-10. |
+| expectedPrerequisite | Mengenal bentuk dasar (lingkaran, persegi, segitiga) dan kemampuan berhitung dasar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3216,18 +3120,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena hanya memerlukan pengamatan visual langsung dan penghitungan dasar tanpa operasi matematika yang rumit. |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa mengidentifikasi bentuk geometri dasar. Tugas ini hanya memerlukan pengamatan visual langsung dan penghitungan sederhana. |
 
-Run 2 — solusi: Mengidentifikasi dan menghitung bentuk lengkung pada gambar: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada badan (lingkaran). Total 1+1+1+2 = 5.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali dan mengklasifikasikan bentuk geometri (lengkung vs lurus) serta melakukan penghitungan sederhana. Ini adalah proses applying karena menerapkan konsep bentuk pada situasi visual rutin.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang atribut bentuk geometri (lengkung vs tidak lengkung).. Bukti: Bentuk lengkung ada berapa?
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan identifikasi visual langsung dari bentuk-bentuk yang sudah familiar bagi siswa kelas 2.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+Run 2 — solusi: Mengidentifikasi dan menghitung bentuk lengkung pada gambar: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada badan (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi dan menghitung objek dengan karakteristik tertentu (lengkung) dari sebuah gambar komposit. Ini adalah prosedur langsung untuk mengenali dan menghitung elemen visual.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap konsep bentuk geometri dasar (lengkung vs tidak lengkung) dan kemampuan untuk mengklasifikasikan objek berdasarkan atribut tersebut.. Bukti: Bentuk lengkung ada berapa?
+- Intended difficulty `classify/Easy`: Tugas ini sederhana bagi siswa kelas 2. Siswa hanya perlu membedakan bentuk lengkung dari bentuk bersudut (persegi/persegi panjang) dan menghitungnya. Tidak ada langkah yang saling bergantung atau strategi kompleks yang diperlukan.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mampu membedakan bentuk geometri dasar (lingkaran/oval vs poligon) dan melakukan penjumlahan dasar. |
+| expectedPrerequisite | Mengenal bentuk geometri dasar (lingkaran/oval vs persegi/persegi panjang) dan kemampuan berhitung dasar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3237,18 +3141,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2, menguji kemampuan observasi visual dasar terhadap bentuk geometri yang menyusun objek. |
+| gradeRelativeRationale | Tugas visual counting sederhana sesuai dengan kurikulum kelas 2 untuk mengidentifikasi atribut bangun datar. |
 
-Run 3 — solusi: Mengidentifikasi bentuk dengan sisi lengkung: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak pada badan (lingkaran). Total 1+1+1+2 = 5.
-- Domain kognitif `classify/applying`: Siswa perlu mengklasifikasikan bentuk geometri berdasarkan properti (lengkung vs lurus) dan menghitung jumlahnya. Ini adalah proses applying karena menerapkan konsep bentuk pada situasi visual rutin.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep bentuk geometri (lingkaran/oval vs poligon) untuk mengkategorikan objek-objek pada gambar.. Bukti: Bentuk lengkung ada berapa?
-- Intended difficulty `classify/Easy`: Soal ini meminta siswa melakukan observasi visual sederhana dan menghitung objek yang memenuhi kriteria tertentu. Prosedurnya rutin dan langsung.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+Run 3 — solusi: Mengidentifikasi dan menghitung objek dengan sisi lengkung: 1 hidung (lingkaran), 1 mata (lingkaran), 1 telinga (oval), dan 2 bercak di badan (lingkaran). Total = 1 + 1 + 1 + 2 = 5.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi dan menghitung objek dengan karakteristik tertentu (lengkung) dari sebuah gambar komposit. Ini adalah tugas pengenalan dan penghitungan langsung, yang termasuk dalam domain knowing.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap konsep bentuk geometri (lengkung vs tidak lengkung), yang merupakan pengetahuan konseptual dasar.. Bukti: Bentuk lengkung ada berapa?
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena tugasnya bersifat langsung: mengidentifikasi dan menghitung objek visual yang jelas. Tidak ada langkah yang saling bergantung atau strategi kompleks yang diperlukan.. Bukti: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mengenal bentuk dasar (lingkaran, oval, persegi, persegi panjang) dan kemampuan berhitung dasar. |
+| expectedPrerequisite | Mengenal bentuk geometri dasar (lingkaran/oval vs poligon). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3258,37 +3162,15 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena hanya memerlukan identifikasi visual dasar dan berhitung sederhana tanpa manipulasi kompleks. |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa mengklasifikasikan bentuk geometri sederhana. Tugas menghitung objek visual yang terpisah adalah aktivitas rutin yang sesuai dengan tingkat kelas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 1, "applying": 2} | majority_2_of_3 / adjudicated | knowing |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3933`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Siswa diminta untuk mengidentifikasi dan menghitung objek dengan karakteristik visual tertentu (lengkung) dari sekumpulan bentuk geometri. Ini adalah proses klasifikasi dan penghitungan langsung yang bersifat rutin.
-- Dimensi pengetahuan `conceptual`: Siswa perlu memahami konsep bentuk lengkung (seperti lingkaran dan oval) untuk membedakannya dari bentuk bersudut (seperti persegi atau segitiga) dalam konteks visual.
-- Intended difficulty `Easy`: Soal ini meminta siswa melakukan observasi visual sederhana dan menghitung objek yang memenuhi kriteria tertentu. Prosedurnya rutin dan langsung, sesuai untuk kelas 2.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengenal bentuk dasar (lingkaran, oval) dan kemampuan berhitung 1-10. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 5 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena hanya memerlukan pengamatan visual langsung dan penghitungan dasar tanpa operasi matematika yang rumit. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3296,17 +3178,17 @@ Model membaca representation `metadata`; token input 112/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.044106; applying=0.955894; reasoning=0.000000 | applying | 0.955894 | 0.164554 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.363193; conceptual=0.607073; procedural=0.029733; metacognitive=0.000000 | conceptual | 0.607073 | 0.559311 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.880752; Medium=0.116453; Hard=0.002796 | Easy | 0.880752 | 0.344689 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.006760; applying=0.993240; reasoning=0.000000 | applying | 0.993240 | 0.036876 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.324906; conceptual=0.635282; procedural=0.039812; metacognitive=0.000000 | conceptual | 0.635282 | 0.563966 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.870266; Medium=0.126742; Hard=0.002993 | Easy | 0.870266 | 0.364205 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.955894; −Σp ln(p) = 0.180781; H = 0.180781/ln(3) = 0.164554; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.607073; −Σp ln(p) = 0.775370; H = 0.775370/ln(4) = 0.559311; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.993240; −Σp ln(p) = 0.040513; H = 0.040513/ln(3) = 0.036876; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.880752; −Σp ln(p) = 0.378680; H = 0.378680/ln(3) = 0.344689; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.635282; −Σp ln(p) = 0.781822; H = 0.781822/ln(4) = 0.563966; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.870266; −Σp ln(p) = 0.400120; H = 0.400120/ln(3) = 0.364205; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -3322,7 +3204,7 @@ Pilihan: A. 6
 B. 8
 C. 4
 D. 5
-Transkripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri. Bentuk lengkung yang terlihat: 1 lingkaran hitam kecil sebagai hidung, 1 lingkaran hitam kecil sebagai mata, 1 oval merah sebagai telinga, dan 2 lingkaran merah sebagai bercak pada badan. Total ada 5 bentuk lengkung.
+Transkripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri. Bentuk lengkung yang terlihat adalah: 1 lingkaran hitam kecil sebagai hidung, 1 lingkaran hitam kecil sebagai mata, 1 oval merah sebagai telinga, dan 2 lingkaran merah pada tubuh anjing. Total ada 5 bentuk lengkung.
 ```
 
 </details>
@@ -3345,36 +3227,36 @@ Amati gambar berikut. Temukan benda-benda yang posisinya sebagai berikut.<br><br
 | C | kotak penyimpanan berwarna biru |
 | D | boneka beruang di atas kursi |
 
-![Gambar sumber soal 22](<../images/kelas2_panduan_siswa_kelas2.pdf-0121-01.png>)
+![Gambar sumber soal 22](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0121-01.png>)
 
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Berdasarkan pengamatan visual pada gambar, di kolong (bawah) tempat tidur terdapat sepasang sandal dan mainan mobil-mobilan, yang sesuai dengan pilihan B.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0121-01.png. Transkripsi visual: Gambar menunjukkan sebuah kamar tidur dengan berbagai perabot dan benda. Di bawah tempat tidur (kolong tempat tidur), terdapat sepasang sandal berwarna hijau dan sebuah mainan mobil-mobilan. Di atas meja belajar terdapat tas ransel, penggaris segitiga, dan buku. Di atas kursi terdapat boneka beruang. Di sebelah meja belajar terdapat kotak penyimpanan berwarna biru.
+Solusi minimum hasil AI: Mengamati area di bawah tempat tidur pada gambar, ditemukan sepasang sandal dan mainan mobil-mobilan. Pilihan B sesuai dengan pengamatan ini.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0121-01.png. Transkripsi visual: Gambar menunjukkan suasana kamar tidur. Terdapat tempat tidur dengan sprei biru muda dan bantal hijau. Di kolong (bawah) tempat tidur, terlihat sepasang sandal hijau dan sebuah mainan mobil-mobilan. Di area lain terdapat meja belajar, kursi dengan boneka beruang, kotak penyimpanan biru, dan seorang anak perempuan yang sedang bermain dengan kotak kardus.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `836edd5ba4114756b95d325e76712302192a16eddd65a21fa3b4fed322a4a6ba`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7c2955dc1e20dade59bdd3be478521923b643afbd4b1ab563a609817e44daf98`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 2543 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 2512 |
-| 3 | success | valid / verified | knowing | factual | Easy | 3068 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3408 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3423 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 3408 |
 
-Run 1 — solusi: Mengamati area kolong tempat tidur pada gambar menunjukkan keberadaan sandal dan mainan mobil-mobilan.
-- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi posisi benda berdasarkan pengamatan visual langsung. Proses ini melibatkan pengenalan fakta spasial sederhana tanpa memerlukan manipulasi atau strategi kompleks.. Bukti: Amati gambar berikut.; Temukan benda-benda yang posisinya sebagai berikut.; Di bawah tempat tidur ada ....
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep posisi (spasial) dasar, yaitu 'di bawah', yang merupakan pengetahuan konseptual dasar dalam geometri spasial untuk kelas 2.. Bukti: Di bawah tempat tidur ada ....
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan observasi visual langsung terhadap satu relasi spasial yang jelas tanpa adanya distraktor yang membingungkan atau langkah prosedural yang rumit.. Bukti: Di bawah tempat tidur ada ....
+Run 1 — solusi: Mengamati area di bawah tempat tidur pada gambar, ditemukan sepasang sandal dan mainan mobil-mobilan. Pilihan B sesuai dengan pengamatan ini.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi posisi benda berdasarkan gambar. Ini adalah tugas membaca representasi visual dan mengenali hubungan spasial dasar, yang termasuk dalam domain knowing.. Bukti: Temukan benda-benda yang posisinya sebagai berikut.; Di bawah tempat tidur ada ....
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang konsep posisi (spasial) dasar, yaitu 'di bawah'. Ini adalah pengetahuan konseptual mengenai hubungan spasial.. Bukti: Di bawah tempat tidur ada ....
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu melakukan observasi visual sederhana untuk mencocokkan deskripsi posisi dengan objek yang terlihat. Tidak ada langkah perencanaan atau integrasi yang kompleks.. Bukti: Di bawah tempat tidur ada ....
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan memahami konsep posisi dasar (di atas, di bawah, di samping) dan kemampuan observasi visual. |
+| expectedPrerequisite | Kemampuan mengenali objek dan memahami konsep posisi dasar (di atas, di bawah, di samping). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3384,18 +3266,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | weak |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan posisi benda di lingkungan sekitar yang familiar. |
+| gradeRelativeRationale | Tugas mengidentifikasi posisi benda dalam gambar adalah materi standar kelas 2 yang bersifat observasional langsung tanpa beban kognitif tinggi. |
 
-Run 2 — solusi: Mengamati area kolong tempat tidur pada gambar menunjukkan keberadaan sandal dan mainan mobil-mobilan, yang sesuai dengan pilihan B.
-- Domain kognitif `classify/knowing`: Siswa diminta untuk mengenali dan mengidentifikasi posisi spasial benda berdasarkan pengamatan visual langsung, yang merupakan proses knowing.. Bukti: Temukan benda-benda yang posisinya sebagai berikut; Di bawah tempat tidur ada
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep posisi spasial (di bawah), yang merupakan pengetahuan konseptual dasar.. Bukti: posisinya sebagai berikut; Di bawah tempat tidur
-- Intended difficulty `classify/Easy`: Soal ini sangat sederhana, hanya memerlukan observasi visual langsung terhadap satu lokasi spesifik tanpa manipulasi atau strategi kompleks.. Bukti: Di bawah tempat tidur ada
+Run 2 — solusi: Mengamati area di bawah tempat tidur pada gambar, ditemukan sepasang sandal dan mainan mobil-mobilan. Pilihan B sesuai dengan pengamatan ini.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi lokasi spasial benda berdasarkan gambar. Ini adalah tugas mengenali dan membaca informasi visual yang langsung, yang termasuk dalam domain knowing.. Bukti: Temukan benda-benda yang posisinya sebagai berikut.; Di bawah tempat tidur ada ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep posisi atau letak benda (spasial), yang merupakan pengetahuan konseptual dasar.. Bukti: Di bawah tempat tidur ada ....
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 2. Siswa hanya perlu melakukan observasi visual sederhana untuk mencocokkan posisi benda dengan deskripsi yang diberikan. Tidak ada langkah kompleks atau perencanaan yang diperlukan.. Bukti: Di bawah tempat tidur ada ....
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep posisi (di atas, di bawah, di samping). |
+| expectedPrerequisite | Kemampuan mengenali konsep posisi (di atas, di bawah, di samping) dan kemampuan mengamati gambar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3405,18 +3287,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena hanya menuntut kemampuan observasi visual sederhana terkait konsep posisi spasial yang sudah dipelajari. |
+| gradeRelativeRationale | Tugas mengidentifikasi posisi benda adalah materi standar kelas 2 yang sangat mendasar dan familiar. |
 
-Run 3 — solusi: Pada gambar, terlihat sepasang sandal berwarna hijau dan sebuah mobil-mobilan berada di kolong tempat tidur.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan observasi visual langsung untuk mengenali objek yang berada di posisi yang ditanyakan.. Bukti: Di bawah tempat tidur ada ....
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual mengenai posisi spasial benda-benda di dalam ruangan.. Bukti: Di bawah tempat tidur ada ....
-- Intended difficulty `classify/Easy`: Tugas ini bersifat langsung dan tidak memerlukan strategi atau pemrosesan informasi yang kompleks.. Bukti: Di bawah tempat tidur ada ....
+Run 3 — solusi: Mengamati posisi benda pada gambar, di bawah tempat tidur terdapat sandal dan mainan mobil-mobilan. Pilihan B sesuai dengan pengamatan ini.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi posisi benda berdasarkan gambar. Ini adalah tugas mengenali dan membaca informasi spasial yang disajikan secara visual, yang termasuk dalam domain knowing.. Bukti: Temukan benda-benda yang posisinya sebagai berikut.; Di bawah tempat tidur ada ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep posisi (spasial) seperti 'di bawah', yang merupakan pengetahuan konseptual dasar tentang hubungan antar objek dalam ruang.. Bukti: Temukan benda-benda yang posisinya sebagai berikut.
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena hanya memerlukan observasi visual langsung untuk mencocokkan deskripsi posisi dengan objek yang terlihat. Tidak ada langkah kompleks atau penalaran yang diperlukan.. Bukti: Di bawah tempat tidur ada ....
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Memahami konsep posisi dasar (di atas, di bawah, di samping). |
+| expectedPrerequisite | Kemampuan mengenali objek dan memahami konsep posisi dasar (di atas, di bawah, di samping). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3426,55 +3308,33 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | weak |
-| gradeRelativeRationale | Sangat sesuai untuk kelas 2 karena hanya memerlukan observasi visual sederhana terhadap posisi benda. |
+| gradeRelativeRationale | Tugas mengidentifikasi posisi benda adalah materi dasar kelas 2. Soal ini bersifat langsung dan tidak menuntut perencanaan atau integrasi konsep. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
-| Dimensi pengetahuan | {"conceptual": 2, "factual": 1} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3717`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Siswa hanya perlu melakukan observasi visual langsung untuk mengenali objek yang berada di posisi yang ditanyakan. Ini adalah proses pengenalan fakta spasial sederhana.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang konsep posisi (spasial) dasar, yaitu 'di bawah', yang merupakan pengetahuan konseptual dasar dalam geometri spasial untuk kelas 2.
-- Intended difficulty `Easy`: Soal ini tergolong mudah karena hanya memerlukan observasi visual langsung terhadap satu relasi spasial yang jelas tanpa adanya distraktor yang membingungkan atau langkah prosedural yang rumit.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan memahami konsep posisi dasar (di atas, di bawah, di samping) dan kemampuan observasi visual. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | weak |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan posisi benda di lingkungan sekitar yang familiar. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 151/256; truncation: `False`.
+Model membaca representation `metadata`; token input 149/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000020; applying=0.999980; reasoning=0.000000 | applying | 0.999980 | 0.000211 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.034634; conceptual=0.964295; procedural=0.001071; metacognitive=0.000000 | conceptual | 0.964295 | 0.114591 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.761125; Medium=0.233053; Hard=0.005822 | Easy | 0.761125 | 0.525350 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000017; applying=0.999983; reasoning=0.000000 | applying | 0.999983 | 0.000188 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.129822; conceptual=0.869043; procedural=0.001135; metacognitive=0.000000 | conceptual | 0.869043 | 0.284729 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.778413; Medium=0.215116; Hard=0.006471 | Easy | 0.778413 | 0.508051 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999980; −Σp ln(p) = 0.000232; H = 0.000232/ln(3) = 0.000211; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.964295; −Σp ln(p) = 0.158856; H = 0.158856/ln(4) = 0.114591; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999983; −Σp ln(p) = 0.000207; H = 0.000207/ln(3) = 0.000188; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.761125; −Σp ln(p) = 0.577155; H = 0.577155/ln(3) = 0.525350; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.869043; −Σp ln(p) = 0.394718; H = 0.394718/ln(4) = 0.284729; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.778413; −Σp ln(p) = 0.558151; H = 0.558151/ln(3) = 0.508051; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -3492,7 +3352,7 @@ Pilihan: A. tas ransel dan penggaris segitiga
 B. sandal dan mainan mobil-mobilan
 C. kotak penyimpanan berwarna biru
 D. boneka beruang di atas kursi
-Transkripsi visual: Gambar menunjukkan sebuah kamar tidur dengan berbagai perabot dan benda. Di bawah tempat tidur (kolong tempat tidur), terdapat sepasang sandal berwarna hijau dan sebuah mainan mobil-mobilan. Di atas meja belajar terdapat tas ransel, penggaris segitiga, dan buku. Di atas kursi terdapat boneka beruang. Di sebelah meja belajar terdapat kotak penyimpanan berwarna biru.
+Transkripsi visual: Gambar menunjukkan suasana kamar tidur. Terdapat tempat tidur dengan sprei biru muda dan bantal hijau. Di kolong (bawah) tempat tidur, terlihat sepasang sandal hijau dan sebuah mainan mobil-mobilan. Di area lain terdapat meja belajar, kursi dengan boneka beruang, kotak penyimpanan biru, dan seorang anak perempuan yang sedang bermain dengan kotak kardus.
 ```
 
 </details>
@@ -3515,36 +3375,36 @@ Perhatikan posisi kucing berikut. Pilih kata yang menunjukkan posisi kucing terh
 | C | kanan |
 | D | atas |
 
-![Gambar sumber soal 23](<../images/kelas2_panduan_siswa_kelas2.pdf-0119-12.png>)
+![Gambar sumber soal 23](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0119-12.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Secara visual, kucing berada di atas permukaan meja, sehingga kata yang tepat untuk melengkapi kalimat adalah 'atas'.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0119-12.png. Transkripsi visual: Gambar menunjukkan seekor kucing berwarna oranye sedang duduk tepat di atas permukaan sebuah meja kayu. Terdapat teks 'Kucing duduk di ____ meja.' di bawah gambar.
+Solusi minimum hasil AI: Berdasarkan pengamatan visual, kucing berada di permukaan atas meja, sehingga kata yang tepat untuk melengkapi kalimat adalah 'atas'.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0119-12.png. Transkripsi visual: Gambar menunjukkan seekor kucing berwarna oranye sedang duduk di atas permukaan sebuah meja kayu berwarna cokelat. Terdapat teks di bawah gambar: 'Kucing duduk di ____ meja.'
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d4b3e00e36b09462ce9322fa3217f02a96d6dc2905c7d4b15753f2759f316d25`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b1a43b35c618ef2f31c67c441b01565087e2993854950b7b615d8b67a427b93a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 2409 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 2459 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 2418 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3374 |
+| 2 | success | valid / verified | knowing | factual | Easy | 3383 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3344 |
 
-Run 1 — solusi: Secara visual, kucing berada di atas permukaan meja, sehingga kata yang tepat untuk melengkapi kalimat adalah 'atas'.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali posisi spasial objek berdasarkan representasi visual langsung tanpa memerlukan strategi kompleks.. Bukti: Kucing duduk di .... meja.; Gambar menunjukkan seekor kucing berwarna oranye sedang duduk tepat di atas permukaan sebuah meja
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang istilah posisi spasial (preposisi tempat), yang merupakan pengetahuan faktual dasar.. Bukti: Kucing duduk di .... meja.
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengamatan visual langsung terhadap posisi objek yang familiar bagi siswa kelas 2.. Bukti: Kucing duduk di .... meja.
+Run 1 — solusi: Berdasarkan pengamatan visual, kucing berada di permukaan atas meja, sehingga kata yang tepat untuk melengkapi kalimat adalah 'atas'.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi posisi spasial objek (kucing) relatif terhadap objek lain (meja) berdasarkan representasi visual. Ini adalah tugas pengenalan langsung terhadap konsep posisi, yang termasuk dalam domain knowing.. Bukti: Pilih kata yang menunjukkan posisi kucing terhadap benda yang ada.; Kucing duduk di .... meja.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang istilah posisi (atas, bawah, dll.), yang merupakan pengetahuan konseptual dasar mengenai hubungan spasial.. Bukti: Pilih kata yang menunjukkan posisi kucing terhadap benda yang ada.
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana dan langsung. Siswa hanya perlu mengamati gambar dan memilih istilah posisi yang paling tepat dari pilihan yang tersedia. Tidak ada langkah kompleks atau perencanaan yang diperlukan.. Bukti: Kucing duduk di .... meja.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep posisi (atas, bawah, depan, belakang). |
+| expectedPrerequisite | Pemahaman dasar tentang kosakata posisi spasial (atas, bawah, depan, belakang). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3553,19 +3413,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menguji kosakata posisi spasial dasar melalui pengamatan gambar sederhana. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk kelas 2, mengidentifikasi posisi benda berdasarkan gambar adalah tugas yang sangat mendasar dan rutin. |
 
-Run 2 — solusi: Secara visual, posisi kucing berada di permukaan atas meja, sehingga kata depan yang tepat adalah 'atas'.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali posisi spasial objek (kucing) relatif terhadap objek lain (meja) dan mencocokkannya dengan kosakata posisi yang tepat. Ini adalah proses pengenalan langsung.. Bukti: Kucing duduk di .... meja.; Pilih kata yang menunjukkan posisi kucing terhadap benda
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep posisi spasial (atas/bawah/samping) yang merupakan pengetahuan konseptual dasar.. Bukti: posisi kucing terhadap benda
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, menggunakan representasi visual yang jelas, dan hanya memerlukan satu langkah identifikasi posisi spasial yang familiar bagi siswa kelas 2.. Bukti: Kucing duduk di .... meja.; Pilihan: belakang, bawah, kanan, atas
+Run 2 — solusi: Berdasarkan pengamatan visual, kucing berada di permukaan meja, sehingga posisi yang tepat adalah 'atas'.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi posisi spasial objek (kucing) relatif terhadap objek lain (meja) berdasarkan representasi visual. Ini adalah tugas pengenalan langsung terhadap konsep posisi, yang termasuk dalam domain knowing.. Bukti: Pilih kata yang menunjukkan posisi kucing terhadap benda yang ada.; Kucing duduk di .... meja.
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang istilah posisi (atas, bawah, dll.), yang merupakan elemen dasar atau fakta dalam geometri spasial.. Bukti: Pilih kata yang menunjukkan posisi kucing terhadap benda yang ada.
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena hanya memerlukan pengamatan visual langsung dan pemilihan kata posisi yang paling sesuai dengan gambar. Tidak ada langkah perencanaan atau integrasi yang diperlukan.. Bukti: Kucing duduk di .... meja.; Pilihan: A. belakang, B. bawah, C. kanan, D. atas
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman kosakata posisi spasial dasar (atas, bawah, samping). |
+| expectedPrerequisite | Pemahaman dasar tentang kosakata posisi spasial (atas, bawah, depan, belakang). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3574,19 +3434,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah sangat familiar dengan konsep posisi benda di lingkungan sekitar mereka. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 2, mengidentifikasi posisi benda berdasarkan gambar adalah tugas yang sangat mendasar dan rutin. |
 
 Run 3 — solusi: Berdasarkan pengamatan visual, kucing berada di atas permukaan meja, sehingga kata yang tepat untuk melengkapi kalimat adalah 'atas'.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali dan mengidentifikasi posisi spasial objek (kucing) relatif terhadap objek lain (meja) secara langsung dari gambar.. Bukti: Pilih kata yang menunjukkan posisi kucing terhadap benda yang ada.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep posisi atau hubungan spasial (atas/bawah/depan/belakang) yang merupakan pengetahuan konseptual dasar.. Bukti: Kucing duduk di .... meja.
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan pengamatan visual langsung tanpa perhitungan atau strategi kompleks.. Bukti: Kucing duduk di .... meja.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi posisi spasial objek (kucing) relatif terhadap objek lain (meja). Ini adalah tugas pengenalan langsung terhadap konsep posisi yang sudah dipelajari, sehingga termasuk dalam domain knowing.. Bukti: Pilih kata yang menunjukkan posisi kucing terhadap benda yang ada.; Kucing duduk di .... meja.
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang istilah posisi (atas, bawah, belakang, kanan) yang merupakan elemen dasar dalam geometri spasial.. Bukti: Pilih kata yang menunjukkan posisi kucing terhadap benda yang ada.
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana, hanya memerlukan pengamatan visual langsung dan pemilihan istilah posisi yang tepat. Tidak ada langkah kompleks atau integrasi konsep yang diperlukan.. Bukti: Kucing duduk di .... meja.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman kosakata posisi dasar (atas, bawah, depan, belakang). |
+| expectedPrerequisite | Pemahaman dasar tentang istilah posisi (atas, bawah, samping). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3595,28 +3455,28 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menguji pemahaman spasial dasar yang diajarkan di awal jenjang sekolah dasar. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 2, mengidentifikasi posisi benda di atas meja adalah tugas yang sangat mendasar dan familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
-| Dimensi pengetahuan | {"factual": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
+| Dimensi pengetahuan | {"conceptual": 1, "factual": 2} | majority_2_of_3 / adjudicated | factual |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3645`.
+Adjudikasi AI: `success`; token `4654`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Siswa hanya perlu melakukan pengamatan visual langsung dan mengenali posisi spasial objek (kucing) relatif terhadap objek lain (meja). Ini adalah proses pengenalan langsung tanpa strategi kompleks.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang konsep hubungan spasial (atas/bawah/depan/belakang), yang merupakan pengetahuan konseptual dasar dalam geometri posisi.
-- Intended difficulty `Easy`: Soal ini sangat mendasar, menggunakan representasi visual yang jelas, dan hanya memerlukan satu langkah identifikasi posisi spasial yang familiar bagi siswa kelas 2.
+- Domain kognitif `knowing`: Soal ini meminta siswa untuk mengidentifikasi posisi spasial objek (kucing) relatif terhadap objek lain (meja) berdasarkan representasi visual. Ini adalah tugas pengenalan langsung terhadap konsep posisi, yang termasuk dalam domain knowing.
+- Dimensi pengetahuan `factual`: Soal ini menguji pemahaman tentang istilah posisi (atas, bawah, dll.), yang merupakan elemen dasar atau fakta dalam geometri spasial.
+- Intended difficulty `Easy`: Soal ini sangat mudah karena hanya memerlukan pengamatan visual langsung dan pemilihan kata posisi yang paling sesuai dengan gambar. Tidak ada langkah perencanaan atau integrasi yang diperlukan.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman kosakata posisi spasial dasar (atas, bawah, samping). |
+| expectedPrerequisite | Pemahaman dasar tentang kosakata posisi spasial (atas, bawah, depan, belakang). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3625,26 +3485,26 @@ Profil difficulty hasil adjudikasi:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah sangat familiar dengan konsep posisi benda di lingkungan sekitar mereka. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 2, mengidentifikasi posisi benda berdasarkan gambar adalah tugas yang sangat mendasar dan rutin. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 103/256; truncation: `False`.
+Model membaca representation `metadata`; token input 104/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.063355; applying=0.936645; reasoning=0.000000 | applying | 0.936645 | 0.214908 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.116910; conceptual=0.870154; procedural=0.012936; metacognitive=0.000000 | conceptual | 0.870154 | 0.308879 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.863377; Medium=0.132754; Hard=0.003870 | Easy | 0.863377 | 0.379016 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000193; applying=0.999807; reasoning=0.000000 | applying | 0.999807 | 0.001680 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.352794; conceptual=0.586027; procedural=0.061179; metacognitive=0.000000 | conceptual | 0.586027 | 0.614345 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.879714; Medium=0.116283; Hard=0.004003 | Easy | 0.879714 | 0.350490 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.936645; −Σp ln(p) = 0.236101; H = 0.236101/ln(3) = 0.214908; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.870154; −Σp ln(p) = 0.428198; H = 0.428198/ln(4) = 0.308879; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999807; −Σp ln(p) = 0.001846; H = 0.001846/ln(3) = 0.001680; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.863377; −Σp ln(p) = 0.416391; H = 0.416391/ln(3) = 0.379016; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.586027; −Σp ln(p) = 0.851663; H = 0.851663/ln(4) = 0.614345; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.879714; −Σp ln(p) = 0.385052; H = 0.385052/ln(3) = 0.350490; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -3662,16 +3522,16 @@ Pilihan: A. belakang
 B. bawah
 C. kanan
 D. atas
-Transkripsi visual: Gambar menunjukkan seekor kucing berwarna oranye sedang duduk tepat di atas permukaan sebuah meja kayu. Terdapat teks 'Kucing duduk di ____ meja.' di bawah gambar.
+Transkripsi visual: Gambar menunjukkan seekor kucing berwarna oranye sedang duduk di atas permukaan sebuah meja kayu berwarna cokelat. Terdapat teks di bawah gambar: 'Kucing duduk di ____ meja.'
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "factual", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 24. Soal `c5e424e9914591b1d5286ef0`
@@ -3685,57 +3545,36 @@ Amati pola berikut. Tentukan pola gambar berikutnya.
 | C | bunga |
 | D | heksagon |
 
-![Gambar sumber soal 24](<../images/kelas2_panduan_siswa_kelas2.pdf-0131-01.png>)
+![Gambar sumber soal 24](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0131-01.png>)
 
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Pola berulang setiap tiga gambar (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu terakhir, gambar berikutnya dalam urutan adalah kelinci.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0131-01.png. Transkripsi visual: Baris pola terdiri dari urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Terdapat garis kosong di akhir urutan untuk diisi.
+Solusi minimum hasil AI: Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah gambar kupu-kupu terakhir, gambar berikutnya dalam urutan adalah kelinci.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0131-01.png. Transkripsi visual: Terdapat baris gambar dengan pola berulang: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Di akhir baris terdapat garis kosong untuk diisi.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a296f5d5770ee7ad45cdc6433358808af013a31ab0b5325a3791dec158f6af53`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `50eefa2f2a9a07c4227b58621944c6f66a86ba9b8b5bfc4a8bc0df2549799638`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2550 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2552 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2516 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 3406 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 3430 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 3514 |
 
-Run 1 — solusi: Pola berulang setiap tiga gambar (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu terakhir, gambar berikutnya dalam urutan adalah kelinci.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi unit pengulangan dalam pola visual dan menerapkan aturan tersebut untuk memprediksi elemen berikutnya. Ini adalah penerapan konsep pola rutin.. Bukti: Amati pola berikut.; Tentukan pola gambar berikutnya.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur pola (hubungan antar elemen dalam urutan), yang merupakan pengetahuan konseptual.. Bukti: pola berulang tiga gambar
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena pola pengulangan sangat jelas dan berulang secara konsisten tanpa variasi kompleks, sesuai untuk tingkat kelas 2.. Bukti: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan mengenali urutan visual dan pengulangan sederhana. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Pola visual sederhana adalah materi standar kelas 2. Siswa hanya perlu mengidentifikasi unit pengulangan (kupu-kupu, kelinci, kelinci) dan melanjutkan urutan tersebut. |
-
-Run 2 — solusi: Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu terakhir, elemen berikutnya dalam urutan adalah kelinci.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi unit pengulangan dalam pola visual dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah penerapan konsep pola rutin.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur pola berulang, yang merupakan konsep dasar dalam matematika awal.. Bukti: Amati pola berikut.
-- Intended difficulty `classify/Easy`: Soal ini menggunakan pola berulang sederhana yang sangat familiar bagi siswa kelas 2. Prosedur penyelesaiannya langsung dan tidak memerlukan strategi nonrutin.. Bukti: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu
+Run 1 — solusi: Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah gambar kupu-kupu terakhir, gambar berikutnya dalam urutan adalah kelinci.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi unit pengulangan dalam pola visual dan menerapkan aturan pengulangan tersebut untuk menentukan elemen berikutnya. Ini adalah penerapan prosedur pengenalan pola yang rutin.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep pola berulang (repeating pattern), yang merupakan struktur konseptual dasar dalam matematika awal.. Bukti: Amati pola berikut.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengenali unit pengulangan (kupu-kupu, kelinci, kelinci) dan melanjutkan urutan tersebut. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan mengenali urutan visual dan pengulangan sederhana. |
+| expectedPrerequisite | Kemampuan mengenali objek visual dan urutan sederhana. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3745,28 +3584,49 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Pola berulang adalah materi standar kelas 2. Tingkat kesulitan rendah karena pola sangat jelas dan berulang secara konsisten. |
+| gradeRelativeRationale | Untuk siswa kelas 2, mengenali dan melanjutkan pola berulang sederhana adalah tugas yang familiar dan sesuai dengan tingkat perkembangan kognitif mereka. |
 
-Run 3 — solusi: Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah kupu-kupu terakhir, elemen berikutnya dalam urutan adalah kelinci.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi unit pengulangan dalam pola visual dan menerapkannya untuk menentukan elemen berikutnya. Ini adalah proses penerapan konsep pola rutin.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur pola berulang, yang merupakan konsep dasar dalam matematika awal.. Bukti: Amati pola berikut.
-- Intended difficulty `classify/Easy`: Soal ini melibatkan pengenalan pola berulang sederhana yang umum untuk kelas 2. Tidak ada strategi non-rutin yang diperlukan.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.
+Run 2 — solusi: Pola yang diberikan adalah pengulangan unit (kupu-kupu, kelinci, kelinci). Setelah gambar kupu-kupu terakhir, elemen berikutnya dalam urutan pengulangan adalah kelinci.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi aturan pengulangan dalam pola visual sederhana dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah penerapan prosedur pengenalan pola yang rutin.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep pola berulang (repeating patterns), yang merupakan struktur konseptual dasar dalam matematika awal.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu mengenali unit pengulangan (kupu-kupu, kelinci, kelinci) dan melanjutkan urutan tersebut. Tidak ada kendala yang berinteraksi atau perencanaan kompleks yang diperlukan.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan mengenali urutan visual dan pengulangan sederhana. |
+| expectedPrerequisite | Kemampuan mengenali urutan dan pengulangan gambar sederhana. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 1 |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 2, mengenali dan melanjutkan pola berulang adalah tugas rutin yang sesuai dengan tingkat perkembangan kognitif mereka. |
+
+Run 3 — solusi: Pola berulang adalah (kupu-kupu, kelinci, kelinci). Setelah gambar kupu-kupu terakhir, gambar berikutnya dalam urutan adalah kelinci.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi unit pengulangan dalam pola visual dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah penerapan konsep pola yang sudah dipelajari di kelas 2.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.; pola berulang tiga gambar (kupu-kupu, kelinci, kelinci)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep pola berulang (repeating patterns), yang merupakan pengetahuan konseptual dasar dalam matematika awal.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 2. Pola yang diberikan jelas dan berulang secara konsisten. Siswa hanya perlu mengenali unit pengulangan (kupu-kupu, kelinci, kelinci) dan melanjutkan urutan tersebut. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Amati pola berikut. Tentukan pola gambar berikutnya.; pola berulang tiga gambar (kupu-kupu, kelinci, kelinci)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan mengenali urutan dan pengulangan objek visual sederhana. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan pola berulang sederhana (AB, ABB, dll) sebagai bagian dari kurikulum matematika dasar. |
+| gradeRelativeRationale | Mengenali dan melanjutkan pola berulang adalah materi standar kelas 2. Soal ini menyajikan pola yang sangat jelas tanpa jebakan atau kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -3782,17 +3642,17 @@ Model membaca representation `metadata`; token input 100/256; truncation: `False
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.002417; applying=0.997583; reasoning=0.000000 | applying | 0.997583 | 0.015452 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.278603; conceptual=0.712701; procedural=0.008695; metacognitive=0.000000 | conceptual | 0.712701 | 0.460719 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.850081; Medium=0.145080; Hard=0.004839 | Easy | 0.850081 | 0.404094 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.013709; applying=0.986291; reasoning=0.000000 | applying | 0.986291 | 0.065920 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.124466; conceptual=0.868129; procedural=0.007405; metacognitive=0.000000 | conceptual | 0.868129 | 0.301844 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.851400; Medium=0.143925; Hard=0.004675 | Easy | 0.851400 | 0.401456 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.997583; −Σp ln(p) = 0.016976; H = 0.016976/ln(3) = 0.015452; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.712701; −Σp ln(p) = 0.638692; H = 0.638692/ln(4) = 0.460719; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.986291; −Σp ln(p) = 0.072421; H = 0.072421/ln(3) = 0.065920; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.850081; −Σp ln(p) = 0.443942; H = 0.443942/ln(3) = 0.404094; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.868129; −Σp ln(p) = 0.418445; H = 0.418445/ln(4) = 0.301844; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.851400; −Σp ln(p) = 0.441044; H = 0.441044/ln(3) = 0.401456; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -3808,7 +3668,7 @@ Pilihan: A. kelinci
 B. kupu-kupu
 C. bunga
 D. heksagon
-Transkripsi visual: Baris pola terdiri dari urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Terdapat garis kosong di akhir urutan untuk diisi.
+Transkripsi visual: Terdapat baris gambar dengan pola berulang: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Di akhir baris terdapat garis kosong untuk diisi.
 ```
 
 </details>
@@ -3831,36 +3691,36 @@ Amati pola warna berikut. Warna apa yang benar untuk melanjutkan polanya.
 | C | biru |
 | D | oranye |
 
-![Gambar sumber soal 25](<../images/kelas2_panduan_siswa_kelas2.pdf-0131-02.png>)
+![Gambar sumber soal 25](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0131-02.png>)
 
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Pola berulang adalah (oranye, hijau). Setelah lingkaran oranye terakhir, warna berikutnya dalam pola adalah hijau.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0131-02.png. Transkripsi visual: Terdapat baris pola warna yang terdiri dari lingkaran dengan urutan: oranye, hijau, oranye, hijau, oranye, dan satu lingkaran kosong di akhir.
+Solusi minimum hasil AI: Pola berulang oranye-hijau. Setelah oranye, warna berikutnya adalah hijau.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0131-02.png. Transkripsi visual: Terdapat baris pola yang terdiri dari lingkaran berwarna oranye, hijau, oranye, hijau, oranye, dan satu lingkaran kosong di akhir.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fc50b95d75e65ac7874020aad4bfc2974a1ddd35841461445ae533b94624895b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dc3da4b3e93bf6337405cfbd86c2e31066418d87a0ee6effbb81a69e84d5143c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2467 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2422 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2459 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3308 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3337 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 3329 |
 
-Run 1 — solusi: Pola berulang adalah (oranye, hijau). Setelah lingkaran oranye terakhir, warna berikutnya dalam pola adalah hijau.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi aturan pengulangan dalam urutan warna yang diberikan dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah proses applying karena melibatkan pengenalan dan penerapan aturan pola rutin.. Bukti: Amati pola warna berikut; Warna apa yang benar untuk melanjutkan polanya
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep pola (urutan berulang), yang merupakan pengetahuan konseptual tentang bagaimana elemen-elemen disusun dalam struktur tertentu.. Bukti: Amati pola warna berikut
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena pola yang disajikan sangat sederhana (AB-AB) dan langsung terlihat. Siswa hanya perlu mengenali pengulangan satu unit pola.. Bukti: Amati pola warna berikut; oranye, hijau, oranye, hijau, oranye
+Run 1 — solusi: Pola berulang oranye-hijau. Setelah oranye, warna berikutnya adalah hijau.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali aturan pola berulang sederhana (oranye-hijau) dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah prosedur langsung.. Bukti: Amati pola warna berikut; Warna apa yang benar untuk melanjutkan polanya
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep pola berulang sederhana, yang merupakan struktur konseptual dasar dalam matematika awal.. Bukti: Amati pola warna berikut
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah bagi siswa kelas 2 karena pola yang disajikan sangat sederhana (AB-AB) dan hanya memerlukan satu langkah identifikasi untuk menentukan elemen berikutnya.. Bukti: Amati pola warna berikut; Warna apa yang benar untuk melanjutkan polanya
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan mengenali perbedaan warna dan pengulangan sederhana. |
+| expectedPrerequisite | Kemampuan mengenali urutan warna atau objek. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3870,12 +3730,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | weak |
-| gradeRelativeRationale | Pola AB-AB adalah materi dasar kelas 2 SD yang sangat familiar dan tidak memerlukan strategi kompleks. |
+| gradeRelativeRationale | Pola berulang sederhana adalah materi dasar kelas 2 yang sudah sangat familiar. |
 
-Run 2 — solusi: Pola berulang oranye-hijau. Setelah oranye terakhir, warna berikutnya harus hijau.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi aturan pola (oranye-hijau) dan menerapkannya untuk menentukan elemen berikutnya. Ini adalah proses applying karena menggunakan konsep pola rutin.. Bukti: Amati pola warna berikut; Warna apa yang benar untuk melanjutkan polanya
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur pola berulang, yang merupakan pengetahuan konseptual.. Bukti: pola warna berselang-seling oranye dan hijau
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan pola berulang sederhana dengan satu aturan yang jelas.. Bukti: Amati pola warna berikut; oranye, hijau, oranye, hijau, oranye
+Run 2 — solusi: Pola warna adalah oranye-hijau yang berulang. Setelah lingkaran oranye terakhir, warna berikutnya dalam urutan adalah hijau.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi aturan pola sederhana (AB-AB) dan menerapkannya untuk menentukan elemen berikutnya. Ini adalah tugas pengenalan dan penerapan prosedur langsung.. Bukti: Amati pola warna berikut; Warna apa yang benar untuk melanjutkan polanya
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep pola berulang (konseptual) yang merupakan materi dasar kelas 2.. Bukti: Amati pola warna berikut
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena pola yang disajikan adalah pola berulang sederhana (AB-AB) dengan elemen yang sangat jelas. Tidak ada langkah kompleks atau kendala yang berinteraksi.. Bukti: Amati pola warna berikut; Warna apa yang benar untuk melanjutkan polanya
 
 Profil difficulty run ini:
 
@@ -3891,18 +3751,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | weak |
-| gradeRelativeRationale | Pola berulang adalah materi standar kelas 2 yang sangat familiar. |
+| gradeRelativeRationale | Pola berulang adalah materi standar kelas 2. Soal ini tidak menuntut perencanaan atau integrasi langkah, sehingga dikategorikan mudah. |
 
-Run 3 — solusi: Pola yang diberikan adalah oranye-hijau-oranye-hijau-oranye. Karena pola berulang adalah (oranye, hijau), maka setelah oranye harus diikuti oleh hijau.
-- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi aturan pola yang berulang dan menerapkannya untuk menentukan elemen berikutnya. Ini adalah proses applying karena siswa menggunakan konsep pola yang sudah dipelajari untuk situasi rutin.. Bukti: Amati pola warna berikut; Warna apa yang benar untuk melanjutkan polanya
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang struktur pola (hubungan antar elemen dalam urutan), yang merupakan pengetahuan konseptual.. Bukti: pola warna berselang-seling oranye dan hijau
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan pola AB-AB yang sangat familiar dan langsung.. Bukti: pola warna berselang-seling oranye dan hijau
+Run 3 — solusi: Pola yang diberikan adalah pengulangan dua warna: oranye dan hijau. Karena lingkaran terakhir yang terlihat adalah oranye, maka warna berikutnya dalam pola tersebut adalah hijau.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengenali aturan pengulangan sederhana (AB-AB) dan menerapkan aturan tersebut untuk menentukan elemen berikutnya. Ini adalah prosedur langsung yang familiar bagi siswa kelas 2.. Bukti: Amati pola warna berikut; Warna apa yang benar untuk melanjutkan polanya
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep pola sederhana, yaitu pengulangan elemen secara teratur.. Bukti: Amati pola warna berikut
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena pola yang diberikan adalah pola pengulangan dua elemen yang sangat sederhana dan langsung terlihat.. Bukti: Amati pola warna berikut; Warna apa yang benar untuk melanjutkan polanya
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mampu mengenali urutan visual sederhana. |
+| expectedPrerequisite | Kemampuan mengenali warna dan urutan sederhana. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3912,33 +3772,33 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | weak |
-| gradeRelativeRationale | Pola AB-AB adalah materi dasar kelas 1 dan 2 yang sangat rutin. |
+| gradeRelativeRationale | Pola pengulangan dua warna adalah materi dasar yang sesuai untuk kelas 2, dengan tingkat kesulitan rendah karena tidak memerlukan perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
 | Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 87/256; truncation: `False`.
+Model membaca representation `metadata`; token input 84/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.290635; applying=0.709365; reasoning=0.000000 | applying | 0.709365 | 0.548619 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.156697; conceptual=0.838219; procedural=0.005084; metacognitive=0.000000 | conceptual | 0.838219 | 0.335575 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.836708; Medium=0.159402; Hard=0.003890 | Easy | 0.836708 | 0.421866 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.096437; applying=0.903563; reasoning=0.000000 | applying | 0.903563 | 0.288712 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.189361; conceptual=0.805040; procedural=0.005599; metacognitive=0.000000 | conceptual | 0.805040 | 0.374187 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.857362; Medium=0.138687; Hard=0.003951 | Easy | 0.857362 | 0.389389 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.709365; −Σp ln(p) = 0.602720; H = 0.602720/ln(3) = 0.548619; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.838219; −Σp ln(p) = 0.465206; H = 0.465206/ln(4) = 0.335575; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.903563; −Σp ln(p) = 0.317183; H = 0.317183/ln(3) = 0.288712; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.836708; −Σp ln(p) = 0.463468; H = 0.463468/ln(3) = 0.421866; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.805040; −Σp ln(p) = 0.518733; H = 0.518733/ln(4) = 0.374187; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.857362; −Σp ln(p) = 0.427788; H = 0.427788/ln(3) = 0.389389; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -3954,16 +3814,16 @@ Pilihan: A. hijau
 B. merah muda
 C. biru
 D. oranye
-Transkripsi visual: Terdapat baris pola warna yang terdiri dari lingkaran dengan urutan: oranye, hijau, oranye, hijau, oranye, dan satu lingkaran kosong di akhir.
+Transkripsi visual: Terdapat baris pola yang terdiri dari lingkaran berwarna oranye, hijau, oranye, hijau, oranye, dan satu lingkaran kosong di akhir.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 26. Soal `81440a329d7562b80ba3a0a1`
@@ -3977,72 +3837,30 @@ Perhatikan gambar berikut. Manakah yang bukan setengah?
 | C | B (segitiga hijau-putih, dibagi garis tegak tidak sama besar) |
 | D | F (segi enam ungu-putih, dibagi garis mendatar sama besar) |
 
-![Gambar sumber soal 26](<../images/kelas2_panduan_siswa_kelas2.pdf-0146-06.png>)
+![Gambar sumber soal 26](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0146-06.png>)
 
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Definisi setengah adalah membagi benda menjadi dua bagian yang sama besar. Gambar B menunjukkan segitiga yang dibagi menjadi dua bagian dengan ukuran berbeda, sehingga bukan setengah.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0146-06.png. Transkripsi visual: Terdapat tujuh gambar bangun datar yang diberi label A sampai G. Gambar A (persegi panjang), C (lingkaran), D (hati), F (segi enam), dan G (persegi panjang) dibagi menjadi dua bagian yang sama besar. Gambar B (segitiga) dibagi menjadi dua bagian yang tidak sama besar oleh garis tegak.
+Solusi minimum hasil AI: Konsep setengah (1/2) memerlukan pembagian benda menjadi dua bagian yang sama besar. Gambar B (segitiga) dibagi menjadi dua bagian yang tidak sama besar (sisi kiri lebih besar dari sisi kanan), sehingga tidak merepresentasikan setengah.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0146-06.png. Transkripsi visual: Terdapat tujuh gambar bentuk geometri yang diberi label A sampai G. Gambar A adalah persegi panjang dibagi dua sama besar. Gambar B adalah segitiga yang dibagi garis tegak menjadi dua bagian yang tidak sama besar (bagian kiri lebih luas daripada bagian kanan). Gambar C adalah lingkaran dibagi dua sama besar secara horizontal. Gambar D adalah bentuk hati dibagi dua sama besar. Gambar E adalah bintang utuh tanpa pembagian. Gambar F adalah segi enam dibagi dua sama besar secara horizontal. Gambar G adalah persegi panjang dibagi dua sama besar secara vertikal. Soal meminta untuk mengidentifikasi gambar yang bukan merupakan setengah.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `23dd63c7d4d8d73f7e23dbf3f86ca18ed99c8e8df1f044996bc1e30fb359c010`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9817af3dc9a7a1a47cef0cd0f48747c02206ae6587d588ca833a108a83f7158a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2565 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2553 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2581 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 3537 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 3521 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 4430 |
 
-Run 1 — solusi: Definisi setengah adalah membagi benda menjadi dua bagian yang sama besar. Gambar B menunjukkan segitiga yang dibagi menjadi dua bagian dengan ukuran berbeda, sehingga bukan setengah.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep 'setengah' sebagai pembagian sama besar dan menerapkan pemahaman tersebut untuk mengidentifikasi gambar yang tidak memenuhi kriteria tersebut.. Bukti: Manakah yang bukan setengah?; gambar B dibagi menjadi dua bagian yang tidak sama besar
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) sebagai pembagian benda utuh menjadi dua bagian yang sama besar.. Bukti: Setengah dari Benda Utuh; Manakah yang bukan setengah?
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin untuk kelas 2, melibatkan pengamatan visual langsung terhadap konsep pecahan dasar tanpa langkah perhitungan yang kompleks.. Bukti: Manakah yang bukan setengah?; gambar B dibagi menjadi dua bagian yang tidak sama besar
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep setengah (bagian yang sama besar). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diperkenalkan dengan konsep pecahan sederhana (setengah) melalui representasi visual. Tugas ini hanya memerlukan pengamatan visual sederhana. |
-
-Run 2 — solusi: Definisi setengah adalah membagi benda menjadi dua bagian yang sama besar. Gambar B menunjukkan segitiga yang dibagi menjadi dua bagian dengan ukuran berbeda, sehingga bukan setengah.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep 'setengah' sebagai pembagian dua bagian yang sama besar dan membedakannya dari pembagian yang tidak sama besar.. Bukti: Manakah yang bukan setengah?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) sebagai pembagian benda menjadi dua bagian yang sama besar.. Bukti: setengah dari benda utuh
-- Intended difficulty `classify/Easy`: Soal ini meminta siswa mengidentifikasi ketidaksamaan visual pada pembagian bangun datar, yang merupakan tugas rutin untuk kelas 2.. Bukti: Manakah yang bukan setengah?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Memahami konsep dasar pembagian benda menjadi dua bagian yang sama besar. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan konsep pecahan sederhana (setengah) melalui representasi visual bangun datar yang dibagi dua. |
-
-Run 3 — solusi: Definisi setengah adalah membagi benda menjadi dua bagian yang sama besar. Gambar B menunjukkan segitiga yang dibagi menjadi dua bagian dengan ukuran berbeda, sehingga bukan setengah.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep 'setengah' sebagai pembagian dua bagian yang sama besar dan menerapkan pemahaman ini untuk membedakan gambar yang memenuhi syarat tersebut dengan yang tidak.. Bukti: Manakah yang bukan setengah?; gambar B dibagi menjadi dua bagian yang tidak sama besar
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) sebagai pembagian benda utuh menjadi dua bagian yang sama besar.. Bukti: Setengah dari Benda Utuh; Manakah yang bukan setengah?
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pengamatan visual langsung terhadap konsep dasar pecahan (setengah) yang sudah familiar bagi siswa kelas 2.. Bukti: Manakah yang bukan setengah?; gambar B (segitiga hijau-putih, dibagi garis tegak tidak sama besar)
+Run 1 — solusi: Konsep setengah (1/2) memerlukan pembagian benda menjadi dua bagian yang sama besar. Gambar B (segitiga) dibagi menjadi dua bagian yang tidak sama besar (sisi kiri lebih besar dari sisi kanan), sehingga tidak merepresentasikan setengah.
+- Domain kognitif `classify/applying`: Siswa perlu mengenali definisi konsep 'setengah' sebagai pembagian menjadi dua bagian yang sama besar dan menerapkan pemahaman ini untuk mengevaluasi setiap opsi visual. Ini adalah penerapan konsep pada konteks rutin.. Bukti: Manakah yang bukan setengah?; gambar B (segitiga hijau-putih, dibagi garis tegak tidak sama besar)
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman siswa tentang prinsip dasar pecahan (setengah) sebagai hubungan antara bagian dan keseluruhan yang sama besar.. Bukti: Manakah yang bukan setengah?
+- Intended difficulty `classify/Easy`: Soal ini meminta siswa membedakan antara representasi yang benar dan salah dari konsep setengah. Siswa harus memeriksa setiap opsi secara visual. Tugas ini bersifat rutin bagi kelas 2 karena hanya memerlukan pengenalan visual sederhana terhadap konsep pembagian sama besar.. Bukti: Manakah yang bukan setengah?; gambar B (segitiga hijau-putih, dibagi garis tegak tidak sama besar)
 
 Profil difficulty run ini:
 
@@ -4053,12 +3871,54 @@ Profil difficulty run ini:
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 sudah mempelajari konsep pecahan sederhana (setengah) melalui representasi visual. Membedakan pembagian sama besar dan tidak sama besar adalah tugas standar yang familiar. |
+
+Run 2 — solusi: Konsep setengah memerlukan pembagian benda menjadi dua bagian yang sama besar. Gambar B (segitiga) dibagi menjadi dua bagian yang ukurannya jelas tidak sama (satu bagian lebih besar dari yang lain), sehingga bukan merupakan setengah.
+- Domain kognitif `classify/applying`: Siswa perlu mengenali definisi konsep 'setengah' (dua bagian yang sama besar) dan menerapkannya untuk mengevaluasi setiap pilihan gambar. Ini adalah penerapan konsep pada konteks visual rutin.. Bukti: Manakah yang bukan setengah?; gambar B dibagi menjadi dua bagian yang tidak sama besar
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) sebagai pembagian menjadi dua bagian yang sama besar.. Bukti: Manakah yang bukan setengah?
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu melakukan inspeksi visual sederhana untuk membandingkan ukuran dua bagian pada setiap bangun. Tidak ada perhitungan kompleks atau perencanaan langkah yang rumit.. Bukti: Manakah yang bukan setengah?; gambar B (segitiga hijau-putih, dibagi garis tegak tidak sama besar)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep setengah sebagai dua bagian yang sama besar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 2, membedakan pembagian sama besar dan tidak sama besar adalah materi standar yang rutin dan langsung. |
+
+Run 3 — solusi: Setengah didefinisikan sebagai dua bagian yang sama besar. Gambar B menunjukkan segitiga yang dibagi menjadi dua bagian dengan ukuran berbeda, sehingga bukan setengah.
+- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep setengah (dua bagian sama besar) dan menerapkannya untuk mengidentifikasi gambar yang tidak memenuhi kriteria tersebut.. Bukti: Manakah yang bukan setengah?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) sebagai pembagian benda menjadi dua bagian yang sama besar.. Bukti: Manakah yang bukan setengah?
+- Intended difficulty `classify/Easy`: Soal ini meminta siswa membedakan antara representasi setengah yang benar dan salah. Ini adalah tugas rutin untuk kelas 2.. Bukti: Manakah yang bukan setengah?; gambar B dibagi menjadi dua bagian yang tidak sama besar
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bentuk dan konsep pembagian dua bagian sama besar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
 | relevantInformationUnits | 1 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan konsep pecahan sederhana (setengah) melalui representasi visual bangun datar. |
+| gradeRelativeRationale | Siswa kelas 2 sudah mempelajari konsep pecahan sederhana (setengah) melalui representasi visual. Mengidentifikasi ketidaksamaan ukuran bagian adalah tugas langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -4070,21 +3930,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 173/256; truncation: `False`.
+Model membaca representation `metadata`; token input 219/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.016566; applying=0.983434; reasoning=0.000000 | applying | 0.983434 | 0.076783 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.001829; conceptual=0.997141; procedural=0.001030; metacognitive=0.000000 | conceptual | 0.997141 | 0.015487 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.764437; Medium=0.230554; Hard=0.005009 | Easy | 0.764437 | 0.518978 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.001360; applying=0.998640; reasoning=0.000000 | applying | 0.998640 | 0.009410 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.002647; conceptual=0.990331; procedural=0.007022; metacognitive=0.000000 | conceptual | 0.990331 | 0.043391 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.701610; Medium=0.290872; Hard=0.007518 | Easy | 0.701610 | 0.586732 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.983434; −Σp ln(p) = 0.084355; H = 0.084355/ln(3) = 0.076783; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.997141; −Σp ln(p) = 0.021470; H = 0.021470/ln(4) = 0.015487; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.998640; −Σp ln(p) = 0.010338; H = 0.010338/ln(3) = 0.009410; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.764437; −Σp ln(p) = 0.570155; H = 0.570155/ln(3) = 0.518978; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.990331; −Σp ln(p) = 0.060153; H = 0.060153/ln(4) = 0.043391; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.701610; −Σp ln(p) = 0.644591; H = 0.644591/ln(3) = 0.586732; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -4100,7 +3960,7 @@ Pilihan: A. C (lingkaran biru-putih, dibagi garis mendatar sama besar)
 B. G (persegi panjang cokelat-putih, dibagi garis tegak sama besar)
 C. B (segitiga hijau-putih, dibagi garis tegak tidak sama besar)
 D. F (segi enam ungu-putih, dibagi garis mendatar sama besar)
-Transkripsi visual: Terdapat tujuh gambar bangun datar yang diberi label A sampai G. Gambar A (persegi panjang), C (lingkaran), D (hati), F (segi enam), dan G (persegi panjang) dibagi menjadi dua bagian yang sama besar. Gambar B (segitiga) dibagi menjadi dua bagian yang tidak sama besar oleh garis tegak.
+Transkripsi visual: Terdapat tujuh gambar bentuk geometri yang diberi label A sampai G. Gambar A adalah persegi panjang dibagi dua sama besar. Gambar B adalah segitiga yang dibagi garis tegak menjadi dua bagian yang tidak sama besar (bagian kiri lebih luas daripada bagian kanan). Gambar C adalah lingkaran dibagi dua sama besar secara horizontal. Gambar D adalah bentuk hati dibagi dua sama besar. Gambar E adalah bintang utuh tanpa pembagian. Gambar F adalah segi enam dibagi dua sama besar secara horizontal. Gambar G adalah persegi panjang dibagi dua sama besar secara vertikal. Soal meminta untuk mengidentifikasi gambar yang bukan merupakan setengah.
 ```
 
 </details>
@@ -4123,136 +3983,114 @@ Perhatikan gambar berikut. Manakah yang setengah?
 | C | Gambar kiri (dibagi rata oleh garis tegak di tengah) |
 | D | Kedua gambar menunjukkan setengah |
 
-![Gambar sumber soal 27](<../images/kelas2_panduan_siswa_kelas2.pdf-0145-02.png>)
+![Gambar sumber soal 27](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0145-02.png>)
 
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Setengah (1/2) didefinisikan sebagai dua bagian yang sama besar. Gambar kiri menunjukkan pembagian simetris yang menghasilkan dua bagian identik, sedangkan gambar kanan tidak.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0145-02.png. Transkripsi visual: Terdapat dua gambar hati. Gambar kiri dibagi oleh garis vertikal tepat di tengah menjadi dua bagian yang sama besar (merah dan toska). Gambar kanan dibagi oleh garis diagonal menjadi dua bagian yang tidak sama besar (merah di atas, toska di bawah).
+Solusi minimum hasil AI: Definisi setengah adalah membagi benda menjadi dua bagian yang sama besar. Gambar kiri menunjukkan pembagian simetris dengan dua bagian identik, sedangkan gambar kanan menunjukkan pembagian tidak merata.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0145-02.png. Transkripsi visual: Terdapat dua gambar hati. Gambar kiri dibagi oleh garis vertikal tepat di tengah, menghasilkan dua bagian (merah dan toska) yang tampak sama besar. Gambar kanan dibagi oleh garis diagonal yang tidak melalui pusat simetri, menghasilkan bagian merah yang lebih kecil daripada bagian toska.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2dd5675a2556c24b08a672e5c9bac1a65891fe9cba263d6a66508588bc4d7052`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `71ce6deee7d67d281fbd377da552700cdc8ef1fc804421c453c8090d106750c6`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2548 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 2473 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2494 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3365 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3384 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 3390 |
 
-Run 1 — solusi: Setengah (1/2) didefinisikan sebagai dua bagian yang sama besar. Gambar kiri menunjukkan pembagian simetris yang menghasilkan dua bagian identik, sedangkan gambar kanan tidak.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep 'setengah' sebagai pembagian benda menjadi dua bagian yang sama besar, yang merupakan penerapan konsep dasar pecahan pada situasi visual rutin.. Bukti: Manakah yang setengah?; gambar kiri dibagi oleh garis vertikal tepat di tengah menjadi dua bagian... yang simetris dan sama besar
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan (setengah) sebagai hubungan kesamaan ukuran antara dua bagian dari satu kesatuan.. Bukti: Manakah yang setengah?; gambar kiri dibagi oleh garis vertikal tepat di tengah menjadi dua bagian... yang simetris dan sama besar
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung, menggunakan representasi visual yang familiar bagi siswa kelas 2, dan hanya memerlukan satu keputusan berdasarkan pengamatan visual sederhana.. Bukti: Manakah yang setengah?; gambar kiri dibagi oleh garis vertikal tepat di tengah menjadi dua bagian... yang simetris dan sama besar
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep 'sama besar' dan pengenalan bentuk simetris. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan visual pecahan sederhana tanpa perhitungan numerik kompleks. |
-
-Run 2 — solusi: Setengah didefinisikan sebagai dua bagian yang sama besar. Gambar kiri menunjukkan pembagian simetris (sama besar), sedangkan gambar kanan menunjukkan pembagian tidak sama besar.
-- Domain kognitif `classify/knowing`: Siswa perlu mengenali konsep 'setengah' sebagai pembagian benda menjadi dua bagian yang sama besar, yang merupakan proses pengenalan konsep dasar.. Bukti: Manakah yang setengah?; gambar kiri dibagi oleh garis tegak tepat di tengah sehingga menghasilkan dua bagian sama besar
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) melalui representasi visual.. Bukti: Manakah yang setengah?; gambar kiri dibagi oleh garis tegak tepat di tengah
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan pengenalan visual langsung tanpa perhitungan kompleks.. Bukti: Perhatikan gambar berikut. Manakah yang setengah?
+Run 1 — solusi: Definisi setengah adalah membagi benda menjadi dua bagian yang sama besar. Gambar kiri menunjukkan pembagian simetris dengan dua bagian identik, sedangkan gambar kanan menunjukkan pembagian tidak merata.
+- Domain kognitif `classify/knowing`: Siswa diminta mengenali representasi visual dari konsep pecahan sederhana (setengah) dengan membandingkan dua gambar. Ini adalah pengenalan konsep dasar pecahan.. Bukti: Manakah yang setengah?; Gambar kiri (dibagi rata oleh garis tegak di tengah)
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang apa arti 'setengah' (bagian yang sama besar) dalam bentuk visual.. Bukti: Setengah dari Benda Utuh
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu mengidentifikasi gambar mana yang terbagi menjadi dua bagian sama besar. Tidak ada langkah perhitungan atau perencanaan yang kompleks.. Bukti: Manakah yang setengah?; Perhatikan gambar berikut
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman visual dasar tentang kesamaan ukuran dan bentuk. |
+| expectedPrerequisite | Pemahaman visual tentang kesamaan ukuran dan konsep dasar pecahan setengah. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan konsep pecahan setengah melalui visualisasi sederhana. |
+| gradeRelativeRationale | Untuk kelas 2, membedakan pembagian yang sama besar dan tidak sama besar adalah materi dasar yang familiar. |
 
-Run 3 — solusi: Setengah (1/2) didefinisikan sebagai dua bagian yang sama besar. Gambar kiri menunjukkan pembagian simetris yang menghasilkan dua bagian identik, sedangkan gambar kanan tidak.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep 'setengah' sebagai pembagian benda menjadi dua bagian yang sama besar (konseptual) dan menerapkannya untuk membedakan antara dua representasi visual.. Bukti: Manakah yang setengah?; gambar kiri dibagi oleh garis vertikal tepat di tengah menjadi dua bagian simetris
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) sebagai bagian dari keseluruhan yang sama besar.. Bukti: Manakah yang setengah?; dua bagian sama besar
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin untuk kelas 2, hanya memerlukan pengenalan visual sederhana terhadap konsep kesamaan ukuran.. Bukti: Manakah yang setengah?; dua gambar hati
+Run 2 — solusi: Konsep setengah (1/2) memerlukan pembagian benda menjadi dua bagian yang sama besar. Gambar kiri menunjukkan pembagian simetris yang menghasilkan dua bagian identik, sedangkan gambar kanan tidak.
+- Domain kognitif `classify/knowing`: Siswa diminta mengenali representasi visual dari konsep pecahan sederhana (setengah). Ini adalah pengenalan langsung terhadap definisi 'setengah' sebagai dua bagian yang sama besar.. Bukti: Manakah yang setengah?; Gambar kiri (dibagi rata oleh garis tegak di tengah)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa yang dimaksud dengan 'setengah' (bagian yang sama besar), bukan sekadar menghafal fakta atau prosedur algoritmik.. Bukti: Manakah yang setengah?
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu membandingkan dua representasi visual sederhana untuk mengidentifikasi mana yang memenuhi kriteria 'sama besar'. Tidak ada langkah kompleks atau integrasi yang diperlukan.. Bukti: Manakah yang setengah?; Perhatikan gambar berikut
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep 'sama besar' atau simetri sederhana. |
+| expectedPrerequisite | Pemahaman dasar tentang konsep 'sama besar' atau 'setengah' sebagai dua bagian yang identik. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan visual konsep pecahan dasar tanpa perhitungan numerik. |
+| gradeRelativeRationale | Untuk kelas 2, membedakan pembagian yang sama besar dan tidak sama besar adalah tugas rutin yang sesuai dengan kurikulum awal pengenalan pecahan. |
+
+Run 3 — solusi: Setengah didefinisikan sebagai dua bagian yang sama besar. Gambar kiri menunjukkan hati yang dibagi oleh garis vertikal tepat di tengah, sehingga luas bagian merah sama dengan luas bagian toska. Gambar kanan tidak sama besar.
+- Domain kognitif `classify/knowing`: Siswa diminta mengenali representasi visual dari konsep pecahan 'setengah' dengan membandingkan dua gambar. Ini adalah tugas pengenalan konsep dasar yang sudah dipelajari.. Bukti: Manakah yang setengah?; gambar kiri dipotong oleh garis tegak tepat di tengah sehingga menghasilkan dua bagian sama besar
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa yang dimaksud dengan 'setengah' (dua bagian yang sama besar) melalui representasi visual.. Bukti: Manakah yang setengah?
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu mengidentifikasi gambar mana yang terbagi menjadi dua bagian yang sama besar. Tidak ada langkah perencanaan atau integrasi yang kompleks.. Bukti: Manakah yang setengah?; gambar kiri dipotong oleh garis tegak tepat di tengah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep 'sama besar' atau 'setengah' (pecahan sederhana). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 2, membedakan pembagian yang sama besar dan tidak sama besar adalah materi dasar yang rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 2, "knowing": 1} | majority_2_of_3 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3789`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan pemahaman konseptual tentang 'setengah' (dua bagian yang sama besar) untuk membedakan antara dua representasi visual yang diberikan.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) sebagai hubungan kesamaan ukuran antara dua bagian dari satu kesatuan.
-- Intended difficulty `Easy`: Soal ini bersifat langsung, menggunakan representasi visual yang familiar bagi siswa kelas 2, dan hanya memerlukan satu keputusan berdasarkan pengamatan visual sederhana.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep 'sama besar' dan pengenalan bentuk simetris. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan visual pecahan sederhana tanpa perhitungan numerik kompleks. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 131/256; truncation: `False`.
+Model membaca representation `metadata`; token input 133/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000108; applying=0.999892; reasoning=0.000000 | applying | 0.999892 | 0.000994 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.007229; conceptual=0.987239; procedural=0.005533; metacognitive=0.000000 | conceptual | 0.987239 | 0.055593 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.746339; Medium=0.248882; Hard=0.004779 | Easy | 0.746339 | 0.537073 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.001468; applying=0.998532; reasoning=0.000000 | applying | 0.998532 | 0.010050 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.010234; conceptual=0.982245; procedural=0.007521; metacognitive=0.000000 | conceptual | 0.982245 | 0.073049 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.736788; Medium=0.258702; Hard=0.004510 | Easy | 0.736788 | 0.545418 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999892; −Σp ln(p) = 0.001092; H = 0.001092/ln(3) = 0.000994; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.987239; −Σp ln(p) = 0.077068; H = 0.077068/ln(4) = 0.055593; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.998532; −Σp ln(p) = 0.011041; H = 0.011041/ln(3) = 0.010050; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.746339; −Σp ln(p) = 0.590035; H = 0.590035/ln(3) = 0.537073; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.982245; −Σp ln(p) = 0.101267; H = 0.101267/ln(4) = 0.073049; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.736788; −Σp ln(p) = 0.599203; H = 0.599203/ln(3) = 0.545418; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -4268,16 +4106,16 @@ Pilihan: A. Tidak ada gambar yang menunjukkan setengah
 B. Gambar kanan (dibagi oleh garis diagonal)
 C. Gambar kiri (dibagi rata oleh garis tegak di tengah)
 D. Kedua gambar menunjukkan setengah
-Transkripsi visual: Terdapat dua gambar hati. Gambar kiri dibagi oleh garis vertikal tepat di tengah menjadi dua bagian yang sama besar (merah dan toska). Gambar kanan dibagi oleh garis diagonal menjadi dua bagian yang tidak sama besar (merah di atas, toska di bawah).
+Transkripsi visual: Terdapat dua gambar hati. Gambar kiri dibagi oleh garis vertikal tepat di tengah, menghasilkan dua bagian (merah dan toska) yang tampak sama besar. Gambar kanan dibagi oleh garis diagonal yang tidak melalui pusat simetri, menghasilkan bagian merah yang lebih kecil daripada bagian toska.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 28. Soal `5eacf4162dd820a1d51e8bdc`
@@ -4291,36 +4129,36 @@ Perhatikan gambar berikut.<br><br>Kelompok mana yang menunjukkan setengah.
 | C | Baris pertama (2 monyet dan 2 monyet) |
 | D | Baris kedua (1 monyet dan 3 monyet) |
 
-![Gambar sumber soal 28](<../images/kelas2_panduan_siswa_kelas2.pdf-0150-12.png>)
+![Gambar sumber soal 28](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0150-12.png>)
 
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Setengah dari sekumpulan benda berarti membagi benda tersebut menjadi dua bagian yang sama banyak. Baris pertama membagi 4 monyet menjadi 2 dan 2 (sama banyak), sedangkan baris kedua membagi 4 monyet menjadi 1 dan 3 (tidak sama banyak). Maka, baris pertama menunjukkan setengah.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0150-12.png. Transkripsi visual: Gambar menunjukkan dua baris kelompok monyet. Baris pertama berisi 4 monyet yang dibagi menjadi dua kotak, masing-masing berisi 2 monyet. Baris kedua berisi 4 monyet yang dibagi menjadi dua kotak, satu kotak berisi 1 monyet dan kotak lainnya berisi 3 monyet.
+Solusi minimum hasil AI: Setengah berarti membagi kumpulan benda menjadi dua kelompok yang sama banyak. Baris pertama membagi 4 monyet menjadi dua kelompok berisi 2 monyet dan 2 monyet (sama banyak). Baris kedua membagi 4 monyet menjadi 1 dan 3 (tidak sama banyak). Jadi, baris pertama menunjukkan setengah.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0150-12.png. Transkripsi visual: Gambar menunjukkan 4 monyet di baris paling atas. Di bawahnya terdapat dua baris kotak. Baris pertama berisi dua kotak, masing-masing berisi 2 monyet (total 4 monyet). Baris kedua berisi dua kotak, kotak kiri berisi 1 monyet dan kotak kanan berisi 3 monyet (total 4 monyet).
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2307483ad3995dbac656d8a4ece17c62485b651ea19944e9e0b7e68fd12f2f3d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d0373d2c496d96f88593d848e9f2bb4e159a4554eca917f12ba98dcbad386eed`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2544 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2536 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2523 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 3462 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 3464 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 3468 |
 
-Run 1 — solusi: Setengah dari sekumpulan benda berarti membagi benda tersebut menjadi dua bagian yang sama banyak. Baris pertama membagi 4 monyet menjadi 2 dan 2 (sama banyak), sedangkan baris kedua membagi 4 monyet menjadi 1 dan 3 (tidak sama banyak). Maka, baris pertama menunjukkan setengah.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan pemahaman konsep 'setengah' (pembagian menjadi dua bagian sama besar) pada representasi visual yang diberikan. Ini adalah penerapan konsep dasar pada situasi rutin.. Bukti: Kelompok mana yang menunjukkan setengah; Baris pertama (2 monyet dan 2 monyet)
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip pembagian menjadi dua bagian yang sama besar (konsep setengah) dalam konteks kumpulan benda.. Bukti: setengah dari kumpulan benda; 2 monyet dan 2 monyet
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pengenalan visual sederhana terhadap konsep setengah yang sudah umum diajarkan di kelas 2.. Bukti: Perhatikan gambar berikut; Kelompok mana yang menunjukkan setengah
+Run 1 — solusi: Setengah berarti membagi kumpulan benda menjadi dua kelompok yang sama banyak. Baris pertama membagi 4 monyet menjadi dua kelompok berisi 2 monyet dan 2 monyet (sama banyak). Baris kedua membagi 4 monyet menjadi 1 dan 3 (tidak sama banyak). Jadi, baris pertama menunjukkan setengah.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengenali representasi visual dari konsep 'setengah' (pembagian menjadi dua bagian yang sama). Ini adalah penerapan langsung dari konsep dasar pecahan/pembagian sederhana yang sudah dipelajari di kelas 2.. Bukti: Kelompok mana yang menunjukkan setengah; Baris pertama (2 monyet dan 2 monyet); Baris kedua (1 monyet dan 3 monyet)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa arti 'setengah' sebagai pembagian dua kelompok dengan jumlah anggota yang sama.. Bukti: Kelompok mana yang menunjukkan setengah
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu membandingkan jumlah benda dalam dua kelompok yang disajikan secara visual. Tidak ada langkah perhitungan kompleks atau perencanaan strategi yang diperlukan.. Bukti: Kelompok mana yang menunjukkan setengah; Baris pertama (2 monyet dan 2 monyet); Baris kedua (1 monyet dan 3 monyet)
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep setengah dan kemampuan menghitung jumlah benda dalam kelompok. |
+| expectedPrerequisite | Pemahaman dasar tentang jumlah benda dan konsep membagi dua kelompok sama banyak. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4330,49 +4168,49 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Konsep setengah dari kumpulan benda adalah materi standar kelas 2. Soal ini menggunakan representasi visual langsung yang tidak memerlukan langkah kompleks. |
+| gradeRelativeRationale | Siswa kelas 2 sudah familiar dengan konsep membagi benda menjadi dua bagian sama besar secara visual. |
 
-Run 2 — solusi: Setengah dari kumpulan benda berarti membagi benda menjadi dua kelompok dengan jumlah yang sama. Baris pertama membagi 4 monyet menjadi 2 dan 2 (sama banyak), sedangkan baris kedua membagi 4 monyet menjadi 1 dan 3 (tidak sama banyak).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep 'setengah' (pembagian menjadi dua bagian sama besar) pada representasi visual yang diberikan. Ini adalah penerapan konsep dasar pada situasi rutin.. Bukti: Kelompok mana yang menunjukkan setengah; Baris pertama (2 monyet dan 2 monyet)
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip pembagian menjadi dua bagian yang sama (konsep pecahan sederhana/setengah) dalam konteks kumpulan benda.. Bukti: Setengah dari Kumpulan Benda
-- Intended difficulty `classify/Easy`: Soal ini cukup mudah karena hanya memerlukan pengamatan visual langsung terhadap pembagian kelompok benda yang sudah disajikan secara eksplisit.. Bukti: Kelompok mana yang menunjukkan setengah; Baris pertama (2 monyet dan 2 monyet)
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep 'setengah' atau 'sama banyak' untuk jumlah benda kecil. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menggunakan objek konkret (monyet) untuk memvisualisasikan konsep pecahan sederhana. |
-
-Run 3 — solusi: Setengah dari kumpulan benda berarti membagi benda menjadi dua kelompok dengan jumlah yang sama. Baris pertama membagi 4 monyet menjadi dua kelompok yang masing-masing berisi 2 monyet (sama banyak), sedangkan baris kedua membagi 4 monyet menjadi kelompok berisi 1 dan 3 (tidak sama banyak).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan pemahaman konsep 'setengah' (pembagian menjadi dua bagian sama besar) pada representasi visual yang diberikan.. Bukti: Kelompok mana yang menunjukkan setengah; Baris pertama (2 monyet dan 2 monyet)
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang prinsip dasar pecahan atau pembagian sederhana (konsep setengah sebagai dua bagian yang sama).. Bukti: setengah dari kumpulan benda
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin untuk kelas 2, melibatkan identifikasi visual sederhana dari konsep pembagian dua bagian sama besar.. Bukti: Kelompok mana yang menunjukkan setengah; gambar dua baris pengelompokan
+Run 2 — solusi: Setengah berarti membagi jumlah benda menjadi dua kelompok yang sama banyak. Baris pertama membagi 4 monyet menjadi dua kelompok berisi 2 monyet (2 = 2), yang menunjukkan setengah. Baris kedua membagi 4 monyet menjadi kelompok berisi 1 dan 3, yang tidak sama banyak.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi representasi visual dari konsep 'setengah' (pembagian menjadi dua bagian sama besar). Ini adalah penerapan langsung dari konsep dasar pecahan/pembagian sederhana pada konteks rutin.. Bukti: Kelompok mana yang menunjukkan setengah.; Baris pertama (2 monyet dan 2 monyet); Baris kedua (1 monyet dan 3 monyet)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa arti 'setengah' sebagai pembagian benda menjadi dua kelompok yang sama banyak.. Bukti: Kelompok mana yang menunjukkan setengah.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu membandingkan jumlah benda dalam dua kelompok yang disajikan secara visual. Tidak ada langkah perencanaan yang kompleks atau kendala yang berinteraksi.. Bukti: Kelompok mana yang menunjukkan setengah.; Baris pertama (2 monyet dan 2 monyet); Baris kedua (1 monyet dan 3 monyet)
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep 'setengah' dan kemampuan menghitung benda dalam kelompok kecil. |
+| expectedPrerequisite | Pemahaman dasar tentang jumlah benda dan konsep membagi dua kelompok sama banyak. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menggunakan objek konkret (gambar) untuk mengenalkan konsep pecahan sederhana. |
+| gradeRelativeRationale | Untuk kelas 2, konsep setengah sebagai pembagian dua kelompok sama banyak adalah materi standar yang familiar. Tugas visual ini tidak memerlukan perhitungan rumit. |
+
+Run 3 — solusi: Setengah berarti membagi jumlah total (4 monyet) menjadi dua kelompok yang sama banyak. Baris pertama menunjukkan 2 monyet dan 2 monyet (sama banyak), sehingga ini adalah setengah. Baris kedua menunjukkan 1 monyet dan 3 monyet (tidak sama banyak). Maka, baris pertama adalah jawaban yang benar.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi representasi visual dari konsep 'setengah' (pembagian menjadi dua bagian yang sama). Ini adalah penerapan langsung dari konsep dasar pecahan/pembagian sederhana ke dalam konteks visual yang rutin.. Bukti: Kelompok mana yang menunjukkan setengah; Baris pertama (2 monyet dan 2 monyet)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa arti 'setengah' sebagai pembagian objek menjadi dua kelompok yang sama besar.. Bukti: Kelompok mana yang menunjukkan setengah
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu membandingkan jumlah objek dalam dua kelompok yang disajikan secara visual. Tidak ada langkah perencanaan yang kompleks atau kendala yang berinteraksi.. Bukti: Kelompok mana yang menunjukkan setengah; Baris pertama (2 monyet dan 2 monyet); Baris kedua (1 monyet dan 3 monyet)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jumlah benda dan konsep membagi sama rata (setengah). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 2, membedakan kelompok yang sama banyak (setengah) dari yang tidak sama banyak adalah tugas rutin yang sesuai dengan kurikulum dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -4384,21 +4222,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 129/256; truncation: `False`.
+Model membaca representation `metadata`; token input 138/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000001; applying=0.999999; reasoning=0.000000 | applying | 0.999999 | 0.000012 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.003955; conceptual=0.992965; procedural=0.003081; metacognitive=0.000000 | conceptual | 0.992965 | 0.033691 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.656258; Medium=0.338353; Hard=0.005389 | Easy | 0.656258 | 0.610978 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000000; applying=1.000000; reasoning=0.000000 | applying | 1.000000 | 0.000006 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.003371; conceptual=0.992623; procedural=0.004007; metacognitive=0.000000 | conceptual | 0.992623 | 0.035096 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.621945; Medium=0.371331; Hard=0.006724 | Easy | 0.621945 | 0.634311 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999999; −Σp ln(p) = 0.000013; H = 0.000013/ln(3) = 0.000012; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.992965; −Σp ln(p) = 0.046705; H = 0.046705/ln(4) = 0.033691; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000006; H = 0.000006/ln(3) = 0.000006; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.656258; −Σp ln(p) = 0.671227; H = 0.671227/ln(3) = 0.610978; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.992623; −Σp ln(p) = 0.048654; H = 0.048654/ln(4) = 0.035096; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.621945; −Σp ln(p) = 0.696862; H = 0.696862/ln(3) = 0.634311; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -4416,7 +4254,7 @@ Pilihan: A. Kedua baris menunjukkan setengah
 B. Tidak ada baris yang menunjukkan setengah
 C. Baris pertama (2 monyet dan 2 monyet)
 D. Baris kedua (1 monyet dan 3 monyet)
-Transkripsi visual: Gambar menunjukkan dua baris kelompok monyet. Baris pertama berisi 4 monyet yang dibagi menjadi dua kotak, masing-masing berisi 2 monyet. Baris kedua berisi 4 monyet yang dibagi menjadi dua kotak, satu kotak berisi 1 monyet dan kotak lainnya berisi 3 monyet.
+Transkripsi visual: Gambar menunjukkan 4 monyet di baris paling atas. Di bawahnya terdapat dua baris kotak. Baris pertama berisi dua kotak, masing-masing berisi 2 monyet (total 4 monyet). Baris kedua berisi dua kotak, kotak kiri berisi 1 monyet dan kotak kanan berisi 3 monyet (total 4 monyet).
 ```
 
 </details>
@@ -4439,30 +4277,30 @@ Perhatikan gambar berikut.<br><br>Kelompok mana yang menunjukkan setengah.
 | C | Baris pertama (3 kelinci dan 5 kelinci) |
 | D | Kedua baris menunjukkan setengah |
 
-![Gambar sumber soal 29](<../images/kelas2_panduan_siswa_kelas2.pdf-0151-01.png>)
+![Gambar sumber soal 29](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0151-01.png>)
 
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Setengah dari kumpulan benda berarti membagi benda menjadi dua kelompok dengan jumlah yang sama. Baris ketiga memiliki dua kelompok yang masing-masing berisi 4 kelinci (total 8), sehingga ini menunjukkan setengah.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0151-01.png. Transkripsi visual: Gambar terdiri dari tiga baris kelinci. Baris pertama berisi 8 kelinci berjajar. Baris kedua berisi dua kotak: kotak kiri berisi 3 kelinci, kotak kanan berisi 5 kelinci. Baris ketiga berisi dua kotak: kotak kiri berisi 4 kelinci, kotak kanan berisi 4 kelinci.
+Solusi minimum hasil AI: Setengah berarti membagi sekumpulan benda menjadi dua kelompok yang sama banyak. Baris ketiga memiliki dua kotak dengan masing-masing 4 kelinci (4 sama dengan 4), sehingga ini menunjukkan setengah. Baris kedua memiliki 3 dan 5 kelinci (tidak sama). Maka, baris ketiga adalah yang benar.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0151-01.png. Transkripsi visual: Gambar terdiri dari tiga baris kelinci. Baris pertama berisi 8 kelinci tanpa pembagian kelompok. Baris kedua berisi dua kotak: kotak kiri berisi 3 kelinci, kotak kanan berisi 5 kelinci. Baris ketiga berisi dua kotak: kotak kiri berisi 4 kelinci, kotak kanan berisi 4 kelinci.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5985660fce54b689e1cbaa27bacf76148e0ee469b74354bdbe0ca24b2457c01c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9b7cd783e6bc99e7ff7fd46ee4f6f4f6c73ff5a7dfdb632c8f542980686dffdc`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2536 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2517 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2529 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 3495 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 3446 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 3509 |
 
-Run 1 — solusi: Setengah dari kumpulan benda berarti membagi benda menjadi dua kelompok dengan jumlah yang sama. Baris ketiga memiliki dua kelompok yang masing-masing berisi 4 kelinci (total 8), sehingga ini menunjukkan setengah.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep 'setengah' sebagai pembagian menjadi dua bagian yang sama besar dan menerapkannya untuk mengidentifikasi representasi visual yang tepat.. Bukti: Kelompok mana yang menunjukkan setengah; dua kelompok yang masing-masing berisi 4 kelinci
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) dalam konteks kumpulan benda.. Bukti: setengah dari kumpulan benda
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu melakukan observasi visual sederhana untuk membandingkan jumlah benda dalam kelompok, yang merupakan prosedur rutin di kelas 2.. Bukti: Kelompok mana yang menunjukkan setengah; gambar terdiri dari tiga baris kelinci
+Run 1 — solusi: Setengah berarti membagi sekumpulan benda menjadi dua kelompok yang sama banyak. Baris ketiga memiliki dua kotak dengan masing-masing 4 kelinci (4 sama dengan 4), sehingga ini menunjukkan setengah. Baris kedua memiliki 3 dan 5 kelinci (tidak sama). Maka, baris ketiga adalah yang benar.
+- Domain kognitif `classify/applying`: Siswa diminta mengenali representasi visual dari konsep 'setengah' (pembagian dua kelompok sama banyak). Ini adalah penerapan langsung dari konsep dasar pecahan/pembagian sederhana yang sudah dipelajari di kelas 2.. Bukti: Kelompok mana yang menunjukkan setengah; Baris ketiga berisi dua kotak: kotak kiri berisi 4 kelinci, kotak kanan berisi 4 kelinci
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang apa arti 'setengah' dalam konteks kumpulan benda, bukan sekadar menghafal fakta atau prosedur algoritmik.. Bukti: Kelompok mana yang menunjukkan setengah
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu membandingkan jumlah benda dalam dua kelompok pada setiap baris untuk melihat mana yang sama banyak. Tidak ada langkah perencanaan yang kompleks atau kendala yang berinteraksi.. Bukti: Kelompok mana yang menunjukkan setengah; Baris ketiga berisi dua kotak: kotak kiri berisi 4 kelinci, kotak kanan berisi 4 kelinci
 
 Profil difficulty run ini:
 
@@ -4478,49 +4316,49 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena melibatkan pengenalan konsep pecahan sederhana melalui objek konkret/visual yang familiar. |
+| gradeRelativeRationale | Untuk kelas 2, membedakan kelompok yang sama banyak adalah tugas rutin yang sesuai dengan kurikulum awal tentang pecahan sederhana. |
 
-Run 2 — solusi: Setengah berarti membagi menjadi dua kelompok yang sama banyak. Baris bawah memiliki dua kelompok dengan masing-masing 4 kelinci (4=4), sehingga menunjukkan setengah dari total 8 kelinci.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep 'setengah' (pembagian menjadi dua bagian sama besar) pada representasi visual kumpulan benda. Ini adalah penerapan konsep dasar pada situasi rutin.. Bukti: Kelompok mana yang menunjukkan setengah
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep pecahan sederhana (setengah) sebagai pembagian objek ke dalam kelompok yang sama banyak.. Bukti: Kelompok mana yang menunjukkan setengah
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pengamatan visual langsung dan pemahaman dasar tentang kesamaan jumlah dalam dua kelompok.. Bukti: Kelompok mana yang menunjukkan setengah
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep setengah dan kemampuan menghitung benda hingga 10. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2, di mana siswa mulai belajar pecahan sederhana melalui visualisasi konkret. |
-
-Run 3 — solusi: Setengah berarti membagi menjadi dua kelompok yang sama banyak. Baris bawah memiliki dua kelompok dengan masing-masing 4 kelinci (4=4), sehingga menunjukkan setengah dari 8 kelinci.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep 'setengah' (pembagian menjadi dua bagian sama besar) pada representasi visual objek konkret.. Bukti: Kelompok mana yang menunjukkan setengah; Baris kedua (4 kelinci dan 4 kelinci)
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sederhana (setengah) sebagai pembagian objek ke dalam dua kelompok yang ekuivalen.. Bukti: setengah dari Kumpulan Benda
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu melakukan observasi visual sederhana untuk membandingkan jumlah objek dalam kelompok, yang merupakan prosedur standar di kelas 2.. Bukti: Perhatikan gambar berikut; Kelompok mana yang menunjukkan setengah
+Run 2 — solusi: Setengah berarti membagi sekumpulan benda menjadi dua bagian yang sama banyak. Baris ketiga memiliki dua kotak dengan jumlah kelinci yang sama, yaitu 4 kelinci di kotak kiri dan 4 kelinci di kotak kanan. Jadi, baris ketiga menunjukkan setengah.
+- Domain kognitif `classify/applying`: Siswa diminta mengenali representasi visual dari konsep 'setengah' (pembagian menjadi dua bagian sama banyak). Ini adalah penerapan langsung dari konsep dasar pecahan/pembagian sederhana yang sudah dipelajari di kelas 2.. Bukti: Kelompok mana yang menunjukkan setengah.; Baris kedua (4 kelinci dan 4 kelinci)
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang arti 'setengah' sebagai pembagian dua kelompok yang sama banyak.. Bukti: Kelompok mana yang menunjukkan setengah.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu menghitung jumlah benda dalam kelompok yang tersedia dan membandingkan apakah jumlahnya sama. Tidak ada langkah perencanaan yang kompleks atau kendala yang berinteraksi.. Bukti: Kelompok mana yang menunjukkan setengah.; Baris kedua (4 kelinci dan 4 kelinci)
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep setengah dan kemampuan menghitung objek hingga 10. |
+| expectedPrerequisite | Kemampuan membilang dan membandingkan jumlah benda sederhana. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2, di mana siswa mulai mempelajari pecahan sederhana melalui representasi visual benda konkret. |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan konsep setengah sebagai membagi dua sama banyak. Tugas ini hanya memerlukan observasi visual dan hitung sederhana. |
+
+Run 3 — solusi: Setengah dari kumpulan benda berarti membagi kumpulan tersebut menjadi dua kelompok dengan jumlah yang sama banyak. Baris ketiga memiliki dua kelompok yang masing-masing berisi 4 kelinci (4+4=8), sehingga ini menunjukkan setengah. Baris kedua memiliki 3 dan 5 kelinci (tidak sama). Maka, baris ketiga adalah jawaban yang benar.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi representasi visual dari konsep 'setengah' (pembagian dua kelompok sama banyak). Ini adalah penerapan langsung dari konsep dasar pecahan/pembagian sederhana yang sudah dipelajari di kelas 2.. Bukti: Kelompok mana yang menunjukkan setengah.; Baris ketiga berisi dua kotak: kotak kiri berisi 4 kelinci, kotak kanan berisi 4 kelinci.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa arti 'setengah' dalam konteks kumpulan benda, yaitu hubungan kesamaan jumlah antara dua bagian.. Bukti: Kelompok mana yang menunjukkan setengah.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu menghitung jumlah benda dalam kelompok yang tersedia dan membandingkannya untuk melihat mana yang memiliki jumlah sama. Tidak ada langkah perencanaan yang kompleks atau kendala yang berinteraksi.. Bukti: Kelompok mana yang menunjukkan setengah.; Baris ketiga berisi dua kotak: kotak kiri berisi 4 kelinci, kotak kanan berisi 4 kelinci.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang sampai 10 dan memahami konsep jumlah yang sama. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan konsep membagi benda menjadi dua bagian sama besar. Soal ini adalah penerapan langsung dari konsep tersebut tanpa kerumitan tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -4532,21 +4370,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 132/256; truncation: `False`.
+Model membaca representation `metadata`; token input 133/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000002; applying=0.999998; reasoning=0.000000 | applying | 0.999998 | 0.000031 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.004982; conceptual=0.993295; procedural=0.001723; metacognitive=0.000000 | conceptual | 0.993295 | 0.031784 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.702506; Medium=0.292742; Hard=0.004751 | Easy | 0.702506 | 0.576268 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000007; applying=0.999993; reasoning=0.000000 | applying | 0.999993 | 0.000083 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.006244; conceptual=0.991681; procedural=0.002076; metacognitive=0.000000 | conceptual | 0.991681 | 0.038087 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.708260; Medium=0.286541; Hard=0.005199 | Easy | 0.708260 | 0.573264 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999998; −Σp ln(p) = 0.000034; H = 0.000034/ln(3) = 0.000031; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.993295; −Σp ln(p) = 0.044063; H = 0.044063/ln(4) = 0.031784; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999993; −Σp ln(p) = 0.000091; H = 0.000091/ln(3) = 0.000083; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.702506; −Σp ln(p) = 0.633095; H = 0.633095/ln(3) = 0.576268; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.991681; −Σp ln(p) = 0.052800; H = 0.052800/ln(4) = 0.038087; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.708260; −Σp ln(p) = 0.629795; H = 0.629795/ln(3) = 0.573264; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -4564,7 +4402,7 @@ Pilihan: A. Baris kedua (4 kelinci dan 4 kelinci)
 B. Tidak ada baris yang menunjukkan setengah
 C. Baris pertama (3 kelinci dan 5 kelinci)
 D. Kedua baris menunjukkan setengah
-Transkripsi visual: Gambar terdiri dari tiga baris kelinci. Baris pertama berisi 8 kelinci berjajar. Baris kedua berisi dua kotak: kotak kiri berisi 3 kelinci, kotak kanan berisi 5 kelinci. Baris ketiga berisi dua kotak: kotak kiri berisi 4 kelinci, kotak kanan berisi 4 kelinci.
+Transkripsi visual: Gambar terdiri dari tiga baris kelinci. Baris pertama berisi 8 kelinci tanpa pembagian kelompok. Baris kedua berisi dua kotak: kotak kiri berisi 3 kelinci, kotak kanan berisi 5 kelinci. Baris ketiga berisi dua kotak: kotak kiri berisi 4 kelinci, kotak kanan berisi 4 kelinci.
 ```
 
 </details>
@@ -4587,51 +4425,51 @@ Perhatikan gambar yang diwarnai berikut.<br><br>Gambar mana yang menunjukkan sep
 | C | Gambar 4 (kotak berpetak) |
 | D | Gambar 2 (segi enam memanjang) |
 
-![Gambar sumber soal 30](<../images/kelas2_panduan_siswa_kelas2.pdf-0159-10.png>)
+![Gambar sumber soal 30](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0159-10.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Seperempat (1/4) dari sebuah benda utuh harus terdiri dari empat bagian yang sama besar (kongruen). Hanya Gambar 2 yang menunjukkan bangun datar yang dibagi menjadi empat bagian dengan luas yang sama persis.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0159-10.png. Transkripsi visual: Terdapat empat gambar bangun datar yang dibagi menjadi empat bagian. Gambar 1 adalah segitiga yang dibagi tidak sama besar. Gambar 2 adalah segi enam memanjang yang dibagi oleh garis vertikal dan horizontal tepat di tengah, menghasilkan empat bagian yang kongruen (sama besar dan bentuk). Gambar 3 adalah bangun menyerupai anak panah yang dibagi tidak simetris. Gambar 4 adalah persegi panjang yang dibagi menjadi empat bagian dengan ukuran berbeda.
+Solusi minimum hasil AI: Konsep seperempat (1/4) memerlukan pembagian benda utuh menjadi empat bagian yang sama besar. Hanya Gambar 2 yang memiliki empat bagian dengan luas yang sama besar karena dibagi oleh garis simetri vertikal dan horizontal tepat di tengah.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0159-10.png. Transkripsi visual: Terdapat empat gambar bangun datar yang masing-masing dibagi menjadi empat bagian. Gambar 1 adalah segitiga yang dibagi menjadi empat bagian tidak sama besar. Gambar 2 adalah segi enam memanjang yang dibagi oleh garis vertikal dan horizontal tepat di tengah, menghasilkan empat bagian yang sama besar. Gambar 3 adalah bentuk anak panah yang dibagi menjadi empat bagian tidak sama besar. Gambar 4 adalah kotak berpetak yang dibagi menjadi empat bagian tidak sama besar (kolom kiri lebih lebar).
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `21587c539018bd7ddc4b71969a6119f35904beab7752f373c2ecb95337828a4c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e2f7e3951699fbbd8e6d990915fd00eacdaee428f07e5dfbaa15d9cbe45061cd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 2579 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 2585 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 2656 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 3580 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 4527 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 3556 |
 
-Run 1 — solusi: Seperempat (1/4) dari sebuah benda utuh harus terdiri dari empat bagian yang sama besar (kongruen). Hanya Gambar 2 yang menunjukkan bangun datar yang dibagi menjadi empat bagian dengan luas yang sama persis.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep pecahan 1/4 sebagai pembagian benda utuh menjadi empat bagian yang sama besar, yang merupakan penerapan konsep dasar pecahan.. Bukti: Gambar mana yang menunjukkan seperempat?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang syarat pecahan (bagian yang sama besar) pada representasi visual.. Bukti: Gambar mana yang menunjukkan seperempat?
-- Intended difficulty `classify/Medium`: Soal ini menuntut siswa untuk membedakan antara pembagian menjadi empat bagian secara umum dengan pembagian menjadi empat bagian yang sama besar (seperempat).. Bukti: Gambar mana yang menunjukkan seperempat?
+Run 1 — solusi: Konsep seperempat (1/4) memerlukan pembagian benda utuh menjadi empat bagian yang sama besar. Gambar 2 adalah satu-satunya bangun yang dibagi oleh garis simetri vertikal dan horizontal tepat di tengah, sehingga keempat bagiannya memiliki luas yang sama.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan pemahaman konseptual tentang pecahan sederhana (seperempat) untuk mengidentifikasi representasi visual yang tepat di antara beberapa pilihan. Ini adalah penerapan konsep pada konteks rutin.. Bukti: Gambar mana yang menunjukkan seperempat?; segi enam memanjang dibagi oleh garis tegak dan garis mendatar yang tepat di tengah sehingga menghasilkan 4 bagian sama besar
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang apa yang dimaksud dengan 'seperempat' (pembagian menjadi empat bagian yang sama besar), bukan sekadar menghafal fakta atau menjalankan algoritme prosedural.. Bukti: seperempat dari benda utuh
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu melakukan observasi visual sederhana untuk membandingkan luas bagian-bagian bangun datar. Tidak ada langkah perhitungan atau perencanaan yang kompleks. Siswa cukup mengenali prinsip 'sama besar' sebagai syarat pecahan.. Bukti: Gambar mana yang menunjukkan seperempat?; Gambar 1 (segitiga); Gambar 2 (segi enam memanjang); Gambar 3 (bentuk anak panah)
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan dan konsep kesamaan ukuran (kongruensi visual). |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| expectedPrerequisite | Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan dan konsep 'sama besar'. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 2, membedakan pembagian yang sama besar dari yang tidak sama besar memerlukan ketelitian visual yang melampaui sekadar pengenalan simbol, namun masih dalam lingkup materi pecahan dasar. |
+| gradeRelativeRationale | Untuk kelas 2, membedakan pembagian yang sama besar dan tidak sama besar adalah materi standar yang rutin. Tidak ada tuntutan perencanaan atau integrasi yang tinggi. |
 
-Run 2 — solusi: Seperempat (1/4) berarti satu bagian dari empat bagian yang sama besar. Hanya gambar 2 yang memiliki empat bagian dengan luas dan bentuk yang identik.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep pecahan sederhana (seperempat) dan membedakan antara pembagian yang menghasilkan bagian sama besar dengan yang tidak. Ini adalah proses menerapkan konsep dasar pecahan pada representasi visual.. Bukti: Gambar mana yang menunjukkan seperempat?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' (bagian yang sama besar dari keseluruhan), bukan sekadar menghafal fakta atau mengikuti prosedur algoritma.. Bukti: Gambar mana yang menunjukkan seperempat?
-- Intended difficulty `classify/Medium`: Soal ini menuntut siswa untuk melakukan diskriminasi visual terhadap empat opsi. Meskipun konsepnya dasar, siswa harus menolak pengecoh yang terlihat mirip namun tidak memenuhi syarat 'sama besar'.. Bukti: Gambar mana yang menunjukkan seperempat?
+Run 2 — solusi: Seperempat (1/4) berarti satu bagian dari empat bagian yang sama besar. Hanya gambar kedua (segi enam) yang memiliki empat bagian dengan luas yang sama.
+- Domain kognitif `classify/applying`: Siswa harus menerapkan konsep pecahan (seperempat) untuk mengidentifikasi gambar mana yang terbagi menjadi empat bagian sama besar, bukan sekadar terbagi menjadi empat bagian.. Bukti: Gambar mana yang menunjukkan seperempat?; segi enam memanjang dibagi oleh garis tegak dan garis mendatar yang tepat di tengah
+- Dimensi pengetahuan `classify/conceptual`: Memahami konsep pecahan sebagai bagian dari keseluruhan yang sama besar.. Bukti: seperempat dari Benda Utuh; Gambar mana yang menunjukkan seperempat?
+- Intended difficulty `classify/Medium`: Siswa perlu membedakan antara pembagian menjadi 4 bagian secara umum dengan pembagian menjadi 4 bagian yang sama besar (syarat pecahan). Ini memerlukan ketelitian visual dan pemahaman konsep dasar pecahan.. Bukti: Gambar mana yang menunjukkan seperempat?; bentuk anak panah; segi enam memanjang
 
 Profil difficulty run ini:
 
@@ -4639,62 +4477,84 @@ Profil difficulty run ini:
 |---|---|
 | expectedPrerequisite | Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan yang sama besar. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
 | relevantInformationUnits | 4 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 2, membedakan pecahan yang benar dari pengecoh visual yang tampak mirip namun tidak kongruen memerlukan ketelitian lebih daripada sekadar mengidentifikasi gambar yang diarsir secara acak. |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 2 sudah belajar pecahan sederhana. Soal ini menuntut kemampuan membedakan 'dibagi 4' dengan 'dibagi 4 sama besar', yang merupakan konsep krusial namun sering membingungkan. |
 
-Run 3 — solusi: Seperempat (1/4) dari sebuah benda utuh harus terdiri dari empat bagian yang sama besar (kongruen). Hanya pada gambar kedua (segi enam), bangun tersebut dibagi oleh garis simetri vertikal dan horizontal yang membagi luas bangun menjadi empat bagian yang identik.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep pecahan sederhana (seperempat) dengan membedakan antara pembagian yang menghasilkan bagian sama besar dan yang tidak. Ini melibatkan penerapan konsep dasar pecahan pada representasi visual.. Bukti: Gambar mana yang menunjukkan seperempat?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa arti 'seperempat' (bagian yang sama besar dari keseluruhan), bukan sekadar menghafal fakta atau mengikuti prosedur algoritma.. Bukti: Seperempat dari Benda Utuh
-- Intended difficulty `classify/Medium`: Soal ini menuntut siswa untuk melakukan diskriminasi visual terhadap empat opsi. Meskipun konsepnya dasar, siswa harus menolak pengecoh yang terlihat mirip namun tidak memenuhi syarat 'sama besar', yang merupakan langkah kognitif penting untuk kelas 2.. Bukti: Gambar mana yang menunjukkan seperempat?
+Run 3 — solusi: Seperempat (1/4) berarti satu bagian dari empat bagian yang sama besar. Gambar 2 adalah satu-satunya bangun yang dibagi menjadi empat bagian dengan luas yang sama besar oleh garis simetri vertikal dan horizontal.
+- Domain kognitif `classify/applying`: Siswa perlu mengenali konsep pecahan seperempat sebagai bagian dari keseluruhan yang dibagi menjadi empat bagian sama besar. Ini melibatkan penerapan konsep dasar pecahan pada representasi visual.. Bukti: Gambar mana yang menunjukkan seperempat?; Gambar 2 (segi enam memanjang) \| catatan sumber: Benar: segi enam memanjang dibagi oleh garis tegak dan garis mendatar yang tepat di tengah sehingga menghasilkan 4 bagian sama besar
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa yang dimaksud dengan 'seperempat' (bagian yang sama besar) dalam konteks geometri.. Bukti: Gambar mana yang menunjukkan seperempat?
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya sekadar menghitung jumlah bagian (semua opsi dibagi menjadi 4), tetapi harus mengevaluasi apakah bagian-bagian tersebut sama besar. Ini memerlukan diskriminasi visual yang lebih teliti daripada sekadar menghitung.. Bukti: Gambar mana yang menunjukkan seperempat?; Gambar 2 (segi enam memanjang) \| catatan sumber: Benar: segi enam memanjang dibagi oleh garis tegak dan garis mendatar yang tepat di tengah sehingga menghasilkan 4 bagian sama besar
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan dan konsep kesamaan ukuran (kongruensi visual). |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| expectedPrerequisite | Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan dan konsep 'sama besar'. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 2, membedakan pecahan yang benar dari yang salah berdasarkan visualisasi adalah tugas yang sesuai, namun tingkat kesulitannya 'Medium' karena adanya pengecoh visual yang mengharuskan siswa teliti dalam membandingkan luas bagian. |
+| gradeRelativeRationale | Untuk kelas 2, membedakan antara pembagian yang sama besar dan tidak sama besar adalah tantangan konseptual yang sesuai untuk tingkat kesulitan menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 1, "Medium": 2} | majority_2_of_3 / adjudicated | Medium |
+
+Adjudikasi AI: `success`; token `5090`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu menerapkan pemahaman konseptual tentang pecahan (seperempat) untuk mengidentifikasi representasi visual yang tepat di antara beberapa pilihan. Ini adalah penerapan konsep pada konteks rutin.
+- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman konseptual tentang apa yang dimaksud dengan 'seperempat' (pembagian menjadi empat bagian yang sama besar), bukan sekadar menghafal fakta atau menjalankan algoritme prosedural.
+- Intended difficulty `Medium`: Soal ini tergolong Medium karena siswa tidak hanya sekadar menghitung jumlah bagian (semua opsi dibagi menjadi 4), tetapi harus mengevaluasi apakah bagian-bagian tersebut sama besar. Ini memerlukan diskriminasi visual yang lebih teliti daripada sekadar menghitung.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang pecahan sebagai bagian dari keseluruhan dan konsep 'sama besar'. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 2, membedakan antara pembagian yang sama besar dan tidak sama besar adalah tantangan konseptual yang sesuai untuk tingkat kesulitan menengah. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 159/256; truncation: `False`.
+Model membaca representation `metadata`; token input 168/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000318; applying=0.999682; reasoning=0.000000 | applying | 0.999682 | 0.002623 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.009228; conceptual=0.988060; procedural=0.002712; metacognitive=0.000000 | conceptual | 0.988060 | 0.051314 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.724551; Medium=0.269116; Hard=0.006333 | Easy | 0.724551 | 0.563213 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000045; applying=0.999955; reasoning=0.000000 | applying | 0.999955 | 0.000448 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.003141; conceptual=0.991190; procedural=0.005669; metacognitive=0.000000 | conceptual | 0.991190 | 0.040539 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.668901; Medium=0.323970; Hard=0.007128 | Easy | 0.668901 | 0.609283 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999682; −Σp ln(p) = 0.002882; H = 0.002882/ln(3) = 0.002623; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.988060; −Σp ln(p) = 0.071136; H = 0.071136/ln(4) = 0.051314; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999955; −Σp ln(p) = 0.000492; H = 0.000492/ln(3) = 0.000448; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.724551; −Σp ln(p) = 0.618753; H = 0.618753/ln(3) = 0.563213; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.991190; −Σp ln(p) = 0.056199; H = 0.056199/ln(4) = 0.040539; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.668901; −Σp ln(p) = 0.669366; H = 0.669366/ln(3) = 0.609283; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -4712,7 +4572,7 @@ Pilihan: A. Gambar 3 (bentuk anak panah)
 B. Gambar 1 (segitiga)
 C. Gambar 4 (kotak berpetak)
 D. Gambar 2 (segi enam memanjang)
-Transkripsi visual: Terdapat empat gambar bangun datar yang dibagi menjadi empat bagian. Gambar 1 adalah segitiga yang dibagi tidak sama besar. Gambar 2 adalah segi enam memanjang yang dibagi oleh garis vertikal dan horizontal tepat di tengah, menghasilkan empat bagian yang kongruen (sama besar dan bentuk). Gambar 3 adalah bangun menyerupai anak panah yang dibagi tidak simetris. Gambar 4 adalah persegi panjang yang dibagi menjadi empat bagian dengan ukuran berbeda.
+Transkripsi visual: Terdapat empat gambar bangun datar yang masing-masing dibagi menjadi empat bagian. Gambar 1 adalah segitiga yang dibagi menjadi empat bagian tidak sama besar. Gambar 2 adalah segi enam memanjang yang dibagi oleh garis vertikal dan horizontal tepat di tengah, menghasilkan empat bagian yang sama besar. Gambar 3 adalah bentuk anak panah yang dibagi menjadi empat bagian tidak sama besar. Gambar 4 adalah kotak berpetak yang dibagi menjadi empat bagian tidak sama besar (kolom kiri lebih lebar).
 ```
 
 </details>
@@ -4735,36 +4595,36 @@ Perhatikan bagian yang diwarnai pada gambar berikut.<br><br>Manakah yang menunju
 | C | A |
 | D | C |
 
-![Gambar sumber soal 31](<../images/kelas2_panduan_siswa_kelas2.pdf-0160-01.png>)
+![Gambar sumber soal 31](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0160-01.png>)
 
 
 Kunci sumber: `A`; status AI: `conflict`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Seperempat didefinisikan sebagai satu bagian dari empat bagian yang sama besar. Gambar D menunjukkan sebuah persegi yang dibagi menjadi empat bagian sama besar dengan satu bagian diarsir, sehingga merepresentasikan seperempat.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0160-01.png. Transkripsi visual: Terdapat 8 gambar bangun datar berlabel A sampai H. Gambar A: segitiga utuh. Gambar B: jajar genjang dibagi 4, 1 bagian diarsir. Gambar C: persegi panjang dibagi 4, 2 bagian diarsir (setengah). Gambar D: persegi dibagi 4, 1 bagian diarsir (seperempat). Gambar E: bintang, ujung atas diarsir. Gambar F: pentagon dibagi 2, 1 bagian diarsir. Gambar G: lingkaran dibagi 4, 2 bagian diarsir. Gambar H: persegi dibagi 4 kolom, 1 kolom diarsir.
+Solusi minimum hasil AI: Seperempat (1/4) didefinisikan sebagai satu bagian dari empat bagian yang sama besar. Gambar D menunjukkan sebuah persegi yang dibagi menjadi empat bagian yang kongruen (sama besar) dengan tepat satu bagian diarsir. Oleh karena itu, D adalah representasi visual yang benar untuk seperempat.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0160-01.png. Transkripsi visual: Terdapat 8 gambar bangun datar yang diberi label A sampai H. Gambar A: segitiga utuh. Gambar B: jajar genjang dibagi 4 bagian sama besar, 1 bagian diarsir. Gambar C: persegi panjang dibagi 4 bagian sama besar, 2 bagian diarsir (setengah). Gambar D: persegi dibagi 4 bagian sama besar, 1 bagian diarsir. Gambar E: bintang dengan satu ujung kecil diarsir. Gambar F: pentagon dibagi 2 bagian sama besar, 1 bagian diarsir. Gambar G: lingkaran dibagi 4 bagian sama besar, 2 bagian diarsir. Gambar H: persegi dibagi 4 bagian sama besar, 1 bagian diarsir (namun bentuknya persegi panjang vertikal).
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9fbf87b391e4ef12c74b1b1a0fd3fe8f8f5398a89327dd5c210a3e3bc807cdcd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `68a6db24c7cad608360009d86197efd8c27e938ed9bdf06c7f893a09a4f6db16`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | concern / conflict | knowing | conceptual | Easy | 2552 |
-| 2 | success | concern / conflict | knowing | conceptual | Easy | 2617 |
-| 3 | success | concern / conflict | knowing | conceptual | Easy | 2677 |
+| 1 | success | concern / conflict | knowing | conceptual | Easy | 3556 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 5027 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 4973 |
 
-Run 1 — solusi: Seperempat berarti satu bagian dari empat bagian yang sama besar. Gambar D menunjukkan persegi yang dibagi menjadi empat bagian sama besar dengan satu bagian diarsir.
-- Domain kognitif `classify/knowing`: Siswa perlu mengenali representasi visual dari pecahan seperempat (1/4) di antara berbagai pilihan gambar.. Bukti: Manakah yang menunjukkan seperempat?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konsep dasar pecahan sebagai bagian dari keseluruhan.. Bukti: Manakah yang menunjukkan seperempat?
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin untuk kelas 2, melibatkan identifikasi visual sederhana dari konsep pecahan dasar.. Bukti: Manakah yang menunjukkan seperempat?
+Run 1 — solusi: Seperempat berarti satu bagian dari empat bagian yang sama besar. Gambar D menunjukkan sebuah bangun yang dibagi menjadi empat bagian sama besar dengan satu bagian diarsir, sehingga D adalah jawaban yang benar.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengenali representasi visual dari pecahan sederhana (seperempat). Ini adalah tugas pengenalan konsep dasar yang sudah dipelajari di kelas 2.. Bukti: Manakah yang menunjukkan seperempat?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sebagai bagian dari keseluruhan yang dibagi sama besar.. Bukti: Manakah yang menunjukkan seperempat?
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya meminta identifikasi visual langsung dari konsep pecahan yang sudah umum. Tidak ada langkah kompleks atau perencanaan yang diperlukan.. Bukti: Manakah yang menunjukkan seperempat?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep pecahan seperempat dan pembagian benda menjadi bagian sama besar. |
+| expectedPrerequisite | Pemahaman dasar tentang pembagian benda menjadi bagian yang sama besar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4774,18 +4634,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan visual pecahan sederhana tanpa perhitungan kompleks. |
+| gradeRelativeRationale | Siswa kelas 2 diharapkan mampu mengenali pecahan sederhana melalui representasi visual. |
 
-Run 2 — solusi: Seperempat berarti satu dari empat bagian yang sama besar. Gambar D menunjukkan persegi yang dibagi menjadi empat bagian sama besar dengan satu bagian diarsir.
-- Domain kognitif `classify/knowing`: Siswa perlu mengenali representasi visual dari konsep pecahan sederhana (seperempat) dan membedakannya dari representasi lain.. Bukti: Manakah yang menunjukkan seperempat?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep pecahan sebagai bagian dari keseluruhan.. Bukti: seperempat dari benda utuh
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pengenalan visual langsung terhadap konsep pecahan dasar yang umum diajarkan di kelas 2.. Bukti: Manakah yang menunjukkan seperempat?
+Run 2 — solusi: Gambar D menunjukkan sebuah persegi yang dibagi menjadi 4 bagian sama besar dengan 1 bagian diarsir, yang merepresentasikan seperempat (1/4).
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali representasi visual pecahan seperempat yang sudah dipelajari.. Bukti: Manakah yang menunjukkan seperempat?
+- Dimensi pengetahuan `classify/conceptual`: Memahami konsep pecahan sebagai bagian dari keseluruhan yang dibagi sama besar.. Bukti: Manakah yang menunjukkan seperempat?
+- Intended difficulty `classify/Easy`: Tugas pengenalan visual langsung untuk konsep dasar pecahan.. Bukti: Manakah yang menunjukkan seperempat?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep bagian dari keseluruhan (pecahan sederhana). |
+| expectedPrerequisite | Konsep dasar pecahan sebagai bagian dari keseluruhan yang sama besar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4795,28 +4655,28 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan visual pecahan sederhana tanpa operasi hitung. |
+| gradeRelativeRationale | Siswa kelas 2 diharapkan mampu mengenali representasi visual pecahan sederhana. |
 
-Run 3 — solusi: Seperempat didefinisikan sebagai satu dari empat bagian yang sama besar. Gambar D adalah persegi yang dibagi menjadi empat bagian sama besar dengan satu bagian diarsir, sehingga merepresentasikan seperempat.
-- Domain kognitif `classify/knowing`: Siswa perlu mengenali representasi visual dari pecahan seperempat dan membedakannya dari representasi lain (seperti setengah atau bagian tidak sama besar). Ini adalah proses pengenalan konsep dasar.. Bukti: Manakah yang menunjukkan seperempat?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang konsep pecahan sederhana (seperempat) sebagai bagian dari keseluruhan.. Bukti: Manakah yang menunjukkan seperempat?
-- Intended difficulty `classify/Easy`: Soal ini termasuk mudah karena hanya meminta identifikasi visual langsung dari konsep dasar pecahan yang umum diajarkan di kelas 2.. Bukti: Manakah yang menunjukkan seperempat?
+Run 3 — solusi: Gambar D menunjukkan sebuah bangun datar (persegi) yang dibagi menjadi 4 bagian sama besar dengan 1 bagian diarsir, yang merepresentasikan seperempat (1/4).
+- Domain kognitif `classify/knowing`: Siswa diminta mengenali representasi visual dari pecahan seperempat.. Bukti: Manakah yang menunjukkan seperempat?
+- Dimensi pengetahuan `classify/conceptual`: Memahami konsep bagian dari keseluruhan (pecahan) secara visual.. Bukti: Manakah yang menunjukkan seperempat?
+- Intended difficulty `classify/Easy`: Tugas ini adalah pengenalan konsep dasar pecahan melalui representasi visual yang umum di kelas 2.. Bukti: Manakah yang menunjukkan seperempat?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep bagian dari keseluruhan (pecahan sederhana). |
+| expectedPrerequisite | Pemahaman dasar tentang pembagian benda menjadi bagian yang sama besar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 1 |
+| relevantInformationUnits | 4 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diperkenalkan dengan konsep pecahan sederhana seperti setengah dan seperempat melalui representasi visual benda konkret atau bangun datar. |
+| gradeRelativeRationale | Mengenali pecahan dari gambar adalah materi standar kelas 2. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -4826,17 +4686,17 @@ Profil difficulty run ini:
 | Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3792`.
-Konten: `concern`; kunci: `conflict`; masalah: Kunci jawaban pada sumber (A) salah. Berdasarkan analisis visual, gambar A adalah segitiga utuh yang tidak dibagi. Gambar D adalah persegi yang dibagi menjadi empat bagian sama besar dengan satu bagian diarsir, yang secara akurat merepresentasikan seperempat (1/4).; Terdapat ketidaksesuaian antara label pilihan jawaban pada soal dengan gambar yang tersedia. Pilihan jawaban A, B, C, D merujuk pada gambar yang berbeda dari label huruf di bawah gambar (A-H)..
-- Domain kognitif `knowing`: Siswa diminta untuk mengenali representasi visual dari konsep pecahan seperempat (1/4) di antara berbagai pilihan gambar.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sebagai bagian dari keseluruhan.
-- Intended difficulty `Easy`: Soal ini bersifat rutin untuk kelas 2, melibatkan identifikasi visual sederhana dari konsep pecahan dasar tanpa perhitungan kompleks.
+Adjudikasi AI: `success`; token `4614`.
+Konten: `valid`; kunci: `conflict`; masalah: Kunci jawaban pada sumber (A) salah. Gambar A adalah segitiga utuh yang tidak dibagi. Gambar D adalah persegi yang dibagi menjadi 4 bagian sama besar dengan 1 bagian diarsir, yang secara tepat merepresentasikan seperempat (1/4)..
+- Domain kognitif `knowing`: Siswa diminta untuk mengenali representasi visual dari konsep pecahan sederhana (seperempat). Ini adalah tugas pengenalan konsep dasar yang sudah dipelajari di kelas 2.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang pecahan sebagai bagian dari keseluruhan yang dibagi menjadi bagian-bagian yang sama besar.
+- Intended difficulty `Easy`: Soal ini tergolong mudah karena hanya meminta identifikasi visual langsung dari konsep pecahan yang sudah umum. Tidak ada langkah kompleks atau perencanaan yang diperlukan.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep pecahan seperempat dan pembagian benda menjadi bagian sama besar. |
+| expectedPrerequisite | Pemahaman dasar tentang pembagian benda menjadi bagian yang sama besar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4846,17 +4706,17 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pengenalan visual pecahan sederhana. |
+| gradeRelativeRationale | Siswa kelas 2 diharapkan mampu mengenali pecahan sederhana melalui representasi visual. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 171/256; truncation: `False`.
+Model membaca representation `metadata`; token input 194/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
-| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Domain kognitif |  | — | — | — | abstain / answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / answer_key_not_verified;minimal_solution_not_verified |
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
 
@@ -4873,7 +4733,7 @@ Pilihan: A. D
 B. E
 C. A
 D. C
-Transkripsi visual: Terdapat 8 gambar bangun datar berlabel A sampai H. Gambar A: segitiga utuh. Gambar B: jajar genjang dibagi 4, 1 bagian diarsir. Gambar C: persegi panjang dibagi 4, 2 bagian diarsir (setengah). Gambar D: persegi dibagi 4, 1 bagian diarsir (seperempat). Gambar E: bintang, ujung atas diarsir. Gambar F: pentagon dibagi 2, 1 bagian diarsir. Gambar G: lingkaran dibagi 4, 2 bagian diarsir. Gambar H: persegi dibagi 4 kolom, 1 kolom diarsir.
+Transkripsi visual: Terdapat 8 gambar bangun datar yang diberi label A sampai H. Gambar A: segitiga utuh. Gambar B: jajar genjang dibagi 4 bagian sama besar, 1 bagian diarsir. Gambar C: persegi panjang dibagi 4 bagian sama besar, 2 bagian diarsir (setengah). Gambar D: persegi dibagi 4 bagian sama besar, 1 bagian diarsir. Gambar E: bintang dengan satu ujung kecil diarsir. Gambar F: pentagon dibagi 2 bagian sama besar, 1 bagian diarsir. Gambar G: lingkaran dibagi 4 bagian sama besar, 2 bagian diarsir. Gambar H: persegi dibagi 4 bagian sama besar, 1 bagian diarsir (namun bentuknya persegi panjang vertikal).
 ```
 
 </details>
@@ -4881,7 +4741,7 @@ Transkripsi visual: Terdapat 8 gambar bangun datar berlabel A sampai H. Gambar A
 ### 5. Keputusan batch
 
 Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `revision_required`.
-Status konten: `concern`. Catatan konten: Kunci jawaban pada sumber (A) salah. Berdasarkan analisis visual, gambar A adalah segitiga utuh yang tidak dibagi. Gambar D adalah persegi yang dibagi menjadi empat bagian sama besar dengan satu bagian diarsir, yang secara akurat merepresentasikan seperempat (1/4).; Terdapat ketidaksesuaian antara label pilihan jawaban pada soal dengan gambar yang tersedia. Pilihan jawaban A, B, C, D merujuk pada gambar yang berbeda dari label huruf di bawah gambar (A-H)..
+Status konten: `valid`. Catatan konten: Kunci jawaban pada sumber (A) salah. Gambar A adalah segitiga utuh yang tidak dibagi. Gambar D adalah persegi yang dibagi menjadi 4 bagian sama besar dengan 1 bagian diarsir, yang secara tepat merepresentasikan seperempat (1/4)..
 Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
@@ -4896,88 +4756,88 @@ Amati setiap gambar berikut.<br><br>Berat 1 pepaya adalah .... manggis.
 | C | 8 manggis |
 | D | 4 manggis |
 
-![Gambar sumber soal 32](<../images/kelas2_panduan_siswa_kelas2.pdf-0188-04.png>)
+![Gambar sumber soal 32](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0188-04.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
 Solusi minimum hasil AI: Dari gambar, 1 pepaya = 2 mangga. Karena 1 mangga = 2 manggis, maka 2 mangga = 2 x 2 manggis = 4 manggis. Jadi, 1 pepaya = 4 manggis.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0188-04.png. Transkripsi visual: Gambar 1: Timbangan seimbang dengan 2 mangga di sisi kiri dan 1 pepaya di sisi kanan. Gambar 2: Timbangan seimbang dengan 1 mangga di sisi kiri dan 2 manggis di sisi kanan. Pertanyaan: 1 pepaya setara dengan berapa manggis.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0188-04.png. Transkripsi visual: Terdapat dua timbangan. Timbangan pertama menunjukkan 2 mangga setara dengan 1 pepaya. Timbangan kedua menunjukkan 1 mangga setara dengan 2 manggis. Pertanyaan meminta untuk menentukan berat 1 pepaya dalam satuan manggis.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3f0c12b584a154cf06dbdbbbf728acf99c03ab8e18764a117e3c96f4c99be8a4`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `210205c6c138d7ffe755dc8796200c623f189e978a0e09f1614d93dc36f9d95f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 2619 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 2605 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 2573 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 3514 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 3507 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 3475 |
 
 Run 1 — solusi: Dari gambar, 1 pepaya = 2 mangga. Karena 1 mangga = 2 manggis, maka 2 mangga = 2 x 2 manggis = 4 manggis. Jadi, 1 pepaya = 4 manggis.
-- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan dua informasi terpisah dari gambar (transitif) untuk menentukan kesetaraan antara pepaya dan manggis. Ini melibatkan penerapan konsep kesetaraan dalam situasi rutin.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis; Berat 1 pepaya adalah .... manggis
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami struktur hubungan kesetaraan (ekuivalensi) antar objek untuk menyelesaikan masalah, yang merupakan pemahaman konseptual.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis
-- Intended difficulty `classify/Medium`: Soal ini memerlukan dua langkah penalaran logis (transitif) yang cukup menantang untuk kelas 2, namun masih dalam konteks rutin.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis
+- Domain kognitif `classify/applying`: Siswa perlu menghubungkan dua informasi (dua timbangan) untuk menyelesaikan masalah. Ini melibatkan penerapan konsep kesetaraan berat dalam konteks rutin, yang dikategorikan sebagai applying.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis; Berat 1 pepaya adalah .... manggis
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan kesetaraan (konsep) dan penggunaan prosedur substitusi sederhana untuk menemukan nilai yang tidak diketahui.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis
+- Intended difficulty `classify/Medium`: Soal ini memerlukan dua langkah penyelesaian (substitusi nilai) yang saling bergantung. Siswa harus memahami hubungan antara pepaya-mangga dan mangga-manggis untuk mendapatkan jawaban akhir. Ini adalah tuntutan yang sesuai untuk kelas 2 namun memerlukan perencanaan langkah yang lebih dari sekadar satu operasi langsung.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang timbangan/kesetaraan dan perkalian dasar (2x2). |
+| expectedPrerequisite | Pemahaman dasar tentang kesetaraan berat dan perkalian sederhana (2x2). |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | True |
 | relevantInformationUnits | 2 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 2, menghubungkan dua fakta kesetaraan (transitif) adalah langkah yang sedikit lebih kompleks daripada sekadar membaca satu timbangan, sehingga dikategorikan Medium. |
+| gradeRelativeRationale | Siswa kelas 2 sudah belajar tentang kesetaraan dan perkalian dasar. Soal ini menuntut integrasi dua informasi visual, yang merupakan tantangan sedang bagi tingkat kelas tersebut. |
 
 Run 2 — solusi: Dari gambar, 1 pepaya = 2 mangga. Karena 1 mangga = 2 manggis, maka 2 mangga = 2 x 2 manggis = 4 manggis. Jadi, 1 pepaya = 4 manggis.
-- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan dua informasi terpisah dari gambar untuk menyimpulkan hubungan antara pepaya dan manggis melalui substitusi nilai.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis; Berat 1 pepaya adalah .... manggis
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang prinsip kesetaraan dalam pengukuran berat dan bagaimana menghubungkan dua rasio yang berbeda.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis
-- Intended difficulty `classify/Medium`: Soal ini memerlukan dua langkah penalaran (transitif) untuk menghubungkan tiga objek berbeda, yang sedikit di atas prosedur satu langkah standar untuk kelas 2.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis
+- Domain kognitif `classify/applying`: Siswa perlu menghubungkan dua informasi terpisah (dua timbangan) untuk menyimpulkan nilai pepaya dalam satuan manggis. Ini melibatkan penerapan konsep kesetaraan dalam konteks rutin.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis; Berat 1 pepaya adalah .... manggis
+- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan prinsip kesetaraan (transitivitas sederhana) untuk menyelesaikan masalah pengukuran.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis
+- Intended difficulty `classify/Medium`: Soal memerlukan dua langkah logis: mengidentifikasi hubungan 1 pepaya dengan mangga, lalu mengganti mangga dengan manggis. Ini adalah tugas rutin bagi kelas 2 yang sudah belajar perkalian dasar atau penjumlahan berulang.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis; Berat 1 pepaya adalah .... manggis
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang timbangan sebagai alat ukur berat dan konsep kesetaraan (ekuivalensi). |
+| expectedPrerequisite | Pemahaman dasar tentang kesetaraan timbangan dan konsep perkalian/penjumlahan berulang sederhana. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | True |
 | relevantInformationUnits | 2 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 2, menghubungkan dua fakta kesetaraan (transitivitas) adalah tantangan kognitif yang sesuai untuk tingkat menengah, karena memerlukan lebih dari sekadar membaca satu timbangan. |
+| gradeRelativeRationale | Siswa kelas 2 diharapkan mampu melakukan substitusi sederhana dalam konteks visual. Memerlukan dua langkah (mengganti 2 mangga dengan 2x2 manggis) yang saling terkait. |
 
 Run 3 — solusi: Dari gambar, 1 pepaya = 2 mangga. Karena 1 mangga = 2 manggis, maka 2 mangga = 2 x 2 manggis = 4 manggis. Jadi, 1 pepaya = 4 manggis.
-- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan dua informasi dari dua gambar berbeda untuk menyimpulkan hubungan antara pepaya dan manggis melalui substitusi nilai.. Bukti: 1 pepaya = 2 mangga; 1 mangga = 2 manggis; 1 pepaya = 4 manggis
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang kesetaraan berat dan bagaimana hubungan antar objek dapat ditransitifkan.. Bukti: Berat 1 pepaya adalah .... manggis
-- Intended difficulty `classify/Medium`: Soal ini menuntut siswa melakukan dua langkah penalaran (substitusi) yang melibatkan hubungan proporsional sederhana, yang sesuai untuk tingkat kelas 2.. Bukti: 2 mangga = 1 pepaya; 1 mangga = 2 manggis
+- Domain kognitif `classify/applying`: Siswa perlu menghubungkan dua informasi (dua timbangan) untuk menyelesaikan masalah. Ini melibatkan penerapan konsep kesetaraan dalam konteks rutin, yang masuk dalam kategori applying.. Bukti: 2 mangga = 1 pepaya; 1 mangga = 2 manggis; Berat 1 pepaya adalah .... manggis
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang prinsip kesetaraan dan substitusi sederhana antar objek, yang merupakan pengetahuan konseptual.. Bukti: 2 mangga = 1 pepaya; 1 mangga = 2 manggis
+- Intended difficulty `classify/Medium`: Soal ini memerlukan dua langkah: mengidentifikasi hubungan 1 pepaya dengan mangga, lalu mengonversi mangga ke manggis. Bagi kelas 2, ini adalah tugas Medium karena memerlukan integrasi dua informasi yang saling terkait (transitif) meskipun prosedurnya sederhana.. Bukti: 2 mangga = 1 pepaya; 1 mangga = 2 manggis
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang timbangan/kesetaraan berat dan perkalian dasar (2x2). |
+| expectedPrerequisite | Pemahaman dasar tentang kesetaraan berat dan perkalian sederhana (2x2). |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | True |
 | relevantInformationUnits | 2 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 2, menghubungkan dua informasi visual untuk mendapatkan jawaban akhir adalah tugas yang menantang namun sesuai dengan kurikulum pengukuran. |
+| gradeRelativeRationale | Siswa kelas 2 sudah belajar tentang perbandingan berat sederhana. Soal ini menuntut integrasi dua langkah kesetaraan yang merupakan tantangan sedang untuk tingkat kelas tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -4989,21 +4849,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 108/256; truncation: `False`.
+Model membaca representation `metadata`; token input 98/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000739; applying=0.999261; reasoning=0.000000 | applying | 0.999261 | 0.005519 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.075588; conceptual=0.893483; procedural=0.030929; metacognitive=0.000000 | conceptual | 0.893483 | 0.290953 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.844636; Medium=0.151620; Hard=0.003744 | Easy | 0.844636 | 0.409198 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000012; applying=0.999988; reasoning=0.000000 | applying | 0.999988 | 0.000137 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.019042; conceptual=0.965753; procedural=0.015205; metacognitive=0.000000 | conceptual | 0.965753 | 0.124601 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.828640; Medium=0.167167; Hard=0.004193 | Easy | 0.828640 | 0.434852 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999261; −Σp ln(p) = 0.006064; H = 0.006064/ln(3) = 0.005519; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.893483; −Σp ln(p) = 0.403346; H = 0.403346/ln(4) = 0.290953; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999988; −Σp ln(p) = 0.000151; H = 0.000151/ln(3) = 0.000137; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.844636; −Σp ln(p) = 0.449550; H = 0.449550/ln(3) = 0.409198; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.965753; −Σp ln(p) = 0.172733; H = 0.172733/ln(4) = 0.124601; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.828640; −Σp ln(p) = 0.477733; H = 0.477733/ln(3) = 0.434852; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -5021,7 +4881,7 @@ Pilihan: A. 3 manggis
 B. 2 manggis
 C. 8 manggis
 D. 4 manggis
-Transkripsi visual: Gambar 1: Timbangan seimbang dengan 2 mangga di sisi kiri dan 1 pepaya di sisi kanan. Gambar 2: Timbangan seimbang dengan 1 mangga di sisi kiri dan 2 manggis di sisi kanan. Pertanyaan: 1 pepaya setara dengan berapa manggis.
+Transkripsi visual: Terdapat dua timbangan. Timbangan pertama menunjukkan 2 mangga setara dengan 1 pepaya. Timbangan kedua menunjukkan 1 mangga setara dengan 2 manggis. Pertanyaan meminta untuk menentukan berat 1 pepaya dalam satuan manggis.
 ```
 
 </details>
@@ -5044,36 +4904,36 @@ Perhatikan gambar di bawah ini.<br><br>Berat 1 buah jeruk sama dengan .... strob
 | C | 1 stroberi |
 | D | 3 stroberi |
 
-![Gambar sumber soal 33](<../images/kelas2_panduan_siswa_kelas2.pdf-0200-01.png>)
+![Gambar sumber soal 33](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0200-01.png>)
 
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Pada gambar kiri, 1 jeruk berada di satu sisi timbangan dan 2 stroberi di sisi lainnya dalam posisi seimbang, sehingga berat 1 jeruk sama dengan 2 stroberi.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0200-01.png. Transkripsi visual: Terdapat dua gambar timbangan. Gambar kiri menunjukkan 1 jeruk seimbang dengan 2 stroberi. Gambar kanan menunjukkan 2 jeruk seimbang dengan 4 stroberi.
+Solusi minimum hasil AI: Berdasarkan gambar pertama, 1 buah jeruk seimbang dengan 2 buah stroberi. Jadi, berat 1 buah jeruk sama dengan 2 stroberi.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0200-01.png. Transkripsi visual: Terdapat dua gambar timbangan yang seimbang. Gambar pertama (kiri) menunjukkan 1 buah jeruk di piring kiri dan 2 buah stroberi di piring kanan. Gambar kedua (kanan) menunjukkan 2 buah jeruk di piring kiri dan 4 buah stroberi di piring kanan.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3e6632b981b4e527a06f27c494363a3451fd915782ab3f8b4cd9d46c180b74da`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d0afee982c64386feaf868f72b13159ec0811686efb147c34788d276287f9a8b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 2484 |
-| 2 | success | valid / verified | knowing | factual | Easy | 2484 |
-| 3 | success | valid / verified | knowing | factual | Easy | 2475 |
+| 1 | success | valid / verified | knowing | factual | Easy | 3384 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3361 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3377 |
 
-Run 1 — solusi: Pada gambar kiri, 1 jeruk berada di satu sisi timbangan dan 2 stroberi di sisi lainnya dalam posisi seimbang, sehingga berat 1 jeruk sama dengan 2 stroberi.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu membaca informasi visual secara langsung dari timbangan untuk menentukan kesetaraan berat, yang merupakan proses pengenalan fakta visual.. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.; Gambar kiri menunjukkan 1 jeruk seimbang dengan 2 stroberi.
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang konsep dasar pengukuran berat melalui perbandingan visual (fakta bahwa benda yang seimbang memiliki berat yang sama).. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung, hanya memerlukan observasi visual sederhana pada satu timbangan tanpa perhitungan atau manipulasi data.. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.; Gambar kiri menunjukkan 1 jeruk seimbang dengan 2 stroberi.
+Run 1 — solusi: Berdasarkan gambar pertama, 1 buah jeruk berada pada satu sisi timbangan yang seimbang dengan 2 buah stroberi di sisi lainnya. Jadi, berat 1 buah jeruk sama dengan 2 stroberi.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk membaca informasi dari representasi visual (timbangan) dan melakukan pencocokan langsung antara objek di satu sisi dengan objek di sisi lainnya. Ini adalah tugas membaca data visual sederhana.. Bukti: Perhatikan gambar di bawah ini.; Berat 1 buah jeruk sama dengan .... stroberi.
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman faktual tentang konsep kesetaraan berat melalui representasi visual timbangan sederhana.. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena siswa hanya perlu mengamati gambar pertama yang secara eksplisit menunjukkan kesetaraan 1 jeruk dengan 2 stroberi. Tidak ada langkah tambahan atau manipulasi yang diperlukan.. Bukti: Perhatikan gambar di bawah ini.; Berat 1 buah jeruk sama dengan .... stroberi.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membaca timbangan sederhana dan menghitung jumlah benda. |
+| expectedPrerequisite | Kemampuan membaca gambar timbangan sederhana dan menghitung jumlah objek. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5082,40 +4942,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menggunakan representasi visual konkret untuk konsep dasar pengukuran berat. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 2, membaca timbangan sederhana adalah materi dasar yang familiar. Soal ini tidak menuntut perencanaan atau integrasi langkah, sehingga dikategorikan Easy. |
 
-Run 2 — solusi: Pada gambar pertama, timbangan menunjukkan 1 jeruk setara dengan 2 stroberi.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu membaca informasi visual secara langsung dari timbangan pertama tanpa perlu melakukan perhitungan atau penalaran kompleks.. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.; timbangan pertama menunjukkan 1 buah jeruk di sisi kiri seimbang dengan 2 buah stroberi
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman faktual tentang konsep kesetaraan berat sederhana yang ditunjukkan melalui alat ukur (timbangan).. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan observasi visual langsung terhadap satu timbangan.. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.; timbangan pertama menunjukkan 1 buah jeruk di sisi kiri seimbang dengan 2 buah stroberi
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan membaca timbangan sederhana dan menghitung jumlah objek. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menggunakan representasi visual konkret untuk konsep pengukuran dasar. |
-
-Run 3 — solusi: Pada timbangan kiri, 1 jeruk berada di sisi kiri dan 2 stroberi berada di sisi kanan dalam posisi seimbang, sehingga 1 jeruk = 2 stroberi.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu membaca informasi langsung dari representasi visual timbangan yang seimbang tanpa perlu melakukan perhitungan atau strategi kompleks.. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.; timbangan kiri menunjukkan 1 jeruk setara dengan 2 stroberi
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman faktual tentang konsep kesetaraan berat melalui alat ukur timbangan sederhana.. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung, menggunakan representasi visual yang umum, dan hanya memerlukan satu langkah observasi sederhana.. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.; timbangan kiri menunjukkan 1 jeruk setara dengan 2 stroberi
+Run 2 — solusi: Berdasarkan gambar kiri, 1 jeruk seimbang dengan 2 stroberi. Maka, berat 1 jeruk sama dengan 2 stroberi.
+- Domain kognitif `classify/knowing`: Siswa diminta membaca informasi dari representasi visual (timbangan) untuk menentukan kesetaraan berat. Ini adalah prosedur langsung membaca data dari gambar yang diberikan.. Bukti: Perhatikan gambar di bawah ini.; Berat 1 buah jeruk sama dengan .... stroberi.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konsep dasar pengukuran berat melalui perbandingan visual (kesetaraan).. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena siswa hanya perlu mengamati gambar kiri secara langsung tanpa perlu melakukan perhitungan atau manipulasi data. Informasi yang dibutuhkan tersedia secara eksplisit.. Bukti: Perhatikan gambar di bawah ini.; Berat 1 buah jeruk sama dengan .... stroberi.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membaca timbangan sederhana dan menghitung jumlah objek. |
+| expectedPrerequisite | Memahami konsep dasar timbangan/kesetaraan berat. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5124,34 +4963,77 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menggunakan objek konkret dan visualisasi timbangan yang merupakan materi dasar pengukuran berat. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan konsep perbandingan sederhana melalui gambar. Soal tidak menuntut operasi hitung atau penalaran kompleks. |
+
+Run 3 — solusi: Berdasarkan gambar pertama, 1 jeruk seimbang dengan 2 stroberi. Maka, berat 1 jeruk sama dengan 2 stroberi.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu membaca informasi visual secara langsung dari gambar pertama yang menunjukkan kesetaraan berat antara 1 jeruk dan 2 stroberi. Tidak ada prosedur kompleks atau penalaran yang diperlukan.. Bukti: Perhatikan gambar di bawah ini.; Berat 1 buah jeruk sama dengan .... stroberi.
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman faktual tentang konsep dasar pengukuran berat menggunakan timbangan sederhana (kesetaraan berat).. Bukti: Berat 1 buah jeruk sama dengan .... stroberi.
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena siswa hanya perlu mengamati gambar pertama secara langsung untuk mendapatkan jawaban. Tidak ada langkah tambahan atau manipulasi yang diperlukan.. Bukti: Perhatikan gambar di bawah ini.; Berat 1 buah jeruk sama dengan .... stroberi.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membaca representasi visual timbangan sederhana. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk kelas 2, membaca timbangan sederhana adalah materi dasar yang familiar. Soal ini tidak menuntut perencanaan atau integrasi, hanya observasi langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
-| Dimensi pengetahuan | {"factual": 3} | unanimous_3_0 / unanimous | factual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"factual": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | factual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4679`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa hanya perlu membaca informasi visual secara langsung dari gambar pertama yang menunjukkan kesetaraan berat antara 1 jeruk dan 2 stroberi. Tidak ada prosedur kompleks atau penalaran yang diperlukan.
+- Dimensi pengetahuan `factual`: Soal ini menguji pemahaman faktual tentang konsep kesetaraan berat melalui representasi visual timbangan sederhana.
+- Intended difficulty `Easy`: Soal ini sangat mudah karena siswa hanya perlu mengamati gambar pertama yang secara eksplisit menunjukkan kesetaraan 1 jeruk dengan 2 stroberi. Tidak ada langkah tambahan atau manipulasi yang diperlukan.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membaca gambar timbangan sederhana dan menghitung jumlah objek. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 2, membaca timbangan sederhana adalah materi dasar yang familiar. Soal ini tidak menuntut perencanaan atau integrasi langkah, sehingga dikategorikan Easy. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 91/256; truncation: `False`.
+Model membaca representation `metadata`; token input 113/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.233716; applying=0.766284; reasoning=0.000000 | applying | 0.766284 | 0.494922 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.034276; conceptual=0.959046; procedural=0.006678; metacognitive=0.000000 | conceptual | 0.959046 | 0.136462 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.799905; Medium=0.194858; Hard=0.005238 | Easy | 0.799905 | 0.477680 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.001883; applying=0.998117; reasoning=0.000000 | applying | 0.998117 | 0.012467 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.043232; conceptual=0.951362; procedural=0.005406; metacognitive=0.000000 | conceptual | 0.951362 | 0.152534 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.826967; Medium=0.168293; Hard=0.004741 | Easy | 0.826967 | 0.439093 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.766284; −Σp ln(p) = 0.543728; H = 0.543728/ln(3) = 0.494922; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.959046; −Σp ln(p) = 0.189177; H = 0.189177/ln(4) = 0.136462; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.998117; −Σp ln(p) = 0.013697; H = 0.013697/ln(3) = 0.012467; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.799905; −Σp ln(p) = 0.524785; H = 0.524785/ln(3) = 0.477680; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.951362; −Σp ln(p) = 0.211457; H = 0.211457/ln(4) = 0.152534; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.826967; −Σp ln(p) = 0.482393; H = 0.482393/ln(3) = 0.439093; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -5169,7 +5051,7 @@ Pilihan: A. 4 stroberi
 B. 2 stroberi
 C. 1 stroberi
 D. 3 stroberi
-Transkripsi visual: Terdapat dua gambar timbangan. Gambar kiri menunjukkan 1 jeruk seimbang dengan 2 stroberi. Gambar kanan menunjukkan 2 jeruk seimbang dengan 4 stroberi.
+Transkripsi visual: Terdapat dua gambar timbangan yang seimbang. Gambar pertama (kiri) menunjukkan 1 buah jeruk di piring kiri dan 2 buah stroberi di piring kanan. Gambar kedua (kanan) menunjukkan 2 buah jeruk di piring kiri dan 4 buah stroberi di piring kanan.
 ```
 
 </details>
@@ -5192,136 +5074,114 @@ Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).
 | C | bermain bola, makan siang, menyikat gigi, bangun tidur |
 | D | bangun tidur, makan siang, menyikat gigi, bermain bola |
 
-![Gambar sumber soal 34](<../images/kelas2_panduan_siswa_kelas2.pdf-0198-04.png>)
+![Gambar sumber soal 34](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0198-04.png>)
 
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Mengurutkan waktu pada jam: 06.00 (C: bangun tidur) -> 08.00 (D: menyikat gigi) -> 12.00 (B: makan siang) -> 16.00 (A: bermain bola). Urutan yang benar adalah C, D, B, A.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0198-04.png. Transkripsi visual: Terdapat empat gambar kegiatan dengan jam analog: Gambar A (bermain bola, jam 04.00), Gambar B (makan siang, jam 12.00), Gambar C (bangun tidur, jam 06.00), Gambar D (menyikat gigi, jam 08.00).
+Solusi minimum hasil AI: Mengurutkan waktu pada jam: 06.00 (bangun tidur) -> 08.00 (menyikat gigi) -> 12.00 (makan siang) -> 16.00 (bermain bola). Urutan yang benar adalah C, D, B, A.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0198-04.png. Transkripsi visual: Terdapat empat gambar kegiatan dengan jam analog: Gambar C (bangun tidur, jam 6:00), Gambar D (menyikat gigi, jam 8:00), Gambar B (makan siang, jam 12:00), dan Gambar A (bermain bola, jam 4:00). Urutan waktu yang logis dari pagi ke sore/malam adalah 6:00, 8:00, 12:00, lalu 4:00.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c3fc214ef4d91f23f183221431a5bc6f8fa1edae391a2e4b04a840677beaed1e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3e82a95d774f7b5989c9b2a5d95a893966d49ac498ca6b853dd4adb080cf052d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | reasoning | conceptual | Easy | 2579 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2586 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2571 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 3511 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 3639 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 3490 |
 
-Run 1 — solusi: Urutan kronologis berdasarkan waktu: bangun tidur (pukul 06.00) -> menyikat gigi (pukul 08.00) -> makan siang (pukul 12.00) -> bermain bola (pukul 16.00). Urutan ini sesuai dengan opsi B.
-- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan informasi visual dari jam dan konteks kegiatan sehari-hari untuk menyusun urutan kronologis, yang merupakan proses penalaran sederhana.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan waktu dalam kehidupan sehari-hari dan bagaimana waktu tersebut direpresentasikan dalam jam analog.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena menggunakan konteks kegiatan sehari-hari yang sangat familiar bagi siswa kelas 2. Prosedur pengurutannya langsung dan tidak memerlukan strategi kompleks.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam)
+Run 1 — solusi: Mengurutkan waktu pada jam: 06.00 (bangun tidur) -> 08.00 (menyikat gigi) -> 12.00 (makan siang) -> 16.00 (bermain bola). Urutan yang benar adalah C, D, B, A.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi waktu pada jam analog dan mengurutkan kegiatan berdasarkan kronologi waktu yang familiar. Ini adalah penerapan prosedur membaca jam dan pemahaman urutan waktu dalam konteks rutin.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan waktu dalam sehari dan kemampuan membaca jam analog sebagai alat bantu.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).
+- Intended difficulty `classify/Easy`: Soal ini termasuk mudah karena siswa hanya perlu membaca waktu pada jam analog yang menunjukkan angka bulat dan mengurutkannya berdasarkan rutinitas harian yang sangat umum.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membaca jam analog sederhana dan pemahaman urutan kegiatan harian. |
-| dependentSteps | 4 |
+| expectedPrerequisite | Mampu membaca jam analog (angka bulat) dan memahami urutan waktu harian (pagi, siang, sore). |
+| dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | True |
 | relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menghubungkan konsep waktu dengan rutinitas harian yang umum. |
+| gradeRelativeRationale | Siswa kelas 2 sudah mempelajari pembacaan jam analog sederhana dan urutan kegiatan sehari-hari. Tugas mengurutkan empat gambar berdasarkan waktu adalah tugas rutin yang sesuai dengan tingkat perkembangan kognitif mereka. |
 
-Run 2 — solusi: Mengurutkan kegiatan berdasarkan waktu pada jam: 06.00 (bangun tidur) -> 08.00 (menyikat gigi) -> 12.00 (makan siang) -> 16.00 (bermain bola). Urutan yang benar adalah C, D, B, A (opsi B).
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi urutan kronologis kegiatan sehari-hari berdasarkan penunjuk waktu (jam) yang diberikan, yang merupakan penerapan konsep waktu dalam situasi rutin.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara waktu (jam) dengan urutan kegiatan sehari-hari, yang merupakan pengetahuan konseptual.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena menggunakan konteks kegiatan sehari-hari yang sangat familiar bagi siswa kelas 2, dengan penunjuk waktu yang jelas pada setiap gambar.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam)
+Run 2 — solusi: Mengurutkan kegiatan berdasarkan waktu yang ditunjukkan jam: bangun tidur (06.00) -> menyikat gigi (08.00) -> makan siang (12.00) -> bermain bola (16.00). Urutan ini sesuai dengan pilihan B.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi waktu pada jam analog dan mengurutkan kegiatan berdasarkan urutan kronologis harian yang umum. Ini adalah penerapan prosedur membaca jam dan pemahaman urutan waktu yang rutin.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).; jam analog: Gambar C (anak bangun tidur, jam 6:00), Gambar D (anak menyikat gigi, jam 8:00), Gambar B (anak makan siang, jam 12:00), dan Gambar A (anak bermain bola, jam 4:00)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan waktu dalam sehari dan kemampuan membaca jam analog sebagai alat bantu.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 2. Siswa hanya perlu membaca waktu pada empat jam analog yang sederhana dan mengurutkannya. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).; jam analog: Gambar C (anak bangun tidur, jam 6:00), Gambar D (anak menyikat gigi, jam 8:00), Gambar B (anak makan siang, jam 12:00), dan Gambar A (anak bermain bola, jam 4:00)
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Mampu membaca jam analog sederhana dan memahami urutan waktu dalam sehari (pagi, siang, sore). |
+| expectedPrerequisite | Kemampuan membaca jam analog (jam tepat) dan pemahaman urutan kegiatan sehari-hari. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
-| representationTransfer | False |
+| representationTransfer | True |
 | relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena mengaitkan pembacaan jam dasar dengan rutinitas harian yang umum. |
+| gradeRelativeRationale | Membaca jam dan mengurutkan kegiatan adalah materi standar kelas 2. Tugas ini langsung dan tidak memerlukan perencanaan kompleks. |
 
-Run 3 — solusi: Mengurutkan kegiatan berdasarkan waktu jam: 06.00 (bangun tidur) -> 08.00 (menyikat gigi) -> 12.00 (makan siang) -> 04.00 sore (bermain bola). Urutan yang benar adalah C, D, B, A.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan pemahaman tentang urutan waktu harian dan membaca jam analog sederhana untuk mengurutkan kejadian, yang merupakan penerapan konsep dalam situasi rutin.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan waktu dalam kehidupan sehari-hari yang dikaitkan dengan representasi jam.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena menggunakan konteks kegiatan sehari-hari yang sangat familiar bagi siswa kelas 2, dengan langkah-langkah yang jelas dan langsung.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).
+Run 3 — solusi: Mengurutkan kegiatan berdasarkan waktu pada jam: bangun tidur (06.00) -> menyikat gigi (08.00) -> makan siang (12.00) -> bermain bola (16.00). Urutan yang benar adalah C, D, B, A.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengurutkan kejadian berdasarkan waktu yang ditunjukkan pada jam analog. Ini adalah penerapan prosedur membaca jam dan memahami urutan waktu dalam konteks rutin sehari-hari.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang urutan waktu (pagi ke malam) dan kemampuan membaca jam analog sebagai representasi waktu.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 2. Siswa hanya perlu membaca waktu pada empat jam analog dan mengurutkannya secara kronologis. Tidak ada kendala yang berinteraksi atau perencanaan kompleks yang diperlukan.. Bukti: Urutkan gambar sesuai dengan waktu kegiatan (dari pagi ke malam).
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membaca jam analog sederhana dan memahami urutan kegiatan harian. |
-| dependentSteps | 4 |
+| expectedPrerequisite | Mampu membaca jam analog (pukul tepat) dan memahami urutan waktu sehari-hari. |
+| dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | True |
 | relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena mengaitkan konsep waktu dengan rutinitas harian yang konkret. |
+| gradeRelativeRationale | Mengurutkan kegiatan berdasarkan waktu adalah materi standar kelas 2. Tugas ini langsung dan tidak memerlukan penalaran tingkat tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"reasoning": 1, "applying": 2} | majority_2_of_3 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3948`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa menerapkan pemahaman tentang urutan waktu harian dan membaca jam analog sederhana untuk mengurutkan kejadian, yang merupakan penerapan konsep dalam situasi rutin.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara waktu (jam) dengan urutan kegiatan sehari-hari.
-- Intended difficulty `Easy`: Soal ini tergolong mudah karena menggunakan konteks kegiatan sehari-hari yang sangat familiar bagi siswa kelas 2, dengan penunjuk waktu yang jelas pada setiap gambar.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mampu membaca jam analog sederhana dan memahami urutan waktu dalam sehari. |
-| dependentSteps | 4 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena mengaitkan pembacaan jam dasar dengan rutinitas harian yang umum. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 159/256; truncation: `False`.
+Model membaca representation `metadata`; token input 188/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.002368; applying=0.997632; reasoning=0.000000 | applying | 0.997632 | 0.015182 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.024236; conceptual=0.973505; procedural=0.002259; metacognitive=0.000000 | conceptual | 0.973505 | 0.093820 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.686724; Medium=0.306683; Hard=0.006593 | Easy | 0.686724 | 0.595001 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000325; applying=0.999675; reasoning=0.000000 | applying | 0.999675 | 0.002672 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.024618; conceptual=0.972893; procedural=0.002488; metacognitive=0.000000 | conceptual | 0.972893 | 0.095831 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.647396; Medium=0.344327; Hard=0.008277 | Easy | 0.647396 | 0.626496 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.997632; −Σp ln(p) = 0.016679; H = 0.016679/ln(3) = 0.015182; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.973505; −Σp ln(p) = 0.130062; H = 0.130062/ln(4) = 0.093820; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999675; −Σp ln(p) = 0.002936; H = 0.002936/ln(3) = 0.002672; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.686724; −Σp ln(p) = 0.653676; H = 0.653676/ln(3) = 0.595001; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.972893; −Σp ln(p) = 0.132849; H = 0.132849/ln(4) = 0.095831; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.647396; −Σp ln(p) = 0.688276; H = 0.688276/ln(3) = 0.626496; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -5337,7 +5197,7 @@ Pilihan: A. menyikat gigi, bangun tidur, makan siang, bermain bola
 B. bangun tidur, menyikat gigi, makan siang, bermain bola
 C. bermain bola, makan siang, menyikat gigi, bangun tidur
 D. bangun tidur, makan siang, menyikat gigi, bermain bola
-Transkripsi visual: Terdapat empat gambar kegiatan dengan jam analog: Gambar A (bermain bola, jam 04.00), Gambar B (makan siang, jam 12.00), Gambar C (bangun tidur, jam 06.00), Gambar D (menyikat gigi, jam 08.00).
+Transkripsi visual: Terdapat empat gambar kegiatan dengan jam analog: Gambar C (bangun tidur, jam 6:00), Gambar D (menyikat gigi, jam 8:00), Gambar B (makan siang, jam 12:00), dan Gambar A (bermain bola, jam 4:00). Urutan waktu yang logis dari pagi ke sore/malam adalah 6:00, 8:00, 12:00, lalu 4:00.
 ```
 
 </details>
@@ -5361,32 +5221,32 @@ Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
 | D | Menyisir rambut |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Bermain bola membutuhkan waktu lebih lama (menit/jam) dibandingkan mencuci tangan (detik).
+Solusi minimum hasil AI: Membandingkan durasi dua kegiatan: mencuci tangan (beberapa detik/menit) dan bermain bola (biasanya lebih lama). Bermain bola lebih lama.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `26ae878e7d015a21a6f104d1b42787b9933459662bbbb15770f625379d6226dc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e1c401e36c872a0bb939bb04093c62bd16aded2c86cf2104f7f7612ff7a92293`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 1321 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 1292 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 1326 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2176 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2181 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2181 |
 
-Run 1 — solusi: Bermain bola membutuhkan waktu lebih lama (menit/jam) dibandingkan mencuci tangan (detik).
-- Domain kognitif `classify/applying`: Siswa perlu membandingkan durasi dua kegiatan sehari-hari yang familiar. Ini termasuk dalam kategori applying karena menerapkan pemahaman konsep durasi waktu pada situasi rutin.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep durasi waktu (lama/sebentar) dalam konteks kegiatan sehari-hari, yang merupakan pengetahuan konseptual.. Bukti: Kegiatan manakah yang lebih lama
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2, melibatkan perbandingan durasi dua aktivitas yang sangat kontras dalam kehidupan sehari-hari.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
+Run 1 — solusi: Membandingkan durasi dua kegiatan: mencuci tangan (beberapa detik/menit) dan bermain bola (biasanya lebih lama). Bermain bola lebih lama.
+- Domain kognitif `classify/applying`: Siswa diminta untuk membandingkan durasi dua kegiatan sehari-hari yang familiar. Ini adalah penerapan konsep durasi waktu pada konteks rutin.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang durasi waktu (lebih lama/lebih singkat) dalam konteks kegiatan sehari-hari.. Bukti: Kegiatan manakah yang lebih lama
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana bagi siswa kelas 2. Perbandingan durasi antara kegiatan yang sangat singkat (mencuci tangan) dan kegiatan yang relatif lama (bermain bola) adalah pengetahuan umum yang rutin dan langsung.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep waktu (lama dan sebentar) dalam aktivitas sehari-hari. |
+| expectedPrerequisite | Pemahaman dasar tentang konsep waktu dan durasi kegiatan sehari-hari. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5395,19 +5255,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah memiliki pengalaman empiris yang cukup untuk membedakan durasi aktivitas fisik seperti mencuci tangan dan bermain bola tanpa perlu perhitungan formal. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Membandingkan durasi kegiatan adalah materi dasar kelas 2. Tidak ada langkah kompleks atau kendala yang harus dipecahkan. |
 
-Run 2 — solusi: Bermain bola membutuhkan waktu lebih lama (menit/jam) dibandingkan mencuci tangan (detik).
-- Domain kognitif `classify/applying`: Siswa perlu membandingkan durasi dua kegiatan sehari-hari berdasarkan pengetahuan umum tentang waktu, yang merupakan proses penerapan konsep durasi.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang durasi waktu relatif antara dua aktivitas.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2, melibatkan perbandingan durasi kegiatan yang sangat familiar dalam kehidupan sehari-hari tanpa perhitungan matematis yang rumit.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
+Run 2 — solusi: Bermain bola membutuhkan waktu yang lebih lama (bisa hitungan menit atau jam) dibandingkan mencuci tangan yang hanya membutuhkan waktu beberapa detik.
+- Domain kognitif `classify/applying`: Siswa diminta untuk membandingkan durasi dua kegiatan sehari-hari yang sudah familiar. Ini adalah penerapan konsep durasi waktu pada konteks rutin.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang durasi waktu (lama vs sebentar) dalam konteks aktivitas sehari-hari.. Bukti: Kegiatan manakah yang lebih lama
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana bagi siswa kelas 2. Perbandingan durasi antara dua aktivitas yang sangat kontras (detik vs menit/jam) adalah pengetahuan umum yang sudah dipelajari di tingkat dasar. Tidak ada langkah rumit atau kendala yang saling berinteraksi.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang durasi waktu (lama/sebentar) dalam konteks aktivitas sehari-hari. |
+| expectedPrerequisite | Pemahaman dasar tentang konsep waktu (lama dan sebentar) dalam kehidupan sehari-hari. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5416,19 +5276,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah sangat familiar dengan durasi aktivitas fisik seperti bermain dan aktivitas kebersihan diri, sehingga soal ini termasuk kategori mudah. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Membandingkan durasi dua kegiatan yang sangat berbeda durasinya adalah materi yang sangat mendasar dan familiar bagi siswa kelas 2. |
 
-Run 3 — solusi: Bermain bola membutuhkan waktu lebih lama (menit/jam) dibandingkan mencuci tangan (detik).
-- Domain kognitif `classify/applying`: Siswa perlu membandingkan durasi dua kegiatan sehari-hari yang sudah dikenal, yang merupakan proses menerapkan pemahaman konsep waktu dalam situasi rutin.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang durasi waktu (lama vs sebentar) dalam konteks kegiatan sehari-hari.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2, melibatkan perbandingan durasi dua aktivitas yang sangat kontras (detik vs menit/jam) tanpa memerlukan perhitungan matematis.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
+Run 3 — solusi: Membandingkan durasi dua kegiatan: mencuci tangan (sebentar) dan bermain bola (lama). Bermain bola membutuhkan waktu lebih lama.
+- Domain kognitif `classify/applying`: Siswa diminta untuk membandingkan durasi dua kegiatan yang sudah dikenal dalam kehidupan sehari-hari. Ini adalah penerapan konsep durasi waktu yang sederhana.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang durasi waktu (lama vs sebentar) melalui perbandingan dua aktivitas rutin.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana bagi siswa kelas 2 karena membandingkan dua aktivitas dengan perbedaan durasi yang sangat kontras dan familiar.. Bukti: Kegiatan manakah yang lebih lama, mencuci tangan atau bermain bola?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep durasi waktu (lama dan sebentar) dalam kehidupan sehari-hari. |
+| expectedPrerequisite | Pemahaman dasar tentang konsep waktu (lama dan sebentar) dalam kehidupan sehari-hari. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5437,8 +5297,8 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah memiliki pengalaman empiris yang cukup untuk membedakan durasi aktivitas fisik sederhana seperti mencuci tangan dan bermain bola. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan durasi aktivitas sehari-hari. Membandingkan 'mencuci tangan' dan 'bermain bola' adalah tugas kognitif yang sangat mendasar dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -5503,36 +5363,36 @@ Hitunglah banyak benda berikut. Contoh: 5 puluhan = 50 Jadi, ada 50 buah rambuta
 | C | 6 satuan = 6 (6 buah jeruk) |
 | D | 5 puluhan = 50 (50 buah jeruk) |
 
-![Gambar sumber soal 36](<../images/kelas2_panduan_siswa_kelas2.pdf-0215-04.png>)
+![Gambar sumber soal 36](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0215-04.png>)
 
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Terdapat 6 keranjang, masing-masing berisi 10 jeruk. Jadi, 6 puluhan = 60.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0215-04.png. Transkripsi visual: Terdapat 6 keranjang jeruk yang disusun berjajar. Setiap keranjang berisi 10 buah jeruk.
+Solusi minimum hasil AI: Terdapat 6 keranjang jeruk. Setiap keranjang mewakili 1 puluhan. Jadi, 6 puluhan = 60. Total ada 60 buah jeruk.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0215-04.png. Transkripsi visual: The image displays 6 baskets, each containing a group of oranges. The text below the image asks the student to complete the sentence: '____ puluhan = ____. Jadi, ada ____ buah jeruk.' based on the provided example.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `194f28fad83ae3a184b3f13ace898326ec68ba62b1c1fbb73fb393ed4dae64ff`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `110c7d275e455d182b8ad2065a0c3ae5756cbd7677f46116720599a519753820`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2541 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2515 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 2568 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3497 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3454 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 3467 |
 
-Run 1 — solusi: Terdapat 6 keranjang, masing-masing berisi 10 jeruk. Jadi, 6 puluhan = 60.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur yang sudah dicontohkan (mengelompokkan benda menjadi puluhan) ke dalam situasi rutin yang serupa.. Bukti: Lakukan seperti contoh; 6 keranjang berisi 10 buah jeruk
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau teknik pengelompokan bilangan menjadi puluhan dan satuan.. Bukti: 6 puluhan = 60
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, menggunakan representasi visual yang jelas, dan mengikuti pola contoh yang diberikan, sehingga beban kognitifnya rendah untuk siswa kelas 2.. Bukti: 6 keranjang berisi 10 buah jeruk; Lakukan seperti contoh
+Run 1 — solusi: Terdapat 6 keranjang, masing-masing mewakili 1 puluhan. Jadi, 6 puluhan = 60. Total ada 60 buah jeruk.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur penghitungan kelompok puluhan yang sudah dicontohkan dalam soal ke dalam konteks visual yang baru. Ini adalah penerapan langsung dari konsep nilai tempat (puluhan) yang sudah dipelajari.. Bukti: Lakukan seperti contoh.; 6 puluhan = 60 (60 buah jeruk)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana mengelompokkan benda ke dalam satuan puluhan dan mengonversinya menjadi angka.. Bukti: 5 puluhan = 50; 6 puluhan = 60
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin. Siswa hanya perlu menghitung jumlah keranjang (objek) dan mengalikan dengan nilai puluhan sesuai contoh yang diberikan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Hitunglah banyak benda berikut.; Lakukan seperti contoh.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membilang benda dan memahami konsep dasar puluhan. |
+| expectedPrerequisite | Pemahaman dasar tentang konsep puluhan dan kemampuan membilang benda. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5540,20 +5400,41 @@ Profil difficulty run ini:
 | relevantInformationUnits | 1 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
-| scaffoldLevel | partial |
+| scaffoldLevel | strong |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menggunakan contoh eksplisit dan visual yang mendukung konsep puluhan. |
+| gradeRelativeRationale | Untuk siswa kelas 2, menghitung kelompok puluhan adalah materi dasar yang rutin. Soal memberikan contoh eksplisit yang memandu siswa langkah demi langkah, sehingga tingkat kesulitannya rendah. |
 
-Run 2 — solusi: Terdapat 6 keranjang, di mana setiap keranjang mewakili 1 puluhan. Jadi, 6 puluhan = 60.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep nilai tempat (puluhan) pada situasi rutin yang sudah diberikan contohnya.. Bukti: Hitunglah banyak benda berikut.; 6 keranjang berisi 10 buah jeruk
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur sistem bilangan desimal (konsep puluhan).. Bukti: 5 puluhan = 50; .... puluhan = ....
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, mengikuti pola contoh yang diberikan, dan hanya memerlukan satu operasi penghitungan dasar.. Bukti: Lakukan seperti contoh.; 6 keranjang
+Run 2 — solusi: Menghitung jumlah keranjang yang ada, yaitu 6 keranjang. Karena setiap keranjang mewakili 1 puluhan, maka 6 keranjang = 6 puluhan = 60 buah jeruk.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk menghitung jumlah kelompok benda (keranjang) dan mengonversinya ke nilai puluhan sesuai dengan contoh yang diberikan. Ini adalah prosedur langsung yang sudah dipelajari.. Bukti: Hitunglah banyak benda berikut.; 6 puluhan = 60
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep nilai tempat puluhan dan representasi visual kelompok benda (keranjang sebagai satuan puluhan).. Bukti: 5 puluhan = 50; 6 puluhan = 60
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena siswa hanya perlu menghitung jumlah objek yang terlihat dan mengikuti pola contoh yang sudah diberikan secara eksplisit.. Bukti: Hitunglah banyak benda berikut.; Lakukan seperti contoh.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membilang benda dan memahami konsep dasar puluhan. |
+| expectedPrerequisite | Kemampuan membilang benda sampai 100 dan memahami konsep puluhan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | strong |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan konsep puluhan dan membilang benda. Soal memberikan contoh yang jelas dan langkah penyelesaiannya bersifat rutin. |
+
+Run 3 — solusi: Terdapat 6 keranjang, di mana setiap keranjang mewakili 1 puluhan. Jadi, 6 puluhan = 60. Total ada 60 buah jeruk.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur yang sudah dicontohkan (menghitung kelompok puluhan) pada objek yang diberikan. Ini adalah penerapan langsung dari konsep nilai tempat puluhan yang sudah dipelajari.. Bukti: Lakukan seperti contoh.; 6 puluhan = 60
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep nilai tempat (puluhan) dan bagaimana merepresentasikannya dalam bentuk angka.. Bukti: 5 puluhan = 50; 6 puluhan = 60
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena siswa hanya perlu menghitung jumlah keranjang (objek) dan mengalikannya dengan 10 sesuai contoh yang diberikan. Tidak ada langkah kompleks atau kendala yang berinteraksi.. Bukti: Lakukan seperti contoh.; 6 puluhan = 60
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang benda dan memahami konsep puluhan (kelompok sepuluh). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5563,48 +5444,27 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menggunakan representasi visual konkret (keranjang) untuk memahami konsep puluhan. |
-
-Run 3 — solusi: Terdapat 6 keranjang, setiap keranjang mewakili 1 puluhan. Jadi, 6 puluhan = 60.
-- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi jumlah kelompok (puluhan) dan mengonversinya ke nilai bilangan. Ini adalah proses langsung menerapkan konsep nilai tempat yang sudah dicontohkan.. Bukti: Hitunglah banyak benda berikut; 6 keranjang berisi 10 buah jeruk
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep nilai tempat (puluhan) dan bagaimana kelompok benda direpresentasikan sebagai angka.. Bukti: 5 puluhan = 50; 6 keranjang berisi 10 buah jeruk
-- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena menyediakan contoh eksplisit (scaffolding) dan hanya memerlukan penghitungan benda konkret yang dikelompokkan secara visual.. Bukti: Contoh: 5 puluhan = 50; 6 keranjang
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan membilang benda sampai 100 dan memahami konsep dasar puluhan. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | strong |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menggunakan bantuan visual dan contoh pengerjaan yang serupa dengan tugas utama. |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan konsep puluhan dan satuan. Soal ini adalah latihan rutin yang mengikuti pola contoh yang diberikan secara eksplisit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"applying": 2, "knowing": 1} | majority_2_of_3 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
+| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | procedural |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3766`.
+Adjudikasi AI: `success`; token `4892`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa diminta menerapkan prosedur pengelompokan yang sudah dicontohkan (puluhan) ke dalam situasi rutin yang serupa.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang nilai tempat (puluhan) dan bagaimana kelompok benda direpresentasikan sebagai angka.
-- Intended difficulty `Easy`: Soal ini bersifat rutin, menyediakan contoh eksplisit (scaffolding), dan hanya memerlukan penghitungan benda konkret yang dikelompokkan secara visual.
+- Domain kognitif `applying`: Siswa diminta menerapkan prosedur penghitungan kelompok puluhan yang sudah dicontohkan dalam soal ke dalam konteks visual yang baru. Ini adalah penerapan langsung dari konsep nilai tempat (puluhan) yang sudah dipelajari.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana mengelompokkan benda ke dalam satuan puluhan dan mengonversinya menjadi angka.
+- Intended difficulty `Easy`: Soal ini bersifat langsung dan rutin. Siswa hanya perlu menghitung jumlah keranjang (objek) dan mengalikan dengan nilai puluhan sesuai contoh yang diberikan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membilang benda sampai 100 dan memahami konsep dasar puluhan. |
+| expectedPrerequisite | Pemahaman dasar tentang konsep puluhan dan kemampuan membilang benda. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5614,25 +5474,25 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | strong |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena menggunakan bantuan visual dan contoh pengerjaan yang serupa dengan tugas utama. |
+| gradeRelativeRationale | Untuk siswa kelas 2, menghitung kelompok puluhan adalah materi dasar yang rutin. Soal memberikan contoh eksplisit yang memandu siswa langkah demi langkah, sehingga tingkat kesulitannya rendah. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 144/256; truncation: `False`.
+Model membaca representation `metadata`; token input 196/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000000; applying=1.000000; reasoning=0.000000 | applying | 1.000000 | 0.000000 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.006533; conceptual=0.991774; procedural=0.001693; metacognitive=0.000000 | conceptual | 0.991774 | 0.037411 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.784003; Medium=0.210968; Hard=0.005029 | Easy | 0.784003 | 0.496692 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000019; applying=0.999981; reasoning=0.000000 | applying | 0.999981 | 0.000207 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.003461; conceptual=0.990157; procedural=0.006382; metacognitive=0.000000 | conceptual | 0.990157 | 0.044479 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.696550; Medium=0.294227; Hard=0.009223 | Easy | 0.696550 | 0.596261 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000001; H = 0.000001/ln(3) = 0.000000; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.991774; −Σp ln(p) = 0.051863; H = 0.051863/ln(4) = 0.037411; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999981; −Σp ln(p) = 0.000227; H = 0.000227/ln(3) = 0.000207; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.784003; −Σp ln(p) = 0.545672; H = 0.545672/ln(3) = 0.496692; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.990157; −Σp ln(p) = 0.061662; H = 0.061662/ln(4) = 0.044479; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.696550; −Σp ln(p) = 0.655060; H = 0.655060/ln(3) = 0.596261; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -5650,16 +5510,16 @@ Pilihan: A. 7 puluhan = 70 (70 buah jeruk)
 B. 6 puluhan = 60 (60 buah jeruk)
 C. 6 satuan = 6 (6 buah jeruk)
 D. 5 puluhan = 50 (50 buah jeruk)
-Transkripsi visual: Terdapat 6 keranjang jeruk yang disusun berjajar. Setiap keranjang berisi 10 buah jeruk.
+Transkripsi visual: The image displays 6 baskets, each containing a group of oranges. The text below the image asks the student to complete the sentence: '____ puluhan = ____. Jadi, ada ____ buah jeruk.' based on the provided example.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 37. Soal `98cb95b9467c6a458263f9f1`
@@ -5674,53 +5534,53 @@ Tulislah lambang bilangan sesuai dengan nama bilangannya. Tujuh puluh delapan ..
 | D | 78 |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Tujuh puluh delapan berarti 7 puluhan dan 8 satuan, yang ditulis sebagai 78.
+Solusi minimum hasil AI: Nama bilangan 'tujuh puluh delapan' terdiri dari 7 puluhan dan 8 satuan, sehingga lambang bilangannya adalah 78.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6a2aa6752dff40dfb11d7dec5fa27cebbe8d5c6b01f63e065735531d33af97d0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `645022234a233af7463cfa00e81a7d60150e6dab5322af9a77045c6c00dd4ffd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 1317 |
-| 2 | success | valid / verified | knowing | factual | Easy | 1317 |
-| 3 | success | valid / verified | knowing | factual | Easy | 1303 |
+| 1 | success | valid / verified | knowing | factual | Easy | 2098 |
+| 2 | success | valid / verified | knowing | factual | Easy | 2199 |
+| 3 | success | valid / verified | knowing | factual | Easy | 2583 |
 
-Run 1 — solusi: Tujuh puluh delapan berarti 7 puluhan dan 8 satuan, yang ditulis sebagai 78.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali nama bilangan dan mengubahnya menjadi lambang bilangan (simbol numerik) secara langsung tanpa proses tambahan.. Bukti: Tulislah lambang bilangan sesuai dengan nama bilangannya. Tujuh puluh delapan
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan tentang simbol numerik dan cara penulisan bilangan dasar (fakta matematika).. Bukti: lambang bilangan; nama bilangannya
-- Intended difficulty `classify/Easy`: Soal ini bersifat sangat mendasar untuk kelas 2, hanya melibatkan pengenalan simbol bilangan dua digit yang umum.. Bukti: Tujuh puluh delapan
+Run 1 — solusi: Nama bilangan 'tujuh puluh delapan' terdiri dari 7 puluhan dan 8 satuan, sehingga lambang bilangannya adalah 78.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk menerjemahkan representasi verbal (nama bilangan) ke dalam representasi simbolik (lambang bilangan). Ini adalah tugas pengenalan langsung terhadap sistem nilai tempat dasar yang sudah dipelajari di kelas 2.. Bukti: Tulislah lambang bilangan sesuai dengan nama bilangannya. Tujuh puluh delapan
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman siswa terhadap simbol dan istilah dasar dalam sistem bilangan sampai 100.. Bukti: Tujuh puluh delapan
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 2. Tidak ada langkah tambahan atau kendala yang perlu dipecahkan selain memahami nama bilangan tersebut.. Bukti: Tulislah lambang bilangan sesuai dengan nama bilangannya. Tujuh puluh delapan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman nilai tempat puluhan dan satuan serta simbol angka 0-9. |
+| expectedPrerequisite | Pemahaman nilai tempat puluhan dan satuan serta penulisan lambang bilangan 1-100. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
-| representationTransfer | False |
+| representationTransfer | True |
 | relevantInformationUnits | 1 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD untuk materi dasar membaca dan menulis bilangan sampai 100. |
+| gradeRelativeRationale | Tugas menulis lambang bilangan dari nama bilangan adalah materi dasar kelas 2 yang sangat rutin dan tidak memerlukan perencanaan kompleks. |
 
 Run 2 — solusi: Tujuh puluh delapan berarti 7 puluhan dan 8 satuan, yang ditulis sebagai 78.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali nama bilangan dan mengubahnya menjadi lambang bilangan (simbol numerik) secara langsung tanpa proses tambahan.. Bukti: Tulislah lambang bilangan sesuai dengan nama bilangannya. Tujuh puluh delapan
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan tentang simbol numerik dan cara penulisan bilangan dasar (fakta matematika).. Bukti: lambang bilangan; nama bilangannya
-- Intended difficulty `classify/Easy`: Soal ini bersifat sangat mendasar untuk kelas 2, melibatkan pengenalan simbol bilangan dua digit yang umum.. Bukti: Tujuh puluh delapan
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali nama bilangan dan mengubahnya menjadi lambang bilangan (simbol numerik) yang sesuai. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.. Bukti: Tulislah lambang bilangan sesuai dengan nama bilangannya. Tujuh puluh delapan
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan tentang simbol numerik (lambang bilangan) yang merepresentasikan nama bilangan tertentu.. Bukti: Tulislah lambang bilangan sesuai dengan nama bilangannya
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 2. Tidak ada langkah kompleks atau perencanaan yang diperlukan.. Bukti: Tujuh puluh delapan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman nilai tempat puluhan dan satuan serta simbol angka 0-9. |
+| expectedPrerequisite | Pemahaman nilai tempat puluhan dan satuan serta penulisan lambang bilangan 1-100. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5730,18 +5590,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 SD untuk materi membaca dan menulis lambang bilangan sampai 100. |
+| gradeRelativeRationale | Menuliskan lambang bilangan dari nama bilangan adalah keterampilan dasar yang diharapkan sudah dikuasai siswa kelas 2. |
 
-Run 3 — solusi: Tujuh puluh delapan terdiri dari 7 puluhan dan 8 satuan, yang ditulis sebagai 78.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali nama bilangan dan mengubahnya menjadi lambang bilangan (simbol numerik) secara langsung tanpa proses tambahan.. Bukti: Tulislah lambang bilangan sesuai dengan nama bilangannya. Tujuh puluh delapan
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan tentang simbol numerik dan cara penulisan bilangan dasar (fakta matematika).. Bukti: lambang bilangan; nama bilangannya
-- Intended difficulty `classify/Easy`: Soal ini merupakan tugas dasar yang sangat rutin untuk siswa kelas 2, hanya melibatkan satu langkah pengenalan simbol.. Bukti: Tujuh puluh delapan
+Run 3 — solusi: Tujuh puluh delapan terdiri dari 7 puluhan dan 8 satuan, sehingga lambang bilangannya adalah 78.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan menuliskan lambang bilangan dari nama bilangan yang diberikan. Ini adalah tugas dasar yang bersifat langsung (knowing) tanpa memerlukan strategi kompleks.. Bukti: Tulislah lambang bilangan sesuai dengan nama bilangannya. Tujuh puluh delapan
+- Dimensi pengetahuan `classify/factual`: Pengetahuan yang diuji adalah pemahaman tentang simbol angka dan sistem penamaan bilangan, yang termasuk dalam kategori pengetahuan faktual.. Bukti: Tulislah lambang bilangan sesuai dengan nama bilangannya
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan merupakan materi dasar kelas 2. Siswa hanya perlu menerjemahkan nama bilangan ke dalam bentuk angka.. Bukti: Tujuh puluh delapan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman nilai tempat puluhan dan satuan dasar. |
+| expectedPrerequisite | Memahami konsep nilai tempat puluhan dan satuan serta lambang bilangan sampai 100. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5751,7 +5611,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 untuk pengenalan lambang bilangan sampai 100. |
+| gradeRelativeRationale | Tugas ini adalah standar kompetensi kelas 2 untuk membaca dan menulis bilangan. Tidak ada langkah perencanaan atau integrasi yang diperlukan. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -5817,26 +5677,26 @@ Kira menuliskan satu bilangan.<br><br>Kira berkata, 'Jika aku tambahkan 4 pada p
 | D | 81 |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Misalkan bilangan tersebut adalah 10a + b. Operasi yang dilakukan: (10a + 40) + (b + 3) = 55. Maka 10a + b + 43 = 55. Bilangan awal = 55 - 43 = 12.
+Solusi minimum hasil AI: Bilangan awal = 55 - 40 - 3 = 15 - 3 = 12. Atau, 55 memiliki 5 puluhan dan 5 satuan. Kurangi 4 dari puluhan (5-4=1) dan 3 dari satuan (5-3=2), sehingga bilangan tersebut adalah 12.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c8f10c00f7efe1007705d05348980356e64e287f4ed93c416bdf1d68588748a6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c6eafe92d12dac05284b3af09012156dcdee2a74ed4fdf1d285c25b378d002fc`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 1456 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 1475 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 1460 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 2368 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 2329 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 2362 |
 
-Run 1 — solusi: Misalkan bilangan tersebut adalah 10a + b. Operasi yang dilakukan: (10a + 40) + (b + 3) = 55. Maka 10a + b + 43 = 55. Bilangan awal = 55 - 43 = 12.
-- Domain kognitif `classify/applying`: Siswa perlu memahami struktur nilai tempat (puluhan dan satuan) dan melakukan operasi invers untuk menemukan bilangan awal, yang melibatkan penerapan konsep nilai tempat dalam situasi rutin.. Bukti: Jika aku tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur bilangan (puluhan dan satuan) dan bagaimana operasi aritmatika mempengaruhi nilai tempat tersebut.. Bukti: tambahkan 4 pada puluhan dan 3 pada satuan
-- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman konsep nilai tempat dan operasi invers. Bagi siswa kelas 2, ini adalah tugas rutin yang melibatkan pemahaman struktur bilangan tanpa kompleksitas tinggi.. Bukti: tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55
+Run 1 — solusi: Bilangan awal = 55 - 40 - 3 = 15 - 3 = 12. Atau, 55 memiliki 5 puluhan dan 5 satuan. Kurangi 4 dari puluhan (5-4=1) dan 3 dari satuan (5-3=2), sehingga bilangan tersebut adalah 12.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep nilai tempat (puluhan dan satuan) dan melakukan operasi kebalikan (invers) untuk menemukan bilangan awal. Ini melibatkan penerapan konsep nilai tempat dalam konteks pemecahan masalah rutin.. Bukti: Jika aku tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang struktur bilangan (puluhan dan satuan) dan bagaimana operasi aritmatika mempengaruhi nilai tempat tersebut.. Bukti: tambahkan 4 pada puluhan dan 3 pada satuan
+- Intended difficulty `classify/Medium`: Soal ini menuntut siswa melakukan operasi invers (pengurangan) pada nilai tempat yang spesifik. Meskipun prosedurnya familiar, siswa harus memisahkan puluhan dan satuan dari hasil akhir untuk mendapatkan bilangan awal, yang merupakan langkah integrasi sedang bagi kelas 2.. Bukti: Jika aku tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55.
 
 Profil difficulty run ini:
 
@@ -5848,16 +5708,37 @@ Profil difficulty run ini:
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 sudah belajar nilai tempat dan pengurangan. Menentukan bilangan awal dari hasil akhir dengan operasi invers pada masing-masing nilai tempat adalah tantangan yang sesuai untuk tingkat menengah di kelas 2. |
+
+Run 2 — solusi: Bilangan Kira adalah N. Diketahui N + (40 + 3) = 55. Maka N = 55 - 43 = 12.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep nilai tempat (puluhan dan satuan) dan melakukan operasi kebalikan (pengurangan) untuk menemukan bilangan awal. Ini melibatkan penerapan konsep nilai tempat pada konteks rutin.. Bukti: Jika aku tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana angka disusun berdasarkan nilai tempat (puluhan dan satuan) dan bagaimana operasi aritmatika mempengaruhi posisi tersebut.. Bukti: tambahkan 4 pada puluhan dan 3 pada satuan
+- Intended difficulty `classify/Medium`: Soal ini menuntut siswa melakukan operasi kebalikan (invers) dari penambahan nilai tempat. Meskipun prosedurnya familiar, siswa harus memahami struktur bilangan dua digit dan melakukan pengurangan pada posisi yang tepat (puluhan dengan puluhan, satuan dengan satuan). Ini adalah tugas rutin bagi kelas 2 namun memerlukan pemahaman konsep nilai tempat yang baik.. Bukti: Jika aku tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman nilai tempat bilangan dua digit (puluhan dan satuan) dan operasi pengurangan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
 | interactingConstraints | 2 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan nilai tempat. Soal ini menuntut pemahaman konsep tersebut secara terbalik, yang sesuai dengan tingkat kemampuan kelas 2. |
+| gradeRelativeRationale | Siswa kelas 2 sudah belajar nilai tempat dan penjumlahan/pengurangan bilangan dua digit. Soal ini menuntut pembalikan logika (invers) yang merupakan langkah menengah dalam pemahaman konsep nilai tempat. |
 
-Run 2 — solusi: Misalkan bilangan awal adalah 10a + b. Operasi yang dilakukan adalah (10a + 40) + (b + 3) = 55, yang setara dengan 10a + b + 43 = 55. Maka, 10a + b = 55 - 43 = 12.
-- Domain kognitif `classify/applying`: Siswa perlu melakukan operasi invers (pengurangan) untuk membalikkan proses penambahan yang diberikan pada nilai tempat puluhan dan satuan, yang merupakan proses applying konsep nilai tempat.. Bukti: Jika aku tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang struktur nilai tempat (puluhan dan satuan) dan bagaimana operasi aritmatika memengaruhi struktur tersebut.. Bukti: tambahkan 4 pada puluhan dan 3 pada satuan
-- Intended difficulty `classify/Medium`: Soal ini menuntut siswa untuk membalikkan operasi (invers) pada nilai tempat, yang merupakan tantangan kognitif di atas sekadar penjumlahan langsung bagi siswa kelas 2.. Bukti: tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55
+Run 3 — solusi: Bilangan awal memiliki puluhan dan satuan. Hasil akhir 55 berarti 5 puluhan dan 5 satuan. Operasi invers dari 'tambah 4 pada puluhan' adalah 'kurang 4 dari puluhan' (5-4=1). Operasi invers dari 'tambah 3 pada satuan' adalah 'kurang 3 dari satuan' (5-3=2). Jadi, bilangan awal adalah 12.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep nilai tempat (puluhan dan satuan) dan melakukan operasi invers untuk menemukan bilangan awal. Ini melibatkan penerapan konsep nilai tempat pada konteks rutin.. Bukti: Jika aku tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55.
+- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan pemahaman tentang struktur bilangan (puluhan dan satuan) untuk memecahkan masalah, yang merupakan pengetahuan konseptual.. Bukti: tambahkan 4 pada puluhan dan 3 pada satuan
+- Intended difficulty `classify/Medium`: Soal ini menuntut pemahaman invers operasi pada nilai tempat. Meskipun prosedurnya familiar, siswa harus membalikkan dua operasi secara terpisah (puluhan dan satuan) untuk mendapatkan jawaban. Ini adalah tugas rutin dengan beberapa langkah yang saling terkait.. Bukti: Jika aku tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55.
 
 Profil difficulty run ini:
 
@@ -5865,36 +5746,15 @@ Profil difficulty run ini:
 |---|---|
 | expectedPrerequisite | Pemahaman nilai tempat (puluhan dan satuan) dan operasi pengurangan dasar. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 2 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 biasanya belajar penjumlahan/pengurangan dasar. Membalikkan operasi pada nilai tempat secara terpisah adalah langkah yang sedikit lebih kompleks daripada soal rutin satu langkah. |
-
-Run 3 — solusi: Misalkan bilangan awal adalah 10a + b. Diketahui (a+4) puluhan dan (b+3) satuan = 55. Maka a+4 = 5 dan b+3 = 5. Didapat a = 1 dan b = 2. Bilangan tersebut adalah 12.
-- Domain kognitif `classify/applying`: Siswa perlu melakukan operasi invers (pengurangan) untuk membalikkan proses penambahan yang dijelaskan dalam soal, yang merupakan penerapan konsep nilai tempat.. Bukti: Jika aku tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur nilai tempat (puluhan dan satuan) dan bagaimana mengubahnya.. Bukti: tambahkan 4 pada puluhan dan 3 pada satuan
-- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman konsep nilai tempat dan operasi invers sederhana. Untuk kelas 2, ini dikategorikan Medium karena siswa harus melakukan penalaran terbalik (reverse thinking) dari hasil akhir ke awal, bukan sekadar operasi hitung langsung.. Bukti: tambahkan 4 pada puluhan dan 3 pada satuan, hasilnya adalah 55
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman nilai tempat (puluhan dan satuan) dan pengurangan dasar. |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 2 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 biasanya belajar penjumlahan/pengurangan langsung. Soal ini menuntut pemahaman konsep nilai tempat secara terbalik, yang merupakan tantangan kognitif yang sesuai untuk tingkat menengah di kelas 2. |
+| gradeRelativeRationale | Siswa kelas 2 sudah mempelajari nilai tempat. Soal ini menuntut pembalikan operasi yang memerlukan ketelitian pada dua posisi nilai tempat yang berbeda, sehingga tingkat kesulitannya menengah bagi siswa kelas 2. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -5962,32 +5822,32 @@ Aku adalah bilangan. Aku 1 kurangnya dari bilangan 67. Bilangan berapakah aku?
 | D | 57 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: 1 kurangnya dari 67 berarti 67 - 1 = 66.
+Solusi minimum hasil AI: Bilangan yang dimaksud adalah 67 - 1 = 66.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `431d8432578105217fba86c0356466133ef278b84e149dda67ecf490a31a275a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a23232d5cb5b77d04ed6637d11d357873f74c323e8fb957c16bf8e7468651183`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 1302 |
-| 2 | success | valid / verified | knowing | factual | Easy | 1250 |
-| 3 | success | valid / verified | knowing | factual | Easy | 1281 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 2168 |
+| 2 | success | valid / verified | knowing | factual | Easy | 2163 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 2174 |
 
-Run 1 — solusi: 1 kurangnya dari 67 berarti 67 - 1 = 66.
-- Domain kognitif `classify/knowing`: Siswa perlu memahami konsep '1 kurangnya' dan menerapkannya pada bilangan yang diberikan. Ini adalah proses langsung yang melibatkan pemahaman dasar tentang urutan bilangan.. Bukti: Aku 1 kurangnya dari bilangan 67
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman faktual tentang urutan bilangan dan konsep dasar pengurangan satu satuan.. Bukti: 1 kurangnya dari bilangan 67
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, melibatkan operasi pengurangan satu langkah yang sangat familiar.. Bukti: 1 kurangnya dari bilangan 67
+Run 1 — solusi: Bilangan yang dimaksud adalah 67 - 1 = 66.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan operasi pengurangan dasar (67 - 1) untuk menemukan bilangan yang dimaksud. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.. Bukti: Aku 1 kurangnya dari bilangan 67
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang urutan bilangan dan konsep 'kurang dari' yang merupakan pengetahuan prosedural dasar dalam aritmatika.. Bukti: 1 kurangnya dari bilangan 67
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan hanya memerlukan satu langkah operasi pengurangan sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: Aku 1 kurangnya dari bilangan 67
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman urutan bilangan cacah hingga 100 dan konsep pengurangan dasar. |
+| expectedPrerequisite | Pemahaman urutan bilangan cacah sampai 100 dan operasi pengurangan dasar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5997,33 +5857,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan kurikulum kelas 2 yang menekankan pemahaman nilai tempat dan urutan bilangan. |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan konsep 'kurang dari' dan pengurangan satu satuan dari bilangan dua angka. |
 
-Run 2 — solusi: 1 kurangnya dari 67 berarti 67 - 1 = 66.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan operasi pengurangan dasar (67-1) yang merupakan proses langsung.. Bukti: 1 kurangnya dari bilangan 67
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan dan konsep 'kurang dari' sebagai fakta dasar dalam sistem bilangan.. Bukti: 1 kurangnya dari bilangan 67
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya melibatkan satu langkah operasi pengurangan sederhana pada bilangan dua digit.. Bukti: 1 kurangnya dari bilangan 67
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman urutan bilangan cacah hingga 100 dan konsep pengurangan dasar. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena fokus pada pemahaman nilai tempat dan urutan bilangan dasar. |
-
-Run 3 — solusi: 1 kurangnya dari 67 berarti 67 - 1 = 66.
-- Domain kognitif `classify/knowing`: Siswa perlu memahami konsep '1 kurangnya' sebagai operasi pengurangan dasar atau pemahaman urutan bilangan, yang merupakan proses langsung.. Bukti: 1 kurangnya dari bilangan 67
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman faktual tentang urutan bilangan dan konsep dasar pengurangan satu satuan.. Bukti: 1 kurangnya dari bilangan 67
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan satu langkah operasi pengurangan sederhana pada bilangan dua digit.. Bukti: 1 kurangnya dari bilangan 67
+Run 2 — solusi: Bilangan yang dimaksud adalah 67 - 1 = 66.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk melakukan operasi pengurangan dasar (67 - 1) untuk menentukan bilangan yang dimaksud. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.. Bukti: Aku 1 kurangnya dari bilangan 67.
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman tentang urutan bilangan dan operasi pengurangan dasar (fakta numerik).. Bukti: Aku 1 kurangnya dari bilangan 67.
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan hanya memerlukan satu langkah operasi pengurangan sederhana. Tidak ada kendala yang berinteraksi atau perencanaan kompleks.. Bukti: Aku 1 kurangnya dari bilangan 67.
 
 Profil difficulty run ini:
 
@@ -6039,15 +5878,58 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena hanya melibatkan pengurangan satu satuan dari bilangan dua digit yang umum dipelajari. |
+| gradeRelativeRationale | Untuk siswa kelas 2, menentukan bilangan '1 kurangnya' dari bilangan dua digit adalah tugas rutin yang sangat mendasar. |
+
+Run 3 — solusi: Bilangan yang dimaksud adalah 67 - 1 = 66.
+- Domain kognitif `classify/knowing`: Siswa diminta melakukan operasi pengurangan dasar (67 - 1) untuk menemukan bilangan yang dimaksud. Ini adalah prosedur langsung yang sudah dipelajari di kelas 2.. Bukti: Aku 1 kurangnya dari bilangan 67
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang urutan bilangan dan konsep 'kurang dari' yang merupakan pengetahuan prosedural dasar dalam aritmatika.. Bukti: 1 kurangnya dari bilangan 67
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung, hanya memerlukan satu langkah pengurangan sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi kompleks.. Bukti: Aku 1 kurangnya dari bilangan 67
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman urutan bilangan cacah sampai 100 dan operasi pengurangan dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 2, pengurangan satu satuan dari bilangan dua digit adalah tugas rutin yang sangat mendasar dan tidak menuntut perencanaan tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
-| Dimensi pengetahuan | {"factual": 3} | unanimous_3_0 / unanimous | factual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"procedural": 2, "factual": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3351`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa hanya perlu melakukan operasi pengurangan satu satuan (67 - 1) yang merupakan prosedur langsung dan rutin bagi siswa kelas 2.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman tentang urutan bilangan dan operasi pengurangan dasar, yang merupakan pengetahuan prosedural.
+- Intended difficulty `Easy`: Soal ini sangat langsung, hanya memerlukan satu langkah pengurangan sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi kompleks.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman urutan bilangan cacah sampai 100 dan operasi pengurangan dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 2, pengurangan satu satuan dari bilangan dua digit adalah tugas rutin yang sangat mendasar dan tidak menuntut perencanaan tinggi. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6088,9 +5970,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "factual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 40. Soal `874e86479e51d283015833cd`
@@ -6104,51 +5986,30 @@ Kira sedang mendata mainan kesukaan teman-temannya.<br><br>Berapa banyak mainan 
 | C | 4 |
 | D | 2 |
 
-![Gambar sumber soal 40](<../images/kelas2_panduan_siswa_kelas2.pdf-0246-03.png>)
+![Gambar sumber soal 40](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0246-03.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Menghitung jumlah mainan mobil-mobilan yang ada di lantai, yaitu satu mobil merah dan satu mobil ungu, totalnya ada 2.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0246-03.png. Transkripsi visual: Gambar menunjukkan seorang anak perempuan memegang kotak berisi boneka beruang. Di lantai terdapat mainan: 2 mobil-mobilan (satu merah, satu ungu), 3 boneka beruang/kelinci, 6 balok susun, dan 5 kelereng.
+Solusi minimum hasil AI: Menghitung jumlah mainan mobil-mobilan yang terlihat pada gambar. Terdapat 1 mobil merah dan 1 mobil ungu. Total = 2.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0246-03.png. Transkripsi visual: Gambar menunjukkan seorang anak perempuan memegang kotak berisi boneka beruang. Di lantai terdapat mainan: 2 mobil-mobilan (satu merah, satu ungu), 3 boneka beruang (satu ungu, satu merah muda, satu kuning-biru), 6 balok mainan (berbagai warna), dan 5 kelereng.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e7c1808e59e24cc84e194e6080bc05387be67e9306a8176f8e33f59ff9961dfe`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `669f9f6c2e9ad5c28809242ebc6adf93a0362813011e83a246f5f0338cedc793`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 2508 |
-| 2 | success | valid / verified | knowing | factual | Easy | 2504 |
-| 3 | success | valid / verified | knowing | factual | Easy | 2493 |
+| 1 | success | valid / verified | knowing | factual | Easy | 3401 |
+| 2 | success | valid / verified | knowing | factual | Easy | 3408 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3404 |
 
-Run 1 — solusi: Menghitung jumlah mainan mobil-mobilan yang ada di lantai, yaitu satu mobil merah dan satu mobil ungu, totalnya ada 2.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses menghitung objek secara langsung (counting) dari gambar yang disediakan tanpa perlu strategi kompleks.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji kemampuan siswa dalam mengidentifikasi objek konkret dan menghitung jumlahnya, yang merupakan pengetahuan faktual dasar.. Bukti: Berapa banyak mainan mobil-mobilan
-- Intended difficulty `classify/Easy`: Soal ini sangat sederhana, hanya memerlukan pengamatan visual langsung dan penghitungan objek tunggal yang mudah dibedakan.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan menghitung benda konkret sampai 10. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 SD karena hanya melibatkan penghitungan benda konkret sederhana dalam konteks pengumpulan data awal. |
-
-Run 2 — solusi: Mengamati gambar secara langsung, terdapat satu mobil-mobilan berwarna merah dan satu mobil-mobilan berwarna ungu. Total mobil-mobilan adalah 1 + 1 = 2.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses identifikasi visual langsung dan menghitung objek yang terlihat secara eksplisit dalam gambar.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
-- Dimensi pengetahuan `classify/factual`: Soal ini menanyakan fakta kuantitatif sederhana tentang objek yang ada dalam gambar (penghitungan benda konkret).. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
-- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena hanya memerlukan pengamatan visual langsung tanpa proses manipulasi data atau strategi kompleks.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
+Run 1 — solusi: Menghitung jumlah mainan mobil-mobilan yang terlihat pada gambar. Terdapat 1 mobil merah dan 1 mobil ungu. Total = 2.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan identifikasi visual dan menghitung objek yang terlihat secara langsung. Tidak ada prosedur kompleks atau penalaran yang diperlukan.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji kemampuan dasar dalam mengenali objek dan menghitung jumlahnya (fakta dasar).. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana, hanya memerlukan pengamatan visual langsung dan penghitungan objek yang jumlahnya sedikit. Tidak ada langkah yang saling bergantung atau strategi yang perlu dipilih.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
 
 Profil difficulty run ini:
 
@@ -6164,12 +6025,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 SD yang sedang belajar pengumpulan data sederhana melalui pengamatan objek. |
+| gradeRelativeRationale | Untuk siswa kelas 2, menghitung objek dalam gambar adalah tugas rutin yang sangat mendasar dan sesuai dengan tingkat perkembangan mereka. |
 
-Run 3 — solusi: Menghitung jumlah mainan mobil-mobilan yang terlihat pada gambar, yaitu satu mobil merah dan satu mobil ungu, totalnya ada 2.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses identifikasi visual langsung dan menghitung objek yang terlihat (counting), yang merupakan proses kognitif tingkat dasar.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
-- Dimensi pengetahuan `classify/factual`: Soal ini menuntut pengetahuan faktual tentang jumlah objek dalam kumpulan data visual sederhana.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
-- Intended difficulty `classify/Easy`: Soal ini sangat sederhana karena hanya meminta penghitungan objek visual yang jelas dan terpisah.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
+Run 2 — solusi: Mengamati gambar dan menghitung jumlah mobil-mobilan secara langsung. Terdapat 1 mobil merah dan 1 mobil ungu. Total = 2.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan identifikasi visual dan menghitung objek yang terlihat secara langsung tanpa perlu manipulasi data atau inferensi lebih lanjut.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji kemampuan mengenali objek (fakta) dalam konteks visual sederhana.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana, hanya memerlukan pengamatan visual langsung terhadap objek yang jelas. Tidak ada langkah perencanaan atau integrasi yang diperlukan.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
 
 Profil difficulty run ini:
 
@@ -6185,7 +6046,28 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 SD karena melibatkan pengamatan data visual sederhana yang merupakan pengenalan awal terhadap statistika. |
+| gradeRelativeRationale | Untuk kelas 2, menghitung objek dalam gambar adalah tugas dasar yang sesuai dengan tingkat perkembangan kognitif mereka. |
+
+Run 3 — solusi: Mengamati gambar secara langsung, terdapat 1 mobil-mobilan berwarna merah dan 1 mobil-mobilan berwarna ungu. Total mobil-mobilan = 1 + 1 = 2.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan identifikasi visual dan menghitung objek yang terlihat secara langsung (counting) tanpa perlu manipulasi data atau inferensi lebih lanjut.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji kemampuan mengenali objek (fakta) dalam sebuah gambar untuk kemudian dihitung jumlahnya.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana, hanya memerlukan pengamatan visual langsung dan penghitungan dasar. Tidak ada langkah kompleks atau kendala yang harus dipecahkan.. Bukti: Berapa banyak mainan mobil-mobilan pada gambar tersebut?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung benda konkret sampai 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 2, menghitung objek dalam gambar adalah tugas rutin yang sangat mendasar dan sesuai dengan tingkat perkembangan kognitif mereka. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -6197,21 +6079,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 111/256; truncation: `False`.
+Model membaca representation `metadata`; token input 126/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000005; applying=0.999995; reasoning=0.000000 | applying | 0.999995 | 0.000057 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.256535; conceptual=0.740791; procedural=0.002674; metacognitive=0.000000 | conceptual | 0.740791 | 0.423517 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.838790; Medium=0.157653; Hard=0.003557 | Easy | 0.838790 | 0.417576 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000000; applying=1.000000; reasoning=0.000000 | applying | 1.000000 | 0.000007 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.254197; conceptual=0.744589; procedural=0.001214; metacognitive=0.000000 | conceptual | 0.744589 | 0.415430 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.839130; Medium=0.157282; Hard=0.003588 | Easy | 0.839130 | 0.417166 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999995; −Σp ln(p) = 0.000063; H = 0.000063/ln(3) = 0.000057; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.740791; −Σp ln(p) = 0.587119; H = 0.587119/ln(4) = 0.423517; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000007; H = 0.000007/ln(3) = 0.000007; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.838790; −Σp ln(p) = 0.458754; H = 0.458754/ln(3) = 0.417576; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.744589; −Σp ln(p) = 0.575908; H = 0.575908/ln(4) = 0.415430; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.839130; −Σp ln(p) = 0.458303; H = 0.458303/ln(3) = 0.417166; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -6229,7 +6111,7 @@ Pilihan: A. 7
 B. 6
 C. 4
 D. 2
-Transkripsi visual: Gambar menunjukkan seorang anak perempuan memegang kotak berisi boneka beruang. Di lantai terdapat mainan: 2 mobil-mobilan (satu merah, satu ungu), 3 boneka beruang/kelinci, 6 balok susun, dan 5 kelereng.
+Transkripsi visual: Gambar menunjukkan seorang anak perempuan memegang kotak berisi boneka beruang. Di lantai terdapat mainan: 2 mobil-mobilan (satu merah, satu ungu), 3 boneka beruang (satu ungu, satu merah muda, satu kuning-biru), 6 balok mainan (berbagai warna), dan 5 kelereng.
 ```
 
 </details>
@@ -6252,30 +6134,30 @@ Perhatikan gambar di bawah ini. Malosi sedang mendata banyaknya buah yang dibeli
 | C | 7 |
 | D | 1 |
 
-![Gambar sumber soal 41](<../images/kelas2_panduan_siswa_kelas2.pdf-0258-04.png>)
+![Gambar sumber soal 41](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0258-04.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Mengamati gambar dan menghitung jumlah buah semangka yang ada di atas meja, yaitu hanya terdapat 1 buah semangka.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0258-04.png. Transkripsi visual: Seorang anak laki-laki berdiri di belakang meja yang berisi berbagai buah. Di atas meja terdapat 1 buah semangka besar, 3 buah apel merah, 5 buah jeruk kecil, dan 3 buah alpukat hijau.
+Solusi minimum hasil AI: Mengamati gambar dan menghitung jumlah buah semangka yang ada di atas meja. Hanya terdapat 1 buah semangka.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0258-04.png. Transkripsi visual: Gambar menunjukkan seorang anak laki-laki di belakang meja yang berisi berbagai buah. Terdapat 1 buah semangka besar, 3 buah apel merah, 3 buah alpukat hijau, dan 6 buah jeruk kecil.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0b6be504c532a1238575ede3929865c5e0e93ec1a793ace18cdfad45b2f88825`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dfd245f0b2ff89bc47bdf0ea9075c27acb7d2a95db17153b634b47b926e2635d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 2469 |
-| 2 | success | valid / verified | knowing | factual | Easy | 2459 |
-| 3 | success | valid / verified | knowing | factual | Easy | 2455 |
+| 1 | success | valid / verified | knowing | factual | Easy | 3242 |
+| 2 | success | valid / verified | knowing | factual | Easy | 3203 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3242 |
 
-Run 1 — solusi: Mengamati gambar dan menghitung jumlah buah semangka yang ada di atas meja, yaitu hanya terdapat 1 buah semangka.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses pengamatan langsung (mengenali objek) dan menghitung jumlah objek yang terlihat secara eksplisit pada gambar.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
-- Dimensi pengetahuan `classify/factual`: Soal ini menuntut pengetahuan faktual mengenai jumlah objek konkret yang disajikan secara visual.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
-- Intended difficulty `classify/Easy`: Soal ini sangat sederhana, hanya memerlukan identifikasi visual langsung tanpa operasi matematika kompleks atau strategi non-rutin.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
+Run 1 — solusi: Mengamati gambar dan menghitung jumlah buah semangka yang ada di atas meja. Hanya terdapat 1 buah semangka.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan identifikasi visual langsung dan menghitung objek yang terlihat (counting) untuk menjawab pertanyaan.. Bukti: Berapa banyak buah semangka yang dibeli ibu?; hanya terlihat 1 semangka
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji kemampuan siswa dalam mengenali objek (buah semangka) dan menghitung jumlahnya sebagai elemen dasar data.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana karena hanya meminta penghitungan satu jenis objek yang terlihat jelas. Tidak ada langkah kompleks atau integrasi data.. Bukti: Berapa banyak buah semangka yang dibeli ibu?; hanya terlihat 1 semangka
 
 Profil difficulty run ini:
 
@@ -6290,19 +6172,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 SD karena melibatkan pengamatan data visual sederhana yang merupakan dasar dari literasi data. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa melakukan penghitungan objek sederhana dari gambar. Tugas ini adalah tugas dasar pengumpulan data visual. |
 
-Run 2 — solusi: Mengamati gambar, hanya terdapat 1 buah semangka di atas meja.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses pengamatan langsung (mengenali objek) untuk menghitung jumlah item tertentu dalam gambar.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji kemampuan siswa dalam mengenali objek konkret dan menghitung jumlahnya, yang merupakan pengetahuan faktual dasar.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
-- Intended difficulty `classify/Easy`: Tugas ini sangat sederhana, hanya memerlukan identifikasi visual langsung tanpa manipulasi data atau prosedur yang kompleks.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
+Run 2 — solusi: Mengamati gambar dan menghitung jumlah buah semangka yang ada di atas meja. Hanya terdapat 1 buah semangka.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan identifikasi visual langsung dan menghitung objek yang terlihat (counting) untuk menjawab pertanyaan.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji kemampuan siswa dalam mengenali objek (fakta) dan melakukan penghitungan dasar.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
+- Intended difficulty `classify/Easy`: Tugas ini sangat sederhana, hanya memerlukan pengamatan visual langsung tanpa langkah perencanaan atau integrasi konsep yang kompleks.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan menghitung benda konkret hingga 10. |
+| expectedPrerequisite | Kemampuan menghitung benda konkret sampai 10. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -6311,19 +6193,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 SD karena melibatkan penghitungan objek konkret sederhana yang familiar. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 2, menghitung jumlah objek dalam gambar adalah tugas rutin yang sangat mendasar. |
 
-Run 3 — solusi: Mengamati gambar, hanya terdapat 1 buah semangka di atas meja.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses pengenalan visual langsung dan menghitung objek tunggal tanpa perlu strategi kompleks.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji kemampuan mengenali fakta dasar (jumlah objek) dari representasi visual.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
-- Intended difficulty `classify/Easy`: Tugas ini sangat mendasar, hanya melibatkan identifikasi objek tunggal dalam gambar.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
+Run 3 — solusi: Mengamati gambar dan menghitung jumlah buah semangka yang ada di atas meja. Hanya terdapat 1 buah semangka.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk mengidentifikasi dan menghitung objek spesifik (semangka) dari sekumpulan objek yang ada pada gambar. Ini adalah tugas membaca data visual yang sangat langsung.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
+- Dimensi pengetahuan `classify/factual`: Tugas ini melibatkan pengenalan objek (fakta visual) dan penghitungan dasar, yang termasuk dalam kategori pengetahuan faktual.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana karena hanya meminta siswa untuk menghitung satu jenis objek yang jumlahnya sangat sedikit (hanya 1). Tidak ada proses integrasi atau perencanaan yang diperlukan.. Bukti: Berapa banyak buah semangka yang dibeli ibu?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan menghitung objek 1-10. |
+| expectedPrerequisite | Kemampuan menghitung objek sederhana (bilangan cacah 1-10). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -6332,8 +6214,8 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 SD karena hanya memerlukan observasi visual sederhana untuk menghitung jumlah benda konkret. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 2, menghitung objek konkret dalam gambar adalah tugas dasar yang sudah sangat familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -6345,21 +6227,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 112/256; truncation: `False`.
+Model membaca representation `metadata`; token input 110/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000027; applying=0.999973; reasoning=0.000000 | applying | 0.999973 | 0.000284 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.283175; conceptual=0.708017; procedural=0.008807; metacognitive=0.000000 | conceptual | 0.708017 | 0.464134 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.891036; Medium=0.103513; Hard=0.005450 | Easy | 0.891036 | 0.333130 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000041; applying=0.999959; reasoning=0.000000 | applying | 0.999959 | 0.000418 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.253727; conceptual=0.738144; procedural=0.008129; metacognitive=0.000000 | conceptual | 0.738144 | 0.440900 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.899420; Medium=0.094803; Hard=0.005777 | Easy | 0.899420 | 0.317188 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999973; −Σp ln(p) = 0.000313; H = 0.000313/ln(3) = 0.000284; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.708017; −Σp ln(p) = 0.643427; H = 0.643427/ln(4) = 0.464134; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999959; −Σp ln(p) = 0.000459; H = 0.000459/ln(3) = 0.000418; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.891036; −Σp ln(p) = 0.365981; H = 0.365981/ln(3) = 0.333130; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.738144; −Σp ln(p) = 0.611217; H = 0.611217/ln(4) = 0.440900; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.899420; −Σp ln(p) = 0.348466; H = 0.348466/ln(3) = 0.317188; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -6377,7 +6259,7 @@ Pilihan: A. 2
 B. 3
 C. 7
 D. 1
-Transkripsi visual: Seorang anak laki-laki berdiri di belakang meja yang berisi berbagai buah. Di atas meja terdapat 1 buah semangka besar, 3 buah apel merah, 5 buah jeruk kecil, dan 3 buah alpukat hijau.
+Transkripsi visual: Gambar menunjukkan seorang anak laki-laki di belakang meja yang berisi berbagai buah. Terdapat 1 buah semangka besar, 3 buah apel merah, 3 buah alpukat hijau, dan 6 buah jeruk kecil.
 ```
 
 </details>
@@ -6400,51 +6282,30 @@ Kira sedang mendata kue kesukaan teman-teman sekelasnya. Berikut adalah data yan
 | C | 3 |
 | D | 7 |
 
-![Gambar sumber soal 42](<../images/kelas2_panduan_siswa_kelas2.pdf-0254-04.png>)
+![Gambar sumber soal 42](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0254-04.png>)
 
 
-Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `6`.
-Solusi minimum hasil AI: Menghitung jumlah bintang pada baris kue cucur di diagram, yaitu 6 bintang.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0254-04.png. Transkripsi visual: Tabel diagram gambar menunjukkan empat jenis kue. Baris pertama (kue cucur) memiliki 6 simbol bintang. Baris kedua (onde-onde) memiliki 5 simbol bintang. Baris ketiga (lemper) memiliki 3 simbol bintang. Baris keempat (kue talam) memiliki 7 simbol bintang. Keterangan menyatakan setiap gambar mewakili 1 anak.
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Menghitung jumlah simbol bintang pada baris kue cucur. Terdapat 6 simbol bintang, sehingga ada 6 anak yang suka kue cucur.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0254-04.png. Transkripsi visual: Tabel 'Kue Kesukaan' dan 'Banyak Anak'. Baris 1: Gambar kue cucur, diikuti 6 simbol bintang. Baris 2: Gambar onde-onde, diikuti 5 simbol bintang. Baris 3: Gambar lemper, diikuti 3 simbol bintang. Baris 4: Gambar kue talam, diikuti 7 simbol bintang. Keterangan: Setiap gambar bintang mewakili 1 anak.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `80c9e8175b1a87e37c364932edf8bbbc3d1cb3f5c95dad109abef944dc6905fc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9ca9b9cde035390bd5ba1696421253652813b4abdd46540c582a81b09e48603f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 2557 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 2555 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 2569 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3495 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3508 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 3489 |
 
-Run 1 — solusi: Menghitung jumlah bintang pada baris kue cucur di diagram, yaitu 6 bintang.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses membaca data langsung dari diagram gambar (pictograph) dengan menghitung jumlah simbol yang tersedia.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue cucur.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang representasi data sederhana (diagram gambar) di mana simbol mewakili satuan objek.. Bukti: Diagram Gambar Kue Kesukaan; Setiap gambar mewakili 1 anak
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan penghitungan satu baris data pada diagram yang sudah disediakan.. Bukti: Ada .... anak yang suka kue cucur.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan menghitung benda konkret atau simbol (1-10) dan membaca tabel sederhana. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 SD karena merupakan pengenalan dasar terhadap interpretasi data visual sederhana. |
-
-Run 2 — solusi: Menghitung jumlah simbol bintang pada baris kue cucur di diagram gambar, yaitu terdapat 6 bintang.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses membaca data langsung dari diagram gambar (pictograph) dengan menghitung jumlah simbol yang tersedia.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue cucur.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap representasi data sederhana (diagram gambar) sebagai bentuk penyajian informasi.. Bukti: Diagram Gambar Kue Kesukaan; Setiap gambar mewakili 1 anak
-- Intended difficulty `classify/Easy`: Tugas ini sangat rutin bagi siswa kelas 2, hanya melibatkan penghitungan satu-satu (one-to-one correspondence) pada representasi visual yang sangat sederhana.. Bukti: Ada .... anak yang suka kue cucur.
+Run 1 — solusi: Menghitung jumlah simbol bintang pada baris kue cucur. Terdapat 6 simbol bintang, sehingga ada 6 anak yang suka kue cucur.
+- Domain kognitif `classify/knowing`: Soal meminta siswa membaca data dari diagram gambar (pictograph) secara langsung. Siswa hanya perlu menghitung jumlah simbol yang merepresentasikan data, yang merupakan prosedur dasar dalam membaca data.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue cucur.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara simbol (bintang) dan data (jumlah anak) dalam diagram gambar, yang merupakan pemahaman konseptual dasar tentang representasi data.. Bukti: Setiap gambar mewakili 1 anak.; Diagram Gambar Kue Kesukaan.
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena siswa hanya perlu melakukan penghitungan langsung (counting) pada simbol yang tersedia tanpa ada langkah tambahan atau manipulasi data.. Bukti: Ada .... anak yang suka kue cucur.; Setiap gambar mewakili 1 anak.
 
 Profil difficulty run ini:
 
@@ -6460,18 +6321,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena diagram gambar adalah pengenalan awal statistik yang sangat mendasar dan prosedural. |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa membaca diagram gambar sederhana dengan skala 1:1. Tugas ini hanya memerlukan penghitungan langsung. |
 
-Run 3 — solusi: Menghitung jumlah bintang pada baris kue cucur di diagram gambar, yaitu ada 6 bintang.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses membaca data langsung dari diagram gambar (pictograph) dengan menghitung jumlah simbol yang tersedia.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue cucur.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang representasi data sederhana dalam bentuk diagram gambar (pictograph), yang merupakan pengetahuan konseptual dasar.. Bukti: Diagram Gambar Kue Kesukaan; Setiap gambar mewakili 1 anak
-- Intended difficulty `classify/Easy`: Tugas ini sangat rutin dan langsung, hanya memerlukan penghitungan satu baris data pada diagram yang sudah disediakan.. Bukti: Ada .... anak yang suka kue cucur.
+Run 2 — solusi: Menghitung jumlah bintang pada baris kue cucur di diagram gambar: terdapat 6 bintang, sehingga ada 6 anak yang suka kue cucur.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk membaca data dari diagram gambar (pictograph) sederhana dengan melakukan korespondensi satu-satu antara gambar bintang dan jumlah anak. Ini adalah prosedur langsung yang familiar bagi siswa kelas 2.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue cucur.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang cara membaca dan menginterpretasikan representasi data sederhana (diagram gambar) yang merupakan pengetahuan konseptual dasar dalam statistika.. Bukti: Setiap gambar mewakili 1 anak.; Diagram Gambar Kue Kesukaan.
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu melakukan penghitungan langsung (counting) pada baris yang relevan di diagram gambar. Tidak ada langkah yang saling bergantung atau strategi kompleks yang diperlukan.. Bukti: Ada .... anak yang suka kue cucur.; Setiap gambar mewakili 1 anak.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan membilang 1-10 dan memahami korespondensi satu-satu. |
+| expectedPrerequisite | Kemampuan menghitung benda konkret atau gambar secara berurutan. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -6481,7 +6342,28 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena membaca diagram gambar sederhana adalah kompetensi dasar yang diharapkan pada tingkat ini. |
+| gradeRelativeRationale | Membaca diagram gambar sederhana adalah materi standar kelas 2. Soal ini tidak menuntut analisis data yang kompleks, hanya pembacaan data langsung. |
+
+Run 3 — solusi: Menghitung jumlah bintang pada baris kue cucur di diagram gambar. Terdapat 6 bintang, sehingga ada 6 anak yang suka kue cucur.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk membaca data dari diagram gambar (pictograph) secara langsung. Tugas ini hanya memerlukan kemampuan mengenali dan menghitung objek (bintang) yang merepresentasikan data, yang merupakan prosedur yang sangat langsung.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue cucur.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap representasi data sederhana dalam bentuk diagram gambar, di mana setiap simbol memiliki nilai satu-ke-satu.. Bukti: Setiap gambar mewakili 1 anak.; Diagram Gambar Kue Kesukaan
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah bagi siswa kelas 2 karena hanya memerlukan penghitungan langsung jumlah simbol pada satu baris diagram. Tidak ada langkah tambahan atau integrasi data yang diperlukan.. Bukti: Ada .... anak yang suka kue cucur.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang benda konkret atau simbol hingga 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Membaca diagram gambar sederhana adalah materi standar kelas 2. Soal ini bersifat langsung tanpa memerlukan manipulasi data. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -6493,21 +6375,21 @@ Profil difficulty run ini:
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 181/256; truncation: `False`.
+Model membaca representation `metadata`; token input 189/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000000; applying=1.000000; reasoning=0.000000 | applying | 1.000000 | 0.000002 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.004025; conceptual=0.991263; procedural=0.004712; metacognitive=0.000000 | conceptual | 0.991263 | 0.040499 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.666067; Medium=0.323197; Hard=0.010736 | Easy | 0.666067 | 0.622962 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000000; applying=1.000000; reasoning=0.000000 | applying | 1.000000 | 0.000001 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.009527; conceptual=0.969749; procedural=0.020724; metacognitive=0.000000 | conceptual | 0.969749 | 0.111420 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.571343; Medium=0.413746; Hard=0.014911 | Easy | 0.571343 | 0.680551 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000002; H = 0.000002/ln(3) = 0.000002; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.991263; −Σp ln(p) = 0.056143; H = 0.056143/ln(4) = 0.040499; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000001; H = 0.000001/ln(3) = 0.000001; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.666067; −Σp ln(p) = 0.684393; H = 0.684393/ln(3) = 0.622962; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.969749; −Σp ln(p) = 0.154461; H = 0.154461/ln(4) = 0.111420; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.571343; −Σp ln(p) = 0.747662; H = 0.747662/ln(3) = 0.680551; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -6528,7 +6410,7 @@ Pilihan: A. 5
 B. 6
 C. 3
 D. 7
-Transkripsi visual: Tabel diagram gambar menunjukkan empat jenis kue. Baris pertama (kue cucur) memiliki 6 simbol bintang. Baris kedua (onde-onde) memiliki 5 simbol bintang. Baris ketiga (lemper) memiliki 3 simbol bintang. Baris keempat (kue talam) memiliki 7 simbol bintang. Keterangan menyatakan setiap gambar mewakili 1 anak.
+Transkripsi visual: Tabel 'Kue Kesukaan' dan 'Banyak Anak'. Baris 1: Gambar kue cucur, diikuti 6 simbol bintang. Baris 2: Gambar onde-onde, diikuti 5 simbol bintang. Baris 3: Gambar lemper, diikuti 3 simbol bintang. Baris 4: Gambar kue talam, diikuti 7 simbol bintang. Keterangan: Setiap gambar bintang mewakili 1 anak.
 ```
 
 </details>
@@ -6551,36 +6433,36 @@ Kira sedang mendata kue kesukaan teman-teman sekelasnya. Berikut adalah data yan
 | C | 6 |
 | D | 7 |
 
-![Gambar sumber soal 43](<../images/kelas2_panduan_siswa_kelas2.pdf-0254-04.png>)
+![Gambar sumber soal 43](<../../../images/kelas2_panduan_siswa_kelas2.pdf-0254-04.png>)
 
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Menghitung jumlah bintang pada baris 'kue talam' di diagram, yaitu terdapat 7 bintang.
-Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0254-04.png. Transkripsi visual: Tabel diagram gambar menunjukkan empat jenis kue. Baris pertama (kue cucur) memiliki 6 bintang. Baris kedua (onde-onde) memiliki 5 bintang. Baris ketiga (lemper) memiliki 3 bintang. Baris keempat (kue talam) memiliki 7 bintang. Keterangan: setiap gambar bintang mewakili 1 anak.
+Solusi minimum hasil AI: Menghitung jumlah bintang pada baris kue talam di diagram gambar. Terdapat 7 bintang, yang berarti 7 anak menyukai kue talam.
+Gambar sumber: images/kelas2_panduan_siswa_kelas2.pdf-0254-04.png. Transkripsi visual: Diagram gambar menampilkan empat baris kue. Baris pertama (kue cucur) memiliki 6 bintang. Baris kedua (onde-onde) memiliki 5 bintang. Baris ketiga (lemper) memiliki 3 bintang. Baris keempat (kue talam) memiliki 7 bintang. Keterangan: Setiap gambar mewakili 1 anak.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9b2647b871d1729caa32a2d9a31d04e4aead1a74a83210c2922992dc292add23`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ef2554e3aeb7ea31316270a8fba055af52b41f8d38bb9a2af8cc466acf2fe980`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 2581 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 2563 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 2620 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3554 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3493 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3493 |
 
-Run 1 — solusi: Menghitung jumlah bintang pada baris 'kue talam' di diagram, yaitu terdapat 7 bintang.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses membaca data secara langsung dari diagram gambar (menghitung objek visual), yang merupakan proses kognitif tingkat knowing.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue talam.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap representasi data sederhana (diagram gambar) sebagai bentuk penyajian informasi, yang termasuk dalam kategori pengetahuan konseptual.. Bukti: Diagram Gambar Kue Kesukaan; Setiap gambar mewakili 1 anak
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya memerlukan penghitungan satu baris data pada diagram gambar yang sudah disediakan tanpa manipulasi atau perbandingan kompleks.. Bukti: Ada .... anak yang suka kue talam.
+Run 1 — solusi: Menghitung jumlah bintang pada baris kue talam di diagram gambar. Terdapat 7 bintang, yang berarti 7 anak menyukai kue talam.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk membaca data dari diagram gambar (pictograph) secara langsung. Ini adalah tugas mengenali dan membaca informasi yang disajikan dalam bentuk visual sederhana, yang termasuk dalam domain knowing.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue talam.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap representasi data sederhana (diagram gambar) dan hubungan antara simbol (bintang) dengan kuantitas (jumlah anak). Ini melibatkan pengetahuan konseptual tentang bagaimana data divisualisasikan.. Bukti: Setiap gambar mewakili 1 anak.; Diagram Gambar Kue Kesukaan
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah bagi siswa kelas 2. Siswa hanya perlu melakukan korespondensi satu-ke-satu antara gambar bintang dan angka. Tidak ada langkah kompleks, tidak ada strategi yang perlu dipilih, dan tidak ada kendala yang berinteraksi.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue talam.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Kemampuan menghitung benda konkret (1-10) dan membaca tabel sederhana. |
+| expectedPrerequisite | Kemampuan membilang benda konkret atau gambar hingga 10. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -6590,33 +6472,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 SD karena hanya melibatkan pembacaan data visual langsung (tallying/counting) yang merupakan standar kompetensi awal pengolahan data. |
+| gradeRelativeRationale | Membaca diagram gambar sederhana adalah materi standar kelas 2. Tugas ini bersifat rutin dan langsung, tidak memerlukan perencanaan atau integrasi konsep. |
 
-Run 2 — solusi: Menghitung jumlah simbol bintang pada baris 'kue talam' di diagram gambar, yaitu sebanyak 7 buah.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses membaca data langsung dari diagram gambar (pictograph) dengan menghitung jumlah simbol yang tersedia.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue talam.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap representasi data sederhana (diagram gambar) di mana simbol mewakili satuan.. Bukti: Diagram Gambar Kue Kesukaan; Setiap gambar mewakili 1 anak
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar untuk kelas 2, hanya memerlukan penghitungan satu-ke-satu dari representasi visual yang sudah terstruktur.. Bukti: Ada .... anak yang suka kue talam.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan membilang 1-10 dan membaca tabel sederhana. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa dengan diagram gambar sederhana sebagai pengenalan awal statistika. |
-
-Run 3 — solusi: Menghitung jumlah simbol bintang pada baris 'kue talam' di diagram gambar, yaitu sebanyak 7 buah.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu melakukan proses membaca data langsung dari diagram gambar (pictograph) dengan menghitung jumlah simbol yang tersedia.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue talam.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai representasi data sederhana dalam bentuk diagram gambar (pictograph) sebagai cara menyajikan informasi.. Bukti: Diagram Gambar Kue Kesukaan.; Setiap gambar mewakili 1 anak.
-- Intended difficulty `classify/Easy`: Soal ini termasuk kategori mudah karena siswa hanya perlu melakukan penghitungan langsung (one-to-one correspondence) pada representasi visual yang sangat sederhana dan familiar bagi siswa kelas 2.. Bukti: Ada .... anak yang suka kue talam.; Setiap gambar mewakili 1 anak.
+Run 2 — solusi: Menghitung jumlah bintang pada baris kue talam di diagram gambar. Terdapat 7 bintang, yang berarti ada 7 anak yang menyukai kue talam.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu membaca diagram gambar secara langsung dengan menghitung jumlah simbol (bintang) yang mewakili data kue talam. Tidak ada proses manipulasi data atau inferensi yang diperlukan.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue talam.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang cara membaca dan menginterpretasikan data sederhana yang disajikan dalam bentuk diagram gambar (piktogram).. Bukti: Diagram Gambar Kue Kesukaan; Setiap gambar mewakili 1 anak.
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena hanya memerlukan penghitungan satu-ke-satu antara simbol dan nilai (1 bintang = 1 anak). Tidak ada langkah tambahan atau kendala yang perlu dipertimbangkan.. Bukti: Ada .... anak yang suka kue talam.
 
 Profil difficulty run ini:
 
@@ -6631,34 +6492,77 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa membaca data sederhana dari tabel atau diagram gambar. Tugas ini adalah tugas dasar membaca data tanpa memerlukan analisis lebih lanjut. |
+
+Run 3 — solusi: Menghitung jumlah bintang pada baris 'kue talam' di diagram gambar. Terdapat 7 bintang, yang berarti 7 anak menyukai kue talam.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk membaca data dari diagram gambar (pictograph) secara langsung. Tugas ini hanya memerlukan kemampuan mengenali simbol dan menghitung jumlah objek yang disajikan dalam bentuk visual sederhana, yang merupakan prosedur langsung.. Bukti: Lengkapi setiap kalimat berikut sesuai dengan diagram di atas.; Ada .... anak yang suka kue talam.
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman siswa terhadap representasi data sederhana (diagram gambar) di mana satu simbol mewakili satu unit data (fakta).. Bukti: Diagram Gambar Kue Kesukaan.; Setiap gambar mewakili 1 anak.
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena siswa hanya perlu menghitung jumlah simbol (bintang) pada baris yang ditanyakan tanpa ada operasi tambahan atau interpretasi yang kompleks.. Bukti: Ada .... anak yang suka kue talam.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang benda konkret atau gambar hingga 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan membaca data sederhana. Menghitung jumlah gambar dalam baris adalah tugas rutin yang sesuai dengan tingkat perkembangan kognitif mereka. |
+| gradeRelativeRationale | Membaca diagram gambar sederhana adalah materi standar kelas 2. Soal ini tidak memerlukan perencanaan atau integrasi langkah, hanya observasi visual langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"conceptual": 2, "factual": 1} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4852`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa diminta untuk membaca data dari diagram gambar (piktogram) secara langsung. Tugas ini hanya memerlukan kemampuan mengenali simbol dan menghitung jumlah objek yang disajikan dalam bentuk visual sederhana, yang merupakan prosedur langsung (knowing).
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman siswa terhadap representasi data sederhana (diagram gambar) di mana satu simbol mewakili satu unit data. Ini adalah pengetahuan konseptual tentang bagaimana data divisualisasikan.
+- Intended difficulty `Easy`: Soal ini sangat mudah karena siswa hanya perlu menghitung jumlah simbol (bintang) pada baris yang ditanyakan tanpa ada operasi tambahan atau interpretasi yang kompleks. Jalur penyelesaian sangat jelas dan langsung.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan membilang benda konkret atau gambar hingga 10. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Membaca diagram gambar sederhana adalah materi standar kelas 2. Soal ini tidak memerlukan perencanaan atau integrasi langkah, hanya observasi visual langsung. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 178/256; truncation: `False`.
+Model membaca representation `metadata`; token input 176/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000000; applying=1.000000; reasoning=0.000000 | applying | 1.000000 | 0.000006 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.003448; conceptual=0.993648; procedural=0.002904; metacognitive=0.000000 | conceptual | 0.993648 | 0.030907 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.711270; Medium=0.279701; Hard=0.009029 | Easy | 0.711270 | 0.583630 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000000; applying=1.000000; reasoning=0.000000 | applying | 1.000000 | 0.000001 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.002567; conceptual=0.994685; procedural=0.002748; metacognitive=0.000000 | conceptual | 0.994685 | 0.026560 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.666169; Medium=0.323725; Hard=0.010106 | Easy | 0.666169 | 0.620926 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000006; H = 0.000006/ln(3) = 0.000006; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.993648; −Σp ln(p) = 0.042846; H = 0.042846/ln(4) = 0.030907; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 1.000000; −Σp ln(p) = 0.000002; H = 0.000002/ln(3) = 0.000001; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.711270; −Σp ln(p) = 0.641184; H = 0.641184/ln(3) = 0.583630; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.994685; −Σp ln(p) = 0.036819; H = 0.036819/ln(4) = 0.026560; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.666169; −Σp ln(p) = 0.682157; H = 0.682157/ln(3) = 0.620926; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -6679,7 +6583,7 @@ Pilihan: A. 5
 B. 3
 C. 6
 D. 7
-Transkripsi visual: Tabel diagram gambar menunjukkan empat jenis kue. Baris pertama (kue cucur) memiliki 6 bintang. Baris kedua (onde-onde) memiliki 5 bintang. Baris ketiga (lemper) memiliki 3 bintang. Baris keempat (kue talam) memiliki 7 bintang. Keterangan: setiap gambar bintang mewakili 1 anak.
+Transkripsi visual: Diagram gambar menampilkan empat baris kue. Baris pertama (kue cucur) memiliki 6 bintang. Baris kedua (onde-onde) memiliki 5 bintang. Baris ketiga (lemper) memiliki 3 bintang. Baris keempat (kue talam) memiliki 7 bintang. Keterangan: Setiap gambar mewakili 1 anak.
 ```
 
 </details>
@@ -6702,30 +6606,72 @@ Diagram berikut menunjukkan jenis buah kesukaan anak-anak. Diagram Buah Kesukaan
 | C | 4 |
 | D | 3 |
 
-![Gambar sumber soal 44](<../images/kelas1_panduan_siswa_kelas1.pdf-0246-04.png>)
+![Gambar sumber soal 44](<../../../images/kelas1_panduan_siswa_kelas1.pdf-0246-04.png>)
 
 
-Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Jumlah anak yang suka belimbing adalah 7. Jumlah anak yang suka apel adalah 4. Selisihnya adalah 7 - 4 = 3.
-Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0246-04.png. Transkripsi visual: Diagram batang vertikal menggunakan simbol bintang untuk mewakili jumlah anak. Sumbu horizontal menunjukkan jenis buah: jeruk (6 bintang), apel (4 bintang), belimbing (7 bintang), dan jambu air (5 bintang). Keterangan: 1 bintang mewakili 1 anak.
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `3`.
+Solusi minimum hasil AI: Hitung jumlah bintang untuk belimbing (7) dan apel (4). Hitung selisihnya: 7 - 4 = 3.
+Gambar sumber: images/kelas1_panduan_siswa_kelas1.pdf-0246-04.png. Transkripsi visual: Diagram batang gambar (pictograph) berjudul 'Diagram Buah Kesukaan'. Terdapat empat kolom buah dari kiri ke kanan: jeruk, apel, belimbing, jambu air. Setiap gambar bintang mewakili 1 anak. Jumlah bintang per kolom: jeruk (6), apel (4), belimbing (7), jambu air (5). Keterangan: 'Gambar mewakili 1 anak'.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 2 / Matematika SD Kelas 2. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3868c4f2131843ea9d422e7444252708da7e00861d18cc3b8e8b7c0505fcd3d5`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7e3e412d225e4698582c892149ec0e6437512683d118982813e17fa2e44280dc`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2569 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2540 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 2504 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 3421 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 3424 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 3511 |
 
-Run 1 — solusi: Jumlah anak yang suka belimbing adalah 7. Jumlah anak yang suka apel adalah 4. Selisihnya adalah 7 - 4 = 3.
-- Domain kognitif `classify/applying`: Siswa perlu membaca data dari piktogram (mengidentifikasi jumlah untuk belimbing dan apel) dan melakukan operasi pengurangan sederhana untuk menemukan selisih. Ini adalah penerapan prosedur rutin pada data yang diberikan.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak; Anak yang suka belimbing ... lebih banyak dari anak yang suka apel
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang cara membaca dan menginterpretasikan data dalam bentuk piktogram (konsep) serta melakukan operasi hitung dasar (prosedural).. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak; Anak yang suka belimbing ... lebih banyak dari anak yang suka apel
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan pembacaan data langsung dari piktogram dan operasi pengurangan satu langkah yang familiar bagi siswa kelas 2.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak; Anak yang suka belimbing ... lebih banyak dari anak yang suka apel
+Run 1 — solusi: Hitung jumlah bintang untuk belimbing (7) dan apel (4). Hitung selisihnya: 7 - 4 = 3.
+- Domain kognitif `classify/applying`: Siswa perlu membaca data dari diagram gambar (mengambil informasi) dan melakukan operasi pengurangan sederhana untuk mencari selisih. Ini adalah penerapan prosedur rutin pada konteks diagram.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang cara membaca dan menginterpretasikan data dalam bentuk diagram gambar (konsep dasar penyajian data).. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak.; Gambar mewakili 1 anak.
+- Intended difficulty `classify/Easy`: Soal ini meminta siswa membaca dua data dari diagram dan melakukan satu operasi pengurangan. Langkah-langkahnya jelas, familiar bagi kelas 2, dan tidak memerlukan perencanaan kompleks.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung jumlah objek dalam diagram gambar dan melakukan pengurangan bilangan cacah. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan membaca diagram gambar sederhana dan melakukan pengurangan dasar. Tugas ini adalah aplikasi langsung dari keterampilan tersebut. |
+
+Run 2 — solusi: Hitung jumlah anak yang suka belimbing (7 bintang) dan apel (4 bintang). Hitung selisihnya: 7 - 4 = 3.
+- Domain kognitif `classify/applying`: Siswa perlu membaca data dari diagram gambar (ekstraksi informasi) dan melakukan operasi pengurangan sederhana untuk mencari selisih. Ini adalah penerapan prosedur rutin pada konteks diagram.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana data direpresentasikan dalam diagram gambar dan prosedur untuk membandingkan dua nilai.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak.; Gambar mewakili 1 anak.
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu menghitung jumlah item pada dua kategori yang jelas dan melakukan pengurangan dasar. Tidak ada kendala yang berinteraksi atau perencanaan kompleks yang diperlukan.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan menghitung objek (1-10) dan operasi pengurangan dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 2 sudah terbiasa membaca diagram gambar sederhana dan melakukan operasi hitung dasar untuk membandingkan jumlah. |
+
+Run 3 — solusi: Hitung jumlah anak yang suka belimbing (7 bintang) dan apel (4 bintang). Hitung selisihnya: 7 - 4 = 3.
+- Domain kognitif `classify/applying`: Siswa perlu membaca data dari piktogram (mengambil informasi faktual) dan melakukan operasi pengurangan sederhana untuk menemukan selisih antara dua kategori. Ini adalah penerapan prosedur rutin pada konteks data yang diberikan.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak; Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang cara membaca dan menginterpretasikan data dalam bentuk diagram gambar (piktogram), yang merupakan pengetahuan konseptual dasar tentang representasi data.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak; Gambar mewakili 1 anak
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu menghitung jumlah bintang untuk dua kategori yang ditentukan (belimbing dan apel) dan melakukan pengurangan sederhana. Jalur penyelesaian sangat jelas, tidak ada kendala yang berinteraksi, dan representasi piktogram sangat familiar bagi siswa kelas 2.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
 
 Profil difficulty run ini:
 
@@ -6741,97 +6687,33 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena piktogram adalah representasi data dasar yang umum diajarkan, dan operasi hitung yang diperlukan sangat sederhana. |
-
-Run 2 — solusi: Jumlah anak yang suka belimbing adalah 7. Jumlah anak yang suka apel adalah 4. Selisihnya adalah 7 - 4 = 3.
-- Domain kognitif `classify/applying`: Siswa perlu menginterpretasikan data dari diagram gambar (membaca frekuensi) dan menerapkan operasi pengurangan untuk membandingkan dua kategori. Ini adalah penerapan prosedur rutin pada data yang diberikan.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak; Anak yang suka belimbing ... lebih banyak dari anak yang suka apel
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan pengetahuan prosedural tentang cara membaca diagram gambar dan melakukan operasi pengurangan dasar untuk menyelesaikan masalah.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak; Anak yang suka belimbing ... lebih banyak dari anak yang suka apel
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan pembacaan data langsung dari diagram gambar dan operasi pengurangan satu langkah yang rutin bagi siswa kelas 2.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak; Anak yang suka belimbing ... lebih banyak dari anak yang suka apel
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan menghitung objek dalam diagram dan melakukan pengurangan dasar. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena diagram gambar adalah representasi data dasar yang umum diajarkan, dan operasi pengurangannya berada dalam rentang angka yang dikuasai. |
-
-Run 3 — solusi: Jumlah anak yang suka belimbing adalah 7. Jumlah anak yang suka apel adalah 4. Selisihnya adalah 7 - 4 = 3.
-- Domain kognitif `classify/applying`: Siswa perlu menginterpretasi data dari piktogram (membaca jumlah) dan melakukan operasi pengurangan sederhana untuk membandingkan dua kategori. Ini adalah penerapan prosedur rutin pada data yang diberikan.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang bagaimana data diorganisasikan dalam bentuk diagram gambar (piktogram) dan bagaimana menggunakan informasi tersebut untuk menjawab pertanyaan.. Bukti: Diagram berikut menunjukkan jenis buah kesukaan anak-anak.
-- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena menuntut siswa untuk melakukan dua langkah: membaca data dari dua kolom berbeda dan melakukan operasi pengurangan untuk mencari selisih, bukan sekadar membaca satu nilai langsung.. Bukti: Anak yang suka belimbing ... lebih banyak dari anak yang suka apel.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan membaca piktogram sederhana dan operasi pengurangan dasar. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2, di mana siswa mulai belajar membaca data dan membandingkan jumlah sederhana. |
+| gradeRelativeRationale | Siswa kelas 2 sudah diajarkan membaca diagram gambar sederhana dan operasi pengurangan dasar. Tugas ini merupakan penerapan langsung dari keterampilan tersebut tanpa kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 2, "Medium": 1} | majority_2_of_3 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3920`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu melakukan dua langkah rutin: membaca frekuensi dari piktogram untuk dua kategori berbeda, lalu menerapkan operasi pengurangan untuk membandingkan jumlah. Ini adalah penerapan prosedur rutin.
-- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman prosedural tentang cara membaca data dari piktogram dan melakukan operasi hitung dasar untuk mendapatkan selisih.
-- Intended difficulty `Easy`: Soal ini tergolong mudah karena hanya melibatkan pembacaan data langsung dari piktogram dan operasi pengurangan satu langkah yang sangat familiar bagi siswa kelas 2.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Kemampuan menghitung objek (bintang) dan melakukan pengurangan bilangan cacah di bawah 10. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 2 karena piktogram adalah representasi data dasar yang umum diajarkan, dan operasi hitung yang diperlukan sangat sederhana. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
-Model membaca representation `metadata`; token input 135/256; truncation: `False`.
+Model membaca representation `metadata`; token input 160/256; truncation: `False`.
 
 | Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
 |---|---|---|---:|---:|---|
-| Domain kognitif | knowing=0.000003; applying=0.999997; reasoning=0.000000 | applying | 0.999997 | 0.000038 | review / selective_threshold_gate_not_met |
-| Dimensi pengetahuan | factual=0.036274; conceptual=0.958963; procedural=0.004763; metacognitive=0.000000 | conceptual | 0.958963 | 0.134142 | review / selective_threshold_gate_not_met |
-| Intended difficulty | Easy=0.718459; Medium=0.272929; Hard=0.008612 | Easy | 0.718459 | 0.576101 | review / selective_threshold_gate_not_met |
+| Domain kognitif | knowing=0.000027; applying=0.999973; reasoning=0.000000 | applying | 0.999973 | 0.000287 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.005704; conceptual=0.992025; procedural=0.002271; metacognitive=0.000000 | conceptual | 0.992025 | 0.036959 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.639628; Medium=0.346655; Hard=0.013717 | Easy | 0.639628 | 0.648015 | review / selective_threshold_gate_not_met |
 
-Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999997; −Σp ln(p) = 0.000042; H = 0.000042/ln(3) = 0.000038; T = 0.050000.
-
-
-Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.958963; −Σp ln(p) = 0.185961; H = 0.185961/ln(4) = 0.134142; T = 0.209800.
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999973; −Σp ln(p) = 0.000316; H = 0.000316/ln(3) = 0.000287; T = 0.050000.
 
 
-Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.718459; −Σp ln(p) = 0.632912; H = 0.632912/ln(3) = 0.576101; T = 0.953328.
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.992025; −Σp ln(p) = 0.051236; H = 0.051236/ln(4) = 0.036959; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.639628; −Σp ln(p) = 0.711917; H = 0.711917/ln(3) = 0.648015; T = 0.953328.
 
 
 <details><summary>Input sebenarnya yang dibaca model</summary>
@@ -6849,14 +6731,14 @@ Pilihan: A. 2
 B. 1
 C. 4
 D. 3
-Transkripsi visual: Diagram batang vertikal menggunakan simbol bintang untuk mewakili jumlah anak. Sumbu horizontal menunjukkan jenis buah: jeruk (6 bintang), apel (4 bintang), belimbing (7 bintang), dan jambu air (5 bintang). Keterangan: 1 bintang mewakili 1 anak.
+Transkripsi visual: Diagram batang gambar (pictograph) berjudul 'Diagram Buah Kesukaan'. Terdapat empat kolom buah dari kiri ke kanan: jeruk, apel, belimbing, jambu air. Setiap gambar bintang mewakili 1 anak. Jumlah bintang per kolom: jeruk (6), apel (4), belimbing (7), jambu air (5). Keterangan: 'Gambar mewakili 1 anak'.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.

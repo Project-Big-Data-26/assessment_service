@@ -56,6 +56,7 @@ class TrainingRow(BaseModel):
             contentVersion=self.contentVersion,
             contentHash=self.contentHash,
             grade=self.grade,
+            subjectTrack=self.subjectTrack,
             topic=self.topic,
             subtopic=self.subtopic,
             questionType=self.questionType,
@@ -97,6 +98,9 @@ class DatasetSnapshot(BaseModel):
     labelProvenance: str = "ai_silver"
     gateFailures: list[str] = Field(default_factory=list)
     exclusionSummary: dict[str, int] = Field(default_factory=dict)
+    trainingGrades: list[int] = Field(default_factory=lambda: list(range(1, 7)))
+    requiredGradeTracks: list[str] = Field(default_factory=list)
+    rubricFamily: str | None = None
 
 
 def normalized_duplicate_text(row: TrainingRow) -> str:
@@ -215,6 +219,8 @@ def _label_counts(rows: list[TrainingRow]) -> Counter[str]:
                 f"grade={row.grade}",
             )
         )
+        if row.subjectTrack == "tl":
+            values.update((f"gradeTrack={row.grade}:{row.subjectTrack}",))
     return values
 
 
@@ -276,6 +282,7 @@ def validate_split_minimums(
     minimum_train_per_class: int = 30,
     minimum_evaluation_per_class: int = 15,
     required_grades: tuple[int, ...] = (1, 2, 3, 4, 5, 6),
+    required_grade_tracks: tuple[str, ...] = (),
 ) -> list[str]:
     by_id = {row.questionVersionId: row for row in rows}
     failures: list[str] = []
@@ -298,6 +305,10 @@ def validate_split_minimums(
         for grade in required_grades:
             if grade_counts[grade] == 0:
                 failures.append(f"{split}:grade:{grade}=0<1")
+        track_counts = Counter(f"{row.grade}:{row.subjectTrack}" for row in selected)
+        for grade_track in required_grade_tracks:
+            if track_counts[grade_track] == 0:
+                failures.append(f"{split}:gradeTrack:{grade_track}=0<1")
     return failures
 
 
@@ -359,12 +370,20 @@ def build_snapshot(
     research_only: bool = False,
     label_provenance: str = "ai_silver",
     exclusion_summary: dict[str, int] | None = None,
+    training_grades: tuple[int, ...] = (1, 2, 3, 4, 5, 6),
+    required_grade_tracks: tuple[str, ...] = (),
+    rubric_family: str | None = None,
 ) -> DatasetSnapshot:
+    if (not training_grades or len(set(training_grades)) != len(training_grades)
+            or any(grade not in range(1, 13) for grade in training_grades)):
+        raise ValueError("training_grades must be distinct grades 1-12")
+    if len({row.questionVersionId for row in rows}) != len(rows):
+        raise ValueError("duplicate questionVersionId in training rows")
     main = sorted(
-        (row for row in rows if 1 <= row.grade <= 6), key=lambda item: item.questionVersionId
+        (row for row in rows if row.grade in training_grades), key=lambda item: item.questionVersionId
     )
     expansion = sorted(
-        (row for row in rows if row.grade > 6), key=lambda item: item.questionVersionId
+        (row for row in rows if row.grade not in training_grades), key=lambda item: item.questionVersionId
     )
     manifest = deterministic_group_split(main, seed=seed)
     failures = validate_split_minimums(
@@ -373,6 +392,7 @@ def build_snapshot(
         minimum_train_per_class=minimum_train_per_class,
         minimum_evaluation_per_class=minimum_per_class,
         required_grades=required_grades,
+        required_grade_tracks=required_grade_tracks,
     )
     failures.extend(validate_split_integrity(main, manifest))
     snapshot_payload = [row.model_dump(mode="json") for row in sorted(main, key=lambda item: item.questionVersionId)]
@@ -392,6 +412,9 @@ def build_snapshot(
         labelProvenance=label_provenance,
         gateFailures=failures,
         exclusionSummary=exclusion_summary or {},
+        trainingGrades=list(training_grades),
+        requiredGradeTracks=list(required_grade_tracks),
+        rubricFamily=rubric_family,
     )
 
 
@@ -411,6 +434,7 @@ def serialized_training_examples(
         {
             "questionVersionId": row.questionVersionId,
             "grade": row.grade,
+            "subjectTrack": row.subjectTrack,
             "text": serialize_question(row.inference_request(), representation=representation),
             "mathCognitiveDomain": row.mathCognitiveDomain.value,
             "knowledgeDimension": row.knowledgeDimension.value,

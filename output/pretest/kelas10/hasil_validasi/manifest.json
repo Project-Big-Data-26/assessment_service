@@ -29,8 +29,8 @@
       "bytes": 119452
     },
     "validation_results.json": {
-      "sha256": "4e94d38d8991dee1b7d3333babb6e3d9469cc5f7998b97066bf73f7f94c43b5a",
-      "bytes": 74716
+      "sha256": "c0a666168b28a94fc8740ae89c84b510595478817b1c1fd80d05ea061053afb3",
+      "bytes": 74687
     },
     "indobert_predictions.json": {
       "sha256": "6e07b4d817670eae6d48244408f821d4fbae3b9e3aa5c9a79fd093e1bab90013",
@@ -67,6 +67,18 @@
     "bukti_validasi/decision_audit.json": {
       "sha256": "6059e9490f1651f4667188c33bac0eb1d2781cfa3a3f0354c60935b25355db62",
       "bytes": 1068649
+    },
+    "ai_validation_results.json": {
+      "sha256": "4e94d38d8991dee1b7d3333babb6e3d9469cc5f7998b97066bf73f7f94c43b5a",
+      "bytes": 74716
+    },
+    "bukti_validasi/operational_balance_audit.json": {
+      "sha256": "b5e692ff3b50202bc7258b1c5582d5581a3c8ee2244d7be4fb34cb9e8e6dd19e",
+      "bytes": 56742
+    },
+    "bukti_validasi/ai_export_manifest.json": {
+      "sha256": "d820c32ee9f28b43d8dace83721855514c5270da8ec0b9e1705f0482fcb11d89",
+      "bytes": 39035
     }
   },
   "limitations": [
@@ -913,6 +925,34 @@
           "intendedDifficulty": 3
         }
       }
+    },
+    "operationalBalance": {
+      "provenance": "relative_bank_quota",
+      "schemaVersion": "relative-operational-balance-v2",
+      "aiValidationResults": {
+        "path": "ai_validation_results.json",
+        "sha256": "4e94d38d8991dee1b7d3333babb6e3d9469cc5f7998b97066bf73f7f94c43b5a",
+        "bytes": 74716
+      },
+      "audit": {
+        "path": "bukti_validasi/operational_balance_audit.json",
+        "sha256": "b5e692ff3b50202bc7258b1c5582d5581a3c8ee2244d7be4fb34cb9e8e6dd19e",
+        "bytes": 56742
+      },
+      "activeDistribution": {
+        "easy": 16,
+        "medium": 15,
+        "hard": 15
+      },
+      "sourceFingerprint": "07e97def2983e40bd2c7c548f5c954f2940eb5e89dc669f880ca5bb117fe6f06",
+      "versionDirectory": "D:\\KULIAH\\Big Data\\extraction_model\\output\\pretest\\kelas10\\operational_balance_v2\\source_07e97def2983e40bd2c7c548f5c954f2940eb5e89dc669f880ca5bb117fe6f06",
+      "sourceRubricVersions": [
+        "math-rubric-3x4x3-v6-sma10-grade-aware"
+      ],
+      "newRubricValidationComplete": false,
+      "trainingLabelSource": "ai_validation_results.json",
+      "empiricalIrtCalibration": false
     }
-  }
+  },
+  "activeDatabaseLabelProvenance": "relative_bank_quota"
 }

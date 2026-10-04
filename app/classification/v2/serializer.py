@@ -36,6 +36,9 @@ def serialize_question(
     kko = ", ".join(normalize_text(item) for item in question.detectedKko) or "-"
     all_fields = (
         ("Kelas", str(question.grade)),
+        # Regular serialization stays byte-compatible with existing artifacts.
+        # TL has an explicit encoder feature, separate from its numeric grade.
+        *((("Jalur mata pelajaran", "Matematika Tingkat Lanjut"),) if question.subjectTrack == "tl" else ()),
         ("Topik", normalize_text(question.topic)),
         ("Subtopik", normalize_text(question.subtopic)),
         ("Tipe soal", normalize_text(question.questionType)),
@@ -54,7 +57,11 @@ def serialize_question(
     }
     if representation not in included:
         raise ValueError(f"unknown input representation: {representation}")
-    fields = tuple((key, value) for key, value in all_fields if key in included[representation])
+    fields = tuple(
+        (key, value) for key, value in all_fields
+        if key in included[representation]
+        or (key == "Jalur mata pelajaran" and representation != "stem_options")
+    )
     return "\n".join(f"{key}: {value}" for key, value in fields)
 
 

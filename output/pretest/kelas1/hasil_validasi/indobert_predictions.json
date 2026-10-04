@@ -1,9 +1,9 @@
 {
   "schemaVersion": "indobert-blind-diagnostics-v1",
-  "createdAt": "2026-10-03T10:02:26.120869+00:00",
+  "createdAt": "2026-10-04T18:25:03.227600+00:00",
   "researchOnlyRun": true,
   "reviewRequired": true,
-  "blindDecisionLockedAt": "2026-10-03T10:02:02.311706+00:00",
+  "blindDecisionLockedAt": "2026-10-04T18:24:45.349974+00:00",
   "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
   "model": {
     "artifactFormatVersion": "indobert-3x4x3-artifact-v1",
@@ -15,6 +15,7 @@
     "datasetHash": "8a41381aa7e3fdb4e21617b9091e6747d29e5bd3f01e3c992ce9895b823f35c1",
     "splitManifestHash": "681c8a0a6afea9d23b71e1f315543751ebb259645c01f10a4db3fd2d90b634df",
     "rubricVersion": "math-rubric-3x4x3-v1",
+    "rubricVersionsByGradeTrack": {},
     "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
     "inputSchemaVersion": "math-question-text-v1",
     "inputRepresentation": "metadata",
@@ -22,6 +23,18 @@
     "detachDifficultyConditioning": true,
     "difficultyHeadType": "multiclass",
     "gradeEmbeddingDimension": 0,
+    "gradeEmbeddingCount": 6,
+    "supportedGrades": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supportedSubjectTracks": [
+      "regular"
+    ],
     "routingPolicyVersion": "confidence-only-v1",
     "labels": {
       "mathCognitiveDomain": [
@@ -46,19 +59,22 @@
         "temperature": 0.05,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "knowledgeDimension": {
         "temperature": 0.20979985858964298,
         "confidenceThreshold": null,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "intendedDifficulty": {
         "temperature": 0.9533279648066687,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       }
     },
     "maxLength": 256,
@@ -651,15 +667,18 @@
     "itemCount": 50,
     "predictionDistribution": {
       "mathCognitiveDomain": {
-        "applying": 24,
-        "knowing": 26
+        "applying": 25,
+        "knowing": 24,
+        "abstain": 1
       },
       "knowledgeDimension": {
-        "conceptual": 30,
-        "factual": 20
+        "conceptual": 29,
+        "factual": 20,
+        "abstain": 1
       },
       "intendedDifficulty": {
-        "Easy": 50
+        "Easy": 49,
+        "abstain": 1
       }
     }
   },
@@ -669,26 +688,26 @@
       "questionId": "1f52d8dff6bbb1b9be6a4516",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:1f52d8dff6bbb1b9be6a4516:content-v2",
       "questionVersionId": "1f52d8dff6bbb1b9be6a4516:content-v2:blind-revalidation",
-      "contentHash": "5a78aa7081386b0e06112a332c38761d0c5b335583ab7dbaaad2d6051cb5f83f",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menghitung, Membaca, dan Menulis Bilangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ayo menghitung banyak mainan. Wei pergi ke toko mainan. Wei melihat banyak mainan. Wei kesulitan menghitungnya. Ayo bantu Wei.\n\nAyo bantu Wei. Ada .... (boneka kelinci). Berapa banyaknya?\nPilihan: A. 5\nB. 7\nC. 9\nD. 6\nTranskripsi visual: A girl is looking at a toy store. On a shelf, there are three rows of toys. The top row contains 6 pink rabbit dolls. The middle row contains 4 blue airplanes. The bottom row contains 5 blue spinning tops. To the left, there is a stepped display with 7 red toy cars. To the right, there is a pink bin containing 5 colorful balls.",
-      "untruncatedTokenCount": 189,
+      "contentHash": "4060505c004d600381a76e1bd044fd74dbc2690b5ccaf2e96ea7d24ddbf2e205",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menghitung, Membaca, dan Menulis Bilangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ayo menghitung banyak mainan. Wei pergi ke toko mainan. Wei melihat banyak mainan. Wei kesulitan menghitungnya. Ayo bantu Wei.\n\nAyo bantu Wei. Ada .... (boneka kelinci). Berapa banyaknya?\nPilihan: A. 5\nB. 7\nC. 9\nD. 6\nTranskripsi visual: Gambar menunjukkan seorang anak perempuan di toko mainan. Terdapat rak kayu dengan empat tingkat. Tingkat paling atas berisi 6 boneka kelinci berwarna merah muda. Tingkat kedua berisi 4 pesawat mainan. Tingkat ketiga berisi 4 pesawat mainan. Tingkat keempat berisi 5 gasing. Di sebelah kiri, terdapat rak tangga berisi 7 mobil mainan merah. Di sebelah kanan, terdapat wadah berisi 5 bola warna-warni.",
+      "untruncatedTokenCount": 166,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 378.256,
+      "latencyMs": 272.842,
       "prediction": {
         "questionId": "1f52d8dff6bbb1b9be6a4516",
         "contentVersion": 2,
-        "contentHash": "5a78aa7081386b0e06112a332c38761d0c5b335583ab7dbaaad2d6051cb5f83f",
+        "contentHash": "4060505c004d600381a76e1bd044fd74dbc2690b5ccaf2e96ea7d24ddbf2e205",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.0005411441210185851,
-            "applying": 0.9994588558789814,
-            "reasoning": 1.130208686750768e-39
+            "knowing": 4.5311710044627173e-07,
+            "applying": 0.9999995468828996,
+            "reasoning": 4.805918157428564e-44
           },
-          "calibratedConfidence": 0.9994588558789814,
-          "normalizedEntropy": 0.004197467165561308,
+          "calibratedConfidence": 0.9999995468828996,
+          "normalizedEntropy": 6.437075915112329e-06,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -697,13 +716,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.02106654021839661,
-            "conceptual": 0.9538515020639315,
-            "procedural": 0.025081955457827345,
-            "metacognitive": 2.259844574252725e-09
+            "factual": 0.01631369714706619,
+            "conceptual": 0.9807711742401161,
+            "procedural": 0.0029151285788188708,
+            "metacognitive": 3.3998720284345575e-11
           },
-          "calibratedConfidence": 0.9538515020639315,
-          "normalizedEntropy": 0.15785064348108224,
+          "calibratedConfidence": 0.9807711742401161,
+          "normalizedEntropy": 0.07444588948757672,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -712,18 +731,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.6558146076894974,
-            "Medium": 0.32291996878513357,
-            "Hard": 0.021265423525369052
+            "Easy": 0.6599324589811327,
+            "Medium": 0.32745732155481366,
+            "Hard": 0.012610219464053633
           },
-          "calibratedConfidence": 0.6558146076894974,
-          "normalizedEntropy": 0.6586238109942028,
+          "calibratedConfidence": 0.6599324589811327,
+          "normalizedEntropy": 0.6326161084663942,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -733,7 +753,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "273b5ad119168efbeceac3e2616e4a69f83860436d11673ef852e62b04bbca33",
+          "inputHash": "cd592eaf7e7b470210dbddeb4ee5132015bafae7edd238107e3a7054892906e7",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -744,16 +764,16 @@
       "questionId": "e91b53ee437d36556aa832b8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:e91b53ee437d36556aa832b8:content-v2",
       "questionVersionId": "e91b53ee437d36556aa832b8:content-v2:blind-revalidation",
-      "contentHash": "28bc514789457f83d4d75614b1d48093282fef89d172f5889ad4cac88b3a3f6c",
+      "contentHash": "849dc6ed5ca201bcff207c533122bb986696a98a00149577001307c03802357e",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menghitung, Membaca, dan Menulis Bilangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pasangkan lambang bilangan dengan namanya. Bilangan 7 dibaca ....\nPilihan: A. Tujuh\nB. Delapan\nC. Enam\nD. Sembilan\nTranskripsi visual: -",
       "untruncatedTokenCount": 65,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 132.833,
+      "latencyMs": 124.452,
       "prediction": {
         "questionId": "e91b53ee437d36556aa832b8",
         "contentVersion": 2,
-        "contentHash": "28bc514789457f83d4d75614b1d48093282fef89d172f5889ad4cac88b3a3f6c",
+        "contentHash": "849dc6ed5ca201bcff207c533122bb986696a98a00149577001307c03802357e",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -799,6 +819,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -819,26 +840,26 @@
       "questionId": "aded1ab9ecb9a5ad0e341f2a",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:aded1ab9ecb9a5ad0e341f2a:content-v2",
       "questionVersionId": "aded1ab9ecb9a5ad0e341f2a:content-v2:blind-revalidation",
-      "contentHash": "7340044427e5d71399d187a9b20d06580337e11cea87daa2d2cad4fdfe65a870",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan Banyak Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Buah mana yang jumlahnya lebih banyak?\nPilihan: A. Tidak dapat ditentukan\nB. B (jeruk)\nC. Sama banyak\nD. A (mangga)\nTranskripsi visual: Terdapat dua kotak berlabel A dan B. Kotak A berisi 4 buah mangga. Kotak B berisi 6 buah jeruk.",
-      "untruncatedTokenCount": 85,
+      "contentHash": "41eccdd3320517fba1a69ded7b424b10ea004d57f3d4c55e51a8092c8728df74",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan Banyak Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Buah mana yang jumlahnya lebih banyak?\nPilihan: A. Tidak dapat ditentukan\nB. B (jeruk)\nC. Sama banyak\nD. A (mangga)\nTranskripsi visual: Terdapat dua kotak, A dan B. Kotak A berisi 4 buah mangga. Kotak B berisi 6 buah jeruk. Soal meminta untuk menentukan kotak mana yang memiliki jumlah buah lebih banyak.",
+      "untruncatedTokenCount": 97,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 173.912,
+      "latencyMs": 173.384,
       "prediction": {
         "questionId": "aded1ab9ecb9a5ad0e341f2a",
         "contentVersion": 2,
-        "contentHash": "7340044427e5d71399d187a9b20d06580337e11cea87daa2d2cad4fdfe65a870",
+        "contentHash": "41eccdd3320517fba1a69ded7b424b10ea004d57f3d4c55e51a8092c8728df74",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.0004966415227359589,
-            "applying": 0.9995033584772641,
-            "reasoning": 6.622840884015757e-47
+            "knowing": 0.00047831823998627644,
+            "applying": 0.9995216817600137,
+            "reasoning": 9.385138228763004e-47
           },
-          "calibratedConfidence": 0.9995033584772641,
-          "normalizedEntropy": 0.003891080742711692,
+          "calibratedConfidence": 0.9995216817600137,
+          "normalizedEntropy": 0.003763892750842494,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -847,13 +868,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.11173067728405173,
-            "conceptual": 0.8772003607340639,
-            "procedural": 0.01106896197516794,
-            "metacognitive": 6.716530042410796e-12
+            "factual": 0.028899149096169013,
+            "conceptual": 0.9664879467061136,
+            "procedural": 0.004612904189519423,
+            "metacognitive": 8.19807641329684e-12
           },
-          "calibratedConfidence": 0.8772003607340639,
-          "normalizedEntropy": 0.29550509866326824,
+          "calibratedConfidence": 0.9664879467061136,
+          "normalizedEntropy": 0.11554070297960403,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -862,18 +883,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8580349194592867,
-            "Medium": 0.13903299386305296,
-            "Hard": 0.002932086677660428
+            "Easy": 0.8025530953663772,
+            "Medium": 0.19426358337323443,
+            "Hard": 0.003183321260388304
           },
-          "calibratedConfidence": 0.8580349194592867,
-          "normalizedEntropy": 0.3848422315545647,
+          "calibratedConfidence": 0.8025530953663772,
+          "normalizedEntropy": 0.46707967260016614,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -883,7 +905,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "fc0ecdd3753de3310fe202a69c6a6cef4f0142e23301df44cf3db8bb4e79ec50",
+          "inputHash": "4b0cc4659090bd648e8d6f1f8787452946f3713def91f36bd13c9ed9207f98ff",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -894,26 +916,26 @@
       "questionId": "71dcf3a05499a6d3e660d279",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:71dcf3a05499a6d3e660d279:content-v2",
       "questionVersionId": "71dcf3a05499a6d3e660d279:content-v2:blind-revalidation",
-      "contentHash": "8f6fe712ed737d791fc399743b8a2f0ccdf6943578e44745af90551a98613151",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan Banyak Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Buah mana yang jumlahnya lebih sedikit?\nPilihan: A. Tidak dapat ditentukan\nB. A (mangga)\nC. Sama banyak\nD. B (jeruk)\nTranskripsi visual: Terdapat dua kotak, A dan B. Kotak A berisi 4 buah mangga. Kotak B berisi 6 buah jeruk.",
-      "untruncatedTokenCount": 84,
+      "contentHash": "3539ff0908dba36f09d0172916e502332c6018d4a772d2ec9d4437b7f34541b4",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan Banyak Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Buah mana yang jumlahnya lebih sedikit?\nPilihan: A. Tidak dapat ditentukan\nB. A (mangga)\nC. Sama banyak\nD. B (jeruk)\nTranskripsi visual: Terdapat dua kotak berlabel A dan B. Kotak A berisi 4 buah mangga. Kotak B berisi 6 buah jeruk. Pertanyaan meminta untuk menentukan buah mana yang jumlahnya lebih sedikit.",
+      "untruncatedTokenCount": 96,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 174.114,
+      "latencyMs": 160.99,
       "prediction": {
         "questionId": "71dcf3a05499a6d3e660d279",
         "contentVersion": 2,
-        "contentHash": "8f6fe712ed737d791fc399743b8a2f0ccdf6943578e44745af90551a98613151",
+        "contentHash": "3539ff0908dba36f09d0172916e502332c6018d4a772d2ec9d4437b7f34541b4",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.0005866317430161459,
-            "applying": 0.9994133682569838,
-            "reasoning": 7.519499329323199e-47
+            "knowing": 0.000583730078348694,
+            "applying": 0.9994162699216512,
+            "reasoning": 1.037333271935758e-45
           },
-          "calibratedConfidence": 0.9994133682569838,
-          "normalizedEntropy": 0.004507188706087483,
+          "calibratedConfidence": 0.9994162699216512,
+          "normalizedEntropy": 0.004487530173793222,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -922,13 +944,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.09617031211541971,
-            "conceptual": 0.8926977975110414,
-            "procedural": 0.011131890367340988,
-            "metacognitive": 6.197810007428793e-12
+            "factual": 0.03054568362107487,
+            "conceptual": 0.9664452752096411,
+            "procedural": 0.003009041164770323,
+            "metacognitive": 4.513685081203214e-12
           },
-          "calibratedConfidence": 0.8926977975110414,
-          "normalizedEntropy": 0.27165508768272606,
+          "calibratedConfidence": 0.9664452752096411,
+          "normalizedEntropy": 0.11326299245268465,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -937,18 +959,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8563706349184337,
-            "Medium": 0.1406768480342031,
-            "Hard": 0.0029525170473631767
+            "Easy": 0.8238623515175361,
+            "Medium": 0.17292497133648127,
+            "Hard": 0.0032126771459826124
           },
-          "calibratedConfidence": 0.8563706349184337,
-          "normalizedEntropy": 0.3876606615998848,
+          "calibratedConfidence": 0.8238623515175361,
+          "normalizedEntropy": 0.43831047636139503,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -958,7 +981,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "6ead308d2e41cbc4335731c4d0dafbb7934cebc57140eefbb2a20a04c9606a5c",
+          "inputHash": "faa70b59ba1d89df63ac8cb318e18572acd53e7fd995cd8f687fc91807148918",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -969,16 +992,16 @@
       "questionId": "a035dee2caefafa52096496e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:a035dee2caefafa52096496e:content-v2",
       "questionVersionId": "a035dee2caefafa52096496e:content-v2:blind-revalidation",
-      "contentHash": "87e9ac4734983dd9522c0d00f6e50ad6ae63ba63a274a79cdd72b7578fd66103",
+      "contentHash": "03152cc45d4a60e4ea094714a99e4e63892e2a5f3b723b41c7d7b13cee1b8192",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menghitung Maju dan Mundur\nTipe soal: multiple_choice\nStimulus: -\nSoal: Lengkapi urutan bilangan berikut: 1, 2, ....\nPilihan: A. 3\nB. 1\nC. 0\nD. 4\nTranskripsi visual: -",
       "untruncatedTokenCount": 61,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 119.198,
+      "latencyMs": 124.446,
       "prediction": {
         "questionId": "a035dee2caefafa52096496e",
         "contentVersion": 2,
-        "contentHash": "87e9ac4734983dd9522c0d00f6e50ad6ae63ba63a274a79cdd72b7578fd66103",
+        "contentHash": "03152cc45d4a60e4ea094714a99e4e63892e2a5f3b723b41c7d7b13cee1b8192",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -1024,6 +1047,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1044,16 +1068,16 @@
       "questionId": "593cbed3be61dd6c967e770c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:593cbed3be61dd6c967e770c:content-v2",
       "questionVersionId": "593cbed3be61dd6c967e770c:content-v2:blind-revalidation",
-      "contentHash": "9fe9be503affcc15959049b5ad2edf1f4088fbe863530b5d135ca277c99393ec",
+      "contentHash": "847c154ec9de5d258e085710c84f1baa5baa42933c7f08a5eb089c8d26025d55",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menghitung Maju dan Mundur\nTipe soal: multiple_choice\nStimulus: -\nSoal: Lengkapi urutan bilangan berikut: 4, 5, ....\nPilihan: A. 3\nB. 4\nC. 6\nD. 7\nTranskripsi visual: -",
       "untruncatedTokenCount": 61,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 116.253,
+      "latencyMs": 117.927,
       "prediction": {
         "questionId": "593cbed3be61dd6c967e770c",
         "contentVersion": 2,
-        "contentHash": "9fe9be503affcc15959049b5ad2edf1f4088fbe863530b5d135ca277c99393ec",
+        "contentHash": "847c154ec9de5d258e085710c84f1baa5baa42933c7f08a5eb089c8d26025d55",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -1099,6 +1123,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1119,26 +1144,26 @@
       "questionId": "82267daa87c52ac8b3876098",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:82267daa87c52ac8b3876098:content-v2",
       "questionVersionId": "82267daa87c52ac8b3876098:content-v2:blind-revalidation",
-      "contentHash": "bd135fcf0454301d6053e5300a93b5b746e11d6cd6043cc0bf2c740a5603e92d",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Pasangan Bilangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Temukan pasangan bilangan berikut.\n\nTemukan pasangan bilangan berikut. Bilangan 9 dipasangkan menjadi dua bilangan berapa dan berapa?\nPilihan: A. 5 dan 3\nB. 4 dan 4\nC. 3 dan 6\nD. 4 dan 5\nTranskripsi visual: Terdapat dua kotak berisi objek. Kotak kiri berisi 4 buah jeruk. Kotak kanan berisi 5 buah salak. Di bawahnya terdapat diagram pasangan bilangan (number bond) dengan angka 9 di lingkaran utama yang terhubung ke dua lingkaran kosong.",
-      "untruncatedTokenCount": 116,
+      "contentHash": "30722cf7ba6502c59ad8ba3b58d0d90fabff0ada257af0481b0b1f5ede0f7a7b",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Pasangan Bilangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Temukan pasangan bilangan berikut.\n\nTemukan pasangan bilangan berikut. Bilangan 9 dipasangkan menjadi dua bilangan berapa dan berapa?\nPilihan: A. 5 dan 3\nB. 4 dan 4\nC. 3 dan 6\nD. 4 dan 5\nTranskripsi visual: Terdapat dua kotak berisi buah. Kotak pertama berisi 4 buah jeruk. Kotak kedua berisi 5 buah salak. Di bawahnya terdapat diagram pasangan bilangan (number bond) dengan angka 9 di lingkaran utama, yang bercabang ke dua lingkaran kosong.",
+      "untruncatedTokenCount": 117,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 180.53,
+      "latencyMs": 187.254,
       "prediction": {
         "questionId": "82267daa87c52ac8b3876098",
         "contentVersion": 2,
-        "contentHash": "bd135fcf0454301d6053e5300a93b5b746e11d6cd6043cc0bf2c740a5603e92d",
+        "contentHash": "30722cf7ba6502c59ad8ba3b58d0d90fabff0ada257af0481b0b1f5ede0f7a7b",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.003528638974575349,
-            "applying": 0.9964713610254247,
-            "reasoning": 8.081219359032211e-45
+            "knowing": 0.002897205061672899,
+            "applying": 0.9971027949383271,
+            "reasoning": 1.8866396126668022e-44
           },
-          "calibratedConfidence": 0.9964713610254247,
-          "normalizedEntropy": 0.021343358958922767,
+          "calibratedConfidence": 0.9971027949383271,
+          "normalizedEntropy": 0.018044851784640114,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1147,13 +1172,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.07762395261292263,
-            "conceptual": 0.9135673277448778,
-            "procedural": 0.00880871962735119,
-            "metacognitive": 1.4848465049922006e-11
+            "factual": 0.0703107225366495,
+            "conceptual": 0.9232119738327929,
+            "procedural": 0.0064773036177834835,
+            "metacognitive": 1.277415714976433e-11
           },
-          "calibratedConfidence": 0.9135673277448778,
-          "normalizedEntropy": 0.23275379295967924,
+          "calibratedConfidence": 0.9232119738327929,
+          "normalizedEntropy": 0.21140276658718593,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1162,18 +1187,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8429380577168846,
-            "Medium": 0.15354257437604404,
-            "Hard": 0.0035193679070713974
+            "Easy": 0.8377958181597962,
+            "Medium": 0.1586323683896126,
+            "Hard": 0.0035718134505912454
           },
-          "calibratedConfidence": 0.8429380577168846,
-          "normalizedEntropy": 0.4110759564631704,
+          "calibratedConfidence": 0.8377958181597962,
+          "normalizedEntropy": 0.41913636945913785,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1183,7 +1209,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "7dfd47726dd517b6096561dfec41990bf45002d54adb0f039d6bb4c73323a53d",
+          "inputHash": "3726facb7b7b5b3e2d61dc8e17a973ec1961536847b1ba6ce3beaeaa5494ad96",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1194,16 +1220,16 @@
       "questionId": "ddae4518c6926e380356e576",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:ddae4518c6926e380356e576:content-v2",
       "questionVersionId": "ddae4518c6926e380356e576:content-v2:blind-revalidation",
-      "contentHash": "40068de1e3104dd5d5f2dce13b1742a9b41e3b4e32d17eb61a054f795d89758e",
+      "contentHash": "0f132fb8326c8c8453b9ab54680066716c9b1d65e0488f8571e6071066b9d218",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Pasangan Bilangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pasangkan dua bilangan yang jumlahnya 6. Bilangan berapa yang berpasangan dengan 4?\nPilihan: A. 3\nB. 2\nC. 4\nD. 1\nTranskripsi visual: -",
       "untruncatedTokenCount": 61,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 114.117,
+      "latencyMs": 120.816,
       "prediction": {
         "questionId": "ddae4518c6926e380356e576",
         "contentVersion": 2,
-        "contentHash": "40068de1e3104dd5d5f2dce13b1742a9b41e3b4e32d17eb61a054f795d89758e",
+        "contentHash": "0f132fb8326c8c8453b9ab54680066716c9b1d65e0488f8571e6071066b9d218",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -1249,6 +1275,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1269,26 +1296,26 @@
       "questionId": "ef1c6489a0d0caf13ccb067e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:ef1c6489a0d0caf13ccb067e:content-v2",
       "questionVersionId": "ef1c6489a0d0caf13ccb067e:content-v2:blind-revalidation",
-      "contentHash": "8cb692d8fca01c2911f1256917b983cf484910bfa707290e7330d474794f6d14",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Cerita Penjumlahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ada .... mobil berwarna kuning. Ada .... mobil berwarna merah. Semuanya ada .... mobil.\nPilihan: A. 4 mobil kuning, 5 mobil merah, semuanya 9 mobil\nB. 4 mobil kuning, 4 mobil merah, semuanya 9 mobil\nC. 4 mobil kuning, 4 mobil merah, semuanya 8 mobil\nD. 5 mobil kuning, 4 mobil merah, semuanya 9 mobil\nTranskripsi visual: Terdapat dua kelompok mobil. Kelompok kiri berisi 4 mobil berwarna kuning. Kelompok kanan berisi 4 mobil berwarna merah. Soal meminta siswa mengisi jumlah mobil kuning, jumlah mobil merah, dan total seluruh mobil.",
-      "untruncatedTokenCount": 149,
+      "contentHash": "c9fa39e9469c6004f647cb1ef4020048d46d5cc3e433bdf7a7074dd482f9f712",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Cerita Penjumlahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ada .... mobil berwarna kuning. Ada .... mobil berwarna merah. Semuanya ada .... mobil.\nPilihan: A. 4 mobil kuning, 5 mobil merah, semuanya 9 mobil\nB. 4 mobil kuning, 4 mobil merah, semuanya 9 mobil\nC. 4 mobil kuning, 4 mobil merah, semuanya 8 mobil\nD. 5 mobil kuning, 4 mobil merah, semuanya 9 mobil\nTranskripsi visual: Terdapat dua kotak. Kotak kiri berisi 4 mobil berwarna kuning. Kotak kanan berisi 4 mobil berwarna merah. Terdapat teks rumpang untuk mengisi jumlah mobil kuning, jumlah mobil merah, dan jumlah total mobil.",
+      "untruncatedTokenCount": 150,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 245.936,
+      "latencyMs": 215.933,
       "prediction": {
         "questionId": "ef1c6489a0d0caf13ccb067e",
         "contentVersion": 2,
-        "contentHash": "8cb692d8fca01c2911f1256917b983cf484910bfa707290e7330d474794f6d14",
+        "contentHash": "c9fa39e9469c6004f647cb1ef4020048d46d5cc3e433bdf7a7074dd482f9f712",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.0008958832067972416,
-            "applying": 0.9991041167932028,
-            "reasoning": 4.809600640673137e-44
+            "knowing": 0.006817478261156278,
+            "applying": 0.9931825217388437,
+            "reasoning": 8.928172720908851e-44
           },
-          "calibratedConfidence": 0.9991041167932028,
-          "normalizedEntropy": 0.0065378131017074645,
+          "calibratedConfidence": 0.9931825217388437,
+          "normalizedEntropy": 0.03713919750619647,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1297,13 +1324,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.024188733790703514,
-            "conceptual": 0.9741600448887765,
-            "procedural": 0.0016512209585528314,
-            "metacognitive": 3.6196694606849684e-10
+            "factual": 0.03509730978152267,
+            "conceptual": 0.9601853102652246,
+            "procedural": 0.004717379673919257,
+            "metacognitive": 2.793337154860792e-10
           },
-          "calibratedConfidence": 0.9741600448887765,
-          "normalizedEntropy": 0.09096812431352987,
+          "calibratedConfidence": 0.9601853102652246,
+          "normalizedEntropy": 0.13117202588444543,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1312,18 +1339,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.6562924567032957,
-            "Medium": 0.3366066328411545,
-            "Hard": 0.0071009104555497995
+            "Easy": 0.7046480584136898,
+            "Medium": 0.2880350101581642,
+            "Hard": 0.007316931428146004
           },
-          "calibratedConfidence": 0.6562924567032957,
-          "normalizedEntropy": 0.6171782499873923,
+          "calibratedConfidence": 0.7046480584136898,
+          "normalizedEntropy": 0.5836069811233208,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1333,7 +1361,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "5fd09b29a164432e73ef48971a1558c695da520f348e639b9c207fd7c09583d3",
+          "inputHash": "e3284207d6bc38d659f520008657fcd2124dc53093f0d9a2273db9246ce33e15",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1344,16 +1372,16 @@
       "questionId": "f00f8cf40ab22284c6d216e4",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:f00f8cf40ab22284c6d216e4:content-v2",
       "questionVersionId": "f00f8cf40ab22284c6d216e4:content-v2:blind-revalidation",
-      "contentHash": "d5ffecf23fb2b9f68b0ebb04b5fe092e632969167daa48bbd8301ba26bc7a6da",
+      "contentHash": "2de61ff2c3db69ada392603d136cab28bccc5aad74e5e7d04ca777d12684d942",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Cerita Penjumlahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ada 4 anak bermain lompat tali. Datang lagi 2 anak untuk ikut bermain. Mereka bermain bergantian.\n\nBerapa jumlah anak sekarang?\nPilihan: A. 2\nB. 6\nC. 8\nD. 4\nTranskripsi visual: -",
       "untruncatedTokenCount": 70,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 125.606,
+      "latencyMs": 123.288,
       "prediction": {
         "questionId": "f00f8cf40ab22284c6d216e4",
         "contentVersion": 2,
-        "contentHash": "d5ffecf23fb2b9f68b0ebb04b5fe092e632969167daa48bbd8301ba26bc7a6da",
+        "contentHash": "2de61ff2c3db69ada392603d136cab28bccc5aad74e5e7d04ca777d12684d942",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -1399,6 +1427,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1424,7 +1453,7 @@
       "untruncatedTokenCount": 56,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 92.327,
+      "latencyMs": 115.494,
       "prediction": {
         "questionId": "bfe710d81f98780c622d6066",
         "contentVersion": 2,
@@ -1474,6 +1503,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1499,7 +1529,7 @@
       "untruncatedTokenCount": 56,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 85.833,
+      "latencyMs": 111.626,
       "prediction": {
         "questionId": "f9582859a11afb87b07d7da8",
         "contentVersion": 2,
@@ -1549,6 +1579,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1569,26 +1600,26 @@
       "questionId": "018e7b45e13d10afc8e87d48",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:018e7b45e13d10afc8e87d48:content-v2",
       "questionVersionId": "018e7b45e13d10afc8e87d48:content-v2:blind-revalidation",
-      "contentHash": "1f833c8b0ecd4eb31cf9207f85e7fbc623d0c1218f8cbf2b0e4e3085e82bc63f",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Soal Cerita Penjumlahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ada 3 sepeda Ada 1 becak.\n\nBerapa jumlah semua rodanya?\nPilihan: A. 9 roda\nB. 10 roda\nC. 6 roda\nD. 8 roda\nTranskripsi visual: Terdapat 3 sepeda (masing-masing dengan 2 roda) dan 1 becak (dengan 3 roda) di jalan.",
-      "untruncatedTokenCount": 85,
+      "contentHash": "5d2cff276e39a7750c2310edc27077fb1341ef58e42bb5fc4c5c7f02ba6650df",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Soal Cerita Penjumlahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ada 3 sepeda Ada 1 becak.\n\nBerapa jumlah semua rodanya?\nPilihan: A. 9 roda\nB. 10 roda\nC. 6 roda\nD. 8 roda\nTranskripsi visual: Gambar menunjukkan 3 sepeda (masing-masing dengan 2 roda) dan 1 becak (dengan 3 roda). Sepeda berwarna oranye, ungu, dan merah. Becak berwarna biru.",
+      "untruncatedTokenCount": 97,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 118.596,
+      "latencyMs": 161.173,
       "prediction": {
         "questionId": "018e7b45e13d10afc8e87d48",
         "contentVersion": 2,
-        "contentHash": "1f833c8b0ecd4eb31cf9207f85e7fbc623d0c1218f8cbf2b0e4e3085e82bc63f",
+        "contentHash": "5d2cff276e39a7750c2310edc27077fb1341ef58e42bb5fc4c5c7f02ba6650df",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.00033821423912608106,
-            "applying": 0.9996617857608738,
-            "reasoning": 1.3539876245402725e-48
+            "knowing": 7.355173639033531e-05,
+            "applying": 0.9999264482636098,
+            "reasoning": 3.594328460438739e-49
           },
-          "calibratedConfidence": 0.9996617857608738,
-          "normalizedEntropy": 0.0027681358721032105,
+          "calibratedConfidence": 0.9999264482636098,
+          "normalizedEntropy": 0.000704142191057444,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1597,13 +1628,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.36566272832999636,
-            "conceptual": 0.6206488181185977,
-            "procedural": 0.013688453516362767,
-            "metacognitive": 3.5043097669872994e-11
+            "factual": 0.3047416448778803,
+            "conceptual": 0.68403951196799,
+            "procedural": 0.011218843123045719,
+            "metacognitive": 3.108407328366734e-11
           },
-          "calibratedConfidence": 0.6206488181185977,
-          "normalizedEntropy": 0.521286023451425,
+          "calibratedConfidence": 0.68403951196799,
+          "normalizedEntropy": 0.4849280543549092,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1612,18 +1643,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8064485974973472,
-            "Medium": 0.19027129371970877,
-            "Hard": 0.0032801087829441252
+            "Easy": 0.7813004034229637,
+            "Medium": 0.21471125241096872,
+            "Hard": 0.003988344166067698
           },
-          "calibratedConfidence": 0.8064485974973472,
-          "normalizedEntropy": 0.4623642965778917,
+          "calibratedConfidence": 0.7813004034229637,
+          "normalizedEntropy": 0.49624378679028214,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1633,7 +1665,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "c89f911048b6ea307613656cc5b0aeec80a48c4e35b7ae4cbe247f457a17b47b",
+          "inputHash": "d0860ac1761dd60d03d1df40e246e595e8a87cfc0c253e8bd9f2aebda2fd1f71",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1644,16 +1676,16 @@
       "questionId": "ef576d96de5e9070503cfdbb",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:ef576d96de5e9070503cfdbb:content-v2",
       "questionVersionId": "ef576d96de5e9070503cfdbb:content-v2:blind-revalidation",
-      "contentHash": "dc6e657c2d796e973f64cab165218a28df33db4a1bbd7cb6c2bbc1b1b636db80",
+      "contentHash": "54212b2365847aa3508a8aaf3bca70c5517b5f33695dbc38091725fe104121c8",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Soal Cerita Penjumlahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ada 3 motor. Ada 2 mobil.\n\nBerapa jumlah semua kendaraan?\nPilihan: A. 6\nB. 3\nC. 5\nD. 4\nTranskripsi visual: -",
       "untruncatedTokenCount": 60,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 93.861,
+      "latencyMs": 115.729,
       "prediction": {
         "questionId": "ef576d96de5e9070503cfdbb",
         "contentVersion": 2,
-        "contentHash": "dc6e657c2d796e973f64cab165218a28df33db4a1bbd7cb6c2bbc1b1b636db80",
+        "contentHash": "54212b2365847aa3508a8aaf3bca70c5517b5f33695dbc38091725fe104121c8",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -1699,6 +1731,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1719,16 +1752,16 @@
       "questionId": "adaec31c66c75d9c825ad888",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:adaec31c66c75d9c825ad888:content-v2",
       "questionVersionId": "adaec31c66c75d9c825ad888:content-v2:blind-revalidation",
-      "contentHash": "6657e5a7dd374fc5a9e591aecdccfe82c5b50bccde64092b3db398bb05cefd79",
+      "contentHash": "85ac5bdda8e5fd140dc181a6160b0a47177612833458ea26b66f05c9e9275a77",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Cerita Pengurangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: 9 - ... = 7. Lengkapi operasi pengurangannya.\nPilihan: A. 3\nB. 16\nC. 2\nD. 7\nTranskripsi visual: -",
       "untruncatedTokenCount": 59,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 91.998,
+      "latencyMs": 117.678,
       "prediction": {
         "questionId": "adaec31c66c75d9c825ad888",
         "contentVersion": 2,
-        "contentHash": "6657e5a7dd374fc5a9e591aecdccfe82c5b50bccde64092b3db398bb05cefd79",
+        "contentHash": "85ac5bdda8e5fd140dc181a6160b0a47177612833458ea26b66f05c9e9275a77",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -1774,6 +1807,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1799,7 +1833,7 @@
       "untruncatedTokenCount": 61,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 96.818,
+      "latencyMs": 125.155,
       "prediction": {
         "questionId": "91118c063eea5c139d44fcfe",
         "contentVersion": 2,
@@ -1849,6 +1883,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1874,7 +1909,7 @@
       "untruncatedTokenCount": 71,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 105.078,
+      "latencyMs": 127.874,
       "prediction": {
         "questionId": "7aa38a3601f61c91adbf30d4",
         "contentVersion": 2,
@@ -1924,6 +1959,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1944,16 +1980,16 @@
       "questionId": "dde0b5654f117861d23c7988",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:dde0b5654f117861d23c7988:content-v2",
       "questionVersionId": "dde0b5654f117861d23c7988:content-v2:blind-revalidation",
-      "contentHash": "95acbbfd9c8e3f1fed341b3ff0b32ca584a67d6fca30ce5fd142dfd51e265df0",
+      "contentHash": "19415c0f9dc1bb55a3ad15889a813a3a4c4138472f444ace519be0b78a606d0b",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Berbagai Cara Melakukan Pengurangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: 0 1 2 3 4 5 6 7 8 9 10\n\nHitunglah. 9 – 3 =\nPilihan: A. 12\nB. 3\nC. 6\nD. 5\nTranskripsi visual: -",
       "untruncatedTokenCount": 66,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 102.352,
+      "latencyMs": 122.223,
       "prediction": {
         "questionId": "dde0b5654f117861d23c7988",
         "contentVersion": 2,
-        "contentHash": "95acbbfd9c8e3f1fed341b3ff0b32ca584a67d6fca30ce5fd142dfd51e265df0",
+        "contentHash": "19415c0f9dc1bb55a3ad15889a813a3a4c4138472f444ace519be0b78a606d0b",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -1999,6 +2035,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2019,16 +2056,16 @@
       "questionId": "b32a5eeea2898efe65526fe5",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:b32a5eeea2898efe65526fe5:content-v2",
       "questionVersionId": "b32a5eeea2898efe65526fe5:content-v2:blind-revalidation",
-      "contentHash": "121d38127e273c2f06bd5f8e625c2903fcd8f1b97ff36683aaa14bc83ab77324",
+      "contentHash": "ae1fd9e97b2a95a6dc865d837557f5f0b29d5c53c03af3ab07eecc116cc5976c",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Hubungan Penjumlahan dan Pengurangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: 9 - ... = 7\n\nIsilah titik-titik di bawah ini.\nPilihan: A. 2\nB. 3\nC. 7\nD. 16\nTranskripsi visual: -",
       "untruncatedTokenCount": 64,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 100.158,
+      "latencyMs": 122.376,
       "prediction": {
         "questionId": "b32a5eeea2898efe65526fe5",
         "contentVersion": 2,
-        "contentHash": "121d38127e273c2f06bd5f8e625c2903fcd8f1b97ff36683aaa14bc83ab77324",
+        "contentHash": "ae1fd9e97b2a95a6dc865d837557f5f0b29d5c53c03af3ab07eecc116cc5976c",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -2074,6 +2111,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2099,7 +2137,7 @@
       "untruncatedTokenCount": 65,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 97.618,
+      "latencyMs": 120.74,
       "prediction": {
         "questionId": "f6fcf5836947ff740007f70e",
         "contentVersion": 2,
@@ -2149,6 +2187,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2174,7 +2213,7 @@
       "untruncatedTokenCount": 87,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 117.262,
+      "latencyMs": 142.533,
       "prediction": {
         "questionId": "63d056eda46964278255c543",
         "contentVersion": 2,
@@ -2224,6 +2263,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2249,7 +2289,7 @@
       "untruncatedTokenCount": 69,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 105.621,
+      "latencyMs": 131.504,
       "prediction": {
         "questionId": "9948cc37d48fcfe7ef094209",
         "contentVersion": 2,
@@ -2299,6 +2339,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2324,7 +2365,7 @@
       "untruncatedTokenCount": 78,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 111.737,
+      "latencyMs": 141.391,
       "prediction": {
         "questionId": "355049fbd1c523a25cd2de3d",
         "contentVersion": 2,
@@ -2374,6 +2415,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2394,16 +2436,16 @@
       "questionId": "83dd4d12892fc170e56f4e1b",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:83dd4d12892fc170e56f4e1b:content-v2",
       "questionVersionId": "83dd4d12892fc170e56f4e1b:content-v2:blind-revalidation",
-      "contentHash": "f24990388808ccc8e48ed63ad617f4a34080b4d9eb94df00eec32d5d0dbd6a7f",
+      "contentHash": "b4a94c3114eb95de0bea5219b190ba7f8172827d57ba65b5093821b40d384cfb",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mendeskripsikan Benda Berdasarkan Bentuk\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pasangkan bentuk dengan namanya. Bangun keempat dari atas.\nPilihan: A. Bentuk lengkung\nB. Bentuk bintang\nC. Segi empat\nD. Segitiga\nTranskripsi visual: Terdapat empat bangun datar yang disusun vertikal dari atas ke bawah: 1. Persegi berwarna biru, 2. Segitiga berwarna ungu, 3. Persegi panjang berwarna biru, 4. Lingkaran berwarna merah.",
       "untruncatedTokenCount": 98,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 132.153,
+      "latencyMs": 155.027,
       "prediction": {
         "questionId": "83dd4d12892fc170e56f4e1b",
         "contentVersion": 2,
-        "contentHash": "f24990388808ccc8e48ed63ad617f4a34080b4d9eb94df00eec32d5d0dbd6a7f",
+        "contentHash": "b4a94c3114eb95de0bea5219b190ba7f8172827d57ba65b5093821b40d384cfb",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -2449,6 +2491,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2469,26 +2512,26 @@
       "questionId": "98891851d1e28d6d8482ab94",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:98891851d1e28d6d8482ab94:content-v2",
       "questionVersionId": "98891851d1e28d6d8482ab94:content-v2:blind-revalidation",
-      "contentHash": "3ea66dc81c2f32ec95e120e20f7d66a8c4015760c512915e0176141242fadb8a",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengelompokkan Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pilih jawaban yang benar. Bangun yang satu kelompok dengan gambar di atas.\nPilihan: A. Persegi panjang berwarna ungu\nB. Segitiga terbalik berwarna ungu\nC. Persegi berwarna ungu\nD. Oval berwarna ungu\nTranskripsi visual: Terdapat tiga bangun datar di dalam kotak: segitiga siku-siku berwarna ungu, segitiga sama kaki berwarna oranye, dan segitiga sama kaki yang lebih tinggi berwarna merah muda. Ketiganya memiliki bentuk dasar segitiga namun berbeda warna dan ukuran.",
-      "untruncatedTokenCount": 112,
+      "contentHash": "3c7c98a80fa46fc15c233be2016f79dc2eb466729a62681e9be37a5b4e099443",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengelompokkan Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pilih jawaban yang benar. Bangun yang satu kelompok dengan gambar di atas.\nPilihan: A. Persegi panjang berwarna ungu\nB. Segitiga terbalik berwarna ungu\nC. Persegi berwarna ungu\nD. Oval berwarna ungu\nTranskripsi visual: Terdapat tiga bangun datar di dalam kotak: segitiga siku-siku berwarna ungu muda, segitiga sama kaki berwarna oranye muda, dan segitiga sama kaki berwarna merah muda. Ketiganya memiliki bentuk dasar segitiga namun berbeda warna dan ukuran.",
+      "untruncatedTokenCount": 111,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 151.101,
+      "latencyMs": 168.436,
       "prediction": {
         "questionId": "98891851d1e28d6d8482ab94",
         "contentVersion": 2,
-        "contentHash": "3ea66dc81c2f32ec95e120e20f7d66a8c4015760c512915e0176141242fadb8a",
+        "contentHash": "3c7c98a80fa46fc15c233be2016f79dc2eb466729a62681e9be37a5b4e099443",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.002168886645500753,
-            "applying": 0.9978311133544993,
-            "reasoning": 8.841123254075694e-49
+            "knowing": 0.005829864564516546,
+            "applying": 0.9941701354354836,
+            "reasoning": 9.648198682636465e-49
           },
-          "calibratedConfidence": 0.9978311133544993,
-          "normalizedEntropy": 0.01408093547136134,
+          "calibratedConfidence": 0.9941701354354836,
+          "normalizedEntropy": 0.03259211732054599,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2497,13 +2540,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.4180298164435631,
-            "conceptual": 0.575848800406349,
-            "procedural": 0.006121383137825996,
-            "metacognitive": 1.2261851290680144e-11
+            "factual": 0.41553927345622454,
+            "conceptual": 0.5789661207927668,
+            "procedural": 0.005494605739916038,
+            "metacognitive": 1.1092567250710281e-11
           },
-          "calibratedConfidence": 0.575848800406349,
-          "normalizedEntropy": 0.5147664489178166,
+          "calibratedConfidence": 0.5789661207927668,
+          "normalizedEntropy": 0.5121011319599317,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2512,18 +2555,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8733932397473472,
-            "Medium": 0.12415013237821777,
-            "Hard": 0.002456627874435055
+            "Easy": 0.8688349909050013,
+            "Medium": 0.12858554781899578,
+            "Hard": 0.0025794612760030216
           },
-          "calibratedConfidence": 0.8733932397473472,
-          "normalizedEntropy": 0.35681596765442974,
+          "calibratedConfidence": 0.8688349909050013,
+          "normalizedEntropy": 0.3652641353553956,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2533,7 +2577,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "ffefdf056a08553490f57bd9a8753c769152a67b0a73cae3bbf457b65f09d48f",
+          "inputHash": "10e681d71a4cafa717bcf27b96d33c66b658c685de5a7f55138eecb2a79768b1",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2544,26 +2588,26 @@
       "questionId": "7bde28fb9ff374327ad9c3ae",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:7bde28fb9ff374327ad9c3ae:content-v2",
       "questionVersionId": "7bde28fb9ff374327ad9c3ae:content-v2:blind-revalidation",
-      "contentHash": "d7d5a29d7aa50223a7b8e662b6fbc06eb39fdedb7fab88ffac5ffe33fe4ccadf",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengelompokkan Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Bangun yang satu warna dengan gambar di atas.\nPilihan: A. Persegi berwarna ungu\nB. Oval berwarna hijau\nC. Persegi panjang berwarna biru\nD. Segitiga terbalik berwarna merah muda\nTranskripsi visual: Terdapat kotak berisi tiga bangun datar berwarna merah muda: persegi panjang, segitiga siku-siku, dan persegi panjang vertikal. Di bawahnya terdapat tiga pilihan bangun: segitiga terbalik berwarna merah muda, persegi berwarna ungu, dan oval berwarna hijau.",
-      "untruncatedTokenCount": 110,
+      "contentHash": "ec66224fa8ec200b65f456b24baf41a5b24107b88c951899f4ae1f8848d3d88f",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengelompokkan Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Bangun yang satu warna dengan gambar di atas.\nPilihan: A. Persegi berwarna ungu\nB. Oval berwarna hijau\nC. Persegi panjang berwarna biru\nD. Segitiga terbalik berwarna merah muda\nTranskripsi visual: Terdapat sebuah kotak berisi tiga bangun datar: persegi panjang, segitiga siku-siku, dan persegi panjang. Ketiga bangun tersebut berwarna merah muda. Di bawah kotak, terdapat tiga pilihan bangun: segitiga terbalik berwarna merah muda, persegi berwarna ungu, dan oval berwarna hijau. Pertanyaan meminta untuk memilih bangun yang memiliki warna yang sama dengan bangun di dalam kotak.",
+      "untruncatedTokenCount": 132,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 146.907,
+      "latencyMs": 200.088,
       "prediction": {
         "questionId": "7bde28fb9ff374327ad9c3ae",
         "contentVersion": 2,
-        "contentHash": "d7d5a29d7aa50223a7b8e662b6fbc06eb39fdedb7fab88ffac5ffe33fe4ccadf",
+        "contentHash": "ec66224fa8ec200b65f456b24baf41a5b24107b88c951899f4ae1f8848d3d88f",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.0062663770055450575,
-            "applying": 0.9937336229944549,
-            "reasoning": 4.3260561183524876e-48
+            "knowing": 0.00020029572805696334,
+            "applying": 0.999799704271943,
+            "reasoning": 5.585282780905217e-48
           },
-          "calibratedConfidence": 0.9937336229944549,
-          "normalizedEntropy": 0.03461936168861947,
+          "calibratedConfidence": 0.999799704271943,
+          "normalizedEntropy": 0.0017348587412292264,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2572,13 +2616,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.4414486665984205,
-            "conceptual": 0.5545347620070322,
-            "procedural": 0.004016571384403192,
-            "metacognitive": 1.0144076035511042e-11
+            "factual": 0.07392169352619408,
+            "conceptual": 0.9247745644607177,
+            "procedural": 0.0013037420050240288,
+            "metacognitive": 8.064187517237479e-12
           },
-          "calibratedConfidence": 0.5545347620070322,
-          "normalizedEntropy": 0.5122277570598979,
+          "calibratedConfidence": 0.9247745644607177,
+          "normalizedEntropy": 0.19731007172682563,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2587,18 +2631,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8866665050341316,
-            "Medium": 0.11061787654947765,
-            "Hard": 0.002715618416390841
+            "Easy": 0.7821158468720445,
+            "Medium": 0.21387572019310633,
+            "Hard": 0.0040084329348490395
           },
-          "calibratedConfidence": 0.8866665050341316,
-          "normalizedEntropy": 0.3333698394565094,
+          "calibratedConfidence": 0.7821158468720445,
+          "normalizedEntropy": 0.49535601974511206,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2608,7 +2653,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "da2040c562a9d744b7e10abbbfe5790d0920b069a53816f8174da3e83f9d2202",
+          "inputHash": "f7af271a895b0f848d325acd551ff2dd27d060f3fe084cba0eecae421e100e59",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2619,26 +2664,26 @@
       "questionId": "aaf396a280df35704272b0d3",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:aaf396a280df35704272b0d3:content-v2",
       "questionVersionId": "aaf396a280df35704272b0d3:content-v2:blind-revalidation",
-      "contentHash": "c9dc178abbc569f53d8ecf37fcd4a14f0e3273f52844010895152a4e1daea702",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menyusun dan Mengurai Bentuk Bangun\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?\nPilihan: A. 6\nB. 8\nC. 4\nD. 5\nTranskripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri. Bentuk dengan sisi lengkung terdiri dari: 1 lingkaran hitam kecil sebagai hidung, 1 lingkaran hitam kecil sebagai mata, 1 oval merah sebagai telinga, dan 2 lingkaran merah sebagai bercak pada badan. Total ada 5 bentuk dengan sisi lengkung.",
-      "untruncatedTokenCount": 116,
+      "contentHash": "4ceba9abf5380b3258b2ea0bae2d2d0a4a8c68ca9fa503f25318db30453dc2d9",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menyusun dan Mengurai Bentuk Bangun\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hitunglah banyaknya bentuk bangun pada gambar berikut. Bentuk lengkung ada berapa?\nPilihan: A. 6\nB. 8\nC. 4\nD. 5\nTranskripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri. Bentuk lengkung yang terlihat: 1 lingkaran hitam kecil sebagai hidung, 1 lingkaran hitam kecil sebagai mata, 1 oval merah sebagai telinga, dan 2 lingkaran merah sebagai bercak pada badan anjing. Total ada 5 bentuk lengkung.",
+      "untruncatedTokenCount": 113,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 151.413,
+      "latencyMs": 176.391,
       "prediction": {
         "questionId": "aaf396a280df35704272b0d3",
         "contentVersion": 2,
-        "contentHash": "c9dc178abbc569f53d8ecf37fcd4a14f0e3273f52844010895152a4e1daea702",
+        "contentHash": "4ceba9abf5380b3258b2ea0bae2d2d0a4a8c68ca9fa503f25318db30453dc2d9",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.0025660452044569413,
-            "applying": 0.997433954795543,
-            "reasoning": 8.528994708869457e-47
+            "knowing": 0.009901045565245712,
+            "applying": 0.9900989544347544,
+            "reasoning": 4.740497234231483e-47
           },
-          "calibratedConfidence": 0.997433954795543,
-          "normalizedEntropy": 0.016266165168600175,
+          "calibratedConfidence": 0.9900989544347544,
+          "normalizedEntropy": 0.050560449098499716,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2647,13 +2692,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.39898238328105606,
-            "conceptual": 0.564297971226879,
-            "procedural": 0.03671964546482639,
-            "metacognitive": 2.7238684949207406e-11
+            "factual": 0.36122544627706527,
+            "conceptual": 0.6035449293212628,
+            "procedural": 0.0352296243771429,
+            "metacognitive": 2.452892674490471e-11
           },
-          "calibratedConfidence": 0.564297971226879,
-          "normalizedEntropy": 0.5848787757663219,
+          "calibratedConfidence": 0.6035449293212628,
+          "normalizedEntropy": 0.5701843895069421,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2662,18 +2707,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8511357051969136,
-            "Medium": 0.1455553669552274,
-            "Hard": 0.0033089278478589425
+            "Easy": 0.8739172436226106,
+            "Medium": 0.12315931931794787,
+            "Hard": 0.002923437059441551
           },
-          "calibratedConfidence": 0.8511357051969136,
-          "normalizedEntropy": 0.39741139287469973,
+          "calibratedConfidence": 0.8739172436226106,
+          "normalizedEntropy": 0.3575104559932109,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2683,7 +2729,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "f756f1f979043c301396632627ef50585cb63575f7583c8162e35c6a560f9458",
+          "inputHash": "d8f3d2ec22e5eac2b795d5eff7ed5149b3f24dae405e58bed55f17a296be60da",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2694,26 +2740,26 @@
       "questionId": "595d20d8c4a6f9418dc496b0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:595d20d8c4a6f9418dc496b0:content-v2",
       "questionVersionId": "595d20d8c4a6f9418dc496b0:content-v2:blind-revalidation",
-      "contentHash": "b0590ed47eb0abea4b5e1cf540638b492ed303832685851ec5e16ef01f4f1a78",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menyusun dan Mengurai Bentuk Bangun\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hitunglah banyaknya bentuk bangun pada gambar berikut. Segitiga ada berapa?\nPilihan: A. 8\nB. 0\nC. 1\nD. 2\nTranskripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri: kepala dan tubuh berbentuk persegi/persegi panjang, telinga berbentuk oval, mata dan bintik tubuh berbentuk lingkaran, kaki berbentuk persegi panjang, dan ekor berbentuk segitiga.",
-      "untruncatedTokenCount": 101,
+      "contentHash": "0e87d61ef0b74d0fa84f0a45cc9104effd3b34b4673efcc2b025223a79e17114",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menyusun dan Mengurai Bentuk Bangun\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hitunglah banyaknya bentuk bangun pada gambar berikut. Segitiga ada berapa?\nPilihan: A. 8\nB. 0\nC. 1\nD. 2\nTranskripsi visual: Gambar seekor anjing yang disusun dari berbagai bentuk geometri: kepala (persegi), moncong (persegi panjang), leher (persegi panjang), badan (persegi panjang), empat kaki (persegi panjang), mata (lingkaran kecil), hidung (lingkaran kecil), dua bercak pada badan (lingkaran), telinga (oval), dan ekor (segitiga). Hanya ada satu bentuk segitiga pada gambar, yaitu bagian ekor.",
+      "untruncatedTokenCount": 145,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 138.151,
+      "latencyMs": 213.466,
       "prediction": {
         "questionId": "595d20d8c4a6f9418dc496b0",
         "contentVersion": 2,
-        "contentHash": "b0590ed47eb0abea4b5e1cf540638b492ed303832685851ec5e16ef01f4f1a78",
+        "contentHash": "0e87d61ef0b74d0fa84f0a45cc9104effd3b34b4673efcc2b025223a79e17114",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
-          "label": "knowing",
+          "label": "applying",
           "probabilities": {
-            "knowing": 0.9495430888922403,
-            "applying": 0.05045691110775976,
-            "reasoning": 3.5080615714432866e-46
+            "knowing": 0.0009928278216849897,
+            "applying": 0.9990071721783149,
+            "reasoning": 6.809263018037684e-44
           },
-          "calibratedConfidence": 0.9495430888922403,
-          "normalizedEntropy": 0.18191895452143642,
+          "calibratedConfidence": 0.9990071721783149,
+          "normalizedEntropy": 0.007152380242696891,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2722,13 +2768,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.4666494923648885,
-            "conceptual": 0.5156567198524995,
-            "procedural": 0.01769378776123112,
-            "metacognitive": 2.1380717707075104e-11
+            "factual": 0.037001334120238795,
+            "conceptual": 0.9526832218222955,
+            "procedural": 0.01031544401128513,
+            "metacognitive": 4.6180693895043714e-11
           },
-          "calibratedConfidence": 0.5156567198524995,
-          "normalizedEntropy": 0.5544150338324165,
+          "calibratedConfidence": 0.9526832218222955,
+          "normalizedEntropy": 0.155341689888626,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2737,18 +2783,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8677638469373334,
-            "Medium": 0.12941166293313827,
-            "Hard": 0.002824490129528315
+            "Easy": 0.813996211605673,
+            "Medium": 0.18260585363678883,
+            "Hard": 0.0033979347575382735
           },
-          "calibratedConfidence": 0.8677638469373334,
-          "normalizedEntropy": 0.36798548676711657,
+          "calibratedConfidence": 0.813996211605673,
+          "normalizedEntropy": 0.45270159039089325,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2758,7 +2805,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "123c9823dd33bcbc5115af5dfe5073dc096706fa593125ef0f6e5aad8e8bc310",
+          "inputHash": "659100a5e9bd97ba4207de2bdc62f7c9dd1d628d3a9f5a5beca1bd2eccfd31ac",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2774,7 +2821,7 @@
       "untruncatedTokenCount": 66,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 99.805,
+      "latencyMs": 110.104,
       "prediction": {
         "questionId": "4d125a6ed9a2701db41cdcd1",
         "contentVersion": 2,
@@ -2824,6 +2871,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2849,7 +2897,7 @@
       "untruncatedTokenCount": 66,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 96.671,
+      "latencyMs": 115.23,
       "prediction": {
         "questionId": "fbc23bca48392d3c678c3beb",
         "contentVersion": 2,
@@ -2899,6 +2947,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2919,16 +2968,16 @@
       "questionId": "4953bd9e508059b6896af5e5",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:4953bd9e508059b6896af5e5:content-v2",
       "questionVersionId": "4953bd9e508059b6896af5e5:content-v2:blind-revalidation",
-      "contentHash": "22566b5bb03c2de75ee541bdbc2426a8b2a7d0f508940024f431b8103e158468",
+      "contentHash": "62312b879b74ad75dafeb1df791dc8857d049e97e72ad48662c40cc6a1dc8eb7",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menghitung Maju dan Mundur\nTipe soal: multiple_choice\nStimulus: -\nSoal: Isilah titik-titik berikut.\n\n15, 14, ...., ....\nPilihan: A. 14, 13\nB. 16, 17\nC. 12, 13\nD. 13, 12\nTranskripsi visual: -",
       "untruncatedTokenCount": 76,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 108.609,
+      "latencyMs": 131.565,
       "prediction": {
         "questionId": "4953bd9e508059b6896af5e5",
         "contentVersion": 2,
-        "contentHash": "22566b5bb03c2de75ee541bdbc2426a8b2a7d0f508940024f431b8103e158468",
+        "contentHash": "62312b879b74ad75dafeb1df791dc8857d049e97e72ad48662c40cc6a1dc8eb7",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -2974,6 +3023,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2994,16 +3044,16 @@
       "questionId": "02bd8bfdfd682bd80aa5f426",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:02bd8bfdfd682bd80aa5f426:content-v2",
       "questionVersionId": "02bd8bfdfd682bd80aa5f426:content-v2:blind-revalidation",
-      "contentHash": "be4cda6dfe446ecbd86a0acbadda0ae520d3fc7972d0a1997680f7111438c7ab",
+      "contentHash": "d26a061984693522082604f6e3e0b96fa4f8b42385e315c65a35085ee683b1f6",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Menghitung Maju dan Mundur\nTipe soal: multiple_choice\nStimulus: -\nSoal: Lengkapi urutan bilangan berikut.\n\n20, ...., 18\nPilihan: A. 18\nB. 19\nC. 21\nD. 17\nTranskripsi visual: -",
       "untruncatedTokenCount": 61,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 99.231,
+      "latencyMs": 108.399,
       "prediction": {
         "questionId": "02bd8bfdfd682bd80aa5f426",
         "contentVersion": 2,
-        "contentHash": "be4cda6dfe446ecbd86a0acbadda0ae520d3fc7972d0a1997680f7111438c7ab",
+        "contentHash": "d26a061984693522082604f6e3e0b96fa4f8b42385e315c65a35085ee683b1f6",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -3049,6 +3099,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3069,26 +3120,26 @@
       "questionId": "fb13c7e49793c36315b9e324",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:fb13c7e49793c36315b9e324:content-v2",
       "questionVersionId": "fb13c7e49793c36315b9e324:content-v2:blind-revalidation",
-      "contentHash": "ce0161e57dcd5cdba352fad8bd7a31425378587b767320fc2f98faa108b5ba56",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Nilai Tempat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Isilah titik-titik dalam tabel. Lengkapi juga nilai tempatnya.\n\n.... puluhan dan .... satuan = ....\nPilihan: A. 1 puluhan dan 5 satuan = 15\nB. 0 puluhan dan 15 satuan = 15\nC. 1 puluhan dan 6 satuan = 16\nD. 1 puluhan dan 4 satuan = 14\nTranskripsi visual: Gambar menunjukkan satu karton berisi 10 telur (dikelompokkan sebagai satu puluhan) dan 5 telur lepas (sebagai satuan). Terdapat tabel dengan kolom 'Puluhan' dan 'Satuan', serta kalimat rumpang '... puluhan dan ... satuan = ...'.",
+      "contentHash": "0e7cc2d9afce85ea568cee35c61e7cad97696776e4fc80c77817bde5441a753c",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Nilai Tempat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Isilah titik-titik dalam tabel. Lengkapi juga nilai tempatnya.\n\n.... puluhan dan .... satuan = ....\nPilihan: A. 1 puluhan dan 5 satuan = 15\nB. 0 puluhan dan 15 satuan = 15\nC. 1 puluhan dan 6 satuan = 16\nD. 1 puluhan dan 4 satuan = 14\nTranskripsi visual: Gambar menunjukkan satu wadah berisi 10 telur (satu kelompok puluhan) dan 5 telur lepas di sampingnya. Terdapat tabel dengan kolom 'Puluhan' dan 'Satuan', serta kalimat rumpang '.... puluhan dan .... satuan = ....'.",
       "untruncatedTokenCount": 152,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 190.177,
+      "latencyMs": 220.761,
       "prediction": {
         "questionId": "fb13c7e49793c36315b9e324",
         "contentVersion": 2,
-        "contentHash": "ce0161e57dcd5cdba352fad8bd7a31425378587b767320fc2f98faa108b5ba56",
+        "contentHash": "0e7cc2d9afce85ea568cee35c61e7cad97696776e4fc80c77817bde5441a753c",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 3.0821560632044297e-09,
-            "applying": 0.9999999969178439,
-            "reasoning": 4.270971602409537e-45
+            "knowing": 2.6584705404871503e-08,
+            "applying": 0.9999999734152945,
+            "reasoning": 2.2089930197470346e-43
           },
-          "calibratedConfidence": 0.9999999969178439,
-          "normalizedEntropy": 5.778665575565993e-08,
+          "calibratedConfidence": 0.9999999734152945,
+          "normalizedEntropy": 4.4629016033134394e-07,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -3097,13 +3148,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.0016623414837310354,
-            "conceptual": 0.9851092713266717,
-            "procedural": 0.013228387111636165,
-            "metacognitive": 7.796099273849119e-11
+            "factual": 0.0018312088254637338,
+            "conceptual": 0.980792020568981,
+            "procedural": 0.0173767703560727,
+            "metacognitive": 2.494829121147015e-10
           },
-          "calibratedConfidence": 0.9851092713266717,
-          "normalizedEntropy": 0.05960887442850463,
+          "calibratedConfidence": 0.980792020568981,
+          "normalizedEntropy": 0.07284563142522209,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -3112,18 +3163,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.7750848801784699,
-            "Medium": 0.2195477360001129,
-            "Hard": 0.005367383821417049
+            "Easy": 0.7139468954722382,
+            "Medium": 0.28014401195887295,
+            "Hard": 0.005909092568888791
           },
-          "calibratedConfidence": 0.7750848801784699,
-          "normalizedEntropy": 0.508287505215002,
+          "calibratedConfidence": 0.7139468954722382,
+          "normalizedEntropy": 0.5710411436777458,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3133,7 +3185,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "94f8bdb53a0d28cd9433bfefef6ed1d0f0185d0c01ccb7cf8b147cc071356cac",
+          "inputHash": "6421e5e6885094b0496943c6cad59f2823d71fddccb0ed76e13c2599f43fc085",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3144,26 +3196,26 @@
       "questionId": "daa41e2808537d493a6c0994",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:daa41e2808537d493a6c0994:content-v2",
       "questionVersionId": "daa41e2808537d493a6c0994:content-v2:blind-revalidation",
-      "contentHash": "ac71205aa65564d67d8d073358f8194e5eeba65645fcebacd78f2782b85cdd15",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Nilai Tempat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hitunglah dan isi tabelnya.\n\nNilai tempat 14 = .... puluhan dan .... satuan\nPilihan: A. 1 puluhan dan 4 satuan\nB. 1 puluhan dan 3 satuan\nC. 4 puluhan dan 1 satuan\nD. 0 puluhan dan 14 satuan\nTranskripsi visual: Gambar menunjukkan satu ikat pensil berisi 10 buah dan 4 pensil lepas di sampingnya. Terdapat tabel dengan kolom 'Puluhan' dan 'Satuan' yang harus diisi. Teks soal meminta untuk menentukan nilai tempat dari angka 14.",
-      "untruncatedTokenCount": 124,
+      "contentHash": "d7c3b4a9de92a637c8b3489ce4258f7952975ad481d4a3983807a5b2a02581df",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Nilai Tempat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hitunglah dan isi tabelnya.\n\nNilai tempat 14 = .... puluhan dan .... satuan\nPilihan: A. 1 puluhan dan 4 satuan\nB. 1 puluhan dan 3 satuan\nC. 4 puluhan dan 1 satuan\nD. 0 puluhan dan 14 satuan\nTranskripsi visual: Gambar menunjukkan satu ikat pensil yang berisi 10 pensil dan 4 pensil lepas di sampingnya. Terdapat tabel dengan kolom 'Puluhan' dan 'Satuan' yang mengarah ke gambar tersebut. Teks di bawahnya berbunyi 'Nilai tempat 14 = .... puluhan dan .... satuan'.",
+      "untruncatedTokenCount": 138,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 152.036,
+      "latencyMs": 200.009,
       "prediction": {
         "questionId": "daa41e2808537d493a6c0994",
         "contentVersion": 2,
-        "contentHash": "ac71205aa65564d67d8d073358f8194e5eeba65645fcebacd78f2782b85cdd15",
+        "contentHash": "d7c3b4a9de92a637c8b3489ce4258f7952975ad481d4a3983807a5b2a02581df",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.00015042770755526214,
-            "applying": 0.9998495722924448,
-            "reasoning": 4.53127221282181e-46
+            "knowing": 1.272423526938383e-06,
+            "applying": 0.9999987275764731,
+            "reasoning": 1.383415734195155e-43
           },
-          "calibratedConfidence": 0.9998495722924448,
-          "normalizedEntropy": 0.0013421343384260346,
+          "calibratedConfidence": 0.9999987275764731,
+          "normalizedEntropy": 1.688042907756811e-05,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -3172,13 +3224,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.011009880882084168,
-            "conceptual": 0.9830248150902079,
-            "procedural": 0.005965304012920176,
-            "metacognitive": 1.4787820335000913e-11
+            "factual": 0.002054138157365574,
+            "conceptual": 0.9947198398695258,
+            "procedural": 0.003226021944081508,
+            "metacognitive": 2.9027076407091065e-11
           },
-          "calibratedConfidence": 0.9830248150902079,
-          "normalizedEntropy": 0.06998981548128166,
+          "calibratedConfidence": 0.9947198398695258,
+          "normalizedEntropy": 0.026316985113083953,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -3187,18 +3239,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.7960640075553889,
-            "Medium": 0.19993388441334317,
-            "Hard": 0.00400210803126798
+            "Easy": 0.6904630504400763,
+            "Medium": 0.3034712004144564,
+            "Hard": 0.006065749145467451
           },
-          "calibratedConfidence": 0.7960640075553889,
-          "normalizedEntropy": 0.47833571666043445,
+          "calibratedConfidence": 0.6904630504400763,
+          "normalizedEntropy": 0.5903708415938358,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3208,7 +3261,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "6947c37ac9d2eb0a49a35a7182d985e355e06582fb74892c8c6d61f0773e9c48",
+          "inputHash": "ba903f52ce87bcf6f82ba4c6dc4dccc1693141439351499ac75b0053d729b25b",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3219,16 +3272,16 @@
       "questionId": "76bd2315ce21573dfa2ea8d7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:76bd2315ce21573dfa2ea8d7:content-v2",
       "questionVersionId": "76bd2315ce21573dfa2ea8d7:content-v2:blind-revalidation",
-      "contentHash": "8033d883ba2c5a0920f213e162e9eb2871485c6e9c5615feeda7401eb9640023",
+      "contentHash": "cbf351e564622ca3c311c3280d40f2a55aea0dac280af05bf50ccc08a2998dee",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan Bilangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan bilangan berikut. 13 11 18\n\nUrutan mulai dari bilangan terkecil: .... , .... , ....\nPilihan: A. 13, 11, 18\nB. 11, 13, 18\nC. 11, 18, 13\nD. 18, 13, 11\nTranskripsi visual: -",
       "untruncatedTokenCount": 89,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 124.33,
+      "latencyMs": 141.597,
       "prediction": {
         "questionId": "76bd2315ce21573dfa2ea8d7",
         "contentVersion": 2,
-        "contentHash": "8033d883ba2c5a0920f213e162e9eb2871485c6e9c5615feeda7401eb9640023",
+        "contentHash": "cbf351e564622ca3c311c3280d40f2a55aea0dac280af05bf50ccc08a2998dee",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -3274,6 +3327,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3294,16 +3348,16 @@
       "questionId": "84e373946789a200e6b5203a",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:84e373946789a200e6b5203a:content-v2",
       "questionVersionId": "84e373946789a200e6b5203a:content-v2:blind-revalidation",
-      "contentHash": "eefde0832abc8c1f812cd03a1a31094edb25c861642a5ad877c4bab549702640",
+      "contentHash": "6cc73538f9871c4c92bc451acdf922044131acf16b15e73ca719adc92f9a7df8",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan Bilangan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Malosi mempunyai 13 bola. Wei mempunyai 11 bola. Kira mempunyai 10 bola.\n\nUrutan banyak bola dari yang terkecil: .... , .... , ....\nPilihan: A. 13, 11, 10\nB. 10, 13, 11\nC. 11, 10, 13\nD. 10, 11, 13\nTranskripsi visual: -",
       "untruncatedTokenCount": 99,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 144.756,
+      "latencyMs": 159.475,
       "prediction": {
         "questionId": "84e373946789a200e6b5203a",
         "contentVersion": 2,
-        "contentHash": "eefde0832abc8c1f812cd03a1a31094edb25c861642a5ad877c4bab549702640",
+        "contentHash": "6cc73538f9871c4c92bc451acdf922044131acf16b15e73ca719adc92f9a7df8",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -3349,6 +3403,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3374,7 +3429,7 @@
       "untruncatedTokenCount": 82,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 117.724,
+      "latencyMs": 138.332,
       "prediction": {
         "questionId": "31e0c54a133ed9b166d1ed06",
         "contentVersion": 2,
@@ -3424,6 +3479,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3444,16 +3500,16 @@
       "questionId": "fafff0345aa730c0722fc259",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:fafff0345aa730c0722fc259:content-v2",
       "questionVersionId": "fafff0345aa730c0722fc259:content-v2:blind-revalidation",
-      "contentHash": "4240274822d77119f03e650517b2781293bc6cbd30d797cb3a5519d83270a962",
+      "contentHash": "459a1cd6ed481f8b00aefcce18b22ca6a59f387def45aa129821f3febce1a894",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengenal Konsep Lebih dari, Kurang dari, dan Selisih\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hari Minggu telah tiba. Tika membantu Ibu memasak di dapur. Mereka membuat donat. Tika membantu Ibu menghias donat. Ibu menghias 7 kue donat. Tika menghias 6 donat. Tika sangat senang.\n\nSiapa yang memiliki donat lebih banyak?\nPilihan: A. Tidak bisa ditentukan\nB. Sama banyak\nC. Ibu\nD. Tika\nTranskripsi visual: -",
       "untruncatedTokenCount": 101,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 132.028,
+      "latencyMs": 165.998,
       "prediction": {
         "questionId": "fafff0345aa730c0722fc259",
         "contentVersion": 2,
-        "contentHash": "4240274822d77119f03e650517b2781293bc6cbd30d797cb3a5519d83270a962",
+        "contentHash": "459a1cd6ed481f8b00aefcce18b22ca6a59f387def45aa129821f3febce1a894",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -3499,6 +3555,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3519,16 +3576,16 @@
       "questionId": "4a1c88e1d656ed6e318fbc08",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:4a1c88e1d656ed6e318fbc08:content-v2",
       "questionVersionId": "4a1c88e1d656ed6e318fbc08:content-v2:blind-revalidation",
-      "contentHash": "8b06f5cbe3683f666688563bd2a26215bbdfb6d1f35092e84e0e70733c9e7792",
+      "contentHash": "d944b597b8c285deadeb3ea167880c3f1de9706a6a7f4a09187fd9cf872cc4c3",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Penjumlahan yang Hasilnya kurang dari 20\nTipe soal: multiple_choice\nStimulus: -\nSoal: Halim mempunyai 11 kelereng. Malosi mempunyai 6 kelereng.\n\nBerapa jumlah kelereng mereka?\nPilihan: A. 18\nB. 16\nC. 5\nD. 17\nTranskripsi visual: -",
       "untruncatedTokenCount": 69,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 103.81,
+      "latencyMs": 120.312,
       "prediction": {
         "questionId": "4a1c88e1d656ed6e318fbc08",
         "contentVersion": 2,
-        "contentHash": "8b06f5cbe3683f666688563bd2a26215bbdfb6d1f35092e84e0e70733c9e7792",
+        "contentHash": "d944b597b8c285deadeb3ea167880c3f1de9706a6a7f4a09187fd9cf872cc4c3",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -3574,6 +3631,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3594,16 +3652,16 @@
       "questionId": "c5a941d72ce972bb9d49a4cc",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:c5a941d72ce972bb9d49a4cc:content-v2",
       "questionVersionId": "c5a941d72ce972bb9d49a4cc:content-v2:blind-revalidation",
-      "contentHash": "b9286a2185815d733cea4c7fb4e8c52720cfba7c22449960f6989b1fa53b4f4d",
+      "contentHash": "786067b77a86f24b9d6af0b63fb69d2a08b4a920cc3efdb2d82458eb4f8b33b2",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Penjumlahan yang Hasilnya kurang dari 20\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hitunglah operasi penjumlahan berikut. Gunakan cara yang paling mudah.\n\n14 + 5 = ....\nPilihan: A. 19\nB. 9\nC. 20\nD. 14\nTranskripsi visual: -",
       "untruncatedTokenCount": 70,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 103.696,
+      "latencyMs": 122.381,
       "prediction": {
         "questionId": "c5a941d72ce972bb9d49a4cc",
         "contentVersion": 2,
-        "contentHash": "b9286a2185815d733cea4c7fb4e8c52720cfba7c22449960f6989b1fa53b4f4d",
+        "contentHash": "786067b77a86f24b9d6af0b63fb69d2a08b4a920cc3efdb2d82458eb4f8b33b2",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -3649,6 +3707,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3674,7 +3733,7 @@
       "untruncatedTokenCount": 70,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 107.271,
+      "latencyMs": 117.899,
       "prediction": {
         "questionId": "54e65cf97cc65f3ef126daef",
         "contentVersion": 2,
@@ -3724,6 +3783,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3744,16 +3804,16 @@
       "questionId": "3dbc40f08ab7c63a376fc3e5",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:3dbc40f08ab7c63a376fc3e5:content-v2",
       "questionVersionId": "3dbc40f08ab7c63a376fc3e5:content-v2:blind-revalidation",
-      "contentHash": "c44dc01b049dfe14e5f2d64abc28a6ab4ff41bf727bcc546af7e36b9ac309737",
+      "contentHash": "b8565588d99a56e4c1ac0c180ca4b95fa71e2d2fe200c8f5757f695b1cc82ad6",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Pengurangan yang Hasilnya Kurang dari 20\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hitunglah operasi pengurangan berikut. Gunakan cara yang paling mudah.\n\n15 – 4 = ....\nPilihan: A. 12\nB. 11\nC. 19\nD. 10\nTranskripsi visual: -",
       "untruncatedTokenCount": 70,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 104.541,
+      "latencyMs": 117.232,
       "prediction": {
         "questionId": "3dbc40f08ab7c63a376fc3e5",
         "contentVersion": 2,
-        "contentHash": "c44dc01b049dfe14e5f2d64abc28a6ab4ff41bf727bcc546af7e36b9ac309737",
+        "contentHash": "b8565588d99a56e4c1ac0c180ca4b95fa71e2d2fe200c8f5757f695b1cc82ad6",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -3799,6 +3859,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3819,26 +3880,26 @@
       "questionId": "ff83d65211d6e4aa98e13b06",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:ff83d65211d6e4aa98e13b06:content-v2",
       "questionVersionId": "ff83d65211d6e4aa98e13b06:content-v2:blind-revalidation",
-      "contentHash": "bb866c2af831fa0410e3b49aa3df3b442a36ea6328c7468124d78b7a390c80da",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan dan Mengurutkan Panjang Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar berikut.\n\nUrutan bunga dari paling pendek: ...., ...., ....\nPilihan: A. B, C, A\nB. C, A, B\nC. A, C, B\nD. A, B, C\nTranskripsi visual: Terdapat tiga bunga matahari yang berjejer di atas garis tanah yang sama, masing-masing diberi label A, B, dan C. Bunga A adalah yang paling pendek, bunga C memiliki tinggi sedang, dan bunga B adalah yang paling tinggi.",
-      "untruncatedTokenCount": 137,
+      "contentHash": "2cd67e345b9fb5ecdcad169f752b4a2407f16f949a97c00f4b973635f6feb670",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan dan Mengurutkan Panjang Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar berikut.\n\nUrutan bunga dari paling pendek: ...., ...., ....\nPilihan: A. B, C, A\nB. C, A, B\nC. A, C, B\nD. A, B, C\nTranskripsi visual: Terdapat tiga bunga matahari yang ditanam pada garis dasar yang sama. Bunga A berada di kiri, B di tengah, dan C di kanan. Secara visual, bunga A adalah yang paling pendek, bunga C memiliki tinggi menengah, dan bunga B adalah yang paling tinggi.",
+      "untruncatedTokenCount": 140,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 161.434,
+      "latencyMs": 203.628,
       "prediction": {
         "questionId": "ff83d65211d6e4aa98e13b06",
         "contentVersion": 2,
-        "contentHash": "bb866c2af831fa0410e3b49aa3df3b442a36ea6328c7468124d78b7a390c80da",
+        "contentHash": "2cd67e345b9fb5ecdcad169f752b4a2407f16f949a97c00f4b973635f6feb670",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
           "probabilities": {
-            "knowing": 0.7383802190339837,
-            "applying": 0.26161978096601635,
-            "reasoning": 3.562441043219912e-45
+            "knowing": 0.9219573867723021,
+            "applying": 0.07804261322769779,
+            "reasoning": 9.409715481884393e-45
           },
-          "calibratedConfidence": 0.7383802190339837,
-          "normalizedEntropy": 0.5231548507555621,
+          "calibratedConfidence": 0.9219573867723021,
+          "normalizedEntropy": 0.24937144093946734,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -3847,13 +3908,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.017097292011458074,
-            "conceptual": 0.9816154475068436,
-            "procedural": 0.0012872604379616298,
-            "metacognitive": 4.373651215353244e-11
+            "factual": 0.004543230806854613,
+            "conceptual": 0.9949929069697865,
+            "procedural": 0.0004638622093349871,
+            "metacognitive": 1.4023836169677064e-11
           },
-          "calibratedConfidence": 0.9816154475068436,
-          "normalizedEntropy": 0.06950010355736119,
+          "calibratedConfidence": 0.9949929069697865,
+          "normalizedEntropy": 0.023849065879558352,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -3862,18 +3923,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.7316506789635576,
-            "Medium": 0.26447237040045923,
-            "Hard": 0.0038769506359831994
+            "Easy": 0.7015926166711265,
+            "Medium": 0.29462274618211903,
+            "Hard": 0.003784637146754399
           },
-          "calibratedConfidence": 0.7316506789635576,
-          "normalizedEntropy": 0.5478607006684658,
+          "calibratedConfidence": 0.7015926166711265,
+          "normalizedEntropy": 0.5732675820459379,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3883,7 +3945,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "e3dc8ac05b9940a8a363030982bbc1c384e5561046729792dc8f6d92c9ea5c0d",
+          "inputHash": "edb53c4d7139ad8dfc25fa2894207981c3c33c26f5d87f45b6592f96c5842dad",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3894,26 +3956,26 @@
       "questionId": "dc65bbd6611c904972206f6c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:dc65bbd6611c904972206f6c:content-v2",
       "questionVersionId": "dc65bbd6611c904972206f6c:content-v2:blind-revalidation",
-      "contentHash": "4e42f565fcd0f0f0a43d26b54e036b6d5944a2817b449744122a85a477e00ce5",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan dan Mengurutkan Panjang Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Burung yang terbang paling tinggi adalah ....\nPilihan: A. Ketiga burung terbang sama tinggi\nB. C\nC. B\nD. A\nTranskripsi visual: Terdapat tiga burung yang diberi label A, B, dan C. Burung C berada di posisi paling atas (paling tinggi). Burung A berada di posisi tengah. Burung B berada di posisi paling bawah.",
-      "untruncatedTokenCount": 103,
+      "contentHash": "29e903c8ddcf3dc5742f8296474578321da94b99e519be860a6d195e7217a8de",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Membandingkan dan Mengurutkan Panjang Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Burung yang terbang paling tinggi adalah ....\nPilihan: A. Ketiga burung terbang sama tinggi\nB. C\nC. B\nD. A\nTranskripsi visual: Terdapat gambar tiga ekor burung dengan label A, B, dan C. Burung A berwarna merah, burung B berwarna biru, dan burung C berwarna kuning. Burung C berada pada posisi paling atas (paling tinggi) di langit. Burung A berada di posisi tengah. Burung B berada di posisi paling bawah, dekat dengan bukit.",
+      "untruncatedTokenCount": 126,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 129.516,
+      "latencyMs": 188.276,
       "prediction": {
         "questionId": "dc65bbd6611c904972206f6c",
         "contentVersion": 2,
-        "contentHash": "4e42f565fcd0f0f0a43d26b54e036b6d5944a2817b449744122a85a477e00ce5",
+        "contentHash": "29e903c8ddcf3dc5742f8296474578321da94b99e519be860a6d195e7217a8de",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.03697991486562912,
-            "applying": 0.963020085134371,
-            "reasoning": 2.2448077885846247e-50
+            "knowing": 0.0013562726225080923,
+            "applying": 0.998643727377492,
+            "reasoning": 2.0921241250107474e-50
           },
-          "calibratedConfidence": 0.963020085134371,
-          "normalizedEntropy": 0.14402206897588096,
+          "calibratedConfidence": 0.998643727377492,
+          "normalizedEntropy": 0.009385331957228635,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -3922,13 +3984,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.18215746869695967,
-            "conceptual": 0.8084230168845136,
-            "procedural": 0.009419514406445706,
-            "metacognitive": 1.2081171706252215e-11
+            "factual": 0.18223097536682073,
+            "conceptual": 0.8135354504887508,
+            "procedural": 0.004233574123609085,
+            "metacognitive": 2.0819390651669332e-11
           },
-          "calibratedConfidence": 0.8084230168845136,
-          "normalizedEntropy": 0.3794734772370749,
+          "calibratedConfidence": 0.8135354504887508,
+          "normalizedEntropy": 0.36158682014368115,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -3937,18 +3999,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8697295505046636,
-            "Medium": 0.12781584227782672,
-            "Hard": 0.002454607217509667
+            "Easy": 0.855986443071145,
+            "Medium": 0.1411367005172676,
+            "Hard": 0.0028768564115872752
           },
-          "calibratedConfidence": 0.8697295505046636,
-          "normalizedEntropy": 0.3632588735392678,
+          "calibratedConfidence": 0.855986443071145,
+          "normalizedEntropy": 0.38802456518342104,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -3958,7 +4021,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "9399373c2bed63192b4413f3896cb4cbd6f8049901fa9a60c73d76d8130daa20",
+          "inputHash": "3ef7383710dc6504e4f7274d1af77440c1a8bc18237f12d34072e010519e4a6b",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3969,26 +4032,26 @@
       "questionId": "75434d44f2b377da3027e153",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:75434d44f2b377da3027e153:content-v2",
       "questionVersionId": "75434d44f2b377da3027e153:content-v2:blind-revalidation",
-      "contentHash": "fac1c33fefe109b5b046e32578f85e535f1ca195f06b0664b2e0963cf742afa5",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengukur Panjang Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Temukan panjang pensil berikut. Panjang pensil A = 4 kotak. Panjang pensil B = 8 kotak. Panjang pensil C = 5 kotak.\n\nUrutan pensil dari paling pendek: ...., ...., ....\nPilihan: A. A, C, B\nB. A, B, C\nC. B, C, A\nD. C, A, B\nTranskripsi visual: Terdapat tiga pensil di atas kertas berpetak. Pensil A memiliki panjang 4 kotak. Pensil B memiliki panjang 8 kotak. Pensil C memiliki panjang 5 kotak.",
-      "untruncatedTokenCount": 138,
+      "contentHash": "23ccf34b948213a990c34c074371768210d3bf4264025596d996172f8a8cb261",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengukur Panjang Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Temukan panjang pensil berikut. Panjang pensil A = 4 kotak. Panjang pensil B = 8 kotak. Panjang pensil C = 5 kotak.\n\nUrutan pensil dari paling pendek: ...., ...., ....\nPilihan: A. A, C, B\nB. A, B, C\nC. B, C, A\nD. C, A, B\nTranskripsi visual: Terdapat tiga pensil (A, B, C) di atas latar belakang kertas berpetak. Pensil A memiliki panjang 4 kotak. Pensil B memiliki panjang 8 kotak. Pensil C memiliki panjang 5 kotak.",
+      "untruncatedTokenCount": 147,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 163.732,
+      "latencyMs": 215.997,
       "prediction": {
         "questionId": "75434d44f2b377da3027e153",
         "contentVersion": 2,
-        "contentHash": "fac1c33fefe109b5b046e32578f85e535f1ca195f06b0664b2e0963cf742afa5",
+        "contentHash": "23ccf34b948213a990c34c074371768210d3bf4264025596d996172f8a8cb261",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.22078158796976713,
-            "applying": 0.7792184120302329,
-            "reasoning": 6.615364441536262e-45
+            "knowing": 0.01596574304095428,
+            "applying": 0.9840342569590458,
+            "reasoning": 4.743009221042489e-43
           },
-          "calibratedConfidence": 0.7792184120302329,
-          "normalizedEntropy": 0.4805111121050684,
+          "calibratedConfidence": 0.9840342569590458,
+          "normalizedEntropy": 0.07454206965293775,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -3997,13 +4060,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.011592990960472461,
-            "conceptual": 0.9849812975925638,
-            "procedural": 0.0034257114178074697,
-            "metacognitive": 2.915615866889836e-11
+            "factual": 0.008287077254911878,
+            "conceptual": 0.9904625350571368,
+            "procedural": 0.001250387642737117,
+            "metacognitive": 4.5214046430633633e-11
           },
-          "calibratedConfidence": 0.9849812975925638,
-          "normalizedEntropy": 0.06205413055380615,
+          "calibratedConfidence": 0.9904625350571368,
+          "normalizedEntropy": 0.041528156154600246,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -4012,18 +4075,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.7315396155251466,
-            "Medium": 0.2645044251847978,
-            "Hard": 0.003955959290055591
+            "Easy": 0.6921024696470545,
+            "Medium": 0.30363150931921784,
+            "Hard": 0.0042660210337276535
           },
-          "calibratedConfidence": 0.7315396155251466,
-          "normalizedEntropy": 0.5482665156150335,
+          "calibratedConfidence": 0.6921024696470545,
+          "normalizedEntropy": 0.5824612535745423,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -4033,7 +4097,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "6e9ec5e0d4bd60abc960846e06966701537e12740ce8435137bcef5a01c7d30d",
+          "inputHash": "c329f85f56be2172de2d0695f7b3ebeb84b8a8ab4203262557c818224066c3aa",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -4044,62 +4108,52 @@
       "questionId": "62785ac6ff0622ab70a94b13",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:62785ac6ff0622ab70a94b13:content-v2",
       "questionVersionId": "62785ac6ff0622ab70a94b13:content-v2:blind-revalidation",
-      "contentHash": "19e852392e031c6c1cab2462628810eeb957eca3e9cb140a2cb7b4fa608cdbda",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengukur Panjang Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Temukan panjang pita berikut. Panjang pita B = 5 kotak. Panjang pita C = 4 kotak.\n\nPita B lebih .... dari pita C.\nPilihan: A. panjang\nB. pendek\nC. tinggi\nD. besar\nTranskripsi visual: Terdapat gambar pita B (oranye) yang panjangnya 5 kotak pada grid dan pita C (ungu) yang panjangnya 4 kotak pada grid. Soal meminta membandingkan panjang pita B dengan pita C.",
-      "untruncatedTokenCount": 112,
+      "contentHash": "221ce289eb7a1b54e16adfe9ff5d33c0cf2280410eaa571b70a42d542e088b01",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengukur Panjang Benda\nTipe soal: multiple_choice\nStimulus: -\nSoal: Temukan panjang pita berikut. Panjang pita B = 5 kotak. Panjang pita C = 4 kotak.\n\nPita B lebih .... dari pita C.\nPilihan: A. panjang\nB. pendek\nC. tinggi\nD. besar\nTranskripsi visual: Gambar menunjukkan tiga pita di atas kertas berpetak. Pita A (merah) memiliki panjang 6 kotak. Pita B (oranye) memiliki panjang 5 kotak. Pita C (ungu) memiliki panjang 4 kotak. Terdapat label A, B, dan C di samping masing-masing pita.",
+      "untruncatedTokenCount": 131,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 144.099,
+      "latencyMs": 0.31,
       "prediction": {
         "questionId": "62785ac6ff0622ab70a94b13",
         "contentVersion": 2,
-        "contentHash": "19e852392e031c6c1cab2462628810eeb957eca3e9cb140a2cb7b4fa608cdbda",
+        "contentHash": "221ce289eb7a1b54e16adfe9ff5d33c0cf2280410eaa571b70a42d542e088b01",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
-          "label": "knowing",
-          "probabilities": {
-            "knowing": 0.5940585089535617,
-            "applying": 0.4059414910464382,
-            "reasoning": 2.975192859602897e-46
-          },
-          "calibratedConfidence": 0.5940585089535617,
-          "normalizedEntropy": 0.6147276124284085,
-          "action": "review",
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
           "reasons": [
-            "selective_threshold_gate_not_met"
+            "content_not_qualified"
           ]
         },
         "knowledgeDimension": {
-          "label": "conceptual",
-          "probabilities": {
-            "factual": 0.03974365652850301,
-            "conceptual": 0.9535163249392794,
-            "procedural": 0.006740018481783764,
-            "metacognitive": 5.0433959236562196e-11
-          },
-          "calibratedConfidence": 0.9535163249392794,
-          "normalizedEntropy": 0.1495134165585319,
-          "action": "review",
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
           "reasons": [
-            "selective_threshold_gate_not_met"
+            "content_not_qualified"
           ]
         },
         "intendedDifficulty": {
-          "label": "Easy",
-          "probabilities": {
-            "Easy": 0.8235226466332708,
-            "Medium": 0.17376766540306327,
-            "Hard": 0.002709687963665954
-          },
-          "calibratedConfidence": 0.8235226466332708,
-          "normalizedEntropy": 0.4369285606522089,
-          "action": "review",
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
           "reasons": [
-            "selective_threshold_gate_not_met"
+            "content_not_qualified"
           ]
         },
         "reviewRequired": true,
-        "reasons": [],
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "content_not_qualified"
+        ],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
           "baseModel": "indobenchmark/indobert-base-p1",
@@ -4108,7 +4162,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "0bc1b0cb901ae4f5005abd41adcfb6f1c48fb774bf911f73964749293dfb3a8b",
+          "inputHash": "b5ce04359331cdf5fa99a3158a5ef0e7e5262cddb20299601db9beb5a4191ab5",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -4119,26 +4173,26 @@
       "questionId": "5e007b54e25f6f72efa82174",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:5e007b54e25f6f72efa82174:content-v2",
       "questionVersionId": "5e007b54e25f6f72efa82174:content-v2:blind-revalidation",
-      "contentHash": "a5856533e5edb309fc524d04840e1d79ae8a55bf1e417f26300eb419fb70f3be",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengelompokkan Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Amati gambar buah-buahan. Lengkapi daftarnya. Daftar Buah-buahan: Ada ... buah jeruk. Ada ... buah apel. Ada ... buah mangga.\n\nBuah yang paling banyak adalah ...\nPilihan: A. Apel\nB. Mangga\nC. Jambu\nD. Jeruk\nTranskripsi visual: Terdapat 15 buah dalam susunan 3x5. Baris 1: jeruk, apel, mangga, jeruk, mangga. Baris 2: apel, mangga, jeruk, mangga, apel. Baris 3: jeruk, mangga, apel, jeruk, mangga. Total jeruk: 5. Total apel: 4. Total mangga: 6.",
-      "untruncatedTokenCount": 154,
+      "contentHash": "bbab46716f9136e115a0385c633a11596dffc321f9eaf04cd24efe0bd7261d1c",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengelompokkan Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Amati gambar buah-buahan. Lengkapi daftarnya. Daftar Buah-buahan: Ada ... buah jeruk. Ada ... buah apel. Ada ... buah mangga.\n\nBuah yang paling banyak adalah ...\nPilihan: A. Apel\nB. Mangga\nC. Jambu\nD. Jeruk\nTranskripsi visual: Terdapat 15 buah yang disusun dalam grid 3x5. Baris 1: jeruk, apel, mangga, jeruk, mangga. Baris 2: apel, mangga, jeruk, mangga, apel. Baris 3: jeruk, mangga, apel, jeruk, mangga. Total hitungan: jeruk ada 5, apel ada 4, mangga ada 6.",
+      "untruncatedTokenCount": 156,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 187.905,
+      "latencyMs": 220.115,
       "prediction": {
         "questionId": "5e007b54e25f6f72efa82174",
         "contentVersion": 2,
-        "contentHash": "a5856533e5edb309fc524d04840e1d79ae8a55bf1e417f26300eb419fb70f3be",
+        "contentHash": "bbab46716f9136e115a0385c633a11596dffc321f9eaf04cd24efe0bd7261d1c",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.0032231675114525013,
-            "applying": 0.9967768324885474,
-            "reasoning": 2.2422966825406272e-45
+            "knowing": 0.0006712157727110373,
+            "applying": 0.9993287842272889,
+            "reasoning": 5.615218279051209e-46
           },
-          "calibratedConfidence": 0.9967768324885474,
-          "normalizedEntropy": 0.019761784077915998,
+          "calibratedConfidence": 0.9993287842272889,
+          "normalizedEntropy": 0.005074742742261559,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -4147,13 +4201,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.014018014778530171,
-            "conceptual": 0.9812448571715603,
-            "procedural": 0.004737127984744828,
-            "metacognitive": 6.516476042762895e-11
+            "factual": 0.008139838984218556,
+            "conceptual": 0.9889086960378908,
+            "procedural": 0.002951464961566939,
+            "metacognitive": 1.6323632903843118e-11
           },
-          "calibratedConfidence": 0.9812448571715603,
-          "normalizedEntropy": 0.07484229115629965,
+          "calibratedConfidence": 0.9889086960378908,
+          "normalizedEntropy": 0.04860715995069733,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -4162,18 +4216,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.7341892818324506,
-            "Medium": 0.2593625473588077,
-            "Hard": 0.006448170808741852
+            "Easy": 0.749055498179334,
+            "Medium": 0.24511033726129675,
+            "Hard": 0.005834164559369221
           },
-          "calibratedConfidence": 0.7341892818324506,
-          "normalizedEntropy": 0.554697424825412,
+          "calibratedConfidence": 0.749055498179334,
+          "normalizedEntropy": 0.5380255103892349,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -4183,7 +4238,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "b0e5544d86cbc2d75551c332bc9acf4727058cab19ea692d2e95a8de3a9d64c0",
+          "inputHash": "3ad761be58384f1f908087e721a5dd6fb469c6b0ea97569a427bdcd353451e9e",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -4194,26 +4249,26 @@
       "questionId": "17ba235cdc9fddc600303514",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:17ba235cdc9fddc600303514:content-v2",
       "questionVersionId": "17ba235cdc9fddc600303514:content-v2:blind-revalidation",
-      "contentHash": "7dd9ed153f68cfbda631d333ebc7c6746431643841089bca6c837075152c0e2e",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengelompokkan Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan tabel dan jawablah pertanyaannya.\n\nApa nama kue yang paling disukai?\nPilihan: A. Kue Cucur\nB. Kue Lapis\nC. Kue Talam\nD. Kue Bugis\nTranskripsi visual: Tabel berjudul 'Tabel Kue Kesukaan' berisi data: Kue Talam (5), Kue Cucur (3), Kue Lapis (5), Kue Bugis (6).",
-      "untruncatedTokenCount": 101,
+      "contentHash": "eec7f51fc2c8aef9a6fa8f03fa64cbc4a866f536871708b91c25533579df445b",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Mengelompokkan Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan tabel dan jawablah pertanyaannya.\n\nApa nama kue yang paling disukai?\nPilihan: A. Kue Cucur\nB. Kue Lapis\nC. Kue Talam\nD. Kue Bugis\nTranskripsi visual: Tabel berjudul 'Tabel Kue Kesukaan' memiliki dua baris. Baris pertama berisi nama kue: 'Kue Talam', 'Kue Cucur', 'Kue Lapis', 'Kue Bugis'. Baris kedua berisi jumlah 'Banyak anak' yang menyukai kue tersebut: 5, 3, 5, 6 secara berurutan.",
+      "untruncatedTokenCount": 127,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 138.69,
+      "latencyMs": 191.256,
       "prediction": {
         "questionId": "17ba235cdc9fddc600303514",
         "contentVersion": 2,
-        "contentHash": "7dd9ed153f68cfbda631d333ebc7c6746431643841089bca6c837075152c0e2e",
+        "contentHash": "eec7f51fc2c8aef9a6fa8f03fa64cbc4a866f536871708b91c25533579df445b",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 1.2052978983859612e-05,
-            "applying": 0.999987947021016,
-            "reasoning": 1.978661278688877e-48
+            "knowing": 8.361686298313666e-06,
+            "applying": 0.9999916383137016,
+            "reasoning": 2.933192459693632e-48
           },
-          "calibratedConfidence": 0.999987947021016,
-          "normalizedEntropy": 0.00013523182190619757,
+          "calibratedConfidence": 0.9999916383137016,
+          "normalizedEntropy": 9.659935362774642e-05,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -4222,13 +4277,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.15902679527093264,
-            "conceptual": 0.831974468194576,
-            "procedural": 0.008998736514363982,
-            "metacognitive": 2.0127206728121193e-11
+            "factual": 0.027265202431137045,
+            "conceptual": 0.9684550064802149,
+            "procedural": 0.0042797910728468854,
+            "metacognitive": 1.580112868259778e-11
           },
-          "calibratedConfidence": 0.831974468194576,
-          "normalizedEntropy": 0.35189822253642483,
+          "calibratedConfidence": 0.9684550064802149,
+          "normalizedEntropy": 0.11007522525509851,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -4237,18 +4292,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.869252844508555,
-            "Medium": 0.12690526994929885,
-            "Hard": 0.0038418855421461996
+            "Easy": 0.8116294526941662,
+            "Medium": 0.18269460113943142,
+            "Hard": 0.005675946166402384
           },
-          "calibratedConfidence": 0.869252844508555,
-          "normalizedEntropy": 0.36877516158556406,
+          "calibratedConfidence": 0.8116294526941662,
+          "normalizedEntropy": 0.46360241216964304,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -4258,7 +4314,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "9bda0124df11755b632ae2b941a6ea72017c22febba09cdb420bf1bf76dbc2b8",
+          "inputHash": "1bee9b1a5b798c94a7f768d72b2bf62ba7afd45162a7540d417a394476141b41",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -4269,26 +4325,26 @@
       "questionId": "e7d8a29f2e3a28f99529dfc8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:e7d8a29f2e3a28f99529dfc8:content-v2",
       "questionVersionId": "e7d8a29f2e3a28f99529dfc8:content-v2:blind-revalidation",
-      "contentHash": "f8c09af4703b188f8ba0f790af556645d169716369cf66fd943a1ed7f0869967",
-      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Diagram Gambar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diagram berikut menunjukkan jenis buah kesukaan anak-anak. Lengkapi setiap kalimat berikut.\n\nAnak yang suka belimbing ... lebih banyak dari anak yang suka apel.\nPilihan: A. 2\nB. 3\nC. 4\nD. 1\nTranskripsi visual: Diagram batang gambar (pictograph) dengan 4 kolom buah: jeruk (6 bintang), apel (4 bintang), belimbing (7 bintang), jambu air (5 bintang). Keterangan: 1 bintang mewakili 1 anak.",
-      "untruncatedTokenCount": 122,
+      "contentHash": "9155aacd3b6617a0788cbc77309dd2f3120669a5167efaab9f67873ff6b23e3c",
+      "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Diagram Gambar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diagram berikut menunjukkan jenis buah kesukaan anak-anak. Lengkapi setiap kalimat berikut.\n\nAnak yang suka belimbing ... lebih banyak dari anak yang suka apel.\nPilihan: A. 2\nB. 3\nC. 4\nD. 1\nTranskripsi visual: Diagram batang vertikal berjudul 'Diagram Buah Kesukaan'. Terdapat empat kolom buah: jeruk, apel, belimbing, dan jambu air. Setiap kolom berisi simbol bintang. Jeruk: 6 bintang. Apel: 4 bintang. Belimbing: 7 bintang. Jambu air: 5 bintang. Keterangan di bawah: 'Gambar bintang mewakili 1 anak'.",
+      "untruncatedTokenCount": 139,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 158.908,
+      "latencyMs": 205.842,
       "prediction": {
         "questionId": "e7d8a29f2e3a28f99529dfc8",
         "contentVersion": 2,
-        "contentHash": "f8c09af4703b188f8ba0f790af556645d169716369cf66fd943a1ed7f0869967",
+        "contentHash": "9155aacd3b6617a0788cbc77309dd2f3120669a5167efaab9f67873ff6b23e3c",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 6.624971773869975e-06,
-            "applying": 0.999993375028226,
-            "reasoning": 4.1948353140838117e-47
+            "knowing": 7.624662777592276e-06,
+            "applying": 0.9999923753372224,
+            "reasoning": 4.057819243743758e-46
           },
-          "calibratedConfidence": 0.999993375028226,
-          "normalizedEntropy": 7.793970273570513e-05,
+          "calibratedConfidence": 0.9999923753372224,
+          "normalizedEntropy": 8.872519870784592e-05,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -4297,13 +4353,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.08585904815553304,
-            "conceptual": 0.9115099361628062,
-            "procedural": 0.0026310156607105223,
-            "metacognitive": 2.095029382698408e-11
+            "factual": 0.030079941931107676,
+            "conceptual": 0.9639882868339287,
+            "procedural": 0.005931771093491902,
+            "metacognitive": 1.414715747105417e-10
           },
-          "calibratedConfidence": 0.9115099361628062,
-          "normalizedEntropy": 0.2242462349398873,
+          "calibratedConfidence": 0.9639882868339287,
+          "normalizedEntropy": 0.12347098691455177,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -4312,18 +4368,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.7958730397972781,
-            "Medium": 0.19784319648171436,
-            "Hard": 0.006283763721007516
+            "Easy": 0.6259763114012544,
+            "Medium": 0.3635774128671008,
+            "Hard": 0.01044627573164468
           },
-          "calibratedConfidence": 0.7958730397972781,
-          "normalizedEntropy": 0.48618520877704835,
+          "calibratedConfidence": 0.6259763114012544,
+          "normalizedEntropy": 0.6451220770863477,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -4333,7 +4390,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "242da6b9b6a9dc2656e7964fd4cffa426a345a8d8a0ef180df46290bfeab8434",
+          "inputHash": "1d370ec433dda72ac5c11b35d628d396739d74dd8600a495a03d2645c58bad24",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -4344,16 +4401,16 @@
       "questionId": "8812007076d1edea9f050f6f",
       "diagnosticInferenceQuestionId": "diagnostic:kelas1:8812007076d1edea9f050f6f:content-v2",
       "questionVersionId": "8812007076d1edea9f050f6f:content-v2:blind-revalidation",
-      "contentHash": "62e5bf71864b713843ee1d0df624c082ad2add7d3816e5d9868a03034580dfb9",
+      "contentHash": "9e063ad458ed3b609db038b8a9b57f76f1911d5d301c2c399c94d65aeab7d459",
       "serializedInput": "Kelas: 1\nTopik: Matematika SD Kelas 1\nSubtopik: Diagram Gambar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ibu membeli buah di pasar. Ibu membeli 6 jeruk, 3 apel, 4 mangga, dan 5 belimbing.\n\nBuah yang paling sedikit adalah ...\nPilihan: A. Belimbing\nB. Jeruk\nC. Apel\nD. Mangga\nTranskripsi visual: -",
       "untruncatedTokenCount": 75,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 113.761,
+      "latencyMs": 127.792,
       "prediction": {
         "questionId": "8812007076d1edea9f050f6f",
         "contentVersion": 2,
-        "contentHash": "62e5bf71864b713843ee1d0df624c082ad2add7d3816e5d9868a03034580dfb9",
+        "contentHash": "9e063ad458ed3b609db038b8a9b57f76f1911d5d301c2c399c94d65aeab7d459",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -4399,6 +4456,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",

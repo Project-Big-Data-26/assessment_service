@@ -1,0 +1,529 @@
+{
+  "schemaVersion": "gemini-silver-labels-v3-blind-key-verified",
+  "source": "output/pretest/kelas8/soal_pretest_db.json",
+  "sourceHash": "a0e4625d81e79745117847233166fb745925d664ff5969f7fb5e47d6f3bc90a8",
+  "sourceGrade": 8,
+  "subjectTrack": "regular",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "promptVersion": "gemini-silver-math-3x4x3-v10-blind-smp8-key-verified",
+  "adjudicationPromptVersion": "gemini-silver-math-3x4x3-v10-adjudication-smp8",
+  "rubricVersion": "math-rubric-3x4x3-v8-smp8-grade-aware",
+  "rubricHash": "5e158a0cdd77238d96e66e30873286d1a476a3132a3aac8d43d61bc216d375e1",
+  "educationLevel": "SMP",
+  "requestedRuns": 3,
+  "createdAt": "2026-10-04T17:54:07.258814+00:00",
+  "updatedAt": "2026-10-04T17:59:01.522893+00:00",
+  "items": {
+    "ac7f560c796164a475dad657": {
+      "index": 1,
+      "questionId": "ac7f560c796164a475dad657",
+      "inputHash": "0fcb28467d4367863e13aae26115e5a30ad2fef3d92a737a8d3122a5b715f9b6",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "IMT Pak Bintoro = 50 / (1,70^2) = 50 / 2,89 ≈ 17,30 (masuk kategori 17,0-18,4). Target berat untuk IMT 18,5 = 18,5 * 1,70^2 = 18,5 * 2,89 = 53,465 kg. Tambahan berat = 53,465 - 50 = 3,465 kg.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Siapa yang memiliki IMT dengan kategori kekurangan berat badan tingkat ringan?",
+                "Berapa berat badan yang harus ditambah agar tercapai IMT sebesar 18,5?"
+              ],
+              "rationale": "Siswa perlu menerapkan rumus yang diberikan untuk menghitung IMT setiap individu, mengklasifikasikannya berdasarkan tabel, lalu melakukan perhitungan aljabar untuk mencari selisih berat badan. Ini adalah penerapan prosedur pada konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Indeks Massa Tubuh = BB/TB^2",
+                "Tabel 2.12 Kategori Indeks Massa Tubuh",
+                "Tabel 2.13 Data Berat dan Tinggi Badan"
+              ],
+              "rationale": "Siswa menggunakan rumus (prosedural) dan mengintegrasikannya dengan data dari tabel (konseptual) untuk menyelesaikan masalah.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Siapa yang memiliki IMT dengan kategori kekurangan berat badan tingkat ringan?",
+                "Berapa berat badan yang harus ditambah agar tercapai IMT sebesar 18,5?"
+              ],
+              "rationale": "Soal memerlukan beberapa langkah (menghitung IMT, membandingkan dengan tabel, membalik rumus untuk mencari target berat, menghitung selisih), namun prosedurnya sangat rutin dan terstruktur. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Operasi hitung bilangan desimal, pemahaman rumus aljabar sederhana, dan interpretasi tabel.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 8 diharapkan mampu melakukan operasi hitung desimal dan manipulasi rumus sederhana. Langkah-langkahnya jelas dan terstruktur, namun memerlukan ketelitian dalam perhitungan bertahap."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "zZPCapSKOKHOjuMP_IusQQ",
+          "promptHash": "47fd9a743f128c3c5df2adb624dd2c213edbe70faa9f7e1535959f83341bcfc1",
+          "responseHash": "3462f2198525674874dbae27745d17141686d2a4dd68637d8ecda2520c5a9f12",
+          "latencyMs": 4059,
+          "usage": {
+            "promptTokens": 2236,
+            "outputTokens": 741,
+            "thinkingTokens": 107,
+            "totalTokens": 3084
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "IMT Pak Bintoro = 50 / (1,70^2) = 50 / 2,89 ≈ 17,30. Kategori 17,0-18,4 (Kekurangan berat badan tingkat ringan). Target berat untuk IMT 18,5: 18,5 * 1,70^2 = 18,5 * 2,89 = 53,465 kg. Tambahan berat = 53,465 - 50 = 3,465 kg.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Indeks Massa Tubuh = BB/TB^2",
+                "siapa yang memiliki IMT dengan kategori kekurangan berat badan tingkat ringan?",
+                "Berapa berat badan yang harus ditambah agar tercapai IMT sebesar 18,5?"
+              ],
+              "rationale": "Siswa perlu menerapkan rumus yang diberikan ke dalam data yang tersedia, mengidentifikasi kategori yang sesuai, dan melakukan manipulasi aljabar sederhana untuk mencari selisih berat badan. Ini adalah penerapan prosedur pada konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Indeks Massa Tubuh = BB/TB^2",
+                "Kategori 17,0 sampai 18,4"
+              ],
+              "rationale": "Soal ini menuntut pemahaman tentang penggunaan rumus (prosedural) dan interpretasi data dalam tabel berdasarkan kriteria yang diberikan (konseptual).",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Indeks Massa Tubuh = BB/TB^2",
+                "siapa yang memiliki IMT dengan kategori kekurangan berat badan tingkat ringan?",
+                "Berapa berat badan yang harus ditambah agar tercapai IMT sebesar 18,5?"
+              ],
+              "rationale": "Soal ini dikategorikan Medium karena memerlukan dua tahap perhitungan yang saling terkait: menghitung IMT untuk identifikasi kategori, lalu membalik rumus untuk mencari target berat badan. Meskipun prosedurnya familiar, siswa harus merencanakan langkah-langkah tersebut secara berurutan tanpa bantuan eksplisit.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Operasi hitung bilangan desimal dan pemahaman rumus aljabar sederhana.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 8 sudah terbiasa dengan operasi bilangan rasional dan substitusi nilai ke dalam rumus. Soal ini menuntut ketelitian dalam perhitungan desimal dan pemahaman konsep target berat badan."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "0pPCat7MDJD1g8UP0s2b6QQ",
+          "promptHash": "47fd9a743f128c3c5df2adb624dd2c213edbe70faa9f7e1535959f83341bcfc1",
+          "responseHash": "faf8f0e3353f440600d5433f119ec233c60fef32857feeb94f3b78ccde23e608",
+          "latencyMs": 3716,
+          "usage": {
+            "promptTokens": 2236,
+            "outputTokens": 765,
+            "thinkingTokens": 119,
+            "totalTokens": 3120
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "1. Hitung IMT tiap orang: Pak Bintoro = 50 / (1,70^2) = 50 / 2,89 ≈ 17,30. Kategori 17,0-18,4 (kekurangan berat badan tingkat ringan) sesuai untuk Pak Bintoro. 2. Target berat untuk IMT 18,5: Berat = 18,5 * (1,70^2) = 18,5 * 2,89 = 53,465 kg. 3. Tambahan berat = 53,465 - 50 = 3,465 kg.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Indeks Massa Tubuh = BB/TB^2",
+                "siapa yang memiliki IMT dengan kategori kekurangan berat badan tingkat ringan?",
+                "Berapa berat badan yang harus ditambah agar tercapai IMT sebesar 18,5?"
+              ],
+              "rationale": "Siswa perlu menerapkan rumus yang diberikan ke dalam konteks data yang ada, melakukan perhitungan aritmatika, dan memanipulasi rumus untuk mencari nilai berat badan yang diperlukan. Ini adalah penerapan prosedur pada konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Indeks Massa Tubuh = BB/TB^2",
+                "Kategori Indeks Massa Tubuh",
+                "Data Berat dan Tinggi Badan"
+              ],
+              "rationale": "Siswa menggunakan algoritma perhitungan (operasi bilangan rasional) dan memahami hubungan antara variabel (BB, TB, IMT) serta kategori yang diberikan.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Indeks Massa Tubuh = BB/TB^2",
+                "Berapa berat badan yang harus ditambah agar tercapai IMT sebesar 18,5?"
+              ],
+              "rationale": "Soal memerlukan beberapa langkah perhitungan (menghitung IMT, membandingkan dengan tabel, memanipulasi rumus untuk mencari berat target, dan mencari selisih). Meskipun prosedural, terdapat beberapa langkah yang saling terkait dan memerlukan ketelitian dalam operasi bilangan desimal.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Operasi hitung bilangan desimal dan pemahaman dasar aljabar (substitusi dan manipulasi rumus sederhana).",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 2,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 8 diharapkan mampu melakukan operasi hitung bilangan rasional dan memanipulasi rumus sederhana. Soal ini menuntut ketelitian dalam perhitungan berjenjang, namun prosedurnya bersifat rutin."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "1pPCau_qGaC3g8UPsODukAU",
+          "promptHash": "47fd9a743f128c3c5df2adb624dd2c213edbe70faa9f7e1535959f83341bcfc1",
+          "responseHash": "05d089061c5098064db0f8e5f9325b402ef8c92c5cdeec7704711596f9ca90bc",
+          "latencyMs": 3713,
+          "usage": {
+            "promptTokens": 2236,
+            "outputTokens": 775,
+            "thinkingTokens": 102,
+            "totalTokens": 3113
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "A",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "IMT Pak Bintoro = 50 / (1,70^2) = 50 / 2,89 ≈ 17,30 (masuk kategori 17,0-18,4). Target berat untuk IMT 18,5 = 18,5 * 1,70^2 = 18,5 * 2,89 = 53,465 kg. Tambahan berat = 53,465 - 50 = 3,465 kg.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "procedural",
+            "voteCounts": {
+              "procedural": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Medium",
+            "voteCounts": {
+              "Medium": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    },
+    "6c4807ddb62ebe4c925c56fd": {
+      "index": 2,
+      "questionId": "6c4807ddb62ebe4c925c56fd",
+      "inputHash": "06138e64db7eda77bd8647ca9c1440fd4f312ca553375933fff9f8b773a83263",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "3x + 5 = -10; 3x = -10 - 5; 3x = -15; x = -15 / 3; x = -5.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3 x + 5 = -10",
+                "Tentukan nilai x yang menjadikan persamaan di atas bernilai benar."
+              ],
+              "rationale": "Soal meminta siswa melakukan prosedur aljabar standar untuk menyelesaikan persamaan linier satu variabel. Siswa hanya perlu menerapkan operasi invers (pengurangan dan pembagian) secara langsung.",
+              "label": "knowing"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3 x + 5 = -10"
+              ],
+              "rationale": "Soal ini menguji pemahaman prosedural tentang langkah-langkah penyelesaian persamaan linier satu variabel (manipulasi aljabar dasar).",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3 x + 5 = -10"
+              ],
+              "rationale": "Soal ini bersifat rutin dan langsung. Siswa hanya perlu melakukan dua langkah aljabar dasar (pengurangan dan pembagian) tanpa ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi yang kompleks.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi hitung bilangan bulat dan konsep dasar persamaan linier satu variabel.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Persamaan linier satu variabel adalah materi dasar kelas 8. Soal ini tidak memerlukan manipulasi kompleks, hanya operasi aritmatika dasar pada bilangan bulat negatif."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "2pPCauvCKdijqfkP6N_DwAk",
+          "promptHash": "969adff265728742a0dd53e6f3a0545c4b73133d434b19702b4236e98ef646df",
+          "responseHash": "115eeaeb033b25abe683cfb030bbc9c8c1544f16953c4f991f9d1d6dcd9b31c4",
+          "latencyMs": 3007,
+          "usage": {
+            "promptTokens": 1863,
+            "outputTokens": 555,
+            "thinkingTokens": 114,
+            "totalTokens": 2532
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "3x + 5 = -10; 3x = -10 - 5; 3x = -15; x = -15 / 3; x = -5.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3 x + 5 = -10",
+                "Tentukan nilai x yang menjadikan persamaan di atas bernilai benar."
+              ],
+              "rationale": "Soal meminta siswa melakukan prosedur aljabar standar untuk menyelesaikan persamaan linier satu variabel. Siswa hanya perlu menerapkan operasi invers (pengurangan dan pembagian) secara langsung.",
+              "label": "knowing"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3 x + 5 = -10"
+              ],
+              "rationale": "Soal ini menguji pemahaman prosedural tentang langkah-langkah penyelesaian persamaan linier satu variabel (manipulasi aljabar dasar).",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3 x + 5 = -10"
+              ],
+              "rationale": "Soal ini merupakan penerapan langsung dari prosedur penyelesaian persamaan linier satu variabel yang sangat familiar bagi siswa kelas 8. Tidak ada kendala yang berinteraksi atau kebutuhan untuk menyusun strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi hitung bilangan bulat dan konsep dasar persamaan linier satu variabel.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Persamaan linier satu variabel adalah materi dasar kelas 8. Soal ini tidak memerlukan manipulasi kompleks atau pemodelan, sehingga dikategorikan mudah."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "3pPCapHGC4_eg8UPvOPcyAk",
+          "promptHash": "969adff265728742a0dd53e6f3a0545c4b73133d434b19702b4236e98ef646df",
+          "responseHash": "7835c6c4c31d9e43340a82b27525c0bcd43de5e9154ad48ad06030fc265f2445",
+          "latencyMs": 3103,
+          "usage": {
+            "promptTokens": 1863,
+            "outputTokens": 555,
+            "thinkingTokens": 114,
+            "totalTokens": 2532
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "3x + 5 = -10; 3x = -10 - 5; 3x = -15; x = -15 / 3; x = -5.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3 x + 5 = -10",
+                "Tentukan nilai x yang menjadikan persamaan di atas bernilai benar."
+              ],
+              "rationale": "Soal meminta siswa melakukan prosedur aljabar standar untuk menyelesaikan persamaan linier satu variabel. Siswa hanya perlu menerapkan operasi invers (pengurangan dan pembagian) secara langsung.",
+              "label": "knowing"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3 x + 5 = -10"
+              ],
+              "rationale": "Soal ini menguji pemahaman dan penerapan algoritma dasar dalam menyelesaikan persamaan linier satu variabel (prosedural).",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "3 x + 5 = -10"
+              ],
+              "rationale": "Soal ini adalah penerapan langsung dari prosedur penyelesaian persamaan linier satu variabel yang sangat familiar bagi siswa kelas 8. Tidak ada langkah yang kompleks atau kendala yang berinteraksi.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi hitung bilangan bulat dan konsep dasar persamaan linier satu variabel.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Persamaan linier satu variabel dengan koefisien dan konstanta bilangan bulat adalah materi dasar kelas 7 yang terus digunakan di kelas 8. Soal ini sangat rutin dan langsung."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "4ZPCavOaNKS-g8UPodKW6AQ",
+          "promptHash": "969adff265728742a0dd53e6f3a0545c4b73133d434b19702b4236e98ef646df",
+          "responseHash": "4df4523709c8833a291bfc0f85f0b991e46f3f978773635d7eb9ac1c935d693f",
+          "latencyMs": 3133,
+          "usage": {
+            "promptTokens": 1863,
+            "outputTokens": 549,
+            "thinkingTokens": 110,
+            "totalTokens": 2522
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "A",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "3x + 5 = -10; 3x = -10 - 5; 3x = -15; x = -15 / 3; x = -5.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "knowing",
+            "voteCounts": {
+              "knowing": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "procedural",
+            "voteCounts": {
+              "procedural": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Easy": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    }
+  },
+  "summary": {
+    "itemsProcessed": 2,
+    "itemsEligibleForTraining": 2,
+    "successfulRuns": 6,
+    "failedRuns": 0,
+    "adjudicatedItems": 0,
+    "pendingAdjudication": 0,
+    "difficultyDistribution": {
+      "Easy": 1,
+      "Medium": 1,
+      "Hard": 0
+    },
+    "dominantDifficultyShare": 0.5,
+    "boundaryAnalysisRequired": true,
+    "promptTokens": 12297,
+    "outputTokens": 3940,
+    "thinkingTokens": 666,
+    "totalTokens": 16903
+  },
+  "executionStatus": "completed_batch",
+  "apiAttempts": 6
+}

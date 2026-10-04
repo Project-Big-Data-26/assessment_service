@@ -30,6 +30,21 @@ CONFIDENCE_POLICY = {
 }
 
 
+def ai_validation_path(bundle: Path, manifest: dict | None = None) -> Path:
+    """Resolve original AI rows when the main array exposes relative bank labels."""
+    manifest = manifest or json.loads((bundle / "manifest.json").read_text(encoding="utf-8"))
+    operational = manifest.get("databaseExport", {}).get("operationalBalance")
+    if not operational:
+        return bundle / "validation_results.json"
+    reference = operational["aiValidationResults"]
+    if reference["path"] != "ai_validation_results.json":
+        raise ValueError("unexpected original AI validation path")
+    path = bundle / reference["path"]
+    if hashlib.sha256(path.read_bytes()).hexdigest() != reference["sha256"]:
+        raise ValueError("original AI validation checksum mismatch")
+    return path
+
+
 def final_label_support(decision: dict) -> dict[str, int]:
     advisory = decision["llmAdvisory"]
     requested = advisory.get("requestedRuns", 3)

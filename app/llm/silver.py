@@ -25,10 +25,10 @@ from app.classification.v2.contracts import (
 from .config import GeminiSettings
 from .contracts import TokenUsage
 
-SILVER_PROMPT_VERSION = "gemini-silver-math-3x4x3-v4-blind-key-verified"
-SILVER_ADJUDICATION_PROMPT_VERSION = "gemini-silver-math-3x4x3-v4-adjudication"
-RUBRIC_VERSION = "math-rubric-3x4x3-v2-grade-aware"
-RUBRIC_PATH = Path(__file__).resolve().parents[2] / "configs/rubric_math_3x4x3_v2.yaml"
+SILVER_PROMPT_VERSION = "gemini-silver-math-3x4x3-v10-blind-key-verified"
+SILVER_ADJUDICATION_PROMPT_VERSION = "gemini-silver-math-3x4x3-v10-adjudication"
+RUBRIC_VERSION = "math-rubric-3x4x3-v8-sd-grade-aware"
+RUBRIC_PATH = Path(__file__).resolve().parents[2] / "configs/rubric_math_3x4x3_v8_sd.yaml"
 SUPPORTED_SILVER_GRADES = tuple(range(1, 13))
 
 
@@ -48,43 +48,29 @@ def silver_rubric(grade: int = 1, *, track: str = "regular") -> SilverRubric:
         if grade not in (11, 12):
             raise ValueError("Matematika Tingkat Lanjut supports grade 11 or 12")
         return SilverRubric(
-            f"gemini-silver-math-3x4x3-v9-blind-sma{grade}-tl-key-verified",
-            f"gemini-silver-math-3x4x3-v9-adjudication-sma{grade}-tl",
-            f"math-rubric-3x4x3-v7-sma{grade}-tl-grade-aware",
-            RUBRIC_PATH.with_name(f"rubric_math_3x4x3_v7_sma{grade}_tl.yaml"), "SMA",
+            f"gemini-silver-math-3x4x3-v10-blind-sma{grade}-tl-key-verified",
+            f"gemini-silver-math-3x4x3-v10-adjudication-sma{grade}-tl",
+            f"math-rubric-3x4x3-v8-sma{grade}-tl-grade-aware",
+            RUBRIC_PATH.with_name(f"rubric_math_3x4x3_v8_sma{grade}_tl.yaml"), "SMA",
         )
     if grade in range(1, 7):
         return SilverRubric(
             SILVER_PROMPT_VERSION, SILVER_ADJUDICATION_PROMPT_VERSION,
             RUBRIC_VERSION, RUBRIC_PATH, "SD",
         )
-    if grade == 7:
+    if grade in (7, 8, 9):
         return SilverRubric(
-            "gemini-silver-math-3x4x3-v5-blind-smp7-key-verified",
-            "gemini-silver-math-3x4x3-v5-adjudication-smp7",
-            "math-rubric-3x4x3-v3-smp7-grade-aware",
-            RUBRIC_PATH.with_name("rubric_math_3x4x3_v3_smp7.yaml"), "SMP",
-        )
-    if grade == 8:
-        return SilverRubric(
-            "gemini-silver-math-3x4x3-v6-blind-smp8-key-verified",
-            "gemini-silver-math-3x4x3-v6-adjudication-smp8",
-            "math-rubric-3x4x3-v4-smp8-grade-aware",
-            RUBRIC_PATH.with_name("rubric_math_3x4x3_v4_smp8.yaml"), "SMP",
-        )
-    if grade == 9:
-        return SilverRubric(
-            "gemini-silver-math-3x4x3-v7-blind-smp9-key-verified",
-            "gemini-silver-math-3x4x3-v7-adjudication-smp9",
-            "math-rubric-3x4x3-v5-smp9-grade-aware",
-            RUBRIC_PATH.with_name("rubric_math_3x4x3_v5_smp9.yaml"), "SMP",
+            f"gemini-silver-math-3x4x3-v10-blind-smp{grade}-key-verified",
+            f"gemini-silver-math-3x4x3-v10-adjudication-smp{grade}",
+            f"math-rubric-3x4x3-v8-smp{grade}-grade-aware",
+            RUBRIC_PATH.with_name(f"rubric_math_3x4x3_v8_smp{grade}.yaml"), "SMP",
         )
     if grade in (10, 11, 12):
         return SilverRubric(
-            f"gemini-silver-math-3x4x3-v8-blind-sma{grade}-key-verified",
-            f"gemini-silver-math-3x4x3-v8-adjudication-sma{grade}",
-            f"math-rubric-3x4x3-v6-sma{grade}-grade-aware",
-            RUBRIC_PATH.with_name(f"rubric_math_3x4x3_v6_sma{grade}.yaml"), "SMA",
+            f"gemini-silver-math-3x4x3-v10-blind-sma{grade}-key-verified",
+            f"gemini-silver-math-3x4x3-v10-adjudication-sma{grade}",
+            f"math-rubric-3x4x3-v8-sma{grade}-grade-aware",
+            RUBRIC_PATH.with_name(f"rubric_math_3x4x3_v8_sma{grade}.yaml"), "SMA",
         )
     raise ValueError("silver review supports grade 1-6 (SD), grade 7-9 (SMP), and grade 10-12 (SMA)")
 
@@ -212,6 +198,7 @@ class SilverRunResult(BaseModel):
     status: Literal["success", "failed"]
     output: SilverLabelOutput | None = None
     errorCode: str | None = None
+    errorDetails: list[dict[str, str]] = Field(default_factory=list)
     quotaDailyExhausted: bool = False
     quotaLimits: list[dict[str, str]] = Field(default_factory=list)
     providerFailureReason: str | None = None
@@ -228,6 +215,7 @@ class SilverAdjudicationResult(BaseModel):
     status: Literal["success", "failed"]
     output: SilverLabelOutput | None = None
     errorCode: str | None = None
+    errorDetails: list[dict[str, str]] = Field(default_factory=list)
     quotaDailyExhausted: bool = False
     quotaLimits: list[dict[str, str]] = Field(default_factory=list)
     providerFailureReason: str | None = None
@@ -240,6 +228,31 @@ class SilverAdjudicationResult(BaseModel):
 
 def build_silver_prompt(item: dict[str, Any], *, grade: int = 1, track: str = "regular") -> str:
     rubric = silver_rubric(grade, track=track)
+    configuration = yaml.safe_load(rubric.path.read_text(encoding="utf-8"))
+    if configuration["rubric_version"] != rubric.version:
+        raise ValueError("silver rubric file version does not match its configured identity")
+    domain_definitions = "\n".join(
+        f"  {label} = {configuration['mathCognitiveDomain'][label]}"
+        for label in ("knowing", "applying", "reasoning")
+    )
+    knowledge_definitions = "\n".join(
+        f"  {label} = {configuration['knowledgeDimension'][label]}"
+        for label in ("factual", "conceptual", "procedural", "metacognitive")
+    )
+    difficulty_definitions = "\n".join(
+        f"  {label} = {configuration['intendedDifficulty'][label]}"
+        for label in ("Easy", "Medium", "Hard")
+    )
+    boundary_rules = "\n".join(
+        f"- {rule}" for rule in configuration["difficulty_boundary_rules"]
+    )
+    examples = configuration.get("difficulty_examples_by_grade", {}).get(grade)
+    if examples is None:
+        examples = configuration["difficulty_examples"]
+    examples_text = "\n".join(f"- {label}: {examples[label]}" for label in ("Easy", "Medium", "Hard"))
+    context = configuration["grade_context"].strip()
+    if rubric.education_level in ("SMP", "SMA"):
+        context = f"Jenjang sasaran: {rubric.education_level} kelas {grade}.\n{context}"
     options = "\n".join(
         f"{option['option_id']}. {option['text']} | catatan sumber: {option.get('alasan') or '-'}"
         for option in item["options"]
@@ -255,21 +268,23 @@ def build_silver_prompt(item: dict[str, Any], *, grade: int = 1, track: str = "r
 PENILAIAN INI BLIND. Jangan menebak atau meminta prediksi model, vote reviewer lain,
 konsensus, distribusi label, atau estimasi kesulitan agen. Informasi tersebut sengaja tidak diberikan.
 
+{context}
+
 Gunakan rubrik berikut.
 - Domain kognitif matematika:
-  knowing = mengingat/mengenali/membaca fakta atau melakukan proses sangat langsung;
-  applying = memilih dan memakai konsep/prosedur pada situasi rutin;
-  reasoning = menyusun strategi nonrutin, mengintegrasikan informasi, menyimpulkan,
-  menggeneralisasi, atau memberi pembenaran.
+{domain_definitions}
 - Dimensi pengetahuan:
-  factual = istilah, simbol, fakta dasar;
-  conceptual = hubungan, kategori, prinsip, atau struktur konsep;
-  procedural = algoritma, teknik, atau urutan langkah;
-  metacognitive = memilih/memantau strategi berpikir secara eksplisit.
+{knowledge_definitions}
 - Intended difficulty adalah tuntutan isi bagi siswa kelas {grade} sebelum data respons:
-  Easy = prosedur familiar dan langsung, satu keputusan utama, representasi familiar, beban rendah;
-  Medium = beberapa langkah rutin yang terkait, perlu memilih prosedur, atau satu perpindahan representasi;
-  Hard = strategi nonrutin, banyak constraint terkait, justifikasi, atau integrasi representasi kompleks.
+{difficulty_definitions}
+
+Aturan batas kesulitan:
+{boundary_rules}
+
+Contoh pembanding bagi kelas sasaran, bukan soal sumber atau label otomatis:
+{examples_text}
+Gunakan tuntutan solusi minimum soal yang sedang dinilai; contoh tidak menetapkan
+kuota kategori dan tidak menggantikan bukti soal.
 
 Verifikasi kunci sumber terhadap soal. Isi answerKeyStatus=verified hanya jika solusi
 minimum membuktikannya, conflict bila kunci sumber salah/ambigu, dan unverifiable bila
@@ -278,6 +293,8 @@ Tulis verifiedMinimalSolution yang paling singkat tetapi cukup untuk membuktikan
 Untuk difficulty isi seluruh evidence profile. Profil adalah bukti audit, bukan skor yang
 dijumlahkan otomatis. Hard tidak berarti sekadar angka besar atau stem panjang; Easy juga
 tidak berarti semua operasi dasar. Nilai familiaritas dan tuntutan terhadap kelas {grade}.
+Rationale difficulty harus menjelaskan ketergantungan langkah, keputusan strategi,
+kendala yang berinteraksi, bantuan soal, dan tuntutan relatif kelas sesuai profil.
 
 Nilai tuntutan penyelesaian yang benar-benar diperlukan. KKO hanyalah petunjuk lemah.
 Audit kunci dan catatan opsi, tetapi jangan menganggapnya gold manusia. Jika bukti tidak cukup,
@@ -295,14 +312,6 @@ Pilihan dan catatan ekstraksi:
 
 Kunci pada sumber: {item.get('jawaban') or '-'}
 """
-    if rubric.education_level in ("SMP", "SMA"):
-        configuration = yaml.safe_load(rubric.path.read_text(encoding="utf-8"))
-        context = configuration["grade_context"]
-        prompt = prompt.replace(
-            "Gunakan rubrik berikut.",
-            f"Jenjang sasaran: {rubric.education_level} kelas {grade}.\n{context}\n\nGunakan rubrik berikut.",
-            1,
-        )
     return prompt
 
 
@@ -346,6 +355,29 @@ def provider_quota_details(exc: Exception) -> dict[str, Any]:
     }
 
 
+def failed_response_evidence(exc: Exception, response: Any | None) -> dict[str, Any]:
+    """Retain paid usage and error locations without response text or credentials."""
+    errors = []
+    if callable(getattr(exc, "errors", None)):
+        for error in exc.errors(include_input=False, include_url=False)[:12]:
+            errors.append({"location": ".".join(map(str, error.get("loc", []))),
+                           "type": str(error.get("type", "unknown"))})
+    candidates = getattr(response, "candidates", None) or []
+    if candidates:
+        finish = getattr(candidates[0], "finish_reason", None)
+        if finish is not None:
+            errors.append({"location": "provider.finishReason", "type": str(finish)})
+    usage = getattr(response, "usage_metadata", None)
+    raw = getattr(response, "text", None)
+    return {"errorDetails": errors, "responseId": getattr(response, "response_id", None),
+            "responseHash": hashlib.sha256(raw.encode("utf-8")).hexdigest() if raw else None,
+            "usage": TokenUsage(
+                promptTokens=int(getattr(usage, "prompt_token_count", 0) or 0),
+                outputTokens=int(getattr(usage, "candidates_token_count", 0) or 0),
+                thinkingTokens=int(getattr(usage, "thoughts_token_count", 0) or 0),
+                totalTokens=int(getattr(usage, "total_token_count", 0) or 0))}
+
+
 class GeminiSilverAdapter:
     def __init__(self, settings: GeminiSettings, *, client: Any | None = None) -> None:
         self.settings = settings
@@ -373,6 +405,7 @@ class GeminiSilverAdapter:
         for image_path in image_paths:
             contents.append(types.Part.from_bytes(data=image_path.read_bytes(), mime_type="image/png"))
         started = time.perf_counter()
+        response = None
         try:
             response = self.client.models.generate_content(
                 model=self.settings.model,
@@ -428,6 +461,7 @@ class GeminiSilverAdapter:
                 promptHash=prompt_hash,
                 latencyMs=int((time.perf_counter() - started) * 1000),
                 **provider_quota_details(exc),
+                **failed_response_evidence(exc, response),
             )
 
     def adjudicate_once(
@@ -465,6 +499,7 @@ class GeminiSilverAdapter:
         for image_path in image_paths:
             contents.append(types.Part.from_bytes(data=image_path.read_bytes(), mime_type="image/png"))
         started = time.perf_counter()
+        response = None
         try:
             response = self.client.models.generate_content(
                 model=self.settings.model,
@@ -514,6 +549,7 @@ class GeminiSilverAdapter:
                 promptHash=prompt_hash,
                 latencyMs=int((time.perf_counter() - started) * 1000),
                 **provider_quota_details(exc),
+                **failed_response_evidence(exc, response),
             )
 
 

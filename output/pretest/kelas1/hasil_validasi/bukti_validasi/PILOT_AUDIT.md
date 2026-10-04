@@ -4,9 +4,9 @@ Status: **BERHENTI UNTUK ANALISIS**
 
 - Item diproses: 50/50
 - Tiga run sukses: 100.0%
-- Insufficient/abstain: 0.0%
-- Dominasi difficulty: 96.0%
-- Distribusi difficulty: `{"Easy": 48, "Medium": 2}`
+- Insufficient/abstain: 2.0%
+- Dominasi difficulty: 92.0%
+- Distribusi difficulty: `{"Easy": 46, "Medium": 4}`
 
 ## Gate
 
@@ -21,5 +21,5 @@ Status: **BERHENTI UNTUK ANALISIS**
 
 ## Boundary analysis wajib
 
-- `dominant_difficulty_share=0.960>0.90`
+- `dominant_difficulty_share=0.920>0.90`
 - `difficulty_Hard_absent`

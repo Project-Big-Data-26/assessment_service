@@ -50,7 +50,11 @@ from app.classification.v2.model import (
     PARALLEL_ARCHITECTURE,
     ThreeHeadIndoBERT,
 )
-from app.training.v2.dataset import DatasetSnapshot, serialized_training_examples
+from app.training.v2.dataset import (
+    DatasetSnapshot, serialized_training_examples, validate_split_integrity,
+    validate_split_minimums,
+)
+from app.classification.v2.serializer import canonical_json_hash
 
 HEADS = tuple(HEAD_LABELS)
 
@@ -76,6 +80,7 @@ class TokenizedRows(Dataset):
         row = self.rows[index]
         encoded = self.tokenizer(row["text"], truncation=True, max_length=self.max_length)
         encoded["grades"] = int(row["grade"])
+        encoded["subject_tracks"] = int(row.get("subjectTrack", "regular") == "tl")
         for head in HEADS:
             encoded[f"label_{head}"] = self.label_maps[head][row[head]]
         return encoded
@@ -94,6 +99,7 @@ class TrialConfig:
     patience: int = 2
     weight_decay: float = 0.01
     warmup_ratio: float = 0.10
+    num_grades: int = 6
 
 
 def _class_weights(rows: list[dict[str, Any]], head: str) -> torch.Tensor:
@@ -169,16 +175,19 @@ def evaluate(model: ThreeHeadIndoBERT, loader: DataLoader) -> tuple[dict[str, An
     logits = {head: [] for head in HEADS}
     targets = {head: [] for head in HEADS}
     grades: list[np.ndarray] = []
+    tracks: list[np.ndarray] = []
     with torch.inference_mode():
         for batch in loader:
             output = model(**_batch_inputs(batch))
             grades.append(batch["grades"].cpu().numpy())
+            tracks.append(batch["subject_tracks"].cpu().numpy())
             for head in HEADS:
                 logits[head].append(output[head].cpu().numpy())
                 targets[head].append(batch[f"label_{head}"].cpu().numpy())
     arrays = {head: np.concatenate(logits[head]) for head in HEADS}
     target_arrays = {head: np.concatenate(targets[head]) for head in HEADS}
     grade_array = np.concatenate(grades)
+    track_array = np.concatenate(tracks)
     metrics: dict[str, Any] = {}
     for head, labels in HEAD_LABELS.items():
         predicted = arrays[head].argmax(axis=1)
@@ -194,6 +203,7 @@ def evaluate(model: ThreeHeadIndoBERT, loader: DataLoader) -> tuple[dict[str, An
             target_arrays[head], predicted, labels=list(range(len(labels)))
         ).tolist()
         metrics[head]["perGrade"] = {}
+        metrics[head]["perGradeTrack"] = {}
         for grade in sorted(set(map(int, grade_array))):
             selected = grade_array == grade
             metrics[head]["perGrade"][str(grade)] = classification_report(
@@ -204,10 +214,19 @@ def evaluate(model: ThreeHeadIndoBERT, loader: DataLoader) -> tuple[dict[str, An
                 output_dict=True,
                 zero_division=0,
             )
+            for track in sorted(set(map(int, track_array[selected]))):
+                track_selected = selected & (track_array == track)
+                track_name = "tl" if track else "regular"
+                metrics[head]["perGradeTrack"][f"{grade}:{track_name}"] = classification_report(
+                    target_arrays[head][track_selected], predicted[track_selected],
+                    labels=list(range(len(labels))), target_names=list(labels),
+                    output_dict=True, zero_division=0,
+                )
     payload = {
         **{f"logits_{head}": arrays[head] for head in HEADS},
         **{f"targets_{head}": target_arrays[head] for head in HEADS},
         "grades": grade_array,
+        "subject_tracks": track_array,
     }
     return metrics, payload
 
@@ -308,6 +327,7 @@ def run_trial(
         architecture_version=config.architecture_version,
         detach_difficulty_conditioning=True,
         grade_embedding_dim=16,
+        num_grades=config.num_grades,
     ).cpu()
     optimizer = _optimizer(model, config)
     losses = {
@@ -449,36 +469,39 @@ def calibration_from_validation(payload: dict[str, np.ndarray]) -> tuple[dict[st
             allow_zero_threshold=False,
         )
         grade_calibration: dict[str, GradeCalibrationSpec] = {}
+        grade_track_calibration: dict[str, GradeCalibrationSpec] = {}
         grade_metrics: dict[str, Any] = {}
+        grade_track_metrics: dict[str, Any] = {}
         grades = payload["grades"]
-        for grade in sorted(set(map(int, grades))):
-            selected_grade = grades == grade
-            grade_logits = logits[selected_grade]
-            grade_targets = targets[selected_grade]
-            counts = np.bincount(grade_targets, minlength=logits.shape[1])
+        tracks = payload.get("subject_tracks", np.zeros_like(grades))
+
+        def calibrate_subset(selected: np.ndarray) -> tuple[GradeCalibrationSpec | None, dict[str, Any]]:
+            selected_logits = logits[selected]
+            selected_targets = targets[selected]
+            counts = np.bincount(selected_targets, minlength=logits.shape[1])
             supported = bool(np.all(counts >= 10))
-            grade_record: dict[str, Any] = {
+            record: dict[str, Any] = {
                 "supportByClass": counts.tolist(),
                 "minimumClassSupportRequired": 10,
                 "activated": False,
             }
             if supported:
-                grade_temperature = fit_temperature(grade_logits, grade_targets)
-                grade_probabilities = softmax(grade_logits, grade_temperature)
+                grade_temperature = fit_temperature(selected_logits, selected_targets)
+                grade_probabilities = softmax(selected_logits, grade_temperature)
                 grade_confidence, grade_entropy = select_routing_thresholds(
                     grade_probabilities,
-                    grade_targets,
+                    selected_targets,
                     require_all_classes=True,
                     minimum_class_support=10,
                     allow_zero_threshold=False,
                 )
                 if grade_confidence is not None and grade_entropy is not None:
-                    grade_calibration[str(grade)] = GradeCalibrationSpec(
+                    spec = GradeCalibrationSpec(
                         temperature=grade_temperature,
                         confidenceThreshold=grade_confidence,
                         entropyThreshold=grade_entropy,
                     )
-                    grade_record.update(
+                    record.update(
                         {
                             "activated": True,
                             "temperature": grade_temperature,
@@ -486,12 +509,32 @@ def calibration_from_validation(payload: dict[str, np.ndarray]) -> tuple[dict[st
                             "entropyThreshold": grade_entropy,
                         }
                     )
-            grade_metrics[str(grade)] = grade_record
+                    return spec, record
+            return None, record
+
+        for grade in sorted(set(map(int, grades))):
+            selected_grade = grades == grade
+            unique_tracks = sorted(set(map(int, tracks[selected_grade])))
+            if unique_tracks == [0]:
+                spec, record = calibrate_subset(selected_grade)
+                if spec is not None:
+                    grade_calibration[str(grade)] = spec
+            else:
+                record = {"activated": False, "reason": "use_track_specific_or_global_calibration"}
+            grade_metrics[str(grade)] = record
+            for track in unique_tracks:
+                selected_track = selected_grade & (tracks == track)
+                track_key = f"{grade}:{'tl' if track else 'regular'}"
+                spec, track_record = calibrate_subset(selected_track)
+                if spec is not None:
+                    grade_track_calibration[track_key] = spec
+                grade_track_metrics[track_key] = track_record
         calibration[head] = CalibrationSpec(
             temperature=temperature,
             confidenceThreshold=confidence_threshold,
             entropyThreshold=entropy_threshold,
             perGrade=grade_calibration,
+            perGradeTrack=grade_track_calibration,
         )
         if confidence_threshold is None or entropy_threshold is None:
             selective_coverage = 0.0
@@ -517,6 +560,7 @@ def calibration_from_validation(payload: dict[str, np.ndarray]) -> tuple[dict[st
             "selectiveCoverage": selective_coverage,
             "selectiveAccuracy": selective_accuracy,
             "perGrade": grade_metrics,
+            "perGradeTrack": grade_track_metrics,
         }
     return calibration, metrics
 
@@ -643,6 +687,7 @@ def package_artifact(
         data_distribution[split] = {
             "count": len(selected),
             "grades": dict(Counter(str(row.grade) for row in selected)),
+            "gradeTracks": dict(Counter(f"{row.grade}:{row.subjectTrack}" for row in selected)),
             "intendedDifficulty": dict(
                 Counter(row.intendedDifficulty.value for row in selected)
             ),
@@ -659,6 +704,7 @@ def package_artifact(
         datasetHash=snapshot.snapshotHash,
         splitManifestHash=snapshot.splitManifestHash,
         rubricVersion=rubric_version,
+        rubricVersionsByGradeTrack={f"{row.grade}:{row.subjectTrack}": row.rubricVersion for row in snapshot.rows},
         inputRepresentation=input_representation,
         architectureVersion=config.architecture_version,
         detachDifficultyConditioning=True,
@@ -670,6 +716,9 @@ def package_artifact(
         gradeEmbeddingDimension=(
             16 if config.architecture_version == GRADE_AWARE_ORDINAL_ARCHITECTURE else 0
         ),
+        gradeEmbeddingCount=config.num_grades,
+        supportedGrades=sorted(snapshot.trainingGrades),
+        supportedSubjectTracks=sorted({row.subjectTrack for row in snapshot.rows}),
         routingPolicyVersion="confidence-entropy-v1",
         calibrationVersion=f"{model_version}-temperature-v1",
         calibration=calibration,
@@ -751,6 +800,36 @@ def recommended_max_length(rows: list[dict[str, Any]], tokenizer: Any) -> int:
 
 def train(args: argparse.Namespace) -> dict[str, Any]:
     snapshot = DatasetSnapshot.model_validate_json(Path(args.snapshot).read_text(encoding="utf-8"))
+    snapshot_payload = [row.model_dump(mode="json") for row in sorted(snapshot.rows, key=lambda row: row.questionVersionId)]
+    if canonical_json_hash(snapshot_payload) != snapshot.snapshotHash:
+        raise ValueError("training snapshot checksum mismatch")
+    manifest_payload = [entry.model_dump(mode="json") for entry in snapshot.splitManifest]
+    if canonical_json_hash(manifest_payload) != snapshot.splitManifestHash:
+        raise ValueError("training split manifest checksum mismatch")
+    if snapshot.rubricFamily:
+        prefix = args.rubric_version.removesuffix("-grade-aware") + "-"
+        if snapshot.rubricFamily != args.rubric_version or any(
+            not row.rubricVersion.startswith(prefix) for row in snapshot.rows
+        ):
+            raise ValueError("training rows must belong to the requested rubric family")
+    elif {row.rubricVersion for row in snapshot.rows} != {args.rubric_version}:
+        raise ValueError("training rows must all use the requested rubric version")
+    rubric_versions_by_track: dict[str, set[str]] = {}
+    for row in snapshot.rows:
+        rubric_versions_by_track.setdefault(f"{row.grade}:{row.subjectTrack}", set()).add(row.rubricVersion)
+    if any(len(versions) != 1 for versions in rubric_versions_by_track.values()):
+        raise ValueError("training contains multiple rubric versions for the same grade and track")
+    if any(row.grade not in snapshot.trainingGrades for row in snapshot.rows):
+        raise ValueError("training rows contain grades outside the declared scope")
+    integrity_failures = validate_split_integrity(snapshot.rows, snapshot.splitManifest)
+    if integrity_failures:
+        raise ValueError("training split integrity failed: " + "; ".join(integrity_failures))
+    verified_gates = validate_split_minimums(
+        snapshot.rows, snapshot.splitManifest,
+        required_grades=tuple(snapshot.trainingGrades),
+        required_grade_tracks=tuple(snapshot.requiredGradeTracks),
+    )
+    snapshot.gateFailures = list(dict.fromkeys([*snapshot.gateFailures, *verified_gates]))
     train_rows = serialized_training_examples(snapshot, "train", representation=args.representation)
     validation_rows = serialized_training_examples(snapshot, "validation", representation=args.representation)
     if not train_rows or not validation_rows:
@@ -773,6 +852,7 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
             lora_lr=learning_rate,
             seed=42,
             architecture_version=args.architecture,
+            num_grades=max(snapshot.trainingGrades),
         )
         for rank in (8, 16)
         for learning_rate in (1e-4, 2e-4)
@@ -786,6 +866,7 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
                 seed=args.seed,
                 epochs=args.epochs,
                 patience=args.patience,
+                num_grades=max(snapshot.trainingGrades),
             )
         ]
     summaries: list[dict[str, Any]] = []
@@ -826,6 +907,7 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
                 lora_lr=config.lora_lr,
                 architecture_version=config.architecture_version,
                 seed=final_seed,
+                num_grades=max(snapshot.trainingGrades),
             )
             final_dir = (
                 Path(args.work_dir)

@@ -1,0 +1,145 @@
+rubric_version: math-rubric-3x4x3-v8-sd-grade-aware
+scope: Matematika SD kelas 1-6
+principle: Nilai tuntutan minimum yang benar-benar diperlukan relatif terhadap kelas sasaran, bukan panjang
+  stem atau kata kerja.
+mathCognitiveDomain:
+  knowing: Mengingat, mengenali, membaca, atau menjalankan prosedur yang sangat langsung.
+  applying: Memilih dan memakai konsep atau prosedur pada konteks rutin.
+  reasoning: Menentukan strategi nonrutin, mengintegrasikan hubungan, menyimpulkan, menggeneralisasi,
+    atau membenarkan.
+knowledgeDimension:
+  factual: Fakta, istilah, simbol, dan elemen dasar.
+  conceptual: Hubungan, kategori, prinsip, dan struktur konsep.
+  procedural: Algoritme, teknik, metode, dan kriteria penggunaannya.
+  metacognitive: Pemilihan atau pemantauan strategi berpikir yang diminta secara eksplisit.
+intendedDifficulty:
+  evidence_profile:
+  - expectedPrerequisite
+  - dependentSteps
+  - routineStatus
+  - strategySelection
+  - representationTransfer
+  - relevantInformationUnits
+  - interactingConstraints
+  - calculationLoad
+  - scaffoldLevel
+  - distractorQuality
+  - gradeRelativeRationale
+  Easy: Penerapan langsung konsep atau prosedur familiar bagi kelas sasaran. Jalur penyelesaian jelas,
+    keputusan utama sedikit, representasi familiar, dan beban integrasi rendah.
+  Medium: Pemilihan prosedur familiar, beberapa langkah saling terkait, atau perpindahan representasi
+    dengan tuntutan sedang bagi kelas sasaran. Jalur penyelesaian cukup jelas atau bantuan soal memadai;
+    integrasi dan perencanaan belum tinggi.
+  Hard: Tuntutan tinggi bagi kelas sasaran karena siswa harus merencanakan langkah yang saling bergantung
+    dengan sedikit bantuan, mengintegrasikan konsep atau kendala yang berinteraksi, mengevaluasi alternatif,
+    atau memberi justifikasi substantif. Prosedur dapat familiar; kebaruan strategi bukan syarat wajib
+    jika tuntutan perencanaan dan integrasi memang tinggi.
+decision_rules:
+- Evidence profile wajib diisi, tetapi label bukan hasil penjumlahan skor otomatis.
+- Nilai relatif terhadap kesempatan belajar dan prasyarat wajar kelas sasaran.
+- KKO, tingkat kesulitan agen, panjang soal, dan label model bukan bukti penentu.
+- Reviewer blind tidak boleh melihat prediksi AI, vote lain, konsensus, atau distribusi target.
+- Abstain bila kunci, visual, notasi, solusi minimum, atau konteks kelas tidak cukup.
+- Intended difficulty tidak boleh ditimpa empirical difficulty dari respons siswa.
+content_verification:
+  answer_key_status:
+  - verified
+  - conflict
+  - unverifiable
+  rules:
+  - Status verified hanya sah bila verifiedMinimalSolution membuktikan verifiedAnswerKey.
+  - Konflik atau kunci yang tidak dapat diverifikasi wajib masuk adjudikasi dan tidak boleh menjadi training
+    row.
+  - Content concern dan insufficient evidence tidak boleh lolos qualification dataset.
+subject_track: regular
+difficulty_revision: planning_integration_grade_relative_v1
+supported_grades:
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+status: research_advisory_requires_expert_review
+grade_context: |
+  Gunakan konteks SD dan kelas sasaran pada soal, bukan tingkat tuntutan orang dewasa.
+  Nilai prasyarat wajar yang sudah dipelajari pada kelas sasaran; jangan mengasumsikan
+  penguasaan materi kelas berikutnya. Operasi dasar dapat menuntut perencanaan tinggi
+  bila hubungan, urutan, atau kendala harus dibangun sendiri. Bila konteks/prasyarat
+  tidak cukup jelas, gunakan abstain. Periksa kunci, tanda operasi, satuan, opsi,
+  angka dan label gambar; jangan mengarang informasi yang hilang.
+  verifiedMinimalSolution dan setiap rationale maksimal 700 karakter; tiap
+  evidence span maksimal 260 karakter; visualTranscript maksimal 1800 karakter.
+difficulty_examples_by_grade:
+  1:
+    Easy: Hitung 4 + 3. Satu operasi langsung dengan bilangan familiar dan tanpa keputusan strategi tambahan.
+    Medium: Ada 7 pensil, 2 diberikan lalu mendapat 3 lagi. Menentukan sisa memerlukan dua operasi terkait
+      dengan urutan yang sudah jelas dalam cerita.
+    Hard: Ada 8 kartu merah dan biru; kartu merah 2 lebih banyak daripada kartu biru. Tentukan banyak
+      tiap warna tanpa langkah bantuan. Memerlukan menyusun pasangan atau mencoba pembagian yang memenuhi
+      total dan selisih bersama; hasil 5 merah dan 3 biru. Hitungannya familiar, tetapi perencanaannya
+      tinggi untuk kelas sasaran.
+  2:
+    Easy: Hitung 4 x 3 dengan makna kelompok sama yang sudah dipelajari; satu penerapan langsung.
+    Medium: Tiga kotak masing-masing berisi 4 pensil, kemudian 2 pensil diberikan. Urutan perkalian lalu
+      pengurangan jelas dan integrasinya sedang.
+    Hard: Sebanyak 15 benda dibagi ke kotak A, B, C. A dan C sama banyak, B berisi 3 lebih banyak dari
+      A. Tentukan isi semua kotak tanpa petunjuk langkah. Perlu merencanakan pembagian sambil menghubungkan
+      tiga jumlah dan selisih; hasil A=4, B=7, C=4 dapat diverifikasi dengan operasi familiar.
+  3:
+    Easy: Hitung 24 dibagi 6. Pembagian langsung yang familiar.
+    Medium: Sebanyak 24 pensil dimasukkan ke paket berisi 6 lalu harga semua paket dihitung dari harga
+      per paket yang diberikan; hubungan langkah jelas.
+    Hard: Beli tepat 20 pensil. Paket 6 pensil berharga Rp8.000 dan pensil satuan Rp2.000. Tentukan pembelian
+      termurah tanpa arahan strategi. Perlu memilih kombinasi paket-satuan, memenuhi jumlah tepat, dan
+      membandingkan biaya; tiga paket dan dua satuan berharga Rp28.000. Familiaritas operasi tidak menghilangkan
+      tuntutan integrasi.
+  4:
+    Easy: Hitung luas persegi panjang yang panjang dan lebarnya diberikan langsung.
+    Medium: Hitung keliling persegi panjang setelah mengonversi satu ukuran yang diberikan; prosedur dan
+      hubungan langkah cukup jelas.
+    Hard: Keliling persegi panjang 24 cm dan panjangnya dua kali lebarnya. Tentukan luas tanpa petunjuk
+      langkah. Siswa harus menghubungkan keliling dan perbandingan untuk memperoleh ukuran, kemudian luas;
+      panjang 8 cm, lebar 4 cm, luas 32 cm2. Nilai apakah pembangunan hubungan tersebut memang tinggi
+      bagi kelas sasaran, bukan sekadar menghitung banyak langkah.
+  5:
+    Easy: Tentukan satu perempat dari 40; satu operasi pecahan familiar.
+    Medium: Tentukan panjang persegi panjang dari luas dan lebar yang diberikan, lalu kelilingnya dengan
+      jalur yang jelas.
+    Hard: Taman persegi panjang seluas 120 m2 memiliki lebar 10 m. Di bagian dalam dibuat jalan selebar
+      1 m sepanjang keempat tepi. Tentukan luas jalan tanpa diagram berukuran atau langkah bantuan. Perlu
+      memperoleh panjang 12 m, memahami kedua sisi berkurang masing-masing 2 m, lalu membandingkan luas
+      luar dan dalam; hasil 40 m2. Integrasi model geometri dan ukuran menjadi bukti utamanya.
+  6:
+    Easy: Konversi 0,75 menjadi pecahan atau persen; prosedur langsung.
+    Medium: Hitung harga setelah diskon dengan persen dan harga awal diketahui; beberapa langkah rutin
+      dan jalur jelas.
+    Hard: Dua perlima buku adalah sains dan sisanya matematika. Setelah 12 buku matematika disumbangkan,
+      banyak buku sains sama dengan matematika. Tentukan jumlah awal tanpa langkah bantuan. Perlu menghubungkan
+      pecahan bagian, perubahan total, dan kesamaan akhir; jumlah awal 60. Tuntutan tinggi berasal dari
+      membangun hubungan balik, bukan besarnya angka.
+difficulty_boundary_rules:
+- Nilai solusi minimum yang benar-benar diperlukan relatif terhadap kesempatan belajar dan prasyarat wajar
+  kelas sasaran; jalur lebih rumit yang opsional tidak menaikkan label.
+- Batas Easy-Medium ditentukan oleh keputusan, hubungan antarlangkah, dan perpindahan representasi yang
+  diperlukan; jumlah operasi bukan batas numerik otomatis.
+- Batas Medium-Hard ditentukan oleh tuntutan perencanaan dan integrasi yang tinggi serta bantuan yang
+  tersedia, bukan kewajiban memakai strategi nonrutin.
+- Prosedur familiar dapat Hard bila pemilihan dan hubungan antarlangkah atau kendala harus dibangun sendiri
+  dengan tuntutan tinggi; label routineStatus tetap mencatat familiaritas secara jujur.
+- Banyak operasi hitung, angka besar, panjang teks, topik lanjutan, atau satu perpindahan representasi
+  saja tidak cukup untuk menetapkan Hard.
+- Jika semua langkah penting diarahkan oleh soal atau tersedia jalan langsung yang familiar, jangan menetapkan
+  Hard hanya dari panjang penyelesaian.
+- Kata jelaskan atau buktikan saja tidak cukup; justifikasi Hard harus memerlukan penalaran substantif
+  yang benar-benar diminta oleh soal.
+- Untuk keputusan batas, rationale harus mengacu pada dependentSteps, strategySelection, interactingConstraints,
+  scaffoldLevel dan gradeRelativeRationale; profile bukan penjumlahan skor atau threshold otomatis.
+- 'Domain kognitif dan difficulty dinilai terpisah: applying dapat Hard; reasoning dapat Medium. Jangan
+  memaksa korespondensi satu-ke-satu antar-head.'
+- Konflik kunci, gambar kurang, notasi rusak, dan informasi ambigu adalah masalah konten; gunakan concern
+  atau abstain, bukan menaikkan difficulty atau mengarang perbaikan.
+- Reviewer blind menilai per soal tanpa kuota Easy/Medium/Hard. Kategori kosong tetap sah; jangan mengejar
+  distribusi normal dengan perubahan label tanpa bukti.
+- Intended difficulty tetap terpisah dari empirical difficulty CTT/IRT; respons siswa tidak menggantikan
+  definisi isi.

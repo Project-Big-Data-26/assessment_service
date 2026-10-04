@@ -32,6 +32,7 @@ class CalibrationSpec(BaseModel):
     confidenceThreshold: float | None = Field(default=None, ge=0, le=1)
     entropyThreshold: float | None = Field(default=None, ge=0, le=1)
     perGrade: dict[str, GradeCalibrationSpec] = Field(default_factory=dict)
+    perGradeTrack: dict[str, GradeCalibrationSpec] = Field(default_factory=dict)
 
 
 class ModelManifest(BaseModel):
@@ -46,6 +47,7 @@ class ModelManifest(BaseModel):
     datasetHash: str
     splitManifestHash: str
     rubricVersion: str
+    rubricVersionsByGradeTrack: dict[str, str] = Field(default_factory=dict)
     calibrationVersion: str
     inputSchemaVersion: str = INPUT_SCHEMA_VERSION
     inputRepresentation: str = Field(pattern=r"^(stem_options|metadata|solution|kko)$")
@@ -59,6 +61,9 @@ class ModelManifest(BaseModel):
     detachDifficultyConditioning: bool = True
     difficultyHeadType: str = Field(default="multiclass", pattern=r"^(multiclass|ordinal)$")
     gradeEmbeddingDimension: int = Field(default=0, ge=0, le=128)
+    gradeEmbeddingCount: int = Field(default=6, ge=1, le=12)
+    supportedGrades: list[int] = Field(default_factory=lambda: list(range(1, 7)))
+    supportedSubjectTracks: list[str] = Field(default_factory=lambda: ["regular"])
     routingPolicyVersion: str = Field(
         default="confidence-only-v1",
         pattern=r"^(confidence-only-v1|confidence-entropy-v1)$",
@@ -81,6 +86,13 @@ class ModelManifest(BaseModel):
 
     @model_validator(mode="after")
     def labels_are_exact(self) -> "ModelManifest":
+        if (not self.supportedGrades or len(set(self.supportedGrades)) != len(self.supportedGrades)
+                or any(grade not in range(1, 13) for grade in self.supportedGrades)):
+            raise ValueError("supportedGrades must be distinct grades 1-12")
+        if (not self.supportedSubjectTracks
+                or len(set(self.supportedSubjectTracks)) != len(self.supportedSubjectTracks)
+                or set(self.supportedSubjectTracks) - {"regular", "tl"}):
+            raise ValueError("supportedSubjectTracks must contain distinct regular/tl tracks")
         expected = {name: list(labels) for name, labels in HEAD_LABELS.items()}
         if self.labels != expected:
             raise ValueError("manifest label maps do not match the frozen 3x4x3 contract")
@@ -97,18 +109,27 @@ class ModelManifest(BaseModel):
                 invalid_grades = sorted(
                     grade
                     for grade in calibration.perGrade
-                    if grade not in {"1", "2", "3", "4", "5", "6"}
+                    if grade not in {str(value) for value in self.supportedGrades}
                 )
                 if invalid_grades:
                     raise ValueError(
                         f"per-grade calibration contains unsupported grades for {head}: "
                         f"{invalid_grades}"
                     )
+                allowed_track_keys = {
+                    f"{grade}:{track}" for grade in self.supportedGrades
+                    for track in self.supportedSubjectTracks
+                    if track != "tl" or grade in (11, 12)
+                }
+                if set(calibration.perGradeTrack) - allowed_track_keys:
+                    raise ValueError(f"per-grade-track calibration outside model scope: {head}")
         ordinal = self.architectureVersion == GRADE_AWARE_ORDINAL_ARCHITECTURE
         if ordinal != (self.difficultyHeadType == "ordinal"):
             raise ValueError("ordinal difficulty metadata does not match architecture")
         if ordinal and self.gradeEmbeddingDimension <= 0:
             raise ValueError("grade-aware ordinal artifacts require a grade embedding")
+        if ordinal and max(self.supportedGrades) > self.gradeEmbeddingCount:
+            raise ValueError("grade embedding count does not cover supported grades")
         return self
 
     @property

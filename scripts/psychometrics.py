@@ -18,6 +18,7 @@ from app.classification.v2.serializer import canonical_json_hash
 from app.psychometrics.analysis import analyze_matrix, load_policy
 from app.psychometrics.contracts import MatrixAnalysisInput, ScreeningInput
 from app.psychometrics.irt import response_probability
+from app.psychometrics.initialization import build_initialization_report, prepare_pilot_configs
 from app.training.v2.dataset import DatasetSnapshot
 
 
@@ -81,6 +82,15 @@ def main():
     screen.add_argument("--request", required=True, help="ScreeningInput JSON, including assumption review")
     screen.add_argument("--db", default=os.getenv("ASSESSMENT_DB_PATH", "data/local/assessments.sqlite3"))
     screen.add_argument("--output", required=True)
+    initialize = commands.add_parser("initialize", help="Prepare versioned IRT sidecar for a verified validation bundle; no calibration")
+    initialize.add_argument("--bundle", required=True)
+    initialize.add_argument("--model", choices=["rasch", "2pl", "3pl"], default="rasch")
+    initialize.add_argument("--db", default=os.getenv("ASSESSMENT_DB_PATH", "data/local/assessments.sqlite3"))
+    initialize.add_argument("--output", required=True)
+    prepare = commands.add_parser("prepare-pilot", help="Prepare offline grade/track assessment configs; no registration or student data")
+    prepare.add_argument("--silver-snapshot", required=True)
+    prepare.add_argument("--run-id", required=True)
+    prepare.add_argument("--output", required=True)
     args = parser.parse_args()
     if Path(args.output).exists():
         parser.error("output already exists; choose a new immutable artifact path")
@@ -101,6 +111,11 @@ def main():
         result = AssessmentStore(args.db, subject_secret=os.getenv("ASSESSMENT_SUBJECT_SECRET") or None).create_assessment(payload, snapshot)
     elif args.command == "create-participant":
         result = AssessmentStore(args.db, subject_secret=os.getenv("ASSESSMENT_SUBJECT_SECRET") or None).participant(args.assessment_id, args.participant_code)
+    elif args.command == "initialize":
+        result = build_initialization_report(args.bundle, policy=policy, db_path=args.db, model=args.model)
+    elif args.command == "prepare-pilot":
+        snapshot = DatasetSnapshot.model_validate_json(Path(args.silver_snapshot).read_text(encoding="utf-8"))
+        result = prepare_pilot_configs(snapshot, run_id=args.run_id)
     else:
         payload = ScreeningInput.model_validate_json(Path(args.request).read_text(encoding="utf-8"))
         result = AssessmentStore(args.db, subject_secret=os.getenv("ASSESSMENT_SUBJECT_SECRET") or None).screen(payload, policy)

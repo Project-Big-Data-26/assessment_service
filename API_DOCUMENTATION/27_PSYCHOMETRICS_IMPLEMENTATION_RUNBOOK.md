@@ -22,3 +22,18 @@ CTT menghitung p, Wilson CI, diskriminasi, point-biserial, distraktor dan KR-20.
 Band IRT proyek: `b < -1` Easy, `-1 <= b <= 1` Medium, `b > 1` Hard. Intended, CTT dan IRT difficulty terpisah. Konvergensi, misfit, ketidakpastian dan warning harus dibaca bersama kategori.
 
 Screen menyimpan snapshot immutable dan feedback sistem otomatis. GET decisions untuk audit; mutation keputusan manual telah dihapus. Scheduler analisis ulang disediakan integrasi, bukan berjalan otomatis setiap siswa menjawab. CAT, DIF, linking/equating dan profil adaptif masih rancangan.
+
+## Persiapan IRT setelah revisi rubrik dan fine-tuning
+
+Ekspor `validation_results.json` mempertahankan schema database yang sama. `cognitive_score` 600/1000/1400 adalah skor awal dari intended difficulty, bukan parameter b, theta siswa, atau hasil kalibrasi. Fine-tuning dan revisi rubrik tidak menghasilkan data respons siswa.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/psychometrics.py initialize --bundle output/pretest/kelas1/hasil_validasi --output tmp/kelas1-irt-initialization.json
+.\.venv\Scripts\python.exe scripts/psychometrics.py prepare-pilot --silver-snapshot output/pretest/silver_operational/dataset_snapshot_v2.json --run-id 20261005 --output tmp/irt-pilot-preparation.json
+```
+
+`initialize` memverifikasi hash ekspor dan audit, mengikat versi rubrik/soal serta policy, merangkum distribusi keseluruhan dan aktif, kemudian membaca ketersediaan event SQLite secara **read-only**. Basis data yang belum ada tidak dibuat. Laporan terpisah dapat disimpan di `bukti_validasi/irt_initialization.json`; laporan tidak mengganti label, skor, confidence atau status ekspor. Tanpa respons siswa yang sesuai versi/kelas/track, status `waiting_for_data`, parameter empiris null. Jika ada event, status `analysis_required`; jumlah mentah bukan bukti gate kalibrasi lolos.
+
+`prepare-pilot` memvalidasi snapshot AI silver dan menyiapkan `assessmentConfig` terpisah per kelas dan track reguler/TL. Perintah hanya membuat file konfigurasi; tidak mendaftarkan assessment, membuat peserta, atau mengisi respons. ID populasi menamai calon cohort dan dapat disesuaikan sebelum registrasi. Ekstrak satu `assessmentConfig` ke JSON lalu gunakan `create-assessment` dengan snapshot yang sama saat pilot siap dijalankan.
+
+Gunakan `screen` setelah peserta nyata menyelesaikan pilot, sertakan bukti asumsi yang memang tersedia, dan pertahankan minimum data pada policy. Kelas 11/12 reguler dan TL memakai unit kalibrasi terpisah; tidak ada pooling otomatis antar-kelas, track atau populasi. Respons mentah tidak menjadi target fine-tuning; hasil empiris menandai kandidat validasi AI ulang sesuai alur yang sudah ada.

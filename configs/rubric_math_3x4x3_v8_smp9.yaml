@@ -1,0 +1,117 @@
+rubric_version: math-rubric-3x4x3-v8-smp9-grade-aware
+scope: Matematika SMP kelas 9
+supported_grades:
+- 9
+status: research_advisory_requires_expert_review
+principle: Nilai tuntutan minimum penyelesaian relatif terhadap siswa kelas 9 dan materi pada soal, dengan
+  bukti solusi, bukan panjang teks atau besar bilangan.
+grade_context: |
+  Gunakan konteks SMP kelas 9 dan subtopik sumber sebagai acuan kesempatan belajar.
+  Topik korpus mencakup persamaan linear dua variabel/SPLDV dan pemodelan,
+  pertidaksamaan/kapasitas angkut, kemiringan garis, jaring-jaring bangun ruang,
+  luas permukaan/volume bangun sisi datar dan lengkung, lingkaran dan satuan volume,
+  hubungan keliling dan luas, lokasi/gerak pada petak, translasi/refleksi/rotasi,
+  kekongruenan/dilatasi/kesebangunan dan garis bagi, ruang sampel/peluang,
+  frekuensi relatif/harapan, pemilihan sampel, perbandingan peluang, dan kuartil.
+  Nyatakan prasyarat yang benar-benar dipakai pada solusi minimum. Jangan menganggap
+  semua siswa telah menguasai materi lanjutan di luar konteks soal; abstain bila
+  bukti tidak cukup. SPLDV, simbol transformasi, bilangan besar, volume, atau
+  peluang tidak otomatis Hard. Nilai familiaritas, perencanaan, integrasi, dan
+  bantuan soal menggunakan definisi serta aturan batas di bawah.
+  Kata "jelaskan" bukan bukti tunggal Hard.
+  Periksa panjang sisi vs diameter/jari-jari/garis pelukis, permukaan yang benar-benar
+  ditutup, faktor skala luas k^2 dan volume k^3, serta konversi liter dan satuan kubik.
+  Pada transformasi, periksa pusat, arah rotasi, urutan korespondensi titik, dan
+  sumbu pencerminan. Pada peluang, bedakan hasil ruang sampel dari banyak siswa,
+  asumsi kesetaraan peluang, pengembalian/independensi, peluang empiris dari teori,
+  dan frekuensi harapan dari hasil aktual; pemilihan sampel harus dinilai biasnya.
+  Periksa data kuartil, pemisah angka/tabel yang hilang, karakter rusak, satuan,
+  label gambar, dan pembulatan jumlah pengangkutan. Jangan mengarang informasi
+  atau konvensi yang dapat mengubah jawaban. Konflik kunci, ambigu, atau visual
+  kurang adalah persoalan konten; jangan menaikkan difficulty karena itu.
+  verifiedMinimalSolution harus ringkas, maksimal 700 karakter, cukup untuk
+  membuktikan hasil. Rationale maksimal 700 karakter; tiap evidence span maksimal
+  260 karakter; visualTranscript maksimal 1800 karakter. Jika solusi tidak dapat
+  diverifikasi, nyatakan masalah/batas bukti secara ringkas tanpa mengarang solusi.
+mathCognitiveDomain:
+  knowing: Mengenali fakta atau menjalankan prosedur sangat langsung.
+  applying: Memilih dan menerapkan konsep/prosedur pada konteks rutin.
+  reasoning: Menentukan strategi nonrutin, mengintegrasikan hubungan, menyimpulkan, menggeneralisasi,
+    atau membenarkan.
+knowledgeDimension:
+  factual: Fakta, istilah, simbol, dan elemen dasar.
+  conceptual: Hubungan, kategori, prinsip, dan struktur konsep.
+  procedural: Algoritme, teknik, metode, dan kriteria penggunaannya.
+  metacognitive: Pemilihan atau pemantauan strategi berpikir yang diminta secara eksplisit.
+intendedDifficulty:
+  Easy: Penerapan langsung konsep atau prosedur familiar bagi kelas sasaran. Jalur penyelesaian jelas,
+    keputusan utama sedikit, representasi familiar, dan beban integrasi rendah.
+  Medium: Pemilihan prosedur familiar, beberapa langkah saling terkait, atau perpindahan representasi
+    dengan tuntutan sedang bagi kelas sasaran. Jalur penyelesaian cukup jelas atau bantuan soal memadai;
+    integrasi dan perencanaan belum tinggi.
+  Hard: Tuntutan tinggi bagi kelas sasaran karena siswa harus merencanakan langkah yang saling bergantung
+    dengan sedikit bantuan, mengintegrasikan konsep atau kendala yang berinteraksi, mengevaluasi alternatif,
+    atau memberi justifikasi substantif. Prosedur dapat familiar; kebaruan strategi bukan syarat wajib
+    jika tuntutan perencanaan dan integrasi memang tinggi.
+  evidence_profile:
+  - expectedPrerequisite
+  - dependentSteps
+  - routineStatus
+  - strategySelection
+  - representationTransfer
+  - relevantInformationUnits
+  - interactingConstraints
+  - calculationLoad
+  - scaffoldLevel
+  - distractorQuality
+  - gradeRelativeRationale
+decision_rules:
+- Reviewer blind tidak menerima prediksi IndoBERT, vote run lain, estimasi agen, konsensus, atau distribusi
+  target.
+- Label mengikuti solusi minimum dan bukti pada soal; kategori kosong tetap sah dicatat.
+- Evidence profile wajib untuk klasifikasi difficulty, tetapi bukan penjumlahan skor otomatis.
+- Run 3-0 diterima sebagai silver; ketidaksepakatan, abstain, dan masalah konten/kunci masuk adjudikasi
+  AI terpisah.
+- Intended difficulty tetap terpisah dari empirical difficulty CTT/IRT.
+content_verification:
+  answer_key_status:
+  - verified
+  - conflict
+  - unverifiable
+  rules:
+  - Status verified memerlukan verifiedAnswerKey dan verifiedMinimalSolution yang mendukungnya.
+  - Konflik kunci, visual tidak cukup, atau content concern tidak boleh menjadi training row.
+  - Label selalu advisory; keputusan ahli diperlukan sebelum gold atau publishing.
+subject_track: regular
+difficulty_revision: planning_integration_grade_relative_v1
+difficulty_examples:
+  Easy: Menggunakan rumus volume bangun yang semua ukurannya diberikan langsung.
+  Medium: Menentukan ukuran hilang dari satu hubungan familiar lalu menghitung volume dengan urutan jelas.
+  Hard: Menghubungkan skala ukuran, perubahan volume, dan kapasitas beberapa wadah untuk menentukan keputusan
+    pengisian yang memenuhi batas, tanpa petunjuk urutan. Transformasi atau rumus volume familiar tetap
+    dapat menuntut integrasi tinggi; operasi panjang saja tidak cukup.
+difficulty_boundary_rules:
+- Nilai solusi minimum yang benar-benar diperlukan relatif terhadap kesempatan belajar dan prasyarat wajar
+  kelas sasaran; jalur lebih rumit yang opsional tidak menaikkan label.
+- Batas Easy-Medium ditentukan oleh keputusan, hubungan antarlangkah, dan perpindahan representasi yang
+  diperlukan; jumlah operasi bukan batas numerik otomatis.
+- Batas Medium-Hard ditentukan oleh tuntutan perencanaan dan integrasi yang tinggi serta bantuan yang
+  tersedia, bukan kewajiban memakai strategi nonrutin.
+- Prosedur familiar dapat Hard bila pemilihan dan hubungan antarlangkah atau kendala harus dibangun sendiri
+  dengan tuntutan tinggi; label routineStatus tetap mencatat familiaritas secara jujur.
+- Banyak operasi hitung, angka besar, panjang teks, topik lanjutan, atau satu perpindahan representasi
+  saja tidak cukup untuk menetapkan Hard.
+- Jika semua langkah penting diarahkan oleh soal atau tersedia jalan langsung yang familiar, jangan menetapkan
+  Hard hanya dari panjang penyelesaian.
+- Kata jelaskan atau buktikan saja tidak cukup; justifikasi Hard harus memerlukan penalaran substantif
+  yang benar-benar diminta oleh soal.
+- Untuk keputusan batas, rationale harus mengacu pada dependentSteps, strategySelection, interactingConstraints,
+  scaffoldLevel dan gradeRelativeRationale; profile bukan penjumlahan skor atau threshold otomatis.
+- 'Domain kognitif dan difficulty dinilai terpisah: applying dapat Hard; reasoning dapat Medium. Jangan
+  memaksa korespondensi satu-ke-satu antar-head.'
+- Konflik kunci, gambar kurang, notasi rusak, dan informasi ambigu adalah masalah konten; gunakan concern
+  atau abstain, bukan menaikkan difficulty atau mengarang perbaikan.
+- Reviewer blind menilai per soal tanpa kuota Easy/Medium/Hard. Kategori kosong tetap sah; jangan mengejar
+  distribusi normal dengan perubahan label tanpa bukti.
+- Intended difficulty tetap terpisah dari empirical difficulty CTT/IRT; respons siswa tidak menggantikan
+  definisi isi.

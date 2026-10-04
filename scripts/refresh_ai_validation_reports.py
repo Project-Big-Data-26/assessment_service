@@ -18,7 +18,7 @@ sys.path.insert(0, str(ROOT))
 from app.llm.silver import SilverLabelOutput, build_silver_prompt  # noqa: E402
 from app.silver.exports import (COMPACT_SCHEMA, DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA,
                                STATUS_POLICY, LEVEL_POLICY, SCORE_POLICY, CONFIDENCE_POLICY,
-                               compact_items, database_items, final_label_support, load_decision_bundle)
+                               compact_items, database_items, final_label_support, load_decision_bundle, ai_validation_path)
 from scripts.generate_silver_labels_kelas1 import input_hash, load_checkpoint  # noqa: E402
 
 BASE = ROOT / "output/pretest"
@@ -91,7 +91,8 @@ def verify_bundle(source: Path, bundle: Path) -> None:
         assert (bundle / name).stat().st_size == info["bytes"], name
     questions = {str(q["_id"]): q for q in load(source)}
     exported = load(bundle / "questions.json")["items"]
-    document = load(bundle / "validation_results.json")
+    active_document = load(bundle / "validation_results.json")
+    document = load(ai_validation_path(bundle, manifest))
     results = load_decision_bundle(bundle)["items"]
     if isinstance(document, list):
         export = manifest["databaseExport"]
@@ -118,6 +119,18 @@ def verify_bundle(source: Path, bundle: Path) -> None:
         assert export["summary"] == load_decision_bundle(bundle)["summary"]
         assert export["sourceClass"] == load_decision_bundle(bundle)["sourceClass"]
         assert export["subjectTrack"] == checkpoint.get("subjectTrack", "regular")
+        if export.get("operationalBalance"):
+            from scripts.balance_operational_difficulty import allocate
+            policy = export["operationalBalance"]
+            assert policy["provenance"] == "relative_bank_quota"
+            expected_active, allocation = allocate(document, results)
+            assert active_document == expected_active, "active operational array differs from retained AI evidence"
+            assert policy["activeDistribution"] == allocation["targets"]
+            reference = policy["audit"]
+            assert reference["path"] == "bukti_validasi/operational_balance_audit.json"
+            assert digest(bundle / reference["path"]) == reference["sha256"]
+            audit = load(bundle / reference["path"])
+            assert all(audit[key] == value for key, value in allocation.items())
     elif document.get("schemaVersion") == COMPACT_SCHEMA:
         checkpoint = load(Path(manifest["sourceFiles"]["blindCheckpoint"]["path"]))
         expected_items = compact_items(list(questions.values()), results, exported, checkpoint, source.parent.name)

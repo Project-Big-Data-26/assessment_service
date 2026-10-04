@@ -1,0 +1,602 @@
+{
+  "schemaVersion": "gemini-silver-labels-v3-blind-key-verified",
+  "source": "output/pretest/kelas12_tl/soal_pretest_db.json",
+  "sourceHash": "8f0af41e1e27d411d3d42d1d3b48b2b26b51b6ceb004a75d7aa99a730a5e4b68",
+  "sourceGrade": 12,
+  "subjectTrack": "tl",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "promptVersion": "gemini-silver-math-3x4x3-v10-blind-sma12-tl-key-verified",
+  "adjudicationPromptVersion": "gemini-silver-math-3x4x3-v10-adjudication-sma12-tl",
+  "rubricVersion": "math-rubric-3x4x3-v8-sma12-tl-grade-aware",
+  "rubricHash": "988095b30af430dee0e47ee7813f14eefe2114c12e5e408789d8c8195b6f040b",
+  "educationLevel": "SMA",
+  "requestedRuns": 3,
+  "createdAt": "2026-10-04T17:54:07.298911+00:00",
+  "updatedAt": "2026-10-04T18:05:40.462591+00:00",
+  "items": {
+    "501a9296524cbcfb62ba4aee": {
+      "index": 1,
+      "questionId": "501a9296524cbcfb62ba4aee",
+      "inputHash": "d0350eaf618891dd80ce49d210b249479a9beb403264ea937cb7a599b24c6c30",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "V(t) = ∫(12-t)^-2 dt = (12-t)^-1 + C = 1/(12-t) + C. Diketahui V(2) = 3, maka 1/(12-2) + C = 3 => 1/10 + C = 3 => C = 2,9. Volume pada 8 Desember (t=7): V(7) = 1/(12-7) + 2,9 = 1/5 + 2,9 = 0,2 + 2,9 = 3,1.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "volume sel itu bertambah dengan kecepatan (12-t)^-2",
+                "Jika pada tanggal 3 Desember volume sel itu adalah 3 mikrometer kubik, berapa volumenya pada tanggal 8 Desember?"
+              ],
+              "rationale": "Siswa perlu menerapkan konsep integral tak tentu untuk mencari fungsi volume dari laju pertumbuhan yang diberikan, menentukan konstanta integrasi menggunakan kondisi awal, dan mengevaluasi fungsi pada titik tertentu.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "kecepatan (12-t)^-2",
+                "volume sel itu adalah 3 mikrometer kubik"
+              ],
+              "rationale": "Soal menuntut pemahaman prosedural tentang teknik integrasi (aturan rantai/substitusi sederhana) dan pemahaman konseptual tentang hubungan antara laju perubahan (turunan) dan akumulasi (integral).",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "kecepatan (12-t)^-2",
+                "tanggal 3 Desember... tanggal 8 Desember"
+              ],
+              "rationale": "Soal ini dikategorikan Medium karena memerlukan translasi konteks waktu ke variabel t (t=2 untuk 3 Des, t=7 untuk 8 Des) dan integrasi fungsi komposisi sederhana. Prosedur integrasi bersifat rutin, namun memerlukan ketelitian dalam menentukan konstanta dan evaluasi nilai.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Integral fungsi aljabar sederhana dan aturan rantai dasar.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": true,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 12 TL diharapkan mampu melakukan integrasi fungsi sederhana dan menerapkannya pada masalah laju perubahan. Tantangan utama terletak pada translasi tanggal ke variabel t dan ketelitian aritmatika."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "UZXCarn4KdCxg8UPzfGimQo",
+          "promptHash": "55a0148328396f734bbee27b7cb579ac2f43adc14c3435f7eb7ec5829a1be0db",
+          "responseHash": "5d8e1ad29583c05bb4d4d13ebc150c8e94e28e56048f300206a816644665667e",
+          "latencyMs": 5424,
+          "usage": {
+            "promptTokens": 2035,
+            "outputTokens": 741,
+            "thinkingTokens": 140,
+            "totalTokens": 2916
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "dV/dt = (12-t)^(-2). V(t) = integral (12-t)^(-2) dt = (12-t)^(-1) + C = 1/(12-t) + C. Diketahui V(2) = 3 (3 Des adalah t=2): 3 = 1/(12-2) + C => 3 = 1/10 + C => C = 2,9. Maka V(t) = 1/(12-t) + 2,9. Untuk 8 Des (t=7): V(7) = 1/(12-7) + 2,9 = 1/5 + 2,9 = 0,2 + 2,9 = 3,1.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "kecepatan (12-t)^-2",
+                "volume sel itu adalah 3 mikrometer kubik",
+                "berapa volumenya pada tanggal 8 Desember"
+              ],
+              "rationale": "Siswa perlu mengintegrasikan fungsi laju pertumbuhan untuk mendapatkan fungsi volume, menentukan konstanta integrasi menggunakan kondisi awal yang diberikan, dan mengevaluasi fungsi pada titik waktu tertentu. Ini adalah penerapan prosedur integral yang rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "kecepatan (12-t)^-2",
+                "volume sel itu adalah 3 mikrometer kubik"
+              ],
+              "rationale": "Soal menuntut pemahaman tentang hubungan antara laju perubahan (turunan) dan fungsi asal (integral), serta prosedur teknis integrasi fungsi pangkat.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "kecepatan (12-t)^-2",
+                "3 Desember volume sel itu adalah 3",
+                "tanggal 8 Desember"
+              ],
+              "rationale": "Soal ini bersifat rutin bagi siswa kelas 12. Langkah-langkahnya jelas: integrasi, substitusi nilai untuk mencari konstanta, dan evaluasi akhir. Tidak ada kendala yang saling berinteraksi secara kompleks atau kebutuhan untuk strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Integral tak tentu fungsi aljabar sederhana dan aturan rantai dasar.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi integral sebagai antiturunan laju pertumbuhan adalah standar kurikulum kelas 12. Prosedur integrasi (12-t)^-2 sangat langsung."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "V5XCap3pCqzSqfkPpuz2kAQ",
+          "promptHash": "55a0148328396f734bbee27b7cb579ac2f43adc14c3435f7eb7ec5829a1be0db",
+          "responseHash": "bb1711ab0e14ff64515de29f8a54ce96cc1cb44b220f43f47788f627e35d636c",
+          "latencyMs": 4979,
+          "usage": {
+            "promptTokens": 2035,
+            "outputTokens": 761,
+            "thinkingTokens": 134,
+            "totalTokens": 2930
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "D",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "V(t) = integral (12-t)^-2 dt = (12-t)^-1 + C = 1/(12-t) + C. Diketahui V(2) = 3, maka 1/(12-2) + C = 3 => 1/10 + C = 3 => C = 2,9. Volume pada 8 Desember (t=7) adalah V(7) = 1/(12-7) + 2,9 = 1/5 + 2,9 = 0,2 + 2,9 = 3,1.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "volume sel itu bertambah dengan kecepatan (12-t)^-2",
+                "Jika pada tanggal 3 Desember volume sel itu adalah 3 mikrometer kubik, berapa volumenya pada tanggal 8 Desember?"
+              ],
+              "rationale": "Siswa harus mengintegrasikan fungsi laju pertumbuhan untuk mendapatkan fungsi volume, menentukan konstanta integrasi menggunakan kondisi awal yang diberikan, dan mengevaluasi fungsi pada titik waktu tertentu. Ini adalah penerapan prosedur integral dalam konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "volume sel itu bertambah dengan kecepatan (12-t)^-2",
+                "integral tak tentu"
+              ],
+              "rationale": "Soal menuntut pemahaman tentang hubungan antara laju perubahan (turunan) dan fungsi asal (integral), serta prosedur teknis integrasi fungsi berpangkat.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "kecepatan (12-t)^-2",
+                "tanggal 3 Desember... tanggal 8 Desember"
+              ],
+              "rationale": "Soal ini dikategorikan Easy karena prosedurnya sangat standar (integral fungsi aljabar sederhana), jalur penyelesaiannya linear dan jelas, serta tidak ada kendala yang saling berinteraksi atau kebutuhan untuk strategi nonrutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar integral tak tentu fungsi aljabar dan substitusi sederhana.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 12 TL sudah terbiasa dengan aplikasi integral untuk mencari fungsi asal dari laju perubahan. Langkah-langkahnya bersifat rutin dan langsung."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "XJXCapzwJc3fg8UP0-e38QQ",
+          "promptHash": "55a0148328396f734bbee27b7cb579ac2f43adc14c3435f7eb7ec5829a1be0db",
+          "responseHash": "b40946897ba545999384a8f5833d87ba7c1201affcd82c342f991e8e8a76cc51",
+          "latencyMs": 4580,
+          "usage": {
+            "promptTokens": 2035,
+            "outputTokens": 712,
+            "thinkingTokens": 138,
+            "totalTokens": 2885
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "D",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "dV/dt = (12-t)^(-2). V(t) = ∫(12-t)^(-2) dt = (12-t)^(-1) + C = 1/(12-t) + C. Diketahui t=2 (3 Des) adalah V=3: 3 = 1/(12-2) + C => 3 = 0,1 + C => C = 2,9. Maka V(t) = 1/(12-t) + 2,9. Untuk t=7 (8 Des): V(7) = 1/(12-7) + 2,9 = 0,2 + 2,9 = 3,1.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "adjudicated",
+            "adjudicationRationale": "Siswa menerapkan konsep integral tak tentu untuk mencari fungsi volume dari laju pertumbuhan yang diberikan, menentukan konstanta integrasi menggunakan kondisi awal, dan mengevaluasi fungsi pada titik tertentu. Ini adalah penerapan prosedur rutin."
+          },
+          "knowledgeDimension": {
+            "label": "procedural",
+            "voteCounts": {
+              "procedural": 3
+            },
+            "supportingRuns": 3,
+            "status": "adjudicated",
+            "adjudicationRationale": "Soal menuntut pemahaman prosedural tentang teknik integrasi (aturan rantai/substitusi sederhana) dan pemahaman konseptual tentang hubungan antara laju perubahan dan akumulasi."
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Medium": 1,
+              "Easy": 2
+            },
+            "supportingRuns": 2,
+            "status": "adjudicated",
+            "adjudicationRationale": "Soal ini bersifat rutin bagi siswa kelas 12. Langkah-langkahnya jelas: integrasi, substitusi nilai untuk mencari konstanta, dan evaluasi akhir. Tidak ada kendala yang saling berinteraksi secara kompleks atau kebutuhan untuk strategi non-rutin."
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": true,
+        "eligibleForTraining": true
+      },
+      "adjudication": {
+        "status": "success",
+        "output": {
+          "contentStatus": "valid",
+          "contentConcerns": [],
+          "answerKeyStatus": "verified",
+          "verifiedAnswerKey": "D",
+          "visualTranscript": null,
+          "verifiedMinimalSolution": "dV/dt = (12-t)^(-2). V(t) = ∫(12-t)^(-2) dt = (12-t)^(-1) + C = 1/(12-t) + C. Diketahui t=2 (3 Des) adalah V=3: 3 = 1/(12-2) + C => 3 = 0,1 + C => C = 2,9. Maka V(t) = 1/(12-t) + 2,9. Untuk t=7 (8 Des): V(7) = 1/(12-7) + 2,9 = 0,2 + 2,9 = 3,1.",
+          "mathCognitiveDomain": {
+            "action": "classify",
+            "evidenceSpans": [
+              "volume sel itu bertambah dengan kecepatan (12-t)^-2",
+              "Jika pada tanggal 3 Desember volume sel itu adalah 3 mikrometer kubik, berapa volumenya pada tanggal 8 Desember?"
+            ],
+            "rationale": "Siswa menerapkan konsep integral tak tentu untuk mencari fungsi volume dari laju pertumbuhan yang diberikan, menentukan konstanta integrasi menggunakan kondisi awal, dan mengevaluasi fungsi pada titik tertentu. Ini adalah penerapan prosedur rutin.",
+            "label": "applying"
+          },
+          "knowledgeDimension": {
+            "action": "classify",
+            "evidenceSpans": [
+              "kecepatan (12-t)^-2",
+              "volume sel itu adalah 3 mikrometer kubik"
+            ],
+            "rationale": "Soal menuntut pemahaman prosedural tentang teknik integrasi (aturan rantai/substitusi sederhana) dan pemahaman konseptual tentang hubungan antara laju perubahan dan akumulasi.",
+            "label": "procedural"
+          },
+          "intendedDifficulty": {
+            "action": "classify",
+            "evidenceSpans": [
+              "kecepatan (12-t)^-2",
+              "3 Desember volume sel itu adalah 3",
+              "tanggal 8 Desember"
+            ],
+            "rationale": "Soal ini bersifat rutin bagi siswa kelas 12. Langkah-langkahnya jelas: integrasi, substitusi nilai untuk mencari konstanta, dan evaluasi akhir. Tidak ada kendala yang saling berinteraksi secara kompleks atau kebutuhan untuk strategi non-rutin.",
+            "label": "Easy",
+            "profile": {
+              "expectedPrerequisite": "Integral tak tentu fungsi aljabar sederhana dan aturan rantai dasar.",
+              "dependentSteps": 3,
+              "routineStatus": "familiar_routine",
+              "strategySelection": false,
+              "representationTransfer": false,
+              "relevantInformationUnits": 3,
+              "interactingConstraints": 0,
+              "calculationLoad": "low",
+              "scaffoldLevel": "none",
+              "distractorQuality": "plausible",
+              "gradeRelativeRationale": "Materi integral sebagai antiturunan laju pertumbuhan adalah standar kurikulum kelas 12. Prosedur integrasi (12-t)^-2 sangat langsung dan familiar."
+            }
+          }
+        },
+        "errorCode": null,
+        "errorDetails": [],
+        "quotaDailyExhausted": false,
+        "quotaLimits": [],
+        "providerFailureReason": null,
+        "responseId": "YZXCaqiKK5Wzg8UPltbm0Ak",
+        "promptHash": "aff1f6ab0e3c33ec646fe05cd01c485b5271588d57ce09f3590aef5d945f4975",
+        "responseHash": "94dba7c35b63fe72949565fda0b7c09334566aba8de7add4078b4f3f95d2ed86",
+        "latencyMs": 3844,
+        "usage": {
+          "promptTokens": 3956,
+          "outputTokens": 760,
+          "thinkingTokens": 100,
+          "totalTokens": 4816
+        }
+      }
+    },
+    "dd99d4ea24732659174ae27b": {
+      "index": 2,
+      "questionId": "dd99d4ea24732659174ae27b",
+      "inputHash": "84f519f0b879f0b48dcc65dc51a973222b1465c4b2dade14fb394f88f0efeb64",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "66",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Integral dari x^2+4x+5 adalah (1/3)x^3 + 2x^2 + 5x. Evaluasi pada batas 4: (1/3)(64) + 2(16) + 5(4) = 64/3 + 32 + 20 = 64/3 + 52 = (64+156)/3 = 220/3. Evaluasi pada batas 1: (1/3)(1) + 2(1) + 5(1) = 1/3 + 7 = 22/3. Hasil: 220/3 - 22/3 = 198/3 = 66.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan integral tentu dari f(x) pada interval [1,4] atau integral 1 sampai 4 (x^2+4x+5) dx"
+              ],
+              "rationale": "Soal meminta penerapan langsung aturan dasar integral tentu (aturan pangkat) pada fungsi polinomial sederhana. Siswa hanya perlu melakukan integrasi dan substitusi batas, yang merupakan prosedur standar dan rutin dalam kurikulum kelas 12.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "integral tentu dari f(x) pada interval [1,4]"
+              ],
+              "rationale": "Soal menguji pemahaman tentang algoritme atau prosedur integrasi fungsi polinomial dan teorema dasar kalkulus.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "f(x)=x^2+4x+5 pada interval [1,4]",
+                "integral tentu dari f(x) pada interval [1,4]"
+              ],
+              "rationale": "Soal ini bersifat rutin dengan jalur penyelesaian yang jelas dan langsung. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Aturan dasar integral tak tentu (aturan pangkat) dan teorema dasar kalkulus.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Integrasi polinomial adalah materi dasar yang familiar bagi siswa kelas 12 TL. Prosedur integrasi dan evaluasi batas adalah tugas rutin tanpa kompleksitas tambahan."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "ZZXCauKkJIHljuMP5rGl6AQ",
+          "promptHash": "a85c62db5b5abdfd0f6bc0ea4e2dc2e7b9b2ae036a799de803606340a671fdf9",
+          "responseHash": "4ef4084634435ea365fb4dd2e2499823f8b0f00f517c1f7bc19ca1788148d1e0",
+          "latencyMs": 3760,
+          "usage": {
+            "promptTokens": 1992,
+            "outputTokens": 712,
+            "thinkingTokens": 141,
+            "totalTokens": 2845
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "66",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Integral dari x^2 + 4x + 5 adalah (1/3)x^3 + 2x^2 + 5x. Evaluasi pada batas [1, 4]: [(1/3)(64) + 2(16) + 5(4)] - [(1/3)(1) + 2(1) + 5(1)] = (64/3 + 32 + 20) - (1/3 + 2 + 5) = (63/3) + 30 + 15 = 21 + 45 = 66.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan integral tentu dari f(x) pada interval [1,4] atau integral dari 1 sampai 4 dari (x^2+4x+5) dx."
+              ],
+              "rationale": "Soal meminta penerapan langsung aturan dasar integral tentu (aturan pangkat) pada fungsi polinomial sederhana. Siswa hanya perlu melakukan integrasi dan substitusi batas, yang merupakan prosedur rutin dalam kurikulum kelas 12.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "integral tentu dari f(x) pada interval [1,4]"
+              ],
+              "rationale": "Soal menguji pemahaman tentang algoritma integrasi fungsi polinomial dan teorema dasar kalkulus untuk menghitung nilai integral tentu.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "f(x)=x^2+4x+5 pada interval [1,4]",
+                "integral tentu dari f(x) pada interval [1,4]"
+              ],
+              "rationale": "Soal ini bersifat rutin dengan jalur penyelesaian yang sangat jelas dan langsung. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin. Beban perhitungan rendah dan prosedur integrasi sangat familiar bagi siswa kelas 12.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Aturan dasar integral fungsi aljabar (integral tak tentu) dan teorema dasar kalkulus.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Ini adalah soal standar untuk menguji penguasaan dasar integral tentu pada fungsi polinomial, yang merupakan materi dasar di kelas 12."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "aZXCauDsNaO1g8UPk4bkuQo",
+          "promptHash": "a85c62db5b5abdfd0f6bc0ea4e2dc2e7b9b2ae036a799de803606340a671fdf9",
+          "responseHash": "d53bd04954db4c670f8f9082d86c452c3f0a477d2155eae5ec465a208f2e1e9d",
+          "latencyMs": 3640,
+          "usage": {
+            "promptTokens": 1992,
+            "outputTokens": 702,
+            "thinkingTokens": 141,
+            "totalTokens": 2835
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Integral dari x^2 + 4x + 5 adalah (1/3)x^3 + 2x^2 + 5x. Evaluasi pada batas [1, 4]: [(1/3)(64) + 2(16) + 5(4)] - [(1/3)(1) + 2(1) + 5(1)] = (64/3 + 32 + 20) - (1/3 + 7) = (63/3) + 30 + 15 = 21 + 45 = 66.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan integral tentu dari f(x) pada interval [1,4] atau \\int_1^4(x^2+4x+5)\\,dx."
+              ],
+              "rationale": "Soal ini meminta penerapan langsung prosedur integral tentu pada fungsi polinomial sederhana, yang merupakan tugas standar dalam kurikulum matematika kelas 12.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "\\int_1^4(x^2+4x+5)\\,dx"
+              ],
+              "rationale": "Siswa perlu menggunakan algoritma integrasi (aturan pangkat) dan teorema dasar kalkulus untuk menyelesaikan soal ini.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "f(x)=x^2+4x+5",
+                "\\int_1^4(x^2+4x+5)\\,dx"
+              ],
+              "rationale": "Soal ini adalah latihan rutin integral tentu fungsi polinomial. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Aturan dasar integral (power rule) dan Teorema Dasar Kalkulus.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Soal ini merupakan penerapan langsung prosedur integral tentu yang sangat familiar bagi siswa kelas 12. Tidak ada kompleksitas tambahan."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "bpXCavezAYLRg8UPldKn2Ak",
+          "promptHash": "a85c62db5b5abdfd0f6bc0ea4e2dc2e7b9b2ae036a799de803606340a671fdf9",
+          "responseHash": "331d9d867bfac3724d7efba5a6bd6a857b95dab7d339133336d97b550597c87c",
+          "latencyMs": 5874,
+          "usage": {
+            "promptTokens": 1992,
+            "outputTokens": 656,
+            "thinkingTokens": 1068,
+            "totalTokens": 3716
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "66",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Integral dari x^2+4x+5 adalah (1/3)x^3 + 2x^2 + 5x. Evaluasi pada batas 4: (1/3)(64) + 2(16) + 5(4) = 64/3 + 32 + 20 = 64/3 + 52 = (64+156)/3 = 220/3. Evaluasi pada batas 1: (1/3)(1) + 2(1) + 5(1) = 1/3 + 7 = 22/3. Hasil: 220/3 - 22/3 = 198/3 = 66.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "procedural",
+            "voteCounts": {
+              "procedural": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Easy": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    }
+  },
+  "summary": {
+    "itemsProcessed": 2,
+    "itemsEligibleForTraining": 2,
+    "successfulRuns": 6,
+    "failedRuns": 0,
+    "adjudicatedItems": 1,
+    "pendingAdjudication": 0,
+    "difficultyDistribution": {
+      "Easy": 2,
+      "Medium": 0,
+      "Hard": 0
+    },
+    "dominantDifficultyShare": 1.0,
+    "boundaryAnalysisRequired": true,
+    "promptTokens": 16037,
+    "outputTokens": 5044,
+    "thinkingTokens": 1862,
+    "totalTokens": 22943
+  },
+  "executionStatus": "completed_batch",
+  "apiAttempts": 7
+}

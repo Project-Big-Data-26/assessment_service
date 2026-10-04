@@ -1,0 +1,683 @@
+{
+  "schemaVersion": "gemini-silver-labels-v3-blind-key-verified",
+  "source": "output/pretest/kelas9/soal_pretest_db.json",
+  "sourceHash": "b138ff3b11bce2373c9a83f70cb0d247d99dad97fb927153de82c497c85fd97f",
+  "sourceGrade": 9,
+  "subjectTrack": "regular",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "promptVersion": "gemini-silver-math-3x4x3-v10-blind-smp9-key-verified",
+  "adjudicationPromptVersion": "gemini-silver-math-3x4x3-v10-adjudication-smp9",
+  "rubricVersion": "math-rubric-3x4x3-v8-smp9-grade-aware",
+  "rubricHash": "42c02dcff6db26cc610bc655ffe2dd1ef816712d4fc2cb079b8630ee1a9afd39",
+  "educationLevel": "SMP",
+  "requestedRuns": 3,
+  "createdAt": "2026-10-04T17:54:07.264872+00:00",
+  "updatedAt": "2026-10-04T18:02:20.998117+00:00",
+  "items": {
+    "bba0d92faac1dbb90cd622ef": {
+      "index": 1,
+      "questionId": "bba0d92faac1dbb90cd622ef",
+      "inputHash": "13d06cafd9bf6fbaef7a6856d7b427396122f54dc1aaca0ebdc69da1c106026c",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Vektor translasi T = A' - A = (-2 - 0, 1 - (-3)) = (-2, 4). Maka B' = B + T = (2 + (-2), 2 + 4) = (0, 6) dan C' = C + T = (4 + (-2), 5 + 4) = (2, 9).",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "ditranslasikan sehingga bayangannya adalah A'(-2,1)",
+                "Tentukan translasinya serta koordinat titik B' dan C'"
+              ],
+              "rationale": "Siswa perlu menerapkan prosedur translasi pada koordinat titik. Langkah-langkahnya rutin dan prosedural: menentukan vektor translasi dari pasangan titik yang diketahui, lalu menerapkannya pada titik lain.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "ditranslasikan sehingga bayangannya adalah A'(-2,1)"
+              ],
+              "rationale": "Soal ini menguji pemahaman prosedural tentang operasi translasi pada koordinat kartesius.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1)"
+              ],
+              "rationale": "Soal ini tergolong Easy karena prosedur translasi adalah materi dasar yang familiar. Siswa hanya perlu menghitung selisih koordinat untuk mendapatkan vektor translasi, lalu menjumlahkannya ke titik lain. Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi penjumlahan dan pengurangan bilangan bulat serta konsep dasar koordinat kartesius.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Translasi titik adalah materi standar kelas 9 yang prosedurnya sangat langsung dan tidak memerlukan integrasi konsep yang kompleks."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "6ZPCap7-Ff-jqfkP5_f02QQ",
+          "promptHash": "994143556db9151ec1bfdec2b8bc9d6c30d80bc4d48a122c33bf2e7ab60957ad",
+          "responseHash": "8999a00ebf87e5da61870e2354768b2bf0b7c30dbdc429bc6786116416d371e2",
+          "latencyMs": 3282,
+          "usage": {
+            "promptTokens": 2046,
+            "outputTokens": 636,
+            "thinkingTokens": 88,
+            "totalTokens": 2770
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Vektor translasi T = A' - A = (-2-0, 1-(-3)) = (-2, 4). Maka B' = B + T = (2-2, 2+4) = (0, 6) dan C' = C + T = (4-2, 5+4) = (2, 9).",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "ditranslasikan sehingga bayangannya adalah A'(-2,1)",
+                "Tentukan translasinya serta koordinat titik B' dan C'"
+              ],
+              "rationale": "Siswa menerapkan prosedur standar translasi titik dengan menentukan vektor pergeseran terlebih dahulu, kemudian menerapkannya pada titik lain.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "A(0,-3), B(2,2) dan C(4,5) ditranslasikan"
+              ],
+              "rationale": "Soal menguji pemahaman prosedural tentang operasi translasi pada koordinat Kartesius.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1)"
+              ],
+              "rationale": "Soal ini bersifat rutin. Siswa hanya perlu menghitung selisih koordinat untuk mendapatkan vektor translasi, lalu menambahkannya ke titik lain. Tidak ada kendala interaktif atau kebutuhan strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi penjumlahan dan pengurangan bilangan bulat, konsep koordinat Kartesius.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi translasi adalah standar kelas 9. Prosedur yang digunakan sangat langsung dan familiar."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "p5TCasiyIIK5g8UPpZbPwQk",
+          "promptHash": "994143556db9151ec1bfdec2b8bc9d6c30d80bc4d48a122c33bf2e7ab60957ad",
+          "responseHash": "00f7b3211668b78166b6d4a00db7679a8ecb7a7713f59b083970585e8775c042",
+          "latencyMs": 5381,
+          "usage": {
+            "promptTokens": 2046,
+            "outputTokens": 605,
+            "thinkingTokens": 950,
+            "totalTokens": 3601
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Vektor translasi T = A' - A = (-2 - 0, 1 - (-3)) = (-2, 4). Maka B' = B + T = (2 + (-2), 2 + 4) = (0, 6) dan C' = C + T = (4 + (-2), 5 + 4) = (2, 9).",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "ditranslasikan sehingga bayangannya adalah A'(-2,1). Tentukan translasinya serta koordinat titik B' dan C'"
+              ],
+              "rationale": "Siswa perlu menerapkan prosedur translasi titik dengan menentukan vektor pergeseran terlebih dahulu dari pasangan titik yang diketahui, kemudian menerapkannya pada titik lain. Ini adalah penerapan prosedur rutin dalam konteks geometri.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "ditranslasikan sehingga bayangannya adalah A'(-2,1)"
+              ],
+              "rationale": "Soal ini menguji pemahaman tentang konsep translasi (pergeseran) sebagai operasi penjumlahan vektor pada koordinat kartesius.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1)"
+              ],
+              "rationale": "Soal ini tergolong Easy karena prosedur translasi adalah materi dasar yang familiar. Siswa hanya perlu menghitung selisih koordinat untuk mendapatkan vektor translasi, lalu menjumlahkannya ke titik lain. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi penjumlahan dan pengurangan bilangan bulat, konsep koordinat kartesius.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Translasi titik adalah materi standar kelas 9. Prosedur penentuan vektor translasi dan penerapannya pada titik lain bersifat langsung dan rutin."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "_pPCauyrBp-6g8UPoOLC2QQ",
+          "promptHash": "994143556db9151ec1bfdec2b8bc9d6c30d80bc4d48a122c33bf2e7ab60957ad",
+          "responseHash": "6879bf8de1633aeaae70c197f69dfa3ac79169995b3c7f0dec6543c61027ebdb",
+          "latencyMs": 3033,
+          "usage": {
+            "promptTokens": 2046,
+            "outputTokens": 647,
+            "thinkingTokens": 88,
+            "totalTokens": 2781
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "B",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Vektor translasi T = A' - A = (-2 - 0, 1 - (-3)) = (-2, 4). Maka B' = B + T = (2 + (-2), 2 + 4) = (0, 6) dan C' = C + T = (4 + (-2), 5 + 4) = (2, 9).",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "procedural",
+            "voteCounts": {
+              "procedural": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Easy": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null,
+      "attemptHistory": [
+        {
+          "runIndex": 2,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ValidationError:unknown",
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": null,
+          "promptHash": "994143556db9151ec1bfdec2b8bc9d6c30d80bc4d48a122c33bf2e7ab60957ad",
+          "responseHash": null,
+          "latencyMs": 4045,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ValidationError:unknown",
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": null,
+          "promptHash": "994143556db9151ec1bfdec2b8bc9d6c30d80bc4d48a122c33bf2e7ab60957ad",
+          "responseHash": null,
+          "latencyMs": 4314,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ValidationError:unknown",
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": null,
+          "promptHash": "994143556db9151ec1bfdec2b8bc9d6c30d80bc4d48a122c33bf2e7ab60957ad",
+          "responseHash": null,
+          "latencyMs": 4271,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        }
+      ],
+      "retryHistory": [
+        {
+          "runIndex": 2,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ValidationError:unknown",
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": null,
+          "promptHash": "994143556db9151ec1bfdec2b8bc9d6c30d80bc4d48a122c33bf2e7ab60957ad",
+          "responseHash": null,
+          "latencyMs": 4314,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        }
+      ]
+    },
+    "b09a24b57d973871a9f482c8": {
+      "index": 2,
+      "questionId": "b09a24b57d973871a9f482c8",
+      "inputHash": "7f1360a2aa1ebece1bbe11ca2e9a295ed916a3ccb94657969a60f4eda66f6f9a",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "concern",
+            "contentConcerns": [
+              "Terdapat ketidaksesuaian antara data visual pada grafik dengan kunci jawaban. Grafik menunjukkan Lingkaran muncul 93 kali dan Bintang 407 kali. Kunci jawaban A (4 lingkaran, 1 bintang) mengasumsikan Lingkaran muncul 407 kali (proporsi 0,814), yang berarti label pada grafik tertukar atau kunci jawaban salah menginterpretasi data visual."
+            ],
+            "answerKeyStatus": "conflict",
+            "verifiedAnswerKey": null,
+            "visualTranscript": "Grafik batang menunjukkan frekuensi kemunculan kartu. Sumbu horizontal: Lingkaran, Bintang. Sumbu vertikal: Frekuensi (0-450). Batang Lingkaran memiliki tinggi 93. Batang Bintang memiliki tinggi 407.",
+            "verifiedMinimalSolution": "Berdasarkan data grafik: Lingkaran muncul 93 kali, Bintang 407 kali dari 500 percobaan. Frekuensi relatif Lingkaran = 93/500 = 0,186. Frekuensi relatif Bintang = 407/500 = 0,814. Estimasi jumlah kartu: Lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1), Bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, 1 kartu lingkaran dan 4 kartu bintang.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.",
+                "Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20."
+              ],
+              "rationale": "Siswa diminta menghubungkan data frekuensi empiris (hasil percobaan) dengan estimasi komposisi ruang sampel (jumlah kartu). Ini memerlukan penerapan konsep peluang empiris untuk mengestimasi probabilitas teoretis, yang kemudian dikonversi menjadi jumlah objek diskrit.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "frekuensi relatif lingkaran = 407/500 = 0,814, dikalikan 5 kartu = 4,07 ≈ 4"
+              ],
+              "rationale": "Siswa menggunakan prosedur perhitungan frekuensi relatif dan mengaitkannya dengan prinsip dasar peluang untuk mengestimasi komposisi populasi (jumlah kartu).",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.",
+                "Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak"
+              ],
+              "rationale": "Soal ini tergolong Medium karena menuntut siswa melakukan dua tahap: menghitung frekuensi relatif dari data empiris dan mengonversinya menjadi estimasi jumlah kartu dalam populasi kecil (5 kartu). Meskipun prosedurnya rutin, siswa harus memahami hubungan antara peluang empiris dan komposisi populasi.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang frekuensi relatif dan pembulatan bilangan.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": true,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 9 diharapkan mampu menginterpretasi data statistik sederhana dan melakukan estimasi berdasarkan proporsi, yang merupakan bagian dari kurikulum peluang."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "AZTCaq3kLOW8mNMPz_-E6A0",
+          "promptHash": "f3199770584723dc2629fd780025ff38650858049ba83f1b6055f9f9ff00a5dc",
+          "responseHash": "18e55aefc2ff8133e791d0364e93ad70e50455b8b18a91ee68c865c2f873bd4c",
+          "latencyMs": 4605,
+          "usage": {
+            "promptTokens": 3221,
+            "outputTokens": 899,
+            "thinkingTokens": 96,
+            "totalTokens": 4216
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "concern",
+            "contentConcerns": [
+              "Terdapat ketidaksesuaian antara data pada grafik dengan kunci jawaban. Grafik menunjukkan frekuensi Lingkaran = 93 dan Bintang = 407. Kunci jawaban A (4 lingkaran, 1 bintang) mengasumsikan frekuensi lingkaran = 407 (0,814) dan bintang = 93 (0,186), yang berarti label pada grafik tertukar dengan kunci."
+            ],
+            "answerKeyStatus": "conflict",
+            "verifiedAnswerKey": null,
+            "visualTranscript": "Grafik batang menunjukkan dua kategori: Lingkaran dengan frekuensi 93 dan Bintang dengan frekuensi 407. Total percobaan adalah 500.",
+            "verifiedMinimalSolution": "Berdasarkan data grafik (Lingkaran=93, Bintang=407), frekuensi relatif Lingkaran adalah 93/500 = 0,186 dan Bintang adalah 407/500 = 0,814. Jika total kartu adalah 5, maka jumlah kartu Lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1) dan Bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, seharusnya 1 lingkaran dan 4 bintang.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.",
+                "Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20."
+              ],
+              "rationale": "Siswa diminta menghubungkan data frekuensi empiris (hasil percobaan) dengan estimasi komposisi populasi (jumlah kartu). Ini memerlukan penerapan konsep peluang empiris untuk mengestimasi proporsi, yang merupakan penerapan prosedur pada konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "frekuensi relatif lingkaran = 407/500 = 0,814, dikalikan 5 kartu = 4,07 ≈ 4"
+              ],
+              "rationale": "Soal menuntut penggunaan algoritme frekuensi relatif dan teknik pembulatan untuk mengestimasi komposisi objek, yang merupakan pengetahuan prosedural.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Seperangkat kartu berisi 5 kartu",
+                "500 percobaan",
+                "Tentukan banyaknya kartu"
+              ],
+              "rationale": "Soal ini tergolong Medium karena menuntut integrasi antara data empiris (frekuensi) dengan konsep proporsi untuk mengestimasi populasi. Siswa harus memahami bahwa frekuensi relatif mendekati peluang teoretis. Meskipun prosedurnya rutin, terdapat kebutuhan untuk menginterpretasikan data grafik dan melakukan konversi ke jumlah kartu.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang frekuensi relatif dan perbandingan/proporsi.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": true,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 9 diharapkan mampu menghubungkan data frekuensi empiris dengan estimasi proporsi populasi. Soal ini menguji kemampuan tersebut dengan langkah-langkah yang terstruktur."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "BpTCatOqMua2g8UP55vrsQU",
+          "promptHash": "f3199770584723dc2629fd780025ff38650858049ba83f1b6055f9f9ff00a5dc",
+          "responseHash": "b0e1f8bb721beacd76d47799fbf5a5791df9ddace0aae5763a53e698144c63ba",
+          "latencyMs": 4361,
+          "usage": {
+            "promptTokens": 3221,
+            "outputTokens": 875,
+            "thinkingTokens": 96,
+            "totalTokens": 4192
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "concern",
+            "contentConcerns": [
+              "Terdapat ketidaksesuaian antara teks soal dengan grafik. Teks soal menyebutkan 'Lingkaran' dan 'Bintang' dengan frekuensi yang implisit merujuk pada data, namun grafik menunjukkan frekuensi 93 untuk Lingkaran dan 407 untuk Bintang. Kunci jawaban sumber (A) mengasumsikan frekuensi lingkaran adalah 407 (0,814) dan bintang 93 (0,186), yang bertolak belakang dengan label pada grafik.",
+              "Soal meminta estimasi jumlah kartu berdasarkan peluang empiris, namun tidak secara eksplisit menyatakan bahwa pengambilan dilakukan dengan pengembalian, yang merupakan prasyarat agar peluang empiris dapat digunakan untuk mengestimasi komposisi kartu."
+            ],
+            "answerKeyStatus": "conflict",
+            "verifiedAnswerKey": null,
+            "visualTranscript": "Grafik batang menunjukkan dua kategori pada sumbu horizontal: 'Lingkaran' dan 'Bintang'. Batang untuk 'Lingkaran' memiliki tinggi 93. Batang untuk 'Bintang' memiliki tinggi 407. Sumbu vertikal berlabel 'Frekuensi' dengan skala 0 hingga 450.",
+            "verifiedMinimalSolution": "Data grafik: Lingkaran=93, Bintang=407. Total=500. Peluang empiris Lingkaran=93/500=0,186; Bintang=407/500=0,814. Estimasi jumlah kartu (total 5): Lingkaran=0,186*5=0,93 (dibulatkan 1); Bintang=0,814*5=4,07 (dibulatkan 4). Jawaban seharusnya 1 Lingkaran dan 4 Bintang. Kunci sumber salah karena tertukar.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut."
+              ],
+              "rationale": "Siswa diminta menerapkan konsep peluang empiris untuk mengestimasi komposisi populasi (jumlah kartu) dari data sampel yang diberikan, yang merupakan penerapan konsep pada konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20."
+              ],
+              "rationale": "Siswa menggunakan prosedur perhitungan frekuensi relatif dan mengalikannya dengan total populasi untuk mendapatkan estimasi, yang merupakan pengetahuan prosedural.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut."
+              ],
+              "rationale": "Soal ini tergolong Medium karena menuntut siswa untuk menghubungkan konsep peluang empiris dengan estimasi jumlah objek dalam populasi. Meskipun prosedurnya rutin, siswa harus melakukan interpretasi data grafik dan pembulatan yang tepat untuk mendapatkan jawaban logis (jumlah kartu harus bilangan bulat).",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang peluang empiris (frekuensi relatif) dan operasi aritmatika dasar (perkalian dan pembulatan).",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": true,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 9 diharapkan mampu menginterpretasi data statistik sederhana dan melakukan estimasi proporsional. Kesulitan terletak pada ketelitian membaca grafik dan logika pembulatan hasil estimasi ke bilangan bulat."
+              }
+            }
+          },
+          "errorCode": null,
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "C5TCatv6L5emg8UPpO_UyAk",
+          "promptHash": "f3199770584723dc2629fd780025ff38650858049ba83f1b6055f9f9ff00a5dc",
+          "responseHash": "531ca856c35a000ab7e63331dbe255b1c75b3c86805f85e20943d24ca2202c39",
+          "latencyMs": 4256,
+          "usage": {
+            "promptTokens": 3221,
+            "outputTokens": 920,
+            "thinkingTokens": 90,
+            "totalTokens": 4231
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "concern",
+        "contentConcerns": [
+          "Kunci jawaban pada sumber (A: 4 lingkaran, 1 bintang) bertentangan dengan data grafik yang menunjukkan frekuensi bintang jauh lebih tinggi (407) daripada lingkaran (93).",
+          "Berdasarkan perhitungan frekuensi relatif (Lingkaran: 93/500 = 0,186; Bintang: 407/500 = 0,814) dan dikalikan dengan total 5 kartu, estimasi yang benar adalah 1 lingkaran dan 4 bintang.",
+          "Pilihan C (1 lingkaran, 4 bintang) secara matematis benar berdasarkan data, namun kunci sumber menyatakan A, yang menunjukkan kesalahan fatal pada kunci jawaban atau pelabelan grafik."
+        ],
+        "answerKeyStatus": "conflict",
+        "verifiedAnswerKey": "1 kartu lingkaran dan 4 kartu bintang",
+        "visualTranscript": "Grafik batang menunjukkan dua kategori pada sumbu horizontal: 'Lingkaran' dan 'Bintang'. Sumbu vertikal 'Frekuensi' memiliki skala 0 hingga 450. Batang 'Lingkaran' memiliki tinggi 93. Batang 'Bintang' memiliki tinggi 407. Total percobaan adalah 500.",
+        "verifiedMinimalSolution": "Frekuensi relatif Lingkaran = 93/500 = 0,186. Frekuensi relatif Bintang = 407/500 = 0,814. Estimasi jumlah kartu (total 5): Lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1); Bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, terdapat 1 kartu lingkaran dan 4 kartu bintang.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "adjudicated",
+            "adjudicationRationale": "Siswa harus menerapkan konsep peluang empiris (frekuensi relatif) untuk mengestimasi komposisi populasi (jumlah kartu) dari data sampel. Ini adalah penerapan prosedur rutin pada konteks data statistik."
+          },
+          "knowledgeDimension": {
+            "label": "procedural",
+            "voteCounts": {
+              "procedural": 3
+            },
+            "supportingRuns": 3,
+            "status": "adjudicated",
+            "adjudicationRationale": "Siswa menggunakan algoritme perhitungan frekuensi relatif dan teknik pembulatan untuk mengestimasi komposisi objek, yang merupakan pengetahuan prosedural."
+          },
+          "intendedDifficulty": {
+            "label": "Medium",
+            "voteCounts": {
+              "Medium": 3
+            },
+            "supportingRuns": 3,
+            "status": "adjudicated",
+            "adjudicationRationale": "Soal ini tergolong Medium karena menuntut integrasi antara data empiris dengan konsep proporsi untuk mengestimasi populasi. Siswa harus memahami hubungan antara frekuensi relatif dan peluang teoretis, serta melakukan pembulatan yang logis untuk mendapatkan jumlah kartu yang bulat."
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": true,
+        "eligibleForTraining": false
+      },
+      "adjudication": {
+        "status": "success",
+        "output": {
+          "contentStatus": "concern",
+          "contentConcerns": [
+            "Kunci jawaban pada sumber (A: 4 lingkaran, 1 bintang) bertentangan dengan data grafik yang menunjukkan frekuensi bintang jauh lebih tinggi (407) daripada lingkaran (93).",
+            "Berdasarkan perhitungan frekuensi relatif (Lingkaran: 93/500 = 0,186; Bintang: 407/500 = 0,814) dan dikalikan dengan total 5 kartu, estimasi yang benar adalah 1 lingkaran dan 4 bintang.",
+            "Pilihan C (1 lingkaran, 4 bintang) secara matematis benar berdasarkan data, namun kunci sumber menyatakan A, yang menunjukkan kesalahan fatal pada kunci jawaban atau pelabelan grafik."
+          ],
+          "answerKeyStatus": "conflict",
+          "verifiedAnswerKey": "1 kartu lingkaran dan 4 kartu bintang",
+          "visualTranscript": "Grafik batang menunjukkan dua kategori pada sumbu horizontal: 'Lingkaran' dan 'Bintang'. Sumbu vertikal 'Frekuensi' memiliki skala 0 hingga 450. Batang 'Lingkaran' memiliki tinggi 93. Batang 'Bintang' memiliki tinggi 407. Total percobaan adalah 500.",
+          "verifiedMinimalSolution": "Frekuensi relatif Lingkaran = 93/500 = 0,186. Frekuensi relatif Bintang = 407/500 = 0,814. Estimasi jumlah kartu (total 5): Lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1); Bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, terdapat 1 kartu lingkaran dan 4 kartu bintang.",
+          "mathCognitiveDomain": {
+            "action": "classify",
+            "evidenceSpans": [
+              "Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.",
+              "Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak"
+            ],
+            "rationale": "Siswa harus menerapkan konsep peluang empiris (frekuensi relatif) untuk mengestimasi komposisi populasi (jumlah kartu) dari data sampel. Ini adalah penerapan prosedur rutin pada konteks data statistik.",
+            "label": "applying"
+          },
+          "knowledgeDimension": {
+            "action": "classify",
+            "evidenceSpans": [
+              "frekuensi relatif lingkaran = 93/500 = 0,186",
+              "dikalikan 5 kartu = 0,93 ≈ 1"
+            ],
+            "rationale": "Siswa menggunakan algoritme perhitungan frekuensi relatif dan teknik pembulatan untuk mengestimasi komposisi objek, yang merupakan pengetahuan prosedural.",
+            "label": "procedural"
+          },
+          "intendedDifficulty": {
+            "action": "classify",
+            "evidenceSpans": [
+              "Seperangkat kartu berisi 5 kartu",
+              "500 percobaan",
+              "Tentukan banyaknya kartu"
+            ],
+            "rationale": "Soal ini tergolong Medium karena menuntut integrasi antara data empiris dengan konsep proporsi untuk mengestimasi populasi. Siswa harus memahami hubungan antara frekuensi relatif dan peluang teoretis, serta melakukan pembulatan yang logis untuk mendapatkan jumlah kartu yang bulat.",
+            "label": "Medium",
+            "profile": {
+              "expectedPrerequisite": "Pemahaman dasar tentang frekuensi relatif, perbandingan/proporsi, dan pembulatan bilangan.",
+              "dependentSteps": 3,
+              "routineStatus": "familiar_routine",
+              "strategySelection": false,
+              "representationTransfer": true,
+              "relevantInformationUnits": 3,
+              "interactingConstraints": 1,
+              "calculationLoad": "low",
+              "scaffoldLevel": "none",
+              "distractorQuality": "plausible",
+              "gradeRelativeRationale": "Siswa kelas 9 diharapkan mampu menginterpretasi data statistik sederhana dan melakukan estimasi proporsional. Kesulitan terletak pada ketelitian membaca grafik dan logika pembulatan hasil estimasi ke bilangan bulat."
+            }
+          }
+        },
+        "errorCode": null,
+        "quotaDailyExhausted": false,
+        "quotaLimits": [],
+        "providerFailureReason": null,
+        "responseId": "EJTCaq7YLdfx4-EPiKCl-AY",
+        "promptHash": "95071ad6666ded4b3c84f23174df461c8c60d10d10aadb807e997f753cbbdceb",
+        "responseHash": "8a56c7aeb34da59de1e88fe24d4eab8bc07a63359d020bb4bbbb10e1051f4ac9",
+        "latencyMs": 4575,
+        "usage": {
+          "promptTokens": 5123,
+          "outputTokens": 951,
+          "thinkingTokens": 105,
+          "totalTokens": 6179
+        }
+      }
+    }
+  },
+  "summary": {
+    "itemsProcessed": 2,
+    "itemsEligibleForTraining": 1,
+    "successfulRuns": 6,
+    "failedRuns": 0,
+    "adjudicatedItems": 1,
+    "pendingAdjudication": 0,
+    "difficultyDistribution": {
+      "Easy": 1,
+      "Medium": 0,
+      "Hard": 0
+    },
+    "dominantDifficultyShare": 1.0,
+    "boundaryAnalysisRequired": true,
+    "promptTokens": 20924,
+    "outputTokens": 5533,
+    "thinkingTokens": 1513,
+    "totalTokens": 27970
+  },
+  "executionStatus": "completed_batch",
+  "apiAttempts": 10
+}

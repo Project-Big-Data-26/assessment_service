@@ -50,6 +50,7 @@ class V2ClassifierRuntime:
                 if self.manifest.difficultyHeadType == "ordinal"
                 else 16
             ),
+            num_grades=self.manifest.gradeEmbeddingCount,
         )
         weights = load_file(str(self.artifact_dir / "heads.safetensors"), device="cpu")
         self.model.heads.load_state_dict(weights, strict=True)
@@ -97,8 +98,10 @@ class V2ClassifierRuntime:
     def predict(self, request: V2ClassificationRequest) -> V2ClassificationResponse:
         self._validate_registered_version(request)
         trace = self._trace(request)
-        if request.grade < 1 or request.grade > 6:
-            empty = self._empty_head("grade_outside_sd_v1")
+        if request.grade not in self.manifest.supportedGrades:
+            reason = ("grade_outside_sd_v1" if self.manifest.supportedGrades == list(range(1, 7))
+                      else "grade_outside_model_scope")
+            empty = self._empty_head(reason)
             return V2ClassificationResponse(
                 questionId=request.questionId,
                 contentVersion=request.contentVersion,
@@ -107,8 +110,17 @@ class V2ClassifierRuntime:
                 mathCognitiveDomain=empty,
                 knowledgeDimension=empty.model_copy(deep=True),
                 intendedDifficulty=empty.model_copy(deep=True),
-                reasons=["grade_outside_sd_v1"],
+                reasons=[reason],
                 trace=trace,
+            )
+        if request.subjectTrack not in self.manifest.supportedSubjectTracks:
+            empty = self._empty_head("subject_track_outside_model_scope")
+            return V2ClassificationResponse(
+                questionId=request.questionId, contentVersion=request.contentVersion,
+                contentHash=request.contentHash, scopeStatus="out_of_scope",
+                mathCognitiveDomain=empty, knowledgeDimension=empty.model_copy(deep=True),
+                intendedDifficulty=empty.model_copy(deep=True),
+                reasons=["subject_track_outside_model_scope"], trace=trace,
             )
         reasons = self._precondition_reasons(request)
         if reasons:
@@ -140,8 +152,10 @@ class V2ClassifierRuntime:
         for head, labels in HEAD_LABELS.items():
             logits = outputs[head].detach().cpu().numpy()
             global_calibration = self.manifest.calibration[head]
-            calibration = global_calibration.perGrade.get(
-                str(request.grade), global_calibration
+            calibration = global_calibration.perGradeTrack.get(
+                f"{request.grade}:{request.subjectTrack}",
+                global_calibration.perGrade.get(str(request.grade), global_calibration)
+                if request.subjectTrack == "regular" else global_calibration,
             )
             probabilities = softmax(logits, calibration.temperature)[0]
             if not np.all(np.isfinite(probabilities)) or not math.isclose(float(probabilities.sum()), 1.0, abs_tol=1e-6):

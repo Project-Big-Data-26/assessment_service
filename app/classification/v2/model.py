@@ -29,11 +29,14 @@ SUPPORTED_ARCHITECTURES = {
 class GradeAwareOrdinalDifficultyHead(nn.Module):
     """Cumulative-link head with ordered cutpoints for Easy < Medium < Hard."""
 
-    def __init__(self, hidden_size: int, grade_embedding_dim: int = 16) -> None:
+    def __init__(self, hidden_size: int, grade_embedding_dim: int = 16, num_grades: int = 6) -> None:
         super().__init__()
         self.in_features = hidden_size + grade_embedding_dim
         self.grade_embedding_dim = grade_embedding_dim
-        self.grade_embedding = nn.Embedding(6, grade_embedding_dim)
+        if not 1 <= num_grades <= 12:
+            raise ValueError("num_grades must be between 1 and 12")
+        self.num_grades = num_grades
+        self.grade_embedding = nn.Embedding(num_grades, grade_embedding_dim)
         self.scorer = nn.Linear(self.in_features, 1)
         self.first_cutpoint = nn.Parameter(torch.tensor(-0.5))
         # Start with a two-logit-unit interval so the middle category has a
@@ -49,8 +52,8 @@ class GradeAwareOrdinalDifficultyHead(nn.Module):
     ) -> tuple[torch.Tensor, torch.Tensor]:
         if grades.ndim != 1 or grades.shape[0] != pooled.shape[0]:
             raise ValueError("grades must be a one-dimensional tensor matching the batch")
-        if bool(((grades < 1) | (grades > 6)).any()):
-            raise ValueError("grade-aware ordinal head supports grades 1-6")
+        if bool(((grades < 1) | (grades > self.num_grades)).any()):
+            raise ValueError(f"grade-aware ordinal head supports grades 1-{self.num_grades}")
         embedded_grade = self.grade_embedding(grades.long() - 1)
         score = self.scorer(torch.cat((pooled, embedded_grade), dim=-1)).squeeze(-1)
         cumulative_logits = score.unsqueeze(-1) - self.ordered_cutpoints().unsqueeze(0)
@@ -73,6 +76,7 @@ class ThreeHeadIndoBERT(nn.Module):
         architecture_version: str = PARALLEL_ARCHITECTURE,
         detach_difficulty_conditioning: bool = True,
         grade_embedding_dim: int = 16,
+        num_grades: int = 6,
     ) -> None:
         super().__init__()
         if architecture_version not in SUPPORTED_ARCHITECTURES:
@@ -88,7 +92,7 @@ class ThreeHeadIndoBERT(nn.Module):
         difficulty_head: nn.Module
         if architecture_version == GRADE_AWARE_ORDINAL_ARCHITECTURE:
             difficulty_head = GradeAwareOrdinalDifficultyHead(
-                hidden_size, grade_embedding_dim=grade_embedding_dim
+                hidden_size, grade_embedding_dim=grade_embedding_dim, num_grades=num_grades
             )
         else:
             difficulty_head = nn.Linear(
@@ -119,6 +123,7 @@ class ThreeHeadIndoBERT(nn.Module):
         architecture_version: str = PARALLEL_ARCHITECTURE,
         detach_difficulty_conditioning: bool = True,
         grade_embedding_dim: int = 16,
+        num_grades: int = 6,
     ) -> "ThreeHeadIndoBERT":
         from peft import LoraConfig, TaskType, get_peft_model
         from transformers import AutoConfig, AutoModel
@@ -148,6 +153,7 @@ class ThreeHeadIndoBERT(nn.Module):
             architecture_version=architecture_version,
             detach_difficulty_conditioning=detach_difficulty_conditioning,
             grade_embedding_dim=grade_embedding_dim,
+            num_grades=num_grades,
         )
         model.assert_trainable_parameters()
         return model

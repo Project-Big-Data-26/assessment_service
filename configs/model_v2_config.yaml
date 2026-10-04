@@ -9,6 +9,8 @@ model:
   default_input_representation: solution
   architecture: grade-aware-ordinal-v2
   grade_embedding_dimension: 16
+  grade_embedding_count: 12
+  subject_track_feature: tl_text_marker
   kko_requires_validation_ablation_and_challenge_pass: true
 
 lora:
@@ -48,5 +50,7 @@ split:
 
 scope:
   subject: Matematika
-  grades: [1, 2, 3, 4, 5, 6]
-  expansion_grades: [7, 10]
+  grades: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  subject_tracks: [regular, tl]
+  tl_grades: [11, 12]
+  expansion_grades: []

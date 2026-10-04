@@ -1,0 +1,885 @@
+{
+  "schemaVersion": "validation-bundle-manifest-v2-blind",
+  "createdAt": "2026-10-04T19:36:36.901698+00:00",
+  "class": 3,
+  "offlineBuild": true,
+  "newLlmCalls": 0,
+  "operationalPolicyVersion": "ai-silver-operational-v1",
+  "labelProvenance": "ai_silver",
+  "reviewMode": "automated_ai",
+  "method": "blind_n3_with_ai_adjudication_then_offline_model_diagnostics",
+  "historicalBlindRecordedTokens": 456854,
+  "historicalBlindSuccessfulRuns": 126,
+  "blindDecisionLockedAt": "2026-10-04T19:36:17.784184+00:00",
+  "readyForExpansion": false,
+  "modelDiagnostic": {
+    "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
+    "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+    "supportedGrades": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supportedSubjectTracks": [
+      "regular"
+    ],
+    "servable": false
+  },
+  "sourceFiles": {
+    "source": {
+      "path": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas3/soal_pretest_db.json",
+      "sha256": "73931eadeabe208f7014e3acaaa000dc419ce90d5cf402e3d77effa813411938"
+    },
+    "blindCheckpoint": {
+      "path": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas3/rubric_v8_20261005_v1/final_snapshot_v1/silver_labels.json",
+      "sha256": "1e4b90178c52c98519e015546928cd1d47d09f0dcd8182768b771b4fda652853"
+    },
+    "blindAudit": {
+      "path": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas3/rubric_v8_20261005_v1/final_snapshot_v1/audit/pilot_audit.json",
+      "sha256": "e80a84a8ff0cdf962808d50b2381ae1b1eb005382436f2bb0254a8ff1fe10f58"
+    }
+  },
+  "outputs": {
+    "questions.json": {
+      "sha256": "35fae80c78484808eaba56286a72fafad85c942ed7cb271b1fede64ffb861c88",
+      "bytes": 96493
+    },
+    "validation_results.json": {
+      "sha256": "7f3c7281ca47f992a2887e145856b1b51263beb30e67c3188b01c63a57e78159",
+      "bytes": 56650
+    },
+    "indobert_predictions.json": {
+      "sha256": "1f19a2e245aacbe26425835f3839523b34867024adb6960f30806990a4473911",
+      "bytes": 165227
+    },
+    "LAPORAN_VALIDASI.md": {
+      "sha256": "cb6221dca9fd9e8f17047cb9cd98a0384d50acf3111aa23ddbc0271e0ff77e8a",
+      "bytes": 428724
+    },
+    "README.md": {
+      "sha256": "a13a03c9503efb854a3ba32dc31b29e34e0e9266d2d7cd2e39264aacb955f603",
+      "bytes": 3860
+    },
+    "difficulty_groups.json": {
+      "sha256": "f613066137c5abbc492a660363f2019f0d73395218bd21620f60f6f2c33efca1",
+      "bytes": 121335
+    },
+    "difficulty/Easy.json": {
+      "sha256": "3fdf1d18e71df5e3a3acc19f47d34c4212447d713970445843cd6417d6bd16cf",
+      "bytes": 88219
+    },
+    "difficulty/Medium.json": {
+      "sha256": "90af03bf3315931ab539167e5748ecd69843134156189cb23ae814f5fd98d782",
+      "bytes": 27426
+    },
+    "difficulty/Hard.json": {
+      "sha256": "6a364e7cd056513d32a08d4dc2307cb2cc76747da433938135710f2959165c73",
+      "bytes": 234
+    },
+    "difficulty/undecided.json": {
+      "sha256": "a04785fb384392d37ba03093914eb2cf4f983086fbb36e34b7b3e81d1f1eaf81",
+      "bytes": 232
+    },
+    "bukti_validasi/decision_audit.json": {
+      "sha256": "5336d2a800488da42b6817eef5d52bb675013e9546dbba72d409a83db85e455e",
+      "bytes": 1009710
+    },
+    "bukti_validasi/irt_initialization.json": {
+      "sha256": "3a4eb075184a6da69a98de0ca0c5b83af7936ed646952b1bfc428e550c91107e",
+      "bytes": 25588
+    }
+  },
+  "limitations": [
+    "Operational labels use AI silver provenance.",
+    "N=3 and adjudication use one Gemini model; repeated judgments are correlated.",
+    "IndoBERT diagnostic outputs do not change the locked AI silver decisions.",
+    "Packaging performs no training, model promotion, student delivery, CTT or IRT."
+  ],
+  "databaseExport": {
+    "schemaVersion": "validated-question-array-v4-active-status",
+    "collectionTarget": "soal",
+    "visibility": "restricted_contains_answer_key",
+    "sourceClass": 3,
+    "subjectTrack": "regular",
+    "summary": {
+      "itemCount": 42,
+      "routingCounts": {
+        "silver_ready": 40,
+        "revision_required": 2
+      },
+      "labelProvenance": "ai_silver",
+      "silverReadyCount": 40,
+      "advisoryLabelDistributions": {
+        "mathCognitiveDomain": {
+          "applying": 27,
+          "knowing": 15,
+          "reasoning": 0
+        },
+        "knowledgeDimension": {
+          "conceptual": 17,
+          "factual": 8,
+          "procedural": 17,
+          "metacognitive": 0
+        },
+        "intendedDifficulty": {
+          "Easy": 33,
+          "Medium": 9,
+          "Hard": 0
+        }
+      },
+      "contentQualifiedAdvisoryLabelDistributions": {
+        "mathCognitiveDomain": {
+          "applying": 26,
+          "knowing": 14,
+          "reasoning": 0
+        },
+        "knowledgeDimension": {
+          "conceptual": 16,
+          "factual": 8,
+          "procedural": 16,
+          "metacognitive": 0
+        },
+        "intendedDifficulty": {
+          "Easy": 31,
+          "Medium": 9,
+          "Hard": 0
+        }
+      },
+      "modelDisagreementCounts": {
+        "mathCognitiveDomain": 11,
+        "knowledgeDimension": 23,
+        "intendedDifficulty": 9
+      }
+    },
+    "decisionAudit": {
+      "path": "bukti_validasi/decision_audit.json",
+      "sha256": "5336d2a800488da42b6817eef5d52bb675013e9546dbba72d409a83db85e455e"
+    },
+    "statusPolicy": {
+      "version": "database-active-status-v1",
+      "source": "finalRouting",
+      "mapping": {
+        "silver_ready": "active",
+        "revision_required": "inactive",
+        "needs_ai_review": "inactive"
+      }
+    },
+    "cognitiveLevelPolicy": {
+      "version": "database-difficulty-level-v1",
+      "sourceHead": "intendedDifficulty",
+      "mapping": {
+        "Easy": "easy",
+        "Medium": "medium",
+        "Hard": "hard"
+      }
+    },
+    "scorePolicy": {
+      "version": "intended-difficulty-score-v1",
+      "mapping": {
+        "Easy": 600,
+        "Medium": 1000,
+        "Hard": 1400
+      },
+      "meaning": "Initial difficulty score, not student ability or empirical IRT difficulty."
+    },
+    "confidencePolicy": {
+      "version": "final-label-run-support-min-v1",
+      "scale": "integer_0_100",
+      "heads": [
+        "mathCognitiveDomain",
+        "knowledgeDimension",
+        "intendedDifficulty"
+      ],
+      "formula": "round(100 * min(final_label_supporting_runs_per_head / requested_runs))",
+      "meaning": "AI run agreement with final labels; not a calibrated probability of correctness.",
+      "denominator": "Requested initial runs; failures and abstentions do not support a label.",
+      "adjudication": "Determines final labels; not counted as an additional vote."
+    },
+    "metadataByQuestionId": {
+      "8de4f21dafd4452f79f06e71": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-6e04ed44e569db529d27c259",
+        "question_version_id": "kelas3:8de4f21dafd4452f79f06e71:silver:76c10fb85192f8ea88b3",
+        "content_hash": "76c10fb85192f8ea88b3e8782400cc4b143f3a83e89880bca20fd630a1211d85",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "80e0cb21740609959b756bf3": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-33909d6534c70cf662bc1504",
+        "question_version_id": "kelas3:80e0cb21740609959b756bf3:silver:f72674366a24cbe04760",
+        "content_hash": "f72674366a24cbe04760ad1efdfdd506a5864ccf8dac300f4484ca000aacec7f",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 1,
+          "intendedDifficulty": 3
+        }
+      },
+      "0c970a6aff64277c753f7671": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-8f8bac2eee60f6d4d695deee",
+        "question_version_id": "kelas3:0c970a6aff64277c753f7671:silver:e0efc5fee8f122d103c5",
+        "content_hash": "e0efc5fee8f122d103c509b656a685c265f5c355a8019599c844ceef59c6dd29",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 2,
+          "intendedDifficulty": 3
+        }
+      },
+      "a33c3cd30e2555b8f613b155": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-d791c08f723b72e9122121c5",
+        "question_version_id": "kelas3:a33c3cd30e2555b8f613b155:silver:c9911e354e585c3de040",
+        "content_hash": "c9911e354e585c3de0403d18699c70c2f8d9bf3e72fd7ba6932acf5b9a1902aa",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "076b46a03e171eb8019de109": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-00bc7c225687985356fd386b",
+        "question_version_id": "kelas3:076b46a03e171eb8019de109:silver:deb9e54b7c53c5eed9e8",
+        "content_hash": "deb9e54b7c53c5eed9e82977523ffeb40b6a45ee307107bc54f48b023b901177",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 2,
+          "knowledgeDimension": 2,
+          "intendedDifficulty": 3
+        }
+      },
+      "95b3dddf90876e587a0dc101": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "factual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-0467b006a3a38ff6f57537bf",
+        "question_version_id": "kelas3:95b3dddf90876e587a0dc101:silver:b3e6b8838893b1a8ba8f",
+        "content_hash": "b3e6b8838893b1a8ba8f8e518ce7b8385ca3a529ed55980e37ad99522bdac05b",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "53e94d84aab7a547c9b05a51": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-dc3438570d8cabc6d932b249",
+        "question_version_id": "kelas3:53e94d84aab7a547c9b05a51:silver:99f34d2cde4dc16fef45",
+        "content_hash": "99f34d2cde4dc16fef459d0a530a6ddf64373778a7b05b9d2b55b5cc0c5b0f67",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 2,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "a5652daac47c0bfd276b6692": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-622fd3fb63ff02b014aebaf2",
+        "question_version_id": "kelas3:a5652daac47c0bfd276b6692:silver:06be038ca660cb624740",
+        "content_hash": "06be038ca660cb624740c4271c5277625b1f672653ae62902d47ad491f24d181",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "13af70c61db0c35f9ece2f68": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-f1421f79763be0dc604d39ea",
+        "question_version_id": "kelas3:13af70c61db0c35f9ece2f68:silver:3d25d2f4340872d9dfaa",
+        "content_hash": "3d25d2f4340872d9dfaa0c9856e1b88143cae73ebb2a1cba58b33ca79093a669",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 2,
+          "intendedDifficulty": 3
+        }
+      },
+      "618b8db11b04736854c11a46": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-062cd2b826c69e6dd12bf7fd",
+        "question_version_id": "kelas3:618b8db11b04736854c11a46:silver:b3121688c06e03bf4f5e",
+        "content_hash": "b3121688c06e03bf4f5ea04e01982631a4eb8e81efe7b24e2a4d1148063966e5",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "0b7434eea7cad7663b154cc2": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-13b83a16af9e579d539fb39b",
+        "question_version_id": "kelas3:0b7434eea7cad7663b154cc2:silver:8b1847646499d9125134",
+        "content_hash": "8b1847646499d9125134d0ae44bd452c236d1798a606fceaf1a7a00308cfebb2",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 2,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "ea6784174a435a89a237b709": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "factual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-7723d0946426552f4d8310ac",
+        "question_version_id": "kelas3:ea6784174a435a89a237b709:silver:013d22176c9256b6915e",
+        "content_hash": "013d22176c9256b6915e5f0d617c4e092a5c144c5b98dad1e0985a95846bef05",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "d8e3e19d701550680f504300": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-5618b4f7f34a21a6c1503679",
+        "question_version_id": "kelas3:d8e3e19d701550680f504300:silver:483d9e382493b4158478",
+        "content_hash": "483d9e382493b4158478c565e528608bbfe4ce667ba27b4b8df73a09cc3a07c4",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "ea7d38ffd5b2b15fbd33446e": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-f3338c300718344d5f1c1321",
+        "question_version_id": "kelas3:ea7d38ffd5b2b15fbd33446e:silver:e7b8fa0715b6e9647928",
+        "content_hash": "e7b8fa0715b6e9647928907f800b404e9b2b7b65d5a89140d5121be1854a5d6f",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "86ef303fdabf175f3223919d": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-5b53f3657c3c2a31af434b58",
+        "question_version_id": "kelas3:86ef303fdabf175f3223919d:silver:e8ec442c0206842566be",
+        "content_hash": "e8ec442c0206842566be1e0e73e42a64daee9b79af5e5d8e58261a8fc5e1a612",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 1
+        }
+      },
+      "f366f15007b61b27653bdf58": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Medium",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-f65eae7b1bb4e168b2e546c3",
+        "question_version_id": "kelas3:f366f15007b61b27653bdf58:silver:0b6b57e1c1450a19fbd2",
+        "content_hash": "0b6b57e1c1450a19fbd23cb64a9f8e4c643c0c902b35e86381a7587fcc36f538",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "134652ea27846439dcee22e8": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-c3187905ac1cd8c78f9205dc",
+        "question_version_id": "kelas3:134652ea27846439dcee22e8:silver:3dfb8864beee1f31b2d7",
+        "content_hash": "3dfb8864beee1f31b2d79b4b98cc9cf882d10516dc47975c438d85cd845fad57",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 2,
+          "intendedDifficulty": 3
+        }
+      },
+      "4083151b80c126b0090bb512": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-86f9b3a80ed3d7459b1ce971",
+        "question_version_id": "kelas3:4083151b80c126b0090bb512:silver:f2373388e0af47f52a9b",
+        "content_hash": "f2373388e0af47f52a9b4f4e4502afd780d8544902205435cf82e152f3ac6801",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 1,
+          "intendedDifficulty": 3
+        }
+      },
+      "15c4621ae2b13cb48dc0c3b9": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-c1bc0fd6325be977891db8db",
+        "question_version_id": "kelas3:15c4621ae2b13cb48dc0c3b9:silver:f081401b26c993890ba2",
+        "content_hash": "f081401b26c993890ba28f29094f65e7d2ca198ed220b3be45c40b64c6ccddb4",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "4c4a8d5909026263b43d6f5c": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-9810f0fd4e9f46ec95a3006d",
+        "question_version_id": "kelas3:4c4a8d5909026263b43d6f5c:silver:c8e7cb058f1bd14dc70b",
+        "content_hash": "c8e7cb058f1bd14dc70bf85f47730158e91bf43f2d053433593c841ae104ed41",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "fdf4f64afe025be58e0fbd08": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Medium",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-d91789dfb6c09ab7d33f3b9b",
+        "question_version_id": "kelas3:fdf4f64afe025be58e0fbd08:silver:3ca096daf8fb6f260f0e",
+        "content_hash": "3ca096daf8fb6f260f0e386ca2583c0aa6a9f20fc491f7771281a0131179d851",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "08ecea23df04cbe525f37e73": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-cd1a18bf09829aa0eeb5baa1",
+        "question_version_id": "kelas3:08ecea23df04cbe525f37e73:silver:02d1da457fe5fd8aac8a",
+        "content_hash": "02d1da457fe5fd8aac8a220c8537d3b5ca9a7682dc0ee9f722d29159d05cecef",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 1
+        }
+      },
+      "1c5670f69b8db58e4f5e09c6": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Medium",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-2b51638db4f58abc5bc7c1c0",
+        "question_version_id": "kelas3:1c5670f69b8db58e4f5e09c6:silver:5886c62ebcdd4565950b",
+        "content_hash": "5886c62ebcdd4565950bd18a1360a28c055dd743739e8505f3ff9cb7842826d0",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "8daba6059f9c3edf55ee4254": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "revision_required",
+        "subject_track": "regular",
+        "decision_id": "AID-e6ff746fb5c785fafad447bc",
+        "question_version_id": null,
+        "content_hash": null,
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "a258009ba2d7730a91f12d2e": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Medium",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-ea013ca44cbfa3ede78cbb4f",
+        "question_version_id": "kelas3:a258009ba2d7730a91f12d2e:silver:76ff719f645e164bc14e",
+        "content_hash": "76ff719f645e164bc14e2742df63e70bbcf5e74b63e0691f084506aba08a1399",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 2,
+          "intendedDifficulty": 3
+        }
+      },
+      "e35b2320cf47f2b1b2b92fc9": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-e9f455a2ea350073ca072c30",
+        "question_version_id": "kelas3:e35b2320cf47f2b1b2b92fc9:silver:be5ed86960d1f595a255",
+        "content_hash": "be5ed86960d1f595a255346fa57690674732d51ddc506db5ed93c8d3208c1b88",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 1
+        }
+      },
+      "1a9d9923445f71c78d74086d": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-df790bd02c8cef7c01c30225",
+        "question_version_id": "kelas3:1a9d9923445f71c78d74086d:silver:1e4b24c7543f58754ed0",
+        "content_hash": "1e4b24c7543f58754ed0294ce6dd21eec4bb6f88ceb2c54346913f7273ed86aa",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 2
+        }
+      },
+      "23dc07e9d3dc8f5423d3bb7e": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Medium",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-d436c0cac70b977129e46b7b",
+        "question_version_id": "kelas3:23dc07e9d3dc8f5423d3bb7e:silver:86177a38136e4d5b00a3",
+        "content_hash": "86177a38136e4d5b00a34d91effb4887a88d2575e27c84d6e113d2f20b4d9136",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 2,
+          "intendedDifficulty": 3
+        }
+      },
+      "dd3cb9360df4fe034e2f2480": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-261515736600c399bb48d420",
+        "question_version_id": "kelas3:dd3cb9360df4fe034e2f2480:silver:e2a1fb13ae40d1164dbd",
+        "content_hash": "e2a1fb13ae40d1164dbd88243171ad2925826ff37127049c3cc2f7b63910fb1b",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "75434d44f2b377da3027e153": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-2eeed9d2e157cb323e6e7fa4",
+        "question_version_id": "kelas3:75434d44f2b377da3027e153:silver:3c4ca6233f8f2bcd42d2",
+        "content_hash": "3c4ca6233f8f2bcd42d26404b6bfcb6fd6dad4823a92abec25f27051a67f9577",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "e5989dcabcf5ead62a6aec0b": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "factual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-f16724c823df98ff98c9d66c",
+        "question_version_id": "kelas3:e5989dcabcf5ead62a6aec0b:silver:dff8d6d0c2cbd928a06b",
+        "content_hash": "dff8d6d0c2cbd928a06b8309d39ac53619511809f428b035016d67112d971848",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 2,
+          "intendedDifficulty": 3
+        }
+      },
+      "d0868911a2fc9547f4f8231b": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "factual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-096b7b14c5d62ad5014277ff",
+        "question_version_id": "kelas3:d0868911a2fc9547f4f8231b:silver:be53fb2a83c311994aa5",
+        "content_hash": "be53fb2a83c311994aa536b85231121b495a5828216a216b040c75a501bc6c14",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 2
+        }
+      },
+      "2c9c0a53b57350101ebd57b0": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Easy",
+        "validation_status": "revision_required",
+        "subject_track": "regular",
+        "decision_id": "AID-1c8be72628278892462250bd",
+        "question_version_id": null,
+        "content_hash": null,
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 2,
+          "knowledgeDimension": 2,
+          "intendedDifficulty": 1
+        }
+      },
+      "e856f8b6ea486b876939d3ba": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "factual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-3300e485e517f4a55ee7ac6c",
+        "question_version_id": "kelas3:e856f8b6ea486b876939d3ba:silver:51139e78227c3b41231b",
+        "content_hash": "51139e78227c3b41231bd3bc366724af71d71265879ae8b8e45a6b45cea09970",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "f311bf91df38724a90b35b69": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Medium",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-dcde315271f7df8d60fb3327",
+        "question_version_id": "kelas3:f311bf91df38724a90b35b69:silver:7eaff73a4d7f73995f6c",
+        "content_hash": "7eaff73a4d7f73995f6c27c65d0595814fa7925d07573f46a8796bb817aeab2d",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 2
+        }
+      },
+      "548ed93702987b740b35d2b4": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Medium",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-7af7ec263d0c371c1e66cb55",
+        "question_version_id": "kelas3:548ed93702987b740b35d2b4:silver:494983a0ccf2c80db33d",
+        "content_hash": "494983a0ccf2c80db33dca1fa7323fdcefa47aab5e86991e0561a0ca71fe0ea9",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "087423442be49795c5b1bf93": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "conceptual",
+        "intended_difficulty": "Medium",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-7544f192ba72e6084ef6b7be",
+        "question_version_id": "kelas3:087423442be49795c5b1bf93:silver:255065ec2fd71eff2402",
+        "content_hash": "255065ec2fd71eff24027558d208a0f40e9174bf674988926169987ebff6359b",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "7c1d7c661ba64bbf365e8625": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-8552010a581041e047d90002",
+        "question_version_id": "kelas3:7c1d7c661ba64bbf365e8625:silver:2f6b11c251333a36214f",
+        "content_hash": "2f6b11c251333a36214f51ddabe1936de4ba661a17d7f188459447f1bd476adf",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "50d5212989ff58e40d99d14c": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "factual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-6dbc63c95a639d370b7260ac",
+        "question_version_id": "kelas3:50d5212989ff58e40d99d14c:silver:19f7fdbc9e86c125ef34",
+        "content_hash": "19f7fdbc9e86c125ef34fa86305fd24123b04230c4433e526f95454e9fef48e6",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      },
+      "631ea2e9a2d5222d502bdf5c": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "procedural",
+        "intended_difficulty": "Medium",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-4c0c69fbff2557b5e328cd15",
+        "question_version_id": "kelas3:631ea2e9a2d5222d502bdf5c:silver:4b4348f0fbf5e23da7f0",
+        "content_hash": "4b4348f0fbf5e23da7f012b51fbc12078b7c545c89a57a778e01874ef0657000",
+        "math_cognitive_domain": "applying",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 1,
+          "intendedDifficulty": 2
+        }
+      },
+      "af80792faa77f2a7be932750": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "factual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-45e4c124631502d422201515",
+        "question_version_id": "kelas3:af80792faa77f2a7be932750:silver:7c6c30fc8217ac0dbfca",
+        "content_hash": "7c6c30fc8217ac0dbfca449989681c31e2639a07901841670d3669ac30780e9a",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 2,
+          "intendedDifficulty": 3
+        }
+      },
+      "655cea6ab3fa2ff165080502": {
+        "label_provenance": "ai_silver",
+        "knowledge_dimension": "factual",
+        "intended_difficulty": "Easy",
+        "validation_status": "silver_ready",
+        "subject_track": "regular",
+        "decision_id": "AID-986fb20e8dbce0bc77ede10a",
+        "question_version_id": "kelas3:655cea6ab3fa2ff165080502:silver:344b02cb98682e50a3f4",
+        "content_hash": "344b02cb98682e50a3f4bf162fa9a9d0b53a0bb509cca3aad646fe1b0427e685",
+        "math_cognitive_domain": "knowing",
+        "final_label_supporting_runs": {
+          "mathCognitiveDomain": 3,
+          "knowledgeDimension": 3,
+          "intendedDifficulty": 3
+        }
+      }
+    }
+  },
+  "validationResultsSchemaVersion": "validated-question-array-v4-active-status",
+  "irtInitialization": {
+    "path": "bukti_validasi/irt_initialization.json",
+    "sha256": "3a4eb075184a6da69a98de0ca0c5b83af7936ed646952b1bfc428e550c91107e",
+    "schemaVersion": "irt-initialization-v1",
+    "reportHash": "767e880ce5d923fabb10102372fd3adee63c59a84bd7be677557632fa29bc0a5",
+    "status": "waiting_for_data",
+    "empiricalCalibrationPerformed": false
+  }
+}

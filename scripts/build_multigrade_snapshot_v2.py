@@ -20,6 +20,8 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--snapshot-id", required=True)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--all-grades", action="store_true")
+    parser.add_argument("--rubric-version")
     args = parser.parse_args()
     destination = args.output.resolve()
     if destination.exists():
@@ -32,13 +34,21 @@ def main() -> int:
     duplicate_ids = [item for item, count in Counter(row.questionVersionId for row in rows).items() if count > 1]
     if duplicate_ids:
         raise ValueError(f"duplicate questionVersionId across snapshots: {duplicate_ids[:5]}")
+    if args.rubric_version and {row.rubricVersion for row in rows} != {args.rubric_version}:
+        raise ValueError("combined rows must all use the requested rubric version")
+    training_grades = tuple(range(1, 13)) if args.all_grades else tuple(range(1, 7))
     snapshot = build_snapshot(
         rows,
         snapshot_id=args.snapshot_id,
         seed=args.seed,
         minimum_train_per_class=30,
         minimum_per_class=15,
-        required_grades=(1, 2, 3, 4, 5, 6),
+        required_grades=training_grades,
+        training_grades=training_grades,
+        required_grade_tracks=(
+            tuple(f"{grade}:regular" for grade in range(1, 13)) + ("11:tl", "12:tl")
+            if args.all_grades else ()
+        ),
         research_only=any(item.researchOnly for item in inputs),
         label_provenance="ai_silver",
         exclusion_summary=dict(

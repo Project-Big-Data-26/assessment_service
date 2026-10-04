@@ -1,0 +1,536 @@
+{
+  "schemaVersion": "gemini-silver-labels-v3-blind-key-verified",
+  "source": "output/pretest/kelas11/soal_pretest_db.json",
+  "sourceHash": "940de1aa07d699a7e3b11fd3f528405a3ae742a553cecb903d2885eb0d9d7630",
+  "sourceGrade": 11,
+  "subjectTrack": "regular",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "promptVersion": "gemini-silver-math-3x4x3-v10-blind-sma11-key-verified",
+  "adjudicationPromptVersion": "gemini-silver-math-3x4x3-v10-adjudication-sma11",
+  "rubricVersion": "math-rubric-3x4x3-v8-sma11-grade-aware",
+  "rubricHash": "96b3b543fc96c7f30766f0cd2f0e47d7b159ee145b992c2005b17688d7d38349",
+  "educationLevel": "SMA",
+  "requestedRuns": 3,
+  "createdAt": "2026-10-04T17:54:07.277616+00:00",
+  "updatedAt": "2026-10-04T18:03:51.718150+00:00",
+  "items": {
+    "838b526b72b79e514bd4fe62": {
+      "index": 1,
+      "questionId": "838b526b72b79e514bd4fe62",
+      "inputHash": "8f124998dd9ff0545be257789d3e19423052353770b40f29fc80a8a6300a1a01",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "33°",
+            "visualTranscript": "Lingkaran berpusat di A. Titik B dan C terletak pada lingkaran. Garis BD dan CD adalah garis singgung lingkaran yang bertemu di titik D di luar lingkaran. Segmen AB dan AC adalah jari-jari. Sudut BAC (sudut pusat) diberikan sebesar 147 derajat.",
+            "verifiedMinimalSolution": "Karena BD dan CD adalah garis singgung, maka ∠ABD = 90° dan ∠ACD = 90°. Pada segiempat ABDC, jumlah sudut dalam adalah 360°. Maka ∠BDC = 360° - (∠BAC + ∠ABD + ∠ACD) = 360° - (147° + 90° + 90°) = 360° - 327° = 33°.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "BD dan CD adalah garis singgung lingkaran",
+                "∠ABD = ∠ACD = 90°",
+                "jumlah sudut dalam segiempat adalah 360°"
+              ],
+              "rationale": "Siswa perlu mengidentifikasi sifat garis singgung (tegak lurus jari-jari) dan menerapkan konsep jumlah sudut dalam segiempat untuk menyelesaikan masalah. Ini adalah penerapan prosedur standar pada konteks geometri.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "BD dan CD adalah garis singgung lingkaran",
+                "jumlah sudut dalam segiempat adalah 360°"
+              ],
+              "rationale": "Soal ini menguji pemahaman konseptual tentang sifat-sifat garis singgung lingkaran dan hubungan sudut dalam segiempat.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "BD dan CD adalah garis singgung lingkaran",
+                "∠BAC = 147°"
+              ],
+              "rationale": "Soal ini tergolong Easy karena melibatkan prosedur standar yang familiar bagi siswa kelas 11. Langkah-langkah penyelesaiannya langsung: mengidentifikasi dua sudut siku-siku dari sifat garis singgung dan menggunakan jumlah sudut segiempat.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Sifat garis singgung lingkaran (tegak lurus jari-jari) dan jumlah sudut dalam segiempat.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi lingkaran dan garis singgung adalah topik standar SMA kelas 11. Prosedur yang diperlukan sangat rutin dan tidak memerlukan perencanaan strategis yang kompleks."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "7JTCarqFEpKzg8UP6sGw6AQ",
+          "promptHash": "5ce05c8ed061666b6ffb2fefa3fba42e3852bd5cf665f0d41ff988abdab2dd31",
+          "responseHash": "a5928c1d3f784384e7590bd32c7979da560bcc7905e6bd1499f4ea7a9b91bfa4",
+          "latencyMs": 4688,
+          "usage": {
+            "promptTokens": 3098,
+            "outputTokens": 738,
+            "thinkingTokens": 95,
+            "totalTokens": 3931
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "33°",
+            "visualTranscript": "Lingkaran berpusat di A. Titik B dan C berada pada keliling lingkaran. Garis BD dan CD adalah garis singgung lingkaran yang bertemu di titik D di luar lingkaran. Segmen AB dan AC adalah jari-jari. Sudut BAC (sudut pusat) diberikan sebesar 147 derajat.",
+            "verifiedMinimalSolution": "Garis singgung lingkaran tegak lurus dengan jari-jari di titik singgung, maka ∠ABD = 90° dan ∠ACD = 90°. Pada segiempat ABDC, jumlah sudut dalam adalah 360°. Maka, ∠BDC = 360° - (∠BAC + ∠ABD + ∠ACD) = 360° - (147° + 90° + 90°) = 360° - 327° = 33°.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "BD dan CD adalah garis singgung lingkaran",
+                "∠BAC = 147°",
+                "tentukan besar ∠BDC"
+              ],
+              "rationale": "Siswa perlu menerapkan sifat geometris bahwa garis singgung tegak lurus dengan jari-jari (konsep) dan menggunakan jumlah sudut dalam segiempat (prosedur) untuk menyelesaikan masalah. Ini adalah penerapan konsep rutin pada konteks geometri.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "BD dan CD adalah garis singgung lingkaran",
+                "∠ABD = ∠ACD = 90°"
+              ],
+              "rationale": "Soal ini menguji pemahaman tentang hubungan antara garis singgung dan jari-jari lingkaran, serta penggunaan sifat sudut pada segiempat.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "BD dan CD adalah garis singgung lingkaran",
+                "∠BAC = 147°"
+              ],
+              "rationale": "Soal ini tergolong Easy karena melibatkan penerapan langsung sifat garis singgung (tegak lurus jari-jari) dan jumlah sudut segiempat. Langkah penyelesaiannya jelas, tidak memerlukan strategi nonrutin atau integrasi yang kompleks.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Sifat garis singgung lingkaran dan jumlah sudut dalam segiempat.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi geometri lingkaran adalah standar kelas 11. Soal ini adalah aplikasi langsung dari teorema dasar yang sudah dipelajari."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "8ZTCau_0DdWymNMP3eGlqQQ",
+          "promptHash": "5ce05c8ed061666b6ffb2fefa3fba42e3852bd5cf665f0d41ff988abdab2dd31",
+          "responseHash": "76915bf61030006ad1e25ab9277bc93cbe9bb3cf06a503d82586e26cb73fe785",
+          "latencyMs": 3918,
+          "usage": {
+            "promptTokens": 3098,
+            "outputTokens": 732,
+            "thinkingTokens": 109,
+            "totalTokens": 3939
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "33°",
+            "visualTranscript": "Lingkaran berpusat di A. Titik B dan C berada pada lingkaran. Garis BD dan CD adalah garis singgung lingkaran yang bertemu di titik D di luar lingkaran. Sudut BAC (sudut pusat) diberikan sebesar 147 derajat.",
+            "verifiedMinimalSolution": "Sifat garis singgung lingkaran menyatakan bahwa jari-jari yang ditarik ke titik singgung tegak lurus dengan garis singgung. Maka, ∠ABD = 90° dan ∠ACD = 90°. Pada segiempat ABDC, jumlah sudut dalam adalah 360°. ∠BDC = 360° - (∠BAC + ∠ABD + ∠ACD) = 360° - (147° + 90° + 90°) = 360° - 327° = 33°.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "BD dan CD adalah garis singgung lingkaran A",
+                "∠ BAC = 147◦",
+                "tentukan besar ∠ BDC"
+              ],
+              "rationale": "Siswa perlu menerapkan sifat geometris garis singgung (tegak lurus jari-jari) dan konsep jumlah sudut dalam segiempat untuk menyelesaikan masalah. Ini adalah penerapan prosedur standar pada konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "BD dan CD adalah garis singgung lingkaran A",
+                "∠ BAC = 147◦"
+              ],
+              "rationale": "Soal menguji pemahaman tentang prinsip geometris (sifat garis singgung dan jumlah sudut segiempat) yang merupakan pengetahuan konseptual.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "BD dan CD adalah garis singgung lingkaran A",
+                "∠ BAC = 147◦"
+              ],
+              "rationale": "Soal ini tergolong Easy karena menggunakan sifat geometris yang sangat standar dan familiar bagi siswa kelas 11. Jalur penyelesaiannya langsung (jumlah sudut segiempat) tanpa memerlukan perencanaan strategi yang kompleks atau integrasi kendala yang sulit.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Sifat garis singgung lingkaran (jari-jari tegak lurus garis singgung) dan jumlah sudut dalam segiempat.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 3,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi lingkaran dan garis singgung merupakan topik standar. Prosedur yang diperlukan sangat langsung dan tidak menuntut penalaran tingkat tinggi."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "9ZTCapDeKY20g8UP7aX5qAo",
+          "promptHash": "5ce05c8ed061666b6ffb2fefa3fba42e3852bd5cf665f0d41ff988abdab2dd31",
+          "responseHash": "c70a1e51ad180b3dc92bd3ed5da274e454b406e43d7820fe15f8cc6c9d0b11c3",
+          "latencyMs": 4026,
+          "usage": {
+            "promptTokens": 3098,
+            "outputTokens": 737,
+            "thinkingTokens": 100,
+            "totalTokens": 3935
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "33°",
+        "visualTranscript": "Lingkaran berpusat di A. Titik B dan C terletak pada lingkaran. Garis BD dan CD adalah garis singgung lingkaran yang bertemu di titik D di luar lingkaran. Segmen AB dan AC adalah jari-jari. Sudut BAC (sudut pusat) diberikan sebesar 147 derajat.",
+        "verifiedMinimalSolution": "Karena BD dan CD adalah garis singgung, maka ∠ABD = 90° dan ∠ACD = 90°. Pada segiempat ABDC, jumlah sudut dalam adalah 360°. Maka ∠BDC = 360° - (∠BAC + ∠ABD + ∠ACD) = 360° - (147° + 90° + 90°) = 360° - 327° = 33°.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "conceptual",
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Easy": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    },
+    "cc594209724affd13041e475": {
+      "index": 2,
+      "questionId": "cc594209724affd13041e475",
+      "inputHash": "c0498edc874093e53a70ab0876a5a026b4e3fe6cb4d1671be87911f1284affc7",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Persamaan regresi linear y = ax + b dapat ditentukan dari data. Dengan x = kecepatan dan y = jarak reaksi, diperoleh slope (a) sekitar 0,207 dan intersep (b) sekitar -0,042. Untuk x = 35, y = 0,207(35) - 0,042 = 7,245 - 0,042 = 7,203. Dibulatkan menjadi 7,2 m.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam."
+              ],
+              "rationale": "Soal meminta siswa menerapkan model regresi linear untuk melakukan prediksi (interpolasi) pada nilai x yang tidak ada di tabel. Ini adalah penerapan prosedur statistik yang sudah dipelajari.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tabel berikut ini memberikan informasi mengenai jarak reaksi dari mobil yang melaju dengan kecepatan yang berbeda-beda.",
+                "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam."
+              ],
+              "rationale": "Siswa perlu menggunakan metode regresi linear (algoritme/teknik) untuk memprediksi nilai berdasarkan data yang diberikan.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tabel berikut ini memberikan informasi mengenai jarak reaksi dari mobil yang melaju dengan kecepatan yang berbeda-beda.",
+                "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam."
+              ],
+              "rationale": "Soal ini dikategorikan Medium karena siswa harus melakukan perhitungan regresi linear (menentukan persamaan garis) terlebih dahulu sebelum melakukan prediksi. Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling terkait (menghitung slope/intersep, lalu substitusi) yang memerlukan ketelitian.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang regresi linear, perhitungan slope dan intersep, serta substitusi nilai ke dalam persamaan linear.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 0,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Untuk kelas 11, regresi linear adalah materi standar. Menghitung persamaan regresi dari data tabel adalah prosedur rutin, namun memerlukan beberapa langkah perhitungan yang berurutan, sehingga dikategorikan Medium."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "-pTCavOcENfx4-EPiKCl-AY",
+          "promptHash": "ba027af88c040395a1507c4e5aa9f9ab0af4f88726abbbfb77c21eaef8c073b8",
+          "responseHash": "1c48ab8310f86731d6900e168ede09a45d817920ef2edacdd9daa6704e9fd6f2",
+          "latencyMs": 3764,
+          "usage": {
+            "promptTokens": 2082,
+            "outputTokens": 708,
+            "thinkingTokens": 170,
+            "totalTokens": 2960
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Persamaan regresi linear y = ax + b dapat ditentukan dari data. Dengan metode kuadrat terkecil, diperoleh persamaan y = 0,207x - 0,042. Untuk x = 35, y = 0,207(35) - 0,042 = 7,245 - 0,042 = 7,203. Dibulatkan menjadi 7,2 m.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam."
+              ],
+              "rationale": "Siswa diminta menerapkan model regresi linear yang diperoleh dari data untuk melakukan prediksi (interpolasi) pada nilai x tertentu. Ini adalah penerapan prosedur statistik yang rutin dalam konteks regresi.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tabel berikut ini memberikan informasi mengenai jarak reaksi dari mobil yang melaju dengan kecepatan yang berbeda-beda.",
+                "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam."
+              ],
+              "rationale": "Soal menuntut penggunaan metode atau algoritme regresi linear untuk memprediksi nilai, yang merupakan bagian dari pengetahuan prosedural dalam statistika.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tabel berikut ini memberikan informasi mengenai jarak reaksi dari mobil yang melaju dengan kecepatan yang berbeda-beda.",
+                "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam."
+              ],
+              "rationale": "Soal ini dikategorikan Medium karena meskipun prosedurnya familiar (regresi linear), siswa harus menentukan atau menggunakan persamaan regresi dari data yang diberikan sebelum melakukan substitusi. Terdapat beberapa langkah (menentukan model/persamaan, lalu substitusi) yang saling terkait.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang regresi linear, konsep variabel bebas dan terikat, serta kemampuan melakukan substitusi nilai ke dalam persamaan linear.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 0,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Untuk kelas 11, regresi linear adalah materi standar. Soal ini menuntut siswa untuk tidak sekadar membaca tabel (seperti pengecoh A dan C), melainkan memahami bahwa prediksi harus dilakukan melalui model regresi, yang merupakan tuntutan kognitif yang sesuai untuk tingkat menengah."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "_pTCatXdHoHljuMP5rGl6AQ",
+          "promptHash": "ba027af88c040395a1507c4e5aa9f9ab0af4f88726abbbfb77c21eaef8c073b8",
+          "responseHash": "92a993eacdbfe1fd885bb3f9d1eb7ec9b07f7633b1ad6d281820358a9297c318",
+          "latencyMs": 3802,
+          "usage": {
+            "promptTokens": 2082,
+            "outputTokens": 721,
+            "thinkingTokens": 168,
+            "totalTokens": 2971
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Persamaan regresi linear y = ax + b dapat ditentukan dari data. Dengan x = kecepatan dan y = jarak reaksi, diperoleh slope (a) ≈ 0,207 dan intersep (b) ≈ -0,042. Untuk x = 35, y = 0,207(35) - 0,042 = 7,245 - 0,042 = 7,203 ≈ 7,2 m.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam."
+              ],
+              "rationale": "Siswa diminta menerapkan model regresi linear untuk memprediksi nilai di luar data yang diberikan (interpolasi). Ini memerlukan penerapan prosedur statistik yang telah dipelajari.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Tabel berikut ini memberikan informasi mengenai jarak reaksi dari mobil yang melaju dengan kecepatan yang berbeda-beda.",
+                "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam."
+              ],
+              "rationale": "Soal menguji pemahaman tentang metode regresi linear sebagai teknik untuk memprediksi nilai berdasarkan tren data.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Kecepatan (km/jam): 20, 30, 40, 50, 60, 70. Jarak Reaksi (m): 4,1; 6,2; 8,3; 10,1; 12,4; 14,5.",
+                "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 35 km/jam."
+              ],
+              "rationale": "Soal ini dikategorikan Medium karena meskipun prosedurnya familiar (regresi linear), siswa perlu melakukan perhitungan statistik untuk menentukan persamaan garis terlebih dahulu sebelum melakukan prediksi, yang melibatkan beberapa langkah terstruktur.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang regresi linear, perhitungan slope dan intersep, serta substitusi nilai ke dalam persamaan.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 0,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 11 diharapkan mampu melakukan analisis regresi sederhana. Beban perhitungan moderat karena memerlukan penentuan persamaan garis dari data mentah sebelum prediksi."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "ApXCasu6NofEg8UPtZ6x4Qk",
+          "promptHash": "ba027af88c040395a1507c4e5aa9f9ab0af4f88726abbbfb77c21eaef8c073b8",
+          "responseHash": "c4116b9094988e033b78a3aa5de41b3e89b82d3ee90690bac3e41a0afb37c863",
+          "latencyMs": 4302,
+          "usage": {
+            "promptTokens": 2082,
+            "outputTokens": 720,
+            "thinkingTokens": 151,
+            "totalTokens": 2953
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "B",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Persamaan regresi linear y = ax + b dapat ditentukan dari data. Dengan x = kecepatan dan y = jarak reaksi, diperoleh slope (a) sekitar 0,207 dan intersep (b) sekitar -0,042. Untuk x = 35, y = 0,207(35) - 0,042 = 7,245 - 0,042 = 7,203. Dibulatkan menjadi 7,2 m.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "procedural",
+            "voteCounts": {
+              "procedural": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Medium",
+            "voteCounts": {
+              "Medium": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    }
+  },
+  "summary": {
+    "itemsProcessed": 2,
+    "itemsEligibleForTraining": 2,
+    "successfulRuns": 6,
+    "failedRuns": 0,
+    "adjudicatedItems": 0,
+    "pendingAdjudication": 0,
+    "difficultyDistribution": {
+      "Easy": 1,
+      "Medium": 1,
+      "Hard": 0
+    },
+    "dominantDifficultyShare": 0.5,
+    "boundaryAnalysisRequired": true,
+    "promptTokens": 15540,
+    "outputTokens": 4356,
+    "thinkingTokens": 793,
+    "totalTokens": 20689
+  },
+  "executionStatus": "completed_batch",
+  "apiAttempts": 6
+}

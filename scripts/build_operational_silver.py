@@ -86,6 +86,8 @@ def main() -> int:
     parser.add_argument("--snapshot-id", required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--assessment-db", type=Path, help="Register for API delivery; held versions are excluded")
+    parser.add_argument("--all-grades", action="store_true", help="Include grades 1-12 and TL in training rather than SD-only expansion")
+    parser.add_argument("--rubric-version", help="Reject qualified rows from other rubric versions")
     args = parser.parse_args()
     if args.output.exists():
         parser.error("choose a new immutable output path")
@@ -106,7 +108,18 @@ def main() -> int:
                 excluded["empirical_ai_hold"] += 1
             else:
                 rows.append(row)
-    snapshot = build_snapshot(rows, snapshot_id=args.snapshot_id, exclusion_summary=dict(excluded))
+    if args.rubric_version and {row.rubricVersion for row in rows} != {args.rubric_version}:
+        raise ValueError("qualified rows must all use the requested rubric version")
+    training_grades = tuple(range(1, 13)) if args.all_grades else tuple(range(1, 7))
+    required_tracks = (
+        tuple(f"{grade}:regular" for grade in range(1, 13)) + ("11:tl", "12:tl")
+        if args.all_grades and not args.class_name else ()
+    )
+    snapshot = build_snapshot(
+        rows, snapshot_id=args.snapshot_id, exclusion_summary=dict(excluded),
+        training_grades=training_grades, required_grades=training_grades,
+        required_grade_tracks=required_tracks,
+    )
     AssessmentStore.validate_snapshot(snapshot)
     save_snapshot(snapshot, args.output)
     if db:

@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
+from threading import RLock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -164,6 +165,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--runs", type=int, default=3, choices=(1, 3))
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--question-id", action="append", help="Pilot IDs from the unchanged source; reuse its checkpoint for the full batch.")
+    parser.add_argument("--stop-on-quota", action="store_true", help="Stop immediately on any 429, including short-term limits.")
+    parser.add_argument("--max-api-calls", type=int, help="Maximum new application requests in this invocation, including adjudication and retries.")
     parser.add_argument("--attempts", type=int, default=3)
     parser.add_argument("--pause", type=float, default=0.5)
     parser.add_argument("--workers", type=int, default=1, choices=(1, 2, 3))
@@ -187,8 +191,22 @@ def main() -> int:
     args.output = args.output.resolve()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     items = json.loads(args.source.read_text(encoding="utf-8"))
+    selected_ids = getattr(args, "question_id", None)
+    if selected_ids:
+        if args.limit is not None:
+            raise ValueError("select pilot IDs or a limit, not both")
+        wanted = set(selected_ids)
+        if not wanted <= {str(item["_id"]) for item in items}:
+            raise ValueError("pilot contains unknown question IDs")
+        items = [item for item in items if str(item["_id"]) in wanted]
     if args.limit is not None:
         items = items[: args.limit]
+    max_calls = getattr(args, "max_api_calls", None)
+    stop_on_quota = getattr(args, "stop_on_quota", False)
+    if max_calls is not None and max_calls < 1:
+        raise ValueError("max-api-calls must be positive")
+    if (max_calls is not None or stop_on_quota) and args.workers != 1:
+        raise ValueError("bounded quota-safe execution requires one worker")
     source_hash = hashlib.sha256(args.source.read_bytes()).hexdigest()
     settings = replace(GeminiSettings.from_environment(), live_enabled=True)
     adapter = GeminiSilverAdapter(settings)
@@ -199,11 +217,36 @@ def main() -> int:
     checkpoint["executionStatus"] = "running"
     checkpoint.pop("stopReason", None)
     checkpoint.pop("blockedByGrade", None)
+    initial_calls = int(checkpoint.get("apiAttempts", 0))
+    progress_lock = RLock()
+
+    def budget_available() -> bool:
+        return max_calls is None or checkpoint.get("apiAttempts", 0) - initial_calls < max_calls
+
+    def provider_block(result) -> bool:
+        return bool(result.quotaDailyExhausted or result.providerFailureReason
+                    or (stop_on_quota and (result.errorCode or "").endswith(":429")))
+
+    def block_status(result) -> str:
+        if result.quotaDailyExhausted:
+            return "blocked_provider_daily_quota"
+        if (result.errorCode or "").endswith(":429"):
+            return "blocked_provider_quota_or_rate_limit"
+        return "blocked_provider_configuration"
 
     def save_progress() -> None:
-        checkpoint["updatedAt"] = datetime.now(timezone.utc).isoformat()
-        checkpoint["summary"] = summarize(checkpoint)
-        atomic_write(checkpoint, args.output)
+        with progress_lock:
+            checkpoint["updatedAt"] = datetime.now(timezone.utc).isoformat()
+            checkpoint["summary"] = summarize(checkpoint)
+            atomic_write(checkpoint, args.output)
+
+    def begin_request() -> bool:
+        with progress_lock:
+            if not budget_available():
+                return False
+            checkpoint["apiAttempts"] = checkpoint.get("apiAttempts", 0) + 1
+            save_progress()
+            return True
 
     for ordinal, item in enumerate(items, start=1):
         item_id = str(item["_id"])
@@ -228,15 +271,19 @@ def main() -> int:
             raise FileNotFoundError(f"missing image assets for {item_id}: {len(missing)}")
         pending = [run_index for run_index in range(1, args.runs + 1) if run_index not in completed]
 
-        def execute_run(run_index: int) -> SilverRunResult:
+        def execute_run(run_index: int) -> SilverRunResult | None:
             result: SilverRunResult | None = None
             for attempt in range(1, args.attempts + 1):
+                if not begin_request():
+                    return None
                 result = adapter.label_once(
                     item, image_paths, run_index=run_index, grade=args.grade,
                     **({"track": track} if track != "regular" else {}),
                 )
-                if result.status == "success" or result.quotaDailyExhausted or result.providerFailureReason:
+                if result.status == "success" or provider_block(result):
                     break
+                record.setdefault("attemptHistory", []).append(result.model_dump(mode="json"))
+                save_progress()
                 if attempt < args.attempts:
                     time.sleep(min(2 ** attempt, 8))
             assert result is not None
@@ -252,6 +299,11 @@ def main() -> int:
                 completed_results = [future.result() for future in as_completed(futures)]
 
         for result in completed_results:
+            if result is None:
+                checkpoint["executionStatus"] = "stopped_api_call_budget"
+                checkpoint["stopReason"] = {"maxNewApiCalls": max_calls}
+                save_progress()
+                return 4
             run_index = result.runIndex
             store_run_result(record, result.model_dump(mode="json"))
             typed_runs = [SilverRunResult.model_validate(run) for run in record["runs"]]
@@ -267,11 +319,8 @@ def main() -> int:
                 f"status={result.status} total_tokens={result.usage.totalTokens}",
                 flush=True,
             )
-            if result.quotaDailyExhausted or result.providerFailureReason:
-                checkpoint["executionStatus"] = (
-                    "blocked_provider_daily_quota" if result.quotaDailyExhausted
-                    else "blocked_provider_configuration"
-                )
+            if provider_block(result):
+                checkpoint["executionStatus"] = block_status(result)
                 checkpoint["stopReason"] = {
                     "errorCode": result.errorCode,
                     "quotaLimits": result.quotaLimits,
@@ -292,12 +341,19 @@ def main() -> int:
             if existing.get("status") != "success":
                 adjudication: SilverAdjudicationResult | None = None
                 for attempt in range(1, args.attempts + 1):
+                    if not begin_request():
+                        checkpoint["executionStatus"] = "stopped_api_call_budget"
+                        checkpoint["stopReason"] = {"maxNewApiCalls": max_calls}
+                        save_progress()
+                        return 4
                     adjudication = adapter.adjudicate_once(
                         item, image_paths, typed_runs, grade=args.grade,
                         **({"track": track} if track != "regular" else {}),
                     )
-                    if adjudication.status == "success" or adjudication.quotaDailyExhausted or adjudication.providerFailureReason:
+                    if adjudication.status == "success" or provider_block(adjudication):
                         break
+                    record.setdefault("adjudicationAttemptHistory", []).append(adjudication.model_dump(mode="json"))
+                    save_progress()
                     if attempt < args.attempts:
                         time.sleep(min(2 ** attempt, 8))
                 assert adjudication is not None
@@ -308,11 +364,8 @@ def main() -> int:
             record["aggregate"] = aggregate_silver_runs(
                 typed_runs, typed_adjudication
             )
-            if typed_adjudication.quotaDailyExhausted or typed_adjudication.providerFailureReason:
-                checkpoint["executionStatus"] = (
-                    "blocked_provider_daily_quota" if typed_adjudication.quotaDailyExhausted
-                    else "blocked_provider_configuration"
-                )
+            if provider_block(typed_adjudication):
+                checkpoint["executionStatus"] = block_status(typed_adjudication)
                 checkpoint["stopReason"] = {
                     "errorCode": typed_adjudication.errorCode,
                     "quotaLimits": typed_adjudication.quotaLimits,

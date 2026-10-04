@@ -1,10 +1,10 @@
 {
   "schemaVersion": "indobert-blind-diagnostics-v1",
-  "createdAt": "2026-10-02T07:59:14.316835+00:00",
+  "createdAt": "2026-10-04T20:30:31.325182+00:00",
   "researchOnlyRun": true,
   "reviewRequired": true,
-  "blindDecisionLockedAt": "2026-10-02T07:59:00.043646+00:00",
-  "artifact": "models/indobert-3x4x3-v1",
+  "blindDecisionLockedAt": "2026-10-04T20:30:20.572539+00:00",
+  "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
   "model": {
     "artifactFormatVersion": "indobert-3x4x3-artifact-v1",
     "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -15,6 +15,7 @@
     "datasetHash": "8a41381aa7e3fdb4e21617b9091e6747d29e5bd3f01e3c992ce9895b823f35c1",
     "splitManifestHash": "681c8a0a6afea9d23b71e1f315543751ebb259645c01f10a4db3fd2d90b634df",
     "rubricVersion": "math-rubric-3x4x3-v1",
+    "rubricVersionsByGradeTrack": {},
     "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
     "inputSchemaVersion": "math-question-text-v1",
     "inputRepresentation": "metadata",
@@ -22,6 +23,18 @@
     "detachDifficultyConditioning": true,
     "difficultyHeadType": "multiclass",
     "gradeEmbeddingDimension": 0,
+    "gradeEmbeddingCount": 6,
+    "supportedGrades": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supportedSubjectTracks": [
+      "regular"
+    ],
     "routingPolicyVersion": "confidence-only-v1",
     "labels": {
       "mathCognitiveDomain": [
@@ -46,19 +59,22 @@
         "temperature": 0.05,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "knowledgeDimension": {
         "temperature": 0.20979985858964298,
         "confidenceThreshold": null,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "intendedDifficulty": {
         "temperature": 0.9533279648066687,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       }
     },
     "maxLength": 256,
@@ -670,16 +686,16 @@
       "questionId": "88621a8df02c5a5b537e9255",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:88621a8df02c5a5b537e9255:content-v2",
       "questionVersionId": "88621a8df02c5a5b537e9255:content-v2:blind-revalidation",
-      "contentHash": "7268235690d0c4469a70eb8aa99f5618523356e8c03cb234e94bcc72e26a70a1",
+      "contentHash": "2bac760f519ddf4d374536223e07b5e62f00b10c3cd43cc3080e4cef78ef6cd4",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Perkalian Pecahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hani membuat 4 potong pita dengan panjang masing-masing $\\frac{3}{4}$ m.\n\nb. Berapa meter panjang potongan pita seluruhnya yang dimiliki Hani?\nPilihan: A. 12 m\nB. 3 m\nC. 4 $\\frac{3}{4}$ m\nD. $\\frac{3}{16}$ m\nTranskripsi visual: -",
       "untruncatedTokenCount": 106,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 192.129,
+      "latencyMs": 145.437,
       "prediction": {
         "questionId": "88621a8df02c5a5b537e9255",
         "contentVersion": 2,
-        "contentHash": "7268235690d0c4469a70eb8aa99f5618523356e8c03cb234e94bcc72e26a70a1",
+        "contentHash": "2bac760f519ddf4d374536223e07b5e62f00b10c3cd43cc3080e4cef78ef6cd4",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -725,6 +741,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -745,16 +762,16 @@
       "questionId": "b455e76a421c6174b0215cbf",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:b455e76a421c6174b0215cbf:content-v2",
       "questionVersionId": "b455e76a421c6174b0215cbf:content-v2:blind-revalidation",
-      "contentHash": "a50e366d76f752b7e3618f1e7ba410b141060cb9f894f42d3585fc780117d3c0",
+      "contentHash": "c78f9fc30ae533cdeed5c08ace25bf3ad9a8f2d4095977d66880ad6393f3c2d3",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Perkalian Pecahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Fina membuat 75 kue pastel untuk acara keluarganya. Sebanyak $\\frac{2}{15}$ bagian dari 75 pastel tersebut telah dikonsumsi oleh keluarganya selama acara berlangsung. Tentukan:\n\na. Banyaknya kue pastel yang sudah dikonsumsi oleh keluarga Fina.\nPilihan: A. 10 kue pastel\nB. 150 kue pastel\nC. 65 kue pastel\nD. 5 kue pastel\nTranskripsi visual: -",
       "untruncatedTokenCount": 104,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 128.508,
+      "latencyMs": 92.529,
       "prediction": {
         "questionId": "b455e76a421c6174b0215cbf",
         "contentVersion": 2,
-        "contentHash": "a50e366d76f752b7e3618f1e7ba410b141060cb9f894f42d3585fc780117d3c0",
+        "contentHash": "c78f9fc30ae533cdeed5c08ace25bf3ad9a8f2d4095977d66880ad6393f3c2d3",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -800,6 +817,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -820,16 +838,16 @@
       "questionId": "5f81ca1df4eea4a69b6fa218",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:5f81ca1df4eea4a69b6fa218:content-v2",
       "questionVersionId": "5f81ca1df4eea4a69b6fa218:content-v2:blind-revalidation",
-      "contentHash": "45a366966209461e26e58a055fcadda7b852b3b7b93653c0c3223d6823af1510",
+      "contentHash": "1eaf85ed74e9cd59f09194a169bce54248377c5c81b7356db595a4440414b79f",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Pembagian Pecahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pak Rudi membagi $\\frac{2}{4}$ bagian tanah miliknya kepada 3 orang anaknya secara adil.\n\nc. Berapa bagian tanah yang diperoleh masing-masing anak Pak Rudi? Tuliskan cara kalian menemukannya.\nPilihan: A. $\\frac{1}{2}$ bagian, karena $\\frac{2}{4}$ disederhanakan menjadi $\\frac{1}{2}$\nB. $\\frac{3}{2}$ bagian, karena $\\frac{2}{4} \\times 3 = \\frac{6}{4}$\nC. $\\frac{2}{7}$ bagian, karena penyebutnya dijumlahkan dengan 3 (4+3=7)\nD. $\\frac{1}{6}$ bagian, karena $\\frac{2}{4} \\div 3 = \\frac{2}{12} = \\frac{1}{6}$\nTranskripsi visual: -",
       "untruncatedTokenCount": 237,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 275.506,
+      "latencyMs": 175.919,
       "prediction": {
         "questionId": "5f81ca1df4eea4a69b6fa218",
         "contentVersion": 2,
-        "contentHash": "45a366966209461e26e58a055fcadda7b852b3b7b93653c0c3223d6823af1510",
+        "contentHash": "1eaf85ed74e9cd59f09194a169bce54248377c5c81b7356db595a4440414b79f",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -875,6 +893,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -895,16 +914,16 @@
       "questionId": "a0855f2dc2ba10aa142bba57",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:a0855f2dc2ba10aa142bba57:content-v2",
       "questionVersionId": "a0855f2dc2ba10aa142bba57:content-v2:blind-revalidation",
-      "contentHash": "f0aa88334eb1a87676a49b0cc29c2a3be3f075626b086fef565f02dc8aa2d463",
+      "contentHash": "36096c480c31cd9b1117882ba7f4783f77eb009af5a5b4fdf820297229153878",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Pembagian Pecahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Rina memiliki 6 kg gula pasir. Rina akan membuat kue bolu. Setiap adonan kue bolu membutuhkan $\\frac{3}{4}$ kg gula pasir.\n\nBerapa banyak kue bolu yang dibuat oleh Rina?\nPilihan: A. 4,5 kue bolu\nB. 24 kue bolu\nC. 2 kue bolu\nD. 8 kue bolu\nTranskripsi visual: -",
       "untruncatedTokenCount": 98,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 135.031,
+      "latencyMs": 86.363,
       "prediction": {
         "questionId": "a0855f2dc2ba10aa142bba57",
         "contentVersion": 2,
-        "contentHash": "f0aa88334eb1a87676a49b0cc29c2a3be3f075626b086fef565f02dc8aa2d463",
+        "contentHash": "36096c480c31cd9b1117882ba7f4783f77eb009af5a5b4fdf820297229153878",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -950,6 +969,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -970,26 +990,26 @@
       "questionId": "998e959414afdb8d9903faba",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:998e959414afdb8d9903faba:content-v2",
       "questionVersionId": "998e959414afdb8d9903faba:content-v2:blind-revalidation",
-      "contentHash": "a75218d1fdd799ac65db51228142951a1e6c41a241ee0af3382621b944590b60",
-      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Bilangan Desimal\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar Informasi Nilai Gizi di salah satu kemasan makanan berikut. Pada informasi tersebut dituliskan komposisi kandungan protein, lemak, karbohidrat, serat pangan, dan natrium. Berdasarkan informasi tersebut, jawablah pertanyaan berikut ini.\n\nb. Kandungan zat apakah yang paling kecil komposisinya dan berapakah komposisinya?\nPilihan: A. Natrium, 88,6 mg\nB. Karbohidrat, 28,6 g\nC. Serat Pangan, 2,7 g\nD. Protein, 1,3 g\nTranskripsi visual: Label Informasi Nilai Gizi mencantumkan: Protein 1,3 g, Lemak total 5,4 g, Karbohidrat 28,6 g, Serat Pangan 2,7 g, Natrium 88,6 mg.",
-      "untruncatedTokenCount": 160,
+      "contentHash": "0d6a8c9d5ba14c7bf36567fcfa86070771bbc756329e8727cd55892737d19dc2",
+      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Bilangan Desimal\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar Informasi Nilai Gizi di salah satu kemasan makanan berikut. Pada informasi tersebut dituliskan komposisi kandungan protein, lemak, karbohidrat, serat pangan, dan natrium. Berdasarkan informasi tersebut, jawablah pertanyaan berikut ini.\n\nb. Kandungan zat apakah yang paling kecil komposisinya dan berapakah komposisinya?\nPilihan: A. Natrium, 88,6 mg\nB. Karbohidrat, 28,6 g\nC. Serat Pangan, 2,7 g\nD. Protein, 1,3 g\nTranskripsi visual: Gambar menunjukkan label Informasi Nilai Gizi dengan data: Protein 1,3 g, Lemak total 5,4 g, Karbohidrat 28,6 g, Serat Pangan 2,7 g, dan Natrium 88,6 mg.",
+      "untruncatedTokenCount": 164,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 176.029,
+      "latencyMs": 132.152,
       "prediction": {
         "questionId": "998e959414afdb8d9903faba",
         "contentVersion": 2,
-        "contentHash": "a75218d1fdd799ac65db51228142951a1e6c41a241ee0af3382621b944590b60",
+        "contentHash": "0d6a8c9d5ba14c7bf36567fcfa86070771bbc756329e8727cd55892737d19dc2",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.1173480652517631,
-            "applying": 0.882651934748237,
-            "reasoning": 5.807301275322427e-42
+            "knowing": 0.0036282662221256627,
+            "applying": 0.9963717337778744,
+            "reasoning": 5.1702844356105696e-45
           },
-          "calibratedConfidence": 0.882651934748237,
-          "normalizedEntropy": 0.3291494978725494,
+          "calibratedConfidence": 0.9963717337778744,
+          "normalizedEntropy": 0.02185384742169671,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -998,13 +1018,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.013228340353342135,
-            "conceptual": 0.9648586133020023,
-            "procedural": 0.02191304436971392,
-            "metacognitive": 1.9749416177260846e-09
+            "factual": 0.030465861089898058,
+            "conceptual": 0.9414378912629302,
+            "procedural": 0.028096246746694507,
+            "metacognitive": 9.004771484875557e-10
           },
-          "calibratedConfidence": 0.9648586133020023,
-          "normalizedEntropy": 0.1265654480439828,
+          "calibratedConfidence": 0.9414378912629302,
+          "normalizedEntropy": 0.19010166682741567,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1013,18 +1033,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.7665423523919469,
-            "Medium": 0.2239761686953573,
-            "Hard": 0.009481478912695707
+            "Easy": 0.7958673374370687,
+            "Medium": 0.19669445176363579,
+            "Hard": 0.007438210799295509
           },
-          "calibratedConfidence": 0.7665423523919469,
-          "normalizedEntropy": 0.5307444181223748,
+          "calibratedConfidence": 0.7958673374370687,
+          "normalizedEntropy": 0.489723105775898,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1034,7 +1055,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "fafe9e7ccacd9cc4cbd1fbafe125337d231792980cefe6bf489ffd5d3d5c0681",
+          "inputHash": "71d654ad40531a7cf76b8297cfdae8ee5fdfeff0623d4f7210469f752061651e",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1045,16 +1066,16 @@
       "questionId": "4d27f58bb8fe872a49e1bd5b",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:4d27f58bb8fe872a49e1bd5b:content-v2",
       "questionVersionId": "4d27f58bb8fe872a49e1bd5b:content-v2:blind-revalidation",
-      "contentHash": "ab8f543b22957422aa67cca38a01368a6dd18c5cf8f87917f6ff2d9450b6ca2a",
+      "contentHash": "159f2449707a156232b4e96cf29348125df8e28777ac4f702f441b1d1e69de5a",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Bilangan Desimal\nTipe soal: multiple_choice\nStimulus: -\nSoal: Arman, Bayu, dan Didi mengikuti lomba lompat jauh. Arman berhasil melompat sejauh 3,7 m. Sementara itu, Didi berhasil melompat sejauh 2,9 m dan Bayu melompat sejauh 3,6 m. Siapakah yang melompat paling jauh dan paling dekat?\nPilihan: A. Paling jauh Arman, paling dekat Bayu\nB. Paling jauh Bayu, paling dekat Didi\nC. Paling jauh Arman, paling dekat Didi\nD. Paling jauh Didi, paling dekat Bayu\nTranskripsi visual: -",
       "untruncatedTokenCount": 124,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 147.765,
+      "latencyMs": 105.912,
       "prediction": {
         "questionId": "4d27f58bb8fe872a49e1bd5b",
         "contentVersion": 2,
-        "contentHash": "ab8f543b22957422aa67cca38a01368a6dd18c5cf8f87917f6ff2d9450b6ca2a",
+        "contentHash": "159f2449707a156232b4e96cf29348125df8e28777ac4f702f441b1d1e69de5a",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -1100,6 +1121,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1120,16 +1142,16 @@
       "questionId": "3c69165f4b4cdf66760b5fe1",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:3c69165f4b4cdf66760b5fe1:content-v2",
       "questionVersionId": "3c69165f4b4cdf66760b5fe1:content-v2:blind-revalidation",
-      "contentHash": "ebbbe2dca8111a18604f135a0ca1c4118939df48aafe82d4720fb9633806a2de",
+      "contentHash": "13bf9699b5ce3db45ee035995e39e699dd5cbaf06e83b6696fe66d0d9d00df71",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Pengurangan Bilangan Pecahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Di daerah Nusa Tenggara Timur terdapat beberapa macam bahasa yang digunakan sehari-hari. Penggunaan bahasa Indonesia $\\frac{1}{8}$ bagian. Penggunaan bahasa daerah $\\frac{3}{10}$ bagian. Berapa bagian selisih penggunaan bahasa indonesia dan bahasa daerah dalam percakapan sehari-hari?\nPilihan: A. $\\frac{2}{40}$\nB. $\\frac{2}{18}$\nC. $\\frac{17}{40}$\nD. $\\frac{7}{40}$\nTranskripsi visual: -",
       "untruncatedTokenCount": 149,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 176.343,
+      "latencyMs": 123.723,
       "prediction": {
         "questionId": "3c69165f4b4cdf66760b5fe1",
         "contentVersion": 2,
-        "contentHash": "ebbbe2dca8111a18604f135a0ca1c4118939df48aafe82d4720fb9633806a2de",
+        "contentHash": "13bf9699b5ce3db45ee035995e39e699dd5cbaf06e83b6696fe66d0d9d00df71",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -1175,6 +1197,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1195,16 +1218,16 @@
       "questionId": "6111d90e8a172592ecbf7d25",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:6111d90e8a172592ecbf7d25:content-v2",
       "questionVersionId": "6111d90e8a172592ecbf7d25:content-v2:blind-revalidation",
-      "contentHash": "5ab4bbebc25abc1b2551393bc04e3baf8a33782ac6f1b160061aec592dfb5a0c",
+      "contentHash": "11b6e8c9675f159c0e0eff65bcf380820db8e0fdeef817929aecb481e7ab1845",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Konsep Rasio\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berikut daftar banyak pengunjung yang sedang antre di beberapa wahana di taman hiburan.\n\n|_Roller coaster_|24|\n|---|---|\n|Bianglala|….|\n|Komidi putar|18|\n|Rumah hantu|….|\n\nb. Berapakah banyak pengunjung yang antre di wahana bianglala, jika diketahui rasio pengunjung yang antre di wahana bianglala terhadap _roller coaster_ adalah 4 : 3 ?\nPilihan: A. 12 orang\nB. 32 orang\nC. 18 orang\nD. 6 orang\nTranskripsi visual: -",
       "untruncatedTokenCount": 139,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 168.246,
+      "latencyMs": 123.072,
       "prediction": {
         "questionId": "6111d90e8a172592ecbf7d25",
         "contentVersion": 2,
-        "contentHash": "5ab4bbebc25abc1b2551393bc04e3baf8a33782ac6f1b160061aec592dfb5a0c",
+        "contentHash": "11b6e8c9675f159c0e0eff65bcf380820db8e0fdeef817929aecb481e7ab1845",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -1250,6 +1273,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1270,16 +1294,16 @@
       "questionId": "7181f282bc4df58e74ef5120",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:7181f282bc4df58e74ef5120:content-v2",
       "questionVersionId": "7181f282bc4df58e74ef5120:content-v2:blind-revalidation",
-      "contentHash": "6865692ff9091dcd027214a0b1ef1325735d995330737b7948ff5e5e5c8ff081",
+      "contentHash": "e4f97c5e3a0438f1ed344a2d74181c87be5d55956333669fd20842291dab0987",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Konsep Rasio\nTipe soal: multiple_choice\nStimulus: -\nSoal: Banyu ingin mengundang teman-teman datang ke rumah untuk merayakan ulang tahunnya. Banyu menyiapkan 6 liter minuman untuk 15 orang teman yang datang di pagi hari. Di siang hari, akan datang teman sebanyak 10 orang, berapa liter minuman yang harus disiapkan?\nPilihan: A. 5 liter\nB. 6 liter\nC. 4 liter\nD. 9 liter\nTranskripsi visual: -",
       "untruncatedTokenCount": 97,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 139.141,
+      "latencyMs": 87.556,
       "prediction": {
         "questionId": "7181f282bc4df58e74ef5120",
         "contentVersion": 2,
-        "contentHash": "6865692ff9091dcd027214a0b1ef1325735d995330737b7948ff5e5e5c8ff081",
+        "contentHash": "e4f97c5e3a0438f1ed344a2d74181c87be5d55956333669fd20842291dab0987",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -1325,6 +1349,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1345,16 +1370,16 @@
       "questionId": "3f380f04eb5445f529fb5d38",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:3f380f04eb5445f529fb5d38:content-v2",
       "questionVersionId": "3f380f04eb5445f529fb5d38:content-v2:blind-revalidation",
-      "contentHash": "4ccf56b7604d2ce03f5e46955269fd7d3838abd5aafbf3eeec95c764574ef4fc",
+      "contentHash": "bd69e39b523fc8e609a2752c299984b84add35e4139b761bd2ba316e5ee6554b",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Konsep Kesamaan Rasio\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apabila kalian menanam 2 bibit tanaman diperlukan 5 gram pupuk. Berapa gram pupuk yang diperlukan jika akan menanam 11 bibit tanaman?\nPilihan: A. 27,5 gram\nB. 55 gram\nC. 14 gram\nD. 5,5 gram\nTranskripsi visual: -",
       "untruncatedTokenCount": 78,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 91.877,
+      "latencyMs": 72.156,
       "prediction": {
         "questionId": "3f380f04eb5445f529fb5d38",
         "contentVersion": 2,
-        "contentHash": "4ccf56b7604d2ce03f5e46955269fd7d3838abd5aafbf3eeec95c764574ef4fc",
+        "contentHash": "bd69e39b523fc8e609a2752c299984b84add35e4139b761bd2ba316e5ee6554b",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "knowing",
@@ -1400,6 +1425,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1420,16 +1446,16 @@
       "questionId": "d237c5faf543f6df53e2ce02",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:d237c5faf543f6df53e2ce02:content-v2",
       "questionVersionId": "d237c5faf543f6df53e2ce02:content-v2:blind-revalidation",
-      "contentHash": "06ed5ee55db595bbbb5b3e1c50142b8059c1dee11867a794c86b7bb29a0ce112",
+      "contentHash": "ad0d0f155a7c29486f16e05f65c3105128804bcf462767e4d1de0fa0cd1583d1",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Konsep Kesamaan Rasio\nTipe soal: multiple_choice\nStimulus: -\nSoal: Bahan membuat Wedang Jahe<br>untuk 4 liter air:<br>12 Jahe merah ukuran besar, geprek<br>8 batang serai, geprek<br>4 lemon, peras<br>20 cm kayu manis<br>20 cengkeh<br>250 gram gula aren<br>\n\nBerapa buah jahe merah yang diperlukan jika kalian akan membuat wedang jahe sebanyak 8 liter air?\nPilihan: A. 48 buah\nB. 16 buah\nC. 12 buah\nD. 24 buah\nTranskripsi visual: -",
       "untruncatedTokenCount": 131,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 157.58,
+      "latencyMs": 107.003,
       "prediction": {
         "questionId": "d237c5faf543f6df53e2ce02",
         "contentVersion": 2,
-        "contentHash": "06ed5ee55db595bbbb5b3e1c50142b8059c1dee11867a794c86b7bb29a0ce112",
+        "contentHash": "ad0d0f155a7c29486f16e05f65c3105128804bcf462767e4d1de0fa0cd1583d1",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -1475,6 +1501,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1495,16 +1522,16 @@
       "questionId": "5ac36027a356e7c09ecd5f9e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:5ac36027a356e7c09ecd5f9e:content-v2",
       "questionVersionId": "5ac36027a356e7c09ecd5f9e:content-v2:blind-revalidation",
-      "contentHash": "39c44177324fd7190804c2e83e2b844d98dbd30d6a3d4fea195ab8d1360397d7",
+      "contentHash": "578ad534bd9ba41aea0b5d68565193bf28291633dd16fdc23a181b6c88756a71",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Penerapan Rasio\nTipe soal: multiple_choice\nStimulus: -\nSoal: Lalu, Ayah menjelaskan kepada Tigor mengenai waktu panen beberapa tanaman obat seperti pada Tabel 2.7 berikut.\n\nTabel 2.7 Masa Panen Tanaman Obat Khas Daerah\n\n|Nama Tanaman Obat|Masa Panen|\n|---|---|\n|Kumis kucing|12 minggu|\n|Lengkuas|1,5 tahun|\n|Jahe merah|3 bulan|\n|Kencur|6 bulan|\n|Buah merah|3 tahun|\n|Kemangi|30 hari|\n\ne. Berapa kali kencur dan lengkuas dapat dipanen dalam satu kali masa panen buah merah?\nPilihan: A. Kencur 6 kali dan lengkuas 3 kali\nB. Kencur 6 kali dan lengkuas 2 kali\nC. Kencur 2 kali dan lengkuas 2 kali\nD. Kencur 2 kali dan lengkuas 6 kali\nTranskripsi visual: -",
       "untruncatedTokenCount": 176,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 194.792,
+      "latencyMs": 134.446,
       "prediction": {
         "questionId": "5ac36027a356e7c09ecd5f9e",
         "contentVersion": 2,
-        "contentHash": "39c44177324fd7190804c2e83e2b844d98dbd30d6a3d4fea195ab8d1360397d7",
+        "contentHash": "578ad534bd9ba41aea0b5d68565193bf28291633dd16fdc23a181b6c88756a71",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -1550,6 +1577,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1570,16 +1598,16 @@
       "questionId": "95f6663d851b5721a9dab809",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:95f6663d851b5721a9dab809:content-v2",
       "questionVersionId": "95f6663d851b5721a9dab809:content-v2:blind-revalidation",
-      "contentHash": "0808ee1e4ac29d55701632d0b226ebebfc64fbbd380d538da1f1d9036345f74f",
+      "contentHash": "a136fdfbde804fc73db7b85715534070bddec0e38b4daba9d84ccb21668389f9",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Penerapan Rasio\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seorang penulis berita dapat mengetik sebanyak 1.200 kata dalam waktu 1 jam.\n\nb. Berapa lama waktu yang diperlukan untuk menuliskan 3.000 kata?\nPilihan: A. 0,4 jam\nB. 2,5 jam\nC. 2 jam\nD. 25 menit\nTranskripsi visual: -",
       "untruncatedTokenCount": 83,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 113.947,
+      "latencyMs": 76.114,
       "prediction": {
         "questionId": "95f6663d851b5721a9dab809",
         "contentVersion": 2,
-        "contentHash": "0808ee1e4ac29d55701632d0b226ebebfc64fbbd380d538da1f1d9036345f74f",
+        "contentHash": "a136fdfbde804fc73db7b85715534070bddec0e38b4daba9d84ccb21668389f9",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -1625,6 +1653,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1645,26 +1674,26 @@
       "questionId": "3bf9372d09368f5209865eb3",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:3bf9372d09368f5209865eb3:content-v2",
       "questionVersionId": "3bf9372d09368f5209865eb3:content-v2:blind-revalidation",
-      "contentHash": "6bced3f48d162fa9e2e3215dcc4afc660f2ad0ce3b1c566d0a6f74900e3e0136",
-      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Mengonstruksi dan Mengurai\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan cara menyusun kubus untuk membentuk bangun berikut. Berapa kubus yang diperlukan?\nPilihan: A. 6 kubus\nB. 4 kubus\nC. 5 kubus\nD. 3 kubus\nTranskripsi visual: Gambar menunjukkan struktur isometrik yang terdiri dari kubus-kubus. Terlihat 4 kubus di permukaan: 1 kubus merah muda di atas, 1 kubus hijau di kiri atas, 1 kubus ungu di kiri bawah, dan 1 kubus kuning di kanan bawah. Struktur ini memerlukan satu kubus tambahan di bagian belakang bawah kubus merah muda untuk menopang kubus merah muda tersebut agar tidak melayang, sehingga totalnya adalah 5 kubus.",
-      "untruncatedTokenCount": 142,
+      "contentHash": "482e965c22b889e8b087832f6c478936cc9e3ab32d8ba789425e877faf56944e",
+      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Mengonstruksi dan Mengurai\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan cara menyusun kubus untuk membentuk bangun berikut. Berapa kubus yang diperlukan?\nPilihan: A. 6 kubus\nB. 4 kubus\nC. 5 kubus\nD. 3 kubus\nTranskripsi visual: Gambar menunjukkan susunan kubus isometrik. Terdapat 4 kubus yang terlihat jelas: satu kubus merah muda di atas, satu kubus hijau di kiri atas, satu kubus ungu di kiri bawah, dan satu kubus kuning di kanan bawah. Susunan ini membentuk struktur bertingkat di mana kubus merah muda berada di atas kubus lain yang tidak terlihat sepenuhnya, menunjukkan adanya kubus penyangga di bawahnya.",
+      "untruncatedTokenCount": 136,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 177.831,
+      "latencyMs": 109.244,
       "prediction": {
         "questionId": "3bf9372d09368f5209865eb3",
         "contentVersion": 2,
-        "contentHash": "6bced3f48d162fa9e2e3215dcc4afc660f2ad0ce3b1c566d0a6f74900e3e0136",
+        "contentHash": "482e965c22b889e8b087832f6c478936cc9e3ab32d8ba789425e877faf56944e",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 6.726906197451513e-05,
-            "applying": 0.9999327309380255,
-            "reasoning": 3.286335351521485e-44
+            "knowing": 0.00010467275726897424,
+            "applying": 0.9998953272427311,
+            "reasoning": 1.7348859092260639e-46
           },
-          "calibratedConfidence": 0.9999327309380255,
-          "normalizedEntropy": 0.0006494628839916161,
+          "calibratedConfidence": 0.9998953272427311,
+          "normalizedEntropy": 0.0009684569736083547,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1673,13 +1702,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.18007326395252318,
-            "conceptual": 0.7873010406348994,
-            "procedural": 0.03262569532335541,
-            "metacognitive": 8.922211980737176e-11
+            "factual": 0.19589260201652808,
+            "conceptual": 0.8001279022001077,
+            "procedural": 0.003979495716104088,
+            "metacognitive": 6.726023063481242e-11
           },
-          "calibratedConfidence": 0.7873010406348994,
-          "normalizedEntropy": 0.43905636132035614,
+          "calibratedConfidence": 0.8001279022001077,
+          "normalizedEntropy": 0.37492070728241583,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1688,18 +1717,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.677727088907865,
-            "Medium": 0.31726529338829595,
-            "Hard": 0.00500761770383905
+            "Easy": 0.7554936005758679,
+            "Medium": 0.24040323853339027,
+            "Hard": 0.00410316089074173
           },
-          "calibratedConfidence": 0.677727088907865,
-          "normalizedEntropy": 0.5956544358133453,
+          "calibratedConfidence": 0.7554936005758679,
+          "normalizedEntropy": 0.5252618038998687,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1709,7 +1739,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "88c97f2b9a2ca398a7611efbc939bc8f4abf1206ff71dbbbec9ad1869287dc8b",
+          "inputHash": "5b4e8ba4e5f989811518146ebb6c61cce7a72f22eff25d6ede6513ea2a21f649",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1720,26 +1750,26 @@
       "questionId": "8cc6d500c8e22d188c498acf",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:8cc6d500c8e22d188c498acf:content-v2",
       "questionVersionId": "8cc6d500c8e22d188c498acf:content-v2:blind-revalidation",
-      "contentHash": "13b51b4bf9f74fad6b547d0c88c529eb36c065c4f24877a1a880ecaefc0fb40a",
-      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Mengonstruksi dan Mengurai\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berapa balok yang dibutuhkan untuk menyusun bangun ruang berikut?\nPilihan: A. 4 balok\nB. 2 balok\nC. 3 balok\nD. 1 balok\nTranskripsi visual: Gambar menunjukkan sebuah bangun ruang berbentuk tumpukan vertikal yang terdiri dari tiga balok identik yang disusun ke atas, dengan garis pemisah horizontal yang jelas antara setiap balok.",
-      "untruncatedTokenCount": 90,
+      "contentHash": "3fb41942528a2363a3163e5421596f204c419081080eb4fc37ad07d45a7d872b",
+      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Mengonstruksi dan Mengurai\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berapa balok yang dibutuhkan untuk menyusun bangun ruang berikut?\nPilihan: A. 4 balok\nB. 2 balok\nC. 3 balok\nD. 1 balok\nTranskripsi visual: Gambar menunjukkan sebuah bangun ruang yang terdiri dari tiga balok identik yang disusun secara vertikal (bertumpuk) membentuk satu menara.",
+      "untruncatedTokenCount": 84,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 123.319,
+      "latencyMs": 77.792,
       "prediction": {
         "questionId": "8cc6d500c8e22d188c498acf",
         "contentVersion": 2,
-        "contentHash": "13b51b4bf9f74fad6b547d0c88c529eb36c065c4f24877a1a880ecaefc0fb40a",
+        "contentHash": "3fb41942528a2363a3163e5421596f204c419081080eb4fc37ad07d45a7d872b",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.2205232902820299,
-            "applying": 0.77947670971797,
-            "reasoning": 1.2644767050584322e-46
+            "knowing": 0.21799775666172033,
+            "applying": 0.7820022433382797,
+            "reasoning": 4.052447854785539e-47
           },
-          "calibratedConfidence": 0.77947670971797,
-          "normalizedEntropy": 0.48021443084086474,
+          "calibratedConfidence": 0.7820022433382797,
+          "normalizedEntropy": 0.47729493655925187,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1748,13 +1778,13 @@
         "knowledgeDimension": {
           "label": "factual",
           "probabilities": {
-            "factual": 0.6923022240998924,
-            "conceptual": 0.30046615750508776,
-            "procedural": 0.007231618357154046,
-            "metacognitive": 3.786583289856728e-11
+            "factual": 0.6471038424058866,
+            "conceptual": 0.34451623375201773,
+            "procedural": 0.008379923815753167,
+            "metacognitive": 2.6342362521309617e-11
           },
-          "calibratedConfidence": 0.6923022240998924,
-          "normalizedEntropy": 0.4699690735873168,
+          "calibratedConfidence": 0.6471038424058866,
+          "normalizedEntropy": 0.4968962124376563,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1763,18 +1793,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.8766154270934009,
-            "Medium": 0.12094343880418552,
-            "Hard": 0.002441134102413529
+            "Easy": 0.8821492096724045,
+            "Medium": 0.11580061204442918,
+            "Hard": 0.0020501782831661842
           },
-          "calibratedConfidence": 0.8766154270934009,
-          "normalizedEntropy": 0.3509952752400859,
+          "calibratedConfidence": 0.8821492096724045,
+          "normalizedEntropy": 0.3394822573864569,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1784,7 +1815,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "71a6638d57f995ac1658bedcf7b2f674c46a404cab74ad17ca33a6f54984aec3",
+          "inputHash": "3bf63dfbd264c90e971c2573f9180352771ded6670daa6a3502da71bf8c06fde",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1795,26 +1826,26 @@
       "questionId": "b56626ecf5289108fa7302f7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:b56626ecf5289108fa7302f7:content-v2",
       "questionVersionId": "b56626ecf5289108fa7302f7:content-v2:blind-revalidation",
-      "contentHash": "5eefefd96b99ecaf05fc00d75e88c2e4dd203a29d266092ddf477411004853f2",
-      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Visualisasi Spasial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berikut adalah sebuah dadu. Gambar berikut adalah dadu yang sama yang dilihat dari arah berbeda.\n\nJika mata dadu pada dua sisi yang berlawanan berjumlah 7, ada berapa mata dadu pada sisi yang kosong?\nPilihan: A. 3 mata dadu\nB. 4 mata dadu\nC. 1 mata dadu\nD. 2 mata dadu\nTranskripsi visual: Dua gambar dadu yang sama. Gambar 1 menunjukkan sisi dengan 6, 4, dan 5 mata dadu. Gambar 2 menunjukkan sisi dengan 6, 5, dan satu sisi kosong yang tidak terlihat di gambar 1. Aturan dadu standar: sisi berlawanan berjumlah 7.",
-      "untruncatedTokenCount": 140,
+      "contentHash": "b8c5e91fb5ab22ebf301672c5dbf50916b1296aea7665ffb569991072f34bfb9",
+      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Visualisasi Spasial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berikut adalah sebuah dadu. Gambar berikut adalah dadu yang sama yang dilihat dari arah berbeda.\n\nJika mata dadu pada dua sisi yang berlawanan berjumlah 7, ada berapa mata dadu pada sisi yang kosong?\nPilihan: A. 3 mata dadu\nB. 4 mata dadu\nC. 1 mata dadu\nD. 2 mata dadu\nTranskripsi visual: Dua gambar dadu ditampilkan. Gambar 1 menunjukkan sisi atas (6), sisi depan (4), dan sisi samping (5). Gambar 2 menunjukkan sisi atas (6), sisi depan (5), dan sisi samping (kosong). Aturan dadu standar: jumlah sisi berlawanan adalah 7.",
+      "untruncatedTokenCount": 150,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 166.012,
+      "latencyMs": 120.046,
       "prediction": {
         "questionId": "b56626ecf5289108fa7302f7",
         "contentVersion": 2,
-        "contentHash": "5eefefd96b99ecaf05fc00d75e88c2e4dd203a29d266092ddf477411004853f2",
+        "contentHash": "b8c5e91fb5ab22ebf301672c5dbf50916b1296aea7665ffb569991072f34bfb9",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 3.377282713887414e-05,
-            "applying": 0.9999662271728612,
-            "reasoning": 1.7778059401077489e-43
+            "knowing": 0.0002696588067394236,
+            "applying": 0.9997303411932605,
+            "reasoning": 2.236663826606335e-40
           },
-          "calibratedConfidence": 0.9999662271728612,
-          "normalizedEntropy": 0.0003472493057640598,
+          "calibratedConfidence": 0.9997303411932605,
+          "normalizedEntropy": 0.0022626487571954573,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1823,13 +1854,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.02570376239083601,
-            "conceptual": 0.969572286569978,
-            "procedural": 0.004723951000397492,
-            "metacognitive": 3.8788488681515246e-11
+            "factual": 0.004490097329204976,
+            "conceptual": 0.9927561348325568,
+            "procedural": 0.0027537677785113273,
+            "metacognitive": 5.972695353960921e-11
           },
-          "calibratedConfidence": 0.969572286569978,
-          "normalizedEntropy": 0.10774176710192694,
+          "calibratedConfidence": 0.9927561348325568,
+          "normalizedEntropy": 0.03442513256010183,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -1838,18 +1869,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.7243502129075947,
-            "Medium": 0.2707218153328813,
-            "Hard": 0.004927971759523967
+            "Easy": 0.629905216801176,
+            "Medium": 0.3637654177257272,
+            "Hard": 0.006329365473097027
           },
-          "calibratedConfidence": 0.7243502129075947,
-          "normalizedEntropy": 0.5584430904057768,
+          "calibratedConfidence": 0.629905216801176,
+          "normalizedEntropy": 0.6290048303816848,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1859,7 +1891,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "03b3777624a066cc97666e3ead9acadca2bea32bd67018ee6af8fe3db7ddd19c",
+          "inputHash": "fb9ca057ec1094712f8ef905c813f38aa3a8f5b9bc57b8b192abb2e5726da806",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1870,16 +1902,16 @@
       "questionId": "e81a665e38e1781b745677fd",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:e81a665e38e1781b745677fd:content-v2",
       "questionVersionId": "e81a665e38e1781b745677fd:content-v2:blind-revalidation",
-      "contentHash": "99fae968e625de5a26ff19443b55cea1748dec06e0abc4c1d1d810d02e8373b2",
+      "contentHash": "3e0fbcb41949a8b511d43acbdba9e4119e5f834bdcf47a80ec0c63ea69f2743e",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Lokasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2). Kubus ini tidak boleh diangkat, tetapi direbahkan ke salah satu sisi tegaknya. Panjangnya rusuk kubus sama dengan jarak antara garis-garis horizontal dan garis-garis vertikal pada sistem berpetak yang digunakan.\n\nBerapa kali kubus tersebut direbahkan untuk mencapai tujuannya?\nPilihan: A. 2 kali\nB. 3 kali\nC. 5 kali\nD. 4 kali\nTranskripsi visual: -",
       "untruncatedTokenCount": 121,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 142.623,
+      "latencyMs": 102.014,
       "prediction": {
         "questionId": "e81a665e38e1781b745677fd",
         "contentVersion": 2,
-        "contentHash": "99fae968e625de5a26ff19443b55cea1748dec06e0abc4c1d1d810d02e8373b2",
+        "contentHash": "3e0fbcb41949a8b511d43acbdba9e4119e5f834bdcf47a80ec0c63ea69f2743e",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -1925,6 +1957,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -1945,16 +1978,16 @@
       "questionId": "487c5870a0b95ed9a10da20f",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:487c5870a0b95ed9a10da20f:content-v2",
       "questionVersionId": "487c5870a0b95ed9a10da20f:content-v2:blind-revalidation",
-      "contentHash": "c7174b449e706d6b4b898882e14eeb3ea02c74e56fa3a320e5e428e262680aa4",
+      "contentHash": "78500c7626bae92958fe0af573eeafd52b7928b8714f3f22bdc9f2680324f26e",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Lokasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika diketahui titik awal dan titik akhir, dapat ditentukan jalur yang dapat ditempuh. Dengan sistem berpetak dapat ditentukan jarak horizontal/ mendatar dan jarak vertikal/menurun.\n\nTentukan jarak antara titik-titik berikut: dari (B,6) ke (D,3)\nPilihan: A. 2 langkah ke kanan dan 3 langkah ke bawah\nB. 3 langkah ke kanan dan 3 langkah ke bawah\nC. 2 langkah ke kiri dan 3 langkah ke atas\nD. 3 langkah ke kanan dan 2 langkah ke bawah\nTranskripsi visual: -",
       "untruncatedTokenCount": 128,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 146.692,
+      "latencyMs": 102.708,
       "prediction": {
         "questionId": "487c5870a0b95ed9a10da20f",
         "contentVersion": 2,
-        "contentHash": "c7174b449e706d6b4b898882e14eeb3ea02c74e56fa3a320e5e428e262680aa4",
+        "contentHash": "78500c7626bae92958fe0af573eeafd52b7928b8714f3f22bdc9f2680324f26e",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -2000,6 +2033,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2020,26 +2054,26 @@
       "questionId": "c5e424e9914591b1d5286ef0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:c5e424e9914591b1d5286ef0:content-v2",
       "questionVersionId": "c5e424e9914591b1d5286ef0:content-v2:blind-revalidation",
-      "contentHash": "6d6e6637c4983c26ea53fcbef10bd67f0ac0f70a1b5ffd681484320df7ed88d2",
-      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Pola\nTipe soal: multiple_choice\nStimulus: -\nSoal: Amati setiap pola berikut. Lanjutkan polanya dengan melingkari gambar berikutnya.\n\nAmati setiap pola berikut (baris b). Lanjutkan polanya dengan melingkari gambar berikutnya.\nPilihan: A. heksagon\nB. kupu-kupu\nC. bunga\nD. kelinci\nTranskripsi visual: Baris b menampilkan urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Pola berulang setiap tiga elemen: {kupu-kupu, kelinci, kelinci}.",
-      "untruncatedTokenCount": 131,
+      "contentHash": "2f7eb9c6b0216ef537f19eadffb024b53bc8175d300350f1c3b14aa56fe597f5",
+      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Pola\nTipe soal: multiple_choice\nStimulus: -\nSoal: Amati setiap pola berikut. Lanjutkan polanya dengan melingkari gambar berikutnya.\n\nAmati setiap pola berikut (baris b). Lanjutkan polanya dengan melingkari gambar berikutnya.\nPilihan: A. heksagon\nB. kupu-kupu\nC. bunga\nD. kelinci\nTranskripsi visual: Baris b menampilkan urutan gambar: kupu-kupu, kelinci, kelinci, kupu-kupu, kelinci, kelinci, kupu-kupu. Pola ini berulang setiap tiga elemen: {kupu-kupu, kelinci, kelinci}. Setelah kupu-kupu terakhir, elemen berikutnya dalam urutan adalah kelinci.",
+      "untruncatedTokenCount": 147,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 147.216,
+      "latencyMs": 115.029,
       "prediction": {
         "questionId": "c5e424e9914591b1d5286ef0",
         "contentVersion": 2,
-        "contentHash": "6d6e6637c4983c26ea53fcbef10bd67f0ac0f70a1b5ffd681484320df7ed88d2",
+        "contentHash": "2f7eb9c6b0216ef537f19eadffb024b53bc8175d300350f1c3b14aa56fe597f5",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.00015213744187681392,
-            "applying": 0.9998478625581233,
-            "reasoning": 2.8458820504478425e-47
+            "knowing": 2.821512968232774e-06,
+            "applying": 0.9999971784870318,
+            "reasoning": 6.961741918107824e-45
           },
-          "calibratedConfidence": 0.9998478625581233,
-          "normalizedEntropy": 0.0013558235999458338,
+          "calibratedConfidence": 0.9999971784870318,
+          "normalizedEntropy": 3.538597888551747e-05,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2048,13 +2082,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.014402807939487648,
-            "conceptual": 0.9836003735530154,
-            "procedural": 0.001996818474284128,
-            "metacognitive": 3.3212722796663104e-11
+            "factual": 0.004045092920769136,
+            "conceptual": 0.9940833275587997,
+            "procedural": 0.0018715794604373156,
+            "metacognitive": 5.99938098055765e-11
           },
-          "calibratedConfidence": 0.9836003735530154,
-          "normalizedEntropy": 0.0647407410177913,
+          "calibratedConfidence": 0.9940833275587997,
+          "normalizedEntropy": 0.028813470235762553,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2063,18 +2097,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.7603599354565045,
-            "Medium": 0.2339018293233017,
-            "Hard": 0.005738235220193787
+            "Easy": 0.6755649713334638,
+            "Medium": 0.3158354626019114,
+            "Hard": 0.008599566064624855
           },
-          "calibratedConfidence": 0.7603599354565045,
-          "normalizedEntropy": 0.5258895086546242,
+          "calibratedConfidence": 0.6755649713334638,
+          "normalizedEntropy": 0.6097433904035375,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2084,7 +2119,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "08aa6f2422081f045db05f23c0285b599e70647cbb7dfa8ab5f932bfd59ba48e",
+          "inputHash": "3b806033d6fd98f9043c2c7aa336c34c8b2a579f0d3d65fd170b5bc8d4ee6527",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2095,26 +2130,26 @@
       "questionId": "8fe432cf4c0a120aab6def21",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:8fe432cf4c0a120aab6def21:content-v2",
       "questionVersionId": "8fe432cf4c0a120aab6def21:content-v2:blind-revalidation",
-      "contentHash": "857f1f893f4b1eb7f05574452e9d494a71459326bf306010661691beee6a8b4f",
-      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Komposisi dan Dekomposisi Bangun Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: |**No**|**Nama Bangun Datar**|**Gambar**|**Banyaknya**|\n|---|---|---|---|\n|1<br>2|Segitiga<br>...|...|...<br>...|\n\nLakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :\nPilihan: A. Segitiga 5, trapesium 1, persegi 1\nB. Segitiga 6, persegi 1\nC. Segitiga 5, jajargenjang 1, persegi 1\nD. Segitiga 4, jajargenjang 1, persegi 1\nTranskripsi visual: Gambar menunjukkan sebuah perahu yang disusun dari 7 keping tangram: 1 segitiga biru besar, 1 segitiga merah besar, 1 segitiga hijau tua sedang, 1 persegi hijau muda, 1 segitiga oranye kecil, 1 jajargenjang kuning, dan 1 segitiga merah muda.",
-      "untruncatedTokenCount": 220,
+      "contentHash": "4a34d54f21bcc01e61fe7be3c6e5db05fdfe0ee4b55e14553f57ae3389880de7",
+      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Komposisi dan Dekomposisi Bangun Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: |**No**|**Nama Bangun Datar**|**Gambar**|**Banyaknya**|\n|---|---|---|---|\n|1<br>2|Segitiga<br>...|...|...<br>...|\n\nLakukan dekomposisi berbagai macam bangun datar yang ada pada gambar berikut :\nPilihan: A. Segitiga 5, trapesium 1, persegi 1\nB. Segitiga 6, persegi 1\nC. Segitiga 5, jajargenjang 1, persegi 1\nD. Segitiga 4, jajargenjang 1, persegi 1\nTranskripsi visual: Gambar menunjukkan sebuah perahu yang tersusun dari 7 keping bangun datar berwarna: 1 segitiga biru besar, 1 segitiga merah besar, 1 segitiga hijau tua, 1 persegi hijau muda, 1 segitiga oranye, 1 jajargenjang kuning, dan 1 segitiga merah muda. Total kepingan: 5 segitiga, 1 persegi, 1 jajargenjang.",
+      "untruncatedTokenCount": 235,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 210.678,
+      "latencyMs": 172.81,
       "prediction": {
         "questionId": "8fe432cf4c0a120aab6def21",
         "contentVersion": 2,
-        "contentHash": "857f1f893f4b1eb7f05574452e9d494a71459326bf306010661691beee6a8b4f",
+        "contentHash": "4a34d54f21bcc01e61fe7be3c6e5db05fdfe0ee4b55e14553f57ae3389880de7",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 0.11436456580087226,
-            "applying": 0.8856354341991277,
-            "reasoning": 3.811619281593367e-34
+            "knowing": 0.048608762049038724,
+            "applying": 0.9513912379509614,
+            "reasoning": 2.1321015430302864e-34
           },
-          "calibratedConfidence": 0.8856354341991277,
-          "normalizedEntropy": 0.323630395264132,
+          "calibratedConfidence": 0.9513912379509614,
+          "normalizedEntropy": 0.17694893312093118,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2123,13 +2158,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.01670897482898949,
-            "conceptual": 0.9687739721675657,
-            "procedural": 0.014517052076140657,
-            "metacognitive": 9.273043753788003e-10
+            "factual": 0.02900852675335762,
+            "conceptual": 0.9543274989356151,
+            "procedural": 0.016663972513655,
+            "metacognitive": 1.7973722017097476e-09
           },
-          "calibratedConfidence": 0.9687739721675657,
-          "normalizedEntropy": 0.11580925965648728,
+          "calibratedConfidence": 0.9543274989356151,
+          "normalizedEntropy": 0.15547853829214675,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2138,18 +2173,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.6799146275797742,
-            "Medium": 0.3108437966665928,
-            "Hard": 0.009241575753633114
+            "Easy": 0.6900713930468634,
+            "Medium": 0.3001223219664135,
+            "Hard": 0.009806284986723039
           },
-          "calibratedConfidence": 0.6799146275797742,
-          "normalizedEntropy": 0.6087688018465226,
+          "calibratedConfidence": 0.6900713930468634,
+          "normalizedEntropy": 0.6030855890638228,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2159,7 +2195,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "1ec80d61f5dde4cec76ee6396cb23f74923544943b86fff5ed0cc55ccaa54576",
+          "inputHash": "48fb0dd2392a81b98aac59e30d2e9d5bc3c3ca326655ec702f0462d5eb29158d",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2170,16 +2206,16 @@
       "questionId": "4857ed456bf6383ee84ff085",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:4857ed456bf6383ee84ff085:content-v2",
       "questionVersionId": "4857ed456bf6383ee84ff085:content-v2:blind-revalidation",
-      "contentHash": "d03ca352e44c3e5918af76493437b9721862a2cc7a9967c37f2017ecfa8d0700",
+      "contentHash": "f0f80cc02903011b0ae32ba57f8eeb26e59f415ad61b0c44a76214988cdf7dc0",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Membandingkan Ciri-Ciri Segi Empat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Kalau sembarang bentuk belah ketupat boleh disebut jajargenjang, apakah sembarang jajargenjang boleh disebut belah ketupat?\nPilihan: A. Tidak, karena jajargenjang tidak harus memiliki empat sisi yang sama panjang\nB. Tidak, karena jajargenjang tidak memiliki sisi-sisi yang sejajar\nC. Ya, karena sisi-sisi yang berhadapan pada jajargenjang sejajar\nD. Ya, karena belah ketupat boleh disebut jajargenjang, maka sebaliknya juga boleh\nTranskripsi visual: -",
       "untruncatedTokenCount": 128,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 125.554,
+      "latencyMs": 100.964,
       "prediction": {
         "questionId": "4857ed456bf6383ee84ff085",
         "contentVersion": 2,
-        "contentHash": "d03ca352e44c3e5918af76493437b9721862a2cc7a9967c37f2017ecfa8d0700",
+        "contentHash": "f0f80cc02903011b0ae32ba57f8eeb26e59f415ad61b0c44a76214988cdf7dc0",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -2225,6 +2261,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2245,16 +2282,16 @@
       "questionId": "4d0f79031c5c62d5b3028075",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:4d0f79031c5c62d5b3028075:content-v2",
       "questionVersionId": "4d0f79031c5c62d5b3028075:content-v2:blind-revalidation",
-      "contentHash": "08aed1707c074c33e7f686fe4756140be723b9bd5cc516012777116401316525",
+      "contentHash": "ad9a2142e2d12e9b4093538a268b140b5cdc1567b65493e04b5778082571c3bf",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Skala Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Buatlah kelompok (3–4 siswa), kemudian tentukan apakah kelompok kalian setuju atau tidak setuju dengan setiap pernyataan berikut. Jika ada perbedaan pendapat, coba diskusikan!\n\nApakah kalian setuju atau tidak setuju dengan pernyataan berikut: \"Saat melempar koin, lebih mudah untuk mendapatkan sisi gambar dibandingkan sisi angka.\"?\nPilihan: A. Setuju, karena orang biasanya melempar dengan sisi gambar menghadap ke atas\nB. Setuju, karena sisi gambar koin lebih berat sehingga lebih sering berada di atas\nC. Tidak setuju, karena sisi angka jauh lebih sering muncul dibandingkan sisi gambar\nD. Tidak setuju, karena kedua sisi koin memiliki peluang yang sama untuk muncul\nTranskripsi visual: -",
       "untruncatedTokenCount": 152,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 143.136,
+      "latencyMs": 119.184,
       "prediction": {
         "questionId": "4d0f79031c5c62d5b3028075",
         "contentVersion": 2,
-        "contentHash": "08aed1707c074c33e7f686fe4756140be723b9bd5cc516012777116401316525",
+        "contentHash": "ad9a2142e2d12e9b4093538a268b140b5cdc1567b65493e04b5778082571c3bf",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -2300,6 +2337,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2320,16 +2358,16 @@
       "questionId": "ae0b26d791fb6f944ce6405b",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:ae0b26d791fb6f944ce6405b:content-v2",
       "questionVersionId": "ae0b26d791fb6f944ce6405b:content-v2:blind-revalidation",
-      "contentHash": "54c7b6384600857a440da960a548d2cf0ccb5dcae8bd9f95f8c3f5e67178928f",
+      "contentHash": "07b9b076eef1517a061c74b273e8587fb852f98b701ac4012bcf34ff52f59b13",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Skala Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Buatlah skala peluang untuk beberapa konteks berikut. ... d. Hasil melempar dadu 8 sisi dengan masing-masing sisi sebagai berikut: 5, 5, 5, 5, 5, 5, 5, 5.\n\nBerdasarkan sisi-sisi dadu tersebut (seluruh 8 sisi bertuliskan angka 5), termasuk kategori apa peluang munculnya angka 2 pada skala peluang?\nPilihan: A. Mungkin\nB. Tidak mungkin\nC. Kurang mungkin\nD. Pasti\nTranskripsi visual: -",
       "untruncatedTokenCount": 116,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 111.439,
+      "latencyMs": 94.3,
       "prediction": {
         "questionId": "ae0b26d791fb6f944ce6405b",
         "contentVersion": 2,
-        "contentHash": "54c7b6384600857a440da960a548d2cf0ccb5dcae8bd9f95f8c3f5e67178928f",
+        "contentHash": "07b9b076eef1517a061c74b273e8587fb852f98b701ac4012bcf34ff52f59b13",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -2375,6 +2413,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2395,16 +2434,16 @@
       "questionId": "b0bcef02731ce1c1ec1f8a92",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:b0bcef02731ce1c1ec1f8a92:content-v2",
       "questionVersionId": "b0bcef02731ce1c1ec1f8a92:content-v2:blind-revalidation",
-      "contentHash": "ec932ad1e570d969994ace585eea370641832ffcdda952c3077653b75975ba5d",
+      "contentHash": "561de60b7624edb24024b811d66001b2394686dc8fdaa49c3fe6e9d25e086ceb",
       "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Membandingkan Peluang Kejadian\nTipe soal: multiple_choice\nStimulus: -\nSoal: - c. (Soal tantangan) Pilihan dadu\n\n|Pilihan 1|Pilihan 2|\n|---|---|\n|Dadu kubus dengan sisi sebagai|Dadu piramida dengan sisi|\n|berikut:|sebagai berikut:|\n|1, 2, 3, 4, 5, 6|1, 2, 3, 4|\n\nPilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan. Syarat menangnya adalah mendapatkan angka 3. Jelaskan alasan atas pilihan kalian!\nPilihan: A. Pilihan 2 (dadu piramida)\nB. Keduanya sama besar karena sama-sama punya satu angka 3\nC. Tidak bisa ditentukan karena bentuk dadunya berbeda\nD. Pilihan 1 (dadu kubus)\nTranskripsi visual: -",
       "untruncatedTokenCount": 170,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 153.811,
+      "latencyMs": 129.33,
       "prediction": {
         "questionId": "b0bcef02731ce1c1ec1f8a92",
         "contentVersion": 2,
-        "contentHash": "ec932ad1e570d969994ace585eea370641832ffcdda952c3077653b75975ba5d",
+        "contentHash": "561de60b7624edb24024b811d66001b2394686dc8fdaa49c3fe6e9d25e086ceb",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
@@ -2450,6 +2489,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2470,26 +2510,26 @@
       "questionId": "a09023c97aaa8c1be58c80f9",
       "diagnosticInferenceQuestionId": "diagnostic:kelas6:a09023c97aaa8c1be58c80f9:content-v2",
       "questionVersionId": "a09023c97aaa8c1be58c80f9:content-v2:blind-revalidation",
-      "contentHash": "52db94cfbe74e14deeee451bf320ce84dc20d97c06e317f24e863acb303822a6",
-      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Membandingkan Peluang Kejadian\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk melakukan pemilihan ketua kelas, kelas Dhien melakukan undian menggunakan roda putar seperti di gambar (bertuliskan nama Reimon, Abdillah, Maryam, Tuti).\n\nDengan roda putar yang dibuat, tentukan siapa yang memiliki peluang menang paling besar?\nPilihan: A. Tuti\nB. Reimon\nC. Maryam\nD. Abdillah\nTranskripsi visual: Sebuah roda putar dibagi menjadi empat juring dengan ukuran berbeda. Juring berwarna biru muda bertuliskan 'Maryam' menempati area terbesar (lebih dari setengah lingkaran). Juring berwarna oranye bertuliskan 'Abdillah' menempati area yang cukup besar. Juring berwarna hijau bertuliskan 'Reimon' dan juring berwarna oranye kemerahan bertuliskan 'Tuti' menempati area yang lebih kecil.",
-      "untruncatedTokenCount": 171,
+      "contentHash": "e867523b5e2344fa9393d6f2523a15e072dfa931dff2443ce63db41cff9e8f8c",
+      "serializedInput": "Kelas: 6\nTopik: Matematika SD Kelas 6\nSubtopik: Membandingkan Peluang Kejadian\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk melakukan pemilihan ketua kelas, kelas Dhien melakukan undian menggunakan roda putar seperti di gambar (bertuliskan nama Reimon, Abdillah, Maryam, Tuti).\n\nDengan roda putar yang dibuat, tentukan siapa yang memiliki peluang menang paling besar?\nPilihan: A. Tuti\nB. Reimon\nC. Maryam\nD. Abdillah\nTranskripsi visual: Sebuah roda putar berbentuk lingkaran dibagi menjadi empat juring dengan ukuran yang berbeda-beda. Juring-juring tersebut diberi label nama: Reimon (warna hijau), Abdillah (warna oranye muda), Tuti (warna oranye tua), dan Maryam (warna biru). Secara visual, juring berwarna biru yang bertuliskan Maryam memiliki luas yang paling besar dibandingkan dengan ketiga juring lainnya.",
+      "untruncatedTokenCount": 178,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 150.347,
+      "latencyMs": 136.35,
       "prediction": {
         "questionId": "a09023c97aaa8c1be58c80f9",
         "contentVersion": 2,
-        "contentHash": "52db94cfbe74e14deeee451bf320ce84dc20d97c06e317f24e863acb303822a6",
+        "contentHash": "e867523b5e2344fa9393d6f2523a15e072dfa931dff2443ce63db41cff9e8f8c",
         "scopeStatus": "in_scope",
         "mathCognitiveDomain": {
           "label": "applying",
           "probabilities": {
-            "knowing": 1.0851401535042466e-11,
-            "applying": 0.9999999999891487,
-            "reasoning": 4.363534912724161e-40
+            "knowing": 6.95424925133662e-11,
+            "applying": 0.9999999999304574,
+            "reasoning": 3.2734889255697944e-44
           },
-          "calibratedConfidence": 0.9999999999891487,
-          "normalizedEntropy": 2.592485934285122e-10,
+          "calibratedConfidence": 0.9999999999304574,
+          "normalizedEntropy": 1.5438363834343854e-09,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2498,13 +2538,13 @@
         "knowledgeDimension": {
           "label": "conceptual",
           "probabilities": {
-            "factual": 0.0017711280609342477,
-            "conceptual": 0.9949109973028697,
-            "procedural": 0.0033178743240022623,
-            "metacognitive": 3.1219371503656013e-10
+            "factual": 0.009165903710197,
+            "conceptual": 0.9888514611613153,
+            "procedural": 0.00198263509047394,
+            "metacognitive": 3.8013749926697936e-11
           },
-          "calibratedConfidence": 0.9949109973028697,
-          "normalizedEntropy": 0.025418849666140376,
+          "calibratedConfidence": 0.9888514611613153,
+          "normalizedEntropy": 0.04792171210789155,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
@@ -2513,18 +2553,19 @@
         "intendedDifficulty": {
           "label": "Easy",
           "probabilities": {
-            "Easy": 0.5558983648399204,
-            "Medium": 0.4282192115072352,
-            "Hard": 0.0158824236528444
+            "Easy": 0.7106061942512468,
+            "Medium": 0.2816449835173328,
+            "Hard": 0.007748822231420297
           },
-          "calibratedConfidence": 0.5558983648399204,
-          "normalizedEntropy": 0.6875779954791965,
+          "calibratedConfidence": 0.7106061942512468,
+          "normalizedEntropy": 0.5800998375474771,
           "action": "review",
           "reasons": [
             "selective_threshold_gate_not_met"
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [],
         "trace": {
           "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
@@ -2534,7 +2575,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "c6a036a519985e5f6ea866166747e8878da53270086ca3028107a95aaec1e3c6",
+          "inputHash": "f87d57cff48f0dcc035199fc5736c1d0be533d6101ce5f5c4bc4ea789110ce30",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
