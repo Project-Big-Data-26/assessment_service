@@ -1,0 +1,606 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "D",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Hard subbab D bermakna hanya lewat penalaran sifat perkalian matriks (klaim, penyangkal, parameter, pangkat, perancangan, pengelompokan). Setelah easy dan medium memakai 40 soal dan acuan siswa/pretest habis, bahan penalaran orisinal yang tidak nyaris kembar hanya cukup untuk sekitar belasan soal, bukan 20.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "diperoleh dengan cara mengalikan elemen baris ke- i pada matriks A terhadap elemen kolom ke- j pada matriks B , kemudian hasilnya ditambahkan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "klaim hasil kali nol",
+      "alasan_level": "mengevaluasi klaim AB = O berarti A = O atau B = O dengan menghitung AB dan BA lalu memeriksa tiap pernyataan",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyatakan bahwa jika $AB = O$ maka $A = O$ atau $B = O$. Diketahui $A = \\begin{pmatrix}2 & 4 \\\\ 1 & 2\\end{pmatrix}$ dan $B = \\begin{pmatrix}6 & -2 \\\\ -3 & 1\\end{pmatrix}$. Pernyataan yang benar tentang $A$ dan $B$ adalah ....",
+      "jawaban_benar": "$AB = O$ padahal $A \\neq O$ dan $B \\neq O$, tetapi $BA \\neq O$",
+      "alasan_benar": "AB dihitung nol semua, sedangkan BA memuat elemen tak nol",
+      "distraktor": [
+        {
+          "teks": "$AB = O$, $A \\neq O$, $B \\neq O$, dan $BA = O$",
+          "alasan": "mengira BA ikut nol karena AB nol (menganggap komutatif)"
+        },
+        {
+          "teks": "$B = O$ karena semua elemen $AB$ bernilai nol",
+          "alasan": "memakai sifat bilangan real pada matriks"
+        },
+        {
+          "teks": "$AB \\neq O$ karena $A \\neq O$ dan $B \\neq O$",
+          "alasan": "menganggap hasil kali matriks tak nol pasti tak nol"
+        }
+      ],
+      "pembahasan": "$AB = \\begin{pmatrix}0 & 0 \\\\ 0 & 0\\end{pmatrix} = O$ dan $BA = \\begin{pmatrix}10 & 20 \\\\ -5 & -10\\end{pmatrix} \\neq O$. Jadi $A \\neq O$, $B \\neq O$ namun $AB = O$: klaim siswa tidak berlaku pada matriks.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "diperoleh dengan cara mengalikan elemen baris ke- i pada matriks A terhadap elemen kolom ke- j pada matriks B , kemudian hasilnya ditambahkan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal pencoretan matriks",
+      "alasan_level": "mengevaluasi klaim AB = AC berarti B = C dengan menghitung AB, AC, BA, CA pada contoh konkret",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyimpulkan bahwa $AB = AC$ berarti $B = C$ karena $A$ boleh dicoret. Diketahui $A = \\begin{pmatrix}1 & 2 \\\\ 2 & 4\\end{pmatrix}$, $B = \\begin{pmatrix}3 & 6 \\\\ 3 & -1\\end{pmatrix}$, dan $C = \\begin{pmatrix}1 & 0 \\\\ 4 & 2\\end{pmatrix}$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$AB = AC$ walaupun $B \\neq C$",
+      "alasan_benar": "AB dan AC dihitung sama, sedangkan B dan C berbeda",
+      "distraktor": [
+        {
+          "teks": "$AB \\neq AC$, sehingga $B \\neq C$",
+          "alasan": "salah menghitung AB atau AC"
+        },
+        {
+          "teks": "$AB = AC$ dan $B = C$",
+          "alasan": "menganggap B = C karena AB = AC"
+        },
+        {
+          "teks": "$BA = CA$, sehingga $B = C$",
+          "alasan": "mengira BA = CA; padahal hasil BA dan CA berbeda"
+        }
+      ],
+      "pembahasan": "$AB = AC = \\begin{pmatrix}9 & 4 \\\\ 18 & 8\\end{pmatrix}$, tetapi $B \\neq C$. Matriks $BA = \\begin{pmatrix}15 & 30 \\\\ 1 & 2\\end{pmatrix}$ dan $CA = \\begin{pmatrix}1 & 2 \\\\ 8 & 16\\end{pmatrix}$ berbeda. Jadi pencoretan $A$ tidak berlaku.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat distributif: A ( B ± C ) = AB ± AC atau ( A ± B ) C = AC ± BC."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "selisih ekspresi tidak komutatif",
+      "alasan_level": "menjabarkan (A-B)^2 dengan distributif tanpa komutatif lalu menghitung selisihnya dengan bentuk A^2-2AB+B^2",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}2 & 1 \\\\ 3 & 4\\end{pmatrix}$ dan $B = \\begin{pmatrix}1 & 5 \\\\ 2 & 3\\end{pmatrix}$. Seorang siswa menyatakan $(A-B)^2 = A^2 - 2AB + B^2$. Matriks $(A-B)^2 - (A^2 - 2AB + B^2)$ sebenarnya sama dengan ....",
+      "jawaban_benar": "$\\begin{pmatrix}-13 & -8 \\\\ -2 & 13\\end{pmatrix}$",
+      "alasan_benar": "$(A-B)^2 = A^2 - AB - BA + B^2$, sehingga selisihnya $AB - BA$",
+      "distraktor": [
+        {
+          "teks": "$O$",
+          "alasan": "menganggap $AB = BA$ sehingga selisih nol"
+        },
+        {
+          "teks": "$\\begin{pmatrix}13 & 8 \\\\ 2 & -13\\end{pmatrix}$",
+          "alasan": "tertukar tanda: $BA - AB$"
+        },
+        {
+          "teks": "$\\begin{pmatrix}21 & 34 \\\\ 24 & 41\\end{pmatrix}$",
+          "alasan": "salah tanda pada $-2AB$ sehingga menjadi $AB + BA$"
+        }
+      ],
+      "pembahasan": "$(A-B)^2 = A^2 - AB - BA + B^2$. Selisih dengan $A^2 - 2AB + B^2$ adalah $AB - BA = \\begin{pmatrix}4 & 13 \\\\ 11 & 27\\end{pmatrix} - \\begin{pmatrix}17 & 21 \\\\ 13 & 14\\end{pmatrix} = \\begin{pmatrix}-13 & -8 \\\\ -2 & 13\\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "diperoleh dengan cara mengalikan elemen baris ke- i pada matriks A terhadap elemen kolom ke- j pada matriks B , kemudian hasilnya ditambahkan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter syarat komutatif",
+      "alasan_level": "menyamakan elemen AB dan BA yang memuat parameter, lalu memeriksa kekonsistenan dua persamaan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}2 & 5 \\\\ 3 & x\\end{pmatrix}$ dan $B = \\begin{pmatrix}7 & 10 \\\\ 6 & 9\\end{pmatrix}$. Nilai $x$ yang membuat $AB = BA$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "elemen baris 1 kolom 2: $65 = 35 + 10x$ sehingga $x = 3$, dan elemen baris 2 kolom 1: $21 + 6x = 39$ juga memberi $x = 3$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "salah mengurangi $65 - 35 = 40$ sehingga $x = 4$"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "mengambil nilai elemen $a_{12}$ sebagai $x$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "membagi $39 - 21 = 18$ dengan 3, bukan dengan 6"
+        }
+      ],
+      "pembahasan": "$AB = \\begin{pmatrix}44 & 65 \\\\ 21+6x & 30+9x\\end{pmatrix}$ dan $BA = \\begin{pmatrix}44 & 35+10x \\\\ 39 & 30+9x\\end{pmatrix}$. Dari $65 = 35 + 10x$ diperoleh $x = 3$ dan dari $21 + 6x = 39$ juga $x = 3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat asosiatif: (AB) C = A (BC)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pola pangkat matriks segitiga",
+      "alasan_level": "mencari pola A^2, A^3 lalu menggeneralisasi ke A^12; kesalahan indeks pola jadi jebakan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}1 & 7 \\\\ 0 & 1\\end{pmatrix}$. Elemen baris 1 kolom 2 dari $A^{12}$ adalah ....",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "$A^n = \\begin{pmatrix}1 & 7n \\\\ 0 & 1\\end{pmatrix}$, maka $7 \\times 12 = 84$",
+      "distraktor": [
+        {
+          "teks": "$77$",
+          "alasan": "memakai $n-1 = 11$ sebagai pengali"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "lupa mengalikan dengan 7"
+        },
+        {
+          "teks": "$19$",
+          "alasan": "menjumlahkan $7 + 12$ bukan mengalikan"
+        }
+      ],
+      "pembahasan": "$A^2 = \\begin{pmatrix}1 & 14 \\\\ 0 & 1\\end{pmatrix}$, $A^3 = \\begin{pmatrix}1 & 21 \\\\ 0 & 1\\end{pmatrix}$, sehingga $A^n = \\begin{pmatrix}1 & 7n \\\\ 0 & 1\\end{pmatrix}$ dan $A^{12}$ berelemen $84$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat asosiatif: (AB) C = A (BC)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "pola pangkat matriks periodik",
+      "alasan_level": "menemukan A^2 = -I dan A^4 = I lalu memakai sisa pembagian 2026 oleh 4",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}0 & 1 \\\\ -1 & 0\\end{pmatrix}$. Jumlah semua elemen matriks $A^{2026}$ adalah ....",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "$A^2 = -I$, $A^4 = I$, dan $2026 = 4 \\times 506 + 2$ sehingga $A^{2026} = -I$",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "mengira $A^{2026} = I$ karena genap"
+        },
+        {
+          "teks": "$0$",
+          "alasan": "memakai jumlah elemen $A$ sendiri"
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "hanya menjumlahkan satu elemen diagonal dari $-I$"
+        }
+      ],
+      "pembahasan": "$A^2 = \\begin{pmatrix}-1 & 0 \\\\ 0 & -1\\end{pmatrix} = -I$, $A^4 = I$. Karena $2026 = 4 \\times 506 + 2$, $A^{2026} = A^2 = -I$ dengan jumlah elemen $-2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "bukan matriks nol dan AA = A"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter matriks idempoten",
+      "alasan_level": "menjabarkan AA = A bermuatan parameter dan memilih nilai yang memenuhi semua elemen",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A = \\begin{pmatrix}3 & -6 \\\\ 1 & x\\end{pmatrix}$ memenuhi $AA = A$. Nilai $x$ adalah ....",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "$AA$ elemen baris 2 kolom 1 adalah $3 + x = 1$ sehingga $x = -2$; elemen lain terpenuhi",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "salah tanda saat memindahkan ruas"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "mengambil elemen $a_{11}$ sebagai $x$"
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "menetapkan $3 + x = 0$ (bukan $=1$)"
+        }
+      ],
+      "pembahasan": "$AA = \\begin{pmatrix}3 & -18-6x \\\\ 3+x & -6+x^2\\end{pmatrix}$. Samakan dengan $A$: $3 + x = 1$ memberi $x = -2$; cek $-18-6x = -6$ dan $-6 + x^2 = x$ juga benar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "bukan matriks nol dan AA = A"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter pangkat dua matriks nol",
+      "alasan_level": "menjabarkan AA = O bermuatan parameter, memeriksa kekonsistenan tiap elemen",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A = \\begin{pmatrix}3 & -9 \\\\ 1 & x\\end{pmatrix}$ memenuhi $AA = O$. Nilai $x$ adalah ....",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "$AA$ elemen baris 2 kolom 1: $3 + x = 0$ sehingga $x = -3$; elemen lain terpenuhi",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "salah tanda saat menyelesaikan $3 + x = 0$"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "mengambil nilai dari $x^2 = 9$ tanpa memeriksa semua elemen"
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "mengira elemen $a_{21}$ menjadi nilai $x$ dengan tanda negatif"
+        }
+      ],
+      "pembahasan": "$AA = \\begin{pmatrix}0 & -27-9x \\\\ 3+x & -9+x^2\\end{pmatrix} = O$. Dari $3 + x = 0$ diperoleh $x = -3$; cek $-27 - 9x = 0$ dan $-9 + x^2 = 0$ juga benar. Nilai $x=3$ gagal pada $3+x=0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "diperoleh dengan cara mengalikan elemen baris ke- i pada matriks A terhadap elemen kolom ke- j pada matriks B , kemudian hasilnya ditambahkan"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang matriks pembuat hasil kali nol",
+      "alasan_level": "mencari matriks tak nol B dari syarat AB = O dengan menguji tiap kolom kandidat terhadap baris A",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}2 & 6 \\\\ 1 & 3\\end{pmatrix}$. Matriks $B$ yang bukan matriks nol dan memenuhi $AB = O$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix}3 & -6 \\\\ -1 & 2\\end{pmatrix}$",
+      "alasan_benar": "tiap kolom $B$ harus kelipatan $(3, -1)^T$ agar $2a + 6b = 0$ dan $a + 3b = 0$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix}-1 & 2 \\\\ 3 & -6\\end{pmatrix}$",
+          "alasan": "baris-baris B dibalik: kolom $(-1,3)$ tidak memenuhi"
+        },
+        {
+          "teks": "$\\begin{pmatrix}1 & 3 \\\\ -2 & -6\\end{pmatrix}$",
+          "alasan": "memakai kolom yang sejajar baris A, bukan yang tegak lurus"
+        },
+        {
+          "teks": "$\\begin{pmatrix}3 & -6 \\\\ 1 & -2\\end{pmatrix}$",
+          "alasan": "tanda elemen baris kedua salah sehingga kolom pertama $(3,1)$ gagal"
+        }
+      ],
+      "pembahasan": "Kolom $(a, b)^T$ dari $B$ harus memenuhi $a + 3b = 0$, jadi kelipatan $(3, -1)^T$. $AB = \\begin{pmatrix}0 & 0 \\\\ 0 & 0\\end{pmatrix} = O$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "diperoleh dengan cara mengalikan elemen baris ke- i pada matriks A terhadap elemen kolom ke- j pada matriks B , kemudian hasilnya ditambahkan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan elemen hasil kali",
+      "alasan_level": "menghitung AB lalu membandingkan dengan jawaban siswa untuk menemukan elemen yang salah beserta nilai benarnya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}2 & -1 \\\\ 3 & 4\\end{pmatrix}$ dan $B = \\begin{pmatrix}5 & 1 \\\\ -2 & 6\\end{pmatrix}$. Seorang siswa menuliskan $AB = \\begin{pmatrix}12 & 8 \\\\ 7 & 27\\end{pmatrix}$ dan hanya satu elemen yang salah. Elemen yang salah beserta nilai yang benar adalah ....",
+      "jawaban_benar": "baris 1 kolom 2, seharusnya $-4$",
+      "alasan_benar": "$2 \\times 1 + (-1) \\times 6 = -4$, sedangkan elemen lain sudah benar",
+      "distraktor": [
+        {
+          "teks": "baris 1 kolom 2, seharusnya $4$",
+          "alasan": "salah tanda pada hasil kali $(-1) \\times 6$"
+        },
+        {
+          "teks": "baris 2 kolom 1, seharusnya $-4$",
+          "alasan": "salah menentukan posisi elemen yang keliru"
+        },
+        {
+          "teks": "baris 2 kolom 2, seharusnya $8$",
+          "alasan": "salah menentukan posisi dan nilai"
+        }
+      ],
+      "pembahasan": "$AB = \\begin{pmatrix}12 & -4 \\\\ 7 & 27\\end{pmatrix}$. Elemen baris 1 kolom 2: $2(1) + (-1)(6) = -4$; siswa menulis $8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 39,
+        "kutipan": "Matriks BA tidak terdefinisi karena banyak kolom pada matriks B tidak sama dengan banyak baris pada matriks A."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "temukan kesalahan urutan perkalian",
+      "alasan_level": "menghitung AB dan BA, mengenali bahwa hasil siswa sama dengan BA, lalu menjumlahkan elemen AB",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}3 & 1 \\\\ 2 & 4\\end{pmatrix}$ dan $B = \\begin{pmatrix}1 & -2 \\\\ 5 & 0\\end{pmatrix}$. Seorang siswa menuliskan $AB = \\begin{pmatrix}-1 & -7 \\\\ 15 & 5\\end{pmatrix}$. Kesalahan siswa dan jumlah semua elemen $AB$ yang benar adalah ....",
+      "jawaban_benar": "siswa menghitung $BA$ (urutan tertukar); jumlahnya $20$",
+      "alasan_benar": "hasil siswa sama dengan BA; AB yang benar berjumlah 20",
+      "distraktor": [
+        {
+          "teks": "siswa menghitung $BA$ (urutan tertukar); jumlahnya $12$",
+          "alasan": "memakai jumlah elemen hasil siswa, bukan AB yang benar"
+        },
+        {
+          "teks": "siswa menjumlahkan, bukan mengalikan; jumlahnya $20$",
+          "alasan": "kesalahan salah dikenali: hasil siswa bukan $A+B$"
+        },
+        {
+          "teks": "siswa salah tanda pada satu elemen; jumlahnya $12$",
+          "alasan": "hasil siswa salah pada semua elemen karena urutan, bukan satu tanda"
+        }
+      ],
+      "pembahasan": "$AB = \\begin{pmatrix}8 & -6 \\\\ 22 & -4\\end{pmatrix}$ berjumlah $8 - 6 + 22 - 4 = 20$, sedangkan $BA = \\begin{pmatrix}-1 & -7 \\\\ 15 & 5\\end{pmatrix}$ sama dengan tulisan siswa.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat asosiatif: (AB) C = A (BC)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "perbandingan pengelompokan ABC",
+      "alasan_level": "membandingkan biaya (AB)C dan A(BC) memakai banyak perkalian bilangan m x n x p lalu menghitung selisihnya",
+      "stimulus": null,
+      "pertanyaan": "Banyak perkalian bilangan untuk mengalikan matriks berordo $m \\times n$ dengan $n \\times p$ adalah $m \\cdot n \\cdot p$. Matriks $A$ berordo $10 \\times 2$, $B$ berordo $2 \\times 10$, dan $C$ berordo $10 \\times 1$. Hasil $ABC$ sama saja, tetapi selisih banyak perkalian bilangan antara cara $(AB)C$ dan cara $A(BC)$ adalah ....",
+      "jawaban_benar": "$260$",
+      "alasan_benar": "$(AB)C$: $200 + 100 = 300$; $A(BC)$: $20 + 20 = 40$; selisih $260$",
+      "distraktor": [
+        {
+          "teks": "$300$",
+          "alasan": "hanya mengambil banyak perkalian cara $(AB)C$"
+        },
+        {
+          "teks": "$40$",
+          "alasan": "hanya mengambil banyak perkalian cara $A(BC)$"
+        },
+        {
+          "teks": "$340$",
+          "alasan": "menjumlahkan kedua cara, bukan mengurangkan"
+        }
+      ],
+      "pembahasan": "$(AB)$ berordo $10 \\times 10$: $10 \\cdot 2 \\cdot 10 = 200$, lalu $\\times C$: $10 \\cdot 10 \\cdot 1 = 100$. $(BC)$ berordo $2 \\times 1$: $20$, lalu $A(BC)$: $10 \\cdot 2 \\cdot 1 = 20$. Selisih $300 - 40 = 260$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat asosiatif: (AB) C = A (BC)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "perbandingan pengelompokan ABC",
+      "alasan_level": "memilih pengelompokan hemat dengan menghitung dua kemungkinan banyak perkalian dan mengambil yang terkecil",
+      "stimulus": null,
+      "pertanyaan": "Banyak perkalian bilangan untuk mengalikan matriks berordo $m \\times n$ dengan $n \\times p$ adalah $m \\cdot n \\cdot p$. Matriks $A$ berordo $3 \\times 40$, $B$ berordo $40 \\times 2$, dan $C$ berordo $2 \\times 50$. Banyak perkalian bilangan paling sedikit untuk memperoleh $ABC$ dengan memilih salah satu pengelompokan adalah ....",
+      "jawaban_benar": "$540$",
+      "alasan_benar": "$(AB)C$: $240 + 300 = 540$, sedangkan $A(BC)$: $4000 + 6000 = 10000$",
+      "distraktor": [
+        {
+          "teks": "$10.000$",
+          "alasan": "memilih pengelompokan $A(BC)$ yang lebih boros"
+        },
+        {
+          "teks": "$10.540$",
+          "alasan": "menjumlahkan kedua pengelompokan"
+        },
+        {
+          "teks": "$4.240$",
+          "alasan": "mencampur $BC$ dari satu cara dengan $AB$ dari cara lain"
+        }
+      ],
+      "pembahasan": "$(AB)$ berordo $3 \\times 2$: $3 \\cdot 40 \\cdot 2 = 240$; $(AB)C$: $3 \\cdot 2 \\cdot 50 = 300$; total $540$. $(BC)$ berordo $40 \\times 50$: $4000$; $A(BC)$: $3 \\cdot 40 \\cdot 50 = 6000$; total $10000$. Jadi minimum $540$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "bukan matriks nol dan AA = A"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aljabar matriks dengan syarat idempoten",
+      "alasan_level": "menjabarkan (2A-I)^2 dengan AI = IA = A lalu memakai AA = A untuk menyederhanakan",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ bukan matriks nol dan memenuhi $AA = A$, sedangkan $I$ matriks identitas seordo dengan $A$. Untuk $B = 2A - I$, hasil $B^2$ sama dengan ....",
+      "jawaban_benar": "$I$",
+      "alasan_benar": "$B^2 = 4A^2 - 4A + I = 4A - 4A + I = I$",
+      "distraktor": [
+        {
+          "teks": "$A$",
+          "alasan": "menganggap $B$ ikut idempoten sehingga hasilnya sama dengan $A$"
+        },
+        {
+          "teks": "$O$",
+          "alasan": "menganggap suku $4A - 4A$ menghabiskan semua suku"
+        },
+        {
+          "teks": "$4A - I$",
+          "alasan": "lupa suku silang $-4A$ sehingga hanya $4A^2 - I$"
+        }
+      ],
+      "pembahasan": "$(2A - I)(2A - I) = 4AA - 2AI - 2IA + II = 4A - 2A - 2A + I = I$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat identitas: AI = IA = A"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "aljabar matriks dengan syarat pangkat dua nol",
+      "alasan_level": "menjabarkan (I+A)^4 dengan I komutatif terhadap A dan menghapus suku berpangkat A^2 ke atas",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ bukan matriks nol, memenuhi $AA = O$, dan $I$ matriks identitas seordo dengan $A$. Hasil $(I + A)^4$ sama dengan ....",
+      "jawaban_benar": "$I + 4A$",
+      "alasan_benar": "$(I+A)^2 = I + 2A$, lalu $(I + 2A)^2 = I + 4A$",
+      "distraktor": [
+        {
+          "teks": "$I + 6A$",
+          "alasan": "memakai koefisien binomial tengah 6 untuk $A$"
+        },
+        {
+          "teks": "$I$",
+          "alasan": "menganggap $A$ lenyap pada setiap pangkat"
+        },
+        {
+          "teks": "$I + A$",
+          "alasan": "mengira $(I+A)^n = I + A$ untuk semua $n$"
+        }
+      ],
+      "pembahasan": "$(I + A)^2 = I + 2A + A^2 = I + 2A$. Kemudian $(I + 2A)^2 = I + 4A + 4A^2 = I + 4A$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat distributif: A ( B ± C ) = AB ± AC atau ( A ± B ) C = AC ± BC."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "kombinasi linear matriks dan identitas",
+      "alasan_level": "menyatakan A^2 sebagai pA + qI dengan menyamakan elemen, lalu menghitung q - p",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}2 & 3 \\\\ 4 & 1\\end{pmatrix}$ dan $I$ matriks identitas ordo $2 \\times 2$. Jika $A^2 = pA + qI$, nilai $q - p$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "$A^2 = \\begin{pmatrix}16 & 9 \\\\ 12 & 13\\end{pmatrix}$; elemen baris 1 kolom 2: $3p = 9$ sehingga $p = 3$; elemen baris 1 kolom 1: $2p + q = 16$ sehingga $q = 10$",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "menghitung $p + q$, bukan $q - p$"
+        },
+        {
+          "teks": "$-7$",
+          "alasan": "mengurangkan terbalik: $p - q$"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "hanya mengambil nilai $q$"
+        }
+      ],
+      "pembahasan": "$A^2 = \\begin{pmatrix}16 & 9 \\\\ 12 & 13\\end{pmatrix}$ dan $pA + qI = \\begin{pmatrix}2p + q & 3p \\\\ 4p & p + q\\end{pmatrix}$. Maka $p = 3$, $q = 10$ (cek $p + q = 13$), sehingga $q - p = 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat distributif: A ( B ± C ) = AB ± AC atau ( A ± B ) C = AC ± BC."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "klaim sifat yang selalu berlaku",
+      "alasan_level": "menilai empat klaim aljabar matriks dengan ingat bahwa perkalian tidak komutatif dan tidak bisa dicoret",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$, $B$, $C$ semuanya persegi seordo. Pernyataan yang selalu benar adalah ....",
+      "jawaban_benar": "$(A + B)C = AC + BC$",
+      "alasan_benar": "sifat distributif dari kanan",
+      "distraktor": [
+        {
+          "teks": "$(A + B)^2 = A^2 + 2AB + B^2$",
+          "alasan": "menganggap $AB = BA$"
+        },
+        {
+          "teks": "$(AB)^2 = A^2 B^2$",
+          "alasan": "menganggap faktor boleh dipertukarkan"
+        },
+        {
+          "teks": "jika $AB = AC$ maka $B = C$",
+          "alasan": "mencoret $A$ seperti pada bilangan real"
+        }
+      ],
+      "pembahasan": "Hanya sifat distributif $(A + B)C = AC + BC$ yang berlaku untuk semua matriks persegi seordo. Tiga klaim lain memerlukan $AB = BA$ atau pencoretan, yang tidak berlaku umum.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat identitas: AI = IA = A"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "klaim sifat yang selalu berlaku",
+      "alasan_level": "menilai empat klaim tentang selisih kuadrat, hasil kali nol, dan A^2 = I dengan mencari matriks penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ dan $B$ persegi seordo, dan $I$ matriks identitas seordo. Pernyataan yang selalu benar adalah ....",
+      "jawaban_benar": "$(A + I)(A - I) = A^2 - I$",
+      "alasan_benar": "$I$ komutatif terhadap $A$ sehingga suku $-A + A$ saling meniadakan",
+      "distraktor": [
+        {
+          "teks": "$(A + B)(A - B) = A^2 - B^2$",
+          "alasan": "suku $-AB + BA$ tidak saling meniadakan bila $AB \\neq BA$"
+        },
+        {
+          "teks": "jika $AB = O$ maka $BA = O$",
+          "alasan": "menganggap perkalian komutatif untuk hasil nol"
+        },
+        {
+          "teks": "jika $A^2 = I$ maka $A = I$ atau $A = -I$",
+          "alasan": "menyamakan dengan akar bilangan real; ada matriks lain, misalnya $\\begin{pmatrix}0 & 1 \\\\ 1 & 0\\end{pmatrix}$"
+        }
+      ],
+      "pembahasan": "$(A + I)(A - I) = A^2 - AI + IA - I^2 = A^2 - I$. Tiga klaim lain punya penyangkal sederhana pada matriks $2 \\times 2$.",
+      "catatan": null
+    }
+  ]
+}

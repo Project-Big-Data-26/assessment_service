@@ -1,0 +1,474 @@
+{
+  "book": "kelas12",
+  "bab_no": 3,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab A (Aturan Pengisian Tempat) hanya memuat aturan penjumlahan, perkalian, dan faktorial; easy dan medium sudah memakai 40 soal dan menghabiskan sudut bilangan bersyarat, komplemen, data lintas kelompok, dan faktorial. Soal hard yang layak berupa evaluasi penyelesaian, contoh penyangkal, urutan pengisian, perbandingan perubahan, perancangan parameter, dan kasus bersyarat berjenjang: sekitar 14 soal tanpa kembar atau materi di luar subbab (permutasi/kombinasi ada di subbab B dan C).",
+  "soal": [
+    {
+      "id": "kelas12-b03-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "5 × 4 × 3 = 60 bilangan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan penyelesaian",
+      "alasan_level": "harus mengevaluasi penyelesaian dan menemukan bahwa banyak pilihan ratusan bergantung pada angka satuan, lalu menghitung ulang per kasus",
+      "stimulus": null,
+      "pertanyaan": "Dari angka 0, 1, 2, 3, 4, dan 5 akan dibuat bilangan genap tiga angka dengan angka tidak boleh berulang. Seorang siswa menyelesaikan: \"satuan 3 pilihan (0, 2, atau 4), ratusan 5 pilihan (bukan 0), puluhan 4 pilihan, sehingga $3 \\times 5 \\times 4 = 60$ bilangan\". Penilaian yang benar terhadap penyelesaian tersebut adalah ....",
+      "jawaban_benar": "Keliru; yang benar 52 bilangan, karena banyak pilihan ratusan bergantung pada angka satuan yang dipilih",
+      "alasan_benar": "satuan 0: $5 \\times 4 = 20$; satuan 2 atau 4: ratusan 4 pilihan (bukan 0 dan bukan satuan), puluhan 4 pilihan, masing-masing $4 \\times 4 = 16$; total $20 + 16 + 16 = 52$",
+      "distraktor": [
+        {
+          "teks": "Benar; hasilnya 60 bilangan, karena ketiga tempat sudah dihitung",
+          "alasan": "menganggap pilihan tiap tempat tidak saling memengaruhi"
+        },
+        {
+          "teks": "Keliru; yang benar 48 bilangan, karena ratusan dan puluhan selalu masing-masing 4 pilihan",
+          "alasan": "memakai $3 \\times 4 \\times 4$, mengira ratusan selalu 4 pilihan padahal untuk satuan 0 ada 5 pilihan"
+        },
+        {
+          "teks": "Keliru; yang benar 100 bilangan, karena angka berulang harus ikut dihitung",
+          "alasan": "mengabaikan syarat angka tidak boleh berulang"
+        }
+      ],
+      "pembahasan": "Tempat satuan dan ratusan saling bergantung, sehingga dibagi dua kasus. Satuan 0: ratusan 5 pilihan, puluhan 4 pilihan, $20$. Satuan 2 atau 4: ratusan bukan 0 dan bukan satuan (4 pilihan), puluhan 4 pilihan, $16$ untuk tiap satuan. Total $52$; hasil 60 keliru karena mengalikan tanpa memperhatikan ketergantungan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 102,
+        "kutipan": "Pengelompokan tersebut jelas berbeda dan saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim penjumlahan dan perkalian",
+      "alasan_level": "mengevaluasi dua penyelesaian yang tampak berbeda dan menyimpulkan keduanya setara lewat sifat distributif",
+      "stimulus": null,
+      "pertanyaan": "Dari kota P ke kota Q tersedia 3 jalur bus atau 2 jalur kereta (hanya memilih salah satu moda), kemudian dari kota Q ke kota R tersedia 4 jalur. Rani menghitung banyak rute dari P ke R dengan $(3 + 2) \\times 4 = 20$, sedangkan Sandi menghitung dengan $3 \\times 4 + 2 \\times 4 = 20$. Pernyataan yang benar tentang penyelesaian Rani dan Sandi adalah ....",
+      "jawaban_benar": "Keduanya benar; Rani menggabungkan pilihan moda lebih dulu, Sandi menghitung per moda lalu menjumlahkan, dan hasilnya sama-sama 20 rute",
+      "alasan_benar": "moda saling lepas sehingga dijumlahkan, lalu tiap pilihan dilanjutkan 4 jalur (perkalian); $(3+2)\\times 4 = 3\\times 4 + 2\\times 4 = 20$",
+      "distraktor": [
+        {
+          "teks": "Hanya Rani yang benar, karena $3 \\times 4 + 2 \\times 4$ menghitung jalur dari Q ke R dua kali",
+          "alasan": "mengira jalur Q ke R terhitung ganda padahal tiap moda menghasilkan rute yang berbeda"
+        },
+        {
+          "teks": "Hanya Sandi yang benar, karena penjumlahan tidak boleh dilakukan sebelum perkalian",
+          "alasan": "keliru mengira urutan penjumlahan dan perkalian tidak boleh diubah"
+        },
+        {
+          "teks": "Keduanya salah, karena seharusnya $3 \\times 2 \\times 4 = 24$ rute",
+          "alasan": "mengalikan jalur bus dan kereta padahal keduanya saling lepas"
+        }
+      ],
+      "pembahasan": "Moda bus dan kereta saling lepas sehingga pilihan moda berjumlah $3 + 2 = 5$, lalu dikalikan 4 jalur: $20$. Menghitung per moda: bus $3 \\times 4 = 12$, kereta $2 \\times 4 = 8$, jumlah $20$. Kedua cara sah dan hasilnya sama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "banyak cara terjadinya seluruh kejadian tersebut adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "memilih urutan pengisian tempat",
+      "alasan_level": "harus menilai tempat paling terbatas (satuan ganjil) harus diisi dulu agar tidak ada ketergantungan, lalu menghitung",
+      "stimulus": null,
+      "pertanyaan": "Dari angka 0, 1, 2, 3, 4, 5, dan 6 akan dibuat bilangan ganjil empat angka dengan angka tidak boleh berulang. Urutan pengisian tempat dan hasil perhitungan yang benar adalah ....",
+      "jawaban_benar": "satuan lebih dulu (3 pilihan), lalu ribuan (5 pilihan), ratusan (5 pilihan), dan puluhan (4 pilihan): $3 \\times 5 \\times 5 \\times 4 = 300$ bilangan",
+      "alasan_benar": "satuan dari $\\{1, 3, 5\\}$ 3 pilihan; ribuan bukan 0 dan bukan satuan: $7 - 2 = 5$; ratusan: $7 - 2 = 5$; puluhan: $7 - 3 = 4$; hasilnya 300",
+      "distraktor": [
+        {
+          "teks": "ribuan lebih dulu (6 pilihan), ratusan (6 pilihan), puluhan (5 pilihan), lalu satuan (3 pilihan): $6 \\times 6 \\times 5 \\times 3 = 540$ bilangan",
+          "alasan": "mengisi tempat bebas dulu lalu menganggap satuan selalu 3 pilihan padahal bergantung pada angka yang sudah terpakai"
+        },
+        {
+          "teks": "ribuan lebih dulu (6 pilihan), ratusan (5 pilihan), puluhan (4 pilihan), lalu satuan (3 pilihan): $6 \\times 5 \\times 4 \\times 3 = 360$ bilangan",
+          "alasan": "mengisi tempat terbatas terakhir tanpa memperhitungkan angka ganjil yang sudah terpakai"
+        },
+        {
+          "teks": "satuan lebih dulu (3 pilihan), lalu ribuan, ratusan, dan puluhan masing-masing 6, 5, dan 4 pilihan: $3 \\times 6 \\times 5 \\times 4 = 360$ bilangan",
+          "alasan": "lupa bahwa ribuan tidak boleh 0 dan tidak boleh sama dengan satuan, sehingga bukan 6 pilihan"
+        }
+      ],
+      "pembahasan": "Tempat paling terbatas diisi lebih dulu. Satuan harus ganjil: 3 pilihan. Ribuan tidak boleh 0 dan tidak boleh sama dengan satuan: 5 pilihan. Ratusan: sisa 5 angka, 5 pilihan. Puluhan: 4 pilihan. Total $3 \\times 5 \\times 5 \\times 4 = 300$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "5 × 4 × 3 = 60 bilangan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "menguji klaim umum dengan memilih himpunan angka yang melanggar asumsi tersembunyi (angka nol di depan)",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Dari lima angka berbeda mana pun, banyak bilangan tiga angka dengan angka tidak boleh berulang selalu 60 bilangan\". Himpunan lima angka berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$\\{0, 1, 2, 3, 4\\}$",
+      "alasan_benar": "memuat angka 0 sehingga ratusan hanya 4 pilihan: $4 \\times 4 \\times 3 = 48 \\neq 60$",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 3, 5, 7, 9\\}$",
+          "alasan": "tanpa angka 0 banyak bilangannya $5 \times 4 \times 3 = 60$, sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$\\{2, 4, 6, 8, 9\\}$",
+          "alasan": "tanpa angka 0 banyak bilangannya 60, sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$\\{4, 5, 6, 7, 8\\}$",
+          "alasan": "tanpa angka 0 banyak bilangannya 60, sehingga bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Klaim berlaku bila semua angka tidak nol karena $5 \\times 4 \\times 3 = 60$. Bila 0 termasuk, angka ratusan tidak boleh 0: $4 \\times 4 \\times 3 = 48$. Jadi hanya himpunan yang memuat 0 yang menyangkal klaim.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "kutipan": "Aturan perkalian dari bilangan asli dapat dituliskan dalam bentuk berikut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan pengaruh perubahan",
+      "alasan_level": "membandingkan tiga skenario penambahan pilihan dan menalar bahwa tahap berpilihan paling sedikit memberi pertambahan terbesar",
+      "stimulus": null,
+      "pertanyaan": "Suatu prosedur terdiri atas tiga tahap berurutan dengan banyak pilihan 4, 5, dan 6 pada tahap pertama, kedua, dan ketiga. Panitia dapat menambah tepat satu pilihan pada tepat satu tahap. Tahap yang penambahannya membuat banyak cara bertambah paling banyak dan besar pertambahannya adalah ....",
+      "jawaban_benar": "tahap pertama, bertambah 30 cara",
+      "alasan_benar": "tahap pertama: $5 \\times 5 \\times 6 - 120 = 30$; tahap kedua: $4 \\times 6 \\times 6 - 120 = 24$; tahap ketiga: $4 \\times 5 \\times 7 - 120 = 20$",
+      "distraktor": [
+        {
+          "teks": "tahap ketiga, bertambah 20 cara",
+          "alasan": "mengira tahap berpilihan terbanyak memberi pertambahan terbesar"
+        },
+        {
+          "teks": "tahap kedua, bertambah 24 cara",
+          "alasan": "benar menghitung tahap kedua tetapi bukan pertambahan terbesar"
+        },
+        {
+          "teks": "tahap pertama, bertambah 120 cara",
+          "alasan": "memakai banyak cara semula sebagai pertambahan"
+        }
+      ],
+      "pembahasan": "Banyak cara semula $4 \\times 5 \\times 6 = 120$. Pertambahan pada tahap pertama sama dengan $1 \\times 5 \\times 6 = 30$, pada tahap kedua $4 \\times 1 \\times 6 = 24$, pada tahap ketiga $4 \\times 5 \\times 1 = 20$. Pertambahan terbesar terjadi pada tahap pertama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "kutipan": "Aturan perkalian dari bilangan asli dapat dituliskan dalam bentuk berikut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "merancang parameter",
+      "alasan_level": "menentukan banyak huruf agar hasil perkalian bersyarat tepat bernilai tertentu, kebalikan dari menghitung banyak kode",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kode terdiri atas satu huruf yang dipilih dari sekelompok huruf, diikuti dua angka berbeda dari 0 sampai 9 dengan angka pertama tidak boleh 0. Agar banyak kode yang dapat dibuat tepat 1.620, banyak huruf dalam kelompok tersebut haruslah ....",
+      "jawaban_benar": "20 huruf",
+      "alasan_benar": "angka pertama 9 pilihan, angka kedua 9 pilihan (beda dengan angka pertama, 0 boleh), $9 \\times 9 = 81$; $1.620 \\div 81 = 20$",
+      "distraktor": [
+        {
+          "teks": "18 huruf",
+          "alasan": "menganggap angka kedua 10 pilihan ($9 \\times 10 = 90$; $1.620 \\div 90 = 18$)"
+        },
+        {
+          "teks": "180 huruf",
+          "alasan": "membagi dengan 9 saja karena hanya menghitung angka pertama"
+        },
+        {
+          "teks": "162 huruf",
+          "alasan": "membagi dengan 10 saja karena hanya menghitung satu tempat angka bebas"
+        }
+      ],
+      "pembahasan": "Banyak kode $m \\times 9 \\times 9 = 81m$. Dari $81m = 1.620$ diperoleh $m = 20$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "kutipan": "1 × 2 × 3 × 4 × ... × n = n ! Notasi n ! dibaca n faktorial"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan penyelesaian",
+      "alasan_level": "mengevaluasi dua penyelesaian yang berbeda hasil dan menentukan penyederhanaan faktorial yang sah",
+      "stimulus": null,
+      "pertanyaan": "Dua siswa menyelesaikan $\\dfrac{(n+2)!}{n!} = 72$ dengan $n$ bilangan asli. Dina menulis $(n+2)(n+1) = 72$ sehingga $n = 7$. Eka menulis $n + 2 = 72$ sehingga $n = 70$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Dina benar, karena $(n+2)! = (n+2)(n+1)\\,n!$ sehingga hasil baginya $(n+2)(n+1)$",
+      "alasan_benar": "$(n+2)(n+1) = 72 = 9 \\times 8$, sehingga $n + 1 = 8$ dan $n = 7$",
+      "distraktor": [
+        {
+          "teks": "Eka benar, karena $n!$ dicoret dari pembilang dan penyebut sehingga tersisa $n + 2$",
+          "alasan": "mengira hanya satu faktor yang tersisa setelah mencoret $n!$"
+        },
+        {
+          "teks": "Keduanya benar, karena $n = 7$ dan $n = 70$ sama-sama memenuhi persamaan",
+          "alasan": "tidak memeriksa hasil substitusi, padahal $n = 70$ memberi $72 \\times 71$"
+        },
+        {
+          "teks": "Keduanya salah, karena hasil bagi dua faktorial tidak dapat disederhanakan",
+          "alasan": "tidak mengetahui bahwa faktorial yang lebih besar memuat faktorial yang lebih kecil"
+        }
+      ],
+      "pembahasan": "$\\dfrac{(n+2)!}{n!} = \\dfrac{(n+2)(n+1)\\,n!}{n!} = (n+2)(n+1)$. Dari $(n+2)(n+1) = 72$ dan $9 \\times 8 = 72$ didapat $n + 1 = 8$, yaitu $n = 7$. Untuk $n = 70$ hasilnya $72 \\times 71 \\neq 72$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 102,
+        "kutipan": "Pengelompokan tersebut jelas berbeda dan saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "kasus berjenjang saling bergantung",
+      "alasan_level": "banyak jalur tahap kedua bergantung pada jalur tahap pertama, sehingga harus dipisah menjadi dua kasus sebelum dijumlahkan dan dikalikan tahap terakhir",
+      "stimulus": null,
+      "pertanyaan": "Seorang kurir akan bepergian dari A ke D melalui B dan C. Dari A ke B tersedia 2 jalur tol dan 3 jalur biasa. Jika masuk ke B lewat jalur tol, tersedia 4 jalur dari B ke C; jika lewat jalur biasa, tersedia 6 jalur dari B ke C. Dari C ke D tersedia 3 jalur. Banyak rute berbeda dari A ke D adalah ....",
+      "jawaban_benar": "78 rute",
+      "alasan_benar": "tol: $2 \\times 4 = 8$; biasa: $3 \\times 6 = 18$; dari A ke C $8 + 18 = 26$; lalu $26 \\times 3 = 78$",
+      "distraktor": [
+        {
+          "teks": "150 rute",
+          "alasan": "menjumlahkan jalur $A$-$B$ dan $B$-$C$ secara terpisah ($(2+3)\\times(4+6)\\times 3$) tanpa memperhatikan ketergantungan"
+        },
+        {
+          "teks": "90 rute",
+          "alasan": "memakai 6 jalur untuk semua kasus ($(2+3) \\times 6 \\times 3$)"
+        },
+        {
+          "teks": "26 rute",
+          "alasan": "lupa mengalikan dengan 3 jalur dari C ke D"
+        }
+      ],
+      "pembahasan": "Kasus tol: $2 \\times 4 = 8$ jalur dari A ke C. Kasus biasa: $3 \\times 6 = 18$. Kedua kasus saling lepas: $8 + 18 = 26$. Tahap terakhir 3 jalur: $26 \\times 3 = 78$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "banyak cara terjadinya seluruh kejadian tersebut adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kasus berjenjang saling bergantung",
+      "alasan_level": "syarat angka terakhir lebih besar dari angka pertama membuat pilihan bergantung pada angka pertama sehingga perlu tiga kasus",
+      "stimulus": null,
+      "pertanyaan": "Dari angka 1, 2, 3, 4, 5, dan 6 akan dibuat bilangan tiga angka dengan angka tidak boleh berulang. Angka pertama harus ganjil dan angka terakhir harus lebih besar daripada angka pertama. Banyak bilangan yang dapat dibuat adalah ....",
+      "jawaban_benar": "36 bilangan",
+      "alasan_benar": "angka pertama 1: terakhir 5 pilihan, tengah 4, $20$; angka pertama 3: terakhir 3 pilihan, tengah 4, $12$; angka pertama 5: terakhir 1 pilihan, tengah 4, $4$; total 36",
+      "distraktor": [
+        {
+          "teks": "60 bilangan",
+          "alasan": "mengabaikan syarat angka terakhir lebih besar ($3 \\times 5 \\times 4$)"
+        },
+        {
+          "teks": "48 bilangan",
+          "alasan": "menganggap angka terakhir selalu 4 pilihan ($3 \\times 4 \\times 4$)"
+        },
+        {
+          "teks": "32 bilangan",
+          "alasan": "lupa kasus angka pertama 5 ($20 + 12$)"
+        }
+      ],
+      "pembahasan": "Pilihan angka terakhir bergantung pada angka pertama. Angka pertama 1: terakhir $\\{2,3,4,5,6\\}$ (5), tengah $6 - 2 = 4$, hasil 20. Angka pertama 3: terakhir $\\{4,5,6\\}$ (3), hasil $3 \\times 4 = 12$. Angka pertama 5: terakhir 6, hasil 4. Total $20 + 12 + 4 = 36$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "banyak cara terjadinya seluruh kejadian tersebut adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kasus tepat satu",
+      "alasan_level": "tepat satu angka 5 memaksa pemisahan kasus 5 di depan atau tidak, dengan syarat angka pertama bukan nol",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan empat angka (angka pertama tidak boleh 0, angka boleh berulang) yang memuat tepat satu angka 5 adalah ....",
+      "jawaban_benar": "2.673 bilangan",
+      "alasan_benar": "5 di depan: $1 \\times 9 \\times 9 \\times 9 = 729$; 5 bukan di depan (3 posisi): angka pertama 8 pilihan (bukan 0 dan bukan 5), dua tempat lain masing-masing 9 pilihan: $3 \\times 8 \\times 9 \\times 9 = 1.944$; total $2.673$",
+      "distraktor": [
+        {
+          "teks": "2.916 bilangan",
+          "alasan": "memakai $4 \\times 9^3$, tidak membedakan syarat angka pertama bukan 0"
+        },
+        {
+          "teks": "1.944 bilangan",
+          "alasan": "hanya menghitung kasus angka 5 bukan di depan"
+        },
+        {
+          "teks": "2.187 bilangan",
+          "alasan": "memakai $3 \\times 9^3$ dengan angka pertama 9 pilihan dan lupa kasus 5 di depan"
+        }
+      ],
+      "pembahasan": "Kasus 5 di tempat ribuan: tiga tempat lain bukan 5, masing-masing 9 pilihan, $729$. Kasus 5 di salah satu dari 3 tempat lain: ribuan bukan 0 dan bukan 5 (8 pilihan), dua tempat sisanya masing-masing 9 pilihan, $3 \\times 8 \\times 81 = 1.944$. Total $729 + 1.944 = 2.673$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "kutipan": "Aturan perkalian dari bilangan asli dapat dituliskan dalam bentuk berikut."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang parameter",
+      "alasan_level": "merancang panjang kode terpendek yang memenuhi batas banyak kode dengan membandingkan tiga nilai pangkat",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kode terdiri atas dua huruf yang dipilih dari 5 huruf (huruf boleh berulang) diikuti $n$ angka dari 0 sampai 9 (angka boleh berulang). Agar banyak kode yang dapat dibuat lebih dari 100.000, nilai $n$ terkecil yang memenuhi adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "banyak kode $5 \\times 5 \\times 10^n = 25 \\times 10^n$; $n = 3$ memberi 25.000 (kurang); $n = 4$ memberi 250.000 (lebih dari 100.000)",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "$25 \\times 10^3 = 25.000$, belum melebihi 100.000"
+        },
+        {
+          "teks": "5",
+          "alasan": "memenuhi syarat, tetapi bukan nilai terkecil"
+        },
+        {
+          "teks": "6",
+          "alasan": "mengabaikan banyak pilihan huruf dan hanya memakai $10^n > 100.000$"
+        }
+      ],
+      "pembahasan": "Banyak kode $25 \\times 10^n$. Untuk $n = 3$ hasilnya 25.000, untuk $n = 4$ hasilnya 250.000. Jadi $n$ terkecil adalah 4.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 102,
+        "kutipan": "Pengelompokan tersebut jelas berbeda dan saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "menguji klaim umum tentang aturan perkalian terhadap penjumlahan dengan mencari kasus batas",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Untuk dua tahap berurutan dengan banyak cara $a$ dan $b$ (bilangan asli), banyak cara menurut aturan perkalian selalu tidak kurang daripada banyak cara menurut aturan penjumlahan, yaitu $a \\times b \\geq a + b$\". Pasangan $(a, b)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$(1, 5)$",
+      "alasan_benar": "$1 \\times 5 = 5 < 6 = 1 + 5$, sehingga $a \\times b \\geq a + b$ tidak berlaku",
+      "distraktor": [
+        {
+          "teks": "$(2, 2)$",
+          "alasan": "$2 \\times 2 = 4 = 2 + 2$, sehingga klaim $\\geq$ tetap benar"
+        },
+        {
+          "teks": "$(3, 4)$",
+          "alasan": "$12 > 7$, sehingga klaim tetap benar"
+        },
+        {
+          "teks": "$(2, 6)$",
+          "alasan": "$12 > 8$, sehingga klaim tetap benar"
+        }
+      ],
+      "pembahasan": "Perkalian lebih kecil dari penjumlahan hanya bila salah satu bilangan 1. $(1,5)$: $1 \\times 5 = 5 < 6$. Pasangan lain memberi hasil kali sama atau lebih besar dari jumlah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "5 × 4 × 3 = 60 bilangan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan pengaruh perubahan",
+      "alasan_level": "menalar bahwa pertambahan banyak bilangan hanya berasal dari bilangan yang memuat angka baru, bukan dari selisih dua rumus langsung",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 angka berbeda yang semuanya bukan nol dibuat bilangan tiga angka dengan angka tidak boleh berulang. Kemudian ditambahkan satu angka baru yang juga bukan nol dan berbeda dari keenam angka itu. Bilangan tiga angka yang dapat dibuat bertambah sebanyak ....",
+      "jawaban_benar": "90 bilangan",
+      "alasan_benar": "semula $6 \\times 5 \\times 4 = 120$, sekarang $7 \\times 6 \\times 5 = 210$, bertambah $210 - 120 = 90$",
+      "distraktor": [
+        {
+          "teks": "30 bilangan",
+          "alasan": "hanya menghitung angka baru di satu posisi ($6 \\times 5$)"
+        },
+        {
+          "teks": "120 bilangan",
+          "alasan": "mengira pertambahan sama dengan banyak bilangan semula"
+        },
+        {
+          "teks": "210 bilangan",
+          "alasan": "memberikan banyak bilangan sesudah penambahan, bukan pertambahannya"
+        }
+      ],
+      "pembahasan": "Semula $6 \\times 5 \\times 4 = 120$. Sesudah ada 7 angka: $7 \\times 6 \\times 5 = 210$. Pertambahan $90$ (sama dengan bilangan yang memuat angka baru: 3 posisi $\\times\\ 6 \\times 5$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "kutipan": "Aturan perkalian dari bilangan asli dapat dituliskan dalam bentuk berikut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "kasus berjenjang saling bergantung",
+      "alasan_level": "tiga tempat dengan syarat saling bergantung: pilihan angka kedua bergantung pada paritas angka pertama dan angka ketiga bergantung pada angka kedua",
+      "stimulus": null,
+      "pertanyaan": "Kode tiga angka $abc$ disusun dari angka 0 sampai 9 dengan angka boleh berulang, angka pertama $a$ tidak boleh 0, dengan aturan berikut: jika $a$ ganjil maka angka kedua $b$ harus kurang dari 5; jika $a$ genap maka $b$ boleh angka apa saja; dan angka ketiga $c$ tidak boleh sama dengan $b$. Banyak kode yang dapat dibuat adalah ....",
+      "jawaban_benar": "585 kode",
+      "alasan_benar": "$a$ ganjil (5 pilihan), $b$ 5 pilihan; $a$ genap bukan nol (4 pilihan), $b$ 10 pilihan; $c$ 9 pilihan: $(5 \\times 5 + 4 \\times 10) \\times 9 = 585$",
+      "distraktor": [
+        {
+          "teks": "810 kode",
+          "alasan": "mengabaikan syarat $b$ untuk $a$ ganjil ($9 \\times 10 \\times 9$)"
+        },
+        {
+          "teks": "650 kode",
+          "alasan": "mengabaikan syarat $c \\neq b$ ($(25 + 40) \\times 10$)"
+        },
+        {
+          "teks": "405 kode",
+          "alasan": "memberlakukan syarat $b < 5$ untuk semua $a$ ($9 \\times 5 \\times 9$)"
+        }
+      ],
+      "pembahasan": "Pisahkan menurut $a$. $a$ ganjil: $5 \\times 5 = 25$ pasangan $(a,b)$. $a$ genap (2, 4, 6, 8): $4 \\times 10 = 40$ pasangan. Total 65 pasangan, masing-masing dengan $c$ 9 pilihan: $65 \\times 9 = 585$.",
+      "catatan": null
+    }
+  ]
+}

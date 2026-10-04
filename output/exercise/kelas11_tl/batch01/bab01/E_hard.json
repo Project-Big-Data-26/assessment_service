@@ -1,0 +1,488 @@
+{
+ "book": "kelas11_tl",
+ "bab_no": 1,
+ "subbab": "E",
+ "level": "hard",
+ "batch": 1,
+ "skill_versi": "v1",
+ "kapasitas_kurang": true,
+ "alasan_kapasitas": "Hard bermakna hanya lewat penalaran sifat |AB|=|A||B|, |kA|, invers, adjoin, syarat Cramer, parameter dua syarat, dan contoh penyangkal; materi inti (hitung determinan/invers/SPL) sudah habis terpakai di easy dan medium (40 soal) dan bentuk lain akan nyaris kembar atau di luar subbab.",
+ "soal": [
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-001",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "Jika matriks A dan matriks B adalah matriks persegi yang berordo sama, maka | AB |=| A || B |."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "evaluasi klaim sifat determinan",
+   "alasan_level": "mengevaluasi empat klaim umum tentang determinan dan invers dan menolak tiga yang keliru lewat penalaran/penyangkal",
+   "stimulus": null,
+   "pertanyaan": "Misalkan $A$ dan $B$ matriks persegi berordo sama yang keduanya mempunyai invers. Pernyataan yang berlaku untuk setiap pasangan $A$ dan $B$ tersebut adalah ....",
+   "jawaban_benar": "$|AB| = |BA|$",
+   "alasan_benar": "$|AB| = |A||B| = |B||A| = |BA|$ karena perkalian bilangan real bersifat komutatif",
+   "distraktor": [
+    {
+     "teks": "$|A + B| = |A| + |B|$",
+     "alasan": "mengira determinan bersifat linear terhadap penjumlahan"
+    },
+    {
+     "teks": "$(AB)^{-1} = A^{-1}B^{-1}$",
+     "alasan": "lupa urutan berbalik: seharusnya $B^{-1}A^{-1}$"
+    },
+    {
+     "teks": "$AB = BA$",
+     "alasan": "mengira perkalian matriks komutatif karena determinannya sama"
+    }
+   ],
+   "pembahasan": "Dari $|AB| = |A||B|$ dan komutatifnya perkalian bilangan, $|AB| = |BA|$. Klaim lain memiliki penyangkal: $|A+B| \\neq |A|+|B|$ pada $A=B=I_2$ ($|2I| = 4 \\neq 2$), $(AB)^{-1} = B^{-1}A^{-1}$, dan $AB \\ne BA$ pada umumnya.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-002",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Matriks A disebut matriks singular jika | A |= 0"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "determinan invers dan skalar",
+   "alasan_level": "menggabungkan |A^{-1}| = 1/|A| (dari AA^{-1}=I dan |AB|=|A||B|) dengan |kA|=k^n|A| dan memilih di antara kesalahan khas",
+   "stimulus": null,
+   "pertanyaan": "Matriks $A$ berordo $3 \\times 3$ dengan $|A| = 4$. Nilai $|2A^{-1}|$ adalah ....",
+   "jawaban_benar": "$2$",
+   "alasan_benar": "$|A^{-1}| = \\frac{1}{|A|} = \\frac{1}{4}$, lalu $|2A^{-1}| = 2^3 \\cdot \\frac{1}{4} = 2$",
+   "distraktor": [
+    {
+     "teks": "$\\frac{1}{2}$",
+     "alasan": "memakai $2 \\cdot \\frac{1}{4}$, lupa bahwa skalar dipangkatkan ordo ($2^3$)"
+    },
+    {
+     "teks": "$32$",
+     "alasan": "memakai $2^3 \\cdot 4$, lupa membalik determinan untuk invers"
+    },
+    {
+     "teks": "$8$",
+     "alasan": "mengalikan $2^3$ saja tanpa memperhitungkan $|A^{-1}|$"
+    }
+   ],
+   "pembahasan": "Dari $AA^{-1} = I$ diperoleh $|A||A^{-1}| = 1$, sehingga $|A^{-1}| = \\frac{1}{4}$. Karena ordo $3$, $|2A^{-1}| = 2^3 \\cdot \\frac{1}{4} = 2$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-003",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Jika A adalah sebuah matriks berordo n × n dan I adalah matriks identitas berordo n × n"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "temukan kesalahan invers 2x2",
+   "alasan_level": "mengevaluasi hasil kerja siswa dan menentukan letak tepat kesalahan dengan membandingkan terhadap rumus invers 2x2",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menghitung invers dari $A = \\begin{pmatrix} 5 & 2 \\\\ 7 & 3 \\end{pmatrix}$ dan menulis $A^{-1} = \\begin{pmatrix} 3 & 2 \\\\ 7 & 5 \\end{pmatrix}$. Kesalahan siswa tersebut adalah ....",
+   "jawaban_benar": "elemen diagonal samping tidak diubah tandanya",
+   "alasan_benar": "$|A| = 15 - 14 = 1$, jadi $A^{-1} = \\begin{pmatrix} 3 & -2 \\\\ -7 & 5 \\end{pmatrix}$; siswa sudah menukar diagonal utama tetapi lupa mengganti tanda elemen $2$ dan $7$",
+   "distraktor": [
+    {
+     "teks": "determinan $A$ dihitung salah sehingga pengali $\\frac{1}{|A|}$ keliru",
+     "alasan": "determinannya $1$ sehingga pengali $1$ memang tidak mengubah apa pun"
+    },
+    {
+     "teks": "elemen diagonal utama tidak ditukar",
+     "alasan": "diagonal utama $5$ dan $3$ sudah ditukar menjadi $3$ dan $5$"
+    },
+    {
+     "teks": "elemen diagonal utama ikut diubah tandanya seharusnya",
+     "alasan": "diagonal utama tidak berubah tanda pada rumus invers"
+    }
+   ],
+   "pembahasan": "Rumus: $A^{-1} = \\frac{1}{ad-bc}\\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$. Hasil benar $\\begin{pmatrix} 3 & -2 \\\\ -7 & 5 \\end{pmatrix}$, berbeda dari hasil siswa hanya pada tanda diagonal samping.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-004",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 45,
+    "kutipan": "Kofaktor elemen baris ke- i dan kolom ke- j adalah kij = (–1)i+j Mij ."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "temukan kesalahan ekspansi kofaktor",
+   "alasan_level": "mengevaluasi kesalahan tanda kofaktor pada ekspansi baris pertama, lalu menghitung besar akibatnya pada determinan",
+   "stimulus": null,
+   "pertanyaan": "Untuk $M = \\begin{pmatrix} 2 & 1 & 3 \\\\ 0 & 4 & 5 \\\\ 6 & 7 & 1 \\end{pmatrix}$, seorang siswa menghitung determinan dengan ekspansi baris pertama memakai minor langsung tanpa pola tanda, yaitu $2M_{11} + 1M_{12} + 3M_{13}$. Determinan sebenarnya lebih besar daripada hasil siswa tersebut sebesar ....",
+   "jawaban_benar": "60",
+   "alasan_benar": "hasil siswa $=-164$, determinan sebenarnya $=-104$; selisih $=-2 a_{12}M_{12}=60$",
+   "distraktor": [
+    {
+     "teks": "-60",
+     "alasan": "membalik arah selisih (hasil siswa dikurangi determinan benar)"
+    },
+    {
+     "teks": "30",
+     "alasan": "memakai $|a_{12}M_{12}|$ saja, lupa selisihnya dua kali karena suku itu berganti tanda"
+    },
+    {
+     "teks": "-104",
+     "alasan": "mengira selisihnya sama dengan determinan sebenarnya"
+    }
+   ],
+   "pembahasan": "$M_{11}=-31$, $M_{12}=-30$, $M_{13}=-24$. Siswa: $2(-31)+1(-30)+3(-24)=-164$. Benar: $2(-31)-1(-30)+3(-24)=-104$. Selisih $60$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-005",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Matriks A disebut matriks singular jika | A |= 0"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 6,
+   "jenis_soal": "parameter dua matriks, satu singular satu tidak",
+   "alasan_level": "menyelesaikan persamaan kuadrat dari syarat singular lalu menyaring akar yang melanggar syarat kedua",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $A = \\begin{pmatrix} x+1 & 3 \\\\ 2 & x \\end{pmatrix}$ dan $B = \\begin{pmatrix} x & 4 \\\\ 1 & 2 \\end{pmatrix}$. Jika $A$ singular tetapi $B$ mempunyai invers, nilai $x$ yang memenuhi adalah ....",
+   "jawaban_benar": "$-3$",
+   "alasan_benar": "$|A| = x^2 + x - 6 = 0$ memberi $x = 2$ atau $x = -3$; $|B| = 2x - 4 = 0$ saat $x = 2$, sehingga $x = 2$ membuat $B$ singular dan hanya $x = -3$ yang memenuhi",
+   "distraktor": [
+    {
+     "teks": "$2$",
+     "alasan": "hanya memeriksa $A$ singular, lupa bahwa $x=2$ membuat $B$ ikut singular"
+    },
+    {
+     "teks": "$-1$",
+     "alasan": "menjumlahkan kedua akar $2 + (-3)$ tanpa menyaring syarat $B$"
+    },
+    {
+     "teks": "$6$",
+     "alasan": "mengambil hasil kali akar sebagai jawaban ($-6$ lalu salah tanda)"
+    }
+   ],
+   "pembahasan": "$|A| = x(x+1) - 6 = (x-2)(x+3)$, jadi $x = 2$ atau $x = -3$. $|B| = 2x - 4$, nol di $x = 2$. Maka $B$ punya invers hanya jika $x \\ne 2$, sehingga $x = -3$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-006",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Jika A adalah sebuah matriks berordo n × n dan I adalah matriks identitas berordo n × n"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "matriks sama dengan inversnya",
+   "alasan_level": "menyusun kesamaan A = A^{-1} dan menyelesaikan syarat determinan yang konsisten dengan A^2 = I",
+   "stimulus": null,
+   "pertanyaan": "Matriks $A = \\begin{pmatrix} 2 & p \\\\ q & -2 \\end{pmatrix}$ memenuhi $A = A^{-1}$. Nilai $pq$ adalah ....",
+   "jawaban_benar": "$-3$",
+   "alasan_benar": "$|A| = -4 - pq$ dan $A^{-1} = \\frac{1}{|A|}\\begin{pmatrix} -2 & -p \\\\ -q & 2 \\end{pmatrix}$; kesamaan elemen $2 = \\frac{-2}{|A|}$ memberi $|A| = -1$ sehingga $pq = -3$",
+   "distraktor": [
+    {
+     "teks": "$-5$",
+     "alasan": "memakai $|A| = 1$ (mengira $A = A^{-1}$ berarti determinan $1$) sehingga $-4 - pq = 1$"
+    },
+    {
+     "teks": "$3$",
+     "alasan": "salah tanda saat memindahkan $pq$ dari $-4 - pq = -1$"
+    },
+    {
+     "teks": "$-1$",
+     "alasan": "menyamakan $pq$ dengan $|A|$ yang bernilai $-1$"
+    }
+   ],
+   "pembahasan": "Dari $A = A^{-1}$ diperoleh $A^2 = I$: elemen diagonal $4 + pq = 1$, jadi $pq = -3$. Pemeriksaan: $|A| = -4 + 3 = -1$ dan $\\frac{-2}{-1} = 2$ cocok dengan elemen $a_{11}$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-007",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Adjoin ( A ) dapat ditentukan dengan transpos dari matriks kofaktor."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "hubungan Adjoin dan determinan",
+   "alasan_level": "menurunkan |Adjoin A| = |A|^{n-1} dari A^{-1} = Adjoin(A)/|A| dan sifat |kA|, bukan menghitung langsung",
+   "stimulus": null,
+   "pertanyaan": "Matriks $A$ berordo $3 \\times 3$ dengan $|A| = -3$. Karena $A^{-1} = \\frac{1}{|A|}\\,Adjoin(A)$, nilai $|Adjoin(A)|$ adalah ....",
+   "jawaban_benar": "$9$",
+   "alasan_benar": "$Adjoin(A) = |A|\\,A^{-1}$ sehingga $|Adjoin(A)| = |A|^3 \\cdot \\frac{1}{|A|} = |A|^2 = 9$",
+   "distraktor": [
+    {
+     "teks": "$-27$",
+     "alasan": "mengira $|Adjoin(A)| = |A|^3$ tanpa memperhitungkan $|A^{-1}|$"
+    },
+    {
+     "teks": "$-3$",
+     "alasan": "mengira determinan adjoin sama dengan determinan matriksnya"
+    },
+    {
+     "teks": "$-9$",
+     "alasan": "salah tanda: memakai $|A|^3 \\cdot \\frac{1}{|A|}$ lalu menghitung $(-3)^2$ sebagai $-9$"
+    }
+   ],
+   "pembahasan": "$Adjoin(A) = |A| A^{-1}$. Untuk ordo $3$: $|Adjoin(A)| = |A|^3 |A^{-1}| = |A|^3 \\cdot \\frac{1}{|A|} = |A|^2 = 9$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-008",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Jika A adalah sebuah matriks berordo n × n dan I adalah matriks identitas berordo n × n"
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 4,
+   "jenis_soal": "merancang matriks dengan invers bulat",
+   "alasan_level": "menalar bahwa invers berelemen bulat menuntut determinan $\\pm 1$ lalu memeriksa tiap kandidat, termasuk kasus determinan negatif",
+   "stimulus": null,
+   "pertanyaan": "Semua elemen suatu matriks berordo $2 \\times 2$ adalah bilangan bulat. Di antara matriks berikut, yang semua elemen inversnya juga bilangan bulat adalah ....",
+   "jawaban_benar": "$\\begin{pmatrix} 2 & 3 \\\\ 3 & 4 \\end{pmatrix}$",
+   "alasan_benar": "$|A| = 2 \\cdot 4 - 3 \\cdot 3 = -1$ sehingga $A^{-1} = -\\begin{pmatrix} 4 & -3 \\\\ -3 & 2 \\end{pmatrix}$ berelemen bulat",
+   "distraktor": [
+    {
+     "teks": "$\\begin{pmatrix} 5 & 2 \\\\ 4 & 1 \\end{pmatrix}$",
+     "alasan": "determinan $-3$ sehingga invers memuat pecahan berpenyebut $3$"
+    },
+    {
+     "teks": "$\\begin{pmatrix} 3 & 4 \\\\ 1 & 2 \\end{pmatrix}$",
+     "alasan": "determinan $2$ sehingga invers memuat pecahan berpenyebut $2$"
+    },
+    {
+     "teks": "$\\begin{pmatrix} 4 & 1 \\\\ 3 & 2 \\end{pmatrix}$",
+     "alasan": "determinan $5$ sehingga invers memuat pecahan berpenyebut $5$"
+    }
+   ],
+   "pembahasan": "Invers $= \\frac{1}{|A|}\\,Adjoin(A)$ dan adjoin berelemen bulat. Elemen invers bulat untuk semua entri hanya dijamin bila $|A| = \\pm 1$ (di sini $-1$); determinan lain meninggalkan pecahan.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-009",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Matriks A disebut matriks singular jika | A |= 0"
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 5,
+   "jenis_soal": "syarat determinan sama dengan determinan inversnya",
+   "alasan_level": "menalar $|A| = |A^{-1}| = \\frac{1}{|A|}$ sehingga $|A| = \\pm 1$ (dua kasus) lalu menghitung seluruh akar tanpa melewatkan kasus negatif",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $A = \\begin{pmatrix} x & x+1 \\\\ 1 & x \\end{pmatrix}$. Banyak nilai real $x$ yang membuat $A$ mempunyai invers dengan $|A| = |A^{-1}|$ adalah ....",
+   "jawaban_benar": "$4$",
+   "alasan_benar": "$|A| = x^2 - x - 1$ dan $|A^{-1}| = \\frac{1}{|A|}$; $|A| = \\frac{1}{|A|}$ memberi $|A| = 1$ atau $|A| = -1$. Kasus $1$: $x^2 - x - 2 = 0$ (dua akar $2$ dan $-1$); kasus $-1$: $x^2 - x = 0$ (dua akar $0$ dan $1$); total $4$",
+   "distraktor": [
+    {
+     "teks": "$2$",
+     "alasan": "hanya memperhitungkan $|A| = 1$ dan melupakan $|A| = -1$"
+    },
+    {
+     "teks": "$3$",
+     "alasan": "menghitung akar yang sama dua kali atau melewatkan satu akar"
+    },
+    {
+     "teks": "$6$",
+     "alasan": "menambahkan akar dari kasus $|A| = 0$ yang justru membuat $A$ singular"
+    }
+   ],
+   "pembahasan": "$|A|^2 = 1$ sehingga $|A| = \\pm 1$. Dua persamaan kuadrat, masing-masing dua akar berbeda ($2, -1$ dan $0, 1$), semuanya real dan berbeda, jadi $4$ nilai.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-010",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 52,
+    "kutipan": "Jika A adalah matriks yang mempunyai invers, maka penyelesaian sistem persamaan linear AX = B dapat ditentukan dengan X = A–1 B ."
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 6,
+   "jenis_soal": "contoh penyangkal pada kekeliruan menghapus faktor matriks",
+   "alasan_level": "memeriksa tiga syarat contoh penyangkal sekaligus (A singular, AB = AC, B tidak sama dengan C) pada empat kandidat",
+   "stimulus": null,
+   "pertanyaan": "Pernyataan: \\\"Jika $AB = AC$, maka $B = C$.\\\" Pernyataan ini salah. Pasangan $A$, $B$, $C$ berordo $2 \\times 2$ yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+   "jawaban_benar": "$A = \\begin{pmatrix} 2 & 4 \\\\ 1 & 2 \\end{pmatrix}$, $B = \\begin{pmatrix} 3 & 1 \\\\ 1 & 2 \\end{pmatrix}$, $C = \\begin{pmatrix} 1 & -3 \\\\ 2 & 4 \\end{pmatrix}$",
+   "alasan_benar": "$|A| = 0$ sehingga $A$ tidak punya invers; $AB = AC = \\begin{pmatrix} 10 & 10 \\\\ 5 & 5 \\end{pmatrix}$ padahal $B \\neq C$",
+   "distraktor": [
+    {
+     "teks": "$A = \\begin{pmatrix} 2 & 4 \\\\ 1 & 2 \\end{pmatrix}$, $B = \\begin{pmatrix} 3 & 1 \\\\ 1 & 2 \\end{pmatrix}$, $C = \\begin{pmatrix} 1 & -3 \\\\ 2 & 5 \\end{pmatrix}$",
+     "alasan": "$AB \\neq AC$ (kolom kedua $C$ diubah), sehingga premis pernyataan tidak terpenuhi"
+    },
+    {
+     "teks": "$A = \\begin{pmatrix} 2 & 4 \\\\ 1 & 3 \\end{pmatrix}$, $B = \\begin{pmatrix} 3 & 1 \\\\ 1 & 2 \\end{pmatrix}$, $C = \\begin{pmatrix} 1 & -3 \\\\ 2 & 4 \\end{pmatrix}$",
+     "alasan": "$A$ mempunyai invers dan $AB \\neq AC$; premis tidak terpenuhi"
+    },
+    {
+     "teks": "$A = \\begin{pmatrix} 2 & 4 \\\\ 1 & 2 \\end{pmatrix}$, $B = \\begin{pmatrix} 3 & 1 \\\\ 1 & 2 \\end{pmatrix}$, $C = \\begin{pmatrix} 3 & 1 \\\\ 1 & 2 \\end{pmatrix}$",
+     "alasan": "$AB = AC$ tetapi $B = C$ sehingga bukan penyangkal"
+    }
+   ],
+   "pembahasan": "Bila $A$ mempunyai invers, mengalikan kedua ruas dengan $A^{-1}$ memberi $B = C$. Contoh penyangkal harus memakai $A$ singular dengan $AB = AC$ tetapi $B \\neq C$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-011",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Jika A adalah sebuah matriks berordo n × n dan I adalah matriks identitas berordo n × n"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "implikasi dari A kuadrat sama dengan A",
+   "alasan_level": "menalar dengan mengalikan A^{-1} dan memakai determinan untuk mengevaluasi empat kesimpulan",
+   "stimulus": null,
+   "pertanyaan": "Matriks persegi $A$ mempunyai invers dan memenuhi $A^2 = A$. Kesimpulan yang pasti benar adalah ....",
+   "jawaban_benar": "$A = I$",
+   "alasan_benar": "Kalikan kedua ruas $A^2 = A$ dengan $A^{-1}$: $A = I$",
+   "distraktor": [
+    {
+     "teks": "$A = O$",
+     "alasan": "$O$ tidak mempunyai invers (determinan $0$), bertentangan dengan premis"
+    },
+    {
+     "teks": "$|A| = 0$",
+     "alasan": "matriks yang mempunyai invers pasti determinannya tidak nol"
+    },
+    {
+     "teks": "$|A| = 2$",
+     "alasan": "dari $|A|^2 = |A|$ diperoleh $|A| = 1$ (bukan $2$)"
+    }
+   ],
+   "pembahasan": "$A^{-1}A^2 = A^{-1}A$ memberi $A = I$. Cek determinan: $|A|^2 = |A|$ dan $|A| \\neq 0$ menghasilkan $|A| = 1$, konsisten dengan $A = I$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-012",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 47,
+    "kutipan": "Himpunan penyelesaian sistem persamaan linear tiga variabel (SPLTV) adalah himpunan yang memuat tripel berurutan ( x , y , z )."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "syarat Aturan Cramer pada SPL tiga variabel",
+   "alasan_level": "menalar bahwa $D = 0$ meniadakan syarat tunggal pada Aturan Cramer walau $D_x$, $D_y$, $D_z$ juga nol, lalu memilih kesimpulan yang tidak melampaui data",
+   "stimulus": null,
+   "pertanyaan": "Sebuah sistem persamaan linear tiga variabel mempunyai $D = D_x = D_y = D_z = 0$. Pernyataan yang pasti benar tentang sistem tersebut adalah ....",
+   "jawaban_benar": "sistem tidak mungkin mempunyai tepat satu penyelesaian",
+   "alasan_benar": "Penyelesaian tunggal mensyaratkan $D \\neq 0$; karena $D = 0$ sistem tidak punya tepat satu penyelesaian (tidak ada atau tak hingga banyak, tergantung sistemnya)",
+   "distraktor": [
+    {
+     "teks": "sistem pasti tidak mempunyai penyelesaian",
+     "alasan": "$D=0$ tidak berarti tidak ada solusi: sistem homogen selalu punya solusi $(0,0,0)$ dan beberapa sistem punya tak hingga banyak"
+    },
+    {
+     "teks": "sistem pasti mempunyai tak hingga banyak penyelesaian",
+     "alasan": "sistem seperti $x+y+z=1$, $x+y+z=2$, $x+y+z=3$ memenuhi semua determinan nol tetapi tidak punya solusi"
+    },
+    {
+     "teks": "penyelesaiannya adalah $x = y = z = 0$",
+     "alasan": "rumus $x = \\frac{D_x}{D}$ tidak berlaku karena $D = 0$; $\\frac{0}{0}$ tidak tentu"
+    }
+   ],
+   "pembahasan": "Aturan Cramer hanya berlaku untuk $D \\neq 0$. Dengan $D = 0$ sistem tidak bisa bersolusi tunggal; kemungkinan lain (tak ada atau tak hingga) bergantung pada sistemnya, contoh $x+y+z=k$ tiga kali dengan $k$ berbeda tidak punya solusi.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-013",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Adjoin ( A ) dapat ditentukan dengan transpos dari matriks kofaktor."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 6,
+   "jenis_soal": "temukan kesalahan: matriks kofaktor tanpa transpos",
+   "alasan_level": "mengevaluasi prosedur invers 3x3 yang melewatkan transpos kofaktor dan menghitung dampaknya pada satu elemen",
+   "stimulus": null,
+   "pertanyaan": "Untuk $B = \\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 1 & 4 \\\\ 5 & 6 & 0 \\end{pmatrix}$, seorang siswa menentukan $B^{-1}$ sebagai $\\frac{1}{|B|}K$ dengan $K$ matriks kofaktor (tanpa transpos). Elemen baris kedua kolom pertama hasil yang benar dikurangi hasil siswa adalah ....",
+   "jawaban_benar": "2",
+   "alasan_benar": "$|B|=1$. Benar: $(B^{-1})_{21}=k_{12}/|B|=20$; siswa: $k_{21}/|B|=18$; selisih $2$",
+   "distraktor": [
+    {
+     "teks": "-2",
+     "alasan": "mengurangkan dengan urutan terbalik (hasil siswa dikurangi hasil benar)"
+    },
+    {
+     "teks": "20",
+     "alasan": "hanya menyebut elemen yang benar, bukan selisihnya"
+    },
+    {
+     "teks": "18",
+     "alasan": "hanya menyebut elemen hasil siswa, bukan selisihnya"
+    }
+   ],
+   "pembahasan": "$k_{12}=20$ dan $k_{21}=18$, $|B|=1$. Adjoin $=K^T$ sehingga $(B^{-1})_{21}=k_{12}/|B|=20$, sedangkan siswa memakai $k_{21}/|B|=18$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b01-e-hard-bt01-014",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "Jika matriks A dan matriks B adalah matriks persegi yang berordo sama, maka | AB |=| A || B |."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "determinan hasil kali berantai dengan invers",
+   "alasan_level": "mengenali bahwa faktor |P^{-1}| dan |P| saling meniadakan sehingga determinan tidak bergantung pada P",
+   "stimulus": null,
+   "pertanyaan": "Matriks $A$ dan $P$ berordo sama dengan $|A| = 5$ dan $|P| = -2$, dan $P$ mempunyai invers. Nilai $|P^{-1}AP|$ adalah ....",
+   "jawaban_benar": "$5$",
+   "alasan_benar": "$|P^{-1}AP| = |P^{-1}||A||P| = \\frac{1}{|P|}\\cdot|A|\\cdot|P| = |A| = 5$",
+   "distraktor": [
+    {
+     "teks": "$-10$",
+     "alasan": "mengalikan $|A|$ dengan $|P|$ saja dan mengabaikan $|P^{-1}|$"
+    },
+    {
+     "teks": "$-\\frac{5}{2}$",
+     "alasan": "memakai $|P^{-1}||A|$ dan lupa faktor $|P|$ di ujung"
+    },
+    {
+     "teks": "$20$",
+     "alasan": "memakai $|P|^2|A|$ karena mengira $|P^{-1}| = |P|$"
+    }
+   ],
+   "pembahasan": "Dengan $|AB| = |A||B|$: $|P^{-1}||A||P| = \\frac{1}{-2}\\cdot 5 \\cdot (-2) = 5$.",
+   "catatan": null
+  }
+ ]
+}

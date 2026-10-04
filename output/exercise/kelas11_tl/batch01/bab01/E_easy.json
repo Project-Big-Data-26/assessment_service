@@ -1,0 +1,716 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "E",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "bagian": "Latihan E",
+        "nomor": "1",
+        "teks": "Jika A dan B merupakan matriks persegi yang berordo sama, maka |A|+|B|=|A+B|.",
+        "jawaban": "Salah"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "sifat determinan",
+      "alasan_level": "mengenali sifat determinan hasil kali dari empat pernyataan, satu sifat langsung",
+      "stimulus": null,
+      "pertanyaan": "Misalkan $A$ dan $B$ dua matriks persegi dengan ordo yang sama. Pernyataan yang berlaku untuk setiap pasangan $A$ dan $B$ tersebut adalah ....",
+      "jawaban_benar": "$|AB| = |A|\\,|B|$",
+      "alasan_benar": "sesuai Sifat 1.4: determinan hasil kali sama dengan hasil kali determinan",
+      "distraktor": [
+        {
+          "teks": "$|A+B| = |A| + |B|$",
+          "alasan": "mengira determinan bersifat linear terhadap penjumlahan"
+        },
+        {
+          "teks": "$|AB| = |A| + |B|$",
+          "alasan": "mengganti operasi kali dengan tambah"
+        },
+        {
+          "teks": "$|A+B| = |A|\\,|B|$",
+          "alasan": "mencampur sifat penjumlahan matriks dengan perkalian determinan"
+        }
+      ],
+      "pembahasan": "Sifat 1.4: $|AB| = |A||B|$ untuk matriks persegi berordo sama. Determinan tidak aditif, jadi pernyataan lain tidak berlaku umum.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "bagian": "Latihan E",
+        "nomor": "1",
+        "teks": "Jika A dan B merupakan matriks persegi yang berordo sama, maka |A|+|B|=|A+B|.",
+        "jawaban": "Salah"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "sifat determinan",
+      "alasan_level": "menerapkan $|AB| = |A||B|$ pada nilai yang diberikan, satu perkalian",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks persegi $A$ dan $B$ yang berordo sama memiliki $|A| = 3$ dan $|B| = -4$. Nilai $|AB|$ adalah ....",
+      "jawaban_benar": "$-12$",
+      "alasan_benar": "$|AB| = |A||B| = 3 \\times (-4) = -12$",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "menjumlahkan determinan, $3 + (-4)$"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "melupakan tanda negatif pada $|B|$"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "mengurangkan, $3 - (-4)$"
+        }
+      ],
+      "pembahasan": "Berdasarkan $|AB| = |A||B|$, maka $|AB| = 3 \\times (-4) = -12$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 48,
+        "bagian": "Mari Berpikir Kreatif",
+        "nomor": "MBK2",
+        "teks": "Jika A merupakan matriks berordo n × n dan k merupakan skalar, maka |kA| = k^n |A|.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "sifat determinan",
+      "alasan_level": "menerapkan $|kA| = k^n |A|$ pada ordo 2, satu pangkat dan satu perkalian",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ berordo $2 \\times 2$ dan $|A| = 5$. Nilai $|3A|$ adalah ....",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "$|3A| = 3^2 \\cdot 5 = 45$",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "memakai $k|A|$, lupa memangkatkan $k$ dengan ordo"
+        },
+        {
+          "teks": "$135$",
+          "alasan": "memangkatkan $k$ dengan 3, bukan dengan ordo 2"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "mengalikan ordo, skalar, dan determinan: $2 \\cdot 3 \\cdot 5$"
+        }
+      ],
+      "pembahasan": "Untuk matriks berordo $n \\times n$ berlaku $|kA| = k^n|A|$. Maka $|3A| = 3^2 \\times 5 = 45$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 48,
+        "bagian": "Mari Berpikir Kreatif",
+        "nomor": "MBK2",
+        "teks": "Jika A merupakan matriks berordo n × n dan k merupakan skalar, maka |kA| = k^n |A|.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "sifat determinan",
+      "alasan_level": "menerapkan $|kA| = k^n |A|$ pada ordo 3, satu pangkat dan satu perkalian",
+      "stimulus": null,
+      "pertanyaan": "Matriks $C$ berordo $3 \\times 3$ dan $|C| = 2$. Nilai $|2C|$ adalah ....",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "$|2C| = 2^3 \\cdot 2 = 16$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "memakai $k|C|$, lupa memangkatkan $k$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "hanya menghitung $2^3$ dan melupakan $|C|$"
+        },
+        {
+          "teks": "$64$",
+          "alasan": "memangkatkan hasil $k|C|$: $(2 \\cdot 2)^3$"
+        }
+      ],
+      "pembahasan": "Berlaku $|kC| = k^n|C|$ dengan $n = 3$: $|2C| = 2^3 \\times 2 = 16$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 48,
+        "bagian": "Mari Berpikir Kreatif",
+        "nomor": "MBK1",
+        "teks": "Jika |A|, |B|, dan |C|, maka |ABC| = |A||B||C|.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "sifat determinan",
+      "alasan_level": "menerapkan perluasan $|ABC| = |A||B||C|$ pada tiga nilai determinan",
+      "stimulus": null,
+      "pertanyaan": "Matriks persegi $A$, $B$, dan $C$ berordo sama dengan $|A| = 2$, $|B| = -3$, dan $|C| = 4$. Nilai $|ABC|$ adalah ....",
+      "jawaban_benar": "$-24$",
+      "alasan_benar": "$|ABC| = |A||B||C| = 2 \\times (-3) \\times 4 = -24$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "menjumlahkan ketiga determinan"
+        },
+        {
+          "teks": "$24$",
+          "alasan": "melupakan tanda negatif pada $|B|$"
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "hanya mengalikan $|A|$ dan $|B|$, melupakan $|C|$"
+        }
+      ],
+      "pembahasan": "Dengan sifat determinan hasil kali: $|ABC| = 2 \\times (-3) \\times 4 = -24$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 53,
+        "bagian": "Uji Kompetensi Bab 1",
+        "nomor": "4",
+        "teks": "Jika A dan B adalah matriks-matriks yang mempunyai invers dan berordo sama yaitu n × n , maka matriks B<sup>–1</sup> ( A<sup>–1</sup> B<sup>–1</sup> )<sup>–1</sup> A<sup>–1</sup> = I dengan I berupa matriks identitas, berordo n × n .",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "sifat invers",
+      "alasan_level": "mengingat sifat invers hasil kali dua matriks",
+      "stimulus": null,
+      "pertanyaan": "Jika $A$ dan $B$ matriks persegi berordo sama yang masing-masing mempunyai invers, maka $(AB)^{-1}$ sama dengan ....",
+      "jawaban_benar": "$B^{-1}A^{-1}$",
+      "alasan_benar": "invers hasil kali membalik urutan faktor: $(AB)^{-1} = B^{-1}A^{-1}$",
+      "distraktor": [
+        {
+          "teks": "$A^{-1}B^{-1}$",
+          "alasan": "tidak membalik urutan perkalian"
+        },
+        {
+          "teks": "$A^{-1} + B^{-1}$",
+          "alasan": "mengira invers hasil kali menjadi jumlah invers"
+        },
+        {
+          "teks": "$(A+B)^{-1}$",
+          "alasan": "mengganti perkalian dengan penjumlahan di dalam tanda invers"
+        }
+      ],
+      "pembahasan": "Karena $(AB)(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = I$, maka $(AB)^{-1} = B^{-1}A^{-1}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 53,
+        "bagian": "Uji Kompetensi Bab 1",
+        "nomor": "4",
+        "teks": "Jika A dan B adalah matriks-matriks yang mempunyai invers dan berordo sama yaitu n × n , maka matriks B<sup>–1</sup> ( A<sup>–1</sup> B<sup>–1</sup> )<sup>–1</sup> A<sup>–1</sup> = I dengan I berupa matriks identitas, berordo n × n .",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "sifat invers",
+      "alasan_level": "mengingat definisi invers: hasil kali matriks dengan inversnya adalah identitas",
+      "stimulus": null,
+      "pertanyaan": "Matriks persegi $A$ mempunyai invers $A^{-1}$ dan $I$ adalah matriks identitas yang berordo sama. Hasil kali $A \\cdot A^{-1}$ adalah ....",
+      "jawaban_benar": "$I$",
+      "alasan_benar": "menurut Definisi 1.10, $A \\cdot A^{-1} = A^{-1} \\cdot A = I$",
+      "distraktor": [
+        {
+          "teks": "$A$",
+          "alasan": "mengira hasil kali dengan invers mengembalikan $A$"
+        },
+        {
+          "teks": "$A^{2}$",
+          "alasan": "mengira $A^{-1}$ sama dengan $A$"
+        },
+        {
+          "teks": "matriks nol $O$",
+          "alasan": "mengira hasil kali dengan invers menghapus semua elemen"
+        }
+      ],
+      "pembahasan": "Definisi invers: $A \\cdot A^{-1} = A^{-1} \\cdot A = I$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "bagian": "Mari Mencoba 1.10",
+        "nomor": "1.10",
+        "teks": "Diketahui X dan Y . Tentukan matriks X<sup>–1</sup> + Y<sup>–1</sup> . Apakah matriks X<sup>–1</sup> + Y<sup>–1</sup> sama dengan matriks ( X + Y )<sup>–1</sup> ?",
+        "jawaban": "Tidak sama; X^-1 + Y^-1 = [[3,2],[-1/2,-1]]"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "invers matriks 2x2",
+      "alasan_level": "satu determinan dan satu penukaran elemen sesuai rumus invers 2x2 (determinan 1)",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $X = \\begin{pmatrix} 9 & 5 \\\\ 7 & 4 \\end{pmatrix}$. Invers matriks $X$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 4 & -5 \\\\ -7 & 9 \\end{pmatrix}$",
+      "alasan_benar": "$|X| = 36 - 35 = 1$, lalu tukar diagonal utama dan ubah tanda diagonal samping",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 9 & -5 \\\\ -7 & 4 \\end{pmatrix}$",
+          "alasan": "diagonal utama tidak ditukar, hanya tanda diagonal samping yang diubah"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 4 & 5 \\\\ 7 & 9 \\end{pmatrix}$",
+          "alasan": "diagonal utama ditukar tetapi tanda diagonal samping tidak diubah"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 4 & -7 \\\\ -5 & 9 \\end{pmatrix}$",
+          "alasan": "memindahkan (transpos) elemen diagonal samping, bukan mengubah tandanya saja"
+        }
+      ],
+      "pembahasan": "$|X| = 9 \\cdot 4 - 5 \\cdot 7 = 1$. $X^{-1} = \\frac{1}{1}\\begin{pmatrix} 4 & -5 \\\\ -7 & 9 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "bagian": "Mari Mencoba 1.10",
+        "nomor": "1.10",
+        "teks": "Diketahui X dan Y . Tentukan matriks X<sup>–1</sup> + Y<sup>–1</sup> . Apakah matriks X<sup>–1</sup> + Y<sup>–1</sup> sama dengan matriks ( X + Y )<sup>–1</sup> ?",
+        "jawaban": "Tidak sama; X^-1 + Y^-1 = [[3,2],[-1/2,-1]]"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "invers matriks 2x2",
+      "alasan_level": "satu determinan bukan satu dan satu penukaran elemen sesuai rumus invers 2x2",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $Y = \\begin{pmatrix} 6 & 4 \\\\ 7 & 5 \\end{pmatrix}$. Invers matriks $Y$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}\\begin{pmatrix} 5 & -4 \\\\ -7 & 6 \\end{pmatrix}$",
+      "alasan_benar": "$|Y| = 30 - 28 = 2$, maka $Y^{-1} = \\frac{1}{2}\\,Adjoin(Y)$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 5 & -4 \\\\ -7 & 6 \\end{pmatrix}$",
+          "alasan": "lupa mengalikan dengan $\\frac{1}{|Y|}$"
+        },
+        {
+          "teks": "$\\frac{1}{2}\\begin{pmatrix} 6 & -4 \\\\ -7 & 5 \\end{pmatrix}$",
+          "alasan": "diagonal utama tidak ditukar"
+        },
+        {
+          "teks": "$\\frac{1}{2}\\begin{pmatrix} 5 & 4 \\\\ 7 & 6 \\end{pmatrix}$",
+          "alasan": "tanda diagonal samping tidak diubah"
+        }
+      ],
+      "pembahasan": "$|Y| = 6 \\cdot 5 - 4 \\cdot 7 = 2$. $Y^{-1} = \\frac{1}{2}\\begin{pmatrix} 5 & -4 \\\\ -7 & 6 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0052-latihan-e-5"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "sifat invers",
+      "alasan_level": "memakai $(AB^{-1})^{-1} = BA^{-1}$ lalu satu perkalian matriks 2x2",
+      "stimulus": null,
+      "pertanyaan": "Tentukan $(AB^{-1})^{-1}$ jika diketahui $A^{-1} = \\begin{pmatrix} 6 & 7 \\\\ 0 & 8 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 9 & 0 \\\\ 6 & 7 \\end{pmatrix}$.",
+      "jawaban_benar": "$\\begin{pmatrix} 54 & 63 \\\\ 36 & 98 \\end{pmatrix}$",
+      "alasan_benar": "$(AB^{-1})^{-1} = BA^{-1}$, lalu dikalikan",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 96 & 49 \\\\ 48 & 56 \\end{pmatrix}$",
+          "alasan": "urutan perkalian tertukar: $A^{-1}B$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 54 & 36 \\\\ 63 & 98 \\end{pmatrix}$",
+          "alasan": "hasil benar yang barisnya dan kolomnya tertukar (transpos)"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 96 & 48 \\\\ 49 & 56 \\end{pmatrix}$",
+          "alasan": "urutan tertukar sekaligus transpos"
+        }
+      ],
+      "pembahasan": "$(AB^{-1})^{-1} = (B^{-1})^{-1}A^{-1} = BA^{-1} = \\begin{pmatrix} 54 & 63 \\\\ 36 & 98 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 42,
+        "kutipan": "yang disebut _determinan matriks A_"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "determinan 2x2",
+      "alasan_level": "satu penerapan rumus $a_{11}a_{22} - a_{21}a_{12}$",
+      "stimulus": null,
+      "pertanyaan": "Nilai determinan matriks $A = \\begin{pmatrix} 6 & 4 \\\\ 3 & 5 \\end{pmatrix}$ adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "$|A| = 6 \\cdot 5 - 3 \\cdot 4 = 18$",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "menjumlahkan dua hasil kali, bukan mengurangkan"
+        },
+        {
+          "teks": "$-18$",
+          "alasan": "mengurangkan dalam urutan terbalik: $a_{21}a_{12} - a_{11}a_{22}$"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "hanya mengalikan diagonal utama"
+        }
+      ],
+      "pembahasan": "$|A| = a_{11}a_{22} - a_{21}a_{12} = 30 - 12 = 18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 43,
+        "kutipan": "Contoh 1.8 Determinan Matriks Berordo 2 × 2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "determinan 2x2",
+      "alasan_level": "rumus determinan 2x2 dengan elemen negatif, memerlukan ketelitian tanda",
+      "stimulus": null,
+      "pertanyaan": "Nilai $\\det B$ untuk $B = \\begin{pmatrix} -3 & 5 \\\\ 2 & -4 \\end{pmatrix}$ adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "$\\det B = (-3)(-4) - (5)(2) = 12 - 10 = 2$",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "salah tanda pada $-(5)(2)$ sehingga dijumlahkan"
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "mengurangkan dalam urutan terbalik"
+        },
+        {
+          "teks": "$-22$",
+          "alasan": "salah tanda pada kedua hasil kali"
+        }
+      ],
+      "pembahasan": "$\\det B = (-3)(-4) - (5)(2) = 12 - 10 = 2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Matriks _A_ disebut _matriks singular_ jika | _A_ |= 0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "matriks singular",
+      "alasan_level": "menyusun $|A|=0$ dari matriks berparameter lalu menyelesaikan persamaan linear",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A = \\begin{pmatrix} x & 10 \\\\ 3 & 5 \\end{pmatrix}$ merupakan matriks singular. Nilai $x$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "singular berarti $|A| = 5x - 30 = 0$, sehingga $x = 6$",
+      "distraktor": [
+        {
+          "teks": "$-6$",
+          "alasan": "salah tanda: $5x + 30 = 0$"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "tidak membagi dengan koefisien $x$ setelah memperoleh $5x = 30$"
+        },
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "salah menempatkan elemen: $10x - 15 = 0$"
+        }
+      ],
+      "pembahasan": "$|A| = 5x - 30$. Singular jika $|A| = 0$, jadi $x = 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Matriks _A_ disebut _matriks nonsingular_ jika | _A_ |≠ 0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "syarat memiliki invers",
+      "alasan_level": "memeriksa determinan empat matriks 2x2, hanya satu yang tidak nol",
+      "stimulus": null,
+      "pertanyaan": "Di antara matriks berikut, matriks yang mempunyai invers adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 5 & 2 \\\\ 3 & 1 \\end{pmatrix}$",
+      "alasan_benar": "$|A| = 5 \\cdot 1 - 2 \\cdot 3 = -1 \\neq 0$, sedangkan tiga matriks lain berdeterminan 0",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 2 & 4 \\\\ 3 & 6 \\end{pmatrix}$",
+          "alasan": "determinan $12 - 12 = 0$ sehingga singular; baris kedua kelipatan baris pertama"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 1 & -2 \\\\ -3 & 6 \\end{pmatrix}$",
+          "alasan": "determinan $6 - 6 = 0$ sehingga singular"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 3 & 9 \\\\ 1 & 3 \\end{pmatrix}$",
+          "alasan": "determinan $9 - 9 = 0$ sehingga singular"
+        }
+      ],
+      "pembahasan": "Matriks mempunyai invers jika determinannya tidak nol. Hanya $\\begin{pmatrix} 5 & 2 \\\\ 3 & 1 \\end{pmatrix}$ berdeterminan $-1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Matriks _A_ disebut _matriks singular_ jika | _A_ |= 0"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "istilah singular dan nonsingular",
+      "alasan_level": "mengingat nama matriks persegi yang determinannya nol",
+      "stimulus": null,
+      "pertanyaan": "Matriks persegi $A$ dengan $|A| = 0$ disebut ....",
+      "jawaban_benar": "matriks singular",
+      "alasan_benar": "menurut Catatan Definisi 1.10, $|A| = 0$ berarti matriks singular",
+      "distraktor": [
+        {
+          "teks": "matriks nonsingular",
+          "alasan": "tertukar dengan matriks yang determinannya tidak nol"
+        },
+        {
+          "teks": "matriks identitas",
+          "alasan": "mengira determinan nol berarti matriks identitas"
+        },
+        {
+          "teks": "matriks adjoin",
+          "alasan": "mengira nama itu merujuk pada hasil transpos matriks kofaktor"
+        }
+      ],
+      "pembahasan": "Matriks persegi disebut singular jika $|A| = 0$ dan nonsingular jika $|A| \\neq 0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Invers Matriks Berordo 2 × 2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "invers matriks 2x2",
+      "alasan_level": "satu determinan dan satu elemen invers menurut rumus invers 2x2",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 4 & 3 \\\\ 1 & 2 \\end{pmatrix}$. Elemen pada baris pertama kolom kedua dari $A^{-1}$ adalah ....",
+      "jawaban_benar": "$-\\frac{3}{5}$",
+      "alasan_benar": "$|A| = 5$, $A^{-1} = \\frac{1}{5}\\begin{pmatrix} 2 & -3 \\\\ -1 & 4 \\end{pmatrix}$, elemen $(1,2)$ adalah $-\\frac{3}{5}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "tanda elemen diagonal samping tidak diubah"
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "lupa mengalikan dengan $\\frac{1}{|A|}$"
+        },
+        {
+          "teks": "$-\\frac{1}{5}$",
+          "alasan": "mengambil elemen baris kedua kolom pertama (transpos)"
+        }
+      ],
+      "pembahasan": "$|A| = 8 - 3 = 5$, sehingga $A^{-1} = \\frac{1}{5}\\begin{pmatrix} 2 & -3 \\\\ -1 & 4 \\end{pmatrix}$. Elemen baris 1 kolom 2 adalah $-\\frac{3}{5}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 50,
+        "kutipan": "Adapun _Adjoin_ ( _A_ ) dapat ditentukan dengan transpos dari matriks kofaktor"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "adjoin matriks 2x2",
+      "alasan_level": "satu penerapan bentuk $Adjoin(A)$ untuk matriks 2x2",
+      "stimulus": null,
+      "pertanyaan": "Untuk $A = \\begin{pmatrix} 6 & -2 \\\\ 5 & 3 \\end{pmatrix}$, matriks $Adjoin(A)$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 3 & 2 \\\\ -5 & 6 \\end{pmatrix}$",
+      "alasan_benar": "$Adjoin(A) = \\begin{pmatrix} a_{22} & -a_{12} \\\\ -a_{21} & a_{11} \\end{pmatrix}$ dengan $a_{11} = 6$, $a_{12} = -2$, $a_{21} = 5$, $a_{22} = 3$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 6 & 2 \\\\ -5 & 3 \\end{pmatrix}$",
+          "alasan": "diagonal utama tidak ditukar"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 3 & -2 \\\\ 5 & 6 \\end{pmatrix}$",
+          "alasan": "diagonal ditukar tetapi tanda diagonal samping tidak diubah"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 3 & -5 \\\\ 2 & 6 \\end{pmatrix}$",
+          "alasan": "menukar letak $a_{12}$ dan $a_{21}$ (transpos), bukan mengubah tandanya"
+        }
+      ],
+      "pembahasan": "Tukar diagonal utama dan ubah tanda diagonal samping: $\\begin{pmatrix} 3 & 2 \\\\ -5 & 6 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "kutipan": "maka penyelesaian sistem persamaan linear _AX_ = _B_ dapat ditentukan dengan _X_ = _A_<sup>–1</sup> _B_"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "persamaan matriks AX = B",
+      "alasan_level": "memakai $X = A^{-1}B$ dengan invers yang sudah diketahui, satu perkalian matriks",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A^{-1} = \\begin{pmatrix} 3 & -1 \\\\ -5 & 2 \\end{pmatrix}$ dan $AX = B$ dengan $B = \\begin{pmatrix} 4 \\\\ 9 \\end{pmatrix}$. Matriks $X$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$",
+      "alasan_benar": "$X = A^{-1}B = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} -33 \\\\ 14 \\end{pmatrix}$",
+          "alasan": "memakai transpos $A^{-1}$ dalam perkalian"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 21 \\\\ -38 \\end{pmatrix}$",
+          "alasan": "mengabaikan tanda negatif elemen $A^{-1}$ ketika mengalikan"
+        },
+        {
+          "teks": "$\\begin{pmatrix} -3 \\\\ 2 \\end{pmatrix}$",
+          "alasan": "salah tanda pada seluruh hasil perkalian"
+        }
+      ],
+      "pembahasan": "$X = A^{-1}B$. Baris 1: $3 \\cdot 4 + (-1) \\cdot 9 = 3$. Baris 2: $(-5) \\cdot 4 + 2 \\cdot 9 = -2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 45,
+        "kutipan": "Kofaktor elemen baris ke- _i_ dan kolom ke- _j_ adalah _kij_ = (–1)<sup>_i+j_</sup> _Mij_"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "minor dan kofaktor",
+      "alasan_level": "menentukan minor 2x2 lalu menyesuaikan tanda $(-1)^{i+j}$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 2 & 1 & 3 \\\\ 4 & 0 & 5 \\\\ 1 & 6 & 2 \\end{pmatrix}$. Kofaktor $k_{12}$ dari matriks $A$ adalah ....",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "$M_{12} = \\begin{vmatrix} 4 & 5 \\\\ 1 & 2 \\end{vmatrix} = 3$ dan $k_{12} = (-1)^{1+2} M_{12} = -3$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "melupakan faktor $(-1)^{1+2}$"
+        },
+        {
+          "teks": "$13$",
+          "alasan": "salah operasi minor: $4 \\cdot 2 + 5 \\cdot 1$, tanda faktor $(-1)^{1+2}$ terlewat"
+        },
+        {
+          "teks": "$-16$",
+          "alasan": "menghapus baris ke-2 dan kolom ke-1 (minor $M_{21}$), bukan $M_{12}$"
+        }
+      ],
+      "pembahasan": "Hapus baris 1 dan kolom 2: $M_{12} = 8 - 5 = 3$. Kofaktor $k_{12} = (-1)^3 \\cdot 3 = -3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 44,
+        "kutipan": "Cara menentukan determinan matriks berordo 3 × 3 dengan Metode Sarrus adalah dengan menyalin elemen-elemen pada kolom pertama dan kolom kedua dari matriks tersebut ke sebelah kanan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "determinan 3x3 (Sarrus)",
+      "alasan_level": "satu penerapan Metode Sarrus: enam hasil kali tiga elemen, tiga dijumlah dan tiga dikurangkan",
+      "stimulus": null,
+      "pertanyaan": "Dengan Metode Sarrus, nilai determinan $\\begin{vmatrix} 2 & 1 & 0 \\\\ 1 & 3 & 2 \\\\ 4 & 0 & 1 \\end{vmatrix}$ adalah ....",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "jumlah diagonal turun 14 dikurangi jumlah diagonal naik 1",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "hanya menjumlahkan tiga diagonal turun, melupakan pengurangan diagonal naik"
+        },
+        {
+          "teks": "$-13$",
+          "alasan": "mengurangkan dalam urutan terbalik (diagonal naik dikurangi diagonal turun)"
+        },
+        {
+          "teks": "$15$",
+          "alasan": "menjumlahkan keenam hasil kali tanpa pengurangan"
+        }
+      ],
+      "pembahasan": "Diagonal turun: $2\\cdot3\\cdot1 + 1\\cdot2\\cdot4 + 0\\cdot1\\cdot0 = 14$. Diagonal naik: $0\\cdot3\\cdot4 + 2\\cdot2\\cdot0 + 1\\cdot1\\cdot1 = 1$. Determinan $= 14 - 1 = 13$.",
+      "catatan": null
+    }
+  ]
+}

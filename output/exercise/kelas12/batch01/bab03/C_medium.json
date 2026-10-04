@@ -1,0 +1,698 @@
+{
+ "book": "kelas12",
+ "bab_no": 3,
+ "subbab": "C",
+ "level": "medium",
+ "batch": 1,
+ "skill_versi": "v1",
+ "soal": [
+  {
+   "id": "kelas12-b03-c-medium-bt01-001",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "bagian": "Contoh 3.11",
+    "nomor": "3.11",
+    "teks": "terdapat 7 siswa dan 6 siswi, tetapi yang dipilih oleh sekolah sebagai duta antikekerasan dan bullying adalah 4 siswa dan 3 siswi. Berapa banyak susunan siswa/i yang menjadi duta?",
+    "jawaban": "700 susunan"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 2,
+   "jenis_soal": "kombinasi dua kelompok (perkalian kombinasi)",
+   "alasan_level": "dua kombinasi dari dua kelompok yang dikalikan, dengan angka yang lebih besar dan dua rumus berlainan",
+   "stimulus": null,
+   "pertanyaan": "Pengurus Palang Merah Remaja SMA Nusa Bangsa akan mengirim relawan untuk kegiatan donor darah. Berdasarkan anggota yang aktif, terdapat 9 putra dan 8 putri, tetapi yang dipilih sebagai relawan adalah 5 putra dan 2 putri. Berapa banyak susunan relawan yang dapat terbentuk?",
+   "jawaban_benar": "3.528 susunan",
+   "alasan_benar": "$C(9,5) \\times C(8,2) = 126 \\times 28 = 3.528$",
+   "distraktor": [
+    {
+     "teks": "154 susunan",
+     "alasan": "menjumlahkan $C(9,5) + C(8,2)$ bukan mengalikan"
+    },
+    {
+     "teks": "2.016 susunan",
+     "alasan": "menukar banyak yang dipilih: $C(9,2) \\times C(8,5)$"
+    },
+    {
+     "teks": "19.448 susunan",
+     "alasan": "memilih 7 dari 17 anggota tanpa membedakan putra dan putri: $C(17,7)$"
+    }
+   ],
+   "pembahasan": "Putra: $C(9,5)=126$; putri: $C(8,2)=28$. Kedua pemilihan terjadi bersamaan, sehingga $126 \\times 28 = 3.528$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-002",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 126,
+    "bagian": "Contoh 3.12",
+    "nomor": "3.12",
+    "teks": "Terdapat dua puluh apel dan lima belas jeruk untuk dibagikan kepada lima orang anak. Jika lebih dari satu apel atau jeruk atau tidak ada sama sekali yang dapat diperoleh oleh setiap anak, berapakah banyak cara yang dapat dibagi terhadap buah tersebut?",
+    "jawaban": "41.186.376 cara"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "kombinasi berulang dua jenis benda",
+   "alasan_level": "membagi dua jenis benda identik dengan kombinasi berulang pada masing-masing jenis lalu mengalikan",
+   "stimulus": null,
+   "pertanyaan": "Seorang guru memiliki 7 pensil identik dan 3 penghapus identik untuk dibagikan kepada 3 siswa. Setiap siswa boleh menerima lebih dari satu pensil atau penghapus, bahkan boleh tidak menerima sama sekali. Berapa banyak cara pembagian kedua jenis alat tulis tersebut?",
+   "jawaban_benar": "360 cara",
+   "alasan_benar": "$C(7+3-1,7) \\times C(3+3-1,3) = C(9,7) \\times C(5,3) = 36 \\times 10 = 360$",
+   "distraktor": [
+    {
+     "teks": "46 cara",
+     "alasan": "menjumlahkan kedua hasil, bukan mengalikan"
+    },
+    {
+     "teks": "66 cara",
+     "alasan": "menggabungkan 10 benda seolah satu jenis: $C(10+3-1,10) = C(12,10)$"
+    },
+    {
+     "teks": "2.400 cara",
+     "alasan": "lupa mengurangi 1 pada rumus: $C(10,7) \\times C(6,3)$"
+    }
+   ],
+   "pembahasan": "Pensil: $C(9,7)=36$. Penghapus: $C(5,3)=10$. Kedua pembagian terjadi bersamaan: $36 \\times 10 = 360$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-003",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 124,
+    "bagian": "Ayo, Bereksplorasi",
+    "nomor": "3.7",
+    "teks": "Pelatih merekomendasikan kepada Ahmad untuk mengonsumsi empat buah dalam sehari. Jika terdapat empat buah dari setiap jenis buah dalam keranjang yang disediakan, berapa banyak cara Ahmad memilih empat buah yang dapat dikonsumsi?",
+    "jawaban": "15 cara"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 2,
+   "jenis_soal": "kombinasi berulang memilih jenis",
+   "alasan_level": "mengenali pemilihan dengan pengulangan lalu memakai $C(n+r-1,r)$ dengan angka tidak sederhana",
+   "stimulus": null,
+   "pertanyaan": "Sebuah toko donat menyediakan 5 rasa donat, yaitu cokelat, keju, stroberi, kopi, dan pandan, dengan persediaan setiap rasa lebih dari 6 buah. Seorang pembeli akan memilih 6 donat untuk satu kotak, dan rasa yang sama boleh dipilih lebih dari satu kali. Berapa banyak komposisi rasa yang mungkin dalam kotak tersebut?",
+   "jawaban_benar": "210 cara",
+   "alasan_benar": "$C(5+6-1,6) = C(10,6) = 210$",
+   "distraktor": [
+    {
+     "teks": "462 cara",
+     "alasan": "memakai $C(n+r,r) = C(11,6)$, lupa mengurangi 1"
+    },
+    {
+     "teks": "15.625 cara",
+     "alasan": "menghitung $5^6$ seolah urutan pemilihan diperhatikan"
+    },
+    {
+     "teks": "84 cara",
+     "alasan": "memakai $C(9,6)$, mengurangi 2 bukannya 1"
+    }
+   ],
+   "pembahasan": "Pengulangan diperbolehkan: $C(n+r-1,r) = C(5+6-1,6) = C(10,6) = 210$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-004",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 129,
+    "bagian": "Latihan 3.3",
+    "nomor": "2",
+    "teks": "Pak Anam sebagai guru pembimbing Olimpiade Matematika akan mengadakan tes terbuka yang bertujuan meningkatkan kreativitas siswanya. Ia meminta 8 siswa untuk membuat masing-masing satu soal matematika sesuai dengan kemampuan dan ketertarikannya. Setelah semua soal terkumpul, Pak Anam akan memilih 5 soal terbaik untuk dibahas lebih lanjut dalam diskusi kelompok. Berapa banyak cara berbeda Pak Anam dapat memilih 5 soal dari 8 soal yang tersedia?",
+    "jawaban": "56 cara"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 2,
+   "jenis_soal": "kombinasi dengan unsur wajib",
+   "alasan_level": "satu unsur sudah pasti terpilih sehingga sisanya dipilih dari kelompok yang lebih kecil",
+   "stimulus": null,
+   "pertanyaan": "Bu Ratna meminta 11 siswa untuk menulis masing-masing satu soal Fisika. Dari 11 soal yang terkumpul, Bu Ratna akan memilih 6 soal untuk ujian tengah semester, dan soal buatan Dimas sudah pasti dipilih. Berapa banyak cara berbeda Bu Ratna dapat memilih keenam soal tersebut?",
+   "jawaban_benar": "252 cara",
+   "alasan_benar": "soal Dimas pasti terpilih, tinggal memilih 5 dari 10 soal: $C(10,5) = 252$",
+   "distraktor": [
+    {
+     "teks": "462 cara",
+     "alasan": "mengabaikan syarat soal Dimas: $C(11,6)$"
+    },
+    {
+     "teks": "210 cara",
+     "alasan": "masih memilih 6 dari 10 soal sisa: $C(10,6)$"
+    },
+    {
+     "teks": "30.240 cara",
+     "alasan": "memakai permutasi $P(10,5)$ padahal urutan tidak diperhatikan"
+    }
+   ],
+   "pembahasan": "Satu soal pasti terpilih, sehingga 5 soal sisanya dipilih dari 10 soal lain: $C(10,5)=252$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-005",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "bagian": "Contoh 3.11",
+    "nomor": "3.11",
+    "teks": "terdapat 7 siswa dan 6 siswi, tetapi yang dipilih oleh sekolah sebagai duta antikekerasan dan bullying adalah 4 siswa dan 3 siswi. Berapa banyak susunan siswa/i yang menjadi duta?",
+    "jawaban": "700 susunan"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 2,
+   "jenis_soal": "kombinasi dua kelompok (perkalian kombinasi)",
+   "alasan_level": "dua kelompok dengan jumlah anggota berbeda yang dipilih sekaligus lalu dikalikan",
+   "stimulus": null,
+   "pertanyaan": "Panitia lomba cerdas cermat akan membentuk satu tim dari peserta yang mendaftar, yaitu 6 siswa kelas X dan 7 siswa kelas XI. Tim tersebut harus terdiri dari 3 siswa kelas X dan 2 siswa kelas XI. Berapa banyak susunan tim yang dapat dibentuk?",
+   "jawaban_benar": "420 susunan",
+   "alasan_benar": "$C(6,3) \\times C(7,2) = 20 \\times 21 = 420$",
+   "distraktor": [
+    {
+     "teks": "41 susunan",
+     "alasan": "menjumlahkan $C(6,3) + C(7,2)$"
+    },
+    {
+     "teks": "1.287 susunan",
+     "alasan": "memilih 5 dari 13 siswa tanpa memperhatikan kelas: $C(13,5)$"
+    },
+    {
+     "teks": "525 susunan",
+     "alasan": "menukar banyak yang dipilih: $C(6,2) \\times C(7,3)$"
+    }
+   ],
+   "pembahasan": "Kelas X: $C(6,3)=20$; kelas XI: $C(7,2)=21$. Hasilnya $20 \\times 21 = 420$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-006",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b03-p0130-latihan-3-3-5"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "kombinasi dengan larangan (komplemen)",
+   "alasan_level": "menghitung semua kemungkinan lalu mengurangi kasus yang melanggar larangan",
+   "stimulus": null,
+   "pertanyaan": "Rani seorang desainer interior yang akan memadukan warna cat dinding. Tersedia 7 warna, yaitu merah, kuning, biru, hijau, putih, ungu, dan jingga. Rani akan memadukan empat warna, tetapi warna merah dan jingga tidak boleh dipakai bersamaan dalam satu paduan. Jika susunan warna tidak dibedakan, berapa banyak paduan warna yang dapat dibuat?",
+   "jawaban_benar": "25 cara",
+   "alasan_benar": "semua paduan $C(7,4)=35$ dikurangi paduan yang memuat merah dan jingga $C(5,2)=10$, jadi $35-10=25$",
+   "distraktor": [
+    {
+     "teks": "35 cara",
+     "alasan": "mengabaikan larangan sehingga semua paduan dihitung"
+    },
+    {
+     "teks": "10 cara",
+     "alasan": "hanya menghitung paduan yang memuat merah dan jingga bersamaan"
+    },
+    {
+     "teks": "5 cara",
+     "alasan": "menghitung paduan yang tidak memuat merah maupun jingga: $C(5,4)$"
+    }
+   ],
+   "pembahasan": "Total $C(7,4)=35$. Paduan terlarang memuat merah dan jingga, dua warna lainnya dari 5 warna: $C(5,2)=10$. Jadi $35-10=25$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-007",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 130,
+    "bagian": "Latihan 3.3",
+    "nomor": "4",
+    "teks": "AA Bakery merupakan suatu toko kue yang menyediakan 5 jenis kue yaitu cokelat, vanilla, stroberi, bluberi, dan pandan. Sebagai bentuk promo kemerdekaan, AA Bakery akan membuat paket kue yang terdiri dari 3 kue berbeda.",
+    "jawaban": "10 paket kue"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "paling sedikit (komplemen)",
+   "alasan_level": "kata paling sedikit diselesaikan dengan total dikurangi kasus tanpa unsur yang diminta",
+   "stimulus": null,
+   "pertanyaan": "Toko kue Manis Rasa menyediakan 7 jenis kue, terdiri dari 4 jenis kue basah dan 3 jenis kue kering. Sebagai paket hemat, toko akan membuat paket yang terdiri dari 3 kue berbeda dengan paling sedikit satu kue kering. Berapa banyak paket berbeda yang dapat dibuat?",
+   "jawaban_benar": "31 paket",
+   "alasan_benar": "$C(7,3) - C(4,3) = 35 - 4 = 31$",
+   "distraktor": [
+    {
+     "teks": "35 paket",
+     "alasan": "semua paket dihitung tanpa memperhatikan syarat kue kering"
+    },
+    {
+     "teks": "45 paket",
+     "alasan": "memilih 1 kue kering lalu 2 dari 6 sisanya: $3 \\times C(6,2)$, paket yang punya banyak kue kering terhitung berulang"
+    },
+    {
+     "teks": "39 paket",
+     "alasan": "menambahkan $C(4,3)$, bukan mengurangi: $35+4$"
+    }
+   ],
+   "pembahasan": "Total paket $C(7,3)=35$. Paket tanpa kue kering (semua kue basah) $C(4,3)=4$. Paket dengan paling sedikit satu kue kering $=35-4=31$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-008",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 127,
+    "bagian": "Contoh 3.13",
+    "nomor": "3.13",
+    "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan x 1 + x 2 + x 3 + x 4 = 7.",
+    "jawaban": "120"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 2,
+   "jenis_soal": "banyak solusi persamaan bulat non-negatif",
+   "alasan_level": "menentukan $n$ dan banyak variabel lalu memakai Stars and Bars dengan lima variabel",
+   "stimulus": null,
+   "pertanyaan": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $a + b + c + d + e = 11$.",
+   "jawaban_benar": "1.365",
+   "alasan_benar": "$n=11$, $k=5$: $C(11+5-1,11) = C(15,11) = C(15,4) = 1.365$",
+   "distraktor": [
+    {
+     "teks": "4.368",
+     "alasan": "memakai $C(n+k,n) = C(16,11)$, lupa mengurangi 1"
+    },
+    {
+     "teks": "462",
+     "alasan": "memakai $C(11,5)$, yaitu kombinasi tanpa pengulangan"
+    },
+    {
+     "teks": "55",
+     "alasan": "mengalikan 11 dengan 5"
+    }
+   ],
+   "pembahasan": "Banyak solusi $= C(n+k-1,n) = C(15,11) = C(15,4) = \\frac{15 \\times 14 \\times 13 \\times 12}{24} = 1.365$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-009",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Banyak kombinasi 2 objek dari 5 objek yang dinotasikan"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "persamaan nilai $C(n,r)$ (cari $n$)",
+   "alasan_level": "mengubah $C(n,2)$ menjadi persamaan kuadrat lalu memilih akar yang memenuhi",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $C(n,2) = 105$ dengan $n$ bilangan bulat positif. Nilai $n$ adalah ....",
+   "jawaban_benar": "15",
+   "alasan_benar": "$\\frac{n(n-1)}{2}=105$ sehingga $n(n-1)=210=15 \\times 14$, jadi $n=15$",
+   "distraktor": [
+    {
+     "teks": "14",
+     "alasan": "memakai faktor $n-1=14$ sebagai nilai $n$"
+    },
+    {
+     "teks": "16",
+     "alasan": "mengira $n = 15 + 1$ karena rumus memuat $n-1$"
+    },
+    {
+     "teks": "210",
+     "alasan": "mengira $\\frac{n}{2}=105$ sehingga $n=210$"
+    }
+   ],
+   "pembahasan": "$C(n,2)=\\frac{n(n-1)}{2}=105 \\Rightarrow n(n-1)=210=15 \\times 14$, sehingga $n=15$ (nilai $-14$ tidak memenuhi karena $n$ positif).",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-010",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Banyak kombinasi 2 objek dari 5 objek yang dinotasikan"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "persamaan dua kombinasi (cari $n$)",
+   "alasan_level": "menguraikan dua kombinasi dengan faktorial dan menyederhanakan hingga diperoleh persamaan linear",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $n$ bilangan bulat dengan $n \\geq 3$ dan $C(n,3) = 2 \\times C(n,2)$. Nilai $n$ adalah ....",
+   "jawaban_benar": "8",
+   "alasan_benar": "$\\frac{n(n-1)(n-2)}{6} = n(n-1)$ sehingga $n-2=6$ dan $n=8$",
+   "distraktor": [
+    {
+     "teks": "5",
+     "alasan": "mengira $2 \\times C(n,2) = \\frac{n(n-1)}{2}$ sehingga $n-2=3$"
+    },
+    {
+     "teks": "14",
+     "alasan": "mengalikan 6 dengan 2 sehingga $n-2=12$"
+    },
+    {
+     "teks": "6",
+     "alasan": "menyimpulkan $n-2=6$ lalu mengambil $n=6$"
+    }
+   ],
+   "pembahasan": "$C(n,3)=\\frac{n(n-1)(n-2)}{6}$ dan $2C(n,2)=n(n-1)$. Karena $n(n-1) \\neq 0$, diperoleh $\\frac{n-2}{6}=1$, jadi $n=8$. Cek: $C(8,3)=56=2 \\times 28$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-011",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 123,
+    "kutipan": "Banyaknya susunan siswa/i yang terbentuk menjadi duta"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "paling sedikit (kasus majemuk)",
+   "alasan_level": "menghitung kasus 2, 3, atau 4 putri, atau total dikurangi kasus 0 dan 1 putri",
+   "stimulus": null,
+   "pertanyaan": "Dari 6 putra dan 5 putri akan dibentuk panitia beranggotakan 4 orang. Banyak panitia yang dapat dibentuk jika panitia memuat paling sedikit 2 putri adalah ....",
+   "jawaban_benar": "215 cara",
+   "alasan_benar": "total $C(11,4)=330$ dikurangi 0 putri $C(6,4)=15$ dan 1 putri $5 \\times C(6,3)=100$, hasilnya $215$",
+   "distraktor": [
+    {
+     "teks": "315 cara",
+     "alasan": "hanya mengurangi kasus tanpa putri: $330-15$"
+    },
+    {
+     "teks": "230 cara",
+     "alasan": "hanya mengurangi kasus tepat 1 putri: $330-100$"
+    },
+    {
+     "teks": "150 cara",
+     "alasan": "hanya menghitung kasus tepat 2 putri: $C(5,2) \\times C(6,2)$"
+    }
+   ],
+   "pembahasan": "Total $C(11,4)=330$. Kasus 0 putri $C(6,4)=15$; kasus 1 putri $C(5,1) \\times C(6,3)=100$. Jadi $330-15-100=215$. Cek langsung: $150+60+5=215$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-012",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "kutipan": "Karena peran 4 siswa tersebut tidak dipengaruhi urutan, maka menggunakan konsep kombinasi"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "unsur wajib dan unsur dikecualikan",
+   "alasan_level": "satu orang pasti masuk dan satu orang pasti tidak masuk sehingga tersisa 7 orang untuk 3 kursi",
+   "stimulus": null,
+   "pertanyaan": "Dari 9 siswa akan dibentuk tim beranggotakan 4 orang, tanpa pembagian jabatan. Adi dan Budi termasuk di antara 9 siswa tersebut. Jika Adi harus menjadi anggota tim dan Budi tidak boleh menjadi anggota tim, banyak tim berbeda yang dapat dibentuk adalah ....",
+   "jawaban_benar": "35 cara",
+   "alasan_benar": "Adi pasti masuk, Budi pasti tidak masuk, 3 anggota lain dipilih dari 7 siswa: $C(7,3)=35$",
+   "distraktor": [
+    {
+     "teks": "126 cara",
+     "alasan": "mengabaikan kedua syarat: $C(9,4)$"
+    },
+    {
+     "teks": "56 cara",
+     "alasan": "hanya memakai syarat Adi wajib masuk: $C(8,3)$"
+    },
+    {
+     "teks": "70 cara",
+     "alasan": "hanya memakai syarat Budi tidak boleh masuk: $C(8,4)$"
+    }
+   ],
+   "pembahasan": "Adi sudah pasti masuk dan Budi dikeluarkan, sisa 7 siswa untuk mengisi 3 tempat: $C(7,3)=35$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-013",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 123,
+    "kutipan": "Banyaknya susunan siswa/i yang terbentuk menjadi duta"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "kombinasi tiga kelompok",
+   "alasan_level": "memilih dari tiga kelompok warna sekaligus lalu mengalikan tiga kombinasi",
+   "stimulus": null,
+   "pertanyaan": "Sebuah kotak berisi 6 bola merah, 4 bola putih, dan 3 bola biru; semua bola dapat dibedakan. Diambil 4 bola sekaligus. Banyak cara pengambilan yang terdiri atas 2 bola merah, 1 bola putih, dan 1 bola biru adalah ....",
+   "jawaban_benar": "180 cara",
+   "alasan_benar": "$C(6,2) \\times C(4,1) \\times C(3,1) = 15 \\times 4 \\times 3 = 180$",
+   "distraktor": [
+    {
+     "teks": "715 cara",
+     "alasan": "mengambil 4 dari 13 bola tanpa syarat warna: $C(13,4)$"
+    },
+    {
+     "teks": "60 cara",
+     "alasan": "melewatkan pemilihan bola biru: $C(6,2) \\times C(4,1)$"
+    },
+    {
+     "teks": "22 cara",
+     "alasan": "menjumlahkan $15 + 4 + 3$ bukan mengalikan"
+    }
+   ],
+   "pembahasan": "Merah: $C(6,2)=15$; putih: $C(4,1)=4$; biru: $C(3,1)=3$. Ketiganya terjadi bersamaan: $15 \\times 4 \\times 3 = 180$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-014",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 126,
+    "kutipan": "Jika lebih dari satu bola yang mungkin ada di setiap kotak (tidak ada batasan jumlah bola), maka jumlah cara mendapatkan bola"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "pembagian benda identik dengan syarat minimal",
+   "alasan_level": "memberi dulu jatah minimal lalu membagi sisanya dengan Stars and Bars",
+   "stimulus": null,
+   "pertanyaan": "Sebanyak 13 pensil yang identik dibagikan kepada 5 anak. Setiap anak harus menerima sedikitnya 1 pensil. Banyak cara membagikan pensil tersebut adalah ....",
+   "jawaban_benar": "495 cara",
+   "alasan_benar": "setiap anak diberi 1 pensil, sisa 8 pensil dibagi tanpa syarat: $C(8+5-1,8)=C(12,8)=495$",
+   "distraktor": [
+    {
+     "teks": "2.380 cara",
+     "alasan": "mengabaikan syarat minimal: $C(13+5-1,13)=C(17,13)$"
+    },
+    {
+     "teks": "1.287 cara",
+     "alasan": "memakai $C(13,5)$, yaitu kombinasi tanpa pengulangan"
+    },
+    {
+     "teks": "792 cara",
+     "alasan": "memakai $C(12,5)$, salah menentukan banyak pilihan"
+    }
+   ],
+   "pembahasan": "Beri tiap anak 1 pensil (5 pensil), sisa 8 pensil dibagi bebas: $C(8+5-1,8)=C(12,8)=C(12,4)=495$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-015",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 126,
+    "kutipan": "Secara ekuivalen, banyaknya solusi bulat nonnegatif untuk persamaan"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "banyak solusi persamaan dengan batas bawah",
+   "alasan_level": "mengubah variabel yang dibatasi menjadi non-negatif lalu memakai Stars and Bars",
+   "stimulus": null,
+   "pertanyaan": "Banyak solusi bilangan bulat dari persamaan $x + y + z + w = 15$ dengan $x \\geq 2$, $y \\geq 3$, $z \\geq 0$, dan $w \\geq 0$ adalah ....",
+   "jawaban_benar": "286",
+   "alasan_benar": "substitusi $x'=x-2$ dan $y'=y-3$ sehingga $x'+y'+z+w=10$: $C(10+4-1,10)=C(13,10)=286$",
+   "distraktor": [
+    {
+     "teks": "816",
+     "alasan": "mengabaikan batas bawah: $C(15+4-1,15)=C(18,15)$"
+    },
+    {
+     "teks": "1.001",
+     "alasan": "memakai $C(n+k,n)$ pada $n=10$, yaitu $C(14,4)$, lupa mengurangi 1"
+    },
+    {
+     "teks": "364",
+     "alasan": "memakai $C(14,3)$, salah mengurangi 1 dari $n+k$"
+    }
+   ],
+   "pembahasan": "Misalkan $x'=x-2 \\geq 0$ dan $y'=y-3 \\geq 0$. Persamaan menjadi $x'+y'+z+w=10$ dengan 4 variabel non-negatif: $C(13,10)=C(13,3)=286$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-016",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Banyak susunannya yang sama dari setiap pasangan 2 objek adalah 2!"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "hubungan permutasi dan kombinasi (cari $n$)",
+   "alasan_level": "menentukan $n$ dari $P(n,2)$ lalu menghitung kombinasi pada nilai $n+1$",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $P(n,2) = 72$ dengan $n$ bilangan bulat positif. Nilai $C(n+1,3)$ adalah ....",
+   "jawaban_benar": "120",
+   "alasan_benar": "$n(n-1)=72$ sehingga $n=9$, lalu $C(10,3)=120$",
+   "distraktor": [
+    {
+     "teks": "84",
+     "alasan": "menghitung $C(9,3)$, lupa menaikkan $n$ menjadi $n+1$"
+    },
+    {
+     "teks": "45",
+     "alasan": "menghitung $C(10,2)$, salah mengambil $r=2$"
+    },
+    {
+     "teks": "720",
+     "alasan": "menghitung $P(10,3)$, memakai permutasi"
+    }
+   ],
+   "pembahasan": "$P(n,2)=n(n-1)=72=9 \\times 8$, jadi $n=9$. Maka $C(n+1,3)=C(10,3)=\\frac{10 \\times 9 \\times 8}{6}=120$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-017",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Banyak susunannya yang sama dari setiap pasangan 2 objek adalah 2!"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "gabungan kombinasi dan permutasi",
+   "alasan_level": "membedakan tahap tanpa urutan (memilih tim) dan tahap berurutan (kapten dan wakil)",
+   "stimulus": null,
+   "pertanyaan": "Dari 9 pelajar dipilih 4 orang untuk mewakili sekolah dalam sebuah lomba. Dari 4 orang terpilih itu, kemudian ditunjuk 1 orang sebagai kapten dan 1 orang lain sebagai wakil kapten. Banyak cara seluruh proses tersebut adalah ....",
+   "jawaban_benar": "1.512 cara",
+   "alasan_benar": "memilih tim tanpa urutan $C(9,4)=126$, menunjuk kapten dan wakil berurutan $P(4,2)=12$, hasilnya $126 \\times 12 = 1.512$",
+   "distraktor": [
+    {
+     "teks": "756 cara",
+     "alasan": "menganggap kapten dan wakil tanpa urutan: $C(9,4) \\times C(4,2)$"
+    },
+    {
+     "teks": "3.024 cara",
+     "alasan": "memakai $P(9,4)$ dan tidak memisahkan tahap kapten dan wakil"
+    },
+    {
+     "teks": "138 cara",
+     "alasan": "menjumlahkan $C(9,4)+P(4,2)$ bukan mengalikan"
+    }
+   ],
+   "pembahasan": "Tahap 1: $C(9,4)=126$ (urutan tidak penting). Tahap 2: kapten dan wakil dibedakan, $P(4,2)=12$. Total $126 \\times 12 = 1.512$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-018",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "kutipan": "Fakta berikutnya untuk bilangan bulat non-negatif"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "sifat khusus nilai $C(n,r)$ ($r>n$ dan $r=0$)",
+   "alasan_level": "memakai $C(n,r)=0$ bila $r>n$, $C(n,0)=1$, dan $C(n,n-r)$ pada satu ekspresi",
+   "stimulus": null,
+   "pertanyaan": "Nilai dari $C(12,9) + C(5,7) - C(8,0)$ adalah ....",
+   "jawaban_benar": "219",
+   "alasan_benar": "$C(12,9)=220$, $C(5,7)=0$ karena $7>5$, $C(8,0)=1$, jadi $220+0-1=219$",
+   "distraktor": [
+    {
+     "teks": "220",
+     "alasan": "mengira $C(8,0)=0$"
+    },
+    {
+     "teks": "212",
+     "alasan": "mengira $C(8,0)=8$"
+    },
+    {
+     "teks": "240",
+     "alasan": "mengira $C(5,7)=C(7,5)=21$ dan memakai $C(8,0)=1$"
+    }
+   ],
+   "pembahasan": "$C(12,9)=C(12,3)=220$. Karena $7>5$, $C(5,7)=0$. $C(8,0)=1$. Jadi $220+0-1=219$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-019",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Kombinasi adalah susunan dari suatu objek tertentu yang tidak memperhatikan urutan."
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "pemodelan pasangan dengan larangan",
+   "alasan_level": "menghitung semua pasangan tak berurutan lalu mengurangi pasangan yang tidak terjadi",
+   "stimulus": null,
+   "pertanyaan": "Dalam sebuah rapat hadir 14 orang. Setiap dua orang berjabat tangan tepat satu kali, kecuali 3 orang tertentu yang tidak berjabat tangan satu sama lain (mereka tetap berjabat tangan dengan peserta lain). Banyak jabat tangan yang terjadi adalah ....",
+   "jawaban_benar": "88 kali",
+   "alasan_benar": "semua pasangan $C(14,2)=91$ dikurangi pasangan di antara 3 orang tersebut $C(3,2)=3$, jadi $88$",
+   "distraktor": [
+    {
+     "teks": "91 kali",
+     "alasan": "mengabaikan pengecualian tiga orang tersebut"
+    },
+    {
+     "teks": "85 kali",
+     "alasan": "mengurangi $P(3,2)=6$, menghitung pasangan terlarang dua kali"
+    },
+    {
+     "teks": "182 kali",
+     "alasan": "memakai $P(14,2)$ dan tidak mengurangi pengecualian"
+    }
+   ],
+   "pembahasan": "Semua pasangan: $C(14,2)=91$. Pasangan terlarang hanya di antara 3 orang itu: $C(3,2)=3$. Jadi $91-3=88$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-medium-bt01-020",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 123,
+    "kutipan": "Banyaknya susunan siswa/i yang terbentuk menjadi duta"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "pembagian kelompok bernama",
+   "alasan_level": "membagi 9 orang ke tiga kelompok yang dibedakan dengan tiga kombinasi berturut-turut",
+   "stimulus": null,
+   "pertanyaan": "Sebanyak 9 siswa akan dibagi menjadi tiga tim yang diberi nama Tim Elang, Tim Rajawali, dan Tim Garuda, masing-masing beranggotakan 3 siswa. Banyak cara pembagian siswa ke dalam ketiga tim tersebut adalah ....",
+   "jawaban_benar": "1.680 cara",
+   "alasan_benar": "$C(9,3) \\times C(6,3) \\times C(3,3) = 84 \\times 20 \\times 1 = 1.680$",
+   "distraktor": [
+    {
+     "teks": "252 cara",
+     "alasan": "hanya mengalikan $C(9,3) \\times 3$"
+    },
+    {
+     "teks": "105 cara",
+     "alasan": "menjumlahkan $84+20+1$ bukan mengalikan"
+    },
+    {
+     "teks": "280 cara",
+     "alasan": "membagi hasil dengan $3!$ seolah ketiga tim tidak dibedakan"
+    }
+   ],
+   "pembahasan": "Tim Elang: $C(9,3)=84$; Tim Rajawali dari 6 sisa: $C(6,3)=20$; Tim Garuda: $C(3,3)=1$. Total $84 \\times 20 \\times 1 = 1.680$.",
+   "catatan": null
+  }
+ ]
+}

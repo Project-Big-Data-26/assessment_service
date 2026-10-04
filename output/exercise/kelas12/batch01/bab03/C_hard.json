@@ -1,0 +1,670 @@
+{
+ "book": "kelas12",
+ "bab_no": 3,
+ "subbab": "C",
+ "level": "hard",
+ "batch": 1,
+ "skill_versi": "v1",
+ "soal": [
+  {
+   "id": "kelas12-b03-c-hard-bt01-001",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "kutipan": "Karena peran 4 siswa tersebut tidak dipengaruhi urutan, maka menggunakan konsep kombinasi"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "evaluasi hitungan permutasi dibagi",
+   "alasan_level": "mengevaluasi penyelesaian siswa: pembagi harus $r!$, bukan $2!$, lalu menghitung nilai yang benar",
+   "stimulus": null,
+   "pertanyaan": "Dewi menghitung banyak cara memilih 3 pengurus dari 7 siswa tanpa pembagian jabatan dengan $\\frac{P(7,3)}{2!} = 105$. Pernyataan yang benar mengenai hitungan Dewi adalah ....",
+   "jawaban_benar": "Salah; pembagi seharusnya $3!$, sehingga banyak caranya 35",
+   "alasan_benar": "tiap kombinasi 3 orang muncul $3! = 6$ kali dalam permutasi: $\\frac{210}{6} = 35$",
+   "distraktor": [
+    {
+     "teks": "Benar; pembagi 2 karena tiap pasangan urutan terbalik dihitung dua kali, sehingga banyak caranya 105",
+     "alasan": "mengira pembagi selalu 2 untuk menghapus urutan"
+    },
+    {
+     "teks": "Salah; urutan tidak perlu dihilangkan, sehingga banyak caranya 210",
+     "alasan": "memakai permutasi $P(7,3)$ untuk pemilihan tanpa jabatan"
+    },
+    {
+     "teks": "Salah; pembagi seharusnya 3, sehingga banyak caranya 70",
+     "alasan": "membagi dengan $r$, bukan dengan $r!$"
+    }
+   ],
+   "pembahasan": "$P(7,3)=7 \\times 6 \\times 5 = 210$. Setiap kelompok 3 orang tersusun dalam $3! = 6$ urutan, sehingga $C(7,3) = \\frac{210}{6} = 35$. Pembagi 2 hanya cocok untuk $r = 2$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-002",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 123,
+    "kutipan": "Banyaknya susunan siswa/i yang terbentuk menjadi duta"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "penghitungan ganda paling sedikit",
+   "alasan_level": "menemukan sumber penghitungan ganda pada cara langsung, lalu membandingkannya dengan hitungan komplemen",
+   "stimulus": null,
+   "pertanyaan": "Dari 6 siswa putra dan 3 siswa putri dibentuk tim beranggotakan 4 orang dengan paling sedikit 1 putri. Andi menghitung $3 \\times C(8,3) = 168$ (memilih 1 putri dahulu, lalu 3 orang dari 8 sisanya). Hitungan Andi melebihi banyak tim yang sebenarnya sebesar ....",
+   "jawaban_benar": "57 tim",
+   "alasan_benar": "banyak tim sebenarnya $C(9,4) - C(6,4) = 126 - 15 = 111$, sehingga selisihnya $168 - 111 = 57$",
+   "distraktor": [
+    {
+     "teks": "111 tim",
+     "alasan": "memberikan banyak tim yang benar, bukan selisihnya"
+    },
+    {
+     "teks": "168 tim",
+     "alasan": "memberikan hasil hitungan Andi, bukan selisihnya"
+    },
+    {
+     "teks": "42 tim",
+     "alasan": "membandingkan hitungan Andi dengan semua tim tanpa syarat: $168 - C(9,4)$"
+    }
+   ],
+   "pembahasan": "Tim yang memuat lebih dari 1 putri terhitung berulang pada cara Andi. Hitungan benar: $C(9,4) - C(6,4) = 111$. Selisih $168 - 111 = 57$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-003",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "kutipan": "Fakta berikutnya untuk bilangan bulat non-negatif"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "persamaan simetri C(n,r) dua solusi",
+   "alasan_level": "menyadari bahwa $C(n,a)=C(n,b)$ dipenuhi bila $a=b$ atau $a+b=n$, lalu menjumlahkan semua solusi",
+   "stimulus": null,
+   "pertanyaan": "Banyak solusi bilangan cacah $x$ dari $C(25, x+4) = C(25, 2x-3)$ menghasilkan dua nilai $x$. Jumlah semua nilai $x$ yang memenuhi adalah ....",
+   "jawaban_benar": "15",
+   "alasan_benar": "$x+4 = 2x-3$ memberi $x=7$; $(x+4)+(2x-3) = 25$ memberi $x=8$; jumlahnya 15",
+   "distraktor": [
+    {
+     "teks": "8",
+     "alasan": "hanya memakai sifat $C(n,r)=C(n,n-r)$ dan melupakan kemungkinan indeks sama"
+    },
+    {
+     "teks": "7",
+     "alasan": "hanya menyamakan kedua indeks dan melupakan sifat simetri"
+    },
+    {
+     "teks": "14",
+     "alasan": "menggandakan salah satu solusi, yaitu $2 \\times 7$"
+    }
+   ],
+   "pembahasan": "$C(25,a)=C(25,b)$ berarti $a=b$ atau $a+b=25$. Kasus $a=b$: $x=7$. Kasus $a+b=25$: $3x+1=25$, $x=8$. Keduanya memenuhi syarat indeks, sehingga jumlahnya $7+8=15$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-004",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 123,
+    "kutipan": "Banyaknya susunan siswa/i yang terbentuk menjadi duta"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "memilih ekspresi paling banyak",
+   "alasan_level": "membandingkan beberapa ekspresi penghitungan dan memilih yang mencakup semua kasus tepat sekali",
+   "stimulus": null,
+   "pertanyaan": "Dari 6 putra dan 4 putri dibentuk panitia beranggotakan 5 orang dengan paling banyak 2 putri. Ekspresi yang tepat untuk menyatakan banyak panitia adalah ....",
+   "jawaban_benar": "$C(6,5) + C(4,1) \\times C(6,4) + C(4,2) \\times C(6,3)$",
+   "alasan_benar": "kasus 0, 1, dan 2 putri dijumlahkan: $6 + 60 + 120 = 186$",
+   "distraktor": [
+    {
+     "teks": "$C(10,5) - C(4,3) \\times C(6,2) - C(4,5)$",
+     "alasan": "mengurangi hanya kasus tepat 3 putri dan melupakan kasus 4 putri ($C(4,5)=0$ tidak mengurangi apa pun)"
+    },
+    {
+     "teks": "$C(4,2) \\times C(8,3) + C(6,5)$",
+     "alasan": "memilih 2 putri dahulu lalu 3 orang dari sisa 8, sehingga kasus dengan putri tambahan terhitung berulang"
+    },
+    {
+     "teks": "$C(6,3) \\times C(4,2) + C(4,1) \\times C(6,4)$",
+     "alasan": "menghitung kasus 1 dan 2 putri tetapi melupakan kasus tanpa putri"
+    }
+   ],
+   "pembahasan": "Paling banyak 2 putri berarti 0, 1, atau 2 putri. Jumlahkan: $C(6,5) = 6$; $C(4,1)C(6,4) = 60$; $C(4,2)C(6,3) = 120$; total 186. Cara komplemen: $C(10,5) - C(4,3)C(6,2) - C(4,4)C(6,1) = 252 - 60 - 6 = 186$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-005",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "kutipan": "Karena peran 4 siswa tersebut tidak dipengaruhi urutan, maka menggunakan konsep kombinasi"
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 3,
+   "jenis_soal": "merancang syarat banyak tim",
+   "alasan_level": "merancang banyaknya orang yang dikecualikan agar banyak tim bernilai tertentu, dengan satu unsur wajib",
+   "stimulus": null,
+   "pertanyaan": "Dari 10 siswa akan dibentuk tim beranggotakan 5 orang. Fani wajib menjadi anggota, dan $k$ siswa lain tidak boleh menjadi anggota. Agar banyak tim yang dapat dibentuk tepat 35, nilai $k$ adalah ....",
+   "jawaban_benar": "2",
+   "alasan_benar": "Fani pasti masuk dan $k$ siswa dikeluarkan, sisa $9-k$ siswa untuk 4 tempat: $C(9-k,4)=35=C(7,4)$, sehingga $9-k=7$ dan $k=2$",
+   "distraktor": [
+    {
+     "teks": "1",
+     "alasan": "mengira $C(8,4)=35$ padahal $C(8,4)=70$"
+    },
+    {
+     "teks": "3",
+     "alasan": "lupa mengeluarkan Fani dari kumpulan siswa: $10-k=7$"
+    },
+    {
+     "teks": "4",
+     "alasan": "menyamakan $9-k=5$ tanpa mencocokkan nilai kombinasi"
+    }
+   ],
+   "pembahasan": "Setelah Fani masuk dan $k$ siswa dikeluarkan, 4 anggota lain dipilih dari $9-k$ siswa. $C(9-k,4)=35$ hanya dipenuhi $9-k=7$ (karena $C(7,4)=35$ dan $C(m,4)$ naik untuk $m \\geq 4$), sehingga $k=2$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-006",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 126,
+    "kutipan": "Secara ekuivalen, banyaknya solusi bulat nonnegatif untuk persamaan"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "stars and bars dengan batas atas",
+   "alasan_level": "menghitung semua solusi lalu mengurangi solusi yang melanggar batas atas dengan substitusi",
+   "stimulus": null,
+   "pertanyaan": "Banyak solusi bilangan bulat non-negatif dari persamaan $a + b + c = 10$ dengan syarat $a \\leq 5$ adalah ....",
+   "jawaban_benar": "51",
+   "alasan_benar": "semua solusi $C(12,10)=66$ dikurangi solusi dengan $a \\geq 6$, yaitu $a'+b+c=4$: $C(6,4)=15$; $66-15=51$",
+   "distraktor": [
+    {
+     "teks": "66",
+     "alasan": "mengabaikan batas atas $a \\leq 5$"
+    },
+    {
+     "teks": "15",
+     "alasan": "hanya menghitung solusi yang melanggar batas, yaitu $a \\geq 6$"
+    },
+    {
+     "teks": "81",
+     "alasan": "menjumlahkan $66 + 15$ bukan mengurangi"
+    }
+   ],
+   "pembahasan": "Total tanpa batas: $C(10+3-1,10)=C(12,10)=66$. Pelanggaran $a \\geq 6$: misalkan $a'=a-6$, maka $a'+b+c=4$ dengan $C(6,4)=15$ solusi. Jadi $66-15=51$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-007",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "kutipan": "Karena peran 4 siswa tersebut tidak dipengaruhi urutan, maka menggunakan konsep kombinasi"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "wajib dan larangan bersama",
+   "alasan_level": "satu unsur wajib dan dua unsur tidak boleh bersama saling bergantung, sehingga perlu komplemen pada sisa pilihan",
+   "stimulus": null,
+   "pertanyaan": "Dari 9 pelajar dibentuk tim beranggotakan 4 orang. Dito wajib menjadi anggota, sedangkan Eka dan Fani tidak boleh menjadi anggota secara bersamaan (boleh salah satu atau tidak keduanya). Banyak tim yang dapat dibentuk adalah ....",
+   "jawaban_benar": "50 tim",
+   "alasan_benar": "Dito pasti masuk, 3 anggota lain dari 8 orang: $C(8,3)=56$, dikurangi yang memuat Eka dan Fani $C(6,1)=6$; $56-6=50$",
+   "distraktor": [
+    {
+     "teks": "56 tim",
+     "alasan": "mengabaikan larangan Eka dan Fani"
+    },
+    {
+     "teks": "105 tim",
+     "alasan": "tidak mewajibkan Dito: $C(9,4)-C(7,2)=126-21$"
+    },
+    {
+     "teks": "62 tim",
+     "alasan": "menambahkan 6 tim terlarang, bukan mengurangi"
+    }
+   ],
+   "pembahasan": "Dito sudah masuk, sisa 3 kursi dari 8 orang: $C(8,3)=56$. Tim terlarang memuat Eka dan Fani dan 1 orang lain dari 6: $C(6,1)=6$. Jadi $56-6=50$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-008",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 123,
+    "kutipan": "Banyaknya susunan siswa/i yang terbentuk menjadi duta"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 6,
+   "jenis_soal": "tiga kelompok minimal satu",
+   "alasan_level": "memperbaiki pemilihan satu wakil per kelompok yang menghitung ganda, dengan komplemen tiga kelompok atau kasus komposisi",
+   "stimulus": null,
+   "pertanyaan": "Sebuah panitia beranggotakan 5 orang dipilih dari 4 guru, 3 siswa, dan 3 alumni dengan syarat setiap kelompok terwakili paling sedikit satu orang. Rani menghitung $4 \\times 3 \\times 3 \\times C(7,2) = 756$ (satu wakil tiap kelompok, lalu 2 orang dari 7 sisanya), tetapi hasil itu terlalu besar. Banyak panitia yang sebenarnya adalah ....",
+   "jawaban_benar": "204 panitia",
+   "alasan_benar": "total $C(10,5)=252$ dikurangi tanpa guru $C(6,5)=6$, tanpa siswa $C(7,5)=21$, tanpa alumni $C(7,5)=21$; kasus dua kelompok kosong tidak mungkin, sehingga $252-48=204$",
+   "distraktor": [
+    {
+     "teks": "756 panitia",
+     "alasan": "memakai hitungan Rani yang menghitung berulang panitia dengan lebih dari satu wakil dari suatu kelompok"
+    },
+    {
+     "teks": "252 panitia",
+     "alasan": "mengabaikan syarat setiap kelompok terwakili"
+    },
+    {
+     "teks": "300 panitia",
+     "alasan": "menambahkan kasus yang melanggar $252+48$, bukan mengurangi"
+    }
+   ],
+   "pembahasan": "Cara Rani menghitung panitia berulang kali karena wakil sebuah kelompok dapat dipilih dua kali (sebagai wakil dan sebagai anggota sisa). Hitung dengan komplemen: $252-6-21-21=204$. Cek per komposisi (guru, siswa, alumni): $36+12+12+54+54+36=204$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-009",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Kasus di atas disebut sebagai kombinasi."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "pembagian kelompok tanpa nama",
+   "alasan_level": "membagi 8 orang menjadi pasangan yang tidak dibedakan sehingga hasil pembagian bernama harus dikoreksi dengan $4!$",
+   "stimulus": null,
+   "pertanyaan": "Delapan pemain tenis meja dibagi menjadi 4 pasangan latihan. Pasangan-pasangan tersebut tidak diberi nama atau nomor, sehingga yang dibedakan hanya siapa dipasangkan dengan siapa. Banyak cara pembagian pasangan adalah ....",
+   "jawaban_benar": "105 cara",
+   "alasan_benar": "jika pasangan dibedakan: $C(8,2)C(6,2)C(4,2)C(2,2)=2.520$; keempat pasangan tidak dibedakan, bagi $4!=24$: $105$",
+   "distraktor": [
+    {
+     "teks": "2.520 cara",
+     "alasan": "memperlakukan keempat pasangan seolah bernama"
+    },
+    {
+     "teks": "420 cara",
+     "alasan": "membagi 2.520 dengan $3!$, bukan $4!$"
+    },
+    {
+     "teks": "315 cara",
+     "alasan": "membagi 2.520 dengan $2^3$, bukan dengan $4!$"
+    }
+   ],
+   "pembahasan": "Bila pasangan diberi nomor: $28 \\times 15 \\times 6 \\times 1 = 2.520$. Karena pasangan tidak dibedakan, setiap pembagian terhitung $4! = 24$ kali, sehingga $2.520 : 24 = 105$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-010",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 126,
+    "kutipan": "Secara ekuivalen, banyaknya solusi bulat nonnegatif untuk persamaan"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "stars and bars pertidaksamaan",
+   "alasan_level": "mengubah pertidaksamaan menjadi persamaan dengan variabel selisih lalu memakai Stars and Bars",
+   "stimulus": null,
+   "pertanyaan": "Banyak solusi bilangan bulat non-negatif dari pertidaksamaan $a + b + c \\leq 9$ adalah ....",
+   "jawaban_benar": "220",
+   "alasan_benar": "tambahkan variabel selisih $d \\geq 0$ sehingga $a+b+c+d=9$ dengan 4 variabel: $C(9+4-1,9)=C(12,9)=220$",
+   "distraktor": [
+    {
+     "teks": "55",
+     "alasan": "hanya menghitung persamaan $a+b+c=9$ dengan 3 variabel"
+    },
+    {
+     "teks": "165",
+     "alasan": "memakai batas $\\leq 8$, yaitu $C(11,8)$"
+    },
+    {
+     "teks": "715",
+     "alasan": "memakai $C(13,9)$, lupa mengurangi 1 pada jumlah variabel"
+    }
+   ],
+   "pembahasan": "Misalkan $d = 9 - (a+b+c) \\geq 0$. Persamaan $a+b+c+d=9$ memiliki $C(9+4-1,9)=C(12,9)=220$ solusi non-negatif.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-011",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Banyak susunannya yang sama dari setiap pasangan 2 objek adalah 2!"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "hubungan P dan C bentuk selisih",
+   "alasan_level": "menentukan $n$ dari selisih permutasi dan kombinasi lalu menghitung kombinasi yang lain",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $n$ bilangan bulat positif dengan $P(n,2) - C(n,2) = 45$. Nilai $C(n,4)$ adalah ....",
+   "jawaban_benar": "210",
+   "alasan_benar": "$P(n,2)-C(n,2)=\\frac{n(n-1)}{2}=45$ sehingga $n=10$ dan $C(10,4)=210$",
+   "distraktor": [
+    {
+     "teks": "120",
+     "alasan": "menghitung $C(10,3)$, salah mengambil $r=3$"
+    },
+    {
+     "teks": "252",
+     "alasan": "menghitung $C(10,5)$, salah mengambil $r=5$"
+    },
+    {
+     "teks": "90",
+     "alasan": "menghitung $P(10,2)$, bukan $C(10,4)$"
+    }
+   ],
+   "pembahasan": "$P(n,2)=n(n-1)$ dan $C(n,2)=\\frac{n(n-1)}{2}$, sehingga selisihnya $\\frac{n(n-1)}{2}=45$, $n(n-1)=90$, $n=10$. Maka $C(10,4)=\\frac{10 \\times 9 \\times 8 \\times 7}{24}=210$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-012",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Kombinasi adalah susunan dari suatu objek tertentu yang tidak memperhatikan urutan."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "contoh penyangkal",
+   "alasan_level": "menguji klaim umum tentang $C(10,r)$ dan memilih contoh penyangkal dengan membandingkan nilai kombinasi",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa mengklaim: \"untuk bilangan bulat $0 \\leq r < s \\leq 10$, selalu berlaku $C(10,r) < C(10,s)$.\" Pasangan $(r,s)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+   "jawaban_benar": "$r = 5$ dan $s = 7$",
+   "alasan_benar": "$C(10,5)=252$ lebih besar daripada $C(10,7)=120$, sehingga klaim gagal",
+   "distraktor": [
+    {
+     "teks": "$r = 1$ dan $s = 3$",
+     "alasan": "$C(10,1)=10 < C(10,3)=120$, sesuai dengan klaim sehingga bukan penyangkal"
+    },
+    {
+     "teks": "$r = 2$ dan $s = 4$",
+     "alasan": "$C(10,2)=45 < C(10,4)=210$, sesuai dengan klaim"
+    },
+    {
+     "teks": "$r = 3$ dan $s = 5$",
+     "alasan": "$C(10,3)=120 < C(10,5)=252$, sesuai dengan klaim"
+    }
+   ],
+   "pembahasan": "Karena $C(10,r)=C(10,10-r)$, nilai kombinasi naik sampai $r=5$ lalu turun. Pasangan $(5,7)$ memberi $252 > 120$, sehingga klaim salah. Pasangan lain tidak melewati puncak $r=5$ ke arah turun.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-013",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Kasus di atas disebut sebagai kombinasi."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "garis dari titik dengan tiga titik segaris",
+   "alasan_level": "memodelkan garis sebagai pasangan titik lalu mengoreksi pasangan yang menghasilkan garis yang sama",
+   "stimulus": null,
+   "pertanyaan": "Pada sebuah bidang terdapat 10 titik. Empat di antaranya terletak pada satu garis lurus, dan selain keempat titik itu tidak ada tiga titik lain yang segaris. Banyak garis berbeda yang dapat dibuat dengan menghubungkan dua titik adalah ....",
+   "jawaban_benar": "40 garis",
+   "alasan_benar": "$C(10,2)=45$ pasangan, tetapi 6 pasangan dari empat titik segaris ($C(4,2)=6$) menghasilkan garis yang sama, jadi $45-6+1=40$",
+   "distraktor": [
+    {
+     "teks": "45 garis",
+     "alasan": "menganggap setiap pasangan titik menghasilkan garis berbeda"
+    },
+    {
+     "teks": "39 garis",
+     "alasan": "mengurangi 6 pasangan tetapi lupa menambah 1 garis yang memuat empat titik"
+    },
+    {
+     "teks": "51 garis",
+     "alasan": "menambahkan 6, bukan mengurangi"
+    }
+   ],
+   "pembahasan": "Pasangan titik: $C(10,2)=45$. Keempat titik segaris memberi $C(4,2)=6$ pasangan yang semuanya membentuk satu garis. Banyak garis $=45-6+1=40$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-014",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Kasus di atas disebut sebagai kombinasi."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "diagonal segi-n",
+   "alasan_level": "memodelkan diagonal sebagai pasangan titik sudut dikurangi sisi lalu menentukan $n$ dari persamaan",
+   "stimulus": null,
+   "pertanyaan": "Banyak diagonal sebuah segi-$n$ sama dengan banyak pasangan titik sudut dikurangi banyak sisi, yaitu $C(n,2)-n$. Jika sebuah segi-$n$ memiliki 35 diagonal, nilai $n$ adalah ....",
+   "jawaban_benar": "10",
+   "alasan_benar": "$\\frac{n(n-1)}{2}-n=\\frac{n(n-3)}{2}=35$ sehingga $n(n-3)=70=10 \\times 7$ dan $n=10$",
+   "distraktor": [
+    {
+     "teks": "9",
+     "alasan": "segi-9 hanya memiliki $C(9,2)-9=27$ diagonal"
+    },
+    {
+     "teks": "11",
+     "alasan": "segi-11 memiliki $C(11,2)-11=44$ diagonal"
+    },
+    {
+     "teks": "12",
+     "alasan": "segi-12 memiliki $C(12,2)-12=54$ diagonal"
+    }
+   ],
+   "pembahasan": "$C(n,2)-n=\\frac{n(n-3)}{2}=35$, maka $n(n-3)=70$. Karena $10 \\times 7=70$, $n=10$ (nilai $n=-7$ tidak memenuhi). Cek: $C(10,2)-10=45-10=35$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-015",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "kutipan": "Karena peran 4 siswa tersebut tidak dipengaruhi urutan, maka menggunakan konsep kombinasi"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "dua unsur selalu bersama",
+   "alasan_level": "dua orang yang selalu bersama menghasilkan dua kasus yang saling lepas (keduanya masuk atau keduanya tidak)",
+   "stimulus": null,
+   "pertanyaan": "Dari 10 pelajar dibentuk tim beranggotakan 4 orang. Aldo dan Bimo hanya mau bergabung bersama-sama: keduanya masuk tim, atau keduanya tidak masuk tim. Banyak tim yang dapat dibentuk adalah ....",
+   "jawaban_benar": "98 tim",
+   "alasan_benar": "keduanya masuk: $C(8,2)=28$; keduanya tidak masuk: $C(8,4)=70$; jumlahnya 98",
+   "distraktor": [
+    {
+     "teks": "28 tim",
+     "alasan": "hanya menghitung kasus keduanya masuk tim"
+    },
+    {
+     "teks": "70 tim",
+     "alasan": "hanya menghitung kasus keduanya tidak masuk tim"
+    },
+    {
+     "teks": "210 tim",
+     "alasan": "mengabaikan syarat Aldo dan Bimo: $C(10,4)$"
+    }
+   ],
+   "pembahasan": "Kasus 1: Aldo dan Bimo masuk, dua anggota lain dari 8 orang: $C(8,2)=28$. Kasus 2: keduanya tidak masuk, empat anggota dari 8 orang: $C(8,4)=70$. Kedua kasus saling lepas, jadi $28+70=98$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-016",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 123,
+    "kutipan": "Banyaknya susunan siswa/i yang terbentuk menjadi duta"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "paling sedikit dari sebagian kelompok",
+   "alasan_level": "syarat paling sedikit hanya pada sebagian soal sehingga komplemen dihitung dari tiga kasus pelanggaran",
+   "stimulus": null,
+   "pertanyaan": "Pada suatu ujian terdapat 12 soal. Peserta harus memilih 7 soal untuk dikerjakan, dengan syarat memilih paling sedikit 3 soal dari 5 soal nomor pertama. Banyak cara peserta memilih ketujuh soal adalah ....",
+   "jawaban_benar": "546 cara",
+   "alasan_benar": "total $C(12,7)=792$ dikurangi pelanggaran: 0 soal dari 5 pertama $1$, 1 soal $35$, 2 soal $210$; $792-246=546$",
+   "distraktor": [
+    {
+     "teks": "350 cara",
+     "alasan": "hanya menghitung kasus tepat 3 soal dari 5 soal pertama"
+    },
+    {
+     "teks": "792 cara",
+     "alasan": "mengabaikan syarat paling sedikit 3 soal"
+    },
+    {
+     "teks": "1.260 cara",
+     "alasan": "memilih 3 dari 5 soal pertama lalu 4 dari 9 sisanya: $C(5,3) \\times C(9,4)$, banyak pilihan terhitung berulang"
+    }
+   ],
+   "pembahasan": "Langsung: $C(5,3)C(7,4)+C(5,4)C(7,3)+C(5,5)C(7,2)=350+175+21=546$. Komplemen: $792-(1+35+210)=546$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-017",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Kasus di atas disebut sebagai kombinasi."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "segitiga pada dua garis sejajar",
+   "alasan_level": "memodelkan segitiga sebagai tiga titik tidak segaris, mengurangi pilihan tiga titik pada garis yang sama",
+   "stimulus": null,
+   "pertanyaan": "Lima titik berbeda terletak pada garis $g$ dan empat titik berbeda terletak pada garis $h$ yang sejajar dengan $g$. Tidak ada titik yang terletak pada kedua garis. Banyak segitiga yang titik sudutnya dipilih dari kesembilan titik itu adalah ....",
+   "jawaban_benar": "70 segitiga",
+   "alasan_benar": "$C(9,3)=84$ dikurangi tiga titik pada $g$ $C(5,3)=10$ dan pada $h$ $C(4,3)=4$; $84-14=70$",
+   "distraktor": [
+    {
+     "teks": "84 segitiga",
+     "alasan": "menganggap tiga titik sembarang selalu membentuk segitiga"
+    },
+    {
+     "teks": "74 segitiga",
+     "alasan": "hanya mengurangi pilihan tiga titik pada garis $g$"
+    },
+    {
+     "teks": "80 segitiga",
+     "alasan": "hanya mengurangi pilihan tiga titik pada garis $h$"
+    }
+   ],
+   "pembahasan": "Tiga titik membentuk segitiga bila tidak segaris. $C(9,3)-C(5,3)-C(4,3)=84-10-4=70$. Cek: dua titik di $g$ dan satu di $h$: $10 \\times 4=40$; satu di $g$ dan dua di $h$: $5 \\times 6=30$; jumlah 70.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-018",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 126,
+    "kutipan": "Jika lebih dari satu bola yang mungkin ada di setiap kotak (tidak ada batasan jumlah bola), maka jumlah cara mendapatkan bola"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "perbandingan dengan dan tanpa pengulangan",
+   "alasan_level": "membandingkan dua model pemilihan (tanpa dan dengan pengulangan) lalu menghitung selisihnya",
+   "stimulus": null,
+   "pertanyaan": "Sebuah toko menyediakan 8 rasa permen dengan persediaan setiap rasa melimpah. Pembeli memilih 4 permen. Selisih antara banyak komposisi pilihan jika rasa yang sama boleh dipilih berulang dan banyak komposisi jika setiap rasa harus berbeda adalah ....",
+   "jawaban_benar": "260",
+   "alasan_benar": "dengan pengulangan $C(8+4-1,4)=C(11,4)=330$, tanpa pengulangan $C(8,4)=70$; selisih $260$",
+   "distraktor": [
+    {
+     "teks": "330",
+     "alasan": "hanya menghitung komposisi dengan pengulangan"
+    },
+    {
+     "teks": "70",
+     "alasan": "hanya menghitung komposisi tanpa pengulangan"
+    },
+    {
+     "teks": "400",
+     "alasan": "menjumlahkan kedua banyak komposisi, bukan mencari selisih"
+    }
+   ],
+   "pembahasan": "Dengan pengulangan: $C(n+r-1,r)=C(11,4)=330$. Tanpa pengulangan: $C(8,4)=70$. Selisih $330-70=260$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-019",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 122,
+    "kutipan": "Fakta berikutnya untuk bilangan bulat non-negatif"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "memaksimalkan C(n,r) dengan syarat genap",
+   "alasan_level": "memakai simetri $C(n,r)=C(n,n-r)$ dan sifat naik-turun nilai kombinasi dengan batas $r$ genap",
+   "stimulus": null,
+   "pertanyaan": "Sebuah panitia beranggotakan $r$ orang akan dipilih dari 15 siswa, dengan $r$ bilangan genap. Nilai $r$ yang membuat banyak panitia yang mungkin terbentuk paling besar adalah ....",
+   "jawaban_benar": "8",
+   "alasan_benar": "$C(15,r)$ terbesar di $r=7$ dan $r=8$; karena $r$ harus genap, $r=8$ memberi $C(15,8)=6.435$",
+   "distraktor": [
+    {
+     "teks": "7",
+     "alasan": "memilih puncak $r=7$ tetapi bukan bilangan genap"
+    },
+    {
+     "teks": "6",
+     "alasan": "$C(15,6)=5.005$, lebih kecil daripada $C(15,8)=6.435$"
+    },
+    {
+     "teks": "10",
+     "alasan": "$C(15,10)=3.003$, jauh dari puncak"
+    }
+   ],
+   "pembahasan": "Karena $C(15,r)=C(15,15-r)$, nilai terbesar berada di tengah, yaitu $r=7$ dan $r=8$ (keduanya 6.435). Hanya $r=8$ yang genap. Pembanding: $C(15,6)=5.005$ dan $C(15,10)=3.003$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b03-c-hard-bt01-020",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 121,
+    "kutipan": "Banyak kombinasi 2 objek dari 5 objek yang dinotasikan"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "identitas jumlah kombinasi berurutan",
+   "alasan_level": "menyederhanakan jumlah dua kombinasi berurutan menjadi $n^2$ tanpa menghitung nilai besar",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $n$ bilangan bulat dengan $n \\geq 2$ dan $C(n,2) + C(n+1,2) = 169$. Nilai $n$ adalah ....",
+   "jawaban_benar": "13",
+   "alasan_benar": "$\\frac{n(n-1)}{2}+\\frac{(n+1)n}{2}=\\frac{n(2n)}{2}=n^2=169$ sehingga $n=13$",
+   "distraktor": [
+    {
+     "teks": "12",
+     "alasan": "mengira $n+1=13$ sehingga memakai $n=12$"
+    },
+    {
+     "teks": "14",
+     "alasan": "mengira $n=14$ karena kombinasi kedua memuat $n+1$ dan jumlahnya lebih besar"
+    },
+    {
+     "teks": "26",
+     "alasan": "menyelesaikan $2n=26$ setelah salah menyederhanakan menjadi $n \\times 2$"
+    }
+   ],
+   "pembahasan": "$C(n,2)+C(n+1,2)=\\frac{n(n-1)+n(n+1)}{2}=\\frac{2n^2}{2}=n^2$. Maka $n^2=169$ dan $n=13$. Cek: $C(13,2)+C(14,2)=78+91=169$.",
+   "catatan": null
+  }
+ ]
+}

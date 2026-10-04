@@ -1,0 +1,690 @@
+{
+  "book": "kelas12",
+  "bab_no": 3,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b03-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 115,
+        "kutipan": "Karena termasuk permutasi dengan objek yang sama atau pengulangan, maka terlebih dahulu temukan huruf yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi penyelesaian siswa",
+      "alasan_level": "mengevaluasi hasil siswa yang lupa membagi dengan faktorial salah satu huruf berulang lalu menghitung ulang yang benar",
+      "stimulus": null,
+      "pertanyaan": "Budi menghitung banyak susunan huruf berbeda dari seluruh huruf pada kata STATISTIKA (S dua kali, T tiga kali, A dua kali, I dua kali, dan K satu kali) dengan cara $\\frac{10!}{2!\\,2!\\,2!} = 453.600$. Banyak susunan huruf berbeda yang benar adalah ....",
+      "jawaban_benar": "75.600",
+      "alasan_benar": "ada empat huruf yang berulang sehingga penyebutnya $2!\\,3!\\,2!\\,2! = 48$ dan $\\frac{10!}{48} = 75.600$",
+      "distraktor": [
+        {
+          "teks": "453.600",
+          "alasan": "hasil Budi: lupa membagi dengan $3!$ untuk huruf T"
+        },
+        {
+          "teks": "151.200",
+          "alasan": "membagi dengan $2!\\,3!\\,2!$ saja, lupa $2!$ untuk huruf I"
+        },
+        {
+          "teks": "226.800",
+          "alasan": "menganggap huruf T hanya berulang dua kali sehingga memakai $2!\\,2!\\,2!\\,2!$"
+        }
+      ],
+      "pembahasan": "Huruf berulang: S (2), T (3), A (2), I (2), K (1). Banyak susunan $= \\frac{10!}{2!\\,3!\\,2!\\,2!} = \\frac{3.628.800}{48} = 75.600$. Hitungan Budi melewatkan $3!$ untuk huruf T.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 118,
+        "kutipan": "Jika novel jenis B ditata berdekatan, maka terdapat 60 cara menyusun novel."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tidak berdampingan beberapa unsur (celah)",
+      "alasan_level": "menyusun orang lain dahulu lalu menempatkan tiga orang bersyarat pada celah, dengan memilih celah secara berurutan",
+      "stimulus": null,
+      "pertanyaan": "Tujuh orang berdiri berjajar dalam satu barisan. Tiga di antaranya, yaitu Aldi, Beni, dan Cica, tidak boleh ada dua orang yang berdiri berdampingan (artinya di antara dua dari ketiganya selalu ada orang lain). Banyak susunan barisan yang mungkin adalah ....",
+      "jawaban_benar": "1.440",
+      "alasan_benar": "empat orang lain disusun $4! = 24$; terbentuk 5 celah; Aldi, Beni, Cica menempati 3 celah berbeda secara berurutan $P(5,3) = 60$; total $24 \\times 60 = 1.440$",
+      "distraktor": [
+        {
+          "teks": "3.000",
+          "alasan": "mengira ketiga orang boleh memilih celah yang sama, $4! \\times 5^3$"
+        },
+        {
+          "teks": "720",
+          "alasan": "mengurangi $7! - 3 \\times 2 \\times 6!$ tanpa menambah kembali irisan ketiga pasangan"
+        },
+        {
+          "teks": "240",
+          "alasan": "memakai kombinasi $C(5,3) = 10$ untuk celah, sehingga urutan ketiga orang diabaikan"
+        }
+      ],
+      "pembahasan": "Susun 4 orang lain: $4! = 24$. Ada 5 celah (dua ujung dan tiga tengah). Tiga orang bersyarat menempati tiga celah berbeda dan urutannya penting: $P(5,3) = 60$. Total $24 \\times 60 = 1.440$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "kutipan": "Banyak permutasi dari n objek yang berbeda adalah n !."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim dan contoh penyangkal",
+      "alasan_level": "menguji empat pasangan $(n,r)$ terhadap klaim dan menemukan satu yang menyangkal karena $P(n,n-1) = n!$",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim bahwa untuk setiap bilangan asli $n$ dan $r$ dengan $1 \\leq r < n$ selalu berlaku $P(n,r) < n!$. Pasangan $(n, r)$ berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$(n,r) = (7,6)$",
+      "alasan_benar": "$P(7,6) = \\frac{7!}{1!} = 5.040 = 7!$ sehingga $P(7,6)$ tidak kurang dari $7!$",
+      "distraktor": [
+        {
+          "teks": "$(n,r) = (6,4)$",
+          "alasan": "$P(6,4) = 360 < 720$, justru mendukung klaim"
+        },
+        {
+          "teks": "$(n,r) = (8,5)$",
+          "alasan": "$P(8,5) = 6.720 < 40.320$, justru mendukung klaim"
+        },
+        {
+          "teks": "$(n,r) = (5,2)$",
+          "alasan": "$P(5,2) = 20 < 120$, justru mendukung klaim"
+        }
+      ],
+      "pembahasan": "$P(n,r) = \\frac{n!}{(n-r)!}$. Untuk $r = n-1$ penyebutnya $1! = 1$ sehingga $P(n,n-1) = n!$, bukan lebih kecil. Maka $(7,6)$ menyangkal klaim: $P(7,6) = 5.040 = 7!$. Tiga pasangan lain menghasilkan $P(n,r) < n!$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "kutipan": "Ada n jenis permutasi siklis yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pertumbuhan faktorial",
+      "alasan_level": "mencari n terkecil dari ketaksamaan $(n-1)! > 100.000$ dengan membandingkan nilai faktorial dan memperhatikan pergeseran satu pada siklis",
+      "stimulus": null,
+      "pertanyaan": "Panitia ingin tamu duduk mengelilingi sebuah meja bundar dengan lebih dari 100.000 susunan duduk berbeda. Banyak tamu paling sedikit yang diperlukan adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "$(n-1)! > 100.000$; $8! = 40.320$ belum cukup, $9! = 362.880$ cukup, sehingga $n - 1 = 9$ dan $n = 10$",
+      "distraktor": [
+        {
+          "teks": "9",
+          "alasan": "memakai $n! > 100.000$ (karena $9! = 362.880$) dan lupa susunan melingkar $(n-1)!$"
+        },
+        {
+          "teks": "11",
+          "alasan": "menggeser satu terlalu jauh: mengira perlu $(n-1) = 10$"
+        },
+        {
+          "teks": "8",
+          "alasan": "mengira $8!$ sudah lebih dari 100.000 padahal nilainya 40.320"
+        }
+      ],
+      "pembahasan": "Susunan melingkar $n$ orang $= (n-1)!$. Dengan $8! = 40.320 < 100.000 < 362.880 = 9!$ diperoleh $n-1 = 9$ sehingga $n = 10$ (sepuluh tamu menghasilkan $9! = 362.880$; sembilan tamu hanya $8! = 40.320$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Secara matematis, perhitungan banyaknya susunan pengurus tersebut dapat dituliskan menggunakan konsep faktorial sebagai berikut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "persamaan permutasi dengan parameter",
+      "alasan_level": "menguraikan $P(n+1,3)$ dan $P(n,3)$, menyederhanakan faktor sekutu, lalu menyelesaikan persamaan linear",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $n$ bilangan asli dengan $n \\geq 3$ dan $P(n+1,3) = 4 \\times P(n,3)$. Nilai $n$ adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "$(n+1)n(n-1) = 4\\,n(n-1)(n-2)$ sehingga $n+1 = 4(n-2)$ dan $n = 3$",
+      "distraktor": [
+        {
+          "teks": "1",
+          "alasan": "menulis $4(n-2)$ sebagai $4n - 2$ sehingga $n + 1 = 4n - 2$ dan $n = 1$"
+        },
+        {
+          "teks": "9",
+          "alasan": "mendapat $3n = 9$ lalu mengambil 9 tanpa membagi 3"
+        },
+        {
+          "teks": "4",
+          "alasan": "mengambil $n + 1 = 4$ sebagai nilai $n$"
+        }
+      ],
+      "pembahasan": "$P(n+1,3) = (n+1)n(n-1)$ dan $P(n,3) = n(n-1)(n-2)$. Bagi kedua ruas dengan $n(n-1)$ (tidak nol karena $n \\geq 3$): $n + 1 = 4(n-2) = 4n - 8$ sehingga $3n = 9$ dan $n = 3$. Cek: $P(4,3) = 24 = 4 \\times P(3,3) = 4 \\times 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 117,
+        "kutipan": "Diketahui 5 orang laki-laki dan 3 orang perempuan duduk melingkar."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "permutasi siklis dengan dua syarat",
+      "alasan_level": "dua syarat pada susunan melingkar: blok berdampingan dan satu orang tidak boleh bersebelahan dengan blok, dihitung dengan komplemen",
+      "stimulus": null,
+      "pertanyaan": "Delapan orang duduk mengelilingi sebuah meja bundar. Dua di antaranya, Andra dan Bima, harus duduk berdampingan, sedangkan Citra tidak boleh duduk bersebelahan dengan Andra maupun Bima. Banyak susunan duduk yang berbeda adalah ....",
+      "jawaban_benar": "960",
+      "alasan_benar": "blok Andra-Bima dengan 6 orang lain: $6! \\times 2 = 1.440$; Citra bersebelahan dengan blok: $2 \\times 5! \\times 2 = 480$; $1.440 - 480 = 960$",
+      "distraktor": [
+        {
+          "teks": "1.440",
+          "alasan": "hanya memenuhi syarat berdampingan, lupa syarat Citra"
+        },
+        {
+          "teks": "480",
+          "alasan": "hanya menghitung susunan saat Citra bersebelahan dengan blok"
+        },
+        {
+          "teks": "1.200",
+          "alasan": "mengurangi hanya satu sisi blok ($2 \\times 5!$ saja), lupa susunan dalam blok $2!$ pada kasus Citra bersebelahan"
+        }
+      ],
+      "pembahasan": "Anggap Andra-Bima satu blok: 7 objek melingkar $(7-1)! = 720$, dikali $2!$ susunan dalam blok = 1.440. Dengan blok sebagai acuan, 6 orang lain menempati 6 kursi berjajar; Citra di salah satu dari 2 kursi ujung (bersebelahan dengan blok): $2 \\times 5! = 240$, dikali $2!$ = 480. Yang memenuhi: $1.440 - 480 = 960$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "kutipan": "Terdapat lima orang laki-laki dan tiga orang perempuan duduk mengelilingi pada suatu meja bundar"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "permutasi siklis dengan dua syarat",
+      "alasan_level": "selang-seling pada meja bundar ditambah satu pasangan yang tidak boleh bersebelahan, diselesaikan dengan komplemen",
+      "stimulus": null,
+      "pertanyaan": "Lima laki-laki dan lima perempuan duduk mengelilingi meja bundar dengan tempat duduk selang-seling (tidak ada dua orang berjenis kelamin sama yang bersebelahan). Di antara mereka ada pasangan Pak Ali dan Bu Sari yang tidak ingin duduk bersebelahan. Banyak susunan duduk yang berbeda adalah ....",
+      "jawaban_benar": "1.728",
+      "alasan_benar": "laki-laki siklis $4! = 24$; perempuan pada 5 celah $5! = 120$ dan Bu Sari tidak pada 2 celah di samping Pak Ali: $120 - 2 \\times 4! = 72$; total $24 \\times 72 = 1.728$",
+      "distraktor": [
+        {
+          "teks": "2.880",
+          "alasan": "hanya selang-seling, lupa syarat Pak Ali dan Bu Sari"
+        },
+        {
+          "teks": "1.152",
+          "alasan": "hanya menghitung susunan saat Bu Sari duduk di samping Pak Ali, $24 \\times 2 \\times 4!$"
+        },
+        {
+          "teks": "1.440",
+          "alasan": "membagi 2.880 dengan 2 untuk syarat pasangan"
+        }
+      ],
+      "pembahasan": "Tempatkan 5 laki-laki melingkar: $(5-1)! = 24$. Perempuan mengisi 5 celah di antara mereka: $5! = 120$. Bu Sari bersebelahan dengan Pak Ali bila menempati salah satu dari 2 celah di samping Pak Ali: $2 \\times 4! = 48$. Susunan perempuan yang sah $= 120 - 48 = 72$. Total $24 \\times 72 = 1.728$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 118,
+        "kutipan": "Jika novel jenis B ditata berdekatan, maka terdapat 60 cara menyusun novel."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi penyelesaian siswa",
+      "alasan_level": "menemukan kesalahan penghitungan ganda pada kasus 'memuat A atau B' lalu mengoreksi dengan mengurangkan irisan",
+      "stimulus": null,
+      "pertanyaan": "Dari huruf A, B, C, D, E, F, dan G akan disusun kode empat huruf berbeda yang memuat huruf A atau huruf B (boleh keduanya). Dina menghitung: kode memuat A ada $4 \\times P(6,3) = 480$, kode memuat B ada 480, sehingga totalnya 960. Perhitungan Dina keliru karena ada kode yang terhitung dua kali. Banyak kode yang benar adalah ....",
+      "jawaban_benar": "720",
+      "alasan_benar": "kode yang memuat A dan B sekaligus ada $4 \\times 3 \\times P(5,2) = 240$ dan terhitung dua kali, sehingga $960 - 240 = 720$",
+      "distraktor": [
+        {
+          "teks": "960",
+          "alasan": "hasil Dina: tidak mengurangi kode yang memuat A dan B sekaligus"
+        },
+        {
+          "teks": "240",
+          "alasan": "hanya menghitung kode yang memuat A dan B sekaligus"
+        },
+        {
+          "teks": "480",
+          "alasan": "hanya menghitung kode yang memuat A"
+        }
+      ],
+      "pembahasan": "Kode yang memuat A dan B sekaligus terhitung di kedua kelompok: pilih posisi A (4) dan B (3), dua posisi lain dari 5 huruf: $P(5,2) = 20$, jadi $4 \\times 3 \\times 20 = 240$. Total benar $= 480 + 480 - 240 = 720$. Cek: $P(7,4) - P(5,4) = 840 - 120 = 720$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 115,
+        "kutipan": "Karena termasuk permutasi dengan objek yang sama atau pengulangan, maka terlebih dahulu temukan huruf yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim dan contoh penyangkal",
+      "alasan_level": "menilai empat pernyataan hitungan pada satu kata dengan beberapa huruf berulang dan syarat berdampingan",
+      "stimulus": null,
+      "pertanyaan": "Huruf-huruf pada kata MISSISSIPPI terdiri atas M satu kali, I empat kali, S empat kali, dan P dua kali. Pernyataan yang benar tentang susunan huruf berbeda dari seluruh huruf kata tersebut adalah ....",
+      "jawaban_benar": "Banyak susunan yang kedua huruf P-nya berdampingan adalah $\\frac{10!}{4!\\,4!} = 6.300$",
+      "alasan_benar": "blok P bersama M, 4 I, dan 4 S membentuk 10 objek sehingga $\\frac{10!}{4!\\,4!} = 6.300$",
+      "distraktor": [
+        {
+          "teks": "Banyak seluruh susunan adalah $\\frac{11!}{4!+4!+2!} = 1.330.560$",
+          "alasan": "mengganti hasil kali faktorial pada penyebut dengan jumlah"
+        },
+        {
+          "teks": "Banyak susunan yang diawali huruf M adalah $\\frac{11!}{4!\\,4!\\,2!} = 34.650$",
+          "alasan": "memakai 11 huruf padahal setelah M tinggal 10 huruf"
+        },
+        {
+          "teks": "Banyak susunan yang keempat huruf S-nya berdampingan adalah $\\frac{8!}{4!\\,2!} \\times 4! = 20.160$",
+          "alasan": "mengalikan $4!$ untuk susunan di dalam blok padahal huruf S identik"
+        }
+      ],
+      "pembahasan": "Kedua P berdampingan dijadikan satu blok (identik, tanpa susunan dalam): objek menjadi blok P, M, 4 I, 4 S = 10 objek sehingga $\\frac{10!}{4!\\,4!} = 6.300$. Pernyataan lain keliru: seluruh susunan $\\frac{11!}{4!\\,4!\\,2!} = 34.650$; diawali M: $\\frac{10!}{4!\\,4!\\,2!} = 3.150$; empat S berdampingan: $\\frac{8!}{4!\\,2!} = 840$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 115,
+        "kutipan": "Karena termasuk permutasi dengan objek yang sama atau pengulangan, maka terlebih dahulu temukan huruf yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat urutan relatif",
+      "alasan_level": "memperlakukan tiga orang bersyarat sebagai objek sama pada urutan tertentu, lalu memperhitungkan dua arah",
+      "stimulus": null,
+      "pertanyaan": "Delapan orang berdiri berjajar dalam satu barisan. Salah satunya, Tomi, harus berdiri di antara Ani dan Beno (Tomi berada di tengah antara keduanya, tidak harus berdampingan, dan Ani boleh berada di kiri maupun di kanan Tomi). Banyak susunan barisan yang mungkin adalah ....",
+      "jawaban_benar": "13.440",
+      "alasan_benar": "urutan Ani-Tomi-Beno atau Beno-Tomi-Ani: $2 \\times \\frac{8!}{3!} = 13.440$",
+      "distraktor": [
+        {
+          "teks": "6.720",
+          "alasan": "hanya menghitung satu arah (Ani di kiri Beno)"
+        },
+        {
+          "teks": "20.160",
+          "alasan": "mengira Tomi di antara kedua orang itu berpeluang setengah"
+        },
+        {
+          "teks": "40.320",
+          "alasan": "menghitung $8!$ tanpa syarat Tomi di tengah"
+        }
+      ],
+      "pembahasan": "Tiga orang itu menempati tiga posisi dalam urutan tertentu. Jika ketiganya dianggap objek sama pada 8 posisi, ada $\\frac{8!}{3!} = 6.720$ cara. Urutan Ani-Tomi-Beno dan Beno-Tomi-Ani: $2 \\times 6.720 = 13.440$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 115,
+        "kutipan": "Karena termasuk permutasi dengan objek yang sama atau pengulangan, maka terlebih dahulu temukan huruf yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "tidak berdampingan dengan unsur sama",
+      "alasan_level": "menyusun konsonan dengan huruf kembar, menempatkan vokal pada celah, dan membagi dengan $3!$ untuk A yang kembar",
+      "stimulus": null,
+      "pertanyaan": "Seluruh huruf pada kata MATEMATIKA disusun menjadi susunan berbeda sehingga tidak ada dua huruf vokal (A, E, I) yang berdampingan. Banyak susunan yang mungkin adalah ....",
+      "jawaban_benar": "3.600",
+      "alasan_benar": "konsonan M, M, T, T, K: $\\frac{5!}{2!\\,2!} = 30$; vokal A, A, A, E, I pada 5 dari 6 celah: $\\frac{P(6,5)}{3!} = 120$; total $30 \\times 120 = 3.600$",
+      "distraktor": [
+        {
+          "teks": "600",
+          "alasan": "memilih 5 dari 6 celah hanya satu cara (celah terpilih diabaikan), $30 \\times \\frac{5!}{3!}$"
+        },
+        {
+          "teks": "21.600",
+          "alasan": "menganggap ketiga huruf A berbeda, $30 \\times P(6,5) / 6 \\times 6$ tanpa membagi $3!$"
+        },
+        {
+          "teks": "180",
+          "alasan": "lupa menyusun vokal pada celah, hanya $30 \\times 6$"
+        }
+      ],
+      "pembahasan": "Kata memuat 5 konsonan (M, M, T, T, K) dan 5 vokal (A, A, A, E, I). Konsonan: $\\frac{5!}{2!\\,2!} = 30$ susunan, membentuk 6 celah. Lima vokal menempati 5 celah berbeda: $P(6,5) = 720$ penempatan bila semua vokal berbeda; karena A kembar tiga, dibagi $3!$: $120$. Total $30 \\times 120 = 3.600$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Terdapat 8 siswa yang bersedia, dan terdapat 2 siswa yang sudah mengisi susunan pengurus yaitu Roni dan Andi."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "pemodelan jabatan dengan dua syarat",
+      "alasan_level": "dua kasus (Andi terpilih atau tidak) dan syarat larangan dua orang bersama yang dihitung dengan komplemen pada tiap kasus",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 orang akan dipilih ketua, wakil ketua, sekretaris, dan bendahara (setiap orang paling banyak satu jabatan). Andi hanya bersedia terpilih bila menjadi ketua, sedangkan Budi dan Cici tidak bersedia terpilih bersama-sama dalam pengurus yang sama (salah satu boleh terpilih). Banyak susunan pengurus yang mungkin adalah ....",
+      "jawaban_benar": "1.620",
+      "alasan_benar": "Andi ketua: $P(8,3) - 6 \\times 6 = 300$; Andi tidak terpilih: $P(8,4) - P(4,2) \\times P(6,2) = 1.320$; total $1.620$",
+      "distraktor": [
+        {
+          "teks": "2.016",
+          "alasan": "mengabaikan syarat Budi dan Cici, $P(8,3) + P(8,4)$"
+        },
+        {
+          "teks": "1.320",
+          "alasan": "hanya menghitung kasus Andi tidak terpilih"
+        },
+        {
+          "teks": "1.980",
+          "alasan": "menerapkan syarat Budi-Cici hanya saat Andi ketua, lupa pada kasus Andi tidak terpilih"
+        }
+      ],
+      "pembahasan": "Kasus 1 (Andi ketua): tiga jabatan lain dari 8 orang, $P(8,3) = 336$; yang memuat Budi dan Cici sekaligus $P(3,2) \\times 6 = 36$; sah $300$. Kasus 2 (Andi tidak terpilih): empat jabatan dari 8 orang, $P(8,4) = 1.680$; yang memuat Budi dan Cici $P(4,2) \\times P(6,2) = 360$; sah $1.320$. Total $300 + 1.320 = 1.620$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 115,
+        "kutipan": "Diketahui banyak huruf pada semboyan tersebut ada 8 huruf."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 3,
+      "jenis_soal": "merancang komposisi huruf",
+      "alasan_level": "merancang komposisi huruf berulang yang membuat banyak susunan tepat 420 dengan menguji empat rancangan memakai $\\frac{7!}{r_1!\\,r_2!\\cdots}$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kode terdiri atas 7 huruf yang seluruhnya dipakai. Agar banyak susunan huruf berbeda dari kode tersebut tepat 420, komposisi huruf yang benar adalah ....",
+      "jawaban_benar": "satu huruf muncul 2 kali, satu huruf lain muncul 3 kali, dan dua huruf lainnya berbeda masing-masing satu kali",
+      "alasan_benar": "$\\frac{7!}{2!\\,3!} = 420$",
+      "distraktor": [
+        {
+          "teks": "satu huruf muncul 4 kali dan tiga huruf lainnya berbeda masing-masing satu kali",
+          "alasan": "$\\frac{7!}{4!} = 210$, bukan 420"
+        },
+        {
+          "teks": "tiga huruf masing-masing muncul 2 kali dan satu huruf lain muncul satu kali",
+          "alasan": "$\\frac{7!}{2!\\,2!\\,2!} = 630$, bukan 420"
+        },
+        {
+          "teks": "dua huruf masing-masing muncul 3 kali dan satu huruf lain muncul satu kali",
+          "alasan": "$\\frac{7!}{3!\\,3!} = 140$, bukan 420"
+        }
+      ],
+      "pembahasan": "$\\frac{7!}{2!\\,3!} = \\frac{5.040}{12} = 420$. Tiga komposisi lain menghasilkan 210, 630, dan 140.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Secara matematis, perhitungan banyaknya susunan pengurus tersebut dapat dituliskan menggunakan konsep faktorial sebagai berikut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan permutasi dengan parameter",
+      "alasan_level": "menyelesaikan ketaksamaan $n(n-1) < 100$ dengan memperhatikan batas bawah $n \\geq 2$ lalu menghitung banyak nilai $n$",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan asli $n$ dengan $n \\geq 2$ yang memenuhi $P(n,2) < 100$ adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "$n(n-1) < 100$ dipenuhi $n = 2, 3, \\ldots, 10$ ($10 \\times 9 = 90$), sedangkan $n = 11$ memberi 110; ada 9 nilai",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "ikut menghitung $n = 1$ padahal $P(1,2)$ tidak terdefinisi"
+        },
+        {
+          "teks": "8",
+          "alasan": "mulai dari $n = 3$, mengira $n$ harus lebih dari 2"
+        },
+        {
+          "teks": "11",
+          "alasan": "mengira $11 \\times 10 = 90$ sehingga $n = 11$ ikut dihitung"
+        }
+      ],
+      "pembahasan": "$P(n,2) = n(n-1)$. $10 \\times 9 = 90 < 100$ dan $11 \\times 10 = 110 > 100$. Karena $n \\geq 2$, nilai $n$ adalah $2, 3, \\ldots, 10$, yaitu 9 nilai.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "kutipan": "Terdapat lima orang laki-laki dan tiga orang perempuan duduk mengelilingi pada suatu meja bundar"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim dan contoh penyangkal",
+      "alasan_level": "membandingkan $(n+1-1)! = n!$ untuk siklis dengan $n!$ untuk berjajar sehingga keduanya sama banyak",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar tentang banyak susunan 8 orang yang duduk mengelilingi meja bundar dan banyak susunan 7 orang yang berdiri berjajar adalah ....",
+      "jawaban_benar": "keduanya sama banyak, yaitu 5.040",
+      "alasan_benar": "melingkar 8 orang $(8-1)! = 5.040$ dan berjajar 7 orang $7! = 5.040$",
+      "distraktor": [
+        {
+          "teks": "susunan melingkar 8 orang sama dengan susunan berjajar 8 orang, yaitu 40.320",
+          "alasan": "memakai $8!$ untuk melingkar dan lupa $(8-1)!$"
+        },
+        {
+          "teks": "susunan melingkar 8 orang adalah setengah dari susunan berjajar 8 orang, yaitu 20.160",
+          "alasan": "membagi $8!$ dengan 2 padahal pembaginya 8"
+        },
+        {
+          "teks": "susunan melingkar 8 orang adalah 720, lebih sedikit dari susunan berjajar 7 orang",
+          "alasan": "memakai $(7-1)!$ seolah melingkar 7 orang"
+        }
+      ],
+      "pembahasan": "Melingkar 8 orang: $(8-1)! = 7! = 5.040$. Berjajar 7 orang: $7! = 5.040$. Jadi keduanya sama; pernyataan lain keliru.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 115,
+        "kutipan": "Karena termasuk permutasi dengan objek yang sama atau pengulangan, maka terlebih dahulu temukan huruf yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kata dengan huruf awal dan akhir sama",
+      "alasan_level": "huruf pertama dan terakhir harus sama sehingga hanya huruf berulang yang mungkin, dihitung per kasus dengan unsur sama pada sisanya",
+      "stimulus": null,
+      "pertanyaan": "Seluruh huruf pada kata PENDIDIKAN disusun menjadi susunan berbeda dengan huruf pertama dan huruf terakhir sama. Banyak susunan yang mungkin adalah ....",
+      "jawaban_benar": "30.240",
+      "alasan_benar": "huruf yang dapat berada di kedua ujung hanya N, D, atau I; tiap kasus $\\frac{8!}{2!\\,2!} = 10.080$; total $3 \\times 10.080 = 30.240$",
+      "distraktor": [
+        {
+          "teks": "10.080",
+          "alasan": "hanya menghitung satu huruf (mis. N) di kedua ujung"
+        },
+        {
+          "teks": "120.960",
+          "alasan": "menghitung $3 \\times 8!$ tanpa membagi unsur sama pada 8 huruf sisa"
+        },
+        {
+          "teks": "60.480",
+          "alasan": "membagi hanya dengan $2!$, lupa pasangan huruf kembar kedua pada sisa huruf"
+        }
+      ],
+      "pembahasan": "Huruf PENDIDIKAN: P, E, N (2), D (2), I (2), K, A. Huruf awal = akhir hanya mungkin untuk N, D, atau I. Misal N di kedua ujung: sisa P, E, D, D, I, I, K, A (8 huruf) dengan D dan I kembar: $\\frac{8!}{2!\\,2!} = 10.080$. Kasus D dan I juga 10.080. Total $30.240$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 119,
+        "kutipan": "Terdapat 10 lukisan prioritas yang akan diletakkan pada beranda utama galeri pamerannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bilangan dengan syarat posisi saling bergantung",
+      "alasan_level": "dua syarat bergantung (satuan genap dan ribuan lebih kecil dari ratusan) dihitung per kasus satuan dengan simetri pasangan angka",
+      "stimulus": null,
+      "pertanyaan": "Dari angka 1, 2, 3, 4, 5, 6, dan 7 akan dibentuk bilangan empat angka tanpa angka berulang. Banyak bilangan genap yang angka ribuannya lebih kecil daripada angka ratusannya adalah ....",
+      "jawaban_benar": "180",
+      "alasan_benar": "satuan 2, 4, atau 6 (3 cara); tiga angka depan dari 6 angka sisa $P(6,3) = 120$, separuhnya memenuhi ribuan < ratusan: $3 \\times 60 = 180$",
+      "distraktor": [
+        {
+          "teks": "360",
+          "alasan": "mengabaikan syarat ribuan < ratusan, $3 \\times P(6,3)$"
+        },
+        {
+          "teks": "420",
+          "alasan": "mengabaikan syarat genap, $\\frac{P(7,4)}{2}$"
+        },
+        {
+          "teks": "210",
+          "alasan": "membagi $P(7,4)$ dengan 4 untuk dua syarat sekaligus"
+        }
+      ],
+      "pembahasan": "Satuan harus genap: 3 pilihan. Tiga angka depan diambil dari 6 angka sisa dan disusun: $P(6,3) = 120$. Untuk setiap pilihan dua angka pada posisi ribuan dan ratusan, tepat satu dari dua urutan memenuhi ribuan < ratusan, sehingga separuh: 60. Total $3 \\times 60 = 180$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 118,
+        "kutipan": "Jika novel jenis B ditata berdekatan, maka terdapat 60 cara menyusun novel."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tidak berdampingan dengan unsur sama",
+      "alasan_level": "menghitung tak ada huruf sama yang berdampingan dengan menjumlah semua susunan, mengurangi dua kasus berdampingan, dan menambahkan kembali irisan",
+      "stimulus": null,
+      "pertanyaan": "Seluruh huruf pada kode AABBC disusun menjadi susunan berbeda sehingga tidak ada dua huruf yang sama yang berdampingan (kedua A tidak berdampingan dan kedua B tidak berdampingan). Banyak susunan yang mungkin adalah ....",
+      "jawaban_benar": "12",
+      "alasan_benar": "semua $\\frac{5!}{2!\\,2!} = 30$; A berdampingan $\\frac{4!}{2!} = 12$; B berdampingan 12; keduanya berdampingan $3! = 6$; $30 - 12 - 12 + 6 = 12$",
+      "distraktor": [
+        {
+          "teks": "30",
+          "alasan": "menghitung semua susunan tanpa syarat"
+        },
+        {
+          "teks": "18",
+          "alasan": "hanya mengurangi susunan saat A berdampingan, lupa syarat B"
+        },
+        {
+          "teks": "6",
+          "alasan": "mengurangi dua kasus tanpa menambahkan kembali irisan yang terhitung dua kali, $30 - 12 - 12$"
+        }
+      ],
+      "pembahasan": "Semua: 30. Kedua A berdampingan (blok AA, B, B, C): $\\frac{4!}{2!} = 12$. Kedua B berdampingan: 12. Kedua-duanya berdampingan (AA, BB, C): $3! = 6$. Tidak ada yang berdampingan: $30 - (12 + 12 - 6) = 12$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Berdasarkan perhitungan tersebut kalian dapat mengetahui bahwa susunan pengurus kelas yang belum terisi adalah sekretaris dan bendahara."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perbandingan nilai $P(n,r)$",
+      "alasan_level": "membandingkan $P(6,r)$ untuk tiap $r$ dengan 300 dan memperhatikan bahwa $P(6,5) = P(6,6)$",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan asli $r$ dengan $1 \\leq r \\leq 6$ yang memenuhi $P(6,r) > 300$ adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "$P(6,r) = 6, 30, 120, 360, 720, 720$ untuk $r = 1, \\ldots, 6$; yang lebih dari 300 adalah $r = 4, 5, 6$",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "mengira $P(6,6)$ lebih kecil dari $P(6,5)$ sehingga hanya $r = 4, 5$"
+        },
+        {
+          "teks": "4",
+          "alasan": "ikut menghitung $r = 3$ dengan menganggap $P(6,3) = 180$"
+        },
+        {
+          "teks": "6",
+          "alasan": "menganggap semua nilai $r$ memenuhi"
+        }
+      ],
+      "pembahasan": "$P(6,1) = 6$, $P(6,2) = 30$, $P(6,3) = 120$, $P(6,4) = 360$, $P(6,5) = 720$, $P(6,6) = 720$. Nilai yang lebih dari 300: $r = 4, 5, 6$, yaitu 3 nilai.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 119,
+        "kutipan": "Terdapat 4 lukisan favorit yang selalu berdampingan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "berdampingan dengan syarat posisi",
+      "alasan_level": "dua syarat: blok berdampingan dan satu orang tidak boleh di ujung, dihitung dengan komplemen pada kedua ujung",
+      "stimulus": null,
+      "pertanyaan": "Delapan orang berdiri berjajar dalam satu barisan. Dua di antaranya, Edo dan Fani, harus selalu berdampingan, sedangkan Gita tidak boleh berdiri di ujung kiri maupun ujung kanan barisan. Banyak susunan barisan yang mungkin adalah ....",
+      "jawaban_benar": "7.200",
+      "alasan_benar": "berdampingan: $7! \\times 2 = 10.080$; Gita di salah satu ujung: $2 \\times (6! \\times 2) = 2.880$; $10.080 - 2.880 = 7.200$",
+      "distraktor": [
+        {
+          "teks": "10.080",
+          "alasan": "hanya memenuhi syarat berdampingan, lupa syarat Gita"
+        },
+        {
+          "teks": "2.880",
+          "alasan": "hanya menghitung susunan saat Gita berada di salah satu ujung"
+        },
+        {
+          "teks": "8.640",
+          "alasan": "hanya mengurangi satu ujung ($10.080 - 1.440$), lupa ujung yang lain"
+        }
+      ],
+      "pembahasan": "Edo-Fani dijadikan blok: 7 objek, $7! = 5.040$, dikali $2!$ = 10.080. Gita di ujung kiri: 6 objek lain disusun $6! = 720$, dikali $2!$ = 1.440; ujung kanan juga 1.440, total 2.880. Yang memenuhi: $10.080 - 2.880 = 7.200$.",
+      "catatan": null
+    }
+  ]
+}

@@ -1,0 +1,698 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0026-latihan-b-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sistem persamaan dari elemen",
+      "alasan_level": "dua sistem persamaan linear dua variabel dari elemen seletak, lalu dijumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Hitunglah nilai $a + b + c + d$ yang memenuhi kesamaan matriks berikut. $\\begin{pmatrix} a + 4b & 3a + b \\\\ c + 3d & 2c + d \\end{pmatrix} = \\begin{pmatrix} -4 & 10 \\\\ 15 & 0 \\end{pmatrix}$",
+      "jawaban_benar": "5",
+      "alasan_benar": "$a + 4b = -4$ dan $3a + b = 10$ memberi $a = 4$, $b = -2$; $c + 3d = 15$ dan $2c + d = 0$ memberi $c = -3$, $d = 6$; jumlah 5",
+      "distraktor": [
+        {
+          "teks": "9",
+          "alasan": "salah tanda pada $b$: $b = 2$ sehingga jumlah $4 + 2 - 3 + 6 = 9$"
+        },
+        {
+          "teks": "-7",
+          "alasan": "salah tanda pada $d$: $d = -6$ sehingga jumlah $4 - 2 - 3 - 6 = -7$"
+        },
+        {
+          "teks": "11",
+          "alasan": "salah tanda pada $c$: $c = 3$ sehingga jumlah $4 - 2 + 3 + 6 = 11$"
+        }
+      ],
+      "pembahasan": "Elemen seletak: $a + 4b = -4$, $3a + b = 10$ sehingga $b = 10 - 3a$, $a + 40 - 12a = -4$, $a = 4$, $b = -2$. $c + 3d = 15$, $2c + d = 0$ sehingga $d = -2c$, $c - 6c = 15$, $c = -3$, $d = 6$. Jumlah $= 4 - 2 - 3 + 6 = 5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0026-latihan-b-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sistem persamaan dari elemen",
+      "alasan_level": "dua sistem persamaan linear dua variabel lalu hitung ab + cd",
+      "stimulus": null,
+      "pertanyaan": "Tentukan nilai $ab + cd$ yang memenuhi kesamaan matriks berikut. $\\begin{pmatrix} 2a - b & a + b \\\\ 3c + d & c - d \\end{pmatrix} = \\begin{pmatrix} 6 & 9 \\\\ -13 & 5 \\end{pmatrix}$",
+      "jawaban_benar": "34",
+      "alasan_benar": "$2a - b = 6$ dan $a + b = 9$ memberi $a = 5$, $b = 4$; $3c + d = -13$ dan $c - d = 5$ memberi $c = -2$, $d = -7$; $ab + cd = 20 + 14 = 34$",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "salah tanda pada $cd$: mengira $cd = -14$ sehingga $20 - 14 = 6$"
+        },
+        {
+          "teks": "20",
+          "alasan": "hanya menghitung $ab$ dan melupakan $cd$"
+        },
+        {
+          "teks": "0",
+          "alasan": "menjumlahkan keempat variabel $5 + 4 - 2 - 7$, bukan $ab + cd$"
+        }
+      ],
+      "pembahasan": "Eliminasi: $3a = 15$ sehingga $a = 5$, $b = 4$. $4c = -8$ sehingga $c = -2$, $d = c - 5 = -7$. $ab + cd = 20 + 14 = 34$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0026-latihan-b-4"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan dengan matriks identitas",
+      "alasan_level": "elemen nol memberi relasi x dan y, lalu disubstitusikan ke elemen diagonal bernilai 1",
+      "stimulus": null,
+      "pertanyaan": "Jika $A = \\begin{pmatrix} 9x - y & 0 \\\\ (4x - y)^2 & 1 \\end{pmatrix}$ dan $I$ adalah matriks identitas yang seordo dengan $A$. Jika $A = I$, tentukan nilai $x + 5y$.",
+      "jawaban_benar": "$\\frac{21}{5}$",
+      "alasan_benar": "$(4x - y)^2 = 0$ memberi $y = 4x$; $9x - y = 1$ memberi $5x = 1$, $x = \\frac{1}{5}$, $y = \\frac{4}{5}$, sehingga $x + 5y = \\frac{21}{5}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{35}$",
+          "alasan": "salah relasi: memakai $x = 4y$ sehingga $35y = 1$ dan $x + 5y = \\frac{9}{35}$"
+        },
+        {
+          "teks": "$\\frac{21}{13}$",
+          "alasan": "salah tanda: memakai $9x + y = 1$ sehingga $x = \\frac{1}{13}$ dan $x + 5y = \\frac{21}{13}$"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "hanya menghitung suku $5y$ dan melupakan $x$"
+        }
+      ],
+      "pembahasan": "Elemen baris 2 kolom 1 harus 0: $(4x - y)^2 = 0$ sehingga $y = 4x$. Elemen $a_{11} = 1$: $9x - 4x = 1$, $x = \\frac{1}{5}$, $y = \\frac{4}{5}$. Jadi $x + 5y = \\frac{1}{5} + 4 = \\frac{21}{5}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0026-latihan-b-4"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan dengan matriks identitas",
+      "alasan_level": "relasi dari kuadrat nol, substitusi ke elemen diagonal, lalu hitung bentuk 5x - y",
+      "stimulus": null,
+      "pertanyaan": "Jika $A = \\begin{pmatrix} 2x + y & (x - 4y)^2 \\\\ 0 & x + 5y \\end{pmatrix}$ dan $I$ adalah matriks identitas berordo $2 \\times 2$ dengan $A = I$, tentukan nilai $5x - y$.",
+      "jawaban_benar": "$\\frac{19}{9}$",
+      "alasan_benar": "$(x - 4y)^2 = 0$ memberi $x = 4y$; $2x + y = 1$ memberi $y = \\frac{1}{9}$, $x = \\frac{4}{9}$ (dan $x + 5y = 1$ terpenuhi); $5x - y = \\frac{19}{9}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "salah relasi: memakai $y = 4x$ sehingga $x = \\frac{1}{6}$, $y = \\frac{2}{3}$"
+        },
+        {
+          "teks": "$\\frac{19}{7}$",
+          "alasan": "salah tanda: memakai $2x - y = 1$ sehingga $x = \\frac{4}{7}$, $y = \\frac{1}{7}$"
+        },
+        {
+          "teks": "$\\frac{20}{9}$",
+          "alasan": "hanya menghitung suku $5x$ dan melupakan $-y$"
+        }
+      ],
+      "pembahasan": "Elemen baris 1 kolom 2 harus 0, jadi $x = 4y$. Elemen $a_{11} = 1$: $9y = 1$, $y = \\frac{1}{9}$, $x = \\frac{4}{9}$. Cek $a_{22} = \\frac{4}{9} + \\frac{5}{9} = 1$. $5x - y = \\frac{20}{9} - \\frac{1}{9} = \\frac{19}{9}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "bagian": "Contoh 1.2",
+        "nomor": "1",
+        "teks": "Jika matriks A sama dengan matriks B, tentukan nilai x, y, dan z.",
+        "jawaban": "x = 1, y = -2, z = ±3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan kuadrat pada elemen",
+      "alasan_level": "tiga persamaan dari elemen seletak, satu kuadrat sehingga dua nilai z, pilih yang menghasilkan jumlah terkecil",
+      "stimulus": null,
+      "pertanyaan": "Matriks $K = \\begin{pmatrix} 3x - 1 & 4 \\\\ -y & z^2 \\end{pmatrix}$ dan $L = \\begin{pmatrix} 8 & 4 \\\\ 5 & 36 \\end{pmatrix}$ memenuhi $K = L$. Nilai terkecil yang mungkin bagi $x + y + z$ adalah ....",
+      "jawaban_benar": "-8",
+      "alasan_benar": "$x = 3$, $y = -5$, dan $z = \\pm 6$; jumlah terkecil dicapai saat $z = -6$ yaitu $3 - 5 - 6 = -8$",
+      "distraktor": [
+        {
+          "teks": "4",
+          "alasan": "mengambil $z = 6$ sehingga yang diperoleh nilai terbesar, bukan terkecil"
+        },
+        {
+          "teks": "2",
+          "alasan": "salah tanda pada $y$: $y = 5$ dan $z = -6$ sehingga $3 + 5 - 6 = 2$"
+        },
+        {
+          "teks": "14",
+          "alasan": "salah tanda pada $y$ dan hanya memakai $z = 6$"
+        }
+      ],
+      "pembahasan": "$3x - 1 = 8$ sehingga $x = 3$; $-y = 5$ sehingga $y = -5$; $z^2 = 36$ sehingga $z = 6$ atau $z = -6$. Nilai terkecil: $3 - 5 - 6 = -8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "bagian": "Contoh 1.2",
+        "nomor": "1",
+        "teks": "Jika matriks A sama dengan matriks B, tentukan nilai x, y, dan z.",
+        "jawaban": "x = 1, y = -2, z = ±3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "persamaan kuadrat pada elemen",
+      "alasan_level": "persamaan kuadrat berbentuk kuadrat sempurna memberi dua nilai m, pilih jumlah terbesar dengan n",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P = \\begin{pmatrix} (m - 2)^2 & 5 \\\\ 2n & 1 \\end{pmatrix}$ dan $Q = \\begin{pmatrix} 49 & 5 \\\\ -6 & 1 \\end{pmatrix}$. Jika $P = Q$, nilai terbesar yang mungkin bagi $m + n$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "$(m - 2)^2 = 49$ memberi $m = 9$ atau $m = -5$; $2n = -6$ memberi $n = -3$; nilai terbesar $m + n = 9 - 3 = 6$",
+      "distraktor": [
+        {
+          "teks": "-8",
+          "alasan": "mengambil $m = -5$ sehingga diperoleh nilai terkecil, bukan terbesar"
+        },
+        {
+          "teks": "12",
+          "alasan": "salah tanda: $n = 3$ sehingga $9 + 3 = 12$"
+        },
+        {
+          "teks": "4",
+          "alasan": "menarik akar tanpa menggeser 2: $m = 7$ sehingga $7 - 3 = 4$"
+        }
+      ],
+      "pembahasan": "$m - 2 = \\pm 7$ sehingga $m = 9$ atau $m = -5$. $n = -3$. Nilai $m + n$ adalah $6$ atau $-8$, yang terbesar 6.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 26,
+        "bagian": "Mari Mencoba 1.2",
+        "nomor": "MM",
+        "teks": "Jika matriks A sama dengan matriks B, tentukan nilai a + b + c + d.",
+        "jawaban": "15"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "variabel di kedua ruas",
+      "alasan_level": "empat persamaan dengan variabel di kedua ruas pada elemen seletak lalu dijumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 2a - 3 & b + 1 \\\\ c & 2d \\end{pmatrix}$ dan $B = \\begin{pmatrix} a + 4 & 2b - 3 \\\\ 3 & d + 6 \\end{pmatrix}$. Jika $A = B$, nilai $a + b + c + d$ adalah ....",
+      "jawaban_benar": "20",
+      "alasan_benar": "$2a - 3 = a + 4$ memberi $a = 7$; $b + 1 = 2b - 3$ memberi $b = 4$; $c = 3$; $2d = d + 6$ memberi $d = 6$; jumlah 20",
+      "distraktor": [
+        {
+          "teks": "14",
+          "alasan": "salah memindahkan suku: $2a - a = 4 - 3$ sehingga $a = 1$"
+        },
+        {
+          "teks": "18",
+          "alasan": "salah mengurangkan: $b = 3 - 1 = 2$"
+        },
+        {
+          "teks": "17",
+          "alasan": "salah menyelesaikan $2d = d + 6$ sebagai $d = 3$"
+        }
+      ],
+      "pembahasan": "Semua elemen seletak disamakan: $a = 7$, $b = 4$, $c = 3$, $d = 6$. Jumlah $= 20$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 26,
+        "bagian": "Mari Mencoba 1.2",
+        "nomor": "MM",
+        "teks": "Jika matriks A sama dengan matriks B, tentukan nilai a + b + c + d.",
+        "jawaban": "15"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "matriks kolom",
+      "alasan_level": "dua persamaan dua variabel dan satu persamaan satu variabel dari matriks kolom, lalu pq + r",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} p + q \\\\ p - q \\\\ 2r - 1 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 10 \\\\ 4 \\\\ -7 \\end{pmatrix}$. Jika $A = B$, nilai $pq + r$ adalah ....",
+      "jawaban_benar": "18",
+      "alasan_benar": "$p + q = 10$ dan $p - q = 4$ memberi $p = 7$, $q = 3$; $2r - 1 = -7$ memberi $r = -3$; $pq + r = 21 - 3 = 18$",
+      "distraktor": [
+        {
+          "teks": "24",
+          "alasan": "salah tanda: $r = 3$ sehingga $21 + 3 = 24$"
+        },
+        {
+          "teks": "21",
+          "alasan": "hanya menghitung $pq$ dan melupakan $r$"
+        },
+        {
+          "teks": "7",
+          "alasan": "menghitung $p + q + r = 7 + 3 - 3$, bukan $pq + r$"
+        }
+      ],
+      "pembahasan": "Dari $p + q = 10$ dan $p - q = 4$: $p = 7$, $q = 3$. Dari $2r - 1 = -7$: $r = -3$. $pq + r = 21 + (-3) = 18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sistem persamaan dari elemen",
+      "alasan_level": "dua persamaan dua variabel berbentuk ekspresi dari elemen seletak lalu hitung x^2 + y^2",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\begin{pmatrix} 2x + y & 3 \\\\ 5 & x - y \\end{pmatrix} = \\begin{pmatrix} 11 & 3 \\\\ 5 & 1 \\end{pmatrix}$. Nilai $x^2 + y^2$ adalah ....",
+      "jawaban_benar": "25",
+      "alasan_benar": "$2x + y = 11$ dan $x - y = 1$ memberi $x = 4$, $y = 3$; $x^2 + y^2 = 16 + 9 = 25$",
+      "distraktor": [
+        {
+          "teks": "49",
+          "alasan": "mengira $x^2 + y^2 = (x + y)^2$"
+        },
+        {
+          "teks": "7",
+          "alasan": "hanya menghitung $x + y$"
+        },
+        {
+          "teks": "12",
+          "alasan": "menghitung hasil kali $xy$, bukan $x^2 + y^2$"
+        }
+      ],
+      "pembahasan": "Elemen seletak: $2x + y = 11$ dan $x - y = 1$. Dijumlahkan: $3x = 12$ sehingga $x = 4$, $y = 3$. Maka $x^2 + y^2 = 25$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan dengan transpos",
+      "alasan_level": "menentukan transpos B lebih dulu, lalu menyamakan elemen seletak dan menjumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Transpos matriks $B$, ditulis $B^T$, adalah matriks yang diperoleh dengan menukar baris menjadi kolom. Diketahui $A = \\begin{pmatrix} 2a & 5 \\\\ b - 1 & 7 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 6 & 9 \\\\ 5 & 7 \\end{pmatrix}$. Jika $A = B^T$, nilai $a + b$ adalah ....",
+      "jawaban_benar": "13",
+      "alasan_benar": "$B^T = \\begin{pmatrix} 6 & 5 \\\\ 9 & 7 \\end{pmatrix}$; $2a = 6$ memberi $a = 3$; $b - 1 = 9$ memberi $b = 10$; $a + b = 13$",
+      "distraktor": [
+        {
+          "teks": "9",
+          "alasan": "lupa menukar baris dan kolom: memakai $b - 1 = 5$ sehingga $b = 6$"
+        },
+        {
+          "teks": "11",
+          "alasan": "salah memindahkan $-1$: $b = 9 - 1 = 8$"
+        },
+        {
+          "teks": "12",
+          "alasan": "lupa memindahkan $-1$: $b = 9$"
+        }
+      ],
+      "pembahasan": "$B^T$ memiliki baris pertama $6, 5$ dan baris kedua $9, 7$. Elemen seletak dengan $A$: $2a = 6$, $5 = 5$, $b - 1 = 9$, $7 = 7$. Jadi $a = 3$, $b = 10$, $a + b = 13$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter agar dua matriks sama",
+      "alasan_level": "satu persamaan linear dan satu kuadrat harus dipenuhi k yang sama",
+      "stimulus": null,
+      "pertanyaan": "Nilai $k$ agar $\\begin{pmatrix} 2k - 1 & 7 \\\\ 0 & k^2 \\end{pmatrix} = \\begin{pmatrix} 9 & 7 \\\\ 0 & 25 \\end{pmatrix}$ adalah ....",
+      "jawaban_benar": "5",
+      "alasan_benar": "$2k - 1 = 9$ memberi $k = 5$ dan $k^2 = 25$ juga dipenuhi oleh $k = 5$",
+      "distraktor": [
+        {
+          "teks": "-5",
+          "alasan": "hanya memenuhi $k^2 = 25$ tetapi tidak memenuhi $2k - 1 = 9$"
+        },
+        {
+          "teks": "4",
+          "alasan": "salah memindahkan $-1$: $2k = 8$"
+        },
+        {
+          "teks": "10",
+          "alasan": "lupa membagi 2: $2k = 10$ dianggap $k = 10$"
+        }
+      ],
+      "pembahasan": "Elemen seletak: $2k - 1 = 9$ sehingga $k = 5$. Cek $k^2 = 25$, terpenuhi. $k = -5$ gagal pada elemen pertama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "persamaan kuadrat pada elemen",
+      "alasan_level": "persamaan kuadrat menghasilkan dua akar, satu akar dipilih karena harus memenuhi elemen lain",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\begin{pmatrix} k^2 - 5k & 3 \\\\ 0 & k \\end{pmatrix} = \\begin{pmatrix} -6 & 3 \\\\ 0 & 2 \\end{pmatrix}$. Nilai $k$ yang memenuhi kesamaan tersebut adalah ....",
+      "jawaban_benar": "2",
+      "alasan_benar": "$k^2 - 5k = -6$ memberi $k = 2$ atau $k = 3$, tetapi elemen lain mensyaratkan $k = 2$; hanya $k = 2$ yang memenuhi kedua elemen",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "akar persamaan pertama tetapi tidak memenuhi $k = 2$ pada elemen baris 2 kolom 2"
+        },
+        {
+          "teks": "-2",
+          "alasan": "salah tanda akar saat memfaktorkan"
+        },
+        {
+          "teks": "6",
+          "alasan": "memakai hasil kali kedua akar, bukan nilai $k$"
+        }
+      ],
+      "pembahasan": "$k^2 - 5k + 6 = 0$ memberi $(k - 2)(k - 3) = 0$, sehingga $k = 2$ atau $k = 3$. Elemen baris 2 kolom 2: $k = 2$. Jadi $k = 2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "matriks A dan matriks B mempunyai ordo yang sama"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "ordo dua matriks sama",
+      "alasan_level": "menyamakan ordo dua matriks dalam bentuk ekspresi lalu menghitung hasil kali",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ berordo $(2m - 1) \\times (3n + 2)$ dan matriks $B$ berordo $9 \\times 11$. Jika $A = B$, nilai $mn$ adalah ....",
+      "jawaban_benar": "15",
+      "alasan_benar": "ordo sama: $2m - 1 = 9$ memberi $m = 5$ dan $3n + 2 = 11$ memberi $n = 3$; $mn = 15$",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "salah memindahkan $-1$: $m = 4$ sehingga $mn = 12$"
+        },
+        {
+          "teks": "8",
+          "alasan": "menjumlahkan $m + n$, bukan mengalikan"
+        },
+        {
+          "teks": "45",
+          "alasan": "lupa membagi 3: $n = 9$ sehingga $mn = 45$"
+        }
+      ],
+      "pembahasan": "Syarat pertama kesamaan: ordo sama. Banyak baris $2m - 1 = 9$ sehingga $m = 5$; banyak kolom $3n + 2 = 11$ sehingga $n = 3$. $mn = 15$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "soal cerita",
+      "alasan_level": "memodelkan dua daftar harga yang sama sebagai kesamaan matriks lalu menjumlahkan variabel",
+      "stimulus": null,
+      "pertanyaan": "Toko A dan Toko B menjual dua jenis barang dengan harga (dalam ribuan rupiah) yang sama. Daftar harga Toko A disajikan dalam matriks $A = \\begin{pmatrix} 25 & 2x + 5 \\\\ 30 & 3y - 1 \\end{pmatrix}$ dan Toko B dalam matriks $B = \\begin{pmatrix} 25 & 45 \\\\ 30 & 38 \\end{pmatrix}$. Nilai $x + y$ adalah ....",
+      "jawaban_benar": "33",
+      "alasan_benar": "harga sama berarti $A = B$: $2x + 5 = 45$ memberi $x = 20$ dan $3y - 1 = 38$ memberi $y = 13$; $x + y = 33$",
+      "distraktor": [
+        {
+          "teks": "38",
+          "alasan": "salah membagi: $2x = 50$ sehingga $x = 25$"
+        },
+        {
+          "teks": "59",
+          "alasan": "lupa membagi 3: $3y = 39$ dianggap $y = 39$"
+        },
+        {
+          "teks": "53",
+          "alasan": "lupa membagi 2: $2x = 40$ dianggap $x = 40$"
+        }
+      ],
+      "pembahasan": "Harga kedua toko sama sehingga $A = B$. $2x + 5 = 45$ memberi $x = 20$; $3y - 1 = 38$ memberi $y = 13$. Jadi $x + y = 33$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel di kedua ruas",
+      "alasan_level": "variabel muncul di kedua matriks; satu persamaan memberi y, lalu x dari persamaan lain",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} x + 2 & 3y \\\\ 7 & 1 \\end{pmatrix}$ dan $B = \\begin{pmatrix} y + 5 & 12 \\\\ 7 & 1 \\end{pmatrix}$. Jika $A = B$, nilai $xy$ adalah ....",
+      "jawaban_benar": "28",
+      "alasan_benar": "$3y = 12$ memberi $y = 4$; $x + 2 = y + 5$ memberi $x = 7$; $xy = 28$",
+      "distraktor": [
+        {
+          "teks": "44",
+          "alasan": "salah memindahkan suku: $x = y + 7 = 11$"
+        },
+        {
+          "teks": "11",
+          "alasan": "menjumlahkan $x + y$, bukan mengalikan"
+        },
+        {
+          "teks": "36",
+          "alasan": "lupa mengurangkan 2: $x = 9$ sehingga $xy = 36$"
+        }
+      ],
+      "pembahasan": "Elemen $(1,2)$: $3y = 12$, $y = 4$. Elemen $(1,1)$: $x + 2 = 4 + 5 = 9$, $x = 7$. $xy = 28$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan dengan matriks identitas",
+      "alasan_level": "matriks identitas ordo 3 menghasilkan sistem dua variabel dan satu persamaan kuadrat dengan syarat tanda",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} x + y & 0 & z + 1 \\\\ 0 & 3x + 4y & 0 \\\\ 0 & 0 & z^2 \\end{pmatrix}$ dan $I$ adalah matriks identitas berordo $3 \\times 3$. Jika $A = I$ dan $z < 0$, nilai $xyz$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "$x + y = 1$ dan $3x + 4y = 1$ memberi $x = 3$, $y = -2$; $z^2 = 1$ dengan $z < 0$ memberi $z = -1$ (dan $z + 1 = 0$ terpenuhi); $xyz = 6$",
+      "distraktor": [
+        {
+          "teks": "-6",
+          "alasan": "mengabaikan syarat $z < 0$: memakai $z = 1$"
+        },
+        {
+          "teks": "-1",
+          "alasan": "hanya memberikan nilai $z$"
+        },
+        {
+          "teks": "3",
+          "alasan": "hanya memberikan nilai $x$"
+        }
+      ],
+      "pembahasan": "Matriks identitas: diagonal 1, lainnya 0. $x + y = 1$, $3x + 4y = 1$ sehingga $y = -2$, $x = 3$. $z^2 = 1$ dan $z < 0$ sehingga $z = -1$. $xyz = 3 \\times (-2) \\times (-1) = 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "matriks dengan rumus elemen",
+      "alasan_level": "menyusun matriks dari rumus elemen lalu menyamakan dengan matriks berisi variabel",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A = (a_{ij})$ berordo $2 \\times 2$ dengan $a_{ij} = (i + j)^2$. Jika $A = \\begin{pmatrix} p^2 & 3q \\\\ r + 2 & 4s \\end{pmatrix}$ dan $p > 0$, nilai $p + q + r + s$ adalah ....",
+      "jawaban_benar": "16",
+      "alasan_benar": "$A = \\begin{pmatrix} 4 & 9 \\\\ 9 & 16 \\end{pmatrix}$; $p = 2$, $q = 3$, $r = 7$, $s = 4$; jumlah 16",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "mengabaikan syarat $p > 0$: memakai $p = -2$"
+        },
+        {
+          "teks": "18",
+          "alasan": "lupa mengurangkan 2: $r = 9$"
+        },
+        {
+          "teks": "28",
+          "alasan": "lupa membagi 4: $s = 16$"
+        }
+      ],
+      "pembahasan": "$a_{11} = 4$, $a_{12} = 9$, $a_{21} = 9$, $a_{22} = 16$. Maka $p^2 = 4$ ($p = 2$), $3q = 9$ ($q = 3$), $r + 2 = 9$ ($r = 7$), $4s = 16$ ($s = 4$). Jumlah 16.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "soal cerita",
+      "alasan_level": "dua catatan penjualan sama dimodelkan sebagai kesamaan matriks lalu dicari selisih variabel",
+      "stimulus": null,
+      "pertanyaan": "Catatan penjualan buah (dalam kg) pada hari Senin dan Selasa ternyata sama. Penjualan hari Senin ditulis $P = \\begin{pmatrix} 3x + 2 & 20 \\\\ 15 & 2y - 4 \\end{pmatrix}$ dan hari Selasa ditulis $Q = \\begin{pmatrix} 17 & 20 \\\\ 15 & 26 \\end{pmatrix}$. Nilai $y - x$ adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "$P = Q$: $3x + 2 = 17$ memberi $x = 5$ dan $2y - 4 = 26$ memberi $y = 15$; $y - x = 10$",
+      "distraktor": [
+        {
+          "teks": "-10",
+          "alasan": "membalik urutan pengurangan: $x - y$"
+        },
+        {
+          "teks": "20",
+          "alasan": "menjumlahkan $x + y$, bukan menghitung selisih"
+        },
+        {
+          "teks": "6",
+          "alasan": "salah memindahkan $-4$: $y = 11$"
+        }
+      ],
+      "pembahasan": "$3x = 15$ sehingga $x = 5$; $2y = 30$ sehingga $y = 15$. $y - x = 10$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "variabel di kedua ruas",
+      "alasan_level": "tiga variabel, satu muncul di kedua ruas, dengan elemen yang harus konsisten, lalu xy + k",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P = \\begin{pmatrix} 2x & k + 1 \\\\ y & 4 \\end{pmatrix}$ dan $Q = \\begin{pmatrix} x + 3 & 9 \\\\ 5 & y - 1 \\end{pmatrix}$. Jika $P = Q$, nilai $xy + k$ adalah ....",
+      "jawaban_benar": "23",
+      "alasan_benar": "$2x = x + 3$ memberi $x = 3$; $y = 5$ (dan $4 = y - 1$ terpenuhi); $k + 1 = 9$ memberi $k = 8$; $xy + k = 15 + 8 = 23$",
+      "distraktor": [
+        {
+          "teks": "15",
+          "alasan": "hanya menghitung $xy$ dan melupakan $k$"
+        },
+        {
+          "teks": "24",
+          "alasan": "lupa mengurangkan 1: $k = 9$"
+        },
+        {
+          "teks": "7",
+          "alasan": "mengurangkan $xy - k$, bukan menjumlahkan"
+        }
+      ],
+      "pembahasan": "$x = 3$, $y = 5$, $k = 8$. $xy + k = 23$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "variabel di kedua ruas",
+      "alasan_level": "dua persamaan yang saling menyatakan x dan y, diselesaikan dengan substitusi",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 3 & x \\\\ y & 5 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 3 & 2y - 1 \\\\ x - 6 & 5 \\end{pmatrix}$. Jika $A = B$, nilai $2x - y$ adalah ....",
+      "jawaban_benar": "19",
+      "alasan_benar": "$x = 2y - 1$ dan $y = x - 6$; substitusi memberi $x = 2(x - 6) - 1$ sehingga $x = 13$, $y = 7$; $2x - y = 19$",
+      "distraktor": [
+        {
+          "teks": "13",
+          "alasan": "salah menjabarkan: $x = 2x - 6 - 1$ sehingga $x = 7$, $y = 1$"
+        },
+        {
+          "teks": "-17",
+          "alasan": "salah tanda: $y = x + 6$ sehingga $x = -11$, $y = -5$"
+        },
+        {
+          "teks": "20",
+          "alasan": "menjumlahkan $x + y$, bukan menghitung $2x - y$"
+        }
+      ],
+      "pembahasan": "Elemen $(1,2)$: $x = 2y - 1$. Elemen $(2,1)$: $y = x - 6$. Substitusi: $x = 2(x - 6) - 1 = 2x - 13$ sehingga $x = 13$, $y = 7$. $2x - y = 19$.",
+      "catatan": null
+    }
+  ]
+}

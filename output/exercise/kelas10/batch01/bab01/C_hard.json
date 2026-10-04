@@ -1,0 +1,540 @@
+{
+  "book": "kelas10",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Bahan acuan siswa subbab C habis di easy/medium (13 jenis medium sudah memakai hampir semua konsep: fungsi dari data, persentase, waktu target, parameter, tafsir). Hard hanya mencakup penalaran evaluasi klaim, penyangkal, parameter ganda, perbandingan model, dan perancangan; sisanya akan nyaris kembar dengan medium atau di luar materi (transformasi grafik, grafik).",
+  "soal": [
+    {
+      "id": "kelas10-b01-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "kutipan": "Fungsi peluruhan eksponen dapat dituliskan sebagai"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim peluruhan",
+      "alasan_level": "mengevaluasi klaim 'meluruh 20% per tahun berarti habis dalam 5 tahun' dengan menghitung faktor sisa $0{,}8^{5}$",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyatakan, \"Zat yang meluruh $20\\%$ setiap tahun secara eksponen akan habis setelah $5$ tahun karena $5\\times20\\%=100\\%$.\" Pernyataan yang benar mengenai klaim tersebut adalah ....",
+      "jawaban_benar": "klaim keliru: zat tidak habis, setelah 5 tahun tersisa sekitar $32{,}8\\%$ dari massa awal",
+      "alasan_benar": "faktor sisa tiap tahun $0{,}8$ sehingga setelah 5 tahun $0{,}8^{5}=0{,}32768\\approx32{,}8\\%$; peluruhan eksponen tidak pernah mencapai nol",
+      "distraktor": [
+        {
+          "teks": "klaim benar: zat habis tepat setelah 5 tahun karena persentase penurunan dijumlahkan",
+          "alasan": "menjumlahkan persentase seolah peluruhan linear"
+        },
+        {
+          "teks": "klaim keliru: setelah 5 tahun tersisa sekitar $20\\%$ dari massa awal",
+          "alasan": "memakai persentase peluruhan $20\\%$ sebagai persentase sisa"
+        },
+        {
+          "teks": "klaim keliru: setelah 5 tahun tersisa sekitar $67{,}2\\%$ dari massa awal",
+          "alasan": "menjawab banyaknya yang meluruh ($100\\%-32{,}8\\%$), bukan yang tersisa"
+        }
+      ],
+      "pembahasan": "Sisa $=0{,}8^{5}=0{,}32768$, yaitu sekitar $32{,}8\\%$ dari massa awal. Peluruhan eksponen tidak membuat zat habis dalam waktu terbatas.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 29,
+        "kutipan": "Fungsi pertumbuhan eksponen dituliskan dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim waktu berlipat",
+      "alasan_level": "menguji klaim 'naik 10% per tahun berarti dua kali lipat dalam 10 tahun' dengan memangkatkan $1{,}1$ berurutan",
+      "stimulus": null,
+      "pertanyaan": "Nilai sebuah aset naik secara eksponen $10\\%$ setiap tahun. Seorang analis menyatakan nilai aset tersebut menjadi dua kali lipat setelah $10$ tahun karena $10\\times10\\%=100\\%$. Banyak tahun paling sedikit agar nilai aset lebih dari dua kali nilai awal adalah ....",
+      "jawaban_benar": "$8$ tahun",
+      "alasan_benar": "$1{,}1^{7}\\approx1{,}95<2$ dan $1{,}1^{8}\\approx2{,}14>2$, sehingga paling sedikit 8 tahun",
+      "distraktor": [
+        {
+          "teks": "$10$ tahun",
+          "alasan": "mempercayai klaim penjumlahan persentase (linear)"
+        },
+        {
+          "teks": "$7$ tahun",
+          "alasan": "$1{,}1^{7}\\approx1{,}95$ masih kurang dari 2"
+        },
+        {
+          "teks": "$9$ tahun",
+          "alasan": "memenuhi lebih dari dua kali, tetapi bukan yang paling sedikit"
+        }
+      ],
+      "pembahasan": "Faktor: $1{,}1^{6}\\approx1{,}77$; $1{,}1^{7}\\approx1{,}95$; $1{,}1^{8}\\approx2{,}14$. Jadi 8 tahun, bukan 10 tahun.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "Pertumbuhan bakteri dapat dimodelkan dengan fungsi eksponensial"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan fase",
+      "alasan_level": "menemukan kesalahan siswa yang tidak mengubah jam menjadi banyak fase lalu menghitung nilai yang benar",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koloni berawal dari $6$ bakteri dan menjadi tiga kali lipat setiap $2$ jam. Dina menghitung banyak bakteri setelah $8$ jam dengan $6\\cdot3^{8}=39.366$. Banyak bakteri setelah $8$ jam yang benar adalah ....",
+      "jawaban_benar": "$486$ bakteri",
+      "alasan_benar": "$8$ jam $=4$ fase (tiap 2 jam), sehingga $6\\cdot3^{4}=486$",
+      "distraktor": [
+        {
+          "teks": "$39.366$ bakteri",
+          "alasan": "memakai banyak jam sebagai pangkat (kesalahan Dina)"
+        },
+        {
+          "teks": "$54$ bakteri",
+          "alasan": "mengira $8$ jam hanya $2$ fase"
+        },
+        {
+          "teks": "$72$ bakteri",
+          "alasan": "mengalikan $6\\cdot3\\cdot4$ alih-alih memangkatkan"
+        }
+      ],
+      "pembahasan": "Kesalahan Dina: pangkat harus banyak fase, yaitu $8/2=4$. Jadi $6\\cdot3^{4}=6\\cdot81=486$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "kutipan": "Fungsi peluruhan eksponen dapat dituliskan sebagai"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bandingkan pertumbuhan dan peluruhan",
+      "alasan_level": "menghitung dua nilai fungsi dengan faktor $1{,}05$ dan $0{,}95$ lalu mencari selisih, jebakan anggapan linear",
+      "stimulus": null,
+      "pertanyaan": "Dua tabungan masing-masing berawal Rp1.000.000. Tabungan P bertambah $5\\%$ per tahun secara eksponen, sedangkan nilai tabungan Q menyusut $5\\%$ per tahun secara eksponen. Selisih nilai P dan Q setelah $3$ tahun adalah ....",
+      "jawaban_benar": "Rp300.250",
+      "alasan_benar": "$P=1.000.000\\cdot1{,}05^{3}=1.157.625$; $Q=1.000.000\\cdot0{,}95^{3}=857.375$; selisih $300.250$",
+      "distraktor": [
+        {
+          "teks": "Rp300.000",
+          "alasan": "memakai perubahan linear $\\pm5\\%$ dari nilai awal tiap tahun"
+        },
+        {
+          "teks": "Rp200.000",
+          "alasan": "hanya menghitung selisih setelah 2 tahun"
+        },
+        {
+          "teks": "Rp157.625",
+          "alasan": "hanya menghitung pertambahan P, lupa memperhitungkan Q"
+        }
+      ],
+      "pembahasan": "$1{,}05^{3}=1{,}157625$ dan $0{,}95^{3}=0{,}857375$; selisih $0{,}30025$ dikali satu juta $=300.250$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "kutipan": "Sebuah fungsi eksponensial dinyatakan dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memeriksa tiga pasangan nilai untuk menemukan contoh penyangkal pada klaim tentang urutan pangkat berbasis berbeda",
+      "stimulus": null,
+      "pertanyaan": "Klaim: \"Jika $a>b>0$, maka $a^{x}>b^{x}$ untuk setiap bilangan bulat $x$.\" Pasangan $(a,b,x)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$(a,b,x)=(4,2,-1)$",
+      "alasan_benar": "$4^{-1}=\\frac14<\\frac12=2^{-1}$ padahal $4>2$, sehingga klaim tidak berlaku",
+      "distraktor": [
+        {
+          "teks": "$(a,b,x)=(5,3,2)$",
+          "alasan": "$25>9$, klaim berlaku sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$(a,b,x)=\\left(\\frac12,\\frac13,2\\right)$",
+          "alasan": "$\\frac14>\\frac19$, klaim berlaku sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$(a,b,x)=(3,2,1)$",
+          "alasan": "$3>2$, klaim berlaku sehingga bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Untuk pangkat negatif urutan berbalik: $4^{-1}=\\frac14$ lebih kecil dari $2^{-1}=\\frac12$. Ketiga pasangan lain memenuhi klaim.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 29,
+        "kutipan": "Fungsi pertumbuhan eksponen dituliskan dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat parameter dua fungsi",
+      "alasan_level": "menggabungkan syarat peluruhan $0<a<1$ dan pertumbuhan $a>1$ pada dua bilangan pokok berparameter yang sama",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=\\left(\\frac{m+1}{4}\\right)^{x}$ merupakan fungsi peluruhan eksponensial dan fungsi $g(x)=(7-3m)^{x}$ merupakan fungsi pertumbuhan eksponensial. Banyak bilangan bulat $m$ yang memenuhi kedua syarat tersebut adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "$0<\\frac{m+1}{4}<1$ memberi $-1<m<3$; $7-3m>1$ memberi $m<2$; bilangan bulat: $m=0$ dan $m=1$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "hanya memakai syarat $f$ sehingga $m=0,1,2$ (pada $m=2$, $g$ konstan)"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mengira $m>0$ dan $m<1$"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "memasukkan $m=-1$ dan $m=3$ yang membuat $a=0$ dan $a=1$"
+        }
+      ],
+      "pembahasan": "Untuk $f$: $-1<m<3$. Untuk $g$: $m<2$. Irisan bilangan bulat: $0$ dan $1$. Pada $m=2$, $g(x)=1^{x}$ konstan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "kutipan": "Bagaimana jika a = 1 ?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "eksponen versus linear",
+      "alasan_level": "membandingkan model linear dengan faktor $1{,}2$ dan menentukan bulan pertama saat model eksponen mulai lebih besar",
+      "stimulus": null,
+      "pertanyaan": "Tabungan A bertambah tetap Rp200 ribu tiap bulan dari awal Rp1.000 ribu. Tabungan B berawal Rp1.000 ribu dan bertambah $20\\%$ tiap bulan secara eksponen. Bilangan asli $x$ terkecil sehingga tabungan B pada bulan ke-$x$ lebih banyak dari tabungan A adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "$x=1$: A $=1.200$ dan B $=1.200$ (sama); $x=2$: A $=1.400$ dan B $=1.440$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "pada bulan ke-1 keduanya sama, bukan lebih banyak"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "benar B lebih banyak, tetapi bukan yang terkecil"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "benar B lebih banyak, tetapi bukan yang terkecil"
+        }
+      ],
+      "pembahasan": "A: $1.000+200x$, B: $1.000\\cdot1{,}2^{x}$. Bulan 1: 1.200 vs 1.200. Bulan 2: 1.400 vs 1.440. Jadi $x=2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "kutipan": "Sebuah fungsi eksponensial dinyatakan dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "basis dari nilai fungsi negatif",
+      "alasan_level": "menentukan $a$ dan $n$ dari $f(-1)$ dan $f(1)$ dengan membagi dan mengalikan lalu menghitung $f(3)$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=n\\cdot a^{x}$ dengan $a>0$. Jika $f(-1)=12$ dan $f(1)=3$, nilai $f(3)$ adalah ....",
+      "jawaban_benar": "$\\frac34$",
+      "alasan_benar": "$f(-1)\\cdot f(1)=n^{2}=36$ sehingga $n=6$; dari $n\\cdot a=3$ diperoleh $a=\\frac12$; $f(3)=6\\cdot\\frac18=\\frac34$",
+      "distraktor": [
+        {
+          "teks": "$\\frac38$",
+          "alasan": "mengira $f(3)=f(1)\\cdot a^{3}$ (pangkat dihitung dari 1, bukan 2 langkah)"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "mengira $a=2$ sehingga $n=\\frac32$ dan $f(3)=12$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "menjawab nilai awal $n$"
+        }
+      ],
+      "pembahasan": "$f(-1)=\\frac{n}{a}=12$ dan $f(1)=na=3$. Perkalian: $n^{2}=36$, $n=6$, $a=\\frac12$. $f(3)=6\\cdot\\frac18=\\frac34$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "kutipan": "bertambah secara eksponen pada peningkatan 2% setiap tahun"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "persentase lebih dari 100%",
+      "alasan_level": "menafsirkan kenaikan $200\\%$ per periode sebagai faktor $3$, bukan $2$, lalu memangkatkan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koloni berawal dari $10$ ekor dan bertambah $200\\%$ dari jumlah sebelumnya setiap hari secara eksponen. Banyak ekor setelah $3$ hari adalah ....",
+      "jawaban_benar": "$270$ ekor",
+      "alasan_benar": "bertambah $200\\%$ berarti menjadi $100\\%+200\\%=300\\%$ atau faktor $3$; $10\\cdot3^{3}=270$",
+      "distraktor": [
+        {
+          "teks": "$80$ ekor",
+          "alasan": "memakai faktor $2$ dari $200\\%$ sehingga $10\\cdot2^{3}$"
+        },
+        {
+          "teks": "$70$ ekor",
+          "alasan": "menambah $20$ ekor tiga kali (linear)"
+        },
+        {
+          "teks": "$810$ ekor",
+          "alasan": "memakai pangkat $4$ ($10\\cdot3^{4}$)"
+        }
+      ],
+      "pembahasan": "Faktor tiap hari $1+2=3$. Jumlah: $10\\to30\\to90\\to270$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "kutipan": "Fungsi peluruhan eksponen dapat dituliskan sebagai"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "dua peluruhan beda periode",
+      "alasan_level": "menyamakan waktu pengamatan dua zat dengan periode peluruhan berbeda lalu menghitung selisih sisa",
+      "stimulus": null,
+      "pertanyaan": "Zat X bermassa $960$ gram dan massanya tersisa setengah kali setiap $2$ jam. Zat Y bermassa $1.280$ gram dan massanya tersisa $\\frac34$ kali setiap $3$ jam. Setelah $12$ jam, massa Y lebih banyak dari massa X sebesar ....",
+      "jawaban_benar": "$390$ gram",
+      "alasan_benar": "X: $12/2=6$ fase, $960\\cdot\\left(\\frac12\\right)^{6}=15$; Y: $12/3=4$ fase, $1280\\cdot\\left(\\frac34\\right)^{4}=405$; selisih $390$",
+      "distraktor": [
+        {
+          "teks": "$405$ gram",
+          "alasan": "menjawab massa Y saja"
+        },
+        {
+          "teks": "$345$ gram",
+          "alasan": "memakai 4 fase untuk X ($960/16=60$), selisih $405-60$"
+        },
+        {
+          "teks": "$525$ gram",
+          "alasan": "memakai 3 fase untuk Y ($540$), selisih $540-15$"
+        }
+      ],
+      "pembahasan": "X: $960/64=15$ gram. Y: $1280\\cdot\\frac{81}{256}=405$ gram. Selisih $405-15=390$ gram.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "kutipan": "bertambah secara eksponen pada peningkatan 2% setiap tahun"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "naik lalu turun persentase sama",
+      "alasan_level": "menguji anggapan kenaikan dan penurunan persentase sama saling meniadakan dengan mengalikan faktor $1{,}2^{2}\\cdot0{,}8^{2}$",
+      "stimulus": null,
+      "pertanyaan": "Harga sebuah barang Rp2.500.000. Selama $2$ tahun pertama harganya naik $20\\%$ per tahun secara eksponen, kemudian selama $2$ tahun berikutnya turun $20\\%$ per tahun secara eksponen. Harga barang setelah $4$ tahun adalah ....",
+      "jawaban_benar": "Rp2.304.000",
+      "alasan_benar": "$2.500.000\\cdot1{,}2^{2}\\cdot0{,}8^{2}=2.500.000\\cdot1{,}44\\cdot0{,}64=2.304.000$",
+      "distraktor": [
+        {
+          "teks": "Rp2.500.000",
+          "alasan": "mengira kenaikan dan penurunan $20\\%$ saling meniadakan"
+        },
+        {
+          "teks": "Rp2.100.000",
+          "alasan": "mengira naik $40\\%$ lalu turun $40\\%$ dari nilai awal ($0{,}84$)"
+        },
+        {
+          "teks": "Rp3.600.000",
+          "alasan": "hanya menghitung kenaikan 2 tahun pertama"
+        }
+      ],
+      "pembahasan": "Setelah 2 tahun naik: $3.600.000$. Dua tahun turun: $3.600.000\\cdot0{,}64=2.304.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 29,
+        "kutipan": "Fungsi pertumbuhan eksponen dituliskan dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "nilai awal dari nilai akhir",
+      "alasan_level": "menghitung mundur nilai awal dari nilai sekarang dengan membagi faktor pertumbuhan tiga periode",
+      "stimulus": null,
+      "pertanyaan": "Populasi serangga di sebuah kebun sekarang $8.640$ ekor. Populasi tersebut tumbuh secara eksponen $20\\%$ per tahun. Populasi serangga $3$ tahun yang lalu adalah ....",
+      "jawaban_benar": "$5.000$ ekor",
+      "alasan_benar": "$8.640\\div1{,}2^{3}=8.640\\div1{,}728=5.000$",
+      "distraktor": [
+        {
+          "teks": "$6.000$ ekor",
+          "alasan": "hanya membagi untuk 2 tahun ($1{,}2^{2}=1{,}44$)"
+        },
+        {
+          "teks": "$7.200$ ekor",
+          "alasan": "hanya membagi untuk 1 tahun"
+        },
+        {
+          "teks": "$5.400$ ekor",
+          "alasan": "membagi $8.640$ dengan $1{,}6$ (menganggap kenaikan $20\\%$ linear tiga tahun)"
+        }
+      ],
+      "pembahasan": "$n\\cdot1{,}2^{3}=8.640$ sehingga $n=8.640/1{,}728=5.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "kutipan": "Sebuah fungsi eksponensial dinyatakan dengan"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang model dengan titik potong",
+      "alasan_level": "merancang konstanta $k$ pada fungsi peluruhan agar berpotongan dengan fungsi pertumbuhan pada $x=2$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=5\\cdot2^{x}$. Agar grafik $g(x)=k\\left(\\frac12\\right)^{x}$ berpotongan dengan grafik $f$ tepat di titik berabsis $x=2$, nilai $k$ yang harus dipilih adalah ....",
+      "jawaban_benar": "$80$",
+      "alasan_benar": "$f(2)=20$; $g(2)=k\\cdot\\frac14=20$ sehingga $k=80$",
+      "distraktor": [
+        {
+          "teks": "$20$",
+          "alasan": "mengira $g(2)=k$ sehingga $k=f(2)$"
+        },
+        {
+          "teks": "$40$",
+          "alasan": "mengira $\\left(\\frac12\\right)^{2}=\\frac12$ sehingga $k=40$"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "memakai nilai awal $f$ sebagai $k$"
+        }
+      ],
+      "pembahasan": "Titik berabsis 2: $5\\cdot4=20$. $k\\cdot\\frac14=20$ memberi $k=80$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "kutipan": "Sebuah fungsi eksponensial dinyatakan dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan data tidak konsisten",
+      "alasan_level": "menentukan rasio dari tiga data benar lalu mengoreksi data keempat yang tidak sesuai model eksponensial",
+      "stimulus": "| $x$ | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| $f(x)$ | 5 | 10 | 20 | 35 |",
+      "pertanyaan": "Sebuah tabel pengamatan memuat data yang seharusnya mengikuti fungsi eksponensial $f(x)=n\\cdot a^{x}$. Data pada $x=0,1,2$ dicatat dengan benar, sedangkan data pada $x=3$ salah catat. Nilai $f(3)$ yang seharusnya adalah ....",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "rasio $10/5=20/10=2$ sehingga $a=2$; $f(3)=20\\cdot2=40$",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "memakai nilai salah catat pada tabel"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "menambah $10$ (beda tetap, linear)"
+        },
+        {
+          "teks": "$80$",
+          "alasan": "mengira $f(3)=f(2)\\cdot a^{2}$ dengan $a=2$"
+        }
+      ],
+      "pembahasan": "Rasio $a=2$. Maka $f(3)=20\\cdot2=40$; nilai $35$ bukan hasil model eksponensial.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 29,
+        "kutipan": "Fungsi pertumbuhan eksponen dituliskan dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "hubungan dua fungsi timbal balik",
+      "alasan_level": "menafsirkan hubungan $g(x)=f(-x)$ untuk bilangan pokok yang saling berkebalikan lalu menghitung nilai pada $x=-2$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=3^{x}$ dan $g(x)=\\left(\\frac13\\right)^{x}$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$g(-2)=9$ dan $f(-2)=\\frac19$",
+      "alasan_benar": "$g(-2)=\\left(\\frac13\\right)^{-2}=3^{2}=9$ dan $f(-2)=3^{-2}=\\frac19$",
+      "distraktor": [
+        {
+          "teks": "$g(-2)=\\frac19$ dan $f(-2)=9$",
+          "alasan": "menukar hasil kedua fungsi"
+        },
+        {
+          "teks": "$g(-2)=-9$ dan $f(-2)=-\\frac19$",
+          "alasan": "menganggap pangkat negatif menghasilkan nilai negatif"
+        },
+        {
+          "teks": "$g(-2)=9$ dan $f(-2)=-6$",
+          "alasan": "mengira $3^{-2}=3\\cdot(-2)$"
+        }
+      ],
+      "pembahasan": "$g(x)=f(-x)$: $g(-2)=f(2)=9$, dan $f(-2)=\\frac{1}{3^{2}}=\\frac19$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "Pertumbuhan bakteri dapat dimodelkan dengan fungsi eksponensial"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "bandingkan nilai awal dan laju",
+      "alasan_level": "membandingkan model nilai awal besar berlaju kecil dengan nilai awal kecil berlaju besar sampai pertama kali terlampaui",
+      "stimulus": null,
+      "pertanyaan": "Koloni A berjumlah $1.000$ sel dan bertambah $10\\%$ per jam secara eksponen. Koloni B berjumlah $100$ sel dan menjadi dua kali lipat setiap jam. Banyak jam paling sedikit agar koloni B lebih banyak dari koloni A adalah ....",
+      "jawaban_benar": "$4$ jam",
+      "alasan_benar": "jam ke-3: A $=1.331$, B $=800$; jam ke-4: A $\\approx1.464$, B $=1.600$",
+      "distraktor": [
+        {
+          "teks": "$3$ jam",
+          "alasan": "A masih $1.331$ sedangkan B baru $800$"
+        },
+        {
+          "teks": "$5$ jam",
+          "alasan": "benar B lebih banyak, tetapi bukan yang paling sedikit"
+        },
+        {
+          "teks": "$10$ jam",
+          "alasan": "membandingkan nilai awal $1.000$ dan $100$ sebagai rasio"
+        }
+      ],
+      "pembahasan": "A: $1.000\\cdot1{,}1^{x}$; B: $100\\cdot2^{x}$. $x=3$: 1.331 vs 800. $x=4$: 1.464,1 vs 1.600. Jadi 4 jam.",
+      "catatan": null
+    }
+  ]
+}

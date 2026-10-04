@@ -1,6 +1,6 @@
 # Serah-terima batch 01 — kelas10
 
-Total **102 soal**, pipeline `exercise-2026-10-01`, skill: pra-v1 (102)
+Total **473 soal**, pipeline `exercise-2026-10-01`, skill: v1 (371), pra-v1 (102)
 
 ## File
 
@@ -25,8 +25,17 @@ Catatan untuk kalibrasi:
 ## Penanda khusus
 
 - `dipaksa_kuota` (0 soal): soal tambahan agar kuota penuh saat bahan tipis; rentan nyaris kembar. Perlu perhatian ekstra.
-- `kapasitas_kurang` (2 subbab-level): jumlah soal di bawah kuota karena bahan subbab habis (alasan di meta dan lembar koreksi):
+- `kapasitas_kurang` (11 subbab-level): jumlah soal di bawah kuota karena bahan subbab habis (alasan di meta dan lembar koreksi):
 
+  - SMA10-B1 subbab B hard: 19/20 — Subbab B (Sifat-Sifat Eksponen, p23-p26) hanya memuat 7 sifat dan acuan siswa sudah habis; hard dibatasi pada penalaran (klaim, contoh penyangkal, ekspresi bersyarat, parameter, perancangan). Sisa soal akan nyaris kembar dengan easy/medium, sehingga hanya 19 soal yang layak ditulis.
+  - SMA10-B1 subbab C hard: 16/20 — Bahan acuan siswa subbab C habis di easy/medium (13 jenis medium sudah memakai hampir semua konsep: fungsi dari data, persentase, waktu target, parameter, tafsir). Hard hanya mencakup penalaran evaluasi klaim, penyangkal, parameter ganda, perbandingan model, dan perancangan; sisanya akan nyaris kembar dengan medium atau di luar materi (transformasi grafik, grafik).
+  - SMA10-B1 subbab D hard: 7/20 — Subbab D hanya p37-p39 dan easy+medium sudah memakai 32 soal dengan semua acuan siswa/pretest habis; akar bersarang, pangkat nol, dan notasi ilmiah di luar subbab D. Hard hanya memuat soal penalaran orisinal (evaluasi klaim, kesalahan rasionalisasi, perbandingan, parameter, perancangan) yang tidak kembar dengan easy/medium; sisanya akan menjadi nyaris kembar.
+  - SMA10-B1 subbab D medium: 16/20 — Subbab D hanya p37-p39; acuan siswa/pretest sudah dipakai easy (pretest 24-1b, 24-2b, Contoh 6, Latihan 2.4 no.2a dan 2c). Acuan yang tersisa: Latihan 2.4 no.1a/1c (2 variasi masing-masing), pretest 2b dan Latihan 2.4 no.2a (variasi tingkat medium, 2 masing-masing), ditambah soal orisinal; materi di luar subbab (akar bersarang, pangkat nol, notasi ilmiah) dan kembar easy dihindari sehingga hanya 16 soal layak.
+  - SMA10-B2 subbab A hard: 17/20 — Acuan siswa subbab A (p53-p66) nyaris habis di easy/medium dan materi hanya barisan aritmetika dan geometri (rumus Un, beda, rasio); 17 soal hard orisinal yang berbeda penalaran (klaim, penyangkal, syarat jumlah/hasil kali, rancang, banding) sudah layak; tambahan akan nyaris kembar dengan medium.
+  - SMA10-B2 subbab B hard: 15/20 — Acuan siswa bersih di p66-p80 sudah dipakai easy/medium (sisanya dibuang karena ambigu atau rusak); materi hanya deret aritmetika, geometri, dan tak hingga tanpa sigma. Hard bermakna hanya lewat penalaran (klaim, penyangkal, parameter, perbandingan, perancangan), hanya sekitar 15 soal yang tidak nyaris kembar dengan easy/medium; tidak dipaksa sampai 20.
+  - SMA10-B2 subbab C easy: 15/20 — Subbab C (Bunga) hanya p80-p83 (4 halaman): 2 definisi, 2 eksplorasi tabel, Latihan 2.6. Soal yang layak dan tidak nyaris kembar tinggal 15; Latihan 2.6 no.3-4 (cicilan) bernilai 3+ langkah (medium).
+  - SMA10-B2 subbab C hard: 7/20 — Subbab C (Bunga) hanya p80-p83 dan hanya berisi bunga tunggal/majemuk dasar serta cicilan Latihan 2.6. Hard bermakna hanya lewat penalaran (klaim tunggal vs majemuk, titik impas, suku bunga dari dua kondisi, perancangan pokok); kombinasi lain akan nyaris kembar dengan easy/medium atau di luar materi (tabungan berkala, anuitas, tabel Eksplorasi 2.8 salah cetak). Hanya 7 soal layak, setara medium atas.
+  - SMA10-B2 subbab C medium: 19/20 — Subbab C (Bunga) hanya p80-p83 (4 halaman: 2 definisi, 2 eksplorasi, Latihan 2.6). Acuan siswa/pretest tersisa setelah easy hanya Latihan 2.6 no.2b/2d/3/4 dan kalimat Angga; tabel Eksplorasi 2.8 salah cetak (50%) tidak dipakai; rumus nilai majemuk tidak ada di buku. Soal lain akan nyaris kembar dengan easy atau di luar materi (tabungan berkala/anuitas), sehingga hanya 19 soal yang layak.
   - SMA10-B4 subbab A hard: 12/20 — Kapasitas aktual sekitar 12-14 soal; sisanya hampir pasti kembar medium (hitung SPLTV, tafsir banyak solusi) atau di luar materi subbab A.
   - SMA10-B4 subbab B hard: 10/20 — Materi subbab B hanya menguji titik, tanda/nilai batas, pemodelan dan irisan daerah; soal hard tanpa grafik selain 10 ini nyaris kembar medium atau bergantung program linear di luar subbab.
 
@@ -34,6 +43,13 @@ Catatan untuk kalibrasi:
 
 | Bab | Subbab | easy | medium | hard |
 |---|---|---|---|---|
+| SMA10-B1 | A. Definisi Eksponen | 20 | 20 | 20 |
+| SMA10-B1 | B. Sifat-Sifat Eksponen | 20 | 20 | 19 |
+| SMA10-B1 | C. Fungsi Eksponensial | 20 | 20 | 16 |
+| SMA10-B1 | D. Bentuk Akar | 20 | 16 | 7 |
+| SMA10-B2 | A. Barisan | 20 | 20 | 17 |
+| SMA10-B2 | B. Deret | 20 | 20 | 15 |
+| SMA10-B2 | C. Bunga | 15 | 19 | 7 |
 | SMA10-B4 | A. Sistem Persamaan Linear | 20 | 20 | 12 |
 | SMA10-B4 | B. Sistem Pertidaksamaan Linear | 20 | 20 | 10 |
 

@@ -1,0 +1,701 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "D",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0041-latihan-d-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan matriks aljabar skalar",
+      "alasan_level": "menyelesaikan persamaan matriks dengan dua perkalian skalar: ubah ke $X = (P - 5Q)/4$ lalu hitung elemen",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P = \\begin{pmatrix}50 & 21 \\\\ 12 & 63\\end{pmatrix}$ dan $Q = \\begin{pmatrix}6 & 9 \\\\ -4 & 7\\end{pmatrix}$. Matriks $X$ berordo $2 \\times 2$ yang memenuhi $P - 4X = 5Q$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix}5 & -6 \\\\ 8 & 7\\end{pmatrix}$",
+      "alasan_benar": "$X = \\frac{1}{4}(P - 5Q)$ dihitung per elemen",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix}20 & -24 \\\\ 32 & 28\\end{pmatrix}$",
+          "alasan": "lupa membagi dengan 4 setelah $P - 5Q$"
+        },
+        {
+          "teks": "$\\begin{pmatrix}-20 & 24 \\\\ -32 & -28\\end{pmatrix}$",
+          "alasan": "salah memindahkan ruas sehingga tanda $X$ terbalik"
+        },
+        {
+          "teks": "$\\begin{pmatrix}11 & 3 \\\\ 4 & 14\\end{pmatrix}$",
+          "alasan": "lupa mengalikan $Q$ dengan 5"
+        }
+      ],
+      "pembahasan": "$4X = P - 5Q = \\begin{pmatrix}20 & -24 \\\\ 32 & 28\\end{pmatrix}$, sehingga $X = \\frac{1}{4}(P - 5Q) = \\begin{pmatrix}5 & -6 \\\\ 8 & 7\\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0041-latihan-d-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "persamaan matriks aljabar skalar",
+      "alasan_level": "menyelesaikan $X$ dari $5X - A = 3B$ pada matriks $2 \\times 3$ lalu menjumlahkan semua elemennya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}17 & -11 & -9 \\\\ 25 & 18 & -35\\end{pmatrix}$ dan $B = \\begin{pmatrix}6 & -3 & 8 \\\\ -5 & 4 & 5\\end{pmatrix}$. Jika $X$ memenuhi $5X - A = 3B$, jumlah semua elemen matriks $X$ adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "$X = \\frac{1}{5}(A + 3B)$, kemudian semua elemennya dijumlahkan",
+      "distraktor": [
+        {
+          "teks": "50",
+          "alasan": "lupa membagi dengan 5 setelah $A + 3B$"
+        },
+        {
+          "teks": "4",
+          "alasan": "lupa mengalikan $B$ dengan 3"
+        },
+        {
+          "teks": "-8",
+          "alasan": "salah memindahkan $A$ sehingga memakai $A - 3B$"
+        }
+      ],
+      "pembahasan": "$X = \\frac{1}{5}(A + 3B) = \\begin{pmatrix}7 & -4 & 3 \\\\ 2 & 6 & -4\\end{pmatrix}$. Jumlah elemennya $7 - 4 + 3 + 2 + 6 - 4 = 10$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0041-latihan-d-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan matriks hasil kali",
+      "alasan_level": "menyamakan elemen hasil perkalian dua matriks untuk memperoleh $x$ dan $y$ lalu menghitung bentuk $x - 2y$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\begin{pmatrix}x+5 & 7 \\ 6 & -8\\end{pmatrix}\begin{pmatrix}8 & 0 \\ 5 & y-6\\end{pmatrix} = \begin{pmatrix}35 & 14 \\ 8 & -16\\end{pmatrix}$. Nilai $x - 2y$ adalah ....",
+      "jawaban_benar": "-21",
+      "alasan_benar": "elemen (1,1): $8x + 75 = 35$ sehingga $x = -5$; elemen (1,2): $7y - 42 = 14$ sehingga $y = 8$",
+      "distraktor": [
+        {
+          "teks": "-11",
+          "alasan": "salah tanda saat menyelesaikan $8x + 75 = 35$ sehingga $x = 5$"
+        },
+        {
+          "teks": "3",
+          "alasan": "salah memindahkan $-42$ pada $7y - 42 = 14$ sehingga $y = -4$"
+        },
+        {
+          "teks": "-56",
+          "alasan": "tidak membagi dengan 8 pada $8x = -40$ sehingga $x = -40$"
+        }
+      ],
+      "pembahasan": "Elemen baris 1 kolom 1: $8(x+5) + 7 \\cdot 5 = 8x + 75 = 35$, sehingga $x = -5$. Elemen baris 1 kolom 2: $7(y-6) = 14$, sehingga $y = 8$. Elemen (2,2): $-8(y-6) = -16$ cocok. Jadi $x - 2y = -5 - 16 = -21$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0041-latihan-d-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan matriks hasil kali",
+      "alasan_level": "dua variabel berada pada matriks yang berbeda; perlu memilih elemen yang tepat untuk menentukan masing-masing",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\begin{pmatrix}7 & x \\ 6 & 5\\end{pmatrix}\begin{pmatrix}y & 8 \\ -5 & 11\\end{pmatrix} = \begin{pmatrix}79 & -10 \\ 17 & 103\\end{pmatrix}$. Nilai $2x - y$ adalah ....",
+      "jawaban_benar": "-19",
+      "alasan_benar": "elemen (1,2): $56 + 11x = -10$ sehingga $x = -6$; elemen (2,1): $6y - 25 = 17$ sehingga $y = 7$",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "salah tanda pada $x$: dari $56 + 11x = -10$ diambil $x = 6$"
+        },
+        {
+          "teks": "-5",
+          "alasan": "salah tanda pada $x$ dan $y$"
+        },
+        {
+          "teks": "-15",
+          "alasan": "salah hitung $-10 - 56$ sehingga $x = -4$"
+        }
+      ],
+      "pembahasan": "Elemen baris 1 kolom 2: $7 \\cdot 8 + 11x = 56 + 11x = -10$, sehingga $x = -6$. Elemen baris 2 kolom 1: $6y + 5(-5) = 6y - 25 = 17$, sehingga $y = 7$. Elemen (1,1): $7y - 5x = 49 + 30 = 79$ cocok. Jadi $2x - y = -12 - 7 = -19$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "bagian": "Mari Berpikir Kritis keripik",
+        "nomor": "1",
+        "teks": "Tentukan matriks PQ.",
+        "jawaban": "PQ = (1.080.000; 1.100.000; 1.125.000) dalam rupiah"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "aplikasi harga kali jumlah",
+      "alasan_level": "menafsirkan susunan baris dan kolom (produk dan tempat), lalu memilih kolom yang tepat untuk dikalikan dengan harga",
+      "stimulus": null,
+      "pertanyaan": "Sebuah usaha rumahan membuat sabun, lilin, dan dupa yang dikirim ke Toko X, Toko Y, dan Toko Z. Banyak barang (lusin) dinyatakan oleh matriks $P = \\begin{pmatrix}17 & 13 & 21 \\\\ 24 & 19 & 11 \\\\ 14 & 26 & 18\\end{pmatrix}$, dengan baris berturut-turut sabun, lilin, dan dupa, serta kolom berturut-turut Toko X, Toko Y, dan Toko Z. Harga per lusin (ribu rupiah) untuk sabun, lilin, dan dupa berturut-turut adalah 9, 14, dan 7. Pendapatan usaha tersebut dari Toko Y jika semua barang terjual adalah ....",
+      "jawaban_benar": "Rp565.000,00",
+      "alasan_benar": "$13 \\cdot 9 + 19 \\cdot 14 + 26 \\cdot 7 = 117 + 266 + 182 = 565$ ribu rupiah",
+      "distraktor": [
+        {
+          "teks": "Rp559.000,00",
+          "alasan": "memakai baris ke-2 (produk kedua) padahal kolom menunjukkan tempat"
+        },
+        {
+          "teks": "Rp1.740.000,00",
+          "alasan": "menjumlahkan semua banyak produk di Toko Y lalu mengalikan dengan jumlah semua harga"
+        },
+        {
+          "teks": "Rp56.500,00",
+          "alasan": "salah satuan: kurang satu nol"
+        }
+      ],
+      "pembahasan": "Toko Y ada pada kolom ke-2, yaitu 13, 19, 26 lusin. Pendapatan = $13 \\cdot 9 + 19 \\cdot 14 + 26 \\cdot 7 = 565$ ribu rupiah = Rp565.000,00.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "bagian": "Mari Berpikir Kritis keripik",
+        "nomor": "2",
+        "teks": "Apakah matriks PQ merupakan matriks pendapatan untuk setiap tempat?",
+        "jawaban": "Bukan; pendapatan tiap tempat dari kolom P (tempat) dikalikan harga"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aplikasi harga kali jumlah",
+      "alasan_level": "menyadari bahwa $PQ$ tidak terdefinisi untuk susunan produk x toko sehingga harus mengalikan kolom $P$ dengan harga",
+      "stimulus": null,
+      "pertanyaan": "Sebuah peternakan memasok telur, susu, dan madu ke Toko I dan Toko II. Banyak barang (kemasan) dinyatakan oleh matriks $P = \\begin{pmatrix}30 & 25 \\\\ 18 & 40 \\\\ 12 & 16\\end{pmatrix}$ dengan baris berturut-turut telur, susu, dan madu, serta kolom berturut-turut Toko I dan Toko II. Harga per kemasan (ribu rupiah) untuk telur, susu, dan madu berturut-turut adalah 22, 15, dan 60. Matriks baris pendapatan (dalam ribu rupiah) untuk Toko I dan Toko II berturut-turut adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix}1650 & 2110\\end{pmatrix}$",
+      "alasan_benar": "Toko I: $30 \\cdot 22 + 18 \\cdot 15 + 12 \\cdot 60 = 1650$; Toko II: $25 \\cdot 22 + 40 \\cdot 15 + 16 \\cdot 60 = 2110$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix}2110 & 1650\\end{pmatrix}$",
+          "alasan": "menukar Toko I dan Toko II"
+        },
+        {
+          "teks": "$\\begin{pmatrix}1566 & 2215\\end{pmatrix}$",
+          "alasan": "menukar harga telur dan susu"
+        },
+        {
+          "teks": "$\\begin{pmatrix}2334 & 2452\\end{pmatrix}$",
+          "alasan": "menukar harga telur dan madu"
+        }
+      ],
+      "pembahasan": "Hasil kali baris $P$ dengan harga tidak sesuai karena baris $P$ menunjukkan jenis barang. Pendapatan tiap toko = kolom $P$ dikalikan harga: Toko I $= 660 + 270 + 720 = 1650$, Toko II $= 550 + 600 + 960 = 2110$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 42,
+        "bagian": "Latihan D",
+        "nomor": "7",
+        "teks": "Dengan konsep perkalian matriks, tentukan pendapatan di setiap cabang toko kue apabila semua kue terjual.",
+        "jawaban": "Yogyakarta Rp2.039.000,00; Jakarta Rp2.112.000,00"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "aplikasi harga kali jumlah",
+      "alasan_level": "perkalian matriks baris dengan kolom harga dilanjutkan dengan perkalian skalar untuk potongan harga",
+      "stimulus": null,
+      "pertanyaan": "Toko oleh-oleh memiliki dua cabang, yaitu Bandung dan Malang. Banyak stoples bakpia, keripik, dan dodol yang tersedia dinyatakan oleh $A = \\begin{pmatrix}24 & 31 & 18 \\\\ 29 & 22 & 35\\end{pmatrix}$ (baris: Bandung dan Malang; kolom: bakpia, keripik, dodol). Harga normal per stoples (ribu rupiah) berturut-turut adalah 45, 38, dan 52. Jika semua harga diberi potongan 20% dan semua stoples terjual, pendapatan cabang Malang adalah ....",
+      "jawaban_benar": "Rp3.168.800,00",
+      "alasan_benar": "$0{,}8 \\times (29 \\cdot 45 + 22 \\cdot 38 + 35 \\cdot 52) = 0{,}8 \\times 3961$ ribu rupiah",
+      "distraktor": [
+        {
+          "teks": "Rp3.961.000,00",
+          "alasan": "lupa memperhitungkan potongan harga 20%"
+        },
+        {
+          "teks": "Rp792.200,00",
+          "alasan": "memakai 20% sebagai pengali (hanya potongannya), bukan sisa 80%"
+        },
+        {
+          "teks": "Rp2.555.200,00",
+          "alasan": "memakai baris pertama (Bandung) padahal yang ditanya Malang"
+        }
+      ],
+      "pembahasan": "Pendapatan Malang tanpa potongan: $29 \\cdot 45 + 22 \\cdot 38 + 35 \\cdot 52 = 1305 + 836 + 1820 = 3961$ ribu rupiah. Setelah potongan 20%, pendapatan $= 0{,}8 \\times 3961 = 3168{,}8$ ribu rupiah $=$ Rp3.168.800,00.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "bagian": "Mari Berpikir Kritis",
+        "nomor": "2",
+        "teks": "Apakah perkalian dua matriks bersifat komutatif? Jelaskan!",
+        "jawaban": "Tidak, secara umum AB tidak sama dengan BA"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sifat komutatif dengan bukti numerik",
+      "alasan_level": "menghitung $AB$ dan $BA$ pada contoh angka lalu membandingkan untuk menyimpulkan sifat komutatif",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}3 & 1 \\\\ -2 & 4\\end{pmatrix}$ dan $B = \\begin{pmatrix}2 & 5 \\\\ 1 & -3\\end{pmatrix}$. Pernyataan yang benar mengenai $AB$ dan $BA$ adalah ....",
+      "jawaban_benar": "$AB \\neq BA$, sebab elemen baris 1 kolom 1 pada $AB$ adalah $7$ sedangkan pada $BA$ adalah $-4$",
+      "alasan_benar": "elemen (1,1) $AB$ adalah $3 \\cdot 2 + 1 \\cdot 1 = 7$ dan elemen (1,1) $BA$ adalah $2 \\cdot 3 + 5(-2) = -4$",
+      "distraktor": [
+        {
+          "teks": "$AB = BA$, sebab elemen baris 1 kolom 1 keduanya bernilai $7$",
+          "alasan": "mengira perkalian matriks komutatif"
+        },
+        {
+          "teks": "$AB \\neq BA$, sebab elemen baris 1 kolom 1 pada $AB$ adalah $-4$ sedangkan pada $BA$ adalah $7$",
+          "alasan": "menukar hasil $AB$ dan $BA$"
+        },
+        {
+          "teks": "$AB \\neq BA$, sebab elemen baris 1 kolom 1 pada $AB$ adalah $6$ sedangkan pada $BA$ adalah $-4$",
+          "alasan": "hanya mengalikan elemen seletak pada $AB$ dan salah menghitung $BA$"
+        }
+      ],
+      "pembahasan": "$AB = \\begin{pmatrix}7 & 12 \\\\ 0 & -22\\end{pmatrix}$ dan $BA = \\begin{pmatrix}-4 & 22 \\\\ 9 & -11\\end{pmatrix}$. Kedua matriks berbeda sehingga perkalian matriks tidak komutatif.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "bagian": "Eksplorasi Perkalian Dua Matriks",
+        "nomor": "1",
+        "teks": "Besar gaji per hari untuk karyawan tetap adalah Rp125.000,00, sedangkan untuk karyawan paruh waktu Rp80.000,00.",
+        "jawaban": "Pontianak: Rp65.850.000,00 per hari"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "aplikasi harga kali jumlah",
+      "alasan_level": "mengalikan matriks $3 \\times 2$ dengan matriks kolom gaji lalu membandingkan dua hasil",
+      "stimulus": null,
+      "pertanyaan": "Sebuah perusahaan memiliki tiga lokasi. Banyak karyawan tetap dan paruh waktu dinyatakan oleh $A = \\begin{pmatrix}40 & 25 \\\\ 55 & 30 \\\\ 35 & 45\\end{pmatrix}$ (baris: lokasi 1, 2, 3; kolom: tetap dan paruh waktu). Gaji per hari (ribu rupiah) dinyatakan oleh $B = \\begin{pmatrix}210 \\\\ 95\\end{pmatrix}$ (baris: tetap dan paruh waktu). Selisih dana gaji per hari antara lokasi 2 dan lokasi 3 adalah ....",
+      "jawaban_benar": "Rp2.775.000,00",
+      "alasan_benar": "$AB$ baris 2 $= 55 \\cdot 210 + 30 \\cdot 95 = 14400$ dan baris 3 $= 35 \\cdot 210 + 45 \\cdot 95 = 11625$; selisih $2775$ ribu",
+      "distraktor": [
+        {
+          "teks": "Rp1.250.000,00",
+          "alasan": "menukar gaji karyawan tetap dan paruh waktu"
+        },
+        {
+          "teks": "Rp277.500,00",
+          "alasan": "salah satuan: kurang satu nol"
+        },
+        {
+          "teks": "Rp3.625.000,00",
+          "alasan": "membandingkan lokasi 1 dan lokasi 2, bukan lokasi 2 dan lokasi 3"
+        }
+      ],
+      "pembahasan": "Elemen $AB$: lokasi 2 $= 11550 + 2850 = 14400$ ribu; lokasi 3 $= 7350 + 4275 = 11625$ ribu. Selisih $= 2775$ ribu rupiah $=$ Rp2.775.000,00.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "Jika matriks A adalah matriks berordo m × n dan B adalah matriks berordo n × p , maka ada matriks C"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "hitung perkalian dua matriks",
+      "alasan_level": "perkalian matriks $2 \\times 3$ dengan $3 \\times 2$: empat elemen masing-masing jumlah tiga hasil kali",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}3 & -1 & 2 \\\\ 0 & 4 & -2\\end{pmatrix}$ dan $B = \\begin{pmatrix}1 & 5 \\\\ -3 & 2 \\\\ 4 & -1\\end{pmatrix}$. Matriks $AB$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix}14 & 11 \\\\ -20 & 10\\end{pmatrix}$",
+      "alasan_benar": "baris $A$ dikalikan kolom $B$, tiga suku dijumlahkan untuk tiap elemen",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix}3 & 19 & -8 \\\\ -9 & 11 & -10 \\\\ 12 & -8 & 10\\end{pmatrix}$",
+          "alasan": "mengalikan dengan urutan terbalik ($BA$) sehingga ordo hasil $3 \\times 3$"
+        },
+        {
+          "teks": "$\\begin{pmatrix}14 & -20 \\\\ 11 & 10\\end{pmatrix}$",
+          "alasan": "menukar baris dan kolom hasil (hasil transpos)"
+        },
+        {
+          "teks": "$\\begin{pmatrix}8 & 11 \\\\ -20 & 10\\end{pmatrix}$",
+          "alasan": "salah tanda pada hasil kali $(-1)(-3)$"
+        }
+      ],
+      "pembahasan": "$A$ berordo $2 \\times 3$ dan $B$ berordo $3 \\times 2$ sehingga $AB$ berordo $2 \\times 2$: $AB = \\begin{pmatrix}14 & 11 \\\\ -20 & 10\\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "diperoleh dengan cara mengalikan elemen baris ke- i pada matriks A terhadap elemen kolom ke- j pada matriks B , kemudian hasilnya ditambahkan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "hasil perkalian ordo tak sama",
+      "alasan_level": "menentukan ordo $3 \\times 3$ hasil kali, menghitung elemen diagonal utama saja, lalu menjumlahkannya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}2 & -1 \\\\ 3 & 4 \\\\ -2 & 5\\end{pmatrix}$ dan $B = \\begin{pmatrix}2 & 3 & -2 \\\\ 4 & -1 & 2\\end{pmatrix}$. Jumlah elemen pada diagonal utama matriks $AB$ adalah ....",
+      "jawaban_benar": "19",
+      "alasan_benar": "$AB$ berordo $3 \\times 3$; hitung $c_{11}$, $c_{22}$, dan $c_{33}$ lalu jumlahkan",
+      "distraktor": [
+        {
+          "teks": "15",
+          "alasan": "menjumlahkan diagonal samping, bukan diagonal utama"
+        },
+        {
+          "teks": "49",
+          "alasan": "menjumlahkan semua elemen $AB$"
+        },
+        {
+          "teks": "-1",
+          "alasan": "salah tanda pada hasil kali $5 \\cdot 2$ di elemen baris 3 kolom 3"
+        }
+      ],
+      "pembahasan": "$AB = \\begin{pmatrix}0 & 7 & -6 \\\\ 22 & 5 & 2 \\\\ 16 & -11 & 14\\end{pmatrix}$. Diagonal utama: $0$, $5$, $14$ sehingga jumlahnya $19$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "bukan matriks nol dan AA = A"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pangkat matriks",
+      "alasan_level": "menghitung $A^2 = AA$ dengan perkalian baris-kolom, bukan mengkuadratkan elemen",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}3 & -2 \\\\ 1 & 4\\end{pmatrix}$. Matriks $A^2$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix}7 & -14 \\\\ 7 & 14\\end{pmatrix}$",
+      "alasan_benar": "$A^2 = AA$ dihitung dengan baris kali kolom",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix}9 & 4 \\\\ 1 & 16\\end{pmatrix}$",
+          "alasan": "mengkuadratkan setiap elemen"
+        },
+        {
+          "teks": "$\\begin{pmatrix}6 & -4 \\\\ 2 & 8\\end{pmatrix}$",
+          "alasan": "mengira $A^2 = 2A$"
+        },
+        {
+          "teks": "$\\begin{pmatrix}7 & 2 \\\\ 7 & 14\\end{pmatrix}$",
+          "alasan": "salah tanda pada hasil kali baris 1 dengan kolom 2"
+        }
+      ],
+      "pembahasan": "$A^2 = AA = \\begin{pmatrix}7 & -14 \\\\ 7 & 14\\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat identitas: AI = IA = A"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bentuk polinom matriks",
+      "alasan_level": "menggabungkan perkalian $AA$, perkalian skalar, dan matriks identitas dalam satu ekspresi",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}2 & 1 \\\\ -3 & 4\\end{pmatrix}$ dan $I$ matriks identitas berordo $2 \\times 2$. Matriks $A^2 - 2A + 3I$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix}0 & 4 \\\\ -12 & 8\\end{pmatrix}$",
+      "alasan_benar": "hitung $A^2$, $2A$, dan $3I$ lalu jumlahkan per elemen",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix}-3 & 4 \\\\ -12 & 5\\end{pmatrix}$",
+          "alasan": "lupa menambahkan $3I$"
+        },
+        {
+          "teks": "$\\begin{pmatrix}0 & 7 \\\\ -9 & 8\\end{pmatrix}$",
+          "alasan": "menambahkan 3 pada semua elemen, bukan hanya pada diagonal utama ($3I$)"
+        },
+        {
+          "teks": "$\\begin{pmatrix}3 & -1 \\\\ 15 & 11\\end{pmatrix}$",
+          "alasan": "mengkuadratkan setiap elemen untuk memperoleh $A^2$"
+        }
+      ],
+      "pembahasan": "$A^2 = \\begin{pmatrix}1 & 6 \\\\ -18 & 13\\end{pmatrix}$, $2A = \\begin{pmatrix}4 & 2 \\\\ -6 & 8\\end{pmatrix}$, $3I = \\begin{pmatrix}3 & 0 \\\\ 0 & 3\\end{pmatrix}$. Hasil: $\\begin{pmatrix}0 & 4 \\\\ -12 & 8\\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat asosiatif: (AB) C = A (BC)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perkalian tiga matriks",
+      "alasan_level": "memakai sifat asosiatif: hitung $BC$ lebih dahulu (matriks kolom) lalu kalikan dengan $A$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}1 & 2 \\\\ 3 & -1\\end{pmatrix}$, $B = \\begin{pmatrix}2 & 0 \\\\ -1 & 3\\end{pmatrix}$, dan $C = \\begin{pmatrix}4 \\\\ -2\\end{pmatrix}$. Matriks $ABC$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix}-12 \\\\ 34\\end{pmatrix}$",
+      "alasan_benar": "$ABC = A(BC)$ dengan urutan perkalian tetap",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix}0 \\\\ 42\\end{pmatrix}$",
+          "alasan": "mengalikan dengan urutan $BAC$ (perkalian matriks tidak komutatif)"
+        },
+        {
+          "teks": "$\\begin{pmatrix}12 \\\\ 22\\end{pmatrix}$",
+          "alasan": "salah menghitung $BC$ pada baris kedua: $-4 + 6$ dianggap $2$"
+        },
+        {
+          "teks": "$\\begin{pmatrix}8 \\\\ -10\\end{pmatrix}$",
+          "alasan": "hanya menghitung $BC$ dan lupa mengalikan dengan $A$"
+        }
+      ],
+      "pembahasan": "$BC = \\begin{pmatrix}8 \\\\ -10\\end{pmatrix}$, kemudian $A(BC) = \\begin{pmatrix}-12 \\\\ 34\\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "Jika matriks A adalah matriks berordo m × n dan B adalah matriks berordo n × p , maka ada matriks C"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "persamaan matriks AX=B",
+      "alasan_level": "menguraikan perkalian menjadi dua persamaan linear lalu menyelesaikan sistemnya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\begin{pmatrix}2 & 3 \\\\ 1 & -4\\end{pmatrix}\\begin{pmatrix}p \\\\ q\\end{pmatrix} = \\begin{pmatrix}1 \\\\ 17\\end{pmatrix}$. Nilai $3p - q$ adalah ....",
+      "jawaban_benar": "18",
+      "alasan_benar": "$2p + 3q = 1$ dan $p - 4q = 17$ memberi $p = 5$ dan $q = -3$",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "salah tanda pada $q$ (diambil $q = 3$)"
+        },
+        {
+          "teks": "-14",
+          "alasan": "menukar nilai $p$ dan $q$"
+        },
+        {
+          "teks": "-18",
+          "alasan": "salah tanda pada seluruh bentuk $3p - q$"
+        }
+      ],
+      "pembahasan": "Perkalian matriks memberi $2p + 3q = 1$ dan $p - 4q = 17$. Dari persamaan kedua $p = 17 + 4q$, sehingga $34 + 8q + 3q = 1$, $q = -3$, $p = 5$. Jadi $3p - q = 15 + 3 = 18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 39,
+        "kutipan": "Matriks BA tidak terdefinisi karena banyak kolom pada matriks B tidak sama dengan banyak baris pada matriks A."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat ordo dua urutan perkalian",
+      "alasan_level": "menerapkan syarat kolom = baris untuk $AB$ dan untuk $BA$ sekaligus pada ordo berparameter",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ berordo $2 \\times 3$ dan matriks $B$ berordo $(x+1) \\times (y-2)$. Jika $AB$ dan $BA$ sama-sama terdefinisi, nilai $2x + y$ adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "$AB$: kolom $A$ = baris $B$ sehingga $x + 1 = 3$; $BA$: kolom $B$ = baris $A$ sehingga $y - 2 = 2$",
+      "distraktor": [
+        {
+          "teks": "7",
+          "alasan": "menukar syarat: $x + 1 = 2$ dan $y - 2 = 3$"
+        },
+        {
+          "teks": "9",
+          "alasan": "mengambil $y - 2 = 3$ (kolom $A$) untuk kedua syarat"
+        },
+        {
+          "teks": "6",
+          "alasan": "mengambil $x + 1 = 2$ (baris $A$) untuk kedua syarat"
+        }
+      ],
+      "pembahasan": "$AB$ terdefinisi jika $3 = x + 1$ sehingga $x = 2$. $BA$ terdefinisi jika $y - 2 = 2$ sehingga $y = 4$. Jadi $2x + y = 8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat distributif: A ( B ± C ) = AB ± AC atau ( A ± B ) C = AC ± BC."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "sifat distributif",
+      "alasan_level": "memakai sifat distributif $A(B - C) = AB - AC$ pada data hasil kali yang diketahui",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$, $B$, dan $C$ berordo $2 \\times 2$ dengan $AB = \\begin{pmatrix}4 & -3 \\\\ 7 & 2\\end{pmatrix}$ dan $AC = \\begin{pmatrix}1 & 5 \\\\ -2 & 6\\end{pmatrix}$. Matriks $A(B - C)$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix}3 & -8 \\\\ 9 & -4\\end{pmatrix}$",
+      "alasan_benar": "$A(B - C) = AB - AC$ lalu kurangkan per elemen",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix}5 & 2 \\\\ 5 & 8\\end{pmatrix}$",
+          "alasan": "memakai $AB + AC$ padahal bentuknya $A(B - C)$"
+        },
+        {
+          "teks": "$\\begin{pmatrix}-3 & 8 \\\\ -9 & 4\\end{pmatrix}$",
+          "alasan": "mengurangkan dengan urutan terbalik"
+        },
+        {
+          "teks": "$\\begin{pmatrix}3 & -8 \\\\ 9 & 4\\end{pmatrix}$",
+          "alasan": "salah tanda pada $2 - 6$"
+        }
+      ],
+      "pembahasan": "Sifat distributif: $A(B - C) = AB - AC = \\begin{pmatrix}3 & -8 \\\\ 9 & -4\\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "diperoleh dengan cara mengalikan elemen baris ke- i pada matriks A terhadap elemen kolom ke- j pada matriks B , kemudian hasilnya ditambahkan"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter pada hasil perkalian",
+      "alasan_level": "menghitung dua elemen baris pertama dari perkalian dua matriks berparameter lalu menyelesaikan persamaan linear",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix}2 & x \\\\ 1 & 3\\end{pmatrix}$ dan $B = \\begin{pmatrix}4 & -1 \\\\ -2 & 3\\end{pmatrix}$. Jika jumlah elemen pada baris pertama matriks $AB$ sama dengan $1$, nilai $x$ adalah ....",
+      "jawaban_benar": "-5",
+      "alasan_benar": "baris 1 $AB$: $8 - 2x$ dan $3x - 2$; jumlahnya $6 + x = 1$",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "salah tanda saat memindahkan 6 ke ruas kanan"
+        },
+        {
+          "teks": "-3",
+          "alasan": "menyederhanakan $8 - 2x + 3x - 2$ menjadi $4 + x$"
+        },
+        {
+          "teks": "-7",
+          "alasan": "lupa menghitung suku $-2$ pada elemen baris 1 kolom 2"
+        }
+      ],
+      "pembahasan": "Elemen baris 1 kolom 1: $2 \\cdot 4 + x(-2) = 8 - 2x$. Elemen baris 1 kolom 2: $2(-1) + 3x = 3x - 2$. Jumlahnya $6 + x = 1$ sehingga $x = -5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat asosiatif: (AB) C = A (BC)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "cerita perkalian tiga matriks",
+      "alasan_level": "memodelkan cerita menjadi hasil kali tiga matriks (pesanan, bahan per kue, harga bahan) lalu mengambil satu elemen",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toko roti membuat kue A dan kue B. Banyak kue yang dipesan pada hari pertama dan kedua dinyatakan oleh $P = \\begin{pmatrix}12 & 8 \\\\ 15 & 10\\end{pmatrix}$ (baris: hari pertama dan kedua; kolom: kue A dan B). Bahan per kue dinyatakan oleh $N = \\begin{pmatrix}3 & 2 & 1 \\\\ 2 & 4 & 2\\end{pmatrix}$ (baris: kue A dan B; kolom: tepung (kg), gula (kg), telur (butir)). Harga bahan (ribu rupiah) per kg tepung, per kg gula, dan per butir telur berturut-turut adalah 12, 20, dan 2. Biaya bahan yang diperlukan pada hari kedua adalah ....",
+      "jawaban_benar": "Rp2.250.000,00",
+      "alasan_benar": "$N$ dikalikan harga memberi biaya per kue: kue A 78 ribu dan kue B 108 ribu; hari kedua $15 \\cdot 78 + 10 \\cdot 108 = 2250$ ribu",
+      "distraktor": [
+        {
+          "teks": "Rp1.800.000,00",
+          "alasan": "mengambil hari pertama padahal yang ditanya hari kedua"
+        },
+        {
+          "teks": "Rp2.400.000,00",
+          "alasan": "menukar biaya bahan kue A dan kue B"
+        },
+        {
+          "teks": "Rp225.000,00",
+          "alasan": "salah satuan: kurang satu nol"
+        }
+      ],
+      "pembahasan": "Biaya bahan per kue $= N \\cdot H = \\begin{pmatrix}78 \\\\ 108\\end{pmatrix}$ (ribu rupiah). Hari kedua: $15 \\cdot 78 + 10 \\cdot 108 = 1170 + 1080 = 2250$ ribu rupiah $=$ Rp2.250.000,00.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-d-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 40,
+        "kutipan": "sifat distributif: A ( B ± C ) = AB ± AC atau ( A ± B ) C = AC ± BC."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "penjabaran bentuk aljabar matriks",
+      "alasan_level": "menggunakan sifat distributif dua kali dan menyadari urutan perkalian tidak boleh ditukar",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ dan $B$ berordo $2 \\times 2$. Bentuk $(A + B)(A + B)$ yang pasti benar untuk sembarang $A$ dan $B$ tersebut adalah ....",
+      "jawaban_benar": "$A^2 + AB + BA + B^2$",
+      "alasan_benar": "$(A + B)(A + B) = A(A + B) + B(A + B) = A^2 + AB + BA + B^2$",
+      "distraktor": [
+        {
+          "teks": "$A^2 + 2AB + B^2$",
+          "alasan": "mengira $AB = BA$ sehingga suku tengah digabung"
+        },
+        {
+          "teks": "$A^2 + B^2$",
+          "alasan": "melupakan dua suku silang hasil penjabaran"
+        },
+        {
+          "teks": "$A^2 + 2BA + B^2$",
+          "alasan": "mengira $AB = BA$ lalu menuliskan $2BA$"
+        }
+      ],
+      "pembahasan": "Distributif: $(A + B)(A + B) = A(A + B) + B(A + B) = A^2 + AB + BA + B^2$. Karena $AB$ dan $BA$ umumnya tidak sama, kedua suku tidak boleh digabung menjadi $2AB$.",
+      "catatan": null
+    }
+  ]
+}

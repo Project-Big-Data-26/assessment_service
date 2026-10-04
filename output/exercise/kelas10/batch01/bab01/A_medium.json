@@ -1,0 +1,714 @@
+{
+  "book": "kelas10",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b01-a-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "bagian": "Ayo, Mengingat Kembali",
+        "nomor": "4",
+        "teks": "7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 ditulis dengan 7^10",
+        "jawaban": "7^10"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "perkalian berulang bilangan negatif",
+      "alasan_level": "menulis bentuk pangkat dari bilangan pokok negatif lalu menentukan tanda hasil",
+      "stimulus": null,
+      "pertanyaan": "Hasil kali $(-2) \\times (-2) \\times (-2) \\times (-2) \\times (-2) \\times (-2) \\times (-2) \\times (-2) \\times (-2)$ ditulis dengan bentuk pangkat dan nilainya adalah ....",
+      "jawaban_benar": "$(-2)^9 = -512$",
+      "alasan_benar": "ada 9 faktor $(-2)$; pangkat ganjil menghasilkan bilangan negatif, $2^9 = 512$",
+      "distraktor": [
+        {
+          "teks": "$(-2)^9 = 512$",
+          "alasan": "mengabaikan tanda negatif pada pangkat ganjil"
+        },
+        {
+          "teks": "$(-2)^8 = 256$",
+          "alasan": "menghitung banyak tanda kali, bukan banyak faktor"
+        },
+        {
+          "teks": "$(-9)^2 = 81$",
+          "alasan": "bilangan pokok dan pangkat tertukar"
+        }
+      ],
+      "pembahasan": "Faktor $(-2)$ muncul 9 kali sehingga $(-2)^9$. Karena 9 ganjil, hasilnya negatif: $-2^9 = -512$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "bagian": "Ayo, Mengingat Kembali",
+        "nomor": "4",
+        "teks": "7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 ditulis dengan 7^10",
+        "jawaban": "7^10"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "perkalian berulang pecahan",
+      "alasan_level": "menulis perkalian berulang pecahan sebagai pangkat lalu menghitung nilainya",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari perkalian berulang $\\frac{2}{5} \\times \\frac{2}{5} \\times \\frac{2}{5} \\times \\frac{2}{5}$ adalah ....",
+      "jawaban_benar": "$\\frac{16}{625}$",
+      "alasan_benar": "$\\left(\\frac{2}{5}\\right)^4 = \\frac{2^4}{5^4} = \\frac{16}{625}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{625}$",
+          "alasan": "mengalikan pembilang 2 dengan 4 sebagai ganti memangkatkan"
+        },
+        {
+          "teks": "$\\frac{8}{5}$",
+          "alasan": "mengalikan pecahan $\frac{2}{5}$ dengan 4"
+        },
+        {
+          "teks": "$\\frac{625}{16}$",
+          "alasan": "pembilang dan penyebut tertukar"
+        }
+      ],
+      "pembahasan": "Ada 4 faktor $\\frac{2}{5}$, sehingga $\\left(\\frac{2}{5}\\right)^4 = \\frac{16}{625}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "2",
+        "teks": "Dengan memanfaatkan pola bilangan tersebut, hitung jumlah orang yang menerima hoaks tersebut pada fase ke-6?",
+        "jawaban": "64"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "total kumulatif fase",
+      "alasan_level": "menjumlahkan beberapa pangkat berurutan dari pola penyebaran, tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengirim pesan kepada 3 orang pada fase ke-1. Setiap penerima meneruskannya kepada 3 orang baru pada fase berikutnya, dan seterusnya. Jumlah seluruh orang yang telah menerima pesan sampai dengan fase ke-4 adalah ....",
+      "jawaban_benar": "120 orang",
+      "alasan_benar": "fase 1 sampai 4 menghasilkan $3 + 9 + 27 + 81 = 120$",
+      "distraktor": [
+        {
+          "teks": "81 orang",
+          "alasan": "hanya menghitung penerima pada fase ke-4"
+        },
+        {
+          "teks": "243 orang",
+          "alasan": "memakai fase ke-5 ($3^5$)"
+        },
+        {
+          "teks": "363 orang",
+          "alasan": "menjumlahkan sampai fase ke-5"
+        }
+      ],
+      "pembahasan": "Penerima per fase: $3^1 = 3$, $3^2 = 9$, $3^3 = 27$, $3^4 = 81$. Totalnya $3 + 9 + 27 + 81 = 120$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "2",
+        "teks": "Dengan memanfaatkan pola bilangan tersebut, hitung jumlah orang yang menerima hoaks tersebut pada fase ke-6?",
+        "jawaban": "64"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pertumbuhan dengan nilai awal",
+      "alasan_level": "mengalikan nilai awal dengan pangkat dari faktor pertumbuhan per tahap",
+      "stimulus": null,
+      "pertanyaan": "Sebuah laboratorium memulai biakan dengan 5 sel. Setiap jam, setiap sel membelah menjadi 3 sel. Jika tidak ada sel yang mati, banyak sel setelah 4 jam adalah ....",
+      "jawaban_benar": "405 sel",
+      "alasan_benar": "banyak sel $5 \\times 3^4 = 5 \\times 81 = 405$",
+      "distraktor": [
+        {
+          "teks": "60 sel",
+          "alasan": "mengalikan 5, 3, dan 4 sebagai ganti memangkatkan"
+        },
+        {
+          "teks": "1.215 sel",
+          "alasan": "memakai pangkat 5 ($5 \\times 3^5$)"
+        },
+        {
+          "teks": "50.625 sel",
+          "alasan": "mengalikan 5 dengan 3 lebih dahulu lalu memangkatkan ($15^4$)"
+        }
+      ],
+      "pembahasan": "Setiap jam banyak sel dikalikan 3; setelah 4 jam faktor pengalinya $3^4 = 81$, sehingga $5 \\times 81 = 405$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "3",
+        "teks": "Pada fase ke berapakah jumlah orang yang menerima hoaks akan melebihi 200 orang?",
+        "jawaban": "8"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fase minimal melewati batas",
+      "alasan_level": "mencari pangkat terkecil yang melewati batas lewat daftar pangkat 4, tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Sebuah pesan dikirim kepada 4 orang pada fase ke-1 dan setiap penerima meneruskannya kepada 4 orang baru, sehingga banyak penerima pada fase ke-$n$ adalah $4^n$. Pada fase ke berapakah banyak penerima pertama kali melebihi 10.000 orang?",
+      "jawaban_benar": "fase ke-7",
+      "alasan_benar": "$4^6 = 4.096$ belum melebihi 10.000, sedangkan $4^7 = 16.384$ sudah melebihi",
+      "distraktor": [
+        {
+          "teks": "fase ke-6",
+          "alasan": "berhenti di 4.096 yang masih kurang dari 10.000"
+        },
+        {
+          "teks": "fase ke-8",
+          "alasan": "memilih fase setelah 16.384 padahal fase ke-7 sudah melebihi"
+        },
+        {
+          "teks": "fase ke-2.500",
+          "alasan": "membagi 10.000 dengan 4 tanpa memakai pangkat"
+        }
+      ],
+      "pembahasan": "$4^5 = 1.024$, $4^6 = 4.096 < 10.000$, $4^7 = 16.384 > 10.000$, jadi fase ke-7.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "3",
+        "teks": "Pada fase ke berapakah jumlah orang yang menerima hoaks akan melebihi 200 orang?",
+        "jawaban": "8"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fase minimal melewati batas",
+      "alasan_level": "mencari banyak jam minimal dengan pangkat 3 yang besar, perlu menelusuri pangkat hingga 3^13",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koloni bakteri berawal dari 1 sel. Setiap jam, setiap sel menjadi 3 sel. Setelah berapa jam banyak sel pertama kali lebih dari 1.000.000?",
+      "jawaban_benar": "13 jam",
+      "alasan_benar": "$3^{12} = 531.441$ belum melebihi 1.000.000, sedangkan $3^{13} = 1.594.323$ sudah melebihi",
+      "distraktor": [
+        {
+          "teks": "12 jam",
+          "alasan": "berhenti di 531.441 yang masih kurang dari 1.000.000"
+        },
+        {
+          "teks": "14 jam",
+          "alasan": "memilih jam setelah 1.594.323 padahal jam ke-13 sudah melebihi"
+        },
+        {
+          "teks": "11 jam",
+          "alasan": "memakai 177.147 yang jauh di bawah 1.000.000"
+        }
+      ],
+      "pembahasan": "Setelah $n$ jam ada $3^n$ sel. $3^{12} = 531.441 < 10^6$ dan $3^{13} = 1.594.323 > 10^6$, jadi 13 jam.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "4",
+        "teks": "Jika banyak fase adalah n , tuliskan rumus sederhana untuk menghitung banyak orang yang menerima hoaks pada fase ke- n tersebut?",
+        "jawaban": "2^n"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "rumus umum dengan nilai awal",
+      "alasan_level": "menyusun rumus pertumbuhan yang memuat nilai awal dan faktor pengali per tahap",
+      "stimulus": null,
+      "pertanyaan": "Sebuah biakan diawali dengan 6 sel. Setiap jam, banyak sel menjadi 4 kali lipat banyak sel satu jam sebelumnya. Rumus banyak sel setelah $n$ jam adalah ....",
+      "jawaban_benar": "$6 \\times 4^n$",
+      "alasan_benar": "nilai awal 6 dikalikan faktor 4 sebanyak $n$ kali, yaitu $6 \\times 4^n$",
+      "distraktor": [
+        {
+          "teks": "$24^n$",
+          "alasan": "mengalikan 6 dengan 4 lebih dahulu lalu memangkatkan"
+        },
+        {
+          "teks": "$4 \\times 6^n$",
+          "alasan": "nilai awal dan faktor pengali tertukar"
+        },
+        {
+          "teks": "$6 \\times 4n$",
+          "alasan": "mengira perkalian berulang sama dengan perkalian biasa"
+        }
+      ],
+      "pembahasan": "Setelah 1 jam: $6 \\times 4$; setelah 2 jam: $6 \\times 4^2$; setelah $n$ jam: $6 \\times 4^n$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "bagian": "Ayo, Mengingat Kembali",
+        "nomor": "3",
+        "teks": "15 × 15 × 15 × 15 ditulis dengan 15^4",
+        "jawaban": "15^4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "perkalian berulang bentuk aljabar",
+      "alasan_level": "mengenali faktor berulang berupa suku jumlah, bedakan dari memangkatkan tiap suku",
+      "stimulus": null,
+      "pertanyaan": "Hasil kali $(p+q) \\times (p+q) \\times (p+q) \\times (p+q) \\times (p+q) \\times (p+q)$ ditulis dengan bentuk pangkat ....",
+      "jawaban_benar": "$(p+q)^6$",
+      "alasan_benar": "faktor $(p+q)$ muncul 6 kali sehingga ditulis $(p+q)^6$",
+      "distraktor": [
+        {
+          "teks": "$p^6 + q^6$",
+          "alasan": "memangkatkan tiap suku, padahal faktornya adalah jumlah $(p+q)$"
+        },
+        {
+          "teks": "$6(p+q)$",
+          "alasan": "mengira perkalian berulang sama dengan perkalian biasa"
+        },
+        {
+          "teks": "$(p+q)^5$",
+          "alasan": "menghitung banyak tanda kali, bukan banyak faktor"
+        }
+      ],
+      "pembahasan": "Ada 6 faktor $(p+q)$, sehingga $(p+q)^6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "ekspresi campuran pangkat negatif dan pecahan",
+      "alasan_level": "menerapkan dua definisi berbeda lalu menjumlahkan hasil pecahan dan bilangan bulat",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $2^{-2} + 27^{\\frac{1}{3}}$ adalah ....",
+      "jawaban_benar": "$\\frac{13}{4}$",
+      "alasan_benar": "$2^{-2} = \\frac{1}{4}$ dan $27^{\\frac{1}{3}} = 3$ karena $3^3 = 27$, jumlahnya $\\frac{13}{4}$",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "menganggap $2^{-2} = -4$ (pangkat negatif membuat hasil negatif)"
+        },
+        {
+          "teks": "$\\frac{37}{4}$",
+          "alasan": "menghitung $27^{\\frac{1}{3}}$ sebagai $27 \\div 3 = 9$"
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "mengalikan $\\frac{1}{4}$ dengan 3 sebagai ganti menjumlahkan"
+        }
+      ],
+      "pembahasan": "$2^{-2} = \\frac{1}{2^2} = \\frac{1}{4}$; $27^{\\frac{1}{3}} = 3$. Jadi $\\frac{1}{4} + 3 = \\frac{13}{4}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "membandingkan bilangan berpangkat",
+      "alasan_level": "menghitung empat bilangan berpangkat lalu membandingkan nilainya, bukan melihat pokok atau pangkat saja",
+      "stimulus": null,
+      "pertanyaan": "Di antara bilangan berikut, yang bernilai terbesar adalah ....",
+      "jawaban_benar": "$2^{10}$",
+      "alasan_benar": "$2^{10} = 1.024$, lebih besar daripada $10^3 = 1.000$, $3^6 = 729$, dan $5^4 = 625$",
+      "distraktor": [
+        {
+          "teks": "$10^3$",
+          "alasan": "mengira bilangan pokok terbesar menghasilkan nilai terbesar"
+        },
+        {
+          "teks": "$3^6$",
+          "alasan": "menganggap pangkat 6 cukup besar tanpa menghitung"
+        },
+        {
+          "teks": "$5^4$",
+          "alasan": "menganggap pangkat dan pokok sedang menghasilkan nilai terbesar"
+        }
+      ],
+      "pembahasan": "$2^{10} = 1.024$; $3^6 = 729$; $5^4 = 625$; $10^3 = 1.000$. Yang terbesar adalah $2^{10}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "membandingkan bilangan berpangkat",
+      "alasan_level": "menghitung nilai pangkat negatif tiap pernyataan lalu memeriksa tanda ketidaksamaan",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar di antara berikut ini adalah ....",
+      "jawaban_benar": "$2^{-3} > 3^{-2}$",
+      "alasan_benar": "$2^{-3} = \\frac{1}{8}$ dan $3^{-2} = \\frac{1}{9}$, dan $\\frac{1}{8} > \\frac{1}{9}$",
+      "distraktor": [
+        {
+          "teks": "$(-2)^{-3} > 2^{-3}$",
+          "alasan": "$(-2)^{-3} = -\\frac{1}{8}$ negatif sehingga lebih kecil dari $\\frac{1}{8}$"
+        },
+        {
+          "teks": "$4^{-1} < 5^{-1}$",
+          "alasan": "$\\frac{1}{4} > \\frac{1}{5}$; mengira pokok besar membuat nilai lebih besar"
+        },
+        {
+          "teks": "$\\left(\\frac{1}{2}\\right)^{-2} < 2^{-2}$",
+          "alasan": "$\\left(\\frac{1}{2}\\right)^{-2} = 4$ lebih besar dari $2^{-2} = \\frac{1}{4}$"
+        }
+      ],
+      "pembahasan": "$2^{-3} = \\frac{1}{8} > \\frac{1}{9} = 3^{-2}$; ketiga pernyataan lain salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "kutipan": "Dengan memanfaatkan kesimpulan di atas, maka jumlah orang yang mendapatkan hoaks pada fase ke-5 dapat dengan mudah dihitung sebagai berikut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "nilai n dari persamaan pangkat",
+      "alasan_level": "menyamakan bilangan dengan pangkat lima lalu menyelesaikan persamaan pangkat linear",
+      "stimulus": null,
+      "pertanyaan": "Jika $5^{n-2} = 625$ dengan $n$ bilangan bulat, nilai $n$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$625 = 5^4$ sehingga $n - 2 = 4$ dan $n = 6$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "menganggap $n = 4$ dan lupa mengurangkan 2 pada pangkat"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "menghitung $n = 4 - 2$ (salah arah operasi)"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "salah menghitung $625 = 5^5$"
+        }
+      ],
+      "pembahasan": "$5^4 = 625$, jadi $n - 2 = 4$, $n = 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "nilai n dari persamaan pangkat",
+      "alasan_level": "memakai definisi pangkat negatif untuk menemukan pangkat bilangan bulat negatif",
+      "stimulus": null,
+      "pertanyaan": "Jika $\\left(\\frac{1}{3}\\right)^{n} = 27$ dengan $n$ bilangan bulat, nilai $n$ adalah ....",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "$27 = 3^3 = \\left(\\frac{1}{3}\\right)^{-3}$ menurut definisi $a^{-n} = \\left(\\frac{1}{a}\\right)^n$, sehingga $n = -3$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "mengabaikan tanda negatif pada pangkat"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "membagi 27 dengan 3"
+        },
+        {
+          "teks": "$-9$",
+          "alasan": "membagi 27 dengan 3 dan memberi tanda negatif"
+        }
+      ],
+      "pembahasan": "$\\left(\\frac{1}{3}\\right)^{-3} = 3^3 = 27$, jadi $n = -3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "nilai n dari persamaan pangkat",
+      "alasan_level": "memakai definisi pangkat pecahan $a^{m/n} = (a^{1/n})^m$ untuk menentukan pembilang pangkat",
+      "stimulus": null,
+      "pertanyaan": "Jika $8^{\\frac{m}{3}} = 64$ dengan $m$ bilangan bulat positif, nilai $m$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$8^{\\frac{m}{3}} = \\left(8^{\\frac{1}{3}}\\right)^m = 2^m = 64 = 2^6$ sehingga $m = 6$",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "menganggap $8^2 = 64$ dan mengabaikan penyebut 3"
+        },
+        {
+          "teks": "$18$",
+          "alasan": "mengalikan 6 dengan 3"
+        },
+        {
+          "teks": "$24$",
+          "alasan": "menyamakan $\\frac{m}{3} = 8$ sebagai ganti pangkat dari $8^{\\frac{1}{3}}$"
+        }
+      ],
+      "pembahasan": "$8^{\\frac{1}{3}} = 2$, sehingga $2^m = 64$ dan $m = 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "kutipan": "Dengan memanfaatkan kesimpulan di atas, maka jumlah orang yang mendapatkan hoaks pada fase ke-5 dapat dengan mudah dihitung sebagai berikut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perbandingan antar fase",
+      "alasan_level": "membandingkan dua nilai pangkat pada fase berbeda dari rumus yang diberikan",
+      "stimulus": null,
+      "pertanyaan": "Banyak penerima suatu pesan pada fase ke-$n$ dinyatakan dengan $4^n$. Banyak penerima pada fase ke-5 adalah ... kali banyak penerima pada fase ke-3.",
+      "jawaban_benar": "16 kali",
+      "alasan_benar": "$4^5 = 1.024$ dan $4^3 = 64$, sehingga $1.024 \\div 64 = 16$",
+      "distraktor": [
+        {
+          "teks": "2 kali",
+          "alasan": "membagi banyak fase 5 dan 3 dengan pengurangan pangkat saja"
+        },
+        {
+          "teks": "8 kali",
+          "alasan": "mengalikan 4 dengan selisih fase ($4 \\times 2$)"
+        },
+        {
+          "teks": "64 kali",
+          "alasan": "memakai banyak penerima fase ke-3 sebagai pengali"
+        }
+      ],
+      "pembahasan": "$\\frac{4^5}{4^3} = \\frac{1.024}{64} = 16$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "substitusi variabel negatif",
+      "alasan_level": "mensubstitusi bilangan negatif ke pangkat positif dan negatif lalu mengurangkan",
+      "stimulus": null,
+      "pertanyaan": "Jika $x = -2$, nilai dari $x^3 - x^{-2}$ adalah ....",
+      "jawaban_benar": "$-\\frac{33}{4}$",
+      "alasan_benar": "$x^3 = -8$ dan $x^{-2} = \\frac{1}{4}$, sehingga $-8 - \\frac{1}{4} = -\\frac{33}{4}$",
+      "distraktor": [
+        {
+          "teks": "$-\\frac{31}{4}$",
+          "alasan": "salah tanda saat mengurangkan, menghitung $-8 + \\frac{1}{4}$"
+        },
+        {
+          "teks": "$\\frac{31}{4}$",
+          "alasan": "menghitung $(-2)^3$ sebagai $8$"
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "menghitung $x^{-2}$ sebagai $4$ (mengabaikan kebalikan)"
+        }
+      ],
+      "pembahasan": "$(-2)^3 = -8$; $(-2)^{-2} = \\frac{1}{(-2)^2} = \\frac{1}{4}$. Jadi $-8 - \\frac{1}{4} = -\\frac{33}{4}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ekspresi bertingkat pangkat negatif",
+      "alasan_level": "menghitung pangkat negatif di dalam kurung, menjumlahkan pecahan, lalu membalik hasil",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $\\left(2^{-1} + 3^{-1}\\right)^{-1}$ adalah ....",
+      "jawaban_benar": "$\\frac{6}{5}$",
+      "alasan_benar": "$2^{-1} + 3^{-1} = \\frac{5}{6}$ dan $\\left(\\frac{5}{6}\\right)^{-1} = \\frac{6}{5}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "mengubah menjadi $(2 + 3)^{-1}$, memangkatkan tiap suku dengan $-1$ terpisah dari penjumlahan"
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "lupa menerapkan pangkat $-1$ di luar kurung"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "menjumlahkan 2 dan 3 tanpa memperhatikan pangkat negatif"
+        }
+      ],
+      "pembahasan": "$2^{-1} = \\frac{1}{2}$, $3^{-1} = \\frac{1}{3}$, jumlahnya $\\frac{5}{6}$, lalu $\\left(\\frac{5}{6}\\right)^{-1} = \\frac{6}{5}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pangkat pecahan",
+      "alasan_level": "menerapkan $a^{m/n} = (a^{1/n})^m$ pada bilangan pokok pecahan, tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $\\left(\\frac{4}{9}\\right)^{\\frac{3}{2}}$ adalah ....",
+      "jawaban_benar": "$\\frac{8}{27}$",
+      "alasan_benar": "$\\left(\\frac{4}{9}\\right)^{\\frac{1}{2}} = \\frac{2}{3}$ lalu $\\left(\\frac{2}{3}\\right)^3 = \\frac{8}{27}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "hanya menghitung $\\left(\\frac{4}{9}\\right)^{\\frac{1}{2}}$ dan lupa memangkatkan 3"
+        },
+        {
+          "teks": "$\\frac{16}{81}$",
+          "alasan": "memangkatkan 2 saja tanpa menarik akar"
+        },
+        {
+          "teks": "$\\frac{27}{8}$",
+          "alasan": "pembilang dan penyebut tertukar"
+        }
+      ],
+      "pembahasan": "$\\left(\\frac{4}{9}\\right)^{\\frac{1}{2}} = \\frac{2}{3}$, kemudian $\\left(\\frac{2}{3}\\right)^3 = \\frac{8}{27}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "analisis kesalahan",
+      "alasan_level": "menilai kebenaran dua pekerjaan siswa dengan menghitung ulang masing-masing",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menulis $(-2)^4 = -16$ dan $2^{-2} = -4$. Pernyataan yang benar tentang pekerjaan siswa tersebut adalah ....",
+      "jawaban_benar": "kedua jawaban salah; nilai yang benar adalah $16$ dan $\\frac{1}{4}$",
+      "alasan_benar": "$(-2)^4 = 16$ (pangkat genap) dan $2^{-2} = \\frac{1}{4}$",
+      "distraktor": [
+        {
+          "teks": "hanya jawaban pertama yang salah; nilai $(-2)^4$ yang benar adalah $16$",
+          "alasan": "mengira $2^{-2} = -4$ sudah benar"
+        },
+        {
+          "teks": "hanya jawaban kedua yang salah; nilai $2^{-2}$ yang benar adalah $\\frac{1}{4}$",
+          "alasan": "mengira $(-2)^4 = -16$ sudah benar"
+        },
+        {
+          "teks": "kedua jawaban benar karena bilangan pokoknya negatif atau pangkatnya negatif",
+          "alasan": "mengira tanda negatif selalu membuat hasil negatif"
+        }
+      ],
+      "pembahasan": "$(-2)^4 = (-2)(-2)(-2)(-2) = 16$, bukan $-16$; $2^{-2} = \\frac{1}{4}$, bukan $-4$. Keduanya salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "tanda bilangan pokok negatif",
+      "alasan_level": "membedakan $(-3)^4$ dan $3^4$ serta pangkat ganjil negatif dalam satu ekspresi",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $(-3)^4 - 3^4 + (-3)^3$ adalah ....",
+      "jawaban_benar": "$-27$",
+      "alasan_benar": "$(-3)^4 = 81$, $3^4 = 81$, $(-3)^3 = -27$, sehingga $81 - 81 - 27 = -27$",
+      "distraktor": [
+        {
+          "teks": "$-189$",
+          "alasan": "menganggap $(-3)^4 = -81$"
+        },
+        {
+          "teks": "$27$",
+          "alasan": "menganggap $(-3)^3 = 27$"
+        },
+        {
+          "teks": "$135$",
+          "alasan": "menganggap $3^4 = -81$ lalu mengurangkan"
+        }
+      ],
+      "pembahasan": "$81 - 81 + (-27) = -27$.",
+      "catatan": null
+    }
+  ]
+}
