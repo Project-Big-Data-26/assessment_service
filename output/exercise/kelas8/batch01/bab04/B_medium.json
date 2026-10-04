@@ -1,0 +1,541 @@
+{
+  "book": "kelas8",
+  "bab_no": 4,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas8-b04-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 202,
+        "bagian": "Contoh 4.10",
+        "nomor": "4.10",
+        "teks": "Dikerahui fungsi linier f memiliki nilai -4 ketika nilai x = -1, dan memiliki nilai 5 ketika x = 2. Temukan rumus fungsinya.",
+        "jawaban": "f(x) = 3x - 1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "rumus fungsi linear dari dua nilai",
+      "alasan_level": "menyusun dua persamaan dari dua nilai fungsi, mengeliminasi, lalu menyubstitusi untuk $b$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui fungsi linier $f$ memiliki nilai 3 ketika nilai $x = 4$, dan memiliki nilai $-9$ ketika $x = 7$. Rumus fungsi $f$ adalah ....",
+      "jawaban_benar": "$f(x) = -4x + 19$",
+      "alasan_benar": "$4a + b = 3$ dan $7a + b = -9$; dikurangkan diperoleh $3a = -12$, $a = -4$; lalu $b = 3 + 16 = 19$.",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 4x - 13$",
+          "alasan": "salah tanda pada $a$ ($a = 4$), lalu $b = 3 - 16 = -13$"
+        },
+        {
+          "teks": "$f(x) = -4x - 13$",
+          "alasan": "$a$ benar tetapi salah tanda saat mencari $b$ ($b = 3 - 16$)"
+        },
+        {
+          "teks": "$f(x) = -4x + 3$",
+          "alasan": "mengambil $b$ sama dengan nilai fungsi pertama"
+        }
+      ],
+      "pembahasan": "Misalkan $f(x) = ax + b$. Dari $f(4) = 3$ dan $f(7) = -9$: $4a + b = 3$ dan $7a + b = -9$. Kurangkan: $3a = -12$ sehingga $a = -4$, $b = 3 - 4(-4) = 19$. Jadi $f(x) = -4x + 19$. Cek: $f(7) = -28 + 19 = -9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 202,
+        "bagian": "Contoh 4.10",
+        "nomor": "4.10",
+        "teks": "Dikerahui fungsi linier f memiliki nilai -4 ketika nilai x = -1, dan memiliki nilai 5 ketika x = 2. Temukan rumus fungsinya.",
+        "jawaban": "f(x) = 3x - 1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "rumus fungsi linear dari dua nilai",
+      "alasan_level": "mengubah data suhu pada dua waktu menjadi fungsi linear melalui dua persamaan",
+      "stimulus": null,
+      "pertanyaan": "Suhu sebuah cairan yang dipanaskan merupakan fungsi linear dari lamanya pemanasan $t$ menit, yaitu $T(t) = at + b$ derajat Celsius. Setelah 2 menit suhunya 26 derajat Celsius dan setelah 6 menit suhunya 50 derajat Celsius. Rumus fungsi suhu $T(t)$ adalah ....",
+      "jawaban_benar": "$T(t) = 6t + 14$",
+      "alasan_benar": "$2a + b = 26$ dan $6a + b = 50$; dikurangkan $4a = 24$, $a = 6$; $b = 26 - 12 = 14$.",
+      "distraktor": [
+        {
+          "teks": "$T(t) = 14t + 6$",
+          "alasan": "nilai $a$ dan $b$ tertukar"
+        },
+        {
+          "teks": "$T(t) = 6t + 26$",
+          "alasan": "mengambil $b$ sama dengan suhu pada menit ke-2"
+        },
+        {
+          "teks": "$T(t) = 6t - 14$",
+          "alasan": "salah tanda saat mencari $b$ ($b = 12 - 26$)"
+        }
+      ],
+      "pembahasan": "Dari $2a + b = 26$ dan $6a + b = 50$ diperoleh $a = 6$ dan $b = 14$. Jadi $T(t) = 6t + 14$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 209,
+        "bagian": "Soal Latihan 4.3",
+        "nomor": "9a",
+        "teks": "Ketinggian air bak mandi mencapai 23 liter setelah 3 menit, dan menjadi 47 liter setelah 7 menit.",
+        "jawaban": "V0 = 5 liter, a = 6 liter per menit, V(15) = 95 liter"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi linear dalam konteks volume",
+      "alasan_level": "menentukan laju dan volume awal dari dua data, lalu menghitung volume pada waktu lain",
+      "stimulus": null,
+      "pertanyaan": "Ketinggian air bak penampungan mencapai 38 liter setelah 4 menit, dan menjadi 86 liter setelah 10 menit. Banyaknya air setelah diisikan selama $t$ menit diberikan oleh $V(t) = V_0 + at$ liter. Banyaknya air di bak setelah 15 menit adalah ....",
+      "jawaban_benar": "126 liter",
+      "alasan_benar": "$a = (86 - 38) : (10 - 4) = 8$; $V_0 = 38 - 4 \\times 8 = 6$; $V(15) = 6 + 8 \\times 15 = 126$.",
+      "distraktor": [
+        {
+          "teks": "120 liter",
+          "alasan": "lupa menambahkan $V_0$ sehingga hanya $8 \\times 15$"
+        },
+        {
+          "teks": "158 liter",
+          "alasan": "mengambil $V_0 = 38$ (volume pada menit ke-4) bukan volume awal"
+        },
+        {
+          "teks": "150 liter",
+          "alasan": "menghitung $V_0 = 38 - 8 = 30$ (mengurangi $a$ sekali, bukan $4a$)"
+        }
+      ],
+      "pembahasan": "Dua persamaan $V_0 + 4a = 38$ dan $V_0 + 10a = 86$ memberi $a = 8$, $V_0 = 6$. Maka $V(15) = 6 + 120 = 126$ liter.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 209,
+        "bagian": "Soal Latihan 4.3",
+        "nomor": "9a",
+        "teks": "Ketinggian air bak mandi mencapai 23 liter setelah 3 menit, dan menjadi 47 liter setelah 7 menit.",
+        "jawaban": "V0 = 5 liter, a = 6 liter per menit, V(15) = 95 liter"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi linear dalam konteks volume",
+      "alasan_level": "menyusun dua persamaan dari data volume pada dua waktu untuk mencari volume awal",
+      "stimulus": null,
+      "pertanyaan": "Air dialirkan dari keran ke dalam sebuah drum. Setelah 2 menit drum berisi 17 liter dan setelah 5 menit berisi 38 liter. Banyaknya air dalam drum setelah $t$ menit adalah $V(t) = V_0 + at$ liter. Volume air dalam drum sebelum keran dibuka adalah ....",
+      "jawaban_benar": "3 liter",
+      "alasan_benar": "$V_0 + 2a = 17$ dan $V_0 + 5a = 38$; dikurangkan $3a = 21$, $a = 7$; $V_0 = 17 - 14 = 3$.",
+      "distraktor": [
+        {
+          "teks": "17 liter",
+          "alasan": "menganggap volume setelah 2 menit sebagai volume awal"
+        },
+        {
+          "teks": "7 liter",
+          "alasan": "mengira laju aliran $a$ adalah volume awal"
+        },
+        {
+          "teks": "10 liter",
+          "alasan": "mengurangi $a$ sekali ($17 - 7$), padahal seharusnya $2a$"
+        }
+      ],
+      "pembahasan": "Dari $a = 7$ liter per menit, $V_0 = 17 - 2 \\times 7 = 3$ liter.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 194,
+        "bagian": "Ayo Berpikir Kreatif",
+        "nomor": "8",
+        "teks": "Diketahui himpunan E = { p, q } dan himpunan F = { 2, 3, 4 }. Temukan ada berapa banyak yang dapat dikatakan fungsi dari himpunan E ke himpunan F.",
+        "jawaban": "9"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "banyak fungsi dari dua himpunan",
+      "alasan_level": "menghitung banyak pilihan pasangan tiap anggota daerah asal lalu mengalikannya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui himpunan $K = \\{a, b, c\\}$ dan himpunan $L = \\{5, 6, 7, 8\\}$. Banyak fungsi yang dapat dibentuk dari himpunan $K$ ke himpunan $L$ adalah ....",
+      "jawaban_benar": "64",
+      "alasan_benar": "Setiap dari 3 anggota $K$ boleh berpasangan dengan salah satu dari 4 anggota $L$, sehingga $4 \\times 4 \\times 4 = 4^3 = 64$.",
+      "distraktor": [
+        {
+          "teks": "81",
+          "alasan": "menukar peran himpunan sehingga dihitung $3^4$"
+        },
+        {
+          "teks": "12",
+          "alasan": "mengalikan banyak anggota kedua himpunan ($3 \\times 4$)"
+        },
+        {
+          "teks": "24",
+          "alasan": "menghitung pasangan yang tidak boleh sama ($4 \\times 3 \\times 2$)"
+        }
+      ],
+      "pembahasan": "Tiap anggota $K$ punya 4 pilihan pasangan di $L$, dan pilihan antar anggota bebas: $4^3 = 64$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 195,
+        "bagian": "Ayo Berpikir Kreatif",
+        "nomor": "9a",
+        "teks": "Diberikan dua item berikut, tentukan banyaknya fungsi dari himpunan G ke himpunan H: a. G = {warna lampu lalu lintas} dan H = {warna pelangi}",
+        "jawaban": "343"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "banyak fungsi dari dua himpunan",
+      "alasan_level": "mengubah cerita pilihan menjadi fungsi dari 5 anggota ke 2 anggota, lalu menghitung $2^5$",
+      "stimulus": null,
+      "pertanyaan": "Lima siswa, yaitu Ani, Budi, Citra, Dedi, dan Eko, masing-masing mendaftar tepat satu kegiatan, yaitu pramuka atau PMR. Banyak fungsi dari himpunan siswa tersebut ke himpunan kegiatan {pramuka, PMR} adalah ....",
+      "jawaban_benar": "32",
+      "alasan_benar": "Setiap siswa punya 2 pilihan kegiatan: $2^5 = 32$.",
+      "distraktor": [
+        {
+          "teks": "25",
+          "alasan": "menukar basis dan pangkat ($5^2$)"
+        },
+        {
+          "teks": "10",
+          "alasan": "mengalikan banyak anggota kedua himpunan ($5 \\times 2$)"
+        },
+        {
+          "teks": "7",
+          "alasan": "menjumlahkan banyak anggota kedua himpunan"
+        }
+      ],
+      "pembahasan": "Daerah asal 5 anggota, daerah kawan 2 anggota, banyak fungsi $2^5 = 32$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 196,
+        "bagian": "Ayo Bereksplorasi",
+        "nomor": "3",
+        "teks": "Sejauh berapa kilometer yang dibutuhkan untuk uang sebesar Rp154.500,00.",
+        "jawaban": "49 km"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "tarif dan jarak dalam konteks",
+      "alasan_level": "menyusun fungsi tarif lalu menyelesaikan persamaan linear untuk jarak",
+      "stimulus": null,
+      "pertanyaan": "Sebuah taksi daring menetapkan tarif awal Rp8.000,00 dan tarif per kilometer Rp4.000,00. Sejauh berapa kilometer yang dapat ditempuh untuk uang sebesar Rp72.000,00?",
+      "jawaban_benar": "16 km",
+      "alasan_benar": "Tarif $B(x) = 8.000 + 4.000x = 72.000$, maka $4.000x = 64.000$ dan $x = 16$.",
+      "distraktor": [
+        {
+          "teks": "18 km",
+          "alasan": "lupa mengurangi tarif awal ($72.000 : 4.000$)"
+        },
+        {
+          "teks": "20 km",
+          "alasan": "menambahkan tarif awal ke uang ($80.000 : 4.000$)"
+        },
+        {
+          "teks": "6 km",
+          "alasan": "membagi uang dengan jumlah tarif awal dan tarif per kilometer ($72.000 : 12.000$)"
+        }
+      ],
+      "pembahasan": "$8.000 + 4.000x = 72.000 \\Rightarrow x = 16$ km.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 208,
+        "bagian": "Ayo Berpikir Kreatif",
+        "nomor": "5",
+        "teks": "Diketahui fungsi f ^ x h = ax + 8 dan f ^ b h = - 10 .",
+        "jawaban": "ab = -18; contoh (a, b) = (-3, 6)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pasangan parameter fungsi bilangan bulat",
+      "alasan_level": "membentuk $ab = -36$ dari $f(b)$, lalu mencacah faktor dengan syarat tanda",
+      "stimulus": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = ax + 6$ dan $f(b) = -30$ dengan $a$ bilangan asli dan $b$ bilangan bulat. Banyak pasangan $(a, b)$ yang memenuhi adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "$ab + 6 = -30$ sehingga $ab = -36$. Karena $a$ asli, $a$ harus faktor positif 36 (1, 2, 3, 4, 6, 9, 12, 18, 36) dan $b = -36/a$ otomatis bulat: 9 pasangan.",
+      "distraktor": [
+        {
+          "teks": "18",
+          "alasan": "mengizinkan $a$ juga negatif sehingga banyak pasangan digandakan"
+        },
+        {
+          "teks": "5",
+          "alasan": "menghitung pasangan faktor tanpa memperhatikan urutan"
+        },
+        {
+          "teks": "8",
+          "alasan": "tidak menghitung $a = 36$"
+        }
+      ],
+      "pembahasan": "Dari $f(b) = ab + 6 = -30$ diperoleh $ab = -36$. Faktor positif 36 ada 9, tiap $a$ menentukan satu $b$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 208,
+        "bagian": "Soal Latihan 4.3",
+        "nomor": "4b",
+        "teks": "Apabila diketahui suatu fungsi f dengan rumus fungsi f ^ x h = 2 x 2 - 3 x + 1, maka tentukan nilai fungsi f ^ x h untuk nilai x = 2 dan x = - 3 .",
+        "jawaban": "f(2) = 3 dan f(-3) = 28"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "nilai fungsi kuadrat",
+      "alasan_level": "dua kali substitusi pada rumus berpangkat dua dengan bilangan negatif lalu dijumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Apabila diketahui suatu fungsi $g$ dengan rumus fungsi $g(x) = 5x^2 - 4x + 7$, maka nilai $g(-4) + g(5)$ adalah ....",
+      "jawaban_benar": "215",
+      "alasan_benar": "$g(-4) = 5(16) + 16 + 7 = 103$ dan $g(5) = 125 - 20 + 7 = 112$, jumlahnya 215.",
+      "distraktor": [
+        {
+          "teks": "55",
+          "alasan": "$(-4)^2$ dihitung $-16$ sehingga $g(-4) = -57$"
+        },
+        {
+          "teks": "183",
+          "alasan": "salah tanda pada suku $-4x$ di $x = -4$ ($80 - 16 + 7 = 71$)"
+        },
+        {
+          "teks": "535",
+          "alasan": "mengkuadratkan $5x$ sehingga $g(-4) = 423$"
+        }
+      ],
+      "pembahasan": "$g(-4) = 5 \\cdot 16 - 4(-4) + 7 = 103$; $g(5) = 5 \\cdot 25 - 20 + 7 = 112$; jumlah 215.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 203,
+        "kutipan": "Memahami nilai suatu fungsi memungkinkan juga dalam menentukan range atau daerah hasil dari fungsi tertentu"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "daerah hasil dari interval",
+      "alasan_level": "mengalikan lalu menambah pada ketiga ruas pertidaksamaan daerah asal",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f$ ditentukan oleh $f(x) = 5x + 2$ dengan daerah asal $\\{x \\mid -2 \\le x < 3,\\ x \\in R\\}$. Daerah hasil fungsi $f$ adalah ....",
+      "jawaban_benar": "$\\{f(x) \\mid -8 \\le f(x) < 17\\}$",
+      "alasan_benar": "$-2 \\le x < 3$ dikali 5: $-10 \\le 5x < 15$; ditambah 2: $-8 \\le 5x + 2 < 17$.",
+      "distraktor": [
+        {
+          "teks": "$\\{f(x) \\mid -10 \\le f(x) < 15\\}$",
+          "alasan": "lupa menambahkan 2"
+        },
+        {
+          "teks": "$\\{f(x) \\mid -8 < f(x) \\le 17\\}$",
+          "alasan": "tanda batas tertukar: batas bawah termasuk, batas atas tidak"
+        },
+        {
+          "teks": "$\\{f(x) \\mid -4 \\le f(x) < 5\\}$",
+          "alasan": "hanya menambah 2 tanpa mengalikan 5"
+        }
+      ],
+      "pembahasan": "Ubah $-2 \\le x < 3$ menjadi bentuk $5x + 2$: $-8 \\le f(x) < 17$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 203,
+        "kutipan": "Memahami nilai suatu fungsi memungkinkan juga dalam menentukan range atau daerah hasil dari fungsi tertentu"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "daerah hasil dari interval",
+      "alasan_level": "koefisien negatif membalik arah pertidaksamaan sehingga batas harus diurutkan ulang",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f$ ditentukan oleh $f(x) = -3x + 1$ dengan daerah asal $\\{x \\mid 1 < x \\le 4,\\ x \\in R\\}$. Daerah hasil fungsi $f$ adalah ....",
+      "jawaban_benar": "$\\{f(x) \\mid -11 \\le f(x) < -2\\}$",
+      "alasan_benar": "$1 < x \\le 4$ dikali $-3$ (arah dibalik): $-12 \\le -3x < -3$; ditambah 1: $-11 \\le f(x) < -2$.",
+      "distraktor": [
+        {
+          "teks": "$\\{f(x) \\mid -11 < f(x) \\le -2\\}$",
+          "alasan": "arah tanda tidak dibalik sehingga jenis batas (termasuk/tidak) ikut tertukar"
+        },
+        {
+          "teks": "$\\{f(x) \\mid -12 \\le f(x) < -3\\}$",
+          "alasan": "lupa menambahkan 1"
+        },
+        {
+          "teks": "$\\{f(x) \\mid -11 \\le f(x) \\le -2\\}$",
+          "alasan": "menganggap $x = 1$ ikut sehingga batas atas termasuk"
+        }
+      ],
+      "pembahasan": "Karena $x = 1$ tidak termasuk, $f(1) = -2$ tidak termasuk; $x = 4$ termasuk sehingga $f(4) = -11$ termasuk.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 202,
+        "kutipan": "Oleh karena itu, fungsi f ini dapat disajikan dengan rumus umum"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "nilai fungsi linear dari dua data",
+      "alasan_level": "mencari $p$ dan $q$ dari dua nilai fungsi lalu menghitung nilai pada $x$ lain",
+      "stimulus": null,
+      "pertanyaan": "Fungsi linear $f$ ditentukan oleh $f(x) = px + q$. Diketahui $f(-3) = 14$ dan $f(1) = -2$. Nilai $f(5)$ adalah ....",
+      "jawaban_benar": "$-18$",
+      "alasan_benar": "$-3p + q = 14$ dan $p + q = -2$; dikurangkan $-4p = 16$, $p = -4$, $q = 2$; $f(5) = -20 + 2 = -18$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "salah tanda pada $p$ ($p = 4$, $q = -2$)"
+        },
+        {
+          "teks": "$-22$",
+          "alasan": "$p$ benar tetapi $q = -2$ (salah tanda)"
+        },
+        {
+          "teks": "$-20$",
+          "alasan": "lupa menambahkan $q$"
+        }
+      ],
+      "pembahasan": "Eliminasi memberi $p = -4$ dan $q = 2$; $f(5) = -4(5) + 2 = -18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 194,
+        "kutipan": "Temukan ada berapa banyak yang dapat dikatakan fungsi dari himpunan"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "banyak fungsi dari dua himpunan",
+      "alasan_level": "menghitung pilihan pasangan hanya untuk anggota yang belum ditetapkan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P = \\{1, 2, 3, 4\\}$ dan $Q = \\{a, b, c\\}$. Banyak fungsi dari $P$ ke $Q$ yang memenuhi $f(1) = a$ adalah ....",
+      "jawaban_benar": "27",
+      "alasan_benar": "$f(1)$ sudah tetap; anggota 2, 3, 4 masing-masing punya 3 pilihan: $3^3 = 27$.",
+      "distraktor": [
+        {
+          "teks": "81",
+          "alasan": "mengabaikan syarat $f(1) = a$ ($3^4$)"
+        },
+        {
+          "teks": "12",
+          "alasan": "mengalikan $4 \\times 3$"
+        },
+        {
+          "teks": "64",
+          "alasan": "menukar basis dan pangkat ($4^3$)"
+        }
+      ],
+      "pembahasan": "Tiga anggota bebas, masing-masing 3 pilihan: $3 \\times 3 \\times 3 = 27$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 195,
+        "kutipan": "Berikut ini adalah ketentuan tarif yang diberlakukan oleh perusahaan taksi"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "membandingkan dua fungsi tarif",
+      "alasan_level": "menyusun dua rumus fungsi tarif lalu menyamakannya untuk mencari jarak",
+      "stimulus": null,
+      "pertanyaan": "Taksi A menetapkan tarif awal Rp3.000,00 dan Rp4.000,00 per kilometer. Taksi B menetapkan tarif awal Rp15.000,00 dan Rp2.500,00 per kilometer. Pada jarak berapa kilometer kedua taksi menetapkan tarif yang sama?",
+      "jawaban_benar": "8 km",
+      "alasan_benar": "$A(x) = 3.000 + 4.000x$ dan $B(x) = 15.000 + 2.500x$. Sama bila $1.500x = 12.000$, jadi $x = 8$.",
+      "distraktor": [
+        {
+          "teks": "12 km",
+          "alasan": "menjumlahkan tarif awal ($18.000 : 1.500$)"
+        },
+        {
+          "teks": "3 km",
+          "alasan": "membagi selisih tarif awal dengan tarif per kilometer taksi A ($12.000 : 4.000$)"
+        },
+        {
+          "teks": "10 km",
+          "alasan": "lupa mengurangi tarif awal taksi A ($15.000 : 1.500$)"
+        }
+      ],
+      "pembahasan": "$3.000 + 4.000x = 15.000 + 2.500x \\Rightarrow 1.500x = 12.000 \\Rightarrow x = 8$ km. Tarif keduanya Rp35.000,00.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 201,
+        "kutipan": "Substitusikan setiap anggota domain A ke rumus fungsi f(x), sehingga didapat."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "banyak anggota daerah hasil",
+      "alasan_level": "menyubstitusi lalu mengenali nilai fungsi yang berulang sehingga daerah hasil lebih kecil dari daerah asal",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f : A \\to B$ ditentukan oleh $f(x) = x^2 - 1$ dengan $A = \\{-3, -2, -1, 0, 1, 2, 3\\}$ dan $B$ himpunan bilangan bulat. Banyak anggota daerah hasil fungsi $f$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "$f(\\pm 3) = 8$, $f(\\pm 2) = 3$, $f(\\pm 1) = 0$, $f(0) = -1$; daerah hasil $\\{-1, 0, 3, 8\\}$ beranggota 4.",
+      "distraktor": [
+        {
+          "teks": "7",
+          "alasan": "mengira banyak anggota daerah hasil sama dengan daerah asal"
+        },
+        {
+          "teks": "6",
+          "alasan": "hanya mengurangi satu karena menganggap hanya $f(-1) = f(1)$ yang sama"
+        },
+        {
+          "teks": "3",
+          "alasan": "tidak menghitung $f(0) = -1$ karena bernilai negatif"
+        }
+      ],
+      "pembahasan": "Nilai $f(x)$ berulang untuk $x$ dan $-x$: $\\{8, 3, 0, -1\\}$, sehingga 4 anggota.",
+      "catatan": null
+    }
+  ]
+}

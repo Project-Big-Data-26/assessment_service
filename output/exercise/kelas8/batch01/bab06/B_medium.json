@@ -1,0 +1,537 @@
+{
+  "book": "kelas8",
+  "bab_no": 6,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas8-b06-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 301,
+        "bagian": "Ayo Mencoba",
+        "nomor": "-",
+        "teks": "Selanjutnya untuk meningkatkan pemahaman dan keterampilan dalam menentukan kuartil, siswa diminta untuk menentukan kuartil dari data berikut.",
+        "jawaban": "Q1 = 66; Q2 = 76; Q3 = 85"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jangkauan antarkuartil 16 data tak urut",
+      "alasan_level": "mengurutkan 16 data, menentukan $Q_1$ dan $Q_3$ dari dua kelompok delapan data, lalu mengurangkan",
+      "stimulus": "Nilai tes seleksi 16 peserta: 72, 85, 64, 90, 78, 68, 85, 72, 95, 60, 78, 85, 70, 92, 66, 78.",
+      "pertanyaan": "Jangkauan antarkuartil dari nilai tes tersebut adalah ....",
+      "jawaban_benar": "16",
+      "alasan_benar": "terurut: 60, 64, 66, 68, 70, 72, 72, 78, 78, 78, 85, 85, 85, 90, 92, 95; $Q_1$ = (68 + 70)/2 = 69; $Q_3$ = (85 + 85)/2 = 85; selisih 16",
+      "distraktor": [
+        {
+          "teks": "35",
+          "alasan": "memberi jangkauan data (95 - 60), bukan jangkauan antarkuartil"
+        },
+        {
+          "teks": "8",
+          "alasan": "memberi simpangan kuartil (setengah jangkauan antarkuartil)"
+        },
+        {
+          "teks": "17",
+          "alasan": "mengambil data ke-4 dan ke-12 tanpa merata-ratakan dua data tengah tiap kelompok"
+        }
+      ],
+      "pembahasan": "Urutkan data. Delapan data terkecil bermedian 69 dan delapan data terbesar bermedian 85. Jangkauan antarkuartil = 85 - 69 = 16.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 301,
+        "bagian": "Ayo Mencoba",
+        "nomor": "-",
+        "teks": "Selanjutnya untuk meningkatkan pemahaman dan keterampilan dalam menentukan kuartil, siswa diminta untuk menentukan kuartil dari data berikut.",
+        "jawaban": "Q1 = 66; Q2 = 76; Q3 = 85"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "selisih kuartil atas dan median",
+      "alasan_level": "menentukan $Q_2$ dan $Q_3$ dari 16 data tak urut lalu mengurangkan; tidak sekadar menyebut satu kuartil",
+      "stimulus": "Waktu tempuh (menit) 16 pengantar paket dari gudang ke pelanggan: 24, 31, 28, 35, 26, 40, 31, 29, 45, 33, 38, 27, 36, 42, 25, 32.",
+      "pertanyaan": "Selisih kuartil atas ($Q_3$) dan kuartil kedua ($Q_2$) dari waktu tempuh tersebut adalah ....",
+      "jawaban_benar": "5,5",
+      "alasan_benar": "terurut: 24, 25, 26, 27, 28, 29, 31, 31, 32, 33, 35, 36, 38, 40, 42, 45; $Q_2$ = (31 + 32)/2 = 31,5; $Q_3$ = (36 + 38)/2 = 37; selisih 5,5",
+      "distraktor": [
+        {
+          "teks": "9,5",
+          "alasan": "mengurangkan $Q_1$ dari $Q_3$ (jangkauan antarkuartil), bukan $Q_2$ dari $Q_3$"
+        },
+        {
+          "teks": "4",
+          "alasan": "tertukar: menghitung $Q_2 - Q_1$"
+        },
+        {
+          "teks": "37",
+          "alasan": "hanya menyebut $Q_3$ tanpa mengurangkan $Q_2$"
+        }
+      ],
+      "pembahasan": "Setelah diurutkan, $Q_2$ = 31,5. Delapan data terbesar: 32, 33, 35, 36, 38, 40, 42, 45 bermedian 37. $Q_3 - Q_2$ = 37 - 31,5 = 5,5.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 304,
+        "bagian": "Soal Latihan 6.2",
+        "nomor": "4",
+        "teks": "Seorang ibu mencatat perkembangan berat badan anaknya setiap bulan selama dua tahun (dinyatakan dalam kilogram) sebagai berikut.",
+        "jawaban": "Q1 = 5,35; Q3 = 9,05; jangkauan kuartil 3,7; simpangan kuartil 1,85"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "kuartil bawah dan atas 24 data",
+      "alasan_level": "mengurutkan 24 data lalu menentukan median dua kelompok 12 data, perlu merata-ratakan dua data tengah",
+      "stimulus": "Banyak sampah (kg) yang terkumpul di sebuah bank sampah selama 24 minggu: 18, 25, 31, 22, 27, 35, 29, 20, 24, 33, 28, 26, 38, 21, 30, 23, 34, 19, 32, 27, 36, 25, 29, 31.",
+      "pertanyaan": "Kuartil bawah dan kuartil atas dari data tersebut berturut-turut adalah ....",
+      "jawaban_benar": "$Q_1$ = 23,5 dan $Q_3$ = 31,5",
+      "alasan_benar": "terurut: 18, 19, 20, 21, 22, 23, 24, 25, 25, 26, 27, 27, 28, 29, 29, 30, 31, 31, 32, 33, 34, 35, 36, 38; $Q_1$ = (23 + 24)/2 = 23,5; $Q_3$ = (31 + 32)/2 = 31,5",
+      "distraktor": [
+        {
+          "teks": "$Q_1$ = 31,5 dan $Q_3$ = 23,5",
+          "alasan": "$Q_1$ dan $Q_3$ tertukar"
+        },
+        {
+          "teks": "$Q_1$ = 23 dan $Q_3$ = 31",
+          "alasan": "mengambil satu data (ke-6 dan ke-18) tanpa merata-ratakan dua data tengah tiap kelompok"
+        },
+        {
+          "teks": "$Q_1$ = 26,5 dan $Q_3$ = 29,5",
+          "alasan": "tidak mengurutkan data, memakai median 12 data pertama dan 12 data terakhir sesuai urutan awal"
+        }
+      ],
+      "pembahasan": "Urutkan 24 data. Dua belas data terkecil bermedian rata-rata data ke-6 dan ke-7; dua belas data terbesar bermedian rata-rata data ke-18 dan ke-19.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 304,
+        "bagian": "Soal Latihan 6.2",
+        "nomor": "4",
+        "teks": "Seorang ibu mencatat perkembangan berat badan anaknya setiap bulan selama dua tahun (dinyatakan dalam kilogram) sebagai berikut.",
+        "jawaban": "Q1 = 5,35; Q3 = 9,05; jangkauan kuartil 3,7; simpangan kuartil 1,85"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "simpangan kuartil 20 data tak urut",
+      "alasan_level": "urutkan 20 data, tentukan $Q_1$, $Q_3$ dan jangkauan antarkuartil, lalu bagi dua",
+      "stimulus": "Harga (ribu rupiah) 20 jenis buku di sebuah toko: 45, 60, 52, 75, 48, 66, 58, 80, 55, 70, 62, 50, 85, 64, 56, 72, 68, 54, 78, 60.",
+      "pertanyaan": "Simpangan kuartil dari harga buku tersebut adalah ....",
+      "jawaban_benar": "8,25",
+      "alasan_benar": "terurut: 45, 48, 50, 52, 54, 55, 56, 58, 60, 60, 62, 64, 66, 68, 70, 72, 75, 78, 80, 85; $Q_1$ = (54 + 55)/2 = 54,5; $Q_3$ = (70 + 72)/2 = 71; simpangan kuartil = (71 - 54,5)/2 = 8,25",
+      "distraktor": [
+        {
+          "teks": "16,5",
+          "alasan": "lupa membagi dua jangkauan antarkuartil"
+        },
+        {
+          "teks": "20",
+          "alasan": "membagi dua jangkauan data (85 - 45), bukan jangkauan antarkuartil"
+        },
+        {
+          "teks": "2",
+          "alasan": "tidak mengurutkan data, memakai median 10 data pertama dan 10 data terakhir sesuai urutan awal"
+        }
+      ],
+      "pembahasan": "Urutkan data, tentukan $Q_1$ dan $Q_3$, lalu simpangan kuartil = $\\frac{1}{2}(Q_3 - Q_1)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 299,
+        "bagian": "Ayo Mencoba",
+        "nomor": "1c",
+        "teks": "Enam bulan lagi semua siswa tinggi badannya naik 2 cm, kecuali Robert naik 4 cm, tentukan jangkauan dari data terbaru?",
+        "jawaban": "15 cm"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jangkauan setelah perubahan data tidak seragam",
+      "alasan_level": "menghitung data baru (satu data naik berbeda), menemukan terbesar dan terkecil baru, lalu mengurangkan",
+      "stimulus": "Panjang delapan ikan lele dalam sebuah kolam ditunjukkan pada tabel.\n\n|Ikan|A|B|C|D|E|F|G|H|\n|---|---|---|---|---|---|---|---|---|\n|Panjang (cm)|24|27|22|30|26|33|25|29|",
+      "pertanyaan": "Tiga bulan lagi panjang semua ikan bertambah 5 cm, kecuali ikan C yang bertambah 12 cm. Jangkauan panjang ikan pada saat itu adalah ....",
+      "jawaban_benar": "9 cm",
+      "alasan_benar": "panjang baru: 29, 32, 34, 35, 31, 38, 30, 34; terbesar 38, terkecil 29; jangkauan 38 - 29 = 9",
+      "distraktor": [
+        {
+          "teks": "11 cm",
+          "alasan": "memakai jangkauan semula atau menambah semua ikan sama besar sehingga jangkauan tidak berubah"
+        },
+        {
+          "teks": "10 cm",
+          "alasan": "hanya menambahkan 12 cm pada ikan C dan lupa menambahkan 5 cm pada ikan lain"
+        },
+        {
+          "teks": "16 cm",
+          "alasan": "terbesar memakai data baru tetapi terkecil memakai data lama (22)"
+        }
+      ],
+      "pembahasan": "Ikan C menjadi 34 cm, ikan lain bertambah 5 cm. Panjang baru 29, 32, 34, 35, 31, 38, 30, 34. Jangkauan = 38 - 29 = 9 cm.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 299,
+        "bagian": "Ayo Mencoba",
+        "nomor": "1c",
+        "teks": "Enam bulan lagi semua siswa tinggi badannya naik 2 cm, kecuali Robert naik 4 cm, tentukan jangkauan dari data terbaru?",
+        "jawaban": "15 cm"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jangkauan setelah kenaikan persen tidak seragam",
+      "alasan_level": "menghitung kenaikan persen berbeda, mencari terbesar dan terkecil baru (terbesar berubah), lalu mengurangkan",
+      "stimulus": "Harga (dalam ribu rupiah) delapan barang di sebuah toko: 50, 60, 75, 80, 90, 100, 120, 150.",
+      "pertanyaan": "Bulan depan harga semua barang naik 10%, kecuali barang yang harganya Rp120.000 naik 50%. Jangkauan harga barang bulan depan adalah ....",
+      "jawaban_benar": "Rp125.000",
+      "alasan_benar": "harga baru (ribu): 55, 66, 82,5, 88, 99, 110, 180, 165; terbesar 180, terkecil 55; selisih 125 ribu",
+      "distraktor": [
+        {
+          "teks": "Rp100.000",
+          "alasan": "memakai jangkauan semula (150 - 50) tanpa menghitung kenaikan"
+        },
+        {
+          "teks": "Rp110.000",
+          "alasan": "menganggap semua harga naik 10% sehingga lupa pengecualian barang Rp120.000"
+        },
+        {
+          "teks": "Rp130.000",
+          "alasan": "terbesar memakai harga baru (180) tetapi terkecil memakai harga lama (50)"
+        }
+      ],
+      "pembahasan": "Barang Rp120.000 menjadi Rp180.000; barang lain naik 10%, terkecil menjadi Rp55.000. Jangkauan = 180.000 - 55.000 = Rp125.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 303,
+        "bagian": "Soal Latihan 6.2",
+        "nomor": "2",
+        "teks": "Ukuran sepatu siswa kelas 8 ditunjukkan dengan tabel berikut.",
+        "jawaban": "Q1 = 38; Q3 = 40; jangkauan kuartil 2; simpangan antar kuartil 1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jangkauan antarkuartil dari tabel frekuensi",
+      "alasan_level": "frekuensi kumulatif, dua letak data tiap kuartil yang perlu dirata-ratakan, lalu selisih",
+      "stimulus": "Tinggi badan 36 siswa kelas 8 disajikan pada tabel berikut.\n\n|Tinggi (cm)|Frekuensi|\n|---|---|\n|150|3|\n|155|6|\n|160|10|\n|165|8|\n|170|6|\n|175|3|",
+      "pertanyaan": "Jangkauan antarkuartil dari data tinggi badan tersebut adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "kumulatif: 150 (3), 155 (9), 160 (19), 165 (27), 170 (33), 175 (36); $Q_1$ = (data ke-9 + ke-10)/2 = (155 + 160)/2 = 157,5; $Q_3$ = (data ke-27 + ke-28)/2 = (165 + 170)/2 = 167,5; selisih 10",
+      "distraktor": [
+        {
+          "teks": "7,5",
+          "alasan": "salah rumus: mengurangkan $Q_2$ dari $Q_3$"
+        },
+        {
+          "teks": "5",
+          "alasan": "memberi simpangan kuartil (setengah jangkauan antarkuartil)"
+        },
+        {
+          "teks": "25",
+          "alasan": "memberi jangkauan data (175 - 150)"
+        }
+      ],
+      "pembahasan": "$Q_1$ adalah median 18 data bawah (data ke-9 dan ke-10), $Q_3$ adalah median 18 data atas (data ke-27 dan ke-28). Jangkauan antarkuartil = 167,5 - 157,5 = 10.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 303,
+        "bagian": "Soal Latihan 6.2",
+        "nomor": "3",
+        "teks": "Tekanan darah seorang pasien di rumah sakit dicatat seperti berikut.",
+        "jawaban": "Q1 = 130,5; Q3 = 175,5; jangkauan antarkuartil 45; simpangan kuartil 22,5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kuartil dan jangkauan antarkuartil 16 data",
+      "alasan_level": "urutkan 16 data, tentukan $Q_1$ dan $Q_3$ dengan merata-ratakan, lalu hitung selisihnya",
+      "stimulus": "Kadar gula darah (mg/dL) 16 pasien: 110, 95, 130, 102, 98, 145, 120, 105, 115, 92, 138, 100, 125, 108, 150, 118.",
+      "pertanyaan": "Kuartil bawah, kuartil atas, dan jangkauan antarkuartil data tersebut berturut-turut adalah ....",
+      "jawaban_benar": "101; 127,5; 26,5",
+      "alasan_benar": "terurut: 92, 95, 98, 100, 102, 105, 108, 110, 115, 118, 120, 125, 130, 138, 145, 150; $Q_1$ = (100 + 102)/2 = 101; $Q_3$ = (125 + 130)/2 = 127,5; selisih 26,5",
+      "distraktor": [
+        {
+          "teks": "127,5; 101; 26,5",
+          "alasan": "$Q_1$ dan $Q_3$ tertukar"
+        },
+        {
+          "teks": "101; 127,5; 13,25",
+          "alasan": "memberi simpangan kuartil sebagai pengganti jangkauan antarkuartil"
+        },
+        {
+          "teks": "102; 125; 23",
+          "alasan": "mengambil data ke-5 dan ke-12 tanpa merata-ratakan dua data tengah"
+        }
+      ],
+      "pembahasan": "Urutkan data, $Q_1$ = median delapan data bawah, $Q_3$ = median delapan data atas, jangkauan antarkuartil = $Q_3 - Q_1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 302,
+        "kutipan": "Jangkauan Kuartil dapat diperoleh dari selisih Kuartil terbesar dengan kuartil terkecil"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pengaruh data ekstrem pada ukuran penyebaran",
+      "alasan_level": "menghitung jangkauan dan jangkauan antarkuartil sebelum dan sesudah penambahan dua data ekstrem, lalu membandingkan perubahannya",
+      "stimulus": "Nilai delapan siswa dalam sebuah tes: 52, 60, 48, 55, 58, 50, 56, 62. Kemudian dua siswa susulan mengikuti tes dengan nilai 20 dan 95.",
+      "pertanyaan": "Pernyataan yang benar tentang perubahan ukuran penyebaran setelah dua nilai susulan ditambahkan adalah ....",
+      "jawaban_benar": "Jangkauan naik 61, sedangkan jangkauan antarkuartil hanya naik 2.",
+      "alasan_benar": "sebelum: jangkauan 62 - 48 = 14, $Q_1$ = 51, $Q_3$ = 59, jangkauan antarkuartil 8. Sesudah (10 data): jangkauan 95 - 20 = 75, $Q_1$ = 50, $Q_3$ = 60, jangkauan antarkuartil 10. Jadi jangkauan naik 61, jangkauan antarkuartil naik 2",
+      "distraktor": [
+        {
+          "teks": "Jangkauan naik 61 dan jangkauan antarkuartil juga naik 61.",
+          "alasan": "mengira dua data ekstrem mengubah jangkauan antarkuartil sebesar yang sama dengan jangkauan"
+        },
+        {
+          "teks": "Jangkauan tetap 14, sedangkan jangkauan antarkuartil naik 2.",
+          "alasan": "mengira jangkauan tidak terpengaruh data ekstrem"
+        },
+        {
+          "teks": "Jangkauan naik 61, sedangkan jangkauan antarkuartil tidak berubah.",
+          "alasan": "mengira jangkauan antarkuartil sama sekali tidak terpengaruh (padahal $Q_1$ dan $Q_3$ bergeser menjadi 50 dan 60)"
+        }
+      ],
+      "pembahasan": "Jangkauan naik dari 14 menjadi 75 (naik 61). Jangkauan antarkuartil naik dari 8 menjadi 10 (naik 2) karena hanya $Q_1$ dan $Q_3$ yang dipakai. Jangkauan lebih peka terhadap data ekstrem.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 302,
+        "kutipan": "Kalau jangkauan data diperoleh dari selisih data terbesar dengan data terkecil, maka Jangkauan Kuartil dapat diperoleh dari selisih Kuartil terbesar dengan kuartil terkecil"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan penyebaran dua kelompok",
+      "alasan_level": "menghitung jangkauan antarkuartil dua kelompok data tak urut dan tidak terkecoh jangkauan yang urutannya berlawanan",
+      "stimulus": "Nilai ulangan delapan siswa dari dua kelas.\n\n|Siswa|1|2|3|4|5|6|7|8|\n|---|---|---|---|---|---|---|---|---|\n|Kelas A|70|85|60|90|75|80|65|88|\n|Kelas B|78|62|74|98|72|70|80|76|",
+      "pertanyaan": "Berdasarkan jangkauan antarkuartil, kelas yang nilai bagian tengahnya lebih seragam dan selisih jangkauan antarkuartil kedua kelas adalah ....",
+      "jawaban_benar": "Kelas B, selisih 11",
+      "alasan_benar": "Kelas A: $Q_1$ = 67,5, $Q_3$ = 86,5, jangkauan antarkuartil 19. Kelas B: $Q_1$ = 71, $Q_3$ = 79, jangkauan antarkuartil 8. B lebih kecil, selisih 19 - 8 = 11",
+      "distraktor": [
+        {
+          "teks": "Kelas A, selisih 11",
+          "alasan": "memilih kelas yang salah (jangkauan antarkuartil lebih besar)"
+        },
+        {
+          "teks": "Kelas A, selisih 6",
+          "alasan": "memakai jangkauan data (30 dan 36), bukan jangkauan antarkuartil"
+        },
+        {
+          "teks": "Kelas B, selisih 5,5",
+          "alasan": "benar kelasnya tetapi memakai simpangan kuartil, bukan jangkauan antarkuartil"
+        }
+      ],
+      "pembahasan": "Urutkan tiap kelas. A: 60, 65, 70, 75, 80, 85, 88, 90. B: 62, 70, 72, 74, 76, 78, 80, 98. Jangkauan A (30) lebih kecil dari B (36), tetapi jangkauan antarkuartil B (8) lebih kecil dari A (19).",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 300,
+        "kutipan": "membagi data yang diurutkan menjadi empat yang sama banyak"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menafsirkan kuartil dalam konteks",
+      "alasan_level": "menafsirkan pembagian data menjadi empat kelompok sama banyak untuk menghitung banyak data di luar $Q_1$ dan $Q_3$",
+      "stimulus": null,
+      "pertanyaan": "Nilai ujian 52 siswa semuanya berbeda. Kuartil bawah ($Q_1$) dan kuartil atas ($Q_3$) telah ditentukan. Banyak siswa yang nilainya kurang dari $Q_1$ atau lebih dari $Q_3$ adalah ....",
+      "jawaban_benar": "26",
+      "alasan_benar": "tiap kelompok berisi 52 : 4 = 13 siswa; kurang dari $Q_1$ ada 13 dan lebih dari $Q_3$ ada 13, jumlah 26",
+      "distraktor": [
+        {
+          "teks": "13",
+          "alasan": "hanya menghitung data di bawah $Q_1$, lupa data di atas $Q_3$"
+        },
+        {
+          "teks": "39",
+          "alasan": "menghitung semua data yang kurang dari $Q_3$"
+        },
+        {
+          "teks": "17",
+          "alasan": "membagi 52 dengan 3 (banyak kuartil), bukan dengan 4 kelompok"
+        }
+      ],
+      "pembahasan": "Tiga kuartil membagi data menjadi empat kelompok sama banyak, masing-masing 13 siswa. Di bawah $Q_1$ ada 13 dan di atas $Q_3$ ada 13, total 26.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 303,
+        "kutipan": "Simpangan Kuartil dapat dilakukan dengan membagi dua jangkauan Kuartil yang sudah ditentukan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menentukan kuartil dari simpangan kuartil",
+      "alasan_level": "menggunakan hubungan simpangan kuartil dan jangkauan antarkuartil secara terbalik untuk mencari $Q_3$",
+      "stimulus": null,
+      "pertanyaan": "Suatu data memiliki kuartil bawah 46 dan simpangan kuartil 8,5. Kuartil atas data tersebut adalah ....",
+      "jawaban_benar": "63",
+      "alasan_benar": "jangkauan antarkuartil = 2 x 8,5 = 17; $Q_3$ = 46 + 17 = 63",
+      "distraktor": [
+        {
+          "teks": "54,5",
+          "alasan": "menjumlahkan $Q_1$ dengan simpangan kuartil, bukan dengan jangkauan antarkuartil"
+        },
+        {
+          "teks": "17",
+          "alasan": "memberi jangkauan antarkuartil, bukan $Q_3$"
+        },
+        {
+          "teks": "37,5",
+          "alasan": "mengurangkan simpangan kuartil dari $Q_1$"
+        }
+      ],
+      "pembahasan": "Simpangan kuartil = $\\frac{1}{2}(Q_3 - Q_1)$, sehingga $Q_3 - Q_1$ = 17 dan $Q_3$ = 46 + 17 = 63.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 299,
+        "kutipan": "Jangkauan adalah selisih antara nilai data terbesar dengan nilai data terkecil."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "selisih jangkauan dan jangkauan antarkuartil",
+      "alasan_level": "menghitung dua ukuran penyebaran berbeda dari 12 data tak urut lalu membandingkan selisihnya",
+      "stimulus": "Banyak halaman yang dibaca 12 siswa dalam seminggu: 34, 52, 41, 60, 45, 38, 56, 48, 64, 43, 50, 40.",
+      "pertanyaan": "Selisih antara jangkauan dan jangkauan antarkuartil dari data tersebut adalah ....",
+      "jawaban_benar": "16,5",
+      "alasan_benar": "terurut: 34, 38, 40, 41, 43, 45, 48, 50, 52, 56, 60, 64; jangkauan = 64 - 34 = 30; $Q_1$ = 40,5; $Q_3$ = 54; jangkauan antarkuartil 13,5; selisih 16,5",
+      "distraktor": [
+        {
+          "teks": "30",
+          "alasan": "hanya memberi jangkauan data"
+        },
+        {
+          "teks": "13,5",
+          "alasan": "hanya memberi jangkauan antarkuartil"
+        },
+        {
+          "teks": "43,5",
+          "alasan": "menjumlahkan jangkauan dan jangkauan antarkuartil"
+        }
+      ],
+      "pembahasan": "Jangkauan = 30. Jangkauan antarkuartil = 54 - 40,5 = 13,5. Selisihnya 30 - 13,5 = 16,5.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 299,
+        "kutipan": "Jangkauan adalah selisih antara nilai data terbesar dengan nilai data terkecil."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jangkauan gabungan dua kelompok",
+      "alasan_level": "menyusun nilai terbesar dan terkecil tiap kelompok dari jangkauan, lalu menentukan jangkauan gabungan",
+      "stimulus": null,
+      "pertanyaan": "Pada kelompok A, nilai terendahnya 52 dan jangkauannya 25. Pada kelompok B, nilai tertingginya 90 dan jangkauannya 31. Jika kedua kelompok digabung, jangkauan seluruh nilai adalah ....",
+      "jawaban_benar": "38",
+      "alasan_benar": "nilai tertinggi A = 52 + 25 = 77; nilai terendah B = 90 - 31 = 59; gabungan: terbesar 90, terkecil 52; jangkauan 38",
+      "distraktor": [
+        {
+          "teks": "56",
+          "alasan": "menjumlahkan jangkauan kedua kelompok"
+        },
+        {
+          "teks": "31",
+          "alasan": "hanya memakai jangkauan kelompok B"
+        },
+        {
+          "teks": "18",
+          "alasan": "mengurangkan nilai tertinggi kelompok A dengan nilai terendah kelompok B (77 - 59)"
+        }
+      ],
+      "pembahasan": "Kelompok A: 52 sampai 77. Kelompok B: 59 sampai 90. Gabungan: 52 sampai 90, jangkauan 90 - 52 = 38.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b06-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 300,
+        "kutipan": "membagi data yang diurutkan menjadi empat yang sama banyak"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mencari nilai data dari jangkauan antarkuartil",
+      "alasan_level": "membentuk persamaan $Q_3$ dengan nilai $x$ dari jangkauan antarkuartil yang diketahui lalu menyelesaikannya",
+      "stimulus": null,
+      "pertanyaan": "Data terurut dari kecil ke besar: 14, 16, 18, 21, 24, $x$, 30, 33 dengan 24 $\\leq x \\leq$ 30. Jika jangkauan antarkuartilnya 12, nilai $x$ adalah ....",
+      "jawaban_benar": "28",
+      "alasan_benar": "$Q_1$ = (16 + 18)/2 = 17; empat data atas 24, $x$, 30, 33 sehingga $Q_3$ = ($x$ + 30)/2; $Q_3 - Q_1$ = 12 memberi $Q_3$ = 29 dan $x$ = 28",
+      "distraktor": [
+        {
+          "teks": "29",
+          "alasan": "mengira $Q_3$ = 29 adalah nilai $x$ itu sendiri"
+        },
+        {
+          "teks": "26",
+          "alasan": "memakai $Q_1$ = 16 (data ke-2) tanpa merata-ratakan dengan data ke-3, sehingga $Q_3$ = 28 dan $x$ = 26"
+        },
+        {
+          "teks": "30",
+          "alasan": "menganggap $Q_3$ sama dengan data ke-7, bukan rata-rata $x$ dan data ke-7"
+        }
+      ],
+      "pembahasan": "Empat data bawah: 14, 16, 18, 21 sehingga $Q_1$ = 17. Empat data atas: 24, $x$, 30, 33 sehingga $Q_3$ = ($x$ + 30)/2. Karena $Q_3$ - 17 = 12, $Q_3$ = 29, maka $x$ = 28.",
+      "catatan": null
+    }
+  ]
+}

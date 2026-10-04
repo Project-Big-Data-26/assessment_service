@@ -1,0 +1,474 @@
+{
+  "book": "kelas8",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi subbab C sempit (syarat bentuk baku, konversi baku-biasa, operasi baku); setelah soal easy dan medium memakai semua acuan siswa/pretest yang layak, hanya sekitar 14 soal penalaran yang tidak nyaris kembar. Soal berat Bumi (salah cetak) dan flashdisk 2^10 B (konsep keliru) sengaja tidak dipakai.",
+  "soal": [
+    {
+      "id": "kelas8-b01-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "kutipan": "Berdasarkan tabel tersebut dapat disimpulkan bahwa penulisan bentuk baku dari bilangan positif dapat ditulis dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim bentuk baku",
+      "alasan_level": "menguji empat klaim dengan syarat koefisien $1 \\le a < 10$ dan pangkat bulat",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan berikut yang benar tentang bentuk baku adalah ....",
+      "jawaban_benar": "$10 \\times 10^{3}$ bukan bentuk baku, bentuk bakunya $1 \\times 10^{4}$",
+      "alasan_benar": "koefisien 10 tidak memenuhi $1 \\le a < 10$; $10 \\times 10^{3} = 1 \\times 10^{4}$",
+      "distraktor": [
+        {
+          "teks": "$0,5 \\times 10^{7}$ adalah bentuk baku karena pangkatnya bilangan bulat positif",
+          "alasan": "mengabaikan syarat koefisien minimal 1"
+        },
+        {
+          "teks": "$9,99 \\times 10^{2}$ bukan bentuk baku karena koefisiennya memiliki dua angka desimal",
+          "alasan": "mengira banyak desimal koefisien dibatasi"
+        },
+        {
+          "teks": "$10^{5}$ tidak dapat ditulis dalam bentuk baku karena tidak ada koefisiennya",
+          "alasan": "lupa bahwa $10^{5} = 1 \\times 10^{5}$"
+        }
+      ],
+      "pembahasan": "Syarat bentuk baku $a \\times 10^{n}$: $1 \\le a < 10$ dan $n$ bulat. $10 \\times 10^{3}$ melanggar syarat itu; $0,5$ juga melanggar; $9,99$ memenuhi; $10^{5} = 1 \\times 10^{5}$ memenuhi.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 58,
+        "kutipan": "Untuk memahami lebih jauh tentang penulisan bentuk baku coba lengkapi tabel berikut ini"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan menggeser koma",
+      "alasan_level": "menemukan koma yang digeser tanpa menyesuaikan pangkat, lalu memperbaiki hasilnya",
+      "stimulus": null,
+      "pertanyaan": "Rudi menulis $0,0042 \\times 10^{5} = 4,2 \\times 10^{5}$. Hasil yang benar dan alasannya adalah ....",
+      "jawaban_benar": "$4,2 \\times 10^{2}$, karena koma digeser 3 tempat ke kanan sehingga pangkat dikurangi 3",
+      "alasan_benar": "$0,0042 = 4,2 \\times 10^{-3}$, jadi $4,2 \\times 10^{-3} \\times 10^{5} = 4,2 \\times 10^{2}$",
+      "distraktor": [
+        {
+          "teks": "$4,2 \\times 10^{8}$, karena koma digeser 3 tempat ke kanan sehingga pangkat ditambah 3",
+          "alasan": "arah penyesuaian pangkat terbalik"
+        },
+        {
+          "teks": "$4,2 \\times 10^{3}$, karena koma digeser 2 tempat ke kanan sehingga pangkat dikurangi 2",
+          "alasan": "salah menghitung banyak tempat koma yang bergeser"
+        },
+        {
+          "teks": "$4,2 \\times 10^{7}$, karena koma digeser 2 tempat ke kanan sehingga pangkat ditambah 2",
+          "alasan": "salah menghitung geseran dan arah pangkat"
+        }
+      ],
+      "pembahasan": "Koma digeser 3 tempat ke kanan, jadi $0,0042 = 4,2 \\times 10^{-3}$. Hasil: $10^{-3} \\times 10^{5} = 10^{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "kutipan": "Berdasarkan tabel tersebut dapat disimpulkan bahwa penulisan bentuk baku dari bilangan positif dapat ditulis dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "mencari pasangan yang membuktikan klaim salah dengan memeriksa hasil kali koefisien",
+      "stimulus": null,
+      "pertanyaan": "Doni mengklaim bahwa hasil kali dua bilangan baku selalu sudah berbentuk baku tanpa perlu diubah lagi. Pasangan yang menjadi contoh penyangkal klaim Doni adalah ....",
+      "jawaban_benar": "$(6 \\times 10^{2}) \\times (2 \\times 10^{3})$",
+      "alasan_benar": "$6 \\times 2 = 12 \\ge 10$ sehingga hasilnya $12 \\times 10^{5}$, bukan bentuk baku",
+      "distraktor": [
+        {
+          "teks": "$(1,5 \\times 10^{2}) \\times (2 \\times 10^{3})$",
+          "alasan": "hasil koefisien $3$ memenuhi syarat sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$(2 \\times 10^{4}) \\times (3 \\times 10^{-1})$",
+          "alasan": "hasil koefisien $6$ memenuhi syarat; pangkat negatif tidak mengubah syarat"
+        },
+        {
+          "teks": "$(1 \\times 10^{5}) \\times (9 \\times 10^{2})$",
+          "alasan": "hasil koefisien $9$ masih kurang dari 10"
+        }
+      ],
+      "pembahasan": "Hasil koefisien: $1,5 \\times 2 = 3$; $2 \\times 3 = 6$; $1 \\times 9 = 9$; $6 \\times 2 = 12$. Hanya $12$ yang melanggar $a < 10$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "kutipan": "Berdasarkan tabel tersebut dapat disimpulkan bahwa penulisan bentuk baku dari bilangan positif dapat ditulis dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "membuktikan klaim tentang pangkat hasil penjumlahan salah dengan mencari pasangan yang koefisiennya melebihi 10",
+      "stimulus": null,
+      "pertanyaan": "Wati mengklaim bahwa pada penjumlahan dua bilangan baku, pangkat 10 hasilnya selalu sama dengan pangkat yang terbesar di antara keduanya. Penjumlahan yang menjadi contoh penyangkal klaim Wati adalah ....",
+      "jawaban_benar": "$(7 \\times 10^{3}) + (8 \\times 10^{3})$",
+      "alasan_benar": "$7 \\times 10^{3} + 8 \\times 10^{3} = 15 \\times 10^{3} = 1,5 \\times 10^{4}$, pangkatnya naik",
+      "distraktor": [
+        {
+          "teks": "$(2 \\times 10^{5}) + (3 \\times 10^{2})$",
+          "alasan": "hasil $2,003 \\times 10^{5}$ masih berpangkat 5 sehingga klaim tidak terbantah"
+        },
+        {
+          "teks": "$(4 \\times 10^{6}) + (1 \\times 10^{4})$",
+          "alasan": "hasil $4,01 \\times 10^{6}$ masih berpangkat 6"
+        },
+        {
+          "teks": "$(9 \\times 10^{2}) + (5 \\times 10^{1})$",
+          "alasan": "hasil $9,5 \\times 10^{2}$ masih berpangkat 2"
+        }
+      ],
+      "pembahasan": "Hanya $7 + 8 = 15 \\ge 10$ yang menaikkan pangkat; tiga pasangan lain tetap berpangkat terbesar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 58,
+        "kutipan": "Untuk memahami lebih jauh tentang penulisan bentuk baku coba lengkapi tabel berikut ini"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan banyak bentuk tak baku",
+      "alasan_level": "menormalkan empat bilangan, lalu memilih yang terkecil dengan dua pembanding berdekatan",
+      "stimulus": null,
+      "pertanyaan": "Di antara bilangan $0,06 \\times 10^{-3}$; $480 \\times 10^{-8}$; $5,2 \\times 10^{-6}$; dan $0,0009 \\times 10^{-2}$, bilangan yang paling kecil adalah ....",
+      "jawaban_benar": "$480 \\times 10^{-8}$",
+      "alasan_benar": "bentuk baku: $6 \\times 10^{-5}$; $4,8 \\times 10^{-6}$; $5,2 \\times 10^{-6}$; $9 \\times 10^{-6}$; yang terkecil $4,8 \\times 10^{-6}$",
+      "distraktor": [
+        {
+          "teks": "$0,06 \\times 10^{-3}$",
+          "alasan": "mengira koefisien terkecil (0,06) berarti bilangan terkecil"
+        },
+        {
+          "teks": "$5,2 \\times 10^{-6}$",
+          "alasan": "membandingkan hanya bentuk yang sudah baku, 480 dianggap terbesar"
+        },
+        {
+          "teks": "$0,0009 \\times 10^{-2}$",
+          "alasan": "mengira koefisien 0,0009 terkecil dan pangkat $-2$ diabaikan"
+        }
+      ],
+      "pembahasan": "$0,06 \\times 10^{-3} = 6 \\times 10^{-5}$; $480 \\times 10^{-8} = 4,8 \\times 10^{-6}$; $0,0009 \\times 10^{-2} = 9 \\times 10^{-6}$. Pangkat $-6$ lebih kecil dari $-5$; koefisien $4,8 < 5,2 < 9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 58,
+        "kutipan": "Jika ditulis dalam bentuk baku, daya angkut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perbandingan dua besaran ilmiah",
+      "alasan_level": "menentukan perbandingan dua ukuran dengan membagi koefisien dan mengurangkan pangkat, lalu menormalkan",
+      "stimulus": null,
+      "pertanyaan": "Ukuran sebuah virus adalah $1,5 \\times 10^{-7}$ m dan ukuran sebuah sel adalah $3 \\times 10^{-5}$ m. Ukuran sel adalah ... kali ukuran virus.",
+      "jawaban_benar": "$2 \\times 10^{2}$",
+      "alasan_benar": "$\\frac{3 \\times 10^{-5}}{1,5 \\times 10^{-7}} = 2 \\times 10^{2}$",
+      "distraktor": [
+        {
+          "teks": "$5 \\times 10^{1}$",
+          "alasan": "koefisien dibagi terbalik ($1,5 : 3 = 0,5$) sehingga yang diperoleh kebalikannya"
+        },
+        {
+          "teks": "$2 \\times 10^{3}$",
+          "alasan": "pangkat $-5 - (-7)$ dihitung $3$"
+        },
+        {
+          "teks": "$2 \\times 10^{-2}$",
+          "alasan": "pangkat dikurangkan terbalik ($-7 - (-5)$)"
+        }
+      ],
+      "pembahasan": "$3 : 1,5 = 2$ dan $10^{-5 - (-7)} = 10^{2}$, jadi $2 \\times 10^{2}$ kali.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "kutipan": "Berdasarkan tabel tersebut dapat disimpulkan bahwa penulisan bentuk baku dari bilangan positif dapat ditulis dengan"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 3,
+      "jenis_soal": "merancang bilangan dengan syarat",
+      "alasan_level": "memilih bilangan baku yang memenuhi batas nilai sekaligus syarat koefisien",
+      "stimulus": null,
+      "pertanyaan": "Bilangan $x$ ditulis dalam bentuk baku dan memenuhi $0,02 < x < 0,05$. Bilangan $x$ yang mungkin adalah ....",
+      "jawaban_benar": "$3,5 \\times 10^{-2}$",
+      "alasan_benar": "$3,5 \\times 10^{-2} = 0,035$ dan memenuhi batas; koefisien $3,5$ memenuhi $1 \\le a < 10$",
+      "distraktor": [
+        {
+          "teks": "$35 \\times 10^{-3}$",
+          "alasan": "nilainya 0,035 tetapi bukan bentuk baku karena koefisien $35 \\ge 10$"
+        },
+        {
+          "teks": "$3,5 \\times 10^{-3}$",
+          "alasan": "nilainya $0,0035$, kurang dari 0,02"
+        },
+        {
+          "teks": "$5,2 \\times 10^{-2}$",
+          "alasan": "nilainya $0,052$, lebih dari 0,05"
+        }
+      ],
+      "pembahasan": "Syarat nilai: antara $0,02$ dan $0,05$. Syarat bentuk baku: koefisien antara 1 dan 10. Hanya $3,5 \\times 10^{-2}$ yang memenuhi keduanya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "kutipan": "Berdasarkan tabel tersebut dapat disimpulkan bahwa penulisan bentuk baku dari bilangan positif dapat ditulis dengan"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menentukan pangkat dari syarat nilai",
+      "alasan_level": "mencari pangkat $n$ yang membuat bilangan baku berada di antara dua batas sekaligus",
+      "stimulus": null,
+      "pertanyaan": "Bilangan $4,5 \\times 10^{n}$ dengan $n$ bilangan bulat lebih besar dari $3.000.000$ dan kurang dari $40.000.000$. Nilai $n$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$4,5 \\times 10^{6} = 4.500.000$ yang berada di antara $3.000.000$ dan $40.000.000$",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "$4,5 \\times 10^{5} = 450.000$, kurang dari batas bawah"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "$4,5 \\times 10^{7} = 45.000.000$, melebihi batas atas"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "pangkat dihitung dari banyak angka nol batas atas ditambah satu"
+        }
+      ],
+      "pembahasan": "$n = 5$ memberi $450.000$; $n = 6$ memberi $4.500.000$; $n = 7$ memberi $45.000.000$. Hanya $n = 6$ yang memenuhi.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "kutipan": "Tulislah bilangan berikut dalam bentuk baku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak angka bilangan hasil operasi",
+      "alasan_level": "mengalikan, menormalkan hasil menjadi $10^{17}$, lalu menghitung banyak angka bilangan biasanya",
+      "stimulus": null,
+      "pertanyaan": "Hasil dari $(2,5 \\times 10^{9}) \\times (4 \\times 10^{7})$ ditulis sebagai bilangan bulat biasa. Banyak angka (digit) bilangan itu adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "$2,5 \\times 4 = 10$, sehingga hasil $= 10 \\times 10^{16} = 10^{17}$, yaitu angka 1 diikuti 17 nol",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "menganggap banyak angka sama dengan pangkat 10"
+        },
+        {
+          "teks": "$16$",
+          "alasan": "menghitung $10^{9+7}$ saja tanpa mengikutkan koefisien 10"
+        },
+        {
+          "teks": "$19$",
+          "alasan": "menambah satu angka dua kali saat menormalkan"
+        }
+      ],
+      "pembahasan": "$(2,5 \\times 4) \\times 10^{16} = 10^{17}$ = 1 diikuti 17 nol, total 18 angka.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 58,
+        "kutipan": "Jika ditulis dalam bentuk baku, daya angkut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perbandingan dua besaran ilmiah",
+      "alasan_level": "mengubah satuan GB ke KB lebih dulu, lalu membandingkan dua kapasitas",
+      "stimulus": null,
+      "pertanyaan": "Kapasitas flashdisk A adalah $2,4 \\times 10^{5}$ KB dan kapasitas flashdisk B adalah $1,2 \\times 10^{-1}$ GB. Jika $1$ GB $= 1.000.000$ KB, kapasitas A adalah ... kali kapasitas B.",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "B $= 1,2 \\times 10^{-1} \\times 10^{6} = 1,2 \\times 10^{5}$ KB; A : B $= 2,4 : 1,2 = 2$",
+      "distraktor": [
+        {
+          "teks": "$20$",
+          "alasan": "1 GB dianggap $10^{5}$ KB"
+        },
+        {
+          "teks": "$0,5$",
+          "alasan": "perbandingan dibalik, B dibagi A"
+        },
+        {
+          "teks": "$2 \\times 10^{6}$",
+          "alasan": "satuan GB dan KB tidak disamakan"
+        }
+      ],
+      "pembahasan": "B $= 1,2 \\times 10^{5}$ KB. $\\frac{2,4 \\times 10^{5}}{1,2 \\times 10^{5}} = 2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Penulisan berat ini tentunya kurang efektif karena terlalu panjang"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan konversi satuan",
+      "alasan_level": "menemukan bahwa angka tidak boleh dibiarkan saat km diubah ke m, lalu memperbaiki hasilnya",
+      "stimulus": null,
+      "pertanyaan": "Tono menulis $0,00042$ km $= 4,2 \\times 10^{-4}$ m, hanya dengan mengubah bentuk angka dan mengganti nama satuan. Hasil yang benar adalah ....",
+      "jawaban_benar": "$4,2 \\times 10^{-1}$ m",
+      "alasan_benar": "$0,00042$ km $= 4,2 \\times 10^{-4}$ km; $1$ km $= 10^{3}$ m, sehingga $4,2 \\times 10^{-4} \\times 10^{3} = 4,2 \\times 10^{-1}$ m",
+      "distraktor": [
+        {
+          "teks": "$4,2 \\times 10^{-4}$ m",
+          "alasan": "angka dibiarkan, hanya nama satuan diganti"
+        },
+        {
+          "teks": "$4,2 \\times 10^{-7}$ m",
+          "alasan": "pangkat dikurangi 3 saat km diubah ke m"
+        },
+        {
+          "teks": "$4,2 \\times 10^{-2}$ m",
+          "alasan": "1 km dianggap 100 m"
+        }
+      ],
+      "pembahasan": "$0,00042 = 4,2 \\times 10^{-4}$ km, lalu dikali $10^{3}$ untuk menjadi m: $4,2 \\times 10^{-1}$ m $= 0,42$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "kutipan": "Berdasarkan tabel tersebut dapat disimpulkan bahwa penulisan bentuk baku dari bilangan positif dapat ditulis dengan"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menentukan nilai terbesar agar baku",
+      "alasan_level": "mencari batas koefisien agar hasil kali langsung memenuhi $a < 10$ dengan $a$ bilangan bulat positif",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $(a \\times 10^{5}) \\times (4 \\times 10^{3})$ dengan $a$ bilangan bulat positif. Nilai $a$ terbesar agar hasilnya langsung sudah berbentuk baku (tanpa diubah lagi) adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "$4a < 10$ sehingga $a < 2,5$; bilangan bulat positif terbesar adalah $2$ dengan hasil $8 \\times 10^{8}$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "$3 \\times 4 = 12$ sehingga hasilnya $12 \\times 10^{8}$ belum baku"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "$4 \\times 4 = 16$ belum baku; mengira $a$ sama dengan koefisien lain"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "hanya memeriksa koefisien $a < 10$ tanpa mengikutkan faktor 4"
+        }
+      ],
+      "pembahasan": "Hasil koefisien $4a$ harus kurang dari $10$, jadi $a < 2,5$ dan nilai terbesar yang bulat adalah $2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "kutipan": "Berdasarkan tabel tersebut dapat disimpulkan bahwa penulisan bentuk baku dari bilangan positif dapat ditulis dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim perbandingan",
+      "alasan_level": "memilih pernyataan yang pasti benar untuk dua bilangan baku positif, menolak tiga pernyataan yang dapat disangkal",
+      "stimulus": null,
+      "pertanyaan": "Dua bilangan positif $A = a \\times 10^{n}$ dan $B = b \\times 10^{m}$ sama-sama berbentuk baku. Pernyataan yang pasti benar adalah ....",
+      "jawaban_benar": "jika $n > m$, maka $A > B$",
+      "alasan_benar": "koefisien keduanya antara 1 dan 10 sehingga $A$ ada di antara $10^{n}$ dan $10^{n+1}$, lebih besar dari $B$ bila $n > m$",
+      "distraktor": [
+        {
+          "teks": "jika $a > b$, maka $A > B$",
+          "alasan": "mengabaikan pangkat; contoh $9 \\times 10^{1} < 2 \\times 10^{3}$"
+        },
+        {
+          "teks": "jika $n = m$ dan $a < b$, maka $A > B$",
+          "alasan": "arah pertidaksamaan koefisien terbalik"
+        },
+        {
+          "teks": "$A \\times B$ selalu berpangkat $n + m$",
+          "alasan": "hasil kali koefisien dapat melebihi 10 sehingga pangkat naik"
+        }
+      ],
+      "pembahasan": "Bentuk baku membuat $10^{n} \\le A < 10^{n+1}$, sehingga pangkat yang lebih besar menjamin $A > B$. Pernyataan lain punya contoh penyangkal.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-c-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "kutipan": "Tulislah bilangan berikut dalam bentuk baku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan perpangkatan",
+      "alasan_level": "menemukan koefisien yang dikali bukan dipangkatkan, lalu menghitung dan menormalkan hasil yang benar",
+      "stimulus": null,
+      "pertanyaan": "Dina menulis $(5 \\times 10^{3})^{3} = 15 \\times 10^{9} = 1,5 \\times 10^{10}$. Hasil yang benar dalam bentuk baku adalah ....",
+      "jawaban_benar": "$1,25 \\times 10^{11}$",
+      "alasan_benar": "$(5 \\times 10^{3})^{3} = 5^{3} \\times 10^{9} = 125 \\times 10^{9} = 1,25 \\times 10^{11}$",
+      "distraktor": [
+        {
+          "teks": "$1,25 \\times 10^{10}$",
+          "alasan": "koefisien benar tetapi pangkat tidak ditambah 2 saat menormalkan 125"
+        },
+        {
+          "teks": "$1,25 \\times 10^{12}$",
+          "alasan": "pangkat ditambah 3 saat menormalkan 125"
+        },
+        {
+          "teks": "$1,5 \\times 10^{10}$",
+          "alasan": "koefisien 5 dikali 3, bukan dipangkatkan tiga"
+        }
+      ],
+      "pembahasan": "Koefisien dipangkatkan: $5^{3} = 125$. Lalu $125 \\times 10^{9} = 1,25 \\times 10^{2} \\times 10^{9} = 1,25 \\times 10^{11}$.",
+      "catatan": null
+    }
+  ]
+}

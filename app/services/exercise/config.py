@@ -37,3 +37,4 @@ SIM_MIRIP = 0.85                    # >= ini dan acuan beda = WARNING
 CONFIDENCE_SAMPLING_BATAS = 80      # soal di bawah ini WAJIB dikoreksi manusia
 SAMPLING_ACAK_PERSEN = 0.10         # + sebagian kecil acak dari yang di atas batas
 PIPELINE_VERSION = "exercise-2026-10-01"
+SKILL_VERSI = "v1"                  # versi .claude/skills/generate-soal-exercise/SKILL.md

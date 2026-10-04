@@ -1,0 +1,524 @@
+{
+ "book": "kelas9",
+ "bab_no": 4,
+ "subbab": "C",
+ "level": "hard",
+ "batch": 1,
+ "soal": [
+  {
+   "id": "kelas9-b04-c-hard-bt01-001",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 272,
+    "bagian": "Latihan C",
+    "nomor": "2",
+    "teks": "Benar atau Salah. Frekuensi harapan suatu kejadian nilainya selalu kurang dari banyaknya percobaan yang dilakukan.",
+    "jawaban": "Salah"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "mengevaluasi pernyataan",
+   "alasan_level": "menguji pernyataan umum dengan kasus penyangkal dan menilai kebenarannya",
+   "stimulus": null,
+   "pertanyaan": "Kiki menyatakan, \"Frekuensi harapan suatu kejadian pasti kurang dari banyak percobaan.\" Untuk mengujinya, ia melempar sebuah dadu 90 kali dan memeriksa kejadian muncul mata dadu yang kurang dari 7. Penilaian yang tepat terhadap pernyataan Kiki adalah ....",
+   "jawaban_benar": "pernyataan Kiki salah, karena frekuensi harapannya 90, sama dengan banyak lemparan",
+   "alasan_benar": "semua mata dadu kurang dari 7 sehingga peluangnya 1 dan frekuensi harapan $1 \\times 90 = 90$",
+   "distraktor": [
+    {
+     "teks": "pernyataan Kiki benar, karena frekuensi harapannya 15, kurang dari 90",
+     "alasan": "hanya menghitung satu mata dadu ($\\frac{1}{6} \\times 90$)"
+    },
+    {
+     "teks": "pernyataan Kiki benar, karena peluang kejadian itu kurang dari 1 sehingga frekuensi harapannya kurang dari 90",
+     "alasan": "mengira peluang kejadian pasti kurang dari 1"
+    },
+    {
+     "teks": "pernyataan Kiki salah, karena frekuensi harapannya 540, lebih dari 90",
+     "alasan": "mengalikan 90 dengan 6, yaitu banyak mata dadu"
+    }
+   ],
+   "pembahasan": "Mata dadu 1 sampai 6 semuanya kurang dari 7, jadi kejadian itu pasti terjadi dan $P = 1$. Frekuensi harapan $= 1 \\times 90 = 90$, sama dengan banyak lemparan. Jadi pernyataan Kiki salah.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-002",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas9-b04-p0273-latihan-c-3b"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "menganalisis kesalahan hitung",
+   "alasan_level": "menemukan kesalahan pada penghitungan gabungan kejadian lalu menghitung selisih terhadap hasil yang benar",
+   "stimulus": null,
+   "pertanyaan": "Sebuah bola diambil secara acak dari kotak berisi bola bernomor 1 sampai 40, dicatat nomornya, lalu dikembalikan. Pengambilan dilakukan 200 kali. Doni menghitung frekuensi harapan terambil bola yang nomornya bukan kelipatan 2 maupun bukan kelipatan 3 (tidak habis dibagi 2 dan tidak habis dibagi 3) dengan cara $40 - 20 - 13 = 7$ bola, lalu memakai peluang $\\frac{7}{40}$. Selisih antara hitungan Doni dan frekuensi harapan yang benar adalah ....",
+   "jawaban_benar": "30",
+   "alasan_benar": "yang benar $40 - (20 + 13 - 6) = 13$ bola, $\\frac{13}{40} \\times 200 = 65$; Doni $\\frac{7}{40} \\times 200 = 35$; selisih 30",
+   "distraktor": [
+    {
+     "teks": "65",
+     "alasan": "hanya menjawab frekuensi harapan yang benar tanpa mencari selisih"
+    },
+    {
+     "teks": "35",
+     "alasan": "hanya menghitung frekuensi harapan menurut Doni"
+    },
+    {
+     "teks": "100",
+     "alasan": "menjumlahkan kedua frekuensi harapan, bukan mencari selisih"
+    }
+   ],
+   "pembahasan": "Kelipatan 2: 20 bola, kelipatan 3: 13 bola, kelipatan 6 (terhitung dua kali): 6 bola. Bukan kelipatan 2 maupun 3: $40 - (20 + 13 - 6) = 13$. Frekuensi harapan yang benar $= \\frac{13}{40} \\times 200 = 65$. Doni lupa menambahkan kembali kelipatan 6: $\\frac{7}{40} \\times 200 = 35$. Selisih $= 65 - 35 = 30$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-003",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 272,
+    "bagian": "Ayo Bekerja Sama 4.2",
+    "nomor": "F",
+    "teks": "Dalam menjalankan delapan pionnya, berapakah frekuensi harapan pion pemain 1 sampai ke persegi A atau E?",
+    "jawaban": "1"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "membandingkan frekuensi harapan",
+   "alasan_level": "membuat tabel banyak cara dari lima lemparan, lalu membandingkan dua frekuensi harapan",
+   "stimulus": "Sebuah gim serupa Gim Koin memakai lima kali lemparan koin untuk setiap pion. Pion berakhir di salah satu persegi A, B, C, D, E, atau F dengan banyak cara berikut. Semua cara memiliki peluang yang sama.\n\n| Persegi | A | B | C | D | E | F |\n|---|---|---|---|---|---|---|\n| Banyak cara | 1 | 5 | 10 | 10 | 5 | 1 |",
+   "pertanyaan": "Dalam menjalankan 64 pionnya, selisih frekuensi harapan pion yang sampai ke persegi C atau D dengan frekuensi harapan pion yang sampai ke persegi A atau F adalah ....",
+   "jawaban_benar": "36",
+   "alasan_benar": "banyak semua cara 32; C atau D $\\frac{20}{32} \\times 64 = 40$, A atau F $\\frac{2}{32} \\times 64 = 4$, selisih 36",
+   "distraktor": [
+    {
+     "teks": "44",
+     "alasan": "menjumlahkan kedua frekuensi harapan, bukan mencari selisih"
+    },
+    {
+     "teks": "40",
+     "alasan": "hanya menghitung frekuensi harapan persegi C atau D"
+    },
+    {
+     "teks": "16",
+     "alasan": "memakai persegi B atau E ($20 - 4$) sebagai pembanding"
+    }
+   ],
+   "pembahasan": "Banyak semua cara $= 1 + 5 + 10 + 10 + 5 + 1 = 32$. Persegi C atau D: $\\frac{20}{32} \\times 64 = 40$. Persegi A atau F: $\\frac{2}{32} \\times 64 = 4$. Selisih $= 40 - 4 = 36$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-004",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "frekuensi harapan suatu kejadian dapat ditentukan dengan mengalikan peluang kejadian tersebut dengan banyaknya percobaan yang dilakukan"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "membandingkan strategi",
+   "alasan_level": "membandingkan dua rancangan permainan dari total hadiah yang diharapkan, memakai frekuensi harapan kemenangan",
+   "stimulus": "Sebuah pasar malam memiliki dua stan permainan. Stan 1: pemain menang jika dua koin yang dilempar bersamaan keduanya menunjukkan sisi angka, hadiah Rp8.000 untuk setiap kemenangan. Stan 2: pemain menang jika sebuah dadu yang dilempar menunjukkan mata kelipatan 3, hadiah Rp5.000 untuk setiap kemenangan. Setiap stan dimainkan 300 kali.",
+   "pertanyaan": "Pemilik pasar malam ingin memilih stan yang total hadiah yang diharapkan harus dibayar lebih sedikit. Keputusan yang tepat adalah ....",
+   "jawaban_benar": "Stan 2, karena total hadiah yang diharapkan Rp500.000 lebih sedikit daripada Rp600.000 di Stan 1",
+   "alasan_benar": "Stan 1: $\\frac{1}{4} \\times 300 = 75$ kemenangan, $75 \\times 8.000 = 600.000$; Stan 2: $\\frac{1}{3} \\times 300 = 100$ kemenangan, $100 \\times 5.000 = 500.000$",
+   "distraktor": [
+    {
+     "teks": "Stan 1, karena frekuensi harapan kemenangannya 75 kali, lebih sedikit daripada 100 kali di Stan 2",
+     "alasan": "membandingkan banyak kemenangan saja tanpa memperhitungkan besar hadiah"
+    },
+    {
+     "teks": "Stan 1, karena total hadiah yang diharapkan Rp500.000 lebih sedikit daripada Rp600.000 di Stan 2",
+     "alasan": "menukar total hadiah kedua stan"
+    },
+    {
+     "teks": "Stan 2, karena frekuensi harapan kemenangannya 100 kali sehingga total hadiahnya paling sedikit",
+     "alasan": "mengira kemenangan lebih banyak berarti hadiah lebih sedikit"
+    }
+   ],
+   "pembahasan": "Stan 1: $P = \\frac{1}{4}$, frekuensi harapan menang $= 75$, total hadiah $= 75 \\times 8.000 = 600.000$. Stan 2: mata 3 dan 6, $P = \\frac{2}{6} = \\frac{1}{3}$, frekuensi harapan menang $= 100$, total hadiah $= 100 \\times 5.000 = 500.000$. Stan 2 lebih hemat.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-005",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "frekuensi harapan suatu kejadian dapat ditentukan dengan mengalikan peluang kejadian tersebut dengan banyaknya percobaan yang dilakukan"
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 4,
+   "jenis_soal": "merancang komposisi",
+   "alasan_level": "merancang isi kantong dari dua syarat frekuensi harapan",
+   "stimulus": null,
+   "pertanyaan": "Panitia merancang sebuah kantong berisi 24 bola yang hanya berwarna merah, kuning, dan hijau. Satu bola diambil secara acak, dicatat warnanya, lalu dikembalikan. Rancangan itu harus memenuhi syarat: dari 360 kali pengambilan, frekuensi harapan terambil bola merah adalah 135, dan frekuensi harapan terambil bola kuning dua kali frekuensi harapan terambil bola hijau. Banyak bola hijau dalam kantong adalah ....",
+   "jawaban_benar": "5 bola",
+   "alasan_benar": "merah $\\frac{135}{360} \\times 24 = 9$, sisa 15 bola dengan kuning = 2 x hijau sehingga hijau 5",
+   "distraktor": [
+    {
+     "teks": "10 bola",
+     "alasan": "menjawab banyak bola kuning, bukan hijau"
+    },
+    {
+     "teks": "15 bola",
+     "alasan": "menjawab banyak bola bukan merah tanpa membaginya"
+    },
+    {
+     "teks": "9 bola",
+     "alasan": "menjawab banyak bola merah"
+    }
+   ],
+   "pembahasan": "$P(\\text{merah}) = \\frac{135}{360} = \\frac{3}{8}$, bola merah $= \\frac{3}{8} \\times 24 = 9$. Sisa $24 - 9 = 15$ bola. Karena frekuensi harapan kuning dua kali hijau, bola kuning dua kali bola hijau: $h + 2h = 15$, $h = 5$ (kuning 10).",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-006",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "frekuensi harapan suatu kejadian dapat ditentukan dengan mengalikan peluang kejadian tersebut dengan banyaknya percobaan yang dilakukan"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "merancang percobaan",
+   "alasan_level": "menyamakan dua frekuensi harapan dari dua percobaan berbeda untuk menentukan banyak lemparan",
+   "stimulus": null,
+   "pertanyaan": "Tiga koin dilempar bersamaan sebanyak 240 kali. Agar frekuensi harapan jumlah kedua mata dua dadu sama dengan 3 atau 9 persis sama dengan frekuensi harapan munculnya paling sedikit dua sisi angka pada tiga koin tersebut, dua dadu harus dilempar bersamaan sebanyak ....",
+   "jawaban_benar": "720 kali",
+   "alasan_benar": "tiga koin $\\frac{4}{8} \\times 240 = 120$; dua dadu $\\frac{6}{36} \\times k = 120$ sehingga $k = 720$",
+   "distraktor": [
+    {
+     "teks": "1.080 kali",
+     "alasan": "hanya menghitung jumlah 9 (4 pasangan, peluang $\\frac{1}{9}$)"
+    },
+    {
+     "teks": "480 kali",
+     "alasan": "mengira peluang jumlah 3 atau 9 adalah $\\frac{1}{4}$ (9 pasangan)"
+    },
+    {
+     "teks": "240 kali",
+     "alasan": "menyamakan banyak lemparan dua dadu dengan banyak lemparan tiga koin"
+    }
+   ],
+   "pembahasan": "Paling sedikit dua angka pada tiga koin: 4 dari 8 hasil, frekuensi harapan $= \\frac{1}{2} \\times 240 = 120$. Dua dadu jumlah 3: (1,2), (2,1); jumlah 9: (3,6), (4,5), (5,4), (6,3); total 6 dari 36 hasil, $P = \\frac{1}{6}$. $\\frac{1}{6} \\times k = 120$, $k = 720$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-007",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "Frekuensi harapan suatu kejadian adalah harapan berapa kali terjadinya kejadian tersebut dalam beberapa kali percobaan."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "membandingkan hasil dan frekuensi harapan",
+   "alasan_level": "membandingkan data percobaan dengan frekuensi harapan teoretis dan menentukan penyimpangan terbesar",
+   "stimulus": "Sebuah dadu dilempar 120 kali. Banyak kemunculan tiap mata dadu:\n\n| Mata dadu | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| Banyak muncul | 12 | 22 | 19 | 25 | 20 | 22 |",
+   "pertanyaan": "Jika dadu dianggap setimbang, mata dadu yang hasil percobaannya paling jauh dari frekuensi harapannya dan arah penyimpangannya adalah ....",
+   "jawaban_benar": "mata 1, kurang 8 dari frekuensi harapannya",
+   "alasan_benar": "frekuensi harapan tiap mata $\\frac{1}{6} \\times 120 = 20$; penyimpangan terbesar mata 1 ($12 - 20 = -8$)",
+   "distraktor": [
+    {
+     "teks": "mata 4, lebih 5 dari frekuensi harapannya",
+     "alasan": "memilih hasil terbanyak, bukan penyimpangan terbesar"
+    },
+    {
+     "teks": "mata 1, lebih 8 dari frekuensi harapannya",
+     "alasan": "benar mata dadunya tetapi arah penyimpangan terbalik"
+    },
+    {
+     "teks": "mata 2, lebih 2 dari frekuensi harapannya",
+     "alasan": "menghitung penyimpangan mata 2 saja"
+    }
+   ],
+   "pembahasan": "Frekuensi harapan tiap mata $= \\frac{1}{6} \\times 120 = 20$. Selisih hasil dengan 20: mata 1 $-8$, mata 2 $+2$, mata 3 $-1$, mata 4 $+5$, mata 5 $0$, mata 6 $+2$. Penyimpangan terbesar mata 1, kurang 8.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-008",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "Frekuensi harapan suatu kejadian adalah harapan berapa kali terjadinya kejadian tersebut dalam beberapa kali percobaan."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "menilai nilai frekuensi harapan bukan bulat",
+   "alasan_level": "menilai penalaran tentang makna frekuensi harapan yang bukan bilangan bulat",
+   "stimulus": null,
+   "pertanyaan": "Dewi melempar sebuah dadu setimbang 50 kali dan menghitung frekuensi harapan muncul mata 4 dengan hasil $\\frac{1}{6} \\times 50 = 8\\frac{1}{3}$. Ia menyimpulkan, \"Hasil ini pasti salah, karena banyak kemunculan selalu bilangan bulat.\" Penilaian yang tepat terhadap kesimpulan Dewi adalah ....",
+   "jawaban_benar": "hitungannya benar; frekuensi harapan adalah nilai harapan yang boleh bukan bilangan bulat dan tidak menjamin tepat 8 kali",
+   "alasan_benar": "frekuensi harapan = peluang x banyak percobaan, merupakan nilai harapan sehingga tidak harus bulat dan bukan kepastian hasil",
+   "distraktor": [
+    {
+     "teks": "Dewi benar; frekuensi harapan harus dibulatkan menjadi 8 dan mata 4 pasti muncul 8 kali",
+     "alasan": "mengira frekuensi harapan adalah kepastian hasil"
+    },
+    {
+     "teks": "Dewi benar; hitungan yang tepat adalah $6 \\times 50 = 300$ kali karena ada enam mata dadu",
+     "alasan": "salah operasi, mengalikan 50 dengan banyak mata dadu"
+    },
+    {
+     "teks": "Dewi benar; frekuensi harapan harus sama dengan banyak lemparan, yaitu 50 kali",
+     "alasan": "mengira frekuensi harapan selalu sama dengan banyak percobaan"
+    }
+   ],
+   "pembahasan": "$P(\\text{mata } 4) = \\frac{1}{6}$, frekuensi harapan $= \\frac{50}{6} = 8\\frac{1}{3}$. Itu nilai harapan, bukan banyak kemunculan pasti, sehingga boleh bukan bilangan bulat. Hitungan Dewi benar, kesimpulannya yang keliru.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-009",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "frekuensi harapan suatu kejadian dapat ditentukan dengan mengalikan peluang kejadian tersebut dengan banyaknya percobaan yang dilakukan"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 6,
+   "jenis_soal": "menyusun keputusan persediaan",
+   "alasan_level": "membandingkan persediaan dengan frekuensi harapan empat menu lalu menjumlahkan kekurangan",
+   "stimulus": "Kantin sekolah mencatat bahwa dari siswa yang membeli makan siang, persentase pemilihan menu adalah sebagai berikut. Hari ini diperkirakan ada 500 siswa yang membeli dan kantin telah menyiapkan sejumlah porsi.\n\n| Menu | Persentase peminat | Porsi disiapkan |\n|---|---|---|\n| Nasi goreng | 36% | 170 |\n| Mie ayam | 28% | 150 |\n| Soto | 20% | 90 |\n| Bakso | 16% | 70 |",
+   "pertanyaan": "Agar setiap menu tersedia minimal sebanyak frekuensi harapan peminatnya, banyak porsi tambahan seluruhnya yang harus disiapkan adalah ....",
+   "jawaban_benar": "30 porsi",
+   "alasan_benar": "FH: 180, 140, 100, 80; kurang 10 (nasi goreng), 10 (soto), 10 (bakso); mie ayam sudah cukup",
+   "distraktor": [
+    {
+     "teks": "40 porsi",
+     "alasan": "menjumlahkan semua selisih termasuk kelebihan mie ayam"
+    },
+    {
+     "teks": "10 porsi",
+     "alasan": "hanya menghitung kekurangan nasi goreng"
+    },
+    {
+     "teks": "20 porsi",
+     "alasan": "hanya menghitung dua menu yang kurang"
+    }
+   ],
+   "pembahasan": "Frekuensi harapan: nasi goreng $0{,}36 \\times 500 = 180$, mie ayam $0{,}28 \\times 500 = 140$, soto $0{,}2 \\times 500 = 100$, bakso $0{,}16 \\times 500 = 80$. Kekurangan: nasi goreng $180 - 170 = 10$, soto $100 - 90 = 10$, bakso $80 - 70 = 10$, sedangkan mie ayam berlebih. Tambahan $= 30$ porsi.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-010",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "frekuensi harapan suatu kejadian dapat ditentukan dengan mengalikan peluang kejadian tersebut dengan banyaknya percobaan yang dilakukan"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "mengevaluasi rancangan",
+   "alasan_level": "memeriksa empat rancangan kotak terhadap dua syarat frekuensi harapan",
+   "stimulus": "Sebuah kotak harus memenuhi dua syarat: dari 120 kali pengambilan satu bola secara acak dengan pengembalian, (1) frekuensi harapan terambil bola merah tepat 40, dan (2) frekuensi harapan terambil bola biru paling sedikit tiga kali frekuensi harapan terambil bola hijau. Empat rancangan isi kotak:\n\n| Rancangan | Merah | Biru | Hijau |\n|---|---|---|---|\n| K1 | 4 | 5 | 3 |\n| K2 | 6 | 9 | 3 |\n| K3 | 5 | 6 | 4 |\n| K4 | 8 | 10 | 6 |",
+   "pertanyaan": "Rancangan yang memenuhi kedua syarat adalah ....",
+   "jawaban_benar": "K2",
+   "alasan_benar": "K2: merah $\\frac{6}{18} \\times 120 = 40$, biru 60, hijau 20, dan $60 \\geq 3 \\times 20$",
+   "distraktor": [
+    {
+     "teks": "K1",
+     "alasan": "hanya memenuhi syarat (1); biru 50 kurang dari $3 \\times 30$"
+    },
+    {
+     "teks": "K3",
+     "alasan": "hanya memenuhi syarat (1); biru 48 kurang dari $3 \\times 32$"
+    },
+    {
+     "teks": "K4",
+     "alasan": "hanya memenuhi syarat (1); biru 50 kurang dari $3 \\times 30$"
+    }
+   ],
+   "pembahasan": "Syarat (1) terpenuhi semua rancangan ($\\frac{4}{12}, \\frac{6}{18}, \\frac{5}{15}, \\frac{8}{24}$ semuanya $\\frac{1}{3}$, $\\frac{1}{3} \\times 120 = 40$). Syarat (2): K1 biru 50, hijau 30, $50 < 90$; K2 biru 60, hijau 20, $60 = 60$ terpenuhi; K3 biru 48, hijau 32, $48 < 96$; K4 biru 50, hijau 30, $50 < 90$. Hanya K2.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-011",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "frekuensi harapan suatu kejadian dapat ditentukan dengan mengalikan peluang kejadian tersebut dengan banyaknya percobaan yang dilakukan"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "memprediksi dari peluang empiris",
+   "alasan_level": "memakai hasil pemeriksaan sampel sebagai peluang empiris untuk menilai kecukupan persediaan",
+   "stimulus": null,
+   "pertanyaan": "Dari pemeriksaan 80 lampu pada sebuah pabrik, ditemukan 6 lampu rusak. Pabrik akan mengirim 1.200 lampu dengan persediaan 80 lampu pengganti gratis. Berdasarkan hasil pemeriksaan tersebut, kesimpulan yang tepat adalah ....",
+   "jawaban_benar": "persediaan kurang, karena frekuensi harapan lampu rusak 90 sehingga perlu tambahan 10 lampu",
+   "alasan_benar": "peluang empiris rusak $\\frac{6}{80}$, frekuensi harapan $\\frac{6}{80} \\times 1.200 = 90$, lebih dari 80 sehingga kurang 10",
+   "distraktor": [
+    {
+     "teks": "persediaan cukup, karena frekuensi harapan lampu rusak 72, kurang dari 80",
+     "alasan": "memakai peluang 6% sebagai ganti $\\frac{6}{80}$"
+    },
+    {
+     "teks": "persediaan kurang, karena frekuensi harapan lampu rusak 90 sehingga perlu tambahan 90 lampu",
+     "alasan": "lupa mengurangi persediaan yang sudah ada"
+    },
+    {
+     "teks": "persediaan cukup, karena frekuensi harapan lampu rusak sama dengan 80, yaitu banyak lampu diperiksa",
+     "alasan": "mengira frekuensi harapan sama dengan banyak lampu yang diperiksa"
+    }
+   ],
+   "pembahasan": "Peluang empiris lampu rusak $= \\frac{6}{80} = \\frac{3}{40}$. Frekuensi harapan rusak dari 1.200 lampu $= \\frac{3}{40} \\times 1.200 = 90$. Persediaan 80, sehingga kurang $90 - 80 = 10$ lampu.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-012",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "Frekuensi harapan suatu kejadian adalah harapan berapa kali terjadinya kejadian tersebut dalam beberapa kali percobaan."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "menemukan kesalahan penalaran",
+   "alasan_level": "menilai penalaran yang keliru tentang peluang dan frekuensi harapan setelah rangkaian hasil yang tidak biasa",
+   "stimulus": null,
+   "pertanyaan": "Sebuah koin setimbang dilempar 10 kali dan semuanya menunjukkan sisi gambar. Rudi berkata, \"Dalam 20 lemparan berikutnya, frekuensi harapan sisi angka pasti lebih dari 10 supaya hasilnya seimbang.\" Penilaian yang tepat terhadap Rudi adalah ....",
+   "jawaban_benar": "Rudi keliru, karena peluang angka tiap lemparan tetap $\\frac{1}{2}$ sehingga frekuensi harapannya 10",
+   "alasan_benar": "lemparan sebelumnya tidak mengubah peluang, frekuensi harapan $\\frac{1}{2} \\times 20 = 10$",
+   "distraktor": [
+    {
+     "teks": "Rudi benar, karena sisi angka harus mengejar sehingga frekuensi harapannya lebih dari 10",
+     "alasan": "mengira hasil sebelumnya mengubah peluang lemparan berikutnya"
+    },
+    {
+     "teks": "Rudi keliru, karena koin pasti hanya menghasilkan gambar sehingga frekuensi harapan angka 0",
+     "alasan": "menyimpulkan koin tidak setimbang padahal diketahui setimbang"
+    },
+    {
+     "teks": "Rudi keliru, karena frekuensi harapan angka dalam 20 lemparan berikutnya adalah 20",
+     "alasan": "mengira frekuensi harapan sama dengan banyak lemparan"
+    }
+   ],
+   "pembahasan": "Koin setimbang, $P(\\text{angka}) = \\frac{1}{2}$ pada setiap lemparan dan tidak dipengaruhi hasil sebelumnya. Frekuensi harapan angka dalam 20 lemparan $= \\frac{1}{2} \\times 20 = 10$, tidak lebih dari 10.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-013",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 273,
+    "kutipan": "Di sebuah kota, persentase penduduknya yang masuk Generasi Z adalah 28%."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "menentukan batas minimum",
+   "alasan_level": "menentukan banyak pemilihan minimum dari dua persentase dengan pembulatan ke atas",
+   "stimulus": null,
+   "pertanyaan": "Di sebuah kota, 28% penduduknya masuk Generasi Z dan 35% penduduknya masuk generasi milenial. Panitia memilih penduduk kota secara acak dan menginginkan frekuensi harapan terpilihnya penduduk Generasi Z atau milenial paling sedikit 100 orang. Banyak penduduk minimum yang harus dipilih adalah ....",
+   "jawaban_benar": "159 orang",
+   "alasan_benar": "$63\\% \\times k \\geq 100$ sehingga $k \\geq 158{,}7$, dibulatkan ke atas menjadi 159",
+   "distraktor": [
+    {
+     "teks": "158 orang",
+     "alasan": "membulatkan ke bawah, padahal $0{,}63 \\times 158 = 99{,}54 < 100$"
+    },
+    {
+     "teks": "357 orang",
+     "alasan": "hanya memakai persentase Generasi Z ($100 \\div 0{,}28$)"
+    },
+    {
+     "teks": "100 orang",
+     "alasan": "menyamakan banyak yang dipilih dengan frekuensi harapan"
+    }
+   ],
+   "pembahasan": "Generasi Z atau milenial $= 28\\% + 35\\% = 63\\%$ (dua kelompok tidak saling beririsan). $0{,}63 \\times k \\geq 100$ sehingga $k \\geq 158{,}7$. Bilangan bulat terkecil adalah 159, dan $0{,}63 \\times 159 \\approx 100{,}2$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-014",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "frekuensi harapan suatu kejadian dapat ditentukan dengan mengalikan peluang kejadian tersebut dengan banyaknya percobaan yang dilakukan"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "memilih aturan permainan",
+   "alasan_level": "membandingkan empat aturan dua tahap dari frekuensi harapan menang, lalu memilih yang paling mendekati batas",
+   "stimulus": "Dalam sebuah permainan, pemain melempar sebuah koin. Jika muncul gambar, pemain kalah. Jika muncul angka, pemain melempar sebuah dadu dan menang bila mata dadu memenuhi aturan. Permainan dimainkan 240 kali. Empat aturan yang dipertimbangkan: Aturan I mata dadu prima, Aturan II mata dadu lebih dari 2, Aturan III mata dadu kelipatan 3, Aturan IV mata dadu bukan 6.",
+   "pertanyaan": "Pemilik ingin frekuensi harapan kemenangan sebesar mungkin tetapi tidak lebih dari 70 kali. Aturan yang dipilih adalah ....",
+   "jawaban_benar": "Aturan I",
+   "alasan_benar": "I: $\\frac{1}{2} \\times \\frac{1}{2} \\times 240 = 60$; II: 80; III: 40; IV: 100; yang terbesar tidak lebih dari 70 adalah I",
+   "distraktor": [
+    {
+     "teks": "Aturan II",
+     "alasan": "frekuensi harapan menangnya 80, melebihi batas 70"
+    },
+    {
+     "teks": "Aturan III",
+     "alasan": "frekuensi harapan menangnya 40, memenuhi batas tetapi tidak sebesar mungkin"
+    },
+    {
+     "teks": "Aturan IV",
+     "alasan": "frekuensi harapan menangnya 100, melebihi batas 70"
+    }
+   ],
+   "pembahasan": "Peluang menang $= \\frac{1}{2} \\times P(\\text{mata dadu})$. I: $\\frac{1}{2} \\times \\frac{3}{6} \\times 240 = 60$. II: $\\frac{1}{2} \\times \\frac{4}{6} \\times 240 = 80$. III: $\\frac{1}{2} \\times \\frac{2}{6} \\times 240 = 40$. IV: $\\frac{1}{2} \\times \\frac{5}{6} \\times 240 = 100$. Yang tidak lebih dari 70 adalah I (60) dan III (40); terbesar adalah Aturan I.",
+   "catatan": null
+  },
+  {
+   "id": "kelas9-b04-c-hard-bt01-015",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 269,
+    "kutipan": "Frekuensi harapan suatu kejadian adalah harapan berapa kali terjadinya kejadian tersebut dalam beberapa kali percobaan."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "menafsirkan data kelompok",
+   "alasan_level": "menafsirkan hasil beberapa kelompok terhadap frekuensi harapan tiap kelompok dan gabungan",
+   "stimulus": "Lima kelompok masing-masing melempar sebuah dadu setimbang 60 kali. Banyak kemunculan mata 6:\n\n| Kelompok | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| Mata 6 muncul | 7 | 12 | 9 | 13 | 9 |",
+   "pertanyaan": "Pernyataan yang tepat mengenai data tersebut adalah ....",
+   "jawaban_benar": "frekuensi harapan tiap kelompok 10; tidak ada kelompok yang tepat 10, tetapi jumlah semuanya 50 sama dengan frekuensi harapan gabungan",
+   "alasan_benar": "$\\frac{1}{6} \\times 60 = 10$ tiap kelompok; gabungan $\\frac{1}{6} \\times 300 = 50 = 7 + 12 + 9 + 13 + 9$",
+   "distraktor": [
+    {
+     "teks": "frekuensi harapan tiap kelompok 10, tetapi karena tidak ada kelompok yang tepat 10, dadu itu pasti tidak setimbang",
+     "alasan": "mengira frekuensi harapan adalah kepastian hasil"
+    },
+    {
+     "teks": "frekuensi harapan tiap kelompok 13, yaitu kemunculan terbanyak yang diperoleh",
+     "alasan": "mengambil hasil terbanyak sebagai frekuensi harapan"
+    },
+    {
+     "teks": "frekuensi harapan tiap kelompok 10, dan jumlah semuanya 50 berbeda dari frekuensi harapan gabungan 60",
+     "alasan": "salah menghitung frekuensi harapan gabungan sebagai $\\frac{1}{5} \\times 300$"
+    }
+   ],
+   "pembahasan": "Frekuensi harapan tiap kelompok $= \\frac{1}{6} \\times 60 = 10$. Hasil tiap kelompok bervariasi (7, 12, 9, 13, 9) dan tidak ada yang tepat 10, hal yang wajar. Gabungan 300 lemparan: frekuensi harapan $\\frac{1}{6} \\times 300 = 50$, dan jumlah hasil $7 + 12 + 9 + 13 + 9 = 50$.",
+   "catatan": null
+  }
+ ]
+}

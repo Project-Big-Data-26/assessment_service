@@ -1,0 +1,341 @@
+{
+  "book": "kelas10",
+  "bab_no": 4,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "soal": [
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 137,
+        "kutipan": "Tentukan apa saja kemungkinannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "memilih rancangan optimal",
+      "alasan_level": "menguji kelayakan empat rancangan pada dua batasan lalu membandingkan laba rancangan yang layak",
+      "stimulus": "Sebuah bengkel membuat kursi ($x$ buah) dan meja ($y$ buah). Papan yang tersedia membatasi $2x + 3y \\leq 24$ dan waktu kerja membatasi $x + y \\leq 10$. Laba sebuah kursi Rp40.000,00 dan sebuah meja Rp50.000,00. Semua produk terjual.",
+      "pertanyaan": "Rencana produksi yang memenuhi kedua batasan dan memberi laba terbesar adalah ....",
+      "jawaban_benar": "6 kursi dan 4 meja",
+      "alasan_benar": "$2(6)+3(4)=24 \\leq 24$ dan $6+4=10 \\leq 10$ sehingga layak, laba $240.000+200.000=440.000$ paling besar di antara rencana yang layak",
+      "distraktor": [
+        {
+          "teks": "9 kursi dan 2 meja",
+          "alasan": "laba Rp460.000,00 tampak terbesar tetapi $9+2=11$ melebihi batas $10$ sehingga tidak layak"
+        },
+        {
+          "teks": "3 kursi dan 6 meja",
+          "alasan": "layak ($6+18=24$, $9 \\leq 10$) tetapi labanya hanya Rp420.000,00"
+        },
+        {
+          "teks": "0 kursi dan 8 meja",
+          "alasan": "layak tetapi labanya hanya Rp400.000,00; hanya memperhatikan batas papan"
+        }
+      ],
+      "pembahasan": "Uji tiap rencana. $(9,2)$ gagal pada $x+y \\leq 10$. Laba rencana layak: $(6,4)=440.000$, $(3,6)=420.000$, $(0,8)=400.000$. Terbesar $(6,4)$.",
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-001"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 139,
+        "kutipan": "Solusinya adalah daerah yang merupakan irisan semua daerah jawab."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mengevaluasi penyelesaian",
+      "alasan_level": "mengevaluasi klaim jumlah titik dengan menguji setiap kandidat pada tiga syarat termasuk nilai batas tegas",
+      "stimulus": "Rani mencari pasangan bilangan bulat $(x, y)$ yang memenuhi $x + y \\leq 5$, $x - y > 3$, dan $y \\geq 0$. Ia mendaftar $(4,0)$, $(5,0)$, dan $(4,1)$, lalu menyimpulkan ada 3 pasangan.",
+      "pertanyaan": "Pernyataan yang tepat tentang kesimpulan Rani adalah ....",
+      "jawaban_benar": "Keliru, karena $(4,1)$ tidak memenuhi $x-y>3$ ($4-1=3$) sehingga hanya ada 2 pasangan.",
+      "alasan_benar": "$(4,0)$: $4>3$, $4 \\leq 5$ benar; $(5,0)$: $5>3$, $5 \\leq 5$ benar; $(4,1)$: $4-1=3$ tidak lebih dari $3$. Untuk $y \\geq 1$ tidak ada pasangan lain",
+      "distraktor": [
+        {
+          "teks": "Benar, karena $(4,1)$ memenuhi $x+y \\leq 5$ dan $x-y \\geq 3$.",
+          "alasan": "mengganti tanda $>$ menjadi $\\geq$"
+        },
+        {
+          "teks": "Keliru, karena $(5,0)$ tidak memenuhi $x+y \\leq 5$ sehingga hanya ada 2 pasangan, yaitu $(4,0)$ dan $(4,1)$.",
+          "alasan": "menganggap $5 \\leq 5$ salah"
+        },
+        {
+          "teks": "Keliru, karena seharusnya ada 4 pasangan dengan menambahkan $(3,0)$.",
+          "alasan": "$(3,0)$ tidak memenuhi $3>3$"
+        }
+      ],
+      "pembahasan": "Dari $x-y>3$ dan $y \\geq 0$ diperoleh $x \\geq 4$; $x+y \\leq 5$ memberi $y \\leq 5-x$. $x=4$: $y=0$ (sebab $y=1$ memberi $x-y=3$). $x=5$: $y=0$. Jadi 2 pasangan.",
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-002"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 137,
+        "kutipan": "Tentukan apa saja kemungkinannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menentukan batas parameter",
+      "alasan_level": "menentukan rentang parameter agar tepat satu titik bulat, dengan memeriksa nilai batas dan titik tambahan",
+      "pertanyaan": "Pasangan bilangan bulat $(x, y)$ yang memenuhi $x \\geq 2$, $y \\geq 1$, dan $x + y \\leq k$ tepat ada satu. Batas nilai $k$ adalah ....",
+      "jawaban_benar": "$3 \\leq k < 4$",
+      "alasan_benar": "titik $(2,1)$ memberi $x+y=3$ sehingga $k \\geq 3$; bila $k \\geq 4$ muncul $(3,1)$ dan $(2,2)$, jadi $k<4$",
+      "distraktor": [
+        {
+          "teks": "$3 < k \\leq 4$",
+          "alasan": "tanda batas tertukar: $k=3$ masih memuat $(2,1)$ dan $k=4$ memuat tiga titik"
+        },
+        {
+          "teks": "$3 \\leq k \\leq 4$",
+          "alasan": "menyertakan $k=4$ padahal ada $(2,1)$, $(3,1)$, $(2,2)$"
+        },
+        {
+          "teks": "$k=3$",
+          "alasan": "mengira hanya $k=3$ yang memberi satu titik, padahal $k=3{,}5$ juga"
+        }
+      ],
+      "pembahasan": "Titik terkecil $(2,1)$ ada bila $k \\geq 3$. Titik berikutnya muncul saat $x+y=4$. Jadi satu titik bila $3 \\leq k<4$.",
+      "stimulus": null,
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-003"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 138,
+        "kutipan": "Pilih sebuah titik, misalnya (0,0), lalu substitusikan ke dalam pertidaksamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menentukan batas parameter",
+      "alasan_level": "menentukan batas parameter agar sistem punya penyelesaian dengan menguji kasus batas pada tanda tegas",
+      "pertanyaan": "Sistem pertidaksamaan $x + 2y \\geq 6$, $x \\leq 2$, dan $y < m$ mempunyai penyelesaian (bilangan real) jika ....",
+      "jawaban_benar": "$m > 2$",
+      "alasan_benar": "nilai $x+2y$ terbesar saat $x=2$, yaitu $2+2y \\geq 6$ sehingga $y \\geq 2$; agar ada $y$ dengan $2 \\leq y<m$ diperlukan $m>2$",
+      "distraktor": [
+        {
+          "teks": "$m \\geq 2$",
+          "alasan": "untuk $m=2$ hanya $y<2$ sehingga $x+2y<6$, tidak ada penyelesaian"
+        },
+        {
+          "teks": "$m > 3$",
+          "alasan": "terlalu ketat: $m=2{,}5$ sudah memberi $(2, 2)$"
+        },
+        {
+          "teks": "$m \\geq 3$",
+          "alasan": "salah menghitung batas: mengira $y \\geq 3$ dari $x+2y \\geq 6$ dengan $x=0$"
+        }
+      ],
+      "pembahasan": "Karena $x \\leq 2$, $x+2y \\leq 2+2y$. Perlu $2+2y \\geq 6$, yaitu $y \\geq 2$. Dengan $y<m$, ada $y$ bila $m>2$.",
+      "stimulus": null,
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-004"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 143,
+        "kutipan": "Menentukan sistem pertidaksamaan linear yang daerah hasilnya memuat titik target, tetapi tidak memuat dua titik lainnya."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang sistem pertidaksamaan",
+      "alasan_level": "merancang sistem yang memuat dua titik dan mengecualikan dua titik lain, menguji empat titik pada setiap rancangan",
+      "stimulus": "Titik $A(1, 4)$ dan $B(3, 2)$ harus termasuk daerah hasil, sedangkan titik $C(0, 0)$ dan $D(5, 5)$ tidak boleh termasuk.",
+      "pertanyaan": "Sistem pertidaksamaan yang memenuhi semua ketentuan tersebut adalah ....",
+      "jawaban_benar": "$x + y \\geq 5$ dan $x \\leq 3$",
+      "alasan_benar": "$A$: $5 \\geq 5$, $1 \\leq 3$; $B$: $5 \\geq 5$, $3 \\leq 3$; $C$: $0 \\geq 5$ salah; $D$: $5 \\leq 3$ salah",
+      "distraktor": [
+        {
+          "teks": "$x + y > 5$ dan $x \\leq 3$",
+          "alasan": "$A$ dan $B$ tidak termasuk karena $5>5$ salah"
+        },
+        {
+          "teks": "$x + y \\geq 5$ dan $x \\leq 2$",
+          "alasan": "$B$ tidak termasuk karena $3 \\leq 2$ salah"
+        },
+        {
+          "teks": "$x + y \\geq 5$ dan $y \\leq 5$",
+          "alasan": "$D$ ikut termasuk karena $5 \\leq 5$ benar"
+        }
+      ],
+      "pembahasan": "Syarat $x+y \\geq 5$ memuat $A,B$ dan mengeluarkan $C$. Agar $D$ keluar diperlukan batas pada $x$: $x \\leq 3$ masih memuat $B$ tetapi mengeluarkan $D$.",
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-005"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 137,
+        "kutipan": "Tentukan apa saja kemungkinannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "membandingkan dua rancangan",
+      "alasan_level": "mencacah titik bulat pada dua sistem lalu membandingkan selisihnya, dengan pengelompokan banyak kasus",
+      "stimulus": "Rencana I: $x \\geq 0$, $y \\geq 0$, $x + y \\leq 10$, dan $2x + y \\geq 8$. Rencana II: $x \\geq 0$, $y \\geq 0$, $x + y \\leq 10$, dan $2x + y \\geq 12$. Nilai $x$ dan $y$ bilangan bulat.",
+      "pertanyaan": "Banyak pasangan $(x,y)$ pada Rencana I lebih banyak daripada Rencana II sebanyak ....",
+      "jawaban_benar": "21",
+      "alasan_benar": "Rencana I: $66-20=46$ pasangan; Rencana II: $66-41=25$ pasangan; selisih $21$",
+      "distraktor": [
+        {
+          "teks": "20",
+          "alasan": "hanya menghitung pasangan yang gugur pada Rencana I ($2x+y \\leq 7$)"
+        },
+        {
+          "teks": "25",
+          "alasan": "menjawab banyak pasangan Rencana II saja"
+        },
+        {
+          "teks": "46",
+          "alasan": "menjawab banyak pasangan Rencana I saja"
+        }
+      ],
+      "pembahasan": "Semua pasangan dengan $x+y \\leq 10$ ada $66$. Rencana I mengeluarkan $2x+y \\leq 7$: $8+6+4+2=20$, sisa $46$. Rencana II mengeluarkan $2x+y \\leq 11$: $11+10+8+6+4+2=41$, sisa $25$. Selisih $46-25=21$.",
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-006"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 138,
+        "kutipan": "Tentukan model matematikanya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mengevaluasi penyelesaian",
+      "alasan_level": "memeriksa tiga model dari kalimat berbeda (paling sedikit, tersedia, tidak lebih dari dua kali) dan menunjuk letak kesalahan",
+      "stimulus": "Sebuah toko membuat bolu ($x$ buah) dan brownies ($y$ buah). Ketentuannya: jumlah kue paling sedikit 20; tepung yang tersedia 5 kg dengan bolu memakai 200 gram dan brownies 300 gram per buah; banyak brownies tidak lebih dari dua kali banyak bolu. Dina menulis model: (1) $x + y \\geq 20$, (2) $200x + 300y \\leq 5.000$, (3) $x \\leq 2y$.",
+      "pertanyaan": "Pernyataan yang tepat tentang model Dina adalah ....",
+      "jawaban_benar": "Hanya (3) yang salah; seharusnya $y \\leq 2x$.",
+      "alasan_benar": "(1) benar karena paling sedikit $\\Rightarrow \\geq$; (2) benar karena $5$ kg $=5.000$ gram; (3) menukar peran $x$ dan $y$, seharusnya $y \\leq 2x$",
+      "distraktor": [
+        {
+          "teks": "Hanya (2) yang salah; seharusnya $200x + 300y \\leq 5$.",
+          "alasan": "tidak mengubah satuan, padahal ruas kanan sudah dalam gram"
+        },
+        {
+          "teks": "Hanya (1) yang salah; seharusnya $x + y \\leq 20$.",
+          "alasan": "mengira paling sedikit berarti $\\leq$"
+        },
+        {
+          "teks": "(1) dan (3) salah; seharusnya $x+y \\leq 20$ dan $y \\leq 2x$.",
+          "alasan": "(1) sebenarnya benar"
+        }
+      ],
+      "pembahasan": "Paling sedikit 20: $x+y \\geq 20$ (benar). Tepung 5 kg $=5.000$ g: $200x+300y \\leq 5.000$ (benar). Brownies tidak lebih dari dua kali bolu: $y \\leq 2x$, jadi (3) salah.",
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-007"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 137,
+        "kutipan": "Tentukan apa saja kemungkinannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "memilih rancangan optimal",
+      "alasan_level": "menguji kelayakan empat paket pada dua syarat minimum lalu membandingkan biaya paket yang layak",
+      "stimulus": "Seorang peternak mencampur pakan A ($x$ kantong) dan pakan B ($y$ kantong). Kebutuhan protein: $3x + 2y \\geq 24$ dan energi: $x + 3y \\geq 15$. Harga pakan A Rp4.000,00 dan pakan B Rp3.000,00 per kantong.",
+      "pertanyaan": "Campuran yang memenuhi kedua kebutuhan dengan biaya paling murah adalah ....",
+      "jawaban_benar": "6 kantong A dan 3 kantong B",
+      "alasan_benar": "$3(6)+2(3)=24 \\geq 24$ dan $6+9=15 \\geq 15$ sehingga layak, biaya $24.000+9.000=33.000$, lebih murah daripada campuran layak lain",
+      "distraktor": [
+        {
+          "teks": "4 kantong A dan 6 kantong B",
+          "alasan": "layak ($24 \\geq 24$, $22 \\geq 15$) tetapi biaya Rp34.000,00 lebih mahal"
+        },
+        {
+          "teks": "5 kantong A dan 4 kantong B",
+          "alasan": "biaya Rp32.000,00 tampak murah tetapi protein $23<24$ sehingga tidak layak"
+        },
+        {
+          "teks": "3 kantong A dan 6 kantong B",
+          "alasan": "biaya Rp30.000,00 tampak murah tetapi protein $21<24$ sehingga tidak layak"
+        }
+      ],
+      "pembahasan": "Uji syarat: $(5,4)$ protein $23$ dan $(3,6)$ protein $21$ tidak layak. Layak: $(6,3)$ biaya $33.000$ dan $(4,6)$ biaya $34.000$. Termurah $(6,3)$.",
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-008"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 138,
+        "kutipan": "Pilih sebuah titik, misalnya (0,0), lalu substitusikan ke dalam pertidaksamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menentukan batas parameter",
+      "alasan_level": "menggabungkan dua batas parameter dengan tanda berbeda lalu mencacah bilangan bulat yang memenuhi",
+      "pertanyaan": "Titik $(a, a+2)$ termasuk daerah hasil sistem $x + y \\leq 10$ dan $3x - y > 1$. Banyak bilangan bulat $a$ yang memenuhi adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "$2a+2 \\leq 10$ memberi $a \\leq 4$; $3a-(a+2)>1$ memberi $a>1{,}5$; bilangan bulat $a=2,3,4$",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "menganggap $a=4$ tidak termasuk, padahal tanda $\\leq$ memuat nilai batas"
+        },
+        {
+          "teks": "4",
+          "alasan": "ikut memasukkan $a=1$ padahal $a>1{,}5$"
+        },
+        {
+          "teks": "5",
+          "alasan": "ikut memasukkan $a=1$ dan $a=5$ karena kedua batas dibulatkan keluar"
+        }
+      ],
+      "pembahasan": "Substitusi: $a+(a+2) \\leq 10 \\Rightarrow a \\leq 4$ dan $3a-(a+2)>1 \\Rightarrow 2a>3 \\Rightarrow a>1{,}5$. Bilangan bulat: $2,3,4$, yaitu 3 nilai.",
+      "stimulus": null,
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-009"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 139,
+        "kutipan": "Solusinya adalah daerah yang merupakan irisan semua daerah jawab."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "mengevaluasi penyelesaian",
+      "alasan_level": "mengevaluasi klaim bahwa titik potong garis batas memberi laba terbesar dengan membandingkan laba di empat titik sudut",
+      "stimulus": "Batasan produksi $x + y \\leq 10$ dan $2x + y \\leq 16$ dengan $x \\geq 0$ dan $y \\geq 0$. Laba tiap rencana $30x+10y$ (ribu rupiah). Pak Joko mengklaim laba terbesar pasti di titik potong kedua garis batas, yaitu $(6,4)$.",
+      "pertanyaan": "Pernyataan yang tepat tentang klaim Pak Joko adalah ....",
+      "jawaban_benar": "Klaim keliru, karena laba di $(6,4)$ adalah Rp220.000,00 sedangkan di $(8,0)$ Rp240.000,00.",
+      "alasan_benar": "titik sudut daerah: $(0,0)$ laba $0$, $(8,0)$ laba $240$, $(6,4)$ laba $220$, $(0,10)$ laba $100$ (ribu); terbesar di $(8,0)$",
+      "distraktor": [
+        {
+          "teks": "Klaim benar, karena titik potong selalu memberi laba terbesar.",
+          "alasan": "anggapan umum yang salah tanpa membandingkan titik sudut lain"
+        },
+        {
+          "teks": "Klaim keliru, karena laba terbesar Rp300.000,00 di $(0,10)$.",
+          "alasan": "salah hitung $30(0)+10(10)$ menjadi $300$, padahal $100$"
+        },
+        {
+          "teks": "Klaim benar, karena laba di $(6,4)$ Rp220.000,00 lebih besar daripada di $(8,0)$ Rp200.000,00.",
+          "alasan": "salah menghitung laba di $(8,0)$"
+        }
+      ],
+      "pembahasan": "Titik sudut: $(0,0)$, $(8,0)$, $(6,4)$, $(0,10)$. Laba: $0$, $240$, $220$, $100$ (ribu rupiah). Laba terbesar di $(8,0)$, bukan di titik potong.",
+      "catatan": null,
+      "tipe_generate": "orisinal",
+      "id": "kelas10-b04-b-hard-bt01-010"
+    }
+  ],
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi subbab B hanya menguji titik, tanda/nilai batas, pemodelan dan irisan daerah; soal hard tanpa grafik selain 10 ini nyaris kembar medium atau bergantung program linear di luar subbab."
+}

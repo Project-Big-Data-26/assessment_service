@@ -1,0 +1,520 @@
+{
+  "book": "kelas8",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas8-b01-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "a n dinamakan bilangan berpangkat, a dinamakan bilangan pokok (basis), dan n disebut pangkat (eksponen)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memeriksa tiap pasangan dengan substitusi untuk menemukan satu-satunya yang membantah klaim; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Klaim: $(x+y)^{2} = x^{2}+y^{2}$ berlaku untuk semua bilangan real $x$ dan $y$. Pasangan $(x, y)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$(x, y) = (3, 4)$",
+      "alasan_benar": "$(3+4)^{2} = 49$ sedangkan $3^{2}+4^{2} = 25$, sehingga klaim terbantah",
+      "distraktor": [
+        {
+          "teks": "$(x, y) = (0, 7)$",
+          "alasan": "kedua ruas bernilai 49, klaim justru terpenuhi sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$(x, y) = (5, 0)$",
+          "alasan": "kedua ruas bernilai 25, klaim justru terpenuhi"
+        },
+        {
+          "teks": "$(x, y) = (0, 0)$",
+          "alasan": "kedua ruas bernilai 0, klaim terpenuhi"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus membuat kedua ruas berbeda. Untuk $(0,7)$, $(5,0)$, dan $(0,0)$ kedua ruas sama. Untuk $(3,4)$: $49 \\neq 25$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "kutipan": "bilangan berpangkat yang dipangkatkan dapat disederhanakan dengan mengalikan pangkat dari bilangan tersebut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan penyederhanaan",
+      "alasan_level": "menelusuri langkah yang salah pada sifat perpangkatan lalu menentukan hasil yang benar",
+      "stimulus": null,
+      "pertanyaan": "Andi menyederhanakan $(2^{3})^{4} \\times 2^{2}$ sebagai berikut: $(2^{3})^{4} \\times 2^{2} = 2^{3+4} \\times 2^{2} = 2^{7} \\times 2^{2} = 2^{9}$. Hasil yang benar dan alasan kesalahan Andi ditunjukkan oleh ....",
+      "jawaban_benar": "$2^{14}$, karena $(2^{3})^{4} = 2^{12}$ (pangkat dikalikan, bukan dijumlahkan)",
+      "alasan_benar": "pangkat yang dipangkatkan dikalikan: $2^{12} \\times 2^{2} = 2^{14}$",
+      "distraktor": [
+        {
+          "teks": "$2^{24}$, karena ketiga pangkat seharusnya dikalikan $3 \\times 4 \\times 2$",
+          "alasan": "sifat perkalian pangkat dikira juga mengalikan pangkat"
+        },
+        {
+          "teks": "$2^{12}$, karena faktor $2^{2}$ tidak perlu dikalikan",
+          "alasan": "faktor terakhir diabaikan"
+        },
+        {
+          "teks": "$2^{9}$, karena penyelesaian Andi sudah benar",
+          "alasan": "tidak menyadari kesalahan pada langkah pertama"
+        }
+      ],
+      "pembahasan": "Langkah pertama Andi keliru: $(2^{3})^{4} = 2^{3 \\times 4} = 2^{12}$. Lalu $2^{12} \\times 2^{2} = 2^{12+2} = 2^{14}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "kutipan": "pembagian dua bilangan berpangkat dengan bilangan pokok yang sama dapat disederhanakan dengan mengurangkan pangkat bilangan yang dibagi dengan pangkat bilangan yang membagi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan pangkat negatif",
+      "alasan_level": "menemukan kesalahan tanda pada pengurangan pangkat negatif lalu memilih nilai yang benar",
+      "stimulus": null,
+      "pertanyaan": "Rani menyederhanakan $\\frac{5^{-2}}{5^{-4}} = 5^{-2-4} = 5^{-6}$. Nilai yang benar dari $\\frac{5^{-2}}{5^{-4}}$ adalah ....",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "$5^{-2-(-4)} = 5^{2} = 25$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{15.625}$",
+          "alasan": "mengikuti pekerjaan Rani yang mengabaikan tanda negatif pada pengurang, $5^{-6}$"
+        },
+        {
+          "teks": "$\\frac{1}{25}$",
+          "alasan": "hanya pembilang $5^{-2}$ yang dihitung"
+        },
+        {
+          "teks": "$15.625$",
+          "alasan": "pangkat dijumlahkan menjadi $5^{6}$"
+        }
+      ],
+      "pembahasan": "Pembagian: pangkat pembilang dikurangi pangkat penyebut, $-2-(-4) = -2+4 = 2$. Jadi $5^{2} = 25$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "a n dinamakan bilangan berpangkat, a dinamakan bilangan pokok (basis), dan n disebut pangkat (eksponen)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "angka satuan bilangan berpangkat",
+      "alasan_level": "menalar pola angka satuan yang berulang tiap empat pangkat tanpa menghitung bilangan sebesarnya",
+      "stimulus": null,
+      "pertanyaan": "Angka satuan dari bilangan $7^{2024}$ adalah ....",
+      "jawaban_benar": "1",
+      "alasan_benar": "angka satuan $7^{n}$ berulang 7, 9, 3, 1 tiap 4 pangkat; $2024$ habis dibagi 4 sehingga angka satuannya 1",
+      "distraktor": [
+        {
+          "teks": "7",
+          "alasan": "mengira angka satuan selalu sama dengan angka satuan bilangan pokok"
+        },
+        {
+          "teks": "9",
+          "alasan": "salah memetakan sisa pembagian pangkat dengan 4 pada pola 7, 9, 3, 1"
+        },
+        {
+          "teks": "3",
+          "alasan": "salah memetakan sisa pembagian pangkat dengan 4 pada pola 7, 9, 3, 1"
+        }
+      ],
+      "pembahasan": "$7^{1}, 7^{2}, 7^{3}, 7^{4}$ berangka satuan 7, 9, 3, 1 lalu berulang. Karena $2024 = 4 \\times 506$, angka satuan $7^{2024}$ sama dengan $7^{4}$, yaitu 1.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "kutipan": "perkalian dua bilangan berpangkat dengan bilangan pokok yang sama dapat disederhanakan dengan menjumlahkan pangkat dari kedua bilangan berpangkat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "angka satuan bilangan berpangkat",
+      "alasan_level": "menalar pola angka satuan dua bilangan berpangkat lalu menjumlahkannya",
+      "stimulus": null,
+      "pertanyaan": "Angka satuan dari bilangan $3^{50} + 2^{50}$ adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "$3^{n}$ berangka satuan 3, 9, 7, 1 dan $2^{n}$ berangka satuan 2, 4, 8, 6; untuk $n = 50$ (sisa 2 dibagi 4) angka satuannya 9 dan 4, jumlahnya 13 sehingga satuannya 3",
+      "distraktor": [
+        {
+          "teks": "7",
+          "alasan": "kedua pangkat dikira habis dibagi 4 sehingga satuannya 1 dan 6"
+        },
+        {
+          "teks": "5",
+          "alasan": "satuan $2^{50}$ dikira 6 sehingga $9 + 6 = 15$"
+        },
+        {
+          "teks": "1",
+          "alasan": "satuan $2^{50}$ dikira 2 sehingga $9 + 2 = 11$"
+        }
+      ],
+      "pembahasan": "$50 = 4 \\times 12 + 2$. Satuan $3^{50}$ sama dengan $3^{2}$ yaitu 9; satuan $2^{50}$ sama dengan $2^{2}$ yaitu 4. $9 + 4 = 13$, satuannya 3.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "kutipan": "perkalian dua bilangan berpangkat dengan bilangan pokok yang sama dapat disederhanakan dengan menjumlahkan pangkat dari kedua bilangan berpangkat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak digit bilangan berpangkat",
+      "alasan_level": "mengubah $2^{10} \\times 5^{12}$ menjadi 25 dikali pangkat sepuluh untuk menghitung banyak angka tanpa menghitung nilai",
+      "stimulus": null,
+      "pertanyaan": "Banyak angka (digit) pada bilangan $2^{10} \\times 5^{12}$ adalah ....",
+      "jawaban_benar": "12",
+      "alasan_benar": "$2^{10} \\times 5^{12} = (2 \\times 5)^{10} \\times 5^{2} = 25 \\times 10^{10}$, yaitu 25 diikuti 10 angka nol sehingga 12 angka",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "hanya menghitung banyak nol dari $10^{10}$"
+        },
+        {
+          "teks": "11",
+          "alasan": "mengira $25 \\times 10^{10}$ hanya mempunyai satu angka di depan nol"
+        },
+        {
+          "teks": "22",
+          "alasan": "menjumlahkan kedua pangkat 10 dan 12"
+        }
+      ],
+      "pembahasan": "Pecah $5^{12} = 5^{10} \\times 5^{2}$. Maka $2^{10} \\times 5^{10} \\times 25 = 10^{10} \\times 25 = 250.000.000.000$, yang terdiri atas 12 angka.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "kutipan": "bilangan berpangkat yang dipangkatkan dapat disederhanakan dengan mengalikan pangkat dari bilangan tersebut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "membandingkan bilangan berpangkat besar",
+      "alasan_level": "menyamakan bilangan pokok menjadi 2 lalu membandingkan pangkat tanpa menghitung nilai besar",
+      "stimulus": null,
+      "pertanyaan": "Bilangan terbesar di antara $4^{25}$, $8^{17}$, $16^{13}$, dan $32^{9}$ adalah ....",
+      "jawaban_benar": "$16^{13}$",
+      "alasan_benar": "semua dinyatakan basis 2: $2^{50}$, $2^{51}$, $2^{52}$, $2^{45}$; pangkat terbesar $2^{52}$",
+      "distraktor": [
+        {
+          "teks": "$4^{25}$",
+          "alasan": "mengira pangkat terbesar (25) menghasilkan bilangan terbesar, padahal nilainya $2^{50}$"
+        },
+        {
+          "teks": "$8^{17}$",
+          "alasan": "nilainya $2^{51}$, lebih kecil dari $2^{52}$"
+        },
+        {
+          "teks": "$32^{9}$",
+          "alasan": "bilangan pokok terbesar dikira menghasilkan nilai terbesar, padahal $32^{9} = 2^{45}$"
+        }
+      ],
+      "pembahasan": "$4^{25} = 2^{50}$, $8^{17} = 2^{51}$, $16^{13} = 2^{52}$, $32^{9} = 2^{45}$. Terbesar adalah $2^{52} = 16^{13}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "kutipan": "pembagian dua bilangan berpangkat dengan bilangan pokok yang sama dapat disederhanakan dengan mengurangkan pangkat bilangan yang dibagi dengan pangkat bilangan yang membagi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat ganda pada eksponen",
+      "alasan_level": "menyatakan batas pertidaksamaan sebagai pangkat 2 lalu menghitung bilangan bulat di antaranya, termasuk batas yang sama",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan bulat $n$ yang memenuhi $\\frac{1}{64} < 2^{n} \\leq 32$ adalah ....",
+      "jawaban_benar": "11",
+      "alasan_benar": "$\\frac{1}{64} = 2^{-6}$ dan $32 = 2^{5}$, sehingga $-6 < n \\leq 5$ dan $n = -5, -4, \\ldots, 5$ ada 11 bilangan",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "batas atas 5 tidak ikut dihitung padahal tandanya $\\leq$"
+        },
+        {
+          "teks": "12",
+          "alasan": "batas bawah $-6$ ikut dihitung padahal tandanya $<$"
+        },
+        {
+          "teks": "6",
+          "alasan": "hanya menghitung $n$ tidak negatif, yaitu $0$ sampai $5$"
+        }
+      ],
+      "pembahasan": "$2^{-6} < 2^{n} \\leq 2^{5}$ berarti $-6 < n \\leq 5$. Bilangan bulatnya $-5$ sampai $5$, yaitu $5 + 1 + 5 = 11$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "kutipan": "bilangan berpangkat yang dipangkatkan dapat disederhanakan dengan mengalikan pangkat dari bilangan tersebut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter pangkat",
+      "alasan_level": "menggabungkan syarat $8^{x} = 2^{k}$ dengan $x$ bulat dan $k$ lebih dari 10",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat $k$ terkecil yang membuat $8^{x} = 2^{k}$ dengan $x$ bilangan bulat dan $k > 10$ adalah ....",
+      "jawaban_benar": "12",
+      "alasan_benar": "$8^{x} = 2^{3x}$ sehingga $k = 3x$ kelipatan 3; kelipatan 3 terkecil yang lebih dari 10 adalah 12",
+      "distraktor": [
+        {
+          "teks": "11",
+          "alasan": "hanya memenuhi $k > 10$ tetapi bukan kelipatan 3 sehingga $x$ tidak bulat"
+        },
+        {
+          "teks": "9",
+          "alasan": "kelipatan 3 tetapi tidak memenuhi $k > 10$"
+        },
+        {
+          "teks": "4",
+          "alasan": "yang dijawab adalah nilai $x$, bukan $k$"
+        }
+      ],
+      "pembahasan": "$8^{x} = (2^{3})^{x} = 2^{3x}$ jadi $k = 3x$. $k$ harus kelipatan 3 dan $> 10$. Kelipatan 3 terkecil: 12 (dengan $x = 4$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "a n dinamakan bilangan berpangkat, a dinamakan bilangan pokok (basis), dan n disebut pangkat (eksponen)"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang bentuk pangkat bernilai tertentu",
+      "alasan_level": "mencocokkan pasangan basis dan pangkat bulat agar bernilai $\\frac{1}{81}$, memerlukan penalaran pangkat negatif",
+      "stimulus": null,
+      "pertanyaan": "Pasangan bilangan pokok positif dan pangkat bulat $(a, n)$ yang membuat $a^{n} = \\frac{1}{81}$ adalah ....",
+      "jawaban_benar": "$(a, n) = (3, -4)$",
+      "alasan_benar": "$3^{-4} = \\frac{1}{3^{4}} = \\frac{1}{81}$",
+      "distraktor": [
+        {
+          "teks": "$(a, n) = (3, 4)$",
+          "alasan": "pangkat negatif dilupakan sehingga hasilnya 81"
+        },
+        {
+          "teks": "$(a, n) = (4, -3)$",
+          "alasan": "bilangan pokok dan pangkat tertukar, $4^{-3} = \\frac{1}{64}$"
+        },
+        {
+          "teks": "$(a, n) = (9, -4)$",
+          "alasan": "basis salah, $9^{-4} = \\frac{1}{6.561}$"
+        }
+      ],
+      "pembahasan": "$\\frac{1}{81} = \\frac{1}{3^{4}} = 3^{-4}$. Pasangan yang cocok adalah $a = 3$ dan $n = -4$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "kutipan": "perkalian dua bilangan berpangkat dengan bilangan pokok yang sama dapat disederhanakan dengan menjumlahkan pangkat dari kedua bilangan berpangkat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memeriksa satu per satu empat set nilai pada klaim sifat pangkat tanpa kehilangan kasus khusus",
+      "stimulus": null,
+      "pertanyaan": "Klaim: $a^{m} \\times b^{n} = (ab)^{m+n}$ berlaku untuk semua bilangan real $a$, $b$ dan bilangan bulat $m$, $n$. Set nilai $(a, b, m, n)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$(a, b, m, n) = (2, 3, 2, 2)$",
+      "alasan_benar": "$2^{2} \\times 3^{2} = 36$ sedangkan $(2 \\times 3)^{4} = 1.296$",
+      "distraktor": [
+        {
+          "teks": "$(a, b, m, n) = (1, 1, 3, 4)$",
+          "alasan": "kedua ruas bernilai 1, klaim terpenuhi"
+        },
+        {
+          "teks": "$(a, b, m, n) = (1, 5, 0, 3)$",
+          "alasan": "kedua ruas bernilai 125, klaim terpenuhi"
+        },
+        {
+          "teks": "$(a, b, m, n) = (4, \\frac{1}{4}, 2, 2)$",
+          "alasan": "kedua ruas bernilai 1 karena $ab = 1$, klaim terpenuhi"
+        }
+      ],
+      "pembahasan": "Sifat $a^{m} \\times a^{n} = a^{m+n}$ hanya untuk bilangan pokok sama. Untuk $(2,3,2,2)$: $36 \\neq 1.296$. Tiga set lainnya kebetulan membuat kedua ruas sama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "kutipan": "perkalian dua bilangan berpangkat dengan bilangan pokok yang sama dapat disederhanakan dengan menjumlahkan pangkat dari kedua bilangan berpangkat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim penjumlahan pangkat",
+      "alasan_level": "menilai klaim dengan menyederhanakan $2^{n} + 2^{n}$ menjadi $2^{n+1}$ lalu mencari $n$ yang membuat klaim benar",
+      "stimulus": null,
+      "pertanyaan": "Ayu menyatakan bahwa $2^{n} + 2^{n} = 2^{2n}$. Penilaian yang paling tepat tentang pernyataan Ayu adalah ....",
+      "jawaban_benar": "benar hanya untuk $n = 1$, karena $2^{n} + 2^{n} = 2^{n+1}$",
+      "alasan_benar": "$2^{n} + 2^{n} = 2 \\cdot 2^{n} = 2^{n+1}$; sama dengan $2^{2n}$ hanya jika $n + 1 = 2n$, yaitu $n = 1$",
+      "distraktor": [
+        {
+          "teks": "benar untuk semua bilangan bulat $n$, karena pangkat dijumlahkan",
+          "alasan": "sifat penjumlahan pangkat dikira berlaku pada penjumlahan bilangan berpangkat"
+        },
+        {
+          "teks": "benar hanya untuk $n = 2$, karena $2 + 2 = 2 \\times 2$",
+          "alasan": "mencocokkan $n$ dari $2 + 2 = 2 \\times 2$ padahal pangkatnya yang diperiksa"
+        },
+        {
+          "teks": "salah untuk semua bilangan bulat $n$, karena kedua ruas selalu berbeda",
+          "alasan": "tidak memeriksa kasus $n = 1$ ($4 = 4$)"
+        }
+      ],
+      "pembahasan": "$2^{n} + 2^{n} = 2^{n+1}$. Persamaan $n + 1 = 2n$ memberi $n = 1$: $2 + 2 = 4 = 2^{2}$. Untuk $n = 2$: $8 \\neq 16$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "setiap bilangan yang ada dalam kurung masing-masing dipangkatkan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim tanda pangkat",
+      "alasan_level": "membedakan $(-2)^{n}$ dan $-2^{n}$ menurut ganjil-genapnya pangkat untuk menilai klaim",
+      "stimulus": null,
+      "pertanyaan": "Bimo menyatakan bahwa $(-2)^{n} = -2^{n}$ untuk bilangan bulat $n$. Penilaian yang paling tepat adalah ....",
+      "jawaban_benar": "benar hanya untuk $n$ ganjil",
+      "alasan_benar": "untuk $n$ ganjil $(-2)^{n}$ negatif dan sama dengan $-(2^{n})$; untuk $n$ genap ruas kiri positif sedangkan ruas kanan negatif",
+      "distraktor": [
+        {
+          "teks": "benar untuk semua bilangan bulat $n$",
+          "alasan": "kurung diabaikan sehingga dianggap sama"
+        },
+        {
+          "teks": "benar hanya untuk $n$ genap",
+          "alasan": "ganjil dan genap tertukar"
+        },
+        {
+          "teks": "salah untuk semua bilangan bulat $n$",
+          "alasan": "tidak memeriksa pangkat ganjil seperti $n = 3$ ($-8 = -8$)"
+        }
+      ],
+      "pembahasan": "$(-2)^{3} = -8 = -2^{3}$ (sama), tetapi $(-2)^{2} = 4$ sedangkan $-2^{2} = -4$ (beda). Jadi hanya untuk $n$ ganjil.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "kutipan": "pembagian dua bilangan berpangkat dengan bilangan pokok yang sama dapat disederhanakan dengan mengurangkan pangkat bilangan yang dibagi dengan pangkat bilangan yang membagi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat ganda pada eksponen",
+      "alasan_level": "mengubah pembagian pangkat menjadi pertidaksamaan pada pangkat lalu memilih bilangan bulat terkecil yang memenuhi",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat positif $n$ terkecil yang membuat $\\frac{3^{20}}{3^{n}} < 100$ adalah ....",
+      "jawaban_benar": "16",
+      "alasan_benar": "$\\frac{3^{20}}{3^{n}} = 3^{20-n}$; $3^{4} = 81 < 100$ dan $3^{5} = 243 > 100$ sehingga $20 - n \\leq 4$ dan $n \\geq 16$",
+      "distraktor": [
+        {
+          "teks": "15",
+          "alasan": "$3^{5} = 243$ yang lebih dari 100 dianggap memenuhi"
+        },
+        {
+          "teks": "17",
+          "alasan": "memenuhi syarat tetapi bukan yang terkecil"
+        },
+        {
+          "teks": "4",
+          "alasan": "pangkat hasil (4) dikira sebagai nilai $n$"
+        }
+      ],
+      "pembahasan": "$3^{20-n} < 100$ berlaku bila $20 - n \\leq 4$, yaitu $n \\geq 16$. Nilai terkecil 16 ($3^{4} = 81$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "a n dinamakan bilangan berpangkat, a dinamakan bilangan pokok (basis), dan n disebut pangkat (eksponen)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pertumbuhan melewati batas",
+      "alasan_level": "memodelkan pertumbuhan tiga kali lipat lalu mencari pangkat pertama yang melampaui batas, bukan sekadar menghitung hasil",
+      "stimulus": null,
+      "pertanyaan": "Awalnya ada 1 bakteri, dan banyaknya menjadi 3 kali lipat setiap jam. Bilangan bulat $t$ terkecil sehingga setelah $t$ jam banyak bakteri lebih dari $1.000.000$ adalah ....",
+      "jawaban_benar": "13",
+      "alasan_benar": "banyak bakteri $3^{t}$; $3^{12} = 531.441$ belum melebihi $1.000.000$, sedangkan $3^{13} = 1.594.323$ sudah melebihi",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "$3^{12} = 531.441$ dikira cukup mendekati $1.000.000$"
+        },
+        {
+          "teks": "14",
+          "alasan": "memenuhi tetapi bukan yang terkecil"
+        },
+        {
+          "teks": "6",
+          "alasan": "membagi 12 dengan 2 dan mengira banyaknya 1.000.000 cukup dengan $3^{6}$ ($729$)"
+        }
+      ],
+      "pembahasan": "$3^{t} > 1.000.000$. $3^{10} = 59.049$, $3^{11} = 177.147$, $3^{12} = 531.441$, $3^{13} = 1.594.323$. Jadi $t = 13$.",
+      "catatan": null
+    }
+  ]
+}
