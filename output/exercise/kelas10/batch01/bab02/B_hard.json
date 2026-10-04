@@ -1,0 +1,507 @@
+{
+  "book": "kelas10",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Acuan siswa bersih di p66-p80 sudah dipakai easy/medium (sisanya dibuang karena ambigu atau rusak); materi hanya deret aritmetika, geometri, dan tak hingga tanpa sigma. Hard bermakna hanya lewat penalaran (klaim, penyangkal, parameter, perbandingan, perancangan), hanya sekitar 15 soal yang tidak nyaris kembar dengan easy/medium; tidak dipaksa sampai 20.",
+  "soal": [
+    {
+      "id": "kelas10-b02-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Deret geometri tak hingga adalah deret geometri yang memiliki banyak sekali suku (tak terhingga banyaknya)."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi pernyataan konvergensi",
+      "alasan_level": "mengevaluasi empat klaim kekonvergenan dengan menghitung rasio tiap deret dan memeriksa $|r|<1$",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan berikut yang benar adalah ....",
+      "jawaban_benar": "Deret $2+\\frac{4}{3}+\\frac{8}{9}+\\dots$ konvergen dengan jumlah $6$",
+      "alasan_benar": "$r=\\frac{2}{3}$ sehingga $|r|<1$ dan $S_\\infty=\\frac{2}{1-\\frac{2}{3}}=6$",
+      "distraktor": [
+        {
+          "teks": "Deret $3+6+12+\\dots$ konvergen karena semua sukunya positif",
+          "alasan": "mengira suku positif cukup untuk konvergen, padahal $r=2$"
+        },
+        {
+          "teks": "Deret $8-12+18-27+\\dots$ konvergen karena rasionya negatif",
+          "alasan": "mengira rasio negatif selalu konvergen, padahal $r=-\frac{3}{2}$ dan $|r|>1$"
+        },
+        {
+          "teks": "Deret $5+5+5+\\dots$ konvergen dengan jumlah $5$",
+          "alasan": "rasio $1$ sehingga jumlah terus bertambah (divergen)"
+        }
+      ],
+      "pembahasan": "Syarat konvergen: $|r|<1$. Deret pertama $r=\\frac{2}{3}$ (konvergen, $S_\\infty=6$). Deret kedua $r=2$, ketiga $r=-\\frac{3}{2}$, keempat $r=1$; ketiganya divergen.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Deret geometri tak hingga adalah deret geometri yang memiliki banyak sekali suku (tak terhingga banyaknya)."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal klaim",
+      "alasan_level": "mencari contoh penyangkal dengan menghitung $S_\\infty$ keempat deret dan membandingkan dengan suku pertama",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyatakan: \"Untuk setiap deret geometri tak hingga yang konvergen, jumlahnya selalu lebih besar daripada suku pertamanya.\" Deret yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+      "jawaban_benar": "$8-4+2-1+\\dots$",
+      "alasan_benar": "$r=-\\frac{1}{2}$, $S_\\infty=\\frac{8}{1+\\frac{1}{2}}=\\frac{16}{3}<8$, sehingga jumlahnya lebih kecil daripada suku pertama",
+      "distraktor": [
+        {
+          "teks": "$8+4+2+1+\\dots$",
+          "alasan": "$S_\\infty=16>8$, justru sesuai dengan klaim (bukan penyangkal)"
+        },
+        {
+          "teks": "$9+3+1+\\frac{1}{3}+\\dots$",
+          "alasan": "$S_\\infty=\\frac{27}{2}>9$, sesuai klaim"
+        },
+        {
+          "teks": "$12+6+3+\\frac{3}{2}+\\dots$",
+          "alasan": "$S_\\infty=24>12$, sesuai klaim"
+        }
+      ],
+      "pembahasan": "Penyangkal harus konvergen dengan $S_\\infty\\le a$. Hanya rasio negatif yang mungkin: $8-4+2-\\dots$ memberi $S_\\infty=\\frac{16}{3}<8$. Tiga deret lain berrasio positif sehingga $S_\\infty=\\frac{a}{1-r}>a$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan banyak suku",
+      "alasan_level": "memeriksa kesalahan pencacahan banyak suku (lupa $+1$) lalu menghitung ulang jumlah",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menghitung jumlah deret $5+8+11+\\dots+101$. Ia menentukan banyak suku dengan $n=\\frac{101-5}{3}=32$ lalu memperoleh jumlah $1.696$. Jumlah deret yang benar adalah ....",
+      "jawaban_benar": "$1.749$",
+      "alasan_benar": "banyak suku $n=\\frac{101-5}{3}+1=33$ sehingga $S_{33}=\\frac{33}{2}(5+101)=1.749$",
+      "distraktor": [
+        {
+          "teks": "$1.696$",
+          "alasan": "hasil siswa: lupa menambah 1 pada banyak suku (32 suku)"
+        },
+        {
+          "teks": "$1.802$",
+          "alasan": "memakai 34 suku (menambah 1 dua kali)"
+        },
+        {
+          "teks": "$3.498$",
+          "alasan": "lupa mengalikan dengan $\\frac{1}{2}$"
+        }
+      ],
+      "pembahasan": "Dari $U_n=5+3(n-1)=101$ diperoleh $n=33$. $S_{33}=\\frac{33}{2}(5+101)=33\\cdot53=1.749$. Siswa lupa bahwa $\\frac{101-5}{3}$ menghitung jumlah selisih, bukan jumlah suku.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tiga bilangan deret aritmetika",
+      "alasan_level": "memisalkan tiga bilangan sebagai $a-b$, $a$, $a+b$, memakai jumlah untuk $a$ dan hasil kali untuk $b$",
+      "stimulus": null,
+      "pertanyaan": "Tiga bilangan bulat positif membentuk deret aritmetika. Jumlah ketiga bilangan itu 21 dan hasil kalinya 280. Bilangan terbesar di antara ketiganya adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "$3a=21$ sehingga tengah $7$; $7(49-b^2)=280$ memberi $b^2=9$; bilangan $4,7,10$",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "menjawab bilangan tengah"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "menjawab bilangan terkecil"
+        },
+        {
+          "teks": "$40$",
+          "alasan": "menjawab hasil kali bilangan terkecil dan terbesar ($4\\cdot10$)"
+        }
+      ],
+      "pembahasan": "Misalkan $a-b$, $a$, $a+b$. Jumlah $3a=21 \\Rightarrow a=7$. Hasil kali $7(49-b^2)=280 \\Rightarrow b^2=9$, $b=\\pm3$. Bilangannya $4,7,10$ sehingga yang terbesar $10$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Sehingga, rumus untuk menghitung jumlah suku-suku deret geometri adalah:"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "tiga bilangan deret geometri",
+      "alasan_level": "memisalkan tiga bilangan $\\frac{a}{r}$, $a$, $ar$, memakai hasil kali untuk $a$, lalu menyelesaikan persamaan kuadrat untuk $r$",
+      "stimulus": null,
+      "pertanyaan": "Tiga bilangan positif membentuk deret geometri. Jumlah ketiga bilangan itu 26 dan hasil kalinya 216. Selisih bilangan terbesar dan bilangan terkecil adalah ....",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "$a^3=216$ sehingga tengah $6$; $\\frac{6}{r}+6r=20$ memberi $3r^2-10r+3=0$, $r=3$ atau $\\frac{1}{3}$; bilangan $2,6,18$, selisih $16$",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "selisih bilangan terbesar dan bilangan tengah ($18-6$)"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "selisih bilangan tengah dan terkecil ($6-2$)"
+        },
+        {
+          "teks": "$20$",
+          "alasan": "menjumlahkan bilangan terbesar dan terkecil, bukan selisih"
+        }
+      ],
+      "pembahasan": "Misalkan $\\frac{a}{r}$, $a$, $ar$. Hasil kali $a^3=216 \\Rightarrow a=6$. Jumlah: $\\frac{6}{r}+6+6r=26 \\Rightarrow 3r^2-10r+3=0 \\Rightarrow r=3$ atau $\\frac{1}{3}$. Bilangannya $2,6,18$ sehingga selisih $18-2=16$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Deret geometri tak hingga adalah deret geometri yang memiliki banyak sekali suku (tak terhingga banyaknya)."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat parameter konvergen (rasio pecahan)",
+      "alasan_level": "menyelesaikan $|r|<1$ untuk rasio bentuk pecahan dengan memperhatikan rasio negatif",
+      "stimulus": null,
+      "pertanyaan": "Deret geometri tak hingga $1+\\frac{x}{x+3}+\\left(\\frac{x}{x+3}\\right)^2+\\dots$ konvergen untuk semua nilai $x$ yang memenuhi ....",
+      "jawaban_benar": "$x>-\\frac{3}{2}$",
+      "alasan_benar": "$\\left|\\frac{x}{x+3}\\right|<1$ berarti $x^2<(x+3)^2$ sehingga $6x+9>0$, jadi $x>-\\frac{3}{2}$",
+      "distraktor": [
+        {
+          "teks": "$x>0$",
+          "alasan": "hanya memakai $0<r<1$ sehingga mengabaikan rasio negatif (mis. $x=-1$ memberi $r=-\\frac{1}{2}$ konvergen)"
+        },
+        {
+          "teks": "$x>-3$",
+          "alasan": "hanya memastikan penyebut positif; $x=-2$ memberi $r=-2$ sehingga divergen"
+        },
+        {
+          "teks": "$x<-\\frac{3}{2}$",
+          "alasan": "arah pertidaksamaan terbalik"
+        }
+      ],
+      "pembahasan": "Syarat $|r|<1$ dengan $r=\\frac{x}{x+3}$: kuadratkan $x^2<(x+3)^2 \\Rightarrow 0<6x+9 \\Rightarrow x>-\\frac{3}{2}$. Uji $x=-1$: $r=-\\frac{1}{2}$ konvergen; $x=-2$: $r=-2$ divergen.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "dua deret aritmetika sama jumlahnya",
+      "alasan_level": "menyamakan dua rumus $S_n$ aritmetika lalu menyelesaikan $n$, dengan mengecualikan $n=0$",
+      "stimulus": null,
+      "pertanyaan": "Deret $P$: $5+11+17+\\dots$ dan deret $Q$: $47+49+51+\\dots$ keduanya aritmetika. Banyak suku $n$ (bilangan asli) sehingga jumlah $n$ suku pertama kedua deret sama adalah ....",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "$\\frac{n}{2}(10+6(n-1))=\\frac{n}{2}(94+2(n-1))$ memberi $4(n-1)=84$, $n=22$",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "memakai $n-1=21$ sebagai $n$"
+        },
+        {
+          "teks": "$23$",
+          "alasan": "menambah 1 pada $n-1=21$ dua kali"
+        },
+        {
+          "teks": "$11$",
+          "alasan": "membagi 22 dengan 2 karena mengira rumus memuat $\\frac{n}{2}$ pada hasil akhir"
+        }
+      ],
+      "pembahasan": "$S_n(P)=\\frac{n}{2}(10+6(n-1))$ dan $S_n(Q)=\\frac{n}{2}(94+2(n-1))$. Samakan dan bagi $\\frac{n}{2}$ (karena $n>0$): $10+6(n-1)=94+2(n-1) \\Rightarrow 4(n-1)=84 \\Rightarrow n=22$. Cek: $S_{22}=1.496$ untuk keduanya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah dua deret aritmetika seletak",
+      "alasan_level": "menyadari penjumlahan suku seletak dua barisan aritmetika membentuk barisan aritmetika baru lalu menjumlahkannya",
+      "stimulus": null,
+      "pertanyaan": "Barisan $P$: $2,5,8,\\dots$ dan barisan $Q$: $40,36,32,\\dots$ keduanya aritmetika. Barisan $R$ dibentuk dengan menjumlahkan suku-suku yang seletak pada $P$ dan $Q$ ($R_1=42$, $R_2=41$, dan seterusnya). Jumlah 20 suku pertama $R$ adalah ....",
+      "jawaban_benar": "$650$",
+      "alasan_benar": "$R_n=(2+3(n-1))+(40-4(n-1))=42-(n-1)$ aritmetika dengan $a=42$, $b=-1$; $S_{20}=\\frac{20}{2}(84-19)=650$",
+      "distraktor": [
+        {
+          "teks": "$2.170$",
+          "alasan": "beda $R$ dikira $3+4=7$ (tanda beda $Q$ diabaikan)"
+        },
+        {
+          "teks": "$1.300$",
+          "alasan": "lupa mengalikan dengan $\\frac{1}{2}$"
+        },
+        {
+          "teks": "$672$",
+          "alasan": "menjumlahkan 21 suku, bukan 20"
+        }
+      ],
+      "pembahasan": "Beda $R$ adalah $3+(-4)=-1$, suku pertama $2+40=42$. $S_{20}=\\frac{20}{2}(2\\cdot42+19\\cdot(-1))=10\\cdot65=650$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Deret geometri tak hingga adalah deret geometri yang memiliki banyak sekali suku (tak terhingga banyaknya)."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang deret dengan batas jumlah",
+      "alasan_level": "merancang rasio $\\frac{1}{m}$ dengan menyelesaikan pertidaksamaan tegas $S_\\infty>12{,}5$ lalu memilih bilangan bulat terbesar",
+      "stimulus": null,
+      "pertanyaan": "Suatu deret geometri tak hingga memiliki suku pertama 12 dan rasio $\\frac{1}{m}$ dengan $m$ bilangan bulat, $m>1$. Nilai $m$ terbesar sehingga jumlah deret tersebut lebih dari $12{,}5$ adalah ....",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "$S_\\infty=\\frac{12}{1-\\frac{1}{m}}=\\frac{12m}{m-1}>12{,}5$ memberi $m<25$, bilangan bulat terbesar $24$",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "memakai batas tanpa tanda tegas: $m=25$ memberi jumlah tepat $12{,}5$, bukan lebih"
+        },
+        {
+          "teks": "$26$",
+          "alasan": "salah arah: $m=26$ memberi $S_\\infty=\\frac{312}{25}=12{,}48<12{,}5$"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "membagi batas: menyederhanakan menjadi $m<12{,}5$"
+        }
+      ],
+      "pembahasan": "$\\frac{12m}{m-1}>12{,}5 \\Rightarrow 24m>25m-25 \\Rightarrow m<25$. Karena $m$ bulat, $m\\le24$. Cek $m=24$: $\\frac{288}{23}\\approx12{,}52>12{,}5$; $m=25$: tepat $12{,}5$ (tidak memenuhi).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 68,
+        "kutipan": "Bentuk penjumlahan dari barisan bilangan akan membentuk deret bilangan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rumus $S_n$ yang menghasilkan deret aritmetika",
+      "alasan_level": "menguji empat rumus $S_n$ dengan $U_n=S_n-S_{n-1}$ untuk melihat mana yang membentuk beda tetap",
+      "stimulus": null,
+      "pertanyaan": "Rumus jumlah $n$ suku pertama berikut yang menghasilkan deret aritmetika adalah ....",
+      "jawaban_benar": "$S_n=2n^2-3n$",
+      "alasan_benar": "$U_1=-1$, $U_2=3$, $U_3=7$, dan seterusnya dengan beda tetap $4$",
+      "distraktor": [
+        {
+          "teks": "$S_n=2n^2-3n+1$",
+          "alasan": "$U_1=0$, $U_2=3$, $U_3=7$: beda $3$ lalu $4$ (konstanta merusak suku pertama)"
+        },
+        {
+          "teks": "$S_n=3^n-1$",
+          "alasan": "menghasilkan $2,6,18,\\dots$ (geometri, bukan aritmetika)"
+        },
+        {
+          "teks": "$S_n=n^3+n$",
+          "alasan": "menghasilkan $2,8,20,\\dots$ dengan beda tidak tetap"
+        }
+      ],
+      "pembahasan": "Hitung $U_n=S_n-S_{n-1}$. Untuk $S_n=2n^2-3n$: $U_n=4n-5$ (beda tetap 4). Untuk $2n^2-3n+1$: $U_1=0$, $U_2=3$, $U_3=7$ (beda berubah). $3^n-1$: $2,6,18$. $n^3+n$: $2,8,20$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Deret geometri tak hingga adalah deret geometri yang memiliki banyak sekali suku (tak terhingga banyaknya)."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banding dua deret tak hingga",
+      "alasan_level": "menghitung $S_\\infty$ deret $P$, menetapkan $S_\\infty$ deret $Q$ dua kali lipat, lalu mencari rasio $Q$",
+      "stimulus": null,
+      "pertanyaan": "Deret $P$: $12+3+\\frac{3}{4}+\\dots$ adalah deret geometri tak hingga. Deret geometri tak hingga $Q$ memiliki suku pertama 9 dan jumlahnya dua kali jumlah deret $P$. Rasio deret $Q$ adalah ....",
+      "jawaban_benar": "$\\frac{23}{32}$",
+      "alasan_benar": "$S_P=\\frac{12}{1-\\frac{1}{4}}=16$, $S_Q=32=\\frac{9}{1-r}$ sehingga $1-r=\\frac{9}{32}$ dan $r=\\frac{23}{32}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{32}$",
+          "alasan": "mengira $r=1-r$ langsung, yaitu memberi $1-r$ sebagai rasio"
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "menggandakan rasio $P$ ($2\\cdot\\frac{1}{4}$)"
+        },
+        {
+          "teks": "$\\frac{41}{32}$",
+          "alasan": "tanda terbalik: $r=1+\\frac{9}{32}$ (rasio lebih dari 1 sehingga divergen)"
+        }
+      ],
+      "pembahasan": "$S_P=\\frac{12}{1-\\frac14}=16$ sehingga $S_Q=32$. $\\frac{9}{1-r}=32 \\Rightarrow 1-r=\\frac{9}{32} \\Rightarrow r=\\frac{23}{32}$ (memenuhi $|r|<1$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Sehingga, rumus untuk menghitung jumlah suku-suku deret geometri adalah:"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "banding jumlah geometri dan aritmetika",
+      "alasan_level": "menurunkan rumus $S_n$ aritmetika dan geometri lalu membandingkan nilai per $n$ untuk mencari $n$ terkecil",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika $4+10+16+\\dots$ dan deret geometri $4+8+16+\\dots$ dibandingkan jumlah $n$ suku pertamanya. Bilangan asli $n$ terkecil sehingga jumlah deret geometri lebih besar daripada jumlah deret aritmetika adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$S_n$ aritmetika $=n(3n+1)$, geometri $=4(2^n-1)$; pada $n=1,2,3$ geometri sama atau lebih kecil ($4,12,28$ lawan $4,14,30$), pada $n=4$: $60>52$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "$S_3$ geometri $=28$ masih lebih kecil dari aritmetika $30$"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "melewatkan $n=4$ yang sudah memenuhi"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "pada $n=1$ kedua jumlah sama ($4$), belum lebih besar"
+        }
+      ],
+      "pembahasan": "Aritmetika: $S_n=\\frac{n}{2}(8+6(n-1))=n(3n+1)$. Geometri ($r=2$): $S_n=4(2^n-1)$. $n=1$: $4,4$; $n=2$: $12,14$; $n=3$: $28,30$; $n=4$: $60,52$. Jadi $n=4$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Sehingga, rumus untuk menghitung jumlah suku-suku deret geometri adalah:"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan rasio negatif",
+      "alasan_level": "mengidentifikasi kesalahan memakai rasio positif pada deret berselang-seling lalu menghitung ulang $S_6$",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menghitung jumlah 6 suku pertama deret $243-81+27-9+\\dots$ dengan $r=\\frac{1}{3}$ sehingga memperoleh $364$. Jumlah 6 suku pertama yang benar adalah ....",
+      "jawaban_benar": "$182$",
+      "alasan_benar": "$r=-\\frac{1}{3}$ sehingga $S_6=\\frac{243\\left(1-\\frac{1}{729}\\right)}{1+\\frac{1}{3}}=182$",
+      "distraktor": [
+        {
+          "teks": "$364$",
+          "alasan": "hasil siswa: mengabaikan tanda negatif pada rasio"
+        },
+        {
+          "teks": "$183$",
+          "alasan": "hanya menjumlahkan 5 suku"
+        },
+        {
+          "teks": "$180$",
+          "alasan": "hanya menjumlahkan 4 suku"
+        }
+      ],
+      "pembahasan": "Rasio $\\frac{-81}{243}=-\\frac{1}{3}$. $S_6=\\frac{243(1-(-\\frac13)^6)}{1-(-\\frac13)}=\\frac{243\\cdot\\frac{728}{729}}{\\frac43}=182$. Cek: $243-81+27-9+3-1=182$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "nilai maksimum jumlah deret aritmetika",
+      "alasan_level": "menentukan suku terakhir yang masih positif pada deret berbeda negatif lalu menghitung jumlah maksimum",
+      "stimulus": null,
+      "pertanyaan": "Suatu deret aritmetika memiliki suku pertama 50 dan beda $-6$. Nilai terbesar yang dapat dicapai oleh jumlah $n$ suku pertama ($n$ bilangan asli) adalah ....",
+      "jawaban_benar": "$234$",
+      "alasan_benar": "$U_n=56-6n>0$ untuk $n\\le9$ ($U_9=2$, $U_{10}=-4$); $S_9=\\frac{9}{2}(100-48)=234$",
+      "distraktor": [
+        {
+          "teks": "$230$",
+          "alasan": "$S_{10}$: ikut menjumlahkan suku negatif $U_{10}=-4$"
+        },
+        {
+          "teks": "$232$",
+          "alasan": "$S_8$: berhenti satu suku terlalu cepat (suku positif $U_9=2$ belum ikut)"
+        },
+        {
+          "teks": "$468$",
+          "alasan": "lupa mengalikan dengan $\\frac{1}{2}$"
+        }
+      ],
+      "pembahasan": "$U_n=50-6(n-1)=56-6n$. Suku positif sampai $n=9$ ($U_9=2$), $U_{10}=-4$. Jumlah maksimum $S_9=\\frac{9}{2}(100-48)=234$; $S_8=232$, $S_{10}=230$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Deret geometri tak hingga adalah deret geometri yang memiliki banyak sekali suku (tak terhingga banyaknya)."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "dua kemungkinan suku pertama dari $S_\\infty$ dan $U_2$",
+      "alasan_level": "menyusun $\\frac{a}{1-r}=9$ dan $ar=2$, menyelesaikan persamaan kuadrat $r$, memeriksa $|r|<1$, memilih suku pertama terbesar",
+      "stimulus": null,
+      "pertanyaan": "Suatu deret geometri tak hingga konvergen dengan jumlah 9 dan suku kedua 2. Suku pertama terbesar yang mungkin adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$a=\\frac{2}{r}$ sehingga $9r^2-9r+2=0$, $r=\\frac{1}{3}$ atau $\\frac{2}{3}$; $a=6$ atau $3$ (keduanya konvergen)",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "mengambil rasio $\\frac{2}{3}$ saja (suku pertama yang lebih kecil)"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "memakai $a=S(1+r)$ dengan $r=\\frac{1}{3}$ (tanda tertukar)"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "mengira suku kedua sebagai suku pertama"
+        }
+      ],
+      "pembahasan": "$\\frac{a}{1-r}=9$ dan $ar=2$. Maka $\\frac{2}{r(1-r)}=9 \\Rightarrow 9r^2-9r+2=0 \\Rightarrow (3r-1)(3r-2)=0$. $r=\\frac13 \\Rightarrow a=6$; $r=\\frac23 \\Rightarrow a=3$. Keduanya $|r|<1$; yang terbesar $6$.",
+      "catatan": null
+    }
+  ]
+}

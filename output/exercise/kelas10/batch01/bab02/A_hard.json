@@ -1,0 +1,590 @@
+{
+  "book": "kelas10",
+  "bab_no": 2,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Acuan siswa subbab A (p53-p66) nyaris habis di easy/medium dan materi hanya barisan aritmetika dan geometri (rumus Un, beda, rasio); 17 soal hard orisinal yang berbeda penalaran (klaim, penyangkal, syarat jumlah/hasil kali, rancang, banding) sudah layak; tambahan akan nyaris kembar dengan medium.",
+  "soal": [
+    {
+      "id": "kelas10-b02-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Suatu barisan dengan beda atau selisih antara dua suku berurutan selalu tetap atau konstan disebut BARISAN ARITMETIKA"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal klaim beda tetap",
+      "alasan_level": "mengevaluasi klaim umum dan memeriksa tiap barisan untuk menemukan contoh yang memenuhi syarat tetapi melanggar kesimpulan",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyatakan: \"Jika selisih setiap dua suku berurutan pada empat suku pertama suatu barisan selalu sama, maka barisan itu pasti barisan aritmetika.\" Barisan manakah yang merupakan contoh penyangkal pernyataan tersebut? (Setiap barisan ditulis enam suku pertamanya.)",
+      "jawaban_benar": "$3, 6, 9, 12, 16, 20, \\ldots$",
+      "alasan_benar": "empat suku pertama berselisih 3, tetapi selisih berikutnya 4 dan 4 sehingga selisihnya tidak tetap; syarat terpenuhi, kesimpulan gagal",
+      "distraktor": [
+        {
+          "teks": "$3, 6, 9, 12, 15, 18, \\ldots$",
+          "alasan": "barisan aritmetika dengan beda 3; ini mendukung klaim, bukan menyangkalnya"
+        },
+        {
+          "teks": "$3, 6, 9, 13, 17, 21, \\ldots$",
+          "alasan": "selisih empat suku pertama 3, 3, 4 sehingga syarat klaim tidak terpenuhi"
+        },
+        {
+          "teks": "$2, 4, 8, 16, 32, 64, \\ldots$",
+          "alasan": "barisan geometri; selisih empat suku pertamanya 2, 4, 8 sehingga syarat klaim tidak terpenuhi"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus memenuhi syarat klaim (empat suku pertama berselisih sama) tetapi bukan aritmetika. Hanya $3, 6, 9, 12, 16, 20$ yang demikian: selisihnya $3, 3, 3, 4, 4$. Barisan aritmetika menuntut selisih tetap untuk semua suku berurutan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 62,
+        "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut BARISAN GEOMETRI"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim rasio negatif",
+      "alasan_level": "menguji beberapa pernyataan tentang kemonotonan barisan geometri berrasio negatif dan menghitung suku ke-7",
+      "stimulus": null,
+      "pertanyaan": "Diketahui barisan geometri dengan suku pertama $-3$ dan rasio $-2$. Pernyataan yang benar tentang barisan tersebut adalah ....",
+      "jawaban_benar": "Barisan tersebut tidak monoton (tidak selalu naik dan tidak selalu turun) dan $U_7 = -192$",
+      "alasan_benar": "suku-sukunya $-3, 6, -12, 24, \\ldots$ bergantian tanda; $U_7 = -3 \\times (-2)^6 = -192$",
+      "distraktor": [
+        {
+          "teks": "Barisan tersebut selalu turun karena rasionya negatif dan $U_7 = -192$",
+          "alasan": "menganggap rasio negatif berarti barisan turun, padahal tanda suku bergantian"
+        },
+        {
+          "teks": "Barisan tersebut tidak monoton dan $U_7 = 192$",
+          "alasan": "salah tanda: mengira $(-2)^6$ dikali $-3$ bernilai positif"
+        },
+        {
+          "teks": "Barisan tersebut tidak monoton dan $U_7 = 384$",
+          "alasan": "memakai pangkat $n$ bukan $n-1$: $-3 \times (-2)^7$"
+        }
+      ],
+      "pembahasan": "$U_1 = -3, U_2 = 6, U_3 = -12, U_4 = 24$: suku bergantian negatif dan positif sehingga tidak monoton. $U_7 = ar^{6} = -3 \\times 64 = -192$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 62,
+        "kutipan": "untuk mencari rasio dapat dengan membagi dua suku yang berurutan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "dua kemungkinan rasio",
+      "alasan_level": "dari dua suku diperoleh $r^4 = 16$ sehingga ada dua rasio; siswa harus menalar bahwa tanda tidak tunggal lalu membandingkan nilai $U_5$",
+      "stimulus": null,
+      "pertanyaan": "Pada suatu barisan geometri diketahui $U_2 = 6$ dan $U_6 = 96$. Tanda rasio barisan tidak diketahui. Selisih antara nilai terbesar dan nilai terkecil yang mungkin untuk $U_5$ adalah ....",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "$r^4 = 16$ sehingga $r = 2$ atau $r = -2$; $U_5 = U_2 r^3 = \\pm 48$; selisihnya $48 - (-48) = 96$",
+      "distraktor": [
+        {
+          "teks": "$48$",
+          "alasan": "hanya memakai rasio positif sehingga mengira $U_5$ tunggal"
+        },
+        {
+          "teks": "$0$",
+          "alasan": "menjumlahkan kedua kemungkinan $U_5$, bukan mencari selisihnya"
+        },
+        {
+          "teks": "$192$",
+          "alasan": "mengambil selisih memakai $U_6$ dan $-U_6$ (bukan $U_5$)"
+        }
+      ],
+      "pembahasan": "$U_6 / U_2 = r^4 = 16$ sehingga $r = \\pm 2$. Untuk $r = 2$: $U_5 = 6 \\times 8 = 48$; untuk $r = -2$: $U_5 = 6 \\times (-8) = -48$. Selisih $= 96$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Jadi, rumus umum menentukan suku ke- n pada barisan aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tiga bilangan aritmetika jumlah dan hasil kali",
+      "alasan_level": "memisalkan tiga bilangan simetris, memakai syarat jumlah dan hasil kali, lalu memilih beda sesuai syarat naik",
+      "stimulus": null,
+      "pertanyaan": "Tiga bilangan positif membentuk barisan aritmetika naik. Jumlah ketiga bilangan itu 21 dan hasil kalinya 280. Selisih bilangan terbesar dan bilangan terkecil adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "bilangan $7-b, 7, 7+b$ dengan $7(49 - b^2) = 280$ sehingga $b = 3$ (beda positif); bilangannya 4, 7, 10 dan selisih $10 - 4 = 6$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "mengambil beda $b$ sebagai selisih terbesar dan terkecil (padahal selisihnya $2b$)"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "mengambil bilangan terbesar sebagai jawaban"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "mengambil bilangan terkecil sebagai jawaban"
+        }
+      ],
+      "pembahasan": "Misalkan bilangannya $7-b, 7, 7+b$ (jumlah 21 sehingga suku tengah 7). Hasil kali: $7(49-b^2)=280$ sehingga $b^2 = 9$ dan $b = 3$ (naik). Bilangannya 4, 7, 10; selisih terbesar dan terkecil $= 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "kutipan": "Jadi, rumus umum menentukan suku ke-n pada barisan geometri adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tiga bilangan geometri jumlah dan hasil kali",
+      "alasan_level": "memakai suku tengah dari hasil kali, menyelesaikan persamaan kuadrat rasio, dan memilih rasio sesuai syarat naik",
+      "stimulus": null,
+      "pertanyaan": "Tiga bilangan positif membentuk barisan geometri naik. Jumlah ketiga bilangan itu 26 dan hasil kalinya 216. Jumlah bilangan pertama dan bilangan ketiga adalah ....",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "suku tengah $6$ (karena $6^3 = 216$), $6/r + 6 + 6r = 26$ memberi $r = 3$; bilangannya 2, 6, 18 sehingga $2 + 18 = 20$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "mengambil suku tengah sebagai jawaban"
+        },
+        {
+          "teks": "$18$",
+          "alasan": "mengambil bilangan terbesar saja"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "memakai rasio $\frac{1}{3}$ dan keliru menjumlahkan 2 dan 6"
+        }
+      ],
+      "pembahasan": "Misalkan $a/r, a, ar$ dengan $a^3 = 216$ sehingga $a = 6$. Dari $6/r + 6r = 20$ diperoleh $3r^2 - 10r + 3 = 0$ sehingga $r = 3$ atau $r = \\tfrac{1}{3}$; naik berarti $r = 3$. Bilangannya 2, 6, 18, jumlah pertama dan ketiga 20.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Jadi, rumus umum menentukan suku ke- n pada barisan aritmetika adalah"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 6,
+      "jenis_soal": "aritmetika menjadi geometri dengan syarat",
+      "alasan_level": "menggabungkan syarat aritmetika (jumlah) dan geometri (setelah penambahan) menjadi persamaan kuadrat beda lalu memilih beda positif",
+      "stimulus": null,
+      "pertanyaan": "Tiga bilangan membentuk barisan aritmetika dengan beda positif dan jumlah 24. Jika bilangan ketiga ditambah 4, ketiga bilangan itu membentuk barisan geometri. Bilangan terbesar pada barisan aritmetika semula adalah ....",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "bilangan $8-b, 8, 8+b$; $(8-b)(12+b) = 64$ memberi $b^2 + 4b - 32 = 0$ sehingga $b = 4$ (positif); bilangan terbesar $8 + 4 = 12$",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "mengambil bilangan ketiga setelah ditambah 4"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "mengambil suku tengah sebagai jawaban"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "mengambil bilangan terkecil sebagai jawaban"
+        }
+      ],
+      "pembahasan": "Suku tengah 8 karena jumlah 24. Barisan geometri: $8^2 = (8-b)(8+b+4)$, yaitu $64 = 96 - 4b - b^2$ sehingga $b^2 + 4b - 32 = 0$, $(b+8)(b-4)=0$. Beda positif $b = 4$: bilangan 4, 8, 12; bilangan terbesar 12.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "kutipan": "Jadi, rumus umum menentukan suku ke-n pada barisan geometri adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rekursi kali dua dengan hasil kali suku",
+      "alasan_level": "mengenali rekursi sebagai barisan geometri rasio 2, memakai syarat hasil kali dua suku untuk mendapat suku pertama, lalu menghitung suku jauh",
+      "stimulus": null,
+      "pertanyaan": "Suatu barisan memenuhi $U_{n+1} = 2U_n$ untuk setiap $n \\geq 1$, semua sukunya positif, dan $U_3 \\times U_5 = 1.024$. Nilai $U_8$ adalah ....",
+      "jawaban_benar": "$512$",
+      "alasan_benar": "$r=2$; $U_3 U_5 = 64a^2 = 1.024$ sehingga $a = 4$; $U_8 = 4 \\times 2^7 = 512$",
+      "distraktor": [
+        {
+          "teks": "$256$",
+          "alasan": "memakai $U_7$ (pangkat 6 bukan 7)"
+        },
+        {
+          "teks": "$1.024$",
+          "alasan": "memakai $U_9$ (pangkat 8 bukan 7)"
+        },
+        {
+          "teks": "$128$",
+          "alasan": "memakai $U_6$ (pangkat 5 bukan 7)"
+        }
+      ],
+      "pembahasan": "Dari $U_{n+1}=2U_n$ diperoleh barisan geometri dengan $r = 2$. $U_3 U_5 = a \\cdot 2^2 \\cdot a \\cdot 2^4 = 64a^2 = 1.024$ sehingga $a^2 = 16$, $a = 4$ (positif). $U_8 = 4 \\times 2^7 = 512$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Jadi, rumus umum menentukan suku ke- n pada barisan aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rekursi beda tetap dengan jumlah suku simetris",
+      "alasan_level": "mengenali rekursi sebagai barisan aritmetika, memakai sifat $U_3 + U_7 = 2U_5$ untuk suku pertama, lalu menghitung suku jauh",
+      "stimulus": null,
+      "pertanyaan": "Suatu barisan memenuhi $U_{n+1} = U_n - 3$ untuk setiap $n \\geq 1$ dan $U_3 + U_7 = 34$. Nilai $U_{15}$ adalah ....",
+      "jawaban_benar": "$-13$",
+      "alasan_benar": "$b = -3$; $U_3 + U_7 = 2U_5 = 34$ sehingga $U_5 = 17$, $a = 29$; $U_{15} = 29 + 14 \\times (-3) = -13$",
+      "distraktor": [
+        {
+          "teks": "$-16$",
+          "alasan": "memakai $n$ bukan $n-1$: $29 - 15 \times 3$"
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "memakai $n-2$ kali beda: $29 - 13 \times 3$"
+        },
+        {
+          "teks": "$13$",
+          "alasan": "salah tanda pada hasil akhir"
+        }
+      ],
+      "pembahasan": "Beda $b = -3$. $U_3 = a + 2b$ dan $U_7 = a + 6b$ sehingga $U_3 + U_7 = 2a + 8b = 2U_5 = 34$, $U_5 = 17$. Maka $a = 17 + 12 = 29$ dan $U_{15} = 29 + 14(-3) = -13$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "kutipan": "Jadi, rumus umum menentukan suku ke-n pada barisan geometri adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "kapan barisan geometri melampaui aritmetika",
+      "alasan_level": "membandingkan dua barisan bertumbuh tak sama dengan memeriksa nomor suku satu per satu, termasuk kasus yang nyaris sama",
+      "stimulus": null,
+      "pertanyaan": "Barisan $P$ adalah barisan aritmetika dengan suku pertama 50 dan beda 8. Barisan $Q$ adalah barisan geometri dengan suku pertama 5 dan rasio 2. Nomor suku terkecil $n$ sehingga $Q_n > P_n$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$P_5 = 82 > Q_5 = 80$, tetapi $Q_6 = 160 > P_6 = 90$",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "memakai $n-2$ pada barisan aritmetika ($P_5 = 74$) sehingga mengira $Q_5 > P_5$"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "memakai $Q_n = 5 \times 2^n$ (pangkat $n$ bukan $n-1$): $Q_4 = 80 > P_4 = 74$"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "menambah satu nomor suku setelah $Q_6 > P_6$ padahal sudah terpenuhi"
+        }
+      ],
+      "pembahasan": "$P_n = 50 + 8(n-1)$ dan $Q_n = 5 \\times 2^{n-1}$. Nilai $(P_n, Q_n)$: $(50,5), (58,10), (66,20), (74,40), (82,80), (90,160)$. Pertama kali $Q_n > P_n$ pada $n = 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "kutipan": "Jadi, rumus umum menentukan suku ke-n pada barisan geometri adalah"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang rasio dengan dua batas",
+      "alasan_level": "merancang rasio bulat dari dua ketaksamaan suku; batas tegas ($<$) dan kuadrat membuat kandidat 3 dan 5 gagal",
+      "stimulus": null,
+      "pertanyaan": "Barisan geometri memiliki suku pertama 2 dan rasio $r$ yang merupakan bilangan bulat positif. Barisan itu dirancang agar $U_2 < 10$ dan $U_3 > 30$. Nilai $r$ yang memenuhi adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$2r < 10$ memberi $r < 5$; $2r^2 > 30$ memberi $r^2 > 15$ sehingga $r \\geq 4$; satu-satunya bilangan bulat adalah 4",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "memenuhi $U_2 = 6 < 10$ tetapi $U_3 = 18$ tidak lebih dari 30"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "memenuhi $U_3 = 50 > 30$ tetapi $U_2 = 10$ tidak kurang dari 10 (batas tegas)"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "memenuhi $U_3 = 72 > 30$ tetapi $U_2 = 12$ tidak kurang dari 10"
+        }
+      ],
+      "pembahasan": "$U_2 = 2r < 10$ memberi $r < 5$. $U_3 = 2r^2 > 30$ memberi $r^2 > 15$, jadi $r \\geq 4$. Bilangan bulat positif yang memenuhi hanya $r = 4$ ($U_2 = 8$, $U_3 = 32$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Jadi, rumus umum menentukan suku ke- n pada barisan aritmetika adalah"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang beda dengan dua batas",
+      "alasan_level": "merancang beda bulat dari dua ketaksamaan pada suku berbeda lalu menjumlahkan semua kemungkinan",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika memiliki suku pertama 7 dan beda $b$ bilangan bulat. Barisan itu dirancang agar $U_4 > 30$ dan $U_6 < 60$. Jumlah semua nilai $b$ yang mungkin adalah ....",
+      "jawaban_benar": "$27$",
+      "alasan_benar": "$7 + 3b > 30$ memberi $b \\geq 8$; $7 + 5b < 60$ memberi $b \\leq 10$; nilai $b$: 8, 9, 10 dan jumlahnya 27",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "membuang $b = 8$ (mengira $b > 8$ karena $\frac{23}{3} \u0007pprox 7{,}67$ dibulatkan ke 8 lalu dibuat tegas)"
+        },
+        {
+          "teks": "$38$",
+          "alasan": "ikut menyertakan $b = 11$ padahal $U_6 = 62$ tidak kurang dari 60"
+        },
+        {
+          "teks": "$34$",
+          "alasan": "ikut menyertakan $b = 7$ padahal $U_4 = 28$ tidak lebih dari 30"
+        }
+      ],
+      "pembahasan": "$U_4 = 7 + 3b > 30$ memberi $b > 7{,}67$ sehingga $b \\geq 8$. $U_6 = 7 + 5b < 60$ memberi $b < 10{,}6$ sehingga $b \\leq 10$. Nilai $b$: 8, 9, 10 dengan jumlah 27.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "kutipan": "Jadi, rumus umum menentukan suku ke-n pada barisan geometri adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mengenali rumus U_n yang menghasilkan barisan geometri",
+      "alasan_level": "menguji empat rumus suku ke-n dengan membandingkan rasio berurutan dan menyederhanakan bentuk selisih pangkat",
+      "stimulus": null,
+      "pertanyaan": "Rumus suku ke-$n$ berikut yang menghasilkan barisan geometri untuk setiap $n$ adalah ....",
+      "jawaban_benar": "$U_n = 3^n - 3^{n-1}$",
+      "alasan_benar": "$U_n = 3^{n-1}(3 - 1) = 2 \\times 3^{n-1}$, sehingga rasio tetap $3$",
+      "distraktor": [
+        {
+          "teks": "$U_n = 3^n + n$",
+          "alasan": "suku-suku 4, 11, 30: rasio $\frac{11}{4} \neq \frac{30}{11}$"
+        },
+        {
+          "teks": "$U_n = 2^n + 2$",
+          "alasan": "suku-suku 4, 6, 10: rasio $\frac{6}{4} \neq \frac{10}{6}$"
+        },
+        {
+          "teks": "$U_n = n \\times 2^n$",
+          "alasan": "suku-suku 2, 8, 24: rasio $4 \neq 3$"
+        }
+      ],
+      "pembahasan": "$3^n - 3^{n-1} = 3^{n-1}(3-1) = 2 \\times 3^{n-1}$ sehingga $U_n = 2 \\times 3^{n-1}$ dan $U_{n+1}/U_n = 3$ untuk semua $n$. Tiga bentuk lain memiliki rasio berurutan yang tidak sama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "kutipan": "Jadi, rumus umum menentukan suku ke-n pada barisan geometri adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menemukan kesalahan menghitung suku geometri",
+      "alasan_level": "menelusuri pengerjaan siswa, menemukan pangkat yang salah, lalu menghitung nilai yang benar",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengerjakan: \"Barisan $81, 27, 9, 3, \\ldots$ memiliki $a = 81$ dan $r = \\frac{1}{3}$, sehingga $U_8 = 81 \\times \\left(\\frac{1}{3}\\right)^8 = \\frac{1}{81}$.\" Pernyataan yang benar tentang pengerjaan itu adalah ....",
+      "jawaban_benar": "Pangkat seharusnya 7, sehingga $U_8 = \\frac{1}{27}$",
+      "alasan_benar": "$U_n = ar^{n-1}$ sehingga $U_8 = 81 \\times (\\frac{1}{3})^7 = 3^{4-7} = \\frac{1}{27}$",
+      "distraktor": [
+        {
+          "teks": "Rasio seharusnya 3, sehingga $U_8 = 177.147$",
+          "alasan": "rasio $\frac{27}{81} = \frac{1}{3}$; barisan turun sehingga rasio 3 keliru"
+        },
+        {
+          "teks": "Barisan itu aritmetika dengan beda $-54$ sehingga $U_8 = -297$",
+          "alasan": "selisih berurutan $-54, -18, -6$ tidak tetap sehingga bukan aritmetika"
+        },
+        {
+          "teks": "Tidak ada kesalahan dan $U_8 = \\frac{1}{81}$",
+          "alasan": "kesalahan ada pada pangkat: seharusnya $n-1 = 7$"
+        }
+      ],
+      "pembahasan": "Rumus $U_n = ar^{n-1}$ dengan $n = 8$ memberi pangkat $7$, bukan $8$. $U_8 = 81 \\times 3^{-7} = 3^4 \\times 3^{-7} = 3^{-3} = \\frac{1}{27}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Jadi, rumus umum menentukan suku ke- n pada barisan aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "banyak suku genap dalam interval",
+      "alasan_level": "mengubah syarat nilai suku menjadi batas nomor suku dan menalar pola genap-ganjil dari rumus $7n-2$",
+      "stimulus": null,
+      "pertanyaan": "Pada barisan aritmetika $5, 12, 19, 26, \\ldots$, banyak suku yang genap dan nilainya lebih dari 100 tetapi kurang dari 200 adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "$U_n = 7n - 2$; $100 < 7n - 2 < 200$ memberi $15 \\leq n \\leq 28$; suku genap bila $n$ genap: $n = 16, 18, \\ldots, 28$ sehingga ada 7",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "menghitung semua suku antara 100 dan 200 tanpa syarat genap"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "ikut menghitung suku genap 208 ($n = 30$) yang lebih dari 200"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "melewatkan suku 194 ($n = 28$)"
+        }
+      ],
+      "pembahasan": "$U_n = 5 + 7(n-1) = 7n - 2$. $7n - 2$ genap tepat saat $n$ genap. Dari $100 < 7n-2 < 200$ diperoleh $14{,}57 < n < 28{,}86$, yaitu $n = 15, \\ldots, 28$. Bilangan genap di antaranya 16, 18, 20, 22, 24, 26, 28: 7 suku.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Jadi, rumus umum menentukan suku ke- n pada barisan aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "hubungan antar suku lalu batas nilai",
+      "alasan_level": "mengubah hubungan $U_5 = 2U_2$ menjadi $a = 2b$, mencari rumus suku, lalu menangani batas tegas pada nomor suku",
+      "stimulus": null,
+      "pertanyaan": "Pada barisan aritmetika diketahui $U_5 = 2U_2$ dan $U_8 = 36$. Nomor suku pertama yang nilainya lebih dari 100 adalah suku ke-....",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "$a = 2b$ dan $9b = 36$ sehingga $b = 4$, $a = 8$; $U_n = 4n + 4$; $U_{24} = 100$ belum lebih dari 100 sehingga $n = 25$",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "suku ke-24 bernilai tepat 100, bukan lebih dari 100"
+        },
+        {
+          "teks": "$26$",
+          "alasan": "menambah satu nomor setelah $n > 24$ sudah dipenuhi oleh 25"
+        },
+        {
+          "teks": "$23$",
+          "alasan": "memakai $n-2$ pada rumus suku dan bukan memeriksa batas tegas"
+        }
+      ],
+      "pembahasan": "$a + 4b = 2(a + b)$ sehingga $a = 2b$. $U_8 = a + 7b = 9b = 36$ memberi $b = 4$ dan $a = 8$. $U_n = 8 + 4(n-1) = 4n + 4 > 100$ memberi $n > 24$; nomor suku terkecil 25 ($U_{25} = 104$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 62,
+        "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut BARISAN GEOMETRI"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim rasio kurang dari satu",
+      "alasan_level": "mengevaluasi klaim bahwa rasio kurang dari 1 berarti barisan turun dengan memeriksa tanda suku pertama",
+      "stimulus": null,
+      "pertanyaan": "Diketahui barisan geometri dengan suku pertama $-80$ dan rasio $\\frac{1}{2}$. Pernyataan yang benar tentang barisan tersebut adalah ....",
+      "jawaban_benar": "Barisan tersebut naik, yaitu $U_{n+1} > U_n$ untuk setiap $n$, walaupun rasionya kurang dari 1",
+      "alasan_benar": "$U_{n+1} - U_n = U_n(r-1) = -\\frac{1}{2}U_n > 0$ karena $U_n < 0$; suku $-80, -40, -20, \\ldots$ bertambah",
+      "distraktor": [
+        {
+          "teks": "Barisan tersebut turun karena rasionya kurang dari 1",
+          "alasan": "menganggap rasio kurang dari 1 selalu menurunkan barisan, padahal suku pertama negatif"
+        },
+        {
+          "teks": "Ada suku yang bernilai positif karena rasionya positif",
+          "alasan": "rasio positif dan suku pertama negatif membuat semua suku negatif"
+        },
+        {
+          "teks": "Suku ke-10 lebih kecil daripada suku ke-9",
+          "alasan": "barisan naik: $U_9 = -\frac{80}{256}$ dan $U_{10} = -\frac{80}{512}$, sehingga $U_{10} > U_9$"
+        }
+      ],
+      "pembahasan": "Suku-sukunya $-80, -40, -20, -10, \\ldots$ semuanya negatif dan makin mendekati nol, jadi naik. Klaim \"rasio kurang dari 1 berarti turun\" hanya berlaku bila suku pertama positif.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-a-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "kutipan": "Jadi, rumus umum menentukan suku ke-n pada barisan geometri adalah"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 6,
+      "jenis_soal": "merancang dua barisan berbagi suku",
+      "alasan_level": "menyusun persamaan dari syarat suku kedua sama dan selisih suku ketiga, memilih nilai taknol, lalu menghitung suku ke-6 kedua barisan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah barisan aritmetika dan sebuah barisan geometri sama-sama memiliki suku pertama 4 dan suku kedua yang sama (suku kedua bukan 4). Suku ketiga barisan geometri lebih besar 4 daripada suku ketiga barisan aritmetika, dan rasio barisan geometri tidak nol. Selisih suku ke-6 barisan geometri dan suku ke-6 barisan aritmetika adalah ....",
+      "jawaban_benar": "$104$",
+      "alasan_benar": "suku kedua $s$: $\\frac{s^2}{4} - (2s - 4) = 4$ memberi $s = 8$; $b = 4$, $r = 2$; $U_6$ geometri $= 128$, $U_6$ aritmetika $= 24$, selisih 104",
+      "distraktor": [
+        {
+          "teks": "$108$",
+          "alasan": "memakai $n-2$ pada suku ke-6 aritmetika ($4 + 4 \times 4 = 20$)"
+        },
+        {
+          "teks": "$232$",
+          "alasan": "memakai pangkat 6 pada geometri ($4 \times 2^6 = 256$)"
+        },
+        {
+          "teks": "$124$",
+          "alasan": "mengurangkan suku pertama (4) saja sebagai suku ke-6 aritmetika"
+        }
+      ],
+      "pembahasan": "Misalkan suku kedua $s$. Aritmetika: $b = s - 4$, $U_3 = 2s - 4$. Geometri: $r = s/4$, $U_3 = s^2/4$. Syarat: $\\frac{s^2}{4} - 2s + 4 = 4$ sehingga $s(s - 8) = 0$; $s = 8$ ($s = 0$ membuat rasio nol). Maka $b = 4$, $r = 2$: $U_6 = 4 + 5 \\times 4 = 24$ (aritmetika) dan $4 \\times 2^5 = 128$ (geometri). Selisih 104.",
+      "catatan": null
+    }
+  ]
+}

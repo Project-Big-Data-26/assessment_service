@@ -1,0 +1,698 @@
+{
+  "book": "kelas10",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b02-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b02-p0074-latihan-2-3-1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jumlah bilangan kelipatan",
+      "alasan_level": "menentukan suku pertama, suku terakhir, dan banyak suku dari batas terbuka lalu memakai rumus jumlah",
+      "stimulus": null,
+      "pertanyaan": "Tentukanlah jumlah bilangan kelipatan 7 di antara bilangan 20 dan 150.",
+      "jawaban_benar": "$1.596$",
+      "alasan_benar": "kelipatan 7 pertama 21 dan terakhir 147, banyak suku $\\frac{147-21}{7}+1=19$, $S_{19}=\\frac{19}{2}(21+147)=1.596$",
+      "distraktor": [
+        {
+          "teks": "$1.512$",
+          "alasan": "banyak suku 18 (lupa menambah 1 pada $\\frac{147-21}{7}$)"
+        },
+        {
+          "teks": "$1.750$",
+          "alasan": "suku terakhir 154 yang sudah melewati 150 (20 suku)"
+        },
+        {
+          "teks": "$1.610$",
+          "alasan": "suku pertama 14 yang masih di bawah 20 (20 suku)"
+        }
+      ],
+      "pembahasan": "Suku pertama $a=21$, beda $b=7$, suku terakhir $147$. $n=\\frac{147-21}{7}+1=19$. $S_{19}=\\frac{19}{2}(21+147)=19\\cdot84=1.596$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b02-p0074-latihan-2-3-1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jumlah bilangan kelipatan",
+      "alasan_level": "membentuk deret kelipatan 11 pada tiga angka, mencari banyak suku, lalu menjumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Tentukanlah jumlah bilangan kelipatan 11 di antara bilangan 100 dan 1.000.",
+      "jawaban_benar": "$44.550$",
+      "alasan_benar": "kelipatan 11 pertama 110, terakhir 990, banyak suku 81, $S_{81}=\\frac{81}{2}(110+990)=44.550$",
+      "distraktor": [
+        {
+          "teks": "$44.000$",
+          "alasan": "banyak suku 80 (lupa menambah 1)"
+        },
+        {
+          "teks": "$44.649$",
+          "alasan": "ikut memasukkan 99 yang berada di luar batas 100"
+        },
+        {
+          "teks": "$89.100$",
+          "alasan": "lupa mengalikan dengan $\\frac{1}{2}$"
+        }
+      ],
+      "pembahasan": "Suku pertama $110$, suku terakhir $990$, beda $11$. $n=\\frac{990-110}{11}+1=81$. $S_{81}=\\frac{81}{2}(110+990)=81\\cdot550=44.550$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 80,
+        "bagian": "Latihan 2.5",
+        "nomor": "9",
+        "teks": "Sebuah bola dijatuhkan dari ketinggian 8 meter. Apabila ketinggian yang dicapai saat memantul tiga perlima kali tinggi sebelumnya, tentukan panjang lintasan yang dilalui bola tersebut hingga berhenti memantul.",
+        "jawaban": "32 meter"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "lintasan bola memantul",
+      "alasan_level": "memodelkan lintasan naik-turun sebagai deret geometri tak hingga ditambah tinggi awal",
+      "stimulus": null,
+      "pertanyaan": "Sebuah bola dijatuhkan dari ketinggian 15 meter. Apabila tinggi yang dicapai saat memantul adalah empat perlima kali tinggi sebelumnya, tentukan panjang lintasan yang dilalui bola tersebut hingga berhenti memantul.",
+      "jawaban_benar": "$135$ meter",
+      "alasan_benar": "pantulan pertama 12 m dengan $r=\\frac{4}{5}$; lintasan $=15+2\\cdot\\frac{12}{1-\\frac{4}{5}}=15+120$",
+      "distraktor": [
+        {
+          "teks": "$75$ meter",
+          "alasan": "hanya menghitung jatuh dan satu arah naik: $15+60$ (lupa naik-turun)"
+        },
+        {
+          "teks": "$120$ meter",
+          "alasan": "lupa menambahkan tinggi jatuh awal 15 m"
+        },
+        {
+          "teks": "$150$ meter",
+          "alasan": "memakai $a=15$ sebagai pantulan pertama sehingga $2\\cdot\\frac{15}{1/5}$"
+        }
+      ],
+      "pembahasan": "Pantulan pertama $15\\cdot\\frac{4}{5}=12$. Jumlah tinggi semua pantulan $\\frac{12}{1-\\frac{4}{5}}=60$. Setiap pantulan dilalui naik dan turun, jadi lintasan $=15+2\\cdot60=135$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 80,
+        "bagian": "Latihan 2.5",
+        "nomor": "12",
+        "teks": "Sisi segitiga sama sisi panjangnya 20 cm. Di dalamnya terdapat segitiga sama sisi kedua dengan menghubungkan titik-titik tengah sisi-sisi segitiga pertama. Hal yang sama untuk segitiga ketiga, keempat, kelima, dan keenam. Berapa total keliling semua segitiga?",
+        "jawaban": "118,125 cm"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "keliling bangun bersusun",
+      "alasan_level": "menentukan keliling pertama dan rasio $\\frac{1}{2}$ lalu menjumlahkan lima suku deret geometri",
+      "stimulus": null,
+      "pertanyaan": "Sisi segitiga sama sisi pertama panjangnya 36 cm. Di dalamnya dibuat segitiga sama sisi kedua dengan menghubungkan titik tengah ketiga sisi segitiga pertama. Cara yang sama dilakukan untuk membuat segitiga ketiga, keempat, dan kelima. Berapa total keliling kelima segitiga tersebut?",
+      "jawaban_benar": "$209{,}25$ cm",
+      "alasan_benar": "keliling $108,54,27,\\dots$ ($r=\\frac{1}{2}$), $S_5=\\frac{108(1-\\frac{1}{32})}{1-\\frac{1}{2}}=209{,}25$",
+      "distraktor": [
+        {
+          "teks": "$202{,}5$ cm",
+          "alasan": "hanya menjumlahkan empat segitiga pertama"
+        },
+        {
+          "teks": "$212{,}625$ cm",
+          "alasan": "menjumlahkan enam segitiga, bukan lima"
+        },
+        {
+          "teks": "$104{,}625$ cm",
+          "alasan": "lupa membagi dengan $1-r$"
+        }
+      ],
+      "pembahasan": "Keliling pertama $3\\cdot36=108$ dan tiap segitiga berikutnya setengah dari sebelumnya. $S_5=\\frac{108(1-(\\frac12)^5)}{1-\\frac12}=216\\cdot\\frac{31}{32}=209{,}25$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 79,
+        "bagian": "Latihan 2.5",
+        "nomor": "4",
+        "teks": "Sebuah kue dimakan bersama oleh dua orang kakak beradik. Kakak mengambil sepertiga kue. Adik mengambil sepertiga dari sisanya. Lalu kakak mengambil sepertiga dari sisanya. Demikian seterusnya.",
+        "jawaban": "deret 1/3 + 2/9 + 4/27 + ... konvergen, jumlahnya 1 (seluruh kue)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bagian bergantian tak hingga",
+      "alasan_level": "menyusun dua deret geometri bergantian untuk satu pihak lalu memakai $S_\\infty$",
+      "stimulus": null,
+      "pertanyaan": "Dua sahabat, Anto dan Budi, berbagi sebuah pizza dengan cara bergantian. Anto lebih dulu mengambil seperempat bagian pizza. Budi mengambil seperempat dari pizza yang tersisa, kemudian Anto mengambil seperempat dari sisa berikutnya, dan seterusnya tanpa berhenti. Jumlah seluruh bagian pizza yang diambil Anto adalah ....",
+      "jawaban_benar": "$\\frac{4}{7}$ bagian",
+      "alasan_benar": "bagian Anto $\\frac{1}{4}+\\frac{9}{64}+\\dots$ dengan $r=\\left(\\frac{3}{4}\\right)^2=\\frac{9}{16}$, $S_\\infty=\\frac{1/4}{7/16}=\\frac{4}{7}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$ bagian",
+          "alasan": "mengira kedua orang akhirnya memperoleh bagian sama banyak"
+        },
+        {
+          "teks": "$\\frac{3}{7}$ bagian",
+          "alasan": "tertukar dengan bagian Budi"
+        },
+        {
+          "teks": "$1$ bagian",
+          "alasan": "menghitung seluruh pizza yang diambil berdua dengan $r=\\frac{3}{4}$"
+        }
+      ],
+      "pembahasan": "Setelah dua pengambilan, sisa menjadi $\\left(\\frac{3}{4}\\right)^2$. Bagian Anto: $\\frac{1}{4},\\frac{1}{4}\\cdot\\frac{9}{16},\\dots$ sehingga $r=\\frac{9}{16}$ dan $S_\\infty=\\frac{\\frac14}{1-\\frac{9}{16}}=\\frac{4}{7}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 79,
+        "bagian": "Latihan 2.5",
+        "nomor": "1",
+        "teks": "Suku ke-3 suatu barisan aritmetika adalah 28.500 dan suku ke-7 adalah 22.500. Tentukan nilai n agar suku ke-n = 0.",
+        "jawaban": "22"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "suku nol barisan aritmetika",
+      "alasan_level": "mencari $b$ dari dua suku, lalu $a$, lalu $n$ agar $U_n=0$",
+      "stimulus": null,
+      "pertanyaan": "Suku ke-4 suatu barisan aritmetika adalah 42 dan suku ke-9 adalah 12. Tentukan nilai n agar suku ke-n = 0.",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "$5b=12-42$ sehingga $b=-6$, $a=60$, $60-6(n-1)=0$ memberi $n=11$",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "memakai $a+nb=0$ (lupa $n-1$)"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "salah menghitung $a=U_4-4b=66$ sehingga $66-6(n-1)=0$"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "mengira $U_4=42$ adalah suku pertama: $42:6$"
+        }
+      ],
+      "pembahasan": "$b=\\frac{12-42}{9-4}=-6$, $a=42-3(-6)=60$. $U_n=60-6(n-1)=0 \\Rightarrow n-1=10 \\Rightarrow n=11$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 79,
+        "bagian": "Latihan 2.5",
+        "nomor": "6",
+        "teks": "Pertambahan penduduk di suatu desa setiap tahunnya membentuk barisan geometri. Pada tahun 2021, penduduk bertambah sebanyak 10 orang, lalu pada tahun 2023 sebanyak 90 orang. Berapa jumlah pertambahan penduduk pada tahun 2025?",
+        "jawaban": "810 orang"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "soal cerita deret geometri",
+      "alasan_level": "mencari rasio dari dua suku berjarak dua, lalu jumlah enam suku",
+      "stimulus": null,
+      "pertanyaan": "Pertambahan penduduk di suatu desa setiap tahunnya membentuk barisan geometri dengan rasio positif. Pada tahun 2018, penduduk bertambah sebanyak 4 orang, lalu pada tahun 2020 sebanyak 36 orang. Berapa jumlah seluruh pertambahan penduduk dari tahun 2018 sampai tahun 2023?",
+      "jawaban_benar": "$1.456$ orang",
+      "alasan_benar": "$r^2=9$, $r=3$, $n=6$, $S_6=\\frac{4(3^6-1)}{3-1}=1.456$",
+      "distraktor": [
+        {
+          "teks": "$484$ orang",
+          "alasan": "menjumlahkan lima tahun (2018 sampai 2022)"
+        },
+        {
+          "teks": "$4.372$ orang",
+          "alasan": "menjumlahkan tujuh suku"
+        },
+        {
+          "teks": "$2.912$ orang",
+          "alasan": "lupa membagi dengan $r-1$"
+        }
+      ],
+      "pembahasan": "Dari 2018 ke 2020 ada dua langkah: $r^2=\\frac{36}{4}=9$, $r=3$. Tahun 2018-2023 ada $6$ suku. $S_6=\\frac{4(3^6-1)}{3-1}=2\\cdot728=1.456$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 78,
+        "bagian": "Latihan 2.4",
+        "nomor": "2",
+        "teks": "Agar deret geometri 1 + (m - 1) + (m - 1)2 + (m - 1)3 + .... merupakan deret konvergen, tentukan nilai m.",
+        "jawaban": "0 < m < 2"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat konvergen",
+      "alasan_level": "menentukan rasio berbentuk linear, menyelesaikan $|r|<1$ sebagai pertidaksamaan ganda",
+      "stimulus": null,
+      "pertanyaan": "Agar deret geometri $6 + 6(2m-7) + 6(2m-7)^2 + \\dots$ merupakan deret konvergen, tentukan nilai $m$.",
+      "jawaban_benar": "$3<m<4$",
+      "alasan_benar": "$r=2m-7$, $|2m-7|<1$ sehingga $6<2m<8$, jadi $3<m<4$",
+      "distraktor": [
+        {
+          "teks": "$6<m<8$",
+          "alasan": "lupa membagi dengan 2 pada $6<2m<8$"
+        },
+        {
+          "teks": "$-4<m<-3$",
+          "alasan": "salah tanda: memakai $|2m+7|<1$"
+        },
+        {
+          "teks": "$\\frac{7}{2}<m<4$",
+          "alasan": "hanya memakai $0<r<1$ (mengabaikan rasio negatif)"
+        }
+      ],
+      "pembahasan": "$r=2m-7$. Konvergen bila $-1<2m-7<1 \\Rightarrow 6<2m<8 \\Rightarrow 3<m<4$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "bagian": "Latihan 2.4",
+        "nomor": "1",
+        "teks": "Suku pertama suatu deret geometri tak hingga adalah x. Tentukan x yang memenuhi sehingga jumlah deret geometri tak hingga tersebut adalah 10.",
+        "jawaban": "0 < x < 20 dengan x tidak sama dengan 10"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat konvergen",
+      "alasan_level": "mengaitkan $S_\\infty=\\frac{x}{1-r}$ dengan syarat $|r|<1$ untuk menguji nilai $x$",
+      "stimulus": null,
+      "pertanyaan": "Suku pertama suatu deret geometri tak hingga adalah $x$ dan jumlah deret tak hingga tersebut adalah 15. Nilai $x$ berikut yang mungkin adalah ....",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "$r=1-\\frac{x}{15}=\\frac{2}{5}$ dan $|r|<1$ sehingga konvergen",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "memberi $r=-1$ sehingga $|r|=1$ (tidak konvergen)"
+        },
+        {
+          "teks": "$45$",
+          "alasan": "memberi $r=-2$ sehingga $|r|>1$ (divergen)"
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "memberi $r=\\frac{4}{3}$ sehingga $|r|>1$ (divergen)"
+        }
+      ],
+      "pembahasan": "$S_\\infty=\\frac{x}{1-r}=15 \\Rightarrow r=1-\\frac{x}{15}$. Syarat $|r|<1$ memberi $0<x<30$. Hanya $9$ yang memenuhi ($r=\\frac{2}{5}$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menentukan a dan b dari dua jumlah",
+      "alasan_level": "membentuk dua persamaan dari $S_4$ dan $S_8$, mencari $a$ dan $b$, lalu suku ke-10",
+      "stimulus": null,
+      "pertanyaan": "Jumlah 4 suku pertama suatu deret aritmetika adalah 44 dan jumlah 8 suku pertama adalah 152. Suku ke-10 deret tersebut adalah ....",
+      "jawaban_benar": "$41$",
+      "alasan_benar": "$2a+3b=22$ dan $2a+7b=38$ sehingga $b=4$, $a=5$, $U_{10}=5+9\\cdot4=41$",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "memakai $a+(n-2)b$ untuk suku ke-10"
+        },
+        {
+          "teks": "$45$",
+          "alasan": "memakai $a+nb$ (lupa $n-1$)"
+        },
+        {
+          "teks": "$46$",
+          "alasan": "memakai rumus $S_n=\\frac{n}{2}(a+(n-1)b)$ (lupa $2a$) sehingga $a=10$"
+        }
+      ],
+      "pembahasan": "$S_4=2(2a+3b)=44 \\Rightarrow 2a+3b=22$; $S_8=4(2a+7b)=152 \\Rightarrow 2a+7b=38$. Selisih: $4b=16$, $b=4$, $a=5$. $U_{10}=5+9\\cdot4=41$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 68,
+        "kutipan": "Bentuk penjumlahan dari barisan bilangan akan membentuk deret bilangan."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "suku dari rumus jumlah",
+      "alasan_level": "mengubah rumus $S_n$ menjadi suku dengan $U_n=S_n-S_{n-1}$",
+      "stimulus": null,
+      "pertanyaan": "Jumlah $n$ suku pertama suatu deret dinyatakan dengan $S_n=3n^2+5n$. Suku ke-8 deret tersebut adalah ....",
+      "jawaban_benar": "$50$",
+      "alasan_benar": "$U_8=S_8-S_7=232-182=50$",
+      "distraktor": [
+        {
+          "teks": "$232$",
+          "alasan": "mengira $S_8$ adalah suku ke-8"
+        },
+        {
+          "teks": "$182$",
+          "alasan": "memakai $S_7$ sebagai suku ke-8"
+        },
+        {
+          "teks": "$53$",
+          "alasan": "menurunkan $S_n$ secara aljabar: $U_n=6n+5$"
+        }
+      ],
+      "pembahasan": "Suku ke-8 adalah jumlah 8 suku dikurangi jumlah 7 suku. $S_8=3\\cdot64+40=232$, $S_7=3\\cdot49+35=182$, $U_8=50$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Deret geometri tak hingga adalah deret geometri yang memiliki banyak sekali suku (tak terhingga banyaknya)."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "lintasan ayunan tak hingga",
+      "alasan_level": "memodelkan lintasan sebagai deret geometri tak hingga satu arah (tanpa naik-turun) dengan rasio $80\\%$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah bandul diayunkan dan panjang lintasan pada ayunan pertama adalah 50 cm. Setiap ayunan berikutnya menempuh lintasan sebesar $80\\%$ dari ayunan sebelumnya hingga bandul berhenti. Panjang seluruh lintasan bandul adalah ....",
+      "jawaban_benar": "$250$ cm",
+      "alasan_benar": "$r=\\frac{4}{5}$, $S_\\infty=\\frac{50}{1-\\frac{4}{5}}=250$",
+      "distraktor": [
+        {
+          "teks": "$62{,}5$ cm",
+          "alasan": "memakai $\\frac{a}{r}$ bukan $\\frac{a}{1-r}$"
+        },
+        {
+          "teks": "$500$ cm",
+          "alasan": "menggandakan hasil seperti pantulan bola (padahal tiap ayunan sudah satu lintasan)"
+        },
+        {
+          "teks": "$90$ cm",
+          "alasan": "hanya menjumlahkan dua ayunan pertama: $50+40$"
+        }
+      ],
+      "pembahasan": "$r=80\\%=\\frac{4}{5}<1$ sehingga konvergen. $S_\\infty=\\frac{50}{1-\\frac45}=250$ cm.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Deret geometri tak hingga adalah deret geometri yang memiliki banyak sekali suku (tak terhingga banyaknya)."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "suku dari jumlah tak hingga",
+      "alasan_level": "mencari rasio dari $a$ dan $S_\\infty$, lalu suku ketiga",
+      "stimulus": null,
+      "pertanyaan": "Suatu deret geometri tak hingga memiliki suku pertama 12 dan jumlah 20. Suku ketiga deret tersebut adalah ....",
+      "jawaban_benar": "$\\frac{48}{25}$",
+      "alasan_benar": "$20=\\frac{12}{1-r}$ memberi $r=\\frac{2}{5}$, $U_3=12\\cdot\\frac{4}{25}=\\frac{48}{25}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{108}{25}$",
+          "alasan": "mengira rasio $\\frac{12}{20}=\\frac{3}{5}$"
+        },
+        {
+          "teks": "$\\frac{96}{125}$",
+          "alasan": "memakai $ar^3$ untuk suku ketiga"
+        },
+        {
+          "teks": "$\\frac{24}{5}$",
+          "alasan": "memakai $ar$ (suku kedua)"
+        }
+      ],
+      "pembahasan": "$S_\\infty=\\frac{a}{1-r}$: $20=\\frac{12}{1-r} \\Rightarrow 1-r=\\frac{3}{5} \\Rightarrow r=\\frac{2}{5}$. $U_3=ar^2=12\\cdot\\frac{4}{25}=\\frac{48}{25}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "Deret aritmetika adalah suatu deret yang diperoleh dari menjumlahkan suku-suku pada barisan aritmetika."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah suku bernomor genap",
+      "alasan_level": "mencari banyak suku, membentuk deret baru dari suku bernomor genap, lalu menjumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui deret aritmetika $3 + 7 + 11 + \\dots + 99$. Jumlah suku-suku yang bernomor genap (suku ke-2, ke-4, ke-6, dan seterusnya) adalah ....",
+      "jawaban_benar": "$612$",
+      "alasan_benar": "$U_n=4n-1$, $n=25$; suku genap $7,15,\\dots,95$ (12 suku), $S=\\frac{12}{2}(7+95)=612$",
+      "distraktor": [
+        {
+          "teks": "$663$",
+          "alasan": "menjumlahkan suku bernomor ganjil"
+        },
+        {
+          "teks": "$1.275$",
+          "alasan": "menjumlahkan seluruh suku"
+        },
+        {
+          "teks": "$636$",
+          "alasan": "memakai suku terakhir 99 pada deret suku genap"
+        }
+      ],
+      "pembahasan": "$U_n=3+4(n-1)=99 \\Rightarrow n=25$. Suku genap: $U_2=7$, beda $8$, hingga $U_{24}=95$ (12 suku). $S=6(7+95)=612$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Sehingga, rumus untuk menghitung jumlah suku-suku deret geometri adalah:"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "selisih jumlah geometri",
+      "alasan_level": "menghitung jumlah suku ke-4 sampai ke-7 sebagai $S_7-S_3$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui deret geometri $6 + 18 + 54 + \\dots$ Jumlah suku ke-4 sampai suku ke-7 deret tersebut adalah ....",
+      "jawaban_benar": "$6.480$",
+      "alasan_benar": "$S_7-S_3=6.558-78=6.480$",
+      "distraktor": [
+        {
+          "teks": "$6.558$",
+          "alasan": "menghitung $S_7$ saja"
+        },
+        {
+          "teks": "$6.318$",
+          "alasan": "mengurangkan $S_4$ sehingga suku ke-4 ikut terbuang"
+        },
+        {
+          "teks": "$19.602$",
+          "alasan": "memakai $S_8-S_3$"
+        }
+      ],
+      "pembahasan": "$r=3$. $S_7=\\frac{6(3^7-1)}{2}=6.558$, $S_3=\\frac{6(3^3-1)}{2}=78$. Suku ke-4 sampai ke-7: $S_7-S_3=6.480$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Sehingga, rumus untuk menghitung jumlah suku-suku deret geometri adalah:"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "dua suku geometri bertanda berganti",
+      "alasan_level": "mencari rasio dari $r^3$, suku pertama, lalu jumlah enam suku dengan rasio negatif",
+      "stimulus": null,
+      "pertanyaan": "Suku kedua suatu deret geometri adalah 12 dan suku kelimanya adalah $-96$. Jumlah 6 suku pertama deret tersebut adalah ....",
+      "jawaban_benar": "$126$",
+      "alasan_benar": "$r^3=\\frac{-96}{12}=-8$, $r=-2$, $a=-6$, $S_6=\\frac{-6((-2)^6-1)}{-2-1}=126$",
+      "distraktor": [
+        {
+          "teks": "$378$",
+          "alasan": "mengabaikan tanda negatif: $r=2$ dan $a=6$"
+        },
+        {
+          "teks": "$504$",
+          "alasan": "memakai $a=U_2\\cdot r=-24$"
+        },
+        {
+          "teks": "$-66$",
+          "alasan": "memakai $n=5$"
+        }
+      ],
+      "pembahasan": "$\\frac{U_5}{U_2}=r^3=-8 \\Rightarrow r=-2$, $a=\\frac{12}{-2}=-6$. $S_6=\\frac{-6(64-1)}{-3}=126$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "cerita n dari jumlah deret aritmetika",
+      "alasan_level": "membentuk persamaan kuadrat dari $S_n=1.800.000$ lalu memilih $n$ yang memenuhi",
+      "stimulus": null,
+      "pertanyaan": "Rina menabung setiap bulan. Pada bulan pertama ia menabung Rp50.000,00 dan setiap bulan berikutnya tabungannya bertambah Rp10.000,00 dari bulan sebelumnya. Jumlah seluruh uang yang ia tabung mencapai Rp1.800.000,00 setelah ... bulan.",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "$S_n=\\frac{n}{2}(100.000+(n-1)10.000)=5.000n(n+9)=1.800.000$ memberi $n(n+9)=360$, $n=15$",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "$S_{14}=1.610.000$, belum mencapai 1.800.000"
+        },
+        {
+          "teks": "$16$",
+          "alasan": "$S_{16}=2.000.000$, sudah melewati 1.800.000"
+        },
+        {
+          "teks": "$36$",
+          "alasan": "lupa kenaikan tiap bulan: $1.800.000:50.000$"
+        }
+      ],
+      "pembahasan": "$S_n=5.000n(n+9)=1.800.000 \\Rightarrow n^2+9n-360=0 \\Rightarrow (n-15)(n+24)=0$. Karena $n>0$, $n=15$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Deret geometri tak hingga adalah deret geometri yang memiliki banyak sekali suku (tak terhingga banyaknya)."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "rasio negatif deret tak hingga",
+      "alasan_level": "mencari suku pertama dari $S_\\infty$ dengan rasio negatif lalu suku kedua",
+      "stimulus": null,
+      "pertanyaan": "Jumlah suatu deret geometri tak hingga adalah 9 dan rasionya $-\\frac{1}{2}$. Suku kedua deret tersebut adalah ....",
+      "jawaban_benar": "$-\\frac{27}{4}$",
+      "alasan_benar": "$a=9\\left(1+\\frac12\\right)=\\frac{27}{2}$, $U_2=ar=-\\frac{27}{4}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{27}{4}$",
+          "alasan": "mengabaikan tanda negatif pada rasio"
+        },
+        {
+          "teks": "$-\\frac{9}{4}$",
+          "alasan": "memakai $a=S(1+r)=\\frac{9}{2}$ (tanda $r$ tertukar)"
+        },
+        {
+          "teks": "$\\frac{27}{2}$",
+          "alasan": "memberikan suku pertama, bukan suku kedua"
+        }
+      ],
+      "pembahasan": "$S_\\infty=\\frac{a}{1-r} \\Rightarrow 9=\\frac{a}{\\frac32} \\Rightarrow a=\\frac{27}{2}$. $U_2=\\frac{27}{2}\\cdot\\left(-\\frac12\\right)=-\\frac{27}{4}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Sehingga, rumus untuk menghitung jumlah suku-suku deret geometri adalah:"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jumlah geometri rasio negatif",
+      "alasan_level": "menentukan rasio negatif lalu menghitung $S_7$ dengan memperhatikan tanda pangkat ganjil",
+      "stimulus": null,
+      "pertanyaan": "Jumlah 7 suku pertama deret $6 - 12 + 24 - 48 + \\dots$ adalah ....",
+      "jawaban_benar": "$258$",
+      "alasan_benar": "$r=-2$, $S_7=\\frac{6((-2)^7-1)}{-2-1}=\\frac{6(-129)}{-3}=258$",
+      "distraktor": [
+        {
+          "teks": "$762$",
+          "alasan": "memakai $r=2$ (mengabaikan tanda)"
+        },
+        {
+          "teks": "$-254$",
+          "alasan": "mengira $(-2)^7=+128$ sehingga $\\frac{6\\cdot127}{-3}$"
+        },
+        {
+          "teks": "$-126$",
+          "alasan": "memakai 6 suku, bukan 7"
+        }
+      ],
+      "pembahasan": "$r=\\frac{-12}{6}=-2$. $(-2)^7=-128$. $S_7=\\frac{6(-128-1)}{-3}=258$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-b-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua rencana deret aritmetika",
+      "alasan_level": "menghitung dua jumlah deret aritmetika 10 suku lalu membandingkan selisihnya",
+      "stimulus": null,
+      "pertanyaan": "Dua perusahaan menawarkan gaji kepada Dinda. Perusahaan P: gaji tahun pertama Rp60.000.000,00 dan naik Rp3.000.000,00 setiap tahun. Perusahaan Q: gaji tahun pertama Rp52.000.000,00 dan naik Rp4.500.000,00 setiap tahun. Selama 10 tahun, total gaji yang lebih besar dan selisihnya adalah ....",
+      "jawaban_benar": "Perusahaan P lebih besar Rp12.500.000,00",
+      "alasan_benar": "$S_{10}(P)=5(120+27)=735$ juta, $S_{10}(Q)=5(104+40{,}5)=722{,}5$ juta, selisih 12,5 juta untuk P",
+      "distraktor": [
+        {
+          "teks": "Perusahaan Q lebih besar Rp12.500.000,00",
+          "alasan": "arah selisih tertukar"
+        },
+        {
+          "teks": "Perusahaan Q lebih besar Rp5.500.000,00",
+          "alasan": "hanya membandingkan gaji tahun ke-10 ($87$ juta dan $92{,}5$ juta)"
+        },
+        {
+          "teks": "Perusahaan P lebih besar Rp5.000.000,00",
+          "alasan": "memakai $nb$ bukan $(n-1)b$ sehingga $750$ juta dan $745$ juta"
+        }
+      ],
+      "pembahasan": "$S_{10}(P)=\\frac{10}{2}(2\\cdot60+9\\cdot3)=735$ juta. $S_{10}(Q)=5(2\\cdot52+9\\cdot4{,}5)=722{,}5$ juta. P lebih besar $12{,}5$ juta.",
+      "catatan": null
+    }
+  ]
+}

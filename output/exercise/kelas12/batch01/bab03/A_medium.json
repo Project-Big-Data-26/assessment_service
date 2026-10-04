@@ -1,0 +1,690 @@
+{
+  "book": "kelas12",
+  "bab_no": 3,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b03-a-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0108-latihan-3-1-4"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "penempatan bersyarat",
+      "alasan_level": "syarat posisi bertingkat: harus menalar dari objek terendah dulu lalu mengalikan dua pilihan berulang",
+      "stimulus": null,
+      "pertanyaan": "Delapan batang pohon hias dengan tinggi berbeda-beda akan ditanam sejajar pada satu barisan. Agar tampak rapi, tidak boleh ada pohon yang kedua tetangganya (kiri dan kanan) lebih tinggi darinya. Banyak susunan penanaman yang memenuhi syarat adalah ....",
+      "jawaban_benar": "128 susunan",
+      "alasan_benar": "pohon terendah harus di salah satu ujung (2 pilihan), pohon terendah berikutnya di salah satu ujung sisa, dan seterusnya sampai pohon terakhir menempati 1 tempat: $2^7 = 128$",
+      "distraktor": [
+        {
+          "teks": "256 susunan",
+          "alasan": "memakai $2^8$ karena mengira pohon terakhir juga punya 2 pilihan"
+        },
+        {
+          "teks": "64 susunan",
+          "alasan": "memakai $2^6$, kurang satu langkah"
+        },
+        {
+          "teks": "40.320 susunan",
+          "alasan": "menghitung $8!$ tanpa memperhatikan syarat"
+        }
+      ],
+      "pembahasan": "Pohon terendah tidak boleh di tengah, sehingga ia di salah satu dari 2 ujung. Pohon terendah berikutnya juga hanya dapat di salah satu dari 2 ujung barisan yang tersisa, begitu seterusnya hingga 7 pohon; pohon tertinggi menempati sisa tempat. Banyak susunan $2^7 = 128$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0108-latihan-3-1-5a"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "data lintas kelompok",
+      "alasan_level": "menurunkan komposisi putra dan putri tiap kelompok umur dari data total sebelum mengalikan",
+      "stimulus": null,
+      "pertanyaan": "Klub bulu tangkis Garuda mempunyai 30 anggota yang terbagi menjadi dua kelompok umur, yaitu kelompok anak dan kelompok remaja. Kelompok anak terdiri atas 18 pemain dengan 10 di antaranya adalah pemain putra. Banyak anggota putri dalam klub tersebut ada 13 pemain. Banyak formasi ganda campuran yang dapat dibentuk jika kedua pemain berasal dari kelompok remaja adalah ....",
+      "jawaban_benar": "35 formasi",
+      "alasan_benar": "remaja = $30 - 18 = 12$ orang; putri anak $= 18 - 10 = 8$, putri remaja $= 13 - 8 = 5$, putra remaja $= 12 - 5 = 7$; formasi $7 \\times 5 = 35$",
+      "distraktor": [
+        {
+          "teks": "12 formasi",
+          "alasan": "menjumlahkan putra remaja dan putri remaja ($7 + 5$)"
+        },
+        {
+          "teks": "60 formasi",
+          "alasan": "mengalikan seluruh remaja dengan putri remaja ($12 \\times 5$)"
+        },
+        {
+          "teks": "50 formasi",
+          "alasan": "memakai putra anak sebagai putra remaja ($10 \\times 5$)"
+        }
+      ],
+      "pembahasan": "Banyak remaja $30 - 18 = 12$. Putri anak $18 - 10 = 8$ sehingga putri remaja $13 - 8 = 5$ dan putra remaja $12 - 5 = 7$. Formasi ganda campuran remaja $7 \\times 5 = 35$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0108-latihan-3-1-5b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "data lintas kelompok",
+      "alasan_level": "dua kasus lintas kelompok, tiap kasus perkalian, lalu dijumlahkan setelah menurunkan data",
+      "stimulus": null,
+      "pertanyaan": "Sanggar tari Kenanga memiliki 28 penari yang terbagi atas kelompok pemula dan kelompok lanjutan. Kelompok pemula terdiri atas 16 penari dengan 9 di antaranya penari putra. Banyak penari putri di sanggar tersebut ada 12 orang. Banyak pasangan tari putra dan putri yang dapat dibentuk dengan satu penari dari masing-masing kelompok adalah ....",
+      "jawaban_benar": "94 pasangan",
+      "alasan_benar": "putra lanjutan $7 \\times$ putri pemula $7 = 49$, putra pemula $9 \\times$ putri lanjutan $5 = 45$, jumlah $49 + 45 = 94$",
+      "distraktor": [
+        {
+          "teks": "49 pasangan",
+          "alasan": "hanya menghitung satu kasus (putra lanjutan dengan putri pemula)"
+        },
+        {
+          "teks": "45 pasangan",
+          "alasan": "hanya menghitung kasus putra pemula dengan putri lanjutan"
+        },
+        {
+          "teks": "2.205 pasangan",
+          "alasan": "mengalikan kedua kasus ($49 \\times 45$) padahal harus dijumlahkan"
+        }
+      ],
+      "pembahasan": "Putra total $28 - 12 = 16$, putra lanjutan $16 - 9 = 7$. Putri pemula $16 - 9 = 7$, putri lanjutan $12 - 7 = 5$. Kasus 1: $7 \\times 7 = 49$; kasus 2: $9 \\times 5 = 45$. Kedua kasus saling lepas sehingga total $49 + 45 = 94$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "bagian": "Contoh 3.3",
+        "nomor": "1",
+        "teks": "Terdapat lima angka yaitu 3, 4, 5, 6, dan 7. Tentukan banyak bilangan tiga angka yang bisa dibuat dari lima angka tersebut.",
+        "jawaban": "125 bilangan (boleh berulang) atau 60 bilangan (tidak boleh berulang)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "bilangan bersyarat",
+      "alasan_level": "dua syarat sekaligus (genap dan angka pertama bukan nol) sehingga harus membagi kasus angka terakhir",
+      "stimulus": null,
+      "pertanyaan": "Terdapat lima angka yaitu 0, 1, 2, 8, dan 9. Tentukan banyak bilangan genap tiga angka yang bisa dibuat dari lima angka tersebut jika angka tidak boleh berulang.",
+      "jawaban_benar": "30 bilangan",
+      "alasan_benar": "akhiran 0: $4 \\times 3 = 12$; akhiran 2 atau 8: masing-masing $3 \\times 3 = 9$; total $12 + 9 + 9 = 30$",
+      "distraktor": [
+        {
+          "teks": "36 bilangan",
+          "alasan": "mengabaikan syarat angka pertama bukan nol ($3 \\times 4 \\times 3$)"
+        },
+        {
+          "teks": "48 bilangan",
+          "alasan": "mengabaikan syarat genap ($4 \\times 4 \\times 3$)"
+        },
+        {
+          "teks": "60 bilangan",
+          "alasan": "mengabaikan kedua syarat ($5 \\times 4 \\times 3$)"
+        }
+      ],
+      "pembahasan": "Kasus akhiran 0: puluhan dan ratusan dari 4 angka sisa, $4 \\times 3 = 12$. Kasus akhiran 2: ratusan dari $\\{1,8,9\\}$ (3 pilihan), puluhan 3 pilihan, $3 \\times 3 = 9$. Akhiran 8 juga 9. Total $30$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "bagian": "Contoh 3.3",
+        "nomor": "1",
+        "teks": "Terdapat lima angka yaitu 3, 4, 5, 6, dan 7. Tentukan banyak bilangan tiga angka yang bisa dibuat dari lima angka tersebut.",
+        "jawaban": "125 bilangan (boleh berulang) atau 60 bilangan (tidak boleh berulang)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "bilangan bersyarat",
+      "alasan_level": "kelipatan 5 mensyaratkan angka terakhir 0 atau 5 dan angka pertama bukan nol, angka boleh berulang",
+      "stimulus": null,
+      "pertanyaan": "Terdapat enam angka yaitu 0, 1, 2, 5, 8, dan 9. Tentukan banyak bilangan empat angka kelipatan 5 yang dapat dibuat dari enam angka tersebut jika angka boleh berulang.",
+      "jawaban_benar": "360 bilangan",
+      "alasan_benar": "angka pertama 5 pilihan (bukan 0), kedua dan ketiga masing-masing 6 pilihan, angka terakhir 2 pilihan (0 atau 5): $5 \\times 6 \\times 6 \\times 2 = 360$",
+      "distraktor": [
+        {
+          "teks": "432 bilangan",
+          "alasan": "mengabaikan syarat angka pertama bukan nol ($6 \\times 6 \\times 6 \\times 2$)"
+        },
+        {
+          "teks": "180 bilangan",
+          "alasan": "hanya memakai akhiran 5 dan lupa akhiran 0 ($5 \\times 6 \\times 6 \\times 1$)"
+        },
+        {
+          "teks": "1.296 bilangan",
+          "alasan": "mengabaikan kedua syarat ($6^4$)"
+        }
+      ],
+      "pembahasan": "Bilangan kelipatan 5 berakhir 0 atau 5. Tempat ribuan 5 pilihan (bukan 0), ratusan dan puluhan masing-masing 6 pilihan, satuan 2 pilihan: $5 \\times 6 \\times 6 \\times 2 = 360$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "bagian": "Contoh 3.2",
+        "nomor": "1",
+        "teks": "Ahmad akan liburan ke Malang (M), dia berangkat dari kota asalnya yaitu Kudus (K), melalui kabupaten Lamongan (L), kemudian kota Surabaya (S). Jika banyak jalan dari Kudus ke kabupaten Lamongan ada dua jalan. Kemudian dari kabupaten Lamongan ke Kota Surabaya ada tiga jalan. Sedangkan dari Kota Surabaya ke Malang ada dua jalan. Berapa banyak rute perjalanan yang bisa dilalui Ahmad?",
+        "jawaban": "12 rute"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "gabungan penjumlahan dan perkalian",
+      "alasan_level": "rute lewat dua pos yang saling lepas: tiap rute memakai perkalian, kedua rute dijumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Seorang pendaki akan menuju puncak P dari pos awal A. Ia dapat melewati pos B atau pos C, tetapi tidak keduanya. Dari A ke B ada 3 jalur dan dari B ke P ada 4 jalur. Dari A ke C ada 2 jalur dan dari C ke P ada 5 jalur. Banyak rute berbeda yang dapat ditempuh pendaki dari A ke P adalah ....",
+      "jawaban_benar": "22 rute",
+      "alasan_benar": "lewat B: $3 \\times 4 = 12$; lewat C: $2 \\times 5 = 10$; kedua rute saling lepas sehingga $12 + 10 = 22$",
+      "distraktor": [
+        {
+          "teks": "120 rute",
+          "alasan": "mengalikan keempat banyak jalur ($3 \\times 4 \\times 2 \\times 5$)"
+        },
+        {
+          "teks": "14 rute",
+          "alasan": "menjumlahkan keempat banyak jalur ($3 + 4 + 2 + 5$)"
+        },
+        {
+          "teks": "45 rute",
+          "alasan": "menjumlahkan dulu lalu mengalikan ($(3 + 2) \\times (4 + 5)$)"
+        }
+      ],
+      "pembahasan": "Rute lewat B memakai aturan perkalian: $3 \\times 4 = 12$. Rute lewat C: $2 \\times 5 = 10$. Karena pendaki hanya melewati salah satu pos, kedua banyak rute dijumlahkan: $22$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 102,
+        "bagian": "Contoh 3.1",
+        "nomor": "1",
+        "teks": "Zaydan ingin mengikuti kegiatan FLS3N (Festival Lomba Seni dan Sastra Siswa Nasional) yang terdiri dari 7 bidang lomba dan O2SN (Olimpiade Olahraga Siswa Nasional) yang terdiri dari 9 bidang lomba tingkat kabupaten. Akan tetapi, syarat keikutsertaan lomba adalah mewakili sekolah pada satu bidang lomba untuk seluruh kegiatan. Tentukan banyak cara Zaydan memilih bidang lomba yang sesuai.",
+        "jawaban": "16 cara"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "gabungan penjumlahan dan perkalian",
+      "alasan_level": "memilih satu dari dua kelompok saling lepas (penjumlahan), lalu dikalikan dengan pilihan tahap berikutnya",
+      "stimulus": null,
+      "pertanyaan": "Dinda akan mengikuti satu kegiatan ekstrakurikuler yang dipilih dari 5 ekstrakurikuler olahraga atau 6 ekstrakurikuler seni. Setelah itu, ia memilih satu hari latihan dari 4 hari latihan yang tersedia untuk kegiatan tersebut. Banyak cara Dinda menentukan kegiatan beserta hari latihannya adalah ....",
+      "jawaban_benar": "44 cara",
+      "alasan_benar": "memilih kegiatan: $5 + 6 = 11$ cara, lalu memilih hari: $11 \\times 4 = 44$",
+      "distraktor": [
+        {
+          "teks": "120 cara",
+          "alasan": "mengalikan ketiga bilangan ($5 \\times 6 \\times 4$)"
+        },
+        {
+          "teks": "15 cara",
+          "alasan": "menjumlahkan ketiga bilangan ($5 + 6 + 4$)"
+        },
+        {
+          "teks": "29 cara",
+          "alasan": "mengalikan hanya 6 dan 4 lalu menambah 5 ($5 + 6 \\times 4$)"
+        }
+      ],
+      "pembahasan": "Pilihan kegiatan saling lepas: $5 + 6 = 11$. Tiap kegiatan diikuti pilihan hari latihan, sehingga $11 \\times 4 = 44$ cara.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0108-latihan-3-1-3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "gabungan penjumlahan dan perkalian",
+      "alasan_level": "tahap alas kaki memuat dua kelompok saling lepas, harus dijumlahkan dulu sebelum dikalikan",
+      "stimulus": null,
+      "pertanyaan": "Rina memiliki 8 kemeja, 6 celana panjang, 7 pasang sepatu, dan 2 pasang sandal. Setiap setelan terdiri atas satu kemeja, satu celana panjang, dan satu alas kaki berupa sepatu atau sandal. Banyak setelan berbeda yang dapat dibuat Rina adalah ....",
+      "jawaban_benar": "432 setelan",
+      "alasan_benar": "alas kaki: $7 + 2 = 9$ pilihan, sehingga $8 \\times 6 \\times 9 = 432$",
+      "distraktor": [
+        {
+          "teks": "672 setelan",
+          "alasan": "mengalikan sepatu dan sandal seolah keduanya dipakai bersamaan ($8 \\times 6 \\times 7 \\times 2$)"
+        },
+        {
+          "teks": "336 setelan",
+          "alasan": "lupa memasukkan sandal ($8 \\times 6 \\times 7$)"
+        },
+        {
+          "teks": "96 setelan",
+          "alasan": "lupa memasukkan sepatu ($8 \\times 6 \\times 2$)"
+        }
+      ],
+      "pembahasan": "Alas kaki dipilih salah satu: $7 + 2 = 9$ pilihan (penjumlahan). Setelan lengkap: $8 \\times 6 \\times 9 = 432$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0107-latihan-3-1-2"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perubahan banyak susunan",
+      "alasan_level": "membandingkan banyak susunan sebelum dan sesudah penambahan calon, dua perkalian lalu selisih",
+      "stimulus": null,
+      "pertanyaan": "Pada pemilihan pengurus terdapat 6 calon ketua, 4 calon wakil ketua, dan 5 calon sekretaris. Jika ditambahkan 3 calon sekretaris baru, banyak susunan pengurus (ketua, wakil ketua, sekretaris) yang mungkin bertambah sebanyak ....",
+      "jawaban_benar": "72 susunan",
+      "alasan_benar": "sebelum: $6 \\times 4 \\times 5 = 120$; sesudah: $6 \\times 4 \\times 8 = 192$; selisih $192 - 120 = 72$",
+      "distraktor": [
+        {
+          "teks": "192 susunan",
+          "alasan": "memberikan banyak susunan sesudah penambahan, bukan pertambahannya"
+        },
+        {
+          "teks": "120 susunan",
+          "alasan": "memberikan banyak susunan sebelum penambahan"
+        },
+        {
+          "teks": "12 susunan",
+          "alasan": "hanya mengalikan wakil ketua dengan sekretaris baru ($4 \\times 3$)"
+        }
+      ],
+      "pembahasan": "Sebelum $6 \\times 4 \\times 5 = 120$, sesudah $6 \\times 4 \\times 8 = 192$. Pertambahan $= 192 - 120 = 72$ (atau $6 \\times 4 \\times 3 = 72$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "bagian": "Ayo, Berkomunikasi",
+        "nomor": "1",
+        "teks": "Pada digit terakhir, yaitu x, y, dan z terdapat tiga angka yang perlu di isi (0 – 9), tiga digit terakhir tersebut menunjukkan kode dan jenis barang.",
+        "jawaban": "1.000 susunan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "kode bersyarat",
+      "alasan_level": "pengisian tiga tempat dengan syarat berbeda tiap tempat (bukan nol, bebas, ganjil)",
+      "stimulus": null,
+      "pertanyaan": "Kode pada sebuah kartu anggota terdiri atas tiga angka berurutan $xyz$ yang diambil dari angka desimal. Angka $x$ tidak boleh nol, angka $y$ boleh angka apa saja, dan angka $z$ harus ganjil. Banyak kode yang dapat dibuat adalah ....",
+      "jawaban_benar": "450 kode",
+      "alasan_benar": "$x$: 9 pilihan, $y$: 10 pilihan, $z$: 5 pilihan (1, 3, 5, 7, 9): $9 \\times 10 \\times 5 = 450$",
+      "distraktor": [
+        {
+          "teks": "500 kode",
+          "alasan": "membolehkan $x$ bernilai nol ($10 \\times 10 \\times 5$)"
+        },
+        {
+          "teks": "900 kode",
+          "alasan": "tidak memperhatikan syarat $z$ ganjil ($9 \\times 10 \\times 10$)"
+        },
+        {
+          "teks": "1.000 kode",
+          "alasan": "mengabaikan semua syarat ($10 \\times 10 \\times 10$)"
+        }
+      ],
+      "pembahasan": "Angka $x$ dari 1-9 (9 pilihan), $y$ dari 0-9 (10 pilihan), $z$ dari 1, 3, 5, 7, 9 (5 pilihan). Banyak kode $9 \\times 10 \\times 5 = 450$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "5 × 4 × 3 = 60 bilangan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "kode bersyarat",
+      "alasan_level": "kode campuran huruf dan angka, angka tidak berulang dan angka pertama bukan nol",
+      "stimulus": null,
+      "pertanyaan": "Kode registrasi sebuah kendaraan terdiri atas satu huruf dari $\\{P, Q, R, S, T\\}$ yang diikuti tiga angka berbeda dari angka 0 sampai 9. Angka pertama dari ketiga angka tersebut tidak boleh 0. Banyak kode registrasi yang dapat dibuat adalah ....",
+      "jawaban_benar": "3.240 kode",
+      "alasan_benar": "huruf 5 pilihan, angka pertama 9 pilihan (bukan 0), angka kedua 9 pilihan (tidak sama dengan angka pertama, 0 boleh), angka ketiga 8 pilihan: $5 \\times 9 \\times 9 \\times 8 = 3.240$",
+      "distraktor": [
+        {
+          "teks": "3.600 kode",
+          "alasan": "mengizinkan angka pertama bernilai 0 ($5 \\times 10 \\times 9 \\times 8$)"
+        },
+        {
+          "teks": "4.500 kode",
+          "alasan": "mengizinkan angka berulang ($5 \\times 9 \\times 10 \\times 10$)"
+        },
+        {
+          "teks": "2.520 kode",
+          "alasan": "mengurangi pilihan angka kedua dengan 0 juga ($5 \\times 9 \\times 8 \\times 7$)"
+        }
+      ],
+      "pembahasan": "Huruf: 5 pilihan. Angka pertama: 9 pilihan. Angka kedua: 10 angka dikurangi 1 yang terpakai = 9 pilihan. Angka ketiga: 8 pilihan. Total $5 \\times 9 \\times 9 \\times 8 = 3.240$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "5 × 4 × 3 = 60 bilangan"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bilangan bersyarat",
+      "alasan_level": "syarat ganjil dan kurang dari 500 saling berkaitan sehingga perlu dipisah menjadi dua kasus angka pertama",
+      "stimulus": null,
+      "pertanyaan": "Dari angka 1, 2, 3, 4, 5, 6, dan 7 akan dibuat bilangan tiga angka berbeda yang ganjil dan kurang dari 500. Banyak bilangan yang dapat dibuat adalah ....",
+      "jawaban_benar": "70 bilangan",
+      "alasan_benar": "angka pertama ganjil (1 atau 3): $2 \\times 3 \\times 5 = 30$; angka pertama genap (2 atau 4): $2 \\times 4 \\times 5 = 40$; total 70",
+      "distraktor": [
+        {
+          "teks": "80 bilangan",
+          "alasan": "menganggap selalu ada 4 angka ganjil untuk satuan ($4 \\times 4 \\times 5$)"
+        },
+        {
+          "teks": "140 bilangan",
+          "alasan": "mengabaikan syarat kurang dari 500 ($7 \\times 4 \\times 5$)"
+        },
+        {
+          "teks": "60 bilangan",
+          "alasan": "menganggap selalu tersisa 3 angka ganjil untuk satuan ($4 \\times 3 \\times 5$)"
+        }
+      ],
+      "pembahasan": "Angka pertama dari $\\{1,2,3,4\\}$. Jika angka pertama ganjil, satuan tinggal 3 pilihan ganjil: $2 \\times 3 \\times 5 = 30$. Jika genap, satuan 4 pilihan ganjil: $2 \\times 4 \\times 5 = 40$. Total 70.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "kutipan": "Aturan perkalian dari bilangan asli dapat dituliskan dalam bentuk berikut."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "bilangan bersyarat",
+      "alasan_level": "syarat kesamaan angka membuat dua tempat ditentukan oleh tempat lain, sehingga hanya tiga tempat bebas",
+      "stimulus": null,
+      "pertanyaan": "Bilangan palindrom adalah bilangan yang tetap sama jika dibaca dari kiri maupun dari kanan, misalnya 12521. Banyak bilangan palindrom lima angka (angka pertama tidak boleh 0) yang dapat dibuat dari angka desimal adalah ....",
+      "jawaban_benar": "900 bilangan",
+      "alasan_benar": "angka pertama 9 pilihan, angka kedua 10, angka ketiga 10, angka keempat dan kelima mengikuti: $9 \\times 10 \\times 10 = 900$",
+      "distraktor": [
+        {
+          "teks": "1.000 bilangan",
+          "alasan": "membolehkan angka pertama bernilai 0 ($10 \\times 10 \\times 10$)"
+        },
+        {
+          "teks": "90.000 bilangan",
+          "alasan": "menganggap kelima tempat bebas ($9 \\times 10^4$)"
+        },
+        {
+          "teks": "90 bilangan",
+          "alasan": "lupa angka tengah, hanya menghitung dua tempat bebas ($9 \\times 10$)"
+        }
+      ],
+      "pembahasan": "Pada palindrom lima angka, angka ke-4 sama dengan angka ke-2 dan angka ke-5 sama dengan angka ke-1. Jadi hanya tiga tempat yang dipilih bebas: $9 \\times 10 \\times 10 = 900$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "banyak cara terjadinya seluruh kejadian tersebut adalah"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "komplemen (paling sedikit)",
+      "alasan_level": "menghitung 'paling sedikit satu' lewat total dikurangi kasus tanpa angka 7, dua perkalian berpangkat",
+      "stimulus": null,
+      "pertanyaan": "Sebuah PIN terdiri atas empat angka yang diambil dari angka 0 sampai 9, dan angka boleh berulang. Banyak PIN yang memuat paling sedikit satu angka 7 adalah ....",
+      "jawaban_benar": "3.439 PIN",
+      "alasan_benar": "semua PIN $10^4 = 10.000$, PIN tanpa angka 7 $9^4 = 6.561$, sehingga $10.000 - 6.561 = 3.439$",
+      "distraktor": [
+        {
+          "teks": "6.561 PIN",
+          "alasan": "memberikan banyak PIN yang tidak memuat angka 7"
+        },
+        {
+          "teks": "9.271 PIN",
+          "alasan": "mengurangkan $9^3$ bukan $9^4$ ($10^4 - 9^3$)"
+        },
+        {
+          "teks": "4.000 PIN",
+          "alasan": "mengalikan 4 posisi dengan $10^3$, sehingga PIN dengan beberapa angka 7 terhitung berulang"
+        }
+      ],
+      "pembahasan": "Lebih mudah lewat komplemen: semua PIN dikurangi PIN tanpa angka 7. Semua: $10^4 = 10.000$. Tanpa angka 7: tiap tempat 9 pilihan, $9^4 = 6.561$. Selisih $3.439$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "5 × 5 × 5 = 125 bilangan"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "komplemen (paling sedikit)",
+      "alasan_level": "paling sedikit satu angka genap dihitung lewat total dikurangi bilangan yang semuanya ganjil",
+      "stimulus": null,
+      "pertanyaan": "Dari angka 1, 2, 3, 4, 5, dan 6 dibuat bilangan tiga angka dengan angka boleh berulang. Banyak bilangan yang memuat paling sedikit satu angka genap adalah ....",
+      "jawaban_benar": "189 bilangan",
+      "alasan_benar": "semua bilangan $6^3 = 216$, bilangan yang semua angkanya ganjil $3^3 = 27$, sehingga $216 - 27 = 189$",
+      "distraktor": [
+        {
+          "teks": "27 bilangan",
+          "alasan": "memberikan banyak bilangan yang semua angkanya ganjil"
+        },
+        {
+          "teks": "108 bilangan",
+          "alasan": "hanya mensyaratkan angka pertama genap ($3 \\times 6 \\times 6$)"
+        },
+        {
+          "teks": "216 bilangan",
+          "alasan": "menghitung semua bilangan tanpa syarat"
+        }
+      ],
+      "pembahasan": "Komplemen dari 'paling sedikit satu genap' adalah 'semua ganjil'. Semua: $6^3 = 216$. Semua ganjil: $3^3 = 27$. Jadi $216 - 27 = 189$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 102,
+        "kutipan": "Pengelompokan tersebut jelas berbeda dan saling lepas"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "gabungan penjumlahan dan perkalian",
+      "alasan_level": "pilihan tahap pertama dan terakhir memuat penjumlahan, termasuk pilihan tidak memilih",
+      "stimulus": null,
+      "pertanyaan": "Paket makan siang terdiri atas satu makanan utama, satu minuman, dan satu pencuci mulut. Makanan utama dipilih dari 4 jenis nasi atau 3 jenis mi. Minuman dipilih dari 5 jenis. Pencuci mulut dipilih dari 2 jenis, tetapi pembeli boleh tidak memilih pencuci mulut. Banyak paket berbeda yang dapat dipesan adalah ....",
+      "jawaban_benar": "105 paket",
+      "alasan_benar": "makanan utama $4 + 3 = 7$, minuman 5, pencuci mulut $2 + 1 = 3$ (termasuk tidak memilih): $7 \\times 5 \\times 3 = 105$",
+      "distraktor": [
+        {
+          "teks": "70 paket",
+          "alasan": "mewajibkan pencuci mulut ($7 \\times 5 \\times 2$)"
+        },
+        {
+          "teks": "180 paket",
+          "alasan": "mengalikan jenis nasi dan mi ($4 \\times 3 \\times 5 \\times 3$)"
+        },
+        {
+          "teks": "15 paket",
+          "alasan": "menjumlahkan semua pilihan ($7 + 5 + 3$)"
+        }
+      ],
+      "pembahasan": "Makanan utama: $4 + 3 = 7$ (saling lepas). Pencuci mulut: 2 jenis ditambah 1 pilihan tidak memilih $= 3$. Paket: $7 \\times 5 \\times 3 = 105$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "banyak cara terjadinya seluruh kejadian tersebut adalah"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "penempatan bersyarat",
+      "alasan_level": "mengisi tempat yang bersyarat lebih dulu, baru tempat yang bebas",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 siswa putra dan 5 siswa putri akan dipilih ketua, wakil ketua, dan bendahara. Ketua harus putra, bendahara harus putri, wakil ketua boleh putra maupun putri, dan setiap siswa hanya boleh memegang satu jabatan. Banyak susunan pengurus yang mungkin adalah ....",
+      "jawaban_benar": "270 susunan",
+      "alasan_benar": "ketua 6 pilihan, bendahara 5 pilihan, wakil ketua dari $11 - 2 = 9$ siswa tersisa: $6 \\times 5 \\times 9 = 270$",
+      "distraktor": [
+        {
+          "teks": "330 susunan",
+          "alasan": "membolehkan wakil ketua dipilih dari semua 11 siswa ($6 \\times 5 \\times 11$)"
+        },
+        {
+          "teks": "990 susunan",
+          "alasan": "mengabaikan syarat jenis kelamin ($11 \\times 10 \\times 9$)"
+        },
+        {
+          "teks": "240 susunan",
+          "alasan": "mengurangi 3 jabatan dari 11 siswa untuk wakil ketua ($6 \\times 5 \\times 8$)"
+        }
+      ],
+      "pembahasan": "Isi jabatan bersyarat dahulu: ketua 6 pilihan dan bendahara 5 pilihan. Wakil ketua dari siswa yang belum menjabat: $11 - 2 = 9$. Total $6 \\times 5 \\times 9 = 270$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "kutipan": "1 × 2 × 3 × 4 × ... × n = n ! Notasi n ! dibaca n faktorial"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "penempatan bersyarat",
+      "alasan_level": "dua syarat posisi (satu di ujung, satu bukan di ujung) lalu faktorial untuk sisa orang",
+      "stimulus": null,
+      "pertanyaan": "Enam orang siswa, termasuk Ani dan Budi, duduk berjajar pada enam kursi dalam satu baris. Ani harus duduk di salah satu ujung baris, sedangkan Budi tidak boleh duduk di kedua ujung baris. Banyak cara mereka duduk adalah ....",
+      "jawaban_benar": "192 cara",
+      "alasan_benar": "Ani 2 pilihan ujung, Budi 4 pilihan kursi bukan ujung, empat siswa lain $4! = 24$: $2 \\times 4 \\times 24 = 192$",
+      "distraktor": [
+        {
+          "teks": "240 cara",
+          "alasan": "hanya membatasi Ani di ujung ($2 \\times 5!$)"
+        },
+        {
+          "teks": "96 cara",
+          "alasan": "mengira Ani hanya di satu ujung ($1 \\times 4 \\times 4!$)"
+        },
+        {
+          "teks": "720 cara",
+          "alasan": "menghitung $6!$ tanpa memperhatikan syarat"
+        }
+      ],
+      "pembahasan": "Ani di ujung kiri atau kanan (2 cara). Budi hanya dapat di 4 kursi tengah. Empat siswa lain mengisi 4 kursi sisa dengan $4! = 24$ cara. Total $2 \\times 4 \\times 24 = 192$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "kutipan": "5 × 4 × 3 = 60 bilangan"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan faktorial dan perkalian",
+      "alasan_level": "membalik aturan perkalian untuk mencari banyak angka dari banyak bilangan, perlu mencoba atau memfaktorkan",
+      "stimulus": null,
+      "pertanyaan": "Dari $n$ angka berbeda yang semuanya bukan nol dibuat bilangan tiga angka dengan angka tidak boleh berulang. Ternyata banyak bilangan yang terbentuk adalah 210. Nilai $n$ adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "banyak bilangan $n(n-1)(n-2) = 210$; $7 \\times 6 \\times 5 = 210$ sehingga $n = 7$",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "$6 \\times 5 \\times 4 = 120$, kurang dari 210"
+        },
+        {
+          "teks": "8",
+          "alasan": "$8 \\times 7 \\times 6 = 336$, lebih dari 210"
+        },
+        {
+          "teks": "10",
+          "alasan": "$10 \\times 9 \\times 8 = 720$, jauh lebih dari 210"
+        }
+      ],
+      "pembahasan": "Tiga tempat diisi tanpa pengulangan: $n(n-1)(n-2) = 210$. Karena $7 \\times 6 \\times 5 = 210$, maka $n = 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-a-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "kutipan": "1 × 2 × 3 × 4 × ... × n = n ! Notasi n ! dibaca n faktorial"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan faktorial dan perkalian",
+      "alasan_level": "menyederhanakan hasil bagi dua faktorial menjadi hasil kali dua bilangan berurutan, lalu menyelesaikan untuk n",
+      "stimulus": null,
+      "pertanyaan": "Jika $n$ bilangan asli dan $\\dfrac{(n+1)!}{(n-1)!} = 90$, maka nilai $n$ adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "$\\dfrac{(n+1)!}{(n-1)!} = (n+1)n = 90$ sehingga $n = 9$ karena $10 \\times 9 = 90$",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "mengambil faktor terbesar $n + 1 = 10$ sebagai nilai $n$"
+        },
+        {
+          "teks": "45",
+          "alasan": "membagi 90 dengan 2 pada penyederhanaan"
+        },
+        {
+          "teks": "89",
+          "alasan": "menyederhanakan menjadi $n + 1 = 90$"
+        }
+      ],
+      "pembahasan": "$(n+1)! = (n+1)\\,n\\,(n-1)!$ sehingga hasil bagi $= (n+1)n = 90$. Karena $10 \\times 9 = 90$, nilai $n = 9$.",
+      "catatan": null
+    }
+  ]
+}

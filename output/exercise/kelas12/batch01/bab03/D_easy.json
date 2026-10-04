@@ -1,0 +1,704 @@
+{
+  "book": "kelas12",
+  "bab_no": 3,
+  "subbab": "D",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b03-d-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 134,
+        "bagian": "Contoh 3.14",
+        "nomor": "3.14",
+        "teks": "suku yang memuat _x_<sup>6</sup> dari penjabaran (2 + _x_)<sup>8</sup>",
+        "jawaban": "112"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "koefisien suku penjabaran",
+      "alasan_level": "satu rumus koefisien binomial langsung dengan substitusi n dan r",
+      "stimulus": null,
+      "pertanyaan": "Koefisien suku yang memuat $x^3$ dari penjabaran $(3 + x)^5$ adalah ....",
+      "jawaban_benar": "$90$",
+      "alasan_benar": "$C_3^5 \\cdot 3^{2} = 10 \\times 9 = 90$",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "lupa mengalikan dengan $3^2$"
+        },
+        {
+          "teks": "$270$",
+          "alasan": "memangkatkan 3 dengan pangkat 3 (pangkat $x$) bukan $5-3$"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "memangkatkan 3 hanya satu kali"
+        }
+      ],
+      "pembahasan": "Suku memuat $x^3$ berarti $r=3$, sehingga suku itu $C_3^5 \\cdot 3^{5-3} x^3 = 10 \\cdot 9 x^3 = 90x^3$. Koefisiennya 90.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 134,
+        "bagian": "Contoh 3.14",
+        "nomor": "3.14",
+        "teks": "suku yang memuat _x_<sup>6</sup> dari penjabaran (2 + _x_)<sup>8</sup>",
+        "jawaban": "112"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "koefisien suku penjabaran",
+      "alasan_level": "substitusi langsung n=6, r=4 ke rumus koefisien binomial lalu kalikan pangkat konstanta",
+      "stimulus": null,
+      "pertanyaan": "Tentukan koefisien suku yang memuat $x^4$ dari penjabaran $(5 + x)^6$.",
+      "jawaban_benar": "$375$",
+      "alasan_benar": "$C_4^6 \\cdot 5^{2} = 15 \\times 25 = 375$",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "lupa mengalikan dengan $5^2$"
+        },
+        {
+          "teks": "$75$",
+          "alasan": "memangkatkan 5 hanya satu kali"
+        },
+        {
+          "teks": "$9.375$",
+          "alasan": "memangkatkan 5 dengan pangkat 4 (pangkat $x$)"
+        }
+      ],
+      "pembahasan": "Koefisien suku $x^4$ adalah $C_4^6 \\cdot 5^{6-4} = 15 \\cdot 25 = 375$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "bagian": "Contoh 3.15",
+        "nomor": "a",
+        "teks": "Banyak susunan penendang di mana tepat 3 penendang berhasil.",
+        "jawaban": "10 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "banyak susunan tepat r berhasil",
+      "alasan_level": "mengenali kombinasi dan menghitung satu nilai $C_r^n$",
+      "stimulus": null,
+      "pertanyaan": "Dalam suatu adu penalti, terdapat 7 penendang. Banyak susunan penendang di mana tepat 2 penendang berhasil mencetak gol adalah ....",
+      "jawaban_benar": "21 cara",
+      "alasan_benar": "urutan tidak diperhatikan: $C_2^7 = \\frac{7 \\times 6}{2} = 21$",
+      "distraktor": [
+        {
+          "teks": "42 cara",
+          "alasan": "memakai permutasi $P(7,2)$ sehingga lupa membagi $2!$"
+        },
+        {
+          "teks": "14 cara",
+          "alasan": "mengalikan $7 \times 2$"
+        },
+        {
+          "teks": "35 cara",
+          "alasan": "menghitung $C_3^7$ (tertukar jumlah yang berhasil)"
+        }
+      ],
+      "pembahasan": "Memilih 2 penendang yang berhasil dari 7 tanpa memperhatikan urutan: $C_2^7 = 21$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "bagian": "Contoh 3.15",
+        "nomor": "a",
+        "teks": "Banyak susunan penendang di mana tepat 3 penendang berhasil.",
+        "jawaban": "10 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "banyak susunan tepat r berhasil",
+      "alasan_level": "mengenali kombinasi dari konteks ujian dan menghitung satu $C_r^n$",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengerjakan 6 soal pilihan ganda. Banyak susunan soal yang dijawab benar jika tepat 4 soal dijawab benar adalah ....",
+      "jawaban_benar": "15 cara",
+      "alasan_benar": "$C_4^6 = \\frac{6 \\times 5}{2} = 15$",
+      "distraktor": [
+        {
+          "teks": "24 cara",
+          "alasan": "mengalikan $6 \times 4$"
+        },
+        {
+          "teks": "360 cara",
+          "alasan": "memakai permutasi $P(6,4)$"
+        },
+        {
+          "teks": "20 cara",
+          "alasan": "menghitung $C_3^6$"
+        }
+      ],
+      "pembahasan": "Memilih 4 soal yang benar dari 6 soal: $C_4^6 = C_2^6 = 15$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "bagian": "Contoh 3.15",
+        "nomor": "b",
+        "teks": "Peluang tepat 4 penendang mencetak gol, jika peluang setiap penendang adalah 0,8.",
+        "jawaban": "0,4096"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluang binomial tepat r",
+      "alasan_level": "satu rumus peluang binomial dengan n kecil",
+      "stimulus": null,
+      "pertanyaan": "Seorang penjaga gawang berhasil menahan tendangan penalti dengan peluang 0,9. Jika ada 3 tendangan, peluang tepat 2 tendangan berhasil ditahan adalah ....",
+      "jawaban_benar": "$0,243$",
+      "alasan_benar": "$C_2^3 (0,9)^2 (0,1)^1 = 3 \\times 0,81 \\times 0,1 = 0,243$",
+      "distraktor": [
+        {
+          "teks": "$0,081$",
+          "alasan": "lupa mengalikan dengan $C_2^3 = 3$"
+        },
+        {
+          "teks": "$0,729$",
+          "alasan": "menghitung peluang ketiganya berhasil ($0,9^3$)"
+        },
+        {
+          "teks": "$0,27$",
+          "alasan": "memangkatkan 0,9 hanya satu kali"
+        }
+      ],
+      "pembahasan": "$P(2) = C_2^3 (0,9)^2 (0,1)^{3-2} = 3 \\times 0,81 \\times 0,1 = 0,243$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "bagian": "Contoh 3.15",
+        "nomor": "b",
+        "teks": "Peluang tepat 4 penendang mencetak gol, jika peluang setiap penendang adalah 0,8.",
+        "jawaban": "0,4096"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluang binomial tepat r",
+      "alasan_level": "satu rumus peluang binomial dengan p = 0,5",
+      "stimulus": null,
+      "pertanyaan": "Seorang pemain basket memiliki peluang 0,5 memasukkan bola pada setiap lemparan bebas. Dari 4 lemparan bebas, peluang tepat 2 lemparan masuk adalah ....",
+      "jawaban_benar": "$0,375$",
+      "alasan_benar": "$C_2^4 (0,5)^2 (0,5)^2 = 6 \\times 0,0625 = 0,375$",
+      "distraktor": [
+        {
+          "teks": "$0,0625$",
+          "alasan": "lupa mengalikan dengan $C_2^4 = 6$"
+        },
+        {
+          "teks": "$0,25$",
+          "alasan": "memakai $C_1^4 = 4$"
+        },
+        {
+          "teks": "$0,75$",
+          "alasan": "menghitung pangkat total hanya tiga kali ($6 \\times 0,5^3$)"
+        }
+      ],
+      "pembahasan": "$P(2) = C_2^4 (0,5)^2 (0,5)^{2} = 6 \\times 0,0625 = 0,375$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0136-latihan-3-4-1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluang binomial tepat r",
+      "alasan_level": "satu rumus peluang binomial dengan n=4, r=1",
+      "stimulus": null,
+      "pertanyaan": "Tim voli sekolah akan bermain dalam 4 pertandingan. Peluang menang setiap pertandingan adalah 0,3. Peluang tim tersebut menang tepat 1 dari 4 pertandingan adalah ....",
+      "jawaban_benar": "$0,4116$",
+      "alasan_benar": "$C_1^4 (0,3)^1 (0,7)^3 = 4 \\times 0,3 \\times 0,343 = 0,4116$",
+      "distraktor": [
+        {
+          "teks": "$0,1029$",
+          "alasan": "lupa mengalikan dengan $C_1^4 = 4$"
+        },
+        {
+          "teks": "$0,588$",
+          "alasan": "memangkatkan 0,7 dengan pangkat 2 saja"
+        },
+        {
+          "teks": "$0,0756$",
+          "alasan": "menukar peluang menang dan kalah"
+        }
+      ],
+      "pembahasan": "$P(1) = C_1^4 (0,3)(0,7)^3 = 4 \\times 0,3 \\times 0,343 = 0,4116$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0136-latihan-3-4-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluang binomial tepat r",
+      "alasan_level": "satu rumus peluang binomial dengan n=5, r=4",
+      "stimulus": null,
+      "pertanyaan": "Dari 5 siswa yang mengikuti simulasi, peluang seorang siswa lolos adalah 0,4. Peluang tepat 4 siswa lolos adalah ....",
+      "jawaban_benar": "$0,0768$",
+      "alasan_benar": "$C_4^5 (0,4)^4 (0,6)^1 = 5 \\times 0,0256 \\times 0,6 = 0,0768$",
+      "distraktor": [
+        {
+          "teks": "$0,01536$",
+          "alasan": "lupa mengalikan dengan $C_4^5 = 5$"
+        },
+        {
+          "teks": "$0,128$",
+          "alasan": "lupa mengalikan dengan peluang gagal $0,6$"
+        },
+        {
+          "teks": "$0,2592$",
+          "alasan": "menukar peluang lolos dan gagal"
+        }
+      ],
+      "pembahasan": "$P(4) = C_4^5 (0,4)^4 (0,6) = 5 \\times 0,0256 \\times 0,6 = 0,0768$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0136-latihan-3-4-3"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "koefisien model peluang",
+      "alasan_level": "koefisien suku tertentu dari $(b+3s)^6$ dengan satu rumus binomial",
+      "stimulus": null,
+      "pertanyaan": "Dina mengerjakan 6 soal pilihan ganda. Model peluang jawabannya ditulis $(b + 3s)^6$ dengan $b$ untuk jawaban benar dan $s$ untuk jawaban salah. Banyak cara Dina menjawab tepat 4 soal benar adalah koefisien suku $b^4 s^2$, yaitu ....",
+      "jawaban_benar": "$135$",
+      "alasan_benar": "$C_4^6 \\cdot 3^2 = 15 \\times 9 = 135$",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "lupa mengalikan dengan $3^2$"
+        },
+        {
+          "teks": "$405$",
+          "alasan": "memangkatkan 3 dengan pangkat 3"
+        },
+        {
+          "teks": "$1.215$",
+          "alasan": "memangkatkan 3 dengan pangkat 4 (pangkat $b$)"
+        }
+      ],
+      "pembahasan": "Suku $b^4 s^2$ berkoefisien $C_4^6 \\cdot 3^2 = 15 \\cdot 9 = 135$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0136-latihan-3-4-3"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "koefisien model peluang",
+      "alasan_level": "koefisien suku tertentu dari $(m+2k)^4$ dengan satu rumus binomial",
+      "stimulus": null,
+      "pertanyaan": "Seorang atlet melakukan 4 kali tembakan. Model hasil tembakannya ditulis $(m + 2k)^4$ dengan $m$ untuk tembakan masuk dan $k$ untuk tembakan meleset. Banyak cara atlet itu mencetak tepat 3 tembakan masuk adalah koefisien suku $m^3 k$, yaitu ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "$C_3^4 \\cdot 2^1 = 4 \\times 2 = 8$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "lupa mengalikan dengan $2^1$"
+        },
+        {
+          "teks": "$16$",
+          "alasan": "memangkatkan 2 dengan pangkat 2"
+        },
+        {
+          "teks": "$32$",
+          "alasan": "memangkatkan 2 dengan pangkat 3 (pangkat $m$)"
+        }
+      ],
+      "pembahasan": "Suku $m^3 k$ berkoefisien $C_3^4 \\cdot 2 = 4 \\cdot 2 = 8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "banyak suku penjabaran",
+      "alasan_level": "mengenali bahwa penjabaran $(a+b)^n$ memiliki $n+1$ suku",
+      "stimulus": null,
+      "pertanyaan": "Banyak suku pada penjabaran $(2x + y)^{11}$ adalah ....",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "penjabaran $(a+b)^n$ memiliki $n+1$ suku, yaitu $r = 0, 1, \\dots, 11$",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "mengira banyak suku sama dengan pangkat"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "mengurangi pangkat dengan 1"
+        },
+        {
+          "teks": "$22$",
+          "alasan": "menggandakan pangkat karena ada dua variabel"
+        }
+      ],
+      "pembahasan": "Indeks $r$ berjalan dari 0 sampai $n=11$, sehingga ada $11+1 = 12$ suku.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 134,
+        "kutipan": "Menggunakan aturan segitiga pascal, secara sistematis berlaku"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "segitiga Pascal",
+      "alasan_level": "membaca baris segitiga Pascal untuk pangkat 4",
+      "stimulus": null,
+      "pertanyaan": "Berdasarkan aturan segitiga Pascal, koefisien-koefisien pada penjabaran $(a + b)^4$ secara berurutan adalah ....",
+      "jawaban_benar": "$1, 4, 6, 4, 1$",
+      "alasan_benar": "baris ke-4 segitiga Pascal: $C_0^4, C_1^4, \\dots, C_4^4 = 1, 4, 6, 4, 1$",
+      "distraktor": [
+        {
+          "teks": "$1, 3, 3, 1$",
+          "alasan": "memakai baris untuk pangkat 3"
+        },
+        {
+          "teks": "$1, 5, 10, 10, 5, 1$",
+          "alasan": "memakai baris untuk pangkat 5"
+        },
+        {
+          "teks": "$1, 4, 8, 4, 1$",
+          "alasan": "mengira koefisien tengah dua kali koefisien kedua"
+        }
+      ],
+      "pembahasan": "Baris untuk $n=4$ pada segitiga Pascal adalah 1, 4, 6, 4, 1.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "koefisien suku penjabaran",
+      "alasan_level": "mengenali koefisien $x^2y^3$ pada $(x+y)^5$ sebagai $C_2^5$",
+      "stimulus": null,
+      "pertanyaan": "Koefisien suku yang memuat $x^2 y^3$ pada penjabaran $(x + y)^5$ adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "$C_2^5 = \\frac{5 \\times 4}{2} = 10$",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "mengambil nilai $n$ sebagai koefisien"
+        },
+        {
+          "teks": "$20$",
+          "alasan": "memakai permutasi $P(5,2)$"
+        },
+        {
+          "teks": "$60$",
+          "alasan": "memakai permutasi $P(5,3)$"
+        }
+      ],
+      "pembahasan": "Koefisien suku $x^2 y^3$ adalah $C_2^5 = 10$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 132,
+        "kutipan": "Ada 10 pemain yang tersedia dan hanya 5 pemain yang akan dimainkan"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pemilihan posisi pemain",
+      "alasan_level": "aturan perkalian pada pemilihan pemain untuk tiga posisi dari tiga kelompok kandidat",
+      "stimulus": null,
+      "pertanyaan": "Pelatih futsal memiliki 3 kandidat kiper, 5 kandidat anchor, dan 4 kandidat pivot. Banyak cara memilih satu kiper, satu anchor, dan satu pivot adalah ....",
+      "jawaban_benar": "60 cara",
+      "alasan_benar": "$3 \\times 5 \\times 4 = 60$",
+      "distraktor": [
+        {
+          "teks": "12 cara",
+          "alasan": "menjumlahkan ketiga banyak kandidat"
+        },
+        {
+          "teks": "15 cara",
+          "alasan": "melupakan satu posisi (pivot)"
+        },
+        {
+          "teks": "20 cara",
+          "alasan": "melupakan satu posisi (kiper)"
+        }
+      ],
+      "pembahasan": "Setiap posisi dipilih bebas, sehingga banyak cara $3 \\times 5 \\times 4 = 60$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluang kejadian khusus",
+      "alasan_level": "rumus peluang binomial untuk kejadian semua berhasil dengan $C_4^4 = 1$",
+      "stimulus": null,
+      "pertanyaan": "Peluang seorang pasien sembuh setelah menjalani terapi adalah 0,9. Jika ada 4 pasien yang menjalani terapi, peluang keempat pasien sembuh adalah ....",
+      "jawaban_benar": "$0,6561$",
+      "alasan_benar": "$C_4^4 (0,9)^4 (0,1)^0 = 1 \\times 0,6561 = 0,6561$",
+      "distraktor": [
+        {
+          "teks": "$0,0001$",
+          "alasan": "menghitung peluang keempatnya tidak sembuh"
+        },
+        {
+          "teks": "$0,729$",
+          "alasan": "memangkatkan 0,9 hanya tiga kali"
+        },
+        {
+          "teks": "$0,3439$",
+          "alasan": "menghitung peluang paling sedikit satu pasien tidak sembuh"
+        }
+      ],
+      "pembahasan": "$P(4) = C_4^4 (0,9)^4 (0,1)^0 = 0,6561$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 134,
+        "kutipan": "Menggunakan aturan segitiga pascal, secara sistematis berlaku"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menentukan suku ke-k",
+      "alasan_level": "menentukan suku ke-4 dengan indeks $r=3$ pada penjabaran $(a+b)^7$",
+      "stimulus": null,
+      "pertanyaan": "Suku ke-4 pada penjabaran $(a + b)^7$ dalam urutan pangkat $a$ menurun adalah ....",
+      "jawaban_benar": "$35a^4b^3$",
+      "alasan_benar": "suku ke-4 berarti $r=3$: $C_3^7 a^{4} b^{3} = 35a^4b^3$",
+      "distraktor": [
+        {
+          "teks": "$35a^3b^4$",
+          "alasan": "pangkat $a$ dan $b$ tertukar"
+        },
+        {
+          "teks": "$21a^5b^2$",
+          "alasan": "mengambil suku ke-3 ($r=2$)"
+        },
+        {
+          "teks": "$7a^6b$",
+          "alasan": "mengambil suku ke-2 ($r=1$)"
+        }
+      ],
+      "pembahasan": "Suku ke-$(r+1)$ adalah $C_r^7 a^{7-r} b^r$; untuk $r=3$ diperoleh $35a^4b^3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menjabarkan binomial",
+      "alasan_level": "menjabarkan $(x+2)^3$ dengan koefisien segitiga Pascal 1, 3, 3, 1",
+      "stimulus": null,
+      "pertanyaan": "Hasil penjabaran $(x + 2)^3$ adalah ....",
+      "jawaban_benar": "$x^3 + 6x^2 + 12x + 8$",
+      "alasan_benar": "$x^3 + 3(2)x^2 + 3(2^2)x + 2^3$",
+      "distraktor": [
+        {
+          "teks": "$x^3 + 2x^2 + 4x + 8$",
+          "alasan": "lupa koefisien segitiga Pascal 1, 3, 3, 1"
+        },
+        {
+          "teks": "$x^3 + 3x^2 + 3x + 8$",
+          "alasan": "lupa memangkatkan konstanta 2 pada suku tengah"
+        },
+        {
+          "teks": "$x^3 + 6x^2 + 6x + 8$",
+          "alasan": "pada suku ketiga memakai $3 \\times 2$ bukan $3 \\times 2^2$"
+        }
+      ],
+      "pembahasan": "Koefisien Pascal 1, 3, 3, 1 dikalikan pangkat 2: $x^3 + 6x^2 + 12x + 8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 134,
+        "kutipan": "Menggunakan aturan segitiga pascal, secara sistematis berlaku"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "segitiga Pascal",
+      "alasan_level": "koefisien tengah $C_3^6$ pada baris keenam segitiga Pascal",
+      "stimulus": null,
+      "pertanyaan": "Koefisien suku tengah pada penjabaran $(a + b)^6$ adalah ....",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "suku tengah adalah suku ke-4: $C_3^6 = 20$",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "mengambil koefisien suku kedua atau keenam"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "mengambil koefisien suku kedua dari baris pangkat 6"
+        },
+        {
+          "teks": "$40$",
+          "alasan": "menggandakan nilai koefisien tengah"
+        }
+      ],
+      "pembahasan": "Baris pangkat 6: 1, 6, 15, 20, 15, 6, 1. Suku tengah berkoefisien 20.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "pengenalan rumus peluang binomial",
+      "alasan_level": "mengenali bentuk rumus $P(r)=C_r^n p^r q^{n-r}$",
+      "stimulus": null,
+      "pertanyaan": "Peluang sukses setiap percobaan adalah $p$ dan peluang gagal $q = 1 - p$. Peluang tepat 3 sukses dari 5 percobaan dirumuskan sebagai ....",
+      "jawaban_benar": "$C_3^5\\, p^3 q^2$",
+      "alasan_benar": "$P(r) = C_r^n p^r q^{n-r}$ dengan $n=5$, $r=3$",
+      "distraktor": [
+        {
+          "teks": "$C_3^5\\, p^2 q^3$",
+          "alasan": "pangkat $p$ dan $q$ tertukar"
+        },
+        {
+          "teks": "$C_3^5\\, p^3 q^3$",
+          "alasan": "pangkat $q$ ditulis $r$ bukan $n-r$"
+        },
+        {
+          "teks": "$5\\, p^3 q^2$",
+          "alasan": "mengganti $C_3^5$ dengan $n$"
+        }
+      ],
+      "pembahasan": "Peluang tepat $r$ sukses dari $n$ percobaan adalah $C_r^n p^r q^{n-r}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluang kejadian khusus",
+      "alasan_level": "rumus peluang binomial dengan p=0,5 pada koin setimbang",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koin setimbang dilempar 5 kali. Peluang muncul sisi angka tepat 2 kali adalah ....",
+      "jawaban_benar": "$0,3125$",
+      "alasan_benar": "$C_2^5 (0,5)^2 (0,5)^3 = 10 \\times \\frac{1}{32} = 0,3125$",
+      "distraktor": [
+        {
+          "teks": "$0,03125$",
+          "alasan": "lupa mengalikan dengan $C_2^5 = 10$"
+        },
+        {
+          "teks": "$0,625$",
+          "alasan": "memangkatkan 0,5 empat kali bukan lima"
+        },
+        {
+          "teks": "$0,15625$",
+          "alasan": "memakai $C_1^5 = 5$"
+        }
+      ],
+      "pembahasan": "$P(2) = C_2^5 (0,5)^5 = 10 \\times 0,03125 = 0,3125$.",
+      "catatan": null
+    }
+  ]
+}

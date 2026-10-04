@@ -1,0 +1,701 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0035-latihan-c-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan matriks variabel elemen",
+      "alasan_level": "menyamakan elemen seletak pada tiga matriks lalu menyelesaikan tiga persamaan linear",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\begin{pmatrix} 3x & y \\\\ 5z & 7z \\end{pmatrix}$ - $\\begin{pmatrix} 19 & -x \\\\ -4y & 17 \\end{pmatrix}$ + $\\begin{pmatrix} 4 & -3 \\\\ -7 & -4 \\end{pmatrix}$ = $\\begin{pmatrix} 0 & 0 \\\\ 0 & 0 \\end{pmatrix}$. Nilai $x$, $y$, dan $z$ berturut-turut adalah ....",
+      "jawaban_benar": "$x = 5$, $y = -2$, $z = 3$",
+      "alasan_benar": "elemen (1,1): $3x - 19 + 4 = 0$ sehingga $x = 5$; (1,2): $y + x - 3 = 0$ sehingga $y = -2$; (2,1): $5z + 4y - 7 = 0$ sehingga $z = 3$",
+      "distraktor": [
+        {
+          "teks": "$x = 5$, $y = -8$, $z = 3$",
+          "alasan": "salah tanda pada elemen (1,2): $y + x + 3 = 0$"
+        },
+        {
+          "teks": "$x = 5$, $y = -2$, $z = -3$",
+          "alasan": "salah tanda saat menyelesaikan $5z + 4y - 7 = 0$ ($5z = -15$)"
+        },
+        {
+          "teks": "$x = -5$, $y = -2$, $z = 3$",
+          "alasan": "salah tanda saat menyelesaikan $3x - 19 + 4 = 0$ ($3x = -15$)"
+        }
+      ],
+      "pembahasan": "Elemen seletak: $3x - 19 + 4 = 0 \\Rightarrow x = 5$; $y - (-x) + (-3) = 0 \\Rightarrow y = -2$; $5z - (-4y) + (-7) = 0 \\Rightarrow z = 3$; cek $7z - 17 - 4 = 0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0035-latihan-c-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan matriks variabel elemen",
+      "alasan_level": "menyusun empat persamaan dari elemen seletak dan menyelesaikannya satu per satu",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\begin{pmatrix} 3x & 2y \\\\ z & 4z \\end{pmatrix}$ - $\\begin{pmatrix} 5 & -3x \\\\ 2y & -9 \\end{pmatrix}$ + $\\begin{pmatrix} 11 & -4 \\\\ 13 & 3 \\end{pmatrix}$ = $\\begin{pmatrix} 0 & 0 \\\\ 0 & 0 \\end{pmatrix}$. Nilai $x$, $y$, dan $z$ yang memenuhi adalah ....",
+      "jawaban_benar": "$x = -2$, $y = 5$, $z = -3$",
+      "alasan_benar": "$3x - 5 + 11 = 0$ sehingga $x = -2$; $2y + 3x - 4 = 0$ sehingga $y = 5$; $z - 2y + 13 = 0$ sehingga $z = -3$",
+      "distraktor": [
+        {
+          "teks": "$x = -2$, $y = 5$, $z = 3$",
+          "alasan": "salah tanda saat menyelesaikan $4z + 9 + 3 = 0$ ($4z = 12$)"
+        },
+        {
+          "teks": "$x = 2$, $y = -1$, $z = -3$",
+          "alasan": "salah tanda pada $3x + 6 = 0$ sehingga $x = 2$ dan $y$ ikut salah"
+        },
+        {
+          "teks": "$x = -2$, $y = -1$, $z = -3$",
+          "alasan": "salah tanda pada $-(-3x)$ sehingga $2y - 3x - 4 = 0$"
+        }
+      ],
+      "pembahasan": "Elemen (1,1): $3x - 5 + 11 = 0$, $x = -2$. Elemen (1,2): $2y - (-3x) - 4 = 0$, $y = 5$. Elemen (2,1): $z - 2y + 13 = 0$, $z = -3$. Cek (2,2): $4z + 9 + 3 = 0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0035-latihan-c-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan matriks variabel elemen",
+      "alasan_level": "menyusun dua persamaan dari matriks kolom lalu menyelesaikan sistem dengan eliminasi",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\begin{pmatrix} 7a \\\\ 7b \\end{pmatrix}$ + $\\begin{pmatrix} 3b \\\\ 3a \\end{pmatrix}$ = $\\begin{pmatrix} 5 \\\\ -15 \\end{pmatrix}$. Nilai $a$ dan $b$ adalah ....",
+      "jawaban_benar": "$a = 2$, $b = -3$",
+      "alasan_benar": "$7a + 3b = 5$ dan $3a + 7b = -15$; eliminasi memberi $a = 2$ dan $b = -3$",
+      "distraktor": [
+        {
+          "teks": "$a = -3$, $b = 2$",
+          "alasan": "nilai $a$ dan $b$ tertukar"
+        },
+        {
+          "teks": "$a = 2$, $b = 3$",
+          "alasan": "salah tanda pada nilai $b$"
+        },
+        {
+          "teks": "$a = -2$, $b = 3$",
+          "alasan": "kedua nilai salah tanda"
+        }
+      ],
+      "pembahasan": "Elemen seletak: $7a + 3b = 5$ dan $3a + 7b = -15$. Dari eliminasi: $40b = -120$ sehingga $b = -3$ dan $a = 2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0035-latihan-c-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan matriks variabel elemen",
+      "alasan_level": "sistem dua persamaan dari matriks kolom, lalu menghitung nilai $a + b$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\begin{pmatrix} 9a \\\\ 2b \\end{pmatrix}$ + $\\begin{pmatrix} 5b \\\\ 6a \\end{pmatrix}$ = $\\begin{pmatrix} 11 \\\\ 14 \\end{pmatrix}$. Nilai $a + b$ adalah ....",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "$9a + 5b = 11$ dan $6a + 2b = 14$ memberi $a = 4$, $b = -5$ sehingga $a + b = -1$",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "yang dihitung $a - b$, bukan $a + b$"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "salah tanda pada hasil akhir"
+        },
+        {
+          "teks": "$-20$",
+          "alasan": "yang dihitung $a \\cdot b$"
+        }
+      ],
+      "pembahasan": "Dari $9a + 5b = 11$ dan $6a + 2b = 14$ diperoleh $a = 4$ dan $b = -5$, sehingga $a + b = -1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "Matriks C juga berordo m × n dengan elemen-elemen cij= aij+ bij"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "persamaan matriks variabel elemen",
+      "alasan_level": "empat persamaan dari elemen seletak, dua di antaranya sistem dua variabel, lalu penjumlahan empat nilai",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\begin{pmatrix} a+b & 2c \\\\ c-d & 3a \\end{pmatrix}$ + $\\begin{pmatrix} 2a & -c \\\\ 4 & -b \\end{pmatrix}$ = $\\begin{pmatrix} 11 & 4 \\\\ 9 & 7 \\end{pmatrix}$. Nilai $a + b + c + d$ adalah ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "$3a + b = 11$ dan $3a - b = 7$ memberi $a = 3$, $b = 2$; $c = 4$; $c - d + 4 = 9$ memberi $d = -1$; jumlah $= 8$",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "salah tanda pada $d$ (dipakai $d = 1$)"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "salah tanda pada $b$ (dipakai $b = -2$)"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "nilai $d$ tidak ikut dijumlahkan"
+        }
+      ],
+      "pembahasan": "Elemen (1,1): $(a+b) + 2a = 11$; (2,2): $3a - b = 7$; sehingga $a = 3$, $b = 2$. Elemen (1,2): $2c - c = 4$, $c = 4$. Elemen (2,1): $c - d + 4 = 9$, $d = -1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "kutipan": "Jika X adalah matriks berordo 3 × 3 dan X + P = Q"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari matriks X",
+      "alasan_level": "memindahkan $A$ ke ruas kanan lalu menyederhanakan selisih tiga matriks",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ = $\\begin{pmatrix} 7 & -2 \\\\ 4 & 9 \\\\ -5 & 3 \\end{pmatrix}$, $B$ = $\\begin{pmatrix} 12 & 6 \\\\ -3 & 8 \\\\ 10 & -4 \\end{pmatrix}$, dan $C$ = $\\begin{pmatrix} 5 & -9 \\\\ 2 & -6 \\\\ 8 & 1 \\end{pmatrix}$. Jika $X$ matriks berordo $3 \\times 2$ dan $X + A = B - C$, maka $X$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 0 & 17 \\\\ -9 & 5 \\\\ 7 & -8 \\end{pmatrix}$",
+      "alasan_benar": "$X = B - C - A$, dihitung elemen demi elemen",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 14 & 13 \\\\ -1 & 23 \\\\ -3 & -2 \\end{pmatrix}$",
+          "alasan": "$A$ ditambahkan ke ruas kanan, bukan dipindahkan dengan tanda berlawanan"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 10 & -1 \\\\ -5 & -7 \\\\ 23 & -6 \\end{pmatrix}$",
+          "alasan": "tanda $C$ salah: dihitung $B + C - A$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 0 & -17 \\\\ 9 & -5 \\\\ -7 & 8 \\end{pmatrix}$",
+          "alasan": "urutan pengurangan terbalik: dihitung $A - B + C$"
+        }
+      ],
+      "pembahasan": "$X + A = B - C \\Rightarrow X = B - C - A$. $B - C$ = $\\begin{pmatrix} 7 & 15 \\\\ -5 & 14 \\\\ 2 & -5 \\end{pmatrix}$, dikurangi $A$ menjadi $\\begin{pmatrix} 0 & 17 \\\\ -9 & 5 \\\\ 7 & -8 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "maka ada matriks C yang merupakan hasil pengurangan matriks A dengan matriks B"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari matriks X",
+      "alasan_level": "mengubah $A - X = B + C$ menjadi $X = A - B - C$ (X berada sebagai pengurang) lalu menghitung dua selisih",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ = $\\begin{pmatrix} 9 & -4 & 6 \\\\ 2 & 8 & -5 \\end{pmatrix}$, $B$ = $\\begin{pmatrix} 3 & 7 & -2 \\\\ -6 & 1 & 4 \\end{pmatrix}$, dan $C$ = $\\begin{pmatrix} 5 & -3 & 8 \\\\ 2 & 9 & -1 \\end{pmatrix}$. Jika $A - X = B + C$, maka $X$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 1 & -8 & 0 \\\\ 6 & -2 & -8 \\end{pmatrix}$",
+      "alasan_benar": "$X = A - (B + C) = A - B - C$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} -1 & 8 & 0 \\\\ -6 & 2 & 8 \\end{pmatrix}$",
+          "alasan": "urutan terbalik: dihitung $B + C - A$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 17 & 0 & 12 \\\\ -2 & 18 & -2 \\end{pmatrix}$",
+          "alasan": "semua matriks dijumlahkan"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 11 & -14 & 16 \\\\ 10 & 16 & -10 \\end{pmatrix}$",
+          "alasan": "tanda $C$ salah: dihitung $A - B + C$"
+        }
+      ],
+      "pembahasan": "$A - X = B + C \\Rightarrow X = A - (B + C)$. $B + C$ = $\\begin{pmatrix} 8 & 4 & 6 \\\\ -4 & 10 & 3 \\end{pmatrix}$, sehingga $X$ = $\\begin{pmatrix} 1 & -8 & 0 \\\\ 6 & -2 & -8 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "pengurangan matriks A dengan matriks B didefinisikan sebagai jumlah antara matriks A dengan lawan dari matriks B"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari matriks X",
+      "alasan_level": "menyatakan $X$ dari persamaan yang memuat lawan matriks dan matriks nol, lalu menghitung dua operasi",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P$ = $\\begin{pmatrix} 6 & -3 \\\\ -8 & 5 \\\\ 2 & 9 \\end{pmatrix}$, $Q$ = $\\begin{pmatrix} 4 & 7 \\\\ -1 & -6 \\\\ 3 & 2 \\end{pmatrix}$, dan $R$ = $\\begin{pmatrix} -5 & 2 \\\\ 9 & 1 \\\\ -4 & 8 \\end{pmatrix}$. Jika $X$ memenuhi $(X - P) + (Q - R) = O$ dengan $O$ matriks nol berordo $3 \\times 2$, maka $X$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} -3 & -8 \\\\ 2 & 12 \\\\ -5 & 15 \\end{pmatrix}$",
+      "alasan_benar": "$X - P = -(Q - R) = R - Q$ sehingga $X = P - Q + R$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 7 & -12 \\\\ -16 & 10 \\\\ 3 & -1 \\end{pmatrix}$",
+          "alasan": "tanda $R$ salah: dihitung $P - Q - R$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 15 & 2 \\\\ -18 & -2 \\\\ 9 & 3 \\end{pmatrix}$",
+          "alasan": "lawan $(Q - R)$ tidak dikerjakan: dihitung $P + Q - R$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 3 & 8 \\\\ -2 & -12 \\\\ 5 & -15 \\end{pmatrix}$",
+          "alasan": "seluruh hasil terbalik tanda"
+        }
+      ],
+      "pembahasan": "$(X - P) + (Q - R) = O \\Rightarrow X = P - (Q - R) = P - Q + R$ = $\\begin{pmatrix} -3 & -8 \\\\ 2 & 12 \\\\ -5 & 15 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "Matriks A dan matriks C berordo tak sama sehingga"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "syarat ordo operasi",
+      "alasan_level": "menyamakan ordo dua matriks agar selisihnya terdefinisi untuk menentukan dua parameter",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ berordo $(2m - 1) \\times (n + 2)$ dan matriks $B$ berordo $5 \\times 6$. Jika $A - B$ terdefinisi dengan $m$ dan $n$ bilangan asli, nilai $m + n$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "ordo harus sama: $2m - 1 = 5$ sehingga $m = 3$ dan $n + 2 = 6$ sehingga $n = 4$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "salah menyelesaikan $2m - 1 = 5$ menjadi $2m = 4$"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "$n$ dihitung $n = 6$ (konstanta $+2$ diabaikan)"
+        },
+        {
+          "teks": "$11$",
+          "alasan": "yang dijumlahkan adalah banyak baris dan kolom $B$ ($5 + 6$)"
+        }
+      ],
+      "pembahasan": "$A - B$ terdefinisi bila ordo sama: $2m - 1 = 5 \\Rightarrow m = 3$ dan $n + 2 = 6 \\Rightarrow n = 4$, sehingga $m + n = 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "bagian": "Eksplorasi Penjumlahan Matriks",
+        "nomor": "4",
+        "teks": "Apabila biaya bahan dasar batik tulis dihapus pada matriks, apakah matriks biaya produksi dapat dihitung? Berikan alasanmu.",
+        "jawaban": "Tidak dapat dihitung karena ordo kedua matriks menjadi berbeda"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat ordo operasi",
+      "alasan_level": "menganalisis akibat penghapusan satu kolom data terhadap ordo dan keterdefinisian penjumlahan",
+      "stimulus": null,
+      "pertanyaan": "Biaya pembelian kain pada bulan Januari disusun dalam matriks $P$ berordo $3 \\times 4$ (baris: jenis kain, kolom: pemasok ke-1 sampai ke-4). Pada bulan Februari pemasok ke-4 tidak dipakai lagi sehingga matriks $Q$ hanya berordo $3 \\times 3$. Agar $P + Q$ dapat dihitung tanpa menambah data baru pada $Q$, pernyataan yang benar adalah ....",
+      "jawaban_benar": "Kolom pemasok ke-4 pada $P$ dihapus sehingga $P$ berordo $3 \\times 3$ dan $P + Q$ berordo $3 \\times 3$",
+      "alasan_benar": "ordo harus sama, jadi $P$ harus dikurangi satu kolom sehingga menjadi $3 \\times 3$",
+      "distraktor": [
+        {
+          "teks": "Baris ketiga pada $P$ dihapus sehingga $P$ berordo $2 \\times 4$ dan $P + Q$ berordo $2 \\times 4$",
+          "alasan": "baris yang dikurangi, padahal selisih ordo ada pada kolom"
+        },
+        {
+          "teks": "Kolom pemasok ke-4 pada $P$ dihapus sehingga $P + Q$ dapat dihitung dan berordo $3 \\times 4$",
+          "alasan": "ordo hasil penjumlahan dikira mengikuti ordo $P$ semula"
+        },
+        {
+          "teks": "Kolom pemasok ke-1 pada $Q$ digandakan sehingga $Q$ berordo $3 \\times 4$ dan $P + Q$ berordo $3 \\times 4$",
+          "alasan": "menambah kolom dengan menyalin data sehingga data $Q$ berubah (melanggar syarat tanpa data baru)"
+        }
+      ],
+      "pembahasan": "$P$ ($3 \\times 4$) dan $Q$ ($3 \\times 3$) berbeda ordo. Dengan menghapus kolom pemasok ke-4 pada $P$, kedua matriks berordo $3 \\times 3$ dan jumlahnya berordo $3 \\times 3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "bagian": "Eksplorasi Penjumlahan Matriks",
+        "nomor": "3",
+        "teks": "Interpretasikan setiap elemen matriks biaya produksi.",
+        "jawaban": "Setiap elemen menyatakan total biaya bahan dasar dan biaya tenaga kerja untuk satu kualitas dan jenis batik tertentu"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "interpretasi elemen hasil operasi",
+      "alasan_level": "menjumlahkan elemen seletak lalu memaknai elemen hasil sesuai baris dan kolom pada konteks",
+      "stimulus": null,
+      "pertanyaan": "Penjualan roti (buah) sebuah toko pada pagi hari dicatat dalam matriks $M$ = $\\begin{pmatrix} 38 & 52 & 23 \\\\ 45 & 17 & 60 \\end{pmatrix}$ dan pada sore hari dalam matriks $N$ = $\\begin{pmatrix} 27 & 33 & 14 \\\\ 19 & 41 & 25 \\end{pmatrix}$, dengan baris menyatakan cabang (Utara, Selatan) dan kolom menyatakan jenis roti (tawar, manis, keju). Pernyataan yang benar mengenai elemen baris ke-2 kolom ke-3 matriks $M + N$ adalah ....",
+      "jawaban_benar": "total roti keju yang terjual di cabang Selatan sepanjang hari, yaitu 85 buah",
+      "alasan_benar": "$m_{23} + n_{23} = 60 + 25 = 85$, baris 2 = Selatan dan kolom 3 = keju",
+      "distraktor": [
+        {
+          "teks": "total roti keju yang terjual di cabang Utara sepanjang hari, yaitu 37 buah",
+          "alasan": "baris yang dibaca keliru (baris 1 dikira cabang Selatan)"
+        },
+        {
+          "teks": "total roti manis yang terjual di cabang Selatan sepanjang hari, yaitu 58 buah",
+          "alasan": "kolom yang dibaca keliru (kolom 2 dikira keju)"
+        },
+        {
+          "teks": "selisih penjualan roti keju pagi dan sore di cabang Selatan, yaitu 35 buah",
+          "alasan": "mengurangkan, bukan menjumlahkan elemen seletak"
+        }
+      ],
+      "pembahasan": "Elemen $(2,3)$ dari $M + N$ adalah $60 + 25 = 85$: roti keju di cabang Selatan, pagi ditambah sore.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "bagian": "Mari Berpikir Kritis",
+        "nomor": "1",
+        "teks": "Apakah sifat-sifat operasi penjumlahan matriks pada Sifat 1.1 berlaku untuk operasi pengurangan matriks?",
+        "jawaban": "Tidak seluruhnya: sifat komutatif dan asosiatif tidak berlaku pada pengurangan matriks"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat operasi matriks",
+      "alasan_level": "menguji sifat asosiatif pada pengurangan dengan menghitung dua bentuk berbeda dan membandingkannya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ = $\\begin{pmatrix} 6 & -1 \\\\ 3 & 8 \\end{pmatrix}$, $B$ = $\\begin{pmatrix} 2 & 5 \\\\ -4 & 1 \\end{pmatrix}$, dan $C$ = $\\begin{pmatrix} 3 & -2 \\\\ 7 & 4 \\end{pmatrix}$. Pernyataan yang benar tentang $(A - B) - C$ dan $A - (B - C)$ adalah ....",
+      "jawaban_benar": "$(A - B) - C$ = $\\begin{pmatrix} 1 & -4 \\\\ 0 & 3 \\end{pmatrix}$ dan $A - (B - C)$ = $\\begin{pmatrix} 7 & -8 \\\\ 14 & 11 \\end{pmatrix}$ sehingga sifat asosiatif tidak berlaku pada pengurangan",
+      "alasan_benar": "kedua bentuk dihitung terpisah dan hasilnya berbeda",
+      "distraktor": [
+        {
+          "teks": "kedua bentuk sama dengan $\\begin{pmatrix} 1 & -4 \\\\ 0 & 3 \\end{pmatrix}$ sehingga sifat asosiatif berlaku pada pengurangan",
+          "alasan": "mengira $A - (B - C) = A - B - C$ (tanda $C$ tidak berubah)"
+        },
+        {
+          "teks": "$(A - B) - C$ = $\\begin{pmatrix} 7 & -8 \\\\ 14 & 11 \\end{pmatrix}$ dan $A - (B - C)$ = $\\begin{pmatrix} 1 & -4 \\\\ 0 & 3 \\end{pmatrix}$ sehingga sifat asosiatif tidak berlaku pada pengurangan",
+          "alasan": "hasil kedua bentuk tertukar"
+        },
+        {
+          "teks": "kedua bentuk sama dengan $\\begin{pmatrix} 7 & -8 \\\\ 14 & 11 \\end{pmatrix}$ sehingga sifat asosiatif berlaku pada pengurangan",
+          "alasan": "mengira $(A - B) - C = A - B + C$"
+        }
+      ],
+      "pembahasan": "$A - B$ = $\\begin{pmatrix} 4 & -6 \\\\ 7 & 7 \\end{pmatrix}$, sehingga $(A - B) - C$ = $\\begin{pmatrix} 1 & -4 \\\\ 0 & 3 \\end{pmatrix}$. $B - C$ = $\\begin{pmatrix} -1 & 7 \\\\ -11 & -3 \\end{pmatrix}$, sehingga $A - (B - C)$ = $\\begin{pmatrix} 7 & -8 \\\\ 14 & 11 \\end{pmatrix}$. Hasil berbeda.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "mempunyai lawan yaitu matriks"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sifat operasi matriks",
+      "alasan_level": "menyederhanakan bentuk aljabar matriks dengan lawan matriks dan sifat penjumlahan",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$, $B$, dan $C$ berordo sama. Bentuk paling sederhana dari $(A + B) - (B - C) - C$ adalah ....",
+      "jawaban_benar": "$A$",
+      "alasan_benar": "$-(B - C) = -B + C$ sehingga $A + B - B + C - C = A$",
+      "distraktor": [
+        {
+          "teks": "$A - 2C$",
+          "alasan": "$-(B - C)$ ditulis $-B - C$"
+        },
+        {
+          "teks": "$A + 2C$",
+          "alasan": "$-C$ di akhir ditulis $+C$"
+        },
+        {
+          "teks": "$O$ (matriks nol)",
+          "alasan": "mengira semua suku saling meniadakan, termasuk $A$"
+        }
+      ],
+      "pembahasan": "$(A + B) - (B - C) - C = A + B - B + C - C = A + (B + (-B)) + (C + (-C)) = A$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "pengurangan matriks A dengan matriks B didefinisikan sebagai jumlah antara matriks A dengan lawan dari matriks B"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sifat operasi matriks",
+      "alasan_level": "menyatakan $A + C$ dari dua persamaan yang diketahui dengan menyusun ulang operasi",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$, $B$, dan $C$ berordo $2 \\times 2$ dengan $A + B$ = $\\begin{pmatrix} 8 & -3 \\\\ 5 & 11 \\end{pmatrix}$ dan $B - C$ = $\\begin{pmatrix} 2 & 6 \\\\ -4 & 3 \\end{pmatrix}$. Hasil $A + C$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 6 & -9 \\\\ 9 & 8 \\end{pmatrix}$",
+      "alasan_benar": "$A + C = (A + B) - (B - C)$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 10 & 3 \\\\ 1 & 14 \\end{pmatrix}$",
+          "alasan": "kedua persamaan dijumlahkan, bukan dikurangkan"
+        },
+        {
+          "teks": "$\\begin{pmatrix} -6 & 9 \\\\ -9 & -8 \\end{pmatrix}$",
+          "alasan": "urutan pengurangan terbalik"
+        },
+        {
+          "teks": "$\\begin{pmatrix} -10 & -3 \\\\ -1 & -14 \\end{pmatrix}$",
+          "alasan": "jumlah kedua matriks dibalik tandanya"
+        }
+      ],
+      "pembahasan": "$(A + B) - (B - C) = A + C$, sehingga $A + C$ = $\\begin{pmatrix} 8 & -3 \\\\ 5 & 11 \\end{pmatrix}$ - $\\begin{pmatrix} 2 & 6 \\\\ -4 & 3 \\end{pmatrix}$ = $\\begin{pmatrix} 6 & -9 \\\\ 9 & 8 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "bagian": "Eksplorasi Penjumlahan Matriks",
+        "nomor": "2",
+        "teks": "Tentukan matriks biaya produksi yang merupakan penjumlahan dari biaya pembelian bahan dasar dan biaya tenaga kerja.",
+        "jawaban": "$\\begin{bmatrix} 31 & 55 & 97 \\\\ 22 & 40 & 74 \\end{bmatrix}$"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "soal cerita operasi matriks",
+      "alasan_level": "menjumlahkan tiga matriks data biaya (dua operasi) dari konteks produksi",
+      "stimulus": null,
+      "pertanyaan": "Sebuah usaha konveksi mencatat biaya (dalam juta rupiah) di dua cabang untuk dua jenis pakaian (baris: cabang I dan II; kolom: kemeja dan jaket). Biaya kain adalah $\\begin{pmatrix} 24 & 35 \\\\ 18 & 42 \\end{pmatrix}$, biaya upah penjahit adalah $\\begin{pmatrix} 9 & 12 \\\\ 7 & 15 \\end{pmatrix}$, dan biaya pengiriman adalah $\\begin{pmatrix} 4 & 6 \\\\ 3 & 5 \\end{pmatrix}$. Matriks total biaya produksi ketiga komponen tersebut adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 37 & 53 \\\\ 28 & 62 \\end{pmatrix}$",
+      "alasan_benar": "total = kain + upah + pengiriman, dijumlahkan pada elemen seletak",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 29 & 41 \\\\ 22 & 52 \\end{pmatrix}$",
+          "alasan": "biaya pengiriman dikurangkan, bukan dijumlahkan"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 33 & 47 \\\\ 25 & 57 \\end{pmatrix}$",
+          "alasan": "biaya pengiriman belum ikut dijumlahkan (setengah langkah)"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 11 & 17 \\\\ 8 & 22 \\end{pmatrix}$",
+          "alasan": "biaya kain dikurangi upah dan pengiriman"
+        }
+      ],
+      "pembahasan": "Total = $\\begin{pmatrix} 33 & 47 \\\\ 25 & 57 \\end{pmatrix}$ ditambah $\\begin{pmatrix} 4 & 6 \\\\ 3 & 5 \\end{pmatrix}$ = $\\begin{pmatrix} 37 & 53 \\\\ 28 & 62 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "bagian": "Latihan C",
+        "nomor": "6",
+        "teks": "Tentukan matriks banyaknya buah yang masih segar untuk dijual.",
+        "jawaban": "$\\begin{bmatrix} 44 & 58 \\\\ 68 & 66 \\\\ 45 & 57 \\\\ 39 & 46 \\end{bmatrix}$"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "soal cerita operasi matriks",
+      "alasan_level": "mengurangkan dua matriks data lalu menjumlahkan satu kolom hasil untuk menjawab pertanyaan kontekstual",
+      "stimulus": null,
+      "pertanyaan": "Dua koperasi (A dan B) menerima kiriman tiga jenis beras (kg): $\\begin{pmatrix} 58 & 41 \\\\ 36 & 75 \\\\ 64 & 29 \\end{pmatrix}$, dengan baris menyatakan jenis beras dan kolom menyatakan koperasi (kolom pertama koperasi A, kolom kedua koperasi B). Setelah diperiksa, beras yang rusak dan tidak layak jual adalah $\\begin{pmatrix} 7 & 3 \\\\ 0 & 9 \\\\ 5 & 2 \\end{pmatrix}$. Total beras layak jual di koperasi B adalah .... kg.",
+      "jawaban_benar": "$131$",
+      "alasan_benar": "matriks layak = kiriman $-$ rusak, lalu jumlahkan kolom koperasi B: $38 + 66 + 27$",
+      "distraktor": [
+        {
+          "teks": "$145$",
+          "alasan": "beras rusak belum dikurangkan"
+        },
+        {
+          "teks": "$146$",
+          "alasan": "yang dijumlahkan kolom koperasi A, bukan B"
+        },
+        {
+          "teks": "$159$",
+          "alasan": "beras rusak dijumlahkan, bukan dikurangkan"
+        }
+      ],
+      "pembahasan": "Matriks layak jual = $\\begin{pmatrix} 51 & 38 \\\\ 36 & 66 \\\\ 59 & 27 \\end{pmatrix}$. Kolom kedua: $38 + 66 + 27 = 131$ kg.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "maka ada matriks C yang merupakan hasil penjumlahan matriks A dengan matriks B"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "soal cerita operasi matriks",
+      "alasan_level": "mencari data satu bulan yang hilang dari total tiga bulan dengan dua pengurangan matriks",
+      "stimulus": null,
+      "pertanyaan": "Penjualan tiga jenis sepatu (pasang) di dua toko dicatat tiap bulan, dengan baris menyatakan toko dan kolom menyatakan jenis sepatu. Penjualan Januari adalah $\\begin{pmatrix} 34 & 28 & 19 \\\\ 41 & 25 & 36 \\end{pmatrix}$ dan Februari adalah $\\begin{pmatrix} 29 & 31 & 22 \\\\ 38 & 27 & 40 \\end{pmatrix}$. Total penjualan selama Januari-Maret adalah $\\begin{pmatrix} 95 & 89 & 64 \\\\ 120 & 81 & 115 \\end{pmatrix}$. Matriks penjualan bulan Maret adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 32 & 30 & 23 \\\\ 41 & 29 & 39 \\end{pmatrix}$",
+      "alasan_benar": "Maret = total $-$ Januari $-$ Februari",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 61 & 61 & 45 \\\\ 79 & 56 & 79 \\end{pmatrix}$",
+          "alasan": "penjualan Februari belum dikurangkan (setengah langkah)"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 90 & 92 & 67 \\\\ 117 & 83 & 119 \\end{pmatrix}$",
+          "alasan": "penjualan Februari dijumlahkan, bukan dikurangkan"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 158 & 148 & 105 \\\\ 199 & 133 & 191 \\end{pmatrix}$",
+          "alasan": "total ditambah penjualan kedua bulan lainnya"
+        }
+      ],
+      "pembahasan": "Maret = $\\begin{pmatrix} 95 & 89 & 64 \\\\ 120 & 81 & 115 \\end{pmatrix}$ - $\\begin{pmatrix} 34 & 28 & 19 \\\\ 41 & 25 & 36 \\end{pmatrix}$ - $\\begin{pmatrix} 29 & 31 & 22 \\\\ 38 & 27 & 40 \\end{pmatrix}$ = $\\begin{pmatrix} 32 & 30 & 23 \\\\ 41 & 29 & 39 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "Matriks C juga berordo m × n dengan elemen-elemen c ij = a ij – b ij"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "persamaan matriks variabel elemen",
+      "alasan_level": "menyusun tiga persamaan dari elemen seletak pada pengurangan dengan variabel di dua matriks",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\begin{pmatrix} 2a & 5 \\\\ b+1 & 4 \\end{pmatrix}$ - $\\begin{pmatrix} 3 & c \\\\ 2b & -1 \\end{pmatrix}$ = $\\begin{pmatrix} 9 & -2 \\\\ -3 & 5 \\end{pmatrix}$. Nilai $a + b + c$ adalah ....",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "$2a - 3 = 9$ sehingga $a = 6$; $5 - c = -2$ sehingga $c = 7$; $(b + 1) - 2b = -3$ sehingga $b = 4$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "salah tanda pada $c$ (dipakai $c = -7$)"
+        },
+        {
+          "teks": "$15$",
+          "alasan": "$b$ salah: $-b + 1 = -3$ ditulis $-b = -3 + 1$ sehingga $b = 2$"
+        },
+        {
+          "teks": "$14$",
+          "alasan": "$2a = 6$ sehingga $a$ dihitung $3$ (lupa membagi balik)"
+        }
+      ],
+      "pembahasan": "Elemen (1,1): $2a - 3 = 9$, $a = 6$. Elemen (1,2): $5 - c = -2$, $c = 7$. Elemen (2,1): $b + 1 - 2b = -3$, $b = 4$. Jumlah $= 17$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "maka ada matriks C yang merupakan hasil penjumlahan matriks A dengan matriks B"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sistem dua persamaan matriks",
+      "alasan_level": "dari jumlah dan selisih dua matriks, menentukan salah satu matriks lewat sistem dua persamaan pada tiap elemen",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ dan $B$ berordo $2 \\times 2$ dengan $A + B$ = $\\begin{pmatrix} 7 & 3 \\\\ 10 & -2 \\end{pmatrix}$ dan $A - B$ = $\\begin{pmatrix} 1 & 9 \\\\ 4 & 6 \\end{pmatrix}$. Matriks $B$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 3 & -3 \\\\ 3 & -4 \\end{pmatrix}$",
+      "alasan_benar": "tiap elemen: $a + b = p$ dan $a - b = q$, sehingga $b = (p - q) / 2$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 6 & -6 \\\\ 6 & -8 \\end{pmatrix}$",
+          "alasan": "selisih jumlah dan selisih tidak dibagi 2"
+        },
+        {
+          "teks": "$\\begin{pmatrix} -3 & 3 \\\\ -3 & 4 \\end{pmatrix}$",
+          "alasan": "urutan pengurangan terbalik sehingga $B$ bertanda berlawanan"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 4 & 6 \\\\ 7 & 2 \\end{pmatrix}$",
+          "alasan": "yang dihitung adalah matriks $A$, bukan $B$"
+        }
+      ],
+      "pembahasan": "Untuk tiap elemen, $2b = (a + b) - (a - b)$. Maka $B$ = $\\begin{pmatrix} 3 & -3 \\\\ 3 & -4 \\end{pmatrix}$ (cek: $A$ = $\\begin{pmatrix} 4 & 6 \\\\ 7 & 2 \\end{pmatrix}$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "kutipan": "Jika X adalah matriks berordo 3 × 3 dan X + P = Q"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari matriks X",
+      "alasan_level": "menentukan $X$ dari $X + A = B$ lalu menjumlahkan elemen diagonal utamanya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ = $\\begin{pmatrix} 4 & -2 & 7 \\\\ 3 & 5 & -1 \\\\ 6 & 0 & 2 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} 9 & 1 & -3 \\\\ -4 & 8 & 2 \\\\ 5 & -6 & 14 \\end{pmatrix}$. Jika $X + A = B$, jumlah elemen pada diagonal utama matriks $X$ adalah ....",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "$X = B - A$ = $\\begin{pmatrix} 5 & 3 & -10 \\\\ -7 & 3 & 3 \\\\ -1 & -6 & 12 \\end{pmatrix}$, diagonal utama: $5 + 3 + 12$",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "$X$ dihitung sebagai $A + B$"
+        },
+        {
+          "teks": "$-20$",
+          "alasan": "urutan terbalik: dihitung $A - B$"
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "yang dijumlahkan diagonal samping ($x_{13} + x_{22} + x_{31}$)"
+        }
+      ],
+      "pembahasan": "$X = B - A$ = $\\begin{pmatrix} 5 & 3 & -10 \\\\ -7 & 3 & 3 \\\\ -1 & -6 & 12 \\end{pmatrix}$. Diagonal utama: $5 + 3 + 12 = 20$.",
+      "catatan": null
+    }
+  ]
+}

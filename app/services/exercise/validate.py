@@ -160,10 +160,14 @@ def validate_file(path: str, partial: bool = False):
     if n > kuota or (n != kuota and not partial and not data.kapasitas_kurang):
         errors.append(f"jumlah soal {n} != kuota {kuota} ({book.jenjang}, level {data.level})")
     n_var = sum(1 for s in data.soal if s.tipe_generate == "variasi")
-    target_var = round(C.PORSI_VARIASI[data.level] * kuota)
+    # Kapasitas kurang: porsi dihitung dari jumlah soal yang ADA, bukan kuota penuh (kalau tidak, 16 soal
+    # dipaksa memuat >= 8 variasi = 50% sebagai pengganti 40% dari 20).
+    basis = n if (data.kapasitas_kurang and n > 0) else kuota
+    target_var = round(C.PORSI_VARIASI[data.level] * basis)
     # Batas bawah variasi tidak berlaku di hard: acuan layak habis dipakai easy/medium, dan memaksa label
     # "variasi" membuat soal orisinal yang bagus diubah hanya demi lolos validator.
-    batas_bawah = 0 if data.level == "hard" else target_var - C.TOLERANSI_PORSI
+    # Sama bila kapasitas_kurang: kekurangan itu sendiri biasanya karena acuan variasi habis.
+    batas_bawah = 0 if (data.level == "hard" or data.kapasitas_kurang) else max(0, target_var - C.TOLERANSI_PORSI)
     if not partial and not (batas_bawah <= n_var <= target_var + C.TOLERANSI_PORSI):
         errors.append(f"variasi {n_var} soal, target {target_var} ±{C.TOLERANSI_PORSI} dari {kuota}"
                       f"{' (hard: tanpa batas bawah)' if data.level == 'hard' else ''}")

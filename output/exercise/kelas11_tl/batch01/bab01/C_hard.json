@@ -1,0 +1,420 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi C (penjumlahan/pengurangan matriks, lawan, sifat 1.1) sempit dan 40 soal easy+medium sudah menghabiskan hitungan dan persamaan matriks; hard bermakna hanya lewat penalaran (evaluasi klaim, penyangkal, parameter, temukan kesalahan) yang layak 12 soal tanpa nyaris kembar. Acuan siswa terbaca habis sehingga semua soal orisinal (hard tanpa batas bawah variasi).",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "kutipan": "Apakah sifat-sifat operasi penjumlahan matriks pada Sifat 1.1 berlaku untuk operasi pengurangan matriks"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim sifat operasi",
+      "alasan_level": "mengevaluasi klaim umum dengan menurunkan syarat kebenarannya ($2(A-B)=O$), bukan sekadar menghitung",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa berpendapat bahwa $A - B = B - A$ untuk setiap dua matriks $A$ dan $B$ yang berordo sama, karena penjumlahan matriks bersifat komutatif. Penilaian yang tepat terhadap pendapat tersebut adalah ....",
+      "jawaban_benar": "Pendapat itu salah secara umum; $A - B = B - A$ hanya terjadi bila $A = B$",
+      "alasan_benar": "$A - B = B - A$ berarti $A - B$ sama dengan lawannya sendiri, sehingga $A - B = O$ dan $A = B$",
+      "distraktor": [
+        {
+          "teks": "Pendapat itu benar, sebab pengurangan didefinisikan sebagai penjumlahan dengan lawan matriks",
+          "alasan": "sifat komutatif penjumlahan dikira otomatis berlaku pada pengurangan"
+        },
+        {
+          "teks": "Pendapat itu salah untuk semua pasangan $A$ dan $B$ tanpa kecuali",
+          "alasan": "mengabaikan kasus $A = B$ yang memenuhi persamaan"
+        },
+        {
+          "teks": "Pendapat itu benar bila $A$ dan $B$ sama-sama matriks persegi",
+          "alasan": "mengira jenis matriks (persegi) menentukan sifat komutatif pada pengurangan"
+        }
+      ],
+      "pembahasan": "Dengan $A = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$ dan $B = O$, $A - B \\neq B - A$. Secara umum, $A - B = B - A$ ekuivalen dengan $A - B = -(A - B)$, sehingga $A - B = O$ dan $A = B$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "pengurangan matriks A dengan matriks B didefinisikan sebagai jumlah antara matriks A dengan lawan dari matriks B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan penyelesaian",
+      "alasan_level": "menelusuri letak kesalahan tanda pada penguraian tanda kurung dengan lawan matriks",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menulis $A - (B - C) = A - B - C$ untuk matriks-matriks $A$, $B$, dan $C$ yang berordo sama. Kesalahan siswa tersebut dan bentuk yang benar adalah ....",
+      "jawaban_benar": "Lawan dari $(B - C)$ adalah $-B + C$, sehingga bentuk yang benar adalah $A - B + C$",
+      "alasan_benar": "$A - (B - C) = A + (-(B - C)) = A + (-B + C) = A - B + C$",
+      "distraktor": [
+        {
+          "teks": "Tanda $B$ yang keliru, sehingga bentuk yang benar adalah $A + B - C$",
+          "alasan": "menganggap tanda kurung membalik tanda $B$, bukan tanda $C$"
+        },
+        {
+          "teks": "Dua tanda negatif harus menjadi positif, sehingga bentuk yang benar adalah $A + B + C$",
+          "alasan": "membalik semua tanda di dalam kurung dan di luar"
+        },
+        {
+          "teks": "Tidak ada kesalahan, karena pengurangan matriks bersifat asosiatif",
+          "alasan": "mengira asosiatif berlaku pada pengurangan"
+        }
+      ],
+      "pembahasan": "Pengurangan adalah penjumlahan dengan lawan: $A - (B - C) = A + (-B + C) = A - B + C$. Siswa lupa membalik tanda $C$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "Matriks A dan matriks C berordo tak sama sehingga"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan penyelesaian",
+      "alasan_level": "mengevaluasi penyelesaian yang menyiasati beda ordo dengan menambah kolom nol, menalar syarat keterdefinisian",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ = $\\begin{pmatrix} 3 & -1 & 4 \\\\ 2 & 5 & 0 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} 6 & 2 \\\\ -3 & 7 \\end{pmatrix}$. Seorang siswa menjumlahkannya dengan menambahkan kolom nol pada $B$ hingga berordo $2 \\times 3$, lalu memperoleh $A + B$ = $\\begin{pmatrix} 9 & 1 & 4 \\\\ -1 & 12 & 0 \\end{pmatrix}$. Penilaian yang tepat terhadap penyelesaian siswa tersebut adalah ....",
+      "jawaban_benar": "Salah, sebab $A + B$ tidak terdefinisi: ordo $A$ ($2 \\times 3$) dan $B$ ($2 \\times 2$) berbeda, dan menambah kolom nol mengganti $B$ dengan matriks lain",
+      "alasan_benar": "penjumlahan hanya terdefinisi untuk matriks berordo sama; menambah kolom mengubah matriks $B$ menjadi matriks yang berbeda",
+      "distraktor": [
+        {
+          "teks": "Benar, sebab elemen yang tidak memiliki pasangan dapat dianggap bernilai nol",
+          "alasan": "menganggap elemen kosong boleh diisi nol tanpa mengubah soal"
+        },
+        {
+          "teks": "Salah, sebab kolom nol seharusnya ditambahkan pada $A$ agar $A + B$ berordo $2 \\times 2$",
+          "alasan": "mengira beda ordo bisa diperbaiki dengan memotong matriks"
+        },
+        {
+          "teks": "Salah, sebab hasil penjumlahan seharusnya berordo $2 \\times 2$ mengikuti ordo $B$",
+          "alasan": "mengira ordo hasil mengikuti matriks yang lebih kecil"
+        }
+      ],
+      "pembahasan": "Ordo $A$ adalah $2 \\times 3$ dan ordo $B$ adalah $2 \\times 2$, sehingga $A + B$ tidak terdefinisi. Menambah kolom nol bukan operasi pada $B$ semula.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "Matriks C juga berordo m × n dengan elemen-elemen cij= aij+ bij"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat parameter matriks khusus",
+      "alasan_level": "menurunkan syarat elemen luar diagonal bernilai nol pada hasil jumlah dengan dua parameter, lalu memilih nilai gabungan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ = $\\begin{pmatrix} 5 & 2p - 1 \\\\ q + 3 & 7 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} 1 & p - 8 \\\\ q - 11 & 2 \\end{pmatrix}$. Jika $A + B$ merupakan matriks diagonal, nilai $p + q$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "matriks diagonal bila elemen di luar diagonal nol: $(2p - 1) + (p - 8) = 0$ sehingga $p = 3$ dan $(q + 3) + (q - 11) = 0$ sehingga $q = 4$",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "salah tanda pada $q$: $2q = -8$ sehingga $q = -4$"
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "salah tanda pada elemen $p$: $(2p - 1) - (p - 8) = 0$ sehingga $p = -7$"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "yang dihitung adalah hasil kali $p \\cdot q$"
+        }
+      ],
+      "pembahasan": "$A + B$ = $\\begin{pmatrix} 6 & 3p - 9 \\\\ 2q - 8 & 9 \\end{pmatrix}$. Diagonal berarti $3p - 9 = 0$ dan $2q - 8 = 0$, jadi $p = 3$, $q = 4$, $p + q = 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "maka ada matriks C yang merupakan hasil pengurangan matriks A dengan matriks B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memeriksa empat pasangan matriks untuk menemukan satu yang menyangkal klaim, menuntut dua syarat sekaligus (selisih simetris, matriks bukan simetris)",
+      "stimulus": null,
+      "pertanyaan": "Klaim: \"Jika selisih $A - B$ merupakan matriks simetris, maka $A$ dan $B$ keduanya simetris.\" Pasangan $(A, B)$ berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$A$ = $\\begin{pmatrix} 3 & 5 \\\\ 1 & 4 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} 1 & 2 \\\\ -2 & 0 \\end{pmatrix}$",
+      "alasan_benar": "$A - B$ = $\\begin{pmatrix} 2 & 3 \\\\ 3 & 4 \\end{pmatrix}$ simetris, tetapi $A$ dan $B$ tidak simetris",
+      "distraktor": [
+        {
+          "teks": "$A$ = $\\begin{pmatrix} 2 & 1 \\\\ 1 & 5 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} 1 & 4 \\\\ 4 & 2 \\end{pmatrix}$",
+          "alasan": "$A$ dan $B$ simetris sehingga mendukung, bukan menyangkal klaim"
+        },
+        {
+          "teks": "$A$ = $\\begin{pmatrix} 3 & 5 \\\\ 1 & 4 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} 1 & 2 \\\\ 2 & 0 \\end{pmatrix}$",
+          "alasan": "selisihnya $\\begin{pmatrix} 2 & 3 \\\\ -1 & 4 \\end{pmatrix}$ tidak simetris sehingga syarat klaim tidak terpenuhi"
+        },
+        {
+          "teks": "$A$ = $\\begin{pmatrix} 2 & 6 \\\\ 3 & 1 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} 1 & 2 \\\\ 0 & 3 \\end{pmatrix}$",
+          "alasan": "selisihnya $\\begin{pmatrix} 1 & 4 \\\\ 3 & -2 \\end{pmatrix}$ tidak simetris sehingga syarat klaim tidak terpenuhi"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus memenuhi premis ($A - B$ simetris) tetapi menyalahi kesimpulan. Hanya pasangan pertama yang demikian.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "maka ada matriks C yang merupakan hasil penjumlahan matriks A dengan matriks B"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "perancangan matriks yang memenuhi dua persamaan",
+      "alasan_level": "menyamakan dua ungkapan untuk $X$ dari dua persamaan berbeda, memeriksa keterpenuhan setiap elemen, dan menentukan parameter",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ = $\\begin{pmatrix} 2 & t \\\\ 5 & 1 \\end{pmatrix}$, $B$ = $\\begin{pmatrix} 9 & 7 \\\\ 4 & 6 \\end{pmatrix}$, $C$ = $\\begin{pmatrix} 3 & t \\\\ 0 & 2 \\end{pmatrix}$, dan $D$ = $\\begin{pmatrix} 4 & 1 \\\\ -1 & 3 \\end{pmatrix}$. Matriks $X$ berordo $2 \\times 2$ harus memenuhi $X + A = B$ sekaligus $X - C = D$. Nilai $t$ yang memungkinkan adanya matriks $X$ tersebut adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$X = B - A$ dan $X = C + D$; elemen (1,2): $7 - t = t + 1$ sehingga $t = 3$ (elemen lain sudah cocok)",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "salah tanda pada $D$: $X = C - D$ untuk elemen (1,2) sehingga $7 - t = t - 1$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "$7 - t = t + 1$ diselesaikan menjadi $2t = 6$ lalu langsung ditulis $t = 6$ (lupa membagi 2)"
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "salah tanda saat memindahkan suku: $7 - t = t + 1$ dikerjakan menjadi $2t = -6$"
+        }
+      ],
+      "pembahasan": "$X = B - A$ = $\\begin{pmatrix} 7 & 7 - t \\\\ -1 & 5 \\end{pmatrix}$ dan $X = C + D$ = $\\begin{pmatrix} 7 & t + 1 \\\\ -1 & 5 \\end{pmatrix}$. Elemen lain sama; elemen (1,2) memberi $t = 3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "kutipan": "Apakah sifat-sifat operasi penjumlahan matriks pada Sifat 1.1 berlaku untuk operasi pengurangan matriks"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perbandingan dua cara penyelesaian",
+      "alasan_level": "membandingkan dua penyelesaian yang tampak berbeda tetapi sama-sama keliru, menuntut menghitung kedua bentuk dan menelusuri penyebab",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ = $\\begin{pmatrix} 8 & -3 \\\\ 5 & 6 \\end{pmatrix}$, $B$ = $\\begin{pmatrix} 2 & 4 \\\\ -1 & 7 \\end{pmatrix}$, dan $C$ = $\\begin{pmatrix} 5 & -6 \\\\ 3 & -2 \\end{pmatrix}$. Untuk menghitung $A - B - C$, siswa P menghitung $(A - B) + C$ dan siswa Q menghitung $A - (B - C)$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Keduanya salah karena sama-sama menambahkan $C$; hasil yang benar adalah $\\begin{pmatrix} 1 & -1 \\\\ 3 & 1 \\end{pmatrix}$",
+      "alasan_benar": "$(A - B) + C = A - (B - C) = A - B + C$, sedangkan $A - B - C$ memuat $-C$",
+      "distraktor": [
+        {
+          "teks": "Keduanya benar karena hasilnya sama, yaitu $\\begin{pmatrix} 11 & -13 \\\\ 9 & -3 \\end{pmatrix}$",
+          "alasan": "hasil yang sama dikira bukti kebenaran"
+        },
+        {
+          "teks": "Hanya siswa P yang benar, sebab mengerjakan dari kiri ke kanan, hasilnya $\\begin{pmatrix} 11 & -13 \\\\ 9 & -3 \\end{pmatrix}$",
+          "alasan": "urutan dari kiri dikira menjamin tanda $C$ benar"
+        },
+        {
+          "teks": "Hanya siswa Q yang benar, sebab kurung memisahkan $B$ dan $C$, hasilnya $\\begin{pmatrix} 11 & -13 \\\\ 9 & -3 \\end{pmatrix}$",
+          "alasan": "kurung dikira tidak mengubah tanda $C$"
+        }
+      ],
+      "pembahasan": "$A - B$ = $\\begin{pmatrix} 6 & -7 \\\\ 6 & -1 \\end{pmatrix}$. Hasil P: $\\begin{pmatrix} 11 & -13 \\\\ 9 & -3 \\end{pmatrix}$. Hasil Q: $B - C$ = $\\begin{pmatrix} -3 & 10 \\\\ -4 & 9 \\end{pmatrix}$ sehingga $A - (B - C)$ = $\\begin{pmatrix} 11 & -13 \\\\ 9 & -3 \\end{pmatrix}$. Hasil benar: $\\begin{pmatrix} 1 & -1 \\\\ 3 & 1 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "maka ada matriks C yang merupakan hasil pengurangan matriks A dengan matriks B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan penyelesaian",
+      "alasan_level": "memeriksa tiap elemen hasil siswa, menemukan dua elemen salah dan pola kesalahan tanda yang sama",
+      "stimulus": null,
+      "pertanyaan": "Siswa menghitung $\\begin{pmatrix} 4 & -2 \\\\ -3 & 5 \\end{pmatrix}$ - $\\begin{pmatrix} 1 & -6 \\\\ -2 & 3 \\end{pmatrix}$ dan menulis hasilnya $\\begin{pmatrix} 3 & -8 \\\\ -5 & 2 \\end{pmatrix}$. Pernyataan yang tepat mengenai hasil tersebut adalah ....",
+      "jawaban_benar": "Dua elemen salah, yaitu baris 1 kolom 2 dan baris 2 kolom 1, karena pengurang yang negatif diperlakukan sebagai bilangan positif",
+      "alasan_benar": "elemen (1,2): $-2 - (-6) = 4$; elemen (2,1): $-3 - (-2) = -1$; dua elemen lain sudah benar",
+      "distraktor": [
+        {
+          "teks": "Satu elemen salah, yaitu baris 1 kolom 2, karena $-2 - (-6)$ ditulis $-8$",
+          "alasan": "elemen (2,1) tidak diperiksa; $-3 - (-2)$ seharusnya $-1$, bukan $-5$"
+        },
+        {
+          "teks": "Dua elemen salah, yaitu baris 1 kolom 1 dan baris 2 kolom 2, karena seharusnya dijumlahkan",
+          "alasan": "elemen (1,1) dan (2,2) justru sudah benar: $4 - 1 = 3$ dan $5 - 3 = 2$"
+        },
+        {
+          "teks": "Seluruh elemen salah karena pengurangan matriks harus dikerjakan sebagai $B - A$",
+          "alasan": "urutan pengurangan terbalik"
+        }
+      ],
+      "pembahasan": "Hasil benar $\\begin{pmatrix} 3 & 4 \\\\ -1 & 2 \\end{pmatrix}$. Elemen (1,1) dan (2,2) sudah benar, elemen (1,2) dan (2,1) keliru karena tanda pengurang negatif.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "mempunyai lawan yaitu matriks"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim sifat operasi",
+      "alasan_level": "mengevaluasi klaim tentang matriks nol dan lawan, memilih contoh penyangkal yang benar-benar memenuhi premis",
+      "stimulus": null,
+      "pertanyaan": "Klaim: \"Jika $A + B = O$ (matriks nol), maka $A = O$ dan $B = O$.\" Pernyataan yang benar mengenai klaim tersebut adalah ....",
+      "jawaban_benar": "Klaim salah; contohnya $A$ = $\\begin{pmatrix} 2 & -1 \\\\ 3 & 4 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} -2 & 1 \\\\ -3 & -4 \\end{pmatrix}$",
+      "alasan_benar": "$B = -A$ memberi $A + B = O$ tanpa $A$ atau $B$ nol; contoh tersebut memenuhi premis dan menyalahi kesimpulan",
+      "distraktor": [
+        {
+          "teks": "Klaim benar, sebab jumlah dua matriks hanya nol bila keduanya matriks nol",
+          "alasan": "mengabaikan lawan matriks"
+        },
+        {
+          "teks": "Klaim salah; contoh penyangkalnya $A$ = $\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} -1 & 2 \\\\ -3 & 4 \\end{pmatrix}$",
+          "alasan": "contoh tidak memenuhi premis: $A + B$ = $\\begin{pmatrix} 0 & 4 \\\\ 0 & 8 \\end{pmatrix}$ bukan matriks nol"
+        },
+        {
+          "teks": "Klaim benar bila $A$ dan $B$ berordo $2 \\times 2$",
+          "alasan": "ordo dikira menentukan kebenaran klaim"
+        }
+      ],
+      "pembahasan": "Jumlah elemen seletak dapat nol bila keduanya berlawanan, mis. $2 + (-2) = 0$. Jadi $B = -A$ memenuhi $A + B = O$ dengan $A \\neq O$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "Matriks C juga berordo m × n dengan elemen-elemen c ij = a ij – b ij"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat parameter matriks khusus",
+      "alasan_level": "menyimpulkan bahwa $A + B = A - B$ memaksa $B = O$ (lewat lawan matriks), lalu menyelesaikan dua parameter",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ dan $B$ berordo $2 \\times 2$ dengan elemen bilangan real, dan $B$ = $\\begin{pmatrix} 2k - 6 & m + k \\\\ 3k - 9 & 2m + 6 \\end{pmatrix}$. Jika $A + B = A - B$, nilai $k - m$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$A + B = A - B$ berarti $B = -B$, sehingga $B = O$: $2k - 6 = 0$ memberi $k = 3$, $m + k = 0$ memberi $m = -3$ (cocok dengan $2m + 6 = 0$), jadi $k - m = 6$",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "salah tanda pada $m$: $m + k = 0$ dibaca $m = 3$"
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "urutan terbalik: yang dihitung $m - k$"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "yang dilaporkan hanya nilai $k$"
+        }
+      ],
+      "pembahasan": "$A + B = A - B \\Rightarrow B + B = O \\Rightarrow B = O$. Maka $k = 3$ dan $m = -3$ memenuhi semua elemen. $k - m = 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "kutipan": "Apakah sifat-sifat operasi penjumlahan matriks pada Sifat 1.1 berlaku untuk operasi pengurangan matriks"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim sifat operasi",
+      "alasan_level": "memeriksa empat pernyataan umum tentang operasi matriks dan menemukan satu yang berlaku untuk semua matriks sejenis",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$, $B$, dan $C$ berordo sama. Pernyataan yang benar untuk semua matriks $A$, $B$, $C$ tersebut adalah ....",
+      "jawaban_benar": "$(A - B) + (B - C) + (C - A) = O$",
+      "alasan_benar": "$(A - B) + (B - C) + (C - A) = A - A + B - B + C - C = O$ menurut sifat penjumlahan dan lawan",
+      "distraktor": [
+        {
+          "teks": "$(A + B) - C = A - (B + C)$",
+          "alasan": "ruas kiri $A + B - C$, ruas kanan $A - B - C$; tidak sama kecuali $B = O$"
+        },
+        {
+          "teks": "$A - O = O - A$",
+          "alasan": "ruas kiri $A$, ruas kanan $-A$; sama hanya bila $A = O$"
+        },
+        {
+          "teks": "$(A - B) - C = (A - C) + B$",
+          "alasan": "ruas kiri $A - B - C$, ruas kanan $A - C + B$; sama hanya bila $B = O$"
+        }
+      ],
+      "pembahasan": "Hanya pernyataan pertama yang berlaku umum; ketiga lainnya gagal untuk $A$, $B$ bukan nol, misalnya $B = I$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "Matriks C juga berordo m × n dengan elemen-elemen cij= aij+ bij"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pencacahan pasangan matriks",
+      "alasan_level": "merancang/menghitung seluruh pasangan matriks berdasarkan syarat jumlah elemen seletak dengan batas bilangan cacah",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ dan $B$ berordo $1 \\times 2$ dengan semua elemen bilangan cacah ($0, 1, 2, \\ldots$) dan $A + B$ = $\\begin{pmatrix} 4 & 3 \\end{pmatrix}$. Banyak pasangan terurut $(A, B)$ yang mungkin adalah ....",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "elemen pertama: $a + b = 4$ ada 5 pasangan ($a = 0, \\ldots, 4$); elemen kedua: $a + b = 3$ ada 4 pasangan; total $5 \\times 4 = 20$",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "banyak pasangan kedua elemen dijumlahkan ($5 + 4$), bukan dikalikan"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "nilai nol tidak dihitung: $4 \times 3$"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "yang dihitung jumlah elemen $4 + 3$"
+        }
+      ],
+      "pembahasan": "Tiap elemen bebas dipilih terpisah: untuk jumlah 4 ada 5 pilihan, untuk jumlah 3 ada 4 pilihan, sehingga $5 \\times 4 = 20$.",
+      "catatan": null
+    }
+  ]
+}

@@ -1,0 +1,690 @@
+{
+  "book": "kelas12",
+  "bab_no": 3,
+  "subbab": "D",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b03-d-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan indeks suku ke-k",
+      "alasan_level": "mengevaluasi penyelesaian siswa dan menemukan bahwa suku ke-4 berarti $r=3$, bukan $r=4$, lalu menghitung ulang",
+      "stimulus": null,
+      "pertanyaan": "Dina menentukan suku ke-4 pada penjabaran $(x + 2)^8$ (pangkat $x$ menurun) sebagai $C_4^8 \\, x^4 \\cdot 2^4 = 1.120x^4$. Koefisien suku ke-4 yang benar adalah ....",
+      "jawaban_benar": "$448$",
+      "alasan_benar": "suku ke-4 berarti $r=3$: $C_3^8 \\, x^5 \\cdot 2^3 = 56 \\times 8 \\, x^5 = 448x^5$",
+      "distraktor": [
+        {
+          "teks": "$1.120$",
+          "alasan": "mengulang kesalahan Dina: memakai $r=4$ untuk suku ke-4"
+        },
+        {
+          "teks": "$56$",
+          "alasan": "lupa mengalikan dengan $2^3$"
+        },
+        {
+          "teks": "$1.792$",
+          "alasan": "pangkat $x$ dan pangkat 2 tertukar ($C_3^8 \\cdot 2^5$)"
+        }
+      ],
+      "pembahasan": "Suku ke-$(r+1)$ memakai $r$, sehingga suku ke-4 memakai $r=3$ (bukan 4). Suku tersebut $C_3^8 x^{5} 2^3 = 448x^5$. Kesalahan Dina: menyamakan $r$ dengan nomor suku.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter dari suku tetap",
+      "alasan_level": "membentuk suku umum, menentukan $r$ dari syarat pangkat $x$ nol, lalu menyelesaikan persamaan pangkat empat untuk $a$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $a > 0$. Suku tetap (suku yang tidak memuat $x$) pada penjabaran $\\left(x^2 + \\frac{a}{x}\\right)^6$ bernilai $1.215$. Nilai $a$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "suku umum $C_r^6 a^r x^{12-3r}$; $r=4$ sehingga $15a^4 = 1.215$, $a^4 = 81$, $a = 3$",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "berhenti pada $a^2 = 9$ tanpa menyelesaikan pangkat empat"
+        },
+        {
+          "teks": "$27$",
+          "alasan": "mengira suku tetap memakai $a^3$ dan mengambil $a^3 = 27$ sebagai nilai $a$"
+        },
+        {
+          "teks": "$81$",
+          "alasan": "memakai nilai $a^4 = 81$ sebagai $a$"
+        }
+      ],
+      "pembahasan": "Suku umum: $C_r^6 (x^2)^{6-r} (a/x)^r = C_r^6 a^r x^{12-3r}$. Suku tetap: $12-3r=0$, $r=4$, koefisien $15a^4 = 1.215$, $a^4 = 81$, $a=3$ karena $a>0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat adanya suku tetap",
+      "alasan_level": "menyatakan pangkat $x$ sebagai $3n-5r$ dan mencari $n$ terkecil agar $3n = 5r$ punya solusi bulat",
+      "stimulus": null,
+      "pertanyaan": "Penjabaran $\\left(x^3 + \\frac{1}{x^2}\\right)^n$ dengan $n$ bilangan bulat positif memuat suku tetap (tanpa $x$). Nilai $n$ terkecil yang memenuhi adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "pangkat $x$: $3(n-r) - 2r = 3n - 5r = 0$; $n$ harus kelipatan 5, terkecil $n=5$ ($r=3$)",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "mengambil pangkat $x$ pada suku pertama sebagai nilai $n$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "mengira $n$ harus kelipatan 3"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "mengambil pangkat $x$ pada suku kedua sebagai nilai $n$"
+        }
+      ],
+      "pembahasan": "Suku umum $C_r^n x^{3(n-r)} x^{-2r} = C_r^n x^{3n-5r}$. Agar pangkat nol, $3n = 5r$, sehingga $n$ kelipatan 5. $n$ terkecil adalah 5 dengan $r=3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi pernyataan tentang penjabaran",
+      "alasan_level": "mengevaluasi empat pernyataan tentang banyak suku, simetri koefisien, dan jumlah koefisien $(a+b)^9$",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar tentang penjabaran $(a + b)^9$ adalah ....",
+      "jawaban_benar": "suku ke-5 dan suku ke-6 memiliki koefisien yang sama",
+      "alasan_benar": "$C_4^9 = C_5^9 = 126$, jadi koefisien suku ke-5 dan ke-6 sama",
+      "distraktor": [
+        {
+          "teks": "penjabaran tersebut memiliki 9 suku",
+          "alasan": "banyak suku $n+1 = 10$, bukan $n$"
+        },
+        {
+          "teks": "jumlah semua koefisiennya 18",
+          "alasan": "jumlah koefisien adalah $2^9 = 512$, bukan $2 \\times 9$"
+        },
+        {
+          "teks": "suku ke-4 dan suku ke-5 memiliki koefisien yang sama",
+          "alasan": "$C_3^9 = 84$ sedangkan $C_4^9 = 126$ (simetri terjadi pada suku ke-5 dan ke-6)"
+        }
+      ],
+      "pembahasan": "Penjabaran $(a+b)^9$ punya 10 suku, jumlah koefisien $2^9 = 512$, koefisien suku ke-4 $=84$, suku ke-5 dan ke-6 sama-sama 126 (simetri $C_4^9 = C_5^9$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 134,
+        "kutipan": "Menggunakan aturan segitiga pascal, secara sistematis berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "identitas Pascal tanpa hitung penuh",
+      "alasan_level": "menyadari jumlah dua bilangan bersebelahan pada satu baris sama dengan bilangan di bawahnya, dipakai dua kali berturut-turut",
+      "stimulus": null,
+      "pertanyaan": "Nilai $C_2^8 + C_3^8 + C_4^9$ sama dengan ....",
+      "jawaban_benar": "$C_4^{10}$ dan bernilai $210$",
+      "alasan_benar": "$C_2^8 + C_3^8 = C_3^9$ (aturan Pascal), lalu $C_3^9 + C_4^9 = C_4^{10} = 210$",
+      "distraktor": [
+        {
+          "teks": "$C_3^{10}$ dan bernilai $120$",
+          "alasan": "salah memilih bilangan: mengira $C_3^9 + C_4^9 = C_3^{10}$"
+        },
+        {
+          "teks": "$C_5^9$ dan bernilai $126$",
+          "alasan": "hanya menjumlahkan sekali dan keliru memakai simetri"
+        },
+        {
+          "teks": "$C_5^{10}$ dan bernilai $252$",
+          "alasan": "salah menaikkan indeks bawah menjadi 5"
+        }
+      ],
+      "pembahasan": "Aturan Pascal: $C_{r-1}^{n} + C_r^{n} = C_r^{n+1}$. Maka $C_2^8 + C_3^8 = C_3^9$ dan $C_3^9 + C_4^9 = C_4^{10} = 210$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "jumlah koefisien pangkat ganjil",
+      "alasan_level": "memakai substitusi $x=1$ dan $x=-1$ lalu menggabungkannya untuk memisahkan suku berpangkat ganjil",
+      "stimulus": null,
+      "pertanyaan": "Jumlah semua koefisien suku berpangkat ganjil (yaitu $x$, $x^3$, $x^5$) pada penjabaran $(3x - 2)^5$ adalah ....",
+      "jawaban_benar": "$1.563$",
+      "alasan_benar": "$f(1) = 1$ dan $f(-1) = (-5)^5 = -3.125$; jumlah koefisien pangkat ganjil $= \\frac{f(1) - f(-1)}{2} = \\frac{3.126}{2} = 1.563$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "mengira jumlah koefisien ganjil sama dengan jumlah semua koefisien $f(1)$"
+        },
+        {
+          "teks": "$-1.562$",
+          "alasan": "itu jumlah koefisien berpangkat genap ($\\frac{f(1)+f(-1)}{2}$)"
+        },
+        {
+          "teks": "$3.126$",
+          "alasan": "lupa membagi dengan 2"
+        }
+      ],
+      "pembahasan": "$f(x) = (3x-2)^5$. Jumlah koefisien pangkat ganjil $= \\frac{f(1)-f(-1)}{2} = \\frac{1-(-3.125)}{2} = \\frac{3.126}{2} = 1.563$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "peluang binomial parameter p tak diketahui",
+      "alasan_level": "menyusun perbandingan $P(2) : P(1) = 4$ sehingga $\\frac{p}{q}=4$, lalu mencari $p$ dari $p + q = 1$",
+      "stimulus": null,
+      "pertanyaan": "Seorang pemain memiliki peluang $p$ untuk berhasil pada setiap percobaan (saling bebas). Dari 3 percobaan, peluang tepat 2 kali berhasil sama dengan 4 kali peluang tepat 1 kali berhasil. Nilai $p$ adalah ....",
+      "jawaban_benar": "$0,8$",
+      "alasan_benar": "$\\frac{P(2)}{P(1)} = \\frac{3p^2q}{3pq^2} = \\frac{p}{q} = 4$ sehingga $p = 4q$ dan $p = 0,8$",
+      "distraktor": [
+        {
+          "teks": "$0,2$",
+          "alasan": "tertukar: nilai $q$ diambil sebagai $p$"
+        },
+        {
+          "teks": "$0,25$",
+          "alasan": "mengira $p = \\frac{1}{4}$ dari perbandingan $p:q = 4$"
+        },
+        {
+          "teks": "$0,75$",
+          "alasan": "memakai perbandingan $3:1$ (mengambil $n=3$ sebagai angka perbandingan)"
+        }
+      ],
+      "pembahasan": "$P(2) = 3p^2q$ dan $P(1) = 3pq^2$. Syarat $3p^2q = 4 \\cdot 3pq^2$ memberi $p = 4q$. Karena $p+q=1$, $5q=1$, $q=0,2$, $p=0,8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "peluang binomial n tak diketahui",
+      "alasan_level": "menyamakan $C_2^n = C_5^n$ untuk $n$, lalu memakai $n$ itu untuk peluang $r=3$ dengan $p=\\frac{1}{2}$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koin setimbang dilempar $n$ kali. Peluang muncul tepat 2 sisi angka sama dengan peluang muncul tepat 5 sisi angka. Peluang muncul tepat 3 sisi angka dalam $n$ lemparan tersebut adalah ....",
+      "jawaban_benar": "$\\frac{35}{128}$",
+      "alasan_benar": "$C_2^n = C_5^n$ sehingga $n = 2 + 5 = 7$; $P(3) = C_3^7 \\left(\\frac{1}{2}\\right)^7 = \\frac{35}{128}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{21}{128}$",
+          "alasan": "itu peluang tepat 2 (atau 5) sisi angka, bukan tepat 3"
+        },
+        {
+          "teks": "$\\frac{35}{256}$",
+          "alasan": "memakai $\\left(\\frac{1}{2}\\right)^8$ (mengira $n=8$)"
+        },
+        {
+          "teks": "$\\frac{35}{64}$",
+          "alasan": "lupa memangkatkan penyebut sebanyak $n=7$ (memakai $2^6$)"
+        }
+      ],
+      "pembahasan": "Karena $p=q=\\frac{1}{2}$, $P(2)=P(5)$ berarti $C_2^n = C_5^n$, sehingga $n=7$. Maka $P(3) = C_3^7 \\cdot \\frac{1}{2^7} = \\frac{35}{128}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "peluang binomial parameter p tak diketahui",
+      "alasan_level": "mencari $p$ dari peluang semua berhasil ($p^3 = \\frac{8}{27}$) lalu memakainya untuk peluang tepat 2 dari 3",
+      "stimulus": null,
+      "pertanyaan": "Dalam 3 percobaan saling bebas, peluang semuanya berhasil adalah $\\frac{8}{27}$. Peluang tepat 2 percobaan berhasil adalah ....",
+      "jawaban_benar": "$\\frac{4}{9}$",
+      "alasan_benar": "$p^3 = \\frac{8}{27}$ sehingga $p = \\frac{2}{3}$; $P(2) = C_2^3 \\left(\\frac{2}{3}\\right)^2 \\left(\\frac{1}{3}\\right) = \\frac{4}{9}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{27}$",
+          "alasan": "lupa mengalikan dengan $C_2^3 = 3$"
+        },
+        {
+          "teks": "$\\frac{2}{9}$",
+          "alasan": "memakai $p^1 q^2$ untuk tepat 2 berhasil ($3 \\cdot \\frac{2}{3} \\cdot \\frac{1}{9}$)"
+        },
+        {
+          "teks": "$\\frac{8}{27}$",
+          "alasan": "menyalin peluang semua berhasil sebagai peluang tepat 2"
+        }
+      ],
+      "pembahasan": "$p^3 = \\frac{8}{27}$ memberi $p = \\frac{2}{3}$, $q = \\frac{1}{3}$. $P(2) = 3 \\cdot \\frac{4}{9} \\cdot \\frac{1}{3} = \\frac{4}{9}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang n peluang paling sedikit satu",
+      "alasan_level": "merancang banyak lemparan minimum lewat komplemen $1 - \\left(\\frac{1}{2}\\right)^n > 0,99$ dan menguji nilai $n$ satu per satu",
+      "stimulus": null,
+      "pertanyaan": "Seorang pemain melempar koin setimbang sebanyak $n$ kali. Banyak lemparan $n$ minimum agar peluang muncul sisi angka paling sedikit satu kali lebih dari $0,99$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "$1 - \\left(\\frac{1}{2}\\right)^n > 0,99$ berarti $2^n > 100$; $2^6 = 64$ belum cukup, $2^7 = 128$ cukup, jadi $n=7$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "$1 - \\frac{1}{64} \\approx 0,984$ masih kurang dari $0,99$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "memenuhi syarat tetapi bukan yang minimum"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "memenuhi syarat tetapi bukan yang minimum dan salah menghitung kebutuhan $2^n$"
+        }
+      ],
+      "pembahasan": "Paling sedikit satu angka = $1 - P(0) = 1 - 2^{-n}$. Syarat $2^{-n} < 0,01$ berarti $2^n > 100$, sehingga $n$ minimum 7 ($1 - \\frac{1}{128} \\approx 0,992$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang n peluang paling sedikit satu",
+      "alasan_level": "menyusun komplemen $1 - (0,2)^n \\geq 0,999$ lalu menguji $n=4$ dan $n=5$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah perangkat mengirim sinyal berulang. Peluang sinyal diterima pada setiap pengiriman adalah $0,8$ (saling bebas). Banyak pengiriman minimum agar peluang paling sedikit satu sinyal diterima tidak kurang dari $0,999$ adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "$1 - (0,2)^n \\geq 0,999$ berarti $(0,2)^n \\leq 0,001$; $(0,2)^4 = 0,0016$ belum cukup, $(0,2)^5 = 0,00032$ cukup, jadi $n=5$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "$1 - 0,0016 = 0,9984$ masih kurang dari $0,999$"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "$1 - 0,008 = 0,992$ jauh kurang dari $0,999$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "memenuhi syarat tetapi bukan yang minimum"
+        }
+      ],
+      "pembahasan": "Peluang tak ada sinyal diterima adalah $(0,2)^n$. Dibutuhkan $(0,2)^n \\leq 0,001$. $n=4$ memberi $0,0016$ (belum), $n=5$ memberi $0,00032$ (cukup).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan dua peluang",
+      "alasan_level": "menghitung dua peluang 'paling sedikit' dengan $n$ berbeda lalu membandingkan keduanya",
+      "stimulus": null,
+      "pertanyaan": "Peluang Ani menang pada setiap game adalah $0,6$ (saling bebas). Misalkan $X$ peluang Ani menang paling sedikit 2 dari 3 game dan $Y$ peluang Ani menang paling sedikit 3 dari 5 game. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$X = 0,648$ dan $Y = 0,68256$, sehingga $Y > X$",
+      "alasan_benar": "$X = 3(0,6)^2(0,4) + (0,6)^3 = 0,648$; $Y = 10(0,6)^3(0,4)^2 + 5(0,6)^4(0,4) + (0,6)^5 = 0,3456 + 0,2592 + 0,07776 = 0,68256$",
+      "distraktor": [
+        {
+          "teks": "$X = 0,432$ dan $Y = 0,3456$, sehingga $X > Y$",
+          "alasan": "hanya menghitung kasus tepat 2 dan tepat 3"
+        },
+        {
+          "teks": "$X = 0,216$ dan $Y = 0,07776$, sehingga $X > Y$",
+          "alasan": "hanya menghitung kasus semua game dimenangkan"
+        },
+        {
+          "teks": "$X = 0,648$ dan $Y = 0,3456$, sehingga $X > Y$",
+          "alasan": "$Y$ hanya menghitung tepat 3 dari 5"
+        }
+      ],
+      "pembahasan": "$X = 0,432 + 0,216 = 0,648$. $Y = 0,3456 + 0,2592 + 0,07776 = 0,68256$. Jadi $Y > X$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan dua ekspansi",
+      "alasan_level": "menghitung koefisien $x^2$ pada dua binomial yang konstantanya bertukar tempat lalu membandingkan selisihnya",
+      "stimulus": null,
+      "pertanyaan": "Koefisien suku yang memuat $x^2$ pada penjabaran $(3 + x)^5$ lebih besar daripada koefisien suku yang memuat $x^2$ pada penjabaran $(1 + 3x)^5$. Selisih keduanya adalah ....",
+      "jawaban_benar": "$180$",
+      "alasan_benar": "$(3+x)^5$: $C_2^5 \\cdot 3^3 = 270$; $(1+3x)^5$: $C_2^5 \\cdot 3^2 = 90$; selisih $= 180$",
+      "distraktor": [
+        {
+          "teks": "$90$",
+          "alasan": "salah satu koefisien dianggap nol dan hanya $(1+3x)^5$ yang dipakai"
+        },
+        {
+          "teks": "$360$",
+          "alasan": "menjumlahkan kedua koefisien ($270 + 90$)"
+        },
+        {
+          "teks": "$240$",
+          "alasan": "memakai $3^3 \\cdot 10 = 270$ tetapi koefisien kedua $30$ ($C_2^5 \\cdot 3$)"
+        }
+      ],
+      "pembahasan": "Pada $(3+x)^5$, suku $x^2$: $C_2^5 3^3 x^2 = 270x^2$. Pada $(1+3x)^5$: $C_2^5 (3x)^2 = 90x^2$. Selisihnya 180.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 134,
+        "kutipan": "Menggunakan aturan segitiga pascal, secara sistematis berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal klaim",
+      "alasan_level": "menguji klaim jumlah bilangan baris Pascal ($2n$ atau $2^n$) pada beberapa $n$ untuk menemukan contoh penyangkal terkecil",
+      "stimulus": null,
+      "pertanyaan": "Rani menyatakan bahwa jumlah semua bilangan pada baris untuk $(a+b)^n$ dalam segitiga Pascal selalu sama dengan $2n$. Nilai $n$ asli terkecil yang menjadi contoh penyangkal klaim Rani adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "jumlah baris $= 2^n$: $n=1$ (2 = 2) dan $n=2$ (4 = 4) cocok, $n=3$: $8 \\neq 6$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "baris pangkat 1 berjumlah $1+1=2=2 \\cdot 1$ sehingga klaim masih benar"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "baris pangkat 2 berjumlah $1+2+1=4=2 \\cdot 2$ sehingga klaim masih benar"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "memang menyangkal ($16 \\neq 8$) tetapi bukan yang terkecil"
+        }
+      ],
+      "pembahasan": "Jumlah bilangan baris pangkat $n$ adalah $2^n$. Klaim $2^n = 2n$ benar untuk $n=1,2$ tetapi salah untuk $n=3$ ($1+3+3+1=8 \\neq 6$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter dari rasio koefisien",
+      "alasan_level": "menyatakan rasio koefisien suku ke-3 dan ke-2 sebagai $n-1$ lalu memakai $n$ untuk koefisien suku ke-4",
+      "stimulus": null,
+      "pertanyaan": "Pada penjabaran $(1 + 2x)^n$ dalam pangkat $x$ naik, koefisien suku ke-3 sama dengan 6 kali koefisien suku ke-2. Koefisien suku ke-4 adalah ....",
+      "jawaban_benar": "$280$",
+      "alasan_benar": "$\\frac{C_2^n \\cdot 4}{C_1^n \\cdot 2} = n - 1 = 6$ sehingga $n=7$; suku ke-4: $C_3^7 \\cdot 2^3 = 35 \\times 8 = 280$",
+      "distraktor": [
+        {
+          "teks": "$140$",
+          "alasan": "memangkatkan 2 hanya dua kali ($35 \\times 4$)"
+        },
+        {
+          "teks": "$35$",
+          "alasan": "lupa mengalikan dengan $2^3$"
+        },
+        {
+          "teks": "$560$",
+          "alasan": "mengambil suku ke-5 ($C_4^7 \\cdot 2^4$)"
+        }
+      ],
+      "pembahasan": "Koefisien suku ke-2 $= 2n$, suku ke-3 $= 4C_2^n = 2n(n-1)$. Rasio $n-1 = 6$ memberi $n=7$. Suku ke-4: $C_3^7 2^3 = 280$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "peluang paling mungkin",
+      "alasan_level": "menghitung peluang tepat $r$ untuk $r=0..5$ dan menyadari dua nilai $r$ berpeluang sama dan terbesar",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koin setimbang dilempar 5 kali. Banyak nilai $r$ (dengan $r = 0, 1, \\ldots, 5$) yang membuat peluang muncul tepat $r$ sisi angka bernilai paling besar adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "$P(r) = C_r^5 / 32$; $C_r^5$ terbesar $=10$ untuk $r=2$ dan $r=3$, jadi ada 2 nilai",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "mengira nilai tengah tunggal ($r=2,5$ dibulatkan)"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "mengira $r=2,3$ dan $r=4$ ikut terbesar"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "mengira semua nilai $r$ berpeluang sama"
+        }
+      ],
+      "pembahasan": "Nilai $C_r^5$ untuk $r=0..5$: 1, 5, 10, 10, 5, 1. Terbesar 10 pada $r=2$ dan $r=3$, sehingga ada 2 nilai $r$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi ekspresi peluang paling sedikit",
+      "alasan_level": "mengevaluasi empat ekspresi untuk 'paling sedikit 3 dari 6' dengan komplemen yang benar",
+      "stimulus": null,
+      "pertanyaan": "Peluang tepat $r$ keberhasilan dari 6 percobaan saling bebas dinyatakan $P(r)$. Ekspresi yang tepat untuk peluang paling sedikit 3 keberhasilan adalah ....",
+      "jawaban_benar": "$1 - P(0) - P(1) - P(2)$",
+      "alasan_benar": "paling sedikit 3 $= P(3)+\\ldots+P(6) = 1 - (P(0)+P(1)+P(2))$",
+      "distraktor": [
+        {
+          "teks": "$1 - P(0) - P(1) - P(2) - P(3)$",
+          "alasan": "ikut mengurangkan $P(3)$ sehingga hasilnya paling sedikit 4"
+        },
+        {
+          "teks": "$P(3) + P(4) + P(5)$",
+          "alasan": "melupakan $P(6)$"
+        },
+        {
+          "teks": "$1 - P(3)$",
+          "alasan": "mengira komplemen 'paling sedikit 3' adalah 'tepat 3'"
+        }
+      ],
+      "pembahasan": "Himpunan 'paling sedikit 3' adalah $r=3,4,5,6$. Komplemennya $r=0,1,2$, sehingga peluangnya $1 - P(0) - P(1) - P(2)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "kutipan": "Dengan demikian, peluang tepat 4 penendang mencetak gol adalah 0,4096."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "peluang banyak keberhasilan genap",
+      "alasan_level": "menjumlahkan peluang tepat 0, 2, dan 4 dengan $p=0,3$ lalu menolak hasil yang bernilai ganjil atau separuh",
+      "stimulus": null,
+      "pertanyaan": "Peluang sebuah sensor menyala pada setiap percobaan adalah $0,3$ (saling bebas). Dalam 4 percobaan, peluang banyak sensor yang menyala adalah bilangan genap (termasuk 0) adalah ....",
+      "jawaban_benar": "$0,5128$",
+      "alasan_benar": "$P(0)+P(2)+P(4) = 0,2401 + 0,2646 + 0,0081 = 0,5128$",
+      "distraktor": [
+        {
+          "teks": "$0,4872$",
+          "alasan": "itu peluang banyak menyala ganjil ($P(1)+P(3)$)"
+        },
+        {
+          "teks": "$0,2646$",
+          "alasan": "hanya menghitung tepat 2"
+        },
+        {
+          "teks": "$0,5$",
+          "alasan": "mengira peluang genap dan ganjil selalu sama"
+        }
+      ],
+      "pembahasan": "$P(0) = 0,7^4 = 0,2401$; $P(2) = 6(0,09)(0,49) = 0,2646$; $P(4) = 0,0081$. Jumlah $= 0,5128$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "suku tetap dengan evaluasi langkah",
+      "alasan_level": "menyusun pangkat $x$ pada suku umum, menentukan $r$, lalu menghitung koefisien dengan faktor $2^{9-r}$",
+      "stimulus": null,
+      "pertanyaan": "Siti menyelesaikan suku tetap pada $\\left(2x + \\frac{1}{x^2}\\right)^9$ dan hanya menulis $r=3$. Koefisien suku tetap pada penjabaran tersebut adalah ....",
+      "jawaban_benar": "$5.376$",
+      "alasan_benar": "suku umum $C_r^9 2^{9-r} x^{9-3r}$; $r=3$: $C_3^9 \\cdot 2^6 = 84 \\times 64 = 5.376$",
+      "distraktor": [
+        {
+          "teks": "$84$",
+          "alasan": "lupa mengalikan dengan $2^6$"
+        },
+        {
+          "teks": "$672$",
+          "alasan": "memakai $2^r = 2^3$, bukan $2^{9-r} = 2^6$"
+        },
+        {
+          "teks": "$43.008$",
+          "alasan": "memangkatkan 2 dengan 9 ($84 \\times 2^9$)"
+        }
+      ],
+      "pembahasan": "$C_r^9 (2x)^{9-r} (x^{-2})^r = C_r^9 2^{9-r} x^{9-3r}$. Pangkat nol saat $r=3$, sehingga koefisiennya $84 \\cdot 64 = 5.376$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-d-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 133,
+        "kutipan": "untuk n bilangan bulat positif berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "dua parameter dari dua koefisien",
+      "alasan_level": "membentuk dua persamaan ($na$ dan $C_2^n a^2$), menyelesaikan $n$ dan $a$, lalu menjumlahkannya",
+      "stimulus": null,
+      "pertanyaan": "Pada penjabaran $(1 + ax)^n$ dengan $a > 0$ dalam pangkat $x$ naik, koefisien suku ke-2 adalah 12 dan koefisien suku ke-3 adalah 54. Nilai $n + a$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "$na = 12$ dan $\\frac{n(n-1)}{2}a^2 = 54$; dibagi menghasilkan $n=4$ dan $a=3$, jadi $n+a=7$",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "mengira $n+a = 12 + 4$ (mengambil $na$ dan $n$)"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "memakai $n=2$ dan $a=3$ (salah membagi dua persamaan)"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "menyalin $na=12$ sebagai $n+a$"
+        }
+      ],
+      "pembahasan": "Suku ke-2: $na=12$. Suku ke-3: $\\frac{n(n-1)}{2}a^2 = 54$. Dari $(na)^2\\frac{n-1}{n} = 108$ diperoleh $144\\cdot\\frac{n-1}{n}=108$, $n=4$, $a=3$. Jadi $n+a=7$.",
+      "catatan": null
+    }
+  ]
+}
