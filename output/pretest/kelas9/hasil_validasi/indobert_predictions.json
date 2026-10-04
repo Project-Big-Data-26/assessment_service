@@ -1,9 +1,9 @@
 {
   "schemaVersion": "indobert-blind-diagnostics-v1",
-  "createdAt": "2026-10-03T07:33:34.315004+00:00",
+  "createdAt": "2026-10-04T21:41:32.943089+00:00",
   "researchOnlyRun": true,
   "reviewRequired": true,
-  "blindDecisionLockedAt": "2026-10-03T07:33:19.776778+00:00",
+  "blindDecisionLockedAt": "2026-10-04T21:41:21.680770+00:00",
   "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
   "model": {
     "artifactFormatVersion": "indobert-3x4x3-artifact-v1",
@@ -15,6 +15,7 @@
     "datasetHash": "8a41381aa7e3fdb4e21617b9091e6747d29e5bd3f01e3c992ce9895b823f35c1",
     "splitManifestHash": "681c8a0a6afea9d23b71e1f315543751ebb259645c01f10a4db3fd2d90b634df",
     "rubricVersion": "math-rubric-3x4x3-v1",
+    "rubricVersionsByGradeTrack": {},
     "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
     "inputSchemaVersion": "math-question-text-v1",
     "inputRepresentation": "metadata",
@@ -22,6 +23,18 @@
     "detachDifficultyConditioning": true,
     "difficultyHeadType": "multiclass",
     "gradeEmbeddingDimension": 0,
+    "gradeEmbeddingCount": 6,
+    "supportedGrades": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supportedSubjectTracks": [
+      "regular"
+    ],
     "routingPolicyVersion": "confidence-only-v1",
     "labels": {
       "mathCognitiveDomain": [
@@ -46,19 +59,22 @@
         "temperature": 0.05,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "knowledgeDimension": {
         "temperature": 0.20979985858964298,
         "confidenceThreshold": null,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "intendedDifficulty": {
         "temperature": 0.9533279648066687,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       }
     },
     "maxLength": 256,
@@ -667,16 +683,16 @@
       "questionId": "8af0a2ca82017a432c92902d",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:8af0a2ca82017a432c92902d:content-v2",
       "questionVersionId": "8af0a2ca82017a432c92902d:content-v2:blind-revalidation",
-      "contentHash": "58c3d64d72cfaba4de9b151726f4b19ddac4fe0d503c79c25bf067f35cc41b65",
+      "contentHash": "39d20e6d5685b89f46821fc6c55f2511f009c5135dd83bf8cba40c2f29a3388e",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui keliling sebuah segitiga sama kaki adalah 48 cm. Tentukan model matematika yang menghubungkan antara keliling dan panjang sisi segitiga tersebut.\nPilihan: A. $x + y = 48$\nB. $2x + y = 48$\nC. $x + 2y = 48$\nD. $2x + 2y = 48$\nTranskripsi visual: -",
       "untruncatedTokenCount": 99,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.823,
+      "latencyMs": 1.196,
       "prediction": {
         "questionId": "8af0a2ca82017a432c92902d",
         "contentVersion": 2,
-        "contentHash": "58c3d64d72cfaba4de9b151726f4b19ddac4fe0d503c79c25bf067f35cc41b65",
+        "contentHash": "39d20e6d5685b89f46821fc6c55f2511f009c5135dd83bf8cba40c2f29a3388e",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -709,6 +725,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -731,16 +748,16 @@
       "questionId": "e7003333bef697d763016f2e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:e7003333bef697d763016f2e:content-v2",
       "questionVersionId": "e7003333bef697d763016f2e:content-v2:blind-revalidation",
-      "contentHash": "dc559007eea0dfc9ecdf3f4a3f816830590bdf812cc7cd4328270d92db3a5bae",
+      "contentHash": "d2a55c17dfc8b96a39009a1e9dae7becfb990f0973bc8526bc9c789ccdcb1abc",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel.\n\nDiketahui harga tiket film di suatu bioskop Rp35.000,00. y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual.\nPilihan: A. $y = \\frac{x}{35.000}$\nB. $y = 35.000x$\nC. $x = 35.000y$\nD. $y = 35.000 + x$\nTranskripsi visual: -",
       "untruncatedTokenCount": 123,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.202,
+      "latencyMs": 0.146,
       "prediction": {
         "questionId": "e7003333bef697d763016f2e",
         "contentVersion": 2,
-        "contentHash": "dc559007eea0dfc9ecdf3f4a3f816830590bdf812cc7cd4328270d92db3a5bae",
+        "contentHash": "d2a55c17dfc8b96a39009a1e9dae7becfb990f0973bc8526bc9c789ccdcb1abc",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -773,6 +790,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -795,16 +813,16 @@
       "questionId": "0b4b98faa7f553833f0db971",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:0b4b98faa7f553833f0db971:content-v2",
       "questionVersionId": "0b4b98faa7f553833f0db971:content-v2:blind-revalidation",
-      "contentHash": "57af1d1776ee7fa33b790d6bdf66782998e871610afa07859141f38f5883e3b3",
+      "contentHash": "b87a6b3205cfa0b817151e4ef257a562b7268e2f9806ffd0b0fcf2b5e0b199c4",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Sistem Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu toko alat lukis menjual 40 kuas lukis. Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.\n\nJika uang yang didapat oleh toko tersebut Rp1.103.000,00, maka berapa banyak masing-masing jenis kuas lukis yang terjual?\nPilihan: A. 27 kuas lukis jenis I dan 13 kuas lukis jenis II\nB. 20 kuas lukis jenis I dan 20 kuas lukis jenis II\nC. 13 kuas lukis jenis I dan 27 kuas lukis jenis II\nD. 15 kuas lukis jenis I dan 25 kuas lukis jenis II\nTranskripsi visual: -",
       "untruncatedTokenCount": 150,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.218,
+      "latencyMs": 0.134,
       "prediction": {
         "questionId": "0b4b98faa7f553833f0db971",
         "contentVersion": 2,
-        "contentHash": "57af1d1776ee7fa33b790d6bdf66782998e871610afa07859141f38f5883e3b3",
+        "contentHash": "b87a6b3205cfa0b817151e4ef257a562b7268e2f9806ffd0b0fcf2b5e0b199c4",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -837,6 +855,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -859,16 +878,16 @@
       "questionId": "a4219a3c217e0979ca28b57e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:a4219a3c217e0979ca28b57e:content-v2",
       "questionVersionId": "a4219a3c217e0979ca28b57e:content-v2:blind-revalidation",
-      "contentHash": "c82a82f667e14761bde3eadd4c169f39d951559eb43fd57da1d6991c40bcc8e8",
+      "contentHash": "5a0a3e7cae6cfbb3ecf1c0af78c317160d6d4ad45886cb474ba94325565aafde",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Sistem Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Wayan pergi ke toko kue tradisional untuk membeli kue basung (kue yang berasal dari Sumatera Barat) dan kue mendut (kue yang berasal dari Jawa Tengah). Dia membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00. Di toko yang sama, Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00.\n\nBerapa harga tiga kue mendut dan tujuh kue basung?\nPilihan: A. Rp42.000,00\nB. Rp34.500,00\nC. Rp37.500,00\nD. Rp40.500,00\nTranskripsi visual: -",
       "untruncatedTokenCount": 160,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.18,
+      "latencyMs": 0.11,
       "prediction": {
         "questionId": "a4219a3c217e0979ca28b57e",
         "contentVersion": 2,
-        "contentHash": "c82a82f667e14761bde3eadd4c169f39d951559eb43fd57da1d6991c40bcc8e8",
+        "contentHash": "5a0a3e7cae6cfbb3ecf1c0af78c317160d6d4ad45886cb474ba94325565aafde",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -901,6 +920,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -923,16 +943,16 @@
       "questionId": "4b2524b8440c37d72e127b02",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:4b2524b8440c37d72e127b02:content-v2",
       "questionVersionId": "4b2524b8440c37d72e127b02:content-v2:blind-revalidation",
-      "contentHash": "6135bd715232d411294d73b20fd0a32d5d8256705f6551eaa62311deb4452d2e",
+      "contentHash": "61ae3c8f5be0f920428c60ce7233ac238c73fe68eeb7cd678ed1c48d0f6db730",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Menyelesaikan Masalah terkait Pertidaksamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg. Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.\n\nJika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?\nPilihan: A. 9,45 kali pengangkutan\nB. 10 kali pengangkutan\nC. 9 kali pengangkutan\nD. 11 kali pengangkutan\nTranskripsi visual: -",
       "untruncatedTokenCount": 123,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.162,
+      "latencyMs": 0.115,
       "prediction": {
         "questionId": "4b2524b8440c37d72e127b02",
         "contentVersion": 2,
-        "contentHash": "6135bd715232d411294d73b20fd0a32d5d8256705f6551eaa62311deb4452d2e",
+        "contentHash": "61ae3c8f5be0f920428c60ce7233ac238c73fe68eeb7cd678ed1c48d0f6db730",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -965,6 +985,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -987,16 +1008,16 @@
       "questionId": "6d6cb72cedbdc46857aa2701",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:6d6cb72cedbdc46857aa2701:content-v2",
       "questionVersionId": "6d6cb72cedbdc46857aa2701:content-v2:blind-revalidation",
-      "contentHash": "5885c34544dc98d52e79d31edbd680309f52638dcbb47266848b98b80ec91811",
+      "contentHash": "4a9d31abca3ef846caf7f6bf020d8fc7b3339b7549e13c8650257ebd542f4237",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Pengertian Kemiringan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Titik P(2,-1) dan R(6,2) merupakan titik sudut yang berhadapan pada sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat, maka persamaan garis yang melalui titik Q dan S adalah ....\nPilihan: A. 4x + 3y - 14 = 0\nB. 3x + 4y - 14 = 0\nC. 4x - 3y + 14 = 0\nD. 3x - 4y + 33 = 0\nTranskripsi visual: -",
       "untruncatedTokenCount": 127,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.187,
+      "latencyMs": 0.104,
       "prediction": {
         "questionId": "6d6cb72cedbdc46857aa2701",
         "contentVersion": 2,
-        "contentHash": "5885c34544dc98d52e79d31edbd680309f52638dcbb47266848b98b80ec91811",
+        "contentHash": "4a9d31abca3ef846caf7f6bf020d8fc7b3339b7549e13c8650257ebd542f4237",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1029,6 +1050,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1051,16 +1073,16 @@
       "questionId": "d0b943d7f97005ee05dfe7b2",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:d0b943d7f97005ee05dfe7b2:content-v2",
       "questionVersionId": "d0b943d7f97005ee05dfe7b2:content-v2:blind-revalidation",
-      "contentHash": "4bd25f1c9c6bda4f86ad721cbae87dd738f5b999ff445ea28f71227250bf3aff",
+      "contentHash": "a7699d91cdc2bb8c87fed17a02495556854265c0fdaf887aec8a6b0ea940c598",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Klasifikasi Bangun Ruang dan Jaring-Jaring\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dapatkah kita membuat jaring-jaring bangun ruang bola?\nPilihan: A. Hanya kerucut dan tabung yang bisa dibuat jaring-jaringnya, bola tidak\nB. Tidak, sama sekali tidak mungkin dibuat\nC. Ya, tetapi hasilnya selalu berbentuk persegi panjang\nD. Ya, jaring-jaring bangun ruang bola dapat dibuat\nTranskripsi visual: -",
       "untruncatedTokenCount": 96,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.23,
+      "latencyMs": 0.094,
       "prediction": {
         "questionId": "d0b943d7f97005ee05dfe7b2",
         "contentVersion": 2,
-        "contentHash": "4bd25f1c9c6bda4f86ad721cbae87dd738f5b999ff445ea28f71227250bf3aff",
+        "contentHash": "a7699d91cdc2bb8c87fed17a02495556854265c0fdaf887aec8a6b0ea940c598",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1093,6 +1115,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1115,16 +1138,16 @@
       "questionId": "394ec3b5c5b98c434a4cedde",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:394ec3b5c5b98c434a4cedde:content-v2",
       "questionVersionId": "394ec3b5c5b98c434a4cedde:content-v2:blind-revalidation",
-      "contentHash": "9a12b539fa8fc3b757936de171e36aa35d67032f45757dcc6bc44ef1e38187be",
+      "contentHash": "229924a8075a00e189a87546f44af21782626dd020bd2947ea5c430466f822b7",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Klasifikasi Bangun Ruang dan Jaring-Jaring\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apa yang dimaksud dengan jaring-jaring bangun ruang?\nPilihan: A. Kumpulan rusuk yang membentuk kerangka luar suatu bangun ruang\nB. Bagian permukaan bangun ruang yang terlihat dari luar saja\nC. Bentuk tiga dimensi yang menunjukkan besar ruang yang ditempati suatu bangun ruang\nD. Bentuk dua dimensi yang dapat digambar, dipotong, dan dirangkai sedemikian rupa sehingga menjadi sebuah bangun tiga dimensi\nTranskripsi visual: -",
       "untruncatedTokenCount": 108,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.207,
+      "latencyMs": 0.106,
       "prediction": {
         "questionId": "394ec3b5c5b98c434a4cedde",
         "contentVersion": 2,
-        "contentHash": "9a12b539fa8fc3b757936de171e36aa35d67032f45757dcc6bc44ef1e38187be",
+        "contentHash": "229924a8075a00e189a87546f44af21782626dd020bd2947ea5c430466f822b7",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1157,6 +1180,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1179,16 +1203,16 @@
       "questionId": "ee45c96e4346ffea193e7a99",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:ee45c96e4346ffea193e7a99:content-v2",
       "questionVersionId": "ee45c96e4346ffea193e7a99:content-v2:blind-revalidation",
-      "contentHash": "6873f75d413b213c638f839e056deaeb821cc82058ae91a532fda1c03396572a",
+      "contentHash": "427157f9b23d6d9bbc1249772cfad63527d5e3b3f04bf756790fa32abb4fe3bf",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Luas Permukaan Bangun Ruang Sisi Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah kotak pensil terbuat dari logam dengan dimensi 20 cm × 10 cm × 3 cm. Hitunglah berapa luas logam yang dibutuhkan untuk membuat kotak pensil tersebut.\nPilihan: A. 580 cm²\nB. 600 cm²\nC. 520 cm²\nD. 290 cm²\nTranskripsi visual: -",
       "untruncatedTokenCount": 86,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.254,
+      "latencyMs": 0.211,
       "prediction": {
         "questionId": "ee45c96e4346ffea193e7a99",
         "contentVersion": 2,
-        "contentHash": "6873f75d413b213c638f839e056deaeb821cc82058ae91a532fda1c03396572a",
+        "contentHash": "427157f9b23d6d9bbc1249772cfad63527d5e3b3f04bf756790fa32abb4fe3bf",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1221,6 +1245,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1248,7 +1273,7 @@
       "untruncatedTokenCount": 82,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.169,
+      "latencyMs": 0.295,
       "prediction": {
         "questionId": "27c5fab7664c58cab4d858b0",
         "contentVersion": 2,
@@ -1285,6 +1310,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1307,16 +1333,16 @@
       "questionId": "aee8fd25cf246c58a370058e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:aee8fd25cf246c58a370058e:content-v2",
       "questionVersionId": "aee8fd25cf246c58a370058e:content-v2:blind-revalidation",
-      "contentHash": "9e333def2d62b4f1c1a7b423684382392aed99bcd6170d75409756d91cb649e1",
+      "contentHash": "6156e4c2dd33ca4a4b2099bfe84124b1f98b055cb9525fffcaadbb2ccf993dd6",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Volume Bangun Ruang Sisi Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah balok memiliki ukuran panjang 5, lebar 3, dan tinggi 7. Jika balok tersebut diubah ukurannya dengan skala 4, maka tentukan volume balok setelah diubah.\nPilihan: A. 420 satuan kubik\nB. 1.680 satuan kubik\nC. 105 satuan kubik\nD. 6.720 satuan kubik\nTranskripsi visual: -",
       "untruncatedTokenCount": 92,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.332,
+      "latencyMs": 0.126,
       "prediction": {
         "questionId": "aee8fd25cf246c58a370058e",
         "contentVersion": 2,
-        "contentHash": "9e333def2d62b4f1c1a7b423684382392aed99bcd6170d75409756d91cb649e1",
+        "contentHash": "6156e4c2dd33ca4a4b2099bfe84124b1f98b055cb9525fffcaadbb2ccf993dd6",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1349,6 +1375,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1371,16 +1398,16 @@
       "questionId": "bc9eda46aa2fecb0da3798d8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:bc9eda46aa2fecb0da3798d8:content-v2",
       "questionVersionId": "bc9eda46aa2fecb0da3798d8:content-v2:blind-revalidation",
-      "contentHash": "9c32c7ab9b83f0a2b0aab0ee00ab180b0f72291e16ea2f564b3b9b0dea871755",
+      "contentHash": "7fdaded8b7eeff1bb5a34db0c0435b525abc129292e587d7966eb91c8cd48e48",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Volume Bangun Ruang Sisi Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?\nPilihan: A. Volume limas adalah setengah dari volume prisma\nB. Volume limas adalah tiga kali volume prisma\nC. Volume limas tersebut adalah sepertiga dari volume prisma\nD. Volume limas sama dengan volume prisma\nTranskripsi visual: -",
       "untruncatedTokenCount": 99,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.218,
+      "latencyMs": 0.213,
       "prediction": {
         "questionId": "bc9eda46aa2fecb0da3798d8",
         "contentVersion": 2,
-        "contentHash": "9c32c7ab9b83f0a2b0aab0ee00ab180b0f72291e16ea2f564b3b9b0dea871755",
+        "contentHash": "7fdaded8b7eeff1bb5a34db0c0435b525abc129292e587d7966eb91c8cd48e48",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1413,6 +1440,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1435,16 +1463,16 @@
       "questionId": "b0484eaccca405ba34c3f428",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:b0484eaccca405ba34c3f428:content-v2",
       "questionVersionId": "b0484eaccca405ba34c3f428:content-v2:blind-revalidation",
-      "contentHash": "6b1332fed096576cf8d474e5ec48a294a8d24b0c131ed68ac100b678e7384b59",
+      "contentHash": "44822528fbf763c1afa91b60d60f4e79ec366cb5213cc31618b2c9fcc28f6968",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk tiap-tiap lingkaran yang diketahui r (panjang jari-jari) atau d (panjang diameter) berikut, tentukan keliling dan luasnya! ⓐ r = 12 cm\nPilihan: A. Keliling 75,36 cm dan luas 75,36 cm²\nB. Keliling 452,16 cm dan luas 75,36 cm²\nC. Keliling 75,36 cm dan luas 452,16 cm²\nD. Keliling 37,68 cm dan luas 452,16 cm²\nTranskripsi visual: -",
       "untruncatedTokenCount": 120,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.172,
+      "latencyMs": 0.13,
       "prediction": {
         "questionId": "b0484eaccca405ba34c3f428",
         "contentVersion": 2,
-        "contentHash": "6b1332fed096576cf8d474e5ec48a294a8d24b0c131ed68ac100b678e7384b59",
+        "contentHash": "44822528fbf763c1afa91b60d60f4e79ec366cb5213cc31618b2c9fcc28f6968",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1477,6 +1505,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1499,16 +1528,16 @@
       "questionId": "ce529c7a884ca9ebbfb36e54",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:ce529c7a884ca9ebbfb36e54:content-v2",
       "questionVersionId": "ce529c7a884ca9ebbfb36e54:content-v2:blind-revalidation",
-      "contentHash": "1fbce5b5bd90799a64b7a8c43176777f6ee0920b7c89fff3cfc45d62c89023c3",
+      "contentHash": "a893f69afbb2b85a095a383b8ca338911676d72a71cad2e74902ac15c9ca2f7c",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar ____.\nPilihan: A. 22\nB. 3,14 (atau 22/7)\nC. 3,41\nD. 2\nTranskripsi visual: -",
       "untruncatedTokenCount": 69,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.237,
+      "latencyMs": 0.108,
       "prediction": {
         "questionId": "ce529c7a884ca9ebbfb36e54",
         "contentVersion": 2,
-        "contentHash": "1fbce5b5bd90799a64b7a8c43176777f6ee0920b7c89fff3cfc45d62c89023c3",
+        "contentHash": "a893f69afbb2b85a095a383b8ca338911676d72a71cad2e74902ac15c9ca2f7c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1541,6 +1570,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1563,16 +1593,16 @@
       "questionId": "487ffef7f793443d4d651476",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:487ffef7f793443d4d651476:content-v2",
       "questionVersionId": "487ffef7f793443d4d651476:content-v2:blind-revalidation",
-      "contentHash": "855b4dacadc95f4edb557640fa759fc784c56c95a6c3a5e9c99071d9007a1879",
+      "contentHash": "37e231a09728feb0da0d7e2aff728eca9ef33e5c7d9f447e1f2ae22033786548",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Luas Permukaan Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk memperingati ulang tahun Gilang, ibunya membuat nasi tumpeng yang disusun sedemikian rupa sehingga nasinya berbentuk kerucut dengan diameter 20 cm. Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm. Jika nasi kerucut ini ingin ditutupi dengan daun pisang, berapa luas daun pisang yang akan dibutuhkan?\nPilihan: A. ≈1.456,96 cm²\nB. ≈2.285,92 cm²\nC. ≈1.142,96 cm²\nD. ≈1.099 cm²\nTranskripsi visual: -",
       "untruncatedTokenCount": 123,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.204,
+      "latencyMs": 0.111,
       "prediction": {
         "questionId": "487ffef7f793443d4d651476",
         "contentVersion": 2,
-        "contentHash": "855b4dacadc95f4edb557640fa759fc784c56c95a6c3a5e9c99071d9007a1879",
+        "contentHash": "37e231a09728feb0da0d7e2aff728eca9ef33e5c7d9f447e1f2ae22033786548",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1605,6 +1635,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1627,16 +1658,16 @@
       "questionId": "efbc889b95676e6e2d913479",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:efbc889b95676e6e2d913479:content-v2",
       "questionVersionId": "efbc889b95676e6e2d913479:content-v2:blind-revalidation",
-      "contentHash": "1354b481d47e1efa2b50aa275b6d634ac42dd668099fed404f6acaf3e528e2f9",
+      "contentHash": "1a237670819eb07c684b12921d5266c37daf3cb5ccd61fc2c3571bccce96a301",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Luas Permukaan Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.\nPilihan: A. Luas permukaan bola sama dengan luas lingkaran yang memiliki jari-jari yang sama\nB. Luas permukaan bola sama dengan dua kali luas lingkaran yang memiliki jari-jari yang sama\nC. Luas permukaan bola sama dengan setengah luas lingkaran yang memiliki jari-jari yang sama\nD. Luas permukaan bola sama dengan empat kali luas lingkaran yang memiliki jari-jari yang sama\nTranskripsi visual: -",
       "untruncatedTokenCount": 124,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.24,
+      "latencyMs": 0.102,
       "prediction": {
         "questionId": "efbc889b95676e6e2d913479",
         "contentVersion": 2,
-        "contentHash": "1354b481d47e1efa2b50aa275b6d634ac42dd668099fed404f6acaf3e528e2f9",
+        "contentHash": "1a237670819eb07c684b12921d5266c37daf3cb5ccd61fc2c3571bccce96a301",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1669,6 +1700,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1691,16 +1723,16 @@
       "questionId": "1ef6efc5863938a14b737897",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:1ef6efc5863938a14b737897:content-v2",
       "questionVersionId": "1ef6efc5863938a14b737897:content-v2:blind-revalidation",
-      "contentHash": "9f2ee0856f90c7854908b7738a8e7248dca3d9404cae4dabba26655158e042f4",
-      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Volume Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berapa liter gas bumi yang dapat ditampung dengan truk yang memiliki tabung penyimpanan besar seperti Gambar dengan diameter 2 meter dan panjang 12 meter?\nPilihan: A. 36.000 liter\nB. 150.720 liter\nC. 37.680 liter\nD. 37,68 liter\nTranskripsi visual: A side view of a tanker truck with a large cylindrical tank mounted on the trailer. The tank is horizontal, with a circular cross-section visible at the rear.",
-      "untruncatedTokenCount": 128,
+      "contentHash": "240f83531640bcef9ab097ca45a685e57af39a6ec8b459ed4cc29aaabebdfd16",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Volume Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berapa liter gas bumi yang dapat ditampung dengan truk yang memiliki tabung penyimpanan besar seperti Gambar dengan diameter 2 meter dan panjang 12 meter?\nPilihan: A. 36.000 liter\nB. 150.720 liter\nC. 37.680 liter\nD. 37,68 liter\nTranskripsi visual: Sebuah truk tangki dengan tangki berbentuk silinder horizontal. Diameter tangki adalah 2 meter dan panjang tangki adalah 12 meter.",
+      "untruncatedTokenCount": 107,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.208,
+      "latencyMs": 0.133,
       "prediction": {
         "questionId": "1ef6efc5863938a14b737897",
         "contentVersion": 2,
-        "contentHash": "9f2ee0856f90c7854908b7738a8e7248dca3d9404cae4dabba26655158e042f4",
+        "contentHash": "240f83531640bcef9ab097ca45a685e57af39a6ec8b459ed4cc29aaabebdfd16",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1733,6 +1765,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1744,7 +1777,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "ec4c7d6f4ba9f4aae84ea90f116186f4e5345435441e678c5623ae975b079f4f",
+          "inputHash": "7a6ba2d41d49004852008872b15064d250e8ad9dcc3b9c8846791617e2c31b2d",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1755,16 +1788,16 @@
       "questionId": "a0c228d869728c3140dece74",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:a0c228d869728c3140dece74:content-v2",
       "questionVersionId": "a0c228d869728c3140dece74:content-v2:blind-revalidation",
-      "contentHash": "ea3659103c485eea33a4d6c8d44fd5d6b4757332adcf3a0fdd55a260d9a17b32",
+      "contentHash": "4cf6b7759e2e2e6573877390bd02fc075f941d020a6bd648f605c5d052878da7",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Volume Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?\nPilihan: A. Volume kerucut sama dengan sepertiga volume tabung\nB. Volume kerucut adalah tiga kali volume tabung\nC. Volume kerucut sama dengan volume tabung\nD. Volume kerucut adalah setengah volume tabung\nTranskripsi visual: -",
       "untruncatedTokenCount": 88,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.233,
+      "latencyMs": 0.103,
       "prediction": {
         "questionId": "a0c228d869728c3140dece74",
         "contentVersion": 2,
-        "contentHash": "ea3659103c485eea33a4d6c8d44fd5d6b4757332adcf3a0fdd55a260d9a17b32",
+        "contentHash": "4cf6b7759e2e2e6573877390bd02fc075f941d020a6bd648f605c5d052878da7",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1797,6 +1830,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1819,16 +1853,16 @@
       "questionId": "4088b8d020de84282c07a2b3",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:4088b8d020de84282c07a2b3:content-v2",
       "questionVersionId": "4088b8d020de84282c07a2b3:content-v2:blind-revalidation",
-      "contentHash": "17668eb5a9b67fa55e2d2182da9507537c43f39674efcc08c0ff0afa43ece67f",
+      "contentHash": "ca9bbff3e6fc42e022d55e224fba44d121a3c68e39e3c9edcf0161f0292a1c5c",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Pengukuran Volume\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah tangki air berisi 2.225 liter air. Pada siang hari 975 liter 325 ml air dipompa keluar dari tangki. Berapa banyak air yang tersisa di tangki?\nPilihan: A. 1.250 liter 325 ml\nB. 1.249 liter 675 ml\nC. 1.249 liter 325 ml\nD. 1.250 liter 675 ml\nTranskripsi visual: -",
       "untruncatedTokenCount": 103,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.367,
+      "latencyMs": 0.089,
       "prediction": {
         "questionId": "4088b8d020de84282c07a2b3",
         "contentVersion": 2,
-        "contentHash": "17668eb5a9b67fa55e2d2182da9507537c43f39674efcc08c0ff0afa43ece67f",
+        "contentHash": "ca9bbff3e6fc42e022d55e224fba44d121a3c68e39e3c9edcf0161f0292a1c5c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1861,6 +1895,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1883,16 +1918,16 @@
       "questionId": "0d61de45054218c7d9af6710",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:0d61de45054218c7d9af6710:content-v2",
       "questionVersionId": "0d61de45054218c7d9af6710:content-v2:blind-revalidation",
-      "contentHash": "5cdaaac15344fe81f52088a25aeeec54b936c7fbdf251e389f86c16b39349724",
+      "contentHash": "dc7fd6fa24510c0d9cf4fdf9f928c320b4fac44b27b93d61e0e30d42478f6ff8",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Hubungan Keliling dan Luas Daerah Bangun Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Bapak memiliki kawat sepanjang 60 cm. Dengan menggunakan kawat tersebut, Bapak ingin membuat kerangka berbentuk persegi panjang. Bantulah beliau membuat gambar kerangka tersebut.\n\nManakah yang menghasilkan kerangka yang terluas?\nPilihan: A. Panjang 15 cm dan lebar 15 cm (luas 225 cm²)\nB. Panjang 25 cm dan lebar 5 cm (luas 125 cm²)\nC. Panjang 20 cm dan lebar 10 cm (luas 200 cm²)\nD. Panjang 18 cm dan lebar 12 cm (luas 216 cm²)\nTranskripsi visual: -",
       "untruncatedTokenCount": 131,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.16,
+      "latencyMs": 0.108,
       "prediction": {
         "questionId": "0d61de45054218c7d9af6710",
         "contentVersion": 2,
-        "contentHash": "5cdaaac15344fe81f52088a25aeeec54b936c7fbdf251e389f86c16b39349724",
+        "contentHash": "dc7fd6fa24510c0d9cf4fdf9f928c320b4fac44b27b93d61e0e30d42478f6ff8",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1925,6 +1960,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1947,16 +1983,16 @@
       "questionId": "e81a665e38e1781b745677fd",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:e81a665e38e1781b745677fd:content-v2",
       "questionVersionId": "e81a665e38e1781b745677fd:content-v2:blind-revalidation",
-      "contentHash": "3c5358fb52695b1b5854401e20e9719c36258b1f446210c0466249c2dfabbb56",
+      "contentHash": "d3d4ea4ac07228fb2c43752391aa091fe84dc7f8a9f20a99e88f58d45df7b019",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Lokasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2). Kubus ini tidak boleh diangkat, tetapi direbahkan ke salah satu sisi tegaknya. Panjangnya rusuk kubus sama dengan jarak antara garis-garis horizontal dan garis-garis vertikal pada sistem berpetak yang digunakan.\n\nBerapa kali kubus tersebut direbahkan untuk mencapai tujuannya?\nPilihan: A. 2 kali\nB. 4 kali\nC. 5 kali\nD. 3 kali\nTranskripsi visual: -",
       "untruncatedTokenCount": 121,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.134,
+      "latencyMs": 0.097,
       "prediction": {
         "questionId": "e81a665e38e1781b745677fd",
         "contentVersion": 2,
-        "contentHash": "3c5358fb52695b1b5854401e20e9719c36258b1f446210c0466249c2dfabbb56",
+        "contentHash": "d3d4ea4ac07228fb2c43752391aa091fe84dc7f8a9f20a99e88f58d45df7b019",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1989,6 +2025,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2016,7 +2053,7 @@
       "untruncatedTokenCount": 220,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.217,
+      "latencyMs": 0.097,
       "prediction": {
         "questionId": "bba0d92faac1dbb90cd622ef",
         "contentVersion": 2,
@@ -2053,6 +2090,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2075,16 +2113,16 @@
       "questionId": "944be36e182518ad72be95aa",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:944be36e182518ad72be95aa:content-v2",
       "questionVersionId": "944be36e182518ad72be95aa:content-v2:blind-revalidation",
-      "contentHash": "093dd9869fbac278288ebbdd705572d07cf214a801ba9f3ea11ed804b4fcc8e3",
+      "contentHash": "e734c1912c8d942c92737b44e7158ad7d45d55f730df80ea219e883409b2a021",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Translasi (Pergeseran)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Bayangan titik A(-2,5) oleh $\\binom{-4}{3}$ adalah …\nPilihan: A. A'(-6,8)\nB. A'(-6,-8)\nC. A'(2,2)\nD. A'(-2,8)\nTranskripsi visual: -",
       "untruncatedTokenCount": 101,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.221,
+      "latencyMs": 0.083,
       "prediction": {
         "questionId": "944be36e182518ad72be95aa",
         "contentVersion": 2,
-        "contentHash": "093dd9869fbac278288ebbdd705572d07cf214a801ba9f3ea11ed804b4fcc8e3",
+        "contentHash": "e734c1912c8d942c92737b44e7158ad7d45d55f730df80ea219e883409b2a021",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2117,6 +2155,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2139,16 +2178,16 @@
       "questionId": "34e4b41c04e7c9417acca5ce",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:34e4b41c04e7c9417acca5ce:content-v2",
       "questionVersionId": "34e4b41c04e7c9417acca5ce:content-v2:blind-revalidation",
-      "contentHash": "0f10b439d90a060fe21813269de924c758c5af5af8ca84f20eb36e3e3558e217",
+      "contentHash": "5b781501a3b25fa27d09e9e0826f931129f8c25468178e3c04984970c0ffac69",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Refleksi (Pencerminan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Titik (2,-3) direfleksikan terhadap garis y=x. Tentukan bayangannya.\nPilihan: A. (2,3)\nB. (-3,2)\nC. (3,-2)\nD. (2,1)\nTranskripsi visual: -",
       "untruncatedTokenCount": 87,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.12,
+      "latencyMs": 0.078,
       "prediction": {
         "questionId": "34e4b41c04e7c9417acca5ce",
         "contentVersion": 2,
-        "contentHash": "0f10b439d90a060fe21813269de924c758c5af5af8ca84f20eb36e3e3558e217",
+        "contentHash": "5b781501a3b25fa27d09e9e0826f931129f8c25468178e3c04984970c0ffac69",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2181,6 +2220,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2203,16 +2243,16 @@
       "questionId": "e23d76dc5ff2cda98f0f4ccc",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:e23d76dc5ff2cda98f0f4ccc:content-v2",
       "questionVersionId": "e23d76dc5ff2cda98f0f4ccc:content-v2:blind-revalidation",
-      "contentHash": "6951e591c8048e5122a7ee1a4013112eccdefb9c4c6f5831e9a4da3a876535fb",
+      "contentHash": "570c1b13fa0945b7900e3ca58f8e3e993c14064a5d27d6e1bd983d09213b1945",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Refleksi (Pencerminan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Titik (2,-3) direfleksikan terhadap sumbu x. Tentukan bayangannya.\nPilihan: A. (2,3)\nB. (-2,3)\nC. (-2,-3)\nD. (4,-3)\nTranskripsi visual: -",
       "untruncatedTokenCount": 87,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.346,
+      "latencyMs": 0.076,
       "prediction": {
         "questionId": "e23d76dc5ff2cda98f0f4ccc",
         "contentVersion": 2,
-        "contentHash": "6951e591c8048e5122a7ee1a4013112eccdefb9c4c6f5831e9a4da3a876535fb",
+        "contentHash": "570c1b13fa0945b7900e3ca58f8e3e993c14064a5d27d6e1bd983d09213b1945",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2245,6 +2285,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2267,16 +2308,16 @@
       "questionId": "078d6a87b40b143dc0e0683c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:078d6a87b40b143dc0e0683c:content-v2",
       "questionVersionId": "078d6a87b40b143dc0e0683c:content-v2:blind-revalidation",
-      "contentHash": "6d0579d7e6f2e4cc03a0df25fce149f87cfcb6852a881c93578e9904494a090c",
+      "contentHash": "af50b33a4fefb41321fe2da431f6ef2d8c2f20c51f0a5e9dc98203d2cd370d33",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Rotasi (Perputaran)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui segi empat KLMN dengan titik sudutnya di K(1,2), L(6,4), M(8,-3) dan N(3,-1). Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0). Gambarkan segi empat KLMN beserta bayangannya pada bidang koordinat.\nPilihan: A. K'(-1,-2), L'(-6,-4), M'(-8,3), N'(-3,1)\nB. K'(-2,1), L'(-4,6), M'(3,8), N'(1,3)\nC. K'(1,-2), L'(6,-4), M'(8,3), N'(3,1)\nD. K'(-1,2), L'(-6,4), M'(-8,-3), N'(-3,-1)\nTranskripsi visual: -",
       "untruncatedTokenCount": 252,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.156,
+      "latencyMs": 0.112,
       "prediction": {
         "questionId": "078d6a87b40b143dc0e0683c",
         "contentVersion": 2,
-        "contentHash": "6d0579d7e6f2e4cc03a0df25fce149f87cfcb6852a881c93578e9904494a090c",
+        "contentHash": "af50b33a4fefb41321fe2da431f6ef2d8c2f20c51f0a5e9dc98203d2cd370d33",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2309,6 +2350,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2331,16 +2373,16 @@
       "questionId": "5cdb075f3e6376933323750c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:5cdb075f3e6376933323750c:content-v2",
       "questionVersionId": "5cdb075f3e6376933323750c:content-v2:blind-revalidation",
-      "contentHash": "470a910caa8efb8a33617b405f2356c8be77e0637b06be45ad3c39063c2fd1a0",
+      "contentHash": "e6468022c57fbb293d6726c9b5ae84f67c0bead7c77501cc57b3c9c3628820a6",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Rotasi (Perputaran)\nTipe soal: multiple_choice\nStimulus: -\nSoal: A(5,2), B(8,5), dan C(2,1) adalah titik-titik sudut pada ΔABC. Tentukan bayangan ΔABC dari hasil rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0).\nPilihan: A. A'(-2,5), B'(-5,8), C'(-1,2)\nB. A'(2,-5), B'(5,-8), C'(1,-2)\nC. A'(-5,2), B'(-8,5), C'(-2,1)\nD. A'(-5,-2), B'(-8,-5), C'(-2,-1)\nTranskripsi visual: -",
       "untruncatedTokenCount": 202,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.402,
+      "latencyMs": 0.096,
       "prediction": {
         "questionId": "5cdb075f3e6376933323750c",
         "contentVersion": 2,
-        "contentHash": "470a910caa8efb8a33617b405f2356c8be77e0637b06be45ad3c39063c2fd1a0",
+        "contentHash": "e6468022c57fbb293d6726c9b5ae84f67c0bead7c77501cc57b3c9c3628820a6",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2373,6 +2415,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2395,16 +2438,16 @@
       "questionId": "f6516e65a41da50ae0f6a8b9",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:f6516e65a41da50ae0f6a8b9:content-v2",
       "questionVersionId": "f6516e65a41da50ae0f6a8b9:content-v2:blind-revalidation",
-      "contentHash": "7adb3b3ccf43d6343d5cfaaa6b52b3f3bd2cc114937bc31224ae9271337d86ea",
+      "contentHash": "97bc5be9d872fbe699f56edde2424652072d6aaa69198426dddd9df683c4e7fb",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Kekongruenan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika ΔMDN ≅ ΔKPG, maka MN = _____.\nPilihan: A. KP\nB. KG\nC. PG\nD. DN\nTranskripsi visual: -",
       "untruncatedTokenCount": 62,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.159,
+      "latencyMs": 0.163,
       "prediction": {
         "questionId": "f6516e65a41da50ae0f6a8b9",
         "contentVersion": 2,
-        "contentHash": "7adb3b3ccf43d6343d5cfaaa6b52b3f3bd2cc114937bc31224ae9271337d86ea",
+        "contentHash": "97bc5be9d872fbe699f56edde2424652072d6aaa69198426dddd9df683c4e7fb",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2437,6 +2480,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2459,16 +2503,16 @@
       "questionId": "5494cb036f9f5ecded212fcf",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:5494cb036f9f5ecded212fcf:content-v2",
       "questionVersionId": "5494cb036f9f5ecded212fcf:content-v2:blind-revalidation",
-      "contentHash": "875047d7b2c001903b99649c873a17d3ad358320f34874b49662820212c7cdcc",
+      "contentHash": "5b2d42a48fcd0857439582c7a115a7da1a3293adf551d8b9c00af987e622a061",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Kekongruenan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar, maka kedua segitiga tersebut kongruen. Pernyataan tersebut merupakan bunyi kriteria _____.\nPilihan: A. S-S-Sd\nB. Sd-S-Sd\nC. S-Sd-S\nD. S-S-S\nTranskripsi visual: -",
       "untruncatedTokenCount": 105,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.147,
+      "latencyMs": 0.212,
       "prediction": {
         "questionId": "5494cb036f9f5ecded212fcf",
         "contentVersion": 2,
-        "contentHash": "875047d7b2c001903b99649c873a17d3ad358320f34874b49662820212c7cdcc",
+        "contentHash": "5b2d42a48fcd0857439582c7a115a7da1a3293adf551d8b9c00af987e622a061",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2501,6 +2545,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2523,16 +2568,16 @@
       "questionId": "907f9e4697523a633ea0ac02",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:907f9e4697523a633ea0ac02:content-v2",
       "questionVersionId": "907f9e4697523a633ea0ac02:content-v2:blind-revalidation",
-      "contentHash": "1f4805f51d3207c7dd5e034e176646c59b991b2ec58eef6f2b973be9a7e06018",
+      "contentHash": "fefcd23966a4c409b2f6b60572578ed54b97eeee09a72385cd9237e1f6427a51",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Dilatasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu segitiga ABC siku-siku di titik B memiliki panjang AB=8 cm, BC=15 cm, dan AC=17 cm. Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah…\nPilihan: A. 180 cm²\nB. 1.620 cm²\nC. 540 cm²\nD. 60 cm²\nTranskripsi visual: -",
       "untruncatedTokenCount": 109,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.208,
+      "latencyMs": 0.181,
       "prediction": {
         "questionId": "907f9e4697523a633ea0ac02",
         "contentVersion": 2,
-        "contentHash": "1f4805f51d3207c7dd5e034e176646c59b991b2ec58eef6f2b973be9a7e06018",
+        "contentHash": "fefcd23966a4c409b2f6b60572578ed54b97eeee09a72385cd9237e1f6427a51",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2565,6 +2610,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2587,16 +2633,16 @@
       "questionId": "61e70f2732214f09d97c2039",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:61e70f2732214f09d97c2039:content-v2",
       "questionVersionId": "61e70f2732214f09d97c2039:content-v2:blind-revalidation",
-      "contentHash": "482ab0d934c8f2e43f6b598f095318fdee9dd01f3e0ed548e4809c79cce707f2",
+      "contentHash": "610e287b02d97cf30ea9334f3ab78d76b0dbaa22bb7b0f8ab659506e965462e0",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Dilatasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui ΔABC dengan A(-3,-2), B(6,4) dan C(1,-2). Tentukan bayangan ΔABC yang didilatasikan terhadap $[O, \\frac{1}{2}]$! Gambarkan segitiga tersebut beserta bayangannya pada bidang koordinat!\nPilihan: A. $A'(-\\frac{3}{2},-2)$, $B'(3,4)$, $C'(\\frac{1}{2},-2)$\nB. A'(-2.5,-1.5), B'(6.5,4.5), C'(1.5,-1.5)\nC. A'(-6,-4), B'(12,8), C'(2,-4)\nD. $A'(-\\frac{3}{2},-1)$, $B'(3,2)$, $C'(\\frac{1}{2},-1)$\nTranskripsi visual: -",
       "untruncatedTokenCount": 264,
       "maxLength": 256,
       "wouldTruncate": true,
-      "latencyMs": 0.21,
+      "latencyMs": 0.125,
       "prediction": {
         "questionId": "61e70f2732214f09d97c2039",
         "contentVersion": 2,
-        "contentHash": "482ab0d934c8f2e43f6b598f095318fdee9dd01f3e0ed548e4809c79cce707f2",
+        "contentHash": "610e287b02d97cf30ea9334f3ab78d76b0dbaa22bb7b0f8ab659506e965462e0",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2629,6 +2675,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2651,16 +2698,16 @@
       "questionId": "78652b4108bd747c96b2f4a8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:78652b4108bd747c96b2f4a8:content-v2",
       "questionVersionId": "78652b4108bd747c96b2f4a8:content-v2:blind-revalidation",
-      "contentHash": "59eab208246cf056c83198df2a6ea187a1c50eace8363f6ff5fa52ab3a8c379e",
-      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Kesebangunan pada Segitiga\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada $\\triangle ABC$, $AD$ membagi $\\angle A$ menjadi dua bagian yang sama besar. $AD$ disebut garis bagi. Titik $D$ terletak pada sisi $BC$. Petunjuk: Gambarkan garis yang sejajar dengan $AD$ dan melalui titik $C$. Garis ini berpotongan dengan perpanjangan $AB$ di titik $E$.\n\nBeri alasan bahwa $\\triangle ACE$ sama kaki. Tuliskan sisi-sisi yang sama panjang.\nPilihan: A. AC = AE, karena ∠ACE = ∠AEC\nB. AC = CE, karena ∠CAE = ∠AEC\nC. AE = CE, karena ∠ACE = ∠CAE\nD. AB = AC, karena AD garis bagi\nTranskripsi visual: Segitiga ABC dengan titik D pada sisi BC. Garis AD membagi sudut A menjadi dua bagian sama besar (ditandai dengan busur hijau). Titik B, D, C terletak pada satu garis lurus.",
-      "untruncatedTokenCount": 210,
+      "contentHash": "ed7ec5433c75ff54be8ab82aadc802bac2fade2bd82c17e9d1277d366bdcff60",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Kesebangunan pada Segitiga\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada $\\triangle ABC$, $AD$ membagi $\\angle A$ menjadi dua bagian yang sama besar. $AD$ disebut garis bagi. Titik $D$ terletak pada sisi $BC$. Petunjuk: Gambarkan garis yang sejajar dengan $AD$ dan melalui titik $C$. Garis ini berpotongan dengan perpanjangan $AB$ di titik $E$.\n\nBeri alasan bahwa $\\triangle ACE$ sama kaki. Tuliskan sisi-sisi yang sama panjang.\nPilihan: A. AC = AE, karena ∠ACE = ∠AEC\nB. AC = CE, karena ∠CAE = ∠AEC\nC. AE = CE, karena ∠ACE = ∠CAE\nD. AB = AC, karena AD garis bagi\nTranskripsi visual: Segitiga ABC dengan garis bagi AD yang membagi sudut A menjadi dua bagian sama besar. Titik D berada pada sisi BC. Terdapat konstruksi tambahan berupa garis melalui C yang sejajar dengan AD, memotong perpanjangan AB di titik E.",
+      "untruncatedTokenCount": 214,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.182,
+      "latencyMs": 0.161,
       "prediction": {
         "questionId": "78652b4108bd747c96b2f4a8",
         "contentVersion": 2,
-        "contentHash": "59eab208246cf056c83198df2a6ea187a1c50eace8363f6ff5fa52ab3a8c379e",
+        "contentHash": "ed7ec5433c75ff54be8ab82aadc802bac2fade2bd82c17e9d1277d366bdcff60",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2693,6 +2740,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2704,7 +2752,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "8bf67ad5db7ba8b8ea9f98b5599b54ab8f62c0e4724d59c909d055fb5b965cbb",
+          "inputHash": "2c6efdc4bd8464ecac21d2ed5456abce68fbb7689204c9c29da5fec36b94e9dc",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2715,16 +2763,16 @@
       "questionId": "49861bd79ef9562f45188055",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:49861bd79ef9562f45188055:content-v2",
       "questionVersionId": "49861bd79ef9562f45188055:content-v2:blind-revalidation",
-      "contentHash": "0366a40abeb9d548c3b8968048bed53dd286666f1ed542119e517564ca1775df",
+      "contentHash": "5c818ca1d27240b44d3683a0c6c21319fd503e0a53371e53b713c53cadf237b9",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan banyaknya anggota ruang sampel percobaan-percobaan berikut. ⓒ Jenis kelamin dari seorang siswa yang pertama kali ditunjuk oleh seorang guru dalam kelas yang terdiri dari 12 siswa laki-laki dan 18 siswa perempuan.\nPilihan: A. 30 (12 siswa laki-laki + 18 siswa perempuan)\nB. 18 (hanya menghitung banyaknya siswa perempuan)\nC. 12 (hanya menghitung banyaknya siswa laki-laki)\nD. 2 (hanya menghitung banyaknya kategori jenis kelamin: laki-laki dan perempuan)\nTranskripsi visual: -",
       "untruncatedTokenCount": 124,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.209,
+      "latencyMs": 0.117,
       "prediction": {
         "questionId": "49861bd79ef9562f45188055",
         "contentVersion": 2,
-        "contentHash": "0366a40abeb9d548c3b8968048bed53dd286666f1ed542119e517564ca1775df",
+        "contentHash": "5c818ca1d27240b44d3683a0c6c21319fd503e0a53371e53b713c53cadf237b9",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2757,6 +2805,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2779,16 +2828,16 @@
       "questionId": "47721424de374937d3a86de8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:47721424de374937d3a86de8:content-v2",
       "questionVersionId": "47721424de374937d3a86de8:content-v2:blind-revalidation",
-      "contentHash": "447c8114860b477fa1edb0f442a7cd11a621528bbc29d63335003df5b76a0749",
+      "contentHash": "1b837f30343f2e8ea23a415d93862f9263dfa2c43c54483427fae0441bf1bafd",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peluang tiap-tiap kejadian berikut ini dan nyatakan nilainya ke dalam pecahan biasa, pecahan desimal, dan persentase. ⓒ Sebuah kotak berisi enam bola merah, dua bola kuning, dan empat bola hijau. Dalam pengambilan satu bola dari kotak tersebut secara acak, kalian mendapatkan bola yang bukan merah.\nPilihan: A. 1 (membandingkan bola bukan merah dengan sesamanya, bukan dengan total bola di kotak)\nB. 1/6 (hanya menghitung peluang terambilnya bola kuning saja, lupa bola hijau)\nC. 1/3 (hanya menghitung peluang terambilnya bola hijau saja, lupa bola kuning)\nD. 1/2 (atau 0,5 atau 50%)\nTranskripsi visual: -",
       "untruncatedTokenCount": 162,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.333,
+      "latencyMs": 0.141,
       "prediction": {
         "questionId": "47721424de374937d3a86de8",
         "contentVersion": 2,
-        "contentHash": "447c8114860b477fa1edb0f442a7cd11a621528bbc29d63335003df5b76a0749",
+        "contentHash": "1b837f30343f2e8ea23a415d93862f9263dfa2c43c54483427fae0441bf1bafd",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2821,6 +2870,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2843,16 +2893,16 @@
       "questionId": "2fa02b235094086c5cc7be86",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:2fa02b235094086c5cc7be86:content-v2",
       "questionVersionId": "2fa02b235094086c5cc7be86:content-v2:blind-revalidation",
-      "contentHash": "59e45b7ed061d94a489406902dd5cbdd20f8f7380974294e27116ba16b329a98",
+      "contentHash": "17eb6d02ce63caa7bfb84ea255b0da2d9c1cc9f820324e6580f2fe029cdadfd6",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Peluang Empiris\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah program komputer digunakan untuk menampilkan 12 bilangan 0–3 secara acak. Hasilnya adalah sebagai berikut. 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3\n\nTentukan frekuensi relatif munculnya bilangan 0.\nPilihan: A. 2/4 (= 1/2)\nB. 2/12 (= 1/6)\nC. 3/12 (= 1/4)\nD. 1/12\nTranskripsi visual: -",
       "untruncatedTokenCount": 121,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.154,
+      "latencyMs": 0.1,
       "prediction": {
         "questionId": "2fa02b235094086c5cc7be86",
         "contentVersion": 2,
-        "contentHash": "59e45b7ed061d94a489406902dd5cbdd20f8f7380974294e27116ba16b329a98",
+        "contentHash": "17eb6d02ce63caa7bfb84ea255b0da2d9c1cc9f820324e6580f2fe029cdadfd6",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2885,6 +2935,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2907,16 +2958,16 @@
       "questionId": "b09a24b57d973871a9f482c8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:b09a24b57d973871a9f482c8:content-v2",
       "questionVersionId": "b09a24b57d973871a9f482c8:content-v2:blind-revalidation",
-      "contentHash": "aefcab1f5fec4b85ee56cf4ca9132e5b968aaf64b4b0206349262fb5b193faa7",
-      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Peluang Empiris\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seperangkat kartu berisi 5 kartu yang masing-masing bergambar lingkaran atau bintang. Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20. 450 407 400 350 300 250 200 150 93 100 50 0 Lingkaran Bintang Gambar yang Muncul Frekuensi Gambar Frekuensi Munculnya Kartu Bergambar Lingkaran dan Bintang\n\nTentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.\nPilihan: A. 4 kartu lingkaran dan 1 kartu bintang\nB. 5 kartu lingkaran dan 0 kartu bintang\nC. 1 kartu lingkaran dan 4 kartu bintang\nD. 3 kartu lingkaran dan 2 kartu bintang\nTranskripsi visual: Diagram batang menunjukkan frekuensi munculnya dua jenis kartu dalam 500 percobaan. Sumbu horizontal (Gambar yang Muncul) memiliki dua kategori: 'Lingkaran' dan 'Bintang'. Sumbu vertikal (Frekuensi) memiliki skala 0 hingga 450. Batang 'Lingkaran' memiliki tinggi 93. Batang 'Bintang' memiliki tinggi 407.",
-      "untruncatedTokenCount": 199,
+      "contentHash": "f49917af0dbbda683720d630082e45cd570a8866b856f04a9a12c945c54c3dec",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Peluang Empiris\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seperangkat kartu berisi 5 kartu yang masing-masing bergambar lingkaran atau bintang. Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20. 450 407 400 350 300 250 200 150 93 100 50 0 Lingkaran Bintang Gambar yang Muncul Frekuensi Gambar Frekuensi Munculnya Kartu Bergambar Lingkaran dan Bintang\n\nTentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.\nPilihan: A. 4 kartu lingkaran dan 1 kartu bintang\nB. 5 kartu lingkaran dan 0 kartu bintang\nC. 1 kartu lingkaran dan 4 kartu bintang\nD. 3 kartu lingkaran dan 2 kartu bintang\nTranskripsi visual: Grafik batang menunjukkan dua kategori pada sumbu horizontal: 'Lingkaran' dan 'Bintang'. Sumbu vertikal 'Frekuensi' memiliki skala 0 hingga 450. Batang 'Lingkaran' memiliki tinggi 93. Batang 'Bintang' memiliki tinggi 407. Total percobaan adalah 500.",
+      "untruncatedTokenCount": 190,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.546,
+      "latencyMs": 0.166,
       "prediction": {
         "questionId": "b09a24b57d973871a9f482c8",
         "contentVersion": 2,
-        "contentHash": "aefcab1f5fec4b85ee56cf4ca9132e5b968aaf64b4b0206349262fb5b193faa7",
+        "contentHash": "f49917af0dbbda683720d630082e45cd570a8866b856f04a9a12c945c54c3dec",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2949,6 +3000,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2960,7 +3012,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "a8be4019860bd56c3f85fbd1d10f3c3280fbcabf89a3773d42c57d7a63f2ded7",
+          "inputHash": "4962fe9be61db9d71b9e55b9e698a7c7673beb333b89e9a10d41df039f84d960",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2971,16 +3023,16 @@
       "questionId": "0292b36d9d04627c0f3ae4e8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:0292b36d9d04627c0f3ae4e8:content-v2",
       "questionVersionId": "0292b36d9d04627c0f3ae4e8:content-v2:blind-revalidation",
-      "contentHash": "3b0a8ca17f1b7400778904af0b6712532fb3b978f04442409bc2aa8abb851d2c",
+      "contentHash": "daa094333664231ddc3039d281ebd8ef6e81027c48cbfadc7522cefd7c99165b",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Frekuensi Harapan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan frekuensi harapan setiap kejadian berikut jika dilakukan 100 kali percobaan. b. Dalam pengambilan satu kartu secara acak dari seperangkat kartu remi, tidak didapatkan kartu hati.\nPilihan: A. 48\nB. 25\nC. 13\nD. 75\nTranskripsi visual: -",
       "untruncatedTokenCount": 76,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.309,
+      "latencyMs": 0.096,
       "prediction": {
         "questionId": "0292b36d9d04627c0f3ae4e8",
         "contentVersion": 2,
-        "contentHash": "3b0a8ca17f1b7400778904af0b6712532fb3b978f04442409bc2aa8abb851d2c",
+        "contentHash": "daa094333664231ddc3039d281ebd8ef6e81027c48cbfadc7522cefd7c99165b",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3013,6 +3065,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3035,16 +3088,16 @@
       "questionId": "dfd8cbd993b44696494b45c1",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:dfd8cbd993b44696494b45c1:content-v2",
       "questionVersionId": "dfd8cbd993b44696494b45c1:content-v2:blind-revalidation",
-      "contentHash": "1b51da04bb5b829e3961692e142190e439e003e50bfba251ae089313921ccbd2",
+      "contentHash": "a50a488b90d89bfcf0ffedefb2655315716b2001f7febb635cd88da9ba16afed",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Frekuensi Harapan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Di sebuah kota, persentase penduduknya yang masuk Generasi Z adalah 28%. Jika kalian memilih 75 penduduk kota itu secara acak, tentukan frekuensi harapan kalian mendapatkan penduduk Generasi Z.\nPilihan: A. 28\nB. 47\nC. 75\nD. 21\nTranskripsi visual: -",
       "untruncatedTokenCount": 79,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.252,
+      "latencyMs": 0.088,
       "prediction": {
         "questionId": "dfd8cbd993b44696494b45c1",
         "contentVersion": 2,
-        "contentHash": "1b51da04bb5b829e3961692e142190e439e003e50bfba251ae089313921ccbd2",
+        "contentHash": "a50a488b90d89bfcf0ffedefb2655315716b2001f7febb635cd88da9ba16afed",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3077,6 +3130,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3099,16 +3153,16 @@
       "questionId": "4e77f956826bf22b33dbf58b",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:4e77f956826bf22b33dbf58b:content-v2",
       "questionVersionId": "4e77f956826bf22b33dbf58b:content-v2:blind-revalidation",
-      "contentHash": "0b3f520e5153635eceabee7892a312d0191be9f1cf6a9a75e462130da231b68d",
+      "contentHash": "19125824549b8936abc699c3eb411a6ec18e2aa24236a6d16528c832d7e48716",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Pemilihan Sampel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Putu memiliki roda putar yang terbagi menjadi lima juring yang sama besar, masing-masing ditulis angka 1, 2, 3, 4, dan 5. Dia akan memilih sampel dengan memutar roda tersebut sebanyak tiga kali. Tentukan peluang dia mendapatkan sampel yang rata-ratanya kurang dari 2.\nPilihan: A. 3/125\nB. 10/125 (atau 0,08)\nC. 6/125\nD. 5/125\nTranskripsi visual: -",
       "untruncatedTokenCount": 116,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.193,
+      "latencyMs": 0.099,
       "prediction": {
         "questionId": "4e77f956826bf22b33dbf58b",
         "contentVersion": 2,
-        "contentHash": "0b3f520e5153635eceabee7892a312d0191be9f1cf6a9a75e462130da231b68d",
+        "contentHash": "19125824549b8936abc699c3eb411a6ec18e2aa24236a6d16528c832d7e48716",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3141,6 +3195,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3163,16 +3218,16 @@
       "questionId": "d57b84b818b2d3b772624d73",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:d57b84b818b2d3b772624d73:content-v2",
       "questionVersionId": "d57b84b818b2d3b772624d73:content-v2:blind-revalidation",
-      "contentHash": "969cc3d63c62abad63100c810b2f53f73d7e01a0ac98d79d5538cb3ab414abbe",
+      "contentHash": "3c5cf78c70a2bb3c6226ded29a41c8617a791626f90a8b12f665620f6a3cd31c",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Pemilihan Sampel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dhien adalah calon ketua OSIS. Dia ingin mengetahui persentase teman-teman di sekolahnya yang akan memilihnya.\n\nDari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien? Mengapa? ⓐ Dia bertanya kepada semua teman sekelasnya. ⓑ Dia menyurvei anak yang menempati urutan ke-3, 6, dan 9 di setiap barisan ketika upacara bendera. ⓒ Dia melakukan survei melalui media sosial terhadap teman-teman sekolahnya.\nPilihan: A. Dia menyurvei anak yang menempati urutan ke-3, 6, dan 9 di setiap barisan ketika upacara bendera\nB. Dia menyurvei murid yang kebetulan lewat di depan kelasnya saat istirahat\nC. Dia bertanya kepada semua teman sekelasnya\nD. Dia melakukan survei melalui media sosial terhadap teman-teman sekolahnya\nTranskripsi visual: -",
       "untruncatedTokenCount": 181,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.181,
+      "latencyMs": 0.122,
       "prediction": {
         "questionId": "d57b84b818b2d3b772624d73",
         "contentVersion": 2,
-        "contentHash": "969cc3d63c62abad63100c810b2f53f73d7e01a0ac98d79d5538cb3ab414abbe",
+        "contentHash": "3c5cf78c70a2bb3c6226ded29a41c8617a791626f90a8b12f665620f6a3cd31c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3205,6 +3260,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3232,7 +3288,7 @@
       "untruncatedTokenCount": 163,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.409,
+      "latencyMs": 0.169,
       "prediction": {
         "questionId": "b0bcef02731ce1c1ec1f8a92",
         "contentVersion": 2,
@@ -3269,6 +3325,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3291,16 +3348,16 @@
       "questionId": "49d68d1b46c35ead12cca547",
       "diagnosticInferenceQuestionId": "diagnostic:kelas9:49d68d1b46c35ead12cca547:content-v2",
       "questionVersionId": "49d68d1b46c35ead12cca547:content-v2:blind-revalidation",
-      "contentHash": "1ab2bae4de03342167374914f66f5c413807a8492e94dd78526381878ad127b9",
+      "contentHash": "35aed6ec6feb02db34db3fc591c46ccd28f230c4e20b78b1906b78fa92a7deb6",
       "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Penyebaran Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.\n\n50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65\nPilihan: A. Q1 = 65; Q2 = 70,4; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5\nB. Q1 = 80; Q2 = 67,5; Q3 = 65; jangkauan kuartil = 15; simpangan kuartil = 7,5\nC. Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5\nD. Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 15\nTranskripsi visual: -",
       "untruncatedTokenCount": 210,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.249,
+      "latencyMs": 0.119,
       "prediction": {
         "questionId": "49d68d1b46c35ead12cca547",
         "contentVersion": 2,
-        "contentHash": "1ab2bae4de03342167374914f66f5c413807a8492e94dd78526381878ad127b9",
+        "contentHash": "35aed6ec6feb02db34db3fc591c46ccd28f230c4e20b78b1906b78fa92a7deb6",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3333,6 +3390,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],

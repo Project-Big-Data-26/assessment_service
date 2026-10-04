@@ -1,9 +1,9 @@
 {
   "schemaVersion": "indobert-blind-diagnostics-v1",
-  "createdAt": "2026-10-03T07:15:58.053273+00:00",
+  "createdAt": "2026-10-04T21:30:40.742771+00:00",
   "researchOnlyRun": true,
   "reviewRequired": true,
-  "blindDecisionLockedAt": "2026-10-03T07:15:21.908061+00:00",
+  "blindDecisionLockedAt": "2026-10-04T21:30:29.487147+00:00",
   "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
   "model": {
     "artifactFormatVersion": "indobert-3x4x3-artifact-v1",
@@ -15,6 +15,7 @@
     "datasetHash": "8a41381aa7e3fdb4e21617b9091e6747d29e5bd3f01e3c992ce9895b823f35c1",
     "splitManifestHash": "681c8a0a6afea9d23b71e1f315543751ebb259645c01f10a4db3fd2d90b634df",
     "rubricVersion": "math-rubric-3x4x3-v1",
+    "rubricVersionsByGradeTrack": {},
     "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
     "inputSchemaVersion": "math-question-text-v1",
     "inputRepresentation": "metadata",
@@ -22,6 +23,18 @@
     "detachDifficultyConditioning": true,
     "difficultyHeadType": "multiclass",
     "gradeEmbeddingDimension": 0,
+    "gradeEmbeddingCount": 6,
+    "supportedGrades": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supportedSubjectTracks": [
+      "regular"
+    ],
     "routingPolicyVersion": "confidence-only-v1",
     "labels": {
       "mathCognitiveDomain": [
@@ -46,19 +59,22 @@
         "temperature": 0.05,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "knowledgeDimension": {
         "temperature": 0.20979985858964298,
         "confidenceThreshold": null,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "intendedDifficulty": {
         "temperature": 0.9533279648066687,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       }
     },
     "maxLength": 256,
@@ -667,16 +683,16 @@
       "questionId": "93921cd412ef4ff1b28e79c7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:93921cd412ef4ff1b28e79c7:content-v2",
       "questionVersionId": "93921cd412ef4ff1b28e79c7:content-v2:blind-revalidation",
-      "contentHash": "b68ac01fbd975dbfca731dd79898c950c504659fbce5cff0151b394052eb0eba",
+      "contentHash": "86d91c2e15b27aecf9da4839c3bf005ab04953907d48d161397ae676080586fa",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Bilangan Berpangkat Bulat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dalam sebuah permainan kartu angka, 6 orang siswa mengambil satu kartu angka secara acak. Byoma mengambil kartu angka 6, Pranawa mengambil angka 5, Lestari mengambil kartu angka 7, Rahagi mengambil kartu angka 4, Bathari mengambil kartu angka 8, dan Dwi mengambil kartu angka 3. Jika setiap siswa berpasangan dengan siswa yang lain,\n\nSiapa yang harus diajak berpasangan oleh Rahagi agar kelompoknya menghasilkan angka terbesar jika angka Rahagi dipangkatkan dengan pasangannya atau sebaliknya?\nPilihan: A. Bathari\nB. Lestari\nC. Pranawa\nD. Byoma\nTranskripsi visual: -",
       "untruncatedTokenCount": 141,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.442,
+      "latencyMs": 0.742,
       "prediction": {
         "questionId": "93921cd412ef4ff1b28e79c7",
         "contentVersion": 2,
-        "contentHash": "b68ac01fbd975dbfca731dd79898c950c504659fbce5cff0151b394052eb0eba",
+        "contentHash": "86d91c2e15b27aecf9da4839c3bf005ab04953907d48d161397ae676080586fa",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -709,6 +725,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -731,16 +748,16 @@
       "questionId": "864dfc1e16dfcf65cd20bd5a",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:864dfc1e16dfcf65cd20bd5a:content-v2",
       "questionVersionId": "864dfc1e16dfcf65cd20bd5a:content-v2:blind-revalidation",
-      "contentHash": "ef24723a94268180ab78495e5f7f7b557315a01d07efeff77cd6d770423e29f5",
+      "contentHash": "aa10ef98dbf94c9b9159ab5547d470510ce31668e6afe3a74a0635a9caef4895",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Bilangan Berpangkat Bulat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dalam sebuah permainan kartu angka, 6 orang siswa mengambil satu kartu angka secara acak. Byoma mengambil kartu angka 6, Pranawa mengambil angka 5, Lestari mengambil kartu angka 7, Rahagi mengambil kartu angka 4, Bathari mengambil kartu angka 8, dan Dwi mengambil kartu angka 3. Jika setiap siswa berpasangan dengan siswa yang lain,\n\nSiapa yang harus diajak berpasangan oleh Lestari agar kelompoknya menghasilkan angka terkecil jika angka Lestari dipangkatkan dengan pasangannya atau sebaliknya?\nPilihan: A. Rahagi\nB. Pranawa\nC. Dwi\nD. Byoma\nTranskripsi visual: -",
       "untruncatedTokenCount": 139,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.206,
+      "latencyMs": 0.118,
       "prediction": {
         "questionId": "864dfc1e16dfcf65cd20bd5a",
         "contentVersion": 2,
-        "contentHash": "ef24723a94268180ab78495e5f7f7b557315a01d07efeff77cd6d770423e29f5",
+        "contentHash": "aa10ef98dbf94c9b9159ab5547d470510ce31668e6afe3a74a0635a9caef4895",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -773,6 +790,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -795,16 +813,16 @@
       "questionId": "9eeb60ca1e3ebdc6a02a1999",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:9eeb60ca1e3ebdc6a02a1999:content-v2",
       "questionVersionId": "9eeb60ca1e3ebdc6a02a1999:content-v2:blind-revalidation",
-      "contentHash": "5d3f88ef1d112202b7929146785f271dc0a2189e6ecf95513801f28a72519fb3",
+      "contentHash": "4987392ea896c7cfba5f64797e5899e18cec35df49e058c3ce881f92d3ae4ba7",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Bilangan Bentuk Akar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Coba sederhanakan bentuk akar berikut. $3\\sqrt{2} \\times 6\\sqrt{6}$\nPilihan: A. $2\\sqrt{3}$\nB. $36\\sqrt{3}$\nC. $18\\sqrt{3}$\nD. $36\\sqrt{2}$\nTranskripsi visual: -",
       "untruncatedTokenCount": 104,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.152,
+      "latencyMs": 0.07,
       "prediction": {
         "questionId": "9eeb60ca1e3ebdc6a02a1999",
         "contentVersion": 2,
-        "contentHash": "5d3f88ef1d112202b7929146785f271dc0a2189e6ecf95513801f28a72519fb3",
+        "contentHash": "4987392ea896c7cfba5f64797e5899e18cec35df49e058c3ce881f92d3ae4ba7",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -837,6 +855,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -859,16 +878,16 @@
       "questionId": "8c189810bd620fa2b116eab9",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:8c189810bd620fa2b116eab9:content-v2",
       "questionVersionId": "8c189810bd620fa2b116eab9:content-v2:blind-revalidation",
-      "contentHash": "51aad8f80d5196d8b0989315f15825a5f91a832c0ec968848d589203f2156f94",
+      "contentHash": "f21ac2d9327d31a35088be755bb59b4f459582cfd7dc726ff017de55d2e882c4",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Bilangan Bentuk Akar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Coba buatlah dalam bentuk yang paling sederhana. $3\\sqrt{2} + 5\\sqrt{2}$\nPilihan: A. $8\\sqrt{4}$\nB. $3\\sqrt{2}$\nC. $15\\sqrt{2}$\nD. $8\\sqrt{2}$\nTranskripsi visual: -",
       "untruncatedTokenCount": 104,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.166,
+      "latencyMs": 0.062,
       "prediction": {
         "questionId": "8c189810bd620fa2b116eab9",
         "contentVersion": 2,
-        "contentHash": "51aad8f80d5196d8b0989315f15825a5f91a832c0ec968848d589203f2156f94",
+        "contentHash": "f21ac2d9327d31a35088be755bb59b4f459582cfd7dc726ff017de55d2e882c4",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -901,6 +920,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -923,16 +943,16 @@
       "questionId": "e97f2eaa7ee74e27d6bb517c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:e97f2eaa7ee74e27d6bb517c:content-v2",
       "questionVersionId": "e97f2eaa7ee74e27d6bb517c:content-v2:blind-revalidation",
-      "contentHash": "9ca1520ccbeb8d43795f274d11d0ada0eec5c5c46bb036bdedbebd4ca1cffaa5",
+      "contentHash": "479c9633e834834b7ee326a51dd6856d7e247e4e7416b05ce1473a6fbadcaa2f",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Penulisan Bentuk Baku\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tulislah bilangan berikut dalam bentuk baku. 34.000.000.000\nPilihan: A. 3,4 × 10<sup>11</sup>\nB. 3,4 × 10<sup>-10</sup>\nC. 3,4 × 10<sup>10</sup>\nD. 3,4 × 10<sup>9</sup>\nTranskripsi visual: -",
       "untruncatedTokenCount": 111,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.124,
+      "latencyMs": 0.091,
       "prediction": {
         "questionId": "e97f2eaa7ee74e27d6bb517c",
         "contentVersion": 2,
-        "contentHash": "9ca1520ccbeb8d43795f274d11d0ada0eec5c5c46bb036bdedbebd4ca1cffaa5",
+        "contentHash": "479c9633e834834b7ee326a51dd6856d7e247e4e7416b05ce1473a6fbadcaa2f",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -965,6 +985,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -987,16 +1008,16 @@
       "questionId": "f25d4029ecaafe78249ca72b",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:f25d4029ecaafe78249ca72b:content-v2",
       "questionVersionId": "f25d4029ecaafe78249ca72b:content-v2:blind-revalidation",
-      "contentHash": "6a5667daa6a6cbb7a659e06201548bdb4bdb25b0203016064151007473e2d238",
+      "contentHash": "0710d7bb4e5acac7de4387edf0f0bac08db56a49d33f80d8671bab7e33018e8f",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Penulisan Bentuk Baku\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tulislah bilangan berikut dalam bentuk biasa. 2,5 × 10<sup>8</sup>\nPilihan: A. 2.500.000.000\nB. 25.000.000\nC. 0,000000025\nD. 250.000.000\nTranskripsi visual: -",
       "untruncatedTokenCount": 86,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.189,
+      "latencyMs": 0.063,
       "prediction": {
         "questionId": "f25d4029ecaafe78249ca72b",
         "contentVersion": 2,
-        "contentHash": "6a5667daa6a6cbb7a659e06201548bdb4bdb25b0203016064151007473e2d238",
+        "contentHash": "0710d7bb4e5acac7de4387edf0f0bac08db56a49d33f80d8671bab7e33018e8f",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1029,6 +1050,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1051,16 +1073,16 @@
       "questionId": "ac7f560c796164a475dad657",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:ac7f560c796164a475dad657:content-v2",
       "questionVersionId": "ac7f560c796164a475dad657:content-v2:blind-revalidation",
-      "contentHash": "703c2d15a8ea95826df4bafabbbd11ee11173ddb68ff4cb0e31927ae09b80529",
+      "contentHash": "ee11c33224006c13175e500bab84e8a4f6d9a280d5ac69cab01cac6265f1538b",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Operasi Hitung Bilangan Rasional\nTipe soal: multiple_choice\nStimulus: -\nSoal: Indeks Massa Tubuh $= \\dfrac{BB}{TB^2}$. BB: Berat badan (kg), TB: Tinggi badan (m).\n\n**Tabel 2.12** Kategori Indeks Massa Tubuh\n\n|Kategori|IMT|\n|---|---|\n|Kekurangan berat badan tingkat berat|Kurang dari 17,0|\n|Kekurangan berat badan tingkat ringan|17,0 sampai 18,4|\n|Normal|18,5 sampai 25,0|\n|Kelebihan berat badan tingkat ringan|25,1 sampai 27,0|\n|Kelebihan berat badan tingkat berat|Lebih dari 27,0|\n\n**Tabel 2.13** Data Berat dan Tinggi Badan\n\n|No|Nama|Berat Badan (kg)|Tinggi Badan (m)|\n|---|---|---|---|\n|1|Pak Ananta|80|1,80|\n|2|Pak Bintoro|50|1,70|\n|3|Bu Citra|65|1,68|\n|4|Bu Dian|60|1,60|\n|5|Pak Erlangga|75|1,65|\n\nPada Tabel 2.13, siapa yang memiliki IMT dengan kategori kekurangan berat badan tingkat ringan? Berapa berat badan yang harus ditambah agar tercapai IMT sebesar 18,5?\nPilihan: A. Pak Bintoro, perlu menambah 3,465 kg\nB. Pak Ananta, perlu menambah 3,465 kg\nC. Pak Bintoro, perlu menambah 6,9375 kg\nD. Pak Bintoro, perlu menambah 1,5 kg\nTranskripsi visual: -",
       "untruncatedTokenCount": 360,
       "maxLength": 256,
       "wouldTruncate": true,
-      "latencyMs": 0.147,
+      "latencyMs": 0.092,
       "prediction": {
         "questionId": "ac7f560c796164a475dad657",
         "contentVersion": 2,
-        "contentHash": "703c2d15a8ea95826df4bafabbbd11ee11173ddb68ff4cb0e31927ae09b80529",
+        "contentHash": "ee11c33224006c13175e500bab84e8a4f6d9a280d5ac69cab01cac6265f1538b",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1093,6 +1115,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1115,16 +1138,16 @@
       "questionId": "e997c38609f1bdf2dbf30b43",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:e997c38609f1bdf2dbf30b43:content-v2",
       "questionVersionId": "e997c38609f1bdf2dbf30b43:content-v2:blind-revalidation",
-      "contentHash": "4272e5098466b9d359413013c0896e13463c6a8b9f9de75bb40d38548899d0c6",
-      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Menemukan Konsep Pythagoras\nTipe soal: multiple_choice\nStimulus: -\nSoal: Gambar berikut memperlihatkan tiang antena TV di atas genting. Tiang antena tersebut ditarik oleh kawat supaya kuat dan tidak goyang saat terkena angin. Biasanya kawat tersebut dipasang pada $\\frac{3}{4}$ bagian dari tinggi tiang dari permukaan atas genting. Tiang antena tingginya 8 meter.\n\nTentukan panjang kawat jika jarak antara kawat dan tiang pada tanah adalah 8 meter.\nPilihan: A. 6 meter\nB. 100 meter\nC. 14 meter\nD. 10 meter\nTranskripsi visual: Gambar menunjukkan tiang vertikal (berwarna oranye) dan kawat penopang (berwarna hitam) yang membentuk segitiga siku-siku dengan tanah. Tiang antena memiliki tinggi total 8 meter. Kawat dipasang pada titik tertentu di tiang, membentuk sisi tegak segitiga, sementara jarak dari dasar tiang ke titik tambat kawat di tanah membentuk sisi alas segitiga.",
-      "untruncatedTokenCount": 186,
+      "contentHash": "ac12080c747f3740201bb73ce35a0698fc77bde908f5d83d0d7c68ed95cbc582",
+      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Menemukan Konsep Pythagoras\nTipe soal: multiple_choice\nStimulus: -\nSoal: Gambar berikut memperlihatkan tiang antena TV di atas genting. Tiang antena tersebut ditarik oleh kawat supaya kuat dan tidak goyang saat terkena angin. Biasanya kawat tersebut dipasang pada $\\frac{3}{4}$ bagian dari tinggi tiang dari permukaan atas genting. Tiang antena tingginya 8 meter.\n\nTentukan panjang kawat jika jarak antara kawat dan tiang pada tanah adalah 8 meter.\nPilihan: A. 6 meter\nB. 100 meter\nC. 14 meter\nD. 10 meter\nTranskripsi visual: Sebuah gambar menunjukkan tiang antena vertikal berwarna oranye dan sebuah kawat miring berwarna hitam yang menghubungkan tiang tersebut ke titik di tanah, membentuk segitiga siku-siku.",
+      "untruncatedTokenCount": 152,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.727,
+      "latencyMs": 0.11,
       "prediction": {
         "questionId": "e997c38609f1bdf2dbf30b43",
         "contentVersion": 2,
-        "contentHash": "4272e5098466b9d359413013c0896e13463c6a8b9f9de75bb40d38548899d0c6",
+        "contentHash": "ac12080c747f3740201bb73ce35a0698fc77bde908f5d83d0d7c68ed95cbc582",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1157,6 +1180,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1168,7 +1192,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "7cb27043e0589e63cd562529a79774fea2271fc661f9ba49cea10a0c5a1da4e6",
+          "inputHash": "9d3116a87835d555cb57b18f751e82a3761ec729e2bab10e2e3fbfdde91d396d",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1179,16 +1203,16 @@
       "questionId": "d518d77ad2f2d4f8b0927b72",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:d518d77ad2f2d4f8b0927b72:content-v2",
       "questionVersionId": "d518d77ad2f2d4f8b0927b72:content-v2:blind-revalidation",
-      "contentHash": "a6127f1a743bbe3c28f394d239d17b2ea81cfc633da91ac33abfe73487329471",
-      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Menemukan Konsep Pythagoras\nTipe soal: multiple_choice\nStimulus: -\nSoal: Aldo akan menaiki tangga untuk memperbaiki jam dinding yang ditunjukkan seperti gambar di bawah ini. Jika tinggi tembok dari tumpuan tangga ke permukaan tanah adalah 3 meter. 0.4 m\n\nTentukan panjang tangga yang digunakan Aldo.\nPilihan: A. 3,4 meter\nB. 3,02 meter\nC. 9,16 meter\nD. 3 meter\nTranskripsi visual: Gambar menunjukkan seorang anak menaiki tangga yang bersandar pada tembok vertikal. Terdapat segitiga siku-siku yang terbentuk oleh tembok, tanah, dan tangga. Tinggi tembok (sisi tegak) adalah 3 meter. Jarak dari dasar tangga ke tembok (sisi alas) adalah 0,4 meter. Tangga merupakan sisi miring (hipotenusa) dari segitiga tersebut.",
-      "untruncatedTokenCount": 166,
+      "contentHash": "8c8a9154fc20f1bff92a6c2bb01ac76299e2b0a53382518e32e8eea2f4c15b97",
+      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Menemukan Konsep Pythagoras\nTipe soal: multiple_choice\nStimulus: -\nSoal: Aldo akan menaiki tangga untuk memperbaiki jam dinding yang ditunjukkan seperti gambar di bawah ini. Jika tinggi tembok dari tumpuan tangga ke permukaan tanah adalah 3 meter. 0.4 m\n\nTentukan panjang tangga yang digunakan Aldo.\nPilihan: A. 3,4 meter\nB. 3,02 meter\nC. 9,16 meter\nD. 3 meter\nTranskripsi visual: Gambar menunjukkan seorang anak menaiki tangga yang bersandar pada tembok vertikal. Terdapat segitiga siku-siku yang terbentuk oleh tangga (sisi miring), tembok (sisi tegak), dan tanah (sisi alas). Tinggi tembok (sisi tegak) adalah 3 meter. Jarak alas tangga ke tembok (sisi alas) adalah 0,4 meter.",
+      "untruncatedTokenCount": 164,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.153,
+      "latencyMs": 0.182,
       "prediction": {
         "questionId": "d518d77ad2f2d4f8b0927b72",
         "contentVersion": 2,
-        "contentHash": "a6127f1a743bbe3c28f394d239d17b2ea81cfc633da91ac33abfe73487329471",
+        "contentHash": "8c8a9154fc20f1bff92a6c2bb01ac76299e2b0a53382518e32e8eea2f4c15b97",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1221,6 +1245,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1232,7 +1257,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "adf974e7e8ee3303209c0c11f7e31020c0ba00b834a37fe3790775b1016a2495",
+          "inputHash": "18ccc6ea34369f77eeb08d2cc57e7f2230cfd91636d14d06d350669b48419151",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1243,16 +1268,16 @@
       "questionId": "a75a3be4a28f98e263e644a4",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:a75a3be4a28f98e263e644a4:content-v2",
       "questionVersionId": "a75a3be4a28f98e263e644a4:content-v2:blind-revalidation",
-      "contentHash": "d1f67c232621ce7427017e5976b973029f3a2473cbf24dfdc6dd584a7aef3b84",
+      "contentHash": "3adca218854500defb90c75674b0a1d97aafb4ed20e6b9defa9e775eb1abb911",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Tripel Pythagoras\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seekor kucing berada di atas genting dan terlihat kebingungan karena tidak bisa turun. Aysha yang melihat kucing tersebut langsung mencari galah dan kemudian diikat dengan keranjang kecil pada ujung galah tersebut. Saat menolong kucing tersebut, Cintia melihat Aysha dan mencoba membantunya untuk mengarahkan galah yang telah diikat keranjang tepat pada titik lokasi kucing pada jarak 4 meter. Jika jarak pandangan Cintia terhadap kucing diperkirakan 5 meter.\n\nTentukan jarak atap yang ditempati kucing terhadap tanah tempat Aysha berdiri.\nPilihan: A. 9 meter\nB. 5 meter\nC. 1 meter\nD. 3 meter\nTranskripsi visual: -",
       "untruncatedTokenCount": 144,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.163,
+      "latencyMs": 0.1,
       "prediction": {
         "questionId": "a75a3be4a28f98e263e644a4",
         "contentVersion": 2,
-        "contentHash": "d1f67c232621ce7427017e5976b973029f3a2473cbf24dfdc6dd584a7aef3b84",
+        "contentHash": "3adca218854500defb90c75674b0a1d97aafb4ed20e6b9defa9e775eb1abb911",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1285,6 +1310,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1307,16 +1333,16 @@
       "questionId": "7f0ea8ebdbf606480849cd78",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:7f0ea8ebdbf606480849cd78:content-v2",
       "questionVersionId": "7f0ea8ebdbf606480849cd78:content-v2:blind-revalidation",
-      "contentHash": "2bd296a529451ff625b3597c2e409740dcf6eccbf0f6ca117701ace4fa727c82",
+      "contentHash": "162f77d3a6b3bec5e6c37377b9289d095744ae2067e232923d09992013c691e7",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Tripel Pythagoras\nTipe soal: multiple_choice\nStimulus: -\nSoal: Buktikan bahwa diantara kelompok tiga bilangan berikut manakah yang merupakan tripel Pythagoras.\nPilihan: A. 9, 12, 16\nB. 7, 13, 11\nC. 6, 2,5, 6,5\nD. 24, 17, 25\nTranskripsi visual: -",
       "untruncatedTokenCount": 85,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.196,
+      "latencyMs": 0.08,
       "prediction": {
         "questionId": "7f0ea8ebdbf606480849cd78",
         "contentVersion": 2,
-        "contentHash": "2bd296a529451ff625b3597c2e409740dcf6eccbf0f6ca117701ace4fa727c82",
+        "contentHash": "162f77d3a6b3bec5e6c37377b9289d095744ae2067e232923d09992013c691e7",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1349,6 +1375,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1371,16 +1398,16 @@
       "questionId": "0317e843f4ed4b4fe3c37612",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:0317e843f4ed4b4fe3c37612:content-v2",
       "questionVersionId": "0317e843f4ed4b4fe3c37612:content-v2:blind-revalidation",
-      "contentHash": "3d04e837145a0cabf4a9a769ce65527b61ae16668c2dc1cac4ebdd2112d60e7d",
-      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Segitiga Istimewa\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar segitiga siku-siku ABC di samping. C 30° A 8 cm D B\n\nTentukan Keliling segitiga ABC.\nPilihan: A. $(32+16\\sqrt{3})$ cm\nB. 64 cm\nC. $48\\sqrt{3}$ cm\nD. $(48+16\\sqrt{3})$ cm\nTranskripsi visual: Segitiga ABC dengan sudut siku-siku di C. Garis tinggi CD ditarik dari C ke sisi AB, membentuk sudut siku-siku di D. Diketahui panjang AD = 8 cm dan sudut B = 30 derajat. Segitiga ADC adalah segitiga siku-siku di D dengan sudut A = 60 derajat (karena sudut B = 30 derajat dan sudut C = 90 derajat).",
-      "untruncatedTokenCount": 175,
+      "contentHash": "a34bd288ace0e974e2344bf5bed7b33df0dbcc78f572f70297ead0184f073b3c",
+      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Segitiga Istimewa\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar segitiga siku-siku ABC di samping. C 30° A 8 cm D B\n\nTentukan Keliling segitiga ABC.\nPilihan: A. $(32+16\\sqrt{3})$ cm\nB. 64 cm\nC. $48\\sqrt{3}$ cm\nD. $(48+16\\sqrt{3})$ cm\nTranskripsi visual: Segitiga ABC dengan sudut siku-siku di C. Garis tinggi CD ditarik dari C ke sisi AB, membentuk sudut siku-siku di D. Diketahui panjang AD = 8 cm dan sudut B = 30 derajat.",
+      "untruncatedTokenCount": 144,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.132,
+      "latencyMs": 0.109,
       "prediction": {
         "questionId": "0317e843f4ed4b4fe3c37612",
         "contentVersion": 2,
-        "contentHash": "3d04e837145a0cabf4a9a769ce65527b61ae16668c2dc1cac4ebdd2112d60e7d",
+        "contentHash": "a34bd288ace0e974e2344bf5bed7b33df0dbcc78f572f70297ead0184f073b3c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1413,6 +1440,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1424,7 +1452,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "cf0586714b64ba88f09410a88093d9968a4ef08ab75f82aa353de08663b4ef2b",
+          "inputHash": "06556f5520a52601d6aeb9ffb4dcc43259e9425003ae00150ce84f5c41a491b6",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1435,16 +1463,16 @@
       "questionId": "2ec551abe1f96d3c16146fb7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:2ec551abe1f96d3c16146fb7:content-v2",
       "questionVersionId": "2ec551abe1f96d3c16146fb7:content-v2:blind-revalidation",
-      "contentHash": "743ed58c2cf41ef1395cb3ba446d25313c5edf0af9dcd55cd0c73c68eeb5b912",
-      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Segitiga Istimewa\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berikut ditunjukkan gambar rencana bangun rumah yang sedang dikerjakan oleh Amri sebagai seorang arsitek yang terlihat tampak depan. Kedua sisi atap rumah pada gambar masing-masing panjangnya 6 m.\n\nTentukan tinggi atap rumah di atas, jika lebar rumah adalah 6.4 meter.\nPilihan: A. 6 meter\nB. 8,4 meter\nC. 3,2 meter\nD. 5,075 meter\nTranskripsi visual: Gambar menunjukkan tampak depan sebuah rumah. Atap rumah berbentuk segitiga sama kaki dengan panjang sisi miring masing-masing 6 m. Lebar rumah (alas segitiga) adalah 6,4 m. Tinggi total bangunan (dinding) adalah 8,4 m, namun ini tidak relevan untuk menghitung tinggi atap.",
-      "untruncatedTokenCount": 160,
+      "contentHash": "715156d2487a0ab9e4bc9cc22e504dad371a866241add41cc6b9c12201e1d07f",
+      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Segitiga Istimewa\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berikut ditunjukkan gambar rencana bangun rumah yang sedang dikerjakan oleh Amri sebagai seorang arsitek yang terlihat tampak depan. Kedua sisi atap rumah pada gambar masing-masing panjangnya 6 m.\n\nTentukan tinggi atap rumah di atas, jika lebar rumah adalah 6.4 meter.\nPilihan: A. 6 meter\nB. 8,4 meter\nC. 3,2 meter\nD. 5,075 meter\nTranskripsi visual: Gambar menunjukkan tampak depan sebuah rumah. Bagian atap berbentuk segitiga sama kaki dengan panjang sisi miring masing-masing 6 m. Lebar rumah adalah 6,4 m. Tinggi total bangunan dari dasar hingga batas bawah atap adalah 8,4 m, namun tinggi ini tidak relevan untuk menghitung tinggi atap saja.",
+      "untruncatedTokenCount": 161,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.152,
+      "latencyMs": 0.113,
       "prediction": {
         "questionId": "2ec551abe1f96d3c16146fb7",
         "contentVersion": 2,
-        "contentHash": "743ed58c2cf41ef1395cb3ba446d25313c5edf0af9dcd55cd0c73c68eeb5b912",
+        "contentHash": "715156d2487a0ab9e4bc9cc22e504dad371a866241add41cc6b9c12201e1d07f",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1477,6 +1505,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1488,7 +1517,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "c3662198261851452a267555ba1970b459fbdb97ef3685d15548243d05bba3cf",
+          "inputHash": "ab7cf186dba516730e5c41d2266c5d8e18ddd4ced2c16c0b91052342e094a666",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1499,16 +1528,16 @@
       "questionId": "06779006c739d5de08849cb7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:06779006c739d5de08849cb7:content-v2",
       "questionVersionId": "06779006c739d5de08849cb7:content-v2:blind-revalidation",
-      "contentHash": "52d8069a1851fb58d5acc85ade3876f4c12a20c130e6f34c1cc190f01b795c50",
+      "contentHash": "dc86e5845173329a4acc2a35c1be4eb841f87347dba5bd58a12c7e03d306fe91",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Penerapan Teorema Pythagoras\nTipe soal: multiple_choice\nStimulus: -\nSoal: Aldo dan Arjuna berdiri saling membelakangi untuk main tembak-tembakan pistol bambu. Aldo berjalan 20 langkah ke depan kemudian 15 langkah ke kanan. Pada saat yang sama, Arjuna juga berjalan 16 langkah ke depan kemudian 12 langkah ke kanan. Pada titik terakhir, mereka berdua saling menembak.\n\nBerapa langkah jarak kalian berdua saat mereka saling menembak?\nPilihan: A. 27 langkah\nB. 45 langkah\nC. 36 langkah\nD. 63 langkah\nTranskripsi visual: -",
       "untruncatedTokenCount": 121,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.137,
+      "latencyMs": 0.102,
       "prediction": {
         "questionId": "06779006c739d5de08849cb7",
         "contentVersion": 2,
-        "contentHash": "52d8069a1851fb58d5acc85ade3876f4c12a20c130e6f34c1cc190f01b795c50",
+        "contentHash": "dc86e5845173329a4acc2a35c1be4eb841f87347dba5bd58a12c7e03d306fe91",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1541,6 +1570,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1563,16 +1593,16 @@
       "questionId": "595852bacf2288f5b8407683",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:595852bacf2288f5b8407683:content-v2",
       "questionVersionId": "595852bacf2288f5b8407683:content-v2:blind-revalidation",
-      "contentHash": "a3eb6d0e390411a1aff5d9c29581ad81f9d55411cd220636f6084c4e500eba66",
-      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Penerapan Teorema Pythagoras\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seorang atlet tenis mengajukan pertanyaan kepada wasit. Suara atlet mampu didengar wasit hanya pada jarak maksimum 30 kaki. Berdasarkan posisi wasit dan atlet tenis pada gambar berikut. 24 kaki 12 kaki 5 kaki\n\nBerdasarkan posisi wasit dan atlet tenis pada gambar berikut, dapatkah wasit mendengar suara sang atlet? Jelaskan jawaban kalian.\nPilihan: A. Ya, karena jarak keduanya 25 kaki (kurang dari 30 kaki)\nB. Tidak, karena jarak keduanya 36 kaki\nC. Tidak, karena jarak keduanya 31 kaki (lebih dari 30 kaki)\nD. Ya, karena jarak keduanya 24 kaki\nTranskripsi visual: Gambar menunjukkan seorang wasit duduk di kursi setinggi 12 kaki dan seorang atlet tenis berdiri dengan tinggi 5 kaki. Jarak horizontal antara wasit dan atlet adalah 24 kaki. Situasi ini membentuk segitiga siku-siku dengan alas 24 kaki dan tinggi tegak lurus (12 - 5) = 7 kaki.",
-      "untruncatedTokenCount": 196,
+      "contentHash": "ba46763973e0e9bcf94fb37d2b38767e83fc553b64c3545a098e946baf976b5f",
+      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Penerapan Teorema Pythagoras\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seorang atlet tenis mengajukan pertanyaan kepada wasit. Suara atlet mampu didengar wasit hanya pada jarak maksimum 30 kaki. Berdasarkan posisi wasit dan atlet tenis pada gambar berikut. 24 kaki 12 kaki 5 kaki\n\nBerdasarkan posisi wasit dan atlet tenis pada gambar berikut, dapatkah wasit mendengar suara sang atlet? Jelaskan jawaban kalian.\nPilihan: A. Ya, karena jarak keduanya 25 kaki (kurang dari 30 kaki)\nB. Tidak, karena jarak keduanya 36 kaki\nC. Tidak, karena jarak keduanya 31 kaki (lebih dari 30 kaki)\nD. Ya, karena jarak keduanya 24 kaki\nTranskripsi visual: Gambar menunjukkan seorang wasit duduk di kursi dengan tinggi 12 kaki dan seorang atlet tenis berdiri dengan tinggi 5 kaki. Jarak horizontal antara wasit dan atlet adalah 24 kaki. Ini membentuk segitiga siku-siku dengan alas 24 kaki dan tinggi vertikal 12 - 5 = 7 kaki.",
+      "untruncatedTokenCount": 193,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.126,
+      "latencyMs": 0.105,
       "prediction": {
         "questionId": "595852bacf2288f5b8407683",
         "contentVersion": 2,
-        "contentHash": "a3eb6d0e390411a1aff5d9c29581ad81f9d55411cd220636f6084c4e500eba66",
+        "contentHash": "ba46763973e0e9bcf94fb37d2b38767e83fc553b64c3545a098e946baf976b5f",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1605,6 +1635,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1616,7 +1647,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "b9840c77ee5a80e1a8ded2fd480009a8819c3deaa9da022eac443e758c604353",
+          "inputHash": "85de299712cb69cba72ac44cc240920ce048e69fe007bfe05c855f8dd8d95c81",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1627,16 +1658,16 @@
       "questionId": "e8e1147bfed27b5d98b29d8f",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:e8e1147bfed27b5d98b29d8f:content-v2",
       "questionVersionId": "e8e1147bfed27b5d98b29d8f:content-v2:blind-revalidation",
-      "contentHash": "84e227b058758d77e245a5463bfd0fa94296993b5a55778e2c430ee6f6b69beb",
+      "contentHash": "92005ccc8d7910717d7932442a0982c657ec7675ee51290ea1efa411452fd576",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Rumus Jarak (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui $\\triangle ABC$ dengan titik-titik $A(-1, 3)$, $B(4, -2)$, dan $C(1, -5)$.\n\nApakah segitiga $ABC$ merupakan segitiga siku-siku? Jelaskan.\nPilihan: A. Ya, segitiga ABC siku-siku di C\nB. Ya, segitiga ABC siku-siku di B\nC. Tidak, karena sisi-sisinya tidak berupa bilangan bulat sehingga tidak membentuk tripel Pythagoras\nD. Tidak, karena AB² + BC² tidak sama dengan CA²\nTranskripsi visual: -",
       "untruncatedTokenCount": 146,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.701,
+      "latencyMs": 0.131,
       "prediction": {
         "questionId": "e8e1147bfed27b5d98b29d8f",
         "contentVersion": 2,
-        "contentHash": "84e227b058758d77e245a5463bfd0fa94296993b5a55778e2c430ee6f6b69beb",
+        "contentHash": "92005ccc8d7910717d7932442a0982c657ec7675ee51290ea1efa411452fd576",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1669,6 +1700,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1691,16 +1723,16 @@
       "questionId": "35a513e4d376af0fba4e3993",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:35a513e4d376af0fba4e3993:content-v2",
       "questionVersionId": "35a513e4d376af0fba4e3993:content-v2:blind-revalidation",
-      "contentHash": "e60eca8310098ff7e7ba60adfa059a17a7e567f94f5a5f8cff2f036200e398fa",
-      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Rumus Jarak (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar berikut. ABC merupakan segitiga siku-siku dengan koordinat A(x1,y1), B(x2,y2), dan C(x2,y1). AC = x2-x1 dan BC = y2-y1. Karena segitiga ABC siku-siku, berlaku Teorema Pythagoras: $AB=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$.\n\nDiketahui titik $A(-2,-1)$ dan $B(3,11)$. Bagaimana panjang $AB$?\nPilihan: A. 13\nB. 169\nC. 17\nD. 10,05\nTranskripsi visual: Gambar menunjukkan segitiga siku-siku ABC pada bidang Kartesius. Titik A berada di (x1, y1), titik C di (x2, y1), dan titik B di (x2, y2). Sisi AC memiliki panjang x2-x1 dan sisi BC memiliki panjang y2-y1. Sudut siku-siku terletak di titik C.",
-      "untruncatedTokenCount": 258,
+      "contentHash": "14dccce0bd68af91f6462a2f5ec42b0d7defdeac618a3f2b1b21cc926afe17a3",
+      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Rumus Jarak (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan gambar berikut. ABC merupakan segitiga siku-siku dengan koordinat A(x1,y1), B(x2,y2), dan C(x2,y1). AC = x2-x1 dan BC = y2-y1. Karena segitiga ABC siku-siku, berlaku Teorema Pythagoras: $AB=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$.\n\nDiketahui titik $A(-2,-1)$ dan $B(3,11)$. Bagaimana panjang $AB$?\nPilihan: A. 13\nB. 169\nC. 17\nD. 10,05\nTranskripsi visual: Gambar menunjukkan segitiga siku-siku ABC pada bidang koordinat Kartesius. Titik A berada di (x1, y1), titik C di (x2, y1), dan titik B di (x2, y2). Sisi AC memiliki panjang (x2 - x1) dan sisi BC memiliki panjang (y2 - y1). Sudut siku-siku berada di titik C. Rumus jarak AB diberikan sebagai AB = akar((x2 - x1)^2 + (y2 - y1)^2).",
+      "untruncatedTokenCount": 293,
       "maxLength": 256,
       "wouldTruncate": true,
-      "latencyMs": 0.13,
+      "latencyMs": 0.097,
       "prediction": {
         "questionId": "35a513e4d376af0fba4e3993",
         "contentVersion": 2,
-        "contentHash": "e60eca8310098ff7e7ba60adfa059a17a7e567f94f5a5f8cff2f036200e398fa",
+        "contentHash": "14dccce0bd68af91f6462a2f5ec42b0d7defdeac618a3f2b1b21cc926afe17a3",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1733,6 +1765,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1744,7 +1777,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "3e7540eec0b471dc6becf224a7fccdb95dc8b7af55fa30d8cb8a2e430e2806dc",
+          "inputHash": "5072697f2f08f83aee226d86148c9c8c7ef5a8db10d108f17076f8c36978cb95",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1755,16 +1788,16 @@
       "questionId": "78652b4108bd747c96b2f4a8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:78652b4108bd747c96b2f4a8:content-v2",
       "questionVersionId": "78652b4108bd747c96b2f4a8:content-v2:blind-revalidation",
-      "contentHash": "cd8100901ebe5f1e08ef886c0343ee68fc4fffc19c50c1744ce70ec5f97b9383",
-      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Kesebangunan pada Segitiga\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada $\\triangle ABC$, $AD$ membagi $\\angle A$ menjadi dua bagian yang sama besar. $AD$ disebut garis bagi. Titik $D$ terletak pada sisi $BC$. Petunjuk: Gambarkan garis yang sejajar dengan $AD$ dan melalui titik $C$. Garis ini berpotongan dengan perpanjangan $AB$ di titik $E$.\n\nBeri alasan bahwa $\\triangle ACE$ sama kaki. Tuliskan sisi-sisi yang sama panjang.\nPilihan: A. AC = CE, karena ∠CAE = ∠AEC\nB. AE = CE, karena ∠ACE = ∠CAE\nC. AC = AE, karena ∠ACE = ∠AEC\nD. AB = AC, karena AD garis bagi\nTranskripsi visual: Segitiga ABC dengan titik D pada sisi BC. Garis AD membagi sudut A menjadi dua bagian sama besar (ditandai dengan busur hijau).",
-      "untruncatedTokenCount": 198,
+      "contentHash": "a22a01dd61d8d1b76ea0f664d1ab3912081214cf0f74c06e0dc90f8a774f22ed",
+      "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Kesebangunan pada Segitiga\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada $\\triangle ABC$, $AD$ membagi $\\angle A$ menjadi dua bagian yang sama besar. $AD$ disebut garis bagi. Titik $D$ terletak pada sisi $BC$. Petunjuk: Gambarkan garis yang sejajar dengan $AD$ dan melalui titik $C$. Garis ini berpotongan dengan perpanjangan $AB$ di titik $E$.\n\nBeri alasan bahwa $\\triangle ACE$ sama kaki. Tuliskan sisi-sisi yang sama panjang.\nPilihan: A. AC = CE, karena ∠CAE = ∠AEC\nB. AE = CE, karena ∠ACE = ∠CAE\nC. AC = AE, karena ∠ACE = ∠AEC\nD. AB = AC, karena AD garis bagi\nTranskripsi visual: Segitiga ABC dengan titik D pada sisi BC. Garis AD membagi sudut A menjadi dua bagian sama besar (ditandai dengan busur hijau). Titik B, D, C terletak pada satu garis lurus.",
+      "untruncatedTokenCount": 210,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.13,
+      "latencyMs": 0.105,
       "prediction": {
         "questionId": "78652b4108bd747c96b2f4a8",
         "contentVersion": 2,
-        "contentHash": "cd8100901ebe5f1e08ef886c0343ee68fc4fffc19c50c1744ce70ec5f97b9383",
+        "contentHash": "a22a01dd61d8d1b76ea0f664d1ab3912081214cf0f74c06e0dc90f8a774f22ed",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1797,6 +1830,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1808,7 +1842,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "c53b8eeb0f77c1d1ab8e46876dd0c584bc896d3c1e0ba4c3334b49ff501d5410",
+          "inputHash": "7f5267fecbffff25e01b4a076b355e6f642639b127d090a0f68cee68008bcb1a",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1819,16 +1853,16 @@
       "questionId": "51def5fab754abff1aeeed28",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:51def5fab754abff1aeeed28:content-v2",
       "questionVersionId": "51def5fab754abff1aeeed28:content-v2:blind-revalidation",
-      "contentHash": "0e685453337a49f505d5ac6a5c6c44fd7cb3e32bacd603311246b09b613ebcf4",
+      "contentHash": "0ed06f2f960cf73e94716cecd1b28c93948030c8853eaa8d84a0825c746ac777",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Memahami Konsep Persamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Ahmad dan Dhoni adalah teman dekat yang akan membeli buku dengan mengumpulkan uang saku selama beberapa hari. Uang Ahmad adalah Rp. 108.000,00. Total uang kaduannya Rp 220.000,00.\n\nBerapa persamaan yang kalian gunakan untuk menentukan jumlah uang Dhoni.\nPilihan: A. 108.000 + y = 220.000 (y = uang Dhoni)\nB. 108.000 - y = 220.000 (y = uang Dhoni)\nC. 108.000 x y = 220.000 (y = uang Dhoni)\nD. 220.000 + y = 108.000 (y = uang Dhoni)\nTranskripsi visual: -",
       "untruncatedTokenCount": 163,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.258,
+      "latencyMs": 0.08,
       "prediction": {
         "questionId": "51def5fab754abff1aeeed28",
         "contentVersion": 2,
-        "contentHash": "0e685453337a49f505d5ac6a5c6c44fd7cb3e32bacd603311246b09b613ebcf4",
+        "contentHash": "0ed06f2f960cf73e94716cecd1b28c93948030c8853eaa8d84a0825c746ac777",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1861,6 +1895,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1883,16 +1918,16 @@
       "questionId": "d490723c72a0d7e848c344b2",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:d490723c72a0d7e848c344b2:content-v2",
       "questionVersionId": "d490723c72a0d7e848c344b2:content-v2:blind-revalidation",
-      "contentHash": "b09f9468c0a801e2e84b2a25ceaeb35eca45694a53a49ff4fce3e6ed0abbbd2f",
+      "contentHash": "fe8a856bfd051b520bb188c02b3ebfde06abc6ae38d9b19d8fccee7cce8741bb",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Memahami Konsep Persamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan beberapa kalimat berikut:\n1. Bilangan prima terkecil adalah 3.\n2. Jika a adalah bilangan asli, maka 2a + 6 adalah bilangan ganjil.\n3. Empat merupakan bilangan ganjil.\n4. Jayapura merupakan ibu kota provinsi Papua.\n5. Pegunungan Lantimojong berada di Sulawesi Utara.\nBerdasarkan beberapa kalimat di atas, manakah yang termasuk pernyataan yang benar?\nPilihan: A. Jika a adalah bilangan asli, maka 2a + 6 adalah bilangan ganjil.\nB. Bilangan prima terkecil adalah 3.\nC. Empat merupakan bilangan ganjil.\nD. Jayapura merupakan ibu kota provinsi Papua.\nTranskripsi visual: -",
       "untruncatedTokenCount": 149,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.187,
+      "latencyMs": 0.152,
       "prediction": {
         "questionId": "d490723c72a0d7e848c344b2",
         "contentVersion": 2,
-        "contentHash": "b09f9468c0a801e2e84b2a25ceaeb35eca45694a53a49ff4fce3e6ed0abbbd2f",
+        "contentHash": "fe8a856bfd051b520bb188c02b3ebfde06abc6ae38d9b19d8fccee7cce8741bb",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1925,6 +1960,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1947,16 +1983,16 @@
       "questionId": "d8ebb6f2c60e468be6bc868a",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:d8ebb6f2c60e468be6bc868a:content-v2",
       "questionVersionId": "d8ebb6f2c60e468be6bc868a:content-v2:blind-revalidation",
-      "contentHash": "427eec6402e411462a6333deced3b2faceb330c8c85207a29550be193b73cf81",
+      "contentHash": "7db890323ca4068b04efd581fc9029eadac02dc470b94748ab433769d87820e7",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Menyelesaikan Persamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: x + 13 = 1\n\nTentukan nilai x yang menjadikan persamaan di atas bernilai benar.\nPilihan: A. x = 12\nB. x = -12\nC. x = 14\nD. x = -14\nTranskripsi visual: -",
       "untruncatedTokenCount": 75,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.199,
+      "latencyMs": 0.068,
       "prediction": {
         "questionId": "d8ebb6f2c60e468be6bc868a",
         "contentVersion": 2,
-        "contentHash": "427eec6402e411462a6333deced3b2faceb330c8c85207a29550be193b73cf81",
+        "contentHash": "7db890323ca4068b04efd581fc9029eadac02dc470b94748ab433769d87820e7",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1989,6 +2025,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2016,7 +2053,7 @@
       "untruncatedTokenCount": 80,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.198,
+      "latencyMs": 0.063,
       "prediction": {
         "questionId": "6c4807ddb62ebe4c925c56fd",
         "contentVersion": 2,
@@ -2053,6 +2090,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2075,16 +2113,16 @@
       "questionId": "69f14f018149ed7308b7751c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:69f14f018149ed7308b7751c:content-v2",
       "questionVersionId": "69f14f018149ed7308b7751c:content-v2:blind-revalidation",
-      "contentHash": "da15f307b7450ed0d48ee4ad64a6b183d24ab12a08bdad1817fc57dbd8811cfc",
+      "contentHash": "844553068f524f1afc0d73e7f114136d076cccef74b6e1c974dcaf4be4ea0d2e",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Menemukan Konsep Pertidaksamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sekolah menyelenggarakan proyek penguatan proil pelajar Pancasila pada tema kearifan lokal untuk melakukan observasi menggunakan lima bus yang dapat mengangkut hanya 290 penumpang.\n\nModelkan permasalahan berikut menjadi bentuk pertidaksamaan linier satu variabel.\nPilihan: A. 5x ≥ 290 (x = banyak penumpang per bus)\nB. x ≤ 290 (x = banyak penumpang per bus)\nC. 5x ≤ 290 (x = banyak penumpang per bus)\nD. 5x < 290 (x = banyak penumpang per bus)\nTranskripsi visual: -",
       "untruncatedTokenCount": 141,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.137,
+      "latencyMs": 0.187,
       "prediction": {
         "questionId": "69f14f018149ed7308b7751c",
         "contentVersion": 2,
-        "contentHash": "da15f307b7450ed0d48ee4ad64a6b183d24ab12a08bdad1817fc57dbd8811cfc",
+        "contentHash": "844553068f524f1afc0d73e7f114136d076cccef74b6e1c974dcaf4be4ea0d2e",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2117,6 +2155,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2139,16 +2178,16 @@
       "questionId": "4e77861a69e63696e5ee9f5e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:4e77861a69e63696e5ee9f5e:content-v2",
       "questionVersionId": "4e77861a69e63696e5ee9f5e:content-v2:blind-revalidation",
-      "contentHash": "fe36672215c4bcb910608af3563db7fe78d925c76802009af40d86f3163a3d0d",
+      "contentHash": "3b5005615f86ea8bd795be850a7a7bd37ee89f769128467dfd9ed083e6a36cfe",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Menemukan Konsep Pertidaksamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pak Doni adalah seorang kuli bangunan kontrak yang sedang mengerjakan proyek pemerintah dengan penghasilan tidak lebih dari Rp. 3.600.000 setiap bulannya.\n\nModelkan permasalahan berikut menjadi bentuk pertidaksamaan linier satu variabel.\nPilihan: A. x ≥ 3.600.000 (x = penghasilan Pak Doni per bulan)\nB. x ≤ 3.600.000 (x = penghasilan Pak Doni per bulan)\nC. x < 3.600.000 (x = penghasilan Pak Doni per bulan)\nD. x = 3.600.000 (x = penghasilan Pak Doni per bulan)\nTranskripsi visual: -",
       "untruncatedTokenCount": 154,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.197,
+      "latencyMs": 0.104,
       "prediction": {
         "questionId": "4e77861a69e63696e5ee9f5e",
         "contentVersion": 2,
-        "contentHash": "fe36672215c4bcb910608af3563db7fe78d925c76802009af40d86f3163a3d0d",
+        "contentHash": "3b5005615f86ea8bd795be850a7a7bd37ee89f769128467dfd9ed083e6a36cfe",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2181,6 +2220,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2203,16 +2243,16 @@
       "questionId": "4b2524b8440c37d72e127b02",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:4b2524b8440c37d72e127b02:content-v2",
       "questionVersionId": "4b2524b8440c37d72e127b02:content-v2:blind-revalidation",
-      "contentHash": "2d1d76900284370d821d1963dd817781f90082d6f9b36215cd022cb5845021f4",
+      "contentHash": "4efe5399d75e8c8bc0458a2f8139d2646ff70bdd54c3b0dfa860fe67d0ae9e7f",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Menyelesaikan Masalah terkait Pertidaksamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg. Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.\n\nJika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?\nPilihan: A. 11 kali pengangkutan\nB. 9,45 kali pengangkutan\nC. 10 kali pengangkutan\nD. 9 kali pengangkutan\nTranskripsi visual: -",
       "untruncatedTokenCount": 123,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.84,
+      "latencyMs": 0.141,
       "prediction": {
         "questionId": "4b2524b8440c37d72e127b02",
         "contentVersion": 2,
-        "contentHash": "2d1d76900284370d821d1963dd817781f90082d6f9b36215cd022cb5845021f4",
+        "contentHash": "4efe5399d75e8c8bc0458a2f8139d2646ff70bdd54c3b0dfa860fe67d0ae9e7f",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2245,6 +2285,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2267,16 +2308,16 @@
       "questionId": "b0ce9e96d828be7c94c0894c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:b0ce9e96d828be7c94c0894c:content-v2",
       "questionVersionId": "b0ce9e96d828be7c94c0894c:content-v2:blind-revalidation",
-      "contentHash": "b968ece9e4860d21341000ef98bfedd2f315fe01ed74083e0345c17fa387c10b",
+      "contentHash": "29441cc653c38717333e04bc22bdb540b906e46bb42eb4f8e49aa0209bf6679c",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Menyelesaikan Masalah terkait Pertidaksamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Humam memiliki uang Rp180.000,00 yang akan digunakan untuk membeli jeruk. Untuk harga 1 kg jeruk adalah Rp15.000,00.\n\nBuatlah penyelesaian dari pertidaksamaan yang mengilustrasikan banyaknya jeruk yang dapat Humam beli.\nPilihan: A. x ≥ 12 (paling banyak 12 kg jeruk)\nB. x ≤ 1.200 (paling banyak 1.200 kg jeruk)\nC. x ≤ 15 (paling banyak 15 kg jeruk)\nD. x ≤ 12 (paling banyak 12 kg jeruk)\nTranskripsi visual: -",
       "untruncatedTokenCount": 144,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.195,
+      "latencyMs": 0.085,
       "prediction": {
         "questionId": "b0ce9e96d828be7c94c0894c",
         "contentVersion": 2,
-        "contentHash": "b968ece9e4860d21341000ef98bfedd2f315fe01ed74083e0345c17fa387c10b",
+        "contentHash": "29441cc653c38717333e04bc22bdb540b906e46bb42eb4f8e49aa0209bf6679c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2309,6 +2350,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2331,16 +2373,16 @@
       "questionId": "bb5563c106a35bce8aef90f0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:bb5563c106a35bce8aef90f0:content-v2",
       "questionVersionId": "bb5563c106a35bce8aef90f0:content-v2:blind-revalidation",
-      "contentHash": "d5fde5db0c4f3516899f3dcb0e5f76194f5afbac0eb9a0dfcced09dda2787884",
+      "contentHash": "0c7b6c5ca0fc3d65bec0ef262f00cad0f21f0fb068b7eb20700ecaa898cb1b81",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Pemodelan dengan Bentuk Aljabar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Panitia OSIS menjual tiket untuk konser musik yang merupakan acara tahunan sekolah. Rani menjual a tiket. Bagas menjual 3 kali dari tiket yang dijual oleh Rani. Cakra menjual 4 tiket lebih sedikit dari tiket yang dijual oleh Rani. Malik menjual 10 tiket lebih banyak dari Rani. a. Tulislah bentuk aljabar dari banyak tiket yang dijual oleh Bagas, Cakra, dan Malik. b. Tulislah bentuk aljabar dari total tiket yang terjual oleh Rani, Bagas, Cakra, dan Malik. c. Jika ada 10 tiket yang tidak terjual, tulislah bentuk aljabar dari banyak tiket secara keseluruhan.\n\nd. Jika tiket yang dijual oleh Rani sebanyak 12 tiket. Berapa banyak tiket secara keseluruhan?\nPilihan: A. 92 tiket\nB. 76 tiket\nC. 78 tiket\nD. 88 tiket\nTranskripsi visual: -",
       "untruncatedTokenCount": 185,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.139,
+      "latencyMs": 0.085,
       "prediction": {
         "questionId": "bb5563c106a35bce8aef90f0",
         "contentVersion": 2,
-        "contentHash": "d5fde5db0c4f3516899f3dcb0e5f76194f5afbac0eb9a0dfcced09dda2787884",
+        "contentHash": "0c7b6c5ca0fc3d65bec0ef262f00cad0f21f0fb068b7eb20700ecaa898cb1b81",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2373,6 +2415,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2395,16 +2438,16 @@
       "questionId": "bc52760c552d361c6b1ad513",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:bc52760c552d361c6b1ad513:content-v2",
       "questionVersionId": "bc52760c552d361c6b1ad513:content-v2:blind-revalidation",
-      "contentHash": "2730334d6abd0061d8396a84da2122e2314c5f6a37f5fe5e13aec3472a07aded",
+      "contentHash": "b0f7039a8e251853a0ea1d93395a51803046e13ddf7bf5eda3fce88b2d377f8d",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Memahami Relasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui Himpunan C = {3, 4}; himpunan D = {3, 4, 5}; dan relasi dari himpunan C ke D adalah \"kurang dari\". Nyatakan relasi tersebut dalam tiga cara berikut: a. Diagram panah b. Diagram Cartesius c. Himpunan pasangan berurutan\n\nNyatakan relasi tersebut dengan cara himpunan pasangan berurutan.\nPilihan: A. {(3, 4), (4, 5)}\nB. {(4, 3), (5, 3), (5, 4)}\nC. {(3, 3), (4, 4)}\nD. {(3, 4), (3, 5), (4, 5)}\nTranskripsi visual: -",
       "untruncatedTokenCount": 172,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.182,
+      "latencyMs": 0.071,
       "prediction": {
         "questionId": "bc52760c552d361c6b1ad513",
         "contentVersion": 2,
-        "contentHash": "2730334d6abd0061d8396a84da2122e2314c5f6a37f5fe5e13aec3472a07aded",
+        "contentHash": "b0f7039a8e251853a0ea1d93395a51803046e13ddf7bf5eda3fce88b2d377f8d",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2437,6 +2480,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2459,16 +2503,16 @@
       "questionId": "e044f1847d7a97d6815a581d",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:e044f1847d7a97d6815a581d:content-v2",
       "questionVersionId": "e044f1847d7a97d6815a581d:content-v2:blind-revalidation",
-      "contentHash": "04a1955761445761fe19b9091f2139decf6669c9c2cda8be9a888fa379d49458",
+      "contentHash": "1569cd7b4cdf0751e20f78a6d3d49eb313f139752866901aa69589fb2e2e2957",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Memahami Relasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apabila relasi himpunan E ke F merupakan \"akar dari\" dengan diketahui himpunan E = {1, 2, 3, 4, 5, 6}, dan himpunan F = {1, 2, 4, 9, 12, 16, 20, 25, 36, 49}, maka nyatakan relasi tersebut dengan tiga cara berikut ini: a. himpunan pasangan berurutan. b. diagram panah; c. diagram Cartesius.\n\nNyatakan relasi tersebut dengan cara himpunan pasangan berurutan.\nPilihan: A. {(2, 4), (3, 9), (4, 16), (5, 25), (6, 36)}\nB. {(1, 1), (2, 4), (3, 9), (4, 16), (5, 20), (6, 36)}\nC. {(1, 1), (2, 4), (3, 9), (4, 16), (5, 25), (6, 36)}\nD. {(1, 1), (4, 2), (9, 3), (16, 4), (25, 5), (36, 6)}\nTranskripsi visual: -",
       "untruncatedTokenCount": 277,
       "maxLength": 256,
       "wouldTruncate": true,
-      "latencyMs": 0.148,
+      "latencyMs": 0.078,
       "prediction": {
         "questionId": "e044f1847d7a97d6815a581d",
         "contentVersion": 2,
-        "contentHash": "04a1955761445761fe19b9091f2139decf6669c9c2cda8be9a888fa379d49458",
+        "contentHash": "1569cd7b4cdf0751e20f78a6d3d49eb313f139752866901aa69589fb2e2e2957",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2501,6 +2545,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2523,16 +2568,16 @@
       "questionId": "cc51dc6d0e0814ecda8e12e1",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:cc51dc6d0e0814ecda8e12e1:content-v2",
       "questionVersionId": "cc51dc6d0e0814ecda8e12e1:content-v2:blind-revalidation",
-      "contentHash": "a910339cc0e11c742e48787b3c9fe761170c43be72b8b093adcd7b93679fe735",
+      "contentHash": "cc673b184a194e84d21ae1a940757e294905e83a02a3534ee175717ba31efbeb",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Memahami Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Periksa apakah dua himpuan berikut ini termasuk fungsi atau bukan fungsi? Jelaskan. Diketahui bahwa himpunan R dan S memiliki anggota masing-masing adalah R = {3, 4, 6, 8, 9, 12, 14, 18} dan S = {1, 6, 9}. Apabila \"Anggota R sepertiga kali anggota S\" adalah relasi yang ditentukan,\n\nDapatkah hubungan antara himpunan R dan S disebut sebagai fungsi atau bukan fungsi?\nPilihan: A. Fungsi, karena setiap anggota R mempunyai tepat satu pasangan di S\nB. Bukan fungsi, karena tidak semua anggota R memiliki pasangan di S\nC. Bukan fungsi, karena S bukan himpunan bilangan bulat\nD. Fungsi, karena semua anggota S mempunyai pasangan di R\nTranskripsi visual: -",
       "untruncatedTokenCount": 171,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.293,
+      "latencyMs": 0.078,
       "prediction": {
         "questionId": "cc51dc6d0e0814ecda8e12e1",
         "contentVersion": 2,
-        "contentHash": "a910339cc0e11c742e48787b3c9fe761170c43be72b8b093adcd7b93679fe735",
+        "contentHash": "cc673b184a194e84d21ae1a940757e294905e83a02a3534ee175717ba31efbeb",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2565,6 +2610,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2587,16 +2633,16 @@
       "questionId": "13db9a1e91c27f3f1a174ba0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:13db9a1e91c27f3f1a174ba0:content-v2",
       "questionVersionId": "13db9a1e91c27f3f1a174ba0:content-v2:blind-revalidation",
-      "contentHash": "d046cfa9413354bed511f299b0d5939fceb7669d35092250c1294f64374a9d80",
+      "contentHash": "e913b9610ee5035f48df421b8bcff82da43005d2b26335fdd7e7e4ee3f0c3aeb",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Memahami Fungsi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan dengan cermat terhadap aturan kata sandi berikut ini A B C D E F G H I J K L M N O P Q R S T U V W X Y Z q w e r t y u i o p a s d f g h j k l z x c v b n m.\n\nApa makna pesan dari kata sandi berikut ini: gkqfu zxqax qrqsqi uxkxax atzoaq ro kxdqi\nPilihan: A. ORANG TUAKU ADALAH GURUKU KETIKA DI RUMAH\nB. GURUKU ADALAH ORANG TUAKU KETIKA DI RUMAH\nC. ORANG TUAKU BUKAN GURUKU KETIKA DI RUMAH\nD. ORANG TUAKU ADALAH GURUKU KETIKA DI SEKOLAH\nTranskripsi visual: -",
       "untruncatedTokenCount": 169,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.251,
+      "latencyMs": 0.069,
       "prediction": {
         "questionId": "13db9a1e91c27f3f1a174ba0",
         "contentVersion": 2,
-        "contentHash": "d046cfa9413354bed511f299b0d5939fceb7669d35092250c1294f64374a9d80",
+        "contentHash": "e913b9610ee5035f48df421b8bcff82da43005d2b26335fdd7e7e4ee3f0c3aeb",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2629,6 +2675,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2651,16 +2698,16 @@
       "questionId": "72d9df20cc708f4143b713d0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:72d9df20cc708f4143b713d0:content-v2",
       "questionVersionId": "72d9df20cc708f4143b713d0:content-v2:blind-revalidation",
-      "contentHash": "c1adca743952511d44cb6612ea9b787530f44b9d8b90ec0ef8798e935885a1c6",
+      "contentHash": "f3719b263f16b4ade57f0a02fad1475ae7978266a65425527b4da46432e0f92a",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Korespondensi Satu-satu (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apabila diketahui banyak anggota dua himpunan seperti berikut ini, maka ada berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B? a. n(A) = n(B) = 12\n\nAda berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B jika n(A) = n(B) = 12?\nPilihan: A. 12 + 11 + 10 + ... + 2 + 1 = 78\nB. 12\nC. 12! = 479.001.600\nD. 12 x 12 = 144\nTranskripsi visual: -",
       "untruncatedTokenCount": 151,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.113,
+      "latencyMs": 0.072,
       "prediction": {
         "questionId": "72d9df20cc708f4143b713d0",
         "contentVersion": 2,
-        "contentHash": "c1adca743952511d44cb6612ea9b787530f44b9d8b90ec0ef8798e935885a1c6",
+        "contentHash": "f3719b263f16b4ade57f0a02fad1475ae7978266a65425527b4da46432e0f92a",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2693,6 +2740,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2715,16 +2763,16 @@
       "questionId": "bbdde7d74cc90e271efac7fa",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:bbdde7d74cc90e271efac7fa:content-v2",
       "questionVersionId": "bbdde7d74cc90e271efac7fa:content-v2:blind-revalidation",
-      "contentHash": "c9bb66f91efd31e2202f2b9d3c568e8d3b29344f56613ee64d4c377d5abc8d6b",
+      "contentHash": "d1f5724b21c43acc77a0eba1360825ce103df36e2c7fdbbfc035e9c74ce7d23b",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Korespondensi Satu-satu (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apabila diketahui banyak anggota dua himpunan seperti berikut ini, maka ada berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B? b. n(A) = n(B) = 9\n\nAda berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B jika n(A) = n(B) = 9?\nPilihan: A. 9 + 8 + 7 + ... + 2 + 1 = 45\nB. 9! = 362.880\nC. 9\nD. 9 x 9 = 81\nTranskripsi visual: -",
       "untruncatedTokenCount": 150,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.158,
+      "latencyMs": 0.072,
       "prediction": {
         "questionId": "bbdde7d74cc90e271efac7fa",
         "contentVersion": 2,
-        "contentHash": "c9bb66f91efd31e2202f2b9d3c568e8d3b29344f56613ee64d4c377d5abc8d6b",
+        "contentHash": "d1f5724b21c43acc77a0eba1360825ce103df36e2c7fdbbfc035e9c74ce7d23b",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2757,6 +2805,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2779,16 +2828,16 @@
       "questionId": "4facb7c0ab4ee644d3112751",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:4facb7c0ab4ee644d3112751:content-v2",
       "questionVersionId": "4facb7c0ab4ee644d3112751:content-v2:blind-revalidation",
-      "contentHash": "417eb413f4b03d19e84cb9f2414689f8111440158003fcaff7d95da6f58cf6b0",
+      "contentHash": "f2f4db5d879c211bd0dfa28f16ffc7650a27d2be5e70dad93199243ce76a4d32",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Grafik Persamaan Garis Lurus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Manakah dari persamaan berikut yang dapat ditafsirkan sebagai persamaan garis lurus?\nPilihan: A. $y^2 + x^2 = 25$\nB. $x^2 + 3y = 7$\nC. $x + 2y = 0$\nD. $\\frac{y}{3x} + 3x = 9$\nTranskripsi visual: -",
       "untruncatedTokenCount": 102,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.313,
+      "latencyMs": 0.063,
       "prediction": {
         "questionId": "4facb7c0ab4ee644d3112751",
         "contentVersion": 2,
-        "contentHash": "417eb413f4b03d19e84cb9f2414689f8111440158003fcaff7d95da6f58cf6b0",
+        "contentHash": "f2f4db5d879c211bd0dfa28f16ffc7650a27d2be5e70dad93199243ce76a4d32",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2821,6 +2870,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2843,16 +2893,16 @@
       "questionId": "0ca950fcf46ff904f0263642",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:0ca950fcf46ff904f0263642:content-v2",
       "questionVersionId": "0ca950fcf46ff904f0263642:content-v2:blind-revalidation",
-      "contentHash": "8f6e21f5f159a94c28beea460b2789b8e8014d88040c9befd7a9e1196765826c",
+      "contentHash": "0fac64c5de058693be1a6691aaf23af5e1d6fd8084684d5ba990113b1c6dac89",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Grafik Persamaan Garis Lurus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Hargai bahwa setiap titik pada garis harus memenuhi persamaan yang sesuai dan digunakan untuk menentukan nilai y dari nilai x, atau sebaliknya. Sehingga, apabila suatu garis lurus persamaannya adalah y = 2 x - 3.\n\nTitik p terletak pada garis lurus tersebut dan koordinat y dari p adalah 4, maka carilah koordinat x dari p.\nPilihan: A. x = 3,5 (atau 7/2)\nB. x = 5\nC. x = 2\nD. x = 0,5\nTranskripsi visual: -",
       "untruncatedTokenCount": 128,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.164,
+      "latencyMs": 0.068,
       "prediction": {
         "questionId": "0ca950fcf46ff904f0263642",
         "contentVersion": 2,
-        "contentHash": "8f6e21f5f159a94c28beea460b2789b8e8014d88040c9befd7a9e1196765826c",
+        "contentHash": "0fac64c5de058693be1a6691aaf23af5e1d6fd8084684d5ba990113b1c6dac89",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2885,6 +2935,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2907,16 +2958,16 @@
       "questionId": "6d6cb72cedbdc46857aa2701",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:6d6cb72cedbdc46857aa2701:content-v2",
       "questionVersionId": "6d6cb72cedbdc46857aa2701:content-v2:blind-revalidation",
-      "contentHash": "2a00e663bb341428f40c1f4e9ea23103609a3e29680041d5ae09c17a3c94abf7",
+      "contentHash": "b9c308aeda23f1bf31e9c543e2199ea69610ec8c85c8b22318095f02d36be1dc",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Pengertian Kemiringan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Titik P(2,-1) dan R(6,2) merupakan titik sudut yang berhadapan pada sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat, maka persamaan garis yang melalui titik Q dan S adalah ....\nPilihan: A. 3x + 4y - 14 = 0\nB. 4x - 3y + 14 = 0\nC. 3x - 4y + 33 = 0\nD. 4x + 3y - 14 = 0\nTranskripsi visual: -",
       "untruncatedTokenCount": 127,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.239,
+      "latencyMs": 0.066,
       "prediction": {
         "questionId": "6d6cb72cedbdc46857aa2701",
         "contentVersion": 2,
-        "contentHash": "2a00e663bb341428f40c1f4e9ea23103609a3e29680041d5ae09c17a3c94abf7",
+        "contentHash": "b9c308aeda23f1bf31e9c543e2199ea69610ec8c85c8b22318095f02d36be1dc",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2949,6 +3000,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2976,7 +3028,7 @@
       "untruncatedTokenCount": 132,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.204,
+      "latencyMs": 0.097,
       "prediction": {
         "questionId": "d5711f5a3f145c11f3394792",
         "contentVersion": 2,
@@ -3013,6 +3065,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3035,16 +3088,16 @@
       "questionId": "bc70cacaad85275414d879e3",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:bc70cacaad85275414d879e3:content-v2",
       "questionVersionId": "bc70cacaad85275414d879e3:content-v2:blind-revalidation",
-      "contentHash": "2e31adfe41e140626bc7b31925a74f5c98327c7a90c9d6678d1a8492557bf9ed",
+      "contentHash": "fbc2df27e24d5f72ab51e05c0d9643ebb2243e3c74a15136e4961d5180f0152e",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Pemusatan Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Rata-rata tinggi 12 anak adalah 166 cm. Setelah ditambah 6 anak, rata-rata tingginya menjadi 167 cm. Berapa rata-rata tinggi 6 anak?\nPilihan: A. 169 cm\nB. 166,5 cm\nC. 84,5 cm\nD. 167 cm\nTranskripsi visual: -",
       "untruncatedTokenCount": 86,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.201,
+      "latencyMs": 0.072,
       "prediction": {
         "questionId": "bc70cacaad85275414d879e3",
         "contentVersion": 2,
-        "contentHash": "2e31adfe41e140626bc7b31925a74f5c98327c7a90c9d6678d1a8492557bf9ed",
+        "contentHash": "fbc2df27e24d5f72ab51e05c0d9643ebb2243e3c74a15136e4961d5180f0152e",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3077,6 +3130,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3099,16 +3153,16 @@
       "questionId": "962364d9c3511c0598f13509",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:962364d9c3511c0598f13509:content-v2",
       "questionVersionId": "962364d9c3511c0598f13509:content-v2:blind-revalidation",
-      "contentHash": "3d670c046d94fab01fe00e814329d7436a627e625c83ad500dc0835d1662fa20",
+      "contentHash": "6bb130b8d3e25ce0e8ac95ef31e831d7be027ac8af444275dedba683da1336ae",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Pemusatan Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Rata-rata berat badan 9 anak adalah 56 kg, jika berat badan Domi dimasukkan dalam hitungan tersebut, rata-ratanya menjadi 56,7. Tentukan berat badan Doni.\nPilihan: A. 7 kg\nB. 63 kg\nC. 56,7 kg\nD. 6,3 kg\nTranskripsi visual: -",
       "untruncatedTokenCount": 90,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.315,
+      "latencyMs": 0.066,
       "prediction": {
         "questionId": "962364d9c3511c0598f13509",
         "contentVersion": 2,
-        "contentHash": "3d670c046d94fab01fe00e814329d7436a627e625c83ad500dc0835d1662fa20",
+        "contentHash": "6bb130b8d3e25ce0e8ac95ef31e831d7be027ac8af444275dedba683da1336ae",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3141,6 +3195,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3163,16 +3218,16 @@
       "questionId": "49d68d1b46c35ead12cca547",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:49d68d1b46c35ead12cca547:content-v2",
       "questionVersionId": "49d68d1b46c35ead12cca547:content-v2:blind-revalidation",
-      "contentHash": "fe6dca80972658e481681f169b408b6e2fc90a5d0ba904e7354418f65e22d5fd",
+      "contentHash": "0bca2179124122b4e4e9dea41da181b7fdb604b15cfab36197489aa0ad0d76ee",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Penyebaran Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.\n\n50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65\nPilihan: A. Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 15\nB. Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5\nC. Q1 = 65; Q2 = 70,4; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5\nD. Q1 = 80; Q2 = 67,5; Q3 = 65; jangkauan kuartil = 15; simpangan kuartil = 7,5\nTranskripsi visual: -",
       "untruncatedTokenCount": 210,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.133,
+      "latencyMs": 0.076,
       "prediction": {
         "questionId": "49d68d1b46c35ead12cca547",
         "contentVersion": 2,
-        "contentHash": "fe6dca80972658e481681f169b408b6e2fc90a5d0ba904e7354418f65e22d5fd",
+        "contentHash": "0bca2179124122b4e4e9dea41da181b7fdb604b15cfab36197489aa0ad0d76ee",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3205,6 +3260,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3227,16 +3283,16 @@
       "questionId": "2638edf211f383d8d9b95e05",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:2638edf211f383d8d9b95e05:content-v2",
       "questionVersionId": "2638edf211f383d8d9b95e05:content-v2:blind-revalidation",
-      "contentHash": "667a6240de4f388eb1d8987e5ec28998b6df2adcdffcf193124072c4e0ff03d2",
+      "contentHash": "a5f4c9d7a50b3f2f62e8ec503e20395f9481ef105fe4e489ae6bdea12665f546",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Penyebaran Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.\n\n3, 6, 4, 4, 8, 7, 8, 9, 4, 5, 6, 6\nPilihan: A. Q1 = 7,5; Q2 = 6; Q3 = 4; jangkauan kuartil = 3,5; simpangan kuartil = 1,75\nB. Q1 = 4; Q2 = 5,83; Q3 = 7,5; jangkauan kuartil = 3,5; simpangan kuartil = 1,75\nC. Q1 = 4; Q2 = 6; Q3 = 7,5; jangkauan kuartil = 3,5; simpangan kuartil = 1,75\nD. Q1 = 4; Q2 = 6; Q3 = 7,5; jangkauan kuartil = 3,5; simpangan kuartil = 3,5\nTranskripsi visual: -",
       "untruncatedTokenCount": 219,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.183,
+      "latencyMs": 0.073,
       "prediction": {
         "questionId": "2638edf211f383d8d9b95e05",
         "contentVersion": 2,
-        "contentHash": "667a6240de4f388eb1d8987e5ec28998b6df2adcdffcf193124072c4e0ff03d2",
+        "contentHash": "a5f4c9d7a50b3f2f62e8ec503e20395f9481ef105fe4e489ae6bdea12665f546",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3269,6 +3325,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3291,16 +3348,16 @@
       "questionId": "e8a6fabcd6f67b1be8f8ad7f",
       "diagnosticInferenceQuestionId": "diagnostic:kelas8:e8a6fabcd6f67b1be8f8ad7f:content-v2",
       "questionVersionId": "e8a6fabcd6f67b1be8f8ad7f:content-v2:blind-revalidation",
-      "contentHash": "19261af372960cd079eb1a3d8e72c111c50e2139e31309c7dffc21dd7a430a9b",
+      "contentHash": "a9d034acf455d34f108a35b845f34a5778b77a6a6275cb6eeb946f815d0cd810",
       "serializedInput": "Kelas: 8\nTopik: Matematika SMP Kelas 8\nSubtopik: Memilih Diagram yang Tepat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berikut data tingkat suku bunga deposito untuk jangka waktu 12 bulan di beberapa bank di Indonesia per tanggal 9 Maret 2022. Tingkat suku bunga selalu dinyatakan dalam persen.\n\nTabel 6.11 Tingkat Suku Bunga Deposito Jangka 12 Bulan\n\n| Nama Bank | Tingkat Suku Bunga Deposito |\n|---|---|\n| Bank Mandiri | 2,50 % |\n| BNI 1946 | 2,50 % |\n| BRI | 2,50 % |\n| BCA | 1,90 % |\n| Bank Maspion | 4,75 % |\n\nWalaupun data di atas berbentuk persen, kalian tidak dapat menggunakan diagram lingkaran untuk merepresentasikan data di atas. Mengapa demikian? Jelaskan.\nPilihan: A. Karena suku bunga berupa bilangan desimal yang tidak dapat diubah menjadi sudut\nB. Karena persen suku bunga tiap bank bukan bagian dari satu keseluruhan (jumlahnya tidak 100%)\nC. Karena beberapa bank memiliki suku bunga yang sama sehingga juringnya bertumpuk\nD. Karena banyaknya bank lebih dari 4 sehingga lingkaran tidak dapat dibagi\nTranskripsi visual: -",
       "untruncatedTokenCount": 229,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.139,
+      "latencyMs": 0.088,
       "prediction": {
         "questionId": "e8a6fabcd6f67b1be8f8ad7f",
         "contentVersion": 2,
-        "contentHash": "19261af372960cd079eb1a3d8e72c111c50e2139e31309c7dffc21dd7a430a9b",
+        "contentHash": "a9d034acf455d34f108a35b845f34a5778b77a6a6275cb6eeb946f815d0cd810",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3333,6 +3390,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],

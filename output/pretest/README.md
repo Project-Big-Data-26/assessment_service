@@ -2,9 +2,9 @@
 
 Laporan aktif mencakup **580 soal** reguler kelas 1-12 dan TL kelas 11-12: **1,740/1,740 run awal sukses**, **0 adjudikasi tertunda**. Label operasional memakai `ai_silver` tanpa persetujuan pelabel manusia.
 
-**566 soal silver_ready**, **13 soal revision_required**, **1 soal needs_ai_review**. Soal yang memerlukan revisi atau penilaian ulang ditahan dari snapshot delivery.
+**562 soal silver_ready**, **17 soal revision_required**, **1 soal needs_ai_review**. Soal yang memerlukan revisi atau penilaian ulang ditahan dari snapshot delivery.
 
-Label kesulitan seluruh soal: **412 Easy, 160 Medium, 6 Hard, 2 undecided**.
+Label kesulitan seluruh soal: **420 Easy, 153 Medium, 5 Hard, 2 undecided**.
 
 | Kelas | Soal | Run sukses | Easy | Medium | Hard | Silver siap | Revisi | AI review |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -14,9 +14,9 @@ Label kesulitan seluruh soal: **412 Easy, 160 Medium, 6 Hard, 2 undecided**.
 | [kelas4](kelas4/hasil_validasi/README.md) | 18 | 54 | 15 | 3 | 0 | 18 | 0 | 0 |
 | [kelas5](kelas5/hasil_validasi/README.md) | 72 | 216 | 47 | 21 | 2 | 67 | 4 | 1 |
 | [kelas6](kelas6/hasil_validasi/README.md) | 25 | 75 | 16 | 9 | 0 | 25 | 0 | 0 |
-| [kelas7](kelas7/hasil_validasi/README.md) | 49 | 147 | 28 | 20 | 1 | 49 | 0 | 0 |
-| [kelas8](kelas8/hasil_validasi/README.md) | 42 | 126 | 24 | 17 | 1 | 42 | 0 | 0 |
-| [kelas9](kelas9/hasil_validasi/README.md) | 42 | 126 | 28 | 14 | 0 | 41 | 1 | 0 |
+| [kelas7](kelas7/hasil_validasi/README.md) | 49 | 147 | 32 | 16 | 1 | 48 | 1 | 0 |
+| [kelas8](kelas8/hasil_validasi/README.md) | 42 | 126 | 26 | 16 | 0 | 41 | 1 | 0 |
+| [kelas9](kelas9/hasil_validasi/README.md) | 42 | 126 | 30 | 12 | 0 | 39 | 3 | 0 |
 | [kelas10](kelas10/hasil_validasi/README.md) | 46 | 138 | 29 | 17 | 0 | 46 | 0 | 0 |
 | [kelas11](kelas11/hasil_validasi/README.md) | 22 | 66 | 15 | 6 | 1 | 21 | 1 | 0 |
 | [kelas11_tl](kelas11_tl/hasil_validasi/README.md) | 55 | 165 | 44 | 11 | 0 | 54 | 1 | 0 |

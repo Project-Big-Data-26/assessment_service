@@ -1,0 +1,3412 @@
+{
+  "schemaVersion": "indobert-blind-diagnostics-v1",
+  "createdAt": "2026-10-04T21:41:32.943089+00:00",
+  "researchOnlyRun": true,
+  "reviewRequired": true,
+  "blindDecisionLockedAt": "2026-10-04T21:41:21.680770+00:00",
+  "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
+  "model": {
+    "artifactFormatVersion": "indobert-3x4x3-artifact-v1",
+    "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+    "createdAt": "2026-09-28T20:00:29.167831+00:00",
+    "baseModel": "indobenchmark/indobert-base-p1",
+    "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+    "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+    "datasetHash": "8a41381aa7e3fdb4e21617b9091e6747d29e5bd3f01e3c992ce9895b823f35c1",
+    "splitManifestHash": "681c8a0a6afea9d23b71e1f315543751ebb259645c01f10a4db3fd2d90b634df",
+    "rubricVersion": "math-rubric-3x4x3-v1",
+    "rubricVersionsByGradeTrack": {},
+    "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+    "inputSchemaVersion": "math-question-text-v1",
+    "inputRepresentation": "metadata",
+    "architectureVersion": "parallel-v1",
+    "detachDifficultyConditioning": true,
+    "difficultyHeadType": "multiclass",
+    "gradeEmbeddingDimension": 0,
+    "gradeEmbeddingCount": 6,
+    "supportedGrades": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supportedSubjectTracks": [
+      "regular"
+    ],
+    "routingPolicyVersion": "confidence-only-v1",
+    "labels": {
+      "mathCognitiveDomain": [
+        "knowing",
+        "applying",
+        "reasoning"
+      ],
+      "knowledgeDimension": [
+        "factual",
+        "conceptual",
+        "procedural",
+        "metacognitive"
+      ],
+      "intendedDifficulty": [
+        "Easy",
+        "Medium",
+        "Hard"
+      ]
+    },
+    "calibration": {
+      "mathCognitiveDomain": {
+        "temperature": 0.05,
+        "confidenceThreshold": 0.0,
+        "entropyThreshold": null,
+        "perGrade": {},
+        "perGradeTrack": {}
+      },
+      "knowledgeDimension": {
+        "temperature": 0.20979985858964298,
+        "confidenceThreshold": null,
+        "entropyThreshold": null,
+        "perGrade": {},
+        "perGradeTrack": {}
+      },
+      "intendedDifficulty": {
+        "temperature": 0.9533279648066687,
+        "confidenceThreshold": 0.0,
+        "entropyThreshold": null,
+        "perGrade": {},
+        "perGradeTrack": {}
+      }
+    },
+    "maxLength": 256,
+    "loraRank": 8,
+    "files": {
+      "heads.safetensors": "2132dd6e49ce124c52287afec65f7c92a7cecf948c9af02fad76fe4437e9122b",
+      "adapter/adapter_config.json": "ca129a9e7cadb708d860d35d6ce8db1442f291485bd0bfcbf755b6a1f047478c",
+      "adapter/adapter_model.safetensors": "7fd4975e5c599e0b2bff865836964822fc9dbb0ad685e60776048c620eab8ed8",
+      "adapter/README.md": "d25eb7a292cc74330f9f3dd9a701f8e44d68d5ba33ee0d4023c21035d63ef747",
+      "base_model/config.json": "351f0eec3f7ed95d24c7d7ba6f6e9f5ef813ba585af175fd5c9418c94319ee9c",
+      "base_model/model.safetensors": "7ab790f1b029e78a13498b1a50702f0066c27e85769daa31ba385d9d9daae092",
+      "reports/reliability-intendedDifficulty.png": "c0f27d2850994b9c3105b03c966d42215c168a38b523e06ac4ea4d8cb0b7afdf",
+      "reports/reliability-knowledgeDimension.png": "0eabada5a2b99abd1bc4571bfd8310d5b33f5c061919bedc3c998c352a274739",
+      "reports/reliability-mathCognitiveDomain.png": "36feed7c894bb7a4f0c9e900b3cadafbc7f5846359fd4c48198bc3a325fd69f1",
+      "tokenizer/tokenizer.json": "11a3382bc3f2e408398c6d021e08a6e2228589e049171bd4c6e509521c341ee4",
+      "tokenizer/tokenizer_config.json": "81d76ff64c6837a77a26739668e51d61831f35d35e8a7043673b2c614a43c982"
+    },
+    "metrics": {
+      "validation": {
+        "mathCognitiveDomain": {
+          "knowing": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "applying": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "reasoning": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6666666666666666,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 7.0
+          },
+          "confusionMatrix": [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "knowledgeDimension": {
+          "factual": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6666666666666666,
+            "support": 3.0
+          },
+          "conceptual": {
+            "precision": 0.75,
+            "recall": 0.75,
+            "f1-score": 0.75,
+            "support": 4.0
+          },
+          "procedural": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "metacognitive": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 0.7142857142857143,
+          "macro avg": {
+            "precision": 0.35416666666666663,
+            "recall": 0.35416666666666663,
+            "f1-score": 0.35416666666666663,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.7142857142857143,
+            "recall": 0.7142857142857143,
+            "f1-score": 0.7142857142857143,
+            "support": 7.0
+          },
+          "confusionMatrix": [
+            [
+              2,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "intendedDifficulty": {
+          "Easy": {
+            "precision": 0.8571428571428571,
+            "recall": 1.0,
+            "f1-score": 0.9230769230769231,
+            "support": 6.0
+          },
+          "Medium": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "Hard": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 0.8571428571428571,
+          "macro avg": {
+            "precision": 0.2857142857142857,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3076923076923077,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.7346938775510203,
+            "recall": 0.8571428571428571,
+            "f1-score": 0.7912087912087912,
+            "support": 7.0
+          },
+          "confusionMatrix": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "trainingHistory": [
+          {
+            "epoch": 0,
+            "trainingLoss": 3.399817188580831,
+            "validationMeanMacroF1": 0.3205775705775706,
+            "seconds": 11.017980599994189
+          },
+          {
+            "epoch": 1,
+            "trainingLoss": 2.375427563985189,
+            "validationMeanMacroF1": 0.2816886816886817,
+            "seconds": 10.48932199999399
+          },
+          {
+            "epoch": 2,
+            "trainingLoss": 2.12866120868259,
+            "validationMeanMacroF1": 0.3683048433048433,
+            "seconds": 10.221215600002324
+          },
+          {
+            "epoch": 3,
+            "trainingLoss": 2.0961578157213,
+            "validationMeanMacroF1": 0.4428418803418803,
+            "seconds": 10.479732700012391
+          },
+          {
+            "epoch": 4,
+            "trainingLoss": 2.092327356338501,
+            "validationMeanMacroF1": 0.4428418803418803,
+            "seconds": 10.517899699989357
+          },
+          {
+            "epoch": 5,
+            "trainingLoss": 1.9487591783205669,
+            "validationMeanMacroF1": 0.38545651878985215,
+            "seconds": 10.426200499990955
+          }
+        ],
+        "meanMacroF1": 0.4428418803418803
+      },
+      "calibration": {
+        "mathCognitiveDomain": {
+          "temperature": 0.05,
+          "nllBefore": 0.5604614134746388,
+          "nllAfter": 0.0434861348191148,
+          "brier": 0.013467247450181926,
+          "ece": 0.039572424849240666,
+          "reliabilityBins": [
+            {
+              "lower": 0.0,
+              "upper": 0.06666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.06666666666666667,
+              "upper": 0.13333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.13333333333333333,
+              "upper": 0.2,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.26666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.26666666666666666,
+              "upper": 0.3333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.3333333333333333,
+              "upper": 0.4,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.4666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4666666666666667,
+              "upper": 0.5333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.5333333333333333,
+              "upper": 0.6,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.6666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6666666666666666,
+              "upper": 0.7333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.7333333333333333,
+              "upper": 0.8,
+              "count": 1,
+              "meanConfidence": 0.7876759564367969,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.8666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.8666666666666667,
+              "upper": 0.9333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.9333333333333333,
+              "upper": 1.0,
+              "count": 6,
+              "meanConfidence": 0.9892195116030864,
+              "accuracy": 1.0
+            }
+          ],
+          "selectiveThreshold": 0.0
+        },
+        "knowledgeDimension": {
+          "temperature": 0.20979985858964298,
+          "nllBefore": 0.824072269022019,
+          "nllAfter": 0.5547382181342851,
+          "brier": 0.384840873863088,
+          "ece": 0.3630052657565072,
+          "reliabilityBins": [
+            {
+              "lower": 0.0,
+              "upper": 0.06666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.06666666666666667,
+              "upper": 0.13333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.13333333333333333,
+              "upper": 0.2,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.26666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.26666666666666666,
+              "upper": 0.3333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.3333333333333333,
+              "upper": 0.4,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.4666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4666666666666667,
+              "upper": 0.5333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.5333333333333333,
+              "upper": 0.6,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.6666666666666666,
+              "count": 2,
+              "meanConfidence": 0.6454620374468271,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.6666666666666666,
+              "upper": 0.7333333333333333,
+              "count": 2,
+              "meanConfidence": 0.7151735883715677,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.7333333333333333,
+              "upper": 0.8,
+              "count": 1,
+              "meanConfidence": 0.7358779847147356,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.8666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.8666666666666667,
+              "upper": 0.9333333333333333,
+              "count": 1,
+              "meanConfidence": 0.8815996231039566,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.9333333333333333,
+              "upper": 1.0,
+              "count": 1,
+              "meanConfidence": 0.9809086337352385,
+              "accuracy": 1.0
+            }
+          ],
+          "selectiveThreshold": null
+        },
+        "intendedDifficulty": {
+          "temperature": 0.9533279648066687,
+          "nllBefore": 0.38385543706616715,
+          "nllAfter": 0.3833844046929877,
+          "brier": 0.23268309793845401,
+          "ece": 0.17050577890441565,
+          "reliabilityBins": [
+            {
+              "lower": 0.0,
+              "upper": 0.06666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.06666666666666667,
+              "upper": 0.13333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.13333333333333333,
+              "upper": 0.2,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.26666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.26666666666666666,
+              "upper": 0.3333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.3333333333333333,
+              "upper": 0.4,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.4666666666666667,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4666666666666667,
+              "upper": 0.5333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.5333333333333333,
+              "upper": 0.6,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.6666666666666666,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6666666666666666,
+              "upper": 0.7333333333333333,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.7333333333333333,
+              "upper": 0.8,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.8666666666666667,
+              "count": 2,
+              "meanConfidence": 0.8333221195632852,
+              "accuracy": 0.5
+            },
+            {
+              "lower": 0.8666666666666667,
+              "upper": 0.9333333333333333,
+              "count": 5,
+              "meanConfidence": 0.8946207573591322,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.9333333333333333,
+              "upper": 1.0,
+              "count": 0,
+              "meanConfidence": 0.0,
+              "accuracy": 0.0
+            }
+          ],
+          "selectiveThreshold": 0.0
+        }
+      }
+    },
+    "promotionGates": {
+      "macroF1Head1And2": 0.7,
+      "macroF1Head3": 0.65,
+      "perClassF1": 0.5,
+      "eceEachHead": 0.1,
+      "selectiveAccuracy": 0.8,
+      "minimumCoverage": 0.7
+    },
+    "approvedForProvisional": false,
+    "researchOnly": false,
+    "dataGatesPassed": false,
+    "antiCollapsePassed": false,
+    "promptVersion": null,
+    "labelProvenance": "unknown",
+    "gitCommit": "42647a4d8557f5c3c03675dfb1033416805eb58b"
+  },
+  "summary": {
+    "itemCount": 42,
+    "predictionDistribution": {
+      "mathCognitiveDomain": {
+        "abstain": 42
+      },
+      "knowledgeDimension": {
+        "abstain": 42
+      },
+      "intendedDifficulty": {
+        "abstain": 42
+      }
+    }
+  },
+  "items": [
+    {
+      "index": 1,
+      "questionId": "8af0a2ca82017a432c92902d",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:8af0a2ca82017a432c92902d:content-v2",
+      "questionVersionId": "8af0a2ca82017a432c92902d:content-v2:blind-revalidation",
+      "contentHash": "39d20e6d5685b89f46821fc6c55f2511f009c5135dd83bf8cba40c2f29a3388e",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui keliling sebuah segitiga sama kaki adalah 48 cm. Tentukan model matematika yang menghubungkan antara keliling dan panjang sisi segitiga tersebut.\nPilihan: A. $x + y = 48$\nB. $2x + y = 48$\nC. $x + 2y = 48$\nD. $2x + 2y = 48$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 99,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 1.196,
+      "prediction": {
+        "questionId": "8af0a2ca82017a432c92902d",
+        "contentVersion": 2,
+        "contentHash": "39d20e6d5685b89f46821fc6c55f2511f009c5135dd83bf8cba40c2f29a3388e",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "88ae2211806d0464907ad00473e7406c2775f0c789e9822675da5cbfaf714c8a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "questionId": "e7003333bef697d763016f2e",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:e7003333bef697d763016f2e:content-v2",
+      "questionVersionId": "e7003333bef697d763016f2e:content-v2:blind-revalidation",
+      "contentHash": "d2a55c17dfc8b96a39009a1e9dae7becfb990f0973bc8526bc9c789ccdcb1abc",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel.\n\nDiketahui harga tiket film di suatu bioskop Rp35.000,00. y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual.\nPilihan: A. $y = \\frac{x}{35.000}$\nB. $y = 35.000x$\nC. $x = 35.000y$\nD. $y = 35.000 + x$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 123,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.146,
+      "prediction": {
+        "questionId": "e7003333bef697d763016f2e",
+        "contentVersion": 2,
+        "contentHash": "d2a55c17dfc8b96a39009a1e9dae7becfb990f0973bc8526bc9c789ccdcb1abc",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "7746a002ea45f657556de41d3fbb3ecce286ab4c65941f8de3255f0f6542a34a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "questionId": "0b4b98faa7f553833f0db971",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:0b4b98faa7f553833f0db971:content-v2",
+      "questionVersionId": "0b4b98faa7f553833f0db971:content-v2:blind-revalidation",
+      "contentHash": "b87a6b3205cfa0b817151e4ef257a562b7268e2f9806ffd0b0fcf2b5e0b199c4",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Sistem Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu toko alat lukis menjual 40 kuas lukis. Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.\n\nJika uang yang didapat oleh toko tersebut Rp1.103.000,00, maka berapa banyak masing-masing jenis kuas lukis yang terjual?\nPilihan: A. 27 kuas lukis jenis I dan 13 kuas lukis jenis II\nB. 20 kuas lukis jenis I dan 20 kuas lukis jenis II\nC. 13 kuas lukis jenis I dan 27 kuas lukis jenis II\nD. 15 kuas lukis jenis I dan 25 kuas lukis jenis II\nTranskripsi visual: -",
+      "untruncatedTokenCount": 150,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.134,
+      "prediction": {
+        "questionId": "0b4b98faa7f553833f0db971",
+        "contentVersion": 2,
+        "contentHash": "b87a6b3205cfa0b817151e4ef257a562b7268e2f9806ffd0b0fcf2b5e0b199c4",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "5ee29435ab5ea26cc44ec85d14b46d3cac5cd98d1303671d68dab5a9c66f2b70",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "questionId": "a4219a3c217e0979ca28b57e",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:a4219a3c217e0979ca28b57e:content-v2",
+      "questionVersionId": "a4219a3c217e0979ca28b57e:content-v2:blind-revalidation",
+      "contentHash": "5a0a3e7cae6cfbb3ecf1c0af78c317160d6d4ad45886cb474ba94325565aafde",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Sistem Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Wayan pergi ke toko kue tradisional untuk membeli kue basung (kue yang berasal dari Sumatera Barat) dan kue mendut (kue yang berasal dari Jawa Tengah). Dia membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00. Di toko yang sama, Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00.\n\nBerapa harga tiga kue mendut dan tujuh kue basung?\nPilihan: A. Rp42.000,00\nB. Rp34.500,00\nC. Rp37.500,00\nD. Rp40.500,00\nTranskripsi visual: -",
+      "untruncatedTokenCount": 160,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.11,
+      "prediction": {
+        "questionId": "a4219a3c217e0979ca28b57e",
+        "contentVersion": 2,
+        "contentHash": "5a0a3e7cae6cfbb3ecf1c0af78c317160d6d4ad45886cb474ba94325565aafde",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "5cf947963d5227ae32ed40e0d6462d8e61b6c81d01b8ba3796eebd4a5e31bbd2",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "questionId": "4b2524b8440c37d72e127b02",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:4b2524b8440c37d72e127b02:content-v2",
+      "questionVersionId": "4b2524b8440c37d72e127b02:content-v2:blind-revalidation",
+      "contentHash": "61ae3c8f5be0f920428c60ce7233ac238c73fe68eeb7cd678ed1c48d0f6db730",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Menyelesaikan Masalah terkait Pertidaksamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg. Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.\n\nJika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?\nPilihan: A. 9,45 kali pengangkutan\nB. 10 kali pengangkutan\nC. 9 kali pengangkutan\nD. 11 kali pengangkutan\nTranskripsi visual: -",
+      "untruncatedTokenCount": 123,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.115,
+      "prediction": {
+        "questionId": "4b2524b8440c37d72e127b02",
+        "contentVersion": 2,
+        "contentHash": "61ae3c8f5be0f920428c60ce7233ac238c73fe68eeb7cd678ed1c48d0f6db730",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "83b86e7aed650db237164ee37da25398dd73da1567b328f3974c6e524d77213e",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "questionId": "6d6cb72cedbdc46857aa2701",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:6d6cb72cedbdc46857aa2701:content-v2",
+      "questionVersionId": "6d6cb72cedbdc46857aa2701:content-v2:blind-revalidation",
+      "contentHash": "4a9d31abca3ef846caf7f6bf020d8fc7b3339b7549e13c8650257ebd542f4237",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Pengertian Kemiringan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Titik P(2,-1) dan R(6,2) merupakan titik sudut yang berhadapan pada sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat, maka persamaan garis yang melalui titik Q dan S adalah ....\nPilihan: A. 4x + 3y - 14 = 0\nB. 3x + 4y - 14 = 0\nC. 4x - 3y + 14 = 0\nD. 3x - 4y + 33 = 0\nTranskripsi visual: -",
+      "untruncatedTokenCount": 127,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.104,
+      "prediction": {
+        "questionId": "6d6cb72cedbdc46857aa2701",
+        "contentVersion": 2,
+        "contentHash": "4a9d31abca3ef846caf7f6bf020d8fc7b3339b7549e13c8650257ebd542f4237",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "db35732cca6b4b3d38d9f9e08b3297f29d996b4541c8438df6d56643b095bd4a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "questionId": "d0b943d7f97005ee05dfe7b2",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:d0b943d7f97005ee05dfe7b2:content-v2",
+      "questionVersionId": "d0b943d7f97005ee05dfe7b2:content-v2:blind-revalidation",
+      "contentHash": "a7699d91cdc2bb8c87fed17a02495556854265c0fdaf887aec8a6b0ea940c598",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Klasifikasi Bangun Ruang dan Jaring-Jaring\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dapatkah kita membuat jaring-jaring bangun ruang bola?\nPilihan: A. Hanya kerucut dan tabung yang bisa dibuat jaring-jaringnya, bola tidak\nB. Tidak, sama sekali tidak mungkin dibuat\nC. Ya, tetapi hasilnya selalu berbentuk persegi panjang\nD. Ya, jaring-jaring bangun ruang bola dapat dibuat\nTranskripsi visual: -",
+      "untruncatedTokenCount": 96,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.094,
+      "prediction": {
+        "questionId": "d0b943d7f97005ee05dfe7b2",
+        "contentVersion": 2,
+        "contentHash": "a7699d91cdc2bb8c87fed17a02495556854265c0fdaf887aec8a6b0ea940c598",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "60c7baf1ad3cae14e9297bf128e9145660ecef49ffc2cfaa0d8634d94d574f5a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "questionId": "394ec3b5c5b98c434a4cedde",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:394ec3b5c5b98c434a4cedde:content-v2",
+      "questionVersionId": "394ec3b5c5b98c434a4cedde:content-v2:blind-revalidation",
+      "contentHash": "229924a8075a00e189a87546f44af21782626dd020bd2947ea5c430466f822b7",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Klasifikasi Bangun Ruang dan Jaring-Jaring\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apa yang dimaksud dengan jaring-jaring bangun ruang?\nPilihan: A. Kumpulan rusuk yang membentuk kerangka luar suatu bangun ruang\nB. Bagian permukaan bangun ruang yang terlihat dari luar saja\nC. Bentuk tiga dimensi yang menunjukkan besar ruang yang ditempati suatu bangun ruang\nD. Bentuk dua dimensi yang dapat digambar, dipotong, dan dirangkai sedemikian rupa sehingga menjadi sebuah bangun tiga dimensi\nTranskripsi visual: -",
+      "untruncatedTokenCount": 108,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.106,
+      "prediction": {
+        "questionId": "394ec3b5c5b98c434a4cedde",
+        "contentVersion": 2,
+        "contentHash": "229924a8075a00e189a87546f44af21782626dd020bd2947ea5c430466f822b7",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "2163f542f677a7fd86bfe64d606b11c1bfe7b8941bc659d6e5e7a938d8180704",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "questionId": "ee45c96e4346ffea193e7a99",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:ee45c96e4346ffea193e7a99:content-v2",
+      "questionVersionId": "ee45c96e4346ffea193e7a99:content-v2:blind-revalidation",
+      "contentHash": "427157f9b23d6d9bbc1249772cfad63527d5e3b3f04bf756790fa32abb4fe3bf",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Luas Permukaan Bangun Ruang Sisi Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah kotak pensil terbuat dari logam dengan dimensi 20 cm × 10 cm × 3 cm. Hitunglah berapa luas logam yang dibutuhkan untuk membuat kotak pensil tersebut.\nPilihan: A. 580 cm²\nB. 600 cm²\nC. 520 cm²\nD. 290 cm²\nTranskripsi visual: -",
+      "untruncatedTokenCount": 86,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.211,
+      "prediction": {
+        "questionId": "ee45c96e4346ffea193e7a99",
+        "contentVersion": 2,
+        "contentHash": "427157f9b23d6d9bbc1249772cfad63527d5e3b3f04bf756790fa32abb4fe3bf",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "8bb2909efea60042b74c8f1b45917e8375468bc602c3cb4780f6888878b8bbbd",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "questionId": "27c5fab7664c58cab4d858b0",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:27c5fab7664c58cab4d858b0:content-v2",
+      "questionVersionId": "27c5fab7664c58cab4d858b0:content-v2:blind-revalidation",
+      "contentHash": "e73466940e6de1fbc5a0d60ffacfd0d1e7549592340d19335628d4896760ac59",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Luas Permukaan Bangun Ruang Sisi Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m\nPilihan: A. 0,0529 m²\nB. 1,38 m²\nC. 0,3174 m²\nD. 0,012167 m²\nTranskripsi visual: -",
+      "untruncatedTokenCount": 82,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.295,
+      "prediction": {
+        "questionId": "27c5fab7664c58cab4d858b0",
+        "contentVersion": 2,
+        "contentHash": "e73466940e6de1fbc5a0d60ffacfd0d1e7549592340d19335628d4896760ac59",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "1712c062574f19d548393105e467b8fc81ff17b6167439fcb10af4a1040be0d6",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "questionId": "aee8fd25cf246c58a370058e",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:aee8fd25cf246c58a370058e:content-v2",
+      "questionVersionId": "aee8fd25cf246c58a370058e:content-v2:blind-revalidation",
+      "contentHash": "6156e4c2dd33ca4a4b2099bfe84124b1f98b055cb9525fffcaadbb2ccf993dd6",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Volume Bangun Ruang Sisi Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah balok memiliki ukuran panjang 5, lebar 3, dan tinggi 7. Jika balok tersebut diubah ukurannya dengan skala 4, maka tentukan volume balok setelah diubah.\nPilihan: A. 420 satuan kubik\nB. 1.680 satuan kubik\nC. 105 satuan kubik\nD. 6.720 satuan kubik\nTranskripsi visual: -",
+      "untruncatedTokenCount": 92,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.126,
+      "prediction": {
+        "questionId": "aee8fd25cf246c58a370058e",
+        "contentVersion": 2,
+        "contentHash": "6156e4c2dd33ca4a4b2099bfe84124b1f98b055cb9525fffcaadbb2ccf993dd6",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "c29b9daafeac846242dee32bc6589e2c85b45d9462e129058ec554f1b7ef99b2",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "questionId": "bc9eda46aa2fecb0da3798d8",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:bc9eda46aa2fecb0da3798d8:content-v2",
+      "questionVersionId": "bc9eda46aa2fecb0da3798d8:content-v2:blind-revalidation",
+      "contentHash": "7fdaded8b7eeff1bb5a34db0c0435b525abc129292e587d7966eb91c8cd48e48",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Volume Bangun Ruang Sisi Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?\nPilihan: A. Volume limas adalah setengah dari volume prisma\nB. Volume limas adalah tiga kali volume prisma\nC. Volume limas tersebut adalah sepertiga dari volume prisma\nD. Volume limas sama dengan volume prisma\nTranskripsi visual: -",
+      "untruncatedTokenCount": 99,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.213,
+      "prediction": {
+        "questionId": "bc9eda46aa2fecb0da3798d8",
+        "contentVersion": 2,
+        "contentHash": "7fdaded8b7eeff1bb5a34db0c0435b525abc129292e587d7966eb91c8cd48e48",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "f6cf21fad82038171964fd48c74cfd68f6183e1aea32029f7180e0a58f2efbf4",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "questionId": "b0484eaccca405ba34c3f428",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:b0484eaccca405ba34c3f428:content-v2",
+      "questionVersionId": "b0484eaccca405ba34c3f428:content-v2:blind-revalidation",
+      "contentHash": "44822528fbf763c1afa91b60d60f4e79ec366cb5213cc31618b2c9fcc28f6968",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk tiap-tiap lingkaran yang diketahui r (panjang jari-jari) atau d (panjang diameter) berikut, tentukan keliling dan luasnya! ⓐ r = 12 cm\nPilihan: A. Keliling 75,36 cm dan luas 75,36 cm²\nB. Keliling 452,16 cm dan luas 75,36 cm²\nC. Keliling 75,36 cm dan luas 452,16 cm²\nD. Keliling 37,68 cm dan luas 452,16 cm²\nTranskripsi visual: -",
+      "untruncatedTokenCount": 120,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.13,
+      "prediction": {
+        "questionId": "b0484eaccca405ba34c3f428",
+        "contentVersion": 2,
+        "contentHash": "44822528fbf763c1afa91b60d60f4e79ec366cb5213cc31618b2c9fcc28f6968",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "e1c05c5ab42cd37233b26e4de63d0b460c68be1bc2d6d1147ad3f0a256d35643",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "questionId": "ce529c7a884ca9ebbfb36e54",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:ce529c7a884ca9ebbfb36e54:content-v2",
+      "questionVersionId": "ce529c7a884ca9ebbfb36e54:content-v2:blind-revalidation",
+      "contentHash": "a893f69afbb2b85a095a383b8ca338911676d72a71cad2e74902ac15c9ca2f7c",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Lingkaran\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar ____.\nPilihan: A. 22\nB. 3,14 (atau 22/7)\nC. 3,41\nD. 2\nTranskripsi visual: -",
+      "untruncatedTokenCount": 69,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.108,
+      "prediction": {
+        "questionId": "ce529c7a884ca9ebbfb36e54",
+        "contentVersion": 2,
+        "contentHash": "a893f69afbb2b85a095a383b8ca338911676d72a71cad2e74902ac15c9ca2f7c",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "e69bb8c710bcbaa0cb1d3c9b7777ce0e731359dea782d77423172afd02535810",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "questionId": "487ffef7f793443d4d651476",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:487ffef7f793443d4d651476:content-v2",
+      "questionVersionId": "487ffef7f793443d4d651476:content-v2:blind-revalidation",
+      "contentHash": "37e231a09728feb0da0d7e2aff728eca9ef33e5c7d9f447e1f2ae22033786548",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Luas Permukaan Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk memperingati ulang tahun Gilang, ibunya membuat nasi tumpeng yang disusun sedemikian rupa sehingga nasinya berbentuk kerucut dengan diameter 20 cm. Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm. Jika nasi kerucut ini ingin ditutupi dengan daun pisang, berapa luas daun pisang yang akan dibutuhkan?\nPilihan: A. ≈1.456,96 cm²\nB. ≈2.285,92 cm²\nC. ≈1.142,96 cm²\nD. ≈1.099 cm²\nTranskripsi visual: -",
+      "untruncatedTokenCount": 123,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.111,
+      "prediction": {
+        "questionId": "487ffef7f793443d4d651476",
+        "contentVersion": 2,
+        "contentHash": "37e231a09728feb0da0d7e2aff728eca9ef33e5c7d9f447e1f2ae22033786548",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "db1bff6938c66cd04b5805a42ff401e4f39a76a6e5174ab21caf9a6287d987e8",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 16,
+      "questionId": "efbc889b95676e6e2d913479",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:efbc889b95676e6e2d913479:content-v2",
+      "questionVersionId": "efbc889b95676e6e2d913479:content-v2:blind-revalidation",
+      "contentHash": "1a237670819eb07c684b12921d5266c37daf3cb5ccd61fc2c3571bccce96a301",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Luas Permukaan Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.\nPilihan: A. Luas permukaan bola sama dengan luas lingkaran yang memiliki jari-jari yang sama\nB. Luas permukaan bola sama dengan dua kali luas lingkaran yang memiliki jari-jari yang sama\nC. Luas permukaan bola sama dengan setengah luas lingkaran yang memiliki jari-jari yang sama\nD. Luas permukaan bola sama dengan empat kali luas lingkaran yang memiliki jari-jari yang sama\nTranskripsi visual: -",
+      "untruncatedTokenCount": 124,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.102,
+      "prediction": {
+        "questionId": "efbc889b95676e6e2d913479",
+        "contentVersion": 2,
+        "contentHash": "1a237670819eb07c684b12921d5266c37daf3cb5ccd61fc2c3571bccce96a301",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "f02c09220a3cb430a42aa39e959e8a907536459501ceced417bfa89970303c19",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 17,
+      "questionId": "1ef6efc5863938a14b737897",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:1ef6efc5863938a14b737897:content-v2",
+      "questionVersionId": "1ef6efc5863938a14b737897:content-v2:blind-revalidation",
+      "contentHash": "240f83531640bcef9ab097ca45a685e57af39a6ec8b459ed4cc29aaabebdfd16",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Volume Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Berapa liter gas bumi yang dapat ditampung dengan truk yang memiliki tabung penyimpanan besar seperti Gambar dengan diameter 2 meter dan panjang 12 meter?\nPilihan: A. 36.000 liter\nB. 150.720 liter\nC. 37.680 liter\nD. 37,68 liter\nTranskripsi visual: Sebuah truk tangki dengan tangki berbentuk silinder horizontal. Diameter tangki adalah 2 meter dan panjang tangki adalah 12 meter.",
+      "untruncatedTokenCount": 107,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.133,
+      "prediction": {
+        "questionId": "1ef6efc5863938a14b737897",
+        "contentVersion": 2,
+        "contentHash": "240f83531640bcef9ab097ca45a685e57af39a6ec8b459ed4cc29aaabebdfd16",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "7a6ba2d41d49004852008872b15064d250e8ad9dcc3b9c8846791617e2c31b2d",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 18,
+      "questionId": "a0c228d869728c3140dece74",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:a0c228d869728c3140dece74:content-v2",
+      "questionVersionId": "a0c228d869728c3140dece74:content-v2:blind-revalidation",
+      "contentHash": "4cf6b7759e2e2e6573877390bd02fc075f941d020a6bd648f605c5d052878da7",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Volume Bangun Ruang Sisi Lengkung\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?\nPilihan: A. Volume kerucut sama dengan sepertiga volume tabung\nB. Volume kerucut adalah tiga kali volume tabung\nC. Volume kerucut sama dengan volume tabung\nD. Volume kerucut adalah setengah volume tabung\nTranskripsi visual: -",
+      "untruncatedTokenCount": 88,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.103,
+      "prediction": {
+        "questionId": "a0c228d869728c3140dece74",
+        "contentVersion": 2,
+        "contentHash": "4cf6b7759e2e2e6573877390bd02fc075f941d020a6bd648f605c5d052878da7",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "d916e4aa9f868dee97cf9f29f250ff074862d170502418a108d9902e2c080a44",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 19,
+      "questionId": "4088b8d020de84282c07a2b3",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:4088b8d020de84282c07a2b3:content-v2",
+      "questionVersionId": "4088b8d020de84282c07a2b3:content-v2:blind-revalidation",
+      "contentHash": "ca9bbff3e6fc42e022d55e224fba44d121a3c68e39e3c9edcf0161f0292a1c5c",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Pengukuran Volume\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah tangki air berisi 2.225 liter air. Pada siang hari 975 liter 325 ml air dipompa keluar dari tangki. Berapa banyak air yang tersisa di tangki?\nPilihan: A. 1.250 liter 325 ml\nB. 1.249 liter 675 ml\nC. 1.249 liter 325 ml\nD. 1.250 liter 675 ml\nTranskripsi visual: -",
+      "untruncatedTokenCount": 103,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.089,
+      "prediction": {
+        "questionId": "4088b8d020de84282c07a2b3",
+        "contentVersion": 2,
+        "contentHash": "ca9bbff3e6fc42e022d55e224fba44d121a3c68e39e3c9edcf0161f0292a1c5c",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "e9283969f79ac1947d6219e9bd2ef158a3c868247c46a33e2565016eec938bb3",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "questionId": "0d61de45054218c7d9af6710",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:0d61de45054218c7d9af6710:content-v2",
+      "questionVersionId": "0d61de45054218c7d9af6710:content-v2:blind-revalidation",
+      "contentHash": "dc7fd6fa24510c0d9cf4fdf9f928c320b4fac44b27b93d61e0e30d42478f6ff8",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Hubungan Keliling dan Luas Daerah Bangun Datar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Bapak memiliki kawat sepanjang 60 cm. Dengan menggunakan kawat tersebut, Bapak ingin membuat kerangka berbentuk persegi panjang. Bantulah beliau membuat gambar kerangka tersebut.\n\nManakah yang menghasilkan kerangka yang terluas?\nPilihan: A. Panjang 15 cm dan lebar 15 cm (luas 225 cm²)\nB. Panjang 25 cm dan lebar 5 cm (luas 125 cm²)\nC. Panjang 20 cm dan lebar 10 cm (luas 200 cm²)\nD. Panjang 18 cm dan lebar 12 cm (luas 216 cm²)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 131,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.108,
+      "prediction": {
+        "questionId": "0d61de45054218c7d9af6710",
+        "contentVersion": 2,
+        "contentHash": "dc7fd6fa24510c0d9cf4fdf9f928c320b4fac44b27b93d61e0e30d42478f6ff8",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "c83fb325d54e0c3269d7d8be5582f09402eeb610a9275574c97a751e81404149",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 21,
+      "questionId": "e81a665e38e1781b745677fd",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:e81a665e38e1781b745677fd:content-v2",
+      "questionVersionId": "e81a665e38e1781b745677fd:content-v2:blind-revalidation",
+      "contentHash": "d3d4ea4ac07228fb2c43752391aa091fe84dc7f8a9f20a99e88f58d45df7b019",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Lokasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2). Kubus ini tidak boleh diangkat, tetapi direbahkan ke salah satu sisi tegaknya. Panjangnya rusuk kubus sama dengan jarak antara garis-garis horizontal dan garis-garis vertikal pada sistem berpetak yang digunakan.\n\nBerapa kali kubus tersebut direbahkan untuk mencapai tujuannya?\nPilihan: A. 2 kali\nB. 4 kali\nC. 5 kali\nD. 3 kali\nTranskripsi visual: -",
+      "untruncatedTokenCount": 121,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.097,
+      "prediction": {
+        "questionId": "e81a665e38e1781b745677fd",
+        "contentVersion": 2,
+        "contentHash": "d3d4ea4ac07228fb2c43752391aa091fe84dc7f8a9f20a99e88f58d45df7b019",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "8b17bf7952a94563c8813ecba1e1c9190cc900cd22b084dd5028ec2a02e3d917",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 22,
+      "questionId": "bba0d92faac1dbb90cd622ef",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:bba0d92faac1dbb90cd622ef:content-v2",
+      "questionVersionId": "bba0d92faac1dbb90cd622ef:content-v2:blind-revalidation",
+      "contentHash": "c1a0aaba3bb93f1baa1e94c518a6cbc33313e2833633396601ffbf97b4bc1981",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Translasi (Pergeseran)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui segitiga ABC dengan A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1). Tentukan translasinya serta koordinat titik B' dan C'.\nPilihan: A. Translasi $\\binom{2}{-4}$, B'(4,-2), C'(6,1)\nB. Translasi $\\binom{-2}{4}$, B'(0,6), C'(2,9)\nC. Translasi $\\binom{4}{-2}$, B'(6,0), C'(8,3)\nD. Translasi $\\binom{-2}{4}$, B'(4,-2), C'(6,1)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 220,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.097,
+      "prediction": {
+        "questionId": "bba0d92faac1dbb90cd622ef",
+        "contentVersion": 2,
+        "contentHash": "c1a0aaba3bb93f1baa1e94c518a6cbc33313e2833633396601ffbf97b4bc1981",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "d954465d2c7dd075d5ebad0e27ac1ef89a2cc10dd93ffb9c093e30ac04f6b370",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 23,
+      "questionId": "944be36e182518ad72be95aa",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:944be36e182518ad72be95aa:content-v2",
+      "questionVersionId": "944be36e182518ad72be95aa:content-v2:blind-revalidation",
+      "contentHash": "e734c1912c8d942c92737b44e7158ad7d45d55f730df80ea219e883409b2a021",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Translasi (Pergeseran)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Bayangan titik A(-2,5) oleh $\\binom{-4}{3}$ adalah …\nPilihan: A. A'(-6,8)\nB. A'(-6,-8)\nC. A'(2,2)\nD. A'(-2,8)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 101,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.083,
+      "prediction": {
+        "questionId": "944be36e182518ad72be95aa",
+        "contentVersion": 2,
+        "contentHash": "e734c1912c8d942c92737b44e7158ad7d45d55f730df80ea219e883409b2a021",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "3927f5784eb9a7a80bf4cd7f9cba6ae3c01f0e8680277fd10d7182303b4da0df",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 24,
+      "questionId": "34e4b41c04e7c9417acca5ce",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:34e4b41c04e7c9417acca5ce:content-v2",
+      "questionVersionId": "34e4b41c04e7c9417acca5ce:content-v2:blind-revalidation",
+      "contentHash": "5b781501a3b25fa27d09e9e0826f931129f8c25468178e3c04984970c0ffac69",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Refleksi (Pencerminan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Titik (2,-3) direfleksikan terhadap garis y=x. Tentukan bayangannya.\nPilihan: A. (2,3)\nB. (-3,2)\nC. (3,-2)\nD. (2,1)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 87,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.078,
+      "prediction": {
+        "questionId": "34e4b41c04e7c9417acca5ce",
+        "contentVersion": 2,
+        "contentHash": "5b781501a3b25fa27d09e9e0826f931129f8c25468178e3c04984970c0ffac69",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "12ecf9ee9b5ebf17164fec0991eb5b9ef3b4ed016a26950ac3e8ae776bb9d8e7",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 25,
+      "questionId": "e23d76dc5ff2cda98f0f4ccc",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:e23d76dc5ff2cda98f0f4ccc:content-v2",
+      "questionVersionId": "e23d76dc5ff2cda98f0f4ccc:content-v2:blind-revalidation",
+      "contentHash": "570c1b13fa0945b7900e3ca58f8e3e993c14064a5d27d6e1bd983d09213b1945",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Refleksi (Pencerminan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Titik (2,-3) direfleksikan terhadap sumbu x. Tentukan bayangannya.\nPilihan: A. (2,3)\nB. (-2,3)\nC. (-2,-3)\nD. (4,-3)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 87,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.076,
+      "prediction": {
+        "questionId": "e23d76dc5ff2cda98f0f4ccc",
+        "contentVersion": 2,
+        "contentHash": "570c1b13fa0945b7900e3ca58f8e3e993c14064a5d27d6e1bd983d09213b1945",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "4dd765e108b7721cfa83d645b496b2282830311d7126230e51173a803ce7319d",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 26,
+      "questionId": "078d6a87b40b143dc0e0683c",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:078d6a87b40b143dc0e0683c:content-v2",
+      "questionVersionId": "078d6a87b40b143dc0e0683c:content-v2:blind-revalidation",
+      "contentHash": "af50b33a4fefb41321fe2da431f6ef2d8c2f20c51f0a5e9dc98203d2cd370d33",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Rotasi (Perputaran)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui segi empat KLMN dengan titik sudutnya di K(1,2), L(6,4), M(8,-3) dan N(3,-1). Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0). Gambarkan segi empat KLMN beserta bayangannya pada bidang koordinat.\nPilihan: A. K'(-1,-2), L'(-6,-4), M'(-8,3), N'(-3,1)\nB. K'(-2,1), L'(-4,6), M'(3,8), N'(1,3)\nC. K'(1,-2), L'(6,-4), M'(8,3), N'(3,1)\nD. K'(-1,2), L'(-6,4), M'(-8,-3), N'(-3,-1)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 252,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.112,
+      "prediction": {
+        "questionId": "078d6a87b40b143dc0e0683c",
+        "contentVersion": 2,
+        "contentHash": "af50b33a4fefb41321fe2da431f6ef2d8c2f20c51f0a5e9dc98203d2cd370d33",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "05fcb8075379307cfd6f3f88014ceceddb1078e187ca7ed3c7e4f26a9ebb0ce0",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 27,
+      "questionId": "5cdb075f3e6376933323750c",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:5cdb075f3e6376933323750c:content-v2",
+      "questionVersionId": "5cdb075f3e6376933323750c:content-v2:blind-revalidation",
+      "contentHash": "e6468022c57fbb293d6726c9b5ae84f67c0bead7c77501cc57b3c9c3628820a6",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Rotasi (Perputaran)\nTipe soal: multiple_choice\nStimulus: -\nSoal: A(5,2), B(8,5), dan C(2,1) adalah titik-titik sudut pada ΔABC. Tentukan bayangan ΔABC dari hasil rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0).\nPilihan: A. A'(-2,5), B'(-5,8), C'(-1,2)\nB. A'(2,-5), B'(5,-8), C'(1,-2)\nC. A'(-5,2), B'(-8,5), C'(-2,1)\nD. A'(-5,-2), B'(-8,-5), C'(-2,-1)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 202,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.096,
+      "prediction": {
+        "questionId": "5cdb075f3e6376933323750c",
+        "contentVersion": 2,
+        "contentHash": "e6468022c57fbb293d6726c9b5ae84f67c0bead7c77501cc57b3c9c3628820a6",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "0272388f48660837a380b27fcc3aab5ce49feacfdd07a3de3e3456141d2c8fbf",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 28,
+      "questionId": "f6516e65a41da50ae0f6a8b9",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:f6516e65a41da50ae0f6a8b9:content-v2",
+      "questionVersionId": "f6516e65a41da50ae0f6a8b9:content-v2:blind-revalidation",
+      "contentHash": "97bc5be9d872fbe699f56edde2424652072d6aaa69198426dddd9df683c4e7fb",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Kekongruenan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika ΔMDN ≅ ΔKPG, maka MN = _____.\nPilihan: A. KP\nB. KG\nC. PG\nD. DN\nTranskripsi visual: -",
+      "untruncatedTokenCount": 62,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.163,
+      "prediction": {
+        "questionId": "f6516e65a41da50ae0f6a8b9",
+        "contentVersion": 2,
+        "contentHash": "97bc5be9d872fbe699f56edde2424652072d6aaa69198426dddd9df683c4e7fb",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "5fc6ed93b727ea36b649a9ca408b5dc13686dd3d8b930986a2a05903d0166aef",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 29,
+      "questionId": "5494cb036f9f5ecded212fcf",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:5494cb036f9f5ecded212fcf:content-v2",
+      "questionVersionId": "5494cb036f9f5ecded212fcf:content-v2:blind-revalidation",
+      "contentHash": "5b2d42a48fcd0857439582c7a115a7da1a3293adf551d8b9c00af987e622a061",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Kekongruenan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar, maka kedua segitiga tersebut kongruen. Pernyataan tersebut merupakan bunyi kriteria _____.\nPilihan: A. S-S-Sd\nB. Sd-S-Sd\nC. S-Sd-S\nD. S-S-S\nTranskripsi visual: -",
+      "untruncatedTokenCount": 105,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.212,
+      "prediction": {
+        "questionId": "5494cb036f9f5ecded212fcf",
+        "contentVersion": 2,
+        "contentHash": "5b2d42a48fcd0857439582c7a115a7da1a3293adf551d8b9c00af987e622a061",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "55c3d88a81bb43ce5ac408978b65df83026a713687216b548e520bec8e9fab66",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 30,
+      "questionId": "907f9e4697523a633ea0ac02",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:907f9e4697523a633ea0ac02:content-v2",
+      "questionVersionId": "907f9e4697523a633ea0ac02:content-v2:blind-revalidation",
+      "contentHash": "fefcd23966a4c409b2f6b60572578ed54b97eeee09a72385cd9237e1f6427a51",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Dilatasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu segitiga ABC siku-siku di titik B memiliki panjang AB=8 cm, BC=15 cm, dan AC=17 cm. Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah…\nPilihan: A. 180 cm²\nB. 1.620 cm²\nC. 540 cm²\nD. 60 cm²\nTranskripsi visual: -",
+      "untruncatedTokenCount": 109,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.181,
+      "prediction": {
+        "questionId": "907f9e4697523a633ea0ac02",
+        "contentVersion": 2,
+        "contentHash": "fefcd23966a4c409b2f6b60572578ed54b97eeee09a72385cd9237e1f6427a51",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "20492487648ea615f0fb793469b8c4d013b03bf5e6e720c88d9c6000bf837219",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 31,
+      "questionId": "61e70f2732214f09d97c2039",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:61e70f2732214f09d97c2039:content-v2",
+      "questionVersionId": "61e70f2732214f09d97c2039:content-v2:blind-revalidation",
+      "contentHash": "610e287b02d97cf30ea9334f3ab78d76b0dbaa22bb7b0f8ab659506e965462e0",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Dilatasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui ΔABC dengan A(-3,-2), B(6,4) dan C(1,-2). Tentukan bayangan ΔABC yang didilatasikan terhadap $[O, \\frac{1}{2}]$! Gambarkan segitiga tersebut beserta bayangannya pada bidang koordinat!\nPilihan: A. $A'(-\\frac{3}{2},-2)$, $B'(3,4)$, $C'(\\frac{1}{2},-2)$\nB. A'(-2.5,-1.5), B'(6.5,4.5), C'(1.5,-1.5)\nC. A'(-6,-4), B'(12,8), C'(2,-4)\nD. $A'(-\\frac{3}{2},-1)$, $B'(3,2)$, $C'(\\frac{1}{2},-1)$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 264,
+      "maxLength": 256,
+      "wouldTruncate": true,
+      "latencyMs": 0.125,
+      "prediction": {
+        "questionId": "61e70f2732214f09d97c2039",
+        "contentVersion": 2,
+        "contentHash": "610e287b02d97cf30ea9334f3ab78d76b0dbaa22bb7b0f8ab659506e965462e0",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "a0062c1f08294649c4c616c871e41f911fb77bcffcda993ac41c6d0cdb450451",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 32,
+      "questionId": "78652b4108bd747c96b2f4a8",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:78652b4108bd747c96b2f4a8:content-v2",
+      "questionVersionId": "78652b4108bd747c96b2f4a8:content-v2:blind-revalidation",
+      "contentHash": "ed7ec5433c75ff54be8ab82aadc802bac2fade2bd82c17e9d1277d366bdcff60",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Kesebangunan pada Segitiga\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada $\\triangle ABC$, $AD$ membagi $\\angle A$ menjadi dua bagian yang sama besar. $AD$ disebut garis bagi. Titik $D$ terletak pada sisi $BC$. Petunjuk: Gambarkan garis yang sejajar dengan $AD$ dan melalui titik $C$. Garis ini berpotongan dengan perpanjangan $AB$ di titik $E$.\n\nBeri alasan bahwa $\\triangle ACE$ sama kaki. Tuliskan sisi-sisi yang sama panjang.\nPilihan: A. AC = AE, karena ∠ACE = ∠AEC\nB. AC = CE, karena ∠CAE = ∠AEC\nC. AE = CE, karena ∠ACE = ∠CAE\nD. AB = AC, karena AD garis bagi\nTranskripsi visual: Segitiga ABC dengan garis bagi AD yang membagi sudut A menjadi dua bagian sama besar. Titik D berada pada sisi BC. Terdapat konstruksi tambahan berupa garis melalui C yang sejajar dengan AD, memotong perpanjangan AB di titik E.",
+      "untruncatedTokenCount": 214,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.161,
+      "prediction": {
+        "questionId": "78652b4108bd747c96b2f4a8",
+        "contentVersion": 2,
+        "contentHash": "ed7ec5433c75ff54be8ab82aadc802bac2fade2bd82c17e9d1277d366bdcff60",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "2c6efdc4bd8464ecac21d2ed5456abce68fbb7689204c9c29da5fec36b94e9dc",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 33,
+      "questionId": "49861bd79ef9562f45188055",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:49861bd79ef9562f45188055:content-v2",
+      "questionVersionId": "49861bd79ef9562f45188055:content-v2:blind-revalidation",
+      "contentHash": "5c818ca1d27240b44d3683a0c6c21319fd503e0a53371e53b713c53cadf237b9",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan banyaknya anggota ruang sampel percobaan-percobaan berikut. ⓒ Jenis kelamin dari seorang siswa yang pertama kali ditunjuk oleh seorang guru dalam kelas yang terdiri dari 12 siswa laki-laki dan 18 siswa perempuan.\nPilihan: A. 30 (12 siswa laki-laki + 18 siswa perempuan)\nB. 18 (hanya menghitung banyaknya siswa perempuan)\nC. 12 (hanya menghitung banyaknya siswa laki-laki)\nD. 2 (hanya menghitung banyaknya kategori jenis kelamin: laki-laki dan perempuan)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 124,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.117,
+      "prediction": {
+        "questionId": "49861bd79ef9562f45188055",
+        "contentVersion": 2,
+        "contentHash": "5c818ca1d27240b44d3683a0c6c21319fd503e0a53371e53b713c53cadf237b9",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "c29e0cfd58ee2138610274ad4f36eeff4174d8ba7bae8ad208f76a85fe881725",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 34,
+      "questionId": "47721424de374937d3a86de8",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:47721424de374937d3a86de8:content-v2",
+      "questionVersionId": "47721424de374937d3a86de8:content-v2:blind-revalidation",
+      "contentHash": "1b837f30343f2e8ea23a415d93862f9263dfa2c43c54483427fae0441bf1bafd",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peluang tiap-tiap kejadian berikut ini dan nyatakan nilainya ke dalam pecahan biasa, pecahan desimal, dan persentase. ⓒ Sebuah kotak berisi enam bola merah, dua bola kuning, dan empat bola hijau. Dalam pengambilan satu bola dari kotak tersebut secara acak, kalian mendapatkan bola yang bukan merah.\nPilihan: A. 1 (membandingkan bola bukan merah dengan sesamanya, bukan dengan total bola di kotak)\nB. 1/6 (hanya menghitung peluang terambilnya bola kuning saja, lupa bola hijau)\nC. 1/3 (hanya menghitung peluang terambilnya bola hijau saja, lupa bola kuning)\nD. 1/2 (atau 0,5 atau 50%)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 162,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.141,
+      "prediction": {
+        "questionId": "47721424de374937d3a86de8",
+        "contentVersion": 2,
+        "contentHash": "1b837f30343f2e8ea23a415d93862f9263dfa2c43c54483427fae0441bf1bafd",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "ca7b5f10431358a4972d0762c05fb3fc17f7a9e29ef973a97bac21d47d9ff094",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 35,
+      "questionId": "2fa02b235094086c5cc7be86",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:2fa02b235094086c5cc7be86:content-v2",
+      "questionVersionId": "2fa02b235094086c5cc7be86:content-v2:blind-revalidation",
+      "contentHash": "17eb6d02ce63caa7bfb84ea255b0da2d9c1cc9f820324e6580f2fe029cdadfd6",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Peluang Empiris\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah program komputer digunakan untuk menampilkan 12 bilangan 0–3 secara acak. Hasilnya adalah sebagai berikut. 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3\n\nTentukan frekuensi relatif munculnya bilangan 0.\nPilihan: A. 2/4 (= 1/2)\nB. 2/12 (= 1/6)\nC. 3/12 (= 1/4)\nD. 1/12\nTranskripsi visual: -",
+      "untruncatedTokenCount": 121,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.1,
+      "prediction": {
+        "questionId": "2fa02b235094086c5cc7be86",
+        "contentVersion": 2,
+        "contentHash": "17eb6d02ce63caa7bfb84ea255b0da2d9c1cc9f820324e6580f2fe029cdadfd6",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "13b50350a2b3294245ebeeb5e44b0db12e05b1411e5870e5ee1461ae3620607a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 36,
+      "questionId": "b09a24b57d973871a9f482c8",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:b09a24b57d973871a9f482c8:content-v2",
+      "questionVersionId": "b09a24b57d973871a9f482c8:content-v2:blind-revalidation",
+      "contentHash": "f49917af0dbbda683720d630082e45cd570a8866b856f04a9a12c945c54c3dec",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Peluang Empiris\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seperangkat kartu berisi 5 kartu yang masing-masing bergambar lingkaran atau bintang. Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20. 450 407 400 350 300 250 200 150 93 100 50 0 Lingkaran Bintang Gambar yang Muncul Frekuensi Gambar Frekuensi Munculnya Kartu Bergambar Lingkaran dan Bintang\n\nTentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.\nPilihan: A. 4 kartu lingkaran dan 1 kartu bintang\nB. 5 kartu lingkaran dan 0 kartu bintang\nC. 1 kartu lingkaran dan 4 kartu bintang\nD. 3 kartu lingkaran dan 2 kartu bintang\nTranskripsi visual: Grafik batang menunjukkan dua kategori pada sumbu horizontal: 'Lingkaran' dan 'Bintang'. Sumbu vertikal 'Frekuensi' memiliki skala 0 hingga 450. Batang 'Lingkaran' memiliki tinggi 93. Batang 'Bintang' memiliki tinggi 407. Total percobaan adalah 500.",
+      "untruncatedTokenCount": 190,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.166,
+      "prediction": {
+        "questionId": "b09a24b57d973871a9f482c8",
+        "contentVersion": 2,
+        "contentHash": "f49917af0dbbda683720d630082e45cd570a8866b856f04a9a12c945c54c3dec",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "4962fe9be61db9d71b9e55b9e698a7c7673beb333b89e9a10d41df039f84d960",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 37,
+      "questionId": "0292b36d9d04627c0f3ae4e8",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:0292b36d9d04627c0f3ae4e8:content-v2",
+      "questionVersionId": "0292b36d9d04627c0f3ae4e8:content-v2:blind-revalidation",
+      "contentHash": "daa094333664231ddc3039d281ebd8ef6e81027c48cbfadc7522cefd7c99165b",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Frekuensi Harapan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan frekuensi harapan setiap kejadian berikut jika dilakukan 100 kali percobaan. b. Dalam pengambilan satu kartu secara acak dari seperangkat kartu remi, tidak didapatkan kartu hati.\nPilihan: A. 48\nB. 25\nC. 13\nD. 75\nTranskripsi visual: -",
+      "untruncatedTokenCount": 76,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.096,
+      "prediction": {
+        "questionId": "0292b36d9d04627c0f3ae4e8",
+        "contentVersion": 2,
+        "contentHash": "daa094333664231ddc3039d281ebd8ef6e81027c48cbfadc7522cefd7c99165b",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "844761fc6a9b223ff8772770d2da5c8d2897018bd8f35e505e62ec2414a1619a",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 38,
+      "questionId": "dfd8cbd993b44696494b45c1",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:dfd8cbd993b44696494b45c1:content-v2",
+      "questionVersionId": "dfd8cbd993b44696494b45c1:content-v2:blind-revalidation",
+      "contentHash": "a50a488b90d89bfcf0ffedefb2655315716b2001f7febb635cd88da9ba16afed",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Frekuensi Harapan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Di sebuah kota, persentase penduduknya yang masuk Generasi Z adalah 28%. Jika kalian memilih 75 penduduk kota itu secara acak, tentukan frekuensi harapan kalian mendapatkan penduduk Generasi Z.\nPilihan: A. 28\nB. 47\nC. 75\nD. 21\nTranskripsi visual: -",
+      "untruncatedTokenCount": 79,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.088,
+      "prediction": {
+        "questionId": "dfd8cbd993b44696494b45c1",
+        "contentVersion": 2,
+        "contentHash": "a50a488b90d89bfcf0ffedefb2655315716b2001f7febb635cd88da9ba16afed",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "e0af9f4bbe6768e0183695b5ff0e639f58acdbbdd413490fd7abd4fe7ba528a7",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 39,
+      "questionId": "4e77f956826bf22b33dbf58b",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:4e77f956826bf22b33dbf58b:content-v2",
+      "questionVersionId": "4e77f956826bf22b33dbf58b:content-v2:blind-revalidation",
+      "contentHash": "19125824549b8936abc699c3eb411a6ec18e2aa24236a6d16528c832d7e48716",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Pemilihan Sampel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Putu memiliki roda putar yang terbagi menjadi lima juring yang sama besar, masing-masing ditulis angka 1, 2, 3, 4, dan 5. Dia akan memilih sampel dengan memutar roda tersebut sebanyak tiga kali. Tentukan peluang dia mendapatkan sampel yang rata-ratanya kurang dari 2.\nPilihan: A. 3/125\nB. 10/125 (atau 0,08)\nC. 6/125\nD. 5/125\nTranskripsi visual: -",
+      "untruncatedTokenCount": 116,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.099,
+      "prediction": {
+        "questionId": "4e77f956826bf22b33dbf58b",
+        "contentVersion": 2,
+        "contentHash": "19125824549b8936abc699c3eb411a6ec18e2aa24236a6d16528c832d7e48716",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "985b70f0e7581c843a0c2d13d5a650bbf5313d64be0dd631e6dfd4959b20c250",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 40,
+      "questionId": "d57b84b818b2d3b772624d73",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:d57b84b818b2d3b772624d73:content-v2",
+      "questionVersionId": "d57b84b818b2d3b772624d73:content-v2:blind-revalidation",
+      "contentHash": "3c5cf78c70a2bb3c6226ded29a41c8617a791626f90a8b12f665620f6a3cd31c",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Pemilihan Sampel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dhien adalah calon ketua OSIS. Dia ingin mengetahui persentase teman-teman di sekolahnya yang akan memilihnya.\n\nDari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien? Mengapa? ⓐ Dia bertanya kepada semua teman sekelasnya. ⓑ Dia menyurvei anak yang menempati urutan ke-3, 6, dan 9 di setiap barisan ketika upacara bendera. ⓒ Dia melakukan survei melalui media sosial terhadap teman-teman sekolahnya.\nPilihan: A. Dia menyurvei anak yang menempati urutan ke-3, 6, dan 9 di setiap barisan ketika upacara bendera\nB. Dia menyurvei murid yang kebetulan lewat di depan kelasnya saat istirahat\nC. Dia bertanya kepada semua teman sekelasnya\nD. Dia melakukan survei melalui media sosial terhadap teman-teman sekolahnya\nTranskripsi visual: -",
+      "untruncatedTokenCount": 181,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.122,
+      "prediction": {
+        "questionId": "d57b84b818b2d3b772624d73",
+        "contentVersion": 2,
+        "contentHash": "3c5cf78c70a2bb3c6226ded29a41c8617a791626f90a8b12f665620f6a3cd31c",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "15ed4984546d99cc0ad0713f83c6be1ed9240fa5784b4495a4267d8f37e0d66d",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 41,
+      "questionId": "b0bcef02731ce1c1ec1f8a92",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:b0bcef02731ce1c1ec1f8a92:content-v2",
+      "questionVersionId": "b0bcef02731ce1c1ec1f8a92:content-v2:blind-revalidation",
+      "contentHash": "86c95cfca3df133feb39c9d52c63a5018af97321ed0f185b6611694ca414de39",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Membandingkan Peluang Kejadian\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pilihan dadu\n\n|Pilihan 1|Pilihan 2|\n|---|---|\n|Dadu kubus dengan sisi sebagai|Dadu piramida dengan sisi|\n|berikut:|sebagai berikut:|\n|1, 2, 3, 4, 5, 6|1, 2, 3, 4|\n\nPilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan. Syarat menangnya adalah mendapatkan angka 3. Jelaskan alasan atas pilihan kalian!\nPilihan: A. Keduanya sama besar karena sama-sama punya satu angka 3\nB. Pilihan 1 (dadu kubus)\nC. Pilihan 2 (dadu piramida)\nD. Tidak bisa ditentukan karena bentuk dadunya berbeda\nTranskripsi visual: -",
+      "untruncatedTokenCount": 163,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.169,
+      "prediction": {
+        "questionId": "b0bcef02731ce1c1ec1f8a92",
+        "contentVersion": 2,
+        "contentHash": "86c95cfca3df133feb39c9d52c63a5018af97321ed0f185b6611694ca414de39",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "1e601ca009cf2858cd6cb04579f76767666aabacfcd65ec423677b671661d715",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    },
+    {
+      "index": 42,
+      "questionId": "49d68d1b46c35ead12cca547",
+      "diagnosticInferenceQuestionId": "diagnostic:kelas9:49d68d1b46c35ead12cca547:content-v2",
+      "questionVersionId": "49d68d1b46c35ead12cca547:content-v2:blind-revalidation",
+      "contentHash": "35aed6ec6feb02db34db3fc591c46ccd28f230c4e20b78b1906b78fa92a7deb6",
+      "serializedInput": "Kelas: 9\nTopik: Matematika SMP Kelas 9\nSubtopik: Penyebaran Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.\n\n50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65\nPilihan: A. Q1 = 65; Q2 = 70,4; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5\nB. Q1 = 80; Q2 = 67,5; Q3 = 65; jangkauan kuartil = 15; simpangan kuartil = 7,5\nC. Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5\nD. Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 15\nTranskripsi visual: -",
+      "untruncatedTokenCount": 210,
+      "maxLength": 256,
+      "wouldTruncate": false,
+      "latencyMs": 0.119,
+      "prediction": {
+        "questionId": "49d68d1b46c35ead12cca547",
+        "contentVersion": 2,
+        "contentHash": "35aed6ec6feb02db34db3fc591c46ccd28f230c4e20b78b1906b78fa92a7deb6",
+        "scopeStatus": "out_of_scope",
+        "mathCognitiveDomain": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "knowledgeDimension": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "intendedDifficulty": {
+          "label": null,
+          "probabilities": {},
+          "calibratedConfidence": null,
+          "normalizedEntropy": null,
+          "action": "abstain",
+          "reasons": [
+            "grade_outside_sd_v1"
+          ]
+        },
+        "reviewRequired": true,
+        "reviewMode": "automated_ai",
+        "reasons": [
+          "grade_outside_sd_v1"
+        ],
+        "trace": {
+          "modelVersion": "indobert-3x4x3-silver-kelas1-v1",
+          "baseModel": "indobenchmark/indobert-base-p1",
+          "baseRevision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+          "datasetSnapshot": "kelas1-gemini-silver-n3-v1",
+          "rubricVersion": "math-rubric-3x4x3-v1",
+          "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
+          "inputSchemaVersion": "math-question-text-v1",
+          "inputHash": "be48d28ec50999ba7dc35448709276447b4089fc6939b112cc5d08f219562f87",
+          "architectureVersion": "parallel-v1",
+          "routingPolicyVersion": "confidence-only-v1"
+        }
+      }
+    }
+  ]
+}

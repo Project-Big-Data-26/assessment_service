@@ -1,19 +1,19 @@
 # Validasi ulang soal kelas 9 — Gemini blind N=3 dan diagnostik IndoBERT
 
-Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v7-blind-smp9-key-verified`. Rubrik: `math-rubric-3x4x3-v5-smp9-grade-aware`.
+Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v10-blind-smp9-key-verified`. Rubrik: `math-rubric-3x4x3-v8-smp9-grade-aware`.
 
 Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas 9 tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan menjadi keputusan silver operasional.
 
-Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Model SD berada di luar cakupan kelas 9, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
+Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Artifact berada di luar cakupan kelas 9, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
 
-Jumlah soal: 42; distribusi label advisory: `{"mathCognitiveDomain": {"applying": 27, "knowing": 11, "reasoning": 4}, "knowledgeDimension": {"conceptual": 20, "procedural": 21, "factual": 1, "metacognitive": 0}, "intendedDifficulty": {"Easy": 28, "Medium": 14, "Hard": 0}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 27, "knowing": 11, "reasoning": 3}, "knowledgeDimension": {"conceptual": 19, "procedural": 21, "factual": 1}, "intendedDifficulty": {"Easy": 28, "Medium": 13}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"silver_ready": 41, "revision_required": 1}`.
-Run awal sukses: 126/126; adjudikasi: 18; token sukses tercatat: 360,424.
+Jumlah soal: 42; distribusi label advisory: `{"mathCognitiveDomain": {"applying": 22, "knowing": 17, "reasoning": 3}, "knowledgeDimension": {"conceptual": 20, "procedural": 21, "factual": 1, "metacognitive": 0}, "intendedDifficulty": {"Easy": 30, "Medium": 12, "Hard": 0}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 21, "knowing": 15, "reasoning": 3}, "knowledgeDimension": {"conceptual": 18, "procedural": 20, "factual": 1, "metacognitive": 0}, "intendedDifficulty": {"Easy": 28, "Medium": 11, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"silver_ready": 39, "revision_required": 3}`.
+Run awal sukses: 126/126; adjudikasi: 18; token sukses tercatat: 461,190.
 
 Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
-IndoBERT aktif: `indobert-3x4x3-silver-kelas1-v1`, arsitektur `parallel-v1`, representation `metadata`. Artifact belum disetujui; tidak ada training ulang dalam batch ini. Difficulty model lama dapat mengalami class collapse. Confidence dari kalibrasi kelas 1 yang kecil belum membuktikan ketepatan label.
+Artifact diagnostik IndoBERT: `indobert-3x4x3-silver-kelas1-v1`, arsitektur `parallel-v1`, representation `metadata`. Dataset training: `kelas1-gemini-silver-n3-v1`. Approval provisional: `False`; research-only: `False`; gate data: `False`; anti-collapse: `False`; gate promosi: `False`. Packaging ini tidak melakukan training atau promosi model.
 KKO eksplisit masuk input encoder: `False`. Solusi minimum masuk input encoder: `False`. KKO/solusi tetap dicatat untuk audit; jangan menyatakan fitur itu dipakai model bila serializer artefak tidak memasukkannya.
 
 ## Kelompok difficulty
@@ -22,17 +22,17 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 28 | 28 | [Easy.json](difficulty/Easy.json) |
-| Medium | 14 | 13 | [Medium.json](difficulty/Medium.json) |
+| Easy | 30 | 28 | [Easy.json](difficulty/Easy.json) |
+| Medium | 12 | 11 | [Medium.json](difficulty/Medium.json) |
 | Hard | 0 | 0 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
 
-Untuk kelas 9, encoder dan head IndoBERT tidak dijalankan karena scope model hanya kelas 1–6. Probabilitas kosong, label/confidence/entropy null, dan action abstain berasal dari pemeriksaan scope runtime. Suara Gemini adalah bukti penilaian advisory, bukan probabilitas IndoBERT.
+Untuk kelas 9, encoder dan head IndoBERT tidak dijalankan karena cakupan artifact adalah kelas [1, 2, 3, 4, 5, 6], jalur ['regular']. Probabilitas kosong, label/confidence/entropy null, dan action abstain berasal dari pemeriksaan scope runtime. Suara Gemini adalah bukti penilaian advisory, bukan probabilitas IndoBERT.
 
 Suara awal LLM dihitung dari label yang benar-benar diberikan tiap run; abstain tidak menjadi suara kelas. Policy saat ini menerima 3–0 langsung dan meminta adjudikasi untuk kasus lainnya. Majority awal minimal 2/3 dicatat sebagai bukti, bukan confidence probabilistik. Label adjudikasi yang berbeda dari mayoritas awal tetap disimpan dengan alasan dan tidak disamarkan menjadi voting 3–0.
 
-Model IndoBERT lama hanya mendukung SD kelas 1–6. Untuk kelas 9, diagnostik mengembalikan `out_of_scope` dan `abstain`: label, confidence, dan entropy null serta probabilitas kosong. Label advisory mengikuti Gemini blind dengan rubrik SMP kelas 9. Tidak ada inferensi SD yang dipaksakan sebagai prediksi SMP.
+Cakupan artifact: kelas [1, 2, 3, 4, 5, 6], jalur ['regular']. Untuk kelas 9, diagnostik mengembalikan `out_of_scope` dan `abstain`: label, confidence, dan entropy null serta probabilitas kosong. Label advisory mengikuti Gemini blind dengan rubrik SMP kelas 9.
 
 ## 1. Soal `8af0a2ca82017a432c92902d`
 
@@ -46,26 +46,47 @@ Diketahui keliling sebuah segitiga sama kaki adalah 48 cm. Tentukan model matema
 | D | $2x + 2y = 48$ |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Segitiga sama kaki memiliki dua sisi yang sama panjang (misal x) dan satu sisi yang berbeda (misal y). Keliling adalah jumlah ketiga sisi tersebut: x + x + y = 48, yang disederhanakan menjadi 2x + y = 48.
+Solusi minimum hasil AI: Segitiga sama kaki memiliki dua sisi yang sama panjang (misal x) dan satu sisi berbeda (misal y). Keliling adalah jumlah ketiga sisi: x + x + y = 48, yang disederhanakan menjadi 2x + y = 48.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `58c3d64d72cfaba4de9b151726f4b19ddac4fe0d503c79c25bf067f35cc41b65`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `39d20e6d5685b89f46821fc6c55f2511f009c5135dd83bf8cba40c2f29a3388e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2035 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2037 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2028 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2693 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2682 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2691 |
 
-Run 1 — solusi: Segitiga sama kaki memiliki dua sisi yang sama panjang (misal x) dan satu sisi yang berbeda (misal y). Keliling adalah jumlah ketiga sisi tersebut: x + x + y = 48, yang disederhanakan menjadi 2x + y = 48.
-- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan deskripsi geometri (segitiga sama kaki) ke dalam bentuk aljabar (persamaan linear dua variabel). Ini melibatkan pemahaman konsep hubungan antar sisi dan representasi simbolik, yang termasuk dalam kategori applying.. Bukti: Tentukan model matematika yang menghubungkan antara keliling dan panjang sisi segitiga tersebut.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang struktur atau prinsip segitiga sama kaki dan bagaimana merepresentasikannya ke dalam model matematika (persamaan).. Bukti: segitiga sama kaki; model matematika
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 9. Siswa hanya perlu mengidentifikasi properti segitiga sama kaki (2 sisi sama, 1 berbeda) dan menuliskan persamaannya. Tidak ada strategi nonrutin atau kendala kompleks.. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; model matematika yang menghubungkan antara keliling dan panjang sisi
+Run 1 — solusi: Segitiga sama kaki memiliki dua sisi yang sama panjang (misal x) dan satu sisi berbeda (misal y). Keliling adalah jumlah ketiga sisi: x + x + y = 48, yang disederhanakan menjadi 2x + y = 48.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menerjemahkan situasi geometris (segitiga sama kaki) ke dalam bentuk aljabar (persamaan linear dua variabel). Ini melibatkan pemahaman konsep sifat segitiga dan representasi simbolik, yang merupakan penerapan konsep dalam konteks rutin.. Bukti: Tentukan model matematika yang menghubungkan antara keliling dan panjang sisi segitiga tersebut.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara sifat bangun datar (segitiga sama kaki) dan representasi aljabarnya (persamaan linear).. Bukti: segitiga sama kaki; model matematika yang menghubungkan antara keliling dan panjang sisi
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu menerjemahkan definisi segitiga sama kaki (dua sisi sama, satu sisi berbeda) ke dalam persamaan linear sederhana. Jalur penyelesaian sangat jelas, tidak ada kendala yang berinteraksi, dan beban kognitif rendah.. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; model matematika yang menghubungkan antara keliling dan panjang sisi
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang keliling segitiga dan notasi aljabar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 sudah sangat familiar dengan pemodelan matematika sederhana untuk bangun datar. Tidak ada tuntutan integrasi atau perencanaan yang kompleks. |
+
+Run 2 — solusi: Segitiga sama kaki memiliki dua sisi yang sama panjang (misal x) dan satu sisi alas (misal y). Keliling adalah jumlah ketiga sisi tersebut, yaitu x + x + y = 48, yang disederhanakan menjadi 2x + y = 48.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menerjemahkan situasi geometris (segitiga sama kaki) ke dalam bentuk aljabar (model matematika). Ini memerlukan pemahaman konsep sifat segitiga sama kaki dan representasi variabel, yang merupakan penerapan konsep pada konteks rutin.. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; Tentukan model matematika yang menghubungkan antara keliling dan panjang sisi
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang hubungan antara properti geometris (segitiga sama kaki) dan representasi simbolik aljabar (persamaan linear).. Bukti: model matematika yang menghubungkan antara keliling dan panjang sisi
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu memahami definisi segitiga sama kaki (dua sisi sama panjang) dan menerjemahkannya ke dalam persamaan linear sederhana. Tidak ada kendala yang berinteraksi atau perencanaan strategis yang kompleks.. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; Tentukan model matematika
 
 Profil difficulty run ini:
 
@@ -77,22 +98,22 @@ Profil difficulty run ini:
 | strategySelection | False |
 | representationTransfer | True |
 | relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi SPLDV dan pemodelan matematika adalah standar kelas 9. Soal ini menguji pemahaman dasar tanpa kompleksitas perhitungan atau logika yang berat. |
+| gradeRelativeRationale | Siswa kelas 9 sudah sangat familiar dengan pemodelan matematika sederhana dan sifat-sifat bangun datar dasar. |
 
-Run 2 — solusi: Segitiga sama kaki memiliki dua sisi yang sama panjang (misal x) dan satu sisi alas (misal y). Keliling adalah jumlah ketiga sisi tersebut, yaitu x + x + y = 48, yang disederhanakan menjadi 2x + y = 48.
-- Domain kognitif `classify/applying`: Siswa diminta untuk menerjemahkan situasi geometri (segitiga sama kaki) ke dalam bentuk aljabar (model matematika). Ini memerlukan pemahaman konsep hubungan antar variabel dalam geometri, yang termasuk dalam kategori applying.. Bukti: Tentukan model matematika yang menghubungkan antara keliling dan panjang sisi segitiga tersebut.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang struktur konsep segitiga sama kaki dan bagaimana merepresentasikannya dalam bentuk persamaan linear dua variabel.. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; model matematika yang menghubungkan antara keliling dan panjang sisi
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 9. Siswa hanya perlu memahami definisi segitiga sama kaki dan menerjemahkannya ke dalam persamaan linear sederhana. Tidak ada strategi nonrutin atau kendala kompleks.. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; model matematika yang menghubungkan antara keliling dan panjang sisi
+Run 3 — solusi: Segitiga sama kaki memiliki dua sisi yang sama panjang (misal x) dan satu sisi alas (misal y). Keliling segitiga adalah jumlah ketiga sisinya, yaitu x + x + y = 48, yang disederhanakan menjadi 2x + y = 48.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menerjemahkan situasi geometri (segitiga sama kaki) ke dalam bentuk aljabar (model matematika). Ini memerlukan pemahaman konsep sifat segitiga sama kaki dan representasi variabel, yang termasuk dalam domain applying.. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; Tentukan model matematika yang menghubungkan antara keliling dan panjang sisi
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang hubungan antara konsep geometri (sifat segitiga sama kaki) dan representasi simbolik aljabar (persamaan linear), yang merupakan pengetahuan konseptual.. Bukti: model matematika yang menghubungkan antara keliling dan panjang sisi
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu memahami definisi segitiga sama kaki (dua sisi sama panjang) dan menerjemahkannya ke dalam persamaan linear sederhana. Tidak ada langkah yang saling bergantung yang kompleks atau kendala yang berinteraksi.. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; Tentukan model matematika
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Definisi segitiga sama kaki dan konsep keliling bangun datar. |
+| expectedPrerequisite | Pemahaman dasar tentang keliling segitiga dan konsep variabel dalam aljabar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -102,30 +123,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi SPLDV dan pemodelan matematika adalah standar kelas 9. Soal ini menguji pemahaman dasar tentang variabel dalam konteks geometri yang sangat familiar. |
-
-Run 3 — solusi: Segitiga sama kaki memiliki dua sisi yang sama panjang (misal x) dan satu sisi alas (misal y). Keliling adalah jumlah ketiga sisi: x + x + y = 48, yang disederhanakan menjadi 2x + y = 48.
-- Domain kognitif `classify/applying`: Siswa diminta untuk menerjemahkan situasi geometri (segitiga sama kaki) ke dalam bentuk aljabar (persamaan linear dua variabel). Ini memerlukan pemahaman konsep hubungan antar variabel dalam geometri, bukan sekadar menghitung nilai.. Bukti: Tentukan model matematika yang menghubungkan antara keliling dan panjang sisi segitiga tersebut.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang struktur segitiga sama kaki dan bagaimana hubungan tersebut direpresentasikan dalam model matematika (persamaan linear).. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; model matematika yang menghubungkan antara keliling dan panjang sisi
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pemahaman dasar tentang definisi segitiga sama kaki dan penerjemahan langsung ke bentuk persamaan linear tanpa langkah-langkah kompleks atau strategi nonrutin.. Bukti: keliling sebuah segitiga sama kaki adalah 48 cm; model matematika yang menghubungkan antara keliling dan panjang sisi
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Definisi segitiga sama kaki dan konsep keliling bangun datar. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | True |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 sudah sangat familiar dengan pemodelan matematika sederhana dan sifat-sifat bangun datar dasar. |
-
-Histori retry: run 1 sebelumnya `failed` / `ClientError:429`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+| gradeRelativeRationale | Siswa kelas 9 sudah familiar dengan pemodelan matematika sederhana. Soal ini bersifat langsung dan tidak memerlukan perencanaan strategi yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -182,26 +180,26 @@ Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel.<br><b
 | D | $y = 35.000 + x$ |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Pendapatan (y) diperoleh dari harga per tiket dikalikan dengan jumlah tiket terjual (x). Maka, y = 35.000 * x.
+Solusi minimum hasil AI: Pendapatan (y) adalah hasil kali harga tiket per unit (35.000) dengan jumlah tiket terjual (x). Maka, y = 35.000x.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dc559007eea0dfc9ecdf3f4a3f816830590bdf812cc7cd4328270d92db3a5bae`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d2a55c17dfc8b96a39009a1e9dae7becfb990f0973bc8526bc9c789ccdcb1abc`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2035 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2047 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2042 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2543 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2553 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2608 |
 
-Run 1 — solusi: Pendapatan (y) diperoleh dari harga per tiket dikalikan dengan jumlah tiket terjual (x). Maka, y = 35.000 * x.
-- Domain kognitif `classify/applying`: Siswa diminta untuk menerjemahkan situasi kontekstual ke dalam model matematika linear sederhana. Proses ini melibatkan pemahaman hubungan proporsional dasar antara dua variabel, yang termasuk dalam domain applying.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; harga tiket film di suatu bioskop Rp35.000,00
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang bagaimana variabel-variabel dalam situasi dunia nyata saling berhubungan secara fungsional (konseptual) dan bagaimana menyusunnya menjadi persamaan linear (prosedural).. Bukti: Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 9. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan untuk memodelkan hubungan perkalian sederhana ini.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; harga tiket film di suatu bioskop Rp35.000,00
+Run 1 — solusi: Pendapatan (y) diperoleh dari harga per tiket dikalikan jumlah tiket (x). Maka, y = 35.000 * x.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menerjemahkan situasi kontekstual ke dalam model matematika linear sederhana. Ini adalah proses mengenali hubungan antara variabel dan menyusunnya menjadi persamaan, yang merupakan penerapan langsung dari konsep dasar SPLDV.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana variabel-variabel dalam situasi nyata dapat direpresentasikan dalam bentuk persamaan linear.. Bukti: Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu memahami hubungan perkalian sederhana antara harga satuan dan kuantitas untuk mendapatkan total pendapatan. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel
 
 Profil difficulty run ini:
 
@@ -217,18 +215,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Pemodelan matematika sederhana seperti ini adalah materi dasar yang sudah diperkenalkan sejak awal bab SPLDV di kelas 8/9. |
+| gradeRelativeRationale | Ini adalah soal pengenalan model matematika yang sangat standar untuk kelas 9, di mana siswa diharapkan mampu memodelkan situasi linear sederhana. |
 
-Run 2 — solusi: Pendapatan (y) diperoleh dari hasil perkalian harga satuan tiket (Rp35.000,00) dengan jumlah tiket yang terjual (x). Maka, persamaannya adalah y = 35.000x.
-- Domain kognitif `classify/applying`: Soal meminta siswa untuk menerjemahkan hubungan kuantitatif sederhana ke dalam bentuk persamaan linear. Proses ini melibatkan pemahaman konsep dasar variabel dan operasi perkalian, yang merupakan penerapan langsung dari definisi fungsi linear.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; harga tiket film di suatu bioskop Rp35.000,00
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara variabel (pendapatan dan jumlah tiket) dan prinsip dasar pembentukan persamaan linear, yang merupakan pengetahuan konseptual.. Bukti: Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi hubungan perkalian antara harga satuan dan kuantitas untuk membentuk persamaan. Tidak ada langkah kompleks atau strategi nonrutin yang diperlukan.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; harga tiket film di suatu bioskop Rp35.000,00
+Run 2 — solusi: Pendapatan (y) diperoleh dari harga per tiket dikalikan jumlah tiket (x). Maka, y = 35.000 * x.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk menerjemahkan situasi kontekstual ke dalam model matematika linear sederhana. Ini adalah proses mengenali hubungan proporsional dan menyatakannya dalam simbol, yang termasuk dalam domain knowing.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana variabel-variabel dalam situasi linear saling berhubungan (pendapatan sebagai fungsi dari jumlah barang).. Bukti: Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu mengidentifikasi hubungan perkalian dasar antara harga satuan dan kuantitas untuk membentuk persamaan. Tidak ada langkah kompleks atau kendala yang berinteraksi.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; harga tiket film di suatu bioskop Rp35.000,00
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang variabel dan operasi perkalian dalam konteks aritmatika. |
+| expectedPrerequisite | Pemahaman dasar tentang konsep perkalian dan variabel dalam aljabar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -238,18 +236,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini sangat mendasar untuk kelas 9, menguji pemahaman awal tentang pemodelan matematika sederhana yang seharusnya sudah dikuasai. |
+| gradeRelativeRationale | Ini adalah tugas dasar dalam pemodelan matematika untuk kelas 9, di mana siswa diharapkan mampu merumuskan persamaan linear sederhana dari konteks sehari-hari. |
 
-Run 3 — solusi: Pendapatan (y) diperoleh dari harga per tiket dikalikan dengan jumlah tiket yang terjual (x). Maka, y = 35.000 * x atau y = 35.000x.
-- Domain kognitif `classify/applying`: Soal meminta siswa untuk menerjemahkan situasi kontekstual sederhana ke dalam model matematika linear dua variabel. Proses ini melibatkan pengenalan hubungan proporsional dasar, yang termasuk dalam domain applying.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; harga tiket film di suatu bioskop Rp35.000,00
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara variabel (pendapatan dan jumlah tiket) dan prinsip perkalian dalam konteks harga satuan, yang merupakan pemahaman konseptual.. Bukti: Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin. Siswa hanya perlu mengidentifikasi hubungan perkalian sederhana antara harga satuan dan kuantitas untuk membentuk persamaan linear.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; harga tiket film di suatu bioskop Rp35.000,00
+Run 3 — solusi: Pendapatan (y) diperoleh dari harga per tiket dikalikan jumlah tiket (x). Maka, y = 35.000 * x.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk menerjemahkan situasi kontekstual ke dalam model matematika linear sederhana. Ini adalah prosedur langsung untuk mengenali hubungan perkalian antara variabel.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual; Nyatakan pernyataan berikut ke dalam bentuk persamaan linear dua variabel
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana variabel dalam persamaan linear dua variabel merepresentasikan hubungan kuantitatif dalam situasi nyata.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu mengidentifikasi hubungan perkalian antara harga satuan dan jumlah barang untuk membentuk persamaan linear. Tidak ada langkah kompleks atau kendala yang berinteraksi.. Bukti: y menyatakan pendapatan dari hasil penjualan tiket dan x menyatakan banyak tiket terjual
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang variabel dan operasi perkalian dalam konteks aritmatika. |
+| expectedPrerequisite | Pemahaman dasar tentang operasi perkalian dan konsep variabel dalam aljabar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -259,15 +257,37 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini sangat mendasar untuk kelas 9, di mana pemodelan SPLDV biasanya sudah lebih kompleks. Ini adalah soal pengenalan konsep dasar. |
+| gradeRelativeRationale | Soal ini merupakan pengenalan awal terhadap pemodelan SPLDV yang sangat standar untuk kelas 9, sehingga dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"applying": 1, "knowing": 2} | majority_2_of_3 / adjudicated | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4045`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa diminta menerjemahkan hubungan proporsional sederhana dari konteks verbal ke dalam bentuk simbolik persamaan linear. Ini adalah prosedur langsung yang mengenali hubungan perkalian.
+- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman konseptual tentang bagaimana variabel dalam persamaan linear merepresentasikan hubungan kuantitatif dalam situasi nyata.
+- Intended difficulty `Easy`: Soal ini sangat mendasar. Siswa hanya perlu mengidentifikasi hubungan perkalian antara harga satuan dan jumlah barang untuk membentuk persamaan linear. Tidak ada langkah kompleks, kendala yang berinteraksi, atau kebutuhan perencanaan strategis.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang operasi perkalian dan konsep variabel dalam aljabar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah tugas dasar dalam pemodelan matematika untuk kelas 9, di mana siswa diharapkan mampu merumuskan persamaan linear sederhana dari konteks sehari-hari. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -301,9 +321,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 3. Soal `0b4b98faa7f553833f0db971`
@@ -318,47 +338,68 @@ Suatu toko alat lukis menjual 40 kuas lukis. Harga kuas lukis jenis I Rp35.000,0
 | D | 15 kuas lukis jenis I dan 25 kuas lukis jenis II |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Model matematika: x+y=40 dan 35000x+24000y=1103000. Substitusi x=40-y ke persamaan kedua: 35000(40-y)+24000y=1103000, sehingga 1400000-11000y=1103000. Maka 11000y=297000, y=27. Jadi x=40-27=13.
+Solusi minimum hasil AI: Misal x = jumlah kuas I, y = jumlah kuas II. Sistem: x + y = 40 dan 35.000x + 24.000y = 1.103.000. Dari x + y = 40, maka x = 40 - y. Substitusi ke persamaan kedua: 35.000(40 - y) + 24.000y = 1.103.000 => 1.400.000 - 35.000y + 24.000y = 1.103.000 => -11.000y = -297.000 => y = 27. Maka x = 40 - 27 = 13.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `57af1d1776ee7fa33b790d6bdf66782998e871610afa07859141f38f5883e3b3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b87a6b3205cfa0b817151e4ef257a562b7268e2f9806ffd0b0fcf2b5e0b199c4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 3009 |
-| 2 | success | valid / verified | applying | procedural | Medium | 3664 |
-| 3 | success | valid / verified | applying | procedural | Medium | 3236 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3104 |
+| 2 | success | valid / verified | applying | procedural | Medium | 3112 |
+| 3 | success | valid / verified | applying | procedural | Easy | 3124 |
 
-Run 1 — solusi: Model matematika: x+y=40 dan 35000x+24000y=1103000. Substitusi x=40-y ke persamaan kedua: 35000(40-y)+24000y=1103000, sehingga 1400000-11000y=1103000. Maka 11000y=297000, y=27. Jadi x=40-27=13.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur rutin sistem persamaan linear dua variabel untuk menyelesaikan masalah kontekstual yang diberikan.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji kemampuan siswa dalam menggunakan algoritma penyelesaian sistem persamaan linear dua variabel.. Bukti: berapa banyak masing-masing jenis kuas lukis yang terjual
-- Intended difficulty `classify/Medium`: Soal memerlukan pemodelan matematika dan penyelesaian sistem persamaan dua variabel. Ini adalah prosedur standar kelas 9 dengan beban perhitungan moderat.. Bukti: 40 kuas lukis; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00; uang yang didapat oleh toko tersebut Rp1.103.000,00
+Run 1 — solusi: Misal x = jenis I, y = jenis II. Sistem: x + y = 40 dan 35.000x + 24.000y = 1.103.000. Dari x = 40 - y, substitusi ke persamaan kedua: 35.000(40 - y) + 24.000y = 1.103.000 => 1.400.000 - 35.000y + 24.000y = 1.103.000 => -11.000y = -297.000 => y = 27. Maka x = 40 - 27 = 13.
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan masalah kontekstual ke dalam model matematika (SPLDV) dan menerapkan prosedur penyelesaian (substitusi atau eliminasi) untuk menemukan nilai variabel yang tidak diketahui.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00, maka berapa banyak masing-masing jenis kuas lukis yang terjual?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa tentang algoritme penyelesaian sistem persamaan linear dua variabel yang merupakan prosedur standar dalam kurikulum kelas 9.. Bukti: Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00
+- Intended difficulty `classify/Easy`: Soal ini adalah penerapan rutin SPLDV. Siswa hanya perlu membuat dua persamaan linear sederhana dan menyelesaikannya. Tidak ada kendala yang berinteraksi secara kompleks atau kebutuhan strategi non-rutin.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar aljabar dan metode eliminasi atau substitusi pada SPLDV. |
+| expectedPrerequisite | Pemahaman dasar tentang variabel, persamaan linear, dan metode substitusi/eliminasi. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
-| strategySelection | True |
+| strategySelection | False |
 | representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | SPLDV adalah materi inti kelas 9. Soal ini menggunakan konteks belanja yang sangat umum dan familiar, dengan langkah penyelesaian yang langsung dan terstruktur. |
+
+Run 2 — solusi: Misalkan x = jumlah kuas I, y = jumlah kuas II. Sistem: x + y = 40 dan 35.000x + 24.000y = 1.103.000. Dari x = 40 - y, substitusi ke persamaan kedua: 35.000(40 - y) + 24.000y = 1.103.000 => 1.400.000 - 35.000y + 24.000y = 1.103.000 => -11.000y = -297.000 => y = 27. Maka x = 40 - 27 = 13.
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan masalah kontekstual ke dalam model matematika (SPLDV) dan menerapkan prosedur penyelesaian (substitusi atau eliminasi) untuk menemukan nilai variabel yang memenuhi kedua kendala.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00, maka berapa banyak masing-masing jenis kuas lukis yang terjual?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa tentang bagaimana menyusun dan menyelesaikan sistem persamaan linear dua variabel sebagai metode untuk memecahkan masalah aljabar.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemodelan matematika dari situasi nyata dan penyelesaian sistem persamaan linear dua variabel. Meskipun prosedurnya familiar, siswa harus melakukan langkah-langkah yang saling terkait (pemodelan, eliminasi/substitusi, verifikasi) tanpa bantuan langkah demi langkah.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar aljabar, sistem persamaan linear dua variabel, dan operasi aritmatika. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini merupakan aplikasi langsung dari materi SPLDV yang diajarkan di kelas 9, melibatkan dua variabel dan dua kendala (jumlah barang dan total harga). |
+| gradeRelativeRationale | Sesuai untuk kelas 9, di mana pemodelan SPLDV merupakan kompetensi inti. Tingkat kesulitan menengah karena menuntut ketelitian dalam perhitungan dan pemodelan tanpa bantuan eksplisit. |
 
-Run 2 — solusi: Misalkan x = banyak kuas I, y = banyak kuas II. Sistem: x + y = 40 dan 35.000x + 24.000y = 1.103.000. Dari x = 40 - y, substitusi ke persamaan kedua: 35.000(40-y) + 24.000y = 1.103.000 => 1.400.000 - 11.000y = 1.103.000 => 11.000y = 297.000 => y = 27. Maka x = 13.
-- Domain kognitif `classify/applying`: Siswa perlu memodelkan masalah ke dalam sistem persamaan linear dua variabel dan menerapkan prosedur penyelesaian (substitusi atau eliminasi) untuk menemukan nilai variabel.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00
-- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut penerapan algoritma penyelesaian sistem persamaan linear dua variabel.. Bukti: 35.000x + 24.000y = 1.103.000
-- Intended difficulty `classify/Medium`: Soal memerlukan pembentukan model matematika dari narasi dan penyelesaian sistem persamaan dua variabel. Ini adalah tugas rutin bagi siswa kelas 9.. Bukti: 40 kuas lukis; Rp35.000,00; Rp24.000,00; Rp1.103.000,00
+Run 3 — solusi: Misal x = jumlah kuas I, y = jumlah kuas II. Sistem: x + y = 40 dan 35.000x + 24.000y = 1.103.000. Dari x + y = 40, maka x = 40 - y. Substitusi ke persamaan kedua: 35.000(40 - y) + 24.000y = 1.103.000 => 1.400.000 - 35.000y + 24.000y = 1.103.000 => -11.000y = -297.000 => y = 27. Maka x = 40 - 27 = 13.
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan masalah kontekstual ke dalam model matematika (SPLDV) dan menerapkan prosedur penyelesaian (substitusi atau eliminasi) yang rutin untuk kelas 9.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00, maka berapa banyak masing-masing jenis kuas lukis yang terjual?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang hubungan antara variabel dalam sistem persamaan linear dan penggunaan algoritma penyelesaian yang sistematis.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari SPLDV yang familiar bagi siswa kelas 9. Langkah-langkah penyelesaiannya jelas dan prosedural tanpa kendala yang saling berinteraksi secara kompleks.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00
 
 Profil difficulty run ini:
 
@@ -374,36 +415,37 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | SPLDV adalah materi standar kelas 9. Soal ini merupakan aplikasi langsung dari pemodelan dan penyelesaian sistem. |
-
-Run 3 — solusi: Misal x=kuas I, y=kuas II. Sistem persamaan: x+y=40 dan 35000x+24000y=1103000. Substitusi x=40-y ke persamaan kedua: 35000(40-y)+24000y=1103000 -> 1400000-11000y=1103000 -> 11000y=297000 -> y=27. Maka x=40-27=13. Jadi, 13 kuas jenis I dan 27 kuas jenis II.
-- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan masalah cerita ke dalam model matematika SPLDV dan menerapkan prosedur eliminasi atau substitusi untuk menyelesaikannya.. Bukti: Suatu toko alat lukis menjual 40 kuas lukis.; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; Jika uang yang didapat oleh toko tersebut Rp1.103.000,00
-- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut penggunaan algoritma penyelesaian sistem persamaan linear dua variabel.. Bukti: berapa banyak masing-masing jenis kuas lukis yang terjual?
-- Intended difficulty `classify/Medium`: Soal ini melibatkan pemodelan matematika dari situasi nyata dan penyelesaian sistem persamaan, yang merupakan standar kompetensi kelas 9. Tingkat kesulitan sedang karena memerlukan langkah-langkah terstruktur (pemodelan, substitusi/eliminasi, perhitungan).. Bukti: 40 kuas lukis; Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.; uang yang didapat oleh toko tersebut Rp1.103.000,00
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar aljabar, operasi aritmatika, dan konsep sistem persamaan linear dua variabel. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini melibatkan pemodelan matematika dari situasi nyata dan penyelesaian sistem persamaan, yang merupakan standar kompetensi kelas 9. Tingkat kesulitan sedang karena memerlukan langkah-langkah terstruktur (pemodelan, substitusi/eliminasi, perhitungan). |
+| gradeRelativeRationale | SPLDV adalah materi inti kelas 9. Soal ini menggunakan konteks belanja yang standar dan tidak memerlukan strategi non-rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 2, "Medium": 1} | majority_2_of_3 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `5475`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu menerjemahkan masalah kontekstual ke dalam model matematika (SPLDV) dan menerapkan prosedur penyelesaian (substitusi atau eliminasi) untuk menemukan nilai variabel yang tidak diketahui.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman siswa tentang algoritme penyelesaian sistem persamaan linear dua variabel yang merupakan prosedur standar dalam kurikulum kelas 9.
+- Intended difficulty `Easy`: Soal ini adalah penerapan rutin SPLDV. Siswa hanya perlu membuat dua persamaan linear sederhana dan menyelesaikannya. Tidak ada kendala yang berinteraksi secara kompleks atau kebutuhan strategi non-rutin.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang variabel, persamaan linear, dan metode substitusi/eliminasi. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | SPLDV adalah materi inti kelas 9. Soal ini menggunakan konteks belanja yang sangat umum dan familiar, dengan langkah penyelesaian yang langsung dan terstruktur. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -437,9 +479,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 4. Soal `a4219a3c217e0979ca28b57e`
@@ -453,33 +495,33 @@ Wayan pergi ke toko kue tradisional untuk membeli kue basung (kue yang berasal d
 | C | Rp37.500,00 |
 | D | Rp40.500,00 |
 
-Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `Rp40.500,00`.
-Solusi minimum hasil AI: Sistem: b+3m=13500 dan 2b+5m=24000. Dari (1), b=13500-3m. Substitusi ke (2): 2(13500-3m)+5m=24000 -> 27000-6m+5m=24000 -> m=3000. Maka b=13500-3(3000)=4500. Harga 3m+7b = 3(3000)+7(4500) = 9000+31500 = 40500.
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Sistem: b+3m=13500 dan 2b+5m=24000. Eliminasi b: 2(b+3m)=27000, kurangi dengan 2b+5m=24000 menghasilkan m=3000. Substitusi m ke b+3(3000)=13500 menghasilkan b=4500. Nilai 3m+7b = 3(3000)+7(4500) = 9000+31500 = 40500.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c82a82f667e14761bde3eadd4c169f39d951559eb43fd57da1d6991c40bcc8e8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5a0a3e7cae6cfbb3ecf1c0af78c317160d6d4ad45886cb474ba94325565aafde`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 3514 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2532 |
-| 3 | success | valid / verified | applying | procedural | Medium | 3438 |
+| 1 | success | valid / verified | applying | procedural | Medium | 3752 |
+| 2 | success | valid / verified | applying | procedural | Medium | 3194 |
+| 3 | success | valid / verified | applying | procedural | Medium | 3169 |
 
-Run 1 — solusi: Sistem: b+3m=13500 dan 2b+5m=24000. Dari (1), b=13500-3m. Substitusi ke (2): 2(13500-3m)+5m=24000 -> 27000-6m+5m=24000 -> m=3000. Maka b=13500-3(3000)=4500. Harga 3m+7b = 3(3000)+7(4500) = 9000+31500 = 40500.
-- Domain kognitif `classify/applying`: Siswa perlu memodelkan situasi ke dalam SPLDV dan menerapkan prosedur aljabar (substitusi/eliminasi) untuk menemukan nilai variabel, kemudian menghitung nilai kombinasi linear yang ditanyakan.. Bukti: membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
-- Dimensi pengetahuan `classify/procedural`: Soal menuntut penggunaan algoritma penyelesaian sistem persamaan linear dua variabel yang sudah dipelajari di kelas 9.. Bukti: membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00
-- Intended difficulty `classify/Medium`: Soal memerlukan pemodelan matematika dan penyelesaian sistem persamaan linear dua variabel. Ini adalah tugas rutin bagi siswa kelas 9, namun melibatkan beberapa langkah (pemodelan, eliminasi/substitusi, perhitungan akhir).. Bukti: membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
+Run 1 — solusi: Sistem: b+3m=13500 dan 2b+5m=24000. Eliminasi b: 2(b+3m)=27000, kurangi dengan 2b+5m=24000 menghasilkan m=3000. Substitusi m ke b+3(3000)=13500 menghasilkan b=4500. Nilai 3m+7b = 3(3000)+7(4500) = 9000+31500 = 40500.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur sistem persamaan linear dua variabel (SPLDV) untuk menentukan harga satuan, kemudian menggunakan nilai tersebut untuk menghitung nilai ekspresi linear lainnya. Ini adalah penerapan rutin dari konsep SPLDV.. Bukti: Wayan pergi ke toko kue tradisional untuk membeli kue basung (kue yang berasal dari Sumatera Barat) dan kue mendut (kue yang berasal dari Jawa Tengah). Dia membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00.; Di toko yang sama, Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00.
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penggunaan algoritma penyelesaian SPLDV (eliminasi atau substitusi) yang merupakan prosedur standar dalam aljabar.. Bukti: Berapa harga tiga kue mendut dan tujuh kue basung?
+- Intended difficulty `classify/Medium`: Soal dikategorikan Medium karena memerlukan perencanaan multi-langkah: menyusun model matematika, menyelesaikan sistem, dan menghitung nilai akhir. Meskipun prosedurnya familiar bagi siswa kelas 9, terdapat ketergantungan langkah yang jelas.. Bukti: satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar SPLDV, operasi aritmatika dasar, dan substitusi/eliminasi. |
+| expectedPrerequisite | Pemahaman dasar aljabar dan metode eliminasi/substitusi SPLDV. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -489,18 +531,18 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | SPLDV adalah materi standar kelas 9. Soal ini menguji pemahaman prosedural standar tanpa jebakan konseptual yang rumit. |
+| gradeRelativeRationale | Ini adalah soal standar SPLDV untuk kelas 9 yang menguji kemampuan menyelesaikan sistem dan melakukan substitusi nilai ke dalam bentuk linear lain. |
 
-Run 2 — solusi: Misal b = harga kue basung, m = harga kue mendut. Sistem: (1) b + 3m = 13.500; (2) 2b + 5m = 24.000. Dari (1), b = 13.500 - 3m. Substitusi ke (2): 2(13.500 - 3m) + 5m = 24.000 => 27.000 - 6m + 5m = 24.000 => -m = -3.000 => m = 3.000. Maka b = 13.500 - 3(3.000) = 4.500. Harga 3m + 7b = 3(3.000) + 7(4.500) = 9.000 + 31.500 = 40.500.
-- Domain kognitif `classify/applying`: Siswa perlu memodelkan situasi ke dalam SPLDV, menyelesaikan sistem tersebut menggunakan metode eliminasi atau substitusi, dan menghitung nilai akhir berdasarkan variabel yang ditemukan. Ini adalah penerapan prosedur standar pada situasi kontekstual.. Bukti: Wayan pergi ke toko kue tradisional untuk membeli kue basung... membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritma penyelesaian SPLDV (prosedural) untuk memecahkan masalah yang diberikan dalam bentuk cerita.. Bukti: membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00
-- Intended difficulty `classify/Medium`: Soal ini memerlukan langkah-langkah rutin (memodelkan, menyelesaikan sistem, menghitung hasil akhir). Tidak ada strategi nonrutin yang diperlukan, hanya aplikasi prosedur SPLDV yang standar untuk kelas 9.. Bukti: satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
+Run 2 — solusi: Misalkan b = harga kue basung, m = harga kue mendut. Sistem: b + 3m = 13.500 (1) dan 2b + 5m = 24.000 (2). Dari (1), b = 13.500 - 3m. Substitusi ke (2): 2(13.500 - 3m) + 5m = 24.000 => 27.000 - 6m + 5m = 24.000 => -m = -3.000 => m = 3.000. Maka b = 13.500 - 3(3.000) = 4.500. Harga 3m + 7b = 3(3.000) + 7(4.500) = 9.000 + 31.500 = 40.500.
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan masalah kontekstual ke dalam model matematika SPLDV, menyelesaikan sistem tersebut untuk menemukan harga satuan, dan menerapkan hasil tersebut untuk menghitung harga kombinasi baru. Ini adalah penerapan prosedur rutin dalam konteks.. Bukti: Wayan pergi ke toko kue tradisional untuk membeli kue basung... dan kue mendut... membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penggunaan algoritme penyelesaian SPLDV (substitusi atau eliminasi) yang merupakan prosedur standar dalam aljabar.. Bukti: membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: memodelkan, menyelesaikan sistem, dan menghitung nilai akhir. Meskipun prosedurnya familiar, siswa harus mengelola beberapa variabel dan melakukan perhitungan berjenjang tanpa bantuan langkah perantara.. Bukti: membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang variabel, persamaan linear, dan metode eliminasi/substitusi. |
+| expectedPrerequisite | Pemahaman dasar aljabar dan metode penyelesaian SPLDV (eliminasi/substitusi). |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -510,28 +552,28 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | SPLDV adalah materi inti kelas 9. Soal ini menuntut ketelitian dalam memodelkan dan menghitung, namun prosedurnya sangat standar. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menyelesaikan SPLDV dua variabel. Soal ini menuntut ketelitian dalam memodelkan dan menghitung, namun alurnya standar untuk materi tersebut. |
 
-Run 3 — solusi: Sistem: b+3m=13500 (1) dan 2b+5m=24000 (2). Dari (1), b=13500-3m. Substitusi ke (2): 2(13500-3m)+5m=24000 => 27000-6m+5m=24000 => m=3000. Maka b=13500-3(3000)=4500. Harga 3m+7b = 3(3000)+7(4500) = 9000+31500 = 40500.
-- Domain kognitif `classify/applying`: Siswa perlu memodelkan situasi ke dalam SPLDV, menyelesaikan sistem tersebut, dan menghitung nilai kombinasi linear yang ditanyakan. Ini adalah penerapan prosedur standar SPLDV.. Bukti: membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
-- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang hubungan antar variabel dalam sistem persamaan linear dan penggunaan algoritma penyelesaian (substitusi/eliminasi).. Bukti: membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00
-- Intended difficulty `classify/Medium`: Soal SPLDV standar dengan dua variabel. Langkah penyelesaian rutin (eliminasi/substitusi) dan perhitungan aritmatika dasar. Tidak ada jebakan konseptual yang kompleks.. Bukti: membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
+Run 3 — solusi: Misalkan b = harga kue basung dan m = harga kue mendut. Sistem persamaan: (1) b + 3m = 13.500 dan (2) 2b + 5m = 24.000. Dari (1), b = 13.500 - 3m. Substitusi ke (2): 2(13.500 - 3m) + 5m = 24.000 => 27.000 - 6m + 5m = 24.000 => -m = -3.000 => m = 3.000. Maka b = 13.500 - 3(3.000) = 4.500. Harga 3m + 7b = 3(3.000) + 7(4.500) = 9.000 + 31.500 = 40.500.
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan masalah cerita ke dalam model matematika SPLDV, menyelesaikan sistem tersebut untuk menemukan harga satuan, lalu menghitung nilai kombinasi baru. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Wayan pergi ke toko kue tradisional untuk membeli kue basung... membeli satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00.; Aisyah membeli dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00.; Berapa harga tiga kue mendut dan tujuh kue basung?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma penyelesaian SPLDV (substitusi atau eliminasi) yang merupakan prosedur standar dalam aljabar.. Bukti: satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: memodelkan, menyelesaikan sistem, dan menghitung nilai akhir. Meskipun prosedurnya familiar bagi kelas 9, siswa harus melakukan perencanaan langkah yang berurutan tanpa bantuan eksplisit.. Bukti: satu kue basung dan tiga kue mendut dengan harga seluruhnya Rp13.500,00; dua kue basung dan lima kue mendut dengan harga seluruhnya Rp24.000,00; Berapa harga tiga kue mendut dan tujuh kue basung?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar sistem persamaan linear dua variabel dan operasi aritmatika dasar. |
+| expectedPrerequisite | Kemampuan dasar aljabar, operasi aritmetika, dan pemahaman konsep SPLDV. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
-| representationTransfer | False |
+| representationTransfer | True |
 | relevantInformationUnits | 4 |
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | SPLDV adalah materi inti kelas 9. Soal ini menuntut penyelesaian sistem standar, yang merupakan prosedur rutin bagi siswa kelas 9. |
+| gradeRelativeRationale | Soal ini adalah standar kurikulum kelas 9. Memerlukan integrasi antara pemodelan dan perhitungan, namun prosedurnya rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -590,53 +632,32 @@ Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek 
 | D | 11 kali pengangkutan |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Kapasitas muatan bersih = 2000 - 150 = 1850 kg. Kapasitas kotak per angkut = 1850 / 50 = 37 kotak. Total kotak = 350. Banyak pengangkutan = 350 / 37 = 9,459... Karena pengangkutan harus bilangan bulat dan semua kotak harus terangkut, maka dibulatkan ke atas menjadi 10 kali.
+Solusi minimum hasil AI: Kapasitas muatan kotak = 2000 kg - 150 kg = 1850 kg. Kapasitas per angkut = 1850 kg / 50 kg/kotak = 37 kotak. Banyak pengangkutan = 350 kotak / 37 kotak/angkut = 9,459... Karena jumlah pengangkutan harus bilangan bulat dan semua kotak harus terangkut, maka dibulatkan ke atas menjadi 10 kali.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6135bd715232d411294d73b20fd0a32d5d8256705f6551eaa62311deb4452d2e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `61ae3c8f5be0f920428c60ce7233ac238c73fe68eeb7cd678ed1c48d0f6db730`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 2277 |
-| 2 | success | valid / verified | applying | procedural | Medium | 3392 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2249 |
+| 1 | success | valid / verified | applying | procedural | Medium | 2965 |
+| 2 | success | valid / verified | applying | procedural | Medium | 2962 |
+| 3 | success | valid / verified | applying | procedural | Medium | 2951 |
 
-Run 1 — solusi: Kapasitas muatan bersih = 2000 - 150 = 1850 kg. Kapasitas kotak per angkut = 1850 / 50 = 37 kotak. Total kotak = 350. Banyak pengangkutan = 350 / 37 = 9,459... Karena pengangkutan harus bilangan bulat dan semua kotak harus terangkut, maka dibulatkan ke atas menjadi 10 kali.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi kendala kapasitas (pertidaksamaan), melakukan operasi aritmatika untuk menentukan kapasitas per angkut, dan menerapkan penalaran pembulatan ke atas dalam konteks dunia nyata.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.; berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prinsip pertidaksamaan linear untuk memodelkan masalah kapasitas dan menerapkan prosedur pembulatan yang sesuai dengan konteks masalah.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg.; berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
-- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman tentang kendala kapasitas dan interpretasi hasil pembagian dalam konteks nyata (pembulatan ke atas). Ini adalah prosedur rutin dalam pemodelan matematika sederhana.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Operasi aritmatika dasar, pemahaman konsep pertidaksamaan sederhana, dan logika pembulatan dalam konteks masalah. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Masalah ini sesuai untuk kelas 9 karena melibatkan pemodelan pertidaksamaan linear sederhana dan interpretasi hasil yang logis, yang merupakan standar kompetensi pada jenjang tersebut. |
-
-Run 2 — solusi: Kapasitas muatan kotak = 2000 kg - 150 kg = 1850 kg. Jumlah kotak per angkut = 1850 kg / 50 kg = 37 kotak. Total pengangkutan = 350 kotak / 37 kotak/angkut = 9,459. Karena harus mengangkut semua kotak, maka dibulatkan ke atas menjadi 10 kali pengangkutan.
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur matematika (pengurangan dan pembagian) untuk menentukan kapasitas efektif, lalu menginterpretasikan hasil pembagian dalam konteks dunia nyata (pembulatan ke atas).. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; Jika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan
-- Dimensi pengetahuan `classify/procedural`: Melibatkan penggunaan algoritma aritmatika dasar dan pemahaman konsep kapasitas dalam konteks masalah pertidaksamaan/pembagian.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg.; Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.
-- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah rutin (pengurangan, pembagian, pembulatan ke atas) yang saling terkait dalam konteks masalah nyata.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
+Run 1 — solusi: Kapasitas muatan kotak = 2000 kg - 150 kg = 1850 kg. Kapasitas per angkut = 1850 kg / 50 kg/kotak = 37 kotak. Banyak pengangkutan = 350 kotak / 37 kotak/angkut = 9,459... Karena jumlah pengangkutan harus bilangan bulat dan semua kotak harus terangkut, maka dibulatkan ke atas menjadi 10 kali.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep pertidaksamaan/kapasitas untuk menentukan jumlah pengangkutan. Ini melibatkan pemilihan prosedur (pembagian dan pembulatan ke atas) dalam konteks masalah nyata, yang merupakan penerapan konsep.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.; Jika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur aritmatika (pengurangan, pembagian) dan prinsip pembulatan ke atas (kontekstual) untuk menyelesaikan masalah kapasitas.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg.; berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan beberapa langkah terintegrasi: menghitung kapasitas bersih, menentukan kapasitas per angkut, dan melakukan pembulatan ke atas yang logis sesuai konteks (bukan sekadar pembulatan matematis biasa).. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.; Jika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Operasi aritmatika dasar (pengurangan, pembagian) dan pemahaman konsep pembulatan dalam konteks masalah nyata. |
+| expectedPrerequisite | Operasi aritmatika dasar, pemahaman konsep kapasitas/pertidaksamaan sederhana. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -646,18 +667,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menyelesaikan masalah aritmatika sosial atau pertidaksamaan sederhana dengan interpretasi konteks. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu memodelkan masalah kapasitas sederhana dan memahami bahwa dalam konteks pengangkutan, hasil pecahan harus dibulatkan ke atas untuk memastikan semua barang terangkut. |
 
-Run 3 — solusi: Kapasitas muatan kotak = 2000 kg - 150 kg = 1850 kg. Kapasitas per angkut = 1850 kg / 50 kg/kotak = 37 kotak. Banyak pengangkutan = 350 kotak / 37 kotak/angkut ≈ 9,46. Karena pengangkutan harus bilangan bulat dan semua kotak harus terangkut, maka dibulatkan ke atas menjadi 10 kali.
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur matematika yang tepat (pembagian dan pembulatan ke atas) untuk menyelesaikan masalah kontekstual terkait kapasitas angkut.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; Jika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
-- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan algoritma pembagian dan prinsip pembulatan kontekstual (pembulatan ke atas untuk sisa muatan) dalam situasi nyata.. Bukti: berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
-- Intended difficulty `classify/Medium`: Soal ini melibatkan langkah rutin: menghitung kapasitas bersih, menentukan kapasitas per angkut, dan melakukan pembulatan ke atas yang logis. Ini adalah prosedur standar untuk masalah kapasitas.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
+Run 2 — solusi: Kapasitas muatan kotak = 2000 kg - 150 kg = 1850 kg. Kapasitas per angkut = 1850 kg / 50 kg/kotak = 37 kotak. Total pengangkutan = 350 kotak / 37 kotak/angkut = 9,459... Karena jumlah pengangkutan harus bilangan bulat dan semua kotak harus terangkut, maka dibulatkan ke atas menjadi 10 kali.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep pertidaksamaan/kapasitas angkut untuk menentukan jumlah pengangkutan. Siswa harus mengintegrasikan informasi berat total, berat pengemudi, dan berat per kotak untuk menentukan kapasitas per angkut, kemudian melakukan pembulatan ke atas (kontekstual) untuk menjawab masalah.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.; berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur aritmatika dasar dan pemahaman konsep kapasitas (pertidaksamaan) untuk menyelesaikan masalah dunia nyata.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg.; berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: menghitung kapasitas bersih, menghitung kapasitas per angkut, dan melakukan pembulatan ke atas yang tepat sesuai konteks masalah (bukan pembulatan matematis biasa).. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.; Jika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Operasi aritmatika dasar dan pemahaman konsep pembulatan dalam konteks masalah nyata. |
+| expectedPrerequisite | Operasi aritmatika dasar dan pemahaman konsep kapasitas/pertidaksamaan sederhana. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -667,7 +688,28 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Masalah kapasitas angkut adalah materi standar kelas 9. Tingkat kesulitan Medium diberikan karena siswa harus menyadari perlunya pembulatan ke atas (ceiling function) agar semua kotak terangkut, bukan sekadar pembulatan matematis biasa. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan pemodelan sederhana terkait kapasitas dan memahami perlunya pembulatan ke atas dalam konteks pengangkutan barang. |
+
+Run 3 — solusi: Kapasitas muatan barang = 2000 kg - 150 kg = 1850 kg. Kapasitas per angkut = 1850 kg / 50 kg/kotak = 37 kotak. Banyak pengangkutan = 350 kotak / 37 kotak/angkut = 9,459... Karena jumlah pengangkutan harus bilangan bulat dan semua kotak harus terangkut, maka dibulatkan ke atas menjadi 10 kali.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi kendala kapasitas (pengurangan berat pengemudi), menentukan kapasitas muatan per perjalanan, dan menerapkan pembulatan ke atas (ceiling function) dalam konteks dunia nyata untuk memastikan semua kotak terangkut.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.; Jika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur aritmatika dasar dan konsep pertidaksamaan/pembagian untuk memecahkan masalah kapasitas angkut yang kontekstual.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg.; berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah logis: menghitung kapasitas bersih (pengurangan berat pengemudi) dan menerapkan pembulatan ke atas (ceiling) yang sering menjadi jebakan bagi siswa, meskipun operasi dasarnya rutin.. Bukti: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg.; Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.; Jika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi aritmatika dasar, pemahaman konsep kapasitas/pertidaksamaan sederhana. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu memodelkan masalah kapasitas sederhana dan memahami implikasi pembulatan dalam konteks jumlah perjalanan/benda. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -726,114 +768,92 @@ Titik P(2,-1) dan R(6,2) merupakan titik sudut yang berhadapan pada sisi persegi
 | D | 3x - 4y + 33 = 0 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Karena sisi persegi panjang sejajar sumbu koordinat, titik sudut lainnya adalah Q(6,-1) dan S(2,2). Gradien garis QS adalah m = (2 - (-1)) / (2 - 6) = 3 / -4 = -3/4. Persamaan garis melalui (2,2) dengan m = -3/4 adalah y - 2 = -3/4(x - 2) -> 4y - 8 = -3x + 6 -> 3x + 4y - 14 = 0.
+Solusi minimum hasil AI: Karena sisi persegi panjang sejajar sumbu koordinat, titik Q dan S memiliki koordinat (6,-1) dan (2,2). Kemiringan (m) garis QS = (2 - (-1)) / (2 - 6) = 3 / -4 = -3/4. Persamaan garis: y - 2 = -3/4(x - 2) atau 4y - 8 = -3x + 6, yang disederhanakan menjadi 3x + 4y - 14 = 0.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5885c34544dc98d52e79d31edbd680309f52638dcbb47266848b98b80ec91811`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4a9d31abca3ef846caf7f6bf020d8fc7b3339b7549e13c8650257ebd542f4237`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 2229 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 2230 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 2184 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 2868 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 2900 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 2885 |
 
-Run 1 — solusi: Karena sisi sejajar sumbu koordinat, titik sudut lainnya adalah Q(6,-1) dan S(2,2). Gradien garis QS adalah m = (2 - (-1)) / (2 - 6) = 3 / -4 = -3/4. Persamaan garis melalui (2,2) dengan m = -3/4 adalah y - 2 = -3/4(x - 2) -> 4y - 8 = -3x + 6 -> 3x + 4y - 14 = 0.
-- Domain kognitif `classify/applying`: Siswa perlu memahami sifat persegi panjang dengan sisi sejajar sumbu koordinat untuk menentukan koordinat titik Q dan S, kemudian menerapkan rumus persamaan garis lurus. Ini adalah penerapan prosedur rutin.. Bukti: titik sudut yang berhadapan pada sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan konsep geometri (sifat persegi panjang pada bidang kartesius) dan prosedur aljabar (menentukan gradien dan persamaan garis).. Bukti: sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman konsep koordinat dan sifat bangun datar untuk menentukan titik yang hilang, diikuti dengan prosedur standar mencari persamaan garis. Langkah-langkahnya rutin dan terstruktur.. Bukti: Titik P(2,-1) dan R(6,2) merupakan titik sudut yang berhadapan; sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat
+Run 1 — solusi: Karena sisi persegi panjang sejajar sumbu koordinat, titik Q dan S memiliki koordinat (6,-1) dan (2,2). Kemiringan (m) garis QS = (2 - (-1)) / (2 - 6) = 3 / -4 = -3/4. Persamaan garis: y - 2 = -3/4(x - 2) atau 4y - 8 = -3x + 6, yang disederhanakan menjadi 3x + 4y - 14 = 0.
+- Domain kognitif `classify/applying`: Siswa perlu memahami sifat geometri persegi panjang dengan sisi sejajar sumbu koordinat untuk menentukan koordinat titik Q dan S dari titik P dan R, kemudian menerapkan prosedur mencari persamaan garis melalui dua titik.. Bukti: sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang hubungan antara sifat geometri (persegi panjang sejajar sumbu) dengan representasi koordinat, serta prosedur aljabar untuk menentukan persamaan garis.. Bukti: sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan inferensi geometri (menentukan koordinat Q dan S) sebelum menerapkan prosedur standar persamaan garis. Langkah-langkahnya saling bergantung namun prosedurnya familiar bagi siswa kelas 9.. Bukti: Titik P(2,-1) dan R(6,2) merupakan titik sudut yang berhadapan; sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep koordinat kartesius, sifat persegi panjang, rumus gradien, dan persamaan garis lurus. |
+| expectedPrerequisite | Pemahaman koordinat kartesius, sifat persegi panjang, dan rumus persamaan garis melalui dua titik. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghubungkan sifat geometri dengan koordinat. Menentukan titik Q dan S dari P dan R adalah langkah krusial yang memerlukan pemahaman konsep, bukan sekadar substitusi rumus. |
+
+Run 2 — solusi: Karena sisi persegi panjang sejajar sumbu koordinat, titik Q dan S memiliki koordinat (6,-1) dan (2,2). Kemiringan garis QS adalah m = (2 - (-1)) / (2 - 6) = 3 / -4 = -3/4. Persamaan garis melalui (2,2) dengan m = -3/4 adalah y - 2 = -3/4(x - 2), yang disederhanakan menjadi 4y - 8 = -3x + 6, atau 3x + 4y - 14 = 0.
+- Domain kognitif `classify/applying`: Siswa perlu memahami sifat geometri persegi panjang dengan sisi sejajar sumbu koordinat untuk menentukan koordinat titik Q dan S dari titik P dan R, kemudian menerapkan rumus kemiringan dan persamaan garis.. Bukti: titik sudut yang berhadapan pada sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman konseptual tentang hubungan koordinat titik pada persegi panjang yang sejajar sumbu dan prosedur aljabar untuk menyusun persamaan garis.. Bukti: titik sudut yang berhadapan; persamaan garis yang melalui titik Q dan S
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua tahap integrasi: (1) deduksi koordinat titik Q dan S berdasarkan sifat persegi panjang yang sejajar sumbu, dan (2) perhitungan persamaan garis. Tidak ada bantuan langsung untuk koordinat Q dan S, sehingga siswa harus membangun pemahaman spasial tersebut sendiri.. Bukti: titik sudut yang berhadapan pada sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman koordinat kartesius, sifat persegi panjang, dan rumus persamaan garis (y-y1 = m(x-x1)). |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghubungkan sifat geometri bangun datar dengan koordinat kartesius. Soal ini menuntut kemampuan deduksi koordinat yang menjadi prasyarat sebelum melakukan prosedur aljabar standar. |
+
+Run 3 — solusi: Karena sisi persegi panjang sejajar sumbu koordinat, titik Q dan S harus memiliki koordinat yang dibentuk dari kombinasi koordinat P(2,-1) dan R(6,2). Maka Q(6,-1) dan S(2,2). Kemiringan garis QS = (2 - (-1)) / (2 - 6) = 3 / -4 = -3/4. Persamaan garis: y - 2 = -3/4(x - 2) => 4y - 8 = -3x + 6 => 3x + 4y - 14 = 0.
+- Domain kognitif `classify/applying`: Siswa perlu memahami hubungan antara titik sudut persegi panjang yang sejajar sumbu koordinat untuk menentukan koordinat titik Q dan S, kemudian menerapkan rumus kemiringan dan persamaan garis. Ini melibatkan penerapan konsep geometri koordinat pada konteks rutin.. Bukti: sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman prinsip geometri koordinat (sifat persegi panjang dengan sisi sejajar sumbu) dan prosedur aljabar untuk menyusun persamaan garis.. Bukti: Titik P(2,-1) dan R(6,2) merupakan titik sudut yang berhadapan; sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat
+- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman konsep bahwa sisi sejajar sumbu berarti koordinat x dan y titik sudut lainnya (Q dan S) adalah kombinasi dari koordinat P dan R. Setelah koordinat ditemukan, langkah selanjutnya adalah prosedur standar mencari persamaan garis. Tidak ada kendala yang berinteraksi secara kompleks.. Bukti: sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep koordinat kartesius, kemiringan garis, dan persamaan garis lurus. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | True |
 | relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengintegrasikan geometri koordinat dengan aljabar linear dasar. Soal ini menguji pemahaman tentang bagaimana posisi titik pada bidang kartesius menentukan persamaan garis. |
-
-Run 2 — solusi: Karena sisi persegi panjang sejajar sumbu koordinat, titik sudut lainnya adalah Q(6,-1) dan S(2,2). Kemiringan garis QS adalah m = (2 - (-1)) / (2 - 6) = 3 / -4 = -3/4. Persamaan garis melalui (6,-1) dengan m = -3/4 adalah y - (-1) = -3/4(x - 6) => 4(y + 1) = -3(x - 6) => 4y + 4 = -3x + 18 => 3x + 4y - 14 = 0.
-- Domain kognitif `classify/applying`: Siswa perlu memahami sifat geometri persegi panjang dengan sisi sejajar sumbu koordinat untuk menentukan koordinat titik Q dan S, kemudian menerapkan rumus persamaan garis melalui dua titik.. Bukti: titik sudut yang berhadapan pada sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara koordinat titik dan sifat geometri bangun datar (persegi panjang sejajar sumbu), serta prosedur aljabar untuk menentukan persamaan garis.. Bukti: titik sudut yang berhadapan; sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis
-- Intended difficulty `classify/Medium`: Soal memerlukan langkah logis untuk menentukan koordinat titik Q dan S sebelum menghitung persamaan garis. Ini adalah prosedur rutin bagi siswa kelas 9 yang telah mempelajari geometri koordinat.. Bukti: Titik P(2,-1) dan R(6,2) merupakan titik sudut yang berhadapan; sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman koordinat kartesius, sifat persegi panjang, dan rumus persamaan garis. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengintegrasikan geometri koordinat dan aljabar linear dasar dalam konteks bangun datar. |
-
-Run 3 — solusi: Karena sisi persegi panjang sejajar sumbu koordinat, titik sudut lainnya adalah Q(6,-1) dan S(2,2). Gradien garis QS adalah m = (2 - (-1)) / (2 - 6) = 3 / -4 = -3/4. Persamaan garis melalui (2,2) dengan m = -3/4 adalah y - 2 = -3/4(x - 2) => 4y - 8 = -3x + 6 => 3x + 4y - 14 = 0.
-- Domain kognitif `classify/applying`: Siswa perlu memahami sifat geometri persegi panjang dengan sisi sejajar sumbu koordinat untuk menentukan koordinat titik Q dan S, kemudian menerapkan rumus gradien dan persamaan garis. Ini melibatkan pemilihan prosedur yang tepat.. Bukti: titik sudut yang berhadapan pada sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus mengintegrasikan konsep geometri (sifat persegi panjang pada bidang kartesius) dengan konsep aljabar (persamaan garis lurus).. Bukti: titik sudut yang berhadapan; sisi sejajar sumbu-sumbu koordinat; persamaan garis
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman konsep geometri untuk menentukan koordinat titik Q dan S sebelum menghitung persamaan garis. Langkah-langkahnya rutin namun memerlukan penalaran spasial.. Bukti: titik sudut yang berhadapan pada sisi persegi panjang PQRS yang sejajar dengan sumbu-sumbu koordinat; persamaan garis yang melalui titik Q dan S
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Koordinat kartesius, gradien garis, persamaan garis lurus. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghubungkan sifat bangun datar dengan koordinat kartesius dan persamaan garis. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengintegrasikan sifat bangun datar dengan koordinat kartesius. Menentukan titik Q dan S dari P dan R adalah langkah kunci yang memerlukan pemahaman konsep, namun prosedurnya standar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
-
-Adjudikasi AI: `success`; token `4053`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan pemahaman sifat geometri persegi panjang (sisi sejajar sumbu) untuk menentukan koordinat titik Q dan S, kemudian memilih dan menerapkan prosedur aljabar untuk menentukan persamaan garis lurus. Ini adalah penerapan prosedur rutin.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara koordinat titik dan sifat geometri bangun datar (persegi panjang sejajar sumbu), serta prosedur aljabar untuk menentukan persamaan garis.
-- Intended difficulty `Medium`: Soal memerlukan langkah logis untuk menentukan koordinat titik Q dan S sebelum menghitung persamaan garis. Ini adalah prosedur rutin bagi siswa kelas 9 yang telah mempelajari geometri koordinat.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Koordinat kartesius, sifat persegi panjang, rumus gradien, dan persamaan garis lurus. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengintegrasikan geometri koordinat dengan aljabar linear dasar. Soal ini menguji pemahaman tentang bagaimana posisi titik pada bidang kartesius menentukan persamaan garis. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -881,33 +901,33 @@ Dapatkah kita membuat jaring-jaring bangun ruang bola?
 | C | Ya, tetapi hasilnya selalu berbentuk persegi panjang |
 | D | Ya, jaring-jaring bangun ruang bola dapat dibuat |
 
-Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Secara teoritis, permukaan bola tidak dapat didatarkan sempurna tanpa distorsi. Namun, dalam konteks pembelajaran sekolah, jaring-jaring bola dapat didekati dengan membagi permukaan bola menjadi bagian-bagian kecil (seperti irisan kulit jeruk atau proyeksi peta) yang dapat disusun pada bidang datar. Oleh karena itu, jawaban D diterima sebagai konsep aproksimasi.
+Kunci sumber: `D`; status AI: `conflict`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: Bola adalah permukaan non-developable. Secara matematis, bola tidak memiliki jaring-jaring karena permukaannya tidak dapat dibentangkan menjadi bidang datar tanpa distorsi atau pemotongan yang mengubah bentuk aslinya secara fundamental.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4bd25f1c9c6bda4f86ad721cbae87dd738f5b999ff445ea28f71227250bf3aff`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a7699d91cdc2bb8c87fed17a02495556854265c0fdaf887aec8a6b0ea940c598`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 2172 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 2015 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 1990 |
+| 1 | success | concern / conflict | knowing | conceptual | Easy | 3714 |
+| 2 | success | concern / conflict | knowing | conceptual | Easy | 2725 |
+| 3 | success | concern / conflict | knowing | conceptual | Easy | 3740 |
 
-Run 1 — solusi: Secara teoritis, permukaan bola tidak dapat didatarkan sempurna tanpa distorsi. Namun, dalam konteks pembelajaran sekolah, jaring-jaring bola dapat didekati dengan membagi permukaan bola menjadi bagian-bagian kecil (seperti irisan kulit jeruk atau proyeksi peta) yang dapat disusun pada bidang datar. Oleh karena itu, jawaban D diterima sebagai konsep aproksimasi.
-- Domain kognitif `classify/knowing`: Soal ini menuntut pemahaman konseptual tentang sifat bangun ruang sisi lengkung dan kemungkinan representasi permukaannya pada bidang datar (jaring-jaring). Siswa perlu memahami bahwa meskipun bola tidak memiliki jaring-jaring yang sempurna seperti kubus, konsep jaring-jaring dapat diaplikasikan melalui aproksimasi.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pengetahuan konseptual mengenai definisi dan batasan jaring-jaring bangun ruang, khususnya pada objek sisi lengkung yang tidak dapat didatarkan secara isometrik.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
-- Intended difficulty `classify/Easy`: Soal ini bersifat teoretis dan menanyakan fakta konseptual yang mungkin jarang dibahas secara mendalam di kelas, namun prosedurnya sangat langsung (hanya memilih ya/tidak).. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
+Run 1 — solusi: Secara matematis, bola tidak memiliki jaring-jaring karena permukaannya tidak dapat didatarkan tanpa distorsi. Kunci jawaban sumber (D) bertentangan dengan definisi geometri standar mengenai jaring-jaring bangun ruang.
+- Domain kognitif `classify/knowing`: Soal menuntut pengenalan fakta atau definisi mengenai sifat bangun ruang.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konsep dasar mengenai sifat bangun ruang dan jaring-jaring.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
+- Intended difficulty `classify/Easy`: Soal hanya menuntut ingatan atau pemahaman konsep dasar. Tidak ada langkah perhitungan atau integrasi.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang jaring-jaring bangun ruang sisi datar dan sisi lengkung. |
+| expectedPrerequisite | Pemahaman dasar tentang bangun ruang sisi lengkung. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -916,19 +936,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Pertanyaan ini menguji pemahaman konseptual dasar tentang jaring-jaring. Meskipun konsep bola tidak bisa didatarkan adalah materi lanjut, dalam konteks SMP, ini sering diperkenalkan sebagai pengetahuan faktual/konseptual sederhana. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Pertanyaan bersifat teoretis dan tidak memerlukan prosedur kompleks. |
 
-Run 2 — solusi: Secara matematis, permukaan bola tidak dapat dibentangkan menjadi bidang datar tanpa distorsi (seperti pada proyeksi peta). Namun, dalam konteks kurikulum sekolah, jaring-jaring bola sering didekati dengan irisan-irisan (seperti kulit jeruk) yang dapat disusun menjadi bidang datar. Oleh karena itu, jawaban D diterima dalam konteks pedagogis.
-- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konseptual tentang sifat bangun ruang sisi lengkung. Siswa perlu mengenali bahwa meskipun secara topologis bola tidak memiliki jaring-jaring sempurna seperti kubus, dalam konteks pembelajaran, konsep jaring-jaring bola diajarkan.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menanyakan fakta atau prinsip dasar mengenai klasifikasi dan representasi bangun ruang, yang termasuk dalam pengetahuan konseptual.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
-- Intended difficulty `classify/Easy`: Soal ini bersifat teoretis dan langsung, menguji pemahaman definisi tanpa memerlukan perhitungan atau langkah prosedural yang kompleks.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
+Run 2 — solusi: Bola tidak memiliki jaring-jaring dalam pengertian geometri bangun ruang karena permukaannya tidak dapat dibentangkan menjadi bidang datar tanpa distorsi atau pemotongan yang mengubah bentuk aslinya secara fundamental.
+- Domain kognitif `classify/knowing`: Soal menuntut pemahaman konseptual tentang definisi jaring-jaring bangun ruang. Siswa perlu mengklasifikasikan apakah sifat permukaan bola memungkinkan representasi jaring-jaring.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pengetahuan faktual/konseptual mengenai definisi dan karakteristik jaring-jaring bangun ruang.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
+- Intended difficulty `classify/Easy`: Soal ini bersifat teoretis dan menguji pemahaman definisi. Namun, karena kunci jawaban sumber secara matematis tidak akurat (konflik konten), tingkat kesulitan tidak dapat dinilai secara valid sebagai materi pembelajaran yang benar.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang jaring-jaring bangun ruang sisi datar dan sisi lengkung. |
+| expectedPrerequisite | Definisi jaring-jaring bangun ruang. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -937,19 +957,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini merupakan pertanyaan konseptual dasar yang sesuai untuk kelas 9, di mana siswa diharapkan memahami karakteristik bangun ruang sisi lengkung. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Soal hanya menanyakan definisi dasar, namun kontennya bermasalah secara matematis. |
 
-Run 3 — solusi: Secara matematis, permukaan bola dapat didekati atau dipetakan ke dalam bentuk datar (jaring-jaring) melalui teknik proyeksi atau pendekatan poligon, meskipun tidak dapat dibentangkan secara sempurna tanpa distorsi. Dalam konteks kurikulum SMP, konsep ini menekankan bahwa permukaan lengkung dapat diwakili oleh jaring-jaring.
-- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konseptual tentang sifat bangun ruang sisi lengkung. Siswa perlu mengenali bahwa jaring-jaring bukan hanya milik bangun sisi datar, tetapi juga dapat didekati untuk bola.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menanyakan fakta atau prinsip dasar mengenai definisi dan kemungkinan representasi jaring-jaring pada bangun ruang bola.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
-- Intended difficulty `classify/Easy`: Soal ini bersifat teoretis dan menanyakan konsep dasar. Tidak ada perhitungan atau langkah prosedural yang diperlukan, hanya pemahaman konsep.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
+Run 3 — solusi: Bola adalah permukaan non-developable. Bola tidak memiliki jaring-jaring karena tidak dapat dibentangkan pada bidang datar tanpa distorsi.
+- Domain kognitif `classify/knowing`: Soal menanyakan pemahaman konsep dasar tentang jaring-jaring bangun ruang.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konsep jaring-jaring.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana (recall konsep), namun memiliki masalah validitas konten yang fatal.. Bukti: Dapatkah kita membuat jaring-jaring bangun ruang bola?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang jaring-jaring bangun ruang. |
+| expectedPrerequisite | Definisi jaring-jaring bangun ruang. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -958,16 +978,38 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Pertanyaan ini adalah pertanyaan konseptual dasar yang sesuai untuk tingkat SMP, menguji pemahaman definisi jaring-jaring. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Soal menanyakan konsep dasar. Namun, karena kunci jawaban salah secara matematis, soal ini bermasalah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `3826`.
+Konten: `concern`; kunci: `conflict`; masalah: Soal secara matematis tidak akurat. Bola adalah permukaan non-developable (tidak dapat didatarkan), sehingga secara definisi geometri standar, bola tidak memiliki jaring-jaring. Klaim bahwa jaring-jaring bola dapat dibuat adalah keliru secara konsep..
+- Domain kognitif `knowing`: Soal menuntut pengenalan konsep dasar mengenai sifat bangun ruang dan definisi jaring-jaring.
+- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman konseptual mengenai karakteristik bangun ruang sisi lengkung.
+- Intended difficulty `Easy`: Soal bersifat teoretis dan menuntut pemahaman definisi dasar. Namun, karena kunci jawaban sumber secara matematis tidak akurat (konflik konten), tingkat kesulitan tidak dapat dinilai secara valid sebagai materi pembelajaran yang benar.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi jaring-jaring bangun ruang. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Pertanyaan bersifat teoretis dan tidak memerlukan prosedur kompleks, namun memiliki masalah validitas konten yang fatal. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -999,8 +1041,8 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
-Status konten: `valid`. Catatan konten: Konsep jaring-jaring bola secara matematis bersifat aproksimasi (pendekatan) karena permukaan bola tidak dapat didatarkan (flattened) tanpa distorsi (teorema Theorema Egregium Gauss). Pernyataan bahwa jaring-jaring bola 'dapat dibuat' memerlukan konteks aproksimasi (seperti irisan kulit jeruk) agar tidak menyesatkan secara geometris..
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `revision_required`.
+Status konten: `concern`. Catatan konten: Soal secara matematis tidak akurat. Bola adalah permukaan non-developable (tidak dapat didatarkan), sehingga secara definisi geometri standar, bola tidak memiliki jaring-jaring. Klaim bahwa jaring-jaring bola dapat dibuat adalah keliru secara konsep..
 Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
@@ -1016,26 +1058,68 @@ Apa yang dimaksud dengan jaring-jaring bangun ruang?
 | D | Bentuk dua dimensi yang dapat digambar, dipotong, dan dirangkai sedemikian rupa sehingga menjadi sebuah bangun tiga dimensi |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Jaring-jaring bangun ruang adalah bidang datar (dua dimensi) yang merupakan gabungan dari sisi-sisi bangun ruang tersebut, yang jika dilipat atau dirangkai menurut rusuk-rusuknya akan membentuk bangun ruang tiga dimensi. Pilihan D secara akurat mendeskripsikan definisi ini.
+Solusi minimum hasil AI: Jaring-jaring bangun ruang adalah bidang datar (dua dimensi) yang terdiri dari gabungan bangun datar yang jika dilipat atau dirangkai menurut garis-garis lipatannya akan membentuk bangun ruang tiga dimensi tertentu. Pilihan D adalah definisi yang tepat.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9a12b539fa8fc3b757936de171e36aa35d67032f45757dcc6bc44ef1e38187be`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `229924a8075a00e189a87546f44af21782626dd020bd2947ea5c430466f822b7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 1816 |
-| 2 | success | valid / verified | knowing | factual | Easy | 1798 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 1806 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2586 |
+| 2 | success | valid / verified | knowing | factual | Easy | 2584 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2573 |
 
-Run 1 — solusi: Jaring-jaring bangun ruang didefinisikan sebagai rangkaian bidang datar (dua dimensi) yang jika dilipat atau dirangkai menurut rusuk-rusuknya akan membentuk bangun ruang tiga dimensi. Pilihan D secara akurat mendeskripsikan proses ini.
-- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat dan mengenali definisi konseptual dari jaring-jaring bangun ruang. Tidak ada prosedur perhitungan atau strategi pemecahan masalah yang kompleks.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap terminologi dan definisi dasar dalam geometri bangun ruang.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
-- Intended difficulty `classify/Easy`: Soal ini bersifat teoretis dan langsung (recall), tidak memerlukan langkah perhitungan atau analisis strategi yang rumit.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
+Run 1 — solusi: Jaring-jaring bangun ruang adalah representasi dua dimensi dari sisi-sisi bangun ruang yang jika dilipat atau dirangkai akan membentuk bangun tiga dimensi tersebut. Pilihan D secara akurat mendeskripsikan proses ini.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali definisi konseptual dasar dari jaring-jaring bangun ruang. Siswa hanya perlu mengingat dan mengidentifikasi definisi yang benar di antara pilihan yang tersedia tanpa melakukan perhitungan atau analisis kompleks.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap terminologi dan konsep dasar geometri (jaring-jaring), yang termasuk dalam kategori pengetahuan konseptual.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
+- Intended difficulty `classify/Easy`: Soal ini bersifat definisional dan sangat mendasar bagi siswa kelas 9. Tidak ada langkah perhitungan, perencanaan, atau integrasi konsep yang diperlukan. Siswa hanya perlu memahami istilah yang sudah dipelajari di jenjang sebelumnya.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bangun ruang sisi datar dan sisi lengkung. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini menguji pemahaman konsep dasar yang seharusnya sudah dikuasai siswa SMP kelas 9. Tidak ada tuntutan kognitif tinggi. |
+
+Run 2 — solusi: Jaring-jaring bangun ruang adalah representasi dua dimensi dari permukaan bangun ruang yang jika dilipat atau dirangkai sesuai garis lipatannya akan membentuk bangun tiga dimensi tersebut. Pilihan D secara akurat mendeskripsikan proses ini.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali definisi konseptual dari jaring-jaring bangun ruang. Siswa hanya perlu mengingat dan mengidentifikasi fakta/definisi yang benar di antara pilihan yang tersedia.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman siswa terhadap istilah dan definisi dasar dalam geometri bangun ruang, yang termasuk dalam kategori pengetahuan faktual/konseptual dasar.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
+- Intended difficulty `classify/Easy`: Soal ini bersifat definisional dan sangat langsung. Tidak ada langkah perhitungan, analisis, atau integrasi konsep yang diperlukan. Siswa hanya perlu memahami terminologi dasar yang diajarkan di tingkat SMP.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bangun ruang dan komponennya. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Definisi jaring-jaring adalah materi dasar geometri yang sudah diperkenalkan sejak jenjang SD dan diperdalam di SMP. Soal ini tidak menuntut penalaran kompleks, hanya pengenalan konsep. |
+
+Run 3 — solusi: Jaring-jaring bangun ruang adalah representasi dua dimensi dari permukaan bangun ruang yang jika dilipat atau dirangkai akan membentuk bangun tiga dimensi tersebut. Pilihan D secara akurat mendeskripsikan proses ini.
+- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengenali definisi konseptual dari jaring-jaring bangun ruang. Siswa hanya perlu mengingat dan mengidentifikasi definisi yang benar di antara pilihan yang tersedia tanpa perlu melakukan perhitungan atau analisis mendalam.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap istilah dan definisi dasar dalam geometri, yang merupakan bagian dari pengetahuan konseptual.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
+- Intended difficulty `classify/Easy`: Soal ini bersifat sangat mendasar (definisi). Tidak ada langkah penyelesaian yang diperlukan selain mengingat konsep. Siswa kelas 9 seharusnya sudah sangat familiar dengan istilah ini sejak jenjang sebelumnya.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
 
 Profil difficulty run ini:
 
@@ -1051,49 +1135,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Definisi jaring-jaring adalah materi dasar geometri yang diperkenalkan sejak jenjang SD dan diperdalam di SMP. Soal ini hanya menuntut ingatan terhadap definisi tersebut. |
-
-Run 2 — solusi: Jaring-jaring bangun ruang adalah representasi dua dimensi dari permukaan bangun ruang yang jika dilipat atau dirangkai akan membentuk bangun tiga dimensi tersebut. Pilihan D secara akurat mendeskripsikan proses ini.
-- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat dan mengenali definisi konseptual dari jaring-jaring bangun ruang. Tidak ada perhitungan atau penerapan prosedur kompleks yang diperlukan.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
-- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman siswa terhadap definisi atau terminologi dasar dalam geometri bangun ruang.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
-- Intended difficulty `classify/Easy`: Soal ini bersifat definisional dan sangat mendasar, tidak memerlukan langkah pemecahan masalah atau analisis yang kompleks.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang bangun ruang dan jaring-jaringnya. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Definisi jaring-jaring adalah materi dasar geometri yang diajarkan di tingkat SMP. Soal ini hanya menguji ingatan terhadap konsep tersebut. |
-
-Run 3 — solusi: Jaring-jaring bangun ruang adalah representasi dua dimensi dari sisi-sisi bangun ruang yang jika dilipat atau dirangkai akan membentuk bangun tiga dimensi tersebut. Pilihan D secara akurat mendeskripsikan proses dan sifat geometris ini.
-- Domain kognitif `classify/knowing`: Soal ini meminta definisi konseptual dasar tentang jaring-jaring bangun ruang. Siswa hanya perlu mengingat atau mengenali definisi yang tepat dari materi geometri yang dipelajari.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
-- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman terhadap terminologi dan definisi dasar dalam geometri bangun ruang.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
-- Intended difficulty `classify/Easy`: Soal bersifat teoretis dan langsung (recall), tidak memerlukan perhitungan atau strategi pemecahan masalah yang kompleks.. Bukti: Apa yang dimaksud dengan jaring-jaring bangun ruang?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang bangun ruang sisi datar dan konsep jaring-jaring. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Definisi jaring-jaring adalah materi dasar geometri SMP yang bersifat hafalan/pemahaman konsep awal, sehingga tingkat kesulitannya rendah. |
+| gradeRelativeRationale | Soal ini hanya menanyakan definisi teoretis yang sangat mendasar. Tidak ada tuntutan kognitif tinggi atau integrasi konsep yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -1103,17 +1145,17 @@ Profil difficulty run ini:
 | Dimensi pengetahuan | {"conceptual": 2, "factual": 1} | majority_2_of_3 / adjudicated | conceptual |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3214`.
+Adjudikasi AI: `success`; token `3974`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Soal ini menuntut siswa untuk mengingat dan mengenali definisi konseptual dari jaring-jaring bangun ruang. Tidak ada prosedur perhitungan atau strategi pemecahan masalah yang kompleks.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman siswa terhadap terminologi dan definisi dasar dalam geometri bangun ruang.
-- Intended difficulty `Easy`: Soal ini bersifat teoretis dan langsung (recall), tidak memerlukan langkah perhitungan atau analisis strategi yang rumit.
+- Domain kognitif `knowing`: Soal ini hanya meminta siswa untuk mengenali definisi konseptual dari jaring-jaring bangun ruang. Tidak ada proses analisis, perhitungan, atau pemecahan masalah yang diperlukan, sehingga masuk dalam domain knowing.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman siswa terhadap terminologi dan konsep dasar geometri, yang merupakan pengetahuan konseptual.
+- Intended difficulty `Easy`: Soal ini bersifat definisional dan sangat mendasar. Tidak ada langkah perencanaan, integrasi konsep, atau perhitungan yang diperlukan. Siswa hanya perlu mengingat definisi yang sudah dipelajari.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang bangun ruang dan jaring-jaringnya. |
+| expectedPrerequisite | Pemahaman dasar tentang bangun ruang dan komponennya. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1123,7 +1165,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Definisi jaring-jaring adalah materi dasar geometri yang diperkenalkan sejak jenjang SD dan diperdalam di SMP. Soal ini hanya menuntut ingatan terhadap definisi tersebut. |
+| gradeRelativeRationale | Definisi jaring-jaring adalah materi dasar geometri yang sudah diperkenalkan sejak jenjang SD dan diperdalam di SMP. Soal ini tidak menuntut penalaran kompleks, hanya pengenalan konsep. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1172,32 +1214,53 @@ Sebuah kotak pensil terbuat dari logam dengan dimensi 20 cm × 10 cm × 3 cm. Hi
 | D | 290 cm² |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Luas permukaan balok = 2 x (p x l + p x t + l x t). Diketahui p=20, l=10, t=3. Maka, luas = 2 x (20x10 + 20x3 + 10x3) = 2 x (200 + 60 + 30) = 2 x 290 = 580 cm².
+Solusi minimum hasil AI: Luas permukaan balok = 2 * (p*l + p*t + l*t) = 2 * (20*10 + 20*3 + 10*3) = 2 * (200 + 60 + 30) = 2 * 290 = 580 cm².
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6873f75d413b213c638f839e056deaeb821cc82058ae91a532fda1c03396572a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `427157f9b23d6d9bbc1249772cfad63527d5e3b3f04bf756790fa32abb4fe3bf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2072 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2074 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2015 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 3396 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3254 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 3400 |
 
-Run 1 — solusi: Luas permukaan balok = 2 x (p x l + p x t + l x t). Diketahui p=20, l=10, t=3. Maka, luas = 2 x (20x10 + 20x3 + 10x3) = 2 x (200 + 60 + 30) = 2 x 290 = 580 cm².
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas permukaan balok secara langsung pada situasi rutin (kotak pensil). Tidak ada strategi nonrutin atau integrasi kompleks yang diperlukan.. Bukti: Hitunglah berapa luas logam yang dibutuhkan untuk membuat kotak pensil tersebut.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang algoritma perhitungan luas permukaan bangun ruang sisi datar (balok).. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi dimensi dan menerapkan rumus luas permukaan balok tanpa kendala tambahan.. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
+Run 1 — solusi: Luas permukaan balok = 2 * (p*l + p*t + l*t) = 2 * (20*10 + 20*3 + 10*3) = 2 * (200 + 60 + 30) = 2 * 290 = 580 cm².
+- Domain kognitif `classify/knowing`: Siswa diminta menerapkan rumus luas permukaan balok secara langsung pada dimensi yang diberikan tanpa modifikasi atau penalaran tambahan.. Bukti: Hitunglah berapa luas logam yang dibutuhkan untuk membuat kotak pensil tersebut
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan pengetahuan prosedural tentang rumus luas permukaan balok untuk menyelesaikan masalah.. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, hanya memerlukan substitusi nilai ke dalam rumus luas permukaan balok tanpa kendala tambahan atau integrasi konsep yang kompleks.. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep luas permukaan balok dan operasi perkalian/penjumlahan dasar. |
+| expectedPrerequisite | Rumus luas permukaan balok |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 sudah familiar dengan rumus luas permukaan balok dan soal ini tidak menuntut langkah tambahan atau analisis mendalam. |
+
+Run 2 — solusi: Luas permukaan balok = 2(pl + pt + lt) = 2(20*10 + 20*3 + 10*3) = 2(200 + 60 + 30) = 2(290) = 580 cm².
+- Domain kognitif `classify/knowing`: Siswa diminta menerapkan rumus luas permukaan balok secara langsung pada dimensi yang diberikan.. Bukti: Hitunglah berapa luas logam yang dibutuhkan untuk membuat kotak pensil tersebut
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep luas permukaan balok sebagai jumlah luas sisi-sisinya.. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi dimensi dan menerapkan rumus luas permukaan balok tanpa kendala tambahan atau integrasi kompleks.. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus luas permukaan balok dan operasi perkalian/penjumlahan dasar. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1207,18 +1270,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Perhitungan luas permukaan balok adalah materi standar kelas 8/9 yang bersifat prosedural dan rutin. |
+| gradeRelativeRationale | Siswa kelas 9 sudah familiar dengan rumus luas permukaan bangun ruang sisi datar. Soal ini tidak memerlukan langkah perencanaan atau integrasi yang menantang. |
 
-Run 2 — solusi: Luas permukaan balok = 2 x (p x l + p x t + l x t). Diketahui p=20, l=10, t=3. Maka, luas = 2 x (20x10 + 20x3 + 10x3) = 2 x (200 + 60 + 30) = 2 x 290 = 580 cm².
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas permukaan balok secara langsung pada situasi rutin (kotak pensil). Tidak ada strategi nonrutin atau integrasi informasi kompleks.. Bukti: Hitunglah berapa luas logam yang dibutuhkan untuk membuat kotak pensil tersebut
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang algoritma perhitungan luas permukaan bangun ruang sisi datar.. Bukti: 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan satu prosedur standar yang jelas. Beban kognitif rendah karena hanya melibatkan substitusi nilai ke dalam rumus yang sudah dikenal.. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
+Run 3 — solusi: Luas permukaan balok = 2(pl + pt + lt) = 2(20*10 + 20*3 + 10*3) = 2(200 + 60 + 30) = 2(290) = 580 cm².
+- Domain kognitif `classify/knowing`: Siswa diminta menerapkan rumus luas permukaan balok secara langsung pada dimensi yang diberikan tanpa modifikasi.. Bukti: Hitunglah berapa luas logam yang dibutuhkan untuk membuat kotak pensil tersebut.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep luas permukaan balok sebagai jumlah luas sisi-sisinya.. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan prosedur yang jelas. Siswa hanya perlu menerapkan rumus luas permukaan balok tanpa ada kendala tambahan atau integrasi konsep yang kompleks.. Bukti: dimensi 20 cm × 10 cm × 3 cm; Hitunglah berapa luas logam yang dibutuhkan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep luas permukaan balok dan operasi perkalian/penjumlahan dasar. |
+| expectedPrerequisite | Rumus luas permukaan balok dan operasi perkalian/penjumlahan dasar. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1228,36 +1291,37 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 sebagai latihan dasar penerapan rumus luas permukaan bangun ruang sisi datar. |
-
-Run 3 — solusi: Luas permukaan balok = 2 x (p x l + p x t + l x t). Substitusi nilai: 2 x (20 x 10 + 20 x 3 + 10 x 3) = 2 x (200 + 60 + 30) = 2 x 290 = 580 cm².
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas permukaan balok secara langsung pada situasi rutin (kotak pensil). Tidak ada strategi nonrutin atau integrasi konsep yang kompleks.. Bukti: Hitunglah berapa luas logam yang dibutuhkan untuk membuat kotak pensil tersebut.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau prosedur perhitungan luas permukaan bangun ruang sisi datar (balok).. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan satu prosedur standar (rumus luas permukaan balok). Beban perhitungan rendah dan tidak memerlukan transfer representasi.. Bukti: dimensi 20 cm × 10 cm × 3 cm; luas logam yang dibutuhkan
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep luas permukaan balok dan operasi perkalian/penjumlahan dasar. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 sebagai penerapan langsung rumus luas permukaan bangun ruang sisi datar. |
+| gradeRelativeRationale | Materi luas permukaan balok adalah standar kelas 9, dan soal ini merupakan penerapan langsung tanpa modifikasi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4077`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Soal ini meminta penerapan langsung rumus luas permukaan balok pada dimensi yang diberikan. Tidak ada modifikasi, analisis, atau penalaran non-rutin yang diperlukan.
+- Dimensi pengetahuan `conceptual`: Siswa perlu memahami konsep luas permukaan balok sebagai jumlah luas sisi-sisinya dan menerapkan prosedur perhitungan yang sesuai.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi dimensi dan menerapkan rumus luas permukaan balok tanpa kendala tambahan atau integrasi konsep yang kompleks.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus luas permukaan balok dan operasi aritmatika dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi luas permukaan balok adalah standar kelas 9, dan soal ini merupakan penerapan langsung tanpa modifikasi atau tuntutan perencanaan yang tinggi. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1289,9 +1353,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 10. Soal `27c5fab7664c58cab4d858b0`
@@ -1318,14 +1382,14 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2032 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2046 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2024 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 2652 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 3295 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 3352 |
 
-Run 1 — solusi: Luas permukaan kubus = 6 × s². Diketahui s = 0,23 m. Maka, luas = 6 × (0,23)² = 6 × 0,0529 = 0,3174 m².
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas permukaan kubus secara langsung dengan nilai yang diberikan. Ini adalah prosedur rutin yang melibatkan substitusi nilai ke dalam rumus yang sudah dikenal.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang rumus luas permukaan bangun ruang sisi datar (kubus) dan kemampuan melakukan perhitungan prosedural.. Bukti: luas permukaan kubus = 6×s²
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengingat rumus luas permukaan kubus dan melakukan operasi perkalian desimal sederhana. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
+Run 1 — solusi: Luas permukaan kubus = 6 × s². Diketahui s = 0,23 m. Maka, luas permukaan = 6 × (0,23)² = 6 × 0,0529 = 0,3174 m².
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung rumus luas permukaan kubus. Siswa hanya perlu mengenali rumus dan melakukan perhitungan dasar.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang rumus luas permukaan kubus dan kemampuan melakukan operasi perkalian desimal.. Bukti: Temukan luas permukaan kubus
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu menerapkan rumus luas permukaan kubus (6s²) secara langsung. Tidak ada langkah perencanaan, integrasi, atau kendala yang kompleks.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
 
 Profil difficulty run ini:
 
@@ -1341,18 +1405,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi luas permukaan kubus adalah materi dasar yang sudah dipelajari di jenjang sebelumnya dan diperkuat di kelas 9. Soal ini tidak menuntut pemikiran tingkat tinggi. |
+| gradeRelativeRationale | Soal ini merupakan penerapan rumus standar yang diajarkan di tingkat SMP. Tidak ada tuntutan kognitif tinggi. |
 
-Run 2 — solusi: Luas permukaan kubus = 6 × s². Diketahui s = 0,23 m. Maka, luas permukaan = 6 × (0,23)² = 6 × 0,0529 = 0,3174 m².
-- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus luas permukaan kubus (6s²) dengan nilai yang diberikan. Siswa hanya perlu melakukan substitusi dan operasi aritmatika dasar, yang termasuk dalam kategori menerapkan prosedur rutin.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma atau rumus luas permukaan bangun ruang sisi datar (kubus) dan bagaimana menerapkannya pada nilai numerik.. Bukti: luas permukaan kubus = 6×s²
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengingat rumus luas permukaan kubus dan melakukan perkalian desimal sederhana. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
+Run 2 — solusi: Luas permukaan kubus = 6 × s². Diketahui s = 0,23 m. Maka, Luas = 6 × (0,23)² = 6 × 0,0529 = 0,3174 m².
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung rumus luas permukaan kubus (6s²) dengan nilai yang sudah diberikan. Tidak ada langkah penalaran atau integrasi konsep yang diperlukan.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
+- Dimensi pengetahuan `classify/procedural`: Siswa hanya perlu mengingat rumus luas permukaan kubus dan melakukan operasi perkalian desimal secara prosedural.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
+- Intended difficulty `classify/Easy`: Soal ini adalah penerapan langsung rumus luas permukaan kubus. Siswa hanya perlu mensubstitusi nilai sisi ke dalam rumus 6s². Tidak ada kendala interaktif atau perencanaan strategi yang kompleks.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep luas permukaan kubus dan operasi perkalian bilangan desimal. |
+| expectedPrerequisite | Rumus luas permukaan kubus (6s²) dan operasi perkalian desimal. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1362,58 +1426,36 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi luas permukaan kubus adalah materi dasar SMP yang sudah dipelajari sejak kelas 7/8. Soal ini merupakan aplikasi langsung rumus tanpa variasi atau konteks cerita yang rumit. |
+| gradeRelativeRationale | Siswa kelas 9 sudah familiar dengan rumus bangun ruang sisi datar. Soal ini bersifat rutin dan langsung. |
 
-Run 3 — solusi: Luas permukaan kubus = 6 × s². Diketahui s = 0,23 m. Maka, luas permukaan = 6 × (0,23)² = 6 × 0,0529 = 0,3174 m².
-- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus luas permukaan kubus (6s²) dengan nilai yang diberikan. Siswa hanya perlu melakukan substitusi dan perhitungan aritmatika dasar.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep luas permukaan bangun ruang sisi datar (kubus) sebagai jumlah luas keenam sisinya.. Bukti: luas permukaan kubus = 6×s²
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengingat rumus dan melakukan operasi perkalian desimal sederhana tanpa ada kendala atau strategi non-rutin.. Bukti: 0,23 m; luas permukaan kubus = 6×s²
+Run 3 — solusi: Luas permukaan kubus = 6 × s². Diketahui s = 0,23 m. Maka, luas = 6 × (0,23)² = 6 × 0,0529 = 0,3174 m².
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung rumus luas permukaan kubus (6s²) dengan nilai yang sudah diketahui. Tidak ada langkah kompleks atau integrasi konsep yang diperlukan.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu mengetahui rumus luas permukaan kubus dan melakukan operasi perkalian desimal yang bersifat prosedural.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu memasukkan nilai ke dalam rumus yang sudah familiar. Tidak ada kendala interaksi, perencanaan langkah, atau perpindahan representasi yang menantang.. Bukti: Temukan luas permukaan kubus yang memiliki panjang sisi sebagai berikut. ⓐ 0,23 m
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep luas permukaan kubus dan operasi perkalian bilangan desimal. |
-| dependentSteps | 2 |
+| expectedPrerequisite | Rumus luas permukaan kubus (6s²) dan operasi perkalian desimal. |
+| dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
+| relevantInformationUnits | 1 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi luas permukaan kubus adalah standar kelas 9. Soal ini menguji pemahaman dasar rumus tanpa kompleksitas tambahan. |
+| gradeRelativeRationale | Siswa kelas 9 seharusnya sudah sangat familiar dengan rumus bangun ruang sisi datar sederhana. Soal ini hanya menguji ingatan rumus dan ketelitian hitung dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3489`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Soal meminta penerapan langsung rumus luas permukaan kubus (6s²) dengan nilai yang diberikan. Ini adalah prosedur rutin yang melibatkan substitusi nilai ke dalam rumus yang sudah dikenal.
-- Dimensi pengetahuan `procedural`: Soal menguji pemahaman tentang algoritma atau rumus luas permukaan bangun ruang sisi datar (kubus) dan bagaimana menerapkannya pada nilai numerik.
-- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengingat rumus luas permukaan kubus dan melakukan operasi perkalian desimal sederhana. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep luas permukaan kubus dan operasi perkalian bilangan desimal. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi luas permukaan kubus adalah materi dasar yang sudah dipelajari di jenjang sebelumnya dan diperkuat di kelas 9. Soal ini tidak menuntut pemikiran tingkat tinggi. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1445,9 +1487,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 11. Soal `aee8fd25cf246c58a370058e`
@@ -1461,75 +1503,33 @@ Sebuah balok memiliki ukuran panjang 5, lebar 3, dan tinggi 7. Jika balok terseb
 | C | 105 satuan kubik |
 | D | 6.720 satuan kubik |
 
-Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `6.720 satuan kubik`.
-Solusi minimum hasil AI: Volume awal balok = 5 x 3 x 7 = 105. Jika ukuran diubah dengan skala k=4, maka volume baru = V_awal x k^3 = 105 x 4^3 = 105 x 64 = 6.720 satuan kubik.
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Volume awal balok adalah 5 x 3 x 7 = 105 satuan kubik. Jika ukuran balok diubah dengan skala k = 4, maka volume baru adalah V_baru = V_awal x k^3 = 105 x 4^3 = 105 x 64 = 6.720 satuan kubik.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9e333def2d62b4f1c1a7b423684382392aed99bcd6170d75409756d91cb649e1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6156e4c2dd33ca4a4b2099bfe84124b1f98b055cb9525fffcaadbb2ccf993dd6`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 2058 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 2049 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2069 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2716 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2726 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2738 |
 
-Run 1 — solusi: Volume awal balok = 5 x 3 x 7 = 105. Jika ukuran diubah dengan skala k=4, maka volume baru = V_awal x k^3 = 105 x 4^3 = 105 x 64 = 6.720 satuan kubik.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep perubahan volume bangun ruang akibat dilatasi (skala), yaitu V' = V * k^3. Ini adalah penerapan prosedur standar pada situasi rutin.. Bukti: diubah ukurannya dengan skala 4; tentukan volume balok setelah diubah
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara faktor skala dan perubahan volume (konsep pangkat tiga pada dilatasi volume).. Bukti: skala 4; volume balok setelah diubah
-- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena siswa sering terjebak menggunakan skala linear (k) atau kuadrat (k^2) untuk volume, sehingga memerlukan pemahaman konsep yang tepat tentang dilatasi volume (k^3) meskipun langkah operasinya rutin.. Bukti: panjang 5, lebar 3, dan tinggi 7; skala 4
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Rumus volume balok dan konsep dilatasi/skala pada bangun ruang. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan memahami bahwa perubahan skala pada dimensi linear akan berdampak pangkat tiga pada volume. Pilihan pengecoh (A dan B) sangat efektif karena menangkap kesalahan umum siswa yang mengabaikan sifat pangkat tiga. |
-
-Run 2 — solusi: Volume awal balok = 5 x 3 x 7 = 105 satuan kubik. Karena skala perubahan adalah 4, maka volume baru = 105 x (4^3) = 105 x 64 = 6.720 satuan kubik.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep perubahan volume bangun ruang akibat dilatasi (skala k) dengan menggunakan faktor skala pangkat tiga (k^3). Ini merupakan penerapan prosedur rutin pada situasi yang diberikan.. Bukti: diubah ukurannya dengan skala 4; tentukan volume balok setelah diubah
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara faktor skala dilatasi dengan perubahan volume (prinsip matematis), yang termasuk dalam dimensi pengetahuan konseptual.. Bukti: skala 4; volume balok setelah diubah
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya menghitung volume awal, tetapi harus memahami dan menerapkan prinsip bahwa perubahan skala k pada dimensi linear akan mengakibatkan perubahan volume sebesar k^3, bukan sekadar mengalikan dengan k atau k^2.. Bukti: panjang 5, lebar 3, dan tinggi 7; skala 4
+Run 1 — solusi: Volume awal balok adalah 5 x 3 x 7 = 105 satuan kubik. Jika ukuran balok diubah dengan skala k = 4, maka volume baru adalah V_baru = V_awal x k^3 = 105 x 4^3 = 105 x 64 = 6.720 satuan kubik.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep perubahan volume bangun ruang akibat dilatasi (skala k), yaitu volume baru adalah volume awal dikali k pangkat tiga. Ini adalah penerapan prosedur pada konteks rutin.. Bukti: Jika balok tersebut diubah ukurannya dengan skala 4, maka tentukan volume balok setelah diubah.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana perubahan dimensi linear (skala) mempengaruhi volume (tiga dimensi), yang merupakan prinsip dasar dalam geometri bangun ruang.. Bukti: diubah ukurannya dengan skala 4; tentukan volume balok setelah diubah
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedurnya sangat langsung dan familiar bagi siswa kelas 9. Siswa hanya perlu menghitung volume awal dan mengalikannya dengan faktor skala pangkat tiga (k^3). Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: panjang 5, lebar 3, dan tinggi 7; skala 4
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus volume balok dan konsep dilatasi/skala pada bangun ruang. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Materi dilatasi dan perubahan volume adalah standar kelas 9. Soal ini menguji pemahaman konseptual tentang faktor skala pangkat tiga yang sering menjadi jebakan bagi siswa. |
-
-Run 3 — solusi: Volume awal balok = 5 * 3 * 7 = 105. Jika ukuran balok diubah dengan skala k = 4, maka volume baru = volume awal * k^3. Volume baru = 105 * 4^3 = 105 * 64 = 6.720 satuan kubik.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep perubahan volume bangun ruang akibat perubahan skala (dilatasi), yaitu V' = V * k^3. Ini adalah penerapan prosedur standar pada situasi rutin.. Bukti: diubah ukurannya dengan skala 4; tentukan volume balok setelah diubah
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara faktor skala dan perubahan volume (konsep pangkat tiga pada volume), yang merupakan prinsip konseptual dalam geometri.. Bukti: skala 4; volume balok setelah diubah
-- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena melibatkan prosedur langsung yang familiar bagi siswa kelas 9 terkait dilatasi volume. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: panjang 5, lebar 3, dan tinggi 7; skala 4
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Rumus volume balok dan konsep dilatasi/perubahan skala pada bangun ruang. |
+| expectedPrerequisite | Konsep volume balok dan pemahaman dasar tentang dilatasi/skala. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1539,23 +1539,14 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi dilatasi dan perubahan volume adalah bagian dari kurikulum SMP kelas 9. Prosedur perhitungan langsung dan penggunaan faktor skala pangkat tiga adalah standar. |
+| gradeRelativeRationale | Materi dilatasi dan perubahan volume adalah standar kelas 9. Soal ini tidak menuntut integrasi kompleks, hanya penerapan rumus yang sudah dipelajari. |
 
-### 3. Voting awal dan adjudikasi
+Run 2 — solusi: Volume awal balok adalah 5 x 3 x 7 = 105 satuan kubik. Karena skala perubahan adalah 4, maka volume baru adalah 105 x (4^3) = 105 x 64 = 6.720 satuan kubik.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep perubahan volume bangun ruang akibat dilatasi (skala k) dengan menggunakan faktor skala pangkat tiga (k^3). Ini adalah penerapan prosedur pada konteks yang rutin.. Bukti: Jika balok tersebut diubah ukurannya dengan skala 4, maka tentukan volume balok setelah diubah.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana faktor skala mempengaruhi volume bangun ruang (hubungan k^3).. Bukti: diubah ukurannya dengan skala 4; tentukan volume balok setelah diubah
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena merupakan penerapan langsung dari rumus volume dan konsep dilatasi bangun ruang yang umum di kelas 9. Langkah penyelesaiannya jelas dan tidak memerlukan integrasi kendala yang kompleks.. Bukti: balok memiliki ukuran panjang 5, lebar 3, dan tinggi 7; diubah ukurannya dengan skala 4
 
-| Head | Suara awal | Pola / status akhir | Label akhir advisory |
-|---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 2, "Easy": 1} | majority_2_of_3 / adjudicated | Medium |
-
-Adjudikasi AI: `success`; token `3591`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan konsep perubahan volume bangun ruang akibat dilatasi (skala k), yaitu V' = V * k^3. Ini adalah penerapan prosedur standar pada situasi rutin.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang hubungan antara faktor skala dan perubahan volume (konsep pangkat tiga pada dilatasi volume).
-- Intended difficulty `Medium`: Soal ini tergolong Medium karena siswa sering terjebak menggunakan skala linear (k) atau kuadrat (k^2) untuk volume, sehingga memerlukan pemahaman konsep yang tepat tentang dilatasi volume (k^3) meskipun langkah operasinya rutin.
-
-Profil difficulty hasil adjudikasi:
+Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
@@ -1565,11 +1556,40 @@ Profil difficulty hasil adjudikasi:
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
+| interactingConstraints | 0 |
+| calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan memahami bahwa perubahan skala pada dimensi linear akan berdampak pangkat tiga pada volume. Pilihan pengecoh (A dan B) sangat efektif karena menangkap kesalahan umum siswa yang mengabaikan sifat pangkat tiga. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi dilatasi dan perubahan volume adalah standar kelas 9. Soal ini tidak menuntut penalaran non-rutin atau integrasi konsep yang sulit. |
+
+Run 3 — solusi: Volume awal balok = 5 * 3 * 7 = 105. Jika skala perubahan adalah k=4, maka volume baru = V_awal * k^3 = 105 * 4^3 = 105 * 64 = 6.720.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep perubahan volume bangun ruang akibat dilatasi (skala k) dengan menggunakan faktor skala pangkat tiga (k^3). Ini adalah penerapan prosedur pada konteks rutin.. Bukti: Jika balok tersebut diubah ukurannya dengan skala 4, maka tentukan volume balok setelah diubah.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang bagaimana faktor skala mempengaruhi volume bangun ruang (k^3), bukan sekadar menghitung volume awal.. Bukti: diubah ukurannya dengan skala 4; tentukan volume balok setelah diubah
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedurnya sangat standar bagi siswa kelas 9. Siswa hanya perlu menghitung volume awal dan mengalikannya dengan faktor skala pangkat tiga. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: balok memiliki ukuran panjang 5, lebar 3, dan tinggi 7; diubah ukurannya dengan skala 4
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus volume balok dan konsep dilatasi/skala pada bangun ruang. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi dilatasi dan perubahan volume adalah kurikulum standar kelas 9. Prosedur penyelesaian bersifat langsung dan rutin. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1601,9 +1621,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 12. Soal `bc9eda46aa2fecb0da3798d8`
@@ -1618,26 +1638,26 @@ Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan 
 | D | Volume limas sama dengan volume prisma |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Rumus volume prisma adalah V_prisma = Luas_alas * tinggi. Rumus volume limas adalah V_limas = 1/3 * Luas_alas * tinggi. Jika alas dan tinggi sama, maka V_limas = 1/3 * V_prisma.
+Solusi minimum hasil AI: Volume prisma dengan luas alas A dan tinggi t adalah V_prisma = A * t. Volume limas dengan luas alas A dan tinggi t adalah V_limas = 1/3 * A * t. Dengan membandingkan keduanya, V_limas = 1/3 * V_prisma.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9c32c7ab9b83f0a2b0aab0ee00ab180b0f72291e16ea2f564b3b9b0dea871755`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7fdaded8b7eeff1bb5a34db0c0435b525abc129292e587d7966eb91c8cd48e48`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 1966 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 1888 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 1882 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3135 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3260 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 3211 |
 
-Run 1 — solusi: Rumus volume prisma adalah V_prisma = Luas_alas * tinggi. Rumus volume limas adalah V_limas = 1/3 * Luas_alas * tinggi. Jika alas dan tinggi sama, maka V_limas = 1/3 * V_prisma.
-- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konseptual dasar mengenai hubungan volume antara dua bangun ruang yang memiliki komponen alas dan tinggi yang identik. Siswa perlu mengingat atau memahami prinsip geometri dasar tersebut tanpa perlu melakukan perhitungan kompleks.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menanyakan tentang prinsip atau hubungan antar konsep geometri (volume bangun ruang), yang termasuk dalam kategori pengetahuan konseptual.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan menguji pengetahuan dasar yang diajarkan di kelas 8/9 mengenai rumus volume. Tidak ada langkah perhitungan atau strategi non-rutin yang diperlukan.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
+Run 1 — solusi: Volume prisma dengan luas alas A dan tinggi t adalah V_prisma = A * t. Volume limas dengan luas alas A dan tinggi t adalah V_limas = 1/3 * A * t. Dengan membandingkan keduanya, V_limas = 1/3 * V_prisma.
+- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat atau mengenali hubungan konseptual dasar antara volume limas dan prisma yang memiliki alas dan tinggi yang sama. Tidak ada prosedur kompleks atau penalaran non-rutin yang diperlukan.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
+- Dimensi pengetahuan `classify/conceptual`: Pertanyaan ini menguji pemahaman prinsip geometris mengenai hubungan antara dua bangun ruang, yang merupakan pengetahuan konseptual.. Bukti: Bagaimana kaitan antara volume limas dan prisma
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan menguji pemahaman definisi/teorema dasar yang diajarkan di kelas 9. Tidak ada langkah-langkah yang saling bergantung atau kendala yang harus diintegrasikan.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
 
 Profil difficulty run ini:
 
@@ -1653,18 +1673,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi volume bangun ruang sisi datar adalah kurikulum standar SMP kelas 8/9. Pertanyaan ini adalah recall konsep dasar yang sangat familiar. |
+| gradeRelativeRationale | Pertanyaan ini adalah recall konsep dasar yang sangat familiar bagi siswa kelas 9. Tidak ada beban kognitif tinggi dalam perencanaan atau integrasi. |
 
-Run 2 — solusi: Volume prisma dengan luas alas A dan tinggi t adalah V_prisma = A * t. Volume limas dengan luas alas A dan tinggi t adalah V_limas = 1/3 * A * t. Dengan demikian, V_limas = 1/3 * V_prisma.
-- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konseptual dasar mengenai hubungan rumus volume antara dua bangun ruang yang memiliki komponen alas dan tinggi yang identik. Siswa perlu mengingat atau memahami prinsip geometri dasar ini tanpa perlu melakukan perhitungan numerik yang kompleks.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini berfokus pada pemahaman prinsip atau hubungan antar konsep geometri (volume limas vs prisma), yang merupakan bagian dari pengetahuan konseptual.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
-- Intended difficulty `classify/Easy`: Soal ini bersifat prosedural langsung atau pengingatan fakta konseptual yang diajarkan secara eksplisit di kelas 9. Tidak ada langkah perhitungan atau strategi non-rutin yang diperlukan.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
+Run 2 — solusi: Volume prisma = Luas alas x tinggi. Volume limas = 1/3 x Luas alas x tinggi. Jika alas dan tinggi sama, maka volume limas = 1/3 x volume prisma.
+- Domain kognitif `classify/knowing`: Soal menanyakan pemahaman dasar mengenai hubungan rumus volume dua bangun ruang yang sudah menjadi standar kurikulum SMP.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip atau hubungan konseptual antara volume limas dan prisma.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (recall/pemahaman dasar) tanpa memerlukan perhitungan atau perencanaan langkah yang kompleks.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus volume prisma (V=La*t) dan rumus volume limas (V=1/3*La*t). |
+| expectedPrerequisite | Rumus volume prisma dan limas. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1674,18 +1694,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah konsep dasar geometri ruang yang diajarkan di kelas 9. Mengingat hubungan perbandingan volume adalah tugas rutin. |
+| gradeRelativeRationale | Ini adalah materi dasar geometri kelas 9 yang diajarkan secara eksplisit. |
 
-Run 3 — solusi: Volume prisma dengan alas A dan tinggi t adalah V_prisma = A * t. Volume limas dengan alas A dan tinggi t adalah V_limas = 1/3 * A * t. Maka, V_limas = 1/3 * V_prisma.
-- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konseptual dasar mengenai hubungan volume antara dua bangun ruang yang memiliki komponen alas dan tinggi yang identik. Siswa hanya perlu mengingat atau memahami prinsip dasar geometri ruang tersebut tanpa perlu melakukan perhitungan kompleks.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini berfokus pada pemahaman prinsip atau hubungan antar konsep geometri (volume limas vs prisma), yang merupakan bagian dari pengetahuan konseptual.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
-- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung dan menguji pengetahuan dasar yang diajarkan di kelas 9 mengenai rumus volume bangun ruang. Tidak ada langkah perhitungan atau strategi yang diperlukan.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
+Run 3 — solusi: Volume prisma = Luas alas x tinggi. Volume limas = 1/3 x Luas alas x tinggi. Jika alas dan tinggi sama, maka Volume limas = 1/3 x Volume prisma.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengingat atau memahami hubungan konseptual dasar antara volume limas dan prisma yang memiliki alas dan tinggi yang sama.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman terhadap prinsip atau rumus geometri dasar, yang merupakan pengetahuan konseptual.. Bukti: Bagaimana kaitan antara volume limas dan prisma
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung mengenai hubungan rumus volume. Tidak ada langkah perhitungan atau integrasi yang diperlukan.. Bukti: Bagaimana kaitan antara volume limas dan prisma yang keduanya memiliki alas dan tinggi yang sama?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman rumus volume prisma (V=La*t) dan limas (V=1/3*La*t). |
+| expectedPrerequisite | Rumus volume prisma dan limas. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1695,7 +1715,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah konsep dasar geometri yang diajarkan di SMP kelas 9. Soal tidak memerlukan manipulasi aljabar atau perhitungan, hanya pemahaman definisi. |
+| gradeRelativeRationale | Ini adalah konsep dasar geometri yang diajarkan di kelas 9. Soal hanya menanyakan hubungan rumus tanpa perlu perhitungan. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -1752,47 +1772,26 @@ Untuk tiap-tiap lingkaran yang diketahui r (panjang jari-jari) atau d (panjang d
 | D | Keliling 37,68 cm dan luas 452,16 cm² |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: K = 2 * 3.14 * 12 = 75.36 cm. L = 3.14 * 12^2 = 3.14 * 144 = 452.16 cm^2.
+Solusi minimum hasil AI: Keliling = 2 * 3,14 * 12 = 75,36 cm. Luas = 3,14 * 12^2 = 3,14 * 144 = 452,16 cm^2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6b1332fed096576cf8d474e5ec48a294a8d24b0c131ed68ac100b678e7384b59`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `44822528fbf763c1afa91b60d60f4e79ec366cb5213cc31618b2c9fcc28f6968`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2788 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2747 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2659 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 3353 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 3424 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 2616 |
 
-Run 1 — solusi: K = 2 * 3.14 * 12 = 75.36 cm. L = 3.14 * 12^2 = 3.14 * 144 = 452.16 cm^2.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus keliling dan luas lingkaran secara langsung dengan nilai jari-jari yang diketahui.. Bukti: r = 12 cm; tentukan keliling dan luasnya
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur rutin untuk menghitung keliling dan luas lingkaran berdasarkan rumus yang sudah dipelajari.. Bukti: r = 12 cm; tentukan keliling dan luasnya
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, hanya memerlukan substitusi nilai ke dalam rumus standar tanpa langkah tambahan atau kendala kompleks.. Bukti: r = 12 cm; tentukan keliling dan luasnya
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Rumus keliling (2πr) dan luas (πr²) lingkaran. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi lingkaran adalah dasar di kelas 9, soal ini adalah latihan langsung yang tidak menuntut pemikiran tingkat tinggi. |
-
-Run 2 — solusi: K = 2 × 3,14 × 12 = 75,36 cm. L = 3,14 × 12² = 3,14 × 144 = 452,16 cm².
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus keliling dan luas lingkaran secara langsung dengan nilai jari-jari yang diketahui.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dalam menggunakan rumus keliling dan luas lingkaran.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
-- Intended difficulty `classify/Easy`: Soal bersifat rutin dan langsung, hanya memerlukan substitusi nilai ke dalam rumus yang sudah dikenal.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
+Run 1 — solusi: Keliling = 2 * 3,14 * 12 = 75,36 cm. Luas = 3,14 * 12^2 = 3,14 * 144 = 452,16 cm^2.
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung rumus keliling dan luas lingkaran yang sudah diketahui. Tidak ada proses penalaran atau strategi non-rutin yang diperlukan.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
+- Dimensi pengetahuan `classify/procedural`: Siswa hanya perlu menjalankan prosedur atau algoritma standar (rumus) untuk menghitung keliling dan luas lingkaran.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, menguji ingatan dan penerapan rumus dasar lingkaran yang merupakan materi prasyarat atau dasar di kelas 9.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
 
 Profil difficulty run ini:
 
@@ -1808,12 +1807,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan sudah lancar menggunakan rumus dasar lingkaran ini. |
+| gradeRelativeRationale | Soal ini adalah latihan dasar yang sangat familiar bagi siswa kelas 9. Tidak ada tuntutan integrasi konsep atau kendala yang kompleks. |
 
-Run 3 — solusi: K = 2 * 3,14 * 12 = 75,36 cm. L = 3,14 * 12^2 = 3,14 * 144 = 452,16 cm^2.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus keliling dan luas lingkaran secara langsung pada nilai jari-jari yang diberikan.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji kemampuan siswa dalam menggunakan algoritma atau rumus standar untuk menghitung nilai keliling dan luas.. Bukti: K=2πr=2×3,14×12=75,36 cm; L=πr²=3,14×144=452,16 cm²
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan substitusi nilai ke dalam rumus yang sudah dikenal.. Bukti: r = 12 cm
+Run 2 — solusi: Keliling = 2 * 3,14 * 12 = 75,36 cm. Luas = 3,14 * 12^2 = 3,14 * 144 = 452,16 cm^2.
+- Domain kognitif `classify/knowing`: Siswa diminta menerapkan rumus keliling dan luas lingkaran secara langsung dengan nilai jari-jari yang sudah diketahui.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dasar mengenai rumus keliling dan luas lingkaran.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
+- Intended difficulty `classify/Easy`: Soal ini sangat rutin, hanya memerlukan substitusi nilai ke dalam rumus yang sudah dikenal di kelas 9.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
 
 Profil difficulty run ini:
 
@@ -1829,13 +1828,34 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah latihan dasar kelas 9 yang menguji ingatan dan penerapan rumus lingkaran tanpa adanya variasi atau kendala tambahan. |
+| gradeRelativeRationale | Siswa kelas 9 sudah sangat familiar dengan rumus dasar lingkaran. Tidak ada integrasi konsep atau kendala yang kompleks. |
+
+Run 3 — solusi: Diketahui r = 12 cm. Keliling (K) = 2πr = 2 × 3,14 × 12 = 75,36 cm. Luas (L) = πr² = 3,14 × 12² = 3,14 × 144 = 452,16 cm². Hasil yang sesuai adalah K = 75,36 cm dan L = 452,16 cm².
+- Domain kognitif `classify/knowing`: Soal meminta siswa menerapkan rumus keliling dan luas lingkaran secara langsung dengan nilai jari-jari yang sudah diberikan. Tidak ada strategi nonrutin atau integrasi konsep yang kompleks.. Bukti: tentukan keliling dan luasnya! ⓐ r = 12 cm
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu mengetahui dan menerapkan rumus dasar keliling (2πr) dan luas (πr²) lingkaran.. Bukti: tentukan keliling dan luasnya
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan prosedur yang sangat jelas dan langsung. Siswa hanya perlu mensubstitusi nilai jari-jari ke dalam rumus yang sudah familiar di kelas 9.. Bukti: r = 12 cm; tentukan keliling dan luasnya
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus keliling dan luas lingkaran serta operasi perkalian desimal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan latihan dasar yang sangat umum di kelas 9, tidak memerlukan penalaran tingkat tinggi atau integrasi konsep. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
 | Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
@@ -1869,9 +1889,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 14. Soal `ce529c7a884ca9ebbfb36e54`
@@ -1886,47 +1906,26 @@ Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar ____.
 | D | 2 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Keliling lingkaran (K) dirumuskan sebagai K = π × d, di mana d adalah diameter. Maka, perbandingan keliling terhadap diameter adalah K/d = π. Nilai pendekatan π adalah 3,14 atau 22/7.
+Solusi minimum hasil AI: Berdasarkan definisi konstanta pi (π), perbandingan antara keliling lingkaran (K) dan diameternya (d) adalah K/d = π. Nilai pendekatan untuk π adalah 3,14 atau 22/7.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1fbce5b5bd90799a64b7a8c43176777f6ee0920b7c89fff3cfc45d62c89023c3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a893f69afbb2b85a095a383b8ca338911676d72a71cad2e74902ac15c9ca2f7c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | factual | Easy | 1884 |
-| 2 | success | valid / verified | knowing | factual | Easy | 1904 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 1890 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2552 |
+| 2 | success | valid / verified | knowing | factual | Easy | 2542 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3532 |
 
-Run 1 — solusi: Keliling lingkaran (K) dirumuskan sebagai K = π × d, di mana d adalah diameter. Maka, perbandingan keliling terhadap diameter adalah K/d = π. Nilai π adalah konstanta yang nilainya sekitar 3,14 atau 22/7.
-- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat definisi konstanta pi (π) sebagai rasio keliling terhadap diameter lingkaran, yang merupakan pengetahuan faktual dasar.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
-- Dimensi pengetahuan `classify/factual`: Siswa perlu mengetahui definisi atau fakta matematis mengenai hubungan antara keliling dan diameter lingkaran yang menghasilkan konstanta pi.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran
-- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung (recall) mengenai definisi dasar lingkaran yang dipelajari di tingkat SMP.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Definisi keliling lingkaran dan diameter. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah konsep dasar lingkaran yang diajarkan di kelas 8 dan diperkuat di kelas 9, sehingga bagi siswa kelas 9 ini adalah pengetahuan yang sangat familiar. |
-
-Run 2 — solusi: Definisi keliling lingkaran (K) adalah K = π × d, di mana d adalah diameter. Maka, perbandingan keliling dengan diameter adalah K/d = π. Nilai π adalah konstanta yang nilainya sekitar 3,14 atau 22/7.
-- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat definisi konstanta pi (π) sebagai rasio keliling terhadap diameter lingkaran. Ini adalah pengetahuan faktual dasar yang langsung.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
-- Dimensi pengetahuan `classify/factual`: Siswa perlu mengetahui fakta matematis tentang hubungan antara keliling dan diameter lingkaran yang didefinisikan sebagai π.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya menanyakan definisi konstanta lingkaran yang sudah dipelajari sejak sekolah dasar/awal SMP. Tidak ada langkah perhitungan atau analisis.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
+Run 1 — solusi: Definisi konstanta pi (π) adalah perbandingan keliling (K) dengan diameter (d) lingkaran, yaitu K/d = π. Nilai pendekatan π adalah 3,14 atau 22/7.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali definisi dasar konstanta pi (π) sebagai rasio keliling terhadap diameter lingkaran. Tidak ada perhitungan kompleks atau strategi nonrutin yang diperlukan.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang definisi pi (π) sebagai hubungan tetap antara keliling dan diameter lingkaran.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan bersifat hafalan atau pemahaman konsep dasar yang diajarkan di awal materi lingkaran. Tidak ada langkah perencanaan atau integrasi yang diperlukan.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
 
 Profil difficulty run ini:
 
@@ -1942,18 +1941,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi ini adalah pengetahuan dasar lingkaran yang sudah diperkenalkan jauh sebelum kelas 9, sehingga bagi siswa kelas 9 ini termasuk kategori sangat mudah. |
+| gradeRelativeRationale | Ini adalah pengetahuan faktual/konseptual dasar yang diharapkan dikuasai siswa kelas 9 saat mempelajari lingkaran. |
 
-Run 3 — solusi: Definisi konstanta pi (π) adalah rasio keliling lingkaran (K) terhadap diameternya (d), yaitu K/d = π. Nilai pendekatan untuk π adalah 3,14 atau 22/7.
-- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat definisi dasar konstanta pi (π) sebagai rasio keliling terhadap diameter lingkaran. Tidak ada prosedur kompleks atau strategi non-rutin yang diperlukan.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman terhadap konsep dasar atau terminologi matematika mengenai definisi pi (π) dalam geometri lingkaran.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan langsung. Siswa hanya perlu mengetahui definisi konstanta pi yang diajarkan di awal materi lingkaran.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
+Run 2 — solusi: Definisi konstanta pi (π) adalah perbandingan keliling lingkaran (K) dengan diameternya (d), yaitu K/d = π. Nilai pendekatan π yang umum digunakan adalah 3,14 atau 22/7.
+- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat dan mengenali definisi dasar konstanta pi (π) sebagai rasio keliling terhadap diameter lingkaran, yang merupakan pengetahuan faktual dasar dalam geometri.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman terhadap terminologi dan definisi dasar (fakta) mengenai konstanta lingkaran.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan hanya memerlukan ingatan terhadap definisi konstanta pi. Tidak ada langkah perhitungan atau integrasi konsep yang diperlukan.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang unsur-unsur lingkaran (keliling, diameter) dan konstanta pi. |
+| expectedPrerequisite | Definisi dasar lingkaran dan konstanta pi. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1963,27 +1962,48 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi ini merupakan pengetahuan dasar yang diperkenalkan di tingkat SMP, sehingga tingkat kesulitannya rendah bagi siswa kelas 9. |
+| gradeRelativeRationale | Ini adalah konsep dasar yang diajarkan di tingkat SMP. Soal bersifat recall langsung tanpa memerlukan pemecahan masalah. |
+
+Run 3 — solusi: Keliling lingkaran (K) dirumuskan sebagai K = π × d, sehingga perbandingan K/d = π. Nilai π adalah sekitar 3,14 atau 22/7.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengingat definisi konstanta pi sebagai perbandingan keliling terhadap diameter.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
+- Dimensi pengetahuan `classify/factual`: Soal menanyakan pengetahuan dasar mengenai definisi konstanta pi.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
+- Intended difficulty `classify/Easy`: Soal ini merupakan pengetahuan dasar yang diajarkan di awal materi lingkaran, tidak memerlukan langkah kompleks atau integrasi konsep.. Bukti: Perbandingan antara keliling dan diameter suatu lingkaran adalah sekitar
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi keliling dan diameter lingkaran. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan pengetahuan dasar yang diajarkan di awal materi lingkaran, tidak memerlukan langkah kompleks atau integrasi konsep. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
-| Dimensi pengetahuan | {"factual": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | factual |
+| Dimensi pengetahuan | {"conceptual": 1, "factual": 2} | majority_2_of_3 / adjudicated | factual |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3198`.
+Adjudikasi AI: `success`; token `3761`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Soal ini menuntut siswa untuk mengingat definisi konstanta pi (π) sebagai rasio keliling terhadap diameter lingkaran, yang merupakan pengetahuan faktual dasar.
-- Dimensi pengetahuan `factual`: Siswa perlu mengetahui fakta matematis mengenai hubungan antara keliling dan diameter lingkaran yang menghasilkan konstanta pi.
-- Intended difficulty `Easy`: Soal ini bersifat sangat langsung (recall) mengenai definisi dasar lingkaran yang dipelajari di tingkat SMP.
+- Domain kognitif `knowing`: Soal ini menguji pengenalan langsung terhadap definisi konstanta pi (π) sebagai rasio keliling terhadap diameter. Tidak ada strategi atau integrasi yang diperlukan.
+- Dimensi pengetahuan `factual`: Soal ini menguji pengetahuan faktual mengenai definisi dan nilai konstanta lingkaran.
+- Intended difficulty `Easy`: Soal ini sangat mendasar dan bersifat recall langsung. Tidak ada langkah perencanaan, integrasi, atau kendala yang harus dipecahkan.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Definisi keliling lingkaran dan diameter. |
+| expectedPrerequisite | Pemahaman dasar tentang unsur-unsur lingkaran (keliling, diameter) dan konstanta pi. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1993,7 +2013,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah konsep dasar lingkaran yang diajarkan di kelas 8 dan diperkuat di kelas 9, sehingga bagi siswa kelas 9 ini adalah pengetahuan yang sangat familiar. |
+| gradeRelativeRationale | Ini adalah pengetahuan dasar yang diajarkan di awal materi lingkaran di SMP, sehingga dikategorikan sebagai Easy. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2042,68 +2062,68 @@ Untuk memperingati ulang tahun Gilang, ibunya membuat nasi tumpeng yang disusun 
 | D | ≈1.099 cm² |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Jari-jari (r) = 10 cm. Garis pelukis (s) = √(r² + t²) = √(10² + 35²) = √(100 + 1225) = √1325 ≈ 36,40 cm. Luas selimut kerucut = πrs = 3,14 × 10 × 36,40 ≈ 1.142,96 cm².
+Solusi minimum hasil AI: Jari-jari (r) = 10 cm, tinggi (t) = 35 cm. Garis pelukis (s) = sqrt(r^2 + t^2) = sqrt(100 + 1225) = sqrt(1325) ≈ 36,40 cm. Luas selimut kerucut = πrs = 3,14 * 10 * 36,40 ≈ 1142,96 cm².
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `855b4dacadc95f4edb557640fa759fc784c56c95a6c3a5e9c99071d9007a1879`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `37e231a09728feb0da0d7e2aff728eca9ef33e5c7d9f447e1f2ae22033786548`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 2200 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2214 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2244 |
+| 1 | success | valid / verified | applying | procedural | Medium | 2903 |
+| 2 | success | valid / verified | applying | procedural | Medium | 2895 |
+| 3 | success | valid / verified | applying | procedural | Medium | 2925 |
 
-Run 1 — solusi: Jari-jari (r) = 10 cm. Garis pelukis (s) = √(r² + t²) = √(10² + 35²) = √(100 + 1225) = √1325 ≈ 36,40 cm. Luas selimut kerucut = πrs = 3,14 × 10 × 36,40 ≈ 1.142,96 cm².
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa daun pisang hanya menutupi selimut kerucut, menghitung jari-jari dari diameter, menentukan garis pelukis menggunakan teorema Pythagoras, dan menerapkan rumus luas selimut kerucut.. Bukti: diameter 20 cm; Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm; luas daun pisang yang akan dibutuhkan
-- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prosedur matematis (Pythagoras dan rumus luas selimut) untuk menyelesaikan masalah kontekstual.. Bukti: luas daun pisang yang akan dibutuhkan; diameter 20 cm; Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman konsep selimut kerucut, konversi diameter ke jari-jari, dan penggunaan Pythagoras untuk mencari garis pelukis. Ini adalah langkah rutin yang saling terkait.. Bukti: diameter 20 cm; Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm; luas daun pisang yang akan dibutuhkan
+Run 1 — solusi: Jari-jari (r) = 10 cm, tinggi (t) = 35 cm. Garis pelukis (s) = sqrt(r^2 + t^2) = sqrt(100 + 1225) = sqrt(1325) ≈ 36,40 cm. Luas selimut kerucut = πrs = 3,14 * 10 * 36,40 ≈ 1142,96 cm².
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa menutupi nasi tumpeng berarti menghitung luas selimut kerucut, bukan luas permukaan total. Ini memerlukan pemahaman konsep bangun ruang sisi lengkung dan pemilihan prosedur yang tepat.. Bukti: nasi tumpeng yang disusun sedemikian rupa sehingga nasinya berbentuk kerucut; berapa luas daun pisang yang akan dibutuhkan
+- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prosedur algoritme (Pythagoras untuk mencari garis pelukis dan rumus luas selimut) untuk menyelesaikan masalah kontekstual.. Bukti: diameter 20 cm; Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm; luas selimut kerucut = πrl
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan dua langkah utama yang saling bergantung: menghitung garis pelukis menggunakan teorema Pythagoras sebelum menghitung luas selimut. Siswa juga harus memahami bahwa 'menutupi' tumpeng hanya melibatkan luas selimut, bukan luas alas.. Bukti: diameter 20 cm; Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm; luas daun pisang yang akan dibutuhkan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Teorema Pythagoras, rumus luas selimut kerucut, konsep jari-jari dan diameter. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| expectedPrerequisite | Teorema Pythagoras, rumus luas selimut kerucut, hubungan diameter dan jari-jari. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
+| relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengintegrasikan Pythagoras dengan geometri bangun ruang sisi lengkung. |
+| gradeRelativeRationale | Materi kerucut adalah standar kelas 9. Menghitung garis pelukis dan luas selimut adalah prosedur rutin, namun memerlukan ketelitian dalam membedakan luas selimut dengan luas permukaan total. |
 
 Run 2 — solusi: Jari-jari (r) = 10 cm. Garis pelukis (s) = sqrt(r^2 + t^2) = sqrt(10^2 + 35^2) = sqrt(100 + 1225) = sqrt(1325) ≈ 36,40 cm. Luas selimut kerucut = πrs = 3,14 * 10 * 36,40 ≈ 1.142,96 cm².
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa menutupi tumpeng berarti menghitung luas selimut kerucut, memilih rumus yang tepat (πrs), dan menghitung garis pelukis menggunakan teorema Pythagoras.. Bukti: nasi kerucut ini ingin ditutupi dengan daun pisang; diameter 20 cm. Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm
-- Dimensi pengetahuan `classify/procedural`: Siswa harus menerapkan prosedur algoritma luas selimut kerucut dan teorema Pythagoras untuk menentukan garis pelukis.. Bukti: luas daun pisang yang akan dibutuhkan; diameter 20 cm. Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman konsep bahwa daun pisang hanya menutupi selimut (bukan alas), penggunaan Pythagoras untuk mencari garis pelukis, dan perhitungan numerik. Ini adalah prosedur rutin bagi siswa kelas 9.. Bukti: diameter 20 cm. Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm; luas daun pisang yang akan dibutuhkan
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa daun pisang hanya menutupi selimut kerucut, menghitung jari-jari dari diameter, menentukan garis pelukis menggunakan teorema Pythagoras, dan menerapkan rumus luas selimut kerucut.. Bukti: nasinya berbentuk kerucut dengan diameter 20 cm. Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm.; berapa luas daun pisang yang akan dibutuhkan?
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman prosedural tentang rumus luas selimut kerucut dan konsep konseptual mengenai bagian mana dari bangun ruang yang dihitung (selimut saja, bukan alas).. Bukti: luas daun pisang yang akan dibutuhkan; nasinya berbentuk kerucut
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah utama yang saling terkait: menghitung garis pelukis menggunakan Pythagoras sebelum menghitung luas selimut. Siswa harus memahami bahwa tinggi kerucut berbeda dengan garis pelukis dan bahwa luas yang dicari hanya luas selimut.. Bukti: diameter 20 cm; Tinggi nasi... 35 cm; luas daun pisang yang akan dibutuhkan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Teorema Pythagoras, rumus luas selimut kerucut, konversi diameter ke jari-jari. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| expectedPrerequisite | Teorema Pythagoras, rumus luas selimut kerucut, hubungan diameter dan jari-jari. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
+| relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu membedakan luas permukaan total dan luas selimut serta menggunakan Pythagoras dalam konteks bangun ruang. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengintegrasikan Pythagoras ke dalam perhitungan luas bangun ruang sisi lengkung. Soal ini menguji ketelitian dalam memilih komponen rumus yang tepat. |
 
-Run 3 — solusi: Jari-jari (r) = 10 cm. Tinggi (t) = 35 cm. Garis pelukis (s) = sqrt(r^2 + t^2) = sqrt(100 + 1225) = sqrt(1325) ≈ 36,40 cm. Luas selimut kerucut = πrs = 3,14 * 10 * 36,40 ≈ 1.142,96 cm².
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa daun pisang hanya menutupi selimut kerucut, menghitung garis pelukis menggunakan teorema Pythagoras, dan menerapkan rumus luas selimut kerucut.. Bukti: diameter 20 cm; Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm; luas daun pisang yang akan dibutuhkan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pemahaman prosedural tentang rumus luas permukaan bangun ruang sisi lengkung dan konsep geometris garis pelukis.. Bukti: luas daun pisang yang akan dibutuhkan; r=10 cm, garis pelukis l=√(10²+35²)=√1325≈36,40 cm; luas selimut kerucut = πrl
-- Intended difficulty `classify/Medium`: Soal ini memerlukan dua langkah utama: menghitung garis pelukis dengan Pythagoras dan menghitung luas selimut. Ini adalah prosedur rutin yang diharapkan untuk kelas 9.. Bukti: diameter 20 cm; Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm; luas daun pisang yang akan dibutuhkan
+Run 3 — solusi: Diketahui diameter d=20 cm, maka jari-jari r=10 cm. Tinggi kerucut t=35 cm. Garis pelukis l = √(r² + t²) = √(10² + 35²) = √(100 + 1225) = √1325 ≈ 36,40 cm. Luas selimut kerucut = πrl = 3,14 × 10 × 36,40 ≈ 1.142,96 cm².
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa menutupi tumpeng dengan daun pisang berarti menghitung luas selimut kerucut, bukan luas permukaan total. Ini memerlukan penerapan rumus luas selimut kerucut (πrl) dan pemahaman hubungan antara jari-jari, tinggi, dan garis pelukis.. Bukti: nasi tumpeng yang disusun sedemikian rupa sehingga nasinya berbentuk kerucut; berapa luas daun pisang yang akan dibutuhkan
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dalam menggunakan rumus luas selimut kerucut dan konsep konseptual mengenai hubungan Pythagoras pada kerucut untuk mencari garis pelukis.. Bukti: diameter 20 cm; Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm; luas selimut kerucut = πrl
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan dua langkah utama: menghitung garis pelukis menggunakan teorema Pythagoras dan menerapkan rumus luas selimut kerucut. Meskipun prosedurnya familiar, terdapat integrasi konsep yang diperlukan untuk menentukan bagian mana dari bangun ruang yang harus dihitung (selimut saja).. Bukti: diameter 20 cm; Tinggi nasi dengan bentuk kerucut ini sekitar 35 cm; luas daun pisang yang akan dibutuhkan
 
 Profil difficulty run ini:
 
@@ -2111,15 +2131,15 @@ Profil difficulty run ini:
 |---|---|
 | expectedPrerequisite | Teorema Pythagoras dan rumus luas selimut kerucut. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 2 |
 | interactingConstraints | 1 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 sudah mempelajari geometri bangun ruang sisi lengkung dan Pythagoras. Soal ini menguji ketelitian dalam memilih rumus yang tepat (selimut saja) dan melakukan perhitungan bertahap. |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung luas sisi lengkung dan menggunakan Pythagoras untuk mencari garis pelukis. Soal ini menguji ketelitian dalam memilih rumus yang tepat (selimut vs total) dan penggunaan variabel yang benar (jari-jari vs diameter). |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2176,26 +2196,26 @@ Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari
 | D | Luas permukaan bola sama dengan empat kali luas lingkaran yang memiliki jari-jari yang sama |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Luas permukaan bola dirumuskan sebagai 4πr² dan luas lingkaran adalah πr². Dengan membandingkan kedua rumus tersebut, luas permukaan bola adalah 4 kali luas lingkaran dengan jari-jari yang sama.
+Solusi minimum hasil AI: Luas permukaan bola adalah 4πr² dan luas lingkaran adalah πr². Perbandingan keduanya adalah (4πr²)/(πr²) = 4, sehingga luas permukaan bola adalah 4 kali luas lingkaran dengan jari-jari yang sama.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1354b481d47e1efa2b50aa275b6d634ac42dd668099fed404f6acaf3e528e2f9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1a237670819eb07c684b12921d5266c37daf3cb5ccd61fc2c3571bccce96a301`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 2361 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 2364 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 2523 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3266 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3395 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2621 |
 
-Run 1 — solusi: Luas permukaan bola dirumuskan sebagai 4πr² dan luas lingkaran adalah πr². Dengan membandingkan kedua rumus tersebut, luas permukaan bola adalah 4 kali luas lingkaran dengan jari-jari yang sama.
-- Domain kognitif `classify/knowing`: Soal ini menguji ingatan siswa terhadap rumus dasar luas permukaan bola dan hubungannya dengan luas lingkaran, yang merupakan pengetahuan faktual/konseptual langsung.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan struktural antara rumus luas permukaan bola (4πr²) dan luas lingkaran (πr²).. Bukti: keterkaitan antara luas permukaan bola dan luas lingkaran
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan hanya memerlukan pengetahuan rumus dasar tanpa langkah perhitungan yang kompleks.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
+Run 1 — solusi: Luas permukaan bola adalah 4πr² dan luas lingkaran adalah πr². Perbandingan keduanya adalah (4πr²)/(πr²) = 4, sehingga luas permukaan bola adalah 4 kali luas lingkaran dengan jari-jari yang sama.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengingat atau menerapkan rumus luas permukaan bola (4πr²) dan luas lingkaran (πr²) untuk menentukan hubungan keduanya secara langsung.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara rumus luas permukaan bola dan luas lingkaran.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (direct recall/application). Tidak ada langkah kompleks atau integrasi yang diperlukan.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
 
 Profil difficulty run ini:
 
@@ -2211,18 +2231,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi ini adalah standar kurikulum kelas 9. Soal tidak menuntut pemecahan masalah, hanya pengenalan hubungan rumus. |
+| gradeRelativeRationale | Soal ini merupakan pengetahuan dasar geometri yang diajarkan di kelas 9, tidak memerlukan langkah penalaran yang rumit. |
 
-Run 2 — solusi: Luas permukaan bola dirumuskan sebagai 4πr² dan luas lingkaran adalah πr². Dengan membandingkan kedua rumus tersebut, luas permukaan bola adalah 4 kali luas lingkaran dengan jari-jari yang sama.
-- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat dan menerapkan hubungan dasar antara rumus luas permukaan bola dan luas lingkaran, yang merupakan proses langsung.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan struktural antara rumus-rumus geometri dasar tersebut.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan menguji ingatan terhadap rumus dasar yang dipelajari di kelas 9.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
+Run 2 — solusi: Luas permukaan bola dirumuskan sebagai L_bola = 4πr² dan luas lingkaran sebagai L_lingkaran = πr². Dengan membandingkan kedua rumus tersebut, didapatkan L_bola = 4 × (πr²) = 4 × L_lingkaran. Maka, luas permukaan bola adalah empat kali luas lingkaran dengan jari-jari yang sama.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali hubungan matematis antara dua rumus dasar yang sudah dipelajari, yaitu luas permukaan bola dan luas lingkaran. Siswa hanya perlu membandingkan kedua rumus tersebut secara langsung.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep rumus luas permukaan bola dan luas lingkaran untuk menentukan hubungan perbandingannya.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan menguji pemahaman rumus dasar yang merupakan bagian dari kurikulum standar kelas 9. Tidak ada langkah kompleks, integrasi, atau kendala yang perlu dipecahkan.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus luas lingkaran dan luas permukaan bola. |
+| expectedPrerequisite | Rumus luas permukaan bola dan luas lingkaran. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2232,18 +2252,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan sudah familiar dengan rumus bangun ruang sisi lengkung. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan sudah familiar dengan rumus-rumus bangun ruang sisi lengkung ini sebagai bagian dari kurikulum standar. |
 
-Run 3 — solusi: Luas permukaan bola dirumuskan sebagai 4πr². Luas lingkaran dengan jari-jari r adalah πr². Dengan membandingkan kedua rumus tersebut, luas permukaan bola adalah 4 kali luas lingkaran (4πr² = 4 × πr²).
-- Domain kognitif `classify/knowing`: Soal ini bersifat recall atau pengenalan langsung terhadap rumus geometri dasar yang sudah dipelajari, sehingga masuk dalam domain knowing.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai hubungan antar rumus geometri (konsep luas permukaan bola sebagai 4 kali luas lingkaran).. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan hanya memerlukan pengetahuan rumus dasar tanpa proses kalkulasi atau strategi yang kompleks.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
+Run 3 — solusi: Luas permukaan bola dirumuskan dengan L = 4πr². Luas lingkaran dengan jari-jari yang sama dirumuskan dengan A = πr². Maka, L = 4 × (πr²) = 4 × A. Jadi, luas permukaan bola adalah empat kali luas lingkaran dengan jari-jari yang sama.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan menghubungkan rumus luas permukaan bola (4πr²) dengan rumus luas lingkaran (πr²). Siswa hanya perlu memahami hubungan matematis dasar antara kedua rumus tersebut.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual mengenai rumus bangun ruang sisi lengkung dan hubungan antar-rumus geometri dasar.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (straightforward) karena hanya menanyakan hubungan rumus yang merupakan materi dasar geometri kelas 9. Tidak ada langkah perhitungan kompleks atau integrasi kendala.. Bukti: Apa keterkaitan antara luas permukaan bola dan luas lingkaran yang memiliki jari-jari yang sama.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus luas lingkaran dan luas permukaan bola. |
+| expectedPrerequisite | Rumus luas permukaan bola dan luas lingkaran. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2253,7 +2273,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan sudah familiar dengan rumus-rumus bangun ruang sisi lengkung. Soal ini tidak memerlukan langkah penyelesaian bertahap yang rumit. |
+| gradeRelativeRationale | Siswa kelas 9 sudah mempelajari rumus luas permukaan bola. Menghubungkan 4πr² dengan πr² adalah prosedur rutin yang sangat dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2309,88 +2329,88 @@ Berapa liter gas bumi yang dapat ditampung dengan truk yang memiliki tabung peny
 | C | 37.680 liter |
 | D | 37,68 liter |
 
-![Gambar sumber soal 17](<../images/kelas9_crop-s0011-truk-gas.png>)
+![Gambar sumber soal 17](<../../../images/kelas9_crop-s0011-truk-gas.png>)
 
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Jari-jari (r) = diameter / 2 = 2 m / 2 = 1 m. Volume tabung = π × r² × t = 3,14 × (1 m)² × 12 m = 37,68 m³. Konversi ke liter: 37,68 m³ × 1.000 liter/m³ = 37.680 liter.
-Gambar sumber: images/kelas9_crop-s0011-truk-gas.png. Transkripsi visual: A side view of a tanker truck with a large cylindrical tank mounted on the trailer. The tank is horizontal, with a circular cross-section visible at the rear.
+Solusi minimum hasil AI: Jari-jari (r) = diameter / 2 = 2 m / 2 = 1 m. Volume tabung = π × r² × t = 3,14 × 1² × 12 = 37,68 m³. Konversi ke liter: 37,68 m³ × 1.000 liter/m³ = 37.680 liter.
+Gambar sumber: images/kelas9_crop-s0011-truk-gas.png. Transkripsi visual: Sebuah truk tangki dengan tangki berbentuk silinder horizontal. Diameter tangki adalah 2 meter dan panjang tangki adalah 12 meter.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9f2ee0856f90c7854908b7738a8e7248dca3d9404cae4dabba26655158e042f4`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `240f83531640bcef9ab097ca45a685e57af39a6ec8b459ed4cc29aaabebdfd16`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 3245 |
-| 2 | success | valid / verified | applying | procedural | Easy | 3217 |
-| 3 | success | valid / verified | applying | procedural | Medium | 3212 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3879 |
+| 2 | success | valid / verified | applying | procedural | Medium | 3901 |
+| 3 | success | valid / verified | applying | procedural | Medium | 3913 |
 
-Run 1 — solusi: Jari-jari (r) = diameter/2 = 2m/2 = 1m. Volume (V) = π × r² × t = 3,14 × 1² × 12 = 37,68 m³. Konversi ke liter: 37,68 m³ × 1.000 liter/m³ = 37.680 liter.
-- Domain kognitif `classify/applying`: Siswa perlu memilih rumus volume tabung, melakukan substitusi nilai, dan menerapkan konversi satuan yang rutin. Ini adalah penerapan prosedur standar pada situasi yang familiar.. Bukti: diameter 2 meter dan panjang 12 meter; Berapa liter gas bumi yang dapat ditampung
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang rumus volume tabung dan hubungan konversi satuan volume (prosedural) dalam konteks geometri.. Bukti: Volume (V) = π × r² × h; 1 m³ = 1.000 liter
-- Intended difficulty `classify/Medium`: Soal ini melibatkan langkah-langkah rutin: menentukan jari-jari dari diameter, menghitung volume, dan konversi satuan. Tidak ada strategi nonrutin atau kendala kompleks.. Bukti: diameter 2 meter; panjang 12 meter; Berapa liter
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Rumus volume tabung dan konversi satuan volume (m³ ke liter). |
-| dependentSteps | 3 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung volume bangun ruang sisi lengkung dan melakukan konversi satuan dasar. Soal ini adalah aplikasi langsung dari rumus tersebut. |
-
-Run 2 — solusi: Jari-jari (r) = diameter/2 = 2/2 = 1 m. Volume silinder = π × r² × h = 3,14 × 1² × 12 = 37,68 m³. Karena 1 m³ = 1.000 liter, maka volume = 37,68 × 1.000 = 37.680 liter.
-- Domain kognitif `classify/applying`: Siswa perlu memilih rumus volume tabung, melakukan konversi satuan dari meter ke jari-jari, dan mengonversi satuan volume dari m³ ke liter. Ini adalah penerapan prosedur rutin pada situasi kontekstual.. Bukti: diameter 2 meter dan panjang 12 meter; Berapa liter gas bumi yang dapat ditampung
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang rumus volume bangun ruang sisi lengkung (tabung) dan hubungan antar satuan volume.. Bukti: V=πr²h; 1 m³=1.000 liter
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan penerapan rumus langsung dan konversi satuan dasar yang umum diajarkan di kelas 9.. Bukti: diameter 2 meter; 1 m³=1.000 liter
+Run 1 — solusi: Diketahui diameter d=2 m, maka jari-jari r=1 m. Panjang silinder h=12 m. Volume V = πr²h = 3,14 × 1² × 12 = 37,68 m³. Karena 1 m³ = 1.000 liter, maka volume = 37,68 × 1.000 = 37.680 liter.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus volume silinder dan melakukan konversi satuan volume (m³ ke liter). Ini adalah penerapan prosedur rutin pada konteks yang familiar.. Bukti: diameter 2 meter dan panjang 12 meter; Berapa liter gas bumi yang dapat ditampung
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman konsep volume bangun ruang sisi lengkung dan prosedur konversi satuan yang merupakan pengetahuan prosedural.. Bukti: V=πr²h; 1 m³=1.000 liter
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena menggunakan rumus volume yang standar dan familiar bagi siswa kelas 9. Langkah-langkah penyelesaiannya jelas: menentukan jari-jari dari diameter, menghitung volume, dan melakukan konversi satuan. Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: diameter 2 meter; panjang 12 meter; Berapa liter
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus volume tabung dan konversi satuan volume (m³ ke liter). |
+| expectedPrerequisite | Rumus volume tabung dan konversi satuan volume. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
-| representationTransfer | False |
+| representationTransfer | True |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung volume tabung dan melakukan konversi satuan dasar tanpa kesulitan berarti. |
+| gradeRelativeRationale | Soal ini adalah aplikasi langsung dari materi volume bangun ruang sisi lengkung yang merupakan standar kurikulum kelas 9. |
 
-Run 3 — solusi: Jari-jari (r) = diameter / 2 = 2 m / 2 = 1 m. Volume tabung = π × r² × t = 3,14 × (1 m)² × 12 m = 37,68 m³. Konversi ke liter: 37,68 m³ × 1.000 liter/m³ = 37.680 liter.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus volume tabung dan melakukan konversi satuan volume (m³ ke liter). Ini adalah prosedur rutin yang dipelajari di kelas 9.. Bukti: diameter 2 meter dan panjang 12 meter; Berapa liter gas bumi yang dapat ditampung
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang rumus volume bangun ruang sisi lengkung dan konversi satuan yang relevan.. Bukti: volume tabung; konversi meter kubik ke liter
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena melibatkan dua langkah rutin yang saling terkait: menghitung volume tabung dan melakukan konversi satuan volume (m³ ke liter).. Bukti: diameter 2 meter; panjang 12 meter; Berapa liter
+Run 2 — solusi: Jari-jari (r) = diameter / 2 = 2 m / 2 = 1 m. Volume tabung = π × r² × t = 3,14 × 1² × 12 = 37,68 m³. Konversi ke liter: 37,68 m³ × 1.000 liter/m³ = 37.680 liter.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi rumus volume tabung, melakukan konversi dari diameter ke jari-jari, dan melakukan konversi satuan volume dari m³ ke liter. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: diameter 2 meter dan panjang 12 meter; Berapa liter gas bumi yang dapat ditampung
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang rumus volume bangun ruang sisi lengkung (konseptual) dan prosedur perhitungan serta konversi satuan (prosedural).. Bukti: diameter 2 meter dan panjang 12 meter; Berapa liter gas bumi yang dapat ditampung
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: konversi diameter ke jari-jari, perhitungan volume, dan konversi satuan volume. Meskipun prosedurnya familiar, siswa harus teliti dalam setiap tahapan.. Bukti: diameter 2 meter; panjang 12 meter; Berapa liter
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
 | expectedPrerequisite | Rumus volume tabung, hubungan diameter dan jari-jari, konversi satuan volume (m³ ke liter). |
-| dependentSteps | 2 |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung volume tabung dan melakukan konversi satuan. Soal ini menuntut ketelitian dalam langkah-langkah prosedural yang berurutan. |
+
+Run 3 — solusi: Volume silinder = π × r² × h. Diketahui d = 2 m, maka r = 1 m. h = 12 m. V = 3,14 × 1² × 12 = 37,68 m³. Konversi ke liter: 37,68 m³ × 1.000 liter/m³ = 37.680 liter.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi rumus volume tabung, melakukan konversi dari diameter ke jari-jari, dan melakukan konversi satuan volume dari m³ ke liter. Ini adalah penerapan prosedur rutin pada konteks yang familiar.. Bukti: diameter 2 meter dan panjang 12 meter; Berapa liter gas bumi yang dapat ditampung
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman konsep volume bangun ruang sisi lengkung dan prosedur konversi satuan yang merupakan pengetahuan prosedural standar.. Bukti: diameter 2 meter; V=πr²h; 1 m³=1.000 liter
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah prosedural yang saling terkait: menghitung volume dengan jari-jari (bukan diameter) dan melakukan konversi satuan volume. Meskipun prosedurnya familiar, siswa harus berhati-hati dengan langkah-langkah tersebut.. Bukti: diameter 2 meter; panjang 12 meter; Berapa liter
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus volume tabung, hubungan diameter dan jari-jari, konversi satuan volume (m³ ke liter). |
+| dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
+| relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
-| calculationLoad | low |
+| calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung volume bangun ruang sisi lengkung dan melakukan konversi satuan dasar. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung volume tabung dan melakukan konversi satuan. Kesalahan umum seperti menggunakan diameter sebagai jari-jari atau lupa konversi satuan diakomodasi dalam pilihan jawaban, menjadikannya soal yang menguji ketelitian prosedural. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2398,13 +2418,13 @@ Profil difficulty run ini:
 |---|---|---|---|
 | Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
 | Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
-| Intended difficulty | {"Medium": 2, "Easy": 1} | majority_2_of_3 / adjudicated | Easy |
+| Intended difficulty | {"Easy": 1, "Medium": 2} | majority_2_of_3 / adjudicated | Medium |
 
-Adjudikasi AI: `success`; token `4736`.
+Adjudikasi AI: `success`; token `5566`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan rumus volume tabung dan melakukan konversi satuan volume. Ini adalah penerapan prosedur rutin pada situasi kontekstual yang familiar.
-- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman prosedural tentang rumus volume bangun ruang sisi lengkung dan konversi satuan yang relevan.
-- Intended difficulty `Easy`: Soal ini tergolong Easy karena hanya memerlukan penerapan rumus langsung dan konversi satuan dasar yang umum diajarkan di kelas 9 tanpa strategi nonrutin.
+- Domain kognitif `applying`: Siswa perlu menerapkan rumus volume tabung dan melakukan konversi satuan volume (m³ ke liter). Ini adalah penerapan prosedur rutin pada konteks yang familiar.
+- Dimensi pengetahuan `procedural`: Soal memerlukan pemahaman konsep volume bangun ruang sisi lengkung dan prosedur konversi satuan yang merupakan pengetahuan prosedural.
+- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: konversi diameter ke jari-jari, perhitungan volume, dan konversi satuan volume. Meskipun prosedurnya familiar, siswa harus teliti dalam setiap tahapan agar tidak terjebak pada distractor yang disediakan.
 
 Profil difficulty hasil adjudikasi:
 
@@ -2414,13 +2434,13 @@ Profil difficulty hasil adjudikasi:
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
-| representationTransfer | False |
+| representationTransfer | True |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung volume bangun ruang sisi lengkung dan melakukan konversi satuan dasar dengan lancar. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung volume tabung dan melakukan konversi satuan. Soal ini menuntut ketelitian dalam langkah-langkah prosedural yang berurutan, dengan distractor yang dirancang untuk menangkap kesalahan umum (seperti lupa membagi diameter atau lupa konversi satuan). |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2445,16 +2465,16 @@ Pilihan: A. 36.000 liter
 B. 150.720 liter
 C. 37.680 liter
 D. 37,68 liter
-Transkripsi visual: A side view of a tanker truck with a large cylindrical tank mounted on the trailer. The tank is horizontal, with a circular cross-section visible at the rear.
+Transkripsi visual: Sebuah truk tangki dengan tangki berbentuk silinder horizontal. Diameter tangki adalah 2 meter dan panjang tangki adalah 12 meter.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 18. Soal `a0c228d869728c3140dece74`
@@ -2469,26 +2489,47 @@ Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi
 | D | Volume kerucut adalah setengah volume tabung |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Volume tabung (V_tabung) = πr²t. Volume kerucut (V_kerucut) = 1/3 × πr²t. Karena jari-jari (r) dan tinggi (t) sama, maka V_kerucut = 1/3 × V_tabung.
+Solusi minimum hasil AI: Rumus volume tabung adalah V_tabung = πr²t. Rumus volume kerucut adalah V_kerucut = 1/3 × πr²t. Dengan jari-jari (r) dan tinggi (t) yang sama, maka V_kerucut = 1/3 × V_tabung.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menganalisis']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ea3659103c485eea33a4d6c8d44fd5d6b4757332adcf3a0fdd55a260d9a17b32`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4cf6b7759e2e2e6573877390bd02fc075f941d020a6bd648f605c5d052878da7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 1982 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 1921 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 1980 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2603 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2598 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2627 |
 
-Run 1 — solusi: Volume tabung (V_tabung) = πr²t. Volume kerucut (V_kerucut) = 1/3 × πr²t. Karena jari-jari (r) dan tinggi (t) sama, maka V_kerucut = 1/3 × V_tabung.
-- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konsep dasar mengenai hubungan rumus volume antara kerucut dan tabung. Siswa hanya perlu mengingat atau mengenali hubungan proporsional antara kedua rumus tersebut (1/3). Ini termasuk kategori knowing karena bersifat recall terhadap fakta/rumus dasar.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini berfokus pada pemahaman prinsip atau hubungan antar konsep geometri (rumus volume), yang merupakan pengetahuan konseptual.. Bukti: hubungan antara volume kerucut dan tabung
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung, hanya menanyakan hubungan rumus yang sudah dipelajari di kelas 9. Tidak ada perhitungan kompleks atau langkah prosedural yang panjang.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
+Run 1 — solusi: Rumus volume tabung adalah V_tabung = πr²t. Rumus volume kerucut adalah V_kerucut = 1/3 × πr²t. Dengan jari-jari (r) dan tinggi (t) yang sama, maka V_kerucut = 1/3 × V_tabung.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengingat dan menerapkan hubungan konseptual dasar antara rumus volume kerucut dan tabung. Tidak ada perhitungan kompleks atau strategi nonrutin yang diperlukan.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai prinsip atau hubungan struktural antara dua bangun ruang sisi lengkung yang memiliki dimensi yang sama.. Bukti: hubungan antara volume kerucut dan tabung
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan menguji pengetahuan dasar yang diajarkan di kelas 9 mengenai hubungan volume bangun ruang. Tidak ada langkah-langkah kompleks atau kendala yang berinteraksi.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus volume tabung dan kerucut. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah pertanyaan dasar tentang hubungan rumus volume yang merupakan materi standar kelas 9. |
+
+Run 2 — solusi: Volume tabung (V_t) = πr²t. Volume kerucut (V_k) = 1/3 πr²t. Jika jari-jari (r) dan tinggi (t) sama, maka V_k = 1/3 V_t.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengingat dan menerapkan hubungan konseptual dasar antara rumus volume kerucut dan tabung. Siswa hanya perlu mengenali rumus yang sudah dipelajari.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman terhadap prinsip atau hubungan matematis antara dua bangun ruang yang berbeda namun memiliki variabel yang sama.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (direct recall) mengenai rumus dasar yang merupakan materi standar kelas 9. Tidak ada langkah perhitungan kompleks atau integrasi yang diperlukan.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
 
 Profil difficulty run ini:
 
@@ -2504,18 +2545,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah materi dasar geometri kelas 9 yang bersifat hafalan/pemahaman konsep langsung tanpa perlu manipulasi aljabar yang rumit. |
+| gradeRelativeRationale | Ini adalah pertanyaan dasar tentang hubungan rumus volume yang dipelajari di kelas 9. Tidak menuntut penalaran tingkat tinggi. |
 
-Run 2 — solusi: Volume tabung (V_t) = πr²t. Volume kerucut (V_k) = 1/3 πr²t. Karena r dan t sama, maka V_k = 1/3 V_t.
-- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengingat dan menerapkan hubungan dasar antara rumus volume dua bangun ruang yang sudah dipelajari. Ini adalah proses mengingat fakta matematis yang langsung.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan konseptual antara rumus volume kerucut dan tabung dengan variabel yang sama.. Bukti: hubungan antara volume kerucut dan tabung
-- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung dan menguji pemahaman dasar rumus yang merupakan materi standar kelas 9. Tidak ada langkah perhitungan kompleks atau strategi non-rutin.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
+Run 3 — solusi: Rumus volume tabung adalah V_tabung = πr²t. Rumus volume kerucut adalah V_kerucut = 1/3 × πr²t. Jika jari-jari (r) dan tinggi (t) sama, maka V_kerucut = 1/3 × V_tabung.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengingat dan menerapkan hubungan konseptual dasar antara rumus volume kerucut dan tabung. Siswa hanya perlu mengenali fakta rumus atau hubungan proporsionalitas yang sudah dipelajari di kelas 9.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap hubungan antar konsep (rumus volume bangun ruang sisi lengkung) yang bersifat deklaratif/konseptual.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (direct recall) mengenai hubungan rumus volume yang merupakan materi dasar di kelas 9. Tidak ada langkah perhitungan atau integrasi yang kompleks.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus volume tabung dan kerucut |
+| expectedPrerequisite | Pemahaman rumus volume tabung dan kerucut. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2525,28 +2566,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi volume bangun ruang sisi lengkung adalah materi dasar kelas 9. Soal ini hanya menanyakan hubungan rumus yang sudah umum diketahui. |
-
-Run 3 — solusi: Volume tabung (V_t) = πr²t. Volume kerucut (V_k) = 1/3 πr²t. Jika jari-jari (r) dan tinggi (t) sama, maka V_k = 1/3 V_t.
-- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konseptual dasar mengenai rumus volume bangun ruang sisi lengkung. Siswa hanya perlu mengingat atau mengenali hubungan proporsional antara rumus volume kerucut dan tabung dengan dimensi yang identik.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini berfokus pada pemahaman hubungan antara dua konsep volume bangun ruang yang berbeda namun saling terkait secara matematis.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
-- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung (recall) mengenai rumus dasar yang diajarkan di kelas 9. Tidak ada perhitungan kompleks atau strategi non-rutin yang diperlukan.. Bukti: Apa hubungan antara volume kerucut dan tabung yang memiliki jari-jari dan tinggi yang sama?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Rumus volume tabung dan kerucut. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi volume bangun ruang sisi lengkung adalah materi standar kelas 9. Pertanyaan ini menanyakan konsep dasar yang merupakan prasyarat untuk soal-soal yang lebih kompleks. |
+| gradeRelativeRationale | Soal ini adalah pertanyaan dasar tentang hubungan rumus yang umum diajarkan di kelas 9, sehingga tingkat kesulitannya rendah. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2603,32 +2623,32 @@ Sebuah tangki air berisi 2.225 liter air. Pada siang hari 975 liter 325 ml air d
 | D | 1.250 liter 675 ml |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Sisa air = 2.225 liter - 975 liter 325 ml. Karena 2.225 liter = 2.224 liter 1.000 ml, maka: (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
+Solusi minimum hasil AI: 2.225 liter - 975 liter 325 ml = 2.224 liter 1.000 ml - 975 liter 325 ml = 1.249 liter 675 ml.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `17668eb5a9b67fa55e2d2182da9507537c43f39674efcc08c0ff0afa43ece67f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ca9bbff3e6fc42e022d55e224fba44d121a3c68e39e3c9edcf0161f0292a1c5c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2133 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2093 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2126 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3506 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2717 |
+| 3 | success | valid / verified | applying | procedural | Easy | 3413 |
 
-Run 1 — solusi: Sisa air = 2.225 liter - 975 liter 325 ml. Karena 2.225 liter = 2.224 liter 1.000 ml, maka: (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan dengan konversi satuan volume (liter ke mililiter) yang merupakan prosedur rutin dalam pengukuran.. Bukti: 2.225 liter - 975 liter 325 ml
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma pengurangan yang melibatkan konversi satuan (prosedural) dan pemahaman hubungan antar satuan volume (konseptual).. Bukti: 2.225 liter - 975 liter 325 ml
-- Intended difficulty `classify/Easy`: Soal ini memerlukan satu keputusan utama yaitu melakukan peminjaman satuan (konversi 1 liter menjadi 1.000 ml) untuk melakukan pengurangan. Prosedur ini rutin bagi siswa SMP.. Bukti: 2.225 liter - 975 liter 325 ml
+Run 1 — solusi: 2.225 liter - 975 liter 325 ml = 2.224 liter 1.000 ml - 975 liter 325 ml = 1.249 liter 675 ml.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan dengan konversi satuan volume (liter ke ml) yang familiar untuk menyelesaikan masalah.. Bukti: 2.225 liter - 975 liter 325 ml; 1.249 liter 675 ml
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedur pengurangan bilangan dengan satuan campuran (liter dan ml) yang memerlukan teknik meminjam (regrouping).. Bukti: 2.225 liter - 975 liter 325 ml
+- Intended difficulty `classify/Easy`: Soal ini adalah penerapan langsung prosedur pengurangan dengan konversi satuan sederhana. Tidak ada kendala kompleks atau integrasi konsep yang tinggi.. Bukti: 2.225 liter - 975 liter 325 ml
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konversi satuan volume (1 liter = 1.000 ml) dan operasi pengurangan bilangan bulat. |
+| expectedPrerequisite | Operasi pengurangan bilangan bulat dan konversi satuan volume (1 liter = 1.000 ml). |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2638,18 +2658,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Pengurangan dengan konversi satuan adalah materi dasar yang sudah dikuasai sebelum kelas 9, namun tetap relevan sebagai soal pemanasan atau aplikasi dasar. |
+| gradeRelativeRationale | Soal ini hanya memerlukan operasi pengurangan dasar dengan konversi satuan yang umum diajarkan, sehingga tingkat kesulitannya rendah untuk siswa kelas 9. |
 
-Run 2 — solusi: 2.225 liter = 2.224 liter 1.000 ml. Pengurangan: (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan dengan konversi satuan volume (liter ke ml) yang merupakan prosedur rutin dalam pengukuran.. Bukti: 2.225 liter - 975 liter 325 ml
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi pengurangan pada besaran yang memiliki satuan campuran (liter dan mililiter).. Bukti: 2.225 liter; 975 liter 325 ml
-- Intended difficulty `classify/Easy`: Soal ini melibatkan operasi pengurangan standar dengan satu kali proses meminjam (regrouping) satuan, yang merupakan prosedur rutin bagi siswa kelas 9.. Bukti: 2.225 liter; 975 liter 325 ml
+Run 2 — solusi: 2.225 liter = 2.224 liter 1.000 ml. Pengurangan: (2.224 liter - 975 liter) + (1.000 ml - 325 ml) = 1.249 liter 675 ml.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan dengan konversi satuan volume (liter ke mililiter) untuk menyelesaikan masalah rutin.. Bukti: 2.225 liter - 975 liter 325 ml
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi pengurangan yang melibatkan konversi satuan volume.. Bukti: 2.225 liter - 975 liter 325 ml
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan satu prosedur konversi satuan (meminjam 1 liter menjadi 1.000 ml) dan pengurangan bilangan bulat. Tidak ada integrasi konsep yang kompleks atau kendala yang berinteraksi.. Bukti: 2.225 liter - 975 liter 325 ml
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konversi satuan volume (1 liter = 1.000 ml) dan operasi pengurangan bilangan cacah. |
+| expectedPrerequisite | Konversi satuan volume (liter ke ml) dan pengurangan bilangan bulat. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2659,18 +2679,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Operasi pengurangan dengan konversi satuan adalah keterampilan dasar yang sudah dikuasai sebelum kelas 9, sehingga tingkat kesulitannya rendah. |
+| gradeRelativeRationale | Siswa kelas 9 seharusnya sudah sangat familiar dengan operasi pengurangan satuan volume dasar. |
 
-Run 3 — solusi: 2.225 liter = 2.224 liter 1.000 ml. Sisa air = (2.224 liter 1.000 ml) - (975 liter 325 ml) = (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pengurangan dengan konversi satuan volume (liter ke ml) untuk menyelesaikan masalah rutin ini.. Bukti: 2.225 liter - 975 liter 325 ml
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi pengurangan pada satuan ukuran yang berbeda (liter dan mililiter).. Bukti: 2.225 liter; 975 liter 325 ml
-- Intended difficulty `classify/Easy`: Soal ini melibatkan operasi pengurangan standar dengan satu langkah konversi satuan (meminjam 1 liter menjadi 1.000 ml). Ini adalah prosedur rutin bagi siswa kelas 9.. Bukti: 2.225 liter; 975 liter 325 ml
+Run 3 — solusi: 2.225 liter - 975 liter 325 ml = (2.224 liter + 1.000 ml) - (975 liter + 325 ml) = (2.224 - 975) liter + (1.000 - 325) ml = 1.249 liter 675 ml.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur pengurangan pada satuan volume campuran (liter dan ml) dalam konteks rutin.. Bukti: 2.225 liter - 975 liter 325 ml
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang konversi satuan (1 liter = 1000 ml) dan teknik pengurangan bersusun dengan meminjam.. Bukti: 2.225 liter - 975 liter 325 ml
+- Intended difficulty `classify/Easy`: Soal ini merupakan latihan rutin pengurangan satuan volume. Tidak ada tuntutan perencanaan tinggi atau integrasi konsep yang kompleks.. Bukti: 2.225 liter - 975 liter 325 ml
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konversi satuan volume (1 liter = 1.000 ml) dan pengurangan bilangan bulat. |
+| expectedPrerequisite | Konversi satuan volume (1 liter = 1000 ml) dan pengurangan bilangan bulat. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2680,7 +2700,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun materi ini dasar, soal ini menguji ketelitian dalam operasi satuan yang merupakan prasyarat penting untuk topik pengukuran volume di kelas 9. |
+| gradeRelativeRationale | Pengurangan satuan campuran adalah materi dasar yang familiar bagi siswa kelas 9. Soal tidak memerlukan strategi non-rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2737,53 +2757,32 @@ Bapak memiliki kawat sepanjang 60 cm. Dengan menggunakan kawat tersebut, Bapak i
 | D | Panjang 18 cm dan lebar 12 cm (luas 216 cm²) |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Keliling = 2(p + l) = 60 cm, maka p + l = 30 cm. Luas L = p * l = p(30 - p) = 30p - p². Fungsi kuadrat ini mencapai maksimum saat p = -b/(2a) = -30/(2 * -1) = 15 cm. Jika p = 15 cm, maka l = 30 - 15 = 15 cm. Luas maksimum = 15 * 15 = 225 cm².
+Solusi minimum hasil AI: Keliling persegi panjang adalah 2(p+l) = 60 cm, sehingga p+l = 30 cm. Luas L = p * l. Untuk keliling tetap, luas maksimum persegi panjang tercapai saat p = l (persegi). Maka p = l = 30/2 = 15 cm. Luas maksimum = 15 * 15 = 225 cm².
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5cdaaac15344fe81f52088a25aeeec54b936c7fbdf251e389f86c16b39349724`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dc7fd6fa24510c0d9cf4fdf9f928c320b4fac44b27b93d61e0e30d42478f6ff8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2131 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 3030 |
-| 3 | success | valid / verified | reasoning | conceptual | Medium | 2129 |
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 2825 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 2812 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 2805 |
 
-Run 1 — solusi: Keliling persegi panjang adalah 2(p + l) = 60 cm, sehingga p + l = 30 cm. Luas L = p * l = p(30 - p) = 30p - p². Fungsi kuadrat ini mencapai maksimum saat p = -b/(2a) = -30/(2*-1) = 15 cm. Jika p = 15, maka l = 30 - 15 = 15 cm. Luas maksimum = 15 * 15 = 225 cm².
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep hubungan keliling dan luas untuk mengoptimalkan nilai luas. Ini melibatkan pemilihan prosedur (mencari nilai maksimum fungsi luas) yang merupakan penerapan konsep pada situasi rutin.. Bukti: Bapak memiliki kawat sepanjang 60 cm. Dengan menggunakan kawat tersebut, Bapak ingin membuat kerangka berbentuk persegi panjang.; Manakah yang menghasilkan kerangka yang terluas?
-- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan prinsip hubungan antara keliling dan luas (konsep) untuk menentukan dimensi yang menghasilkan luas maksimum.. Bukti: Manakah yang menghasilkan kerangka yang terluas?
-- Intended difficulty `classify/Easy`: Soal ini meminta siswa memahami bahwa untuk keliling tetap, persegi adalah persegi panjang dengan luas terbesar. Ini adalah prosedur yang cukup familiar di kelas 9.. Bukti: Bapak memiliki kawat sepanjang 60 cm.; Manakah yang menghasilkan kerangka yang terluas?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar keliling dan luas persegi panjang serta konsep optimasi sederhana. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi optimasi luas dengan keliling tetap adalah standar untuk kelas 9, namun prosedurnya cukup langsung (mencari pasangan bilangan dengan jumlah tetap yang hasil kalinya terbesar). |
-
-Run 2 — solusi: Keliling = 2(p+l) = 60, maka p+l = 30. Luas = p * l = p(30-p). Fungsi luas L(p) = -p^2 + 30p mencapai maksimum saat p = -b/(2a) = -30/(2*-1) = 15. Jadi, p=15 dan l=15 (persegi). Luas = 15 * 15 = 225 cm^2.
-- Domain kognitif `classify/applying`: Siswa perlu memahami hubungan antara keliling dan luas persegi panjang, serta mengidentifikasi bahwa persegi adalah kasus khusus persegi panjang yang memaksimalkan luas untuk keliling tertentu.. Bukti: Manakah yang menghasilkan kerangka yang terluas?; Panjang 15 cm dan lebar 15 cm
-- Dimensi pengetahuan `classify/conceptual`: Memerlukan pemahaman konseptual tentang hubungan antara keliling dan luas bangun datar (persegi panjang).. Bukti: Bapak memiliki kawat sepanjang 60 cm; membuat kerangka berbentuk persegi panjang
-- Intended difficulty `classify/Medium`: Soal ini meminta siswa membandingkan beberapa kemungkinan atau memahami prinsip optimasi dasar. Meskipun bisa diselesaikan dengan mencoba angka, ini adalah prosedur rutin dalam konteks hubungan keliling-luas di kelas 9.. Bukti: Bapak memiliki kawat sepanjang 60 cm; Manakah yang menghasilkan kerangka yang terluas?
+Run 1 — solusi: Keliling persegi panjang adalah 2(p+l) = 60 cm, sehingga p+l = 30 cm. Luas L = p * l = p(30-p) = 30p - p². Fungsi kuadrat ini mencapai maksimum saat p = -b/(2a) = -30/(2*-1) = 15 cm. Jika p = 15, maka l = 30 - 15 = 15 cm. Luas maksimum = 15 * 15 = 225 cm².
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep keliling (sebagai kendala) dengan konsep luas untuk menemukan nilai maksimum. Ini melibatkan pemahaman hubungan antara dimensi dan luas, yang melampaui sekadar menghitung luas dari dimensi yang sudah ditentukan.. Bukti: Bapak memiliki kawat sepanjang 60 cm. Dengan menggunakan kawat tersebut, Bapak ingin membuat kerangka berbentuk persegi panjang.; Manakah yang menghasilkan kerangka yang terluas?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang bagaimana perubahan dimensi persegi panjang dengan keliling tetap mempengaruhi luasnya, serta prinsip optimasi sederhana.. Bukti: Manakah yang menghasilkan kerangka yang terluas?
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan eksplorasi atau pemahaman hubungan antara p+l=30 dan luas p*l. Meskipun bisa diselesaikan dengan mencoba opsi, pemahaman bahwa persegi adalah persegi panjang dengan luas maksimum memerlukan integrasi konsep yang lebih dari sekadar prosedur rutin.. Bukti: Bapak memiliki kawat sepanjang 60 cm.; Manakah yang menghasilkan kerangka yang terluas?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep keliling dan luas persegi panjang, serta pemahaman bahwa persegi adalah persegi panjang. |
+| expectedPrerequisite | Konsep keliling dan luas persegi panjang, serta pemahaman dasar tentang variabel. |
 | dependentSteps | 2 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -2793,18 +2792,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan memahami hubungan optimasi sederhana antara keliling dan luas. Soal ini menuntut pemilihan prosedur (uji coba atau pemahaman sifat persegi) untuk menentukan luas maksimum. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu memahami hubungan antara keliling dan luas. Soal ini menuntut pemilihan strategi (uji coba atau pemahaman sifat persegi) untuk menemukan luas maksimum. |
 
-Run 3 — solusi: Keliling persegi panjang adalah 2(p + l) = 60 cm, sehingga p + l = 30 cm. Luas (L) = p * l = p(30 - p) = 30p - p². Fungsi kuadrat ini mencapai maksimum saat p = -b/(2a) = -30/(2 * -1) = 15 cm. Jika p = 15 cm, maka l = 30 - 15 = 15 cm. Luas maksimum = 15 * 15 = 225 cm².
-- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep keliling dan luas untuk mengoptimalkan nilai luas, yang merupakan proses penalaran (reasoning) untuk menemukan hubungan antara dimensi dan luas maksimum.. Bukti: Bapak memiliki kawat sepanjang 60 cm; Manakah yang menghasilkan kerangka yang terluas?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang hubungan antara keliling tetap dan luas maksimum pada persegi panjang.. Bukti: Manakah yang menghasilkan kerangka yang terluas?
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa perlu memahami hubungan antara keliling dan luas, serta menyadari bahwa persegi adalah kasus khusus dari persegi panjang yang memberikan luas maksimum untuk keliling tertentu.. Bukti: Bapak memiliki kawat sepanjang 60 cm; Manakah yang menghasilkan kerangka yang terluas?
+Run 2 — solusi: Keliling persegi panjang adalah 2(p+l) = 60 cm, sehingga p+l = 30 cm. Luas L = p * l = p(30-p) = 30p - p². Fungsi kuadrat ini mencapai maksimum saat p = -b/(2a) = -30/(2*-1) = 15 cm. Jika p = 15 cm, maka l = 30 - 15 = 15 cm. Luas maksimum = 15 * 15 = 225 cm².
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep hubungan keliling dan luas untuk mengoptimalkan luas persegi panjang dengan keliling tetap. Ini melibatkan pemahaman bahwa persegi adalah kasus khusus persegi panjang yang memberikan luas maksimum.. Bukti: Bapak memiliki kawat sepanjang 60 cm. Dengan menggunakan kawat tersebut, Bapak ingin membuat kerangka berbentuk persegi panjang.; Manakah yang menghasilkan kerangka yang terluas?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara keliling dan luas bangun datar, serta prinsip optimasi sederhana pada persegi panjang.. Bukti: Manakah yang menghasilkan kerangka yang terluas?
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena siswa harus memahami hubungan antara keliling dan luas, serta menyadari bahwa persegi adalah persegi panjang dengan luas maksimum untuk keliling tertentu. Meskipun prosedurnya bisa sederhana, siswa perlu melakukan eksplorasi atau pemahaman konsep optimasi yang melampaui sekadar menghitung luas dari angka yang diberikan.. Bukti: Bapak memiliki kawat sepanjang 60 cm.; Manakah yang menghasilkan kerangka yang terluas?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep keliling dan luas persegi panjang, serta pemahaman dasar tentang optimasi. |
+| expectedPrerequisite | Konsep keliling dan luas persegi panjang, serta pemahaman dasar tentang optimasi luas. |
 | dependentSteps | 2 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -2814,27 +2813,48 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menganalisis hubungan antara dimensi dan luas, serta memahami sifat persegi sebagai persegi panjang dengan luas maksimum. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghubungkan keliling tetap dengan variasi luas, dan mengenali properti persegi sebagai bentuk optimal. |
+
+Run 3 — solusi: Keliling kawat 60 cm berarti 2(p+l) = 60, sehingga p+l = 30. Luas L = p x l = p(30-p) = 30p - p^2. Luas maksimum tercapai saat p = l = 15 cm (persegi), dengan luas 15 x 15 = 225 cm^2.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep hubungan keliling dan luas persegi panjang untuk mengoptimalkan luas. Ini melibatkan pemahaman bahwa untuk keliling tetap, persegi adalah persegi panjang dengan luas maksimum.. Bukti: Bapak memiliki kawat sepanjang 60 cm. Dengan menggunakan kawat tersebut, Bapak ingin membuat kerangka berbentuk persegi panjang.; Manakah yang menghasilkan kerangka yang terluas?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara keliling dan luas bangun datar, serta bagaimana perubahan dimensi mempengaruhi luas.. Bukti: Manakah yang menghasilkan kerangka yang terluas?
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan eksplorasi atau pemahaman konsep optimasi sederhana (persegi sebagai kasus khusus persegi panjang dengan luas maksimal). Meskipun prosedurnya sederhana, siswa sering terjebak pada asumsi bahwa persegi panjang harus memiliki panjang dan lebar yang berbeda, sehingga memerlukan pemilihan strategi yang tepat.. Bukti: Bapak memiliki kawat sepanjang 60 cm.; Manakah yang menghasilkan kerangka yang terluas?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep keliling dan luas persegi panjang, serta pemahaman dasar tentang optimasi luas. |
+| dependentSteps | 2 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu memahami hubungan antara keliling dan luas. Soal ini menuntut siswa untuk tidak sekadar menghitung, tetapi memilih konfigurasi yang memberikan hasil optimal di antara pilihan yang tersedia. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 2, "reasoning": 1} | majority_2_of_3 / adjudicated | applying |
+| Domain kognitif | {"reasoning": 1, "applying": 2} | majority_2_of_3 / adjudicated | applying |
 | Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 1, "Medium": 2} | majority_2_of_3 / adjudicated | Medium |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
 
-Adjudikasi AI: `success`; token `3846`.
+Adjudikasi AI: `success`; token `4598`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan konsep hubungan keliling dan luas untuk mengoptimalkan nilai luas. Ini melibatkan pemilihan prosedur (membandingkan nilai atau menggunakan sifat fungsi kuadrat) yang merupakan penerapan konsep pada situasi rutin.
-- Dimensi pengetahuan `conceptual`: Siswa menggunakan prinsip hubungan antara keliling dan luas (konsep) untuk menentukan dimensi yang menghasilkan luas maksimum.
-- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena siswa perlu memahami hubungan antara keliling dan luas, serta menyadari bahwa persegi adalah kasus khusus dari persegi panjang yang memberikan luas maksimum untuk keliling tertentu. Ini menuntut pemilihan prosedur yang tepat.
+- Domain kognitif `applying`: Siswa perlu menerapkan konsep hubungan keliling dan luas untuk mengoptimalkan luas persegi panjang. Meskipun bisa diselesaikan dengan mencoba opsi yang ada, pemahaman bahwa persegi adalah kasus khusus persegi panjang yang memberikan luas maksimum untuk keliling tertentu merupakan penerapan konsep yang rutin namun memerlukan pemilihan strategi.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara keliling dan luas bangun datar, serta prinsip optimasi sederhana pada persegi panjang.
+- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena siswa harus memahami hubungan antara keliling dan luas, serta menyadari bahwa persegi adalah persegi panjang dengan luas maksimum untuk keliling tertentu. Siswa perlu melakukan pemilihan strategi (uji coba atau pemahaman sifat persegi) untuk menemukan luas maksimum di antara pilihan yang tersedia.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep keliling dan luas persegi panjang, serta pemahaman bahwa persegi adalah persegi panjang. |
+| expectedPrerequisite | Konsep keliling dan luas persegi panjang, serta pemahaman dasar tentang optimasi luas. |
 | dependentSteps | 2 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -2844,7 +2864,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan memahami hubungan optimasi sederhana antara keliling dan luas. Soal ini menuntut pemilihan prosedur (uji coba atau pemahaman sifat persegi) untuk menentukan luas maksimum. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghubungkan keliling tetap dengan variasi luas, dan mengenali properti persegi sebagai bentuk optimal. Soal ini menuntut siswa untuk tidak sekadar menghitung, tetapi memilih konfigurasi yang memberikan hasil optimal. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2895,68 +2915,26 @@ Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2). Kubus ini tidak 
 | D | 3 kali |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Posisi awal (F,1) ke posisi tujuan (D,2). Perubahan posisi horizontal dari F ke D adalah 2 langkah (F ke E, E ke D). Perubahan posisi vertikal dari 1 ke 2 adalah 1 langkah. Total langkah rebahan = 2 + 1 = 3 kali.
+Solusi minimum hasil AI: Posisi awal (F,1) ke posisi tujuan (D,2). Perubahan posisi horizontal: F ke D adalah 2 langkah (F->E->D). Perubahan posisi vertikal: 1 ke 2 adalah 1 langkah. Total rebahan = 2 + 1 = 3 kali.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3c5358fb52695b1b5854401e20e9719c36258b1f446210c0466249c2dfabbb56`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d3d4ea4ac07228fb2c43752391aa091fe84dc7f8a9f20a99e88f58d45df7b019`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2073 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2055 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2137 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2748 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2770 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2789 |
 
-Run 1 — solusi: Posisi awal (F, 1) ke posisi akhir (D, 2). Perubahan posisi horizontal dari F ke D adalah 2 langkah (F ke E, E ke D). Perubahan posisi vertikal dari 1 ke 2 adalah 1 langkah. Total langkah rebahan = 2 + 1 = 3 kali.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep pergerakan pada sistem koordinat petak dan menerjemahkan jarak antar titik menjadi jumlah langkah rebahan (translasi diskrit). Ini adalah penerapan prosedur rutin dalam situasi spasial.. Bukti: kubus terletak pada (F,1) dan akan dipindahkan ke (D,2); tidak boleh diangkat, tetapi direbahkan ke salah satu sisi tegaknya
-- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan pemahaman konseptual tentang sistem koordinat dan prinsip dasar pergerakan objek pada grid untuk menentukan jumlah langkah.. Bukti: jarak antara garis-garis horizontal dan garis-garis vertikal pada sistem berpetak
-- Intended difficulty `classify/Easy`: Soal ini melibatkan perhitungan langkah sederhana pada grid (2D). Siswa hanya perlu menghitung selisih koordinat (Manhattan distance). Tidak ada kendala kompleks atau strategi non-rutin.. Bukti: Berapa kali kubus tersebut direbahkan untuk mencapai tujuannya?
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar sistem koordinat kartesius atau grid. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini sangat mendasar untuk kelas 9, hanya memerlukan pemahaman jarak pada grid yang biasanya sudah dikuasai di jenjang lebih rendah. |
-
-Run 2 — solusi: Posisi awal (F,1) ke posisi tujuan (D,2). Perubahan posisi horizontal dari F ke D adalah 2 langkah (F ke E, E ke D). Perubahan posisi vertikal dari 1 ke 2 adalah 1 langkah. Total langkah rebahan adalah 2 + 1 = 3 kali.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep pergerakan pada sistem koordinat petak dan menerjemahkan jarak antar titik menjadi jumlah langkah rebahan kubus. Ini adalah penerapan konsep dasar lokasi/gerak.. Bukti: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2).; Berapa kali kubus tersebut direbahkan untuk mencapai tujuannya?
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prinsip pergerakan objek pada grid (konseptual) untuk menentukan jumlah langkah (prosedural).. Bukti: Kubus ini tidak boleh diangkat, tetapi direbahkan ke salah satu sisi tegaknya.
-- Intended difficulty `classify/Easy`: Soal ini melibatkan pemahaman dasar tentang pergerakan pada grid. Langkah-langkahnya rutin dan langsung, tidak memerlukan strategi kompleks.. Bukti: jarak dari F ke D adalah 2 langkah dan dari 1 ke 2 adalah 1 langkah
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar sistem koordinat kartesius atau grid. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini sangat mendasar untuk kelas 9, hanya memerlukan perhitungan jarak sederhana pada grid. |
-
-Run 3 — solusi: Posisi awal (F,1) ke posisi akhir (D,2). Perubahan posisi horizontal dari F ke D adalah 2 langkah (F ke E, E ke D). Perubahan posisi vertikal dari 1 ke 2 adalah 1 langkah. Total rebahan = 2 (horizontal) + 1 (vertikal) = 3 kali.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep pergerakan pada bidang koordinat/petak dan menerjemahkan jarak antar titik menjadi jumlah langkah (rebahan) yang diperlukan. Ini adalah penerapan konsep dasar lokasi/gerak.. Bukti: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2).; Berapa kali kubus tersebut direbahkan untuk mencapai tujuannya?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara jarak pada sistem koordinat petak dengan operasi fisik (rebahan kubus) yang setara dengan satu satuan jarak.. Bukti: Kubus ini tidak boleh diangkat, tetapi direbahkan ke salah satu sisi tegaknya.; Panjangnya rusuk kubus sama dengan jarak antara garis-garis horizontal dan garis-garis vertikal
-- Intended difficulty `classify/Easy`: Soal ini melibatkan perhitungan jarak sederhana pada sistem grid (Manhattan distance). Siswa hanya perlu menghitung selisih koordinat x dan y. Prosedurnya rutin dan langsung.. Bukti: jarak dari F ke D adalah 2 langkah dan dari 1 ke 2 adalah 1 langkah
+Run 1 — solusi: Posisi awal (F,1) ke posisi tujuan (D,2). Perubahan posisi horizontal: F ke D adalah 2 langkah (F->E->D). Perubahan posisi vertikal: 1 ke 2 adalah 1 langkah. Total rebahan = 2 + 1 = 3 kali.
+- Domain kognitif `classify/applying`: Siswa perlu memahami pemetaan koordinat pada sistem petak dan menerjemahkan perpindahan posisi menjadi jumlah langkah (rebahan) yang diperlukan, yang merupakan penerapan konsep lokasi dalam konteks rutin.. Bukti: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2).; Berapa kali kubus tersebut direbahkan untuk mencapai tujuannya?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang sistem koordinat dan bagaimana pergerakan objek (kubus) di atas grid berkorespondensi dengan jarak antar titik.. Bukti: Panjangnya rusuk kubus sama dengan jarak antara garis-garis horizontal dan garis-garis vertikal pada sistem berpetak yang digunakan.
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena jalur penyelesaian sangat jelas (menghitung selisih koordinat horizontal dan vertikal). Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin yang kompleks.. Bukti: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2).; Berapa kali kubus tersebut direbahkan untuk mencapai tujuannya?
 
 Profil difficulty run ini:
 
@@ -2972,37 +2950,57 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi lokasi/gerak pada petak adalah materi dasar yang sangat familiar bagi siswa SMP. Perhitungan jarak Manhattan sederhana ini tidak memerlukan strategi kompleks. |
+| gradeRelativeRationale | Siswa kelas 9 sudah sangat familiar dengan sistem koordinat. Menghitung jarak antar titik pada grid adalah keterampilan dasar yang rutin. |
+
+Run 2 — solusi: Posisi awal (F,1) ke posisi tujuan (D,2). Perubahan posisi horizontal: F ke D adalah 2 langkah (F->E->D). Perubahan posisi vertikal: 1 ke 2 adalah 1 langkah. Total langkah rebahan = 2 + 1 = 3 kali.
+- Domain kognitif `classify/applying`: Siswa perlu memahami pemetaan koordinat pada sistem petak dan menerjemahkan jarak antar koordinat menjadi jumlah langkah fisik (rebahan) kubus. Ini melibatkan penerapan konsep lokasi dalam konteks rutin.. Bukti: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2).; Berapa kali kubus tersebut direbahkan untuk mencapai tujuannya?
+- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan pemahaman konseptual tentang sistem koordinat dan hubungan spasial antara posisi objek pada grid untuk menentukan langkah.. Bukti: Panjangnya rusuk kubus sama dengan jarak antara garis-garis horizontal dan garis-garis vertikal pada sistem berpetak yang digunakan.
+- Intended difficulty `classify/Easy`: Soal ini dikategorikan Easy karena jalur penyelesaiannya sangat jelas (menghitung selisih koordinat horizontal dan vertikal). Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin yang kompleks. Siswa hanya perlu menghitung jarak absolut antar koordinat.. Bukti: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2).; Kubus ini tidak boleh diangkat, tetapi direbahkan ke salah satu sisi tegaknya.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar sistem koordinat kartesius atau grid. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini menguji kemampuan dasar spasial yang sesuai untuk kelas 9, dengan tingkat tuntutan kognitif yang rendah karena prosedur penyelesaiannya langsung dan tidak memerlukan integrasi konsep yang rumit. |
+
+Run 3 — solusi: Posisi awal (F,1) ke posisi akhir (D,2). Perubahan posisi horizontal dari F ke D adalah 2 langkah (F ke E, E ke D). Perubahan posisi vertikal dari 1 ke 2 adalah 1 langkah. Total rebahan = 2 + 1 = 3 kali.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep pergerakan pada sistem koordinat petak dan menerjemahkan jarak antar koordinat menjadi jumlah langkah (rebahan) yang diperlukan. Ini melibatkan penerapan konsep jarak pada grid ke dalam konteks pergerakan objek.. Bukti: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2).; Kubus ini tidak boleh diangkat, tetapi direbahkan ke salah satu sisi tegaknya.; Berapa kali kubus tersebut direbahkan untuk mencapai tujuannya?
+- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan pemahaman konseptual tentang sistem koordinat dan prosedur sederhana untuk menghitung selisih posisi (jarak) pada sumbu horizontal dan vertikal.. Bukti: jarak antara garis-garis horizontal dan garis-garis vertikal pada sistem berpetak; Berapa kali kubus tersebut direbahkan
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena jalur penyelesaian sangat jelas: menghitung selisih koordinat horizontal dan vertikal lalu menjumlahkannya. Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin yang kompleks.. Bukti: Sebuah kubus terletak pada (F,1) dan akan dipindahkan ke (D,2).; Berapa kali kubus tersebut direbahkan untuk mencapai tujuannya?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar sistem koordinat kartesius atau grid. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 sudah sangat familiar dengan sistem koordinat. Menghitung jarak antar titik pada grid adalah keterampilan dasar yang rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3631`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan konsep pergerakan pada sistem koordinat petak (jarak Manhattan) untuk menentukan jumlah langkah rebahan. Ini adalah penerapan prosedur rutin dalam situasi spasial.
-- Dimensi pengetahuan `conceptual`: Siswa menggunakan pemahaman konseptual tentang hubungan antara jarak pada sistem koordinat petak dengan operasi fisik (rebahan kubus) yang setara dengan satu satuan jarak.
-- Intended difficulty `Easy`: Soal ini melibatkan perhitungan jarak Manhattan sederhana pada grid. Prosedurnya rutin, langsung, dan tidak memerlukan strategi non-rutin atau integrasi kompleks.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar sistem koordinat kartesius atau grid. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi lokasi/gerak pada petak adalah materi dasar yang sangat familiar bagi siswa SMP. Perhitungan jarak Manhattan sederhana ini tidak memerlukan strategi kompleks. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3065,20 +3063,41 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2109 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2157 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2154 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2770 |
+| 2 | success | valid / verified | applying | procedural | Easy | 3601 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2781 |
 
 Run 1 — solusi: Vektor translasi T = A' - A = (-2 - 0, 1 - (-3)) = (-2, 4). Maka B' = B + T = (2 + (-2), 2 + 4) = (0, 6) dan C' = C + T = (4 + (-2), 5 + 4) = (2, 9).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep translasi (penjumlahan vektor) untuk menemukan vektor pergeseran dari titik asal ke bayangan, kemudian menerapkannya pada titik lain. Ini adalah prosedur standar dalam geometri transformasi.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1); Tentukan translasinya serta koordinat titik B' dan C'
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana melakukan operasi translasi pada koordinat kartesius.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1)
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya melibatkan operasi penjumlahan koordinat sederhana berdasarkan vektor translasi yang ditentukan dari satu titik yang diketahui.. Bukti: A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1)
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur translasi pada koordinat titik. Langkah-langkahnya rutin dan prosedural: menentukan vektor translasi dari pasangan titik yang diketahui, lalu menerapkannya pada titik lain.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1); Tentukan translasinya serta koordinat titik B' dan C'
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang operasi translasi pada koordinat kartesius.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1)
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedur translasi adalah materi dasar yang familiar. Siswa hanya perlu menghitung selisih koordinat untuk mendapatkan vektor translasi, lalu menjumlahkannya ke titik lain. Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1)
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Operasi penjumlahan bilangan bulat dan konsep dasar koordinat kartesius. |
+| expectedPrerequisite | Operasi penjumlahan dan pengurangan bilangan bulat serta konsep dasar koordinat kartesius. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Translasi titik adalah materi standar kelas 9 yang prosedurnya sangat langsung dan tidak memerlukan integrasi konsep yang kompleks. |
+
+Run 2 — solusi: Vektor translasi T = A' - A = (-2-0, 1-(-3)) = (-2, 4). Maka B' = B + T = (2-2, 2+4) = (0, 6) dan C' = C + T = (4-2, 5+4) = (2, 9).
+- Domain kognitif `classify/applying`: Siswa menerapkan prosedur standar translasi titik dengan menentukan vektor pergeseran terlebih dahulu, kemudian menerapkannya pada titik lain.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1); Tentukan translasinya serta koordinat titik B' dan C'
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang operasi translasi pada koordinat Kartesius.. Bukti: A(0,-3), B(2,2) dan C(4,5) ditranslasikan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menghitung selisih koordinat untuk mendapatkan vektor translasi, lalu menambahkannya ke titik lain. Tidak ada kendala interaktif atau kebutuhan strategi non-rutin.. Bukti: A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi penjumlahan dan pengurangan bilangan bulat, konsep koordinat Kartesius. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3088,65 +3107,14 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan sudah lancar melakukan operasi translasi dasar pada bidang koordinat tanpa kesulitan berarti. |
-
-Run 2 — solusi: Vektor translasi T = A' - A = (-2 - 0, 1 - (-3)) = (-2, 4). Maka B' = B + T = (2 + (-2), 2 + 4) = (0, 6) dan C' = C + T = (4 + (-2), 5 + 4) = (2, 9).
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep translasi sebagai penambahan vektor pada koordinat titik asal. Proses ini melibatkan penerapan prosedur standar translasi pada titik-titik yang diberikan.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1); Tentukan translasinya serta koordinat titik B' dan C'
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana melakukan operasi translasi pada koordinat kartesius.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1)
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya memerlukan penerapan rumus translasi (x', y') = (x+a, y+b) secara langsung. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan.. Bukti: A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1)
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang koordinat kartesius dan operasi penjumlahan bilangan bulat. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Translasi adalah materi standar kelas 9. Soal ini menggunakan prosedur langsung yang umum diajarkan di kelas. |
+| gradeRelativeRationale | Materi translasi adalah standar kelas 9. Prosedur yang digunakan sangat langsung dan familiar. |
 
 Run 3 — solusi: Vektor translasi T = A' - A = (-2 - 0, 1 - (-3)) = (-2, 4). Maka B' = B + T = (2 + (-2), 2 + 4) = (0, 6) dan C' = C + T = (4 + (-2), 5 + 4) = (2, 9).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur translasi titik dengan menentukan vektor pergeseran terlebih dahulu, kemudian menerapkannya pada titik lain. Ini adalah penerapan prosedur standar pada situasi rutin.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1); Tentukan translasinya serta koordinat titik B' dan C'
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma translasi (penjumlahan vektor) dan bagaimana menerapkannya secara konsisten pada koordinat titik.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1); Tentukan translasinya serta koordinat titik B' dan C'
-- Intended difficulty `classify/Medium`: Soal memerlukan dua langkah rutin: menentukan vektor translasi dan menerapkannya pada dua titik lainnya. Prosedurnya familiar bagi siswa kelas 9.. Bukti: Diketahui segitiga ABC dengan A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1)
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur translasi titik dengan menentukan vektor pergeseran terlebih dahulu dari pasangan titik yang diketahui, kemudian menerapkannya pada titik lain. Ini adalah penerapan prosedur rutin dalam konteks geometri.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1). Tentukan translasinya serta koordinat titik B' dan C'
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep translasi (pergeseran) sebagai operasi penjumlahan vektor pada koordinat kartesius.. Bukti: ditranslasikan sehingga bayangannya adalah A'(-2,1)
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedur translasi adalah materi dasar yang familiar. Siswa hanya perlu menghitung selisih koordinat untuk mendapatkan vektor translasi, lalu menjumlahkannya ke titik lain. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: A(0,-3), B(2,2) dan C(4,5) ditranslasikan sehingga bayangannya adalah A'(-2,1)
 
 Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Operasi penjumlahan dan pengurangan bilangan bulat, konsep koordinat kartesius, dan definisi translasi titik. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Translasi adalah materi standar kelas 9. Soal ini menguji pemahaman dasar tanpa kompleksitas tambahan seperti komposisi transformasi atau variabel yang tidak diketahui. |
-
-### 3. Voting awal dan adjudikasi
-
-| Head | Suara awal | Pola / status akhir | Label akhir advisory |
-|---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 2, "Medium": 1} | majority_2_of_3 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3736`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan prosedur standar translasi (penjumlahan vektor) untuk menentukan vektor pergeseran dari titik yang diketahui, kemudian menerapkannya pada titik-titik lain. Ini adalah penerapan konsep rutin.
-- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman prosedural tentang algoritma translasi pada koordinat kartesius.
-- Intended difficulty `Easy`: Soal ini bersifat rutin karena hanya memerlukan dua langkah langsung: menentukan vektor translasi dan menerapkannya pada titik lain. Tidak ada strategi non-rutin atau kendala kompleks.
-
-Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
@@ -3160,7 +3128,17 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Translasi adalah materi standar kelas 9. Soal ini menggunakan prosedur langsung yang umum diajarkan di kelas tanpa variasi yang menyulitkan. |
+| gradeRelativeRationale | Translasi titik adalah materi standar kelas 9. Prosedur penentuan vektor translasi dan penerapannya pada titik lain bersifat langsung dan rutin. |
+
+Histori retry: run 2 sebelumnya `failed` / `ValidationError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3209,68 +3187,26 @@ Bayangan titik A(-2,5) oleh $\binom{-4}{3}$ adalah …
 | D | A'(-2,8) |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Translasi titik A(x, y) oleh vektor (a, b) menghasilkan A'(x+a, y+b). Untuk A(-2, 5) dan vektor (-4, 3), maka A' = (-2 + (-4), 5 + 3) = (-6, 8).
+Solusi minimum hasil AI: Translasi titik A(x, y) oleh vektor (a, b) menghasilkan bayangan A'(x+a, y+b). Untuk A(-2, 5) dan vektor (-4, 3), maka A' = (-2 + (-4), 5 + 3) = (-6, 8).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `093dd9869fbac278288ebbdd705572d07cf214a801ba9f3ea11ed804b4fcc8e3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e734c1912c8d942c92737b44e7158ad7d45d55f730df80ea219e883409b2a021`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | procedural | Easy | 1966 |
-| 2 | success | valid / verified | knowing | procedural | Easy | 1955 |
-| 3 | success | valid / verified | knowing | procedural | Easy | 1983 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 2622 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 3508 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 2627 |
 
-Run 1 — solusi: Translasi titik A(x, y) oleh vektor (a, b) menghasilkan A'(x+a, y+b). Untuk A(-2, 5) dan vektor (-4, 3), maka A' = (-2 + (-4), 5 + 3) = (-6, 8).
-- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung rumus translasi titik. Siswa hanya perlu melakukan operasi penjumlahan sederhana pada koordinat x dan y sesuai dengan komponen vektor translasi yang diberikan.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$ adalah
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana melakukan operasi translasi pada titik koordinat.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung, hanya memerlukan satu langkah operasi penjumlahan bilangan bulat, dan menggunakan representasi yang sangat standar dalam kurikulum SMP.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Penjumlahan bilangan bulat dan konsep dasar koordinat Kartesius. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Translasi titik adalah materi dasar kelas 9 yang bersifat rutin dan prosedural. |
-
-Run 2 — solusi: Translasi titik (x, y) oleh vektor (a, b) menghasilkan titik (x+a, y+b). Untuk titik A(-2, 5) dan vektor (-4, 3), bayangannya adalah A'(-2 + (-4), 5 + 3) = A'(-6, 8).
-- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung definisi translasi titik pada koordinat Kartesius. Siswa hanya perlu menjumlahkan koordinat titik asal dengan komponen vektor translasi.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$ adalah
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang algoritma penjumlahan vektor translasi terhadap koordinat titik.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan satu langkah operasi penjumlahan bilangan bulat pada koordinat.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Penjumlahan bilangan bulat dan konsep dasar koordinat Kartesius. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Translasi titik adalah materi dasar kelas 9 yang bersifat prosedural dan rutin. |
-
-Run 3 — solusi: Translasi titik A(x, y) oleh vektor (a, b) menghasilkan A'(x+a, y+b). Untuk A(-2, 5) dan vektor (-4, 3), maka A' = (-2 + (-4), 5 + 3) = (-6, 8).
-- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung definisi translasi titik pada koordinat Kartesius. Siswa hanya perlu melakukan operasi penjumlahan sederhana pada komponen x dan y, yang merupakan proses rutin.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$ adalah
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang bagaimana vektor translasi memengaruhi koordinat titik, yaitu dengan menjumlahkan komponen yang bersesuaian.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung (one-step problem). Siswa hanya perlu menerapkan rumus translasi dasar tanpa ada kendala tambahan atau langkah perantara yang kompleks.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
+Run 1 — solusi: Translasi titik A(x, y) oleh vektor (a, b) menghasilkan bayangan A'(x+a, y+b). Untuk A(-2, 5) dan vektor (-4, 3), maka A' = (-2 + (-4), 5 + 3) = (-6, 8).
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung definisi translasi titik pada koordinat Kartesius. Siswa hanya perlu melakukan operasi penjumlahan sederhana sesuai rumus translasi yang sudah dipelajari.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$ adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural mengenai algoritma translasi titik, yaitu menjumlahkan koordinat titik asal dengan komponen vektor translasi.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Tidak ada langkah perencanaan yang kompleks atau kendala yang berinteraksi. Siswa hanya perlu menerapkan rumus translasi dasar.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
 
 Profil difficulty run ini:
 
@@ -3286,7 +3222,49 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Translasi titik adalah materi dasar kelas 9. Soal ini tidak memerlukan pemahaman mendalam atau strategi khusus, sehingga dikategorikan mudah. |
+| gradeRelativeRationale | Soal ini merupakan penerapan langsung konsep translasi yang merupakan materi dasar kelas 9. Tidak ada tuntutan kognitif tinggi. |
+
+Run 2 — solusi: Titik A(-2,5) ditranslasi oleh (-4,3) menghasilkan A'(-2+(-4), 5+3) = A'(-6,8).
+- Domain kognitif `classify/knowing`: Siswa hanya perlu menerapkan definisi translasi titik (x, y) oleh vektor (a, b) menjadi (x+a, y+b). Prosedur sangat langsung.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penggunaan prosedur penjumlahan koordinat dengan komponen translasi.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
+- Intended difficulty `classify/Easy`: Soal ini adalah penerapan langsung rumus translasi yang merupakan materi dasar kelas 9. Tidak ada integrasi konsep atau langkah kompleks yang diperlukan.. Bukti: Bayangan titik A(-2,5) oleh $\binom{-4}{3}$
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan bulat dan konsep dasar koordinat Kartesius. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah penerapan langsung rumus translasi yang merupakan materi dasar kelas 9. Tidak ada integrasi konsep atau langkah kompleks yang diperlukan. |
+
+Run 3 — solusi: Translasi titik A(x, y) oleh vektor (a, b) menghasilkan A'(x+a, y+b). Untuk A(-2, 5) dan vektor (-4, 3), maka A' = (-2 + (-4), 5 + 3) = (-6, 8).
+- Domain kognitif `classify/knowing`: Soal meminta siswa menerapkan prosedur translasi titik secara langsung menggunakan definisi penjumlahan vektor translasi pada koordinat titik. Tidak ada langkah kompleks atau integrasi konsep yang diperlukan.. Bukti: Bayangan titik A(-2,5) oleh \binom{-4}{3} adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami algoritme atau prosedur penjumlahan koordinat dengan komponen translasi (prosedural) untuk mendapatkan hasil.. Bukti: Bayangan titik A(-2,5) oleh \binom{-4}{3}
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan rumus translasi dasar tanpa ada kendala tambahan, pemilihan strategi yang kompleks, atau integrasi konsep lain.. Bukti: Bayangan titik A(-2,5) oleh \binom{-4}{3}
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang koordinat kartesius dan operasi penjumlahan bilangan bulat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Translasi titik adalah materi dasar kelas 9 yang prosedurnya sangat jelas. Soal ini tidak menuntut penalaran lebih lanjut selain eksekusi rumus. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -3343,32 +3321,32 @@ Titik (2,-3) direfleksikan terhadap garis y=x. Tentukan bayangannya.
 | D | (2,1) |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Refleksi titik (x, y) terhadap garis y = x menghasilkan bayangan (y, x). Untuk titik (2, -3), maka x = 2 dan y = -3. Bayangannya adalah (-3, 2).
+Solusi minimum hasil AI: Refleksi titik (x, y) terhadap garis y = x menghasilkan bayangan (y, x). Untuk titik (2, -3), bayangannya adalah (-3, 2).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0f10b439d90a060fe21813269de924c758c5af5af8ca84f20eb36e3e3558e217`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5b781501a3b25fa27d09e9e0826f931129f8c25468178e3c04984970c0ffac69`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | procedural | Easy | 1951 |
-| 2 | success | valid / verified | applying | procedural | Easy | 1924 |
-| 3 | success | valid / verified | knowing | procedural | Easy | 1962 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 2566 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 2596 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 2562 |
 
-Run 1 — solusi: Refleksi titik (x, y) terhadap garis y = x menghasilkan bayangan (y, x). Untuk titik (2, -3), maka x = 2 dan y = -3. Bayangannya adalah (-3, 2).
-- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung dari aturan transformasi geometri (refleksi) yang sudah dipelajari di kelas 9. Siswa hanya perlu mengingat atau menerapkan rumus refleksi terhadap garis y=x.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu mengetahui aturan atau prosedur spesifik untuk melakukan refleksi terhadap garis y=x, yang merupakan bagian dari pengetahuan prosedural dalam transformasi geometri.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Tidak ada langkah tambahan atau strategi kompleks yang diperlukan. Siswa hanya perlu menerapkan aturan (x, y) -> (y, x).. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
+Run 1 — solusi: Refleksi titik (x, y) terhadap garis y = x menghasilkan bayangan (y, x). Untuk titik (2, -3), bayangannya adalah (-3, 2).
+- Domain kognitif `classify/knowing`: Siswa diminta menerapkan aturan transformasi geometri yang spesifik (refleksi terhadap garis y=x) secara langsung pada titik yang diberikan.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap prosedur atau aturan transformasi (refleksi) yang merupakan bagian dari pengetahuan prosedural dalam geometri.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (straightforward) dengan satu langkah pengerjaan menggunakan aturan yang umum diajarkan di kelas 9. Tidak ada integrasi konsep atau kendala yang kompleks.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang koordinat kartesius dan konsep transformasi geometri (refleksi). |
+| expectedPrerequisite | Pemahaman dasar tentang koordinat kartesius dan aturan transformasi refleksi terhadap garis y=x. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3378,18 +3356,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini adalah soal standar kelas 9 yang menguji ingatan siswa terhadap aturan transformasi dasar tanpa modifikasi atau konteks yang rumit. |
+| gradeRelativeRationale | Ini adalah soal standar yang menguji ingatan atau penerapan langsung rumus transformasi geometri yang merupakan materi dasar kelas 9. |
 
-Run 2 — solusi: Refleksi titik (x, y) terhadap garis y = x menghasilkan bayangan (y, x). Untuk titik (2, -3), maka x = 2 dan y = -3. Bayangannya adalah (-3, 2).
-- Domain kognitif `classify/applying`: Soal ini meminta penerapan langsung dari aturan transformasi geometri (refleksi terhadap garis y=x) yang merupakan prosedur standar dalam kurikulum kelas 9.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami dan menerapkan algoritma atau aturan transformasi (x, y) -> (y, x) untuk menyelesaikan masalah.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan penerapan satu aturan transformasi tanpa langkah tambahan atau analisis kompleks.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
+Run 2 — solusi: Refleksi titik (x, y) terhadap garis y = x menghasilkan bayangan (y, x). Untuk titik (2, -3), bayangannya adalah (-3, 2).
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengingat atau menerapkan aturan transformasi refleksi terhadap garis y=x secara langsung tanpa memerlukan strategi kompleks atau integrasi konsep.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman terhadap aturan atau rumus transformasi geometri (prosedur) yang bersifat faktual/konseptual dalam konteks koordinat kartesius.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
+- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung (one-step problem) dengan aturan yang sudah umum dipelajari di kelas 9. Tidak ada kendala yang berinteraksi atau kebutuhan perencanaan strategi.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman koordinat kartesius dan aturan dasar transformasi geometri (refleksi). |
+| expectedPrerequisite | Pemahaman dasar koordinat kartesius dan aturan transformasi refleksi. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3399,18 +3377,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Refleksi terhadap garis y=x adalah materi dasar transformasi di kelas 9 yang diajarkan sebagai prosedur rutin. |
+| gradeRelativeRationale | Soal ini adalah latihan standar yang sangat rutin untuk materi transformasi geometri kelas 9, tidak menuntut penalaran tingkat tinggi. |
 
-Run 3 — solusi: Refleksi titik (x, y) terhadap garis y = x menghasilkan bayangan (y, x). Untuk titik (2, -3), maka x = 2 dan y = -3. Bayangannya adalah (-3, 2).
-- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung dari aturan transformasi geometri (refleksi) yang merupakan prosedur standar dalam kurikulum kelas 9. Siswa hanya perlu mengingat atau menerapkan rumus (x, y) -> (y, x).. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang aturan transformasi geometri, yaitu algoritma untuk menentukan bayangan titik melalui refleksi pada garis y=x.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (one-step) dan menggunakan aturan yang sangat familiar dalam materi transformasi geometri kelas 9. Tidak ada langkah tambahan atau kompleksitas yang diperlukan.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
+Run 3 — solusi: Refleksi titik (x, y) terhadap garis y = x menghasilkan bayangan (y, x). Untuk titik (2, -3), maka bayangannya adalah (-3, 2).
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengingat atau menerapkan aturan transformasi refleksi terhadap garis y=x secara langsung tanpa perlu strategi kompleks.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman terhadap aturan atau prosedur spesifik dalam transformasi geometri (refleksi).. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan rumus refleksi (x, y) -> (y, x) tanpa ada langkah tambahan atau kendala yang berinteraksi.. Bukti: Titik (2,-3) direfleksikan terhadap garis y=x.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar koordinat kartesius dan aturan transformasi refleksi terhadap garis y=x. |
+| expectedPrerequisite | Pemahaman dasar tentang koordinat kartesius dan aturan transformasi refleksi. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3420,37 +3398,15 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Refleksi adalah materi standar kelas 9. Soal ini adalah aplikasi langsung dari rumus tanpa modifikasi, sehingga dikategorikan mudah. |
+| gradeRelativeRationale | Materi refleksi adalah standar kurikulum kelas 9. Soal ini adalah penerapan langsung rumus dasar tanpa modifikasi, sehingga tergolong mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 2, "applying": 1} | majority_2_of_3 / adjudicated | knowing |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3348`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Soal ini meminta penerapan langsung dari aturan transformasi geometri (refleksi) yang sudah dipelajari di kelas 9. Siswa hanya perlu mengingat atau menerapkan rumus refleksi terhadap garis y=x.
-- Dimensi pengetahuan `procedural`: Siswa perlu mengetahui aturan atau prosedur spesifik untuk melakukan refleksi terhadap garis y=x, yang merupakan bagian dari pengetahuan prosedural dalam transformasi geometri.
-- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Tidak ada langkah tambahan atau strategi kompleks yang diperlukan. Siswa hanya perlu menerapkan aturan (x, y) -> (y, x).
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang koordinat kartesius dan konsep transformasi geometri (refleksi). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini adalah soal standar kelas 9 yang menguji ingatan siswa terhadap aturan transformasi dasar tanpa modifikasi atau konteks yang rumit. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3499,26 +3455,47 @@ Titik (2,-3) direfleksikan terhadap sumbu x. Tentukan bayangannya.
 | D | (4,-3) |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Refleksi titik (x, y) terhadap sumbu x menghasilkan bayangan (x, -y). Untuk titik (2, -3), maka x=2 dan y=-3. Bayangannya adalah (2, -(-3)) = (2, 3).
+Solusi minimum hasil AI: Aturan refleksi titik (x, y) terhadap sumbu x adalah (x, -y). Maka, bayangan dari titik (2, -3) adalah (2, -(-3)) = (2, 3).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6951e591c8048e5122a7ee1a4013112eccdefb9c4c6f5831e9a4da3a876535fb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `570c1b13fa0945b7900e3ca58f8e3e993c14064a5d27d6e1bd983d09213b1945`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | procedural | Easy | 1946 |
-| 2 | success | valid / verified | knowing | procedural | Easy | 1924 |
-| 3 | success | valid / verified | knowing | procedural | Easy | 2742 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 3049 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 2559 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 2593 |
 
-Run 1 — solusi: Refleksi titik (x, y) terhadap sumbu x menghasilkan bayangan (x, -y). Untuk titik (2, -3), maka x=2 dan y=-3. Bayangannya adalah (2, -(-3)) = (2, 3).
-- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung rumus atau prosedur standar refleksi terhadap sumbu x. Siswa hanya perlu mengingat atau menerapkan aturan (x, y) -> (x, -y) tanpa perlu strategi kompleks.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang aturan transformasi geometri (refleksi) yang merupakan algoritma standar.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
-- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung (one-step) dengan prosedur yang familiar bagi siswa kelas 9. Tidak ada kendala atau langkah tambahan yang diperlukan.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
+Run 1 — solusi: Aturan refleksi titik (x, y) terhadap sumbu x adalah (x, -y). Maka, bayangan dari titik (2, -3) adalah (2, -(-3)) = (2, 3).
+- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat dan menerapkan aturan transformasi geometri dasar secara langsung tanpa perlu strategi atau penalaran kompleks.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menggunakan prosedur atau aturan algoritma spesifik untuk melakukan refleksi terhadap sumbu x.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan satu aturan transformasi tanpa ada kendala yang berinteraksi atau kebutuhan perencanaan langkah yang kompleks.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman koordinat Kartesius dan aturan dasar transformasi geometri. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah soal standar kelas 9 yang menguji ingatan terhadap aturan refleksi dasar. Tidak ada tuntutan integrasi atau analisis mendalam. |
+
+Run 2 — solusi: Refleksi titik (x, y) terhadap sumbu x menghasilkan bayangan (x, -y). Untuk titik (2, -3), bayangannya adalah (2, -(-3)) = (2, 3).
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung aturan transformasi geometri (refleksi terhadap sumbu x) yang merupakan prosedur standar dan sangat familiar bagi siswa kelas 9.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu mengetahui aturan atau rumus refleksi terhadap sumbu x (prosedural) untuk menentukan bayangan titik tersebut.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
+- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung (direct application) tanpa memerlukan perencanaan langkah yang kompleks atau integrasi konsep. Siswa hanya perlu mengingat atau menerapkan aturan refleksi dasar.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
 
 Profil difficulty run ini:
 
@@ -3534,18 +3511,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Refleksi adalah materi dasar kelas 9. Soal ini hanya menuntut penerapan rumus langsung tanpa modifikasi atau analisis lebih lanjut. |
+| gradeRelativeRationale | Soal ini adalah latihan dasar transformasi geometri yang sesuai dengan kurikulum kelas 9, tidak menuntut penalaran tingkat tinggi. |
 
-Run 2 — solusi: Refleksi titik (x, y) terhadap sumbu x menghasilkan bayangan (x, -y). Untuk titik (2, -3), bayangannya adalah (2, -(-3)) = (2, 3).
-- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung dari aturan transformasi geometri (refleksi terhadap sumbu x) yang merupakan prosedur standar dan rutin bagi siswa kelas 9.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu mengetahui aturan atau rumus transformasi (prosedural) untuk melakukan refleksi titik pada bidang Kartesius.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
-- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung, hanya memerlukan penerapan satu aturan transformasi tanpa langkah tambahan atau kompleksitas.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
+Run 3 — solusi: Refleksi titik (x, y) terhadap sumbu x menghasilkan bayangan (x, -y). Untuk titik (2, -3), bayangannya adalah (2, -(-3)) = (2, 3).
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung aturan transformasi geometri (refleksi terhadap sumbu x) yang merupakan prosedur standar dan sangat langsung bagi siswa kelas 9.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x. Tentukan bayangannya.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu mengetahui aturan atau rumus refleksi terhadap sumbu x (fakta/prosedur dasar) untuk menyelesaikan soal ini.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x.
+- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung (one-step) dengan prosedur yang familiar bagi siswa kelas 9. Tidak ada integrasi konsep atau perencanaan strategi yang kompleks.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x. Tentukan bayangannya.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar koordinat Kartesius dan konsep refleksi terhadap sumbu x. |
+| expectedPrerequisite | Pemahaman koordinat kartesius dan aturan dasar refleksi terhadap sumbu x. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3555,28 +3532,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Refleksi adalah materi standar kelas 9. Soal ini adalah latihan dasar yang tidak memerlukan pemikiran tingkat tinggi. |
-
-Run 3 — solusi: Refleksi titik (x, y) terhadap sumbu x menghasilkan bayangan (x, -y). Untuk titik (2, -3), bayangannya adalah (2, -(-3)) = (2, 3). Jawaban: A.
-- Domain kognitif `classify/knowing`: Soal ini hanya meminta penerapan langsung rumus refleksi terhadap sumbu x, yaitu (x, y) -> (x, -y), tanpa memerlukan strategi atau analisis tambahan.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu mengetahui dan menerapkan algoritma atau aturan transformasi geometri (refleksi) yang spesifik.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, hanya melibatkan satu langkah penerapan rumus refleksi tanpa kendala atau kompleksitas tambahan.. Bukti: Titik (2,-3) direfleksikan terhadap sumbu x
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar koordinat kartesius dan aturan refleksi terhadap sumbu x. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah soal standar kelas 9 yang menguji ingatan langsung terhadap rumus transformasi geometri dasar. |
+| gradeRelativeRationale | Soal ini adalah latihan dasar transformasi geometri yang sesuai dengan kurikulum kelas 9, di mana siswa diharapkan sudah menguasai aturan refleksi dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -3633,32 +3589,32 @@ Diketahui segi empat KLMN dengan titik sudutnya di K(1,2), L(6,4), M(8,-3) dan N
 | D | K'(-1,2), L'(-6,4), M'(-8,-3), N'(-3,-1) |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Rotasi 180° terhadap titik pusat O(0,0) memiliki aturan transformasi (x,y) -> (-x,-y). Menerapkan aturan ini pada titik-titik: K(1,2) -> K'(-1,-2), L(6,4) -> L'(-6,-4), M(8,-3) -> M'(-8,3), dan N(3,-1) -> N'(-3,1). Hasil ini sesuai dengan pilihan A.
+Solusi minimum hasil AI: Rotasi 180 derajat terhadap titik pusat O(0,0) memiliki aturan pemetaan (x, y) -> (-x, -y). Menerapkan aturan ini pada setiap titik: K(1,2) -> K'(-1,-2), L(6,4) -> L'(-6,-4), M(8,-3) -> M'(-8,3), N(3,-1) -> N'(-3,1).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6d0579d7e6f2e4cc03a0df25fce149f87cfcb6852a881c93578e9904494a090c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `af50b33a4fefb41321fe2da431f6ef2d8c2f20c51f0a5e9dc98203d2cd370d33`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2206 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2195 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2177 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 2812 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 2829 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2837 |
 
-Run 1 — solusi: Rotasi 180° terhadap titik pusat O(0,0) memiliki aturan transformasi (x,y) -> (-x,-y). Menerapkan aturan ini pada titik-titik: K(1,2) -> K'(-1,-2), L(6,4) -> L'(-6,-4), M(8,-3) -> M'(-8,3), dan N(3,-1) -> N'(-3,1). Hasil ini sesuai dengan pilihan A.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan aturan transformasi geometri yang spesifik (rotasi 180 derajat) pada koordinat titik yang diberikan. Ini adalah penerapan prosedur standar.. Bukti: Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0).
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang aturan transformasi geometri (rotasi) yang merupakan bagian dari pengetahuan prosedural dalam koordinat Kartesius.. Bukti: rotasi 180º terhadap titik pusat O(0,0)
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya memerlukan penerapan rumus transformasi (x,y) -> (-x,-y) secara langsung pada empat titik yang diberikan. Tidak ada kendala kompleks atau strategi nonrutin.. Bukti: K(1,2), L(6,4), M(8,-3) dan N(3,-1); rotasi 180º terhadap titik pusat O(0,0)
+Run 1 — solusi: Rotasi 180° terhadap titik pusat O(0,0) memiliki aturan transformasi (x,y) -> (-x,-y). Menerapkan aturan ini pada setiap titik: K(1,2) -> K'(-1,-2), L(6,4) -> L'(-6,-4), M(8,-3) -> M'(-8,3), N(3,-1) -> N'(-3,1).
+- Domain kognitif `classify/knowing`: Siswa diminta menerapkan aturan transformasi rotasi 180 derajat yang merupakan prosedur standar dan langsung dalam materi transformasi geometri kelas 9.. Bukti: Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0).
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap aturan atau rumus transformasi geometri (prosedural) untuk rotasi 180 derajat.. Bukti: rotasi 180º terhadap titik pusat O(0,0)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya meminta penerapan langsung rumus rotasi 180 derajat terhadap titik-titik yang diberikan. Tidak ada integrasi konsep yang kompleks atau kendala yang saling berinteraksi.. Bukti: Diketahui segi empat KLMN dengan titik sudutnya di K(1,2), L(6,4), M(8,-3) dan N(3,-1). Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0).
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman koordinat Kartesius dan aturan rotasi 180 derajat terhadap titik asal. |
+| expectedPrerequisite | Pemahaman koordinat kartesius dan aturan transformasi rotasi 180 derajat. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3668,18 +3624,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Rotasi 180 derajat adalah materi dasar transformasi geometri kelas 9 yang prosedurnya sangat langsung dan familiar bagi siswa. |
+| gradeRelativeRationale | Siswa kelas 9 sudah mempelajari transformasi geometri. Menerapkan rumus (x,y) -> (-x,-y) adalah tugas dasar yang familiar. |
 
-Run 2 — solusi: Rotasi 180 derajat terhadap titik pusat O(0,0) memiliki aturan pemetaan (x, y) -> (-x, -y). Menerapkan aturan ini pada titik-titik sudut: K(1,2) -> K'(-1,-2), L(6,4) -> L'(-6,-4), M(8,-3) -> M'(-8,3), dan N(3,-1) -> N'(-3,1). Hasil ini sesuai dengan opsi A.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur transformasi geometri yang spesifik (rotasi 180 derajat) pada koordinat titik yang diberikan. Ini adalah penerapan prosedur rutin yang sudah dipelajari di kelas 9.. Bukti: Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0).
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau aturan transformasi koordinat (prosedural) yang merupakan bagian dari konsep geometri transformasi.. Bukti: rotasi 180º terhadap titik pusat O(0,0)
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya memerlukan penerapan rumus transformasi (x,y) -> (-x,-y) secara langsung pada empat titik. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan.. Bukti: K(1,2), L(6,4), M(8,-3) dan N(3,-1). Tentukan bayangan hasil rotasi 180º
+Run 2 — solusi: Rotasi 180 derajat terhadap titik pusat (0,0) memiliki aturan pemetaan (x, y) -> (-x, -y). Menerapkan aturan ini pada setiap titik: K(1,2) -> K'(-1,-2), L(6,4) -> L'(-6,-4), M(8,-3) -> M'(-8,3), N(3,-1) -> N'(-3,1). Hasil ini sesuai dengan pilihan A.
+- Domain kognitif `classify/knowing`: Siswa diminta menerapkan prosedur transformasi geometri (rotasi 180 derajat) yang merupakan materi standar kelas 9. Prosedur ini bersifat langsung dan rutin.. Bukti: Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0).
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman dan penerapan aturan transformasi geometri (rotasi) yang merupakan prosedur standar dalam kurikulum.. Bukti: rotasi 180º terhadap titik pusat O(0,0)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan rumus rotasi 180 derajat (x,y) -> (-x,-y) pada setiap titik koordinat yang diberikan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi kompleks.. Bukti: Diketahui segi empat KLMN dengan titik sudutnya di K(1,2), L(6,4), M(8,-3) dan N(3,-1). Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0).
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar koordinat Kartesius dan aturan rotasi 180 derajat terhadap titik asal. |
+| expectedPrerequisite | Pemahaman koordinat kartesius dan aturan rotasi 180 derajat. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3689,18 +3645,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Rotasi 180 derajat adalah materi standar kelas 9 yang prosedurnya sangat langsung dan familiar bagi siswa. |
+| gradeRelativeRationale | Rotasi 180 derajat adalah materi dasar transformasi geometri kelas 9. Soal ini tidak memerlukan integrasi konsep atau perencanaan langkah yang rumit. |
 
-Run 3 — solusi: Rotasi 180 derajat terhadap titik pusat (0,0) memiliki aturan transformasi (x, y) -> (-x, -y). Menerapkan aturan ini pada setiap titik: K(1,2) -> K'(-1,-2), L(6,4) -> L'(-6,-4), M(8,-3) -> M'(-8,3), dan N(3,-1) -> N'(-3,1). Hasil ini sesuai dengan pilihan A.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus transformasi geometri yang spesifik (rotasi 180 derajat) pada koordinat titik yang diberikan. Ini adalah penerapan prosedur standar yang sudah dipelajari di kelas 9.. Bukti: Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0).
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang aturan transformasi geometri (rotasi) yang merupakan bagian dari pengetahuan prosedural dalam matematika.. Bukti: rotasi 180º terhadap titik pusat O(0,0)
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya memerlukan penerapan rumus transformasi (x,y) -> (-x,-y) secara langsung pada empat titik yang diberikan. Tidak ada strategi nonrutin atau kendala kompleks.. Bukti: K(1,2), L(6,4), M(8,-3) dan N(3,-1); rotasi 180º terhadap titik pusat O(0,0)
+Run 3 — solusi: Rotasi 180 derajat terhadap titik pusat O(0,0) memiliki aturan pemetaan (x, y) -> (-x, -y). Menerapkan aturan ini pada setiap titik: K(1,2) -> K'(-1,-2), L(6,4) -> L'(-6,-4), M(8,-3) -> M'(-8,3), N(3,-1) -> N'(-3,1).
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan aturan transformasi rotasi 180 derajat yang merupakan prosedur standar dalam materi transformasi geometri kelas 9. Tidak diperlukan strategi nonrutin atau integrasi konsep yang kompleks.. Bukti: Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0).
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap aturan atau rumus transformasi geometri (rotasi) yang merupakan bagian dari pengetahuan prosedural.. Bukti: rotasi 180º terhadap titik pusat O(0,0)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan rumus rotasi 180 derajat (x,y) -> (-x,-y) secara langsung pada empat titik yang diberikan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi kompleks.. Bukti: Diketahui segi empat KLMN dengan titik sudutnya di K(1,2), L(6,4), M(8,-3) dan N(3,-1). Tentukan bayangan hasil rotasi 180º terhadap titik pusat O(0,0).
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang koordinat Kartesius dan aturan transformasi geometri (rotasi 180 derajat). |
+| expectedPrerequisite | Pemahaman koordinat kartesius dan aturan transformasi rotasi 180 derajat. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3710,15 +3666,37 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi transformasi geometri (rotasi) adalah kurikulum standar kelas 9. Soal ini adalah latihan langsung tanpa modifikasi atau integrasi konsep yang rumit. |
+| gradeRelativeRationale | Rotasi 180 derajat adalah materi dasar transformasi di kelas 9. Prosedur penyelesaian sangat langsung dan tidak memerlukan analisis mendalam. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"knowing": 2, "applying": 1} | majority_2_of_3 / adjudicated | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4570`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Siswa diminta menerapkan prosedur transformasi geometri (rotasi 180 derajat) yang merupakan materi standar kelas 9. Prosedur ini bersifat langsung dan rutin.
+- Dimensi pengetahuan `procedural`: Soal menguji pemahaman dan penerapan aturan transformasi geometri (rotasi) yang merupakan prosedur standar dalam kurikulum.
+- Intended difficulty `Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan rumus rotasi 180 derajat (x,y) -> (-x,-y) pada setiap titik koordinat yang diberikan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi kompleks.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman koordinat kartesius dan aturan rotasi 180 derajat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Rotasi 180 derajat adalah materi dasar transformasi geometri kelas 9. Soal ini tidak memerlukan integrasi konsep atau perencanaan langkah yang rumit. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3750,9 +3728,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 27. Soal `5cdb075f3e6376933323750c`
@@ -3767,74 +3745,32 @@ A(5,2), B(8,5), dan C(2,1) adalah titik-titik sudut pada ΔABC. Tentukan bayanga
 | D | A'(-5,-2), B'(-8,-5), C'(-2,-1) |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Rotasi 90º berlawanan arah jarum jam terhadap pusat (0,0) menggunakan aturan (x, y) -> (-y, x). Maka: A(5,2) -> A'(-2,5), B(8,5) -> B'(-5,8), C(2,1) -> C'(-1,2).
+Solusi minimum hasil AI: Rotasi 90 derajat berlawanan arah jarum jam terhadap pusat (0,0) menggunakan aturan (x, y) -> (-y, x). Untuk A(5,2) menjadi A'(-2,5), B(8,5) menjadi B'(-5,8), dan C(2,1) menjadi C'(-1,2).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `470a910caa8efb8a33617b405f2356c8be77e0637b06be45ad3c39063c2fd1a0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e6468022c57fbb293d6726c9b5ae84f67c0bead7c77501cc57b3c9c3628820a6`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2826 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2860 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2809 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2841 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2802 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2847 |
 
-Run 1 — solusi: Rotasi 90º berlawanan arah jarum jam terhadap pusat (0,0) menggunakan aturan (x, y) -> (-y, x). Maka: A(5,2) -> A'(-2,5), B(8,5) -> B'(-5,8), C(2,1) -> C'(-1,2).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan aturan transformasi geometri (rotasi) yang spesifik untuk titik pusat (0,0) dan sudut 90 derajat.. Bukti: rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0)
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang algoritma rotasi titik pada bidang Kartesius.. Bukti: rotasi sebesar 90º berlawanan arah jarum jam
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur rutin yang melibatkan penerapan rumus transformasi geometri standar yang diajarkan di kelas 9.. Bukti: A(5,2), B(8,5), dan C(2,1); rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0)
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman koordinat Kartesius dan rumus rotasi 90 derajat. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Rotasi titik adalah materi standar kelas 9 yang bersifat prosedural langsung. |
-
-Run 2 — solusi: Rotasi 90º berlawanan arah jarum jam terhadap titik pusat O(0,0) menggunakan aturan (x,y) -> (-y,x). Titik A(5,2) menjadi A'(-2,5), B(8,5) menjadi B'(-5,8), dan C(2,1) menjadi C'(-1,2).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus transformasi geometri rotasi yang sudah dipelajari untuk menentukan koordinat bayangan.. Bukti: rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0)
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang prosedur transformasi geometri (rotasi) yang merupakan bagian dari pengetahuan prosedural.. Bukti: rotasi sebesar 90º berlawanan arah jarum jam
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya memerlukan penerapan rumus transformasi geometri yang standar untuk titik-titik yang diberikan.. Bukti: A(5,2), B(8,5), dan C(2,1); rotasi sebesar 90º berlawanan arah jarum jam
+Run 1 — solusi: Rotasi 90 derajat berlawanan arah jarum jam terhadap pusat (0,0) menggunakan aturan (x, y) -> (-y, x). Untuk A(5,2) menjadi A'(-2,5), B(8,5) menjadi B'(-5,8), dan C(2,1) menjadi C'(-1,2).
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan aturan transformasi geometri yang spesifik (rotasi 90 derajat berlawanan arah jarum jam) pada titik-titik koordinat yang diberikan. Ini adalah penerapan prosedur standar dalam geometri transformasi.. Bukti: Tentukan bayangan ΔABC dari hasil rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau aturan transformasi rotasi (prosedural) yang merupakan bagian dari materi geometri kelas 9.. Bukti: rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 9 yang telah mempelajari transformasi geometri. Aturan rotasi 90 derajat berlawanan arah jarum jam adalah konsep dasar yang sering dilatih. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: A(5,2), B(8,5), dan C(2,1) adalah titik-titik sudut pada ΔABC. Tentukan bayangan ΔABC dari hasil rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0).
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman koordinat kartesius dan rumus rotasi 90 derajat berlawanan arah jarum jam. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi rotasi adalah materi standar kelas 9. Soal ini langsung menguji penerapan rumus tanpa modifikasi atau integrasi konsep yang kompleks. |
-
-Run 3 — solusi: Rotasi 90º berlawanan arah jarum jam terhadap pusat (0,0) menggunakan aturan transformasi (x, y) -> (-y, x). Menerapkan aturan ini pada titik-titik: A(5,2) -> A'(-2,5), B(8,5) -> B'(-5,8), dan C(2,1) -> C'(-1,2).
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus transformasi rotasi 90 derajat berlawanan arah jarum jam secara langsung pada koordinat titik yang diberikan. Ini adalah proses penerapan prosedur yang sudah dipelajari.. Bukti: rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0); A(5,2), B(8,5), dan C(2,1)
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma atau aturan transformasi geometri (rotasi) yang spesifik.. Bukti: rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0)
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan penerapan satu rumus transformasi pada titik-titik yang diberikan tanpa kendala tambahan.. Bukti: A(5,2), B(8,5), dan C(2,1); rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0)
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman koordinat kartesius dan rumus rotasi 90 derajat. |
+| expectedPrerequisite | Pemahaman sistem koordinat Kartesius dan aturan transformasi rotasi dasar. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3844,7 +3780,49 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini adalah latihan standar transformasi geometri kelas 9 yang tidak memerlukan strategi nonrutin atau integrasi konsep yang kompleks. |
+| gradeRelativeRationale | Rotasi titik terhadap pusat (0,0) adalah materi standar kelas 9. Siswa hanya perlu menerapkan rumus transformasi (x,y) -> (-y,x) secara langsung. |
+
+Run 2 — solusi: Rotasi 90º berlawanan arah jarum jam terhadap pusat (0,0) memiliki aturan pemetaan (x, y) -> (-y, x). Menerapkan aturan ini pada titik-titik sudut: A(5,2) -> A'(-2,5), B(8,5) -> B'(-5,8), dan C(2,1) -> C'(-1,2).
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur transformasi geometri (rotasi) yang spesifik. Ini adalah penerapan langsung dari aturan rotasi yang sudah dipelajari di kelas 9.. Bukti: Tentukan bayangan ΔABC dari hasil rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0).
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma atau aturan transformasi (rotasi) pada bidang koordinat.. Bukti: rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena siswa hanya perlu menerapkan rumus transformasi yang sudah umum diajarkan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merancang strategi kompleks.. Bukti: A(5,2), B(8,5), dan C(2,1) adalah titik-titik sudut pada ΔABC. Tentukan bayangan ΔABC dari hasil rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0).
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar koordinat kartesius dan aturan transformasi rotasi 90 derajat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Rotasi titik adalah materi standar kelas 9. Soal ini langsung menanyakan penerapan rumus tanpa variasi atau integrasi konsep lain. |
+
+Run 3 — solusi: Rotasi 90 derajat berlawanan arah jarum jam terhadap pusat O(0,0) memiliki aturan pemetaan (x, y) -> (-y, x). Untuk A(5,2) menjadi A'(-2,5), B(8,5) menjadi B'(-5,8), dan C(2,1) menjadi C'(-1,2).
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur transformasi geometri yang sudah dipelajari (rotasi 90 derajat) pada titik-titik yang diberikan. Ini adalah penerapan langsung dari rumus atau konsep rotasi.. Bukti: Tentukan bayangan ΔABC dari hasil rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0).
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa mengenai algoritma atau aturan transformasi rotasi (prosedural) yang merupakan bagian dari materi geometri kelas 9.. Bukti: rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 9 karena hanya memerlukan penerapan rumus rotasi standar (x,y) -> (-y,x) pada titik-titik yang diberikan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merancang strategi kompleks.. Bukti: A(5,2), B(8,5), dan C(2,1) adalah titik-titik sudut pada ΔABC. Tentukan bayangan ΔABC dari hasil rotasi sebesar 90º berlawanan arah jarum jam terhadap titik pusat O(0,0).
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman koordinat kartesius dan aturan transformasi rotasi 90 derajat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Rotasi 90 derajat terhadap titik pusat adalah materi standar kelas 9 yang penyelesaiannya bersifat prosedural langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -3901,68 +3879,26 @@ Jika ΔMDN ≅ ΔKPG, maka MN = _____.
 | D | DN |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Dua segitiga kongruen ΔMDN ≅ ΔKPG berarti titik-titik yang bersesuaian adalah M dengan K, D dengan P, dan N dengan G. Sisi MN menghubungkan titik pertama (M) dan ketiga (N). Maka, sisi yang bersesuaian pada ΔKPG adalah sisi yang menghubungkan titik pertama (K) dan ketiga (G), yaitu KG.
+Solusi minimum hasil AI: Notasi ΔMDN ≅ ΔKPG menunjukkan korespondensi titik-titik: M ↔ K, D ↔ P, dan N ↔ G. Sisi MN menghubungkan titik pertama dan ketiga, sehingga bersesuaian dengan sisi KG yang menghubungkan titik pertama dan ketiga pada ΔKPG. Jadi, MN = KG.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7adb3b3ccf43d6343d5cfaaa6b52b3f3bd2cc114937bc31224ae9271337d86ea`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `97bc5be9d872fbe699f56edde2424652072d6aaa69198426dddd9df683c4e7fb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 2021 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 1998 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 1985 |
+| 1 | success | valid / verified | knowing | factual | Easy | 3307 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 3391 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 3237 |
 
-Run 1 — solusi: Dua segitiga kongruen ΔMDN ≅ ΔKPG berarti titik-titik yang bersesuaian adalah M dengan K, D dengan P, dan N dengan G. Sisi MN menghubungkan titik pertama (M) dan ketiga (N). Maka, sisi yang bersesuaian pada ΔKPG adalah sisi yang menghubungkan titik pertama (K) dan ketiga (G), yaitu KG.
-- Domain kognitif `classify/knowing`: Siswa perlu mengenali dan menerapkan prinsip korespondensi titik pada dua segitiga yang kongruen untuk menentukan sisi yang bersesuaian. Ini adalah proses langsung dalam mengenali notasi kongruensi.. Bukti: ΔMDN ≅ ΔKPG, maka MN = _____
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman terhadap definisi dan notasi kongruensi segitiga, yang merupakan konsep dasar dalam geometri.. Bukti: ΔMDN ≅ ΔKPG
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (direct) dengan satu langkah pengerjaan yaitu memetakan urutan titik pada notasi kongruensi. Tidak ada manipulasi atau strategi kompleks yang diperlukan.. Bukti: ΔMDN ≅ ΔKPG, maka MN = _____
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman notasi kongruensi segitiga dan korespondensi titik. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi kekongruenan adalah materi standar kelas 9. Soal ini menguji pemahaman dasar notasi tanpa variasi atau jebakan yang rumit. |
-
-Run 2 — solusi: Dua segitiga kongruen ΔMDN ≅ ΔKPG berarti titik-titik yang bersesuaian adalah M↔K, D↔P, dan N↔G. Sisi MN menghubungkan titik pertama dan ketiga pada ΔMDN, sehingga sisi yang bersesuaian pada ΔKPG adalah sisi yang menghubungkan titik pertama dan ketiga, yaitu KG.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali korespondensi titik-titik pada notasi kekongruenan segitiga untuk menentukan sisi yang bersesuaian. Ini adalah proses pengenalan fakta dasar tentang notasi geometri.. Bukti: ΔMDN ≅ ΔKPG, maka MN = _____
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman terhadap definisi dan notasi kekongruenan segitiga, yang merupakan konsep dasar dalam geometri.. Bukti: ΔMDN ≅ ΔKPG
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan hanya memerlukan pemahaman notasi dasar tanpa perhitungan atau langkah prosedural yang kompleks.. Bukti: ΔMDN ≅ ΔKPG, maka MN = _____
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman notasi kekongruenan segitiga dan korespondensi titik. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi kekongruenan adalah standar kelas 9. Soal ini menguji pemahaman notasi dasar yang diajarkan di awal topik. |
-
-Run 3 — solusi: Notasi ΔMDN ≅ ΔKPG menunjukkan korespondensi titik-titik sudut: M berkorespondensi dengan K, D dengan P, dan N dengan G. Sisi MN menghubungkan titik M dan N, sehingga sisi yang bersesuaian pada ΔKPG adalah sisi yang menghubungkan titik K dan G, yaitu KG.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu memahami definisi notasi kekongruenan segitiga dan mengidentifikasi korespondensi titik sudut yang bersesuaian secara langsung.. Bukti: ΔMDN ≅ ΔKPG, maka MN = _____
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang definisi dan notasi kekongruenan segitiga, yang merupakan konsep dasar dalam geometri.. Bukti: ΔMDN ≅ ΔKPG
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung (one-step) dan hanya memerlukan pemahaman notasi dasar tanpa perhitungan atau strategi kompleks.. Bukti: ΔMDN ≅ ΔKPG, maka MN = _____
+Run 1 — solusi: Berdasarkan notasi ΔMDN ≅ ΔKPG, titik-titik yang bersesuaian adalah M dengan K, D dengan P, dan N dengan G. Sisi MN menghubungkan titik pertama dan ketiga, sehingga bersesuaian dengan sisi KG yang menghubungkan titik pertama dan ketiga pada ΔKPG. Jadi, MN = KG.
+- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman definisi dasar notasi kekongruenan segitiga. Siswa hanya perlu mengenali korespondensi titik-titik sudut berdasarkan urutan penulisan nama segitiga untuk menentukan sisi yang bersesuaian.. Bukti: ΔMDN ≅ ΔKPG; MN = _____
+- Dimensi pengetahuan `classify/factual`: Soal ini berkaitan dengan pemahaman simbol dan notasi (fakta matematis) mengenai korespondensi dalam kekongruenan segitiga.. Bukti: ΔMDN ≅ ΔKPG
+- Intended difficulty `classify/Easy`: Soal ini adalah penerapan langsung dari definisi kekongruenan. Tidak ada langkah integrasi atau perencanaan yang kompleks; siswa cukup memetakan urutan huruf.. Bukti: ΔMDN ≅ ΔKPG; MN = _____
 
 Profil difficulty run ini:
 
@@ -3978,15 +3914,79 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi kekongruenan adalah materi standar kelas 9. Soal ini adalah bentuk paling dasar dari pengenalan notasi kekongruenan. |
+| gradeRelativeRationale | Soal ini merupakan latihan dasar mengenai notasi kekongruenan yang umum di kelas 9. Tidak ada tuntutan kognitif tinggi. |
+
+Run 2 — solusi: Notasi ΔMDN ≅ ΔKPG menunjukkan korespondensi titik M↔K, D↔P, dan N↔G. Oleh karena itu, sisi MN bersesuaian dengan sisi KG.
+- Domain kognitif `classify/knowing`: Soal hanya meminta identifikasi sisi yang bersesuaian berdasarkan notasi kekongruenan yang diberikan. Ini adalah prosedur langsung yang mengenali definisi kekongruenan.. Bukti: ΔMDN ≅ ΔKPG; MN = _____
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep korespondensi titik dalam notasi kekongruenan segitiga.. Bukti: ΔMDN ≅ ΔKPG
+- Intended difficulty `classify/Easy`: Soal bersifat langsung dengan satu langkah identifikasi korespondensi titik. Tidak ada kendala atau integrasi yang diperlukan.. Bukti: ΔMDN ≅ ΔKPG; MN = _____
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi kekongruenan dan korespondensi titik. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah latihan dasar mengenai notasi kekongruenan yang umum di kelas 9. Tidak ada tuntutan kognitif tinggi. |
+
+Run 3 — solusi: Notasi ΔMDN ≅ ΔKPG menunjukkan korespondensi titik-titik: M ↔ K, D ↔ P, dan N ↔ G. Oleh karena itu, sisi MN pada ΔMDN bersesuaian dengan sisi KG pada ΔKPG. Jadi, MN = KG.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa untuk mengenali dan menerapkan definisi korespondensi titik pada dua segitiga yang kongruen secara langsung. Tidak ada langkah kompleks atau integrasi strategi.. Bukti: ΔMDN ≅ ΔKPG; MN = _____
+- Dimensi pengetahuan `classify/conceptual`: Memahami hubungan korespondensi antara titik-titik pada dua bangun yang kongruen merupakan pemahaman konseptual dasar tentang kekongruenan.. Bukti: ΔMDN ≅ ΔKPG
+- Intended difficulty `classify/Easy`: Soal ini adalah penerapan langsung dari definisi kekongruenan. Siswa hanya perlu mencocokkan urutan huruf pada notasi segitiga. Tidak ada langkah tambahan atau kendala yang perlu diintegrasikan.. Bukti: ΔMDN ≅ ΔKPG; MN = _____
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi kekongruenan segitiga dan korespondensi titik. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan latihan dasar mengenai notasi kekongruenan yang umum di kelas 9. Tidak ada tuntutan perencanaan atau integrasi konsep yang tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
+| Dimensi pengetahuan | {"factual": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4027`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `knowing`: Soal ini menguji pemahaman definisi dasar notasi kekongruenan segitiga. Siswa hanya perlu mengenali korespondensi titik-titik sudut berdasarkan urutan penulisan nama segitiga untuk menentukan sisi yang bersesuaian secara langsung.
+- Dimensi pengetahuan `conceptual`: Siswa perlu memahami prinsip korespondensi titik dalam notasi kekongruenan segitiga, yang merupakan pemahaman konseptual dasar tentang hubungan antar bangun yang kongruen.
+- Intended difficulty `Easy`: Soal ini adalah penerapan langsung dari definisi kekongruenan. Tidak ada langkah integrasi atau perencanaan yang kompleks; siswa cukup memetakan urutan huruf untuk menemukan sisi yang bersesuaian.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman notasi kekongruenan segitiga dan korespondensi titik sudut. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan latihan dasar mengenai notasi kekongruenan yang umum di kelas 9. Tidak ada tuntutan kognitif tinggi atau langkah yang saling bergantung. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4035,26 +4035,47 @@ Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diap
 | D | S-S-S |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Kriteria kekongruenan yang menyatakan dua sisi sama panjang dan sudut yang diapit oleh kedua sisi tersebut sama besar adalah kriteria Sisi-Sudut-Sisi (S-Sd-S).
+Solusi minimum hasil AI: Kriteria kekongruenan segitiga yang menyatakan dua sisi sama panjang dan sudut yang diapit oleh kedua sisi tersebut sama besar adalah kriteria Sisi-Sudut-Sisi (S-Sd-S).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `875047d7b2c001903b99649c873a17d3ad358320f34874b49662820212c7cdcc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5b2d42a48fcd0857439582c7a115a7da1a3293adf551d8b9c00af987e622a061`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 2009 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 2422 |
-| 3 | success | valid / verified | knowing | factual | Easy | 1982 |
+| 1 | success | valid / verified | knowing | factual | Easy | 2621 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2678 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2642 |
 
-Run 1 — solusi: Kriteria kekongruenan dua segitiga yang menyatakan bahwa dua sisi yang bersesuaian sama panjang dan sudut yang diapit oleh kedua sisi tersebut sama besar disebut kriteria Sisi-Sudut-Sisi (S-Sd-S).
-- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman definisi atau kriteria dasar kekongruenan segitiga. Siswa hanya perlu mengenali istilah yang tepat untuk kriteria yang diberikan, yang merupakan proses mengingat kembali fakta/definisi.. Bukti: dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman terhadap terminologi dan prinsip dasar dalam geometri (kekongruenan segitiga), yang termasuk dalam kategori pengetahuan konseptual.. Bukti: Pernyataan tersebut merupakan bunyi kriteria
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan hanya menanyakan definisi kriteria kekongruenan yang sudah dipelajari di kelas 9. Tidak ada perhitungan atau strategi kompleks yang diperlukan.. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar
+Run 1 — solusi: Kriteria kekongruenan segitiga yang menyatakan dua sisi sama panjang dan sudut yang diapit oleh kedua sisi tersebut sama besar adalah kriteria Sisi-Sudut-Sisi (S-Sd-S).
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengenali dan mengklasifikasikan definisi kriteria kekongruenan segitiga berdasarkan deskripsi yang diberikan. Ini adalah proses mengingat kembali fakta atau definisi dasar.. Bukti: dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar
+- Dimensi pengetahuan `classify/factual`: Soal menguji pemahaman terhadap istilah dan prinsip dasar dalam geometri, khususnya kriteria kekongruenan segitiga.. Bukti: kriteria Sisi-Sudut-Sisi (S-Sd-S)
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (recall) mengenai definisi kriteria kekongruenan. Tidak ada langkah perhitungan atau analisis kompleks yang diperlukan.. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang kriteria kekongruenan segitiga (S-Sd-S, Sd-S-Sd, S-S-S). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan pengenalan konsep dasar kekongruenan yang diajarkan di kelas 9. Siswa hanya perlu mencocokkan deskripsi dengan istilah yang tepat. |
+
+Run 2 — solusi: Kriteria kekongruenan segitiga yang menyatakan dua sisi sama panjang dan sudut yang diapit oleh kedua sisi tersebut sama besar adalah kriteria Sisi-Sudut-Sisi (S-Sd-S).
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali definisi atau kriteria dasar kekongruenan segitiga. Siswa hanya perlu mengingat dan mencocokkan deskripsi kriteria dengan istilah yang tepat (Sisi-Sudut-Sisi).. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar, maka kedua segitiga tersebut kongruen.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual mengenai syarat kekongruenan segitiga, yaitu hubungan antara elemen-elemen segitiga (sisi dan sudut) yang membentuk kriteria kongruensi.. Bukti: Pernyataan tersebut merupakan bunyi kriteria _____
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (recall) mengenai definisi kriteria kekongruenan yang merupakan materi dasar kelas 9. Tidak ada langkah perhitungan atau analisis kompleks yang diperlukan.. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar
 
 Profil difficulty run ini:
 
@@ -4070,33 +4091,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi kekongruenan adalah kurikulum standar kelas 9. Mengingat definisi kriteria adalah tugas rutin yang sangat mendasar. |
+| gradeRelativeRationale | Materi kekongruenan adalah topik standar kelas 9. Soal ini hanya menanyakan definisi kriteria, sehingga tingkat kesulitannya rendah bagi siswa yang telah mempelajari materi tersebut. |
 
-Run 2 — solusi: Kriteria kekongruenan segitiga yang menyatakan dua sisi sama panjang dan sudut yang diapitnya sama besar adalah Sisi-Sudut-Sisi (S-Sd-S).
-- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengingat dan mengenali definisi kriteria kekongruenan segitiga (Sisi-Sudut-Sisi). Tidak ada proses analisis atau penerapan prosedur yang kompleks.. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual mengenai definisi dan penamaan kriteria kekongruenan segitiga.. Bukti: kriteria _____
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (recall) mengenai definisi geometri dasar yang dipelajari di kelas 9. Tidak memerlukan perhitungan atau strategi pemecahan masalah.. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman definisi kriteria kekongruenan segitiga (S-Sd-S, S-S-S, Sd-S-Sd). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi kekongruenan adalah kurikulum standar SMP kelas 9. Soal ini hanya menanyakan definisi dasar tanpa variasi atau aplikasi. |
-
-Run 3 — solusi: Kriteria kekongruenan dua segitiga yang menyatakan dua sisi sama panjang dan sudut yang diapit oleh kedua sisi tersebut sama besar disebut kriteria Sisi-Sudut-Sisi (S-Sd-S).
-- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman definisi atau kriteria kekongruenan segitiga. Siswa hanya perlu mengenali dan mengingat terminologi kriteria kekongruenan yang sesuai dengan deskripsi yang diberikan.. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar
-- Dimensi pengetahuan `classify/factual`: Soal ini berkaitan dengan pengetahuan faktual mengenai terminologi dan definisi kriteria kekongruenan segitiga dalam geometri.. Bukti: Pernyataan tersebut merupakan bunyi kriteria _____
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (recall) mengenai definisi kriteria kekongruenan segitiga yang merupakan materi dasar kelas 9. Tidak ada perhitungan atau strategi kompleks yang diperlukan.. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar
+Run 3 — solusi: Kriteria kekongruenan segitiga yang menyatakan dua sisi sama panjang dan sudut yang diapit oleh kedua sisi tersebut sama besar adalah kriteria Sisi-Sudut-Sisi (S-Sd-S).
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi atau mengenali definisi/kriteria kekongruenan segitiga yang sudah dipelajari. Ini adalah proses mengingat kembali fakta atau definisi dasar.. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar, maka kedua segitiga tersebut kongruen.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap istilah dan definisi kriteria kekongruenan segitiga yang merupakan bagian dari pengetahuan konseptual.. Bukti: Pernyataan tersebut merupakan bunyi kriteria _____
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (recall) mengenai definisi kriteria kekongruenan segitiga. Tidak ada langkah perhitungan atau analisis kompleks yang diperlukan.. Bukti: Jika dua segitiga memiliki dua pasang sisi yang sama panjang dan sudut yang diapit sisi-sisi tersebut sama besar, maka kedua segitiga tersebut kongruen.
 
 Profil difficulty run ini:
 
@@ -4107,32 +4107,32 @@ Profil difficulty run ini:
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 1 |
+| relevantInformationUnits | 2 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi kekongruenan adalah kurikulum standar kelas 9. Soal ini hanya menanyakan definisi, sehingga tingkat kesulitannya rendah. |
+| gradeRelativeRationale | Ini adalah pertanyaan dasar tentang definisi kekongruenan yang diajarkan di kelas 9. Siswa hanya perlu mencocokkan deskripsi dengan istilah yang tepat. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
-| Dimensi pengetahuan | {"conceptual": 2, "factual": 1} | majority_2_of_3 / adjudicated | conceptual |
+| Dimensi pengetahuan | {"factual": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3437`.
+Adjudikasi AI: `success`; token `4167`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Soal ini menguji ingatan siswa terhadap definisi kriteria kekongruenan segitiga. Siswa hanya perlu mengenali istilah yang tepat untuk deskripsi yang diberikan, yang merupakan proses kognitif tingkat knowing.
-- Dimensi pengetahuan `conceptual`: Soal ini menuntut pengetahuan tentang terminologi dan definisi standar dalam geometri, yang termasuk dalam kategori pengetahuan konseptual.
-- Intended difficulty `Easy`: Soal ini bersifat recall langsung terhadap definisi dasar yang dipelajari di kelas 9. Tidak ada perhitungan, strategi, atau analisis kompleks yang diperlukan.
+- Domain kognitif `knowing`: Soal ini meminta siswa untuk mengenali dan mengidentifikasi definisi kriteria kekongruenan segitiga yang sudah dipelajari. Ini adalah proses mengingat kembali fakta atau definisi dasar (knowing).
+- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman konseptual mengenai syarat kekongruenan segitiga, yaitu hubungan antara elemen-elemen segitiga (sisi dan sudut) yang membentuk kriteria kongruensi.
+- Intended difficulty `Easy`: Soal ini bersifat langsung (recall) mengenai definisi kriteria kekongruenan yang merupakan materi dasar kelas 9. Tidak ada langkah perhitungan atau analisis kompleks yang diperlukan.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman definisi kriteria kekongruenan segitiga (S-Sd-S, S-S-S, Sd-S-Sd). |
+| expectedPrerequisite | Pemahaman dasar tentang kriteria kekongruenan segitiga (S-Sd-S, Sd-S-Sd, S-S-S). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4142,7 +4142,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi kekongruenan adalah kurikulum standar SMP kelas 9. Soal ini hanya menanyakan definisi dasar tanpa variasi atau aplikasi. |
+| gradeRelativeRationale | Materi kekongruenan adalah topik standar kelas 9. Soal ini hanya menanyakan definisi kriteria, sehingga tingkat kesulitannya rendah bagi siswa yang telah mempelajari materi tersebut. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4191,34 +4191,34 @@ Suatu segitiga ABC siku-siku di titik B memiliki panjang AB=8 cm, BC=15 cm, dan 
 | D | 60 cm² |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Luas ΔABC = 0,5 * 8 * 15 = 60 cm². Dilatasi dengan faktor skala k=3 mengubah luas dengan faktor k²=9. Luas ΔA'B'C' = 60 * 9 = 540 cm².
+Solusi minimum hasil AI: Luas ΔABC = 0,5 × 8 × 15 = 60 cm². Dilatasi dengan faktor skala k=3 mengubah luas menjadi k² × Luas awal. Maka, Luas ΔA'B'C' = 3² × 60 = 9 × 60 = 540 cm².
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1f4805f51d3207c7dd5e034e176646c59b991b2ec58eef6f2b973be9a7e06018`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fefcd23966a4c409b2f6b60572578ed54b97eeee09a72385cd9237e1f6427a51`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 2742 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 2118 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 2135 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 2762 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 2724 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 2690 |
 
-Run 1 — solusi: Luas ΔABC = 0,5 * 8 * 15 = 60 cm². Dilatasi dengan faktor skala k=3 mengubah luas dengan faktor k²=9. Luas ΔA'B'C' = 60 * 9 = 540 cm².
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep perubahan luas pada bangun datar akibat dilatasi (faktor skala k²), bukan sekadar dilatasi panjang sisi.. Bukti: faktor skala 3; luas ΔA'B'C'
-- Dimensi pengetahuan `classify/conceptual`: Memahami hubungan antara faktor skala dilatasi dan perubahan luas bangun datar (prinsip konseptual).. Bukti: dilatasi dari ΔABC dengan faktor skala 3; luas ΔA'B'C'
-- Intended difficulty `classify/Medium`: Soal ini menguji pemahaman konsep dilatasi pada luas. Siswa harus menyadari bahwa luas berubah sebesar k², bukan k. Ini adalah langkah rutin bagi siswa yang memahami konsep dilatasi.. Bukti: faktor skala 3; luas ΔA'B'C'
+Run 1 — solusi: Luas ΔABC = 0,5 × 8 × 15 = 60 cm². Dilatasi dengan faktor skala k=3 mengubah luas menjadi k² × Luas awal. Maka, Luas ΔA'B'C' = 3² × 60 = 9 × 60 = 540 cm².
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep dilatasi pada bangun datar, khususnya memahami hubungan antara faktor skala (k) dengan perubahan luas (k²). Ini adalah penerapan konsep pada konteks rutin.. Bukti: Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman prinsip geometris tentang bagaimana transformasi dilatasi mempengaruhi luas bangun datar (konsep k²).. Bukti: dilatasi dari ΔABC dengan faktor skala 3
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman hubungan antara faktor skala dan luas (k²), bukan sekadar mengalikan dengan k. Meskipun prosedurnya familiar, siswa harus memilih hubungan yang tepat (k²) dan menghindari jebakan umum (mengalikan dengan k atau k³).. Bukti: panjang AB=8 cm, BC=15 cm, dan AC=17 cm; dilatasi dari ΔABC dengan faktor skala 3
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep luas segitiga dan sifat dilatasi pada luas (k²). |
+| expectedPrerequisite | Luas segitiga dan konsep dilatasi/skala. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
+| routineStatus | familiar_routine |
 | strategySelection | True |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
@@ -4226,49 +4226,49 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan memahami transformasi geometri. Pengecoh dirancang dengan baik untuk menguji kesalahan umum (mengalikan dengan k atau k³). |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan memahami transformasi geometri. Kesalahan umum pada distractor (k vs k²) menunjukkan tuntutan konseptual yang sesuai untuk tingkat Medium. |
 
-Run 2 — solusi: Luas ΔABC = 0,5 * 8 * 15 = 60 cm². Dilatasi dengan faktor skala k=3 mengubah luas dengan faktor k² = 3² = 9. Maka, luas ΔA'B'C' = 9 * 60 = 540 cm².
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep hubungan antara faktor skala dilatasi (k) dengan perubahan luas bangun datar (k²). Ini adalah penerapan prosedur yang sudah dipelajari.. Bukti: Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip geometris bahwa luas bangun hasil dilatasi berubah sebesar kuadrat dari faktor skala, bukan faktor skala itu sendiri.. Bukti: faktor skala 3; luas ΔA'B'C'
-- Intended difficulty `classify/Medium`: Soal ini menguji pemahaman konseptual tentang properti dilatasi pada luas. Meskipun prosedurnya sederhana, siswa sering terjebak menggunakan faktor skala linear (k) alih-alih kuadrat (k²), sehingga ini dikategorikan Medium.. Bukti: faktor skala 3; luas ΔA'B'C'
+Run 2 — solusi: Luas ΔABC = 0,5 x 8 x 15 = 60 cm². Dilatasi dengan faktor skala k=3 mengubah luas menjadi k² x Luas awal. Luas ΔA'B'C' = 3² x 60 = 9 x 60 = 540 cm².
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep hubungan antara faktor skala dilatasi (k) dengan perubahan luas bangun datar (k²). Ini adalah penerapan konsep pada konteks rutin.. Bukti: Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman prinsip geometris mengenai bagaimana dilatasi mempengaruhi luas bangun datar, yang merupakan pengetahuan konseptual.. Bukti: hasil dilatasi dari ΔABC dengan faktor skala 3
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena menuntut siswa memahami hubungan non-linear antara faktor skala dan luas (k²), bukan sekadar mengalikan dengan k. Meskipun prosedurnya familiar, siswa sering terjebak pada kesalahan umum mengalikan dengan k saja.. Bukti: luas ΔA'B'C' adalah
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus luas segitiga dan konsep dilatasi pada bangun datar. |
+| expectedPrerequisite | Rumus luas segitiga dan konsep dasar dilatasi/skala. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan memahami transformasi geometri. Pilihan jawaban dirancang untuk menjebak siswa yang tidak memahami hubungan k² pada luas. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan memahami transformasi geometri. Kesalahan umum pada dilatasi luas (menggunakan k bukan k²) membuat soal ini memiliki tantangan konseptual yang sesuai untuk tingkat Medium. |
 
-Run 3 — solusi: Luas ΔABC = 0.5 * alas * tinggi = 0.5 * 15 * 8 = 60 cm². Dilatasi dengan faktor skala k=3 mengubah luas menjadi k² * Luas awal. Luas ΔA'B'C' = 3² * 60 = 9 * 60 = 540 cm².
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep perubahan luas pada bangun datar yang didilatasi (k²), bukan sekadar menghitung luas segitiga biasa. Ini melibatkan pemilihan prosedur yang tepat.. Bukti: Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman prinsip matematis tentang bagaimana faktor skala dilatasi mempengaruhi luas bangun datar (konsep hubungan antara dilatasi dan luas).. Bukti: hasil dilatasi dari ΔABC dengan faktor skala 3
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya menghitung luas segitiga, tetapi harus memahami dan menerapkan prinsip bahwa luas berubah sebesar kuadrat faktor skala (k²). Ini adalah langkah rutin bagi siswa kelas 9 yang telah mempelajari dilatasi, namun memerlukan pemahaman konsep yang lebih dari sekadar operasi langsung.. Bukti: panjang AB=8 cm, BC=15 cm, dan AC=17 cm; faktor skala 3
+Run 3 — solusi: Luas ΔABC = 0.5 * 8 * 15 = 60 cm². Dilatasi dengan faktor skala k=3 mengubah luas dengan faktor k²=9. Luas ΔA'B'C' = 9 * 60 = 540 cm².
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep hubungan antara faktor skala dilatasi (k) dengan perubahan luas bangun datar (k²), bukan sekadar menghitung luas segitiga awal.. Bukti: Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana transformasi dilatasi mempengaruhi properti luas bangun datar.. Bukti: dilatasi dari ΔABC dengan faktor skala 3
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena siswa harus memahami prinsip bahwa dilatasi dengan faktor skala k mengubah luas sebesar k², bukan k. Meskipun prosedurnya familiar, siswa sering terjebak menggunakan k atau k³ (skala volume), sehingga memerlukan pemahaman konseptual yang tepat.. Bukti: faktor skala 3; luas ΔA'B'C' adalah
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus luas segitiga dan konsep dilatasi/kesebangunan. |
+| expectedPrerequisite | Konsep luas segitiga dan sifat dilatasi pada luas bangun datar. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Materi dilatasi dan perubahan luas adalah standar kurikulum kelas 9. Soal ini menguji pemahaman konseptual tentang faktor skala luas (k²) yang sering menjadi jebakan bagi siswa yang hanya mengalikan dengan k. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan memahami transformasi geometri. Kesalahan umum pada faktor skala luas (k²) menjadikannya tantangan yang sesuai untuk tingkat Medium. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -4325,32 +4325,32 @@ Diketahui ΔABC dengan A(-3,-2), B(6,4) dan C(1,-2). Tentukan bayangan ΔABC yan
 | D | $A'(-\frac{3}{2},-1)$, $B'(3,2)$, $C'(\frac{1}{2},-1)$ |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Dilatasi titik (x, y) terhadap pusat O(0,0) dengan faktor skala k adalah (kx, ky). Untuk k = 1/2: A' = (-3 * 1/2, -2 * 1/2) = (-1.5, -1); B' = (6 * 1/2, 4 * 1/2) = (3, 2); C' = (1 * 1/2, -2 * 1/2) = (0.5, -1). Hasil ini sesuai dengan pilihan D.
+Solusi minimum hasil AI: Dilatasi titik (x, y) terhadap pusat O(0,0) dengan faktor skala k adalah (kx, ky). Untuk k = 1/2: A' = (-3 * 1/2, -2 * 1/2) = (-1.5, -1); B' = (6 * 1/2, 4 * 1/2) = (3, 2); C' = (1 * 1/2, -2 * 1/2) = (0.5, -1).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `482ab0d934c8f2e43f6b598f095318fdee9dd01f3e0ed548e4809c79cce707f2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `610e287b02d97cf30ea9334f3ab78d76b0dbaa22bb7b0f8ab659506e965462e0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2232 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2252 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2252 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2871 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2893 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2868 |
 
-Run 1 — solusi: Dilatasi titik (x, y) terhadap pusat O(0,0) dengan faktor skala k adalah (kx, ky). Untuk k = 1/2: A' = (-3 * 1/2, -2 * 1/2) = (-1.5, -1); B' = (6 * 1/2, 4 * 1/2) = (3, 2); C' = (1 * 1/2, -2 * 1/2) = (0.5, -1). Hasil ini sesuai dengan pilihan D.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus dilatasi [O, k] pada koordinat titik yang diberikan. Ini adalah prosedur standar dalam geometri transformasi.. Bukti: dilatasikan terhadap [O, 1/2]; A(-3,-2), B(6,4) dan C(1,-2)
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma atau prosedur dilatasi pada bidang koordinat.. Bukti: dilatasikan terhadap [O, 1/2]
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan perkalian skalar pada koordinat titik. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan.. Bukti: dilatasikan terhadap [O, 1/2]; A(-3,-2), B(6,4) dan C(1,-2)
+Run 1 — solusi: Dilatasi titik (x, y) terhadap pusat O(0,0) dengan faktor skala k adalah (kx, ky). Untuk k = 1/2: A' = (-3 * 1/2, -2 * 1/2) = (-1.5, -1); B' = (6 * 1/2, 4 * 1/2) = (3, 2); C' = (1 * 1/2, -2 * 1/2) = (0.5, -1).
+- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus dilatasi terhadap titik pusat (0,0) dengan faktor skala k. Siswa hanya perlu mengalikan setiap koordinat dengan faktor skala yang diberikan.. Bukti: Tentukan bayangan ΔABC yang didilatasikan terhadap [O, 1/2]
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang transformasi geometri (dilatasi) dan penggunaan rumus koordinat bayangan.. Bukti: dilatasikan terhadap [O, 1/2]
+- Intended difficulty `classify/Easy`: Soal bersifat rutin karena hanya memerlukan penerapan rumus dilatasi [O, k] secara langsung pada tiga titik yang diberikan. Tidak ada kendala tambahan atau integrasi konsep yang kompleks.. Bukti: A(-3,-2), B(6,4) dan C(1,-2). Tentukan bayangan ΔABC yang didilatasikan terhadap [O, 1/2]
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar koordinat kartesius dan operasi perkalian pecahan/desimal. |
+| expectedPrerequisite | Pemahaman koordinat kartesius dan operasi perkalian bilangan pecahan/desimal. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4360,39 +4360,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Dilatasi adalah materi standar kelas 9. Soal ini menguji penerapan langsung rumus tanpa modifikasi atau langkah tambahan yang rumit. |
+| gradeRelativeRationale | Dilatasi adalah materi standar kelas 9. Soal ini merupakan penerapan langsung definisi dilatasi tanpa modifikasi atau langkah tambahan yang rumit. |
 
-Run 2 — solusi: Dilatasi titik (x, y) terhadap pusat O(0,0) dengan faktor skala k adalah (kx, ky). Untuk k = 1/2: A' = (-3 * 0.5, -2 * 0.5) = (-1.5, -1); B' = (6 * 0.5, 4 * 0.5) = (3, 2); C' = (1 * 0.5, -2 * 0.5) = (0.5, -1). Hasilnya sesuai dengan opsi D.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur dilatasi dengan pusat O(0,0) dan faktor skala k pada koordinat titik-titik segitiga. Ini adalah penerapan langsung dari rumus dilatasi.. Bukti: dilatasikan terhadap [O, 1/2]; A(-3,-2), B(6,4) dan C(1,-2)
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana melakukan transformasi dilatasi pada koordinat kartesius.. Bukti: dilatasikan terhadap [O, 1/2]
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya memerlukan penerapan rumus dilatasi [O, k] secara langsung pada tiga titik yang diberikan. Tidak ada kendala kompleks atau strategi non-rutin.. Bukti: dilatasikan terhadap [O, 1/2]; A(-3,-2), B(6,4) dan C(1,-2)
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman koordinat kartesius dan konsep dilatasi dasar. |
-| dependentSteps | 3 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi dilatasi adalah standar kurikulum kelas 9. Prosedur perkalian skalar pada koordinat adalah tugas rutin. |
-
-Run 3 — solusi: Dilatasi titik (x, y) terhadap pusat O(0,0) dengan faktor skala k adalah (kx, ky). Untuk k = 1/2: A' = (-3 * 0.5, -2 * 0.5) = (-1.5, -1); B' = (6 * 0.5, 4 * 0.5) = (3, 2); C' = (1 * 0.5, -2 * 0.5) = (0.5, -1). Hasil ini sesuai dengan pilihan D.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur dilatasi dengan pusat O(0,0) dan faktor skala k pada koordinat titik-titik segitiga. Ini adalah penerapan langsung dari rumus dilatasi.. Bukti: dilatasikan terhadap [O, 1/2]; A(-3,-2), B(6,4) dan C(1,-2)
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau prosedur matematis untuk melakukan transformasi dilatasi pada bidang koordinat.. Bukti: dilatasikan terhadap [O, 1/2]
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya memerlukan penerapan rumus dilatasi [O, k] secara langsung pada setiap titik. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: dilatasikan terhadap [O, 1/2]; A(-3,-2), B(6,4) dan C(1,-2)
+Run 2 — solusi: Dilatasi titik (x, y) terhadap pusat O(0,0) dengan faktor skala k adalah (kx, ky). Untuk k = 1/2: A' = (-3*0.5, -2*0.5) = (-1.5, -1); B' = (6*0.5, 4*0.5) = (3, 2); C' = (1*0.5, -2*0.5) = (0.5, -1).
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur dilatasi titik pada bidang koordinat dengan faktor skala tertentu. Ini adalah penerapan langsung dari rumus dilatasi yang sudah dipelajari di kelas 9.. Bukti: Tentukan bayangan ΔABC yang didilatasikan terhadap [O, 1/2]
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma atau prosedur dilatasi (transformasi geometri) yang merupakan bagian dari materi prosedural.. Bukti: dilatasikan terhadap [O, 1/2]
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena siswa hanya perlu menerapkan rumus dilatasi [O, k] yaitu (x', y') = (kx, ky) secara langsung pada setiap titik. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merancang strategi kompleks.. Bukti: Diketahui ΔABC dengan A(-3,-2), B(6,4) dan C(1,-2). Tentukan bayangan ΔABC yang didilatasikan terhadap [O, 1/2]
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman koordinat kartesius dan konsep dasar transformasi dilatasi. |
+| expectedPrerequisite | Pemahaman dasar koordinat kartesius dan konsep dilatasi dengan pusat O(0,0). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4402,7 +4381,28 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi dilatasi adalah standar kelas 9. Soal ini adalah latihan dasar yang tidak memerlukan manipulasi aljabar atau visualisasi yang rumit. |
+| gradeRelativeRationale | Materi dilatasi adalah standar kurikulum kelas 9. Soal ini merupakan aplikasi langsung rumus tanpa modifikasi atau integrasi konsep lain. |
+
+Run 3 — solusi: Dilatasi titik (x, y) terhadap pusat O(0,0) dengan faktor skala k adalah (kx, ky). Untuk k = 1/2: A' = (-3 * 0.5, -2 * 0.5) = (-1.5, -1); B' = (6 * 0.5, 4 * 0.5) = (3, 2); C' = (1 * 0.5, -2 * 0.5) = (0.5, -1).
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan prosedur dilatasi standar terhadap titik-titik koordinat yang diberikan. Ini adalah penerapan langsung dari rumus dilatasi [O, k] yaitu (kx, ky).. Bukti: Tentukan bayangan ΔABC yang didilatasikan terhadap [O, 1/2]
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep dilatasi dan aturan algoritmik perkalian koordinat dengan faktor skala untuk menentukan bayangan titik.. Bukti: dilatasikan terhadap [O, 1/2]
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 9. Prosedur dilatasi dengan pusat O(0,0) adalah materi standar yang langsung dapat diselesaikan dengan mengalikan koordinat dengan faktor skala. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Tentukan bayangan ΔABC yang didilatasikan terhadap [O, 1/2]
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman koordinat kartesius dan operasi perkalian bilangan pecahan/desimal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Dilatasi dengan pusat O adalah materi dasar transformasi geometri kelas 9. Soal ini tidak menuntut integrasi konsep atau langkah yang saling bergantung. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -4458,36 +4458,36 @@ Pada $\triangle ABC$, $AD$ membagi $\angle A$ menjadi dua bagian yang sama besar
 | C | AE = CE, karena ∠ACE = ∠CAE |
 | D | AB = AC, karena AD garis bagi |
 
-![Gambar sumber soal 32](<../images/kelas7_crop-p0205-garis-bagi.png>)
+![Gambar sumber soal 32](<../../../images/kelas7_crop-p0205-garis-bagi.png>)
 
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Misalkan ∠BAD = ∠DAC = α. Karena CE \|\| AD, maka ∠AEC = ∠BAD = α (sudut sehadap) dan ∠ACE = ∠DAC = α (sudut dalam berseberangan). Karena ∠AEC = ∠ACE = α, maka ΔACE adalah segitiga sama kaki dengan AC = AE.
-Gambar sumber: images/kelas7_crop-p0205-garis-bagi.png. Transkripsi visual: Segitiga ABC dengan titik D pada sisi BC. Garis AD membagi sudut A menjadi dua bagian sama besar (ditandai dengan busur hijau). Titik B, D, C terletak pada satu garis lurus.
+Solusi minimum hasil AI: Karena CE \|\| AD, maka ∠AEC = ∠BAD (sehadap) dan ∠ACE = ∠DAC (berseberangan dalam). Karena AD adalah garis bagi, ∠BAD = ∠DAC. Maka ∠AEC = ∠ACE. Segitiga dengan dua sudut alas yang sama adalah segitiga sama kaki, sehingga AC = AE.
+Gambar sumber: images/kelas7_crop-p0205-garis-bagi.png. Transkripsi visual: Segitiga ABC dengan garis bagi AD yang membagi sudut A menjadi dua bagian sama besar. Titik D berada pada sisi BC. Terdapat konstruksi tambahan berupa garis melalui C yang sejajar dengan AD, memotong perpanjangan AB di titik E.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menyebutkan', 'menjelaskan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `59eab208246cf056c83198df2a6ea187a1c50eace8363f6ff5fa52ab3a8c379e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ed7ec5433c75ff54be8ab82aadc802bac2fade2bd82c17e9d1277d366bdcff60`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 3239 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 3236 |
-| 3 | success | valid / verified | reasoning | conceptual | Medium | 3233 |
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3959 |
+| 2 | success | valid / verified | reasoning | conceptual | Medium | 3932 |
+| 3 | success | valid / verified | reasoning | conceptual | Medium | 3994 |
 
-Run 1 — solusi: Misalkan ∠BAD = ∠DAC = α. Karena CE \|\| AD, maka ∠AEC = ∠BAD = α (sudut sehadap) dan ∠ACE = ∠DAC = α (sudut dalam berseberangan). Karena ∠AEC = ∠ACE = α, maka ΔACE adalah segitiga sama kaki dengan AC = AE.
-- Domain kognitif `classify/applying`: Soal meminta siswa untuk melakukan pembuktian geometri sederhana dengan menggunakan sifat garis sejajar (sudut sehadap dan berseberangan) untuk menunjukkan segitiga sama kaki. Ini memerlukan penerapan konsep geometri yang sudah dipelajari.. Bukti: Gambarkan garis yang sejajar dengan AD dan melalui titik C; Beri alasan bahwa ΔACE sama kaki
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara sudut-sudut yang terbentuk oleh garis sejajar yang dipotong transversal (sudut sehadap dan berseberangan) serta definisi segitiga sama kaki.. Bukti: AD membagi ∠A menjadi dua bagian yang sama besar; Garis yang sejajar dengan AD dan melalui titik C
-- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman tentang sifat-sifat sudut pada garis sejajar dan aplikasinya dalam pembuktian geometri. Meskipun prosedurnya terstruktur, siswa harus mampu mengidentifikasi pasangan sudut yang relevan.. Bukti: Gambarkan garis yang sejajar dengan AD dan melalui titik C; Beri alasan bahwa ΔACE sama kaki
+Run 1 — solusi: Karena CE \|\| AD, maka ∠AEC = ∠BAD (sehadap) dan ∠ACE = ∠DAC (berseberangan dalam). Karena AD adalah garis bagi, ∠BAD = ∠DAC. Maka ∠AEC = ∠ACE. Segitiga dengan dua sudut alas yang sama adalah segitiga sama kaki, sehingga AC = AE.
+- Domain kognitif `classify/reasoning`: Soal meminta siswa untuk melakukan penalaran deduktif untuk membuktikan sifat segitiga berdasarkan konstruksi yang diberikan. Siswa harus menghubungkan konsep garis sejajar (sudut sehadap dan berseberangan) dengan sifat garis bagi untuk menyimpulkan kesamaan sudut dan sisi.. Bukti: Beri alasan bahwa ΔACE sama kaki.; Petunjuk: Gambarkan garis yang sejajar dengan AD dan melalui titik C. Garis ini berpotongan dengan perpanjangan AB di titik E.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip-prinsip geometri (garis sejajar, sudut, dan sifat segitiga sama kaki) dan mengintegrasikannya untuk membangun argumen logis, yang merupakan pemahaman konseptual.. Bukti: AD membagi ∠A menjadi dua bagian yang sama besar.; Gambarkan garis yang sejajar dengan AD dan melalui titik C.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena meskipun petunjuk konstruksi diberikan, siswa harus melakukan integrasi konsep geometri (garis sejajar dan sudut) untuk membuktikan sifat segitiga. Ini bukan sekadar penerapan rumus langsung, melainkan penalaran langkah demi langkah yang saling bergantung.. Bukti: Beri alasan bahwa ΔACE sama kaki.; Petunjuk: Gambarkan garis yang sejajar dengan AD dan melalui titik C.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Sifat sudut pada garis sejajar (sehadap, berseberangan), definisi garis bagi, dan sifat segitiga sama kaki. |
+| expectedPrerequisite | Sifat sudut pada dua garis sejajar yang dipotong garis transversal (sehadap, berseberangan) dan sifat segitiga sama kaki. |
 | dependentSteps | 3 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -4497,79 +4497,57 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | partial |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi kesebangunan dan garis sejajar adalah standar kelas 9. Soal ini menuntut pemahaman konseptual lebih dari sekadar menghitung, namun masih dalam lingkup pembuktian rutin. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan pembuktian geometri sederhana menggunakan sifat-sifat sudut dan kesebangunan. Soal ini menuntut pemahaman konsep yang lebih dalam daripada sekadar menghitung panjang sisi. |
 
-Run 2 — solusi: Misalkan AD \|\| CE. Sudut BAD = sudut AEC (sehadap). Sudut DAC = sudut ACE (berseberangan dalam). Karena AD adalah garis bagi, maka sudut BAD = sudut DAC. Akibatnya, sudut AEC = sudut ACE. Karena dua sudut alas sama, maka segitiga ACE sama kaki dengan AC = AE.
-- Domain kognitif `classify/applying`: Soal meminta siswa untuk melakukan pembuktian geometris sederhana menggunakan sifat sudut pada garis sejajar (sehadap dan berseberangan dalam) untuk menunjukkan segitiga sama kaki. Ini memerlukan penerapan konsep dasar geometri, bukan sekadar ingatan.. Bukti: Gambarkan garis yang sejajar dengan AD dan melalui titik C; Beri alasan bahwa ΔACE sama kaki
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami hubungan antara sudut-sudut yang terbentuk oleh garis sejajar yang dipotong transversal dan definisi segitiga sama kaki berdasarkan sudut alasnya.. Bukti: AD membagi ∠A menjadi dua bagian yang sama besar; Garis yang sejajar dengan AD dan melalui titik C
-- Intended difficulty `classify/Medium`: Soal ini menuntut pemahaman tentang konstruksi tambahan dan sifat sudut pada garis sejajar. Meskipun langkahnya terstruktur, ini bukan prosedur rutin yang sangat dasar bagi siswa kelas 9, namun juga tidak memerlukan strategi nonrutin yang kompleks.. Bukti: Gambarkan garis yang sejajar dengan AD dan melalui titik C; Beri alasan bahwa ΔACE sama kaki
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Sifat sudut sehadap dan berseberangan dalam pada garis sejajar, definisi garis bagi, dan syarat segitiga sama kaki. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
-| calculationLoad | low |
-| scaffoldLevel | partial |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun pembuktian teorema garis bagi sering diajarkan, siswa kelas 9 sering kesulitan mengintegrasikan sifat garis sejajar dengan properti segitiga secara abstrak tanpa angka. |
-
-Run 3 — solusi: Misalkan garis CE sejajar AD. Karena AD \|\| CE, maka ∠BAD = ∠AEC (sehadap) dan ∠DAC = ∠ACE (berseberangan dalam). Karena AD adalah garis bagi, ∠BAD = ∠DAC. Maka ∠AEC = ∠ACE. Karena dua sudut alas sama besar, maka ΔACE adalah segitiga sama kaki dengan AC = AE.
-- Domain kognitif `classify/reasoning`: Soal meminta siswa untuk melakukan pembuktian geometris sederhana dengan mengonstruksi garis bantu dan menerapkan sifat sudut pada garis sejajar. Ini memerlukan pemahaman konseptual tentang hubungan sudut.. Bukti: Gambarkan garis yang sejajar dengan AD dan melalui titik C; Beri alasan bahwa ΔACE sama kaki
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip hubungan sudut (sehadap, berseberangan) dan sifat segitiga sama kaki untuk membangun argumen logis.. Bukti: AD membagi ∠A menjadi dua bagian yang sama besar; Garis yang sejajar dengan AD dan melalui titik C
-- Intended difficulty `classify/Medium`: Soal ini memerlukan konstruksi garis bantu dan penalaran deduktif untuk membuktikan sifat segitiga. Meskipun langkahnya terstruktur, ini bukan sekadar aplikasi rumus langsung.. Bukti: Gambarkan garis yang sejajar dengan AD dan melalui titik C; Beri alasan bahwa ΔACE sama kaki
+Run 2 — solusi: Karena CE \|\| AD, maka ∠AEC = ∠BAD (sudut sehadap) dan ∠ACE = ∠DAC (sudut dalam berseberangan). Karena AD adalah garis bagi, ∠BAD = ∠DAC. Maka ∠AEC = ∠ACE. Dalam segitiga ACE, karena dua sudut alasnya sama, maka segitiga tersebut sama kaki dengan AC = AE.
+- Domain kognitif `classify/reasoning`: Siswa diminta untuk melakukan pembuktian geometris sederhana menggunakan sifat sudut pada garis sejajar (sehadap dan berseberangan) untuk menunjukkan sifat segitiga sama kaki. Ini melibatkan penalaran logis untuk menghubungkan konsep garis bagi dengan sifat sudut.. Bukti: Gambarkan garis yang sejajar dengan AD dan melalui titik C. Garis ini berpotongan dengan perpanjangan AB di titik E.; Beri alasan bahwa ΔACE sama kaki. Tuliskan sisi-sisi yang sama panjang.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara garis sejajar, sudut, dan sifat segitiga sama kaki, bukan sekadar menghafal rumus.. Bukti: AD membagi ∠A menjadi dua bagian yang sama besar.; Gambarkan garis yang sejajar dengan AD dan melalui titik C.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena meskipun pembuktiannya standar, siswa harus mengintegrasikan konsep garis sejajar dan sudut untuk menarik kesimpulan. Petunjuk konstruksi membantu siswa, namun siswa tetap harus memahami hubungan antar sudut secara mandiri.. Bukti: Petunjuk: Gambarkan garis yang sejajar dengan AD dan melalui titik C.; Beri alasan bahwa ΔACE sama kaki.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Sifat sudut pada dua garis sejajar yang dipotong garis transversal (sudut sehadap, berseberangan dalam) dan sifat segitiga sama kaki. |
+| expectedPrerequisite | Sifat sudut pada garis sejajar (sehadap, berseberangan) dan definisi segitiga sama kaki. |
 | dependentSteps | 3 |
 | routineStatus | routine_selection |
 | strategySelection | True |
-| representationTransfer | True |
+| representationTransfer | False |
 | relevantInformationUnits | 4 |
 | interactingConstraints | 2 |
 | calculationLoad | low |
 | scaffoldLevel | partial |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan pembuktian sederhana terkait kesebangunan atau sifat segitiga menggunakan bantuan garis sejajar. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan pembuktian geometris sederhana. Soal ini menuntut pemahaman hubungan sudut, bukan sekadar komputasi. |
+
+Run 3 — solusi: Karena CE sejajar AD, maka sudut AEC = sudut BAD (sehadap) dan sudut ACE = sudut DAC (berseberangan dalam). Karena AD adalah garis bagi, maka sudut BAD = sudut DAC. Akibatnya, sudut AEC = sudut ACE. Dalam segitiga ACE, karena dua sudut alasnya sama, maka segitiga tersebut sama kaki dengan AC = AE.
+- Domain kognitif `classify/reasoning`: Soal meminta siswa untuk melakukan penalaran deduktif geometris dengan menggunakan konstruksi tambahan yang diberikan. Siswa harus mengintegrasikan sifat sudut pada garis sejajar (sudut sehadap dan berseberangan) dengan definisi garis bagi untuk menyimpulkan sifat segitiga sama kaki.. Bukti: Gambarkan garis yang sejajar dengan AD dan melalui titik C. Garis ini berpotongan dengan perpanjangan AB di titik E.; Beri alasan bahwa ΔACE sama kaki. Tuliskan sisi-sisi yang sama panjang.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan konseptual antara garis sejajar, sudut-sudut yang terbentuk (sehadap, berseberangan), dan definisi segitiga sama kaki berdasarkan kesamaan sudut alas.. Bukti: AD membagi ∠A menjadi dua bagian yang sama besar.; Gambarkan garis yang sejajar dengan AD dan melalui titik C.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium. Meskipun prosedurnya melibatkan konsep geometri standar, siswa dituntut untuk melakukan perencanaan langkah deduktif (menghubungkan sudut sehadap dan berseberangan) untuk membuktikan sifat segitiga. Petunjuk konstruksi membantu, namun siswa tetap harus mengintegrasikan beberapa relasi sudut secara mandiri.. Bukti: Petunjuk: Gambarkan garis yang sejajar dengan AD dan melalui titik C. Garis ini berpotongan dengan perpanjangan AB di titik E.; Beri alasan bahwa ΔACE sama kaki.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat sudut pada dua garis sejajar yang dipotong garis transversal (sudut sehadap, berseberangan dalam) dan definisi segitiga sama kaki. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | partial |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan pembuktian geometris sederhana menggunakan sifat sudut. Soal ini menuntut kemampuan menghubungkan konstruksi dengan sifat sudut, yang merupakan standar menengah untuk jenjang SMP. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 2, "reasoning": 1} | majority_2_of_3 / adjudicated | reasoning |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
-
-Adjudikasi AI: `success`; token `4867`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `reasoning`: Soal ini meminta siswa untuk melakukan pembuktian geometris sederhana dengan mengonstruksi garis bantu dan menerapkan sifat sudut pada garis sejajar. Ini memerlukan pemahaman konseptual tentang hubungan sudut dan deduksi logis.
-- Dimensi pengetahuan `conceptual`: Siswa perlu memahami prinsip hubungan sudut (sehadap, berseberangan) dan sifat segitiga sama kaki untuk membangun argumen logis, yang merupakan pemahaman konseptual.
-- Intended difficulty `Medium`: Soal ini memerlukan konstruksi garis bantu dan penalaran deduktif untuk membuktikan sifat segitiga. Meskipun langkahnya terstruktur, ini bukan sekadar aplikasi rumus langsung, melainkan pembuktian konsep.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Sifat sudut pada dua garis sejajar yang dipotong garis transversal (sudut sehadap, berseberangan dalam) dan sifat segitiga sama kaki. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
-| calculationLoad | low |
-| scaffoldLevel | partial |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan pembuktian sederhana terkait kesebangunan atau sifat segitiga menggunakan bantuan garis sejajar. |
+| Domain kognitif | {"reasoning": 3} | unanimous_3_0 / unanimous | reasoning |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4596,7 +4574,7 @@ Pilihan: A. AC = AE, karena ∠ACE = ∠AEC
 B. AC = CE, karena ∠CAE = ∠AEC
 C. AE = CE, karena ∠ACE = ∠CAE
 D. AB = AC, karena AD garis bagi
-Transkripsi visual: Segitiga ABC dengan titik D pada sisi BC. Garis AD membagi sudut A menjadi dua bagian sama besar (ditandai dengan busur hijau). Titik B, D, C terletak pada satu garis lurus.
+Transkripsi visual: Segitiga ABC dengan garis bagi AD yang membagi sudut A menjadi dua bagian sama besar. Titik D berada pada sisi BC. Terdapat konstruksi tambahan berupa garis melalui C yang sejajar dengan AD, memotong perpanjangan AB di titik E.
 ```
 
 </details>
@@ -4620,53 +4598,32 @@ Tentukan banyaknya anggota ruang sampel percobaan-percobaan berikut. ⓒ Jenis k
 | D | 2 (hanya menghitung banyaknya kategori jenis kelamin: laki-laki dan perempuan) |
 
 Kunci sumber: `A`; status AI: `conflict`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: Soal ambigu. Jika percobaan adalah memilih satu siswa, n(S) = 12 + 18 = 30. Jika percobaan adalah mengamati jenis kelamin siswa yang terpilih, n(S) = 2 (Laki-laki atau Perempuan). Kunci jawaban 30 tidak konsisten dengan redaksi 'Jenis kelamin'.
+Solusi minimum hasil AI: Soal ambigu. Jika ruang sampel adalah himpunan siswa yang mungkin terpilih, n(S) = 12 + 18 = 30. Jika ruang sampel adalah himpunan hasil jenis kelamin yang mungkin, n(S) = 2 (Laki-laki atau Perempuan). Kunci jawaban A (30) tidak konsisten dengan frasa 'Jenis kelamin dari seorang siswa'.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0366a40abeb9d548c3b8968048bed53dd286666f1ed542119e517564ca1775df`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5c818ca1d27240b44d3683a0c6c21319fd503e0a53371e53b713c53cadf237b9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | concern / conflict | reasoning | conceptual | Medium | 2074 |
-| 2 | success | concern / conflict | applying | conceptual | Medium | 2107 |
-| 3 | success | concern / conflict | applying | conceptual | Medium | 2148 |
+| 1 | success | concern / conflict | knowing | conceptual | Easy | 2790 |
+| 2 | success | concern / conflict | knowing | conceptual | Easy | 2793 |
+| 3 | success | concern / conflict | knowing | conceptual | Easy | 2843 |
 
-Run 1 — solusi: Secara teoretis, jika yang ditanyakan adalah ruang sampel dari 'jenis kelamin', maka jawabannya adalah 2 (Laki-laki atau Perempuan). Jika yang ditanyakan adalah ruang sampel dari 'siswa yang terpilih', maka jawabannya adalah 30. Soal ini mencampuradukkan kedua konsep tersebut.
-- Domain kognitif `classify/reasoning`: Soal meminta identifikasi ruang sampel namun memberikan deskripsi yang kontradiktif antara variabel (jenis kelamin) dan objek (siswa). Siswa harus memilih antara konsep ruang sampel kejadian (2) atau ruang sampel populasi (30).. Bukti: Tentukan banyaknya anggota ruang sampel percobaan-percobaan berikut. ⓒ Jenis kelamin dari seorang siswa
-- Dimensi pengetahuan `classify/conceptual`: Memerlukan pemahaman konseptual tentang apa yang membentuk ruang sampel dalam sebuah percobaan acak.. Bukti: banyaknya anggota ruang sampel
-- Intended difficulty `classify/Medium`: Tingkat kesulitan menengah karena siswa harus membedakan antara ruang sampel hasil (outcome space) dan ruang sampel individu, meskipun soalnya sendiri cacat secara matematis.. Bukti: 12 siswa laki-laki dan 18 siswa perempuan
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Definisi dasar ruang sampel dan kejadian. |
-| dependentSteps | 1 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang kelas 9 sering membahas ruang sampel. Kesalahan pada soal membuat siswa harus memilih interpretasi yang paling mungkin dimaksudkan oleh pembuat soal. |
-
-Run 2 — solusi: Jika percobaan adalah memilih satu siswa, n(S) = 12 + 18 = 30. Jika percobaan adalah mengamati jenis kelamin siswa yang terpilih, n(S) = 2 (Laki-laki atau Perempuan). Soal ambigu.
-- Domain kognitif `classify/applying`: Siswa perlu memahami definisi ruang sampel dalam konteks percobaan acak. Namun, karena redaksi soal ambigu antara memilih individu vs mengamati atribut, siswa harus melakukan interpretasi konsep.. Bukti: Tentukan banyaknya anggota ruang sampel percobaan-percobaan berikut. ⓒ Jenis kelamin dari seorang siswa yang pertama kali ditunjuk
-- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang apa yang membentuk ruang sampel dalam suatu percobaan.. Bukti: banyaknya anggota ruang sampel
-- Intended difficulty `classify/Medium`: Secara prosedural mudah (penjumlahan), namun secara konseptual membingungkan karena ambiguitas redaksi soal.. Bukti: 12 siswa laki-laki dan 18 siswa perempuan
+Run 1 — solusi: Jika ruang sampel didefinisikan sebagai himpunan siswa yang mungkin terpilih, maka n(S) = 12 + 18 = 30. Jika ruang sampel didefinisikan sebagai himpunan jenis kelamin yang mungkin muncul, maka n(S) = 2. Karena soal meminta 'banyaknya anggota ruang sampel' dari 'jenis kelamin', jawaban 2 secara matematis lebih tepat, namun kunci jawaban memilih 30 (mengasumsikan ruang sampel adalah individu).
+- Domain kognitif `classify/knowing`: Siswa diminta mengidentifikasi ruang sampel dari sebuah percobaan sederhana. Ini melibatkan pemahaman konsep dasar ruang sampel.. Bukti: Tentukan banyaknya anggota ruang sampel percobaan-percobaan berikut.; Jenis kelamin dari seorang siswa yang pertama kali ditunjuk
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman terhadap definisi ruang sampel (konsep dasar peluang).. Bukti: banyaknya anggota ruang sampel
+- Intended difficulty `classify/Easy`: Soal ini secara teknis mudah karena hanya melibatkan penjumlahan sederhana, namun memiliki ambiguitas konseptual yang tinggi antara ruang sampel kejadian (individu) dan ruang sampel variabel acak (jenis kelamin).. Bukti: 12 siswa laki-laki dan 18 siswa perempuan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Definisi ruang sampel dan kejadian. |
+| expectedPrerequisite | Konsep dasar ruang sampel dan penjumlahan bilangan cacah. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4676,58 +4633,79 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun operasi hitungnya sederhana, ambiguitas antara ruang sampel individu vs ruang sampel atribut membuat soal ini menuntut pemahaman konsep yang lebih dalam daripada sekadar menghitung. |
+| gradeRelativeRationale | Materi peluang kelas 9 mencakup ruang sampel. Soal ini sangat mendasar, namun kunci jawaban yang kontradiktif dengan definisi variabel 'jenis kelamin' membuatnya bermasalah secara konten. |
 
-Run 3 — solusi: Jika percobaan adalah memilih satu siswa dari 30 siswa (12 L + 18 P), maka ruang sampel adalah 30 individu. Jika percobaan adalah mengamati jenis kelamin siswa yang terpilih, maka ruang sampel adalah {Laki-laki, Perempuan} dengan n(S)=2. Soal ambigu.
-- Domain kognitif `classify/applying`: Siswa perlu memahami definisi ruang sampel dalam konteks percobaan acak. Namun, karena redaksi soal ambigu antara memilih individu vs mengamati atribut, siswa harus melakukan analisis konseptual untuk menentukan apa yang sebenarnya menjadi objek percobaan.. Bukti: Tentukan banyaknya anggota ruang sampel percobaan-percobaan berikut. ⓒ Jenis kelamin dari seorang siswa yang pertama kali ditunjuk
-- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang definisi ruang sampel (sample space) dalam teori peluang, bukan sekadar prosedur menghitung.. Bukti: banyaknya anggota ruang sampel
-- Intended difficulty `classify/Medium`: Secara prosedural soal ini sederhana (penjumlahan), namun secara konseptual membingungkan karena ketidakjelasan definisi ruang sampel yang diminta. Kesulitan utama terletak pada interpretasi soal yang ambigu.. Bukti: 12 siswa laki-laki dan 18 siswa perempuan
+Run 2 — solusi: Soal ambigu. Jika ruang sampel adalah himpunan siswa yang mungkin terpilih, n(S) = 12 + 18 = 30. Jika ruang sampel adalah himpunan kemungkinan hasil jenis kelamin, n(S) = 2 (Laki-laki atau Perempuan). Kunci jawaban A mengasumsikan siswa sebagai anggota ruang sampel, namun redaksi soal menanyakan jenis kelamin.
+- Domain kognitif `classify/knowing`: Siswa diminta mengidentifikasi dan menerapkan definisi ruang sampel pada konteks pemilihan individu dalam populasi.. Bukti: Tentukan banyaknya anggota ruang sampel percobaan-percobaan berikut. ⓒ Jenis kelamin dari seorang siswa yang pertama kali ditunjuk
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang apa yang membentuk ruang sampel dalam sebuah percobaan acak.. Bukti: banyaknya anggota ruang sampel
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena hanya memerlukan pemahaman dasar tentang definisi ruang sampel dan operasi penjumlahan sederhana. Namun, terdapat masalah validitas konten pada redaksi soal.. Bukti: 12 siswa laki-laki dan 18 siswa perempuan; banyaknya anggota ruang sampel
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang ruang sampel dan percobaan acak. |
+| expectedPrerequisite | Konsep dasar ruang sampel dan penjumlahan bilangan cacah. |
 | dependentSteps | 1 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 2 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang kelas 9 mencakup ruang sampel. Soal ini menuntut pemahaman konsep ruang sampel, namun redaksi yang buruk membuat siswa harus memilih interpretasi yang paling masuk akal (memilih siswa vs atribut). |
+| gradeRelativeRationale | Materi peluang dasar kelas 9. Kesulitan rendah karena hanya melibatkan identifikasi elemen ruang sampel. |
+
+Run 3 — solusi: Soal ambigu. Jika ruang sampel didefinisikan sebagai himpunan siswa yang mungkin terpilih, n(S) = 12 + 18 = 30. Jika ruang sampel didefinisikan sebagai himpunan hasil jenis kelamin yang mungkin, n(S) = 2 (Laki-laki atau Perempuan). Kunci sumber (30) tidak konsisten dengan frasa 'Jenis kelamin dari seorang siswa'.
+- Domain kognitif `classify/knowing`: Siswa diminta mengidentifikasi dan menghitung anggota ruang sampel berdasarkan deskripsi percobaan. Ini melibatkan pemahaman konsep dasar ruang sampel.. Bukti: Tentukan banyaknya anggota ruang sampel percobaan-percobaan berikut. ⓒ Jenis kelamin dari seorang siswa yang pertama kali ditunjuk
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang definisi ruang sampel sebagai elemen dasar dalam teori peluang.. Bukti: banyaknya anggota ruang sampel
+- Intended difficulty `classify/Easy`: Soal ini secara prosedural sangat sederhana (penjumlahan 12+18), namun secara konseptual bermasalah karena ambiguitas antara ruang sampel 'siswa' dan 'jenis kelamin'. Jika diabaikan ambiguitasnya, ini adalah soal rutin.. Bukti: 12 siswa laki-laki dan 18 siswa perempuan; banyaknya anggota ruang sampel
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang ruang sampel dan penjumlahan bilangan cacah. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi ruang sampel adalah dasar peluang kelas 9. Kesulitan rendah karena hanya melibatkan penjumlahan sederhana, namun soal memiliki cacat logika pada definisi ruang sampel. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"reasoning": 1, "applying": 2} | majority_2_of_3 / adjudicated | reasoning |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
 | Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3561`.
-Konten: `concern`; kunci: `conflict`; masalah: Soal memiliki ambiguitas fatal dalam definisi ruang sampel. Percobaan yang didefinisikan adalah 'Jenis kelamin dari seorang siswa yang ditunjuk'. Secara matematis, ruang sampel dari variabel acak 'jenis kelamin' adalah {Laki-laki, Perempuan}, sehingga n(S) = 2.; Kunci jawaban (30) mengasumsikan percobaan adalah 'memilih satu siswa dari kelas', bukan 'mengamati jenis kelamin siswa yang terpilih'. Redaksi soal mencampuradukkan objek (siswa) dengan atribut (jenis kelamin)..
-- Domain kognitif `reasoning`: Siswa dituntut untuk mengidentifikasi ruang sampel, namun karena redaksi soal yang cacat, siswa harus melakukan analisis konseptual untuk menentukan apakah yang dimaksud adalah ruang sampel individu atau ruang sampel atribut.
-- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman konseptual tentang definisi ruang sampel dalam teori peluang, yang terganggu oleh ketidakjelasan redaksi.
-- Intended difficulty `Medium`: Secara prosedural soal ini sangat sederhana (penjumlahan), namun tingkat kesulitan menjadi menengah karena siswa harus menghadapi ambiguitas konseptual yang signifikan dalam soal.
+Adjudikasi AI: `success`; token `4233`.
+Konten: `concern`; kunci: `conflict`; masalah: Soal memiliki ambiguitas konseptual yang fatal. Frasa 'Jenis kelamin dari seorang siswa' secara matematis merujuk pada variabel acak dengan ruang sampel {Laki-laki, Perempuan}, yang memiliki 2 anggota. Namun, kunci jawaban (30) mengasumsikan ruang sampel adalah himpunan siswa (individu).; Terdapat ketidaksesuaian antara pertanyaan (jenis kelamin) dan metode perhitungan yang diharapkan (jumlah siswa). Soal ini tidak valid secara matematis karena mencampuradukkan ruang sampel kejadian (individu) dengan ruang sampel variabel (kategori)..
+- Domain kognitif `knowing`: Siswa diminta mengidentifikasi ruang sampel dari sebuah percobaan. Meskipun prosedurnya sederhana, terdapat kebingungan konseptual dalam mendefinisikan ruang sampel yang diminta.
+- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman definisi ruang sampel, namun gagal dalam penerapan konseptual yang akurat.
+- Intended difficulty `Easy`: Secara prosedural, soal ini sangat mudah (penjumlahan 12+18). Kesulitan utama bukan pada kompleksitas, melainkan pada cacat logika soal yang membingungkan siswa.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Definisi dasar ruang sampel dan kejadian. |
+| expectedPrerequisite | Konsep dasar ruang sampel dan penjumlahan bilangan cacah. |
 | dependentSteps | 1 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang kelas 9 membahas ruang sampel. Soal ini menuntut pemahaman konsep, namun redaksi yang buruk membuat siswa harus memilih interpretasi yang paling mungkin dimaksudkan oleh pembuat soal. |
+| gradeRelativeRationale | Materi ruang sampel adalah dasar peluang kelas 9. Soal ini secara teknis mudah, namun memiliki masalah validitas konten yang serius. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4759,9 +4737,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `revision_required`.
-Status konten: `concern`. Catatan konten: Soal memiliki ambiguitas fatal dalam definisi ruang sampel. Percobaan yang didefinisikan adalah 'Jenis kelamin dari seorang siswa yang ditunjuk'. Secara matematis, ruang sampel dari variabel acak 'jenis kelamin' adalah {Laki-laki, Perempuan}, sehingga n(S) = 2.; Kunci jawaban (30) mengasumsikan percobaan adalah 'memilih satu siswa dari kelas', bukan 'mengamati jenis kelamin siswa yang terpilih'. Redaksi soal mencampuradukkan objek (siswa) dengan atribut (jenis kelamin)..
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `revision_required`.
+Status konten: `concern`. Catatan konten: Soal memiliki ambiguitas konseptual yang fatal. Frasa 'Jenis kelamin dari seorang siswa' secara matematis merujuk pada variabel acak dengan ruang sampel {Laki-laki, Perempuan}, yang memiliki 2 anggota. Namun, kunci jawaban (30) mengasumsikan ruang sampel adalah himpunan siswa (individu).; Terdapat ketidaksesuaian antara pertanyaan (jenis kelamin) dan metode perhitungan yang diharapkan (jumlah siswa). Soal ini tidak valid secara matematis karena mencampuradukkan ruang sampel kejadian (individu) dengan ruang sampel variabel (kategori)..
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 34. Soal `47721424de374937d3a86de8`
@@ -4776,26 +4754,47 @@ Tentukan peluang tiap-tiap kejadian berikut ini dan nyatakan nilainya ke dalam p
 | D | 1/2 (atau 0,5 atau 50%) |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `1/2, 0,5, 50%`.
-Solusi minimum hasil AI: Total bola = 6 (merah) + 2 (kuning) + 4 (hijau) = 12. Kejadian bukan merah = 2 (kuning) + 4 (hijau) = 6. Peluang = 6/12 = 1/2. Dalam desimal: 0,5. Dalam persentase: 50%.
+Solusi minimum hasil AI: Total bola = 6 (merah) + 2 (kuning) + 4 (hijau) = 12. Bola bukan merah = 2 (kuning) + 4 (hijau) = 6. Peluang = 6/12 = 1/2. Dalam desimal = 0,5. Dalam persentase = 50%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `447c8114860b477fa1edb0f442a7cd11a621528bbc29d63335003df5b76a0749`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1b837f30343f2e8ea23a415d93862f9263dfa2c43c54483427fae0441bf1bafd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2140 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2152 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2127 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2805 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2809 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2789 |
 
-Run 1 — solusi: Total bola = 6 (merah) + 2 (kuning) + 4 (hijau) = 12. Kejadian bukan merah = 2 (kuning) + 4 (hijau) = 6. Peluang = 6/12 = 1/2. Dalam desimal: 0,5. Dalam persentase: 50%.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi ruang sampel total dan kejadian yang diinginkan (komplemen dari kejadian terambil bola merah), kemudian menerapkan rumus peluang dasar.. Bukti: Dalam pengambilan satu bola dari kotak tersebut secara acak, kalian mendapatkan bola yang bukan merah.
-- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prosedur perhitungan peluang dasar dan konversi antar bentuk bilangan (pecahan, desimal, persen).. Bukti: Tentukan peluang tiap-tiap kejadian berikut ini dan nyatakan nilainya ke dalam pecahan biasa, pecahan desimal, dan persentase.
-- Intended difficulty `classify/Easy`: Soal ini melibatkan perhitungan peluang sederhana dengan satu langkah logika (menentukan komplemen) dan operasi aritmatika dasar. Tidak ada jebakan kompleks atau strategi non-rutin.. Bukti: enam bola merah, dua bola kuning, dan empat bola hijau; kalian mendapatkan bola yang bukan merah
+Run 1 — solusi: Total bola = 6 (merah) + 2 (kuning) + 4 (hijau) = 12. Bola bukan merah = 2 (kuning) + 4 (hijau) = 6. Peluang = 6/12 = 1/2. Dalam desimal = 0,5. Dalam persentase = 50%.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi kejadian komplemen (bukan merah) dari ruang sampel yang diberikan dan menerapkan rumus peluang dasar. Ini adalah penerapan konsep peluang pada konteks rutin.. Bukti: Dalam pengambilan satu bola dari kotak tersebut secara acak, kalian mendapatkan bola yang bukan merah.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip dasar peluang (kejadian yang diinginkan dibagi total ruang sampel) dan klasifikasi kejadian (bukan merah).. Bukti: Tentukan peluang tiap-tiap kejadian berikut ini; enam bola merah, dua bola kuning, dan empat bola hijau
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menjumlahkan total bola, mengidentifikasi jumlah bola yang memenuhi syarat (bukan merah), dan menghitung rasio. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan.. Bukti: enam bola merah, dua bola kuning, dan empat bola hijau; kalian mendapatkan bola yang bukan merah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar peluang, penjumlahan bilangan bulat, dan konversi pecahan ke desimal/persen. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi peluang dasar adalah standar kelas 9. Soal ini tidak menuntut integrasi konsep yang rumit atau perencanaan strategi, sehingga dikategorikan mudah. |
+
+Run 2 — solusi: Total bola = 6 (merah) + 2 (kuning) + 4 (hijau) = 12. Bola bukan merah = 2 (kuning) + 4 (hijau) = 6. Peluang = 6/12 = 1/2. Dalam desimal = 0,5. Dalam persentase = 50%.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi kejadian komplemen (bukan merah) dari ruang sampel yang diberikan dan menerapkan rumus peluang dasar. Ini adalah penerapan konsep peluang pada konteks rutin.. Bukti: Dalam pengambilan satu bola dari kotak tersebut secara acak, kalian mendapatkan bola yang bukan merah.
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman tentang prinsip dasar peluang dan kemampuan mengonversi representasi bilangan (pecahan, desimal, persen).. Bukti: Tentukan peluang tiap-tiap kejadian berikut ini dan nyatakan nilainya ke dalam pecahan biasa, pecahan desimal, dan persentase.
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedur penyelesaiannya sangat langsung (menghitung total, menghitung kejadian yang diinginkan, membagi). Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Sebuah kotak berisi enam bola merah, dua bola kuning, dan empat bola hijau.; kalian mendapatkan bola yang bukan merah.
 
 Profil difficulty run ini:
 
@@ -4810,80 +4809,37 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Sesuai untuk kelas 9 karena menguji pemahaman dasar peluang dengan konteks yang familiar dan langkah penyelesaian yang langsung. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi peluang dasar adalah standar kelas 9. Soal ini tidak menuntut integrasi konsep yang rumit, hanya pemahaman definisi peluang dan konversi bentuk bilangan. |
 
-Run 2 — solusi: Total bola = 6 (merah) + 2 (kuning) + 4 (hijau) = 12. Kejadian bukan merah = 2 (kuning) + 4 (hijau) = 6. Peluang = 6/12 = 1/2. Dalam desimal: 0,5. Dalam persentase: 50%.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi ruang sampel total dan kejadian komplemen (bukan merah) untuk menerapkan rumus peluang dasar. Ini adalah penerapan prosedur standar pada situasi rutin.. Bukti: Dalam pengambilan satu bola dari kotak tersebut secara acak, kalian mendapatkan bola yang bukan merah.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang ruang sampel dan kejadian komplemen dalam peluang, serta prosedur perhitungan peluang dasar.. Bukti: peluang tiap-tiap kejadian; enam bola merah, dua bola kuning, dan empat bola hijau
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 9. Siswa hanya perlu menjumlahkan total objek dan mengidentifikasi subset yang diinginkan (bukan merah) lalu menghitung rasionya.. Bukti: enam bola merah, dua bola kuning, dan empat bola hijau; kalian mendapatkan bola yang bukan merah
+Run 3 — solusi: Total bola = 6 (merah) + 2 (kuning) + 4 (hijau) = 12. Bola bukan merah = 2 (kuning) + 4 (hijau) = 6. Peluang = 6/12 = 1/2. Dalam desimal = 0,5. Dalam persentase = 50%.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi ruang sampel (total bola) dan kejadian yang diinginkan (bukan merah), lalu menerapkan rumus peluang dasar. Ini adalah penerapan konsep peluang pada konteks rutin.. Bukti: Dalam pengambilan satu bola dari kotak tersebut secara acak, kalian mendapatkan bola yang bukan merah.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip dasar peluang (kejadian/ruang sampel) dan konversi antar bentuk bilangan (pecahan, desimal, persen).. Bukti: Tentukan peluang tiap-tiap kejadian berikut ini
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu menjumlahkan total bola dan menghitung jumlah bola yang memenuhi kriteria 'bukan merah'. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Sebuah kotak berisi enam bola merah, dua bola kuning, dan empat bola hijau.; kalian mendapatkan bola yang bukan merah.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang (kejadian/ruang sampel) dan operasi penjumlahan pecahan/bilangan bulat. |
+| expectedPrerequisite | Penjumlahan dasar dan konsep peluang sederhana (P = n(A)/n(S)). |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
-| representationTransfer | False |
+| representationTransfer | True |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang adalah kurikulum standar SMP kelas 9. Soal ini menggunakan konteks sederhana yang familiar dan tidak memerlukan strategi non-rutin. |
-
-Run 3 — solusi: Total bola = 6 (merah) + 2 (kuning) + 4 (hijau) = 12. Kejadian bukan merah = 2 (kuning) + 4 (hijau) = 6. Peluang = 6/12 = 1/2. Dalam desimal = 0,5. Dalam persentase = 50%.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi ruang sampel total dan kejadian komplemen (bukan merah), kemudian menerapkan rumus peluang dasar. Ini adalah penerapan prosedur standar pada situasi rutin.. Bukti: Dalam pengambilan satu bola dari kotak tersebut secara acak, kalian mendapatkan bola yang bukan merah.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep peluang dasar dan hubungan antara kejadian komplemen dengan ruang sampel.. Bukti: Tentukan peluang tiap-tiap kejadian berikut ini
-- Intended difficulty `classify/Easy`: Soal ini melibatkan perhitungan peluang dasar dengan satu langkah logis (menjumlahkan kategori yang bukan merah) dan penyederhanaan pecahan. Prosedur ini sangat familiar bagi siswa kelas 9.. Bukti: enam bola merah, dua bola kuning, dan empat bola hijau; kalian mendapatkan bola yang bukan merah
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Penjumlahan dasar dan konsep peluang sederhana (kejadian/ruang sampel). |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Materi peluang dasar adalah standar kurikulum SMP kelas 9. Soal ini tidak memerlukan strategi nonrutin atau integrasi konsep yang kompleks. |
+| gradeRelativeRationale | Siswa kelas 9 sudah sangat familiar dengan konsep peluang dasar. Soal ini tidak memerlukan integrasi konsep yang rumit atau penalaran non-rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3698`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa menerapkan rumus peluang dasar (kejadian/ruang sampel) pada situasi rutin yang melibatkan identifikasi kejadian komplemen.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang ruang sampel dan kejadian komplemen, serta prosedur perhitungan peluang dasar.
-- Intended difficulty `Easy`: Soal ini bersifat rutin bagi siswa kelas 9. Siswa hanya perlu menjumlahkan total objek dan mengidentifikasi subset yang diinginkan (bukan merah) lalu menghitung rasionya.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar peluang (kejadian/ruang sampel) dan operasi penjumlahan pecahan/bilangan bulat. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Materi peluang adalah kurikulum standar SMP kelas 9. Soal ini menggunakan konteks sederhana yang familiar dan tidak memerlukan strategi non-rutin. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4932,26 +4888,26 @@ Sebuah program komputer digunakan untuk menampilkan 12 bilangan 0–3 secara aca
 | D | 1/12 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Data: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3. Total data (n) = 12. Bilangan 0 muncul sebanyak 2 kali. Frekuensi relatif = (banyak kejadian) / (total percobaan) = 2/12 = 1/6.
+Solusi minimum hasil AI: Data: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3. Total data (n) = 12. Frekuensi munculnya angka 0 adalah 2 kali. Frekuensi relatif = (banyak kejadian) / (total percobaan) = 2/12 = 1/6.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `59e45b7ed061d94a489406902dd5cbdd20f8f7380974294e27116ba16b329a98`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `17eb6d02ce63caa7bfb84ea255b0da2d9c1cc9f820324e6580f2fe029cdadfd6`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2085 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2076 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2098 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2774 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2726 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2746 |
 
-Run 1 — solusi: Data: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3. Total data (n) = 12. Bilangan 0 muncul sebanyak 2 kali. Frekuensi relatif = (banyak kejadian) / (total percobaan) = 2/12 = 1/6.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi frekuensi relatif (kejadian/total) pada data yang diberikan secara langsung. Ini adalah proses penerapan prosedur standar.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep frekuensi relatif dan prosedur penghitungan statistik dasar.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, hanya memerlukan penghitungan frekuensi sederhana dan pembagian pecahan dasar tanpa jebakan atau strategi kompleks.. Bukti: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3; Tentukan frekuensi relatif munculnya bilangan 0.
+Run 1 — solusi: Data: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3. Total data (n) = 12. Frekuensi munculnya angka 0 adalah 2. Frekuensi relatif = (frekuensi kejadian) / (total percobaan) = 2/12 = 1/6.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi frekuensi relatif (frekuensi kejadian dibagi total percobaan) pada data yang diberikan secara langsung.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.; Hasilnya adalah sebagai berikut. 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konsep frekuensi relatif dan prosedur penghitungannya dari data empiris.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menghitung kemunculan angka 0 dan membaginya dengan total data. Tidak ada kendala yang berinteraksi atau kebutuhan strategi kompleks.. Bukti: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3; Tentukan frekuensi relatif munculnya bilangan 0.
 
 Profil difficulty run ini:
 
@@ -4967,12 +4923,33 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 sebagai latihan dasar statistik/peluang empiris. |
+| gradeRelativeRationale | Materi peluang empiris adalah standar kelas 9. Soal ini merupakan penerapan langsung definisi tanpa modifikasi atau integrasi konsep yang menantang. |
 
-Run 2 — solusi: Data: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3. Total data (n) = 12. Frekuensi munculnya angka 0 adalah 2 (pada posisi ke-4 dan ke-8). Frekuensi relatif = frekuensi kejadian / total percobaan = 2/12 = 1/6.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi frekuensi relatif (frekuensi kejadian dibagi total percobaan) pada data yang diberikan secara langsung. Ini adalah proses rutin.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang konsep frekuensi relatif dan prosedur penghitungannya dari sekumpulan data.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, hanya memerlukan penghitungan frekuensi sederhana dan pembagian dasar. Tidak ada strategi kompleks atau kendala yang saling terkait.. Bukti: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3; Tentukan frekuensi relatif munculnya bilangan 0.
+Run 2 — solusi: Data: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3. Total data (n) = 12. Frekuensi munculnya angka 0 adalah 2 kali. Frekuensi relatif = (banyak kejadian) / (total percobaan) = 2/12 = 1/6.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi frekuensi relatif (kejadian/total percobaan) pada data yang diberikan secara langsung. Ini adalah prosedur standar yang familiar.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang konsep frekuensi relatif dan kemampuan menerapkan algoritma penghitungan frekuensi pada data empiris.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menghitung kemunculan angka 0 dalam daftar data dan membaginya dengan total data. Tidak ada kendala yang berinteraksi atau kebutuhan perencanaan strategi yang kompleks.. Bukti: Sebuah program komputer digunakan untuk menampilkan 12 bilangan 0–3 secara acak.; Tentukan frekuensi relatif munculnya bilangan 0.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang peluang empiris dan konsep frekuensi relatif. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan penerapan langsung definisi frekuensi relatif yang sesuai untuk kelas 9, dengan beban kognitif yang rendah. |
+
+Run 3 — solusi: Data: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3. Total data (n) = 12. Frekuensi munculnya angka 0 adalah 2 kali. Frekuensi relatif = (banyak kejadian) / (total percobaan) = 2/12 = 1/6.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi frekuensi relatif (kejadian/total percobaan) pada data yang diberikan secara langsung. Ini adalah penerapan prosedur standar.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma atau metode perhitungan frekuensi relatif dari data empiris.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menghitung frekuensi kemunculan angka 0 dalam daftar data yang diberikan dan membaginya dengan total data. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Hasilnya adalah sebagai berikut. 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3; Tentukan frekuensi relatif munculnya bilangan 0.
 
 Profil difficulty run ini:
 
@@ -4988,18 +4965,27 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 sebagai penerapan langsung konsep peluang empiris dengan data kecil. |
+| gradeRelativeRationale | Soal ini sangat mendasar untuk kelas 9, hanya memerlukan penghitungan frekuensi sederhana dan pembagian dasar. |
 
-Run 3 — solusi: Data: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3. Total data (n) = 12. Frekuensi munculnya angka 0 adalah 2 (pada posisi ke-4 dan ke-8). Frekuensi relatif = frekuensi kejadian / total percobaan = 2/12 = 1/6.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi frekuensi relatif (frekuensi kejadian dibagi total percobaan) pada data yang diberikan. Ini adalah proses rutin dalam statistika dasar.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep frekuensi relatif dan prosedur perhitungannya.. Bukti: Tentukan frekuensi relatif munculnya bilangan 0.
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, hanya memerlukan penghitungan frekuensi sederhana dan pembagian dasar. Tidak ada kendala kompleks atau strategi non-rutin.. Bukti: 1, 3, 3, 0, 1, 3, 3, 0, 3, 2, 1, 3; Tentukan frekuensi relatif munculnya bilangan 0.
+### 3. Voting awal dan adjudikasi
 
-Profil difficulty run ini:
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4316`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa diminta menerapkan definisi frekuensi relatif (frekuensi kejadian dibagi total percobaan) pada data yang diberikan secara langsung. Ini adalah penerapan prosedur standar.
+- Dimensi pengetahuan `procedural`: Soal menguji pemahaman tentang algoritma atau metode perhitungan frekuensi relatif dari data empiris.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menghitung kemunculan angka 0 dan membaginya dengan total data. Tidak ada kendala yang berinteraksi atau kebutuhan strategi kompleks.
+
+Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang data, frekuensi, dan pecahan. |
+| expectedPrerequisite | Pemahaman dasar tentang frekuensi relatif dan kemampuan menghitung data. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5009,15 +4995,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 sebagai pengenalan atau penguatan konsep peluang empiris dasar. |
-
-### 3. Voting awal dan adjudikasi
-
-| Head | Suara awal | Pola / status akhir | Label akhir advisory |
-|---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| gradeRelativeRationale | Materi peluang empiris adalah standar kelas 9. Soal ini merupakan penerapan langsung definisi tanpa modifikasi atau integrasi konsep yang menantang. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5067,30 +5045,30 @@ Seperangkat kartu berisi 5 kartu yang masing-masing bergambar lingkaran atau bin
 | C | 1 kartu lingkaran dan 4 kartu bintang |
 | D | 3 kartu lingkaran dan 2 kartu bintang |
 
-![Gambar sumber soal 36](<../images/kelas9_crop-s0012-gambar-muncul.png>)
+![Gambar sumber soal 36](<../../../images/kelas9_crop-s0012-gambar-muncul.png>)
 
 
-Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Frekuensi relatif Lingkaran = 93/500 = 0,186. Estimasi jumlah kartu Lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1). Frekuensi relatif Bintang = 407/500 = 0,814. Estimasi jumlah kartu Bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, terdapat 1 kartu Lingkaran dan 4 kartu Bintang.
-Gambar sumber: images/kelas9_crop-s0012-gambar-muncul.png. Transkripsi visual: Diagram batang menunjukkan frekuensi munculnya dua jenis kartu dalam 500 percobaan. Sumbu horizontal (Gambar yang Muncul) memiliki dua kategori: 'Lingkaran' dan 'Bintang'. Sumbu vertikal (Frekuensi) memiliki skala 0 hingga 450. Batang 'Lingkaran' memiliki tinggi 93. Batang 'Bintang' memiliki tinggi 407.
+Kunci sumber: `A`; status AI: `conflict`; jawaban diverifikasi AI: `1 kartu lingkaran dan 4 kartu bintang`.
+Solusi minimum hasil AI: Frekuensi relatif Lingkaran = 93/500 = 0,186. Frekuensi relatif Bintang = 407/500 = 0,814. Estimasi jumlah kartu (total 5): Lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1); Bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, terdapat 1 kartu lingkaran dan 4 kartu bintang.
+Gambar sumber: images/kelas9_crop-s0012-gambar-muncul.png. Transkripsi visual: Grafik batang menunjukkan dua kategori pada sumbu horizontal: 'Lingkaran' dan 'Bintang'. Sumbu vertikal 'Frekuensi' memiliki skala 0 hingga 450. Batang 'Lingkaran' memiliki tinggi 93. Batang 'Bintang' memiliki tinggi 407. Total percobaan adalah 500.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `aefcab1f5fec4b85ee56cf4ca9132e5b968aaf64b4b0206349262fb5b193faa7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f49917af0dbbda683720d630082e45cd570a8866b856f04a9a12c945c54c3dec`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | concern / conflict | applying | conceptual | Medium | 3446 |
-| 2 | success | concern / conflict | applying | procedural | Medium | 3644 |
-| 3 | success | valid / verified | applying | procedural | Medium | 3427 |
+| 1 | success | concern / conflict | applying | procedural | Medium | 4216 |
+| 2 | success | concern / conflict | applying | procedural | Medium | 4192 |
+| 3 | success | concern / conflict | applying | procedural | Medium | 4231 |
 
-Run 1 — solusi: Berdasarkan data grafik: frekuensi relatif Lingkaran = 93/500 = 0,186; frekuensi relatif Bintang = 407/500 = 0,814. Jika total kartu = 5, maka jumlah kartu Lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1) dan jumlah kartu Bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, seharusnya 1 kartu Lingkaran dan 4 kartu Bintang.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep peluang empiris (frekuensi relatif) untuk mengestimasi komposisi populasi (jumlah kartu) dari data sampel, yang merupakan proses applying.. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman tentang hubungan antara frekuensi relatif dalam sampel dengan proporsi dalam populasi (konsep peluang empiris).. Bukti: Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20.
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman konsep dasar peluang empiris dan operasi aritmatika sederhana. Prosedurnya rutin namun memerlukan interpretasi data grafik.. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.
+Run 1 — solusi: Berdasarkan data grafik: Lingkaran muncul 93 kali, Bintang 407 kali dari 500 percobaan. Frekuensi relatif Lingkaran = 93/500 = 0,186. Frekuensi relatif Bintang = 407/500 = 0,814. Estimasi jumlah kartu: Lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1), Bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, 1 kartu lingkaran dan 4 kartu bintang.
+- Domain kognitif `classify/applying`: Siswa diminta menghubungkan data frekuensi empiris (hasil percobaan) dengan estimasi komposisi ruang sampel (jumlah kartu). Ini memerlukan penerapan konsep peluang empiris untuk mengestimasi probabilitas teoretis, yang kemudian dikonversi menjadi jumlah objek diskrit.. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.; Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur perhitungan frekuensi relatif dan mengaitkannya dengan prinsip dasar peluang untuk mengestimasi komposisi populasi (jumlah kartu).. Bukti: frekuensi relatif lingkaran = 407/500 = 0,814, dikalikan 5 kartu = 4,07 ≈ 4
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena menuntut siswa melakukan dua tahap: menghitung frekuensi relatif dari data empiris dan mengonversinya menjadi estimasi jumlah kartu dalam populasi kecil (5 kartu). Meskipun prosedurnya rutin, siswa harus memahami hubungan antara peluang empiris dan komposisi populasi.. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.; Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak
 
 Profil difficulty run ini:
 
@@ -5106,19 +5084,19 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 karena melibatkan interpretasi data statistik sederhana dan estimasi proporsi. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menginterpretasi data statistik sederhana dan melakukan estimasi berdasarkan proporsi, yang merupakan bagian dari kurikulum peluang. |
 
-Run 2 — solusi: Berdasarkan data visual: Frekuensi relatif Lingkaran = 93/500 = 0,186. Estimasi jumlah kartu lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1). Frekuensi relatif Bintang = 407/500 = 0,814. Estimasi jumlah kartu bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, seharusnya 1 kartu lingkaran dan 4 kartu bintang.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep peluang empiris untuk mengestimasi komposisi populasi (kartu) berdasarkan data sampel (frekuensi hasil percobaan). Ini melibatkan pemilihan prosedur perhitungan frekuensi relatif dan interpretasi data.. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.; Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20.
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur perhitungan frekuensi relatif dan mengaitkannya dengan konsep proporsi dalam populasi kecil (5 kartu).. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang; frekuensi relatif lingkaran = 407/500 = 0,814, dikalikan 5 kartu = 4,07
-- Intended difficulty `classify/Medium`: Soal ini memerlukan langkah rutin (menghitung frekuensi relatif) dan interpretasi data. Namun, karena adanya konflik data visual dan kunci, tingkat kesulitan teknisnya terganggu.. Bukti: 500 percobaan pengambilan satu kartu secara acak; Tentukan banyaknya kartu bergambar lingkaran dan bintang
+Run 2 — solusi: Berdasarkan data grafik (Lingkaran=93, Bintang=407), frekuensi relatif Lingkaran adalah 93/500 = 0,186 dan Bintang adalah 407/500 = 0,814. Jika total kartu adalah 5, maka jumlah kartu Lingkaran = 0,186 * 5 = 0,93 (dibulatkan menjadi 1) dan Bintang = 0,814 * 5 = 4,07 (dibulatkan menjadi 4). Jadi, seharusnya 1 lingkaran dan 4 bintang.
+- Domain kognitif `classify/applying`: Siswa diminta menghubungkan data frekuensi empiris (hasil percobaan) dengan estimasi komposisi populasi (jumlah kartu). Ini memerlukan penerapan konsep peluang empiris untuk mengestimasi proporsi, yang merupakan penerapan prosedur pada konteks rutin.. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.; Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20.
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penggunaan algoritme frekuensi relatif dan teknik pembulatan untuk mengestimasi komposisi objek, yang merupakan pengetahuan prosedural.. Bukti: frekuensi relatif lingkaran = 407/500 = 0,814, dikalikan 5 kartu = 4,07 ≈ 4
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena menuntut integrasi antara data empiris (frekuensi) dengan konsep proporsi untuk mengestimasi populasi. Siswa harus memahami bahwa frekuensi relatif mendekati peluang teoretis. Meskipun prosedurnya rutin, terdapat kebutuhan untuk menginterpretasikan data grafik dan melakukan konversi ke jumlah kartu.. Bukti: Seperangkat kartu berisi 5 kartu; 500 percobaan; Tentukan banyaknya kartu
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang frekuensi relatif dan pembulatan bilangan. |
-| dependentSteps | 2 |
+| expectedPrerequisite | Pemahaman dasar tentang frekuensi relatif dan perbandingan/proporsi. |
+| dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | True |
@@ -5127,19 +5105,19 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 dalam topik peluang empiris, namun kualitas soal buruk karena ketidaksesuaian data visual dan kunci. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghubungkan data frekuensi empiris dengan estimasi proporsi populasi. Soal ini menguji kemampuan tersebut dengan langkah-langkah yang terstruktur. |
 
-Run 3 — solusi: Frekuensi relatif lingkaran = 93/500 = 0,186. Jumlah kartu lingkaran = 0,186 * 5 = 0,93, dibulatkan menjadi 1. Frekuensi relatif bintang = 407/500 = 0,814. Jumlah kartu bintang = 0,814 * 5 = 4,07, dibulatkan menjadi 4. Jadi, terdapat 1 kartu lingkaran dan 4 kartu bintang.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep peluang empiris (frekuensi relatif) untuk mengestimasi komposisi populasi (jumlah kartu) dari data sampel yang diberikan. Ini melibatkan pemilihan prosedur perhitungan yang tepat.. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.; Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20.
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritma perhitungan frekuensi relatif dan mengalikannya dengan total populasi untuk mendapatkan estimasi jumlah objek, yang merupakan prosedur matematis standar.. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang; frekuensi relatif lingkaran = 407/500 = 0,814, dikalikan 5 kartu
-- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman tentang hubungan antara frekuensi relatif dan komposisi populasi. Meskipun perhitungannya sederhana, siswa harus memahami logika estimasi dari data empiris.. Bukti: Seperangkat kartu berisi 5 kartu; 500 percobaan; 93; 407
+Run 3 — solusi: Data grafik: Lingkaran=93, Bintang=407. Total=500. Peluang empiris Lingkaran=93/500=0,186; Bintang=407/500=0,814. Estimasi jumlah kartu (total 5): Lingkaran=0,186*5=0,93 (dibulatkan 1); Bintang=0,814*5=4,07 (dibulatkan 4). Jawaban seharusnya 1 Lingkaran dan 4 Bintang. Kunci sumber salah karena tertukar.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep peluang empiris untuk mengestimasi komposisi populasi (jumlah kartu) dari data sampel yang diberikan, yang merupakan penerapan konsep pada konteks rutin.. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur perhitungan frekuensi relatif dan mengalikannya dengan total populasi untuk mendapatkan estimasi, yang merupakan pengetahuan prosedural.. Bukti: Setelah dilakukan 500 percobaan pengambilan satu kartu secara acak, diperoleh hasil pada Gambar 4.20.
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena menuntut siswa untuk menghubungkan konsep peluang empiris dengan estimasi jumlah objek dalam populasi. Meskipun prosedurnya rutin, siswa harus melakukan interpretasi data grafik dan pembulatan yang tepat untuk mendapatkan jawaban logis (jumlah kartu harus bilangan bulat).. Bukti: Tentukan banyaknya kartu bergambar lingkaran dan bintang dalam seperangkat kartu tersebut.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang empiris dan frekuensi relatif. |
-| dependentSteps | 2 |
+| expectedPrerequisite | Pemahaman dasar tentang peluang empiris (frekuensi relatif) dan operasi aritmatika dasar (perkalian dan pembulatan). |
+| dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | True |
@@ -5148,28 +5126,28 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 karena melibatkan interpretasi data statistik sederhana untuk menarik kesimpulan tentang populasi. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menginterpretasi data statistik sederhana dan melakukan estimasi proporsional. Kesulitan terletak pada ketelitian membaca grafik dan logika pembulatan hasil estimasi ke bilangan bulat. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | procedural |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
 | Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
 
-Adjudikasi AI: `success`; token `5110`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan konsep peluang empiris (frekuensi relatif) untuk mengestimasi komposisi populasi (jumlah kartu) dari data sampel yang diberikan. Ini adalah proses applying karena menggunakan prosedur yang sudah dipelajari untuk situasi baru.
-- Dimensi pengetahuan `procedural`: Siswa menggunakan algoritma perhitungan frekuensi relatif dan mengalikannya dengan total populasi untuk mendapatkan estimasi jumlah objek, yang merupakan prosedur matematis standar.
-- Intended difficulty `Medium`: Soal ini memerlukan pemahaman tentang hubungan antara frekuensi relatif dan komposisi populasi. Meskipun perhitungannya sederhana, siswa harus memahami logika estimasi dari data empiris.
+Adjudikasi AI: `success`; token `6179`.
+Konten: `concern`; kunci: `conflict`; masalah: Kunci jawaban pada sumber (A: 4 lingkaran, 1 bintang) bertentangan dengan data grafik yang menunjukkan frekuensi bintang jauh lebih tinggi (407) daripada lingkaran (93).; Berdasarkan perhitungan frekuensi relatif (Lingkaran: 93/500 = 0,186; Bintang: 407/500 = 0,814) dan dikalikan dengan total 5 kartu, estimasi yang benar adalah 1 lingkaran dan 4 bintang.; Pilihan C (1 lingkaran, 4 bintang) secara matematis benar berdasarkan data, namun kunci sumber menyatakan A, yang menunjukkan kesalahan fatal pada kunci jawaban atau pelabelan grafik..
+- Domain kognitif `applying`: Siswa harus menerapkan konsep peluang empiris (frekuensi relatif) untuk mengestimasi komposisi populasi (jumlah kartu) dari data sampel. Ini adalah penerapan prosedur rutin pada konteks data statistik.
+- Dimensi pengetahuan `procedural`: Siswa menggunakan algoritme perhitungan frekuensi relatif dan teknik pembulatan untuk mengestimasi komposisi objek, yang merupakan pengetahuan prosedural.
+- Intended difficulty `Medium`: Soal ini tergolong Medium karena menuntut integrasi antara data empiris dengan konsep proporsi untuk mengestimasi populasi. Siswa harus memahami hubungan antara frekuensi relatif dan peluang teoretis, serta melakukan pembulatan yang logis untuk mendapatkan jumlah kartu yang bulat.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang empiris, frekuensi relatif, dan pembulatan bilangan. |
-| dependentSteps | 2 |
+| expectedPrerequisite | Pemahaman dasar tentang frekuensi relatif, perbandingan/proporsi, dan pembulatan bilangan. |
+| dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | True |
@@ -5178,7 +5156,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 karena melibatkan interpretasi data statistik sederhana untuk menarik kesimpulan tentang populasi. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menginterpretasi data statistik sederhana dan melakukan estimasi proporsional. Kesulitan terletak pada ketelitian membaca grafik dan logika pembulatan hasil estimasi ke bilangan bulat. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5205,15 +5183,15 @@ Pilihan: A. 4 kartu lingkaran dan 1 kartu bintang
 B. 5 kartu lingkaran dan 0 kartu bintang
 C. 1 kartu lingkaran dan 4 kartu bintang
 D. 3 kartu lingkaran dan 2 kartu bintang
-Transkripsi visual: Diagram batang menunjukkan frekuensi munculnya dua jenis kartu dalam 500 percobaan. Sumbu horizontal (Gambar yang Muncul) memiliki dua kategori: 'Lingkaran' dan 'Bintang'. Sumbu vertikal (Frekuensi) memiliki skala 0 hingga 450. Batang 'Lingkaran' memiliki tinggi 93. Batang 'Bintang' memiliki tinggi 407.
+Transkripsi visual: Grafik batang menunjukkan dua kategori pada sumbu horizontal: 'Lingkaran' dan 'Bintang'. Sumbu vertikal 'Frekuensi' memiliki skala 0 hingga 450. Batang 'Lingkaran' memiliki tinggi 93. Batang 'Bintang' memiliki tinggi 407. Total percobaan adalah 500.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
-Status konten: `valid`. Catatan konten: .
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `revision_required`.
+Status konten: `concern`. Catatan konten: Kunci jawaban pada sumber (A: 4 lingkaran, 1 bintang) bertentangan dengan data grafik yang menunjukkan frekuensi bintang jauh lebih tinggi (407) daripada lingkaran (93).; Berdasarkan perhitungan frekuensi relatif (Lingkaran: 93/500 = 0,186; Bintang: 407/500 = 0,814) dan dikalikan dengan total 5 kartu, estimasi yang benar adalah 1 lingkaran dan 4 bintang.; Pilihan C (1 lingkaran, 4 bintang) secara matematis benar berdasarkan data, namun kunci sumber menyatakan A, yang menunjukkan kesalahan fatal pada kunci jawaban atau pelabelan grafik..
 Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
@@ -5228,85 +5206,85 @@ Tentukan frekuensi harapan setiap kejadian berikut jika dilakukan 100 kali perco
 | C | 13 |
 | D | 75 |
 
-Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Total kartu remi = 52. Jumlah kartu hati = 13. Jumlah kartu bukan hati = 52 - 13 = 39. Peluang terambil bukan kartu hati P(A') = 39/52 = 3/4. Frekuensi harapan = P(A') x n = 3/4 x 100 = 75.
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `75`.
+Solusi minimum hasil AI: Jumlah kartu remi = 52. Jumlah kartu hati = 13. Jumlah kartu bukan hati = 52 - 13 = 39. Peluang bukan hati P(A) = 39/52 = 3/4. Frekuensi harapan = P(A) * n = 3/4 * 100 = 75.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3b0a8ca17f1b7400778904af0b6712532fb3b978f04442409bc2aa8abb851d2c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `daa094333664231ddc3039d281ebd8ef6e81027c48cbfadc7522cefd7c99165b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2057 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2099 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2068 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2734 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2793 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2712 |
 
-Run 1 — solusi: Total kartu remi = 52. Jumlah kartu hati = 13. Jumlah kartu bukan hati = 52 - 13 = 39. Peluang terambil bukan kartu hati P(A') = 39/52 = 3/4. Frekuensi harapan = P(A') x n = 3/4 x 100 = 75.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus frekuensi harapan dan memahami konsep peluang komplemen dalam situasi rutin (pengambilan kartu).. Bukti: Tentukan frekuensi harapan setiap kejadian berikut jika dilakukan 100 kali percobaan.; Dalam pengambilan satu kartu secara acak dari seperangkat kartu remi, tidak didapatkan kartu hati.
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur algoritma untuk menghitung peluang dan frekuensi harapan.. Bukti: frekuensi harapan; pengambilan satu kartu secara acak dari seperangkat kartu remi
-- Intended difficulty `classify/Easy`: Soal ini melibatkan prosedur standar yang familiar bagi siswa kelas 9, yaitu menghitung peluang komplemen dan mengalikannya dengan jumlah percobaan.. Bukti: 100 kali percobaan; tidak didapatkan kartu hati
+Run 1 — solusi: Jumlah kartu remi = 52. Jumlah kartu hati = 13. Jumlah kartu bukan hati = 52 - 13 = 39. Peluang bukan hati P(A) = 39/52 = 3/4. Frekuensi harapan = P(A) * n = 3/4 * 100 = 75.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus frekuensi harapan Fh = P(A) x n pada konteks peluang kejadian komplemen (bukan kartu hati). Ini adalah penerapan prosedur rutin pada konteks yang sudah dikenal.. Bukti: Tentukan frekuensi harapan setiap kejadian berikut jika dilakukan 100 kali percobaan; Dalam pengambilan satu kartu secara acak dari seperangkat kartu remi, tidak didapatkan kartu hati
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang konsep peluang teoritis dan frekuensi harapan, serta prosedur perhitungan untuk kejadian komplemen.. Bukti: frekuensi harapan; pengambilan satu kartu secara acak dari seperangkat kartu remi
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedurnya sangat langsung dan familiar bagi siswa kelas 9. Siswa hanya perlu mengidentifikasi jumlah kartu, menentukan peluang komplemen, dan mengalikan dengan jumlah percobaan.. Bukti: 100 kali percobaan; tidak didapatkan kartu hati
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar peluang teoretik dan konsep komplemen kejadian. |
+| expectedPrerequisite | Konsep dasar peluang, peluang kejadian komplemen, dan frekuensi harapan. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi frekuensi harapan adalah standar kurikulum kelas 9 yang bersifat prosedural langsung. |
+| gradeRelativeRationale | Materi frekuensi harapan dan peluang kartu remi adalah standar kurikulum kelas 9. Langkah penyelesaian bersifat linear dan tidak memerlukan integrasi konsep yang kompleks. |
 
-Run 2 — solusi: Satu set kartu remi memiliki 52 kartu. Jumlah kartu hati adalah 13, sehingga jumlah kartu bukan hati adalah 52 - 13 = 39. Peluang terambil bukan kartu hati P(A') = 39/52 = 3/4. Frekuensi harapan untuk 100 percobaan adalah 3/4 * 100 = 75.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus frekuensi harapan Fh = P(A) x n. Ini melibatkan pemilihan prosedur yang tepat (menentukan peluang komplemen) dan melakukan perhitungan rutin.. Bukti: Tentukan frekuensi harapan; pengambilan satu kartu secara acak dari seperangkat kartu remi, tidak didapatkan kartu hati
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep peluang teoritis dan frekuensi harapan, yang merupakan pengetahuan prosedural untuk menghitung nilai harapan.. Bukti: frekuensi harapan; pengambilan satu kartu secara acak
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 9. Siswa hanya perlu memahami konsep peluang komplemen (bukan hati) dan mengalikan dengan jumlah percobaan.. Bukti: 100 kali percobaan; tidak didapatkan kartu hati
+Run 2 — solusi: Jumlah kartu remi = 52. Kartu hati = 13. Kartu bukan hati = 52 - 13 = 39. Peluang bukan hati P(A) = 39/52 = 3/4. Frekuensi harapan = P(A) * n = 3/4 * 100 = 75.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep peluang teoritis dan frekuensi harapan pada konteks yang rutin (kartu remi). Langkah-langkahnya jelas: menentukan peluang komplemen, lalu mengalikan dengan jumlah percobaan.. Bukti: Tentukan frekuensi harapan setiap kejadian berikut jika dilakukan 100 kali percobaan.; Dalam pengambilan satu kartu secara acak dari seperangkat kartu remi, tidak didapatkan kartu hati.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung frekuensi harapan dan konsep dasar peluang kejadian komplemen dalam set kartu remi.. Bukti: frekuensi harapan; pengambilan satu kartu secara acak dari seperangkat kartu remi
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena menggunakan prosedur standar yang familiar bagi siswa kelas 9. Jalur penyelesaiannya linear: menghitung peluang kejadian komplemen (bukan hati) lalu mengalikan dengan total percobaan. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: Tentukan frekuensi harapan setiap kejadian berikut jika dilakukan 100 kali percobaan.; Dalam pengambilan satu kartu secara acak dari seperangkat kartu remi, tidak didapatkan kartu hati.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep peluang dasar dan peluang komplemen. |
-| dependentSteps | 2 |
+| expectedPrerequisite | Konsep dasar peluang, peluang kejadian komplemen, dan operasi perkalian pecahan. |
+| dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi frekuensi harapan adalah standar kurikulum kelas 9. Soal ini menggunakan konteks kartu remi yang umum dan prosedur standar tanpa jebakan kompleks. |
+| gradeRelativeRationale | Soal ini merupakan aplikasi langsung dari rumus frekuensi harapan yang diajarkan di kelas 9. Tidak ada kompleksitas tambahan dalam pemilihan strategi atau integrasi konsep. |
 
-Run 3 — solusi: Satu set kartu remi memiliki 52 kartu. Jumlah kartu hati adalah 13, sehingga jumlah kartu bukan hati adalah 52 - 13 = 39. Peluang terambil bukan kartu hati adalah P(bukan hati) = 39/52 = 3/4. Frekuensi harapan untuk 100 percobaan adalah 3/4 * 100 = 75.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus frekuensi harapan Fh = P(A) x n. Ini adalah penerapan prosedur standar pada situasi rutin.. Bukti: Tentukan frekuensi harapan setiap kejadian berikut jika dilakukan 100 kali percobaan; Dalam pengambilan satu kartu secara acak dari seperangkat kartu remi, tidak didapatkan kartu hati
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritma/prosedur perhitungan frekuensi harapan dan pemahaman konsep peluang komplemen.. Bukti: frekuensi harapan; pengambilan satu kartu secara acak dari seperangkat kartu remi
-- Intended difficulty `classify/Easy`: Soal ini melibatkan prosedur rutin (menghitung peluang komplemen dan mengalikannya dengan jumlah percobaan). Tidak ada strategi nonrutin atau kendala kompleks.. Bukti: 100 kali percobaan; tidak didapatkan kartu hati
+Run 3 — solusi: Jumlah kartu remi = 52. Jumlah kartu hati = 13. Jumlah kartu bukan hati = 52 - 13 = 39. Peluang bukan hati P(A) = 39/52 = 3/4. Frekuensi harapan = P(A) * n = 3/4 * 100 = 75.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep peluang komplemen dan frekuensi harapan pada konteks yang sudah familiar (kartu remi). Ini adalah penerapan prosedur standar.. Bukti: Tentukan frekuensi harapan setiap kejadian berikut jika dilakukan 100 kali percobaan.; Dalam pengambilan satu kartu secara acak dari seperangkat kartu remi, tidak didapatkan kartu hati.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma frekuensi harapan dan pengetahuan faktual mengenai komposisi kartu remi.. Bukti: frekuensi harapan; pengambilan satu kartu secara acak dari seperangkat kartu remi
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena prosedurnya langsung (menghitung peluang komplemen lalu dikalikan jumlah percobaan). Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: 100 kali percobaan; tidak didapatkan kartu hati
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar peluang teoretis dan komplemen kejadian. |
+| expectedPrerequisite | Konsep dasar peluang, peluang komplemen, dan frekuensi harapan. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 karena frekuensi harapan adalah materi standar yang menggunakan operasi aritmatika dasar. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan sudah familiar dengan perhitungan frekuensi harapan dan komposisi kartu remi sebagai contoh standar ruang sampel. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -5362,33 +5340,33 @@ Di sebuah kota, persentase penduduknya yang masuk Generasi Z adalah 28%. Jika ka
 | C | 75 |
 | D | 21 |
 
-Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `21`.
 Solusi minimum hasil AI: Frekuensi harapan (Fh) dihitung dengan rumus Fh = P(A) x n. Diketahui P(A) = 28% = 0,28 dan n = 75. Maka, Fh = 0,28 x 75 = 21.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1b51da04bb5b829e3961692e142190e439e003e50bfba251ae089313921ccbd2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a50a488b90d89bfcf0ffedefb2655315716b2001f7febb635cd88da9ba16afed`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 1998 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2013 |
-| 3 | success | valid / verified | applying | procedural | Easy | 1986 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2657 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2656 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2705 |
 
 Run 1 — solusi: Frekuensi harapan (Fh) dihitung dengan rumus Fh = P(A) x n. Diketahui P(A) = 28% = 0,28 dan n = 75. Maka, Fh = 0,28 x 75 = 21.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus frekuensi harapan secara langsung dengan data yang sudah tersedia. Ini adalah prosedur standar dalam materi peluang.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak; tentukan frekuensi harapan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau prosedur perhitungan frekuensi harapan.. Bukti: frekuensi harapan kalian mendapatkan penduduk Generasi Z
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengalikan persentase dengan jumlah sampel tanpa ada kendala tambahan atau langkah kompleks.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus frekuensi harapan secara langsung dengan nilai yang sudah diberikan. Ini adalah prosedur standar yang familiar bagi siswa kelas 9.. Bukti: tentukan frekuensi harapan kalian mendapatkan penduduk Generasi Z
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep frekuensi harapan sebagai hasil kali peluang kejadian dengan banyaknya percobaan.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengalikan dua angka yang diberikan (persentase dan jumlah sampel). Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar persentase dan perkalian bilangan desimal. |
+| expectedPrerequisite | Konsep dasar peluang dan perkalian bilangan desimal/persen. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5398,18 +5376,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi frekuensi harapan adalah standar kelas 9. Soal ini merupakan aplikasi langsung rumus tanpa variasi tingkat lanjut. |
+| gradeRelativeRationale | Soal ini merupakan penerapan langsung rumus frekuensi harapan yang merupakan materi dasar kelas 9. Tidak ada tuntutan integrasi atau penalaran non-rutin. |
 
-Run 2 — solusi: Frekuensi harapan (Fh) dihitung dengan mengalikan peluang kejadian (P) dengan banyaknya percobaan (n). P = 28% = 0,28. n = 75. Fh = 0,28 * 75 = 21.
-- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus frekuensi harapan (P x n) pada situasi yang sudah didefinisikan dengan jelas. Siswa hanya perlu melakukan operasi perkalian sederhana.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak, tentukan frekuensi harapan
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep frekuensi harapan sebagai hasil kali antara peluang dan jumlah percobaan.. Bukti: frekuensi harapan kalian mendapatkan penduduk Generasi Z
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengalikan persentase dengan jumlah sampel tanpa ada kendala tambahan atau langkah kompleks.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak
+Run 2 — solusi: Frekuensi harapan (Fh) dihitung dengan mengalikan peluang kejadian (P) dengan banyaknya percobaan (n). Diketahui P = 28% = 0,28 dan n = 75. Maka, Fh = 0,28 * 75 = 21.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus frekuensi harapan secara langsung dengan data yang sudah tersedia (persentase dan jumlah sampel). Tidak ada langkah kompleks atau integrasi konsep yang diperlukan.. Bukti: tentukan frekuensi harapan kalian mendapatkan penduduk Generasi Z
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep frekuensi harapan sebagai hasil kali peluang dengan banyaknya percobaan, yang merupakan pengetahuan prosedural standar.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengalikan dua angka yang diberikan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang dan perkalian bilangan desimal dengan bilangan bulat. |
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan operasi perkalian bilangan desimal. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5419,18 +5397,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi frekuensi harapan adalah standar kelas 9. Soal ini menguji pemahaman dasar rumus tanpa variasi yang menyulitkan. |
+| gradeRelativeRationale | Materi frekuensi harapan adalah materi standar kelas 9. Soal ini merupakan penerapan langsung rumus tanpa modifikasi atau konteks yang membingungkan. |
 
-Run 3 — solusi: Frekuensi harapan (Fh) dihitung dengan rumus Fh = P(A) x n. Diketahui P(A) = 28% = 0,28 dan n = 75. Maka, Fh = 0,28 x 75 = 21.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus frekuensi harapan secara langsung dengan nilai yang sudah diberikan. Proses ini merupakan penerapan prosedur standar dalam statistika/peluang.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak; tentukan frekuensi harapan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau prosedur perhitungan frekuensi harapan.. Bukti: frekuensi harapan kalian mendapatkan penduduk Generasi Z
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya memerlukan satu langkah perkalian sederhana antara peluang dan ukuran sampel. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak
+Run 3 — solusi: Frekuensi harapan (Fh) dihitung dengan rumus Fh = P(A) x n, di mana P(A) adalah peluang kejadian dan n adalah banyaknya percobaan. Diketahui P(A) = 28% = 0,28 dan n = 75. Maka, Fh = 0,28 x 75 = 21.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus frekuensi harapan secara langsung dengan data yang sudah tersedia (peluang dan jumlah sampel). Ini adalah prosedur standar yang familiar bagi siswa kelas 9.. Bukti: tentukan frekuensi harapan kalian mendapatkan penduduk Generasi Z
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep frekuensi harapan sebagai hasil kali antara peluang kejadian dengan banyaknya percobaan (prosedural) dan bagaimana menerjemahkan persentase ke dalam bentuk desimal/pecahan (konseptual).. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengalikan dua angka yang diberikan (28% dan 75). Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: persentase penduduknya yang masuk Generasi Z adalah 28%; memilih 75 penduduk kota itu secara acak
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar persentase dan perkalian bilangan desimal. |
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan operasi perkalian bilangan. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5440,27 +5418,27 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 9 karena frekuensi harapan adalah materi standar yang penyelesaiannya bersifat langsung (prosedural). |
+| gradeRelativeRationale | Soal ini merupakan penerapan langsung rumus frekuensi harapan yang merupakan materi standar kelas 9. Tidak ada tuntutan kognitif tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
+| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | procedural |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3390`.
+Adjudikasi AI: `success`; token `4148`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa diminta menerapkan rumus frekuensi harapan secara langsung dengan data yang sudah tersedia. Ini adalah penerapan prosedur standar dalam materi peluang.
-- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman tentang algoritma atau prosedur perhitungan frekuensi harapan.
-- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengalikan persentase dengan jumlah sampel tanpa ada kendala tambahan atau langkah kompleks.
+- Domain kognitif `applying`: Soal meminta penerapan langsung rumus frekuensi harapan (Fh = P x n) dengan nilai yang sudah tersedia secara eksplisit. Ini adalah prosedur standar yang rutin.
+- Dimensi pengetahuan `procedural`: Siswa perlu memahami konsep frekuensi harapan sebagai hasil kali peluang kejadian dengan banyaknya percobaan, yang merupakan pengetahuan prosedural standar.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengalikan dua angka yang diberikan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar persentase dan perkalian bilangan desimal. |
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan operasi perkalian bilangan. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -5470,7 +5448,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi frekuensi harapan adalah standar kelas 9. Soal ini merupakan aplikasi langsung rumus tanpa variasi tingkat lanjut. |
+| gradeRelativeRationale | Materi frekuensi harapan adalah materi standar kelas 9. Soal ini merupakan penerapan langsung rumus tanpa modifikasi atau konteks yang membingungkan. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5518,55 +5496,34 @@ Putu memiliki roda putar yang terbagi menjadi lima juring yang sama besar, masin
 | C | 6/125 |
 | D | 5/125 |
 
-Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `10/125`.
-Solusi minimum hasil AI: Total ruang sampel = 5^3 = 125. Syarat rata-rata < 2 adalah jumlah ketiga angka < 6. Kemungkinan jumlah: jumlah 3 (1,1,1) ada 1 cara; jumlah 4 (1,1,2; 1,2,1; 2,1,1) ada 3 cara; jumlah 5 (1,1,3; 1,3,1; 3,1,1; 1,2,2; 2,1,2; 2,2,1) ada 6 cara. Total kejadian = 1 + 3 + 6 = 10. Peluang = 10/125.
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Total ruang sampel = 5^3 = 125. Syarat rata-rata < 2 berarti jumlah ketiga angka < 6 (yaitu 3, 4, atau 5). Kombinasi yang memenuhi: jumlah 3 (1,1,1) ada 1 cara; jumlah 4 (1,1,2 dan permutasi) ada 3 cara; jumlah 5 (1,1,3 dan 1,2,2 serta permutasi) ada 3+3=6 cara. Total kejadian = 1+3+6 = 10. Peluang = 10/125.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0b3f520e5153635eceabee7892a312d0191be9f1cf6a9a75e462130da231b68d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `19125824549b8936abc699c3eb411a6ec18e2aa24236a6d16528c832d7e48716`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | reasoning | conceptual | Hard | 2271 |
-| 2 | success | valid / verified | reasoning | conceptual | Medium | 2264 |
-| 3 | success | valid / verified | reasoning | conceptual | Medium | 2315 |
+| 1 | success | valid / verified | reasoning | conceptual | Hard | 2910 |
+| 2 | success | valid / verified | reasoning | procedural | Medium | 4072 |
+| 3 | success | valid / verified | reasoning | procedural | Medium | 3875 |
 
-Run 1 — solusi: Total ruang sampel = 5^3 = 125. Rata-rata < 2 berarti jumlah ketiga angka < 6. Kemungkinan jumlah: (1,1,1) [jumlah 3, 1 cara]; (1,1,2), (1,2,1), (2,1,1) [jumlah 4, 3 cara]; (1,1,3), (1,3,1), (3,1,1), (1,2,2), (2,1,2), (2,2,1) [jumlah 5, 6 cara]. Total kejadian = 1 + 3 + 6 = 10. Peluang = 10/125.
-- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep rata-rata dengan ruang sampel kejadian majemuk (tiga putaran) dan melakukan enumerasi sistematis untuk menghitung kejadian yang memenuhi syarat.. Bukti: memilih sampel dengan memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang hubungan antara rata-rata dan jumlah total, serta prosedur perhitungan peluang pada ruang sampel yang lebih besar.. Bukti: memilih sampel dengan memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
-- Intended difficulty `classify/Hard`: Soal ini memerlukan enumerasi sistematis untuk memastikan tidak ada kombinasi yang terlewat (jumlah 3, 4, dan 5), yang merupakan langkah non-rutin bagi siswa SMP.. Bukti: memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar peluang kejadian majemuk dan rata-rata. |
-| dependentSteps | 3 |
-| routineStatus | nonroutine_strategy |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Meskipun operasi dasarnya sederhana, menuntut ketelitian dalam enumerasi kombinasi untuk jumlah 3, 4, dan 5 agar tidak terjadi bias perhitungan, yang sering menjadi tantangan bagi siswa kelas 9. |
-
-Run 2 — solusi: Total ruang sampel = 5^3 = 125. Syarat rata-rata < 2 adalah jumlah ketiga angka < 6. Kemungkinan jumlah: 3 (1,1,1) ada 1 cara; 4 (1,1,2; 1,2,1; 2,1,1) ada 3 cara; 5 (1,1,3; 1,3,1; 3,1,1; 1,2,2; 2,1,2; 2,2,1) ada 6 cara. Total kejadian = 1 + 3 + 6 = 10. Peluang = 10/125.
-- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep rata-rata dengan ruang sampel kejadian majemuk (3 putaran) dan melakukan enumerasi sistematis untuk menghitung kejadian yang memenuhi syarat.. Bukti: memilih sampel dengan memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang hubungan antara rata-rata, jumlah total, dan ruang sampel pada eksperimen acak.. Bukti: roda putar yang terbagi menjadi lima juring yang sama besar; rata-ratanya kurang dari 2
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan enumerasi sistematis (bukan sekadar rumus langsung) untuk menentukan kombinasi angka yang memenuhi syarat jumlah < 6, yang merupakan langkah rutin namun membutuhkan ketelitian.. Bukti: memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
+Run 1 — solusi: Total ruang sampel = 5^3 = 125. Rata-rata < 2 berarti jumlah ketiga angka < 6. Kemungkinan jumlah: (1,1,1) jumlah 3 (1 cara); (1,1,2), (1,2,1), (2,1,1) jumlah 4 (3 cara); (1,1,3), (1,3,1), (3,1,1), (1,2,2), (2,1,2), (2,2,1) jumlah 5 (6 cara). Total kejadian = 1 + 3 + 6 = 10. Peluang = 10/125.
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep ruang sampel kejadian majemuk dengan syarat rata-rata, yang memerlukan perencanaan sistematis untuk mendaftar kombinasi angka yang memenuhi kondisi jumlah < 6.. Bukti: memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang ruang sampel kejadian majemuk dan prosedur untuk menghitung peluang berdasarkan kondisi yang diberikan.. Bukti: memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
+- Intended difficulty `classify/Hard`: Soal ini menuntut perencanaan langkah yang saling bergantung (menentukan total ruang sampel, menerjemahkan rata-rata ke jumlah, dan mendaftar kombinasi secara sistematis). Meskipun prosedurnya familiar, integrasi syarat jumlah < 6 dengan ruang sampel 125 memerlukan ketelitian tinggi.. Bukti: memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang kejadian majemuk dan rata-rata. |
-| dependentSteps | 3 |
+| expectedPrerequisite | Konsep peluang kejadian majemuk dan aturan perkalian dasar. |
+| dependentSteps | 4 |
 | routineStatus | routine_selection |
 | strategySelection | True |
 | representationTransfer | False |
@@ -5575,18 +5532,18 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan enumerasi ruang sampel untuk kejadian majemuk sederhana, namun soal ini menuntut ketelitian dalam mengelompokkan jumlah yang memenuhi syarat. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung peluang kejadian majemuk, namun mendaftar kombinasi untuk memenuhi syarat rata-rata tanpa melewatkan satu pun kasus adalah tugas yang menuntut ketelitian dan perencanaan tinggi. |
 
-Run 3 — solusi: Total ruang sampel = 5^3 = 125. Rata-rata < 2 berarti jumlah ketiga angka < 6. Kemungkinan jumlah: (1,1,1) = 1 cara (jumlah 3); (1,1,2), (1,2,1), (2,1,1) = 3 cara (jumlah 4); (1,1,3), (1,3,1), (3,1,1), (1,2,2), (2,1,2), (2,2,1) = 6 cara (jumlah 5). Total cara = 1 + 3 + 6 = 10. Peluang = 10/125.
-- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep rata-rata dengan ruang sampel kejadian majemuk (tiga putaran) dan melakukan enumerasi sistematis untuk menghitung kejadian yang memenuhi syarat.. Bukti: memilih sampel dengan memutar roda tersebut sebanyak tiga kali; peluang dia mendapatkan sampel yang rata-ratanya kurang dari 2
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami hubungan antara rata-rata dan jumlah total (konsep) serta menerapkan prosedur pencacahan sistematis untuk ruang sampel yang cukup besar.. Bukti: rata-ratanya kurang dari 2; memutar roda tersebut sebanyak tiga kali
-- Intended difficulty `classify/Medium`: Soal ini memerlukan ketelitian dalam enumerasi kombinasi angka yang memenuhi syarat jumlah < 6. Meskipun prosedurnya rutin, jumlah kasus yang harus diidentifikasi (10 kasus) dan pemahaman bahwa rata-rata < 2 ekuivalen dengan jumlah < 6 menjadikannya tantangan menengah.. Bukti: roda putar yang terbagi menjadi lima juring; memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
+Run 2 — solusi: Total ruang sampel = 5^3 = 125. Rata-rata < 2 berarti jumlah 3 angka < 6 (yaitu 3, 4, atau 5). Kemungkinan: jumlah 3 (1,1,1) ada 1 cara; jumlah 4 (1,1,2; 1,2,1; 2,1,1) ada 3 cara; jumlah 5 (1,1,3; 1,3,1; 3,1,1; 1,2,2; 2,1,2; 2,2,1) ada 6 cara. Total cara = 1+3+6 = 10. Peluang = 10/125.
+- Domain kognitif `classify/reasoning`: Siswa harus menerjemahkan kondisi rata-rata ke dalam batasan jumlah, lalu melakukan enumerasi sistematis untuk menghitung ruang sampel yang memenuhi syarat. Ini memerlukan integrasi konsep rata-rata dan peluang.. Bukti: rata-ratanya kurang dari 2; memutar roda tersebut sebanyak tiga kali
+- Dimensi pengetahuan `classify/procedural`: Melibatkan penerapan prosedur sistematis untuk menghitung ruang sampel dan kejadian yang memenuhi syarat.. Bukti: memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
+- Intended difficulty `classify/Medium`: Soal memerlukan perencanaan enumerasi sistematis untuk jumlah 3, 4, dan 5. Meskipun prosedurnya familiar, siswa harus mengintegrasikan kondisi rata-rata ke jumlah total dan memastikan tidak ada kombinasi yang terlewat. Tidak terlalu sulit karena ruang sampel kecil dan kondisi terbatas.. Bukti: rata-ratanya kurang dari 2; memutar roda tersebut sebanyak tiga kali
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep peluang kejadian majemuk, rata-rata, dan pencacahan dasar. |
+| expectedPrerequisite | Konsep dasar peluang, rata-rata, dan teknik pencacahan sederhana. |
 | dependentSteps | 3 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -5595,28 +5552,49 @@ Profil difficulty run ini:
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menangani peluang kejadian majemuk dengan ruang sampel yang terstruktur, namun enumerasi sistematis untuk menghindari kesalahan hitung memerlukan ketelitian tingkat menengah. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan pencacahan sistematis untuk masalah peluang sederhana. Soal ini menuntut ketelitian dalam enumerasi. |
+
+Run 3 — solusi: Total ruang sampel = 5^3 = 125. Syarat rata-rata < 2 berarti jumlah ketiga angka < 6 (yaitu 3, 4, atau 5). Kombinasi yang memenuhi: jumlah 3 (1,1,1) ada 1 cara; jumlah 4 (1,1,2 dan permutasi) ada 3 cara; jumlah 5 (1,1,3 dan 1,2,2 serta permutasi) ada 3+3=6 cara. Total kejadian = 1+3+6 = 10. Peluang = 10/125.
+- Domain kognitif `classify/reasoning`: Siswa harus menerjemahkan syarat rata-rata ke dalam syarat jumlah, lalu melakukan pencacahan sistematis untuk setiap kemungkinan jumlah yang memenuhi syarat. Ini memerlukan integrasi konsep peluang dan strategi pencacahan.. Bukti: rata-ratanya kurang dari 2; memutar roda tersebut sebanyak tiga kali
+- Dimensi pengetahuan `classify/procedural`: Melibatkan penerapan prosedur pencacahan sistematis untuk menentukan ruang sampel dan kejadian yang memenuhi syarat.. Bukti: memutar roda tersebut sebanyak tiga kali; rata-ratanya kurang dari 2
+- Intended difficulty `classify/Medium`: Soal memerlukan perencanaan langkah (mengubah rata-rata ke jumlah, lalu mencacah). Siswa harus teliti dalam permutasi agar tidak ada yang terlewat. Ini bukan sekadar penerapan rumus langsung, namun prosedurnya familiar bagi kelas 9.. Bukti: rata-ratanya kurang dari 2; memutar roda tersebut sebanyak tiga kali
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep peluang dasar, aturan perkalian, dan rata-rata. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan pencacahan sistematis untuk ruang sampel kecil. Soal menguji ketelitian dalam permutasi dan pemahaman hubungan rata-rata dengan jumlah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"reasoning": 3} | unanimous_3_0 / adjudicated | reasoning |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | procedural |
 | Intended difficulty | {"Hard": 1, "Medium": 2} | majority_2_of_3 / adjudicated | Medium |
 
-Adjudikasi AI: `success`; token `4096`.
+Adjudikasi AI: `success`; token `4659`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `reasoning`: Siswa perlu mengintegrasikan konsep rata-rata dengan ruang sampel kejadian majemuk (tiga putaran) dan melakukan enumerasi sistematis untuk menghitung kejadian yang memenuhi syarat.
-- Dimensi pengetahuan `conceptual`: Siswa harus memahami hubungan antara rata-rata dan jumlah total (konsep) serta menerapkan prosedur pencacahan sistematis untuk ruang sampel yang cukup besar.
-- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena memerlukan enumerasi sistematis (bukan sekadar rumus langsung) untuk menentukan kombinasi angka yang memenuhi syarat jumlah < 6, yang merupakan langkah rutin namun membutuhkan ketelitian.
+- Domain kognitif `reasoning`: Siswa harus menerjemahkan kondisi rata-rata ke dalam batasan jumlah, lalu melakukan enumerasi sistematis untuk menghitung ruang sampel yang memenuhi syarat. Ini memerlukan integrasi konsep rata-rata dan peluang.
+- Dimensi pengetahuan `procedural`: Melibatkan penerapan prosedur sistematis untuk menghitung ruang sampel dan kejadian yang memenuhi syarat.
+- Intended difficulty `Medium`: Soal memerlukan perencanaan enumerasi sistematis untuk jumlah 3, 4, dan 5. Meskipun prosedurnya familiar, siswa harus mengintegrasikan kondisi rata-rata ke jumlah total dan memastikan tidak ada kombinasi yang terlewat. Tidak terlalu sulit karena ruang sampel kecil dan kondisi terbatas.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang kejadian majemuk dan rata-rata. |
+| expectedPrerequisite | Konsep dasar peluang, aturan perkalian, dan rata-rata. |
 | dependentSteps | 3 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -5625,8 +5603,8 @@ Profil difficulty hasil adjudikasi:
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan enumerasi ruang sampel untuk kejadian majemuk sederhana, namun soal ini menuntut ketelitian dalam mengelompokkan jumlah yang memenuhi syarat agar tidak terjadi bias perhitungan. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu melakukan pencacahan sistematis untuk masalah peluang sederhana. Soal ini menuntut ketelitian dalam enumerasi. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5658,9 +5636,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 40. Soal `d57b84b818b2d3b772624d73`
@@ -5675,47 +5653,47 @@ Dhien adalah calon ketua OSIS. Dia ingin mengetahui persentase teman-teman di se
 | D | Dia melakukan survei melalui media sosial terhadap teman-teman sekolahnya |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Metode (b) adalah sampling sistematis yang mencakup perwakilan dari seluruh barisan siswa di sekolah saat upacara bendera, sehingga paling representatif. Opsi (a) bias karena hanya mencakup satu kelas, dan opsi (c) bias karena hanya mencakup pengguna media sosial tertentu.
+Solusi minimum hasil AI: Metode A (menyurvei siswa urutan ke-3, 6, dan 9 di setiap barisan upacara) adalah metode sampling sistematis yang paling representatif. Metode ini mencakup seluruh populasi siswa di sekolah (semua barisan upacara), sehingga meminimalkan bias. Pilihan lain (bertanya ke teman sekelas atau media sosial) bersifat bias karena sampel hanya mewakili kelompok tertentu (bias populasi atau bias akses).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `969cc3d63c62abad63100c810b2f53f73d7e01a0ac98d79d5538cb3ab414abbe`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3c5cf78c70a2bb3c6226ded29a41c8617a791626f90a8b12f665620f6a3cd31c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 2910 |
-| 2 | success | valid / verified | reasoning | conceptual | Medium | 2950 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 2579 |
+| 1 | success | concern / verified | reasoning | conceptual | Medium | 4336 |
+| 2 | success | valid / verified | reasoning | conceptual | Medium | 2800 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2775 |
 
-Run 1 — solusi: Metode sistematis (opsi A) adalah yang paling representatif karena mencakup siswa dari seluruh barisan sekolah saat upacara, sehingga meminimalkan bias dibandingkan survei satu kelas (bias populasi), survei media sosial (bias seleksi), atau survei kenyamanan.
-- Domain kognitif `classify/applying`: Siswa perlu mengevaluasi metode pengambilan sampel untuk menentukan mana yang paling representatif dan meminimalkan bias. Ini melibatkan penerapan konsep statistik dasar.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien?; Dia menyurvei anak yang menempati urutan ke-3, 6, dan 9 di setiap barisan ketika upacara bendera
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa yang membuat sampel representatif (acak) dibandingkan dengan sampel yang bias.. Bukti: mana yang seharusnya dipilih Dhien?; Dia menyurvei anak yang menempati urutan ke-3, 6, dan 9 di setiap barisan ketika upacara bendera
-- Intended difficulty `classify/Medium`: Soal ini meminta siswa membedakan metode sampling yang valid secara konseptual. Tidak ada perhitungan rumit, hanya pemahaman tentang bias sampling.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien?
+Run 1 — solusi: Metode A (menyurvei siswa urutan ke-3, 6, 9 saat upacara) adalah yang terbaik karena menggunakan teknik sampling sistematis yang mencakup seluruh populasi siswa di sekolah, sehingga meminimalkan bias. Pilihan lain (teman sekelas, media sosial, atau siswa yang lewat) bersifat convenience sampling yang cenderung bias.
+- Domain kognitif `classify/reasoning`: Siswa perlu mengevaluasi dan membandingkan tiga metode sampling untuk menentukan mana yang paling representatif dan minim bias, yang merupakan aktivitas penalaran (reasoning) untuk memilih strategi yang tepat.. Bukti: mana yang seharusnya dipilih Dhien?; Mengapa?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang prinsip-prinsip pemilihan sampel yang representatif dan sumber bias dalam statistika, bukan sekadar prosedur hitung.. Bukti: persentase teman-teman di sekolahnya; kemungkinan cara pemilihan sampel
+- Intended difficulty `classify/Medium`: Soal menuntut siswa memahami konsep bias sampling. Siswa harus menganalisis tiga skenario berbeda dan memilih yang paling acak/sistematis. Ini adalah tugas Medium karena memerlukan pemahaman konseptual tentang representasi populasi, bukan sekadar prosedur hitung.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien?; Mengapa?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang populasi dan sampel, serta konsep bias dalam survei. |
-| dependentSteps | 1 |
+| expectedPrerequisite | Pemahaman dasar tentang populasi, sampel, dan bias dalam statistika. |
+| dependentSteps | 3 |
 | routineStatus | routine_selection |
 | strategySelection | True |
 | representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 3 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini menuntut kemampuan memilih prosedur sampling yang tepat dari beberapa pilihan yang diberikan, yang merupakan standar kompetensi kelas 9. |
+| gradeRelativeRationale | Sesuai untuk kelas 9 karena menuntut pemahaman tentang pemilihan sampel yang valid, yang merupakan bagian dari kurikulum statistika SMP. |
 
-Run 2 — solusi: Metode (b) menggunakan teknik sampling sistematis yang mencakup perwakilan dari seluruh barisan siswa di sekolah saat upacara bendera. Ini meminimalkan bias dibandingkan dengan (a) yang hanya mencakup satu kelas, atau (c) yang hanya mencakup pengguna media sosial tertentu.
-- Domain kognitif `classify/reasoning`: Siswa harus mengevaluasi dan membandingkan tiga metode sampling untuk menentukan mana yang paling representatif dan minim bias, yang merupakan proses penalaran statistik.. Bukti: mana yang seharusnya dipilih Dhien? Mengapa?
-- Dimensi pengetahuan `classify/conceptual`: Memahami prinsip dasar pemilihan sampel yang representatif (acak) dibandingkan dengan sampel yang bias (convenience/voluntary response).. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman konseptual tentang bias sampling. Siswa perlu membedakan antara sampling sistematis dan sampling yang bias, yang merupakan materi standar kelas 9.. Bukti: mana yang seharusnya dipilih Dhien? Mengapa?
+Run 2 — solusi: Opsi A (menyurvei siswa urutan ke-3, 6, 9 di setiap barisan upacara) adalah metode sampling sistematis yang paling representatif karena mencakup seluruh populasi sekolah (semua barisan) dan mengurangi bias dibandingkan metode lain yang hanya mengambil sampel dari kelompok tertentu (teman sekelas) atau kelompok yang memiliki akses/kebiasaan tertentu (media sosial).
+- Domain kognitif `classify/reasoning`: Soal meminta siswa untuk mengevaluasi dan memilih metode pengambilan sampel yang paling representatif, yang memerlukan pemahaman konseptual tentang bias sampling dan representasi populasi.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien? Mengapa?
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip-prinsip dasar sampling (konsep bias vs representasi) untuk menentukan metode mana yang paling valid secara statistik.. Bukti: mana yang seharusnya dipilih Dhien? Mengapa?
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena menuntut siswa untuk membedakan berbagai metode sampling dan memahami konsep bias dalam konteks nyata. Meskipun prosedurnya tidak rumit secara matematis, siswa perlu melakukan analisis kritis terhadap setiap opsi untuk menentukan mana yang paling tidak bias, yang merupakan keterampilan berpikir tingkat tinggi untuk level SMP.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien? Mengapa?
 
 Profil difficulty run ini:
 
@@ -5731,42 +5709,42 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal memerlukan pemahaman konseptual tentang bias sampling. Siswa perlu membedakan antara sampling sistematis dan sampling yang bias (convenience/voluntary), yang merupakan materi standar kelas 9. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengevaluasi validitas metode pengumpulan data sederhana. Soal ini menguji kemampuan penalaran tentang representasi sampel tanpa memerlukan perhitungan kompleks. |
 
-Run 3 — solusi: Opsi A (survei sistematis saat upacara) adalah metode sampling yang paling representatif karena mencakup siswa dari seluruh barisan di sekolah, sehingga meminimalkan bias populasi dibandingkan hanya bertanya pada teman sekelas (bias kelompok) atau pengguna media sosial (bias akses).
-- Domain kognitif `classify/applying`: Siswa diminta untuk mengevaluasi dan memilih metode pengambilan sampel yang paling tidak bias dari tiga skenario yang diberikan, yang merupakan penerapan konsep statistik.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa yang membuat sampel representatif dan bagaimana bias muncul dalam metode pengambilan sampel yang berbeda.. Bukti: mana yang seharusnya dipilih Dhien? Mengapa?
-- Intended difficulty `classify/Medium`: Siswa harus menganalisis tiga metode sampling yang berbeda dan mengidentifikasi potensi bias pada masing-masing metode untuk menentukan mana yang paling valid secara statistik.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien?
+Run 3 — solusi: Sampel yang representatif harus mencakup seluruh populasi (siswa sekolah) secara acak. Opsi (a) bias karena hanya satu kelas. Opsi (c) bias karena hanya siswa aktif media sosial. Opsi (b) menggunakan sistematis sampling (setiap kelipatan 3) yang mencakup seluruh barisan upacara, sehingga lebih acak dan representatif.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengevaluasi dan memilih metode pengambilan sampel yang paling representatif (tidak bias) dari beberapa skenario, yang memerlukan pemahaman konsep dasar sampling.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien? Mengapa?
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip dasar pemilihan sampel yang representatif (konsep statistik) untuk menentukan metode mana yang paling minim bias.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien?
+- Intended difficulty `classify/Easy`: Soal ini bersifat konseptual namun prosedurnya sangat familiar dalam kurikulum SMP. Siswa hanya perlu mengidentifikasi sumber bias pada setiap opsi (bias kelas, bias media sosial, bias kenyamanan) dan memilih metode yang paling acak/sistematis. Tidak ada perhitungan kompleks atau integrasi langkah yang rumit.. Bukti: Dari tiga kemungkinan cara pemilihan sampel berikut, mana yang seharusnya dipilih Dhien? Mengapa?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang populasi, sampel, dan konsep bias dalam survei. |
+| expectedPrerequisite | Pemahaman dasar tentang populasi, sampel, dan bias dalam survei. |
 | dependentSteps | 1 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Memilih metode sampling yang tepat adalah standar kompetensi statistik kelas 9 yang memerlukan penalaran tentang representasi populasi. |
+| gradeRelativeRationale | Materi pemilihan sampel adalah bagian dari kurikulum SMP kelas 9. Soal ini menguji pemahaman dasar tentang representasi sampel tanpa menuntut analisis statistik yang mendalam. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 2, "reasoning": 1} | majority_2_of_3 / adjudicated | reasoning |
+| Domain kognitif | {"reasoning": 2, "applying": 1} | majority_2_of_3 / adjudicated | reasoning |
 | Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
+| Intended difficulty | {"Medium": 2, "Easy": 1} | majority_2_of_3 / adjudicated | Medium |
 
-Adjudikasi AI: `success`; token `3479`.
+Adjudikasi AI: `success`; token `4416`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `reasoning`: Siswa perlu mengevaluasi dan membandingkan tiga metode sampling untuk menentukan mana yang paling representatif dan meminimalkan bias, yang merupakan proses penalaran statistik.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang apa yang membuat sampel representatif (acak) dibandingkan dengan sampel yang bias (convenience/voluntary response).
-- Intended difficulty `Medium`: Siswa harus menganalisis tiga metode sampling yang berbeda dan mengidentifikasi potensi bias pada masing-masing metode untuk menentukan mana yang paling valid secara statistik.
+- Domain kognitif `reasoning`: Siswa harus mengevaluasi tiga metode sampling yang berbeda, mengidentifikasi potensi bias pada masing-masing metode, dan memilih metode yang paling representatif. Proses evaluasi dan perbandingan ini merupakan aktivitas penalaran (reasoning) untuk menentukan strategi pengambilan data yang valid.
+- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman konseptual tentang prinsip-prinsip dasar statistika, yaitu apa yang membuat sebuah sampel representatif dan bagaimana bias dapat muncul dalam pemilihan sampel.
+- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena menuntut siswa untuk melakukan analisis kritis terhadap tiga skenario sampling yang berbeda. Siswa tidak hanya mengenali istilah, tetapi harus memahami hubungan antara metode pemilihan dan potensi bias yang dihasilkan. Meskipun tidak ada perhitungan numerik, tuntutan untuk mengintegrasikan pemahaman tentang representasi populasi dan bias sampling membuat soal ini melampaui sekadar penerapan prosedur langsung (Easy).
 
 Profil difficulty hasil adjudikasi:
 
@@ -5778,11 +5756,11 @@ Profil difficulty hasil adjudikasi:
 | strategySelection | True |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
+| interactingConstraints | 2 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Memilih metode sampling yang tepat adalah standar kompetensi statistik kelas 9 yang memerlukan penalaran tentang representasi populasi. |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengevaluasi validitas metode pengumpulan data sederhana. Soal ini menguji kemampuan penalaran tentang representasi sampel tanpa memerlukan perhitungan kompleks. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5845,35 +5823,14 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2145 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2192 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2174 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2821 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2812 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2858 |
 
 Run 1 — solusi: Peluang muncul angka 3 pada dadu kubus (6 sisi) adalah 1/6. Peluang muncul angka 3 pada dadu piramida (4 sisi) adalah 1/4. Karena 1/4 > 1/6, maka dadu piramida memberikan peluang menang yang lebih besar.
-- Domain kognitif `classify/applying`: Siswa perlu membandingkan dua nilai peluang yang berbeda berdasarkan ruang sampel yang berbeda (6 sisi vs 4 sisi) untuk menentukan mana yang lebih besar, yang merupakan proses penerapan konsep peluang.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang; Syarat menangnya adalah mendapatkan angka 3
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana ukuran ruang sampel mempengaruhi nilai peluang suatu kejadian.. Bukti: Peluang terbesar untuk menang; Syarat menangnya adalah mendapatkan angka 3
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan perbandingan dua pecahan sederhana (1/4 dan 1/6) dengan konteks yang sangat familiar (dadu).. Bukti: Pilihan dadu; Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang peluang sebagai rasio kejadian yang diinginkan terhadap total ruang sampel. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu membandingkan pecahan sederhana dalam konteks peluang dasar. |
-
-Run 2 — solusi: Peluang muncul angka 3 pada dadu kubus adalah 1/6. Peluang muncul angka 3 pada dadu piramida adalah 1/4. Karena 1/4 > 1/6, maka dadu piramida memberikan peluang menang yang lebih besar.
-- Domain kognitif `classify/applying`: Siswa perlu membandingkan dua nilai peluang (1/6 dan 1/4) untuk menentukan mana yang lebih besar. Ini melibatkan penerapan konsep peluang teoretis pada situasi yang diberikan.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang; Syarat menangnya adalah mendapatkan angka 3
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana jumlah ruang sampel (total sisi) mempengaruhi besarnya peluang suatu kejadian.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar; Syarat menangnya adalah mendapatkan angka 3
-- Intended difficulty `classify/Easy`: Soal ini memerlukan pemahaman dasar tentang peluang teoretis dan perbandingan pecahan. Prosedurnya rutin dan langsung, tidak memerlukan strategi kompleks.. Bukti: Dadu kubus dengan sisi sebagai berikut: 1, 2, 3, 4, 5, 6; Dadu piramida dengan sisi sebagai berikut: 1, 2, 3, 4
+- Domain kognitif `classify/applying`: Siswa perlu membandingkan dua peluang kejadian sederhana (1/6 vs 1/4) untuk menentukan mana yang lebih besar. Ini adalah penerapan konsep peluang dasar pada konteks perbandingan.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan. Syarat menangnya adalah mendapatkan angka 3.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana jumlah ruang sampel (total sisi) memengaruhi peluang kejadian dengan jumlah titik sampel yang sama.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan.
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu menghitung dua nilai peluang dasar (1/6 dan 1/4) dan membandingkannya. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan.; Syarat menangnya adalah mendapatkan angka 3.
 
 Profil difficulty run ini:
 
@@ -5884,33 +5841,54 @@ Profil difficulty run ini:
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
+| relevantInformationUnits | 4 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 9 diharapkan sudah memahami konsep peluang dasar dan perbandingan pecahan sederhana. |
+| gradeRelativeRationale | Materi peluang adalah standar kelas 9. Membandingkan dua pecahan sederhana adalah tugas rutin yang sesuai dengan tingkat kemampuan siswa kelas 9. |
 
-Run 3 — solusi: Peluang muncul angka 3 pada dadu kubus (6 sisi) adalah 1/6. Peluang muncul angka 3 pada dadu piramida (4 sisi) adalah 1/4. Karena 1/4 > 1/6, maka dadu piramida memberikan peluang menang yang lebih besar.
-- Domain kognitif `classify/applying`: Siswa perlu membandingkan dua nilai peluang (1/6 dan 1/4) untuk menentukan mana yang lebih besar. Ini melibatkan penerapan konsep peluang teoretis pada situasi yang diberikan.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan. Syarat menangnya adalah mendapatkan angka 3.
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana jumlah ruang sampel (total sisi) mempengaruhi nilai peluang suatu kejadian.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan.
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya melibatkan perbandingan dua pecahan sederhana dengan pembilang yang sama, yang merupakan prosedur rutin dalam materi peluang kelas 9.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan. Syarat menangnya adalah mendapatkan angka 3.
+Run 2 — solusi: Peluang muncul angka 3 pada dadu kubus (6 sisi) adalah 1/6. Peluang muncul angka 3 pada dadu piramida (4 sisi) adalah 1/4. Karena 1/4 > 1/6, maka dadu piramida memberikan peluang menang yang lebih besar.
+- Domain kognitif `classify/applying`: Siswa perlu membandingkan dua peluang kejadian sederhana dengan menghitung rasio kejadian yang diinginkan terhadap total ruang sampel untuk masing-masing dadu, kemudian membandingkan kedua nilai pecahan tersebut.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan. Syarat menangnya adalah mendapatkan angka 3.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang definisi peluang klasik (kejadian yang diharapkan dibagi total ruang sampel) dan kemampuan membandingkan nilai pecahan.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan.
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu menerapkan rumus peluang dasar pada dua objek yang sudah didefinisikan ruang sampelnya secara eksplisit. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan. Syarat menangnya adalah mendapatkan angka 3.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang (P(A) = n(A)/n(S)) dan perbandingan pecahan. |
+| expectedPrerequisite | Pemahaman dasar tentang peluang kejadian sederhana dan perbandingan pecahan. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
+| relevantInformationUnits | 4 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang adalah kurikulum standar kelas 9. Membandingkan peluang sederhana adalah tugas rutin yang sesuai dengan tingkat kognitif siswa kelas 9. |
+| gradeRelativeRationale | Materi peluang adalah standar kelas 9. Membandingkan dua peluang sederhana adalah tugas rutin yang tidak memerlukan integrasi konsep yang rumit. |
+
+Run 3 — solusi: Peluang muncul angka 3 pada dadu kubus adalah 1/6. Peluang muncul angka 3 pada dadu piramida adalah 1/4. Karena 1/4 > 1/6, maka peluang menang lebih besar jika menggunakan dadu piramida (Pilihan 2).
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep peluang teoritis (rasio kejadian yang diinginkan terhadap total ruang sampel) pada dua objek yang berbeda dan membandingkan hasilnya untuk mengambil keputusan.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan. Syarat menangnya adalah mendapatkan angka 3.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana ukuran ruang sampel mempengaruhi peluang suatu kejadian.. Bukti: Pilih dadu yang kalian akan gunakan apabila ingin mendapatkan peluang terbesar untuk menang dalam permainan.
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedur perhitungannya sangat langsung (1/6 vs 1/4) dan konsep peluang dasar sudah familiar bagi siswa kelas 9. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Pilihan 1 (dadu kubus) ... 1, 2, 3, 4, 5, 6; Pilihan 2 (dadu piramida) ... 1, 2, 3, 4; Syarat menangnya adalah mendapatkan angka 3.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar peluang (peluang = kejadian/ruang sampel) dan perbandingan pecahan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu menghitung peluang sederhana dan membandingkan dua pecahan dengan penyebut berbeda tanpa kesulitan berarti. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -5975,47 +5953,26 @@ Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari
 | D | Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 15 |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Data terurut: 50, 50, 60, 65, 65, 65, 65, 70, 75, 80, 80, 85, 85, 90 (n=14). Median (Q2) = (65+70)/2 = 67,5. Q1 (median 7 data pertama: 50, 50, 60, 65, 65, 65, 65) = 65. Q3 (median 7 data terakhir: 70, 75, 80, 80, 85, 85, 90) = 80. Jangkauan antar kuartil (H) = Q3 - Q1 = 80 - 65 = 15. Simpangan kuartil = 0,5 * H = 7,5.
+Solusi minimum hasil AI: Data terurut (n=14): 50, 50, 60, 65, 65, 65, 65, 70, 75, 80, 80, 85, 85, 90. Median (Q2) = (65+70)/2 = 67,5. Q1 (median 7 data pertama) = 65. Q3 (median 7 data terakhir) = 80. Jangkauan antar kuartil (IQR) = Q3 - Q1 = 80 - 65 = 15. Simpangan kuartil = 0,5 * IQR = 7,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1ab2bae4de03342167374914f66f5c413807a8492e94dd78526381878ad127b9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `35aed6ec6feb02db34db3fc591c46ccd28f230c4e20b78b1906b78fa92a7deb6`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 2548 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2461 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2496 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3192 |
+| 2 | success | valid / verified | applying | procedural | Medium | 3180 |
+| 3 | success | valid / verified | applying | procedural | Medium | 3229 |
 
-Run 1 — solusi: Data terurut: 50, 50, 60, 65, 65, 65, 65, 70, 75, 80, 80, 85, 85, 90 (n=14). Median (Q2) = (65+70)/2 = 67,5. Q1 (median 7 data pertama: 50, 50, 60, 65, 65, 65, 65) = 65. Q3 (median 7 data terakhir: 70, 75, 80, 80, 85, 85, 90) = 80. Jangkauan antar kuartil (H) = Q3 - Q1 = 80 - 65 = 15. Simpangan kuartil = 0,5 * H = 7,5.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur statistik untuk mengurutkan data, menentukan posisi kuartil, dan menghitung nilai statistik deskriptif. Ini adalah penerapan prosedur rutin pada situasi yang diberikan.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut penggunaan algoritma atau urutan langkah (prosedur) untuk menghitung statistik data tunggal.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil
-- Intended difficulty `classify/Medium`: Soal memerlukan pengurutan data (14 angka) dan perhitungan statistik dasar. Ini adalah tugas rutin dengan beberapa langkah yang saling terkait (mengurutkan, mencari median, mencari kuartil, menghitung selisih).. Bukti: 50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Mengurutkan data dan menentukan median data tunggal. |
-| dependentSteps | 4 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 14 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Sesuai untuk kelas 9 karena melibatkan pengolahan data statistik dasar yang merupakan materi standar SMP. |
-
-Run 2 — solusi: Data terurut: 50, 50, 60, 65, 65, 65, 65, 70, 75, 80, 80, 85, 85, 90 (n=14). Q2 (median) = (65+70)/2 = 67,5. Q1 (median data ke-1 s/d ke-7) = 65. Q3 (median data ke-8 s/d ke-14) = 80. Jangkauan antar kuartil (IQR) = Q3 - Q1 = 80 - 65 = 15. Simpangan kuartil = 1/2 * IQR = 7,5.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik standar untuk menentukan ukuran penyebaran data (kuartil, jangkauan, simpangan kuartil) pada sekumpulan data yang diberikan.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma dan urutan langkah (prosedur) untuk mengolah data statistik dasar.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil
-- Intended difficulty `classify/Medium`: Soal memerlukan pengurutan data (14 data) dan penerapan rumus kuartil yang rutin. Meskipun ada beberapa langkah, prosedurnya bersifat standar dan familiar bagi siswa kelas 9.. Bukti: 50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65
+Run 1 — solusi: Data terurut: 50, 50, 60, 65, 65, 65, 65, 70, 75, 80, 80, 85, 85, 90 (n=14). Q2 (median) = (65+70)/2 = 67,5. Data bawah (7 data): 50, 50, 60, 65, 65, 65, 65 -> Q1 = 65. Data atas (7 data): 70, 75, 80, 80, 85, 85, 90 -> Q3 = 80. Jangkauan kuartil (IQR) = Q3 - Q1 = 80 - 65 = 15. Simpangan kuartil = 1/2 * IQR = 7,5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur standar untuk menentukan statistik lima serangkai (kuartil) dari sekumpulan data. Ini adalah penerapan langsung dari algoritma yang dipelajari di kelas 9.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung statistik deskriptif (kuartil) dari data tunggal.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengurutkan data dan menerapkan rumus kuartil. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: 50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65
 
 Profil difficulty run ini:
 
@@ -6030,37 +5987,80 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Menghitung kuartil untuk data genap adalah materi standar kelas 9. Beban perhitungan moderat karena jumlah data cukup banyak (14) sehingga rentan kesalahan ketelitian. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung kuartil adalah materi standar kelas 9. Prosedur pengurutan dan pembagian data menjadi dua bagian adalah langkah rutin yang familiar. |
 
-Run 3 — solusi: Data terurut: 50, 50, 60, 65, 65, 65, 65, 70, 75, 80, 80, 85, 85, 90 (n=14). Q2 (median) = (65+70)/2 = 67,5. Q1 (median data ke-1 s/d ke-7) = 65. Q3 (median data ke-8 s/d ke-14) = 80. Jangkauan kuartil (IQR) = Q3 - Q1 = 80 - 65 = 15. Simpangan kuartil = 1/2 * IQR = 7,5.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur statistik untuk mengurutkan data, menentukan posisi kuartil, dan menghitung nilai-nilai statistik deskriptif. Ini adalah penerapan prosedur rutin pada situasi yang diberikan.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma dan urutan langkah untuk menghitung statistik data (kuartil dan simpangan kuartil).. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena melibatkan beberapa langkah rutin yang saling terkait (mengurutkan data, mencari median, membagi data menjadi dua bagian, mencari kuartil, dan menghitung simpangan kuartil).. Bukti: 50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65
+Run 2 — solusi: Data terurut: 50, 50, 60, 65, 65, 65, 65, 70, 75, 80, 80, 85, 85, 90 (n=14). Q2 (median) = (65+70)/2 = 67,5. Q1 (median data ke-1 s.d ke-7) = 65. Q3 (median data ke-8 s.d ke-14) = 80. Jangkauan antar kuartil (IQR) = Q3 - Q1 = 80 - 65 = 15. Simpangan kuartil = 1/2 * IQR = 7,5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik standar (menentukan kuartil dan simpangan kuartil) pada sekumpulan data yang diberikan. Ini adalah penerapan konsep yang rutin.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme dan metode statistik untuk mengolah data (kuartil, jangkauan, simpangan kuartil).. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil
+- Intended difficulty `classify/Medium`: Soal ini termasuk kategori Medium karena memerlukan ketelitian dalam mengurutkan data (14 data) dan menerapkan prosedur kuartil yang berjenjang (Q1, Q2, Q3, lalu IQR dan simpangan kuartil). Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling bergantung dan potensi kesalahan hitung yang moderat.. Bukti: 50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman median dan pengurutan data. |
+| expectedPrerequisite | Kemampuan mengurutkan data dan menentukan median. |
 | dependentSteps | 4 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 14 |
-| interactingConstraints | 2 |
+| interactingConstraints | 0 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Sesuai untuk kelas 9, menguji ketelitian dalam mengurutkan data dan menerapkan rumus statistik dasar. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengolah data statistik dasar. Soal ini menuntut ketelitian dalam pengurutan dan perhitungan bertahap, namun metodenya sangat standar. |
+
+Run 3 — solusi: Data terurut (n=14): 50, 50, 60, 65, 65, 65, 65, 70, 75, 80, 80, 85, 85, 90. Median (Q2) = (65+70)/2 = 67,5. Q1 (median 7 data pertama: 50, 50, 60, 65, 65, 65, 65) = 65. Q3 (median 7 data terakhir: 70, 75, 80, 80, 85, 85, 90) = 80. Jangkauan antar kuartil (H) = Q3 - Q1 = 80 - 65 = 15. Simpangan kuartil (Qd) = 0,5 * H = 7,5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik standar untuk menentukan ukuran penyebaran data (kuartil, jangkauan, simpangan kuartil) pada sekumpulan data yang diberikan.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pemahaman dan penerapan algoritme atau prosedur statistik untuk mengolah data menjadi ukuran penyebaran.. Bukti: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena menuntut ketelitian dalam mengurutkan data (14 data) dan menerapkan prosedur kuartil yang melibatkan pembagian data menjadi dua kelompok. Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling terkait (mengurutkan, mencari median, membagi data, menghitung selisih) yang meningkatkan beban kognitif dibandingkan soal satu langkah.. Bukti: 50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan mengurutkan data dan menentukan median. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 14 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengolah data statistik sederhana. Soal ini memerlukan ketelitian prosedural yang cukup untuk menghindari kesalahan pada langkah-langkah berurutan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 1, "Medium": 2} | majority_2_of_3 / adjudicated | Medium |
+
+Adjudikasi AI: `success`; token `5208`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa menerapkan prosedur statistik standar untuk menentukan ukuran penyebaran data (kuartil, jangkauan, simpangan kuartil) dari sekumpulan data yang diberikan. Ini adalah penerapan algoritma yang rutin.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman prosedural tentang algoritme statistik untuk mengolah data tunggal menjadi ukuran penyebaran.
+- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena menuntut ketelitian tinggi dalam mengurutkan 14 data dan melakukan langkah-langkah berjenjang (Q1, Q2, Q3, IQR, simpangan kuartil). Meskipun prosedurnya familiar, ketergantungan antar langkah dan potensi kesalahan hitung pada data yang cukup banyak meningkatkan beban kognitif.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data dan menentukan median. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 14 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan mampu mengolah data statistik. Soal ini memerlukan ketelitian prosedural yang cukup untuk menghindari kesalahan pada langkah-langkah berurutan. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
