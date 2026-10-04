@@ -30,40 +30,73 @@ Label domain/knowledge/intended tetap berasal dari AI. IRT menyimpan difficulty 
 ## Data lama dan migrasi
 
 Laporan aktif `output/pretest/kelas*/hasil_validasi/validation_results.json` memakai
-`schemaVersion=validated-question-bundle-v1-ai-metadata`. Envelope tetap menyediakan
-`summary` dan `items`; setiap item mempertahankan field soal sumber dan menambahkan
-`ai_metadata`. Tidak ada soal baru atau perubahan teks, opsi, gambar dan kunci jawaban.
+format **array dokumen**, sama seperti `soal_pretest_db.json`: tidak ada envelope
+`items`/`summary` atau field tambahan `ai_metadata` pada baris database. Setiap dokumen
+mempertahankan seluruh 16 field sumber, urutan soal, teks, opsi, gambar dan kunci jawaban.
+Identitas format `validated-question-array-v2`, summary, provenance, track, identitas
+snapshot dan profil head 2/3 berada di `manifest.json.databaseExport`.
 
 | Field | Sumber / makna |
 |---|---|
 | `cognitive_level` | Label final AI: knowing, applying, reasoning |
-| `ai_metadata.label_provenance` | ai_silver |
-| `ai_metadata.knowledge_dimension` | Label final factual, conceptual, procedural, metacognitive |
-| `ai_metadata.intended_difficulty` | Label final Easy, Medium, Hard; terpisah dari difficulty empiris |
-| `ai_metadata.validation_status` | silver_ready, revision_required, needs_ai_review |
-| `ai_metadata.subject_track` | regular atau tl |
-| `ai_metadata.decision_id` | Referensi `decisionId` dalam audit lengkap |
-| `ai_metadata.question_version_id` | ID immutable yang sama dengan versi snapshot delivery |
-| `ai_metadata.content_hash` | Hash konten operasional yang sama dengan snapshot |
+| `cognitive_score` | Skor awal dari intended difficulty: Easy=600, Medium=1000, Hard=1400 |
+| `confidence_score` | Integer 0-100: dukungan run awal terhadap label final, minimum dari tiga head |
+| `status` | Routing final: silver_ready, revision_required, needs_ai_review |
 
-`cognitive_score` dan `confidence_score` bernilai null: kode domain kognitif bukan
-skor kemampuan, dan confidence IndoBERT tidak mewakili probabilitas kebenaran label
-final AI. Item yang ditahan memiliki ID versi/hash operasional null. Filter delivery
-harus memakai `ai_metadata.validation_status == "silver_ready"`, bukan `status` lama.
+Metadata per soal ada di `manifest.json.databaseExport.metadataByQuestionId["<_id>"]`:
+`label_provenance`, `knowledge_dimension`, `intended_difficulty`, `validation_status`,
+`subject_track`, `decision_id`, `question_version_id`, `content_hash`, dan
+`final_label_supporting_runs`. Item yang ditahan tetap memiliki ID versi/hash operasional null.
+
+`cognitive_score` memakai skala yang sama dengan target skor generator exercise. Skor
+ini **bukan** nomor kategori knowing/applying/reasoning, skor kemampuan siswa, hasil
+kalibrasi IRT, atau confidence. Head kognitif dan skor kesulitan tetap berbeda.
+
+Untuk setiap head `h`, hitung `n_h` dari run awal berstatus `success`, action `classify`,
+dan label yang sama dengan **label final setelah adjudikasi**. Dengan `N=requestedRuns`:
+
+```text
+confidence_score = round(100 × min(n_domain/N, n_knowledge/N, n_difficulty/N))
+```
+
+Contoh label final knowing/procedural/Easy, dukungan 3/1/3, N=3: confidence=33.
+Dukungan minimum 2/3 menghasilkan 67; 3/3 menghasilkan 100. Denominator tetap run
+yang diminta: run gagal, abstain atau belum tersedia tidak menambah dukungan.
+Adjudikasi menentukan label final tetapi tidak dihitung sebagai suara keempat.
+`votes.supportingVotes` tidak dipakai karena dapat menunjuk mayoritas awal yang
+berbeda dari label final. Confidence ini mengukur **konsistensi AI**, bukan probabilitas
+akurasi atau confidence IndoBERT. Nilai 100 tidak menjamin isi/kunci benar; routing
+tetap penentu kelayakan. Tidak ada threshold baru atau penggabungan skor model 40/60.
+
+Untuk delivery, filter `status == "silver_ready"`. Semua 580 soal tetap diekspor
+agar cakupan sumber utuh; 9 soal `revision_required` dapat disimpan sebagai held,
+tetapi tidak boleh diberikan kepada siswa meskipun ketiga kolom klasifikasi terisi.
+Jika label difficulty belum tersedia pada batch berikutnya, score tetap null dan
+item harus ditahan; tidak ada label/skor pengganti yang dibuat-buat.
 
 Keputusan lengkap dipertahankan byte demi byte di
-`hasil_validasi/bukti_validasi/decision_audit.json`. `decisionAudit` pada envelope
+`hasil_validasi/bukti_validasi/decision_audit.json`. `databaseExport.decisionAudit` pada manifest
 menyimpan path relatif dan SHA-256; manifest juga memverifikasi file tersebut.
 Pembaca internal memakai `app.silver.exports.load_decision_bundle`, yang mendukung
-format lama serta format ringkas. Builder snapshot tetap memeriksa bukti, kunci,
+format laporan lama, envelope ringkas lama, serta array database baru. Builder snapshot tetap memeriksa bukti, kunci,
 solusi dan aset. Kontrak HTTP assessment, scoring dan IRT tetap menggunakan snapshot.
 JSON ringkas berisi kunci jawaban dan hanya untuk integrasi backend.
 
 Konversi aktif dapat diulang secara offline dengan
 `scripts/compact_validation_results.py`; builder blind juga menghasilkan format ini
-untuk batch berikutnya. Consumer eksternal yang membaca field
-`items[].llmAdvisory` atau `items[].finalRouting` perlu memakai mapping di atas
-atau membaca file audit. Format ini bukan payload registrasi `DatasetSnapshot`.
+untuk batch berikutnya. Consumer database membaca array langsung, tanpa `.items`.
+Consumer laporan yang membaca `items[].llmAdvisory` atau `items[].finalRouting`
+perlu memakai loader audit. Format ini bukan payload registrasi `DatasetSnapshot`.
+
+Seeder backend melakukan upsert by `_id` dan tetap memetakan `kelas_id`, `berkas_id`,
+serta nama `subbab_id` ke ID collection bila diperlukan; nilai tersebut mengikuti
+sumber dan tidak ditebak exporter. `image_url` tetap relatif terhadap folder kelas
+sumber, bukan `hasil_validasi`. Backend perlu mendukung string kategori domain dan
+status di atas, integer skor 600/1000/1400, dan confidence integer 0-100. Ekspor ini
+tidak melakukan insert database atau mengubah model backend.
+
+`output/pretest/silver_operational/database_format_verification.json` mencatat
+verifikasi seluruh kelas: cakupan, field, sumber, audit, label, skor dan manifest.
 
 `scripts/migrate_silver_operational.py` memverifikasi dan mengarsipkan laporan sebelum mengganti routing aktif. Label, run, prompt hash, response hash, checkpoint dan sumber tidak diubah. Archive memuat histori kebijakan terdahulu; teks prompt/rubrik lama tetap dipertahankan untuk verifikasi bukti.
 

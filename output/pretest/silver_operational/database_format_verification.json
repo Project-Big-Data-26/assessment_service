@@ -1,0 +1,298 @@
+{
+  "schemaVersion": "validated-question-array-v2",
+  "scorePolicy": {
+    "version": "intended-difficulty-score-v1",
+    "mapping": {
+      "Easy": 600,
+      "Medium": 1000,
+      "Hard": 1400
+    },
+    "meaning": "Initial difficulty score, not student ability or empirical IRT difficulty."
+  },
+  "confidencePolicy": {
+    "version": "final-label-run-support-min-v1",
+    "scale": "integer_0_100",
+    "heads": [
+      "mathCognitiveDomain",
+      "knowledgeDimension",
+      "intendedDifficulty"
+    ],
+    "formula": "round(100 * min(final_label_supporting_runs_per_head / requested_runs))",
+    "meaning": "AI run agreement with final labels; not a calibrated probability of correctness.",
+    "denominator": "Requested initial runs; failures and abstentions do not support a label.",
+    "adjudication": "Determines final labels; not counted as an additional vote."
+  },
+  "classCount": 14,
+  "itemCount": 580,
+  "classes": [
+    {
+      "class": "kelas1",
+      "sourceSha256": "d845fa210b28a0644c5fa0a0c1c92cdcc089f94b68e72800067b227992aed176",
+      "decisionAuditSha256": "d79c1a38305eb6e1cb9189d5b0aaeed5b509e2287684fd9aab0a4751bcca561d",
+      "itemCount": 50,
+      "statusCounts": {
+        "silver_ready": 50
+      },
+      "confidenceCounts": {
+        "33": 5,
+        "100": 28,
+        "67": 17
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "b0807559fae987fb425c10221db6bf66d88648a8dcada00bc284f8671255cbd8"
+    },
+    {
+      "class": "kelas10",
+      "sourceSha256": "1eacd0f235f65e9ff52bdaaca8de72e6dca09502f00f27d54fd02addb2bcf3c1",
+      "decisionAuditSha256": "6059e9490f1651f4667188c33bac0eb1d2781cfa3a3f0354c60935b25355db62",
+      "itemCount": 46,
+      "statusCounts": {
+        "silver_ready": 46
+      },
+      "confidenceCounts": {
+        "100": 24,
+        "67": 17,
+        "33": 5
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "863b99a91272015d9ceb8973f89fec55d44b9a40dc17c3c69975e2129b5e2595"
+    },
+    {
+      "class": "kelas11",
+      "sourceSha256": "940de1aa07d699a7e3b11fd3f528405a3ae742a553cecb903d2885eb0d9d7630",
+      "decisionAuditSha256": "9a699000796e55ef5d604274dac8cd57ade9f39c274c26bd4621a4297d0cc267",
+      "itemCount": 22,
+      "statusCounts": {
+        "silver_ready": 21,
+        "revision_required": 1
+      },
+      "confidenceCounts": {
+        "100": 15,
+        "67": 5,
+        "33": 2
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "d71f95672f8358ae52d4b72dd29a8fff8ecead756e6490ecfa35483072020d2b"
+    },
+    {
+      "class": "kelas11_tl",
+      "sourceSha256": "5101c0f64df05f1e7dcf43c85998aeaae892010e93fd368fe0a4eecf4a2b0cfa",
+      "decisionAuditSha256": "3127d74b0f54244d2d8c6cbfd5693c5139090fa30b06378edb1a1f0fff1d298a",
+      "itemCount": 55,
+      "statusCounts": {
+        "silver_ready": 54,
+        "revision_required": 1
+      },
+      "confidenceCounts": {
+        "100": 36,
+        "33": 8,
+        "67": 11
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "924be7ef384d5e1e17da7a5b93e5771d4cd4cfa504fa592bc352ec537ab738e4"
+    },
+    {
+      "class": "kelas12",
+      "sourceSha256": "086fe5310aab2fafc691ede89aef2851bdf28a2929aa5deb6cd7b808f19863a7",
+      "decisionAuditSha256": "5555f7c1e1b6ffc19f1e1f9637196f2079921049dfbde325161a63a9792f440e",
+      "itemCount": 32,
+      "statusCounts": {
+        "silver_ready": 31,
+        "revision_required": 1
+      },
+      "confidenceCounts": {
+        "67": 10,
+        "100": 19,
+        "33": 3
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "9106db6484b75df9e9c3b9be7dc0ea73b7ffaa4edd2de244912bef1f1e9416aa"
+    },
+    {
+      "class": "kelas12_tl",
+      "sourceSha256": "8f0af41e1e27d411d3d42d1d3b48b2b26b51b6ceb004a75d7aa99a730a5e4b68",
+      "decisionAuditSha256": "c064c9a1fa448e9d74755df29b52bf224a3442220e31e7dbc8bc4502479dd6e5",
+      "itemCount": 41,
+      "statusCounts": {
+        "revision_required": 1,
+        "silver_ready": 40
+      },
+      "confidenceCounts": {
+        "67": 11,
+        "33": 4,
+        "100": 26
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "ca8c548ace3d443782b0146f35d4aa97fc579cab0f79b587c84b3a3a33aebff1"
+    },
+    {
+      "class": "kelas2",
+      "sourceSha256": "16baa74c86211968e621d1a416eeb5256129825f3846472c36b25685953ceec8",
+      "decisionAuditSha256": "9978ae0a8fe208d95cbe7c1a6534b00ea43eb649a59087f4749141186ba2413d",
+      "itemCount": 44,
+      "statusCounts": {
+        "silver_ready": 43,
+        "revision_required": 1
+      },
+      "confidenceCounts": {
+        "100": 28,
+        "67": 13,
+        "33": 3
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "be195c0ca1af59945958de75d2762c43f883e7eca07582f54774b2bdbee39047"
+    },
+    {
+      "class": "kelas3",
+      "sourceSha256": "73931eadeabe208f7014e3acaaa000dc419ce90d5cf402e3d77effa813411938",
+      "decisionAuditSha256": "9ada25cc1df896ed43a196811ff694007034d3df2a879f9c60a211d3e67047ab",
+      "itemCount": 42,
+      "statusCounts": {
+        "silver_ready": 41,
+        "revision_required": 1
+      },
+      "confidenceCounts": {
+        "100": 25,
+        "67": 17
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "8b60d2ef7ea0e787ce45478980fdfe2a924bfa22e439c239c2d3022eaac5d29d"
+    },
+    {
+      "class": "kelas4",
+      "sourceSha256": "aa64e658d0250e0c3a66be822da6435fb21810c968aac40b62c64f39bde9d6bd",
+      "decisionAuditSha256": "817df484a10065295cbf73ce762f0af213dca97b3a45b0e71cd82c6daf545db0",
+      "itemCount": 18,
+      "statusCounts": {
+        "silver_ready": 18
+      },
+      "confidenceCounts": {
+        "100": 15,
+        "67": 3
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "b63ce460f7b072ee6c37b3ccf5555f4ecebba466046f3548a433400579a985c9"
+    },
+    {
+      "class": "kelas5",
+      "sourceSha256": "323a2cdd95897fe9e74dbe8e41ae98462d40650e5a1d5508be0ec1d4ad3bfc48",
+      "decisionAuditSha256": "e581f9535b83d8852e680fc8b674907adc7e3e472eebbdeb892fd962102b3d8a",
+      "itemCount": 72,
+      "statusCounts": {
+        "silver_ready": 70,
+        "revision_required": 2
+      },
+      "confidenceCounts": {
+        "67": 20,
+        "100": 46,
+        "33": 6
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "8f548b97de1c414db8e4de79672ab6a32f398375bb5de2a3a0767f251dee644e"
+    },
+    {
+      "class": "kelas6",
+      "sourceSha256": "5290e55f843aad87923676d05ad5aa385b6e69cefcd31a68da48272cff7e6215",
+      "decisionAuditSha256": "701e8bf94b10106dc04375a2751f44b2db9e0809e911dcb0b473547e17250173",
+      "itemCount": 25,
+      "statusCounts": {
+        "silver_ready": 25
+      },
+      "confidenceCounts": {
+        "100": 21,
+        "67": 4
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "90366694e6261956ad097a935d34eaaa5604ee23a41d9830332823a91bf9aa17"
+    },
+    {
+      "class": "kelas7",
+      "sourceSha256": "61fe75b9390d8f01beed20a9a1aa2987a6295529960e5147a5a6104a6bd61ac1",
+      "decisionAuditSha256": "e24af2720a858b8a0cb7a455cd38993e47099353fd0bec9fa4f34224e6a1ef20",
+      "itemCount": 49,
+      "statusCounts": {
+        "silver_ready": 49
+      },
+      "confidenceCounts": {
+        "67": 15,
+        "100": 33,
+        "33": 1
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "bd436752a77470cf4ee4b2f2caa2e7cf5b7747bc7851a49fe2b3571d984a929e"
+    },
+    {
+      "class": "kelas8",
+      "sourceSha256": "a0e4625d81e79745117847233166fb745925d664ff5969f7fb5e47d6f3bc90a8",
+      "decisionAuditSha256": "bf8ef5185a0c822ad68baa9cbf22eb7055c4fa1cd8d68fdef5c8a5ee890c2019",
+      "itemCount": 42,
+      "statusCounts": {
+        "silver_ready": 42
+      },
+      "confidenceCounts": {
+        "100": 31,
+        "33": 2,
+        "67": 9
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "83efb683108703cdbfe04344631545073c5ad16e58659de0e33ac94a1ccc9192"
+    },
+    {
+      "class": "kelas9",
+      "sourceSha256": "b138ff3b11bce2373c9a83f70cb0d247d99dad97fb927153de82c497c85fd97f",
+      "decisionAuditSha256": "9c6c94eed2b1656d182a9319896265327fe790000e29bc0da3be796401f56c53",
+      "itemCount": 42,
+      "statusCounts": {
+        "silver_ready": 41,
+        "revision_required": 1
+      },
+      "confidenceCounts": {
+        "100": 24,
+        "67": 14,
+        "33": 4
+      },
+      "exactSourceFieldsAndOrder": true,
+      "sourceAndAuditBytesPreserved": true,
+      "labelsScoresAndMetadataVerified": true,
+      "validationResultsSha256": "98f319456025baf7127ade11164c626a07563669162ac80e8c2a2f1e8f969068"
+    }
+  ],
+  "newQuestions": 0,
+  "newLlmCalls": 0,
+  "sourceFilesChanged": false,
+  "decisionAuditChanged": false,
+  "operationalSnapshotCheck": {
+    "snapshotId": "operational-silver-20261003-v2",
+    "qualifiedRows": 571,
+    "excludedCounts": {
+      "revision_required": 9
+    },
+    "allRowsIdentical": true
+  }
+}

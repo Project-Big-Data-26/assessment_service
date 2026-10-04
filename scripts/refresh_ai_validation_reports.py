@@ -16,7 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from app.llm.silver import SilverLabelOutput, build_silver_prompt  # noqa: E402
-from app.silver.exports import COMPACT_SCHEMA, compact_items, load_decision_bundle
+from app.silver.exports import (COMPACT_SCHEMA, DATABASE_SCHEMA, SCORE_POLICY, CONFIDENCE_POLICY,
+                               compact_items, database_items, final_label_support, load_decision_bundle)
 from scripts.generate_silver_labels_kelas1 import input_hash, load_checkpoint  # noqa: E402
 
 BASE = ROOT / "output/pretest"
@@ -30,7 +31,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def write(path: Path, value: dict) -> None:
+def write(path: Path, value: dict | list) -> None:
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temporary.replace(path)
@@ -91,7 +92,22 @@ def verify_bundle(source: Path, bundle: Path) -> None:
     exported = load(bundle / "questions.json")["items"]
     document = load(bundle / "validation_results.json")
     results = load_decision_bundle(bundle)["items"]
-    if document.get("schemaVersion") == COMPACT_SCHEMA:
+    if isinstance(document, list):
+        export = manifest["databaseExport"]
+        assert export["schemaVersion"] == DATABASE_SCHEMA
+        assert export["scorePolicy"] == SCORE_POLICY
+        assert export["confidencePolicy"] == CONFIDENCE_POLICY
+        assert document == database_items(list(questions.values()), results), "database export differs from source or locked evidence"
+        checkpoint = load(Path(manifest["sourceFiles"]["blindCheckpoint"]["path"]))
+        metadata = compact_items(list(questions.values()), results, exported, checkpoint, source.parent.name)
+        by_id = {d["questionId"]: d for d in results}
+        expected_metadata = {row["_id"]: {**row["ai_metadata"],
+            "final_label_supporting_runs": final_label_support(by_id[row["_id"]])} for row in metadata}
+        assert export["metadataByQuestionId"] == expected_metadata, "database export metadata differs from locked evidence"
+        assert export["summary"] == load_decision_bundle(bundle)["summary"]
+        assert export["sourceClass"] == load_decision_bundle(bundle)["sourceClass"]
+        assert export["subjectTrack"] == checkpoint.get("subjectTrack", "regular")
+    elif document.get("schemaVersion") == COMPACT_SCHEMA:
         checkpoint = load(Path(manifest["sourceFiles"]["blindCheckpoint"]["path"]))
         expected_items = compact_items(list(questions.values()), results, exported, checkpoint, source.parent.name)
         assert document["items"] == expected_items, "compact export differs from source or locked evidence"
@@ -183,7 +199,7 @@ def refresh_backlog(backlog: dict) -> None:
             if missing or adjudication:
                 pending.append({"index": index, "questionId": str(q["_id"]), "missingRunIndices": missing,
                                 "pendingAdjudication": adjudication, "stem": q["soal_text"]})
-        distribution = load(active / "validation_results.json")["summary"]["advisoryLabelDistributions"]["intendedDifficulty"]
+        distribution = load_decision_bundle(active)["summary"]["advisoryLabelDistributions"]["intendedDifficulty"]
         entry.update(executionStatus=silver.get("executionStatus"), successfulRuns=silver["summary"]["successfulRuns"],
                      pendingAIQuestions=pending, pendingAIQuestionCount=len(pending),
                      pendingInitialRunCount=sum(len(q["missingRunIndices"]) for q in pending),
@@ -250,11 +266,14 @@ def write_active_index(base: Path = BASE) -> None:
                  "Checkpoint dan laporan historis tetap immutable. Arsip lokal pra-migrasi berada di "
                  "`archive/pre_silver_operational_v1`. Buku Guru tetap sumber bukti kunci. "
                  "IRT memakai respons siswa nyata dan menyimpan difficulty empiris terpisah dari `intendedDifficulty`."])
-    rows.extend(["", "Laporan aktif `hasil_validasi/validation_results.json` memakai format soal ringkas: "
-                 "`items[].cognitive_level` dan delapan field `items[].ai_metadata`. "
-                 "Bukti lengkap tersimpan di `hasil_validasi/bukti_validasi/decision_audit.json`. "
-                 "Filter delivery memakai `ai_metadata.validation_status = silver_ready`. "
-                 "[Verifikasi format ringkas](silver_operational/compact_format_verification.json) "
+    rows.extend(["", "Laporan aktif `hasil_validasi/validation_results.json` berupa array dokumen soal "
+                 "dengan field yang sama seperti `soal_pretest_db.json`. `cognitive_level` berasal dari label final AI; "
+                 "`cognitive_score` memakai Easy=600, Medium=1000, Hard=1400. `confidence_score` adalah "
+                 "persentase dukungan run awal terhadap label final terendah dari tiga head (0-100), "
+                 "bukan probabilitas akurasi. Filter delivery memakai `status = silver_ready`. "
+                 "Bukti lengkap tersimpan di `hasil_validasi/bukti_validasi/decision_audit.json`; "
+                 "profil tiga head, identitas snapshot dan rumus ekspor ada di `manifest.json.databaseExport`. "
+                 "[Verifikasi ekspor database](silver_operational/database_format_verification.json) "
                  "mencatat preservasi sumber, audit dan identitas snapshot."])
     (base / "README.md").write_text("\n".join(rows) + "\n", encoding="utf-8")
 
