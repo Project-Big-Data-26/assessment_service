@@ -9,7 +9,11 @@ from app.classification.v2.serializer import canonical_json_hash
 
 COMPACT_SCHEMA = "validated-question-bundle-v1-ai-metadata"
 LEGACY_DATABASE_SCHEMA = "validated-question-array-v2"
-DATABASE_SCHEMA = "validated-question-array-v3-difficulty"
+PREVIOUS_DATABASE_SCHEMA = "validated-question-array-v3-difficulty"
+DATABASE_SCHEMA = "validated-question-array-v4-active-status"
+STATUS_POLICY = {"version": "database-active-status-v1", "source": "finalRouting",
+                 "mapping": {"silver_ready": "active", "revision_required": "inactive",
+                             "needs_ai_review": "inactive"}}
 LEVEL_POLICY = {"version": "database-difficulty-level-v1", "sourceHead": "intendedDifficulty",
                 "mapping": {"Easy": "easy", "Medium": "medium", "Hard": "hard"}}
 AUDIT_FILE = "bukti_validasi/decision_audit.json"
@@ -44,7 +48,8 @@ def final_label_support(decision: dict) -> dict[str, int]:
     ) for head in CONFIDENCE_POLICY["heads"]}
 
 
-def database_items(originals: list[dict], decisions: list[dict], *, legacy_domain_level: bool = False) -> list[dict]:
+def database_items(originals: list[dict], decisions: list[dict], *, legacy_domain_level: bool = False,
+                   legacy_routing_status: bool = False) -> list[dict]:
     """Export only source columns, keeping source content and item order intact."""
     by_id = {d["questionId"]: d for d in decisions}
     expected = {str(q["_id"]) for q in originals}
@@ -58,12 +63,15 @@ def database_items(originals: list[dict], decisions: list[dict], *, legacy_domai
         difficulty = labels["intendedDifficulty"]
         if difficulty is not None and difficulty not in SCORE_POLICY["mapping"]:
             raise ValueError(f"unknown intended difficulty: {difficulty}")
+        route = decision["finalRouting"]
+        if route not in STATUS_POLICY["mapping"]:
+            raise ValueError(f"unknown validation routing: {route}")
         values = {"cognitive_level": (labels["mathCognitiveDomain"] if legacy_domain_level
                                        else LEVEL_POLICY["mapping"].get(difficulty)),
                   "cognitive_score": SCORE_POLICY["mapping"].get(difficulty),
                   "confidence_score": round(100 * min(final_label_support(decision).values())
                                             / advisory.get("requestedRuns", 3)),
-                  "status": decision["finalRouting"]}
+                  "status": route if legacy_routing_status else STATUS_POLICY["mapping"][route]}
         # Exact source schema: the database rows have no report/metadata fields.
         rows.append({key: values.get(key, value) for key, value in original.items()})
     return rows
@@ -84,7 +92,7 @@ def load_decision_bundle(bundle: Path) -> dict:
     if isinstance(result, list):
         manifest = json.loads((bundle / "manifest.json").read_text(encoding="utf-8"))
         export = manifest["databaseExport"]
-        if export["schemaVersion"] not in (DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA):
+        if export["schemaVersion"] not in (DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA):
             raise ValueError("unexpected database export schema")
         reference = export["decisionAudit"]
     elif result.get("schemaVersion") == COMPACT_SCHEMA:

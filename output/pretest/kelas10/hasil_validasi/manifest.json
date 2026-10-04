@@ -29,8 +29,8 @@
       "bytes": 119452
     },
     "validation_results.json": {
-      "sha256": "4fdbce11b09e070bde5d44c06e791312d864ee74de61203bec687ccc6b25ee1d",
-      "bytes": 74992
+      "sha256": "4e94d38d8991dee1b7d3333babb6e3d9469cc5f7998b97066bf73f7f94c43b5a",
+      "bytes": 74716
     },
     "indobert_predictions.json": {
       "sha256": "6e07b4d817670eae6d48244408f821d4fbae3b9e3aa5c9a79fd093e1bab90013",
@@ -41,8 +41,8 @@
       "bytes": 460317
     },
     "README.md": {
-      "sha256": "52f4863c056649016ce898d7931f112b1ac256a6bfd7cdc49bd3aa8a83da7b2d",
-      "bytes": 2356
+      "sha256": "307591264ea1ab0e99f4e81d9e45a2319ffe832371c5250997e916dbd8dc3d91",
+      "bytes": 2474
     },
     "difficulty_groups.json": {
       "sha256": "e3724d96ead3b6ba8c0a720524a4270717932d71d46b09bf1bd4fe5788dcd39d",
@@ -78,9 +78,9 @@
   "labelProvenance": "ai_silver",
   "reviewMode": "automated_ai",
   "operationalUpdatedAt": "2026-10-03T14:37:23.181051+00:00",
-  "validationResultsSchemaVersion": "validated-question-array-v3-difficulty",
+  "validationResultsSchemaVersion": "validated-question-array-v4-active-status",
   "databaseExport": {
-    "schemaVersion": "validated-question-array-v3-difficulty",
+    "schemaVersion": "validated-question-array-v4-active-status",
     "collectionTarget": "soal",
     "visibility": "restricted_contains_answer_key",
     "sourceClass": 10,
@@ -135,6 +135,15 @@
     "decisionAudit": {
       "path": "bukti_validasi/decision_audit.json",
       "sha256": "6059e9490f1651f4667188c33bac0eb1d2781cfa3a3f0354c60935b25355db62"
+    },
+    "statusPolicy": {
+      "version": "database-active-status-v1",
+      "source": "finalRouting",
+      "mapping": {
+        "silver_ready": "active",
+        "revision_required": "inactive",
+        "needs_ai_review": "inactive"
+      }
     },
     "cognitiveLevelPolicy": {
       "version": "database-difficulty-level-v1",

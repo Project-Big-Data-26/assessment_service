@@ -1,5 +1,14 @@
 {
-  "schemaVersion": "validated-question-array-v3-difficulty",
+  "schemaVersion": "validated-question-array-v4-active-status",
+  "statusPolicy": {
+    "version": "database-active-status-v1",
+    "source": "finalRouting",
+    "mapping": {
+      "silver_ready": "active",
+      "revision_required": "inactive",
+      "needs_ai_review": "inactive"
+    }
+  },
   "cognitiveLevelPolicy": {
     "version": "database-difficulty-level-v1",
     "sourceHead": "intendedDifficulty",
@@ -40,7 +49,7 @@
       "decisionAuditSha256": "d79c1a38305eb6e1cb9189d5b0aaeed5b509e2287684fd9aab0a4751bcca561d",
       "itemCount": 50,
       "statusCounts": {
-        "silver_ready": 50
+        "active": 50
       },
       "confidenceCounts": {
         "33": 5,
@@ -50,7 +59,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "c876bab68261ebf610c6ad90753ff38e740e08c0d28cab4c1aa0b7b8cc3e4be7"
+      "validationResultsSha256": "f21a30f221eca9824a6d4ef7c63c76977de9af8610db7ac536b370bbb4d6f93a"
     },
     {
       "class": "kelas10",
@@ -58,7 +67,7 @@
       "decisionAuditSha256": "6059e9490f1651f4667188c33bac0eb1d2781cfa3a3f0354c60935b25355db62",
       "itemCount": 46,
       "statusCounts": {
-        "silver_ready": 46
+        "active": 46
       },
       "confidenceCounts": {
         "100": 24,
@@ -68,7 +77,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "4fdbce11b09e070bde5d44c06e791312d864ee74de61203bec687ccc6b25ee1d"
+      "validationResultsSha256": "4e94d38d8991dee1b7d3333babb6e3d9469cc5f7998b97066bf73f7f94c43b5a"
     },
     {
       "class": "kelas11",
@@ -76,8 +85,8 @@
       "decisionAuditSha256": "9a699000796e55ef5d604274dac8cd57ade9f39c274c26bd4621a4297d0cc267",
       "itemCount": 22,
       "statusCounts": {
-        "silver_ready": 21,
-        "revision_required": 1
+        "active": 21,
+        "inactive": 1
       },
       "confidenceCounts": {
         "100": 15,
@@ -87,7 +96,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "8a6d949274ffb7fd82c35c9e7877112562438b36aaa49b2819804151201f6e7f"
+      "validationResultsSha256": "8e34dad0127c8266c2dc5c3940d8b3c148b7afed2878d9e300d72b0bf2f6698a"
     },
     {
       "class": "kelas11_tl",
@@ -95,8 +104,8 @@
       "decisionAuditSha256": "3127d74b0f54244d2d8c6cbfd5693c5139090fa30b06378edb1a1f0fff1d298a",
       "itemCount": 55,
       "statusCounts": {
-        "silver_ready": 54,
-        "revision_required": 1
+        "active": 54,
+        "inactive": 1
       },
       "confidenceCounts": {
         "100": 36,
@@ -106,7 +115,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "52f31f54c8277d437a43e287dc438931666f1b21c4254a4e58a953fccecfe0e6"
+      "validationResultsSha256": "ac5280a6db44d00448d9ab6278c1e6a54d80dc802ecc26170bd911337d4ad232"
     },
     {
       "class": "kelas12",
@@ -114,8 +123,8 @@
       "decisionAuditSha256": "5555f7c1e1b6ffc19f1e1f9637196f2079921049dfbde325161a63a9792f440e",
       "itemCount": 32,
       "statusCounts": {
-        "silver_ready": 31,
-        "revision_required": 1
+        "active": 31,
+        "inactive": 1
       },
       "confidenceCounts": {
         "67": 10,
@@ -125,7 +134,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "4d5dfeb478d0f02bb4dc43da3b757dbbd54fa888ff16c90c10bfc569964bb82a"
+      "validationResultsSha256": "3d4d331154191df7fcbf27336153d0319a3074f0727c419d767072ea4e5cd9a9"
     },
     {
       "class": "kelas12_tl",
@@ -133,8 +142,8 @@
       "decisionAuditSha256": "c064c9a1fa448e9d74755df29b52bf224a3442220e31e7dbc8bc4502479dd6e5",
       "itemCount": 41,
       "statusCounts": {
-        "revision_required": 1,
-        "silver_ready": 40
+        "inactive": 1,
+        "active": 40
       },
       "confidenceCounts": {
         "67": 11,
@@ -144,7 +153,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "3d24eb6bfd1dec302b2f0a276ffebc11a5fb9d9eec6a3e94af252b7b7686cae4"
+      "validationResultsSha256": "f99bfd052294f3feb90c40437a0613fe2ba03b65c570253272af5cec65e7178c"
     },
     {
       "class": "kelas2",
@@ -152,8 +161,8 @@
       "decisionAuditSha256": "9978ae0a8fe208d95cbe7c1a6534b00ea43eb649a59087f4749141186ba2413d",
       "itemCount": 44,
       "statusCounts": {
-        "silver_ready": 43,
-        "revision_required": 1
+        "active": 43,
+        "inactive": 1
       },
       "confidenceCounts": {
         "100": 28,
@@ -163,7 +172,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "d45906dc00303a59ad6ac1684a2c6d13d797b6604c47de1abd22b667834f16f7"
+      "validationResultsSha256": "cfb2f5e41e084a8b12b162f32cf81d58efba03adb8e34494b3b690c699915218"
     },
     {
       "class": "kelas3",
@@ -171,8 +180,8 @@
       "decisionAuditSha256": "9ada25cc1df896ed43a196811ff694007034d3df2a879f9c60a211d3e67047ab",
       "itemCount": 42,
       "statusCounts": {
-        "silver_ready": 41,
-        "revision_required": 1
+        "active": 41,
+        "inactive": 1
       },
       "confidenceCounts": {
         "100": 25,
@@ -181,7 +190,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "c4482039daeadd9f5b7515dcbfc465f2a5e952d875ab42ad80143bce76262a65"
+      "validationResultsSha256": "d04d3dc1cd97724f5113783eb11b27e489b67fb325032ce6afdfd36de14316dc"
     },
     {
       "class": "kelas4",
@@ -189,7 +198,7 @@
       "decisionAuditSha256": "817df484a10065295cbf73ce762f0af213dca97b3a45b0e71cd82c6daf545db0",
       "itemCount": 18,
       "statusCounts": {
-        "silver_ready": 18
+        "active": 18
       },
       "confidenceCounts": {
         "100": 15,
@@ -198,7 +207,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "9eae771e5840234af89f7ac322cd53c59de0e19262aaa70caa89d9bd6f049252"
+      "validationResultsSha256": "85f8510fca0ce57420c03c28218495b9a03c26540670bfd865952e48a8e56f28"
     },
     {
       "class": "kelas5",
@@ -206,8 +215,8 @@
       "decisionAuditSha256": "e581f9535b83d8852e680fc8b674907adc7e3e472eebbdeb892fd962102b3d8a",
       "itemCount": 72,
       "statusCounts": {
-        "silver_ready": 70,
-        "revision_required": 2
+        "active": 70,
+        "inactive": 2
       },
       "confidenceCounts": {
         "67": 20,
@@ -217,7 +226,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "a2670fc2ad7aa0c876b528db3ecdf121a45a29233e923e5d23df49ccb4f2222f"
+      "validationResultsSha256": "62171701d0efc1d5d19bd7a7309c44c802e24ce045acfdf15cda1bc53581a382"
     },
     {
       "class": "kelas6",
@@ -225,7 +234,7 @@
       "decisionAuditSha256": "701e8bf94b10106dc04375a2751f44b2db9e0809e911dcb0b473547e17250173",
       "itemCount": 25,
       "statusCounts": {
-        "silver_ready": 25
+        "active": 25
       },
       "confidenceCounts": {
         "100": 21,
@@ -234,7 +243,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "e14b89b32f3985953d7d04c9a704d79f96cab8347537865de7b80de6ebb17aaf"
+      "validationResultsSha256": "11c41a39341ba2ac1cc467f806c762e13d528020d7c5cea02174dc601a521585"
     },
     {
       "class": "kelas7",
@@ -242,7 +251,7 @@
       "decisionAuditSha256": "e24af2720a858b8a0cb7a455cd38993e47099353fd0bec9fa4f34224e6a1ef20",
       "itemCount": 49,
       "statusCounts": {
-        "silver_ready": 49
+        "active": 49
       },
       "confidenceCounts": {
         "67": 15,
@@ -252,7 +261,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "83c6139be2360db5415763c867cde8a4ac6dfd0e6074f7b10d16067fd4958748"
+      "validationResultsSha256": "8aeff5e4ca0f9e3aa1f3ea0bfcd7393189ff90b54b572d0c345731691c4c2c15"
     },
     {
       "class": "kelas8",
@@ -260,7 +269,7 @@
       "decisionAuditSha256": "bf8ef5185a0c822ad68baa9cbf22eb7055c4fa1cd8d68fdef5c8a5ee890c2019",
       "itemCount": 42,
       "statusCounts": {
-        "silver_ready": 42
+        "active": 42
       },
       "confidenceCounts": {
         "100": 31,
@@ -270,7 +279,7 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "8206fd481427f6d61fe3b94b9ec2bc0aae7841c30f9069822751e0c74fdf3a77"
+      "validationResultsSha256": "33627bb157bab6d805c1f108e326326920bf228b41a10becd631d8e8f68deac7"
     },
     {
       "class": "kelas9",
@@ -278,8 +287,8 @@
       "decisionAuditSha256": "9c6c94eed2b1656d182a9319896265327fe790000e29bc0da3be796401f56c53",
       "itemCount": 42,
       "statusCounts": {
-        "silver_ready": 41,
-        "revision_required": 1
+        "active": 41,
+        "inactive": 1
       },
       "confidenceCounts": {
         "100": 24,
@@ -289,13 +298,17 @@
       "exactSourceFieldsAndOrder": true,
       "sourceAndAuditBytesPreserved": true,
       "labelsScoresAndMetadataVerified": true,
-      "validationResultsSha256": "fd4d8b449991a2f9ae192adb86fc89d98b1fcf8800f81d11cd99cac28d28cd58"
+      "validationResultsSha256": "c63975f78084a5b0a91ceed2043b9cd1abc86c0a4069cbc2f7f686f901bf40fe"
     }
   ],
   "newQuestions": 0,
   "newLlmCalls": 0,
   "sourceFilesChanged": false,
   "decisionAuditChanged": false,
+  "statusCounts": {
+    "active": 571,
+    "inactive": 9
+  },
   "cognitiveLevelCounts": {
     "easy": 414,
     "medium": 161,

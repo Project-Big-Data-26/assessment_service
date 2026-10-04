@@ -10,7 +10,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from app.silver.exports import (AUDIT_FILE, DATABASE_SCHEMA, LEVEL_POLICY, SCORE_POLICY, CONFIDENCE_POLICY,
+from app.silver.exports import (AUDIT_FILE, DATABASE_SCHEMA, STATUS_POLICY, LEVEL_POLICY, SCORE_POLICY, CONFIDENCE_POLICY,
                                compact_items, database_items, final_label_support, load_decision_bundle)
 from scripts.refresh_ai_validation_reports import digest, load, verify_bundle, write
 
@@ -40,7 +40,8 @@ def compact_bundle(source: Path, bundle: Path) -> dict:
         "visibility": "restricted_contains_answer_key", "sourceClass": audit["sourceClass"],
         "subjectTrack": checkpoint.get("subjectTrack", "regular"), "summary": audit["summary"],
         "decisionAudit": {"path": AUDIT_FILE, "sha256": digest(audit_path)},
-        "cognitiveLevelPolicy": LEVEL_POLICY, "scorePolicy": SCORE_POLICY, "confidencePolicy": CONFIDENCE_POLICY,
+        "statusPolicy": STATUS_POLICY, "cognitiveLevelPolicy": LEVEL_POLICY,
+        "scorePolicy": SCORE_POLICY, "confidencePolicy": CONFIDENCE_POLICY,
         "metadataByQuestionId": {row["_id"]: {**row["ai_metadata"],
             "math_cognitive_domain": by_id[row["_id"]]["llmAdvisory"]["advisoryLabels"]["mathCognitiveDomain"],
             "final_label_supporting_runs": final_label_support(by_id[row["_id"]])} for row in metadata},
@@ -56,8 +57,9 @@ def compact_bundle(source: Path, bundle: Path) -> dict:
             "100 untuk 3/3, 67 untuk 2/3, 33 untuk 1/3. Dukungan dihitung ulang dari run awal, "
             "bukan `supportingVotes` yang dapat merujuk label mayoritas sebelum adjudikasi. "
             "Skor ini mengukur konsistensi AI, bukan probabilitas akurasi; adjudikasi tidak menambah suara. "
-            "`status` mempertahankan routing final; hanya `silver_ready` boleh dipakai untuk delivery. "
-            "Soal `revision_required`/`needs_ai_review` tetap ditahan meskipun skor terisi. "
+            "`status` hanya active/inactive: silver_ready menjadi active; revision_required/needs_ai_review "
+            "menjadi inactive. Hanya active boleh dipakai untuk delivery. Routing final asli tetap tersimpan "
+            "di metadata `validation_status` dan audit, sehingga alasan item inactive tetap dapat diperiksa. "
             "Bukti keputusan lengkap tersedia di [decision_audit.json](bukti_validasi/decision_audit.json). "
             "`manifest.json.databaseExport` menyimpan summary, rumus, provenance, track dan metadata per `_id`, "
             "termasuk ID versi/hash snapshot operasional. ID versi/hash item yang ditahan tetap null. "
@@ -108,7 +110,7 @@ def main() -> int:
     report_dir = args.source_root / "silver_operational"
     report_dir.mkdir(exist_ok=True)
     write(report_dir / "database_format_verification.json", {
-        "schemaVersion": DATABASE_SCHEMA, "cognitiveLevelPolicy": LEVEL_POLICY,
+        "schemaVersion": DATABASE_SCHEMA, "statusPolicy": STATUS_POLICY, "cognitiveLevelPolicy": LEVEL_POLICY,
         "scorePolicy": SCORE_POLICY, "confidencePolicy": CONFIDENCE_POLICY,
         "classCount": len(checked), "itemCount": sum(c["itemCount"] for c in checked), "classes": checked,
         "newQuestions": 0, "newLlmCalls": 0, "sourceFilesChanged": False, "decisionAuditChanged": False,

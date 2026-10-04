@@ -16,7 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from app.llm.silver import SilverLabelOutput, build_silver_prompt  # noqa: E402
-from app.silver.exports import (COMPACT_SCHEMA, DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA, LEVEL_POLICY, SCORE_POLICY, CONFIDENCE_POLICY,
+from app.silver.exports import (COMPACT_SCHEMA, DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA,
+                               STATUS_POLICY, LEVEL_POLICY, SCORE_POLICY, CONFIDENCE_POLICY,
                                compact_items, database_items, final_label_support, load_decision_bundle)
 from scripts.generate_silver_labels_kelas1 import input_hash, load_checkpoint  # noqa: E402
 
@@ -94,13 +95,17 @@ def verify_bundle(source: Path, bundle: Path) -> None:
     results = load_decision_bundle(bundle)["items"]
     if isinstance(document, list):
         export = manifest["databaseExport"]
-        assert export["schemaVersion"] in (DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA)
+        assert export["schemaVersion"] in (DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA)
         legacy = export["schemaVersion"] == LEGACY_DATABASE_SCHEMA
+        legacy_status = export["schemaVersion"] != DATABASE_SCHEMA
+        if not legacy_status:
+            assert export["statusPolicy"] == STATUS_POLICY
         if not legacy:
             assert export["cognitiveLevelPolicy"] == LEVEL_POLICY
         assert export["scorePolicy"] == SCORE_POLICY
         assert export["confidencePolicy"] == CONFIDENCE_POLICY
-        assert document == database_items(list(questions.values()), results, legacy_domain_level=legacy), "database export differs from source or locked evidence"
+        assert document == database_items(list(questions.values()), results,
+            legacy_domain_level=legacy, legacy_routing_status=legacy_status), "database export differs from source or locked evidence"
         checkpoint = load(Path(manifest["sourceFiles"]["blindCheckpoint"]["path"]))
         metadata = compact_items(list(questions.values()), results, exported, checkpoint, source.parent.name)
         by_id = {d["questionId"]: d for d in results}
@@ -277,7 +282,8 @@ def write_active_index(base: Path = BASE) -> None:
                  "`easy`, `medium`, `hard`; domain knowing/applying/reasoning tetap di metadata audit. "
                  "`cognitive_score` memakai Easy=600, Medium=1000, Hard=1400. `confidence_score` adalah "
                  "persentase dukungan run awal terhadap label final terendah dari tiga head (0-100), "
-                 "bukan probabilitas akurasi. Filter delivery memakai `status = silver_ready`. "
+                 "bukan probabilitas akurasi. Status database hanya `active` atau `inactive`; "
+                 "filter delivery memakai `status = active`. Routing validasi asli tetap ada di metadata audit. "
                  "Bukti lengkap tersimpan di `hasil_validasi/bukti_validasi/decision_audit.json`; "
                  "profil tiga head, identitas snapshot dan rumus ekspor ada di `manifest.json.databaseExport`. "
                  "[Verifikasi ekspor database](silver_operational/database_format_verification.json) "

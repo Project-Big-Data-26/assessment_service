@@ -33,7 +33,7 @@ Laporan aktif `output/pretest/kelas*/hasil_validasi/validation_results.json` mem
 format **array dokumen**, sama seperti `soal_pretest_db.json`: tidak ada envelope
 `items`/`summary` atau field tambahan `ai_metadata` pada baris database. Setiap dokumen
 mempertahankan seluruh 16 field sumber, urutan soal, teks, opsi, gambar dan kunci jawaban.
-Identitas format `validated-question-array-v3-difficulty`, summary, provenance, track, identitas
+Identitas format `validated-question-array-v4-active-status`, summary, provenance, track, identitas
 snapshot dan profil head 2/3 berada di `manifest.json.databaseExport`.
 
 | Field | Sumber / makna |
@@ -41,7 +41,7 @@ snapshot dan profil head 2/3 berada di `manifest.json.databaseExport`.
 | `cognitive_level` | Label difficulty final AI dalam huruf kecil: easy, medium, hard |
 | `cognitive_score` | Skor awal dari intended difficulty: Easy=600, Medium=1000, Hard=1400 |
 | `confidence_score` | Integer 0-100: dukungan run awal terhadap label final, minimum dari tiga head |
-| `status` | Routing final: silver_ready, revision_required, needs_ai_review |
+| `status` | active untuk silver_ready; inactive untuk revision_required atau needs_ai_review |
 
 Metadata per soal ada di `manifest.json.databaseExport.metadataByQuestionId["<_id>"]`:
 `label_provenance`, `knowledge_dimension`, `intended_difficulty`, `validation_status`,
@@ -71,8 +71,9 @@ berbeda dari label final. Confidence ini mengukur **konsistensi AI**, bukan prob
 akurasi atau confidence IndoBERT. Nilai 100 tidak menjamin isi/kunci benar; routing
 tetap penentu kelayakan. Tidak ada threshold baru atau penggabungan skor model 40/60.
 
-Untuk delivery, filter `status == "silver_ready"`. Semua 580 soal tetap diekspor
-agar cakupan sumber utuh; 9 soal `revision_required` dapat disimpan sebagai held,
+Untuk delivery, filter `status == "active"`. Semua 580 soal tetap diekspor:
+571 active dan 9 inactive. Routing validasi asli (`silver_ready`, `revision_required`,
+`needs_ai_review`) tetap ada pada metadata `validation_status` dan audit. Soal inactive disimpan sebagai held,
 tetapi tidak boleh diberikan kepada siswa meskipun ketiga kolom klasifikasi terisi.
 Jika label difficulty belum tersedia pada batch berikutnya, score tetap null dan
 item harus ditahan; tidak ada label/skor pengganti yang dibuat-buat.
@@ -81,7 +82,8 @@ Keputusan lengkap dipertahankan byte demi byte di
 `hasil_validasi/bukti_validasi/decision_audit.json`. `databaseExport.decisionAudit` pada manifest
 menyimpan path relatif dan SHA-256; manifest juga memverifikasi file tersebut.
 Pembaca internal memakai `app.silver.exports.load_decision_bundle`, yang mendukung
-format laporan lama, envelope ringkas lama, array v2 (domain), serta array v3 (difficulty). Builder snapshot tetap memeriksa bukti, kunci,
+format laporan lama, envelope ringkas lama, array v2 (domain), v3 (difficulty),
+serta v4 (active/inactive). Builder snapshot tetap memeriksa bukti, kunci,
 solusi dan aset. Kontrak HTTP assessment, scoring dan IRT tetap menggunakan snapshot.
 JSON ringkas berisi kunci jawaban dan hanya untuk integrasi backend.
 
@@ -95,7 +97,7 @@ Seeder backend melakukan upsert by `_id` dan tetap memetakan `kelas_id`, `berkas
 serta nama `subbab_id` ke ID collection bila diperlukan; nilai tersebut mengikuti
 sumber dan tidak ditebak exporter. `image_url` tetap relatif terhadap folder kelas
 sumber, bukan `hasil_validasi`. Backend perlu mendukung string easy/medium/hard dan
-status di atas, integer skor 600/1000/1400, dan confidence integer 0-100. Ekspor ini
+status active/inactive, integer skor 600/1000/1400, dan confidence integer 0-100. Ekspor ini
 tidak melakukan insert database atau mengubah model backend.
 
 `output/pretest/silver_operational/database_format_verification.json` mencatat

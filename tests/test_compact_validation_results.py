@@ -4,7 +4,8 @@ import json
 
 import pytest
 
-from app.silver.exports import (AUDIT_FILE, COMPACT_SCHEMA, LEGACY_DATABASE_SCHEMA, compact_items, database_items,
+from app.silver.exports import (AUDIT_FILE, COMPACT_SCHEMA, LEGACY_DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA,
+                               compact_items, database_items,
                                load_decision_bundle)
 from scripts.refresh_ai_validation_reports import digest, verify_bundle
 from scripts.compact_validation_results import compact_bundle
@@ -65,7 +66,7 @@ def test_audit_tampering_is_rejected_and_legacy_bundles_still_load(tmp_path):
         load_decision_bundle(tmp_path)
 
 
-@pytest.mark.parametrize("upgrade_legacy", [False, True])
+@pytest.mark.parametrize("upgrade_legacy", [None, LEGACY_DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA])
 def test_conversion_is_idempotent_and_resealed_label_changes_are_rejected(tmp_path, upgrade_legacy):
     sources, decisions, questions, cp = fixture_data()
     questions[0].update(privateAnswerSpecification={"answerKey": "A"}, visualAssets=[], visualAssetHashes={})
@@ -92,12 +93,15 @@ def test_conversion_is_idempotent_and_resealed_label_changes_are_rejected(tmp_pa
     if upgrade_legacy:
         # Previous exports used the domain in the same database column.
         old = json.loads(manifest_path.read_text(encoding="utf-8"))
-        old["databaseExport"]["schemaVersion"] = LEGACY_DATABASE_SCHEMA
-        old["validationResultsSchemaVersion"] = LEGACY_DATABASE_SCHEMA
-        old["databaseExport"].pop("cognitiveLevelPolicy")
-        for metadata in old["databaseExport"]["metadataByQuestionId"].values():
-            metadata.pop("math_cognitive_domain")
-        previous = database_items(sources, decisions, legacy_domain_level=True)
+        old["databaseExport"]["schemaVersion"] = upgrade_legacy
+        old["validationResultsSchemaVersion"] = upgrade_legacy
+        old["databaseExport"].pop("statusPolicy")
+        if upgrade_legacy == LEGACY_DATABASE_SCHEMA:
+            old["databaseExport"].pop("cognitiveLevelPolicy")
+            for metadata in old["databaseExport"]["metadataByQuestionId"].values():
+                metadata.pop("math_cognitive_domain")
+        previous = database_items(sources, decisions,
+            legacy_domain_level=upgrade_legacy == LEGACY_DATABASE_SCHEMA, legacy_routing_status=True)
         (bundle / "validation_results.json").write_text(json.dumps(previous), encoding="utf-8")
         old["outputs"]["validation_results.json"] = {
             "sha256": digest(bundle / "validation_results.json"),
@@ -128,7 +132,7 @@ def test_database_schema_and_difficulty_score_are_independent_of_domain():
         assert list(row) == list(sources[0])
         assert row["cognitive_level"] == difficulty.lower()
         assert row["cognitive_score"] == score
-        assert row["status"] == "silver_ready"
+        assert row["status"] == "active"
         assert {k: v for k, v in row.items() if k not in ("cognitive_level", "cognitive_score", "confidence_score", "status")} == {
             k: v for k, v in sources[0].items() if k not in ("cognitive_level", "cognitive_score", "confidence_score", "status")}
     assert sources == original
@@ -171,10 +175,18 @@ def test_duplicate_runs_and_unknown_difficulty_are_rejected():
         database_items(sources, decisions)
 
 
-def test_held_database_rows_keep_their_blocking_status():
+@pytest.mark.parametrize("route", ["revision_required", "needs_ai_review"])
+def test_held_database_rows_keep_their_blocking_status(route):
     sources, decisions, *_ = fixture_data()
-    decisions[0]["finalRouting"] = "revision_required"
+    decisions[0]["finalRouting"] = route
     row = database_items(sources, decisions)[0]
     assert row["cognitive_score"] == 600
     assert row["confidence_score"] == 100
-    assert row["status"] == "revision_required"
+    assert row["status"] == "inactive"
+
+
+def test_unknown_routing_cannot_silently_activate_an_item():
+    sources, decisions, *_ = fixture_data()
+    decisions[0]["finalRouting"] = "unknown"
+    with pytest.raises(ValueError, match="routing"):
+        database_items(sources, decisions)
