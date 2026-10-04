@@ -33,12 +33,12 @@ Laporan aktif `output/pretest/kelas*/hasil_validasi/validation_results.json` mem
 format **array dokumen**, sama seperti `soal_pretest_db.json`: tidak ada envelope
 `items`/`summary` atau field tambahan `ai_metadata` pada baris database. Setiap dokumen
 mempertahankan seluruh 16 field sumber, urutan soal, teks, opsi, gambar dan kunci jawaban.
-Identitas format `validated-question-array-v2`, summary, provenance, track, identitas
+Identitas format `validated-question-array-v3-difficulty`, summary, provenance, track, identitas
 snapshot dan profil head 2/3 berada di `manifest.json.databaseExport`.
 
 | Field | Sumber / makna |
 |---|---|
-| `cognitive_level` | Label final AI: knowing, applying, reasoning |
+| `cognitive_level` | Label difficulty final AI dalam huruf kecil: easy, medium, hard |
 | `cognitive_score` | Skor awal dari intended difficulty: Easy=600, Medium=1000, Hard=1400 |
 | `confidence_score` | Integer 0-100: dukungan run awal terhadap label final, minimum dari tiga head |
 | `status` | Routing final: silver_ready, revision_required, needs_ai_review |
@@ -46,7 +46,10 @@ snapshot dan profil head 2/3 berada di `manifest.json.databaseExport`.
 Metadata per soal ada di `manifest.json.databaseExport.metadataByQuestionId["<_id>"]`:
 `label_provenance`, `knowledge_dimension`, `intended_difficulty`, `validation_status`,
 `subject_track`, `decision_id`, `question_version_id`, `content_hash`, dan
-`final_label_supporting_runs`. Item yang ditahan tetap memiliki ID versi/hash operasional null.
+`final_label_supporting_runs`, serta `math_cognitive_domain` untuk knowing/applying/reasoning.
+Item yang ditahan tetap memiliki ID versi/hash operasional null. Field database
+`cognitive_level` adalah difficulty sesuai kontrak integrasi; head domain kognitif
+tetap terpisah dalam metadata dan audit, bukan diganti dalam model atau dataset training.
 
 `cognitive_score` memakai skala yang sama dengan target skor generator exercise. Skor
 ini **bukan** nomor kategori knowing/applying/reasoning, skor kemampuan siswa, hasil
@@ -78,7 +81,7 @@ Keputusan lengkap dipertahankan byte demi byte di
 `hasil_validasi/bukti_validasi/decision_audit.json`. `databaseExport.decisionAudit` pada manifest
 menyimpan path relatif dan SHA-256; manifest juga memverifikasi file tersebut.
 Pembaca internal memakai `app.silver.exports.load_decision_bundle`, yang mendukung
-format laporan lama, envelope ringkas lama, serta array database baru. Builder snapshot tetap memeriksa bukti, kunci,
+format laporan lama, envelope ringkas lama, array v2 (domain), serta array v3 (difficulty). Builder snapshot tetap memeriksa bukti, kunci,
 solusi dan aset. Kontrak HTTP assessment, scoring dan IRT tetap menggunakan snapshot.
 JSON ringkas berisi kunci jawaban dan hanya untuk integrasi backend.
 
@@ -91,7 +94,7 @@ perlu memakai loader audit. Format ini bukan payload registrasi `DatasetSnapshot
 Seeder backend melakukan upsert by `_id` dan tetap memetakan `kelas_id`, `berkas_id`,
 serta nama `subbab_id` ke ID collection bila diperlukan; nilai tersebut mengikuti
 sumber dan tidak ditebak exporter. `image_url` tetap relatif terhadap folder kelas
-sumber, bukan `hasil_validasi`. Backend perlu mendukung string kategori domain dan
+sumber, bukan `hasil_validasi`. Backend perlu mendukung string easy/medium/hard dan
 status di atas, integer skor 600/1000/1400, dan confidence integer 0-100. Ekspor ini
 tidak melakukan insert database atau mengubah model backend.
 

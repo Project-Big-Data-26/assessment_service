@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from app.llm.silver import SilverLabelOutput, build_silver_prompt  # noqa: E402
-from app.silver.exports import (COMPACT_SCHEMA, DATABASE_SCHEMA, SCORE_POLICY, CONFIDENCE_POLICY,
+from app.silver.exports import (COMPACT_SCHEMA, DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA, LEVEL_POLICY, SCORE_POLICY, CONFIDENCE_POLICY,
                                compact_items, database_items, final_label_support, load_decision_bundle)
 from scripts.generate_silver_labels_kelas1 import input_hash, load_checkpoint  # noqa: E402
 
@@ -94,15 +94,21 @@ def verify_bundle(source: Path, bundle: Path) -> None:
     results = load_decision_bundle(bundle)["items"]
     if isinstance(document, list):
         export = manifest["databaseExport"]
-        assert export["schemaVersion"] == DATABASE_SCHEMA
+        assert export["schemaVersion"] in (DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA)
+        legacy = export["schemaVersion"] == LEGACY_DATABASE_SCHEMA
+        if not legacy:
+            assert export["cognitiveLevelPolicy"] == LEVEL_POLICY
         assert export["scorePolicy"] == SCORE_POLICY
         assert export["confidencePolicy"] == CONFIDENCE_POLICY
-        assert document == database_items(list(questions.values()), results), "database export differs from source or locked evidence"
+        assert document == database_items(list(questions.values()), results, legacy_domain_level=legacy), "database export differs from source or locked evidence"
         checkpoint = load(Path(manifest["sourceFiles"]["blindCheckpoint"]["path"]))
         metadata = compact_items(list(questions.values()), results, exported, checkpoint, source.parent.name)
         by_id = {d["questionId"]: d for d in results}
         expected_metadata = {row["_id"]: {**row["ai_metadata"],
             "final_label_supporting_runs": final_label_support(by_id[row["_id"]])} for row in metadata}
+        if not legacy:
+            for qid, values in expected_metadata.items():
+                values["math_cognitive_domain"] = by_id[qid]["llmAdvisory"]["advisoryLabels"]["mathCognitiveDomain"]
         assert export["metadataByQuestionId"] == expected_metadata, "database export metadata differs from locked evidence"
         assert export["summary"] == load_decision_bundle(bundle)["summary"]
         assert export["sourceClass"] == load_decision_bundle(bundle)["sourceClass"]
@@ -267,7 +273,8 @@ def write_active_index(base: Path = BASE) -> None:
                  "`archive/pre_silver_operational_v1`. Buku Guru tetap sumber bukti kunci. "
                  "IRT memakai respons siswa nyata dan menyimpan difficulty empiris terpisah dari `intendedDifficulty`."])
     rows.extend(["", "Laporan aktif `hasil_validasi/validation_results.json` berupa array dokumen soal "
-                 "dengan field yang sama seperti `soal_pretest_db.json`. `cognitive_level` berasal dari label final AI; "
+                 "dengan field yang sama seperti `soal_pretest_db.json`. `cognitive_level` memakai difficulty final "
+                 "`easy`, `medium`, `hard`; domain knowing/applying/reasoning tetap di metadata audit. "
                  "`cognitive_score` memakai Easy=600, Medium=1000, Hard=1400. `confidence_score` adalah "
                  "persentase dukungan run awal terhadap label final terendah dari tiga head (0-100), "
                  "bukan probabilitas akurasi. Filter delivery memakai `status = silver_ready`. "

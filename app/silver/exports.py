@@ -8,7 +8,10 @@ from pathlib import Path
 from app.classification.v2.serializer import canonical_json_hash
 
 COMPACT_SCHEMA = "validated-question-bundle-v1-ai-metadata"
-DATABASE_SCHEMA = "validated-question-array-v2"
+LEGACY_DATABASE_SCHEMA = "validated-question-array-v2"
+DATABASE_SCHEMA = "validated-question-array-v3-difficulty"
+LEVEL_POLICY = {"version": "database-difficulty-level-v1", "sourceHead": "intendedDifficulty",
+                "mapping": {"Easy": "easy", "Medium": "medium", "Hard": "hard"}}
 AUDIT_FILE = "bukti_validasi/decision_audit.json"
 SCORE_POLICY = {"version": "intended-difficulty-score-v1",
                 "mapping": {"Easy": 600, "Medium": 1000, "Hard": 1400},
@@ -41,7 +44,7 @@ def final_label_support(decision: dict) -> dict[str, int]:
     ) for head in CONFIDENCE_POLICY["heads"]}
 
 
-def database_items(originals: list[dict], decisions: list[dict]) -> list[dict]:
+def database_items(originals: list[dict], decisions: list[dict], *, legacy_domain_level: bool = False) -> list[dict]:
     """Export only source columns, keeping source content and item order intact."""
     by_id = {d["questionId"]: d for d in decisions}
     expected = {str(q["_id"]) for q in originals}
@@ -55,7 +58,8 @@ def database_items(originals: list[dict], decisions: list[dict]) -> list[dict]:
         difficulty = labels["intendedDifficulty"]
         if difficulty is not None and difficulty not in SCORE_POLICY["mapping"]:
             raise ValueError(f"unknown intended difficulty: {difficulty}")
-        values = {"cognitive_level": labels["mathCognitiveDomain"],
+        values = {"cognitive_level": (labels["mathCognitiveDomain"] if legacy_domain_level
+                                       else LEVEL_POLICY["mapping"].get(difficulty)),
                   "cognitive_score": SCORE_POLICY["mapping"].get(difficulty),
                   "confidence_score": round(100 * min(final_label_support(decision).values())
                                             / advisory.get("requestedRuns", 3)),
@@ -80,7 +84,7 @@ def load_decision_bundle(bundle: Path) -> dict:
     if isinstance(result, list):
         manifest = json.loads((bundle / "manifest.json").read_text(encoding="utf-8"))
         export = manifest["databaseExport"]
-        if export["schemaVersion"] != DATABASE_SCHEMA:
+        if export["schemaVersion"] not in (DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA):
             raise ValueError("unexpected database export schema")
         reference = export["decisionAudit"]
     elif result.get("schemaVersion") == COMPACT_SCHEMA:

@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from app.silver.exports import (AUDIT_FILE, COMPACT_SCHEMA, compact_items, database_items,
+from app.silver.exports import (AUDIT_FILE, COMPACT_SCHEMA, LEGACY_DATABASE_SCHEMA, compact_items, database_items,
                                load_decision_bundle)
 from scripts.refresh_ai_validation_reports import digest, verify_bundle
 from scripts.compact_validation_results import compact_bundle
@@ -65,7 +65,8 @@ def test_audit_tampering_is_rejected_and_legacy_bundles_still_load(tmp_path):
         load_decision_bundle(tmp_path)
 
 
-def test_conversion_is_idempotent_and_resealed_label_changes_are_rejected(tmp_path):
+@pytest.mark.parametrize("upgrade_legacy", [False, True])
+def test_conversion_is_idempotent_and_resealed_label_changes_are_rejected(tmp_path, upgrade_legacy):
     sources, decisions, questions, cp = fixture_data()
     questions[0].update(privateAnswerSpecification={"answerKey": "A"}, visualAssets=[], visualAssetHashes={})
     source = tmp_path / "soal_pretest_db.json"
@@ -88,6 +89,24 @@ def test_conversion_is_idempotent_and_resealed_label_changes_are_rejected(tmp_pa
     audit_bytes = (bundle / "validation_results.json").read_bytes()
     compact_bundle(source, bundle)
     assert (bundle / AUDIT_FILE).read_bytes() == audit_bytes
+    if upgrade_legacy:
+        # Previous exports used the domain in the same database column.
+        old = json.loads(manifest_path.read_text(encoding="utf-8"))
+        old["databaseExport"]["schemaVersion"] = LEGACY_DATABASE_SCHEMA
+        old["validationResultsSchemaVersion"] = LEGACY_DATABASE_SCHEMA
+        old["databaseExport"].pop("cognitiveLevelPolicy")
+        for metadata in old["databaseExport"]["metadataByQuestionId"].values():
+            metadata.pop("math_cognitive_domain")
+        previous = database_items(sources, decisions, legacy_domain_level=True)
+        (bundle / "validation_results.json").write_text(json.dumps(previous), encoding="utf-8")
+        old["outputs"]["validation_results.json"] = {
+            "sha256": digest(bundle / "validation_results.json"),
+            "bytes": (bundle / "validation_results.json").stat().st_size}
+        manifest_path.write_text(json.dumps(old), encoding="utf-8")
+        verify_bundle(source, bundle)
+        compact_bundle(source, bundle)
+        assert (bundle / AUDIT_FILE).read_bytes() == audit_bytes
+        assert json.loads((bundle / "validation_results.json").read_text())[0]["cognitive_level"] == "easy"
     assert compact_bundle(source, bundle)["alreadyDatabaseArray"]
     compact_path = bundle / "validation_results.json"
     doc = json.loads(compact_path.read_text(encoding="utf-8"))
@@ -107,7 +126,7 @@ def test_database_schema_and_difficulty_score_are_independent_of_domain():
         decisions[0]["llmAdvisory"]["advisoryLabels"]["intendedDifficulty"] = difficulty
         row = database_items(sources, decisions)[0]
         assert list(row) == list(sources[0])
-        assert row["cognitive_level"] == "knowing"
+        assert row["cognitive_level"] == difficulty.lower()
         assert row["cognitive_score"] == score
         assert row["status"] == "silver_ready"
         assert {k: v for k, v in row.items() if k not in ("cognitive_level", "cognitive_score", "confidence_score", "status")} == {

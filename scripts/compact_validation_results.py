@@ -10,7 +10,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from app.silver.exports import (AUDIT_FILE, DATABASE_SCHEMA, SCORE_POLICY, CONFIDENCE_POLICY,
+from app.silver.exports import (AUDIT_FILE, DATABASE_SCHEMA, LEVEL_POLICY, SCORE_POLICY, CONFIDENCE_POLICY,
                                compact_items, database_items, final_label_support, load_decision_bundle)
 from scripts.refresh_ai_validation_reports import digest, load, verify_bundle, write
 
@@ -19,7 +19,7 @@ def compact_bundle(source: Path, bundle: Path) -> dict:
     verify_bundle(source, bundle)
     manifest = load(bundle / "manifest.json")
     current = load(bundle / "validation_results.json")
-    if isinstance(current, list):
+    if isinstance(current, list) and manifest["databaseExport"]["schemaVersion"] == DATABASE_SCHEMA:
         return {"class": source.parent.name, "alreadyDatabaseArray": True}
     audit = load_decision_bundle(bundle)
     checkpoint = load(Path(manifest["sourceFiles"]["blindCheckpoint"]["path"]))
@@ -40,14 +40,17 @@ def compact_bundle(source: Path, bundle: Path) -> dict:
         "visibility": "restricted_contains_answer_key", "sourceClass": audit["sourceClass"],
         "subjectTrack": checkpoint.get("subjectTrack", "regular"), "summary": audit["summary"],
         "decisionAudit": {"path": AUDIT_FILE, "sha256": digest(audit_path)},
-        "scorePolicy": SCORE_POLICY, "confidencePolicy": CONFIDENCE_POLICY,
+        "cognitiveLevelPolicy": LEVEL_POLICY, "scorePolicy": SCORE_POLICY, "confidencePolicy": CONFIDENCE_POLICY,
         "metadataByQuestionId": {row["_id"]: {**row["ai_metadata"],
+            "math_cognitive_domain": by_id[row["_id"]]["llmAdvisory"]["advisoryLabels"]["mathCognitiveDomain"],
             "final_label_supporting_runs": final_label_support(by_id[row["_id"]])} for row in metadata},
     }
     write(bundle / "validation_results.json", items)
     note = ("\nFormat `validation_results.json`: array dokumen dengan field yang sama seperti "
-            "`soal_pretest_db.json`, tanpa envelope atau `ai_metadata`. `cognitive_level` memakai label final AI "
-            "(knowing/applying/reasoning). `cognitive_score`: Easy=600, Medium=1000, Hard=1400, "
+            "`soal_pretest_db.json`, tanpa envelope atau `ai_metadata`. `cognitive_level` memakai difficulty final AI "
+            "(easy/medium/hard, huruf kecil). Domain knowing/applying/reasoning tetap disimpan sebagai "
+            "`manifest.json.databaseExport.metadataByQuestionId[<_id>].math_cognitive_domain` dan dalam audit. "
+            "`cognitive_score`: easy=600, medium=1000, hard=1400, "
             "sebagai skor awal kesulitan, bukan kemampuan siswa atau parameter IRT. "
             "`confidence_score = round(100 × min(dukungan label final tiap head / requestedRuns))`: "
             "100 untuk 3/3, 67 untuk 2/3, 33 untuk 1/3. Dukungan dihitung ulang dari run awal, "
@@ -105,7 +108,8 @@ def main() -> int:
     report_dir = args.source_root / "silver_operational"
     report_dir.mkdir(exist_ok=True)
     write(report_dir / "database_format_verification.json", {
-        "schemaVersion": DATABASE_SCHEMA, "scorePolicy": SCORE_POLICY, "confidencePolicy": CONFIDENCE_POLICY,
+        "schemaVersion": DATABASE_SCHEMA, "cognitiveLevelPolicy": LEVEL_POLICY,
+        "scorePolicy": SCORE_POLICY, "confidencePolicy": CONFIDENCE_POLICY,
         "classCount": len(checked), "itemCount": sum(c["itemCount"] for c in checked), "classes": checked,
         "newQuestions": 0, "newLlmCalls": 0, "sourceFilesChanged": False, "decisionAuditChanged": False,
     })
