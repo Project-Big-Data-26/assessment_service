@@ -1,0 +1,352 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab B hanya ~2 halaman (Definisi 1.1: ordo sama dan elemen seletak sama). Easy dan medium sudah memakai 40 soal; hard yang bermakna hanya penalaran sifat kesamaan (evaluasi klaim, contoh penyangkal, kesalahan ordo, parameter, pencacahan, rantai). Menambah ke 20 akan memunculkan soal nyaris kembar atau materi di luar subbab.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim jumlah elemen",
+      "alasan_level": "mengevaluasi klaim bahwa ordo dan jumlah elemen yang sama cukup untuk kesamaan, dengan memeriksa elemen seletak",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 1 & 4 \\\\ 3 & 2 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 1 & 3 \\\\ 4 & 2 \\end{pmatrix}$. Seorang siswa berpendapat bahwa $A = B$ karena kedua matriks berordo sama dan jumlah semua elemennya sama. Pernyataan yang benar mengenai pendapat tersebut adalah ....",
+      "jawaban_benar": "$A \\neq B$, sebab $a_{12} = 4$ berbeda dengan $b_{12} = 3$ walaupun ordo dan jumlah semua elemennya sama",
+      "alasan_benar": "kesamaan menuntut semua elemen seletak bernilai sama; elemen baris 1 kolom 2 berbeda ($4 \\neq 3$), sehingga $A \\neq B$",
+      "distraktor": [
+        {
+          "teks": "$A = B$, sebab ordo sama dan jumlah semua elemen sama ($10$)",
+          "alasan": "menganggap ordo dan jumlah elemen cukup sebagai syarat kesamaan"
+        },
+        {
+          "teks": "$A = B$, sebab kedua matriks memuat elemen-elemen yang sama dan hanya urutannya berbeda",
+          "alasan": "mengabaikan bahwa elemen harus sama pada posisi seletak"
+        },
+        {
+          "teks": "$A \\neq B$, sebab ordo $A$ berbeda dengan ordo $B$",
+          "alasan": "salah mengira ordo berbeda; keduanya berordo $2 \times 2$"
+        }
+      ],
+      "pembahasan": "Ordo keduanya $2 \\times 2$ dan jumlah elemennya $10$, tetapi $a_{12} = 4 \\neq 3 = b_{12}$ dan $a_{21} = 3 \\neq 4 = b_{21}$. Syarat elemen seletak tidak terpenuhi, jadi $A \\neq B$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memilih contoh yang memenuhi hipotesis klaim tetapi menyalahi kesimpulannya, memeriksa ordo, jumlah elemen, dan elemen seletak",
+      "stimulus": null,
+      "pertanyaan": "Klaim: \"Jika dua matriks berordo sama dan jumlah semua elemennya sama, maka kedua matriks itu sama.\" Pasangan matriks yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 5 & 2 \\\\ 7 & 6 \\end{pmatrix}$ dan $\\begin{pmatrix} 6 & 7 \\\\ 2 & 5 \\end{pmatrix}$",
+      "alasan_benar": "keduanya berordo $2 \\times 2$ dengan jumlah elemen $20$ (hipotesis terpenuhi), tetapi $5 \\neq 6$ pada elemen seletak (kesimpulan salah)",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 5 & 2 \\\\ 7 & 6 \\end{pmatrix}$ dan $\\begin{pmatrix} 5 & 2 \\\\ 7 & 7 \\end{pmatrix}$",
+          "alasan": "jumlah elemen berbeda ($20$ dan $21$), hipotesis tidak terpenuhi sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 5 & 2 \\\\ 7 & 6 \\end{pmatrix}$ dan $\\begin{pmatrix} 5 & 2 & 7 & 6 \\end{pmatrix}$",
+          "alasan": "ordo berbeda ($2 \times 2$ dan $1 \times 4$), hipotesis tidak terpenuhi"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 5 & 2 \\\\ 7 & 6 \\end{pmatrix}$ dan $\\begin{pmatrix} 5 & 2 \\\\ 7 & 6 \\end{pmatrix}$",
+          "alasan": "kedua matriks sama, justru sesuai dengan klaim sehingga bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Penyangkal harus memenuhi syarat klaim (ordo sama, jumlah elemen sama) tetapi kedua matriks tidak sama. Hanya pasangan pertama yang demikian: jumlah elemen $20$ untuk keduanya dan $5 \\neq 6$ pada baris 1 kolom 1.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "matriks A dan matriks B mempunyai ordo yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan ordo",
+      "alasan_level": "menemukan kesalahan siswa yang mengabaikan syarat ordo meskipun semua nilai elemen muncul di kedua matriks",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyimpulkan $A = B$ untuk $A = \\begin{pmatrix} 3 & 1 & 4 \\\\ 2 & 5 & 6 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 3 & 2 \\\\ 1 & 5 \\\\ 4 & 6 \\end{pmatrix}$ dengan alasan keenam elemennya sama. Pernyataan yang benar mengenai kesimpulan siswa itu adalah ....",
+      "jawaban_benar": "salah, sebab $A$ berordo $2 \\times 3$ sedangkan $B$ berordo $3 \\times 2$ sehingga syarat ordo yang sama tidak terpenuhi",
+      "alasan_benar": "kesamaan dua matriks mensyaratkan ordo sama lebih dulu; $2 \\times 3 \\neq 3 \\times 2$, jadi $A \\neq B$",
+      "distraktor": [
+        {
+          "teks": "benar, sebab kedua matriks memuat elemen yang sama persis",
+          "alasan": "mengira kesamaan cukup dengan elemen yang sama tanpa memperhatikan ordo"
+        },
+        {
+          "teks": "salah, sebab elemen $1$ dan $2$ seharusnya diurutkan menaik pada $B$",
+          "alasan": "mengira kesamaan menuntut elemen terurut, padahal syaratnya ordo dan elemen seletak"
+        },
+        {
+          "teks": "benar, sebab banyak elemen kedua matriks sama yaitu $6$",
+          "alasan": "mengira banyak elemen yang sama menggantikan syarat ordo"
+        }
+      ],
+      "pembahasan": "Syarat pertama: ordo sama. $A$ memiliki 2 baris dan 3 kolom, $B$ memiliki 3 baris dan 2 kolom. Ordo berbeda, sehingga $A \\neq B$ walaupun semua elemennya muncul pada kedua matriks.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "matriks A dan matriks B mempunyai ordo yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat ordo dan elemen sekaligus",
+      "alasan_level": "menguji dua syarat kesamaan sekaligus: banyak baris dan banyak kolom menuntut nilai $p$ yang berbeda",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ berordo $(p + 1) \\times (2p - 1)$ dan $B = \\begin{pmatrix} 4 & 1 & 7 \\\\ 2 & 9 & 5 \\end{pmatrix}$. Pernyataan yang benar mengenai nilai $p$ agar $A = B$ adalah ....",
+      "jawaban_benar": "tidak ada $p$ yang memenuhi, sebab banyak baris menuntut $p = 1$ sedangkan banyak kolom menuntut $p = 2$",
+      "alasan_benar": "$p + 1 = 2$ memberi $p = 1$, $2p - 1 = 3$ memberi $p = 2$; kedua syarat ordo tidak dapat dipenuhi bersama",
+      "distraktor": [
+        {
+          "teks": "$p = 1$, sebab banyak baris sudah sama",
+          "alasan": "hanya memeriksa banyak baris dan melupakan banyak kolom"
+        },
+        {
+          "teks": "$p = 2$, sebab banyak kolom sudah sama",
+          "alasan": "hanya memeriksa banyak kolom dan melupakan banyak baris"
+        },
+        {
+          "teks": "$p = 3$, sebab $p + 1 = 4$ dan $2p - 1 = 5$ jika dijumlahkan menghasilkan ordo yang cocok",
+          "alasan": "salah memahami syarat ordo dengan menjumlahkan ordo"
+        }
+      ],
+      "pembahasan": "Ordo $B$ adalah $2 \\times 3$. Baris: $p + 1 = 2$ sehingga $p = 1$. Kolom: $2p - 1 = 3$ sehingga $p = 2$. Tidak ada $p$ yang memenuhi keduanya, jadi $A \\neq B$ untuk setiap $p$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim syarat parameter",
+      "alasan_level": "menentukan syarat tepat agar dua matriks sama dengan elemen yang tertukar, bukan menghitung nilai tunggal",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} x & 2 \\\\ 3 & y \\end{pmatrix}$ dan $B = \\begin{pmatrix} y & 2 \\\\ 3 & x \\end{pmatrix}$ dengan $x$ dan $y$ bilangan real. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$A = B$ tepat ketika $x = y$",
+      "alasan_benar": "elemen $2$ dan $3$ selalu sama; baris 1 kolom 1 menuntut $x = y$ dan baris 2 kolom 2 menuntut $y = x$ (syarat yang sama)",
+      "distraktor": [
+        {
+          "teks": "$A = B$ untuk semua bilangan real $x$ dan $y$",
+          "alasan": "mengira matriks yang memuat elemen sama selalu sama tanpa melihat posisi"
+        },
+        {
+          "teks": "$A = B$ hanya jika $x = y = 2$",
+          "alasan": "mengira nilai $x$ dan $y$ harus sama dengan elemen lain pada matriks"
+        },
+        {
+          "teks": "$A \\neq B$ untuk semua bilangan real $x$ dan $y$",
+          "alasan": "mengira tertukarnya posisi $x$ dan $y$ selalu membuat matriks berbeda"
+        }
+      ],
+      "pembahasan": "Elemen seletak: $x = y$, $2 = 2$, $3 = 3$, $y = x$. Satu-satunya syarat adalah $x = y$, sehingga $A = B$ tepat ketika $x = y$ (misalnya $x = y = 5$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak nilai parameter",
+      "alasan_level": "menghitung banyaknya nilai $k$ yang berlaku dengan memperhatikan akar nol yang mudah hilang saat membagi",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} k^2 & 7 \\\\ 3 & 4k \\end{pmatrix}$ dan $B = \\begin{pmatrix} 5k & 7 \\\\ 3 & 4k \\end{pmatrix}$. Banyak nilai real $k$ yang membuat $A = B$ adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "hanya elemen baris 1 kolom 1 yang menjadi syarat: $k^2 = 5k$ memberi $k = 0$ atau $k = 5$; elemen lain sudah sama untuk setiap $k$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "membagi kedua ruas dengan $k$ sehingga akar $k = 0$ hilang"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "memasukkan $k = -5$ yang tidak memenuhi $k^2 = 5k$"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "mengira $k^2 = 5k$ memberi $k = \\pm 0$ dan $k = \\pm 5$"
+        }
+      ],
+      "pembahasan": "Elemen $(1,2)$, $(2,1)$, dan $(2,2)$ sama untuk setiap $k$. Syarat tersisa $k^2 = 5k$, yaitu $k(k - 5) = 0$, sehingga $k = 0$ atau $k = 5$. Ada $2$ nilai.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pencacahan pasangan nilai",
+      "alasan_level": "menghitung semua pasangan real $(x, y)$ dari dua syarat bebas, satu berakar dua dan satu berakar tiga",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} x^2 - 4 & y \\\\ 0 & 5 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 0 & y^3 \\\\ 0 & 5 \\end{pmatrix}$. Banyak pasangan terurut $(x, y)$ bilangan real yang membuat $A = B$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$x^2 - 4 = 0$ memberi $x = 2$ atau $x = -2$; $y = y^3$ memberi $y = 0$, $1$, atau $-1$; syarat $x$ dan $y$ bebas sehingga ada $2 \\times 3 = 6$ pasangan",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "menjumlahkan banyak nilai $x$ dan $y$ ($2 + 3$), bukan mengalikan"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "hanya menghitung banyak nilai $y$"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "hanya menghitung banyak nilai $x$ dan menganggap $y$ tunggal"
+        }
+      ],
+      "pembahasan": "Elemen $(1,1)$: $x^2 = 4$ sehingga dua nilai $x$. Elemen $(1,2)$: $y^3 - y = 0$, $y(y - 1)(y + 1) = 0$ sehingga tiga nilai $y$. Kedua syarat tidak saling bergantung, jadi ada $2 \\times 3 = 6$ pasangan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pencacahan matriks",
+      "alasan_level": "merancang pencacahan matriks yang memenuhi kesamaan dengan matriks yang kolomnya ditukar, memerlukan penurunan syarat $a = b$ dan $c = d$",
+      "stimulus": null,
+      "pertanyaan": "Matriks $M = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$ dengan $a, b, c, d \\in \\{1, 2, 3\\}$ dan $N = \\begin{pmatrix} b & a \\\\ d & c \\end{pmatrix}$. Banyak matriks $M$ yang memenuhi $M = N$ adalah ....",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "$M = N$ memberi $a = b$ dan $c = d$; $a$ dan $c$ masing-masing bebas dari $\\{1, 2, 3\\}$ sehingga $3 \\times 3 = 9$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "hanya menghitung satu pasangan ($a = b$) dan melupakan pasangan $c = d$"
+        },
+        {
+          "teks": "$27$",
+          "alasan": "hanya menerapkan $a = b$ lalu memilih $a, c, d$ bebas ($3^3$)"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "mengira $a$ dan $c$ harus berbeda ($3 \times 2$)"
+        }
+      ],
+      "pembahasan": "Kesamaan elemen seletak: $a = b$, $b = a$, $c = d$, $d = c$. Syaratnya hanya $a = b$ dan $c = d$. Pilihan $a$ ada 3 dan pilihan $c$ ada 3, jadi $9$ matriks.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "kesamaan berantai",
+      "alasan_level": "dua kesamaan berurutan $A = B$ dan $B = C$ saling mengunci nilai variabel; perlu menelusuri dua matriks sekaligus",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 2a & b \\\\ 4 & c + 1 \\end{pmatrix}$, $B = \\begin{pmatrix} p & 5 \\\\ d & 9 \\end{pmatrix}$, dan $C = \\begin{pmatrix} 6 & q - 1 \\\\ 4 & r \\end{pmatrix}$. Jika $A = B$ dan $B = C$, nilai $a + b + c + q + r$ adalah ....",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "$A = B$ memberi $b = 5$, $c = 8$, $d = 4$, $p = 2a$; $B = C$ memberi $p = 6$ sehingga $a = 3$, $q = 6$, $r = 9$; jumlah $3 + 5 + 8 + 6 + 9 = 31$",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "lupa membagi $2$: $a = p = 6$"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "lupa menambah $1$: $q = 5$"
+        },
+        {
+          "teks": "$22$",
+          "alasan": "tidak menyertakan $r$ dalam jumlah"
+        }
+      ],
+      "pembahasan": "Dari $B = C$: $p = 6$, $5 = q - 1$ sehingga $q = 6$, $d = 4$, $9 = r$. Dari $A = B$: $2a = p = 6$ sehingga $a = 3$, $b = 5$, $c + 1 = 9$ sehingga $c = 8$. Jumlah $= 31$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 25,
+        "kutipan": "setiap elemen yang seletak pada matriks A dan matriks B mempunyai nilai yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "elemen saling bergantung",
+      "alasan_level": "elemen-elemen saling menyatakan sehingga harus ditelusuri dari elemen yang diketahui mundur secara berantai",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = \\begin{pmatrix} b + 1 & c + 1 \\\\ d + 1 & 2 \\end{pmatrix}$ dengan $a, b, c, d$ bilangan real. Nilai $a + b + c + d$ adalah ....",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "$d = 2$, $c = d + 1 = 3$, $b = c + 1 = 4$, $a = b + 1 = 5$; jumlah $14$",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "lupa menambah $1$ pada $c$: $c = 2$ sehingga $b = 3$, $a = 4$"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "mengira $d = 1$ (elemen $2$ dikurangi $1$): $c = 2$, $b = 3$, $a = 4$"
+        },
+        {
+          "teks": "$120$",
+          "alasan": "mengalikan $a \\cdot b \\cdot c \\cdot d$, bukan menjumlahkan"
+        }
+      ],
+      "pembahasan": "Elemen seletak: $d = 2$, $c = d + 1 = 3$, $b = c + 1 = 4$, $a = b + 1 = 5$. Jumlah $5 + 4 + 3 + 2 = 14$.",
+      "catatan": null
+    }
+  ]
+}

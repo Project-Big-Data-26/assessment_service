@@ -1,0 +1,709 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "bagian": "Latihan A",
+        "nomor": "7",
+        "teks": "Jika matriks I adalah matriks identitas, maka matriks I adalah matriks diagonal. Berikan penjelasan tentang kebenaran pernyataan tersebut.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "hubungan antarjenis matriks",
+      "alasan_level": "menganalisis satu per satu jenis yang berlaku pada matriks identitas lalu memilih yang tidak berlaku",
+      "stimulus": null,
+      "pertanyaan": "Sebuah matriks identitas berordo $4 \\times 4$ tergolong ke dalam semua jenis matriks berikut, kecuali matriks ....",
+      "jawaban_benar": "tegak",
+      "alasan_benar": "Matriks identitas berordo $4 \\times 4$ adalah matriks persegi, bukan matriks tegak (tegak mensyaratkan banyak baris lebih banyak daripada banyak kolom).",
+      "distraktor": [
+        {
+          "teks": "diagonal",
+          "alasan": "mengira matriks identitas bukan matriks diagonal; padahal ia adalah matriks diagonal dengan diagonal utama bernilai satu"
+        },
+        {
+          "teks": "simetris",
+          "alasan": "mengira elemen $a_{ij}$ dan $a_{ji}$ tidak sama; padahal semua elemen di luar diagonal bernilai nol sehingga sama"
+        },
+        {
+          "teks": "segitiga bawah",
+          "alasan": "mengira semua elemen di atas diagonal utama tidak boleh nol; padahal semuanya nol"
+        }
+      ],
+      "pembahasan": "Matriks identitas adalah matriks diagonal, sehingga juga segitiga bawah dan simetris. Ordonya $4 \\times 4$ sehingga persegi, bukan tegak.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "bagian": "Latihan A",
+        "nomor": "8",
+        "teks": "Atlet usia 11—12 tahun memiliki kebutuhan normal 2.000 kalori. Jika ditambah 1 jam latihan, kebutuhan menjadi 2.200 kalori. Adapun jika ditambah 2 jam latihan, kebutuhan menjadi 2.500 kalori.",
+        "jawaban": "Matriks tegak berordo 4 x 3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menyusun matriks dari data",
+      "alasan_level": "menyusun data menjadi matriks, menentukan ordo dan jenisnya, lalu membaca satu elemen",
+      "stimulus": "Kebutuhan energi minimal atlet lari putri (dalam kalori) adalah sebagai berikut.\n\n- Usia 14—15 tahun: normal 1.800; ditambah 3 jam latihan 2.400; ditambah 4 jam latihan 2.700; ditambah 5 jam latihan 3.000.\n- Usia 16—17 tahun: normal 2.100; ditambah 3 jam latihan 2.600; ditambah 4 jam latihan 2.900; ditambah 5 jam latihan 3.300.\n- Usia 18—20 tahun: normal 2.300; ditambah 3 jam latihan 2.800; ditambah 4 jam latihan 3.100; ditambah 5 jam latihan 3.500.",
+      "pertanyaan": "Data disusun menjadi matriks dengan baris menyatakan kelompok usia (urut dari yang termuda) dan kolom menyatakan kondisi (normal, tambah 3 jam, tambah 4 jam, tambah 5 jam). Pernyataan yang benar tentang matriks tersebut adalah ....",
+      "jawaban_benar": "Matriks datar berordo $3 \\times 4$ dengan elemen baris ke-2 kolom ke-3 bernilai $2.900$",
+      "alasan_benar": "Ada 3 kelompok usia (baris) dan 4 kondisi (kolom), sehingga ordo $3 \\times 4$ dengan $3 < 4$ (datar). Baris ke-2 adalah usia 16—17 tahun dan kolom ke-3 adalah tambah 4 jam latihan, yaitu $2.900$.",
+      "distraktor": [
+        {
+          "teks": "Matriks tegak berordo $4 \\times 3$ dengan elemen baris ke-2 kolom ke-3 bernilai $2.900$",
+          "alasan": "tertukar menentukan ordo (baris dan kolom terbalik) sehingga jenis menjadi tegak"
+        },
+        {
+          "teks": "Matriks datar berordo $3 \\times 4$ dengan elemen baris ke-2 kolom ke-3 bernilai $2.600$",
+          "alasan": "salah membaca kolom: mengambil kolom ke-2 (tambah 3 jam)"
+        },
+        {
+          "teks": "Matriks datar berordo $3 \\times 4$ dengan elemen baris ke-2 kolom ke-3 bernilai $3.100$",
+          "alasan": "salah membaca baris: mengambil baris ke-3 (usia 18—20 tahun)"
+        }
+      ],
+      "pembahasan": "Matriks berordo $3 \\times 4$ (datar). Elemen baris ke-2 kolom ke-3 = $2.900$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "bagian": "Latihan A",
+        "nomor": "8",
+        "teks": "Atlet usia 11—12 tahun memiliki kebutuhan normal 2.000 kalori. Jika ditambah 1 jam latihan, kebutuhan menjadi 2.200 kalori. Adapun jika ditambah 2 jam latihan, kebutuhan menjadi 2.500 kalori.",
+        "jawaban": "Matriks tegak berordo 4 x 3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menyusun matriks dari data",
+      "alasan_level": "menyusun matriks dari tabel dengan susunan baris-kolom yang dibalik lalu menentukan ordo dan jenisnya",
+      "stimulus": "Kebutuhan energi lima atlet (dalam kalori) dicatat saat istirahat dan saat latihan.\n\n| Atlet | Istirahat | Latihan |\n|---|---|---|\n| Andi | 1.700 | 2.300 |\n| Budi | 1.900 | 2.600 |\n| Candra | 2.200 | 2.900 |\n| Dimas | 1.800 | 2.400 |\n| Eko | 2.100 | 2.800 |",
+      "pertanyaan": "Data pada tabel disusun menjadi matriks $K$ dengan setiap baris memuat data satu kondisi (istirahat dan latihan) dan setiap kolom memuat data satu atlet. Matriks $K$ merupakan ....",
+      "jawaban_benar": "matriks datar berordo $2 \\times 5$",
+      "alasan_benar": "Ada 2 kondisi (baris) dan 5 atlet (kolom), sehingga ordo $2 \\times 5$ dengan banyak kolom lebih banyak daripada banyak baris, yaitu matriks datar.",
+      "distraktor": [
+        {
+          "teks": "matriks tegak berordo $5 \\times 2$",
+          "alasan": "menyusun baris untuk atlet dan kolom untuk kondisi, tidak sesuai susunan yang diminta"
+        },
+        {
+          "teks": "matriks baris berordo $1 \\times 10$",
+          "alasan": "menuliskan semua data dalam satu baris"
+        },
+        {
+          "teks": "matriks kolom berordo $10 \\times 1$",
+          "alasan": "menuliskan semua data dalam satu kolom"
+        }
+      ],
+      "pembahasan": "Baris = kondisi (2), kolom = atlet (5), sehingga $K$ berordo $2 \\times 5$ dan $2 < 5$, jadi datar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "bagian": "Latihan A",
+        "nomor": "1",
+        "teks": "Matriks tegak merupakan bagian dari matriks persegi panjang.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "ordo dan banyak elemen",
+      "alasan_level": "menghitung pasangan ordo matriks tegak dengan syarat banyak elemen dan banyak kolom, memakai faktor-faktor 60",
+      "stimulus": null,
+      "pertanyaan": "Sebuah matriks tegak memuat $60$ elemen dan memiliki paling sedikit dua kolom. Banyak kemungkinan ordo matriks tersebut adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Pasangan $(m, n)$ dengan $m \\times n = 60$, $m > n$, dan $n \\geq 2$: $(30,2), (20,3), (15,4), (12,5), (10,6)$, yaitu $5$ pasangan.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "ikut menghitung ordo $60 \\times 1$ padahal kolomnya harus minimal dua"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "menghitung semua pasangan faktor dengan kedua bilangan minimal 2 tanpa syarat $m > n$"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "menghitung semua pasangan faktor berurutan (termasuk $m < n$ dan $n = 1$)"
+        }
+      ],
+      "pembahasan": "Faktor $60$: $1,2,3,4,5,6,10,12,15,20,30,60$. Dengan $m > n \\geq 2$ diperoleh $n = 2,3,4,5,6$ (dan $m = 30,20,15,12,10$), yaitu $5$ ordo.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "bagian": "Latihan A",
+        "nomor": "2",
+        "teks": "Jika matriks A adalah matriks diagonal, maka matriks A adalah matriks segitiga.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter pada matriks khusus",
+      "alasan_level": "menggunakan syarat matriks diagonal untuk membentuk dua persamaan lalu menghitung hasil kali parameter",
+      "stimulus": null,
+      "pertanyaan": "Matriks $K = \\begin{pmatrix} 3 & p + 3 & 0 \\\\ 0 & 5 & 3q - 12 \\\\ 0 & 0 & 2 \\end{pmatrix}$ merupakan matriks diagonal. Nilai $p \\cdot q$ adalah ....",
+      "jawaban_benar": "$-12$",
+      "alasan_benar": "Elemen di luar diagonal utama harus nol: $p + 3 = 0$ sehingga $p = -3$ dan $3q - 12 = 0$ sehingga $q = 4$. Maka $p \\cdot q = -12$.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "salah tanda pada $p$ ($p = 3$)"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "menjumlahkan $p + q$, bukan mengalikan"
+        },
+        {
+          "teks": "$-7$",
+          "alasan": "menghitung $p - q$, bukan $p \\cdot q$"
+        }
+      ],
+      "pembahasan": "Matriks diagonal: $p + 3 = 0 \\Rightarrow p = -3$; $3q - 12 = 0 \\Rightarrow q = 4$; $p \\cdot q = -12$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "bagian": "Latihan A",
+        "nomor": "3",
+        "teks": "Jika matriks I adalah matriks simetris, maka matriks I adalah matriks identitas.",
+        "jawaban": "Salah"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "memilih matriks dari dua sifat",
+      "alasan_level": "memeriksa dua syarat sekaligus (simetris dan bukan diagonal) pada empat matriks 3 x 3",
+      "stimulus": null,
+      "pertanyaan": "Di antara matriks berordo $3 \\times 3$ berikut, yang merupakan matriks simetris tetapi bukan matriks diagonal adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 6 & -2 & 0 \\\\ -2 & 4 & 5 \\\\ 0 & 5 & 3 \\end{pmatrix}$",
+      "alasan_benar": "Elemen yang simetris terhadap diagonal utama sama ($-2 = -2$, $0 = 0$, $5 = 5$), dan ada elemen di luar diagonal yang tidak nol, sehingga simetris tetapi bukan diagonal.",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 6 & 0 & 0 \\\\ 0 & 4 & 0 \\\\ 0 & 0 & 3 \\end{pmatrix}$",
+          "alasan": "matriks diagonal; memang simetris tetapi melanggar syarat bukan diagonal"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 6 & -2 & 0 \\\\ 2 & 4 & 5 \\\\ 0 & -5 & 3 \\end{pmatrix}$",
+          "alasan": "pasangan elemen simetris berlawanan tanda ($-2$ dan $2$, $5$ dan $-5$) sehingga tidak simetris"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 6 & -2 & 0 \\\\ 0 & 4 & 5 \\\\ 0 & 0 & 3 \\end{pmatrix}$",
+          "alasan": "matriks segitiga atas, elemen $a_{ij}$ dan $a_{ji}$ tidak sama sehingga tidak simetris"
+        }
+      ],
+      "pembahasan": "Hanya pilihan pertama yang memenuhi $a_{ij} = a_{ji}$ dengan elemen di luar diagonal tidak semuanya nol.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "bagian": "Latihan A",
+        "nomor": "4",
+        "teks": "Transpos dari matriks baris adalah matriks kolom.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "ordo dan banyak elemen",
+      "alasan_level": "membalik arah transpos: dari ordo transpos menentukan jenis dan banyak elemen matriks asal",
+      "stimulus": null,
+      "pertanyaan": "Transpos matriks $P$ adalah matriks $Q$ berordo $3 \\times 7$. Pernyataan yang benar tentang matriks $P$ adalah ....",
+      "jawaban_benar": "$P$ merupakan matriks tegak yang memuat $21$ elemen",
+      "alasan_benar": "Ordo $P$ adalah $7 \\times 3$ (baris dan kolom $Q$ ditukar), sehingga $7 > 3$ (tegak) dan banyak elemen $7 \\times 3 = 21$.",
+      "distraktor": [
+        {
+          "teks": "$P$ merupakan matriks datar yang memuat $21$ elemen",
+          "alasan": "tidak menukar ordo sehingga mengira $P$ berordo $3 \\times 7$"
+        },
+        {
+          "teks": "$P$ merupakan matriks tegak yang memuat $10$ elemen",
+          "alasan": "menjumlahkan banyak baris dan kolom, bukan mengalikan"
+        },
+        {
+          "teks": "$P$ merupakan matriks persegi yang memuat $49$ elemen",
+          "alasan": "mengira ordo $7 \\times 7$"
+        }
+      ],
+      "pembahasan": "Transpos menukar ordo: $P$ berordo $7 \\times 3$ (tegak) dengan $21$ elemen.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0023-latihan-a-5b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "transpos matriks",
+      "alasan_level": "menentukan transpos matriks segitiga atas, jenisnya, dan membaca elemen tertentu pada hasil transpos",
+      "stimulus": "$U = \\begin{pmatrix} 6 & -4 & 7 \\\\ 0 & 8 & -3 \\\\ 0 & 0 & 5 \\end{pmatrix}$",
+      "pertanyaan": "Matriks $U$ berjenis segitiga atas. Pernyataan yang benar tentang transpos $U$, yaitu $U^t$, adalah ....",
+      "jawaban_benar": "$U^t$ matriks segitiga bawah dan elemen baris ke-3 kolom ke-1 bernilai $7$",
+      "alasan_benar": "$U^t = \\begin{pmatrix} 6 & 0 & 0 \\\\ -4 & 8 & 0 \\\\ 7 & -3 & 5 \\end{pmatrix}$; semua elemen di atas diagonal utama nol (segitiga bawah) dan baris ke-3 kolom ke-1 bernilai $7$.",
+      "distraktor": [
+        {
+          "teks": "$U^t$ matriks segitiga atas dan elemen baris ke-3 kolom ke-1 bernilai $7$",
+          "alasan": "mengira transpos tidak mengubah jenis matriks"
+        },
+        {
+          "teks": "$U^t$ matriks segitiga bawah dan elemen baris ke-3 kolom ke-1 bernilai $0$",
+          "alasan": "membaca elemen baris ke-3 kolom ke-1 pada $U$, bukan pada $U^t$"
+        },
+        {
+          "teks": "$U^t$ matriks segitiga bawah dan elemen baris ke-3 kolom ke-1 bernilai $-4$",
+          "alasan": "salah membaca baris: mengambil elemen baris ke-2 kolom ke-1"
+        }
+      ],
+      "pembahasan": "Kolom ke-$j$ pada $U^t$ adalah baris ke-$j$ pada $U$. Maka $U^t$ segitiga bawah dengan baris ke-3: $7, -3, 5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0023-latihan-a-5a"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "transpos matriks",
+      "alasan_level": "menukar ordo lewat transpos terlebih dahulu lalu menentukan jenis matriks hasilnya",
+      "stimulus": "$C = \\begin{pmatrix} 7 & -8 & 9 & 4 & 6 \\\\ -10 & 11 & 12 & 14 & -6 \\end{pmatrix}$",
+      "pertanyaan": "Tentukan jenis matriks $C^t$.",
+      "jawaban_benar": "Matriks tegak",
+      "alasan_benar": "$C$ berordo $2 \\times 5$, sehingga $C^t$ berordo $5 \\times 2$ dengan banyak baris lebih banyak daripada banyak kolom: matriks tegak.",
+      "distraktor": [
+        {
+          "teks": "Matriks datar",
+          "alasan": "menentukan jenis $C$, bukan jenis transposnya"
+        },
+        {
+          "teks": "Matriks persegi",
+          "alasan": "mengira transpos menghasilkan matriks persegi"
+        },
+        {
+          "teks": "Matriks kolom",
+          "alasan": "mengira transpos hanya memiliki satu kolom"
+        }
+      ],
+      "pembahasan": "Ordo $C$ adalah $2 \\times 5$; ordo $C^t$ adalah $5 \\times 2$ sehingga $C^t$ matriks tegak.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 19,
+        "kutipan": "Matriks datar dan matriks tegak kerap disebut matriks persegi panjang."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "ordo dan banyak elemen",
+      "alasan_level": "membentuk dan menyelesaikan persamaan ordo dari banyak elemen dan selisih baris-kolom",
+      "stimulus": null,
+      "pertanyaan": "Sebuah matriks persegi panjang memuat $35$ elemen dan banyak barisnya $2$ lebih banyak daripada banyak kolomnya. Ordo matriks tersebut adalah ....",
+      "jawaban_benar": "$7 \\times 5$",
+      "alasan_benar": "Misalkan kolom $n$, baris $n + 2$: $n(n + 2) = 35$ sehingga $n = 5$ dan baris $= 7$.",
+      "distraktor": [
+        {
+          "teks": "$5 \\times 7$",
+          "alasan": "tertukar urutan baris dan kolom"
+        },
+        {
+          "teks": "$6 \\times 4$",
+          "alasan": "hanya memenuhi selisih baris dan kolom, tetapi hanya memuat $24$ elemen"
+        },
+        {
+          "teks": "$35 \\times 1$",
+          "alasan": "hanya memenuhi banyak elemen, selisih baris dan kolom bukan $2$"
+        }
+      ],
+      "pembahasan": "$n(n + 2) = 35 \\Rightarrow n = 5$, jadi ordo $7 \\times 5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 19,
+        "kutipan": "disebut diagonal utama matriks"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "elemen dengan rumus",
+      "alasan_level": "menyusun elemen diagonal utama dari aturan $a_{ij}$ lalu menjumlahkannya",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A = (a_{ij})$ berordo $3 \\times 3$ dengan $a_{ij} = i \\cdot j - i$, dengan $i$ nomor baris dan $j$ nomor kolom. Jumlah elemen pada diagonal utama matriks $A$ adalah ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Diagonal utama: $i = j$ sehingga $a_{ii} = i^2 - i$, yaitu $0, 2, 6$. Jumlahnya $8$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "menjumlahkan elemen diagonal samping ($2 + 2 + 0$)"
+        },
+        {
+          "teks": "$14$",
+          "alasan": "memakai $a_{ii} = i^2$ (lupa mengurangi $i$)"
+        },
+        {
+          "teks": "$20$",
+          "alasan": "salah tanda: memakai $i \\cdot j + i$ sehingga elemennya $2, 6, 12$"
+        }
+      ],
+      "pembahasan": "$a_{ii} = i^2 - i$: $0 + 2 + 6 = 8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 21,
+        "kutipan": "Matriks transpos adalah matriks baru yang diperoleh dengan cara menukar setiap elemen pada baris menjadi elemen pada kolom dan sebaliknya."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "transpos matriks",
+      "alasan_level": "memakai hubungan elemen $A^t$ dan $A$ (baris dan kolom ditukar) untuk membaca elemen tanpa menuliskan seluruh transpos",
+      "stimulus": "$A = \\begin{pmatrix} 3 & -1 & 6 & 2 \\\\ 5 & 0 & -4 & -7 \\\\ 7 & 9 & 1 & -2 \\end{pmatrix}$",
+      "pertanyaan": "Elemen pada baris ke-4 dan kolom ke-2 matriks $A^t$ bernilai ....",
+      "jawaban_benar": "$-7$",
+      "alasan_benar": "Elemen baris ke-4 kolom ke-2 pada $A^t$ sama dengan elemen baris ke-2 kolom ke-4 pada $A$, yaitu $-7$.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "salah membaca kolom: mengambil baris ke-2 kolom ke-3 pada $A$"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "salah membaca baris dan kolom: mengambil baris ke-3 kolom ke-2 pada $A$"
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "salah membaca baris: mengambil baris ke-3 kolom ke-4 pada $A$"
+        }
+      ],
+      "pembahasan": "Pada transpos, baris dan kolom ditukar: elemen $(4,2)$ pada $A^t$ adalah elemen $(2,4)$ pada $A$, yaitu $-7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Matriks Simetris"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter pada matriks khusus",
+      "alasan_level": "memakai sifat $a_{ij} = a_{ji}$ untuk membentuk dua persamaan lalu menjumlahkan parameter",
+      "stimulus": null,
+      "pertanyaan": "Matriks $S = \\begin{pmatrix} 3 & 2x & 5 \\\\ 10 & 1 & y + 2 \\\\ 5 & 6 & 4 \\end{pmatrix}$ merupakan matriks simetris. Nilai $x + y$ adalah ....",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Simetris: $2x = 10$ sehingga $x = 5$, dan $y + 2 = 6$ sehingga $y = 4$. Maka $x + y = 9$.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "tidak membagi dengan $2$ sehingga $x = 10$"
+        },
+        {
+          "teks": "$11$",
+          "alasan": "lupa mengurangi $2$ sehingga $y = 6$"
+        },
+        {
+          "teks": "$13$",
+          "alasan": "menambah $2$ (bukan mengurangi) sehingga $y = 8$"
+        }
+      ],
+      "pembahasan": "$a_{12} = a_{21} \\Rightarrow 2x = 10$; $a_{23} = a_{32} \\Rightarrow y + 2 = 6$. Jadi $x + y = 9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 19,
+        "kutipan": "Matriks segitiga adalah matriks persegi dengan elemen-elemen yang berada di bawah diagonal utama atau di atas diagonal utama bernilai nol."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "banyak elemen khusus",
+      "alasan_level": "menghitung banyak posisi tak nol maksimum pada dua jenis matriks lalu mencari selisihnya",
+      "stimulus": null,
+      "pertanyaan": "Matriks segitiga atas berordo $6 \\times 6$ dan matriks diagonal berordo $6 \\times 6$ masing-masing dibuat dengan elemen tak nol sebanyak mungkin. Selisih banyak elemen tak nol kedua matriks tersebut adalah ....",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Segitiga atas: elemen pada dan di atas diagonal utama, yaitu $6 + 5 + 4 + 3 + 2 + 1 = 21$. Diagonal: $6$. Selisih $21 - 6 = 15$.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "hanya menghitung banyak elemen tak nol matriks segitiga atas"
+        },
+        {
+          "teks": "$27$",
+          "alasan": "menjumlahkan, bukan mengurangkan, kedua banyak elemen"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "mengurangkan banyak elemen total ($36$) dengan elemen diagonal"
+        }
+      ],
+      "pembahasan": "$21 - 6 = 15$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 19,
+        "kutipan": "Matriks segitiga adalah matriks persegi dengan elemen-elemen yang berada di bawah diagonal utama atau di atas diagonal utama bernilai nol."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "memilih matriks dari dua sifat",
+      "alasan_level": "memeriksa dua syarat sekaligus (segitiga atas dan bukan diagonal) pada empat matriks",
+      "stimulus": null,
+      "pertanyaan": "Di antara matriks berordo $3 \\times 3$ berikut, yang merupakan matriks segitiga atas tetapi bukan matriks diagonal adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 2 & 5 & 1 \\\\ 0 & 3 & 4 \\\\ 0 & 0 & 6 \\end{pmatrix}$",
+      "alasan_benar": "Semua elemen di bawah diagonal utama nol (segitiga atas), dan ada elemen di atas diagonal yang tidak nol sehingga bukan diagonal.",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 6 \\end{pmatrix}$",
+          "alasan": "matriks diagonal; memang segitiga atas tetapi melanggar syarat bukan diagonal"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 2 & 0 & 0 \\\\ 5 & 3 & 0 \\\\ 1 & 4 & 6 \\end{pmatrix}$",
+          "alasan": "matriks segitiga bawah, elemen di bawah diagonal utama tidak nol"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 2 & 5 & 1 \\\\ 0 & 3 & 4 \\\\ 7 & 0 & 6 \\end{pmatrix}$",
+          "alasan": "ada elemen tak nol di bawah diagonal utama ($7$), jadi bukan segitiga"
+        }
+      ],
+      "pembahasan": "Hanya pilihan pertama yang memiliki elemen di bawah diagonal nol sekaligus elemen di atas diagonal tidak nol.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Elemen-elemen pada matriks di atas bernilai nol, kecuali yang terletak pada diagonal utama."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "hubungan antarjenis matriks",
+      "alasan_level": "menalar bahwa dua sifat sekaligus memaksa semua elemen di luar diagonal bernilai nol",
+      "stimulus": null,
+      "pertanyaan": "Matriks persegi yang sekaligus merupakan matriks segitiga atas dan matriks simetris pasti merupakan matriks ....",
+      "jawaban_benar": "diagonal",
+      "alasan_benar": "Segitiga atas: elemen di bawah diagonal nol. Simetris: elemen di atas diagonal sama dengan pasangannya di bawah, sehingga juga nol. Semua elemen di luar diagonal nol: matriks diagonal.",
+      "distraktor": [
+        {
+          "teks": "identitas",
+          "alasan": "mengira diagonal utama pasti bernilai satu"
+        },
+        {
+          "teks": "nol",
+          "alasan": "mengira semua elemen termasuk diagonal utama nol"
+        },
+        {
+          "teks": "datar",
+          "alasan": "mengira ordo matriks tidak persegi"
+        }
+      ],
+      "pembahasan": "$a_{ij} = 0$ untuk $i > j$ (segitiga atas) dan $a_{ij} = a_{ji} = 0$ untuk $i < j$ (simetris), jadi diagonal.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 21,
+        "kutipan": "Data Rekapan Absensi Peserta Didik SMA Makmur dalam Satu Semester"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menyusun matriks dari data",
+      "alasan_level": "menyusun tabel menjadi matriks lalu menentukan jenis dan jumlah diagonal utama sambil menghindari diagonal samping",
+      "stimulus": "Rekapan absensi peserta didik kelas XII di SMA Makmur dalam satu semester.\n\n| Keterangan | XII 1 | XII 2 | XII 3 |\n|---|---|---|---|\n| Izin | 1 | 1 | 3 |\n| Sakit | 2 | 1 | 3 |\n| Tanpa keterangan | 5 | 1 | 2 |",
+      "pertanyaan": "Data pada tabel disajikan sebagai matriks dengan setiap baris menyatakan satu jenis keterangan dan setiap kolom menyatakan satu kelas. Pernyataan yang benar tentang matriks tersebut adalah ....",
+      "jawaban_benar": "Matriks persegi dengan jumlah elemen diagonal utama $4$",
+      "alasan_benar": "Matriks $\\begin{pmatrix} 1 & 1 & 3 \\\\ 2 & 1 & 3 \\\\ 5 & 1 & 2 \\end{pmatrix}$ berordo $3 \\times 3$ (persegi); diagonal utama $1 + 1 + 2 = 4$.",
+      "distraktor": [
+        {
+          "teks": "Matriks persegi dengan jumlah elemen diagonal utama $9$",
+          "alasan": "menjumlahkan diagonal samping ($3 + 1 + 5$)"
+        },
+        {
+          "teks": "Matriks datar dengan jumlah elemen diagonal utama $4$",
+          "alasan": "mengira banyak kolom lebih banyak daripada banyak baris"
+        },
+        {
+          "teks": "Matriks segitiga atas dengan jumlah elemen diagonal utama $4$",
+          "alasan": "tidak memeriksa elemen di bawah diagonal utama yang tidak nol ($2, 5, 1$)"
+        }
+      ],
+      "pembahasan": "Ada 3 baris dan 3 kolom sehingga persegi. Diagonal utama: $1, 1, 2$ dengan jumlah $4$. Elemen di bawah diagonal tidak nol, jadi bukan segitiga.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Matriks Simetris"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "banyak elemen khusus",
+      "alasan_level": "menalar banyak nilai yang bebas ditentukan pada matriks simetris dari diagonal dan separuh elemen di luar diagonal",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris berordo $4 \\times 4$ paling banyak memiliki elemen dengan nilai yang berbeda sebanyak ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Karena $a_{ij} = a_{ji}$, nilai bebas hanya pada diagonal utama ($4$) dan di atas diagonal ($6$): $4 + 6 = 10$.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "mengira semua elemen bisa berbeda tanpa memakai sifat simetris"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "hanya menghitung elemen di atas diagonal utama"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "menghitung semua elemen di luar diagonal utama"
+        }
+      ],
+      "pembahasan": "Elemen di bawah diagonal ditentukan oleh elemen di atasnya. Jadi hanya $4 + 6 = 10$ nilai yang bebas.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Matriks diagonal dengan elemen-elemen pada diagonal utamanya bernilai satu disebut matriks identitas."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter pada matriks khusus",
+      "alasan_level": "menyamakan tiap elemen diagonal dengan satu untuk tiga parameter lalu menjumlahkannya",
+      "stimulus": null,
+      "pertanyaan": "Matriks $E = \\begin{pmatrix} 3p - 8 & 0 & 0 \\\\ 0 & q + 6 & 0 \\\\ 0 & 0 & 2r - 7 \\end{pmatrix}$ merupakan matriks identitas. Nilai $p + q + r$ adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Elemen diagonal utama bernilai satu: $3p - 8 = 1 \\Rightarrow p = 3$; $q + 6 = 1 \\Rightarrow q = -5$; $2r - 7 = 1 \\Rightarrow r = 4$. Jumlahnya $2$.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "salah tanda pada $q$ ($q = 5$)"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "tidak membagi dengan $2$ sehingga $r = 8$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "tidak membagi dengan $3$ sehingga $p = 9$"
+        }
+      ],
+      "pembahasan": "$p = 3$, $q = -5$, $r = 4$, sehingga $p + q + r = 2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 21,
+        "kutipan": "Matriks transpos adalah matriks baru yang diperoleh dengan cara menukar setiap elemen pada baris menjadi elemen pada kolom dan sebaliknya."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "elemen dengan rumus",
+      "alasan_level": "menyusun elemen dari aturan $d_{ij}$ lalu menerapkan transpos untuk memperoleh baris pertama",
+      "stimulus": null,
+      "pertanyaan": "Matriks $D = (d_{ij})$ berordo $3 \\times 3$ dengan $d_{ij} = i + 2j$. Baris pertama matriks $D^t$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 3 & 4 & 5 \\end{pmatrix}$",
+      "alasan_benar": "Baris pertama $D^t$ adalah kolom pertama $D$, yaitu $d_{k1} = k + 2$ untuk $k = 1, 2, 3$: $3, 4, 5$.",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 3 & 5 & 7 \\end{pmatrix}$",
+          "alasan": "membaca baris pertama $D$ (tidak mentranspos)"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 2 & 3 & 4 \\end{pmatrix}$",
+          "alasan": "memakai aturan $i + j$ bukan $i + 2j$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 5 & 7 & 9 \\end{pmatrix}$",
+          "alasan": "membaca baris ke-3 matriks $D$"
+        }
+      ],
+      "pembahasan": "$D = \\begin{pmatrix} 3 & 5 & 7 \\\\ 4 & 6 & 8 \\\\ 5 & 7 & 9 \\end{pmatrix}$, kolom pertamanya $3, 4, 5$ menjadi baris pertama $D^t$.",
+      "catatan": null
+    }
+  ]
+}

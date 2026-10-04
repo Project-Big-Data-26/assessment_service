@@ -1,0 +1,708 @@
+{
+  "book": "kelas10",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b01-a-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b01-p0022-eksplorasi-21-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai pertumbuhan pada fase tertentu",
+      "alasan_level": "menghitung pangkat 7^5 dari pola penerusan undangan, satu perpangkatan",
+      "stimulus": null,
+      "pertanyaan": "Seorang panitia mengirim undangan acara sekolah kepada 7 orang siswa. Setiap siswa yang menerima undangan meneruskannya kepada 7 siswa lain yang belum menerima, dan seterusnya. Banyak siswa yang menerima undangan pada tahap ke-5 adalah ....",
+      "jawaban_benar": "16.807 orang",
+      "alasan_benar": "pada tahap ke-$n$ banyak penerima $7^n$, sehingga tahap ke-5 adalah $7^5 = 16.807$",
+      "distraktor": [
+        {
+          "teks": "35 orang",
+          "alasan": "mengalikan 7 dengan 5 sebagai ganti memangkatkan"
+        },
+        {
+          "teks": "78.125 orang",
+          "alasan": "pokok dan pangkat tertukar ($5^7$)"
+        },
+        {
+          "teks": "117.649 orang",
+          "alasan": "memakai tahap ke-6 ($7^6$)"
+        }
+      ],
+      "pembahasan": "Tahap ke-1: 7, tahap ke-2: 49, tahap ke-3: 343, tahap ke-4: 2.401, sehingga tahap ke-5 adalah $7^5 = 16.807$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b01-p0022-eksplorasi-21-4"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "rumus umum pertumbuhan eksponen",
+      "alasan_level": "mengenali bentuk umum $a^n$ dari pola penyebaran, satu langkah pemodelan",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyebarkan rumor kepada 5 temannya. Setiap teman yang menerima rumor menyebarkannya lagi kepada 5 orang lain, begitu seterusnya. Rumus banyak orang yang menerima rumor pada fase ke-$n$ adalah ....",
+      "jawaban_benar": "$5^n$",
+      "alasan_benar": "setiap fase dikalikan 5 lagi, sehingga fase ke-$n$ adalah 5 dikalikan sebanyak $n$ faktor",
+      "distraktor": [
+        {
+          "teks": "$n^5$",
+          "alasan": "pokok dan pangkat tertukar"
+        },
+        {
+          "teks": "$5n$",
+          "alasan": "mengira perkalian berulang sama dengan perkalian biasa"
+        },
+        {
+          "teks": "$5^{n-1}$",
+          "alasan": "pangkat bergeser satu, padahal fase ke-1 sudah 5 orang"
+        }
+      ],
+      "pembahasan": "Fase 1: 5, fase 2: 25, fase 3: 125, sehingga fase ke-$n$ adalah $5^n$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "3",
+        "teks": "Pada fase ke berapakah jumlah orang yang menerima hoaks akan melebihi 200 orang?",
+        "jawaban": "8"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "fase minimal melewati batas",
+      "alasan_level": "mencari pangkat terkecil yang melewati batas lewat daftar pangkat 2",
+      "stimulus": null,
+      "pertanyaan": "Sebuah pesan berantai dikirim kepada 2 orang pada fase ke-1. Setiap penerima meneruskannya kepada 2 orang baru pada fase berikutnya, sehingga banyak penerima pada fase ke-$n$ adalah $2^n$. Pada fase ke berapakah banyak orang yang menerima pesan pertama kali melebihi 1.000 orang?",
+      "jawaban_benar": "fase ke-10",
+      "alasan_benar": "$2^9 = 512$ belum melebihi 1.000, sedangkan $2^{10} = 1.024$ sudah melebihi",
+      "distraktor": [
+        {
+          "teks": "fase ke-9",
+          "alasan": "berhenti di 512 yang masih kurang dari 1.000"
+        },
+        {
+          "teks": "fase ke-11",
+          "alasan": "memilih fase setelah 1.024 padahal fase ke-10 sudah melebihi"
+        },
+        {
+          "teks": "fase ke-500",
+          "alasan": "membagi 1.000 dengan 2 tanpa memakai pangkat"
+        }
+      ],
+      "pembahasan": "$2^9 = 512 < 1.000$ dan $2^{10} = 1.024 > 1.000$, jadi fase ke-10.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "bagian": "Ayo, Bekerja Sama",
+        "nomor": "-",
+        "teks": "Bandingkan rumusmu dan gunakan rumus tersebut untuk menghitung jumlah orang pada fase ke-7.",
+        "jawaban": "128 orang"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai pertumbuhan pada fase tertentu",
+      "alasan_level": "menghitung $2^9$ dari kisah pembelahan bakteri, satu perpangkatan",
+      "stimulus": null,
+      "pertanyaan": "Seekor bakteri membelah diri menjadi 2 bakteri setiap jam. Jika semua bakteri bertahan hidup dan pada awal terdapat 1 bakteri, banyak bakteri setelah 9 jam adalah ....",
+      "jawaban_benar": "512 bakteri",
+      "alasan_benar": "setelah 9 jam banyak bakteri $2^9 = 512$",
+      "distraktor": [
+        {
+          "teks": "18 bakteri",
+          "alasan": "mengalikan 2 dengan 9 sebagai ganti memangkatkan"
+        },
+        {
+          "teks": "256 bakteri",
+          "alasan": "memakai pangkat 8 ($2^8$)"
+        },
+        {
+          "teks": "81 bakteri",
+          "alasan": "pokok dan pangkat tertukar ($9^2$)"
+        }
+      ],
+      "pembahasan": "Setiap jam banyak bakteri dikalikan 2, sehingga setelah 9 jam adalah $2^9 = 512$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "bagian": "Ayo, Mengingat Kembali",
+        "nomor": "1",
+        "teks": "2 × 2 × 2 × 2 × 2 × 2 ditulis dengan 2^6",
+        "jawaban": "2^6"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "perkalian berulang ke bentuk pangkat",
+      "alasan_level": "menuliskan perkalian berulang sebagai bentuk pangkat, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Perkalian berulang $9 \\times 9 \\times 9 \\times 9 \\times 9 \\times 9 \\times 9$ ditulis dengan bentuk pangkat ....",
+      "jawaban_benar": "$9^7$",
+      "alasan_benar": "bilangan 9 muncul sebagai faktor sebanyak 7 kali, sehingga ditulis $9^7$",
+      "distraktor": [
+        {
+          "teks": "$7^9$",
+          "alasan": "pokok dan pangkat tertukar"
+        },
+        {
+          "teks": "$9^6$",
+          "alasan": "menghitung banyak tanda kali, bukan banyak faktor"
+        },
+        {
+          "teks": "$9^9$",
+          "alasan": "pangkat disamakan dengan bilangan pokok"
+        }
+      ],
+      "pembahasan": "Ada 7 faktor 9, sehingga $9^7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "bagian": "Ayo, Mengingat Kembali",
+        "nomor": "2",
+        "teks": "5 × 5 × 5 × 5 × 5 × 5 × 5 × 5 ditulis dengan 5^8",
+        "jawaban": "5^8"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "perkalian berulang ke bentuk pangkat",
+      "alasan_level": "menuliskan perkalian berulang dengan bilangan pokok dua digit, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Perkalian berulang $12 \\times 12 \\times 12 \\times 12 \\times 12 \\times 12$ ditulis dengan bentuk pangkat ....",
+      "jawaban_benar": "$12^6$",
+      "alasan_benar": "bilangan 12 muncul sebagai faktor sebanyak 6 kali",
+      "distraktor": [
+        {
+          "teks": "$6^{12}$",
+          "alasan": "pokok dan pangkat tertukar"
+        },
+        {
+          "teks": "$12^5$",
+          "alasan": "menghitung banyak tanda kali, bukan banyak faktor"
+        },
+        {
+          "teks": "$72$",
+          "alasan": "mengalikan 12 dengan 6 sebagai ganti perkalian berulang"
+        }
+      ],
+      "pembahasan": "Ada 6 faktor 12, sehingga $12^6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "bagian": "Ayo, Mengingat Kembali",
+        "nomor": "5",
+        "teks": "a × a × a × a × a × a × a ditulis dengan a^7",
+        "jawaban": "a^7"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "perkalian berulang ke bentuk pangkat",
+      "alasan_level": "menuliskan perkalian berulang berbasis variabel, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Perkalian berulang $y \\times y \\times y \\times y \\times y \\times y \\times y \\times y \\times y$ ditulis dengan bentuk pangkat ....",
+      "jawaban_benar": "$y^9$",
+      "alasan_benar": "variabel $y$ muncul sebagai faktor sebanyak 9 kali",
+      "distraktor": [
+        {
+          "teks": "$9y$",
+          "alasan": "mengira perkalian berulang sama dengan penjumlahan berulang"
+        },
+        {
+          "teks": "$9^y$",
+          "alasan": "pokok dan pangkat tertukar"
+        },
+        {
+          "teks": "$y^8$",
+          "alasan": "menghitung banyak tanda kali, bukan banyak faktor"
+        }
+      ],
+      "pembahasan": "Ada 9 faktor $y$, sehingga $y^9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "bagian": "Ayo, Mengingat Kembali",
+        "nomor": "3",
+        "teks": "15 × 15 × 15 × 15 ditulis dengan 15^4",
+        "jawaban": "15^4"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "bentuk pangkat ke perkalian berulang",
+      "alasan_level": "mengubah bentuk pangkat menjadi perkalian berulang, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Bentuk pangkat $8^5$ jika ditulis sebagai perkalian berulang adalah ....",
+      "jawaban_benar": "$8 \\times 8 \\times 8 \\times 8 \\times 8$",
+      "alasan_benar": "$8^5$ berarti bilangan 8 dikalikan sebanyak 5 faktor",
+      "distraktor": [
+        {
+          "teks": "$5 \\times 5 \\times 5 \\times 5 \\times 5 \\times 5 \\times 5 \\times 5$",
+          "alasan": "bilangan pokok dan pangkat tertukar"
+        },
+        {
+          "teks": "$8 \\times 5$",
+          "alasan": "mengira pangkat berarti dikalikan satu kali"
+        },
+        {
+          "teks": "$8 \\times 8 \\times 8 \\times 8$",
+          "alasan": "hanya menuliskan 4 faktor"
+        }
+      ],
+      "pembahasan": "$8^5 = 8 \\times 8 \\times 8 \\times 8 \\times 8$ (5 faktor).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "bagian": "Ayo, Bekerja Sama",
+        "nomor": "-",
+        "teks": "Bandingkan rumusmu dan gunakan rumus tersebut untuk menghitung jumlah orang pada fase ke-7.",
+        "jawaban": "128 orang"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "nilai pertumbuhan pada fase tertentu",
+      "alasan_level": "menghitung $4^4$ dari rumus yang diberikan, satu perpangkatan",
+      "stimulus": null,
+      "pertanyaan": "Banyak penerima sebuah pesan pada fase ke-$n$ dinyatakan dengan rumus $4^n$. Gunakan rumus tersebut untuk menghitung jumlah orang pada fase ke-4.",
+      "jawaban_benar": "256 orang",
+      "alasan_benar": "$4^4 = 4 \\times 4 \\times 4 \\times 4 = 256$",
+      "distraktor": [
+        {
+          "teks": "16 orang",
+          "alasan": "menghitung $4 \\times 4$ saja"
+        },
+        {
+          "teks": "64 orang",
+          "alasan": "memakai pangkat 3 ($4^3$)"
+        },
+        {
+          "teks": "1.024 orang",
+          "alasan": "memakai pangkat 5 ($4^5$)"
+        }
+      ],
+      "pembahasan": "Substitusi $n = 4$: $4^4 = 256$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b01-p0022-eksplorasi-21-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai pertumbuhan pada fase tertentu",
+      "alasan_level": "menghitung $10^3$ dari pola penyebaran dengan pokok 10, satu perpangkatan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah video dibagikan oleh seorang pengguna kepada 10 orang pengikutnya. Setiap pengikut membagikannya lagi kepada 10 orang yang berbeda, dan seterusnya. Banyak orang yang menerima video pada fase ke-3 adalah ....",
+      "jawaban_benar": "1.000 orang",
+      "alasan_benar": "fase ke-3 adalah $10^3 = 1.000$",
+      "distraktor": [
+        {
+          "teks": "30 orang",
+          "alasan": "mengalikan 10 dengan 3 sebagai ganti memangkatkan"
+        },
+        {
+          "teks": "100 orang",
+          "alasan": "memakai fase ke-2 ($10^2$)"
+        },
+        {
+          "teks": "10.000 orang",
+          "alasan": "memakai fase ke-4 ($10^4$)"
+        }
+      ],
+      "pembahasan": "Fase 1: 10, fase 2: 100, fase 3: 1.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Bilangan berpangkat dapat dinyatakan dengan"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "istilah eksponen",
+      "alasan_level": "mengingat nama bagian bentuk $a^n$, tanpa hitungan",
+      "stimulus": null,
+      "pertanyaan": "Pada bentuk eksponen $7^4$, bilangan $7$ disebut ....",
+      "jawaban_benar": "bilangan pokok",
+      "alasan_benar": "bilangan yang diulang sebagai faktor disebut bilangan pokok",
+      "distraktor": [
+        {
+          "teks": "pangkat",
+          "alasan": "tertukar dengan bilangan 4"
+        },
+        {
+          "teks": "hasil perpangkatan",
+          "alasan": "mengira 7 adalah nilai hasil"
+        },
+        {
+          "teks": "bilangan berpangkat",
+          "alasan": "bilangan berpangkat adalah seluruh bentuk $7^4$, bukan bilangan 7 saja"
+        }
+      ],
+      "pembahasan": "Pada $a^n$, $a$ adalah bilangan pokok dan $n$ adalah pangkat; di sini bilangan pokok 7.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "arti notasi pangkat",
+      "alasan_level": "memahami arti $x^6$ sebagai perkalian berulang, satu langkah penafsiran",
+      "stimulus": null,
+      "pertanyaan": "Jika $x$ adalah bilangan real, bentuk $x^6$ berarti ....",
+      "jawaban_benar": "hasil kali bilangan $x$ sebanyak 6 faktor",
+      "alasan_benar": "definisi $a^n$ adalah hasil kali $a$ sebanyak $n$ faktor",
+      "distraktor": [
+        {
+          "teks": "hasil penjumlahan bilangan $x$ sebanyak 6 kali",
+          "alasan": "mengira pangkat sama dengan penjumlahan berulang"
+        },
+        {
+          "teks": "hasil kali bilangan 6 sebanyak $x$ faktor",
+          "alasan": "bilangan pokok dan pangkat tertukar"
+        },
+        {
+          "teks": "hasil kali $x$ dengan 6",
+          "alasan": "mengira pangkat adalah perkalian biasa $6x$"
+        }
+      ],
+      "pembahasan": "$x^6 = x \\times x \\times x \\times x \\times x \\times x$, yaitu $x$ sebanyak 6 faktor.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "nilai pangkat bulat positif",
+      "alasan_level": "menghitung satu perpangkatan kecil",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $3^4$ adalah ....",
+      "jawaban_benar": "$81$",
+      "alasan_benar": "$3^4 = 3 \\times 3 \\times 3 \\times 3 = 81$",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "mengalikan 3 dengan 4"
+        },
+        {
+          "teks": "$64$",
+          "alasan": "pokok dan pangkat tertukar ($4^3$)"
+        },
+        {
+          "teks": "$243$",
+          "alasan": "memakai pangkat 5 ($3^5$)"
+        }
+      ],
+      "pembahasan": "$3^4 = 81$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "pangkat negatif",
+      "alasan_level": "menerapkan definisi $a^{-n} = (1/a)^n$, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $2^{-3}$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{8}$",
+      "alasan_benar": "$2^{-3} = \\left(\\frac{1}{2}\\right)^3 = \\frac{1}{8}$",
+      "distraktor": [
+        {
+          "teks": "$-8$",
+          "alasan": "menganggap pangkat negatif membuat hasil negatif"
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "mengalikan 2 dengan -3"
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "mengalikan penyebut 2 dengan 3 sebagai ganti memangkatkan"
+        }
+      ],
+      "pembahasan": "$2^{-3} = \\frac{1}{2^3} = \\frac{1}{8}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "pangkat negatif",
+      "alasan_level": "mengenali bentuk ekuivalen $a^{-n}$ menurut definisi, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Menurut definisi eksponen, bentuk $7^{-3}$ sama dengan ....",
+      "jawaban_benar": "$\\left(\\frac{1}{7}\\right)^3$",
+      "alasan_benar": "$a^{-n} = \\left(\\frac{1}{a}\\right)^n$ dengan $a = 7$ dan $n = 3$",
+      "distraktor": [
+        {
+          "teks": "$(-7)^3$",
+          "alasan": "memindahkan tanda negatif ke bilangan pokok"
+        },
+        {
+          "teks": "$\\left(\\frac{1}{3}\\right)^7$",
+          "alasan": "pokok dan pangkat tertukar"
+        },
+        {
+          "teks": "$-21$",
+          "alasan": "mengalikan 7 dengan -3"
+        }
+      ],
+      "pembahasan": "Definisi: $a^{-n} = \\left(\\frac{1}{a}\\right)^n$, sehingga $7^{-3} = \\left(\\frac{1}{7}\\right)^3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "pangkat pecahan",
+      "alasan_level": "menerapkan definisi $a^{1/n} = p$ dengan $p^n = a$, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $125^{\\frac{1}{3}}$ adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "$125^{\\frac{1}{3}} = p$ dengan $p^3 = 125$, yaitu $p = 5$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{125}{3}$",
+          "alasan": "membagi 125 dengan 3"
+        },
+        {
+          "teks": "$375$",
+          "alasan": "mengalikan 125 dengan 3"
+        },
+        {
+          "teks": "$25$",
+          "alasan": "mengira hasilnya $5^2$"
+        }
+      ],
+      "pembahasan": "Karena $5^3 = 125$, maka $125^{\\frac{1}{3}} = 5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "nilai pangkat bulat positif",
+      "alasan_level": "menghitung pangkat ganjil dari bilangan bulat negatif, perlu memperhatikan tanda",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $(-2)^5$ adalah ....",
+      "jawaban_benar": "$-32$",
+      "alasan_benar": "bilangan negatif dikalikan sebanyak 5 faktor (ganjil) menghasilkan bilangan negatif, $2^5 = 32$",
+      "distraktor": [
+        {
+          "teks": "$32$",
+          "alasan": "mengabaikan tanda negatif"
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "mengalikan -2 dengan 5"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "mengalikan 2 dengan 5 dan mengabaikan tanda"
+        }
+      ],
+      "pembahasan": "$(-2)^5 = (-2)(-2)(-2)(-2)(-2) = -32$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pangkat pecahan",
+      "alasan_level": "menerapkan $a^{m/n} = (a^{1/n})^m$, dua langkah (akar dulu lalu pangkat)",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $8^{\\frac{2}{3}}$ adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$8^{\\frac{2}{3}} = \\left(8^{\\frac{1}{3}}\\right)^2 = 2^2 = 4$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{16}{3}$",
+          "alasan": "mengalikan 8 dengan $\\frac{2}{3}$"
+        },
+        {
+          "teks": "$\\frac{64}{3}$",
+          "alasan": "mengkuadratkan 8 lalu membagi dengan 3"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "hanya menghitung $8^{\\frac{1}{3}}$ dan lupa memangkatkan 2"
+        }
+      ],
+      "pembahasan": "$8^{\\frac{1}{3}} = 2$, lalu $2^2 = 4$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "syarat bilangan pokok",
+      "alasan_level": "mengingat syarat $a \\neq 0$ pada definisi pangkat negatif",
+      "stimulus": null,
+      "pertanyaan": "Nilai $a$ berikut yang membuat bentuk $a^{-3}$ tidak terdefinisi adalah ....",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "definisi $a^{-n}$ mensyaratkan $a \\neq 0$ karena $a^{-3} = \\left(\\frac{1}{a}\\right)^3$ memuat pembagian oleh $a$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "mengira bilangan 1 tidak boleh, padahal $1^{-3} = 1$"
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "mengira bilangan negatif tidak boleh, padahal $(-1)^{-3} = -1$"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "mengira nilai yang sama dengan pangkat tidak boleh, padahal $3^{-3} = \\frac{1}{27}$"
+        }
+      ],
+      "pembahasan": "Syarat $a \\neq 0$; hanya $a = 0$ yang melanggarnya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pangkat negatif",
+      "alasan_level": "menerapkan $a^{-n} = (1/a)^n$ pada bilangan pokok pecahan, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $\\left(\\frac{2}{3}\\right)^{-2}$ adalah ....",
+      "jawaban_benar": "$\\frac{9}{4}$",
+      "alasan_benar": "$\\left(\\frac{2}{3}\\right)^{-2} = \\left(\\frac{3}{2}\\right)^2 = \\frac{9}{4}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "mengabaikan tanda negatif pada pangkat"
+        },
+        {
+          "teks": "$-\\frac{4}{9}$",
+          "alasan": "menganggap pangkat negatif membuat hasil negatif"
+        },
+        {
+          "teks": "$-\\frac{4}{3}$",
+          "alasan": "mengalikan $\\frac{2}{3}$ dengan -2"
+        }
+      ],
+      "pembahasan": "$\\left(\\frac{2}{3}\\right)^{-2} = \\left(\\frac{3}{2}\\right)^2 = \\frac{9}{4}$.",
+      "catatan": null
+    }
+  ]
+}
