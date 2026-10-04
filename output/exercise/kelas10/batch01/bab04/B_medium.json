@@ -1,0 +1,701 @@
+{
+  "book": "kelas10",
+  "bab_no": 4,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "soal": [
+    {
+      "id": "kelas10-b04-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 140,
+        "bagian": "Latihan 4.2",
+        "nomor": "3",
+        "teks": "Bu Dini membutuhkan telur ayam dan telur puyuh. Telur ayam harganya Rp22.000,00 per kg dan telur puyuh harganya Rp30.000,00 per kg. Bu Dini memiliki uang sebesar Rp150.000,00. Karena khawatir telurnya pecah di perjalanan, Bu Dini tidak mau membawa lebih dari 6 kg telur. Apakah Bu Dini dapat membeli 6 kg telur?",
+        "jawaban": "Dapat, misalnya 4 kg telur ayam dan 2 kg telur puyuh"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari batas nilai",
+      "alasan_level": "menyusun biaya total untuk 7 kg lalu menyelesaikan pertidaksamaan untuk batas bawah berat telur ayam",
+      "stimulus": "Bu Rini membutuhkan telur ayam dan telur puyuh. Telur ayam harganya Rp20.000,00 per kg dan telur puyuh harganya Rp28.000,00 per kg. Bu Rini memiliki uang sebesar Rp160.000,00 dan ingin membeli tepat 7 kg telur (berat setiap jenis telur boleh berupa pecahan).",
+      "pertanyaan": "Berat telur ayam paling sedikit yang harus dibeli Bu Rini adalah ....",
+      "jawaban_benar": "$4{,}5$ kg",
+      "alasan_benar": "misalkan telur ayam $x$ kg: $20.000x + 28.000(7-x) \\leq 160.000$ sehingga $196.000 - 8.000x \\leq 160.000$ dan $x \\geq 4{,}5$",
+      "distraktor": [
+        {
+          "teks": "$4$ kg",
+          "alasan": "membulatkan $4{,}5$ ke bawah padahal untuk $4$ kg biayanya Rp164.000,00 melebihi uang"
+        },
+        {
+          "teks": "$5$ kg",
+          "alasan": "membulatkan ke atas padahal berat boleh pecahan sehingga $5$ kg bukan yang paling sedikit"
+        },
+        {
+          "teks": "$3{,}5$ kg",
+          "alasan": "salah membagi: mengira batas diperoleh dari $28 : 8$"
+        }
+      ],
+      "pembahasan": "Telur ayam $x$ kg dan puyuh $(7-x)$ kg. Biaya $20.000x+28.000(7-x)=196.000-8.000x \\leq 160.000$, sehingga $8.000x \\geq 36.000$ dan $x \\geq 4{,}5$. Berat paling sedikit $4{,}5$ kg.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 141,
+        "bagian": "Latihan 4.2",
+        "nomor": "4",
+        "teks": "Sabun mandi dijual seharga Rp25.000,00 per liter dan sabun cuci tangan Rp20.000,00 per liter. Apakah mereka bisa mendapatkan keuntungan dengan harga tersebut? Berikan contoh banyaknya sabun mandi dan sabun cuci masing-masing yang dijual sehingga pendapatan mereka lebih dari pengeluaran.",
+        "jawaban": "Bisa, misalnya 80 liter sabun cuci tangan dan 40 liter sabun mandi"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menguji titik pada sistem",
+      "alasan_level": "menyusun tiga syarat (modal, gudang, keuntungan) lalu menguji tiap kombinasi pada ketiganya",
+      "stimulus": "Sebuah UMKM memproduksi sabun mandi dan sabun cuci tangan. Biaya produksi sabun mandi Rp12.000,00 per liter dan sabun cuci tangan Rp8.000,00 per liter, ditambah biaya tetap Rp400.000,00. Modal yang dimiliki Rp2.000.000,00 dan gudang hanya menampung 140 liter. Sabun mandi dijual Rp23.000,00 per liter dan sabun cuci tangan Rp15.000,00 per liter. Semua sabun yang diproduksi terjual.",
+      "pertanyaan": "Rencana produksi yang modalnya cukup, muat di gudang, dan pendapatannya lebih dari seluruh pengeluaran adalah ....",
+      "jawaban_benar": "40 liter sabun mandi dan 60 liter sabun cuci tangan",
+      "alasan_benar": "biaya $12.000(40)+8.000(60)+400.000=1.360.000 \\leq 2.000.000$, jumlah $100 \\leq 140$ liter, pendapatan $23.000(40)+15.000(60)=1.820.000 > 1.360.000$",
+      "distraktor": [
+        {
+          "teks": "135 liter sabun mandi dan 5 liter sabun cuci tangan",
+          "alasan": "modal tidak cukup: biaya $2.060.000$ melebihi Rp2.000.000,00"
+        },
+        {
+          "teks": "60 liter sabun mandi dan 90 liter sabun cuci tangan",
+          "alasan": "jumlah $150$ liter melebihi kapasitas gudang"
+        },
+        {
+          "teks": "10 liter sabun mandi dan 20 liter sabun cuci tangan",
+          "alasan": "pendapatan $530.000$ tidak melebihi pengeluaran $680.000$ (rugi)"
+        }
+      ],
+      "pembahasan": "Syarat: $12x+8y+400 \\leq 2000$, $x+y \\leq 140$, dan $23x+15y > 12x+8y+400$ (satuan ribu rupiah). Hanya 40 liter mandi dan 60 liter cuci tangan yang memenuhi ketiganya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 142,
+        "bagian": "Uji Kompetensi",
+        "nomor": "2",
+        "teks": "Pak Budi memiliki uang sebanyak Rp100.000.000,00. Ia ingin mendepositokan uangnya. Bank A memberikan bunga sebesar 4% dan bank B memberikan bunga sebesar 6%. Pak Budi ingin mendapatkan bunga setidaknya Rp550.000,00 namun ia tidak ingin mendepositokan uangnya pada satu bank saja. Apakah hal itu mungkin? Jika ya, sebutkan salah satu kemungkinannya.",
+        "jawaban": "Ya, misalnya Rp10.000.000,00 di Bank A dan Rp90.000.000,00 di Bank B"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menguji titik pada sistem",
+      "alasan_level": "menyusun syarat jumlah uang, bunga minimum, dan larangan satu bank, lalu menguji pilihan",
+      "stimulus": "Pak Rudi memiliki uang Rp200.000.000,00 dan akan mendepositokan seluruhnya. Bank A memberi bunga 3% setahun dan bank B memberi bunga 5% setahun. Pak Rudi ingin mendapat bunga setidaknya Rp7.000.000,00 dalam setahun, tetapi ia tidak ingin mendepositokan seluruh uangnya pada satu bank saja.",
+      "pertanyaan": "Pembagian deposito yang memenuhi keinginan Pak Rudi adalah ....",
+      "jawaban_benar": "Rp120.000.000,00 di bank A dan Rp80.000.000,00 di bank B",
+      "alasan_benar": "bunga $0{,}03(120)+0{,}05(80)=3{,}6+4=7{,}6$ juta $\\geq 7$ juta dan kedua bank dipakai",
+      "distraktor": [
+        {
+          "teks": "Rp180.000.000,00 di bank A dan Rp20.000.000,00 di bank B",
+          "alasan": "bunga hanya $5{,}4+1=6{,}4$ juta, kurang dari $7$ juta"
+        },
+        {
+          "teks": "Rp160.000.000,00 di bank A dan Rp40.000.000,00 di bank B",
+          "alasan": "bunga hanya $4{,}8+2=6{,}8$ juta, kurang dari $7$ juta"
+        },
+        {
+          "teks": "Rp0,00 di bank A dan Rp200.000.000,00 di bank B",
+          "alasan": "bunga $10$ juta memenuhi tetapi hanya memakai satu bank"
+        }
+      ],
+      "pembahasan": "Misalkan $a+b=200$ (juta) dengan $0{,}03a+0{,}05b \\geq 7$, $a>0$, $b>0$. Hanya $(120, 80)$ yang memenuhi: bunga $7{,}6$ juta.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 140,
+        "bagian": "Latihan 4.2",
+        "nomor": "1d",
+        "teks": "Tentukan koordinat titik-titik potongnya.",
+        "jawaban": "Berpotongan di (5,5)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menentukan titik potong garis batas",
+      "alasan_level": "mengubah dua pertidaksamaan menjadi persamaan garis batas lalu menyelesaikan sistem persamaannya",
+      "stimulus": "Seorang pengrajin membuat tas ($x$ buah) dan dompet ($y$ buah). Bahan kulit yang tersedia 114 dm$^2$; sebuah tas memerlukan 5 dm$^2$ dan sebuah dompet 8 dm$^2$. Jumlah produk paling banyak 18 buah. Modelnya adalah $5x + 8y \\leq 114$ dan $x + y \\leq 18$.",
+      "pertanyaan": "Koordinat titik potong kedua garis batas model tersebut adalah ....",
+      "jawaban_benar": "$(10, 8)$",
+      "alasan_benar": "dari $x+y=18$ diperoleh $x=18-y$, lalu $5(18-y)+8y=114$ sehingga $y=8$ dan $x=10$",
+      "distraktor": [
+        {
+          "teks": "$(8, 10)$",
+          "alasan": "koordinat $x$ dan $y$ tertukar"
+        },
+        {
+          "teks": "$(9, 9)$",
+          "alasan": "mengira titik potong berada di $x=y$; padahal $5(9)+8(9)=117 \\neq 114$"
+        },
+        {
+          "teks": "$(12, 6)$",
+          "alasan": "hanya memenuhi $x+y=18$ tetapi $5(12)+8(6)=108 \\neq 114$"
+        }
+      ],
+      "pembahasan": "Garis batas: $5x+8y=114$ dan $x+y=18$. Substitusi $x=18-y$: $90-5y+8y=114$ sehingga $y=8$, $x=10$. Titik potong $(10,8)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 140,
+        "bagian": "Latihan 4.2",
+        "nomor": "2",
+        "teks": "Nova membeli pupuk dan tanaman untuk kebunnya. Nova memiliki uang sebesar Rp100.000,00. Setiap kantong pupuk harganya Rp20.000,00 dan setiap tanaman harganya Rp10.000,00. Nova ingin membeli setidaknya 5 tanaman. Berapa banyak tanaman dan pupuk yang dapat Nova beli?",
+        "jawaban": "Contoh: 6 tanaman dan 1 kantong pupuk, atau 5 tanaman dan 2 kantong pupuk"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari batas nilai",
+      "alasan_level": "menyusun model dua syarat lalu menentukan nilai terbesar pada kondisi batas tanaman minimum",
+      "stimulus": "Alya membeli pupuk dan tanaman hias untuk kebunnya. Alya memiliki uang sebesar Rp240.000,00. Setiap kantong pupuk harganya Rp35.000,00 dan setiap tanaman harganya Rp15.000,00. Alya ingin membeli setidaknya 6 tanaman.",
+      "pertanyaan": "Banyak kantong pupuk paling banyak yang dapat dibeli Alya adalah ....",
+      "jawaban_benar": "4 kantong",
+      "alasan_benar": "agar pupuk terbanyak, tanaman dibeli sekecil mungkin (6): $35.000p + 90.000 \\leq 240.000$ sehingga $p \\leq 4{,}28$ dan $p=4$",
+      "distraktor": [
+        {
+          "teks": "5 kantong",
+          "alasan": "membulatkan $4{,}28$ ke atas padahal $5$ kantong menghabiskan Rp265.000,00"
+        },
+        {
+          "teks": "6 kantong",
+          "alasan": "lupa biaya $6$ tanaman: $240.000 : 35.000 \\approx 6{,}86$ lalu dibulatkan ke bawah"
+        },
+        {
+          "teks": "7 kantong",
+          "alasan": "lupa biaya tanaman dan membulatkan $6{,}86$ ke atas"
+        }
+      ],
+      "pembahasan": "Biaya $35.000p+15.000t \\leq 240.000$ dengan $t \\geq 6$. Pupuk terbanyak saat $t=6$: $35.000p \\leq 150.000$, $p \\leq 4{,}28$, jadi $p=4$ (biaya Rp230.000,00).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 135,
+        "bagian": "Eksplorasi 4.2",
+        "nomor": "Menimbang Buah",
+        "teks": "Dua buah apel dan lima buah jeruk beratnya kurang dari 1 kg. Enam buah apel dan dua buah jeruk beratnya lebih dari 1 kg.",
+        "jawaban": "2x + 5y < 10 dan 6x + 2y > 10 (dalam ons)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menguji titik pada sistem",
+      "alasan_level": "mengubah kg ke ons, menyusun dua pertidaksamaan, lalu menguji pasangan berat",
+      "stimulus": "Seorang pedagang menimbang buah di timbangan. Tiga buah mangga dan dua buah jambu beratnya kurang dari 1,5 kg. Empat buah mangga dan satu buah jambu beratnya lebih dari 1,2 kg. Misalkan berat sebuah mangga $x$ ons dan berat sebuah jambu $y$ ons (1 kg = 10 ons).",
+      "pertanyaan": "Pasangan $(x, y)$ yang mungkin merupakan berat sebuah mangga dan sebuah jambu adalah ....",
+      "jawaban_benar": "$(3, 2)$",
+      "alasan_benar": "$3(3)+2(2)=13<15$ dan $4(3)+2=14>12$, kedua syarat terpenuhi",
+      "distraktor": [
+        {
+          "teks": "$(4, 2)$",
+          "alasan": "$3(4)+2(2)=16$ tidak kurang dari $15$"
+        },
+        {
+          "teks": "$(2, 3)$",
+          "alasan": "$4(2)+3=11$ tidak lebih dari $12$"
+        },
+        {
+          "teks": "$(3, 3)$",
+          "alasan": "$3(3)+2(3)=15$ sama dengan $15$, padahal harus kurang dari $15$"
+        }
+      ],
+      "pembahasan": "Model: $3x+2y<15$ dan $4x+y>12$. Hanya $(3,2)$ yang memenuhi keduanya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 140,
+        "bagian": "Latihan 4.2",
+        "nomor": "1g",
+        "teks": "Apakah Bonar bisa mendapatkan uang yang dibutuhkan jika bekerja selama 9 jam?",
+        "jawaban": "Ya, misalnya mengantar barang 7 jam dan mencuci piring 2 jam"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menghitung banyak kemungkinan",
+      "alasan_level": "menyusun pendapatan untuk total jam tetap, menyelesaikan batas, lalu mencacah pembagian jam bulat",
+      "stimulus": "Candra bekerja paruh waktu. Untuk mengantar paket ia dibayar Rp14.000,00 per jam dan untuk mencuci mobil Rp8.000,00 per jam. Hari ini ia bekerja tepat 8 jam dengan jam kerja tiap pekerjaan berupa bilangan bulat, dan ia membutuhkan uang sedikitnya Rp100.000,00.",
+      "pertanyaan": "Banyak cara membagi 8 jam kerja tersebut agar Candra mendapat uang yang dibutuhkan adalah ....",
+      "jawaban_benar": "3 cara",
+      "alasan_benar": "mengantar $x$ jam: $14.000x+8.000(8-x) \\geq 100.000$ sehingga $x \\geq 6$, yaitu $x=6,7,8$",
+      "distraktor": [
+        {
+          "teks": "2 cara",
+          "alasan": "mengira $x=6$ tidak termasuk padahal pendapatannya tepat Rp100.000,00 yang memenuhi tanda $\\geq$"
+        },
+        {
+          "teks": "4 cara",
+          "alasan": "ikut menghitung $x=5$ padahal pendapatannya hanya Rp94.000,00"
+        },
+        {
+          "teks": "9 cara",
+          "alasan": "menghitung semua pembagian $x=0,1,\\ldots,8$ tanpa memeriksa syarat uang"
+        }
+      ],
+      "pembahasan": "$14.000x+8.000(8-x)=64.000+6.000x \\geq 100.000$, sehingga $x \\geq 6$. Untuk $x=0,\\ldots,8$ yang memenuhi hanya $6,7,8$: 3 cara.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 137,
+        "bagian": "Eksplorasi 4.3",
+        "nomor": "Perayaan Hari Kemerdekaan",
+        "teks": "Kiki adalah panitia perayaan hari kemerdekaan di RT. Dari kas RT ada uang sebesar Rp500.000,00 yang dapat digunakan. Untuk penyelenggaraan perlombaan, dibutuhkan Rp20.000,00 per anak. Hadiah untuk pemenang dianggarkan Rp40.000,00 untuk setiap jenis perlombaan. Diharapkan ada lebih dari 13 anak yang berpartisipasi. Tentukan apa saja kemungkinannya.",
+        "jawaban": "Contoh: 14 anak dan 5 jenis perlombaan (biaya Rp480.000,00)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mencari batas nilai",
+      "alasan_level": "menyusun model dengan syarat 'lebih dari' pada bilangan bulat lalu mencari batas jenis lomba",
+      "stimulus": "Dari kas sekolah ada dana Rp720.000,00 untuk pekan olahraga. Penyelenggaraan memerlukan Rp30.000,00 per peserta dan hadiah dianggarkan Rp45.000,00 untuk setiap jenis perlombaan. Diharapkan ada lebih dari 15 peserta (banyak peserta berupa bilangan bulat).",
+      "pertanyaan": "Banyak jenis perlombaan paling banyak yang dapat diselenggarakan adalah ....",
+      "jawaban_benar": "5 jenis",
+      "alasan_benar": "peserta paling sedikit 16: $30.000(16)+45.000y \\leq 720.000$ sehingga $y \\leq 5{,}33$ dan $y=5$",
+      "distraktor": [
+        {
+          "teks": "6 jenis",
+          "alasan": "memakai $15$ peserta padahal harus lebih dari $15$ (biaya $16$ peserta dan $6$ jenis Rp750.000,00)"
+        },
+        {
+          "teks": "4 jenis",
+          "alasan": "memakai $17$ peserta sebagai batas, padahal $16$ peserta masih memungkinkan"
+        },
+        {
+          "teks": "16 jenis",
+          "alasan": "lupa biaya peserta: $720.000 : 45.000 = 16$"
+        }
+      ],
+      "pembahasan": "Model: $30.000x+45.000y \\leq 720.000$ dengan $x>15$ bulat, jadi $x \\geq 16$. Untuk $y$ terbesar, $x=16$: $45.000y \\leq 240.000$, $y \\leq 5{,}33$, jadi $y=5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 138,
+        "kutipan": "Pilih sebuah titik, misalnya (0,0), lalu substitusikan ke dalam pertidaksamaan."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menganalisis kesalahan",
+      "alasan_level": "menganalisis kesalahan tanda pada substitusi koordinat negatif lalu menilai ulang kesimpulan",
+      "stimulus": "Dina menguji titik $(1, -2)$ pada pertidaksamaan $2x - y \\geq 3$. Pekerjaannya: $2(1) - (-2) = 2 - 2 = 0$. Karena $0 \\geq 3$ salah, ia menyimpulkan titik $(1,-2)$ bukan daerah hasil.",
+      "pertanyaan": "Pernyataan yang tepat tentang pekerjaan Dina adalah ....",
+      "jawaban_benar": "Salah, karena $2(1)-(-2)=4$ sehingga $4 \\geq 3$ benar dan titik tersebut termasuk daerah hasil.",
+      "alasan_benar": "mengurangi bilangan negatif sama dengan menambah, jadi $2-(-2)=4$ dan $4 \\geq 3$ benar",
+      "distraktor": [
+        {
+          "teks": "Benar, karena $2(1)-(-2)=0$ dan $0 \\geq 3$ bernilai salah.",
+          "alasan": "tidak menyadari kesalahan tanda negatif pada hitungan Dina"
+        },
+        {
+          "teks": "Salah, karena $2(1)-(-2)=4$ tetapi $4 \\geq 3$ bernilai salah sehingga titik bukan daerah hasil.",
+          "alasan": "salah menilai kebenaran $4 \\geq 3$"
+        },
+        {
+          "teks": "Benar, karena titik yang berkoordinat negatif tidak mungkin menjadi daerah hasil.",
+          "alasan": "menganggap koordinat negatif otomatis bukan daerah hasil"
+        }
+      ],
+      "pembahasan": "$2(1)-(-2)=2+2=4$. Karena $4 \\geq 3$ benar, titik $(1,-2)$ termasuk daerah hasil; Dina keliru mengurangkan bilangan negatif.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 139,
+        "kutipan": "Garis persamaan linear menjadi pembatas antara daerah jawab dan bukan daerah jawab."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menafsirkan garis dan daerah",
+      "alasan_level": "menyadari titik (0,0) tidak boleh dipakai pada garis yang melaluinya lalu menafsirkan hasil titik uji lain",
+      "stimulus": "Pertidaksamaan $y > 2x$ memiliki garis batas $y = 2x$ yang melalui titik $(0,0)$.",
+      "pertanyaan": "Pernyataan yang benar tentang penentuan daerah hasilnya adalah ....",
+      "jawaban_benar": "Titik $(0,0)$ tidak dapat dipakai sebagai titik uji karena terletak pada garis batas; titik uji $(1,0)$ menghasilkan $0>2$ yang salah, sehingga daerah hasil berada di sisi garis yang tidak memuat $(1,0)$.",
+      "alasan_benar": "titik uji harus tidak berada pada garis batas; $(1,0)$ gagal memenuhi $y>2x$ sehingga daerah hasil di sisi lain",
+      "distraktor": [
+        {
+          "teks": "Titik $(0,0)$ dapat dipakai sebagai titik uji; hasilnya $0>0$ yang salah, sehingga daerah hasil berada di sisi garis yang tidak memuat $(0,0)$.",
+          "alasan": "titik pada garis menghasilkan kesamaan sehingga tidak menunjukkan sisi daerah hasil"
+        },
+        {
+          "teks": "Titik $(1,0)$ tidak dapat dipakai sebagai titik uji karena bukan titik asal.",
+          "alasan": "mengira hanya titik $(0,0)$ yang boleh dipakai"
+        },
+        {
+          "teks": "Titik $(0,0)$ tidak dapat dipakai sebagai titik uji; titik uji $(1,0)$ menghasilkan $0>2$ yang benar, sehingga daerah hasil memuat $(1,0)$.",
+          "alasan": "salah menilai kebenaran $0>2$"
+        }
+      ],
+      "pembahasan": "Garis $y=2x$ melalui $(0,0)$, jadi $0>0$ tidak menunjukkan sisi. Pilih $(1,0)$: $0>2$ salah, sehingga daerah hasil berada di sisi yang berlawanan dengan $(1,0)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 139,
+        "kutipan": "Solusinya adalah daerah yang merupakan irisan semua daerah jawab."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menguji titik pada sistem",
+      "alasan_level": "menguji tiap titik pada tiga pertidaksamaan (dua bentuk y, satu batas atas) dengan koordinat negatif dan nilai batas",
+      "stimulus": null,
+      "pertanyaan": "Titik yang termasuk daerah hasil sistem pertidaksamaan $y \\geq 2x - 4$, $x + y \\leq 6$, dan $y < 5$ adalah ....",
+      "jawaban_benar": "$(3, 2)$",
+      "alasan_benar": "$2 \\geq 2(3)-4=2$, $3+2=5 \\leq 6$, dan $2<5$, ketiganya terpenuhi",
+      "distraktor": [
+        {
+          "teks": "$(1, -3)$",
+          "alasan": "$-3 \\geq 2(1)-4=-2$ salah, melanggar pertidaksamaan pertama"
+        },
+        {
+          "teks": "$(3, 4)$",
+          "alasan": "$3+4=7$ tidak kurang dari atau sama dengan $6$"
+        },
+        {
+          "teks": "$(0, 5)$",
+          "alasan": "$y=5$ tidak kurang dari $5$ (tanda $<$ tidak memuat nilai batas)"
+        }
+      ],
+      "pembahasan": "Hanya $(3,2)$ yang lolos ketiga syarat; $(1,-3)$ gagal pada $y \\geq 2x-4$, $(3,4)$ gagal pada $x+y \\leq 6$, $(0,5)$ gagal pada $y<5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 138,
+        "kutipan": "Pilih sebuah titik, misalnya (0,0), lalu substitusikan ke dalam pertidaksamaan."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari batas nilai",
+      "alasan_level": "substitusi titik dengan parameter ke dua pertidaksamaan lalu menggabungkan batas dengan tanda yang benar",
+      "stimulus": null,
+      "pertanyaan": "Titik $(2, k)$ termasuk daerah hasil sistem $x + 2y \\leq 10$ dan $2x + y > 5$. Batas nilai $k$ adalah ....",
+      "jawaban_benar": "$1 < k \\leq 4$",
+      "alasan_benar": "$2+2k \\leq 10$ memberi $k \\leq 4$ dan $4+k>5$ memberi $k>1$",
+      "distraktor": [
+        {
+          "teks": "$1 \\leq k < 4$",
+          "alasan": "tanda batas tertukar: $k=1$ gagal ($5>5$ salah) dan $k=4$ memenuhi"
+        },
+        {
+          "teks": "$1 < k < 4$",
+          "alasan": "menganggap $k=4$ tidak memenuhi padahal $2+8 \\leq 10$ benar"
+        },
+        {
+          "teks": "$k \\leq 4$",
+          "alasan": "hanya memakai pertidaksamaan pertama"
+        }
+      ],
+      "pembahasan": "Substitusi $(2,k)$: $2+2k \\leq 10 \\Rightarrow k \\leq 4$; $4+k>5 \\Rightarrow k>1$. Gabungan: $1<k\\leq 4$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 138,
+        "kutipan": "Pilih sebuah titik, misalnya (0,0), lalu substitusikan ke dalam pertidaksamaan."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mencari batas nilai",
+      "alasan_level": "substitusi titik ke dua pertidaksamaan berparameter dan menyelesaikan pertidaksamaan pecahan untuk irisan batas",
+      "stimulus": null,
+      "pertanyaan": "Titik $(3, 2)$ termasuk daerah hasil sistem $x + y \\geq p$ dan $2x - y \\leq 3p$. Batas nilai $p$ adalah ....",
+      "jawaban_benar": "$\\frac{4}{3} \\leq p \\leq 5$",
+      "alasan_benar": "$5 \\geq p$ dan $2(3)-2=4 \\leq 3p$ sehingga $p \\geq \\frac{4}{3}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{4} \\leq p \\leq 5$",
+          "alasan": "salah menyelesaikan $4 \\leq 3p$ menjadi $p \\geq \\frac{3}{4}$"
+        },
+        {
+          "teks": "$p \\leq 5$",
+          "alasan": "mengabaikan pertidaksamaan kedua"
+        },
+        {
+          "teks": "$p \\geq \\frac{4}{3}$",
+          "alasan": "mengabaikan pertidaksamaan pertama"
+        }
+      ],
+      "pembahasan": "Pertidaksamaan pertama: $3+2 \\geq p$, yaitu $p \\leq 5$. Kedua: $2(3)-2 \\leq 3p$, yaitu $p \\geq \\frac{4}{3}$. Jadi $\\frac{4}{3} \\leq p \\leq 5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 138,
+        "kutipan": "Tentukan model matematikanya."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menyusun model",
+      "alasan_level": "menyusun tiga pertidaksamaan (kapasitas, dana, jumlah bus) dengan koefisien dan tanda yang berbeda",
+      "stimulus": "Sebuah sekolah menyewa bus untuk mengangkut 200 siswa. Bus kecil berkapasitas 20 orang dengan sewa Rp3.000.000,00 dan bus besar berkapasitas 40 orang dengan sewa Rp5.000.000,00. Dana yang tersedia Rp30.000.000,00 dan sekolah menyewa paling banyak 9 bus. Misalkan $x$ banyak bus kecil dan $y$ banyak bus besar (biaya dalam juta rupiah).",
+      "pertanyaan": "Model matematika yang sesuai adalah ....",
+      "jawaban_benar": "$20x + 40y \\geq 200$, $3x + 5y \\leq 30$, dan $x + y \\leq 9$",
+      "alasan_benar": "kapasitas harus mengangkut sedikitnya 200 ($\\geq$), biaya tidak melebihi dana ($\\leq$), dan bus paling banyak 9 ($\\leq$)",
+      "distraktor": [
+        {
+          "teks": "$20x + 40y \\leq 200$, $3x + 5y \\leq 30$, dan $x + y \\leq 9$",
+          "alasan": "kapasitas diberi tanda $\\leq$ padahal harus mengangkut sedikitnya 200 siswa"
+        },
+        {
+          "teks": "$40x + 20y \\geq 200$, $3x + 5y \\leq 30$, dan $x + y \\leq 9$",
+          "alasan": "kapasitas bus kecil dan bus besar tertukar"
+        },
+        {
+          "teks": "$20x + 40y \\geq 200$, $3x + 5y \\leq 30.000.000$, dan $x + y \\leq 9$",
+          "alasan": "satuan biaya tidak sesuai dengan permisalan juta rupiah"
+        }
+      ],
+      "pembahasan": "Kapasitas: $20x+40y \\geq 200$. Biaya (juta): $3x+5y \\leq 30$. Jumlah bus: $x+y \\leq 9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 137,
+        "kutipan": "Tentukan apa saja kemungkinannya."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menghitung banyak kemungkinan",
+      "alasan_level": "mencacah pasangan bilangan bulat dengan tiga syarat (dua tanda tegas dan satu batas bawah)",
+      "stimulus": null,
+      "pertanyaan": "Banyak pasangan bilangan bulat $(x, y)$ yang memenuhi $x > 2$, $y \\geq 1$, dan $2x + y < 12$ adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "$x=3$: $y=1,\\ldots,5$ (5); $x=4$: $y=1,2,3$ (3); $x=5$: $y=1$ (1); total $9$",
+      "distraktor": [
+        {
+          "teks": "16",
+          "alasan": "ikut menghitung $x=2$ padahal $x>2$"
+        },
+        {
+          "teks": "12",
+          "alasan": "memakai $2x+y \\leq 12$ (nilai batas ikut dihitung) padahal tandanya $<$"
+        },
+        {
+          "teks": "8",
+          "alasan": "melewatkan satu pasangan, yaitu $(5,1)$"
+        }
+      ],
+      "pembahasan": "Karena $x>2$, $x \\geq 3$. $2x+y<12$ membatasi $y<12-2x$. $x=3$: 5 nilai; $x=4$: 3 nilai; $x=5$: 1 nilai; $x=6$: tidak ada. Total $9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 139,
+        "kutipan": "Tentukan makna solusi ini dalam masalah awal."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menafsirkan makna solusi",
+      "alasan_level": "menafsirkan titik batas pada konteks dan memeriksa kebenaran tiap pernyataan terhadap dua pertidaksamaan",
+      "stimulus": "Seorang pedagang menjual $x$ kotak mangga dan $y$ kotak jeruk. Syaratnya: jumlah kotak paling banyak 10, yaitu $x + y \\leq 10$, dan pendapatan sedikitnya Rp360.000,00, yaitu $40x + 30y \\geq 360$ (pendapatan dalam ribu rupiah, mangga Rp40.000,00 per kotak dan jeruk Rp30.000,00 per kotak).",
+      "pertanyaan": "Pernyataan yang benar tentang titik $(6, 4)$ adalah ....",
+      "jawaban_benar": "Menjual 6 kotak mangga dan 4 kotak jeruk memenuhi kedua syarat, dengan pendapatan tepat Rp360.000,00.",
+      "alasan_benar": "$6+4=10 \\leq 10$ dan $40(6)+30(4)=360 \\geq 360$, keduanya benar karena tanda memuat sama dengan",
+      "distraktor": [
+        {
+          "teks": "Menjual 6 kotak jeruk dan 4 kotak mangga memenuhi kedua syarat.",
+          "alasan": "koordinat tertukar: pendapatan menjadi $40(4)+30(6)=340<360$"
+        },
+        {
+          "teks": "Titik tersebut tidak memenuhi syarat pendapatan karena pendapatannya tidak lebih dari Rp360.000,00.",
+          "alasan": "menganggap tanda $\\geq$ sama dengan $>$"
+        },
+        {
+          "teks": "Titik tersebut tidak memenuhi syarat jumlah kotak karena $6+4=10$ tidak kurang dari $10$.",
+          "alasan": "menganggap tanda $\\leq$ sama dengan $<$"
+        }
+      ],
+      "pembahasan": "$x+y=10 \\leq 10$ dan $40(6)+30(4)=240+120=360 \\geq 360$. Kedua syarat terpenuhi, pendapatan tepat Rp360.000,00.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 143,
+        "kutipan": "Menentukan sistem pertidaksamaan linear yang daerah hasilnya memuat titik target, tetapi tidak memuat dua titik lainnya."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang sistem pertidaksamaan",
+      "alasan_level": "menguji tiap sistem terhadap tiga titik (satu harus masuk, dua harus keluar)",
+      "stimulus": "Diberikan titik target $K(3, 2)$ dan dua titik lain $P(1, 1)$ dan $Q(5, 5)$.",
+      "pertanyaan": "Sistem pertidaksamaan yang daerah hasilnya memuat $K$ tetapi tidak memuat $P$ maupun $Q$ adalah ....",
+      "jawaban_benar": "$x + y \\geq 4$ dan $x + y \\leq 7$",
+      "alasan_benar": "$K$: $5$ berada di antara $4$ dan $7$; $P$: $2 \\geq 4$ salah; $Q$: $10 \\leq 7$ salah",
+      "distraktor": [
+        {
+          "teks": "$x + y \\geq 4$ dan $x + y \\leq 12$",
+          "alasan": "$Q$ ikut termasuk karena $10 \\leq 12$"
+        },
+        {
+          "teks": "$x + y \\geq 2$ dan $x + y \\leq 7$",
+          "alasan": "$P$ ikut termasuk karena $2 \\geq 2$ benar"
+        },
+        {
+          "teks": "$x + y \\leq 4$ dan $x + y \\geq 1$",
+          "alasan": "$K$ tidak termasuk karena $5 \\leq 4$ salah"
+        }
+      ],
+      "pembahasan": "Nilai $x+y$: $K=5$, $P=2$, $Q=10$. Syarat $4 \\leq x+y \\leq 7$ memuat $K$ tetapi mengeluarkan $P$ dan $Q$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 138,
+        "kutipan": "digambarkan dengan garis putus-putus (artinya garis tersebut hanya batas, tidak termasuk daerah jawaban)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menafsirkan garis dan daerah",
+      "alasan_level": "menghubungkan jenis garis batas dengan status titik potong pada sistem",
+      "stimulus": "Sistem pertidaksamaan $x - y < 2$ dan $x + y \\geq 6$ memiliki garis batas yang berpotongan di titik $(4, 2)$.",
+      "pertanyaan": "Pernyataan yang benar tentang titik potong tersebut adalah ....",
+      "jawaban_benar": "Bukan daerah hasil, karena $4-2<2$ bernilai salah (garis $x-y=2$ digambar putus-putus).",
+      "alasan_benar": "$4-2=2$ tidak kurang dari $2$ sehingga titik pada garis putus-putus bukan daerah hasil",
+      "distraktor": [
+        {
+          "teks": "Termasuk daerah hasil, karena terletak pada kedua garis batas.",
+          "alasan": "mengira titik pada garis batas selalu termasuk daerah hasil"
+        },
+        {
+          "teks": "Bukan daerah hasil, karena $4+2 \\geq 6$ bernilai salah.",
+          "alasan": "salah menilai kebenaran $6 \\geq 6$"
+        },
+        {
+          "teks": "Termasuk daerah hasil, karena kedua garis batas digambar utuh.",
+          "alasan": "mengira garis $x-y=2$ utuh padahal tanda $<$ memberi garis putus-putus"
+        }
+      ],
+      "pembahasan": "Pada $(4,2)$: $x+y=6 \\geq 6$ benar, tetapi $x-y=2<2$ salah. Garis $x-y=2$ putus-putus (tanda $<$), jadi titik potong bukan daerah hasil.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 139,
+        "kutipan": "Solusinya adalah daerah yang merupakan irisan semua daerah jawab."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua sistem",
+      "alasan_level": "menguji empat titik pada dua sistem berbeda lalu membandingkan hasilnya",
+      "stimulus": "Sistem I: $x + y \\leq 6$ dan $x \\geq 1$. Sistem II: $x + y \\leq 6$ dan $y > 2$.",
+      "pertanyaan": "Titik yang memenuhi sistem I tetapi tidak memenuhi sistem II adalah ....",
+      "jawaban_benar": "$(3, 0)$",
+      "alasan_benar": "sistem I: $3+0 \\leq 6$ dan $3 \\geq 1$; sistem II gagal karena $0>2$ salah",
+      "distraktor": [
+        {
+          "teks": "$(2, 3)$",
+          "alasan": "memenuhi kedua sistem ($2+3 \\leq 6$, $2 \\geq 1$, $3>2$)"
+        },
+        {
+          "teks": "$(0, 4)$",
+          "alasan": "memenuhi sistem II tetapi gagal pada sistem I karena $0 \\geq 1$ salah"
+        },
+        {
+          "teks": "$(4, 4)$",
+          "alasan": "tidak memenuhi kedua sistem karena $4+4=8>6$"
+        }
+      ],
+      "pembahasan": "$(3,0)$: sistem I benar, sistem II salah ($0>2$). $(2,3)$ memenuhi keduanya, $(0,4)$ hanya sistem II, $(4,4)$ tidak memenuhi keduanya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-b-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 138,
+        "kutipan": "Pilih sebuah titik, misalnya (0,0), lalu substitusikan ke dalam pertidaksamaan."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mengubah bentuk lalu menguji titik",
+      "alasan_level": "menyederhanakan pertidaksamaan berkurung lalu menguji titik, dengan jebakan nilai batas",
+      "stimulus": null,
+      "pertanyaan": "Titik yang termasuk daerah hasil pertidaksamaan $2(x - y) + 3 > x + 4$ adalah ....",
+      "jawaban_benar": "$(5, 1)$",
+      "alasan_benar": "bentuk sederhananya $x - 2y > 1$; $5-2(1)=3>1$ benar",
+      "distraktor": [
+        {
+          "teks": "$(3, 1)$",
+          "alasan": "lupa mengalikan $-y$ dengan $2$ sehingga mendapat $x-y>1$; padahal $3-2(1)=1$ tidak lebih dari $1$"
+        },
+        {
+          "teks": "$(1, 0)$",
+          "alasan": "$1-0=1$ sama dengan batas, padahal tanda $>$ tidak memuat nilai batas"
+        },
+        {
+          "teks": "$(0, 1)$",
+          "alasan": "salah memindahkan ruas sehingga mendapat $x-2y<1$"
+        }
+      ],
+      "pembahasan": "$2x-2y+3>x+4 \\Rightarrow x-2y>1$. Uji $(5,1)$: $3>1$ benar. $(3,1)$ dan $(1,0)$ menghasilkan $1$ (tidak $>1$), $(0,1)$ menghasilkan $-2$.",
+      "catatan": null
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "book": "kelas7",
+  "bab_no": 2,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi subbab A tipis (definisi a/b, desimal terbatas/berulang, irasional, real). Acuan pretest A sudah habis dan Tabel 2.4 sudah dipakai di easy/medium; hanya 11 soal penalaran (contoh penyangkal, temukan kesalahan, evaluasi klaim, syarat ganda, perancangan) yang layak tanpa nyaris kembar dan tanpa materi di luar subbab.",
+  "soal": [
+    {
+      "id": "kelas7-b02-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 64, "kutipan": "di antara dua bilangan bulat berurutan terdapat bilangan lain"},
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "menguji klaim dengan mencari pasangan bilangan bulat yang memenuhi syarat klaim tetapi hasilnya di luar rentang; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Dewi mengklaim: \"Jika $a$ dan $b$ bilangan bulat, $b \\neq 0$, dan $a < b$, maka nilai $\\frac{a}{b}$ selalu terletak di antara $0$ dan $1$.\" Pasangan $(a, b)$ yang menjadi contoh penyangkal klaim Dewi adalah ....",
+      "jawaban_benar": "$a = -3$ dan $b = 5$",
+      "alasan_benar": "$-3 < 5$ memenuhi syarat klaim, tetapi $\\frac{-3}{5} = -0,6$ tidak berada di antara $0$ dan $1$",
+      "distraktor": [
+        {"teks": "$a = 6$ dan $b = -2$", "alasan": "nilainya $-3$ memang di luar rentang, tetapi $6 < -2$ salah sehingga syarat klaim tidak terpenuhi"},
+        {"teks": "$a = 2$ dan $b = 7$", "alasan": "syarat terpenuhi dan $\\frac{2}{7}$ memang di antara $0$ dan $1$, jadi mendukung klaim"},
+        {"teks": "$a = 7$ dan $b = 9$", "alasan": "syarat terpenuhi dan $\\frac{7}{9}$ memang di antara $0$ dan $1$, jadi mendukung klaim"}
+      ],
+      "pembahasan": "Contoh penyangkal harus memenuhi syarat ($a < b$) tetapi gagal pada kesimpulan. Hanya $(-3, 5)$ yang demikian.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 68, "kutipan": "Bilangan Rasional dan Irasional termasuk ke dalam Bilangan Real"},
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menelusuri empat langkah penalaran dan menentukan langkah pertama yang keliru beserta alasannya",
+      "stimulus": "Penalaran Rio: (1) $\\frac{1}{6} = 0,1666\\ldots$ (2) Desimal itu tak terbatas dan angka 6 berulang terus. (3) Bilangan dengan desimal tak terbatas pasti irasional. (4) Jadi $\\frac{1}{6}$ adalah bilangan irasional.",
+      "pertanyaan": "Langkah pertama yang salah pada penalaran Rio dan alasannya adalah ....",
+      "jawaban_benar": "langkah (3), karena desimal tak terbatas yang berulang justru bilangan rasional",
+      "alasan_benar": "langkah (1) dan (2) benar; langkah (3) keliru karena yang irasional hanya desimal tak terbatas yang tidak berulang",
+      "distraktor": [
+        {"teks": "langkah (1), karena $\\frac{1}{6}$ seharusnya sama dengan $0,6$", "alasan": "salah mengira $\\frac{1}{6} = 0,6$; padahal $1 \\div 6 = 0,1666\\ldots$"},
+        {"teks": "langkah (2), karena desimal dari $\\frac{1}{6}$ pasti berhenti", "alasan": "mengira pecahan selalu berdesimal terbatas, padahal $\\frac{1}{6}$ berulang"},
+        {"teks": "langkah (4), karena langkah (1) sampai (3) semuanya sudah benar", "alasan": "langkah (3) sudah salah lebih dulu sehingga langkah (4) bukan yang pertama"}
+      ],
+      "pembahasan": "$\\frac{1}{6}$ adalah $\\frac{a}{b}$ dengan $a, b$ bulat sehingga rasional. Kesalahan pertama ada di langkah (3).",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 62, "kutipan": "bilangan asli adalah bagian dari bilangan cacah dan bilangan cacah merupakan bagian dari bilangan bulat"},
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "menilai kebenaran lima pernyataan tentang hubungan himpunan bilangan lalu menghitung yang benar",
+      "stimulus": "Lima pernyataan: (i) Setiap bilangan bulat adalah bilangan rasional. (ii) Setiap bilangan rasional adalah bilangan bulat. (iii) Bilangan yang desimalnya tak terbatas dan berulang selalu irasional. (iv) Setiap bilangan irasional adalah bilangan real. (v) Bilangan cacah adalah bagian dari bilangan asli.",
+      "pertanyaan": "Banyak pernyataan di atas yang bernilai benar adalah ....",
+      "jawaban_benar": "2",
+      "alasan_benar": "yang benar hanya (i) dan (iv); (ii) salah ($\\frac{1}{2}$), (iii) salah ($\\frac{1}{3} = 0,333\\ldots$), (v) salah (urutan terbalik)",
+      "distraktor": [
+        {"teks": "1", "alasan": "melewatkan salah satu pernyataan benar, misalnya mengira irasional bukan bilangan real"},
+        {"teks": "3", "alasan": "mengira (v) benar karena membalik hubungan asli dan cacah"},
+        {"teks": "4", "alasan": "mengira (iii) dan (v) benar juga"}
+      ],
+      "pembahasan": "(i) benar, (ii) salah, (iii) salah, (iv) benar, (v) salah. Jadi ada 2 pernyataan benar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 64, "kutipan": "di antara dua bilangan bulat berurutan terdapat bilangan lain"},
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat ganda",
+      "alasan_level": "memadukan rentang pecahan dan syarat pengecualian kelipatan; kesulitan pada penanganan syarat, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan bulat $n$ sehingga $\\frac{n}{5}$ terletak di antara $-2$ dan $3$ (kedua batas tidak termasuk) dan $n$ bukan kelipatan $5$ adalah ....",
+      "jawaban_benar": "20",
+      "alasan_benar": "$-10 < n < 15$ memberi $24$ bilangan bulat ($-9$ sampai $14$); kelipatan 5 di dalamnya ada 4 ($-5, 0, 5, 10$), sehingga $24 - 4 = 20$",
+      "distraktor": [
+        {"teks": "24", "alasan": "lupa mengeluarkan kelipatan 5"},
+        {"teks": "23", "alasan": "hanya mengeluarkan $0$ sebagai kelipatan 5"},
+        {"teks": "19", "alasan": "mengira ada 5 kelipatan 5 di dalam rentang"}
+      ],
+      "pembahasan": "Kalikan 5: $-10 < n < 15$, jadi $n$ dari $-9$ sampai $14$ (24 bilangan). Kurangi kelipatan 5 yaitu $-5, 0, 5, 10$: sisa 20.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 64, "kutipan": "Bilangan ini bukan bilangan bulat"},
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "perancangan",
+      "alasan_level": "merancang pecahan dengan penyebut sekecil mungkin yang jatuh dalam rentang sempit tanpa menyentuh batas",
+      "stimulus": null,
+      "pertanyaan": "Sebuah bilangan rasional berbentuk $\\frac{a}{b}$ dengan $a$ dan $b$ bilangan bulat positif harus terletak di antara $2,1$ dan $2,2$ (kedua batas tidak termasuk). Nilai $b$ terkecil yang memungkinkan hal itu adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "bagian pecahan harus di antara $0,1$ dan $0,2$; penyebut 1 sampai 5 menghasilkan $0$, $0,2$, $0,25$, $0,33$, dst. yang tidak masuk, sedangkan $b = 6$ memberi $\\frac{13}{6} = 2,1666\\ldots$",
+      "distraktor": [
+        {"teks": "5", "alasan": "memilih $\\frac{11}{5} = 2,2$ yang merupakan batas atas, padahal batas tidak termasuk"},
+        {"teks": "10", "alasan": "memilih $\\frac{21}{10} = 2,1$ yang merupakan batas bawah, padahal batas tidak termasuk"},
+        {"teks": "7", "alasan": "$\\frac{15}{7} \\approx 2,14$ memang masuk rentang, tetapi bukan penyebut terkecil"}
+      ],
+      "pembahasan": "Cek $b = 1, 2, 3, 4, 5$: tidak ada pecahan di antara $2,1$ dan $2,2$. Untuk $b = 6$: $\\frac{13}{6} = 2,1666\\ldots$ masuk. Jadi $b$ terkecil adalah 6.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 64, "kutipan": "di antara dua bilangan bulat berurutan terdapat bilangan lain"},
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "syarat ganda",
+      "alasan_level": "menyamakan penyebut, menghitung pembilang di dalam rentang bertanda negatif, lalu menyaring yang tidak dapat disederhanakan",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan rasional berbentuk $\\frac{a}{20}$ dengan $a$ bilangan bulat yang terletak di antara $-\\frac{4}{5}$ dan $-\\frac{1}{4}$ (kedua batas tidak termasuk) dan tidak dapat disederhanakan lagi adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "$-\\frac{4}{5} = \\frac{-16}{20}$ dan $-\\frac{1}{4} = \\frac{-5}{20}$ sehingga $a = -15, \\ldots, -6$; yang tidak punya faktor persekutuan dengan 20 (tidak genap dan bukan kelipatan 5) adalah $-13, -11, -9, -7$",
+      "distraktor": [
+        {"teks": "10", "alasan": "menghitung semua pembilang dari $-15$ sampai $-6$ tanpa menyaring"},
+        {"teks": "5", "alasan": "hanya membuang pembilang genap, $-15$ yang kelipatan 5 masih terhitung"},
+        {"teks": "8", "alasan": "hanya membuang kelipatan 5 ($-15$ dan $-10$), pembilang genap masih terhitung"}
+      ],
+      "pembahasan": "Rentang pembilang $-15$ sampai $-6$ (10 bilangan). Pecahan tak dapat disederhanakan bila pembilang bukan kelipatan 2 dan bukan kelipatan 5: $-13, -11, -9, -7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 67, "kutipan": "Bilangan rasional juga dapat dinyatakan dalam bentuk desimal"},
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menelusuri pengubahan desimal negatif ke pecahan dan menemukan kesalahan tanda pada pemisahan bagian bulat",
+      "stimulus": "Pekerjaan Rini: $-1,25 = -1 + 0,25 = -1 + \\frac{1}{4} = \\frac{-4 + 1}{4} = -\\frac{3}{4}$.",
+      "pertanyaan": "Kesalahan pada pekerjaan Rini terletak pada ....",
+      "jawaban_benar": "anggapan $-1,25 = -1 + 0,25$, padahal $-1,25 = -1 - 0,25$",
+      "alasan_benar": "bilangan negatif $-1,25$ memiliki bagian desimal yang ikut negatif; $-1,25 = -1 - \\frac{1}{4} = -\\frac{5}{4}$, bukan $-\\frac{3}{4}$",
+      "distraktor": [
+        {"teks": "anggapan $0,25 = \\frac{1}{4}$, padahal $0,25 = \\frac{1}{25}$", "alasan": "keliru: $0,25 = \\frac{25}{100} = \\frac{1}{4}$ sudah benar"},
+        {"teks": "anggapan bahwa bilangan negatif tidak dapat ditulis sebagai $\\frac{a}{b}$", "alasan": "keliru: pembilang boleh negatif sehingga bilangan negatif tetap rasional"},
+        {"teks": "penggunaan penyebut $4$, padahal penyebut harus selalu $100$", "alasan": "keliru: penyebut boleh disederhanakan, hasil $\\frac{1}{4}$ untuk $0,25$ sah"}
+      ],
+      "pembahasan": "$-1,25 = -(1 + 0,25) = -1 - \\frac{1}{4} = -\\frac{5}{4}$. Rini salah memperlakukan bagian desimalnya sebagai positif.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 67, "kutipan": "Bilangan rasional juga dapat dinyatakan dalam bentuk desimal"},
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "menguji klaim umum tentang penyebut genap dengan mengonversi empat pecahan ke desimal untuk menemukan yang berulang",
+      "stimulus": null,
+      "pertanyaan": "Doni mengklaim: \"Pecahan dengan penyebut bilangan genap pasti berbentuk desimal terbatas.\" Pecahan yang menjadi contoh penyangkal klaim Doni adalah ....",
+      "jawaban_benar": "$\\frac{11}{12}$",
+      "alasan_benar": "penyebut 12 genap, tetapi $\\frac{11}{12} = 0,91666\\ldots$ angka 6 berulang, jadi desimalnya tak terbatas",
+      "distraktor": [
+        {"teks": "$\\frac{3}{4}$", "alasan": "$\\frac{3}{4} = 0,75$ terbatas, mendukung klaim"},
+        {"teks": "$\\frac{7}{8}$", "alasan": "$\\frac{7}{8} = 0,875$ terbatas, mendukung klaim"},
+        {"teks": "$\\frac{13}{20}$", "alasan": "$\\frac{13}{20} = 0,65$ terbatas, mendukung klaim"}
+      ],
+      "pembahasan": "Contoh penyangkal berpenyebut genap namun desimalnya berulang: $\\frac{11}{12} = 0,91666\\ldots$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 65, "kutipan": "semua bilangan yang tidak termasuk bilangan Rasional disebut bilangan Irasional"},
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "klasifikasi bilangan",
+      "alasan_level": "mengklasifikasi enam bilangan berbentuk jebakan (akar kuadrat sempurna, hasil bagi lambang yang sama, desimal berpola)",
+      "stimulus": "Enam bilangan: $\\sqrt{36}$, $\\sqrt{\\frac{25}{4}}$, $\\sqrt{10}$, $\\frac{\\pi}{\\pi}$, $0,1010010001\\ldots$ (jumlah angka 0 di antara dua angka 1 bertambah satu setiap kali), dan $\\pi$.",
+      "pertanyaan": "Banyak bilangan rasional di antara keenam bilangan itu adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "$\\sqrt{36} = 6$, $\\sqrt{\\frac{25}{4}} = \\frac{5}{2}$, dan $\\frac{\\pi}{\\pi} = 1$ rasional; $\\sqrt{10}$, desimal berpola tak berulang, dan $\\pi$ irasional",
+      "distraktor": [
+        {"teks": "2", "alasan": "melewatkan $\\frac{\\pi}{\\pi}$ karena memuat lambang $\\pi$"},
+        {"teks": "4", "alasan": "mengira desimal yang berpola teratur pasti rasional padahal polanya tidak berulang"},
+        {"teks": "5", "alasan": "mengira hanya $\\sqrt{10}$ yang irasional"}
+      ],
+      "pembahasan": "Rasional: $6$, $\\frac{5}{2}$, dan $1$. Irasional: $\\sqrt{10}$, $0,1010010001\\ldots$, dan $\\pi$. Jadi 3 bilangan rasional.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 65, "kutipan": "semua bilangan yang tidak termasuk bilangan Rasional disebut bilangan Irasional"},
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perancangan",
+      "alasan_level": "merancang bilangan yang memenuhi dua syarat sekaligus (irasional dan terletak di antara dua desimal); tiap distraktor melanggar satu syarat",
+      "stimulus": null,
+      "pertanyaan": "Dina ingin menuliskan sebuah bilangan irasional yang terletak di antara $0,3$ dan $0,4$. Bilangan yang memenuhi keinginan Dina adalah ....",
+      "jawaban_benar": "$0,3101001000100001\\ldots$ (jumlah angka 0 di antara dua angka 1 bertambah satu setiap kali)",
+      "alasan_benar": "nilainya di antara $0,3$ dan $0,4$, desimalnya tak terbatas dan tidak berulang sehingga irasional",
+      "distraktor": [
+        {"teks": "$0,353535\\ldots$ (angka 35 berulang terus)", "alasan": "di antara $0,3$ dan $0,4$, tetapi desimalnya berulang sehingga rasional"},
+        {"teks": "$0,2101001000100001\\ldots$ (jumlah angka 0 di antara dua angka 1 bertambah satu setiap kali)", "alasan": "irasional, tetapi nilainya kurang dari $0,3$"},
+        {"teks": "$0,4101001000100001\\ldots$ (jumlah angka 0 di antara dua angka 1 bertambah satu setiap kali)", "alasan": "irasional, tetapi nilainya lebih dari $0,4$"}
+      ],
+      "pembahasan": "Syarat 1: nilai di antara $0,3$ dan $0,4$. Syarat 2: desimal tak terbatas dan tidak berulang. Hanya $0,3101001\\ldots$ yang memenuhi keduanya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {"sumber": "siswa", "halaman": 64, "kutipan": "di antara dua bilangan bulat berurutan terdapat bilangan lain"},
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "menilai klaim tentang tidak adanya bilangan di antara dua pecahan berpembilang berurutan dan menemukan bukti penyangkalnya",
+      "stimulus": null,
+      "pertanyaan": "Tika berkata: \"Tidak ada bilangan rasional di antara $\\frac{3}{7}$ dan $\\frac{4}{7}$ karena pembilang $3$ dan $4$ berurutan.\" Pernyataan yang tepat tentang klaim Tika adalah ....",
+      "jawaban_benar": "klaim salah, misalnya $\\frac{1}{2}$ terletak di antara $\\frac{3}{7}$ dan $\\frac{4}{7}$",
+      "alasan_benar": "$\\frac{3}{7} \\approx 0,43$ dan $\\frac{4}{7} \\approx 0,57$, sedangkan $\\frac{1}{2} = 0,5$ ada di antara keduanya",
+      "distraktor": [
+        {"teks": "klaim benar, karena bilangan bulat berurutan tidak memiliki bilangan lain di antaranya", "alasan": "keliru: di antara dua bilangan bulat berurutan pun terdapat bilangan lain"},
+        {"teks": "klaim salah, misalnya $\\frac{5}{7}$ terletak di antara $\\frac{3}{7}$ dan $\\frac{4}{7}$", "alasan": "$\\frac{5}{7} \\approx 0,71$ lebih besar dari $\\frac{4}{7}$, jadi bukan contoh yang benar"},
+        {"teks": "klaim salah, misalnya $\\frac{2}{7}$ terletak di antara $\\frac{3}{7}$ dan $\\frac{4}{7}$", "alasan": "$\\frac{2}{7} \\approx 0,29$ lebih kecil dari $\\frac{3}{7}$, jadi bukan contoh yang benar"}
+      ],
+      "pembahasan": "Ubah ke desimal: $0,43 < 0,5 < 0,57$. Jadi $\\frac{1}{2}$ di antara keduanya dan klaim Tika salah.",
+      "catatan": null
+    }
+  ]
+}

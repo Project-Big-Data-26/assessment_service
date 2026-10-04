@@ -3,7 +3,7 @@ validate.py -- pemeriksa MEKANIS file exercise (<KODE>_<level>.json).
 
 ERROR (file ditolak):
   - tidak sesuai schema; id ganda / tidak cocok dengan buku-bab-subbab-level-batch
-  - jumlah soal != kuota level (kecuali --partial); porsi variasi di luar toleransi
+  - jumlah soal != kuota level (kecuali --partial, atau kapasitas_kurang=true + alasan_kapasitas); porsi variasi di luar toleransi
   - cognitive_c / jumlah_langkah tidak cocok dengan level target
   - acuan tidak ditemukan (soal pretest tidak ada; teks/kutipan tidak ada di halaman buku)
   - variasi: angka terlalu banyak yang sama dengan acuan / konteks terlalu mirip / jawaban sama
@@ -43,12 +43,32 @@ _GAMBAR_RE = re.compile(r"\b(gambar|diagram|grafik|sketsa)\s+(berikut|di\s+bawah
 _SEMUA_RE = re.compile(r"semua\s+(jawaban\s+)?(di\s+atas\s+)?(benar|salah)|tidak\s+ada\s+jawaban", re.I)
 
 
+_RIBUAN_RE = re.compile(r"^-?\d{1,3}(?:\.\d{3})+(?:,\d+)?$")
+_DESIMAL_KOMA_RE = re.compile(r"^-?\d+,\d+$")
+
+
+def _nilai(text: str) -> Optional[float]:
+    """Nilai numerik opsi dengan format Indonesia: 80.000 = delapan puluh ribu (bukan 80,0), 3,5 = tiga setengah.
+    _approx_numeric_value milik pretest membaca titik sebagai desimal, jadi dipakai hanya untuk selain itu."""
+    t = re.sub(r"[\s$]+", "", (text or "").lower())
+    t = re.sub(r"^rp\.?", "", t).rstrip(".")
+    if _RIBUAN_RE.match(t):
+        return float(t.replace(".", "").replace(",", "."))
+    if _DESIMAL_KOMA_RE.match(t):
+        return float(t.replace(",", "."))
+    if re.match(r"^-?\d+\.\d{1,2}$", t):      # 12.5 (titik desimal gaya internasional, 1-2 digit)
+        return float(t)
+    if re.match(r"^-?\d+$", t):
+        return float(t)
+    return _approx_numeric_value(text)
+
+
 def _opsi_unik(s, errors: List[str], warns: List[str]) -> None:
     texts = [s.jawaban_benar] + [d.teks for d in s.distraktor]
     norm = [norm_answer(t) for t in texts]
     if len(set(norm)) != 4:
         errors.append(f"{s.id}: 4 opsi tidak unik")
-    vals = [_approx_numeric_value(t) for t in texts]
+    vals = [_nilai(t) for t in texts]
     known = [v for v in vals if v is not None]
     if len(known) >= 2 and len({round(v, 9) for v in known}) != len(known):
         errors.append(f"{s.id}: dua opsi bernilai sama secara numerik")
@@ -128,12 +148,25 @@ def validate_file(path: str, partial: bool = False):
     if len(set(ids)) != len(ids):
         errors.append("id soal ganda")
     n = len(data.soal)
-    if n > kuota or (n != kuota and not partial):
+    if data.kapasitas_kurang:
+        if not data.alasan_kapasitas:
+            errors.append("kapasitas_kurang=true wajib disertai alasan_kapasitas")
+        if n >= kuota:
+            errors.append(f"kapasitas_kurang=true padahal jumlah soal {n} sudah memenuhi kuota {kuota}")
+        elif n == 0:
+            errors.append("kapasitas_kurang=true tetapi tidak ada soal")
+    elif data.alasan_kapasitas:
+        errors.append("alasan_kapasitas diisi tetapi kapasitas_kurang tidak true")
+    if n > kuota or (n != kuota and not partial and not data.kapasitas_kurang):
         errors.append(f"jumlah soal {n} != kuota {kuota} ({book.jenjang}, level {data.level})")
     n_var = sum(1 for s in data.soal if s.tipe_generate == "variasi")
     target_var = round(C.PORSI_VARIASI[data.level] * kuota)
-    if not partial and abs(n_var - target_var) > C.TOLERANSI_PORSI:
-        errors.append(f"variasi {n_var} soal, target {target_var} ±{C.TOLERANSI_PORSI} dari {kuota}")
+    # Batas bawah variasi tidak berlaku di hard: acuan layak habis dipakai easy/medium, dan memaksa label
+    # "variasi" membuat soal orisinal yang bagus diubah hanya demi lolos validator.
+    batas_bawah = 0 if data.level == "hard" else target_var - C.TOLERANSI_PORSI
+    if not partial and not (batas_bawah <= n_var <= target_var + C.TOLERANSI_PORSI):
+        errors.append(f"variasi {n_var} soal, target {target_var} ±{C.TOLERANSI_PORSI} dari {kuota}"
+                      f"{' (hard: tanpa batas bawah)' if data.level == 'hard' else ''}")
 
     pages = Pages(book)
     pretest = load_pretest(data.book)

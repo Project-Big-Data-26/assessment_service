@@ -1,0 +1,375 @@
+{
+  "book": "kelas7",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi subbab B sempit (perbandingan pecahan/desimal, urutan, estimasi, penyamaan penyebut) dan sudah dipakai easy/medium; soal hard berbasis penalaran yang layak dan tidak nyaris kembar hanya 11.",
+  "soal": [
+    {
+      "id": "kelas7-b02-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 74,
+        "kutipan": "Ubahlah kedua pecahan di atas dalam penyebut yang sama, kemudian bandingkan pembilangnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "mengevaluasi penalaran yang benar pada konversi desimal tetapi keliru pada tanda bilangan negatif",
+      "stimulus": null,
+      "pertanyaan": "Budi menulis: \"$-\\frac{3}{8} < -0,4$ karena $\\frac{3}{8} = 0,375$ dan $0,375 < 0,4$.\" Pernyataan yang tepat tentang penalaran Budi adalah ....",
+      "jawaban_benar": "Pengubahan ke desimal dan perbandingan $0,375 < 0,4$ benar, tetapi pada bilangan negatif urutannya berbalik sehingga seharusnya $-\\frac{3}{8} > -0,4$",
+      "alasan_benar": "$\\frac{3}{8} = 0,375$ dan $0,375 < 0,4$; karena keduanya negatif, yang nilai mutlaknya lebih kecil justru lebih besar, jadi $-\\frac{3}{8} > -0,4$",
+      "distraktor": [
+        {
+          "teks": "Pengubahan ke desimal salah karena $\\frac{3}{8} = 0,83$, sehingga $\\frac{3}{8} > 0,4$ dan $-\\frac{3}{8} < -0,4$ sudah tepat",
+          "alasan": "salah mengubah pecahan ke desimal (menggabungkan 3 dan 8)"
+        },
+        {
+          "teks": "Tidak ada kesalahan, sebab pada bilangan negatif nilai mutlak yang lebih kecil memang membuat bilangan lebih kecil",
+          "alasan": "mengabaikan pembalikan urutan pada bilangan negatif"
+        },
+        {
+          "teks": "Perbandingan $0,375 < 0,4$ salah karena $375 > 4$, sehingga $-\\frac{3}{8} < -0,4$ tetap tepat",
+          "alasan": "membandingkan angka di belakang koma sebagai bilangan bulat"
+        }
+      ],
+      "pembahasan": "$\\frac{3}{8} = 0,375 < 0,4$. Pada bilangan negatif urutan berbalik: $-0,375 > -0,4$. Kesalahan Budi hanya pada kesimpulan akhir.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 74,
+        "kutipan": "Ubahlah kedua pecahan di atas dalam penyebut yang sama, kemudian bandingkan pembilangnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memeriksa empat pasangan pecahan untuk menemukan satu yang menyangkal klaim umum tentang pembilang dan penyebut",
+      "stimulus": null,
+      "pertanyaan": "Dewi mengklaim: \"Jika pembilang dan penyebut pecahan pertama masing-masing lebih kecil daripada pembilang dan penyebut pecahan kedua, maka pecahan pertama pasti bernilai lebih kecil.\" Pasangan (pecahan pertama dan pecahan kedua) yang menjadi contoh penyangkal klaim Dewi adalah ....",
+      "jawaban_benar": "$\\frac{3}{4}$ dan $\\frac{4}{6}$",
+      "alasan_benar": "$3 < 4$ dan $4 < 6$ tetapi $\\frac{3}{4} = \\frac{9}{12} > \\frac{8}{12} = \\frac{4}{6}$, sehingga klaim tidak berlaku",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{5}$ dan $\\frac{3}{7}$",
+          "alasan": "$\\frac{2}{5} = 0,4 < \\frac{3}{7} = 0,43$: justru sesuai klaim, bukan penyangkal"
+        },
+        {
+          "teks": "$\\frac{1}{2}$ dan $\\frac{3}{5}$",
+          "alasan": "$0,5 < 0,6$: sesuai klaim, bukan penyangkal"
+        },
+        {
+          "teks": "$\\frac{3}{8}$ dan $\\frac{5}{9}$",
+          "alasan": "$0,375 < 0,56$: sesuai klaim, bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Pasangan penyangkal harus memenuhi syarat klaim tetapi hasilnya berlawanan. $\\frac{3}{4} = 0,75 > \\frac{4}{6} \\approx 0,67$, padahal pembilang dan penyebutnya lebih kecil.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 74,
+        "kutipan": "Ubahlah kedua pecahan di atas dalam penyebut yang sama, kemudian bandingkan pembilangnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bilangan bersyarat",
+      "alasan_level": "menyamakan penyebut pada pertidaksamaan ganda lalu menyaring dengan syarat kelipatan, rawan salah di batas",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan bulat $n$ yang memenuhi $\\frac{3}{8} < \\frac{n}{24} < \\frac{5}{6}$ dan $n$ kelipatan 3 adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$\\frac{3}{8} = \\frac{9}{24}$ dan $\\frac{5}{6} = \\frac{20}{24}$ sehingga $9 < n < 20$; kelipatan 3 di antaranya 12, 15, 18",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "menyertakan batas bawah $n = 9$ padahal pertidaksamaannya tegas"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "tidak menerapkan syarat kelipatan 3 (menghitung $n = 10$ sampai $19$)"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "mengabaikan batas bawah: menghitung kelipatan 3 dari 3 sampai 18"
+        }
+      ],
+      "pembahasan": "Samakan penyebut ke 24: $9 < n < 20$. Kelipatan 3 yang memenuhi: 12, 15, 18, jadi ada 3.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Lakukan estimasi untuk meletakkan kedua bilangan tersebut pada garis bilangan di bawah ini."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi kesimpulan yang bergantung pada pembulatan, bedakan nilai hampiran dan nilai sebenarnya",
+      "stimulus": null,
+      "pertanyaan": "Rina membandingkan $\\frac{7}{9}$ dan $0,78$. Ia membulatkan $\\frac{7}{9}$ menjadi $0,78$ lalu menyimpulkan bahwa kedua bilangan itu sama besar. Pernyataan yang benar tentang kesimpulan Rina adalah ....",
+      "jawaban_benar": "Salah, karena $\\frac{7}{9} = 0,777...$ sehingga $\\frac{7}{9} < 0,78$",
+      "alasan_benar": "$\\frac{7}{9} = 0,7777...$ yang lebih kecil dari $0,78$; pembulatan hanya hampiran sehingga tidak boleh dipakai menyatakan sama",
+      "distraktor": [
+        {
+          "teks": "Benar, karena pembulatan membuat dua bilangan yang berbeda boleh dianggap sama nilainya",
+          "alasan": "menyamakan hampiran dengan nilai sebenarnya"
+        },
+        {
+          "teks": "Benar, karena $\\frac{7}{9} = 0,78$ tepat",
+          "alasan": "mengira desimal $\\frac{7}{9}$ berhenti pada dua angka"
+        },
+        {
+          "teks": "Salah, karena $\\frac{7}{9} = 0,79$ sehingga $\\frac{7}{9} > 0,78$",
+          "alasan": "salah menghitung desimal $\\frac{7}{9}$ (membulatkan ke atas lalu menyimpulkan lebih besar)"
+        }
+      ],
+      "pembahasan": "$\\frac{7}{9} = 0,777...$ dan $0,78 > 0,777...$, sehingga $\\frac{7}{9} < 0,78$. Kesimpulan 'sama' keliru.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Lakukan estimasi untuk meletakkan kedua bilangan tersebut pada garis bilangan di bawah ini."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perancangan",
+      "alasan_level": "merancang pecahan terbesar dari kartu dengan syarat pembilang kurang dari penyebut, perlu membandingkan beberapa kandidat",
+      "stimulus": null,
+      "pertanyaan": "Empat kartu bertuliskan angka $3$, $4$, $7$, dan $9$. Dua kartu dipilih, satu sebagai pembilang dan satu sebagai penyebut, dengan pembilang lebih kecil daripada penyebut. Pecahan dengan nilai terbesar yang dapat dibentuk adalah ....",
+      "jawaban_benar": "$\\frac{7}{9}$",
+      "alasan_benar": "kandidat: $\\frac{3}{4} = 0,75$; $\\frac{3}{7} \\approx 0,43$; $\\frac{3}{9} \\approx 0,33$; $\\frac{4}{7} \\approx 0,57$; $\\frac{4}{9} \\approx 0,44$; $\\frac{7}{9} \\approx 0,78$; yang terbesar $\\frac{7}{9}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "memilih penyebut terkecil tanpa membandingkan kandidat lain ($0,75 < 0,78$)"
+        },
+        {
+          "teks": "$\\frac{4}{7}$",
+          "alasan": "memilih angka berurutan yang tampak seimbang"
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "mengira penyebut terbesar membuat pecahan terbesar"
+        }
+      ],
+      "pembahasan": "Semua pecahan dengan pembilang < penyebut: $0,75$; $0,43$; $0,33$; $0,57$; $0,44$; $0,78$. Terbesar $\\frac{7}{9}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Lakukan estimasi untuk menentukan siapa yang lebih mendekati selesai memindahkan batu bata."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memeriksa klaim tentang pecahan negatif berpembilang sama dan menemukan pasangan yang tepat menyangkalnya",
+      "stimulus": null,
+      "pertanyaan": "Eka mengklaim: \"Untuk dua pecahan negatif yang pembilangnya sama, pecahan dengan penyebut lebih besar bernilai lebih kecil.\" Pasangan yang menjadi contoh penyangkal klaim Eka adalah ....",
+      "jawaban_benar": "$-\\frac{3}{4}$ dan $-\\frac{3}{8}$",
+      "alasan_benar": "pembilang sama (3), keduanya negatif, tetapi $-\\frac{3}{8} = -0,375 > -0,75 = -\\frac{3}{4}$: penyebut lebih besar justru nilainya lebih besar",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{4}$ dan $\\frac{3}{8}$",
+          "alasan": "pasangan positif: klaim hanya tentang pecahan negatif, jadi bukan penyangkal"
+        },
+        {
+          "teks": "$-\\frac{3}{8}$ dan $-\\frac{5}{8}$",
+          "alasan": "pembilang tidak sama sehingga tidak memenuhi syarat klaim"
+        },
+        {
+          "teks": "$-\\frac{3}{4}$ dan $-\\frac{5}{8}$",
+          "alasan": "pembilang tidak sama sehingga tidak memenuhi syarat klaim"
+        }
+      ],
+      "pembahasan": "Penyangkal harus memenuhi syarat klaim (negatif, pembilang sama). $-\\frac{3}{4} = -0,75 < -0,375 = -\\frac{3}{8}$, padahal penyebut 8 lebih besar dari 4.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 70,
+        "kutipan": "Pada bagian ini kalian akan membandingkan beberapa bilangan rasional yang dinyatakan dalam bentuk pecahan dan desimal."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "bilangan bersyarat",
+      "alasan_level": "menghitung banyak desimal dua angka di antara batas berbentuk pecahan dan desimal, jebakan pembulatan batas",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan desimal yang ditulis dengan tepat dua angka di belakang koma (misalnya $0,61$) dan terletak di antara $0,6$ dan $\\frac{2}{3}$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$\\frac{2}{3} = 0,666...$; bilangan dua angka di antara $0,60$ dan $0,666...$ adalah $0,61$; $0,62$; $0,63$; $0,64$; $0,65$; $0,66$",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "ikut menghitung $0,60$ yang sama dengan batas bawah"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "menganggap $\\frac{2}{3} = 0,66$ sehingga $0,66$ dianggap batas dan tidak dihitung"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "menghitung $0,60$ dan $0,67$ sebagai batas dengan membulatkan $\\frac{2}{3}$ menjadi $0,67$"
+        }
+      ],
+      "pembahasan": "$\\frac{2}{3} = 0,666...$. Bilangan yang memenuhi: $0,61$ sampai $0,66$, yaitu 6 bilangan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 74,
+        "kutipan": "Ubahlah kedua pecahan di atas dalam penyebut yang sama, kemudian bandingkan pembilangnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi cara kali silang sebagai bentuk penyamaan penyebut lalu menerapkannya ke bilangan negatif",
+      "stimulus": null,
+      "pertanyaan": "Lia membandingkan $\\frac{5}{12}$ dan $\\frac{3}{8}$ dengan menghitung $5 \\times 8 = 40$ dan $3 \\times 12 = 36$, lalu menyimpulkan $\\frac{5}{12} > \\frac{3}{8}$ karena $40 > 36$. Hasil ini ia pakai untuk membandingkan $-\\frac{5}{12}$ dan $-\\frac{3}{8}$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$\\frac{5}{12} > \\frac{3}{8}$ benar, dan $-\\frac{5}{12} < -\\frac{3}{8}$",
+      "alasan_benar": "kali silang sama dengan menyamakan penyebut menjadi $96$: $\\frac{40}{96} > \\frac{36}{96}$; pada bilangan negatif urutannya berbalik sehingga $-\\frac{5}{12} < -\\frac{3}{8}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{12} > \\frac{3}{8}$ benar, dan $-\\frac{5}{12} > -\\frac{3}{8}$",
+          "alasan": "lupa membalik urutan pada bilangan negatif"
+        },
+        {
+          "teks": "$\\frac{5}{12} < \\frac{3}{8}$, dan $-\\frac{5}{12} > -\\frac{3}{8}$",
+          "alasan": "menganggap penyebut 12 yang lebih besar membuat pecahan lebih kecil, lalu membalik untuk negatif"
+        },
+        {
+          "teks": "$\\frac{5}{12} < \\frac{3}{8}$, dan $-\\frac{5}{12} < -\\frac{3}{8}$",
+          "alasan": "menganggap penyebut 12 yang lebih besar membuat pecahan lebih kecil dan tidak membalik untuk negatif"
+        }
+      ],
+      "pembahasan": "$\\frac{5}{12} = \\frac{40}{96}$ dan $\\frac{3}{8} = \\frac{36}{96}$, jadi $\\frac{5}{12} > \\frac{3}{8}$. Untuk negatif: $-\\frac{5}{12} < -\\frac{3}{8}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Lakukan estimasi untuk meletakkan kedua bilangan tersebut pada garis bilangan di bawah ini."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "menilai tiga pernyataan campuran pecahan, desimal, dan negatif, masing-masing dengan jebakan berbeda",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan tiga pernyataan berikut.\n\nI. $\\frac{1}{7} < 0,15$\n\nII. $-\\frac{2}{9} > -0,2$\n\nIII. $\\frac{4}{15} < 0,27$\n\nPernyataan yang benar adalah ....",
+      "jawaban_benar": "I dan III saja",
+      "alasan_benar": "$\\frac{1}{7} = 0,142... < 0,15$ (I benar); $\\frac{2}{9} = 0,222... > 0,2$ sehingga $-\\frac{2}{9} < -0,2$ (II salah); $\\frac{4}{15} = 0,2666... < 0,27$ (III benar)",
+      "distraktor": [
+        {
+          "teks": "I, II, dan III",
+          "alasan": "mengabaikan tanda negatif pada II sehingga dianggap benar"
+        },
+        {
+          "teks": "III saja",
+          "alasan": "mengira $\\frac{1}{7} \\approx 0,17$ sehingga I dianggap salah, dan II salah"
+        },
+        {
+          "teks": "I dan II saja",
+          "alasan": "mengabaikan tanda negatif pada II dan membulatkan $\\frac{4}{15}$ menjadi $0,27$ sehingga III dianggap tidak benar"
+        }
+      ],
+      "pembahasan": "I: $0,142... < 0,15$ benar. II: $-0,222... < -0,2$, jadi $-\\frac{2}{9} > -0,2$ salah. III: $0,2666... < 0,27$ benar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Lakukan estimasi untuk meletakkan kedua bilangan tersebut pada garis bilangan di bawah ini."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menelusuri langkah penyelesaian bertahap untuk menemukan kesalahan pertama, dengan satu langkah salah dan langkah lain valid",
+      "stimulus": null,
+      "pertanyaan": "Dini membandingkan $-\\frac{5}{6}$ dan $-0,6$ dengan langkah berikut.\n\n(1) Bandingkan dulu $\\frac{5}{6}$ dan $0,6$.\n\n(2) $\\frac{5}{6} = 0,56$.\n\n(3) Karena $0,56 < 0,6$, maka $\\frac{5}{6} < 0,6$.\n\n(4) Pada bilangan negatif urutannya berbalik, sehingga $-\\frac{5}{6} > -0,6$.\n\nKesalahan pertama Dini terdapat pada langkah ....",
+      "jawaban_benar": "(2), karena $\\frac{5}{6} = 0,83...$",
+      "alasan_benar": "$\\frac{5}{6} = 0,833...$, bukan $0,56$. Langkah (1), (3), dan (4) benar bila langkah sebelumnya benar; seharusnya $\\frac{5}{6} > 0,6$ sehingga $-\\frac{5}{6} < -0,6$",
+      "distraktor": [
+        {
+          "teks": "(1), karena bilangan negatif tidak boleh dibandingkan lewat nilai positifnya",
+          "alasan": "mengira perbandingan negatif tidak bisa dimulai dari bentuk positifnya"
+        },
+        {
+          "teks": "(3), karena $0,56 < 0,6$ itu tidak benar",
+          "alasan": "mengira $0,56 > 0,6$ karena $56 > 6$"
+        },
+        {
+          "teks": "(4), karena urutan tidak berbalik pada bilangan negatif",
+          "alasan": "mengira urutan bilangan negatif sama dengan bilangan positif"
+        }
+      ],
+      "pembahasan": "$\\frac{5}{6} = 0,833...$. Kesalahan pertama pada (2). Hasil benar: $\\frac{5}{6} > 0,6$ dan $-\\frac{5}{6} < -0,6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b02-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 74,
+        "kutipan": "Ubahlah kedua pecahan di atas dalam penyebut yang sama, kemudian bandingkan pembilangnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bilangan bersyarat",
+      "alasan_level": "menyelesaikan pertidaksamaan berpecahan negatif sehingga arah tanda berbalik, lalu memilih bilangan asli terkecil",
+      "stimulus": null,
+      "pertanyaan": "Bilangan asli terkecil $a$ yang memenuhi $-\\frac{a}{8} < -0,7$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$-\\frac{a}{8} < -0,7$ berarti $\\frac{a}{8} > 0,7$, yaitu $a > 5,6$; bilangan asli terkecil $6$ (cek $-\\frac{6}{8} = -0,75 < -0,7$)",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "membulatkan $5,6$ ke bawah; padahal $-\\frac{5}{8} = -0,625 > -0,7$"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "membulatkan $5,6$ ke $6$ lalu menambah 1 karena tanda tegas"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "tidak membalik tanda sehingga mengira $\\frac{a}{8} < 0,7$ dan memilih bilangan asli terkecil"
+        }
+      ],
+      "pembahasan": "$-\\frac{a}{8} < -0,7 \\Leftrightarrow \\frac{a}{8} > 0,7 \\Leftrightarrow a > 5,6$. Bilangan asli terkecil: $6$.",
+      "catatan": null
+    }
+  ]
+}

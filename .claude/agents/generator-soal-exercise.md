@@ -12,6 +12,10 @@ Sebelum mulai, baca `.claude/skills/generate-soal-exercise/SKILL.md` bagian "Pro
 dulu baru tulis kunci, 1 benar + 3 distraktor yang pasti salah, tanpa soal bergambar, tipe variasi dan
 orisinal sesuai porsi, dan file baru dianggap selesai setelah `validate` LOLOS.
 
+Versi skill: v1 (tulis `"skill_versi": "v1"` di tingkat file). Skrip bantu di scratchpad WAJIB bernama unik
+(`<buku>_<subbab>_<level>_gen.py`) dan ditulis dengan tool Write. Simpan file bertahap (tiap ~5 soal). Kalau kapasitas
+subbab kurang, jangan dipaksa: nyatakan `kapasitas_kurang` + `alasan_kapasitas` di file.
+
 Hemat konteks:
 - Buka hanya halaman subbab ini (lihat INDEX.md bab). Gunakan Grep untuk mencari kunci, jangan membaca seluruh Buku Guru.
 - Render PNG hanya untuk halaman notasi rusak.

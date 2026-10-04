@@ -59,6 +59,9 @@ class Soal(_Strict):
     distraktor: List[Distraktor] = Field(min_length=3, max_length=3)
     pembahasan: str = Field(min_length=5, description="pengerjaan singkat langkah demi langkah")
     catatan: Optional[str] = None
+    # True = soal tambahan agar kuota penuh padahal bahan subbab sudah tipis (kemiripan/jarak dari materi
+    # lebih longgar); diteruskan ke meta supaya validator manusia memberi perhatian ekstra.
+    dipaksa_kuota: bool = False
 
     @model_validator(mode="after")
     def _cek_acuan(self):
@@ -85,4 +88,10 @@ class ExerciseFile(_Strict):
     subbab: str = Field(pattern=r"^[A-Z]$")
     level: Level
     batch: int = Field(ge=1)
+    # versi SKILL.md yang menghasilkan file ini (kosong = dibuat sebelum v1)
+    skill_versi: Optional[str] = Field(None, pattern=r"^v\d+$")
+    # Kapasitas kurang: bahan subbab tidak cukup untuk kuota tanpa soal nyaris kembar / di luar materi.
+    # Harus DINYATAKAN di sini (bukan kebetulan kurang), lengkap dengan alasan.
+    kapasitas_kurang: bool = False
+    alasan_kapasitas: Optional[str] = Field(None, min_length=10)
     soal: List[Soal] = []

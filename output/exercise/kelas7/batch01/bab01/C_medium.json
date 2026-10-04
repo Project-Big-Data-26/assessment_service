@@ -1,0 +1,544 @@
+{
+  "book": "kelas7",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas7-b01-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "bagian": "Latihan 1.3",
+        "nomor": "2",
+        "teks": "Klub sains beranggotakan 24 siswa perempuan dan 32 siswa lakilaki. Hari ini siswa klub sains akan melakukan percobaan menarik, sehingga pelatih klub akan membagi anggota menjadi beberapa kelompok. Setiap kelompok berisi jumlah yang sama antara siswa perempuan dan laki-laki. Berapa jumlah kelompok paling banyak yang dapat dibentuk?",
+        "jawaban": "8 kelompok"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "cerita FPB dua bilangan besar",
+      "alasan_level": "FPB dua bilangan lebih besar dari easy, perlu faktorisasi prima atau daftar faktor yang lebih panjang",
+      "stimulus": null,
+      "pertanyaan": "Ekstrakurikuler robotik diikuti 60 siswa perempuan dan 84 siswa laki-laki. Pembina ingin membuat tim lomba dengan komposisi yang sama di setiap tim, yaitu banyak perempuan sama dan banyak laki-laki sama di tiap tim, tanpa ada anggota tersisa. Tim terbanyak yang dapat dibentuk adalah ....",
+      "jawaban_benar": "12 tim",
+      "alasan_benar": "banyak tim terbanyak = FPB(60, 84) = 12",
+      "distraktor": [
+        {
+          "teks": "6 tim",
+          "alasan": "faktor persekutuan tetapi bukan yang terbesar"
+        },
+        {
+          "teks": "24 tim",
+          "alasan": "mengurangkan 84 dengan 60, bukan mencari FPB"
+        },
+        {
+          "teks": "420 tim",
+          "alasan": "tertukar memakai KPK, bukan FPB"
+        }
+      ],
+      "pembahasan": "$60 = 2 \\times 2 \\times 3 \\times 5$ dan $84 = 2 \\times 2 \\times 3 \\times 7$. Faktor prima sama: $2 \\times 2 \\times 3 = 12$. FPB = 12.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "bagian": "Latihan 1.3",
+        "nomor": "3",
+        "teks": "Arjuna bersepeda setiap 12 hari dan berenang setiap 14 hari. Ia melakukan kedua jenis olahraga tersebut hari ini. Berapa hari dari sekarang Arjuna akan bersepeda dan berenang lagi secara bersamaan?",
+        "jawaban": "84 hari"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "cerita KPK dua bilangan",
+      "alasan_level": "KPK dua bilangan yang tidak mudah dilihat dari daftar kelipatan pendek",
+      "stimulus": null,
+      "pertanyaan": "Bayu berlatih voli setiap 10 hari dan berlatih badminton setiap 16 hari. Ia melakukan kedua jenis latihan tersebut hari ini. Berapa hari dari sekarang Bayu akan berlatih voli dan badminton lagi secara bersamaan?",
+      "jawaban_benar": "80 hari",
+      "alasan_benar": "KPK(10, 16) = 80",
+      "distraktor": [
+        {
+          "teks": "2 hari",
+          "alasan": "tertukar memakai FPB, bukan KPK"
+        },
+        {
+          "teks": "160 hari",
+          "alasan": "mengalikan 10 x 16 padahal ada faktor persekutuan 2"
+        },
+        {
+          "teks": "26 hari",
+          "alasan": "menjumlahkan 10 dan 16"
+        }
+      ],
+      "pembahasan": "$10 = 2 \\times 5$ dan $16 = 2 \\times 2 \\times 2 \\times 2$. KPK = $2^4 \\times 5 = 80$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "bagian": "Latihan 1.3",
+        "nomor": "5",
+        "teks": "Tiga buah bus sekolah tiba di tempat pemberhentian bus setiap 6 menit, 10 menit, dan 15 menit. Jika bus berangkat bersamaan, yaitu pukul 06.30 pagi, maka pukul berapa ketiga bus tersebut berhenti secara bersamaan berikutnya?",
+        "jawaban": "07.00"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "KPK tiga bilangan dan waktu",
+      "alasan_level": "KPK tiga bilangan dengan hasil lebih dari satu jam lalu diubah ke pukul",
+      "stimulus": null,
+      "pertanyaan": "Tiga kereta wisata tiba di stasiun setiap 8 menit, 12 menit, dan 20 menit. Jika kereta berangkat bersamaan, yaitu pukul 06.30 pagi, maka pukul berapa ketiga kereta tersebut berhenti secara bersamaan berikutnya?",
+      "jawaban_benar": "08.30",
+      "alasan_benar": "KPK(8, 12, 20) = 120 menit = 2 jam, 06.30 + 2 jam = 08.30",
+      "distraktor": [
+        {
+          "teks": "06.54",
+          "alasan": "hanya memakai KPK 8 dan 12 (24 menit), melupakan 20"
+        },
+        {
+          "teks": "07.10",
+          "alasan": "hanya memakai KPK 8 dan 20 (40 menit), melupakan 12"
+        },
+        {
+          "teks": "07.30",
+          "alasan": "hanya memakai KPK 12 dan 20 (60 menit), melupakan 8"
+        }
+      ],
+      "pembahasan": "$8 = 2^3$, $12 = 2^2 \\times 3$, $20 = 2^2 \\times 5$. KPK = $2^3 \\times 3 \\times 5 = 120$ menit = 2 jam. Pukul 06.30 + 2 jam = 08.30.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "bagian": "Ayo Berkomunikasi",
+        "nomor": "1",
+        "teks": "Anita mendapat tambahan buah untuk dibagikan yaitu mangga sebanyak 36 buah. Dengan ketiga jenis buah tersebut, tentukan jumlah teman atau kerabat paling banyak yang dapat menerima buah tersebut.",
+        "jawaban": "4 orang"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "cerita FPB tiga bilangan",
+      "alasan_level": "FPB tiga bilangan dari konteks pembagian paket, harus dicek ke ketiga bilangan",
+      "stimulus": null,
+      "pertanyaan": "Tim PMR menyiapkan 48 botol air, 72 roti, dan 90 pisang untuk dibagikan ke beberapa kantong bantuan. Setiap kantong berisi jumlah yang sama untuk tiap jenis barang dan semua barang habis terbagi. Banyak kantong paling banyak yang dapat dibuat adalah ....",
+      "jawaban_benar": "6 kantong",
+      "alasan_benar": "FPB(48, 72, 90) = 6",
+      "distraktor": [
+        {
+          "teks": "24 kantong",
+          "alasan": "hanya memakai FPB 48 dan 72, pisang 90 tidak habis terbagi 24"
+        },
+        {
+          "teks": "18 kantong",
+          "alasan": "hanya memakai FPB 72 dan 90, botol 48 tidak habis terbagi 18"
+        },
+        {
+          "teks": "3 kantong",
+          "alasan": "faktor persekutuan tetapi bukan yang terbesar"
+        }
+      ],
+      "pembahasan": "$48 = 2^4 \\times 3$, $72 = 2^3 \\times 3^2$, $90 = 2 \\times 3^2 \\times 5$. Faktor prima sama: $2 \\times 3 = 6$. FPB = 6.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 48,
+        "bagian": "Ayo Bereksplorasi",
+        "nomor": "1",
+        "teks": "Berapa saja kemungkinan banyaknya teman atau kerabat yang dapat dikirimkan buah tersebut?",
+        "jawaban": "1, 2, 4, atau 8 orang"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "banyak kemungkinan penerima",
+      "alasan_level": "menganalisis semua faktor persekutuan dengan syarat tambahan lalu menghitung banyaknya",
+      "stimulus": null,
+      "pertanyaan": "Rudi memiliki 60 jeruk dan 90 apel. Ia membagikan kedua jenis buah itu dengan jumlah yang sama untuk setiap penerima sehingga semua buah habis terbagi. Jika penerimanya paling sedikit 2 orang, banyak kemungkinan jumlah penerima adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "faktor persekutuan 60 dan 90 adalah faktor dari FPB = 30, yaitu 1, 2, 3, 5, 6, 10, 15, 30; tanpa 1 ada 7",
+      "distraktor": [
+        {
+          "teks": "8",
+          "alasan": "ikut menghitung 1 penerima padahal paling sedikit 2"
+        },
+        {
+          "teks": "12",
+          "alasan": "menghitung banyak faktor 60 saja, bukan faktor persekutuan"
+        },
+        {
+          "teks": "30",
+          "alasan": "menyebut FPB-nya, bukan banyak kemungkinan"
+        }
+      ],
+      "pembahasan": "FPB(60, 90) = 30. Faktor persekutuan = faktor dari 30: 1, 2, 3, 5, 6, 10, 15, 30. Tanpa 1 ada 7 kemungkinan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "bagian": "Ayo Berpikir Kritis",
+        "nomor": "1",
+        "teks": "Anita membagikan makanan setiap 4 hari, sedangkan Rossa membagikan makanan setiap 6 hari. Jika pada hari ini mereka membagikan makanan bersama-sama, tentukan setiap berapa hari mereka membagikan makanan secara bersama-sama kembali?",
+        "jawaban": "12 hari"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "cerita KPK dua bilangan",
+      "alasan_level": "KPK dua bilangan berfaktor persekutuan 7 yang harus dikenali",
+      "stimulus": null,
+      "pertanyaan": "Dina mengganti air kolam ikan setiap 14 hari, sedangkan Edo mengganti air kolam ikan miliknya setiap 21 hari. Keduanya melakukannya hari ini. Jarak waktu terpendek sampai keduanya mengganti air pada hari yang sama lagi adalah ....",
+      "jawaban_benar": "42 hari",
+      "alasan_benar": "KPK(14, 21) = 42",
+      "distraktor": [
+        {
+          "teks": "7 hari",
+          "alasan": "tertukar memakai FPB, bukan KPK"
+        },
+        {
+          "teks": "294 hari",
+          "alasan": "mengalikan 14 x 21 padahal ada faktor persekutuan 7"
+        },
+        {
+          "teks": "84 hari",
+          "alasan": "memilih kelipatan persekutuan yang bukan terkecil"
+        }
+      ],
+      "pembahasan": "$14 = 2 \\times 7$ dan $21 = 3 \\times 7$. KPK = $2 \\times 3 \\times 7 = 42$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "bagian": "Ayo Berpikir Kritis",
+        "nomor": "1",
+        "teks": "Jika terdapat dua bilangan prima sembarang, berapakah FPB dan KPK dari kedua bilangan tersebut?",
+        "jawaban": "FPB = 1 dan KPK = hasil kali kedua bilangan prima"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "FPB dan KPK dua bilangan prima",
+      "alasan_level": "menerapkan sifat dua bilangan prima ke bilangan tertentu lalu menggabungkan FPB dan KPK",
+      "stimulus": null,
+      "pertanyaan": "Bilangan 11 dan 19 keduanya prima. Nilai FPB(11, 19) ditambah KPK(11, 19) sama dengan ....",
+      "jawaban_benar": "210",
+      "alasan_benar": "FPB(11, 19) = 1, KPK(11, 19) = 209, jumlahnya 210",
+      "distraktor": [
+        {
+          "teks": "209",
+          "alasan": "hanya menghitung KPK, lupa menambah FPB"
+        },
+        {
+          "teks": "208",
+          "alasan": "mengurangkan FPB dari KPK, bukan menjumlahkan"
+        },
+        {
+          "teks": "30",
+          "alasan": "menjumlahkan kedua bilangan primanya"
+        }
+      ],
+      "pembahasan": "Dua bilangan prima berbeda tidak punya faktor persekutuan selain 1, sehingga FPB = 1 dan KPK = $11 \\times 19 = 209$. Jumlah = 210.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 50,
+        "bagian": "Ayo Mencoba",
+        "nomor": "1",
+        "teks": "Jika pada hari ini, Senin tanggal 8 Agustus 2022 mereka bertiga membagikan makanan secara bersama-sama, maka tanggal berapa mereka melakukannya bersama kembali?",
+        "jawaban": "1 September 2022"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "KPK tiga bilangan, hari dan tanggal",
+      "alasan_level": "KPK tiga bilangan lalu menghitung tanggal melewati pergantian bulan beserta nama hari",
+      "stimulus": null,
+      "pertanyaan": "Tiga petugas ronda berjaga setiap 4 hari, 6 hari, dan 10 hari. Jika pada hari Rabu, 15 Maret 2023 mereka berjaga bersama-sama, kapan mereka berjaga bersama-sama kembali? (Bulan Maret memiliki 31 hari dan April 30 hari.)",
+      "jawaban_benar": "Minggu, 14 Mei 2023",
+      "alasan_benar": "KPK(4, 6, 10) = 60 hari; 15 Maret + 60 hari = 14 Mei, hari Rabu + 4 = Minggu",
+      "distraktor": [
+        {
+          "teks": "Senin, 27 Maret 2023",
+          "alasan": "hanya memakai KPK 4 dan 6 (12 hari), melupakan 10"
+        },
+        {
+          "teks": "Jumat, 14 April 2023",
+          "alasan": "hanya memakai KPK 6 dan 10 (30 hari), melupakan 4"
+        },
+        {
+          "teks": "Senin, 15 Mei 2023",
+          "alasan": "menganggap bulan Maret hanya 30 hari"
+        }
+      ],
+      "pembahasan": "$4 = 2^2$, $6 = 2 \\times 3$, $10 = 2 \\times 5$. KPK = $2^2 \\times 3 \\times 5 = 60$ hari. 15 Maret + 16 hari = 31 Maret, +30 hari = 30 April, +14 hari = 14 Mei 2023. 60 = 8 x 7 + 4, jadi hari Rabu + 4 = Minggu.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 46,
+        "kutipan": "Faktorisasi prima adalah bentuk penulisan suatu bilangan sebagai perkalian dari faktor yang merupakan bilangan prima."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "faktor prima terbesar",
+      "alasan_level": "memfaktorkan bilangan tiga angka lalu memilih faktor prima terbesar, bukan sekadar menulis hasil faktorisasi",
+      "stimulus": null,
+      "pertanyaan": "Faktor prima terbesar dari 462 adalah ....",
+      "jawaban_benar": "11",
+      "alasan_benar": "$462 = 2 \\times 3 \\times 7 \\times 11$, faktor prima terbesar 11",
+      "distraktor": [
+        {
+          "teks": "77",
+          "alasan": "77 = 7 x 11 bukan bilangan prima, pohon faktor belum selesai"
+        },
+        {
+          "teks": "21",
+          "alasan": "21 = 3 x 7 bukan bilangan prima"
+        },
+        {
+          "teks": "7",
+          "alasan": "berhenti terlalu awal, melewatkan faktor 11"
+        }
+      ],
+      "pembahasan": "$462 : 2 = 231$, $231 : 3 = 77$, $77 : 7 = 11$. Faktorisasi prima: $2 \\times 3 \\times 7 \\times 11$. Faktor prima terbesar 11.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 51,
+        "kutipan": "Kelipatan persekutuan dari dua bilangan atau lebih adalah kelipatan dari suatu bilangan yang sama dengan kelipatan bilangan lainnya."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "kelipatan persekutuan dengan batas",
+      "alasan_level": "mencari KPK lalu memilih kelipatannya yang memenuhi syarat batas bawah",
+      "stimulus": null,
+      "pertanyaan": "Bilangan asli terkecil yang lebih dari 100 dan habis dibagi 6 maupun 8 adalah ....",
+      "jawaban_benar": "120",
+      "alasan_benar": "KPK(6, 8) = 24, kelipatan 24: 24, 48, 72, 96, 120; yang pertama lebih dari 100 adalah 120",
+      "distraktor": [
+        {
+          "teks": "96",
+          "alasan": "kelipatan 24 tetapi kurang dari 100"
+        },
+        {
+          "teks": "108",
+          "alasan": "habis dibagi 6 tetapi tidak habis dibagi 8"
+        },
+        {
+          "teks": "144",
+          "alasan": "kelipatan 24 tetapi bukan yang terkecil di atas 100"
+        }
+      ],
+      "pembahasan": "KPK(6, 8) = 24. Kelipatan persekutuan: 24, 48, 72, 96, 120, 144, .... Yang terkecil dan lebih dari 100 adalah 120.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 50,
+        "kutipan": "adalah faktor persekutuan yang nilainya terbesar di antara faktor-faktor persekutuan lainnya."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "FPB tiga bilangan dengan faktorisasi prima",
+      "alasan_level": "faktorisasi prima tiga bilangan lalu mengambil faktor prima yang ada di ketiganya",
+      "stimulus": null,
+      "pertanyaan": "Dengan faktorisasi prima, FPB dari 90, 150, dan 210 adalah ....",
+      "jawaban_benar": "30",
+      "alasan_benar": "$90 = 2 \\times 3^2 \\times 5$, $150 = 2 \\times 3 \\times 5^2$, $210 = 2 \\times 3 \\times 5 \\times 7$; faktor sama $2 \\times 3 \\times 5 = 30$",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "melupakan faktor 3 yang ada di ketiga bilangan"
+        },
+        {
+          "teks": "15",
+          "alasan": "melupakan faktor 2 yang ada di ketiga bilangan"
+        },
+        {
+          "teks": "3150",
+          "alasan": "tertukar memakai KPK, bukan FPB"
+        }
+      ],
+      "pembahasan": "Faktor prima yang ada di ketiga bilangan dengan pangkat terkecil: 2, 3, 5. FPB = $2 \\times 3 \\times 5 = 30$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 46,
+        "kutipan": "Pasangan faktor dari suatu bilangan adalah pasangan bilangan yang jika dikalikan akan menghasilkan bilangan tertentu."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pasangan faktor dengan syarat jumlah",
+      "alasan_level": "menyaring pasangan faktor bulat positif-negatif dengan syarat jumlah",
+      "stimulus": null,
+      "pertanyaan": "Dua bilangan bulat memiliki hasil kali $-36$ dan jumlah $5$. Pasangan bilangan tersebut adalah ....",
+      "jawaban_benar": "$(9, -4)$",
+      "alasan_benar": "$9 \\times (-4) = -36$ dan $9 + (-4) = 5$",
+      "distraktor": [
+        {
+          "teks": "$(-9, 4)$",
+          "alasan": "hasil kali benar tetapi jumlahnya $-5$, tanda tertukar"
+        },
+        {
+          "teks": "$(12, -3)$",
+          "alasan": "hasil kali $-36$ tetapi jumlahnya 9"
+        },
+        {
+          "teks": "$(6, -6)$",
+          "alasan": "hasil kali $-36$ tetapi jumlahnya 0"
+        }
+      ],
+      "pembahasan": "Pasangan faktor $-36$: $(1,-36)$, $(2,-18)$, $(3,-12)$, $(4,-9)$, $(6,-6)$ beserta tanda tertukarnya. Yang berjumlah 5 hanya $(9, -4)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 46,
+        "kutipan": "Faktor dari suatu bilangan adalah bilangan-bilangan tertentu yang dapat membagi habis suatu bilangan."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "cerita faktor dengan batas",
+      "alasan_level": "mendaftar faktor lalu menyaring dengan dua batas dari konteks susunan",
+      "stimulus": null,
+      "pertanyaan": "Pak Tono menyusun 48 kursi dalam beberapa baris. Setiap baris berisi jumlah kursi yang sama, dan banyak kursi pada tiap baris paling sedikit 4 serta paling banyak 12. Banyak cara menyusun yang mungkin adalah ....",
+      "jawaban_benar": "4 cara",
+      "alasan_benar": "faktor 48 di antara 4 dan 12 (termasuk): 4, 6, 8, 12",
+      "distraktor": [
+        {
+          "teks": "3 cara",
+          "alasan": "tidak menghitung salah satu batas (4 atau 12)"
+        },
+        {
+          "teks": "5 cara",
+          "alasan": "ikut menghitung 3 yang kurang dari batas bawah"
+        },
+        {
+          "teks": "6 cara",
+          "alasan": "menghitung faktor 3 sampai 16, batas dilonggarkan"
+        }
+      ],
+      "pembahasan": "Faktor 48: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48. Yang berada pada 4 sampai 12: 4, 6, 8, 12, yaitu 4 cara.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 51,
+        "kutipan": "Kelipatan persekutuan terkecil (KPK) adalah bilangan kelipatan terkecil yang sama dari banyaknya kelipatan suatu bilangan tertentu."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "KPK dengan batas waktu",
+      "alasan_level": "KPK dipakai untuk menghitung banyak kejadian bersamaan dalam rentang waktu terbatas",
+      "stimulus": null,
+      "pertanyaan": "Lampu merah menyala setiap 5 detik dan lampu biru menyala setiap 6 detik. Keduanya menyala bersamaan pada detik ke-0. Pada detik ke-1 sampai detik ke-150, banyak saat kedua lampu menyala bersamaan adalah ....",
+      "jawaban_benar": "5 kali",
+      "alasan_benar": "KPK(5, 6) = 30; kelipatan 30 sampai 150: 30, 60, 90, 120, 150",
+      "distraktor": [
+        {
+          "teks": "4 kali",
+          "alasan": "tidak menghitung detik ke-150"
+        },
+        {
+          "teks": "6 kali",
+          "alasan": "ikut menghitung detik ke-0 padahal dihitung mulai detik ke-1"
+        },
+        {
+          "teks": "25 kali",
+          "alasan": "membagi 150 dengan 6, memakai satu lampu saja"
+        }
+      ],
+      "pembahasan": "KPK(5, 6) = 30. Menyala bersamaan pada detik 30, 60, 90, 120, 150, yaitu 5 kali.",
+      "catatan": null
+    },
+    {
+      "id": "kelas7-b01-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 50,
+        "kutipan": "adalah faktor persekutuan yang nilainya terbesar di antara faktor-faktor persekutuan lainnya."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "FPB lalu hitung banyak potongan",
+      "alasan_level": "FPB menentukan panjang potongan, lalu dipakai lagi untuk menghitung banyak potongan",
+      "stimulus": null,
+      "pertanyaan": "Dua utas pita panjangnya 56 cm dan 98 cm. Kedua pita dipotong menjadi potongan-potongan sama panjang dengan ukuran bilangan bulat cm tanpa sisa, dan setiap potongan sepanjang mungkin. Banyak seluruh potongan pita adalah ....",
+      "jawaban_benar": "11",
+      "alasan_benar": "FPB(56, 98) = 14; 56 : 14 = 4 dan 98 : 14 = 7; total 11",
+      "distraktor": [
+        {
+          "teks": "14",
+          "alasan": "hanya menyebut FPB, bukan banyak potongan"
+        },
+        {
+          "teks": "28",
+          "alasan": "mengalikan 4 x 7, bukan menjumlahkan"
+        },
+        {
+          "teks": "22",
+          "alasan": "memakai panjang potongan 7 (faktor persekutuan bukan terbesar): 8 + 14"
+        }
+      ],
+      "pembahasan": "$56 = 2^3 \\times 7$ dan $98 = 2 \\times 7^2$, FPB = 14. Potongan: $56 : 14 = 4$ dan $98 : 14 = 7$, total 11.",
+      "catatan": null
+    }
+  ]
+}
