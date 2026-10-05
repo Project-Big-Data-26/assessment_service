@@ -1,0 +1,713 @@
+{
+ "book": "kelas11_tl",
+ "bab_no": 2,
+ "subbab": "C",
+ "level": "medium",
+ "batch": 1,
+ "skill_versi": "v1",
+ "soal": [
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-001",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 89,
+    "bagian": "Mari Berkolaborasi",
+    "nomor": "1",
+    "teks": "Gunakan metode Horner untuk membagi 2 x 3 – 5 x 2 + 4 x – 3 dengan 2 x – 1.",
+    "jawaban": "hasil bagi x^2 - 2x + 1, sisa -2"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "Horner pembagi ax - b",
+   "alasan_level": "mengubah pembagi $2x + 5$ menjadi $2(x - c)$, menjalankan Horner, lalu membagi hasil dengan $2$",
+   "stimulus": null,
+   "pertanyaan": "Gunakan metode Horner untuk membagi $6x^3 + 7x^2 - 6x + 29$ dengan $2x + 5$. Hasil bagi dan sisanya adalah ....",
+   "jawaban_benar": "hasil bagi $3x^2 - 4x + 7$, sisa $-6$",
+   "alasan_benar": "$2x + 5 = 2(x + \\frac{5}{2})$ sehingga $c = -\\frac{5}{2}$. Horner pada $6, 7, -6, 29$ memberi baris $6, -8, 14, -6$, yaitu $P = (x + \\frac{5}{2})(6x^2 - 8x + 14) - 6$. Karena $x + \\frac{5}{2} = \\frac{1}{2}(2x + 5)$, hasil bagi terhadap $2x + 5$ adalah $3x^2 - 4x + 7$ dan sisa tetap $-6$.",
+   "distraktor": [
+    {
+     "teks": "hasil bagi $6x^2 - 8x + 14$, sisa $-6$",
+     "alasan": "lupa membagi hasil bagi Horner dengan $2$ (koefisien $x$ pada pembagi)"
+    },
+    {
+     "teks": "hasil bagi $3x^2 - 4x + 7$, sisa $6$",
+     "alasan": "salah tanda pada sisa"
+    },
+    {
+     "teks": "hasil bagi $3x^2 - 4x + 7$, sisa $29$",
+     "alasan": "mengambil konstanta polinomial sebagai sisa tanpa Horner"
+    }
+   ],
+   "pembahasan": "$2x + 5 = 2(x - (-\\frac{5}{2}))$. Horner dengan $c = -\\frac{5}{2}$: $6, -8, 14, -6$. Hasil bagi terhadap $x - c$ adalah $6x^2 - 8x + 14$; terhadap $2x + 5$ dibagi $2$ menjadi $3x^2 - 4x + 7$; sisa $-6$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-002",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 90,
+    "bagian": "Mari Berkolaborasi",
+    "nomor": "2",
+    "teks": "Gunakan metode Horner untuk membagi x 4 – 10 x 2 – 5 x + 10 dengan ( x – 1) ( x – 3).",
+    "jawaban": "hasil bagi x^2 + 4x + 3, sisa -5x + 1"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "Horner dua kali (pembagi kuadrat terfaktor)",
+   "alasan_level": "dua kali Horner berurutan ($c = 6$ lalu $c = -7$) dan memilih hasil bagi akhir, bukan hasil antara",
+   "stimulus": null,
+   "pertanyaan": "Polinomial $P(x) = x^4 - 4x^3 - 39x^2 + 225x - 345$ dibagi $(x - 6)(x + 7)$ dengan metode Horner dua kali: pertama dibagi $x - 6$, lalu hasil baginya dibagi $x + 7$. Hasil bagi akhir pembagian $P(x)$ oleh $(x - 6)(x + 7)$ adalah ....",
+   "jawaban_benar": "$x^2 - 5x + 8$",
+   "alasan_benar": "Horner $c = 6$ memberi hasil bagi $x^3 + 2x^2 - 27x + 63$. Horner $c = -7$ pada hasil itu memberi hasil bagi $x^2 - 5x + 8$, itulah hasil bagi terhadap $(x - 6)(x + 7)$.",
+   "distraktor": [
+    {
+     "teks": "$x^3 + 2x^2 - 27x + 63$",
+     "alasan": "berhenti setelah Horner pertama: itu hasil bagi oleh $x - 6$ saja"
+    },
+    {
+     "teks": "$x^2 + 9x + 36$",
+     "alasan": "memakai $c = 7$ pada Horner kedua padahal pembagi $x + 7$ berarti $c = -7$"
+    },
+    {
+     "teks": "$7x - 9$",
+     "alasan": "mengambil sisa sebagai hasil bagi"
+    }
+   ],
+   "pembahasan": "Horner $c = 6$: koefisien baru [1, 2, -27, 63], sisa 33. Horner $c = -7$ pada [1, 2, -27, 63]: koefisien [1, -5, 8]. Hasil bagi akhir $x^2 - 5x + 8$ (cek: $(x-6)(x+7)(x^2 - 5x + 8) + 7x - 9 = P(x)$).",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-003",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 94,
+    "bagian": "Latihan C",
+    "nomor": "4",
+    "teks": "Misalkan P ( x ) = x 6 – x 4 + x 2 – 1 dan Q ( x ) = x 2 + 2 x – 1. Tentukan hasil bagi dan sisa pembagian P ( x ) oleh Q ( x ) dengan menggunakan pembagian bersusun",
+    "jawaban": "hasil bagi x^4 - 2x^3 + 4x^2 - 10x + 25, sisa -60x + 24"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "pembagian bersusun",
+   "alasan_level": "pembagian bersusun berpangkat loncat (suku $x^4$ dan $x^2$ tidak ada) sehingga harus disisipkan suku nol dan ada empat langkah pengurangan",
+   "stimulus": null,
+   "pertanyaan": "Misalkan $P(x) = x^5 - 8x^3 + 6x - 7$ dan $Q(x) = x^2 + 3x - 5$. Hasil bagi dan sisa pembagian $P(x)$ oleh $Q(x)$ dengan pembagian bersusun adalah ....",
+   "jawaban_benar": "$H(x) = x^3 - 3x^2 + 6x - 33$ dan $S(x) = 135x - 172$",
+   "alasan_benar": "Setelah menyisipkan suku nol, pembagian bersusun menghasilkan $H(x) = x^3 - 3x^2 + 6x - 33$ dan $S(x) = 135x - 172$.",
+   "distraktor": [
+    {
+     "teks": "$H(x) = x^3 + 3x^2 + 6x + 33$ dan $S(x) = 135x + 158$",
+     "alasan": "tanda suku $x$ pembagi terbalik ($x^2 - 3x - 5$)"
+    },
+    {
+     "teks": "$H(x) = x^3 - 3x^2 - 4x + 27$ dan $S(x) = -55x - 142$",
+     "alasan": "tanda konstanta pembagi terbalik ($x^2 + 3x + 5$)"
+    },
+    {
+     "teks": "$H(x) = x^3 + 3x^2 - 4x - 27$ dan $S(x) = -55x + 128$",
+     "alasan": "kedua tanda pembagi terbalik ($x^2 - 3x + 5$)"
+    }
+   ],
+   "pembahasan": "Tulis $P(x) = x^5 + 0x^4 - 8x^3 + 0x^2 + 6x - 7$ lalu bagi bersusun oleh $x^2 + 3x - 5$: $H(x) = x^3 - 3x^2 + 6x - 33$, $S(x) = 135x - 172$. Cek: $Q \\cdot H + S = P$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-004",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 94,
+    "bagian": "Latihan C",
+    "nomor": "8",
+    "teks": "Polinomial P ( x ) jika dibagi x – 2 sisanya –3, dan jika dibagi x + 3 sisanya –13. Tentukan sisa polinomial tersebut jika dibagi x 2 + x – 6.",
+    "jawaban": "2x - 7"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "sisa pembagi kuadrat dari dua syarat sisa",
+   "alasan_level": "menyusun $S(x) = ax + b$ dan dua persamaan dari Teorema Sisa, lalu menyelesaikan sistemnya",
+   "stimulus": null,
+   "pertanyaan": "Polinomial $P(x)$ jika dibagi $x - 6$ bersisa $31$, dan jika dibagi $x + 4$ bersisa $-9$. Sisa pembagian $P(x)$ oleh $x^2 - 2x - 24$ adalah ....",
+   "jawaban_benar": "$4x + 7$",
+   "alasan_benar": "Karena $x^2 - 2x - 24 = (x - 6)(x + 4)$, sisanya $S(x) = ax + b$. Teorema Sisa: $P(6) = 6a + b = 31$ dan $P(-4) = -4a + b = -9$. Pengurangan memberi $10a = 40$, $a = 4$, $b = 7$.",
+   "distraktor": [
+    {
+     "teks": "$20x - 89$",
+     "alasan": "memakai $P(4) = -9$ (salah tanda pembuat nol $x + 4$)"
+    },
+    {
+     "teks": "$-4x + 15$",
+     "alasan": "dua nilai sisa tertukar saat disubstitusikan"
+    },
+    {
+     "teks": "$4x - 7$",
+     "alasan": "benar $a = 4$ tetapi salah tanda saat mencari $b$ ($b = 31 - 24$)"
+    }
+   ],
+   "pembahasan": "$S(x) = ax + b$. $6a + b = 31$ dan $-4a + b = -9$ sehingga $a = 4$, $b = 7$. Jadi $S(x) = 4x + 7$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-005",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas11_tl-b02-p0094-latihan-c-7"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "Teorema Sisa dengan Horner (nilai pecahan)",
+   "alasan_level": "Horner empat langkah dengan $c$ pecahan negatif dan koefisien nol di tengah, hasil akhir = $P(c)$",
+   "stimulus": null,
+   "pertanyaan": "Misalkan $P(x) = 16x^4 + 8x^3 - 18x^2 + 7x - 13$ dan $c = -\\frac{1}{2}$. Dengan metode Horner dan Teorema Sisa, nilai $P(c)$ adalah ....",
+   "jawaban_benar": "$-21$",
+   "alasan_benar": "Horner $c = -\\frac{1}{2}$: $16$; $8 - 8 = 0$; $-18 + 0 = -18$; $7 + 9 = 16$; $-13 - 8 = -21$. Sisa terakhir $-21 = P(-\\frac{1}{2})$.",
+   "distraktor": [
+    {
+     "teks": "$-12$",
+     "alasan": "mensubstitusi $c = \\frac{1}{2}$ (salah tanda)"
+    },
+    {
+     "teks": "$93$",
+     "alasan": "mensubstitusi $c = -2$ (pecahan dibalik)"
+    },
+    {
+     "teks": "$-8$",
+     "alasan": "berhenti sebelum menjumlahkan konstanta terakhir $-13$"
+    }
+   ],
+   "pembahasan": "Horner dengan $c = -\\frac{1}{2}$ memberi baris $16, 0, -18, 16, -21$. Maka $P(-\\frac{1}{2}) = -21$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-006",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 92,
+    "bagian": "Mari Mencoba 2.9",
+    "nomor": "2.9",
+    "teks": "Jika P ( x ) = 3 x 5 – 20 x 4 – 6 x 3 – 48 x – 8 dibagi dengan x – 7, tentukan hasil bagi dan sisanya. Gunakan Teorema Sisa untuk mencari nilai P (7).",
+    "jawaban": "sisa 6; P(7) = 6"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "Teorema Sisa dengan Horner (hasil bagi dan P(c))",
+   "alasan_level": "Horner lengkap pada polinomial berderajat 4 dengan $c$ negatif, lalu mengaitkan sisa dengan $P(c)$",
+   "stimulus": null,
+   "pertanyaan": "Jika $P(x) = 7x^4 + 15x^3 - 9x^2 + 6x - 11$ dibagi dengan $x + 2$, hasil bagi dan nilai $P(-2)$ yang diperoleh dengan Teorema Sisa berturut-turut adalah ....",
+   "jawaban_benar": "$7x^3 + x^2 - 11x + 28$ dan $-67$",
+   "alasan_benar": "$x + 2 = x - (-2)$. Horner $c = -2$: $7, 1, -11, 28, -67$. Hasil bagi $7x^3 + x^2 - 11x + 28$, sisa $-67 = P(-2)$.",
+   "distraktor": [
+    {
+     "teks": "$7x^3 + 29x^2 + 49x + 104$ dan $197$",
+     "alasan": "memakai $c = 2$ padahal pembagi $x + 2$ berarti $c = -2$"
+    },
+    {
+     "teks": "$7x^3 + x^2 - 11x + 28$ dan $67$",
+     "alasan": "salah tanda pada sisa/nilai $P(-2)$"
+    },
+    {
+     "teks": "$7x^3 + x^2 - 11x + 28$ dan $28$",
+     "alasan": "mengambil konstanta hasil bagi sebagai nilai $P(-2)$"
+    }
+   ],
+   "pembahasan": "Horner $c = -2$ pada $7, 15, -9, 6, -11$: $7, 1, -11, 28, -67$. Hasil bagi $7x^3 + x^2 - 11x + 28$ dan sisa $-67$, sehingga $P(-2) = -67$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-007",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 86,
+    "bagian": "Contoh 2.7",
+    "nomor": "2.7",
+    "teks": "Bagilah 4 x 4 + 17 x 3 – 3 x + 1 dengan x 2 + 4 x – 1. Tuliskan hasilnya ke dalam bentuk-bentuk algoritma pembagian.",
+    "jawaban": "4x^4 + 17x^3 - 3x + 1 = (x^2 + 4x - 1)(4x^2 + x) - 2x + 1"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "pembagian bersusun",
+   "alasan_level": "pembagian bersusun berderajat 4 dengan suku $x^2$ yang hilang (disisipkan nol) dan penulisan hasil dalam bentuk $P = Q \\cdot H + S$",
+   "stimulus": null,
+   "pertanyaan": "Bagilah $5x^4 - 6x^3 + 8x - 9$ dengan $x^2 + 3x - 7$. Hasil pembagian yang ditulis dalam bentuk algoritma pembagian adalah ....",
+   "jawaban_benar": "$5x^4 - 6x^3 + 8x - 9 = (x^2 + 3x - 7)(5x^2 - 21x + 98) - 433x + 677$",
+   "alasan_benar": "Setelah menyisipkan $0x^2$, pembagian bersusun menghasilkan $H(x) = 5x^2 - 21x + 98$ dan $S(x) = -433x + 677$ sehingga $P = Q \\cdot H + S$.",
+   "distraktor": [
+    {
+     "teks": "$5x^4 - 6x^3 + 8x - 9 = (x^2 - 3x - 7)(5x^2 + 9x + 62) + 257x + 425$",
+     "alasan": "tanda suku $x$ pembagi terbalik ($x^2 - 3x - 7$)"
+    },
+    {
+     "teks": "$5x^4 - 6x^3 + 8x - 9 = (x^2 + 3x + 7)(5x^2 - 21x + 28) + 71x - 205$",
+     "alasan": "tanda konstanta pembagi terbalik ($x^2 + 3x + 7$)"
+    },
+    {
+     "teks": "$5x^4 - 6x^3 + 8x - 9 = (x^2 - 3x + 7)(5x^2 + 9x - 8) - 79x + 47$",
+     "alasan": "kedua tanda pembagi terbalik ($x^2 - 3x + 7$)"
+    }
+   ],
+   "pembahasan": "Bagi bersusun $5x^4 - 6x^3 + 0x^2 + 8x - 9$ oleh $x^2 + 3x - 7$: $H = 5x^2 - 21x + 98$, $S = -433x + 677$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-008",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 88,
+    "bagian": "Contoh 2.8",
+    "nomor": "2.8",
+    "teks": "Gunakan metode Horner untuk membagi 2 x 3 + 5 x 2 + 6 dengan x + 3.",
+    "jawaban": "hasil bagi 2x^2 - x + 3, sisa -3"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "Horner: hasil bagi dan sisa",
+   "alasan_level": "Horner berderajat 4 dengan dua koefisien nol ($x^3$ dan $x$) dan $c = -2$",
+   "stimulus": null,
+   "pertanyaan": "Gunakan metode Horner untuk membagi $3x^4 + 7x^2 - 8$ dengan $x + 2$. Hasil baginya adalah ....",
+   "jawaban_benar": "$3x^3 - 6x^2 + 19x - 38$",
+   "alasan_benar": "Koefisien $3, 0, 7, 0, -8$ dengan $c = -2$ menghasilkan baris $3, -6, 19, -38, 68$. Empat angka pertama adalah koefisien hasil bagi, $68$ sisanya.",
+   "distraktor": [
+    {
+     "teks": "$3x^3 + 6x^2 + 19x + 38$",
+     "alasan": "memakai $c = 2$ padahal pembagi $x + 2$ berarti $c = -2$"
+    },
+    {
+     "teks": "$3x^2 - 6x + 19$",
+     "alasan": "lupa koefisien nol untuk $x$ sehingga hanya empat koefisien ($3, 0, 7, -8$) dihitung"
+    },
+    {
+     "teks": "$3x^3 - 6x^2 + 19x + 68$",
+     "alasan": "mengambil sisa $68$ sebagai suku konstan hasil bagi"
+    }
+   ],
+   "pembahasan": "Baris Horner: $3$; $0 - 6 = -6$; $7 + 12 = 19$; $0 - 38 = -38$; $-8 + 76 = 68$. Hasil bagi $3x^3 - 6x^2 + 19x - 38$, sisa $68$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-009",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 87,
+    "bagian": "Mari Berpikir Kreatif",
+    "nomor": "1",
+    "teks": "Tentukan hasil bagi dan sisa pembagian ( x 3 – 1) : ( x – 1).",
+    "jawaban": "hasil bagi x^2 + x + 1, sisa 0"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "Horner: hasil bagi dan sisa",
+   "alasan_level": "Horner lima koefisien dengan empat koefisien nol, sisa tidak nol",
+   "stimulus": null,
+   "pertanyaan": "Hasil bagi dan sisa pembagian $(x^5 - 7) : (x - 2)$ adalah ....",
+   "jawaban_benar": "hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $25$",
+   "alasan_benar": "Koefisien $1, 0, 0, 0, 0, -7$ dengan $c = 2$ memberi baris $1, 2, 4, 8, 16, 25$. Lima angka pertama hasil bagi, angka terakhir sisa.",
+   "distraktor": [
+    {
+     "teks": "hasil bagi $x^4 - 2x^3 + 4x^2 - 8x + 16$, sisa $-39$",
+     "alasan": "memakai $c = -2$ padahal pembagi $x - 2$ berarti $c = 2$"
+    },
+    {
+     "teks": "hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $16$",
+     "alasan": "mengambil koefisien terakhir hasil bagi sebagai sisa"
+    },
+    {
+     "teks": "hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $-7$",
+     "alasan": "mengira konstanta polinomial menjadi sisa tanpa dihitung"
+    }
+   ],
+   "pembahasan": "Horner $c = 2$: $1, 2, 4, 8, 16, 25$. Hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $25$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-010",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 92,
+    "kutipan": "juga berlaku jika pembaginya"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "Teorema Sisa pembagi ax - b",
+   "alasan_level": "menyadari pembuat nol $2x + 3$ adalah $x = -\\frac{3}{2}$ lalu mensubstitusikan pada polinomial kubik",
+   "stimulus": null,
+   "pertanyaan": "Sisa pembagian $P(x) = 8x^3 + 10x^2 - 5x + 7$ oleh $2x + 3$ adalah ....",
+   "jawaban_benar": "$10$",
+   "alasan_benar": "Pembuat nol $2x + 3$ adalah $x = -\\frac{3}{2}$, sehingga sisa $= P(-\\frac{3}{2}) = -27 + \\frac{45}{2} + \\frac{15}{2} + 7 = 10$.",
+   "distraktor": [
+    {
+     "teks": "$49$",
+     "alasan": "mensubstitusi $x = \\frac{3}{2}$ (salah tanda pembuat nol)"
+    },
+    {
+     "teks": "$-104$",
+     "alasan": "mensubstitusi $x = -3$ tanpa membagi dengan koefisien $2$"
+    },
+    {
+     "teks": "$298$",
+     "alasan": "mensubstitusi $x = 3$ (salah tanda dan tidak dibagi $2$)"
+    }
+   ],
+   "pembahasan": "$2x + 3 = 0$ memberi $x = -\\frac{3}{2}$. $P(-\\frac{3}{2}) = 8(-\\frac{27}{8}) + 10(\\frac{9}{4}) - 5(-\\frac{3}{2}) + 7 = -27 + 22,5 + 7,5 + 7 = 10$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-011",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 91,
+    "kutipan": "selalu sama dengan nilai"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "parameter Teorema Sisa (satu syarat)",
+   "alasan_level": "membentuk persamaan $P(-2) = 25$ dari Teorema Sisa lalu menyelesaikannya untuk $k$",
+   "stimulus": null,
+   "pertanyaan": "Polinomial $P(x) = 2x^3 + kx^2 - 5x + 7$ jika dibagi $x + 2$ bersisa $25$. Nilai $k$ yang memenuhi adalah ....",
+   "jawaban_benar": "$6$",
+   "alasan_benar": "Teorema Sisa: $P(-2) = 2(-8) + 4k + 10 + 7 = 4k + 1 = 25$, sehingga $k = 6$.",
+   "distraktor": [
+    {
+     "teks": "$3$",
+     "alasan": "mensubstitusi $x = 2$ padahal pembagi $x + 2$ berarti $x = -2$"
+    },
+    {
+     "teks": "$12$",
+     "alasan": "menghitung $kx^2$ di $x = -2$ sebagai $2k$ (lupa mengkuadratkan)"
+    },
+    {
+     "teks": "$11$",
+     "alasan": "salah tanda pada suku $-5x$: $-5(-2)$ dihitung $-10$"
+    }
+   ],
+   "pembahasan": "$P(-2) = -16 + 4k + 10 + 7 = 4k + 1$. Dari $4k + 1 = 25$ diperoleh $k = 6$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-012",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 91,
+    "kutipan": "Untuk mengetahui penggunaan Teorema Sisa"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "parameter Teorema Sisa (dua syarat)",
+   "alasan_level": "dua persamaan dari Teorema Sisa dengan pembuat nol berbeda tanda lalu menyelesaikan sistem dua variabel",
+   "stimulus": null,
+   "pertanyaan": "Polinomial $P(x) = x^3 + ax^2 + bx - 8$ jika dibagi $x - 2$ bersisa $2$ dan jika dibagi $x + 3$ bersisa $7$. Nilai $a \\cdot b$ adalah ....",
+   "jawaban_benar": "$-15$",
+   "alasan_benar": "$P(2) = 4a + 2b = 2$ atau $2a + b = 1$. $P(-3) = -35 + 9a - 3b = 7$ atau $3a - b = 14$. Penjumlahan: $5a = 15$, $a = 3$, $b = -5$, sehingga $ab = -15$.",
+   "distraktor": [
+    {
+     "teks": "$-55$",
+     "alasan": "memakai $x = 3$ untuk pembagi $x + 3$ sehingga $a = -5$, $b = 11$"
+    },
+    {
+     "teks": "$-2$",
+     "alasan": "menghitung $a + b$, bukan $a \\cdot b$"
+    },
+    {
+     "teks": "$8$",
+     "alasan": "menghitung $a - b$, bukan $a \\cdot b$"
+    }
+   ],
+   "pembahasan": "$P(2) = 8 + 4a + 2b - 8 = 2$ sehingga $2a + b = 1$. $P(-3) = -27 + 9a - 3b - 8 = 7$ sehingga $3a - b = 14$. Maka $a = 3$, $b = -5$, $ab = -15$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-013",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 89,
+    "kutipan": "dapat menuliskannya menjadi bentuk berikut"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "menyusun polinomial dari hasil pembagian",
+   "alasan_level": "menyusun $P = (x - c) \\cdot H + S$ dengan pembagi $x + 2$, menjabarkan, lalu menambah sisa",
+   "stimulus": null,
+   "pertanyaan": "Pembagian polinomial $P(x)$ oleh $x + 2$ dengan metode Horner menghasilkan hasil bagi $2x^2 - 3x + 5$ dan sisa $4$. Polinomial $P(x)$ adalah ....",
+   "jawaban_benar": "$2x^3 + x^2 - x + 14$",
+   "alasan_benar": "$P(x) = (x + 2)(2x^2 - 3x + 5) + 4 = 2x^3 + x^2 - x + 10 + 4 = 2x^3 + x^2 - x + 14$.",
+   "distraktor": [
+    {
+     "teks": "$2x^3 + x^2 - x + 10$",
+     "alasan": "lupa menambahkan sisa $4$"
+    },
+    {
+     "teks": "$2x^3 - 7x^2 + 11x - 6$",
+     "alasan": "memakai pembagi $x - 2$ padahal pembagi sebenarnya $x + 2$"
+    },
+    {
+     "teks": "$2x^3 + x^2 - x + 6$",
+     "alasan": "mengurangkan sisa, bukan menambahkan"
+    }
+   ],
+   "pembahasan": "$(x + 2)(2x^2 - 3x + 5) = 2x^3 + x^2 - x + 10$. Tambah sisa $4$: $2x^3 + x^2 - x + 14$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-014",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 93,
+    "kutipan": "derajat sisa pembagiannya selalu kurang dari derajat"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "konsep derajat hasil bagi dan sisa",
+   "alasan_level": "menurunkan derajat pembagi dari derajat $P$ dan hasil bagi, lalu menyimpulkan batas derajat sisa",
+   "stimulus": null,
+   "pertanyaan": "Polinomial $P(x)$ berderajat $11$ dibagi $Q(x)$ sehingga hasil baginya berderajat $7$. Pernyataan yang benar adalah ....",
+   "jawaban_benar": "$Q(x)$ berderajat $4$ dan sisa paling tinggi berderajat $3$",
+   "alasan_benar": "Derajat $P$ = derajat $Q$ + derajat hasil bagi, sehingga derajat $Q = 11 - 7 = 4$. Sisa berderajat kurang dari $4$, yaitu paling tinggi $3$.",
+   "distraktor": [
+    {
+     "teks": "$Q(x)$ berderajat $4$ dan sisa paling tinggi berderajat $4$",
+     "alasan": "mengira sisa boleh berderajat sama dengan pembagi"
+    },
+    {
+     "teks": "$Q(x)$ berderajat $18$ dan sisa paling tinggi berderajat $17$",
+     "alasan": "menjumlahkan derajat, bukan mengurangkan"
+    },
+    {
+     "teks": "$Q(x)$ berderajat $5$ dan sisa paling tinggi berderajat $4$",
+     "alasan": "salah hitung derajat pembagi ($11 - 7 + 1$)"
+    }
+   ],
+   "pembahasan": "$11 = \\deg Q + 7$ sehingga $\\deg Q = 4$. Sisa nol atau berderajat kurang dari $4$, jadi paling tinggi $3$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-015",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 86,
+    "kutipan": "Proses pembagian tersebut menyisakan polinomial"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "bentuk algoritma pembagian",
+   "alasan_level": "menjabarkan $Q \\cdot H$ lalu mengurangkannya dari $P$ untuk mendapat sisa, tiga langkah aljabar",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $P(x) = 2x^3 - 5x^2 + 9x - 4$ dibagi $Q(x) = x^2 + 2x - 3$ dengan hasil bagi $H(x) = 2x - 9$. Sisa pembagian tersebut adalah ....",
+   "jawaban_benar": "$33x - 31$",
+   "alasan_benar": "$Q \\cdot H = 2x^3 - 5x^2 - 24x + 27$. Sisa $S = P - Q \\cdot H = (9 + 24)x + (-4 - 27) = 33x - 31$.",
+   "distraktor": [
+    {
+     "teks": "$33x + 23$",
+     "alasan": "salah tanda saat mengurangkan konstanta ($-4 + 27$)"
+    },
+    {
+     "teks": "$-15x - 31$",
+     "alasan": "salah tanda saat mengurangkan suku $x$ ($9 - 24$)"
+    },
+    {
+     "teks": "$-33x + 31$",
+     "alasan": "mengurangkan terbalik: $Q \\cdot H - P$"
+    }
+   ],
+   "pembahasan": "$Q \\cdot H = 2x^3 + 4x^2 - 6x - 9x^2 - 18x + 27 = 2x^3 - 5x^2 - 24x + 27$. $S = P - QH = 33x - 31$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-016",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 88,
+    "kutipan": "Dalam metode Horner, jika polinomial pembaginya"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "analisis kesalahan Horner",
+   "alasan_level": "menemukan kesalahan pemilihan $c$ pada pekerjaan yang diberikan, lalu menghitung ulang dengan benar",
+   "stimulus": null,
+   "pertanyaan": "Dina membagi $x^3 + 5x - 3$ oleh $x + 2$ dengan metode Horner. Ia menuliskan koefisien $1, 0, 5, -3$ dan memakai $c = 2$, sehingga memperoleh baris $1, 2, 9, 15$ dan menyimpulkan sisanya $15$. Sisa pembagian yang benar adalah ....",
+   "jawaban_benar": "$-21$",
+   "alasan_benar": "Pembagi $x + 2 = x - (-2)$ sehingga $c = -2$ (kesalahan Dina). Horner: $1, -2, 9, -21$, sisa $-21$.",
+   "distraktor": [
+    {
+     "teks": "$15$",
+     "alasan": "mengikuti pekerjaan Dina yang memakai $c = 2$"
+    },
+    {
+     "teks": "$21$",
+     "alasan": "salah tanda pada sisa"
+    },
+    {
+     "teks": "$-9$",
+     "alasan": "menghilangkan koefisien nol $x^2$ sehingga hanya $1, 5, -3$ yang dihitung"
+    }
+   ],
+   "pembahasan": "Dengan $c = -2$: $1$; $0 + (-2)(1) = -2$; $5 + (-2)(-2) = 9$; $-3 + (-2)(9) = -21$. Sisa $-21$. Cek: $P(-2) = -8 - 10 - 3 = -21$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-017",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 86,
+    "kutipan": "yang derajatnya kurang dari polinomial pembagi"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "soal cerita pembagian polinomial",
+   "alasan_level": "memodelkan luas alas sebagai volume dibagi tinggi, membagi dengan Horner, lalu mensubstitusi nilai $x$",
+   "stimulus": null,
+   "pertanyaan": "Volume sebuah balok adalah $V(x) = x^3 + 4x^2 - 11x - 30$ cm$^3$ dan tingginya $(x - 3)$ cm. Jika $x = 6$, luas alas balok tersebut adalah .... cm$^2$.",
+   "jawaban_benar": "$88$",
+   "alasan_benar": "Luas alas $= V(x) : (x - 3)$. Horner $c = 3$ pada $1, 4, -11, -30$ memberi $1, 7, 10, 0$, sehingga luas alas $x^2 + 7x + 10$. Untuk $x = 6$: $36 + 42 + 10 = 88$.",
+   "distraktor": [
+    {
+     "teks": "$264$",
+     "alasan": "menghitung volume $V(6)$, bukan luas alas"
+    },
+    {
+     "teks": "$28$",
+     "alasan": "memakai $c = -3$ pada Horner sehingga luas alas menjadi $x^2 + x - 14$"
+    },
+    {
+     "teks": "$40$",
+     "alasan": "mensubstitusi $x = 3$ (pembuat nol tinggi) ke $x^2 + 7x + 10$"
+    }
+   ],
+   "pembahasan": "$V = (\\text{luas alas})(\\text{tinggi})$. Horner $c = 3$: $1, 7, 10, 0$; luas alas $x^2 + 7x + 10$. Di $x = 6$: $88$ cm$^2$ (cek $264 : 3 = 88$).",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-018",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 91,
+    "kutipan": "Berdasarkan Teorema Sisa, nilai"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "Teorema Sisa dari bentuk algoritma",
+   "alasan_level": "mengenali bahwa sisa terhadap pembagi yang berbeda ($x - 2$) harus dicari lewat $P(2)$, bukan dibaca dari bentuk algoritma",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $P(x) = (x + 4)(x^2 - 3x + 6) - 7$. Sisa pembagian $P(x)$ oleh $x - 2$ adalah ....",
+   "jawaban_benar": "$17$",
+   "alasan_benar": "Menurut Teorema Sisa, sisa $= P(2) = (6)(4 - 6 + 6) - 7 = 24 - 7 = 17$.",
+   "distraktor": [
+    {
+     "teks": "$-7$",
+     "alasan": "mengira sisa pembagian oleh $x - 2$ adalah suku konstan bentuk algoritma yang diberikan"
+    },
+    {
+     "teks": "$25$",
+     "alasan": "mensubstitusi $x = -2$ (salah tanda pembuat nol)"
+    },
+    {
+     "teks": "$24$",
+     "alasan": "lupa mengurangkan $7$ setelah mengalikan $(x + 4)$ dengan hasil bagi"
+    }
+   ],
+   "pembahasan": "$P(2) = (2 + 4)(4 - 6 + 6) - 7 = 6 \\cdot 4 - 7 = 17$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-019",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 86,
+    "kutipan": "agar suku-sukunya lengkap"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "pembagian bersusun",
+   "alasan_level": "pembagian bersusun oleh pembagi tanpa suku $x$ dengan suku $x^3$ yang hilang, tiga langkah pengurangan",
+   "stimulus": null,
+   "pertanyaan": "Hasil bagi dan sisa pembagian $x^4 - 3x^2 + 7x - 5$ oleh $x^2 - 2$ adalah ....",
+   "jawaban_benar": "$H(x) = x^2 - 1$ dan $S(x) = 7x - 7$",
+   "alasan_benar": "$x^2 \\cdot (x^2 - 2) = x^4 - 2x^2$ menyisakan $-x^2 + 7x - 5$ (dengan $0x^3$). $-1 \\cdot (x^2 - 2) = -x^2 + 2$ menyisakan $7x - 7$.",
+   "distraktor": [
+    {
+     "teks": "$H(x) = x^2 - 1$ dan $S(x) = 7x - 3$",
+     "alasan": "salah tanda saat mengurangkan konstanta ($-5 - 2$ dihitung $-5 + 2$)"
+    },
+    {
+     "teks": "$H(x) = x^2 - 1$ dan $S(x) = 7x - 5$",
+     "alasan": "lupa mengurangkan hasil kali $-1 \\cdot (-2)$ pada konstanta"
+    },
+    {
+     "teks": "$H(x) = 7x - 7$ dan $S(x) = x^2 - 1$",
+     "alasan": "hasil bagi dan sisa tertukar"
+    }
+   ],
+   "pembahasan": "Bentuk lengkap $x^4 + 0x^3 - 3x^2 + 7x - 5$. $H = x^2 - 1$, $S = 7x - 7$. Cek: $(x^2 - 2)(x^2 - 1) + 7x - 7 = x^4 - 3x^2 + 2 + 7x - 7$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-c-medium-bt01-020",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 89,
+    "kutipan": "menjumlahkan bilangan-bilangan dalam satu kolom"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "Horner: koefisien hasil bagi",
+   "alasan_level": "menjalankan Horner empat koefisien (satu bernilai nol) lalu memilih koefisien $x$ pada hasil bagi, bukan sisa",
+   "stimulus": null,
+   "pertanyaan": "Polinomial $3x^4 - 11x^3 + 9x - 8$ dibagi $x - 4$ dengan metode Horner. Koefisien $x$ pada hasil bagi adalah ....",
+   "jawaban_benar": "$4$",
+   "alasan_benar": "Koefisien $3, -11, 0, 9, -8$ dengan $c = 4$ memberi baris $3, 1, 4, 25, 92$. Hasil bagi $3x^3 + x^2 + 4x + 25$, sisa $92$. Koefisien $x$ adalah $4$.",
+   "distraktor": [
+    {
+     "teks": "$25$",
+     "alasan": "mengambil suku konstan hasil bagi"
+    },
+    {
+     "teks": "$92$",
+     "alasan": "mengambil sisa sebagai koefisien $x$"
+    },
+    {
+     "teks": "$1$",
+     "alasan": "mengambil koefisien $x^2$ pada hasil bagi"
+    }
+   ],
+   "pembahasan": "Horner $c = 4$: $3$; $-11 + 12 = 1$; $0 + 4 = 4$; $9 + 16 = 25$; $-8 + 100 = 92$. Hasil bagi $3x^3 + x^2 + 4x + 25$.",
+   "catatan": null
+  }
+ ]
+}

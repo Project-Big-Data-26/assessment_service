@@ -1,0 +1,420 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 5,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 228,
+        "kutipan": "Rotasi memiliki dua komponen penting, yakni pusat rotasi dan sudut rotasi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pasangan transformasi yang dapat dipertukarkan",
+      "alasan_level": "mengevaluasi empat pasangan transformasi terhadap klaim komutatif dengan mencari contoh penyangkal, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Dua transformasi $S$ dan $T$ disebut dapat dipertukarkan jika $S(T(P)) = T(S(P))$ untuk setiap titik $P$ pada bidang Kartesius. Pasangan transformasi berikut yang dapat dipertukarkan adalah ....",
+      "jawaban_benar": "Dilatasi berpusat di $O(0, 0)$ dengan faktor skala $3$ dan rotasi $90^\\circ$ terhadap titik pusat $O(0, 0)$",
+      "alasan_benar": "dilatasi berpusat di titik asal hanya memperbesar jarak dari $O$ dan rotasi berpusat di $O$ hanya memutar, sehingga $(x, y) \\to (-3y, 3x)$ untuk kedua urutan",
+      "distraktor": [
+        {
+          "teks": "Translasi oleh vektor $\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ dan rotasi $90^\\circ$ terhadap titik pusat $O(0, 0)$",
+          "alasan": "mengira translasi tidak terpengaruh urutan; padahal rotasi ikut memutar vektor pergeseran"
+        },
+        {
+          "teks": "Pencerminan terhadap garis $y = x$ dan pencerminan terhadap sumbu-$x$",
+          "alasan": "mengira dua pencerminan selalu boleh ditukar; padahal hasilnya $(y, -x)$ berbeda dengan $(-y, x)$"
+        },
+        {
+          "teks": "Translasi oleh vektor $\\begin{pmatrix} 2 \\\\ 0 \\end{pmatrix}$ dan dilatasi berpusat di $O(0, 0)$ dengan faktor skala $2$",
+          "alasan": "mengira translasi dan dilatasi sama-sama tidak mengubah arah sehingga boleh ditukar; padahal dilatasi ikut melipatkan vektor pergeseran"
+        }
+      ],
+      "pembahasan": "Dilatasi $D_{O,3}$ dan rotasi $\\rho_{O,90}$: $(x,y) \\to (3x, 3y) \\to (-3y, 3x)$ dan $(x,y) \\to (-y, x) \\to (-3y, 3x)$, sama. Pasangan lain punya contoh penyangkal, mis. translasi $(3,-2)$ dan rotasi $90^\\circ$ pada titik $(0,0)$ menghasilkan $(2,3)$ atau $(3,-2)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 231,
+        "kutipan": "Ingat bahwa translasi tidak mengubah bentuk dan orientasi dari objek geometris."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan langkah keliru pada rotasi berpusat sembarang",
+      "alasan_level": "mengevaluasi urutan langkah siswa dan menentukan letak kesalahan dengan membandingkan terhadap prosedur Sifat 5.3, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Dito diminta menentukan peta titik $P(1, 5)$ yang dirotasikan $270^\\circ$ berlawanan arah jarum jam terhadap titik pusat $C(-3, 2)$. Langkah Dito: (1) menggeser titik: $P - C = (4, 3)$; (2) memutar $(4, 3)$ sebesar $270^\\circ$ terhadap $O(0, 0)$ sehingga diperoleh $(3, -4)$; (3) menulis hasil akhir $P' = (3, -4)$. Kesalahan Dito terdapat pada ....",
+      "jawaban_benar": "langkah (3): hasil rotasi terhadap $O$ belum digeser kembali dengan menambahkan $C$",
+      "alasan_benar": "langkah (1) dan (2) benar; hasil akhir wajib ditambah $C$ lagi: $(3,-4) + (-3,2) = (0,-2)$",
+      "distraktor": [
+        {
+          "teks": "langkah (1): seharusnya titik digeser dengan $P + C$ karena pusat dipindahkan ke titik asal",
+          "alasan": "mengira menggeser pusat ke titik asal berarti menambah $C$"
+        },
+        {
+          "teks": "langkah (2): rotasi $270^\\circ$ memetakan $(x, y)$ ke $(-y, x)$ sehingga hasilnya $(-3, 4)$",
+          "alasan": "tertukar dengan rumus rotasi $90^\\circ$"
+        },
+        {
+          "teks": "langkah (3): hasil akhir seharusnya dikurangi $C$, yaitu $(3, -4) - (-3, 2)$",
+          "alasan": "salah arah menggeser kembali (mengurangi, bukan menambah $C$)"
+        }
+      ],
+      "pembahasan": "Rotasi berpusat $C$: geser $P - C = (4,3)$, putar $270^\\circ$ terhadap $O$: $(y,-x) = (3,-4)$, lalu geser balik $+C$: $(0,-2)$. Dito berhenti sebelum langkah terakhir.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 218,
+        "kutipan": "bayangan dari titik yang terletak pada garis refleksi adalah dirinya sendiri"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "transformasi tunggal pengganti dua pencerminan sejajar",
+      "alasan_level": "merancang/menyimpulkan transformasi tunggal dari komposisi dua pencerminan dan memeriksa urutan, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Sebuah titik dicerminkan terhadap garis $x = 2$, kemudian bayangannya dicerminkan terhadap garis $x = 7$. Komposisi dua pencerminan tersebut ekuivalen dengan satu transformasi tunggal berupa ....",
+      "jawaban_benar": "translasi oleh vektor $\\begin{pmatrix} 10 \\\\ 0 \\end{pmatrix}$",
+      "alasan_benar": "$(x, y) \\to (4 - x, y) \\to (14 - (4 - x), y) = (x + 10, y)$",
+      "distraktor": [
+        {
+          "teks": "translasi oleh vektor $\\begin{pmatrix} 5 \\\\ 0 \\end{pmatrix}$",
+          "alasan": "mengira pergeseran hanya sebesar jarak kedua garis"
+        },
+        {
+          "teks": "translasi oleh vektor $\\begin{pmatrix} -10 \\\\ 0 \\end{pmatrix}$",
+          "alasan": "membalik urutan pencerminan sehingga arah pergeseran terbalik"
+        },
+        {
+          "teks": "rotasi $180^\\circ$ terhadap titik $\\left(\\frac{9}{2}, 0\\right)$",
+          "alasan": "mengira dua pencerminan selalu menghasilkan rotasi, padahal garis sejajar"
+        }
+      ],
+      "pembahasan": "Pencerminan terhadap $x = a$: $(x,y) \\to (2a - x, y)$. Pertama $(4-x, y)$, kedua $(14 - 4 + x, y) = (x+10, y)$, yaitu translasi sebesar $2(7-2) = 10$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 218,
+        "kutipan": "bayangan dari titik yang terletak pada garis refleksi adalah dirinya sendiri"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "transformasi tunggal pengganti dua pencerminan berpotongan",
+      "alasan_level": "menyimpulkan jenis dan arah transformasi tunggal dari komposisi dua pencerminan berpotongan dan memeriksa urutan, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Titik $(x, y)$ dicerminkan terhadap garis $y = -x$, kemudian bayangannya dicerminkan terhadap sumbu-$y$. Komposisi tersebut ekuivalen dengan ....",
+      "jawaban_benar": "rotasi $270^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$",
+      "alasan_benar": "$(x, y) \\to (-y, -x) \\to (y, -x)$, yaitu rotasi $270^\\circ$ terhadap $O$",
+      "distraktor": [
+        {
+          "teks": "rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$",
+          "alasan": "membalik urutan pencerminan sehingga arah rotasi terbalik"
+        },
+        {
+          "teks": "rotasi $180^\\circ$ terhadap titik pusat $O(0, 0)$",
+          "alasan": "mengira dua pencerminan yang saling tegak lurus; padahal kedua garis membentuk sudut $45^\\circ$"
+        },
+        {
+          "teks": "pencerminan terhadap garis $y = x$",
+          "alasan": "mengira dua pencerminan menghasilkan satu pencerminan lain"
+        }
+      ],
+      "pembahasan": "Pencerminan terhadap $y=-x$: $(x,y)\\to(-y,-x)$. Pencerminan terhadap sumbu-$y$: $(a,b)\\to(-a,b)$ sehingga $(y,-x)$. Rumus Sifat 5.2 untuk $270^\\circ$: $(x\\cos 270^\\circ - y\\sin 270^\\circ, x\\sin 270^\\circ + y\\cos 270^\\circ) = (y, -x)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 235,
+        "kutipan": "Jika kita ingin menemukan rumus dilatasi untuk titik pusat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "transformasi tunggal pengganti dua dilatasi berpusat beda",
+      "alasan_level": "menalar bahwa faktor skala yang saling berkebalikan menghasilkan translasi dan menentukan vektornya, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Titik didilatasikan dengan pusat $A(1, -2)$ dan faktor skala $3$, kemudian bayangannya didilatasikan dengan pusat $B(10, 4)$ dan faktor skala $\\frac{1}{3}$. Komposisi tersebut ekuivalen dengan satu transformasi tunggal berupa ....",
+      "jawaban_benar": "translasi oleh vektor $\\begin{pmatrix} 6 \\\\ 4 \\end{pmatrix}$",
+      "alasan_benar": "$x \\to 3x - 2A \\to \\frac{1}{3}(3x - 2A - B) + B = x + \\frac{2}{3}(B - A)$, sehingga vektor translasinya $\\frac{2}{3}(9, 6) = (6, 4)$",
+      "distraktor": [
+        {
+          "teks": "translasi oleh vektor $\\begin{pmatrix} 18 \\\\ 12 \\end{pmatrix}$",
+          "alasan": "membalik urutan dilatasi"
+        },
+        {
+          "teks": "translasi oleh vektor $\\begin{pmatrix} 9 \\\\ 6 \\end{pmatrix}$",
+          "alasan": "menganggap vektor translasi sama dengan $\\overrightarrow{AB}$"
+        },
+        {
+          "teks": "translasi oleh vektor $\\begin{pmatrix} -6 \\\\ -4 \\end{pmatrix}$",
+          "alasan": "arah vektor terbalik ($A - B$ bukan $B - A$)"
+        }
+      ],
+      "pembahasan": "Faktor skala total $3 \\cdot \\frac13 = 1$, sehingga bentuknya translasi. Dengan $D_{C,k}(P) = C + k(P - C)$: $P_1 = A + 3(P-A)$, $P_2 = B + \\frac13(P_1 - B) = P + \\frac23(B-A)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 226,
+        "kutipan": "Transformasi ini tidak mengubah orientasi dan kekongruenan bentuk geometri."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi sifat luas dan orientasi hasil komposisi",
+      "alasan_level": "mengevaluasi akibat gabungan pencerminan (membalik orientasi), dilatasi negatif, dan rotasi pada luas dan orientasi, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(1, 1)$, $B(5, 1)$, dan $C(1, 4)$ (urutan $A \\to B \\to C$ berlawanan arah jarum jam) ditransformasi berturut-turut oleh pencerminan terhadap garis $y = x + 2$, dilatasi dengan pusat $(1, 1)$ dan faktor skala $-2$, lalu rotasi $90^\\circ$ terhadap $O(0, 0)$, menghasilkan segitiga $A'B'C'$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "luas $A'B'C'$ sama dengan $4$ kali luas $ABC$, dan urutan $A' \\to B' \\to C'$ searah jarum jam",
+      "alasan_benar": "dilatasi faktor $-2$ melipatkan luas $4$ kali, pencerminan membalik orientasi satu kali, dilatasi negatif dan rotasi tidak membalik orientasi",
+      "distraktor": [
+        {
+          "teks": "luas $A'B'C'$ sama dengan $4$ kali luas $ABC$, dan urutan $A' \\to B' \\to C'$ berlawanan arah jarum jam",
+          "alasan": "mengira dilatasi negatif atau rotasi mengubah orientasi dan melupakan pencerminan yang membaliknya"
+        },
+        {
+          "teks": "luas $A'B'C'$ sama dengan $2$ kali luas $ABC$, dan urutan $A' \\to B' \\to C'$ searah jarum jam",
+          "alasan": "mengira luas ikut berubah sebesar $|k|$ dan bukan $k^2$"
+        },
+        {
+          "teks": "luas $A'B'C'$ sama dengan luas $ABC$, dan urutan $A' \\to B' \\to C'$ searah jarum jam",
+          "alasan": "mengira semua transformasi mempertahankan luas"
+        }
+      ],
+      "pembahasan": "Luas $ABC$ = 6. Hasil perhitungan koordinat: luas $A'B'C'$ = 24 dan tanda luas bertanda berubah dari positif ke negatif, yaitu orientasi berbalik (searah jarum jam).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 235,
+        "kutipan": "Jika kita ingin menemukan rumus dilatasi untuk titik pusat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "invarian jarak pada komposisi transformasi",
+      "alasan_level": "menalar bahwa pencerminan, translasi, rotasi mempertahankan jarak dan hanya dilatasi yang mengalikan jarak dengan $|k|$, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Titik $A(1, 2)$ dan $B(13, 7)$ ditransformasi berturut-turut oleh pencerminan terhadap garis $2x - y - 1 = 0$, dilatasi dengan pusat $(2, 3)$ dan faktor skala $-3$, translasi oleh $\\begin{pmatrix} 4 \\\\ -5 \\end{pmatrix}$, rotasi $90^\\circ$ terhadap $O(0, 0)$, dan dilatasi dengan pusat $(-1, 1)$ dan faktor skala $\\frac{1}{2}$, menghasilkan $A'$ dan $B'$. Panjang $A'B'$ adalah ....",
+      "jawaban_benar": "$\\frac{39}{2}$",
+      "alasan_benar": "$AB = 13$; hanya dua dilatasi yang mengubah jarak, faktor totalnya $|-3| \\cdot \\frac{1}{2} = \\frac{3}{2}$",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "lupa dilatasi terakhir (hanya faktor $3$)"
+        },
+        {
+          "teks": "$\\frac{13}{2}$",
+          "alasan": "lupa dilatasi pertama dan hanya memakai faktor $\\frac{1}{2}$"
+        },
+        {
+          "teks": "$\\frac{13}{6}$",
+          "alasan": "membagi dengan faktor skala ($3$ lalu $2$) bukan mengalikan"
+        }
+      ],
+      "pembahasan": "$AB = \\sqrt{12^2 + 5^2} = 13$. Pencerminan, translasi, dan rotasi tidak mengubah jarak. Panjang akhir $= 13 \\cdot 3 \\cdot \\frac12 = \\frac{39}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 218,
+        "kutipan": "bayangan dari titik yang terletak pada garis refleksi adalah dirinya sendiri"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menemukan kesalahan urutan komposisi",
+      "alasan_level": "memeriksa urutan komposisi pencerminan dan translasi, menemukan kesalahan, dan menentukan hasil yang benar, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Soal: titik $P(3, -2)$ dicerminkan terhadap garis $y = x$, kemudian hasilnya ditranslasikan oleh $\\begin{pmatrix} 1 \\\\ 4 \\end{pmatrix}$. Sinta mengerjakan: $(3, -2) + (1, 4) = (4, 2)$, lalu dicerminkan terhadap $y = x$ menjadi $(2, 4)$. Pernyataan yang benar tentang pekerjaan Sinta adalah ....",
+      "jawaban_benar": "urutan transformasinya terbalik, dan hasil yang benar adalah $(-1, 7)$",
+      "alasan_benar": "pencerminan dilakukan dulu: $(3,-2) \\to (-2, 3)$, lalu translasi $(-2+1, 3+4) = (-1, 7)$",
+      "distraktor": [
+        {
+          "teks": "urutannya sudah benar karena urutan tidak memengaruhi hasil, sehingga $(2, 4)$ benar",
+          "alasan": "mengira komposisi pencerminan dan translasi selalu komutatif"
+        },
+        {
+          "teks": "urutan transformasinya terbalik, dan hasil yang benar adalah $(3, 1)$",
+          "alasan": "mencerminkan terhadap $y = -x$, bukan $y = x$"
+        },
+        {
+          "teks": "urutan transformasinya terbalik, dan hasil yang benar adalah $(-3, -1)$",
+          "alasan": "mengurangkan vektor translasi, bukan menambahkan"
+        }
+      ],
+      "pembahasan": "Pencerminan terhadap $y=x$ menukar koordinat: $(-2,3)$. Translasi: $(-1,7)$. Sinta menerjemahkan dulu, sehingga mendapat $(2,4)$ yang berbeda.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 218,
+        "kutipan": "bayangan dari titik yang terletak pada garis refleksi adalah dirinya sendiri"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak titik tetap pada komposisi dua transformasi",
+      "alasan_level": "membandingkan empat komposisi untuk menilai banyak titik tetapnya dengan mengidentifikasi transformasi tunggal pengganti, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Dalam setiap pilihan, transformasi pertama dilakukan lebih dulu. Komposisi yang memiliki tepat satu titik tetap (titik yang bayangannya adalah dirinya sendiri) adalah ....",
+      "jawaban_benar": "pencerminan terhadap garis $y = x$, kemudian pencerminan terhadap garis $x + y - 2 = 0$",
+      "alasan_benar": "komposisi pilihan pertama adalah rotasi $180^\\circ$ terhadap $(1, 1)$: $(x, y) \\to (2 - x, 2 - y)$, titik tetapnya hanya $(1, 1)$",
+      "distraktor": [
+        {
+          "teks": "pencerminan terhadap garis $x = 1$, kemudian pencerminan terhadap garis $x = 4$",
+          "alasan": "mengira dua pencerminan selalu menyisakan satu titik; padahal komposisinya translasi tanpa titik tetap"
+        },
+        {
+          "teks": "rotasi $90^\\circ$ terhadap $O(0, 0)$, kemudian rotasi $270^\\circ$ terhadap $O(0, 0)$",
+          "alasan": "mengira rotasi hanya punya satu titik tetap; padahal komposisinya identitas ($360^\\circ$) sehingga semua titik tetap"
+        },
+        {
+          "teks": "pencerminan terhadap garis $2x - y + 1 = 0$, dua kali berturut-turut",
+          "alasan": "mengira pencerminan dua kali sama dengan satu pencerminan; padahal hasilnya identitas sehingga semua titik tetap"
+        }
+      ],
+      "pembahasan": "$y=x$: $(x,y)\\to(y,x)$; $x+y-2=0$: $(a,b)\\to(2-b,2-a)$, sehingga $(2-x,2-y)$. Titik tetap: $x=1, y=1$. Pilihan lain: translasi $(6,0)$ (tanpa titik tetap) dan dua identitas.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 231,
+        "kutipan": "Ingat bahwa translasi tidak mengubah bentuk dan orientasi dari objek geometris."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menentukan pusat dan sudut rotasi dari dua pasang titik",
+      "alasan_level": "merancang rotasi dari dua pasang titik (sudut dari arah ruas, pusat dari kesamaan jarak) lalu menguji kandidat yang hanya cocok untuk satu titik, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Sebuah rotasi memetakan $A(1, 1)$ ke $A'(5, 3)$ dan $B(4, 1)$ ke $B'(5, 6)$. Pusat dan sudut rotasi tersebut adalah ....",
+      "jawaban_benar": "pusat $(2, 4)$ dan sudut $90^\\circ$ berlawanan arah jarum jam",
+      "alasan_benar": "vektor $\\overrightarrow{AB} = (3, 0)$ berubah menjadi $\\overrightarrow{A'B'} = (0, 3)$ sehingga sudutnya $90^\\circ$; pusat dari $A' = \\rho(A)$ adalah $(2, 4)$",
+      "distraktor": [
+        {
+          "teks": "pusat $(2, 4)$ dan sudut $270^\\circ$ berlawanan arah jarum jam",
+          "alasan": "salah arah: sudut $270^\\circ$ (searah jarum jam) tidak memetakan $\\overrightarrow{AB} = (3,0)$ ke $\\overrightarrow{A'B'} = (0,3)$"
+        },
+        {
+          "teks": "pusat $(4, 2)$ dan sudut $90^\\circ$ berlawanan arah jarum jam",
+          "alasan": "pusat tertukar absis dan ordinat"
+        },
+        {
+          "teks": "pusat $(3, 2)$ dan sudut $180^\\circ$ berlawanan arah jarum jam",
+          "alasan": "hanya memetakan $A$ ke $A'$ tetapi tidak memetakan $B$ ke $B'$"
+        }
+      ],
+      "pembahasan": "Sudut $90^\\circ$. Dari $A' = C + (-(A_y - C_y), A_x - C_x)$: $5 = 2\\cdot... $ diselesaikan menjadi $C = (2, 4)$. Uji: $B - C = (2,-3) \\to (3, 2)$, $+C = (5, 6) = B'$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 226,
+        "kutipan": "Transformasi ini tidak mengubah orientasi dan kekongruenan bentuk geometri."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mengevaluasi transformasi yang memetakan tiga titik",
+      "alasan_level": "menguji kandidat transformasi pada tiga titik dan menyadari bahwa dua titik belum cukup membedakan rotasi dari komposisi yang melibatkan pencerminan",
+      "stimulus": null,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(2, 1)$, $B(5, 1)$, dan $C(2, 3)$ dipetakan oleh suatu transformasi menjadi $A'(4, -1)$, $B'(4, 2)$, dan $C'(6, -1)$. Transformasi yang memetakan ketiga titik tersebut sekaligus adalah ....",
+      "jawaban_benar": "pencerminan terhadap garis $y = x$, kemudian translasi oleh $\\begin{pmatrix} 3 \\\\ -3 \\end{pmatrix}$",
+      "alasan_benar": "hanya komposisi yang membalik orientasi (pencerminan) yang memetakan ketiga titik, karena $ABC$ berlawanan arah jarum jam sedangkan $A'B'C'$ searah",
+      "distraktor": [
+        {
+          "teks": "rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $(4, 1)$",
+          "alasan": "memetakan $A$ dan $B$ dengan benar tetapi $C$ menjadi $(2, -1)$; dua titik saja tidak membedakan rotasi dari pencerminan"
+        },
+        {
+          "teks": "translasi oleh $\\begin{pmatrix} 2 \\\\ -2 \\end{pmatrix}$",
+          "alasan": "hanya cocok untuk $A$ ($A' - A$), tidak untuk $B$ dan $C$"
+        },
+        {
+          "teks": "rotasi $180^\\circ$ terhadap titik pusat $(3, 0)$",
+          "alasan": "titik tengah $AA'$ dipakai sebagai pusat; hanya cocok untuk $A$"
+        }
+      ],
+      "pembahasan": "Pencerminan $y=x$: $A\\to(1,2)$, $B\\to(1,5)$, $C\\to(3,2)$. Translasi $(3,-3)$: $(4,-1)$, $(4,2)$, $(6,-1)$. Sesuai.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 228,
+        "kutipan": "Rotasi memiliki dua komponen penting, yakni pusat rotasi dan sudut rotasi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mengevaluasi pernyataan tentang rotasi berdasarkan definisi",
+      "alasan_level": "mengevaluasi empat pernyataan tentang hubungan $C$, $P$, $P'$ dengan menerapkan definisi rotasi, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Titik $P(5, 2)$ dirotasikan $120^\\circ$ berlawanan arah jarum jam terhadap titik pusat $C(1, -1)$ sehingga menghasilkan $P'$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$C$ terletak pada garis sumbu ruas $PP'$",
+      "alasan_benar": "$CP = CP'$ (Definisi 5.3) sehingga $C$ berjarak sama dari $P$ dan $P'$, yaitu berada pada garis sumbu $PP'$",
+      "distraktor": [
+        {
+          "teks": "panjang $PP'$ sama dengan panjang $CP$",
+          "alasan": "hanya berlaku untuk sudut rotasi $60^\\circ$; untuk $120^\\circ$ panjang $PP' = \\sqrt{3}\\,CP$"
+        },
+        {
+          "teks": "titik $C$, $P$, dan $P'$ terletak pada satu garis lurus",
+          "alasan": "hanya berlaku bila sudut rotasi $180^\\circ$"
+        },
+        {
+          "teks": "panjang $PP'$ sama dengan $2 \\cdot CP$",
+          "alasan": "hanya berlaku untuk sudut rotasi $180^\\circ$"
+        }
+      ],
+      "pembahasan": "$CP = CP' = 5$ dan $PP' = 2 \\cdot 5 \\sin 60^\\circ = 5\\sqrt3$. Segitiga $CPP'$ sama kaki sehingga $C$ ada pada garis sumbunya; tiga titik tidak segaris karena sudut $120^\\circ$.",
+      "catatan": null
+    }
+  ],
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi subbab A (translasi, refleksi, rotasi, dilatasi) hanya menopang sekitar 12 soal hard yang benar-benar C5 tanpa menjadi soal hitung langsung atau kembar berangka beda; soal parameter dan hitung murni sudah dipakai di medium."
+}

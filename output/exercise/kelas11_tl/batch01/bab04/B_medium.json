@@ -1,0 +1,698 @@
+{
+ "book": "kelas11_tl",
+ "bab_no": 4,
+ "subbab": "B",
+ "level": "medium",
+ "batch": 1,
+ "skill_versi": "v1",
+ "soal": [
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-001",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "besar sudut dari komponen vektor",
+   "alasan_level": "tiga langkah: hasil kali titik, kedua panjang, lalu nilai cos negatif sudut istimewa",
+   "stimulus": null,
+   "pertanyaan": "Tentukan besar sudut di antara vektor $\\mathbf{u} = \\langle 6, -1\\rangle$ dan vektor $\\mathbf{v} = \\langle -5, 7\\rangle$.",
+   "jawaban_benar": "$\\frac{3\\pi}{4}$",
+   "alasan_benar": "u.v = -30 - 7 = -37; |u| = akar(37), |v| = akar(74); cos t = -37/(37 akar(2)) =-(1/2)akar(2), sehingga t = 3pi/4",
+   "distraktor": [
+    {
+     "teks": "$\\frac{\\pi}{4}$",
+     "alasan": "tanda negatif pada cos diabaikan"
+    },
+    {
+     "teks": "$\\frac{5\\pi}{6}$",
+     "alasan": "memakai cos(5pi/6) = -(1/2)akar(3) sebagai nilai -(1/2)akar(2)"
+    },
+    {
+     "teks": "$\\frac{2\\pi}{3}$",
+     "alasan": "memakai cos(2pi/3) = -1/2 sebagai nilai -(1/2)akar(2)"
+    }
+   ],
+   "pembahasan": "$\\mathbf{u}\\cdot\\mathbf{v}=6(-5)+(-1)(7)=-37$, $\\|\\mathbf{u}\\|=\\sqrt{37}$, $\\|\\mathbf{v}\\|=\\sqrt{74}$. $\\cos\\theta=\\frac{-37}{\\sqrt{37}\\sqrt{74}}=\\frac{-37}{37\\sqrt{2}}=-\\frac{\\sqrt{2}}{2}$, sehingga $\\theta=\\frac{3\\pi}{4}$.",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 197,
+    "bagian": "Mari Mencoba 4.9",
+    "nomor": "4.9",
+    "teks": "Tentukan besar sudut di antara vektor u = ⟨3, 1⟩ dan vektor v = ⟨2, 4⟩.",
+    "jawaban": "π/4"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-002",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "proyeksi skalar",
+   "alasan_level": "tiga langkah: hasil kali titik, panjang vektor pengarah, lalu pembagian dan rasionalisasi",
+   "stimulus": null,
+   "pertanyaan": "Diberikan vektor $\\mathbf{a} = -5\\mathbf{i} + 2\\mathbf{j}$ dan $\\mathbf{b} = 3\\mathbf{i} + 2\\mathbf{j}$. Proyeksi skalar $\\mathbf{a}$ ke $\\mathbf{b}$ adalah ....",
+   "jawaban_benar": "$-\\frac{11\\sqrt{13}}{13}$",
+   "alasan_benar": "a.b = -15 + 4 = -11; |b| = akar(13); komp = -11/akar(13) = -11 akar(13)/13",
+   "distraktor": [
+    {
+     "teks": "$\\frac{11\\sqrt{13}}{13}$",
+     "alasan": "tanda negatif hasil kali titik terlewat"
+    },
+    {
+     "teks": "$-11$",
+     "alasan": "lupa membagi dengan panjang b"
+    },
+    {
+     "teks": "$-\\frac{11}{13}$",
+     "alasan": "membagi dengan kuadrat panjang b (13), bukan panjangnya"
+    }
+   ],
+   "pembahasan": "$\\mathbf{a}\\cdot\\mathbf{b}=(-5)(3)+2(2)=-11$ dan $\\|\\mathbf{b}\\|=\\sqrt{13}$. $\\text{komp}_{\\mathbf{b}}\\mathbf{a}=\\frac{-11}{\\sqrt{13}}=-\\frac{11\\sqrt{13}}{13}$.",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 203,
+    "bagian": "Contoh 4.13",
+    "nomor": "4.13",
+    "teks": "Diberikan vektor a = –2 i + 6 j dan b = 2 i – j . Tentukan proyeksi skalar dan proyeksi vektor a ke b .",
+    "jawaban": "skalar -2 akar(5); vektor -4 i + 2 j"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-003",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "proyeksi skalar dan proyeksi vektor",
+   "alasan_level": "empat langkah: hasil kali titik, panjang vektor pengarah, proyeksi skalar, lalu proyeksi vektor",
+   "stimulus": null,
+   "pertanyaan": "Misalkan $\\mathbf{u} = \\langle 8, 1\\rangle$ dan $\\mathbf{v} = \\langle 4, 3\\rangle$. Proyeksi skalar dan proyeksi vektor $\\mathbf{u}$ ke $\\mathbf{v}$ berturut-turut adalah ....",
+   "jawaban_benar": "$7$ dan $\\langle \\frac{28}{5}, \\frac{21}{5}\\rangle$",
+   "alasan_benar": "u.v = 35, |v| = 5; skalar = 35/5 = 7; vektor = (35/25)<4,3> = <28/5, 21/5>",
+   "distraktor": [
+    {
+     "teks": "$7$ dan $\\langle 28, 21\\rangle$",
+     "alasan": "proyeksi vektor dihitung 7 x v (skalar dikalikan v, bukan vektor satuan)"
+    },
+    {
+     "teks": "$35$ dan $\\langle \\frac{28}{5}, \\frac{21}{5}\\rangle$",
+     "alasan": "proyeksi skalar tidak dibagi panjang v"
+    },
+    {
+     "teks": "$\\frac{7}{5}$ dan $\\langle \\frac{28}{25}, \\frac{21}{25}\\rangle$",
+     "alasan": "membagi dengan kuadrat panjang v untuk proyeksi skalar lalu dikalikan vektor satuan"
+    }
+   ],
+   "pembahasan": "$\\mathbf{u}\\cdot\\mathbf{v}=32+3=35$, $\\|\\mathbf{v}\\|=5$. $\\text{komp}_{\\mathbf{v}}\\mathbf{u}=\\frac{35}{5}=7$; $\\text{proy}_{\\mathbf{v}}\\mathbf{u}=7\\cdot\\frac{\\langle 4,3\\rangle}{5}=\\langle \\frac{28}{5},\\frac{21}{5}\\rangle$.",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 203,
+    "bagian": "Mari Mencoba 4.13",
+    "nomor": "4.13",
+    "teks": "Misalkan u = ⟨4, 2⟩ dan v = ⟨1, 1⟩. Carilah proyeksi skalar dan proyeksi vektor u ke v.",
+    "jawaban": "skalar 3 akar(2); vektor ⟨3, 3⟩"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-004",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "komponen gaya dari besar dan sudut",
+   "alasan_level": "tiga langkah: komponen horizontal F cos t, komponen vertikal F sin t, lalu tulis bentuk komponen",
+   "stimulus": null,
+   "pertanyaan": "Sebuah kereta mainan ditarik dengan gaya $\\mathbf{F}$ sebesar 14 N. Arah gaya ini membentuk sudut sebesar $\\frac{\\pi}{3}$ terhadap garis horizontal. Bentuk komponen vektor $\\mathbf{F}$ adalah ....",
+   "jawaban_benar": "$\\mathbf{F} = \\langle 7, 7\\sqrt{3}\\rangle$",
+   "alasan_benar": "Fx = 14 cos(pi/3) = 7; Fy = 14 sin(pi/3) = 7 akar(3)",
+   "distraktor": [
+    {
+     "teks": "$\\mathbf{F} = \\langle 7\\sqrt{3}, 7\\rangle$",
+     "alasan": "komponen horizontal dan vertikal tertukar (cos dan sin pi/3 tertukar)"
+    },
+    {
+     "teks": "$\\mathbf{F} = \\langle 7\\sqrt{2}, 7\\sqrt{2}\\rangle$",
+     "alasan": "memakai sudut 45 derajat untuk kedua komponen"
+    },
+    {
+     "teks": "$\\mathbf{F} = \\langle 14, 7\\sqrt{3}\\rangle$",
+     "alasan": "komponen horizontal tidak dikalikan cos pi/3"
+    }
+   ],
+   "pembahasan": "$F_x=14\\cos\\frac{\\pi}{3}=7$ dan $F_y=14\\sin\\frac{\\pi}{3}=7\\sqrt{3}$, sehingga $\\mathbf{F}=\\langle 7, 7\\sqrt{3}\\rangle$.",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 204,
+    "bagian": "Contoh 4.14",
+    "nomor": "4.14",
+    "teks": "Sebuah kereta mainan ditarik dengan gaya F sebesar 6 N. Arah gaya ini membentuk sudut sebesar π/6 terhadap garis horizontal. Nyatakan F ke dalam bentuk komponennya.",
+    "jawaban": "F = ⟨3 akar(3), 3⟩"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-005",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "besar sudut dari bentuk i dan j",
+   "alasan_level": "tiga langkah: hasil kali titik, kedua panjang, lalu nilai cos sudut istimewa",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\mathbf{a} = 4\\mathbf{i} + 4\\sqrt{3}\\mathbf{j}$ dan $\\mathbf{b} = 5\\sqrt{3}\\mathbf{i} + 5\\mathbf{j}$. Besar sudut yang diapit kedua vektor tersebut adalah ....",
+   "jawaban_benar": "$30^\\circ$",
+   "alasan_benar": "a.b = 40 akar(3), |a| = 8, |b| = 10, cos t = 40 akar(3)/80 =(1/2)akar(3), t = 30 derajat",
+   "distraktor": [
+    {
+     "teks": "$60^\\circ$",
+     "alasan": "tertukar: cos 60 derajat dianggap (1/2)akar(3)"
+    },
+    {
+     "teks": "$45^\\circ$",
+     "alasan": "memakai cos 45 derajat = (1/2)akar(2)"
+    },
+    {
+     "teks": "$150^\\circ$",
+     "alasan": "tanda hasil kali titik dibalik sehingga cos dianggap negatif"
+    }
+   ],
+   "pembahasan": "$\\mathbf{a}\\cdot\\mathbf{b}=20\\sqrt{3}+20\\sqrt{3}=40\\sqrt{3}$, $\\|\\mathbf{a}\\|=8$, $\\|\\mathbf{b}\\|=10$. $\\cos\\theta=\\frac{40\\sqrt{3}}{80}=\\frac{\\sqrt{3}}{2}$ sehingga $\\theta=30^\\circ$.",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 205,
+    "bagian": "Latihan B",
+    "nomor": "3",
+    "teks": "Diketahui a = 3 i + 2 j dan b = i – 3 j . Tentukan besar sudut yang diapit kedua vektor tersebut.",
+    "jawaban": "arccos(-3/akar(130)) (sudut tumpul, tidak istimewa)"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-006",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "usaha dari gaya dan arah mata angin",
+   "alasan_level": "tiga langkah: tentukan sudut 135 derajat antara utara dan tenggara, substitusi W = |F||D| cos t, nilai cos tumpul",
+   "stimulus": null,
+   "pertanyaan": "Sebuah kapal ditarik sejauh 80 m ke arah utara, sedangkan arus memberi gaya 200 N ke arah tenggara. Usaha yang dilakukan arus adalah ....",
+   "jawaban_benar": "$-8.000\\sqrt{2}$ J",
+   "alasan_benar": "sudut utara ke tenggara = 135 derajat; W = 80 x 200 x cos 135 derajat = -8.000 akar(2)",
+   "distraktor": [
+    {
+     "teks": "$8.000\\sqrt{2}$ J",
+     "alasan": "memakai sudut 45 derajat (tenggara dianggap searah timur laut)"
+    },
+    {
+     "teks": "$-16.000$ J",
+     "alasan": "memakai cos 180 derajat = -1 (arah berlawanan)"
+    },
+    {
+     "teks": "$-8.000\\sqrt{3}$ J",
+     "alasan": "memakai cos 150 derajat = -(1/2)akar(3) alih-alih cos 135 derajat"
+    }
+   ],
+   "pembahasan": "Utara dan tenggara membentuk sudut $135^\\circ$, sehingga $W=80\\cdot 200\\cdot\\cos 135^\\circ=16.000\\cdot\\left(-\\frac{\\sqrt{2}}{2}\\right)=-8.000\\sqrt{2}$ J.",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas11_tl-b04-p0206-latihan-b-8"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-007",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "proyeksi vektor",
+   "alasan_level": "tiga langkah: hasil kali titik, kuadrat panjang vektor pengarah, lalu kalikan dengan vektor pengarah",
+   "stimulus": null,
+   "pertanyaan": "Diberikan vektor $\\mathbf{a} = \\langle 8, 6\\rangle$ dan vektor $\\mathbf{b} = \\langle 9, -7\\rangle$. Proyeksi vektor $\\mathbf{b}$ ke $\\mathbf{a}$ adalah ....",
+   "jawaban_benar": "$\\langle \\frac{12}{5}, \\frac{9}{5}\\rangle$",
+   "alasan_benar": "a.b = 72 - 42 = 30; |a|^2 = 100; proy = (30/100)<8,6> = <12/5, 9/5>",
+   "distraktor": [
+    {
+     "teks": "$\\langle 24, 18\\rangle$",
+     "alasan": "proyeksi vektor dihitung (a.b) x a tanpa membagi kuadrat panjang a"
+    },
+    {
+     "teks": "$\\langle \\frac{24}{5}, \\frac{18}{5}\\rangle$",
+     "alasan": "membagi dengan panjang a (10), bukan kuadratnya"
+    },
+    {
+     "teks": "$\\langle \\frac{12}{5}, -\\frac{9}{5}\\rangle$",
+     "alasan": "komponen kedua ikut tanda negatif dari b"
+    }
+   ],
+   "pembahasan": "$\\mathbf{a}\\cdot\\mathbf{b}=72-42=30$, $\\|\\mathbf{a}\\|^2=100$. $\\text{proy}_{\\mathbf{a}}\\mathbf{b}=\\frac{30}{100}\\langle 8,6\\rangle=\\langle \\frac{12}{5},\\frac{9}{5}\\rangle$.",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 206,
+    "bagian": "Latihan B",
+    "nomor": "7",
+    "teks": "Diberikan vektor a = ⟨3, 4⟩ dan vektor b = ⟨11, −2⟩. Tentukan proyeksi vektor b ke a.",
+    "jawaban": "⟨3, 4⟩"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-008",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "parameter kuadrat dari syarat ortogonal",
+   "alasan_level": "tiga langkah: bentuk u.v = 0, susun persamaan kuadrat, faktorkan lalu pilih akar terbesar",
+   "stimulus": null,
+   "pertanyaan": "Diketahui vektor $\\mathbf{u} = \\langle k, 2\\rangle$ dan vektor $\\mathbf{v} = \\langle k+1, -6\\rangle$ dengan $k$ bilangan real. Jika vektor $\\mathbf{u}$ ortogonal terhadap vektor $\\mathbf{v}$, nilai $k$ terbesar yang mungkin adalah ....",
+   "jawaban_benar": "$3$",
+   "alasan_benar": "k(k+1) - 12 = 0 sehingga (k+4)(k-3) = 0; k = -4 atau k = 3, terbesar 3",
+   "distraktor": [
+    {
+     "teks": "$-4$",
+     "alasan": "mengambil akar terkecil, bukan terbesar"
+    },
+    {
+     "teks": "$4$",
+     "alasan": "salah tanda saat memfaktorkan (k-4)(k+3)"
+    },
+    {
+     "teks": "$12$",
+     "alasan": "mengambil konstanta persamaan sebagai nilai k"
+    }
+   ],
+   "pembahasan": "$\\mathbf{u}\\cdot\\mathbf{v}=k(k+1)+2(-6)=k^2+k-12=(k+4)(k-3)=0$, sehingga $k=-4$ atau $k=3$. Nilai terbesar adalah $3$.",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 199,
+    "bagian": "Contoh 4.12",
+    "nomor": "4.12",
+    "teks": "Diketahui vektor a = ⟨−2, 2⟩ dan vektor b = ⟨2, p⟩. Jika vektor a ortogonal terhadap vektor b, tentukan nilai p yang mungkin.",
+    "jawaban": "p = 2"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-009",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "sudut dari panjang jumlah dua vektor",
+   "alasan_level": "empat langkah: jabarkan |u+v|^2 dengan sifat distributif, cari u.v, hitung cos, tentukan sudut",
+   "stimulus": null,
+   "pertanyaan": "Vektor tak nol $\\mathbf{u}$ dan $\\mathbf{v}$ memiliki $\\|\\mathbf{u}\\| = 3$, $\\|\\mathbf{v}\\| = 5$, dan $\\|\\mathbf{u} + \\mathbf{v}\\| = 7$. Besar sudut di antara $\\mathbf{u}$ dan $\\mathbf{v}$ adalah ....",
+   "jawaban_benar": "$60^\\circ$",
+   "alasan_benar": "49 = 9 + 25 + 2 u.v sehingga u.v = 15/2; cos t = (15/2)/15 = 1/2, t = 60 derajat",
+   "distraktor": [
+    {
+     "teks": "$120^\\circ$",
+     "alasan": "tanda suku silang terbalik (49 = 9 + 25 - 2u.v) sehingga cos = -1/2"
+    },
+    {
+     "teks": "$30^\\circ$",
+     "alasan": "mengira cos t = 1/2 berarti t = 30 derajat"
+    },
+    {
+     "teks": "$0^\\circ$",
+     "alasan": "lupa faktor 2 pada suku silang: u.v = 15 sehingga cos = 1"
+    }
+   ],
+   "pembahasan": "$\\|\\mathbf{u}+\\mathbf{v}\\|^2=\\|\\mathbf{u}\\|^2+2\\,\\mathbf{u}\\cdot\\mathbf{v}+\\|\\mathbf{v}\\|^2$, jadi $49=9+25+2\\,\\mathbf{u}\\cdot\\mathbf{v}$ dan $\\mathbf{u}\\cdot\\mathbf{v}=\\frac{15}{2}$. $\\cos\\theta=\\frac{15/2}{15}=\\frac{1}{2}$, $\\theta=60^\\circ$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 196,
+    "kutipan": "Dengan menggunakan Aturan Kosinus, tentukan kuadrat panjang vektor u – v"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-010",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "panjang kombinasi dua vektor",
+   "alasan_level": "empat langkah: u.v dari panjang dan sudut, jabarkan |u+2v|^2, substitusi, tarik akar",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\|\\mathbf{u}\\| = 3$, $\\|\\mathbf{v}\\| = 5$, dan sudut di antara $\\mathbf{u}$ dan $\\mathbf{v}$ adalah $\\frac{2\\pi}{3}$. Panjang vektor $\\mathbf{u} + 2\\mathbf{v}$ adalah ....",
+   "jawaban_benar": "$\\sqrt{79}$",
+   "alasan_benar": "u.v = 15 cos(2pi/3) = -15/2; |u+2v|^2 = 9 + 4(-15/2) + 4(25) = 79",
+   "distraktor": [
+    {
+     "teks": "$\\sqrt{109}$",
+     "alasan": "suku silang 4 u.v terlewat"
+    },
+    {
+     "teks": "$\\sqrt{139}$",
+     "alasan": "memakai cos(2pi/3) = +1/2 sehingga suku silang bertanda positif"
+    },
+    {
+     "teks": "$13$",
+     "alasan": "menjumlahkan panjang 3 + 2(5) tanpa memperhatikan sudut"
+    }
+   ],
+   "pembahasan": "$\\mathbf{u}\\cdot\\mathbf{v}=3\\cdot 5\\cdot\\cos\\frac{2\\pi}{3}=-\\frac{15}{2}$. $\\|\\mathbf{u}+2\\mathbf{v}\\|^2=\\|\\mathbf{u}\\|^2+4\\,\\mathbf{u}\\cdot\\mathbf{v}+4\\|\\mathbf{v}\\|^2=9-30+100=79$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 197,
+    "kutipan": "Jika θ adalah besar sudut di antara vektor u dan vektor v"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-011",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "menjabarkan hasil kali titik dengan sifat",
+   "alasan_level": "empat langkah: jabarkan dengan sifat distributif, kuadratkan panjang, substitusi u.v, jumlahkan",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\|\\mathbf{u}\\| = 2$, $\\|\\mathbf{v}\\| = 3$, dan $\\mathbf{u} \\cdot \\mathbf{v} = -1$. Nilai $(2\\mathbf{u} - \\mathbf{v}) \\cdot (\\mathbf{u} + 3\\mathbf{v})$ adalah ....",
+   "jawaban_benar": "$-24$",
+   "alasan_benar": "2|u|^2 + 6 u.v - u.v - 3|v|^2 = 8 - 6 + 1 - 27 = -24",
+   "distraktor": [
+    {
+     "teks": "$-19$",
+     "alasan": "suku silang tidak dihitung (hanya 8 - 27)"
+    },
+    {
+     "teks": "$-14$",
+     "alasan": "tanda negatif u.v diabaikan pada suku 6 u.v sehingga 8 + 6 - 1 - 27"
+    },
+    {
+     "teks": "$-25$",
+     "alasan": "suku -v.u terlewat (8 - 6 - 27)"
+    }
+   ],
+   "pembahasan": "$(2\\mathbf{u}-\\mathbf{v})\\cdot(\\mathbf{u}+3\\mathbf{v})=2\\mathbf{u}\\cdot\\mathbf{u}+6\\,\\mathbf{u}\\cdot\\mathbf{v}-\\mathbf{v}\\cdot\\mathbf{u}-3\\mathbf{v}\\cdot\\mathbf{v}=8-6+1-27=-24$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 194,
+    "kutipan": "sifat distributif: u ∙ ( v + w) = u ∙ v + u ∙ w"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-012",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "sudut pada segitiga dari koordinat titik",
+   "alasan_level": "empat langkah: vektor BA dan BC dari koordinat, hasil kali titik, kedua panjang, lalu sudut istimewa",
+   "stimulus": null,
+   "pertanyaan": "Pada bidang koordinat terdapat titik $A(5, 4)$, $B(2, 3)$, dan $C(3, 5)$. Besar sudut $ABC$ adalah ....",
+   "jawaban_benar": "$45^\\circ$",
+   "alasan_benar": "BA = <3,1>, BC = <1,2>; BA.BC = 5; |BA||BC| = akar(10) akar(5) = 5 akar(2); cos = (1/2)akar(2), sudut 45 derajat",
+   "distraktor": [
+    {
+     "teks": "$135^\\circ$",
+     "alasan": "memakai vektor AB (arah dari A ke B) sehingga hasil kali titik bertanda negatif"
+    },
+    {
+     "teks": "$60^\\circ$",
+     "alasan": "menyamakan cos = (1/2)akar(2) dengan nilai sudut 60 derajat"
+    },
+    {
+     "teks": "$30^\\circ$",
+     "alasan": "menyamakan cos = (1/2)akar(2) dengan nilai sudut 30 derajat"
+    }
+   ],
+   "pembahasan": "$\\overrightarrow{BA}=\\langle 3,1\\rangle$ dan $\\overrightarrow{BC}=\\langle 1,2\\rangle$. $\\cos\\theta=\\frac{5}{\\sqrt{10}\\sqrt{5}}=\\frac{5}{5\\sqrt{2}}=\\frac{\\sqrt{2}}{2}$, sehingga sudut $ABC=45^\\circ$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 196,
+    "kutipan": "Jika θ adalah besar sudut di antara vektor-vektor tak nol u dan v"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-013",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "usaha dengan perpindahan dari titik awal dan akhir",
+   "alasan_level": "tiga langkah: perpindahan = titik akhir - titik awal, lalu hasil kali titik gaya dan perpindahan",
+   "stimulus": null,
+   "pertanyaan": "Sebuah balok ditarik dengan gaya $\\mathbf{F} = \\langle 12, -5\\rangle$ N sehingga berpindah dari titik $P(1, 2)$ ke titik $Q(7, 10)$ (koordinat dalam meter). Usaha yang dilakukan gaya tersebut adalah ... J.",
+   "jawaban_benar": "$32$",
+   "alasan_benar": "D = Q - P = <6,8>; W = F.D = 12(6) + (-5)(8) = 72 - 40 = 32",
+   "distraktor": [
+    {
+     "teks": "$34$",
+     "alasan": "memakai koordinat Q sebagai perpindahan: 12(7) - 5(10)"
+    },
+    {
+     "teks": "$112$",
+     "alasan": "tanda -5 diabaikan: 72 + 40"
+    },
+    {
+     "teks": "$-32$",
+     "alasan": "perpindahan dihitung P - Q, bukan Q - P"
+    }
+   ],
+   "pembahasan": "$\\mathbf{D}=Q-P=\\langle 6,8\\rangle$, $W=\\mathbf{F}\\cdot\\mathbf{D}=12(6)+(-5)(8)=72-40=32$ J.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 205,
+    "kutipan": "Simbol J merupakan kependekan dari Joule, yakni satuan dari usaha."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-014",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "usaha total dua gaya",
+   "alasan_level": "empat langkah: usaha tiap gaya (atau gaya resultan) lewat hasil kali titik, lalu jumlahkan",
+   "stimulus": null,
+   "pertanyaan": "Dua gaya $\\mathbf{F}_1 = \\langle 8, 3\\rangle$ N dan $\\mathbf{F}_2 = \\langle -2, 5\\rangle$ N bekerja bersamaan pada sebuah benda sehingga benda berpindah sejauh $\\mathbf{D} = \\langle 6, 4\\rangle$ m. Usaha total yang dilakukan kedua gaya adalah ... J.",
+   "jawaban_benar": "$68$",
+   "alasan_benar": "W = F1.D + F2.D = (48 + 12) + (-12 + 20) = 60 + 8 = 68",
+   "distraktor": [
+    {
+     "teks": "$60$",
+     "alasan": "hanya usaha gaya pertama yang dihitung"
+    },
+    {
+     "teks": "$8$",
+     "alasan": "hanya usaha gaya kedua yang dihitung"
+    },
+    {
+     "teks": "$52$",
+     "alasan": "usaha gaya kedua dikurangkan, bukan dijumlahkan"
+    }
+   ],
+   "pembahasan": "$W=\\mathbf{F}_1\\cdot\\mathbf{D}+\\mathbf{F}_2\\cdot\\mathbf{D}=(48+12)+(-12+20)=60+8=68$ J. Cara lain: gaya resultan $\\langle 6,8\\rangle\\cdot\\langle 6,4\\rangle=36+32=68$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 205,
+    "kutipan": "Karena usaha sama dengan gaya dikalikan perpindahan, maka"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-015",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "tafsir tanda proyeksi skalar",
+   "alasan_level": "tiga langkah: hasil kali titik, proyeksi skalar bertanda negatif, lalu tafsirkan arah proyeksi vektor",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\mathbf{u} = \\langle 4, 3\\rangle$ dan $\\mathbf{v} = \\langle -5, 1\\rangle$. Pernyataan yang benar mengenai proyeksi $\\mathbf{v}$ ke $\\mathbf{u}$ adalah ....",
+   "jawaban_benar": "proyeksi skalarnya $-\\frac{17}{5}$ sehingga proyeksi vektornya berlawanan arah dengan $\\mathbf{u}$",
+   "alasan_benar": "u.v = -20 + 3 = -17; |u| = 5; komp = -17/5 < 0 sehingga proyeksi vektor berlawanan arah dengan u",
+   "distraktor": [
+    {
+     "teks": "proyeksi skalarnya $\\frac{17}{5}$ sehingga proyeksi vektornya searah dengan $\\mathbf{u}$",
+     "alasan": "tanda negatif hasil kali titik terlewat"
+    },
+    {
+     "teks": "proyeksi skalarnya $-\\frac{17}{5}$ sehingga proyeksi vektornya searah dengan $\\mathbf{u}$",
+     "alasan": "nilai benar tetapi arah ditafsirkan salah (negatif dianggap searah)"
+    },
+    {
+     "teks": "proyeksi skalarnya $\\frac{17}{5}$ sehingga proyeksi vektornya berlawanan arah dengan $\\mathbf{u}$",
+     "alasan": "tanda proyeksi skalar salah walau arah dipikirkan berlawanan"
+    }
+   ],
+   "pembahasan": "$\\mathbf{u}\\cdot\\mathbf{v}=-20+3=-17$ dan $\\|\\mathbf{u}\\|=5$, sehingga $\\text{komp}_{\\mathbf{u}}\\mathbf{v}=-\\frac{17}{5}<0$. Proyeksi skalar negatif berarti proyeksi vektor berlawanan arah dengan $\\mathbf{u}$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 202,
+    "kutipan": "Jika panjang vektor PS bernilai negatif, maka vektor PS berlawanan arah dengan vektor u"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-016",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "parameter dari proyeksi skalar",
+   "alasan_level": "tiga langkah: panjang vektor pengarah, tulis persamaan proyeksi skalar, selesaikan untuk k",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\mathbf{u} = \\langle 6, 8\\rangle$ dan $\\mathbf{v} = \\langle k, -1\\rangle$. Jika proyeksi skalar $\\mathbf{v}$ ke $\\mathbf{u}$ sama dengan 4, nilai $k$ adalah ....",
+   "jawaban_benar": "$8$",
+   "alasan_benar": "|u| = 10; (6k - 8)/10 = 4 sehingga 6k = 48 dan k = 8",
+   "distraktor": [
+    {
+     "teks": "$2$",
+     "alasan": "lupa membagi dengan |u|: 6k - 8 = 4"
+    },
+    {
+     "teks": "$68$",
+     "alasan": "membagi dengan kuadrat panjang u (100): 6k - 8 = 400"
+    },
+    {
+     "teks": "$\\frac{16}{3}$",
+     "alasan": "tanda komponen -1 diabaikan: 6k + 8 = 40"
+    }
+   ],
+   "pembahasan": "$\\|\\mathbf{u}\\|=10$ dan $\\text{komp}_{\\mathbf{u}}\\mathbf{v}=\\frac{6k-8}{10}=4$, sehingga $6k=48$ dan $k=8$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 202,
+    "kutipan": "Proyeksi skalar vektor v ke vektor u dinotasikan dengan komp"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-017",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "vektor ortogonal dengan panjang tertentu",
+   "alasan_level": "empat langkah: syarat u.v = 0, hubungan komponen, syarat panjang, lalu pilih tanda komponen pertama",
+   "stimulus": null,
+   "pertanyaan": "Vektor $\\mathbf{w}$ ortogonal terhadap $\\mathbf{u} = \\langle 3, 4\\rangle$, panjang $\\mathbf{w}$ adalah 10, dan komponen pertama $\\mathbf{w}$ positif. Vektor $\\mathbf{w}$ adalah ....",
+   "jawaban_benar": "$\\langle 8, -6\\rangle$",
+   "alasan_benar": "3a + 4b = 0 sehingga b = -3a/4; a^2 + 9a^2/16 = 100, a = 8 (positif), b = -6",
+   "distraktor": [
+    {
+     "teks": "$\\langle -8, 6\\rangle$",
+     "alasan": "ortogonal dan panjangnya 10, tetapi komponen pertama negatif (melanggar syarat)"
+    },
+    {
+     "teks": "$\\langle 4, -3\\rangle$",
+     "alasan": "ortogonal dan komponen pertama positif, tetapi panjangnya 5 bukan 10"
+    },
+    {
+     "teks": "$\\langle 6, -8\\rangle$",
+     "alasan": "panjang 10 dan komponen pertama positif, tetapi 3(6) + 4(-8) = -14, tidak ortogonal"
+    }
+   ],
+   "pembahasan": "$3a+4b=0$ sehingga $b=-\\frac{3}{4}a$. Panjang 10: $a^2+\\frac{9}{16}a^2=100$, $a^2=64$, $a=8$ (positif) dan $b=-6$. Jadi $\\mathbf{w}=\\langle 8,-6\\rangle$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 199,
+    "kutipan": "hasil kali titik antara dua vektor yang ortogonal sama dengan nol"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-018",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "jenis sudut segitiga dari koordinat",
+   "alasan_level": "empat langkah: bentuk vektor sisi di tiap titik sudut, hitung hasil kali titik, tafsirkan tanda",
+   "stimulus": null,
+   "pertanyaan": "Segitiga $ABC$ memiliki titik sudut $A(0, 0)$, $B(4, 1)$, dan $C(5, -3)$. Pernyataan yang benar mengenai sudut-sudut segitiga tersebut adalah ....",
+   "jawaban_benar": "sudut di titik $B$ siku-siku",
+   "alasan_benar": "BA.BC = (-4)(1) + (-1)(-4) = 0 sehingga siku-siku di B; AB.AC = 17 > 0 dan CA.CB = 17 > 0 (lancip)",
+   "distraktor": [
+    {
+     "teks": "sudut di titik $A$ siku-siku",
+     "alasan": "BA.BC tidak dihitung; AB.AC = 17 bukan 0"
+    },
+    {
+     "teks": "sudut di titik $C$ siku-siku",
+     "alasan": "CA.CB = 17 bukan 0"
+    },
+    {
+     "teks": "sudut di titik $B$ tumpul",
+     "alasan": "hasil kali titik di B dianggap negatif padahal sama dengan nol"
+    }
+   ],
+   "pembahasan": "Di $B$: $\\overrightarrow{BA}\\cdot\\overrightarrow{BC}=\\langle -4,-1\\rangle\\cdot\\langle 1,-4\\rangle=-4+4=0$, jadi siku-siku. Di $A$: $\\langle 4,1\\rangle\\cdot\\langle 5,-3\\rangle=17>0$ (lancip). Di $C$: $\\langle -5,3\\rangle\\cdot\\langle -1,4\\rangle=17>0$ (lancip).",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 199,
+    "kutipan": "Vektor-vektor u dan v ortogonal jika u ∙ v = 0."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-019",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "sudut vektor terhadap sumbu-x positif",
+   "alasan_level": "tiga langkah: hasil kali titik dengan i, panjang vektor, lalu cos negatif sudut istimewa",
+   "stimulus": null,
+   "pertanyaan": "Besar sudut antara vektor $\\mathbf{u} = \\langle -3\\sqrt{3}, 3\\rangle$ dan vektor satuan $\\mathbf{i} = \\langle 1, 0\\rangle$ adalah ....",
+   "jawaban_benar": "$150^\\circ$",
+   "alasan_benar": "u.i = -3 akar(3); |u| = 6; cos t = -(1/2)akar(3), t = 150 derajat",
+   "distraktor": [
+    {
+     "teks": "$30^\\circ$",
+     "alasan": "tanda negatif diabaikan"
+    },
+    {
+     "teks": "$120^\\circ$",
+     "alasan": "memakai cos 120 derajat = -1/2 sebagai nilai -(1/2)akar(3)"
+    },
+    {
+     "teks": "$135^\\circ$",
+     "alasan": "memakai cos 135 derajat = -(1/2)akar(2) sebagai nilai -(1/2)akar(3)"
+    }
+   ],
+   "pembahasan": "$\\mathbf{u}\\cdot\\mathbf{i}=-3\\sqrt{3}$, $\\|\\mathbf{u}\\|=\\sqrt{27+9}=6$, $\\cos\\theta=\\frac{-3\\sqrt{3}}{6}=-\\frac{\\sqrt{3}}{2}$, sehingga $\\theta=150^\\circ$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 195,
+    "kutipan": "Pada Gambar 4.16, θ adalah sudut di antara dua vektor posisi u dan v."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-b-medium-bt01-020",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "sudut gaya dari usaha yang diketahui",
+   "alasan_level": "tiga langkah: W = |F||D| cos t, hitung cos t dari data, tentukan sudut istimewa",
+   "stimulus": null,
+   "pertanyaan": "Sebuah gaya 25 N menggeser benda sejauh 12 m dan melakukan usaha 150 J. Sudut antara arah gaya dan arah perpindahan (antara $0^\\circ$ dan $90^\\circ$) adalah ....",
+   "jawaban_benar": "$60^\\circ$",
+   "alasan_benar": "150 = 25 x 12 x cos t sehingga cos t = 1/2 dan t = 60 derajat",
+   "distraktor": [
+    {
+     "teks": "$30^\\circ$",
+     "alasan": "menyamakan cos t = 1/2 dengan sudut 30 derajat"
+    },
+    {
+     "teks": "$45^\\circ$",
+     "alasan": "menyamakan cos t = 1/2 dengan cos 45 derajat"
+    },
+    {
+     "teks": "$0^\\circ$",
+     "alasan": "mengira usaha 150 J berarti gaya searah (cos t = 1) padahal 25 x 12 = 300"
+    }
+   ],
+   "pembahasan": "$W=\\|\\mathbf{F}\\|\\|\\mathbf{D}\\|\\cos\\theta$: $150=25\\cdot 12\\cdot\\cos\\theta$, $\\cos\\theta=\\frac{1}{2}$, $\\theta=60^\\circ$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 205,
+    "kutipan": "Jika kereta pada Contoh 4.14 berpindah sejauh 10 meter, tentukan usaha yang dilakukan oleh gayanya."
+   }
+  }
+ ]
+}

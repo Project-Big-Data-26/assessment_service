@@ -1,0 +1,386 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 4,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Hard Pembuktian Geometris sangat tipis: acuan teks terbaca habis di easy/medium dan soal pembuktian terbuka tidak bisa jadi pilihan ganda. 11 soal evaluasi klaim/penyangkal/temuan kesalahan/syarat parameter yang layak tanpa kembar; sisanya hanya hitung langsung sehingga dibuang.",
+  "soal": [
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 210,
+        "kutipan": "Kedua diagonal layang-layang saling membagi dua sama panjang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal klaim geometri",
+      "alasan_level": "mengevaluasi klaim dengan memeriksa dua sifat (diagonal tegak lurus, sisi sama) pada empat segiempat berkoordinat; kesulitan dari penalaran penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Jika kedua diagonal sebuah segiempat saling tegak lurus, maka segiempat itu pasti belah ketupat.\" Titik-titik sudut segiempat $ABCD$ ditulis berurutan. Segiempat yang menjadi contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$A(0, 0)$, $B(2, 2)$, $C(6, 0)$, $D(2, -2)$",
+      "alasan_benar": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BD}=\\langle 6,0\\rangle\\cdot\\langle 0,-4\\rangle=0$ (tegak lurus), tetapi $|AB|^2=8\\neq 20=|BC|^2$ sehingga bukan belah ketupat",
+      "distraktor": [
+        {
+          "teks": "$A(0, 0)$, $B(12, 5)$, $C(24, 0)$, $D(12, -5)$",
+          "alasan": "diagonalnya tegak lurus dan memang belah ketupat (semua sisi 13), sehingga mendukung klaim, bukan menyangkalnya"
+        },
+        {
+          "teks": "$A(0, 0)$, $B(6, 0)$, $C(6, 4)$, $D(0, 4)$",
+          "alasan": "persegi panjang tidak punya diagonal tegak lurus, premis klaim tidak terpenuhi sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$A(0, 0)$, $B(5, 0)$, $C(7, 3)$, $D(2, 3)$",
+          "alasan": "jajargenjang biasa dengan diagonal tidak tegak lurus ($-12\\neq 0$), premis tidak terpenuhi"
+        }
+      ],
+      "pembahasan": "Penyangkal harus memenuhi premis (diagonal tegak lurus) tetapi gagal pada kesimpulan (bukan belah ketupat). Hitung $\\overrightarrow{AC}\\cdot\\overrightarrow{BD}$ dan panjang sisi tiap pilihan: hanya layang-layang yang memenuhi keduanya.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-001",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 208,
+        "kutipan": "Buktikan dengan menggunakan vektor bahwa kedua diagonal dari persegi panjang saling membagi dua sama panjang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal klaim geometri",
+      "alasan_level": "mengevaluasi kebalikan sifat persegi panjang: diagonal sama panjang belum menjamin persegi panjang; perlu menguji premis dan kesimpulan tiap segiempat",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Jika kedua diagonal sebuah segiempat sama panjang, maka segiempat itu pasti persegi panjang.\" Titik-titik sudut segiempat $ABCD$ ditulis berurutan. Segiempat yang menjadi contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$A(0, 0)$, $B(10, 0)$, $C(8, 4)$, $D(2, 4)$",
+      "alasan_benar": "$|AC|^2=|BD|^2=80$ sehingga diagonal sama panjang, tetapi $\\overrightarrow{AB}\\cdot\\overrightarrow{AD}=\\langle 10,0\\rangle\\cdot\\langle 2,4\\rangle=20\\neq 0$ sehingga bukan persegi panjang (trapesium sama kaki)",
+      "distraktor": [
+        {
+          "teks": "$A(0, 0)$, $B(8, 0)$, $C(8, 5)$, $D(0, 5)$",
+          "alasan": "persegi panjang: diagonal sama panjang dan memang persegi panjang, mendukung klaim"
+        },
+        {
+          "teks": "$A(0, 0)$, $B(3, 4)$, $C(0, 8)$, $D(-3, 4)$",
+          "alasan": "belah ketupat: diagonal 8 dan 6 tidak sama panjang, premis tidak terpenuhi"
+        },
+        {
+          "teks": "$A(0, 0)$, $B(6, 0)$, $C(8, 3)$, $D(2, 3)$",
+          "alasan": "jajargenjang biasa: diagonal $\\sqrt{73}$ dan $5$ tidak sama, premis tidak terpenuhi"
+        }
+      ],
+      "pembahasan": "Penyangkal memenuhi premis (diagonal sama panjang) tetapi bukan persegi panjang. Hitung $|AC|^2$ dan $|BD|^2$ tiap pilihan lalu uji $\\overrightarrow{AB}\\cdot\\overrightarrow{AD}$ pada yang diagonalnya sama.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-002",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 210,
+        "kutipan": "Buktikan bahwa dua diagonal dari sebuah persegi saling tegak lurus dan saling membagi dua sama panjang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim tentang sifat diagonal",
+      "alasan_level": "mengevaluasi empat klaim sekaligus; klaim benar perlu bukti vektor $\\overrightarrow{AC}\\cdot\\overrightarrow{BD}=|AD|^2-|AB|^2$, klaim salah perlu contoh penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar tentang segiempat dan diagonalnya adalah ....",
+      "jawaban_benar": "Jajargenjang yang kedua diagonalnya saling tegak lurus pasti belah ketupat",
+      "alasan_benar": "pada jajargenjang $\\overrightarrow{AC}\\cdot\\overrightarrow{BD}=(\\overrightarrow{AB}+\\overrightarrow{AD})\\cdot(\\overrightarrow{AD}-\\overrightarrow{AB})=|AD|^2-|AB|^2$; bernilai 0 hanya bila $|AB|=|AD|$",
+      "distraktor": [
+        {
+          "teks": "Jajargenjang yang kedua diagonalnya sama panjang pasti belah ketupat",
+          "alasan": "persegi panjang berukuran $6\\times 4$ berdiagonal sama tetapi bukan belah ketupat"
+        },
+        {
+          "teks": "Layang-layang yang kedua diagonalnya sama panjang pasti persegi",
+          "alasan": "layang-layang dengan diagonal 4 dan 4 yang sisinya $\\sqrt{5}$ dan $\\sqrt{13}$ bukan persegi"
+        },
+        {
+          "teks": "Segiempat yang kedua diagonalnya saling membagi dua sama panjang pasti persegi panjang",
+          "alasan": "segiempat demikian adalah jajargenjang, dan jajargenjang biasa bukan persegi panjang"
+        }
+      ],
+      "pembahasan": "Pernyataan benar harus dibuktikan umum. Untuk jajargenjang, $\\overrightarrow{AC}\\cdot\\overrightarrow{BD}=|AD|^2-|AB|^2$, jadi diagonal tegak lurus setara dengan $|AB|=|AD|$ (belah ketupat). Tiga pernyataan lain runtuh oleh contoh penyangkal: persegi panjang $6\\times 4$, layang-layang berdiagonal 4 dan 4, serta jajargenjang biasa.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-003",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 206,
+        "kutipan": "kita juga dapat membuktikan teorema Pythagoras dan properti geometri lain dengan pendekatan vektor."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang titik dari dua syarat",
+      "alasan_level": "merancang titik sudut yang harus memenuhi dua syarat (tegak lurus dan perbandingan panjang) plus syarat orientasi; perlu memilih satu dari dua kemungkinan",
+      "stimulus": null,
+      "pertanyaan": "Persegi panjang $ABCD$ dengan titik sudut berurutan memiliki $A(2, 1)$ dan $B(9, 3)$. Panjang $AD$ sama dengan dua kali panjang $AB$, dan ordinat titik $D$ lebih besar daripada ordinat titik $A$. Koordinat titik $C$ adalah ....",
+      "jawaban_benar": "$(5, 17)$",
+      "alasan_benar": "$\\overrightarrow{AB}=\\langle 7,2\\rangle$, $\\overrightarrow{AD}\\perp\\overrightarrow{AB}$ sehingga $\\overrightarrow{AD}=k\\langle -2,7\\rangle$; $|AD|=2|AB|$ memberi $k=\\pm 2$; ordinat $D$ lebih besar memilih $k=2$, $D(-2,15)$, $C=B+\\overrightarrow{AD}=(5,17)$",
+      "distraktor": [
+        {
+          "teks": "$(13, -11)$",
+          "alasan": "memakai $k=-2$ sehingga $D$ berada di bawah $A$, melanggar syarat ordinat $D>$ ordinat $A$"
+        },
+        {
+          "teks": "$(7, 10)$",
+          "alasan": "memakai $k=1$ (panjang $AD$ sama dengan $AB$), mengabaikan syarat dua kali"
+        },
+        {
+          "teks": "$(-2, 15)$",
+          "alasan": "mengira koordinat $D$ sebagai koordinat $C$"
+        }
+      ],
+      "pembahasan": "Vektor tegak lurus $\\langle 7,2\\rangle$ adalah $\\langle -2,7\\rangle$. Syarat panjang memberi $k=\\pm 2$, syarat orientasi memilih $k=2$. Titik $C=B+\\overrightarrow{AD}=(9-4,3+14)=(5,17)$.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-004",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 207,
+        "kutipan": "Karena S adalah titik tengah dari QR, kita dapat menuliskan persamaan berikut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan pada pembuktian vektor",
+      "alasan_level": "mengevaluasi empat langkah bukti dan menunjuk satu yang keliru, harus memeriksa arah vektor setiap langkah",
+      "stimulus": "Pada segitiga $ABC$, $K$ titik tengah $AB$ dan $L$ titik tengah $AC$. Seorang siswa membuktikan $\\overrightarrow{KL}=\\frac{1}{2}\\overrightarrow{BC}$ dengan langkah berikut.\n\n- Langkah 1: $\\overrightarrow{KL}=\\overrightarrow{KA}+\\overrightarrow{AL}$\n- Langkah 2: $\\overrightarrow{KA}=\\frac{1}{2}\\overrightarrow{BA}$ dan $\\overrightarrow{AL}=\\frac{1}{2}\\overrightarrow{AC}$\n- Langkah 3: $\\overrightarrow{KL}=\\frac{1}{2}\\left(\\overrightarrow{BA}+\\overrightarrow{AC}\\right)$\n- Langkah 4: $\\overrightarrow{BA}+\\overrightarrow{AC}=\\overrightarrow{CB}$, sehingga $\\overrightarrow{KL}=\\frac{1}{2}\\overrightarrow{CB}$",
+      "pertanyaan": "Satu-satunya langkah yang mengandung kesalahan adalah ....",
+      "jawaban_benar": "Langkah 4",
+      "alasan_benar": "$\\overrightarrow{BA}+\\overrightarrow{AC}=\\overrightarrow{BC}$ (dari $B$ ke $A$ lalu ke $C$), bukan $\\overrightarrow{CB}$; hasil yang benar $\\overrightarrow{KL}=\\frac{1}{2}\\overrightarrow{BC}$",
+      "distraktor": [
+        {
+          "teks": "Langkah 1",
+          "alasan": "benar: dari $K$ ke $A$ lalu ke $L$ sama dengan $K$ ke $L$"
+        },
+        {
+          "teks": "Langkah 2",
+          "alasan": "benar: $K$ titik tengah $AB$ sehingga $\\overrightarrow{KA}=\\frac{1}{2}\\overrightarrow{BA}$"
+        },
+        {
+          "teks": "Langkah 3",
+          "alasan": "benar: substitusi langkah 2 lalu faktorkan $\\frac{1}{2}$"
+        }
+      ],
+      "pembahasan": "Cek arah tiap vektor. Langkah 1-3 benar. Pada langkah 4, $\\overrightarrow{BA}+\\overrightarrow{AC}$ berawal di $B$ dan berakhir di $C$, yaitu $\\overrightarrow{BC}$, bukan $\\overrightarrow{CB}$.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-005",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 209,
+        "kutipan": "Masih banyak permasalahan geometri yang dapat dipecahkan dengan pendekatan vektor."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan pada pembuktian vektor",
+      "alasan_level": "mengevaluasi turunan rumus pembagi ruas; kesalahan ada pada tafsir perbandingan, sedangkan langkah sesudahnya konsisten secara aljabar sehingga menyesatkan",
+      "stimulus": "Titik $Q$ pada ruas $PR$ dengan $PQ : QR = m : n$. Misalkan $\\mathbf{p}$, $\\mathbf{q}$, $\\mathbf{r}$ vektor posisi $P$, $Q$, $R$. Seorang siswa menurunkan $\\mathbf{q}$ dengan langkah berikut.\n\n- Langkah 1: $\\overrightarrow{PR}=\\mathbf{r}-\\mathbf{p}$\n- Langkah 2: $\\overrightarrow{PQ}=\\frac{n}{m+n}\\overrightarrow{PR}$\n- Langkah 3: $\\mathbf{q}=\\mathbf{p}+\\overrightarrow{PQ}$\n- Langkah 4: $\\mathbf{q}=\\mathbf{p}+\\frac{n}{m+n}(\\mathbf{r}-\\mathbf{p})=\\frac{m\\mathbf{p}+n\\mathbf{r}}{m+n}$",
+      "pertanyaan": "Langkah pertama yang mengandung kesalahan adalah ....",
+      "jawaban_benar": "Langkah 2",
+      "alasan_benar": "$PQ : PR = m : (m+n)$ sehingga $\\overrightarrow{PQ}=\\frac{m}{m+n}\\overrightarrow{PR}$, bukan $\\frac{n}{m+n}$",
+      "distraktor": [
+        {
+          "teks": "Langkah 1",
+          "alasan": "benar: $\\overrightarrow{PR}=\\overrightarrow{OR}-\\overrightarrow{OP}=\\mathbf{r}-\\mathbf{p}$"
+        },
+        {
+          "teks": "Langkah 3",
+          "alasan": "benar: $\\overrightarrow{OQ}=\\overrightarrow{OP}+\\overrightarrow{PQ}$"
+        },
+        {
+          "teks": "Langkah 4",
+          "alasan": "pengerjaan aljabarnya benar mengikuti langkah 2; kesalahan sudah terjadi lebih awal pada langkah 2"
+        }
+      ],
+      "pembahasan": "Karena $PQ : QR = m : n$, panjang $PQ$ adalah $\\frac{m}{m+n}$ dari $PR$. Langkah 2 menukar $m$ dan $n$. Langkah 4 hanyalah aljabar yang benar dari langkah 2, tetapi hasilnya $\\frac{m\\mathbf{p}+n\\mathbf{r}}{m+n}$ keliru; seharusnya $\\frac{n\\mathbf{p}+m\\mathbf{r}}{m+n}$.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-006",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 210,
+        "kutipan": "Untuk mengasah kemampuan kamu dalam membuktikan beberapa properti geometri dengan menggunakan vektor, coba selesaikan latihan berikut!"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menyimpulkan jenis segiempat dari titik tengah sisi",
+      "alasan_level": "menalar bahwa $KL=\\frac{1}{2}\\overrightarrow{AC}$ dan $LM=\\frac{1}{2}\\overrightarrow{BD}$ lalu mengevaluasi empat kesimpulan, termasuk satu yang perlu contoh penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Pada segiempat sembarang $ABCD$, titik $K$, $L$, $M$, dan $N$ berturut-turut adalah titik tengah $AB$, $BC$, $CD$, dan $DA$. Jika diagonal $AC$ dan $BD$ saling tegak lurus (panjangnya tidak diketahui), segiempat $KLMN$ pasti merupakan ....",
+      "jawaban_benar": "persegi panjang, tetapi belum tentu persegi",
+      "alasan_benar": "$\\overrightarrow{KL}=\\frac{1}{2}\\overrightarrow{AC}=\\overrightarrow{NM}$ dan $\\overrightarrow{LM}=\\frac{1}{2}\\overrightarrow{BD}=\\overrightarrow{KN}$ sehingga $KLMN$ jajargenjang; $AC\\perp BD$ membuat sisi bersebelahan tegak lurus; sisinya $\\frac{1}{2}|AC|$ dan $\\frac{1}{2}|BD|$ belum tentu sama",
+      "distraktor": [
+        {
+          "teks": "persegi, untuk setiap segiempat $ABCD$ yang diagonalnya tegak lurus",
+          "alasan": "sisi $\\frac{1}{2}|AC|$ dan $\\frac{1}{2}|BD|$ sama hanya bila $|AC|=|BD|$, tidak dijamin"
+        },
+        {
+          "teks": "belah ketupat yang bukan persegi",
+          "alasan": "sudutnya pasti siku-siku, sedangkan belah ketupat yang bukan persegi tidak bersudut siku-siku"
+        },
+        {
+          "teks": "jajargenjang yang bukan persegi panjang",
+          "alasan": "sudut $KLM$ siku-siku karena $\\overrightarrow{LK}\\perp\\overrightarrow{LM}$, jadi pasti persegi panjang"
+        }
+      ],
+      "pembahasan": "Ruas yang menghubungkan titik tengah dua sisi segiempat sejajar dengan satu diagonal dan setengah panjangnya. Maka $KLMN$ jajargenjang dengan sisi sejajar $AC$ dan $BD$. Karena $AC\\perp BD$, sudutnya siku-siku. Sama panjang sisi hanya bila diagonalnya sama panjang, jadi bukan persegi pasti.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-007",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 210,
+        "kutipan": "Untuk mengasah kemampuan kamu dalam membuktikan beberapa properti geometri dengan menggunakan vektor, coba selesaikan latihan berikut!"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat parameter agar segiempat khusus",
+      "alasan_level": "merancang syarat parameter dengan menalar dua syarat sekaligus (diagonal tegak lurus dan sama panjang) pada segiempat titik tengah, tanpa rumus langsung",
+      "stimulus": null,
+      "pertanyaan": "Segiempat $ABCD$ memiliki $A(0, 0)$, $B(5, k)$, $C(12, 0)$, dan $D(5, -3)$ dengan $k>0$. Titik $K$, $L$, $M$, dan $N$ berturut-turut titik tengah $AB$, $BC$, $CD$, dan $DA$. Nilai $k$ agar $KLMN$ berbentuk persegi adalah ....",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "$KLMN$ persegi bila $AC\\perp BD$ (selalu, sebab $AC$ mendatar dan $BD$ tegak) dan $|AC|=|BD|$: $12=k+3$ sehingga $k=9$",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "menyamakan $k$ dengan $|AC|$ tanpa menambah ordinat $D$ ($|BD|=k+3$)"
+        },
+        {
+          "teks": "$15$",
+          "alasan": "mengira $|BD|=k-3$ atau menjumlahkan $12+3$"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "menyamakan $|BD|$ dengan $\\frac{1}{2}|AC|=6$ sehingga $k=3$"
+        }
+      ],
+      "pembahasan": "Sisi $KLMN$ sejajar diagonal dan berukuran setengahnya. Persegi memerlukan diagonal $AC$, $BD$ tegak lurus dan sama panjang. $AC=\\langle 12,0\\rangle$, $BD=\\langle 0,-3-k\\rangle$ tegak lurus; $|BD|=k+3=12$ memberi $k=9$.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-008",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 207,
+        "kutipan": "Diberikan sebuah jajargenjang. Buktikan bahwa kedua diagonal dari jajargenjang tersebut saling membagi dua sama panjang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat parameter agar segiempat khusus",
+      "alasan_level": "mengevaluasi empat kesimpulan tentang tiga jenis segiempat dari satu parameter, termasuk menyimpulkan bahwa persegi tidak mungkin",
+      "stimulus": null,
+      "pertanyaan": "Segiempat $ABCD$ memiliki $A(0, 0)$, $B(8, 0)$, $C(8+p, 6)$, dan $D(p, 6)$ dengan $p\\geq 0$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "persegi panjang untuk $p=0$, belah ketupat untuk $p=2\\sqrt{7}$, dan tidak ada $p$ yang membuatnya persegi",
+      "alasan_benar": "$\\overrightarrow{AB}=\\overrightarrow{DC}$ sehingga jajargenjang; persegi panjang bila $\\overrightarrow{AB}\\cdot\\overrightarrow{AD}=8p=0$; belah ketupat bila $p^2+36=64$; kedua syarat tidak bisa dipenuhi bersamaan",
+      "distraktor": [
+        {
+          "teks": "persegi panjang untuk $p=0$, belah ketupat untuk $p=2\\sqrt{7}$, dan persegi untuk $p=0$",
+          "alasan": "untuk $p=0$ sisi $AB=8$ dan $AD=6$ tidak sama, hanya persegi panjang"
+        },
+        {
+          "teks": "persegi panjang untuk $p=0$, belah ketupat untuk $p=8$, dan tidak ada $p$ yang membuatnya persegi",
+          "alasan": "memakai panjang diagonal 10 padahal syaratnya $|AD|=|AB|$ yaitu $p^2+36=64$"
+        },
+        {
+          "teks": "persegi panjang untuk $p=0$, belah ketupat dan persegi sama-sama untuk $p=2\\sqrt{7}$",
+          "alasan": "sisi sama panjang saja menghasilkan belah ketupat; untuk persegi sudutnya harus siku-siku, sedangkan $8p\\neq 0$"
+        }
+      ],
+      "pembahasan": "$\\overrightarrow{AB}=\\overrightarrow{DC}=\\langle 8,0\\rangle$ sehingga jajargenjang. Persegi panjang: $\\overrightarrow{AB}\\cdot\\overrightarrow{AD}=8p=0$, jadi $p=0$. Belah ketupat: $|AD|^2=p^2+36=64$, jadi $p=2\\sqrt{7}$ ($p\\geq 0$). Dua syarat itu tidak bertemu, jadi persegi tidak mungkin.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-009",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 210,
+        "kutipan": "Buktikan bahwa sudut ACB siku-siku."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menggeneralisasi bukti sudut pada diameter",
+      "alasan_level": "menggeneralisasi bukti sudut siku-siku pada diameter menjadi kriteria posisi titik ($|OC|^2$ dibanding $r^2$) lalu mengevaluasi empat titik; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $O(0, 0)$ berjari-jari $13$, dengan $AB$ diameter, $A(-13, 0)$ dan $B(13, 0)$. Titik $C$ berada di salah satu posisi berikut (bukan pada sumbu $x$). Titik $C$ yang membuat $\\angle ACB$ lancip adalah ....",
+      "jawaban_benar": "$(14, 3)$",
+      "alasan_benar": "$\\overrightarrow{CA}\\cdot\\overrightarrow{CB}=|OC|^2-13^2$; untuk $C(14,3)$ nilainya $205-169=36>0$ sehingga sudut lancip",
+      "distraktor": [
+        {
+          "teks": "$(5, 12)$",
+          "alasan": "titik pada lingkaran ($25+144=169$) membuat hasil kali titik 0, sudut siku-siku"
+        },
+        {
+          "teks": "$(6, -11)$",
+          "alasan": "$36+121=157<169$, di dalam lingkaran, sudut tumpul"
+        },
+        {
+          "teks": "$(-4, 10)$",
+          "alasan": "$16+100=116<169$, di dalam lingkaran, sudut tumpul"
+        }
+      ],
+      "pembahasan": "$\\overrightarrow{CA}\\cdot\\overrightarrow{CB}=(-13-x)(13-x)+y^2=x^2+y^2-169$. Lancip bila hasilnya positif, yaitu $C$ di luar lingkaran. Hanya $(14,3)$ dengan $14^2+3^2=205>169$.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-010",
+      "variasi_cara": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 206,
+        "kutipan": "Mungkin kita sudah pernah menyelesaikan soal pembuktian properti geometri dengan menggunakan kekongruenan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua pendekatan penyelesaian",
+      "alasan_level": "mengevaluasi dua penalaran siswa yang tampak mirip; harus menguji arah vektor $\\overrightarrow{DC}$ terhadap $\\overrightarrow{AB}$",
+      "stimulus": "Pada trapesium $ABCD$ dengan $AB\\parallel DC$, $K$ adalah titik tengah $AD$ dan $L$ titik tengah $BC$. Diketahui $\\overrightarrow{AB}=\\langle 12, 0\\rangle$ dan $\\overrightarrow{DC}=\\langle 4, 0\\rangle$.\n\n- Siswa I: $\\overrightarrow{KL}=\\frac{1}{2}\\left(\\overrightarrow{AB}+\\overrightarrow{DC}\\right)$\n- Siswa II: $\\overrightarrow{KL}=\\frac{1}{2}\\left(\\overrightarrow{AB}-\\overrightarrow{DC}\\right)$",
+      "pertanyaan": "Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Siswa I benar dan $|KL|=8$",
+      "alasan_benar": "$\\overrightarrow{KL}=\\overrightarrow{KA}+\\overrightarrow{AB}+\\overrightarrow{BL}$ dan $\\overrightarrow{KL}=\\overrightarrow{KD}+\\overrightarrow{DC}+\\overrightarrow{CL}$; jumlahkan, suku $\\overrightarrow{KA}+\\overrightarrow{KD}=\\mathbf{0}$ dan $\\overrightarrow{BL}+\\overrightarrow{CL}=\\mathbf{0}$, sehingga $2\\overrightarrow{KL}=\\overrightarrow{AB}+\\overrightarrow{DC}$ dan $|KL|=\\frac{12+4}{2}=8$",
+      "distraktor": [
+        {
+          "teks": "Siswa II benar dan $|KL|=4$",
+          "alasan": "mengurangkan padahal $\\overrightarrow{DC}$ searah dengan $\\overrightarrow{AB}$; selisih bukan panjang ruas tengah"
+        },
+        {
+          "teks": "Keduanya benar karena menghasilkan panjang yang sama",
+          "alasan": "hasilnya 8 dan 4, tidak sama"
+        },
+        {
+          "teks": "Keduanya salah dan $|KL|=6$",
+          "alasan": "Siswa I benar; 6 tidak sesuai karena $|KL|=\\frac{12+4}{2}=8$"
+        }
+      ],
+      "pembahasan": "Dengan koordinat $A(0,0)$, $B(12,0)$, $D(3,5)$, $C(7,5)$: $K\\left(\\frac{3}{2}, \\frac{5}{2}\\right)$ dan $L\\left(\\frac{19}{2}, \\frac{5}{2}\\right)$ sehingga $\\overrightarrow{KL}=\\langle 8,0\\rangle=\\frac{1}{2}(\\overrightarrow{AB}+\\overrightarrow{DC})$. Rumus Siswa II keliru karena $\\overrightarrow{AB}$ dan $\\overrightarrow{DC}$ searah.",
+      "catatan": null,
+      "id": "kelas11_tl-b04-c-hard-bt01-011",
+      "variasi_cara": null
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 2,
+  "subbab": "D",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab D (p96-p100) tipis. Hanya sebelas soal yang benar-benar menuntut penalaran C5-C6 (evaluasi klaim, contoh penyangkal, temukan kesalahan, rancang, bandingkan). Soal parameter dan hitung langsung murni C3-C4 dan sudah dipakai di medium; membuat soal kembar berangka beda hanya demi kuota ditolak.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 96,
+        "kutipan": "jumlah semua koefisien dan konstanta"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal klaim jumlah koefisien nol",
+      "alasan_level": "mengevaluasi klaim umum dengan menguji empat polinomial terhadap dua syarat (hipotesis benar, simpulan salah)",
+      "stimulus": null,
+      "pertanyaan": "Dani mengklaim: \"Jika jumlah semua koefisien dan konstanta suatu polinomial sama dengan nol, maka $(x - 1)^2$ merupakan faktor polinomial itu.\" Polinomial berikut yang menjadi contoh penyangkal klaim Dani adalah ....",
+      "jawaban_benar": "$x^3 + 2x^2 - 5x + 2$",
+      "alasan_benar": "jumlah koefisiennya $1+2-5+2=0$ sehingga $x-1$ faktor, tetapi $x^3+2x^2-5x+2=(x-1)(x^2+3x-2)$ dan $x^2+3x-2$ bernilai $2$ di $x=1$, jadi $(x-1)^2$ bukan faktor",
+      "distraktor": [
+        {
+          "teks": "$x^3 - 3x^2 + 3x - 1$",
+          "alasan": "jumlah koefisien nol dan memang $(x-1)^3$, sehingga klaim Dani justru terpenuhi, bukan terbantah"
+        },
+        {
+          "teks": "$x^3 - x^2 - x + 1$",
+          "alasan": "jumlah koefisien nol dan $=(x-1)^2(x+1)$, klaim Dani terpenuhi"
+        },
+        {
+          "teks": "$x^3 + 2x^2 - 5x + 3$",
+          "alasan": "jumlah koefisiennya $1$, bukan nol; syarat klaim tidak terpenuhi sehingga bukan contoh penyangkal"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus memenuhi syarat (jumlah koefisien nol) tetapi simpulannya gagal. Jumlah koefisien: $0$, $0$, $0$, $1$. Faktorisasi: $(x-1)^3$, $(x-1)^2(x+1)$, $(x-1)(x^2+3x-2)$ dengan $x^2+3x-2$ di $x=1$ bernilai $2\\neq 0$. Hanya $x^3+2x^2-5x+2$ yang memenuhi syarat tetapi tidak punya faktor $(x-1)^2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 99,
+        "kutipan": "Teorema Faktor tersebut memberikan koneksi antara pembuat nol dan faktor suatu polinomial"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan penerapan Teorema Faktor",
+      "alasan_level": "menelusuri langkah siswa dan menentukan letak kesalahan dengan menguji nilai P(-3) dan P(3)",
+      "stimulus": "Rina memfaktorkan $P(x) = x^3 - 4x^2 - 11x + 30$. Pekerjaannya: \"$P(-3) = -27 - 36 + 33 + 30 = 0$. Berdasarkan Teorema Faktor, $x - 3$ adalah faktor $P(x)$.\"",
+      "pertanyaan": "Pernyataan yang tepat mengenai pekerjaan Rina adalah ....",
+      "jawaban_benar": "Hitungan $P(-3) = 0$ benar, tetapi faktor yang bersesuaian adalah $x + 3$, bukan $x - 3$",
+      "alasan_benar": "$P(-3)=0$ benar; Teorema Faktor dengan $c=-3$ memberi faktor $x-(-3)=x+3$, dan $P(3)=-12\\neq 0$ sehingga $x-3$ bukan faktor",
+      "distraktor": [
+        {
+          "teks": "Pekerjaan Rina seluruhnya benar karena $P(-3) = 0$ berarti $x - 3$ adalah faktor",
+          "alasan": "mengabaikan tanda: faktor untuk $c=-3$ adalah $x+3$"
+        },
+        {
+          "teks": "Hitungan $P(-3)$ keliru, nilai yang benar adalah $-12$, sehingga tidak ada faktor yang dapat disimpulkan",
+          "alasan": "$-12$ adalah nilai $P(3)$, bukan $P(-3)$; $P(-3)=0$ memang benar"
+        },
+        {
+          "teks": "Teorema Faktor tidak dapat dipakai karena $c = -3$ bukan bilangan bulat positif",
+          "alasan": "Teorema Faktor berlaku untuk setiap bilangan real $c$"
+        }
+      ],
+      "pembahasan": "$P(-3)=-27-36+33+30=0$ benar. Teorema Faktor: $P(c)=0$ jika dan hanya jika $x-c$ faktor. Untuk $c=-3$ faktornya $x+3$. Pengecekan $P(3)=27-36-33+30=-12\\neq 0$ menunjukkan $x-3$ bukan faktor.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 98,
+        "kutipan": "Jika polinomial tersebut memiliki pembuat nol rasional"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "contoh penyangkal klaim pembuat nol rasional",
+      "alasan_level": "memilih contoh penyangkal dengan menguji calon pembuat nol rasional pada empat polinomial",
+      "stimulus": null,
+      "pertanyaan": "Sinta mengklaim: \"Jika polinomial berkoefisien bulat memiliki pembuat nol rasional, maka polinomial itu pasti memiliki pembuat nol yang bilangan bulat.\" Polinomial berkoefisien bulat berikut yang menjadi contoh penyangkal klaim Sinta adalah ....",
+      "jawaban_benar": "$2x^3 + x^2 + 5x - 3$",
+      "alasan_benar": "calon $\\pm1,\\pm3,\\pm\\frac12,\\pm\\frac32$; hanya $\\frac12$ yang nol ($P(\\frac12)=\\frac14+\\frac14+\\frac52-3=0$), tidak ada pembuat nol bulat",
+      "distraktor": [
+        {
+          "teks": "$x^3 - 2x^2 + x - 2$",
+          "alasan": "punya pembuat nol bulat $2$, jadi klaim Sinta terpenuhi"
+        },
+        {
+          "teks": "$x^3 - 2x + 5$",
+          "alasan": "tidak punya pembuat nol rasional sama sekali (calon $\\pm1,\\pm5$ semuanya gagal), jadi syarat klaim tidak terpenuhi"
+        },
+        {
+          "teks": "$2x^3 - 3x^2 - 2x + 3$",
+          "alasan": "punya pembuat nol pecahan $\\frac32$ tetapi juga pembuat nol bulat $\\pm1$, sehingga bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Penyangkal harus punya pembuat nol rasional tetapi tidak satu pun bulat. $x^3-2x^2+x-2=(x-2)(x^2+1)$ punya nol bulat $2$. $x^3-2x+5$ tidak punya pembuat nol rasional. $2x^3-3x^2-2x+3=(x-1)(x+1)(2x-3)$ punya nol bulat $\\pm1$. Pada $2x^3+x^2+5x-3=(2x-1)(x^2+x+3)$ satu-satunya pembuat nol real adalah $\\frac12$, yang bukan bilangan bulat.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 100,
+        "kutipan": "Untuk menemukan perpotongan grafik fungsi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "kasus terlewat dalam penalaran siswa",
+      "alasan_level": "mengevaluasi kelengkapan kesimpulan siswa dengan menemukan kasus yang terlewat (nol bersama)",
+      "stimulus": "Diketahui $P(x) = (x - 2)(x^2 + bx + 9)$ dengan $b$ bilangan real. Dina menyimpulkan: \"Agar $P$ memiliki tepat dua pembuat nol real yang berbeda, faktor kuadratnya harus punya diskriminan nol, sehingga $b = 6$ atau $b = -6$.\"",
+      "pertanyaan": "Dina melewatkan satu nilai $b$ lagi yang juga membuat $P$ memiliki tepat dua pembuat nol real yang berbeda. Nilai $b$ itu adalah ....",
+      "jawaban_benar": "$-\\frac{13}{2}$",
+      "alasan_benar": "dua pembuat nol berbeda juga terjadi bila $x=2$ adalah pembuat nol faktor kuadrat: $4+2b+9=0$ sehingga $b=-\\frac{13}{2}$, dengan pembuat nol $2$ dan $\\frac92$ (dua nilai)",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{2}$",
+          "alasan": "salah tanda: $4+2b+9=0$ memberi $b=-\\frac{13}{2}$; untuk $b=\\frac{13}{2}$ ada tiga pembuat nol berbeda ($2$, $-2$, $-\\frac92$)"
+        },
+        {
+          "teks": "$0$",
+          "alasan": "faktor kuadrat $x^2+9$ tidak punya pembuat nol real, sehingga $P$ hanya punya satu pembuat nol"
+        },
+        {
+          "teks": "$-\\frac92$",
+          "alasan": "mengambil pembuat nol lain $\\frac92$ lalu menjadikannya $b$; $x^2-\\frac92x+9$ berdiskriminan negatif sehingga $P$ hanya punya satu pembuat nol"
+        }
+      ],
+      "pembahasan": "Ada dua cara memperoleh tepat dua pembuat nol real berbeda: (1) $x^2+bx+9$ punya pembuat nol kembar ($b^2=36$, $b=\\pm6$, pembuat nol $\\mp3\\neq 2$), atau (2) salah satu pembuat nol $x^2+bx+9$ sama dengan $2$ (kasus yang terlewat): $4+2b+9=0$, $b=-\\frac{13}{2}$, faktor kuadrat $(x-2)(x-\\frac92)$, pembuat nol $P$ hanya $2$ dan $\\frac92$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 100,
+        "kutipan": "kita tentukan semua pembuat nolnya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "evaluasi empat pernyataan tentang banyak pembuat nol",
+      "alasan_level": "mengevaluasi empat pernyataan bersyarat dengan memfaktorkan lebih dulu lalu menganalisis kasus nilai parameter",
+      "stimulus": null,
+      "pertanyaan": "Diberikan $P(x) = x^4 + ax^2 - 4a - 16$ dengan $a$ bilangan real. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Untuk $a = -4$, $P$ memiliki tepat tiga pembuat nol real yang berbeda",
+      "alasan_benar": "$P(x)=(x^2-4)(x^2+a+4)$; untuk $a=-4$ menjadi $(x^2-4)x^2$ dengan pembuat nol $-2,0,2$",
+      "distraktor": [
+        {
+          "teks": "Untuk $a = -8$, $P$ memiliki tepat empat pembuat nol real yang berbeda",
+          "alasan": "untuk $a=-8$ faktor kedua $x^2-4$ sama dengan faktor pertama sehingga hanya ada dua pembuat nol berbeda ($\\pm2$)"
+        },
+        {
+          "teks": "Untuk $a = 0$, $P$ memiliki tepat empat pembuat nol real yang berbeda",
+          "alasan": "untuk $a=0$ faktor kedua $x^2+4$ tidak punya pembuat nol real, hanya $\\pm2$"
+        },
+        {
+          "teks": "Untuk setiap bilangan real $a$, $P$ memiliki paling sedikit tiga pembuat nol real yang berbeda",
+          "alasan": "untuk $a=0$ atau $a=-3$ hanya ada dua pembuat nol real berbeda"
+        }
+      ],
+      "pembahasan": "Faktorkan $P(x)=(x^2-4)(x^2+a+4)$. Pembuat nol $\\pm2$ selalu ada. Faktor $x^2+a+4$: $a>-4$ tanpa pembuat nol real (total 2); $a=-4$ nol ganda di $0$ (total 3); $a<-4$ memberi $\\pm\\sqrt{-a-4}$ (total 4, kecuali $a=-8$ yang jatuh pada $\\pm2$ sehingga total 2).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 98,
+        "kutipan": "Sifat 2.5 bersama Teorema Faktor dapat mempermudah kita dalam menentukan faktor-faktor dari polinomial"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 6,
+      "jenis_soal": "merancang polinomial berkoefisien bulat",
+      "alasan_level": "merancang polinomial dengan pembuat nol pecahan dan mencari skala terkecil agar semua koefisien bulat",
+      "stimulus": null,
+      "pertanyaan": "Polinomial berderajat tiga $P(x)$ memiliki pembuat nol $\\frac34$, $-\\frac23$, dan $\\frac52$. Semua koefisien dan konstanta $P(x)$ harus bilangan bulat. Koefisien $x^3$ positif terkecil yang mungkin adalah ....",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "$P(x)=k(x-\\frac34)(x+\\frac23)(x-\\frac52)$; koefisien $x^2$ adalah $-\\frac{31}{12}k$ dan koefisien $x$ adalah $-\\frac{7}{24}k$, sehingga $k$ harus kelipatan $24$; $k=24$ memberi $(4x-3)(3x+2)(2x-5)$ berkoefisien bulat",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "memakai KPK penyebut $4,3,2$; padahal koefisien $x$ menjadi $-\\frac{7}{2}$, bukan bilangan bulat"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "menjumlahkan penyebut $4+3+2$ tanpa dasar; koefisien tidak bulat"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mengira polinomial monik; koefisien $x^2$ menjadi $-\\frac{31}{12}$, bukan bulat"
+        }
+      ],
+      "pembahasan": "Bentuk umum $P(x)=k(x-\\frac34)(x+\\frac23)(x-\\frac52)$. Koefisien $x^2$: $-k(\\frac34-\\frac23+\\frac52)=-\\frac{31}{12}k$. Koefisien $x$: $k(-\\frac12+\\frac{15}{8}-\\frac53)=-\\frac{7}{24}k$. Karena $31$ dan $7$ tidak berfaktor sama dengan penyebutnya, $k$ harus kelipatan $24$. Terkecil $k=24$, yaitu $(4x-3)(3x+2)(2x-5)$ dengan koefisien $x^3$ sama dengan $24$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 100,
+        "kutipan": "faktor-faktor tersebut berhubungan dengan perpotongan grafik fungsi tersebut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "membandingkan dua polinomial",
+      "alasan_level": "membandingkan dua polinomial: faktor persekutuan, titik potong sumbu-y, dan penyilangan syarat pada empat pernyataan",
+      "stimulus": "Diberikan $f(x) = x^3 - 2x^2 - 5x + 6$ dan $g(x) = x^3 - 3x^2 - x + 3$.",
+      "pertanyaan": "Pernyataan yang benar mengenai $f$ dan $g$ adalah ....",
+      "jawaban_benar": "$f$ dan $g$ berbagi tepat dua pembuat nol, dan titik potong $f$ di sumbu-$y$ lebih tinggi",
+      "alasan_benar": "$f=(x-1)(x+2)(x-3)$, $g=(x-1)(x+1)(x-3)$: pembuat nol sama $1$ dan $3$; $f(0)=6>3=g(0)$",
+      "distraktor": [
+        {
+          "teks": "$f$ dan $g$ berbagi tiga pembuat nol, dan titik potong $f$ di sumbu-$y$ lebih tinggi",
+          "alasan": "pembuat nol $f$ adalah $-2,1,3$ dan $g$ adalah $-1,1,3$; yang sama hanya dua"
+        },
+        {
+          "teks": "$f$ dan $g$ berbagi dua pembuat nol, tetapi $x+1$ faktor $f$ dan $x+2$ faktor $g$",
+          "alasan": "tertukar: $x+2$ faktor $f$ dan $x+1$ faktor $g$"
+        },
+        {
+          "teks": "$f$ dan $g$ berbagi dua pembuat nol, tetapi titik potong $g$ di sumbu-$y$ lebih tinggi",
+          "alasan": "$g(0)=3$ lebih rendah daripada $f(0)=6$"
+        }
+      ],
+      "pembahasan": "Jumlah koefisien $f$ dan $g$ sama dengan nol sehingga $x-1$ faktor keduanya; $f(3)=g(3)=0$. $f=(x-1)(x-3)(x+2)$ dan $g=(x-1)(x-3)(x+1)$. Pembuat nol bersama: $1$ dan $3$. $f(0)=6$ dan $g(0)=3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 98,
+        "kutipan": "maka p merupakan faktor dari a 0 = 18"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kemungkinan pembuat nol menurut Sifat 2.5",
+      "alasan_level": "menilai kemungkinan keberadaan pembuat nol rasional dari syarat koefisien (Sifat 2.5), bukan menghitung",
+      "stimulus": "$P(x) = x^3 + bx^2 + cx + 7$ adalah polinomial dengan $b$ dan $c$ bilangan bulat.",
+      "pertanyaan": "Bilangan yang tidak mungkin menjadi pembuat nol $P(x)$ untuk pilihan bilangan bulat $b$ dan $c$ mana pun adalah ....",
+      "jawaban_benar": "$\\frac72$",
+      "alasan_benar": "koefisien $x^3$ adalah $1$ sehingga penyebut $q$ hanya boleh $\\pm1$; pembuat nol rasional pasti bilangan bulat pembagi $7$, jadi $\\frac72$ mustahil",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "pembagi $7$ dan mungkin: $P(x)=(x-7)(x^2+bx-1)$ memenuhi $P(0)=7$"
+        },
+        {
+          "teks": "$-7$",
+          "alasan": "pembagi $7$ dan mungkin: $P(x)=(x+7)(x^2+bx+1)$ memenuhi $P(0)=7$"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "pembagi $7$ dan mungkin: $P(x)=(x-1)(x^2+bx-7)$ memenuhi $P(0)=7$"
+        }
+      ],
+      "pembahasan": "Sifat 2.5 dengan $a_n=1$ dan $a_0=7$: pembuat nol rasional $\\frac pq$ dengan $p$ pembagi $7$ dan $q$ pembagi $1$. Jadi hanya $\\pm1,\\pm7$ yang mungkin. Bilangan $7,-7,1$ dapat dicapai dengan memilih faktor, sedangkan $\\frac72$ tidak termasuk calon.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 98,
+        "kutipan": "Dengan cara mencoba-coba, kita dapat menunjukkan bahwa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "temukan kesalahan penerapan Sifat 2.5",
+      "alasan_level": "menemukan kesalahan peran pembilang-penyebut pada daftar calon dan memeriksa dampaknya pada pembuat nol sebenarnya",
+      "stimulus": "Untuk $P(x) = 3x^3 - 2x^2 - 11x + 10$, Kania menyusun daftar calon pembuat nol rasional dengan mengambil pembilang dari faktor koefisien $x^3$ (yaitu $\\pm1, \\pm3$) dan penyebut dari faktor konstanta (yaitu $1, 2, 5, 10$). Ia lalu hanya menguji bilangan pada daftarnya.",
+      "pertanyaan": "Pernyataan yang tepat mengenai daftar Kania adalah ....",
+      "jawaban_benar": "Peran pembilang dan penyebut tertukar; akibatnya pembuat nol $-2$ dan $\\frac53$ dari $P$ tidak ada pada daftarnya",
+      "alasan_benar": "Sifat 2.5: pembilang $p$ faktor konstanta ($10$) dan penyebut $q$ faktor koefisien utama ($3$); $P=(x-1)(x+2)(3x-5)$ sehingga $-2$ dan $\\frac53$ tidak masuk daftar Kania, hanya $1$ yang masuk",
+      "distraktor": [
+        {
+          "teks": "Peran pembilang dan penyebut tertukar; akibatnya pembuat nol $1$ dari $P$ tidak ada pada daftarnya",
+          "alasan": "$1=\\frac11$ ada pada daftar Kania; yang tidak ada adalah $-2$ dan $\\frac53$"
+        },
+        {
+          "teks": "Daftar Kania sudah benar sehingga memuat semua pembuat nol rasional $P$",
+          "alasan": "daftar tertukar dan tidak memuat $-2$ maupun $\\frac53$"
+        },
+        {
+          "teks": "Kania seharusnya memakai koefisien $x^3$ dan koefisien $x$, bukan konstanta",
+          "alasan": "Sifat 2.5 memakai koefisien utama dan konstanta, bukan koefisien $x$"
+        }
+      ],
+      "pembahasan": "Sifat 2.5: $p$ faktor $a_0=10$ dan $q$ faktor $a_n=3$. Kania melakukan kebalikannya. Faktorisasi $P=(x-1)(x+2)(3x-5)$ dengan pembuat nol $1,-2,\\frac53$. Pada daftar Kania ada $1$, tetapi $-2$ ($p=2$ bukan faktor $3$) dan $\\frac53$ ($p=5$ bukan faktor $3$) tidak ada.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 100,
+        "kutipan": "jika dan hanya jika A = 0 atau B = 0"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan membagi dengan faktor",
+      "alasan_level": "menemukan kesalahan pembagian dengan faktor yang dapat bernilai nol dan merekonstruksi himpunan penyelesaian",
+      "stimulus": "Ali menyelesaikan $x^3 - 3x^2 - 4x + 12 = 0$. Pekerjaannya: \"$x^2(x - 3) - 4(x - 3) = 0$, sehingga $(x - 3)(x^2 - 4) = 0$. Bagi kedua ruas dengan $x - 3$, diperoleh $x^2 = 4$, jadi $x = 2$ atau $x = -2$.\"",
+      "pertanyaan": "Pernyataan yang tepat mengenai pekerjaan Ali adalah ....",
+      "jawaban_benar": "Pembagian dengan $x - 3$ tidak sah karena $x - 3$ dapat bernilai nol; himpunan penyelesaian sebenarnya adalah $\\{-2, 2, 3\\}$",
+      "alasan_benar": "$(x-3)(x-2)(x+2)=0$ menurut sifat hasil kali nol memberi $x=3$, $x=2$, atau $x=-2$; membagi dengan $x-3$ menghilangkan penyelesaian $x=3$",
+      "distraktor": [
+        {
+          "teks": "Pembagian dengan $x - 3$ sah; himpunan penyelesaiannya $\\{-2, 2\\}$",
+          "alasan": "pembagian dengan faktor yang bisa nol menghilangkan penyelesaian $x=3$"
+        },
+        {
+          "teks": "Pembagian dengan $x - 3$ tidak sah; himpunan penyelesaian sebenarnya $\\{-3, -2, 2\\}$",
+          "alasan": "diagnosis benar tetapi salah tanda: faktor $x-3$ memberi $x=3$, bukan $-3$"
+        },
+        {
+          "teks": "Pembagian dengan $x - 3$ tidak sah; himpunan penyelesaian sebenarnya $\\{2, 3\\}$",
+          "alasan": "diagnosis benar tetapi penyelesaian $x=-2$ dari $x^2=4$ ikut terbuang"
+        }
+      ],
+      "pembahasan": "Pengelompokan benar: $(x-3)(x^2-4)=(x-3)(x-2)(x+2)=0$. Sifat hasil kali nol: $x-3=0$ atau $x-2=0$ atau $x+2=0$. Membagi kedua ruas dengan $x-3$ mengabaikan kemungkinan $x-3=0$, sehingga $x=3$ hilang. Himpunan penyelesaian $\\{-2,2,3\\}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-d-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 100,
+        "kutipan": "jika dan hanya jika A = 0 atau B = 0"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan sifat hasil kali nol",
+      "alasan_level": "menemukan kesalahan penerapan sifat hasil kali nol pada hasil kali bukan nol dan merekonstruksi penyelesaian",
+      "stimulus": "Bima menyelesaikan $(x - 2)(x + 3) = 14$. Pekerjaannya: \"Berdasarkan sifat hasil kali nol, $x - 2 = 14$ atau $x + 3 = 14$, sehingga $x = 16$ atau $x = 11$.\"",
+      "pertanyaan": "Pernyataan yang tepat mengenai pekerjaan Bima adalah ....",
+      "jawaban_benar": "Sifat hasil kali nol hanya berlaku bila hasil kalinya nol; penyelesaian yang benar adalah $x = 4$ atau $x = -5$",
+      "alasan_benar": "ubah menjadi $x^2+x-20=0$, $(x-4)(x+5)=0$ sehingga $x=4$ atau $x=-5$; substitusi $x=16$ memberi $14\\cdot19\\neq14$",
+      "distraktor": [
+        {
+          "teks": "Sifat hasil kali nol hanya berlaku bila hasil kalinya nol; penyelesaian yang benar adalah $x = -4$ atau $x = 5$",
+          "alasan": "diagnosis benar tetapi tanda pembuat nol terbalik; $x=5$ memberi $3\\cdot8=24\\neq14$"
+        },
+        {
+          "teks": "Penerapan sifat hasil kali nol sudah benar; hanya perhitungan akhirnya yang perlu diperiksa, penyelesaiannya $x = 16$ atau $x = 11$",
+          "alasan": "sifat hasil kali nol tidak berlaku untuk hasil kali $14$; $x=16$ memberi $14\\cdot19=266$"
+        },
+        {
+          "teks": "Sifat hasil kali nol hanya berlaku bila hasil kalinya nol; penyelesaian yang benar adalah $x = 2$ atau $x = -3$",
+          "alasan": "mengambil pembuat nol faktor-faktor semula, padahal ruas kanan $14$ bukan nol; $x=2$ memberi $0\\neq14$"
+        }
+      ],
+      "pembahasan": "Sifat hasil kali nol: $A\\cdot B=0$ jika dan hanya jika $A=0$ atau $B=0$; tidak berlaku untuk hasil kali $14$. Jabarkan: $x^2+x-6=14$, $x^2+x-20=0$, $(x-4)(x+5)=0$. Jadi $x=4$ atau $x=-5$. Cek $x=4$: $2\\cdot7=14$; $x=-5$: $(-7)(-2)=14$.",
+      "catatan": null
+    }
+  ]
+}

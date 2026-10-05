@@ -1,0 +1,352 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 3,
+  "subbab": "D",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab D (Aturan Sinus) tipis dan tanpa soal bergambar: acuan variasi sudah habis di easy/medium, sedangkan penalaran hard yang tidak kembar hanya mencakup kasus ambigu SSA (jumlah segitiga), klaim sinus-sisi, dan batas sinus lewat jari-jari lingkaran luar. Soal layak yang tidak kembar hanya 10.",
+  "soal": [
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Dia mengetahui bahwa nilai maksimum sinus adalah 1 sehingga dia bingung apakah perhitungannya salah atau ada alasan lain."
+      },
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat dua segitiga (pilih panjang sisi)",
+      "alasan_level": "mengevaluasi empat nilai $a$ terhadap batas $b \\sin A < a < b$ untuk kasus ambigu; setara medium atas",
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $\\angle A = 45^\\circ$ dan $b = 8\\sqrt{2}$. Nilai $a$ yang menghasilkan tepat dua segitiga berbeda adalah ....",
+      "jawaban_benar": "$a = 10$",
+      "alasan_benar": "$\\sin B = \\frac{b \\sin A}{a} = \\frac{8}{a}$. Untuk $a = 10$: $\\sin B = 0{,}8$, $B$ lancip maupun tumpul memenuhi $A + B < 180^\\circ$ sehingga dua segitiga",
+      "distraktor": [
+        {
+          "teks": "$a = 6$",
+          "alasan": "$\\sin B = \\frac{8}{6} > 1$ sehingga tidak ada segitiga; siswa mengira $a$ kecil selalu memberi dua sudut"
+        },
+        {
+          "teks": "$a = 8$",
+          "alasan": "$\\sin B = 1$, $B = 90^\\circ$ hanya satu sudut sehingga satu segitiga (siku-siku)"
+        },
+        {
+          "teks": "$a = 8\\sqrt{2}$",
+          "alasan": "$a = b$ sehingga $B = 45^\\circ$ atau $135^\\circ$, tetapi $45^\\circ + 135^\\circ = 180^\\circ$ ditolak, jadi satu segitiga"
+        }
+      ],
+      "pembahasan": "Dua segitiga terjadi bila $b \\sin A < a < b$, yaitu $8 < a < 8\\sqrt{2} \\approx 11{,}3$. Dari pilihan hanya $a = 10$ di dalam selang itu.",
+      "id": "kelas11_tl-b03-d-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Dia mengetahui bahwa nilai maksimum sinus adalah 1 sehingga dia bingung apakah perhitungannya salah atau ada alasan lain."
+      },
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak nilai bulat untuk dua segitiga",
+      "alasan_level": "menurunkan syarat dua segitiga $b \\sin A < a < b$ lalu menghitung bilangan bulat dengan memeriksa dua batas (jebakan batas); setara medium atas",
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $\\angle A = 30^\\circ$ dan $b = 18$. Jika $a$ adalah bilangan bulat, banyak nilai $a$ yang menghasilkan tepat dua segitiga berbeda adalah ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "syarat dua segitiga: $b \\sin A < a < b$ atau $9 < a < 18$; bilangan bulatnya $10, 11, \\dots, 17$ yaitu $8$ nilai",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "ikut menghitung salah satu batas ($a = 9$ memberi $B = 90^\\circ$, hanya satu segitiga)"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "ikut menghitung kedua batas $a = 9$ dan $a = 18$, padahal masing-masing hanya memberi satu segitiga"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "menghitung $18 - 9 - 1 - 1$, membuang satu nilai bulat yang sebenarnya memenuhi"
+        }
+      ],
+      "pembahasan": "$\\sin B = \\frac{9}{a}$. Untuk $a = 9$: $B = 90^\\circ$ (satu). Untuk $9 < a < 18$: $\\sin B < 1$ dan $a < b$ sehingga $B$ lancip dan tumpul sama-sama valid (dua). Untuk $a = 18$: $B = 30^\\circ$ atau $150^\\circ$, tetapi $30^\\circ + 150^\\circ = 180^\\circ$ ditolak (satu). Jadi $a = 10, \\dots, 17$ ada $8$ nilai.",
+      "id": "kelas11_tl-b03-d-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Dia mengetahui bahwa nilai maksimum sinus adalah 1 sehingga dia bingung apakah perhitungannya salah atau ada alasan lain."
+      },
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan: sudut A tumpul",
+      "alasan_level": "menilai kesimpulan siswa: harus menyadari $B = 150^\\circ$ gagal karena jumlah sudut dengan $A$ tumpul; setara medium atas",
+      "pertanyaan": "Rani mengerjakan soal berikut. Pada segitiga $ABC$ diketahui $\\angle A = 120^\\circ$, $a = 6\\sqrt{3}$, dan $b = 6$. Ia menulis $\\sin B = \\frac{b \\sin A}{a} = \\frac{1}{2}$, lalu menyimpulkan ada dua segitiga karena $B = 30^\\circ$ atau $B = 150^\\circ$. Kesimpulan yang benar mengenai data tersebut adalah ....",
+      "jawaban_benar": "Hanya satu segitiga, dengan $B = 30^\\circ$ dan $C = 30^\\circ$",
+      "alasan_benar": "$B = 150^\\circ$ ditolak karena $A + B = 270^\\circ > 180^\\circ$; $B = 30^\\circ$ memberi $C = 180^\\circ - 120^\\circ - 30^\\circ = 30^\\circ$",
+      "distraktor": [
+        {
+          "teks": "Dua segitiga, dengan $B = 30^\\circ$ atau $B = 150^\\circ$",
+          "alasan": "mengulang kesalahan Rani: tidak memeriksa jumlah sudut untuk $B = 150^\\circ$"
+        },
+        {
+          "teks": "Tidak ada segitiga, karena $\\angle A$ tumpul",
+          "alasan": "mengira sudut tumpul membuat segitiga mustahil; padahal $B$ lancip masih memenuhi"
+        },
+        {
+          "teks": "Hanya satu segitiga, dengan $B = 30^\\circ$ dan $C = 60^\\circ$",
+          "alasan": "salah menghitung $C$: $120^\\circ + 30^\\circ + 60^\\circ = 210^\\circ$, bukan $180^\\circ$"
+        }
+      ],
+      "pembahasan": "Kesalahan Rani: sudut $B$ dengan $\\sin B = \\frac{1}{2}$ memang bisa $30^\\circ$ atau $150^\\circ$, tetapi karena $\\angle A = 120^\\circ$ tumpul, $B$ harus lancip. Jadi hanya $B = 30^\\circ$, $C = 30^\\circ$.",
+      "id": "kelas11_tl-b03-d-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Dia mengetahui bahwa nilai maksimum sinus adalah 1 sehingga dia bingung apakah perhitungannya salah atau ada alasan lain."
+      },
+      "jumlah_langkah": 5,
+      "jenis_soal": "banyak sudut bulat untuk dua segitiga",
+      "alasan_level": "menganalisis syarat $\\sin B = 2\\sin A \\le 1$ dan menolak sudut $A$ tumpul yang tampak memenuhi; setara medium atas",
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $a = 6$ dan $b = 12$, sedangkan besar $\\angle A$ adalah bilangan bulat dalam derajat. Banyak nilai $\\angle A$ yang menghasilkan tepat dua segitiga berbeda adalah ....",
+      "jawaban_benar": "$29$",
+      "alasan_benar": "$\\sin B = 2 \\sin A$. Dua segitiga bila $\\sin B < 1$ dan $A$ lancip (karena $a < b$), yaitu $\\sin A < \\frac{1}{2}$ atau $1^\\circ \\le A \\le 29^\\circ$: $29$ nilai",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "ikut menghitung $A = 30^\\circ$, padahal $\\sin B = 1$ hanya memberi satu segitiga"
+        },
+        {
+          "teks": "$28$",
+          "alasan": "memulai dari $A = 2^\\circ$ atau salah menghitung banyak bilangan bulat pada $1$ sampai $29$"
+        },
+        {
+          "teks": "$58$",
+          "alasan": "ikut menghitung $151^\\circ$ sampai $179^\\circ$ yang juga berlaku $\\sin A < \\frac{1}{2}$, padahal $a < b$ menuntut $A < B$ sehingga $A$ lancip"
+        }
+      ],
+      "pembahasan": "Karena $a < b$ maka $A < B$, jadi $A$ harus lancip. Syarat $\\sin B = 2\\sin A < 1$ memberi $A < 30^\\circ$. Untuk $A = 1^\\circ, \\dots, 29^\\circ$ sudut $B$ lancip dan tumpul sama-sama valid: $29$ nilai. $A = 30^\\circ$ memberi satu segitiga.",
+      "id": "kelas11_tl-b03-d-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 157,
+        "kutipan": "Dari eksplorasi tersebut, kamu telah menemukan hubungan antara nilai sinus sudut-sudut dalam segitiga dan panjang sisi-sisinya."
+      },
+      "jumlah_langkah": 4,
+      "jenis_soal": "menilai contoh penyangkal",
+      "alasan_level": "mengevaluasi sah tidaknya contoh penyangkal dengan memeriksa jumlah sudut dan hubungan sisi-sinus; setara medium atas",
+      "pertanyaan": "Klaim: \"pada setiap segitiga, sudut yang lebih besar memiliki nilai sinus yang lebih besar.\" Rina mengajukan sudut $A = 150^\\circ$ dan $B = 60^\\circ$ sebagai contoh penyangkal karena $\\sin 150^\\circ < \\sin 60^\\circ$. Penilaian yang benar adalah ....",
+      "jawaban_benar": "Contoh itu tidak sah karena $150^\\circ + 60^\\circ > 180^\\circ$, sehingga tidak ada segitiga dengan kedua sudut itu",
+      "alasan_benar": "dalam segitiga $A + B < 180^\\circ$; dengan $A > B$ berlaku $a > b$ sehingga $\\sin A > \\sin B$. Pasangan $150^\\circ$ dan $60^\\circ$ bukan sudut segitiga",
+      "distraktor": [
+        {
+          "teks": "Contoh itu sah karena $\\sin 150^\\circ < \\sin 60^\\circ$, sehingga klaim salah",
+          "alasan": "hanya membandingkan nilai sinus tanpa memeriksa apakah kedua sudut dapat berada pada satu segitiga"
+        },
+        {
+          "teks": "Contoh itu tidak sah karena $\\sin 150^\\circ > \\sin 60^\\circ$",
+          "alasan": "salah nilai: $\\sin 150^\\circ = \\frac{1}{2}$ lebih kecil dari $\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$"
+        },
+        {
+          "teks": "Klaim salah karena sinus sudut tumpul selalu lebih kecil daripada sinus sudut lancip",
+          "alasan": "generalisasi keliru: $\\sin 100^\\circ > \\sin 30^\\circ$ walau $100^\\circ$ tumpul"
+        }
+      ],
+      "pembahasan": "$\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$ dan sisi lebih panjang berhadapan dengan sudut lebih besar, sehingga pada segitiga $A > B$ memberi $\\sin A > \\sin B$. Contoh Rina tidak dapat membentuk segitiga ($150^\\circ + 60^\\circ = 210^\\circ$), jadi tidak menyangkal klaim.",
+      "id": "kelas11_tl-b03-d-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 157,
+        "kutipan": "Dengan Aturan Sinus, kita memperoleh"
+      },
+      "jumlah_langkah": 5,
+      "jenis_soal": "bandingkan dua cara kasus ambigu",
+      "alasan_level": "membandingkan dua penalaran siswa, memutuskan yang benar, dan menghitung kedua panjang $c$; setara medium atas",
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $\\angle A = 45^\\circ$, $a = 8$, dan $b = 4\\sqrt{6}$. Dina berpendapat hanya ada satu segitiga karena $B$ pasti lancip, sedangkan Eko berpendapat $B$ bisa lancip atau tumpul. Penilaian yang benar adalah ....",
+      "jawaban_benar": "Eko benar: $B = 60^\\circ$ atau $120^\\circ$ sama-sama valid, sehingga $c = 4\\sqrt{3} + 4$ atau $c = 4\\sqrt{3} - 4$",
+      "alasan_benar": "$\\sin B = \\frac{\\sqrt{3}}{2}$; $B = 60^\\circ$ memberi $C = 75^\\circ$, $B = 120^\\circ$ memberi $C = 15^\\circ$ (jumlah $45^\\circ + 120^\\circ = 165^\\circ < 180^\\circ$); $c = \\frac{8 \\sin C}{\\sin 45^\\circ}$",
+      "distraktor": [
+        {
+          "teks": "Dina benar: hanya $c = 4\\sqrt{3} + 4$, karena $B$ selalu lancip bila $A$ lancip",
+          "alasan": "anggapan keliru: sudut lancip $A$ tidak memaksa $B$ lancip"
+        },
+        {
+          "teks": "Dina benar: $B = 120^\\circ$ ditolak karena $45^\\circ + 120^\\circ > 180^\\circ$",
+          "alasan": "salah menjumlahkan: $45^\\circ + 120^\\circ = 165^\\circ < 180^\\circ$"
+        },
+        {
+          "teks": "Keduanya salah: tidak ada segitiga karena $\\sin B > 1$",
+          "alasan": "$\\sin B = \\frac{\\sqrt{3}}{2} < 1$, bukan lebih dari 1"
+        }
+      ],
+      "pembahasan": "$\\sin B = \\frac{4\\sqrt{6} \\cdot \\frac{\\sqrt{2}}{2}}{8} = \\frac{\\sqrt{3}}{2}$. Kasus $B = 60^\\circ$: $C = 75^\\circ$, $c = 4\\sqrt{3} + 4$. Kasus $B = 120^\\circ$: $C = 15^\\circ$, $c = 4\\sqrt{3} - 4$. Eko benar.",
+      "id": "kelas11_tl-b03-d-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 157,
+        "kutipan": "Dari eksplorasi tersebut, kamu telah menemukan hubungan antara nilai sinus sudut-sudut dalam segitiga dan panjang sisi-sisinya."
+      },
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim perbandingan sinus",
+      "alasan_level": "mengevaluasi klaim bahwa sudut sebanding dengan sinus; harus mengubah ke perbandingan sisi lalu mengenali segitiga siku-siku; setara medium atas",
+      "pertanyaan": "Pada segitiga $ABC$ berlaku $\\sin A : \\sin B : \\sin C = 3 : 4 : 5$. Andi menyimpulkan bahwa besar sudutnya juga berbanding $3 : 4 : 5$ sehingga $C = \\frac{5}{12} \\cdot 180^\\circ = 75^\\circ$. Penilaian yang benar adalah ....",
+      "jawaban_benar": "Salah, sebab sisi berbanding $3 : 4 : 5$ sehingga $C = 90^\\circ$",
+      "alasan_benar": "Aturan Sinus: $a : b : c = \\sin A : \\sin B : \\sin C = 3 : 4 : 5$. Karena $3^2 + 4^2 = 5^2$, segitiga siku-siku di $C$",
+      "distraktor": [
+        {
+          "teks": "Benar, $C = 75^\\circ$ karena nilai sinus sebanding dengan besar sudut",
+          "alasan": "mengira sinus sebanding dengan sudut; yang sebanding dengan sinus adalah sisi"
+        },
+        {
+          "teks": "Salah, sebab sudut berbanding terbalik dengan sinus sehingga $C$ sudut terkecil, yaitu $45^\\circ$",
+          "alasan": "sisi terpanjang $c$ berhadapan dengan sudut terbesar, bukan terkecil"
+        },
+        {
+          "teks": "Salah, sebab $C = 120^\\circ$ karena bagian sinus terbesar",
+          "alasan": "tidak memeriksa: dengan sisi $3 : 4 : 5$ kosinus $C$ bernilai $0$, bukan negatif"
+        }
+      ],
+      "pembahasan": "Sisi sebanding dengan sinus sudut di hadapannya, bukan dengan sudutnya. Maka $a : b : c = 3 : 4 : 5$. Hukum kosinus atau kebalikan Pythagoras: $3^2 + 4^2 = 5^2$, jadi $C = 90^\\circ$ (dan $\\sin C = 1$).",
+      "id": "kelas11_tl-b03-d-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 157,
+        "kutipan": "Diberikan segitiga ABC dengan panjang sisi a, b, dan c (lihat kembali Gambar 3.44), maka berlaku:"
+      },
+      "jumlah_langkah": 5,
+      "jenis_soal": "pilih data yang menjamin tepat satu segitiga",
+      "alasan_level": "menilai empat himpunan data SSA satu per satu (nol, satu, dua segitiga) dan mengenali kasus batas; setara medium atas",
+      "pertanyaan": "Data $(\\angle A, a, b)$ berikut dipakai untuk membentuk segitiga $ABC$. Data yang menghasilkan tepat satu segitiga adalah ....",
+      "jawaban_benar": "$\\angle A = 30^\\circ$, $a = 5$, $b = 10$",
+      "alasan_benar": "$\\sin B = \\frac{10 \\cdot \\frac{1}{2}}{5} = 1$ sehingga $B = 90^\\circ$ saja, $C = 60^\\circ$: tepat satu segitiga",
+      "distraktor": [
+        {
+          "teks": "$\\angle A = 60^\\circ$, $a = 7$, $b = 8$",
+          "alasan": "$\\sin B = \\frac{4\\sqrt{3}}{7} \\approx 0{,}99 < 1$ dan $a < b$ sehingga dua segitiga ($B$ lancip dan tumpul)"
+        },
+        {
+          "teks": "$\\angle A = 45^\\circ$, $a = 5$, $b = 10$",
+          "alasan": "$\\sin B = \\sqrt{2} > 1$ sehingga tidak ada segitiga"
+        },
+        {
+          "teks": "$\\angle A = 120^\\circ$, $a = 6$, $b = 8$",
+          "alasan": "$\\angle A$ tumpul menuntut $a > b$; di sini $a < b$ sehingga tidak ada segitiga ($\\sin B = \\frac{2\\sqrt{3}}{3} > 1$)"
+        }
+      ],
+      "pembahasan": "Opsi benar: $\\sin B = 1$ (batas), satu segitiga siku-siku. $60^\\circ, 7, 8$: dua segitiga. $45^\\circ, 5, 10$: $\\sin B > 1$ (nol). $120^\\circ, 6, 8$: $\\sin B > 1$ (nol).",
+      "id": "kelas11_tl-b03-d-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Diberikan segitiga ABC dengan panjang sisi b = 4 dan c = 7. R adalah jari-jari lingkaran luar segitiga tersebut."
+      },
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi pernyataan jari-jari lingkaran luar",
+      "alasan_level": "mengevaluasi empat pernyataan umum memakai $a = 2R\\sin A \\le 2R$ dan mencari contoh penyangkal; setara medium atas",
+      "pertanyaan": "Sebuah segitiga memiliki jari-jari lingkaran luar $R = 5$. Pernyataan yang benar tentang panjang sisi-sisinya adalah ....",
+      "jawaban_benar": "Tiap sisi paling panjang $10$, dan $10$ hanya bila sudut di hadapannya $90^\\circ$",
+      "alasan_benar": "$a = 2R \\sin A = 10 \\sin A \\le 10$ dan sama dengan $10$ hanya jika $\\sin A = 1$, yaitu $A = 90^\\circ$",
+      "distraktor": [
+        {
+          "teks": "Ada segitiga dengan sisi $12$ asalkan sudut di hadapannya tumpul",
+          "alasan": "$\\sin A = \\frac{12}{10} > 1$ mustahil untuk sudut apa pun"
+        },
+        {
+          "teks": "Sisi terpanjangnya pasti tepat $10$",
+          "alasan": "penyangkal: segitiga sama sisi ($A = 60^\\circ$) memiliki sisi $10 \\sin 60^\\circ = 5\\sqrt{3} \\approx 8{,}7$"
+        },
+        {
+          "teks": "Bila ada sisi $5$, sudut di hadapannya pasti $30^\\circ$",
+          "alasan": "$\\sin A = \\frac{1}{2}$ juga dipenuhi $A = 150^\\circ$ (mis. sudut $150^\\circ, 10^\\circ, 20^\\circ$)"
+        }
+      ],
+      "pembahasan": "Dari $\\frac{a}{\\sin A} = 2R = 10$, $a = 10 \\sin A \\le 10$. Sisi $12$ mustahil, sisi terpanjang tidak harus $10$ (sama sisi: $5\\sqrt{3}$), dan $a = 5$ bisa berhadapan dengan $30^\\circ$ atau $150^\\circ$.",
+      "id": "kelas11_tl-b03-d-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    },
+    {
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 157,
+        "kutipan": "Dengan Aturan Sinus, kita memperoleh"
+      },
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi pernyataan umum banyak segitiga (SSA)",
+      "alasan_level": "mengevaluasi empat generalisasi tentang banyak segitiga dengan contoh penyangkal; setara medium atas",
+      "pertanyaan": "Dari data $\\angle A$, sisi $a$ (di hadapan $A$), dan sisi $b$ akan dibentuk segitiga $ABC$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Jika $\\angle A$ lancip dan $a \\ge b$, maka terbentuk tepat satu segitiga",
+      "alasan_benar": "$a \\ge b$ berarti $A \\ge B$, jadi $B$ lancip dan $\\sin B = \\frac{b \\sin A}{a} \\le \\sin A < 1$; sudut tumpul $180^\\circ - B$ ditolak karena jumlahnya dengan $A$ melebihi $180^\\circ$",
+      "distraktor": [
+        {
+          "teks": "Jika $\\angle A$ lancip dan $a < b$, maka selalu terbentuk dua segitiga",
+          "alasan": "penyangkal: $A = 30^\\circ$, $a = 3$, $b = 10$ memberi $\\sin B = \\frac{5}{3} > 1$ (tidak ada segitiga)"
+        },
+        {
+          "teks": "Jika $\\angle A$ tumpul dan $a > b$, maka terbentuk dua segitiga",
+          "alasan": "$B$ harus lancip sehingga hanya satu segitiga, mis. $A = 120^\\circ$, $a = 9$, $b = 8$"
+        },
+        {
+          "teks": "Jika $\\angle A$ lancip dan $a = b \\sin A$, maka tidak ada segitiga",
+          "alasan": "$\\sin B = 1$ sehingga $B = 90^\\circ$ dan terbentuk satu segitiga siku-siku, mis. $A = 30^\\circ$, $a = 5$, $b = 10$"
+        }
+      ],
+      "pembahasan": "Pernyataan benar sesuai: $a \\ge b$ dan $A$ lancip selalu memberi satu segitiga. Tiga lainnya ditolak dengan contoh penyangkal: $(30^\\circ, 3, 10)$ nol segitiga, $(120^\\circ, 9, 8)$ satu segitiga, $(30^\\circ, 5, 10)$ satu segitiga.",
+      "id": "kelas11_tl-b03-d-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "stimulus": null,
+      "catatan": null,
+      "cognitive_c": "C5"
+    }
+  ]
+}
