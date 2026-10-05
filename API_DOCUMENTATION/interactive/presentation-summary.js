@@ -1,5 +1,5 @@
 window.FLOW_PRESENTATION = {
-  "intro": "Dua belas slide menjelaskan alur silver AI dari JSON, validasi, model, siswa dan CTT/IRT sampai feedback sistem. Tidak ada persetujuan pelabel manusia dalam alur operasional.",
+  "intro": "Alur rubrik v8/prompt v10: JSON → tiga run blind dan jalur kondisi → arsip AI asli → bank relatif, IndoBERT dan delivery → bukti CTT/IRT terpisah.",
   "conclusion": "AI menetapkan label silver awal; respons siswa memberi bukti empiris. Sistem menyimpan hasil CTT/IRT secara terpisah dan menahan masalah kualitas untuk validasi ulang AI. Dataset dan model baru tetap mengikuti gate teknis.",
   "slides": [
     {
@@ -80,7 +80,7 @@ window.FLOW_PRESENTATION = {
         "Simpan solusi singkat dan bukti; label AI belum menjadi label AI."
       ],
       "why": "Model memerlukan contoh berlabel untuk belajar. LLM membantu menyiapkan usulan awal, sementara penilaian tanpa melihat prediksi mengurangi pengaruh keputusan model sebelumnya.",
-      "speakerNotes": "LLM dibutuhkan untuk menafsirkan langkah penyelesaian dan tuntutan konsep sebelum respons siswa tersedia. Tiga panggilan membantu memperlihatkan konsistensi, tetapi tetap berasal dari satu model Gemini; kesalahan bersama masih mungkin. Karena itu 3/3 bukan confidence terkalibrasi atau silver AI. Silver 2–1, abstain, key conflict atau concern memerlukan adjudikasi terpisah. Hidden chain-of-thought tidak diminta/disimpan; yang ditampilkan adalah solusi minimum, evidence spans, alasan singkat dan difficulty evidence profile.",
+      "speakerNotes": "LLM dibutuhkan untuk menafsirkan langkah penyelesaian dan tuntutan konsep sebelum respons siswa tersedia. Tiga panggilan membantu memperlihatkan konsistensi, tetapi tetap berasal dari satu model Gemini; kesalahan bersama masih mungkin. Karena itu 3/3 bukan confidence terkalibrasi atau silver AI. Silver 2–1, abstain, key conflict atau concern memerlukan adjudikasi terpisah. Hidden chain-of-thought tidak diminta/disimpan; yang ditampilkan adalah solusi minimum, evidence spans, alasan singkat dan difficulty evidence profile. Rubrik v8 memungkinkan prosedur familiar mendapat Hard ketika tuntutan perencanaan/integrasi tinggi dan bantuan sedikit. N=3 adalah tiga run model yang sama; request batch serial. Run belum lengkap disimpan dalam checkpoint, 429 pertama menghentikan seluruh panggilan.",
       "terms": [
         {
           "term": "Blind",
@@ -166,7 +166,7 @@ window.FLOW_PRESENTATION = {
         "Pada pelatihan baru, model mempertimbangkan kelas dan urutan kesulitan."
       ],
       "why": "Soal prosedural dapat mudah atau sulit. Satu kategori tidak cukup menjelaskan seluruh karakter soal.",
-      "speakerNotes": "Head berarti bagian model yang menghasilkan satu jenis label. Kognitif menggambarkan proses berpikir, knowledge menggambarkan jenis pengetahuan, intended difficulty memperkirakan tantangan untuk kelas sasaran. Grade embedding menyediakan representasi kelas agar difficulty head dapat mempertimbangkan tingkat pembelajaran. Default training baru grade-aware-ordinal-v2 menggunakan dua batas terurut. Artifact lama dapat parallel-v1, sehingga arsitektur yang benar dibaca dari manifest. Runtime kini menerima prediksi in-scope untuk grade 1–6; grade 7–12 menghasilkan abstain/out_of_scope.",
+      "speakerNotes": "Head berarti bagian model yang menghasilkan satu jenis label. Kognitif menggambarkan proses berpikir, knowledge menggambarkan jenis pengetahuan, intended difficulty memperkirakan tantangan untuk kelas sasaran. Grade embedding menyediakan representasi kelas agar difficulty head dapat mempertimbangkan tingkat pembelajaran. Default training baru grade-aware-ordinal-v2 menggunakan dua batas terurut. Artifact lama dapat parallel-v1, sehingga arsitektur yang benar dibaca dari manifest. Runtime membaca supportedGrades dan supportedSubjectTracks dari manifest; input di luar scope menghasilkan abstain/out_of_scope. Penanda TL masuk serializer; grade embedding memiliki 12 slot pada model baru. Profil difficulty LLM adalah evidence keluaran, bukan tensor fitur numerik tambahan pada IndoBERT.",
       "terms": [
         {
           "term": "Head",
@@ -221,7 +221,7 @@ window.FLOW_PRESENTATION = {
         "Batas keyakinan mengatur pemeriksaan; syarat isi atau kelas gagal berarti tidak memberi label."
       ],
       "why": "Label dengan peluang terbesar saja belum menunjukkan keraguan model. Confidence dan entropy membantu menandai usulan yang perlu diperiksa.",
-      "speakerNotes": "Contoh p=[0.80,0.15,0.05] memberi confidence 0.80 dan normalized entropy sekitar 0.558. Dua keluaran ini dihitung setelah probabilitas dikalibrasi; keduanya bukan fitur awal. Temperature menyesuaikan tajamnya distribusi dan dipilih menggunakan validation, bukan test atau skor IRT. Policy confidence-entropy-v1 membutuhkan dua batas yang tersimpan pada manifest; confidence-only-v1 hanya menggunakan confidence untuk gate. Tinggi confidence tidak membuktikan label benar. Input mencapai truncation limit juga menghasilkan review.",
+      "speakerNotes": "Contoh p=[0.80,0.15,0.05] memberi confidence 0.80 dan normalized entropy sekitar 0.558. Dua keluaran ini dihitung setelah probabilitas dikalibrasi; keduanya bukan fitur awal. Temperature menyesuaikan tajamnya distribusi dan dipilih menggunakan validation, bukan test atau skor IRT. Policy confidence-entropy-v1 membutuhkan dua batas yang tersimpan pada manifest; confidence-only-v1 hanya menggunakan confidence untuk gate. Tinggi confidence tidak membuktikan label benar. Input mencapai truncation limit juga menghasilkan review. confidence_score JSON bank adalah dukungan run asli terhadap label operasional dan dapat 0; ini berbeda dari probabilitas head IndoBERT yang telah dikalibrasi.",
       "terms": [
         {
           "term": "Confidence",
@@ -279,7 +279,7 @@ window.FLOW_PRESENTATION = {
         "Jawaban dinilai server; skip tetap null dan retry tetap idempotent."
       ],
       "why": "Data respons harus terikat pada soal dan kunci versi yang tepat.",
-      "speakerNotes": "Delivery tidak menunggu pelabel manusia. Snapshot memakai ai_silver dengan tiga run sukses, kunci/solusi/visual qualified dan checksum. Pilot teks mendukung grade 1–12 serta TL 11–12, tanpa memperluas scope IndoBERT SD.",
+      "speakerNotes": "Delivery tidak menunggu pelabel manusia. Snapshot memakai ai_silver dengan tiga run sukses, kunci/solusi/visual qualified dan checksum. Pilot teks mendukung grade 1–12 serta TL 11–12, dengan scope classifier mengikuti manifest artifact yang benar-benar digunakan.",
       "terms": [
         {
           "term": "AI silver",
@@ -543,7 +543,7 @@ window.FLOW_PRESENTATION = {
         "CAT, mastery topik, equating dan pembaruan model online masih rancangan."
       ],
       "why": "Menjelaskan batas implementasi membantu pembaca memahami hasil sekarang dan merencanakan pengembangan berikutnya.",
-      "speakerNotes": "Gate konten, split, model dan IRT tetap berlaku. Persetujuan pelabel manusia dihapus. Operator mengelola pekerjaan sistem dan service integration; label berasal dari AI. Migrasi tidak menciptakan respons siswa atau melatih model baru.",
+      "speakerNotes": "Gate konten, split, model dan IRT tetap berlaku. Persetujuan pelabel manusia dihapus. Operator mengelola pekerjaan sistem dan service integration; label berasal dari AI. Migrasi tidak menciptakan respons siswa atau melatih model baru. Pembagian bank sepertiga memakai relative_bank_quota. Training dan prior IRT memakai ai_validation_results.json; label kuota tidak menjadi ai_silver.",
       "terms": [
         {
           "term": "Gate / servable",
@@ -762,6 +762,16 @@ window.FLOW_PRESENTATION = {
       "term": "CAT / linking",
       "meaning": "Tes adaptif dan penghubungan skala calibration.",
       "why": "Operasi adaptif dan perbandingan lintas form/populasi membutuhkan kemampuan tambahan."
+    },
+    {
+      "term": "Rubrik v8 / prompt v10",
+      "meaning": "Definisi kelas/track yang menilai solusi minimum, perencanaan, integrasi dan bantuan.",
+      "why": "Kategori tidak ditentukan panjang soal atau strategi nonrutin saja."
+    },
+    {
+      "term": "relative_bank_quota",
+      "meaning": "Kategori relatif untuk membagi soal aktif mendekati sepertiga per kelas.",
+      "why": "Membedakan kebutuhan komposisi bank dari label AI asli dan kesulitan empiris."
     }
   ]
 };

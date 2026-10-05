@@ -370,7 +370,7 @@ window.FLOW_FEEDBACK_STAGES = [
     },
     "cautions": [
       "Rujukan evaluasi tetap silver.",
-      "Kelas 7–12/TL tetap expansionRows untuk model SD."
+      "Scope setiap artifact mengikuti manifest. Config baru mencakup 12 kelas dan penanda TL; artifact SD lama tetap memperlakukan kelas di luar scope sebagai expansionRows."
     ],
     "sources": [
       {
@@ -596,7 +596,7 @@ window.FLOW_FEEDBACK_STAGES = [
     },
     "cautions": [
       "Tabel perbandingan sejarah label/champion vs challenger terpadu masih workflow operator; script aktif khusus locked blind silver versus prediksi, bukan sistem auto-relabel.",
-      "Kelas 7–12 pada runtime sekarang out_of_scope/abstain; jangan menganggap label null sebagai prediksi salah biasa.",
+      "Input di luar supportedGrades/supportedSubjectTracks pada manifest menghasilkan out_of_scope/abstain; jangan menganggap label null sebagai prediksi salah biasa.",
       "Tidak ada formula aktif 40% IndoBERT + 60% LLM atau confidence × IRT yang menetapkan label baru."
     ],
     "sources": [

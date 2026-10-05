@@ -76,6 +76,7 @@ def silver_rubric(grade: int = 1, *, track: str = "regular") -> SilverRubric:
 
 ShortText = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=700)]
 EvidenceText = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=260)]
+ContentConcernText = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=1800)]
 
 
 class _SilverHead(BaseModel):
@@ -146,7 +147,9 @@ class SilverLabelOutput(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     contentStatus: Literal["valid", "concern", "insufficient_evidence"]
-    contentConcerns: list[ShortText] = Field(default_factory=list, max_length=6)
+    # Preserve a detailed content/key concern instead of rejecting the paid
+    # assessment solely because its explanation exceeds a short rationale.
+    contentConcerns: list[ContentConcernText] = Field(default_factory=list, max_length=6)
     answerKeyStatus: Literal["verified", "conflict", "unverifiable"]
     verifiedAnswerKey: ShortText | None = None
     visualTranscript: str | None = Field(default=None, max_length=1800)
@@ -553,10 +556,31 @@ class GeminiSilverAdapter:
             )
 
 
+def requested_runs_for(checkpoint: dict, record: dict | None = None) -> int:
+    """A resumed batch may retain completed N=3 items beside new N=1 items."""
+    requested = (record or {}).get("requestedRuns", checkpoint.get("requestedRuns", 3))
+    if not isinstance(requested, int) or isinstance(requested, bool) or requested not in (1, 3):
+        raise ValueError("requestedRuns must be 1 or 3")
+    return requested
+
+
+def requested_run_indices(record: dict, requested: int) -> list[int]:
+    """Preserve the original index when reusing a paid run in single-run mode."""
+    indices = record.get("requestedRunIndices", list(range(1, requested + 1)))
+    if (len(indices) != requested or len(set(indices)) != requested
+            or any(not isinstance(index, int) or isinstance(index, bool) or index not in (1, 2, 3) for index in indices)
+            or (requested == 3 and set(indices) != {1, 2, 3})):
+        raise ValueError("requested run indices must match the evaluation mode")
+    return sorted(indices)
+
+
 def aggregate_silver_runs(
     runs: list[SilverRunResult],
     adjudication: SilverAdjudicationResult | None = None,
+    *, requested_runs: int = 3,
 ) -> dict[str, Any]:
+    if not isinstance(requested_runs, int) or isinstance(requested_runs, bool) or requested_runs not in (1, 3):
+        raise ValueError("requested_runs must be 1 or 3")
     successful = [run for run in runs if run.status == "success" and run.output is not None]
     result: dict[str, Any] = {
         "successfulRuns": len(successful),
@@ -591,6 +615,28 @@ def aggregate_silver_runs(
     result["verifiedMinimalSolution"] = next(
         (run.output.verifiedMinimalSolution for run in successful), None
     )
+    if requested_runs == 1:
+        if len(runs) != 1 or len(successful) != 1 or adjudication is not None:
+            raise ValueError("single-run evaluation requires one response and no adjudication")
+        output = successful[0].output
+        for head in ("mathCognitiveDomain", "knowledgeDimension", "intendedDifficulty"):
+            decision = getattr(output, head)
+            label = decision.label.value if decision.action == "classify" and decision.label else None
+            result["heads"][head] = {
+                "label": label, "voteCounts": {label: 1} if label else {},
+                "supportingRuns": 1 if label else 0,
+                "status": "single_run" if label else "abstained",
+            }
+        # One valid provider response completes N=1. Content/key problems and
+        # abstentions are held by qualification, without another paid judgment.
+        result["contentQualified"] = bool(
+            output.contentStatus == "valid" and output.answerKeyStatus == "verified"
+            and output.verifiedAnswerKey and output.verifiedMinimalSolution
+            and all(value["label"] is not None for value in result["heads"].values())
+        )
+        result["singleRunEvaluated"] = True
+        result["eligibleForTraining"] = False
+        return result
     all_unanimous = len(successful) == len(runs) == 3
     if not (all_unanimous and len(statuses) == 1 and len(answer_statuses) == 1):
         result["needsAdjudication"] = True

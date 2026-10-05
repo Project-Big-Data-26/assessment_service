@@ -36,7 +36,7 @@ const M = require(path.join(root, 'math.js'));
 const Q = require(path.join(root, 'quadrature.js'));
 const ctx = {window: {}};
 vm.createContext(ctx);
-['model-stages','assessment-stages','feedback-stages','presentation-summary'].forEach(name =>
+['model-stages','pipeline-stages','assessment-stages','feedback-stages','presentation-summary','graph'].forEach(name =>
   vm.runInContext(fs.readFileSync(path.join(root, name+'.js'), 'utf8'), ctx));
 const cases = [
   {z:[2,1,0],t:1}, {z:[1000,999,998],t:1},
@@ -59,7 +59,8 @@ const output = {
   stableBands: [M.stableBand({low:.7,high:.9}),M.stableBand({low:.1,high:.3}),M.stableBand({low:.3,high:.7})],
   boundaryLabels: [-1.001,-1,1,1.001].map(M.empiricalDifficulty),
   invalidTemperatureRejected: rejected,
-  stages: ['FLOW_MODEL_STAGES','FLOW_ASSESSMENT_STAGES','FLOW_FEEDBACK_STAGES'].flatMap(name=>ctx.window[name]),
+  stages: ['FLOW_MODEL_STAGES','FLOW_PIPELINE_STAGES','FLOW_ASSESSMENT_STAGES','FLOW_FEEDBACK_STAGES'].flatMap(name=>ctx.window[name]),
+  graph: ctx.window.FLOW_GRAPH,
   presentation: ctx.window.FLOW_PRESENTATION
 };
 process.stdout.write(JSON.stringify(output));
@@ -124,7 +125,7 @@ def test_ordinal_ordering_and_routing_preserve_advisory_boundaries(js_results):
 
 def test_every_stage_has_resolvable_code_sources_and_data(js_results):
     stages = js_results["stages"]
-    assert len(stages) == 33
+    assert len(stages) >= 60
     assert len({stage["id"] for stage in stages}) == len(stages)
     required = {"id", "phase", "title", "subtitle", "status", "summary", "input",
                 "process", "formula", "example", "output", "cautions", "sources", "learning", "latex"}
@@ -183,3 +184,69 @@ def test_presentation_copy_explains_choices_and_preserves_scope(js_results):
     copy = json.dumps(presentation, ensure_ascii=False)
     for required in ("silver", "snapshot", "confidence", "entropy", "CTT", "IRT", "versi"):
         assert required.lower() in copy.lower()
+
+
+def test_conditional_graph_covers_stages_and_real_forks(js_results):
+    graph = js_results["graph"]
+    stage_ids = {stage["id"] for stage in js_results["stages"]}
+    assert {node["id"] for node in graph["nodes"]} == stage_ids
+    assert len({(node["row"], node["lane"]) for node in graph["nodes"]}) == len(graph["nodes"])
+    for edge in graph["edges"]:
+        assert edge["from"] in stage_ids and edge["to"] in stage_ids
+        assert edge["label"] and edge["kind"] in {"pass", "fork", "fail", "wait", "review", "manual", "optional"}
+    edges = {(edge["from"], edge["to"]) for edge in graph["edges"]}
+    for run in range(1, 4):
+        assert ("model-blind-label", f"model-run-{run}") in edges
+        assert (f"model-run-{run}", "model-votes-lock") in edges
+    for head in ("cognitive", "knowledge", "difficulty"):
+        assert ("model-token-encoder", f"model-head-{head}") in edges
+        assert (f"model-head-{head}", "model-three-heads") in edges
+    for route in graph["routes"]:
+        assert set(route["stages"]) <= stage_ids
+
+
+def test_error_paths_keep_ai_evidence_bank_labels_and_irt_separate(js_results):
+    edges = {(edge["from"], edge["to"]): edge for edge in js_results["graph"]["edges"]}
+    required = {
+        ("model-import-version", "model-content-hold"): "fail",
+        ("model-votes-lock", "model-checkpoint"): "wait",
+        ("model-votes-lock", "model-adjudication"): "review",
+        ("model-checkpoint", "model-blind-label"): "manual",
+        ("model-training-gates", "model-training-blocked"): "fail",
+        ("model-inference-gate", "model-serving-blocked"): "fail",
+        ("model-inference-gate", "model-abstain"): "fail",
+        ("model-entropy-routing", "model-review"): "review",
+        ("assessment-silver-gate", "assessment-registration-blocked"): "fail",
+        ("assessment-server-score", "assessment-score-rejected"): "fail",
+        ("assessment-irt-readiness", "assessment-irt-wait"): "wait",
+        ("feedback-system-decision", "feedback-hold"): "fail",
+        ("feedback-new-version", "model-rubric-v8"): "manual",
+    }
+    for pair, kind in required.items():
+        assert edges[pair]["kind"] == kind
+    assert "3–0" in edges["model-votes-lock", "model-consensus"]["label"]
+    assert ("model-consensus", "model-evidence-profile") in edges
+    assert ("model-operational-balance", "model-snapshot-split") not in edges
+    assert ("model-bank-export", "assessment-irt-initialization") not in edges
+    assert ("model-ai-archive", "assessment-silver-gate") in edges
+    stages = {stage["id"]: stage for stage in js_results["stages"]}
+    assert stages["model-bank-export"]["output"]["originalEvidence"] == "ai_validation_results.json"
+    assert stages["assessment-irt-initialization"]["output"]["parameters"] is None
+    assert stages["model-serving-blocked"]["output"]["httpStatus"] == 503
+    assert stages["model-abstain"]["output"]["action"] == "abstain"
+
+
+def test_rubric_and_feature_descriptions_match_latest_config(js_results):
+    import yaml
+    from app.llm.silver import silver_rubric
+    stages = {stage["id"]: stage for stage in js_results["stages"]}
+    rubric_paths = {source["path"] for source in stages["model-rubric-v8"]["sources"]}
+    for grade, track in [(grade, "regular") for grade in range(1, 13)] + [(11, "tl"), (12, "tl")]:
+        rubric = silver_rubric(grade, track=track)
+        assert "v8" in rubric.version and "v10" in rubric.prompt_version
+        assert rubric.path.relative_to(ROOT).as_posix() in rubric_paths
+    config = yaml.safe_load((ROOT / "configs/model_v2_config.yaml").read_text(encoding="utf-8"))
+    assert config["model"]["grade_embedding_count"] == 12
+    assert config["model"]["default_input_representation"] == "solution"
+    assert config["model"]["subject_track_feature"] == "tl_text_marker"
+    assert stages["model-evidence-profile"]["output"]["profileFields"] == 11

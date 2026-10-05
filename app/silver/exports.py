@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 from pathlib import Path
 
 from app.classification.v2.serializer import canonical_json_hash
@@ -30,6 +31,46 @@ CONFIDENCE_POLICY = {
 }
 
 
+def confidence_policy_for(decisions: list[dict], *, legacy_single_run_null: bool = False) -> dict:
+    if any(decision["llmAdvisory"].get("requestedRuns", 3) == 1 for decision in decisions):
+        if legacy_single_run_null:
+            return {**CONFIDENCE_POLICY, "version": "final-label-run-support-with-single-run-null-v2",
+                    "singleRun": "null when a final label exists; one run cannot measure inter-run consistency",
+                    "draft": "0 when final labels are not available"}
+        return {**CONFIDENCE_POLICY, "version": "mixed-run-agreement-and-model-label-support-v3",
+                "singleRun": {
+                    "source": "indobert.heads.probabilities[final Gemini label]",
+                    "formula": "round(100 * min(final_label_probability_per_head))",
+                    "meaning": "IndoBERT support for locked Gemini labels; not inter-run consistency or measured accuracy.",
+                    "unavailable": "0 with confidence_available=false when a label or model probability is unavailable"},
+                "draft": "0 when final labels or model probabilities are not available"}
+    return CONFIDENCE_POLICY
+
+
+def confidence_details(decision: dict) -> dict:
+    advisory = decision["llmAdvisory"]
+    if advisory.get("requestedRuns", 3) != 1:
+        return {"score": round(100 * min(final_label_support(decision).values())
+                               / advisory.get("requestedRuns", 3)),
+                "method": "inter_run_support", "available": True}
+    heads = decision.get("indobert", {}).get("heads", {})
+    probabilities = {}
+    for head in CONFIDENCE_POLICY["heads"]:
+        label = advisory["advisoryLabels"].get(head)
+        distribution = heads.get(head, {}).get("probabilities", {})
+        if distribution:
+            values = list(distribution.values())
+            if (any(isinstance(v, bool) or not isinstance(v, (int, float))
+                    or not math.isfinite(v) or not 0 <= v <= 1 for v in values)
+                    or not math.isclose(sum(values), 1, abs_tol=1e-5)):
+                raise ValueError("invalid model probability distribution")
+        probabilities[head] = distribution.get(label) if label is not None else None
+    available = all(value is not None for value in probabilities.values())
+    return {"score": round(100 * min(probabilities.values())) if available else 0,
+            "method": "indobert_final_label_support_min", "available": available,
+            "final_label_probabilities": probabilities}
+
+
 def ai_validation_path(bundle: Path, manifest: dict | None = None) -> Path:
     """Resolve original AI rows when the main array exposes relative bank labels."""
     manifest = manifest or json.loads((bundle / "manifest.json").read_text(encoding="utf-8"))
@@ -52,7 +93,9 @@ def final_label_support(decision: dict) -> dict[str, int]:
         raise ValueError("requestedRuns must be a positive integer")
     runs = advisory.get("runs", [])
     indices = [run["runIndex"] for run in runs]
-    if len(set(indices)) != len(indices) or any(index not in range(1, requested + 1) for index in indices):
+    required_indices = advisory.get("requestedRunIndices", list(range(1, requested + 1)))
+    if (len(set(required_indices)) != requested or len(required_indices) != requested
+            or len(set(indices)) != len(indices) or any(index not in required_indices for index in indices)):
         raise ValueError("initial run indices must be unique and within requestedRuns")
     return {head: sum(
         run.get("status") == "success"
@@ -64,7 +107,7 @@ def final_label_support(decision: dict) -> dict[str, int]:
 
 
 def database_items(originals: list[dict], decisions: list[dict], *, legacy_domain_level: bool = False,
-                   legacy_routing_status: bool = False) -> list[dict]:
+                   legacy_routing_status: bool = False, legacy_single_run_null: bool = False) -> list[dict]:
     """Export only source columns, keeping source content and item order intact."""
     by_id = {d["questionId"]: d for d in decisions}
     expected = {str(q["_id"]) for q in originals}
@@ -84,8 +127,8 @@ def database_items(originals: list[dict], decisions: list[dict], *, legacy_domai
         values = {"cognitive_level": (labels["mathCognitiveDomain"] if legacy_domain_level
                                        else LEVEL_POLICY["mapping"].get(difficulty)),
                   "cognitive_score": SCORE_POLICY["mapping"].get(difficulty),
-                  "confidence_score": round(100 * min(final_label_support(decision).values())
-                                            / advisory.get("requestedRuns", 3)),
+                  "confidence_score": (None if legacy_single_run_null and advisory.get("requestedRuns", 3) == 1 and any(labels.values())
+                                       else confidence_details(decision)["score"]),
                   "status": route if legacy_routing_status else STATUS_POLICY["mapping"][route]}
         # Exact source schema: the database rows have no report/metadata fields.
         rows.append({key: values.get(key, value) for key, value in original.items()})
@@ -123,7 +166,7 @@ def load_decision_bundle(bundle: Path) -> dict:
 
 
 def compact_items(originals: list[dict], decisions: list[dict], questions: list[dict],
-                  checkpoint: dict, namespace: str) -> list[dict]:
+                  checkpoint: dict, namespace: str, *, legacy_single_run_null: bool = False) -> list[dict]:
     by_id = {d["questionId"]: d for d in decisions}
     exported = {q["questionId"]: q for q in questions}
     expected = {str(q["_id"]) for q in originals}
@@ -155,4 +198,18 @@ def compact_items(originals: list[dict], decisions: list[dict], questions: list[
                           "question_version_id": version,
                           "content_hash": content_hash,
                       }})
+        if checkpoint.get("requestedRuns", 3) == 1:
+            requested = decision["llmAdvisory"].get("requestedRuns", 3)
+            items[-1]["ai_metadata"].update(
+                requested_runs=requested,
+                validation_method="blind_n1" if requested == 1 else "blind_n3_with_ai_adjudication",
+                confidence_status=("single_run_unmeasured" if legacy_single_run_null else
+                                   "indobert_label_support" if confidence_details(decision)["available"] else
+                                   "model_support_unavailable") if requested == 1 else "inter_run_support",
+                training_evidence_qualified=bool(requested == 3 and decision["finalRouting"] == "silver_ready"))
+            if requested == 1 and not legacy_single_run_null:
+                details = confidence_details(decision)
+                items[-1]["ai_metadata"].update(
+                    confidence_method=details["method"], confidence_available=details["available"],
+                    confidence_final_label_probabilities=details["final_label_probabilities"])
     return items

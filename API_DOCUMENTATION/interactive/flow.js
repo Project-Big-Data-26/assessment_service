@@ -3,10 +3,18 @@
   'use strict';
   const $ = id => document.getElementById(id);
   const esc = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const data = [...(window.FLOW_MODEL_STAGES || []), ...(window.FLOW_ASSESSMENT_STAGES || []), ...(window.FLOW_FEEDBACK_STAGES || [])];
+  const data = [...(window.FLOW_MODEL_STAGES || []), ...(window.FLOW_PIPELINE_STAGES || []), ...(window.FLOW_ASSESSMENT_STAGES || []), ...(window.FLOW_FEEDBACK_STAGES || [])];
+  const graph = window.FLOW_GRAPH;
+  const byId = new Map(data.map((s,i) => [s.id,i]));
   const M = window.FlowMath, Q = window.FlowQuadrature, E = window.FlowExplain;
   const statusText = {implemented:'KODE TERSEDIA',conditional:'BERSYARAT / GATE',planned:'RANCANGAN'};
-  let current = 0, playing = false, timer = null, filter = 'Semua', expanded = false, copyStatusTimer = null;
+  let current = 0, playing = false, timer = null, filter = 'Semua', expanded = false, copyStatusTimer = null, routeId = 'bank', focus = 'n3', technical = true;
+  const branchViews = {
+    n3:{target:'model-blind-label', note:'Satu input blind → tiga penilaian → pemeriksaan bersama → konsensus, adjudikasi, atau checkpoint.', ids:['model-blind-label','model-run-1','model-run-2','model-run-3','model-votes-lock','model-checkpoint','model-consensus','model-adjudication']},
+    validation:{target:'model-votes-lock', note:'Setiap kondisi memiliki tujuan: run belum lengkap → checkpoint; sepakat 3–0 → konsensus; hasil berbeda → adjudikasi. Qualification dapat menahan soal.', rows:{'model-content-hold':10}, ids:['model-votes-lock','model-checkpoint','model-consensus','model-adjudication','model-evidence-profile','model-silver-qualification','model-ai-archive','model-content-hold']},
+    heads:{target:'model-token-encoder', note:'Representasi encoder dibagikan ke tiga head: cognitive, knowledge, dan difficulty. Keluaran bergabung sebelum routing predict/review.', ids:['model-token-encoder','model-head-cognitive','model-head-knowledge','model-head-difficulty','model-three-heads','model-prob-confidence','model-entropy-routing','model-predict','model-review']},
+    irt:{target:'assessment-clean-matrix', note:'Matriks respons bercabang ke CTT dan pemeriksaan IRT. Gate cukup → fit IRT; belum cukup → tunggu respons tambahan dan simpan alasan.', ids:['assessment-clean-matrix','assessment-ctt-metrics','assessment-irt-readiness','assessment-irt-marginal-fit','assessment-irt-wait','assessment-eap-diagnostics-information','assessment-snapshot-review']}
+  };
   const phases = [...new Set(data.map(s => s.phase))];
   const serial = value => typeof value === 'string' ? value : JSON.stringify(value, null, 2);
   const badge = stage => `<span class="status-pill ${esc(stage.status)}">${statusText[stage.status] || esc(stage.status)}</span>`;
@@ -25,71 +33,133 @@
     if (!/^[a-zA-Z0-9_./-]+$/.test(path) || path.includes('..')) return esc(path);
     return `<a href="../${esc(path)}" target="_blank" rel="noopener">${esc(path)}${source.symbol ? ' · '+esc(source.symbol) : ''}</a>`;
   }
-  function stageBody(stage) {
+  function stageBody(stage, showTechnical = false) {
     const learning=stage.learning;
+    const technicalBody=`<details class="technical-detail"${showTechnical?' open':''}><summary>Detail teknis: input, proses, dan output</summary>
+        <h3>Input / format data</h3><pre>${esc(serial(stage.input))}</pre>
+        <h3>Langkah implementasi</h3><ol>${stage.process.map(p=>`<li>${esc(p)}</li>`).join('')}</ol>
+        ${stage.formula?`<details class="implementation-rule"${showTechnical?' open':''}><summary>Catatan aturan dalam implementasi</summary><pre>${esc(stage.formula)}</pre></details>`:''}
+        <h3>Output / format hasil</h3><pre>${esc(serial(stage.output))}</pre>
+      </details>`;
     return `<div class="stage-content"><p class="summary">${esc(learning?.story || stage.summary)}</p>
-      ${learning?`<section class="why-card"><h3>Mengapa tahap ini diperlukan?</h3><p>${esc(learning.why)}</p></section><h3>Istilahnya berarti apa?</h3>${E.terms(learning.terms)}`:''}
+      ${showTechnical?technicalBody:''}
+      ${learning?`<section class="why-card"><h3>Mengapa tahap ini diperlukan?</h3><p>${esc(learning.why)}</p></section>${learning.terms.length?`<h3>Istilahnya berarti apa?</h3>${E.terms(learning.terms)}`:''}`:''}
       ${stage.example?`<h3>Bayangkan contoh berikut</h3><p class="example">${esc(stage.example)}</p>`:''}
       ${stage.latex?.length?`<h3>Rumus, arti simbol, dan alasannya</h3>${stage.latex.map(E.formula).join('')}`:''}
       ${learning?`<div class="next-stage"><b>Setelah tahap ini…</b><p>${esc(learning.next)}</p></div>`:''}
-      <details class="technical-detail"><summary>Buka detail teknis: input, proses, dan output</summary>
-        <h3>Input / format data</h3><pre>${esc(serial(stage.input))}</pre>
-        <h3>Langkah implementasi</h3><ol>${stage.process.map(p=>`<li>${esc(p)}</li>`).join('')}</ol>
-        ${stage.formula?`<details class="implementation-rule"><summary>Catatan aturan dalam implementasi</summary><pre>${esc(stage.formula)}</pre></details>`:''}
-        <h3>Output / format hasil</h3><pre>${esc(serial(stage.output))}</pre>
-      </details>
+      ${showTechnical?'':technicalBody}
       ${stage.cautions.length?`<div class="cautions"><h3>Hal yang perlu dibaca bersama hasilnya</h3><ul>${stage.cautions.map(c=>`<li>${esc(c)}</li>`).join('')}</ul></div>`:''}
       <h3>Rujukan fungsi di kode</h3><div class="sources">${stage.sources.map(sourceLink).join('')}</div></div>`;
+  }
+  const route = () => graph.routes.find(r => r.id === routeId);
+  function routeDestinations(stage) {
+    const exits = graph.edges.filter(e => e.from === stage.id);
+    const entries = graph.edges.filter(e => e.to === stage.id);
+    const links = (items,incoming) => items.map(edge => {
+      const destination = data[byId.get(incoming ? edge.from : edge.to)];
+      return `<button type="button" class="route-link ${esc(edge.kind)}" data-target="${esc(destination.id)}"><span>${esc(edge.label)}</span><strong>${incoming?'←':'→'} ${esc(destination.title)}</strong></button>`;
+    }).join('');
+    return `<section class="route-destinations"><h3>Kondisi dan tujuan berikutnya</h3>${exits.length?links(exits,false):'<p>Hasil atau status tersimpan. Kelanjutan memerlukan data atau job baru sesuai keterangan tahap.</p>'}${entries.length?`<details><summary>Dari mana tahap ini menerima data?</summary>${links(entries,true)}</details>`:''}</section>`;
+  }
+  function layoutNodes() {
+    const positions = new Map(graph.nodes.map(n=>[n.id,{...n,row:(focus!=='all'&&branchViews[focus].rows?.[n.id])||n.row}]));
+    const visible = [...positions.values()].filter(n => (focus==='all'||branchViews[focus].ids.includes(n.id)) && (filter==='Semua' || data[byId.get(n.id)].phase===filter));
+    const visibleIds = new Set(visible.map(n=>n.id));
+    const rows = [...new Set(visible.map(n=>n.row))].sort((a,b)=>a-b);
+    document.querySelectorAll('.node').forEach(node => {
+      const stage = data[Number(node.dataset.index)], pos=positions.get(stage.id);
+      node.hidden=!visibleIds.has(stage.id);
+      node.style.gridRow=String(rows.indexOf(pos.row)+1);
+      node.style.gridColumn=`${pos.lane*2+1} / span 2`;
+    });
+    document.querySelectorAll('[data-phase]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.phase===filter?'true':'false'));
+    document.querySelectorAll('[data-focus]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.focus===focus?'true':'false'));
+    $('map-focus-note').textContent=focus==='all'?'Alur lengkap. Pilih bagian atau percabangan untuk memperbesar bagian yang ingin dipelajari.':branchViews[focus].note;
   }
   function drawConnectors() {
     const board = $('flow-board'), svg = $('connectors');
     if (!board.offsetWidth) return;
-    const origin = board.getBoundingClientRect(), nodes = [...document.querySelectorAll('.node')];
+    const origin = board.getBoundingClientRect(), nodes = new Map([...document.querySelectorAll('.node:not([hidden])')].map(n=>[n.dataset.stage,n]));
     svg.setAttribute('viewBox', `0 0 ${origin.width} ${origin.height}`);
-    svg.innerHTML = '<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#aabfc1"/></marker></defs>';
-    nodes.forEach((node,i) => {
-      if (i === 0) return;
-      const a = nodes[i-1].getBoundingClientRect(), b = node.getBoundingClientRect();
-      let d;
-      if (Math.abs(a.top-b.top) < 3) {
-        const x1 = a.right-origin.left, y = a.top-origin.top+a.height/2, x2=b.left-origin.left;
-        d = `M ${x1} ${y} L ${x2} ${y}`;
+    const colors={pass:'#087b64',fork:'#7d949b',review:'#b27514',wait:'#b27514',fail:'#b94b4b',manual:'#3974ae',optional:'#8362af'};
+    svg.innerHTML = '<defs>'+Object.entries(colors).map(([kind,color])=>`<marker id="arrow-${kind}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="${color}"/></marker>`).join('')+'</defs>';
+    const edgeLayer=document.createElementNS(svg.namespaceURI,'g'),labelLayer=document.createElementNS(svg.namespaceURI,'g'),particleLayer=document.createElementNS(svg.namespaceURI,'g');
+    svg.append(edgeLayer,labelLayer,particleLayer);
+    const exits = id => graph.edges.filter(e=>e.from===id&&nodes.has(e.to)).length;
+    const entries = id => graph.edges.filter(e=>e.to===id&&nodes.has(e.from)).length;
+    graph.edges.forEach((edge,i) => {
+      if(!nodes.has(edge.from)||!nodes.has(edge.to))return;
+      const a=nodes.get(edge.from).getBoundingClientRect(),b=nodes.get(edge.to).getBoundingClientRect();
+      const x1=a.left-origin.left+a.width/2,y1=a.bottom-origin.top,x2=b.left-origin.left+b.width/2,y2=b.top-origin.top;
+      const active=edge.from===data[current].id||edge.to===data[current].id;
+      const sameRow=Math.abs(a.top-b.top)<3;
+      let d,labelX,labelY;
+      if(sameRow) {
+        const gapY=Math.max(a.bottom,b.bottom)-origin.top+98;
+        const sideX=b.left>a.left?b.left-origin.left-9:b.right-origin.left+9;
+        const endX=b.left>a.left?b.left-origin.left:b.right-origin.left;
+        const endY=b.top-origin.top+b.height/2;
+        d=`M ${x1} ${y1} V ${gapY} H ${sideX} V ${endY} H ${endX}`;
+        labelX=(x1+sideX)/2;labelY=gapY;
+      } else if(y2>y1 && y2-y1<150) {
+        const mid=(y1+y2)/2;
+        d=`M ${x1} ${y1} V ${mid} H ${x2} V ${y2}`;
+        const targetLabels=exits(edge.from)>1&&(entries(edge.to)===1||nodes.get(edge.from).classList.contains('gate')||edge.kind==='fork');
+        labelX=targetLabels?x2:entries(edge.to)>1?x1:(x1+x2)/2;labelY=mid;
       } else {
-        const x1 = a.left-origin.left+a.width/2, y1 = a.bottom-origin.top;
-        const x2 = b.left-origin.left+b.width/2, y2 = b.top-origin.top, mid = (y1+y2)/2;
-        d = `M ${x1} ${y1} L ${x1} ${mid} L ${x2} ${mid} L ${x2} ${y2}`;
+        const rail=['fail','review','wait','optional'].includes(edge.kind)?origin.width-10-(i%3)*5:10+(i%3)*5;
+        d=`M ${x1} ${y1} V ${y1+40} H ${rail} V ${y2-28} H ${x2} V ${y2}`;
+        labelX=(x1+rail)/2;labelY=y1+40;
       }
-      const boundary = data[i].phase !== data[i-1].phase || !!branchLabels[data[i].id];
       const path = document.createElementNS('http://www.w3.org/2000/svg','path');
-      path.setAttribute('d',d); path.setAttribute('class',`connector${boundary?' boundary':''}${i===current?' active':''}`); path.setAttribute('marker-end','url(#arrow)'); svg.append(path);
-      if (i===current && playing && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      path.setAttribute('d',d);path.setAttribute('class',`connector ${edge.kind}${active?' active':''}`);path.setAttribute('data-from',edge.from);path.setAttribute('data-to',edge.to);path.setAttribute('marker-end',`url(#arrow-${edge.kind})`);
+      const title=document.createElementNS(svg.namespaceURI,'title');title.textContent=edge.label;path.append(title);edgeLayer.append(path);
+      if(focus!=='all' || active || sameRow || (y2-y1<150&&y2>=y1)) {
+        const full=edge.label,lines=[];let line='';
+        full.split(' ').forEach(word=>{if(line&&(line+' '+word).length>34){lines.push(line);line=word;}else line+=(line?' ':'')+word;});if(line)lines.push(line);
+        const width=Math.min(262,Math.max(...lines.map(l=>l.length))*6.6+20),height=lines.length*17+12;
+        labelX=Math.max(width/2+4,Math.min(origin.width-width/2-4,labelX));
+        const group=document.createElementNS(svg.namespaceURI,'g');group.setAttribute('class',`edge-label ${edge.kind}${active?' active':''}`);group.setAttribute('transform',`translate(${labelX},${labelY})`);group.setAttribute('data-from',edge.from);group.setAttribute('data-to',edge.to);
+        const rect=document.createElementNS(svg.namespaceURI,'rect');rect.setAttribute('x',-width/2);rect.setAttribute('y',String(-height/2));rect.setAttribute('width',width);rect.setAttribute('height',height);rect.setAttribute('rx','6');
+        const text=document.createElementNS(svg.namespaceURI,'text');text.setAttribute('text-anchor','middle');
+        lines.forEach((line,j)=>{const span=document.createElementNS(svg.namespaceURI,'tspan');span.setAttribute('x','0');span.setAttribute('y',String(4+(j-(lines.length-1)/2)*17));span.textContent=line;text.append(span);});
+        const tooltip=document.createElementNS(svg.namespaceURI,'title');tooltip.textContent=full;group.append(rect,text,tooltip);labelLayer.append(group);
+      }
+      if (edge.to===data[current].id && playing && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
         circle.setAttribute('r','3.5');circle.setAttribute('class','flow-particle');
         const motion=document.createElementNS('http://www.w3.org/2000/svg','animateMotion');
         motion.setAttribute('dur','1.4s');motion.setAttribute('repeatCount','indefinite');motion.setAttribute('path',d);
-        circle.append(motion);svg.append(circle);
+        circle.append(motion);particleLayer.append(circle);
       }
     });
   }
   function select(index, fromManual = true) {
     current = Math.max(0,Math.min(data.length-1,index));
     const stage = data[current];
-    document.querySelectorAll('.node').forEach((node,i) => {
-      node.classList.toggle('active',i===current);node.classList.toggle('visited',i<current);
-      node.classList.toggle('dimmed',filter!=='Semua' && data[i].phase!==filter);
-      node.setAttribute('aria-pressed',i===current?'true':'false');
+    if(focus!=='all'&&!branchViews[focus].ids.includes(stage.id))focus='all';
+    if(filter!=='Semua'&&stage.phase!==filter)filter=stage.phase;
+    layoutNodes();
+    const routePosition=route().stages.indexOf(stage.id);
+    document.querySelectorAll('.node').forEach(node => {
+      const selected=Number(node.dataset.index)===current;
+      node.classList.toggle('active',selected);node.classList.toggle('visited',routePosition>=0&&route().stages.slice(0,routePosition).includes(node.dataset.stage));
+      node.setAttribute('aria-pressed',String(selected));
     });
-    $('stage-detail').innerHTML = `<div class="detail-heading"><span class="phase-label">${String(current+1).padStart(2,'0')} / ${esc(stage.phase)}</span>${badge(stage)}</div><h2>${esc(stage.title)}</h2><p class="subtitle">${esc(stage.subtitle)}</p>${branchNote(stage)}${stageBody(stage)}`;
-    $('step-counter').textContent=`${current+1} / ${data.length} tahap · ${stage.phase}`;
-    $('progress').style.width=`${(current+1)/data.length*100}%`;
-    $('previous').disabled = current===0; $('next').disabled=current===data.length-1;
+    $('stage-detail').innerHTML = `<div class="detail-heading"><span class="phase-label">${esc(stage.phase)}</span>${badge(stage)}</div><h2>${esc(stage.title)}</h2><p class="subtitle">${esc(stage.subtitle)}</p>${branchNote(stage)}${routeDestinations(stage)}${stageBody(stage,technical)}`;
+    $('stage-detail').querySelectorAll('[data-target]').forEach(b=>b.addEventListener('click',()=>{setPlaying(false);select(byId.get(b.dataset.target));}));
+    $('step-counter').textContent=routePosition>=0?`${routePosition+1} / ${route().stages.length} langkah contoh · ${stage.phase}`:`Cabang pilihan · ${stage.phase}`;
+    $('progress').style.width=`${routePosition>=0?(routePosition+1)/route().stages.length*100:0}%`;
+    $('previous').disabled=routePosition<=0;$('next').disabled=routePosition<0||routePosition===route().stages.length-1;
     drawConnectors();
+    const selectedNode=document.querySelector(`.node[data-index="${current}"]`),scroller=$('map-scroll');
+    if(selectedNode){const r=selectedNode.getBoundingClientRect(),s=scroller.getBoundingClientRect();if(r.top<s.top+15||r.bottom>s.bottom-15||r.left<s.left||r.right>s.right)scroller.scrollTo({top:scroller.scrollTop+r.top-s.top-s.height/2+r.height/2,left:Math.max(0,scroller.scrollLeft+r.left-s.left-s.width/2+r.width/2),behavior:fromManual&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'});}
     if (fromManual && playing) schedule();
   }
   function schedule() {
     clearTimeout(timer);
     if (!playing) return;
-    timer=setTimeout(()=>{if(current===data.length-1){setPlaying(false);return;}select(current+1,false);schedule();},Number($('speed').value));
+    timer=setTimeout(()=>{const position=route().stages.indexOf(data[current].id);if(position<0||position===route().stages.length-1){setPlaying(false);return;}select(byId.get(route().stages[position+1]),false);schedule();},Number($('speed').value));
   }
   function setPlaying(value) {
     playing=value;document.body.classList.toggle('is-playing',value);
@@ -234,24 +304,38 @@
     $('close-copy').addEventListener('click',()=>{$('manual-copy').hidden=true;});
   }
   function init() {
-    if (!data.length || !window.FLOW_MODEL_STAGES || !window.FLOW_ASSESSMENT_STAGES || !window.FLOW_FEEDBACK_STAGES || !M || !Q || !E || !window.katex) {
+    if (!data.length || !graph || graph.nodes.some(n=>!byId.has(n.id)) || !window.FLOW_MODEL_STAGES || !window.FLOW_ASSESSMENT_STAGES || !window.FLOW_FEEDBACK_STAGES || !M || !Q || !E || !window.katex) {
       $('stage-detail').innerHTML='<p role="alert">Ada berkas dokumentasi yang tidak termuat. Pastikan folder interactive tetap berada di sebelah HTML dan seluruh berkas JS tersedia.</p>';return;
     }
-    $('nodes').innerHTML=data.map((stage,i)=>`<button type="button" class="node" data-status="${esc(stage.status)}" data-index="${i}" aria-pressed="false" aria-label="Tahap ${i+1}: ${esc(stage.title)}, ${statusText[stage.status]}"><span class="node-number">${String(i+1).padStart(2,'0')} <span aria-hidden="true">→</span></span><span class="node-title">${esc(stage.title)}</span><span class="node-phase">${esc(branchLabels[stage.id] || stage.phase)}</span></button>`).join('');
+    $('nodes').innerHTML=graph.nodes.map((position,i)=>{const stage=data[byId.get(position.id)];return `<button type="button" class="node ${esc(position.kind)}" data-stage="${esc(stage.id)}" data-status="${esc(stage.status)}" data-index="${byId.get(stage.id)}" aria-pressed="false" aria-label="${esc(stage.title)}, ${statusText[stage.status]}"><span class="node-number">${String(i+1).padStart(2,'0')} · ${position.kind==='gate'?'◇ KONDISI':position.kind==='run'?'N=3 · BLIND':position.kind==='head'?'3 HEAD':esc(stage.phase.toUpperCase())}</span><span class="node-title">${esc(stage.title)}</span><span class="node-phase">${esc(stage.subtitle)}</span></button>`;}).join('');
+    $('scenario').innerHTML=graph.routes.map(r=>`<option value="${esc(r.id)}">${esc(r.name)}</option>`).join('');
+    $('scenario').value=routeId;
+    $('scenario').addEventListener('change',()=>{setPlaying(false);routeId=$('scenario').value;filter='Semua';focus='all';select(byId.get(route().stages[0]));});
     $('phase-filter').innerHTML=['Semua',...phases].map(phase=>`<button type="button" data-phase="${esc(phase)}" aria-pressed="${phase===filter}">${esc(phase)}</button>`).join('');
     document.querySelectorAll('.node').forEach(button=>button.addEventListener('click',()=>select(Number(button.dataset.index))));
     document.querySelectorAll('[data-phase]').forEach(button=>button.addEventListener('click',()=>{
-      filter=button.dataset.phase;document.querySelectorAll('[data-phase]').forEach(b=>b.setAttribute('aria-pressed',b===button?'true':'false'));
+      focus='all';filter=button.dataset.phase;document.querySelectorAll('[data-phase]').forEach(b=>b.setAttribute('aria-pressed',b===button?'true':'false'));
       if(filter==='Semua')select(current);else select(data.findIndex(s=>s.phase===filter));
     }));
-    $('play').addEventListener('click',()=>{if(!playing&&current===data.length-1)select(0);setPlaying(!playing);});
-    $('previous').addEventListener('click',()=>select(current-1));$('next').addEventListener('click',()=>select(current+1));
-    $('restart').addEventListener('click',()=>{setPlaying(false);filter='Semua';document.querySelectorAll('[data-phase]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.phase===filter?'true':'false'));select(0);});
+    document.querySelectorAll('[data-focus]').forEach(button=>button.addEventListener('click',()=>{
+      setPlaying(false);focus=button.dataset.focus;filter='Semua';technical=true;$('technical-mode').checked=true;$('map-scroll').scrollTo({top:0,left:0});
+      select(byId.get(focus==='all'?'model-source-json':branchViews[focus].target));
+    }));
+    $('technical-mode').addEventListener('change',()=>{technical=$('technical-mode').checked;select(current);});
+    $('open-stage-detail').addEventListener('click',()=>{
+      setPlaying(false);technical=true;$('technical-mode').checked=true;select(current);
+      $('stage-detail').scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      $('stage-detail').focus({preventScroll:true});
+    });
+    const advance=delta=>{const index=route().stages.indexOf(data[current].id);if(index>=0&&index+delta>=0&&index+delta<route().stages.length)select(byId.get(route().stages[index+delta]));};
+    $('play').addEventListener('click',()=>{const position=route().stages.indexOf(data[current].id);if(!playing&&(position<0||position===route().stages.length-1))select(byId.get(route().stages[0]));setPlaying(!playing);});
+    $('previous').addEventListener('click',()=>advance(-1));$('next').addEventListener('click',()=>advance(1));
+    $('restart').addEventListener('click',()=>{setPlaying(false);filter='Semua';focus='all';select(byId.get(route().stages[0]));});
     $('speed').addEventListener('change',schedule);
     document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
     document.addEventListener('keydown',event=>{
       if($('view-flow').hidden || /INPUT|SELECT|TEXTAREA/.test(event.target.tagName))return;
-      if(event.key==='ArrowRight'){event.preventDefault();select(current+1);}if(event.key==='ArrowLeft'){event.preventDefault();select(current-1);}
+      if(event.key==='ArrowRight'){event.preventDefault();advance(1);}if(event.key==='ArrowLeft'){event.preventDefault();advance(-1);}
     });
     // Background tabs do not silently advance the educational timeline.
     document.addEventListener('visibilitychange',()=>{if(document.hidden)setPlaying(false);});
@@ -268,7 +352,7 @@
     $('arrival').addEventListener('click',()=>{runCalculator('snapshot-result',()=>{const n=read('sample-count',0,10000,true),eligible=read('eligible-count',0,10000,true),add=Math.min(10,10000-n);$('sample-count').value=n+add;$('eligible-count').value=Math.min(n+add,eligible+add);snapshot();});});
     let snapshotId=0;
     $('freeze-snapshot').addEventListener('click',()=>{snapshot();if($('snapshot-result').getAttribute('role')==='alert')return;const entry=document.createElement('details');entry.open=true;const summary=document.createElement('summary');summary.textContent=`Snapshot contoh S${++snapshotId} · N_selected=${$('sample-count').value}, N_fit=${$('eligible-count').value}, J=${$('item-count').value}, model=${$('irt-model').value}`;const snapshotCopy=document.createElement('div');snapshotCopy.className='frozen-metrics';snapshotCopy.innerHTML=$('snapshot-result').querySelector('.result-metrics').outerHTML;const note=document.createElement('p');note.textContent='Hasil contoh ini tetap sama ketika peserta baru masuk. Perhitungan baru memiliki snapshot berikutnya.';entry.append(summary,snapshotCopy,note);if(snapshotId===1)$('frozen-result').textContent='';$('frozen-result').prepend(entry);});
-    classification();ordinal();snapshot();irt();eap();comparison();setupSummary();select(0);
+    classification();ordinal();snapshot();irt();eap();comparison();setupSummary();select(byId.get(branchViews.n3.target));
     new ResizeObserver(drawConnectors).observe($('flow-board'));
   }
   init();

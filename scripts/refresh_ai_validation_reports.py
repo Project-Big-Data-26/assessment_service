@@ -18,7 +18,8 @@ sys.path.insert(0, str(ROOT))
 from app.llm.silver import SilverLabelOutput, build_silver_prompt  # noqa: E402
 from app.silver.exports import (COMPACT_SCHEMA, DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA,
                                STATUS_POLICY, LEVEL_POLICY, SCORE_POLICY, CONFIDENCE_POLICY,
-                               compact_items, database_items, final_label_support, load_decision_bundle, ai_validation_path)
+                               compact_items, database_items, final_label_support, load_decision_bundle, ai_validation_path,
+                               confidence_policy_for)
 from scripts.generate_silver_labels_kelas1 import input_hash, load_checkpoint  # noqa: E402
 
 BASE = ROOT / "output/pretest"
@@ -41,14 +42,14 @@ def write(path: Path, value: dict | list) -> None:
 def verify_evidence(source: Path, checkpoint: Path, grade: int) -> None:
     silver = load(checkpoint)
     track = silver.get("subjectTrack", "regular")
-    load_checkpoint(checkpoint, source, digest(source), silver["model"], 3, grade, track=track)
+    load_checkpoint(checkpoint, source, digest(source), silver["model"], silver.get("requestedRuns", 3), grade, track=track)
     questions = {str(q["_id"]): q for q in load(source)}
     assert set(silver["items"]) <= set(questions), "checkpoint contains unknown questions"
     for qid, record in silver["items"].items():
         question = questions[qid]
         assert record["inputHash"] == input_hash(question), qid
         prompt = build_silver_prompt(question, grade=grade, track=track)
-        for run in record.get("runs", []):
+        for run in record.get("runs", []) + record.get("previousN3Evidence", {}).get("runs", []):
             if run["status"] != "success":
                 continue
             assert run["promptHash"] == hashlib.sha256(prompt.encode("utf-8")).hexdigest(), qid
@@ -104,11 +105,14 @@ def verify_bundle(source: Path, bundle: Path) -> None:
         if not legacy:
             assert export["cognitiveLevelPolicy"] == LEVEL_POLICY
         assert export["scorePolicy"] == SCORE_POLICY
-        assert export["confidencePolicy"] == CONFIDENCE_POLICY
+        legacy_single_run_null = export["confidencePolicy"]["version"] == "final-label-run-support-with-single-run-null-v2"
+        assert export["confidencePolicy"] == confidence_policy_for(results, legacy_single_run_null=legacy_single_run_null)
         assert document == database_items(list(questions.values()), results,
-            legacy_domain_level=legacy, legacy_routing_status=legacy_status), "database export differs from source or locked evidence"
+            legacy_domain_level=legacy, legacy_routing_status=legacy_status,
+            legacy_single_run_null=legacy_single_run_null), "database export differs from source or locked evidence"
         checkpoint = load(Path(manifest["sourceFiles"]["blindCheckpoint"]["path"]))
-        metadata = compact_items(list(questions.values()), results, exported, checkpoint, source.parent.name)
+        metadata = compact_items(list(questions.values()), results, exported, checkpoint, source.parent.name,
+                                 legacy_single_run_null=legacy_single_run_null)
         by_id = {d["questionId"]: d for d in results}
         expected_metadata = {row["_id"]: {**row["ai_metadata"],
             "final_label_supporting_runs": final_label_support(by_id[row["_id"]])} for row in metadata}

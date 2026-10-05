@@ -206,7 +206,7 @@ window.FLOW_MODEL_STAGES = [
       "canonical_json_hash menggunakan JSON UTF-8, ensure_ascii=false, sort_keys=true dan separators tanpa spasi, lalu SHA-256. Ruang lingkup payload hash berbeda antar adapter; jangan membandingkan hash dari dua skema seolah sama.",
       "next_content_version mempertahankan nomor versi jika hash sama; menaikkan versi jika konten berubah. sourceRecordChecksum adalah hash byte file sumber, berbeda dari contentHash dan inputHash model.",
       "structural_validation untuk DB memeriksa stem kosong, minimal dua opsi, label/teks opsi duplikat, kunci di luar opsi, dan asset gambar yang hilang. Import bab punya gate numerik tambahan.",
-      "Importer v2 memperlakukan grade >6 sebagai out_of_scope untuk model SD. Pipeline silver grade 7–12 memakai rubrik sendiri dan dapat berjalan meski classifier SD menolak scope."
+      "Importer lama/model SD tetap mempertahankan scope semula. Pipeline v8 dan trainer baru mendukung kelas 1–12 reguler serta TL 11–12; scope inference mengikuti supportedGrades/supportedSubjectTracks pada manifest artifact."
     ],
     "formula": "contentHash = SHA256(canonical_JSON(konten)); contentVersion_baru = contentVersion_lama + 1 bila hash berubah. inputHash = SHA256(teks hasil serializer).",
     "example": "Ilustrasi: mengubah opsi B dari 5 menjadi 8 mengubah contentHash dan memerlukan versi baru. Hanya menilai ulang label tanpa mengubah konten memiliki histori keputusan baru; tidak boleh memalsukan versi konten.",
@@ -288,7 +288,7 @@ window.FLOW_MODEL_STAGES = [
       ]
     },
     "process": [
-      "silver_rubric memilih SD kelas 1–6, rubrik SMP tersendiri untuk 7/8/9, dan rubrik SMA tersendiri untuk 10/11/12. Domain matematika: knowing, applying, reasoning. Ini berbeda dari endpoint legacy Bloom C1–C6.",
+      "silver_rubric memilih salah satu dari sembilan YAML v8: SD 1–6, SMP 7/8/9, SMA reguler 10/11/12, TL 11/12. Prompt v10 membaca definisi kelas/track ini. Domain matematika knowing/applying/reasoning berbeda dari legacy Bloom C1–C6.",
       "LLM menghasilkan contentStatus valid/concern/insufficient_evidence; answerKeyStatus verified/conflict/unverifiable; verifiedAnswerKey; verifiedMinimalSolution; visualTranscript jika ada gambar; dan tiga keputusan head.",
       "Setiap head memakai action classify atau abstain. Classify wajib memiliki label dan evidenceSpans; abstain wajib label null. Rationale singkat maksimal 700 karakter dan evidence maksimal empat potongan, masing-masing 260 karakter.",
       "Difficulty classify wajib evidence profile: expectedPrerequisite, dependentSteps, routineStatus, strategySelection, representationTransfer, relevantInformationUnits, interactingConstraints, calculationLoad, scaffoldLevel, distractorQuality, gradeRelativeRationale.",
@@ -316,16 +316,16 @@ window.FLOW_MODEL_STAGES = [
         "symbol": "silver_rubric, build_silver_prompt, SilverLabelOutput, DifficultyEvidenceProfile, GeminiSilverAdapter"
       },
       {
-        "path": "configs/rubric_math_3x4x3_v2.yaml",
-        "symbol": "Rubrik SD grade-aware"
+        "path": "configs/rubric_math_3x4x3_v8_sd.yaml",
+        "symbol": "Rubrik v8; dispatcher memilih grade/track"
       }
     ]
   },
   {
     "id": "model-votes-lock",
     "phase": "Label AI",
-    "title": "Tiga run, adjudikasi dan lock",
-    "subtitle": "Periksa kesepakatan tiga penilaian, lalu kunci bukti sebelum comparison",
+    "title": "Tiga run lengkap dan sepakat?",
+    "subtitle": "Gabungkan N=3 · periksa kelengkapan, tiga head, konten dan kunci",
     "status": "implemented",
     "summary": "Setelah tiga run awal selesai, kode menghitung suara untuk setiap head. Kebijakan silver menerima langsung hanya pola 3–0 dengan syarat konten dan kunci terpenuhi; pola 2–1 atau masalah lain diperiksa dalam adjudikasi AI. Sesudah audit mencatat hash checkpoint, prediksi IndoBERT boleh dibandingkan dengan usulan blind yang sudah terkunci.",
     "learning": {
@@ -353,7 +353,7 @@ window.FLOW_MODEL_STAGES = [
         }
       ],
       "why": "Tiga run digunakan untuk memeriksa kestabilan keluaran. Syarat 3–0 dan adjudikasi menangani perbedaan tanpa mengubah label demi target distribusi; lock menjaga urutan blind lalu comparison.",
-      "next": "Setelah silver terkunci, usulannya dapat dilaporkan dan diperiksa AI. Silver qualified langsung dibekukan untuk integrasi operasional."
+      "next": "Run tidak lengkap menuju checkpoint; tiga run sepakat langsung diperiksa; perbedaan atau masalah konten masuk adjudikasi. Semua jalur selesai tetap harus memenuhi qualification."
     },
     "latex": [
       {
@@ -402,12 +402,12 @@ window.FLOW_MODEL_STAGES = [
     },
     "process": [
       "aggregate_silver_runs menghitung Counter label classify dari run sukses. Syarat langsung: len(successful)=len(runs)=3, konten/kunci konsisten, dan count label pemenang=3 pada setiap head.",
-      "Pola 2–1, abstain, content concern, conflict kunci atau run tidak lengkap menetapkan needsAdjudication=true. Angka requiredVotes=2 pada beberapa JSON adalah metadata mayoritas; kebijakan silver yang benar adalah unanimity_else_ai_adjudication.",
+      "Run belum lengkap tetap draft/checkpoint dan harus dilengkapi. Sesudah tiga run sukses tersedia, 2–1, abstain, content concern atau konflik kunci masuk adjudikasi terpisah. requiredVotes=2 adalah metadata mayoritas, bukan policy penerimaan silver.",
       "Adjudikasi menerima soal/rubrik dan keluaran tiga run, tetap tanpa prediksi IndoBERT. Temperature adjudikasi=0.0, harus memutuskan berdasarkan bukti dan tidak mengikuti mayoritas otomatis. Output sukses dapat mengganti status konten, kunci, solusi dan label; abstain tetap tidak layak training.",
       "eligibleForTraining hanya true bila konten valid, kunci verified dan berisi jawaban, solusi minimum ada, tidak ada kebutuhan adjudikasi tertunda, dan ketiga label terisi. Qualification operasional tetap memeriksa struktur, sumber, kunci, solusi dan aset.",
       "Checkpoint menyimpan successful runs dan retry history. Resume tidak mengulang run sukses; provider error, kuota, JSON invalid tidak ditafsirkan sebagai label.",
       "audit_grade_aware_pilot mencocokkan hash sumber/input, prompt/rubrik, kelengkapan evidence dan blind leakage, serta boundary label. Dominasi >90% atau Medium/Hard tidak muncul memerlukan boundary analysis, bukan mengubah label untuk memenuhi kuota.",
-      "Audit SHA-256 mengunci checkpoint sebelum model comparison. Output snapshot, audit final dan bundle menggunakan file versi baru; checkpoint yang telah terkunci tidak boleh diedit diam-diam."
+      "Audit SHA-256 dan qualification mengunci checkpoint sebelum model comparison. Final snapshot dan bundle baru tidak menimpa checkpoint lama. Hasil aktif baru dipublikasikan setelah seluruh soal pada kelas tersebut lengkap."
     ],
     "formula": "v_h(l) = jumlah run sukses yang memilih l pada head h. Terima silver awal iff N_sukses=3 dan max_l v_h(l)=3 untuk semua h, plus konten valid/kunci verified. Rasio 3/3=100% adalah kesepakatan, bukan probabilitas label benar.",
     "example": "Ilustrasi votes Easy, Easy, Medium menghasilkan voteCounts={Easy:2,Medium:1}, supportingRuns=2 dan needsAdjudication=true. Adjudikator boleh memilih Medium dengan bukti yang lebih kuat. Tiga run dari Gemini yang sama bukan tiga run AI independen.",
@@ -418,7 +418,7 @@ window.FLOW_MODEL_STAGES = [
     },
     "cautions": [
       "Jangan mengganti policy silver dengan majority 2/3 hanya karena metadata requiredVotes bernilai 2.",
-      "Run lengkap atau gate pilot lolos tidak menjadikan label AI silver AI.",
+      "Tiga respons sukses saja belum membuat item qualified: struktur, kunci, solusi, visual dan provenance tetap diperiksa.",
       "Jumlah token sukses tercatat dapat berbeda dari tagihan provider untuk attempt gagal."
     ],
     "sources": [
@@ -443,7 +443,7 @@ window.FLOW_MODEL_STAGES = [
   {
     "id": "model-silver-qualification",
     "phase": "Validasi",
-    "title": "Qualification silver tanpa pelabel manusia",
+    "title": "Konten dan provenance memenuhi qualification?",
     "subtitle": "Dari keputusan AI ke dataset yang memenuhi syarat",
     "status": "implemented",
     "summary": "Sistem memeriksa bukti AI dan konten, lalu menerima silver_ready. Soal yang belum memenuhi syarat masuk revisi atau AI review.",
@@ -462,7 +462,7 @@ window.FLOW_MODEL_STAGES = [
         }
       ],
       "why": "Sistem memeriksa bukti AI dan konten, lalu menerima silver_ready. Soal yang belum memenuhi syarat masuk revisi atau AI review.",
-      "next": "Soal dengan tiga run lengkap dan kunci/solusi valid masuk snapshot silver. Soal dengan kunci conflict tetap ditahan."
+      "next": "silver_ready menuju arsip AI; revision_required atau needs_ai_review ditahan. Dari arsip AI, training dan delivery qualified berjalan pada cabang berbeda."
     },
     "latex": [
       {
@@ -591,12 +591,12 @@ window.FLOW_MODEL_STAGES = [
       "sumber": "silver AI yang qualified"
     },
     "process": [
-      "build_silver_snapshot_kelas1 memerlukan record eligible, verified answer dan solusi, semua label, serta visualTranscript bila sumber memakai gambar. Nama class TrainingRow adalah struktur teknis; provenance ai_silver tetap tercatat.",
+      "prepare_allgrade_retraining membaca seluruh 14 bundle melalui rows_from_bundle: konten qualified, tiga run sukses, adjudikasi selesai, kunci/solusi/visual dan rubrik v8 yang tepat. Label AI asli dibaca melalui ai_validation_path, bukan label kuota operasional.",
       "normalized_duplicate_text menggabungkan stimulus, stem dan opsi yang diurutkan, melakukan NFC/casefold/normalisasi whitespace. Near duplicate dibentuk menggunakan Jaccard trigram >=0.90 secara transitif.",
       "_leakage_safe_group_ids menyatukan baris yang berbagi sourceGroup, keluarga duplicate atau stimulus yang sama. Semua anggota group ditempatkan pada satu split.",
       "deterministic_group_split seed=42 menargetkan 70/15/15, mempertimbangkan ukuran group dan kebutuhan distribusi label/grade. Rasio akhir dapat berbeda karena group harus tetap utuh.",
-      "Gate default: setiap kelas label minimal 30 data train dan 15 data masing-masing validation/test; semua grade 1–6 harus hadir tiap split. Missing kelas tidak diselesaikan dengan membuat label buatan.",
-      "SnapshotHash dan splitManifestHash dicatat; save_snapshot menolak overwrite. Grade >6 menjadi expansionRows dan tidak dilatih oleh cakupan model SD v2.",
+      "Gate setiap label pada tiga head: minimal 30 train, 15 validation dan 15 test. Seluruh 14 grade/track (1–12 reguler dan TL 11–12) harus hadir setiap split. Label tidak dipindahkan untuk memenuhi jumlah minimum.",
+      "SnapshotHash dan splitManifestHash dicatat; save_snapshot menolak overwrite. Training baru mendukung seluruh kelas; snapshot dan artifact SD lama tetap memiliki scope asli.",
       "freeze_dataset_v2 mengecualikan versi pada empirical_ai_hold dari AssessmentStore. Respons siswa mentah, theta/IRT dan skor per-siswa tidak dijadikan teks training model."
     ],
     "formula": "Jaccard(A,B)=|A∩B|/|A∪B|, A/B himpunan trigram teks. Target n_train≈0.70N, n_val≈0.15N, n_test≈0.15N; semua anggota group harus satu split.",
@@ -624,6 +624,10 @@ window.FLOW_MODEL_STAGES = [
       {
         "path": "scripts/freeze_dataset_v2.py",
         "symbol": "silver builder entry point"
+      },
+      {
+        "path": "scripts/prepare_allgrade_retraining.py",
+        "symbol": "prepare"
       }
     ]
   },
@@ -766,14 +770,15 @@ window.FLOW_MODEL_STAGES = [
       "Checkpoint dipilih berdasarkan lolos anti-collapse, macro-F1 head terendah, kemudian mean macro-F1. Early stopping patience=2 dan resume memulihkan model/optimizer/scheduler/RNG.",
       "Kalibrasi dan routing threshold dipasang dari validation saja. Search hyperparameter dilanjutkan evaluasi stabilitas tiga seed. Test dibuka hanya dalam proses final yang eksplisit.",
       "Packaging menyimpan base_model, tokenizer, adapter, heads.safetensors, manifest label map/checksums/data/rubric/model/architecture/routing versions dan metrics. Silver tetap researchOnly meskipun gate teknis baik.",
-      "Public /v2/classify memerlukan approvedForProvisional=true, researchOnly=false, dataGatesPassed, antiCollapsePassed dan promotionGates.passed=true. Artifact unapproved/research menghasilkan HTTP 503."
+      "Public /v2/classify memerlukan approvedForProvisional=true, researchOnly=false, dataGatesPassed, antiCollapsePassed dan promotionGates.passed=true. Artifact unapproved/research menghasilkan HTTP 503.",
+      "Trainer/config baru memakai grade_embedding_count=12, representation solution, penanda teks TL, serta metrik dan kalibrasi per grade/track. Gate data dan promotion tetap berlaku."
     ],
     "formula": "W' = W + (α/r)BA, W beku, A/B trainable. w_k=N/(K·n_k). L_total=L_cognitive+L_knowledge+L_difficulty; target ordinal Easy=[0,0], Medium=[1,0], Hard=[1,1].",
     "example": "Ilustrasi train difficulty Easy=60, Medium=30, Hard=10, N=100: weights multiclass 0.556,1.111,3.333. Pos_weight ordinal untuk y>Easy =60/40=1.5 dan y>Medium=90/10=9. Ini menyeimbangkan loss, bukan memberi label Hard pada siswa yang salah.",
     "output": {
       "kandidatArtifact": "Versi model baru + validation/calibration/promotion metrics",
-      "versiSaatAudit": "indobert-3x4x3-silver-kelas1-v1; parallel-v1; metadata; 256 tokens; approvedForProvisional=false",
-      "artifactOrdinalTersimpan": "Belum ditemukan pada models saat audit dokumentasi"
+      "versiSaatAudit": "Manifest artifact yang benar-benar dipakai; kandidat baru disimpan terpisah dari model aktif.",
+      "artifactOrdinalTersimpan": "Ketersediaan trainer/config tidak membuktikan training baru telah selesai."
     },
     "cautions": [
       "Tahap conditional: kode trainer tersedia, tetapi model ordinal baru tidak otomatis sudah dilatih atau aktif.",
@@ -800,6 +805,10 @@ window.FLOW_MODEL_STAGES = [
       {
         "path": "models/indobert-3x4x3-v1/manifest.json",
         "symbol": "Artifact default tersimpan"
+      },
+      {
+        "path": "configs/model_v2_config.yaml",
+        "symbol": "grade_embedding_count; subject_track_feature"
       }
     ]
   },
@@ -865,7 +874,7 @@ window.FLOW_MODEL_STAGES = [
     "input": {
       "V2ClassificationRequest": [
         "questionId, contentVersion, contentHash",
-        "grade 1–12 (runtime SD hanya 1–6)",
+        "grade 1–12 dan subjectTrack regular/tl; scope artifact mengikuti manifest",
         "topic, subtopic, questionType, stimulus, stem, options",
         "verifiedMinimalSolution, detectedKko, visualTranscript",
         "provenanceStatus"
@@ -883,17 +892,18 @@ window.FLOW_MODEL_STAGES = [
     "process": [
       "normalize_text v2 memakai Unicode NFC, normalisasi line endings dan spasi/tab, mempertahankan baris dan notasi matematika. Field kosong menjadi '-'. Pipeline legacy memakai normalisasi NFKC/whitespace yang berbeda.",
       "stem_options hanya memasukkan Soal dan Pilihan. metadata menambahkan Kelas, Topik, Subtopik, Tipe soal, Stimulus dan Transkripsi visual. solution menambahkan Solusi minimum terverifikasi; kko memasukkan seluruh field termasuk KKO terdeteksi.",
-      "Runtime selalu membaca manifest.inputRepresentation. Artifact tersimpan saat audit memakai metadata: solusi dan KKO dicatat dalam request/audit, tetapi tidak diserialisasi ke encoder.",
+      "Runtime membaca manifest.inputRepresentation: stem_options, metadata, solution atau kko. Config training baru memakai solution; artifact lama dapat tetap metadata. Field request yang tidak termasuk representation tidak masuk encoder.",
       "Config trainer baru default solution. KKO adalah fitur ablation; detect_kko mengenali pola seperti hitung/berapa, bukan aturan penentu label kognitif.",
       "Provenance precondition memerlukan contentQualified, answerKeyVerified, solutionVerified dan solusi nonkosong. Visual essential memerlukan transcript nonkosong dan verified. Jika gagal, semua head abstain sebelum inference.",
       "Private answer key tidak muncul sebagai field request tersendiri atau baris serializer. Solusi terverifikasi dapat menyebut jawabannya untuk klasifikasi internal, tetapi bukan payload delivery siswa.",
-      "inputHash mencatat tepat teks serializer. ModelTrace mencatat modelVersion, datasetSnapshot, rubricVersion, calibrationVersion, inputSchemaVersion, architectureVersion dan routingPolicyVersion."
+      "inputHash mencatat tepat teks serializer. ModelTrace mencatat modelVersion, datasetSnapshot, rubricVersion, calibrationVersion, inputSchemaVersion, architectureVersion dan routingPolicyVersion.",
+      "TL menambahkan Jalur mata pelajaran: Matematika Tingkat Lanjut pada representation selain stem_options. Grade juga masuk tensor grades untuk embedding difficulty head."
     ],
     "formula": "x = serialize_question(request, manifest.inputRepresentation); inputHash=SHA256(UTF8(x)). Confidence dan H berasal dari p_model(x), bukan bagian x.",
     "example": "Ilustrasi solution: 'Kelas: 1\nTopik: Penjumlahan\nSubtopik: -\nTipe soal: multiple_choice\nStimulus: -\nSoal: Budi punya 3 pensil dan membeli 2. Berapa semuanya?\nPilihan: A. 4\nB. 5\nC. 6\nD. 7\nSolusi minimum terverifikasi: 3 + 2 = 5, maka B\nTranskripsi visual: -'. metadata menghapus baris solusi; kko menambahkan baris KKO.",
     "output": {
       "serializedInput": "Teks kanonis sesuai representation artifact",
-      "modelInputs": "input_ids, attention_mask, token_type_ids (jika tokenizer memberi), grades",
+      "modelInputs": "input_ids, attention_mask, token_type_ids jika ada, grades; TL melalui penanda teks",
       "audit": "inputHash, detectedKko, token count, trace"
     },
     "cautions": [
@@ -1054,7 +1064,7 @@ window.FLOW_MODEL_STAGES = [
   {
     "id": "model-three-heads",
     "phase": "IndoBERT",
-    "title": "Tiga head dan varian difficulty",
+    "title": "Gabungkan keluaran tiga head",
     "subtitle": "Satu fitur soal dipakai untuk tiga keputusan yang berbeda",
     "status": "implemented",
     "summary": "Setelah vektor [CLS] didapat, head kognitif, knowledge dan difficulty menghasilkan skor masing-masing. Kode mendukung parallel, conditioned dan ordinal grade-aware; manifest menentukan varian yang dipakai. Pada varian ordinal, grade membantu menilai urutan Easy–Medium–Hard, sementara artifact lama yang tersimpan masih parallel.",
@@ -1126,7 +1136,7 @@ window.FLOW_MODEL_STAGES = [
         "symbols": [
           {
             "symbol": "e_{\\text{grade}}",
-            "meaning": "Embedding 16 dimensi untuk grade SD 1–6."
+            "meaning": "Embedding 16 dimensi untuk kelas sasaran; config baru menyediakan 12 kelas, sedangkan scope artifact mengikuti manifest."
           },
           {
             "symbol": "s",
@@ -1162,23 +1172,23 @@ window.FLOW_MODEL_STAGES = [
         "Medium",
         "Hard"
       ],
-      "ordinalExtra": "grade embedding 16 dimensi untuk SD 1–6"
+      "ordinalExtra": "Grade embedding 16 dimensi; config baru 12 slot, artifact lama dapat 6"
     },
     "process": [
       "parallel-v1: tiga linear head menerima h yang sama secara terpisah. Default artifact models/indobert-3x4x3-v1 menggunakan varian ini lewat default manifest lama.",
       "conditioned-difficulty-v1: cognitive/knowledge logits di-softmax, lalu probability 3+4 dikonkatenasi dengan h, sehingga input difficulty 768+3+4=775. detachDifficultyConditioning=true memutus gradient difficulty melalui probabilities head lain, tetapi shared h tetap menerima gradient.",
       "grade-aware-ordinal-v2: head cognitive/knowledge tetap linear multiclass. Difficulty menggabungkan h dengan embedding grade: 768+16=784, menghasilkan satu score s dan dua ordered cutpoints.",
-      "GradeAwareOrdinalDifficultyHead memakai embedding index grade-1 (enam grade). Cutpoint kedua τ₂=τ₁+softplus(gap)+0.0001 menjamin τ₂>τ₁; cumulative logits [s-τ₁,s-τ₂].",
+      "GradeAwareOrdinalDifficultyHead memakai indeks grade-1 dengan jumlah slot dari manifest (config baru 12, fallback artifact lama 6). Batas kedua τ₂=τ₁+softplus(gap)+0.0001 menjaga τ₂>τ₁.",
       "Sigmoid cumulative menghasilkan q₁=P(Y>Easy) dan q₂=P(Y>Medium). p=[1-q₁,q₁-q₂,q₂] untuk Easy/Medium/Hard, lalu clamp minimum epsilon dan renormalisasi.",
       "Ordinal forward mengembalikan log(p) sebagai intendedDifficulty logits dan cumulative logits untuk loss. Runtime menerapkan temperature softmax pada log(p), sehingga T=1 mempertahankan p; T≠1 memberi distribusi p^(1/T) yang dinormalisasi.",
-      "Runtime v2 membatasi semua arsitektur ke grade1–6. Untuk kelas8, scope gate dijalankan sebelum encoder dan seluruh head abstain. Legacy /v1 berbeda: Bloom C1–C6, knowledge4, difficulty3."
+      "Runtime membaca supportedGrades dan supportedSubjectTracks dari manifest sebelum encoder. Artifact SD lama menolak grade 7–12; kemampuan kode/config baru tidak otomatis memperluas scope artifact tersebut. Legacy /v1 memakai Bloom C1–C6."
     ],
     "formula": "Parallel: z_h=W_hh+b_h. Conditioned: u=[h;softmax(z_c);softmax(z_k)]∈R^775. Ordinal: s=wᵀ[h;e_grade]+b; q_j=σ(s−τ_j); P(Easy)=1−q₁, P(Medium)=q₁−q₂, P(Hard)=q₂.",
     "example": "Ilustrasi ordinal s=0, τ₁=-1, τ₂=1: q₁=σ(1)=0.731059 dan q₂=σ(-1)=0.268941; p(Easy)=0.268941, p(Medium)=0.462117, p(Hard)=0.268941. Label argmax Medium. Ini contoh rumus, bukan logits/output artifact yang sedang tersimpan.",
     "output": {
       "ordinaryHeads": "3 logits cognitive +4 logits knowledge",
       "difficulty": "3 multiclass logits atau log(p) ordinal +2 cumulative logits",
-      "currentArtifact": "parallel-v1, metadata; conditioned artifact juga tersimpan; ordinal trainer ada tetapi belum ada artifact ordinal tersimpan saat audit"
+      "currentArtifact": "Arsitektur aktual mengikuti manifest; varian baru grade-aware-ordinal-v2 dengan input difficulty 784."
     },
     "cautions": [
       "Jangan menyebut 775 input sebagai arsitektur ordinal baru; ordinal menggunakan 784.",
@@ -1572,13 +1582,13 @@ window.FLOW_MODEL_STAGES = [
       "compare_blind_labels_to_predictions mencocokkan audit checkpointHash, source hashes dan timestamp. Prediksi harus dibuat setelah label blind dikunci. Evidence yang mendukung label berasal dari adjudikasi jika dipakai, selain itu run sukses yang sesuai.",
       "Script comparison menyimpan blindSilverLabel/modelLabel, modelProbabilities, modelAction, blindEvidence dan agreement; bundle menyimpan confidence/entropy pada indobert.heads. Confusion counts mencatat transisi label, misalnya Medium→Easy; ini diagnostik disagreement dengan rujukan AI, bukan validitas empiris siswa.",
       "Bundle blind memeriksa struktur dan status konten/kunci terlebih dahulu: blocker→revision_required; semua label eligible→silver_ready; lainnya→needs_ai_review.",
-      "modelComparison.agreement dalam bundle bernilai null jika label salah satu sisi null. Semua head kelas8 bernilai abstain karena runtime scope SD, jadi tidak ada perbandingan sah dengan model lama.",
-      "difficulty_groups.json mengelompokkan advisory intendedDifficulty, termasuk undecided. contentQualified berarti tanpa blocker konten, sementara AIReviewRequired=true dan isSilverLabel=false.",
+      "modelComparison.agreement bernilai null jika salah satu label null. Pada artifact SD lama, grade di luar supportedGrades abstain; jangan menafsirkan null sebagai label salah biasa.",
+      "difficulty_groups.json dan difficulty/*.json tetap mengelompokkan label AI asli. Setelah publikasi bank, validation_results.json berisi relative_bank_quota dan ai_validation_results.json mempertahankan array AI asli; sumbernya tercatat pada manifest.",
       "Relabel yang berwenang memerlukan keputusan sistem baru dengan histori/provenance. Jika konten berubah, buat contentVersion/hash baru, ulang qualification dan review, lalu snapshot berikutnya. Label lama tidak dihapus.",
       "Feedback IRT tidak langsung menjadi label cognitive/knowledge atau fitur IndoBERT. Empirical report memicu review/hold; model baru hanya melalui dataset/snapshot/training/validation/approval baru."
     ],
     "formula": "agreement_h=(label_model_h=label_blind_h) bila kedua label tersedia. disagreement rate=N_tidak_sama/N_pasangan_sah. Transisi lama→baru dicatat bersama model/rubric/content/calibration versions, bukan ditentukan hanya oleh confidence baru yang lebih besar.",
-    "example": "Data aktif: kelas1 berisi 50 soal silver_ready. Semua kelas total 580 soal, 571 silver_ready dan 9 revision_required. Kelas8:42 soal, Easy24/Medium17/Hard1, semua silver_ready; classifier SD abstain sehingga confidence/entropy null. Distribusi ini snapshot laporan, bukan hasil IRT siswa.",
+    "example": "Contoh audit: label Gemini Easy dapat menjadi Medium/Hard dalam bank relatif, sehingga confidence dukungan AI dapat 0. Itu bukan bukti kunci salah, bukan calibratedConfidence IndoBERT, dan bukan parameter empiris IRT.",
     "output": {
       "ai_decisions": "decisionId, workflowRunId, llmAdvisory, AIValidation, finalRouting, modelComparison",
       "files": [
@@ -1618,6 +1628,14 @@ window.FLOW_MODEL_STAGES = [
       {
         "path": "scripts/freeze_dataset_v2.py",
         "symbol": "silver builder entry point"
+      },
+      {
+        "path": "scripts/publish_operational_bank.py",
+        "symbol": "publish"
+      },
+      {
+        "path": "app/silver/exports.py",
+        "symbol": "ai_validation_path"
       }
     ]
   },

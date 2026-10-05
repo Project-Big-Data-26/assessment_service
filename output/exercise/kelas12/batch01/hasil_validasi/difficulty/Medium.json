@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "blind-difficulty-subset-v1",
+  "sourceClass": 12,
+  "subjectTrack": "regular",
+  "intendedDifficulty": "Medium",
+  "researchOnly": true,
+  "advisoryCount": 1,
+  "contentQualifiedCount": 1,
+  "items": [
+    {
+      "question": {
+        "questionId": "d4d96bc9a5e5184fa89f2fa7",
+        "questionVersionId": "d4d96bc9a5e5184fa89f2fa7:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "58ef0bab9dde7f36825f2c3c3882419b7e34c09593f3de7d457978a4f7f8c749",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman dengan Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Pada pinjaman dengan anuitas tetap, angsuran pokok bulan ke-1, ke-2, dan ke-3 berturut-turut adalah Rp1.200.000,00, Rp1.236.000,00, dan Rp1.273.080,00. Kesimpulan yang benar tentang pola angsuran pokok dan nilai $a_4$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "barisan aritmetika dengan beda Rp37.080,00, sehingga $a_4$ = Rp1.310.160,00"
+          },
+          {
+            "label": "B",
+            "text": "barisan geometri dengan rasio 1,03, sehingga $a_4$ = Rp1.311.272,40"
+          },
+          {
+            "label": "C",
+            "text": "barisan aritmetika dengan beda Rp36.000,00, sehingga $a_4$ = Rp1.309.080,00"
+          },
+          {
+            "label": "D",
+            "text": "barisan geometri dengan rasio 1,03, sehingga $a_4$ = Rp1.309.080,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Periksa rasio antar suku: a2/a1 = 1.236.000/1.200.000 = 1,03 dan a3/a2 = 1.273.080/1.236.000 = 1,03. Karena rasio tetap, ini adalah barisan geometri dengan r = 1,03. Maka, a4 = a3 * r = 1.273.080 * 1,03 = 1.311.272,40.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "menyimpulkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "d4d96bc9a5e5184fa89f2fa7",
+          "subchapter": "Pinjaman dengan Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya memakai selisih suku kedua dan ketiga; selisihnya tidak tetap",
+            "B": "Benar: selisih 36.000 dan 37.080 tidak sama (bukan aritmetika), rasio 1.236.000/1.200.000 = 1.273.080/1.236.000 = 1,03; a_4 = 1.273.080 x 1,03 = 1.311.272,40",
+            "C": "Salah: hanya memakai selisih suku pertama dan kedua tanpa memeriksa suku ketiga",
+            "D": "Salah: rasio benar tetapi suku berikutnya dicari dengan menambah selisih, bukan mengalikan rasio"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    }
+  ]
+}

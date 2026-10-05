@@ -39,11 +39,14 @@ def digest(path: Path) -> str:
 
 
 def complete(checkpoint: dict, ids: list[str]) -> bool:
+    from app.llm.silver import requested_runs_for, requested_run_indices
     for qid in ids:
         item = checkpoint.get("items", {}).get(qid, {})
         runs = item.get("runs", [])
         successful = [r for r in runs if r.get("status") == "success"]
-        if len(successful) != 3 or {r["runIndex"] for r in successful} != {1, 2, 3}:
+        requested = requested_runs_for(checkpoint, item)
+        required = set(requested_run_indices(item, requested))
+        if len(successful) != requested or {r["runIndex"] for r in successful} != required:
             return False
         # A paid response saved just before aggregate creation is not complete.
         if item.get("aggregate", {}).get("needsAdjudication") is not False:

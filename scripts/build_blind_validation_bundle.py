@@ -24,7 +24,7 @@ from app.classification.v2.contracts import HEAD_LABELS, V2ClassificationRequest
 from app.classification.v2.kko import detect_kko  # noqa: E402
 from app.classification.v2.runtime import V2ClassifierRuntime  # noqa: E402
 from app.classification.v2.serializer import canonical_json_hash, serialize_question  # noqa: E402
-from app.llm.silver import silver_rubric  # noqa: E402
+from app.llm.silver import silver_rubric, requested_runs_for, requested_run_indices  # noqa: E402
 from app.silver.policy import POLICY_VERSION, qualification  # noqa: E402
 from scripts.build_validation_bundle_kelas1 import structural_validation  # noqa: E402
 
@@ -61,6 +61,12 @@ def select_evidence(record: dict, head: str, label: str | None) -> dict:
 
 def blind_outcome(record: dict, structure: dict, question: dict | None = None) -> tuple[dict, str]:
     return qualification(record, structure, question)
+
+
+def source_class_matches(value, grade: int, track: str = "regular") -> bool:
+    """Accept the source's exact grade/track identifier, including exercise rows."""
+    expected = f"kelas{grade}" + ("_tl" if track == "tl" else "")
+    return value is None or (isinstance(value, int) and not isinstance(value, bool) and value == grade) or value == expected
 
 
 def verify_probability(head: dict) -> None:
@@ -102,7 +108,10 @@ def difficulty_groups(questions: list[dict], decisions: list[dict], grade: int) 
 
 def batch_completion_note(checkpoint: dict, item_count: int) -> str:
     successful = int(checkpoint["summary"]["successfulRuns"])
-    expected = item_count * 3
+    default_runs = requested_runs_for(checkpoint)
+    records = checkpoint.get("items", {})
+    expected = (item_count - len(records)) * default_runs + sum(
+        requested_runs_for(checkpoint, record) for record in records.values())
     pending = int(checkpoint["summary"].get("pendingAdjudication", 0))
     if successful >= expected and not pending:
         return ""
@@ -138,6 +147,19 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
     out_of_scope = not model_in_scope(model, grade, checkpoint.get("subjectTrack", "regular"))
     supported_grades = model.get("supportedGrades", list(range(1, 7)))
     supported_tracks = model.get("supportedSubjectTracks", ["regular"])
+    default_runs = requested_runs_for(checkpoint)
+    records = checkpoint.get("items", {})
+    expected_runs = (summary["itemCount"] - len(records)) * default_runs + sum(
+        requested_runs_for(checkpoint, record) for record in records.values())
+    mode = "N=1 lanjutan dengan hasil N=3 terdahulu" if default_runs == 1 else "N=3"
+    evaluation_note = (
+        "Soal lanjutan dinilai satu kali (N=1), tanpa adjudikasi otomatis; hasil N=3 terdahulu dipertahankan. "
+        "Isi, kunci, solusi dan tiga label tetap diperiksa. Temuan konten atau abstain tetap inactive. "
+        "Confidence N=1 pada JSON memakai round(100 * min(probabilitas label akhir Gemini tiap head IndoBERT)); "
+        "ini dukungan model, bukan konsistensi antar-run atau akurasi terukur; bukti ini tidak memenuhi provenance training N=3."
+        if default_runs == 1 else
+        f"Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas {grade} tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan menjadi keputusan silver operasional."
+    )
     diagnostic_overview = (
         f"Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Artifact berada di luar cakupan kelas {class_label}, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind."
         if out_of_scope else
@@ -149,18 +171,18 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
         "Encoder menghasilkan representasi [CLS], lalu tiga head menghasilkan logits. Probabilitas adalah pᵢ = exp(zᵢ/T) / Σⱼ exp(zⱼ/T), dengan temperature sesuai manifest. Confidence = max(pᵢ). Entropy H = −Σᵢ pᵢ ln(pᵢ) / ln(K). Probabilitas, confidence, entropy, dan action di bawah berasal dari inferensi lokal; tidak dibuat oleh Gemini."
     )
     lines = [
-        f"# Validasi ulang soal kelas {class_label} — Gemini blind N=3 dan diagnostik IndoBERT",
+        f"# Validasi ulang soal kelas {class_label} — Gemini blind {mode} dan diagnostik IndoBERT",
         "",
         f"Model penilai: `{checkpoint['model']}`. Prompt: `{checkpoint['promptVersion']}`. Rubrik: `{checkpoint['rubricVersion']}`.",
         "",
-        f"Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas {grade} tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan menjadi keputusan silver operasional.",
+        evaluation_note,
         "",
         diagnostic_overview,
         "",
         f"Jumlah soal: {summary['itemCount']}; distribusi label advisory: `{json.dumps(summary['advisoryLabelDistributions'], ensure_ascii=False)}`.",
         f"Distribusi hanya pada soal tanpa blocker konten: `{json.dumps(summary['contentQualifiedAdvisoryLabelDistributions'], ensure_ascii=False)}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.",
         f"Routing: `{json.dumps(summary['routingCounts'], ensure_ascii=False)}`.",
-        f"Run awal sukses: {checkpoint['summary']['successfulRuns']}/{summary['itemCount'] * 3}; adjudikasi: {checkpoint['summary'].get('adjudicatedItems', 0)}; token sukses tercatat: {checkpoint['summary']['totalTokens']:,}.",
+        f"Run awal sukses: {checkpoint['summary']['successfulRuns']}/{expected_runs}; adjudikasi: {checkpoint['summary'].get('adjudicatedItems', 0)}; token sukses tercatat: {checkpoint['summary']['totalTokens']:,}.",
         "",
         "Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.",
         "",
@@ -179,7 +201,7 @@ def render_report(questions, decisions, summary, checkpoint, model, *, output_di
         "",
         probability_overview,
         "",
-        "Suara awal LLM dihitung dari label yang benar-benar diberikan tiap run; abstain tidak menjadi suara kelas. Policy saat ini menerima 3–0 langsung dan meminta adjudikasi untuk kasus lainnya. Majority awal minimal 2/3 dicatat sebagai bukti, bukan confidence probabilistik. Label adjudikasi yang berbeda dari mayoritas awal tetap disimpan dengan alasan dan tidak disamarkan menjadi voting 3–0.",
+        "Jumlah run dan mode disimpan per soal. N=1 tidak mengukur kesepakatan antar-run dan tidak menambah adjudikasi otomatis. Pada N=3, suara 3–0 diterima langsung dan kasus lain meminta adjudikasi; dukungan suara bukan probabilitas akurasi. Abstain tidak menjadi suara kelas.",
         "",
     ]
     completion_note = batch_completion_note(checkpoint, summary["itemCount"])
@@ -285,10 +307,9 @@ def main() -> int:
         raise ValueError("checkpoint/audit grade mismatch")
     if audit.get("subjectTrack", "regular") != checkpoint.get("subjectTrack", "regular"):
         raise ValueError("checkpoint/audit subject track mismatch")
-    if checkpoint.get("requestedRuns") != 3:
-        raise ValueError("blind validation bundle requires N=3")
-    if any(item.get("kelas_id") not in (None, grade) for item in source):
-        raise ValueError("source contains a different grade")
+    requested_runs_for(checkpoint)
+    if any(not source_class_matches(item.get("kelas_id"), grade, checkpoint.get("subjectTrack", "regular")) for item in source):
+        raise ValueError("source contains a different grade or subject track")
     assert audit["checkpointLockedByAudit"] and audit["checkpointSha256"] == digest(args.checkpoint)
     assert audit["sourceSha256"] == digest(args.source) == checkpoint["sourceHash"]
     assert audit["gates"]["blindPromptLeakageAbsent"] and audit["gates"]["checkpointSourceAndInputsMatch"]
@@ -303,10 +324,14 @@ def main() -> int:
     for index, item in enumerate(source, 1):
         external_id = str(item["_id"])
         record = checkpoint["items"].get(external_id) or {}
+        requested = requested_runs_for(checkpoint, record)
+        method = "blind_n1" if requested == 1 else "blind_n3_with_ai_adjudication"
         aggregate = record.get("aggregate") or {}
         assert not record or record["inputHash"] == canonical_json_hash(item)
         structure = structural_validation(item, args.source.parent)
-        labels, route = blind_outcome(record, structure, item)
+        from scripts.export_revalidation_progress import current_decision
+        checked, progress = current_decision(item, record, args.source.parent, requested_runs=requested)
+        labels, route = checked["llmAdvisory"]["advisoryLabels"], checked["finalRouting"]
         transcript = aggregate.get("visualTranscript")
         solution = aggregate.get("verifiedMinimalSolution")
         # Preserve the source business ID in exports. Only the diagnostic request
@@ -322,7 +347,7 @@ def main() -> int:
             questionType="multiple_choice", stimulus=item.get("stimulus"), stem=item["soal_text"],
             options=[{"label": o["option_id"], "text": o["text"]} for o in item["options"]],
             verifiedMinimalSolution=solution, detectedKko=detect_kko(item["soal_text"]), visualTranscript=transcript,
-            provenanceStatus={"contentQualified": structure["status"] == "pass" and aggregate.get("contentStatus") == "valid", "answerKeyVerified": aggregate.get("answerKeyStatus") == "verified", "solutionVerified": bool(solution) and aggregate.get("answerKeyStatus") == "verified", "visualEssential": bool(item.get("image_url")), "visualTranscriptVerified": bool(transcript)},
+            provenanceStatus={"contentQualified": route == "silver_ready", "answerKeyVerified": progress["fullComplete"] and aggregate.get("answerKeyStatus") == "verified", "solutionVerified": progress["fullComplete"] and bool(solution) and aggregate.get("answerKeyStatus") == "verified", "visualEssential": bool(item.get("image_url")), "visualTranscriptVerified": bool(transcript)},
         )
         serialized = serialize_question(request, representation=model["inputRepresentation"])
         tokens = len(runtime.tokenizer(serialized, truncation=False)["input_ids"])
@@ -349,8 +374,8 @@ def main() -> int:
         for head in HEADS:
             initial = Counter((r.get("heads", {}).get(head) or {}).get("label") for r in runs if r["status"] == "success" and (r.get("heads", {}).get(head) or {}).get("action") == "classify")
             largest = max(initial.values(), default=0)
-            pattern = "unanimous_3_0" if largest == 3 else "majority_2_of_3" if largest == 2 else "no_consensus"
-            votes[head] = {"status": (aggregate.get("heads", {}).get(head) or {}).get("status", "incomplete"), "votePattern": pattern, "requestedRuns": 3, "successfulRuns": sum(r["status"] == "success" for r in runs), "requiredVotes": 2, "supportingVotes": largest, "voteCounts": dict(initial), "advisoryLabel": labels[head], "initialMajorityLabel": initial.most_common(1)[0][0] if largest >= 2 else None, "policy": "unanimity_else_ai_adjudication", "lockedEvidence": select_evidence(record, head, labels[head])}
+            pattern = ("single_run" if largest == 1 else "no_label") if requested == 1 else "unanimous_3_0" if largest == 3 else "majority_2_of_3" if largest == 2 else "no_consensus"
+            votes[head] = {"status": (aggregate.get("heads", {}).get(head) or {}).get("status", "incomplete"), "votePattern": pattern, "requestedRuns": requested, "successfulRuns": sum(r["status"] == "success" for r in runs), "requiredVotes": requested // 2 + 1, "supportingVotes": largest, "voteCounts": dict(initial), "advisoryLabel": labels[head], "initialMajorityLabel": initial.most_common(1)[0][0] if requested == 3 and largest >= 2 else None, "policy": "single_run_content_key_qualification" if requested == 1 else "unanimity_else_ai_adjudication", "lockedEvidence": select_evidence(record, head, labels[head])}
         comparison = {h: {"modelLabel": prediction[h]["label"], "blindLabel": labels[h], "agreement": prediction[h]["label"] == labels[h] if labels[h] is not None and prediction[h]["label"] is not None else None} for h in HEADS}
         decision_id = "AID-" + canonical_json_hash({"qid": qid, "contentHash": content_hash, "checkpointHash": audit["checkpointSha256"]})[:24]
         decisions.append({
@@ -359,11 +384,17 @@ def main() -> int:
             "decisionType": "blind_silver_advisory", "inputValidation": structure,
             "featureManifest": {"grade": grade, "topic": request.topic, "subtopic": request.subtopic, "questionType": request.questionType, "detectedKko": request.detectedKko, "serializedInput": serialized, "untruncatedTokenCount": tokens, "maxLength": model["maxLength"], "wouldTruncate": tokens > model["maxLength"]},
             "indobert": {"diagnosticOnly": True, "diagnosticInferenceQuestionId": diagnostic_qid, "heads": {h: prediction[h] for h in HEADS}, "trace": prediction["trace"], "scopeStatus": prediction["scopeStatus"], "reviewRequired": True, "latencyMs": latency},
-            "llmAdvisory": {"provider": checkpoint["provider"], "model": checkpoint["model"], "promptVersion": checkpoint["promptVersion"], "rubricVersion": checkpoint["rubricVersion"], "method": "blind_n3_with_ai_adjudication", "blindToModelPredictions": True, "requestedRuns": 3, "requiredVotes": 2, "successfulRuns": sum(r["status"] == "success" for r in runs), "contentAssessment": {"status": aggregate.get("contentStatus"), "concerns": aggregate.get("contentConcerns") or []}, "answerKeyAssessment": {"status": aggregate.get("answerKeyStatus"), "verifiedAnswerKey": aggregate.get("verifiedAnswerKey")}, "runs": runs, "votes": votes, "adjudication": record.get("adjudication"), "advisoryLabels": labels, "eligibleForTraining": aggregate.get("eligibleForTraining", False), "labelProvenance": "ai_silver"},
+            "llmAdvisory": {"provider": checkpoint["provider"], "model": checkpoint["model"], "promptVersion": checkpoint["promptVersion"], "rubricVersion": checkpoint["rubricVersion"], "method": method, "blindToModelPredictions": True, "requestedRuns": requested, "requiredVotes": requested // 2 + 1, "successfulRuns": sum(r["status"] == "success" for r in runs), "contentAssessment": {"status": aggregate.get("contentStatus"), "concerns": aggregate.get("contentConcerns") or []}, "answerKeyAssessment": {"status": aggregate.get("answerKeyStatus"), "verifiedAnswerKey": aggregate.get("verifiedAnswerKey")}, "runs": runs, "votes": votes, "adjudication": record.get("adjudication"), "advisoryLabels": labels, "eligibleForTraining": aggregate.get("eligibleForTraining", False), "labelProvenance": "ai_silver"},
             "labelProvenance": "ai_silver", "reviewMode": "automated_ai", "finalRouting": route,
             "modelComparison": comparison, "blindCheckpointHash": audit["checkpointSha256"], "createdAt": created,
         })
         decisions[-1]["llmAdvisory"]["retryHistory"] = record.get("retryHistory") or []
+        if "requestedRunIndices" in record:
+            decisions[-1]["llmAdvisory"]["requestedRunIndices"] = requested_run_indices(record, requested)
+        if checkpoint.get("requestedRuns", 3) == 1:
+            decisions[-1]["llmAdvisory"].update(consistencyMeasured=bool(progress["fullComplete"] and requested == 3),
+                trainingEvidenceQualified=bool(progress["fullComplete"] and requested == 3 and route == "silver_ready"))
+            decisions[-1]["llmAdvisory"]["previousN3Evidence"] = record.get("previousN3Evidence") or {}
         predictions.append({"index": index, "questionId": qid, "diagnosticInferenceQuestionId": diagnostic_qid, "questionVersionId": qversion, "contentHash": content_hash, "serializedInput": serialized, "untruncatedTokenCount": tokens, "maxLength": model["maxLength"], "wouldTruncate": tokens > model["maxLength"], "latencyMs": latency, "prediction": prediction})
         print(f"diagnostic={index}/{len(source)} route={route}", flush=True)
     summary = {"itemCount": len(decisions), "routingCounts": dict(Counter(d["finalRouting"] for d in decisions)), "labelProvenance": "ai_silver", "silverReadyCount": sum(d["finalRouting"] == "silver_ready" for d in decisions), "advisoryLabelDistributions": {h: dict(Counter(d["llmAdvisory"]["advisoryLabels"][h] or "undecided" for d in decisions)) for h in HEADS}, "contentQualifiedAdvisoryLabelDistributions": {h: dict(Counter(d["llmAdvisory"]["advisoryLabels"][h] or "undecided" for d in decisions if d["finalRouting"] == "silver_ready")) for h in HEADS}, "modelDisagreementCounts": {h: sum(d["modelComparison"][h]["agreement"] is False for d in decisions) for h in HEADS}}
@@ -398,6 +429,10 @@ def main() -> int:
     if checkpoint.get("subjectTrack") == "tl":
         readme += "\nMata pelajaran: Matematika Tingkat Lanjut (TL), dengan rubrik khusus TL.\n"
     completion_note = batch_completion_note(checkpoint, len(source))
+    if checkpoint.get("requestedRuns", 3) == 1:
+        readme = readme.replace("metode blind N=3", "metode lanjutan blind N=1 dengan hasil N=3 terdahulu dipertahankan").replace(
+            "tiga suara, profil difficulty", "run sesuai mode tiap soal, profil difficulty")
+        readme += "\nN=1 memeriksa konten, kunci, solusi dan tiga label satu kali tanpa adjudikasi otomatis. Confidence numerik memakai dukungan IndoBERT untuk label akhir Gemini; konsistensi antar-run tidak terukur; bukti satu run tidak memenuhi gate provenance training N=3.\n"
     if completion_note:
         readme = readme.replace(
             f"# Hasil validasi ulang kelas {grade}\n",
@@ -413,7 +448,7 @@ def main() -> int:
         "schemaVersion": "validation-bundle-manifest-v2-blind", "createdAt": created,
         "class": checkpoint["sourceGrade"], "offlineBuild": True, "newLlmCalls": 0,
         "operationalPolicyVersion": POLICY_VERSION, "labelProvenance": "ai_silver",
-        "reviewMode": "automated_ai", "method": "blind_n3_with_ai_adjudication_then_offline_model_diagnostics",
+        "reviewMode": "automated_ai", "method": ("blind_n1_resume_retaining_n3_then_offline_model_diagnostics" if checkpoint.get("requestedRuns", 3) == 1 else "blind_n3_with_ai_adjudication_then_offline_model_diagnostics"),
         "historicalBlindRecordedTokens": checkpoint["summary"]["totalTokens"],
         "historicalBlindSuccessfulRuns": checkpoint["summary"]["successfulRuns"],
         "blindDecisionLockedAt": audit["generatedAt"], "readyForExpansion": audit["readyForExpansion"],
@@ -425,7 +460,7 @@ def main() -> int:
                         for name, path in (("source", args.source), ("blindCheckpoint", args.checkpoint), ("blindAudit", args.audit))},
         "outputs": {name: {"sha256": digest(args.output_dir / name), "bytes": (args.output_dir / name).stat().st_size} for name in filenames},
         "limitations": ["Operational labels use AI silver provenance.",
-                        "N=3 and adjudication use one Gemini model; repeated judgments are correlated.",
+                        "Repeated N=3 judgments are correlated; N=1 cannot measure inter-run consistency.",
                         "IndoBERT diagnostic outputs do not change the locked AI silver decisions.",
                         "Packaging performs no training, model promotion, student delivery, CTT or IRT."],
     })

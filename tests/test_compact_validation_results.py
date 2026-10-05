@@ -6,7 +6,8 @@ import pytest
 
 from app.silver.exports import (AUDIT_FILE, COMPACT_SCHEMA, LEGACY_DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA,
                                compact_items, database_items,
-                               load_decision_bundle)
+                               load_decision_bundle, confidence_details, confidence_policy_for,
+                               final_label_support)
 from scripts.refresh_ai_validation_reports import digest, verify_bundle
 from scripts.compact_validation_results import compact_bundle
 
@@ -66,9 +67,13 @@ def test_audit_tampering_is_rejected_and_legacy_bundles_still_load(tmp_path):
         load_decision_bundle(tmp_path)
 
 
-@pytest.mark.parametrize("upgrade_legacy", [None, LEGACY_DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA])
+@pytest.mark.parametrize("upgrade_legacy", [None, LEGACY_DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA, "single_run_null"])
 def test_conversion_is_idempotent_and_resealed_label_changes_are_rejected(tmp_path, upgrade_legacy):
     sources, decisions, questions, cp = fixture_data()
+    if upgrade_legacy == "single_run_null":
+        cp["requestedRuns"] = 1
+        decisions[0]["llmAdvisory"].update(requestedRuns=1, runs=decisions[0]["llmAdvisory"]["runs"][:1])
+        decisions[0]["indobert"] = {"heads": model_support_heads()}
     questions[0].update(privateAnswerSpecification={"answerKey": "A"}, visualAssets=[], visualAssetHashes={})
     source = tmp_path / "soal_pretest_db.json"
     checkpoint = tmp_path / "checkpoint.json"
@@ -90,7 +95,23 @@ def test_conversion_is_idempotent_and_resealed_label_changes_are_rejected(tmp_pa
     audit_bytes = (bundle / "validation_results.json").read_bytes()
     compact_bundle(source, bundle)
     assert (bundle / AUDIT_FILE).read_bytes() == audit_bytes
-    if upgrade_legacy:
+    if upgrade_legacy == "single_run_null":
+        old = json.loads(manifest_path.read_text(encoding="utf-8"))
+        old["databaseExport"]["confidencePolicy"] = confidence_policy_for(decisions, legacy_single_run_null=True)
+        metadata = compact_items(sources, decisions, questions, cp, source.parent.name, legacy_single_run_null=True)
+        old["databaseExport"]["metadataByQuestionId"] = {row["_id"]: {**row["ai_metadata"],
+            "math_cognitive_domain": decisions[0]["llmAdvisory"]["advisoryLabels"]["mathCognitiveDomain"],
+            "final_label_supporting_runs": final_label_support(decisions[0])} for row in metadata}
+        previous = database_items(sources, decisions, legacy_single_run_null=True)
+        (bundle / "validation_results.json").write_text(json.dumps(previous), encoding="utf-8")
+        old["outputs"]["validation_results.json"] = {"sha256": digest(bundle / "validation_results.json"),
+            "bytes": (bundle / "validation_results.json").stat().st_size}
+        manifest_path.write_text(json.dumps(old), encoding="utf-8")
+        verify_bundle(source, bundle)
+        compact_bundle(source, bundle)
+        assert (bundle / AUDIT_FILE).read_bytes() == audit_bytes
+        assert json.loads((bundle / "validation_results.json").read_text())[0]["confidence_score"] == 20
+    elif upgrade_legacy:
         # Previous exports used the domain in the same database column.
         old = json.loads(manifest_path.read_text(encoding="utf-8"))
         old["databaseExport"]["schemaVersion"] = upgrade_legacy
@@ -136,6 +157,41 @@ def test_database_schema_and_difficulty_score_are_independent_of_domain():
         assert {k: v for k, v in row.items() if k not in ("cognitive_level", "cognitive_score", "confidence_score", "status")} == {
             k: v for k, v in sources[0].items() if k not in ("cognitive_level", "cognitive_score", "confidence_score", "status")}
     assert sources == original
+
+
+def model_support_heads():
+    return {"mathCognitiveDomain": {"probabilities": {"knowing": .2, "applying": .7, "reasoning": .1}},
+            "knowledgeDimension": {"probabilities": {"factual": .3, "conceptual": .2, "procedural": .4, "metacognitive": .1}},
+            "intendedDifficulty": {"probabilities": {"Easy": .8, "Medium": .15, "Hard": .05}}}
+
+
+def test_single_run_confidence_supports_final_labels_instead_of_model_argmax():
+    source, decisions, *_ = fixture_data()
+    decision = decisions[0]
+    decision["indobert"] = {"heads": model_support_heads()}
+    assert database_items(source, decisions)[0]["confidence_score"] == 100  # Historical N=3 policy.
+    decision["llmAdvisory"].update(requestedRuns=1, runs=decision["llmAdvisory"]["runs"][:1])
+    details = confidence_details(decision)
+    assert details["available"] and details["score"] == 20
+    assert details["final_label_probabilities"]["mathCognitiveDomain"] == .2
+    assert database_items(source, decisions)[0]["confidence_score"] == 20
+    assert database_items(source, decisions, legacy_single_run_null=True)[0]["confidence_score"] is None
+    decision["indobert"]["heads"]["mathCognitiveDomain"]["probabilities"] = {"knowing": .0001, "applying": .9999, "reasoning": 0}
+    assert confidence_details(decision)["score"] == 0
+    assert confidence_details(decision)["available"] is True
+    decision["indobert"]["heads"] = {}
+    assert database_items(source, decisions)[0]["confidence_score"] == 0
+    assert confidence_details(decision)["available"] is False
+
+
+def test_single_run_rejects_invalid_probability_evidence():
+    _, decisions, *_ = fixture_data()
+    decision = decisions[0]
+    decision["llmAdvisory"]["requestedRuns"] = 1
+    decision["indobert"] = {"heads": model_support_heads()}
+    decision["indobert"]["heads"]["intendedDifficulty"]["probabilities"]["Hard"] = -1
+    with pytest.raises(ValueError, match="probability distribution"):
+        confidence_details(decision)
 
 
 def test_confidence_counts_final_label_support_after_majority_override():

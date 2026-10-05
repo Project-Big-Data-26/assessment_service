@@ -6,7 +6,8 @@ import pytest
 from pydantic import ValidationError
 
 from app.llm.config import GeminiSettings
-from app.llm.silver import GeminiSilverAdapter, SilverLabelOutput, SilverRunResult, silver_provider_schema
+from app.llm.silver import (GeminiSilverAdapter, SilverLabelOutput, SilverRunResult,
+                           aggregate_silver_runs, silver_provider_schema)
 from tests.test_silver_grade import silver_output
 
 
@@ -39,6 +40,27 @@ def test_abstention_without_evidence_still_valid():
         payload[head].update(action="abstain", label=None, evidenceSpans=[])
     payload["intendedDifficulty"]["profile"] = None
     assert SilverLabelOutput.model_validate(payload).intendedDifficulty.action == "abstain"
+
+
+def test_detailed_content_concern_is_preserved_without_qualifying_the_item():
+    payload = silver_output("Medium").model_dump(mode="json")
+    concern = "Multiple interpretations produce different answers. " * 24
+    assert 700 < len(concern.strip()) <= 1800
+    payload.update(contentStatus="concern", contentConcerns=[concern])
+    output = SilverLabelOutput.model_validate(payload)
+    assert output.contentConcerns == [concern.strip()]
+    assert silver_provider_schema()["properties"]["contentConcerns"]["items"]["maxLength"] == 1800
+    result = aggregate_silver_runs(
+        [SilverRunResult(runIndex=1, status="success", output=output, latencyMs=1)],
+        requested_runs=1)
+    assert result["singleRunEvaluated"] is True
+    assert result["needsAdjudication"] is False
+    assert result["contentConcerns"] == [concern.strip()]
+    assert result["contentQualified"] is False
+    assert result["eligibleForTraining"] is False
+    payload["contentConcerns"] = ["x" * 1801]
+    with pytest.raises(ValidationError, match="contentConcerns"):
+        SilverLabelOutput.model_validate(payload)
 
 
 def test_initial_runs_and_adjudication_send_conditional_evidence_schema():

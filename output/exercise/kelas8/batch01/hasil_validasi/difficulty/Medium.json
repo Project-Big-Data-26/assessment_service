@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "blind-difficulty-subset-v1",
+  "sourceClass": 8,
+  "subjectTrack": "regular",
+  "intendedDifficulty": "Medium",
+  "researchOnly": true,
+  "advisoryCount": 1,
+  "contentQualifiedCount": 1,
+  "items": [
+    {
+      "question": {
+        "questionId": "2a2e26480c77200764b317b9",
+        "questionVersionId": "2a2e26480c77200764b317b9:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "cac0abd33e60f042bba48aa03f09a7495ee048bafce53640556478bff5f26f93",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Pemusatan Data",
+        "questionType": "multiple_choice",
+        "stem": "Lima bilangan bulat berbeda $a<b<c<d<e$ memiliki median 8, rata-rata 10, nilai terkecil $a=3$, dan nilai terbesar $e=20$. Nilai terbesar yang mungkin untuk $d$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "19"
+          },
+          {
+            "label": "B",
+            "text": "15"
+          },
+          {
+            "label": "C",
+            "text": "16"
+          },
+          {
+            "label": "D",
+            "text": "12"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui a=3, c=8, e=20. Rata-rata 5 bilangan adalah 10, maka jumlah total = 50. Persamaan: 3 + b + 8 + d + 20 = 50, sehingga b + d = 19. Agar d maksimal, b harus minimal. Karena a=3 dan bilangan bulat berbeda, maka b minimal adalah 4. Jika b=4, maka d = 19 - 4 = 15. Cek: 3 < 4 < 8 < 15 < 20 (semua berbeda dan memenuhi syarat).",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "2a2e26480c77200764b317b9",
+          "subchapter": "Pemusatan Data",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai $b=0$ padahal $b$ harus lebih besar dari $a=3$",
+            "B": "Benar: median $c=8$; jumlah 50 sehingga $b+d=50-3-8-20=19$; $b\\ge4$ maka $d\\le15$",
+            "C": "Salah: memakai $b=3$ padahal bilangan harus berbeda dari $a=3$",
+            "D": "Salah: itu nilai terkecil $d$ yang mungkin ($b=7$), bukan terbesar"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    }
+  ]
+}

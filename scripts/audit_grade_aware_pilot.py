@@ -17,6 +17,7 @@ from app.llm.silver import (  # noqa: E402
     SUPPORTED_SILVER_GRADES,
     build_silver_prompt,
     rubric_file_hash,
+    requested_runs_for,
     silver_rubric,
 )
 
@@ -110,7 +111,7 @@ def audit(
                         if run.get("status") == "success"
                     ]
                     consistent = bool(
-                        len(decisions) == 3
+                        len(decisions) == requested_runs_for(silver, record)
                         and all(
                             decision.get("label") == label
                             and decision.get("evidenceSpans")

@@ -25,6 +25,8 @@ from app.llm.silver import (  # noqa: E402
     SilverRunResult,
     aggregate_silver_runs,
     rubric_file_hash,
+    requested_runs_for,
+    requested_run_indices,
     silver_rubric,
 )
 
@@ -118,10 +120,16 @@ def summarize(checkpoint: dict) -> dict:
         if (item.get("adjudication") or {}).get("status") == "success"
     ]
     usages.extend(adjudication_usages)
+    archived_runs = [run for item in items for run in item.get("previousN3Evidence", {}).get("runs", [])]
+    usages.extend(run.get("usage", {}) for run in archived_runs if run.get("status") == "success")
+    usages.extend((item.get("previousN3Evidence", {}).get("adjudication") or {}).get("usage", {})
+                  for item in items
+                  if (item.get("previousN3Evidence", {}).get("adjudication") or {}).get("status") == "success")
     labels = [
         item.get("aggregate", {}).get("heads", {}).get("intendedDifficulty", {}).get("label")
         for item in items
-        if item.get("aggregate", {}).get("eligibleForTraining")
+        if (item.get("aggregate", {}).get("eligibleForTraining")
+            or item.get("aggregate", {}).get("contentQualified"))
     ]
     label_counts = {label: labels.count(label) for label in ("Easy", "Medium", "Hard")}
     dominant = max(label_counts.values(), default=0)
@@ -167,6 +175,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int)
     parser.add_argument("--question-id", action="append", help="Pilot IDs from the unchanged source; reuse its checkpoint for the full batch.")
     parser.add_argument("--stop-on-quota", action="store_true", help="Stop immediately on any 429, including short-term limits.")
+    parser.add_argument("--max-consecutive-provider-failures", type=int, default=0,
+                        help="Stop on repeated transport/5xx failures; 0 keeps the legacy retry behavior.")
     parser.add_argument("--max-api-calls", type=int, help="Maximum new application requests in this invocation, including adjudication and retries.")
     parser.add_argument("--attempts", type=int, default=3)
     parser.add_argument("--pause", type=float, default=0.5)
@@ -203,9 +213,12 @@ def main() -> int:
         items = items[: args.limit]
     max_calls = getattr(args, "max_api_calls", None)
     stop_on_quota = getattr(args, "stop_on_quota", False)
+    max_provider_failures = getattr(args, "max_consecutive_provider_failures", 0)
+    if max_provider_failures < 0:
+        raise ValueError("max-consecutive-provider-failures must be nonnegative")
     if max_calls is not None and max_calls < 1:
         raise ValueError("max-api-calls must be positive")
-    if (max_calls is not None or stop_on_quota) and args.workers != 1:
+    if (max_calls is not None or stop_on_quota or max_provider_failures) and args.workers != 1:
         raise ValueError("bounded quota-safe execution requires one worker")
     source_hash = hashlib.sha256(args.source.read_bytes()).hexdigest()
     settings = replace(GeminiSettings.from_environment(), live_enabled=True)
@@ -219,20 +232,39 @@ def main() -> int:
     checkpoint.pop("blockedByGrade", None)
     initial_calls = int(checkpoint.get("apiAttempts", 0))
     progress_lock = RLock()
+    consecutive_provider_failures = 0
+    provider_unavailable = False
 
     def budget_available() -> bool:
         return max_calls is None or checkpoint.get("apiAttempts", 0) - initial_calls < max_calls
 
     def provider_block(result) -> bool:
-        return bool(result.quotaDailyExhausted or result.providerFailureReason
+        return bool(provider_unavailable or result.quotaDailyExhausted or result.providerFailureReason
                     or (stop_on_quota and (result.errorCode or "").endswith(":429")))
+
+    def observe_provider_result(result) -> None:
+        nonlocal consecutive_provider_failures, provider_unavailable
+        code = result.errorCode or ""
+        temporary = code.startswith(("ConnectError:", "ConnectTimeout:", "ReadTimeout:",
+                                     "RemoteProtocolError:", "ServerError:"))
+        consecutive_provider_failures = consecutive_provider_failures + 1 if temporary else 0
+        provider_unavailable = bool(max_provider_failures and consecutive_provider_failures >= max_provider_failures)
 
     def block_status(result) -> str:
         if result.quotaDailyExhausted:
             return "blocked_provider_daily_quota"
         if (result.errorCode or "").endswith(":429"):
             return "blocked_provider_quota_or_rate_limit"
+        if provider_unavailable:
+            return "blocked_provider_temporarily_unavailable"
         return "blocked_provider_configuration"
+
+    def stop_details(result) -> dict:
+        details = {"errorCode": result.errorCode, "quotaLimits": result.quotaLimits,
+                   "providerFailureReason": result.providerFailureReason}
+        if provider_unavailable:
+            details.update(stopCategory="network_or_service", consecutiveProviderFailures=consecutive_provider_failures)
+        return details
 
     def save_progress() -> None:
         with progress_lock:
@@ -264,12 +296,14 @@ def main() -> int:
                 "adjudication": None,
             }
             checkpoint["items"][item_id] = record
+        required_runs = requested_runs_for(checkpoint, record)
+        required_indices = requested_run_indices(record, required_runs)
         completed = {run["runIndex"] for run in record["runs"] if run["status"] == "success"}
         image_paths = [args.source.parent / ref for ref in (item.get("image_url") or [])]
         missing = [path for path in image_paths if not path.is_file()]
         if missing:
             raise FileNotFoundError(f"missing image assets for {item_id}: {len(missing)}")
-        pending = [run_index for run_index in range(1, args.runs + 1) if run_index not in completed]
+        pending = [run_index for run_index in required_indices if run_index not in completed]
 
         def execute_run(run_index: int) -> SilverRunResult | None:
             result: SilverRunResult | None = None
@@ -280,6 +314,7 @@ def main() -> int:
                     item, image_paths, run_index=run_index, grade=args.grade,
                     **({"track": track} if track != "regular" else {}),
                 )
+                observe_provider_result(result)
                 if result.status == "success" or provider_block(result):
                     break
                 record.setdefault("attemptHistory", []).append(result.model_dump(mode="json"))
@@ -312,30 +347,30 @@ def main() -> int:
                 if record.get("adjudication")
                 else None
             )
-            record["aggregate"] = aggregate_silver_runs(typed_runs, typed_adjudication)
+            record["aggregate"] = aggregate_silver_runs(typed_runs, typed_adjudication, requested_runs=required_runs)
             save_progress()
             print(
-                f"item={ordinal}/{len(items)} run={run_index}/{args.runs} "
+                f"item={ordinal}/{len(items)} runIndex={run_index} requestedRuns={required_runs} "
                 f"status={result.status} total_tokens={result.usage.totalTokens}",
                 flush=True,
             )
             if provider_block(result):
                 checkpoint["executionStatus"] = block_status(result)
-                checkpoint["stopReason"] = {
-                    "errorCode": result.errorCode,
-                    "quotaLimits": result.quotaLimits,
-                    "providerFailureReason": result.providerFailureReason,
-                }
+                checkpoint["stopReason"] = stop_details(result)
                 save_progress()
                 print(json.dumps(checkpoint["stopReason"]), flush=True)
                 return 3
             time.sleep(args.pause)
         typed_runs = [SilverRunResult.model_validate(run) for run in record["runs"]]
-        record["aggregate"] = aggregate_silver_runs(typed_runs)
+        # Reuse a previously successful adjudication without losing its labels.
+        existing = record.get("adjudication") or {}
+        typed_existing = SilverAdjudicationResult.model_validate(existing) if existing.get("status") == "success" else None
+        record["aggregate"] = aggregate_silver_runs(typed_runs, typed_existing, requested_runs=required_runs)
         if (
-            args.adjudicate
+            required_runs == 3
+            and args.adjudicate
             and record["aggregate"].get("needsAdjudication")
-            and sum(run.status == "success" for run in typed_runs) == args.runs
+            and sum(run.status == "success" for run in typed_runs) == required_runs
         ):
             existing = record.get("adjudication") or {}
             if existing.get("status") != "success":
@@ -350,6 +385,7 @@ def main() -> int:
                         item, image_paths, typed_runs, grade=args.grade,
                         **({"track": track} if track != "regular" else {}),
                     )
+                    observe_provider_result(adjudication)
                     if adjudication.status == "success" or provider_block(adjudication):
                         break
                     record.setdefault("adjudicationAttemptHistory", []).append(adjudication.model_dump(mode="json"))
@@ -362,15 +398,11 @@ def main() -> int:
                 record["adjudication"]
             )
             record["aggregate"] = aggregate_silver_runs(
-                typed_runs, typed_adjudication
+                typed_runs, typed_adjudication, requested_runs=required_runs
             )
             if provider_block(typed_adjudication):
                 checkpoint["executionStatus"] = block_status(typed_adjudication)
-                checkpoint["stopReason"] = {
-                    "errorCode": typed_adjudication.errorCode,
-                    "quotaLimits": typed_adjudication.quotaLimits,
-                    "providerFailureReason": typed_adjudication.providerFailureReason,
-                }
+                checkpoint["stopReason"] = stop_details(typed_adjudication)
                 save_progress()
                 print(json.dumps(checkpoint["stopReason"]), flush=True)
                 return 3

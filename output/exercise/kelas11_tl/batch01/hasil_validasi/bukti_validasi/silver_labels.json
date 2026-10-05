@@ -1,0 +1,887 @@
+{
+  "schemaVersion": "gemini-silver-labels-v3-blind-key-verified",
+  "source": "runs/exercise_validation/batch01/kelas11_tl_exercise_batch01/soal_exercise_db.json",
+  "sourceHash": "614e7df60d650800fdecf5e16182237cb6aaea15f39803b8caedf8d297033593",
+  "sourceGrade": 11,
+  "subjectTrack": "tl",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "promptVersion": "gemini-silver-math-3x4x3-v10-blind-sma11-tl-key-verified",
+  "adjudicationPromptVersion": "gemini-silver-math-3x4x3-v10-adjudication-sma11-tl",
+  "rubricVersion": "math-rubric-3x4x3-v8-sma11-tl-grade-aware",
+  "rubricHash": "02d39773011ca0854b0033d75315d89ad80e52f8e5fc8d0ef0286235f5db80bb",
+  "educationLevel": "SMA",
+  "requestedRuns": 3,
+  "createdAt": "2026-10-05T10:58:42.902610+00:00",
+  "updatedAt": "2026-10-05T13:40:10.396985+00:00",
+  "items": {
+    "e18ad74984f74a8d128a4970": {
+      "index": 1,
+      "questionId": "e18ad74984f74a8d128a4970",
+      "inputHash": "06cf9df7965cc7e7b03a086f421b0fd8c652346a6ebc1a24467034caf99c6f3b",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "55",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Matriks segitiga atas n x n memiliki elemen nol di bawah diagonal utama sebanyak n(n-1)/2. Diketahui n(n-1)/2 = 45, maka n^2 - n - 90 = 0, sehingga (n-10)(n+9) = 0. Karena n > 0, maka n = 10. Banyak elemen yang boleh tak nol adalah elemen pada diagonal utama dan di atasnya, yaitu n(n+1)/2 = 10(11)/2 = 55.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Sebuah matriks segitiga atas berordo n x n memiliki tepat 45 elemen yang pasti bernilai nol.",
+                "Banyak elemen yang boleh bernilai tak nol pada matriks tersebut adalah"
+              ],
+              "rationale": "Siswa perlu memahami definisi matriks segitiga atas, merumuskan jumlah elemen nol sebagai deret aritmatika, menyelesaikan persamaan kuadrat untuk mencari n, dan menghitung jumlah elemen tak nol. Ini melibatkan penerapan konsep pada konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "matriks segitiga atas berordo n x n",
+                "tepat 45 elemen yang pasti bernilai nol"
+              ],
+              "rationale": "Soal ini menuntut pemahaman konseptual tentang struktur matriks segitiga atas dan prosedur aljabar untuk menentukan dimensi matriks berdasarkan properti elemennya.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Sebuah matriks segitiga atas berordo n x n memiliki tepat 45 elemen yang pasti bernilai nol.",
+                "Banyak elemen yang boleh bernilai tak nol"
+              ],
+              "rationale": "Soal ini dikategorikan Medium karena memerlukan dua tahap perencanaan: menentukan ukuran matriks (n) dari informasi elemen nol, kemudian menghitung elemen tak nol. Siswa harus mengaitkan properti matriks dengan rumus deret/kombinatorial. Tidak ada bantuan langsung, namun prosedurnya standar bagi siswa kelas 11.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman definisi matriks segitiga atas dan rumus jumlah n bilangan asli pertama.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 1,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 11 diharapkan mampu memodelkan masalah matriks ke dalam persamaan aljabar sederhana. Tingkat kesulitan menengah karena memerlukan integrasi antara definisi matriks dan penyelesaian persamaan kuadrat."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "FajDapmyJsKxjuMPjfbvMQ",
+          "promptHash": "561cd218c03fcfd1276bcc6d2a87bdde066ff792530bfd19293791ff6ed7c0cf",
+          "responseHash": "8706b4d863b6937375d4c77ae6a008537168dad69e71afa371a6dd0af25f499e",
+          "latencyMs": 9169,
+          "usage": {
+            "promptTokens": 1977,
+            "outputTokens": 740,
+            "thinkingTokens": 94,
+            "totalTokens": 2811
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "55",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Matriks segitiga atas berordo n x n memiliki elemen nol di bawah diagonal utama sebanyak n(n-1)/2. Diketahui n(n-1)/2 = 45, maka n^2 - n - 90 = 0, sehingga (n-10)(n+9) = 0. Karena n > 0, maka n = 10. Banyak elemen yang boleh tak nol adalah elemen pada diagonal utama dan di atasnya, yaitu n(n+1)/2 = 10(11)/2 = 55.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "matriks segitiga atas berordo n x n memiliki tepat 45 elemen yang pasti bernilai nol",
+                "Banyak elemen yang boleh tak nol pada matriks tersebut adalah"
+              ],
+              "rationale": "Siswa perlu memahami definisi matriks segitiga atas, mengaitkan jumlah elemen nol dengan rumus deret aritmatika n(n-1)/2, menyelesaikan persamaan kuadrat untuk mencari n, dan menerapkan rumus n(n+1)/2 untuk mencari elemen tak nol. Ini melibatkan penerapan konsep pada konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "matriks segitiga atas berordo n x n",
+                "tepat 45 elemen yang pasti bernilai nol"
+              ],
+              "rationale": "Soal ini menguji pemahaman konseptual tentang struktur matriks segitiga atas dan hubungan antara ordo matriks dengan jumlah elemen nol/tak nol.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "matriks segitiga atas berordo n x n",
+                "tepat 45 elemen yang pasti bernilai nol"
+              ],
+              "rationale": "Soal ini memerlukan pemahaman konsep matriks segitiga atas dan kemampuan aljabar untuk menyelesaikan persamaan kuadrat. Langkah-langkahnya jelas dan prosedural bagi siswa kelas 11, tidak memerlukan strategi non-rutin yang kompleks.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Definisi matriks segitiga atas, rumus jumlah elemen di bawah diagonal, dan penyelesaian persamaan kuadrat.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Meskipun melibatkan aljabar, konsep matriks segitiga atas adalah materi standar kelas 11. Tingkat kesulitan Medium karena siswa harus menghubungkan properti matriks dengan persamaan aljabar."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "LqjDatW3Fp2zg8UPk6C7oQ8",
+          "promptHash": "561cd218c03fcfd1276bcc6d2a87bdde066ff792530bfd19293791ff6ed7c0cf",
+          "responseHash": "e95e3a728adff8c18d501a56c647bc373a71e241b2c6986d18a1fddac65fd525",
+          "latencyMs": 26441,
+          "usage": {
+            "promptTokens": 1977,
+            "outputTokens": 730,
+            "thinkingTokens": 93,
+            "totalTokens": 2800
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "55",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Matriks segitiga atas berordo n x n memiliki elemen nol di bawah diagonal utama sebanyak n(n-1)/2. Diketahui n(n-1)/2 = 45, maka n^2 - n - 90 = 0, sehingga (n-10)(n+9) = 0. Karena n > 0, maka n = 10. Banyak elemen yang boleh tak nol adalah elemen pada diagonal utama dan di atasnya, yaitu n(n+1)/2 = 10(11)/2 = 55.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Sebuah matriks segitiga atas berordo n x n memiliki tepat 45 elemen yang pasti bernilai nol.",
+                "Banyak elemen yang boleh tak nol pada matriks tersebut adalah"
+              ],
+              "rationale": "Siswa perlu memahami definisi matriks segitiga atas, mengaitkan jumlah elemen nol dengan rumus deret aritmatika n(n-1)/2, menyelesaikan persamaan kuadrat untuk mencari n, dan menghitung jumlah elemen tak nol menggunakan rumus n(n+1)/2. Ini adalah penerapan konsep pada konteks rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "matriks segitiga atas berordo n x n",
+                "tepat 45 elemen yang pasti bernilai nol"
+              ],
+              "rationale": "Soal ini menguji pemahaman konseptual tentang struktur matriks segitiga atas dan prosedur untuk menghitung jumlah elemen berdasarkan indeks baris dan kolom.",
+              "label": "conceptual"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "matriks segitiga atas berordo n x n",
+                "tepat 45 elemen yang pasti bernilai nol"
+              ],
+              "rationale": "Soal ini dikategorikan Medium karena memerlukan dua tahap perhitungan yang saling terkait: menentukan ordo matriks n dari informasi elemen nol, kemudian menghitung elemen tak nol. Siswa harus menghubungkan konsep matriks dengan deret aritmatika, namun prosedurnya standar dan familiar bagi siswa kelas 11.",
+              "label": "Medium",
+              "profile": {
+                "expectedPrerequisite": "Definisi matriks segitiga atas, rumus jumlah elemen di bawah diagonal utama, dan penyelesaian persamaan kuadrat.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 2,
+                "interactingConstraints": 1,
+                "calculationLoad": "moderate",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Siswa kelas 11 TL diharapkan mampu memodelkan struktur matriks ke dalam persamaan aljabar. Soal ini menuntut pemahaman struktur matriks, bukan sekadar operasi hitung."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "PKjDaunwGcClg8UPqJzn4Q8",
+          "promptHash": "561cd218c03fcfd1276bcc6d2a87bdde066ff792530bfd19293791ff6ed7c0cf",
+          "responseHash": "2f4557ac26c799aeba039c3d104b33f457fd988355e3a80da21b516ade578c75",
+          "latencyMs": 8145,
+          "usage": {
+            "promptTokens": 1977,
+            "outputTokens": 745,
+            "thinkingTokens": 106,
+            "totalTokens": 2828
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "55",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Matriks segitiga atas n x n memiliki elemen nol di bawah diagonal utama sebanyak n(n-1)/2. Diketahui n(n-1)/2 = 45, maka n^2 - n - 90 = 0, sehingga (n-10)(n+9) = 0. Karena n > 0, maka n = 10. Banyak elemen yang boleh tak nol adalah elemen pada diagonal utama dan di atasnya, yaitu n(n+1)/2 = 10(11)/2 = 55.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "conceptual",
+            "voteCounts": {
+              "conceptual": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Medium",
+            "voteCounts": {
+              "Medium": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null
+    },
+    "6091556224652f1805d058a3": {
+      "index": 2,
+      "questionId": "6091556224652f1805d058a3",
+      "inputHash": "055ca9602f005488ee4509c8c80d04c53a6fe02ebfae66903f24affea6659627",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Perform matrix multiplication for the first row: (x+5)(8) + (7)(5) = 35 => 8x + 40 + 35 = 35 => 8x = -40 => x = -5. For the (1,2) element: (x+5)(0) + (7)(y-6) = 14 => 7(y-6) = 14 => y-6 = 2 => y = 8. Thus, x - 2y = -5 - 2(8) = -5 - 16 = -21.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui \\begin{pmatrix}x+5 & 7 \\ 6 & -8\\end{pmatrix} \\begin{pmatrix}8 & 0 \\ 5 & y-6\\end{pmatrix} =  \\begin{pmatrix}35 & 14 \\ 8 & -16\\end{pmatrix}"
+              ],
+              "rationale": "Siswa perlu menerapkan prosedur perkalian matriks untuk membentuk sistem persamaan linear sederhana guna mencari nilai variabel x dan y, kemudian melakukan operasi aritmatika dasar untuk mendapatkan hasil akhir.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Perkalian Matriks"
+              ],
+              "rationale": "Soal ini menguji pemahaman prosedural tentang algoritma perkalian matriks dan penyelesaian persamaan linear sederhana.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Nilai x - 2y adalah ...."
+              ],
+              "rationale": "Soal ini bersifat rutin. Siswa hanya perlu melakukan perkalian matriks pada elemen-elemen yang relevan untuk mendapatkan nilai x dan y. Tidak ada kendala yang berinteraksi secara kompleks atau kebutuhan untuk strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Perkalian matriks 2x2 dan penyelesaian persamaan linear satu variabel.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi matriks adalah standar kelas 11. Soal ini menguji prosedur dasar perkalian matriks tanpa variasi atau jebakan konseptual yang signifikan, sehingga tergolong mudah bagi siswa kelas 11."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "Q6jDatHKDcrdg8UPjJL4wAc",
+          "promptHash": "38451dbe281df09d17fdebf7d2275ed5fc684376ac61c33d63ede2eaf8bed17f",
+          "responseHash": "9ffeacb91b43508e5344101e04c5dadfa6e219e9064f7f5eb89ab1363f33ec44",
+          "latencyMs": 7695,
+          "usage": {
+            "promptTokens": 2048,
+            "outputTokens": 703,
+            "thinkingTokens": 116,
+            "totalTokens": 2867
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Perkalian matriks: elemen (1,1) adalah (x+5)(8) + (7)(5) = 8x + 40 + 35 = 8x + 75. Diketahui elemen (1,1) = 35, maka 8x + 75 = 35 => 8x = -40 => x = -5. Elemen (1,2) adalah (x+5)(0) + (7)(y-6) = 7y - 42. Diketahui elemen (1,2) = 14, maka 7y - 42 = 14 => 7y = 56 => y = 8. Nilai x - 2y = -5 - 2(8) = -5 - 16 = -21.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui (x+5 & 7 \\ 6 & -8) (8 & 0 \\ 5 & y-6) = (35 & 14 \\ 8 & -16). Nilai x - 2y adalah ...."
+              ],
+              "rationale": "Siswa diminta melakukan operasi perkalian matriks standar dan menyelesaikan sistem persamaan linear sederhana untuk menemukan nilai variabel x dan y, kemudian menghitung nilai akhir. Ini adalah penerapan prosedur rutin.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui (x+5 & 7 \\ 6 & -8) (8 & 0 \\ 5 & y-6) = (35 & 14 \\ 8 & -16)."
+              ],
+              "rationale": "Soal ini menguji pemahaman tentang algoritma perkalian matriks dan penyelesaian persamaan linear, yang merupakan pengetahuan prosedural.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui (x+5 & 7 \\ 6 & -8) (8 & 0 \\ 5 & y-6) = (35 & 14 \\ 8 & -16). Nilai x - 2y adalah ...."
+              ],
+              "rationale": "Soal ini bersifat rutin. Siswa hanya perlu melakukan perkalian matriks 2x2 dan menyelesaikan persamaan linear satu variabel. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi matriks dasar dan aljabar linear dasar.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 6,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi perkalian matriks adalah standar kelas 11. Soal ini tidak memerlukan manipulasi kompleks atau konsep lanjutan, sehingga dikategorikan mudah bagi siswa kelas 11."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "ZajDasC4A6-wjuMPuYPn-A4",
+          "promptHash": "38451dbe281df09d17fdebf7d2275ed5fc684376ac61c33d63ede2eaf8bed17f",
+          "responseHash": "8bb544ad482cffee1c96c59a7ff4c13fbba90732a2b84dcfae33663e3986b642",
+          "latencyMs": 25849,
+          "usage": {
+            "promptTokens": 2048,
+            "outputTokens": 804,
+            "thinkingTokens": 115,
+            "totalTokens": 2967
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "A",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Perkalian matriks: elemen (1,1) adalah (x+5)(8) + (7)(5) = 8x + 40 + 35 = 8x + 75. Diketahui elemen (1,1) = 35, maka 8x + 75 = 35 => 8x = -40 => x = -5. Elemen (1,2) adalah (x+5)(0) + 7(y-6) = 7y - 42. Diketahui elemen (1,2) = 14, maka 7y - 42 = 14 => 7y = 56 => y = 8. Nilai x - 2y = -5 - 2(8) = -5 - 16 = -21.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui (x+5 & 7 \\\\ 6 & -8)(8 & 0 \\\\ 5 & y-6) = (35 & 14 \\\\ 8 & -16)",
+                "Nilai x - 2y adalah"
+              ],
+              "rationale": "Siswa perlu menerapkan prosedur perkalian matriks untuk membentuk persamaan linear dari elemen matriks yang bersesuaian, kemudian menyelesaikan sistem persamaan linear sederhana untuk mendapatkan nilai variabel.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Perkalian matriks",
+                "Nilai x - 2y adalah"
+              ],
+              "rationale": "Soal ini menguji pemahaman prosedural tentang algoritma perkalian matriks dan penyelesaian persamaan linear.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui (x+5 & 7 \\\\ 6 & -8)(8 & 0 \\\\ 5 & y-6) = (35 & 14 \\\\ 8 & -16)"
+              ],
+              "rationale": "Soal ini bersifat rutin. Siswa hanya perlu melakukan perkalian matriks pada elemen yang relevan (baris 1) untuk mendapatkan nilai x dan y. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi perkalian matriks dan penyelesaian SPLDV sederhana.",
+                "dependentSteps": 3,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi matriks adalah standar kelas 11. Soal ini adalah aplikasi langsung dari definisi perkalian matriks tanpa variasi kompleks."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "dajDas7FMZfMjuMPg_jYqQ8",
+          "promptHash": "38451dbe281df09d17fdebf7d2275ed5fc684376ac61c33d63ede2eaf8bed17f",
+          "responseHash": "b1e1d8ac067713ee3a55e73266ae3b4d62fb7e8259642dfe830a87c471c2a5ac",
+          "latencyMs": 7570,
+          "usage": {
+            "promptTokens": 2048,
+            "outputTokens": 767,
+            "thinkingTokens": 116,
+            "totalTokens": 2931
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "A",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Perform matrix multiplication for the first row: (x+5)(8) + (7)(5) = 35 => 8x + 40 + 35 = 35 => 8x = -40 => x = -5. For the (1,2) element: (x+5)(0) + (7)(y-6) = 14 => 7(y-6) = 14 => y-6 = 2 => y = 8. Thus, x - 2y = -5 - 2(8) = -5 - 16 = -21.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "applying": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "knowledgeDimension": {
+            "label": "procedural",
+            "voteCounts": {
+              "procedural": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Easy": 3
+            },
+            "supportingRuns": 3,
+            "status": "unanimous"
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": false,
+        "eligibleForTraining": true
+      },
+      "adjudication": null,
+      "attemptHistory": [
+        {
+          "runIndex": 2,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ServerError:503",
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": null,
+          "promptHash": "38451dbe281df09d17fdebf7d2275ed5fc684376ac61c33d63ede2eaf8bed17f",
+          "responseHash": null,
+          "latencyMs": 14434,
+          "usage": {
+            "promptTokens": 0,
+            "outputTokens": 0,
+            "thinkingTokens": 0,
+            "totalTokens": 0
+          }
+        }
+      ]
+    },
+    "7fc5c057fb230a325f8d603a": {
+      "index": 3,
+      "questionId": "7fc5c057fb230a325f8d603a",
+      "inputHash": "8bd787c426dd0052fd986df1a9782178dd5f74c86bfeb78935a93e60af8814b5",
+      "runs": [
+        {
+          "runIndex": 1,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Determinan A = (4)(2) - (3)(1) = 5. Invers A = (1/5) * adj(A). Adjoin A diperoleh dengan menukar elemen diagonal utama (4, 2 menjadi 2, 4) dan mengubah tanda elemen diagonal samping (3, 1 menjadi -3, -1). Maka A^-1 = (1/5) * [[2, -3], [-1, 4]]. Elemen baris pertama kolom kedua adalah (1/5) * (-3) = -3/5.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Elemen pada baris pertama kolom kedua dari A^-1 adalah"
+              ],
+              "rationale": "Soal meminta penerapan langsung prosedur standar untuk mencari invers matriks 2x2 dan mengidentifikasi elemen spesifiknya. Siswa hanya perlu mengingat rumus invers dan determinan, lalu melakukan perhitungan rutin.",
+              "label": "knowing"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui A = (4 3 / 1 2). Elemen pada baris pertama kolom kedua dari A^-1"
+              ],
+              "rationale": "Soal menguji pemahaman prosedural tentang algoritma invers matriks 2x2 (determinan dan adjoin).",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui A = (4 3 / 1 2). Elemen pada baris pertama kolom kedua dari A^-1"
+              ],
+              "rationale": "Soal ini bersifat rutin dan langsung. Tidak ada langkah yang saling bergantung secara kompleks atau kendala yang harus diintegrasikan. Siswa hanya perlu menerapkan rumus invers matriks 2x2 yang merupakan materi dasar kelas 11.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Konsep determinan dan invers matriks 2x2.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi invers matriks 2x2 adalah standar dasar kelas 11. Soal tidak memerlukan manipulasi aljabar lanjut atau penalaran non-rutin."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "oKjDaufQB9ykqfkPxtDR2Q8",
+          "promptHash": "900a3ffd9d6b553e05023d69d046cce3f03a3776848baf52769366a4da0302a2",
+          "responseHash": "d7cccffc8ee08aa752d6f8f5d30c8891a8308c3c7e7588c2f89518ec56c8d1d6",
+          "latencyMs": 9772,
+          "usage": {
+            "promptTokens": 1986,
+            "outputTokens": 660,
+            "thinkingTokens": 115,
+            "totalTokens": 2761
+          }
+        },
+        {
+          "runIndex": 2,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Determinan A = (4)(2) - (3)(1) = 5. Invers A = (1/5) * adj(A). Adjoin A diperoleh dengan menukar elemen diagonal utama (4, 2 menjadi 2, 4) dan mengubah tanda elemen diagonal samping (3, 1 menjadi -3, -1). Maka A^-1 = (1/5) * [[2, -3], [-1, 4]]. Elemen baris 1 kolom 2 adalah (1/5) * (-3) = -3/5.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Elemen pada baris pertama kolom kedua dari A^-1 adalah"
+              ],
+              "rationale": "Soal meminta penerapan langsung prosedur standar untuk mencari invers matriks 2x2 dan mengidentifikasi elemen spesifiknya. Siswa hanya perlu menghitung determinan dan adjoin, lalu mengalikan dengan skalar.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui A = (4 3; 1 2). Elemen pada baris pertama kolom kedua dari A^-1"
+              ],
+              "rationale": "Soal menguji pemahaman prosedural tentang algoritma invers matriks 2x2 (determinan dan adjoin).",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui A = (4 3; 1 2). Elemen pada baris pertama kolom kedua dari A^-1"
+              ],
+              "rationale": "Soal ini bersifat rutin. Siswa kelas 11 TL sudah familiar dengan prosedur invers matriks 2x2. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi non-rutin.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Operasi matriks dasar dan determinan matriks 2x2.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi invers matriks 2x2 adalah standar dasar kelas 11 TL. Prosedur penyelesaian sangat langsung dan familiar bagi siswa."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "pajDap-SNprdg8UPi9zI4Ag",
+          "promptHash": "900a3ffd9d6b553e05023d69d046cce3f03a3776848baf52769366a4da0302a2",
+          "responseHash": "9e2466393af2452d6a124bda77b5e728274b8c57419280f17d96ae366272e0b6",
+          "latencyMs": 7697,
+          "usage": {
+            "promptTokens": 1986,
+            "outputTokens": 661,
+            "thinkingTokens": 115,
+            "totalTokens": 2762
+          }
+        },
+        {
+          "runIndex": 3,
+          "status": "success",
+          "output": {
+            "contentStatus": "valid",
+            "contentConcerns": [],
+            "answerKeyStatus": "verified",
+            "verifiedAnswerKey": "B",
+            "visualTranscript": null,
+            "verifiedMinimalSolution": "Determinan A = (4)(2) - (3)(1) = 5. Invers A = (1/5) * adj(A). Adjoin A diperoleh dengan menukar elemen diagonal utama (4 dan 2) dan mengubah tanda elemen diagonal samping (3 dan 1 menjadi -3 dan -1). Maka A^-1 = (1/5) * [[2, -3], [-1, 4]]. Elemen baris pertama kolom kedua adalah (1/5) * (-3) = -3/5.",
+            "mathCognitiveDomain": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Elemen pada baris pertama kolom kedua dari A^-1 adalah"
+              ],
+              "rationale": "Soal meminta siswa menerapkan prosedur standar untuk mencari invers matriks 2x2 dan mengidentifikasi elemen spesifik. Ini adalah penerapan langsung dari algoritma invers matriks.",
+              "label": "applying"
+            },
+            "knowledgeDimension": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui A = (4 3 / 1 2). Elemen pada baris pertama kolom kedua dari A^-1"
+              ],
+              "rationale": "Siswa perlu memahami algoritma invers matriks 2x2 (determinan dan adjoin) untuk menyelesaikan masalah ini.",
+              "label": "procedural"
+            },
+            "intendedDifficulty": {
+              "action": "classify",
+              "evidenceSpans": [
+                "Diketahui A = (4 3 / 1 2). Elemen pada baris pertama kolom kedua dari A^-1"
+              ],
+              "rationale": "Soal ini bersifat rutin. Siswa hanya perlu menghitung determinan dan menerapkan rumus invers matriks 2x2 secara langsung. Tidak ada langkah kompleks atau integrasi konsep yang menantang.",
+              "label": "Easy",
+              "profile": {
+                "expectedPrerequisite": "Pemahaman dasar tentang determinan dan invers matriks 2x2.",
+                "dependentSteps": 2,
+                "routineStatus": "familiar_routine",
+                "strategySelection": false,
+                "representationTransfer": false,
+                "relevantInformationUnits": 4,
+                "interactingConstraints": 0,
+                "calculationLoad": "low",
+                "scaffoldLevel": "none",
+                "distractorQuality": "plausible",
+                "gradeRelativeRationale": "Materi invers matriks 2x2 adalah standar dasar kelas 11 TL. Soal ini menguji prosedur dasar tanpa modifikasi atau tuntutan penalaran tambahan."
+              }
+            }
+          },
+          "errorCode": null,
+          "errorDetails": [],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "rajDar_pN66xg8UP0rqH0Ac",
+          "promptHash": "900a3ffd9d6b553e05023d69d046cce3f03a3776848baf52769366a4da0302a2",
+          "responseHash": "3e527a7a7596c790779c5c93e3e32fa799c54fa44c9d3ed96b250ba01218cd17",
+          "latencyMs": 4468,
+          "usage": {
+            "promptTokens": 1986,
+            "outputTokens": 643,
+            "thinkingTokens": 116,
+            "totalTokens": 2745
+          }
+        }
+      ],
+      "aggregate": {
+        "successfulRuns": 3,
+        "requiredMajority": 2,
+        "contentStatus": "valid",
+        "contentConcerns": [],
+        "answerKeyStatus": "verified",
+        "verifiedAnswerKey": "B",
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Determinan A = (4)(2) - (3)(1) = 5. Invers A = (1/5) * adj(A). Adjoin A diperoleh dengan menukar elemen diagonal utama (4, 2 menjadi 2, 4) dan mengubah tanda elemen diagonal samping (3, 1 menjadi -3, -1). Maka A^-1 = (1/5) * [[2, -3], [-1, 4]]. Elemen baris pertama kolom kedua adalah (1/5) * (-3) = -3/5.",
+        "heads": {
+          "mathCognitiveDomain": {
+            "label": "applying",
+            "voteCounts": {
+              "knowing": 1,
+              "applying": 2
+            },
+            "supportingRuns": 2,
+            "status": "adjudicated",
+            "adjudicationRationale": "Soal meminta penerapan langsung prosedur standar untuk mencari invers matriks 2x2 dan mengidentifikasi elemen spesifiknya. Siswa hanya perlu mengingat rumus invers dan determinan, lalu melakukan perhitungan rutin."
+          },
+          "knowledgeDimension": {
+            "label": "procedural",
+            "voteCounts": {
+              "procedural": 3
+            },
+            "supportingRuns": 3,
+            "status": "adjudicated",
+            "adjudicationRationale": "Soal menguji pemahaman prosedural tentang algoritma invers matriks 2x2 (determinan dan adjoin)."
+          },
+          "intendedDifficulty": {
+            "label": "Easy",
+            "voteCounts": {
+              "Easy": 3
+            },
+            "supportingRuns": 3,
+            "status": "adjudicated",
+            "adjudicationRationale": "Soal ini bersifat rutin dan langsung. Tidak ada langkah yang saling bergantung secara kompleks atau kendala yang harus diintegrasikan. Siswa hanya perlu menerapkan rumus invers matriks 2x2 yang merupakan materi dasar kelas 11."
+          }
+        },
+        "needsAdjudication": false,
+        "adjudicated": true,
+        "eligibleForTraining": true
+      },
+      "adjudication": {
+        "status": "success",
+        "output": {
+          "contentStatus": "valid",
+          "contentConcerns": [],
+          "answerKeyStatus": "verified",
+          "verifiedAnswerKey": "B",
+          "visualTranscript": null,
+          "verifiedMinimalSolution": "Determinan A = (4)(2) - (3)(1) = 5. Invers A = (1/5) * adj(A). Adjoin A diperoleh dengan menukar elemen diagonal utama (4, 2 menjadi 2, 4) dan mengubah tanda elemen diagonal samping (3, 1 menjadi -3, -1). Maka A^-1 = (1/5) * [[2, -3], [-1, 4]]. Elemen baris pertama kolom kedua adalah (1/5) * (-3) = -3/5.",
+          "mathCognitiveDomain": {
+            "action": "classify",
+            "evidenceSpans": [
+              "Elemen pada baris pertama kolom kedua dari A^-1 adalah"
+            ],
+            "rationale": "Soal meminta penerapan langsung prosedur standar untuk mencari invers matriks 2x2 dan mengidentifikasi elemen spesifiknya. Siswa hanya perlu mengingat rumus invers dan determinan, lalu melakukan perhitungan rutin.",
+            "label": "applying"
+          },
+          "knowledgeDimension": {
+            "action": "classify",
+            "evidenceSpans": [
+              "Diketahui A = (4 3 / 1 2). Elemen pada baris pertama kolom kedua dari A^-1"
+            ],
+            "rationale": "Soal menguji pemahaman prosedural tentang algoritma invers matriks 2x2 (determinan dan adjoin).",
+            "label": "procedural"
+          },
+          "intendedDifficulty": {
+            "action": "classify",
+            "evidenceSpans": [
+              "Diketahui A = (4 3 / 1 2). Elemen pada baris pertama kolom kedua dari A^-1"
+            ],
+            "rationale": "Soal ini bersifat rutin dan langsung. Tidak ada langkah yang saling bergantung secara kompleks atau kendala yang harus diintegrasikan. Siswa hanya perlu menerapkan rumus invers matriks 2x2 yang merupakan materi dasar kelas 11.",
+            "label": "Easy",
+            "profile": {
+              "expectedPrerequisite": "Konsep determinan dan invers matriks 2x2.",
+              "dependentSteps": 2,
+              "routineStatus": "familiar_routine",
+              "strategySelection": false,
+              "representationTransfer": false,
+              "relevantInformationUnits": 4,
+              "interactingConstraints": 0,
+              "calculationLoad": "low",
+              "scaffoldLevel": "none",
+              "distractorQuality": "plausible",
+              "gradeRelativeRationale": "Materi invers matriks 2x2 adalah standar dasar kelas 11. Soal tidak memerlukan manipulasi aljabar lanjut atau penalaran non-rutin."
+            }
+          }
+        },
+        "errorCode": null,
+        "errorDetails": [],
+        "quotaDailyExhausted": false,
+        "quotaLimits": [],
+        "providerFailureReason": null,
+        "responseId": "s6jDasaDNc7EjuMP9_TF4AQ",
+        "promptHash": "54ecb32b998d700440e63a648bd45589aa7ca78427dbfd7d2c23d53c224a752d",
+        "responseHash": "34944248350736735c780b131bbcafb17aa5ede36d6e47a340ed990630faefba",
+        "latencyMs": 7146,
+        "usage": {
+          "promptTokens": 3676,
+          "outputTokens": 660,
+          "thinkingTokens": 121,
+          "totalTokens": 4457
+        }
+      },
+      "attemptHistory": [
+        {
+          "runIndex": 1,
+          "status": "failed",
+          "output": null,
+          "errorCode": "ValidationError:unknown",
+          "errorDetails": [
+            {
+              "location": "",
+              "type": "json_invalid"
+            },
+            {
+              "location": "provider.finishReason",
+              "type": "FinishReason.MAX_TOKENS"
+            }
+          ],
+          "quotaDailyExhausted": false,
+          "quotaLimits": [],
+          "providerFailureReason": null,
+          "responseId": "g6jDauSiI9axmNMP4vedqAQ",
+          "promptHash": "900a3ffd9d6b553e05023d69d046cce3f03a3776848baf52769366a4da0302a2",
+          "responseHash": "944e52521ed4b7a2179ad00efdcaad8fe99fe8120de6107c7f5019a82eadb6a2",
+          "latencyMs": 27146,
+          "usage": {
+            "promptTokens": 1986,
+            "outputTokens": 329,
+            "thinkingTokens": 857,
+            "totalTokens": 3172
+          }
+        }
+      ]
+    }
+  },
+  "summary": {
+    "itemsProcessed": 3,
+    "itemsEligibleForTraining": 3,
+    "successfulRuns": 9,
+    "failedRuns": 0,
+    "adjudicatedItems": 1,
+    "pendingAdjudication": 0,
+    "difficultyDistribution": {
+      "Easy": 2,
+      "Medium": 1,
+      "Hard": 0
+    },
+    "dominantDifficultyShare": 0.6666666666666666,
+    "boundaryAnalysisRequired": true,
+    "promptTokens": 21709,
+    "outputTokens": 7113,
+    "thinkingTokens": 1107,
+    "totalTokens": 29929
+  },
+  "executionStatus": "completed_batch",
+  "apiAttempts": 12
+}

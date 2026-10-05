@@ -6,16 +6,19 @@
   <meta name="description" content="Dokumentasi interaktif aliran soal JSON, labeling LLM, IndoBERT, respons siswa, CTT/IRT, dan pembaruan versi dengan rujukan implementasi.">
   <title>Nalar · Animasi aliran data & perhitungan</title>
   <link rel="stylesheet" href="interactive/vendor/katex/katex.min.css">
-  <link rel="stylesheet" href="interactive/flow.css">
+  <link rel="stylesheet" href="interactive/flow.css?v=20261005-branches-2">
+  <link rel="stylesheet" href="interactive/graph.css?v=20261005-branches-2">
   <script defer src="interactive/vendor/katex/katex.min.js"></script>
-  <script defer src="interactive/math.js"></script>
-  <script defer src="interactive/quadrature.js"></script>
-  <script defer src="interactive/model-stages.js"></script>
-  <script defer src="interactive/assessment-stages.js"></script>
-  <script defer src="interactive/feedback-stages.js"></script>
-  <script defer src="interactive/presentation-summary.js"></script>
-  <script defer src="interactive/explain.js"></script>
-  <script defer src="interactive/flow.js"></script>
+  <script defer src="interactive/math.js?v=20261005-branches-2"></script>
+  <script defer src="interactive/quadrature.js?v=20261005-branches-2"></script>
+  <script defer src="interactive/model-stages.js?v=20261005-branches-2"></script>
+  <script defer src="interactive/pipeline-stages.js?v=20261005-branches-2"></script>
+  <script defer src="interactive/assessment-stages.js?v=20261005-branches-2"></script>
+  <script defer src="interactive/feedback-stages.js?v=20261005-branches-2"></script>
+  <script defer src="interactive/graph.js?v=20261005-branches-2"></script>
+  <script defer src="interactive/presentation-summary.js?v=20261005-branches-2"></script>
+  <script defer src="interactive/explain.js?v=20261005-branches-2"></script>
+  <script defer src="interactive/flow.js?v=20261005-branches-2"></script>
 </head>
 <body>
   <a class="skip-link" href="#stage-detail">Langsung ke penjelasan tahap</a>
@@ -26,9 +29,9 @@
   <main>
     <section class="hero">
       <div><p class="eyebrow">DARI SATU SOAL KE BUKTI HASIL BELAJAR</p><h1>Satu soal, banyak tahap.<br><span>Mari ikuti alasannya.</span></h1><p class="intro">Perjalanan dimulai ketika soal disimpan dalam JSON, yaitu format data yang mudah dibaca program. Setelah isinya diperiksa, AI memberi usulan label dan IndoBERT mempelajari pola dari contoh yang sudah dinilai.</p><p class="intro">Selanjutnya, soal silver yang lolos qualification dapat dikerjakan siswa. Jawaban mereka menjadi bukti untuk menghitung kualitas dan kesulitan soal. Bukti ini ditinjau kembali agar soal dan model pada versi berikutnya dapat diperbaiki.</p></div>
-      <aside class="hero-note"><span class="small-label">IKUTI ALUR, LALU BACA ALASANNYA</span><p><b>Hijau</b>: fungsi sudah ada di kode.<br><b>Kuning</b>: ada syarat yang harus dipenuhi.<br><b>Ungu</b>: masih berupa rancangan.</p><p>Jawaban siswa langsung disimpan. Perhitungan IRT dilakukan dari <b>snapshot</b>, yaitu salinan kumpulan jawaban pada waktu tertentu. Dengan begitu, hasilnya memiliki batas data yang jelas.</p><small>Ditelaah terhadap kode lokal · 3 Oktober 2026</small></aside>
+      <aside class="hero-note"><span class="small-label">RUBRIK v8 · PROMPT v10 · 3 × 4 × 3</span><p><b>Cakupan rubrik</b>: kelas 1–12 reguler dan TL 11–12.<br><b>Model baru</b>: IndoBERT + LoRA, embedding 12 kelas dan penanda TL; scope artifact aktif tetap mengikuti manifest.</p><p>Ikuti garis kondisi: <b>lolos</b>, <b>review / tunggu</b>, <b>ditahan</b>, atau <b>job eksplisit</b>. Tiga run Gemini dan tiga head IndoBERT ditampilkan sebagai cabang yang berbeda.</p><small>Ditelaah terhadap kode lokal · 5 Oktober 2026</small></aside>
     </section>
-    <div class="truth-strip"><strong>Silver AI untuk sistem</strong><span>Label awal berasal dari validasi AI. Snapshot yang qualified langsung terhubung ke siswa; CTT/IRT menyimpan bukti empiris terpisah. Pemeriksaan dan feedback berjalan melalui sistem tanpa persetujuan pelabel manusia.</span></div>
+    <div class="truth-strip"><strong>Tiga bukti, tiga peran</strong><span><b>AI silver</b> menjadi sumber training dan persiapan IRT. <b>Label bank relatif</b> membagi soal aktif mendekati sepertiga dan dapat memiliki confidence 0. <b>Respons siswa</b> menjadi bukti empiris; tidak otomatis mengganti label awal.</span></div>
     <nav class="view-tabs" aria-label="Tampilan dokumentasi">
       <button type="button" data-view="flow" aria-pressed="true">01 · Animasi alur</button>
       <button type="button" data-view="lab" aria-pressed="false">02 · Coba perhitungannya</button>
@@ -42,14 +45,18 @@
         <label class="speed-label">Jeda per tahap <select id="speed"><option value="8000">8 detik</option><option value="15000" selected>15 detik</option><option value="30000">30 detik</option></select></label>
         <span id="step-counter" class="step-counter" aria-live="polite">Memuat tahap…</span>
       </div>
+      <label class="scenario-label">Contoh jalur <select id="scenario" aria-label="Pilih contoh jalur kondisi"></select><span>Animasi mengikuti contoh yang dipilih; klik kartu atau tujuan kondisi untuk menjelajahi cabang lain.</span></label>
       <div class="progress-track"><div id="progress"></div></div>
       <div class="flow-layout">
         <section class="map-panel" aria-label="Peta tahap yang dapat dipilih">
-          <div class="panel-title"><h2>Peta perjalanan soal</h2><span>Klik satu node untuk melihat detail</span></div>
+          <div class="panel-title"><h2>Peta perjalanan soal</h2><span>Klik kartu untuk membaca detail di bawah peta</span></div>
+          <div id="branch-shortcuts" class="branch-shortcuts" aria-label="Langsung lihat percabangan"><span>Lihat percabangan</span><button type="button" data-focus="n3" aria-pressed="true">N=3 · tiga penilaian</button><button type="button" data-focus="validation" aria-pressed="false">Keputusan validasi</button><button type="button" data-focus="heads" aria-pressed="false">IndoBERT · tiga head</button><button type="button" data-focus="irt" aria-pressed="false">CTT / syarat IRT</button><button type="button" data-focus="all" aria-pressed="false">Alur lengkap dari awal</button></div>
+          <div class="technical-controls"><label><input id="technical-mode" type="checkbox" checked> Tampilkan input, proses, output, dan aturan teknis</label><button id="open-stage-detail" type="button" aria-controls="stage-detail">Buka detail teknis tahap ↓</button></div>
           <div id="phase-filter" class="phase-filter" aria-label="Pilih bagian alur"></div>
-          <div id="flow-board" class="flow-board"><svg id="connectors" aria-hidden="true"></svg><div id="nodes" class="nodes"></div></div>
-          <div class="legend"><span><i class="dot implemented"></i>Kode tersedia</span><span><i class="dot conditional"></i>Bersyarat</span><span><i class="dot planned"></i>Rancangan</span><span class="gate-legend">⇢ Batas jalur / gate</span></div>
-          <p class="map-caption">Panah menunjukkan urutan penjelasan. Label pada batas jalur menyatakan syarat yang harus dipenuhi; panah itu tidak berarti sistem menjalankan semuanya otomatis.</p>
+          <p id="map-focus-note" class="map-focus-note" aria-live="polite"></p>
+          <div id="map-scroll" class="map-scroll" tabindex="0" aria-label="Peta bercabang; gulir untuk melihat seluruh bagian"><div id="flow-board" class="flow-board"><svg id="connectors" aria-hidden="true"></svg><div id="nodes" class="nodes"></div></div></div>
+          <div class="legend"><span><i class="dot implemented"></i>Kode tersedia</span><span><i class="dot conditional"></i>Bersyarat</span><span><i class="dot planned"></i>Rancangan</span><span class="edge-key pass">━━ Lolos</span><span class="edge-key review">━━ Review / tunggu</span><span class="edge-key fail">━━ Ditahan</span><span class="edge-key manual">┄┄ Job eksplisit / opsional</span></div>
+          <p class="map-caption">Ikuti panah dan kondisi yang tertulis pada garis. N=3 bercabang ke tiga kartu run lalu bergabung untuk pemeriksaan; runner menjalankan request secara serial. Pilih “Alur lengkap dari awal” untuk melihat seluruh perjalanan. Pada layar kecil, geser peta ke samping agar ketiga cabang terbaca.</p>
         </section>
         <article id="stage-detail" class="detail-panel" tabindex="-1" aria-label="Penjelasan tahap terpilih"><p>Memuat rujukan implementasi…</p></article>
       </div>
@@ -104,9 +111,22 @@
     <section id="view-reference" class="view-panel" hidden aria-label="Referensi seluruh tahap">
       <div class="section-intro"><p class="eyebrow">BACA UTUH ATAU CETAK</p><h2>Kontrak, batas implementasi, dan seluruh tahap.</h2><p>Setiap kartu dapat dibuka untuk input, proses, perhitungan dan output. Gunakan panduan Markdown untuk konteks tambahan.</p><button id="expand-reference" type="button">Buka seluruh tahap</button><button id="print-reference" type="button">Cetak / simpan PDF</button></div>
       <div class="boundary-grid"><article><h3>Qualification silver</h3><p>Snapshot memakai ai_silver, tiga run sukses, kunci/solusi/visual dan checksum. Soal bermasalah tetap ditahan.</p></article><article><h3>Bukti AI yang tersimpan</h3><p>Keputusan terstruktur, evidence spans dan rationale ringkas dapat diaudit. Hidden chain-of-thought tidak disimpan.</p></article><article><h3>IRT dan label awal terpisah</h3><p>Hasil empiris tidak menimpa intended difficulty. Feedback sistem menahan masalah kualitas untuk versi dan validasi AI baru.</p></article></div>
+      <h3 class="reference-heading">Fitur: masuk ke mana dan dipakai untuk apa?</h3>
+      <div class="table-wrap"><table><thead><tr><th>Informasi</th><th>Gemini blind v10</th><th>IndoBERT / penggunaan lain</th></tr></thead><tbody>
+        <tr><td>Soal, stimulus, opsi</td><td>Input konten untuk membuktikan solusi minimum.</td><td>Token teks sesuai representation pada manifest.</td></tr>
+        <tr><td>Kelas dan jalur regular/TL</td><td>Memilih satu dari sembilan rubrik v8.</td><td>Grade embedding 16 dimensi; config baru 12 slot. TL menjadi penanda teks.</td></tr>
+        <tr><td>Gambar dan transkripsi visual</td><td>Gambar terlampir dan transkripsi sebagai bukti verifikasi.</td><td>Transkripsi teks yang terverifikasi; pixel gambar tidak masuk encoder IndoBERT.</td></tr>
+        <tr><td>Solusi minimum terverifikasi</td><td>Keluaran yang membuktikan kunci.</td><td>Masuk representation <code>solution</code>, default training baru; tidak otomatis masuk artifact <code>metadata</code>.</td></tr>
+        <tr><td>11 field profil difficulty</td><td>Evidence keluaran: prasyarat, langkah, strategi, representasi, informasi, kendala, beban, bantuan, distraktor dan alasan relatif kelas.</td><td>Bukti label dan ranking bank relatif; bukan tensor numerik tambahan pada classifier.</td></tr>
+        <tr><td>KKO terdeteksi</td><td>Bukan aturan tunggal penentu label.</td><td>Hanya representation ablation <code>kko</code>; bukan default <code>solution</code>.</td></tr>
+        <tr><td>Prediksi lama dan target ⅓</td><td>Disembunyikan dari tiga run blind.</td><td>Target ⅓ hanya policy bank <code>relative_bank_quota</code>; label lama bukan input encoder.</td></tr>
+        <tr><td>Confidence dan entropy model</td><td>Bukan masukan blind.</td><td>Keluaran probabilitas setelah inferensi/kalibrasi, untuk routing advisory.</td></tr>
+        <tr><td><code>confidence_score</code> bank</td><td>Dukungan run awal terhadap label yang dipublikasikan; adjudikasi bukan suara keempat.</td><td>Dapat 0 pada label relatif tanpa dukungan AI; berbeda dari calibratedConfidence IndoBERT.</td></tr>
+        <tr><td>Respons siswa, p, a/b/c, θ</td><td>Terpisah dari penilaian intended difficulty.</td><td>Data/bukti CTT–IRT dan feedback; tidak menjadi fitur input IndoBERT saat ini.</td></tr>
+      </tbody></table></div>
       <h3 class="reference-heading">Endpoint yang menghubungkan tahap</h3>
       <div class="table-wrap"><table><thead><tr><th>Operasi</th><th>Endpoint aktual</th><th>Efek / batas</th></tr></thead><tbody>
-        <tr><td>Inferensi advisory</td><td><code>POST /v2/classify</code></td><td>Gate artifact; dapat 503; kelas 7–12 abstain pada runtime SD.</td></tr>
+        <tr><td>Inferensi advisory</td><td><code>POST /v2/classify</code></td><td>Gate artifact; dapat 503. Grade/track mengikuti manifest: artifact SD lama tidak otomatis melayani kelas 7–12/TL.</td></tr>
         <tr><td>Kesiapan model</td><td><code>GET /v2/model-info</code></td><td>Manifest, researchOnly, servable, arsitektur, representation.</td></tr>
         <tr><td>Label blind / review LLM</td><td>Script batch / runtime Python</td><td>Tidak ada endpoint publik LLM labeling/review pada /v2.</td></tr>
         <tr><td>Form asesmen</td><td><code>POST /api/v1/internal/assessments</code></td><td>Internal API key atau sesi staf + CSRF; silver qualified yang memenuhi gate.</td></tr>

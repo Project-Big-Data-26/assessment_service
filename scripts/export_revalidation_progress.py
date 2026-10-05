@@ -19,7 +19,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from app.llm.silver import SilverAdjudicationResult, SilverRunResult, aggregate_silver_runs
+from app.llm.silver import (SilverAdjudicationResult, SilverRunResult, aggregate_silver_runs,
+                           requested_runs_for, requested_run_indices)
 from app.silver.exports import DATABASE_SCHEMA, database_items
 from app.silver.policy import qualification
 from scripts.build_validation_bundle_kelas1 import structural_validation
@@ -38,17 +39,19 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def current_decision(original: dict, record: dict, source_dir: Path) -> tuple[dict, dict]:
-    """Recompute only stored evidence, enforcing three successful blind runs."""
+def current_decision(original: dict, record: dict, source_dir: Path, *, requested_runs: int = 3) -> tuple[dict, dict]:
+    """Recompute stored evidence using the item's explicit N=1 or N=3 policy."""
     runs = [SilverRunResult.model_validate(run) for run in record.get("runs", [])]
     indices = [run.runIndex for run in runs]
-    if len(set(indices)) != len(indices) or any(index not in (1, 2, 3) for index in indices):
-        raise ValueError("checkpoint run indices must be unique and within 1-3")
+    required = set(requested_run_indices(record, requested_runs))
+    if len(set(indices)) != len(indices) or any(index not in required for index in indices):
+        raise ValueError("checkpoint run indices must be unique and match the evaluation mode")
     successful = {run.runIndex for run in runs if run.status == "success"}
-    missing = sorted({1, 2, 3} - successful)
+    missing = sorted(required - successful)
     adjudication = record.get("adjudication") or None
     typed_adjudication = SilverAdjudicationResult.model_validate(adjudication) if adjudication else None
-    aggregate = aggregate_silver_runs(runs, typed_adjudication if not missing else None)
+    aggregate = aggregate_silver_runs(runs, typed_adjudication if not missing else None,
+                                      requested_runs=requested_runs)
     final = not missing and aggregate["needsAdjudication"] is False
     conservative = deepcopy(record)
     conservative["aggregate"] = aggregate
@@ -63,8 +66,10 @@ def current_decision(original: dict, record: dict, source_dir: Path) -> tuple[di
         output = payload.pop("output") or {}
         serialized_runs.append({**payload, "heads": {head: output.get(head, {}) for head in HEADS}})
     decision = {"questionId": str(original["_id"]), "finalRouting": route,
-                "llmAdvisory": {"advisoryLabels": labels, "requestedRuns": 3,
+                "llmAdvisory": {"advisoryLabels": labels, "requestedRuns": requested_runs,
                                 "runs": serialized_runs}}
+    if "requestedRunIndices" in record:
+        decision["llmAdvisory"]["requestedRunIndices"] = sorted(required)
     progress = {"questionId": str(original["_id"]), "inputHash": input_hash(original),
                 "status": "final" if final else "draft", "fullComplete": final,
                 "successfulRunIndices": sorted(successful), "missingRunIndices": missing,
@@ -72,6 +77,8 @@ def current_decision(original: dict, record: dict, source_dir: Path) -> tuple[di
                 "adjudicationStatus": adjudication.get("status") if adjudication else None,
                 "finalRouting": route, "eligibleForTraining": bool(final and aggregate["eligibleForTraining"]),
                 "contentStatus": aggregate["contentStatus"], "answerKeyStatus": aggregate["answerKeyStatus"]}
+    progress.update(requestedRuns=requested_runs, validationMethod="blind_n1" if requested_runs == 1 else "blind_n3_with_ai_adjudication",
+                    consistencyMeasured=bool(final and requested_runs == 3))
     return decision, progress
 
 
@@ -89,9 +96,25 @@ def export_class(source: Path, checkpoint: Path, output_dir: Path, *, grade: int
         raise ValueError("source-shaped export requires the four validation columns")
     decisions, item_progress = [], []
     for original in originals:
-        decision, progress = current_decision(original, payload["items"].get(str(original["_id"]), {}), source.parent)
+        record = payload["items"].get(str(original["_id"]), {})
+        decision, progress = current_decision(original, record, source.parent,
+                                              requested_runs=requested_runs_for(payload, record))
         decisions.append(decision)
         item_progress.append(progress)
+    # Reuse only diagnostics locked to this exact checkpoint. Progress exports
+    # without model evidence report numeric 0 with unavailable metadata.
+    if payload.get("requestedRuns", 3) == 1 and (output_dir / "manifest.json").is_file():
+        diagnostic_manifest = read(output_dir / "manifest.json")
+        if diagnostic_manifest["sourceFiles"]["blindCheckpoint"]["sha256"] == hashlib.sha256(checkpoint_bytes).hexdigest():
+            verify_bundle(source, output_dir)
+            from app.silver.exports import load_decision_bundle
+            locked = {d["questionId"]: d for d in load_decision_bundle(output_dir)["items"]}
+            for decision in decisions:
+                if decision["llmAdvisory"].get("requestedRuns", 3) == 1:
+                    evidence = locked[decision["questionId"]]
+                    if evidence["llmAdvisory"]["advisoryLabels"] != decision["llmAdvisory"]["advisoryLabels"]:
+                        raise ValueError("model diagnostics refer to different locked labels")
+                    decision["indobert"] = evidence["indobert"]
     rows = database_items(originals, decisions)
     full_complete = all(item["fullComplete"] for item in item_progress)
     encoded = (json.dumps(rows, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode("utf-8")

@@ -15,7 +15,8 @@ def qualification(record: dict, structure: dict, question: dict | None = None) -
     if (structure["status"] != "pass" or aggregate.get("contentStatus") == "concern"
             or aggregate.get("answerKeyStatus") == "conflict"):
         return labels, "revision_required"
-    if aggregate.get("eligibleForTraining") and all(labels.values()):
+    single_run_qualified = bool(aggregate.get("singleRunEvaluated") and aggregate.get("contentQualified"))
+    if (aggregate.get("eligibleForTraining") or single_run_qualified) and all(labels.values()):
         if question is not None:
             key = resolve_answer_key(aggregate.get("verifiedAnswerKey"), question["options"])
             if (key is None or key != question.get("jawaban") or aggregate.get("contentStatus") != "valid"

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "blind-difficulty-subset-v1",
+  "sourceClass": 11,
+  "subjectTrack": "tl",
+  "intendedDifficulty": "Medium",
+  "researchOnly": true,
+  "advisoryCount": 1,
+  "contentQualifiedCount": 1,
+  "items": [
+    {
+      "question": {
+        "questionId": "e18ad74984f74a8d128a4970",
+        "questionVersionId": "e18ad74984f74a8d128a4970:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "fe71f7fe8c9c6102bf2174ea48e755cf259fa952b40ce625919c80e8d9f480f2",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Jenis-Jenis Matriks",
+        "questionType": "multiple_choice",
+        "stem": "Sebuah matriks segitiga atas berordo $n \\times n$ memiliki tepat $45$ elemen yang pasti bernilai nol. Banyak elemen yang boleh bernilai tak nol pada matriks tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$10$"
+          },
+          {
+            "label": "B",
+            "text": "$55$"
+          },
+          {
+            "label": "C",
+            "text": "$45$"
+          },
+          {
+            "label": "D",
+            "text": "$100$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Matriks segitiga atas n x n memiliki elemen nol di bawah diagonal utama sebanyak n(n-1)/2. Diketahui n(n-1)/2 = 45, maka n^2 - n - 90 = 0, sehingga (n-10)(n+9) = 0. Karena n > 0, maka n = 10. Banyak elemen yang boleh tak nol adalah elemen pada diagonal utama dan di atasnya, yaitu n(n+1)/2 = 10(11)/2 = 55.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "55",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "e18ad74984f74a8d128a4970",
+          "subchapter": "Jenis-Jenis Matriks",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya menghitung elemen diagonal utama",
+            "B": "Benar: Elemen di bawah diagonal utama berjumlah $\\frac{n(n-1)}{2} = 45$ sehingga $n = 10$. Elemen yang boleh tak nol: $\\frac{n(n+1)}{2} = 55$.",
+            "C": "Salah: menjawab banyak elemen nol yang diketahui, bukan elemen tak nol",
+            "D": "Salah: menghitung semua elemen $n \\times n$ tanpa memakai sifat segitiga"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    }
+  ]
+}

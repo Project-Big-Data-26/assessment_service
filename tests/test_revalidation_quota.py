@@ -46,6 +46,44 @@ def test_any_429_stops_before_retry_or_next_question(tmp_path, monkeypatch):
     assert "q2" not in cp["items"]
 
 
+def test_repeated_connection_failure_stops_without_claiming_quota(tmp_path, monkeypatch):
+    class Adapter:
+        calls = 0
+
+        def label_once(self, *args, run_index, **kwargs):
+            self.calls += 1
+            return SilverRunResult(runIndex=run_index, status="failed", errorCode="ConnectError:unknown", latencyMs=1)
+
+    adapter = Adapter()
+    output = setup_runner(tmp_path, monkeypatch, adapter, max_consecutive_provider_failures=3)
+    assert generator.main() == 3
+    cp = json.loads(output.read_text(encoding="utf-8"))
+    assert adapter.calls == cp["apiAttempts"] == 3
+    assert cp["executionStatus"] == "blocked_provider_temporarily_unavailable"
+    assert cp["stopReason"]["stopCategory"] == "network_or_service"
+    assert cp["stopReason"]["consecutiveProviderFailures"] == 3
+    assert not cp["items"]["q1"]["runs"][-1]["quotaDailyExhausted"]
+    assert "q2" not in cp["items"]
+
+
+def test_connection_failure_counter_resets_after_success(tmp_path, monkeypatch):
+    class Adapter:
+        calls = 0
+
+        def label_once(self, *args, run_index, **kwargs):
+            self.calls += 1
+            if self.calls % 2:
+                return SilverRunResult(runIndex=run_index, status="failed", errorCode="ConnectError:unknown", latencyMs=1)
+            return SilverRunResult(runIndex=run_index, status="success", output=silver_output("Easy"), latencyMs=1)
+
+    adapter = Adapter()
+    output = setup_runner(tmp_path, monkeypatch, adapter, question_id=["q1"], max_consecutive_provider_failures=3)
+    assert generator.main() == 0
+    cp = json.loads(output.read_text(encoding="utf-8"))
+    assert adapter.calls == cp["apiAttempts"] == 6
+    assert complete(cp, ["q1"])
+
+
 def test_budget_keeps_paid_run_and_resume_completes_pilot_without_repeating_it(tmp_path, monkeypatch):
     class Adapter:
         calls = []
