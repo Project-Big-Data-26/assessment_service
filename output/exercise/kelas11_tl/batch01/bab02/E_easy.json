@@ -1,0 +1,714 @@
+{
+ "book": "kelas11_tl",
+ "bab_no": 2,
+ "subbab": "E",
+ "level": "easy",
+ "batch": 1,
+ "skill_versi": "v1",
+ "soal": [
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas11_tl-b02-p0106-latihan-e-4a"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "menguji identitas dengan nilai variabel",
+   "alasan_level": "menguji satu nilai variabel pada kedua ruas lalu menyimpulkan, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $5(x-2)^2 = (5x-10)^2$",
+   "jawaban_benar": "Bukan identitas, karena untuk $x=3$ ruas kiri bernilai 5 sedangkan ruas kanan bernilai 25",
+   "alasan_benar": "Untuk $x=3$: ruas kiri $5(1)^2=5$, ruas kanan $(15-10)^2=25$; ada satu nilai yang membuat kedua ruas tidak sama.",
+   "distraktor": [
+    {
+     "teks": "Identitas, karena untuk $x=2$ kedua ruas sama-sama bernilai 0",
+     "alasan": "hanya menguji satu nilai yang kebetulan cocok lalu menyimpulkan berlaku untuk semua $x$"
+    },
+    {
+     "teks": "Identitas, karena kedua ruas sama-sama berbentuk kuadrat",
+     "alasan": "bentuk yang mirip dikira otomatis identik"
+    },
+    {
+     "teks": "Bukan identitas, karena untuk $x=3$ kedua ruas sama-sama bernilai 25",
+     "alasan": "salah hitung ruas kiri: lupa mengalikan 5 dengan kuadrat $(x-2)$ yang bernilai 1"
+    }
+   ],
+   "pembahasan": "Uji $x=3$: kiri $5(3-2)^2=5$, kanan $(5\\cdot3-10)^2=25$. Karena $5\\neq25$, persamaan bukan identitas.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-001"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas11_tl-b02-p0106-latihan-e-4a"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "menguji identitas dengan penjabaran",
+   "alasan_level": "menjabarkan kuadrat binomial lalu mengalikan konstanta, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $8(x+4)^2 = 8x^2 + 64x + 128$",
+   "jawaban_benar": "Identitas, karena ruas kiri dijabarkan menjadi $8x^2 + 64x + 128$",
+   "alasan_benar": "$8(x+4)^2 = 8(x^2+8x+16) = 8x^2+64x+128$, sama dengan ruas kanan untuk setiap $x$.",
+   "distraktor": [
+    {
+     "teks": "Bukan identitas, karena untuk $x=0$ ruas kiri bernilai 128 sedangkan ruas kanan bernilai 0",
+     "alasan": "salah hitung ruas kanan: untuk $x=0$ ruas kanan bernilai 128"
+    },
+    {
+     "teks": "Bukan identitas, karena pangkat tertinggi kedua ruas berbeda",
+     "alasan": "salah membaca pangkat; kedua ruas sama-sama berpangkat 2"
+    },
+    {
+     "teks": "Bukan identitas, karena suku tengah ruas kanan seharusnya $32x$",
+     "alasan": "salah menghitung suku tengah: $8\\cdot2\\cdot4x=64x$, bukan $32x$"
+    }
+   ],
+   "pembahasan": "$(x+4)^2=x^2+8x+16$, dikalikan 8 menjadi $8x^2+64x+128$ sehingga kedua ruas identik.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-002"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 104,
+    "bagian": "Contoh 2.13",
+    "nomor": "2",
+    "teks": "(2 a – 5)(2 a + 5) = 4 a 2 – 20 a + 25",
+    "jawaban": "Bukan identitas (a = 0: -25 dan 25)"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "nilai kedua ruas pada nilai variabel",
+   "alasan_level": "mensubstitusi satu nilai variabel ke kedua ruas lalu menghitung, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Diberikan persamaan polinomial $(6b-7)(6b+7) = 36b^2 - 84b + 49$. Jika dipilih $b=0$, nilai ruas kiri dan nilai ruas kanan berturut-turut adalah ....",
+   "jawaban_benar": "$-49$ dan $49$",
+   "alasan_benar": "ruas kiri $(0-7)(0+7)=-49$; ruas kanan $0-0+49=49$.",
+   "distraktor": [
+    {
+     "teks": "$49$ dan $49$",
+     "alasan": "salah tanda: $(-7)(7)$ dianggap bernilai positif"
+    },
+    {
+     "teks": "$-49$ dan $-49$",
+     "alasan": "ruas kanan dianggap ikut negatif karena tertukar tanda dengan ruas kiri"
+    },
+    {
+     "teks": "$49$ dan $-49$",
+     "alasan": "kedua nilai tertukar tempat"
+    }
+   ],
+   "pembahasan": "Substitusi $b=0$: kiri $(-7)(7)=-49$, kanan $49$. Karena berbeda, persamaan itu bukan identitas.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-003"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 104,
+    "bagian": "Contoh 2.13",
+    "nomor": "1",
+    "teks": "(2 x 2 – y 2 ) 2 = 4 x 4 – 4 x 2 y 2 + y 4",
+    "jawaban": "Identitas polinomial"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "menguji identitas dengan penjabaran",
+   "alasan_level": "menjabarkan kuadrat selisih dan membandingkan suku tengah, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Diberikan persamaan polinomial $(5u^2 - 3v)^2 = 25u^4 - 15u^2v + 9v^2$. Pernyataan yang benar adalah ....",
+   "jawaban_benar": "Bukan identitas, karena suku tengah seharusnya $-30u^2v$",
+   "alasan_benar": "$(5u^2-3v)^2 = 25u^4 - 2(5u^2)(3v) + 9v^2 = 25u^4 - 30u^2v + 9v^2$.",
+   "distraktor": [
+    {
+     "teks": "Identitas, karena suku pertama dan suku ketiga sudah benar",
+     "alasan": "hanya memeriksa dua suku dari tiga suku"
+    },
+    {
+     "teks": "Bukan identitas, karena suku pertama seharusnya $25u^2$",
+     "alasan": "salah pangkat: $(5u^2)^2=25u^4$"
+    },
+    {
+     "teks": "Bukan identitas, karena suku ketiga seharusnya $9v$",
+     "alasan": "salah pangkat: $(3v)^2=9v^2$"
+    }
+   ],
+   "pembahasan": "Penjabaran benar adalah $25u^4-30u^2v+9v^2$; suku tengah pada soal $-15u^2v$ berbeda, sehingga bukan identitas.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-004"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 105,
+    "bagian": "Mari Mencoba 2.13",
+    "nomor": "1",
+    "teks": "(2 m – 3) 3 = 8 m 3 – 27",
+    "jawaban": "Bukan identitas"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "menguji identitas dengan penjabaran",
+   "alasan_level": "menjabarkan pangkat tiga binomial memakai Sifat 2.6 nomor 6 lalu membandingkan, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Diberikan persamaan polinomial $(t+4)^3 = t^3 + 12t^2 + 48t + 64$. Pernyataan yang benar adalah ....",
+   "jawaban_benar": "Identitas, karena $(t+4)^3 = t^3 + 3\\cdot4\\,t^2 + 3\\cdot16\\,t + 64$",
+   "alasan_benar": "$(t+4)^3 = t^3 + 3t^2(4) + 3t(4^2) + 4^3 = t^3+12t^2+48t+64$.",
+   "distraktor": [
+    {
+     "teks": "Bukan identitas, karena suku tengahnya seharusnya $4t^2 + 16t$",
+     "alasan": "mengira koefisien tidak mengandung faktor 3"
+    },
+    {
+     "teks": "Bukan identitas, karena $(t+4)^3 = t^3 + 64$",
+     "alasan": "mengira pangkat tiga hanya memangkatkan tiap suku"
+    },
+    {
+     "teks": "Bukan identitas, karena suku konstanta seharusnya $12$",
+     "alasan": "mengira konstanta $4\\cdot3$ bukan $4^3$"
+    }
+   ],
+   "pembahasan": "Sifat 2.6 nomor 6 memberi $(a+b)^3=a^3+3a^2b+3ab^2+b^3$ dengan $a=t$, $b=4$: hasilnya persis ruas kanan.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-005"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 105,
+    "bagian": "Mari Mencoba 2.13",
+    "nomor": "1",
+    "teks": "(2 m – 3) 3 = 8 m 3 – 27",
+    "jawaban": "Bukan identitas"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "melengkapi koefisien identitas",
+   "alasan_level": "menjabarkan $(m+5)^3$ lalu membaca koefisien $m^2$, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Agar persamaan $(m+5)^3 = m^3 + km^2 + 75m + 125$ merupakan identitas polinomial, nilai $k$ adalah ....",
+   "jawaban_benar": "$15$",
+   "alasan_benar": "$(m+5)^3 = m^3 + 3(5)m^2 + 3(25)m + 125$, sehingga $k = 15$ (suku $75m$ dan $125$ cocok).",
+   "distraktor": [
+    {
+     "teks": "$5$",
+     "alasan": "mengambil $b$ saja tanpa faktor 3"
+    },
+    {
+     "teks": "$25$",
+     "alasan": "mengambil $b^2$ saja tanpa faktor 3"
+    },
+    {
+     "teks": "$75$",
+     "alasan": "tertukar dengan koefisien suku $m$"
+    }
+   ],
+   "pembahasan": "Koefisien $m^2$ pada $(m+5)^3$ adalah $3\\cdot5=15$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-006"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 105,
+    "bagian": "Mari Mencoba 2.13",
+    "nomor": "2",
+    "teks": "(2 x – 3) 2 + 5 = 4 x 2 – 12 x + 14",
+    "jawaban": "Identitas polinomial"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "menguji identitas dengan penjabaran",
+   "alasan_level": "menjabarkan ruas kiri, menambah konstanta, dan membandingkan dengan ruas kanan",
+   "stimulus": null,
+   "pertanyaan": "Diberikan persamaan polinomial $(8y-9)^2 + 4 = 64y^2 - 144y + 84$. Pernyataan yang benar adalah ....",
+   "jawaban_benar": "Bukan identitas, karena untuk $y=0$ ruas kiri bernilai 85 sedangkan ruas kanan bernilai 84",
+   "alasan_benar": "ruas kiri dijabarkan menjadi $64y^2-144y+85$, sedangkan ruas kanan berkonstanta 84; untuk $y=0$: $81+4=85\\neq84$.",
+   "distraktor": [
+    {
+     "teks": "Identitas, karena $(8y-9)^2 = 64y^2 - 144y + 81$ sama dengan ruas kanan",
+     "alasan": "lupa bahwa ruas kiri masih ditambah 4 dan konstanta 81 + 4 = 85, bukan 84"
+    },
+    {
+     "teks": "Bukan identitas, karena untuk $y=0$ ruas kiri bernilai $-77$ sedangkan ruas kanan bernilai 84",
+     "alasan": "salah hitung: $(-9)^2$ ditulis $-81$ lalu ditambah 4"
+    },
+    {
+     "teks": "Bukan identitas, karena suku $-144y$ seharusnya $-72y$",
+     "alasan": "lupa mengalikan 2 pada suku tengah $2\\cdot8\\cdot9$ dengan benar"
+    }
+   ],
+   "pembahasan": "Ruas kiri $=64y^2-144y+81+4=64y^2-144y+85$. Konstanta 85 tidak sama dengan 84, jadi bukan identitas.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-007"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 105,
+    "bagian": "Contoh 2.14",
+    "nomor": "2.14",
+    "teks": "Faktorkan (3 x – 1) 2 – 25.",
+    "jawaban": "(3x + 4)(3x - 6)"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "faktorisasi dengan identitas",
+   "alasan_level": "mengenali selisih dua kuadrat lalu menerapkan identitas 1 dan menyederhanakan faktor, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Faktorkan $(5x-2)^2 - 49$.",
+   "jawaban_benar": "$(5x+5)(5x-9)$",
+   "alasan_benar": "selisih kuadrat dengan $a=5x-2$ dan $b=7$: $(5x-2+7)(5x-2-7)=(5x+5)(5x-9)$.",
+   "distraktor": [
+    {
+     "teks": "$(5x-5)(5x+9)$",
+     "alasan": "salah tanda saat menggabungkan $-2$ dengan $\\pm7$"
+    },
+    {
+     "teks": "$(5x-7)(5x+7)$",
+     "alasan": "mengabaikan suku $-2$ di dalam kuadrat"
+    },
+    {
+     "teks": "$(5x-51)(5x+47)$",
+     "alasan": "memakai 49 sebagai $b$ bukan 7 lalu menggabungkan dengan $-2$"
+    }
+   ],
+   "pembahasan": "$(5x-2)^2-7^2=(5x-2+7)(5x-2-7)=(5x+5)(5x-9)$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-008"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 106,
+    "bagian": "Mari Mencoba 2.14",
+    "nomor": "2.14",
+    "teks": "Faktorkan 4 x 2 + 12 x y + 9 y 2 .",
+    "jawaban": "(2x + 3y)^2"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "faktorisasi dengan identitas",
+   "alasan_level": "mengenali bentuk kuadrat sempurna lalu memakai identitas 2, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Faktorkan $16x^2 + 40xy + 25y^2$.",
+   "jawaban_benar": "$(4x+5y)^2$",
+   "alasan_benar": "$16x^2=(4x)^2$, $25y^2=(5y)^2$, dan $2(4x)(5y)=40xy$, jadi bentuknya $(4x+5y)^2$.",
+   "distraktor": [
+    {
+     "teks": "$(4x+5y)(4x-5y)$",
+     "alasan": "tertukar dengan identitas selisih dua kuadrat"
+    },
+    {
+     "teks": "$(16x+25y)^2$",
+     "alasan": "lupa menarik akar koefisien kuadrat"
+    },
+    {
+     "teks": "$(4x+10y)^2$",
+     "alasan": "salah menentukan $b$: memakai $40/4$ sebagai $b$"
+    }
+   ],
+   "pembahasan": "Bentuk $a^2+2ab+b^2$ dengan $a=4x$ dan $b=5y$, jadi $(4x+5y)^2$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-009"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 107,
+    "bagian": "Latihan E",
+    "nomor": "5",
+    "teks": "Jika ( x 2 + x – 6)( x – 4) = P ( x ) · ( x + 3) adalah identitas, tentukan polinomial P ( x ).",
+    "jawaban": "(x - 2)(x - 4) = x^2 - 6x + 8"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "mencari polinomial dari identitas",
+   "alasan_level": "memfaktorkan kuadrat lalu mencoret faktor yang sama pada kedua ruas, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Jika $(x^2+2x-15)(x-7) = P(x)\\cdot(x+5)$ adalah identitas, polinomial $P(x)$ adalah ....",
+   "jawaban_benar": "$x^2-10x+21$",
+   "alasan_benar": "$x^2+2x-15=(x+5)(x-3)$, sehingga $P(x)=(x-3)(x-7)=x^2-10x+21$.",
+   "distraktor": [
+    {
+     "teks": "$x^2+10x+21$",
+     "alasan": "salah tanda saat menjabarkan $(x-3)(x-7)$"
+    },
+    {
+     "teks": "$x^2-4x-21$",
+     "alasan": "memakai faktor $(x+3)(x-7)$ karena tanda faktor kuadrat terbalik"
+    },
+    {
+     "teks": "$x^2+2x-15$",
+     "alasan": "hanya mengambil faktor kuadrat dan melupakan faktor $(x-7)$"
+    }
+   ],
+   "pembahasan": "Faktorkan $x^2+2x-15=(x+5)(x-3)$, bagi kedua ruas dengan $(x+5)$: $P(x)=(x-3)(x-7)$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-010"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 106,
+    "bagian": "Latihan E Pemahaman Konsep",
+    "nomor": "1",
+    "teks": "Benar atau salah? Semua persamaan polinomial merupakan identitas polinomial.",
+    "jawaban": "Salah"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "konsep identitas polinomial",
+   "alasan_level": "memahami bahwa identitas harus berlaku untuk semua nilai variabel, satu langkah",
+   "stimulus": null,
+   "pertanyaan": "Pernyataan yang benar tentang persamaan polinomial dan identitas polinomial adalah ....",
+   "jawaban_benar": "Persamaan $x + 1 = 4$ bukan identitas, karena hanya benar untuk $x=3$",
+   "alasan_benar": "identitas harus benar untuk setiap nilai variabel, sedangkan $x+1=4$ hanya benar saat $x=3$.",
+   "distraktor": [
+    {
+     "teks": "Persamaan $x + 1 = 4$ merupakan identitas, karena ada nilai $x$ yang memenuhinya",
+     "alasan": "satu nilai pemenuh dikira cukup untuk menjadi identitas"
+    },
+    {
+     "teks": "Persamaan $x + 1 = x + 1$ bukan identitas, karena memuat variabel",
+     "alasan": "mengira persamaan bervariabel tidak mungkin identitas"
+    },
+    {
+     "teks": "Setiap persamaan polinomial pasti merupakan identitas polinomial",
+     "alasan": "menyamakan persamaan polinomial dengan identitas"
+    }
+   ],
+   "pembahasan": "Identitas polinomial benar untuk semua nilai variabel. $x+1=4$ salah untuk $x=0$, jadi bukan identitas.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-011"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 106,
+    "bagian": "Latihan E Pemahaman Konsep",
+    "nomor": "2",
+    "teks": "Benar atau salah? Jika ada satu saja nilai variabel yang tidak memenuhi suatu persamaan polinomial, maka persamaan polinomial tersebut bukanlah identitas polinomial.",
+    "jawaban": "Benar"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "konsep identitas polinomial",
+   "alasan_level": "mengenali cara cukup untuk menunjukkan bukan identitas, satu langkah",
+   "stimulus": null,
+   "pertanyaan": "Cara yang cukup untuk menunjukkan bahwa suatu persamaan polinomial bukan identitas polinomial adalah ....",
+   "jawaban_benar": "menemukan satu nilai variabel yang membuat ruas kiri tidak sama dengan ruas kanan",
+   "alasan_benar": "satu contoh penyangkal sudah cukup untuk membuktikan persamaan tidak berlaku untuk semua nilai variabel.",
+   "distraktor": [
+    {
+     "teks": "menemukan satu nilai variabel yang membuat kedua ruas bernilai sama",
+     "alasan": "satu contoh yang cocok dikira bukti bukan identitas"
+    },
+    {
+     "teks": "memeriksa bahwa kedua ruas bernilai sama untuk satu nilai variabel tertentu",
+     "alasan": "menjadikan satu nilai cocok sebagai bukti identitas"
+    },
+    {
+     "teks": "menunjukkan bahwa kedua ruas memiliki derajat yang sama",
+     "alasan": "derajat sama tidak menjamin kedua ruas identik"
+    }
+   ],
+   "pembahasan": "Untuk membuktikan bukan identitas cukup satu nilai variabel yang membuat kedua ruas berbeda.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-012"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 108,
+    "bagian": "Uji Kompetensi Bab 2",
+    "nomor": "3",
+    "teks": "Persamaan 4 a 2 – 1 = (2 a + 1)(2 a – 1) merupakan identitas polinomial.",
+    "jawaban": "Benar"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "mengenali identitas selisih kuadrat",
+   "alasan_level": "mengenali bentuk selisih dua kuadrat pada ruas kiri dan kanan, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Diberikan persamaan $49n^2 - 36 = (7n+6)(7n-6)$. Pernyataan yang benar adalah ....",
+   "jawaban_benar": "Identitas, karena $49n^2-36=(7n)^2-6^2$ sesuai bentuk $a^2-b^2=(a+b)(a-b)$",
+   "alasan_benar": "$(7n+6)(7n-6)=49n^2-36$ untuk setiap $n$.",
+   "distraktor": [
+    {
+     "teks": "Bukan identitas, karena $(7n+6)(7n-6)=49n^2-84n-36$",
+     "alasan": "salah menjabarkan: suku tengah dianggap tidak saling meniadakan"
+    },
+    {
+     "teks": "Bukan identitas, karena seharusnya $49n^2-36=(7n-6)^2$",
+     "alasan": "menyamakan selisih kuadrat dengan kuadrat selisih"
+    },
+    {
+     "teks": "Bukan identitas, karena $49n^2-36=(7n)^2+6^2$",
+     "alasan": "salah tanda: selisih kuadrat dianggap jumlah kuadrat"
+    }
+   ],
+   "pembahasan": "$(7n+6)(7n-6)=(7n)^2-6^2=49n^2-36$, sehingga merupakan identitas.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-013"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 104,
+    "kutipan": "Berikut ini beberapa identitas polinomial."
+   },
+   "cognitive_c": "C1",
+   "jumlah_langkah": 1,
+   "jenis_soal": "mengingat rumus identitas",
+   "alasan_level": "mengingat rumus jumlah pangkat tiga dari Sifat 2.6, satu langkah",
+   "stimulus": null,
+   "pertanyaan": "Bentuk faktor dari $a^3 + b^3$ yang merupakan identitas polinomial adalah ....",
+   "jawaban_benar": "$(a+b)(a^2-ab+b^2)$",
+   "alasan_benar": "identitas jumlah pangkat tiga: $a^3+b^3=(a+b)(a^2-ab+b^2)$.",
+   "distraktor": [
+    {
+     "teks": "$(a+b)(a^2+ab+b^2)$",
+     "alasan": "suku tengah bertanda positif, tertukar dengan identitas selisih pangkat tiga"
+    },
+    {
+     "teks": "$(a+b)^3$",
+     "alasan": "mengira jumlah pangkat tiga sama dengan pangkat tiga dari jumlah"
+    },
+    {
+     "teks": "$(a-b)(a^2-ab+b^2)$",
+     "alasan": "faktor linear bertanda negatif, tertukar dengan identitas selisih pangkat tiga"
+    }
+   ],
+   "pembahasan": "Sifat 2.6 nomor 4: $a^3+b^3=(a+b)(a^2-ab+b^2)$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-014"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 104,
+    "kutipan": "Berikut ini beberapa identitas polinomial."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "mengingat rumus identitas",
+   "alasan_level": "memakai rumus $(a+b)^3$ lalu menghitung koefisien suku $x$, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Pada hasil penjabaran $(x+2)^3$, koefisien dari $x$ adalah ....",
+   "jawaban_benar": "$12$",
+   "alasan_benar": "$(x+2)^3=x^3+6x^2+12x+8$, koefisien $x$ adalah $3\\cdot2^2=12$.",
+   "distraktor": [
+    {
+     "teks": "$6$",
+     "alasan": "mengambil koefisien $x^2$ yaitu $3\\cdot2$"
+    },
+    {
+     "teks": "$4$",
+     "alasan": "mengambil $b^2$ tanpa faktor 3"
+    },
+    {
+     "teks": "$8$",
+     "alasan": "mengambil suku konstanta $2^3$"
+    }
+   ],
+   "pembahasan": "$(a+b)^3=a^3+3a^2b+3ab^2+b^3$ dengan $a=x$, $b=2$: suku $x$ adalah $3x\\cdot4=12x$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-015"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 104,
+    "kutipan": "Berikut ini beberapa identitas polinomial."
+   },
+   "cognitive_c": "C1",
+   "jumlah_langkah": 1,
+   "jenis_soal": "mengenali bentuk identitas",
+   "alasan_level": "mengenali identitas yang benar di antara bentuk-bentuk serupa, satu langkah",
+   "stimulus": null,
+   "pertanyaan": "Persamaan polinomial berikut yang merupakan identitas polinomial adalah ....",
+   "jawaban_benar": "$(a-b)^2 = a^2 - 2ab + b^2$",
+   "alasan_benar": "identitas kuadrat selisih dua suku (Sifat 2.6 nomor 3).",
+   "distraktor": [
+    {
+     "teks": "$(a+b)^2 = a^2 + b^2$",
+     "alasan": "melupakan suku tengah $2ab$"
+    },
+    {
+     "teks": "$a^2 - b^2 = (a-b)^2$",
+     "alasan": "menyamakan selisih kuadrat dengan kuadrat selisih"
+    },
+    {
+     "teks": "$(a+b)^3 = a^3 + b^3$",
+     "alasan": "mengira pangkat tiga jumlah hanya memangkatkan tiap suku"
+    }
+   ],
+   "pembahasan": "Hanya $(a-b)^2=a^2-2ab+b^2$ yang berlaku untuk semua $a$ dan $b$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-016"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 104,
+    "kutipan": "Berikut ini beberapa identitas polinomial."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "penerapan identitas pada bilangan",
+   "alasan_level": "memakai $a^2-b^2=(a+b)(a-b)$ pada bilangan, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Dengan memakai identitas $a^2-b^2=(a+b)(a-b)$, nilai dari $101^2 - 99^2$ adalah ....",
+   "jawaban_benar": "$400$",
+   "alasan_benar": "$101^2-99^2=(101+99)(101-99)=200\\cdot2=400$.",
+   "distraktor": [
+    {
+     "teks": "$200$",
+     "alasan": "hanya mengambil faktor $(a+b)$"
+    },
+    {
+     "teks": "$2$",
+     "alasan": "hanya mengambil faktor $(a-b)$"
+    },
+    {
+     "teks": "$800$",
+     "alasan": "mengalikan hasil dengan 2 sekali lagi"
+    }
+   ],
+   "pembahasan": "$(101+99)(101-99)=200\\cdot2=400$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-017"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 104,
+    "kutipan": "Persamaan seperti ini disebut identitas polinomial"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "melengkapi koefisien identitas",
+   "alasan_level": "memakai identitas kuadrat selisih untuk menentukan konstanta, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Agar persamaan $x^2 - 14x + k = (x-7)^2$ merupakan identitas polinomial, nilai $k$ adalah ....",
+   "jawaban_benar": "$49$",
+   "alasan_benar": "$(x-7)^2=x^2-14x+49$, sehingga $k=49$.",
+   "distraktor": [
+    {
+     "teks": "$7$",
+     "alasan": "mengambil $b$ bukan $b^2$"
+    },
+    {
+     "teks": "$14$",
+     "alasan": "menyamakan konstanta dengan koefisien suku $x$"
+    },
+    {
+     "teks": "$-49$",
+     "alasan": "salah tanda: kuadrat selalu positif"
+    }
+   ],
+   "pembahasan": "Konstanta $b^2=7^2=49$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-018"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 103,
+    "kutipan": "Berapa pun bilangan yang dipilih, kamu selalu akan mendapatkan 10."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "penerapan numerik identitas",
+   "alasan_level": "memodelkan langkah sulap menjadi bentuk aljabar lalu menyederhanakan, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Seorang pesulap meminta penonton memilih sebuah bilangan $n$, mengalikan $(n+4)$ dengan $(n-4)$, menambahkan 20, lalu mengurangi hasilnya dengan $n^2$. Berapa pun $n$ yang dipilih, hasil akhirnya selalu ....",
+   "jawaban_benar": "$4$",
+   "alasan_benar": "$(n+4)(n-4)+20-n^2=n^2-16+20-n^2=4$.",
+   "distraktor": [
+    {
+     "teks": "$36$",
+     "alasan": "menganggap $(n+4)(n-4)=n^2+16$"
+    },
+    {
+     "teks": "$16$",
+     "alasan": "lupa menambahkan 20"
+    },
+    {
+     "teks": "$20$",
+     "alasan": "mengabaikan hasil kali $(n+4)(n-4)$"
+    }
+   ],
+   "pembahasan": "$(n+4)(n-4)=n^2-16$, ditambah 20 menjadi $n^2+4$, dikurangi $n^2$ menjadi 4.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-019"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 104,
+    "kutipan": "Berikut ini beberapa identitas polinomial."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "menyederhanakan dengan identitas",
+   "alasan_level": "mengenali bentuk jumlah pangkat tiga dan menyederhanakan, dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Bentuk sederhana dari $(x+3)(x^2-3x+9)$ adalah ....",
+   "jawaban_benar": "$x^3 + 27$",
+   "alasan_benar": "identitas jumlah pangkat tiga dengan $b=3$: $(x+3)(x^2-3x+9)=x^3+3^3$.",
+   "distraktor": [
+    {
+     "teks": "$x^3 - 27$",
+     "alasan": "salah tanda: memakai identitas selisih pangkat tiga"
+    },
+    {
+     "teks": "$x^3 + 9$",
+     "alasan": "menghitung $3^3$ sebagai $3\\cdot3$"
+    },
+    {
+     "teks": "$x^3 + 81$",
+     "alasan": "menghitung $3^3$ sebagai $9\\cdot9$"
+    }
+   ],
+   "pembahasan": "Sifat 2.6 nomor 4: $a^3+b^3=(a+b)(a^2-ab+b^2)$ dengan $a=x$, $b=3$.",
+   "catatan": null,
+   "id": "kelas11_tl-b02-e-easy-bt01-020"
+  }
+ ]
+}

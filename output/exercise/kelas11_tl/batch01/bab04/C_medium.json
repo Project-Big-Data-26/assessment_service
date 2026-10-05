@@ -1,0 +1,605 @@
+{
+ "book": "kelas11_tl",
+ "bab_no": 4,
+ "subbab": "C",
+ "level": "medium",
+ "batch": 1,
+ "skill_versi": "v1",
+ "kapasitas_kurang": true,
+ "alasan_kapasitas": "Medium Pembuktian Geometris tipis: acuan teks terbaca habis di easy (Latihan C no.1,2,4, Contoh/MM 4.17 sudah dipakai 2x); Latihan C no.3,5,6 dan Contoh/MM 4.16 bergantung gambar; soal pembuktian panjang tidak bisa jadi pilihan ganda. 17 soal layak tanpa kembar dengan easy.",
+ "soal": [
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-001",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "jenis segitiga menurut sudut dari hasil kali titik",
+   "alasan_level": "tiga langkah: hitung hasil kali titik di tiga titik sudut lalu simpulkan jenis sudutnya",
+   "stimulus": null,
+   "pertanyaan": "Pada segitiga $PQR$ diketahui $\\overrightarrow{PQ} = \\langle -5, 2\\rangle$ dan $\\overrightarrow{PR} = \\langle 4, 7\\rangle$. Pernyataan yang benar tentang segitiga $PQR$ adalah ....",
+   "jawaban_benar": "tumpul di $P$, lancip di $Q$ dan $R$",
+   "alasan_benar": "$-6 < 0$ di $P$ (tumpul); $35 > 0$ di $Q$ dan $71 > 0$ di $R$ (lancip)",
+   "distraktor": [
+    {
+     "teks": "siku-siku di $P$, lancip di $Q$ dan $R$",
+     "alasan": "mengira hasil kali titik di $P$ bernilai nol padahal bernilai $-6$"
+    },
+    {
+     "teks": "siku-siku di $Q$, lancip di $P$ dan $R$",
+     "alasan": "tidak menghitung hasil kali titik di $Q$ yang bernilai 35"
+    },
+    {
+     "teks": "lancip di ketiga titik sudutnya",
+     "alasan": "mengabaikan tanda negatif hasil kali titik di $P$"
+    }
+   ],
+   "pembahasan": "$\\overrightarrow{QR} = \\langle 9, 5\\rangle$. Di $P$: $\\overrightarrow{PQ}\\cdot\\overrightarrow{PR} = -20+14 = -6 < 0$ (tumpul). Di $Q$: $\\overrightarrow{QP}\\cdot\\overrightarrow{QR} = 45-10 = 35 > 0$ (lancip). Di $R$: $\\overrightarrow{RP}\\cdot\\overrightarrow{RQ} = 36+35 = 71 > 0$ (lancip).",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 210,
+    "bagian": "Latihan C",
+    "nomor": "1",
+    "teks": "Jika PQ = -3, 1 dan PR = 1, 3 , maka segitiga PQR adalah segitiga siku-siku.",
+    "jawaban": "Benar"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-002",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "parameter agar segitiga siku-siku di titik tertentu",
+   "alasan_level": "tiga langkah: nyatakan QR, tulis syarat hasil kali titik nol, selesaikan persamaan linear",
+   "stimulus": null,
+   "pertanyaan": "Pada segitiga $PQR$ diketahui $\\overrightarrow{PQ} = \\langle 8, 2\\rangle$ dan $\\overrightarrow{PR} = \\langle k, 10\\rangle$. Segitiga $PQR$ siku-siku di $Q$ untuk nilai $k$ sama dengan ....",
+   "jawaban_benar": "$k = 6$",
+   "alasan_benar": "$\\overrightarrow{QR} = \\overrightarrow{PR} - \\overrightarrow{PQ} = \\langle k-8, 8\\rangle$; siku-siku di $Q$ berarti $\\overrightarrow{PQ}\\cdot\\overrightarrow{QR} = 8(k-8)+16 = 0$",
+   "distraktor": [
+    {
+     "teks": "$k = 10$",
+     "alasan": "salah tanda saat memindahkan 16 sehingga $k - 8 = 2$"
+    },
+    {
+     "teks": "$k = -\\frac{5}{2}$",
+     "alasan": "menyamakan $\\overrightarrow{PQ}\\cdot\\overrightarrow{PR} = 0$, yaitu siku-siku di $P$"
+    },
+    {
+     "teks": "$k = 0$",
+     "alasan": "membagi $-16$ dengan 2 (komponen kedua $\\overrightarrow{PQ}$), bukan dengan 8"
+    }
+   ],
+   "pembahasan": "$\\overrightarrow{QR} = \\langle k-8, 8\\rangle$. $8(k-8)+2\\cdot 8 = 0 \\Rightarrow 8k = 48 \\Rightarrow k = 6$.",
+   "catatan": null,
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 210,
+    "bagian": "Latihan C",
+    "nomor": "1",
+    "teks": "Jika PQ = -3, 1 dan PR = 1, 3 , maka segitiga PQR adalah segitiga siku-siku.",
+    "jawaban": "Benar"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-003",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "sifat diagonal layang-layang dari koordinat",
+   "alasan_level": "tiga langkah: vektor kedua diagonal, hasil kali titik, lalu bandingkan titik tengah diagonal",
+   "stimulus": null,
+   "pertanyaan": "Segiempat $ABCD$ dengan $A(0, 0)$, $B(3, 1)$, $C(5, 5)$, dan $D(1, 3)$ adalah layang-layang yang bukan belah ketupat. Pernyataan yang benar tentang diagonal $AC$ dan $BD$ adalah ....",
+   "jawaban_benar": "saling tegak lurus; $AC$ membagi $BD$ menjadi dua sama panjang, tetapi $BD$ tidak membagi $AC$ menjadi dua sama panjang",
+   "alasan_benar": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BD} = \\langle 5, 5\\rangle\\cdot\\langle -2, 2\\rangle = 0$; titik tengah $BD$ adalah $(2, 2)$ yang terletak pada $AC$, sedangkan titik tengah $AC$ adalah $(2,5;\\ 2,5)$ bukan titik potong",
+   "distraktor": [
+    {
+     "teks": "saling tegak lurus dan saling membagi dua sama panjang",
+     "alasan": "menganggap layang-layang seperti jajargenjang; titik tengah $AC$ ternyata $(2,5;\\ 2,5)$ bukan $(2, 2)$"
+    },
+    {
+     "teks": "saling tegak lurus; $BD$ membagi $AC$ menjadi dua sama panjang, tetapi $AC$ tidak membagi $BD$ menjadi dua sama panjang",
+     "alasan": "peran kedua diagonal tertukar"
+    },
+    {
+     "teks": "tidak saling tegak lurus, tetapi saling membagi dua sama panjang",
+     "alasan": "salah menghitung hasil kali titik dan mencampur sifat jajargenjang"
+    }
+   ],
+   "pembahasan": "Hasil kali titik $\\overrightarrow{AC}\\cdot\\overrightarrow{BD} = -10+10 = 0$. Titik tengah $BD$ = $(2, 2)$ ada pada $AC$, tetapi bukan titik tengah $AC$ yaitu $(2,5;\\ 2,5)$.",
+   "catatan": null,
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 210,
+    "bagian": "Latihan C",
+    "nomor": "2",
+    "teks": "Kedua diagonal layang-layang saling membagi dua sama panjang.",
+    "jawaban": "Salah"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-004",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "titik sudut jajargenjang dari titik potong diagonal",
+   "alasan_level": "tiga langkah: titik potong adalah titik tengah kedua diagonal, lalu D = 2E - B",
+   "stimulus": null,
+   "pertanyaan": "Pada jajargenjang $ABCD$ diketahui $A(2, -1)$, $B(6, 2)$, dan kedua diagonalnya berpotongan di $E(5, 4)$. Koordinat titik $D$ adalah ....",
+   "jawaban_benar": "$(4, 6)$",
+   "alasan_benar": "diagonal jajargenjang saling membagi dua sehingga $E$ titik tengah $BD$: $D = 2E - B = (10-6,\\ 8-2)$",
+   "distraktor": [
+    {
+     "teks": "$(8, 9)$",
+     "alasan": "menghitung $2E - A$, yaitu titik $C$"
+    },
+    {
+     "teks": "$(-1, 2)$",
+     "alasan": "menghitung $E - B$ saja"
+    },
+    {
+     "teks": "$(9, 7)$",
+     "alasan": "memakai $B + E - A$ yang bukan hubungan titik tengah"
+    }
+   ],
+   "pembahasan": "$E$ titik tengah $BD$ sehingga $D = 2E - B = (4, 6)$.",
+   "catatan": null,
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 207,
+    "bagian": "Contoh 4.17",
+    "nomor": "-",
+    "teks": "Diberikan sebuah jajargenjang. Buktikan bahwa kedua diagonal dari jajargenjang tersebut saling membagi dua sama panjang.",
+    "jawaban": "Terbukti: AE = AF sehingga E = F"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-005",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "panjang diagonal persegi panjang dari titik potong diagonal",
+   "alasan_level": "tiga langkah: vektor AE, panjangnya, lalu diagonal = 2 AE karena saling membagi dua dan sama panjang",
+   "stimulus": null,
+   "pertanyaan": "Diagonal-diagonal persegi panjang $ABCD$ berpotongan di titik $E$. Jika $A(-4, 3)$ dan $E(3, 27)$, panjang diagonal $BD$ adalah ....",
+   "jawaban_benar": "$50$",
+   "alasan_benar": "$\\overrightarrow{AE} = \\langle 7, 24\\rangle$ sehingga $AE = 25$; $E$ titik tengah $AC$ dan $BD = AC = 2AE$",
+   "distraktor": [
+    {
+     "teks": "$25$",
+     "alasan": "menghitung $AE$ saja, lupa menggandakan"
+    },
+    {
+     "teks": "$100$",
+     "alasan": "menggandakan dua kali"
+    },
+    {
+     "teks": "$62$",
+     "alasan": "menjumlahkan komponen $7 + 24$ lalu menggandakan"
+    }
+   ],
+   "pembahasan": "$AE=\\sqrt{49+576}=25$, $AC=50$, dan $BD=AC=50$ pada persegi panjang.",
+   "catatan": null,
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 208,
+    "bagian": "Mari Mencoba 4.17",
+    "nomor": "-",
+    "teks": "Buktikan dengan menggunakan vektor bahwa kedua diagonal dari persegi panjang saling membagi dua sama panjang.",
+    "jawaban": "Terbukti: kedua diagonal berpotongan di titik tengah masing-masing"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-006",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "titik sudut persegi dari diagonal",
+   "alasan_level": "empat langkah: titik tengah diagonal, setengah diagonal, putar 90 derajat (tegak lurus, sama panjang), tentukan D",
+   "stimulus": null,
+   "pertanyaan": "Persegi $ABCD$ dengan titik-titik sudut berurutan berlawanan arah jarum jam memiliki $A(1, 1)$ dan $C(7, 5)$. Koordinat titik $D$ adalah ....",
+   "jawaban_benar": "$(2, 6)$",
+   "alasan_benar": "diagonal persegi saling membagi dua, tegak lurus, dan sama panjang: $E=(4,3)$, setengah diagonal $\\langle 3, 2\\rangle$ diputar $90^\\circ$ menjadi $\\langle -2, 3\\rangle$, sehingga $D = E + \\langle -2, 3\\rangle$",
+   "distraktor": [
+    {
+     "teks": "$(6, 0)$",
+     "alasan": "menukar $B$ dan $D$ (memutar ke arah sebaliknya)"
+    },
+    {
+     "teks": "$(1, 5)$",
+     "alasan": "memakai $E + \\langle -3, 2\\rangle$, tanda komponen rotasi salah"
+    },
+    {
+     "teks": "$(6, 6)$",
+     "alasan": "memakai $E + \\langle 2, 3\\rangle$, lupa tanda negatif saat memutar"
+    }
+   ],
+   "pembahasan": "$E=(4,3)$, $\\overrightarrow{EC}=\\langle 3,2\\rangle$, tegak lurus dan sama panjang: $\\langle -2,3\\rangle$. $D=(4-2,\\ 3+3)=(2,6)$, $B=(6,0)$.",
+   "catatan": null,
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 210,
+    "bagian": "Latihan C",
+    "nomor": "4",
+    "teks": "Buktikan bahwa dua diagonal dari sebuah persegi saling tegak lurus dan saling membagi dua sama panjang.",
+    "jawaban": "Terbukti: u.v = 0 dan titik tengah kedua diagonal berimpit"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-007",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "vektor titik tengah diagonal jajargenjang",
+   "alasan_level": "tiga langkah: BD = AD - AB, AF = AB + 1/2 BD, sederhanakan",
+   "stimulus": null,
+   "pertanyaan": "Pada jajargenjang $ABCD$, titik $F$ adalah titik tengah diagonal $BD$. Vektor $\\overrightarrow{AF}$ dinyatakan dalam $\\overrightarrow{AB}$ dan $\\overrightarrow{AD}$ adalah ....",
+   "jawaban_benar": "$\\frac{1}{2}(\\overrightarrow{AB} + \\overrightarrow{AD})$",
+   "alasan_benar": "$\\overrightarrow{AF} = \\overrightarrow{AB} + \\frac{1}{2}\\overrightarrow{BD} = \\overrightarrow{AB} + \\frac{1}{2}(\\overrightarrow{AD} - \\overrightarrow{AB}) = \\frac{1}{2}(\\overrightarrow{AB} + \\overrightarrow{AD})$",
+   "distraktor": [
+    {
+     "teks": "$\\frac{1}{2}(\\overrightarrow{AB} - \\overrightarrow{AD})$",
+     "alasan": "memakai $\\overrightarrow{DB}$ atau salah tanda sehingga bukan vektor ke titik tengah"
+    },
+    {
+     "teks": "$\\overrightarrow{AB} + \\frac{1}{2}\\overrightarrow{AD}$",
+     "alasan": "mengira $\\overrightarrow{BF} = \\frac{1}{2}\\overrightarrow{AD}$ padahal $\\overrightarrow{BF} = \\frac{1}{2}\\overrightarrow{BD}$"
+    },
+    {
+     "teks": "$\\overrightarrow{AB} + \\overrightarrow{AD}$",
+     "alasan": "lupa faktor $\\frac{1}{2}$, hasilnya $\\overrightarrow{AC}$"
+    }
+   ],
+   "pembahasan": "$\\overrightarrow{BD}=\\overrightarrow{AD}-\\overrightarrow{AB}$, sehingga $\\overrightarrow{AF}=\\frac{1}{2}(\\overrightarrow{AB}+\\overrightarrow{AD})$ (sama dengan $\\overrightarrow{AE}$, titik tengah $AC$).",
+   "catatan": null,
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 207,
+    "bagian": "Contoh 4.17",
+    "nomor": "-",
+    "teks": "Diberikan sebuah jajargenjang. Buktikan bahwa kedua diagonal dari jajargenjang tersebut saling membagi dua sama panjang.",
+    "jawaban": "Terbukti: AE = AF sehingga E = F"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-008",
+   "tipe_generate": "variasi",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "sifat diagonal belah ketupat dari vektor sisi",
+   "alasan_level": "tiga langkah: AC = AB + AD, BD = AD - AB, hasil kali titik dan bandingkan panjang",
+   "stimulus": null,
+   "pertanyaan": "Pada segiempat $ABCD$ yang merupakan belah ketupat diketahui $\\overrightarrow{AB} = \\langle 5, 12\\rangle$ dan $\\overrightarrow{AD} = \\langle 12, 5\\rangle$. Pernyataan yang benar tentang diagonalnya adalah ....",
+   "jawaban_benar": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BD} = 0$ dan $AC$ lebih panjang daripada $BD$",
+   "alasan_benar": "$\\overrightarrow{AC}=\\langle 17, 17\\rangle$, $\\overrightarrow{BD}=\\langle 7, -7\\rangle$; hasil kali titik $119-119=0$; $AC=17\\sqrt{2} > BD=7\\sqrt{2}$",
+   "distraktor": [
+    {
+     "teks": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BD} = 0$ dan $AC = BD$",
+     "alasan": "mengira diagonal belah ketupat sama panjang (sifat persegi)"
+    },
+    {
+     "teks": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BD} = 238$ sehingga tidak tegak lurus",
+     "alasan": "memakai $\\overrightarrow{BD} = \\langle 7, 7\\rangle$ (salah tanda saat mengurangkan)"
+    },
+    {
+     "teks": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BD} = 0$ dan $AC$ lebih pendek daripada $BD$",
+     "alasan": "membandingkan panjang diagonal secara terbalik"
+    }
+   ],
+   "pembahasan": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BD}=0$ menunjukkan diagonal belah ketupat tegak lurus; panjangnya $17\\sqrt{2}$ dan $7\\sqrt{2}$.",
+   "catatan": null,
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 210,
+    "bagian": "Latihan C",
+    "nomor": "2",
+    "teks": "Kedua diagonal layang-layang saling membagi dua sama panjang.",
+    "jawaban": "Salah"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-009",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "ujung ruas dari perbandingan",
+   "alasan_level": "tiga langkah: PR = 5/3 PQ dari perbandingan, hitung PR, tambahkan ke P",
+   "stimulus": null,
+   "pertanyaan": "Titik $Q(7, 5)$ terletak pada ruas $PR$ dengan $P(1, 2)$ dan $PQ : QR = 3 : 2$. Koordinat titik $R$ adalah ....",
+   "jawaban_benar": "$(11, 7)$",
+   "alasan_benar": "$PQ : PR = 3 : 5$ sehingga $\\overrightarrow{PR} = \\frac{5}{3}\\langle 6, 3\\rangle = \\langle 10, 5\\rangle$ dan $R = (1+10,\\ 2+5)$",
+   "distraktor": [
+    {
+     "teks": "$(13, 8)$",
+     "alasan": "mengira $Q$ titik tengah $PR$ ($R = 2Q - P$)"
+    },
+    {
+     "teks": "$(9, 6)$",
+     "alasan": "mengambil $\\overrightarrow{QR} = \\frac{1}{3}\\overrightarrow{PQ}$ dari satu bagian saja"
+    },
+    {
+     "teks": "$(17, 10)$",
+     "alasan": "menambahkan $\\overrightarrow{PR}$ utuh ke titik $Q$ bukan ke titik $P$"
+    }
+   ],
+   "pembahasan": "Dari $PQ:QR=3:2$, $\\overrightarrow{QR}=\\frac{2}{3}\\overrightarrow{PQ}=\\langle 4,2\\rangle$, jadi $R=(7+4,\\ 5+2)=(11,7)$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 209,
+    "kutipan": "Titik Q berada di sisi PR sedemikian sehingga PQ : QR = m : n."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-010",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "vektor titik berat dari garis berat",
+   "alasan_level": "tiga langkah: PS = 1/2(PQ + PR), lalu PG = 2/3 PS",
+   "stimulus": null,
+   "pertanyaan": "Pada segitiga $PQR$ diketahui $\\overrightarrow{PQ} = \\langle 6, 3\\rangle$ dan $\\overrightarrow{PR} = \\langle 3, 9\\rangle$. Titik $S$ adalah titik tengah $QR$ dan titik berat $G$ terletak pada $PS$ dengan $PG : GS = 2 : 1$. Vektor $\\overrightarrow{PG}$ adalah ....",
+   "jawaban_benar": "$\\langle 3, 4\\rangle$",
+   "alasan_benar": "$\\overrightarrow{PS}=\\frac{1}{2}(\\overrightarrow{PQ}+\\overrightarrow{PR})=\\langle \\frac{9}{2}, 6\\rangle$ dan $\\overrightarrow{PG}=\\frac{2}{3}\\overrightarrow{PS}=\\langle 3, 4\\rangle$",
+   "distraktor": [
+    {
+     "teks": "$\\langle \\frac{9}{2}, 6\\rangle$",
+     "alasan": "berhenti di $\\overrightarrow{PS}$ (lupa mengambil $\\frac{2}{3}$-nya)"
+    },
+    {
+     "teks": "$\\langle \\frac{3}{2}, 2\\rangle$",
+     "alasan": "memakai $\\frac{1}{3}\\overrightarrow{PS}$, perbandingan tertukar menjadi $1 : 2$"
+    },
+    {
+     "teks": "$\\langle 9, 12\\rangle$",
+     "alasan": "memakai $2\\overrightarrow{PS}$ bukan $\\frac{2}{3}\\overrightarrow{PS}$"
+    }
+   ],
+   "pembahasan": "$\\overrightarrow{PS}=\\langle \\frac{9}{2}, 6\\rangle$; $PG:PS = 2:3$ sehingga $\\overrightarrow{PG}=\\langle 3, 4\\rangle$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 207,
+    "kutipan": "Karena S adalah titik tengah dari QR, kita dapat menuliskan persamaan berikut."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-011",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "parameter agar tiga titik segaris",
+   "alasan_level": "tiga langkah: vektor AB dan AC, syarat sejajar (kelipatan skalar), selesaikan persamaan",
+   "stimulus": null,
+   "pertanyaan": "Titik $A(-1, 2)$, $B(3, -4)$, dan $C(k, 8)$ terletak pada satu garis lurus. Nilai $k$ adalah ....",
+   "jawaban_benar": "$-5$",
+   "alasan_benar": "$\\overrightarrow{AB}=\\langle 4, -6\\rangle$, $\\overrightarrow{AC}=\\langle k+1, 6\\rangle = t\\overrightarrow{AB}$ dengan $t=-1$, sehingga $k+1=-4$",
+   "distraktor": [
+    {
+     "teks": "$3$",
+     "alasan": "salah tanda faktor skalar ($t = 1$ bukan $t = -1$)"
+    },
+    {
+     "teks": "$-4$",
+     "alasan": "lupa menambahkan 1 karena $\\overrightarrow{AC}$ komponen pertama $k + 1$"
+    },
+    {
+     "teks": "$8$",
+     "alasan": "memakai syarat hasil kali titik nol (tegak lurus), bukan sejajar"
+    }
+   ],
+   "pembahasan": "Segaris berarti $\\overrightarrow{AC}$ kelipatan $\\overrightarrow{AB}$: $6 = -6t \\Rightarrow t=-1 \\Rightarrow k+1=-4 \\Rightarrow k=-5$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 210,
+    "kutipan": "d. Jelaskan mengapa KL dan BC sejajar."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-012",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "panjang ruas penghubung titik tengah dari koordinat",
+   "alasan_level": "tiga langkah: koordinat K dan L, vektor KL, panjangnya",
+   "stimulus": null,
+   "pertanyaan": "Pada segitiga $ABC$ dengan $A(2, 6)$, $B(-2, 0)$, dan $C(8, 2)$, titik $K$ dan $L$ berturut-turut titik tengah $AB$ dan $AC$. Panjang $KL$ adalah ....",
+   "jawaban_benar": "$\\sqrt{26}$",
+   "alasan_benar": "$K=(0,3)$, $L=(5,4)$, $\\overrightarrow{KL}=\\langle 5, 1\\rangle$ sehingga $KL=\\sqrt{25+1}$",
+   "distraktor": [
+    {
+     "teks": "$2\\sqrt{26}$",
+     "alasan": "menghitung panjang $BC$ yang dua kali $KL$"
+    },
+    {
+     "teks": "$26$",
+     "alasan": "lupa menarik akar kuadrat"
+    },
+    {
+     "teks": "$\\sqrt{6}$",
+     "alasan": "menjumlahkan komponen $5 + 1$ sebelum diakarkan"
+    }
+   ],
+   "pembahasan": "$KL=\\sqrt{26}$ dan $BC = 2\\sqrt{26}$, sesuai $\\overrightarrow{KL}=\\frac{1}{2}\\overrightarrow{BC}$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 210,
+    "kutipan": "titik K adalah titik tengah dari AB dan titik L adalah titik tengah dari AC"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-013",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "hasil kali titik garis berat dan sisi",
+   "alasan_level": "tiga langkah: PS = 1/2(PQ + PR), QR = PR - PQ, hasil kali titik menjadi selisih kuadrat panjang",
+   "stimulus": null,
+   "pertanyaan": "Pada segitiga $PQR$ diketahui $|\\overrightarrow{PQ}| = 7$ dan $|\\overrightarrow{PR}| = 11$. Titik $S$ adalah titik tengah $QR$. Nilai $\\overrightarrow{PS}\\cdot\\overrightarrow{QR}$ adalah ....",
+   "jawaban_benar": "$36$",
+   "alasan_benar": "$\\overrightarrow{PS}\\cdot\\overrightarrow{QR}=\\frac{1}{2}(\\overrightarrow{PQ}+\\overrightarrow{PR})\\cdot(\\overrightarrow{PR}-\\overrightarrow{PQ})=\\frac{1}{2}(|\\overrightarrow{PR}|^2-|\\overrightarrow{PQ}|^2)=\\frac{1}{2}(121-49)$",
+   "distraktor": [
+    {
+     "teks": "$72$",
+     "alasan": "lupa faktor $\\frac{1}{2}$ pada $\\overrightarrow{PS}$"
+    },
+    {
+     "teks": "$-36$",
+     "alasan": "memakai $\\overrightarrow{PQ}-\\overrightarrow{PR}$ sehingga arah $\\overrightarrow{QR}$ terbalik"
+    },
+    {
+     "teks": "$2$",
+     "alasan": "menghitung $\\frac{1}{2}(11-7)$, selisih panjang bukan selisih kuadrat"
+    }
+   ],
+   "pembahasan": "Hasil kali titik $(\\mathbf{a}+\\mathbf{b})\\cdot(\\mathbf{b}-\\mathbf{a}) = |\\mathbf{b}|^2-|\\mathbf{a}|^2$, dikali $\\frac{1}{2}$: $\\frac{1}{2}(121-49)=36$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 206,
+    "kutipan": "S adalah titik tengah dari QR"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-014",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "jenis segiempat dari diagonalnya",
+   "alasan_level": "empat langkah: vektor kedua diagonal, titik tengah sama, hasil kali titik nol, panjang diagonal berbeda",
+   "stimulus": null,
+   "pertanyaan": "Segiempat $ABCD$ memiliki titik sudut $A(-1, 0)$, $B(4, 1)$, $C(5, 6)$, dan $D(0, 5)$. Segiempat $ABCD$ adalah ....",
+   "jawaban_benar": "belah ketupat yang bukan persegi",
+   "alasan_benar": "titik tengah $AC$ dan $BD$ sama $(2, 3)$ (jajargenjang), $\\overrightarrow{AC}\\cdot\\overrightarrow{BD}=\\langle 6,6\\rangle\\cdot\\langle -4,4\\rangle=0$ (tegak lurus), panjang diagonal $6\\sqrt{2}\\ne 4\\sqrt{2}$",
+   "distraktor": [
+    {
+     "teks": "persegi",
+     "alasan": "mengira diagonal tegak lurus dan saling membagi dua sudah cukup menjadi persegi, padahal panjang diagonal berbeda"
+    },
+    {
+     "teks": "persegi panjang yang bukan persegi",
+     "alasan": "mengira diagonal saling membagi dua berarti sudut siku-siku di sisi; diagonal persegi panjang harus sama panjang"
+    },
+    {
+     "teks": "layang-layang yang bukan belah ketupat",
+     "alasan": "hanya memeriksa diagonal tegak lurus tanpa memeriksa bahwa kedua diagonal saling membagi dua"
+    }
+   ],
+   "pembahasan": "Diagonal saling membagi dua (jajargenjang) dan tegak lurus, jadi belah ketupat. Panjang diagonal $6\\sqrt{2}$ dan $4\\sqrt{2}$ berbeda, jadi bukan persegi.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 207,
+    "kutipan": "Kita dapat membuktikan bahwa diagonal AC dan diagonal BD saling membagi dua sama panjang apabila AE = AF"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-015",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "panjang AC dari AC = AB + BC dan hasil kali titik",
+   "alasan_level": "tiga langkah: AC = AB + BC, kuadratkan sebagai hasil kali titik, substitusi nilai",
+   "stimulus": null,
+   "pertanyaan": "Pada segitiga $ABC$ diketahui $|\\overrightarrow{AB}| = 5$, $|\\overrightarrow{BC}| = 7$, dan $\\overrightarrow{AB}\\cdot\\overrightarrow{BC} = -10$. Panjang $AC$ adalah ....",
+   "jawaban_benar": "$3\\sqrt{6}$",
+   "alasan_benar": "$\\overrightarrow{AC}=\\overrightarrow{AB}+\\overrightarrow{BC}$, sehingga $|\\overrightarrow{AC}|^2 = 25 + 49 + 2(-10) = 54$",
+   "distraktor": [
+    {
+     "teks": "$\\sqrt{74}$",
+     "alasan": "memakai $|AC|^2 = |AB|^2 + |BC|^2$ (rumus Pythagoras) padahal tidak siku-siku"
+    },
+    {
+     "teks": "$8$",
+     "alasan": "lupa faktor 2 pada suku $2\\,\\overrightarrow{AB}\\cdot\\overrightarrow{BC}$ sehingga $74 - 10 = 64$"
+    },
+    {
+     "teks": "$\\sqrt{94}$",
+     "alasan": "salah tanda suku hasil kali titik ($+20$)"
+    }
+   ],
+   "pembahasan": "$|\\overrightarrow{AC}|^2=(\\overrightarrow{AB}+\\overrightarrow{BC})\\cdot(\\overrightarrow{AB}+\\overrightarrow{BC})=25+2(-10)+49=54$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 209,
+    "kutipan": "Nyatakan AC dalam AB dan BC ."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-016",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "sudut keliling pada diameter dengan hasil kali titik",
+   "alasan_level": "tiga langkah: vektor AC dan BC, hasil kali titik, simpulkan besar sudut ACB",
+   "stimulus": null,
+   "pertanyaan": "Pada lingkaran berpusat di $O(0, 0)$ berjari-jari 13, $AB$ adalah diameter dengan $A(-13, 0)$ dan $B(13, 0)$, serta titik $C(5, 12)$ terletak pada lingkaran. Pernyataan yang benar adalah ....",
+   "jawaban_benar": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BC} = 0$ sehingga $\\angle ACB = 90^\\circ$",
+   "alasan_benar": "$\\overrightarrow{AC}=\\langle 18, 12\\rangle$, $\\overrightarrow{BC}=\\langle -8, 12\\rangle$, hasil kali titik $-144+144=0$",
+   "distraktor": [
+    {
+     "teks": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BC} = 288$ sehingga $\\angle ACB$ lancip",
+     "alasan": "salah tanda saat mengalikan $12\\cdot 12$ dan $18\\cdot(-8)$ (menjumlahkan 144 + 144)"
+    },
+    {
+     "teks": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BC} = -288$ sehingga $\\angle ACB$ tumpul",
+     "alasan": "menghitung $-144 - 144$ karena salah tanda komponen"
+    },
+    {
+     "teks": "$\\overrightarrow{AC}\\cdot\\overrightarrow{BC} = 0$ sehingga $AC$ sejajar $BC$",
+     "alasan": "mengira hasil kali titik nol berarti sejajar (itu tegak lurus)"
+    }
+   ],
+   "pembahasan": "Hasil kali titik $-144+144=0$ menunjukkan $AC \\perp BC$, sesuai sudut keliling pada diameter.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 210,
+    "kutipan": "Buktikan bahwa sudut ACB siku-siku."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-c-medium-bt01-017",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "vektor penghubung titik tengah sisi segiempat",
+   "alasan_level": "tiga langkah: LM = M - L dengan titik tengah, kaitkan dengan diagonal BD, hitung setengahnya",
+   "stimulus": null,
+   "pertanyaan": "Pada segiempat sembarang $ABCD$, titik $K$, $L$, $M$, dan $N$ berturut-turut titik tengah $AB$, $BC$, $CD$, dan $DA$. Jika $\\overrightarrow{AC} = \\langle 8, -6\\rangle$ dan $\\overrightarrow{BD} = \\langle -10, 4\\rangle$, maka $\\overrightarrow{LM}$ adalah ....",
+   "jawaban_benar": "$\\langle -5, 2\\rangle$",
+   "alasan_benar": "$\\overrightarrow{LM} = \\overrightarrow{M} - \\overrightarrow{L} = \\frac{1}{2}(\\overrightarrow{D} - \\overrightarrow{B}) = \\frac{1}{2}\\overrightarrow{BD}$",
+   "distraktor": [
+    {
+     "teks": "$\\langle 4, -3\\rangle$",
+     "alasan": "memakai $\\frac{1}{2}\\overrightarrow{AC}$ (diagonal yang salah)"
+    },
+    {
+     "teks": "$\\langle 5, -2\\rangle$",
+     "alasan": "arah terbalik, yaitu $\\frac{1}{2}\\overrightarrow{DB}$"
+    },
+    {
+     "teks": "$\\langle -10, 4\\rangle$",
+     "alasan": "lupa faktor $\\frac{1}{2}$ sehingga memperoleh $\\overrightarrow{BD}$"
+    }
+   ],
+   "pembahasan": "$L=\\frac{B+C}{2}$, $M=\\frac{C+D}{2}$, sehingga $\\overrightarrow{LM}=\\frac{D-B}{2}=\\frac{1}{2}\\langle -10, 4\\rangle=\\langle -5, 2\\rangle$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 206,
+    "kutipan": "Dua contoh berikut memberikan gambaran pembuktian dengan pendekatan vektor pada segitiga dan jajargenjang."
+   }
+  }
+ ]
+}
