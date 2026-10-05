@@ -1,0 +1,474 @@
+{
+ "book": "kelas11_tl",
+ "bab_no": 5,
+ "subbab": "B",
+ "level": "hard",
+ "batch": 1,
+ "skill_versi": "v1",
+ "kapasitas_kurang": true,
+ "alasan_kapasitas": "Subbab B hanya memuat matriks transformasi tunggal (pencerminan, translasi, rotasi, dilatasi); komposisi transformasi ada di subbab C. Penalaran tingkat hard yang layak tanpa soal kembar hanya cukup untuk 14 soal.",
+ "soal": [
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-001",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 238,
+    "kutipan": "Setelah mempelajari beberapa transformasi geometri dalam bidang Kartesius pada subbab sebelumnya dan pada fase D, kali ini kita akan mempelajari kaitan matriks dengan transformasi."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "evaluasi pernyataan determinan",
+   "alasan_level": "mengevaluasi empat klaim tentang determinan matriks transformasi dengan menghitung determinan tiap matriks",
+   "stimulus": null,
+   "pertanyaan": "Perhatikan matriks-matriks transformasi pada bidang Kartesius. Pernyataan yang benar tentang determinan matriks transformasi adalah ....",
+   "jawaban_benar": "Determinan matriks pencerminan terhadap garis $y = x$ adalah $-1$, sedangkan determinan matriks rotasi sebesar $\\theta$ terhadap titik asal selalu $1$.",
+   "alasan_benar": "matriks $\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$ berdeterminan $0-1=-1$; matriks rotasi berdeterminan $\\cos^2\\theta+\\sin^2\\theta=1$ untuk setiap $\\theta$",
+   "distraktor": [
+    {
+     "teks": "Determinan matriks dilatasi berpusat di $O$ dengan faktor skala $k$ adalah $k$.",
+     "alasan": "determinan $\\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}$ adalah $k^2$, bukan $k$"
+    },
+    {
+     "teks": "Determinan matriks rotasi sebesar $\\theta$ terhadap titik asal adalah $\\cos\\theta$.",
+     "alasan": "hanya mengambil elemen diagonal; determinan $\\cos^2\\theta+\\sin^2\\theta=1$"
+    },
+    {
+     "teks": "Determinan matriks pencerminan terhadap sumbu-$x$ adalah $1$ karena pencerminan tidak mengubah ukuran bangun.",
+     "alasan": "determinan matriks $\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ adalah $-1$; ukuran tetap tetapi tandanya negatif"
+    }
+   ],
+   "pembahasan": "Hitung: $\\det\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}=-1$; $\\det\\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}=1$; $\\det\\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}=k^2$; $\\det\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}=-1$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-002",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 240,
+    "kutipan": "Berdasarkan eksplorasi tersebut, kita menemukan tiga sifat berikut ini."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "transformasi yang mengubah jarak",
+   "alasan_level": "mengevaluasi empat matriks: tiga mempertahankan jarak (rotasi/pencerminan berelemen pecahan) dan satu tidak, perlu uji $M^TM=I$ atau determinan dan panjang vektor",
+   "stimulus": null,
+   "pertanyaan": "Transformasi kaku adalah transformasi yang mempertahankan jarak antara setiap dua titik. Matriks berikut mewakili transformasi pada bidang Kartesius dengan titik pusat atau garis cermin melalui titik asal. Matriks yang mewakili transformasi yang BUKAN transformasi kaku adalah ....",
+   "jawaban_benar": "$\\begin{pmatrix} -\\frac{1}{2} & 0 \\\\ 0 & -\\frac{1}{2} \\end{pmatrix}$",
+   "alasan_benar": "matriks ini adalah dilatasi berfaktor $-\\frac{1}{2}$: vektor $(2,0)$ dipetakan ke $(-1,0)$ sehingga panjangnya berubah menjadi setengah",
+   "distraktor": [
+    {
+     "teks": "$\\begin{pmatrix} \\frac{3}{5} & -\\frac{4}{5} \\\\ \\frac{4}{5} & \\frac{3}{5} \\end{pmatrix}$",
+     "alasan": "rotasi dengan $\\cos\\theta=\\frac{3}{5}$, $\\sin\\theta=\\frac{4}{5}$; panjang vektor tetap, jadi kaku"
+    },
+    {
+     "teks": "$\\begin{pmatrix} \\frac{3}{5} & \\frac{4}{5} \\\\ \\frac{4}{5} & -\\frac{3}{5} \\end{pmatrix}$",
+     "alasan": "pencerminan terhadap suatu garis melalui titik asal; $M^TM=I$ sehingga jarak tetap"
+    },
+    {
+     "teks": "$\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$",
+     "alasan": "pencerminan terhadap garis $y=-x$; jarak tetap"
+    }
+   ],
+   "pembahasan": "Uji $M^TM=I$ (kolom-kolomnya saling tegak lurus dan panjang 1): ketiga opsi lain memenuhi, sedangkan dilatasi berfaktor $-\\frac{1}{2}$ mengalikan semua jarak dengan $\\frac{1}{2}$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-003",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 244,
+    "kutipan": "Pada bagian ini, kita akan belajar untuk menemukan matriks yang terkait dengan rotasi terhadap titik pusat."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "syarat parameter matriks rotasi",
+   "alasan_level": "menentukan semua nilai parameter agar matriks berbentuk matriks rotasi, dengan syarat $\\cos^2\\theta+\\sin^2\\theta=1$ dan kemungkinan dua tanda",
+   "stimulus": null,
+   "pertanyaan": "Matriks $\\begin{pmatrix} k & -\\frac{1}{2} \\\\ \\frac{1}{2} & k \\end{pmatrix}$ dengan $k$ bilangan real mewakili rotasi terhadap titik asal. Himpunan semua nilai $k$ yang mungkin adalah ....",
+   "jawaban_benar": "$\\left\\{-\\frac{\\sqrt{3}}{2}, \\frac{\\sqrt{3}}{2}\\right\\}$",
+   "alasan_benar": "bentuk rotasi memerlukan $\\cos\\theta=k$ dan $\\sin\\theta=\\frac{1}{2}$, sehingga $k^2+\\frac{1}{4}=1$ dan $k=\\pm\\frac{\\sqrt{3}}{2}$ ($\\theta=30^\\circ$ atau $150^\\circ$)",
+   "distraktor": [
+    {
+     "teks": "$\\left\\{\\frac{\\sqrt{3}}{2}\\right\\}$",
+     "alasan": "hanya mengambil akar positif; lupa $\\cos\\theta$ boleh negatif ($\\theta=150^\\circ$)"
+    },
+    {
+     "teks": "$\\left\\{-\\frac{\\sqrt{3}}{2}\\right\\}$",
+     "alasan": "hanya mengambil akar negatif; $\\theta=30^\\circ$ juga memenuhi"
+    },
+    {
+     "teks": "$\\left\\{-\\frac{1}{2}, \\frac{1}{2}\\right\\}$",
+     "alasan": "menyamakan $k$ dengan $\\sin\\theta$ sehingga $k^2=\\frac{1}{4}$, bukan $1-\\frac{1}{4}$"
+    }
+   ],
+   "pembahasan": "Matriks rotasi berbentuk $\\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$. Maka $\\sin\\theta=\\frac{1}{2}$ dan $\\cos\\theta=k$, sehingga $k^2=1-\\frac{1}{4}=\\frac{3}{4}$, yaitu $k=\\pm\\frac{\\sqrt{3}}{2}$. Keduanya sah karena $\\sin\\theta=\\frac{1}{2}$ dipenuhi oleh $30^\\circ$ dan $150^\\circ$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-004",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 238,
+    "kutipan": "Notasi kedua inilah yang akan digunakan dalam bab ini."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "kesalahan pembentukan matriks",
+   "alasan_level": "memeriksa langkah siswa dan menentukan letak kesalahan (matriks tertranspos) dengan menguji perkalian matriks terhadap aturan pemetaan",
+   "stimulus": null,
+   "pertanyaan": "Suatu transformasi memetakan setiap titik $(x, y)$ ke titik $(2x - y,\\ x + 3y)$. Seorang siswa menyatakan matriksnya adalah $\\begin{pmatrix} 2 & 1 \\\\ -1 & 3 \\end{pmatrix}$. Kesalahan yang dilakukan siswa tersebut adalah ....",
+   "jawaban_benar": "Koefisien $x$ dan $y$ dari tiap koordinat peta ditulis per kolom, padahal seharusnya per baris: baris pertama untuk absis peta dan baris kedua untuk ordinat peta.",
+   "alasan_benar": "yang benar $\\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\end{pmatrix}$; matriks siswa adalah transposnya sehingga memetakan $(x,y)$ ke $(2x+y,\\ -x+3y)$",
+   "distraktor": [
+    {
+     "teks": "Elemen $-1$ seharusnya $+1$ karena matriks transformasi tidak boleh memuat elemen negatif.",
+     "alasan": "matriks transformasi boleh memuat elemen negatif, misalnya matriks pencerminan"
+    },
+    {
+     "teks": "Elemen diagonal utama seharusnya ditukar menjadi $3$ dan $2$.",
+     "alasan": "diagonal utama $2$ dan $3$ sudah benar (koefisien $x$ pada absis dan koefisien $y$ pada ordinat)"
+    },
+    {
+     "teks": "Matriks seharusnya memuat kolom tambahan untuk suku konstan sehingga berukuran $2 \\times 3$.",
+     "alasan": "aturan pemetaan tidak memuat suku konstan, matriks $2 \\times 2$ sudah cukup"
+    }
+   ],
+   "pembahasan": "Perkalian $\\begin{pmatrix} p & q \\\\ r & s \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix}=\\begin{pmatrix} px+qy \\\\ rx+sy \\end{pmatrix}$, sehingga $p=2$, $q=-1$, $r=1$, $s=3$. Matriks siswa menukar baris dengan kolom.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-005",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 245,
+    "kutipan": "Pada bagian ini, kita akan mencari matriks yang terkait dengan transformasi dilatasi."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "kesalahan substitusi prapeta",
+   "alasan_level": "menelusuri langkah siswa yang salah arah substitusi (peta vs prapeta) dan memastikan penyebabnya",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa mencari peta garis $x + 2y - 6 = 0$ oleh dilatasi berpusat di $O$ dengan faktor skala $3$. Ia menulis: \"Karena $(x', y') = (3x, 3y)$, substitusi $x = 3x'$ dan $y = 3y'$ ke persamaan garis, diperoleh $3x' + 6y' - 6 = 0$, sehingga petanya $x + 2y - 2 = 0$.\" Kesalahan siswa tersebut terletak pada ....",
+   "jawaban_benar": "penggunaan $x = 3x'$ dan $y = 3y'$; seharusnya $x = \\frac{x'}{3}$ dan $y = \\frac{y'}{3}$ karena $x'=3x$",
+   "alasan_benar": "dari $x'=3x$ diperoleh $x=\\frac{x'}{3}$; substitusi benar menghasilkan $\\frac{x'}{3}+\\frac{2y'}{3}-6=0$, yaitu $x'+2y'-18=0$",
+   "distraktor": [
+    {
+     "teks": "langkah menyederhanakan $3x' + 6y' - 6 = 0$ menjadi $x' + 2y' - 2 = 0$, sebab persamaan garis tidak boleh dibagi dengan bilangan yang sama",
+     "alasan": "membagi seluruh persamaan dengan 3 sah; kesalahan ada pada arah substitusi sebelumnya"
+    },
+    {
+     "teks": "anggapan bahwa dilatasi mengubah garis, padahal dilatasi berpusat di $O$ membuat petanya tetap $x + 2y - 6 = 0$",
+     "alasan": "dilatasi faktor $3$ menggeser garis yang tidak melalui $O$; petanya $x+2y-18=0$"
+    },
+    {
+     "teks": "substitusi yang seharusnya hanya dilakukan pada peubah $y$, sedangkan $x$ dibiarkan",
+     "alasan": "kedua koordinat sama-sama dikali $3$ oleh dilatasi, jadi keduanya harus disubstitusi"
+    }
+   ],
+   "pembahasan": "Titik peta $(x',y')=(3x,3y)$ berarti prapeta $(x,y)=(\\frac{x'}{3},\\frac{y'}{3})$. Substitusi ke $x+2y-6=0$ memberi $x'+2y'-18=0$. Siswa memakai arah sebaliknya.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-006",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 244,
+    "kutipan": "Pada subbab sebelumnya, kamu telah belajar tentang rotasi yang dilakukan pada bidang Kartesius."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "kesalahan nilai trigonometri sudut negatif",
+   "alasan_level": "mengevaluasi hasil siswa: matriks yang ditulis ternyata rotasi $+60^\\circ$, penyebabnya tanda $\\sin$ sudut negatif",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menuliskan matriks rotasi sebesar $-60^\\circ$ terhadap titik asal sebagai $\\begin{pmatrix} \\frac{1}{2} & -\\frac{\\sqrt{3}}{2} \\\\ \\frac{\\sqrt{3}}{2} & \\frac{1}{2} \\end{pmatrix}$. Pernyataan yang benar tentang hasil siswa tersebut adalah ....",
+   "jawaban_benar": "Matriks itu salah karena memakai $\\sin 60^\\circ$ untuk $\\sin(-60^\\circ)$; matriks tersebut sebenarnya mewakili rotasi $60^\\circ$.",
+   "alasan_benar": "$\\sin(-60^\\circ)=-\\frac{\\sqrt{3}}{2}$ sehingga matriks yang benar $\\begin{pmatrix} \\frac{1}{2} & \\frac{\\sqrt{3}}{2} \\\\ -\\frac{\\sqrt{3}}{2} & \\frac{1}{2} \\end{pmatrix}$; matriks siswa adalah matriks rotasi $60^\\circ$",
+   "distraktor": [
+    {
+     "teks": "Matriks itu benar karena rotasi $-60^\\circ$ dan $60^\\circ$ memiliki matriks yang sama.",
+     "alasan": "kedua sudut memberi $\\sin$ berbeda tanda sehingga matriksnya berbeda"
+    },
+    {
+     "teks": "Matriks itu salah karena $\\cos(-60^\\circ)=-\\frac{1}{2}$ sehingga diagonal utama harus negatif.",
+     "alasan": "$\\cos(-60^\\circ)=\\frac{1}{2}$ karena kosinus fungsi genap; diagonal sudah benar"
+    },
+    {
+     "teks": "Matriks itu salah karena rotasi $-60^\\circ$ memiliki matriks $\\begin{pmatrix} -\\frac{1}{2} & \\frac{\\sqrt{3}}{2} \\\\ -\\frac{\\sqrt{3}}{2} & -\\frac{1}{2} \\end{pmatrix}$.",
+     "alasan": "itu matriks rotasi $240^\\circ$ (diagonal salah tanda), bukan $-60^\\circ$"
+    }
+   ],
+   "pembahasan": "Rumus $\\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$ dengan $\\theta=-60^\\circ$: $\\cos\\theta=\\frac{1}{2}$ dan $\\sin\\theta=-\\frac{\\sqrt{3}}{2}$, memberi $\\begin{pmatrix} \\frac{1}{2} & \\frac{\\sqrt{3}}{2} \\\\ -\\frac{\\sqrt{3}}{2} & \\frac{1}{2} \\end{pmatrix}$. Matriks siswa sama dengan matriks rotasi $+60^\\circ$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-007",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 241,
+    "kutipan": "Untuk lebih memahami Sifat 5.5, perhatikan beberapa contoh berikut, kemudian selesaikan soal-soal pada Mari Mencoba!"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "contoh penyangkal",
+   "alasan_level": "mengevaluasi klaim dengan memilih contoh penyangkal: harus memeriksa tiap pasangan matriks dan titik (titik tetap dan bukan identitas)",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa berpendapat: \"Jika suatu matriks $2 \\times 2$ memetakan sebuah titik bukan titik asal ke dirinya sendiri, maka matriks itu pasti matriks identitas.\" Pasangan matriks dan titik berikut yang merupakan contoh penyangkal pendapat tersebut adalah ....",
+   "jawaban_benar": "matriks pencerminan terhadap garis $y = -x$ dan titik $(3, -3)$",
+   "alasan_benar": "pencerminan terhadap $y=-x$ memetakan $(x,y)$ ke $(-y,-x)$, sehingga $(3,-3)\\mapsto(3,-3)$ padahal matriksnya bukan identitas",
+   "distraktor": [
+    {
+     "teks": "matriks pencerminan terhadap garis $y = x$ dan titik $(3, -3)$",
+     "alasan": "titik dipetakan ke $(-3, 3)$, bukan ke dirinya sendiri sehingga bukan penyangkal"
+    },
+    {
+     "teks": "matriks rotasi $90^\\circ$ terhadap titik asal dan titik $(3, 3)$",
+     "alasan": "titik dipetakan ke $(-3, 3)$, bukan dirinya sendiri"
+    },
+    {
+     "teks": "matriks identitas dan titik $(3, -3)$",
+     "alasan": "titik tetap, tetapi matriksnya memang identitas sehingga mendukung pendapat, bukan menyangkal"
+    }
+   ],
+   "pembahasan": "Penyangkal harus memetakan titik ke dirinya sendiri dan bukan identitas. Hanya pencerminan terhadap $y=-x$ dengan titik $(3,-3)$ yang memenuhi: $(-y,-x)=(3,-3)$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-008",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 245,
+    "kutipan": "Pada subbab sebelumnya, kita telah belajar tentang dilatasi pada bidang Kartesius."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "luas dan orientasi bangun peta",
+   "alasan_level": "mengevaluasi klaim luas dan orientasi peta: faktor negatif mengubah luas $k^2$ kali dan tidak membalik urutan titik sudut (setara rotasi $180^\\circ$)",
+   "stimulus": null,
+   "pertanyaan": "Segitiga $ABC$ memiliki titik sudut $A(1, 1)$, $B(5, 1)$, dan $C(1, 4)$ sehingga urutan $A \\to B \\to C$ berlawanan arah jarum jam dan luasnya $6$ satuan luas. Segitiga ini dipetakan oleh matriks $\\begin{pmatrix} -2 & 0 \\\\ 0 & -2 \\end{pmatrix}$ menjadi segitiga $A'B'C'$. Pernyataan yang benar tentang segitiga $A'B'C'$ adalah ....",
+   "jawaban_benar": "luasnya $24$ satuan luas dan urutan $A' \\to B' \\to C'$ tetap berlawanan arah jarum jam",
+   "alasan_benar": "$A'(-2,-2)$, $B'(-10,-2)$, $C'(-2,-8)$; luas $=\\frac{1}{2}\\cdot 8\\cdot 6=24$ dan urutan tetap berlawanan arah jarum jam karena $\\det=4>0$",
+   "distraktor": [
+    {
+     "teks": "luasnya $24$ satuan luas dan urutan $A' \\to B' \\to C'$ searah jarum jam",
+     "alasan": "mengira faktor negatif membalik orientasi; determinan $4>0$ sehingga orientasi tetap"
+    },
+    {
+     "teks": "luasnya $12$ satuan luas dan urutan $A' \\to B' \\to C'$ tetap berlawanan arah jarum jam",
+     "alasan": "luas dikali $|k|=2$, padahal luas dikali $k^2=4$"
+    },
+    {
+     "teks": "luasnya $12$ satuan luas dan urutan $A' \\to B' \\to C'$ searah jarum jam",
+     "alasan": "salah pada luas ($k$ bukan $k^2$) dan salah pada orientasi"
+    }
+   ],
+   "pembahasan": "Dilatasi faktor $-2$ memetakan titik sudut ke $A'(-2,-2)$, $B'(-10,-2)$, $C'(-2,-8)$. Alasnya $8$, tingginya $6$, luas $24$. Matriksnya berdeterminan $4>0$, jadi orientasi tidak berbalik (setara dilatasi $2$ dan rotasi $180^\\circ$).",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-009",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 246,
+    "kutipan": "Berdasarkan eksplorasi tersebut, kita dapat menemukan sifat berikut."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "memilih matriks dari perubahan luas",
+   "alasan_level": "mengevaluasi empat matriks dengan syarat ganda: luas menjadi $9$ kali dan orientasi tidak berbalik (determinan tepat $9$)",
+   "stimulus": null,
+   "pertanyaan": "Sebuah segitiga berluas $5$ satuan luas dipetakan oleh suatu matriks menjadi segitiga berluas $45$ satuan luas, dan urutan titik sudutnya tidak berbalik arah. Matriks yang mungkin digunakan adalah ....",
+   "jawaban_benar": "$\\begin{pmatrix} 3 & 0 \\\\ 0 & 3 \\end{pmatrix}$",
+   "alasan_benar": "faktor luas $=|\\det|=9$ dan orientasi tetap berarti $\\det=9$; hanya $\\begin{pmatrix} 3 & 0 \\\\ 0 & 3 \\end{pmatrix}$ ($\\det=9$)",
+   "distraktor": [
+    {
+     "teks": "$\\begin{pmatrix} 9 & 0 \\\\ 0 & 9 \\end{pmatrix}$",
+     "alasan": "memakai faktor skala $9$ langsung dari $45\\div5$; luas menjadi $81$ kali ($\\det=81$)"
+    },
+    {
+     "teks": "$\\begin{pmatrix} 0 & 3 \\\\ 3 & 0 \\end{pmatrix}$",
+     "alasan": "luas menjadi $9$ kali tetapi $\\det=-9$ sehingga orientasi berbalik"
+    },
+    {
+     "teks": "$\\begin{pmatrix} 6 & 0 \\\\ 0 & 6 \\end{pmatrix}$",
+     "alasan": "determinan $36$, luas menjadi $36$ kali, bukan $9$ kali"
+    }
+   ],
+   "pembahasan": "Luas peta $=|\\det M|\\times$ luas semula, sehingga $|\\det M|=\\frac{45}{5}=9$. Orientasi tetap berarti $\\det M>0$, jadi $\\det M=9$. Hanya opsi pertama memenuhi.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-010",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 244,
+    "kutipan": "Pada bagian ini, kita akan mempelajari cara menemukan matriks yang berkaitan dengan operasi rotasi."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "perbandingan dua transformasi",
+   "alasan_level": "membandingkan peta titik sembarang oleh rotasi $90^\\circ$ dan pencerminan $y=-x$ secara umum (simbolik), lalu menilai empat pernyataan",
+   "stimulus": null,
+   "pertanyaan": "Untuk sembarang titik $(a, b)$ dengan $a \\neq 0$ dan $b \\neq 0$, misalkan $P$ adalah peta titik itu oleh rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal, dan $Q$ adalah peta titik itu oleh pencerminan terhadap garis $y = -x$. Pernyataan yang selalu benar tentang $P$ dan $Q$ adalah ....",
+   "jawaban_benar": "$P$ dan $Q$ memiliki absis yang sama, sedangkan ordinatnya berlawanan tanda",
+   "alasan_benar": "$P=(-b, a)$ dan $Q=(-b, -a)$: absis sama ($-b$), ordinat $a$ dan $-a$",
+   "distraktor": [
+    {
+     "teks": "$P$ dan $Q$ memiliki ordinat yang sama, sedangkan absisnya berlawanan tanda",
+     "alasan": "tertukar: absis yang sama ($-b$), bukan ordinat"
+    },
+    {
+     "teks": "$P$ dan $Q$ selalu berimpit",
+     "alasan": "berimpit hanya jika $a=0$, yang dikecualikan"
+    },
+    {
+     "teks": "$P$ dan $Q$ selalu berlawanan, yaitu $Q=-P$",
+     "alasan": "$-P=(b,-a)$, sedangkan $Q=(-b,-a)$; sama hanya jika $b=0$, yang dikecualikan"
+    }
+   ],
+   "pembahasan": "$\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}\\begin{pmatrix} a \\\\ b \\end{pmatrix}=\\begin{pmatrix} -b \\\\ a \\end{pmatrix}$ dan $\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}\\begin{pmatrix} a \\\\ b \\end{pmatrix}=\\begin{pmatrix} -b \\\\ -a \\end{pmatrix}$. Absisnya sama, ordinatnya berlawanan.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-011",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 240,
+    "kutipan": "Selanjutnya, ikuti kedua instruksi berikut untuk menemukan matriks yang diinginkan."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "merancang matriks dari dua pasang titik",
+   "alasan_level": "merancang matriks dengan menyusun empat persamaan dari dua pasang titik-peta lalu menguji empat kandidat (tiga hanya memenuhi sebagian)",
+   "stimulus": null,
+   "pertanyaan": "Suatu transformasi dengan matriks $2 \\times 2$ memetakan titik $(1, 2)$ ke $(7, -1)$ dan titik $(2, 1)$ ke $(8, 1)$. Matriks transformasi tersebut adalah ....",
+   "jawaban_benar": "$\\begin{pmatrix} 3 & 2 \\\\ 1 & -1 \\end{pmatrix}$",
+   "alasan_benar": "$\\begin{pmatrix} p & q \\\\ r & s \\end{pmatrix}$ memenuhi $p+2q=7$, $2p+q=8$ (memberi $p=3$, $q=2$) dan $r+2s=-1$, $2r+s=1$ (memberi $r=1$, $s=-1$)",
+   "distraktor": [
+    {
+     "teks": "$\\begin{pmatrix} 5 & 1 \\\\ 1 & -1 \\end{pmatrix}$",
+     "alasan": "memetakan $(1,2)$ ke $(7,-1)$ tetapi $(2,1)$ ke $(11,1)$; hanya satu pasangan diperiksa"
+    },
+    {
+     "teks": "$\\begin{pmatrix} 4 & 0 \\\\ 1 & -1 \\end{pmatrix}$",
+     "alasan": "memetakan $(2,1)$ ke $(8,1)$ tetapi $(1,2)$ ke $(4,-1)$; hanya satu pasangan diperiksa"
+    },
+    {
+     "teks": "$\\begin{pmatrix} 2 & 3 \\\\ -1 & 1 \\end{pmatrix}$",
+     "alasan": "memetakan $(1,2)$ ke $(8,1)$ dan $(2,1)$ ke $(7,-1)$; pasangan peta tertukar"
+    }
+   ],
+   "pembahasan": "Misalkan matriksnya $\\begin{pmatrix} p & q \\\\ r & s \\end{pmatrix}$. Dari $(1,2)\\mapsto(7,-1)$: $p+2q=7$, $r+2s=-1$. Dari $(2,1)\\mapsto(8,1)$: $2p+q=8$, $2r+s=1$. Penyelesaian: $p=3,q=2,r=1,s=-1$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-012",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 245,
+    "kutipan": "Kamu dapat mengikuti instruksi berikut untuk menemukan matriks terkait."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "merancang dilatasi dari dua pasang titik",
+   "alasan_level": "menentukan pusat dan faktor skala dilatasi dari dua pasang titik-peta lalu menguji kandidat yang masing-masing salah satu unsurnya keliru",
+   "stimulus": null,
+   "pertanyaan": "Dilatasi memetakan titik $A(3, 5)$ ke $A'(-3, -4)$ dan titik $B(0, 1)$ ke $B'(3, 4)$. Titik pusat dan faktor skala dilatasi tersebut berturut-turut adalah ....",
+   "jawaban_benar": "pusat $(1, 2)$ dan faktor skala $-2$",
+   "alasan_benar": "$\\overrightarrow{B'A'}=k\\overrightarrow{BA}$: $(-6,-8)=k(3,4)$ sehingga $k=-2$; lalu $A'=k(A-C)+C$ memberi pusat $C=(1,2)$",
+   "distraktor": [
+    {
+     "teks": "pusat $(1, 2)$ dan faktor skala $2$",
+     "alasan": "pusat benar tetapi tanda faktor skala keliru; $A$ dipetakan ke $(5, 8)$"
+    },
+    {
+     "teks": "pusat $(2, 1)$ dan faktor skala $-2$",
+     "alasan": "absis dan ordinat pusat tertukar; $A$ dipetakan ke $(0, -7)$"
+    },
+    {
+     "teks": "pusat $(-1, -2)$ dan faktor skala $-2$",
+     "alasan": "tanda koordinat pusat terbalik; $A$ dipetakan ke $(-9, -16)$"
+    }
+   ],
+   "pembahasan": "Karena $(A'-B')=k(A-B)$: $(-6,-8)=k(3,4)$ sehingga $k=-2$. Dari $A'=k(A-C)+C=kA+(1-k)C$: $(-3,-4)=(-6,-10)+3C$ sehingga $C=(1,2)$. Cek $B$: $-2(0-1)+1=3$ dan $-2(1-2)+2=4$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-013",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 243,
+    "kutipan": "Pada bagian ini, kita akan mempelajari cara menemukan operasi matriks yang berkaitan dengan operasi translasi."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "batas representasi dengan matriks 2x2",
+   "alasan_level": "mengevaluasi transformasi mana yang tidak dapat ditulis sebagai satu perkalian matriks $2 \\times 2$ dengan vektor posisi (titik asal tidak tetap)",
+   "stimulus": null,
+   "pertanyaan": "Perkalian satu matriks $2 \\times 2$ dengan vektor posisi selalu memetakan titik asal $(0, 0)$ ke dirinya sendiri. Transformasi berikut yang TIDAK dapat dinyatakan hanya dengan satu perkalian matriks $2 \\times 2$ dengan vektor posisi adalah ....",
+   "jawaban_benar": "dilatasi dengan titik pusat $(2, 3)$ dan faktor skala $2$",
+   "alasan_benar": "dilatasi berpusat $(2,3)$ memetakan $(0,0)$ ke $(-2,-3)$, bukan ke dirinya sendiri; perlu tambahan vektor translasi",
+   "distraktor": [
+    {
+     "teks": "dilatasi dengan titik pusat $O(0, 0)$ dan faktor skala $-5$",
+     "alasan": "bermatriks $\\begin{pmatrix} -5 & 0 \\\\ 0 & -5 \\end{pmatrix}$ dan titik asal tetap"
+    },
+    {
+     "teks": "pencerminan terhadap garis $y = -x$",
+     "alasan": "bermatriks $\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$ dan titik asal tetap"
+    },
+    {
+     "teks": "pencerminan terhadap sumbu-$y$",
+     "alasan": "bermatriks $\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$ dan titik asal tetap"
+    }
+   ],
+   "pembahasan": "Transformasi yang bisa ditulis sebagai $M\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ harus memetakan $(0,0)$ ke $(0,0)$. Dilatasi berpusat $(2,3)$ faktor $2$ memetakan $(x,y)$ ke $(2x-2,\\ 2y-3)$, sehingga $(0,0)\\mapsto(-2,-3)$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b05-b-hard-bt01-014",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 246,
+    "kutipan": "Berdasarkan eksplorasi tersebut, kita dapat menemukan sifat berikut."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "menilai dua pendapat",
+   "alasan_level": "menilai dua pendapat yang tampak bertentangan: matriks yang sama dapat mewakili rotasi $180^\\circ$ sekaligus dilatasi faktor $-1$",
+   "stimulus": null,
+   "pertanyaan": "Andi berpendapat bahwa $\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ adalah matriks rotasi $180^\\circ$ terhadap titik asal. Bimo berpendapat matriks yang sama adalah matriks dilatasi berpusat di $O$ dengan faktor skala $-1$. Penilaian yang benar adalah ....",
+   "jawaban_benar": "Keduanya benar, karena kedua transformasi memetakan $(x, y)$ ke $(-x, -y)$.",
+   "alasan_benar": "rotasi $180^\\circ$: $\\cos 180^\\circ=-1$, $\\sin 180^\\circ=0$ memberi matriks tersebut; dilatasi faktor $k=-1$ memberi $\\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}$ yang sama",
+   "distraktor": [
+    {
+     "teks": "Hanya Andi yang benar, karena faktor skala dilatasi tidak boleh negatif.",
+     "alasan": "Sifat dilatasi hanya mensyaratkan $k \\neq 0$, jadi $k=-1$ sah"
+    },
+    {
+     "teks": "Hanya Bimo yang benar, karena matriks rotasi $180^\\circ$ adalah matriks identitas.",
+     "alasan": "matriks identitas adalah rotasi $0^\\circ$ ($360^\\circ$), bukan $180^\\circ$"
+    },
+    {
+     "teks": "Keduanya salah, karena matriks tersebut mewakili pencerminan terhadap sumbu-$x$.",
+     "alasan": "pencerminan terhadap sumbu-$x$ bermatriks $\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$"
+    }
+   ],
+   "pembahasan": "Sifat 5.7 dengan $\\theta=180^\\circ$ memberi $\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Sifat 5.9 dengan $k=-1$ memberi matriks yang sama. Kedua pendapat benar.",
+   "catatan": null
+  }
+ ]
+}

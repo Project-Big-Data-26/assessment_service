@@ -1,0 +1,216 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab C hanya p150-p155 (identitas dasar, penjumlahan/pengurangan sudut, Latihan C). Bukti identitas bergambar tidak dapat dipakai, dan acuan teks habis di easy dan medium. Soal hard yang layak (evaluasi klaim, syarat domain, temukan kesalahan, rancang identitas) hanya cukup sekitar 6; sisanya menjadi soal kembar atau di luar subbab.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b03-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Kita akan menggunakan identitas trigonometri pada Sifat 3.4 untuk membuktikan identitas lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "memilih identitas di antara persamaan mirip",
+      "alasan_level": "mengevaluasi empat kesamaan, tiga di antaranya hanya persamaan, dengan memfaktorkan atau menguji nilai penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Di antara kesamaan berikut, yang berlaku untuk semua $t$ real (identitas) adalah ....",
+      "jawaban_benar": "$\\sin^4 t - \\cos^4 t = \\sin^2 t - \\cos^2 t$",
+      "alasan_benar": "$\\sin^4 t - \\cos^4 t = (\\sin^2 t - \\cos^2 t)(\\sin^2 t + \\cos^2 t) = \\sin^2 t - \\cos^2 t$",
+      "distraktor": [
+        {
+          "teks": "$\\sin^4 t + \\cos^4 t = 1$",
+          "alasan": "mengira pangkat empat berperilaku seperti pangkat dua; untuk $t = \\frac{\\pi}{4}$ ruas kiri $\\frac{1}{2}$"
+        },
+        {
+          "teks": "$\\cos^4 t - \\sin^4 t = 1 - 2\\cos^2 t$",
+          "alasan": "tertukar tanda; yang benar $\\cos^4 t - \\sin^4 t = 2\\cos^2 t - 1$"
+        },
+        {
+          "teks": "$(\\sin t + \\cos t)^2 = 1 + \\sin t\\cos t$",
+          "alasan": "lupa suku silang bernilai $2\\sin t\\cos t$; untuk $t = \\frac{\\pi}{4}$ ruas kiri $2$ dan ruas kanan $\\frac{3}{2}$"
+        }
+      ],
+      "pembahasan": "Faktorkan selisih kuadrat lalu pakai identitas Pythagoras untuk pilihan pertama. Pilihan lain gugur: $t=\\frac{\\pi}{4}$ memberi $\\frac{1}{2}\\neq 1$, kemudian $\\cos^4 t-\\sin^4 t=\\cos^2 t-\\sin^2 t = 2\\cos^2 t-1$, dan $2\\neq\\frac{3}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Kita akan menggunakan identitas trigonometri pada Sifat 3.4 untuk membuktikan identitas lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan langkah pembuktian yang salah",
+      "alasan_level": "menilai sah tidaknya tiap langkah bukti (evaluasi) dan menunjuk kesalahan pertama; klaim akhir benar sehingga jebakan ada di langkah",
+      "stimulus": null,
+      "pertanyaan": "Bima membuktikan $\\tan^2 t - \\sin^2 t = \\tan^2 t\\sin^2 t$ dengan langkah berikut.\n\n(1) $\\tan^2 t - \\sin^2 t = \\dfrac{\\sin^2 t}{\\cos^2 t} - \\sin^2 t$\n\n(2) $= \\sin^2 t\\left(\\dfrac{1}{\\cos^2 t} - 1\\right)$\n\n(3) $= \\sin^2 t\\left(\\dfrac{1}{\\cos t} - 1\\right)^2$\n\n(4) $= \\sin^2 t\\tan^2 t$\n\nKesalahan yang pertama kali muncul terdapat pada langkah ....",
+      "jawaban_benar": "(3)",
+      "alasan_benar": "$\\left(\\frac{1}{\\cos t} - 1\\right)^2 \\neq \\frac{1}{\\cos^2 t} - 1$; yang benar adalah $\\sec^2 t - 1 = \\tan^2 t$",
+      "distraktor": [
+        {
+          "teks": "(1)",
+          "alasan": "langkah ini sah, hanya mengganti $\\tan t$ dengan $\\frac{\\sin t}{\\cos t}$"
+        },
+        {
+          "teks": "(2)",
+          "alasan": "langkah ini sah, hanya memfaktorkan $\\sin^2 t$"
+        },
+        {
+          "teks": "(4)",
+          "alasan": "langkah ini juga tidak sah dari (3), tetapi bukan kesalahan pertama; akibat dari (3)"
+        }
+      ],
+      "pembahasan": "Langkah (1) dan (2) sah. Pada (3) kuadrat dipindahkan ke luar sehingga $\\frac{1}{\\cos^2 t} - 1$ diganti $\\left(\\frac{1}{\\cos t} - 1\\right)^2$, padahal tidak senilai (uji $t = \\frac{\\pi}{3}$: $3$ lawan $1$). Seharusnya $\\sec^2 t - 1 = \\tan^2 t$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Kita akan menggunakan identitas trigonometri pada Sifat 3.4 untuk membuktikan identitas lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang ruas pasangan identitas",
+      "alasan_level": "memilih bentuk yang membuat kesamaan menjadi identitas dengan mengalikan sekawan, bukan mensubstitusi nilai",
+      "stimulus": null,
+      "pertanyaan": "Agar $\\dfrac{\\cos t}{1 - \\sin t} = \\ldots$ menjadi identitas untuk semua $t$ yang membuat kedua ruasnya terdefinisi, bentuk yang tepat untuk mengisi titik-titik adalah ....",
+      "jawaban_benar": "$\\dfrac{1 + \\sin t}{\\cos t}$",
+      "alasan_benar": "kalikan pembilang dan penyebut dengan sekawan $1 + \\sin t$: $\\frac{\\cos t(1+\\sin t)}{1-\\sin^2 t} = \\frac{\\cos t(1+\\sin t)}{\\cos^2 t}$",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{1 - \\sin t}{\\cos t}$",
+          "alasan": "tanda sekawan tertukar; ini kebalikan dari bentuk yang benar"
+        },
+        {
+          "teks": "$\\dfrac{1 + \\cos t}{\\sin t}$",
+          "alasan": "tertukar peran $\\sin$ dan $\\cos$; untuk $t=\\frac{\\pi}{3}$ bentuk ini bernilai $\\sqrt{3}$, sedangkan ruas kiri $2+\\sqrt{3}\\neq\\sqrt{3}$"
+        },
+        {
+          "teks": "$\\dfrac{\\cos t}{1 + \\cos t}$",
+          "alasan": "hanya mengganti $\\sin$ dengan $\\cos$ di penyebut"
+        }
+      ],
+      "pembahasan": "Kalikan dengan $\\frac{1+\\sin t}{1+\\sin t}$ dan gunakan $1-\\sin^2 t=\\cos^2 t$ sehingga diperoleh $\\frac{1+\\sin t}{\\cos t}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 150,
+        "kutipan": "Identitas tersebut dinamakan identitas Pythagoras karena kamu menggunakan teorema Pythagoras untuk menemukannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat berlakunya akar identitas Pythagoras",
+      "alasan_level": "mengevaluasi klaim akar kuadrat: harus menguji kuadran dan titik batas $\\cos t = 0$",
+      "stimulus": null,
+      "pertanyaan": "Dari $\\sin^2 t + \\cos^2 t = 1$, Eka menulis $\\sqrt{1 - \\sin^2 t} = \\cos t$. Himpunan semua $t$ real yang membuat kesamaan itu benar adalah $t$ dengan ....",
+      "jawaban_benar": "$\\cos t \\ge 0$",
+      "alasan_benar": "$\\sqrt{1-\\sin^2 t}=\\sqrt{\\cos^2 t}=|\\cos t|$, yang sama dengan $\\cos t$ tepat bila $\\cos t \\ge 0$ (termasuk $\\cos t = 0$)",
+      "distraktor": [
+        {
+          "teks": "$\\cos t > 0$",
+          "alasan": "titik batas $t = \\frac{\\pi}{2}$ terlewat: kedua ruas bernilai $0$ sehingga kesamaan berlaku"
+        },
+        {
+          "teks": "$\\sin t \\ge 0$",
+          "alasan": "mengira tanda ditentukan $\\sin t$; untuk $t = -\\frac{\\pi}{4}$ kesamaan tetap benar"
+        },
+        {
+          "teks": "semua bilangan real $t$",
+          "alasan": "melupakan bahwa akar tidak negatif; untuk $t = \\frac{2\\pi}{3}$ ruas kiri $\\frac{1}{2}$ dan ruas kanan $-\\frac{1}{2}$"
+        }
+      ],
+      "pembahasan": "Akar kuadrat bernilai tidak negatif, jadi $\\sqrt{\\cos^2 t}=|\\cos t|$. Kesamaan $|\\cos t|=\\cos t$ benar tepat bila $\\cos t\\ge 0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Kita akan menggunakan identitas trigonometri pada Sifat 3.4 untuk membuktikan identitas lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat domain agar identitas berlaku",
+      "alasan_level": "mengevaluasi domain kedua ruas sekaligus; syarat $t \\neq 2k\\pi$ saja tidak cukup",
+      "stimulus": null,
+      "pertanyaan": "Identitas $\\dfrac{\\sin t}{1 - \\cos t} = \\dfrac{1 + \\cos t}{\\sin t}$ berlaku untuk semua $t$ yang kedua ruasnya terdefinisi. Himpunan $t$ tersebut adalah semua bilangan real kecuali ... dengan $k$ bilangan bulat.",
+      "jawaban_benar": "$t = k\\pi$",
+      "alasan_benar": "ruas kiri tak terdefinisi bila $\\cos t=1$ ($t=2k\\pi$), ruas kanan tak terdefinisi bila $\\sin t=0$ ($t=k\\pi$); gabungannya $t=k\\pi$",
+      "distraktor": [
+        {
+          "teks": "$t = 2k\\pi$",
+          "alasan": "hanya memeriksa penyebut ruas kiri; di $t=\\pi$ ruas kanan tak terdefinisi"
+        },
+        {
+          "teks": "$t = \\dfrac{\\pi}{2} + k\\pi$",
+          "alasan": "mengira syarat berasal dari $\\cos t = 0$ padahal tidak ada $\\cos t$ di penyebut"
+        },
+        {
+          "teks": "$t = (2k+1)\\pi$",
+          "alasan": "hanya memeriksa penyebut ruas kanan pada sudut ganjil; di $t=2k\\pi$ ruas kiri tak terdefinisi"
+        }
+      ],
+      "pembahasan": "Penyebut ruas kiri nol bila $t=2k\\pi$; penyebut ruas kanan nol bila $t=k\\pi$. Kedua ruas terdefinisi bila $t\\ne k\\pi$. Di titik lain kesamaan terbukti dengan $\\sin^2 t=(1-\\cos t)(1+\\cos t)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Kita akan menggunakan identitas trigonometri pada Sifat 3.4 untuk membuktikan identitas lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menilai kemungkinan nilai dari identitas",
+      "alasan_level": "mengevaluasi empat pasangan nilai: harus memakai hubungan $s^2=1+2p$ sekaligus batas keberadaan sinus dan kosinus",
+      "stimulus": null,
+      "pertanyaan": "Untuk suatu sudut $t$, misalkan $s = \\sin t + \\cos t$ dan $p = \\sin t\\cos t$. Pasangan $(s, p)$ berikut yang benar-benar dapat terjadi untuk suatu $t$ real adalah ....",
+      "jawaban_benar": "$\\left(\\dfrac{7}{5}, \\dfrac{12}{25}\\right)$",
+      "alasan_benar": "$s^2=1+2p$ terpenuhi ($\\frac{49}{25}=1+\\frac{24}{25}$), dan $\\sin t=\\frac{4}{5}$, $\\cos t=\\frac{3}{5}$ memberi pasangan itu",
+      "distraktor": [
+        {
+          "teks": "$\\left(\\dfrac{7}{5}, \\dfrac{6}{25}\\right)$",
+          "alasan": "melanggar $s^2 = 1 + 2p$: $\\frac{49}{25}\\neq\\frac{37}{25}$"
+        },
+        {
+          "teks": "$\\left(\\dfrac{3}{2}, \\dfrac{5}{8}\\right)$",
+          "alasan": "memenuhi $s^2=1+2p$ tetapi $p>\\frac{1}{2}$ mustahil; $\\sin t,\\cos t$ tidak real"
+        },
+        {
+          "teks": "$\\left(\\dfrac{8}{5}, \\dfrac{39}{50}\\right)$",
+          "alasan": "memenuhi $s^2=1+2p$ tetapi $p>\\frac{1}{2}$ mustahil; $\\sin t,\\cos t$ tidak real"
+        }
+      ],
+      "pembahasan": "Dari $(\\sin t+\\cos t)^2=1+2\\sin t\\cos t$ diperoleh $s^2=1+2p$. Selain itu $\\sin t$ dan $\\cos t$ adalah akar $x^2-sx+p=0$ yang harus real, yaitu $s^2\\ge 4p$, sehingga $p\\le\\frac{1}{2}$. Hanya $(\\frac{7}{5},\\frac{12}{25})$ memenuhi keduanya.",
+      "catatan": null
+    }
+  ]
+}

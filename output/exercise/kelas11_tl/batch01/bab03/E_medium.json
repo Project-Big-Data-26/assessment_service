@@ -1,0 +1,690 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 3,
+  "subbab": "E",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "bagian": "Contoh 3.18",
+        "nomor": "3.18",
+        "teks": "Dua pesawat terbang meninggalkan bandara pada waktu yang sama dan terbang selama 3 jam.",
+        "jawaban": "sekitar 2.852,58 km"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jarak dua pesawat dengan arah melewati utara",
+      "alasan_level": "selisih arah dicari lewat 360 derajat, jarak tempuh dari kecepatan, lalu Aturan Kosinus",
+      "stimulus": null,
+      "pertanyaan": "Dua pesawat terbang meninggalkan bandara pada waktu yang sama dan terbang selama 2 jam. Pesawat A terbang ke arah 340° dengan kecepatan 50 km/jam dan pesawat B terbang ke arah 40° dengan kecepatan 80 km/jam. Berapakah jarak kedua pesawat tersebut setelah 2 jam (dalam km)? (Besar sudut diukur dari arah utara searah putaran jarum jam.)",
+      "jawaban_benar": "$140$",
+      "alasan_benar": "jarak tempuh 100 km dan 160 km; sudut apit $(40+360)-340 = 60^{\\circ}$; $d^2 = 100^2 + 160^2 - 2(100)(160)\\cos 60^{\\circ} = 19.600$",
+      "distraktor": [
+        {
+          "teks": "$20 \\sqrt{129}$",
+          "alasan": "salah tanda: memakai $+2ab\\cos$"
+        },
+        {
+          "teks": "$20 \\sqrt{69}$",
+          "alasan": "lupa faktor 2 pada suku $2ab\\cos$"
+        },
+        {
+          "teks": "$20 \\sqrt{89}$",
+          "alasan": "mengabaikan suku kosinus (seperti Pythagoras)"
+        }
+      ],
+      "pembahasan": "Jarak tempuh: $A$ = $50 \\times 2 = 100$ km, $B$ = $80 \\times 2 = 160$ km. Selisih arah melewati utara: $40^{\\circ} + 360^{\\circ} - 340^{\\circ} = 60^{\\circ}$. $d^2 = 10.000 + 25.600 - 16.000 = 19.600$, sehingga $d = 140$ km.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "bagian": "Contoh 3.18",
+        "nomor": "3.18",
+        "teks": "Dua pesawat terbang meninggalkan bandara pada waktu yang sama dan terbang selama 3 jam.",
+        "jawaban": "sekitar 2.852,58 km"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jarak dua drone dari arah dan kecepatan (sudut tumpul)",
+      "alasan_level": "jarak tempuh, selisih arah $120^{\\circ}$ tumpul, lalu Aturan Kosinus dengan kosinus negatif",
+      "stimulus": null,
+      "pertanyaan": "Dua drone lepas landas dari lapangan yang sama pada waktu yang sama dan terbang selama 5 detik. Drone P terbang ke arah 110° dengan kecepatan 6 m/s dan drone Q terbang ke arah 230° dengan kecepatan 10 m/s. Berapakah jarak kedua drone setelah 5 detik (dalam m)? (Besar sudut diukur dari arah utara searah putaran jarum jam.)",
+      "jawaban_benar": "$70$",
+      "alasan_benar": "jarak tempuh 30 m dan 50 m dengan sudut apit $120^{\\circ}$: $d^2 = 900 + 2500 + 1500 = 4900$",
+      "distraktor": [
+        {
+          "teks": "$10 \\sqrt{19}$",
+          "alasan": "salah tanda: memakai $+2ab\\cos$ sehingga suku kosinus dikurangkan"
+        },
+        {
+          "teks": "$5 \\sqrt{166}$",
+          "alasan": "lupa faktor 2 pada suku $2ab\\cos$"
+        },
+        {
+          "teks": "$10 \\sqrt{34}$",
+          "alasan": "mengabaikan suku kosinus (seperti Pythagoras)"
+        }
+      ],
+      "pembahasan": "Jarak tempuh $30$ m dan $50$ m, sudut apit $230^{\\circ} - 110^{\\circ} = 120^{\\circ}$. $d^2 = 900 + 2500 - 2(30)(50)(-\\frac{1}{2}) = 4900$, sehingga $d = 70$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 166,
+        "bagian": "Latihan E",
+        "nomor": "8",
+        "teks": "Misalkan pipa dengan pusat A, B, dan C mempunyai jari-jari berturut-turut 2 inci, 3 inci, dan 4 inci. Berapakah besar sudut-sudut dalam segitiga ABC?",
+        "jawaban": "A sekitar 78,46 derajat, B sekitar 57,12 derajat, C sekitar 44,42 derajat"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sudut dari jari-jari lingkaran bersinggungan",
+      "alasan_level": "sisi segitiga pusat dicari dari jumlah jari-jari, lalu Aturan Kosinus untuk sudut yang diminta",
+      "stimulus": null,
+      "pertanyaan": "Seorang insinyur menempatkan tiga pipa sehingga saling bersinggungan di luar. Misalkan pipa dengan pusat A, B, dan C mempunyai jari-jari berturut-turut 4 cm, 6 cm, dan 10 cm. Berapakah besar sudut ABC dalam segitiga ABC (segitiga yang titik sudutnya pusat ketiga pipa)?",
+      "jawaban_benar": "$60^{\\circ}$",
+      "alasan_benar": "$AB = 10$, $BC = 16$, $AC = 14$; $\\cos B = \\frac{100 + 256 - 196}{320} = \\frac{1}{2}$",
+      "distraktor": [
+        {
+          "teks": "$120^{\\circ}$",
+          "alasan": "salah tanda pada pembilang sehingga $\\cos B = -\\frac{1}{2}$"
+        },
+        {
+          "teks": "$30^{\\circ}$",
+          "alasan": "mengira $\\cos = \\frac{1}{2}$ untuk sudut $30^{\\circ}$ (tertukar dengan sinus)"
+        },
+        {
+          "teks": "$45^{\\circ}$",
+          "alasan": "mengira $\\cos = \\frac{1}{2}$ sama dengan $\\cos 45^{\\circ}$"
+        }
+      ],
+      "pembahasan": "Dua pipa yang bersinggungan di luar berjarak pusat sama dengan jumlah jari-jarinya: $AB = 4 + 6 = 10$, $BC = 6 + 10 = 16$, $AC = 4 + 10 = 14$. $\\cos B = \\frac{AB^2 + BC^2 - AC^2}{2(AB)(BC)} = \\frac{100 + 256 - 196}{320} = \\frac{1}{2}$, sehingga $B = 60^{\\circ}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 166,
+        "bagian": "Latihan E",
+        "nomor": "8",
+        "teks": "Misalkan pipa dengan pusat A, B, dan C mempunyai jari-jari berturut-turut 2 inci, 3 inci, dan 4 inci. Berapakah besar sudut-sudut dalam segitiga ABC?",
+        "jawaban": "A sekitar 78,46 derajat, B sekitar 57,12 derajat, C sekitar 44,42 derajat"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sudut dari jari-jari bola bersinggungan",
+      "alasan_level": "jarak pusat dari jumlah jari-jari, lalu kosinus negatif istimewa",
+      "stimulus": null,
+      "pertanyaan": "Tiga bola besi saling bersinggungan di luar di atas sebuah meja. Bola P, Q, dan R mempunyai jari-jari berturut-turut 1 dm, 5 dm, dan 9 dm. Berapakah besar sudut QPR pada segitiga yang titik sudutnya pusat ketiga bola?",
+      "jawaban_benar": "$120^{\\circ}$",
+      "alasan_benar": "$PQ = 6$, $PR = 10$, $QR = 14$; $\\cos P = \\frac{36 + 100 - 196}{120} = -\\frac{1}{2}$",
+      "distraktor": [
+        {
+          "teks": "$60^{\\circ}$",
+          "alasan": "mengabaikan tanda minus pada nilai kosinus"
+        },
+        {
+          "teks": "$150^{\\circ}$",
+          "alasan": "mengira $\\cos = -\\frac{1}{2}$ untuk sudut $150^{\\circ}$"
+        },
+        {
+          "teks": "$135^{\\circ}$",
+          "alasan": "mengira $\\cos = -\\frac{1}{2}$ sama dengan $\\cos 135^{\\circ}$"
+        }
+      ],
+      "pembahasan": "$PQ = 1 + 5 = 6$, $PR = 1 + 9 = 10$, $QR = 5 + 9 = 14$. $\\cos P = \\frac{36 + 100 - 196}{2(6)(10)} = -\\frac{1}{2}$, sehingga $P = 120^{\\circ}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b03-p0166-latihan-e-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sisi dari sudut apit 45 derajat dengan sisi bentuk akar",
+      "alasan_level": "substitusi dengan $\\cos 45^{\\circ}$ dan sisi bentuk akar, lalu menyederhanakan",
+      "stimulus": null,
+      "pertanyaan": "Jika $\\angle C = 45^{\\circ}$, $a = 5$, dan $b = 2\\sqrt{2}$, panjang $c$ adalah ....",
+      "jawaban_benar": "$\\sqrt{13}$",
+      "alasan_benar": "$c^2 = 25 + 8 - 2(5)(2\\sqrt{2})\\cdot\\frac{\\sqrt{2}}{2} = 33 - 20 = 13$",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{53}$",
+          "alasan": "salah tanda: memakai $+2ab\\cos$"
+        },
+        {
+          "teks": "$\\sqrt{23}$",
+          "alasan": "lupa faktor 2 pada suku $2ab\\cos$"
+        },
+        {
+          "teks": "$\\sqrt{33}$",
+          "alasan": "mengabaikan suku kosinus (seperti Pythagoras)"
+        }
+      ],
+      "pembahasan": "$c^2 = a^2 + b^2 - 2ab\\cos C = 25 + 8 - 20\\sqrt{2}\\cdot\\frac{\\sqrt{2}}{2} = 33 - 20 = 13$, sehingga $c = \\sqrt{13}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b03-p0166-latihan-e-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sisi dari sudut apit 30 derajat dengan sisi bentuk akar",
+      "alasan_level": "substitusi dengan $\\cos 30^{\\circ} = \\frac{1}{2}\\sqrt{3}$ dan sisi bentuk akar, lalu menyederhanakan",
+      "stimulus": null,
+      "pertanyaan": "Jika $\\angle C = 30^{\\circ}$, $a = 6$, dan $b = 5\\sqrt{3}$, panjang $c$ adalah ....",
+      "jawaban_benar": "$\\sqrt{21}$",
+      "alasan_benar": "$c^2 = 36 + 75 - 2(6)(5\\sqrt{3})\\cdot\\frac{\\sqrt{3}}{2} = 111 - 90 = 21$",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{201}$",
+          "alasan": "salah tanda: memakai $+2ab\\cos$"
+        },
+        {
+          "teks": "$\\sqrt{66}$",
+          "alasan": "lupa faktor 2 pada suku $2ab\\cos$"
+        },
+        {
+          "teks": "$\\sqrt{111}$",
+          "alasan": "mengabaikan suku kosinus (seperti Pythagoras)"
+        }
+      ],
+      "pembahasan": "$c^2 = 36 + 75 - 60\\sqrt{3}\\cdot\\frac{\\sqrt{3}}{2} = 111 - 90 = 21$, sehingga $c = \\sqrt{21}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b03-p0166-latihan-e-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sudut dari tiga sisi bentuk akar (45 derajat)",
+      "alasan_level": "substitusi tiga sisi bentuk akar dan merasionalkan hingga nilai kosinus istimewa",
+      "stimulus": null,
+      "pertanyaan": "Jika $a = 5$, $b = \\sqrt{17}$, dan $c = 4\\sqrt{2}$, besar sudut $B$ adalah ....",
+      "jawaban_benar": "$45^{\\circ}$",
+      "alasan_benar": "$\\cos B = \\frac{25 + 32 - 17}{2(5)(4\\sqrt{2})} = \\frac{40}{40\\sqrt{2}} = \\frac{\\sqrt{2}}{2}$",
+      "distraktor": [
+        {
+          "teks": "$135^{\\circ}$",
+          "alasan": "salah tanda pada pembilang sehingga $\\cos B = -\\frac{\\sqrt{2}}{2}$"
+        },
+        {
+          "teks": "$60^{\\circ}$",
+          "alasan": "mengira $\\cos B = \\frac{1}{2}$ setelah salah merasionalkan $\\frac{1}{\\sqrt{2}}$"
+        },
+        {
+          "teks": "$30^{\\circ}$",
+          "alasan": "mengambil $\\cos B = \\frac{\\sqrt{3}}{2}$ (tertukar nilai istimewa)"
+        }
+      ],
+      "pembahasan": "$\\cos B = \\frac{a^2 + c^2 - b^2}{2ac} = \\frac{25 + 32 - 17}{40\\sqrt{2}} = \\frac{1}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}$, sehingga $B = 45^{\\circ}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b03-p0166-latihan-e-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sudut tumpul dari tiga sisi bentuk akar (150 derajat)",
+      "alasan_level": "substitusi tiga sisi bentuk akar menghasilkan kosinus negatif $-\\frac{1}{2}\\sqrt{3}$",
+      "stimulus": null,
+      "pertanyaan": "Jika $a = 2$, $b = 7$, dan $c = 3\\sqrt{3}$, besar sudut $B$ adalah ....",
+      "jawaban_benar": "$150^{\\circ}$",
+      "alasan_benar": "$\\cos B = \\frac{4 + 27 - 49}{2(2)(3\\sqrt{3})} = \\frac{-18}{12\\sqrt{3}} = -\\frac{\\sqrt{3}}{2}$",
+      "distraktor": [
+        {
+          "teks": "$30^{\\circ}$",
+          "alasan": "mengabaikan tanda minus pada nilai kosinus"
+        },
+        {
+          "teks": "$120^{\\circ}$",
+          "alasan": "mengira $\\cos B = -\\frac{1}{2}$"
+        },
+        {
+          "teks": "$135^{\\circ}$",
+          "alasan": "mengira $\\cos B = -\\frac{\\sqrt{2}}{2}$"
+        }
+      ],
+      "pembahasan": "$\\cos B = \\frac{a^2 + c^2 - b^2}{2ac} = \\frac{4 + 27 - 49}{12\\sqrt{3}} = -\\frac{3}{2\\sqrt{3}} = -\\frac{\\sqrt{3}}{2}$, sehingga $B = 150^{\\circ}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 163,
+        "bagian": "Mari Mencoba 3.17",
+        "nomor": "MM",
+        "teks": "Sebuah segitiga PQR dengan panjang sisi PQ, PR, dan QR secara berturut-turut adalah 10 cm, 5 cm, dan 7 cm. Berapa besar sudut Q?",
+        "jawaban": "sekitar 27,66 derajat"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sudut di titik tertentu dengan sisi bentuk akar",
+      "alasan_level": "memilih sudut di hadapan $PR$ lalu substitusi sisi bentuk akar hingga $\\cos Q = \\frac{1}{2}\\sqrt{3}$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah segitiga PQR dengan panjang sisi PQ, PR, dan QR secara berturut-turut adalah 8 cm, 4 cm, dan $4\\sqrt{3}$ cm. Berapa besar sudut Q?",
+      "jawaban_benar": "$30^{\\circ}$",
+      "alasan_benar": "$\\cos Q = \\frac{64 + 48 - 16}{2(8)(4\\sqrt{3})} = \\frac{96}{64\\sqrt{3}} = \\frac{\\sqrt{3}}{2}$",
+      "distraktor": [
+        {
+          "teks": "$150^{\\circ}$",
+          "alasan": "salah tanda pada pembilang sehingga $\\cos Q = -\\frac{\\sqrt{3}}{2}$"
+        },
+        {
+          "teks": "$60^{\\circ}$",
+          "alasan": "mengira $\\cos Q = \\frac{1}{2}$ (tertukar nilai istimewa)"
+        },
+        {
+          "teks": "$90^{\\circ}$",
+          "alasan": "mengira segitiga siku-siku di $Q$ (menerapkan Pythagoras $PQ^2 + QR^2 = PR^2$ tanpa dicek)"
+        }
+      ],
+      "pembahasan": "Sudut $Q$ diapit $PQ = 8$ dan $QR = 4\\sqrt{3}$, berhadapan dengan $PR = 4$. $\\cos Q = \\frac{PQ^2 + QR^2 - PR^2}{2(PQ)(QR)} = \\frac{64 + 48 - 16}{64\\sqrt{3}} = \\frac{\\sqrt{3}}{2}$, sehingga $Q = 30^{\\circ}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sudut jajargenjang dari diagonal",
+      "alasan_level": "Aturan Kosinus untuk sudut $A$ lancip lalu sudut berpelurus pada jajargenjang",
+      "stimulus": null,
+      "pertanyaan": "Jajargenjang $ABCD$ memiliki $AB = 5$ cm, $AD = 8$ cm, dan diagonal $BD = 7$ cm. Besar $\\angle ABC$ adalah ....",
+      "jawaban_benar": "$120^{\\circ}$",
+      "alasan_benar": "$\\cos A = \\frac{25 + 64 - 49}{80} = \\frac{1}{2}$ sehingga $\\angle DAB = 60^{\\circ}$ dan $\\angle ABC = 180^{\\circ} - 60^{\\circ}$",
+      "distraktor": [
+        {
+          "teks": "$60^{\\circ}$",
+          "alasan": "menjawab $\\angle DAB$, bukan $\\angle ABC$"
+        },
+        {
+          "teks": "$30^{\\circ}$",
+          "alasan": "mengira $\\cos = \\frac{1}{2}$ untuk sudut $30^{\\circ}$"
+        },
+        {
+          "teks": "$150^{\\circ}$",
+          "alasan": "mengurangkan $30^{\\circ}$ dari $180^{\\circ}$ setelah salah menentukan $\\angle DAB$"
+        }
+      ],
+      "pembahasan": "$BD$ berhadapan dengan $\\angle A$. $\\cos A = \\frac{AB^2 + AD^2 - BD^2}{2(AB)(AD)} = \\frac{1}{2}$, $A = 60^{\\circ}$. Sudut berdekatan pada jajargenjang berjumlah $180^{\\circ}$, sehingga $\\angle ABC = 120^{\\circ}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "hasil kali dua sisi dari jumlah sisi dan sudut",
+      "alasan_level": "mengubah $b^2 + c^2$ menjadi $(b + c)^2 - 2bc$ lalu memakai Aturan Kosinus untuk $\\angle A = 60^{\\circ}$",
+      "stimulus": null,
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $\\angle A = 60^{\\circ}$, $a = 7$, dan $b + c = 11$. Nilai $bc$ adalah ....",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "$49 = b^2 + c^2 - bc = (b + c)^2 - 3bc = 121 - 3bc$, sehingga $bc = 24$",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "menulis $a^2 = (b + c)^2 - 2bc$ (suku kosinus diabaikan)"
+        },
+        {
+          "teks": "$72$",
+          "alasan": "lupa membagi $3$ pada $3bc = 72$"
+        },
+        {
+          "teks": "$18$",
+          "alasan": "menghitung $2bc\\cos 60^{\\circ}$ sebagai $2bc$ sehingga $4bc = 72$"
+        }
+      ],
+      "pembahasan": "$a^2 = b^2 + c^2 - 2bc\\cos 60^{\\circ} = b^2 + c^2 - bc = (b+c)^2 - 3bc$. Maka $49 = 121 - 3bc$ dan $bc = 24$ (mis. $b = 3$, $c = 8$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Dapatkah kamu menemukan hubungan antara"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sudut terbesar dari perbandingan sisi",
+      "alasan_level": "sisi dinyatakan $3k$, $5k$, $7k$ sehingga $k$ habis dibagi, lalu Aturan Kosinus untuk sisi terpanjang",
+      "stimulus": null,
+      "pertanyaan": "Perbandingan panjang sisi-sisi suatu segitiga adalah $3 : 5 : 7$. Besar sudut terbesar segitiga tersebut adalah ....",
+      "jawaban_benar": "$120^{\\circ}$",
+      "alasan_benar": "$\\cos = \\frac{9k^2 + 25k^2 - 49k^2}{30k^2} = -\\frac{1}{2}$",
+      "distraktor": [
+        {
+          "teks": "$60^{\\circ}$",
+          "alasan": "mengabaikan tanda minus pada nilai kosinus"
+        },
+        {
+          "teks": "$150^{\\circ}$",
+          "alasan": "mengira $\\cos = -\\frac{1}{2}$ untuk sudut $150^{\\circ}$"
+        },
+        {
+          "teks": "$90^{\\circ}$",
+          "alasan": "mengira segitiga siku-siku padahal $3^2 + 5^2 = 34 \\neq 49$"
+        }
+      ],
+      "pembahasan": "Sudut terbesar berhadapan dengan sisi $7k$. $\\cos = \\frac{(3k)^2 + (5k)^2 - (7k)^2}{2(3k)(5k)} = \\frac{-15k^2}{30k^2} = -\\frac{1}{2}$, sehingga sudutnya $120^{\\circ}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menyusun persamaan dari sudut terbesar dan sisi aljabar",
+      "alasan_level": "membentuk persamaan kuadrat dari Aturan Kosinus lalu memilih akar yang layak",
+      "stimulus": null,
+      "pertanyaan": "Sisi-sisi sebuah segitiga panjangnya $x$, $x + 2$, dan $x + 4$ (dalam cm). Jika sudut terbesar segitiga itu $120^{\\circ}$, panjang sisi terpendek adalah ... cm.",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$(x+4)^2 = x^2 + (x+2)^2 + x(x+2)$ menjadi $x^2 - x - 6 = 0$, sehingga $x = 3$ (akar $-2$ ditolak)",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "memilih sisi tengah $x + 2$ sebagai jawaban"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "memilih sisi terpanjang $x + 4$ sebagai jawaban"
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "memakai tanda $-2ab\\cos$ dengan $\\cos 120^{\\circ}$ dihitung $+\\frac{1}{2}$ lalu tidak menolak nilai negatif"
+        }
+      ],
+      "pembahasan": "Sisi terpanjang $x + 4$ di hadapan sudut $120^{\\circ}$: $(x+4)^2 = x^2 + (x+2)^2 - 2x(x+2)(-\\frac{1}{2})$. Diperoleh $x^2 - x - 6 = 0$, $(x - 3)(x + 2) = 0$. Panjang tidak boleh negatif, jadi $x = 3$ (sisi $3, 5, 7$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Dapatkah kamu menemukan hubungan antara"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak sisi bulat agar segitiga lancip",
+      "alasan_level": "menggabungkan syarat kosinus positif untuk dua sudut dan ketaksamaan segitiga",
+      "stimulus": null,
+      "pertanyaan": "Dua sisi sebuah segitiga panjangnya $5$ cm dan $7$ cm. Jika panjang sisi ketiga $c$ adalah bilangan bulat dan ketiga sudut segitiga itu lancip, banyak nilai $c$ yang mungkin adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$c^2 < 5^2 + 7^2 = 74$ dan $7^2 < 5^2 + c^2$ (jadi $c^2 > 24$), sehingga $c = 5, 6, 7, 8$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "hanya memakai syarat $c^2 < 74$ (menghitung $c = 3, \\ldots, 8$)"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "hanya memakai syarat $c^2 > 24$ (menghitung $c = 5, \\ldots, 11$)"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "hanya memakai ketaksamaan segitiga ($c = 3, \\ldots, 11$)"
+        }
+      ],
+      "pembahasan": "Sudut terbesar lancip bila kuadrat sisi terpanjang kurang dari jumlah kuadrat dua sisi lain. Bila $c$ terpanjang: $c^2 < 74$, sehingga $c \\le 8$. Bila $7$ terpanjang: $49 < 25 + c^2$, sehingga $c \\ge 5$. Nilai: $5, 6, 7, 8$ (4 nilai).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Dapatkah kamu menemukan hubungan antara"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "banyak sisi bulat agar sudut tumpul",
+      "alasan_level": "mengaitkan $\\cos A < 0$ dengan batas bawah $b^2 + c^2$ dan batas atas ketaksamaan segitiga",
+      "stimulus": null,
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $b = 8$ dan $c = 15$ (dalam cm). Jika $\\angle A$ tumpul dan $a$ bilangan bulat, banyak nilai $a$ yang mungkin adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "$a^2 > 64 + 225 = 289$ sehingga $a > 17$, dan $a < 8 + 15 = 23$; nilai $a = 18, \\ldots, 22$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "memasukkan $a = 17$ (memakai $a^2 \\ge 289$, padahal $a = 17$ memberi sudut siku-siku)"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "memakai batas atas $a < 22$ (menghilangkan $a = 22$)"
+        },
+        {
+          "teks": "$15$",
+          "alasan": "hanya memakai ketaksamaan segitiga $7 < a < 23$"
+        }
+      ],
+      "pembahasan": "$\\angle A$ tumpul bila $\\cos A < 0$, yaitu $a^2 > b^2 + c^2 = 289$, jadi $a > 17$. Ketaksamaan segitiga: $a < 23$. Bilangan bulat: $18, 19, 20, 21, 22$ (5 nilai).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 163,
+        "kutipan": "Dengan memanfaatkan Aturan Kosinus, kita memperoleh"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jarak dari titik awal pada lintasan berbelok",
+      "alasan_level": "mencari sudut dalam segitiga dari dua arah (bukan sudut belokan) lalu Aturan Kosinus",
+      "stimulus": null,
+      "pertanyaan": "Seorang pejalan berangkat dari titik $A$, berjalan $8$ km ke titik $B$ pada arah $30^{\\circ}$, lalu berjalan $15$ km ke titik $C$ pada arah $150^{\\circ}$ (arah diukur dari utara searah putaran jarum jam). Jarak $A$ ke $C$ adalah ... km.",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "sudut dalam di $B$ adalah $180^{\\circ} - (150^{\\circ} - 30^{\\circ}) = 60^{\\circ}$; $AC^2 = 64 + 225 - 120 = 169$",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{409}$",
+          "alasan": "memakai sudut belokan $120^{\\circ}$ sebagai sudut dalam segitiga"
+        },
+        {
+          "teks": "$\\sqrt{229}$",
+          "alasan": "lupa faktor 2 pada suku $2ab\\cos$"
+        },
+        {
+          "teks": "$17$",
+          "alasan": "mengabaikan suku kosinus (seperti Pythagoras)"
+        }
+      ],
+      "pembahasan": "Arah kembali dari $B$ ke $A$ adalah $210^{\\circ}$, arah $B$ ke $C$ adalah $150^{\\circ}$, sehingga $\\angle ABC = 60^{\\circ}$. $AC^2 = 8^2 + 15^2 - 2(8)(15)\\cos 60^{\\circ} = 289 - 120 = 169$, sehingga $AC = 13$ km.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sudut segi empat lewat dua segitiga",
+      "alasan_level": "Aturan Kosinus dua kali: diagonal dari $\\triangle ABC$ lalu sudut di $\\triangle ACD$",
+      "stimulus": null,
+      "pertanyaan": "Pada segi empat $ABCD$ diketahui $AB = 5$ cm, $BC = 8$ cm, $\\angle ABC = 60^{\\circ}$, $CD = 5$ cm, dan $AD = 3$ cm. Besar $\\angle ADC$ adalah ....",
+      "jawaban_benar": "$120^{\\circ}$",
+      "alasan_benar": "$AC^2 = 25 + 64 - 40 = 49$ sehingga $AC = 7$; $\\cos D = \\frac{9 + 25 - 49}{30} = -\\frac{1}{2}$",
+      "distraktor": [
+        {
+          "teks": "$60^{\\circ}$",
+          "alasan": "mengabaikan tanda minus pada nilai kosinus"
+        },
+        {
+          "teks": "$150^{\\circ}$",
+          "alasan": "mengira $\\cos = -\\frac{1}{2}$ untuk sudut $150^{\\circ}$"
+        },
+        {
+          "teks": "$135^{\\circ}$",
+          "alasan": "mengira $\\cos = -\\frac{1}{2}$ sama dengan $\\cos 135^{\\circ}$"
+        }
+      ],
+      "pembahasan": "Diagonal $AC$ dari $\\triangle ABC$: $AC^2 = 25 + 64 - 2(5)(8)\\cos 60^{\\circ} = 49$, $AC = 7$. Pada $\\triangle ACD$: $\\cos D = \\frac{AD^2 + CD^2 - AC^2}{2(AD)(CD)} = \\frac{9 + 25 - 49}{30} = -\\frac{1}{2}$, sehingga $\\angle ADC = 120^{\\circ}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menemukan kesalahan langkah hitung",
+      "alasan_level": "menelusuri langkah penyelesaian dan mengenali nilai $\\cos 120^{\\circ}$ yang keliru",
+      "stimulus": null,
+      "pertanyaan": "Rina menghitung sisi $c$ pada segitiga $ABC$ dengan $\\angle C = 120^{\\circ}$, $a = 6$, dan $b = 10$. Langkahnya: $c^2 = 6^2 + 10^2 - 2(6)(10)\\cos 120^{\\circ} = 136 - 120\\cdot\\frac{1}{2} = 76$, sehingga $c = \\sqrt{76}$. Kesalahan Rina terletak pada ....",
+      "jawaban_benar": "nilai $\\cos 120^{\\circ}$ yang seharusnya $-\\frac{1}{2}$, sehingga $c^2 = 196$",
+      "alasan_benar": "$\\cos 120^{\\circ} = -\\frac{1}{2}$, bukan $\\frac{1}{2}$, sehingga suku $-2ab\\cos C$ bernilai $+60$",
+      "distraktor": [
+        {
+          "teks": "rumus yang seharusnya $c^2 = a^2 + b^2 + 2ab\\cos C$",
+          "alasan": "rumus Aturan Kosinus yang dikutip sudah benar, tanda minus tidak perlu diganti"
+        },
+        {
+          "teks": "besar sudut $C$ yang seharusnya $60^{\\circ}$",
+          "alasan": "sudut $C = 120^{\\circ}$ diberikan pada soal"
+        },
+        {
+          "teks": "faktor $2$ yang seharusnya tidak ada pada suku $2ab\\cos C$",
+          "alasan": "faktor $2$ memang ada pada rumus"
+        }
+      ],
+      "pembahasan": "Rumus dan substitusi awal benar, tetapi $\\cos 120^{\\circ} = -\\frac{1}{2}$. Seharusnya $c^2 = 36 + 100 - 120\\cdot(-\\frac{1}{2}) = 196$ sehingga $c = 14$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 163,
+        "kutipan": "Dengan memanfaatkan Aturan Kosinus, kita memperoleh"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "panjang ruas garis dari titik pada sisi segitiga",
+      "alasan_level": "mengenali $\\triangle ABD$ dengan sudut $B$ yang sama lalu Aturan Kosinus",
+      "stimulus": null,
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $AB = 8$ cm, $BC = 10$ cm, dan $\\angle B = 60^{\\circ}$. Titik $D$ terletak pada $BC$ dengan $BD = 3$ cm. Panjang $AD$ adalah ... cm.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "pada $\\triangle ABD$: $AD^2 = 64 + 9 - 2(8)(3)\\cos 60^{\\circ} = 49$",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{97}$",
+          "alasan": "salah tanda: memakai $+2ab\\cos$"
+        },
+        {
+          "teks": "$\\sqrt{61}$",
+          "alasan": "lupa faktor 2 pada suku $2ab\\cos$"
+        },
+        {
+          "teks": "$2\\sqrt{21}$",
+          "alasan": "memakai $BC = 10$ (menghitung $AC$), bukan $BD = 3$"
+        }
+      ],
+      "pembahasan": "$\\angle ABD = \\angle ABC = 60^{\\circ}$ karena $D$ pada $BC$. $AD^2 = AB^2 + BD^2 - 2(AB)(BD)\\cos 60^{\\circ} = 64 + 9 - 24 = 49$, sehingga $AD = 7$ cm.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 163,
+        "kutipan": "Dengan memanfaatkan Aturan Kosinus, kita memperoleh"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "waktu agar jarak tertentu tercapai",
+      "alasan_level": "menyusun jarak sebagai fungsi waktu dengan Aturan Kosinus lalu menyelesaikan persamaan",
+      "stimulus": null,
+      "pertanyaan": "Dua pelari berangkat bersamaan dari titik $O$ pada lintasan lurus yang membentuk sudut $120^{\\circ}$. Pelari pertama berlari dengan kecepatan $3$ m/s dan pelari kedua $5$ m/s. Setelah ... detik, jarak kedua pelari tepat $84$ m.",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "$d^2 = (3t)^2 + (5t)^2 - 2(3t)(5t)\\cos 120^{\\circ} = 49t^2$ sehingga $d = 7t = 84$ dan $t = 12$",
+      "distraktor": [
+        {
+          "teks": "$10{,}5$",
+          "alasan": "memakai $d = (3 + 5)t$ (menjumlahkan kecepatan seolah sejalan)"
+        },
+        {
+          "teks": "$42$",
+          "alasan": "memakai $d = (5 - 3)t$"
+        },
+        {
+          "teks": "$144$",
+          "alasan": "lupa menarik akar: $t^2 = 144$ dianggap $t$"
+        }
+      ],
+      "pembahasan": "Jarak tempuh $3t$ dan $5t$ dengan sudut apit $120^{\\circ}$: $d^2 = 9t^2 + 25t^2 + 15t^2 = 49t^2$, sehingga $d = 7t$. Dari $7t = 84$ diperoleh $t = 12$ detik.",
+      "catatan": null
+    }
+  ]
+}

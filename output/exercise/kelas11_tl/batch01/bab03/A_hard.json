@@ -1,0 +1,441 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 3,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab A (konversi radian-derajat, lingkaran satuan, tanda fungsi, genap-ganjil) sempit; soal hard yang benar-benar bernalar (evaluasi klaim, contoh penyangkal, temukan kesalahan, parameter) hanya cukup 13 tanpa jatuh menjadi hitung langsung atau kembar dengan easy/medium. Kuota 20 tidak dipaksa.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 129,
+        "kutipan": "Tanda ini bergantung pada kuadran mana sisi akhir sudut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan tanda tangen",
+      "alasan_level": "mengevaluasi empat langkah penyelesaian dan menemukan langkah yang keliru (tanda tangen di kuadran III)",
+      "stimulus": null,
+      "pertanyaan": "Rina menghitung $\\tan\\left(-\\frac{5\\pi}{4}\\right)$ dengan langkah berikut. (1) $\\frac{5\\pi}{4} = 225^\\circ$, sisi akhirnya di kuadran III. (2) Bilangan acuan $\\frac{5\\pi}{4}$ adalah $\\frac{\\pi}{4}$. (3) Di kuadran III tangen bernilai negatif, sehingga $\\tan\\frac{5\\pi}{4} = -\\tan\\frac{\\pi}{4} = -1$. (4) Karena $\\tan(-t) = -\\tan t$, maka $\\tan\\left(-\\frac{5\\pi}{4}\\right) = -(-1) = 1$. Pernyataan yang benar tentang perhitungan Rina adalah ....",
+      "jawaban_benar": "Langkah (3) keliru: di kuadran III tangen bernilai positif, sehingga hasil akhirnya $-1$",
+      "alasan_benar": "tangen = sinus/kosinus, keduanya negatif di kuadran III sehingga positif; $\\tan\\frac{5\\pi}{4}=1$ dan $\\tan\\left(-\\frac{5\\pi}{4}\\right)=-1$",
+      "distraktor": [
+        {
+          "teks": "Langkah (2) keliru: bilangan acuan $\\frac{5\\pi}{4}$ seharusnya $\\frac{\\pi}{2}$, sehingga hasil akhirnya $-1$",
+          "alasan": "$\\frac{5\\pi}{4}-\\pi=\\frac{\\pi}{4}$, jadi bilangan acuan sudah benar"
+        },
+        {
+          "teks": "Langkah (4) keliru: seharusnya $\\tan(-t) = \\tan t$, sehingga hasil akhirnya $-1$",
+          "alasan": "tangen adalah fungsi ganjil, jadi $\\tan(-t)=-\\tan t$ sudah benar"
+        },
+        {
+          "teks": "Langkah (1) keliru: $\\frac{5\\pi}{4}$ berada di kuadran II, sehingga hasil akhirnya $-1$",
+          "alasan": "$225^\\circ$ ada di antara $180^\\circ$ dan $270^\\circ$ (kuadran III)"
+        }
+      ],
+      "pembahasan": "$\\tan\\frac{5\\pi}{4}=\\frac{\\sin}{\\cos}=\\frac{-\\sqrt2/2}{-\\sqrt2/2}=1$ (positif di kuadran III). Jadi langkah (3) keliru dan $\\tan\\left(-\\frac{5\\pi}{4}\\right)=-1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 127,
+        "kutipan": "Bilangan acuan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal kesamaan nilai sinus",
+      "alasan_level": "mengevaluasi klaim umum dan memilih pasangan sudut yang tepat menyangkalnya (sinus sama, sudut berbeda)",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Jika $\\sin t = \\sin s$ maka $t = s$.\" Pasangan sudut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$t = \\frac{\\pi}{6}$ dan $s = \\frac{5\\pi}{6}$",
+      "alasan_benar": "$\\sin\\frac{\\pi}{6}=\\sin\\frac{5\\pi}{6}=\\frac{1}{2}$ tetapi $\\frac{\\pi}{6}\\neq\\frac{5\\pi}{6}$",
+      "distraktor": [
+        {
+          "teks": "$t = \\frac{\\pi}{6}$ dan $s = -\\frac{\\pi}{6}$",
+          "alasan": "sinus fungsi ganjil: $\\sin s=-\\frac12\\neq\\sin t$, tertukar dengan fungsi genap"
+        },
+        {
+          "teks": "$t = \\frac{\\pi}{3}$ dan $s = \\frac{4\\pi}{3}$",
+          "alasan": "mengira sudut yang berselisih $\\pi$ bersinus sama; $\\sin s=-\\frac{\\sqrt3}{2}$"
+        },
+        {
+          "teks": "$t = \\frac{\\pi}{4}$ dan $s = \\frac{7\\pi}{4}$",
+          "alasan": "yang sama pada pasangan ini adalah kosinus, bukan sinus ($\\sin s=-\\frac{\\sqrt2}{2}$)"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus memiliki sinus sama tetapi sudut berbeda. Hanya $\\frac{\\pi}{6}$ dan $\\frac{5\\pi}{6}$ yang memenuhi (titik pada lingkaran satuan memiliki ordinat sama $\\frac12$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 129,
+        "kutipan": "Tanda ini bergantung pada kuadran mana sisi akhir sudut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal implikasi tanda",
+      "alasan_level": "menguji klaim implikasi tanda fungsi: contoh penyangkal harus memenuhi premis tetapi melanggar kesimpulan",
+      "stimulus": null,
+      "pertanyaan": "Klaim: \"Jika $\\cot t < 0$ maka $\\cos t < 0$.\" Nilai $t$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$t = -\\frac{\\pi}{6}$",
+      "alasan_benar": "$\\cot\\left(-\\frac{\\pi}{6}\\right)=-\\sqrt3<0$ (premis benar) tetapi $\\cos\\left(-\\frac{\\pi}{6}\\right)=\\frac{\\sqrt3}{2}>0$ (kesimpulan salah)",
+      "distraktor": [
+        {
+          "teks": "$t = \\frac{5\\pi}{6}$",
+          "alasan": "premis $\\cot t<0$ benar dan $\\cos t<0$ juga benar, jadi justru mendukung klaim"
+        },
+        {
+          "teks": "$t = \\frac{7\\pi}{6}$",
+          "alasan": "$\\cot t>0$ sehingga premis tidak terpenuhi, bukan contoh penyangkal"
+        },
+        {
+          "teks": "$t = \\frac{\\pi}{3}$",
+          "alasan": "$\\cot t>0$ sehingga premis tidak terpenuhi, bukan contoh penyangkal"
+        }
+      ],
+      "pembahasan": "$\\cot t<0$ terjadi di kuadran II dan IV. Di kuadran IV $\\cos t>0$, jadi sudut kuadran IV seperti $-\\frac{\\pi}{6}$ menyangkal klaim.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 129,
+        "kutipan": "sekan (sec) merupakan kebalikan dari kosinus (cos), tanda nilai sekan tersebut adalah positif"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sudut yang memenuhi dua syarat tanda",
+      "alasan_level": "memeriksa tiap kandidat sudut terhadap dua syarat tanda sekaligus (kuadran sisi akhir) dan menolak yang memenuhi satu syarat saja",
+      "stimulus": null,
+      "pertanyaan": "Sudut $t$ dalam posisi baku harus memenuhi $\\sin t \\cdot \\cos t > 0$ dan $\\csc t < 0$. Sudut yang memenuhi kedua syarat itu adalah ....",
+      "jawaban_benar": "$t = \\frac{19\\pi}{6}$",
+      "alasan_benar": "$\\frac{19\\pi}{6}=2\\pi+\\frac{7\\pi}{6}$, sisi akhir di kuadran III: $\\sin<0$, $\\cos<0$ (hasil kali positif) dan $\\csc<0$",
+      "distraktor": [
+        {
+          "teks": "$t = \\frac{25\\pi}{4}$",
+          "alasan": "setara $\\frac{\\pi}{4}$ (kuadran I): hasil kali positif tetapi $\\csc t>0$"
+        },
+        {
+          "teks": "$t = -\\frac{\\pi}{3}$",
+          "alasan": "kuadran IV: $\\csc t<0$ tetapi $\\sin t\\cos t<0$"
+        },
+        {
+          "teks": "$t = \\frac{17\\pi}{6}$",
+          "alasan": "setara $\\frac{5\\pi}{6}$ (kuadran II): $\\sin t\\cos t<0$ dan $\\csc t>0$"
+        }
+      ],
+      "pembahasan": "Syarat pertama berarti sinus dan kosinus senada (kuadran I atau III); syarat kedua berarti sinus negatif (kuadran III atau IV). Irisannya kuadran III.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 122,
+        "kutipan": "Koordinat x dan y titik-titik tersebut dapat ditentukan dengan perbandingan trigonometri."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat parameter agar nilai sinus ada",
+      "alasan_level": "menalar daerah nilai sinus untuk menentukan syarat parameter, dengan jebakan batas dan pembagian koefisien",
+      "stimulus": null,
+      "pertanyaan": "Ada sudut $t$ yang memenuhi $\\sin t = 5 - 2m$ jika dan hanya jika nilai $m$ memenuhi ....",
+      "jawaban_benar": "$2 \\le m \\le 3$",
+      "alasan_benar": "karena $-1\\le\\sin t\\le1$, maka $-1\\le5-2m\\le1$ sehingga $2\\le m\\le3$",
+      "distraktor": [
+        {
+          "teks": "$2 < m < 3$",
+          "alasan": "memakai batas tegas, padahal $\\sin t=\\pm1$ dapat dicapai"
+        },
+        {
+          "teks": "$-1 \\le m \\le 1$",
+          "alasan": "lupa menggeser konstanta 5 dan koefisien $-2$"
+        },
+        {
+          "teks": "$4 \\le m \\le 6$",
+          "alasan": "menghilangkan konstanta 5 dengan benar tetapi lupa membagi $-2$ (batas tidak dibagi 2)"
+        }
+      ],
+      "pembahasan": "$-1\\le5-2m\\le1 \\Rightarrow -6\\le-2m\\le-4 \\Rightarrow 2\\le m\\le3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 124,
+        "kutipan": "Untuk sudut-sudut dalam posisi baku yang sisi akhirnya di kuadran II, misalnya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter titik pada lingkaran satuan",
+      "alasan_level": "menyusun persamaan titik pada lingkaran satuan, menyelesaikan dua akar, lalu menilai letak sudut tiap akar dan mengevaluasi pernyataan",
+      "stimulus": null,
+      "pertanyaan": "Titik $P(m-2,\\ 5-2m)$ terletak pada lingkaran satuan dan bersesuaian dengan sudut pusat $t$ dalam posisi baku. Pernyataan yang benar tentang nilai $m$ adalah ....",
+      "jawaban_benar": "Ada tepat dua nilai $m$: satu membuat sisi akhir $t$ di sumbu-$y$ positif dan satu lagi membuat $t$ di kuadran IV",
+      "alasan_benar": "$(m-2)^2+(5-2m)^2=1$ memberi $5m^2-24m+28=0$, $m=2$ atau $m=\\frac{14}{5}$; $P(0,1)$ dan $P\\left(\\frac{4}{5},-\\frac{3}{5}\\right)$",
+      "distraktor": [
+        {
+          "teks": "Ada tepat satu nilai $m$, yaitu $m = \\frac{14}{5}$, dengan $t$ di kuadran IV",
+          "alasan": "melewatkan akar $m=2$ yang juga menghasilkan titik pada lingkaran"
+        },
+        {
+          "teks": "Ada tepat dua nilai $m$: satu membuat $t$ di sumbu-$y$ positif dan satu lagi membuat $t$ di kuadran II",
+          "alasan": "untuk $m=\\frac{14}{5}$ absis positif ($\\frac45$), bukan kuadran II"
+        },
+        {
+          "teks": "Ada tepat dua nilai $m$ dan keduanya membuat $t$ di kuadran IV",
+          "alasan": "untuk $m=2$ titiknya $(0,1)$ yang berada di sumbu-$y$, bukan kuadran IV"
+        }
+      ],
+      "pembahasan": "Kuadratkan: $m^2-4m+4+4m^2-20m+25=1 \\Rightarrow 5m^2-24m+28=0 \\Rightarrow (5m-14)(m-2)=0$. $m=2$ memberi $(0,1)$; $m=\\frac{14}{5}$ memberi $\\left(\\frac45,-\\frac35\\right)$ di kuadran IV.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 130,
+        "kutipan": "Sinus, kosekan, tangen, dan kotangen merupakan fungsi-fungsi ganjil."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "klasifikasi fungsi ganjil dan genap",
+      "alasan_level": "mengevaluasi sifat ganjil/genap gabungan fungsi trigonometri dengan fungsi identitas (perkalian ganjil dan genap)",
+      "stimulus": null,
+      "pertanyaan": "Diberikan $f(t) = \\sin t \\cos t$ dan $g(t) = t \\sin t$ dengan daerah asal semua bilangan real. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$f$ fungsi ganjil dan $g$ fungsi genap",
+      "alasan_benar": "$f(-t)=(-\\sin t)\\cos t=-f(t)$ (ganjil $\\times$ genap) dan $g(-t)=(-t)(-\\sin t)=g(t)$ (ganjil $\\times$ ganjil)",
+      "distraktor": [
+        {
+          "teks": "$f$ fungsi genap dan $g$ fungsi ganjil",
+          "alasan": "tertukar: mengira sinus kali kosinus genap dan $t$ kali sinus ganjil"
+        },
+        {
+          "teks": "$f$ dan $g$ keduanya fungsi ganjil",
+          "alasan": "hanya melihat bahwa sinus fungsi ganjil pada kedua fungsi"
+        },
+        {
+          "teks": "$f$ dan $g$ keduanya fungsi genap",
+          "alasan": "hanya melihat kosinus fungsi genap dan mengabaikan tanda pada $\\sin(-t)$"
+        }
+      ],
+      "pembahasan": "Ganjil kali genap menghasilkan ganjil, ganjil kali ganjil menghasilkan genap. $f(-t)=-f(t)$ dan $g(-t)=g(t)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 121,
+        "kutipan": "jika kamu mendapati ukuran sudut yang tidak memiliki satuan atau penanda, sudut tersebut berarti dinyatakan dalam radian."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tanda nilai fungsi sudut radian tanpa satuan",
+      "alasan_level": "memperkirakan kuadran sudut radian tanpa satuan ($\\pi\\approx3{,}14$) dan sifat genap kosinus, lalu mengevaluasi kombinasi tanda",
+      "stimulus": null,
+      "pertanyaan": "Sudut tanpa satuan dianggap dalam radian (gunakan $\\pi \\approx 3{,}14$). Kombinasi tanda $\\sin 5$, $\\cos(-2)$, dan $\\tan 4$ secara berturut-turut adalah ....",
+      "jawaban_benar": "negatif, negatif, positif",
+      "alasan_benar": "$5$ rad di kuadran IV ($\\sin<0$); $\\cos(-2)=\\cos 2$ dan $2$ rad di kuadran II ($\\cos<0$); $4$ rad di kuadran III ($\\tan>0$)",
+      "distraktor": [
+        {
+          "teks": "positif, negatif, positif",
+          "alasan": "menganggap $5$ sebagai derajat sehingga di kuadran I"
+        },
+        {
+          "teks": "negatif, positif, positif",
+          "alasan": "mengira $\\cos(-2)$ bertanda sama dengan $\\cos$ sudut negatif kuadran IV"
+        },
+        {
+          "teks": "negatif, negatif, negatif",
+          "alasan": "mengira $4$ rad di kuadran III sehingga tangen negatif (padahal sinus dan kosinus sama-sama negatif)"
+        }
+      ],
+      "pembahasan": "$\\frac{3\\pi}{2}\\approx4{,}71$: $5$ rad di kuadran IV. $\\frac{\\pi}{2}\\approx1{,}57<2<\\pi$: kuadran II. $\\pi<4<\\frac{3\\pi}{2}$: kuadran III.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "kutipan": "Dalam radian, besar satu putaran penuh adalah 2"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan ukuran sudut radian dan derajat",
+      "alasan_level": "mengevaluasi empat pernyataan perbandingan radian-derajat yang batasnya dibuat dekat sehingga perlu konversi teliti",
+      "stimulus": null,
+      "pertanyaan": "Gunakan $1\\ \\text{rad} = \\frac{180^\\circ}{\\pi}$ dengan $\\pi \\approx 3{,}1416$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$3$ rad lebih besar dari $170^\\circ$",
+      "alasan_benar": "$3\\ \\text{rad}=3\\times\\frac{180^\\circ}{\\pi}\\approx171{,}9^\\circ>170^\\circ$",
+      "distraktor": [
+        {
+          "teks": "$1{,}5$ rad lebih kecil dari $80^\\circ$",
+          "alasan": "$1{,}5$ rad $\\approx85{,}9^\\circ$, mengira $1$ rad mendekati $50^\\circ$"
+        },
+        {
+          "teks": "$0{,}5$ rad lebih besar dari $30^\\circ$",
+          "alasan": "$0{,}5$ rad $\\approx28{,}6^\\circ$, mengira $0{,}5$ rad $=30^\\circ$ (memakai $\\frac{\\pi}{6}\\approx0{,}5$ sebagai tepat)"
+        },
+        {
+          "teks": "$2$ rad lebih besar dari $120^\\circ$",
+          "alasan": "$2$ rad $\\approx114{,}6^\\circ$, mengira $1$ rad $=60^\\circ$"
+        }
+      ],
+      "pembahasan": "Kalikan tiap sudut dengan $57{,}3^\\circ$: $3\\to171{,}9^\\circ$, $1{,}5\\to85{,}9^\\circ$, $0{,}5\\to28{,}6^\\circ$, $2\\to114{,}6^\\circ$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 123,
+        "kutipan": "Kita dapat menggunakan Definisi 3.2 untuk menentukan nilai fungsi trigonometri sudut-sudut yang sisi akhirnya berimpit dengan sumbu-sumbu koordinat."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "nilai tak terdefinisi pada sumbu koordinat",
+      "alasan_level": "mengevaluasi empat pernyataan tentang terdefinisi/tidaknya fungsi di sudut yang berimpit sumbu, dengan membedakan nol pada pembilang dan penyebut",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$\\sec 17\\pi$ terdefinisi, tetapi $\\cot 17\\pi$ tak terdefinisi",
+      "alasan_benar": "$17\\pi$ berimpit dengan sumbu-$x$ negatif: titik $(-1,0)$, sehingga $\\sec=-1$ dan $\\cot=\\frac{x}{y}=\\frac{-1}{0}$ tak terdefinisi",
+      "distraktor": [
+        {
+          "teks": "$\\tan\\frac{9\\pi}{2}$ terdefinisi, tetapi $\\csc\\frac{9\\pi}{2}$ tak terdefinisi",
+          "alasan": "tertukar: di titik $(0,1)$, $\\tan=\\frac{y}{x}$ tak terdefinisi dan $\\csc=1$ terdefinisi"
+        },
+        {
+          "teks": "$\\csc(-8\\pi)$ dan $\\cot(-8\\pi)$ keduanya terdefinisi",
+          "alasan": "di titik $(1,0)$ ordinat nol sehingga keduanya tak terdefinisi"
+        },
+        {
+          "teks": "$\\sec\\frac{13\\pi}{2}$ dan $\\tan\\frac{13\\pi}{2}$ keduanya terdefinisi",
+          "alasan": "di titik $(0,1)$ absis nol sehingga keduanya tak terdefinisi"
+        }
+      ],
+      "pembahasan": "Fungsi yang membagi dengan $x$ ($\\tan$, $\\sec$) tak terdefinisi di sumbu-$y$; yang membagi dengan $y$ ($\\cot$, $\\csc$) tak terdefinisi di sumbu-$x$. $17\\pi\\to(-1,0)$, $\\frac{9\\pi}{2}\\to(0,1)$, $-8\\pi\\to(1,0)$, $\\frac{13\\pi}{2}\\to(0,1)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 117,
+        "kutipan": "Sudut pusat sebuah lingkaran berukuran 1 radian (1 rad) jika sudut pusat tersebut menghadap busur lingkaran"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan panjang busur beda satuan sudut",
+      "alasan_level": "menilai urutan tiga panjang busur dengan jari-jari dan satuan sudut berbeda; tiap urutan keliru berasal dari kesalahan khas",
+      "stimulus": null,
+      "pertanyaan": "Busur $K$: jari-jari $9$ cm dengan sudut pusat $100^\\circ$. Busur $L$: jari-jari $7$ cm dengan sudut pusat $1{,}8$ rad. Busur $M$: jari-jari $4$ cm dengan sudut pusat $\\frac{7\\pi}{6}$ rad. Urutan dari busur terpanjang ke terpendek adalah ....",
+      "jawaban_benar": "$K$, $M$, $L$",
+      "alasan_benar": "$s=r\\theta$ dengan $\\theta$ dalam radian: $K=9\\cdot\\frac{5\\pi}{9}=5\\pi\\approx15{,}7$ cm, $M=4\\cdot\\frac{7\\pi}{6}=\\frac{14\\pi}{3}\\approx14{,}7$ cm, $L=7\\cdot1{,}8=12{,}6$ cm",
+      "distraktor": [
+        {
+          "teks": "$K$, $L$, $M$",
+          "alasan": "hanya membandingkan jari-jari ($9>7>4$)"
+        },
+        {
+          "teks": "$M$, $L$, $K$",
+          "alasan": "hanya membandingkan besar sudut dalam radian ($\\frac{7\\pi}{6}>1{,}8>\\frac{5\\pi}{9}$)"
+        },
+        {
+          "teks": "$L$, $K$, $M$",
+          "alasan": "mengonversi lagi $1{,}8$ rad dengan $\\frac{180}{\\pi}$ padahal sudah radian, sehingga $L$ tampak $\\approx722$ cm"
+        }
+      ],
+      "pembahasan": "Ubah $100^\\circ=\\frac{5\\pi}{9}$ rad, lalu $s=r\\theta$: $K\\approx15{,}7$; $M\\approx14{,}7$; $L=12{,}6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "kutipan": "Satuan radian melibatkan fakta bahwa satu keliling sembarang lingkaran sama dengan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan konversi radian ke derajat",
+      "alasan_level": "menganalisis perhitungan siswa untuk menemukan kesalahan konversi satuan dan dampaknya pada kuadran sisi akhir",
+      "stimulus": null,
+      "pertanyaan": "Dani menentukan letak sisi akhir sudut $2{,}5$ rad dalam posisi baku: \"$2{,}5\\ \\text{rad} = 2{,}5 \\times 180^\\circ = 450^\\circ$, lalu $450^\\circ - 360^\\circ = 90^\\circ$, sehingga sisi akhirnya berimpit dengan sumbu-$y$ positif.\" Penjelasan yang benar tentang kesalahan Dani dan letak sisi akhir yang sebenarnya adalah ....",
+      "jawaban_benar": "Seharusnya dikalikan $\\frac{180^\\circ}{\\pi}$, sehingga $2{,}5$ rad $\\approx 143{,}2^\\circ$ dan sisi akhir di kuadran II",
+      "alasan_benar": "$1$ rad $=\\frac{180^\\circ}{\\pi}$, bukan $180^\\circ$; $2{,}5\\times57{,}3^\\circ\\approx143{,}2^\\circ$ ada di kuadran II",
+      "distraktor": [
+        {
+          "teks": "Seharusnya dikalikan $\\frac{\\pi}{180^\\circ}$, sehingga $2{,}5$ rad $\\approx 0{,}04^\\circ$ dan sisi akhir di kuadran I",
+          "alasan": "membalik rasio konversi: $\\frac{\\pi}{180}$ dipakai untuk derajat ke radian"
+        },
+        {
+          "teks": "Seharusnya $450^\\circ - 360^\\circ = 180^\\circ$, sehingga sisi akhir di sumbu-$x$ negatif",
+          "alasan": "$450-360=90$ sudah benar; kesalahan bukan pada pengurangan"
+        },
+        {
+          "teks": "Seharusnya dikalikan $\\frac{180^\\circ}{\\pi}$, sehingga $2{,}5$ rad $\\approx 143{,}2^\\circ$ dan sisi akhir di kuadran III",
+          "alasan": "$143{,}2^\\circ$ kurang dari $180^\\circ$ sehingga kuadran II, bukan III"
+        }
+      ],
+      "pembahasan": "Konversi radian ke derajat: kalikan $\\frac{180^\\circ}{\\pi}$. $2{,}5\\times\\frac{180^\\circ}{3{,}1416}\\approx143{,}2^\\circ$, antara $90^\\circ$ dan $180^\\circ$: kuadran II.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 124,
+        "kutipan": "Untuk sudut-sudut dalam posisi baku yang sisi akhirnya di kuadran II, misalnya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "titik pada lingkaran satuan dengan tiga syarat",
+      "alasan_level": "memeriksa tiap kandidat titik terhadap tiga syarat sekaligus (di lingkaran satuan, nilai tangen, dan tanda sinus)",
+      "stimulus": null,
+      "pertanyaan": "Titik $P(x, y)$ pada lingkaran satuan bersesuaian dengan sudut pusat $t$ yang memenuhi $\\tan t = -2$ dan $\\sin t > 0$. Koordinat $P$ adalah ....",
+      "jawaban_benar": "$\\left(-\\frac{\\sqrt{5}}{5}, \\frac{2\\sqrt{5}}{5}\\right)$",
+      "alasan_benar": "$\\tan t=\\frac{y}{x}=-2$ dan $y>0$ berarti kuadran II; $x^2+4x^2=1$ memberi $x=-\\frac{\\sqrt5}{5}$, $y=\\frac{2\\sqrt5}{5}$",
+      "distraktor": [
+        {
+          "teks": "$\\left(\\frac{\\sqrt{5}}{5}, -\\frac{2\\sqrt{5}}{5}\\right)$",
+          "alasan": "tangennya $-2$ dan di lingkaran, tetapi $\\sin t<0$ (kuadran IV)"
+        },
+        {
+          "teks": "$\\left(-1, 2\\right)$",
+          "alasan": "tangennya $-2$ dan $y>0$, tetapi tidak di lingkaran satuan karena $x^2+y^2=5$"
+        },
+        {
+          "teks": "$\\left(-\\frac{2\\sqrt{5}}{5}, \\frac{\\sqrt{5}}{5}\\right)$",
+          "alasan": "di lingkaran dan kuadran II, tetapi $\\tan t=-\\frac12$ (absis dan ordinat tertukar)"
+        }
+      ],
+      "pembahasan": "Kuadran II dan $y=-2x$. Substitusi ke $x^2+y^2=1$: $5x^2=1$, $x=-\\frac{1}{\\sqrt5}$ (absis negatif), $y=\\frac{2}{\\sqrt5}$.",
+      "catatan": null
+    }
+  ]
+}

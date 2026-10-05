@@ -1,0 +1,408 @@
+{
+ "book": "kelas11_tl",
+ "bab_no": 4,
+ "subbab": "A",
+ "level": "hard",
+ "batch": 1,
+ "skill_versi": "v1",
+ "kapasitas_kurang": true,
+ "alasan_kapasitas": "Acuan variasi habis di easy+medium dan materi subbab hanya menopang soal hard berupa evaluasi klaim, temukan kesalahan, dan rancangan sederhana; soal hitung langsung dibuang agar tidak setara medium.",
+ "soal": [
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-001",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "evaluasi kapan panjang jumlah sama dengan jumlah panjang",
+   "alasan_level": "menganalisis tiap kandidat vektor terhadap syarat kesamaan panjang; setara medium atas",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\mathbf{u} = \\langle 3, -4\\rangle$. Vektor $\\mathbf{v}$ yang membuat $\\|\\mathbf{u}+\\mathbf{v}\\| = \\|\\mathbf{u}\\| + \\|\\mathbf{v}\\|$ berlaku adalah ....",
+   "jawaban_benar": "$\\mathbf{v} = \\langle 6, -8\\rangle$",
+   "alasan_benar": "v = 2u searah dengan u: u+v = (9,-12), panjang 15 = 5 + 10",
+   "distraktor": [
+    {
+     "teks": "$\\mathbf{v} = \\langle -6, 8\\rangle$",
+     "alasan": "berlawanan arah dengan u: panjang jumlah 5, bukan 15"
+    },
+    {
+     "teks": "$\\mathbf{v} = \\langle 4, 3\\rangle$",
+     "alasan": "dipilih karena panjangnya 5 sama dengan u, padahal tidak searah: panjang jumlah akar 50"
+    },
+    {
+     "teks": "$\\mathbf{v} = \\langle 3, 4\\rangle$",
+     "alasan": "komponen ditukar tanda: u+v = (6,0) berpanjang 6, bukan 10"
+    }
+   ],
+   "pembahasan": "Kesamaan terjadi hanya bila kedua vektor searah (v kelipatan positif u). $\\langle 6,-8\\rangle=2\\mathbf{u}$: $\\|\\mathbf{u}+\\mathbf{v}\\|=\\|\\langle 9,-12\\rangle\\|=15=5+10$. Untuk $\\langle -6,8\\rangle$ jumlahnya $\\langle -3,4\\rangle$ (5); $\\langle 4,3\\rangle$ memberi $\\langle 7,-1\\rangle$ ($\\sqrt{50}\\ne 10$); $\\langle 3,4\\rangle$ memberi $\\langle 6,0\\rangle$ (6).",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 184,
+    "kutipan": "pangkal sebuah vektor berimpit dengan titik ujung vektor lainnya, seperti yang ditunjukkan pada Gambar 4.11"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-002",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "evaluasi arah dua vektor sejajar dengan parameter",
+   "alasan_level": "menentukan syarat sejajar, lalu menilai arah tiap akar; evaluasi akar-akar setara medium atas",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\mathbf{a} = \\langle k, 2\\rangle$ dan $\\mathbf{b} = \\langle 8, k\\rangle$. Kedua vektor sejajar bila $k^2 = 16$. Pernyataan yang benar mengenai $k$ adalah ....",
+   "jawaban_benar": "$k = 4$ membuat $\\mathbf{a}$ dan $\\mathbf{b}$ searah, $k = -4$ membuatnya berlawanan arah",
+   "alasan_benar": "k=4: a=(4,2), b=(8,4)=2a searah; k=-4: a=(-4,2), b=(8,-4)=-2a berlawanan",
+   "distraktor": [
+    {
+     "teks": "$k = 4$ membuat keduanya berlawanan arah, $k = -4$ membuatnya searah",
+     "alasan": "arah kedua akar tertukar"
+    },
+    {
+     "teks": "$k = 4$ dan $k = -4$ sama-sama membuat keduanya searah",
+     "alasan": "mengira sejajar selalu berarti searah"
+    },
+    {
+     "teks": "$k = 4$ dan $k = -4$ sama-sama membuat keduanya berlawanan arah",
+     "alasan": "mengira sejajar selalu berarti berlawanan arah"
+    }
+   ],
+   "pembahasan": "Sejajar berarti $\\mathbf{b}=c\\mathbf{a}$. Untuk $k=4$: $\\mathbf{a}=\\langle 4,2\\rangle$, $\\mathbf{b}=\\langle 8,4\\rangle=2\\mathbf{a}$ ($c>0$, searah). Untuk $k=-4$: $\\mathbf{a}=\\langle -4,2\\rangle$, $\\mathbf{b}=\\langle 8,-4\\rangle=-2\\mathbf{a}$ ($c<0$, berlawanan).",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 184,
+    "kutipan": "sedangkan jika c negatif, arahnya berlawanan dengan v"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-003",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "menemukan kesalahan langkah panjang vektor",
+   "alasan_level": "mengevaluasi penyelesaian siswa yang salah memakai jumlah komponen dan mencari dua akar yang benar",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menyelesaikan soal \"vektor $\\mathbf{v} = \\langle t, t+7\\rangle$ memiliki panjang 13\" dengan menulis $t + (t+7) = 13$, sehingga $t = 3$. Penilaian yang tepat atas jawaban siswa tersebut adalah ....",
+   "jawaban_benar": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar adalah $5$ atau $-12$",
+   "alasan_benar": "t^2 + (t+7)^2 = 169 menjadi t^2 + 7t - 60 = 0, akar 5 dan -12",
+   "distraktor": [
+    {
+     "teks": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar hanya $5$",
+     "alasan": "mengabaikan akar negatif -12 yang juga memenuhi"
+    },
+    {
+     "teks": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar adalah $12$ atau $-5$",
+     "alasan": "akar kuadrat salah tanda"
+    },
+    {
+     "teks": "benar, karena panjang vektor sama dengan jumlah kedua komponennya",
+     "alasan": "menganggap panjang vektor adalah jumlah komponen"
+    }
+   ],
+   "pembahasan": "Panjang $\\langle t,t+7\\rangle$ adalah $\\sqrt{t^2+(t+7)^2}$. Dari $2t^2+14t+49=169$ diperoleh $t^2+7t-60=0$, $(t-5)(t+12)=0$. Jadi $t=5$ atau $t=-12$; $t=3$ memberi $\\langle 3,10\\rangle$ berpanjang $\\sqrt{109}\\ne 13$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 178,
+    "kutipan": "Panjang vektor dapat ditentukan dengan Rumus Jarak."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-004",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "menemukan langkah salah resultan",
+   "alasan_level": "mengecek empat langkah penyelesaian siswa satu per satu untuk menemukan satu langkah yang salah",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\mathbf{a} = \\langle 4,-1\\rangle$, $\\mathbf{b} = \\langle -2,5\\rangle$, dan $\\mathbf{c} = \\langle 3,-3\\rangle$. Seorang siswa menghitung $2\\mathbf{a} - \\mathbf{b} + \\mathbf{c}$ sebagai berikut.\n\nLangkah 1: $2\\mathbf{a} = \\langle 8,-2\\rangle$.\nLangkah 2: $-\\mathbf{b} = \\langle 2,-5\\rangle$.\nLangkah 3: komponen pertama $= 8 + 2 + 3 = 13$.\nLangkah 4: komponen kedua $= -2 + (-5) + 3 = -4$.\n\nHasil siswa: $\\langle 13,-4\\rangle$. Kesalahan pertama terjadi pada ....",
+   "jawaban_benar": "Langkah 4: komponen kedua $\\mathbf{c}$ adalah $-3$, bukan $+3$",
+   "alasan_benar": "komponen kedua benar -2-5-3 = -10, hasil yang benar (13,-10)",
+   "distraktor": [
+    {
+     "teks": "Langkah 1: $2\\mathbf{a}$ seharusnya $\\langle 8,-1\\rangle$",
+     "alasan": "keliru: 2a = (8,-2) sudah benar"
+    },
+    {
+     "teks": "Langkah 2: $-\\mathbf{b}$ seharusnya $\\langle -2,5\\rangle$",
+     "alasan": "keliru: -b = (2,-5) sudah benar, lawan dari b"
+    },
+    {
+     "teks": "Langkah 3: komponen pertama seharusnya $8 - 2 + 3 = 9$",
+     "alasan": "keliru: -b memberi +2 sehingga 8+2+3 = 13 sudah benar"
+    }
+   ],
+   "pembahasan": "$2\\mathbf{a}=\\langle 8,-2\\rangle$ dan $-\\mathbf{b}=\\langle 2,-5\\rangle$ benar, komponen pertama $8+2+3=13$ benar. Komponen kedua seharusnya $-2-5+(-3)=-10$, sehingga hasil benar $\\langle 13,-10\\rangle$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 182,
+    "kutipan": "Secara umum, penjumlahan dua vektor dilakukan dengan menjumlahkan setiap komponennya."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-005",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "membandingkan dua cara menentukan waktu menyeberang",
+   "alasan_level": "menilai dua penalaran (memakai kecepatan resultan vs komponen tegak lurus) lalu menghitung hanyutan; setara medium atas",
+   "stimulus": null,
+   "pertanyaan": "Sebuah perahu diarahkan tegak lurus tepi sungai dengan kecepatan 4 m/s menyeberangi sungai selebar 120 m. Arus sungai 3 m/s sejajar tepi. Dina menghitung waktu menyeberang dengan $120 \\div 5$ karena kecepatan resultan perahu 5 m/s. Eka menghitung dengan $120 \\div 4$. Pernyataan yang benar adalah ....",
+   "jawaban_benar": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 90 m sepanjang tepi",
+   "alasan_benar": "lebar sungai ditempuh oleh komponen tegak lurus 4 m/s: t = 120/4 = 30 s; hanyut = 3 x 30 = 90 m",
+   "distraktor": [
+    {
+     "teks": "Dina benar: waktu menyeberang 24 detik dan perahu terhanyut 72 m sepanjang tepi",
+     "alasan": "memakai kecepatan resultan untuk jarak tegak lurus tepi, padahal lebar sungai dilalui komponen 4 m/s"
+    },
+    {
+     "teks": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 120 m sepanjang tepi",
+     "alasan": "waktu benar tetapi hanyutan disamakan dengan lebar sungai"
+    },
+    {
+     "teks": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 150 m sepanjang tepi",
+     "alasan": "hanyutan dihitung dengan kecepatan resultan 5 x 30, padahal itu panjang lintasan"
+    }
+   ],
+   "pembahasan": "Jarak tegak lurus tepi (120 m) hanya dilalui komponen kecepatan perahu 4 m/s, jadi $t=120/4=30$ s. Selama itu arus menggeser $3\\cdot 30=90$ m. Resultan $\\langle 3,4\\rangle$ berbesar 5 m/s menempuh lintasan miring $5\\cdot 30=150$ m, bukan hanyutan.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 181,
+    "kutipan": "Misalkan kamu akan menyeberangi sebuah sungai dengan kecepatan arus 1 m/s."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-006",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "contoh penyangkal klaim panjang kelipatan skalar",
+   "alasan_level": "mengevaluasi klaim umum dengan menguji tiap pasangan skalar-vektor untuk contoh penyangkal",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menyimpulkan bahwa $\\|c\\mathbf{v}\\| = c\\,\\|\\mathbf{v}\\|$ berlaku untuk setiap skalar $c$ dan vektor $\\mathbf{v}$. Contoh penyangkal klaim tersebut adalah ....",
+   "jawaban_benar": "$c = -3$ dan $\\mathbf{v} = \\langle 5, -12\\rangle$",
+   "alasan_benar": "||cv|| = 39 sedangkan c||v|| = -3 x 13 = -39, tidak sama",
+   "distraktor": [
+    {
+     "teks": "$c = 3$ dan $\\mathbf{v} = \\langle 5, -12\\rangle$",
+     "alasan": "keduanya bernilai 39 sehingga klaim terpenuhi, bukan penyangkal"
+    },
+    {
+     "teks": "$c = 0$ dan $\\mathbf{v} = \\langle 5, 12\\rangle$",
+     "alasan": "keduanya bernilai 0 sehingga klaim terpenuhi"
+    },
+    {
+     "teks": "$c = 2$ dan $\\mathbf{v} = \\langle -6, 8\\rangle$",
+     "alasan": "keduanya bernilai 20 sehingga klaim terpenuhi; tanda komponen vektor bukan penyebab klaim gagal"
+    }
+   ],
+   "pembahasan": "Yang benar $\\|c\\mathbf{v}\\|=|c|\\,\\|\\mathbf{v}\\|$. Klaim hanya gagal bila $c<0$: $c=-3$, $\\mathbf{v}=\\langle 5,-12\\rangle$ memberi $\\|c\\mathbf{v}\\|=\\|\\langle -15,36\\rangle\\|=39$, sedangkan $c\\|\\mathbf{v}\\|=-39$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 187,
+    "kutipan": "Untuk lebih memahami penggunaan sifat-sifat tersebut, perhatikan contoh berikut!"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-007",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "menilai kemungkinan panjang jumlah dua vektor",
+   "alasan_level": "menalar batas panjang jumlah dua vektor dari susunan pangkal-ujung dan menilai tiap kandidat",
+   "stimulus": null,
+   "pertanyaan": "Vektor $\\mathbf{u}$ berpanjang 5 dan vektor $\\mathbf{v}$ berpanjang 12, arah keduanya tidak diketahui. Nilai $\\|\\mathbf{u}+\\mathbf{v}\\|$ yang TIDAK mungkin terjadi adalah ....",
+   "jawaban_benar": "$18$",
+   "alasan_benar": "panjang jumlah paling besar 5+12 = 17 (searah) dan paling kecil 12-5 = 7 (berlawanan)",
+   "distraktor": [
+    {
+     "teks": "$8$",
+     "alasan": "mungkin: berada di antara 7 dan 17 (sudut tertentu antara u dan v)"
+    },
+    {
+     "teks": "$13$",
+     "alasan": "mungkin: terjadi bila u dan v saling tegak lurus (akar 25+144)"
+    },
+    {
+     "teks": "$16$",
+     "alasan": "mungkin: berada di antara 7 dan 17"
+    }
+   ],
+   "pembahasan": "Menyambung pangkal $\\mathbf{v}$ pada ujung $\\mathbf{u}$, panjang jumlah berkisar dari $12-5=7$ (berlawanan arah) sampai $5+12=17$ (searah). Jadi $8$, $13$, $16$ mungkin, sedangkan $18>17$ tidak mungkin.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 184,
+    "kutipan": "pangkal sebuah vektor berimpit dengan titik ujung vektor lainnya, seperti yang ditunjukkan pada Gambar 4.11"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-008",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "membandingkan jumlah panjang dan panjang jumlah perpindahan",
+   "alasan_level": "menilai dua cara hitung jarak dan menafsirkan arti masing-masing angka",
+   "stimulus": null,
+   "pertanyaan": "Seorang pelari bergerak dua tahap dengan perpindahan $\\langle 12, 5\\rangle$ m lalu $\\langle -12, 16\\rangle$ m. Andi menghitung jarak pelari dari titik awal dengan menjumlahkan panjang kedua perpindahan, sedangkan Budi menjumlahkan vektornya dulu lalu mencari panjangnya. Pernyataan yang benar adalah ....",
+   "jawaban_benar": "Budi benar: jarak lurus dari titik awal 21 m, sedangkan 33 m adalah panjang lintasan yang ditempuh",
+   "alasan_benar": "p1+p2 = (0,21) panjang 21; 13 + 20 = 33 adalah total jarak tempuh",
+   "distraktor": [
+    {
+     "teks": "Andi benar: jarak lurus dari titik awal 33 m, sedangkan 21 m adalah panjang lintasan yang ditempuh",
+     "alasan": "menukar arti jarak lurus (perpindahan) dengan jarak tempuh"
+    },
+    {
+     "teks": "Budi benar: jarak lurus dari titik awal 21 m, sedangkan 33 m adalah selisih panjang kedua perpindahan",
+     "alasan": "angka 33 bukan selisih; selisihnya 7, 33 adalah jumlah panjang"
+    },
+    {
+     "teks": "Keduanya benar karena jumlah panjang vektor selalu sama dengan panjang jumlah vektor",
+     "alasan": "mengira ||p1+p2|| = ||p1|| + ||p2|| selalu berlaku"
+    }
+   ],
+   "pembahasan": "Perpindahan total $\\langle 0,21\\rangle$ sehingga jarak lurus dari titik awal $=21$ m (cara Budi). Jumlah panjang $13+20=33$ m adalah panjang lintasan yang ditempuh, lebih besar karena kedua perpindahan tidak searah.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 180,
+    "kutipan": "Gerakan tersebut dapat digambarkan menjadi 9 ruas garis berarah."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-009",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "menilai pernyataan hubungan dua vektor",
+   "alasan_level": "menguji setiap pernyataan tentang arah dan panjang terhadap hasil b = kelipatan skalar a",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\mathbf{a} = \\langle 4, -10\\rangle$ dan $\\mathbf{b} = \\langle -6, 15\\rangle$. Pernyataan yang benar mengenai kedua vektor tersebut adalah ....",
+   "jawaban_benar": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{3}{2}$ kali panjang $\\mathbf{a}$",
+   "alasan_benar": "b = -3/2 a: skalar negatif membalik arah, panjang |-3/2| x ||a||",
+   "distraktor": [
+    {
+     "teks": "$\\mathbf{b}$ searah dengan $\\mathbf{a}$ dan panjangnya $\\frac{3}{2}$ kali panjang $\\mathbf{a}$",
+     "alasan": "mengabaikan tanda negatif skalar sehingga arah dikira sama"
+    },
+    {
+     "teks": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{9}{4}$ kali panjang $\\mathbf{a}$",
+     "alasan": "kuadrat skalar dipakai sebagai faktor panjang"
+    },
+    {
+     "teks": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{2}{3}$ kali panjang $\\mathbf{a}$",
+     "alasan": "perbandingan terbalik: a dibagi b"
+    }
+   ],
+   "pembahasan": "$\\mathbf{b}=-\\frac32\\mathbf{a}$ karena $-\\frac32\\cdot4=-6$ dan $-\\frac32\\cdot(-10)=15$. Skalar negatif membalik arah dan $\\|\\mathbf{b}\\|=\\frac32\\|\\mathbf{a}\\|$.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 184,
+    "kutipan": "sedangkan jika c negatif, arahnya berlawanan dengan v"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-010",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "merancang kecepatan perahu dan arus memenuhi dua syarat",
+   "alasan_level": "memeriksa tiap rancangan terhadap dua syarat sekaligus (besar resultan dan perahu lebih cepat dari arus)",
+   "stimulus": null,
+   "pertanyaan": "Sebuah perahu diarahkan tegak lurus tepi sungai. Kecepatan perahu (terhadap air) dan kecepatan arus sejajar tepi dipilih bilangan bulat dalam m/s, dengan arus tidak nol. Rancangan yang menghasilkan kecepatan resultan tepat 13 m/s dan perahu lebih cepat daripada arus adalah kecepatan perahu dan arus berturut-turut ....",
+   "jawaban_benar": "$12$ m/s dan $5$ m/s",
+   "alasan_benar": "12^2 + 5^2 = 169 = 13^2 dan 12 > 5",
+   "distraktor": [
+    {
+     "teks": "$5$ m/s dan $12$ m/s",
+     "alasan": "resultan 13 terpenuhi tetapi perahu lebih lambat daripada arus"
+    },
+    {
+     "teks": "$9$ m/s dan $4$ m/s",
+     "alasan": "perahu lebih cepat tetapi resultan akar 97, bukan 13"
+    },
+    {
+     "teks": "$13$ m/s dan $0$ m/s",
+     "alasan": "resultan 13 terpenuhi tetapi arus nol, melanggar syarat arus tidak nol"
+    }
+   ],
+   "pembahasan": "Resultan $\\langle v_a,v_p\\rangle$ berbesar $\\sqrt{v_a^2+v_p^2}=13$. Pasangan bulat positif: $(5,12)$ atau $(12,5)$; syarat perahu lebih cepat dari arus memilih perahu $12$, arus $5$. $(9,4)$ memberi $\\sqrt{97}$; $(13,0)$ ditolak karena arus nol.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 181,
+    "kutipan": "Misalkan kamu akan menyeberangi sebuah sungai dengan kecepatan arus 1 m/s."
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-011",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "contoh penyangkal klaim vektor berpanjang sama",
+   "alasan_level": "mengevaluasi klaim dengan memeriksa tiap pasangan terhadap dua kriteria (panjang dan arah)",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menyimpulkan bahwa dua vektor yang berpanjang sama pasti ekuivalen. Contoh penyangkal yang tepat adalah $\\mathbf{v} = \\langle 5, -12\\rangle$ dan ....",
+   "jawaban_benar": "$\\mathbf{w} = \\langle 12, 5\\rangle$",
+   "alasan_benar": "||w|| = 13 = ||v|| tetapi komponennya berbeda sehingga arahnya berbeda: tidak ekuivalen",
+   "distraktor": [
+    {
+     "teks": "$\\mathbf{w} = \\langle 5, -12\\rangle$ yang digambar dari titik pangkal lain",
+     "alasan": "panjang dan arahnya sama sehingga ekuivalen, bukan penyangkal"
+    },
+    {
+     "teks": "$\\mathbf{w} = \\langle 10, -24\\rangle$",
+     "alasan": "arah sama tetapi panjangnya 26, bukan 13; panjang tidak sama"
+    },
+    {
+     "teks": "$\\mathbf{w} = \\langle 6, -13\\rangle$",
+     "alasan": "panjangnya akar 205, bukan 13; panjang tidak sama"
+    }
+   ],
+   "pembahasan": "Ekuivalen menuntut panjang DAN arah sama (komponen sama). $\\|\\langle 12,5\\rangle\\|=13=\\|\\mathbf{v}\\|$ tetapi $\\langle 12,5\\rangle\\ne\\langle 5,-12\\rangle$. Pilihan lain: komponen sama (ekuivalen), atau panjang berbeda ($26$ dan $\\sqrt{205}$).",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 178,
+    "kutipan": "Karena PQ dan RS memiliki panjang dan arah sama, kita dapat menyimpulkan bahwa kedua vektor ini ekuivalen"
+   }
+  },
+  {
+   "id": "kelas11_tl-b04-a-hard-bt01-012",
+   "tipe_generate": "orisinal",
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "penyangkal klaim ciri vektor satuan",
+   "alasan_level": "menguji tiap kandidat terhadap premis klaim (jumlah nilai mutlak 1) dan kesimpulannya (panjang 1)",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menyimpulkan bahwa vektor $\\langle p, q\\rangle$ yang memenuhi $|p| + |q| = 1$ pasti merupakan vektor satuan. Contoh penyangkal klaim tersebut adalah ....",
+   "jawaban_benar": "$\\left\\langle \\frac{1}{2}, \\frac{1}{2}\\right\\rangle$",
+   "alasan_benar": "|1/2|+|1/2| = 1 tetapi panjangnya akar(1/4+1/4) = akar(1/2), bukan 1",
+   "distraktor": [
+    {
+     "teks": "$\\left\\langle \\frac{3}{5}, \\frac{4}{5}\\right\\rangle$",
+     "alasan": "vektor satuan, tetapi |p|+|q| = 7/5 sehingga premis tidak terpenuhi"
+    },
+    {
+     "teks": "$\\langle 0, -1\\rangle$",
+     "alasan": "|p|+|q| = 1 dan panjangnya 1, sehingga klaim terpenuhi"
+    },
+    {
+     "teks": "$\\langle 1, 0\\rangle$",
+     "alasan": "|p|+|q| = 1 dan panjangnya 1, sehingga klaim terpenuhi"
+    }
+   ],
+   "pembahasan": "Vektor satuan bila $p^2+q^2=1$, bukan $|p|+|q|=1$. $\\langle\\frac12,\\frac12\\rangle$ memenuhi premis tetapi panjangnya $\\sqrt{1/2}\\ne1$. $\\langle\\frac35,\\frac45\\rangle$ satuan namun premisnya gagal; $\\langle 0,-1\\rangle$ dan $\\langle 1,0\\rangle$ memenuhi premis dan satuan.",
+   "catatan": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 190,
+    "kutipan": "Kedua vektor ini disebut vektor satuan baku yang dapat digunakan untuk menuliskan sembarang vektor lainnya."
+   }
+  }
+ ]
+}
