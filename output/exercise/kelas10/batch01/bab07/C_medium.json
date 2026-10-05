@@ -1,0 +1,690 @@
+{
+  "book": "kelas10",
+  "bab_no": 7,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b07-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 276,
+        "bagian": "Latihan 7.5",
+        "nomor": "1",
+        "teks": "Dia harus melemparkan sepasang dadu dan mendapatkan angka dobel dan pada lemparan kedua mendapatkan jumlah enam.",
+        "jawaban": "5/216"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua lemparan sepasang dadu",
+      "alasan_level": "menghitung peluang dobel dan peluang jumlah sembilan dari 36 hasil, lalu mengalikannya",
+      "stimulus": "Rafi memainkan permainan papan yang memakai sepasang dadu setimbang. Pada giliran pertama ia harus mendapatkan kedua dadu bermata sama, dan pada giliran kedua ia harus mendapatkan jumlah mata sembilan. Hasil kedua giliran saling bebas.",
+      "pertanyaan": "Peluang Rafi berhasil pada kedua giliran tersebut adalah ....",
+      "jawaban_benar": "$\\frac{1}{54}$",
+      "alasan_benar": "$P(\\text{dobel}) = \\frac{6}{36} = \\frac{1}{6}$, $P(\\text{jumlah 9}) = \\frac{4}{36} = \\frac{1}{9}$, lalu $\\frac{1}{6} \\times \\frac{1}{9} = \\frac{1}{54}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{18}$",
+          "alasan": "menjumlahkan $\\frac{1}{6} + \\frac{1}{9}$ alih-alih mengalikan"
+        },
+        {
+          "teks": "$\\frac{1}{36}$",
+          "alasan": "mengira peluang jumlah sembilan sama dengan peluang dobel ($\\frac{1}{6}$)"
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "hanya memakai peluang giliran kedua"
+        }
+      ],
+      "pembahasan": "Dobel: 6 dari 36 hasil, jumlah 9: (3,6), (4,5), (5,4), (6,3) = 4 dari 36. $P = \\frac{1}{6} \\times \\frac{1}{9} = \\frac{1}{54}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 276,
+        "bagian": "Latihan 7.5",
+        "nomor": "1",
+        "teks": "Dia harus melemparkan sepasang dadu dan mendapatkan angka dobel dan pada lemparan kedua mendapatkan jumlah enam.",
+        "jawaban": "5/216"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua lemparan sepasang dadu",
+      "alasan_level": "peluang jumlah empat dan peluang dobel dari ruang sampel 36 hasil, lalu perkalian",
+      "stimulus": "Sebuah mesin permainan di pasar malam melempar sepasang dadu setimbang sebanyak dua kali secara terpisah. Hadiah diberikan jika lemparan pertama berjumlah empat dan lemparan kedua menghasilkan angka dobel.",
+      "pertanyaan": "Peluang pengunjung mendapatkan hadiah adalah ....",
+      "jawaban_benar": "$\\frac{1}{72}$",
+      "alasan_benar": "$P(\\text{jumlah 4}) = \\frac{3}{36} = \\frac{1}{12}$, $P(\\text{dobel}) = \\frac{1}{6}$, sehingga $\\frac{1}{12} \\times \\frac{1}{6} = \\frac{1}{72}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "menjumlahkan $\\frac{1}{12} + \\frac{1}{6}$"
+        },
+        {
+          "teks": "$\\frac{1}{36}$",
+          "alasan": "mengira peluang jumlah empat sama dengan $\\frac{1}{6}$"
+        },
+        {
+          "teks": "$\\frac{1}{12}$",
+          "alasan": "hanya memakai peluang lemparan pertama"
+        }
+      ],
+      "pembahasan": "Jumlah 4: (1,3), (2,2), (3,1) = 3 dari 36. $P = \\frac{1}{12} \\times \\frac{1}{6} = \\frac{1}{72}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b07-p0276-latihan-7-5-3b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "percobaan berulang dengan pengembalian",
+      "alasan_level": "menghitung banyak nomor genap lalu mengalikan peluang untuk tiga putaran bebas",
+      "stimulus": "Sebuah roda putar setimbang memiliki 9 sektor sama besar yang diberi nomor 1 sampai 9. Roda diputar tiga kali dan hasil tiap putaran saling bebas.",
+      "pertanyaan": "Peluang bahwa ketiga nomor yang muncul semuanya genap adalah ....",
+      "jawaban_benar": "$\\frac{64}{729}$",
+      "alasan_benar": "nomor genap ada 4 (2, 4, 6, 8): $\\left(\\frac{4}{9}\\right)^3 = \\frac{64}{729}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "hanya menghitung satu putaran"
+        },
+        {
+          "teks": "$\\frac{16}{81}$",
+          "alasan": "hanya mengalikan dua putaran"
+        },
+        {
+          "teks": "$\\frac{125}{729}$",
+          "alasan": "menghitung ketiganya ganjil (5 nomor ganjil)"
+        }
+      ],
+      "pembahasan": "Genap: 2, 4, 6, 8 (4 nomor). $P = \\left(\\frac{4}{9}\\right)^3 = \\frac{64}{729}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b07-p0277-latihan-7-5-3d"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "percobaan berulang dengan pengembalian",
+      "alasan_level": "menyadari pengambilan pertama bebas, kedua harus beda dari satu nomor, ketiga beda dari dua nomor",
+      "stimulus": "Sebuah kotak berisi 6 kartu bernomor 1 sampai 6. Satu kartu diambil secara acak, dicatat nomornya, lalu dikembalikan. Proses yang sama diulang sehingga terdapat tiga pengambilan, dan semua pengambilan saling bebas.",
+      "pertanyaan": "Peluang bahwa ketiga nomor yang tercatat semuanya berbeda adalah ....",
+      "jawaban_benar": "$\\frac{5}{9}$",
+      "alasan_benar": "pengambilan pertama bebas ($1$), kedua harus beda ($\\frac{5}{6}$), ketiga harus beda dari keduanya ($\\frac{4}{6}$): $\\frac{5}{6} \\times \\frac{4}{6} = \\frac{5}{9}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "hanya memperhatikan syarat untuk pengambilan kedua"
+        },
+        {
+          "teks": "$\\frac{125}{216}$",
+          "alasan": "mengalikan $\\frac{5}{6}$ tiga kali seolah tiap pengambilan harus beda dari satu nomor tertentu"
+        },
+        {
+          "teks": "$\\frac{1}{36}$",
+          "alasan": "menghitung peluang ketiga nomor sama"
+        }
+      ],
+      "pembahasan": "Nomor pertama bebas, nomor kedua 5 pilihan dari 6, nomor ketiga 4 pilihan dari 6. $P = 1 \\times \\frac{5}{6} \\times \\frac{4}{6} = \\frac{20}{36} = \\frac{5}{9}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b07-p0277-latihan-7-5-4b3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pengambilan bola dengan pengembalian",
+      "alasan_level": "mencari banyak bola biru lalu mengalikan peluang dua pengambilan dengan pengembalian",
+      "stimulus": "Sebuah tas berisi 15 bola dengan warna sebagai berikut: tujuh bola merah dan selebihnya berwarna biru. Sebuah bola diambil secara acak dari dalam tas. Bola tersebut kemudian dikembalikan ke dalam tas, dan bola kedua diambil.",
+      "pertanyaan": "Peluang bahwa bola pertama biru dan bola kedua merah adalah ....",
+      "jawaban_benar": "$\\frac{56}{225}$",
+      "alasan_benar": "bola biru ada 8; dengan pengembalian: $\\frac{8}{15} \\times \\frac{7}{15} = \\frac{56}{225}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{15}$",
+          "alasan": "memakai pengambilan tanpa pengembalian ($\\frac{8}{15} \\times \\frac{7}{14}$)"
+        },
+        {
+          "teks": "$\\frac{112}{225}$",
+          "alasan": "menghitung kedua urutan (biru-merah dan merah-biru)"
+        },
+        {
+          "teks": "$\\frac{49}{225}$",
+          "alasan": "mengira bola biru ada 7, jadi memakai $\\frac{7}{15} \\times \\frac{7}{15}$"
+        }
+      ],
+      "pembahasan": "Biru: $15 - 7 = 8$. $P = \\frac{8}{15} \\times \\frac{7}{15} = \\frac{56}{225}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b07-p0277-latihan-7-5-4b4"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pengambilan bola dengan pengembalian",
+      "alasan_level": "tiga kasus warna sama (tiga perkalian) lalu dijumlahkan",
+      "stimulus": "Sebuah kantong berisi 10 kelereng: 5 kelereng merah, 3 kelereng biru, dan 2 kelereng hijau. Sebuah kelereng diambil secara acak, dicatat warnanya, lalu dikembalikan ke dalam kantong. Kelereng kedua kemudian diambil.",
+      "pertanyaan": "Peluang bahwa kedua kelereng yang terambil berwarna sama adalah ....",
+      "jawaban_benar": "$\\frac{19}{50}$",
+      "alasan_benar": "$\\left(\\frac{5}{10}\\right)^2 + \\left(\\frac{3}{10}\\right)^2 + \\left(\\frac{2}{10}\\right)^2 = \\frac{25 + 9 + 4}{100} = \\frac{19}{50}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "hanya menghitung kedua merah"
+        },
+        {
+          "teks": "$\\frac{31}{50}$",
+          "alasan": "menghitung peluang kedua kelereng berbeda warna"
+        },
+        {
+          "teks": "$\\frac{14}{45}$",
+          "alasan": "memakai pengambilan tanpa pengembalian ($\\frac{5}{10} \\times \\frac{4}{9} + \\dots$)"
+        }
+      ],
+      "pembahasan": "Merah-merah $\\frac{25}{100}$, biru-biru $\\frac{9}{100}$, hijau-hijau $\\frac{4}{100}$. Jumlahnya $\\frac{38}{100} = \\frac{19}{50}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b07-p0277-latihan-7-5-4b7"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pengambilan bola dengan pengembalian",
+      "alasan_level": "komplemen dari tiga pengambilan bebas tanpa satu pun rusak",
+      "stimulus": "Sebuah kotak berisi 9 lampu, 4 di antaranya rusak. Sebuah lampu diambil secara acak, dicatat kondisinya, lalu dikembalikan ke dalam kotak. Proses ini dilakukan sebanyak tiga kali.",
+      "pertanyaan": "Peluang bahwa setidaknya satu lampu yang terambil rusak adalah ....",
+      "jawaban_benar": "$\\frac{604}{729}$",
+      "alasan_benar": "$1 - \\left(\\frac{5}{9}\\right)^3 = 1 - \\frac{125}{729} = \\frac{604}{729}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{125}{729}$",
+          "alasan": "menghitung peluang ketiga lampu tidak rusak"
+        },
+        {
+          "teks": "$\\frac{64}{729}$",
+          "alasan": "hanya menghitung ketiga lampu rusak"
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "hanya menghitung satu pengambilan"
+        }
+      ],
+      "pembahasan": "Tidak ada yang rusak: $\\left(\\frac{5}{9}\\right)^3 = \\frac{125}{729}$. Setidaknya satu rusak: $1 - \\frac{125}{729} = \\frac{604}{729}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b07-p0276-latihan-7-5-2b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "hitung P(A dan B) dari peluang diketahui",
+      "alasan_level": "komplemen peluang gagal lalu perkalian desimal dua angka di belakang koma",
+      "stimulus": "Gea dan Hadi sedang bermain lempar cincin. Peluang bagi Gea untuk mengenai sasaran adalah 0,45, sedangkan untuk Hadi 0,7. Keberhasilan atau kegagalan Gea dan Hadi saling bebas. Gea dan Hadi masing-masing melempar cincin sekali.",
+      "pertanyaan": "Peluang bahwa Gea mengenai sasaran, tetapi Hadi tidak, adalah ....",
+      "jawaban_benar": "0,135",
+      "alasan_benar": "peluang Hadi gagal $1 - 0,7 = 0,3$, lalu $0,45 \\times 0,3 = 0,135$",
+      "distraktor": [
+        {
+          "teks": "0,315",
+          "alasan": "lupa mengambil komplemen: $0,45 \\times 0,7$"
+        },
+        {
+          "teks": "0,385",
+          "alasan": "peran tertukar: Gea gagal dan Hadi mengenai sasaran"
+        },
+        {
+          "teks": "0,75",
+          "alasan": "menjumlahkan $0,45 + 0,3$ alih-alih mengalikan"
+        }
+      ],
+      "pembahasan": "$P = 0,45 \\times (1 - 0,7) = 0,45 \\times 0,3 = 0,135$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Ada satu bola lebih sedikit untuk pilihan kedua sehingga peluangnya akan berubah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "tanpa pengembalian",
+      "alasan_level": "peluang kedua berubah karena bola tidak dikembalikan, lalu satu perkalian",
+      "stimulus": "Sebuah tas berisi 6 bola merah dan 4 bola biru yang identik kecuali warnanya. Dua bola diambil satu per satu secara acak tanpa pengembalian.",
+      "pertanyaan": "Peluang bahwa kedua bola yang terambil berwarna merah adalah ....",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "pengambilan pertama $\\frac{6}{10}$, kedua tersisa 5 merah dari 9 bola: $\\frac{6}{10} \\times \\frac{5}{9} = \\frac{1}{3}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{25}$",
+          "alasan": "memakai pengambilan dengan pengembalian ($\\frac{6}{10} \\times \\frac{6}{10}$)"
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "mengurangi penyebut tetapi lupa mengurangi banyak bola merah"
+        },
+        {
+          "teks": "$\\frac{4}{15}$",
+          "alasan": "menghitung bola pertama merah dan bola kedua biru"
+        }
+      ],
+      "pembahasan": "Setelah satu bola merah diambil, tersisa 5 merah dari 9 bola. $P = \\frac{6}{10} \\times \\frac{5}{9} = \\frac{30}{90} = \\frac{1}{3}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Perlu diperhatikan bahwa aturan ini tidak berlaku jika kedua kejadian tidak saling bebas"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tanpa pengembalian",
+      "alasan_level": "membandingkan dua skema pengambilan, masing-masing satu perkalian, lalu selisih pecahan",
+      "stimulus": "Sebuah tas berisi 5 bola merah dan 3 bola biru. Dua bola diambil satu per satu secara acak. Skema I: bola pertama dikembalikan sebelum bola kedua diambil. Skema II: bola pertama tidak dikembalikan.",
+      "pertanyaan": "Peluang kedua bola merah pada Skema I dikurangi peluang kedua bola merah pada Skema II adalah ....",
+      "jawaban_benar": "$\\frac{15}{448}$",
+      "alasan_benar": "Skema I: $\\frac{5}{8} \\times \\frac{5}{8} = \\frac{25}{64}$; Skema II: $\\frac{5}{8} \\times \\frac{4}{7} = \\frac{5}{14}$; selisih $\\frac{25}{64} - \\frac{5}{14} = \\frac{15}{448}$",
+      "distraktor": [
+        {
+          "teks": "$-\\frac{15}{448}$",
+          "alasan": "urutan pengurangan tertukar (Skema II dikurangi Skema I)"
+        },
+        {
+          "teks": "$\\frac{5}{64}$",
+          "alasan": "pada Skema II mengurangi banyak bola merah tetapi lupa mengurangi penyebut"
+        },
+        {
+          "teks": "$\\frac{25}{448}$",
+          "alasan": "pada Skema II lupa mengurangi banyak bola merah, lalu urutan pengurangan tertukar"
+        }
+      ],
+      "pembahasan": "Skema I $\\frac{25}{64}$, Skema II $\\frac{5}{8} \\times \\frac{4}{7} = \\frac{5}{14}$. Selisih: $\\frac{175 - 160}{448} = \\frac{15}{448}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "jika dua kejadian adalah saling bebas, maka untuk menentukan peluang terjadinya kedua kejadian tersebut dapat menggunakan aturan perkalian"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "hitung P(A dan B) dari peluang diketahui",
+      "alasan_level": "memperluas aturan perkalian ke tiga kejadian bebas disertai satu komplemen",
+      "stimulus": "Tiga kejadian $A$, $B$, dan $C$ saling bebas dengan $P(A) = 0,5$, $P(B) = 0,8$, dan $P(C) = 0,25$.",
+      "pertanyaan": "Peluang bahwa $A$ dan $B$ terjadi tetapi $C$ tidak terjadi adalah ....",
+      "jawaban_benar": "0,3",
+      "alasan_benar": "$P(C \\text{ tidak terjadi}) = 0,75$, sehingga $0,5 \\times 0,8 \\times 0,75 = 0,3$",
+      "distraktor": [
+        {
+          "teks": "0,1",
+          "alasan": "lupa komplemen: menghitung ketiganya terjadi"
+        },
+        {
+          "teks": "0,075",
+          "alasan": "salah mengambil komplemen: hanya $A$ terjadi, $B$ dan $C$ tidak"
+        },
+        {
+          "teks": "0,025",
+          "alasan": "mengambil komplemen untuk $B$ saja: $A$ dan $C$ terjadi, $B$ tidak"
+        }
+      ],
+      "pembahasan": "$P = P(A) \\times P(B) \\times (1 - P(C)) = 0,5 \\times 0,8 \\times 0,75 = 0,3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "jika dua kejadian adalah saling bebas, maka untuk menentukan peluang terjadinya kedua kejadian tersebut dapat menggunakan aturan perkalian"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari peluang yang belum diketahui",
+      "alasan_level": "mencari $P(B)$ dari aturan perkalian, lalu memakai komplemen dan perkalian lagi",
+      "stimulus": "Kejadian $A$ dan $B$ saling bebas dengan $P(A) = 0,6$ dan $P(A \\text{ dan } B) = 0,24$.",
+      "pertanyaan": "Peluang bahwa $A$ terjadi tetapi $B$ tidak terjadi adalah ....",
+      "jawaban_benar": "0,36",
+      "alasan_benar": "$P(B) = \\frac{0,24}{0,6} = 0,4$; $P(B \\text{ tidak terjadi}) = 0,6$; $0,6 \\times 0,6 = 0,36$",
+      "distraktor": [
+        {
+          "teks": "0,24",
+          "alasan": "mengira sama dengan $P(A \\text{ dan } B)$"
+        },
+        {
+          "teks": "0,16",
+          "alasan": "peran tertukar: $A$ tidak terjadi dan $B$ terjadi"
+        },
+        {
+          "teks": "0,84",
+          "alasan": "menjumlahkan $0,6 + 0,24$"
+        }
+      ],
+      "pembahasan": "$P(B) = 0,24 : 0,6 = 0,4$. $P(A \\text{ dan bukan } B) = 0,6 \\times (1 - 0,4) = 0,36$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 274,
+        "kutipan": "yaitu kejadian yang satu tidak memengaruhi peluang kejadian yang lainnya"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "konsep/rumus",
+      "alasan_level": "menguji tiap pasangan nilai terhadap aturan perkalian untuk kejadian bebas",
+      "stimulus": "Dua kejadian $A$ dan $B$ dikatakan saling bebas jika $P(A \\text{ dan } B) = P(A) \\times P(B)$.",
+      "pertanyaan": "Pasangan nilai manakah yang mungkin terjadi pada dua kejadian yang saling bebas?",
+      "jawaban_benar": "$P(A) = 0,5$, $P(B) = 0,6$, $P(A \\text{ dan } B) = 0,3$",
+      "alasan_benar": "$0,5 \\times 0,6 = 0,3$ sehingga memenuhi aturan perkalian",
+      "distraktor": [
+        {
+          "teks": "$P(A) = 0,5$, $P(B) = 0,6$, $P(A \\text{ dan } B) = 0,2$",
+          "alasan": "$0,5 \\times 0,6 = 0,3$, bukan $0,2$"
+        },
+        {
+          "teks": "$P(A) = 0,4$, $P(B) = 0,5$, $P(A \\text{ dan } B) = 0,25$",
+          "alasan": "$0,4 \\times 0,5 = 0,2$, bukan $0,25$ (keliru memakai $0,5 \\times 0,5$)"
+        },
+        {
+          "teks": "$P(A) = 0,3$, $P(B) = 0,4$, $P(A \\text{ dan } B) = 0,7$",
+          "alasan": "menjumlahkan $0,3 + 0,4$ alih-alih mengalikan"
+        }
+      ],
+      "pembahasan": "Kejadian bebas harus memenuhi $P(A \\text{ dan } B) = P(A) \\times P(B)$. Hanya $0,5 \\times 0,6 = 0,3$ yang cocok.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "baik ketika kedua kejadian tersebut terjadi secara berurutan, maupun terjadi pada saat yang bersamaan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua percobaan berbeda bersamaan",
+      "alasan_level": "menentukan banyak hasil yang memenuhi pada tiap dadu (lebih dari 4 dan prima), lalu mengalikan",
+      "stimulus": "Dua dadu setimbang, satu biru dan satu kuning, dilempar bersamaan.",
+      "pertanyaan": "Peluang bahwa dadu biru menunjukkan mata lebih dari 4 dan dadu kuning menunjukkan mata bilangan prima adalah ....",
+      "jawaban_benar": "$\\frac{1}{6}$",
+      "alasan_benar": "biru lebih dari 4: mata 5 dan 6 ($\\frac{2}{6}$); kuning prima: 2, 3, 5 ($\\frac{3}{6}$); $\\frac{1}{3} \\times \\frac{1}{2} = \\frac{1}{6}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "menjumlahkan $\\frac{1}{3} + \\frac{1}{2}$"
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "hanya memakai peluang dadu biru"
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "menganggap prima hanya 2 dan 3 sehingga peluang kuning $\\frac{1}{3}$"
+        }
+      ],
+      "pembahasan": "Dua dadu dilempar bersamaan tetap saling bebas. $P = \\frac{2}{6} \\times \\frac{3}{6} = \\frac{1}{6}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "baik ketika kedua kejadian tersebut terjadi secara berurutan, maupun terjadi pada saat yang bersamaan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua percobaan berbeda bersamaan",
+      "alasan_level": "tiga percobaan berbeda yang saling bebas, tiap peluang dihitung lalu dikalikan",
+      "stimulus": "Sebuah koin setimbang dilempar, sebuah dadu setimbang dilempar, dan satu kartu diambil secara acak dari seperangkat kartu bridge lengkap (52 kartu, 4 di antaranya As). Ketiga percobaan saling bebas.",
+      "pertanyaan": "Peluang bahwa koin menunjukkan angka, dadu menunjukkan mata bilangan prima, dan kartu yang terambil adalah As adalah ....",
+      "jawaban_benar": "$\\frac{1}{52}$",
+      "alasan_benar": "$\\frac{1}{2} \\times \\frac{3}{6} \\times \\frac{4}{52} = \\frac{1}{2} \\times \\frac{1}{2} \\times \\frac{1}{13} = \\frac{1}{52}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "lupa menyertakan peluang kartu As"
+        },
+        {
+          "teks": "$\\frac{1}{13}$",
+          "alasan": "hanya memakai peluang kartu As"
+        },
+        {
+          "teks": "$\\frac{1}{26}$",
+          "alasan": "lupa menyertakan peluang dadu prima"
+        }
+      ],
+      "pembahasan": "Angka $\\frac{1}{2}$, prima (2, 3, 5) $\\frac{1}{2}$, As $\\frac{1}{13}$. $P = \\frac{1}{52}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Ada satu bola lebih sedikit untuk pilihan kedua sehingga peluangnya akan berubah"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "tanpa pengembalian",
+      "alasan_level": "menganalisis hitungan yang memakai asumsi kebebasan padahal bola tidak dikembalikan, lalu memperbaikinya",
+      "stimulus": "Sebuah tas berisi 5 bola merah dan 7 bola biru. Dua bola diambil satu per satu secara acak tanpa pengembalian. Dani menghitung peluang kedua bola merah dengan cara $\\frac{5}{12} \\times \\frac{5}{12} = \\frac{25}{144}$.",
+      "pertanyaan": "Pernyataan manakah yang benar tentang hitungan Dani?",
+      "jawaban_benar": "Salah, karena bola tidak dikembalikan sehingga peluang bola kedua merah $\\frac{4}{11}$ dan hasil yang benar $\\frac{5}{33}$",
+      "alasan_benar": "setelah satu bola merah diambil tersisa 4 merah dari 11 bola: $\\frac{5}{12} \\times \\frac{4}{11} = \\frac{5}{33}$",
+      "distraktor": [
+        {
+          "teks": "Benar, karena kedua pengambilan saling bebas sehingga hasilnya $\\frac{25}{144}$",
+          "alasan": "mengira tanpa pengembalian tetap saling bebas"
+        },
+        {
+          "teks": "Salah, karena peluang bola kedua merah $\\frac{4}{12}$ sehingga hasil yang benar $\\frac{5}{36}$",
+          "alasan": "mengurangi banyak bola merah tetapi lupa mengurangi banyak bola seluruhnya"
+        },
+        {
+          "teks": "Salah, karena kedua peluang harus dijumlahkan sehingga hasil yang benar $\\frac{5}{6}$",
+          "alasan": "mengganti aturan perkalian dengan penjumlahan"
+        }
+      ],
+      "pembahasan": "Tanpa pengembalian, isi tas berubah. $P = \\frac{5}{12} \\times \\frac{4}{11} = \\frac{20}{132} = \\frac{5}{33}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "jika dua kejadian adalah saling bebas, maka untuk menentukan peluang terjadinya kedua kejadian tersebut dapat menggunakan aturan perkalian"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "hitung P(A dan B) dari peluang diketahui",
+      "alasan_level": "dua kasus berbeda (Senin terlambat atau Selasa terlambat), tiap kasus memakai komplemen dan perkalian, lalu dijumlahkan",
+      "stimulus": "Peluang Ani tiba tepat waktu di sekolah pada hari Senin adalah 0,9 dan pada hari Selasa adalah 0,8. Ketepatan waktunya pada kedua hari saling bebas.",
+      "pertanyaan": "Peluang bahwa Ani terlambat tepat pada satu dari kedua hari itu adalah ....",
+      "jawaban_benar": "0,26",
+      "alasan_benar": "Senin terlambat dan Selasa tepat: $0,1 \\times 0,8 = 0,08$; Senin tepat dan Selasa terlambat: $0,9 \\times 0,2 = 0,18$; jumlah $0,26$",
+      "distraktor": [
+        {
+          "teks": "0,18",
+          "alasan": "hanya menghitung satu kasus (terlambat pada hari Selasa)"
+        },
+        {
+          "teks": "0,02",
+          "alasan": "menghitung peluang terlambat pada kedua hari"
+        },
+        {
+          "teks": "0,72",
+          "alasan": "menghitung peluang tepat waktu pada kedua hari"
+        }
+      ],
+      "pembahasan": "Dua kasus yang saling lepas: $0,1 \\times 0,8 = 0,08$ dan $0,9 \\times 0,2 = 0,18$. Jumlahnya $0,26$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "jika dua kejadian adalah saling bebas, maka untuk menentukan peluang terjadinya kedua kejadian tersebut dapat menggunakan aturan perkalian"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang setidaknya satu kejadian",
+      "alasan_level": "memakai komplemen: peluang keduanya gagal lalu dikurangkan dari 1",
+      "stimulus": "Peluang Wira lolos seleksi tahap tulis adalah 0,6 dan peluang Yuni lolos seleksi tahap tulis adalah 0,5. Hasil seleksi keduanya saling bebas.",
+      "pertanyaan": "Peluang bahwa setidaknya satu dari mereka lolos adalah ....",
+      "jawaban_benar": "0,8",
+      "alasan_benar": "keduanya gagal: $0,4 \\times 0,5 = 0,2$; setidaknya satu lolos: $1 - 0,2 = 0,8$",
+      "distraktor": [
+        {
+          "teks": "0,3",
+          "alasan": "hanya menghitung keduanya lolos ($0,6 \\times 0,5$)"
+        },
+        {
+          "teks": "0,2",
+          "alasan": "hanya menghitung keduanya gagal, lupa dikurangkan dari 1"
+        },
+        {
+          "teks": "0,5",
+          "alasan": "menghitung peluang tepat satu yang lolos ($0,6 \\times 0,5 + 0,4 \\times 0,5$), bukan setidaknya satu"
+        }
+      ],
+      "pembahasan": "Keduanya tidak lolos: $0,4 \\times 0,5 = 0,2$. Setidaknya satu lolos: $1 - 0,2 = 0,8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Pilihan bola pertama tidak memengaruhi pilihan bola kedua"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pengambilan bola dengan pengembalian",
+      "alasan_level": "mendaftar bilangan prima dan kuadrat sempurna sampai 20, lalu mengalikan peluang dua pengambilan bebas",
+      "stimulus": "Sebuah kotak berisi 20 kartu bernomor 1 sampai 20. Satu kartu diambil secara acak, dicatat nomornya, lalu dikembalikan. Setelah itu satu kartu diambil lagi.",
+      "pertanyaan": "Peluang bahwa kartu pertama bernomor bilangan prima dan kartu kedua bernomor kuadrat sempurna (1, 4, 9, 16) adalah ....",
+      "jawaban_benar": "$\\frac{2}{25}$",
+      "alasan_benar": "prima: 2, 3, 5, 7, 11, 13, 17, 19 (8 kartu); $\\frac{8}{20} \\times \\frac{4}{20} = \\frac{32}{400} = \\frac{2}{25}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "menganggap kuadrat sempurna ada 5 kartu"
+        },
+        {
+          "teks": "$\\frac{7}{100}$",
+          "alasan": "mengira bilangan prima hanya 7 (terlewat 19)"
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "menjumlahkan $\\frac{8}{20} + \\frac{4}{20}$"
+        }
+      ],
+      "pembahasan": "Prima ada 8 dan kuadrat sempurna ada 4. $P = \\frac{8}{20} \\times \\frac{4}{20} = \\frac{2}{25}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Pilihan bola pertama tidak memengaruhi pilihan bola kedua"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari data yang belum diketahui",
+      "alasan_level": "menyusun persamaan kuadrat sederhana dari aturan perkalian dengan pengembalian lalu mencari banyak bola biru",
+      "stimulus": "Sebuah tas berisi 4 bola merah dan sejumlah $n$ bola biru. Sebuah bola diambil secara acak, dicatat warnanya, lalu dikembalikan ke dalam tas, kemudian bola kedua diambil. Peluang kedua bola yang terambil berwarna merah adalah $\\frac{1}{9}$.",
+      "pertanyaan": "Banyak bola biru di dalam tas adalah ....",
+      "jawaban_benar": "8 bola",
+      "alasan_benar": "$\\left(\\frac{4}{4+n}\\right)^2 = \\frac{1}{9}$ sehingga $\\frac{4}{4+n} = \\frac{1}{3}$, $4 + n = 12$, $n = 8$",
+      "distraktor": [
+        {
+          "teks": "12 bola",
+          "alasan": "mengira $4 + n = 12$ adalah banyak bola biru, padahal itu seluruh bola"
+        },
+        {
+          "teks": "32 bola",
+          "alasan": "lupa mengkuadratkan: $\\frac{4}{4+n} = \\frac{1}{9}$ sehingga $n = 32$"
+        },
+        {
+          "teks": "5 bola",
+          "alasan": "mengira penyebut peluang adalah 9, sehingga $n = 9 - 4$"
+        }
+      ],
+      "pembahasan": "$\\left(\\frac{4}{4+n}\\right)^2 = \\frac{1}{9}$, jadi $\\frac{4}{4+n} = \\frac{1}{3}$ dan $n = 8$.",
+      "catatan": null
+    }
+  ]
+}

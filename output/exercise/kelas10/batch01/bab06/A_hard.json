@@ -1,0 +1,375 @@
+{
+  "book": "kelas10",
+  "bab_no": 6,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab A (p197-p208) tipis dan hampir semua soal bukunya bergambar; acuan siswa tekstual sudah habis di easy/medium, sehingga hard hanya orisinal. Hanya 11 soal evaluatif tanpa gambar yang layak dan tidak kembar dengan easy/medium; sisa kuota akan berupa soal hitung atau nyaris kembar.",
+  "soal": [
+    {
+      "id": "kelas10-b06-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 199,
+        "kutipan": "lebar batang dalam histogram tidak perlu sama selama luas totalnya seratus persen jika digunakan persen"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim histogram",
+      "alasan_level": "mengevaluasi empat klaim dengan menghitung luas batang (bukan membandingkan tinggi) pada lebar kelas berbeda",
+      "stimulus": "| Kelas interval | Lebar kelas | Tinggi batang (persen per satuan) |\n|---|---|---|\n| 0-5 | 5 | 4 |\n| 5-10 | 5 | 6 |\n| 10-20 | 10 | 2 |\n| 20-40 | 20 | 1,5 |",
+      "pertanyaan": "Sebuah histogram frekuensi relatif memiliki empat batang dengan data pada tabel, dan luas seluruh batang adalah 100%. Pernyataan yang benar tentang histogram tersebut adalah ....",
+      "jawaban_benar": "Kelas 20-40 memuat data sama banyak dengan kelas 5-10",
+      "alasan_benar": "luas kelas 5-10 $= 5 \\times 6 = 30$ dan luas kelas 20-40 $= 20 \\times 1{,}5 = 30$, sehingga keduanya memuat 30% data",
+      "distraktor": [
+        {
+          "teks": "Kelas 20-40 memuat data paling sedikit karena batangnya paling pendek",
+          "alasan": "membandingkan tinggi batang, padahal luas kelas 20-40 sama dengan kelas terbesar (30%)"
+        },
+        {
+          "teks": "Kelas 0-5 memuat 4% dari seluruh data",
+          "alasan": "menyamakan tinggi batang dengan persen; luasnya $5 \\times 4 = 20\\%$"
+        },
+        {
+          "teks": "Kelas 10-20 memuat data lebih banyak daripada kelas 0-5 karena lebarnya lebih besar",
+          "alasan": "hanya melihat lebar; luas keduanya sama-sama 20%"
+        }
+      ],
+      "pembahasan": "Luas = lebar $\\times$ tinggi: 20%, 30%, 20%, dan 30%. Kelas 5-10 dan 20-40 sama-sama 30%, kelas 0-5 dan 10-20 sama-sama 20%.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 204,
+        "kutipan": "Karena jumlah total penduduk yang terinfeksi Covid-19 di Jakarta berbeda dengan Bali, maka penggunaan persentase sebagai frekuensi relatif memberikan gambaran yang lebih baik."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim persentase gabungan",
+      "alasan_level": "mengevaluasi klaim bahwa unggul di tiap kelompok berarti unggul secara gabungan, dengan menghitung ulang dari banyak data",
+      "stimulus": "| Kelas | Peserta sekolah P | Lulus sekolah P | Peserta sekolah Q | Lulus sekolah Q |\n|---|---|---|---|---|\n| Pagi | 80 | 64 | 20 | 18 |\n| Sore | 20 | 4 | 80 | 24 |",
+      "pertanyaan": "Dua sekolah, P dan Q, mengikuti seleksi dengan hasil pada tabel. Pak Rudi berkata, \"Persentase lulus Q lebih tinggi daripada P di kelas pagi maupun kelas sore, jadi persentase lulus Q secara keseluruhan pasti lebih tinggi.\" Kesimpulan yang tepat tentang klaim Pak Rudi adalah ....",
+      "jawaban_benar": "Klaim keliru: persentase lulus keseluruhan sekolah P adalah 68% dan sekolah Q 42%",
+      "alasan_benar": "P: $\\frac{64+4}{100} = 68\\%$; Q: $\\frac{18+24}{100} = 42\\%$, padahal tiap kelas Q lebih tinggi (90% > 80% dan 30% > 20%)",
+      "distraktor": [
+        {
+          "teks": "Klaim benar: persentase lulus keseluruhan sekolah Q adalah 60% dan sekolah P 50%",
+          "alasan": "merata-ratakan persentase kelas tanpa memperhatikan jumlah peserta yang berbeda"
+        },
+        {
+          "teks": "Klaim benar: persentase lulus keseluruhan sekolah Q adalah 68% dan sekolah P 42%",
+          "alasan": "menukar hasil kedua sekolah"
+        },
+        {
+          "teks": "Klaim keliru: persentase lulus keseluruhan kedua sekolah sama-sama 55%",
+          "alasan": "mengira kedua sekolah memiliki jumlah peserta yang sama banyak per kelas"
+        }
+      ],
+      "pembahasan": "Persentase tiap kelas: P pagi 80%, sore 20%; Q pagi 90%, sore 30%. Keseluruhan harus dihitung dari jumlah lulus dan jumlah peserta: P 68 dari 100, Q 42 dari 100.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 204,
+        "kutipan": "Histogram dengan frekuensi relatif sangat efektif jika digunakan untuk membandingkan dua kelompok data dengan jumlah data yang berbeda"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "memilih representasi yang tepat",
+      "alasan_level": "mengevaluasi empat pilihan penyajian untuk tujuan membandingkan sebaran dua kelompok berukuran sangat berbeda",
+      "stimulus": null,
+      "pertanyaan": "Dinas pendidikan ingin membandingkan bentuk sebaran lama belajar harian siswa SMA di kota A (1.200 siswa) dan kota B (300 siswa). Lama belajar tiap siswa dicatat dalam jam dan dikelompokkan ke interval 0-2, 2-4, 4-6, dan seterusnya. Penyajian yang paling tepat adalah ....",
+      "jawaban_benar": "dua histogram frekuensi relatif (persen) dengan interval yang sama",
+      "alasan_benar": "data kuantitatif berinterval cocok untuk histogram; jumlah siswa kedua kota berbeda 4 kali lipat sehingga persentase diperlukan agar sebaran sebanding",
+      "distraktor": [
+        {
+          "teks": "dua histogram dengan frekuensi berupa banyak siswa dan interval yang sama",
+          "alasan": "kota A tampak lebih tinggi di semua interval hanya karena siswanya lebih banyak, bukan karena sebarannya berbeda"
+        },
+        {
+          "teks": "dua diagram batang berspasi dengan frekuensi berupa banyak siswa",
+          "alasan": "diagram batang untuk data kategori, bukan data berinterval, dan tetap tidak sebanding"
+        },
+        {
+          "teks": "satu histogram banyak siswa yang menjumlahkan data kedua kota",
+          "alasan": "menggabungkan kedua kota sehingga perbandingan sebaran tidak bisa dilihat"
+        }
+      ],
+      "pembahasan": "Tujuan perbandingan sebaran dua kelompok dengan jumlah berbeda dipenuhi histogram berfrekuensi relatif dengan interval sama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 201,
+        "kutipan": "Dalam histogram, data dibagi ke dalam interval yang sama, dengan 1 gambar batang untuk setiap interval."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang kelas interval",
+      "alasan_level": "mengevaluasi empat rancangan kelas terhadap tiga syarat sekaligus: panjang sama, tidak tumpang tindih, mencakup semua data",
+      "stimulus": null,
+      "pertanyaan": "Nilai tes 52 siswa adalah bilangan bulat dari 47 sampai 98 (nilai terendah 47 dan tertinggi 98). Guru ingin membuat histogram dengan 4 kelas berpanjang sama, tanpa tumpang tindih, dan memuat semua nilai. Rancangan kelas yang memenuhi syarat adalah ....",
+      "jawaban_benar": "47-59, 60-72, 73-85, 86-98",
+      "alasan_benar": "banyak nilai $98 - 47 + 1 = 52$, dibagi 4 kelas sama panjang berarti 13 nilai tiap kelas; kelas-kelasnya 47-59, 60-72, 73-85, 86-98",
+      "distraktor": [
+        {
+          "teks": "47-60, 60-73, 73-86, 86-99",
+          "alasan": "nilai 60, 73, dan 86 masuk dua kelas sekaligus (tumpang tindih)"
+        },
+        {
+          "teks": "47-59, 60-72, 73-85, 86-97",
+          "alasan": "kelas terakhir lebih pendek dan nilai 98 tidak tertampung"
+        },
+        {
+          "teks": "46-58, 59-71, 72-84, 85-97",
+          "alasan": "panjang sama dan tidak tumpang tindih, tetapi nilai 98 tidak tertampung"
+        }
+      ],
+      "pembahasan": "Ada 52 nilai berbeda; 4 kelas sama panjang berarti 13 nilai per kelas mulai dari 47.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 199,
+        "kutipan": "frekuensi dalam histogram diberikan berdasarkan area pada masing-masing batang"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan membaca histogram",
+      "alasan_level": "menemukan kesalahan konsep (tinggi dianggap persen) pada kesimpulan seseorang dan menentukan nilai yang benar",
+      "stimulus": "| Lama belajar (jam) | Lebar kelas | Tinggi batang (persen per jam) |\n|---|---|---|\n| 0-2 | 2 | 15 |\n| 2-6 | 4 | 10 |\n| 6-10 | 4 | 7,5 |",
+      "pertanyaan": "Pada histogram frekuensi relatif dengan data pada tabel, Dina menyimpulkan, \"Siswa yang belajar 2 sampai 6 jam ada 10%.\" Penilaian yang tepat terhadap kesimpulan Dina adalah ....",
+      "jawaban_benar": "keliru: tinggi batang bukan persen; persentase kelas 2-6 adalah luas batangnya, yaitu 40%",
+      "alasan_benar": "persen kelas = lebar $\\times$ tinggi $= 4 \\times 10 = 40\\%$",
+      "distraktor": [
+        {
+          "teks": "benar: persentase kelas sama dengan tinggi batang, yaitu 10%",
+          "alasan": "menyamakan tinggi batang dengan persentase kelas"
+        },
+        {
+          "teks": "keliru: persentase kelas 2-6 adalah $2 \\times 10 = 20\\%$",
+          "alasan": "memakai lebar kelas pertama (2), bukan lebar kelas 2-6 yaitu 4"
+        },
+        {
+          "teks": "keliru: persentase kelas 2-6 adalah $15 + 10 = 25\\%$",
+          "alasan": "menjumlahkan tinggi dua batang, bukan menghitung luas"
+        }
+      ],
+      "pembahasan": "Luas batang kelas 2-6 adalah $4 \\times 10 = 40$, jadi 40% siswa. Pengecekan: 30% + 40% + 30% = 100%.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 203,
+        "kutipan": "Distribusi data menunjukkan bagaimana data tersebar"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim data berkelompok",
+      "alasan_level": "mengevaluasi pernyataan mana yang pasti benar dari data yang sudah dikelompokkan (informasi nilai rinci hilang)",
+      "stimulus": "| Nilai | Frekuensi |\n|---|---|\n| 50-59 | 5 |\n| 60-69 | 10 |\n| 70-79 | 14 |\n| 80-89 | 8 |\n| 90-99 | 3 |",
+      "pertanyaan": "Nilai ujian 40 siswa (bilangan bulat) hanya tersedia dalam tabel distribusi frekuensi tersebut. Pernyataan yang dapat dipastikan benar berdasarkan tabel saja adalah ....",
+      "jawaban_benar": "Banyak siswa yang nilainya 70 atau lebih adalah 25 orang",
+      "alasan_benar": "$14 + 8 + 3 = 25$, dan batas 70 adalah batas bawah kelas sehingga tidak ada kelas yang terpotong",
+      "distraktor": [
+        {
+          "teks": "Banyak siswa yang nilainya 75 atau lebih adalah 18 orang",
+          "alasan": "membagi dua kelas 70-79 secara sembarang; sebaran nilai di dalam kelas tidak diketahui"
+        },
+        {
+          "teks": "Rata-rata nilai seluruh siswa tepat 73",
+          "alasan": "memakai nilai tengah kelas seolah nilai sebenarnya; rata-rata sebenarnya tidak dapat dipastikan"
+        },
+        {
+          "teks": "Nilai tertinggi yang diperoleh siswa adalah 99",
+          "alasan": "kelas 90-99 hanya menunjukkan rentang; nilai tertinggi bisa 90 sampai 99"
+        }
+      ],
+      "pembahasan": "Hanya pernyataan yang batasnya berimpit dengan batas kelas yang dapat dipastikan. Pernyataan lain bergantung pada nilai rinci yang tidak ada di tabel.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 204,
+        "kutipan": "Apabila kamu menambahkan seluruh persen pada setiap interval, berapakah seharusnya jumlah total persen yang kamu peroleh? Jelaskan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi pembulatan persentase",
+      "alasan_level": "mengevaluasi penyebab jumlah persen tidak 100% dan memilih penjelasan yang benar dari banyak kemungkinan kesalahan",
+      "stimulus": "| Kelas | Frekuensi | Frekuensi relatif |\n|---|---|---|\n| 1 | 4 | 17% |\n| 2 | 4 | 17% |\n| 3 | 4 | 17% |\n| 4 | 4 | 17% |\n| 5 | 4 | 17% |\n| 6 | 4 | 17% |",
+      "pertanyaan": "Rani membuat tabel dari data 24 siswa dan menghitung frekuensi relatif tiap kelas hingga persen bulat. Ia heran karena jumlah seluruh persen adalah 102%, bukan 100%. Penjelasan yang benar adalah ....",
+      "jawaban_benar": "Datanya benar; $16{,}67\\%$ pada tiap kelas dibulatkan menjadi 17%, sehingga jumlahnya menjadi 102%",
+      "alasan_benar": "$\\frac{4}{24} \\times 100\\% = 16{,}67\\%$; enam kelas masing-masing dibulatkan ke atas 0,33, total 102%",
+      "distraktor": [
+        {
+          "teks": "Ada siswa yang dihitung dua kali sehingga jumlah frekuensi lebih dari 24",
+          "alasan": "$6 \\times 4 = 24$, tidak ada data ganda"
+        },
+        {
+          "teks": "Banyak siswa sebenarnya 25, bukan 24, sehingga persentase harus dihitung ulang",
+          "alasan": "jumlah frekuensi tepat 24, sama dengan banyak siswa"
+        },
+        {
+          "teks": "Setiap kelas seharusnya 16%, sehingga tabel perlu dikoreksi",
+          "alasan": "$\\frac{4}{24}$ adalah $16{,}67\\%$; 16% bukan hasil pembulatan yang tepat"
+        }
+      ],
+      "pembahasan": "Jumlah frekuensi 24 sudah benar. Tiap kelas $\\frac{4}{24} = 16{,}67\\%$, dibulatkan 17%; $6 \\times 17\\% = 102\\%$ akibat pembulatan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 199,
+        "kutipan": "Oleh karena itu, frekuensi data dalam diagram batang dilihat dari panjang batang, sedangkan frekuensi dalam histogram diberikan berdasarkan area pada masing-masing batang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "grafik menyesatkan lebar kelas tidak sama",
+      "alasan_level": "mengevaluasi grafik yang tinggi batangnya salah memakai frekuensi dengan lebar kelas berbeda: kesan visual lawan kepadatan sebenarnya",
+      "stimulus": "| Kelas umur (tahun) | Lebar kelas | Banyak pengunjung |\n|---|---|---|\n| 10-20 | 10 | 60 |\n| 20-30 | 10 | 80 |\n| 30-60 | 30 | 90 |\n| 60-80 | 20 | 40 |",
+      "pertanyaan": "Seorang pembuat grafik menggambar histogram umur pengunjung dengan tinggi batang sama dengan banyak pengunjung tiap kelas, padahal lebar kelas berbeda. Kelas yang batangnya tampak berluas terbesar pada grafik itu dan kelas yang sebenarnya paling padat (pengunjung per satu tahun umur) berturut-turut adalah ....",
+      "jawaban_benar": "30-60 dan 20-30",
+      "alasan_benar": "luas tampak $= \\text{lebar} \\times \\text{banyak}$: 600, 800, 2.700, 800 (terbesar kelas 30-60); kepadatan $= \\text{banyak} : \\text{lebar}$: 6; 8; 3; 2 (terbesar kelas 20-30)",
+      "distraktor": [
+        {
+          "teks": "20-30 dan 30-60",
+          "alasan": "menukar: kesan luas terbesar dan kepadatan terbesar tertukar"
+        },
+        {
+          "teks": "30-60 dan 30-60",
+          "alasan": "memilih kelas dengan pengunjung terbanyak (90) sebagai yang paling padat"
+        },
+        {
+          "teks": "20-30 dan 20-30",
+          "alasan": "mengira luas tampak terbesar ada di kelas yang paling padat; luas kelas 20-30 hanya 800"
+        }
+      ],
+      "pembahasan": "Dengan tinggi = banyak pengunjung, luas batang membesar pada kelas lebar sehingga kelas 30-60 tampak dominan. Tinggi yang benar adalah banyak : lebar, dan yang tertinggi kelas 20-30.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 207,
+        "kutipan": "Dengan memilih representasi grafik yang tepat, akan memudahkan kita dalam membandingkan 2 kelompok data."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "evaluasi klaim dua kelompok",
+      "alasan_level": "mengevaluasi tiga klaim sekaligus (proporsi vs banyak siswa) pada dua kelompok berukuran sangat berbeda",
+      "stimulus": "| Nilai | Kelompok 1 (80 siswa) | Kelompok 2 (200 siswa) |\n|---|---|---|\n| kurang dari 60 | 30% | 8% |\n| 60 sampai 79 | 45% | 77% |\n| 80 ke atas | 25% | 15% |",
+      "pertanyaan": "Perhatikan tiga pernyataan berikut. (i) Proporsi siswa bernilai 80 ke atas lebih besar di kelompok 1. (ii) Banyak siswa bernilai 80 ke atas lebih besar di kelompok 2. (iii) Banyak siswa bernilai kurang dari 60 lebih besar di kelompok 2 karena jumlah siswanya lebih banyak. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "(i) dan (ii) saja",
+      "alasan_benar": "(i) $25\\% > 15\\%$ benar; (ii) kelompok 1: $25\\% \\times 80 = 20$, kelompok 2: $15\\% \\times 200 = 30$ benar; (iii) kelompok 1: $30\\% \\times 80 = 24$, kelompok 2: $8\\% \\times 200 = 16$ salah",
+      "distraktor": [
+        {
+          "teks": "(i) saja",
+          "alasan": "menganggap persentase yang lebih besar selalu berarti banyak siswa lebih besar"
+        },
+        {
+          "teks": "(ii) dan (iii) saja",
+          "alasan": "mempercayai alasan jumlah siswa lebih banyak tanpa menghitung: $24 > 16$"
+        },
+        {
+          "teks": "(i), (ii), dan (iii)",
+          "alasan": "tidak menghitung banyak siswa bernilai kurang dari 60 pada kedua kelompok"
+        }
+      ],
+      "pembahasan": "Hitung banyak siswa: kelompok 1 (24, 36, 20) dan kelompok 2 (16, 154, 30). Hanya pernyataan (i) dan (ii) yang benar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 207,
+        "kutipan": "Guru matematika Dani setiap minggu memberikan kuis matematika dengan nilai tertinggi 100."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "merancang sumbu grafik yang jujur",
+      "alasan_level": "menilai empat rancangan sumbu tegak dan memilih yang tinggi batangnya sebanding dengan nilai",
+      "stimulus": "| Minggu | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| Nilai kuis Dani | 62 | 65 | 68 | 71 | 74 |",
+      "pertanyaan": "Dani akan membuat diagram batang dari nilai kuisnya yang diperlihatkan pada tabel agar orang tuanya mendapat gambaran jujur tentang perkembangan nilainya. Rancangan sumbu tegak yang membuat perbandingan tinggi batang sama dengan perbandingan nilai adalah ....",
+      "jawaban_benar": "dimulai dari 0 sampai 100",
+      "alasan_benar": "tinggi batang sebanding dengan nilai hanya jika sumbu dimulai dari 0",
+      "distraktor": [
+        {
+          "teks": "dimulai dari 60 sampai 100",
+          "alasan": "sumbu tidak dimulai dari nol sehingga batang minggu 5 tampak 7 kali batang minggu 1 (14 : 2)"
+        },
+        {
+          "teks": "dimulai dari 60 sampai 80",
+          "alasan": "memotong sumbu agar kenaikan tampak besar; tinggi batang tidak sebanding nilai"
+        },
+        {
+          "teks": "dimulai dari 50 sampai 75",
+          "alasan": "sumbu tidak dimulai dari nol sehingga perbandingan tinggi batang menyimpang dari perbandingan nilai"
+        }
+      ],
+      "pembahasan": "Tinggi batang diukur dari awal sumbu. Bila awalnya 0, tinggi sama dengan nilai sehingga rasio tinggi sama dengan rasio nilai (74 : 62 sekitar 1,19).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 204,
+        "kutipan": "Apabila kamu menambahkan seluruh persen pada setiap interval, berapakah seharusnya jumlah total persen yang kamu peroleh? Jelaskan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan tabel frekuensi relatif",
+      "alasan_level": "menemukan kesalahan tersembunyi pada tabel yang jumlah persennya sudah 100% (dua nilai tertukar)",
+      "stimulus": "| Kelas | Frekuensi | Frekuensi relatif |\n|---|---|---|\n| 1 | 6 | 15% |\n| 2 | 10 | 30% |\n| 3 | 12 | 25% |\n| 4 | 8 | 20% |\n| 5 | 4 | 10% |",
+      "pertanyaan": "Data 40 siswa disajikan pada tabel. Budi mengatakan tabel itu pasti benar karena jumlah frekuensi relatifnya tepat 100%. Penilaian yang tepat terhadap tabel tersebut adalah ....",
+      "jawaban_benar": "Ada kesalahan: kelas 2 seharusnya 25% dan kelas 3 seharusnya 30% (nilainya tertukar)",
+      "alasan_benar": "$\\frac{10}{40} = 25\\%$ dan $\\frac{12}{40} = 30\\%$; jumlah 100% tetap terpenuhi walau dua nilai tertukar",
+      "distraktor": [
+        {
+          "teks": "Tidak ada kesalahan karena jumlah persen sudah tepat 100%",
+          "alasan": "menganggap jumlah 100% menjamin setiap baris benar"
+        },
+        {
+          "teks": "Ada kesalahan: kelas 4 seharusnya 25% dan kelas 5 seharusnya 5%",
+          "alasan": "salah mengira kelas 4 dan 5; $\\frac{8}{40} = 20\\%$ dan $\\frac{4}{40} = 10\\%$ sudah benar"
+        },
+        {
+          "teks": "Ada kesalahan: kelas 1 seharusnya 20% dan kelas 2 tetap 30%",
+          "alasan": "kelas 1 sudah benar: $\\frac{6}{40} = 15\\%$"
+        }
+      ],
+      "pembahasan": "Periksa tiap baris: 15%, 25%, 30%, 20%, 10%. Baris 2 dan 3 pada tabel tertukar meskipun jumlahnya tetap 100%.",
+      "catatan": null
+    }
+  ]
+}

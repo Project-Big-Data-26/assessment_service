@@ -1,0 +1,474 @@
+{
+  "book": "kelas12",
+  "bab_no": 2,
+  "subbab": "D",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi subbab D hanya p73-p76 (satu skema pinjaman pokok tetap dengan rumus bunga bulan ke-k; anuitas milik subbab E). Setelah 14 soal hard orisinal (evaluasi klaim, temukan kesalahan, contoh penyangkal, perancangan, perbandingan skema), sudut penalaran yang tersisa nyaris kembar dengan easy/medium atau di luar materi, jadi tidak dipaksa ke 20.",
+  "soal": [
+    {
+      "id": "kelas12-b02-d-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 75,
+        "kutipan": "Perhitungan yang sama berlanjut hingga angsuran pada bulan ke-10."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan total bunga seluruh masa",
+      "alasan_level": "menilai rumus 1/2 x n x bunga bulan pertama dan menurunkan hubungan yang benar (n+1)/2 dari deret sisa pokok",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman dilunasi dalam 12 bulan dengan angsuran pokok tetap dan bunga dihitung dari sisa pokok tiap bulan. Bunga bulan pertama Rp240.000,00. Dito menghitung total bunga seluruh masa dengan rumus $\\frac{1}{2} \\times 12 \\times 240.000 = 1.440.000$. Total bunga yang benar adalah ....",
+      "jawaban_benar": "Rp1.560.000,00",
+      "alasan_benar": "bunga bulan ke-$k$ sebanding dengan sisa pokok $(13-k)A$; jumlahnya $A(12+11+...+1) = 78A$, sedangkan bunga bulan pertama sebanding $12A$, sehingga total = $\\frac{13}{2} \\times 240.000$",
+      "distraktor": [
+        {
+          "teks": "Rp1.440.000,00",
+          "alasan": "mengikuti hitungan Dito: rata-rata bunga dianggap separuh bunga bulan pertama, padahal bulan terakhir bukan nol"
+        },
+        {
+          "teks": "Rp2.880.000,00",
+          "alasan": "mengalikan bunga bulan pertama dengan 12 (bunga tidak menurun)"
+        },
+        {
+          "teks": "Rp1.320.000,00",
+          "alasan": "menjumlahkan sisa pokok setelah angsuran (11+10+...+0) sehingga bunga bulan pertama terlewat"
+        }
+      ],
+      "pembahasan": "Misalkan angsuran pokok $A$ dan bunga 1% per bulan. Bunga bulan pertama $= 12A \\times 1\\% = 240.000$ sehingga $A = 2.000.000$. Sisa pokok awal tiap bulan: $12A, 11A, ..., A$ berjumlah $78A = 156.000.000$. Total bunga = $1\\% \\times 156.000.000 = 1.560.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Namun, jika bunga pada simpanan cenderung akan bertambah seiring berjalannya waktu, bunga pada pinjaman justru akan berkurang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal klaim pokok vs bunga",
+      "alasan_level": "mencari pasangan pokok dan lama yang membuat pokok lebih besar tetapi bunga bulan ke-5 lebih kecil",
+      "stimulus": null,
+      "pertanyaan": "Rani menyatakan: \"Jika dua pinjaman berbunga sama dan memakai angsuran pokok tetap, pinjaman dengan pokok lebih besar pasti membayar bunga bulan ke-5 lebih besar.\" Sebagai pembanding, pinjaman X sebesar Rp40.000.000,00 dilunasi dalam 20 bulan. Pinjaman Y yang menjadi contoh penyangkal klaim Rani (pokok lebih besar dari X, tetapi bunga bulan ke-5 lebih kecil) adalah ....",
+      "jawaban_benar": "Rp48.000.000,00 dilunasi dalam 8 bulan",
+      "alasan_benar": "sisa pokok bulan ke-5 pinjaman Y = 48.000.000 - 4 x 6.000.000 = 24.000.000, lebih kecil dari X (32.000.000), padahal pokoknya lebih besar",
+      "distraktor": [
+        {
+          "teks": "Rp48.000.000,00 dilunasi dalam 24 bulan",
+          "alasan": "sisa pokok bulan ke-5 = 40.000.000 > 32.000.000, bunganya ikut lebih besar sehingga bukan penyangkal"
+        },
+        {
+          "teks": "Rp45.000.000,00 dilunasi dalam 18 bulan",
+          "alasan": "sisa pokok bulan ke-5 = 35.000.000 > 32.000.000, bukan penyangkal"
+        },
+        {
+          "teks": "Rp36.000.000,00 dilunasi dalam 6 bulan",
+          "alasan": "bunganya memang lebih kecil, tetapi pokoknya juga lebih kecil dari X sehingga sesuai klaim, bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Bunga bulan ke-5 sebanding dengan sisa pokok $P - 4A$ dengan $A = P/n$. Untuk X: $40 - 4 \\times 2 = 32$ juta. Y harus berpokok lebih dari 40 juta dengan sisa kurang dari 32 juta: 48 juta dalam 8 bulan memberi $48 - 4 \\times 6 = 24$ juta. Pilihan lain memberi sisa 40 juta dan 35 juta, atau pokoknya kurang dari 40 juta.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 75,
+        "kutipan": "Perhitungan yang sama berlanjut hingga angsuran pada bulan ke-10."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang lama pinjaman dengan batas total bunga",
+      "alasan_level": "merancang lama maksimum dari batas total bunga memakai deret sisa pokok dan pertidaksamaan",
+      "stimulus": null,
+      "pertanyaan": "Seorang nasabah meminjam Rp36.000.000,00 dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Ia ingin total bunga seluruh masa pinjaman tidak lebih dari Rp1.800.000,00. Lama pinjaman terpanjang yang memenuhi (dalam bulan bulat) adalah .... bulan.",
+      "jawaban_benar": "9",
+      "alasan_benar": "total bunga $= 36.000.000 \\times 1\\% \\times \\frac{n+1}{2} = 180.000(n+1) \\le 1.800.000$ sehingga $n \\le 9$",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "memakai total bunga $= 180.000n$ (lupa bahwa jumlah sisa pokok berpola $n+(n-1)+...+1 = \\frac{n(n+1)}{2}$ dikalikan $\\frac{36.000.000}{n}$)"
+        },
+        {
+          "teks": "8",
+          "alasan": "mengira batas harus kurang dari 1.800.000 (bukan kurang dari atau sama dengan)"
+        },
+        {
+          "teks": "19",
+          "alasan": "membagi dua dua kali sehingga memakai $90.000(n+1)$"
+        }
+      ],
+      "pembahasan": "Angsuran pokok $A = 36.000.000/n$. Jumlah sisa pokok $= A\\,n(n+1)/2 = 18.000.000(n+1)$. Total bunga $= 1\\% \\times 18.000.000(n+1) = 180.000(n+1)$. Syarat $180.000(n+1) \\le 1.800.000$ memberi $n+1 \\le 10$, $n \\le 9$. Untuk $n = 9$ total bunga tepat 1.800.000 (memenuhi).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 75,
+        "kutipan": "Perlu diketahui bahwa besar angsuran tiap bulan yang harus dibayarkan (belum termasuk bunga) adalah"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang lama pinjaman dari batas angsuran",
+      "alasan_level": "merancang lama minimum dari batas total angsuran bulan pertama dengan pembulatan ke atas",
+      "stimulus": null,
+      "pertanyaan": "Bank menetapkan total angsuran (pokok + bunga) bulan pertama tidak boleh melebihi Rp3.500.000,00. Pinjaman Rp30.000.000,00 memakai angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Lama pinjaman paling singkat yang memenuhi (dalam bulan bulat) adalah .... bulan.",
+      "jawaban_benar": "10",
+      "alasan_benar": "total bulan pertama $= \\frac{30.000.000}{n} + 300.000 \\le 3.500.000$ sehingga $n \\ge 9,375$, bulat terkecil 10",
+      "distraktor": [
+        {
+          "teks": "9",
+          "alasan": "membulatkan 9,375 ke bawah; untuk 9 bulan total angsuran Rp3.633.333 melebihi batas"
+        },
+        {
+          "teks": "8",
+          "alasan": "mengabaikan bunga: $30.000.000 : 3.500.000 \\approx 8,57$ lalu dibulatkan ke bawah"
+        },
+        {
+          "teks": "11",
+          "alasan": "membulatkan ke atas lalu menambah 1 lagi, padahal 10 bulan sudah memenuhi"
+        }
+      ],
+      "pembahasan": "Bunga bulan pertama $= 1\\% \\times 30.000.000 = 300.000$. Syarat $\\frac{30.000.000}{n} + 300.000 \\le 3.500.000$ memberi $\\frac{30.000.000}{n} \\le 3.200.000$, $n \\ge 9,375$. Bulat terkecil $n = 10$ (total Rp3.300.000).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 75,
+        "kutipan": "Pada bulan pertama, bunga 1% dikenakan pada uang pokok Rp15.000.000,00."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan baris tabel angsuran yang salah",
+      "alasan_level": "memeriksa tiap baris tabel terhadap aturan bunga dari sisa pokok awal bulan dan menemukan satu baris yang menyimpang",
+      "stimulus": "| Bulan | Sisa pokok awal bulan | Bunga |\n|---|---|---|\n| 1 | Rp18.000.000,00 | Rp180.000,00 |\n| 2 | Rp15.000.000,00 | Rp150.000,00 |\n| 3 | Rp12.000.000,00 | Rp90.000,00 |\n| 4 | Rp9.000.000,00 | Rp90.000,00 |",
+      "pertanyaan": "Pak Joko membuat tabel angsuran untuk pinjaman Rp18.000.000,00 yang dilunasi dalam 6 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Empat baris pertama tabel tersebut memuat tepat satu kesalahan pada kolom bunga. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "kesalahan pada bulan ke-3; bunga seharusnya Rp120.000,00",
+      "alasan_benar": "angsuran pokok 3.000.000; bunga bulan ke-3 = 1% x 12.000.000 = 120.000, bukan 90.000 (90.000 adalah bunga untuk sisa pokok 9.000.000)",
+      "distraktor": [
+        {
+          "teks": "kesalahan pada bulan ke-4; bunga seharusnya Rp60.000,00",
+          "alasan": "mengira bunga dihitung dari sisa pokok setelah angsuran bulan itu dibayar"
+        },
+        {
+          "teks": "kesalahan pada bulan ke-2; bunga seharusnya Rp135.000,00",
+          "alasan": "mengira bunga bulan ke-2 memakai sisa pokok setelah angsuran 1,5 juta (angsuran pokok sebenarnya 3 juta)"
+        },
+        {
+          "teks": "tidak ada kesalahan, karena bunga tidak harus turun dengan selisih sama tiap bulan",
+          "alasan": "mengira penurunan bunga boleh tidak teratur, padahal sisa pokok turun tetap 3.000.000 sehingga bunga turun tetap 30.000"
+        }
+      ],
+      "pembahasan": "Angsuran pokok $18.000.000 : 6 = 3.000.000$ dan bunga 1% per bulan. Bunga yang benar: 180.000; 150.000; 120.000; 90.000 (turun 30.000 tiap bulan). Baris bulan ke-3 mencatat 90.000 sehingga salah dan seharusnya 120.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 75,
+        "kutipan": "Perlu diketahui bahwa besar angsuran tiap bulan yang harus dibayarkan (belum termasuk bunga) adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter lama pinjaman dari dua bunga",
+      "alasan_level": "menggabungkan dua data bunga (bulan ke-3 dan bulan terakhir) untuk menentukan angsuran pokok, pokok, lalu lama pinjaman",
+      "stimulus": null,
+      "pertanyaan": "Suatu pinjaman dengan angsuran pokok tetap berbunga 12% per tahun dari sisa pokok. Bunga bulan ke-3 sebesar Rp480.000,00 dan bunga bulan terakhir Rp120.000,00. Lama pinjaman tersebut adalah .... bulan.",
+      "jawaban_benar": "6",
+      "alasan_benar": "bunga bulan terakhir = 1% x $A$ = 120.000 sehingga $A$ = 12.000.000; sisa pokok bulan ke-3 = 48.000.000 = $P - 2A$ sehingga $P$ = 72.000.000 dan $n = P : A$ = 6",
+      "distraktor": [
+        {
+          "teks": "4",
+          "alasan": "membagi sisa pokok bulan ke-3 (48.000.000) dengan $A$ tanpa menambah 2 angsuran yang sudah dibayar"
+        },
+        {
+          "teks": "5",
+          "alasan": "menambah 1 angsuran saja, padahal pada bulan ke-3 sudah dibayar 2 angsuran"
+        },
+        {
+          "teks": "7",
+          "alasan": "menambah 3 angsuran (memakai $k$, bukan $k-1$)"
+        }
+      ],
+      "pembahasan": "Pada bulan terakhir sisa pokok sama dengan satu angsuran pokok $A$: $1\\% \\times A = 120.000$, $A = 12.000.000$. Bulan ke-3: sisa pokok $= 480.000 : 1\\% = 48.000.000 = P - 2A$, jadi $P = 72.000.000$. Lama $= 72.000.000 : 12.000.000 = 6$ bulan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Namun, jika bunga pada simpanan cenderung akan bertambah seiring berjalannya waktu, bunga pada pinjaman justru akan berkurang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan dua skema bunga pinjaman",
+      "alasan_level": "membandingkan total bunga skema bunga menurun dengan skema bunga tetap yang persentasenya tampak lebih kecil",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman Rp24.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok yang sama tiap bulan. Bank A menghitung bunga 12% per tahun dari sisa pokok. Bank B menghitung bunga 7% per tahun dari pokok awal dan besarnya sama untuk selama 12 bulan itu. Pernyataan yang benar tentang total bunga yang dibayar adalah ....",
+      "jawaban_benar": "Bank A lebih murah Rp120.000,00",
+      "alasan_benar": "total bunga A = 1% x 2.000.000 x (12+11+...+1) = 1.560.000; total bunga B = 7% x 24.000.000 = 1.680.000; selisih 120.000",
+      "distraktor": [
+        {
+          "teks": "Bank B lebih murah Rp120.000,00",
+          "alasan": "menukar hasil: mengira persen 7% lebih kecil dari 12% pasti lebih murah, padahal bunga A menurun"
+        },
+        {
+          "teks": "Bank B lebih murah Rp1.200.000,00",
+          "alasan": "menghitung bunga A sebagai 12% dari pokok awal (2.880.000) tanpa sisa pokok menurun"
+        },
+        {
+          "teks": "Bank A lebih murah Rp360.000,00",
+          "alasan": "menjumlahkan sisa pokok setelah angsuran (11+10+...+0) sehingga total bunga A terhitung 1.320.000"
+        }
+      ],
+      "pembahasan": "Angsuran pokok 2.000.000. Bank A: sisa pokok awal tiap bulan 24, 22, ..., 2 juta berjumlah 156 juta, bunga 1% per bulan sehingga 1.560.000. Bank B: $7\\% \\times 24.000.000 = 1.680.000$. Bank A lebih murah $1.680.000 - 1.560.000 = 120.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 75,
+        "kutipan": "Pada bulan pertama, bunga 1% dikenakan pada uang pokok Rp15.000.000,00."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "memilih pernyataan benar tentang tabel pinjaman",
+      "alasan_level": "memeriksa empat pernyataan (bunga bulan ke-6, total bunga, angsuran akhir, selisih bunga) terhadap pola sisa pokok",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman Rp20.000.000,00 dilunasi dalam 10 bulan dengan angsuran pokok tetap dan bunga 6% per tahun dari sisa pokok. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Total bunga seluruh masa pinjaman adalah Rp550.000,00",
+      "alasan_benar": "angsuran pokok 2.000.000; jumlah sisa pokok = 2.000.000 x 55 = 110.000.000; bunga 0,5% x 110.000.000 = 550.000",
+      "distraktor": [
+        {
+          "teks": "Bunga bulan ke-6 adalah Rp60.000,00",
+          "alasan": "sisa pokok bulan ke-6 = 10.000.000 sehingga bunga 50.000; 60.000 adalah bunga bulan ke-5"
+        },
+        {
+          "teks": "Total angsuran bulan terakhir adalah Rp2.100.000,00",
+          "alasan": "bunga bulan terakhir hanya 10.000 sehingga total 2.010.000; 2.100.000 adalah total bulan pertama"
+        },
+        {
+          "teks": "Bunga bulan pertama lebih besar Rp100.000,00 daripada bunga bulan terakhir",
+          "alasan": "bunga bulan pertama 100.000 dan terakhir 10.000, selisihnya 90.000"
+        }
+      ],
+      "pembahasan": "Bunga per bulan 0,5%, angsuran pokok 2.000.000. Bunga bulan ke-6 $= 0,5\\% \\times 10.000.000 = 50.000$. Total angsuran bulan terakhir $= 2.000.000 + 10.000 = 2.010.000$. Selisih bunga bulan 1 dan 10 $= 100.000 - 10.000 = 90.000$. Total bunga $= 0,5\\% \\times 2.000.000 \\times 55 = 550.000$. Hanya pernyataan tentang total bunga yang benar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Namun, jika bunga pada simpanan cenderung akan bertambah seiring berjalannya waktu, bunga pada pinjaman justru akan berkurang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "perbandingan skema pelunasan dipercepat",
+      "alasan_level": "menghitung bunga yang dihemat dengan menjumlahkan bunga bulan-bulan sisa dan membedakan bulan pelunasan",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman Rp30.000.000,00 dilunasi dalam 10 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Nasabah membayar angsuran bulan ke-1 sampai ke-4 sesuai jadwal. Pada bulan ke-5 ia membayar bunga bulan ke-5 dan melunasi seluruh sisa pokok, sehingga tidak ada bunga setelah bulan ke-5. Bunga yang dihemat dibandingkan jika pinjaman dilunasi sesuai jadwal adalah ....",
+      "jawaban_benar": "Rp450.000,00",
+      "alasan_benar": "angsuran pokok 3.000.000; bunga bulan ke-6 sampai ke-10 = 1% x (15+12+9+6+3) juta = 450.000",
+      "distraktor": [
+        {
+          "teks": "Rp630.000,00",
+          "alasan": "ikut menghitung bunga bulan ke-5, padahal bunga bulan ke-5 tetap dibayar"
+        },
+        {
+          "teks": "Rp300.000,00",
+          "alasan": "memakai sisa pokok setelah angsuran (12+9+6+3+0) sehingga bunga bulan ke-6 terlewat"
+        },
+        {
+          "teks": "Rp900.000,00",
+          "alasan": "memakai sisa pokok bulan ke-5 (18.000.000) tetap untuk lima bulan tanpa menurun"
+        }
+      ],
+      "pembahasan": "Angsuran pokok $A = 3.000.000$. Sisa pokok awal bulan ke-6 sampai ke-10: 15, 12, 9, 6, 3 juta, jumlahnya 45 juta. Bunga yang dihemat $= 1\\% \\times 45.000.000 = 450.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 76,
+        "kutipan": "Pa : pokok pinjaman awal/modal awal"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang pokok dengan syarat ganda",
+      "alasan_level": "merancang nilai pokok yang memenuhi dua batas bunga bulan ke-3 dan kelipatan tertentu, termasuk pengecekan batas",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koperasi menawarkan pinjaman dengan pokok kelipatan Rp4.000.000,00, dilunasi dalam 8 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Nasabah menginginkan bunga bulan ke-3 tidak kurang dari Rp200.000,00 dan tidak lebih dari Rp300.000,00. Banyak pilihan pokok pinjaman yang memenuhi adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "bunga bulan ke-3 = 1% x (P - 2P/8) = 0,0075P; 200.000 <= 0,0075P <= 300.000 memberi 26,67 juta <= P <= 40 juta; kelipatan 4 juta: 28, 32, 36, 40 juta",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "memakai pokok awal untuk bunga ($0,01P$) sehingga P antara 20 juta dan 30 juta (20, 24, 28 juta)"
+        },
+        {
+          "teks": "5",
+          "alasan": "mengurangkan 3 angsuran (k, bukan k-1) sehingga bunga $0,00625P$ dan P antara 32 juta dan 48 juta"
+        },
+        {
+          "teks": "6",
+          "alasan": "mengurangkan 4 angsuran sehingga bunga $0,005P$ dan P antara 40 juta dan 60 juta"
+        }
+      ],
+      "pembahasan": "Angsuran pokok $P/8$. Sisa pokok bulan ke-3 $= P - 2 \\times P/8 = 0,75P$. Bunga $= 1\\% \\times 0,75P = 0,0075P$. Syarat $200.000 \\le 0,0075P \\le 300.000$ memberi $26.666.667 \\le P \\le 40.000.000$. Kelipatan 4 juta: 28, 32, 36, 40 juta, yaitu 4 nilai (40 juta termasuk karena batas atas inklusif).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 75,
+        "kutipan": "Perlu diketahui bahwa besar angsuran tiap bulan yang harus dibayarkan (belum termasuk bunga) adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "pola penurunan bunga dari satu data",
+      "alasan_level": "mencari angsuran pokok dari satu bunga yang diketahui lalu memakai penurunan tetap bunga untuk bulan lain",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman dilunasi dalam 15 bulan dengan angsuran pokok tetap dan bunga 1,5% per bulan dari sisa pokok. Bunga bulan ke-3 adalah Rp780.000,00. Bunga bulan ke-11 adalah ....",
+      "jawaban_benar": "Rp300.000,00",
+      "alasan_benar": "sisa pokok bulan ke-3 = 780.000 : 1,5% = 52.000.000 = 13A sehingga A = 4.000.000; bunga turun 1,5% x 4.000.000 = 60.000 tiap bulan; bunga bulan ke-11 = 780.000 - 8 x 60.000",
+      "distraktor": [
+        {
+          "teks": "Rp360.000,00",
+          "alasan": "bergeser satu bulan: mengurangkan 7 kali selisih sehingga hasilnya bunga bulan ke-10"
+        },
+        {
+          "teks": "Rp120.000,00",
+          "alasan": "mengurangkan selisih 11 kali (sebanyak nomor bulan) bukan 8 kali"
+        },
+        {
+          "teks": "Rp240.000,00",
+          "alasan": "bergeser satu bulan ke arah lain: mengurangkan 9 kali selisih sehingga hasilnya bunga bulan ke-12"
+        }
+      ],
+      "pembahasan": "Sisa pokok bulan ke-3 $= 780.000 : 0,015 = 52.000.000 = (15-2)A$, jadi $A = 4.000.000$. Bunga turun $0,015 \\times 4.000.000 = 60.000$ tiap bulan. Bunga bulan ke-11 $= 780.000 - 8 \\times 60.000 = 300.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Namun, jika bunga pada simpanan cenderung akan bertambah seiring berjalannya waktu, bunga pada pinjaman justru akan berkurang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim perubahan persen dan lama",
+      "alasan_level": "menguji klaim kelipatan 4 dengan menghitung dua total bunga yang pola sisa pokoknya berbeda",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman Rp36.000.000,00 dilunasi dalam 6 bulan dengan angsuran pokok tetap dan bunga 6% per tahun dari sisa pokok. Seorang nasabah mengklaim: \"Jika persen bunga dan lama pinjaman sama-sama dijadikan dua kali lipat (12% per tahun dan 12 bulan), total bunga menjadi tepat 4 kali lipat.\" Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Total bunga baru Rp2.340.000,00 dan klaim salah karena kurang dari 4 kali lipat",
+      "alasan_benar": "total bunga awal = 0,5% x 6.000.000 x 21 = 630.000; total baru = 1% x 3.000.000 x 78 = 2.340.000 < 4 x 630.000 = 2.520.000",
+      "distraktor": [
+        {
+          "teks": "Total bunga baru Rp2.520.000,00 dan klaim benar karena persen dan lama sama-sama dua kali lipat",
+          "alasan": "mengira pengaruh persen dan lama saling mengalikan tanpa menghitung sisa pokok yang menurun"
+        },
+        {
+          "teks": "Total bunga baru Rp2.340.000,00 dan klaim benar karena hasilnya hampir 4 kali lipat",
+          "alasan": "hasil benar tetapi menyimpulkan klaim benar padahal perbandingannya sekitar 3,7 kali"
+        },
+        {
+          "teks": "Total bunga baru Rp1.260.000,00 dan klaim salah karena hanya naik 2 kali lipat",
+          "alasan": "hanya menggandakan satu faktor (persen atau lama) dan mengabaikan faktor lain"
+        }
+      ],
+      "pembahasan": "Awal: $A = 6.000.000$, bunga 0,5% per bulan, jumlah sisa pokok $21A = 126.000.000$, total bunga $630.000$. Baru: $A = 3.000.000$, bunga 1%, jumlah sisa pokok $78A = 234.000.000$, total bunga $2.340.000$. Karena $4 \\times 630.000 = 2.520.000$, klaim salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 75,
+        "kutipan": "Perhitungan yang sama berlanjut hingga angsuran pada bulan ke-10."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "dua pinjaman berbeda masa lunas",
+      "alasan_level": "menyadari pinjaman yang lebih singkat sudah lunas sebelum bulan yang ditanya sebelum menjumlahkan bunga",
+      "stimulus": null,
+      "pertanyaan": "Bu Sari memiliki dua pinjaman yang dimulai pada bulan yang sama, keduanya dengan angsuran pokok tetap dan bunga 1% per bulan dari sisa pokok. Pinjaman I sebesar Rp24.000.000,00 dilunasi dalam 8 bulan dan pinjaman II sebesar Rp18.000.000,00 dilunasi dalam 6 bulan. Jumlah bunga kedua pinjaman yang dibayar pada bulan ke-7 adalah ....",
+      "jawaban_benar": "Rp60.000,00",
+      "alasan_benar": "pinjaman II sudah lunas pada bulan ke-6 sehingga tidak ada bunga bulan ke-7; pinjaman I: sisa pokok = 24.000.000 - 6 x 3.000.000 = 6.000.000, bunga 60.000",
+      "distraktor": [
+        {
+          "teks": "Rp90.000,00",
+          "alasan": "tetap menghitung bunga pinjaman II pada bulan ke-7 (dengan sisa pokok 3.000.000) padahal sudah lunas"
+        },
+        {
+          "teks": "Rp30.000,00",
+          "alasan": "mengurangkan 7 angsuran pada pinjaman I sehingga sisa pokok 3.000.000 (memakai k, bukan k-1)"
+        },
+        {
+          "teks": "Rp180.000,00",
+          "alasan": "memakai jumlah bunga kedua pinjaman pada bulan ke-5"
+        }
+      ],
+      "pembahasan": "Angsuran pokok I $= 3.000.000$ dan II $= 3.000.000$. Pinjaman II lunas setelah 6 angsuran sehingga bulan ke-7 tidak ada bunga. Pinjaman I pada bulan ke-7: sisa pokok $24.000.000 - 6 \\times 3.000.000 = 6.000.000$, bunga $1\\% \\times 6.000.000 = 60.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-d-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 73,
+        "kutipan": "Namun, jika bunga pada simpanan cenderung akan bertambah seiring berjalannya waktu, bunga pada pinjaman justru akan berkurang."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang persen agar total bunga dua pinjaman sama",
+      "alasan_level": "merancang persen bunga pinjaman singkat agar total bunga sama dengan pinjaman panjang memakai faktor (n+1)/2",
+      "stimulus": null,
+      "pertanyaan": "Dua pinjaman berpokok sama masing-masing memakai angsuran pokok tetap dan bunga dari sisa pokok. Pinjaman I dilunasi dalam 11 bulan dengan bunga 12% per tahun. Pinjaman II dilunasi dalam 5 bulan. Agar total bunga kedua pinjaman sama besar, suku bunga pinjaman II harus ....",
+      "jawaban_benar": "24% per tahun",
+      "alasan_benar": "total bunga = pokok x bunga per bulan x $\\frac{n+1}{2}$: 1% x 6 = 6% dari pokok; untuk II: $i \\times 3 = 6\\%$ sehingga $i$ = 2% per bulan = 24% per tahun",
+      "distraktor": [
+        {
+          "teks": "26,4% per tahun",
+          "alasan": "memakai faktor $n$ (bukan $\\frac{n+1}{2}$): $1\\% \\times 11 : 5 = 2,2\\%$ per bulan"
+        },
+        {
+          "teks": "2% per tahun",
+          "alasan": "angka 2% adalah persen per bulan, belum dikalikan 12"
+        },
+        {
+          "teks": "6% per tahun",
+          "alasan": "membalik perbandingan faktor sehingga mendapat setengah persen pinjaman I"
+        }
+      ],
+      "pembahasan": "Total bunga $= P \\times i \\times \\frac{n+1}{2}$. Pinjaman I: $P \\times 1\\% \\times 6$. Pinjaman II: $P \\times i \\times 3$. Sama besar bila $3i = 6\\%$, $i = 2\\%$ per bulan atau 24% per tahun.",
+      "catatan": null
+    }
+  ]
+}

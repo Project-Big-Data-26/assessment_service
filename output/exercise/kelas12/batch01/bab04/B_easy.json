@@ -1,0 +1,686 @@
+{
+  "book": "kelas12",
+  "bab_no": 4,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b04-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b04-p0175-latihan-4-2-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "irisan dan gabungan kejadian dadu",
+      "alasan_level": "mendaftar anggota dua kejadian lalu memakai irisan kosong dan rumus gabungan saling lepas",
+      "stimulus": null,
+      "pertanyaan": "Sebuah dadu setimbang bersisi enam dilempar satu kali. Kejadian $A$ adalah muncul mata dadu habis dibagi 3 dan kejadian $B$ adalah muncul mata dadu habis dibagi 4. Nilai $P(A \\cap B)$ dan $P(A \\cup B)$ berturut-turut adalah ....",
+      "jawaban_benar": "$P(A \\cap B) = 0$ dan $P(A \\cup B) = \\frac{1}{2}$",
+      "alasan_benar": "$A=\\{3,6\\}$, $B=\\{4\\}$ tidak beririsan; $P(A \\cup B)=\\frac{2}{6}+\\frac{1}{6}=\\frac{1}{2}$",
+      "distraktor": [
+        {
+          "teks": "$P(A \\cap B) = \\frac{1}{18}$ dan $P(A \\cup B) = \\frac{4}{9}$",
+          "alasan": "memakai rumus kejadian saling bebas $P(A)\\times P(B)$ padahal kedua kejadian saling lepas"
+        },
+        {
+          "teks": "$P(A \\cap B) = 0$ dan $P(A \\cup B) = \\frac{1}{3}$",
+          "alasan": "hanya menghitung peluang $A$ pada gabungan"
+        },
+        {
+          "teks": "$P(A \\cap B) = \\frac{1}{6}$ dan $P(A \\cup B) = \\frac{1}{2}$",
+          "alasan": "menganggap irisan sama dengan peluang $B$"
+        }
+      ],
+      "pembahasan": "$A=\\{3,6\\}$ dan $B=\\{4\\}$ saling lepas sehingga $A \\cap B=\\{\\}$ dan $P(A \\cap B)=0$. Maka $P(A \\cup B)=P(A)+P(B)=\\frac{2}{6}+\\frac{1}{6}=\\frac{1}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b04-p0182-latihan-4-3-1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluang bersyarat dua dadu",
+      "alasan_level": "mendaftar pasangan mata dadu lalu membagi irisan dengan banyak anggota kejadian syarat",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu setimbang dilemparkan bersamaan. Jika $A$ adalah kejadian muncul dua mata dadu yang hasil kalinya 4 dan $B$ adalah kejadian muncul dua mata dadu berjumlah 5, nilai $P(A|B)$ dan $P(B|A)$ berturut-turut adalah ....",
+      "jawaban_benar": "$P(A|B) = \\frac{1}{2}$ dan $P(B|A) = \\frac{2}{3}$",
+      "alasan_benar": "$A \\cap B=\\{(1,4),(4,1)\\}$, $n(A)=3$, $n(B)=4$; $P(A|B)=\\frac{2}{4}$ dan $P(B|A)=\\frac{2}{3}$",
+      "distraktor": [
+        {
+          "teks": "$P(A|B) = \\frac{2}{3}$ dan $P(B|A) = \\frac{1}{2}$",
+          "alasan": "kejadian syarat dan kejadian yang dicari tertukar"
+        },
+        {
+          "teks": "$P(A|B) = \\frac{1}{18}$ dan $P(B|A) = \\frac{1}{18}$",
+          "alasan": "membagi irisan dengan seluruh ruang sampel 36, bukan dengan kejadian syarat"
+        },
+        {
+          "teks": "$P(A|B) = \\frac{2}{7}$ dan $P(B|A) = \\frac{2}{7}$",
+          "alasan": "membagi irisan dengan jumlah $n(A)+n(B)$"
+        }
+      ],
+      "pembahasan": "$A=\\{(1,4),(4,1),(2,2)\\}$, $B=\\{(1,4),(4,1),(2,3),(3,2)\\}$, $A \\cap B=\\{(1,4),(4,1)\\}$. $P(A|B)=\\frac{n(A \\cap B)}{n(B)}=\\frac{2}{4}=\\frac{1}{2}$ dan $P(B|A)=\\frac{2}{3}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b04-p0182-latihan-4-3-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pengambilan kartu tanpa pengembalian",
+      "alasan_level": "mengalikan peluang pengambilan pertama dengan peluang bersyarat pengambilan kedua",
+      "stimulus": null,
+      "pertanyaan": "Dua kartu dipilih secara acak satu per satu dari tumpukan 40 kartu tanpa pengembalian. Tumpukan itu terdiri dari 4 warna dan setiap warna memiliki kartu bernomor 1 sampai 10. Peluang kartu pertama bernomor 1 dan kartu kedua bernomor 10 adalah ....",
+      "jawaban_benar": "$\\frac{2}{195}$",
+      "alasan_benar": "$\\frac{4}{40}\\times\\frac{4}{39}=\\frac{2}{195}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{100}$",
+          "alasan": "memakai penyebut 40 pada pengambilan kedua (seperti dengan pengembalian)"
+        },
+        {
+          "teks": "$\\frac{79}{390}$",
+          "alasan": "menjumlahkan peluang kedua pengambilan, bukan mengalikan"
+        },
+        {
+          "teks": "$\\frac{1}{1560}$",
+          "alasan": "hanya menghitung satu kartu untuk tiap nomor"
+        }
+      ],
+      "pembahasan": "Pengambilan pertama $P=\\frac{4}{40}$. Setelah satu kartu terambil tersisa 39 kartu dan 4 kartu bernomor 10, sehingga peluang kedua $\\frac{4}{39}$. Peluang keduanya $=\\frac{4}{40}\\times\\frac{4}{39}=\\frac{2}{195}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 166,
+        "bagian": "Contoh 4.7",
+        "nomor": "4.7",
+        "teks": "Bagaimana cara menghitung peluang munculnya mata dadu berjumlah 5 atau 7 jika kedua dadu dilempar secara bersamaan?",
+        "jawaban": "5/18"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "gabungan saling lepas dua dadu",
+      "alasan_level": "menghitung banyak pasangan untuk dua jumlah yang saling lepas lalu menjumlahkan peluangnya",
+      "stimulus": null,
+      "pertanyaan": "Peluang munculnya mata dadu berjumlah 4 atau 9 jika dua dadu setimbang dilempar secara bersamaan adalah ....",
+      "jawaban_benar": "$\\frac{7}{36}$",
+      "alasan_benar": "$P(4)=\\frac{3}{36}$, $P(9)=\\frac{4}{36}$, kedua kejadian saling lepas sehingga jumlahnya $\\frac{7}{36}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{108}$",
+          "alasan": "mengalikan kedua peluang, padahal kejadian 'atau' saling lepas dijumlahkan"
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "lupa pasangan (2, 2) pada jumlah 4"
+        },
+        {
+          "teks": "$\\frac{7}{72}$",
+          "alasan": "memakai ruang sampel 72 (36 dijumlahkan dua kali)"
+        }
+      ],
+      "pembahasan": "Jumlah 4: (1,3),(3,1),(2,2) = 3 pasangan. Jumlah 9: (3,6),(6,3),(4,5),(5,4) = 4 pasangan. Keduanya tidak dapat terjadi bersamaan, jadi $P=\\frac{3}{36}+\\frac{4}{36}=\\frac{7}{36}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b04-p0183-latihan-4-3-4a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pengambilan bola tanpa pengembalian",
+      "alasan_level": "mengalikan tiga peluang bersyarat berurutan dengan isi kotak yang berkurang",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kotak berisi 5 bola merah dan 3 bola putih. Tiga bola diambil secara acak satu per satu tanpa pengembalian. Peluang bahwa pada pengambilan pertama dan kedua terambil bola merah serta pada pengambilan ketiga terambil bola putih adalah ....",
+      "jawaban_benar": "$\\frac{5}{28}$",
+      "alasan_benar": "$\\frac{5}{8}\\times\\frac{4}{7}\\times\\frac{3}{6}=\\frac{5}{28}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{75}{512}$",
+          "alasan": "memakai penyebut 8 terus (seperti dengan pengembalian)"
+        },
+        {
+          "teks": "$\\frac{15}{112}$",
+          "alasan": "penyebut pengambilan ketiga tidak dikurangi"
+        },
+        {
+          "teks": "$\\frac{5}{14}$",
+          "alasan": "lupa peluang pengambilan ketiga"
+        }
+      ],
+      "pembahasan": "Pengambilan 1: $\\frac{5}{8}$ (merah), pengambilan 2: $\\frac{4}{7}$ (merah), pengambilan 3: $\\frac{3}{6}$ (putih). Hasil kali $=\\frac{60}{336}=\\frac{5}{28}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b04-p0183-latihan-4-3-4b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pengambilan bola dengan pengembalian",
+      "alasan_level": "pengambilan saling bebas sehingga cukup mengalikan tiga peluang yang sama penyebutnya",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kantong berisi 3 bola biru dan 7 bola merah. Tiga bola diambil secara acak satu per satu dengan pengembalian. Peluang bahwa pengambilan pertama terambil bola biru serta pengambilan kedua dan ketiga terambil bola merah adalah ....",
+      "jawaban_benar": "$\\frac{147}{1000}$",
+      "alasan_benar": "dengan pengembalian, tiap pengambilan saling bebas: $\\frac{3}{10}\\times\\frac{7}{10}\\times\\frac{7}{10}=\\frac{147}{1000}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{40}$",
+          "alasan": "memakai cara tanpa pengembalian"
+        },
+        {
+          "teks": "$\\frac{21}{100}$",
+          "alasan": "hanya menghitung dua pengambilan"
+        },
+        {
+          "teks": "$\\frac{343}{1000}$",
+          "alasan": "mengira ketiga bola yang terambil berwarna merah"
+        }
+      ],
+      "pembahasan": "Setiap bola dikembalikan, sehingga isi kantong tetap 10 bola dan kejadian saling bebas. $P=\\frac{3}{10}\\times\\frac{7}{10}\\times\\frac{7}{10}=\\frac{147}{1000}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b04-p0186-uji-kompetensi-bab-4-4"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "saling bebas koin dan dadu",
+      "alasan_level": "mengalikan peluang dua kejadian saling bebas, salah satunya perlu dihitung dari pasangan dua dadu",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu dan sekeping koin dilemparkan secara bersamaan. Jika kemunculan tiap dadu dan koin dianggap seimbang, peluang muncul sisi gambar pada koin dan kedua mata dadu berjumlah 8 adalah ....",
+      "jawaban_benar": "$\\frac{5}{72}$",
+      "alasan_benar": "$\\frac{1}{2}\\times\\frac{5}{36}=\\frac{5}{72}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{36}$",
+          "alasan": "lupa peluang sisi gambar pada koin"
+        },
+        {
+          "teks": "$\\frac{23}{36}$",
+          "alasan": "menjumlahkan peluang, padahal kejadian saling bebas dengan kata 'dan'"
+        },
+        {
+          "teks": "$\\frac{1}{72}$",
+          "alasan": "hanya menghitung pasangan (4, 4) untuk jumlah 8"
+        }
+      ],
+      "pembahasan": "Koin dan dadu saling bebas. $P(\\text{gambar})=\\frac{1}{2}$. Jumlah 8: (2,6),(6,2),(3,5),(5,3),(4,4) = 5 dari 36. Maka $P=\\frac{1}{2}\\times\\frac{5}{36}=\\frac{5}{72}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b04-p0188-uji-kompetensi-bab-4-9a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pengambilan bola dengan pengembalian",
+      "alasan_level": "dua pengambilan saling bebas sehingga peluangnya dikuadratkan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kotak memuat 7 kelereng hijau dan 5 kelereng kuning. Dua kelereng diambil berturut-turut secara acak, dan setiap kelereng yang terambil dikembalikan lebih dulu sebelum pengambilan berikutnya. Peluang terambilnya dua kelereng kuning adalah ....",
+      "jawaban_benar": "$\\frac{25}{144}$",
+      "alasan_benar": "$\\frac{5}{12}\\times\\frac{5}{12}=\\frac{25}{144}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{33}$",
+          "alasan": "memakai cara tanpa pengembalian"
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "menjumlahkan kedua peluang"
+        },
+        {
+          "teks": "$\\frac{25}{132}$",
+          "alasan": "penyebut dikurangi tetapi pembilang tidak, campuran dua cara"
+        }
+      ],
+      "pembahasan": "Kelereng dikembalikan, jadi tiap pengambilan memiliki peluang kuning $\\frac{5}{12}$ dan saling bebas. $P=\\left(\\frac{5}{12}\\right)^2=\\frac{25}{144}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b04-p0188-uji-kompetensi-bab-4-9b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pengambilan bola tanpa pengembalian",
+      "alasan_level": "mengalikan peluang pengambilan pertama dengan peluang bersyarat kedua",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toples berisi 9 permen mint dan 3 permen cokelat. Dua permen diambil berturut-turut secara acak tanpa dikembalikan. Peluang terambilnya dua permen cokelat adalah ....",
+      "jawaban_benar": "$\\frac{1}{22}$",
+      "alasan_benar": "$\\frac{3}{12}\\times\\frac{2}{11}=\\frac{1}{22}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "memakai cara dengan pengembalian"
+        },
+        {
+          "teks": "$\\frac{2}{11}$",
+          "alasan": "hanya memakai peluang pengambilan kedua"
+        },
+        {
+          "teks": "$\\frac{19}{44}$",
+          "alasan": "menjumlahkan peluang pertama dan kedua"
+        }
+      ],
+      "pembahasan": "Pengambilan pertama cokelat $\\frac{3}{12}$; setelah itu tersisa 11 permen dengan 2 cokelat, jadi $\\frac{2}{11}$. $P=\\frac{3}{12}\\times\\frac{2}{11}=\\frac{1}{22}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "bagian": "Contoh 4.4",
+        "nomor": "4.4",
+        "teks": "Dua buah dadu dilempar sebanyak 360 kali. Berapa frekuensi harapan muncul mata dadu 3 untuk dadu pertama dan mata dadu 5 untuk dadu kedua?",
+        "jawaban": "10"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "frekuensi harapan kejadian majemuk",
+      "alasan_level": "menghitung peluang dua kejadian saling bebas lalu mengalikannya dengan banyak percobaan",
+      "stimulus": null,
+      "pertanyaan": "Dua buah dadu setimbang dilempar bersama sebanyak 720 kali. Frekuensi harapan muncul mata dadu 2 pada dadu pertama dan mata dadu 6 pada dadu kedua adalah ....",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "$P=\\frac{1}{6}\\times\\frac{1}{6}=\\frac{1}{36}$ sehingga $Fh=\\frac{1}{36}\\times 720=20$",
+      "distraktor": [
+        {
+          "teks": "$240$",
+          "alasan": "menjumlahkan peluang ($\\frac{1}{6}+\\frac{1}{6}=\\frac{1}{3}$) lalu mengalikan dengan 720"
+        },
+        {
+          "teks": "$120$",
+          "alasan": "hanya memakai peluang satu dadu ($\\frac{1}{6}$)"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "membagi 720 dengan 72, bukan dengan 36"
+        }
+      ],
+      "pembahasan": "$P(\\text{2 lalu 6})=\\frac{1}{6}\\times\\frac{1}{6}=\\frac{1}{36}$. $Fh=P\\times n=\\frac{1}{36}\\times 720=20$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 161,
+        "bagian": "Contoh 4.5",
+        "nomor": "4.5",
+        "teks": "Jumlah siswa Sekolah Menengah Atas kelas XII adalah 34. Terdapat 23 siswa yang menyukai Matematika, ada 19 siswa yang menyukai Fisika, dan 12 siswa yang menyukai kedua disiplin ilmu tersebut. Bagaimana cara memastikan kemungkinan bahwa seorang siswa yang dipilih secara acak akan menyukai Matematika atau Fisika?",
+        "jawaban": "15/17"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "rumus gabungan data cacah",
+      "alasan_level": "memakai rumus $P(A \\cup B)$ dengan irisan yang diketahui dari banyak siswa",
+      "stimulus": null,
+      "pertanyaan": "Jumlah siswa dalam suatu angkatan adalah 40. Terdapat 25 siswa yang menyukai Sejarah, ada 18 siswa yang menyukai Geografi, dan 8 siswa yang menyukai keduanya. Jika seorang siswa dipilih secara acak, peluang ia menyukai Sejarah atau Geografi adalah ....",
+      "jawaban_benar": "$\\frac{7}{8}$",
+      "alasan_benar": "$P=\\frac{25}{40}+\\frac{18}{40}-\\frac{8}{40}=\\frac{35}{40}=\\frac{7}{8}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{43}{40}$",
+          "alasan": "tidak mengurangi irisan, siswa yang menyukai keduanya terhitung dua kali"
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "hanya menghitung siswa yang menyukai keduanya"
+        },
+        {
+          "teks": "$\\frac{27}{40}$",
+          "alasan": "mengurangi irisan dua kali ($25+18-2\\times 8$ lalu salah hitung)"
+        }
+      ],
+      "pembahasan": "$P(S \\cup G)=P(S)+P(G)-P(S \\cap G)=\\frac{25+18-8}{40}=\\frac{35}{40}=\\frac{7}{8}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 180,
+        "bagian": "Contoh 4.12",
+        "nomor": "a",
+        "teks": "Berapa kemungkinan dipilih satu manajer secara acak untuk manajer laki-laki atau manajer senior?",
+        "jawaban": "2/5"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "gabungan dari tabel dua arah",
+      "alasan_level": "membaca irisan dan total dari tabel lalu memakai rumus gabungan satu langkah tambahan",
+      "stimulus": "Banyak siswa menurut kelas dan jenis kelamin:\n\n|Kelas|Putra|Putri|\n|---|---|---|\n|X|30|20|\n|XI|25|25|\n|XII|20|30|",
+      "pertanyaan": "Satu siswa dipilih secara acak dari seluruh siswa pada tabel. Peluang terpilih siswa putra atau siswa kelas XII adalah ....",
+      "jawaban_benar": "$\\frac{7}{10}$",
+      "alasan_benar": "$P=\\frac{75}{150}+\\frac{50}{150}-\\frac{20}{150}=\\frac{105}{150}=\\frac{7}{10}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "tidak mengurangi irisan (siswa putra kelas XII terhitung dua kali)"
+        },
+        {
+          "teks": "$\\frac{2}{15}$",
+          "alasan": "hanya menghitung irisan (putra dan kelas XII)"
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "mengalikan peluang, padahal yang ditanya 'atau'"
+        }
+      ],
+      "pembahasan": "Total 150 siswa; putra 75, kelas XII 50, putra kelas XII 20. $P=\\frac{75+50-20}{150}=\\frac{105}{150}=\\frac{7}{10}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Peluang terjadinya dua kejadian atau lebih secara bersamaan disebut peluang kejadian majemuk."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "rumus gabungan umum",
+      "alasan_level": "satu kali substitusi ke rumus $P(A \\cup B)$ yang diberikan di buku",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(A)=\\frac{7}{20}$, $P(B)=\\frac{9}{20}$, dan $P(A \\cap B)=\\frac{3}{20}$. Nilai $P(A \\cup B)$ adalah ....",
+      "jawaban_benar": "$\\frac{13}{20}$",
+      "alasan_benar": "$P(A \\cup B)=\\frac{7}{20}+\\frac{9}{20}-\\frac{3}{20}=\\frac{13}{20}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "tidak mengurangi $P(A \\cap B)$"
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "mengurangi irisan dua kali"
+        },
+        {
+          "teks": "$\\frac{19}{20}$",
+          "alasan": "menambahkan irisan, bukan mengurangi"
+        }
+      ],
+      "pembahasan": "$P(A \\cup B)=P(A)+P(B)-P(A \\cap B)=\\frac{7+9-3}{20}=\\frac{13}{20}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Kejadian majemuk saling lepas adalah dua kejadian yang tidak dapat terjadi secara bersamaan."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "rumus saling lepas",
+      "alasan_level": "mengenali kejadian saling lepas dan menjumlahkan dua peluang",
+      "stimulus": null,
+      "pertanyaan": "Kejadian $A$ dan $B$ saling lepas dengan $P(A)=\\frac{2}{5}$ dan $P(B)=\\frac{1}{3}$. Nilai $P(A \\cup B)$ adalah ....",
+      "jawaban_benar": "$\\frac{11}{15}$",
+      "alasan_benar": "saling lepas berarti $P(A \\cap B)=0$, sehingga $P(A \\cup B)=\\frac{2}{5}+\\frac{1}{3}=\\frac{11}{15}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{15}$",
+          "alasan": "mengalikan kedua peluang (rumus saling bebas)"
+        },
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "menjumlahkan pembilang dan penyebut secara terpisah"
+        },
+        {
+          "teks": "$\\frac{1}{15}$",
+          "alasan": "mengurangi kedua peluang"
+        }
+      ],
+      "pembahasan": "Karena saling lepas, $P(A \\cup B)=P(A)+P(B)=\\frac{6}{15}+\\frac{5}{15}=\\frac{11}{15}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 172,
+        "kutipan": "Jika suatu kejadian tidak mempengaruhi kejadian yang lainnya, maka dua kejadian A dan B dapat disebut sebagai kejadian majemuk yang saling bebas."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "rumus saling bebas",
+      "alasan_level": "satu kali perkalian $P(A)\\times P(B)$ untuk kejadian saling bebas",
+      "stimulus": null,
+      "pertanyaan": "Kejadian $A$ dan $B$ saling bebas dengan $P(A)=\\frac{1}{5}$ dan $P(B)=\\frac{3}{10}$. Nilai $P(A \\cap B)$ adalah ....",
+      "jawaban_benar": "$\\frac{3}{50}$",
+      "alasan_benar": "saling bebas, sehingga $P(A \\cap B)=\\frac{1}{5}\\times\\frac{3}{10}=\\frac{3}{50}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "menjumlahkan kedua peluang"
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "mengurangi kedua peluang"
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "mengalikan pembilang dan menjumlahkan penyebut ($\\frac{3}{15}$)"
+        }
+      ],
+      "pembahasan": "$P(A \\cap B)=P(A)\\times P(B)=\\frac{1}{5}\\times\\frac{3}{10}=\\frac{3}{50}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Kejadian majemuk saling lepas adalah dua kejadian yang tidak dapat terjadi secara bersamaan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "identifikasi saling lepas",
+      "alasan_level": "memeriksa irisan tiap pasangan kejadian pada satu dadu",
+      "stimulus": null,
+      "pertanyaan": "Sebuah dadu setimbang bersisi enam dilempar satu kali. Pasangan kejadian yang saling lepas adalah ....",
+      "jawaban_benar": "muncul bilangan prima dan muncul mata dadu 6",
+      "alasan_benar": "bilangan prima $\\{2,3,5\\}$ dan $\\{6\\}$ tidak memiliki irisan",
+      "distraktor": [
+        {
+          "teks": "muncul bilangan genap dan muncul mata dadu lebih dari 3",
+          "alasan": "irisannya $\\{4,6\\}$, jadi tidak saling lepas"
+        },
+        {
+          "teks": "muncul bilangan ganjil dan muncul bilangan prima",
+          "alasan": "irisannya $\\{3,5\\}$, jadi tidak saling lepas"
+        },
+        {
+          "teks": "muncul kelipatan 3 dan muncul bilangan genap",
+          "alasan": "irisannya $\\{6\\}$, jadi tidak saling lepas"
+        }
+      ],
+      "pembahasan": "Dua kejadian saling lepas bila irisannya kosong. Prima $=\\{2,3,5\\}$ dan mata 6 $=\\{6\\}$ tidak beririsan; tiga pasangan lain masing-masing memiliki anggota bersama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 172,
+        "kutipan": "Jika suatu kejadian tidak mempengaruhi kejadian yang lainnya, maka dua kejadian A dan B dapat disebut sebagai kejadian majemuk yang saling bebas."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "identifikasi saling bebas",
+      "alasan_level": "menilai apakah hasil kejadian pertama mempengaruhi peluang kejadian kedua",
+      "stimulus": null,
+      "pertanyaan": "Pasangan kejadian berikut yang saling bebas adalah ....",
+      "jawaban_benar": "muncul sisi gambar pada sebuah koin dan muncul mata dadu 4 pada sebuah dadu yang dilempar bersamaan",
+      "alasan_benar": "hasil koin tidak mempengaruhi hasil dadu",
+      "distraktor": [
+        {
+          "teks": "terambil kartu As pada pengambilan pertama dan terambil kartu As pada pengambilan kedua dari 52 kartu tanpa pengembalian",
+          "alasan": "pengambilan pertama mengubah isi tumpukan sehingga peluang kedua berubah"
+        },
+        {
+          "teks": "terambil bola merah pada pengambilan pertama dan bola merah pada pengambilan kedua dari kantong tanpa pengembalian",
+          "alasan": "pengambilan pertama mengubah isi kantong sehingga peluang kedua berubah"
+        },
+        {
+          "teks": "muncul mata dadu genap dan muncul mata dadu 6 pada satu lemparan dadu yang sama",
+          "alasan": "kejadian muncul pada lemparan yang sama; mata 6 sudah termasuk genap sehingga saling mempengaruhi"
+        }
+      ],
+      "pembahasan": "Dua kejadian saling bebas bila terjadinya yang satu tidak mempengaruhi peluang yang lain. Koin dan dadu terpisah sehingga saling bebas; ketiga pasangan lain saling mempengaruhi.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 159,
+        "kutipan": "Frekuensi harapan dari kejadian majemuk adalah harapan banyaknya kejadian majemuk yang dapat terjadi dari sejumlah percobaan yang dilakukan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "frekuensi harapan kejadian majemuk",
+      "alasan_level": "menghitung peluang tiga kejadian bebas lalu mengalikannya dengan banyak percobaan",
+      "stimulus": null,
+      "pertanyaan": "Tiga koin setimbang dilempar bersamaan sebanyak 400 kali. Frekuensi harapan munculnya sisi gambar pada ketiga koin adalah ....",
+      "jawaban_benar": "$50$",
+      "alasan_benar": "$P=\\left(\\frac{1}{2}\\right)^3=\\frac{1}{8}$ sehingga $Fh=\\frac{1}{8}\\times 400=50$",
+      "distraktor": [
+        {
+          "teks": "$100$",
+          "alasan": "memakai peluang dua koin ($\\frac{1}{4}$)"
+        },
+        {
+          "teks": "$200$",
+          "alasan": "memakai peluang satu koin ($\\frac{1}{2}$)"
+        },
+        {
+          "teks": "$150$",
+          "alasan": "memakai peluang $\\frac{3}{8}$, yaitu peluang tepat dua gambar"
+        }
+      ],
+      "pembahasan": "Ketiga koin saling bebas, jadi $P=\\frac{1}{2}\\times\\frac{1}{2}\\times\\frac{1}{2}=\\frac{1}{8}$. $Fh=P\\times n=\\frac{1}{8}\\times 400=50$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Hal ini terjadi karena kejadian pengambilan kartu hati pertama berdampak pada kejadian pengambilan kartu hati kedua."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "peluang bersyarat pengambilan kedua",
+      "alasan_level": "menyesuaikan isi kotak setelah satu pengambilan tanpa pengembalian",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kotak berisi 7 kelereng hijau dan 3 kelereng kuning. Satu kelereng hijau diambil dan tidak dikembalikan. Jika sebuah kelereng diambil lagi secara acak, peluang terambil kelereng hijau adalah ....",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "setelah satu hijau diambil tersisa 6 hijau dari 9 kelereng, sehingga $\\frac{6}{9}=\\frac{2}{3}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{10}$",
+          "alasan": "lupa bahwa satu kelereng sudah diambil (isi kotak dianggap tetap)"
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "hanya mengurangi pembilang, penyebut tetap 10"
+        },
+        {
+          "teks": "$\\frac{7}{9}$",
+          "alasan": "hanya mengurangi penyebut, pembilang tetap 7"
+        }
+      ],
+      "pembahasan": "Sisa kelereng: 6 hijau dan 3 kuning, total 9. Peluang hijau kedua $=\\frac{6}{9}=\\frac{2}{3}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Peluang terjadinya dua kejadian atau lebih secara bersamaan disebut peluang kejadian majemuk."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mencari irisan dari gabungan",
+      "alasan_level": "membalik rumus $P(A \\cup B)$ untuk mencari $P(A \\cap B)$ dengan penyamaan penyebut",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(A)=\\frac{3}{5}$, $P(B)=\\frac{1}{2}$, dan $P(A \\cup B)=\\frac{9}{10}$. Nilai $P(A \\cap B)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{5}$",
+      "alasan_benar": "$P(A \\cap B)=P(A)+P(B)-P(A \\cup B)=\\frac{6}{10}+\\frac{5}{10}-\\frac{9}{10}=\\frac{1}{5}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{10}$",
+          "alasan": "hanya menjumlahkan $P(A)+P(B)$ tanpa mengurangi $P(A \\cup B)$"
+        },
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "menghitung $P(A \\cup B)-P(A)$"
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "menghitung $P(A \\cup B)-P(B)$"
+        }
+      ],
+      "pembahasan": "Dari $P(A \\cup B)=P(A)+P(B)-P(A \\cap B)$ diperoleh $P(A \\cap B)=\\frac{3}{5}+\\frac{1}{2}-\\frac{9}{10}=\\frac{1}{5}$.",
+      "catatan": null
+    }
+  ]
+}

@@ -1,0 +1,449 @@
+{
+ "book": "kelas12",
+ "bab_no": 1,
+ "subbab": "C",
+ "level": "easy",
+ "batch": 1,
+ "skill_versi": "v1",
+ "kapasitas_kurang": true,
+ "alasan_kapasitas": "Subbab C (Bunga Tunggal) hanya selebar p48-p50 Buku Siswa: satu eksplorasi (Tabel 1.5 Angga), rumus B = M x p% x n, dan Contoh 1.9 (Zaka), tanpa Latihan bernomor. Acuan pretest hanya 2 soal (4 variasi) ditambah Contoh 1.9 (2 variasi); UK 6 (cicilan) 3 langkah sehingga melebihi easy. Lebih dari 13 soal easy akan nyaris kembar.",
+ "soal": [
+  {
+   "id": "kelas12-b01-c-easy-bt01-001",
+   "tipe_generate": "variasi",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0049-ayo-bereksplorasi-bunga-2"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "bunga tunggal pada tahun tertentu",
+   "alasan_level": "satu operasi langsung: bunga tunggal tetap = persen x modal awal",
+   "stimulus": null,
+   "pertanyaan": "Dina menabung uang sebesar Rp3.500.000,00 di sebuah bank. Bank memberikan bunga tunggal tetap sebesar 6% setiap tahun dari saldo awal. Besar bunga yang diterima Dina pada tahun ketiga adalah ....",
+   "jawaban_benar": "Rp210.000,00",
+   "alasan_benar": "bunga tunggal selalu dihitung dari modal awal: 6% x Rp3.500.000,00 = Rp210.000,00 setiap tahun",
+   "distraktor": [
+    {
+     "teks": "Rp235.956,00",
+     "alasan": "menghitung bunga dari saldo akhir tahun sebelumnya (bunga majemuk), padahal bunga tunggal dari modal awal"
+    },
+    {
+     "teks": "Rp630.000,00",
+     "alasan": "mengalikan bunga setahun dengan nomor tahun (3 x Rp210.000,00)"
+    },
+    {
+     "teks": "Rp21.000,00",
+     "alasan": "salah menaruh koma desimal, memakai 0,6% bukan 6%"
+    }
+   ],
+   "pembahasan": "Bunga tunggal tiap tahun sama: $B = M \\times p\\% = 3.500.000 \\times 0,06 = 210.000$. Tahun ketiga tetap Rp210.000,00.",
+   "catatan": null,
+   "variasi_cara": "angka"
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-002",
+   "tipe_generate": "variasi",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0049-ayo-bereksplorasi-bunga-2"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "bunga tunggal pada tahun tertentu",
+   "alasan_level": "satu operasi: persen dikali modal awal, tidak bergantung tahun",
+   "stimulus": null,
+   "pertanyaan": "Pak Hendra menyimpan Rp8.000.000,00 di koperasi pegawai. Koperasi itu menetapkan bunga tunggal 3% per tahun yang dihitung dari simpanan awal. Berapa rupiah bunga yang diterima Pak Hendra pada tahun kedua?",
+   "jawaban_benar": "Rp240.000,00",
+   "alasan_benar": "bunga tunggal dihitung dari simpanan awal: 3% x Rp8.000.000,00 = Rp240.000,00",
+   "distraktor": [
+    {
+     "teks": "Rp247.200,00",
+     "alasan": "bunga tahun kedua dihitung dari saldo tahun pertama (bunga majemuk)"
+    },
+    {
+     "teks": "Rp480.000,00",
+     "alasan": "mengalikan bunga setahun dengan 2 karena tahun kedua"
+    },
+    {
+     "teks": "Rp24.000,00",
+     "alasan": "salah menaruh koma desimal, memakai 0,3% bukan 3%"
+    }
+   ],
+   "pembahasan": "$B = M \\times p\\% = 8.000.000 \\times 0,03 = 240.000$ untuk setiap tahun.",
+   "catatan": null,
+   "variasi_cara": "konteks"
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-003",
+   "tipe_generate": "variasi",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0049-ayo-bereksplorasi-bunga-2-nilai"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "nilai tabungan akhir tahun",
+   "alasan_level": "dua langkah singkat: hitung bunga tetap lalu tambahkan ke modal",
+   "stimulus": null,
+   "pertanyaan": "Rina menabung Rp4.000.000,00 di bank yang memberi bunga tunggal tetap 3% setiap tahun dari saldo awal. Bunga ditambahkan ke saldo setiap akhir tahun. Nilai total tabungan Rina pada akhir tahun ketiga adalah ....",
+   "jawaban_benar": "Rp4.360.000,00",
+   "alasan_benar": "bunga tetap Rp120.000,00 per tahun, selama 3 tahun Rp360.000,00, sehingga total Rp4.360.000,00",
+   "distraktor": [
+    {
+     "teks": "Rp4.370.908,00",
+     "alasan": "memakai bunga majemuk (bunga dihitung dari saldo tahun sebelumnya)"
+    },
+    {
+     "teks": "Rp4.120.000,00",
+     "alasan": "hanya menambahkan bunga satu tahun"
+    },
+    {
+     "teks": "Rp360.000,00",
+     "alasan": "lupa menambahkan modal awal, hanya bunga tiga tahun"
+    }
+   ],
+   "pembahasan": "Bunga per tahun: $4.000.000 \\times 0,03 = 120.000$. Setelah 3 tahun: $4.000.000 + 3 \\times 120.000 = 4.360.000$.",
+   "catatan": null,
+   "variasi_cara": "angka"
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-004",
+   "tipe_generate": "variasi",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0049-ayo-bereksplorasi-bunga-2-nilai"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "nilai tabungan akhir tahun",
+   "alasan_level": "dua langkah singkat: bunga tetap per tahun, kalikan lama menabung, tambah modal",
+   "stimulus": null,
+   "pertanyaan": "Bu Sari menyetor Rp4.500.000,00 pada tabungan koperasi sekolah dengan bunga tunggal 8% per tahun. Selama lima tahun ia tidak menarik uangnya. Berapa saldo Bu Sari setelah lima tahun?",
+   "jawaban_benar": "Rp6.300.000,00",
+   "alasan_benar": "bunga lima tahun 5 x Rp360.000,00 = Rp1.800.000,00, ditambah modal menjadi Rp6.300.000,00",
+   "distraktor": [
+    {
+     "teks": "Rp6.611.976,00",
+     "alasan": "memakai bunga majemuk, bunga dihitung dari saldo yang terus bertambah"
+    },
+    {
+     "teks": "Rp4.860.000,00",
+     "alasan": "hanya menambahkan bunga satu tahun"
+    },
+    {
+     "teks": "Rp1.800.000,00",
+     "alasan": "lupa menambahkan modal awal, hanya bunga lima tahun"
+    }
+   ],
+   "pembahasan": "$B = 4.500.000 \\times 0,08 \\times 5 = 1.800.000$; saldo $= 4.500.000 + 1.800.000 = 6.300.000$.",
+   "catatan": null,
+   "variasi_cara": "konteks"
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-005",
+   "tipe_generate": "variasi",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "bagian": "Contoh 1.9",
+    "nomor": "1.9",
+    "teks": "Zaka memulai bisnis kecil-kecilan ikan cupang hias dan memperoleh keuntungan pertama sebesar Rp2.000.000,00. Uang tersebut ia simpan di koperasi desa yang memberikan bunga tunggal sebesar 5% per tahun. Bunga diberikan sekali setahun dan langsung ditambahkan ke total simpanan sebelumnya. Berapa total uang yang didapatkan Zaka selama 4 tahun?",
+    "jawaban": "Rp2.400.000,00"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "total simpanan dengan rumus B = M x p% x n",
+   "alasan_level": "menerapkan rumus bunga tunggal langsung lalu menambahkan modal",
+   "stimulus": null,
+   "pertanyaan": "Salsa memulai usaha kecil-kecilan kue kering dan memperoleh keuntungan pertama sebesar Rp6.000.000,00. Uang tersebut ia simpan di koperasi desa yang memberikan bunga tunggal sebesar 4% per tahun. Bunga diberikan sekali setahun dan langsung ditambahkan ke total simpanan sebelumnya. Berapa total uang yang didapatkan Salsa selama 3 tahun?",
+   "jawaban_benar": "Rp6.720.000,00",
+   "alasan_benar": "B = 6.000.000 x 0,04 x 3 = 720.000; total = 6.000.000 + 720.000 = 6.720.000",
+   "distraktor": [
+    {
+     "teks": "Rp6.749.184,00",
+     "alasan": "memakai bunga majemuk (dipangkatkan) padahal bunga tunggal"
+    },
+    {
+     "teks": "Rp720.000,00",
+     "alasan": "hanya menjawab besar bunga, lupa menambahkan modal awal"
+    },
+    {
+     "teks": "Rp6.240.000,00",
+     "alasan": "hanya menambahkan bunga untuk satu tahun"
+    }
+   ],
+   "pembahasan": "$B = M \\times p\\% \\times n = 6.000.000 \\times 0,04 \\times 3 = 720.000$. Total $= 6.000.000 + 720.000 = 6.720.000$.",
+   "catatan": null,
+   "variasi_cara": "angka"
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-006",
+   "tipe_generate": "variasi",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "bagian": "Contoh 1.9",
+    "nomor": "1.9",
+    "teks": "Zaka memulai bisnis kecil-kecilan ikan cupang hias dan memperoleh keuntungan pertama sebesar Rp2.000.000,00. Uang tersebut ia simpan di koperasi desa yang memberikan bunga tunggal sebesar 5% per tahun. Bunga diberikan sekali setahun dan langsung ditambahkan ke total simpanan sebelumnya. Berapa total uang yang didapatkan Zaka selama 4 tahun?",
+    "jawaban": "Rp2.400.000,00"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "total pinjaman dengan bunga tunggal",
+   "alasan_level": "menerapkan rumus bunga tunggal pada pinjaman lalu menambahkan pokok pinjaman",
+   "stimulus": null,
+   "pertanyaan": "Bu Tari meminjam Rp8.000.000,00 dari sebuah koperasi untuk menambah modal warungnya. Koperasi menetapkan bunga tunggal 3% per tahun dari pinjaman awal. Jika Bu Tari melunasi seluruh pinjaman beserta bunganya sekaligus setelah 2 tahun, berapa rupiah yang harus ia bayarkan?",
+   "jawaban_benar": "Rp8.480.000,00",
+   "alasan_benar": "bunga 2 tahun = Rp480.000,00, ditambah pokok pinjaman menjadi Rp8.480.000,00",
+   "distraktor": [
+    {
+     "teks": "Rp8.487.200,00",
+     "alasan": "memakai bunga majemuk (bunga berbunga) padahal bunga tunggal"
+    },
+    {
+     "teks": "Rp480.000,00",
+     "alasan": "hanya membayar bunga, lupa pokok pinjaman"
+    },
+    {
+     "teks": "Rp8.240.000,00",
+     "alasan": "hanya menghitung bunga untuk satu tahun"
+    }
+   ],
+   "pembahasan": "$B = 8.000.000 \\times 0,03 \\times 2 = 480.000$. Total bayar $= 8.000.000 + 480.000 = 8.480.000$.",
+   "catatan": null,
+   "variasi_cara": "konteks"
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-007",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Barisan jenis apakah yang dibentuk oleh nilai uang yang disimpan dengan bunga tunggal?"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "jenis barisan nilai tabungan",
+   "alasan_level": "memahami bahwa bunga tunggal tetap membuat nilai uang bertambah dengan beda tetap",
+   "stimulus": null,
+   "pertanyaan": "Sebuah tabungan Rp2.000.000,00 mendapat bunga tunggal 5% per tahun dari modal awal. Nilai uang pada akhir tahun pertama, kedua, ketiga, dan seterusnya membentuk barisan yang tepat dijelaskan sebagai ....",
+   "jawaban_benar": "aritmetika dengan beda Rp100.000,00",
+   "alasan_benar": "bunga tiap tahun tetap Rp100.000,00 sehingga selisih nilai uang antartahun selalu sama",
+   "distraktor": [
+    {
+     "teks": "geometri dengan rasio 1,05",
+     "alasan": "mengira bunga berbunga (majemuk) sehingga nilai uang dikali 1,05 tiap tahun"
+    },
+    {
+     "teks": "aritmetika dengan beda Rp2.000.000,00",
+     "alasan": "mengira beda sama dengan modal awal"
+    },
+    {
+     "teks": "geometri dengan rasio 0,05",
+     "alasan": "menganggap rasio sama dengan persen bunga"
+    }
+   ],
+   "pembahasan": "Bunga tiap tahun $2.000.000 \\times 0,05 = 100.000$, tetap. Nilai uang: 2.100.000; 2.200.000; 2.300.000; ... adalah barisan aritmetika dengan beda 100.000.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-008",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "bunga simpanan adalah balas jasa dari bank kepada nasabah atas jasa nasabah menyimpan uangnya di bank."
+   },
+   "cognitive_c": "C1",
+   "jumlah_langkah": 1,
+   "jenis_soal": "definisi bunga simpanan",
+   "alasan_level": "mengingat definisi bunga simpanan, tanpa hitungan",
+   "stimulus": null,
+   "pertanyaan": "Menurut Otoritas Jasa Keuangan, bunga simpanan adalah ....",
+   "jawaban_benar": "balas jasa dari bank kepada nasabah karena nasabah menyimpan uangnya di bank",
+   "alasan_benar": "definisi bunga simpanan pada buku: balas jasa bank kepada penyimpan dana",
+   "distraktor": [
+    {
+     "teks": "balas jasa yang ditetapkan bank kepada peminjam atas pinjaman yang diperolehnya",
+     "alasan": "tertukar dengan definisi bunga pinjaman"
+    },
+    {
+     "teks": "biaya yang harus dibayar nasabah kepada bank untuk membuka rekening",
+     "alasan": "mengira bunga sama dengan biaya administrasi"
+    },
+    {
+     "teks": "pajak yang dipungut pemerintah dari uang yang disimpan nasabah di bank",
+     "alasan": "mengira bunga sama dengan pajak simpanan"
+    }
+   ],
+   "pembahasan": "Bunga simpanan adalah balas jasa dari bank kepada nasabah atas jasa nasabah menyimpan uangnya di bank. Balas jasa kepada peminjam disebut bunga pinjaman.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-009",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "menghitung besar bunga dengan rumus",
+   "alasan_level": "satu substitusi langsung ke rumus B = M x p% x n",
+   "stimulus": null,
+   "pertanyaan": "Pak Danu menyimpan Rp5.000.000,00 pada sebuah bank yang memberi bunga tunggal 6% per tahun. Besar bunga yang diperoleh Pak Danu selama 3 tahun adalah ....",
+   "jawaban_benar": "Rp900.000,00",
+   "alasan_benar": "B = M x p% x n = 5.000.000 x 0,06 x 3 = 900.000",
+   "distraktor": [
+    {
+     "teks": "Rp300.000,00",
+     "alasan": "hanya menghitung bunga untuk satu tahun"
+    },
+    {
+     "teks": "Rp90.000,00",
+     "alasan": "salah menaruh koma desimal, memakai 0,6% bukan 6%"
+    },
+    {
+     "teks": "Rp955.080,00",
+     "alasan": "memakai bunga majemuk"
+    }
+   ],
+   "pembahasan": "$B = M \\times p\\% \\times n = 5.000.000 \\times 0,06 \\times 3 = 900.000$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-010",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "bunga tetap sebesar 5% setiap tahun dari saldo awal."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "sifat bunga tunggal tetap tiap tahun",
+   "alasan_level": "memahami bahwa bunga tunggal sama setiap tahun, cukup satu perkalian",
+   "stimulus": null,
+   "pertanyaan": "Rafi menabung Rp2.000.000,00 dengan bunga tunggal 4% per tahun dari saldo awal. Besar bunga yang diterima Rafi pada tahun ke-4 adalah ....",
+   "jawaban_benar": "Rp80.000,00",
+   "alasan_benar": "bunga tunggal tetap tiap tahun: 4% x 2.000.000 = 80.000",
+   "distraktor": [
+    {
+     "teks": "Rp320.000,00",
+     "alasan": "mengalikan bunga setahun dengan nomor tahun ke-4"
+    },
+    {
+     "teks": "Rp89.989,00",
+     "alasan": "menghitung dari saldo tahun sebelumnya (bunga majemuk)"
+    },
+    {
+     "teks": "Rp8.000,00",
+     "alasan": "salah menaruh koma desimal, memakai 0,4% bukan 4%"
+    }
+   ],
+   "pembahasan": "Bunga tunggal selalu dari modal awal: $2.000.000 \\times 0,04 = 80.000$, sama untuk tahun ke-1 sampai ke-4.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-011",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "Bunga tersebut akan langsung ditambahkan ke saldo tabungannya setiap akhir tahun."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "nilai tabungan akhir tahun",
+   "alasan_level": "dua langkah: hitung bunga tetap, tambahkan ke saldo awal",
+   "stimulus": null,
+   "pertanyaan": "Kirana menabung Rp2.000.000,00 dengan bunga tunggal 3% per tahun. Bunga ditambahkan ke saldo setiap akhir tahun dan uang tidak pernah diambil. Saldo tabungan Kirana pada akhir tahun keenam adalah ....",
+   "jawaban_benar": "Rp2.360.000,00",
+   "alasan_benar": "bunga 6 tahun = 6 x 60.000 = 360.000; saldo = 2.000.000 + 360.000",
+   "distraktor": [
+    {
+     "teks": "Rp2.388.105,00",
+     "alasan": "memakai bunga majemuk"
+    },
+    {
+     "teks": "Rp2.060.000,00",
+     "alasan": "hanya menambahkan bunga satu tahun"
+    },
+    {
+     "teks": "Rp2.300.000,00",
+     "alasan": "salah menghitung lama menabung sebagai 5 tahun"
+    }
+   ],
+   "pembahasan": "Bunga tahunan $2.000.000 \\times 0,03 = 60.000$. Saldo akhir tahun ke-6 $= 2.000.000 + 6 \\times 60.000 = 2.360.000$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-012",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "mencari persentase bunga",
+   "alasan_level": "membalik rumus bunga tunggal: dua langkah (hitung M x n lalu bagi)",
+   "stimulus": null,
+   "pertanyaan": "Seorang nasabah menyimpan Rp2.500.000,00 selama 3 tahun dan memperoleh total bunga tunggal Rp375.000,00. Persentase bunga tunggal per tahun yang diberikan bank adalah ....",
+   "jawaban_benar": "5%",
+   "alasan_benar": "p% = B : (M x n) = 375.000 : 7.500.000 = 0,05 = 5%",
+   "distraktor": [
+    {
+     "teks": "15%",
+     "alasan": "lupa membagi dengan lama simpanan (3 tahun)"
+    },
+    {
+     "teks": "45%",
+     "alasan": "mengalikan dengan 3 bukan membagi dengan 3"
+    },
+    {
+     "teks": "0,5%",
+     "alasan": "salah menaruh koma desimal pada hasil 0,05"
+    }
+   ],
+   "pembahasan": "$B = M \\times p\\% \\times n \\Rightarrow p\\% = \\frac{375.000}{2.500.000 \\times 3} = 0,05 = 5\\%$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-easy-bt01-013",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Total nilai uang yang disimpan di bank dengan bunga tunggal akan membentuk deret"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "mencari modal awal",
+   "alasan_level": "membalik rumus bunga tunggal untuk modal: dua langkah",
+   "stimulus": null,
+   "pertanyaan": "Dengan bunga tunggal 6% per tahun, seorang nasabah memperoleh bunga Rp360.000,00 setelah menyimpan uang selama 2 tahun. Besar uang yang ia simpan di awal adalah ....",
+   "jawaban_benar": "Rp3.000.000,00",
+   "alasan_benar": "M = B : (p% x n) = 360.000 : 0,12 = 3.000.000",
+   "distraktor": [
+    {
+     "teks": "Rp6.000.000,00",
+     "alasan": "lupa memperhitungkan lama simpanan 2 tahun (membagi 6% saja)"
+    },
+    {
+     "teks": "Rp12.000.000,00",
+     "alasan": "mengalikan dengan 2 alih-alih membagi"
+    },
+    {
+     "teks": "Rp43.200,00",
+     "alasan": "mengalikan bunga dengan 12% bukan membaginya"
+    }
+   ],
+   "pembahasan": "$M = \\frac{B}{p\\% \\times n} = \\frac{360.000}{0,06 \\times 2} = 3.000.000$.",
+   "catatan": null
+  }
+ ]
+}

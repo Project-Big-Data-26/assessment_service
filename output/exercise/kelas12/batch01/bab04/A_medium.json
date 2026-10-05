@@ -1,0 +1,702 @@
+{
+  "book": "kelas12",
+  "bab_no": 4,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b04-a-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 155,
+        "bagian": "Latihan 4.1",
+        "nomor": "3",
+        "teks": "Jika tiga dadu standar bersisi enam dilempar bersama-sama, berapakah peluang jumlah total dadu pada ketiga pelemparan sama dengan 12?",
+        "jawaban": "25/216"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang jumlah tiga dadu",
+      "alasan_level": "mendaftar himpunan angka berjumlah 14, menghitung susunan tiap himpunan (1 atau 3 atau 6), lalu membagi 216",
+      "stimulus": null,
+      "pertanyaan": "Tiga siswa masing-masing mengambil satu bola secara acak dari kantong terpisah; setiap kantong berisi enam bola identik bernomor 1 sampai 6. Berapakah peluang jumlah ketiga nomor bola yang terambil sama dengan 14?",
+      "jawaban_benar": "$\\frac{5}{72}$",
+      "alasan_benar": "himpunan angka berjumlah 14: {2,6,6} (3 susunan), {3,5,6} (6), {4,4,6} (3), {4,5,5} (3) sehingga 15 susunan dari 216: $\\frac{15}{216} = \\frac{5}{72}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{108}$",
+          "alasan": "menyamakan banyak susunan dengan angka 14 (14/216)"
+        },
+        {
+          "teks": "$\\frac{1}{18}$",
+          "alasan": "menganggap tiap himpunan angka hanya punya 3 susunan padahal {3,5,6} punya 6 susunan"
+        },
+        {
+          "teks": "$\\frac{1}{54}$",
+          "alasan": "hanya menghitung 4 himpunan angka tanpa memperhatikan urutan"
+        }
+      ],
+      "pembahasan": "$n(S) = 6^3 = 216$. Himpunan angka berjumlah 14: {2,6,6}, {3,5,6}, {4,4,6}, {4,5,5} dengan 3, 6, 3, 3 susunan, jadi 15. $P = \\frac{15}{216} = \\frac{5}{72}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 155,
+        "bagian": "Latihan 4.1",
+        "nomor": "5",
+        "teks": "Pada sisi-sisi sebuah dadu terdapat angka unik, yakni: 1, 2, 4, 5, 6, dan 7. Berapa peluang terambilnya angka kedua lebih kecil dari angka pertama jika sebuah dadu dilempar sebanyak dua kali?",
+        "jawaban": "5/12"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang dua pelemparan beruntun",
+      "alasan_level": "angka pada sisi ada yang kembar, harus menghitung pasangan berurutan per nilai angka pertama lalu membagi 36",
+      "stimulus": null,
+      "pertanyaan": "Pada sisi-sisi sebuah dadu setimbang terdapat angka, yakni: 3, 9, 9, 13, 13, dan 13. Berapa peluang terambilnya angka kedua lebih kecil dari angka pertama jika dadu itu dilempar sebanyak dua kali?",
+      "jawaban_benar": "$\\frac{11}{36}$",
+      "alasan_benar": "ada $6 \\times 6 = 36$ pasangan sisi; angka pertama 9 (2 sisi) mengalahkan 1 sisi bernilai 3: $2 \\times 1 = 2$; angka pertama 13 (3 sisi) mengalahkan 3 sisi lain (3, 9, 9): $3 \\times 3 = 9$; jumlah 11 pasangan",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{36}$",
+          "alasan": "menghitung pasangan 'lebih kecil atau sama'"
+        },
+        {
+          "teks": "$\\frac{5}{12}$",
+          "alasan": "menganggap keenam angka berbeda sehingga ada 15 pasangan"
+        },
+        {
+          "teks": "$\\frac{7}{18}$",
+          "alasan": "menghitung pasangan dengan angka sama, bukan yang lebih kecil"
+        }
+      ],
+      "pembahasan": "Pasangan (pertama, kedua) dengan kedua lebih kecil: pertama 3 ada 0; pertama 9 ada 2 sisi x 1 sisi (angka 3) = 2; pertama 13 ada 3 sisi x 3 sisi (3, 9, 9) = 9. Jumlah 11 dari 36, peluang $\\frac{11}{36}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "bagian": "Contoh 4.2",
+        "nomor": "4.2",
+        "teks": "Diberikan 3 kelereng merah, 4 kelereng hijau, dan 5 kelereng biru dalam suatu kotak. Jika diambil tiga kelereng sekaligus dari kotak, berapakah peluang terjadinya kejadian berikut?",
+        "jawaban": "a. 1/220 (semua merah)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang pengambilan sekaligus",
+      "alasan_level": "memakai $C(8,4)$ dan $C(20,4)$ dengan empat benda terambil sekaligus lalu menyederhanakan pecahan",
+      "stimulus": null,
+      "pertanyaan": "Diberikan 8 kelereng merah, 5 kelereng hijau, dan 7 kelereng biru dalam suatu kotak. Jika diambil empat kelereng sekaligus dari kotak, berapakah peluang keempat kelereng yang terambil semuanya berwarna merah?",
+      "jawaban_benar": "$\\frac{14}{969}$",
+      "alasan_benar": "$n(S) = C(20,4) = 4.845$ dan $n(A) = C(8,4) = 70$, sehingga $\\frac{70}{4845} = \\frac{14}{969}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{16}{625}$",
+          "alasan": "memakai pengambilan satu per satu dengan pengembalian, $(\\frac{8}{20})^4$"
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "hanya menghitung peluang satu kelereng merah"
+        },
+        {
+          "teks": "$\\frac{112}{323}$",
+          "alasan": "memakai $P(8,4) = 1.680$ untuk pembilang padahal susunan tidak diperhatikan"
+        }
+      ],
+      "pembahasan": "$n(S) = C(20,4) = 4.845$, $n(A) = C(8,4) = 70$. $P(A) = \\frac{70}{4845} = \\frac{14}{969}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 152,
+        "bagian": "Contoh 4.2",
+        "nomor": "c",
+        "teks": "Terambil dua kelereng berwarna merah dan satu kelereng berwarna hijau.",
+        "jawaban": "12/220"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang pengambilan sekaligus",
+      "alasan_level": "kaidah perkalian dua kombinasi $C(4,2) \\times C(5,1)$ dibagi $C(9,3)$, lalu disederhanakan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tim olimpiade terdiri dari 5 siswa putra dan 4 siswa putri. Tiga siswa dipilih sekaligus secara acak untuk mewakili sekolah. Peluang terpilih dua siswa putri dan satu siswa putra adalah ....",
+      "jawaban_benar": "$\\frac{5}{14}$",
+      "alasan_benar": "$n(S) = C(9,3) = 84$ dan $n(A) = C(4,2) \\times C(5,1) = 6 \\times 5 = 30$, sehingga $\\frac{30}{84} = \\frac{5}{14}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{10}{21}$",
+          "alasan": "menukar jumlah putra dan putri: $C(5,2) \\times C(4,1) = 40$"
+        },
+        {
+          "teks": "$\\frac{11}{84}$",
+          "alasan": "menjumlahkan $C(4,2) + C(5,1) = 11$ padahal dua pilihan terjadi bersamaan (dikalikan)"
+        },
+        {
+          "teks": "$\\frac{80}{243}$",
+          "alasan": "memakai pengambilan dengan pengembalian, $3 \\times (\\frac{4}{9})^2 \\times \\frac{5}{9}$"
+        }
+      ],
+      "pembahasan": "$n(S) = C(9,3) = 84$. $n(A) = C(4,2) \\cdot C(5,1) = 30$. $P = \\frac{30}{84} = \\frac{5}{14}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 152,
+        "bagian": "Contoh 4.2",
+        "nomor": "d",
+        "teks": "Masing-masing satu kelereng berwarna merah, hijau, dan biru.",
+        "jawaban": "60/220"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang pengambilan sekaligus",
+      "alasan_level": "kaidah perkalian $4 \\times 3 \\times 2$ untuk tiga kelompok lalu dibagi $C(9,3)$ dan disederhanakan",
+      "stimulus": null,
+      "pertanyaan": "Dari sembilan siswa terdapat 4 siswa kelas X, 3 siswa kelas XI, dan 2 siswa kelas XII. Tiga siswa dipilih sekaligus secara acak untuk menjadi regu. Peluang regu itu beranggotakan masing-masing satu siswa dari kelas X, kelas XI, dan kelas XII adalah ....",
+      "jawaban_benar": "$\\frac{2}{7}$",
+      "alasan_benar": "$n(S) = C(9,3) = 84$ dan $n(A) = 4 \\times 3 \\times 2 = 24$, sehingga $\\frac{24}{84} = \\frac{2}{7}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{21}$",
+          "alasan": "memakai penyebut permutasi $P(9,3) = 504$ padahal regu tidak memperhatikan urutan"
+        },
+        {
+          "teks": "$\\frac{3}{28}$",
+          "alasan": "menjumlahkan $4 + 3 + 2 = 9$ sebagai banyak cara, bukan dikalikan"
+        },
+        {
+          "teks": "$\\frac{4}{21}$",
+          "alasan": "memakai $C(9,4) = 126$ sebagai penyebut"
+        }
+      ],
+      "pembahasan": "$n(S) = C(9,3) = 84$. $n(A) = 4 \\cdot 3 \\cdot 2 = 24$. $P = \\frac{24}{84} = \\frac{2}{7}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 143,
+        "bagian": "Ayo, Mengingat Kembali",
+        "nomor": "Masalah A",
+        "teks": "Menjelang pergantian kepengurusan OSIS SMA Semangat 45, dibentuk panitia inti sebanyak 4 orang yang terdiri dari ketua, wakil ketua, sekretaris, dan bendahara, terdapat 9 orang yang menjadi calon panitia tersebut. Berapa banyak cara memilih panitia inti?",
+        "jawaban": "3.024 cara"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "banyak cara memilih (permutasi)",
+      "alasan_level": "mengenali bahwa jabatan berbeda berarti susunan diperhatikan lalu memakai $P(11,5)$",
+      "stimulus": null,
+      "pertanyaan": "Menjelang pergantian kepengurusan OSIS SMA Nusantara, dibentuk panitia inti sebanyak 5 orang yang terdiri dari ketua, wakil ketua, sekretaris, bendahara, dan koordinator acara, terdapat 11 orang yang menjadi calon panitia tersebut. Berapa banyak cara memilih panitia inti?",
+      "jawaban_benar": "55.440 cara",
+      "alasan_benar": "jabatan berbeda sehingga susunan diperhatikan: $P(11,5) = 11 \\times 10 \\times 9 \\times 8 \\times 7 = 55.440$",
+      "distraktor": [
+        {
+          "teks": "462 cara",
+          "alasan": "memakai kombinasi $C(11,5)$ padahal tiap jabatan berbeda"
+        },
+        {
+          "teks": "7.920 cara",
+          "alasan": "hanya mengisi 4 jabatan, $P(11,4)$"
+        },
+        {
+          "teks": "161.051 cara",
+          "alasan": "mengira satu orang boleh memegang beberapa jabatan, $11^5$"
+        }
+      ],
+      "pembahasan": "Susunan diperhatikan: $P(11,5) = \\frac{11!}{6!} = 11 \\times 10 \\times 9 \\times 8 \\times 7 = 55.440$ cara.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 146,
+        "bagian": "Ayo, Bereksplorasi",
+        "nomor": "3",
+        "teks": "Menggelindingkan satu dadu bersisi enam. Jika yang muncul di sisi atas adalah bilangan genap, maka Ani berhak menggunakan komputer terlebih dahulu.",
+        "jawaban": "peluang 1/2 (adil)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluang satu dadu",
+      "alasan_level": "menyeleksi bilangan prima dari 1 sampai 12 (1 bukan prima) lalu membagi 12",
+      "stimulus": null,
+      "pertanyaan": "Sebuah dadu setimbang bersisi dua belas dengan sisi bernomor 1 sampai 12 digelindingkan satu kali. Peluang sisi atas yang muncul merupakan bilangan prima adalah ....",
+      "jawaban_benar": "$\\frac{5}{12}$",
+      "alasan_benar": "bilangan prima dari 1 sampai 12: 2, 3, 5, 7, 11 (5 hasil dari 12): $\\frac{5}{12}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "menganggap 1 sebagai bilangan prima"
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "melewatkan bilangan prima 11"
+        },
+        {
+          "teks": "$\\frac{5}{11}$",
+          "alasan": "membagi dengan 11 padahal ada 12 sisi"
+        }
+      ],
+      "pembahasan": "Ruang sampel $\\{1,2,\\dots,12\\}$, kejadian prima $\\{2,3,5,7,11\\}$, sehingga $P = \\frac{5}{12}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 149,
+        "bagian": "Ayo, Berkolaborasi",
+        "nomor": "3",
+        "teks": "Jika m menyatakan banyak percobaan dan n menyatakan banyak kemunculan kejadian A dari percobaan tersebut, maka nyatakan peluang empirik kejadian A.",
+        "jawaban": "n/m"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang empirik",
+      "alasan_level": "menjumlahkan frekuensi tiga mata prima dan total percobaan dari tabel, lalu membagi dan menyederhanakan",
+      "stimulus": "| Mata dadu | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| Frekuensi | 22 | 27 | 31 | 20 | 24 | 26 |",
+      "pertanyaan": "Sebuah dadu dilempar sebanyak 150 kali dengan hasil seperti pada tabel. Peluang empirik muncul mata dadu bilangan prima adalah ....",
+      "jawaban_benar": "$\\frac{41}{75}$",
+      "alasan_benar": "frekuensi mata prima (2, 3, 5) adalah $27 + 31 + 24 = 82$ dari 150 percobaan: $\\frac{82}{150} = \\frac{41}{75}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "memakai peluang teoretis dadu setimbang, bukan data percobaan"
+        },
+        {
+          "teks": "$\\frac{29}{75}$",
+          "alasan": "melewatkan mata 5 (frekuensi 24)"
+        },
+        {
+          "teks": "$\\frac{34}{75}$",
+          "alasan": "menghitung peluang empirik mata yang bukan prima"
+        }
+      ],
+      "pembahasan": "Frekuensi mata prima $= 27 + 31 + 24 = 82$. Peluang empirik $= \\frac{82}{150} = \\frac{41}{75}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 150,
+        "kutipan": "merupakan kejadian selain dari kejadian A yang ada pada semesta atau dapat disebut juga kejadian komplemen (pelengkap)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang komplemen",
+      "alasan_level": "menyadari bahwa 'paling sedikit satu angka' lebih mudah lewat komplemen (semua gambar) pada ruang sampel $2^4$",
+      "stimulus": null,
+      "pertanyaan": "Empat koin uang logam yang setimbang dilempar bersama-sama. Peluang muncul paling sedikit satu sisi angka adalah ....",
+      "jawaban_benar": "$\\frac{15}{16}$",
+      "alasan_benar": "komplemennya adalah keempat koin gambar dengan peluang $\\frac{1}{16}$, sehingga $1 - \\frac{1}{16} = \\frac{15}{16}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "menghitung komplemennya (semua gambar), bukan kejadian yang ditanyakan"
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "menghitung tepat satu angka saja"
+        },
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "memakai ruang sampel 8 (seolah hanya tiga koin)"
+        }
+      ],
+      "pembahasan": "$n(S) = 2^4 = 16$. Tidak ada angka hanya 1 hasil (GGGG). $P = 1 - \\frac{1}{16} = \\frac{15}{16}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 150,
+        "kutipan": "Ruang sampel adalah himpunan semua hasil percobaan yang mungkin terjadi."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang jumlah dua dadu",
+      "alasan_level": "menghitung susunan berurutan untuk lima jumlah prima yang mungkin (2, 3, 5, 7, 11) lalu menjumlahkannya",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu standar bersisi enam yang setimbang dilempar bersama-sama. Peluang jumlah mata kedua dadu merupakan bilangan prima adalah ....",
+      "jawaban_benar": "$\\frac{5}{12}$",
+      "alasan_benar": "banyak pasangan berjumlah 2, 3, 5, 7, 11 berturut-turut 1, 2, 4, 6, 2 sehingga total 15 dari 36: $\\frac{15}{36} = \\frac{5}{12}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{11}$",
+          "alasan": "menganggap 11 jumlah yang mungkin sama-sama mungkin dan 5 di antaranya prima"
+        },
+        {
+          "teks": "$\\frac{13}{36}$",
+          "alasan": "melewatkan pasangan berjumlah 11 yang berjumlah 2 susunan"
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "menghitung jumlah ganjil, bukan jumlah prima"
+        }
+      ],
+      "pembahasan": "$n(S) = 36$. Jumlah 2: 1; 3: 2; 5: 4; 7: 6; 11: 2. Total 15. $P = \\frac{15}{36} = \\frac{5}{12}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 152,
+        "kutipan": "Sesuai kaidah perkalian, banyaknya cara memilih 2 kelereng berwarna merah dan 1 kelereng berwarna hijau adalah 3 × 4 = 12."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pengambilan tanpa pengembalian",
+      "alasan_level": "menjumlahkan dua kasus (merah-merah dan putih-putih) dengan peluang bersyarat sederhana atau kombinasi",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kotak berisi 5 bola merah dan 3 bola putih yang identik selain warnanya. Dua bola diambil satu per satu secara acak tanpa pengembalian. Peluang kedua bola yang terambil berwarna sama adalah ....",
+      "jawaban_benar": "$\\frac{13}{28}$",
+      "alasan_benar": "$n(S) = C(8,2) = 28$; dua merah $C(5,2) = 10$ dan dua putih $C(3,2) = 3$, sehingga $\\frac{13}{28}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17}{32}$",
+          "alasan": "memakai pengambilan dengan pengembalian"
+        },
+        {
+          "teks": "$\\frac{5}{14}$",
+          "alasan": "hanya menghitung kasus dua bola merah"
+        },
+        {
+          "teks": "$\\frac{13}{56}$",
+          "alasan": "membagi pembilang kombinasi dengan $P(8,2) = 56$"
+        }
+      ],
+      "pembahasan": "$n(S) = C(8,2) = 28$. Dua merah: $C(5,2) = 10$. Dua putih: $C(3,2) = 3$. $P = \\frac{13}{28}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Jadi, banyaknya semua hasil yang mungkin dari empat kali pelemparan sebanyak 4 × 4 × 4 × 4"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pengambilan dengan pengembalian",
+      "alasan_level": "ruang sampel $10^3$ dan tiga posisi untuk bola yang bukan merah, kaidah perkalian $3 \\times 4 \\times 4 \\times 6$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kotak berisi 4 bola merah dan 6 bola biru. Satu bola diambil secara acak, dicatat warnanya, lalu dikembalikan. Pengambilan dilakukan tiga kali. Peluang terambil tepat dua bola merah adalah ....",
+      "jawaban_benar": "$\\frac{36}{125}$",
+      "alasan_benar": "$n(S) = 10^3 = 1.000$; ada 3 posisi bola biru, tiap susunan $4 \\times 4 \\times 6 = 96$ cara, sehingga $n(A) = 288$ dan $P = \\frac{288}{1000} = \\frac{36}{125}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{12}{125}$",
+          "alasan": "lupa memperhitungkan 3 posisi bola biru (urutan)"
+        },
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "memakai pengambilan tanpa pengembalian"
+        },
+        {
+          "teks": "$\\frac{8}{125}$",
+          "alasan": "menghitung ketiganya merah, $(\\frac{4}{10})^3$"
+        }
+      ],
+      "pembahasan": "$n(S) = 10^3 = 1.000$. Tiga susunan (MMB, MBM, BMM), masing-masing $4 \\cdot 4 \\cdot 6 = 96$. $n(A) = 288$. $P = \\frac{288}{1000} = \\frac{36}{125}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 144,
+        "kutipan": "Perhatikan bahwa pada soal ini susunan tidak diperhatikan dari orang yang dipilih, sehingga dapat menggunakan formula kombinasi"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang pemilihan dengan komplemen",
+      "alasan_level": "menghitung kejadian 'tidak ada putri' dengan kombinasi lalu memakai komplemen",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 siswa putra dan 4 siswa putri dipilih tiga siswa sekaligus secara acak untuk menjadi panitia. Peluang panitia itu memuat paling sedikit satu siswa putri adalah ....",
+      "jawaban_benar": "$\\frac{5}{6}$",
+      "alasan_benar": "komplemen: ketiganya putra, $\\frac{C(6,3)}{C(10,3)} = \\frac{20}{120} = \\frac{1}{6}$, sehingga $1 - \\frac{1}{6} = \\frac{5}{6}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "menghitung peluang tidak ada putri (komplemen), bukan kejadian yang ditanyakan"
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "hanya menghitung tepat satu putri"
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "menghitung peluang satu orang terpilih putri"
+        }
+      ],
+      "pembahasan": "$n(S) = C(10,3) = 120$. Tanpa putri: $C(6,3) = 20$. $P = 1 - \\frac{20}{120} = \\frac{5}{6}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 153,
+        "kutipan": "Kemungkinan gempa bumi terjadi di Kota A dalam 20 tahun ke depan lebih besar daripada kemungkinan tidak terjadi sama sekali."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 2,
+      "jenis_soal": "interpretasi nilai peluang",
+      "alasan_level": "menafsirkan arti peluang 0,7 dan menolak tafsir deterministik atau keliru",
+      "stimulus": null,
+      "pertanyaan": "Menurut prakiraan cuaca, peluang turun hujan di Kota B besok adalah 0,7. Pernyataan yang paling tepat adalah ....",
+      "jawaban_benar": "Hujan besok lebih mungkin terjadi daripada tidak hujan.",
+      "alasan_benar": "peluang hujan 0,7 lebih besar dari peluang tidak hujan $1 - 0,7 = 0,3$, tetapi belum pasti",
+      "distraktor": [
+        {
+          "teks": "Besok pasti turun hujan.",
+          "alasan": "menganggap peluang 0,7 sama dengan kepastian"
+        },
+        {
+          "teks": "Dalam 10 hari berikutnya, tepat 7 hari pasti turun hujan.",
+          "alasan": "menganggap peluang selalu menghasilkan frekuensi persis sama pada percobaan terbatas"
+        },
+        {
+          "teks": "Tidak hujan lebih mungkin daripada hujan karena 0,7 kurang dari 1.",
+          "alasan": "membandingkan peluang dengan 1, bukan dengan peluang komplemennya 0,3"
+        }
+      ],
+      "pembahasan": "Peluang hujan 0,7 dan tidak hujan 0,3. Karena 0,7 > 0,3, hujan lebih mungkin, tetapi bukan pasti (kepastian bernilai 1).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 150,
+        "kutipan": "Peluang adalah angka atau besaran yang digunakan untuk mengekspresikan seberapa mungkin sesuatu terjadi."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang gabungan dua sifat",
+      "alasan_level": "menghitung kartu hati atau As tanpa menghitung As hati dua kali, lalu membagi 52",
+      "stimulus": null,
+      "pertanyaan": "Satu kartu diambil secara acak dari seperangkat kartu bridge standar yang terdiri dari 52 kartu tanpa joker. Peluang kartu yang terambil adalah kartu hati atau kartu As adalah ....",
+      "jawaban_benar": "$\\frac{4}{13}$",
+      "alasan_benar": "kartu hati 13 dan As 4, tetapi As hati terhitung dua kali sehingga $13 + 4 - 1 = 16$: $\\frac{16}{52} = \\frac{4}{13}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17}{52}$",
+          "alasan": "menjumlahkan 13 + 4 tanpa mengurangi As hati yang terhitung dua kali"
+        },
+        {
+          "teks": "$\\frac{1}{13}$",
+          "alasan": "hanya menghitung kartu As"
+        },
+        {
+          "teks": "$\\frac{3}{52}$",
+          "alasan": "hanya menghitung 3 kartu As yang bukan hati"
+        }
+      ],
+      "pembahasan": "Hati 13 kartu, As 4 kartu, As hati terhitung dua kali. $n(A) = 13 + 4 - 1 = 16$. $P = \\frac{16}{52} = \\frac{4}{13}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 143,
+        "kutipan": "Perhatikan bahwa pada soal ini susunan diperhatikan."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang bilangan hasil susunan angka",
+      "alasan_level": "menghitung ruang sampel $P(5,3)$ dan banyak bilangan genap dengan satuan 2 atau 4 lalu membagi",
+      "stimulus": null,
+      "pertanyaan": "Dari angka 1, 2, 3, 4, dan 5 disusun bilangan tiga angka dengan angka yang berbeda. Satu bilangan dipilih secara acak. Peluang bilangan yang terpilih merupakan bilangan genap adalah ....",
+      "jawaban_benar": "$\\frac{2}{5}$",
+      "alasan_benar": "$n(S) = P(5,3) = 60$; satuan 2 atau 4 (2 pilihan), ratusan 4 pilihan, puluhan 3 pilihan: $2 \\times 4 \\times 3 = 24$, sehingga $\\frac{24}{60} = \\frac{2}{5}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "menghitung bilangan ganjil, bukan genap"
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "menganggap separuh bilangan genap padahal angka 1-5 hanya memuat dua angka genap"
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "menghitung bilangan genap tanpa memperhatikan pilihan puluhan dan ratusan, hanya $2 \\times 3 \\times 2$"
+        }
+      ],
+      "pembahasan": "$n(S) = 5 \\times 4 \\times 3 = 60$. Genap: satuan 2 atau 4 (2 cara), ratusan 4 cara, puluhan 3 cara = 24. $P = \\frac{24}{60} = \\frac{2}{5}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 150,
+        "kutipan": "Peluang adalah angka atau besaran yang digunakan untuk mengekspresikan seberapa mungkin sesuatu terjadi."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari parameter dari peluang",
+      "alasan_level": "menyusun persamaan $\\frac{n}{n+4} = \\frac{3}{5}$ lalu menyelesaikannya",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kotak berisi $n$ kelereng merah dan 4 kelereng biru. Jika satu kelereng diambil secara acak, peluang terambil kelereng merah adalah $\\frac{3}{5}$. Nilai $n$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "$\\frac{n}{n+4} = \\frac{3}{5}$ sehingga $5n = 3n + 12$ dan $n = 6$",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "menyamakan $n$ dengan pembilang peluang"
+        },
+        {
+          "teks": "9",
+          "alasan": "menyusun persamaan $\frac{n}{n+4} = \frac{3}{5}$ lalu salah menghitung, $3 \times 3$"
+        },
+        {
+          "teks": "2",
+          "alasan": "menyelesaikan $\\frac{n}{n+4} = \\frac{3}{5}$ dengan $5n = 3n + 4$"
+        }
+      ],
+      "pembahasan": "$P = \\frac{n}{n+4} = \\frac{3}{5}$. Kali silang: $5n = 3(n+4) = 3n + 12$, $2n = 12$, $n = 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 148,
+        "kutipan": "Pada kolom keempat, rasio (hasil bagi) frekuensi terhadap banyaknya percobaan disebut"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang empirik",
+      "alasan_level": "menghitung peluang empirik lalu membandingkannya dengan peluang teoretis dan mengurangkan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koin dilempar 120 kali dan sisi angka muncul 78 kali. Selisih antara peluang empirik muncul angka dan peluang teoretis muncul angka pada koin setimbang adalah ....",
+      "jawaban_benar": "$\\frac{3}{20}$",
+      "alasan_benar": "peluang empirik $\\frac{78}{120} = \\frac{13}{20}$, peluang teoretis $\\frac{1}{2} = \\frac{10}{20}$, selisih $\\frac{3}{20}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{20}$",
+          "alasan": "hanya menghitung peluang empirik tanpa mengurangi peluang teoretis"
+        },
+        {
+          "teks": "$\\frac{7}{20}$",
+          "alasan": "menghitung peluang empirik sisi gambar, $\frac{42}{120}$"
+        },
+        {
+          "teks": "$\\frac{3}{40}$",
+          "alasan": "membagi selisih 3/20 dengan 2"
+        }
+      ],
+      "pembahasan": "Empirik $= \\frac{78}{120} = \\frac{13}{20}$. Teoretis $= \\frac{1}{2}$. Selisih $= \\frac{13}{20} - \\frac{10}{20} = \\frac{3}{20}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 150,
+        "kutipan": "Ruang sampel adalah himpunan semua hasil percobaan yang mungkin terjadi."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluang gabungan dua sifat",
+      "alasan_level": "mendaftar kelipatan 3 dan kelipatan 5 dari 1 sampai 20 tanpa menghitung 15 dua kali",
+      "stimulus": null,
+      "pertanyaan": "Dua puluh kartu identik bernomor 1 sampai 20 dimasukkan ke dalam kotak. Satu kartu diambil secara acak. Peluang nomor kartu yang terambil merupakan kelipatan 3 atau kelipatan 5 adalah ....",
+      "jawaban_benar": "$\\frac{9}{20}$",
+      "alasan_benar": "kelipatan 3: 3, 6, 9, 12, 15, 18 (6 kartu); kelipatan 5: 5, 10, 15, 20 (4 kartu); 15 terhitung dua kali sehingga $6 + 4 - 1 = 9$ dan $P = \\frac{9}{20}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "menjumlahkan 6 + 4 tanpa mengurangi kartu 15 yang terhitung dua kali"
+        },
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "hanya menghitung kelipatan 3"
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "mengurangi 2 kartu (15 dibuang dari kedua kelompok)"
+        }
+      ],
+      "pembahasan": "Kelipatan 3: 6 kartu; kelipatan 5: 4 kartu; irisan {15}. $n(A) = 6 + 4 - 1 = 9$. $P = \\frac{9}{20}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-a-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 150,
+        "kutipan": "Misalkan S sebagai ruang sampel dan A merupakan sebarang kejadian dalam S, maka"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "peluang pada dadu tidak setimbang",
+      "alasan_level": "menentukan faktor pembanding dari syarat jumlah peluang 1 lalu menjumlahkan peluang mata genap",
+      "stimulus": null,
+      "pertanyaan": "Sebuah dadu dibuat tidak setimbang sehingga peluang muncul mata $k$ sebanding dengan $k$, untuk $k = 1, 2, \\dots, 6$. Peluang muncul mata dadu genap adalah ....",
+      "jawaban_benar": "$\\frac{4}{7}$",
+      "alasan_benar": "jumlah peluang 1 sehingga $P(k) = \\frac{k}{21}$; mata genap $\\frac{2 + 4 + 6}{21} = \\frac{12}{21} = \\frac{4}{7}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "memakai peluang dadu setimbang padahal dadu tidak setimbang"
+        },
+        {
+          "teks": "$\\frac{3}{7}$",
+          "alasan": "menghitung mata ganjil, bukan genap"
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "memakai penyebut 36 (jumlah $k$ pada dua dadu) padahal jumlah peluang satu dadu adalah 21"
+        }
+      ],
+      "pembahasan": "$P(k) = ck$ dan $c(1+2+\\dots+6) = 21c = 1$, jadi $c = \\frac{1}{21}$. Genap: $\\frac{2+4+6}{21} = \\frac{12}{21} = \\frac{4}{7}$.",
+      "catatan": null
+    }
+  ]
+}

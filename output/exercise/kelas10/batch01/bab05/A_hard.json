@@ -1,0 +1,690 @@
+{
+  "book": "kelas10",
+  "bab_no": 5,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b05-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Ada tiga jenis solusi persamaan kuadrat, yaitu solusi dengan dua akar real yang berbeda, solusi dengan akar real yang kembar (sama), dan solusi dengan dua akar imajiner (tidak real) yang berbeda."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "menguji empat klaim umum memakai contoh penyangkal dan sifat diskriminan, bukan satu hitungan langsung",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $a$, $b$, $c$ bilangan real dengan $a \\neq 0$. Pernyataan yang benar tentang persamaan kuadrat $ax^2 + bx + c = 0$ adalah ....",
+      "jawaban_benar": "Jika $a$ dan $c$ berbeda tanda, persamaan itu selalu memiliki dua akar real yang berbeda.",
+      "alasan_benar": "$a$ dan $c$ berbeda tanda berarti $ac < 0$, sehingga $-4ac > 0$ dan $D = b^2 - 4ac > 0$ untuk setiap $b$.",
+      "distraktor": [
+        {
+          "teks": "Jika $b = 0$, persamaan itu selalu memiliki dua akar real.",
+          "alasan": "contoh penyangkal $x^2 + 1 = 0$ ($b = 0$) tidak punya akar real"
+        },
+        {
+          "teks": "Jika $a + b + c = 0$, persamaan itu memiliki dua akar real yang kembar.",
+          "alasan": "contoh penyangkal $x^2 - 3x + 2 = 0$ ($a+b+c=0$) berakar $1$ dan $2$, berbeda"
+        },
+        {
+          "teks": "Jika $a$, $b$, $c$ semuanya positif, persamaan itu selalu memiliki akar real.",
+          "alasan": "contoh penyangkal $x^2 + x + 1 = 0$ dengan $D = -3 < 0$"
+        }
+      ],
+      "pembahasan": "Benar: $ac<0 \\Rightarrow D>0$. Sisanya dipatahkan oleh $x^2+1=0$, $x^2-3x+2=0$, dan $x^2+x+1=0$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Ada tiga jenis solusi persamaan kuadrat, yaitu solusi dengan dua akar real yang berbeda, solusi dengan akar real yang kembar (sama), dan solusi dengan dua akar imajiner (tidak real) yang berbeda."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memilih contoh yang mematahkan klaim umum dengan memeriksa dua syarat sekaligus (akar real dan $c \\leq 0$)",
+      "stimulus": null,
+      "pertanyaan": "Klaim: \"Jika persamaan kuadrat $x^2 + bx + c = 0$ memiliki dua akar real, maka $c > 0$.\" Persamaan yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$x^2 - x - 6 = 0$",
+      "alasan_benar": "$D = 1 + 24 = 25 > 0$ (akar $3$ dan $-2$ real) tetapi $c = -6$ tidak positif, sehingga klaim terpatahkan.",
+      "distraktor": [
+        {
+          "teks": "$x^2 - 5x + 6 = 0$",
+          "alasan": "akarnya real tetapi $c = 6 > 0$, sehingga sesuai klaim, bukan penyangkal"
+        },
+        {
+          "teks": "$x^2 + 2x + 5 = 0$",
+          "alasan": "$D = -16 < 0$, akarnya tidak real sehingga syarat klaim tidak terpenuhi"
+        },
+        {
+          "teks": "$x^2 - 4x + 4 = 0$",
+          "alasan": "akar kembar real tetapi $c = 4 > 0$, sehingga sesuai klaim"
+        }
+      ],
+      "pembahasan": "Penyangkal harus memenuhi syarat klaim (akar real) sekaligus melanggar kesimpulan ($c \\leq 0$): hanya $x^2-x-6=0$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Ada tiga jenis solusi persamaan kuadrat, yaitu solusi dengan dua akar real yang berbeda, solusi dengan akar real yang kembar (sama), dan solusi dengan dua akar imajiner (tidak real) yang berbeda."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter syarat ganda",
+      "alasan_level": "menggabungkan tiga syarat (diskriminan, jumlah akar, hasil kali akar) dan memeriksa batas tiap nilai",
+      "stimulus": null,
+      "pertanyaan": "Persamaan kuadrat $x^2 - kx + (k + 3) = 0$ memiliki dua akar real yang berbeda dan keduanya positif. Bilangan bulat $k$ terkecil yang memenuhi adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "$D = k^2 - 4k - 12 = (k-6)(k+2) > 0$, jumlah akar $k > 0$, hasil kali $k + 3 > 0$; gabungannya $k > 6$ sehingga $k$ bulat terkecil $7$.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "$k=6$ menghasilkan $D = 0$ (akar kembar), padahal diminta berbeda"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "hanya memeriksa jumlah dan hasil kali positif, lupa $D > 0$ ($k=1$ memberi $D=-15$)"
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "hanya memakai $D > 0$ ($k<-2$), mengabaikan syarat akar positif ($k=-3$ memberi jumlah akar $-3$)"
+        }
+      ],
+      "pembahasan": "Syarat: $D>0 \\Rightarrow k<-2$ atau $k>6$; $k>0$; $k>-3$. Irisan: $k>6$, terkecil $7$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 161,
+        "kutipan": "hubungan antara perkalian kedua akar dengan koefisien-koefisien persamaan kuadrat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "hubungan akar-koefisien bersyarat",
+      "alasan_level": "memakai $(x_1-x_2)^2 = (x_1+x_2)^2 - 4x_1x_2$ lalu menyaring dua nilai $p$ dengan syarat tanda",
+      "stimulus": null,
+      "pertanyaan": "Akar-akar persamaan kuadrat $x^2 + px + 24 = 0$ adalah $x_1$ dan $x_2$ dengan $x_1 - x_2 = 2$ dan $x_1 > x_2$. Jika $p < 0$, nilai $p$ adalah ....",
+      "jawaban_benar": "$-10$",
+      "alasan_benar": "$(x_1-x_2)^2 = p^2 - 96 = 4$ sehingga $p^2 = 100$, $p = \\pm 10$; karena $p<0$ maka $p=-10$ (akar $6$ dan $4$).",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "mengabaikan syarat $p<0$ (jumlah akar $-p$ harus positif)"
+        },
+        {
+          "teks": "$-14$",
+          "alasan": "mengira selisih akar $10$, yaitu $p^2 - 96 = 100$"
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "memakai $p^2 - 24 = 4$ (lupa mengalikan $4$ pada $c$), lalu menebak nilai negatif; $p=-5$ memberi $D=-71<0$"
+        }
+      ],
+      "pembahasan": "$x_1+x_2=-p$, $x_1x_2=24$. $(x_1-x_2)^2=p^2-96=4 \\Rightarrow p=\\pm10$, ambil $p=-10$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Bagaimana bentuk persamaan kuadrat yang baru dengan akar"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "persamaan kuadrat baru dari akar",
+      "alasan_level": "menyusun jumlah dan hasil kali akar baru yang bergantung pada $p$, $q$, dan kebalikannya tanpa mencari $p$, $q$",
+      "stimulus": null,
+      "pertanyaan": "Akar-akar persamaan kuadrat $x^2 - 5x + 3 = 0$ adalah $p$ dan $q$. Persamaan kuadrat dengan koefisien bilangan bulat yang akar-akarnya $p + \\frac{1}{q}$ dan $q + \\frac{1}{p}$ adalah ....",
+      "jawaban_benar": "$3x^2 - 20x + 16 = 0$",
+      "alasan_benar": "Jumlah $= (p+q) + \\frac{p+q}{pq} = \\frac{20}{3}$ dan hasil kali $= pq + 2 + \\frac{1}{pq} = \\frac{16}{3}$, sehingga $x^2 - \\frac{20}{3}x + \\frac{16}{3} = 0$ atau $3x^2 - 20x + 16 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$3x^2 - 20x + 10 = 0$",
+          "alasan": "hasil kali dihitung $pq + 1/(pq)$ (lupa suku $2$), menjadi $\\frac{10}{3}$"
+        },
+        {
+          "teks": "$3x^2 + 20x + 16 = 0$",
+          "alasan": "tanda jumlah akar salah: memakai $+\\frac{b}{a}$ bukan $-\\frac{b}{a}$"
+        },
+        {
+          "teks": "$x^2 - 20x + 16 = 0$",
+          "alasan": "jumlah dan hasil kali sudah dikalikan $3$ tetapi koefisien $x^2$ tidak ikut dikalikan"
+        }
+      ],
+      "pembahasan": "$p+q=5$, $pq=3$. Jumlah akar baru $\\frac{20}{3}$, hasil kali $\\frac{16}{3}$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 158,
+        "kutipan": "Catatan: Tidak semua persamaan kuadrat dapat diselesaikan dengan pemfaktoran."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menemukan bahwa pembagian dengan variabel menghilangkan akar dan menentukan perbaikan yang tepat",
+      "stimulus": null,
+      "pertanyaan": "Dina menyelesaikan $4x^2 = 28x$ sebagai berikut: \"Bagi kedua ruas dengan $4x$, diperoleh $x = 7$. Jadi persamaan ini hanya memiliki satu akar, yaitu $7$.\" Pernyataan yang tepat tentang pekerjaan Dina adalah ....",
+      "jawaban_benar": "Dina salah karena pembagian dengan $x$ menghilangkan akar $x = 0$; himpunan akar yang benar adalah $0$ dan $7$.",
+      "alasan_benar": "Pindah ruas: $4x^2 - 28x = 4x(x-7) = 0$ sehingga $x=0$ atau $x=7$. Membagi dengan $x$ mengabaikan kemungkinan $x=0$.",
+      "distraktor": [
+        {
+          "teks": "Dina benar karena persamaan kuadrat yang tidak memiliki suku konstan hanya memiliki satu akar.",
+          "alasan": "persamaan $4x^2-28x=0$ justru memiliki dua akar ($0$ dan $7$)"
+        },
+        {
+          "teks": "Dina salah; himpunan akar yang benar adalah $-7$ dan $7$.",
+          "alasan": "mengira bentuk $x^2 = k$ (akar $\\pm$); padahal ruas kanan memuat $x$"
+        },
+        {
+          "teks": "Dina salah karena persamaan itu tidak memiliki akar real, $D < 0$.",
+          "alasan": "$D = 784 > 0$, akar real ada"
+        }
+      ],
+      "pembahasan": "$4x(x-7)=0$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "disebut sebagai diskriminan (D)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menelusuri langkah rumus kuadrat dan memastikan hanya satu kesalahan yang benar dari empat tuduhan",
+      "stimulus": null,
+      "pertanyaan": "Raka menyelesaikan $2x^2 - 3x - 5 = 0$ dengan rumus kuadrat: $x = \\frac{-3 \\pm \\sqrt{9 + 40}}{4} = \\frac{-3 \\pm 7}{4}$, sehingga $x = 1$ atau $x = -\\frac{5}{2}$. Kesalahan Raka adalah ....",
+      "jawaban_benar": "mengganti $-b$ dengan $-3$, padahal $b = -3$ sehingga $-b = 3$",
+      "alasan_benar": "Seharusnya $x = \\frac{3 \\pm 7}{4}$, yaitu $\\frac{5}{2}$ atau $-1$. Substitusi $x=1$ ke persamaan memberi $-6 \\neq 0$.",
+      "distraktor": [
+        {
+          "teks": "menghitung diskriminan $9 + 40$, padahal seharusnya $9 - 40$",
+          "alasan": "$D = b^2 - 4ac = 9 - 4(2)(-5) = 49$; tuduhan ini salah"
+        },
+        {
+          "teks": "memakai penyebut $4$, padahal seharusnya $2$",
+          "alasan": "penyebut rumus adalah $2a = 4$; tuduhan ini salah"
+        },
+        {
+          "teks": "mengambil akar kuadrat $\\sqrt{49} = 7$, padahal seharusnya $\\sqrt{49} = 49$",
+          "alasan": "$\\sqrt{49}=7$ sudah benar"
+        }
+      ],
+      "pembahasan": "Diskriminan $49$, penyebut $4$, akar $7$ semua benar; yang salah hanya tanda $-b$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Bagaimana bentuk persamaan kuadrat yang baru dengan akar"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perancangan persamaan",
+      "alasan_level": "merancang persamaan baru dari akar yang digeser tiga satuan dengan jumlah dan hasil kali akar baru",
+      "stimulus": null,
+      "pertanyaan": "Akar-akar persamaan kuadrat $x^2 + 4x - 12 = 0$ adalah $\\alpha$ dan $\\beta$. Persamaan kuadrat baru berbentuk $x^2 + bx + c = 0$ yang akar-akarnya $\\alpha + 3$ dan $\\beta + 3$ adalah ....",
+      "jawaban_benar": "$x^2 - 2x - 15 = 0$",
+      "alasan_benar": "$\\alpha+\\beta=-4$, $\\alpha\\beta=-12$. Jumlah akar baru $= -4 + 6 = 2$ dan hasil kali $= \\alpha\\beta + 3(\\alpha+\\beta) + 9 = -15$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + x - 9 = 0$",
+          "alasan": "menambah $3$ hanya pada jumlah dan hasil kali, bukan pada setiap akar"
+        },
+        {
+          "teks": "$x^2 + 10x + 9 = 0$",
+          "alasan": "mengurangi $3$ dari setiap akar (akar $-1$ dan $-9$), bukan menambah"
+        },
+        {
+          "teks": "$x^2 + 12x - 108 = 0$",
+          "alasan": "mengalikan setiap akar dengan $3$ (akar $6$ dan $-18$), bukan menambah $3$"
+        }
+      ],
+      "pembahasan": "Akar lama $2$ dan $-6$, akar baru $5$ dan $-3$: $(x-5)(x+3)=x^2-2x-15$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 153,
+        "kutipan": "nilai c sebesar 8 merupakan hasil perkalian dari 4 dan 2"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perancangan persamaan",
+      "alasan_level": "merancang persamaan berkoefisien bulat minimal dari akar pecahan dengan menghilangkan penyebut",
+      "stimulus": null,
+      "pertanyaan": "Persamaan kuadrat $ax^2 + bx + c = 0$ dengan $a$, $b$, $c$ bilangan bulat, $a$ positif dan sekecil mungkin, memiliki akar $\\frac{2}{3}$ dan $-\\frac{3}{4}$. Persamaan tersebut adalah ....",
+      "jawaban_benar": "$12x^2 + x - 6 = 0$",
+      "alasan_benar": "$(3x - 2)(4x + 3) = 12x^2 + x - 6$; jumlah akar $-\\frac{1}{12}$ dan hasil kali $-\\frac{1}{2}$ sesuai.",
+      "distraktor": [
+        {
+          "teks": "$12x^2 - x - 6 = 0$",
+          "alasan": "tanda $b$ terbalik, memakai $b/a$ bukan $-b/a$ untuk jumlah akar (akarnya $-\\frac{2}{3}$ dan $\\frac{3}{4}$)"
+        },
+        {
+          "teks": "$12x^2 - 17x + 6 = 0$",
+          "alasan": "faktor kedua salah tanda: akarnya $\\frac{2}{3}$ dan $\\frac{3}{4}$"
+        },
+        {
+          "teks": "$12x^2 + x + 6 = 0$",
+          "alasan": "tanda hasil kali akar salah: $c$ dibuat positif padahal akarnya berbeda tanda"
+        }
+      ],
+      "pembahasan": "Faktor $(3x-2)$ dan $(4x+3)$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "disebut sebagai diskriminan (D)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter syarat ganda",
+      "alasan_level": "menggabungkan syarat $a \\neq 0$ dengan $D > 0$ (pertidaksamaan kuadrat) dan menghitung banyak bilangan bulat",
+      "stimulus": null,
+      "pertanyaan": "Persamaan $(k - 3)x^2 + 6x + k = 0$ merupakan persamaan kuadrat yang memiliki dua akar real yang berbeda. Banyak bilangan bulat $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Syarat $k \\neq 3$ dan $D = 36 - 4k(k-3) > 0 \\iff k^2 - 3k - 9 < 0$, yaitu $\\frac{3-\\sqrt{45}}{2} < k < \\frac{3+\\sqrt{45}}{2}$ ($-1{,}85 < k < 4{,}85$). Bilangan bulat: $-1, 0, 1, 2, 4$ (tanpa $3$).",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "lupa syarat $k \\neq 3$ sehingga $k=3$ ikut dihitung (bukan persamaan kuadrat)"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "hanya menghitung $k$ positif ($1, 2, 4$) dan melewatkan $k$ nol dan negatif"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "menaksir $\\sqrt{45} \\approx 7$ sehingga batas $-2 < k < 5$ dan lupa $k \\neq 3$"
+        }
+      ],
+      "pembahasan": "Interval $-1{,}85<k<4{,}85$, kecuali $k=3$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 161,
+        "kutipan": "hubungan antara perkalian kedua akar dengan koefisien-koefisien persamaan kuadrat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "hubungan akar-koefisien bersyarat",
+      "alasan_level": "mengubah $x_1^2+x_2^2$ menjadi fungsi $m$, menjamin akar real untuk semua $m$, lalu mencari nilai minimum",
+      "stimulus": null,
+      "pertanyaan": "Akar-akar persamaan kuadrat $x^2 - (m + 3)x + 2m = 0$ adalah $x_1$ dan $x_2$. Untuk $m$ bilangan real, nilai minimum $x_1^2 + x_2^2$ adalah ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "$x_1^2+x_2^2=(m+3)^2-4m=m^2+2m+9=(m+1)^2+8$; $D=m^2-2m+9>0$ untuk semua $m$, jadi akar selalu real dan minimum $8$ di $m=-1$.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "memakai $m = 0$ (akar-akarnya $0$ dan $3$) tanpa mencari titik minimum"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "memakai $m = 1$ tanpa mencari titik minimum"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "salah melengkapi kuadrat: $m^2+2m+9=(m+1)^2+7$"
+        }
+      ],
+      "pembahasan": "$(m+1)^2 + 8 \\geq 8$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 149,
+        "kutipan": "Persamaan kuadrat merupakan suatu persamaan matematika yang melibatkan bentuk kuadrat."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "soal cerita model kuadrat",
+      "alasan_level": "memodelkan dua kondisi luas menjadi persamaan kuadrat, memilih akar yang bermakna, lalu menghitung besaran lain",
+      "stimulus": null,
+      "pertanyaan": "Panjang sebuah persegi panjang $7$ m lebih dari lebarnya. Jika panjang dan lebarnya masing-masing ditambah $3$ m, luasnya menjadi dua kali luas semula. Keliling persegi panjang semula adalah ....",
+      "jawaban_benar": "$34$ m",
+      "alasan_benar": "Lebar $w$: $(w+3)(w+10)=2w(w+7) \\Rightarrow w^2+w-30=0 \\Rightarrow w=5$ (atau $-6$, ditolak). Panjang $12$ m, keliling $2(5+12)=34$ m.",
+      "distraktor": [
+        {
+          "teks": "$17$ m",
+          "alasan": "menjawab setengah keliling ($p + l$), lupa dikali $2$"
+        },
+        {
+          "teks": "$38$ m",
+          "alasan": "memakai akar $w = 6$ yang salah faktor ($w^2+w-30=(w-6)(w+5)$)"
+        },
+        {
+          "teks": "$22$ m",
+          "alasan": "memakai lebar $2$ dan panjang $9$ yang tidak memenuhi kondisi luas dua kali"
+        }
+      ],
+      "pembahasan": "$w=5$, $p=12$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 161,
+        "kutipan": "hubungan antara perkalian kedua akar dengan koefisien-koefisien persamaan kuadrat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "hubungan akar-koefisien bersyarat",
+      "alasan_level": "memakai identitas $x_1^3 + x_2^3 = (x_1+x_2)^3 - 3x_1x_2(x_1+x_2)$ lalu mencari $k$",
+      "stimulus": null,
+      "pertanyaan": "Akar-akar persamaan kuadrat $x^2 - 8x + k = 0$ adalah $x_1$ dan $x_2$. Jika $x_1^3 + x_2^3 = 152$, nilai $k$ adalah ....",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "$x_1+x_2=8$, $x_1x_2=k$: $512 - 24k = 152 \\Rightarrow k = 15$ (akar $3$ dan $5$, $27+125=152$).",
+      "distraktor": [
+        {
+          "teks": "$45$",
+          "alasan": "memakai $x_1^3+x_2^3=(x_1+x_2)^3-x_1x_2(x_1+x_2)$ sehingga $512-8k=152$"
+        },
+        {
+          "teks": "$120$",
+          "alasan": "memakai $(x_1+x_2)^3 - 3x_1x_2$ sehingga $512-3k=152$"
+        },
+        {
+          "teks": "$-15$",
+          "alasan": "salah tanda: memakai $(x_1+x_2)^3 + 3x_1x_2(x_1+x_2)$"
+        }
+      ],
+      "pembahasan": "$512-24k=152$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 158,
+        "kutipan": "Catatan: Tidak semua persamaan kuadrat dapat diselesaikan dengan pemfaktoran."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi jawaban yang sebagian benar secara kebetulan dan menentukan penyelesaian yang sebenarnya",
+      "stimulus": null,
+      "pertanyaan": "Rudi menyelesaikan $(x - 3)(x + 2) = 6$ dengan menyamakan tiap faktor dengan $6$: $x - 3 = 6$ atau $x + 2 = 6$, sehingga $x = 9$ atau $x = 4$. Pernyataan yang benar tentang jawaban Rudi adalah ....",
+      "jawaban_benar": "Hanya $x = 4$ yang merupakan akar; $x = 9$ bukan akar, dan akar lainnya adalah $-3$.",
+      "alasan_benar": "Bentuk benar: $x^2 - x - 12 = 0 \\Rightarrow (x-4)(x+3)=0$, akar $4$ dan $-3$. $x=9$ memberi $6 \\cdot 11 = 66 \\neq 6$.",
+      "distraktor": [
+        {
+          "teks": "Kedua nilai benar karena masing-masing memenuhi salah satu faktor yang sama dengan $6$.",
+          "alasan": "$x=9$ menghasilkan $66$, bukan $6$; sifat hasil kali nol tidak berlaku untuk ruas kanan $6$"
+        },
+        {
+          "teks": "Kedua nilai salah, tidak satu pun dari $9$ dan $4$ merupakan akar.",
+          "alasan": "$x=4$ memberi $(1)(6)=6$ sehingga benar"
+        },
+        {
+          "teks": "Hanya $x = 9$ yang akar; akar lainnya adalah $-4$.",
+          "alasan": "$x=9$ bukan akar dan $x=-4$ memberi $14 \\neq 6$"
+        }
+      ],
+      "pembahasan": "Ubah ke bentuk umum dulu.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "disebut sebagai diskriminan (D)"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "menguji klaim tentang diskriminan kuadrat sempurna dengan mencari persamaan yang syaratnya terpenuhi tetapi kesimpulannya gagal",
+      "stimulus": null,
+      "pertanyaan": "Klaim: \"Jika $a$, $b$, $c$ bilangan bulat dan diskriminan $b^2 - 4ac$ berupa kuadrat sempurna, maka kedua akar $ax^2 + bx + c = 0$ adalah bilangan bulat.\" Persamaan yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$2x^2 + x - 3 = 0$",
+      "alasan_benar": "$D = 1 + 24 = 25 = 5^2$ (kuadrat sempurna), tetapi akarnya $1$ dan $-\\frac{3}{2}$, salah satunya bukan bilangan bulat.",
+      "distraktor": [
+        {
+          "teks": "$x^2 - 6x + 8 = 0$",
+          "alasan": "$D=4$ dan akarnya $2$, $4$ bulat, sehingga sesuai klaim"
+        },
+        {
+          "teks": "$x^2 + x - 12 = 0$",
+          "alasan": "$D=49$ dan akarnya $3$, $-4$ bulat, sesuai klaim"
+        },
+        {
+          "teks": "$3x^2 - 9x = 0$",
+          "alasan": "$D=81$ dan akarnya $0$, $3$ bulat, sesuai klaim"
+        }
+      ],
+      "pembahasan": "Hanya $2x^2+x-3=0$ yang akarnya tidak seluruhnya bulat.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 153,
+        "kutipan": "nilai c sebesar 8 merupakan hasil perkalian dari 4 dan 2"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter syarat ganda",
+      "alasan_level": "menerjemahkan syarat akar bulat positif berbeda menjadi pasangan faktor dengan jumlah $6$ lalu menjumlahkan nilai $c$",
+      "stimulus": null,
+      "pertanyaan": "Persamaan $x^2 - 6x + c = 0$ memiliki dua akar bilangan bulat positif yang berbeda. Jumlah semua nilai $c$ yang mungkin adalah ....",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Akar $p$, $q$ bulat positif berbeda dengan $p+q=6$: $(1,5)$ dan $(2,4)$, sehingga $c=pq=5$ atau $8$. Jumlah $13$.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "ikut menghitung $c=9$ dari akar kembar $(3,3)$ padahal harus berbeda"
+        },
+        {
+          "teks": "$36$",
+          "alasan": "hanya memakai $D>0$ ($c<9$) dan menjumlahkan $c=1,\\ldots,8$, tidak memeriksa akar bulat"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "hanya mengambil nilai $c$ terbesar, bukan jumlah semua nilai"
+        }
+      ],
+      "pembahasan": "$c\\in\\{5,8\\}$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 161,
+        "kutipan": "hubungan antara perkalian kedua akar dengan koefisien-koefisien persamaan kuadrat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "soal cerita model kuadrat",
+      "alasan_level": "menerjemahkan jumlah kebalikan menjadi hasil kali, menyusun persamaan kuadrat, lalu menjawab selisih",
+      "stimulus": null,
+      "pertanyaan": "Jumlah dua bilangan positif adalah $12$ dan jumlah kebalikan kedua bilangan itu adalah $\\frac{3}{8}$. Selisih kedua bilangan tersebut adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$\\frac{1}{a}+\\frac{1}{b}=\\frac{a+b}{ab}=\\frac{12}{ab}=\\frac{3}{8}$ sehingga $ab=32$. Persamaan $x^2-12x+32=0$ berakar $4$ dan $8$, selisih $4$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "menjawab bilangan terbesar, bukan selisihnya"
+        },
+        {
+          "teks": "$32$",
+          "alasan": "menjawab hasil kali kedua bilangan"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "mengira $ab = 12 \\cdot \\frac{3}{8}\\cdot 2$ sehingga memperoleh bilangan $5$ dan $7$ (jumlah $12$ tetapi jumlah kebalikan $\\frac{12}{35}$)"
+        }
+      ],
+      "pembahasan": "$ab=32$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 161,
+        "kutipan": "hubungan antara perkalian kedua akar dengan koefisien-koefisien persamaan kuadrat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "hubungan akar-koefisien bersyarat",
+      "alasan_level": "menyadari $a+b+c=0$ memberi akar $1$, lalu memakai hasil kali akar untuk menentukan parameter",
+      "stimulus": null,
+      "pertanyaan": "Salah satu akar persamaan kuadrat $(k + 1)x^2 - 3kx + (2k - 1) = 0$ selalu bernilai $1$ untuk setiap $k$ yang membuatnya persamaan kuadrat. Jika akar lainnya adalah $3$, nilai $k$ adalah ....",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "$a+b+c=0$ sehingga $x=1$ akar. Hasil kali akar $= 1\\cdot 3 = \\frac{2k-1}{k+1} \\Rightarrow 2k-1=3k+3 \\Rightarrow k=-4$ (persamaan $-3x^2+12x-9=0$, akar $1$ dan $3$).",
+      "distraktor": [
+        {
+          "teks": "$-2$",
+          "alasan": "salah menulis hasil kali akar menjadi $\\frac{2k+1}{k+1}$ (tanda $c$ salah)"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "salah menyamakan $2k-1 = 3(k-1)$ (memakai $a = k-1$)"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "tanda hasil akhir tertukar saat memindahkan ruas ($2k-1=3k+3 \\Rightarrow k=4$)"
+        }
+      ],
+      "pembahasan": "Cek: $k=-4$ menghasilkan akar $1$ dan $3$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 161,
+        "kutipan": "hubungan antara perkalian kedua akar dengan koefisien-koefisien persamaan kuadrat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "hubungan akar-koefisien bersyarat",
+      "alasan_level": "memakai perbandingan akar bersama jumlah $\\frac{15}{2}$ dan hasil kali $\\frac{k}{2}$, bukan $k$",
+      "stimulus": null,
+      "pertanyaan": "Akar-akar persamaan kuadrat $2x^2 - 15x + k = 0$ berbanding $2 : 3$. Nilai $k$ adalah ....",
+      "jawaban_benar": "$27$",
+      "alasan_benar": "Akar $2t$ dan $3t$: $5t=\\frac{15}{2} \\Rightarrow t=\\frac{3}{2}$, akar $3$ dan $\\frac{9}{2}$. Hasil kali $\\frac{k}{2}=\\frac{27}{2}$ sehingga $k=27$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{27}{2}$",
+          "alasan": "menjawab hasil kali akar, lupa bahwa hasil kali akar $=\\frac{k}{2}$"
+        },
+        {
+          "teks": "$54$",
+          "alasan": "mengalikan hasil kali akar dengan $4$, bukan dengan $a = 2$"
+        },
+        {
+          "teks": "$45$",
+          "alasan": "memakai jumlah akar $15$ (lupa dibagi $a$) sehingga akar $6$ dan $9$, lalu salah menghitung hasil kali"
+        }
+      ],
+      "pembahasan": "$k=a\\cdot x_1x_2$.",
+      "catatan": null,
+      "variasi_cara": null
+    },
+    {
+      "id": "kelas10-b05-a-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 153,
+        "kutipan": "nilai c sebesar 8 merupakan hasil perkalian dari 4 dan 2"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perancangan persamaan",
+      "alasan_level": "merancang persamaan yang memenuhi tiga syarat sekaligus (jenis akar, jumlah akar, hasil kali akar)",
+      "stimulus": null,
+      "pertanyaan": "Persamaan kuadrat yang memiliki dua akar real berbeda, jumlah kedua akar sama dengan $4$, dan hasil kali kedua akar negatif adalah ....",
+      "jawaban_benar": "$x^2 - 4x - 5 = 0$",
+      "alasan_benar": "Jumlah akar $4$ berarti $b=-4$, hasil kali negatif berarti $c<0$; $D=16+20=36>0$ (akar $5$ dan $-1$).",
+      "distraktor": [
+        {
+          "teks": "$x^2 - 4x + 5 = 0$",
+          "alasan": "hasil kali $5$ positif dan $D=-4<0$ (tidak real)"
+        },
+        {
+          "teks": "$x^2 - 4x + 4 = 0$",
+          "alasan": "$D = 0$ (akar kembar) dan hasil kali positif"
+        },
+        {
+          "teks": "$x^2 + 4x - 5 = 0$",
+          "alasan": "jumlah akar $-4$, bukan $4$ (tanda $b$ salah)"
+        }
+      ],
+      "pembahasan": "Akar $5$ dan $-1$.",
+      "catatan": null,
+      "variasi_cara": null
+    }
+  ]
+}

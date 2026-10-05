@@ -1,0 +1,690 @@
+{
+  "book": "kelas12",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b02-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 62,
+        "bagian": "Contoh 2.1",
+        "nomor": "2.1",
+        "teks": "Modal sebesar Rp5.000.000,00 dibungakan dengan bunga majemuk 10% per tahun. Tentukan modal akhir dan bunga yang diperoleh setelah 6 tahun.",
+        "jawaban": "Rp8.857.805,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "modal akhir bunga majemuk (tahun)",
+      "alasan_level": "satu rumus langsung $M(1+p)^n$ dengan n=3",
+      "stimulus": null,
+      "pertanyaan": "Modal sebesar Rp2.000.000,00 dibungakan dengan bunga majemuk 20% per tahun. Tentukan modal akhir setelah 3 tahun.",
+      "jawaban_benar": "Rp3.456.000,00",
+      "alasan_benar": "$2.000.000 \\times (1,2)^3 = 3.456.000$",
+      "distraktor": [
+        {
+          "teks": "Rp3.200.000,00",
+          "alasan": "memakai bunga tunggal (20% x 3 tahun) bukan majemuk"
+        },
+        {
+          "teks": "Rp2.880.000,00",
+          "alasan": "pangkat n dikurangi satu (n-1)"
+        },
+        {
+          "teks": "Rp1.456.000,00",
+          "alasan": "yang dihitung hanya bunganya, bukan modal akhir"
+        }
+      ],
+      "pembahasan": "$M_n = M(1+p)^n = 2.000.000(1,2)^3 = 3.456.000$. Modal akhir Rp3.456.000,00.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 62,
+        "bagian": "Contoh 2.1",
+        "nomor": "2.1",
+        "teks": "Modal sebesar Rp5.000.000,00 dibungakan dengan bunga majemuk 10% per tahun. Tentukan modal akhir dan bunga yang diperoleh setelah 6 tahun.",
+        "jawaban": "Rp8.857.805,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga yang diperoleh",
+      "alasan_level": "hitung modal akhir lalu kurangi modal awal, dua langkah langsung",
+      "stimulus": null,
+      "pertanyaan": "Modal sebesar Rp8.000.000,00 dibungakan dengan bunga majemuk 5% per tahun. Tentukan bunga yang diperoleh setelah 2 tahun.",
+      "jawaban_benar": "Rp820.000,00",
+      "alasan_benar": "modal akhir 8.820.000 dikurangi modal awal 8.000.000",
+      "distraktor": [
+        {
+          "teks": "Rp800.000,00",
+          "alasan": "memakai bunga tunggal 8.000.000 x 5% x 2"
+        },
+        {
+          "teks": "Rp8.820.000,00",
+          "alasan": "menjawab modal akhir, bukan bunganya"
+        },
+        {
+          "teks": "Rp400.000,00",
+          "alasan": "hanya menghitung bunga tahun pertama"
+        }
+      ],
+      "pembahasan": "$M_2 = 8.000.000(1,05)^2 = 8.820.000$. Bunga = 8.820.000 - 8.000.000 = 820.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "bagian": "Contoh 2.2",
+        "nomor": "2.2",
+        "teks": "Ahmad menabung uang di bank dengan bunga majemuk sebesar 3% per 4 bulan. Setelah 8 bulan menabung, saldo tabungan menjadi sebesar Rp2.121.800,00. Berapakah jumlah uang yang ditabung Ahmad semula?",
+        "jawaban": "Rp2.000.000,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "modal awal dari saldo akhir",
+      "alasan_level": "membagi saldo dengan faktor $(1+p)^n$ setelah menentukan n",
+      "stimulus": null,
+      "pertanyaan": "Dina menabung uang di bank dengan bunga majemuk sebesar 10% per 6 bulan. Setelah 12 bulan menabung, saldo tabungan menjadi sebesar Rp3.630.000,00. Berapakah jumlah uang yang ditabung Dina semula?",
+      "jawaban_benar": "Rp3.000.000,00",
+      "alasan_benar": "n = 2 periode, $3.630.000 : (1,1)^2 = 3.000.000$",
+      "distraktor": [
+        {
+          "teks": "Rp3.025.000,00",
+          "alasan": "menganggap bunga 10% x 2 = 20% (bunga tunggal) lalu membagi 1,2"
+        },
+        {
+          "teks": "Rp3.300.000,00",
+          "alasan": "memakai n = 1 padahal ada 2 periode"
+        },
+        {
+          "teks": "Rp2.904.000,00",
+          "alasan": "mengurangi 20% dari saldo, bukan membagi faktor bunga"
+        }
+      ],
+      "pembahasan": "12 bulan = 2 periode 6 bulan. $M(1,1)^2 = 3.630.000$ sehingga $M = 3.630.000 : 1,21 = 3.000.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "bagian": "Contoh 2.2",
+        "nomor": "2.2",
+        "teks": "Ahmad menabung uang di bank dengan bunga majemuk sebesar 3% per 4 bulan. Setelah 8 bulan menabung, saldo tabungan menjadi sebesar Rp2.121.800,00. Berapakah jumlah uang yang ditabung Ahmad semula?",
+        "jawaban": "Rp2.000.000,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "modal awal dari saldo akhir (koperasi)",
+      "alasan_level": "menentukan n lalu membagi faktor bunga",
+      "stimulus": null,
+      "pertanyaan": "Pak Dodi menyimpan uang di koperasi yang memberi bunga majemuk 4% per 2 bulan. Simpanan Pak Dodi menjadi Rp5.408.000,00 setelah 4 bulan. Berapa besar simpanan awal Pak Dodi?",
+      "jawaban_benar": "Rp5.000.000,00",
+      "alasan_benar": "n = 2 periode, $5.408.000 : (1,04)^2 = 5.000.000$",
+      "distraktor": [
+        {
+          "teks": "Rp5.200.000,00",
+          "alasan": "memakai n = 1 padahal ada 2 periode"
+        },
+        {
+          "teks": "Rp408.000,00",
+          "alasan": "menjawab bunga, bukan simpanan awal"
+        },
+        {
+          "teks": "Rp4.975.360,00",
+          "alasan": "mengurangi 8% dari saldo, bukan membagi faktor bunga"
+        }
+      ],
+      "pembahasan": "4 bulan = 2 periode. $M = 5.408.000 : 1,0816 = 5.000.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0072-latihan-2-1-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai akhir investasi (saham)",
+      "alasan_level": "satu rumus bunga majemuk dengan n=4",
+      "stimulus": null,
+      "pertanyaan": "Seseorang berinvestasi emas di suatu aplikasi online. Modal yang diberikan sebesar Rp4.000.000,00. Keuntungan yang didapat menggunakan suku bunga majemuk 10% per tahun. Hitunglah nilai akhir modal tersebut setelah 4 tahun.",
+      "jawaban_benar": "Rp5.856.400,00",
+      "alasan_benar": "$4.000.000 \\times (1,1)^4 = 5.856.400$",
+      "distraktor": [
+        {
+          "teks": "Rp5.600.000,00",
+          "alasan": "memakai bunga tunggal (10% x 4)"
+        },
+        {
+          "teks": "Rp5.324.000,00",
+          "alasan": "pangkat n dikurangi satu"
+        },
+        {
+          "teks": "Rp1.856.400,00",
+          "alasan": "menjawab bunga saja, bukan nilai akhir"
+        }
+      ],
+      "pembahasan": "$M_4 = 4.000.000(1,1)^4 = 4.000.000 \\times 1,4641 = 5.856.400$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0072-latihan-2-1-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai akhir investasi (reksa dana)",
+      "alasan_level": "satu rumus bunga majemuk dengan n=2",
+      "stimulus": null,
+      "pertanyaan": "Bu Sari menanamkan modal Rp12.000.000,00 pada reksa dana yang memberi imbal hasil majemuk 5% per tahun. Berapa nilai akhir investasinya setelah 2 tahun?",
+      "jawaban_benar": "Rp13.230.000,00",
+      "alasan_benar": "$12.000.000 \\times (1,05)^2 = 13.230.000$",
+      "distraktor": [
+        {
+          "teks": "Rp13.200.000,00",
+          "alasan": "memakai bunga tunggal (5% x 2)"
+        },
+        {
+          "teks": "Rp12.600.000,00",
+          "alasan": "hanya menghitung satu tahun"
+        },
+        {
+          "teks": "Rp1.230.000,00",
+          "alasan": "menjawab bunga, bukan nilai akhir"
+        }
+      ],
+      "pembahasan": "$M_2 = 12.000.000 \\times 1,1025 = 13.230.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0072-latihan-2-1-1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga tahunan dibayar bulanan",
+      "alasan_level": "ubah 12% per tahun jadi 1% per bulan lalu pangkatkan",
+      "stimulus": null,
+      "pertanyaan": "Budi menyimpan uang sejumlah Rp10.000.000,00 di bank yang menawarkan bunga majemuk sebesar 12% setiap tahun dengan pembayaran setiap bulan. Setelah 3 bulan, Budi mencairkan seluruh uangnya. Total nilai uang Budi sebesar ....",
+      "jawaban_benar": "Rp10.303.010,00",
+      "alasan_benar": "bunga 1% per bulan, $10.000.000(1,01)^3 = 10.303.010$",
+      "distraktor": [
+        {
+          "teks": "Rp10.300.000,00",
+          "alasan": "bunga 1% per bulan dihitung tunggal (3 x 100.000)"
+        },
+        {
+          "teks": "Rp14.049.280,00",
+          "alasan": "memakai 12% sebagai bunga per bulan"
+        },
+        {
+          "teks": "Rp10.927.270,00",
+          "alasan": "membagi 12% dengan 4 (bukan 12) lalu dipangkatkan 3"
+        }
+      ],
+      "pembahasan": "12% per tahun dengan pembayaran bulanan = 1% per bulan. $M_3 = 10.000.000(1,01)^3 = 10.303.010$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 59,
+        "bagian": "Ayo, Berkolaborasi",
+        "nomor": "1",
+        "teks": "Pak Roni menabung uang di bank sebesar Rp15.000.000,00 dengan bunga majemuk 1% per tahun selama 5 tahun.",
+        "jawaban": "Rp15.765.151,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "modal akhir deposito (tahun)",
+      "alasan_level": "satu rumus bunga majemuk dengan n=2",
+      "stimulus": null,
+      "pertanyaan": "Bu Wati menabung uang di bank sebesar Rp30.000.000,00 dengan bunga majemuk 2% per tahun selama 2 tahun. Modal akhir Bu Wati adalah ....",
+      "jawaban_benar": "Rp31.212.000,00",
+      "alasan_benar": "$30.000.000(1,02)^2 = 31.212.000$",
+      "distraktor": [
+        {
+          "teks": "Rp31.200.000,00",
+          "alasan": "bunga tunggal 2% x 2 tahun"
+        },
+        {
+          "teks": "Rp30.600.000,00",
+          "alasan": "hanya satu tahun"
+        },
+        {
+          "teks": "Rp1.212.000,00",
+          "alasan": "menjawab bunga saja"
+        }
+      ],
+      "pembahasan": "$M_2 = 30.000.000 \\times 1,0404 = 31.212.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0095-uji-kompetensi-1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "simpanan awal dari tabel pangkat",
+      "alasan_level": "menentukan n=3 lalu membagi dengan faktor yang diberikan",
+      "stimulus": null,
+      "pertanyaan": "Koperasi Harapan memiliki program simpanan berjangka dengan suku bunga majemuk 4% per semester selama 18 bulan. Simpanan Bu Lastri saat ini mencapai Rp56.243.200,00. Diketahui $(1,04)^3 = 1,124864$. Simpanan awal Bu Lastri adalah ....",
+      "jawaban_benar": "Rp50.000.000,00",
+      "alasan_benar": "18 bulan = 3 semester, $56.243.200 : 1,124864 = 50.000.000$",
+      "distraktor": [
+        {
+          "teks": "Rp54.080.000,00",
+          "alasan": "memakai n = 1 (dibagi 1,04)"
+        },
+        {
+          "teks": "Rp52.000.000,00",
+          "alasan": "memakai n = 2 (dibagi 1,0816)"
+        },
+        {
+          "teks": "Rp6.243.200,00",
+          "alasan": "menjawab bunga, bukan simpanan awal"
+        }
+      ],
+      "pembahasan": "18 bulan = 3 semester. $M = 56.243.200 : 1,124864 = 50.000.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0095-uji-kompetensi-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "persentase bunga total",
+      "alasan_level": "faktor $(1,1)^3$ dikurangi 1 lalu jadikan persen",
+      "stimulus": null,
+      "pertanyaan": "Suatu tabungan berbunga majemuk 10% per tahun selama 3 tahun. Diketahui $(1,1)^3 = 1,331$. Total bunga yang diterima adalah ... dari tabungan awal.",
+      "jawaban_benar": "33,1%",
+      "alasan_benar": "faktor 1,331 berarti bertambah 0,331 atau 33,1%",
+      "distraktor": [
+        {
+          "teks": "30%",
+          "alasan": "memakai bunga tunggal 10% x 3"
+        },
+        {
+          "teks": "133,1%",
+          "alasan": "menyebut persentase modal akhir, bukan bunga"
+        },
+        {
+          "teks": "3,31%",
+          "alasan": "salah menaruh koma desimal"
+        }
+      ],
+      "pembahasan": "Modal akhir = 1,331 M, bunga = 0,331 M = 33,1% dari tabungan awal.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0072-latihan-2-1-1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga tahunan dibayar bulanan",
+      "alasan_level": "ubah 24% per tahun jadi 2% per bulan lalu pangkatkan",
+      "stimulus": null,
+      "pertanyaan": "Dewi menyimpan uang sejumlah Rp2.000.000,00 di bank yang menawarkan bunga majemuk sebesar 24% setiap tahun dengan pembayaran setiap bulan. Setelah 2 bulan, seluruh uang dicairkan. Total nilai uang Dewi sebesar ....",
+      "jawaban_benar": "Rp2.080.800,00",
+      "alasan_benar": "bunga 2% per bulan, $2.000.000(1,02)^2 = 2.080.800$",
+      "distraktor": [
+        {
+          "teks": "Rp2.080.000,00",
+          "alasan": "bunga 2% per bulan dihitung tunggal"
+        },
+        {
+          "teks": "Rp3.075.200,00",
+          "alasan": "memakai 24% sebagai bunga per bulan"
+        },
+        {
+          "teks": "Rp2.508.800,00",
+          "alasan": "membagi 24% dengan 2 (bukan 12)"
+        }
+      ],
+      "pembahasan": "24% per tahun dengan pembayaran bulanan = 2% per bulan. $M_2 = 2.000.000 \\times 1,0404 = 2.080.800$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 58,
+        "kutipan": "Bunga majemuk adalah perhitungan imbalan jasa yang dilakukan berdasarkan besar modal pada periode bunga berjalan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga pada tahun tertentu",
+      "alasan_level": "hitung modal akhir tahun 2 lalu kalikan p",
+      "stimulus": null,
+      "pertanyaan": "Modal Rp20.000.000,00 dibungakan dengan bunga majemuk 5% per tahun. Besar bunga yang diterima pada tahun ketiga adalah ....",
+      "jawaban_benar": "Rp1.102.500,00",
+      "alasan_benar": "modal awal tahun ketiga 22.050.000, bunga 5% darinya",
+      "distraktor": [
+        {
+          "teks": "Rp1.000.000,00",
+          "alasan": "memakai modal awal (bunga tunggal) untuk tahun ketiga"
+        },
+        {
+          "teks": "Rp1.050.000,00",
+          "alasan": "memakai bunga tahun kedua"
+        },
+        {
+          "teks": "Rp23.152.500,00",
+          "alasan": "menjawab modal akhir tahun ketiga, bukan bunganya"
+        }
+      ],
+      "pembahasan": "Tahun 1: 21.000.000; tahun 2: 22.050.000. Bunga tahun ke-3 = 5% x 22.050.000 = 1.102.500.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 58,
+        "kutipan": "Perhitungan menggunakan bunga majemuk menghasilkan besar bunga pertama yang berbeda dengan besar bunga kedua, ketiga, dan seterusnya."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "konsep bunga majemuk",
+      "alasan_level": "mengenali sifat bunga majemuk dari definisinya",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar tentang bunga majemuk adalah ....",
+      "jawaban_benar": "Bunga tiap periode dihitung dari modal pada periode berjalan sehingga besarnya berubah dari periode ke periode",
+      "alasan_benar": "sesuai definisi di buku",
+      "distraktor": [
+        {
+          "teks": "Bunga tiap periode selalu sama besar karena dihitung dari modal awal",
+          "alasan": "mencampur dengan sifat bunga tunggal"
+        },
+        {
+          "teks": "Bunga hanya dihitung satu kali di akhir seluruh periode dari modal awal",
+          "alasan": "salah paham bahwa bunga tidak dihitung tiap periode"
+        },
+        {
+          "teks": "Bunga tiap periode dihitung hanya dari bunga periode sebelumnya tanpa modal",
+          "alasan": "menganggap dasar bunga hanya bunga lama"
+        }
+      ],
+      "pembahasan": "Bunga majemuk dihitung dari modal pada periode berjalan (modal + bunga sebelumnya), sehingga bunga periode pertama, kedua, dan seterusnya berbeda.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 63,
+        "kutipan": "Ahmad menabung uang di bank dengan bunga majemuk sebesar 3% per 4 bulan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "banyak periode bunga",
+      "alasan_level": "mengubah lama menabung menjadi banyak periode bunga",
+      "stimulus": null,
+      "pertanyaan": "Sebuah bank memberi bunga majemuk 2% per triwulan. Sebuah tabungan disimpan selama 2 tahun. Banyak periode bunga (n) yang digunakan dalam rumus adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "2 tahun = 24 bulan; 1 triwulan = 3 bulan; 24 : 3 = 8",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "memakai lama dalam tahun sebagai n"
+        },
+        {
+          "teks": "6",
+          "alasan": "menganggap satu periode 4 bulan (24 : 4)"
+        },
+        {
+          "teks": "24",
+          "alasan": "memakai lama dalam bulan sebagai n"
+        }
+      ],
+      "pembahasan": "Triwulan = 3 bulan. 2 tahun = 24 bulan sehingga n = 24 : 3 = 8.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 62,
+        "kutipan": "_p_ = 10% per tahun = 0,1 per tahun"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "faktor (1+p)",
+      "alasan_level": "mengubah persen ke desimal lalu menambah 1",
+      "stimulus": null,
+      "pertanyaan": "Suatu modal dibungakan dengan bunga majemuk 7,5% per tahun. Pada rumus $M_n = M(1+p)^n$, nilai $(1+p)$ adalah ....",
+      "jawaban_benar": "1,075",
+      "alasan_benar": "p = 7,5% = 0,075 sehingga 1 + p = 1,075",
+      "distraktor": [
+        {
+          "teks": "0,075",
+          "alasan": "lupa menambah 1"
+        },
+        {
+          "teks": "7,5",
+          "alasan": "tidak mengubah persen ke desimal"
+        },
+        {
+          "teks": "1,75",
+          "alasan": "salah nilai desimal 7,5% (0,75)"
+        }
+      ],
+      "pembahasan": "$p = 7,5\\% = 0,075$ sehingga $1+p = 1,075$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 58,
+        "kutipan": "Pada perhitungan sebelumnya terkait bunga tunggal, modal akhir yang didapat mengacu pada bunga dengan persentase yang sama tiap periodenya."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga tunggal vs majemuk",
+      "alasan_level": "hitung dua saldo akhir lalu cari selisih",
+      "stimulus": null,
+      "pertanyaan": "Anto dan Beni masing-masing menabung Rp10.000.000,00 selama 2 tahun dengan bunga 10% per tahun. Anto memakai bunga tunggal, Beni memakai bunga majemuk. Selisih saldo akhir Beni dan Anto adalah ....",
+      "jawaban_benar": "Rp100.000,00",
+      "alasan_benar": "tunggal 12.000.000; majemuk 12.100.000",
+      "distraktor": [
+        {
+          "teks": "Rp12.100.000,00",
+          "alasan": "menjawab saldo akhir Beni"
+        },
+        {
+          "teks": "Rp1.000.000,00",
+          "alasan": "menjawab bunga satu tahun"
+        },
+        {
+          "teks": "Rp2.100.000,00",
+          "alasan": "menjawab bunga majemuk, bukan selisih"
+        }
+      ],
+      "pembahasan": "Anto: 10.000.000 + 2 x 1.000.000 = 12.000.000. Beni: $10.000.000(1,1)^2 = 12.100.000$. Selisih = 100.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 60,
+        "kutipan": "Selanjutnya, pada tahun kedua bunga 1% dikenakan kembali dengan menggunakan modal awal pada tahun pertama Rp15.150.000,00."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "membaca tabel bunga majemuk",
+      "alasan_level": "bunga tahun berikutnya = p x modal akhir tahun sebelumnya",
+      "stimulus": "| Tahun ke | Bunga (Rp) | Modal akhir (Rp) |\n|---|---|---|\n| 0 | 0 | 10.000.000,00 |\n| 1 | 1.000.000,00 | 11.000.000,00 |\n| 2 | 1.100.000,00 | 12.100.000,00 |\n| 3 | 1.210.000,00 | 13.310.000,00 |",
+      "pertanyaan": "Sebuah tabungan berbunga majemuk 10% per tahun, dengan perhitungan tahun ke-0 sampai ke-3 seperti pada data stimulus. Besar bunga pada tahun ke-4 adalah ....",
+      "jawaban_benar": "Rp1.331.000,00",
+      "alasan_benar": "10% x 13.310.000 = 1.331.000",
+      "distraktor": [
+        {
+          "teks": "Rp1.210.000,00",
+          "alasan": "memakai bunga tahun ke-3 dari tabel"
+        },
+        {
+          "teks": "Rp1.000.000,00",
+          "alasan": "menghitung dari modal awal 10.000.000"
+        },
+        {
+          "teks": "Rp1.464.100,00",
+          "alasan": "bunga tahun ke-5, salah satu periode"
+        }
+      ],
+      "pembahasan": "Bunga tahun ke-4 = 10% x modal akhir tahun ke-3 = 10% x 13.310.000 = 1.331.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 61,
+        "kutipan": "Demikian seterusnya untuk tahun ketiga hingga tahun berikutnya."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "memilih rumus bunga majemuk",
+      "alasan_level": "mengenali rumus modal akhir bunga majemuk",
+      "stimulus": null,
+      "pertanyaan": "Modal $M$ dibungakan dengan bunga majemuk $p$ per tahun ($p$ dalam bentuk desimal). Modal akhir setelah $n$ tahun dinyatakan oleh ....",
+      "jawaban_benar": "$M(1+p)^n$",
+      "alasan_benar": "pola $M(1+p)$, $M(1+p)^2$, $M(1+p)^3$, dan seterusnya",
+      "distraktor": [
+        {
+          "teks": "$M(1+np)$",
+          "alasan": "rumus bunga tunggal"
+        },
+        {
+          "teks": "$M(1+p) \\times n$",
+          "alasan": "mengalikan faktor satu tahun dengan n"
+        },
+        {
+          "teks": "$M \\times p^n$",
+          "alasan": "lupa menambah 1 pada p"
+        }
+      ],
+      "pembahasan": "Tiap tahun modal dikalikan $(1+p)$, sehingga setelah $n$ tahun menjadi $M(1+p)^n$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 62,
+        "kutipan": "Modal sebesar Rp5.000.000,00 dibungakan dengan bunga majemuk 10% per tahun."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga total dua periode semester",
+      "alasan_level": "hitung modal akhir 2 periode lalu kurangi modal awal",
+      "stimulus": null,
+      "pertanyaan": "Modal Rp5.000.000,00 dibungakan dengan bunga majemuk 4% per semester. Total bunga yang diperoleh setelah 1 tahun adalah ....",
+      "jawaban_benar": "Rp408.000,00",
+      "alasan_benar": "1 tahun = 2 semester; $5.000.000(1,04)^2 - 5.000.000 = 408.000$",
+      "distraktor": [
+        {
+          "teks": "Rp400.000,00",
+          "alasan": "bunga tunggal 4% x 2 semester"
+        },
+        {
+          "teks": "Rp5.408.000,00",
+          "alasan": "menjawab modal akhir"
+        },
+        {
+          "teks": "Rp200.000,00",
+          "alasan": "hanya bunga satu semester"
+        }
+      ],
+      "pembahasan": "$M_2 = 5.000.000 \\times 1,0816 = 5.408.000$. Bunga = 408.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-b-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 60,
+        "kutipan": "Selanjutnya, pada tahun kedua bunga 1% dikenakan kembali dengan menggunakan modal awal pada tahun pertama Rp15.150.000,00."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "dasar perhitungan bunga tahun kedua",
+      "alasan_level": "bunga tahun kedua dihitung dari modal akhir tahun pertama",
+      "stimulus": null,
+      "pertanyaan": "Modal Rp40.000.000,00 dibungakan dengan bunga majemuk 2% per tahun. Bunga pada tahun kedua dihitung dari modal sebesar ....",
+      "jawaban_benar": "Rp40.800.000,00",
+      "alasan_benar": "modal akhir tahun pertama = 40.000.000 + 800.000",
+      "distraktor": [
+        {
+          "teks": "Rp40.000.000,00",
+          "alasan": "memakai modal awal (cara bunga tunggal)"
+        },
+        {
+          "teks": "Rp800.000,00",
+          "alasan": "memakai bunga tahun pertama"
+        },
+        {
+          "teks": "Rp41.616.000,00",
+          "alasan": "memakai modal akhir tahun kedua"
+        }
+      ],
+      "pembahasan": "Setelah tahun pertama modal menjadi 40.000.000 + 2% x 40.000.000 = 40.800.000; inilah dasar bunga tahun kedua.",
+      "catatan": null
+    }
+  ]
+}
