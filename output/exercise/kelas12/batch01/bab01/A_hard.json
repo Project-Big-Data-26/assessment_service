@@ -1,0 +1,690 @@
+{
+ "book": "kelas12",
+ "bab_no": 1,
+ "subbab": "A",
+ "level": "hard",
+ "batch": 1,
+ "skill_versi": "v1",
+ "soal": [
+  {
+   "id": "kelas12-b01-a-hard-bt01-001",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 35,
+    "kutipan": "Seorang siswa menyatakan bahwa pada barisan geometri, rasio yang lebih besar dari satu akan menyebabkan setiap suku bertambah besar,"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "contoh penyangkal rasio lebih dari satu",
+   "alasan_level": "mengevaluasi klaim umum dengan memilih contoh penyangkal yang memenuhi dua syarat (rasio > 1 dan suku menurun)",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menyatakan bahwa pada barisan geometri dengan rasio lebih dari 1, setiap suku selalu lebih besar daripada suku sebelumnya. Barisan berikut yang dapat menjadi contoh penyangkal pernyataan tersebut adalah ....",
+   "jawaban_benar": "$-4, -12, -36, -108, \\ldots$",
+   "alasan_benar": "rasio $\\frac{-12}{-4}=3>1$, tetapi $-12<-4$ sehingga suku justru menurun",
+   "distraktor": [
+    {
+     "teks": "$4, 12, 36, 108, \\ldots$",
+     "alasan": "rasio 3 dan suku naik; ini mendukung klaim, bukan penyangkal"
+    },
+    {
+     "teks": "$-108, -36, -12, -4, \\ldots$",
+     "alasan": "suku naik dan rasionya $\\frac{1}{3}$ (bukan lebih dari 1); tidak menyangkal klaim"
+    },
+    {
+     "teks": "$108, 36, 12, 4, \\ldots$",
+     "alasan": "suku menurun tetapi rasionya $\\frac{1}{3}$, tidak memenuhi syarat rasio lebih dari 1"
+    }
+   ],
+   "pembahasan": "Penyangkal harus punya rasio $>1$ sekaligus suku menurun. Hal itu terjadi bila suku pertama negatif: $-4,-12,-36,-108$ dengan $r=3$. Barisan lain tidak memenuhi kedua syarat.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-002",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 35,
+    "kutipan": "Seorang siswa menyatakan bahwa pada barisan geometri, rasio yang lebih besar dari satu akan menyebabkan setiap suku bertambah besar,"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "contoh penyangkal rasio antara nol dan satu",
+   "alasan_level": "mengevaluasi klaim dengan mencari pasangan nilai awal dan rasio yang mematahkannya",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menyatakan bahwa pada barisan geometri dengan rasio antara 0 dan 1, nilai suku-sukunya selalu semakin kecil. Pasangan suku pertama $a$ dan rasio $r$ yang membuktikan bahwa pernyataan tersebut salah adalah ....",
+   "jawaban_benar": "$a=-48$ dan $r=\\frac{1}{4}$",
+   "alasan_benar": "barisannya $-48, -12, -3, \\ldots$; rasio di antara 0 dan 1 tetapi suku bertambah besar",
+   "distraktor": [
+    {
+     "teks": "$a=48$ dan $r=\\frac{1}{4}$",
+     "alasan": "barisan $48, 12, 3$ memang menurun sehingga mendukung klaim"
+    },
+    {
+     "teks": "$a=-48$ dan $r=4$",
+     "alasan": "suku makin kecil ($-48,-192,\\ldots$) dan rasio tidak antara 0 dan 1"
+    },
+    {
+     "teks": "$a=48$ dan $r=4$",
+     "alasan": "rasio tidak antara 0 dan 1 dan suku naik; tidak relevan dengan klaim"
+    }
+   ],
+   "pembahasan": "Penyangkal harus punya $0<r<1$ dan suku naik. Itu hanya terjadi jika $a<0$: $a=-48$, $r=\\frac14$ memberi $-48,-12,-3,\\ldots$ yang naik.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-003",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 23,
+    "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "temukan kesalahan penyelesaian aritmetika",
+   "alasan_level": "mengevaluasi penyelesaian siswa: menentukan letak kesalahan lalu mengoreksi hasilnya",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menentukan suku ke-20 barisan aritmetika $7, 11, 15, 19, \\ldots$ dengan cara berikut: beda $b=11-7=4$, kemudian $U_{20}=a+20b=7+20\\times4=87$. Pernyataan yang tepat tentang penyelesaian tersebut adalah ....",
+   "jawaban_benar": "Rumus yang dipakai salah, seharusnya $a+(n-1)b$ sehingga $U_{20}=83$",
+   "alasan_benar": "suku ke-$n$ adalah $a+(n-1)b$, jadi $U_{20}=7+19\\times4=83$",
+   "distraktor": [
+    {
+     "teks": "Beda seharusnya 5 sehingga $U_{20}=102$",
+     "alasan": "beda $11-7=4$ sudah benar; kesalahan ada pada faktor pengali $n$"
+    },
+    {
+     "teks": "Rumus seharusnya $a+(n+1)b$ sehingga $U_{20}=91$",
+     "alasan": "salah menukar $n-1$ menjadi $n+1$"
+    },
+    {
+     "teks": "Penyelesaian sudah benar sehingga $U_{20}=87$",
+     "alasan": "memakai $n$ sebagai pengali beda, padahal suku pertama belum memakai beda"
+    }
+   ],
+   "pembahasan": "Suku pertama sudah memuat $a$ tanpa beda, sehingga suku ke-20 menambahkan beda sebanyak 19 kali: $7+19\\times4=83$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-004",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 26,
+    "kutipan": "Terlebih dahulu suku ke-3 dan suku ke-6 dinyatakan dalam bentuk rumus umum seperti berikut."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "temukan kesalahan penyelesaian geometri",
+   "alasan_level": "mengevaluasi penyelesaian siswa pada barisan geometri dan menyusun koreksi yang benar",
+   "stimulus": null,
+   "pertanyaan": "Pada barisan geometri diketahui $U_2=12$ dan $U_5=96$. Seorang siswa menghitung rasio dengan $r=\\frac{96-12}{5-2}=28$. Koreksi yang benar terhadap penyelesaian tersebut adalah ....",
+   "jawaban_benar": "$r^3=\\frac{96}{12}=8$ sehingga $r=2$ dan $a=6$",
+   "alasan_benar": "$U_5=U_2\\cdot r^3$ sehingga $r^3=8$, $r=2$, dan $a=\\frac{U_2}{r}=6$",
+   "distraktor": [
+    {
+     "teks": "$r=\\frac{96}{12}=8$ dan $a=\\frac{12}{8}=\\frac{3}{2}$",
+     "alasan": "mengira $U_5:U_2=r$, padahal jaraknya tiga suku sehingga $r^3$"
+    },
+    {
+     "teks": "$r^3=\\frac{96}{12}=8$ sehingga $r=2$ dan $a=12$",
+     "alasan": "rasio benar, tetapi $a$ keliru karena $U_2$ dianggap suku pertama"
+    },
+    {
+     "teks": "$r^3=\\frac{12}{96}$ sehingga $r=\\frac{1}{2}$ dan $a=24$",
+     "alasan": "rasio terbalik (suku yang lebih kecil dibagi suku yang lebih besar)"
+    }
+   ],
+   "pembahasan": "Barisan geometri memakai perkalian, bukan selisih. $U_5=U_2 r^3\\Rightarrow r^3=8\\Rightarrow r=2$. Lalu $a=12/2=6$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-005",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 31,
+    "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut barisan geometri."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "syarat ganda barisan geometri",
+   "alasan_level": "menyelesaikan persamaan kuadrat dari syarat geometri lalu memilih akar yang memenuhi syarat suku positif",
+   "stimulus": null,
+   "pertanyaan": "Tiga bilangan $x$, $x+2$, dan $4x$ berturut-turut membentuk barisan geometri yang semua sukunya positif. Jumlah ketiga bilangan tersebut adalah ....",
+   "jawaban_benar": "14",
+   "alasan_benar": "$(x+2)^2=4x^2\\Rightarrow(3x+2)(x-2)=0$; suku positif menuntut $x=2$ sehingga bilangannya 2, 4, 8",
+   "distraktor": [
+    {
+     "teks": "$-2$",
+     "alasan": "memakai $x=-\\frac{2}{3}$ yang menghasilkan suku negatif"
+    },
+    {
+     "teks": "8",
+     "alasan": "hanya suku ketiga yang dijumlahkan"
+    },
+    {
+     "teks": "6",
+     "alasan": "hanya dua suku pertama yang dijumlahkan"
+    }
+   ],
+   "pembahasan": "Syarat geometri: $(x+2)^2=x\\cdot4x\\Rightarrow3x^2-4x-4=0\\Rightarrow x=2$ atau $x=-\\frac23$. Suku positif hanya untuk $x=2$: 2, 4, 8 dengan jumlah 14.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-006",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 23,
+    "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "syarat ganda barisan aritmetika",
+   "alasan_level": "memodelkan tiga suku aritmetika dengan dua syarat (jumlah dan hasil kali) lalu memilih berdasarkan syarat naik",
+   "stimulus": null,
+   "pertanyaan": "Tiga bilangan berturut-turut membentuk barisan aritmetika naik. Jumlah ketiga bilangan itu 21 dan hasil kalinya 280. Bilangan terkecil di antara ketiganya adalah ....",
+   "jawaban_benar": "4",
+   "alasan_benar": "suku tengah $=21:3=7$; $7(7-d)(7+d)=280\\Rightarrow d^2=9$; barisan naik sehingga $d=3$ dan suku terkecil $7-3=4$",
+   "distraktor": [
+    {
+     "teks": "10",
+     "alasan": "mengambil beda $-3$ sehingga yang diambil justru bilangan terbesar"
+    },
+    {
+     "teks": "7",
+     "alasan": "bilangan tengah dikira bilangan terkecil"
+    },
+    {
+     "teks": "3",
+     "alasan": "beda barisan dikira bilangan terkecil"
+    }
+   ],
+   "pembahasan": "Misalkan suku $7-d,7,7+d$ (jumlah 21). Hasil kali: $7(49-d^2)=280\\Rightarrow d^2=9$. Barisan naik: $d=3$, bilangannya 4, 7, 10.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-007",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 31,
+    "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut barisan geometri."
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 4,
+   "jenis_soal": "merancang rasio dengan syarat rentang",
+   "alasan_level": "merancang nilai rasio yang memenuhi syarat rentang suku, dengan membandingkan beberapa kandidat",
+   "stimulus": null,
+   "pertanyaan": "Sebuah barisan geometri bersuku pertama 2 dan rasio bilangan bulat positif. Agar suku ke-4 berada di antara 100 dan 200, rasio yang harus dipilih adalah ....",
+   "jawaban_benar": "4",
+   "alasan_benar": "$U_4=2r^3$; $r=4$ memberi 128, sedangkan $r=3$ memberi 54 dan $r=5$ memberi 250",
+   "distraktor": [
+    {
+     "teks": "3",
+     "alasan": "$U_4=54$, kurang dari 100"
+    },
+    {
+     "teks": "5",
+     "alasan": "$U_4=250$, melebihi 200"
+    },
+    {
+     "teks": "6",
+     "alasan": "$U_4=432$, jauh melebihi 200"
+    }
+   ],
+   "pembahasan": "$100<2r^3<200\\Rightarrow50<r^3<100\\Rightarrow r=4$ karena $4^3=64$, sedangkan $3^3=27$ dan $5^3=125$ di luar rentang.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-008",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 31,
+    "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut barisan geometri."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "perbandingan barisan aritmetika dan geometri",
+   "alasan_level": "membandingkan pertumbuhan dua barisan dan mencari titik pertama barisan geometri melampaui aritmetika",
+   "stimulus": null,
+   "pertanyaan": "Barisan aritmetika $3, 13, 23, \\ldots$ dan barisan geometri $3, 6, 12, \\ldots$ keduanya berawal dari 3. Mulai suku ke berapa, untuk pertama kalinya suku barisan geometri lebih besar daripada suku barisan aritmetika yang bernomor sama?",
+   "jawaban_benar": "suku ke-5",
+   "alasan_benar": "suku ke-4: $24<33$; suku ke-5: $48>43$",
+   "distraktor": [
+    {
+     "teks": "suku ke-4",
+     "alasan": "suku ke-4 geometri 24 masih kurang dari aritmetika 33"
+    },
+    {
+     "teks": "suku ke-3",
+     "alasan": "suku ke-3 geometri 12 kurang dari aritmetika 23"
+    },
+    {
+     "teks": "suku ke-6",
+     "alasan": "suku ke-5 sudah lebih besar; suku ke-6 bukan yang pertama"
+    }
+   ],
+   "pembahasan": "$U_n$ aritmetika $=10n-7$, geometri $=3\\cdot2^{n-1}$. Tabel: n=3: 12 vs 23; n=4: 24 vs 33; n=5: 48 vs 43. Pertama kali di n=5.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-009",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 35,
+    "kutipan": "Seorang siswa menyatakan bahwa pada barisan geometri, rasio yang lebih besar dari satu akan menyebabkan setiap suku bertambah besar,"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "evaluasi tanda suku rasio negatif",
+   "alasan_level": "mengevaluasi dugaan tanda suku dengan menghitung pangkat rasio negatif",
+   "stimulus": null,
+   "pertanyaan": "Pada barisan geometri dengan suku pertama $-3$ dan rasio $-2$, seorang siswa menduga suku ke-10 bernilai negatif karena suku pertamanya negatif. Pernyataan yang benar tentang suku ke-10 adalah ....",
+   "jawaban_benar": "dugaan itu salah; $U_{10}=1.536$ (positif)",
+   "alasan_benar": "$U_{10}=-3\\times(-2)^9=-3\\times(-512)=1.536$",
+   "distraktor": [
+    {
+     "teks": "dugaan itu benar; $U_{10}=-1.536$",
+     "alasan": "mengabaikan tanda pangkat ganjil dari rasio negatif"
+    },
+    {
+     "teks": "dugaan itu salah; $U_{10}=3.072$",
+     "alasan": "memakai pangkat 10 dan bukan 9 pada rasio"
+    },
+    {
+     "teks": "dugaan itu benar; $U_{10}=-3.072$",
+     "alasan": "memakai pangkat 10 dan tanda hanya dari suku pertama"
+    }
+   ],
+   "pembahasan": "$U_n=ar^{n-1}$ sehingga $U_{10}=-3(-2)^9$. Pangkat 9 ganjil membuat $(-2)^9=-512$, hasil kali menjadi positif 1.536.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-010",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 26,
+    "kutipan": "Terlebih dahulu suku ke-3 dan suku ke-6 dinyatakan dalam bentuk rumus umum seperti berikut."
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 4,
+   "jenis_soal": "merancang parameter beda dengan syarat",
+   "alasan_level": "merancang beda terbesar yang menjaga semua suku awal tetap bilangan asli dengan pertidaksamaan bulat",
+   "stimulus": null,
+   "pertanyaan": "Suatu barisan aritmetika memiliki suku ke-4 sama dengan 19. Semua suku dan beda barisan itu adalah bilangan bulat, dan suku pertamanya bilangan asli (bilangan bulat positif). Nilai beda terbesar yang mungkin adalah ....",
+   "jawaban_benar": "6",
+   "alasan_benar": "$a=19-3b>0\\Rightarrow b<\\frac{19}{3}$; beda bulat terbesar 6 dengan $a=1$",
+   "distraktor": [
+    {
+     "teks": "7",
+     "alasan": "$a=19-21=-2$, bukan bilangan asli"
+    },
+    {
+     "teks": "5",
+     "alasan": "memenuhi syarat tetapi bukan yang terbesar"
+    },
+    {
+     "teks": "3",
+     "alasan": "memakai $b=\\frac{19}{6}$ dibulatkan sehingga salah memilih"
+    }
+   ],
+   "pembahasan": "$U_4=a+3b=19\\Rightarrow a=19-3b\\ge1\\Rightarrow b\\le6$. Beda bulat terbesar 6 memberi $a=1$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-011",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 31,
+    "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut barisan geometri."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "menghitung banyak barisan yang mungkin",
+   "alasan_level": "menganalisis syarat keterbagian pada suku ke-3 untuk menghitung banyak barisan yang memenuhi",
+   "stimulus": null,
+   "pertanyaan": "Suatu barisan geometri memiliki suku ke-3 sama dengan 144. Suku pertama dan rasionya adalah bilangan bulat positif, dan rasionya lebih dari 1. Banyak barisan berbeda yang memenuhi adalah ....",
+   "jawaban_benar": "5",
+   "alasan_benar": "$ar^2=144$ sehingga $r^2$ harus pembagi 144; $r\\in\\{2,3,4,6,12\\}$",
+   "distraktor": [
+    {
+     "teks": "6",
+     "alasan": "ikut menghitung rasio 1 yang tidak memenuhi syarat $r>1$"
+    },
+    {
+     "teks": "4",
+     "alasan": "melewatkan rasio 12 (dengan suku pertama 1)"
+    },
+    {
+     "teks": "15",
+     "alasan": "menghitung semua pembagi positif 144 sebagai rasio"
+    }
+   ],
+   "pembahasan": "$ar^2=144$ dengan $a$ bulat berarti $r^2\\mid144$. Dengan $r>1$: $r=2,3,4,6,12$ ($a=36,16,9,4,1$). Ada 5 barisan.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-012",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 31,
+    "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut barisan geometri."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "operasi yang mempertahankan sifat geometri",
+   "alasan_level": "mengevaluasi operasi mana yang selalu menjaga rasio tetap dengan menguji contoh penyangkal pada setiap opsi",
+   "stimulus": null,
+   "pertanyaan": "Setiap suku suatu barisan geometri diubah dengan satu operasi. Operasi yang pasti menghasilkan barisan geometri lagi, untuk sembarang barisan geometri awal, adalah ....",
+   "jawaban_benar": "setiap suku dikalikan $-3$",
+   "alasan_benar": "rasio barisan baru tetap sama karena faktor $-3$ terhapus saat pembagian dua suku berurutan",
+   "distraktor": [
+    {
+     "teks": "setiap suku ditambah 4",
+     "alasan": "contoh $1,2,4$ menjadi $5,6,8$ dengan rasio $\\frac65\\ne\\frac86$"
+    },
+    {
+     "teks": "setiap suku ditambah nomor sukunya",
+     "alasan": "contoh $1,2,4$ menjadi $2,4,7$ dengan rasio $2\\ne\\frac74$"
+    },
+    {
+     "teks": "setiap suku dikurangi 7",
+     "alasan": "contoh $1,2,4$ menjadi $-6,-5,-3$ dengan rasio $\\frac56\\ne\\frac35$"
+    }
+   ],
+   "pembahasan": "Jika $\\frac{U_{n+1}}{U_n}=r$ maka $\\frac{kU_{n+1}}{kU_n}=r$. Penambahan atau pengurangan konstanta merusak kesamaan rasio, terbukti dari contoh $1,2,4$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-013",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 26,
+    "kutipan": "Terlebih dahulu suku ke-3 dan suku ke-6 dinyatakan dalam bentuk rumus umum seperti berikut."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "sifat jumlah indeks sama pada aritmetika",
+   "alasan_level": "mengevaluasi klaim bahwa nilai tidak dapat ditentukan, dengan menunjukkan sifat jumlah indeks yang sama",
+   "stimulus": null,
+   "pertanyaan": "Pada barisan aritmetika diketahui $U_4+U_{11}=58$. Seorang siswa berpendapat nilai $U_6+U_9$ tidak dapat ditentukan karena suku pertama dan beda tidak diketahui. Pernyataan yang benar adalah ....",
+   "jawaban_benar": "$U_6+U_9=58$, sebab $4+11=6+9$ sehingga $U_4+U_{11}=2a+13b=U_6+U_9$",
+   "alasan_benar": "$U_4+U_{11}=(a+3b)+(a+10b)=2a+13b$ dan $U_6+U_9=(a+5b)+(a+8b)=2a+13b$",
+   "distraktor": [
+    {
+     "teks": "$U_6+U_9$ tidak dapat ditentukan karena $a$ dan $b$ tidak diketahui",
+     "alasan": "tidak melihat bahwa kedua jumlah sama-sama berbentuk $2a+13b$"
+    },
+    {
+     "teks": "$U_6+U_9=29$ karena setiap suku bernilai separuh dari 58",
+     "alasan": "membagi dua tanpa dasar; jumlah dua suku tidak dibagi dua"
+    },
+    {
+     "teks": "$U_6+U_9=116$ karena suku bernomor lebih besar bernilai dua kali lipat",
+     "alasan": "mengira jumlah suku lebih belakang berlipat dua"
+    }
+   ],
+   "pembahasan": "Dua jumlah suku dengan jumlah nomor yang sama bernilai sama: $4+11=15=6+9$. Jadi $U_6+U_9=58$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-014",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 31,
+    "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut barisan geometri."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "sifat suku tengah pada geometri",
+   "alasan_level": "menggunakan sifat hasil kali suku berjarak sama dan memilih akar sesuai syarat positif",
+   "stimulus": null,
+   "pertanyaan": "Pada barisan geometri bersuku positif diketahui $U_2\\times U_8=144$. Nilai $U_5$ adalah ....",
+   "jawaban_benar": "12",
+   "alasan_benar": "$U_2U_8=ar\\cdot ar^7=a^2r^8=(ar^4)^2=U_5^2$ sehingga $U_5=12$",
+   "distraktor": [
+    {
+     "teks": "72",
+     "alasan": "membagi 144 dengan 2 lalu salah menyederhanakan menjadi 72"
+    },
+    {
+     "teks": "144",
+     "alasan": "mengira $U_5$ sama dengan hasil kali yang diberikan"
+    },
+    {
+     "teks": "$-12$",
+     "alasan": "mengambil akar negatif padahal semua suku positif"
+    }
+   ],
+   "pembahasan": "$U_2U_8=a^2r^8=(ar^4)^2=U_5^2=144$. Suku positif sehingga $U_5=12$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-015",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 30,
+    "kutipan": "Pola ketinggian pantulan ini membentuk sebuah urutan di mana setiap suku adalah setengah dari suku sebelumnya."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "perbandingan dua tawaran kerja",
+   "alasan_level": "membandingkan model aritmetika dan geometri pada konteks nyata untuk menemukan titik pertama yang menguntungkan",
+   "stimulus": null,
+   "pertanyaan": "Dua perusahaan menawarkan gaji. Perusahaan P: gaji tahun pertama Rp4.000.000,00 per bulan dan naik Rp300.000,00 setiap tahun. Perusahaan Q: gaji tahun pertama Rp3.000.000,00 per bulan dan naik 10% dari gaji tahun sebelumnya setiap tahun. Pada tahun ke berapa gaji Q untuk pertama kalinya lebih besar daripada gaji P?",
+   "jawaban_benar": "tahun ke-9",
+   "alasan_benar": "tahun ke-8: Q $\\approx5.846.000<6.100.000$; tahun ke-9: Q $\\approx6.431.000>6.400.000$",
+   "distraktor": [
+    {
+     "teks": "tahun ke-8",
+     "alasan": "pada tahun ke-8 gaji Q sekitar 5.846.000 masih di bawah gaji P 6.100.000"
+    },
+    {
+     "teks": "tahun ke-10",
+     "alasan": "tahun ke-9 sudah lebih besar sehingga tahun ke-10 bukan yang pertama"
+    },
+    {
+     "teks": "tahun ke-7",
+     "alasan": "pada tahun ke-7 gaji Q sekitar 5.315.000 jauh di bawah gaji P 5.800.000"
+    }
+   ],
+   "pembahasan": "P: $4.000.000+(n-1)300.000$. Q: $3.000.000\\times1,1^{n-1}$. Untuk n=8 Q 5.846.153 < P 6.100.000; n=9 Q 6.430.769 > P 6.400.000.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-016",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 30,
+    "kutipan": "Pola ketinggian pantulan ini membentuk sebuah urutan di mana setiap suku adalah setengah dari suku sebelumnya."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "ambang suku pada barisan geometri menurun",
+   "alasan_level": "mencari suku pertama yang melewati ambang pada barisan geometri menurun dengan memeriksa suku di sekitar batas",
+   "stimulus": null,
+   "pertanyaan": "Sebuah bola dijatuhkan dari ketinggian 5 m. Setiap kali memantul, bola mencapai $\\frac{3}{5}$ dari ketinggian pantulan sebelumnya (pantulan pertama mencapai $\\frac{3}{5}$ dari 5 m). Pantulan ke berapa yang untuk pertama kalinya mencapai ketinggian kurang dari 1 m?",
+   "jawaban_benar": "pantulan ke-4",
+   "alasan_benar": "pantulan ke-3: $5\\times\\frac{27}{125}=1,08$ m (belum); pantulan ke-4: $0,648$ m",
+   "distraktor": [
+    {
+     "teks": "pantulan ke-3",
+     "alasan": "tinggi pantulan ke-3 adalah 1,08 m, masih lebih dari 1 m"
+    },
+    {
+     "teks": "pantulan ke-5",
+     "alasan": "pantulan ke-4 sudah kurang dari 1 m"
+    },
+    {
+     "teks": "pantulan ke-2",
+     "alasan": "pantulan ke-2 adalah 1,8 m"
+    }
+   ],
+   "pembahasan": "Tinggi pantulan ke-$k$ adalah $5(\\frac35)^k$: 3; 1,8; 1,08; 0,648. Pertama kali di bawah 1 m pada pantulan ke-4.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-017",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 23,
+    "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "suku bersama dua barisan aritmetika",
+   "alasan_level": "menganalisis irisan dua barisan aritmetika dengan menemukan pola jarak antar suku bersama (KPK beda)",
+   "stimulus": null,
+   "pertanyaan": "Diberikan dua barisan aritmetika: $5, 9, 13, 17, \\ldots$ dan $3, 10, 17, 24, \\ldots$. Bilangan ketiga yang muncul pada kedua barisan (terurut dari yang terkecil) adalah ....",
+   "jawaban_benar": "73",
+   "alasan_benar": "bilangan bersama 17, 45, 73, ... dengan jarak $\\text{KPK}(4,7)=28$",
+   "distraktor": [
+    {
+     "teks": "45",
+     "alasan": "bilangan bersama kedua, bukan yang ketiga"
+    },
+    {
+     "teks": "101",
+     "alasan": "bilangan bersama keempat"
+    },
+    {
+     "teks": "84",
+     "alasan": "mengalikan KPK 28 dengan 3 tanpa menambahkan bilangan bersama pertama (17)"
+    }
+   ],
+   "pembahasan": "Bilangan bersama pertama 17, selanjutnya bertambah KPK dari beda 4 dan 7, yaitu 28: 17, 45, 73.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-018",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 23,
+    "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "evaluasi klaim barisan aritmetika",
+   "alasan_level": "mengevaluasi klaim bahwa pola naik terus adalah aritmetika, dengan memeriksa tetap tidaknya beda dan memprediksi suku berikutnya",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menyatakan bahwa barisan $3, 8, 15, 24, \\ldots$ adalah barisan aritmetika karena suku-sukunya terus bertambah. Tanggapan yang tepat adalah ....",
+   "jawaban_benar": "Pernyataan salah karena selisihnya 5, 7, 9 tidak tetap; bila selisih bertambah 2 setiap kali, suku berikutnya 35",
+   "alasan_benar": "selisih berurutan $5,7,9$ tidak tetap; selisih berikutnya 11 sehingga suku berikutnya $24+11=35$",
+   "distraktor": [
+    {
+     "teks": "Pernyataan benar karena setiap suku lebih besar dari suku sebelumnya, beda 5",
+     "alasan": "naik terus bukan syarat aritmetika; beda harus tetap"
+    },
+    {
+     "teks": "Pernyataan salah karena selisihnya tidak tetap; suku berikutnya 33",
+     "alasan": "selisih berikutnya dikira 9 lagi sehingga $24+9=33$"
+    },
+    {
+     "teks": "Pernyataan salah karena selisihnya tidak tetap; suku berikutnya 34",
+     "alasan": "selisih berikutnya dikira 10 sehingga $24+10=34$"
+    }
+   ],
+   "pembahasan": "Beda barisan aritmetika harus tetap. Selisihnya 5, 7, 9 (naik 2 tiap langkah), selisih berikutnya 11, sehingga suku berikutnya 35.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-019",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 31,
+    "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut barisan geometri."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "sisipan pada barisan geometri",
+   "alasan_level": "menafsirkan sisipan tiga bilangan sebagai barisan geometri lima suku dan menjaga syarat rasio positif",
+   "stimulus": null,
+   "pertanyaan": "Di antara bilangan 5 dan 80 disisipkan tiga bilangan positif sehingga kelima bilangan itu membentuk barisan geometri. Jumlah ketiga bilangan yang disisipkan adalah ....",
+   "jawaban_benar": "70",
+   "alasan_benar": "$80=5r^4\\Rightarrow r=2$ (positif) sehingga sisipannya 10, 20, 40",
+   "distraktor": [
+    {
+     "teks": "$-30$",
+     "alasan": "memakai rasio $-2$ padahal sisipannya harus positif"
+    },
+    {
+     "teks": "155",
+     "alasan": "menjumlahkan kelima suku termasuk 5 dan 80"
+    },
+    {
+     "teks": "127,5",
+     "alasan": "menganggap kelima bilangan membentuk barisan aritmetika"
+    }
+   ],
+   "pembahasan": "Lima suku: $U_5=ar^4$, $80=5r^4$, $r=2$. Sisipan 10, 20, 40, jumlah 70.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-a-hard-bt01-020",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 35,
+    "kutipan": "Seorang siswa menyatakan bahwa pada barisan geometri, rasio yang lebih besar dari satu akan menyebabkan setiap suku bertambah besar,"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "evaluasi barisan geometri rasio negatif",
+   "alasan_level": "mengevaluasi sifat monoton barisan geometri dengan rasio negatif yang nilai mutlaknya kurang dari satu",
+   "stimulus": null,
+   "pertanyaan": "Barisan geometri memiliki suku pertama 16 dan rasio $-\\frac{1}{2}$. Pernyataan yang benar tentang barisan tersebut adalah ....",
+   "jawaban_benar": "nilai mutlak suku makin kecil, tetapi barisan tidak selalu menurun karena $U_5>U_4$",
+   "alasan_benar": "suku-sukunya $16,-8,4,-2,1,-\\frac12$; $U_4=-2<U_5=1$",
+   "distraktor": [
+    {
+     "teks": "semua suku makin kecil karena rasionya kurang dari 1",
+     "alasan": "mengabaikan tanda rasio negatif yang membuat suku berselang-seling"
+    },
+    {
+     "teks": "semua suku bernilai positif karena suku pertamanya positif",
+     "alasan": "suku genap bernilai negatif akibat rasio negatif"
+    },
+    {
+     "teks": "barisan naik terus karena rasionya negatif",
+     "alasan": "suku ke-3 ($4$) lebih besar daripada suku ke-4 ($-2$), jadi tidak naik terus"
+    }
+   ],
+   "pembahasan": "Tanda suku berganti-ganti, sedangkan nilai mutlaknya mengecil: $16,-8,4,-2,1$. Karena $-2<1$ maka $U_5>U_4$ sehingga barisan tidak monoton.",
+   "catatan": null
+  }
+ ]
+}

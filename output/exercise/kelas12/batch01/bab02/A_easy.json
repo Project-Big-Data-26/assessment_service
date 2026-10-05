@@ -1,0 +1,474 @@
+{
+  "book": "kelas12",
+  "bab_no": 2,
+  "subbab": "A",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab A Bab 2 (Suku Bunga Tunggal) hanya 3 halaman (p55-p57): dua pengertian, rumus B = M x p% x n, Masalah A dan Masalah B, tanpa Latihan bernomor. Acuan hanya 2 soal (pretest Masalah A/B, maks 4 variasi), sehingga porsi variasi easy 60% tidak tercapai; konsep sama dengan Bab 1 subbab C, jadi lebih dari 14 soal akan nyaris kembar dengan soal-soal Bab 1 C atau sesamanya.",
+  "soal": [
+    {
+      "id": "kelas12-b02-a-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0056-masalah-a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "modal akhir bunga tunggal tahunan",
+      "alasan_level": "satu hitung bunga B = M x p% x n lalu ditambah ke modal awal",
+      "stimulus": null,
+      "pertanyaan": "Bu Lastri menyimpan sejumlah uang di koperasi simpan pinjam sebesar Rp26.400.000,00 dengan bunga tunggal 2% per tahun. Berapa jumlah simpanan Bu Lastri setelah 4 tahun?",
+      "jawaban_benar": "Rp28.512.000,00",
+      "alasan_benar": "B = 26.400.000 x 2% x 4 = 2.112.000, sehingga modal akhir = 26.400.000 + 2.112.000 = 28.512.000",
+      "distraktor": [
+        {
+          "teks": "Rp2.112.000,00",
+          "alasan": "hanya menjawab besar bunga, lupa menjumlahkan dengan modal awal"
+        },
+        {
+          "teks": "Rp47.520.000,00",
+          "alasan": "bunga 2% dikira 20%"
+        },
+        {
+          "teks": "Rp26.611.200,00",
+          "alasan": "nilai tempat bunga salah (211.200 bukan 2.112.000)"
+        }
+      ],
+      "pembahasan": "B = M x p% x n = 26.400.000 x 2% x 4 = 2.112.000. Makhir = Mawal + B = 28.512.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0056-masalah-a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "modal akhir bunga tunggal tahunan",
+      "alasan_level": "satu hitung bunga B = M x p% x n lalu ditambah ke modal awal",
+      "stimulus": null,
+      "pertanyaan": "Pak Dedi adalah anggota koperasi simpan pinjam. Ia menyimpan Rp42.500.000,00 di koperasi dengan bunga tunggal 4% per tahun. Berapa jumlah simpanan Pak Dedi setelah 3 tahun?",
+      "jawaban_benar": "Rp47.600.000,00",
+      "alasan_benar": "B = 42.500.000 x 4% x 3 = 5.100.000, sehingga modal akhir = 47.600.000",
+      "distraktor": [
+        {
+          "teks": "Rp5.100.000,00",
+          "alasan": "lupa menjumlahkan bunga dengan modal awal"
+        },
+        {
+          "teks": "Rp43.010.000,00",
+          "alasan": "salah nilai tempat: bunga ditulis 510.000"
+        },
+        {
+          "teks": "Rp47.806.720,00",
+          "alasan": "memakai bunga majemuk $M(1+p)^n$ padahal bunga tunggal"
+        }
+      ],
+      "pembahasan": "B = 42.500.000 x 4% x 3 = 5.100.000. Makhir = 42.500.000 + 5.100.000 = 47.600.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0056-masalah-b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga bulan dari persen tahunan",
+      "alasan_level": "ubah persen tahunan ke bulanan lalu hitung bunga dan jumlahkan ke modal",
+      "stimulus": null,
+      "pertanyaan": "Ibu Wati anggota koperasi \"Sinar Mandiri\". Ia menyimpan modal awal Rp2.400.000,00 dan koperasi memberi bunga tunggal 15% per tahun. Ibu Wati menyimpan uangnya selama 10 bulan. Total simpanan Ibu Wati setelah 10 bulan adalah ....",
+      "jawaban_benar": "Rp2.700.000,00",
+      "alasan_benar": "p = 15%/12 = 1,25% per bulan; B = 2.400.000 x 1,25% x 10 = 300.000; total = 2.700.000",
+      "distraktor": [
+        {
+          "teks": "Rp300.000,00",
+          "alasan": "hanya bunga, lupa menjumlahkan modal awal"
+        },
+        {
+          "teks": "Rp2.760.000,00",
+          "alasan": "membagi 15% dengan 10 (lama bulan) bukan dengan 12"
+        },
+        {
+          "teks": "Rp6.000.000,00",
+          "alasan": "tidak mengubah 15% per tahun ke per bulan; n=10 langsung"
+        }
+      ],
+      "pembahasan": "p per bulan = 15/12 = 1,25%. B = 2.400.000 x 1,25% x 10 = 300.000. Makhir = 2.700.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0056-masalah-b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga bulan dari persen tahunan",
+      "alasan_level": "ubah persen tahunan ke bulanan, satu hitung bunga",
+      "stimulus": null,
+      "pertanyaan": "Pak Hadi menyimpan modal awal Rp4.000.000,00 di koperasi karyawan yang memberi bunga tunggal 9% per tahun untuk simpanan anggota. Pak Hadi menyimpan modalnya selama 7 bulan. Besar bunga yang diterima Pak Hadi adalah ....",
+      "jawaban_benar": "Rp210.000,00",
+      "alasan_benar": "p = 9%/12 = 0,75% per bulan; B = 4.000.000 x 0,75% x 7 = 210.000",
+      "distraktor": [
+        {
+          "teks": "Rp2.520.000,00",
+          "alasan": "memakai n = 7 pada persen tahunan tanpa konversi"
+        },
+        {
+          "teks": "Rp4.210.000,00",
+          "alasan": "menjawab total simpanan, bukan besar bunga"
+        },
+        {
+          "teks": "Rp21.000,00",
+          "alasan": "salah nilai tempat persen per bulan"
+        }
+      ],
+      "pembahasan": "Persen per bulan 9/12 = 0,75%. B = 4.000.000 x 0,75% x 7 = 210.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Bunga tunggal merupakan imbalan yang diberikan oleh koperasi kepada nasabah dalam periode tertentu secara tunggal."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "pengertian bunga tunggal",
+      "alasan_level": "mengenali sifat bunga tunggal dari definisi",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan perhitungan bunga di koperasi simpan pinjam. Pernyataan yang benar tentang bunga tunggal adalah ....",
+      "jawaban_benar": "Bunga tiap periode dihitung dari modal awal sehingga besarnya sama setiap periode",
+      "alasan_benar": "bunga tunggal tidak dihitung dari modal yang sudah ditambah bunga sebelumnya",
+      "distraktor": [
+        {
+          "teks": "Bunga tiap periode dihitung dari saldo yang sudah ditambah bunga periode sebelumnya",
+          "alasan": "mencampur dengan sifat bunga majemuk"
+        },
+        {
+          "teks": "Bunga tiap periode makin besar karena modal terus bertambah",
+          "alasan": "mengira modal dasar bunga ikut naik tiap periode"
+        },
+        {
+          "teks": "Bunga hanya dibayarkan sekali pada akhir seluruh periode dengan persentase yang berubah-ubah",
+          "alasan": "persentase bunga tunggal tetap, bukan berubah-ubah"
+        }
+      ],
+      "pembahasan": "Pada bunga tunggal bunga dihitung dari modal awal saja, sehingga bunga tiap periode sama besar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Suku bunga dapat diartikan sebagai balas jasa yang diberikan nasabah kepada bank atas peminjaman uang dari bank atau balas jasa yang diberikan pihak bank kepada nasabah atas penyimpanan uang di bank."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "pengertian suku bunga",
+      "alasan_level": "mengingat definisi suku bunga",
+      "stimulus": null,
+      "pertanyaan": "Suku bunga dapat diartikan sebagai ....",
+      "jawaban_benar": "balas jasa atas peminjaman uang dari bank atau atas penyimpanan uang di bank",
+      "alasan_benar": "definisi suku bunga pada Buku Siswa",
+      "distraktor": [
+        {
+          "teks": "selisih nilai tukar dua mata uang yang berbeda",
+          "alasan": "tertukar dengan konsep kurs"
+        },
+        {
+          "teks": "jumlah uang pertama yang disetor nasabah saat membuka rekening",
+          "alasan": "tertukar dengan modal awal/setoran awal"
+        },
+        {
+          "teks": "kenaikan harga barang dan jasa secara umum dalam waktu tertentu",
+          "alasan": "tertukar dengan inflasi"
+        }
+      ],
+      "pembahasan": "Suku bunga adalah balas jasa atas peminjaman atau penyimpanan uang di bank.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Lengkapilah langkah-langkah perhitungan bunga tunggal sesuai rumus"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "menghitung bunga dengan rumus (persen per bulan)",
+      "alasan_level": "satu penerapan rumus B = M x p% x n dengan persen sudah per bulan",
+      "stimulus": null,
+      "pertanyaan": "Suatu koperasi memberi bunga tunggal 0,8% per bulan. Jika Rina menyimpan Rp7.500.000,00 selama 6 bulan, besar bunga yang diterima Rina adalah ....",
+      "jawaban_benar": "Rp360.000,00",
+      "alasan_benar": "B = 7.500.000 x 0,8% x 6 = 360.000",
+      "distraktor": [
+        {
+          "teks": "Rp7.860.000,00",
+          "alasan": "menjawab total simpanan, bukan bunga"
+        },
+        {
+          "teks": "Rp3.600.000,00",
+          "alasan": "0,8% ditulis 8%"
+        },
+        {
+          "teks": "Rp36.000,00",
+          "alasan": "salah nilai tempat"
+        }
+      ],
+      "pembahasan": "B = M x p% x n = 7.500.000 x 0,8% x 6 = 360.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 56,
+        "kutipan": "Hitunglah jumlah bunga (B) yang diperoleh dan modal akhir"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "modal akhir = modal awal + bunga",
+      "alasan_level": "satu penjumlahan modal awal dan bunga",
+      "stimulus": null,
+      "pertanyaan": "Anita menyimpan modal awal Rp25.000.000,00 di koperasi dan memperoleh bunga tunggal Rp1.250.000,00 setelah beberapa waktu. Modal akhir Anita adalah ....",
+      "jawaban_benar": "Rp26.250.000,00",
+      "alasan_benar": "Makhir = Mawal + B = 25.000.000 + 1.250.000",
+      "distraktor": [
+        {
+          "teks": "Rp1.250.000,00",
+          "alasan": "menjawab bunganya saja"
+        },
+        {
+          "teks": "Rp23.750.000,00",
+          "alasan": "bunga dikurangkan dari modal"
+        },
+        {
+          "teks": "Rp25.125.000,00",
+          "alasan": "nilai tempat bunga salah (125.000)"
+        }
+      ],
+      "pembahasan": "Modal akhir = modal awal + bunga = 25.000.000 + 1.250.000 = 26.250.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Pak Bayu menyimpan modalnya selama 8 bulan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "konversi persen tahunan ke bulanan",
+      "alasan_level": "satu pembagian 12 untuk mengubah persen per tahun menjadi per bulan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koperasi memberi bunga tunggal 21% per tahun. Persentase bunga tunggal per bulan dari koperasi tersebut adalah ....",
+      "jawaban_benar": "1,75%",
+      "alasan_benar": "21% : 12 bulan = 1,75% per bulan",
+      "distraktor": [
+        {
+          "teks": "252%",
+          "alasan": "mengalikan 21 dengan 12 bukan membagi"
+        },
+        {
+          "teks": "2,1%",
+          "alasan": "membagi 21 dengan 10"
+        },
+        {
+          "teks": "0,175%",
+          "alasan": "salah nilai tempat hasil bagi"
+        }
+      ],
+      "pembahasan": "Dalam setahun ada 12 bulan sehingga persen per bulan = 21% : 12 = 1,75%.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Pak Bayu menyimpan modalnya selama 8 bulan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga bulan dari persen tahunan",
+      "alasan_level": "ubah persen tahunan ke bulanan lalu satu hitung bunga",
+      "stimulus": null,
+      "pertanyaan": "Tuti menyimpan Rp6.000.000,00 di koperasi yang memberi bunga tunggal 12% per tahun. Setelah 9 bulan, bunga yang diterima Tuti adalah ....",
+      "jawaban_benar": "Rp540.000,00",
+      "alasan_benar": "p = 12%/12 = 1% per bulan; B = 6.000.000 x 1% x 9 = 540.000",
+      "distraktor": [
+        {
+          "teks": "Rp6.480.000,00",
+          "alasan": "memakai n = 9 pada persen tahunan tanpa konversi"
+        },
+        {
+          "teks": "Rp54.000,00",
+          "alasan": "salah nilai tempat"
+        },
+        {
+          "teks": "Rp6.540.000,00",
+          "alasan": "menjawab total simpanan, bukan bunga"
+        }
+      ],
+      "pembahasan": "Persen per bulan 12/12 = 1%. B = 6.000.000 x 1% x 9 = 540.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Tentukan bersama-sama data yang diketahui dari masing-masing soal, seperti modal awal, persentase bunga, dan lama waktu penyimpanan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mencari persentase bunga per bulan",
+      "alasan_level": "membalik rumus B = M x p% x n untuk mencari p",
+      "stimulus": null,
+      "pertanyaan": "Pak Joko menyimpan Rp5.000.000,00 di koperasi dengan bunga tunggal. Setelah 8 bulan ia menerima bunga Rp200.000,00. Persentase bunga tunggal koperasi tersebut per bulan adalah ....",
+      "jawaban_benar": "0,5%",
+      "alasan_benar": "p = B : (M x n) = 200.000 : (5.000.000 x 8) = 0,005 = 0,5% per bulan",
+      "distraktor": [
+        {
+          "teks": "4%",
+          "alasan": "lupa membagi dengan lama menyimpan (200.000 : 5.000.000)"
+        },
+        {
+          "teks": "5%",
+          "alasan": "salah nilai tempat"
+        },
+        {
+          "teks": "0,05%",
+          "alasan": "salah nilai tempat ke arah lain"
+        }
+      ],
+      "pembahasan": "B = M x p% x n sehingga p% = 200.000 : (5.000.000 x 8) = 0,005 = 0,5% per bulan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Tentukan bersama-sama data yang diketahui dari masing-masing soal, seperti modal awal, persentase bunga, dan lama waktu penyimpanan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mencari lama menyimpan",
+      "alasan_level": "membalik rumus B = M x p% x n untuk mencari n",
+      "stimulus": null,
+      "pertanyaan": "Bu Mira menyimpan Rp6.000.000,00 di koperasi dengan bunga tunggal 1,5% per tahun. Bunga yang ia terima seluruhnya Rp450.000,00. Lama Bu Mira menyimpan uangnya adalah ... tahun.",
+      "jawaban_benar": "5",
+      "alasan_benar": "n = B : (M x p%) = 450.000 : (6.000.000 x 1,5%) = 450.000 : 90.000 = 5",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "memakai p = 2,5% sehingga 450.000 : 150.000"
+        },
+        {
+          "teks": "15",
+          "alasan": "memakai p = 0,5% sehingga 450.000 : 30.000"
+        },
+        {
+          "teks": "50",
+          "alasan": "salah nilai tempat persen (0,15%)"
+        }
+      ],
+      "pembahasan": "n = 450.000 : 90.000 = 5 tahun.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "besar bunga dan modal akhir bertambah secara linear sesuai lama waktu penyimpanan, karena bunga tunggal tidak dihitung dari modal yang sudah ditambahkan bunga sebelumnya"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "bunga bertambah linear terhadap waktu",
+      "alasan_level": "memakai sifat linear: bunga sebanding dengan lama menyimpan",
+      "stimulus": null,
+      "pertanyaan": "Pada suatu simpanan berbunga tunggal, bunga yang diperoleh setelah 3 tahun adalah Rp360.000,00. Bunga yang diperoleh setelah 9 tahun dari simpanan yang sama adalah ....",
+      "jawaban_benar": "Rp1.080.000,00",
+      "alasan_benar": "bunga sebanding dengan lama simpan: 9 tahun = 3 x 3 tahun, sehingga 3 x 360.000",
+      "distraktor": [
+        {
+          "teks": "Rp3.240.000,00",
+          "alasan": "mengalikan 360.000 dengan 9 (lama tahun), bukan dengan perbandingan 9 : 3"
+        },
+        {
+          "teks": "Rp720.000,00",
+          "alasan": "menambahkan satu kali 360.000 saja, mengira 6 tahun"
+        },
+        {
+          "teks": "Rp360.000,00",
+          "alasan": "mengira bunga tetap sama berapa pun lama menyimpan"
+        }
+      ],
+      "pembahasan": "Bunga tunggal bertambah linear terhadap waktu. 9 tahun adalah 3 kali 3 tahun, sehingga bunga = 3 x 360.000 = 1.080.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Tentukan bersama-sama data yang diketahui dari masing-masing soal, seperti modal awal, persentase bunga, dan lama waktu penyimpanan."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mencari modal awal",
+      "alasan_level": "membalik rumus B = M x p% x n untuk mencari M",
+      "stimulus": null,
+      "pertanyaan": "Koperasi memberi bunga tunggal 8% per tahun. Setelah menyimpan selama 3 tahun, Pak Eko menerima bunga Rp1.200.000,00. Modal awal yang disimpan Pak Eko adalah ....",
+      "jawaban_benar": "Rp5.000.000,00",
+      "alasan_benar": "M = B : (p% x n) = 1.200.000 : (8% x 3) = 1.200.000 : 0,24",
+      "distraktor": [
+        {
+          "teks": "Rp288.000,00",
+          "alasan": "mengalikan 1.200.000 dengan 0,24 bukan membagi"
+        },
+        {
+          "teks": "Rp400.000,00",
+          "alasan": "hanya membagi bunga dengan lama menyimpan"
+        },
+        {
+          "teks": "Rp50.000.000,00",
+          "alasan": "salah nilai tempat persen (0,024)"
+        }
+      ],
+      "pembahasan": "M = 1.200.000 : (0,08 x 3) = 1.200.000 : 0,24 = 5.000.000.",
+      "catatan": null
+    }
+  ]
+}

@@ -1,0 +1,441 @@
+{
+ "book": "kelas12",
+ "bab_no": 1,
+ "subbab": "C",
+ "level": "hard",
+ "batch": 1,
+ "skill_versi": "v1",
+ "kapasitas_kurang": true,
+ "alasan_kapasitas": "Subbab C (Bunga Tunggal) hanya p48-p50 Buku Siswa: satu eksplorasi (Tabel 1.5), rumus B = M x p% x n, dan Contoh 1.9, tanpa Latihan bernomor. Penalaran hard yang layak (evaluasi klaim, temukan kesalahan, contoh penyangkal, rancang modal/lama, perbandingan skema bunga dan cicilan, parameter dua simpanan) sudah terpakai dalam 13 soal; semua acuan variasi sudah habis di easy/medium sehingga seluruh soal orisinal. Tambahan akan nyaris kembar atau keluar materi (bunga majemuk, bukan bagian subbab).",
+ "soal": [
+  {
+   "id": "kelas12-b01-c-hard-bt01-001",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "bunga tetap sebesar 5% setiap tahun dari saldo awal."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "evaluasi pernyataan tentang tabungan",
+   "alasan_level": "menilai empat pernyataan: bunga tetap tiap tahun, saldo tahun ke-10, dan kapan saldo dua kali modal",
+   "stimulus": null,
+   "pertanyaan": "Dewi menabung Rp4.000.000,00 dengan bunga tunggal 5% per tahun dari saldo awal. Bunga ditambahkan ke saldo setiap akhir tahun dan uang tidak pernah diambil. Pernyataan yang benar tentang tabungan Dewi adalah ....",
+   "jawaban_benar": "Saldo menjadi tepat dua kali modal pada akhir tahun ke-20.",
+   "alasan_benar": "bunga tiap tahun tetap 200.000; saldo = 4.000.000 + 200.000n = 8.000.000 saat n = 20",
+   "distraktor": [
+    {
+     "teks": "Bunga yang diterima pada tahun ke-10 sepuluh kali bunga tahun pertama.",
+     "alasan": "mengira bunga bertambah tiap tahun, padahal bunga tunggal tetap Rp200.000"
+    },
+    {
+     "teks": "Saldo akhir tahun ke-10 adalah Rp8.000.000,00.",
+     "alasan": "memakai 10% per tahun sehingga bunga 10 tahun dianggap 4.000.000"
+    },
+    {
+     "teks": "Saldo menjadi dua kali modal pada akhir tahun ke-10.",
+     "alasan": "mengira 5% x 10 tahun sudah 100% dari modal"
+    }
+   ],
+   "pembahasan": "Bunga per tahun $= 4.000.000 \\times 0,05 = 200.000$ dan tetap. Saldo akhir tahun ke-$n$ $= 4.000.000 + 200.000n$. Tahun ke-10: 6.000.000 (bukan 8.000.000). Saldo 8.000.000 tercapai saat $n = 20$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-002",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "temukan kesalahan satuan waktu",
+   "alasan_level": "mengevaluasi penyelesaian siswa dan menemukan kesalahan pemakaian lama dalam bulan",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menghitung saldo tabungan Rp5.000.000,00 yang berbunga tunggal 6% per tahun setelah 9 bulan dengan cara berikut: $B = 5.000.000 \\times 0,06 \\times 9 = 2.700.000$, sehingga saldo akhir $= 5.000.000 + 2.700.000 = 7.700.000$. Kesalahan penyelesaian siswa tersebut adalah ....",
+   "jawaban_benar": "Lama 9 bulan tidak diubah ke tahun; seharusnya $n = \\frac{9}{12}$ sehingga bunganya Rp225.000,00.",
+   "alasan_benar": "persentase per tahun sehingga n harus dalam tahun: 9/12 = 0,75; B = 5.000.000 x 0,06 x 0,75 = 225.000",
+   "distraktor": [
+    {
+     "teks": "Persentase 6% seharusnya ditulis 0,6 sehingga bunganya Rp27.000.000,00.",
+     "alasan": "salah mengubah persen ke desimal"
+    },
+    {
+     "teks": "Modal awal tidak boleh ditambahkan ke bunga sehingga saldo akhirnya Rp2.700.000,00.",
+     "alasan": "mengira saldo hanya berisi bunga"
+    },
+    {
+     "teks": "Rumus yang benar adalah $B = M \\times p\\% : n$ sehingga bunganya Rp33.333,00.",
+     "alasan": "mengubah rumus bunga tunggal menjadi pembagian"
+    }
+   ],
+   "pembahasan": "$p\\%$ per tahun, sehingga $n$ harus dalam tahun: $n = \\frac{9}{12} = 0,75$. $B = 5.000.000 \\times 0,06 \\times 0,75 = 225.000$ dan saldo $= 5.225.000$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-003",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Barisan jenis apakah yang dibentuk oleh nilai uang yang disimpan dengan bunga tunggal?"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "evaluasi dua rumus suku ke-n",
+   "alasan_level": "membandingkan dua rumus yang tampak berbeda dan memutuskan keduanya setara",
+   "stimulus": null,
+   "pertanyaan": "Tabungan Rp5.000.000,00 berbunga tunggal 4% per tahun, dengan bunga ditambahkan ke saldo setiap akhir tahun. Nilai uang pada akhir tahun ke-$n$ dinyatakan Dani dengan $U_n = 5.200.000 + 200.000(n-1)$ dan dinyatakan Eka dengan $U_n = 5.000.000 + 200.000n$. Pernyataan yang benar tentang rumus Dani dan Eka adalah ....",
+   "jawaban_benar": "Keduanya benar karena menghasilkan nilai yang sama untuk setiap $n$.",
+   "alasan_benar": "5.200.000 + 200.000(n-1) = 5.000.000 + 200.000n; keduanya barisan aritmetika dengan U1 = 5.200.000 dan b = 200.000",
+   "distraktor": [
+    {
+     "teks": "Hanya rumus Dani yang benar karena suku pertama barisan harus 5.200.000.",
+     "alasan": "mengira rumus Eka menghasilkan suku pertama 5.000.000, padahal $U_1 = 5.200.000$"
+    },
+    {
+     "teks": "Hanya rumus Eka yang benar karena memakai modal awal 5.000.000.",
+     "alasan": "tidak melihat bahwa rumus Dani dapat disederhanakan menjadi rumus Eka"
+    },
+    {
+     "teks": "Keduanya salah karena nilai uang membentuk barisan geometri.",
+     "alasan": "mengira nilai uang bunga tunggal berpola rasio tetap"
+    }
+   ],
+   "pembahasan": "$U_1 = 5.000.000 + 200.000 = 5.200.000$ dan $b = 200.000$. Rumus Dani: $5.200.000 + 200.000n - 200.000 = 5.000.000 + 200.000n$, sama dengan rumus Eka.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-004",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Total nilai uang yang disimpan di bank dengan bunga tunggal akan membentuk deret"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "dampak perubahan parameter bunga",
+   "alasan_level": "menalar pengaruh tiga perubahan sekaligus pada rumus B = M x p% x n tanpa angka",
+   "stimulus": null,
+   "pertanyaan": "Pada bunga tunggal, besar bunga $B = M \\times p\\% \\times n$. Sebuah simpanan diubah: modal awal dijadikan 2 kali semula, persentase bunga per tahun dijadikan setengah dari semula, dan lama menyimpan dijadikan 3 kali semula. Bunga yang diperoleh menjadi ... bunga semula.",
+   "jawaban_benar": "3 kali",
+   "alasan_benar": "faktor perubahan 2 x 1/2 x 3 = 3",
+   "distraktor": [
+    {
+     "teks": "6 kali",
+     "alasan": "lupa bahwa persentase dijadikan setengah (2 x 3)"
+    },
+    {
+     "teks": "1 kali",
+     "alasan": "lupa memperhitungkan perubahan lama menyimpan (2 x 1/2)"
+    },
+    {
+     "teks": "5,5 kali",
+     "alasan": "menjumlahkan faktor perubahan (2 + 0,5 + 3)"
+    }
+   ],
+   "pembahasan": "Bunga baru $= (2M) \\times \\frac{p\\%}{2} \\times (3n) = 3 \\times (M \\times p\\% \\times n)$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-005",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "modal minimal bersyarat kelipatan",
+   "alasan_level": "merancang modal terkecil dari pertidaksamaan bunga dengan syarat kelipatan, jebakan pembulatan",
+   "stimulus": null,
+   "pertanyaan": "Bu Rina ingin memperoleh bunga tunggal paling sedikit Rp2.000.000,00 dari simpanan selama 3 tahun dengan bunga 6% per tahun. Modal yang disetor harus kelipatan Rp1.000.000,00. Modal terkecil yang memenuhi keinginan Bu Rina adalah ....",
+   "jawaban_benar": "Rp12.000.000,00",
+   "alasan_benar": "M x 0,06 x 3 >= 2.000.000 sehingga M >= 11.111.111,1; kelipatan terkecil 12.000.000 (bunga 2.160.000)",
+   "distraktor": [
+    {
+     "teks": "Rp11.000.000,00",
+     "alasan": "membulatkan ke bawah; bunganya hanya Rp1.980.000,00 sehingga kurang dari Rp2.000.000,00"
+    },
+    {
+     "teks": "Rp11.111.111,00",
+     "alasan": "tidak memenuhi syarat kelipatan Rp1.000.000,00"
+    },
+    {
+     "teks": "Rp34.000.000,00",
+     "alasan": "lupa mengalikan dengan lama 3 tahun: 2.000.000 : 0,06 = 33,3 juta"
+    }
+   ],
+   "pembahasan": "$M \\times 0,06 \\times 3 \\geq 2.000.000 \\Rightarrow M \\geq 11.111.111,1$. Kelipatan Rp1.000.000 terkecil adalah 12.000.000. Cek: 11.000.000 memberi bunga 1.980.000 (kurang).",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-006",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "Bunga tersebut akan langsung ditambahkan ke saldo tabungannya setiap akhir tahun."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "lama minimal agar saldo dua kali modal",
+   "alasan_level": "menyelesaikan pertidaksamaan 8% x n >= 100% lalu membulatkan ke tahun penuh karena bunga ditambahkan akhir tahun",
+   "stimulus": null,
+   "pertanyaan": "Sebuah tabungan berbunga tunggal 8% per tahun dari modal awal. Bunga ditambahkan ke saldo hanya pada setiap akhir tahun, dan uang tidak pernah diambil. Banyak tahun paling sedikit agar saldo tabungan paling sedikit dua kali modal awal adalah ....",
+   "jawaban_benar": "13",
+   "alasan_benar": "saldo = M(1 + 0,08n) >= 2M sehingga n >= 12,5; karena bunga ditambahkan akhir tahun, n bulat terkecil 13",
+   "distraktor": [
+    {
+     "teks": "12",
+     "alasan": "membulatkan 12,5 ke bawah; saldonya baru 196% dari modal"
+    },
+    {
+     "teks": "25",
+     "alasan": "memakai bunga 4% per tahun (100 : 4)"
+    },
+    {
+     "teks": "14",
+     "alasan": "menambah satu tahun karena mengira tahun pertama belum berbunga"
+    }
+   ],
+   "pembahasan": "$M + M \\times 0,08 \\times n \\geq 2M \\Rightarrow n \\geq 12,5$. Bunga ditambahkan akhir tahun sehingga $n = 13$. Cek: $n = 12$ memberi $1,96M$, $n = 13$ memberi $2,04M$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-007",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "bunga tetap sebesar 5% setiap tahun dari saldo awal."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "membandingkan dua skema periode bunga",
+   "alasan_level": "membandingkan bunga per tahun dan bunga per semester pada lama 2,5 tahun, hasil berlawanan dengan dugaan persentase",
+   "stimulus": null,
+   "pertanyaan": "Modal Rp10.000.000,00 dapat disimpan selama 2,5 tahun di salah satu bank. Bank A memberi bunga tunggal 6% per tahun. Bank B memberi bunga tunggal 3,2% per semester dari modal awal. Pilihan yang paling tepat adalah ....",
+   "jawaban_benar": "Bank B lebih menguntungkan, selisih bunga Rp100.000,00.",
+   "alasan_benar": "Bank A: 10.000.000 x 0,06 x 2,5 = 1.500.000; Bank B: 10.000.000 x 0,032 x 5 = 1.600.000; selisih 100.000",
+   "distraktor": [
+    {
+     "teks": "Bank A lebih menguntungkan, selisih bunga Rp100.000,00.",
+     "alasan": "membandingkan 6% dan 3,2% tanpa menyamakan periode (semester vs tahun)"
+    },
+    {
+     "teks": "Bank B lebih menguntungkan, selisih bunga Rp40.000,00.",
+     "alasan": "hanya menghitung selisih bunga untuk satu tahun, bukan 2,5 tahun"
+    },
+    {
+     "teks": "Bank B lebih menguntungkan, selisih bunga Rp1.600.000,00.",
+     "alasan": "menyebut bunga Bank B sebagai selisih"
+    }
+   ],
+   "pembahasan": "2,5 tahun = 5 semester. Bank A: $10.000.000 \\times 0,06 \\times 2,5 = 1.500.000$. Bank B: $10.000.000 \\times 0,032 \\times 5 = 1.600.000$. Bank B lebih besar Rp100.000.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-008",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 6,
+   "jenis_soal": "membandingkan dua skema cicilan",
+   "alasan_level": "membandingkan total bayar dan angsuran bulanan dua skema pinjaman; yang total lebih kecil justru angsuran lebih besar",
+   "stimulus": null,
+   "pertanyaan": "Pak Tono meminjam Rp9.000.000,00 dan harus melunasinya dengan angsuran bulanan sama besar. Skema X: bunga tunggal 10% per tahun selama 2 tahun. Skema Y: bunga tunggal 8% per tahun selama 3 tahun. Pernyataan yang benar tentang kedua skema adalah ....",
+   "jawaban_benar": "Total bayar Skema X lebih kecil Rp360.000,00 dan angsuran bulanannya lebih besar Rp140.000,00 daripada Skema Y.",
+   "alasan_benar": "X: total 10.800.000, angsuran 450.000; Y: total 11.160.000, angsuran 310.000; selisih total 360.000, selisih angsuran 140.000",
+   "distraktor": [
+    {
+     "teks": "Total bayar Skema Y lebih kecil Rp360.000,00 dan angsuran bulanannya lebih kecil Rp140.000,00 daripada Skema X.",
+     "alasan": "menduga persentase lebih rendah pasti total lebih kecil, mengabaikan lama pinjaman"
+    },
+    {
+     "teks": "Total bayar Skema X lebih kecil Rp360.000,00 dan angsuran bulanannya juga lebih kecil Rp140.000,00 daripada Skema Y.",
+     "alasan": "mengira total lebih kecil berarti angsuran lebih kecil, padahal angsuran dibagi 24 vs 36 bulan"
+    },
+    {
+     "teks": "Total bayar Skema X lebih kecil Rp180.000,00 dan angsuran bulanannya lebih besar Rp140.000,00 daripada Skema Y.",
+     "alasan": "membandingkan bunga satu tahun (900.000 dan 720.000), bukan seluruh masa pinjaman"
+    }
+   ],
+   "pembahasan": "X: $9.000.000 \\times 0,10 \\times 2 = 1.800.000$, total 10.800.000, angsuran $10.800.000 : 24 = 450.000$. Y: $9.000.000 \\times 0,08 \\times 3 = 2.160.000$, total 11.160.000, angsuran $11.160.000 : 36 = 310.000$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-009",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "bunga tetap sebesar 5% setiap tahun dari saldo awal."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "menentukan pembagian modal dua bank",
+   "alasan_level": "menyusun persamaan dengan satu variabel dari total bunga dua bank yang persentasenya berbeda",
+   "stimulus": null,
+   "pertanyaan": "Pak Surya membagi uang Rp20.000.000,00 menjadi dua simpanan. Sebagian disimpan di Bank P dengan bunga tunggal 6% per tahun, dan sisanya di Bank Q dengan bunga tunggal 4% per tahun. Setelah 5 tahun, jumlah bunga kedua bank adalah Rp4.600.000,00. Uang yang disimpan di Bank P adalah ....",
+   "jawaban_benar": "Rp6.000.000,00",
+   "alasan_benar": "0,3x + 0,2(20.000.000 - x) = 4.600.000 sehingga 0,1x = 600.000, x = 6.000.000",
+   "distraktor": [
+    {
+     "teks": "Rp14.000.000,00",
+     "alasan": "menukar bagian Bank P dengan bagian Bank Q"
+    },
+    {
+     "teks": "Rp10.000.000,00",
+     "alasan": "mengira uang dibagi sama besar"
+    },
+    {
+     "teks": "Rp12.000.000,00",
+     "alasan": "membagi kelebihan bunga 600.000 dengan 5%, lupa selisih persentase 2% x 5 tahun"
+    }
+   ],
+   "pembahasan": "Misalkan Bank P $= x$. $x \\times 0,06 \\times 5 + (20.000.000 - x) \\times 0,04 \\times 5 = 4.600.000 \\Rightarrow 0,1x + 4.000.000 = 4.600.000 \\Rightarrow x = 6.000.000$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-010",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "temukan kesalahan angsuran",
+   "alasan_level": "mengevaluasi hitungan angsuran siswa dan menemukan bahwa pokok pinjaman tidak ikut dibagi",
+   "stimulus": null,
+   "pertanyaan": "Pak Yusuf meminjam Rp7.200.000,00 dengan bunga tunggal 5% per tahun dan akan melunasinya dengan angsuran bulanan sama besar selama 3 tahun. Seorang siswa menghitung angsuran per bulan sebagai $\\frac{7.200.000 \\times 0,05 \\times 3}{36} = 30.000$. Kesalahan siswa tersebut adalah ....",
+   "jawaban_benar": "Siswa hanya membagi bunga dengan 36; seharusnya pokok ditambah bunga dibagi 36 sehingga angsuran Rp230.000,00.",
+   "alasan_benar": "total bayar = 7.200.000 + 1.080.000 = 8.280.000; angsuran = 8.280.000 : 36 = 230.000",
+   "distraktor": [
+    {
+     "teks": "Pembaginya seharusnya 3 karena lama pinjaman 3 tahun, sehingga angsurannya Rp360.000,00.",
+     "alasan": "mengira angsuran bulanan dibagi lama dalam tahun"
+    },
+    {
+     "teks": "Persentase seharusnya 0,5 sehingga angsurannya Rp3.000,00.",
+     "alasan": "salah mengubah 5% ke desimal"
+    },
+    {
+     "teks": "Bunga seharusnya dikalikan 36 lagi sehingga angsurannya Rp1.080.000,00.",
+     "alasan": "menggandakan lama pinjaman dalam bulan pada rumus bunga"
+    }
+   ],
+   "pembahasan": "Bunga total $= 7.200.000 \\times 0,05 \\times 3 = 1.080.000$. Total bayar $= 8.280.000$. Angsuran $= 8.280.000 : 36 = 230.000$. Siswa lupa menyertakan pokok pinjaman.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-011",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "bunga tetap sebesar 5% setiap tahun dari saldo awal."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "contoh penyangkal klaim",
+   "alasan_level": "mencari pasangan simpanan yang membantah klaim 'persentase lebih besar selalu bunga lebih besar' lewat membandingkan modal",
+   "stimulus": null,
+   "pertanyaan": "Klaim: \"Jika dua simpanan berbunga tunggal disimpan selama waktu yang sama, simpanan dengan persentase bunga lebih besar selalu menghasilkan bunga lebih besar.\" Pasangan simpanan yang menjadi contoh penyangkal klaim tersebut adalah ....",
+   "jawaban_benar": "X: Rp8.000.000,00 dengan bunga 5%; Y: Rp5.000.000,00 dengan bunga 6%",
+   "alasan_benar": "persentase Y lebih besar tetapi bunga setahun Y = 300.000 lebih kecil dari X = 400.000",
+   "distraktor": [
+    {
+     "teks": "X: Rp6.000.000,00 dengan bunga 4%; Y: Rp6.000.000,00 dengan bunga 5%",
+     "alasan": "modal sama, jadi persentase lebih besar memang menghasilkan bunga lebih besar (240.000 < 300.000), bukan penyangkal"
+    },
+    {
+     "teks": "X: Rp4.000.000,00 dengan bunga 3%; Y: Rp7.000.000,00 dengan bunga 5%",
+     "alasan": "Y unggul pada persentase dan modal sehingga mendukung klaim (120.000 < 350.000)"
+    },
+    {
+     "teks": "X: Rp9.000.000,00 dengan bunga 2%; Y: Rp9.000.000,00 dengan bunga 8%",
+     "alasan": "selisih persentase besar dengan modal sama mendukung klaim (180.000 < 720.000)"
+    }
+   ],
+   "pembahasan": "Bunga per tahun $= M \\times p\\%$. Pasangan pertama: X $= 400.000$, Y $= 300.000$, padahal persentase Y lebih besar. Pasangan lain: bunga simpanan berpersentase lebih besar juga lebih besar.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-012",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "mencari persentase dari syarat dua simpanan",
+   "alasan_level": "menyusun persamaan dari syarat bunga sama dan selisih persentase 2 poin, dengan dua modal berbeda",
+   "stimulus": null,
+   "pertanyaan": "Tina menyimpan Rp6.000.000,00 dan Umi menyimpan Rp4.000.000,00, keduanya dengan bunga tunggal selama 5 tahun. Persentase bunga per tahun simpanan Umi 2 poin persentase lebih besar daripada simpanan Tina, dan bunga yang mereka terima selama 5 tahun sama besar. Persentase bunga per tahun simpanan Umi adalah ....",
+   "jawaban_benar": "6%",
+   "alasan_benar": "6.000.000 x p x 5 = 4.000.000 x (p+2) x 5 sehingga 6p = 4p + 8, p = 4 (Tina), Umi 6%",
+   "distraktor": [
+    {
+     "teks": "4%",
+     "alasan": "menjawab persentase Tina, bukan persentase Umi"
+    },
+    {
+     "teks": "8%",
+     "alasan": "mengira persentase Umi dua kali persentase Tina"
+    },
+    {
+     "teks": "5%",
+     "alasan": "mengambil rata-rata tanpa persamaan"
+    }
+   ],
+   "pembahasan": "Misalkan Tina $p\\%$ dan Umi $(p+2)\\%$. $6.000.000 \\times p\\% \\times 5 = 4.000.000 \\times (p+2)\\% \\times 5 \\Rightarrow 6p = 4p + 8 \\Rightarrow p = 4$. Umi $= 6\\%$. Cek: bunga masing-masing 1.200.000.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-c-hard-bt01-013",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 3,
+   "jenis_soal": "merancang deposito bunga bulanan",
+   "alasan_level": "merancang pasangan modal dan persentase dengan satuan bulan vs tahun sebagai jebakan; satu pilihan memenuhi",
+   "stimulus": null,
+   "pertanyaan": "Pak Anto ingin mendapat bunga tunggal tepat Rp300.000,00 setiap bulan dari sebuah deposito. Pasangan modal dan persentase bunga per tahun yang memenuhi keinginan Pak Anto adalah ....",
+   "jawaban_benar": "Modal Rp60.000.000,00 dengan bunga 6% per tahun",
+   "alasan_benar": "bunga setahun = 60.000.000 x 0,06 = 3.600.000; per bulan = 3.600.000 : 12 = 300.000",
+   "distraktor": [
+    {
+     "teks": "Modal Rp50.000.000,00 dengan bunga 6% per tahun",
+     "alasan": "bunga per bulan hanya Rp250.000,00"
+    },
+    {
+     "teks": "Modal Rp72.000.000,00 dengan bunga 6% per tahun",
+     "alasan": "bunga per bulan Rp360.000,00, terlalu besar"
+    },
+    {
+     "teks": "Modal Rp5.000.000,00 dengan bunga 6% per tahun",
+     "alasan": "bunga Rp300.000,00 adalah bunga setahun, bukan sebulan"
+    }
+   ],
+   "pembahasan": "Bunga per bulan $= \\frac{M \\times p\\%}{12}$. Untuk $M = 60.000.000$ dan $p = 6\\%$: $\\frac{3.600.000}{12} = 300.000$. Pilihan lain menghasilkan 250.000; 360.000; dan 25.000 per bulan.",
+   "catatan": null
+  }
+ ]
+}

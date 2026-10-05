@@ -1,0 +1,714 @@
+{
+ "book": "kelas10",
+ "bab_no": 3,
+ "subbab": "B",
+ "level": "medium",
+ "batch": 1,
+ "skill_versi": "v1",
+ "soal": [
+  {
+   "id": "kelas10-b03-b-medium-bt01-001",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 117,
+    "bagian": "Latihan 3.7",
+    "nomor": "8",
+    "teks": "Seorang laki-laki sedang berjalan di sebuah area hijau. Ia berpapasan dengan sebatang pohon dan sebuah tiang listrik. Jika tinggi tiang 50 meter dengan sudut antara laki-laki dan puncak tiang 45 dan sudut antara pohon dengan puncak tiang 60, berapa jarak antara seorang laki-laki tersebut dan pohon?",
+    "jawaban": "(50 - 50 akar 3 / 3) m, sekitar 21,1 m (keduanya di satu sisi tiang)"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "dua pengamat satu tiang",
+   "alasan_level": "dua jarak dari tan masing-masing sudut lalu selisihnya, dengan syarat posisi satu sisi",
+   "stimulus": null,
+   "pertanyaan": "Seorang laki-laki sedang berjalan di lapangan. Ia berpapasan dengan sebatang pohon dan sebuah tiang pemancar. Jika tinggi tiang 60 meter, sudut elevasi puncak tiang dari tempat laki-laki 30 dan dari pohon 45, berapa jarak laki-laki dari pohon? Anggap laki-laki dan pohon berada pada satu sisi tiang, segaris dengan kaki tiang, tinggi mata diabaikan, pohon lebih dekat ke tiang, dan gunakan $\\tan 30^\\circ=\\frac{\\sqrt{3}}{3}$.",
+   "jawaban_benar": "$60\\sqrt{3}-60$ m",
+   "alasan_benar": "jarak ke tiang: laki-laki $=\\frac{60}{\\tan 30^\\circ}=60\\sqrt{3}$ m, pohon $=\\frac{60}{\\tan 45^\\circ}=60$ m; selisih $60\\sqrt{3}-60$ m",
+   "distraktor": [
+    {
+     "teks": "$60\\sqrt{3}+60$ m",
+     "alasan": "mengira laki-laki dan pohon berada di dua sisi tiang yang berlawanan lalu menjumlahkan"
+    },
+    {
+     "teks": "$60-20\\sqrt{3}$ m",
+     "alasan": "mengalikan tinggi dengan $\\tan$ padahal jarak = tinggi dibagi $\\tan$"
+    },
+    {
+     "teks": "$60\\sqrt{3}$ m",
+     "alasan": "hanya menghitung jarak laki-laki ke tiang dan lupa mengurangi jarak pohon"
+    }
+   ],
+   "pembahasan": "Jarak mendatar $=\\frac{\\text{tinggi}}{\\tan\\text{sudut}}$. Laki-laki: $\\frac{60}{\\frac{\\sqrt{3}}{3}}=60\\sqrt{3}$ m. Pohon: $\\frac{60}{1}=60$ m. Satu sisi tiang, jadi jarak keduanya $60\\sqrt{3}-60$ m.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-002",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 112,
+    "kutipan": "ada lagi tiga perbandingan trigonometri yang jarang digunakan."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "perbandingan sec, csc, cot",
+   "alasan_level": "dari tan cari sisi miring, ubah ke csc dan cot, lalu mengurangkan",
+   "stimulus": null,
+   "pertanyaan": "Diketahui $\\theta$ sudut lancip dengan $\\tan\\theta=\\frac{7}{24}$. Jika $\\csc\\theta=\\frac{1}{\\sin\\theta}$ dan $\\cot\\theta=\\frac{1}{\\tan\\theta}$, nilai $\\csc\\theta-\\cot\\theta$ adalah ....",
+   "jawaban_benar": "$\\frac{1}{7}$",
+   "alasan_benar": "sisi depan 7, samping 24, miring 25; $\\csc\\theta=\\frac{25}{7}$, $\\cot\\theta=\\frac{24}{7}$, selisih $\\frac{1}{7}$",
+   "distraktor": [
+    {
+     "teks": "$7$",
+     "alasan": "menjumlahkan $\\csc\\theta+\\cot\\theta$ bukan mengurangkan"
+    },
+    {
+     "teks": "$-\\frac{1}{7}$",
+     "alasan": "mengurangkan dengan urutan terbalik ($\\cot\\theta-\\csc\\theta$)"
+    },
+    {
+     "teks": "$\\frac{7}{25}$",
+     "alasan": "menulis nilai $\\sin\\theta$ tanpa membalik"
+    }
+   ],
+   "pembahasan": "Miring $=\\sqrt{7^2+24^2}=25$. $\\csc\\theta=\\frac{25}{7}$ dan $\\cot\\theta=\\frac{24}{7}$, sehingga $\\csc\\theta-\\cot\\theta=\\frac{1}{7}$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-003",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 119,
+    "bagian": "Uji Kompetensi",
+    "nomor": "4",
+    "teks": "Tomi berkata bahwa sinus dari salah satu sudut lancip pada segitiga siku-siku selalu sama dengan cosinus dari sudut lancip lainnya.",
+    "jawaban": "Benar, sin A = a/c = cos B"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "klaim sudut komplemen",
+   "alasan_level": "menguji klaim umum dengan menghitung dua tangen pada contoh dan menarik kesimpulan",
+   "stimulus": null,
+   "pertanyaan": "Ratna berpendapat bahwa pada setiap segitiga siku-siku, tangen kedua sudut lancipnya selalu sama, yaitu $\\tan A=\\tan B$. Ia mengujinya pada segitiga ABC dengan sudut siku-siku di C, panjang AC = 3 cm, dan panjang BC = 4 cm. Pernyataan yang benar mengenai pendapat Ratna adalah ....",
+   "jawaban_benar": "Salah, karena $\\tan A=\\frac{4}{3}$ sedangkan $\\tan B=\\frac{3}{4}$",
+   "alasan_benar": "$\\tan A=\\frac{BC}{AC}=\\frac43$ dan $\\tan B=\\frac{AC}{BC}=\\frac34$, keduanya tidak sama",
+   "distraktor": [
+    {
+     "teks": "Benar, karena $\\tan A=\\tan B=\\frac{3}{4}$",
+     "alasan": "menghitung $\\tan A$ dengan sisi samping per depan, padahal sisi depan sudut A adalah BC"
+    },
+    {
+     "teks": "Benar, karena kedua sudut lancip berjumlah $90^\\circ$ sehingga tangennya sama",
+     "alasan": "mengira sudut yang berjumlah $90^\\circ$ pasti memiliki tangen yang sama"
+    },
+    {
+     "teks": "Salah, karena $\\tan A=\\frac{4}{5}$ sedangkan $\\tan B=\\frac{3}{5}$",
+     "alasan": "menghitung depan per miring (nilai sinus) dan menyebutnya tangen"
+    }
+   ],
+   "pembahasan": "Sudut A: depan BC = 4, samping AC = 3, sehingga $\\tan A=\\frac43$. Sudut B: depan AC = 3, samping BC = 4, sehingga $\\tan B=\\frac34$. Nilainya berbeda, jadi pendapat Ratna salah.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-004",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 114,
+    "kutipan": "Kamu akan melengkapi tabel berikut dengan nilai perbandingan trigonometrinya."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "ekspresi sudut istimewa",
+   "alasan_level": "mengingat empat nilai sudut istimewa, mengalikan, lalu menjumlahkan",
+   "stimulus": null,
+   "pertanyaan": "Nilai dari $\\sin 60^\\circ\\cdot\\cos 30^\\circ+\\tan 45^\\circ\\cdot\\cos 60^\\circ$ adalah ....",
+   "jawaban_benar": "$\\frac{5}{4}$",
+   "alasan_benar": "$\\frac{\\sqrt3}{2}\\cdot\\frac{\\sqrt3}{2}+1\\cdot\\frac12=\\frac34+\\frac12=\\frac54$",
+   "distraktor": [
+    {
+     "teks": "$\\frac{7}{4}$",
+     "alasan": "mengira $\\cos 60^\\circ=1$"
+    },
+    {
+     "teks": "$\\frac{3}{4}$",
+     "alasan": "hanya menghitung suku pertama dan lupa suku kedua"
+    },
+    {
+     "teks": "$\\frac{\\sqrt{3}+2}{4}$",
+     "alasan": "mengira $\\cos 30^\\circ=\\frac12$ (tertukar dengan $\\cos 60^\\circ$)"
+    }
+   ],
+   "pembahasan": "$\\sin 60^\\circ\\cos 30^\\circ=\\frac{\\sqrt3}{2}\\cdot\\frac{\\sqrt3}{2}=\\frac34$ dan $\\tan 45^\\circ\\cos 60^\\circ=1\\cdot\\frac12=\\frac12$. Jumlahnya $\\frac54$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-005",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 105,
+    "bagian": "Eksplorasi 3.2",
+    "nomor": "1",
+    "teks": "Jika sudut tetap sama tetapi ingin dibangun piramida yang lebih tinggi, maka apa yang akan terjadi dengan alasnya?",
+    "jawaban": "alasnya (setengah diagonal alas) ikut membesar sebanding dengan tinggi"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 2,
+   "jenis_soal": "perubahan ukuran dengan sudut tetap",
+   "alasan_level": "menyadari tan sudut tetap berarti rasio tinggi terhadap jarak tetap, lalu memakai kesebangunan",
+   "stimulus": null,
+   "pertanyaan": "Dari sebuah titik di tanah, puncak menara kecil setinggi 4 m terlihat dengan sudut elevasi $\\theta$ pada jarak 10 m dari kaki menara. Menara yang lebih tinggi, 12 m, akan dilihat dengan sudut elevasi $\\theta$ yang sama dari titik di tanah. Jarak titik itu dari kaki menara yang lebih tinggi adalah ....",
+   "jawaban_benar": "$30$ m",
+   "alasan_benar": "$\\tan\\theta=\\frac{4}{10}$ tetap; $\\frac{12}{x}=\\frac{4}{10}$ sehingga $x=30$ m",
+   "distraktor": [
+    {
+     "teks": "$18$ m",
+     "alasan": "menambahkan selisih tinggi (8 m) pada jarak awal"
+    },
+    {
+     "teks": "$22$ m",
+     "alasan": "menambahkan tinggi baru (12 m) pada jarak awal"
+    },
+    {
+     "teks": "$120$ m",
+     "alasan": "mengalikan jarak awal dengan tinggi baru"
+    }
+   ],
+   "pembahasan": "Sudut sama berarti $\\tan\\theta=\\frac{4}{10}$ sama. Maka $\\frac{12}{x}=\\frac{4}{10}$, sehingga $x=30$ m.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-006",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 114,
+    "kutipan": "Belah segitiga tersebut menjadi dua bagian dengan garis vertikal di tengah-tengah bangunnya."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "bangun datar dengan sudut istimewa",
+   "alasan_level": "mencari tinggi dengan sin 60 derajat lalu menghitung luas",
+   "stimulus": null,
+   "pertanyaan": "Sebuah segitiga sama sisi memiliki panjang sisi 12 cm. Dengan memakai $\\sin 60^\\circ=\\frac{\\sqrt3}{2}$ untuk mencari tingginya, luas segitiga tersebut adalah ....",
+   "jawaban_benar": "$36\\sqrt{3}$ cm$^2$",
+   "alasan_benar": "tinggi $=12\\sin 60^\\circ=6\\sqrt3$ cm; luas $=\\frac12\\cdot12\\cdot6\\sqrt3=36\\sqrt3$ cm$^2$",
+   "distraktor": [
+    {
+     "teks": "$72\\sqrt{3}$ cm$^2$",
+     "alasan": "lupa faktor $\\frac12$ pada rumus luas segitiga"
+    },
+    {
+     "teks": "$36$ cm$^2$",
+     "alasan": "memakai $\\sin 30^\\circ=\\frac12$ sehingga tinggi dikira 6 cm"
+    },
+    {
+     "teks": "$18\\sqrt{3}$ cm$^2$",
+     "alasan": "menggunakan faktor $\\frac12$ dua kali"
+    }
+   ],
+   "pembahasan": "Tinggi $=12\\sin 60^\\circ=6\\sqrt3$ cm. Luas $=\\frac12\\times12\\times6\\sqrt3=36\\sqrt3$ cm$^2$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-007",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 117,
+    "bagian": "Latihan 3.7",
+    "nomor": "5",
+    "teks": "Dari jarak 120 m, seorang pengukur tanah menemukan sudut yang terbentuk antara garis permukaan dan puncak gedung adalah 30 . Gunakan perbandingan trigonometri untuk mencari tinggi gedung tersebut.",
+    "jawaban": "69 m"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "tinggi dari sudut elevasi dengan tinggi mata",
+   "alasan_level": "tinggi dari tan sudut istimewa lalu menambah tinggi alat ukur",
+   "stimulus": null,
+   "pertanyaan": "Dari jarak 90 m, seorang pengukur tanah menemukan sudut yang terbentuk antara garis mendatar setinggi matanya dan puncak menara adalah 30. Mata pengukur berada 1,5 m di atas tanah. Gunakan perbandingan trigonometri ($\\tan 30^\\circ=\\frac{\\sqrt3}{3}$) untuk mencari tinggi menara dari tanah.",
+   "jawaban_benar": "$(30\\sqrt{3}+1,5)$ m",
+   "alasan_benar": "bagian di atas mata $=90\\tan30^\\circ=30\\sqrt3$ m; ditambah tinggi mata 1,5 m",
+   "distraktor": [
+    {
+     "teks": "$30\\sqrt{3}$ m",
+     "alasan": "lupa menambahkan tinggi mata pengukur"
+    },
+    {
+     "teks": "$(90\\sqrt{3}+1,5)$ m",
+     "alasan": "memakai $\\tan 60^\\circ=\\sqrt3$ sebagai nilai tan sudut tersebut"
+    },
+    {
+     "teks": "$(30\\sqrt{3}-1,5)$ m",
+     "alasan": "mengurangkan tinggi mata, bukan menambahkan"
+    }
+   ],
+   "pembahasan": "Bagian menara di atas mata: $90\\tan 30^\\circ=30\\sqrt3$ m. Tinggi menara dari tanah $=30\\sqrt3+1,5$ m.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-008",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 104,
+    "kutipan": "Dengan semua informasi yang kamu miliki saat ini, kamu seharusnya dapat menghitung tinggi objek."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "dua sudut elevasi dari satu titik",
+   "alasan_level": "dua kali memakai tan pada jarak yang sama lalu mengurangkan tinggi",
+   "stimulus": null,
+   "pertanyaan": "Dari sebuah titik di tanah yang berjarak 20 m dari kaki sebuah gedung, sudut elevasi puncak gedung adalah $30^\\circ$ dan sudut elevasi ujung tiang bendera di atas atap gedung adalah $60^\\circ$. Tinggi mata diabaikan. Dengan $\\tan30^\\circ=\\frac{\\sqrt3}{3}$ dan $\\tan60^\\circ=\\sqrt3$, tinggi tiang bendera adalah ....",
+   "jawaban_benar": "$\\frac{40\\sqrt{3}}{3}$ m",
+   "alasan_benar": "tinggi sampai ujung tiang $=20\\sqrt3$ m, tinggi gedung $=\\frac{20\\sqrt3}{3}$ m; selisih $\\frac{40\\sqrt3}{3}$ m",
+   "distraktor": [
+    {
+     "teks": "$\\frac{20\\sqrt{3}}{3}$ m",
+     "alasan": "memberikan tinggi gedung, bukan tinggi tiang bendera"
+    },
+    {
+     "teks": "$20\\sqrt{3}$ m",
+     "alasan": "memberikan tinggi sampai ujung tiang tanpa mengurangi tinggi gedung"
+    },
+    {
+     "teks": "$\\frac{80\\sqrt{3}}{3}$ m",
+     "alasan": "menjumlahkan kedua tinggi, bukan mengurangkan"
+    }
+   ],
+   "pembahasan": "Tinggi ujung tiang $=20\\tan60^\\circ=20\\sqrt3$ m. Tinggi gedung $=20\\tan30^\\circ=\\frac{20\\sqrt3}{3}$ m. Tiang bendera $=20\\sqrt3-\\frac{20\\sqrt3}{3}=\\frac{40\\sqrt3}{3}$ m.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-009",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 117,
+    "bagian": "Latihan 3.7",
+    "nomor": "8",
+    "teks": "Seorang laki-laki sedang berjalan di sebuah area hijau. Ia berpapasan dengan sebatang pohon dan sebuah tiang listrik. Jika tinggi tiang 50 meter dengan sudut antara laki-laki dan puncak tiang 45 dan sudut antara pohon dengan puncak tiang 60, berapa jarak antara seorang laki-laki tersebut dan pohon?",
+    "jawaban": "(50 - 50 akar 3 / 3) m, sekitar 21,1 m (keduanya di satu sisi tiang)"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "dua pengamat satu tiang",
+   "alasan_level": "dua jarak dari tan sudut istimewa lalu selisihnya",
+   "stimulus": null,
+   "pertanyaan": "Sebuah menara pengawas setinggi 36 m. Dua pendaki, Ari dan Budi, berdiri di satu sisi menara dan segaris dengan kaki menara. Sudut elevasi puncak menara dari Ari adalah $45^\\circ$ dan dari Budi $60^\\circ$ (tinggi mata diabaikan). Dengan $\\tan60^\\circ=\\sqrt3$, jarak antara Ari dan Budi adalah ....",
+   "jawaban_benar": "$36-12\\sqrt{3}$ m",
+   "alasan_benar": "Ari $=\\frac{36}{\\tan45^\\circ}=36$ m, Budi $=\\frac{36}{\\sqrt3}=12\\sqrt3$ m; selisih $36-12\\sqrt3$ m",
+   "distraktor": [
+    {
+     "teks": "$36+12\\sqrt{3}$ m",
+     "alasan": "mengira keduanya berada di sisi menara yang berlawanan"
+    },
+    {
+     "teks": "$36\\sqrt{3}-36$ m",
+     "alasan": "mengalikan tinggi dengan $\\tan60^\\circ$ untuk jarak Budi"
+    },
+    {
+     "teks": "$12\\sqrt{3}$ m",
+     "alasan": "hanya menghitung jarak Budi dari kaki menara"
+    }
+   ],
+   "pembahasan": "Ari: $\\frac{36}{1}=36$ m dari kaki menara. Budi: $\\frac{36}{\\sqrt3}=12\\sqrt3$ m. Jarak keduanya $36-12\\sqrt3$ m.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-010",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 106,
+    "kutipan": "Nilai perbandingan sisi depan terhadap sisi miring disebut sebagai sinus."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "tangga bersandar",
+   "alasan_level": "dua kali memakai sinus dengan sudut istimewa lalu mengurangkan tinggi",
+   "stimulus": null,
+   "pertanyaan": "Sebuah tangga sepanjang 8 m bersandar pada dinding tegak dan membentuk sudut $60^\\circ$ dengan lantai datar. Kaki tangga kemudian digeser menjauhi dinding sampai tangga membentuk sudut $30^\\circ$ dengan lantai, sedangkan ujung atasnya tetap menempel pada dinding. Ujung atas tangga turun sejauh ....",
+   "jawaban_benar": "$(4\\sqrt{3}-4)$ m",
+   "alasan_benar": "tinggi awal $=8\\sin60^\\circ=4\\sqrt3$ m, tinggi akhir $=8\\sin30^\\circ=4$ m; turun $4\\sqrt3-4$ m",
+   "distraktor": [
+    {
+     "teks": "$(4\\sqrt{3}+4)$ m",
+     "alasan": "menjumlahkan kedua tinggi, bukan mengurangkan"
+    },
+    {
+     "teks": "$4\\sqrt{3}$ m",
+     "alasan": "memberikan tinggi awal saja"
+    },
+    {
+     "teks": "$(8\\sqrt{3}-8)$ m",
+     "alasan": "mengira $\\sin60^\\circ=\\sqrt3$ dan $\\sin30^\\circ=1$"
+    }
+   ],
+   "pembahasan": "Tinggi ujung atas awal $=8\\sin60^\\circ=4\\sqrt3$ m, akhir $=8\\sin30^\\circ=4$ m. Turun $4\\sqrt3-4$ m.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-011",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 118,
+    "kutipan": "Istilah co- dalam matematika berkaitan dengan komplemen sudut."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "persamaan sudut komplemen",
+   "alasan_level": "mengubah kesamaan sin dan cos menjadi jumlah sudut 90 derajat lalu menyelesaikan persamaan",
+   "stimulus": null,
+   "pertanyaan": "Jika $x$ adalah bilangan sehingga $(2x+10)^\\circ$ dan $(3x-5)^\\circ$ sama-sama sudut lancip dan memenuhi $\\sin(2x+10)^\\circ=\\cos(3x-5)^\\circ$, nilai $x$ adalah ....",
+   "jawaban_benar": "$17$",
+   "alasan_benar": "sin sama dengan cos komplemennya: $(2x+10)+(3x-5)=90$, sehingga $5x=85$ dan $x=17$",
+   "distraktor": [
+    {
+     "teks": "$15$",
+     "alasan": "menyamakan kedua sudut ($2x+10=3x-5$)"
+    },
+    {
+     "teks": "$18$",
+     "alasan": "mengabaikan konstanta sehingga $5x=90$"
+    },
+    {
+     "teks": "$35$",
+     "alasan": "memakai jumlah $180^\\circ$ sehingga sudutnya tidak lancip"
+    }
+   ],
+   "pembahasan": "$\\sin\\alpha=\\cos\\beta$ untuk sudut lancip berarti $\\alpha+\\beta=90^\\circ$. Maka $5x+5=90$, $x=17$. Cek: $\\sin44^\\circ=\\cos46^\\circ$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-012",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 119,
+    "bagian": "Uji Kompetensi",
+    "nomor": "4",
+    "teks": "Tomi berkata bahwa sinus dari salah satu sudut lancip pada segitiga siku-siku selalu sama dengan cosinus dari sudut lancip lainnya.",
+    "jawaban": "Benar, sin A = a/c = cos B"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "klaim sudut komplemen",
+   "alasan_level": "menerapkan hubungan sin sudut dengan cos sudut lancip lainnya pada contoh angka",
+   "stimulus": null,
+   "pertanyaan": "Dika berpendapat bahwa pada segitiga siku-siku, sinus sudut lancip yang satu selalu sama dengan cosinus sudut lancip yang lain, sehingga $\\sin A=\\cos B$. Pada segitiga ABC dengan sudut siku-siku di C, AC = 24 cm, BC = 7 cm, dan AB = 25 cm, nilai $\\sin A+\\cos B$ adalah ....",
+   "jawaban_benar": "$\\frac{14}{25}$",
+   "alasan_benar": "$\\sin A=\\frac{BC}{AB}=\\frac{7}{25}$ dan $\\cos B=\\frac{BC}{AB}=\\frac{7}{25}$, jumlah $\\frac{14}{25}$",
+   "distraktor": [
+    {
+     "teks": "$\\frac{7}{25}$",
+     "alasan": "mengira $\\sin A=\\cos B$ berarti hanya satu nilai yang dihitung"
+    },
+    {
+     "teks": "$\\frac{31}{25}$",
+     "alasan": "mengambil $\\cos B=\\frac{24}{25}$ (sisi samping A, bukan samping B)"
+    },
+    {
+     "teks": "$\\frac{48}{25}$",
+     "alasan": "memakai sisi 24 untuk $\\sin A$ dan $\\cos B$"
+    }
+   ],
+   "pembahasan": "Sisi depan sudut A adalah BC = 7, sisi samping sudut B juga BC = 7. Maka $\\sin A=\\cos B=\\frac{7}{25}$ dan jumlahnya $\\frac{14}{25}$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-013",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 114,
+    "kutipan": "Cari panjang sisi yang belum diketahui menggunakan Teorema Pythagoras."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "bangun datar dengan sudut istimewa",
+   "alasan_level": "mencari panjang dan lebar dengan cos dan sin sudut istimewa lalu menghitung luas",
+   "stimulus": null,
+   "pertanyaan": "Sebuah persegi panjang memiliki diagonal 20 cm. Diagonal tersebut membentuk sudut $30^\\circ$ dengan sisi terpanjang. Luas persegi panjang tersebut adalah ....",
+   "jawaban_benar": "$100\\sqrt{3}$ cm$^2$",
+   "alasan_benar": "panjang $=20\\cos30^\\circ=10\\sqrt3$ cm, lebar $=20\\sin30^\\circ=10$ cm, luas $=100\\sqrt3$ cm$^2$",
+   "distraktor": [
+    {
+     "teks": "$50\\sqrt{3}$ cm$^2$",
+     "alasan": "menghitung luas segitiga siku-siku (setengah persegi panjang)"
+    },
+    {
+     "teks": "$200$ cm$^2$",
+     "alasan": "mengira panjang sama dengan diagonal (20 cm)"
+    },
+    {
+     "teks": "$100$ cm$^2$",
+     "alasan": "mengira panjang dan lebar sama-sama 10 cm"
+    }
+   ],
+   "pembahasan": "Panjang $=20\\cos30^\\circ=10\\sqrt3$ cm dan lebar $=20\\sin30^\\circ=10$ cm. Luas $=10\\sqrt3\\times10=100\\sqrt3$ cm$^2$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-014",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 105,
+    "bagian": "Eksplorasi 3.2",
+    "nomor": "3",
+    "teks": "Jika alas piramida tetap sama tetapi tingginya berubah, maka apa yang terjadi dengan sudutnya?",
+    "jawaban": "tinggi bertambah membuat sudut membesar, tinggi berkurang membuat sudut mengecil"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 2,
+   "jenis_soal": "perubahan sudut jika alas tetap",
+   "alasan_level": "membandingkan tan dua keadaan dan memahami bahwa sudut tidak berubah sebanding dengan tinggi",
+   "stimulus": null,
+   "pertanyaan": "Sebuah papan peluncur dipasang dengan alas mendatar sepanjang 4 m. Awalnya ujung papan berada 1 m di atas lantai, lalu dinaikkan menjadi 2 m di atas lantai (alas tetap 4 m). Jika $\\theta$ adalah sudut antara papan dan alas mendatar, pernyataan yang benar adalah ....",
+   "jawaban_benar": "$\\theta$ membesar dan nilai $\\tan\\theta$ menjadi 2 kali semula",
+   "alasan_benar": "$\\tan\\theta=\\frac{\\text{tinggi}}{4}$ naik dari $\\frac14$ ke $\\frac12$ (dua kali), sehingga $\\theta$ membesar tetapi tidak menjadi dua kali",
+   "distraktor": [
+    {
+     "teks": "$\\theta$ menjadi 2 kali semula dan nilai $\\tan\\theta$ menjadi 2 kali semula",
+     "alasan": "mengira sudut berubah sebanding dengan tinggi ($14,0^\\circ$ menjadi $26,6^\\circ$, bukan dua kali)"
+    },
+    {
+     "teks": "$\\theta$ mengecil dan nilai $\\tan\\theta$ menjadi 2 kali semula",
+     "alasan": "salah arah perubahan sudut"
+    },
+    {
+     "teks": "$\\theta$ membesar tetapi nilai $\\tan\\theta$ tidak berubah karena alas tetap",
+     "alasan": "mengira $\\tan\\theta$ hanya bergantung pada alas"
+    }
+   ],
+   "pembahasan": "$\\tan\\theta=\\frac{1}{4}$ menjadi $\\tan\\theta=\\frac{2}{4}$, jadi dua kali. Sudutnya membesar dari sekitar $14,0^\\circ$ menjadi $26,6^\\circ$, bukan dua kali.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-015",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 105,
+    "kutipan": "ukuran piramida ditentukan oleh tinggi, panjang setengah diagonal alas, dan besar sudut"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "piramida",
+   "alasan_level": "Pythagoras untuk setengah diagonal alas, lalu diagonal ke sisi persegi",
+   "stimulus": null,
+   "pertanyaan": "Sebuah piramida beralas persegi memiliki tinggi 300 m dan panjang rusuk tegak (dari puncak ke sudut alas) 500 m. Panjang sisi alas piramida tersebut adalah ....",
+   "jawaban_benar": "$400\\sqrt{2}$ m",
+   "alasan_benar": "setengah diagonal alas $=\\sqrt{500^2-300^2}=400$ m, diagonal $=800$ m, sisi $=\\frac{800}{\\sqrt2}=400\\sqrt2$ m",
+   "distraktor": [
+    {
+     "teks": "$800$ m",
+     "alasan": "menganggap diagonal alas sebagai sisi alas"
+    },
+    {
+     "teks": "$400$ m",
+     "alasan": "menganggap setengah diagonal alas sebagai sisi alas"
+    },
+    {
+     "teks": "$200\\sqrt{2}$ m",
+     "alasan": "membagi dengan $\\sqrt2$ pada setengah diagonal, bukan diagonal penuh"
+    }
+   ],
+   "pembahasan": "Setengah diagonal alas $=\\sqrt{500^2-300^2}=400$ m, jadi diagonal alas 800 m. Sisi persegi $=\\frac{800}{\\sqrt2}=400\\sqrt2$ m.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-016",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 106,
+    "kutipan": "Nilai perbandingan sisi depan terhadap sisi miring disebut sebagai sinus."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "sudut dari perbandingan sisi",
+   "alasan_level": "sinus untuk mencari sudut lalu cosinus untuk jarak mendatar",
+   "stimulus": null,
+   "pertanyaan": "Sebuah perosotan sepanjang 10 m memiliki ujung atas pada ketinggian $5\\sqrt{2}$ m dari tanah. Sudut perosotan dengan tanah dan jarak mendatar ujung bawah ke tiang penyangga di bawah ujung atas berturut-turut adalah ....",
+   "jawaban_benar": "$45^\\circ$ dan $5\\sqrt{2}$ m",
+   "alasan_benar": "$\\sin\\alpha=\\frac{5\\sqrt2}{10}=\\frac{\\sqrt2}{2}$ sehingga $\\alpha=45^\\circ$; jarak $=10\\cos45^\\circ=5\\sqrt2$ m",
+   "distraktor": [
+    {
+     "teks": "$30^\\circ$ dan $5\\sqrt{2}$ m",
+     "alasan": "mengira $\\sin\\alpha=\\frac12$ (nilai $\\sin30^\\circ$)"
+    },
+    {
+     "teks": "$45^\\circ$ dan $5$ m",
+     "alasan": "mengira jarak mendatar sama dengan setengah panjang perosotan"
+    },
+    {
+     "teks": "$60^\\circ$ dan $5\\sqrt{3}$ m",
+     "alasan": "mengira $\\sin\\alpha=\\frac{\\sqrt3}{2}$ lalu mengikuti sudut $60^\\circ$"
+    }
+   ],
+   "pembahasan": "$\\sin\\alpha=\\frac{5\\sqrt2}{10}=\\frac{\\sqrt2}{2}$, jadi $\\alpha=45^\\circ$. Jarak mendatar $=10\\cos45^\\circ=5\\sqrt2$ m.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-017",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 112,
+    "kutipan": "ada lagi tiga perbandingan trigonometri yang jarang digunakan."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "perbandingan sec, csc, cot",
+   "alasan_level": "dari csc cari sisi depan, Pythagoras untuk sisi samping, lalu keliling",
+   "stimulus": null,
+   "pertanyaan": "Pada segitiga siku-siku dengan sudut lancip $\\theta$ berlaku $\\csc\\theta=\\frac{13}{5}$, dengan $\\csc\\theta=\\frac{1}{\\sin\\theta}$. Jika panjang sisi miringnya 26 cm, keliling segitiga tersebut adalah ....",
+   "jawaban_benar": "$60$ cm",
+   "alasan_benar": "$\\sin\\theta=\\frac{5}{13}$, sisi depan $=10$ cm, sisi samping $=\\sqrt{26^2-10^2}=24$ cm, keliling $=26+10+24=60$ cm",
+   "distraktor": [
+    {
+     "teks": "$36$ cm",
+     "alasan": "hanya menjumlahkan sisi miring dan sisi depan"
+    },
+    {
+     "teks": "$52$ cm",
+     "alasan": "menghitung sisi samping sebagai $26-10=16$ cm"
+    },
+    {
+     "teks": "$62$ cm",
+     "alasan": "menganggap sisi samping sama dengan sisi miring (26 cm)"
+    }
+   ],
+   "pembahasan": "$\\sin\\theta=\\frac{5}{13}$, sisi depan $=26\\cdot\\frac{5}{13}=10$ cm. Sisi samping $=\\sqrt{26^2-10^2}=24$ cm. Keliling $=60$ cm.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-018",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 113,
+    "kutipan": "Sudut istimewa akan sangat berguna dan banyak digunakan pada pelajaran Fisika."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "bayangan dan sudut elevasi matahari",
+   "alasan_level": "mencari sudut dari tan dua sisi lalu memakai tan yang sama untuk tinggi pohon",
+   "stimulus": null,
+   "pertanyaan": "Seorang anak setinggi 1,5 m memiliki bayangan sepanjang $1,5\\sqrt{3}$ m di tanah datar. Pada saat yang sama, sebuah pohon memiliki bayangan sepanjang $24\\sqrt{3}$ m. Sudut elevasi matahari dan tinggi pohon berturut-turut adalah ....",
+   "jawaban_benar": "$30^\\circ$ dan $24$ m",
+   "alasan_benar": "$\\tan\\alpha=\\frac{1,5}{1,5\\sqrt3}=\\frac{\\sqrt3}{3}$ sehingga $\\alpha=30^\\circ$; tinggi pohon $=24\\sqrt3\\cdot\\frac{\\sqrt3}{3}=24$ m",
+   "distraktor": [
+    {
+     "teks": "$60^\\circ$ dan $24$ m",
+     "alasan": "membalik perbandingan tinggi dan bayangan saat mencari sudut"
+    },
+    {
+     "teks": "$30^\\circ$ dan $72$ m",
+     "alasan": "mengalikan bayangan dengan $\\tan60^\\circ=\\sqrt3$"
+    },
+    {
+     "teks": "$60^\\circ$ dan $72$ m",
+     "alasan": "dua kesalahan sekaligus: sudut terbalik dan tan yang dipakai salah"
+    }
+   ],
+   "pembahasan": "$\\tan\\alpha=\\frac{1,5}{1,5\\sqrt3}=\\frac{1}{\\sqrt3}$, jadi $\\alpha=30^\\circ$. Tinggi pohon $=24\\sqrt3\\cdot\\tan30^\\circ=24$ m.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-019",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 105,
+    "bagian": "Eksplorasi 3.2",
+    "nomor": "2",
+    "teks": "Jika tinggi piramida tetap sama tetapi alasnya berubah, maka apa yang akan terjadi dengan sudutnya?",
+    "jawaban": "alas lebih besar membuat sudut mengecil, alas lebih kecil membuat sudut membesar"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "perubahan sudut jika tinggi tetap",
+   "alasan_level": "menganalisis arah perubahan sudut, sin, dan cos saat sisi depan tetap dan jarak mendatar bertambah",
+   "stimulus": null,
+   "pertanyaan": "Sebuah tiang bendera setinggi 6 m ditahan oleh kawat dari puncak tiang ke sebuah titik di tanah datar. Titik pengikat kawat di tanah digeser menjauhi kaki tiang, sedangkan ujung kawat di puncak tiang tetap. Jika $\\theta$ adalah sudut antara kawat dan tanah, pernyataan yang benar adalah ....",
+   "jawaban_benar": "$\\theta$ mengecil, $\\sin\\theta$ mengecil, dan $\\cos\\theta$ membesar",
+   "alasan_benar": "$\\sin\\theta=\\frac{6}{L}$ mengecil karena kawat $L$ memanjang, $\\cos\\theta=\\frac{d}{L}$ membesar, sehingga $\\theta$ mengecil",
+   "distraktor": [
+    {
+     "teks": "$\\theta$ mengecil, $\\sin\\theta$ membesar, dan $\\cos\\theta$ mengecil",
+     "alasan": "membalik arah perubahan sin dan cos"
+    },
+    {
+     "teks": "$\\theta$ membesar, $\\sin\\theta$ membesar, dan $\\cos\\theta$ mengecil",
+     "alasan": "mengira menjauh membuat sudut membesar"
+    },
+    {
+     "teks": "$\\theta$ mengecil, $\\sin\\theta$ tetap karena tinggi tiang tetap, dan $\\cos\\theta$ membesar",
+     "alasan": "mengira sin hanya bergantung pada sisi depan"
+    }
+   ],
+   "pembahasan": "Tinggi 6 m tetap, jarak mendatar $d$ bertambah. Kawat $L=\\sqrt{36+d^2}$ memanjang: $\\sin\\theta=\\frac{6}{L}$ mengecil, $\\cos\\theta=\\frac{d}{L}$ membesar, sudut $\\theta$ mengecil.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b03-b-medium-bt01-020",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 114,
+    "kutipan": "Kamu akan melengkapi tabel berikut dengan nilai perbandingan trigonometrinya."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "ekspresi sudut istimewa",
+   "alasan_level": "nilai sudut istimewa pada pembilang dan penyebut lalu pembagian bentuk akar",
+   "stimulus": null,
+   "pertanyaan": "Nilai dari $\\frac{\\sin 45^\\circ\\cdot\\cos 45^\\circ}{\\tan 30^\\circ}$ adalah ....",
+   "jawaban_benar": "$\\frac{\\sqrt{3}}{2}$",
+   "alasan_benar": "pembilang $=\\frac{\\sqrt2}{2}\\cdot\\frac{\\sqrt2}{2}=\\frac12$; $\\frac12:\\frac{\\sqrt3}{3}=\\frac{3}{2\\sqrt3}=\\frac{\\sqrt3}{2}$",
+   "distraktor": [
+    {
+     "teks": "$\\frac{\\sqrt{3}}{6}$",
+     "alasan": "mengalikan dengan $\\tan30^\\circ$ bukan membagi"
+    },
+    {
+     "teks": "$\\frac{1}{2}$",
+     "alasan": "mengabaikan penyebut $\\tan30^\\circ$"
+    },
+    {
+     "teks": "$\\sqrt{3}$",
+     "alasan": "mengira $\\sin45^\\circ\\cos45^\\circ=1$"
+    }
+   ],
+   "pembahasan": "Pembilang $=\\frac{\\sqrt2}{2}\\cdot\\frac{\\sqrt2}{2}=\\frac12$. Hasil $=\\frac12\\div\\frac{\\sqrt3}{3}=\\frac12\\cdot\\frac{3}{\\sqrt3}=\\frac{\\sqrt3}{2}$.",
+   "catatan": null
+  }
+ ]
+}

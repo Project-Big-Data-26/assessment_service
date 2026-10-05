@@ -1,0 +1,690 @@
+{
+  "book": "kelas12",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b01-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan rumus jumlah aritmetika",
+      "alasan_level": "mengevaluasi penyelesaian siswa: mencari letak kesalahan pada rumus lalu menghitung ulang nilai yang benar",
+      "stimulus": null,
+      "pertanyaan": "Rina menghitung jumlah 10 suku pertama deret $4 + 7 + 10 + \\dots$ dengan cara $S_{10} = \\frac{10}{2}(2 \\cdot 4 + 10 \\cdot 3) = 190$. Pernyataan yang benar tentang pekerjaan Rina adalah ....",
+      "jawaban_benar": "Salah, seharusnya memakai $(n-1)b$ sehingga $S_{10} = 175$",
+      "alasan_benar": "rumus $S_n = \\frac{n}{2}(2a + (n-1)b)$; Rina memakai $nb$ bukan $(n-1)b$; yang benar $5(8 + 27) = 175$",
+      "distraktor": [
+        {
+          "teks": "Benar, karena $S_{10} = 190$",
+          "alasan": "mengira penyelesaian Rina sudah sesuai rumus"
+        },
+        {
+          "teks": "Salah, seharusnya tanpa faktor $\\frac{n}{2}$ sehingga $S_{10} = 350$",
+          "alasan": "salah mengira faktor $\\frac{n}{2}$ yang keliru, padahal kesalahan ada pada $(n-1)b$"
+        },
+        {
+          "teks": "Salah, seharusnya memakai $(n+1)b$ sehingga $S_{10} = 205$",
+          "alasan": "menukar $(n-1)$ dengan $(n+1)$"
+        }
+      ],
+      "pembahasan": "Rumus yang benar $S_n = \\frac{n}{2}(2a + (n-1)b)$. Rina memakai $nb$. Maka $S_{10} = 5(8 + 9 \\cdot 3) = 5 \\cdot 35 = 175$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 46,
+        "kutipan": "Hal ini berarti, kamu menjumlahkan suku-suku suatu barisan geometri dan menghasilkan hasil tanpa henti."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "memilih deret tak hingga yang konvergen",
+      "alasan_level": "mengevaluasi empat deret geometri tak hingga terhadap syarat $|r| < 1$, termasuk jebakan rasio negatif",
+      "stimulus": null,
+      "pertanyaan": "Deret geometri tak hingga berikut yang memiliki jumlah (konvergen) adalah ....",
+      "jawaban_benar": "$9 - 6 + 4 - \\frac{8}{3} + \\dots$",
+      "alasan_benar": "rasio $r = -\\frac{2}{3}$ sehingga $|r| < 1$ dan jumlahnya $\\frac{9}{1 + \\frac{2}{3}} = \\frac{27}{5}$",
+      "distraktor": [
+        {
+          "teks": "$5 + 10 + 20 + 40 + \\dots$",
+          "alasan": "rasio $r = 2$, $|r| > 1$ sehingga divergen"
+        },
+        {
+          "teks": "$3 + 3 + 3 + 3 + \\dots$",
+          "alasan": "rasio $r = 1$, jumlahnya terus bertambah tanpa batas"
+        },
+        {
+          "teks": "$2 - 4 + 8 - 16 + \\dots$",
+          "alasan": "mengira rasio negatif selalu membuat jumlah ada, padahal $|r| = 2 > 1$"
+        }
+      ],
+      "pembahasan": "Deret tak hingga memiliki jumlah bila $|r| < 1$. Hanya deret $9 - 6 + 4 - \\dots$ ($r = -\\frac{2}{3}$) yang memenuhi.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 46,
+        "kutipan": "Hal ini berarti, kamu menjumlahkan suku-suku suatu barisan geometri dan menghasilkan hasil tanpa henti."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat parameter konvergensi",
+      "alasan_level": "menerjemahkan syarat $|r| < 1$ ke bilangan bulat parameter dan menghitung batas tanpa menyertakan nilai ujung",
+      "stimulus": null,
+      "pertanyaan": "Deret geometri tak hingga $5 + \\frac{5k}{3} + \\frac{5k^2}{9} + \\dots$ memiliki rasio $\\frac{k}{3}$ dengan $k$ bilangan bulat. Banyak nilai $k$ agar deret tersebut memiliki jumlah adalah ....",
+      "jawaban_benar": "5",
+      "alasan_benar": "syarat $|\\frac{k}{3}| < 1$ berarti $-3 < k < 3$; bilangan bulatnya $-2, -1, 0, 1, 2$",
+      "distraktor": [
+        {
+          "teks": "7",
+          "alasan": "memakai $|r| \\le 1$ sehingga $k = -3$ dan $k = 3$ ikut dihitung"
+        },
+        {
+          "teks": "6",
+          "alasan": "menyertakan salah satu nilai ujung ($k = 3$ atau $k = -3$)"
+        },
+        {
+          "teks": "3",
+          "alasan": "hanya menghitung $k$ tak negatif, yaitu $0, 1, 2$"
+        }
+      ],
+      "pembahasan": "$|k/3| < 1 \\Rightarrow -3 < k < 3$, bilangan bulat: $-2, -1, 0, 1, 2$, yaitu 5 nilai.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menguji kemungkinan hasil jumlah deret",
+      "alasan_level": "menyusun $S_n = n(n+2)$ lalu menguji empat nilai apakah memberi $n$ bilangan asli",
+      "stimulus": null,
+      "pertanyaan": "Panitia menata kursi pertunjukan. Baris pertama berisi 3 kursi dan setiap baris berikutnya berisi 2 kursi lebih banyak dari baris di depannya. Semua baris terisi penuh. Banyak kursi seluruhnya yang mungkin adalah ....",
+      "jawaban_benar": "120",
+      "alasan_benar": "$S_n = \\frac{n}{2}(6 + 2(n-1)) = n(n+2)$; $n(n+2) = 120$ dipenuhi $n = 10$",
+      "distraktor": [
+        {
+          "teks": "130",
+          "alasan": "$n(n+2) = 130$ tidak punya akar bilangan asli (antara $10 \\cdot 12$ dan $11 \\cdot 13$)"
+        },
+        {
+          "teks": "150",
+          "alasan": "$n(n+2) = 150$ tidak punya akar bilangan asli (antara $11 \\cdot 13$ dan $12 \\cdot 14$)"
+        },
+        {
+          "teks": "200",
+          "alasan": "$n(n+2) = 200$ tidak punya akar bilangan asli (antara $13 \\cdot 15$ dan $14 \\cdot 16$)"
+        }
+      ],
+      "pembahasan": "$S_n = n(n+2)$. Hanya 120 yang berbentuk $n(n+2)$ ($10 \\cdot 12$). Nilai 130, 150, 200 tidak.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 46,
+        "kutipan": "Hal ini berarti, kamu menjumlahkan suku-suku suatu barisan geometri dan menghasilkan hasil tanpa henti."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "memilih contoh penyangkal klaim",
+      "alasan_level": "mengevaluasi klaim umum tentang jumlah tak hingga dan memilih satu contoh yang membuktikannya salah",
+      "stimulus": null,
+      "pertanyaan": "Dina berpendapat bahwa untuk setiap deret geometri tak hingga dengan suku pertama positif yang memiliki jumlah, jumlah tak hingganya selalu lebih besar daripada suku pertamanya. Contoh penyangkal pendapat Dina adalah ....",
+      "jawaban_benar": "$8 - 4 + 2 - 1 + \\dots$",
+      "alasan_benar": "$r = -\\frac{1}{2}$ memberi jumlah $\\frac{8}{1 + \\frac{1}{2}} = \\frac{16}{3} \\approx 5{,}3 < 8$",
+      "distraktor": [
+        {
+          "teks": "$8 + 4 + 2 + 1 + \\dots$",
+          "alasan": "jumlahnya 16 > 8, justru mendukung pendapat Dina"
+        },
+        {
+          "teks": "$6 + 2 + \\frac{2}{3} + \\dots$",
+          "alasan": "jumlahnya 9 > 6, mendukung pendapat Dina"
+        },
+        {
+          "teks": "$8 + 16 + 32 + \\dots$",
+          "alasan": "deret divergen sehingga tidak memiliki jumlah, bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Klaim hanya berlaku bila $r > 0$. Untuk $r < 0$ jumlah $\\frac{a}{1-r} < a$. Contoh penyangkal: $8 - 4 + 2 - \\dots$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 44,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret geometri adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan dua rencana (aritmetika vs geometri)",
+      "alasan_level": "membandingkan total deret aritmetika dan geometri hari demi hari untuk menentukan titik pertama rencana B unggul",
+      "stimulus": null,
+      "pertanyaan": "Dua orang menabung setiap hari. Andi menabung Rp10.000 pada hari pertama dan setiap hari berikutnya Rp10.000 lebih banyak dari hari sebelumnya. Budi menabung Rp1.000 pada hari pertama dan setiap hari berikutnya dua kali lipat dari hari sebelumnya. Total tabungan Budi untuk pertama kali melebihi total tabungan Andi pada hari ke- ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "total hari ke-9: Andi Rp450.000 dan Budi Rp511.000, sedangkan hari ke-8 Budi Rp255.000 < Andi Rp360.000",
+      "distraktor": [
+        {
+          "teks": "8",
+          "alasan": "total Budi hari ke-8 Rp255.000 masih di bawah Andi Rp360.000"
+        },
+        {
+          "teks": "10",
+          "alasan": "hari ke-10 memang Budi lebih besar, tetapi bukan yang pertama"
+        },
+        {
+          "teks": "7",
+          "alasan": "pada hari ke-7 total Budi Rp127.000 jauh di bawah Andi Rp280.000"
+        }
+      ],
+      "pembahasan": "Andi: $S_n = 5000n(n+1)$; Budi: $S_n = 1000(2^n - 1)$. $n=8$: 360.000 vs 255.000. $n=9$: 450.000 vs 511.000. Jadi hari ke-9.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "memperbaiki banyak suku sebelum menjumlah",
+      "alasan_level": "mengevaluasi hitungan siswa yang lupa menambah 1 pada banyak suku lalu menghitung jumlah yang benar",
+      "stimulus": null,
+      "pertanyaan": "Tono menghitung banyak suku deret $7 + 11 + 15 + \\dots + 95$ dengan $\\frac{95 - 7}{4} = 22$ suku, lalu menjumlahkannya. Jumlah deret yang sebenarnya adalah ....",
+      "jawaban_benar": "1.173",
+      "alasan_benar": "banyak suku $\\frac{95-7}{4} + 1 = 23$ sehingga $S_{23} = \\frac{23}{2}(7 + 95) = 1.173$",
+      "distraktor": [
+        {
+          "teks": "1.078",
+          "alasan": "memakai 22 suku seperti Tono (lupa menambah 1)"
+        },
+        {
+          "teks": "2.346",
+          "alasan": "lupa faktor $\\frac{1}{2}$ pada rumus jumlah"
+        },
+        {
+          "teks": "987",
+          "alasan": "mengurangi 1 dari banyak suku sehingga memakai 21 suku"
+        }
+      ],
+      "pembahasan": "$U_n = 7 + (n-1)4 = 95 \\Rightarrow n = 23$. $S_{23} = \\frac{23}{2}(7 + 95) = 1.173$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "Gauss mengelompokkan suku-suku pada deret tersebut sehingga memiliki nilai yang sama ketika dijumlahkan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pasangan ala Gauss pada deret selang-seling",
+      "alasan_level": "menalar pengelompokan pasangan suku dan menangani suku sisa karena banyak suku ganjil",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $1 - 2 + 3 - 4 + \\dots - 2024 + 2025$ adalah ....",
+      "jawaban_benar": "1.013",
+      "alasan_benar": "1.012 pasangan $(2k-1) - 2k = -1$ memberi $-1.012$, lalu ditambah suku terakhir 2.025",
+      "distraktor": [
+        {
+          "teks": "-1.013",
+          "alasan": "salah tanda hasil akhir"
+        },
+        {
+          "teks": "-1.012",
+          "alasan": "melupakan suku terakhir 2.025 yang tidak berpasangan"
+        },
+        {
+          "teks": "1.012",
+          "alasan": "menganggap tiap pasangan bernilai $+1$"
+        }
+      ],
+      "pembahasan": "Ada 2025 suku. Kelompokkan 2024 suku pertama menjadi 1012 pasangan masing-masing $-1$: $-1012$. Tambah 2025: $1013$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 39,
+        "kutipan": "Deret aritmetika adalah suatu deret yang diperoleh dari menjumlahkan sukusuku pada barisan aritmetika."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 6,
+      "jenis_soal": "syarat ganda: aritmetika berubah menjadi geometri",
+      "alasan_level": "menyusun persamaan kuadrat dari dua syarat deret dan memilih akar yang sesuai syarat beda positif",
+      "stimulus": null,
+      "pertanyaan": "Tiga bilangan membentuk deret aritmetika dengan beda positif dan berjumlah 18. Jika bilangan ketiga ditambah 1 (bilangan lain tetap), ketiganya membentuk deret geometri. Hasil kali ketiga bilangan semula adalah ....",
+      "jawaban_benar": "192",
+      "alasan_benar": "bilangan $6-b,\\ 6,\\ 6+b$; $(6-b)(7+b) = 36 \\Rightarrow b = 2$ (beda positif); bilangannya $4, 6, 8$ hasil kalinya 192",
+      "distraktor": [
+        {
+          "teks": "162",
+          "alasan": "memakai akar $b = -3$ yang memberi beda negatif ($9, 6, 3$)"
+        },
+        {
+          "teks": "216",
+          "alasan": "memakai bilangan setelah ditambah 1 ($4, 6, 9$)"
+        },
+        {
+          "teks": "144",
+          "alasan": "mengira bilangan ketiga sama dengan bilangan tengah ($4 \\cdot 6 \\cdot 6$)"
+        }
+      ],
+      "pembahasan": "Misalkan $6-b, 6, 6+b$. Geometri: $6^2 = (6-b)(6+b+1)$ sehingga $b^2 + b - 6 = 0$, $b = 2$ atau $b = -3$. Beda positif: $b = 2$, bilangan $4, 6, 8$, hasil kali $192$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 44,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret geometri adalah"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rancang batas minimal pada deret geometri",
+      "alasan_level": "membedakan banyak sel pada hari tertentu dengan total sel kumulatif lalu mencari hari terkecil yang memenuhi",
+      "stimulus": null,
+      "pertanyaan": "Pada hari pertama sebuah percobaan ada 3 sel. Setiap hari, banyak sel baru yang muncul dua kali lipat dari hari sebelumnya. Jika yang dihitung adalah jumlah seluruh sel yang pernah muncul sejak hari pertama, jumlah tersebut pertama kali melebihi 3.000 pada hari ke- ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "$S_n = 3(2^n - 1)$; $S_9 = 1.533$ dan $S_{10} = 3.069 > 3.000$",
+      "distraktor": [
+        {
+          "teks": "11",
+          "alasan": "membandingkan sel baru hari ke-$n$ ($3 \\cdot 2^{n-1} > 3.000$) bukan jumlahnya"
+        },
+        {
+          "teks": "9",
+          "alasan": "$S_9 = 1.533$ belum melebihi 3.000"
+        },
+        {
+          "teks": "8",
+          "alasan": "$S_8 = 765$ masih jauh di bawah 3.000"
+        }
+      ],
+      "pembahasan": "$S_n = 3(2^n - 1) > 3000 \\Rightarrow 2^n > 1001$, sehingga $n \\ge 10$. $S_{10} = 3.069$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 44,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret geometri adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan rasio negatif",
+      "alasan_level": "mengevaluasi penentuan rasio pada deret berselang-seling tanda lalu menghitung jumlah yang benar",
+      "stimulus": null,
+      "pertanyaan": "Sinta menghitung jumlah 5 suku pertama deret $3 - 6 + 12 - 24 + 48$ dengan rasio $r = 2$ sehingga $S_5 = \\frac{3(2^5 - 1)}{2 - 1} = 93$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Salah, rasio seharusnya $-2$ dan $S_5 = 33$",
+      "alasan_benar": "$r = \\frac{-6}{3} = -2$, $S_5 = \\frac{3(1 - (-2)^5)}{1 - (-2)} = \\frac{3 \\cdot 33}{3} = 33$",
+      "distraktor": [
+        {
+          "teks": "Benar, karena $S_5 = 93$",
+          "alasan": "mengabaikan tanda negatif pada rasio"
+        },
+        {
+          "teks": "Salah, rasio seharusnya $-2$ dan $S_5 = -99$",
+          "alasan": "memakai rasio $-2$ tetapi penyebut $1 - r$ ditulis $1 - 2$"
+        },
+        {
+          "teks": "Salah, rasio seharusnya $-\\frac{1}{2}$ dan $S_5 = \\frac{33}{16}$",
+          "alasan": "membalik rasio suku sebelumnya terhadap suku sesudahnya"
+        }
+      ],
+      "pembahasan": "$r = -6/3 = -2$. $S_5 = 3(1 - (-32))/(1 + 2) = 33$. Cek: $3 - 6 + 12 - 24 + 48 = 33$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 47,
+        "kutipan": "Panjang lintasan dihitung menggunakan rumus geometri tak hingga berikut."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang rasio agar lintasan terbatas",
+      "alasan_level": "menyusun pertidaksamaan dari rumus panjang lintasan geometri tak hingga lalu mencari batas rasio",
+      "stimulus": null,
+      "pertanyaan": "Sebuah bola dijatuhkan dari ketinggian 10 m dan setiap kali memantul mencapai tinggi $r$ kali tinggi sebelumnya dengan $0 < r < 1$. Agar total panjang lintasan bola sampai berhenti tidak lebih dari 30 m, nilai $r$ terbesar yang mungkin adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "lintasan $= 10 \\cdot \\frac{1 + r}{1 - r} \\le 30$ memberi $1 + r \\le 3 - 3r$ sehingga $r \\le \\frac{1}{2}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "memakai $\\frac{10}{1-r} \\le 30$, hanya jumlah tinggi naik-turun satu arah"
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "melupakan jatuhan pertama sehingga memakai $\\frac{20r}{1-r} \\le 30$"
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "memakai batas lintasan 20 m, bukan 30 m"
+        }
+      ],
+      "pembahasan": "Total lintasan $= 10 + 2 \\cdot \\frac{10r}{1-r} = 10 \\cdot \\frac{1+r}{1-r}$. $\\le 30$: $1 + r \\le 3(1-r)$, $r \\le \\frac{1}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 46,
+        "kutipan": "Hal ini berarti, kamu menjumlahkan suku-suku suatu barisan geometri dan menghasilkan hasil tanpa henti."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah suku bernomor ganjil deret tak hingga",
+      "alasan_level": "mencari rasio dari jumlah tak hingga lalu membentuk deret baru dengan rasio $r^2$",
+      "stimulus": null,
+      "pertanyaan": "Deret geometri tak hingga memiliki suku pertama 12 dan jumlah 18. Jumlah tak hingga dari suku-suku bernomor ganjil saja ($U_1 + U_3 + U_5 + \\dots$) adalah ....",
+      "jawaban_benar": "$\\frac{27}{2}$",
+      "alasan_benar": "$r = \\frac{1}{3}$; suku ganjil membentuk deret dengan suku pertama 12 dan rasio $r^2 = \\frac{1}{9}$, jumlah $\\frac{12}{1 - \\frac{1}{9}} = \\frac{27}{2}$",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "menganggap suku ganjil memiliki rasio yang sama sehingga jumlahnya tetap 18"
+        },
+        {
+          "teks": "$\\frac{9}{2}$",
+          "alasan": "mencari jumlah suku bernomor genap, yaitu $18 - \\frac{27}{2}$"
+        },
+        {
+          "teks": "$\\frac{108}{5}$",
+          "alasan": "salah menentukan rasio ($r = \\frac{2}{3}$) lalu memakai $r^2 = \\frac{4}{9}$"
+        }
+      ],
+      "pembahasan": "$\\frac{12}{1-r} = 18 \\Rightarrow r = \\frac{1}{3}$. Suku ganjil: $12, 12r^2, \\dots$ dengan rasio $\\frac{1}{9}$, jumlah $\\frac{12}{8/9} = \\frac{27}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 6,
+      "jenis_soal": "jumlah maksimum deret aritmetika menurun",
+      "alasan_level": "menentukan beda dari kesamaan dua jumlah, lalu menalar kapan jumlah berhenti bertambah",
+      "stimulus": null,
+      "pertanyaan": "Suatu deret aritmetika memiliki suku pertama 30 dan memenuhi $S_8 = S_{13}$. Nilai terbesar yang dapat dicapai oleh $S_n$ adalah ....",
+      "jawaban_benar": "165",
+      "alasan_benar": "$S_8 = S_{13}$ memberi $b = -3$; $U_n = 33 - 3n$ tak negatif sampai $n = 11$; $S_{11} = \\frac{11}{2}(60 - 30) = 165$",
+      "distraktor": [
+        {
+          "teks": "162",
+          "alasan": "berhenti pada $n = 12$, padahal $U_{12} = -3$ mengurangi jumlah"
+        },
+        {
+          "teks": "156",
+          "alasan": "mengira jumlah maksimum terjadi pada $n = 8$"
+        },
+        {
+          "teks": "330",
+          "alasan": "lupa faktor $\\frac{1}{2}$ pada rumus jumlah"
+        }
+      ],
+      "pembahasan": "$4(60 + 7b) = \\frac{13}{2}(60 + 12b) \\Rightarrow b = -3$. $U_n = 33 - 3n \\ge 0$ untuk $n \\le 11$. $S_{11} = 165$ (juga $S_{10}$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan a dan b dari rumus jumlah",
+      "alasan_level": "menarik suku dari selisih dua jumlah berurutan lalu memeriksa bahwa bedanya tetap",
+      "stimulus": null,
+      "pertanyaan": "Jumlah $n$ suku pertama suatu deret aritmetika adalah $S_n = 3n^2 + 2n$. Suku pertama $a$ dan beda $b$ deret tersebut berturut-turut adalah ....",
+      "jawaban_benar": "$a = 5$ dan $b = 6$",
+      "alasan_benar": "$U_1 = S_1 = 5$, $U_2 = S_2 - S_1 = 16 - 5 = 11$, sehingga $b = 6$",
+      "distraktor": [
+        {
+          "teks": "$a = 3$ dan $b = 2$",
+          "alasan": "membaca langsung koefisien $3n^2$ dan $2n$ sebagai $b$ dan $a$"
+        },
+        {
+          "teks": "$a = 5$ dan $b = 3$",
+          "alasan": "mengira beda sama dengan koefisien $n^2$"
+        },
+        {
+          "teks": "$a = 5$ dan $b = 11$",
+          "alasan": "menganggap $U_2 = S_2 = 16$ sehingga $b = 16 - 5$"
+        }
+      ],
+      "pembahasan": "$a = S_1 = 5$. $U_2 = S_2 - S_1 = 11$, $b = 6$. Cek $S_3 = 27 + 6 = 33 = 5 + 11 + 17$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "jumlah suku urutan ganjil dan genap",
+      "alasan_level": "menalar bahwa jumlah suku simetris sama dengan banyak suku kali suku tengah, lalu membandingkan dua jumlah",
+      "stimulus": null,
+      "pertanyaan": "Suatu deret aritmetika memiliki banyak suku ganjil. Jumlah suku-suku pada urutan ganjil ($U_1 + U_3 + U_5 + \\dots$) adalah 108, sedangkan jumlah suku-suku pada urutan genap ($U_2 + U_4 + \\dots$) adalah 96. Banyak suku deret tersebut adalah ....",
+      "jawaban_benar": "17",
+      "alasan_benar": "bila ada $2k+1$ suku dan suku tengah $U_t$: $(k+1)U_t = 108$ dan $kU_t = 96$ sehingga $U_t = 12$, $k = 8$",
+      "distraktor": [
+        {
+          "teks": "16",
+          "alasan": "mengira banyak suku genap karena $k = 8$ dikalikan 2"
+        },
+        {
+          "teks": "9",
+          "alasan": "hanya menghitung banyak suku pada urutan ganjil"
+        },
+        {
+          "teks": "18",
+          "alasan": "membulatkan ke bilangan genap padahal banyak suku harus ganjil"
+        }
+      ],
+      "pembahasan": "Suku urutan ganjil ada $k+1$ buah dengan rata-rata $U_t$; urutan genap ada $k$ buah dengan rata-rata $U_t$. $108 - 96 = U_t = 12$, $k = 96/12 = 8$, $n = 17$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 46,
+        "kutipan": "Hal ini berarti, kamu menjumlahkan suku-suku suatu barisan geometri dan menghasilkan hasil tanpa henti."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "rancang banyak suku agar mendekati jumlah tak hingga",
+      "alasan_level": "menghitung selisih jumlah tak hingga dan jumlah sebagian lalu mencari banyak suku minimal",
+      "stimulus": null,
+      "pertanyaan": "Deret $80 + 40 + 20 + 10 + \\dots$ dijumlahkan sebanyak $n$ suku. Agar selisih antara jumlah tak hingganya dan $S_n$ kurang dari 0,1, banyak suku minimal yang diperlukan adalah ....",
+      "jawaban_benar": "11",
+      "alasan_benar": "$S_\\infty = 160$ dan $S_\\infty - S_n = \\frac{160}{2^n} < 0{,}1$, yaitu $2^n > 1.600$ sehingga $n \\ge 11$",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "memakai selisih $\\frac{80}{2^n}$ (lupa pembagi $1 - r$) sehingga $2^n > 800$"
+        },
+        {
+          "teks": "14",
+          "alasan": "memakai batas selisih 0,01, bukan 0,1"
+        },
+        {
+          "teks": "12",
+          "alasan": "menambah satu suku cadangan tanpa dasar perhitungan"
+        }
+      ],
+      "pembahasan": "$S_\\infty = \\frac{80}{1/2} = 160$. $S_n = 160(1 - 2^{-n})$ sehingga selisihnya $160 \\cdot 2^{-n}$. Syarat $2^n > 1600$, $2^{10} = 1024 < 1600 < 2048 = 2^{11}$, jadi $n = 11$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menyimpulkan sifat yang pasti dari $S_5 = 0$",
+      "alasan_level": "menalar bahwa $S_5 = 5U_3$ sehingga satu-satunya pernyataan yang selalu benar adalah $U_3 = 0$",
+      "stimulus": null,
+      "pertanyaan": "Pada suatu deret aritmetika diketahui $S_5 = 0$. Pernyataan yang pasti benar adalah ....",
+      "jawaban_benar": "$U_3 = 0$",
+      "alasan_benar": "$S_5 = \\frac{5}{2}(U_1 + U_5) = \\frac{5}{2} \\cdot 2U_3 = 5U_3$, sehingga $U_3 = 0$",
+      "distraktor": [
+        {
+          "teks": "$a = 0$",
+          "alasan": "hanya benar untuk sebagian deret, contohnya $-2, -1, 0, 1, 2$ memiliki $a = -2$"
+        },
+        {
+          "teks": "$b = 0$",
+          "alasan": "hanya benar untuk deret nol, sedangkan $-2, -1, 0, 1, 2$ beda $1$"
+        },
+        {
+          "teks": "$U_5 = 0$",
+          "alasan": "pada $-2, -1, 0, 1, 2$ nilai $U_5 = 2 \\ne 0$"
+        }
+      ],
+      "pembahasan": "Suku-suku simetris berjumlah $2U_3$, sehingga $S_5 = 5U_3 = 0$. Contoh $-2, -1, 0, 1, 2$ menyangkal tiga pilihan lain.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "batas 'lebih dari' dan nilai tepat",
+      "alasan_level": "menyadari bahwa $S_{25}$ tepat 1.000 sehingga syarat 'lebih dari' menuntut satu suku lagi",
+      "stimulus": null,
+      "pertanyaan": "Deret $4 + 7 + 10 + 13 + \\dots$ dijumlahkan suku demi suku. Jumlahnya pertama kali lebih dari 1.000 setelah dijumlahkan sebanyak ... suku.",
+      "jawaban_benar": "26",
+      "alasan_benar": "$S_n = \\frac{n(3n+5)}{2}$; $S_{25} = 1.000$ (belum lebih), $S_{26} = 1.079$",
+      "distraktor": [
+        {
+          "teks": "25",
+          "alasan": "$S_{25}$ tepat 1.000, bukan lebih dari 1.000"
+        },
+        {
+          "teks": "24",
+          "alasan": "$S_{24} = 924$ masih kurang dari 1.000"
+        },
+        {
+          "teks": "27",
+          "alasan": "menambah satu suku lagi setelah melewati 1.000"
+        }
+      ],
+      "pembahasan": "$3n^2 + 5n = 2000$ dipenuhi $n = 25$. Karena yang diminta lebih dari 1.000, $n = 26$ ($S_{26} = 1.079$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 44,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret geometri adalah"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "dua nilai rasio, pilih yang sesuai syarat",
+      "alasan_level": "menyusun persamaan kuadrat rasio dari $S_3$ lalu memilih akar negatif sesuai syarat sebelum menghitung $S_4$",
+      "stimulus": null,
+      "pertanyaan": "Deret geometri memiliki suku pertama 3 dan jumlah tiga suku pertamanya 63. Jika rasionya negatif, jumlah empat suku pertama deret tersebut adalah ....",
+      "jawaban_benar": "-312",
+      "alasan_benar": "$3(1 + r + r^2) = 63 \\Rightarrow r = 4$ atau $r = -5$; dengan $r = -5$: $3 - 15 + 75 - 375 = -312$",
+      "distraktor": [
+        {
+          "teks": "255",
+          "alasan": "memakai $r = 4$ yang positif"
+        },
+        {
+          "teks": "63",
+          "alasan": "mengira jumlah empat suku sama dengan jumlah tiga suku"
+        },
+        {
+          "teks": "312",
+          "alasan": "salah tanda pada hasil akhir"
+        }
+      ],
+      "pembahasan": "$r^2 + r - 20 = 0$ sehingga $r = 4$ atau $r = -5$. Rasio negatif: $S_4 = \\frac{3(1 - 625)}{6} = -312$.",
+      "catatan": null
+    }
+  ]
+}

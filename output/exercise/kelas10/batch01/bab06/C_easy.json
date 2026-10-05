@@ -1,0 +1,722 @@
+{
+ "book": "kelas10",
+ "bab_no": 6,
+ "subbab": "C",
+ "level": "easy",
+ "batch": 1,
+ "skill_versi": "v1",
+ "soal": [
+  {
+   "id": "kelas10-b06-c-easy-bt01-001",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas10-b06-p0228-latihan-6-4-2b"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "batas pencilan dari Q1 dan Q3",
+   "alasan_level": "menghitung IQR lalu menambahkan 1,5 kali IQR ke Q3, dua langkah langsung",
+   "stimulus": "Sebuah kecamatan mencatat banyak sampah mingguan (dalam kg) dari 10 RT. Dari data terurut diperoleh Q1 = 44 kg dan Q3 = 47 kg, sedangkan satu RT mencatat 95 kg. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
+   "pertanyaan": "Batas atas yang dipakai untuk menentukan pencilan pada data sampah itu adalah ....",
+   "jawaban_benar": "51,5 kg",
+   "alasan_benar": "IQR = 47 - 44 = 3; batas atas = 47 + 1,5 x 3 = 51,5 kg, sehingga 95 kg di atas batas itu.",
+   "distraktor": [
+    {
+     "teks": "50 kg",
+     "alasan": "memakai Q3 + IQR tanpa faktor 1,5"
+    },
+    {
+     "teks": "48,5 kg",
+     "alasan": "menambahkan 1,5 ke Q3 tanpa dikalikan IQR"
+    },
+    {
+     "teks": "39,5 kg",
+     "alasan": "menghitung batas bawah (Q1 - 1,5 x IQR), bukan batas atas"
+    }
+   ],
+   "pembahasan": "IQR = Q3 - Q1 = 3. Batas atas = Q3 + 1,5 x IQR = 47 + 4,5 = 51,5 kg.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-002",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 224,
+    "bagian": "Ayo, Mencoba",
+    "nomor": "2",
+    "teks": "Mengapa angka 750 kWh dapat dianggap sebagai pencilan?",
+    "jawaban": "Karena 750 melebihi batas atas Q3 + 1,5 x IQR dari data tersebut"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "identifikasi data pencilan",
+   "alasan_level": "menghitung batas pencilan dari Q1 dan Q3 yang diberikan lalu membandingkan dengan data",
+   "stimulus": "Waktu tunggu (dalam menit) delapan pelanggan di sebuah loket: 14, 12, 15, 13, 16, 14, 2, 15. Dari data ini diperoleh Q1 = 12,5 dan Q3 = 15. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
+   "pertanyaan": "Data yang tergolong pencilan adalah ....",
+   "jawaban_benar": "2 menit",
+   "alasan_benar": "IQR = 2,5; batas bawah = 12,5 - 3,75 = 8,75 dan batas atas = 15 + 3,75 = 18,75; hanya 2 yang di luar batas.",
+   "distraktor": [
+    {
+     "teks": "16 menit",
+     "alasan": "mengira nilai terbesar pasti pencilan, padahal 16 < 18,75"
+    },
+    {
+     "teks": "12 menit",
+     "alasan": "membandingkan dengan Q1 tanpa memakai batas bawah 8,75"
+    },
+    {
+     "teks": "15 menit",
+     "alasan": "menganggap Q3 sendiri sebagai pencilan"
+    }
+   ],
+   "pembahasan": "IQR = 15 - 12,5 = 2,5; 1,5 x IQR = 3,75. Batas: 8,75 sampai 18,75. Hanya 2 di luar batas.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-003",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 223,
+    "bagian": "Ayo, Berdiskusi",
+    "nomor": "3",
+    "teks": "Dari gambar box plot, berapa persenkah banyaknya data yang terletak antara 24 dan 27?",
+    "jawaban": "50%"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "tafsir persentase data pada diagram kotak garis",
+   "alasan_level": "mengaitkan Q1 sampai nilai maksimum dengan tiga bagian yang masing-masing 25% data",
+   "stimulus": "Banyak pengunjung harian sebuah perpustakaan selama 40 hari diringkas sebagai berikut: nilai minimum 12, Q1 = 20, Q2 = 26, Q3 = 33, dan nilai maksimum 41.",
+   "pertanyaan": "Persentase hari yang banyak pengunjungnya terletak antara 20 dan 41 adalah ....",
+   "jawaban_benar": "75%",
+   "alasan_benar": "Antara Q1 dan Q2, Q2 dan Q3, serta Q3 dan maksimum masing-masing ada 25% data, jadi 75%.",
+   "distraktor": [
+    {
+     "teks": "50%",
+     "alasan": "hanya menghitung data antara Q1 dan Q3"
+    },
+    {
+     "teks": "25%",
+     "alasan": "hanya menghitung satu bagian 25% (Q3 sampai maksimum)"
+    },
+    {
+     "teks": "100%",
+     "alasan": "mengira semua data berada di antara nilai terkecil dan terbesar, padahal batas bawahnya Q1"
+    }
+   ],
+   "pembahasan": "Q1 sampai Q2 = 25%, Q2 sampai Q3 = 25%, Q3 sampai maksimum = 25%, total 75%.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-004",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 227,
+    "bagian": "Ayo, Mencoba",
+    "nomor": "1",
+    "teks": "Rumah mana yang memiliki konsumsi energi median yang lebih tinggi?",
+    "jawaban": "Rumah A (median 320, Rumah B 305,5)"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "bandingkan median dua kelompok",
+   "alasan_level": "mencari median dua kumpulan data terurut berukuran genap lalu membandingkannya",
+   "stimulus": "Dua warung, X dan Y, mencatat penjualan harian (dalam bungkus) selama 10 hari. Data sudah terurut.\n\n- Warung X: 39, 40, 41, 42, 43, 44, 45, 46, 47, 48\n- Warung Y: 33, 35, 36, 37, 38, 39, 41, 44, 50, 52",
+   "pertanyaan": "Warung yang penjualan mediannya lebih tinggi, beserta nilai mediannya, adalah ....",
+   "jawaban_benar": "Warung X, median 43,5",
+   "alasan_benar": "Median X = (43 + 44)/2 = 43,5 dan median Y = (38 + 39)/2 = 38,5, sehingga X lebih tinggi.",
+   "distraktor": [
+    {
+     "teks": "Warung Y, median 52",
+     "alasan": "memakai nilai maksimum sebagai median dan membandingkan puncak data"
+    },
+    {
+     "teks": "Warung X, median 44",
+     "alasan": "hanya mengambil data ke-6 tanpa merata-ratakan dengan data ke-5"
+    },
+    {
+     "teks": "Warung Y, median 38,5",
+     "alasan": "menghitung median Y dengan benar tetapi menyimpulkan Y yang lebih tinggi"
+    }
+   ],
+   "pembahasan": "n = 10 sehingga median = rata-rata data ke-5 dan ke-6. X: (43+44)/2 = 43,5; Y: (38+39)/2 = 38,5.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-005",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 227,
+    "bagian": "Ayo, Mencoba",
+    "nomor": "2",
+    "teks": "Berdasarkan rentang interkuartil, konsumsi energi rumah tangga mana yang lebih konsisten?",
+    "jawaban": "Rumah A (IQR 5, Rumah B IQR 6)"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "bandingkan sebaran dua kelompok",
+   "alasan_level": "menentukan Q1 dan Q3 dua kelompok dari data terurut lalu membandingkan IQR",
+   "stimulus": "Waktu tempuh (dalam menit) dua rute bus, P dan Q, selama 8 hari. Data sudah terurut.\n\n- Rute P: 24, 25, 26, 27, 28, 29, 30, 31\n- Rute Q: 21, 22, 24, 27, 28, 30, 33, 35\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
+   "pertanyaan": "Rute yang waktu tempuhnya lebih konsisten menurut IQR, beserta IQR-nya, adalah ....",
+   "jawaban_benar": "Rute P, IQR = 4 menit",
+   "alasan_benar": "P: Q1 = 25,5 dan Q3 = 29,5 sehingga IQR = 4; Q: Q1 = 23 dan Q3 = 31,5 sehingga IQR = 8,5. IQR P lebih kecil.",
+   "distraktor": [
+    {
+     "teks": "Rute Q, IQR = 8,5 menit",
+     "alasan": "menganggap IQR lebih besar berarti lebih konsisten"
+    },
+    {
+     "teks": "Rute P, IQR = 7 menit",
+     "alasan": "memakai jangkauan (31 - 24) sebagai IQR"
+    },
+    {
+     "teks": "Rute Q, IQR = 14 menit",
+     "alasan": "memakai jangkauan (35 - 21) sebagai IQR dan memilih yang lebih besar"
+    }
+   ],
+   "pembahasan": "n = 8: Q1 = rata-rata data ke-2 dan ke-3, Q3 = rata-rata data ke-6 dan ke-7. IQR P = 4, IQR Q = 8,5.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-006",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 225,
+    "bagian": "Contoh",
+    "nomor": "-",
+    "teks": "Berdasarkan Diagram Box-and-Whisker dari kedua dataset, kota mana yang memiliki produksi energi yang lebih konsisten? Jelaskan alasanmu.",
+    "jawaban": "Kota B (turbin angin), karena IQR dan range-nya lebih kecil"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "bandingkan sebaran dua kelompok",
+   "alasan_level": "membaca median dan menghitung IQR dari dua ringkasan lima ukuran, lalu menyimpulkan",
+   "stimulus": "Banyak roti (dalam ratusan buah) yang dihasilkan dua pabrik selama sebulan diringkas sebagai berikut.\n\n| Ukuran | Pabrik A | Pabrik B |\n|---|---|---|\n| Minimum | 40 | 48 |\n| Q1 | 52 | 56 |\n| Median (Q2) | 60 | 62 |\n| Q3 | 72 | 68 |\n| Maksimum | 85 | 76 |",
+   "pertanyaan": "Kesimpulan yang benar tentang kedua pabrik adalah ....",
+   "jawaban_benar": "Pabrik B memiliki median lebih tinggi dan IQR lebih kecil sehingga lebih konsisten",
+   "alasan_benar": "Median B 62 > 60; IQR B = 68 - 56 = 12 < IQR A = 72 - 52 = 20.",
+   "distraktor": [
+    {
+     "teks": "Pabrik A memiliki median lebih tinggi dan IQR lebih kecil sehingga lebih konsisten",
+     "alasan": "terbalik membaca median dan IQR kedua pabrik"
+    },
+    {
+     "teks": "Pabrik A memiliki median lebih tinggi dan rentang lebih lebar sehingga lebih konsisten",
+     "alasan": "menganggap rentang lebih lebar berarti lebih konsisten, dan salah membaca median"
+    },
+    {
+     "teks": "Pabrik B memiliki median lebih rendah tetapi IQR lebih kecil sehingga lebih konsisten",
+     "alasan": "salah membandingkan median (62 lebih besar dari 60)"
+    }
+   ],
+   "pembahasan": "Median B = 62 lebih besar dari A = 60. IQR A = 20 dan IQR B = 12; IQR kecil berarti data lebih konsisten.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-007",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 228,
+    "bagian": "Latihan 6.4",
+    "nomor": "3a",
+    "teks": "Berdasarkan Diagram Box-and-Whisker dari kedua kumpulan data di atas, model mana yang umumnya memerlukan waktu lebih sedikit untuk pelatihan?",
+    "jawaban": "Model Q (median 4,8 lebih kecil dari median P 5,3)"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "bandingkan median dua kelompok",
+   "alasan_level": "mengurutkan dua kumpulan data ganjil lalu mengambil data tengah masing-masing",
+   "stimulus": "Waktu muat halaman (dalam detik) dua aplikasi, X dan Y, dari 7 percobaan (belum terurut).\n\n- Aplikasi X: 2,4; 2,1; 2,6; 2,2; 2,5; 2,3; 2,0\n- Aplikasi Y: 2,8; 1,9; 2,0; 1,7; 3,0; 1,8; 2,2",
+   "pertanyaan": "Aplikasi yang umumnya memuat halaman lebih cepat berdasarkan mediannya, beserta mediannya, adalah ....",
+   "jawaban_benar": "Aplikasi Y, median 2,0 detik",
+   "alasan_benar": "Setelah diurutkan, data ke-4 X = 2,3 dan data ke-4 Y = 2,0; median Y lebih kecil sehingga lebih cepat.",
+   "distraktor": [
+    {
+     "teks": "Aplikasi Y, median 1,7 detik",
+     "alasan": "mengambil data ke-4 dari urutan asli tanpa mengurutkan"
+    },
+    {
+     "teks": "Aplikasi X, median 2,3 detik",
+     "alasan": "menghitung median benar tetapi menyimpulkan X lebih cepat karena melihat nilai Y yang besar (3,0)"
+    },
+    {
+     "teks": "Aplikasi X, median 2,2 detik",
+     "alasan": "mengambil data ke-4 dari urutan asli X tanpa mengurutkan"
+    }
+   ],
+   "pembahasan": "n = 7 sehingga median = data ke-4 setelah diurutkan. X: 2,0; 2,1; 2,2; 2,3; ... median 2,3. Y: 1,7; 1,8; 1,9; 2,0; ... median 2,0.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-008",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 228,
+    "bagian": "Latihan 6.4",
+    "nomor": "3b",
+    "teks": "Model mana yang memiliki rentang waktu pelatihan yang lebih seragam?",
+    "jawaban": "Model P (rentang 0,5 lebih kecil dari Q 0,7)"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "bandingkan sebaran dua kelompok",
+   "alasan_level": "menghitung jangkauan dua kumpulan data terurut lalu memilih yang lebih kecil",
+   "stimulus": "Volume isi botol (dalam mL) yang dihasilkan dua mesin pengisi, A dan B, dari 6 botol masing-masing. Data sudah terurut.\n\n- Mesin A: 498, 499, 500, 500, 501, 502\n- Mesin B: 495, 497, 500, 501, 503, 506",
+   "pertanyaan": "Mesin yang isinya lebih seragam berdasarkan jangkauan (maksimum - minimum), beserta jangkauannya, adalah ....",
+   "jawaban_benar": "Mesin A, jangkauan 4 mL",
+   "alasan_benar": "Jangkauan A = 502 - 498 = 4 dan jangkauan B = 506 - 495 = 11; jangkauan lebih kecil berarti lebih seragam.",
+   "distraktor": [
+    {
+     "teks": "Mesin B, jangkauan 11 mL",
+     "alasan": "menganggap jangkauan lebih besar berarti lebih seragam"
+    },
+    {
+     "teks": "Mesin A, jangkauan 502 mL",
+     "alasan": "memakai nilai maksimum sebagai jangkauan"
+    },
+    {
+     "teks": "Mesin A, jangkauan 1 mL",
+     "alasan": "mengurangkan dua data terakhir (502 - 501), bukan maksimum dengan minimum"
+    }
+   ],
+   "pembahasan": "Jangkauan = maksimum - minimum. Mesin A: 502 - 498 = 4 mL; Mesin B: 506 - 495 = 11 mL.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-009",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 236,
+    "bagian": "Latihan 6.5",
+    "nomor": "1",
+    "teks": "Apakah terdapat korelasi antara jumlah jam pelatihan dan akurasi model? Jelaskan.",
+    "jawaban": "Ya, korelasi positif kuat (makin banyak jam pelatihan, akurasi makin tinggi)"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "jenis korelasi dari pasangan data",
+   "alasan_level": "menafsirkan arah kecenderungan titik dari pasangan data, satu langkah",
+   "stimulus": "Delapan siswa dicatat lama bermain gim per hari (sumbu x) dan nilai ulangan matematika (sumbu y).\n\n| Jam bermain gim per hari | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |\n|---|---|---|---|---|---|---|---|---|\n| Nilai ulangan | 92 | 88 | 85 | 79 | 74 | 71 | 65 | 60 |",
+   "pertanyaan": "Jika pasangan data itu digambar sebagai diagram pencar, jenis korelasinya adalah ....",
+   "jawaban_benar": "Korelasi negatif kuat",
+   "alasan_benar": "Nilai y turun hampir lurus ketika x naik dari 1 sampai 8, sehingga korelasi negatif dan titik-titik hampir segaris.",
+   "distraktor": [
+    {
+     "teks": "Korelasi positif kuat",
+     "alasan": "membalik arah: mengira y ikut naik saat x naik"
+    },
+    {
+     "teks": "Tidak ada korelasi",
+     "alasan": "mengira titik tersebar acak padahal polanya jelas menurun"
+    },
+    {
+     "teks": "Korelasi positif sedang",
+     "alasan": "salah arah dan salah menilai kekuatan hubungan"
+    }
+   ],
+   "pembahasan": "Setiap kenaikan x diikuti penurunan y secara hampir lurus: korelasi negatif kuat.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-010",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 234,
+    "bagian": "Ayo, Mencoba",
+    "nomor": "2",
+    "teks": "Tentukanlah jenis korelasinya, lalu apakah masuk dalam kategori kuat atau sedang?",
+    "jawaban": "Korelasi negatif (makin banyak pohon ditanam, level PM2.5 makin rendah)"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "jenis korelasi dari pasangan data",
+   "alasan_level": "menentukan arah dan kekuatan hubungan dari pasangan data yang jelas pola linearnya",
+   "stimulus": "Seorang pedagang mencatat suhu udara (sumbu x) dan banyak es teh terjual (sumbu y) selama 8 hari.\n\n| Suhu udara (derajat Celsius) | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 |\n|---|---|---|---|---|---|---|---|---|\n| Es teh terjual (gelas) | 40 | 46 | 50 | 58 | 63 | 69 | 75 | 80 |",
+   "pertanyaan": "Jenis korelasi antara suhu udara dan penjualan es teh adalah ....",
+   "jawaban_benar": "Korelasi positif kuat",
+   "alasan_benar": "Penjualan naik hampir lurus ketika suhu naik, sehingga positif dan titik-titik mendekati garis lurus.",
+   "distraktor": [
+    {
+     "teks": "Korelasi negatif kuat",
+     "alasan": "membalik arah hubungan"
+    },
+    {
+     "teks": "Tidak ada korelasi",
+     "alasan": "mengira data tidak punya pola padahal selalu naik"
+    },
+    {
+     "teks": "Korelasi negatif sedang",
+     "alasan": "salah arah dan menganggap titik terlalu menyebar"
+    }
+   ],
+   "pembahasan": "Suhu naik diikuti penjualan naik secara hampir linear: korelasi positif kuat.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-011",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 237,
+    "bagian": "Latihan 6.5",
+    "nomor": "2",
+    "teks": "Apakah selebriti yang lebih sering memposting mendapatkan lebih banyak pengikut baru?",
+    "jawaban": "Ya, korelasi positif: makin sering memposting, pengikut baru makin banyak"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "jenis korelasi dari pasangan data",
+   "alasan_level": "mengenali pola titik yang acak sehingga tidak ada korelasi",
+   "stimulus": "Delapan siswa dicatat nomor sepatu (sumbu x) dan nilai ulangan matematika (sumbu y).\n\n| Nomor sepatu | 38 | 40 | 39 | 41 | 37 | 42 | 40 | 39 |\n|---|---|---|---|---|---|---|---|---|\n| Nilai matematika | 78 | 65 | 90 | 85 | 72 | 70 | 88 | 68 |",
+   "pertanyaan": "Pernyataan yang paling sesuai dengan diagram pencar dari data itu adalah ....",
+   "jawaban_benar": "Tidak ada korelasi antara nomor sepatu dan nilai matematika",
+   "alasan_benar": "Nilai y naik turun tidak beraturan ketika x bertambah, tanpa kecenderungan naik atau turun.",
+   "distraktor": [
+    {
+     "teks": "Korelasi positif kuat: makin besar nomor sepatu, makin tinggi nilai",
+     "alasan": "mengira ada hubungan padahal tidak ada pola naik"
+    },
+    {
+     "teks": "Korelasi negatif kuat: makin besar nomor sepatu, makin rendah nilai",
+     "alasan": "mengira ada pola menurun padahal acak"
+    },
+    {
+     "teks": "Korelasi positif sedang: nilai cenderung naik bersama nomor sepatu",
+     "alasan": "menganggap sedikit kenaikan acak sebagai korelasi positif"
+    }
+   ],
+   "pembahasan": "Pada nomor sepatu yang sama (mis. 40) nilainya 65 dan 88; titik menyebar tanpa arah. Tidak ada korelasi.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-012",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 223,
+    "bagian": "Ayo, Berdiskusi",
+    "nomor": "2",
+    "teks": "Apakah kumpulan data ini memiliki pencilan? Jika ada, jelaskan kenapa?",
+    "jawaban": "Ya, 36 adalah pencilan karena melebihi batas atas 29,75"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "banyak data pencilan",
+   "alasan_level": "menghitung dua batas pencilan dari Q1 dan Q3 yang diberikan lalu menghitung data di luarnya",
+   "stimulus": "Waktu pengerjaan (dalam menit) 12 peserta lomba yang diurutkan: 3, 40, 41, 42, 43, 44, 44, 45, 46, 47, 48, 95. Dari data ini diperoleh Q1 = 41,5 dan Q3 = 46,5. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
+   "pertanyaan": "Banyak peserta yang waktu pengerjaannya tergolong pencilan adalah ....",
+   "jawaban_benar": "2 peserta",
+   "alasan_benar": "IQR = 5; batas bawah = 41,5 - 7,5 = 34 dan batas atas = 46,5 + 7,5 = 54; data 3 dan 95 di luar batas.",
+   "distraktor": [
+    {
+     "teks": "0 peserta",
+     "alasan": "mengira tidak ada data yang melewati batas"
+    },
+    {
+     "teks": "1 peserta",
+     "alasan": "hanya memeriksa data terbesar dan lupa batas bawah"
+    },
+    {
+     "teks": "3 peserta",
+     "alasan": "ikut menghitung 40 yang berada tepat di dalam batas bawah 34"
+    }
+   ],
+   "pembahasan": "Batas wajar 34 sampai 54. Data di luarnya: 3 dan 95, jadi 2 pencilan.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-013",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 222,
+    "kutipan": "Diagram ini menampilkan data berdasarkan lima ukuran data yaitu: nilai minimum, kuartil pertama (Q1), median, kuartil ketiga (Q3), dan nilai maksimum."
+   },
+   "cognitive_c": "C1",
+   "jumlah_langkah": 1,
+   "jenis_soal": "konsep lima ukuran diagram kotak garis",
+   "alasan_level": "mengingat lima ukuran data yang ditampilkan diagram kotak garis",
+   "stimulus": null,
+   "pertanyaan": "Ukuran berikut yang BUKAN salah satu dari lima ukuran data yang dipakai untuk menggambar diagram kotak garis (box plot) adalah ....",
+   "jawaban_benar": "Modus",
+   "alasan_benar": "Lima ukuran: minimum, Q1, median, Q3, maksimum; modus tidak termasuk.",
+   "distraktor": [
+    {
+     "teks": "Median",
+     "alasan": "median termasuk lima ukuran (Q2)"
+    },
+    {
+     "teks": "Kuartil ketiga (Q3)",
+     "alasan": "Q3 termasuk lima ukuran"
+    },
+    {
+     "teks": "Nilai minimum",
+     "alasan": "minimum termasuk lima ukuran (ujung kumis kiri)"
+    }
+   ],
+   "pembahasan": "Diagram kotak garis memakai minimum, Q1, median, Q3, dan maksimum. Modus tidak dipakai.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-014",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 222,
+    "kutipan": "IQR dihitung dengan cara IQR = Q3 - Q1"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "menghitung IQR dari lima ukuran",
+   "alasan_level": "satu pengurangan Q3 - Q1 dari ringkasan lima ukuran",
+   "stimulus": "Ringkasan lima ukuran data nilai ujian: minimum 15, Q1 = 28, Q2 = 35, Q3 = 47, maksimum 60.",
+   "pertanyaan": "Jangkauan interkuartil (IQR) data nilai itu adalah ....",
+   "jawaban_benar": "19",
+   "alasan_benar": "IQR = Q3 - Q1 = 47 - 28 = 19.",
+   "distraktor": [
+    {
+     "teks": "45",
+     "alasan": "menghitung jangkauan (maksimum - minimum)"
+    },
+    {
+     "teks": "12",
+     "alasan": "menghitung Q3 - Q2"
+    },
+    {
+     "teks": "32",
+     "alasan": "menghitung Q3 - minimum"
+    }
+   ],
+   "pembahasan": "IQR = Q3 - Q1 = 47 - 28 = 19.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-015",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 221,
+    "kutipan": "Tapi jika hasil baginya bukan merupakan bilangan bulat, bulatkanlah hasilnya ke atas, maka Q3 terletak di urutan sesuai hasil pembulatan."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "menentukan Q1 dan Q3 data tunggal",
+   "alasan_level": "menerapkan aturan letak kuartil buku pada 12 data terurut (hasil bagi bulat)",
+   "stimulus": "Data terurut (n = 12): 12, 15, 17, 18, 21, 23, 24, 27, 29, 30, 34, 38.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
+   "pertanyaan": "Nilai Q1 dan Q3 data tersebut berturut-turut adalah ....",
+   "jawaban_benar": "Q1 = 17,5 dan Q3 = 29,5",
+   "alasan_benar": "n/4 = 3 sehingga Q1 = (17 + 18)/2 = 17,5; 3n/4 = 9 sehingga Q3 = (29 + 30)/2 = 29,5.",
+   "distraktor": [
+    {
+     "teks": "Q1 = 17 dan Q3 = 29",
+     "alasan": "hanya mengambil data ke-3 dan ke-9 tanpa merata-ratakan dengan data berikutnya"
+    },
+    {
+     "teks": "Q1 = 18 dan Q3 = 30",
+     "alasan": "mengambil data ke-4 dan ke-10 (data setelahnya) saja"
+    },
+    {
+     "teks": "Q1 = 17,5 dan Q3 = 27",
+     "alasan": "Q1 benar, tetapi Q3 diambil dari data ke-8"
+    }
+   ],
+   "pembahasan": "n/4 = 3 (bulat): rata-rata data ke-3 dan ke-4. 3n/4 = 9 (bulat): rata-rata data ke-9 dan ke-10.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-016",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 221,
+    "kutipan": "Atau dapat dikatakan bahwa di antara Q1 dan Q2 terdapat 25% data."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "tafsir persentase data pada diagram kotak garis",
+   "alasan_level": "mengaitkan Q1 sampai Q3 dengan 50% dari 48 data",
+   "stimulus": "Dari 48 nilai terurut diperoleh Q1 = 15, Q2 = 22, dan Q3 = 31.",
+   "pertanyaan": "Banyak nilai yang terletak di antara Q1 dan Q3 adalah ....",
+   "jawaban_benar": "24 nilai",
+   "alasan_benar": "Antara Q1 dan Q3 ada 50% data, yaitu 50% x 48 = 24.",
+   "distraktor": [
+    {
+     "teks": "12 nilai",
+     "alasan": "hanya menghitung 25% data (satu bagian)"
+    },
+    {
+     "teks": "36 nilai",
+     "alasan": "menghitung 75% data (dari minimum sampai Q3)"
+    },
+    {
+     "teks": "48 nilai",
+     "alasan": "mengira semua data berada di antara Q1 dan Q3"
+    }
+   ],
+   "pembahasan": "Q1 ke Q2 = 25% dan Q2 ke Q3 = 25%, jadi 50% x 48 = 24.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-017",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 222,
+    "kutipan": "Biasanya lebih dari 1,5 kali IQR di atas Q3 atau di bawah Q1."
+   },
+   "cognitive_c": "C1",
+   "jumlah_langkah": 1,
+   "jenis_soal": "konsep pencilan",
+   "alasan_level": "mengingat definisi pencilan menurut buku",
+   "stimulus": null,
+   "pertanyaan": "Menurut aturan pada diagram kotak garis, sebuah data disebut pencilan jika ....",
+   "jawaban_benar": "kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR",
+   "alasan_benar": "Batas pencilan berjarak 1,5 kali IQR di bawah Q1 dan di atas Q3.",
+   "distraktor": [
+    {
+     "teks": "lebih besar dari 1,5 kali nilai median",
+     "alasan": "mengganti IQR dengan median"
+    },
+    {
+     "teks": "berbeda lebih dari 1,5 dari modus",
+     "alasan": "mengaitkan pencilan dengan modus"
+    },
+    {
+     "teks": "terletak di antara Q1 dan Q3",
+     "alasan": "menyebut data di dalam kotak, yang justru data wajar"
+    }
+   ],
+   "pembahasan": "Pencilan: < Q1 - 1,5 x IQR atau > Q3 + 1,5 x IQR.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-018",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 231,
+    "kutipan": "Korelasi Negatif: Ketika nilai satu variabel meningkat, nilai variabel lainnya menurun."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "konsep jenis korelasi",
+   "alasan_level": "mengenali contoh korelasi negatif dari empat situasi",
+   "stimulus": null,
+   "pertanyaan": "Situasi berikut yang menunjukkan korelasi negatif adalah ....",
+   "jawaban_benar": "makin lama sebuah motor dipakai berkeliling, makin sedikit bensin yang tersisa",
+   "alasan_benar": "lama pemakaian naik, sisa bensin turun: berlawanan arah.",
+   "distraktor": [
+    {
+     "teks": "makin tinggi suhu ruangan, makin banyak es krim yang terjual",
+     "alasan": "kedua variabel naik bersama (korelasi positif)"
+    },
+    {
+     "teks": "makin tinggi badan seseorang, makin besar ukuran sepatunya",
+     "alasan": "kedua variabel naik bersama (korelasi positif)"
+    },
+    {
+     "teks": "nomor urut absen siswa dan tinggi badannya",
+     "alasan": "tidak ada hubungan arah yang jelas (tidak ada korelasi)"
+    }
+   ],
+   "pembahasan": "Korelasi negatif: satu variabel naik, variabel lain turun. Hanya bensin yang memenuhi.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-019",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 235,
+    "kutipan": "Perlu kamu ketahui, bahwa tidak semua korelasi menunjukkan hubungan sebab-akibat ya."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "korelasi dan sebab-akibat",
+   "alasan_level": "memahami bahwa korelasi tidak otomatis berarti sebab-akibat",
+   "stimulus": "Di sebuah kota, data bulanan menunjukkan korelasi positif yang kuat antara banyak es krim yang terjual dan banyak kunjungan ke kolam renang.",
+   "pertanyaan": "Kesimpulan yang paling tepat dari data itu adalah ....",
+   "jawaban_benar": "kedua hal cenderung naik bersama, tetapi korelasi saja tidak membuktikan satu menyebabkan yang lain",
+   "alasan_benar": "Korelasi hanya menunjukkan hubungan arah; sebab-akibat memerlukan bukti lain (misalnya cuaca panas memengaruhi keduanya).",
+   "distraktor": [
+    {
+     "teks": "penjualan es krim menyebabkan kunjungan ke kolam renang bertambah",
+     "alasan": "menyimpulkan sebab-akibat dari korelasi"
+    },
+    {
+     "teks": "kunjungan ke kolam renang menyebabkan penjualan es krim bertambah",
+     "alasan": "menyimpulkan sebab-akibat arah sebaliknya"
+    },
+    {
+     "teks": "penjualan es krim harus dilarang agar kunjungan ke kolam renang turun",
+     "alasan": "mengambil tindakan atas anggapan sebab-akibat yang salah"
+    }
+   ],
+   "pembahasan": "Korelasi positif kuat tidak sama dengan sebab-akibat; keduanya bisa dipengaruhi faktor lain.",
+   "catatan": null
+  },
+  {
+   "id": "kelas10-b06-c-easy-bt01-020",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 231,
+    "kutipan": "Setiap titik mewakili dua nilai data yang dipasangkan dengan koordinat"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "koordinat titik pada diagram pencar",
+   "alasan_level": "memasangkan dua nilai data menjadi satu titik (x, y) dengan sumbu yang ditentukan",
+   "stimulus": "| Siswa | Jam belajar | Nilai |\n|---|---|---|\n| Andi | 2 | 60 |\n| Budi | 5 | 78 |\n| Dina | 3 | 72 |\n| Eka | 6 | 85 |\n\nPada diagram pencar, sumbu x menunjukkan jam belajar dan sumbu y menunjukkan nilai.",
+   "pertanyaan": "Koordinat titik yang mewakili Dina adalah ....",
+   "jawaban_benar": "(3, 72)",
+   "alasan_benar": "Dina belajar 3 jam (x) dan bernilai 72 (y), sehingga titiknya (3, 72).",
+   "distraktor": [
+    {
+     "teks": "(72, 3)",
+     "alasan": "menukar sumbu x dan y"
+    },
+    {
+     "teks": "(3, 78)",
+     "alasan": "memakai nilai milik Budi untuk sumbu y"
+    },
+    {
+     "teks": "(5, 72)",
+     "alasan": "memakai jam belajar milik Budi untuk sumbu x"
+    }
+   ],
+   "pembahasan": "Titik = (jam belajar, nilai) = (3, 72).",
+   "catatan": null
+  }
+ ]
+}

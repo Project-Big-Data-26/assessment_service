@@ -1,0 +1,573 @@
+{
+  "book": "kelas12",
+  "bab_no": 2,
+  "subbab": "F",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab F hanya memuat dua parameter (suku bunga dan periode pembayaran) dengan rumus nilai akhir bunga majemuk; acuan pretest dan Buku Siswa sudah habis pada easy dan medium. Penalaran hard (evaluasi klaim, temukan kesalahan, syarat ganda, perancangan parameter, perbandingan skema) hanya layak sampai 17 soal tanpa kembar atau materi di luar subbab.",
+  "soal": [
+    {
+      "id": "kelas12-b02-f-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "kutipan": "Makin lama periode pembayaran yang diberikan, maka bagaimana nilai akhirnya?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim periode dan total bunga",
+      "alasan_level": "mengevaluasi klaim pola linear dengan dua nilai bunga majemuk lalu membandingkan dengan 2 kali",
+      "stimulus": "Dina menyatakan: \"Jika periode bunga majemuk digandakan dari 2 tahun menjadi 4 tahun, total bunga yang diperoleh juga tepat dua kali lipat.\" Modal Rp10.000.000,00 dibungakan majemuk 10% per tahun.",
+      "pertanyaan": "Pernyataan yang benar mengenai klaim Dina adalah ....",
+      "jawaban_benar": "Klaim salah: total bunga 4 tahun Rp4.641.000,00 lebih dari dua kali total bunga 2 tahun Rp2.100.000,00.",
+      "alasan_benar": "bunga 2 tahun Rp2.100.000,00; bunga 4 tahun Rp4.641.000,00 > 2 x 2.100.000 = 4.200.000",
+      "distraktor": [
+        {
+          "teks": "Klaim benar: total bunga 4 tahun Rp4.200.000,00, tepat dua kali total bunga 2 tahun Rp2.100.000,00.",
+          "alasan": "memakai pola bunga tunggal yang linear terhadap periode"
+        },
+        {
+          "teks": "Klaim salah: total bunga 4 tahun Rp4.641.000,00 kurang dari dua kali total bunga 2 tahun Rp2.100.000,00.",
+          "alasan": "arah perbandingan terbalik, padahal 4.641.000 melebihi 4.200.000"
+        },
+        {
+          "teks": "Klaim salah: total bunga 4 tahun hanya Rp2.541.000,00, yaitu selisih nilai akhir 4 tahun dan 2 tahun.",
+          "alasan": "mengambil kenaikan nilai akhir sebagai total bunga 4 tahun"
+        }
+      ],
+      "pembahasan": "Nilai akhir 2 tahun Rp12.100.000,00 (bunga Rp2.100.000,00); 4 tahun Rp14.641.000,00 (bunga Rp4.641.000,00). Karena 4.641.000 > 4.200.000, total bunga lebih dari dua kali lipat, klaim salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Bagaimanakah pengaruh periode pembayaran pada nilai akhir?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang periode agar target tercapai",
+      "alasan_level": "mencari periode terkecil melalui uji pangkat berurutan dan menolak jawaban bunga tunggal",
+      "stimulus": null,
+      "pertanyaan": "Dana Rp40.000.000,00 dibungakan majemuk 10% per tahun. Paling sedikit berapa tahun (bilangan bulat) agar nilai akhir dana itu minimal dua kali modal awal?",
+      "jawaban_benar": "8 tahun",
+      "alasan_benar": "$(1,1)^7 = 1,9487 < 2$ sedangkan $(1,1)^8 = 2,1436 \\geq 2$",
+      "distraktor": [
+        {
+          "teks": "7 tahun",
+          "alasan": "pembulatan ke bawah: $(1,1)^7 = 1,9487$ masih kurang dari 2"
+        },
+        {
+          "teks": "9 tahun",
+          "alasan": "memilih satu tahun lebih lama dari yang diperlukan"
+        },
+        {
+          "teks": "10 tahun",
+          "alasan": "memakai bunga tunggal: 100% : 10% = 10 tahun"
+        }
+      ],
+      "pembahasan": "Uji pangkat: $(1,1)^7 = 1,9487$ belum cukup, $(1,1)^8 = 2,1436$ sudah melebihi 2. Jadi paling sedikit 8 tahun.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "kutipan": "Parameter yang pertama yaitu suku bunga."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang suku bunga minimal",
+      "alasan_level": "merancang suku bunga bulat terkecil dari target dengan uji coba beberapa suku bunga",
+      "stimulus": null,
+      "pertanyaan": "Dana Rp40.000.000,00 diinvestasikan 3 tahun dengan bunga majemuk per tahun. Agar nilai akhirnya minimal Rp50.000.000,00, suku bunga bulat per tahun paling kecil yang dapat dipilih adalah ....",
+      "jawaban_benar": "8%",
+      "alasan_benar": "8%: Rp50.388.480,00 (cukup); 7%: Rp49.001.720,00 (kurang dari 50.000.000)",
+      "distraktor": [
+        {
+          "teks": "7%",
+          "alasan": "nilai akhir hanya Rp49.001.720,00, belum mencapai target"
+        },
+        {
+          "teks": "9%",
+          "alasan": "memakai bunga tunggal: 25% : 3 = 8,33% lalu dibulatkan ke atas"
+        },
+        {
+          "teks": "13%",
+          "alasan": "memakai n = 2 (25% : 2 = 12,5%) lalu dibulatkan ke atas"
+        }
+      ],
+      "pembahasan": "Uji: $40.000.000 \\times (1,07)^3 = Rp49.001.720,00$ (kurang), $40.000.000 \\times (1,08)^3 = Rp50.388.480,00$ (cukup). Jadi 8%.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "kutipan": "Kondisi perekonomian yang tidak stabil mempengaruhi suku bunga per tahunnya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat ganda skema investasi",
+      "alasan_level": "memeriksa tiga syarat sekaligus pada empat skema; tiap distraktor melanggar tepat satu syarat",
+      "stimulus": null,
+      "pertanyaan": "Dana Rp50.000.000,00 akan diinvestasikan dengan bunga majemuk per tahun. Syarat: (i) nilai akhir minimal Rp60.000.000,00, (ii) suku bunga tidak lebih dari 8% per tahun, (iii) periode tidak lebih dari 3 tahun. Skema yang memenuhi ketiga syarat adalah ....",
+      "jawaban_benar": "suku bunga 8% per tahun selama 3 tahun",
+      "alasan_benar": "nilai akhir Rp62.985.600,00 >= 60.000.000; 8% <= 8%; 3 tahun <= 3 tahun",
+      "distraktor": [
+        {
+          "teks": "suku bunga 5% per tahun selama 4 tahun",
+          "alasan": "nilai akhir Rp60.775.312,50 cukup, tetapi periode 4 tahun melebihi 3 tahun"
+        },
+        {
+          "teks": "suku bunga 10% per tahun selama 2 tahun",
+          "alasan": "nilai akhir Rp60.500.000,00 cukup, tetapi suku bunga 10% melebihi 8%"
+        },
+        {
+          "teks": "suku bunga 6% per tahun selama 3 tahun",
+          "alasan": "suku bunga dan periode memenuhi, tetapi nilai akhir Rp59.550.800,00 kurang dari 60.000.000"
+        }
+      ],
+      "pembahasan": "Skema 8%/3 tahun: 62.985.600 memenuhi semua. 5%/4 tahun melanggar periode, 10%/2 tahun melanggar suku bunga, 6%/3 tahun melanggar nilai akhir.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Makin besar suku bunga yang diberikan, maka bagaimana nilai akhirnya?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perbandingan investasi dan pinjaman",
+      "alasan_level": "membandingkan hasil deposito dengan biaya pinjaman, dua nilai akhir lalu selisih bersih",
+      "stimulus": null,
+      "pertanyaan": "Pak Anton meminjam Rp100.000.000,00 dengan bunga majemuk 6% per tahun dan menaruh seluruh uangnya pada deposito berbunga majemuk 8% per tahun. Setelah 3 tahun, deposito dicairkan dan pinjaman dilunasi sekaligus. Keuntungan bersih Pak Anton adalah ....",
+      "jawaban_benar": "Rp6.869.600,00",
+      "alasan_benar": "deposito Rp125.971.200,00; pelunasan Rp119.101.600,00; selisih Rp6.869.600,00",
+      "distraktor": [
+        {
+          "teks": "Rp6.000.000,00",
+          "alasan": "memakai bunga tunggal: selisih 2% x 3 tahun x 100.000.000"
+        },
+        {
+          "teks": "Rp4.280.000,00",
+          "alasan": "memakai n = 2 tahun pada kedua perhitungan"
+        },
+        {
+          "teks": "Rp125.971.200,00",
+          "alasan": "hanya menjawab nilai akhir deposito, belum dikurangi pelunasan"
+        }
+      ],
+      "pembahasan": "Deposito: $100.000.000 \\times (1,08)^3 = 125.971.200$. Pelunasan: $100.000.000 \\times (1,06)^3 = 119.101.600$. Untung bersih 6.869.600.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "kutipan": "Parameter yang pertama yaitu suku bunga."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan langkah perhitungan",
+      "alasan_level": "menelusuri langkah per tahun untuk menemukan awal kesalahan lalu menghitung nilai benar",
+      "stimulus": "Dina menghitung nilai akhir modal Rp20.000.000,00 dengan bunga majemuk 10% per tahun selama 3 tahun:\n\n| Tahun | Perhitungan Dina | Hasil |\n|---|---|---|\n| 1 | 20.000.000 + 10% x 20.000.000 | 22.000.000 |\n| 2 | 22.000.000 + 10% x 20.000.000 | 24.000.000 |\n| 3 | 24.000.000 + 10% x 20.000.000 | 26.000.000 |",
+      "pertanyaan": "Pernyataan yang benar mengenai pekerjaan Dina adalah ....",
+      "jawaban_benar": "Kesalahan mulai pada tahun ke-2: bunga dihitung dari modal awal, bukan dari nilai akhir tahun ke-1; nilai akhir yang benar Rp26.620.000,00.",
+      "alasan_benar": "tahun 2: 10% x 22.000.000 = 2.200.000 sehingga 24.200.000; tahun 3: 10% x 24.200.000 = 2.420.000 sehingga 26.620.000",
+      "distraktor": [
+        {
+          "teks": "Kesalahan mulai pada tahun ke-1: bunga seharusnya dihitung dari 10% x 22.000.000; nilai akhir yang benar Rp26.620.000,00.",
+          "alasan": "menunjuk langkah yang salah; tahun ke-1 sudah benar"
+        },
+        {
+          "teks": "Kesalahan mulai pada tahun ke-2: bunga dihitung dari modal awal; nilai akhir yang benar Rp26.000.000,00.",
+          "alasan": "menyebut nilai akhir hasil perhitungan Dina sebagai nilai yang benar"
+        },
+        {
+          "teks": "Kesalahan hanya pada tahun ke-3: bunga tahun ke-3 seharusnya 10% x 26.000.000; nilai akhir yang benar Rp28.600.000,00.",
+          "alasan": "mengira kesalahan baru muncul di tahun ke-3 dan memakai hasil Dina sebagai dasar"
+        }
+      ],
+      "pembahasan": "Nilai akhir yang benar: $20.000.000 \\times (1,1)^3 = 26.620.000$. Dina memakai bunga tetap 2.000.000 (pola bunga tunggal) sejak tahun ke-2.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "kutipan": "Suatu aplikasi pinjaman online memberikan pinjaman sebesar Rp10.000.000,00 dengan suku bunga 2% per tahun."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan satuan periode",
+      "alasan_level": "mengenali kesalahan memakai bulan sebagai pangkat tahunan lalu menghitung nilai benar",
+      "stimulus": null,
+      "pertanyaan": "Rani meminjam Rp12.000.000,00 dengan bunga majemuk 6% per tahun untuk periode 36 bulan. Ia menulis jumlah pengembalian $12.000.000 \\times (1,06)^{36}$. Pernyataan yang benar mengenai pekerjaan Rani adalah ....",
+      "jawaban_benar": "Salah: periode harus dinyatakan dalam tahun, yaitu $n = 3$, sehingga jumlah pengembalian Rp14.292.192,00.",
+      "alasan_benar": "36 bulan = 3 tahun; 12.000.000 x (1,06)^3 = 14.292.192",
+      "distraktor": [
+        {
+          "teks": "Salah: periode $n = 3$, tetapi memakai bunga tunggal sehingga jumlah pengembalian Rp14.160.000,00.",
+          "alasan": "mengubah ke bunga tunggal: 12.000.000 x (1 + 0,06 x 3)"
+        },
+        {
+          "teks": "Benar: bunga per tahun dipangkatkan dengan banyaknya bulan pinjaman.",
+          "alasan": "tidak menyadari satuan periode harus sama dengan satuan suku bunga (tahun)"
+        },
+        {
+          "teks": "Salah: periode $n = 3$, tetapi faktor seharusnya $1,6$ sehingga jumlah pengembalian Rp49.152.000,00.",
+          "alasan": "salah mengubah 6% menjadi 0,6"
+        }
+      ],
+      "pembahasan": "Suku bunga per tahun sehingga $n$ dalam tahun: 36 : 12 = 3. Jumlah pengembalian $12.000.000 \\times (1,06)^3 = 14.292.192$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Makin besar suku bunga yang diberikan, maka bagaimana nilai akhirnya?"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang batas suku bunga pinjaman",
+      "alasan_level": "merancang suku bunga bulat terbesar yang masih memenuhi batas pengembalian",
+      "stimulus": null,
+      "pertanyaan": "Seorang peminjam menerima pinjaman Rp50.000.000,00 dengan bunga majemuk per tahun dan melunasinya sekaligus setelah 3 tahun. Ia hanya sanggup mengembalikan paling banyak Rp66.000.000,00. Suku bunga bulat per tahun terbesar yang masih dapat ia terima adalah ....",
+      "jawaban_benar": "9%",
+      "alasan_benar": "9%: Rp64.751.450,00 <= 66.000.000; 10%: Rp66.550.000,00 > 66.000.000",
+      "distraktor": [
+        {
+          "teks": "8%",
+          "alasan": "memenuhi batas (Rp62.985.600,00) tetapi bukan yang terbesar"
+        },
+        {
+          "teks": "10%",
+          "alasan": "pembulatan ke atas; pengembalian Rp66.550.000,00 melebihi batas"
+        },
+        {
+          "teks": "11%",
+          "alasan": "memakai bunga tunggal: 32% : 3 = 10,67% lalu dibulatkan ke atas"
+        }
+      ],
+      "pembahasan": "Uji: 9% memberi 64.751.450 (memenuhi), 10% memberi 66.550.000 (melebihi 66.000.000). Maka maksimum 9%.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Bagaimanakah pengaruh periode pembayaran pada nilai akhir?"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang lama pinjaman maksimal (bulan)",
+      "alasan_level": "merancang periode terbesar dari batas pengembalian dan menyatakannya dalam bulan",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman Rp30.000.000,00 berbunga majemuk 20% per tahun. Agar jumlah pengembalian tidak melebihi Rp45.000.000,00, lama pinjaman (dalam kelipatan tahun penuh) paling lama adalah ....",
+      "jawaban_benar": "24 bulan",
+      "alasan_benar": "2 tahun: Rp43.200.000,00 <= 45.000.000; 3 tahun: Rp51.840.000,00 > 45.000.000",
+      "distraktor": [
+        {
+          "teks": "12 bulan",
+          "alasan": "memenuhi batas tetapi bukan yang paling lama"
+        },
+        {
+          "teks": "30 bulan",
+          "alasan": "memakai bunga tunggal: 50% : 20% = 2,5 tahun, bukan kelipatan tahun penuh"
+        },
+        {
+          "teks": "36 bulan",
+          "alasan": "pengembalian Rp51.840.000,00 melebihi batas"
+        }
+      ],
+      "pembahasan": "$30.000.000 \\times (1,2)^2 = 43.200.000$ (memenuhi), $30.000.000 \\times (1,2)^3 = 51.840.000$ (melebihi). Jadi 2 tahun = 24 bulan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "kutipan": "Dana investasi tersebut akan dikelola dalam kurun waktu tertentu 2–4 tahun."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "rentang nilai akhir dari batas parameter",
+      "alasan_level": "menentukan kombinasi parameter ekstrem (bunga dan periode) lalu menghitung selisih dua nilai akhir",
+      "stimulus": null,
+      "pertanyaan": "Dana Rp100.000.000,00 akan diinvestasikan oleh konsultan dengan bunga majemuk per tahun. Suku bunga yang mungkin terjadi 3%-7% per tahun dan periode yang mungkin 2-4 tahun. Selisih antara nilai akhir terbesar dan nilai akhir terkecil yang mungkin adalah ....",
+      "jawaban_benar": "Rp24.989.601,00",
+      "alasan_benar": "terbesar (7%, 4 tahun) Rp131.079.601,00; terkecil (3%, 2 tahun) Rp106.090.000,00",
+      "distraktor": [
+        {
+          "teks": "Rp22.000.000,00",
+          "alasan": "memakai bunga tunggal: 28% - 6% dari modal"
+        },
+        {
+          "teks": "Rp18.528.720,00",
+          "alasan": "periode dibuat sama (4 tahun), padahal terkecil memakai periode 2 tahun"
+        },
+        {
+          "teks": "Rp1.939.119,00",
+          "alasan": "memasangkan suku bunga terbesar dengan periode terpendek dan sebaliknya"
+        }
+      ],
+      "pembahasan": "Nilai akhir naik bila suku bunga dan periode naik. Terbesar: 100.000.000 x (1,07)^4 = 131.079.601. Terkecil: 100.000.000 x (1,03)^2 = 106.090.000. Selisih 24.989.601.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "kutipan": "Makin lama periode pembayaran yang diberikan, maka bagaimana nilai akhirnya?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menyusun parameter dari data lalu memprediksi",
+      "alasan_level": "menentukan suku bunga dari rasio dua nilai akhir berurutan lalu memperkirakan nilai akhir tahun ke-5",
+      "stimulus": "Nilai akhir sebuah investasi berbunga majemuk per tahun:\n\n| Akhir tahun ke- | Nilai akhir |\n|---|---|\n| 2 | Rp14.520.000,00 |\n| 3 | Rp15.972.000,00 |",
+      "pertanyaan": "Dengan suku bunga yang sama, nilai akhir investasi tersebut pada akhir tahun ke-5 adalah ....",
+      "jawaban_benar": "Rp19.326.120,00",
+      "alasan_benar": "15.972.000 : 14.520.000 = 1,1 sehingga $p = 10\\%$; nilai akhir tahun ke-5 = 15.972.000 x (1,1)^2 = 19.326.120",
+      "distraktor": [
+        {
+          "teks": "Rp18.876.000,00",
+          "alasan": "memperpanjang pola linear: menambah bunga tahun ke-3 (1.452.000) dua kali"
+        },
+        {
+          "teks": "Rp17.569.200,00",
+          "alasan": "menjawab nilai akhir tahun ke-4, bukan tahun ke-5"
+        },
+        {
+          "teks": "Rp21.258.732,00",
+          "alasan": "memakai n = 6 karena salah menghitung modal awal dan periode"
+        }
+      ],
+      "pembahasan": "Rasio 15.972.000 : 14.520.000 = 1,1 sehingga $p = 10\\%$. Nilai akhir tahun ke-5 = $15.972.000 \\times (1,1)^2 = 19.326.120$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Makin besar suku bunga yang diberikan, maka bagaimana nilai akhirnya?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi beberapa pernyataan",
+      "alasan_level": "mengevaluasi empat pernyataan dengan menghitung nilai akhir, bunga per tahun, dan perubahan parameter",
+      "stimulus": "Modal Rp10.000.000,00 dibungakan majemuk 10% per tahun. Perhatikan pernyataan berikut.\n\n(1) Nilai akhir setelah 3 tahun, Rp13.310.000,00, lebih besar dari nilai akhir bunga tunggal 3 tahun, Rp13.000.000,00.\n(2) Besar bunga pada tahun ke-3 sama dengan besar bunga pada tahun ke-2.\n(3) Jika suku bunga dinaikkan menjadi 20% untuk periode 2 tahun, total bunga menjadi tepat dua kali total bunga pada 10% untuk periode 2 tahun.\n(4) Memperpanjang periode dari 2 tahun menjadi 3 tahun menambah nilai akhir sebesar Rp1.210.000,00.",
+      "pertanyaan": "Pernyataan yang benar adalah ....",
+      "jawaban_benar": "(1) dan (4) saja",
+      "alasan_benar": "(1) benar (13.310.000 > 13.000.000); (2) salah (1.100.000 dan 1.210.000); (3) salah (4.400.000 vs 2.100.000, bukan dua kali); (4) benar (13.310.000 - 12.100.000)",
+      "distraktor": [
+        {
+          "teks": "(1) dan (3) saja",
+          "alasan": "mengira bunga dua kali lipat saat suku bunga dua kali lipat (pola bunga tunggal)"
+        },
+        {
+          "teks": "(2) dan (4) saja",
+          "alasan": "mengira bunga tiap tahun sama besar padahal bunga tahun ke-3 lebih besar"
+        },
+        {
+          "teks": "(1), (3), dan (4)",
+          "alasan": "menganggap (3) benar karena suku bunga dua kali lipat"
+        }
+      ],
+      "pembahasan": "Bunga tahun ke-2 = 1.100.000, tahun ke-3 = 1.210.000, sehingga (2) salah. Total bunga 20% selama 2 tahun = 4.400.000 > 2 x 2.100.000, sehingga (3) salah. (1) dan (4) benar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Bagaimanakah pengaruh periode pembayaran pada nilai akhir?"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan dua pinjaman dengan periode berbeda",
+      "alasan_level": "merancang periode pinjaman kedua agar pengembaliannya tidak melebihi pinjaman pertama",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman P berbunga majemuk 10% per tahun selama 3 tahun. Pinjaman Q dengan pokok yang sama berbunga majemuk 6% per tahun. Lama pinjaman Q (dalam tahun penuh) paling lama agar jumlah pengembalian Q tidak melebihi jumlah pengembalian P adalah ....",
+      "jawaban_benar": "4 tahun",
+      "alasan_benar": "$(1,1)^3 = 1,331$; $(1,06)^4 = 1,2625 \\leq 1,331$; $(1,06)^5 = 1,3382 > 1,331$",
+      "distraktor": [
+        {
+          "teks": "3 tahun",
+          "alasan": "menyamakan periode kedua pinjaman, padahal Q masih lebih murah"
+        },
+        {
+          "teks": "5 tahun",
+          "alasan": "memakai bunga tunggal: 30% : 6% = 5 tahun; pada majemuk 1,3382 sudah melebihi 1,331"
+        },
+        {
+          "teks": "6 tahun",
+          "alasan": "mengambil periode pertama yang melebihi batas lalu menambah 1"
+        }
+      ],
+      "pembahasan": "Faktor P = 1,331. Q: 4 tahun 1,2625 (boleh), 5 tahun 1,3382 (melebihi). Jadi paling lama 4 tahun.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "kutipan": "Parameter yang pertama yaitu suku bunga."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 6,
+      "jenis_soal": "titik silang dua skema investasi",
+      "alasan_level": "membandingkan dua skema dengan modal dan suku bunga berbeda untuk menemukan tahun saat urutan nilai akhir berbalik",
+      "stimulus": null,
+      "pertanyaan": "Skema A: modal Rp100.000.000,00 berbunga majemuk 10% per tahun. Skema B: modal Rp110.000.000,00 berbunga majemuk 8% per tahun. Paling sedikit berapa tahun (bilangan bulat) agar nilai akhir Skema A lebih besar dari nilai akhir Skema B?",
+      "jawaban_benar": "6 tahun",
+      "alasan_benar": "tahun ke-5: A Rp161.051.000,00 < B sekitar Rp161.626.088; tahun ke-6: A Rp177.156.100,00 > B sekitar Rp174.556.175",
+      "distraktor": [
+        {
+          "teks": "5 tahun",
+          "alasan": "A baru Rp161.051.000,00, masih lebih kecil dari B (sekitar Rp161.626.088)"
+        },
+        {
+          "teks": "7 tahun",
+          "alasan": "memilih satu tahun setelah urutan berbalik"
+        },
+        {
+          "teks": "9 tahun",
+          "alasan": "memakai bunga tunggal: 100 + 10n > 110 + 8,8n sehingga n > 8,33"
+        }
+      ],
+      "pembahasan": "Tahun ke-5: A 161.051.000 < B sekitar 161.626.088. Tahun ke-6: A 177.156.100 > B sekitar 174.556.175 Maka paling sedikit 6 tahun.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "kutipan": "Kondisi perekonomian yang tidak stabil mempengaruhi suku bunga per tahunnya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat ganda anggaran dan nilai terbesar",
+      "alasan_level": "memeriksa batas pengembalian lalu memilih yang terbesar di antara yang memenuhi",
+      "stimulus": null,
+      "pertanyaan": "Sebuah usaha meminjam Rp50.000.000,00 dengan bunga majemuk per tahun dan sanggup mengembalikan paling banyak Rp65.000.000,00. Di antara pilihan berikut yang memenuhi batas itu, skema dengan jumlah pengembalian paling besar (paling menguntungkan bagi pemberi pinjaman) adalah ....",
+      "jawaban_benar": "suku bunga 9% per tahun selama 3 tahun",
+      "alasan_benar": "pengembalian Rp64.751.450,00 <= 65.000.000 dan lebih besar dari 8%/3 tahun (Rp62.985.600,00)",
+      "distraktor": [
+        {
+          "teks": "suku bunga 8% per tahun selama 3 tahun",
+          "alasan": "memenuhi batas (Rp62.985.600,00) tetapi bukan yang terbesar"
+        },
+        {
+          "teks": "suku bunga 10% per tahun selama 3 tahun",
+          "alasan": "pengembalian Rp66.550.000,00 melebihi batas"
+        },
+        {
+          "teks": "suku bunga 7% per tahun selama 4 tahun",
+          "alasan": "pengembalian Rp65.539.800,50 melebihi batas"
+        }
+      ],
+      "pembahasan": "Skema 9%/3 tahun 64.751.450 memenuhi dan lebih besar dari 8%/3 tahun 62.985.600. Skema 10%/3 tahun dan 7%/4 tahun melebihi 65.000.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Makin besar suku bunga yang diberikan, maka bagaimana nilai akhirnya?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim periode vs suku bunga",
+      "alasan_level": "menguji klaim umum dengan contoh penyangkal menggunakan dua nilai akhir majemuk",
+      "stimulus": "Seorang konsultan menyatakan: \"Memperpanjang periode 1 tahun selalu lebih menguntungkan daripada menaikkan suku bunga 2 poin persen.\" Sebagai contoh, dana Rp100.000.000,00 berbunga majemuk 3% per tahun selama 3 tahun.",
+      "pertanyaan": "Pernyataan yang benar mengenai klaim konsultan pada contoh tersebut adalah ....",
+      "jawaban_benar": "Klaim salah: menaikkan suku bunga menjadi 5% memberi Rp115.762.500,00, lebih besar dari periode 4 tahun yang memberi Rp112.550.881,00.",
+      "alasan_benar": "periode 4 tahun pada 3%: 112.550.881; suku bunga 5% selama 3 tahun: 115.762.500",
+      "distraktor": [
+        {
+          "teks": "Klaim salah: menaikkan suku bunga menjadi 5% memberi Rp115.000.000,00, lebih besar dari periode 4 tahun yang memberi Rp112.000.000,00.",
+          "alasan": "memakai bunga tunggal pada kedua nilai"
+        },
+        {
+          "teks": "Klaim benar: periode 4 tahun memberi Rp112.550.881,00, sedangkan suku bunga 5% hanya memberi Rp105.000.000,00.",
+          "alasan": "hanya menghitung bunga satu tahun untuk suku bunga 5%"
+        },
+        {
+          "teks": "Klaim salah: periode 4 tahun memberi Rp112.550.881,00 dan suku bunga 5% memberi Rp115.762.500,00, sehingga keduanya sama menguntungkan.",
+          "alasan": "kesimpulan tidak sesuai nilai: kedua nilai berbeda"
+        }
+      ],
+      "pembahasan": "Periode 4 tahun: $100.000.000 \\times (1,03)^4 = 112.550.881$. Suku bunga 5%: $100.000.000 \\times (1,05)^3 = 115.762.500$. Contoh penyangkal menunjukkan klaim salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-f-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "kutipan": "Parameter yang pertama yaitu suku bunga."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang modal awal minimal",
+      "alasan_level": "merancang modal bulat jutaan terkecil agar target tercapai dengan uji coba nilai",
+      "stimulus": null,
+      "pertanyaan": "Seorang ayah ingin dana pendidikan anaknya mencapai minimal Rp100.000.000,00 setelah 4 tahun pada deposito berbunga majemuk 5% per tahun. Modal awal (dalam kelipatan jutaan rupiah) paling kecil yang harus disetor adalah ....",
+      "jawaban_benar": "Rp83.000.000,00",
+      "alasan_benar": "83 juta: Rp100.887.018,75 >= 100.000.000; 82 juta: Rp99.671.512,50 < 100.000.000",
+      "distraktor": [
+        {
+          "teks": "Rp82.000.000,00",
+          "alasan": "pembulatan ke bawah: nilai akhir hanya Rp99.671.512,50"
+        },
+        {
+          "teks": "Rp80.000.000,00",
+          "alasan": "memakai bunga tunggal: dikurangi 4 x 5% = 20% dari target"
+        },
+        {
+          "teks": "Rp95.000.000,00",
+          "alasan": "hanya mengurangi 5% sekali dari target"
+        }
+      ],
+      "pembahasan": "$100.000.000 : (1,05)^4 = 82.270.247$ (kira-kira). Dalam kelipatan jutaan, paling kecil 83 juta.",
+      "catatan": null
+    }
+  ]
+}

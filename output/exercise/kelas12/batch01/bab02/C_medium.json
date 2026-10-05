@@ -1,0 +1,639 @@
+{
+  "book": "kelas12",
+  "bab_no": 2,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b02-c-medium-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 64,
+        "kutipan": "Periode pembayaran atau penerimaan dapat dilakukan setiap bulan, triwulan, kuartal, semester, atau per tahun."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "FV anuitas triwulan",
+      "alasan_level": "ubah bunga tahunan ke triwulan, tentukan n, lalu hitung FV: tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Bu Ratna menabung Rp2.000.000,00 pada akhir setiap triwulan selama 1 tahun di bank yang memberi bunga majemuk 20% per tahun, dihitung setiap triwulan. Nilai masa depan seluruh tabungan Bu Ratna setelah 1 tahun adalah ....",
+      "jawaban_benar": "Rp8.620.250,00",
+      "alasan_benar": "i = 20%/4 = 5% per triwulan, n = 4; FV = 2.000.000 x (1,05^4 - 1)/0,05 = 2.000.000 x 4,310125",
+      "distraktor": [
+        {
+          "teks": "Rp8.000.000,00",
+          "alasan": "bunga diabaikan, hanya total setoran"
+        },
+        {
+          "teks": "Rp6.305.000,00",
+          "alasan": "memakai n = 3 sehingga satu setoran terlewat"
+        },
+        {
+          "teks": "Rp10.736.000,00",
+          "alasan": "memakai 20% per triwulan tanpa dibagi 4"
+        }
+      ],
+      "pembahasan": "$i = 20\\% : 4 = 5\\%$ per triwulan, $n = 1 \\times 4 = 4$. $FV = 2.000.000 \\times \\frac{1,05^4-1}{0,05} = 2.000.000 \\times 4,310125 = 8.620.250$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 67,
+        "kutipan": "perhitungan total uang yang ditabung dengan bunga dan sistem anuitas juga bisa disebut sebagai nilai masa depan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari besar setoran",
+      "alasan_level": "membalik rumus FV anuitas untuk mencari A setelah menghitung faktor anuitas",
+      "stimulus": null,
+      "pertanyaan": "Dedi ingin memiliki tabungan Rp13.923.000,00 tepat setelah 4 tahun. Ia menyetor sejumlah uang yang sama pada akhir setiap tahun ke bank yang memberi bunga majemuk 10% per tahun. Besar setoran tiap tahun yang harus ia lakukan adalah ....",
+      "jawaban_benar": "Rp3.000.000,00",
+      "alasan_benar": "faktor = (1,1^4 - 1)/0,1 = 4,641; A = 13.923.000 : 4,641 = 3.000.000",
+      "distraktor": [
+        {
+          "teks": "Rp3.480.750,00",
+          "alasan": "membagi target dengan 4 tanpa memperhitungkan bunga"
+        },
+        {
+          "teks": "Rp9.945.000,00",
+          "alasan": "membagi dengan $1 + n \\times i$ = 1,4 (memakai bunga tunggal)"
+        },
+        {
+          "teks": "Rp1.392.300,00",
+          "alasan": "mengalikan target dengan suku bunga 10%"
+        }
+      ],
+      "pembahasan": "$FV = A \\times \\frac{(1+i)^n - 1}{i}$ sehingga $13.923.000 = A \\times 4,641$ dan $A = 3.000.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 67,
+        "kutipan": "perhitungan total uang yang ditabung dengan bunga dan sistem anuitas juga bisa disebut sebagai nilai masa depan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "total bunga anuitas",
+      "alasan_level": "hitung FV anuitas lalu kurangi total setoran untuk memperoleh bunga",
+      "stimulus": null,
+      "pertanyaan": "Ali menyetor Rp1.500.000,00 pada akhir setiap tahun selama 3 tahun ke bank dengan bunga majemuk 8% per tahun. Total bunga yang diperoleh Ali selama 3 tahun adalah ....",
+      "jawaban_benar": "Rp369.600,00",
+      "alasan_benar": "FV = 1.500.000 x 3,2464 = 4.869.600; total setoran 4.500.000; bunga = 369.600",
+      "distraktor": [
+        {
+          "teks": "Rp4.869.600,00",
+          "alasan": "menjawab nilai masa depan, bukan bunganya"
+        },
+        {
+          "teks": "Rp360.000,00",
+          "alasan": "memakai bunga tunggal 8% dari total setoran"
+        },
+        {
+          "teks": "Rp3.369.600,00",
+          "alasan": "mengurangi dengan satu setoran saja, bukan seluruh setoran"
+        }
+      ],
+      "pembahasan": "$FV = 1.500.000 \\times \\frac{1,08^3-1}{0,08} = 4.869.600$. Bunga = $4.869.600 - 3 \\times 1.500.000 = 369.600$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 68,
+        "kutipan": "Pada konsep bunga majemuk, nilai sekarang merupakan besarnya tabungan awal, sedangkan nilai masa depan adalah besarnya tabungan akhir setelah dikenai bunga majemuk dalam waktu tertentu."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "FV anuitas lalu dibiarkan berbunga",
+      "alasan_level": "gabungan FV anuitas dan FV = PV(1+i)^n untuk satu tahun tambahan",
+      "stimulus": null,
+      "pertanyaan": "Wati menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun (tiga kali setoran) ke bank dengan bunga majemuk 10% per tahun. Setelah setoran ketiga ia tidak menyetor lagi dan membiarkan tabungannya berbunga 1 tahun lagi. Saldo tabungan Wati pada akhir tahun ke-4 adalah ....",
+      "jawaban_benar": "Rp3.641.000,00",
+      "alasan_benar": "FV setelah setoran ketiga = 3.310.000; setahun kemudian 3.310.000 x 1,1 = 3.641.000",
+      "distraktor": [
+        {
+          "teks": "Rp3.310.000,00",
+          "alasan": "lupa menambahkan bunga tahun ke-4"
+        },
+        {
+          "teks": "Rp4.310.000,00",
+          "alasan": "menambah setoran keempat padahal tidak ada setoran lagi"
+        },
+        {
+          "teks": "Rp4.641.000,00",
+          "alasan": "menganggap ada empat kali setoran"
+        }
+      ],
+      "pembahasan": "$FV_3 = 1.000.000 \\times \\frac{1,1^3-1}{0,1} = 3.310.000$. Lalu $FV = 3.310.000 \\times 1,1 = 3.641.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "sama halnya dengan memperkirakan nilai sekarang untuk tabungan tersebut."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "saldo setelah penarikan",
+      "alasan_level": "hitung PV awal lalu telusuri saldo setelah penarikan pertama, atau nilai dua penarikan tersisa",
+      "stimulus": null,
+      "pertanyaan": "Pak Hasan menabung sejumlah uang di bank dengan bunga majemuk 10% per tahun. Pada akhir setiap tahun selama 3 tahun ia menarik Rp2.662.000,00 sehingga tabungannya habis tepat setelah penarikan ketiga. Saldo tabungan Pak Hasan tepat setelah penarikan pertama adalah ....",
+      "jawaban_benar": "Rp4.620.000,00",
+      "alasan_benar": "saldo setelah penarikan pertama = nilai sekarang dua penarikan tersisa = 2.662.000/1,1 + 2.662.000/1,21 = 2.420.000 + 2.200.000",
+      "distraktor": [
+        {
+          "teks": "Rp3.958.000,00",
+          "alasan": "mengurangi tabungan awal dengan penarikan tanpa memperhitungkan bunga"
+        },
+        {
+          "teks": "Rp5.324.000,00",
+          "alasan": "menjumlahkan dua penarikan tersisa tanpa bunga"
+        },
+        {
+          "teks": "Rp6.620.000,00",
+          "alasan": "menjawab tabungan awal, bukan saldo setelah penarikan"
+        }
+      ],
+      "pembahasan": "Tabungan awal $= 6.620.000$. Setelah satu tahun: $6.620.000 \\times 1,1 - 2.662.000 = 4.620.000$. Cek: $\\frac{2.662.000}{1,1} + \\frac{2.662.000}{1,1^2} = 2.420.000 + 2.200.000 = 4.620.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "sama halnya dengan memperkirakan nilai sekarang untuk tabungan tersebut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "PV penarikan semesteran",
+      "alasan_level": "ubah bunga tahunan ke semesteran, tentukan n, lalu hitung PV",
+      "stimulus": null,
+      "pertanyaan": "Bu Sinta ingin menarik Rp1.331.000,00 pada akhir setiap semester selama satu setengah tahun dari tabungannya. Bank memberi bunga majemuk 20% per tahun yang dihitung tiap semester, dan tabungan habis tepat setelah penarikan terakhir. Tabungan awal yang harus disiapkan adalah ....",
+      "jawaban_benar": "Rp3.310.000,00",
+      "alasan_benar": "i = 10% per semester, n = 3; PV = 1.331.000 x (1 - 1,1^-3)/0,1 = 1.331.000 x 2,486852 ... = 1.210.000 + 1.100.000 + 1.000.000",
+      "distraktor": [
+        {
+          "teks": "Rp3.993.000,00",
+          "alasan": "menjumlahkan penarikan tanpa memperhitungkan bunga"
+        },
+        {
+          "teks": "Rp4.405.610,00",
+          "alasan": "memakai rumus nilai masa depan anuitas"
+        },
+        {
+          "teks": "Rp2.310.000,00",
+          "alasan": "memakai n = 2 (mengira satu setengah tahun hanya 2 semester)"
+        }
+      ],
+      "pembahasan": "$i = 20\\% : 2 = 10\\%$, $n = 1,5 \\times 2 = 3$. $PV = \\frac{1.331.000}{1,1} + \\frac{1.331.000}{1,1^2} + \\frac{1.331.000}{1,1^3} = 1.210.000 + 1.100.000 + 1.000.000 = 3.310.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 67,
+        "kutipan": "perhitungan total uang yang ditabung dengan bunga dan sistem anuitas juga bisa disebut sebagai nilai masa depan"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari suku bunga",
+      "alasan_level": "menyusun persamaan dua setoran lalu menyelesaikan untuk suku bunga",
+      "stimulus": null,
+      "pertanyaan": "Rani menyetor Rp3.000.000,00 pada akhir tahun pertama dan Rp3.000.000,00 pada akhir tahun kedua ke sebuah bank. Tepat setelah setoran kedua, saldo tabungannya Rp6.450.000,00. Suku bunga majemuk bank tersebut per tahun adalah ....",
+      "jawaban_benar": "15%",
+      "alasan_benar": "A + A(1+i) = 6.450.000 sehingga 1 + i = 1,15, i = 15%",
+      "distraktor": [
+        {
+          "teks": "7,5%",
+          "alasan": "membagi hasil 15% dengan 2 karena ada dua setoran"
+        },
+        {
+          "teks": "115%",
+          "alasan": "menganggap faktor 1,15 sebagai suku bunga"
+        },
+        {
+          "teks": "30%",
+          "alasan": "membagi bunga 450.000 dengan 1.500.000"
+        }
+      ],
+      "pembahasan": "Setoran pertama berbunga satu tahun: $3.000.000(1+i) + 3.000.000 = 6.450.000$, sehingga $1+i = 1,15$ dan $i = 15\\%$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 66,
+        "kutipan": "Jumlah semua nilai tabungan akhir tersebut membentuk deret geometri"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "deret geometri anuitas",
+      "alasan_level": "mengenali rasio deret geometri dari suku-sukunya lalu menjumlahkan tiga suku",
+      "stimulus": null,
+      "pertanyaan": "Rudi menyetor Rp2.000.000,00 pada akhir setiap tahun selama 3 tahun ke bank dengan bunga majemuk 5% per tahun. Nilai akhir tiap setoran beserta bunganya (dihitung sampai akhir tahun ketiga) adalah Rp2.000.000,00; Rp2.100.000,00; dan Rp2.205.000,00, yang membentuk deret geometri. Rasio deret dan nilai masa depan seluruh tabungan Rudi berturut-turut adalah ....",
+      "jawaban_benar": "1,05 dan Rp6.305.000,00",
+      "alasan_benar": "rasio = 2.100.000 : 2.000.000 = 1,05; jumlah = 2.000.000 + 2.100.000 + 2.205.000",
+      "distraktor": [
+        {
+          "teks": "0,05 dan Rp6.305.000,00",
+          "alasan": "mengira rasio sama dengan suku bunga saja"
+        },
+        {
+          "teks": "1,05 dan Rp6.000.000,00",
+          "alasan": "menjumlahkan setoran tanpa bunga"
+        },
+        {
+          "teks": "1,05 dan Rp4.305.000,00",
+          "alasan": "tidak menyertakan suku pertama dalam penjumlahan"
+        }
+      ],
+      "pembahasan": "Rasio $= 1 + 0,05 = 1,05$. Jumlah $= 2.000.000 + 2.100.000 + 2.205.000 = 6.305.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "sama halnya dengan memperkirakan nilai sekarang untuk tabungan tersebut."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari lama penarikan",
+      "alasan_level": "menguji nilai sekarang untuk beberapa n hingga cocok dengan tabungan awal",
+      "stimulus": null,
+      "pertanyaan": "Tabungan awal Rp3.640.000,00 disimpan di bank dengan bunga majemuk 20% per tahun. Pada akhir setiap tahun diambil Rp1.728.000,00 sehingga tabungan habis tepat setelah pengambilan terakhir. Pengambilan dapat dilakukan selama .... tahun.",
+      "jawaban_benar": "3",
+      "alasan_benar": "n = 3 memberi PV = 1.440.000 + 1.200.000 + 1.000.000 = 3.640.000",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "dua pengambilan hanya membutuhkan tabungan awal 2.640.000"
+        },
+        {
+          "teks": "4",
+          "alasan": "empat pengambilan membutuhkan sekitar 4.473.333, melebihi tabungan awal"
+        },
+        {
+          "teks": "5",
+          "alasan": "lima pengambilan membutuhkan jauh lebih dari 3.640.000"
+        }
+      ],
+      "pembahasan": "Uji $n$: $n=2$ memberi $1.440.000+1.200.000 = 2.640.000$; $n=3$ memberi $2.640.000 + 1.000.000 = 3.640.000$. Jadi 3 tahun.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 67,
+        "kutipan": "perhitungan total uang yang ditabung dengan bunga dan sistem anuitas juga bisa disebut sebagai nilai masa depan"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua bank",
+      "alasan_level": "menghitung dua FV anuitas dengan suku bunga berbeda lalu mencari selisihnya",
+      "stimulus": null,
+      "pertanyaan": "Dua orang masing-masing menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun. Orang pertama menabung di Bank X dengan bunga majemuk 8% per tahun, orang kedua di Bank Y dengan bunga majemuk 10% per tahun. Selisih nilai masa depan tabungan keduanya adalah ....",
+      "jawaban_benar": "Rp63.600,00",
+      "alasan_benar": "FV X = 3.246.400; FV Y = 3.310.000; selisih = 63.600",
+      "distraktor": [
+        {
+          "teks": "Rp60.000,00",
+          "alasan": "memakai bunga tunggal: 2% x 3.000.000"
+        },
+        {
+          "teks": "Rp20.000,00",
+          "alasan": "memakai n = 2 bukan 3"
+        },
+        {
+          "teks": "Rp3.246.400,00",
+          "alasan": "menjawab nilai masa depan Bank X, bukan selisih"
+        }
+      ],
+      "pembahasan": "$FV_X = 1.000.000 \\times 3,2464 = 3.246.400$, $FV_Y = 1.000.000 \\times 3,31 = 3.310.000$. Selisih $= 63.600$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 67,
+        "kutipan": "perhitungan total uang yang ditabung dengan bunga dan sistem anuitas juga bisa disebut sebagai nilai masa depan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "memilih model FV bulanan",
+      "alasan_level": "menentukan i per bulan dan n dalam bulan lalu memilih ekspresi FV yang tepat",
+      "stimulus": null,
+      "pertanyaan": "Rina menabung Rp750.000,00 pada akhir setiap bulan selama 2 tahun di bank dengan bunga majemuk 12% per tahun yang dihitung tiap bulan. Ekspresi yang benar untuk nilai masa depan tabungan Rina adalah ....",
+      "jawaban_benar": "$750.000 \\times \\frac{(1,01)^{24} - 1}{0,01}$",
+      "alasan_benar": "i = 12%/12 = 1% = 0,01 per bulan dan n = 2 x 12 = 24",
+      "distraktor": [
+        {
+          "teks": "$750.000 \\times \\frac{(1,12)^{24} - 1}{0,12}$",
+          "alasan": "memakai bunga tahunan 12% untuk periode bulanan"
+        },
+        {
+          "teks": "$750.000 \\times \\frac{(1,01)^{2} - 1}{0,01}$",
+          "alasan": "memakai n = 2 (tahun) padahal periode bulanan"
+        },
+        {
+          "teks": "$750.000 \\times \\frac{(1,01)^{24} - 1}{24}$",
+          "alasan": "membagi dengan $n$, bukan dengan $i$"
+        }
+      ],
+      "pembahasan": "$i = 12\\% : 12 = 1\\% = 0,01$, $n = 2 \\times 12 = 24$. $FV = 750.000 \\times \\frac{(1,01)^{24}-1}{0,01}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 67,
+        "kutipan": "perhitungan total uang yang ditabung dengan bunga dan sistem anuitas juga bisa disebut sebagai nilai masa depan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "FV deposit awal ditambah anuitas",
+      "alasan_level": "menggabungkan FV = PV(1+i)^n untuk deposit awal dan FV anuitas untuk setoran rutin",
+      "stimulus": null,
+      "pertanyaan": "Pak Toni mendepositokan Rp2.000.000,00 hari ini, lalu menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun ke bank yang sama dengan bunga majemuk 10% per tahun. Saldo tabungan Pak Toni tepat setelah setoran ketiga adalah ....",
+      "jawaban_benar": "Rp5.972.000,00",
+      "alasan_benar": "deposit awal: 2.000.000 x 1,1^3 = 2.662.000; setoran rutin: 1.000.000 x 3,31 = 3.310.000; jumlah 5.972.000",
+      "distraktor": [
+        {
+          "teks": "Rp3.310.000,00",
+          "alasan": "lupa menyertakan deposit awal"
+        },
+        {
+          "teks": "Rp5.310.000,00",
+          "alasan": "deposit awal tidak dibungakan"
+        },
+        {
+          "teks": "Rp5.000.000,00",
+          "alasan": "menjumlahkan semua uang tanpa bunga"
+        }
+      ],
+      "pembahasan": "$2.000.000 \\times 1,1^3 + 1.000.000 \\times \\frac{1,1^3-1}{0,1} = 2.662.000 + 3.310.000 = 5.972.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "sama halnya dengan memperkirakan nilai sekarang untuk tabungan tersebut."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kekurangan dana",
+      "alasan_level": "hitung PV kebutuhan dana lalu bandingkan dengan dana yang tersedia",
+      "stimulus": null,
+      "pertanyaan": "Bu Dewi ingin menarik Rp1.157.625,00 pada akhir setiap tahun selama 3 tahun dari tabungan yang berbunga majemuk 5% per tahun, sehingga tabungan habis tepat setelah penarikan ketiga. Saat ini ia hanya memiliki Rp3.000.000,00. Kekurangan dana yang harus ia tambahkan adalah ....",
+      "jawaban_benar": "Rp152.500,00",
+      "alasan_benar": "kebutuhan = PV = 1.102.500 + 1.050.000 + 1.000.000 = 3.152.500; kekurangan = 152.500",
+      "distraktor": [
+        {
+          "teks": "Rp3.152.500,00",
+          "alasan": "menjawab kebutuhan dana, bukan kekurangannya"
+        },
+        {
+          "teks": "Rp472.875,00",
+          "alasan": "memakai total penarikan tanpa bunga"
+        },
+        {
+          "teks": "Rp847.500,00",
+          "alasan": "memakai dua penarikan saja lalu membalik selisihnya"
+        }
+      ],
+      "pembahasan": "$PV = \\frac{1.157.625}{1,05} + \\frac{1.157.625}{1,05^2} + \\frac{1.157.625}{1,05^3} = 1.102.500 + 1.050.000 + 1.000.000 = 3.152.500$. Kekurangan $= 3.152.500 - 3.000.000 = 152.500$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "sama halnya dengan memperkirakan nilai sekarang untuk tabungan tersebut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "PV penarikan 4 tahun",
+      "alasan_level": "menerapkan rumus nilai sekarang anuitas dengan n = 4 dan menjumlahkan empat suku diskonto",
+      "stimulus": null,
+      "pertanyaan": "Yayasan Bina Cerdas menyiapkan dana beasiswa yang diambil Rp1.464.100,00 pada akhir setiap tahun selama 4 tahun. Dana disimpan di bank dengan bunga majemuk 10% per tahun dan habis tepat setelah pengambilan keempat. Dana yang harus disimpan di awal adalah ....",
+      "jawaban_benar": "Rp4.641.000,00",
+      "alasan_benar": "PV = 1.331.000 + 1.210.000 + 1.100.000 + 1.000.000 = 4.641.000",
+      "distraktor": [
+        {
+          "teks": "Rp5.856.400,00",
+          "alasan": "menjumlahkan pengambilan tanpa memperhitungkan bunga"
+        },
+        {
+          "teks": "Rp3.641.000,00",
+          "alasan": "memakai n = 3 sehingga satu pengambilan terlewat"
+        },
+        {
+          "teks": "Rp14.641.000,00",
+          "alasan": "membagi dengan $i$ saja tanpa faktor $1-(1+i)^{-n}$"
+        }
+      ],
+      "pembahasan": "$PV = A \\times \\frac{1-(1+i)^{-4}}{i} = \\frac{1.464.100}{1,1} + \\frac{1.464.100}{1,1^2} + \\frac{1.464.100}{1,1^3} + \\frac{1.464.100}{1,1^4} = 4.641.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 64,
+        "kutipan": "Periode pembayaran atau penerimaan dapat dilakukan setiap bulan, triwulan, kuartal, semester, atau per tahun."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "FV anuitas bulanan desimal",
+      "alasan_level": "ubah bunga tahunan ke bulanan (1,5%) lalu hitung FV dengan n = 3",
+      "stimulus": null,
+      "pertanyaan": "Nina menabung Rp1.000.000,00 pada akhir setiap bulan selama 3 bulan di bank yang memberi bunga majemuk 18% per tahun, dihitung tiap bulan. Nilai masa depan tabungan Nina setelah 3 bulan adalah ....",
+      "jawaban_benar": "Rp3.045.225,00",
+      "alasan_benar": "i = 18%/12 = 1,5% per bulan; FV = 1.000.000 x (1 + 1,015 + 1,030225)",
+      "distraktor": [
+        {
+          "teks": "Rp3.000.000,00",
+          "alasan": "bunga diabaikan"
+        },
+        {
+          "teks": "Rp3.572.400,00",
+          "alasan": "memakai 18% per bulan tanpa dibagi 12"
+        },
+        {
+          "teks": "Rp2.015.000,00",
+          "alasan": "memakai n = 2"
+        }
+      ],
+      "pembahasan": "$i = 18\\% : 12 = 1,5\\%$. $FV = 1.000.000 \\times \\frac{1,015^3-1}{0,015} = 1.000.000 \\times 3,045225 = 3.045.225$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "sama halnya dengan memperkirakan nilai sekarang untuk tabungan tersebut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "PV penarikan triwulan",
+      "alasan_level": "ubah bunga tahunan ke triwulan, tentukan n = 2, lalu hitung PV",
+      "stimulus": null,
+      "pertanyaan": "Pak Joko akan menarik Rp1.102.500,00 pada akhir setiap triwulan selama 6 bulan dari tabungannya. Bank memberi bunga majemuk 20% per tahun yang dihitung tiap triwulan, dan tabungan habis tepat setelah penarikan terakhir. Tabungan awal yang harus disiapkan adalah ....",
+      "jawaban_benar": "Rp2.050.000,00",
+      "alasan_benar": "i = 20%/4 = 5% per triwulan, n = 2; PV = 1.102.500/1,05 + 1.102.500/1,05^2 = 1.050.000 + 1.000.000",
+      "distraktor": [
+        {
+          "teks": "Rp2.205.000,00",
+          "alasan": "menjumlahkan penarikan tanpa bunga"
+        },
+        {
+          "teks": "Rp2.260.125,00",
+          "alasan": "memakai rumus nilai masa depan anuitas"
+        },
+        {
+          "teks": "Rp1.684.375,00",
+          "alasan": "memakai 20% per triwulan tanpa dibagi 4"
+        }
+      ],
+      "pembahasan": "$i = 5\\%$, $n = 6 : 3 = 2$. $PV = \\frac{1.102.500}{1,05} + \\frac{1.102.500}{1,05^2} = 1.050.000 + 1.000.000 = 2.050.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "sama halnya dengan memperkirakan nilai sekarang untuk tabungan tersebut."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "total bunga penarikan",
+      "alasan_level": "hitung PV lalu selisihkan total penarikan dengan tabungan awal",
+      "stimulus": null,
+      "pertanyaan": "Pak Budi menabung sejumlah uang di bank berbunga majemuk 10% per tahun. Pada akhir tahun pertama dan kedua ia menarik Rp2.420.000,00 sehingga tabungannya habis tepat setelah penarikan kedua. Total bunga yang diterima Pak Budi selama 2 tahun adalah ....",
+      "jawaban_benar": "Rp640.000,00",
+      "alasan_benar": "tabungan awal 1 : 2.200.000 + 2.000.000 = 4.200.000; total penarikan 4.840.000; bunga = 640.000",
+      "distraktor": [
+        {
+          "teks": "Rp4.200.000,00",
+          "alasan": "menjawab tabungan awal, bukan bunga"
+        },
+        {
+          "teks": "Rp4.840.000,00",
+          "alasan": "menjawab total penarikan, bukan bunga"
+        },
+        {
+          "teks": "Rp484.000,00",
+          "alasan": "mengambil 10% dari total penarikan"
+        }
+      ],
+      "pembahasan": "$PV = \\frac{2.420.000}{1,1} + \\frac{2.420.000}{1,1^2} = 2.200.000 + 2.000.000 = 4.200.000$. Bunga $= 4.840.000 - 4.200.000 = 640.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 68,
+        "kutipan": "Oleh karena itu, hubungan antara nilai sekarang dengan nilai masa depan dapat dituliskan dalam persamaan berikut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "setoran tunggal setara FV anuitas",
+      "alasan_level": "hitung FV anuitas lalu balik FV = PV(1+i)^n untuk mendapat PV setara",
+      "stimulus": null,
+      "pertanyaan": "Seseorang menyetor Rp1.210.000,00 pada akhir setiap tahun selama 2 tahun ke bank dengan bunga majemuk 10% per tahun. Jika ia hanya menyetor satu kali di awal (tahun ke-0) agar saldo setelah 2 tahun sama besar dengan nilai masa depan tabungan tadi, setoran tunggal itu adalah ....",
+      "jawaban_benar": "Rp2.100.000,00",
+      "alasan_benar": "FV anuitas = 1.210.000 x 2,1 = 2.541.000; PV = 2.541.000 : 1,1^2 = 2.100.000",
+      "distraktor": [
+        {
+          "teks": "Rp2.420.000,00",
+          "alasan": "menjumlahkan dua setoran tanpa bunga"
+        },
+        {
+          "teks": "Rp2.310.000,00",
+          "alasan": "membagi dengan 1,1 sekali, bukan 1,1 pangkat 2"
+        },
+        {
+          "teks": "Rp3.074.610,00",
+          "alasan": "mengalikan, bukan membagi, dengan $(1+i)^n$"
+        }
+      ],
+      "pembahasan": "$FV = 1.210.000 \\times 2,1 = 2.541.000$. Dari $FV = PV (1+i)^n$: $PV = \\frac{2.541.000}{1,1^2} = 2.100.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-c-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 66,
+        "kutipan": "Perhitungan jumlah tabungan dapat dilakukan dengan menghitung nilai tabungan akhir setelah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "saldo setelah setoran berikutnya",
+      "alasan_level": "menaikkan saldo satu periode dengan bunga lalu menambah setoran berikutnya",
+      "stimulus": null,
+      "pertanyaan": "Tepat setelah setoran keempat, saldo tabungan Sari Rp4.641.000,00. Sari menyetor Rp1.000.000,00 pada akhir setiap tahun ke bank dengan bunga majemuk 10% per tahun. Saldo tabungan Sari tepat setelah setoran kelima adalah ....",
+      "jawaban_benar": "Rp6.105.100,00",
+      "alasan_benar": "saldo berbunga setahun: 4.641.000 x 1,1 = 5.105.100; ditambah setoran kelima 1.000.000",
+      "distraktor": [
+        {
+          "teks": "Rp5.641.000,00",
+          "alasan": "menambah setoran tanpa memperhitungkan bunga setahun"
+        },
+        {
+          "teks": "Rp5.105.100,00",
+          "alasan": "lupa menambahkan setoran kelima"
+        },
+        {
+          "teks": "Rp6.000.000,00",
+          "alasan": "menjumlahkan lima setoran tanpa bunga"
+        }
+      ],
+      "pembahasan": "$4.641.000 \\times 1,1 + 1.000.000 = 5.105.100 + 1.000.000 = 6.105.100$.",
+      "catatan": null
+    }
+  ],
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Acuan variasi layak subbab C (Contoh 2.3, 2.4, pretest Aliyya, UK-6, UK-7) sudah terpakai maksimum 2 variasi masing-masing di easy, sehingga medium seluruhnya orisinal. Materi subbab hanya FV/PV anuitas biasa, konversi periode, dan hubungan FV-PV; soal orisinal ke-20 akan nyaris kembar dengan soal lain atau memakai anuitas terutang yang rumusnya tidak diberikan buku."
+}

@@ -1,0 +1,515 @@
+{
+ "book": "kelas12",
+ "bab_no": 1,
+ "subbab": "C",
+ "level": "medium",
+ "batch": 1,
+ "skill_versi": "v1",
+ "kapasitas_kurang": true,
+ "alasan_kapasitas": "Subbab C (Bunga Tunggal) hanya p48-p50 Buku Siswa: satu eksplorasi (Tabel 1.5), rumus B = M x p% x n, dan Contoh 1.9, tanpa Latihan bernomor. Acuan variasi layak untuk medium hanya UK 6 (cicilan Raka) dan Contoh 1.9 (masing-masing maks 2); acuan pretest lain bertaraf easy dan sudah dipakai di easy. Sudut medium orisinal (cari n/p/M dari saldo, bandingkan simpanan, barisan dan deret nilai uang, satuan bulan, angsuran) sudah terpakai; tambahan akan nyaris kembar.",
+ "soal": [
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0051-uji-kompetensi-6"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "cicilan bulanan pinjaman bunga tunggal",
+   "alasan_level": "empat langkah: bunga total, total pinjaman, ubah tahun ke bulan, bagi rata",
+   "stimulus": null,
+   "pertanyaan": "Dimas mengikuti program Young Business Camp di sekolahnya. Untuk membeli peralatan produksi awal, ia memperoleh dana talangan usaha sebesar Rp3.600.000,00 dari koperasi pemuda. Koperasi tersebut menerapkan bunga sederhana sebesar 5% per tahun dan memberikan keringanan berupa angsuran bulanan tetap selama 3 tahun agar peserta tidak terbebani. Dimas perlu menghitung besar cicilan bulanan agar pinjaman lunas sesuai perjanjian. Berapakah cicilan yang harus dibayarkan Dimas setiap bulan?",
+   "jawaban_benar": "Rp115.000,00",
+   "alasan_benar": "B = 3.600.000 x 0,05 x 3 = 540.000; total 4.140.000; dibagi 36 bulan = 115.000",
+   "distraktor": [
+    {
+     "teks": "Rp100.000,00",
+     "alasan": "lupa menambahkan bunga, hanya membagi pokok dengan 36 bulan"
+    },
+    {
+     "teks": "Rp345.000,00",
+     "alasan": "membagi total dengan 12, lupa bahwa 3 tahun adalah 36 bulan"
+    },
+    {
+     "teks": "Rp105.000,00",
+     "alasan": "menghitung bunga hanya untuk 1 tahun lalu membagi 36 bulan"
+    }
+   ],
+   "pembahasan": "$B = 3.600.000 \\times 0,05 \\times 3 = 540.000$. Total $= 3.600.000 + 540.000 = 4.140.000$. Cicilan $= 4.140.000 : 36 = 115.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-001"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0051-uji-kompetensi-6"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 4,
+   "jenis_soal": "cicilan bulanan pinjaman bunga tunggal",
+   "alasan_level": "durasi 1,5 tahun harus diubah ke bulan dan dipakai dua kali (bunga dan pembagi)",
+   "stimulus": null,
+   "pertanyaan": "Bu Wulan membutuhkan modal untuk membeli mesin jahit sehingga ia meminjam uang Rp9.000.000,00 pada sebuah koperasi. Koperasi mengenakan bunga tunggal 6% per tahun. Pinjaman itu harus dilunasi dengan angsuran yang sama besar setiap bulan selama 18 bulan. Besar angsuran yang dibayar Bu Wulan tiap bulan adalah ....",
+   "jawaban_benar": "Rp545.000,00",
+   "alasan_benar": "lama pinjaman 1,5 tahun: B = 9.000.000 x 0,06 x 1,5 = 810.000; total 9.810.000; dibagi 18 = 545.000",
+   "distraktor": [
+    {
+     "teks": "Rp500.000,00",
+     "alasan": "lupa menambahkan bunga ke pokok pinjaman"
+    },
+    {
+     "teks": "Rp530.000,00",
+     "alasan": "menghitung bunga hanya untuk 1 tahun, bukan 1,5 tahun"
+    },
+    {
+     "teks": "Rp1.040.000,00",
+     "alasan": "memperlakukan 18 bulan sebagai 18 tahun dalam rumus bunga"
+    }
+   ],
+   "pembahasan": "$n = 18 : 12 = 1,5$ tahun. $B = 9.000.000 \\times 0,06 \\times 1,5 = 810.000$. Total $= 9.810.000$. Angsuran $= 9.810.000 : 18 = 545.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-002"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "bagian": "Contoh 1.9",
+    "nomor": "1.9",
+    "teks": "Zaka memulai bisnis kecil-kecilan ikan cupang hias dan memperoleh keuntungan pertama sebesar Rp2.000.000,00. Uang tersebut ia simpan di koperasi desa yang memberikan bunga tunggal sebesar 5% per tahun. Bunga diberikan sekali setahun dan langsung ditambahkan ke total simpanan sebelumnya. Berapa total uang yang didapatkan Zaka selama 4 tahun?",
+    "jawaban": "Rp2.400.000,00"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "total simpanan dengan persentase desimal",
+   "alasan_level": "persentase berbentuk desimal (7,5%) dan tiga langkah: ubah ke desimal, hitung bunga, tambah modal",
+   "stimulus": null,
+   "pertanyaan": "Dika memenangkan lomba desain poster dan memperoleh hadiah pertama sebesar Rp12.000.000,00. Uang tersebut ia simpan di koperasi sekolah yang memberikan bunga tunggal sebesar 7,5% per tahun. Bunga diberikan sekali setahun dan langsung ditambahkan ke total simpanan sebelumnya. Berapa total uang yang didapatkan Dika selama 6 tahun?",
+   "jawaban_benar": "Rp17.400.000,00",
+   "alasan_benar": "B = 12.000.000 x 0,075 x 6 = 5.400.000; total = 12.000.000 + 5.400.000 = 17.400.000",
+   "distraktor": [
+    {
+     "teks": "Rp5.400.000,00",
+     "alasan": "hanya menjawab bunga, lupa menambah modal awal"
+    },
+    {
+     "teks": "Rp18.519.618,00",
+     "alasan": "memakai bunga majemuk (dipangkatkan) padahal bunga tunggal"
+    },
+    {
+     "teks": "Rp12.900.000,00",
+     "alasan": "hanya menambahkan bunga untuk satu tahun"
+    }
+   ],
+   "pembahasan": "$B = 12.000.000 \\times 0,075 \\times 6 = 5.400.000$. Total $= 12.000.000 + 5.400.000 = 17.400.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-003"
+  },
+  {
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "bagian": "Contoh 1.9",
+    "nomor": "1.9",
+    "teks": "Zaka memulai bisnis kecil-kecilan ikan cupang hias dan memperoleh keuntungan pertama sebesar Rp2.000.000,00. Uang tersebut ia simpan di koperasi desa yang memberikan bunga tunggal sebesar 5% per tahun. Bunga diberikan sekali setahun dan langsung ditambahkan ke total simpanan sebelumnya. Berapa total uang yang didapatkan Zaka selama 4 tahun?",
+    "jawaban": "Rp2.400.000,00"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "total simpanan dengan lama dalam bulan",
+   "alasan_level": "lama simpanan dalam bulan harus diubah ke tahun (2,5) sebelum memakai rumus",
+   "stimulus": null,
+   "pertanyaan": "Tamara menerima honor pertama dari menulis cerpen sebesar Rp8.000.000,00 lalu menabungkannya di sebuah bank. Bank itu membayar bunga tunggal 6% per tahun, dan bunganya digabung ke saldo tabungan. Jika Tamara tidak mengambil uangnya, saldo tabungan setelah 30 bulan adalah ....",
+   "jawaban_benar": "Rp9.200.000,00",
+   "alasan_benar": "30 bulan = 2,5 tahun; B = 8.000.000 x 0,06 x 2,5 = 1.200.000; saldo = 9.200.000",
+   "distraktor": [
+    {
+     "teks": "Rp1.200.000,00",
+     "alasan": "hanya menghitung bunga, lupa menambah modal"
+    },
+    {
+     "teks": "Rp9.440.000,00",
+     "alasan": "membulatkan 2,5 tahun menjadi 3 tahun"
+    },
+    {
+     "teks": "Rp22.400.000,00",
+     "alasan": "memakai 30 sebagai banyak tahun, bukan bulan"
+    }
+   ],
+   "pembahasan": "$n = 30 : 12 = 2,5$ tahun. $B = 8.000.000 \\times 0,06 \\times 2,5 = 1.200.000$. Saldo $= 8.000.000 + 1.200.000 = 9.200.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-004"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "mencari lama menabung",
+   "alasan_level": "membalik rumus untuk n: kurangi modal dari saldo, hitung bunga setahun, bagi",
+   "stimulus": null,
+   "pertanyaan": "Eko menabung Rp5.000.000,00 di bank dengan bunga tunggal 6% per tahun. Bunga ditambahkan ke saldo setiap akhir tahun dan uang tidak pernah diambil. Saldo tabungan Eko menjadi Rp6.200.000,00 setelah menabung selama ... tahun.",
+   "jawaban_benar": "4",
+   "alasan_benar": "bunga total = 6.200.000 - 5.000.000 = 1.200.000; bunga setahun 300.000; n = 1.200.000 : 300.000 = 4",
+   "distraktor": [
+    {
+     "teks": "40",
+     "alasan": "memakai p = 0,6% (salah menaruh koma) sehingga bunga setahun 30.000"
+    },
+    {
+     "teks": "5",
+     "alasan": "menambah 1 tahun karena mengira tahun pertama belum berbunga"
+    },
+    {
+     "teks": "2",
+     "alasan": "memakai p = 12% sehingga bunga setahun 600.000"
+    }
+   ],
+   "pembahasan": "$B = 6.200.000 - 5.000.000 = 1.200.000$. $B = M \\times p\\% \\times n \\Rightarrow n = \\frac{1.200.000}{5.000.000 \\times 0,06} = 4$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-005"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "Bunga tersebut akan langsung ditambahkan ke saldo tabungannya setiap akhir tahun."
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 3,
+   "jenis_soal": "mencari persentase dari saldo akhir",
+   "alasan_level": "saldo akhir harus diubah menjadi bunga dulu, baru dibagi modal dan lama",
+   "stimulus": null,
+   "pertanyaan": "Sinta menabung Rp4.000.000,00 di sebuah bank. Bunga tunggal tetap ditambahkan ke saldo setiap akhir tahun. Pada akhir tahun kelima, saldo tabungan Sinta menjadi Rp5.000.000,00. Persentase bunga tunggal per tahun yang diberikan bank adalah ....",
+   "jawaban_benar": "5%",
+   "alasan_benar": "B = 5.000.000 - 4.000.000 = 1.000.000; p% = 1.000.000 : (4.000.000 x 5) = 0,05",
+   "distraktor": [
+    {
+     "teks": "25%",
+     "alasan": "lupa membagi dengan lama menabung 5 tahun"
+    },
+    {
+     "teks": "4%",
+     "alasan": "membagi bunga dengan saldo akhir, bukan modal awal"
+    },
+    {
+     "teks": "20%",
+     "alasan": "membagi bunga dengan saldo akhir tanpa memperhitungkan lama menabung"
+    }
+   ],
+   "pembahasan": "$B = 5.000.000 - 4.000.000 = 1.000.000$. $p\\% = \\frac{B}{M \\times n} = \\frac{1.000.000}{4.000.000 \\times 5} = 0,05 = 5\\%$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-006"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "mencari modal dari saldo akhir",
+   "alasan_level": "saldo akhir = M(1 + p% x n): siswa harus membentuk persamaan dengan M di dua ruas",
+   "stimulus": null,
+   "pertanyaan": "Pak Rahmat menyimpan sejumlah uang di koperasi dengan bunga tunggal 8% per tahun. Bunga ditambahkan ke saldo setiap akhir tahun. Setelah 4 tahun, total uang Pak Rahmat menjadi Rp7.920.000,00. Besar uang yang ia simpan pada awal adalah ....",
+   "jawaban_benar": "Rp6.000.000,00",
+   "alasan_benar": "total = M + M x 0,08 x 4 = 1,32M = 7.920.000, sehingga M = 6.000.000",
+   "distraktor": [
+    {
+     "teks": "Rp5.385.600,00",
+     "alasan": "menghitung 32% dari saldo akhir lalu mengurangkannya, padahal 32% adalah dari modal awal"
+    },
+    {
+     "teks": "Rp7.286.400,00",
+     "alasan": "hanya mengurangkan bunga satu tahun (8%) dari saldo akhir"
+    },
+    {
+     "teks": "Rp6.336.000,00",
+     "alasan": "memakai 0,8 sebagai pengali (salah menaruh koma desimal)"
+    }
+   ],
+   "pembahasan": "Total $= M + M \\times 0,08 \\times 4 = 1,32M$. Jadi $M = \\frac{7.920.000}{1,32} = 6.000.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-007"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "membandingkan dua simpanan",
+   "alasan_level": "dua perhitungan bunga dengan modal, persen, dan lama berbeda lalu dibandingkan",
+   "stimulus": null,
+   "pertanyaan": "Dewi menyimpan Rp10.000.000,00 selama 4 tahun dengan bunga tunggal 5% per tahun. Eka menyimpan Rp8.000.000,00 selama 5 tahun dengan bunga tunggal 6% per tahun. Selisih total bunga yang diterima Eka dan Dewi adalah ....",
+   "jawaban_benar": "Rp400.000,00",
+   "alasan_benar": "bunga Dewi 2.000.000, bunga Eka 2.400.000, selisih 400.000",
+   "distraktor": [
+    {
+     "teks": "Rp20.000,00",
+     "alasan": "membandingkan bunga satu tahun saja (480.000 dan 500.000)"
+    },
+    {
+     "teks": "Rp4.400.000,00",
+     "alasan": "menjumlahkan kedua bunga, bukan mencari selisih"
+    },
+    {
+     "teks": "Rp2.400.000,00",
+     "alasan": "hanya menulis bunga Eka tanpa mengurangi bunga Dewi"
+    }
+   ],
+   "pembahasan": "Dewi: $10.000.000 \\times 0,05 \\times 4 = 2.000.000$. Eka: $8.000.000 \\times 0,06 \\times 5 = 2.400.000$. Selisih $= 400.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-008"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Barisan jenis apakah yang dibentuk oleh nilai uang yang disimpan dengan bunga tunggal?"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "suku ke-n barisan nilai uang",
+   "alasan_level": "mengenali barisan aritmetika dari nilai uang (U1 dan beda) lalu memakai rumus suku ke-n",
+   "stimulus": null,
+   "pertanyaan": "Dewa menabung Rp3.000.000,00 dengan bunga tunggal 4% per tahun dari modal awal. Nilai uang pada akhir tahun pertama, kedua, ketiga, dan seterusnya membentuk barisan aritmetika. Nilai uang Dewa pada akhir tahun ke-10 adalah ....",
+   "jawaban_benar": "Rp4.200.000,00",
+   "alasan_benar": "U1 = 3.120.000, beda = 120.000, U10 = 3.120.000 + 9 x 120.000 = 4.200.000",
+   "distraktor": [
+    {
+     "teks": "Rp4.320.000,00",
+     "alasan": "memakai U1 + 10b, padahal suku ke-10 adalah U1 + 9b"
+    },
+    {
+     "teks": "Rp4.080.000,00",
+     "alasan": "mengira suku pertama adalah modal awal sehingga U10 = modal + 9b"
+    },
+    {
+     "teks": "Rp1.200.000,00",
+     "alasan": "hanya menghitung total bunga 10 tahun, lupa modal awal"
+    }
+   ],
+   "pembahasan": "$U_1 = 3.000.000 + 120.000 = 3.120.000$ dan $b = 120.000$. $U_{10} = U_1 + 9b = 3.120.000 + 9 \\times 120.000 = 4.200.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-009"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Total nilai uang yang disimpan di bank dengan bunga tunggal akan membentuk deret"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "deret nilai uang",
+   "alasan_level": "menghubungkan bunga tunggal dengan deret aritmetika: cari U1, beda, U5, lalu jumlahkan",
+   "stimulus": null,
+   "pertanyaan": "Nilai uang pada akhir setiap tahun dari tabungan Rp2.000.000,00 dengan bunga tunggal 5% per tahun membentuk barisan aritmetika. Jumlah kelima nilai uang itu, yaitu dari akhir tahun pertama sampai akhir tahun kelima, adalah ....",
+   "jawaban_benar": "Rp11.500.000,00",
+   "alasan_benar": "U1 = 2.100.000, beda 100.000, U5 = 2.500.000; S5 = 5/2 x (2.100.000 + 2.500.000) = 11.500.000",
+   "distraktor": [
+    {
+     "teks": "Rp10.500.000,00",
+     "alasan": "menganggap kelima nilai uang sama dengan U1 (5 x 2.100.000)"
+    },
+    {
+     "teks": "Rp11.000.000,00",
+     "alasan": "memakai modal awal 2.000.000 sebagai suku pertama"
+    },
+    {
+     "teks": "Rp12.500.000,00",
+     "alasan": "menganggap kelima nilai uang sama dengan U5 (5 x 2.500.000)"
+    }
+   ],
+   "pembahasan": "$U_1 = 2.100.000$, $b = 100.000$, $U_5 = 2.500.000$. $S_5 = \\frac{5}{2}(2.100.000 + 2.500.000) = 11.500.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-010"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C3",
+   "jumlah_langkah": 2,
+   "jenis_soal": "bunga dengan lama dalam bulan",
+   "alasan_level": "mengubah 8 bulan menjadi 8/12 tahun sebelum memakai B = M x p% x n",
+   "stimulus": null,
+   "pertanyaan": "Pak Hasan menabung Rp9.000.000,00 dengan bunga tunggal 6% per tahun. Besar bunga yang diperoleh Pak Hasan setelah 8 bulan adalah ....",
+   "jawaban_benar": "Rp360.000,00",
+   "alasan_benar": "n = 8/12 tahun; B = 9.000.000 x 0,06 x 8/12 = 360.000",
+   "distraktor": [
+    {
+     "teks": "Rp4.320.000,00",
+     "alasan": "memakai 8 sebagai banyak tahun"
+    },
+    {
+     "teks": "Rp45.000,00",
+     "alasan": "hanya menghitung bunga satu bulan"
+    },
+    {
+     "teks": "Rp540.000,00",
+     "alasan": "menghitung bunga satu tahun penuh"
+    }
+   ],
+   "pembahasan": "$n = \\frac{8}{12}$ tahun. $B = 9.000.000 \\times 0,06 \\times \\frac{8}{12} = 360.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-011"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 50,
+    "kutipan": "Terlebih dahulu ditentukan besar bunga yang didapatkan selama 4 tahun"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "persentase bunga dari angsuran",
+   "alasan_level": "angsuran dikalikan 24, kurangi pokok untuk bunga, lalu cari p% dengan membagi M x n",
+   "stimulus": null,
+   "pertanyaan": "Rudi meminjam Rp5.000.000,00 dari koperasi dengan bunga tunggal. Ia melunasinya dengan angsuran tetap Rp275.000,00 setiap bulan selama 2 tahun. Persentase bunga tunggal per tahun yang dikenakan koperasi adalah ....",
+   "jawaban_benar": "16%",
+   "alasan_benar": "total bayar = 24 x 275.000 = 6.600.000; bunga = 1.600.000; p% = 1.600.000 : (5.000.000 x 2) = 16%",
+   "distraktor": [
+    {
+     "teks": "32%",
+     "alasan": "lupa membagi dengan lama pinjaman 2 tahun"
+    },
+    {
+     "teks": "132%",
+     "alasan": "membagi total pembayaran dengan pokok, bukan bunga dengan pokok"
+    },
+    {
+     "teks": "66%",
+     "alasan": "memakai total pembayaran 6.600.000 sebagai bunga"
+    }
+   ],
+   "pembahasan": "Total bayar $= 24 \\times 275.000 = 6.600.000$. Bunga $= 6.600.000 - 5.000.000 = 1.600.000$. $p\\% = \\frac{1.600.000}{5.000.000 \\times 2} = 16\\%$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-012"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 49,
+    "kutipan": "Barisan jenis apakah yang dibentuk oleh nilai uang yang disimpan dengan bunga tunggal?"
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "modal dari dua data saldo",
+   "alasan_level": "dua saldo membentuk dua suku barisan aritmetika: cari beda lalu mundur ke modal awal",
+   "stimulus": null,
+   "pertanyaan": "Saldo sebuah tabungan dengan bunga tunggal adalah Rp5.600.000,00 pada akhir tahun kedua dan Rp6.500.000,00 pada akhir tahun kelima. Bunga ditambahkan ke saldo setiap akhir tahun. Besar uang yang disetorkan pada awal adalah ....",
+   "jawaban_benar": "Rp5.000.000,00",
+   "alasan_benar": "selisih 3 tahun = 900.000, bunga setahun 300.000; modal = 5.600.000 - 2 x 300.000 = 5.000.000",
+   "distraktor": [
+    {
+     "teks": "Rp5.300.000,00",
+     "alasan": "hanya mengurangi bunga satu tahun dari saldo tahun kedua"
+    },
+    {
+     "teks": "Rp4.700.000,00",
+     "alasan": "mengurangi bunga tiga tahun dari saldo tahun kedua"
+    },
+    {
+     "teks": "Rp5.900.000,00",
+     "alasan": "menambah bunga satu tahun, bukan mengurangi"
+    }
+   ],
+   "pembahasan": "Beda $= \\frac{6.500.000 - 5.600.000}{3} = 300.000$ per tahun. Modal $= 5.600.000 - 2 \\times 300.000 = 5.000.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-013"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "bunga tetap sebesar 5% setiap tahun dari saldo awal."
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 4,
+   "jenis_soal": "waktu saldo dua tabungan sama",
+   "alasan_level": "membuat persamaan dua saldo linear dalam n dengan bunga tunggal masing-masing",
+   "stimulus": null,
+   "pertanyaan": "Ali menabung Rp8.000.000,00 dengan bunga tunggal 5% per tahun. Budi menabung Rp6.000.000,00 dengan bunga tunggal 10% per tahun. Keduanya tidak pernah menarik uang. Saldo tabungan keduanya akan sama besar setelah ... tahun.",
+   "jawaban_benar": "10",
+   "alasan_benar": "8.000.000 + 400.000n = 6.000.000 + 600.000n, sehingga n = 10",
+   "distraktor": [
+    {
+     "teks": "5",
+     "alasan": "membagi selisih modal 2.000.000 dengan bunga setahun Ali saja"
+    },
+    {
+     "teks": "20",
+     "alasan": "membagi selisih modal dengan 100.000 (salah menghitung selisih bunga tahunan)"
+    },
+    {
+     "teks": "15",
+     "alasan": "menjumlahkan persentase bunga 5 dan 10"
+    }
+   ],
+   "pembahasan": "Bunga setahun Ali $= 400.000$, Budi $= 600.000$. $8.000.000 + 400.000n = 6.000.000 + 600.000n \\Rightarrow 200.000n = 2.000.000 \\Rightarrow n = 10$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-014"
+  },
+  {
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 48,
+    "kutipan": "bunga tetap sebesar 5% setiap tahun dari saldo awal."
+   },
+   "cognitive_c": "C4",
+   "jumlah_langkah": 3,
+   "jenis_soal": "simpanan terpisah di dua bank",
+   "alasan_level": "dua perhitungan bunga dengan modal dan persentase berbeda lalu dijumlahkan",
+   "stimulus": null,
+   "pertanyaan": "Bu Lina membagi uangnya Rp12.000.000,00 menjadi dua simpanan. Rp7.000.000,00 disimpan di Bank A dengan bunga tunggal 4% per tahun, dan sisanya disimpan di Bank B dengan bunga tunggal 6% per tahun. Total bunga dari kedua bank setelah 3 tahun adalah ....",
+   "jawaban_benar": "Rp1.740.000,00",
+   "alasan_benar": "Bank A: 7.000.000 x 0,04 x 3 = 840.000; Bank B: 5.000.000 x 0,06 x 3 = 900.000; total 1.740.000",
+   "distraktor": [
+    {
+     "teks": "Rp1.800.000,00",
+     "alasan": "memakai persentase rata-rata 5% untuk seluruh uang"
+    },
+    {
+     "teks": "Rp580.000,00",
+     "alasan": "hanya menghitung bunga satu tahun"
+    },
+    {
+     "teks": "Rp1.440.000,00",
+     "alasan": "menganggap seluruh uang berbunga 4%"
+    }
+   ],
+   "pembahasan": "Bank A: $7.000.000 \\times 0,04 \\times 3 = 840.000$. Bank B: $5.000.000 \\times 0,06 \\times 3 = 900.000$. Total $= 1.740.000$.",
+   "catatan": null,
+   "id": "kelas12-b01-c-medium-bt01-015"
+  }
+ ]
+}

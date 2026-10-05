@@ -1,0 +1,678 @@
+{
+ "book": "kelas12",
+ "bab_no": 1,
+ "subbab": "B",
+ "level": "easy",
+ "batch": 1,
+ "skill_versi": "v1",
+ "soal": [
+  {
+   "id": "kelas12-b01-b-easy-bt01-001",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0042-latihan-1-3-1"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "suku ke-n dan jumlah n suku aritmetika",
+   "alasan_level": "dua rumus langsung: $U_n = a + (n-1)b$ lalu $S_n$",
+   "stimulus": null,
+   "pertanyaan": "Suatu deret aritmetika memiliki suku pertama 7 dan beda 5. Tentukan suku ke-12 dan jumlah 12 suku pertama.",
+   "jawaban_benar": "$U_{12} = 62$ dan $S_{12} = 414$",
+   "alasan_benar": "$U_{12} = 7 + 11 \\times 5 = 62$ dan $S_{12} = \\frac{12}{2}(7 + 62) = 414$",
+   "distraktor": [
+    {
+     "teks": "$U_{12} = 67$ dan $S_{12} = 444$",
+     "alasan": "memakai $U_n = a + nb$ (n bukan n-1) sehingga $U_{12}$ dan $S_{12}$ ikut salah"
+    },
+    {
+     "teks": "$U_{12} = 62$ dan $S_{12} = 372$",
+     "alasan": "menghitung $S_{12} = \\frac{12}{2} \\times U_{12}$ tanpa menambahkan suku pertama"
+    },
+    {
+     "teks": "$U_{12} = 55$ dan $S_{12} = 372$",
+     "alasan": "lupa menambahkan suku pertama pada $U_{12}$ (hanya $(n-1)b = 55$)"
+    }
+   ],
+   "pembahasan": "Dengan $a = 7$, $b = 5$, $n = 12$: $U_{12} = 7 + 11 \\times 5 = 62$. $S_{12} = \\frac{12}{2}(7 + 62) = 6 \\times 69 = 414$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-002",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0042-latihan-1-3-1"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "suku ke-n dan jumlah n suku aritmetika",
+   "alasan_level": "dua rumus langsung dalam konteks penjualan harian dengan pertambahan tetap",
+   "stimulus": null,
+   "pertanyaan": "Sebuah toko kue menjual 5 kotak pada hari pertama, dan penjualan bertambah 6 kotak setiap hari. Tentukan penjualan hari ke-9 dan jumlah penjualan selama 9 hari pertama.",
+   "jawaban_benar": "$U_9 = 53$ dan $S_9 = 261$",
+   "alasan_benar": "$U_9 = 5 + 8 \\times 6 = 53$ dan $S_9 = \\frac{9}{2}(5 + 53) = 261$",
+   "distraktor": [
+    {
+     "teks": "$U_9 = 59$ dan $S_9 = 288$",
+     "alasan": "memakai $U_n = a + nb$ sehingga $U_9 = 59$ dan jumlahnya ikut salah"
+    },
+    {
+     "teks": "$U_9 = 53$ dan $S_9 = 477$",
+     "alasan": "mengira $S_9 = 9 \\times U_9$"
+    },
+    {
+     "teks": "$U_9 = 48$ dan $S_9 = 238$",
+     "alasan": "lupa menambah suku pertama pada $U_9$ dan menghitung $S_9$ dengan pembulatan"
+    }
+   ],
+   "pembahasan": "$a = 5$, $b = 6$, $n = 9$. $U_9 = 5 + 8 \\times 6 = 53$. $S_9 = \\frac{9}{2}(5 + 53) = \\frac{9 \\times 58}{2} = 261$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-003",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0042-latihan-1-3-2"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "tumpukan menurun (banyak suku lalu jumlah)",
+   "alasan_level": "mencari banyak tumpukan lalu satu kali rumus jumlah",
+   "stimulus": null,
+   "pertanyaan": "Seorang petani menata buah jeruk dalam tumpukan berbentuk segitiga. Tumpukan paling bawah berisi 62 jeruk, di atasnya 58 jeruk, kemudian 54 jeruk, dan seterusnya hingga tumpukan terakhir hanya berisi 6 jeruk. Hitunglah total jeruk yang ditumpuk.",
+   "jawaban_benar": "510",
+   "alasan_benar": "banyak tumpukan $n = \\frac{62 - 6}{4} + 1 = 15$, jumlah $= \\frac{15}{2}(62 + 6) = 510$",
+   "distraktor": [
+    {
+     "teks": "544",
+     "alasan": "salah menghitung banyak tumpukan (memakai n = 16, bukan 15)"
+    },
+    {
+     "teks": "476",
+     "alasan": "salah menghitung banyak tumpukan (memakai n = 14, bukan 15)"
+    },
+    {
+     "teks": "1.020",
+     "alasan": "lupa membagi 2 pada rumus $S_n = \\frac{n}{2}(a + U_n)$"
+    }
+   ],
+   "pembahasan": "Beda $-4$, banyak tumpukan $62 - 4(n-1) = 6 \\Rightarrow n = 15$. $S_{15} = \\frac{15}{2}(62 + 6) = 510$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-004",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0042-latihan-1-3-2"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "tumpukan menurun (banyak suku lalu jumlah)",
+   "alasan_level": "mencari banyak lapisan lalu satu kali rumus jumlah",
+   "stimulus": null,
+   "pertanyaan": "Seorang tukang menyusun batako berbentuk tangga. Lapisan paling bawah berisi 33 batako, di atasnya 30 batako, kemudian 27 batako, dan seterusnya hingga lapisan teratas hanya berisi 3 batako. Banyak seluruh batako yang disusun adalah ....",
+   "jawaban_benar": "198",
+   "alasan_benar": "banyak lapisan $n = \\frac{33 - 3}{3} + 1 = 11$, jumlah $= \\frac{11}{2}(33 + 3) = 198$",
+   "distraktor": [
+    {
+     "teks": "180",
+     "alasan": "salah menghitung banyak lapisan (memakai n = 10, bukan 11)"
+    },
+    {
+     "teks": "216",
+     "alasan": "salah menghitung banyak lapisan (memakai n = 12, bukan 11)"
+    },
+    {
+     "teks": "396",
+     "alasan": "lupa membagi 2 pada rumus jumlah"
+    }
+   ],
+   "pembahasan": "Beda $-3$, $33 - 3(n-1) = 3 \\Rightarrow n = 11$. $S_{11} = \\frac{11}{2}(33 + 3) = 198$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-005",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0047-latihan-1-4-1"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "jumlah n suku pertama deret geometri",
+   "alasan_level": "satu kali substitusi ke rumus $S_n = \\frac{a(r^n - 1)}{r - 1}$",
+   "stimulus": null,
+   "pertanyaan": "Suatu deret geometri memiliki suku pertama $a = 3$ dan rasio $r = 4$. Hitunglah jumlah 4 suku pertama deret tersebut.",
+   "jawaban_benar": "255",
+   "alasan_benar": "$S_4 = \\frac{3(4^4 - 1)}{4 - 1} = \\frac{3 \\times 255}{3} = 255$",
+   "distraktor": [
+    {
+     "teks": "256",
+     "alasan": "lupa mengurangi 1 pada $r^n - 1$ (memakai $4^4 = 256$)"
+    },
+    {
+     "teks": "765",
+     "alasan": "lupa membagi dengan $(r - 1)$"
+    },
+    {
+     "teks": "63",
+     "alasan": "memakai $n = 3$ (salah menghitung banyak suku)"
+    }
+   ],
+   "pembahasan": "$S_4 = \\frac{a(r^4 - 1)}{r - 1} = \\frac{3(256 - 1)}{3} = 255$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-006",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0047-latihan-1-4-1"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "jumlah n suku pertama deret geometri",
+   "alasan_level": "satu kali substitusi ke rumus jumlah deret geometri dalam konteks",
+   "stimulus": null,
+   "pertanyaan": "Sebuah kabar tersebar dengan pola: pada hari pertama 7 orang mengetahuinya, dan setiap hari banyak orang yang baru mengetahuinya menjadi 3 kali lipat hari sebelumnya. Jumlah orang yang mengetahui kabar itu selama 4 hari pertama adalah ....",
+   "jawaban_benar": "280",
+   "alasan_benar": "deret geometri $a = 7$, $r = 3$, $n = 4$: $S_4 = \\frac{7(3^4 - 1)}{3 - 1} = 280$",
+   "distraktor": [
+    {
+     "teks": "91",
+     "alasan": "memakai $n = 3$ (hanya 3 hari)"
+    },
+    {
+     "teks": "847",
+     "alasan": "memakai $n = 5$ (hari berlebih)"
+    },
+    {
+     "teks": "560",
+     "alasan": "lupa membagi dengan $(r - 1)$"
+    }
+   ],
+   "pembahasan": "$S_4 = \\frac{7(81 - 1)}{3 - 1} = \\frac{7 \\times 80}{2} = 280$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-007",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 37,
+    "kutipan": "Dengan demikian, deret bilangan adalah jumlah suku-suku penyusun barisan bilangan."
+   },
+   "cognitive_c": "C1",
+   "jumlah_langkah": 1,
+   "jenis_soal": "definisi deret",
+   "alasan_level": "mengingat pengertian deret bilangan",
+   "stimulus": null,
+   "pertanyaan": "Pengertian deret bilangan yang tepat adalah ....",
+   "jawaban_benar": "jumlah suku-suku penyusun suatu barisan bilangan",
+   "alasan_benar": "deret diperoleh dengan menjumlahkan suku-suku barisan",
+   "distraktor": [
+    {
+     "teks": "susunan bilangan yang berurutan menurut suatu pola",
+     "alasan": "mengira deret sama dengan barisan (hanya urutan, tanpa penjumlahan)"
+    },
+    {
+     "teks": "selisih antara dua suku yang berurutan pada suatu barisan",
+     "alasan": "mencampuradukkan deret dengan beda barisan aritmetika"
+    },
+    {
+     "teks": "banyaknya suku yang menyusun suatu barisan bilangan",
+     "alasan": "mengira deret adalah banyak suku, bukan jumlah suku"
+    }
+   ],
+   "pembahasan": "Deret bilangan adalah jumlah suku-suku penyusun barisan bilangan, misalnya dari barisan 2, 4, 6 terbentuk deret $2 + 4 + 6$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-008",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 39,
+    "kutipan": "Deret aritmetika adalah suatu deret yang diperoleh dari menjumlahkan sukusuku pada barisan aritmetika."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "mengenali jenis deret",
+   "alasan_level": "memeriksa selisih tetap antarsuku, satu langkah",
+   "stimulus": null,
+   "pertanyaan": "Deret berikut yang merupakan deret aritmetika adalah ....",
+   "jawaban_benar": "$4 + 9 + 14 + 19 + \\dots$",
+   "alasan_benar": "selisih antarsuku selalu 5 (beda tetap)",
+   "distraktor": [
+    {
+     "teks": "$81 + 27 + 9 + 3 + \\dots$",
+     "alasan": "rasio tetap $\\frac{1}{3}$, jadi deret geometri bukan aritmetika"
+    },
+    {
+     "teks": "$2 + 3 + 5 + 8 + \\dots$",
+     "alasan": "selisih antarsuku 1, 2, 3 tidak tetap"
+    },
+    {
+     "teks": "$1 + 4 + 9 + 16 + \\dots$",
+     "alasan": "selisih 3, 5, 7 tidak tetap (barisan kuadrat)"
+    }
+   ],
+   "pembahasan": "Deret aritmetika memiliki beda tetap. Pada $4 + 9 + 14 + 19$: $9 - 4 = 14 - 9 = 19 - 14 = 5$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-009",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 42,
+    "bagian": "Contoh 1.6",
+    "nomor": "1.6",
+    "teks": "Suatu deret aritmetika memiliki pola 9 + 12 + 15 + .... Berapa jumlah 26 suku pertama deret tersebut?",
+    "jawaban": "1.209"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "jumlah n suku dari pola deret aritmetika",
+   "alasan_level": "menentukan $a$ dan $b$ dari pola lalu satu kali rumus jumlah",
+   "stimulus": null,
+   "pertanyaan": "Suatu deret aritmetika memiliki pola 8 + 13 + 18 + .... Berapa jumlah 20 suku pertama deret tersebut?",
+   "jawaban_benar": "1.110",
+   "alasan_benar": "$a = 8$, $b = 5$, $n = 20$: $S_{20} = \\frac{20}{2}(2 \\times 8 + 19 \\times 5) = 1.110$",
+   "distraktor": [
+    {
+     "teks": "1.160",
+     "alasan": "memakai $(n \\times b)$ bukan $(n-1)b$ pada rumus jumlah"
+    },
+    {
+     "teks": "2.220",
+     "alasan": "lupa membagi 2 pada rumus jumlah"
+    },
+    {
+     "teks": "1.007",
+     "alasan": "memakai $n = 19$ (salah menghitung banyak suku)"
+    }
+   ],
+   "pembahasan": "$b = 13 - 8 = 5$. $S_{20} = \\frac{20}{2}(2 \\times 8 + 19 \\times 5) = 10 \\times 111 = 1.110$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-010",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 42,
+    "bagian": "Contoh 1.6",
+    "nomor": "1.6",
+    "teks": "Suatu deret aritmetika memiliki pola 9 + 12 + 15 + .... Berapa jumlah 26 suku pertama deret tersebut?",
+    "jawaban": "1.209"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "jumlah n suku dari pola deret aritmetika",
+   "alasan_level": "menentukan $a$ dan $b$ dari pola lalu satu kali rumus jumlah dalam konteks",
+   "stimulus": null,
+   "pertanyaan": "Sebuah perpustakaan menerima sumbangan buku: bulan pertama 13 buku, bulan kedua 19 buku, bulan ketiga 25 buku, dan seterusnya dengan pertambahan tetap. Berapa jumlah buku yang diterima selama 14 bulan pertama?",
+   "jawaban_benar": "728",
+   "alasan_benar": "$a = 13$, $b = 6$: $S_{14} = \\frac{14}{2}(2 \\times 13 + 13 \\times 6) = 728$",
+   "distraktor": [
+    {
+     "teks": "770",
+     "alasan": "memakai $n \\times b$ (bukan $(n-1)b$) pada rumus jumlah"
+    },
+    {
+     "teks": "1.456",
+     "alasan": "lupa membagi 2 pada rumus jumlah"
+    },
+    {
+     "teks": "637",
+     "alasan": "memakai $n = 13$ (salah menghitung banyak bulan)"
+    }
+   ],
+   "pembahasan": "$b = 19 - 13 = 6$. $S_{14} = 7(26 + 78) = 7 \\times 104 = 728$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-011",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0051-uji-kompetensi-3"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "soal cerita deret aritmetika (kursi bertingkat)",
+   "alasan_level": "memodelkan pertambahan tetap antarbaris lalu satu kali rumus jumlah",
+   "stimulus": null,
+   "pertanyaan": "Tempat duduk di suatu gedung diatur mulai dari barisan depan ke belakang dengan banyak kursi di baris belakang 4 kursi lebih banyak dari baris di depannya. Jika dalam gedung tersebut terdapat 15 baris kursi dan baris terdepan ada 10 kursi, jumlah seluruh kursi dalam gedung tersebut ada ....",
+   "jawaban_benar": "570",
+   "alasan_benar": "$a = 10$, $b = 4$, $n = 15$: $S_{15} = \\frac{15}{2}(20 + 14 \\times 4) = 570$",
+   "distraktor": [
+    {
+     "teks": "600",
+     "alasan": "memakai $n \\times b$ (bukan $(n-1)b$) pada rumus jumlah"
+    },
+    {
+     "teks": "1.140",
+     "alasan": "lupa membagi 2 pada rumus jumlah"
+    },
+    {
+     "teks": "504",
+     "alasan": "memakai $n = 14$ (salah menghitung banyak baris)"
+    }
+   ],
+   "pembahasan": "$S_{15} = \\frac{15}{2}(2 \\times 10 + 14 \\times 4) = \\frac{15}{2} \\times 76 = 570$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-012",
+   "tipe_generate": "variasi",
+   "variasi_cara": "konteks",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0051-uji-kompetensi-3"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "soal cerita deret aritmetika (kursi bertingkat)",
+   "alasan_level": "memodelkan pertambahan tetap antarbaris lalu satu kali rumus jumlah",
+   "stimulus": null,
+   "pertanyaan": "Pak Budi menanam pohon jati pada sebuah lahan. Baris pertama ditanami 6 pohon dan setiap baris berikutnya ditanami 5 pohon lebih banyak dari baris sebelumnya. Jika lahan itu memiliki 9 baris, banyak pohon jati seluruhnya adalah ....",
+   "jawaban_benar": "234",
+   "alasan_benar": "$a = 6$, $b = 5$, $n = 9$: $S_9 = \\frac{9}{2}(12 + 8 \\times 5) = 234$",
+   "distraktor": [
+    {
+     "teks": "468",
+     "alasan": "lupa membagi 2 pada rumus jumlah"
+    },
+    {
+     "teks": "188",
+     "alasan": "memakai $n = 8$ (salah menghitung banyak baris)"
+    },
+    {
+     "teks": "207",
+     "alasan": "menghitung $\\frac{9 \\times U_9}{2}$ tanpa menambahkan suku pertama ($U_9 = 46$)"
+    }
+   ],
+   "pembahasan": "$U_9 = 6 + 8 \\times 5 = 46$. $S_9 = \\frac{9}{2}(6 + 46) = 234$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-013",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0051-uji-kompetensi-4"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "soal cerita deret aritmetika (hasil panen naik tetap)",
+   "alasan_level": "mengenali $a$ dan $b$ dari tiga data awal lalu satu kali rumus jumlah",
+   "stimulus": null,
+   "pertanyaan": "Seorang petani jeruk mencatat hasil panennya selama 9 hari pertama. Setiap harinya, hasil panen mengalami kenaikan tetap dimulai hari pertama, kedua, ketiga berturut-turut 20 kg, 24 kg, 28 kg, dan seterusnya. Jumlah hasil panen selama 9 hari pertama adalah ....",
+   "jawaban_benar": "324 kg",
+   "alasan_benar": "$a = 20$, $b = 4$, $n = 9$: $S_9 = \\frac{9}{2}(40 + 8 \\times 4) = 324$",
+   "distraktor": [
+    {
+     "teks": "342 kg",
+     "alasan": "memakai $n \\times b$ (bukan $(n-1)b$) pada rumus jumlah"
+    },
+    {
+     "teks": "648 kg",
+     "alasan": "lupa membagi 2 pada rumus jumlah"
+    },
+    {
+     "teks": "272 kg",
+     "alasan": "memakai $n = 8$ (salah menghitung banyak hari)"
+    }
+   ],
+   "pembahasan": "$b = 24 - 20 = 4$. $S_9 = \\frac{9}{2}(2 \\times 20 + 8 \\times 4) = \\frac{9 \\times 72}{2} = 324$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-014",
+   "tipe_generate": "variasi",
+   "variasi_cara": "angka",
+   "acuan": {
+    "sumber": "pretest",
+    "id": "kelas12-b01-p0051-uji-kompetensi-4"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "soal cerita deret aritmetika (hasil panen naik tetap)",
+   "alasan_level": "mengenali $a$ dan $b$ dari tiga data awal lalu satu kali rumus jumlah",
+   "stimulus": null,
+   "pertanyaan": "Seorang nelayan mencatat tangkapan ikannya selama 13 hari pertama. Setiap harinya, tangkapan mengalami kenaikan tetap dimulai hari pertama, kedua, ketiga berturut-turut 6 kg, 10 kg, 14 kg, dan seterusnya. Jumlah tangkapan selama 13 hari pertama adalah ....",
+   "jawaban_benar": "390 kg",
+   "alasan_benar": "$a = 6$, $b = 4$, $n = 13$: $S_{13} = \\frac{13}{2}(12 + 12 \\times 4) = 390$",
+   "distraktor": [
+    {
+     "teks": "416 kg",
+     "alasan": "memakai $n \\times b$ (bukan $(n-1)b$) pada rumus jumlah"
+    },
+    {
+     "teks": "780 kg",
+     "alasan": "lupa membagi 2 pada rumus jumlah"
+    },
+    {
+     "teks": "336 kg",
+     "alasan": "memakai $n = 12$ (salah menghitung banyak hari)"
+    }
+   ],
+   "pembahasan": "$b = 10 - 6 = 4$. $S_{13} = \\frac{13}{2}(2 \\times 6 + 12 \\times 4) = \\frac{13 \\times 60}{2} = 390$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-015",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 38,
+    "kutipan": "Gauss mengelompokkan suku-suku pada deret tersebut sehingga memiliki nilai yang sama ketika dijumlahkan."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "penjumlahan 1 sampai N cara Gauss",
+   "alasan_level": "memasangkan suku pertama dan terakhir lalu mengalikan dengan banyak pasangan",
+   "stimulus": null,
+   "pertanyaan": "Dengan cara Gauss, suku pertama dipasangkan dengan suku terakhir, suku kedua dengan suku sebelum terakhir, dan seterusnya sehingga tiap pasangan berjumlah sama. Jumlah $1 + 2 + 3 + \\dots + 80$ adalah ....",
+   "jawaban_benar": "3.240",
+   "alasan_benar": "ada 40 pasangan yang masing-masing berjumlah $1 + 80 = 81$, sehingga $40 \\times 81 = 3.240$",
+   "distraktor": [
+    {
+     "teks": "6.480",
+     "alasan": "mengalikan 80 dengan 81 tanpa membagi 2 (banyak pasangan dianggap 80)"
+    },
+    {
+     "teks": "3.200",
+     "alasan": "menjumlah tiap pasangan dengan 80 bukan 81"
+    },
+    {
+     "teks": "3.321",
+     "alasan": "menganggap ada 41 pasangan"
+    }
+   ],
+   "pembahasan": "Pasangan: $(1+80), (2+79), \\dots, (40+41)$, ada 40 pasangan dengan jumlah 81 tiap pasangan. Jumlah $= 40 \\times 81 = 3.240$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-016",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 44,
+    "kutipan": "Rumus untuk menghitung jumlah suku-suku deret geometri adalah"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "jumlah n suku pertama deret geometri",
+   "alasan_level": "mengenali $a$ dan $r$ lalu satu kali rumus deret geometri",
+   "stimulus": null,
+   "pertanyaan": "Jumlah 5 suku pertama deret geometri $2 + 10 + 50 + 250 + \\dots$ adalah ....",
+   "jawaban_benar": "1.562",
+   "alasan_benar": "$r = 5$, $S_5 = \\frac{2(5^5 - 1)}{5 - 1} = \\frac{2 \\times 3.124}{4} = 1.562$",
+   "distraktor": [
+    {
+     "teks": "6.248",
+     "alasan": "lupa membagi dengan $(r - 1)$"
+    },
+    {
+     "teks": "312",
+     "alasan": "memakai $n = 4$ (hanya 4 suku)"
+    },
+    {
+     "teks": "7.812",
+     "alasan": "memakai $n = 6$ (satu suku berlebih)"
+    }
+   ],
+   "pembahasan": "$a = 2$, $r = 10 \\div 2 = 5$. $S_5 = \\frac{2(3.125 - 1)}{4} = \\frac{6.248}{4} = 1.562$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-017",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 46,
+    "kutipan": "Hal ini berarti, kamu menjumlahkan suku-suku suatu barisan geometri dan menghasilkan hasil tanpa henti."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 2,
+   "jenis_soal": "jumlah deret geometri tak hingga",
+   "alasan_level": "menentukan rasio lalu satu kali rumus $\\frac{a}{1 - r}$",
+   "stimulus": null,
+   "pertanyaan": "Jumlah deret geometri tak hingga $18 + 6 + 2 + \\frac{2}{3} + \\dots$ adalah ....",
+   "jawaban_benar": "27",
+   "alasan_benar": "$r = \\frac{1}{3}$, $S_\\infty = \\frac{18}{1 - \\frac{1}{3}} = 27$",
+   "distraktor": [
+    {
+     "teks": "54",
+     "alasan": "membagi $a$ dengan $r$ bukan dengan $(1 - r)$"
+    },
+    {
+     "teks": "13,5",
+     "alasan": "memakai penyebut $(1 + r)$ sehingga $\\frac{18}{4/3}$"
+    },
+    {
+     "teks": "12",
+     "alasan": "mengalikan $a(1 - r)$ bukan membagi"
+    }
+   ],
+   "pembahasan": "$r = \\frac{6}{18} = \\frac{1}{3}$ dengan $|r| < 1$. $S_\\infty = \\frac{a}{1 - r} = \\frac{18}{2/3} = 27$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-018",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 43,
+    "kutipan": "Banyak Rumah Tangga yang Membuang Sampah dalam 5 Bulan"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "menjumlahkan suku dari data tabel",
+   "alasan_level": "menjumlahkan tiga suku barisan geometri dari tabel (satu langkah)",
+   "stimulus": "**Tabel** Banyak Rumah Tangga yang Membuang Sampah dalam 5 Bulan\n\n| Bulan | Agustus 2024 | September 2024 | Oktober 2024 | November 2024 | Desember 2024 |\n|---|---|---|---|---|---|\n| Jumlah Rumah Tangga | 2 | 6 | 18 | 54 | 162 |",
+   "pertanyaan": "Banyak rumah tangga yang membuang sampah ke sungai pada bulan September, Oktober, dan November 2024 dijumlahkan menjadi satu deret. Jumlah rumah tangga pada ketiga bulan tersebut adalah ....",
+   "jawaban_benar": "78",
+   "alasan_benar": "$6 + 18 + 54 = 78$",
+   "distraktor": [
+    {
+     "teks": "80",
+     "alasan": "ikut menjumlahkan bulan Agustus (2) sehingga 4 bulan"
+    },
+    {
+     "teks": "240",
+     "alasan": "ikut menjumlahkan bulan Desember (162) dan bukan November sebagai batas"
+    },
+    {
+     "teks": "24",
+     "alasan": "hanya menjumlahkan September dan Oktober"
+    }
+   ],
+   "pembahasan": "Banyak rumah tangga: September 6, Oktober 18, November 54. Jumlahnya $6 + 18 + 54 = 78$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-019",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 41,
+    "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "jumlah deret dari suku pertama dan suku terakhir",
+   "alasan_level": "satu kali rumus $S_n = \\frac{n}{2}(a + U_n)$ karena $U_n$ diketahui",
+   "stimulus": null,
+   "pertanyaan": "Suatu deret aritmetika memiliki suku pertama 9 dan suku ke-14 sama dengan 61. Jumlah 14 suku pertama deret tersebut adalah ....",
+   "jawaban_benar": "490",
+   "alasan_benar": "$S_{14} = \\frac{14}{2}(9 + 61) = 7 \\times 70 = 490$",
+   "distraktor": [
+    {
+     "teks": "980",
+     "alasan": "lupa membagi 2 pada $S_n = \\frac{n}{2}(a + U_n)$"
+    },
+    {
+     "teks": "427",
+     "alasan": "mengalikan $\\frac{n}{2}$ dengan $U_n$ saja tanpa menambahkan $a$"
+    },
+    {
+     "teks": "364",
+     "alasan": "mengurangi $U_n - a$ bukan menjumlahkan $a + U_n$"
+    }
+   ],
+   "pembahasan": "Karena $U_{14}$ diketahui, $S_{14} = \\frac{n}{2}(a + U_{14}) = \\frac{14}{2}(9 + 61) = 490$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas12-b01-b-easy-bt01-020",
+   "tipe_generate": "orisinal",
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 47,
+    "kutipan": "Panjang lintasan dihitung menggunakan rumus geometri tak hingga berikut."
+   },
+   "cognitive_c": "C2",
+   "jumlah_langkah": 1,
+   "jenis_soal": "syarat deret geometri tak hingga memiliki jumlah",
+   "alasan_level": "memeriksa syarat $|r| < 1$ pada empat nilai rasio",
+   "stimulus": null,
+   "pertanyaan": "Suatu deret geometri tak hingga memiliki suku pertama 6. Agar deret tersebut memiliki jumlah (konvergen), rasio yang mungkin adalah ....",
+   "jawaban_benar": "$r = -\\frac{3}{4}$",
+   "alasan_benar": "$|r| = \\frac{3}{4} < 1$ sehingga jumlah tak hingga ada",
+   "distraktor": [
+    {
+     "teks": "$r = \\frac{5}{4}$",
+     "alasan": "$|r| > 1$ sehingga deret divergen"
+    },
+    {
+     "teks": "$r = -\\frac{3}{2}$",
+     "alasan": "$|r| > 1$ sehingga deret divergen (tanda negatif dikira menjamin konvergen)"
+    },
+    {
+     "teks": "$r = 1$",
+     "alasan": "$r = 1$ membuat tiap suku sama (6 + 6 + 6 + ...) sehingga divergen"
+    }
+   ],
+   "pembahasan": "Deret geometri tak hingga memiliki jumlah bila $|r| < 1$. Hanya $-\\frac{3}{4}$ yang memenuhi.",
+   "catatan": null
+  }
+ ]
+}

@@ -1,0 +1,318 @@
+{
+ "book": "kelas11_tl",
+ "bab_no": 2,
+ "subbab": "A",
+ "level": "hard",
+ "batch": 1,
+ "skill_versi": "v1",
+ "kapasitas_kurang": true,
+ "alasan_kapasitas": "Materi subbab A tipis (definisi, derajat, koefisien utama, nilai fungsi, perilaku ujung, pemodelan). Hanya 9 soal hard yang benar-benar bernalar (evaluasi klaim, temukan kesalahan, penyangkal, rancang); sisanya hanya hitung langsung atau mengulang pola easy/medium sehingga tidak dipaksa.",
+ "soal": [
+  {
+   "id": "kelas11_tl-b02-a-hard-bt01-001",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 67,
+    "kutipan": "Derajat suatu polinomial adalah derajat tertinggi suku-sukunya."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "contoh penyangkal klaim derajat jumlah",
+   "alasan_level": "mengevaluasi klaim umum dengan memeriksa empat pasangan polinomial untuk menemukan contoh penyangkal",
+   "stimulus": null,
+   "pertanyaan": "Seorang siswa menyatakan: \"Jika $P(x)$ dan $Q(x)$ sama-sama berderajat 4, maka $P(x) + Q(x)$ pasti berderajat 4.\" Pasangan $P(x)$ dan $Q(x)$ berikut, yang keduanya berderajat 4, yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+   "jawaban_benar": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = -7x^4 + 3x^2 - 5$",
+   "alasan_benar": "Jumlahnya $3x^2 - 2x - 4$ berderajat 2, bukan 4, sehingga klaim tidak selalu berlaku.",
+   "distraktor": [
+    {
+     "teks": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = -4x^4 + x^2 - 5$",
+     "alasan": "koefisien utama berlawanan tanda dianggap cukup; jumlahnya $3x^4 + \\dots$ tetap berderajat 4"
+    },
+    {
+     "teks": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = 7x^4 + 3x^2 - 5$",
+     "alasan": "mengira koefisien utama yang sama membuat suku $x^4$ hilang; padahal jumlahnya $14x^4 + \\dots$"
+    },
+    {
+     "teks": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = 5x^4 - x^3 + 2$",
+     "alasan": "menganggap suku berderajat 3 ikut menurunkan derajat jumlah; jumlahnya $12x^4 + \\dots$"
+    }
+   ],
+   "pembahasan": "Contoh penyangkal harus menghilangkan suku $x^4$: koefisien utamanya berlawanan tepat. $7x^4 + (-7x^4) = 0$, sisanya $3x^2 - 2x - 4$ berderajat 2.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-a-hard-bt01-002",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 67,
+    "kutipan": "Derajat suatu polinomial adalah derajat tertinggi suku-sukunya."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 3,
+   "jenis_soal": "batas derajat hasil operasi",
+   "alasan_level": "mengevaluasi nilai-nilai derajat yang mungkin dengan membuat contoh untuk tiap nilai dan menolak satu nilai yang mustahil",
+   "stimulus": null,
+   "pertanyaan": "Misalkan $P(x)$ dan $Q(x)$ polinomial yang masing-masing berderajat 6, dan $P(x) + Q(x)$ bukan polinomial nol. Nilai berikut yang TIDAK mungkin menjadi derajat $P(x) + Q(x)$ adalah ....",
+   "jawaban_benar": "$7$",
+   "alasan_benar": "Derajat jumlah tidak pernah melebihi derajat tertinggi kedua polinomial, yaitu 6.",
+   "distraktor": [
+    {
+     "teks": "$6$",
+     "alasan": "mungkin, mis. $x^6 + 1$ dan $x^6 + x$ berjumlah derajat 6"
+    },
+    {
+     "teks": "$4$",
+     "alasan": "mungkin, mis. $x^6 + x^4$ dan $-x^6 + 3$ berjumlah $x^4 + 3$"
+    },
+    {
+     "teks": "$1$",
+     "alasan": "mungkin, mis. $x^6 + x$ dan $-x^6 + 2x$ berjumlah $3x$"
+    }
+   ],
+   "pembahasan": "Suku berderajat di atas 6 tidak ada pada $P$ maupun $Q$, jadi derajat jumlah paling besar 6. Nilai 6, 4, dan 1 dapat dicapai dengan contoh yang sesuai, sedangkan 7 mustahil.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-a-hard-bt01-003",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 71,
+    "kutipan": "Perilaku ujung dari grafik fungsi polinomial ditentukan oleh suku utamanya"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "temukan kesalahan perilaku ujung",
+   "alasan_level": "mengevaluasi langkah penyelesaian siswa dan menemukan letak kesalahan tanda pada suku utama berpangkat genap",
+   "stimulus": null,
+   "pertanyaan": "Dina menentukan perilaku ujung grafik $f(x) = x^3(2 - x)^2(1 - 3x)$ dengan langkah berikut.\n(1) Suku utama tiap faktor: $x^3$, $-x^2$ (dari $(2-x)^2$), dan $-3x$.\n(2) Suku utama $f$ adalah $x^3 \\cdot (-x^2) \\cdot (-3x) = 3x^6$.\n(3) Derajat 6 genap dan koefisien utama positif, jadi kedua ujung grafik naik.\nPernyataan yang benar tentang pekerjaan Dina adalah ....",
+   "jawaban_benar": "Langkah (1) salah: suku utama $(2-x)^2$ adalah $x^2$, sehingga suku utama $f$ adalah $-3x^6$ dan kedua ujung turun",
+   "alasan_benar": "$(2-x)^2 = x^2 - 4x + 4$ bersuku utama $x^2$ (kuadrat menghilangkan tanda negatif). Suku utama $f$ adalah $x^3 \\cdot x^2 \\cdot (-3x) = -3x^6$, derajat genap dan koefisien negatif.",
+   "distraktor": [
+    {
+     "teks": "Langkah (3) salah: derajat genap dengan koefisien utama positif membuat kedua ujung turun",
+     "alasan": "terbalik: koefisien utama positif pada derajat genap justru membuat kedua ujung naik"
+    },
+    {
+     "teks": "Langkah (2) salah: $x^3 \\cdot (-x^2) \\cdot (-3x)$ bernilai negatif sehingga suku utamanya $-3x^6$",
+     "alasan": "salah mengalikan tanda: dua faktor negatif menghasilkan hasil kali positif"
+    },
+    {
+     "teks": "Tidak ada kesalahan; kedua ujung grafik $f$ memang naik",
+     "alasan": "tidak memeriksa suku utama $(2-x)^2$ yang sebenarnya $x^2$"
+    }
+   ],
+   "pembahasan": "Jabarkan suku utama $(2-x)^2$: $x^2$. Maka suku utama $f$ = $x^3 \\cdot x^2 \\cdot (-3x) = -3x^6$ (derajat genap, koefisien negatif), kedua ujung turun. Kesalahan Dina ada pada langkah (1).",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-a-hard-bt01-004",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 67,
+    "kutipan": "Derajat suatu polinomial adalah derajat tertinggi suku-sukunya."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "evaluasi klaim derajat selisih",
+   "alasan_level": "mengevaluasi klaim derajat dengan menemukan bahwa suku berderajat tertinggi saling meniadakan lalu mencari suku tertinggi yang tersisa",
+   "stimulus": null,
+   "pertanyaan": "Rani menyatakan bahwa polinomial $(x^3 + 2)^4 - (x^4 - 1)^3$ berderajat 12 karena kedua suku berderajat 12. Pernyataan yang benar tentang klaim Rani adalah ....",
+   "jawaban_benar": "Salah; suku $x^{12}$ saling meniadakan dan derajat sebenarnya 9",
+   "alasan_benar": "$(x^3+2)^4 = x^{12} + 8x^9 + 24x^6 + 32x^3 + 16$ dan $(x^4-1)^3 = x^{12} - 3x^8 + 3x^4 - 1$. Selisihnya $8x^9 + 3x^8 + \\dots$, suku tertinggi $8x^9$.",
+   "distraktor": [
+    {
+     "teks": "Benar; selisih dua polinomial berderajat 12 selalu berderajat 12",
+     "alasan": "tidak memeriksa bahwa koefisien $x^{12}$ kedua polinomial sama sehingga hilang"
+    },
+    {
+     "teks": "Salah; suku $x^{12}$ saling meniadakan dan derajat sebenarnya 8",
+     "alasan": "mengambil $3x^8$ dari polinomial kedua dan mengabaikan suku $8x^9$"
+    },
+    {
+     "teks": "Salah; derajat selisih adalah $12 - 12 = 0$",
+     "alasan": "mengurangkan derajat kedua polinomial, padahal yang hilang hanya suku $x^{12}$"
+    }
+   ],
+   "pembahasan": "Suku $x^{12}$ hilang. Suku berikutnya $8x^9$ dari polinomial pertama (polinomial kedua tidak punya $x^9$), jadi derajat 9.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-a-hard-bt01-005",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 69,
+    "kutipan": "Koefisien suku utama tersebut dinamakan koefisien utama."
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 5,
+   "jenis_soal": "evaluasi dua nilai parameter",
+   "alasan_level": "mengevaluasi dua nilai parameter hasil substitusi titik terhadap syarat ujung grafik pada koefisien utama",
+   "stimulus": null,
+   "pertanyaan": "Fungsi $f(x) = (k - 1)x^4 + k^2x^2 - 7$ memenuhi $f(2) = 25$, sehingga $k = 2$ atau $k = -6$. Jika grafik $f$ juga mengarah ke bawah di kedua ujungnya, pernyataan yang benar adalah ....",
+   "jawaban_benar": "Hanya $k = -6$ yang memenuhi karena koefisien utama $k - 1 = -7$ negatif",
+   "alasan_benar": "Derajat 4 genap, kedua ujung turun bila $k - 1 < 0$. Untuk $k=2$: $1 > 0$ (naik, gugur). Untuk $k=-6$: $-7 < 0$ (turun, memenuhi).",
+   "distraktor": [
+    {
+     "teks": "Hanya $k = 2$ yang memenuhi karena koefisien utama $k - 1 = 1$ positif",
+     "alasan": "membalik kriteria: koefisien utama positif membuat kedua ujung naik"
+    },
+    {
+     "teks": "Kedua nilai $k$ memenuhi karena derajat 4 genap",
+     "alasan": "hanya memeriksa derajat, tidak tanda koefisien utama"
+    },
+    {
+     "teks": "Hanya $k = -6$ yang memenuhi karena suku $k^2x^2$ bernilai positif",
+     "alasan": "memakai suku $k^2x^2$ (bukan suku utama) sebagai penentu ujung"
+    }
+   ],
+   "pembahasan": "Ujung kedua-duanya turun jika derajat genap dan koefisien utama negatif: $k-1<0$. $k=-6$ memberikan $-7$, $k=2$ memberikan $1$.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-a-hard-bt01-006",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 69,
+    "kutipan": "Koefisien suku utama tersebut dinamakan koefisien utama."
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 4,
+   "jenis_soal": "merancang polinomial memenuhi syarat",
+   "alasan_level": "memeriksa empat rancangan polinomial terhadap empat syarat sekaligus (derajat, tanda koefisien utama, dua nilai fungsi)",
+   "stimulus": null,
+   "pertanyaan": "Sebuah polinomial $P(x)$ dirancang agar berderajat 5, berkoefisien utama positif, $P(0) = -2$, dan $P(1) = 4$. Polinomial yang memenuhi semua syarat itu adalah ....",
+   "jawaban_benar": "$P(x) = 2x^5 + x^3 + 3x - 2$",
+   "alasan_benar": "Derajat 5, koefisien utama 2 positif, $P(0) = -2$, $P(1) = 2 + 1 + 3 - 2 = 4$.",
+   "distraktor": [
+    {
+     "teks": "$P(x) = 2x^5 + x^3 - x + 2$",
+     "alasan": "$P(0) = 2$, bukan $-2$ (konstanta tertukar tanda)"
+    },
+    {
+     "teks": "$P(x) = -2x^5 + 8x - 2$",
+     "alasan": "koefisien utama $-2$ negatif, padahal harus positif"
+    },
+    {
+     "teks": "$P(x) = 2x^6 + 4x - 2$",
+     "alasan": "derajatnya 6, bukan 5"
+    }
+   ],
+   "pembahasan": "Periksa tiap syarat: hanya $2x^5 + x^3 + 3x - 2$ yang memenuhi keempatnya.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-a-hard-bt01-007",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 71,
+    "kutipan": "Perilaku ujung dari grafik fungsi polinomial ditentukan oleh suku utamanya"
+   },
+   "cognitive_c": "C6",
+   "jumlah_langkah": 5,
+   "jenis_soal": "merancang polinomial memenuhi syarat",
+   "alasan_level": "memeriksa rancangan polinomial berderajat 3 terhadap syarat arah ujung dan dua nilai fungsi",
+   "stimulus": null,
+   "pertanyaan": "Sebuah fungsi polinomial $P(x)$ dirancang agar berderajat 3, grafiknya naik di ujung kiri dan turun di ujung kanan, $P(0) = 4$, dan $P(2) = 0$. Fungsi yang memenuhi semua syarat itu adalah ....",
+   "jawaban_benar": "$P(x) = -x^3 + x^2 + 4$",
+   "alasan_benar": "Suku utama $-x^3$ (derajat ganjil, koefisien negatif) memberi kiri naik dan kanan turun; $P(0) = 4$; $P(2) = -8 + 4 + 4 = 0$.",
+   "distraktor": [
+    {
+     "teks": "$P(x) = x^3 - 3x^2 + 4$",
+     "alasan": "koefisien utama positif sehingga ujung kiri turun dan kanan naik (terbalik)"
+    },
+    {
+     "teks": "$P(x) = -x^3 + 3x^2 - 4$",
+     "alasan": "$P(0) = -4$, bukan $4$"
+    },
+    {
+     "teks": "$P(x) = -x^3 + 2x^2 + 4$",
+     "alasan": "$P(2) = -8 + 8 + 4 = 4$, bukan $0$"
+    }
+   ],
+   "pembahasan": "Cek arah ujung dari suku utama, lalu $P(0)$ dan $P(2)$. Hanya $-x^3 + x^2 + 4$ yang memenuhi ketiganya.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-a-hard-bt01-008",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 75,
+    "kutipan": "kandang tersebut sebagai fungsi terhadap"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "temukan kesalahan model fungsi",
+   "alasan_level": "mengevaluasi model volume buatan siswa dan menemukan kesalahan ukuran alas akibat pemotongan dua sisi",
+   "stimulus": null,
+   "pertanyaan": "Selembar karton berbentuk persegi bersisi 36 cm digunting pada keempat pojoknya berupa persegi kecil bersisi $x$ cm, lalu sisi-sisinya dilipat sehingga terbentuk kotak tanpa tutup. Rita menulis volume kotak sebagai $V(x) = x(36 - x)^2$. Pernyataan yang benar tentang model Rita adalah ....",
+   "jawaban_benar": "Salah; sisi alas adalah $36 - 2x$ sehingga $V(x) = x(36 - 2x)^2$",
+   "alasan_benar": "Dari tiap sisi karton terpotong dua pojok sehingga sisi alas $36 - 2x$ dan tinggi $x$. Volume $V(x) = x(36-2x)^2 = 4x^3 - 144x^2 + 1.296x$.",
+   "distraktor": [
+    {
+     "teks": "Salah; tinggi kotak $2x$ sehingga $V(x) = 2x(36 - 2x)^2$",
+     "alasan": "mengira tinggi lipatan dua kali sisi pojok"
+    },
+    {
+     "teks": "Salah; $V(x) = x(36 - x)(36 - 2x)$ karena panjang dan lebar alas berbeda",
+     "alasan": "mengira panjang dan lebar alas berbeda padahal karton persegi"
+    },
+    {
+     "teks": "Benar; sisi alas adalah $36 - x$ karena hanya satu pojok yang digunting",
+     "alasan": "tidak menyadari bahwa tiap sisi kehilangan dua potongan $x$"
+    }
+   ],
+   "pembahasan": "Tiap sisi 36 cm kehilangan $x$ di kedua ujungnya, sisi alas $36 - 2x$. Maka $V(x) = x(36-2x)^2$, polinomial derajat 3.",
+   "catatan": null
+  },
+  {
+   "id": "kelas11_tl-b02-a-hard-bt01-009",
+   "tipe_generate": "orisinal",
+   "variasi_cara": null,
+   "acuan": {
+    "sumber": "siswa",
+    "halaman": 71,
+    "kutipan": "Perilaku ujung dari grafik fungsi polinomial ditentukan oleh suku utamanya"
+   },
+   "cognitive_c": "C5",
+   "jumlah_langkah": 4,
+   "jenis_soal": "evaluasi sifat ujung hasil operasi",
+   "alasan_level": "mengevaluasi sifat ujung jumlah dan hasil kali dua fungsi dengan menalar tanda dan paritas derajat suku utama",
+   "stimulus": null,
+   "pertanyaan": "Grafik fungsi polinomial $f$ dan $g$ keduanya turun di ujung kiri maupun ujung kanan. Pernyataan yang pasti benar tentang $f + g$ dan $f \\cdot g$ adalah ....",
+   "jawaban_benar": "$f + g$ turun di kedua ujung dan $f \\cdot g$ naik di kedua ujung",
+   "alasan_benar": "Keduanya berderajat genap dengan koefisien utama negatif. Suku utama $f+g$ bertanda negatif berderajat genap (turun-turun); suku utama $f \\cdot g$ hasil kali dua bilangan negatif, positif, berderajat genap (naik-naik).",
+   "distraktor": [
+    {
+     "teks": "$f + g$ dan $f \\cdot g$ keduanya turun di kedua ujung",
+     "alasan": "mengira hasil kali mempertahankan tanda negatif"
+    },
+    {
+     "teks": "$f + g$ naik di kedua ujung dan $f \\cdot g$ turun di kedua ujung",
+     "alasan": "menukar sifat jumlah dan hasil kali"
+    },
+    {
+     "teks": "$f + g$ dan $f \\cdot g$ keduanya naik di kedua ujung",
+     "alasan": "mengira jumlah dua fungsi bertanda negatif menjadi positif"
+    }
+   ],
+   "pembahasan": "Contoh $f = -3x^2 + x$, $g = -2x^4 + 5$: jumlah bersuku utama $-2x^4$, hasil kali bersuku utama $6x^6$. Sifat ini berlaku umum.",
+   "catatan": null
+  }
+ ]
+}

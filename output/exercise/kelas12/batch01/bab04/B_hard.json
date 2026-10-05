@@ -1,0 +1,670 @@
+{
+  "book": "kelas12",
+  "bab_no": 4,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b04-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Kejadian majemuk saling lepas adalah dua kejadian yang tidak dapat terjadi secara bersamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim batas peluang",
+      "alasan_level": "menilai empat pernyataan dengan batas $P(A \\cap B)$ dan $P(A \\cup B)$ yang harus dipenuhi",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(A)=0{,}6$ dan $P(B)=0{,}7$. Pernyataan yang pasti benar adalah ....",
+      "jawaban_benar": "$A$ dan $B$ tidak mungkin saling lepas",
+      "alasan_benar": "jika saling lepas maka $P(A \\cup B)=0{,}6+0{,}7=1{,}3>1$, mustahil; jadi irisan tidak kosong ($P(A \\cap B)\\geq 0{,}3$)",
+      "distraktor": [
+        {
+          "teks": "$P(A \\cap B)$ dapat bernilai $0{,}2$",
+          "alasan": "$P(A \\cap B)=P(A)+P(B)-P(A \\cup B)\\geq 1{,}3-1=0{,}3$, jadi $0{,}2$ tidak mungkin"
+        },
+        {
+          "teks": "$P(A \\cup B)=1{,}3$",
+          "alasan": "lupa mengurangi irisan; peluang tidak pernah lebih dari 1"
+        },
+        {
+          "teks": "$A$ dan $B$ pasti saling bebas",
+          "alasan": "keterbebasan tidak ditentukan oleh $P(A)$ dan $P(B)$ saja; irisan tidak diketahui"
+        }
+      ],
+      "pembahasan": "$P(A \\cap B)=P(A)+P(B)-P(A \\cup B)\\geq 0{,}6+0{,}7-1=0{,}3>0$, sehingga $A$ dan $B$ pasti beririsan dan tidak saling lepas. Pernyataan lain salah: irisan tidak mungkin $0{,}2$, gabungan tidak boleh $1{,}3$, dan keterbebasan tidak dapat dipastikan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Kejadian majemuk saling lepas adalah dua kejadian yang tidak dapat terjadi secara bersamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat parameter kejadian saling lepas",
+      "alasan_level": "menyusun semua batas peluang ($\\leq 1$ dan $\\geq 0$) pada kejadian saling lepas lalu memilih batas yang paling ketat",
+      "stimulus": null,
+      "pertanyaan": "Kejadian $A$ dan $B$ saling lepas dengan $P(A)=2x$ dan $P(B)=3x-\\frac{1}{10}$. Nilai $x$ terbesar yang masih mungkin adalah ....",
+      "jawaban_benar": "$\\frac{11}{50}$",
+      "alasan_benar": "saling lepas: $P(A \\cup B)=5x-\\frac{1}{10}\\leq 1$ sehingga $x\\leq\\frac{11}{50}$; syarat $P(A)\\leq 1$ dan $P(B)\\leq 1$ lebih longgar",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "lupa suku $-\\frac{1}{10}$ sehingga memakai $5x\\leq 1$"
+        },
+        {
+          "teks": "$\\frac{11}{30}$",
+          "alasan": "hanya memakai syarat $P(B)\\leq 1$ dan mengabaikan syarat gabungan"
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "hanya memakai syarat $P(A)\\leq 1$"
+        }
+      ],
+      "pembahasan": "$P(A \\cup B)=P(A)+P(B)=5x-\\frac{1}{10}$ dan harus $\\leq 1$, jadi $x\\leq\\frac{11}{10}\\times\\frac{1}{5}=\\frac{11}{50}$. Syarat $2x\\leq 1$ memberi $x\\leq\\frac{1}{2}$ dan $3x-\\frac{1}{10}\\leq 1$ memberi $x\\leq\\frac{11}{30}$, keduanya lebih longgar. Nilai terbesar $x=\\frac{11}{50}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 172,
+        "kutipan": "Jika suatu kejadian tidak mempengaruhi kejadian yang lainnya, maka dua kejadian A dan B dapat disebut sebagai kejadian majemuk yang saling bebas."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat parameter kejadian saling bebas",
+      "alasan_level": "membentuk persamaan kuadrat dari rumus gabungan kejadian bebas lalu menyaring akar yang melanggar batas peluang",
+      "stimulus": null,
+      "pertanyaan": "Kejadian $A$ dan $B$ saling bebas dengan $P(A)=x$, $P(B)=2x$, dan $P(A \\cup B)=\\frac{18}{25}$. Nilai $x$ yang memenuhi sehingga kedua peluang berada di antara 0 dan 1 adalah ....",
+      "jawaban_benar": "$\\frac{3}{10}$",
+      "alasan_benar": "$3x-2x^2=\\frac{18}{25}$ memberi $x=\\frac{3}{10}$ atau $x=\\frac{6}{5}$; $x=\\frac{6}{5}$ membuat peluang lebih dari 1",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6}{5}$",
+          "alasan": "akar kedua persamaan kuadrat yang membuat $P(A)>1$"
+        },
+        {
+          "teks": "$\\frac{6}{25}$",
+          "alasan": "menganggap saling lepas: $3x=\\frac{18}{25}$"
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "salah menyebut nilai $P(B)$ sebagai $x$"
+        }
+      ],
+      "pembahasan": "Saling bebas: $P(A \\cup B)=x+2x-2x^2=\\frac{18}{25}$, yaitu $50x^2-75x+18=0$ atau $(10x-3)(5x-6)=0$. Jadi $x=\\frac{3}{10}$ atau $x=\\frac{6}{5}$. Karena $P(A)=x\\leq 1$, hanya $x=\\frac{3}{10}$ yang berlaku (cek: $0{,}3+0{,}6-0{,}18=0{,}72$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Peluang terjadinya dua kejadian atau lebih secara bersamaan disebut peluang kejadian majemuk."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan lupa irisan",
+      "alasan_level": "menemukan kejadian yang terhitung dua kali pada kartu As dan kartu hati lalu menghitung ulang",
+      "stimulus": null,
+      "pertanyaan": "Dari satu set 52 kartu bridge yang dikocok, satu kartu diambil secara acak. Rani menghitung peluang terambil kartu As atau kartu hati dengan $\\frac{4}{52}+\\frac{13}{52}=\\frac{17}{52}$. Pernyataan yang benar tentang hitungan Rani adalah ....",
+      "jawaban_benar": "As hati terhitung dua kali; peluang yang benar $\\frac{4}{13}$",
+      "alasan_benar": "kartu As hati termasuk As dan termasuk hati sehingga irisan $\\frac{1}{52}$ harus dikurangkan: $\\frac{17-1}{52}=\\frac{4}{13}$",
+      "distraktor": [
+        {
+          "teks": "kedua kejadian saling bebas sehingga dikalikan; peluangnya $\\frac{1}{52}$",
+          "alasan": "perkalian untuk 'dan', bukan 'atau', dan kejadian ini bukan dua pengambilan"
+        },
+        {
+          "teks": "As hati belum terhitung; peluang yang benar $\\frac{9}{26}$",
+          "alasan": "irisan ditambahkan padahal harus dikurangkan"
+        },
+        {
+          "teks": "penyebut harus 51 karena ada dua kejadian; peluangnya $\\frac{1}{3}$",
+          "alasan": "mengira satu kartu sudah diambil sehingga penyebut menjadi 51"
+        }
+      ],
+      "pembahasan": "Kejadian As dan hati tidak saling lepas karena As hati ada pada keduanya. $P(\\text{As} \\cup \\text{hati})=\\frac{4}{52}+\\frac{13}{52}-\\frac{1}{52}=\\frac{16}{52}=\\frac{4}{13}$. Hitungan Rani lupa mengurangi irisan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Hal ini terjadi karena kejadian pengambilan kartu hati pertama berdampak pada kejadian pengambilan kartu hati kedua."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan tanpa pengembalian",
+      "alasan_level": "menemukan bahwa pengambilan kedua tanpa pengembalian mengubah pembilang dan penyebut lalu menghitung ulang",
+      "stimulus": null,
+      "pertanyaan": "Dua kartu diambil satu per satu secara acak tanpa pengembalian dari 52 kartu bridge. Doni menghitung peluang keduanya kartu As dengan $\\frac{4}{52}\\times\\frac{4}{52}=\\frac{1}{169}$. Pernyataan yang benar tentang hitungan Doni adalah ....",
+      "jawaban_benar": "pembilang dan penyebut kedua seharusnya 3 dan 51; peluang yang benar $\\frac{1}{221}$",
+      "alasan_benar": "setelah satu As terambil tersisa 3 As dari 51 kartu: $\\frac{4}{52}\\times\\frac{3}{51}=\\frac{1}{221}$",
+      "distraktor": [
+        {
+          "teks": "hanya penyebut kedua yang menjadi 51; peluangnya $\\frac{4}{663}$",
+          "alasan": "pembilang kedua juga berkurang karena satu As sudah terambil"
+        },
+        {
+          "teks": "hanya pembilang kedua yang menjadi 3; peluangnya $\\frac{3}{676}$",
+          "alasan": "penyebut kedua juga berkurang karena satu kartu sudah terambil"
+        },
+        {
+          "teks": "kedua pengambilan seharusnya dijumlahkan; peluangnya $\\frac{2}{13}$",
+          "alasan": "menjumlahkan padahal yang diminta kedua-duanya terjadi ('dan')"
+        }
+      ],
+      "pembahasan": "Tanpa pengembalian, pengambilan kedua bergantung pada pengambilan pertama. $P=\\frac{4}{52}\\times\\frac{3}{51}=\\frac{12}{2652}=\\frac{1}{221}$. Doni memperlakukan pengambilan seperti dengan pengembalian.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Kejadian majemuk saling lepas adalah dua kejadian yang tidak dapat terjadi secara bersamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan menganggap saling lepas",
+      "alasan_level": "mengenali bahwa kejadian genap dan prima tidak saling lepas karena mata 2 lalu menghitung gabungan yang benar",
+      "stimulus": null,
+      "pertanyaan": "Sebuah dadu setimbang dilempar satu kali. Sinta menghitung peluang muncul mata dadu genap atau prima dengan $\\frac{3}{6}+\\frac{3}{6}=1$ karena menganggap kedua kejadian saling lepas. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "kedua kejadian beririsan di mata 2; peluang yang benar $\\frac{5}{6}$",
+      "alasan_benar": "genap $=\\{2,4,6\\}$ dan prima $=\\{2,3,5\\}$ beririsan di $\\{2\\}$ sehingga $\\frac{3}{6}+\\frac{3}{6}-\\frac{1}{6}=\\frac{5}{6}$",
+      "distraktor": [
+        {
+          "teks": "kedua kejadian beririsan di mata 2; peluangnya $\\frac{2}{3}$",
+          "alasan": "irisan dikurangkan dua kali"
+        },
+        {
+          "teks": "kedua kejadian saling bebas sehingga dikalikan; peluangnya $\\frac{1}{4}$",
+          "alasan": "memakai rumus saling bebas untuk 'atau' pada satu lemparan"
+        },
+        {
+          "teks": "tidak ada kesalahan; peluangnya $1$",
+          "alasan": "mata 2 terhitung dua kali sehingga hasil 1 terlalu besar"
+        }
+      ],
+      "pembahasan": "Mata 2 adalah genap sekaligus prima, jadi kedua kejadian tidak saling lepas. $P=\\frac{3}{6}+\\frac{3}{6}-\\frac{1}{6}=\\frac{5}{6}$, yaitu semua mata kecuali 1.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 172,
+        "kutipan": "Jika suatu kejadian tidak mempengaruhi kejadian yang lainnya, maka dua kejadian A dan B dapat disebut sebagai kejadian majemuk yang saling bebas."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "contoh penyangkal klaim",
+      "alasan_level": "mencari pasangan kejadian yang tidak saling lepas tetapi saling bebas dengan menguji $P(A \\cap B)=P(A)P(B)$ pada empat pasangan",
+      "stimulus": null,
+      "pertanyaan": "Andi mengklaim: \"Dua kejadian yang tidak saling lepas pasti tidak saling bebas.\" Pada pelemparan sebuah dadu setimbang, pasangan kejadian yang menyangkal klaim Andi adalah ....",
+      "jawaban_benar": "muncul mata dadu kurang dari 4 dan muncul mata dadu bukan 3 dan bukan 6",
+      "alasan_benar": "irisannya $\\{1,2\\}$ tidak kosong, tetapi $P(A \\cap B)=\\frac{1}{3}=\\frac{1}{2}\\times\\frac{2}{3}=P(A)P(B)$ sehingga saling bebas",
+      "distraktor": [
+        {
+          "teks": "muncul mata dadu genap dan muncul bilangan prima",
+          "alasan": "tidak saling lepas dan $\\frac{1}{6}\\neq\\frac{1}{2}\\times\\frac{1}{2}$, sehingga justru mendukung klaim"
+        },
+        {
+          "teks": "muncul mata dadu kurang dari 3 dan muncul mata dadu lebih dari 1",
+          "alasan": "tidak saling lepas dan $\\frac{1}{6}\\neq\\frac{1}{3}\\times\\frac{5}{6}$, sehingga mendukung klaim"
+        },
+        {
+          "teks": "muncul mata dadu genap dan muncul mata dadu ganjil",
+          "alasan": "saling lepas, sehingga bukan contoh dari kasus yang diklaim"
+        }
+      ],
+      "pembahasan": "Penyangkal harus tidak saling lepas (irisan tidak kosong) tetapi saling bebas. $A=\\{1,2,3\\}$, $B=\\{1,2,4,5\\}$: $A \\cap B=\\{1,2\\}$, $P(A \\cap B)=\\frac{2}{6}=\\frac{1}{3}$ dan $P(A)P(B)=\\frac{1}{2}\\times\\frac{2}{3}=\\frac{1}{3}$. Pasangan lain tidak memenuhi keduanya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 164,
+        "kutipan": "Kejadian majemuk saling lepas adalah dua kejadian yang tidak dapat terjadi secara bersamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "saling lepas lawan saling bebas",
+      "alasan_level": "menyimpulkan hubungan kejadian saling lepas dan saling bebas dengan membandingkan $P(A \\cap B)=0$ terhadap $P(A)P(B)$",
+      "stimulus": null,
+      "pertanyaan": "Kejadian $A$ dan $B$ saling lepas dengan $P(A)>0$ dan $P(B)>0$. Pernyataan yang pasti benar adalah ....",
+      "jawaban_benar": "$A$ dan $B$ tidak saling bebas",
+      "alasan_benar": "saling lepas berarti $P(A \\cap B)=0$, sedangkan $P(A)P(B)>0$; keduanya tidak sama",
+      "distraktor": [
+        {
+          "teks": "$P(A \\cap B)=P(A)\\times P(B)$",
+          "alasan": "itu syarat saling bebas; di sini $P(A \\cap B)=0$ sedangkan hasil kali positif"
+        },
+        {
+          "teks": "$P(A \\cup B)=P(A)\\times P(B)$",
+          "alasan": "kejadian saling lepas dijumlahkan, bukan dikalikan"
+        },
+        {
+          "teks": "$P(A|B)=P(A)$",
+          "alasan": "sebenarnya $P(A|B)=0$ karena $B$ terjadi berarti $A$ tidak terjadi"
+        }
+      ],
+      "pembahasan": "Saling lepas: $P(A \\cap B)=0$. Saling bebas menuntut $P(A \\cap B)=P(A)P(B)>0$. Keduanya bertentangan, jadi kejadian saling lepas dengan peluang positif tidak mungkin saling bebas. Juga $P(A|B)=\\frac{0}{P(B)}=0\\neq P(A)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Hal ini terjadi karena kejadian pengambilan kartu hati pertama berdampak pada kejadian pengambilan kartu hati kedua."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim dengan lawan tanpa pengembalian",
+      "alasan_level": "membuktikan secara aljabar bahwa $\\frac{r-1}{N-1}<\\frac{r}{N}$ sehingga cara tanpa pengembalian selalu lebih kecil",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kantong berisi $N$ bola dengan $N\\geq 2$, terdiri dari $r$ bola merah dan sisanya putih dengan $1\\leq r\\leq N-1$. Dua bola diambil satu per satu secara acak; peluang keduanya merah adalah $p_1$ bila dengan pengembalian dan $p_2$ bila tanpa pengembalian. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$p_2<p_1$ untuk setiap nilai $r$ dan $N$ tersebut",
+      "alasan_benar": "$p_1=\\frac{r}{N}\\times\\frac{r}{N}$ dan $p_2=\\frac{r}{N}\\times\\frac{r-1}{N-1}$; karena $\\frac{r-1}{N-1}<\\frac{r}{N}$ untuk $r<N$, maka $p_2<p_1$",
+      "distraktor": [
+        {
+          "teks": "$p_2=p_1$ untuk setiap nilai $r$ dan $N$ tersebut",
+          "alasan": "kedua cara hanya sama bila $r=N$, yang dikecualikan"
+        },
+        {
+          "teks": "$p_2>p_1$ untuk setiap nilai $r$ dan $N$ tersebut",
+          "alasan": "arahnya terbalik: tanpa pengembalian peluang bola merah kedua selalu menyusut"
+        },
+        {
+          "teks": "$p_2<p_1$ hanya jika $r>\\frac{N}{2}$",
+          "alasan": "perbandingan itu berlaku untuk semua $r$ dengan $r<N$, tidak bergantung pada setengah $N$"
+        }
+      ],
+      "pembahasan": "$\\frac{r-1}{N-1}<\\frac{r}{N}\\iff N(r-1)<r(N-1)\\iff -N<-r\\iff r<N$. Syarat terakhir selalu dipenuhi, sehingga $p_2<p_1$ untuk semua $r$ dan $N$ pada syarat soal. Contoh: $N=10, r=5$ memberi $p_1=\\frac{1}{4}$ dan $p_2=\\frac{2}{9}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 172,
+        "kutipan": "Jika suatu kejadian tidak mempengaruhi kejadian yang lainnya, maka dua kejadian A dan B dapat disebut sebagai kejadian majemuk yang saling bebas."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "uji kebebasan dari tabel dua arah",
+      "alasan_level": "membandingkan $P(A \\cap B)$ dengan $P(A)P(B)$ dari data tabel pada empat pasangan kejadian",
+      "stimulus": "Banyak siswa menurut jenis kelamin dan peminatan olahraga:\n\n|Jenis kelamin|Basket|Voli|Renang|\n|---|---|---|---|\n|Putra|20|12|8|\n|Putri|20|18|22|",
+      "pertanyaan": "Seorang siswa dipilih secara acak dari 100 siswa pada tabel berikut. Pasangan kejadian yang saling bebas adalah ....",
+      "jawaban_benar": "terpilih siswa putra dan terpilih siswa peminat voli",
+      "alasan_benar": "$P(\\text{putra})=\\frac{40}{100}$, $P(\\text{voli})=\\frac{30}{100}$, $P(\\text{putra} \\cap \\text{voli})=\\frac{12}{100}=\\frac{40}{100}\\times\\frac{30}{100}$",
+      "distraktor": [
+        {
+          "teks": "terpilih siswa putra dan terpilih siswa peminat basket",
+          "alasan": "$\\frac{20}{100}\\neq\\frac{40}{100}\\times\\frac{40}{100}=\\frac{16}{100}$"
+        },
+        {
+          "teks": "terpilih siswa putra dan terpilih siswa peminat renang",
+          "alasan": "$\\frac{8}{100}\\neq\\frac{40}{100}\\times\\frac{30}{100}=\\frac{12}{100}$"
+        },
+        {
+          "teks": "terpilih siswa putri dan terpilih siswa peminat renang",
+          "alasan": "$\\frac{22}{100}\\neq\\frac{60}{100}\\times\\frac{30}{100}=\\frac{18}{100}$"
+        }
+      ],
+      "pembahasan": "Uji $P(A \\cap B)=P(A)P(B)$. Putra dan voli: $\\frac{12}{100}=0{,}4\\times 0{,}3$ (bebas). Putra dan basket: $0{,}20\\neq 0{,}16$. Putra dan renang: $0{,}08\\neq 0{,}12$. Putri dan renang: $0{,}22\\neq 0{,}18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Hal ini terjadi karena kejadian pengambilan kartu hati pertama berdampak pada kejadian pengambilan kartu hati kedua."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "peluang bersyarat bertingkat dua kotak",
+      "alasan_level": "menghitung peluang total bola merah dari dua jalur lalu membagi jalur kotak I dengan peluang total",
+      "stimulus": null,
+      "pertanyaan": "Sebuah dadu setimbang dilempar. Jika muncul mata 1 atau 2, sebuah bola diambil secara acak dari kotak I yang berisi 5 bola merah dan 3 bola putih. Jika muncul mata lainnya, sebuah bola diambil secara acak dari kotak II yang berisi 2 bola merah dan 6 bola putih. Jika diketahui bola yang terambil berwarna merah, peluang bola itu berasal dari kotak I adalah ....",
+      "jawaban_benar": "$\\frac{5}{9}$",
+      "alasan_benar": "$P(\\text{merah})=\\frac{1}{3}\\times\\frac{5}{8}+\\frac{2}{3}\\times\\frac{2}{8}=\\frac{3}{8}$ dan $P(\\text{I} \\cap \\text{merah})=\\frac{5}{24}$, sehingga $\\frac{5/24}{3/8}=\\frac{5}{9}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{24}$",
+          "alasan": "hanya menghitung $P(\\text{I} \\cap \\text{merah})$ dan lupa membagi dengan $P(\\text{merah})$"
+        },
+        {
+          "teks": "$\\frac{5}{8}$",
+          "alasan": "memakai peluang bola merah pada kotak I tanpa membalik syarat"
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "hanya memakai peluang memilih kotak I dan mengabaikan informasi bola merah"
+        }
+      ],
+      "pembahasan": "$P(\\text{I} \\cap \\text{merah})=\\frac{2}{6}\\times\\frac{5}{8}=\\frac{5}{24}$; $P(\\text{II} \\cap \\text{merah})=\\frac{4}{6}\\times\\frac{2}{8}=\\frac{1}{6}=\\frac{4}{24}$. $P(\\text{merah})=\\frac{9}{24}=\\frac{3}{8}$. $P(\\text{I}|\\text{merah})=\\frac{5/24}{9/24}=\\frac{5}{9}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Hal ini terjadi karena kejadian pengambilan kartu hati pertama berdampak pada kejadian pengambilan kartu hati kedua."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "peluang bersyarat bertingkat tiga pengambilan",
+      "alasan_level": "menghitung peluang irisan tiga pengambilan tanpa pengembalian dan peluang syarat bola ketiga putih lalu membaginya",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kotak berisi 5 bola merah dan 4 bola putih. Tiga bola diambil satu per satu secara acak tanpa pengembalian. Jika diketahui bola ketiga berwarna putih, peluang bola pertama dan kedua keduanya merah adalah ....",
+      "jawaban_benar": "$\\frac{5}{14}$",
+      "alasan_benar": "$P(\\text{MMP})=\\frac{5}{9}\\times\\frac{4}{8}\\times\\frac{4}{7}=\\frac{10}{63}$ dan $P(\\text{bola ketiga putih})=\\frac{4}{9}$, sehingga $\\frac{10/63}{4/9}=\\frac{5}{14}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{10}{63}$",
+          "alasan": "hanya menghitung peluang urutan merah, merah, putih tanpa membagi dengan peluang syarat"
+        },
+        {
+          "teks": "$\\frac{5}{18}$",
+          "alasan": "hanya menghitung dua pengambilan pertama dan mengabaikan syarat bola ketiga putih"
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "memakai peluang syarat (bola ketiga putih) sebagai jawaban"
+        }
+      ],
+      "pembahasan": "Peluang bola ketiga putih $=\\frac{4}{9}$ (tiap posisi setara). $P(\\text{MMP})=\\frac{5}{9}\\times\\frac{4}{8}\\times\\frac{4}{7}=\\frac{80}{504}=\\frac{10}{63}$. $P(\\text{MM}|\\text{P ketiga})=\\frac{10}{63}\\div\\frac{4}{9}=\\frac{10}{63}\\times\\frac{9}{4}=\\frac{5}{14}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Hal ini terjadi karena kejadian pengambilan kartu hati pertama berdampak pada kejadian pengambilan kartu hati kedua."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "peluang bersyarat dua dadu",
+      "alasan_level": "mendaftar ruang sampel yang menyempit menjadi 11 pasangan lalu menghitung pasangan berjumlah paling sedikit 10",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu setimbang dilempar bersamaan. Jika diketahui paling sedikit satu dadu menunjukkan mata 6, peluang jumlah kedua mata dadu paling sedikit 10 adalah ....",
+      "jawaban_benar": "$\\frac{5}{11}$",
+      "alasan_benar": "ruang sampel menyempit ke 11 pasangan yang memuat 6; di antaranya (4,6),(6,4),(5,6),(6,5),(6,6) berjumlah $\\geq 10$, sehingga $\\frac{5}{11}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{36}$",
+          "alasan": "membagi dengan seluruh ruang sampel 36, bukan dengan 11 pasangan syarat"
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "memakai peluang jumlah paling sedikit 10 tanpa syarat ($\\frac{6}{36}$)"
+        },
+        {
+          "teks": "$\\frac{11}{36}$",
+          "alasan": "memakai peluang syarat (paling sedikit satu mata 6) sebagai jawaban"
+        }
+      ],
+      "pembahasan": "Syarat: paling sedikit satu 6, ada $36-25=11$ pasangan. Yang berjumlah $\\geq 10$: (4,6), (6,4), (5,6), (6,5), (6,6) = 5 pasangan. $P=\\frac{5}{11}$. Bandingkan $\\frac{6}{36}$ tanpa syarat, karena pasangan (5,5) tidak memuat 6.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Peluang terjadinya dua kejadian atau lebih secara bersamaan disebut peluang kejadian majemuk."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "rancang skema permainan adil",
+      "alasan_level": "merancang isi kantong agar peluang dua pemain sama dengan menyusun persamaan kuadrat dan memilih akar terbesar",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kantong berisi 3 bola merah dan $n$ bola putih, dengan $n$ bilangan asli. Dua bola diambil sekaligus secara acak. Ani menang jika kedua bola sewarna dan Budi menang jika berbeda warna. Permainan adil bila peluang menang keduanya sama. Nilai $n$ terbesar yang membuat permainan adil adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$\\frac{C(3,2)+C(n,2)}{C(n+3,2)}=\\frac{1}{2}$ menjadi $n^2-7n+6=0$ sehingga $n=1$ atau $n=6$; $n$ terbesar adalah 6",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "akar yang lebih kecil dari persamaan; soal meminta $n$ terbesar"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "mengambil jumlah kedua akar persamaan sebagai jawaban"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "mengira permainan adil bila jumlah bola putih sama dengan jumlah bola merah"
+        }
+      ],
+      "pembahasan": "Peluang sewarna $=\\frac{3+\\frac{n(n-1)}{2}}{\\frac{(n+3)(n+2)}{2}}=\\frac{6+n^2-n}{(n+3)(n+2)}=\\frac{1}{2}$, sehingga $12+2n^2-2n=n^2+5n+6$ atau $n^2-7n+6=0$, yaitu $(n-1)(n-6)=0$. Cek $n=6$: $\\frac{3+15}{36}=\\frac{1}{2}$. $n$ terbesar $=6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Hal ini terjadi karena kejadian pengambilan kartu hati pertama berdampak pada kejadian pengambilan kartu hati kedua."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bandingkan dua skema undian",
+      "alasan_level": "menghitung peluang menang kedua skema (dengan dan tanpa pengembalian) lalu membandingkan beserta selisihnya",
+      "stimulus": null,
+      "pertanyaan": "Dari 10 kartu undian terdapat 4 kartu hadiah. Peserta mengambil dua kartu secara acak satu per satu dan menang bila keduanya kartu hadiah. Pada skema X kartu pertama dikembalikan sebelum pengambilan kedua, sedangkan pada skema Y tidak dikembalikan. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "peluang menang skema X lebih besar daripada skema Y dengan selisih $\\frac{2}{75}$",
+      "alasan_benar": "X: $\\frac{4}{10}\\times\\frac{4}{10}=\\frac{4}{25}$; Y: $\\frac{4}{10}\\times\\frac{3}{9}=\\frac{2}{15}$; selisih $\\frac{12-10}{75}=\\frac{2}{75}$",
+      "distraktor": [
+        {
+          "teks": "peluang menang skema Y lebih besar daripada skema X dengan selisih $\\frac{2}{75}$",
+          "alasan": "membalik arah: tanpa pengembalian kartu hadiah berkurang sehingga peluang justru mengecil"
+        },
+        {
+          "teks": "peluang menang skema X lebih besar daripada skema Y dengan selisih $\\frac{1}{25}$",
+          "alasan": "menghitung skema Y sebagai $\\frac{4}{10}\\times\\frac{3}{10}$ (penyebut kedua tidak dikurangi)"
+        },
+        {
+          "teks": "peluang menang kedua skema sama besar",
+          "alasan": "mengira pengembalian tidak mempengaruhi peluang pengambilan kedua"
+        }
+      ],
+      "pembahasan": "Skema X (saling bebas): $\\frac{4}{25}=\\frac{12}{75}$. Skema Y (tergantung pengambilan pertama): $\\frac{4}{10}\\times\\frac{3}{9}=\\frac{2}{15}=\\frac{10}{75}$. X lebih besar dengan selisih $\\frac{2}{75}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 172,
+        "kutipan": "Jika suatu kejadian tidak mempengaruhi kejadian yang lainnya, maka dua kejadian A dan B dapat disebut sebagai kejadian majemuk yang saling bebas."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 6,
+      "jenis_soal": "bandingkan dua skema kelulusan tiga tes",
+      "alasan_level": "menyusun peluang dua aturan kelulusan dari tiga tes saling bebas lalu membandingkan keduanya",
+      "stimulus": null,
+      "pertanyaan": "Peluang seorang peserta lulus tes 1, tes 2, dan tes 3 berturut-turut adalah $\\frac{1}{2}$, $\\frac{2}{3}$, dan $\\frac{3}{4}$, dan hasil ketiga tes saling bebas. Aturan P: peserta diterima jika lulus paling sedikit dua dari tiga tes. Aturan Q: peserta diterima jika lulus tes 1 dan lulus paling sedikit satu dari tes 2 atau tes 3. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "peluang diterima aturan P lebih besar daripada aturan Q dengan selisih $\\frac{1}{4}$",
+      "alasan_benar": "$P=\\frac{17}{24}$ dan $Q=\\frac{1}{2}\\times\\left(1-\\frac{1}{3}\\times\\frac{1}{4}\\right)=\\frac{11}{24}$; selisih $\\frac{6}{24}=\\frac{1}{4}$",
+      "distraktor": [
+        {
+          "teks": "peluang diterima aturan Q lebih besar daripada aturan P dengan selisih $\\frac{1}{4}$",
+          "alasan": "arah terbalik: aturan P lebih longgar sehingga peluangnya lebih besar"
+        },
+        {
+          "teks": "peluang diterima aturan P lebih besar daripada aturan Q dengan selisih $\\frac{1}{8}$",
+          "alasan": "aturan Q dihitung $\\frac{1}{3}+\\frac{1}{4}=\\frac{7}{12}$ (tes 3 tidak dikalikan peluang lulus tes 1)"
+        },
+        {
+          "teks": "peluang diterima kedua aturan sama besar",
+          "alasan": "hanya menghitung kasus tepat dua tes lulus pada aturan P ($\\frac{11}{24}$) sehingga tampak sama dengan Q"
+        }
+      ],
+      "pembahasan": "Aturan P: tepat dua lulus $\\frac{11}{24}$ ditambah ketiganya lulus $\\frac{1}{4}$ $=\\frac{17}{24}$. Aturan Q: $P(\\text{tes 1})\\times(1-P(\\text{tes 2 gagal})P(\\text{tes 3 gagal}))=\\frac{1}{2}\\times\\frac{11}{12}=\\frac{11}{24}$. Selisih $\\frac{6}{24}=\\frac{1}{4}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 159,
+        "kutipan": "Frekuensi harapan dari kejadian majemuk adalah harapan banyaknya kejadian majemuk yang dapat terjadi dari sejumlah percobaan yang dilakukan."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rancang banyak percobaan frekuensi harapan",
+      "alasan_level": "menghitung peluang dua jumlah saling lepas lalu merancang banyak lemparan minimum dari ketaksamaan frekuensi harapan",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu setimbang dilempar bersamaan sebanyak $n$ kali. Agar frekuensi harapan munculnya jumlah mata dadu 7 atau 11 paling sedikit 100, banyak lemparan $n$ paling sedikit adalah ....",
+      "jawaban_benar": "$450$",
+      "alasan_benar": "$P=\\frac{6}{36}+\\frac{2}{36}=\\frac{2}{9}$; $\\frac{2}{9}n\\geq 100$ sehingga $n\\geq 450$",
+      "distraktor": [
+        {
+          "teks": "$600$",
+          "alasan": "hanya menghitung jumlah 7 ($\\frac{6}{36}$)"
+        },
+        {
+          "teks": "$400$",
+          "alasan": "memakai peluang $\\frac{1}{4}$ untuk kejadian 7 atau 11"
+        },
+        {
+          "teks": "$1.800$",
+          "alasan": "hanya menghitung jumlah 11 ($\\frac{2}{36}$)"
+        }
+      ],
+      "pembahasan": "Jumlah 7: 6 pasangan, jumlah 11: 2 pasangan, saling lepas, $P=\\frac{8}{36}=\\frac{2}{9}$. Frekuensi harapan $\\frac{2}{9}n\\geq 100\\Rightarrow n\\geq 450$. Cek: $n=450$ memberi tepat 100, $n=449$ memberi kurang dari 100.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 171,
+        "kutipan": "Peristiwa ini merupakan kejadian majemuk saling bebas, artinya tampilan pada dadu merah tidak mempengaruhi tampilan pada dadu putih."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "rancang banyak percobaan peluang komplemen",
+      "alasan_level": "menyusun ketaksamaan $1-\\left(\\frac{5}{6}\\right)^n>0{,}9$ dari kejadian saling bebas lalu mencari $n$ bulat terkecil dengan mencoba nilai",
+      "stimulus": null,
+      "pertanyaan": "Sebuah dadu setimbang dilempar $n$ kali, tiap lemparan saling bebas. Banyak lemparan $n$ terkecil agar peluang muncul mata 6 paling sedikit satu kali lebih dari $0{,}9$ adalah ....",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "$1-\\left(\\frac{5}{6}\\right)^n>0{,}9$ berarti $\\left(\\frac{5}{6}\\right)^n<0{,}1$; $n=12$ memberi $0{,}112$ (belum), $n=13$ memberi $0{,}0935$ (memenuhi)",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "pembulatan ke bawah: $\\left(\\frac{5}{6}\\right)^{12}\\approx 0{,}112$ masih lebih dari $0{,}1$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "memakai $\\frac{n}{6}\\geq 0{,}9$ seolah peluang bertambah $\\frac{1}{6}$ tiap lemparan"
+        },
+        {
+          "teks": "$14$",
+          "alasan": "memenuhi syarat tetapi bukan yang terkecil"
+        }
+      ],
+      "pembahasan": "Komplemen dari paling sedikit satu 6 adalah tidak ada 6 sama sekali: $\\left(\\frac{5}{6}\\right)^n$. Perlu $\\left(\\frac{5}{6}\\right)^n<0{,}1$. $\\left(\\frac{5}{6}\\right)^{12}\\approx 0{,}1122$ dan $\\left(\\frac{5}{6}\\right)^{13}\\approx 0{,}0935$. Jadi $n$ terkecil $=13$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Hal ini terjadi karena kejadian pengambilan kartu hati pertama berdampak pada kejadian pengambilan kartu hati kedua."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bandingkan pengambilan berurutan dan sekaligus",
+      "alasan_level": "menghitung peluang urutan tertentu dan peluang pengambilan sekaligus lalu menalar hubungan faktor 2 di antara keduanya",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kotak berisi 4 bola merah dan 6 bola putih. Misalkan $a$ adalah peluang pada pengambilan dua bola satu per satu tanpa pengembalian bahwa bola pertama merah dan bola kedua putih, dan $b$ adalah peluang bahwa dua bola yang diambil sekaligus terdiri atas satu merah dan satu putih. Hubungan yang benar adalah ....",
+      "jawaban_benar": "$b=2a$",
+      "alasan_benar": "$a=\\frac{4}{10}\\times\\frac{6}{9}=\\frac{4}{15}$ dan $b=\\frac{4\\times 6}{C(10,2)}=\\frac{8}{15}$, sehingga $b=2a$ (dua urutan: merah-putih dan putih-merah)",
+      "distraktor": [
+        {
+          "teks": "$b=a$",
+          "alasan": "lupa bahwa satu merah satu putih juga dapat terjadi dengan urutan putih lalu merah"
+        },
+        {
+          "teks": "$b=\\frac{a}{2}$",
+          "alasan": "membalik hubungan: kejadian sekaligus mencakup dua urutan sehingga lebih besar"
+        },
+        {
+          "teks": "$b=\\frac{3a}{2}$",
+          "alasan": "menghitung banyak urutan sebagai 3 padahal hanya ada 2 urutan"
+        }
+      ],
+      "pembahasan": "$a=\\frac{4}{10}\\times\\frac{6}{9}=\\frac{24}{90}=\\frac{4}{15}$. Sekaligus: $b=\\frac{C(4,1)C(6,1)}{C(10,2)}=\\frac{24}{45}=\\frac{8}{15}$. Karena (merah, putih) dan (putih, merah) saling lepas dan sama peluangnya, $b=2a$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b04-b-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Hal ini terjadi karena kejadian pengambilan kartu hati pertama berdampak pada kejadian pengambilan kartu hati kedua."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat parameter pengambilan tanpa pengembalian",
+      "alasan_level": "menyusun persamaan kuadrat dari peluang bersyarat dua pengambilan lalu menyaring akar yang tidak berlaku",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kantong berisi $n$ bola merah dan 4 bola putih, dengan $n$ bilangan asli. Dua bola diambil satu per satu secara acak tanpa pengembalian. Jika peluang kedua bola merah adalah $\\frac{1}{3}$, nilai $n$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$\\frac{n}{n+4}\\times\\frac{n-1}{n+3}=\\frac{1}{3}$ menjadi $n^2-5n-6=0$ sehingga $n=6$ (akar $-1$ tidak berlaku)",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "memakai cara dengan pengembalian $\\left(\\frac{n}{n+4}\\right)^2=\\frac{1}{3}$ lalu membulatkan"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "salah memfaktorkan $n^2-5n-6=0$ menjadi $(n-8)(n+3)=0$"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "mengambil konstanta persamaan $2n^2-10n-12=0$ sebagai nilai $n$"
+        }
+      ],
+      "pembahasan": "Tanpa pengembalian: $\\frac{n(n-1)}{(n+4)(n+3)}=\\frac{1}{3}\\Rightarrow 3n^2-3n=n^2+7n+12\\Rightarrow n^2-5n-6=0\\Rightarrow (n-6)(n+1)=0$. Karena $n$ bilangan asli, $n=6$. Cek: $\\frac{6}{10}\\times\\frac{5}{9}=\\frac{1}{3}$.",
+      "catatan": null
+    }
+  ]
+}
