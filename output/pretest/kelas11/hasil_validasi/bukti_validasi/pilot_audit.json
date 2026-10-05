@@ -1,18 +1,19 @@
 {
   "schemaVersion": "grade-aware-pilot-audit-v1",
-  "generatedAt": "2026-10-03T09:25:13.495339+00:00",
+  "generatedAt": "2026-10-05T07:12:51.063034+00:00",
   "source": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11/soal_pretest_db.json",
   "sourceSha256": "940de1aa07d699a7e3b11fd3f528405a3ae742a553cecb903d2885eb0d9d7630",
-  "checkpoint": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11/revalidasi_blind_20261002_v1/resume_20261003_v3/silver_labels.json",
-  "checkpointSha256": "06c609a691ae7f0ae0fd4fa4812e31f1c44152d44f9a8e3b24795f2c73aabb95",
+  "checkpoint": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11/rubric_v8_20261005_v1/final_snapshot_v1/silver_labels.json",
+  "checkpointSha256": "de1cd50f19a554b948de8930eb67106dc2a74da8f27cfc2d546b99b679f2906d",
   "checkpointLockedByAudit": true,
   "grade": 11,
-  "promptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
-  "expectedPromptVersion": "gemini-silver-math-3x4x3-v8-blind-sma11-key-verified",
-  "rubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
-  "expectedRubricVersion": "math-rubric-3x4x3-v6-sma11-grade-aware",
-  "rubricHash": "ce101157d227ce96ee50fd8b58eaee097d909f6e05f1727fe9c3db6998b83c86",
-  "expectedRubricHash": "ce101157d227ce96ee50fd8b58eaee097d909f6e05f1727fe9c3db6998b83c86",
+  "subjectTrack": "regular",
+  "promptVersion": "gemini-silver-math-3x4x3-v10-blind-sma11-key-verified",
+  "expectedPromptVersion": "gemini-silver-math-3x4x3-v10-blind-sma11-key-verified",
+  "rubricVersion": "math-rubric-3x4x3-v8-sma11-grade-aware",
+  "expectedRubricVersion": "math-rubric-3x4x3-v8-sma11-grade-aware",
+  "rubricHash": "96b3b543fc96c7f30766f0cd2f0e47d7b159ee145b992c2005b17688d7d38349",
+  "expectedRubricHash": "96b3b543fc96c7f30766f0cd2f0e47d7b159ee145b992c2005b17688d7d38349",
   "expectedItemCount": 22,
   "itemCount": 22,
   "missingQuestionIds": [],
@@ -20,31 +21,30 @@
   "inputHashFailures": [],
   "threeSuccessfulRuns": 22,
   "threeSuccessfulRunsShare": 1.0,
-  "insufficientOrAbstained": 1,
-  "insufficientOrAbstainedShare": 0.045454545454545456,
+  "insufficientOrAbstained": 0,
+  "insufficientOrAbstainedShare": 0.0,
   "labelDistributions": {
     "mathCognitiveDomain": {
-      "applying": 20,
-      "knowing": 2
+      "applying": 17,
+      "knowing": 5
     },
     "knowledgeDimension": {
-      "conceptual": 11,
-      "procedural": 10,
-      "factual": 1
+      "conceptual": 14,
+      "procedural": 6,
+      "factual": 2
     },
     "intendedDifficulty": {
-      "Medium": 6,
-      "Easy": 15,
-      "Hard": 1
+      "Easy": 18,
+      "Medium": 4
     }
   },
-  "dominantDifficultyShare": 0.6818181818181818,
+  "dominantDifficultyShare": 0.8181818181818182,
   "blindLeakageTokens": [],
-  "evidenceFailures": [
-    "cb666d7ac7a8bdfb36335e5a:adjudication_answer_key_not_verified"
+  "evidenceFailures": [],
+  "boundaryAnalysisRequired": true,
+  "boundaryAnalysisReasons": [
+    "difficulty_Hard_absent"
   ],
-  "boundaryAnalysisRequired": false,
-  "boundaryAnalysisReasons": [],
   "boundaryAnalysisAccepted": false,
   "boundaryAnalysisRationale": null,
   "gates": {
@@ -54,8 +54,8 @@
     "blindPromptLeakageAbsent": true,
     "checkpointSourceAndInputsMatch": true,
     "promptAndRubricVersionMatch": true,
-    "requiredEvidenceComplete": false,
-    "boundaryAnalysisClear": true
+    "requiredEvidenceComplete": true,
+    "boundaryAnalysisClear": false
   },
   "readyForExpansion": false
 }

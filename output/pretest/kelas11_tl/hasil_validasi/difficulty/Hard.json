@@ -3,8 +3,73 @@
   "sourceClass": 11,
   "subjectTrack": "tl",
   "intendedDifficulty": "Hard",
-  "labelProvenance": "ai_silver",
-  "advisoryCount": 0,
-  "contentQualifiedCount": 0,
-  "items": []
+  "researchOnly": true,
+  "advisoryCount": 1,
+  "contentQualifiedCount": 1,
+  "items": [
+    {
+      "question": {
+        "questionId": "0d276f4b985246c2f7160055",
+        "questionVersionId": "0d276f4b985246c2f7160055:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "aec82b01e787aacc2081d9933ca51319c352c82e22bb460965fe897822b2a251",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Identitas Trigonometri",
+        "questionType": "multiple_choice",
+        "stem": "Menemukan Kesalahan. Abel menyelidiki apakah $\\sin t = \\sin(-t)$ merupakan identitas. Dia melakukan langkah-langkah berikut ini. $\\sin t = \\sin(-t)$ (persamaan yang diberikan); $(\\sin t)^2 = [\\sin(-t)]^2$ (kuadratkan kedua ruas); $\\sin^2 t = (-\\sin t)^2$ (sederhanakan, karena sin(-t) = -sin t); $\\sin^2 t = \\sin^2 t$ (sederhanakan). Pada langkah terakhir, Abel mendapatkan bentuk di ruas kiri sama dengan bentuk di ruas kanan. Dengan demikian, dia menyimpulkan bahwa sin t = sin (–t) merupakan identitas.\n\nApa yang dilakukan Abel tersebut tidak tepat. Temukan kesalahannya!",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Kesalahan Abel terletak saat menyederhanakan sin²t = (–sin t)² menjadi sin²t = sin²t; seharusnya hasil penyederhanaan itu adalah –sin²t."
+          },
+          {
+            "label": "B",
+            "text": "Abel salah menuliskan sin(–t) sebagai –sin t di langkah ketiga; seharusnya sin(–t) = sin t berlaku untuk semua nilai t yang diberikan."
+          },
+          {
+            "label": "C",
+            "text": "Abel sebenarnya tidak melakukan kesalahan apa pun, karena sin t = sin(–t) memang merupakan identitas yang berlaku untuk semua nilai t."
+          },
+          {
+            "label": "D",
+            "text": "Abel keliru mengasumsikan sin t = sin(–t) sudah benar sejak awal (padahal itu yang ingin dibuktikan), dan mengkuadratkan kedua ruas tidak selalu menghasilkan persamaan yang ekuivalen."
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Langkah Abel mengkuadratkan kedua ruas persamaan $\\sin t = \\sin(-t)$ menghasilkan $\\sin^2 t = \\sin^2 t$. Pernyataan terakhir ini benar untuk semua $t$, namun tidak membuktikan pernyataan awal karena operasi pengkuadratan tidak ekuivalen (dapat mengubah pernyataan salah menjadi benar, misal $1 = -1$ menjadi $1^2 = (-1)^2$). Abel melakukan kesalahan logika dengan mengasumsikan kebenaran pernyataan awal dan menggunakan operasi yang tidak menjaga ekuivalensi.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "0d276f4b985246c2f7160055",
+          "subchapter": "Identitas Trigonometri",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl",
+          "optionExtractionNotes": {
+            "A": "Salah: keliru mengira (–sin t)² = –sin²t, padahal kuadrat bilangan negatif selalu positif",
+            "B": "Salah: menyangkal sifat fungsi ganjil sinus yang sebenarnya benar (sin(–t) = –sin t)",
+            "C": "Salah: tidak menyadari bahwa mengkuadratkan kedua ruas bisa menghasilkan pernyataan yang tidak ekuivalen dengan pernyataan awal",
+            "D": "Benar: sesuai kunci Guru: Abel tidak seharusnya mengasumsikan pernyataan yang belum terbukti, dan mengkuadratkan kedua ruas bisa menghasilkan persamaan yang tidak ekuivalen (bisa membuat pernyataan salah tampak benar)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    }
+  ]
 }

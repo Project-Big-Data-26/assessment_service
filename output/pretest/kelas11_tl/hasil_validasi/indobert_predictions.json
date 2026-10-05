@@ -1,9 +1,9 @@
 {
   "schemaVersion": "indobert-blind-diagnostics-v1",
-  "createdAt": "2026-10-03T13:21:02.244138+00:00",
+  "createdAt": "2026-10-05T08:11:46.793437+00:00",
   "researchOnlyRun": true,
   "reviewRequired": true,
-  "blindDecisionLockedAt": "2026-10-03T13:20:04.803439+00:00",
+  "blindDecisionLockedAt": "2026-10-05T08:11:32.962987+00:00",
   "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
   "model": {
     "artifactFormatVersion": "indobert-3x4x3-artifact-v1",
@@ -15,6 +15,7 @@
     "datasetHash": "8a41381aa7e3fdb4e21617b9091e6747d29e5bd3f01e3c992ce9895b823f35c1",
     "splitManifestHash": "681c8a0a6afea9d23b71e1f315543751ebb259645c01f10a4db3fd2d90b634df",
     "rubricVersion": "math-rubric-3x4x3-v1",
+    "rubricVersionsByGradeTrack": {},
     "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
     "inputSchemaVersion": "math-question-text-v1",
     "inputRepresentation": "metadata",
@@ -22,6 +23,18 @@
     "detachDifficultyConditioning": true,
     "difficultyHeadType": "multiclass",
     "gradeEmbeddingDimension": 0,
+    "gradeEmbeddingCount": 6,
+    "supportedGrades": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supportedSubjectTracks": [
+      "regular"
+    ],
     "routingPolicyVersion": "confidence-only-v1",
     "labels": {
       "mathCognitiveDomain": [
@@ -46,19 +59,22 @@
         "temperature": 0.05,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "knowledgeDimension": {
         "temperature": 0.20979985858964298,
         "confidenceThreshold": null,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "intendedDifficulty": {
         "temperature": 0.9533279648066687,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       }
     },
     "maxLength": 256,
@@ -667,16 +683,16 @@
       "questionId": "6678eff0f2f3f2aa21d884b8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:6678eff0f2f3f2aa21d884b8:content-v2",
       "questionVersionId": "6678eff0f2f3f2aa21d884b8:content-v2:blind-revalidation",
-      "contentHash": "265b9448bcc64e3072b6c7e9a603d7d08ea78d5771eedce25ac0dfc6fe3bf095",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Jenis-Jenis Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $A = \\begin{bmatrix} -3 & 2 & 0 \\\\ 1 & 3 & 5 \\end{bmatrix}$\n\nTentukan jenis matriks-matriks berikut.\nPilihan: A. Matriks datar\nB. Matriks persegi\nC. Matriks segitiga atas\nD. Matriks tegak\nTranskripsi visual: -",
-      "untruncatedTokenCount": 93,
+      "contentHash": "01f936dbea3f99decd96d56447c3ea39b5cd31421bf2c6de681da20be92ac78c",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Jenis-Jenis Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $A = \\begin{bmatrix} -3 & 2 & 0 \\\\ 1 & 3 & 5 \\end{bmatrix}$\n\nTentukan jenis matriks-matriks berikut.\nPilihan: A. Matriks datar\nB. Matriks persegi\nC. Matriks segitiga atas\nD. Matriks tegak\nTranskripsi visual: -",
+      "untruncatedTokenCount": 100,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.846,
+      "latencyMs": 0.56,
       "prediction": {
         "questionId": "6678eff0f2f3f2aa21d884b8",
         "contentVersion": 2,
-        "contentHash": "265b9448bcc64e3072b6c7e9a603d7d08ea78d5771eedce25ac0dfc6fe3bf095",
+        "contentHash": "01f936dbea3f99decd96d56447c3ea39b5cd31421bf2c6de681da20be92ac78c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -709,6 +725,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -720,7 +737,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "81fd1a66aac6630f5beb65c13da87345aa402e697a32c49d0ff9cef4e0e84f5e",
+          "inputHash": "468852644f57d9bc4e205df1134cbc3b230afd717332ca6206316f5216c4cb07",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -731,16 +748,16 @@
       "questionId": "e2ffe980242e563b18f54620",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:e2ffe980242e563b18f54620:content-v2",
       "questionVersionId": "e2ffe980242e563b18f54620:content-v2:blind-revalidation",
-      "contentHash": "baba89011cec73af0a2c8012794e77ae68f5f0602d89d26c52bcabe18d6423b4",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Jenis-Jenis Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $B = \\begin{bmatrix} 2 & 9 & -1 \\\\ 0 & 1 & 2 \\\\ 0 & 0 & 1 \\end{bmatrix}$\n\nTentukan jenis matriks-matriks berikut.\nPilihan: A. Matriks segitiga atas\nB. Matriks segitiga bawah\nC. Matriks diagonal\nD. Matriks identitas\nTranskripsi visual: -",
-      "untruncatedTokenCount": 101,
+      "contentHash": "9115523f2c97208ab7063ef661dece417ed402681865ecfab0735c402f8801a3",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Jenis-Jenis Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $B = \\begin{bmatrix} 2 & 9 & -1 \\\\ 0 & 1 & 2 \\\\ 0 & 0 & 1 \\end{bmatrix}$\n\nTentukan jenis matriks-matriks berikut.\nPilihan: A. Matriks segitiga atas\nB. Matriks segitiga bawah\nC. Matriks diagonal\nD. Matriks identitas\nTranskripsi visual: -",
+      "untruncatedTokenCount": 108,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 1.739,
+      "latencyMs": 0.247,
       "prediction": {
         "questionId": "e2ffe980242e563b18f54620",
         "contentVersion": 2,
-        "contentHash": "baba89011cec73af0a2c8012794e77ae68f5f0602d89d26c52bcabe18d6423b4",
+        "contentHash": "9115523f2c97208ab7063ef661dece417ed402681865ecfab0735c402f8801a3",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -773,6 +790,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -784,7 +802,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "36031fb7ed3e30a34798398064eb8a179031b174f72e89f7039b3c1153b13a20",
+          "inputHash": "9ab3ea712343614c28793e12460856dfb284d37c9a62f91150bf3a0016f5b28c",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -795,16 +813,16 @@
       "questionId": "27a811fca5ea09e854337780",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:27a811fca5ea09e854337780:content-v2",
       "questionVersionId": "27a811fca5ea09e854337780:content-v2:blind-revalidation",
-      "contentHash": "a53a7b2717a74b73911437ee9ffea69db8b94d0bb142c8dbdb0fb445d8b9bede",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kesamaan Dua Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika $A = \\begin{bmatrix} -x-3y & 0 \\\\ (x-2y)^2 & 1 \\end{bmatrix}$ dan $I$ adalah matriks identitas berordo 2 × 2 dengan $A = I$.\n\nTentukan nilai x + y.\nPilihan: A. -3/5\nB. -2/5\nC. 3/5\nD. -1/5\nTranskripsi visual: -",
-      "untruncatedTokenCount": 124,
+      "contentHash": "985ac196d8963bc159260ad644f4bf57709dcfdc265c39a79f63fcbe52f7f6ed",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kesamaan Dua Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika $A = \\begin{bmatrix} -x-3y & 0 \\\\ (x-2y)^2 & 1 \\end{bmatrix}$ dan $I$ adalah matriks identitas berordo 2 × 2 dengan $A = I$.\n\nTentukan nilai x + y.\nPilihan: A. -3/5\nB. -2/5\nC. 3/5\nD. -1/5\nTranskripsi visual: -",
+      "untruncatedTokenCount": 131,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.426,
+      "latencyMs": 0.158,
       "prediction": {
         "questionId": "27a811fca5ea09e854337780",
         "contentVersion": 2,
-        "contentHash": "a53a7b2717a74b73911437ee9ffea69db8b94d0bb142c8dbdb0fb445d8b9bede",
+        "contentHash": "985ac196d8963bc159260ad644f4bf57709dcfdc265c39a79f63fcbe52f7f6ed",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -837,6 +855,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -848,7 +867,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "a9f51e09e6d110a9d0ba8cee4a1df73610ac3c1302f7dc366f021e651267e472",
+          "inputHash": "eaba3bf850a7139a93c25f40295c71f66e1ef9d164c6b7dabdb09d08cb034e70",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -859,16 +878,16 @@
       "questionId": "03611fdcdc9bcd66f72bdce7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:03611fdcdc9bcd66f72bdce7:content-v2",
       "questionVersionId": "03611fdcdc9bcd66f72bdce7:content-v2:blind-revalidation",
-      "contentHash": "e93e4649df7fe043d7217bea969f403aca3f2a41536c85ea0b530bd2d796019f",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kesamaan Dua Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $\\begin{bmatrix} a+2b & 2a+b \\\\ c+d & 2c+d \\end{bmatrix} = \\begin{bmatrix} 3 & -3 \\\\ 7 & 1 \\end{bmatrix}$\n\nHitunglah nilai a + b + c + d yang memenuhi kesamaan matriks berikut.\nPilihan: A. 7\nB. 13\nC. -7\nD. 1\nTranskripsi visual: -",
-      "untruncatedTokenCount": 125,
+      "contentHash": "499b80c65ba0b7a9e90cd540920d0295d7a703be9616a86ae5de83cb2c46ea7f",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kesamaan Dua Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $\\begin{bmatrix} a+2b & 2a+b \\\\ c+d & 2c+d \\end{bmatrix} = \\begin{bmatrix} 3 & -3 \\\\ 7 & 1 \\end{bmatrix}$\n\nHitunglah nilai a + b + c + d yang memenuhi kesamaan matriks berikut.\nPilihan: A. 7\nB. 13\nC. -7\nD. 1\nTranskripsi visual: -",
+      "untruncatedTokenCount": 132,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.413,
+      "latencyMs": 0.097,
       "prediction": {
         "questionId": "03611fdcdc9bcd66f72bdce7",
         "contentVersion": 2,
-        "contentHash": "e93e4649df7fe043d7217bea969f403aca3f2a41536c85ea0b530bd2d796019f",
+        "contentHash": "499b80c65ba0b7a9e90cd540920d0295d7a703be9616a86ae5de83cb2c46ea7f",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -901,6 +920,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -912,7 +932,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "d6ce65b5263362de2936be257605e25502baed6ebd14b838bb5f62a2dd13e00e",
+          "inputHash": "8ce9c0d53e1ad08eeb7bd6421de0d155aacb7b51087ed9d9845b64b3202a1a00",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -923,16 +943,16 @@
       "questionId": "5b5856cb7882715fb808648e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:5b5856cb7882715fb808648e:content-v2",
       "questionVersionId": "5b5856cb7882715fb808648e:content-v2:blind-revalidation",
-      "contentHash": "c7717ee108cc23560ee530c44c1745bdcc897bb6b6c4741be476ad97f2960d1d",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Penjumlahan dan Pengurangan Antarmatriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $\\begin{bmatrix} 2x & y \\\\ 3z & z \\end{bmatrix} - \\begin{bmatrix} 6 & -x \\\\ 2y & 7 \\end{bmatrix} + \\begin{bmatrix} 2 & 1 \\\\ -9 & 6 \\end{bmatrix} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix}$\n\nTentukan $x, y$, dan $z$.\nPilihan: A. x = -2, y = -3, z = 1\nB. x = 2, y = -3, z = 1\nC. x = 2, y = 3, z = 1\nD. x = 2, y = -3, z = -1\nTranskripsi visual: -",
-      "untruncatedTokenCount": 208,
+      "contentHash": "121d94d0fa01d172170eb7434ea6186ecdd565f3dc8c47930f52e45c1e8bfb9c",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Penjumlahan dan Pengurangan Antarmatriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $\\begin{bmatrix} 2x & y \\\\ 3z & z \\end{bmatrix} - \\begin{bmatrix} 6 & -x \\\\ 2y & 7 \\end{bmatrix} + \\begin{bmatrix} 2 & 1 \\\\ -9 & 6 \\end{bmatrix} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix}$\n\nTentukan $x, y$, dan $z$.\nPilihan: A. x = -2, y = -3, z = 1\nB. x = 2, y = -3, z = 1\nC. x = 2, y = 3, z = 1\nD. x = 2, y = -3, z = -1\nTranskripsi visual: -",
+      "untruncatedTokenCount": 215,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 1.324,
+      "latencyMs": 0.101,
       "prediction": {
         "questionId": "5b5856cb7882715fb808648e",
         "contentVersion": 2,
-        "contentHash": "c7717ee108cc23560ee530c44c1745bdcc897bb6b6c4741be476ad97f2960d1d",
+        "contentHash": "121d94d0fa01d172170eb7434ea6186ecdd565f3dc8c47930f52e45c1e8bfb9c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -965,6 +985,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -976,7 +997,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "d5bca5ccadad6009703b91c6ce69b5171a0feb366531a6c461626933e6ed89de",
+          "inputHash": "2e0ea11d269c31435d5e31ba3e6b923da053b7530bd3ad8dccab6c77e8c39d22",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -987,16 +1008,16 @@
       "questionId": "c44f54983cee8c0e1a20ffb3",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:c44f54983cee8c0e1a20ffb3:content-v2",
       "questionVersionId": "c44f54983cee8c0e1a20ffb3:content-v2:blind-revalidation",
-      "contentHash": "29ba6d472140179964dc8a156b3452af8a8e54bff4f3fd3c807a6116fd461e22",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Penjumlahan dan Pengurangan Antarmatriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $\\begin{bmatrix} 3a \\\\ 3b \\end{bmatrix}+\\begin{bmatrix} 4b \\\\ 4a \\end{bmatrix}=\\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix}$\n\nTentukan $a$ dan $b$.\nPilihan: A. a = -1, b = -1\nB. a = 1, b = -1\nC. a = -1, b = 1\nD. a = 1, b = 1\nTranskripsi visual: -",
-      "untruncatedTokenCount": 153,
+      "contentHash": "d862a2d3f61b001c00384465b90471ea3d26e1222dd96b186525ec578e6a91e1",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Penjumlahan dan Pengurangan Antarmatriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $\\begin{bmatrix} 3a \\\\ 3b \\end{bmatrix}+\\begin{bmatrix} 4b \\\\ 4a \\end{bmatrix}=\\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix}$\n\nTentukan $a$ dan $b$.\nPilihan: A. a = -1, b = -1\nB. a = 1, b = -1\nC. a = -1, b = 1\nD. a = 1, b = 1\nTranskripsi visual: -",
+      "untruncatedTokenCount": 160,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.387,
+      "latencyMs": 0.083,
       "prediction": {
         "questionId": "c44f54983cee8c0e1a20ffb3",
         "contentVersion": 2,
-        "contentHash": "29ba6d472140179964dc8a156b3452af8a8e54bff4f3fd3c807a6116fd461e22",
+        "contentHash": "d862a2d3f61b001c00384465b90471ea3d26e1222dd96b186525ec578e6a91e1",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1029,6 +1050,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1040,7 +1062,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "4d9ffb8d86f86577e2dc8217404279e4917d551f02965cafa200ec5b55529565",
+          "inputHash": "4ae6ace66918ced7d9d77e65616f8e728baa7ff6d5ec203bf485fa5676dac462",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1051,16 +1073,16 @@
       "questionId": "05c9e45acc4d05508ee66bf6",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:05c9e45acc4d05508ee66bf6:content-v2",
       "questionVersionId": "05c9e45acc4d05508ee66bf6:content-v2:blind-revalidation",
-      "contentHash": "b42a05d4b327ef750466bd492a7e023b60b62ef89b939ba93a9ad5a19edab6c0",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Perkalian Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $P = \\begin{bmatrix} 1 & -8 \\\\ -1 & -2 \\end{bmatrix}$, $Q = \\begin{bmatrix} 3 & 2 \\\\ -1 & 2 \\end{bmatrix}$, $X \\text{ matriks berordo } 2\\times 2 \\text{ yang memenuhi } P - 2X = 3Q$\n\nTentukan matriks $X$.\nPilihan: A. $X = \\begin{bmatrix} 5 & -1 \\\\ -2 & 2 \\end{bmatrix}$\nB. $X = \\begin{bmatrix} -8 & -14 \\\\ 2 & -8 \\end{bmatrix}$\nC. $X = \\begin{bmatrix} -4 & -7 \\\\ 1 & -4 \\end{bmatrix}$\nD. $X = \\begin{bmatrix} 4 & 7 \\\\ -1 & 4 \\end{bmatrix}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 249,
+      "contentHash": "b548214cebf5a8c2755cfebf39ca36afe938c0940dc54271de03fc42d866c9f1",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Perkalian Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $P = \\begin{bmatrix} 1 & -8 \\\\ -1 & -2 \\end{bmatrix}$, $Q = \\begin{bmatrix} 3 & 2 \\\\ -1 & 2 \\end{bmatrix}$, $X \\text{ matriks berordo } 2\\times 2 \\text{ yang memenuhi } P - 2X = 3Q$\n\nTentukan matriks $X$.\nPilihan: A. $X = \\begin{bmatrix} 5 & -1 \\\\ -2 & 2 \\end{bmatrix}$\nB. $X = \\begin{bmatrix} -8 & -14 \\\\ 2 & -8 \\end{bmatrix}$\nC. $X = \\begin{bmatrix} -4 & -7 \\\\ 1 & -4 \\end{bmatrix}$\nD. $X = \\begin{bmatrix} 4 & 7 \\\\ -1 & 4 \\end{bmatrix}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 256,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.308,
+      "latencyMs": 0.099,
       "prediction": {
         "questionId": "05c9e45acc4d05508ee66bf6",
         "contentVersion": 2,
-        "contentHash": "b42a05d4b327ef750466bd492a7e023b60b62ef89b939ba93a9ad5a19edab6c0",
+        "contentHash": "b548214cebf5a8c2755cfebf39ca36afe938c0940dc54271de03fc42d866c9f1",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1093,6 +1115,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1104,7 +1127,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "ce9af40c09a7d892e5bba7664939ef455813f26eb0ae682be3beef2289568155",
+          "inputHash": "3243fef42f7f0c6f5591206ba4a35864843dfcb5ed14b88119a4e366cc04545b",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1115,16 +1138,16 @@
       "questionId": "e26865e3a760ece340901b25",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:e26865e3a760ece340901b25:content-v2",
       "questionVersionId": "e26865e3a760ece340901b25:content-v2:blind-revalidation",
-      "contentHash": "c40bb01764b01a154b889a68a84ed5726ab0d2982d1323780e69eaf38273cbe7",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Perkalian Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui $\\begin{bmatrix} x-2 & 9 \\\\ -3 & 0 \\end{bmatrix}\\begin{bmatrix} -4 & 0 \\\\ 1 & y+1 \\end{bmatrix} = \\begin{bmatrix} -3 & -9 \\\\ 12 & 0 \\end{bmatrix}$.\n\nTentukan $x+y$.\nPilihan: A. 3\nB. 5\nC. 7\nD. -7\nTranskripsi visual: -",
-      "untruncatedTokenCount": 135,
+      "contentHash": "e5742707578415647d14da3e68af34add7d749ab4ce03c1a74aafd2cf80d1ad7",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Perkalian Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui $\\begin{bmatrix} x-2 & 9 \\\\ -3 & 0 \\end{bmatrix}\\begin{bmatrix} -4 & 0 \\\\ 1 & y+1 \\end{bmatrix} = \\begin{bmatrix} -3 & -9 \\\\ 12 & 0 \\end{bmatrix}$.\n\nTentukan $x+y$.\nPilihan: A. 3\nB. 5\nC. 7\nD. -7\nTranskripsi visual: -",
+      "untruncatedTokenCount": 142,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.305,
+      "latencyMs": 0.076,
       "prediction": {
         "questionId": "e26865e3a760ece340901b25",
         "contentVersion": 2,
-        "contentHash": "c40bb01764b01a154b889a68a84ed5726ab0d2982d1323780e69eaf38273cbe7",
+        "contentHash": "e5742707578415647d14da3e68af34add7d749ab4ce03c1a74aafd2cf80d1ad7",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1157,6 +1180,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1168,7 +1192,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "70e9e03b83f46612c3adb13a4097057e55493c9c5e0ecb89982b12021a35e6e4",
+          "inputHash": "6f41452c71d79b2c47c016c48d1742dd1df90d09059a25a3f7da4ff45a816bad",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1179,16 +1203,16 @@
       "questionId": "cedfd4f07ddb24cdfcffdb61",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:cedfd4f07ddb24cdfcffdb61:content-v2",
       "questionVersionId": "cedfd4f07ddb24cdfcffdb61:content-v2:blind-revalidation",
-      "contentHash": "c6bc9a47a3dc168afb1c96fbaaa781c784cd27d13fd334708c5886cc45f445b5",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Determinan Matriks dan Invers Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $A = \\begin{bmatrix} 2 & 5 \\\\ 1 & 2 \\end{bmatrix}$, $B = \\begin{bmatrix} 2 & 2 \\\\ -3 & 1 \\end{bmatrix}$, $C \\text{ memenuhi } AC = B$\n\nTentukan determinan $C$.\nPilihan: A. -1/8\nB. -4\nC. 8\nD. -8\nTranskripsi visual: -",
-      "untruncatedTokenCount": 131,
+      "contentHash": "f83012599172910a140b30ad17da5797f27a7aab58eb9c2232796cf2d5515a7b",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Determinan Matriks dan Invers Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: $A = \\begin{bmatrix} 2 & 5 \\\\ 1 & 2 \\end{bmatrix}$, $B = \\begin{bmatrix} 2 & 2 \\\\ -3 & 1 \\end{bmatrix}$, $C \\text{ memenuhi } AC = B$\n\nTentukan determinan $C$.\nPilihan: A. -1/8\nB. -4\nC. 8\nD. -8\nTranskripsi visual: -",
+      "untruncatedTokenCount": 138,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.464,
+      "latencyMs": 0.07,
       "prediction": {
         "questionId": "cedfd4f07ddb24cdfcffdb61",
         "contentVersion": 2,
-        "contentHash": "c6bc9a47a3dc168afb1c96fbaaa781c784cd27d13fd334708c5886cc45f445b5",
+        "contentHash": "f83012599172910a140b30ad17da5797f27a7aab58eb9c2232796cf2d5515a7b",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1221,6 +1245,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1232,7 +1257,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "9782a2595f6edecbf210d72a172b93411288686b845b47b7d61e9962a8a8d169",
+          "inputHash": "b2d012bded323977bb4c9aac7f29a562af910a3ed30e011b2dadd57bc567c455",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1243,16 +1268,16 @@
       "questionId": "3be8bb0629a4ad9d30cfd1f6",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:3be8bb0629a4ad9d30cfd1f6:content-v2",
       "questionVersionId": "3be8bb0629a4ad9d30cfd1f6:content-v2:blind-revalidation",
-      "contentHash": "6f47d54ad45e86be11ddd9854277dd5e486ee0982f8f2461cbbcf9d3e088bfa3",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Determinan Matriks dan Invers Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan $(AB^{-1})^{-1}$ jika diketahui $A^{-1} = \\begin{bmatrix} 1 & 4 \\\\ 2 & 3 \\end{bmatrix}$ dan $B = \\begin{bmatrix} 5 & 1 \\\\ 1 & 3 \\end{bmatrix}$.\nPilihan: A. $\\begin{bmatrix} 7 & 7 \\\\ 23 & 13 \\end{bmatrix}$\nB. $\\begin{bmatrix} 9 & 13 \\\\ 13 & 11 \\end{bmatrix}$\nC. $\\begin{bmatrix} 7 & 23 \\\\ 7 & 13 \\end{bmatrix}$\nD. $\\begin{bmatrix} 13 & 9 \\\\ 11 & 13 \\end{bmatrix}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 222,
+      "contentHash": "f1b046516af0d1cf30c67c0618fca1e9b553e5ba533aadeeb81b03d6c36bcdfc",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Determinan Matriks dan Invers Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan $(AB^{-1})^{-1}$ jika diketahui $A^{-1} = \\begin{bmatrix} 1 & 4 \\\\ 2 & 3 \\end{bmatrix}$ dan $B = \\begin{bmatrix} 5 & 1 \\\\ 1 & 3 \\end{bmatrix}$.\nPilihan: A. $\\begin{bmatrix} 7 & 7 \\\\ 23 & 13 \\end{bmatrix}$\nB. $\\begin{bmatrix} 9 & 13 \\\\ 13 & 11 \\end{bmatrix}$\nC. $\\begin{bmatrix} 7 & 23 \\\\ 7 & 13 \\end{bmatrix}$\nD. $\\begin{bmatrix} 13 & 9 \\\\ 11 & 13 \\end{bmatrix}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 229,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.751,
+      "latencyMs": 0.079,
       "prediction": {
         "questionId": "3be8bb0629a4ad9d30cfd1f6",
         "contentVersion": 2,
-        "contentHash": "6f47d54ad45e86be11ddd9854277dd5e486ee0982f8f2461cbbcf9d3e088bfa3",
+        "contentHash": "f1b046516af0d1cf30c67c0618fca1e9b553e5ba533aadeeb81b03d6c36bcdfc",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1285,6 +1310,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1296,7 +1322,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "dd6db5121246f4d72c9e0642bf0df836f51050397e6d98b03136cf73e7ce3cd5",
+          "inputHash": "56aeaea9472bd42e7f5b9b415a13ddfeefe2041eb2cee3d722ed0196b2533264",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1307,16 +1333,16 @@
       "questionId": "0b4b98faa7f553833f0db971",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:0b4b98faa7f553833f0db971:content-v2",
       "questionVersionId": "0b4b98faa7f553833f0db971:content-v2:blind-revalidation",
-      "contentHash": "a9aa33caa752bdeca18f6b8f973777f8813d39fb707cde707f7c250bbdf4ee78",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Sistem Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu toko alat lukis menjual 40 kuas lukis. Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.\n\nJika uang yang didapat oleh toko tersebut Rp1.103.000,00, maka berapa banyak masing-masing jenis kuas lukis yang terjual?\nPilihan: A. 20 kuas lukis jenis I dan 20 kuas lukis jenis II\nB. 15 kuas lukis jenis I dan 25 kuas lukis jenis II\nC. 27 kuas lukis jenis I dan 13 kuas lukis jenis II\nD. 13 kuas lukis jenis I dan 27 kuas lukis jenis II\nTranskripsi visual: -",
-      "untruncatedTokenCount": 152,
+      "contentHash": "0c35320069a6241eb327349d6d4815b0a2cc5c5b77975b389033dfbf5899edfb",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Sistem Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu toko alat lukis menjual 40 kuas lukis. Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.\n\nJika uang yang didapat oleh toko tersebut Rp1.103.000,00, maka berapa banyak masing-masing jenis kuas lukis yang terjual?\nPilihan: A. 20 kuas lukis jenis I dan 20 kuas lukis jenis II\nB. 15 kuas lukis jenis I dan 25 kuas lukis jenis II\nC. 27 kuas lukis jenis I dan 13 kuas lukis jenis II\nD. 13 kuas lukis jenis I dan 27 kuas lukis jenis II\nTranskripsi visual: -",
+      "untruncatedTokenCount": 159,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.313,
+      "latencyMs": 0.082,
       "prediction": {
         "questionId": "0b4b98faa7f553833f0db971",
         "contentVersion": 2,
-        "contentHash": "a9aa33caa752bdeca18f6b8f973777f8813d39fb707cde707f7c250bbdf4ee78",
+        "contentHash": "0c35320069a6241eb327349d6d4815b0a2cc5c5b77975b389033dfbf5899edfb",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1349,6 +1375,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1360,7 +1387,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "7249995a450535bf486ab869ded2ad878c41ee9a85d60e72bd47e1b87b4e1afd",
+          "inputHash": "5a59f3aa1bfadf02a5e843bf539ad1354441019f0617461b5fbbc873abbea669",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1371,16 +1398,16 @@
       "questionId": "cbc1c44af555d15fc2ba9abc",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:cbc1c44af555d15fc2ba9abc:content-v2",
       "questionVersionId": "cbc1c44af555d15fc2ba9abc:content-v2:blind-revalidation",
-      "contentHash": "2ae1854cf1d0191104db35535718c3a9dfb750b165a3a60ef175675d670df22d",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Polinomial dan Fungsi Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perilaku ujung fungsi polinomial $f(x) = -5x^7 + 2x^4 - 8$ adalah ….\nPilihan: A. Turun di ujung kiri, turun di ujung kanan (↙, ↘)\nB. Naik di ujung kiri, turun di ujung kanan (↖, ↘)\nC. Naik di ujung kiri, naik di ujung kanan (↖, ↗)\nD. Turun di ujung kiri, naik di ujung kanan (↙, ↗)\nTranskripsi visual: -",
-      "untruncatedTokenCount": 137,
+      "contentHash": "bf1d6fab773e7e466c1e6dc9a759a1862668db918b6d0f871425a74edae291d1",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Polinomial dan Fungsi Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perilaku ujung fungsi polinomial $f(x) = -5x^7 + 2x^4 - 8$ adalah ….\nPilihan: A. Turun di ujung kiri, turun di ujung kanan (↙, ↘)\nB. Naik di ujung kiri, turun di ujung kanan (↖, ↘)\nC. Naik di ujung kiri, naik di ujung kanan (↖, ↗)\nD. Turun di ujung kiri, naik di ujung kanan (↙, ↗)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 144,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.516,
+      "latencyMs": 0.455,
       "prediction": {
         "questionId": "cbc1c44af555d15fc2ba9abc",
         "contentVersion": 2,
-        "contentHash": "2ae1854cf1d0191104db35535718c3a9dfb750b165a3a60ef175675d670df22d",
+        "contentHash": "bf1d6fab773e7e466c1e6dc9a759a1862668db918b6d0f871425a74edae291d1",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1413,6 +1440,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1424,7 +1452,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "71e3bc9a94959de9c8bfc1bacce8cd192ee04d0ce45acf8aaf380f99848595a7",
+          "inputHash": "a242568aef1f23ab87557d6bc700f2ad20f5b9b2b576b229d4cfdfd52fb1e5c8",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1435,16 +1463,16 @@
       "questionId": "89fd76a5340ac72134f6800d",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:89fd76a5340ac72134f6800d:content-v2",
       "questionVersionId": "89fd76a5340ac72134f6800d:content-v2:blind-revalidation",
-      "contentHash": "0de513b7dfd369ab1dd04c91c7fc28766d8fc22cd072a96807dea050d87beac2",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Polinomial dan Fungsi Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: $x^6 - 12x^4 + 3x^2 - 10$\n\nCari derajat setiap polinomial berikut.\nPilihan: A. 2\nB. 12\nC. 6\nD. 4\nTranskripsi visual: -",
-      "untruncatedTokenCount": 82,
+      "contentHash": "a0658279287b06f5f59ad7cf6b7773aa8d1ef1b4fa0ad89169e8b0a47bbddc89",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Polinomial dan Fungsi Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: $x^6 - 12x^4 + 3x^2 - 10$\n\nCari derajat setiap polinomial berikut.\nPilihan: A. 2\nB. 12\nC. 6\nD. 4\nTranskripsi visual: -",
+      "untruncatedTokenCount": 89,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.245,
+      "latencyMs": 0.086,
       "prediction": {
         "questionId": "89fd76a5340ac72134f6800d",
         "contentVersion": 2,
-        "contentHash": "0de513b7dfd369ab1dd04c91c7fc28766d8fc22cd072a96807dea050d87beac2",
+        "contentHash": "a0658279287b06f5f59ad7cf6b7773aa8d1ef1b4fa0ad89169e8b0a47bbddc89",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1477,6 +1505,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1488,7 +1517,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "518cd78a5a93f7aff516af2c415a11cec1d79e7cf12ad88c4299dfe4cdaf60cf",
+          "inputHash": "3ff5a4a648bc03521a82f0de56d7b3425c22bad9512e23dc799bef5bcb68d032",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1499,16 +1528,16 @@
       "questionId": "25d0e4b66183f8ef562d0c9a",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:25d0e4b66183f8ef562d0c9a:content-v2",
       "questionVersionId": "25d0e4b66183f8ef562d0c9a:content-v2:blind-revalidation",
-      "contentHash": "39d655657992f26b78e3bef36284a9c81df6e1794cf0b6a39bd4ecca76563c90",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Penjumlahan, Pengurangan, dan Perkalian Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: $(2x^4 - x^3 + 4x - 12) - (x^4 + 2x^3 - x^2 - 6)$\n\nSederhanakan penjumlahan dan pengurangan polinomial berikut ini.\nPilihan: A. $x^4 - 3x^3 + x^2 + 4x - 18$\nB. $x^4 - 3x^3 - x^2 + 4x - 6$\nC. $x^4 - 3x^3 + x^2 + 4x - 6$\nD. $2x^4 - 3x^3 + x^2 + 4x - 6$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 175,
+      "contentHash": "fc09be55ce10b8825ad55f428aeec3a2995ed65e444c5ed48db39b9a3e8b2fda",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Penjumlahan, Pengurangan, dan Perkalian Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: $(2x^4 - x^3 + 4x - 12) - (x^4 + 2x^3 - x^2 - 6)$\n\nSederhanakan penjumlahan dan pengurangan polinomial berikut ini.\nPilihan: A. $x^4 - 3x^3 + x^2 + 4x - 18$\nB. $x^4 - 3x^3 - x^2 + 4x - 6$\nC. $x^4 - 3x^3 + x^2 + 4x - 6$\nD. $2x^4 - 3x^3 + x^2 + 4x - 6$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 182,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.464,
+      "latencyMs": 0.092,
       "prediction": {
         "questionId": "25d0e4b66183f8ef562d0c9a",
         "contentVersion": 2,
-        "contentHash": "39d655657992f26b78e3bef36284a9c81df6e1794cf0b6a39bd4ecca76563c90",
+        "contentHash": "fc09be55ce10b8825ad55f428aeec3a2995ed65e444c5ed48db39b9a3e8b2fda",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1541,6 +1570,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1552,7 +1582,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "49962aec49580cbb16a6bfb255dcb5a7d60fbdf002076a25a27be01bac55f3cd",
+          "inputHash": "d7ae4b267b2eaeaaafecb9f35dfdd7a655e297e71bddd91517fdc54e09b2554a",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1563,16 +1593,16 @@
       "questionId": "0dcbc3b7c9d9150afc212041",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:0dcbc3b7c9d9150afc212041:content-v2",
       "questionVersionId": "0dcbc3b7c9d9150afc212041:content-v2:blind-revalidation",
-      "contentHash": "da97a5f96c37c655f8e02855d97d72b96d76b4bae3e6eed7153c117616511cf4",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Penjumlahan, Pengurangan, dan Perkalian Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: $(3m^2n + mn - 12) + (2m^2n - mn^2 + 7)$\n\nSederhanakan penjumlahan dan pengurangan polinomial berikut ini.\nPilihan: A. $5m^2n - mn^2 + mn - 5$\nB. $5m^2n - mn^2 + mn + 19$\nC. $m^2n - mn^2 + mn - 5$\nD. $5m^2n + mn^2 + mn - 5$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 150,
+      "contentHash": "dbf5d2e1a17ff101899fb38a3786f46dcefcfa3dcfa868a73673c15ed4e80ee5",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Penjumlahan, Pengurangan, dan Perkalian Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: $(3m^2n + mn - 12) + (2m^2n - mn^2 + 7)$\n\nSederhanakan penjumlahan dan pengurangan polinomial berikut ini.\nPilihan: A. $5m^2n - mn^2 + mn - 5$\nB. $5m^2n - mn^2 + mn + 19$\nC. $m^2n - mn^2 + mn - 5$\nD. $5m^2n + mn^2 + mn - 5$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 157,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.247,
+      "latencyMs": 0.074,
       "prediction": {
         "questionId": "0dcbc3b7c9d9150afc212041",
         "contentVersion": 2,
-        "contentHash": "da97a5f96c37c655f8e02855d97d72b96d76b4bae3e6eed7153c117616511cf4",
+        "contentHash": "dbf5d2e1a17ff101899fb38a3786f46dcefcfa3dcfa868a73673c15ed4e80ee5",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1605,6 +1635,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1616,7 +1647,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "613386419c0d60646ee938574289a2a5b3ec739f84ca00f742062cd6a4b5e38a",
+          "inputHash": "9f5415e1b339879345cebcefae06df9834789b230d73d8093e0d37f8a5592c30",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1627,16 +1658,16 @@
       "questionId": "810355e25e67029b62ca669b",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:810355e25e67029b62ca669b:content-v2",
       "questionVersionId": "810355e25e67029b62ca669b:content-v2:blind-revalidation",
-      "contentHash": "d6047647dd2e6094bb599eb59842de2bf3ab7d42f142e3072984aff33221cfe7",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pembagian Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Misalkan $P(x) = 3x^6 - 11x^5 + x^3 + 20x^2 - 3$ dan $c = \\frac{2}{3}$. Gunakan metode Horner dan Teorema Sisa untuk menentukan nilai $P(c)$.\nPilihan: A. $-282$\nB. $-5$\nC. $5$\nD. $12$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 123,
+      "contentHash": "780f2a30eb577b61a22099a80d28760a294adf5d69dfcc8867fa102153ca9ffc",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pembagian Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Misalkan $P(x) = 3x^6 - 11x^5 + x^3 + 20x^2 - 3$ dan $c = \\frac{2}{3}$. Gunakan metode Horner dan Teorema Sisa untuk menentukan nilai $P(c)$.\nPilihan: A. $-282$\nB. $-5$\nC. $5$\nD. $12$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 130,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.825,
+      "latencyMs": 0.235,
       "prediction": {
         "questionId": "810355e25e67029b62ca669b",
         "contentVersion": 2,
-        "contentHash": "d6047647dd2e6094bb599eb59842de2bf3ab7d42f142e3072984aff33221cfe7",
+        "contentHash": "780f2a30eb577b61a22099a80d28760a294adf5d69dfcc8867fa102153ca9ffc",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1669,6 +1700,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1680,7 +1712,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "29b633239d1d9e3f8f8b4c74fb1a910ce92409eddd6e8206cb1e680f99b4d62b",
+          "inputHash": "4502079bf71b75a2b13322f5c8bd9ba51c83d7c252687f7622368a8f7d706c9c",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1691,16 +1723,16 @@
       "questionId": "a98a9e8ffc21623c387d4f68",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:a98a9e8ffc21623c387d4f68:content-v2",
       "questionVersionId": "a98a9e8ffc21623c387d4f68:content-v2:blind-revalidation",
-      "contentHash": "2e2dee62f2ce3b462e3f2bc93da17a7d89b8a419d06726d37b0d194f65f5e657",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pembagian Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Karena polinomial $P(x)$ dibagi dengan $x - c$ memiliki sisa $k$, nilai $P(c) = ….$\nPilihan: A. $-k$\nB. $0$\nC. $Q(c)$\nD. $k$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 97,
+      "contentHash": "44ec7f012625bdc798a125aa1fbc87e19cc15e97b83fd8b648586001ad87e773",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pembagian Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Karena polinomial $P(x)$ dibagi dengan $x - c$ memiliki sisa $k$, nilai $P(c) = ….$\nPilihan: A. $-k$\nB. $0$\nC. $Q(c)$\nD. $k$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 104,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.234,
+      "latencyMs": 0.201,
       "prediction": {
         "questionId": "a98a9e8ffc21623c387d4f68",
         "contentVersion": 2,
-        "contentHash": "2e2dee62f2ce3b462e3f2bc93da17a7d89b8a419d06726d37b0d194f65f5e657",
+        "contentHash": "44ec7f012625bdc798a125aa1fbc87e19cc15e97b83fd8b648586001ad87e773",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1733,6 +1765,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1744,7 +1777,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "9e595ac2d6ff5530110740f306200692c0aea894a783080bedcb68d57304daa4",
+          "inputHash": "e9eb41139415bd013b38a60b53e72af8e4c1f4be60f33f406fbe1f3fee2ae08f",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1755,16 +1788,16 @@
       "questionId": "a98624ce0ee70784807495e3",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:a98624ce0ee70784807495e3:content-v2",
       "questionVersionId": "a98624ce0ee70784807495e3:content-v2:blind-revalidation",
-      "contentHash": "6f2f6859fe2d868aca840001b9b07b5687f412abbf845cafb097c4d66f1ef7fb",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Faktor dan Pembuat Nol Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Faktorkan $P(x) = 5x^3 - 28x^2 + 45x - 18$ secara lengkap.\nPilihan: A. $P(x) = (x-2)(x-3)\\left(x-\\frac{3}{5}\\right)$\nB. $P(x) = (5x-3)(x-2)(x-3)$\nC. $P(x) = (5x-3)(x+2)(x-3)$\nD. $P(x) = (5x+3)(x-2)(x-3)$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 180,
+      "contentHash": "aa39752f33fca19b22255bb5b04b60800915ab5946dbead4ce426674dddfbcfe",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Faktor dan Pembuat Nol Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Faktorkan $P(x) = 5x^3 - 28x^2 + 45x - 18$ secara lengkap.\nPilihan: A. $P(x) = (x-2)(x-3)\\left(x-\\frac{3}{5}\\right)$\nB. $P(x) = (5x-3)(x-2)(x-3)$\nC. $P(x) = (5x-3)(x+2)(x-3)$\nD. $P(x) = (5x+3)(x-2)(x-3)$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 187,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.216,
+      "latencyMs": 0.193,
       "prediction": {
         "questionId": "a98624ce0ee70784807495e3",
         "contentVersion": 2,
-        "contentHash": "6f2f6859fe2d868aca840001b9b07b5687f412abbf845cafb097c4d66f1ef7fb",
+        "contentHash": "aa39752f33fca19b22255bb5b04b60800915ab5946dbead4ce426674dddfbcfe",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1797,6 +1830,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1808,7 +1842,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "0ccfd6ac7ca0d4cf06ce406880856be627d7bc8b95c7255698a81838ac9cc9c3",
+          "inputHash": "157779171758711333822304a2ce6915f569758631b0af213d6b1c4c4ddd70f3",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1820,11 +1854,11 @@
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:c7f108d75ca02eb28d8fc074:content-v2",
       "questionVersionId": "c7f108d75ca02eb28d8fc074:content-v2:blind-revalidation",
       "contentHash": "87707dad45736b2e224d5b9812d294ebf0556d0b1ab43dfd067d951d5bf58215",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Faktor dan Pembuat Nol Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk suatu polinomial $P(x)$, nilai $P(10)$ adalah 0. Dengan demikian, …. adalah faktor polinomial tersebut.\nPilihan: A. $(x - 10)$\nB. $(x-10)(x+10)$\nC. $(x + 10)$\nD. $10$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 115,
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Faktor dan Pembuat Nol Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk suatu polinomial $P(x)$, nilai $P(10)$ adalah 0. Dengan demikian, …. adalah faktor polinomial tersebut.\nPilihan: A. $(x - 10)$\nB. $(x-10)(x+10)$\nC. $(x + 10)$\nD. $10$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 122,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.214,
+      "latencyMs": 0.155,
       "prediction": {
         "questionId": "c7f108d75ca02eb28d8fc074",
         "contentVersion": 2,
@@ -1861,6 +1895,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1872,7 +1907,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "8e46f9af0dd9431fb87fc47b5abc29df763ffa22f60158fc21ba4696074546f7",
+          "inputHash": "1f4f962468836dca56f2f692bdedc97a65108014e9ad578b9133cd5cdad6f0b0",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1883,16 +1918,16 @@
       "questionId": "329824aeb50ec2a6e01abb9a",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:329824aeb50ec2a6e01abb9a:content-v2",
       "questionVersionId": "329824aeb50ec2a6e01abb9a:content-v2:blind-revalidation",
-      "contentHash": "ff0c11e642a60eff77559b6b58b0fb0be2950bba019d234d0d5b96ef4e5b9041",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Identitas Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: $p^3 - q^3 = ….$\nPilihan: A. $(p-q)(p^2+2pq+q^2)$\nB. $(p-q)(p^2-pq+q^2)$\nC. $(p-q)^3$\nD. $(p-q)(p^2+pq+q^2)$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 126,
+      "contentHash": "180cc44095db6de8c7f3d73d98152983e4e19eba1a275ad059d8ab4958fdbe2e",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Identitas Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: $p^3 - q^3 = ….$\nPilihan: A. $(p-q)(p^2+2pq+q^2)$\nB. $(p-q)(p^2-pq+q^2)$\nC. $(p-q)^3$\nD. $(p-q)(p^2+pq+q^2)$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 133,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.231,
+      "latencyMs": 0.092,
       "prediction": {
         "questionId": "329824aeb50ec2a6e01abb9a",
         "contentVersion": 2,
-        "contentHash": "ff0c11e642a60eff77559b6b58b0fb0be2950bba019d234d0d5b96ef4e5b9041",
+        "contentHash": "180cc44095db6de8c7f3d73d98152983e4e19eba1a275ad059d8ab4958fdbe2e",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1925,6 +1960,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1936,7 +1972,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "20791670ce386ac1ca96913b94414da8159c774fc8643de7d096b2a3f57daee1",
+          "inputHash": "3626315b226e18d9ff6be0b845ccc4e0ccc108427712159e52d57657e570b596",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1947,16 +1983,16 @@
       "questionId": "6b7cde78dfd3973a1d0a64cb",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:6b7cde78dfd3973a1d0a64cb:content-v2",
       "questionVersionId": "6b7cde78dfd3973a1d0a64cb:content-v2:blind-revalidation",
-      "contentHash": "3d4b70446196c516b2b8820483eb27d260eb456035d11bd555bd8b6a3a648d34",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Identitas Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $3(x-1)^2 = (3x-3)^2$\nPilihan: A. Bukan identitas, karena untuk $x=0$: $3(0-1)^2=3$ sedangkan $(3\\cdot0-3)^2=9$ (tidak sama)\nB. Bukan identitas, karena pangkat di kedua ruas berbeda\nC. Merupakan identitas, karena untuk $x=1$ kedua ruas sama-sama bernilai 0\nD. Merupakan identitas, karena kedua ruas sama-sama berbentuk kuadrat sempurna\nTranskripsi visual: -",
-      "untruncatedTokenCount": 163,
+      "contentHash": "158cbb656883c3432b34e608344fca2c1b55d8dd20cdc0abc904378abda2a304",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Identitas Polinomial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $3(x-1)^2 = (3x-3)^2$\nPilihan: A. Bukan identitas, karena untuk $x=0$: $3(0-1)^2=3$ sedangkan $(3\\cdot0-3)^2=9$ (tidak sama)\nB. Bukan identitas, karena pangkat di kedua ruas berbeda\nC. Merupakan identitas, karena untuk $x=1$ kedua ruas sama-sama bernilai 0\nD. Merupakan identitas, karena kedua ruas sama-sama berbentuk kuadrat sempurna\nTranskripsi visual: -",
+      "untruncatedTokenCount": 170,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.278,
+      "latencyMs": 0.083,
       "prediction": {
         "questionId": "6b7cde78dfd3973a1d0a64cb",
         "contentVersion": 2,
-        "contentHash": "3d4b70446196c516b2b8820483eb27d260eb456035d11bd555bd8b6a3a648d34",
+        "contentHash": "158cbb656883c3432b34e608344fca2c1b55d8dd20cdc0abc904378abda2a304",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1989,6 +2025,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2000,7 +2037,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "36d3481f47ae9b941623e4a069f733ba560fa99942ef6486c7c7d7dbd3e95f05",
+          "inputHash": "38d8fbdfe8b927e204b1709677626306b4280c213b9d5656f3aeb5ee914b2a61",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2011,16 +2048,16 @@
       "questionId": "d590344d18abe3ebd38fb8ed",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:d590344d18abe3ebd38fb8ed:content-v2",
       "questionVersionId": "d590344d18abe3ebd38fb8ed:content-v2:blind-revalidation",
-      "contentHash": "380d3936142ae792c8b78dd85ca65cfad5d7230aa96776a1e92936301ba6cbc7",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Kuadrat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tabel di bawah menunjukkan jarak tempuh sebuah mobil pada setiap waktu.\n\n|Waktu (Detik)|0|1|2|3|4|5|6|\n|---|---|---|---|---|---|---|---|\n|Jarak (m)|0|5|8|9|8|5|0|\n\nTanpa menggambar grafik, tentukan apakah grafik fungsi kuadrat terbuka ke atas atau ke bawah. Jelaskan alasanmu.\nPilihan: A. Tidak dapat ditentukan tanpa menggambar grafiknya.\nB. Terbuka ke bawah, karena nilai fungsi turun kemudian naik lagi.\nC. Terbuka ke atas, karena nilai fungsi naik kemudian turun lagi.\nD. Terbuka ke bawah, karena nilai fungsi (jarak) naik kemudian turun lagi.\nTranskripsi visual: -",
-      "untruncatedTokenCount": 196,
+      "contentHash": "183a1cdb8642fbc2cb07dae32324fbcae9a4e950712e75ed35d99e20ccabb850",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Kuadrat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tabel di bawah menunjukkan jarak tempuh sebuah mobil pada setiap waktu.\n\n|Waktu (Detik)|0|1|2|3|4|5|6|\n|---|---|---|---|---|---|---|---|\n|Jarak (m)|0|5|8|9|8|5|0|\n\nTanpa menggambar grafik, tentukan apakah grafik fungsi kuadrat terbuka ke atas atau ke bawah. Jelaskan alasanmu.\nPilihan: A. Tidak dapat ditentukan tanpa menggambar grafiknya.\nB. Terbuka ke bawah, karena nilai fungsi turun kemudian naik lagi.\nC. Terbuka ke atas, karena nilai fungsi naik kemudian turun lagi.\nD. Terbuka ke bawah, karena nilai fungsi (jarak) naik kemudian turun lagi.\nTranskripsi visual: -",
+      "untruncatedTokenCount": 203,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.764,
+      "latencyMs": 0.116,
       "prediction": {
         "questionId": "d590344d18abe3ebd38fb8ed",
         "contentVersion": 2,
-        "contentHash": "380d3936142ae792c8b78dd85ca65cfad5d7230aa96776a1e92936301ba6cbc7",
+        "contentHash": "183a1cdb8642fbc2cb07dae32324fbcae9a4e950712e75ed35d99e20ccabb850",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2053,6 +2090,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2064,7 +2102,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "bcc2e760b7103e21426d7ec9cf1cf0ca8d30a2dae51437a362145fc1b5703ee9",
+          "inputHash": "6148a7a1a65e7b586f9099774288b78e8d45766a9479541a609e3f53e556b3f7",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2075,16 +2113,16 @@
       "questionId": "225f6a665ad460166f03d3c7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:225f6a665ad460166f03d3c7:content-v2",
       "questionVersionId": "225f6a665ad460166f03d3c7:content-v2:blind-revalidation",
-      "contentHash": "39b89863e5b29aec5fd8822480764b9cb828d7dcab712908ddef99aff37f9549",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Trigonometri dan Lingkaran Satuan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Nyatakan sudut-sudut berikut ke dalam radian: 45°, 144°, dan 306°.\nPilihan: A. $45° = 45\\pi$ rad; $144° = 144\\pi$ rad; $306° = 306\\pi$ rad\nB. $45° = \\dfrac{1}{4}$; $144° = \\dfrac{4}{5}$; $306° = \\dfrac{17}{10}$ (tanpa π)\nC. $45° = \\dfrac{\\pi}{4}$ rad; $144° = \\dfrac{4\\pi}{5}$ rad; $306° = \\dfrac{17\\pi}{10}$ rad\nD. $45° = \\dfrac{\\pi}{8}$ rad; $144° = \\dfrac{2\\pi}{5}$ rad; $306° = \\dfrac{17\\pi}{20}$ rad\nTranskripsi visual: -",
-      "untruncatedTokenCount": 235,
+      "contentHash": "0851594409a242b3b040aca552f79d439b6d83336715c8452b85caa01f7ef723",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Trigonometri dan Lingkaran Satuan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Nyatakan sudut-sudut berikut ke dalam radian: 45°, 144°, dan 306°.\nPilihan: A. $45° = 45\\pi$ rad; $144° = 144\\pi$ rad; $306° = 306\\pi$ rad\nB. $45° = \\dfrac{1}{4}$; $144° = \\dfrac{4}{5}$; $306° = \\dfrac{17}{10}$ (tanpa π)\nC. $45° = \\dfrac{\\pi}{4}$ rad; $144° = \\dfrac{4\\pi}{5}$ rad; $306° = \\dfrac{17\\pi}{10}$ rad\nD. $45° = \\dfrac{\\pi}{8}$ rad; $144° = \\dfrac{2\\pi}{5}$ rad; $306° = \\dfrac{17\\pi}{20}$ rad\nTranskripsi visual: -",
+      "untruncatedTokenCount": 242,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.641,
+      "latencyMs": 0.091,
       "prediction": {
         "questionId": "225f6a665ad460166f03d3c7",
         "contentVersion": 2,
-        "contentHash": "39b89863e5b29aec5fd8822480764b9cb828d7dcab712908ddef99aff37f9549",
+        "contentHash": "0851594409a242b3b040aca552f79d439b6d83336715c8452b85caa01f7ef723",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2117,6 +2155,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2128,7 +2167,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "2f6e013cf222063fd680b9d6f363ca1b416b798958237a3e3df1807d9524de58",
+          "inputHash": "5f0c98416cde2040f032ab3d7cdfb63d4fa9dacc64e9c9d6e14d71e270d9df68",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2139,16 +2178,16 @@
       "questionId": "f08d9643f3fe34bdc0e78a8c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:f08d9643f3fe34bdc0e78a8c:content-v2",
       "questionVersionId": "f08d9643f3fe34bdc0e78a8c:content-v2:blind-revalidation",
-      "contentHash": "d9c1c28a76ff63638717f58c8d3282feaa5dc924f1b055dddcfec790bb17cba7",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Trigonometri dan Lingkaran Satuan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk mengonversi sebuah sudut yang dinyatakan ke dalam derajat menjadi radian, kalikan sudut tersebut dengan ….\nPilihan: A. $180\\pi$\nB. $\\dfrac{\\pi}{180}$\nC. $\\dfrac{180}{\\pi}$\nD. $\\dfrac{\\pi}{360}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 111,
+      "contentHash": "7c09d914e142206d30b91902f02b8f4dd52d2f8c1c23a0c3da71510e4ebb61f2",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Trigonometri dan Lingkaran Satuan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Untuk mengonversi sebuah sudut yang dinyatakan ke dalam derajat menjadi radian, kalikan sudut tersebut dengan ….\nPilihan: A. $180\\pi$\nB. $\\dfrac{\\pi}{180}$\nC. $\\dfrac{180}{\\pi}$\nD. $\\dfrac{\\pi}{360}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 118,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.421,
+      "latencyMs": 0.074,
       "prediction": {
         "questionId": "f08d9643f3fe34bdc0e78a8c",
         "contentVersion": 2,
-        "contentHash": "d9c1c28a76ff63638717f58c8d3282feaa5dc924f1b055dddcfec790bb17cba7",
+        "contentHash": "7c09d914e142206d30b91902f02b8f4dd52d2f8c1c23a0c3da71510e4ebb61f2",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2181,6 +2220,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2192,7 +2232,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "a701df946d35c69799988b20de24b11fdaedc39d72f54ce0678ea1ddd4de16de",
+          "inputHash": "239bab06f387817543a61ff483c4f0d04eefa4fa31cf2671f79a023686ec5fe2",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2203,16 +2243,16 @@
       "questionId": "afd6bffcaa9e9f5ad6f3571c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:afd6bffcaa9e9f5ad6f3571c:content-v2",
       "questionVersionId": "afd6bffcaa9e9f5ad6f3571c:content-v2:blind-revalidation",
-      "contentHash": "c2309f0c8a2a9438fe67a7777664f6ebc3eee30f93cbdffa3365b99cb98e3789",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Grafik Fungsi Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Grafik fungsi y = a sin k(x – b) + c memiliki amplitudo … dan periode ….\nPilihan: A. amplitudo $|a|$, periode $2\\pi k$\nB. amplitudo $|a|$, periode $\\dfrac{2\\pi}{k}$\nC. amplitudo $|a|$, periode $\\dfrac{k}{2\\pi}$\nD. amplitudo $a$, periode $\\dfrac{2\\pi}{k}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 148,
+      "contentHash": "40f68da15a55cf94244b74d24f99f496781dd0f40ffbdc03bc6e69475f05b4b6",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Grafik Fungsi Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Grafik fungsi y = a sin k(x – b) + c memiliki amplitudo … dan periode ….\nPilihan: A. amplitudo $|a|$, periode $2\\pi k$\nB. amplitudo $|a|$, periode $\\dfrac{2\\pi}{k}$\nC. amplitudo $|a|$, periode $\\dfrac{k}{2\\pi}$\nD. amplitudo $a$, periode $\\dfrac{2\\pi}{k}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 155,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.238,
+      "latencyMs": 0.079,
       "prediction": {
         "questionId": "afd6bffcaa9e9f5ad6f3571c",
         "contentVersion": 2,
-        "contentHash": "c2309f0c8a2a9438fe67a7777664f6ebc3eee30f93cbdffa3365b99cb98e3789",
+        "contentHash": "40f68da15a55cf94244b74d24f99f496781dd0f40ffbdc03bc6e69475f05b4b6",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2245,6 +2285,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2256,7 +2297,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "d64f0c1c7b1b6e28afde50c9b9fc47e10e192042561d654f7c4dda699fd5fc6e",
+          "inputHash": "7825b0a4ae17965697fd61c0ded7528a6258cf73bef14473e215f06bee90b106",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2267,16 +2308,16 @@
       "questionId": "2c29446767c7632fe13c2025",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:2c29446767c7632fe13c2025:content-v2",
       "questionVersionId": "2c29446767c7632fe13c2025:content-v2:blind-revalidation",
-      "contentHash": "af28070f38656bd2ce665fc9f4ead250057d274c7f51f63b7b0ce8aff2b0327a",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Grafik Fungsi Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Periode grafik fungsi y = tan x adalah ….\nPilihan: A. $2\\pi$\nB. $4\\pi$\nC. $\\pi$\nD. $\\dfrac{\\pi}{2}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 83,
+      "contentHash": "cb096487e7ce6d39549a43972a03dd76686bab136f431948706f839b1873acb6",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Grafik Fungsi Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Periode grafik fungsi y = tan x adalah ….\nPilihan: A. $2\\pi$\nB. $4\\pi$\nC. $\\pi$\nD. $\\dfrac{\\pi}{2}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 90,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.285,
+      "latencyMs": 0.066,
       "prediction": {
         "questionId": "2c29446767c7632fe13c2025",
         "contentVersion": 2,
-        "contentHash": "af28070f38656bd2ce665fc9f4ead250057d274c7f51f63b7b0ce8aff2b0327a",
+        "contentHash": "cb096487e7ce6d39549a43972a03dd76686bab136f431948706f839b1873acb6",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2309,6 +2350,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2320,7 +2362,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "52d89bafd22bc7bfdc3fb354dd7c32f1fd5d353f6070b4f067a4aa00c9161a51",
+          "inputHash": "5df0450aabc19d0a4cdfb89cbc2c7caeca4bf5e49fb855b8cd3168f39eb48476",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2331,16 +2373,16 @@
       "questionId": "333a2cf9330fb76e649f0044",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:333a2cf9330fb76e649f0044:content-v2",
       "questionVersionId": "333a2cf9330fb76e649f0044:content-v2:blind-revalidation",
-      "contentHash": "d772f0705dc58f56b7922e53ac892ff56a3acabc26ee7df700aa7b678cf076f3",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Identitas Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: $\\sec^2 t - \\tan^2 t = \\ldots$\nPilihan: A. $\\sin^2 t$\nB. $1$\nC. $0$\nD. $-1$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 80,
+      "contentHash": "05f8bd75fc612c14e7c11b0bd6b126116be47083e1a408825e4a405634833a78",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Identitas Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: $\\sec^2 t - \\tan^2 t = \\ldots$\nPilihan: A. $\\sin^2 t$\nB. $1$\nC. $0$\nD. $-1$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 87,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.313,
+      "latencyMs": 0.065,
       "prediction": {
         "questionId": "333a2cf9330fb76e649f0044",
         "contentVersion": 2,
-        "contentHash": "d772f0705dc58f56b7922e53ac892ff56a3acabc26ee7df700aa7b678cf076f3",
+        "contentHash": "05f8bd75fc612c14e7c11b0bd6b126116be47083e1a408825e4a405634833a78",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2373,6 +2415,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2384,7 +2427,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "4525a260200e278d98a821c3c7981d6ceb54a10f44d7d214a5120706e9f4a224",
+          "inputHash": "172f2a448d9a37e24e60c04ebca2f262727cb68564ffddfac799e8e02ae28ed9",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2395,16 +2438,16 @@
       "questionId": "0d276f4b985246c2f7160055",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:0d276f4b985246c2f7160055:content-v2",
       "questionVersionId": "0d276f4b985246c2f7160055:content-v2:blind-revalidation",
-      "contentHash": "1078d54fc683a12e60edab3f452932ccaaedd267c4ff64013d7ee0aa8d310ee6",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Identitas Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Menemukan Kesalahan. Abel menyelidiki apakah $\\sin t = \\sin(-t)$ merupakan identitas. Dia melakukan langkah-langkah berikut ini. $\\sin t = \\sin(-t)$ (persamaan yang diberikan); $(\\sin t)^2 = [\\sin(-t)]^2$ (kuadratkan kedua ruas); $\\sin^2 t = (-\\sin t)^2$ (sederhanakan, karena sin(-t) = -sin t); $\\sin^2 t = \\sin^2 t$ (sederhanakan). Pada langkah terakhir, Abel mendapatkan bentuk di ruas kiri sama dengan bentuk di ruas kanan. Dengan demikian, dia menyimpulkan bahwa sin t = sin (–t) merupakan identitas.\n\nApa yang dilakukan Abel tersebut tidak tepat. Temukan kesalahannya!\nPilihan: A. Kesalahan Abel terletak saat menyederhanakan sin²t = (–sin t)² menjadi sin²t = sin²t; seharusnya hasil penyederhanaan itu adalah –sin²t.\nB. Abel salah menuliskan sin(–t) sebagai –sin t di langkah ketiga; seharusnya sin(–t) = sin t berlaku untuk semua nilai t yang diberikan.\nC. Abel sebenarnya tidak melakukan kesalahan apa pun, karena sin t = sin(–t) memang merupakan identitas yang berlaku untuk semua nilai t.\nD. Abel keliru mengasumsikan sin t = sin(–t) sudah benar sejak awal (padahal itu yang ingin dibuktikan), dan mengkuadratkan kedua ruas tidak selalu menghasilkan persamaan yang ekuivalen.\nTranskripsi visual: -",
-      "untruncatedTokenCount": 350,
+      "contentHash": "aec82b01e787aacc2081d9933ca51319c352c82e22bb460965fe897822b2a251",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Identitas Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Menemukan Kesalahan. Abel menyelidiki apakah $\\sin t = \\sin(-t)$ merupakan identitas. Dia melakukan langkah-langkah berikut ini. $\\sin t = \\sin(-t)$ (persamaan yang diberikan); $(\\sin t)^2 = [\\sin(-t)]^2$ (kuadratkan kedua ruas); $\\sin^2 t = (-\\sin t)^2$ (sederhanakan, karena sin(-t) = -sin t); $\\sin^2 t = \\sin^2 t$ (sederhanakan). Pada langkah terakhir, Abel mendapatkan bentuk di ruas kiri sama dengan bentuk di ruas kanan. Dengan demikian, dia menyimpulkan bahwa sin t = sin (–t) merupakan identitas.\n\nApa yang dilakukan Abel tersebut tidak tepat. Temukan kesalahannya!\nPilihan: A. Kesalahan Abel terletak saat menyederhanakan sin²t = (–sin t)² menjadi sin²t = sin²t; seharusnya hasil penyederhanaan itu adalah –sin²t.\nB. Abel salah menuliskan sin(–t) sebagai –sin t di langkah ketiga; seharusnya sin(–t) = sin t berlaku untuk semua nilai t yang diberikan.\nC. Abel sebenarnya tidak melakukan kesalahan apa pun, karena sin t = sin(–t) memang merupakan identitas yang berlaku untuk semua nilai t.\nD. Abel keliru mengasumsikan sin t = sin(–t) sudah benar sejak awal (padahal itu yang ingin dibuktikan), dan mengkuadratkan kedua ruas tidak selalu menghasilkan persamaan yang ekuivalen.\nTranskripsi visual: -",
+      "untruncatedTokenCount": 357,
       "maxLength": 256,
       "wouldTruncate": true,
-      "latencyMs": 0.409,
+      "latencyMs": 0.116,
       "prediction": {
         "questionId": "0d276f4b985246c2f7160055",
         "contentVersion": 2,
-        "contentHash": "1078d54fc683a12e60edab3f452932ccaaedd267c4ff64013d7ee0aa8d310ee6",
+        "contentHash": "aec82b01e787aacc2081d9933ca51319c352c82e22bb460965fe897822b2a251",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2437,6 +2480,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2448,7 +2492,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "9a8f240909aadc89da71f1370abc3edc24156d697767efee8ab4ab30c4722677",
+          "inputHash": "36d571977f383400e45ea03e226f30734bb6e240bb2f5b73cddca76734db064a",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2459,16 +2503,16 @@
       "questionId": "ba91e1dbbd3c3d155050439f",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:ba91e1dbbd3c3d155050439f:content-v2",
       "questionVersionId": "ba91e1dbbd3c3d155050439f:content-v2:blind-revalidation",
-      "contentHash": "af20b4d77803b894dec4cad86456bac8985cd1d4d4bd3587ab76332e21a36924",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Aturan Sinus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika ∠A = 30°, ∠B = 45°, dan a = 15, tentukan panjang b.\nPilihan: A. $b = 7{,}5\\sqrt{2} \\approx 10{,}61$\nB. $b = 22{,}5$\nC. $b = 15\\sqrt{2} \\approx 21{,}21$\nD. $b = 5\\sqrt{6} \\approx 12{,}25$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 132,
+      "contentHash": "ad6267e23994dc5111c34a913b074b8e9bb91ae9fbf9697e8513a6ba921f791b",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Aturan Sinus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika ∠A = 30°, ∠B = 45°, dan a = 15, tentukan panjang b.\nPilihan: A. $b = 7{,}5\\sqrt{2} \\approx 10{,}61$\nB. $b = 22{,}5$\nC. $b = 15\\sqrt{2} \\approx 21{,}21$\nD. $b = 5\\sqrt{6} \\approx 12{,}25$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 139,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.281,
+      "latencyMs": 0.075,
       "prediction": {
         "questionId": "ba91e1dbbd3c3d155050439f",
         "contentVersion": 2,
-        "contentHash": "af20b4d77803b894dec4cad86456bac8985cd1d4d4bd3587ab76332e21a36924",
+        "contentHash": "ad6267e23994dc5111c34a913b074b8e9bb91ae9fbf9697e8513a6ba921f791b",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2501,6 +2545,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2512,7 +2557,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "e3fb79e396fdefd9bc90aac0614e9b806c7991725b9d738c82d02b53d69eee91",
+          "inputHash": "bd3f78983d3863c67950ac570c723a19c1007067462b9635dc5affb7e1f5ba80",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2523,16 +2568,16 @@
       "questionId": "5364425a70eacc615935825f",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:5364425a70eacc615935825f:content-v2",
       "questionVersionId": "5364425a70eacc615935825f:content-v2:blind-revalidation",
-      "contentHash": "e84265f0eb0f424e911efd3ebf782faed8879bd91130e681ca183fff5b3bed29",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Aturan Sinus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika ∠C = 145°, b = 10, dan c = 6, tentukan besar sudut B.\nPilihan: A. $\\angle B \\approx 34{,}62°$\nB. $\\angle B \\approx 4{,}78°$\nC. $\\angle B \\approx 17{,}31°$\nD. $\\angle B \\approx 72{,}93°$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 119,
+      "contentHash": "f8842831400cf029284dd6a783ff3de13fa2afa902649762ecda95618fb8f812",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Aturan Sinus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika ∠C = 145°, b = 10, dan c = 6, tentukan besar sudut B.\nPilihan: A. $\\angle B \\approx 34{,}62°$\nB. $\\angle B \\approx 4{,}78°$\nC. $\\angle B \\approx 17{,}31°$\nD. $\\angle B \\approx 72{,}93°$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 126,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.261,
+      "latencyMs": 0.071,
       "prediction": {
         "questionId": "5364425a70eacc615935825f",
         "contentVersion": 2,
-        "contentHash": "e84265f0eb0f424e911efd3ebf782faed8879bd91130e681ca183fff5b3bed29",
+        "contentHash": "f8842831400cf029284dd6a783ff3de13fa2afa902649762ecda95618fb8f812",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2565,6 +2610,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2576,7 +2622,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "694dd1039a3b9840d6d73cf68e0e505c754a7ed51bcaf3f9b5a14df1bab179ea",
+          "inputHash": "72008df7c69bf3ed697049320c00386cba1be580a6990348f10da8aebc092739",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2587,16 +2633,16 @@
       "questionId": "4efc96ae8cc1e04d35b2d9ce",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:4efc96ae8cc1e04d35b2d9ce:content-v2",
       "questionVersionId": "4efc96ae8cc1e04d35b2d9ce:content-v2:blind-revalidation",
-      "contentHash": "9a7b3fa43caa3b6432e1b1f7b6ae89c0f4383e6063889e995973c8b3e8bc44d0",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Aturan Kosinus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika ∠C = 60°, a = 6, dan b = 10, panjang c adalah ….\nPilihan: A. $c = \\sqrt{106} \\approx 10{,}30$\nB. $c = \\sqrt{136} \\approx 11{,}66$\nC. $c = 2\\sqrt{19} \\approx 8{,}72$\nD. $c = 14$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 124,
+      "contentHash": "4790a66c408dfff862c2aefee837a01454da7268e918108a6d9bbebadf69ddd8",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Aturan Kosinus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika ∠C = 60°, a = 6, dan b = 10, panjang c adalah ….\nPilihan: A. $c = \\sqrt{106} \\approx 10{,}30$\nB. $c = \\sqrt{136} \\approx 11{,}66$\nC. $c = 2\\sqrt{19} \\approx 8{,}72$\nD. $c = 14$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 131,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.209,
+      "latencyMs": 0.069,
       "prediction": {
         "questionId": "4efc96ae8cc1e04d35b2d9ce",
         "contentVersion": 2,
-        "contentHash": "9a7b3fa43caa3b6432e1b1f7b6ae89c0f4383e6063889e995973c8b3e8bc44d0",
+        "contentHash": "4790a66c408dfff862c2aefee837a01454da7268e918108a6d9bbebadf69ddd8",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2629,6 +2675,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2640,7 +2687,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "1990ef4487c1acc8e6f98c248e189648e2d9abf3303e1c0b44c6178baa9bfd79",
+          "inputHash": "b8aa0ea3da3c7f4183372908dae54575668edda0a126bd9bc07a79b1f539110e",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2652,11 +2699,11 @@
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:bb3460948df5551e87c20f19:content-v2",
       "questionVersionId": "bb3460948df5551e87c20f19:content-v2:blind-revalidation",
       "contentHash": "dcc0604e8f07a2f000804a3f77b73cb6274dc7dc2a019d1c85575c7c5b5cd874",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Aturan Kosinus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika a = 12, b = 14, dan c = 8, besar sudut B adalah ….\nPilihan: A. $\\angle B \\approx 86{,}42°$\nB. $\\angle B \\approx 93{,}58°$\nC. $\\angle B \\approx 34{,}84°$\nD. $\\angle B \\approx 58{,}83°$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 121,
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Aturan Kosinus\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika a = 12, b = 14, dan c = 8, besar sudut B adalah ….\nPilihan: A. $\\angle B \\approx 86{,}42°$\nB. $\\angle B \\approx 93{,}58°$\nC. $\\angle B \\approx 34{,}84°$\nD. $\\angle B \\approx 58{,}83°$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 128,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.259,
+      "latencyMs": 0.069,
       "prediction": {
         "questionId": "bb3460948df5551e87c20f19",
         "contentVersion": 2,
@@ -2693,6 +2740,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2704,7 +2752,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "9b43cc187a150e2e0f505848524aa4e37556fab466f1e3eb8392b066a30abdb8",
+          "inputHash": "e2de504754770de184ac4f3aa7c01075a3c59b0086f64696bb2467f6a357b502",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2715,16 +2763,16 @@
       "questionId": "899fad8c8260df6013a595be",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:899fad8c8260df6013a595be:content-v2",
       "questionVersionId": "899fad8c8260df6013a595be:content-v2:blind-revalidation",
-      "contentHash": "7dcc789a77d012a9f9bae897d726d124ebe2a5907b63618bc23a4b810ac528a8",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pemanfaatan Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah segitiga siku-siku PQR, mempunyai besaran ∠P = 53,2o dan besaran ∠Q = 36,8o. Q 36,8º 5 4 53,2º P 3 R\n\nNilai perbandingan panjang sisi QR dan QP sama dengan nilai ________.\nPilihan: A. tan 53,2°\nB. cos 53,2°\nC. tan 36,8°\nD. cos 36,8°\nTranskripsi visual: Segitiga siku-siku PQR dengan sudut siku-siku di R. Sisi PR = 3, sisi QR = 4, sisi miring PQ = 5. Sudut P = 53,2 derajat, sudut Q = 36,8 derajat.",
-      "untruncatedTokenCount": 170,
+      "contentHash": "d453700af0aeda44ce704edb7019b2c5343adb43f3b19a90e60f2fa093604a35",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pemanfaatan Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah segitiga siku-siku PQR, mempunyai besaran ∠P = 53,2o dan besaran ∠Q = 36,8o. Q 36,8º 5 4 53,2º P 3 R\n\nNilai perbandingan panjang sisi QR dan QP sama dengan nilai ________.\nPilihan: A. tan 53,2°\nB. cos 53,2°\nC. tan 36,8°\nD. cos 36,8°\nTranskripsi visual: Segitiga siku-siku PQR dengan sudut siku-siku di R. Sudut P = 53,2 derajat, sudut Q = 36,8 derajat. Panjang sisi PR = 3, QR = 4, dan sisi miring PQ = 5.",
+      "untruncatedTokenCount": 178,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.335,
+      "latencyMs": 0.115,
       "prediction": {
         "questionId": "899fad8c8260df6013a595be",
         "contentVersion": 2,
-        "contentHash": "7dcc789a77d012a9f9bae897d726d124ebe2a5907b63618bc23a4b810ac528a8",
+        "contentHash": "d453700af0aeda44ce704edb7019b2c5343adb43f3b19a90e60f2fa093604a35",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2757,6 +2805,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2768,7 +2817,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "5fd69f0152982ca3fc796b24718d5153926a1704b0999b4e1ff10a797fd90781",
+          "inputHash": "4ec6117ce46c6f815794fc0dd317691d9d5aafe7a0cc5e60134a2a20662f5b0a",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2779,16 +2828,16 @@
       "questionId": "80afd89325ff526ea10e623f",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:80afd89325ff526ea10e623f:content-v2",
       "questionVersionId": "80afd89325ff526ea10e623f:content-v2:blind-revalidation",
-      "contentHash": "981dfca1fd20731325ef87c72244be8759dc89aecb849ad86d3dc48bad6d3707",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Vektor pada Bidang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah vektor memiliki pangkal di (6, 2) dan ujung di (1, –5). Tentukan bentuk komponen vektor tersebut, kemudian hitung panjangnya.\nPilihan: A. $\\langle -5,-7\\rangle$, panjang 12\nB. $\\langle -5,-7\\rangle$, panjang $\\sqrt{74}$\nC. $\\langle -7,-5\\rangle$, panjang $\\sqrt{74}$\nD. $\\langle 5,7\\rangle$, panjang $\\sqrt{74}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 158,
+      "contentHash": "0809ef358c031404aaff186063870707dda08c35d9ffdd2dac6d358865d48375",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Vektor pada Bidang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah vektor memiliki pangkal di (6, 2) dan ujung di (1, –5). Tentukan bentuk komponen vektor tersebut, kemudian hitung panjangnya.\nPilihan: A. $\\langle -5,-7\\rangle$, panjang 12\nB. $\\langle -5,-7\\rangle$, panjang $\\sqrt{74}$\nC. $\\langle -7,-5\\rangle$, panjang $\\sqrt{74}$\nD. $\\langle 5,7\\rangle$, panjang $\\sqrt{74}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 165,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.457,
+      "latencyMs": 0.083,
       "prediction": {
         "questionId": "80afd89325ff526ea10e623f",
         "contentVersion": 2,
-        "contentHash": "981dfca1fd20731325ef87c72244be8759dc89aecb849ad86d3dc48bad6d3707",
+        "contentHash": "0809ef358c031404aaff186063870707dda08c35d9ffdd2dac6d358865d48375",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2821,6 +2870,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2832,7 +2882,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "3e937bce71780c1bac2396463059ffbf2c71375d8f4402571c9907d22591d0bb",
+          "inputHash": "a615cc200f9ee178704189c44cede6897f8ec9045887e802c70b2236b43c678c",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2843,16 +2893,16 @@
       "questionId": "70dbfec033da3e0b6a3374fa",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:70dbfec033da3e0b6a3374fa:content-v2",
       "questionVersionId": "70dbfec033da3e0b6a3374fa:content-v2:blind-revalidation",
-      "contentHash": "aa50adb453f2934211d0c581bdbd2cf3fcab542c6d5451879088991b523d4ddb",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Vektor pada Bidang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Vektor $\\langle -4,12 \\rangle$ dapat dituliskan ke dalam kombinasi vektor-vektor satuan baku $\\mathbf{i}$ dan $\\mathbf{j}$, yaitu ….\nPilihan: A. $-4\\mathbf{i} - 12\\mathbf{j}$\nB. $-4\\mathbf{i} + 12\\mathbf{j}$\nC. $4\\mathbf{i} + 12\\mathbf{j}$\nD. $12\\mathbf{i} - 4\\mathbf{j}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 169,
+      "contentHash": "a5f1c9007a9d312e0dc6d1b056050a0aa0321d17a1d3e8c076a6a98c5cf7da40",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Vektor pada Bidang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Vektor $\\langle -4,12 \\rangle$ dapat dituliskan ke dalam kombinasi vektor-vektor satuan baku $\\mathbf{i}$ dan $\\mathbf{j}$, yaitu ….\nPilihan: A. $-4\\mathbf{i} - 12\\mathbf{j}$\nB. $-4\\mathbf{i} + 12\\mathbf{j}$\nC. $4\\mathbf{i} + 12\\mathbf{j}$\nD. $12\\mathbf{i} - 4\\mathbf{j}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 176,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.414,
+      "latencyMs": 0.08,
       "prediction": {
         "questionId": "70dbfec033da3e0b6a3374fa",
         "contentVersion": 2,
-        "contentHash": "aa50adb453f2934211d0c581bdbd2cf3fcab542c6d5451879088991b523d4ddb",
+        "contentHash": "a5f1c9007a9d312e0dc6d1b056050a0aa0321d17a1d3e8c076a6a98c5cf7da40",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2885,6 +2935,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2896,7 +2947,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "edd9c031bbbd3e414b6917677e2cbfe64ff9f64a15172abfcde0012e6d4c34f4",
+          "inputHash": "10bf9c4f5c12a58e1caff37d85befcb806f007bd017e2edc24089c0071ef62c4",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2907,16 +2958,16 @@
       "questionId": "a6cd9d3eef6dcf642995a65e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:a6cd9d3eef6dcf642995a65e:content-v2",
       "questionVersionId": "a6cd9d3eef6dcf642995a65e:content-v2:blind-revalidation",
-      "contentHash": "9ab7b5d3baf8be475b625807102bc45af3caba3b22af1e5a7da57daab460b77e",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Hasil Kali Titik\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perahu layar. Sebuah perahu layar bergerak sejauh 100 m ke utara, sedangkan angin memberi gaya 500 N ke timur laut. Berapa banyak usaha yang dilakukan angin?\nPilihan: A. $25.000\\sqrt{3}$ J\nB. $0$ J\nC. $50.000$ J\nD. $25.000\\sqrt{2}$ J\nTranskripsi visual: -",
-      "untruncatedTokenCount": 109,
+      "contentHash": "6c6d75434bb7f02a352a579ae266ea9477375a6ecc74ccc622bd74500eec0dc1",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Hasil Kali Titik\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perahu layar. Sebuah perahu layar bergerak sejauh 100 m ke utara, sedangkan angin memberi gaya 500 N ke timur laut. Berapa banyak usaha yang dilakukan angin?\nPilihan: A. $25.000\\sqrt{3}$ J\nB. $0$ J\nC. $50.000$ J\nD. $25.000\\sqrt{2}$ J\nTranskripsi visual: -",
+      "untruncatedTokenCount": 116,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.261,
+      "latencyMs": 0.186,
       "prediction": {
         "questionId": "a6cd9d3eef6dcf642995a65e",
         "contentVersion": 2,
-        "contentHash": "9ab7b5d3baf8be475b625807102bc45af3caba3b22af1e5a7da57daab460b77e",
+        "contentHash": "6c6d75434bb7f02a352a579ae266ea9477375a6ecc74ccc622bd74500eec0dc1",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2949,6 +3000,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2960,7 +3012,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "744ac7d44521c848c0eb9bfb900d014ad9d4f66830ac393ae0692030d0955574",
+          "inputHash": "4e2dcf6d991fa79467e8d31ed79aa61b846c170ac88656b6c09484c420c59d3f",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2971,16 +3023,16 @@
       "questionId": "197954ccd24f5bbacd84ed75",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:197954ccd24f5bbacd84ed75:content-v2",
       "questionVersionId": "197954ccd24f5bbacd84ed75:content-v2:blind-revalidation",
-      "contentHash": "520c74b607a8ef06f84027e2b46aa29b0428aa3c920ebbea87262c5d5410d61f",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Hasil Kali Titik\nTipe soal: multiple_choice\nStimulus: -\nSoal: Vektor $\\mathbf{u}$ dan vektor $\\mathbf{v}$ secara berturut-turut memiliki panjang 12 dan 18. Jika besar sudut di antara kedua vektor tersebut adalah $\\dfrac{\\pi}{3}$, tentukan $\\mathbf{u} \\cdot \\mathbf{v}$.\nPilihan: A. 108\nB. 216\nC. ≈215,7\nD. 0\nTranskripsi visual: -",
-      "untruncatedTokenCount": 125,
+      "contentHash": "dbad90d70b25444dc926a5edcc495aeef7367c1a3bd71561d6048ef816ccb8b6",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Hasil Kali Titik\nTipe soal: multiple_choice\nStimulus: -\nSoal: Vektor $\\mathbf{u}$ dan vektor $\\mathbf{v}$ secara berturut-turut memiliki panjang 12 dan 18. Jika besar sudut di antara kedua vektor tersebut adalah $\\dfrac{\\pi}{3}$, tentukan $\\mathbf{u} \\cdot \\mathbf{v}$.\nPilihan: A. 108\nB. 216\nC. ≈215,7\nD. 0\nTranskripsi visual: -",
+      "untruncatedTokenCount": 132,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.207,
+      "latencyMs": 0.15,
       "prediction": {
         "questionId": "197954ccd24f5bbacd84ed75",
         "contentVersion": 2,
-        "contentHash": "520c74b607a8ef06f84027e2b46aa29b0428aa3c920ebbea87262c5d5410d61f",
+        "contentHash": "dbad90d70b25444dc926a5edcc495aeef7367c1a3bd71561d6048ef816ccb8b6",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3013,6 +3065,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3024,7 +3077,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "efb8303f745b6c001504ac4c8160ab87b14c8b522009d72d44c77c13e4d1a841",
+          "inputHash": "5a51f63ad2de19fab303c468bca34378f8310b6a910573a04efbf812d2acf437",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3035,16 +3088,16 @@
       "questionId": "3bc06d4dc345f67abded7388",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:3bc06d4dc345f67abded7388:content-v2",
       "questionVersionId": "3bc06d4dc345f67abded7388:content-v2:blind-revalidation",
-      "contentHash": "b5b07d410d34c8538b5bb7473c124b58c973bf8086ccc86377393d460c32efdd",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pembuktian Geometris\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada gambar segitiga _ABC_ di samping, titik _K_ adalah titik tengah dari _AB_ dan titik _L_ adalah titik tengah dari _AC_.\n\nNyatakan $\\overrightarrow{KL}$ dalam $\\overrightarrow{KA}$ dan $\\overrightarrow{LA}$.\nPilihan: A. $\\overrightarrow{KL} = \\overrightarrow{KA} - \\overrightarrow{LA}$\nB. $\\overrightarrow{KL} = \\overrightarrow{LA} - \\overrightarrow{KA}$\nC. $\\overrightarrow{KL} = 2(\\overrightarrow{KA} - \\overrightarrow{LA})$\nD. $\\overrightarrow{KL} = \\overrightarrow{KA} + \\overrightarrow{LA}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 227,
+      "contentHash": "98f7de567b74ec8bb14e1691f004dff133a40158c960ad31fe0490044bccba4f",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pembuktian Geometris\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada gambar segitiga _ABC_ di samping, titik _K_ adalah titik tengah dari _AB_ dan titik _L_ adalah titik tengah dari _AC_.\n\nNyatakan $\\overrightarrow{KL}$ dalam $\\overrightarrow{KA}$ dan $\\overrightarrow{LA}$.\nPilihan: A. $\\overrightarrow{KL} = \\overrightarrow{KA} - \\overrightarrow{LA}$\nB. $\\overrightarrow{KL} = \\overrightarrow{LA} - \\overrightarrow{KA}$\nC. $\\overrightarrow{KL} = 2(\\overrightarrow{KA} - \\overrightarrow{LA})$\nD. $\\overrightarrow{KL} = \\overrightarrow{KA} + \\overrightarrow{LA}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 234,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.236,
+      "latencyMs": 0.168,
       "prediction": {
         "questionId": "3bc06d4dc345f67abded7388",
         "contentVersion": 2,
-        "contentHash": "b5b07d410d34c8538b5bb7473c124b58c973bf8086ccc86377393d460c32efdd",
+        "contentHash": "98f7de567b74ec8bb14e1691f004dff133a40158c960ad31fe0490044bccba4f",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3077,6 +3130,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3088,7 +3142,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "aaf8f8c985e4f8ed269455ded1a83412ace2b5b5bfc2811fc700443b726b2976",
+          "inputHash": "9c87579e99e347b27817bff0505de385b307a45f145b43f7e714d80b235857ab",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3100,11 +3154,11 @@
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:a4aba8ef06446b64179d23cf:content-v2",
       "questionVersionId": "a4aba8ef06446b64179d23cf:content-v2:blind-revalidation",
       "contentHash": "5a3b8f6d9f3bc3ac35460d6222a22a8f2b3191ed3882056d1352aec83aa195a8",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pembuktian Geometris\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada gambar segitiga _ABC_ di samping, titik _K_ adalah titik tengah dari _AB_ dan titik _L_ adalah titik tengah dari _AC_.\n\nNyatakan $\\overrightarrow{BC}$ dalam $\\overrightarrow{KA}$ dan $\\overrightarrow{LA}$.\nPilihan: A. $\\overrightarrow{BC} = 2(\\overrightarrow{KA} - \\overrightarrow{LA})$\nB. $\\overrightarrow{BC} = 2(\\overrightarrow{KA} + \\overrightarrow{LA})$\nC. $\\overrightarrow{BC} = 2(\\overrightarrow{LA} - \\overrightarrow{KA})$\nD. $\\overrightarrow{BC} = \\overrightarrow{KA} - \\overrightarrow{LA}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 233,
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Pembuktian Geometris\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada gambar segitiga _ABC_ di samping, titik _K_ adalah titik tengah dari _AB_ dan titik _L_ adalah titik tengah dari _AC_.\n\nNyatakan $\\overrightarrow{BC}$ dalam $\\overrightarrow{KA}$ dan $\\overrightarrow{LA}$.\nPilihan: A. $\\overrightarrow{BC} = 2(\\overrightarrow{KA} - \\overrightarrow{LA})$\nB. $\\overrightarrow{BC} = 2(\\overrightarrow{KA} + \\overrightarrow{LA})$\nC. $\\overrightarrow{BC} = 2(\\overrightarrow{LA} - \\overrightarrow{KA})$\nD. $\\overrightarrow{BC} = \\overrightarrow{KA} - \\overrightarrow{LA}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 240,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.342,
+      "latencyMs": 0.143,
       "prediction": {
         "questionId": "a4aba8ef06446b64179d23cf",
         "contentVersion": 2,
@@ -3141,6 +3195,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3152,7 +3207,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "20b1a24eee17b1829bad50bbfea9d51f0da7629dfe4ded6575280a23777af7f3",
+          "inputHash": "5d57f1f55b4b7de81fa85aac36842aa96cec851526d70bfe8d21c6b2c220ce6c",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3163,16 +3218,16 @@
       "questionId": "78652b4108bd747c96b2f4a8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:78652b4108bd747c96b2f4a8:content-v2",
       "questionVersionId": "78652b4108bd747c96b2f4a8:content-v2:blind-revalidation",
-      "contentHash": "04e26f7f06514e4931aea0716a87c8f99e238c85806c19f1ce4179cc0a4a0de1",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kesebangunan pada Segitiga\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada $\\triangle ABC$, $AD$ membagi $\\angle A$ menjadi dua bagian yang sama besar. $AD$ disebut garis bagi. Titik $D$ terletak pada sisi $BC$. Petunjuk: Gambarkan garis yang sejajar dengan $AD$ dan melalui titik $C$. Garis ini berpotongan dengan perpanjangan $AB$ di titik $E$.\n\nBeri alasan bahwa $\\triangle ACE$ sama kaki. Tuliskan sisi-sisi yang sama panjang.\nPilihan: A. AC = CE, karena ∠CAE = ∠AEC\nB. AC = AE, karena ∠ACE = ∠AEC\nC. AB = AC, karena AD garis bagi\nD. AE = CE, karena ∠ACE = ∠CAE\nTranskripsi visual: Gambar menunjukkan segitiga ABC dengan titik D pada sisi BC. Garis AD membagi sudut A menjadi dua bagian yang sama besar (ditandai dengan busur hijau). Titik A, B, C, D terlihat jelas.",
-      "untruncatedTokenCount": 214,
+      "contentHash": "fa47fd05b73a4cc4cb29dfe7ef4a4737366f3cc54e1740eb4cc62e55c9a41c04",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kesebangunan pada Segitiga\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada $\\triangle ABC$, $AD$ membagi $\\angle A$ menjadi dua bagian yang sama besar. $AD$ disebut garis bagi. Titik $D$ terletak pada sisi $BC$. Petunjuk: Gambarkan garis yang sejajar dengan $AD$ dan melalui titik $C$. Garis ini berpotongan dengan perpanjangan $AB$ di titik $E$.\n\nBeri alasan bahwa $\\triangle ACE$ sama kaki. Tuliskan sisi-sisi yang sama panjang.\nPilihan: A. AC = CE, karena ∠CAE = ∠AEC\nB. AC = AE, karena ∠ACE = ∠AEC\nC. AB = AC, karena AD garis bagi\nD. AE = CE, karena ∠ACE = ∠CAE\nTranskripsi visual: Segitiga ABC dengan titik D pada sisi BC. Garis AD membagi sudut A menjadi dua bagian sama besar (ditandai dengan busur hijau). Titik A, B, C, D terlihat jelas.",
+      "untruncatedTokenCount": 218,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.366,
+      "latencyMs": 0.122,
       "prediction": {
         "questionId": "78652b4108bd747c96b2f4a8",
         "contentVersion": 2,
-        "contentHash": "04e26f7f06514e4931aea0716a87c8f99e238c85806c19f1ce4179cc0a4a0de1",
+        "contentHash": "fa47fd05b73a4cc4cb29dfe7ef4a4737366f3cc54e1740eb4cc62e55c9a41c04",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3205,6 +3260,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3216,7 +3272,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "2f59ba8e5bbc27ed30c5ccc85a69b781b61925bc0814a456430cecbd004b63da",
+          "inputHash": "9fa207c608a3abbc4a27bfbc857ae79dbddee4b9f60860d7a7ce61be170106fc",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3227,16 +3283,16 @@
       "questionId": "907f9e4697523a633ea0ac02",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:907f9e4697523a633ea0ac02:content-v2",
       "questionVersionId": "907f9e4697523a633ea0ac02:content-v2:blind-revalidation",
-      "contentHash": "6be483d86a1fd94d4fe43f6ed665fa9ca02bbe883e3aba19ee1324328c9c4610",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Dilatasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu segitiga ABC siku-siku di titik B memiliki panjang AB=8 cm, BC=15 cm, dan AC=17 cm. Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah…\nPilihan: A. 180 cm²\nB. 60 cm²\nC. 540 cm²\nD. 1.620 cm²\nTranskripsi visual: -",
-      "untruncatedTokenCount": 111,
+      "contentHash": "bbda9688d887ebbcb18cf6e1a2d9615e960354733ac72b3e8cc4bb5b539566f1",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Dilatasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu segitiga ABC siku-siku di titik B memiliki panjang AB=8 cm, BC=15 cm, dan AC=17 cm. Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah…\nPilihan: A. 180 cm²\nB. 60 cm²\nC. 540 cm²\nD. 1.620 cm²\nTranskripsi visual: -",
+      "untruncatedTokenCount": 118,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.628,
+      "latencyMs": 0.089,
       "prediction": {
         "questionId": "907f9e4697523a633ea0ac02",
         "contentVersion": 2,
-        "contentHash": "6be483d86a1fd94d4fe43f6ed665fa9ca02bbe883e3aba19ee1324328c9c4610",
+        "contentHash": "bbda9688d887ebbcb18cf6e1a2d9615e960354733ac72b3e8cc4bb5b539566f1",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3269,6 +3325,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3280,7 +3337,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "5113ac5ffb06ac32204194ede3be1f5d042a349555bfe614d7a295f2721d5edd",
+          "inputHash": "1c9e25be069b4226e70028b8683e2297f919e3a0bc18fb62853c20490c0a24cb",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3291,16 +3348,16 @@
       "questionId": "11862b32db722263e3195403",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:11862b32db722263e3195403:content-v2",
       "questionVersionId": "11862b32db722263e3195403:content-v2:blind-revalidation",
-      "contentHash": "306c3e36b81bcf3c3a2d436e125796bb0bfccb465f1936fcd5ea98edf3249315",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Transformasi pada Bidang Kartesius\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peta dari transformasi geometri berikut.\n\nGaris $3x - 2y + 5 = 0$ yang ditransformasi oleh rotasi 180° terhadap titik asal (0, 0).\nPilihan: A. 3x – 2y – 5 = 0\nB. –3x + 2y + 5 = 0\nC. 3x – 2y + 5 = 0\nD. –3x – 2y + 5 = 0\nTranskripsi visual: -",
-      "untruncatedTokenCount": 120,
+      "contentHash": "d4ec34774896f366eef68bd4621c78cac07be6717e91c346cbb1996e72e377c4",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Transformasi pada Bidang Kartesius\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peta dari transformasi geometri berikut.\n\nGaris $3x - 2y + 5 = 0$ yang ditransformasi oleh rotasi 180° terhadap titik asal (0, 0).\nPilihan: A. 3x – 2y – 5 = 0\nB. –3x + 2y + 5 = 0\nC. 3x – 2y + 5 = 0\nD. –3x – 2y + 5 = 0\nTranskripsi visual: -",
+      "untruncatedTokenCount": 127,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.302,
+      "latencyMs": 0.087,
       "prediction": {
         "questionId": "11862b32db722263e3195403",
         "contentVersion": 2,
-        "contentHash": "306c3e36b81bcf3c3a2d436e125796bb0bfccb465f1936fcd5ea98edf3249315",
+        "contentHash": "d4ec34774896f366eef68bd4621c78cac07be6717e91c346cbb1996e72e377c4",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3333,6 +3390,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3344,7 +3402,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "00fe628deb2d0eeea46ab6e5a9c7bcf2689f8c0b28a4c741f901151d6457cf7b",
+          "inputHash": "3b7192e5464d546218dc982e9475931d26b1563660072a2e257951e1d5ee441c",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3355,16 +3413,16 @@
       "questionId": "60c388fd31d10f59a7ac5fe0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:60c388fd31d10f59a7ac5fe0:content-v2",
       "questionVersionId": "60c388fd31d10f59a7ac5fe0:content-v2:blind-revalidation",
-      "contentHash": "d96037d8062e10e381cf016cb3d745fe40c98bbe65ccb3925973036753e22afe",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Transformasi pada Bidang Kartesius\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peta dari transformasi geometri berikut.\n\nSegitiga ABC dengan A(1, 2), B(3, –1), dan C(–2, –3) yang ditranslasikan oleh vektor $\\begin{pmatrix} -5 \\\\ 3 \\end{pmatrix}$.\nPilihan: A. A'(4, –3), B'(6, –6), C'(1, –8)\nB. A'(6, –1), B'(8, –4), C'(3, –6)\nC. A'(–4, 2), B'(–2, –1), C'(–7, –3)\nD. A'(–4, 5), B'(–2, 2), C'(–7, 0)\nTranskripsi visual: -",
-      "untruncatedTokenCount": 216,
+      "contentHash": "8b60243a4a8d7bcbde52c64bdd16f90e08472d5902227c27dda2b6998d83ccd8",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Transformasi pada Bidang Kartesius\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peta dari transformasi geometri berikut.\n\nSegitiga ABC dengan A(1, 2), B(3, –1), dan C(–2, –3) yang ditranslasikan oleh vektor $\\begin{pmatrix} -5 \\\\ 3 \\end{pmatrix}$.\nPilihan: A. A'(4, –3), B'(6, –6), C'(1, –8)\nB. A'(6, –1), B'(8, –4), C'(3, –6)\nC. A'(–4, 2), B'(–2, –1), C'(–7, –3)\nD. A'(–4, 5), B'(–2, 2), C'(–7, 0)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 223,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.411,
+      "latencyMs": 0.084,
       "prediction": {
         "questionId": "60c388fd31d10f59a7ac5fe0",
         "contentVersion": 2,
-        "contentHash": "d96037d8062e10e381cf016cb3d745fe40c98bbe65ccb3925973036753e22afe",
+        "contentHash": "8b60243a4a8d7bcbde52c64bdd16f90e08472d5902227c27dda2b6998d83ccd8",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3397,6 +3455,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3408,7 +3467,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "b7b579a9e80fe990927adcd8f0daa93f95b03765283fcc6bbf76ea0531576737",
+          "inputHash": "e00d6c0231425ea735f7628b7d64b9bc3c5d72a9ee78e6b0e9878817be6c1cff",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3419,16 +3478,16 @@
       "questionId": "59ae6ca462ec00892f967ec5",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:59ae6ca462ec00892f967ec5:content-v2",
       "questionVersionId": "59ae6ca462ec00892f967ec5:content-v2:blind-revalidation",
-      "contentHash": "72cf89b3c1866fc7d0e7095ae2900be09f482725b61470c5f7066e7cf39ae343",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kaitan Matriks dengan Transformasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peta dari beberapa operasi transformasi berikut.\n\nGaris $x - 2y + 3 = 0$ yang ditransformasikan oleh $\\begin{bmatrix} 3 & 0 \\\\ 0 & 3 \\end{bmatrix}$.\nPilihan: A. 3x – 2y + 3 = 0\nB. x – 2y + 1 = 0\nC. x – 2y + 9 = 0\nD. x – 2y + 27 = 0\nTranskripsi visual: -",
-      "untruncatedTokenCount": 127,
+      "contentHash": "6896db3ce05e5cc4322e7c29bfda2025594ae423b34a9cb80fa81a580fcaeabc",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kaitan Matriks dengan Transformasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peta dari beberapa operasi transformasi berikut.\n\nGaris $x - 2y + 3 = 0$ yang ditransformasikan oleh $\\begin{bmatrix} 3 & 0 \\\\ 0 & 3 \\end{bmatrix}$.\nPilihan: A. 3x – 2y + 3 = 0\nB. x – 2y + 1 = 0\nC. x – 2y + 9 = 0\nD. x – 2y + 27 = 0\nTranskripsi visual: -",
+      "untruncatedTokenCount": 134,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.237,
+      "latencyMs": 0.098,
       "prediction": {
         "questionId": "59ae6ca462ec00892f967ec5",
         "contentVersion": 2,
-        "contentHash": "72cf89b3c1866fc7d0e7095ae2900be09f482725b61470c5f7066e7cf39ae343",
+        "contentHash": "6896db3ce05e5cc4322e7c29bfda2025594ae423b34a9cb80fa81a580fcaeabc",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3461,6 +3520,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3472,7 +3532,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "c6e209977186c1809a5d866e9527ef9165d53b649bdf35bb01e9955a1dc8d072",
+          "inputHash": "01f4593664aabfd9b0e4ffebc6ae515743220d16ae6cda2c013ca8a509367036",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3483,16 +3543,16 @@
       "questionId": "9dc821c78e2e886c3a7f6c15",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:9dc821c78e2e886c3a7f6c15:content-v2",
       "questionVersionId": "9dc821c78e2e886c3a7f6c15:content-v2:blind-revalidation",
-      "contentHash": "d1c425636aa609da7255f8484ea19eb4fbda2cf1dbf6f8a848b02abae3ceb45a",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kaitan Matriks dengan Transformasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peta dari beberapa operasi transformasi berikut.\n\nTitik (3, 7) yang ditransformasikan dengan matriks $\\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$.\nPilihan: A. (–3, –7)\nB. (–7, 3)\nC. (7, –3)\nD. (7, 3)\nTranskripsi visual: -",
-      "untruncatedTokenCount": 115,
+      "contentHash": "23ba68f692162bf6a8c1f61f78490ecbdf74eb7502e70449350205c6a7e64ce7",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Kaitan Matriks dengan Transformasi\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peta dari beberapa operasi transformasi berikut.\n\nTitik (3, 7) yang ditransformasikan dengan matriks $\\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$.\nPilihan: A. (–3, –7)\nB. (–7, 3)\nC. (7, –3)\nD. (7, 3)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 122,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.249,
+      "latencyMs": 0.072,
       "prediction": {
         "questionId": "9dc821c78e2e886c3a7f6c15",
         "contentVersion": 2,
-        "contentHash": "d1c425636aa609da7255f8484ea19eb4fbda2cf1dbf6f8a848b02abae3ceb45a",
+        "contentHash": "23ba68f692162bf6a8c1f61f78490ecbdf74eb7502e70449350205c6a7e64ce7",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3525,6 +3585,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3536,7 +3597,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "4dc14ba49c263c50dd0b3e403bf68c729a74db00ea03586db3891c38ff581a1b",
+          "inputHash": "9cdc8318877c717c3bd0f8d8f83853671a1707deb508d27d52f947e610da750c",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3547,16 +3608,16 @@
       "questionId": "74a75b2e70f71b85b00e52be",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:74a75b2e70f71b85b00e52be:content-v2",
       "questionVersionId": "74a75b2e70f71b85b00e52be:content-v2:blind-revalidation",
-      "contentHash": "709b387307a36104cf9559d3b7295eccfcd94c1c2d3e8197307b66edb8dd9820",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Komposisi Transformasi dengan Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Carilah matriks yang berkaitan dengan pencerminan terhadap sumbu-y dilanjutkan dengan rotasi 180° terhadap titik pusat.\nPilihan: A. $\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$\nB. $\\begin{bmatrix} -1 & 0 \\\\ 0 & 1 \\end{bmatrix}$\nC. $\\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$\nD. $\\begin{bmatrix} -1 & 0 \\\\ 0 & -1 \\end{bmatrix}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 166,
+      "contentHash": "7bb467cf37dc4eccfaff73c43d676c05174168cf680c823ad6fcfa60719dc4b4",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Komposisi Transformasi dengan Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Carilah matriks yang berkaitan dengan pencerminan terhadap sumbu-y dilanjutkan dengan rotasi 180° terhadap titik pusat.\nPilihan: A. $\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$\nB. $\\begin{bmatrix} -1 & 0 \\\\ 0 & 1 \\end{bmatrix}$\nC. $\\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$\nD. $\\begin{bmatrix} -1 & 0 \\\\ 0 & -1 \\end{bmatrix}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 173,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.351,
+      "latencyMs": 0.076,
       "prediction": {
         "questionId": "74a75b2e70f71b85b00e52be",
         "contentVersion": 2,
-        "contentHash": "709b387307a36104cf9559d3b7295eccfcd94c1c2d3e8197307b66edb8dd9820",
+        "contentHash": "7bb467cf37dc4eccfaff73c43d676c05174168cf680c823ad6fcfa60719dc4b4",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3589,6 +3650,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3600,7 +3662,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "b6a30f6482620f587cc16ae82ed237503863d4f805fe51d900338c061335fe0f",
+          "inputHash": "2899938b0723ff17bbc56a1df4d900ff3a08f9da154f76b3bf5ea6bdf4514039",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3611,16 +3673,16 @@
       "questionId": "30b59bdcb957a0b0e60092e7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:30b59bdcb957a0b0e60092e7:content-v2",
       "questionVersionId": "30b59bdcb957a0b0e60092e7:content-v2:blind-revalidation",
-      "contentHash": "01fc8fac6fb0e28dc9ba2b9bb462b823fae3aad8b1cbb9c4a7065c15c2ddcf78",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Komposisi Transformasi dengan Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Misalkan $T_1$ menyatakan operasi pencerminan terhadap sumbu-$x$ dan $T_2$ menyatakan operasi pencerminan terhadap sumbu-$y$. a. Transformasi tunggal apakah yang ekuivalen dengan $T_2$ ◦ $T_1$?\n\nApa peta dari P(a, b) dari transformasi tersebut?\nPilihan: A. P'(–a, b)\nB. P'(–a, –b)\nC. P'(a, –b)\nD. P'(b, a)\nTranskripsi visual: -",
-      "untruncatedTokenCount": 148,
+      "contentHash": "9afe415044c9b4d7430f53a6f12e0903ba968debdaf42c10617dc4bab334255c",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Komposisi Transformasi dengan Matriks\nTipe soal: multiple_choice\nStimulus: -\nSoal: Misalkan $T_1$ menyatakan operasi pencerminan terhadap sumbu-$x$ dan $T_2$ menyatakan operasi pencerminan terhadap sumbu-$y$. a. Transformasi tunggal apakah yang ekuivalen dengan $T_2$ ◦ $T_1$?\n\nApa peta dari P(a, b) dari transformasi tersebut?\nPilihan: A. P'(–a, b)\nB. P'(–a, –b)\nC. P'(a, –b)\nD. P'(b, a)\nTranskripsi visual: -",
+      "untruncatedTokenCount": 155,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.387,
+      "latencyMs": 0.08,
       "prediction": {
         "questionId": "30b59bdcb957a0b0e60092e7",
         "contentVersion": 2,
-        "contentHash": "01fc8fac6fb0e28dc9ba2b9bb462b823fae3aad8b1cbb9c4a7065c15c2ddcf78",
+        "contentHash": "9afe415044c9b4d7430f53a6f12e0903ba968debdaf42c10617dc4bab334255c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3653,6 +3715,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3664,7 +3727,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "5eed05a9a0ac0d7a1a74b03d2b952e75eb4b1c8315ec0b0ca5b936825c0b9723",
+          "inputHash": "7b783fdb225328dc8d8a36b5b0012c8b02b750d6013d034b8fa75eb6c074bdd5",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3675,16 +3738,16 @@
       "questionId": "d1ea45dd56b16f419ac0af6a",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:d1ea45dd56b16f419ac0af6a:content-v2",
       "questionVersionId": "d1ea45dd56b16f419ac0af6a:content-v2:blind-revalidation",
-      "contentHash": "f3555349c05bfdf63395cd886b09681f6370cc0f0f369425fd90940ae60a48f8",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Logaritma\nTipe soal: multiple_choice\nStimulus: -\nSoal: Karena pengaruh gravitasi, molekul udara lebih banyak berada di permukaan bumi daripada di tempat tinggi. Akibatnya, tekanan udara akan terus berkurang seiring makin tingginya suatu tempat. Hubungan antara tekanan udara P (dalam kPa) dan ketinggian h (dalam km) dapat dimodelkan sebagai berikut.\n$\\ln\\left(\\frac{P}{100}\\right) = -\\frac{h}{7}$\n\nPuncak Jayawijaya memiliki ketinggian 4.884 m di atas permukaan laut. Dengan rumus tersebut, prediksilah tekanan udara di daerah tersebut.\nPilihan: A. sekitar 69,77 kPa\nB. sekitar 49,77 kPa\nC. sekitar 30,23 kPa\nD. sekitar 200,91 kPa\nTranskripsi visual: -",
-      "untruncatedTokenCount": 182,
+      "contentHash": "5b2e3fd11787d03855b79f0dc1dfb9ed8fb51d5eda9afb5c9d77ba4462b88548",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Logaritma\nTipe soal: multiple_choice\nStimulus: -\nSoal: Karena pengaruh gravitasi, molekul udara lebih banyak berada di permukaan bumi daripada di tempat tinggi. Akibatnya, tekanan udara akan terus berkurang seiring makin tingginya suatu tempat. Hubungan antara tekanan udara P (dalam kPa) dan ketinggian h (dalam km) dapat dimodelkan sebagai berikut.\n$\\ln\\left(\\frac{P}{100}\\right) = -\\frac{h}{7}$\n\nPuncak Jayawijaya memiliki ketinggian 4.884 m di atas permukaan laut. Dengan rumus tersebut, prediksilah tekanan udara di daerah tersebut.\nPilihan: A. sekitar 69,77 kPa\nB. sekitar 49,77 kPa\nC. sekitar 30,23 kPa\nD. sekitar 200,91 kPa\nTranskripsi visual: -",
+      "untruncatedTokenCount": 189,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.282,
+      "latencyMs": 0.082,
       "prediction": {
         "questionId": "d1ea45dd56b16f419ac0af6a",
         "contentVersion": 2,
-        "contentHash": "f3555349c05bfdf63395cd886b09681f6370cc0f0f369425fd90940ae60a48f8",
+        "contentHash": "5b2e3fd11787d03855b79f0dc1dfb9ed8fb51d5eda9afb5c9d77ba4462b88548",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3717,6 +3780,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3728,7 +3792,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "c07207565c8ae6a44c6bc41b0f7b3cc685ac5741b5c23e60423dc04ff2eccc8f",
+          "inputHash": "49928328606accdf3ba607786bf778becbb8915639a1a9c81782f5d7f8f076ac",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3740,11 +3804,11 @@
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:1ac6cf9273745ff232bf8bdb:content-v2",
       "questionVersionId": "1ac6cf9273745ff232bf8bdb:content-v2:blind-revalidation",
       "contentHash": "7066d35c4ecfae2457c269c3aa70f5fdbf22f318db8e4cd4a73aaae86484c690",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Logaritma\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika segelas jus jeruk mempunyai ion hidrogen $10^{-3,15}$, tentukan nilai pH jus jeruk tersebut.\nPilihan: A. -3,15\nB. 0,315\nC. 3,85\nD. 3,15\nTranskripsi visual: -",
-      "untruncatedTokenCount": 84,
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Logaritma\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika segelas jus jeruk mempunyai ion hidrogen $10^{-3,15}$, tentukan nilai pH jus jeruk tersebut.\nPilihan: A. -3,15\nB. 0,315\nC. 3,85\nD. 3,15\nTranskripsi visual: -",
+      "untruncatedTokenCount": 91,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.197,
+      "latencyMs": 0.06,
       "prediction": {
         "questionId": "1ac6cf9273745ff232bf8bdb",
         "contentVersion": 2,
@@ -3781,6 +3845,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3792,7 +3857,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "17130f196b255beed8b15a81ec7b8fc2aeb7b87ab7c8748b337f768a9f09778a",
+          "inputHash": "0b21407b625ae1e95bd982f67eedfb88ad34835210ecb9fdba03eb6d1f542d56",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3803,16 +3868,16 @@
       "questionId": "d374329991b887f56b8800b7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:d374329991b887f56b8800b7:content-v2",
       "questionVersionId": "d374329991b887f56b8800b7:content-v2:blind-revalidation",
-      "contentHash": "91fe5a4293e98b57e1f459ac45a4b89de6126158b7b8d142666683821e0f11ea",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Aljabar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan asimtot miring dari fungsi $p(x) = \\frac{x^5 + x^4 + x^2 + 1}{x^4 + 3}$.\nPilihan: A. $y = x + 3$\nB. $y = 1$\nC. $y = x$\nD. $y = x + 1$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 108,
+      "contentHash": "4950b142d7ec8d7e22031e96dfa6b7a9a4a96ad891677c2efaf76abfbed8b054",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Aljabar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan asimtot miring dari fungsi $p(x) = \\frac{x^5 + x^4 + x^2 + 1}{x^4 + 3}$.\nPilihan: A. $y = x + 3$\nB. $y = 1$\nC. $y = x$\nD. $y = x + 1$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 115,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.263,
+      "latencyMs": 0.067,
       "prediction": {
         "questionId": "d374329991b887f56b8800b7",
         "contentVersion": 2,
-        "contentHash": "91fe5a4293e98b57e1f459ac45a4b89de6126158b7b8d142666683821e0f11ea",
+        "contentHash": "4950b142d7ec8d7e22031e96dfa6b7a9a4a96ad891677c2efaf76abfbed8b054",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3845,6 +3910,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3856,7 +3922,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "0a7912e066159bac38a6be6b70f004bdca9b4b164b74c0bd83f5c4c3bd946feb",
+          "inputHash": "d65ed58756a30b201f9ff9e59e97b75dd2014ef3b021675162ebff1192679baa",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3867,16 +3933,16 @@
       "questionId": "471338f922e3d9a1e408d5a7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:471338f922e3d9a1e408d5a7:content-v2",
       "questionVersionId": "471338f922e3d9a1e408d5a7:content-v2:blind-revalidation",
-      "contentHash": "0b0249bab0e9e25edb06bc904e6070e0b1da43b70c918775ce63cba3f80fb3b1",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Aljabar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah perusahaan kue bronis membutuhkan biaya bulanan Rp7.000.000,00 dan biaya produksi Rp40.000,00 per loyang kue. Misalkan rumus fungsi biaya adalah $B(x)$ = biaya tetap + $cx$, dengan $c$ adalah biaya produksi setiap kue dan $x$ adalah banyaknya produksi kue bronis (tiap loyang).\n\nTentukan model matematika dari fungsi biaya untuk memproduksi $x$ loyang kue bronis.\nPilihan: A. $B(x) = 40.000 + 7.000.000x$\nB. $B(x) = 7.040.000x$\nC. $B(x) = 7.000.000 + 40.000x$\nD. $B(x) = \\frac{7.000.000 + 40.000x}{x}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 205,
+      "contentHash": "5ecc8aa2bcde84009ad7510b3cf4b154e2ada169cc26f66d50d8e221923abf41",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Aljabar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah perusahaan kue bronis membutuhkan biaya bulanan Rp7.000.000,00 dan biaya produksi Rp40.000,00 per loyang kue. Misalkan rumus fungsi biaya adalah $B(x)$ = biaya tetap + $cx$, dengan $c$ adalah biaya produksi setiap kue dan $x$ adalah banyaknya produksi kue bronis (tiap loyang).\n\nTentukan model matematika dari fungsi biaya untuk memproduksi $x$ loyang kue bronis.\nPilihan: A. $B(x) = 40.000 + 7.000.000x$\nB. $B(x) = 7.040.000x$\nC. $B(x) = 7.000.000 + 40.000x$\nD. $B(x) = \\frac{7.000.000 + 40.000x}{x}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 212,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.169,
+      "latencyMs": 0.075,
       "prediction": {
         "questionId": "471338f922e3d9a1e408d5a7",
         "contentVersion": 2,
-        "contentHash": "0b0249bab0e9e25edb06bc904e6070e0b1da43b70c918775ce63cba3f80fb3b1",
+        "contentHash": "5ecc8aa2bcde84009ad7510b3cf4b154e2ada169cc26f66d50d8e221923abf41",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3909,6 +3975,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3920,7 +3987,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "742acedb66fe5c9306986d1887ad9e0f63047566479df1448b5307bef38a8c36",
+          "inputHash": "eb291ac643a155c882e27c487d302f62f6060eb0b0a86402dd197cd150dc4381",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3931,16 +3998,16 @@
       "questionId": "208be0f9546df9e4d53632eb",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:208be0f9546df9e4d53632eb:content-v2",
       "questionVersionId": "208be0f9546df9e4d53632eb:content-v2:blind-revalidation",
-      "contentHash": "264357d4b6c46949cbbaf2d8eccd0b9a743722dcec09459127403781ddcbed0a",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Non-aljabar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah koloni bakteri bermula dengan 500 bakteri. Bakteri jenis ini mampu membelah diri menjadi dua setiap setengah jam sekali.\n\nBerapa banyak bakteri setelah 40 menit?\nPilihan: A. sekitar 1.260\nB. sekitar 794\nC. 1.000\nD. 2.000\nTranskripsi visual: -",
-      "untruncatedTokenCount": 87,
+      "contentHash": "7c0fc7ed9ab935683391d37a26fce16859d781480dde7549377aff38fab85a71",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Non-aljabar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah koloni bakteri bermula dengan 500 bakteri. Bakteri jenis ini mampu membelah diri menjadi dua setiap setengah jam sekali.\n\nBerapa banyak bakteri setelah 40 menit?\nPilihan: A. sekitar 1.260\nB. sekitar 794\nC. 1.000\nD. 2.000\nTranskripsi visual: -",
+      "untruncatedTokenCount": 94,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.317,
+      "latencyMs": 0.073,
       "prediction": {
         "questionId": "208be0f9546df9e4d53632eb",
         "contentVersion": 2,
-        "contentHash": "264357d4b6c46949cbbaf2d8eccd0b9a743722dcec09459127403781ddcbed0a",
+        "contentHash": "7c0fc7ed9ab935683391d37a26fce16859d781480dde7549377aff38fab85a71",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3973,6 +4040,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3984,7 +4052,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "65cd0595136ef78c10a61e394beb37f7b17e7c869789c551445f42e8f15ef25d",
+          "inputHash": "bd1e66b96684bd188ec8b29e68255b1e1bf0244002b0677db3c7f4af93912942",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3995,16 +4063,16 @@
       "questionId": "0e8b25c240073e177fc6a787",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:0e8b25c240073e177fc6a787:content-v2",
       "questionVersionId": "0e8b25c240073e177fc6a787:content-v2:blind-revalidation",
-      "contentHash": "980fdf23391ce2b3a674daabaadad0e7d937f5b1ce358e146f7706d74bbd3eec",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Non-aljabar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah koloni bakteri bermula dengan 500 bakteri. Bakteri jenis ini mampu membelah diri menjadi dua setiap setengah jam sekali.\n\nBerapa banyak bakteri setelah $t$ jam?\nPilihan: A. $500 \\times 2^{2t}$\nB. $500 \\times 2t$\nC. $500 \\times 2^{t/2}$\nD. $500 \\times 2^{t}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 116,
+      "contentHash": "43628be9d1b5570099a89dfff68b81819ff83b2d6e0accb16a71353ee28ebea2",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Fungsi Non-aljabar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah koloni bakteri bermula dengan 500 bakteri. Bakteri jenis ini mampu membelah diri menjadi dua setiap setengah jam sekali.\n\nBerapa banyak bakteri setelah $t$ jam?\nPilihan: A. $500 \\times 2^{2t}$\nB. $500 \\times 2t$\nC. $500 \\times 2^{t/2}$\nD. $500 \\times 2^{t}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 123,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.261,
+      "latencyMs": 0.069,
       "prediction": {
         "questionId": "0e8b25c240073e177fc6a787",
         "contentVersion": 2,
-        "contentHash": "980fdf23391ce2b3a674daabaadad0e7d937f5b1ce358e146f7706d74bbd3eec",
+        "contentHash": "43628be9d1b5570099a89dfff68b81819ff83b2d6e0accb16a71353ee28ebea2",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -4037,6 +4105,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -4048,7 +4117,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "52363ae4e3b4c27602fa4d5cfb708a2b1629b908d50a47aa2cb6585bb8274633",
+          "inputHash": "7b607f4db10362a5a1d28ba78cab4c44c23440e18c845be1d7600eb617eaa79f",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -4059,16 +4128,16 @@
       "questionId": "842ca4bb6c6ebd4208641b61",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:842ca4bb6c6ebd4208641b61:content-v2",
       "questionVersionId": "842ca4bb6c6ebd4208641b61:content-v2:blind-revalidation",
-      "contentHash": "16fa2dc1f3df6aec3e5cf64dd8aeb63fb93012c1a69d3583cf33552131454d63",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Bentuk Akar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sederhanakan bentuk akar berikut ini.\n\n$(5\\sqrt{x^5})(3\\sqrt[3]{x})$\nPilihan: A. $15x^{\\frac{6}{17}}$\nB. $15x^{\\frac{17}{6}}$\nC. $8x^{\\frac{17}{6}}$\nD. $15x^{\\frac{13}{6}}$\nTranskripsi visual: -",
-      "untruncatedTokenCount": 140,
+      "contentHash": "cfe6313bef0b50b121a49b4647c9aba93a5832b11f75ddb541dc6fc510926e84",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Bentuk Akar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sederhanakan bentuk akar berikut ini.\n\n$(5\\sqrt{x^5})(3\\sqrt[3]{x})$\nPilihan: A. $15x^{\\frac{6}{17}}$\nB. $15x^{\\frac{17}{6}}$\nC. $8x^{\\frac{17}{6}}$\nD. $15x^{\\frac{13}{6}}$\nTranskripsi visual: -",
+      "untruncatedTokenCount": 147,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.346,
+      "latencyMs": 0.062,
       "prediction": {
         "questionId": "842ca4bb6c6ebd4208641b61",
         "contentVersion": 2,
-        "contentHash": "16fa2dc1f3df6aec3e5cf64dd8aeb63fb93012c1a69d3583cf33552131454d63",
+        "contentHash": "cfe6313bef0b50b121a49b4647c9aba93a5832b11f75ddb541dc6fc510926e84",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -4101,6 +4170,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -4112,7 +4182,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "5353ba708da504091c64ca2ad4998b6b4334d4c56dd6168788063146465f7084",
+          "inputHash": "48f806a485f16027ace925dca7876b97fa310da44952cd720b1264c629339b00",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -4123,16 +4193,16 @@
       "questionId": "72d9df20cc708f4143b713d0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas11:72d9df20cc708f4143b713d0:content-v2",
       "questionVersionId": "72d9df20cc708f4143b713d0:content-v2:blind-revalidation",
-      "contentHash": "36dbe81fb81c6b1b53006f6bafb3b833187eba1380e0300346df35543e87332a",
-      "serializedInput": "Kelas: 11\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Korespondensi Satu-satu (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apabila diketahui banyak anggota dua himpunan seperti berikut ini, maka ada berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B? a. n(A) = n(B) = 12\n\nAda berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B jika n(A) = n(B) = 12?\nPilihan: A. 12 + 11 + 10 + ... + 2 + 1 = 78\nB. 12 x 12 = 144\nC. 12\nD. 12! = 479.001.600\nTranskripsi visual: -",
-      "untruncatedTokenCount": 153,
+      "contentHash": "e15b0d1dba648e061336ce94d5ea96ec6315ea685f8e1547e09aff80f787d76c",
+      "serializedInput": "Kelas: 11\nJalur mata pelajaran: Matematika Tingkat Lanjut\nTopik: Matematika Tingkat Lanjut SMA Kelas 11\nSubtopik: Korespondensi Satu-satu (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apabila diketahui banyak anggota dua himpunan seperti berikut ini, maka ada berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B? a. n(A) = n(B) = 12\n\nAda berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B jika n(A) = n(B) = 12?\nPilihan: A. 12 + 11 + 10 + ... + 2 + 1 = 78\nB. 12 x 12 = 144\nC. 12\nD. 12! = 479.001.600\nTranskripsi visual: -",
+      "untruncatedTokenCount": 160,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.375,
+      "latencyMs": 0.071,
       "prediction": {
         "questionId": "72d9df20cc708f4143b713d0",
         "contentVersion": 2,
-        "contentHash": "36dbe81fb81c6b1b53006f6bafb3b833187eba1380e0300346df35543e87332a",
+        "contentHash": "e15b0d1dba648e061336ce94d5ea96ec6315ea685f8e1547e09aff80f787d76c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -4165,6 +4235,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -4176,7 +4247,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "93094addd00da0a34b47a3b6745c07527eaeab1c1c0d417cf1d3bd79fed4b579",
+          "inputHash": "8dc395c7961b4f6e6e41a612f47d862861e26f18a28ae8e05586955ec435e517",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }

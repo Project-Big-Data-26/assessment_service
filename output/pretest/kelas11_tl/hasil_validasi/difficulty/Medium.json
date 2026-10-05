@@ -3,47 +3,113 @@
   "sourceClass": 11,
   "subjectTrack": "tl",
   "intendedDifficulty": "Medium",
-  "labelProvenance": "ai_silver",
-  "advisoryCount": 11,
-  "contentQualifiedCount": 11,
+  "researchOnly": true,
+  "advisoryCount": 8,
+  "contentQualifiedCount": 8,
   "items": [
     {
       "question": {
-        "questionId": "3be8bb0629a4ad9d30cfd1f6",
-        "questionVersionId": "3be8bb0629a4ad9d30cfd1f6:content-v2:blind-revalidation",
+        "questionId": "03611fdcdc9bcd66f72bdce7",
+        "questionVersionId": "03611fdcdc9bcd66f72bdce7:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "6f47d54ad45e86be11ddd9854277dd5e486ee0982f8f2461cbbcf9d3e088bfa3",
+        "contentHash": "499b80c65ba0b7a9e90cd540920d0295d7a703be9616a86ae5de83cb2c46ea7f",
         "grade": 11,
         "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
-        "subtopic": "Determinan Matriks dan Invers Matriks",
+        "subtopic": "Kesamaan Dua Matriks",
         "questionType": "multiple_choice",
-        "stem": "Tentukan $(AB^{-1})^{-1}$ jika diketahui $A^{-1} = \\begin{bmatrix} 1 & 4 \\\\ 2 & 3 \\end{bmatrix}$ dan $B = \\begin{bmatrix} 5 & 1 \\\\ 1 & 3 \\end{bmatrix}$.",
+        "stem": "$\\begin{bmatrix} a+2b & 2a+b \\\\ c+d & 2c+d \\end{bmatrix} = \\begin{bmatrix} 3 & -3 \\\\ 7 & 1 \\end{bmatrix}$\n\nHitunglah nilai a + b + c + d yang memenuhi kesamaan matriks berikut.",
         "stimulus": null,
         "options": [
           {
             "label": "A",
-            "text": "$\\begin{bmatrix} 7 & 7 \\\\ 23 & 13 \\end{bmatrix}$"
+            "text": "7"
           },
           {
             "label": "B",
-            "text": "$\\begin{bmatrix} 9 & 13 \\\\ 13 & 11 \\end{bmatrix}$"
+            "text": "13"
           },
           {
             "label": "C",
-            "text": "$\\begin{bmatrix} 7 & 23 \\\\ 7 & 13 \\end{bmatrix}$"
+            "text": "-7"
           },
           {
             "label": "D",
-            "text": "$\\begin{bmatrix} 13 & 9 \\\\ 11 & 13 \\end{bmatrix}$"
+            "text": "1"
           }
         ],
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Menggunakan sifat invers matriks (AB^-1)^-1 = (B^-1)^-1 A^-1 = B A^-1. Maka, [5 1; 1 3] [1 4; 2 3] = [5(1)+1(2) 5(4)+1(3); 1(1)+3(2) 1(4)+3(3)] = [7 23; 7 13].",
+        "verifiedMinimalSolution": "Dari kesamaan matriks: (1) a+2b=3 dan 2a+b=-3. Jumlahkan: 3a+3b=0 -> a+b=0. (2) c+d=7 dan 2c+d=1. Kurangkan: c=-6. Substitusi ke c+d=7: -6+d=7 -> d=13. Maka a+b+c+d = (a+b) + c + d = 0 + (-6) + 13 = 7.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
-          "mengidentifikasi"
+          "menghitung"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "7",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "03611fdcdc9bcd66f72bdce7",
+          "subchapter": "Kesamaan Dua Matriks",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl",
+          "optionExtractionNotes": {
+            "A": "Benar: Dari a+2b=3 dan 2a+b=-3 diperoleh a=-3, b=3; dari c+d=7 dan 2c+d=1 diperoleh c=-6, d=13; sehingga a+b+c+d=7.",
+            "B": "Salah: hanya menjawab nilai d saja, lupa menjumlahkan a, b, dan c",
+            "C": "Salah: salah tanda pada seluruh hasil akhir penjumlahan",
+            "D": "Salah: tertukar tanda saat mengeliminasi variabel c dan d"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "810355e25e67029b62ca669b",
+        "questionVersionId": "810355e25e67029b62ca669b:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "780f2a30eb577b61a22099a80d28760a294adf5d69dfcc8867fa102153ca9ffc",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Pembagian Polinomial",
+        "questionType": "multiple_choice",
+        "stem": "Misalkan $P(x) = 3x^6 - 11x^5 + x^3 + 20x^2 - 3$ dan $c = \\frac{2}{3}$. Gunakan metode Horner dan Teorema Sisa untuk menentukan nilai $P(c)$.",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$-282$"
+          },
+          {
+            "label": "B",
+            "text": "$-5$"
+          },
+          {
+            "label": "C",
+            "text": "$5$"
+          },
+          {
+            "label": "D",
+            "text": "$12$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Koefisien P(x) adalah 3, -11, 0, 1, 20, 0, -3. Menggunakan metode Horner dengan c = 2/3: 3 turun, 3*(2/3)=2, -11+2=-9, -9*(2/3)=-6, 0-6=-6, -6*(2/3)=-4, 1-4=-3, -3*(2/3)=-2, 20-2=18, 18*(2/3)=12, 0+12=12, 12*(2/3)=8, -3+8=5. Sisa akhir adalah 5.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "menerapkan"
         ],
         "privateAnswerSpecification": {
           "answerKey": "C",
@@ -52,14 +118,14 @@
           "visibility": "restricted"
         },
         "source": {
-          "externalId": "3be8bb0629a4ad9d30cfd1f6",
-          "subchapter": "Determinan Matriks dan Invers Matriks",
+          "externalId": "810355e25e67029b62ca669b",
+          "subchapter": "Pembagian Polinomial",
           "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl",
           "optionExtractionNotes": {
-            "A": "Salah: tertukar posisi baris dan kolom hasil kali (transpos jawaban benar)",
-            "B": "Salah: tertukar urutan perkalian, menghitung A^-1 B bukan B A^-1",
-            "C": "Benar: (AB^-1)^-1 = B A^-1 = [[5,1],[1,3]] x [[1,4],[2,3]] = [[7,23],[7,13]].",
-            "D": "Salah: tertukar urutan perkalian sekaligus tertukar baris dan kolom"
+            "A": "Salah: menggunakan $c=3$ (salah membaca pecahan $c=\\frac{2}{3}$ sebagai bilangan bulat 3)",
+            "B": "Salah: salah tanda pada langkah terakhir skema Horner",
+            "C": "Benar: skema Horner dengan koefisien $3,-11,0,1,20,0,-3$ dan $c=\\frac{2}{3}$ menghasilkan sisa akhir $5$, yang menurut Teorema Sisa sama dengan $P(2/3)$",
+            "D": "Salah: mengira nilai sebelum sisa terakhir (hasil kali paling akhir) sebagai jawaban, bukan sisa sesungguhnya"
           }
         }
       },
@@ -78,7 +144,7 @@
         "questionId": "a98624ce0ee70784807495e3",
         "questionVersionId": "a98624ce0ee70784807495e3:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "6f2f6859fe2d868aca840001b9b07b5687f412abbf845cafb097c4d66f1ef7fb",
+        "contentHash": "aa39752f33fca19b22255bb5b04b60800915ab5946dbead4ce426674dddfbcfe",
         "grade": 11,
         "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
         "subtopic": "Faktor dan Pembuat Nol Polinomial",
@@ -106,7 +172,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Uji akar: P(2) = 5(8) - 28(4) + 45(2) - 18 = 40 - 112 + 90 - 18 = 0. P(3) = 5(27) - 28(9) + 45(3) - 18 = 135 - 252 + 135 - 18 = 0. Membagi P(x) dengan (x-2)(x-3) = x^2 - 5x + 6 menghasilkan 5x - 3. Maka P(x) = (x-2)(x-3)(5x-3).",
+        "verifiedMinimalSolution": "Uji akar rasional: P(2) = 5(8) - 28(4) + 45(2) - 18 = 0. Maka (x-2) adalah faktor. Bagi P(x) dengan (x-2) menghasilkan 5x^2 - 18x + 9. Faktorkan 5x^2 - 18x + 9 = (5x-3)(x-3). Jadi, P(x) = (x-2)(x-3)(5x-3).",
         "verificationProvenance": "ai_silver",
         "detectedKko": [],
         "privateAnswerSpecification": {
@@ -139,74 +205,10 @@
     },
     {
       "question": {
-        "questionId": "0d276f4b985246c2f7160055",
-        "questionVersionId": "0d276f4b985246c2f7160055:content-v2:blind-revalidation",
-        "contentVersion": 2,
-        "contentHash": "1078d54fc683a12e60edab3f452932ccaaedd267c4ff64013d7ee0aa8d310ee6",
-        "grade": 11,
-        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
-        "subtopic": "Identitas Trigonometri",
-        "questionType": "multiple_choice",
-        "stem": "Menemukan Kesalahan. Abel menyelidiki apakah $\\sin t = \\sin(-t)$ merupakan identitas. Dia melakukan langkah-langkah berikut ini. $\\sin t = \\sin(-t)$ (persamaan yang diberikan); $(\\sin t)^2 = [\\sin(-t)]^2$ (kuadratkan kedua ruas); $\\sin^2 t = (-\\sin t)^2$ (sederhanakan, karena sin(-t) = -sin t); $\\sin^2 t = \\sin^2 t$ (sederhanakan). Pada langkah terakhir, Abel mendapatkan bentuk di ruas kiri sama dengan bentuk di ruas kanan. Dengan demikian, dia menyimpulkan bahwa sin t = sin (–t) merupakan identitas.\n\nApa yang dilakukan Abel tersebut tidak tepat. Temukan kesalahannya!",
-        "stimulus": null,
-        "options": [
-          {
-            "label": "A",
-            "text": "Kesalahan Abel terletak saat menyederhanakan sin²t = (–sin t)² menjadi sin²t = sin²t; seharusnya hasil penyederhanaan itu adalah –sin²t."
-          },
-          {
-            "label": "B",
-            "text": "Abel salah menuliskan sin(–t) sebagai –sin t di langkah ketiga; seharusnya sin(–t) = sin t berlaku untuk semua nilai t yang diberikan."
-          },
-          {
-            "label": "C",
-            "text": "Abel sebenarnya tidak melakukan kesalahan apa pun, karena sin t = sin(–t) memang merupakan identitas yang berlaku untuk semua nilai t."
-          },
-          {
-            "label": "D",
-            "text": "Abel keliru mengasumsikan sin t = sin(–t) sudah benar sejak awal (padahal itu yang ingin dibuktikan), dan mengkuadratkan kedua ruas tidak selalu menghasilkan persamaan yang ekuivalen."
-          }
-        ],
-        "visualAssets": [],
-        "visualAssetHashes": {},
-        "visualTranscript": null,
-        "verifiedMinimalSolution": "Abel mengasumsikan pernyataan yang ingin dibuktikan sebagai premis. Selain itu, operasi penguadratan kedua ruas (x=y menjadi x^2=y^2) tidak ekuivalen karena dapat mengubah pernyataan salah menjadi benar (misal: 1 = -1 menjadi 1 = 1). Kesalahan logika ini membuat pembuktiannya tidak valid.",
-        "verificationProvenance": "ai_silver",
-        "detectedKko": [],
-        "privateAnswerSpecification": {
-          "answerKey": "D",
-          "verifiedAnswerKey": "D",
-          "answerKeyStatus": "verified",
-          "visibility": "restricted"
-        },
-        "source": {
-          "externalId": "0d276f4b985246c2f7160055",
-          "subchapter": "Identitas Trigonometri",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl",
-          "optionExtractionNotes": {
-            "A": "Salah: keliru mengira (–sin t)² = –sin²t, padahal kuadrat bilangan negatif selalu positif",
-            "B": "Salah: menyangkal sifat fungsi ganjil sinus yang sebenarnya benar (sin(–t) = –sin t)",
-            "C": "Salah: tidak menyadari bahwa mengkuadratkan kedua ruas bisa menghasilkan pernyataan yang tidak ekuivalen dengan pernyataan awal",
-            "D": "Benar: sesuai kunci Guru: Abel tidak seharusnya mengasumsikan pernyataan yang belum terbukti, dan mengkuadratkan kedua ruas bisa menghasilkan persamaan yang tidak ekuivalen (bisa membuat pernyataan salah tampak benar)"
-          }
-        }
-      },
-      "advisoryLabels": {
-        "mathCognitiveDomain": "reasoning",
-        "knowledgeDimension": "conceptual",
-        "intendedDifficulty": "Medium"
-      },
-      "finalRouting": "silver_ready",
-      "contentQualified": true,
-      "reviewMode": "automated_ai",
-      "labelProvenance": "ai_silver"
-    },
-    {
-      "question": {
         "questionId": "a6cd9d3eef6dcf642995a65e",
         "questionVersionId": "a6cd9d3eef6dcf642995a65e:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "9ab7b5d3baf8be475b625807102bc45af3caba3b22af1e5a7da57daab460b77e",
+        "contentHash": "6c6d75434bb7f02a352a579ae266ea9477375a6ecc74ccc622bd74500eec0dc1",
         "grade": 11,
         "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
         "subtopic": "Hasil Kali Titik",
@@ -234,7 +236,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Usaha (W) adalah hasil kali titik antara gaya (F) dan perpindahan (d). W = |F||d|cos(θ). Arah utara dan timur laut membentuk sudut θ = 45°. Maka, W = 500 N * 100 m * cos(45°) = 50.000 * (1/2 √2) = 25.000√2 J.",
+        "verifiedMinimalSolution": "Usaha (W) adalah hasil kali titik antara vektor gaya (F) dan vektor perpindahan (d), yaitu W = |F||d|cos(θ). Arah utara dan timur laut membentuk sudut θ = 45°. Maka, W = 500 N * 100 m * cos(45°) = 50.000 * (1/2 √2) = 25.000√2 J.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "menghitung"
@@ -259,7 +261,7 @@
       },
       "advisoryLabels": {
         "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "procedural",
+        "knowledgeDimension": "conceptual",
         "intendedDifficulty": "Medium"
       },
       "finalRouting": "silver_ready",
@@ -269,38 +271,38 @@
     },
     {
       "question": {
-        "questionId": "3bc06d4dc345f67abded7388",
-        "questionVersionId": "3bc06d4dc345f67abded7388:content-v2:blind-revalidation",
+        "questionId": "a4aba8ef06446b64179d23cf",
+        "questionVersionId": "a4aba8ef06446b64179d23cf:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "b5b07d410d34c8538b5bb7473c124b58c973bf8086ccc86377393d460c32efdd",
+        "contentHash": "5a3b8f6d9f3bc3ac35460d6222a22a8f2b3191ed3882056d1352aec83aa195a8",
         "grade": 11,
         "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
         "subtopic": "Pembuktian Geometris",
         "questionType": "multiple_choice",
-        "stem": "Pada gambar segitiga _ABC_ di samping, titik _K_ adalah titik tengah dari _AB_ dan titik _L_ adalah titik tengah dari _AC_.\n\nNyatakan $\\overrightarrow{KL}$ dalam $\\overrightarrow{KA}$ dan $\\overrightarrow{LA}$.",
+        "stem": "Pada gambar segitiga _ABC_ di samping, titik _K_ adalah titik tengah dari _AB_ dan titik _L_ adalah titik tengah dari _AC_.\n\nNyatakan $\\overrightarrow{BC}$ dalam $\\overrightarrow{KA}$ dan $\\overrightarrow{LA}$.",
         "stimulus": null,
         "options": [
           {
             "label": "A",
-            "text": "$\\overrightarrow{KL} = \\overrightarrow{KA} - \\overrightarrow{LA}$"
+            "text": "$\\overrightarrow{BC} = 2(\\overrightarrow{KA} - \\overrightarrow{LA})$"
           },
           {
             "label": "B",
-            "text": "$\\overrightarrow{KL} = \\overrightarrow{LA} - \\overrightarrow{KA}$"
+            "text": "$\\overrightarrow{BC} = 2(\\overrightarrow{KA} + \\overrightarrow{LA})$"
           },
           {
             "label": "C",
-            "text": "$\\overrightarrow{KL} = 2(\\overrightarrow{KA} - \\overrightarrow{LA})$"
+            "text": "$\\overrightarrow{BC} = 2(\\overrightarrow{LA} - \\overrightarrow{KA})$"
           },
           {
             "label": "D",
-            "text": "$\\overrightarrow{KL} = \\overrightarrow{KA} + \\overrightarrow{LA}$"
+            "text": "$\\overrightarrow{BC} = \\overrightarrow{KA} - \\overrightarrow{LA}$"
           }
         ],
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Berdasarkan aturan penjumlahan vektor, KL = AL - AK. Karena KA = -AK dan LA = -AL, maka KL = (-LA) - (-KA) = KA - LA.",
+        "verifiedMinimalSolution": "Diketahui K titik tengah AB, maka AB = 2AK = -2KA. L titik tengah AC, maka AC = 2AL = -2LA. Vektor BC = AC - AB = (-2LA) - (-2KA) = 2KA - 2LA = 2(KA - LA).",
         "verificationProvenance": "ai_silver",
         "detectedKko": [],
         "privateAnswerSpecification": {
@@ -310,14 +312,14 @@
           "visibility": "restricted"
         },
         "source": {
-          "externalId": "3bc06d4dc345f67abded7388",
+          "externalId": "a4aba8ef06446b64179d23cf",
           "subchapter": "Pembuktian Geometris",
           "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl",
           "optionExtractionNotes": {
-            "A": "Benar: dengan posisi A,B,C sebagai vektor, KA=A-K dan LA=A-L, sehingga KA-LA = (A-K)-(A-L) = L-K = KL",
-            "B": "Salah: tertukar urutan pengurangan sehingga arah vektor hasil terbalik",
-            "C": "Salah: tertukar dengan rumus BC yang bernilai dua kali KL",
-            "D": "Salah: keliru mengganti arah vektor LA menjadi AL sehingga tandanya terbalik (kesalahan yang sama tertulis di Buku Guru)"
+            "A": "Benar: BC = C - B; dengan B = A-2KA dan C = A-2LA (dari definisi KA, LA sebagai setengah AB dan AC), BC = 2KA-2LA = 2(KA-LA)",
+            "B": "Salah: sama seperti kunci Buku Guru yang keliru mengganti LA menjadi AL",
+            "C": "Salah: tertukar urutan pengurangan sehingga arah terbalik",
+            "D": "Salah: lupa mengalikan dengan 2, tertukar dengan rumus KL"
           }
         }
       },
@@ -336,7 +338,7 @@
         "questionId": "78652b4108bd747c96b2f4a8",
         "questionVersionId": "78652b4108bd747c96b2f4a8:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "04e26f7f06514e4931aea0716a87c8f99e238c85806c19f1ce4179cc0a4a0de1",
+        "contentHash": "fa47fd05b73a4cc4cb29dfe7ef4a4737366f3cc54e1740eb4cc62e55c9a41c04",
         "grade": 11,
         "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
         "subtopic": "Kesebangunan pada Segitiga",
@@ -367,8 +369,8 @@
         "visualAssetHashes": {
           "images/kelas7_crop-p0205-garis-bagi.png": "147e6f1cc48aeb1b1737b06c4e234a5636094cc94cabfdb91b8ecf90cf2b95cc"
         },
-        "visualTranscript": "Gambar menunjukkan segitiga ABC dengan titik D pada sisi BC. Garis AD membagi sudut A menjadi dua bagian yang sama besar (ditandai dengan busur hijau). Titik A, B, C, D terlihat jelas.",
-        "verifiedMinimalSolution": "Misalkan AD sejajar CE. Sudut BAD = sudut AEC (sehadap). Sudut DAC = sudut ACE (berseberangan dalam). Karena AD garis bagi, sudut BAD = sudut DAC. Maka sudut AEC = sudut ACE. Segitiga ACE sama kaki dengan AC = AE.",
+        "visualTranscript": "Segitiga ABC dengan titik D pada sisi BC. Garis AD membagi sudut A menjadi dua bagian sama besar (ditandai dengan busur hijau). Titik A, B, C, D terlihat jelas.",
+        "verifiedMinimalSolution": "Karena CE sejajar AD, maka sudut AEC = sudut BAD (sehadap) dan sudut ACE = sudut DAC (berseberangan dalam). Karena AD adalah garis bagi, maka sudut BAD = sudut DAC. Akibatnya, sudut AEC = sudut ACE. Karena dua sudut pada segitiga ACE sama besar, maka segitiga ACE sama kaki dengan AC = AE.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "menyebutkan",
@@ -404,38 +406,38 @@
     },
     {
       "question": {
-        "questionId": "907f9e4697523a633ea0ac02",
-        "questionVersionId": "907f9e4697523a633ea0ac02:content-v2:blind-revalidation",
+        "questionId": "74a75b2e70f71b85b00e52be",
+        "questionVersionId": "74a75b2e70f71b85b00e52be:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "6be483d86a1fd94d4fe43f6ed665fa9ca02bbe883e3aba19ee1324328c9c4610",
+        "contentHash": "7bb467cf37dc4eccfaff73c43d676c05174168cf680c823ad6fcfa60719dc4b4",
         "grade": 11,
         "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
-        "subtopic": "Dilatasi",
+        "subtopic": "Komposisi Transformasi dengan Matriks",
         "questionType": "multiple_choice",
-        "stem": "Suatu segitiga ABC siku-siku di titik B memiliki panjang AB=8 cm, BC=15 cm, dan AC=17 cm. Jika ΔA'B'C' merupakan hasil dilatasi dari ΔABC dengan faktor skala 3, maka luas ΔA'B'C' adalah…",
+        "stem": "Carilah matriks yang berkaitan dengan pencerminan terhadap sumbu-y dilanjutkan dengan rotasi 180° terhadap titik pusat.",
         "stimulus": null,
         "options": [
           {
             "label": "A",
-            "text": "180 cm²"
+            "text": "$\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$"
           },
           {
             "label": "B",
-            "text": "60 cm²"
+            "text": "$\\begin{bmatrix} -1 & 0 \\\\ 0 & 1 \\end{bmatrix}$"
           },
           {
             "label": "C",
-            "text": "540 cm²"
+            "text": "$\\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$"
           },
           {
             "label": "D",
-            "text": "1.620 cm²"
+            "text": "$\\begin{bmatrix} -1 & 0 \\\\ 0 & -1 \\end{bmatrix}$"
           }
         ],
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Luas ΔABC = 0.5 * 8 * 15 = 60 cm². Dilatasi dengan faktor skala k=3 mengubah luas dengan faktor k² = 3² = 9. Luas ΔA'B'C' = 9 * 60 = 540 cm².",
+        "verifiedMinimalSolution": "Matriks pencerminan terhadap sumbu-y adalah M1 = [[-1, 0], [0, 1]]. Matriks rotasi 180 derajat terhadap pusat (0,0) adalah M2 = [[-1, 0], [0, -1]]. Komposisi transformasi (M2 * M1) = [[-1, 0], [0, -1]] * [[-1, 0], [0, 1]] = [[1, 0], [0, -1]].",
         "verificationProvenance": "ai_silver",
         "detectedKko": [],
         "privateAnswerSpecification": {
@@ -445,145 +447,14 @@
           "visibility": "restricted"
         },
         "source": {
-          "externalId": "907f9e4697523a633ea0ac02",
-          "subchapter": "Dilatasi",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl",
-          "optionExtractionNotes": {
-            "A": "Salah: mengalikan luas awal dengan faktor skala k=3, bukan k²=9",
-            "B": "Salah: lupa mengalikan dengan faktor skala sama sekali, menjawab luas segitiga ABC awal",
-            "C": "Benar: luas ABC = 1/2 x 8 x 15 = 60 cm²; dilatasi faktor 3 membuat luas menjadi 3² x 60 = 9 x 60 = 540 cm²",
-            "D": "Salah: mengalikan luas awal dengan k³=27, seperti skala volume bukan luas"
-          }
-        }
-      },
-      "advisoryLabels": {
-        "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "conceptual",
-        "intendedDifficulty": "Medium"
-      },
-      "finalRouting": "silver_ready",
-      "contentQualified": true,
-      "reviewMode": "automated_ai",
-      "labelProvenance": "ai_silver"
-    },
-    {
-      "question": {
-        "questionId": "30b59bdcb957a0b0e60092e7",
-        "questionVersionId": "30b59bdcb957a0b0e60092e7:content-v2:blind-revalidation",
-        "contentVersion": 2,
-        "contentHash": "01fc8fac6fb0e28dc9ba2b9bb462b823fae3aad8b1cbb9c4a7065c15c2ddcf78",
-        "grade": 11,
-        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
-        "subtopic": "Komposisi Transformasi dengan Matriks",
-        "questionType": "multiple_choice",
-        "stem": "Misalkan $T_1$ menyatakan operasi pencerminan terhadap sumbu-$x$ dan $T_2$ menyatakan operasi pencerminan terhadap sumbu-$y$. a. Transformasi tunggal apakah yang ekuivalen dengan $T_2$ ◦ $T_1$?\n\nApa peta dari P(a, b) dari transformasi tersebut?",
-        "stimulus": null,
-        "options": [
-          {
-            "label": "A",
-            "text": "P'(–a, b)"
-          },
-          {
-            "label": "B",
-            "text": "P'(–a, –b)"
-          },
-          {
-            "label": "C",
-            "text": "P'(a, –b)"
-          },
-          {
-            "label": "D",
-            "text": "P'(b, a)"
-          }
-        ],
-        "visualAssets": [],
-        "visualAssetHashes": {},
-        "visualTranscript": null,
-        "verifiedMinimalSolution": "T1(a,b) = (a,-b). T2(a,-b) = (-a,-b). Komposisi T2 o T1 memetakan (a,b) ke (-a,-b), yang ekuivalen dengan rotasi 180 derajat terhadap titik asal (0,0).",
-        "verificationProvenance": "ai_silver",
-        "detectedKko": [],
-        "privateAnswerSpecification": {
-          "answerKey": "B",
-          "verifiedAnswerKey": "B",
-          "answerKeyStatus": "verified",
-          "visibility": "restricted"
-        },
-        "source": {
-          "externalId": "30b59bdcb957a0b0e60092e7",
+          "externalId": "74a75b2e70f71b85b00e52be",
           "subchapter": "Komposisi Transformasi dengan Matriks",
           "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl",
           "optionExtractionNotes": {
-            "A": "Salah: hanya menerapkan T2 (pencerminan sumbu-y)",
-            "B": "Benar: T1: (a,b)->(a,–b); T2: (a,–b)->(–a,–b)",
-            "C": "Salah: hanya menerapkan T1 (pencerminan sumbu-x)",
-            "D": "Salah: mengira hasilnya pencerminan terhadap garis y = x"
-          }
-        }
-      },
-      "advisoryLabels": {
-        "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "procedural",
-        "intendedDifficulty": "Medium"
-      },
-      "finalRouting": "silver_ready",
-      "contentQualified": true,
-      "reviewMode": "automated_ai",
-      "labelProvenance": "ai_silver"
-    },
-    {
-      "question": {
-        "questionId": "d1ea45dd56b16f419ac0af6a",
-        "questionVersionId": "d1ea45dd56b16f419ac0af6a:content-v2:blind-revalidation",
-        "contentVersion": 2,
-        "contentHash": "f3555349c05bfdf63395cd886b09681f6370cc0f0f369425fd90940ae60a48f8",
-        "grade": 11,
-        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
-        "subtopic": "Fungsi Logaritma",
-        "questionType": "multiple_choice",
-        "stem": "Karena pengaruh gravitasi, molekul udara lebih banyak berada di permukaan bumi daripada di tempat tinggi. Akibatnya, tekanan udara akan terus berkurang seiring makin tingginya suatu tempat. Hubungan antara tekanan udara P (dalam kPa) dan ketinggian h (dalam km) dapat dimodelkan sebagai berikut.\n$\\ln\\left(\\frac{P}{100}\\right) = -\\frac{h}{7}$\n\nPuncak Jayawijaya memiliki ketinggian 4.884 m di atas permukaan laut. Dengan rumus tersebut, prediksilah tekanan udara di daerah tersebut.",
-        "stimulus": null,
-        "options": [
-          {
-            "label": "A",
-            "text": "sekitar 69,77 kPa"
-          },
-          {
-            "label": "B",
-            "text": "sekitar 49,77 kPa"
-          },
-          {
-            "label": "C",
-            "text": "sekitar 30,23 kPa"
-          },
-          {
-            "label": "D",
-            "text": "sekitar 200,91 kPa"
-          }
-        ],
-        "visualAssets": [],
-        "visualAssetHashes": {},
-        "visualTranscript": null,
-        "verifiedMinimalSolution": "Konversi ketinggian: h = 4,884 km. Substitusi ke rumus: ln(P/100) = -4,884/7 = -0,6977. Menggunakan invers logaritma natural (eksponensial): P/100 = e^(-0,6977) ≈ 0,4977. Maka P = 100 * 0,4977 = 49,77 kPa.",
-        "verificationProvenance": "ai_silver",
-        "detectedKko": [
-          "membandingkan",
-          "menganalisis"
-        ],
-        "privateAnswerSpecification": {
-          "answerKey": "B",
-          "verifiedAnswerKey": "B",
-          "answerKeyStatus": "verified",
-          "visibility": "restricted"
-        },
-        "source": {
-          "externalId": "d1ea45dd56b16f419ac0af6a",
-          "subchapter": "Fungsi Logaritma",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl",
-          "optionExtractionNotes": {
-            "A": "Salah: menghitung 100 x 0,6977, mengabaikan fungsi eksponen",
-            "B": "Benar: h = 4,884 km sehingga P = 100 e^(-4,884/7) = 100 e^(-0,6977), sekitar 49,77 kPa",
-            "C": "Salah: menghitung 100 - 100(0,6977) secara linear",
-            "D": "Salah: salah tanda eksponen: P = 100 e^(+0,6977)"
+            "A": "Salah: mengira komposisi kedua transformasi menghasilkan identitas",
+            "B": "Salah: hanya matriks pencerminan sumbu-y, rotasi terlupa",
+            "C": "Benar: $\\begin{bmatrix} -1 & 0 \\\\ 0 & -1 \\end{bmatrix}\\begin{bmatrix} -1 & 0 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$",
+            "D": "Salah: hanya matriks rotasi 180°, pencerminan sumbu-y terlupa"
           }
         }
       },
@@ -602,7 +473,7 @@
         "questionId": "d374329991b887f56b8800b7",
         "questionVersionId": "d374329991b887f56b8800b7:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "91fe5a4293e98b57e1f459ac45a4b89de6126158b7b8d142666683821e0f11ea",
+        "contentHash": "4950b142d7ec8d7e22031e96dfa6b7a9a4a96ad891677c2efaf76abfbed8b054",
         "grade": 11,
         "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
         "subtopic": "Fungsi Aljabar",
@@ -630,7 +501,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Lakukan pembagian polinomial: (x^5 + x^4 + x^2 + 1) / (x^4 + 3). Hasil bagi (x^5 + x^4 + x^2 + 1) = x(x^4 + 3) + 1(x^4 + 3) + (x^2 - 3x - 2). Maka p(x) = x + 1 + (x^2 - 3x - 2)/(x^4 + 3). Saat x mendekati tak hingga, suku sisa mendekati 0, sehingga asimtot miringnya adalah y = x + 1.",
+        "verifiedMinimalSolution": "Lakukan pembagian polinomial (x^5 + x^4 + x^2 + 1) dibagi (x^4 + 3). Hasil bagi adalah (x + 1) dengan sisa (x^2 - 3x - 2). Karena derajat sisa (2) lebih kecil dari derajat penyebut (4), maka asimtot miringnya adalah y = x + 1.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "mengidentifikasi"
@@ -656,72 +527,6 @@
       "advisoryLabels": {
         "mathCognitiveDomain": "applying",
         "knowledgeDimension": "procedural",
-        "intendedDifficulty": "Medium"
-      },
-      "finalRouting": "silver_ready",
-      "contentQualified": true,
-      "reviewMode": "automated_ai",
-      "labelProvenance": "ai_silver"
-    },
-    {
-      "question": {
-        "questionId": "208be0f9546df9e4d53632eb",
-        "questionVersionId": "208be0f9546df9e4d53632eb:content-v2:blind-revalidation",
-        "contentVersion": 2,
-        "contentHash": "264357d4b6c46949cbbaf2d8eccd0b9a743722dcec09459127403781ddcbed0a",
-        "grade": 11,
-        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
-        "subtopic": "Fungsi Non-aljabar",
-        "questionType": "multiple_choice",
-        "stem": "Sebuah koloni bakteri bermula dengan 500 bakteri. Bakteri jenis ini mampu membelah diri menjadi dua setiap setengah jam sekali.\n\nBerapa banyak bakteri setelah 40 menit?",
-        "stimulus": null,
-        "options": [
-          {
-            "label": "A",
-            "text": "sekitar 1.260"
-          },
-          {
-            "label": "B",
-            "text": "sekitar 794"
-          },
-          {
-            "label": "C",
-            "text": "1.000"
-          },
-          {
-            "label": "D",
-            "text": "2.000"
-          }
-        ],
-        "visualAssets": [],
-        "visualAssetHashes": {},
-        "visualTranscript": null,
-        "verifiedMinimalSolution": "Model pertumbuhan eksponensial: N(t) = N0 * 2^(t/T). N0 = 500, T = 30 menit, t = 40 menit. N(40) = 500 * 2^(40/30) = 500 * 2^(4/3) = 500 * 2^(1.333) ≈ 500 * 2.5198 ≈ 1.259,9. Dibulatkan menjadi sekitar 1.260.",
-        "verificationProvenance": "ai_silver",
-        "detectedKko": [
-          "menghitung"
-        ],
-        "privateAnswerSpecification": {
-          "answerKey": "A",
-          "verifiedAnswerKey": "A",
-          "answerKeyStatus": "verified",
-          "visibility": "restricted"
-        },
-        "source": {
-          "externalId": "208be0f9546df9e4d53632eb",
-          "subchapter": "Fungsi Non-aljabar",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl",
-          "optionExtractionNotes": {
-            "A": "Benar: 40 menit = 2/3 jam sehingga 500 x 2^(4/3), sekitar 1.260",
-            "B": "Salah: memakai 500 x 2^(2/3), lupa dua pembelahan per jam",
-            "C": "Salah: hanya menghitung satu pembelahan penuh (30 menit)",
-            "D": "Salah: membulatkan ke dua pembelahan (60 menit)"
-          }
-        }
-      },
-      "advisoryLabels": {
-        "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "conceptual",
         "intendedDifficulty": "Medium"
       },
       "finalRouting": "silver_ready",

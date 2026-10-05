@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "grade-aware-pilot-audit-v1",
+  "generatedAt": "2026-10-03T13:20:04.803439+00:00",
+  "source": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl/soal_pretest_db.json",
+  "sourceSha256": "5101c0f64df05f1e7dcf43c85998aeaae892010e93fd368fe0a4eecf4a2b0cfa",
+  "checkpoint": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas11_tl/validasi_blind_20261003_v1/final_snapshot_v1/silver_labels.json",
+  "checkpointSha256": "e2267c1a8873559caf64e3f6ec8cadd4ce605bb2b683642d105a2840a4cc3521",
+  "checkpointLockedByAudit": true,
+  "grade": 11,
+  "subjectTrack": "tl",
+  "promptVersion": "gemini-silver-math-3x4x3-v9-blind-sma11-tl-key-verified",
+  "expectedPromptVersion": "gemini-silver-math-3x4x3-v9-blind-sma11-tl-key-verified",
+  "rubricVersion": "math-rubric-3x4x3-v7-sma11-tl-grade-aware",
+  "expectedRubricVersion": "math-rubric-3x4x3-v7-sma11-tl-grade-aware",
+  "rubricHash": "99c6a9542c753a1e9eda7c1f2ffa2523dd0e76f186046b20271790fd6a8b3f1d",
+  "expectedRubricHash": "99c6a9542c753a1e9eda7c1f2ffa2523dd0e76f186046b20271790fd6a8b3f1d",
+  "expectedItemCount": 55,
+  "itemCount": 55,
+  "missingQuestionIds": [],
+  "extraQuestionIds": [],
+  "inputHashFailures": [],
+  "threeSuccessfulRuns": 55,
+  "threeSuccessfulRunsShare": 1.0,
+  "insufficientOrAbstained": 1,
+  "insufficientOrAbstainedShare": 0.01818181818181818,
+  "labelDistributions": {
+    "mathCognitiveDomain": {
+      "knowing": 12,
+      "applying": 41,
+      "reasoning": 2
+    },
+    "knowledgeDimension": {
+      "conceptual": 20,
+      "procedural": 32,
+      "factual": 3
+    },
+    "intendedDifficulty": {
+      "Easy": 44,
+      "Medium": 11
+    }
+  },
+  "dominantDifficultyShare": 0.8,
+  "blindLeakageTokens": [],
+  "evidenceFailures": [
+    "5364425a70eacc615935825f:answer_key_not_verified",
+    "5364425a70eacc615935825f:answer_key_not_verified",
+    "5364425a70eacc615935825f:answer_key_not_verified",
+    "5364425a70eacc615935825f:adjudication_answer_key_not_verified"
+  ],
+  "boundaryAnalysisRequired": true,
+  "boundaryAnalysisReasons": [
+    "difficulty_Hard_absent"
+  ],
+  "boundaryAnalysisAccepted": false,
+  "boundaryAnalysisRationale": null,
+  "gates": {
+    "allExpectedItemsPresent": true,
+    "threeSuccessfulRunsAtLeast90Percent": true,
+    "insufficientOrAbstainedBelow10Percent": true,
+    "blindPromptLeakageAbsent": true,
+    "checkpointSourceAndInputsMatch": true,
+    "promptAndRubricVersionMatch": true,
+    "requiredEvidenceComplete": false,
+    "boundaryAnalysisClear": false
+  },
+  "readyForExpansion": false
+}

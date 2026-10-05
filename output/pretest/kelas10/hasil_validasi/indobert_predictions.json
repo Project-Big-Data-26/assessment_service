@@ -1,9 +1,9 @@
 {
   "schemaVersion": "indobert-blind-diagnostics-v1",
-  "createdAt": "2026-10-03T07:56:16.785423+00:00",
+  "createdAt": "2026-10-05T07:01:25.805321+00:00",
   "researchOnlyRun": true,
   "reviewRequired": true,
-  "blindDecisionLockedAt": "2026-10-03T07:56:02.083582+00:00",
+  "blindDecisionLockedAt": "2026-10-05T07:00:47.067366+00:00",
   "artifact": "D:/KULIAH/Big Data/extraction_model/models/indobert-3x4x3-v1",
   "model": {
     "artifactFormatVersion": "indobert-3x4x3-artifact-v1",
@@ -15,6 +15,7 @@
     "datasetHash": "8a41381aa7e3fdb4e21617b9091e6747d29e5bd3f01e3c992ce9895b823f35c1",
     "splitManifestHash": "681c8a0a6afea9d23b71e1f315543751ebb259645c01f10a4db3fd2d90b634df",
     "rubricVersion": "math-rubric-3x4x3-v1",
+    "rubricVersionsByGradeTrack": {},
     "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
     "inputSchemaVersion": "math-question-text-v1",
     "inputRepresentation": "metadata",
@@ -22,6 +23,18 @@
     "detachDifficultyConditioning": true,
     "difficultyHeadType": "multiclass",
     "gradeEmbeddingDimension": 0,
+    "gradeEmbeddingCount": 6,
+    "supportedGrades": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supportedSubjectTracks": [
+      "regular"
+    ],
     "routingPolicyVersion": "confidence-only-v1",
     "labels": {
       "mathCognitiveDomain": [
@@ -46,19 +59,22 @@
         "temperature": 0.05,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "knowledgeDimension": {
         "temperature": 0.20979985858964298,
         "confidenceThreshold": null,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       },
       "intendedDifficulty": {
         "temperature": 0.9533279648066687,
         "confidenceThreshold": 0.0,
         "entropyThreshold": null,
-        "perGrade": {}
+        "perGrade": {},
+        "perGradeTrack": {}
       }
     },
     "maxLength": 256,
@@ -667,16 +683,16 @@
       "questionId": "20c03a0ebabbdc13efb66801",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:20c03a0ebabbdc13efb66801:content-v2",
       "questionVersionId": "20c03a0ebabbdc13efb66801:content-v2:blind-revalidation",
-      "contentHash": "5b9f1549230e21d3757488e159798e9504c123dc01810ea0dfdea4a9dff4dc65",
+      "contentHash": "7e2c62b696cf98f80bedf4eced5269b2a4e1aad18541c2a9756e262409f43cbd",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Definisi Eksponen\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seseorang membagikan pesan berisi informasi yang salah (hoaks) kepada 2 orang temannya. Setelah membaca pesan ini, kedua orang tersebut mengikuti arahan dan membagikan pesan yang sama kepada 2 orang lainnya. Lengkapilah tabel di bawah ini yang akan memberimu gambaran penyebaran di setiap fase hingga fase ke-8.\n\n|Fase penyebaran|1|2|3|4|5|6|7|8|\n|---|---|---|---|---|---|---|---|---|\n|Banyak orang yang menerima hoaks|2|4|…|….|….|….|….|….|\n\nJika banyak fase adalah n, tentukan rumus sederhana untuk menghitung banyak orang yang menerima hoaks pada fase ke-n tersebut?\nPilihan: A. $2^{n-1}$\nB. $2n$\nC. $n^2$\nD. $2^n$\nTranskripsi visual: -",
       "untruncatedTokenCount": 232,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.679,
+      "latencyMs": 0.989,
       "prediction": {
         "questionId": "20c03a0ebabbdc13efb66801",
         "contentVersion": 2,
-        "contentHash": "5b9f1549230e21d3757488e159798e9504c123dc01810ea0dfdea4a9dff4dc65",
+        "contentHash": "7e2c62b696cf98f80bedf4eced5269b2a4e1aad18541c2a9756e262409f43cbd",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -709,6 +725,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -731,16 +748,16 @@
       "questionId": "1a4524c9fb9888217a46bdf7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:1a4524c9fb9888217a46bdf7:content-v2",
       "questionVersionId": "1a4524c9fb9888217a46bdf7:content-v2:blind-revalidation",
-      "contentHash": "fa4e42cb977cb70ed6814914e073000091788f89a62b1c619b9a0dd450874c70",
+      "contentHash": "fe74bd635f9cf445ce2cb5f9a07916bdff55c1deef4a551f4708028ae97cc903",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Definisi Eksponen\nTipe soal: multiple_choice\nStimulus: -\nSoal: Seseorang membagikan pesan berisi informasi yang salah (hoaks) kepada 2 orang temannya. Setelah membaca pesan ini, kedua orang tersebut mengikuti arahan dan membagikan pesan yang sama kepada 2 orang lainnya. Dengan asumsi setiap orang yang menerima pesan ini tidak mengetahui bahwa ini adalah hoaks, bayangkan betapa cepat hoaks ini akan tersebar. Lengkapilah tabel di bawah ini yang akan memberimu gambaran penyebaran di setiap fase hingga fase ke-8.\n\n|Fase penyebaran|1|2|3|4|5|6|7|8|\n|---|---|---|---|---|---|---|---|---|\n|Banyak orang yang menerima hoaks|2|4|…|….|….|….|….|….|\n\nDengan memanfaatkan pola bilangan tersebut, hitung jumlah orang yang menerima hoaks tersebut pada fase ke-6?\nPilihan: A. 128 orang\nB. 64 orang\nC. 12 orang\nD. 32 orang\nTranskripsi visual: -",
       "untruncatedTokenCount": 238,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.153,
+      "latencyMs": 0.14,
       "prediction": {
         "questionId": "1a4524c9fb9888217a46bdf7",
         "contentVersion": 2,
-        "contentHash": "fa4e42cb977cb70ed6814914e073000091788f89a62b1c619b9a0dd450874c70",
+        "contentHash": "fe74bd635f9cf445ce2cb5f9a07916bdff55c1deef4a551f4708028ae97cc903",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -773,6 +790,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -795,16 +813,16 @@
       "questionId": "d16acca83decc68e658d11d5",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:d16acca83decc68e658d11d5:content-v2",
       "questionVersionId": "d16acca83decc68e658d11d5:content-v2:blind-revalidation",
-      "contentHash": "96059018f5b36ed527668f478a8d3fb9127ccd133f31bea450d076a5b7067d45",
+      "contentHash": "ada381f85814e356c55d8bebce65e8319619b31a0c3c5b8c6545d81361e6f93a",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Sifat-Sifat Eksponen\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan nilai p sedemikian sehingga persamaan berikut ini tepat.\n\n$(3\\pi)^p = 27\\pi^3$\nPilihan: A. $p = 27$\nB. $p = 3$\nC. $p = 1$\nD. $p = 9$\nTranskripsi visual: -",
       "untruncatedTokenCount": 90,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.081,
+      "latencyMs": 0.077,
       "prediction": {
         "questionId": "d16acca83decc68e658d11d5",
         "contentVersion": 2,
-        "contentHash": "96059018f5b36ed527668f478a8d3fb9127ccd133f31bea450d076a5b7067d45",
+        "contentHash": "ada381f85814e356c55d8bebce65e8319619b31a0c3c5b8c6545d81361e6f93a",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -837,6 +855,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -864,7 +883,7 @@
       "untruncatedTokenCount": 88,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.13,
+      "latencyMs": 0.07,
       "prediction": {
         "questionId": "972c064ee62227036f9b40cd",
         "contentVersion": 2,
@@ -901,6 +920,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -923,16 +943,16 @@
       "questionId": "d84e49739900804aa0aa6417",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:d84e49739900804aa0aa6417:content-v2",
       "questionVersionId": "d84e49739900804aa0aa6417:content-v2:blind-revalidation",
-      "contentHash": "5da5e926e8df5a4456e1145f80d8c01c94706e8f14cfcdb28be5652bc4d92589",
+      "contentHash": "17eae62e40d4f4b2181a9b3dd1fa3a695bf958d48dc913d101d1e4db74c84b07",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Fungsi Eksponensial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pada tahun 2015 kasus positif HIV-AIDS berjumlah sekitar 36 juta jiwa. Jumlah ini meningkat rata-rata 2% setiap tahun dari tahun 2010 hingga 2015. Jika peningkatan kasus positif HIV di tahun-tahun berikutnya diprediksi bertambah secara eksponen pada peningkatan 2% setiap tahun, berapa banyak kasus yang terjadi pada tahun 2020?\nPilihan: A. ≈39.746.909 jiwa\nB. 38.203.488 jiwa\nC. 39.600.000 jiwa\nD. 40.541.832 jiwa\nTranskripsi visual: -",
       "untruncatedTokenCount": 134,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.134,
+      "latencyMs": 0.086,
       "prediction": {
         "questionId": "d84e49739900804aa0aa6417",
         "contentVersion": 2,
-        "contentHash": "5da5e926e8df5a4456e1145f80d8c01c94706e8f14cfcdb28be5652bc4d92589",
+        "contentHash": "17eae62e40d4f4b2181a9b3dd1fa3a695bf958d48dc913d101d1e4db74c84b07",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -965,6 +985,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -987,16 +1008,16 @@
       "questionId": "6bd03dd3f29670f8050110d7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:6bd03dd3f29670f8050110d7:content-v2",
       "questionVersionId": "6bd03dd3f29670f8050110d7:content-v2:blind-revalidation",
-      "contentHash": "c85c8e9354aaeaf878d798bdccc7b5395bd890052c15c64d0b6f162fa709aae7",
+      "contentHash": "fd8808828d0266e4fd41c09ad549d882b8c28212aaf1697f72fe66a1f49f6c8d",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Fungsi Eksponensial\nTipe soal: multiple_choice\nStimulus: -\nSoal: Massa suatu zat radioaktif adalah 0,3 kg pada pukul 10 pagi. Tingkat peluruhan zat radioaktif tersebut adalah 15 % setiap jam. Berapakah jumlah zat radioaktif tersebut 8 jam kemudian?\nPilihan: A. 0,21828 kg (218,28 gram)\nB. 0,2724 kg (272,4 gram)\nC. 0,255 kg (255 gram)\nD. ≈0,08172 kg (81,72 gram)\nTranskripsi visual: -",
       "untruncatedTokenCount": 121,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.172,
+      "latencyMs": 0.085,
       "prediction": {
         "questionId": "6bd03dd3f29670f8050110d7",
         "contentVersion": 2,
-        "contentHash": "c85c8e9354aaeaf878d798bdccc7b5395bd890052c15c64d0b6f162fa709aae7",
+        "contentHash": "fd8808828d0266e4fd41c09ad549d882b8c28212aaf1697f72fe66a1f49f6c8d",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1029,6 +1050,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1051,16 +1073,16 @@
       "questionId": "842ca4bb6c6ebd4208641b61",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:842ca4bb6c6ebd4208641b61:content-v2",
       "questionVersionId": "842ca4bb6c6ebd4208641b61:content-v2:blind-revalidation",
-      "contentHash": "c288a2c40c1296d6d66829d50d9622f6d882ca5540631440028d183c39dbbfb2",
+      "contentHash": "2bccf9cfa4fd67622636578a48f111a290d25f99af03a4bf0d0b577e61b93e7c",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Bentuk Akar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sederhanakan bentuk akar berikut ini.\n\n$(5\\sqrt{x^5})(3\\sqrt[3]{x})$\nPilihan: A. $8x^{\\frac{17}{6}}$\nB. $15x^{\\frac{17}{6}}$\nC. $15x^{\\frac{13}{6}}$\nD. $15x^{\\frac{6}{17}}$\nTranskripsi visual: -",
       "untruncatedTokenCount": 138,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.133,
+      "latencyMs": 0.067,
       "prediction": {
         "questionId": "842ca4bb6c6ebd4208641b61",
         "contentVersion": 2,
-        "contentHash": "c288a2c40c1296d6d66829d50d9622f6d882ca5540631440028d183c39dbbfb2",
+        "contentHash": "2bccf9cfa4fd67622636578a48f111a290d25f99af03a4bf0d0b577e61b93e7c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1093,6 +1115,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1115,16 +1138,16 @@
       "questionId": "7f717b29ae76a834f5c1363a",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:7f717b29ae76a834f5c1363a:content-v2",
       "questionVersionId": "7f717b29ae76a834f5c1363a:content-v2:blind-revalidation",
-      "contentHash": "b87ce145a8f1f332623ce3cedb8b9c089fbb02b8dd8734e36c3cc18a29aaec0a",
+      "contentHash": "fc1dbb27d73a1fc864ad499d4fed300f60b1eeadee275d2675440bee4343e7d8",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Bentuk Akar\nTipe soal: multiple_choice\nStimulus: -\nSoal: Rasionalkan bentuk berikut ini.\n\n$\\dfrac{2}{\\sqrt3+\\sqrt5}$\nPilihan: A. $-1$\nB. $\\sqrt5-\\sqrt3$\nC. $\\sqrt3-\\sqrt5$\nD. $2(\\sqrt3-\\sqrt5)$\nTranskripsi visual: -",
       "untruncatedTokenCount": 107,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.115,
+      "latencyMs": 0.061,
       "prediction": {
         "questionId": "7f717b29ae76a834f5c1363a",
         "contentVersion": 2,
-        "contentHash": "b87ce145a8f1f332623ce3cedb8b9c089fbb02b8dd8734e36c3cc18a29aaec0a",
+        "contentHash": "fc1dbb27d73a1fc864ad499d4fed300f60b1eeadee275d2675440bee4343e7d8",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1157,6 +1180,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1179,16 +1203,16 @@
       "questionId": "e97f2eaa7ee74e27d6bb517c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:e97f2eaa7ee74e27d6bb517c:content-v2",
       "questionVersionId": "e97f2eaa7ee74e27d6bb517c:content-v2:blind-revalidation",
-      "contentHash": "4cf449ed663d7de794416ee7c32821b0348110953aee87ba3539fa6ef38f6cbc",
+      "contentHash": "83a6d9e8c1b4008503bfe9e0253e570060139183e0c7cfa29bb8469b0a1de593",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Penulisan Bentuk Baku\nTipe soal: multiple_choice\nStimulus: -\nSoal: Buat bilangan berikut dalam bentuk baku. 34.000.000.000\nPilihan: A. 3,4 × 10<sup>10</sup>\nB. 3,4 × 10<sup>11</sup>\nC. 3,4 × 10<sup>-10</sup>\nD. 3,4 × 10<sup>9</sup>\nTranskripsi visual: -",
       "untruncatedTokenCount": 110,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.12,
+      "latencyMs": 0.281,
       "prediction": {
         "questionId": "e97f2eaa7ee74e27d6bb517c",
         "contentVersion": 2,
-        "contentHash": "4cf449ed663d7de794416ee7c32821b0348110953aee87ba3539fa6ef38f6cbc",
+        "contentHash": "83a6d9e8c1b4008503bfe9e0253e570060139183e0c7cfa29bb8469b0a1de593",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1221,6 +1245,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1248,7 +1273,7 @@
       "untruncatedTokenCount": 92,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.078,
+      "latencyMs": 0.086,
       "prediction": {
         "questionId": "1704f944a606f647f17a0cc0",
         "contentVersion": 2,
@@ -1285,6 +1310,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1307,16 +1333,16 @@
       "questionId": "b9a85ae0df70ee2053be254e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:b9a85ae0df70ee2053be254e:content-v2",
       "questionVersionId": "b9a85ae0df70ee2053be254e:content-v2:blind-revalidation",
-      "contentHash": "c65e9fe8bb06dd8f59b85aabf2e8be32a2823efb62db7603e43476016ff121ff",
+      "contentHash": "bc0c07ff0c75b93ac053643e3f35535a1375de8ddb3c85c7bd502706e95950bc",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Barisan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan suku ke-50 dari barisan berikut: 5, –2, –9, –16, …\nPilihan: A. -338\nB. 348\nC. -345\nD. -331\nTranskripsi visual: -",
       "untruncatedTokenCount": 71,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.073,
+      "latencyMs": 0.077,
       "prediction": {
         "questionId": "b9a85ae0df70ee2053be254e",
         "contentVersion": 2,
-        "contentHash": "c65e9fe8bb06dd8f59b85aabf2e8be32a2823efb62db7603e43476016ff121ff",
+        "contentHash": "bc0c07ff0c75b93ac053643e3f35535a1375de8ddb3c85c7bd502706e95950bc",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1349,6 +1375,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1371,16 +1398,16 @@
       "questionId": "c2fbd0a67c610e96b504751e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:c2fbd0a67c610e96b504751e:content-v2",
       "questionVersionId": "c2fbd0a67c610e96b504751e:content-v2:blind-revalidation",
-      "contentHash": "63cee9a089d2ca6dafe44512844a56b6af81c700b0720018d8e52a21ddf411d9",
+      "contentHash": "6b908624bf516ac21a8c47c3456852240ce59c7162783f89f744ed0a94ca88ea",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Deret\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukanlah jumlah bilangan kelipatan 4 di antara bilangan 10 dan 99.\nPilihan: A. 1.288\nB. 1.196\nC. 1.134\nD. 1.188\nTranskripsi visual: -",
       "untruncatedTokenCount": 67,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.085,
+      "latencyMs": 0.081,
       "prediction": {
         "questionId": "c2fbd0a67c610e96b504751e",
         "contentVersion": 2,
-        "contentHash": "63cee9a089d2ca6dafe44512844a56b6af81c700b0720018d8e52a21ddf411d9",
+        "contentHash": "6b908624bf516ac21a8c47c3456852240ce59c7162783f89f744ed0a94ca88ea",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1413,6 +1440,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1435,16 +1463,16 @@
       "questionId": "24793dda0631231d4688920b",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:24793dda0631231d4688920b:content-v2",
       "questionVersionId": "24793dda0631231d4688920b:content-v2:blind-revalidation",
-      "contentHash": "a604cc5713e90151ec1f483ab1f4325a4f4e9d49cb8ee932a8392870beee7463",
+      "contentHash": "5adf8be553e607c1749110448b1300b20c0be0150e00114bae38d8f921e5f3e8",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Deret\nTipe soal: multiple_choice\nStimulus: -\nSoal: Vina membagikan permen kepada tujuh temannya dengan cara tertentu. Teman pertama mendapat dua permen. Teman kedua mendapat lima permen. Teman ketiga mendapat delapan permen. Dia melanjutkan pola ini, setiap teman mendapat tiga permen lebih banyak daripada teman sebelumnya, sampai semua temannya mendapat permen. Berapa permen yang harus Vina siapkan?\nPilihan: A. 57\nB. 100\nC. 20\nD. 77\nTranskripsi visual: -",
       "untruncatedTokenCount": 102,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.133,
+      "latencyMs": 0.081,
       "prediction": {
         "questionId": "24793dda0631231d4688920b",
         "contentVersion": 2,
-        "contentHash": "a604cc5713e90151ec1f483ab1f4325a4f4e9d49cb8ee932a8392870beee7463",
+        "contentHash": "5adf8be553e607c1749110448b1300b20c0be0150e00114bae38d8f921e5f3e8",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1477,6 +1505,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1499,16 +1528,16 @@
       "questionId": "d215f8aa8bc3bed140f75b0b",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:d215f8aa8bc3bed140f75b0b:content-v2",
       "questionVersionId": "d215f8aa8bc3bed140f75b0b:content-v2:blind-revalidation",
-      "contentHash": "73f3351ee4d9f0b53cfb5097340e87933a59ef01911d9a977ad8a868ee7393ff",
+      "contentHash": "4e6d6d10234701e8ee69c309d1e159e9db9a140c36fbc7be382bb8b74637029b",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Bunga\nTipe soal: multiple_choice\nStimulus: -\nSoal: Firman menyimpan uang sejumlah Rp10.000.000,00 di bank dalam bentuk deposito dengan bunga 3% per tahun. Setiap tahun bank mengirim bunga ke rekening tabungan Firman. Gigih juga memiliki deposito sejumlah Rp10.000.000,00 di bank dengan bunga 3% per tahun. Setiap tahun, saat perpanjangan deposito, Gigih meminta bank untuk menambahkan bunganya ke dalam nilai depositonya.\n\nd. Setelah lima tahun, lebih banyak uang Firman atau Gigih? Berapa selisihnya?\nPilihan: A. Uang Gigih lebih banyak, selisihnya Rp92.741,00\nB. Uang Gigih lebih banyak, selisihnya Rp9.000,00\nC. Sama banyak, selisihnya Rp0,00\nD. Uang Firman lebih banyak, selisihnya Rp92.741,00\nTranskripsi visual: -",
       "untruncatedTokenCount": 183,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.141,
+      "latencyMs": 0.11,
       "prediction": {
         "questionId": "d215f8aa8bc3bed140f75b0b",
         "contentVersion": 2,
-        "contentHash": "73f3351ee4d9f0b53cfb5097340e87933a59ef01911d9a977ad8a868ee7393ff",
+        "contentHash": "4e6d6d10234701e8ee69c309d1e159e9db9a140c36fbc7be382bb8b74637029b",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1541,6 +1570,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1563,16 +1593,16 @@
       "questionId": "2fbae8e5300a92a89c82f97e",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:2fbae8e5300a92a89c82f97e:content-v2",
       "questionVersionId": "2fbae8e5300a92a89c82f97e:content-v2:blind-revalidation",
-      "contentHash": "116707bad64d19a7d9242bcace42094990bcac9d875fe9e8421a2d795b4319ef",
+      "contentHash": "e637bc664c17466614a97fbbac517eb4c7690bf9544e7c50cbfa83fae8a7875d",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Bunga\nTipe soal: multiple_choice\nStimulus: -\nSoal: Gigih juga memiliki deposito sejumlah Rp10.000.000,00 di bank dengan bunga 3% per tahun. Setiap tahun, saat perpanjangan deposito, Gigih meminta bank untuk menambahkan bunganya ke dalam nilai depositonya.\n\nBerapa uang Gigih setelah satu tahun?\nPilihan: A. Rp300.000,00\nB. Rp10.300.000,00\nC. Rp10.030.000,00\nD. Rp10.609.000,00\nTranskripsi visual: -",
       "untruncatedTokenCount": 120,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.147,
+      "latencyMs": 0.071,
       "prediction": {
         "questionId": "2fbae8e5300a92a89c82f97e",
         "contentVersion": 2,
-        "contentHash": "116707bad64d19a7d9242bcace42094990bcac9d875fe9e8421a2d795b4319ef",
+        "contentHash": "e637bc664c17466614a97fbbac517eb4c7690bf9544e7c50cbfa83fae8a7875d",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1605,6 +1635,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1627,16 +1658,16 @@
       "questionId": "a1eac21e1913dacf28f160b7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:a1eac21e1913dacf28f160b7:content-v2",
       "questionVersionId": "a1eac21e1913dacf28f160b7:content-v2:blind-revalidation",
-      "contentHash": "6f37fe93441a0e97659392b476689468b41d151706de1077ec8606cb84e9e67d",
+      "contentHash": "287adc957fdf6aec55504cde5877427d4bd227432aad68e13120732981414520",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Laju Perubahan Satuan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan tiga komposisi sirup merah.\n- Untuk satu liter air campurkan $\\frac{2}{3}$ liter sirup merah\n- Campurkan air dan sirup merah dengan perbandingan 2 : 3\n- $\\frac{2}{3}$ dari campuran sirup merah adalah air\n\nCampuran mana yang paling manis?.\nPilihan: A. Campuran pertama, karena untuk 1 liter air ada $\\frac{2}{3}$ liter sirup merah\nB. Campuran kedua (air dan sirup merah 2 : 3), karena untuk 1 liter air ada $\\frac{3}{2}$ liter sirup merah\nC. Campuran ketiga, karena $\\frac{2}{3}$ bagian campuran sudah ditentukan\nD. Ketiga campuran sama manisnya, karena semuanya memuat angka 2 dan 3\nTranskripsi visual: -",
       "untruncatedTokenCount": 191,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.134,
+      "latencyMs": 0.127,
       "prediction": {
         "questionId": "a1eac21e1913dacf28f160b7",
         "contentVersion": 2,
-        "contentHash": "6f37fe93441a0e97659392b476689468b41d151706de1077ec8606cb84e9e67d",
+        "contentHash": "287adc957fdf6aec55504cde5877427d4bd227432aad68e13120732981414520",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1669,6 +1700,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1691,16 +1723,16 @@
       "questionId": "b7ee1480516d0d8e8f27caeb",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:b7ee1480516d0d8e8f27caeb:content-v2",
       "questionVersionId": "b7ee1480516d0d8e8f27caeb:content-v2:blind-revalidation",
-      "contentHash": "46fa18ab76a26846be0ae26feef3976976c3be886cdba55de8135af7f109737f",
-      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Anak Kecil Remaja Orang Dewasa 114 cm 148 cm 200 cm 305 cm seperti Gambar Segitiga-Segitiga Sebangun dari Bayangan Tiga Orang. Diketahui bahwa tan 30 o = 0,57. Gunakan contoh yang baru disampaikan untuk mencari tinggi orang dewasa.\n\nCari tinggi orang dewasa dengan menggunakan perbandingan segitiga sebangun.\nPilihan: A. 173,85 cm\nB. 219 cm\nC. 148 cm\nD. 535,09 cm\nTranskripsi visual: Terdapat tiga gambar segitiga siku-siku yang sebangun, masing-masing mewakili Anak Kecil, Remaja, dan Orang Dewasa. Untuk Anak Kecil, tinggi = 114 cm dan panjang bayangan = 200 cm. Untuk Remaja, tinggi = 148 cm. Untuk Orang Dewasa, panjang bayangan = 305 cm. Sudut elevasi theta (θ) sama untuk ketiga segitiga. Soal meminta mencari tinggi orang dewasa menggunakan perbandingan segitiga sebangun.",
-      "untruncatedTokenCount": 199,
+      "contentHash": "ab344a50847f885f26deb9acc9be793286f76f23e75c754f692932eeb16a7426",
+      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Anak Kecil Remaja Orang Dewasa 114 cm 148 cm 200 cm 305 cm seperti Gambar Segitiga-Segitiga Sebangun dari Bayangan Tiga Orang. Diketahui bahwa tan 30 o = 0,57. Gunakan contoh yang baru disampaikan untuk mencari tinggi orang dewasa.\n\nCari tinggi orang dewasa dengan menggunakan perbandingan segitiga sebangun.\nPilihan: A. 173,85 cm\nB. 219 cm\nC. 148 cm\nD. 535,09 cm\nTranskripsi visual: Terdapat tiga gambar segitiga siku-siku yang sebangun. Gambar 1 (Anak Kecil): tinggi 114 cm, panjang bayangan 200 cm, sudut elevasi theta. Gambar 2 (Remaja): tinggi 148 cm, panjang bayangan tidak diketahui, sudut elevasi theta. Gambar 3 (Orang Dewasa): tinggi tidak diketahui (y), panjang bayangan 305 cm, sudut elevasi theta.",
+      "untruncatedTokenCount": 195,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.143,
+      "latencyMs": 0.167,
       "prediction": {
         "questionId": "b7ee1480516d0d8e8f27caeb",
         "contentVersion": 2,
-        "contentHash": "46fa18ab76a26846be0ae26feef3976976c3be886cdba55de8135af7f109737f",
+        "contentHash": "ab344a50847f885f26deb9acc9be793286f76f23e75c754f692932eeb16a7426",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1733,6 +1765,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1744,7 +1777,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "e811fd213f3259309ccf2c59a0c1b54903e8e13444051c5451466e94d6f85ffb",
+          "inputHash": "0758da39d163062262b72ca39c6b65af44c68b06cd18202305f72cbf667c403e",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1755,16 +1788,16 @@
       "questionId": "c6e8b0f4419e6dcbc2ddc05d",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:c6e8b0f4419e6dcbc2ddc05d:content-v2",
       "questionVersionId": "c6e8b0f4419e6dcbc2ddc05d:content-v2:blind-revalidation",
-      "contentHash": "2877db1eac5ce9fc01e62dc8a0e27c017288e93550f6461412e8d88dbede0f90",
-      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Anak Kecil Remaja Orang Dewasa 114 cm 148 cm 200 cm 305 cm seperti Gambar Segitiga-Segitiga Sebangun dari Bayangan Tiga Orang. Diketahui bahwa tan 30 o = 0,57. Gunakan contoh yang baru disampaikan untuk mencari tinggi orang dewasa.\n\nCari tinggi orang dewasa dengan memanfaatkan perbandingan trigonometri.\nPilihan: A. 173,85 cm\nB. 114 cm\nC. 152,50 cm\nD. 535,09 cm\nTranskripsi visual: Terdapat tiga ilustrasi segitiga siku-siku yang dibentuk oleh tinggi orang dan panjang bayangannya. 1. Anak Kecil: tinggi 114 cm, bayangan 200 cm. 2. Remaja: tinggi 148 cm. 3. Orang Dewasa: bayangan 305 cm. Sudut elevasi matahari (theta) sama untuk ketiga kasus. Soal meminta mencari tinggi orang dewasa menggunakan tan 30 derajat = 0,57.",
-      "untruncatedTokenCount": 191,
+      "contentHash": "bc31c86ce593211d01e828c7ec2b153e314fd1c2a6e2b8edcb7ab90588ab9663",
+      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Anak Kecil Remaja Orang Dewasa 114 cm 148 cm 200 cm 305 cm seperti Gambar Segitiga-Segitiga Sebangun dari Bayangan Tiga Orang. Diketahui bahwa tan 30 o = 0,57. Gunakan contoh yang baru disampaikan untuk mencari tinggi orang dewasa.\n\nCari tinggi orang dewasa dengan memanfaatkan perbandingan trigonometri.\nPilihan: A. 173,85 cm\nB. 114 cm\nC. 152,50 cm\nD. 535,09 cm\nTranskripsi visual: Terdapat tiga ilustrasi segitiga siku-siku yang merepresentasikan bayangan tiga orang: Anak Kecil, Remaja, dan Orang Dewasa. Setiap ilustrasi menunjukkan sudut elevasi theta (sudut antara bayangan di tanah dan garis miring dari ujung bayangan ke puncak kepala). Untuk Orang Dewasa, panjang bayangan (sisi samping) adalah 305 cm, dan tinggi orang (sisi depan) adalah variabel yang dicari.",
+      "untruncatedTokenCount": 190,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.14,
+      "latencyMs": 0.105,
       "prediction": {
         "questionId": "c6e8b0f4419e6dcbc2ddc05d",
         "contentVersion": 2,
-        "contentHash": "2877db1eac5ce9fc01e62dc8a0e27c017288e93550f6461412e8d88dbede0f90",
+        "contentHash": "bc31c86ce593211d01e828c7ec2b153e314fd1c2a6e2b8edcb7ab90588ab9663",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1797,6 +1830,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1808,7 +1842,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "417296c165bba3d0fe4d186aa33baeb01a1968d107c4e33e60f2b2ed9a11ddf9",
+          "inputHash": "9316701fbe333565d223fc12f46cfa8c17159ea71bbbede6bfd2e82fdc595471",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1819,16 +1853,16 @@
       "questionId": "899fad8c8260df6013a595be",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:899fad8c8260df6013a595be:content-v2",
       "questionVersionId": "899fad8c8260df6013a595be:content-v2:blind-revalidation",
-      "contentHash": "8e0360737d4fa38165e8c4bb0f5d72937c9acc73dcb1690ebf045d794fa2e7cc",
-      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Pemanfaatan Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah segitiga siku-siku PQR, mempunyai besaran ∠P = 53,2o dan besaran ∠Q = 36,8o. Q 36,8º 5 4 53,2º P 3 R\n\nNilai perbandingan panjang sisi QR dan QP sama dengan nilai ________.\nPilihan: A. tan 53,2°\nB. cos 53,2°\nC. cos 36,8°\nD. tan 36,8°\nTranskripsi visual: Segitiga siku-siku PQR dengan sudut siku-siku di R. Sisi PR = 3, QR = 4, PQ = 5 (hipotenusa). Sudut P = 53,2 derajat, sudut Q = 36,8 derajat.",
-      "untruncatedTokenCount": 170,
+      "contentHash": "72d9132dcae634884412f7056c76cf5bf8a7ce8a2e6016364e17971acb8614cd",
+      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Pemanfaatan Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah segitiga siku-siku PQR, mempunyai besaran ∠P = 53,2o dan besaran ∠Q = 36,8o. Q 36,8º 5 4 53,2º P 3 R\n\nNilai perbandingan panjang sisi QR dan QP sama dengan nilai ________.\nPilihan: A. tan 53,2°\nB. cos 53,2°\nC. cos 36,8°\nD. tan 36,8°\nTranskripsi visual: Segitiga siku-siku PQR dengan sudut siku-siku di R. Sisi PR = 3, sisi QR = 4, dan sisi miring PQ = 5. Sudut P = 53,2 derajat dan sudut Q = 36,8 derajat.",
+      "untruncatedTokenCount": 169,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.113,
+      "latencyMs": 0.188,
       "prediction": {
         "questionId": "899fad8c8260df6013a595be",
         "contentVersion": 2,
-        "contentHash": "8e0360737d4fa38165e8c4bb0f5d72937c9acc73dcb1690ebf045d794fa2e7cc",
+        "contentHash": "72d9132dcae634884412f7056c76cf5bf8a7ce8a2e6016364e17971acb8614cd",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1861,6 +1895,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1872,7 +1907,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "7048763c81cea1e865482536af1be313d5ee94714c8617944a7b457abe1a0866",
+          "inputHash": "998ee22008c0ad9567b494b57150651217e275f4bb8000c3d63764361f083822",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1883,16 +1918,16 @@
       "questionId": "6392b9d64aaf026fd4ae54b2",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:6392b9d64aaf026fd4ae54b2:content-v2",
       "questionVersionId": "6392b9d64aaf026fd4ae54b2:content-v2:blind-revalidation",
-      "contentHash": "ec76ac77affa22bfec8752a9b55f9a881e2c70652e0bc64ad64cdcc70e024b05",
-      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Pemanfaatan Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: z 9,2 30º x\n\nCari panjang sisi x dan z.\nPilihan: A. x = 18,4 dan z = 15,94\nB. x = 5,31 dan z = 10,62\nC. x = 15,94 dan z = 18,4\nD. x = 9,2 dan z = 13,01\nTranskripsi visual: Segitiga siku-siku dengan sudut 30 derajat di kanan bawah. Sisi vertikal di kiri memiliki panjang 9,2. Sisi horizontal di bawah adalah x. Sisi miring adalah z. Sudut 30 derajat berada di antara sisi x dan sisi miring z. Sisi 9,2 adalah sisi depan sudut 30 derajat.",
-      "untruncatedTokenCount": 159,
+      "contentHash": "5fbed0b06cdf31d0c7b98988c20438b78b07dbf2f72eb2beeddadfe3cef8b58f",
+      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Pemanfaatan Perbandingan Trigonometri\nTipe soal: multiple_choice\nStimulus: -\nSoal: z 9,2 30º x\n\nCari panjang sisi x dan z.\nPilihan: A. x = 18,4 dan z = 15,94\nB. x = 5,31 dan z = 10,62\nC. x = 15,94 dan z = 18,4\nD. x = 9,2 dan z = 13,01\nTranskripsi visual: Segitiga siku-siku dengan sudut 30 derajat. Sisi tegak (depan sudut 30 derajat) bernilai 9,2. Sisi mendatar (samping sudut 30 derajat) dilabeli x. Sisi miring dilabeli z.",
+      "untruncatedTokenCount": 143,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.163,
+      "latencyMs": 0.128,
       "prediction": {
         "questionId": "6392b9d64aaf026fd4ae54b2",
         "contentVersion": 2,
-        "contentHash": "ec76ac77affa22bfec8752a9b55f9a881e2c70652e0bc64ad64cdcc70e024b05",
+        "contentHash": "5fbed0b06cdf31d0c7b98988c20438b78b07dbf2f72eb2beeddadfe3cef8b58f",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1925,6 +1960,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -1936,7 +1972,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "56ba7292b37e3db3d855f655b8a628b1fe930a6588d3ff20228692301b921454",
+          "inputHash": "b23e7ed7ee73ce098eb105d9cc6828c4c70d358f76352c9393b315170cca055e",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -1947,16 +1983,16 @@
       "questionId": "e8e1147bfed27b5d98b29d8f",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:e8e1147bfed27b5d98b29d8f:content-v2",
       "questionVersionId": "e8e1147bfed27b5d98b29d8f:content-v2:blind-revalidation",
-      "contentHash": "c38db0076998aa40dc1bbaae9a6a6a0c2f5468733866673ac3db5de59d1e2c1a",
+      "contentHash": "1a2cc90dd543ebfd14de64c5b72fdacd0319873dcc89465626b9c5630b4c366d",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Rumus Jarak (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Diketahui $\\triangle ABC$ dengan titik-titik $A(-1, 3)$, $B(4, -2)$, dan $C(1, -5)$.\n\nApakah segitiga $ABC$ merupakan segitiga siku-siku? Jelaskan.\nPilihan: A. Ya, segitiga ABC siku-siku di B\nB. Ya, segitiga ABC siku-siku di C\nC. Tidak, karena sisi-sisinya tidak berupa bilangan bulat sehingga tidak membentuk tripel Pythagoras\nD. Tidak, karena AB² + BC² tidak sama dengan CA²\nTranskripsi visual: -",
       "untruncatedTokenCount": 146,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.13,
+      "latencyMs": 0.097,
       "prediction": {
         "questionId": "e8e1147bfed27b5d98b29d8f",
         "contentVersion": 2,
-        "contentHash": "c38db0076998aa40dc1bbaae9a6a6a0c2f5468733866673ac3db5de59d1e2c1a",
+        "contentHash": "1a2cc90dd543ebfd14de64c5b72fdacd0319873dcc89465626b9c5630b4c366d",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -1989,6 +2025,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2011,16 +2048,16 @@
       "questionId": "afeeb033a6caf863bee7e15a",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:afeeb033a6caf863bee7e15a:content-v2",
       "questionVersionId": "afeeb033a6caf863bee7e15a:content-v2:blind-revalidation",
-      "contentHash": "994dbb41e2d8b4367968fd0e21ab332cb88e32bce926c92d926e445863d4feb6",
+      "contentHash": "a193c157b1f58251ad007b9cea393f699aa5a50eb3de5f1a2ddcb8f47b8472fa",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Sistem Persamaan Linear\nTipe soal: multiple_choice\nStimulus: -\nSoal: Asep memiliki beberapa jenis tongkat untuk olahraga: tongkat kasti, tongkat hoki, dan tongkat bisbol. Asep menjajarkan 3 tongkat kasti, 2 tongkat hoki, dan 1 tongkat bisbol dan panjangnya 455 cm. Asep menjajarkan sebuah tongkat kasti, 3 tongkat ukuran hoki, dan 2 tongkat bisbol dan panjangnya 545 cm. Asep juga mengamati bahwa 2 tongkat kasti sama panjang dengan tongkat bisbol.\n\nBerapakah panjang tiap jenis tongkat?\nPilihan: A. Tongkat kasti 55 cm, tongkat hoki 90 cm, dan tongkat bisbol 110 cm.\nB. Tongkat kasti 90 cm, tongkat hoki 55 cm, dan tongkat bisbol 110 cm.\nC. Tongkat kasti 110 cm, tongkat hoki 90 cm, dan tongkat bisbol 55 cm.\nD. Tongkat kasti 55 cm, tongkat hoki 110 cm, dan tongkat bisbol 90 cm.\nTranskripsi visual: -",
       "untruncatedTokenCount": 203,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.12,
+      "latencyMs": 0.093,
       "prediction": {
         "questionId": "afeeb033a6caf863bee7e15a",
         "contentVersion": 2,
-        "contentHash": "994dbb41e2d8b4367968fd0e21ab332cb88e32bce926c92d926e445863d4feb6",
+        "contentHash": "a193c157b1f58251ad007b9cea393f699aa5a50eb3de5f1a2ddcb8f47b8472fa",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2053,6 +2090,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2075,16 +2113,16 @@
       "questionId": "873ea535dcce2925196e80f4",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:873ea535dcce2925196e80f4:content-v2",
       "questionVersionId": "873ea535dcce2925196e80f4:content-v2:blind-revalidation",
-      "contentHash": "5322e1d81ca4f13136b776a61c38382b540e73c9bb54fa33e7886e3b75d75bcb",
+      "contentHash": "cb5695bbfd3d8e4e194357c0588a298bb930a20f83dfc68fce665825fd517f31",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Sistem Persamaan Linear\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah minuman dijual dalam tiga kemasan berbeda: kecil, sedang, dan besar. Jika Bonar membeli 3 kemasan kecil, 2 kemasan sedang, dan 3 kemasan besar, dia mendapat minuman sebanyak 4.700 ml. Jika Bonar membeli 3 kemasan kecil, 1 kemasan sedang, dan 2 kemasan besar, dia mendapat 3.300 ml. Jika Bonar membeli 2 kemasan sedang dan 2 kemasan besar, dia mendapat 2.800 ml minuman. Berapakah volume tiap jenis kemasan?\n\nAda berapa solusi yang ada? Jelaskan.\nPilihan: A. Banyak solusi (tak terhingga), karena eliminasi persamaan (1) dan (2) identik dengan persamaan (3).\nB. Tidak dapat ditentukan tanpa menggambar grafik tiga dimensi.\nC. Tidak ada solusi, karena hasil eliminasi menghasilkan pernyataan yang tidak mungkin benar.\nD. Hanya satu solusi, karena ada tiga persamaan untuk tiga variabel.\nTranskripsi visual: -",
       "untruncatedTokenCount": 201,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.118,
+      "latencyMs": 0.094,
       "prediction": {
         "questionId": "873ea535dcce2925196e80f4",
         "contentVersion": 2,
-        "contentHash": "5322e1d81ca4f13136b776a61c38382b540e73c9bb54fa33e7886e3b75d75bcb",
+        "contentHash": "cb5695bbfd3d8e4e194357c0588a298bb930a20f83dfc68fce665825fd517f31",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2117,6 +2155,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2139,16 +2178,16 @@
       "questionId": "55f4593490fe0eca29b58712",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:55f4593490fe0eca29b58712:content-v2",
       "questionVersionId": "55f4593490fe0eca29b58712:content-v2:blind-revalidation",
-      "contentHash": "936944d06fd1c1a3d136b7085a09beeaf3988113fc66beea1fd6b8977ad55b82",
+      "contentHash": "3f643717774adab9b89262e1ea590ef70e9345afa944b4c9c0dff9c07f261e93",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Sistem Pertidaksamaan Linear\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pak Eko menimbang buah menggunakan timbangan bebek. Dua buah apel dan lima buah jeruk beratnya kurang dari 1 kg. Enam buah apel dan dua buah jeruk beratnya lebih dari 1 kg. Berat 1 apel (misal disebut x) dan berat 1 jeruk (misal disebut y), dalam satuan ons (1 kg = 10 ons).\n\nApakah titik (0,0) merupakan daerah hasil pertidaksamaan 2 x + 5 y < 10? Petunjuk: substitusi nilai x = 0 dan y = 0 ke dalam pertidaksamaan dan periksalah apakah pertidaksamaan bernilai benar.\nPilihan: A. Tidak, karena 2(0) + 5(0) tidak sama dengan 10.\nB. Ya, karena titik (0,0) pasti termasuk daerah hasil pertidaksamaan apa pun.\nC. Ya, karena 2(0) + 5(0) = 0 dan 0 < 10 (pertidaksamaan bernilai benar).\nD. Tidak dapat ditentukan tanpa menggambar grafiknya terlebih dahulu.\nTranskripsi visual: -",
       "untruncatedTokenCount": 235,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.112,
+      "latencyMs": 0.092,
       "prediction": {
         "questionId": "55f4593490fe0eca29b58712",
         "contentVersion": 2,
-        "contentHash": "936944d06fd1c1a3d136b7085a09beeaf3988113fc66beea1fd6b8977ad55b82",
+        "contentHash": "3f643717774adab9b89262e1ea590ef70e9345afa944b4c9c0dff9c07f261e93",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2181,6 +2220,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2203,16 +2243,16 @@
       "questionId": "17d32fe57e7f77cdae983dc8",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:17d32fe57e7f77cdae983dc8:content-v2",
       "questionVersionId": "17d32fe57e7f77cdae983dc8:content-v2:blind-revalidation",
-      "contentHash": "e62c0e62e3bcd1b13d57622d5f4d9e5698588d3d5f82e8d23ebd683ebef84da7",
+      "contentHash": "8c5c5896bb2998d43ec82c2bb021e506cb0f8bba74bcf46be815723900fe0b6e",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Sistem Pertidaksamaan Linear\nTipe soal: multiple_choice\nStimulus: -\nSoal: Pak Eko menimbang buah menggunakan timbangan bebek. Dua buah apel dan lima buah jeruk beratnya kurang dari 1 kg. Enam buah apel dan dua buah jeruk beratnya lebih dari 1 kg. Berat 1 apel (misal disebut x) dan berat 1 jeruk (misal disebut y), dalam satuan ons (1 kg = 10 ons).\n\nApakah titik (0,0) merupakan daerah hasil pertidaksamaan 6 x + 2 y > 10? Petunjuk: substitusi nilai x = 0 dan y = 0 ke dalam pertidaksamaan dan periksalah apakah pertidaksamaan bernilai benar.\nPilihan: A. Ya, karena titik (0,0) pasti termasuk daerah hasil pertidaksamaan apa pun.\nB. Tidak dapat ditentukan tanpa menggambar grafiknya terlebih dahulu.\nC. Ya, karena 6(0) + 2(0) = 0 sudah memenuhi pertidaksamaan tersebut.\nD. Tidak, karena 6(0) + 2(0) = 0 dan 0 > 10 salah (pertidaksamaan tidak bernilai benar).\nTranskripsi visual: -",
       "untruncatedTokenCount": 242,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.399,
+      "latencyMs": 0.12,
       "prediction": {
         "questionId": "17d32fe57e7f77cdae983dc8",
         "contentVersion": 2,
-        "contentHash": "e62c0e62e3bcd1b13d57622d5f4d9e5698588d3d5f82e8d23ebd683ebef84da7",
+        "contentHash": "8c5c5896bb2998d43ec82c2bb021e506cb0f8bba74bcf46be815723900fe0b6e",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2245,6 +2285,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2267,16 +2308,16 @@
       "questionId": "0b4b98faa7f553833f0db971",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:0b4b98faa7f553833f0db971:content-v2",
       "questionVersionId": "0b4b98faa7f553833f0db971:content-v2:blind-revalidation",
-      "contentHash": "548aa9fb9eac8438c8d3ff9fd29285987a3576cf61cb552008a697ab6219159a",
+      "contentHash": "477143305f930b62d551c771bb7acff094405800b413e93e5322eeb633318724",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Sistem Persamaan Linear Dua Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Suatu toko alat lukis menjual 40 kuas lukis. Harga kuas lukis jenis I Rp35.000,00 dan harga kuas lukis jenis II Rp24.000,00.\n\nJika uang yang didapat oleh toko tersebut Rp1.103.000,00, maka berapa banyak masing-masing jenis kuas lukis yang terjual?\nPilihan: A. 20 kuas lukis jenis I dan 20 kuas lukis jenis II\nB. 15 kuas lukis jenis I dan 25 kuas lukis jenis II\nC. 27 kuas lukis jenis I dan 13 kuas lukis jenis II\nD. 13 kuas lukis jenis I dan 27 kuas lukis jenis II\nTranskripsi visual: -",
       "untruncatedTokenCount": 150,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.34,
+      "latencyMs": 0.099,
       "prediction": {
         "questionId": "0b4b98faa7f553833f0db971",
         "contentVersion": 2,
-        "contentHash": "548aa9fb9eac8438c8d3ff9fd29285987a3576cf61cb552008a697ab6219159a",
+        "contentHash": "477143305f930b62d551c771bb7acff094405800b413e93e5322eeb633318724",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2309,6 +2350,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2331,16 +2373,16 @@
       "questionId": "8fa35d360450878f96feeb48",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:8fa35d360450878f96feeb48:content-v2",
       "questionVersionId": "8fa35d360450878f96feeb48:content-v2:blind-revalidation",
-      "contentHash": "365f1dd418672f134a220ef1cab937567680372e4d54db19e7b0332038f6c6f6",
+      "contentHash": "1acc10bd677b1f20a064af0265e2757a355fe58ff1b810c8644782683b50fd72",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Persamaan Kuadrat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan solusi atau akar-akar dari persamaan kuadrat $2x^2 - 8x + 6 = 0$.\nPilihan: A. x = -1 atau x = 3\nB. x = -1 atau x = -3\nC. x = 2 atau x = 6\nD. x = 1 atau x = 3\nTranskripsi visual: -",
       "untruncatedTokenCount": 96,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.129,
+      "latencyMs": 0.07,
       "prediction": {
         "questionId": "8fa35d360450878f96feeb48",
         "contentVersion": 2,
-        "contentHash": "365f1dd418672f134a220ef1cab937567680372e4d54db19e7b0332038f6c6f6",
+        "contentHash": "1acc10bd677b1f20a064af0265e2757a355fe58ff1b810c8644782683b50fd72",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2373,6 +2415,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2400,7 +2443,7 @@
       "untruncatedTokenCount": 92,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.13,
+      "latencyMs": 0.068,
       "prediction": {
         "questionId": "6d67a36d7ac3cfb4348b802b",
         "contentVersion": 2,
@@ -2437,6 +2480,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2459,16 +2503,16 @@
       "questionId": "d590344d18abe3ebd38fb8ed",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:d590344d18abe3ebd38fb8ed:content-v2",
       "questionVersionId": "d590344d18abe3ebd38fb8ed:content-v2:blind-revalidation",
-      "contentHash": "dacd18c02778cc80c5466699f4e9625c54720bdbf7a63336e7733d1036378dbe",
+      "contentHash": "f6e74f3d98e95eaa80832fd045892894742a8e2afb6d62998b2dcc969df34c9a",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Fungsi Kuadrat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tabel di bawah menunjukkan jarak tempuh sebuah mobil pada setiap waktu.\n\n|Waktu (Detik)|0|1|2|3|4|5|6|\n|---|---|---|---|---|---|---|---|\n|Jarak (m)|0|5|8|9|8|5|0|\n\nTanpa menggambar grafik, tentukan apakah grafik fungsi kuadrat terbuka ke atas atau ke bawah. Jelaskan alasanmu.\nPilihan: A. Tidak dapat ditentukan tanpa menggambar grafiknya.\nB. Terbuka ke bawah, karena nilai fungsi (jarak) naik kemudian turun lagi.\nC. Terbuka ke atas, karena nilai fungsi naik kemudian turun lagi.\nD. Terbuka ke bawah, karena nilai fungsi turun kemudian naik lagi.\nTranskripsi visual: -",
       "untruncatedTokenCount": 194,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.122,
+      "latencyMs": 0.08,
       "prediction": {
         "questionId": "d590344d18abe3ebd38fb8ed",
         "contentVersion": 2,
-        "contentHash": "dacd18c02778cc80c5466699f4e9625c54720bdbf7a63336e7733d1036378dbe",
+        "contentHash": "f6e74f3d98e95eaa80832fd045892894742a8e2afb6d62998b2dcc969df34c9a",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2501,6 +2545,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2523,16 +2568,16 @@
       "questionId": "3fab45a2a8a53e25de52d0f6",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:3fab45a2a8a53e25de52d0f6:content-v2",
       "questionVersionId": "3fab45a2a8a53e25de52d0f6:content-v2:blind-revalidation",
-      "contentHash": "4fde9d455dab1f738cd6be8fab86dae33bf3d19a23e29d3f2acaea2160d5915b",
+      "contentHash": "b59a70b59fbc85113632861e459563f16ab1dbc995218eac234cf202a8e9f580",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Fungsi Kuadrat\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah bola dilemparkan dari ketinggian awal 4 m dan mencapai ketinggian maksimum 8 m setelah dua detik sejak dilempar.\n\nNyatakan fungsi kuadrat tinggi bola tersebut dalam bentuk umum $y = ax^2+bx+c$.\nPilihan: A. $y = -x^2 - 4x + 4$\nB. $y = x^2 - 4x + 4$\nC. $y = -x^2 + 4x + 4$\nD. $y = -x^2 + 4x + 8$\nTranskripsi visual: -",
       "untruncatedTokenCount": 136,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.116,
+      "latencyMs": 0.074,
       "prediction": {
         "questionId": "3fab45a2a8a53e25de52d0f6",
         "contentVersion": 2,
-        "contentHash": "4fde9d455dab1f738cd6be8fab86dae33bf3d19a23e29d3f2acaea2160d5915b",
+        "contentHash": "b59a70b59fbc85113632861e459563f16ab1dbc995218eac234cf202a8e9f580",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2565,6 +2610,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2587,16 +2633,16 @@
       "questionId": "4b2524b8440c37d72e127b02",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:4b2524b8440c37d72e127b02:content-v2",
       "questionVersionId": "4b2524b8440c37d72e127b02:content-v2:blind-revalidation",
-      "contentHash": "c5e6b68a8b88acf7f11fefa36609bfd344cdacfe912ac21d8eda975857241887",
+      "contentHash": "d7812094205b628af09852d40f2144ac56a7739fe935a4713555b3ab5f90cece",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Menyelesaikan Masalah terkait Pertidaksamaan Linier Satu Variabel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg. Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.\n\nJika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?\nPilihan: A. 10 kali pengangkutan\nB. 11 kali pengangkutan\nC. 9,45 kali pengangkutan\nD. 9 kali pengangkutan\nTranskripsi visual: -",
       "untruncatedTokenCount": 123,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.149,
+      "latencyMs": 0.078,
       "prediction": {
         "questionId": "4b2524b8440c37d72e127b02",
         "contentVersion": 2,
-        "contentHash": "c5e6b68a8b88acf7f11fefa36609bfd344cdacfe912ac21d8eda975857241887",
+        "contentHash": "d7812094205b628af09852d40f2144ac56a7739fe935a4713555b3ab5f90cece",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2629,6 +2675,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2651,16 +2698,16 @@
       "questionId": "72d9df20cc708f4143b713d0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:72d9df20cc708f4143b713d0:content-v2",
       "questionVersionId": "72d9df20cc708f4143b713d0:content-v2:blind-revalidation",
-      "contentHash": "43deb443d803999ad9eb144ec855cfcf8c7419ffa883f31b6191b856bbf5281c",
+      "contentHash": "094f3237ffb617f0f2ee0ff4debde74d587c330d368c67b9c97d592f241a4de6",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Korespondensi Satu-satu (Pengayaan)\nTipe soal: multiple_choice\nStimulus: -\nSoal: Apabila diketahui banyak anggota dua himpunan seperti berikut ini, maka ada berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B? a. n(A) = n(B) = 12\n\nAda berapa banyak korespondensi satu-satu yang mungkin dari himpunan A dan himpunan B jika n(A) = n(B) = 12?\nPilihan: A. 12 + 11 + 10 + ... + 2 + 1 = 78\nB. 12! = 479.001.600\nC. 12\nD. 12 x 12 = 144\nTranskripsi visual: -",
       "untruncatedTokenCount": 151,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.241,
+      "latencyMs": 0.167,
       "prediction": {
         "questionId": "72d9df20cc708f4143b713d0",
         "contentVersion": 2,
-        "contentHash": "43deb443d803999ad9eb144ec855cfcf8c7419ffa883f31b6191b856bbf5281c",
+        "contentHash": "094f3237ffb617f0f2ee0ff4debde74d587c330d368c67b9c97d592f241a4de6",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2693,6 +2740,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2715,16 +2763,16 @@
       "questionId": "3b808934c13bf0822544d6d6",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:3b808934c13bf0822544d6d6:content-v2",
       "questionVersionId": "3b808934c13bf0822544d6d6:content-v2:blind-revalidation",
-      "contentHash": "966bc164a10f51b7919aeab9d59f38d6941a76cc5c9af7e8175d12bc2fbff5f3",
-      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Representasi Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: 1. Perhatikan diagram batang berikut. Diagram berikut menunjukkan waktu yang ditempuh oleh para atlet di Olimpiade 1998 cabang Lintas Alam 10 km. Gambar 6.4 Diagram Batang Waktu yang Ditempuh Peserta Lintas Alam Olimpiade 1998. Untuk dapat memahami diagram dengan lebih baik, kamu perlu memahami situasi dan konteks dari diagram.\n\nBerapakah atlet yang menyelesaikan lomba ini dengan interval catatan waktu antara 31 menit dan 32 menit 59 detik?\nPilihan: A. 6 pelari\nB. 10 pelari\nC. 4 pelari\nD. 8 pelari\nTranskripsi visual: Diagram batang menunjukkan waktu tempuh (sumbu Y, 0-45 menit) untuk berbagai negara (sumbu X). Batang yang memiliki tinggi antara 31 dan 33 (mewakili interval 31:00-32:59) adalah: Estonia 2 (sedikit di atas 30), Jepang (sedikit di atas 30), Kazakhstan (sedikit di atas 30), Latvia (sedikit di atas 30), Slovakia (sedikit di atas 30), Spain 1 (sedikit di atas 30), Spain 2 (sedikit di atas 30), Ukraine (sedikit di atas 30). Total ada 8 batang.",
-      "untruncatedTokenCount": 249,
+      "contentHash": "0e0133ee8be345c897142f786d155fffcb4e092239ca9a973206ffd51381015d",
+      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Representasi Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: 1. Perhatikan diagram batang berikut. Diagram berikut menunjukkan waktu yang ditempuh oleh para atlet di Olimpiade 1998 cabang Lintas Alam 10 km. Gambar 6.4 Diagram Batang Waktu yang Ditempuh Peserta Lintas Alam Olimpiade 1998. Untuk dapat memahami diagram dengan lebih baik, kamu perlu memahami situasi dan konteks dari diagram.\n\nBerapakah atlet yang menyelesaikan lomba ini dengan interval catatan waktu antara 31 menit dan 32 menit 59 detik?\nPilihan: A. 6 pelari\nB. 10 pelari\nC. 4 pelari\nD. 8 pelari\nTranskripsi visual: Diagram batang menunjukkan waktu tempuh (sumbu y, 0-45 menit) untuk berbagai negara (sumbu x). Batang yang memiliki tinggi antara 31 dan 33 (mewakili interval 31:00-32:59) adalah: Estonia 2 (sedikit di atas 30), Japan (tepat 30), Kazakhstan (sedikit di atas 30), Latvia (sedikit di atas 30), Slovakia (sedikit di atas 30), Spain 1 (tepat 30), Spain 2 (sedikit di atas 30), U.S 2 (tepat 30). Total ada 8 batang yang berada di rentang tersebut.",
+      "untruncatedTokenCount": 250,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.122,
+      "latencyMs": 0.179,
       "prediction": {
         "questionId": "3b808934c13bf0822544d6d6",
         "contentVersion": 2,
-        "contentHash": "966bc164a10f51b7919aeab9d59f38d6941a76cc5c9af7e8175d12bc2fbff5f3",
+        "contentHash": "0e0133ee8be345c897142f786d155fffcb4e092239ca9a973206ffd51381015d",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2757,6 +2805,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2768,7 +2817,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "b1efd5ed2f6250428b94f2a9251fefd7d0939d779d8f19f9b5184a9746b4ae0e",
+          "inputHash": "86e1986038c947a5ac27d5c41dd6c522513d4ef46dfaaacdeff39af3a99ffc41",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2779,16 +2828,16 @@
       "questionId": "e9d27eefa537bb209c6d3b40",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:e9d27eefa537bb209c6d3b40:content-v2",
       "questionVersionId": "e9d27eefa537bb209c6d3b40:content-v2:blind-revalidation",
-      "contentHash": "21e59034e886afa94e1530e6fe973e5cec44e63b39fb5235d57c2271c3ca6267",
-      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Representasi Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan diagram batang berikut. Diagram berikut menunjukkan waktu yang ditempuh oleh para atlet di Olimpiade 1998 cabang Lintas Alam 10 km. Gambar 6.4 Diagram Batang Waktu yang Ditempuh Peserta Lintas Alam Olimpiade 1998\n\nDari Gambar 6.4, ada berapa atlet yang berpartisipasi dalam cabang lintas alam? Ada berapa negara yang berpartisipasi dalam cabang ini?\nPilihan: A. 20 atlet; 25 negara\nB. 25 atlet; 20 negara\nC. 25 atlet; 25 negara\nD. 24 atlet; 20 negara\nTranskripsi visual: Diagram batang menunjukkan waktu tempuh atlet. Sumbu horizontal berisi label negara peserta: Austria 1, Austria 2, Canada, Czech Republic, Estonia 1, Estonia 2, Finland, France, Germany, Greece, Japan, Kazakhstan, Kenya, Latvia, Macedonia, Mongolia, Norway 1, Norway 2, Russia, Slovakia, Spain 1, Spain 2, Ukraine, U.S 1, U.S 2. Terdapat 25 batang total. Negara yang muncul dua kali adalah Austria, Estonia, Norway, Spain, dan U.S. (5 negara). Negara yang muncul sekali: Canada, Czech Republic, Finland, France, Germany, Greece, Japan, Kazakhstan, Kenya, Latvia, Macedonia, Mongolia, Russia, Slovakia, Ukraine (15 negara). Total negara unik = 5 + 15 = 20.",
-      "untruncatedTokenCount": 322,
+      "contentHash": "259054e90d5fbb06bff3d915cf27c250e32578d11eaafa4fec966c1b6fe4ac78",
+      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Representasi Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan diagram batang berikut. Diagram berikut menunjukkan waktu yang ditempuh oleh para atlet di Olimpiade 1998 cabang Lintas Alam 10 km. Gambar 6.4 Diagram Batang Waktu yang Ditempuh Peserta Lintas Alam Olimpiade 1998\n\nDari Gambar 6.4, ada berapa atlet yang berpartisipasi dalam cabang lintas alam? Ada berapa negara yang berpartisipasi dalam cabang ini?\nPilihan: A. 20 atlet; 25 negara\nB. 25 atlet; 20 negara\nC. 25 atlet; 25 negara\nD. 24 atlet; 20 negara\nTranskripsi visual: Diagram batang menunjukkan waktu tempuh peserta Lintas Alam Olimpiade 1998. Sumbu horizontal berisi label negara peserta: Austria 1, Austria 2, Canada, Czech Republic, Estonia 1, Estonia 2, Finland, France, Germany, Greece, Japan, Kazakhstan, Kenya, Latvia, Macedonia, Mongolia, Norway 1, Norway 2, Russia, Slovakia, Spain 1, Spain 2, Ukraine, U.S 1, U.S 2. Terdapat 25 batang total. Negara yang muncul dua kali adalah Austria, Estonia, Norway, Spain, U.S (5 negara).",
+      "untruncatedTokenCount": 258,
       "maxLength": 256,
       "wouldTruncate": true,
-      "latencyMs": 0.137,
+      "latencyMs": 0.146,
       "prediction": {
         "questionId": "e9d27eefa537bb209c6d3b40",
         "contentVersion": 2,
-        "contentHash": "21e59034e886afa94e1530e6fe973e5cec44e63b39fb5235d57c2271c3ca6267",
+        "contentHash": "259054e90d5fbb06bff3d915cf27c250e32578d11eaafa4fec966c1b6fe4ac78",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2821,6 +2870,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2832,7 +2882,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "c0b6eea018d6fbfd1677bb3342ce9f069302d30699f16f4d5ebe9fac263047a5",
+          "inputHash": "e862eb5ec47a3d64136c17c5f06099e5aa6ba5ab71f101f18f55d61e0378c43b",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -2843,16 +2893,16 @@
       "questionId": "ff85b5a87bfa58eb3957ceb3",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:ff85b5a87bfa58eb3957ceb3:content-v2",
       "questionVersionId": "ff85b5a87bfa58eb3957ceb3:content-v2:blind-revalidation",
-      "contentHash": "cd9376f986bd2aba2484c384be9468f45cfbbd094a07f7b1f1d1a53a1fe5ade5",
+      "contentHash": "e272a655d565b84e90d270226e21e3de60457b1b21c78ffea13fe3522a1b7952",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Statistik Deskriptif\nTipe soal: multiple_choice\nStimulus: -\nSoal: Jika data penjualan sepatu di toko A pada Tabel kita ubah menjadi tabel Frekuensi data tunggal sebagai berikut. Tabel Frekuensi Data Tunggal Penjualan Sepatu di Toko A | Ukuran: 38, 39, 40, 41, 42, 43, 44, 45, 46 | Frekuensi: 1, 1, 2, 4, 5, 7, 7, 2, 1\n\nTentukanlah modus, median, dan mean dari kumpulan data di atas.\nPilihan: A. Modus = 43 dan 44, median = 42, mean = 42,5\nB. Modus = 43 dan 44, median = 43, mean = 42\nC. Modus = 7, median = 43, mean = 42,5\nD. Modus = 43 dan 44, median = 43, mean = 42,5\nTranskripsi visual: -",
       "untruncatedTokenCount": 185,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.14,
+      "latencyMs": 0.099,
       "prediction": {
         "questionId": "ff85b5a87bfa58eb3957ceb3",
         "contentVersion": 2,
-        "contentHash": "cd9376f986bd2aba2484c384be9468f45cfbbd094a07f7b1f1d1a53a1fe5ade5",
+        "contentHash": "e272a655d565b84e90d270226e21e3de60457b1b21c78ffea13fe3522a1b7952",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2885,6 +2935,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2907,16 +2958,16 @@
       "questionId": "2de15d728d070fae8af5319c",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:2de15d728d070fae8af5319c:content-v2",
       "questionVersionId": "2de15d728d070fae8af5319c:content-v2:blind-revalidation",
-      "contentHash": "d412a47d6ed08aba9c84995b32c727b918c2f10009d28df1d4012a5d57ce97c6",
+      "contentHash": "a9dcf3803bb7d9fa123a15fb82d534fc4c3f597e248fbbfbf7f12975464fdba5",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Statistik Deskriptif\nTipe soal: multiple_choice\nStimulus: -\nSoal: Data berikut menunjukkan jumlah kue yang dijual melalui situs online setiap harinya: 0 3 2 7 4 2 3 0 4 0 6 5 5 2 4 0\n\nTentukanlah modus dan median dari data di atas.\nPilihan: A. Modus = 4, median = 3\nB. Modus = 0, median = 3,5\nC. Modus = 0, median = 3\nD. Modus = 0, median = 2\nTranskripsi visual: -",
       "untruncatedTokenCount": 116,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.165,
+      "latencyMs": 0.079,
       "prediction": {
         "questionId": "2de15d728d070fae8af5319c",
         "contentVersion": 2,
-        "contentHash": "d412a47d6ed08aba9c84995b32c727b918c2f10009d28df1d4012a5d57ce97c6",
+        "contentHash": "a9dcf3803bb7d9fa123a15fb82d534fc4c3f597e248fbbfbf7f12975464fdba5",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -2949,6 +3000,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -2971,16 +3023,16 @@
       "questionId": "d6d3b4c5f9819d69d4c859d0",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:d6d3b4c5f9819d69d4c859d0:content-v2",
       "questionVersionId": "d6d3b4c5f9819d69d4c859d0:content-v2:blind-revalidation",
-      "contentHash": "4e82b53e736a11b850b973e7ea573df979144a4cfd1e7dcd1e89b9cf368d9cf1",
+      "contentHash": "2da83515669618c8c1a9e1a1959149b8b0eeb6f11df31152fe45471acc9a24af",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Representasi Data Lanjutan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Dalam upaya untuk mempromosikan penggunaan energi yang efisien, sebuah kota melakukan survei terhadap konsumsi listrik bulanan (dalam kWh) dari 10 rumah tangga diperoleh data sebagai berikut. 300, 320, 310, 305, 315, 320, 750, 310, 325, 315\n\nMengapa angka 750 kWh dapat dianggap sebagai pencilan?\nPilihan: A. Karena 750 kWh lebih dari 1,5 kali median data (315 kWh)\nB. Karena 750 kWh lebih besar dari nilai data lainnya yang tertinggi (325 kWh)\nC. Karena 750 kWh lebih besar dari batas atas IQR (335 kWh), sehingga berada di luar rentang wajar data\nD. Karena 750 kWh adalah satu-satunya data yang jumlah angkanya lebih dari tiga digit\nTranskripsi visual: -",
       "untruncatedTokenCount": 170,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.095,
+      "latencyMs": 0.084,
       "prediction": {
         "questionId": "d6d3b4c5f9819d69d4c859d0",
         "contentVersion": 2,
-        "contentHash": "4e82b53e736a11b850b973e7ea573df979144a4cfd1e7dcd1e89b9cf368d9cf1",
+        "contentHash": "2da83515669618c8c1a9e1a1959149b8b0eeb6f11df31152fe45471acc9a24af",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3013,6 +3065,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3035,16 +3088,16 @@
       "questionId": "8d43b2c9894a7ba29b09e984",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:8d43b2c9894a7ba29b09e984:content-v2",
       "questionVersionId": "8d43b2c9894a7ba29b09e984:content-v2:blind-revalidation",
-      "contentHash": "f3c0aa8b0d7dbd2db9d517f435a773797c5dd3010c8697fa6631c6da6c79bd60",
-      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Representasi Data Lanjutan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan Box Plot dari data waktu yang diperlukan (dalam menit) untuk pengisian HP dari 0% sampai 100%. Gambar 6.17 Diagram Box-and-Whisker Kecepatan Pengisian HP dari 0 sampai 100%\n\nTentukanlah nilai dari data minimum, Q1, Q2, Q3 dan data maksimum dari data tersebut.\nPilihan: A. Data minimum = 68, Q1 = 71, Q2 = 72, Q3 = 76, data maksimum = 77\nB. Data minimum = 68, Q1 = 72, Q2 = 76, Q3 = 77, data maksimum = 80\nC. Data minimum = 68, Q1 = 72, Q2 = 74, Q3 = 76, data maksimum = 80\nD. Data minimum = 70, Q1 = 71, Q2 = 72, Q3 = 76, data maksimum = 80\nTranskripsi visual: Gambar menunjukkan sebuah box plot dengan sumbu horizontal berlabel angka 68, 70, 72, 74, 76, 80. Ujung whisker kiri berada tepat di angka 68. Tepi kiri kotak (Q1) berada di 71 (tengah antara 70 dan 72). Garis tengah kotak (median/Q2) berada di 72. Tepi kanan kotak (Q3) berada di 76. Ujung whisker kanan berada di 77 (tengah antara 76 dan 78, namun dalam konteks pilihan A, ini merepresentasikan nilai 77).",
-      "untruncatedTokenCount": 307,
+      "contentHash": "86e864bfd156f800099b530756a3deca9c1c045beea5f2c54c8f9d0ab050d876",
+      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Representasi Data Lanjutan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Perhatikan Box Plot dari data waktu yang diperlukan (dalam menit) untuk pengisian HP dari 0% sampai 100%. Gambar 6.17 Diagram Box-and-Whisker Kecepatan Pengisian HP dari 0 sampai 100%\n\nTentukanlah nilai dari data minimum, Q1, Q2, Q3 dan data maksimum dari data tersebut.\nPilihan: A. Data minimum = 68, Q1 = 71, Q2 = 72, Q3 = 76, data maksimum = 77\nB. Data minimum = 68, Q1 = 72, Q2 = 76, Q3 = 77, data maksimum = 80\nC. Data minimum = 68, Q1 = 72, Q2 = 74, Q3 = 76, data maksimum = 80\nD. Data minimum = 70, Q1 = 71, Q2 = 72, Q3 = 76, data maksimum = 80\nTranskripsi visual: The image shows a box-and-whisker plot aligned with a number line. The number line has markings at 68, 70, 72, 74, 76, and 80. The left whisker starts at 68. The left edge of the box (Q1) aligns with 71. The vertical line inside the box (Q2/median) aligns with 72. The right edge of the box (Q3) aligns with 76. The right whisker ends at 77.",
+      "untruncatedTokenCount": 317,
       "maxLength": 256,
       "wouldTruncate": true,
-      "latencyMs": 0.157,
+      "latencyMs": 0.223,
       "prediction": {
         "questionId": "8d43b2c9894a7ba29b09e984",
         "contentVersion": 2,
-        "contentHash": "f3c0aa8b0d7dbd2db9d517f435a773797c5dd3010c8697fa6631c6da6c79bd60",
+        "contentHash": "86e864bfd156f800099b530756a3deca9c1c045beea5f2c54c8f9d0ab050d876",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3077,6 +3130,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3088,7 +3142,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "f7f9e42b6da4ea264bc3c34c2da0c16e3d7e01bc8860c17cb771ad1d30871b73",
+          "inputHash": "07b4fc554dd3f256361c73ba0902aad38ca93920f7dc57598c79d6fd3521d2f3",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3099,16 +3153,16 @@
       "questionId": "49d68d1b46c35ead12cca547",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:49d68d1b46c35ead12cca547:content-v2",
       "questionVersionId": "49d68d1b46c35ead12cca547:content-v2:blind-revalidation",
-      "contentHash": "6d4ed04551ea52d79437825c6daa06663375e0450da500d3f147faabb87206a1",
+      "contentHash": "f549cb50e7cddd99dd052794827865dafae44f78cbb08da4931a28d9cb48693a",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Penyebaran Data\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.\n\n50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65\nPilihan: A. Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5\nB. Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 15\nC. Q1 = 80; Q2 = 67,5; Q3 = 65; jangkauan kuartil = 15; simpangan kuartil = 7,5\nD. Q1 = 65; Q2 = 70,4; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5\nTranskripsi visual: -",
       "untruncatedTokenCount": 210,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.149,
+      "latencyMs": 0.102,
       "prediction": {
         "questionId": "49d68d1b46c35ead12cca547",
         "contentVersion": 2,
-        "contentHash": "6d4ed04551ea52d79437825c6daa06663375e0450da500d3f147faabb87206a1",
+        "contentHash": "f549cb50e7cddd99dd052794827865dafae44f78cbb08da4931a28d9cb48693a",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3141,6 +3195,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3163,16 +3218,16 @@
       "questionId": "581df18ab4eeb6c5cf613ab7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:581df18ab4eeb6c5cf613ab7:content-v2",
       "questionVersionId": "581df18ab4eeb6c5cf613ab7:content-v2:blind-revalidation",
-      "contentHash": "3fc1ef62a6301692b4942d9165b2a697bc9ea27c680e5a66e97b2c28617dd9a9",
-      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Distribusi Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peluang untuk kejadian berikut. Misalnya, Tabel 7.2 distribusi peluang di bawah ini menunjukkan semua kemungkinan jumlah yang dapat diperoleh dari lemparan dua dadu.\n\ntentukan jumlah yang lebih besar daripada 3\nPilihan: A. $\\frac{3}{36}$\nB. $\\frac{33}{36}$\nC. $\\frac{35}{36}$\nD. $\\frac{34}{36}$\nTranskripsi visual: Tabel 7.2 menunjukkan kolom 'Jumlah' dengan nilai 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 dan kolom 'Peluang' yang kosong. Tabel ini merepresentasikan distribusi peluang jumlah dua dadu.",
-      "untruncatedTokenCount": 171,
+      "contentHash": "170f0c51e40c021e2272eb7034b2ba9d65c84b7cc4404775dc6e37d39037bf8f",
+      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Distribusi Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Tentukan peluang untuk kejadian berikut. Misalnya, Tabel 7.2 distribusi peluang di bawah ini menunjukkan semua kemungkinan jumlah yang dapat diperoleh dari lemparan dua dadu.\n\ntentukan jumlah yang lebih besar daripada 3\nPilihan: A. $\\frac{3}{36}$\nB. $\\frac{33}{36}$\nC. $\\frac{35}{36}$\nD. $\\frac{34}{36}$\nTranskripsi visual: Tabel 7.2 menampilkan dua kolom: 'Jumlah' (berisi angka 2 sampai 12) dan 'Peluang' (kosong). Tabel ini merepresentasikan distribusi peluang jumlah mata dadu dari pelemparan dua dadu.",
+      "untruncatedTokenCount": 163,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.136,
+      "latencyMs": 0.193,
       "prediction": {
         "questionId": "581df18ab4eeb6c5cf613ab7",
         "contentVersion": 2,
-        "contentHash": "3fc1ef62a6301692b4942d9165b2a697bc9ea27c680e5a66e97b2c28617dd9a9",
+        "contentHash": "170f0c51e40c021e2272eb7034b2ba9d65c84b7cc4404775dc6e37d39037bf8f",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3205,6 +3260,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3216,7 +3272,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "3a84cabdf1352f8b30a162ce0193d79b70087fe831cdefb68e499ae105f105b8",
+          "inputHash": "df950abeee5a29f6e19b3012e8056eb7077a6bae147dd70ca2f6e61a50724316",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3227,16 +3283,16 @@
       "questionId": "cc90109177ce7d63bb1a90a7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:cc90109177ce7d63bb1a90a7:content-v2",
       "questionVersionId": "cc90109177ce7d63bb1a90a7:content-v2:blind-revalidation",
-      "contentHash": "b5fc7df9324bb79a8a348b2f01c86ec09671ad3bed5b0402bf6f9490c49d32c2",
-      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Distribusi Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Coba kamu tentukan peluang untuk kejadian berikut. Misalnya, Tabel 7.2 distribusi peluang di bawah ini menunjukkan semua kemungkinan jumlah yang dapat diperoleh dari lemparan dua dadu.\n\na. jumlah 2 atau 3\nPilihan: A. $\\frac{1}{36}$\nB. $\\frac{6}{36}$\nC. $\\frac{3}{36}$\nD. $\\frac{2}{36}$\nTranskripsi visual: Tabel 7.2 menampilkan kolom 'Jumlah' dengan nilai 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 dan kolom kosong 'Peluang' di sebelahnya.",
-      "untruncatedTokenCount": 163,
+      "contentHash": "19c6c88617600615dd578a63284f8515678d940e2fe550d51ea2d9d4c2bb9822",
+      "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Distribusi Peluang\nTipe soal: multiple_choice\nStimulus: -\nSoal: Coba kamu tentukan peluang untuk kejadian berikut. Misalnya, Tabel 7.2 distribusi peluang di bawah ini menunjukkan semua kemungkinan jumlah yang dapat diperoleh dari lemparan dua dadu.\n\na. jumlah 2 atau 3\nPilihan: A. $\\frac{1}{36}$\nB. $\\frac{6}{36}$\nC. $\\frac{3}{36}$\nD. $\\frac{2}{36}$\nTranskripsi visual: Tabel 7.2 berjudul 'Jumlah' dan 'Peluang' dengan baris untuk jumlah 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12. Kolom peluang kosong.",
+      "untruncatedTokenCount": 164,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.116,
+      "latencyMs": 0.112,
       "prediction": {
         "questionId": "cc90109177ce7d63bb1a90a7",
         "contentVersion": 2,
-        "contentHash": "b5fc7df9324bb79a8a348b2f01c86ec09671ad3bed5b0402bf6f9490c49d32c2",
+        "contentHash": "19c6c88617600615dd578a63284f8515678d940e2fe550d51ea2d9d4c2bb9822",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3269,6 +3325,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3280,7 +3337,7 @@
           "rubricVersion": "math-rubric-3x4x3-v1",
           "calibrationVersion": "indobert-3x4x3-silver-kelas1-v1-temperature-v1",
           "inputSchemaVersion": "math-question-text-v1",
-          "inputHash": "0253b3b8c224619b1b7eaf67fb5601096149c3fae33354464b082d12ea41509b",
+          "inputHash": "896dd617e81861ad6d548bd34f311d9f9547f104a103f558a0280ce4acb2e68c",
           "architectureVersion": "parallel-v1",
           "routingPolicyVersion": "confidence-only-v1"
         }
@@ -3291,16 +3348,16 @@
       "questionId": "4dc162c092a693bfc3a3ad55",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:4dc162c092a693bfc3a3ad55:content-v2",
       "questionVersionId": "4dc162c092a693bfc3a3ad55:content-v2:blind-revalidation",
-      "contentHash": "26779b72c79ecce9a5f34073512ddf0c736b7bb8b7d223d5f9004bf80885e969",
+      "contentHash": "1763ae80eaba5e49cb602209058827a70620e8bcef000d1584924f4e15dbde9c",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Aturan Penjumlahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Gunakan aturan penjumlahan untuk soal-soal berikut mengenai sepasang dadu yang dilempar.\n\nTentukan peluang mendapatkan dua angka sama atau berjumlah 2.\nPilihan: A. $\\frac{7}{36}$\nB. $\\frac{5}{36}$\nC. $\\frac{6}{36}$\nD. $\\frac{1}{36}$\nTranskripsi visual: -",
       "untruncatedTokenCount": 110,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.129,
+      "latencyMs": 0.09,
       "prediction": {
         "questionId": "4dc162c092a693bfc3a3ad55",
         "contentVersion": 2,
-        "contentHash": "26779b72c79ecce9a5f34073512ddf0c736b7bb8b7d223d5f9004bf80885e969",
+        "contentHash": "1763ae80eaba5e49cb602209058827a70620e8bcef000d1584924f4e15dbde9c",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3333,6 +3390,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3355,16 +3413,16 @@
       "questionId": "60d456804bca8ee0d55a4bb7",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:60d456804bca8ee0d55a4bb7:content-v2",
       "questionVersionId": "60d456804bca8ee0d55a4bb7:content-v2:blind-revalidation",
-      "contentHash": "d929ba8e3996f7e8526e4a47851733fb3b61a5d5c832830013bc97b5f8e99335",
+      "contentHash": "ec35f7bcc5b3e82d23ac74dd2224ecedae123a07f076e513d62bd407c72cd230",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Aturan Penjumlahan\nTipe soal: multiple_choice\nStimulus: -\nSoal: Gunakan aturan penjumlahan untuk soal-soal berikut mengenai sepasang dadu yang dilempar.\n\nTentukan peluang mendapatkan dua angka sama atau berjumlah 5.\nPilihan: A. $\\frac{6}{36}$\nB. $\\frac{4}{36}$\nC. $\\frac{9}{36}$\nD. $\\frac{10}{36}$\nTranskripsi visual: -",
       "untruncatedTokenCount": 110,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.115,
+      "latencyMs": 0.08,
       "prediction": {
         "questionId": "60d456804bca8ee0d55a4bb7",
         "contentVersion": 2,
-        "contentHash": "d929ba8e3996f7e8526e4a47851733fb3b61a5d5c832830013bc97b5f8e99335",
+        "contentHash": "ec35f7bcc5b3e82d23ac74dd2224ecedae123a07f076e513d62bd407c72cd230",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3397,6 +3455,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3419,16 +3478,16 @@
       "questionId": "6353e1b1ac73792bd65d8bcc",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:6353e1b1ac73792bd65d8bcc:content-v2",
       "questionVersionId": "6353e1b1ac73792bd65d8bcc:content-v2:blind-revalidation",
-      "contentHash": "abb72905b7b5356a372dfe76e46be58fc18bced9ffaeefd4003a069409393617",
+      "contentHash": "66c6d1949c537de0fc280da652d0ab081476f09553a30bfbd13c319171f326c8",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Aturan Perkalian\nTipe soal: multiple_choice\nStimulus: -\nSoal: Kirana sedang memainkan sebuah permainan yang menggunakan dadu. Dia harus melemparkan sepasang dadu dan mendapatkan angka dobel dan pada lemparan kedua mendapatkan jumlah enam. Dia ingin tahu berapa peluang ini dapat terjadi.\n\nMengapa aturan perkalian dapat digunakan untuk menentukan peluang ini? Berapa peluangnya?\nPilihan: A. Kedua lemparan saling bebas; peluangnya $\\frac{11}{36}$\nB. Kedua lemparan saling bebas; peluangnya $\\frac{5}{36}$\nC. Kedua lemparan saling bebas; peluangnya $\\frac{5}{216}$\nD. Kedua lemparan saling bebas; peluangnya $\\frac{1}{36}$\nTranskripsi visual: -",
       "untruncatedTokenCount": 164,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.14,
+      "latencyMs": 0.084,
       "prediction": {
         "questionId": "6353e1b1ac73792bd65d8bcc",
         "contentVersion": 2,
-        "contentHash": "abb72905b7b5356a372dfe76e46be58fc18bced9ffaeefd4003a069409393617",
+        "contentHash": "66c6d1949c537de0fc280da652d0ab081476f09553a30bfbd13c319171f326c8",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3461,6 +3520,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3483,16 +3543,16 @@
       "questionId": "a870c7129a611f1645f3744f",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:a870c7129a611f1645f3744f:content-v2",
       "questionVersionId": "a870c7129a611f1645f3744f:content-v2:blind-revalidation",
-      "contentHash": "88d562a71a9ff85b2f171a909c059836df47e0af4e692b370907253e8be0f0f3",
+      "contentHash": "8afebc8bbef82980ed6f093e11338d9cea58d48910fa84ddad0612c1b58ed1ab",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Aturan Perkalian\nTipe soal: multiple_choice\nStimulus: -\nSoal: Sebuah dadu dilempar dua kali. Hitung peluang untuk mendapatkan\n\ndua angka genap\nPilihan: A. $\\frac{1}{2}$\nB. $\\frac{1}{4}$\nC. $\\frac{1}{36}$\nD. $\\frac{1}{12}$\nTranskripsi visual: -",
       "untruncatedTokenCount": 99,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.081,
+      "latencyMs": 0.069,
       "prediction": {
         "questionId": "a870c7129a611f1645f3744f",
         "contentVersion": 2,
-        "contentHash": "88d562a71a9ff85b2f171a909c059836df47e0af4e692b370907253e8be0f0f3",
+        "contentHash": "8afebc8bbef82980ed6f093e11338d9cea58d48910fa84ddad0612c1b58ed1ab",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3525,6 +3585,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],
@@ -3547,16 +3608,16 @@
       "questionId": "4e77f956826bf22b33dbf58b",
       "diagnosticInferenceQuestionId": "diagnostic:kelas10:4e77f956826bf22b33dbf58b:content-v2",
       "questionVersionId": "4e77f956826bf22b33dbf58b:content-v2:blind-revalidation",
-      "contentHash": "b141c8a0f70431370f2a6edfeab69a82fb39f7a6f0ca0e2fd9ce8322f6527b7d",
+      "contentHash": "9e4d9a9eb6a7802e13471f4acfd8fdad35d7cf936c05d8342e10e408d87dc354",
       "serializedInput": "Kelas: 10\nTopik: Matematika SMA Kelas 10\nSubtopik: Pemilihan Sampel\nTipe soal: multiple_choice\nStimulus: -\nSoal: Putu memiliki roda putar yang terbagi menjadi lima juring yang sama besar, masing-masing ditulis angka 1, 2, 3, 4, dan 5. Dia akan memilih sampel dengan memutar roda tersebut sebanyak tiga kali. Tentukan peluang dia mendapatkan sampel yang rata-ratanya kurang dari 2.\nPilihan: A. 6/125\nB. 5/125\nC. 10/125 (atau 0,08)\nD. 3/125\nTranskripsi visual: -",
       "untruncatedTokenCount": 116,
       "maxLength": 256,
       "wouldTruncate": false,
-      "latencyMs": 0.153,
+      "latencyMs": 0.083,
       "prediction": {
         "questionId": "4e77f956826bf22b33dbf58b",
         "contentVersion": 2,
-        "contentHash": "b141c8a0f70431370f2a6edfeab69a82fb39f7a6f0ca0e2fd9ce8322f6527b7d",
+        "contentHash": "9e4d9a9eb6a7802e13471f4acfd8fdad35d7cf936c05d8342e10e408d87dc354",
         "scopeStatus": "out_of_scope",
         "mathCognitiveDomain": {
           "label": null,
@@ -3589,6 +3650,7 @@
           ]
         },
         "reviewRequired": true,
+        "reviewMode": "automated_ai",
         "reasons": [
           "grade_outside_sd_v1"
         ],

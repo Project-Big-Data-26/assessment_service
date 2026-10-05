@@ -3,61 +3,63 @@
   "sourceClass": 10,
   "subjectTrack": "regular",
   "intendedDifficulty": "Medium",
-  "labelProvenance": "ai_silver",
-  "advisoryCount": 17,
-  "contentQualifiedCount": 17,
+  "researchOnly": true,
+  "advisoryCount": 13,
+  "contentQualifiedCount": 13,
   "items": [
     {
       "question": {
-        "questionId": "6bd03dd3f29670f8050110d7",
-        "questionVersionId": "6bd03dd3f29670f8050110d7:content-v2:blind-revalidation",
+        "questionId": "d84e49739900804aa0aa6417",
+        "questionVersionId": "d84e49739900804aa0aa6417:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "c85c8e9354aaeaf878d798bdccc7b5395bd890052c15c64d0b6f162fa709aae7",
+        "contentHash": "17eae62e40d4f4b2181a9b3dd1fa3a695bf958d48dc913d101d1e4db74c84b07",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Fungsi Eksponensial",
         "questionType": "multiple_choice",
-        "stem": "Massa suatu zat radioaktif adalah 0,3 kg pada pukul 10 pagi. Tingkat peluruhan zat radioaktif tersebut adalah 15 % setiap jam. Berapakah jumlah zat radioaktif tersebut 8 jam kemudian?",
+        "stem": "Pada tahun 2015 kasus positif HIV-AIDS berjumlah sekitar 36 juta jiwa. Jumlah ini meningkat rata-rata 2% setiap tahun dari tahun 2010 hingga 2015. Jika peningkatan kasus positif HIV di tahun-tahun berikutnya diprediksi bertambah secara eksponen pada peningkatan 2% setiap tahun, berapa banyak kasus yang terjadi pada tahun 2020?",
         "stimulus": null,
         "options": [
           {
             "label": "A",
-            "text": "0,21828 kg (218,28 gram)"
+            "text": "≈39.746.909 jiwa"
           },
           {
             "label": "B",
-            "text": "0,2724 kg (272,4 gram)"
+            "text": "38.203.488 jiwa"
           },
           {
             "label": "C",
-            "text": "0,255 kg (255 gram)"
+            "text": "39.600.000 jiwa"
           },
           {
             "label": "D",
-            "text": "≈0,08172 kg (81,72 gram)"
+            "text": "40.541.832 jiwa"
           }
         ],
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Model peluruhan eksponensial: M(t) = M0(1 - r)^t. Diketahui M0 = 0,3 kg, r = 0,15, t = 8. Maka M(8) = 0,3 * (1 - 0,15)^8 = 0,3 * (0,85)^8. (0,85)^8 ≈ 0,27249. M(8) = 0,3 * 0,27249 ≈ 0,081747 kg. Opsi D (0,08172 kg) adalah jawaban yang paling mendekati dengan pembulatan yang konsisten.",
+        "verifiedMinimalSolution": "Model pertumbuhan eksponensial: f(t) = P0(1 + r)^t. Diketahui P0 = 36.000.000, r = 0,02, dan t = 2020 - 2015 = 5. Maka, f(5) = 36.000.000 * (1,02)^5 = 36.000.000 * 1,1040808032 = 39.746.908,9152. Dibulatkan menjadi 39.746.909 jiwa.",
         "verificationProvenance": "ai_silver",
-        "detectedKko": [],
+        "detectedKko": [
+          "menghitung"
+        ],
         "privateAnswerSpecification": {
-          "answerKey": "D",
-          "verifiedAnswerKey": "D",
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
           "answerKeyStatus": "verified",
           "visibility": "restricted"
         },
         "source": {
-          "externalId": "6bd03dd3f29670f8050110d7",
+          "externalId": "d84e49739900804aa0aa6417",
           "subchapter": "Fungsi Eksponensial",
           "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas10",
           "optionExtractionNotes": {
-            "A": "Salah: mengikuti kekeliruan mengurangkan 300 gram dengan f(8), padahal f(x) sudah menyatakan massa tersisa",
-            "B": "Salah: lupa mengalikan hasil (0,85)^8 dengan massa awal 0,3 kg",
-            "C": "Salah: hanya menghitung peluruhan untuk 1 jam (0,3×0,85), bukan 8 jam",
-            "D": "Benar: Fungsi f(x)=0,3(0,85)^x sudah menyatakan massa yang tersisa, sehingga f(8)=0,08172 kg langsung menjadi jawabannya."
+            "A": "Benar: Model pertumbuhan f(x)=36.000.000(1,02)^x dengan x=5 (tahun 2020 dihitung 5 tahun sejak 2015) menghasilkan ≈39.746.909 jiwa.",
+            "B": "Salah: berhenti di tahun ke-3 (2018), bukan tahun ke-5 (2020)",
+            "C": "Salah: memakai pertumbuhan linear (menambahkan 2%×5 tahun sekaligus), bukan eksponensial",
+            "D": "Salah: menganggap tahun 2020 sebagai tahun ke-6, bukan tahun ke-5 sejak 2015"
           }
         }
       },
@@ -73,74 +75,10 @@
     },
     {
       "question": {
-        "questionId": "842ca4bb6c6ebd4208641b61",
-        "questionVersionId": "842ca4bb6c6ebd4208641b61:content-v2:blind-revalidation",
-        "contentVersion": 2,
-        "contentHash": "c288a2c40c1296d6d66829d50d9622f6d882ca5540631440028d183c39dbbfb2",
-        "grade": 10,
-        "topic": "Matematika SMA Kelas 10",
-        "subtopic": "Bentuk Akar",
-        "questionType": "multiple_choice",
-        "stem": "Sederhanakan bentuk akar berikut ini.\n\n$(5\\sqrt{x^5})(3\\sqrt[3]{x})$",
-        "stimulus": null,
-        "options": [
-          {
-            "label": "A",
-            "text": "$8x^{\\frac{17}{6}}$"
-          },
-          {
-            "label": "B",
-            "text": "$15x^{\\frac{17}{6}}$"
-          },
-          {
-            "label": "C",
-            "text": "$15x^{\\frac{13}{6}}$"
-          },
-          {
-            "label": "D",
-            "text": "$15x^{\\frac{6}{17}}$"
-          }
-        ],
-        "visualAssets": [],
-        "visualAssetHashes": {},
-        "visualTranscript": null,
-        "verifiedMinimalSolution": "Ubah bentuk akar ke eksponen pecahan: 5x^(5/2) * 3x^(1/3). Kalikan koefisien: 5 * 3 = 15. Jumlahkan eksponen: 5/2 + 1/3 = 15/6 + 2/6 = 17/6. Hasil akhir: 15x^(17/6).",
-        "verificationProvenance": "ai_silver",
-        "detectedKko": [],
-        "privateAnswerSpecification": {
-          "answerKey": "B",
-          "verifiedAnswerKey": "B",
-          "answerKeyStatus": "verified",
-          "visibility": "restricted"
-        },
-        "source": {
-          "externalId": "842ca4bb6c6ebd4208641b61",
-          "subchapter": "Bentuk Akar",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas10",
-          "optionExtractionNotes": {
-            "A": "Salah: menjumlahkan koefisien 5+3=8, bukan mengalikan 5×3=15",
-            "B": "Benar: Menyamakan penyebut pangkat pecahan (5/2 dan 1/3 menjadi 15/6 dan 2/6) lalu menjumlahkannya menghasilkan pangkat 17/6.",
-            "C": "Salah: mengurangkan pangkat (5/2 - 1/3), bukan menjumlahkan",
-            "D": "Salah: pembilang dan penyebut pecahan pangkat tertukar"
-          }
-        }
-      },
-      "advisoryLabels": {
-        "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "procedural",
-        "intendedDifficulty": "Medium"
-      },
-      "finalRouting": "silver_ready",
-      "contentQualified": true,
-      "reviewMode": "automated_ai",
-      "labelProvenance": "ai_silver"
-    },
-    {
-      "question": {
         "questionId": "d215f8aa8bc3bed140f75b0b",
         "questionVersionId": "d215f8aa8bc3bed140f75b0b:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "73f3351ee4d9f0b53cfb5097340e87933a59ef01911d9a977ad8a868ee7393ff",
+        "contentHash": "4e6d6d10234701e8ee69c309d1e159e9db9a140c36fbc7be382bb8b74637029b",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Bunga",
@@ -168,7 +106,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Firman (bunga tunggal): 10.000.000 + (5 * 0,03 * 10.000.000) = 11.500.000. Gigih (bunga majemuk): 10.000.000 * (1,03)^5 ≈ 11.592.741. Selisih: 11.592.741 - 11.500.000 = 92.741. Gigih memiliki uang lebih banyak.",
+        "verifiedMinimalSolution": "Firman (bunga tunggal): M_t = M_0(1 + i*t) = 10.000.000(1 + 0,03*5) = 11.500.000. Gigih (bunga majemuk): M_t = M_0(1 + i)^t = 10.000.000(1,03)^5 = 10.000.000(1,1592741) = 11.592.741. Selisih = 11.592.741 - 11.500.000 = 92.741.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "menghitung",
@@ -207,7 +145,7 @@
         "questionId": "a1eac21e1913dacf28f160b7",
         "questionVersionId": "a1eac21e1913dacf28f160b7:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "6f37fe93441a0e97659392b476689468b41d151706de1077ec8606cb84e9e67d",
+        "contentHash": "287adc957fdf6aec55504cde5877427d4bd227432aad68e13120732981414520",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Laju Perubahan Satuan",
@@ -235,7 +173,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Samakan rasio sirup per 1 liter air: (1) 2/3 liter sirup/liter air = 0,67. (2) Rasio air:sirup = 2:3, maka sirup/air = 3/2 = 1,5. (3) 2/3 campuran adalah air, maka 1/3 adalah sirup. Rasio sirup/air = (1/3)/(2/3) = 0,5. Campuran (2) memiliki rasio sirup tertinggi (1,5), sehingga paling manis.",
+        "verifiedMinimalSolution": "Samakan rasio sirup terhadap air untuk setiap campuran: (1) 2/3 liter sirup per 1 liter air = 0,67. (2) Rasio air:sirup 2:3 berarti sirup:air = 3:2 = 1,5. (3) Air 2/3 bagian, maka sirup 1/3 bagian, sehingga rasio sirup:air = (1/3)/(2/3) = 0,5. Karena 1,5 > 0,67 > 0,5, campuran kedua paling manis.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [],
         "privateAnswerSpecification": {
@@ -271,7 +209,7 @@
         "questionId": "e8e1147bfed27b5d98b29d8f",
         "questionVersionId": "e8e1147bfed27b5d98b29d8f:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "c38db0076998aa40dc1bbaae9a6a6a0c2f5468733866673ac3db5de59d1e2c1a",
+        "contentHash": "1a2cc90dd543ebfd14de64c5b72fdacd0319873dcc89465626b9c5630b4c366d",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Rumus Jarak (Pengayaan)",
@@ -299,7 +237,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Hitung kuadrat panjang sisi: AB² = (4 - (-1))² + (-2 - 3)² = 5² + (-5)² = 50. BC² = (1 - 4)² + (-5 - (-2))² = (-3)² + (-3)² = 18. AC² = (1 - (-1))² + (-5 - 3)² = 2² + (-8)² = 4 + 64 = 68. Karena AB² + BC² = 50 + 18 = 68 = AC², maka menurut kebalikan Teorema Pythagoras, segitiga ABC siku-siku di B.",
+        "verifiedMinimalSolution": "Hitung kuadrat panjang sisi: AB² = (4 - (-1))² + (-2 - 3)² = 5² + (-5)² = 50. BC² = (1 - 4)² + (-5 - (-2))² = (-3)² + (-3)² = 18. AC² = (1 - (-1))² + (-5 - 3)² = 2² + (-8)² = 68. Karena AB² + BC² = 50 + 18 = 68 = AC², maka ΔABC siku-siku di B.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "menjelaskan"
@@ -337,7 +275,7 @@
         "questionId": "afeeb033a6caf863bee7e15a",
         "questionVersionId": "afeeb033a6caf863bee7e15a:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "994dbb41e2d8b4367968fd0e21ab332cb88e32bce926c92d926e445863d4feb6",
+        "contentHash": "a193c157b1f58251ad007b9cea393f699aa5a50eb3de5f1a2ddcb8f47b8472fa",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Sistem Persamaan Linear",
@@ -365,7 +303,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Misal k, h, b adalah panjang tongkat kasti, hoki, bisbol. Sistem: (1) 3k+2h+b=455, (2) k+3h+2b=545, (3) b=2k. Substitusi (3) ke (1): 3k+2h+2k=455 => 5k+2h=455. Substitusi (3) ke (2): k+3h+4k=545 => 5k+3h=545. Kurangi kedua persamaan: (5k+3h)-(5k+2h)=545-455 => h=90. Substitusi h=90 ke 5k+2(90)=455 => 5k=275 => k=55. Maka b=2(55)=110.",
+        "verifiedMinimalSolution": "Substitusi b=2k ke kedua persamaan: 3k+2h+2k=455 (5k+2h=455) dan k+3h+4k=545 (5k+3h=545). Kurangkan kedua persamaan: (5k+3h)-(5k+2h)=545-455, didapat h=90. Substitusi h=90 ke 5k+2(90)=455, 5k=275, k=55. Maka b=2(55)=110.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [],
         "privateAnswerSpecification": {
@@ -401,7 +339,7 @@
         "questionId": "873ea535dcce2925196e80f4",
         "questionVersionId": "873ea535dcce2925196e80f4:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "5322e1d81ca4f13136b776a61c38382b540e73c9bb54fa33e7886e3b75d75bcb",
+        "contentHash": "cb5695bbfd3d8e4e194357c0588a298bb930a20f83dfc68fce665825fd517f31",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Sistem Persamaan Linear",
@@ -429,7 +367,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Misalkan k=kecil, s=sedang, b=besar. Persamaan: (1) 3k+2s+3b=4700, (2) 3k+s+2b=3300, (3) 2s+2b=2800. Eliminasi (1)-(2) menghasilkan s+b=1400. Persamaan (3) jika dibagi 2 juga menghasilkan s+b=1400. Karena persamaan (3) adalah kombinasi linear dari (1) dan (2), sistem ini memiliki tak hingga solusi (dependen linear).",
+        "verifiedMinimalSolution": "Eliminasi (1)-(2) menghasilkan s+b=1400. Persamaan (3) adalah 2s+2b=2800, yang jika disederhanakan menjadi s+b=1400. Karena persamaan (3) adalah kombinasi linear dari (1) dan (2), sistem ini memiliki tak hingga solusi (dependen).",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "menghitung",
@@ -465,77 +403,10 @@
     },
     {
       "question": {
-        "questionId": "d590344d18abe3ebd38fb8ed",
-        "questionVersionId": "d590344d18abe3ebd38fb8ed:content-v2:blind-revalidation",
-        "contentVersion": 2,
-        "contentHash": "dacd18c02778cc80c5466699f4e9625c54720bdbf7a63336e7733d1036378dbe",
-        "grade": 10,
-        "topic": "Matematika SMA Kelas 10",
-        "subtopic": "Fungsi Kuadrat",
-        "questionType": "multiple_choice",
-        "stem": "Tabel di bawah menunjukkan jarak tempuh sebuah mobil pada setiap waktu.\n\n|Waktu (Detik)|0|1|2|3|4|5|6|\n|---|---|---|---|---|---|---|---|\n|Jarak (m)|0|5|8|9|8|5|0|\n\nTanpa menggambar grafik, tentukan apakah grafik fungsi kuadrat terbuka ke atas atau ke bawah. Jelaskan alasanmu.",
-        "stimulus": null,
-        "options": [
-          {
-            "label": "A",
-            "text": "Tidak dapat ditentukan tanpa menggambar grafiknya."
-          },
-          {
-            "label": "B",
-            "text": "Terbuka ke bawah, karena nilai fungsi (jarak) naik kemudian turun lagi."
-          },
-          {
-            "label": "C",
-            "text": "Terbuka ke atas, karena nilai fungsi naik kemudian turun lagi."
-          },
-          {
-            "label": "D",
-            "text": "Terbuka ke bawah, karena nilai fungsi turun kemudian naik lagi."
-          }
-        ],
-        "visualAssets": [],
-        "visualAssetHashes": {},
-        "visualTranscript": null,
-        "verifiedMinimalSolution": "Data menunjukkan nilai jarak meningkat dari 0 (t=0) hingga mencapai puncak 9 (t=3), kemudian menurun kembali ke 0 (t=6). Pola simetris naik-lalu-turun ini menunjukkan adanya titik maksimum, yang merupakan karakteristik fungsi kuadrat dengan koefisien a < 0, sehingga grafik terbuka ke bawah.",
-        "verificationProvenance": "ai_silver",
-        "detectedKko": [
-          "mengidentifikasi",
-          "menjelaskan"
-        ],
-        "privateAnswerSpecification": {
-          "answerKey": "B",
-          "verifiedAnswerKey": "B",
-          "answerKeyStatus": "verified",
-          "visibility": "restricted"
-        },
-        "source": {
-          "externalId": "d590344d18abe3ebd38fb8ed",
-          "subchapter": "Fungsi Kuadrat",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas10",
-          "optionExtractionNotes": {
-            "A": "Salah: mengabaikan bahwa pola naik-turun pada tabel sudah cukup untuk menyimpulkan arah bukaan tanpa menggambar",
-            "B": "Benar: nilai jarak naik dari 0 di t=0 sampai maksimum 9 di t=3, lalu turun kembali ke 0 di t=6; pola naik-lalu-turun ini khas parabola dengan koefisien a negatif, yaitu terbuka ke bawah",
-            "C": "Salah: menukar arah bukaan (atas/bawah) walau alasan pola naik-turunnya sudah benar",
-            "D": "Salah: menukar pola: turun-lalu-naik sebenarnya ciri parabola terbuka ke atas, bukan ke bawah"
-          }
-        }
-      },
-      "advisoryLabels": {
-        "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "conceptual",
-        "intendedDifficulty": "Medium"
-      },
-      "finalRouting": "silver_ready",
-      "contentQualified": true,
-      "reviewMode": "automated_ai",
-      "labelProvenance": "ai_silver"
-    },
-    {
-      "question": {
         "questionId": "3fab45a2a8a53e25de52d0f6",
         "questionVersionId": "3fab45a2a8a53e25de52d0f6:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "4fde9d455dab1f738cd6be8fab86dae33bf3d19a23e29d3f2acaea2160d5915b",
+        "contentHash": "b59a70b59fbc85113632861e459563f16ab1dbc995218eac234cf202a8e9f580",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Fungsi Kuadrat",
@@ -563,7 +434,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Titik puncak (2,8) memberikan bentuk y=a(x-2)^2+8. Substitusi titik awal (0,4): 4=a(0-2)^2+8 => 4=4a+8 => 4a=-4 => a=-1. Fungsi: y=-(x-2)^2+8 = -(x^2-4x+4)+8 = -x^2+4x+4.",
+        "verifiedMinimalSolution": "Titik puncak (h, k) = (2, 8), maka y = a(x-2)^2 + 8. Melalui (0, 4), maka 4 = a(0-2)^2 + 8 => 4 = 4a + 8 => 4a = -4 => a = -1. Fungsi: y = -1(x-2)^2 + 8 = -(x^2 - 4x + 4) + 8 = -x^2 + 4x - 4 + 8 = -x^2 + 4x + 4.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [],
         "privateAnswerSpecification": {
@@ -596,76 +467,10 @@
     },
     {
       "question": {
-        "questionId": "4b2524b8440c37d72e127b02",
-        "questionVersionId": "4b2524b8440c37d72e127b02:content-v2:blind-revalidation",
-        "contentVersion": 2,
-        "contentHash": "c5e6b68a8b88acf7f11fefa36609bfd344cdacfe912ac21d8eda975857241887",
-        "grade": 10,
-        "topic": "Matematika SMA Kelas 10",
-        "subtopic": "Menyelesaikan Masalah terkait Pertidaksamaan Linier Satu Variabel",
-        "questionType": "multiple_choice",
-        "stem": "Mobil pick up hanya dapat membawa muatan seberat 2.000 kg. Pengemudi dan kernek memiliki berat total 150 kg. Mobil pick up tersebut akan mengangkut kotak yang berisi 50 kg.\n\nJika mobil pick up harus membawa 350 kotak, berapa kali pengangkutan kotak yang harus dilakukan sampai semua kotak terangkut?",
-        "stimulus": null,
-        "options": [
-          {
-            "label": "A",
-            "text": "10 kali pengangkutan"
-          },
-          {
-            "label": "B",
-            "text": "11 kali pengangkutan"
-          },
-          {
-            "label": "C",
-            "text": "9,45 kali pengangkutan"
-          },
-          {
-            "label": "D",
-            "text": "9 kali pengangkutan"
-          }
-        ],
-        "visualAssets": [],
-        "visualAssetHashes": {},
-        "visualTranscript": null,
-        "verifiedMinimalSolution": "Kapasitas muatan bersih = 2000 kg - 150 kg = 1850 kg. Kapasitas per angkut = 1850 kg / 50 kg/kotak = 37 kotak. Jumlah pengangkutan = 350 kotak / 37 kotak/angkut = 9,459... Karena jumlah pengangkutan harus bilangan bulat dan semua kotak harus terangkut, maka dibulatkan ke atas menjadi 10 kali.",
-        "verificationProvenance": "ai_silver",
-        "detectedKko": [
-          "menghitung"
-        ],
-        "privateAnswerSpecification": {
-          "answerKey": "A",
-          "verifiedAnswerKey": "A",
-          "answerKeyStatus": "verified",
-          "visibility": "restricted"
-        },
-        "source": {
-          "externalId": "4b2524b8440c37d72e127b02",
-          "subchapter": "Menyelesaikan Masalah terkait Pertidaksamaan Linier Satu Variabel",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas10",
-          "optionExtractionNotes": {
-            "A": "Benar: Kapasitas sekali angkut 37 kotak, 350p ≤ 37 berarti p ≥ 350/37 = 9,45; karena banyak pengangkutan harus bulat dan harus cukup mengangkut semua kotak, dibulatkan ke atas menjadi 10 kali.",
-            "B": "Salah: Menghitung dengan kapasitas sekali angkut yang salah (bukan 37 kotak), sehingga hasil bagi dibulatkan menjadi 11.",
-            "C": "Salah: Hasil bagi tidak dibulatkan ke bilangan bulat, padahal banyak pengangkutan harus bilangan bulat.",
-            "D": "Salah: 9,45 dibulatkan ke bawah, padahal sisa kotak pada pengangkutan ke-10 tetap membutuhkan 1 perjalanan tambahan."
-          }
-        }
-      },
-      "advisoryLabels": {
-        "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "procedural",
-        "intendedDifficulty": "Medium"
-      },
-      "finalRouting": "silver_ready",
-      "contentQualified": true,
-      "reviewMode": "automated_ai",
-      "labelProvenance": "ai_silver"
-    },
-    {
-      "question": {
         "questionId": "e9d27eefa537bb209c6d3b40",
         "questionVersionId": "e9d27eefa537bb209c6d3b40:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "21e59034e886afa94e1530e6fe973e5cec44e63b39fb5235d57c2271c3ca6267",
+        "contentHash": "259054e90d5fbb06bff3d915cf27c250e32578d11eaafa4fec966c1b6fe4ac78",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Representasi Data",
@@ -696,8 +501,8 @@
         "visualAssetHashes": {
           "images/kelas10_panduan_siswa_kelas10.pdf-0200-09.png": "c9892850de8b080f6405b232a6582e5061315542f275f31f1476b204df13ff08"
         },
-        "visualTranscript": "Diagram batang menunjukkan waktu tempuh atlet. Sumbu horizontal berisi label negara peserta: Austria 1, Austria 2, Canada, Czech Republic, Estonia 1, Estonia 2, Finland, France, Germany, Greece, Japan, Kazakhstan, Kenya, Latvia, Macedonia, Mongolia, Norway 1, Norway 2, Russia, Slovakia, Spain 1, Spain 2, Ukraine, U.S 1, U.S 2. Terdapat 25 batang total. Negara yang muncul dua kali adalah Austria, Estonia, Norway, Spain, dan U.S. (5 negara). Negara yang muncul sekali: Canada, Czech Republic, Finland, France, Germany, Greece, Japan, Kazakhstan, Kenya, Latvia, Macedonia, Mongolia, Russia, Slovakia, Ukraine (15 negara). Total negara unik = 5 + 15 = 20.",
-        "verifiedMinimalSolution": "Jumlah atlet adalah total batang pada diagram, yaitu 25. Untuk jumlah negara, hitung negara unik pada label sumbu horizontal. Negara yang muncul dua kali (Austria, Estonia, Norway, Spain, U.S) dihitung satu kali, ditambah 15 negara yang muncul sekali, total 20 negara.",
+        "visualTranscript": "Diagram batang menunjukkan waktu tempuh peserta Lintas Alam Olimpiade 1998. Sumbu horizontal berisi label negara peserta: Austria 1, Austria 2, Canada, Czech Republic, Estonia 1, Estonia 2, Finland, France, Germany, Greece, Japan, Kazakhstan, Kenya, Latvia, Macedonia, Mongolia, Norway 1, Norway 2, Russia, Slovakia, Spain 1, Spain 2, Ukraine, U.S 1, U.S 2. Terdapat 25 batang total. Negara yang muncul dua kali adalah Austria, Estonia, Norway, Spain, U.S (5 negara).",
+        "verifiedMinimalSolution": "Jumlah atlet adalah total batang pada diagram, yaitu 25. Untuk jumlah negara, hitung negara unik dari label sumbu horizontal: Austria, Canada, Czech Republic, Estonia, Finland, France, Germany, Greece, Japan, Kazakhstan, Kenya, Latvia, Macedonia, Mongolia, Norway, Russia, Slovakia, Spain, Ukraine, U.S. Total ada 20 negara unik.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "menghitung"
@@ -732,74 +537,10 @@
     },
     {
       "question": {
-        "questionId": "ff85b5a87bfa58eb3957ceb3",
-        "questionVersionId": "ff85b5a87bfa58eb3957ceb3:content-v2:blind-revalidation",
-        "contentVersion": 2,
-        "contentHash": "cd9376f986bd2aba2484c384be9468f45cfbbd094a07f7b1f1d1a53a1fe5ade5",
-        "grade": 10,
-        "topic": "Matematika SMA Kelas 10",
-        "subtopic": "Statistik Deskriptif",
-        "questionType": "multiple_choice",
-        "stem": "Jika data penjualan sepatu di toko A pada Tabel kita ubah menjadi tabel Frekuensi data tunggal sebagai berikut. Tabel Frekuensi Data Tunggal Penjualan Sepatu di Toko A | Ukuran: 38, 39, 40, 41, 42, 43, 44, 45, 46 | Frekuensi: 1, 1, 2, 4, 5, 7, 7, 2, 1\n\nTentukanlah modus, median, dan mean dari kumpulan data di atas.",
-        "stimulus": null,
-        "options": [
-          {
-            "label": "A",
-            "text": "Modus = 43 dan 44, median = 42, mean = 42,5"
-          },
-          {
-            "label": "B",
-            "text": "Modus = 43 dan 44, median = 43, mean = 42"
-          },
-          {
-            "label": "C",
-            "text": "Modus = 7, median = 43, mean = 42,5"
-          },
-          {
-            "label": "D",
-            "text": "Modus = 43 dan 44, median = 43, mean = 42,5"
-          }
-        ],
-        "visualAssets": [],
-        "visualAssetHashes": {},
-        "visualTranscript": null,
-        "verifiedMinimalSolution": "Total data N = 30. Modus: frekuensi tertinggi 7 pada ukuran 43 dan 44. Median: rata-rata data ke-15 dan ke-16. Kumulatif frekuensi: 38(1), 39(2), 40(4), 41(8), 42(13), 43(20). Data ke-15 dan ke-16 berada di ukuran 43. Mean: (38*1 + 39*1 + 40*2 + 41*4 + 42*5 + 43*7 + 44*7 + 45*2 + 46*1) / 30 = 1275 / 30 = 42,5.",
-        "verificationProvenance": "ai_silver",
-        "detectedKko": [],
-        "privateAnswerSpecification": {
-          "answerKey": "D",
-          "verifiedAnswerKey": "D",
-          "answerKeyStatus": "verified",
-          "visibility": "restricted"
-        },
-        "source": {
-          "externalId": "ff85b5a87bfa58eb3957ceb3",
-          "subchapter": "Statistik Deskriptif",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas10",
-          "optionExtractionNotes": {
-            "A": "Salah: median dihitung sebagai (data terkecil + data terbesar)/2 = (38+46)/2, bukan nilai tengah data terurut",
-            "B": "Salah: menghitung mean sebagai rata-rata sederhana dari 9 nilai ukuran (38 sampai 46) tanpa mengalikannya dengan frekuensi",
-            "C": "Salah: menyebut frekuensi terbanyak (7) sebagai modus, bukan nilai ukuran sepatunya",
-            "D": "Benar: ukuran 43 dan 44 sama-sama memiliki frekuensi terbanyak (7), nilai tengah dari 30 data terurut (rata-rata data ke-15 dan ke-16) jatuh di ukuran 43, dan mean = jumlah (ukuran x frekuensi) dibagi 30 = 42,5"
-          }
-        }
-      },
-      "advisoryLabels": {
-        "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "procedural",
-        "intendedDifficulty": "Medium"
-      },
-      "finalRouting": "silver_ready",
-      "contentQualified": true,
-      "reviewMode": "automated_ai",
-      "labelProvenance": "ai_silver"
-    },
-    {
-      "question": {
         "questionId": "d6d3b4c5f9819d69d4c859d0",
         "questionVersionId": "d6d3b4c5f9819d69d4c859d0:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "4e82b53e736a11b850b973e7ea573df979144a4cfd1e7dcd1e89b9cf368d9cf1",
+        "contentHash": "2da83515669618c8c1a9e1a1959149b8b0eeb6f11df31152fe45471acc9a24af",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Representasi Data Lanjutan",
@@ -827,7 +568,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Urutkan data: 300, 305, 310, 310, 310, 315, 315, 320, 320, 750. Q1 (kuartil bawah) = 310. Q3 (kuartil atas) = 320. IQR = Q3 - Q1 = 10. Batas atas = Q3 + 1,5 * IQR = 320 + 1,5(10) = 335. Karena 750 > 335, maka 750 adalah pencilan.",
+        "verifiedMinimalSolution": "Urutkan data: 300, 305, 310, 310, 315, 315, 320, 320, 325, 750. Q1 = 310, Q3 = 320. IQR = Q3 - Q1 = 10. Batas atas = Q3 + 1,5 * IQR = 320 + 15 = 335. Karena 750 > 335, maka 750 adalah pencilan.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [],
         "privateAnswerSpecification": {
@@ -860,76 +601,10 @@
     },
     {
       "question": {
-        "questionId": "49d68d1b46c35ead12cca547",
-        "questionVersionId": "49d68d1b46c35ead12cca547:content-v2:blind-revalidation",
-        "contentVersion": 2,
-        "contentHash": "6d4ed04551ea52d79437825c6daa06663375e0450da500d3f147faabb87206a1",
-        "grade": 10,
-        "topic": "Matematika SMA Kelas 10",
-        "subtopic": "Penyebaran Data",
-        "questionType": "multiple_choice",
-        "stem": "Tentukan kuartil bawah, kuartil atas, jangkauan dan simpangan antar kuartil dari data berikut.\n\n50, 60, 85, 70, 65, 50, 80, 85, 90, 65, 65, 75, 80 65",
-        "stimulus": null,
-        "options": [
-          {
-            "label": "A",
-            "text": "Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5"
-          },
-          {
-            "label": "B",
-            "text": "Q1 = 65; Q2 = 67,5; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 15"
-          },
-          {
-            "label": "C",
-            "text": "Q1 = 80; Q2 = 67,5; Q3 = 65; jangkauan kuartil = 15; simpangan kuartil = 7,5"
-          },
-          {
-            "label": "D",
-            "text": "Q1 = 65; Q2 = 70,4; Q3 = 80; jangkauan kuartil = 15; simpangan kuartil = 7,5"
-          }
-        ],
-        "visualAssets": [],
-        "visualAssetHashes": {},
-        "visualTranscript": null,
-        "verifiedMinimalSolution": "Data terurut (n=14): 50, 50, 60, 65, 65, 65, 65, 70, 75, 80, 80, 85, 85, 90. Median (Q2) = (65+70)/2 = 67,5. Q1 (median dari 7 data pertama) = 65. Q3 (median dari 7 data terakhir) = 80. Jangkauan antar kuartil (H) = Q3 - Q1 = 80 - 65 = 15. Simpangan kuartil (Qd) = 0,5 * H = 7,5.",
-        "verificationProvenance": "ai_silver",
-        "detectedKko": [
-          "mengidentifikasi"
-        ],
-        "privateAnswerSpecification": {
-          "answerKey": "A",
-          "verifiedAnswerKey": "A",
-          "answerKeyStatus": "verified",
-          "visibility": "restricted"
-        },
-        "source": {
-          "externalId": "49d68d1b46c35ead12cca547",
-          "subchapter": "Penyebaran Data",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas10",
-          "optionExtractionNotes": {
-            "A": "Benar: data terurut 50,50,60,65,65,65,65,70,75,80,80,85,85,90 (14 data); median 7 data pertama=65=Q1; median 7 data terakhir=80=Q3; Q2=median 14 data=(65+70)/2=67,5; jangkauan=Q3-Q1=15; simpangan=15/2=7,5",
-            "B": "Salah: lupa membagi jangkauan kuartil dengan 2 untuk mencari simpangan kuartil",
-            "C": "Salah: tertukar posisi Q1 dan Q3 saat membaca data terurut",
-            "D": "Salah: menghitung Q2 sebagai rata-rata seluruh data (985:14=70,4), bukan median data terurut"
-          }
-        }
-      },
-      "advisoryLabels": {
-        "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "procedural",
-        "intendedDifficulty": "Medium"
-      },
-      "finalRouting": "silver_ready",
-      "contentQualified": true,
-      "reviewMode": "automated_ai",
-      "labelProvenance": "ai_silver"
-    },
-    {
-      "question": {
         "questionId": "4dc162c092a693bfc3a3ad55",
         "questionVersionId": "4dc162c092a693bfc3a3ad55:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "26779b72c79ecce9a5f34073512ddf0c736b7bb8b7d223d5f9004bf80885e969",
+        "contentHash": "1763ae80eaba5e49cb602209058827a70620e8bcef000d1584924f4e15dbde9c",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Aturan Penjumlahan",
@@ -957,7 +632,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Kejadian A (dobel): {(1,1), (2,2), (3,3), (4,4), (5,5), (6,6)}, n(A)=6. Kejadian B (jumlah 2): {(1,1)}, n(B)=1. Irisan A dan B: {(1,1)}, n(A∩B)=1. P(A∪B) = P(A) + P(B) - P(A∩B) = 6/36 + 1/36 - 1/36 = 6/36.",
+        "verifiedMinimalSolution": "P(A) = peluang angka sama = 6/36. P(B) = peluang jumlah 2 = 1/36. Irisan (A ∩ B) = (1,1) = 1/36. P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 6/36 + 1/36 - 1/36 = 6/36.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "mengidentifikasi",
@@ -965,7 +640,7 @@
         ],
         "privateAnswerSpecification": {
           "answerKey": "C",
-          "verifiedAnswerKey": "6/36",
+          "verifiedAnswerKey": "C",
           "answerKeyStatus": "verified",
           "visibility": "restricted"
         },
@@ -993,10 +668,77 @@
     },
     {
       "question": {
+        "questionId": "60d456804bca8ee0d55a4bb7",
+        "questionVersionId": "60d456804bca8ee0d55a4bb7:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "ec35f7bcc5b3e82d23ac74dd2224ecedae123a07f076e513d62bd407c72cd230",
+        "grade": 10,
+        "topic": "Matematika SMA Kelas 10",
+        "subtopic": "Aturan Penjumlahan",
+        "questionType": "multiple_choice",
+        "stem": "Gunakan aturan penjumlahan untuk soal-soal berikut mengenai sepasang dadu yang dilempar.\n\nTentukan peluang mendapatkan dua angka sama atau berjumlah 5.",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\frac{6}{36}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\frac{4}{36}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\frac{9}{36}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\frac{10}{36}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Ruang sampel n(S) = 36. Kejadian A (angka sama): {(1,1), (2,2), (3,3), (4,4), (5,5), (6,6)}, n(A) = 6. Kejadian B (jumlah 5): {(1,4), (2,3), (3,2), (4,1)}, n(B) = 4. Karena A dan B saling lepas (angka sama selalu genap, jumlah 5 ganjil), P(A atau B) = P(A) + P(B) = 6/36 + 4/36 = 10/36.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "mengidentifikasi",
+          "menerapkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "10/36",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "60d456804bca8ee0d55a4bb7",
+          "subchapter": "Aturan Penjumlahan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/output/pretest/kelas10",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya menghitung peluang dua angka sama (dobel) saja",
+            "B": "Salah: hanya menghitung peluang berjumlah 5 saja",
+            "C": "Salah: menganggap kedua kejadian tidak saling lepas dan mengurangkan irisan yang sebenarnya kosong (6/36+4/36-1/36)",
+            "D": "Benar: kedua kejadian saling lepas (dobel selalu berjumlah genap sehingga tidak mungkin berjumlah 5); P(A atau B) = P(A) + P(B) = 6/36 + 4/36 = 10/36"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
         "questionId": "6353e1b1ac73792bd65d8bcc",
         "questionVersionId": "6353e1b1ac73792bd65d8bcc:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "abb72905b7b5356a372dfe76e46be58fc18bced9ffaeefd4003a069409393617",
+        "contentHash": "66c6d1949c537de0fc280da652d0ab081476f09553a30bfbd13c319171f326c8",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Aturan Perkalian",
@@ -1024,7 +766,7 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "P(A) = peluang muncul angka dobel pada sepasang dadu = 6/36 = 1/6. P(B) = peluang jumlah mata dadu 6 pada sepasang dadu = {(1,5), (2,4), (3,3), (4,2), (5,1)} = 5/36. Karena lemparan pertama dan kedua adalah kejadian saling bebas, maka P(A dan B) = P(A) × P(B) = 1/6 × 5/36 = 5/216.",
+        "verifiedMinimalSolution": "Peluang muncul angka dobel (E1) adalah 6/36 = 1/6. Peluang muncul jumlah mata dadu enam (E2) adalah {(1,5), (2,4), (3,3), (4,2), (5,1)}, yaitu 5/36. Karena lemparan pertama dan kedua adalah kejadian saling bebas, maka peluang keduanya terjadi adalah P(E1) x P(E2) = 1/6 x 5/36 = 5/216.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "menghitung"
@@ -1049,7 +791,7 @@
       },
       "advisoryLabels": {
         "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "procedural",
+        "knowledgeDimension": "conceptual",
         "intendedDifficulty": "Medium"
       },
       "finalRouting": "silver_ready",
@@ -1062,7 +804,7 @@
         "questionId": "4e77f956826bf22b33dbf58b",
         "questionVersionId": "4e77f956826bf22b33dbf58b:content-v2:blind-revalidation",
         "contentVersion": 2,
-        "contentHash": "b141c8a0f70431370f2a6edfeab69a82fb39f7a6f0ca0e2fd9ce8322f6527b7d",
+        "contentHash": "9e4d9a9eb6a7802e13471f4acfd8fdad35d7cf936c05d8342e10e408d87dc354",
         "grade": 10,
         "topic": "Matematika SMA Kelas 10",
         "subtopic": "Pemilihan Sampel",
@@ -1090,14 +832,14 @@
         "visualAssets": [],
         "visualAssetHashes": {},
         "visualTranscript": null,
-        "verifiedMinimalSolution": "Total ruang sampel = 5^3 = 125. Syarat rata-rata < 2 ekuivalen dengan jumlah 3 angka < 6. Kemungkinan jumlah: 3 (1,1,1: 1 cara), 4 (1,1,2: 3 cara), 5 (1,1,3: 3 cara; 1,2,2: 3 cara). Total kejadian = 1 + 3 + 3 + 3 = 10. Peluang = 10/125.",
+        "verifiedMinimalSolution": "Total ruang sampel = 5^3 = 125. Syarat rata-rata < 2 ekuivalen dengan jumlah 3 angka < 6. Kemungkinan jumlah: 3 (1,1,1: 1 cara), 4 (1,1,2: 3 cara), 5 (1,1,3: 3 cara; 1,2,2: 3 cara). Total kejadian = 1 + 3 + 6 = 10. Peluang = 10/125.",
         "verificationProvenance": "ai_silver",
         "detectedKko": [
           "mengidentifikasi"
         ],
         "privateAnswerSpecification": {
           "answerKey": "C",
-          "verifiedAnswerKey": "C",
+          "verifiedAnswerKey": "10/125",
           "answerKeyStatus": "verified",
           "visibility": "restricted"
         },
@@ -1115,7 +857,7 @@
       },
       "advisoryLabels": {
         "mathCognitiveDomain": "applying",
-        "knowledgeDimension": "procedural",
+        "knowledgeDimension": "conceptual",
         "intendedDifficulty": "Medium"
       },
       "finalRouting": "silver_ready",

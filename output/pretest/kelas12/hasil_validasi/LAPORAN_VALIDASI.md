@@ -1,19 +1,19 @@
 # Validasi ulang soal kelas 12 — Gemini blind N=3 dan diagnostik IndoBERT
 
-Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v8-blind-sma12-key-verified`. Rubrik: `math-rubric-3x4x3-v6-sma12-grade-aware`.
+Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v10-blind-sma12-key-verified`. Rubrik: `math-rubric-3x4x3-v8-sma12-grade-aware`.
 
 Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas 12 tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan menjadi keputusan silver operasional.
 
-Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Model SD berada di luar cakupan kelas 12, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
+Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Artifact berada di luar cakupan kelas 12, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
 
-Jumlah soal: 32; distribusi label advisory: `{"mathCognitiveDomain": {"applying": 27, "knowing": 4, "reasoning": 1}, "knowledgeDimension": {"conceptual": 9, "procedural": 23, "factual": 0, "metacognitive": 0}, "intendedDifficulty": {"Easy": 19, "Medium": 13, "Hard": 0}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 26, "knowing": 4, "reasoning": 1}, "knowledgeDimension": {"conceptual": 9, "procedural": 22}, "intendedDifficulty": {"Easy": 19, "Medium": 12}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Jumlah soal: 32; distribusi label advisory: `{"mathCognitiveDomain": {"applying": 25, "knowing": 4, "undecided": 1, "reasoning": 2}, "knowledgeDimension": {"procedural": 23, "factual": 1, "conceptual": 7, "undecided": 1, "metacognitive": 0}, "intendedDifficulty": {"Easy": 18, "Medium": 11, "undecided": 1, "Hard": 2}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 25, "knowing": 4, "reasoning": 2}, "knowledgeDimension": {"procedural": 23, "factual": 1, "conceptual": 7, "metacognitive": 0}, "intendedDifficulty": {"Easy": 18, "Medium": 11, "Hard": 2}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
 Routing: `{"silver_ready": 31, "revision_required": 1}`.
-Run awal sukses: 96/96; adjudikasi: 14; token sukses tercatat: 291,834.
+Run awal sukses: 96/96; adjudikasi: 14; token sukses tercatat: 366,420.
 
 Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
-IndoBERT aktif: `indobert-3x4x3-silver-kelas1-v1`, arsitektur `parallel-v1`, representation `metadata`. Artifact belum disetujui; tidak ada training ulang dalam batch ini. Difficulty model lama dapat mengalami class collapse. Confidence dari kalibrasi kelas 1 yang kecil belum membuktikan ketepatan label.
+Artifact diagnostik IndoBERT: `indobert-3x4x3-silver-kelas1-v1`, arsitektur `parallel-v1`, representation `metadata`. Dataset training: `kelas1-gemini-silver-n3-v1`. Approval provisional: `False`; research-only: `False`; gate data: `False`; anti-collapse: `False`; gate promosi: `False`. Packaging ini tidak melakukan training atau promosi model.
 KKO eksplisit masuk input encoder: `False`. Solusi minimum masuk input encoder: `False`. KKO/solusi tetap dicatat untuk audit; jangan menyatakan fitur itu dipakai model bila serializer artefak tidak memasukkannya.
 
 ## Kelompok difficulty
@@ -22,17 +22,17 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 19 | 19 | [Easy.json](difficulty/Easy.json) |
-| Medium | 13 | 12 | [Medium.json](difficulty/Medium.json) |
-| Hard | 0 | 0 | [Hard.json](difficulty/Hard.json) |
+| Easy | 18 | 18 | [Easy.json](difficulty/Easy.json) |
+| Medium | 11 | 11 | [Medium.json](difficulty/Medium.json) |
+| Hard | 2 | 2 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
 
-Untuk kelas 12, encoder dan head IndoBERT tidak dijalankan karena scope model hanya kelas 1–6. Probabilitas kosong, label/confidence/entropy null, dan action abstain berasal dari pemeriksaan scope runtime. Suara Gemini adalah bukti penilaian advisory, bukan probabilitas IndoBERT.
+Untuk kelas 12, encoder dan head IndoBERT tidak dijalankan karena cakupan artifact adalah kelas [1, 2, 3, 4, 5, 6], jalur ['regular']. Probabilitas kosong, label/confidence/entropy null, dan action abstain berasal dari pemeriksaan scope runtime. Suara Gemini adalah bukti penilaian advisory, bukan probabilitas IndoBERT.
 
 Suara awal LLM dihitung dari label yang benar-benar diberikan tiap run; abstain tidak menjadi suara kelas. Policy saat ini menerima 3–0 langsung dan meminta adjudikasi untuk kasus lainnya. Majority awal minimal 2/3 dicatat sebagai bukti, bukan confidence probabilistik. Label adjudikasi yang berbeda dari mayoritas awal tetap disimpan dengan alasan dan tidak disamarkan menjadi voting 3–0.
 
-Model IndoBERT lama hanya mendukung SD kelas 1–6. Untuk kelas 12, diagnostik mengembalikan `out_of_scope` dan `abstain`: label, confidence, dan entropy null serta probabilitas kosong. Label advisory mengikuti Gemini blind dengan rubrik SMA kelas 12. Tidak ada inferensi SD yang dipaksakan sebagai prediksi SMA.
+Cakupan artifact: kelas [1, 2, 3, 4, 5, 6], jalur ['regular']. Untuk kelas 12, diagnostik mengembalikan `out_of_scope` dan `abstain`: label, confidence, dan entropy null serta probabilitas kosong. Label advisory mengikuti Gemini blind dengan rubrik SMA kelas 12.
 
 ## 1. Soal `ddce171a6063467f30bcf924`
 
@@ -58,14 +58,14 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2095 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2069 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2104 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3497 |
+| 2 | success | valid / verified | applying | procedural | Easy | 3428 |
+| 3 | success | valid / verified | applying | procedural | Easy | 3564 |
 
 Run 1 — solusi: Pola barisan adalah perkalian dengan bilangan asli yang berurutan: 1x1=1, 1x2=2, 2x3=6. Maka suku berikutnya adalah 6x4=24 dan 24x5=120.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali pola rekursif (perkalian dengan pengali yang meningkat) dari deret yang diberikan. Ini adalah proses applying karena siswa menerapkan prosedur pengenalan pola untuk menentukan suku berikutnya.. Bukti: 1, 1, 2, 6, …, …; pola perkalian bertambah: x1,x2,x3,x4,x5
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang struktur barisan bilangan dan prinsip pola perkalian, yang termasuk dalam kategori pengetahuan konseptual.. Bukti: 1, 1, 2, 6, …, …
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena pola yang digunakan (faktorial/perkalian berurutan) cukup standar dan hanya memerlukan dua langkah perhitungan sederhana untuk menemukan dua suku berikutnya.. Bukti: 1, 1, 2, 6, …, …
+- Domain kognitif `classify/applying`: Siswa perlu mengenali pola rekursif perkalian yang meningkat (1, 2, 3, 4, 5) untuk menentukan suku berikutnya. Ini termasuk menerapkan konsep barisan yang sudah dipelajari.. Bukti: 1, 1, 2, 6, …, …; pola perkalian bertambah: x1,x2,x3,x4,x5
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan pengetahuan prosedural tentang pola bilangan dan konsep barisan untuk mengidentifikasi aturan pembentukan suku.. Bukti: 1, 1, 2, 6, …, …; pola perkalian bertambah
+- Intended difficulty `classify/Easy`: Soal ini meminta siswa mengidentifikasi pola barisan yang tidak konstan (bukan aritmetika/geometri standar). Meskipun polanya sederhana, siswa harus melakukan eksplorasi pola sendiri.. Bukti: 1, 1, 2, 6, …, …; pola perkalian bertambah: x1,x2,x3,x4,x5
 
 Profil difficulty run ini:
 
@@ -80,19 +80,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun materi barisan diajarkan di kelas 12, soal ini menggunakan pola yang sangat sederhana dan familiar, sehingga tingkat kesulitannya rendah untuk siswa SMA. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 12, mengenali pola barisan faktorial sederhana seperti ini adalah tugas rutin yang tidak memerlukan perencanaan kompleks. |
 
-Run 2 — solusi: Pola barisan adalah perkalian dengan bilangan asli yang berurutan: 1x1=1, 1x2=2, 2x3=6. Maka suku berikutnya adalah 6x4=24 dan 24x5=120.
-- Domain kognitif `classify/applying`: Siswa perlu mengenali pola rekursif (perkalian dengan bilangan asli yang meningkat) dari deret yang diberikan. Ini melibatkan identifikasi pola, yang merupakan proses applying konsep barisan.. Bukti: 1, 1, 2, 6, …, …
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip pola bilangan (konseptual) dan penerapan algoritma perkalian untuk menentukan suku berikutnya (prosedural). Fokus utamanya adalah memahami struktur pola tersebut.. Bukti: 1, 1, 2, 6
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena pola yang diberikan cukup sederhana dan familiar bagi siswa SMA. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan.. Bukti: 1, 1, 2, 6, …, …
+Run 2 — solusi: Pola barisan adalah u_n = u_{n-1} * (n-1), yang setara dengan faktorial (n-1)!. Suku ke-5 adalah 6 * 4 = 24. Suku ke-6 adalah 24 * 5 = 120. Jadi, dua suku berikutnya adalah 24 dan 120.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi pola perkalian yang meningkat pada barisan bilangan dan menerapkan pola tersebut untuk menentukan suku berikutnya. Ini adalah penerapan prosedur pengenalan pola yang rutin.. Bukti: Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 1, 1, 2, 6, …, …
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma atau teknik pengenalan pola barisan bilangan (faktorial), yang merupakan pengetahuan prosedural.. Bukti: 1, 1, 2, 6, …, …
+- Intended difficulty `classify/Easy`: Soal ini dikategorikan mudah karena pola barisan (faktorial) merupakan pola yang sangat standar dan familiar bagi siswa SMA. Langkah penyelesaiannya langsung dan tidak memerlukan perencanaan strategi yang kompleks.. Bukti: 1, 1, 2, 6, …, …
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pola bilangan dan operasi perkalian. |
+| expectedPrerequisite | Pemahaman dasar tentang barisan bilangan dan operasi perkalian. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -102,18 +102,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun materi barisan adalah kurikulum SMA, tingkat kesulitan soal ini sangat rendah karena pola perkalian (faktorial) adalah pola dasar yang sering ditemui. |
+| gradeRelativeRationale | Soal ini merupakan latihan pengenalan pola dasar yang sesuai untuk kelas 12 sebagai bagian dari materi barisan dan deret, tanpa tuntutan integrasi konsep yang tinggi. |
 
 Run 3 — solusi: Pola barisan adalah perkalian dengan bilangan asli yang berurutan: 1x1=1, 1x2=2, 2x3=6. Maka suku berikutnya adalah 6x4=24 dan 24x5=120.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola rekursif (perkalian dengan bilangan asli yang meningkat) dari barisan yang diberikan. Ini adalah proses mengenali pola dan menerapkan aturan tersebut untuk menentukan suku berikutnya.. Bukti: 1, 1, 2, 6, …, …
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep barisan bilangan dan kemampuan menerapkan aturan pola (prosedur) untuk menemukan suku berikutnya.. Bukti: 1, 1, 2, 6, …, …
-- Intended difficulty `classify/Easy`: Soal ini termasuk kategori mudah karena pola yang digunakan (perkalian berurutan) cukup standar dan familiar bagi siswa SMA, serta tidak memerlukan langkah-langkah yang kompleks.. Bukti: 1, 1, 2, 6, …, …
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola rekursif (perkalian dengan bilangan yang meningkat) dan menerapkannya untuk menentukan dua suku berikutnya. Ini adalah penerapan prosedur pada konteks rutin.. Bukti: 1, 1, 2, 6, …, …; pola perkalian bertambah: x1,x2,x3,x4,x5
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji kemampuan siswa dalam mengenali dan menggunakan algoritma atau aturan pembentukan barisan (prosedur) untuk menemukan suku berikutnya.. Bukti: 1, 1, 2, 6, …, …; pola perkalian bertambah: x1,x2,x3,x4,x5
+- Intended difficulty `classify/Easy`: Soal ini termasuk Easy karena polanya sangat sederhana dan langsung terlihat setelah menguji beberapa operasi dasar. Tidak ada kendala yang berinteraksi atau perencanaan kompleks.. Bukti: 1, 1, 2, 6, …, …; pola perkalian bertambah: x1,x2,x3,x4,x5
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pola barisan bilangan. |
+| expectedPrerequisite | Pemahaman dasar tentang pola bilangan dan operasi perkalian. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -122,38 +122,16 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun materi barisan diajarkan di kelas 11/12, tingkat kesulitan soal ini sangat rendah untuk standar kelas 12 karena hanya melibatkan operasi perkalian sederhana dengan pola yang jelas. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk siswa kelas 12, mengenali pola barisan sederhana seperti ini adalah kemampuan dasar yang sudah dikuasai sejak jenjang sebelumnya. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3543`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu mengenali pola rekursif (perkalian dengan pengali yang meningkat) dari deret yang diberikan. Ini adalah proses applying karena siswa menerapkan prosedur pengenalan pola untuk menentukan suku berikutnya.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman tentang struktur barisan bilangan dan prinsip pola perkalian, yang termasuk dalam kategori pengetahuan konseptual.
-- Intended difficulty `Easy`: Soal ini tergolong mudah karena pola yang digunakan (faktorial/perkalian berurutan) cukup standar dan hanya memerlukan dua langkah perhitungan sederhana untuk menemukan dua suku berikutnya.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pola bilangan dan operasi perkalian. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun materi barisan diajarkan di kelas 12, soal ini menggunakan pola yang sangat sederhana dan familiar, sehingga tingkat kesulitannya rendah untuk siswa SMA. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -185,9 +163,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 2. Soal `577daf905630d2b50cdcacfa`
@@ -202,47 +180,26 @@ Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 4, 4, 4, 4, …,
 | D | 1, 3 |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Barisan 4, 4, 4, 4, ... adalah barisan konstan dengan suku ke-n (Un) = 4. Maka, suku berikutnya tetap 4.
+Solusi minimum hasil AI: Barisan tersebut adalah barisan konstan dengan suku ke-n (Un) = 4 untuk setiap n. Maka, dua suku berikutnya adalah 4 dan 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9de549f232b11aebb0f4a039fc417124a63cd481ba7a93636292d1c8a7450159`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7ea1e4e9dbf7404d81a1326b483049a6953feb03d0fdd8f0a6c402abc98ab7de`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 1982 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 1987 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 2017 |
+| 1 | success | valid / verified | knowing | factual | Easy | 3097 |
+| 2 | success | valid / verified | knowing | factual | Easy | 3113 |
+| 3 | success | valid / verified | knowing | factual | Easy | 3128 |
 
-Run 1 — solusi: Barisan 4, 4, 4, 4, ... adalah barisan konstan dengan suku ke-n (Un) = 4. Maka, suku berikutnya tetap 4.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola barisan konstan yang sangat sederhana (mengingat/mengenali pola).. Bukti: Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 4, 4, 4, 4, …, …
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual dasar mengenai barisan bilangan konstan.. Bukti: 4, 4, 4, 4, …, …
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, tidak memerlukan perhitungan kompleks atau strategi khusus, hanya pengenalan pola yang langsung.. Bukti: 4, 4, 4, 4, …, …
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang pola barisan bilangan. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | weak |
-| gradeRelativeRationale | Meskipun untuk kelas 12, soal ini terlalu sederhana dan tidak mencerminkan standar kompetensi kelas 12 yang seharusnya lebih kompleks. |
-
-Run 2 — solusi: Barisan 4, 4, 4, 4, ... adalah barisan konstan dengan suku ke-n (Un) = 4 untuk setiap n. Oleh karena itu, dua suku berikutnya tetap 4 dan 4.
-- Domain kognitif `classify/knowing`: Soal ini hanya meminta pengenalan pola sederhana (barisan konstan) yang merupakan proses langsung tanpa memerlukan strategi kompleks.. Bukti: Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 4, 4, 4, 4, …, …
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep barisan konstan sebagai bagian dari pengetahuan konseptual tentang pola bilangan.. Bukti: 4, 4, 4, 4, …, …
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan prosedurnya sangat familiar bagi siswa SMA, tidak memerlukan langkah perhitungan yang berarti.. Bukti: 4, 4, 4, 4, …, …
+Run 1 — solusi: Barisan tersebut adalah barisan konstan dengan suku ke-n (Un) = 4 untuk setiap n. Maka, dua suku berikutnya adalah 4 dan 4.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali pola barisan konstan yang sangat sederhana (setiap suku bernilai sama) tanpa perlu prosedur kompleks.. Bukti: Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 4, 4, 4, 4, …, …
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman dasar mengenai definisi barisan konstan, yang merupakan pengetahuan faktual tentang pola bilangan.. Bukti: 4, 4, 4, 4, …, …
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena pola barisan konstan langsung terlihat tanpa memerlukan perhitungan atau strategi khusus.. Bukti: 4, 4, 4, 4, …, …
 
 Profil difficulty run ini:
 
@@ -260,10 +217,31 @@ Profil difficulty run ini:
 | distractorQuality | weak |
 | gradeRelativeRationale | Soal ini terlalu sederhana untuk standar kelas 12, namun secara teknis valid sebagai pengenalan pola barisan. |
 
-Run 3 — solusi: Barisan 4, 4, 4, 4, ... adalah barisan konstan dengan suku ke-n (Un) = 4 untuk setiap n. Oleh karena itu, dua suku berikutnya tetap 4 dan 4.
-- Domain kognitif `classify/knowing`: Soal ini hanya memerlukan pengenalan pola barisan konstan yang sangat sederhana. Siswa hanya perlu mengenali bahwa nilai suku tidak berubah, yang merupakan proses kognitif tingkat dasar (knowing).. Bukti: Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 4, 4, 4, 4, …, …
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep barisan konstan sebagai salah satu jenis barisan bilangan, yang merupakan pemahaman konseptual dasar.. Bukti: 4, 4, 4, 4, …, …
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan tidak memerlukan perhitungan kompleks atau strategi khusus. Prosedurnya langsung dan familiar bagi siswa kelas 12.. Bukti: 4, 4, 4, 4, …, …
+Run 2 — solusi: Barisan tersebut adalah barisan konstan dengan nilai setiap suku adalah 4. Maka, dua suku berikutnya adalah 4 dan 4.
+- Domain kognitif `classify/knowing`: Soal hanya meminta pengenalan pola barisan konstan yang sangat sederhana. Siswa cukup mengenali bahwa nilai suku tidak berubah.. Bukti: Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 4, 4, 4, 4, …, …
+- Dimensi pengetahuan `classify/factual`: Soal menguji pemahaman dasar tentang definisi barisan konstan sebagai fakta matematika sederhana.. Bukti: 4, 4, 4, 4, …, …
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Tidak ada langkah perhitungan atau perencanaan yang diperlukan.. Bukti: 4, 4, 4, 4, …, …
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang pola barisan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Soal ini terlalu sederhana untuk standar kelas 12, namun secara teknis valid sebagai pengenalan barisan. |
+
+Run 3 — solusi: Barisan tersebut adalah barisan konstan dengan nilai setiap suku adalah 4. Maka, dua suku berikutnya adalah 4 dan 4.
+- Domain kognitif `classify/knowing`: Soal hanya meminta pengenalan pola barisan konstan yang sangat sederhana. Siswa hanya perlu mengenali bahwa nilai suku tidak berubah.. Bukti: Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 4, 4, 4, 4, …, …
+- Dimensi pengetahuan `classify/factual`: Soal menguji pemahaman dasar tentang definisi barisan konstan, yang merupakan elemen pengetahuan faktual dalam topik barisan.. Bukti: 4, 4, 4, 4, …, …
+- Intended difficulty `classify/Easy`: Soal sangat sederhana, tidak memerlukan perhitungan kompleks atau strategi khusus.. Bukti: 4, 4, 4, 4, …, …
 
 Profil difficulty run ini:
 
@@ -279,14 +257,14 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | weak |
-| gradeRelativeRationale | Meskipun untuk kelas 12, soal ini terlalu sederhana dan tidak mencerminkan tingkat kesulitan yang diharapkan untuk jenjang tersebut. |
+| gradeRelativeRationale | Soal ini terlalu sederhana untuk standar kelas 12, namun secara teknis valid sebagai pengenalan pola dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Dimensi pengetahuan | {"factual": 3} | unanimous_3_0 / unanimous | factual |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
@@ -319,9 +297,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 3. Soal `cde1c3bcaf6c566fa0d0dfde`
@@ -336,26 +314,26 @@ Jika Un menyatakan suku ke-n suatu barisan aritmetika dan diketahui U 6 - U 8 + 
 | D | 190 |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: U6-U8+U10-U12+U14 = (a+5b)-(a+7b)+(a+9b)-(a+11b)+(a+13b) = a+9b = 20. S19 = 19/2 * (2a + 18b) = 19 * (a+9b) = 19 * 20 = 380.
+Solusi minimum hasil AI: U_n = a + (n-1)d. Persamaan: (a+5d) - (a+7d) + (a+9d) - (a+11d) + (a+13d) = 20. Menyederhanakan: a + 9d = 20. Rumus jumlah: S_19 = 19/2 * (2a + 18d) = 19 * (a + 9d). Substitusi: S_19 = 19 * 20 = 380.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `118014424a201852dcf592098187f8cb344542d694919020051399f6a1897245`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7d6a115fea3b7394520109bafc7d1915b2d413412adff1ff634f6c1fd9bf0fee`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 3116 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2928 |
-| 3 | success | valid / verified | applying | procedural | Medium | 3186 |
+| 1 | success | valid / verified | applying | procedural | Medium | 2957 |
+| 2 | success | valid / verified | applying | procedural | Medium | 2899 |
+| 3 | success | valid / verified | applying | procedural | Medium | 2906 |
 
-Run 1 — solusi: U6-U8+U10-U12+U14 = (a+5b)-(a+7b)+(a+9b)-(a+11b)+(a+13b) = a+9b = 20. S19 = 19/2 * (2a + 18b) = 19 * (a+9b) = 19 * 20 = 380.
-- Domain kognitif `classify/applying`: Siswa perlu menyederhanakan ekspresi aljabar barisan aritmetika untuk menemukan nilai suku tengah (U10) dan menghubungkannya dengan rumus jumlah suku ke-n (Sn).. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama
-- Dimensi pengetahuan `classify/procedural`: Menggunakan rumus umum suku ke-n dan rumus jumlah n suku pertama barisan aritmetika.. Bukti: Un menyatakan suku ke-n suatu barisan aritmetika
-- Intended difficulty `classify/Medium`: Soal memerlukan manipulasi aljabar rutin untuk menyederhanakan deret aritmetika. Langkah-langkahnya standar dan familiar bagi siswa kelas 12.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama
+Run 1 — solusi: U_n = a + (n-1)d. Persamaan: (a+5d) - (a+7d) + (a+9d) - (a+11d) + (a+13d) = 20. Menyederhanakan: a + 9d = 20. Rumus jumlah: S_19 = 19/2 * (2a + 18d) = 19 * (a + 9d). Substitusi: S_19 = 19 * 20 = 380.
+- Domain kognitif `classify/applying`: Siswa perlu memanipulasi aljabar untuk menyederhanakan ekspresi suku-suku barisan aritmetika menjadi bentuk yang dapat disubstitusikan ke dalam rumus jumlah suku ke-n (S_n). Ini melibatkan pemahaman konsep dasar barisan aritmetika dan penerapan rumus jumlah, yang merupakan prosedur standar.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama barisan tersebut
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang hubungan antara suku-suku dalam barisan aritmetika dan rumus jumlah deret (S_n). Siswa harus menerapkan prosedur aljabar untuk menyederhanakan persamaan yang diberikan agar sesuai dengan bentuk rumus S_n.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama barisan tersebut
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena meskipun prosedurnya familiar, siswa harus melakukan manipulasi aljabar untuk menyederhanakan ekspresi yang diberikan sebelum bisa menggunakan rumus S_n. Tidak ada langkah yang sangat kompleks, namun memerlukan ketelitian dalam menyederhanakan suku-suku.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama barisan tersebut
 
 Profil difficulty run ini:
 
@@ -371,33 +349,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi barisan aritmetika adalah standar kelas 12. Soal ini menguji pemahaman konsep dasar deret dengan sedikit manipulasi aljabar. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan manipulasi aljabar dasar pada barisan aritmetika. Soal ini menuntut pemahaman hubungan antara U_n dan S_n yang merupakan materi standar. |
 
-Run 2 — solusi: U6-U8+U10-U12+U14 = (a+5b)-(a+7b)+(a+9b)-(a+11b)+(a+13b) = a+9b = 20. Rumus jumlah n suku pertama: Sn = n/2(2a+(n-1)b). Maka S19 = 19/2(2a+18b) = 19(a+9b). Substitusi nilai: 19 * 20 = 380.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus suku ke-n dan jumlah n suku pertama deret aritmetika, serta melakukan manipulasi aljabar untuk menyederhanakan ekspresi yang diberikan.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus deret aritmetika untuk menyelesaikan masalah.. Bukti: Un menyatakan suku ke-n suatu barisan aritmetika; jumlah 19 suku pertama
-- Intended difficulty `classify/Medium`: Soal memerlukan dua langkah rutin: menyederhanakan persamaan deret untuk mendapatkan nilai a+9b, kemudian menggunakan rumus jumlah deret. Tingkat kesulitan menengah karena memerlukan manipulasi aljabar sebelum substitusi.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Rumus suku ke-n dan jumlah n suku pertama deret aritmetika. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 5 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini merupakan standar kurikulum kelas 12 untuk materi deret aritmetika, menguji kemampuan manipulasi aljabar dasar. |
-
-Run 3 — solusi: U6-U8+U10-U12+U14 = (a+5b)-(a+7b)+(a+9b)-(a+11b)+(a+13b) = a+9b = 20. S19 = 19/2 * (2a+18b) = 19(a+9b) = 19 * 20 = 380.
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur yang tepat untuk menyederhanakan ekspresi aljabar barisan aritmetika dan menghubungkannya dengan rumus jumlah suku ke-n.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama
-- Dimensi pengetahuan `classify/procedural`: Memerlukan pemahaman konseptual tentang struktur barisan aritmetika dan prosedur manipulasi aljabar untuk menyederhanakan suku-suku yang diberikan.. Bukti: Un menyatakan suku ke-n suatu barisan aritmetika; jumlah 19 suku pertama
-- Intended difficulty `classify/Medium`: Soal memerlukan manipulasi aljabar rutin untuk menyederhanakan deret aritmetika. Siswa harus mengenali pola a+9b dan menghubungkannya dengan rumus S19. Langkah-langkahnya rutin dan terstruktur.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama
+Run 2 — solusi: U_n = a + (n-1)d. Persamaan: (a+5d) - (a+7d) + (a+9d) - (a+11d) + (a+13d) = 20. Menyederhanakan: a + 9d = 20. S_19 = (19/2)(2a + 18d) = 19(a + 9d). Substitusi: 19 * 20 = 380.
+- Domain kognitif `classify/applying`: Siswa perlu memanipulasi aljabar dari suku-suku barisan aritmetika untuk menemukan hubungan antara a dan d (yaitu a+9d=20), kemudian menghubungkannya dengan rumus jumlah suku ke-n (S19). Ini adalah penerapan prosedur yang memerlukan pemahaman konsep barisan.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama barisan tersebut
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang rumus suku ke-n dan jumlah n suku pertama barisan aritmetika serta kemampuan memanipulasi variabel secara prosedural.. Bukti: Un menyatakan suku ke-n suatu barisan aritmetika; jumlah 19 suku pertama
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan manipulasi aljabar untuk menyederhanakan deret yang diberikan menjadi bentuk yang dapat digunakan dalam rumus S19. Siswa harus menyadari bahwa (a+9d) adalah suku tengah (U10) dan bagian dari rumus S19. Langkah-langkahnya jelas namun memerlukan ketelitian dalam penyederhanaan.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama
 
 Profil difficulty run ini:
 
@@ -406,14 +363,35 @@ Profil difficulty run ini:
 | expectedPrerequisite | Rumus suku ke-n dan jumlah n suku pertama barisan aritmetika. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
-| strategySelection | True |
+| strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
+| relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan manipulasi aljabar pada barisan aritmetika dengan lancar. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan manipulasi aljabar sederhana pada barisan aritmetika. Soal ini menguji pemahaman konsep dasar deret dengan sedikit tantangan aljabar. |
+
+Run 3 — solusi: U_n = a + (n-1)d. Persamaan: (a+5d) - (a+7d) + (a+9d) - (a+11d) + (a+13d) = 20. Menyederhanakan: a + 9d = 20. S_19 = (19/2)(2a + 18d) = 19(a + 9d). Substitusi: 19 * 20 = 380.
+- Domain kognitif `classify/applying`: Siswa perlu memanipulasi aljabar dari suku-suku barisan aritmetika untuk menemukan hubungan antara a dan d, lalu menghubungkannya dengan rumus jumlah suku ke-n (S_n). Ini memerlukan penerapan konsep deret aritmetika pada konteks yang sedikit dimodifikasi.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama barisan tersebut
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang rumus suku ke-n dan jumlah n suku pertama barisan aritmetika, serta kemampuan untuk memanipulasi ekspresi aljabar tersebut.. Bukti: U_n = a + (n-1)d; S_n = n/2(2a + (n-1)d)
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan manipulasi aljabar untuk menyederhanakan persamaan yang diberikan menjadi bentuk yang berguna (a+9d=20) sebelum dapat disubstitusikan ke dalam rumus S_19. Meskipun prosedurnya familiar, siswa harus melakukan perencanaan langkah untuk menghubungkan ekspresi yang diberikan dengan rumus jumlah.. Bukti: U 6 - U 8 + U 10 - U 12 + U 14 = 20; jumlah 19 suku pertama
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus suku ke-n dan jumlah n suku pertama barisan aritmetika. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan manipulasi aljabar sederhana pada deret aritmetika. Tingkat kesulitan Medium tepat karena adanya langkah perantara yang harus diselesaikan sebelum mencapai jawaban akhir. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -470,47 +448,26 @@ Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah juml
 | D | 320 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Rumus jumlah n suku pertama deret geometri adalah Sn = a(r^n - 1)/(r - 1). Dengan a = 5, r = 2, dan n = 6, maka S6 = 5(2^6 - 1)/(2 - 1) = 5(64 - 1)/1 = 5(63) = 315.
+Solusi minimum hasil AI: S_n = a(r^n - 1) / (r - 1). S_6 = 5(2^6 - 1) / (2 - 1) = 5(64 - 1) = 5 * 63 = 315.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f67035c799da5176abb80e8b8f676e50bc45b31cef97632e201507df3f9095c8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8d658166b65147077648aee743559dc4f3b25965585912dacff21f2c0a8e3429`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2155 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2146 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2145 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 3335 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 3343 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 3376 |
 
-Run 1 — solusi: Rumus jumlah n suku pertama deret geometri adalah Sn = a(r^n - 1)/(r - 1). Dengan a = 5, r = 2, dan n = 6, maka S6 = 5(2^6 - 1)/(2 - 1) = 5(64 - 1)/1 = 5(63) = 315.
-- Domain kognitif `classify/applying`: Soal ini meminta penerapan langsung rumus jumlah deret geometri yang sudah baku. Siswa hanya perlu mensubstitusi nilai yang diketahui ke dalam rumus Sn.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau prosedur perhitungan jumlah deret geometri.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan prosedur yang sangat familiar bagi siswa kelas 12. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Rumus jumlah deret geometri dan operasi perpangkatan dasar. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi deret geometri adalah materi standar SMA. Soal ini adalah aplikasi langsung rumus tanpa modifikasi, sehingga tergolong mudah. |
-
-Run 2 — solusi: Rumus jumlah n suku pertama deret geometri adalah Sn = a(r^n - 1) / (r - 1). Dengan a = 5, r = 2, dan n = 6, maka S6 = 5(2^6 - 1) / (2 - 1) = 5(64 - 1) / 1 = 5(63) = 315.
-- Domain kognitif `classify/applying`: Soal ini meminta penerapan langsung rumus jumlah deret geometri yang sudah baku. Siswa hanya perlu mensubstitusi nilai yang diketahui ke dalam rumus tanpa perlu strategi nonrutin atau integrasi konsep yang kompleks.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma atau prosedur perhitungan jumlah deret geometri.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2.
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan prosedur yang sangat familiar bagi siswa kelas 12. Tidak ada kendala atau langkah nonrutin yang diperlukan.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
+Run 1 — solusi: S_n = a(r^n - 1) / (r - 1). S_6 = 5(2^6 - 1) / (2 - 1) = 5(64 - 1) = 5 * 63 = 315.
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung rumus jumlah n suku pertama deret geometri yang sudah diketahui parameternya.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritma atau rumus jumlah deret geometri untuk menyelesaikan masalah.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
+- Intended difficulty `classify/Easy`: Soal bersifat rutin dengan rumus yang jelas dan parameter yang sudah diberikan secara eksplisit. Tidak ada kendala kompleks atau pemilihan strategi yang rumit.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
 
 Profil difficulty run ini:
 
@@ -526,19 +483,19 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi deret geometri adalah materi dasar yang sudah dipelajari dan merupakan prosedur standar di tingkat SMA. |
+| gradeRelativeRationale | Materi deret geometri adalah standar kelas 12, dan soal ini merupakan aplikasi langsung rumus tanpa modifikasi. |
 
-Run 3 — solusi: Rumus jumlah n suku pertama deret geometri adalah Sn = a(r^n - 1) / (r - 1). Diketahui a = 5, r = 2, n = 6. Maka S6 = 5(2^6 - 1) / (2 - 1) = 5(64 - 1) / 1 = 5 * 63 = 315.
-- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus jumlah deret geometri yang sudah diketahui parameternya. Siswa hanya perlu mensubstitusi nilai ke dalam rumus baku.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma atau prosedur perhitungan jumlah deret geometri.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung, hanya memerlukan substitusi nilai ke dalam rumus yang sudah dikenal di tingkat SMA.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2. Hitunglah jumlah 6 suku pertama deret tersebut.
+Run 2 — solusi: S_n = a(r^n - 1) / (r - 1). S_6 = 5(2^6 - 1) / (2 - 1) = 5(64 - 1) = 5(63) = 315.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengingat dan menerapkan rumus jumlah deret geometri secara langsung tanpa memerlukan langkah penalaran tambahan atau modifikasi strategi.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2.; Hitunglah jumlah 6 suku pertama deret tersebut.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji penguasaan algoritma atau prosedur standar untuk menghitung jumlah deret geometri.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2.; Hitunglah jumlah 6 suku pertama deret tersebut.
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung rumus yang sudah familiar bagi siswa kelas 12. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merancang strategi.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2.; Hitunglah jumlah 6 suku pertama deret tersebut.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus jumlah deret geometri |
-| dependentSteps | 2 |
+| expectedPrerequisite | Rumus jumlah deret geometri. |
+| dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
@@ -547,13 +504,34 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi deret geometri adalah materi standar kelas 12 yang prosedurnya sangat familiar dan tidak memerlukan langkah non-rutin. |
+| gradeRelativeRationale | Soal ini adalah latihan rutin standar untuk materi deret geometri di kelas 12, dengan jalur penyelesaian yang jelas dan langsung. |
+
+Run 3 — solusi: S_n = a(r^n - 1) / (r - 1). S_6 = 5(2^6 - 1) / (2 - 1) = 5(64 - 1) = 5 * 63 = 315.
+- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung rumus jumlah deret geometri yang sudah baku. Siswa hanya perlu memasukkan nilai ke dalam rumus tanpa modifikasi strategi atau penalaran kompleks.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2.; Hitunglah jumlah 6 suku pertama deret tersebut.
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penggunaan algoritma atau prosedur standar (rumus jumlah deret geometri) untuk menyelesaikan masalah.. Bukti: Hitunglah jumlah 6 suku pertama deret tersebut.
+- Intended difficulty `classify/Easy`: Soal bersifat rutin dengan jalur penyelesaian yang sangat jelas. Tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi non-rutin.. Bukti: Suatu deret geometri memiliki suku pertama a = 5 dan rasio r = 2.; Hitunglah jumlah 6 suku pertama deret tersebut.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus jumlah deret geometri |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi deret geometri adalah materi dasar yang penyelesaiannya menggunakan rumus langsung tanpa memerlukan langkah perencanaan yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
 | Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
@@ -587,9 +565,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 5. Soal `50f81b2d500c6fab49401822`
@@ -604,84 +582,84 @@ Raka mengikuti program Youth Creative Entrepreneur di sekolahnya. Untuk membeli 
 | D | Rp225.000,00 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Bunga total = M x i x t = 2.500.000 x 0,04 x 2 = 200.000. Total pengembalian = 2.500.000 + 200.000 = 2.700.000. Cicilan per bulan = 2.700.000 / 24 = 112.500.
+Solusi minimum hasil AI: Bunga total = M x p x t = 2.500.000 x 0,04 x 2 = 200.000. Total pengembalian = 2.500.000 + 200.000 = 2.700.000. Cicilan per bulan = 2.700.000 / 24 = 112.500.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f5a5643552921ef92fa42254053711ceee921cd8da02040cf785297c79c2f2e8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `52b58ad5061797fb0f7f60155c0b52cccb0a0141f912744687fd97c751c297fa`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2289 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2345 |
-| 3 | success | valid / verified | applying | procedural | Easy | 3663 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2938 |
+| 2 | success | valid / verified | applying | procedural | Easy | 3509 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2885 |
 
-Run 1 — solusi: Bunga total = M x i x t = 2.500.000 x 0,04 x 2 = 200.000. Total pengembalian = 2.500.000 + 200.000 = 2.700.000. Cicilan per bulan = 2.700.000 / 24 = 112.500.
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur bunga tunggal, menghitung total bunga, menambahkan ke pokok, dan membagi dengan durasi waktu (24 bulan). Ini adalah penerapan prosedur rutin pada situasi keuangan.. Bukti: Koperasi tersebut menerapkan bunga sederhana sebesar 4% per tahun; Raka perlu menghitung besar cicilan bulanan
-- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang algoritma bunga tunggal dan langkah-langkah perhitungan angsuran tetap.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan rumus bunga tunggal standar dan melakukan pembagian sederhana. Tidak ada kendala non-rutin atau integrasi konsep yang kompleks.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
+Run 1 — solusi: Bunga total = M x p x t = 2.500.000 x 0,04 x 2 = 200.000. Total pengembalian = 2.500.000 + 200.000 = 2.700.000. Cicilan per bulan = 2.700.000 / 24 = 112.500.
+- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur bunga tunggal yang tepat, mengonversi durasi tahun ke bulan, dan menghitung total pengembalian sebelum membaginya dengan jumlah bulan. Ini adalah penerapan konsep bunga tunggal pada konteks rutin.. Bukti: Koperasi tersebut menerapkan bunga sederhana sebesar 4% per tahun; memberikan keringanan berupa angsuran bulanan tetap selama 2 tahun; Raka perlu menghitung besar cicilan bulanan
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma bunga tunggal dan prosedur perhitungan angsuran tetap.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena prosedurnya sangat standar (bunga tunggal). Siswa hanya perlu melakukan konversi waktu (2 tahun = 24 bulan) dan operasi aritmatika dasar. Tidak ada kendala yang berinteraksi atau strategi non-rutin yang diperlukan.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep bunga tunggal dan operasi aritmatika dasar. |
+| expectedPrerequisite | Pemahaman dasar bunga tunggal dan operasi aritmatika. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar kelas 12. Soal ini tidak memiliki jebakan kompleks atau integrasi konsep yang menuntut, sehingga sesuai untuk tingkat kemudahan rendah. |
+
+Run 2 — solusi: Bunga (B) = 2.500.000 * 0,04 * 2 = 200.000. Total pinjaman = 2.500.000 + 200.000 = 2.700.000. Cicilan per bulan = 2.700.000 / 24 = 112.500.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga tunggal dan melakukan pembagian sederhana untuk menentukan cicilan bulanan. Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: Koperasi tersebut menerapkan bunga sederhana sebesar 4% per tahun; Raka perlu menghitung besar cicilan bulanan
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penggunaan algoritma bunga tunggal (B = M x i x t) serta pembagian untuk menentukan angsuran.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah-langkah yang jelas dan langsung. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: dana talangan usaha sebesar Rp2.500.000,00; bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga tunggal dan operasi aritmatika dasar. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga tunggal adalah standar kelas 12. Prosedur yang diminta sangat langsung dan familiar bagi siswa. |
+| gradeRelativeRationale | Sesuai untuk kelas 12 sebagai soal dasar keuangan yang menguji pemahaman konsep bunga tunggal tanpa kompleksitas tambahan. |
 
-Run 2 — solusi: Bunga total = M x p x n = 2.500.000 x 0,04 x 2 = 200.000. Total pengembalian = 2.500.000 + 200.000 = 2.700.000. Cicilan per bulan = 2.700.000 / (2 x 12) = 2.700.000 / 24 = 112.500.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi model bunga tunggal, menghitung total bunga selama 2 tahun, menambahkan ke pokok pinjaman, lalu membagi dengan jumlah bulan. Ini adalah penerapan prosedur rutin pada situasi keuangan.. Bukti: Raka memperoleh dana talangan usaha sebesar Rp2.500.000,00; Koperasi tersebut menerapkan bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
-- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang algoritma perhitungan bunga tunggal dan pembagian proporsional untuk angsuran.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan rumus bunga tunggal (B=M.i.n) dan membagi total pinjaman dengan durasi waktu dalam bulan. Tidak ada kendala kompleks atau strategi nonrutin.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
+Run 3 — solusi: Bunga total = M x p x t = 2.500.000 x 0,04 x 2 = 200.000. Total pengembalian = 2.500.000 + 200.000 = 2.700.000. Cicilan per bulan = 2.700.000 / 24 = 112.500.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga tunggal dan membagi total pengembalian dengan durasi waktu yang diberikan. Ini adalah penerapan prosedur standar pada konteks keuangan rutin.. Bukti: Koperasi tersebut menerapkan bunga sederhana sebesar 4% per tahun; Raka perlu menghitung besar cicilan bulanan
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma perhitungan bunga tunggal dan pembagian angsuran, yang merupakan pengetahuan prosedural.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena menggunakan rumus bunga tunggal yang sangat standar. Langkah-langkahnya jelas (hitung bunga, tambah ke pokok, bagi dengan jumlah bulan) dan tidak melibatkan kendala yang rumit.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar bunga tunggal dan konversi tahun ke bulan. |
+| expectedPrerequisite | Pemahaman dasar bunga tunggal dan operasi aritmetika. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga tunggal adalah standar kelas 12. Prosedur perhitungan langsung dan familiar bagi siswa. |
-
-Run 3 — solusi: Bunga = 2.500.000 * 4% * 2 = 200.000. Total = 2.500.000 + 200.000 = 2.700.000. Cicilan = 2.700.000 / 24 = 112.500.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal dan membagi total pinjaman dengan durasi waktu. Ini adalah penerapan prosedur rutin.. Bukti: Raka perlu menghitung besar cicilan bulanan; Koperasi tersebut menerapkan bunga sederhana sebesar 4% per tahun
-- Dimensi pengetahuan `classify/procedural`: Soal memerlukan penggunaan algoritma bunga tunggal dan pembagian aritmatika dasar.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
-- Intended difficulty `classify/Easy`: Soal menggunakan rumus bunga tunggal standar dengan langkah-langkah yang jelas dan familiar bagi siswa kelas 12.. Bukti: bunga sederhana sebesar 4% per tahun; angsuran bulanan tetap selama 2 tahun
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Rumus bunga tunggal dan konversi tahun ke bulan. |
-| dependentSteps | 3 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga tunggal adalah dasar keuangan di kelas 12, soal ini tidak memiliki jebakan non-rutin. |
+| gradeRelativeRationale | Materi bunga tunggal adalah standar kelas 12. Soal ini tidak memerlukan perencanaan strategi kompleks, hanya aplikasi rumus langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -738,74 +716,32 @@ Angga adalah seorang siswa SMA yang rajin dan memiliki semangat menabung. Setela
 | D | Rp1.102.500,00 |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Bunga tunggal per tahun = 5% x Rp1.000.000,00 = Rp50.000,00. Saldo akhir tahun ke-2 = Saldo akhir tahun ke-1 + bunga tahun ke-2 = Rp1.050.000,00 + Rp50.000,00 = Rp1.100.000,00.
+Solusi minimum hasil AI: Bunga tahunan tetap = 5% x 1.000.000 = 50.000. Saldo akhir tahun ke-2 = Saldo akhir tahun ke-1 + bunga tahun ke-2 = 1.050.000 + 50.000 = 1.100.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `463c42a408c439163b604750da8148095cfded9b8d388268eaa2e39da30921f4`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `81cdae7ed134ed017e8573c8042aa645cc71c31ab3930dacc5a592c17219f611`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2293 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2280 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2270 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3001 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 3004 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2978 |
 
-Run 1 — solusi: Bunga tunggal per tahun = 5% x Rp1.000.000,00 = Rp50.000,00. Saldo akhir tahun ke-2 = Saldo akhir tahun ke-1 + bunga tahun ke-2 = Rp1.050.000,00 + Rp50.000,00 = Rp1.100.000,00.
-- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan konsep bunga tunggal sederhana dengan melanjutkan pola perhitungan yang sudah diberikan dalam tabel. Siswa hanya perlu melakukan operasi penjumlahan dasar setelah mengidentifikasi besaran bunga yang konstan.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal; Tahun 2, Bunga 5% × 1.000.000 = ...., Nilai Uang 1.050.000 + 50.000 = ...
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip bunga tunggal di mana bunga dihitung berdasarkan modal awal (bukan saldo berjalan), yang merupakan konsep dasar dalam matematika keuangan.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal
-- Intended difficulty `classify/Easy`: Soal ini bersifat prosedural dan langsung. Siswa diberikan skema perhitungan yang jelas dan hanya perlu melanjutkan satu langkah perhitungan sederhana. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: Bunga tersebut akan langsung ditambahkan ke saldo tabungannya setiap akhir tahun; Tabel 1.5 Perhitungan Nilai Tabungan Angga
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang persentase dan penjumlahan bilangan bulat. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | strong |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 12, soal ini sangat mendasar karena hanya melibatkan aritmatika sederhana dengan konsep bunga tunggal yang sudah dijelaskan langkah-langkahnya dalam soal. |
-
-Run 2 — solusi: Bunga tunggal per tahun adalah 5% dari Rp1.000.000,00 = Rp50.000,00. Saldo akhir tahun ke-1 = Rp1.050.000,00. Saldo akhir tahun ke-2 = Saldo akhir tahun ke-1 + Bunga = Rp1.050.000,00 + Rp50.000,00 = Rp1.100.000,00.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep bunga tunggal sederhana dengan mengikuti pola yang sudah diberikan dalam tabel. Proses ini bersifat rutin dan langsung.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal; Tahun 2, Bunga 5% × 1.000.000 = ...., Nilai Uang 1.050.000 + 50.000 = ...
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung bunga tunggal dan akumulasi saldo secara bertahap.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal
-- Intended difficulty `classify/Easy`: Soal ini sangat sederhana karena pola perhitungan sudah disediakan dalam tabel. Siswa hanya perlu melanjutkan satu langkah perhitungan rutin.. Bukti: Bunga tersebut akan langsung ditambahkan ke saldo tabungannya setiap akhir tahun; Tabel 1.5 Perhitungan Nilai Tabungan Angga
+Run 1 — solusi: Bunga tahunan tetap = 5% x 1.000.000 = 50.000. Saldo akhir tahun ke-2 = Saldo akhir tahun ke-1 + bunga tahun ke-2 = 1.050.000 + 50.000 = 1.100.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep bunga tunggal (bunga dihitung dari pokok awal) untuk menghitung saldo pada tahun kedua. Prosedur ini sangat langsung dan mengikuti pola yang sudah diberikan dalam soal.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal; Tahun 2, Bunga 5% × 1.000.000 = ...., Nilai Uang 1.050.000 + 50.000 = ...
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang perhitungan bunga tunggal di mana bunga dihitung berdasarkan modal awal, bukan saldo akumulatif.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena konsep bunga tunggal dijelaskan secara eksplisit dalam teks dan tabel. Siswa hanya perlu melakukan satu operasi penjumlahan sederhana setelah memahami pola bunga tetap.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal; Tabel 1.5 Perhitungan Nilai Tabungan Angga
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Operasi aritmatika dasar (penjumlahan dan persentase). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | strong |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar kelas 12. Soal ini memberikan skema tabel yang sangat membantu, sehingga beban kognitif sangat rendah. |
-
-Run 3 — solusi: Bunga tunggal per tahun tetap sebesar 5% dari modal awal (Rp1.000.000,00) = Rp50.000,00. Saldo akhir tahun ke-2 = Saldo akhir tahun ke-1 + Bunga tahun ke-2 = Rp1.050.000,00 + Rp50.000,00 = Rp1.100.000,00.
-- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan konsep bunga tunggal sederhana dengan menambahkan bunga tetap ke saldo sebelumnya. Proses ini bersifat rutin dan langsung.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal; Tahun 2, Bunga 5% × 1.000.000 = ...., Nilai Uang 1.050.000 + 50.000 = ...
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip bunga tunggal (bunga dihitung dari modal awal, bukan saldo berjalan) untuk menyelesaikan soal.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal
-- Intended difficulty `classify/Easy`: Soal ini dikategorikan Easy karena menggunakan prosedur bunga tunggal yang sangat familiar, instruksi eksplisit, dan struktur tabel yang memandu langkah penyelesaian.. Bukti: Bunga tersebut akan langsung ditambahkan ke saldo tabungannya setiap akhir tahun; Tabel 1.5 Perhitungan Nilai Tabungan Angga
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar operasi aritmatika dan konsep bunga tunggal. |
+| expectedPrerequisite | Pemahaman dasar persentase dan penjumlahan aritmatika. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -813,29 +749,20 @@ Profil difficulty run ini:
 | relevantInformationUnits | 3 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
-| scaffoldLevel | none |
+| scaffoldLevel | strong |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar kelas 12. Soal ini tidak menuntut analisis kompleks, hanya aplikasi langsung dari definisi bunga tunggal. |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar kelas 12. Soal memberikan tabel bantuan yang sangat jelas, sehingga siswa tidak perlu merumuskan strategi sendiri. |
 
-### 3. Voting awal dan adjudikasi
+Run 2 — solusi: Bunga tetap per tahun = 5% * 1.000.000 = 50.000. Saldo akhir tahun ke-2 = Saldo akhir tahun ke-1 + bunga tahun ke-2 = 1.050.000 + 50.000 = 1.100.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur perhitungan bunga tunggal yang sudah dijelaskan polanya dalam soal. Siswa hanya perlu mengenali bahwa bunga bersifat tetap dan menambahkannya ke saldo tahun sebelumnya.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal; Tahun 2, Bunga 5% × 1.000.000 = ...., Nilai Uang 1.050.000 + 50.000 = ...
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konsep bunga tunggal di mana bunga dihitung berdasarkan modal awal, bukan saldo akumulatif.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena pola perhitungan sudah diberikan secara eksplisit melalui tabel dan narasi. Siswa hanya perlu melanjutkan satu langkah perhitungan sederhana (penjumlahan bunga tetap ke saldo tahun sebelumnya).. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal; Tabel 1.5 Perhitungan Nilai Tabungan Angga
 
-| Head | Suara awal | Pola / status akhir | Label akhir advisory |
-|---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `4082`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa diminta menerapkan konsep bunga tunggal sederhana dengan melanjutkan pola perhitungan yang sudah diberikan dalam tabel. Proses ini bersifat rutin dan langsung.
-- Dimensi pengetahuan `conceptual`: Siswa perlu memahami prinsip bunga tunggal di mana bunga dihitung berdasarkan modal awal (bukan saldo berjalan), yang merupakan konsep dasar dalam matematika keuangan.
-- Intended difficulty `Easy`: Soal ini bersifat prosedural dan langsung. Siswa diberikan skema perhitungan yang jelas dan hanya perlu melanjutkan satu langkah perhitungan sederhana. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.
-
-Profil difficulty hasil adjudikasi:
+Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang persentase dan penjumlahan bilangan bulat. |
+| expectedPrerequisite | Operasi aritmetika dasar dan pemahaman konsep bunga tunggal sederhana. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -845,7 +772,58 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | strong |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 12, soal ini sangat mendasar karena hanya melibatkan aritmatika sederhana dengan konsep bunga tunggal yang sudah dijelaskan langkah-langkahnya dalam soal. |
+| gradeRelativeRationale | Materi bunga tunggal adalah materi dasar kelas 12. Soal memberikan bantuan berupa tabel dan penjelasan eksplisit mengenai bunga tetap, sehingga beban kognitif sangat rendah. |
+
+Run 3 — solusi: Bunga tetap per tahun = 5% * 1.000.000 = 50.000. Saldo akhir tahun ke-2 = Saldo tahun ke-1 + Bunga = 1.050.000 + 50.000 = 1.100.000.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan prosedur bunga tunggal yang sudah dijelaskan mekanismenya dalam teks soal. Siswa hanya perlu melanjutkan pola perhitungan yang diberikan.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal; Tahun 2, Bunga 5% × 1.000.000 = ...., Nilai Uang 1.050.000 + 50.000 = ...
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip bunga tunggal (bunga dihitung dari pokok awal) untuk menyelesaikan masalah.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal
+- Intended difficulty `classify/Easy`: Soal memberikan skenario yang sangat terstruktur dengan tabel yang sudah memulai perhitungan. Siswa hanya perlu melanjutkan satu langkah perhitungan sederhana.. Bukti: bunga tetap sebesar 5% setiap tahun dari saldo awal; Tabel 1.5 Perhitungan Nilai Tabungan Angga
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi aritmatika dasar dan pemahaman konsep bunga tunggal sederhana. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | strong |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini sangat terbantu oleh tabel yang disediakan, sehingga siswa kelas 12 dapat dengan mudah mengidentifikasi pola bunga tunggal tanpa perlu merumuskan model matematika yang kompleks. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4597`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa diminta menerapkan konsep bunga tunggal (bunga dihitung dari pokok awal) untuk menghitung saldo pada tahun kedua. Prosedur ini sangat langsung dan mengikuti pola yang sudah diberikan dalam soal.
+- Dimensi pengetahuan `procedural`: Soal menguji pemahaman prosedural tentang perhitungan bunga tunggal di mana bunga dihitung berdasarkan modal awal, bukan saldo akumulatif.
+- Intended difficulty `Easy`: Soal ini tergolong mudah karena konsep bunga tunggal dijelaskan secara eksplisit dalam teks dan tabel. Siswa hanya perlu melakukan satu operasi penjumlahan sederhana setelah memahami pola bunga tetap.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar persentase dan penjumlahan aritmatika. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | strong |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar kelas 12. Soal memberikan tabel bantuan yang sangat jelas, sehingga siswa tidak perlu merumuskan strategi sendiri. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -879,9 +857,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 7. Soal `d215f8aa8bc3bed140f75b0b`
@@ -896,55 +874,76 @@ Firman menyimpan uang sejumlah Rp10.000.000,00 di bank dalam bentuk deposito den
 | D | Sama banyak, selisihnya Rp0,00 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Firman (bunga tunggal): 10.000.000 * (1 + 0,03 * 5) = 11.500.000. Gigih (bunga majemuk): 10.000.000 * (1,03)^5 = 11.592.741. Selisih: 11.592.741 - 11.500.000 = 92.741.
+Solusi minimum hasil AI: Firman (bunga tunggal): M_n = M_0(1 + n*i) = 10.000.000(1 + 5*0,03) = 11.500.000. Gigih (bunga majemuk): M_n = M_0(1 + i)^n = 10.000.000(1,03)^5 = 10.000.000(1,1592741) = 11.592.741. Selisih = 11.592.741 - 11.500.000 = 92.741.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung', 'membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `110623e536979ba77c9f2c11f29da07111040b83d2b19174b3a520a209fb0402`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `67b44b22c1be7d2826f578b2c4f9e725888885b3cd694e2c504d40503fecfe44`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 2504 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 2470 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2459 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 3031 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 3057 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 3060 |
 
-Run 1 — solusi: Firman (bunga tunggal): 10.000.000 * (1 + 0,03 * 5) = 11.500.000. Gigih (bunga majemuk): 10.000.000 * (1 + 0,03)^5 = 10.000.000 * 1,1592741 = 11.592.741. Selisih: 11.592.741 - 11.500.000 = 92.741.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi perbedaan mendasar antara skema bunga tunggal (Firman) dan bunga majemuk (Gigih), kemudian menerapkan rumus yang sesuai untuk masing-masing skema dalam konteks investasi jangka panjang.. Bukti: Firman menyimpan uang... bunga 3% per tahun... bunga ke rekening tabungan; Gigih... menambahkan bunganya ke dalam nilai depositonya; Setelah lima tahun, lebih banyak uang Firman atau Gigih? Berapa selisihnya?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bunga dihitung dan diakumulasikan (bunga tunggal vs majemuk) serta kemampuan prosedural untuk menghitung nilai akhir investasi.. Bukti: bunga 3% per tahun; Setiap tahun bank mengirim bunga ke rekening tabungan; menambahkan bunganya ke dalam nilai depositonya
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus membedakan dua konsep bunga yang berbeda (tunggal vs majemuk) dan melakukan perhitungan untuk kedua skema tersebut sebelum membandingkannya. Ini melibatkan pemilihan prosedur yang tepat dan perhitungan yang sedikit lebih kompleks daripada sekadar satu langkah.. Bukti: Firman menyimpan uang... bunga 3% per tahun; Gigih... menambahkan bunganya ke dalam nilai depositonya; Setelah lima tahun
+Run 1 — solusi: Firman (bunga tunggal): M_n = M_0(1 + n*i) = 10.000.000(1 + 5*0,03) = 11.500.000. Gigih (bunga majemuk): M_n = M_0(1 + i)^n = 10.000.000(1,03)^5 = 10.000.000(1,1592741) = 11.592.741. Selisih = 11.592.741 - 11.500.000 = 92.741.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi perbedaan skema bunga (tunggal vs majemuk) dari deskripsi naratif dan menerapkan rumus yang sesuai untuk masing-masing skema.. Bukti: Firman menyimpan uang sejumlah Rp10.000.000,00 di bank dalam bentuk deposito dengan bunga 3% per tahun.; Gigih meminta bank untuk menambahkan bunganya ke dalam nilai depositonya.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang perbedaan bunga tunggal dan majemuk serta penerapan prosedural rumus masing-masing.. Bukti: Firman menyimpan uang sejumlah Rp10.000.000,00 di bank dalam bentuk deposito dengan bunga 3% per tahun.; Gigih meminta bank untuk menambahkan bunganya ke dalam nilai depositonya.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konseptual untuk membedakan dua skema bunga yang berbeda dan melakukan perhitungan dua tahap yang saling terkait untuk membandingkan hasil akhir.. Bukti: Setelah lima tahun, lebih banyak uang Firman atau Gigih? Berapa selisihnya?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang bunga tunggal dan bunga majemuk, serta operasi aritmatika dasar. |
+| expectedPrerequisite | Rumus bunga tunggal dan bunga majemuk. |
 | dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 0 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena membandingkan dua model pertumbuhan uang yang umum dipelajari dalam materi keuangan matematika. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan bunga tunggal dan majemuk. Soal ini menuntut ketelitian dalam menerapkan dua rumus berbeda dan menghitung selisihnya, yang merupakan standar kompetensi menengah. |
 
-Run 2 — solusi: Firman (bunga tunggal): M_n = M_0(1 + n*i) = 10.000.000(1 + 5*0,03) = 11.500.000. Gigih (bunga majemuk): M_n = M_0(1 + i)^n = 10.000.000(1,03)^5 = 10.000.000(1,1592740743) = 11.592.741. Selisih = 11.592.741 - 11.500.000 = 92.741.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi perbedaan skema bunga (tunggal vs majemuk) dari deskripsi naratif, memilih rumus yang tepat untuk masing-masing, dan melakukan perhitungan untuk membandingkan hasil akhir.. Bukti: Firman menyimpan uang... bunga 3% per tahun... bunga ke rekening tabungan; Gigih... meminta bank untuk menambahkan bunganya ke dalam nilai depositonya; Setelah lima tahun, lebih banyak uang Firman atau Gigih? Berapa selisihnya?
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip konseptual bunga tunggal (bunga tidak diakumulasi ke pokok) dan bunga majemuk (bunga diakumulasi ke pokok) untuk menentukan model matematika yang relevan.. Bukti: bunga 3% per tahun; Setiap tahun bank mengirim bunga ke rekening tabungan; menambahkan bunganya ke dalam nilai depositonya
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus membedakan dua konsep bunga yang berbeda dari narasi, menerapkan dua rumus yang berbeda, dan melakukan perhitungan aritmatika yang melibatkan eksponen (bunga majemuk).. Bukti: Firman menyimpan uang... bunga 3% per tahun; Gigih... menambahkan bunganya ke dalam nilai depositonya; Setelah lima tahun
+Run 2 — solusi: Firman (bunga tunggal): 10.000.000 + (10.000.000 * 0,03 * 5) = 11.500.000. Gigih (bunga majemuk): 10.000.000 * (1 + 0,03)^5 = 10.000.000 * 1,1592741 = 11.592.741. Selisih: 11.592.741 - 11.500.000 = 92.741.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi perbedaan mendasar antara skema bunga tunggal (Firman) dan bunga majemuk (Gigih), lalu menerapkan rumus yang sesuai untuk masing-masing skema dalam konteks investasi.. Bukti: Firman menyimpan uang... bunga 3% per tahun... bunga ke rekening tabungan; Gigih... menambahkan bunganya ke dalam nilai depositonya; Setelah lima tahun, lebih banyak uang Firman atau Gigih? Berapa selisihnya?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang bagaimana bunga dihitung (tunggal vs majemuk) dan prosedur perhitungan nilai akhir investasi.. Bukti: bunga 3% per tahun; menambahkan bunganya ke dalam nilai depositonya
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus membedakan dua konsep bunga yang berbeda dan melakukan perhitungan untuk keduanya. Meskipun prosedurnya standar, siswa perlu berhati-hati dalam memilih rumus yang tepat untuk setiap skenario (bunga tunggal vs majemuk) dan melakukan perbandingan.. Bukti: Setelah lima tahun; bunga 3% per tahun
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar bunga tunggal dan bunga majemuk, operasi aritmatika dasar, dan penggunaan eksponen. |
+| expectedPrerequisite | Pemahaman dasar tentang bunga tunggal dan bunga majemuk. |
 | dependentSteps | 3 |
-| routineStatus | routine_selection |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan bunga tunggal dan majemuk. Soal ini memerlukan dua perhitungan terpisah dan satu perbandingan, yang merupakan tugas rutin namun memerlukan ketelitian. |
+
+Run 3 — solusi: Firman (bunga tunggal): M_n = M_0(1 + n*i) = 10.000.000(1 + 5*0,03) = 11.500.000. Gigih (bunga majemuk): M_n = M_0(1 + i)^n = 10.000.000(1,03)^5 ≈ 11.592.741. Selisih = 11.592.741 - 11.500.000 = 92.741.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi perbedaan skema bunga (tunggal vs majemuk) dari deskripsi naratif, memilih rumus yang tepat untuk masing-masing, dan melakukan perhitungan untuk membandingkan hasil akhir.. Bukti: Firman menyimpan uang... bunga 3% per tahun. Setiap tahun bank mengirim bunga ke rekening tabungan; Gigih... meminta bank untuk menambahkan bunganya ke dalam nilai depositonya; Setelah lima tahun, lebih banyak uang Firman atau Gigih? Berapa selisihnya?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang bagaimana bunga tunggal dan bunga majemuk bekerja serta prosedur perhitungan nilai akhir investasi.. Bukti: bunga 3% per tahun; menambahkan bunganya ke dalam nilai depositonya
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konsep bunga tunggal dan majemuk, serta kemampuan untuk menerapkan rumus yang berbeda pada dua skenario yang diberikan. Siswa harus merencanakan langkah perhitungan untuk kedua kasus dan membandingkannya, yang melibatkan beberapa langkah saling terkait.. Bukti: Firman menyimpan uang... bunga 3% per tahun; Gigih... menambahkan bunganya ke dalam nilai depositonya; Setelah lima tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga tunggal dan bunga majemuk, serta operasi hitung eksponen. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
 | strategySelection | True |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
@@ -952,58 +951,15 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena membandingkan dua model keuangan yang merupakan standar kurikulum keuangan matematika SMA. |
-
-Run 3 — solusi: Firman (bunga tunggal): 10.000.000 * (1 + 0,03 * 5) = 11.500.000. Gigih (bunga majemuk): 10.000.000 * (1,03)^5 = 11.592.741. Selisih: 11.592.741 - 11.500.000 = 92.741.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi perbedaan skema bunga (tunggal vs majemuk) dan menerapkan rumus yang sesuai untuk kedua skema tersebut, kemudian menghitung selisihnya. Ini adalah penerapan konsep bunga pada situasi rutin.. Bukti: Firman menyimpan uang... bunga 3% per tahun... bunga tunggal; Gigih... menambahkan bunganya ke dalam nilai depositonya... bunga majemuk; Setelah lima tahun, lebih banyak uang Firman atau Gigih? Berapa selisihnya?
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung bunga tunggal dan bunga majemuk serta prinsip konseptual di balik perbedaan akumulasi nilai uang dari kedua metode tersebut.. Bukti: bunga 3% per tahun; bunga tunggal; bunga majemuk
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua prosedur rutin yang berbeda (bunga tunggal dan majemuk) dan membandingkan hasilnya. Siswa harus memilih rumus yang tepat untuk masing-masing skenario.. Bukti: Firman menyimpan uang... bunga 3% per tahun; Gigih... menambahkan bunganya ke dalam nilai depositonya; Setelah lima tahun
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar bunga tunggal dan bunga majemuk. |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena membandingkan dua model keuangan yang umum dipelajari di tingkat SMA. |
+| gradeRelativeRationale | Materi bunga tunggal dan majemuk adalah kurikulum standar kelas 12. Soal menuntut pembedaan skema bunga yang merupakan kompetensi inti, namun prosedurnya bersifat rutin bagi siswa yang memahami konsep tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
-
-Adjudikasi AI: `success`; token `4389`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu mengidentifikasi perbedaan skema bunga (tunggal vs majemuk) dari deskripsi naratif, memilih rumus yang tepat untuk masing-masing, dan melakukan perhitungan untuk membandingkan hasil akhir.
-- Dimensi pengetahuan `conceptual`: Siswa harus memahami prinsip konseptual bunga tunggal (bunga tidak diakumulasi ke pokok) dan bunga majemuk (bunga diakumulasi ke pokok) untuk menentukan model matematika yang relevan.
-- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena siswa harus membedakan dua konsep bunga yang berbeda dari narasi, menerapkan dua rumus yang berbeda, dan melakukan perhitungan aritmatika yang melibatkan eksponen (bunga majemuk).
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar bunga tunggal dan bunga majemuk, operasi aritmatika dasar, dan penggunaan eksponen. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena membandingkan dua model keuangan yang merupakan standar kurikulum keuangan matematika SMA. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1054,74 +1010,32 @@ Pak Roni merupakan anggota koperasi simpan pinjam. Pak Roni menyimpan sejumlah u
 | D | Rp750.000,00 |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Bunga = 15.000.000 * 1% * 5 = 750.000. Modal akhir = 15.000.000 + 750.000 = 15.750.000.
+Solusi minimum hasil AI: Bunga = 15.000.000 * 1% * 5 = 750.000. Total simpanan = 15.000.000 + 750.000 = 15.750.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `14d15e2d181b42379978393ae344d90c4779e2f84b6917bfedd253e5abfbdd7e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `693b2d148f94972d7c6dc5d3a3d267b8af93f578bb2c656f1dbc9ac131e2ce91`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2926 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2996 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2724 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2804 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2800 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2792 |
 
-Run 1 — solusi: Bunga = 15.000.000 * 1% * 5 = 750.000. Modal akhir = 15.000.000 + 750.000 = 15.750.000.
-- Domain kognitif `classify/applying`: Siswa hanya perlu menerapkan rumus bunga tunggal sederhana (M * i * n) dan menjumlahkannya dengan modal awal. Ini adalah proses rutin.. Bukti: menyimpan sejumlah uang di koperasi sebesar Rp15.000.000,00 dengan bunga koperasi 1% per tahun; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep bunga tunggal dan bagaimana menggunakannya dalam perhitungan keuangan sederhana.. Bukti: bunga koperasi 1% per tahun; jumlah simpanan Pak Roni setelah 5 tahun
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung, menggunakan rumus standar bunga tunggal dengan angka yang sederhana. Tidak ada kendala atau strategi non-rutin.. Bukti: bunga koperasi 1% per tahun; setelah 5 tahun
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar persentase dan operasi aritmatika dasar. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 sebagai pengingat konsep dasar keuangan, namun secara kognitif sangat mudah. |
-
-Run 2 — solusi: Bunga = 15.000.000 * 1% * 5 = 750.000. Modal akhir = 15.000.000 + 750.000 = 15.750.000.
-- Domain kognitif `classify/applying`: Siswa hanya perlu menerapkan rumus bunga tunggal sederhana (M + M*i*t) yang merupakan prosedur rutin.. Bukti: menyimpan sejumlah uang di koperasi sebesar Rp15.000.000,00 dengan bunga koperasi 1% per tahun; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang perhitungan bunga tunggal.. Bukti: bunga koperasi 1% per tahun; jumlah simpanan Pak Roni setelah 5 tahun
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung, hanya memerlukan satu rumus bunga tunggal tanpa variasi atau kendala tambahan.. Bukti: bunga koperasi 1% per tahun; setelah 5 tahun
+Run 1 — solusi: Bunga = Modal x suku bunga x waktu = 15.000.000 x 1% x 5 = 750.000. Total simpanan = Modal + Bunga = 15.000.000 + 750.000 = 15.750.000.
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung rumus bunga tunggal (M_akhir = M_awal + (M_awal * i * t)). Siswa hanya perlu mengidentifikasi variabel dan melakukan perhitungan aritmatika dasar.. Bukti: Pak Roni menyimpan sejumlah uang di koperasi sebesar Rp15.000.000,00 dengan bunga koperasi 1% per tahun.; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep bunga tunggal sebagai penambahan nilai berdasarkan persentase dari modal awal dalam jangka waktu tertentu.. Bukti: bunga koperasi 1% per tahun; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Tidak ada kendala yang berinteraksi, tidak ada pemilihan strategi yang kompleks, dan semua informasi diberikan secara eksplisit. Ini adalah penerapan rumus standar.. Bukti: Rp15.000.000,00; bunga koperasi 1% per tahun; setelah 5 tahun
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar bunga tunggal dan operasi aritmatika persentase. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sangat mudah untuk kelas 12, hanya melibatkan substitusi rumus dasar. |
-
-Run 3 — solusi: Bunga = 15.000.000 * 1% * 5 = 750.000. Total simpanan = 15.000.000 + 750.000 = 15.750.000.
-- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus bunga tunggal (M + M*i*t) pada situasi keuangan yang rutin dan sederhana.. Bukti: menyimpan sejumlah uang di koperasi sebesar Rp15.000.000,00 dengan bunga koperasi 1% per tahun; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritma perhitungan bunga tunggal yang sudah baku.. Bukti: bunga koperasi 1% per tahun; jumlah simpanan Pak Roni setelah 5 tahun
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan satu prosedur perhitungan bunga tunggal yang langsung, tanpa kendala atau integrasi konsep yang kompleks.. Bukti: bunga koperasi 1% per tahun; setelah 5 tahun
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar persentase dan operasi aritmatika dasar. |
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan operasi aritmatika. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1131,15 +1045,79 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | weak |
-| gradeRelativeRationale | Materi bunga tunggal adalah dasar keuangan kelas 12. Soal ini tidak memerlukan strategi nonrutin atau pemahaman mendalam, sehingga dikategorikan mudah. |
+| gradeRelativeRationale | Untuk siswa kelas 12, soal ini berada di bawah tingkat kesulitan rata-rata karena hanya melibatkan satu rumus bunga tunggal sederhana tanpa variasi waktu atau konversi bunga yang rumit. |
+
+Run 2 — solusi: Bunga = M x i x t = 15.000.000 x 0,01 x 5 = 750.000. Total simpanan = M + Bunga = 15.000.000 + 750.000 = 15.750.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga tunggal secara langsung untuk menghitung total simpanan setelah periode tertentu. Tidak ada strategi nonrutin atau integrasi konsep yang kompleks.. Bukti: menyimpan sejumlah uang di koperasi sebesar Rp15.000.000,00 dengan bunga koperasi 1% per tahun; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung bunga tunggal dan akumulasi modal akhir.. Bukti: bunga koperasi 1% per tahun; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang sangat jelas. Siswa hanya perlu mengalikan modal, suku bunga, dan waktu, lalu menjumlahkannya dengan modal awal.. Bukti: Rp15.000.000,00 dengan bunga koperasi 1% per tahun; setelah 5 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan operasi aritmetika dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini sangat mendasar untuk kelas 12, di mana materi keuangan biasanya sudah mencakup anuitas atau bunga majemuk yang lebih kompleks. Soal ini hanya menguji pemahaman bunga tunggal sederhana. |
+
+Run 3 — solusi: Bunga = M x i x t = 15.000.000 x 0,01 x 5 = 750.000. Total simpanan = M + Bunga = 15.000.000 + 750.000 = 15.750.000.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal secara langsung untuk menghitung total simpanan akhir. Tidak ada langkah penalaran kompleks atau strategi non-rutin yang diperlukan.. Bukti: menyimpan sejumlah uang di koperasi sebesar Rp15.000.000,00 dengan bunga koperasi 1% per tahun; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep bunga tunggal dan prosedur perhitungan bunga serta penjumlahan dengan modal awal.. Bukti: bunga koperasi 1% per tahun; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Prosedur perhitungan bunga tunggal (M x i x t) adalah materi standar yang familiar. Tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi yang kompleks.. Bukti: Rp15.000.000,00 dengan bunga koperasi 1% per tahun; Berapa jumlah simpanan Pak Roni setelah 5 tahun?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan operasi aritmatika dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini berada di bawah tingkat kesulitan rata-rata untuk kelas 12 karena hanya melibatkan satu rumus dasar tanpa variasi atau kondisi tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"knowing": 1, "applying": 2} | majority_2_of_3 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4468`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Soal ini meminta penerapan langsung rumus bunga tunggal (M_akhir = M_awal + (M_awal * i * t)). Siswa hanya perlu mengidentifikasi variabel dan melakukan perhitungan aritmatika dasar tanpa perlu strategi nonrutin.
+- Dimensi pengetahuan `procedural`: Siswa perlu memahami prosedur perhitungan bunga tunggal dan akumulasi modal akhir, yang merupakan materi prosedural standar.
+- Intended difficulty `Easy`: Soal ini sangat mendasar untuk kelas 12. Jalur penyelesaiannya rutin, tidak ada kendala yang berinteraksi, dan semua informasi diberikan secara eksplisit.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan operasi aritmatika. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini berada di bawah tingkat kesulitan rata-rata untuk kelas 12 karena hanya melibatkan satu rumus dasar tanpa variasi atau kondisi tambahan. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1190,32 +1168,32 @@ Pak Bayu merupakan anggota koperasi "Maju Bersama". Beliau menyimpan modal awal 
 | D | Bunga Rp120.000,00, total simpanan Rp120.000,00 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Bunga = Modal x (suku bunga per tahun / 12) x waktu (bulan) = 1.000.000 x (18%/12) x 8 = 1.000.000 x 1,5% x 8 = 120.000. Total simpanan = Modal + Bunga = 1.000.000 + 120.000 = 1.120.000.
+Solusi minimum hasil AI: Bunga = Modal x suku bunga per bulan x lama bulan = 1.000.000 x (18%/12) x 8 = 1.000.000 x 1,5% x 8 = 120.000. Total simpanan = Modal + Bunga = 1.000.000 + 120.000 = 1.120.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ceab0ca4a7384c2b88c55d6ced80a3a2689f17f065d64a2f726059f9f866c5aa`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7818c53f44244c07f23c69530ecd9d7960d16ce035ba3a652e2ae93344da6518`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2318 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2340 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2313 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2941 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2924 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2889 |
 
-Run 1 — solusi: Bunga = Modal x (suku bunga per tahun / 12) x waktu (bulan) = 1.000.000 x (18%/12) x 8 = 1.000.000 x 1,5% x 8 = 120.000. Total simpanan = Modal + Bunga = 1.000.000 + 120.000 = 1.120.000.
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur bunga tunggal yang tepat, mengonversi suku bunga tahunan ke bulanan, dan menerapkan rumus bunga tunggal serta penjumlahan modal. Ini adalah penerapan prosedur rutin pada situasi keuangan sederhana.. Bukti: Koperasi memberikan bunga tunggal sebesar 18% per tahun; Pak Bayu menyimpan modalnya selama 8 bulan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga tunggal dan urutan langkah untuk mendapatkan total simpanan.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah-langkah yang jelas dan familiar bagi siswa kelas 12. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
+Run 1 — solusi: Bunga = Modal x suku bunga per bulan x lama bulan = 1.000.000 x (18%/12) x 8 = 1.000.000 x 1,5% x 8 = 120.000. Total simpanan = Modal + Bunga = 1.000.000 + 120.000 = 1.120.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal (B = M x i x t) dengan melakukan konversi satuan waktu (tahun ke bulan) yang merupakan prosedur standar dalam materi keuangan.. Bukti: Koperasi memberikan bunga tunggal sebesar 18% per tahun; Pak Bayu menyimpan modalnya selama 8 bulan
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga tunggal dan penggunaan parameter yang tepat (konversi waktu).. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengonversi suku bunga tahunan ke bulanan dan menerapkan rumus bunga tunggal sederhana. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar persentase dan bunga tunggal. |
+| expectedPrerequisite | Konsep dasar bunga tunggal dan operasi aritmetika persentase. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1225,33 +1203,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga tunggal adalah materi standar kelas 12 yang prosedurnya sangat familiar dan langsung. |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik standar kelas 12. Soal ini menguji pemahaman dasar tanpa variasi yang menuntut penalaran tinggi. |
 
-Run 2 — solusi: Bunga = Modal x suku bunga per bulan x lama bulan = 1.000.000 x (18%/12) x 8 = 1.000.000 x 0,015 x 8 = 120.000. Total simpanan = Modal + Bunga = 1.000.000 + 120.000 = 1.120.000.
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur bunga tunggal yang tepat, mengonversi satuan waktu (tahun ke bulan), dan menerapkan rumus bunga tunggal untuk situasi rutin.. Bukti: Koperasi memberikan bunga tunggal sebesar 18% per tahun; Pak Bayu menyimpan modalnya selama 8 bulan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang perhitungan bunga tunggal dan konversi periode waktu yang relevan.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah-langkah yang jelas (konversi bunga, hitung bunga, jumlahkan dengan modal). Tidak ada kendala kompleks atau strategi nonrutin.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar bunga tunggal dan aritmatika persentase. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga tunggal adalah standar kurikulum kelas 12. Soal ini adalah aplikasi langsung dari rumus tanpa modifikasi variabel yang rumit. |
-
-Run 3 — solusi: Bunga (B) = M x i x t = 1.000.000 x (18%/12) x 8 = 1.000.000 x 0,015 x 8 = 120.000. Total simpanan = M + B = 1.000.000 + 120.000 = 1.120.000.
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur bunga tunggal yang tepat, mengonversi satuan waktu (tahun ke bulan), dan menerapkan rumus bunga tunggal untuk situasi rutin.. Bukti: Koperasi memberikan bunga tunggal sebesar 18% per tahun; Pak Bayu menyimpan modalnya selama 8 bulan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang algoritma perhitungan bunga tunggal dan konversi satuan waktu yang relevan.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan rumus bunga tunggal dengan penyesuaian satuan waktu yang sederhana.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
+Run 2 — solusi: Bunga = Modal x (r/12) x t = 1.000.000 x (18%/12) x 8 = 1.000.000 x 0,015 x 8 = 120.000. Total simpanan = Modal + Bunga = 1.000.000 + 120.000 = 1.120.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga tunggal sederhana dengan melakukan konversi satuan waktu (tahun ke bulan) yang merupakan prosedur rutin dalam materi keuangan kelas 12.. Bukti: Koperasi memberikan bunga tunggal sebesar 18% per tahun; Pak Bayu menyimpan modalnya selama 8 bulan
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang algoritma perhitungan bunga tunggal dan konversi periode waktu yang sesuai.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah penyelesaian yang jelas (konversi bunga, hitung bunga, jumlahkan dengan modal). Tidak ada kendala yang berinteraksi atau kebutuhan perencanaan strategi yang kompleks.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
 
 Profil difficulty run ini:
 
@@ -1267,7 +1224,28 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga tunggal adalah standar kurikulum kelas 12. Soal ini menggunakan prosedur standar tanpa jebakan kompleks, sehingga tergolong mudah bagi siswa kelas 12. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan perhitungan bunga tunggal sederhana dengan konversi waktu sebagai bagian dari literasi keuangan dasar. |
+
+Run 3 — solusi: Bunga = Modal x (r/12) x t = 1.000.000 x (18%/12) x 8 = 1.000.000 x 0,015 x 8 = 120.000. Total simpanan = Modal + Bunga = 1.000.000 + 120.000 = 1.120.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur bunga tunggal dengan melakukan konversi satuan waktu (tahun ke bulan) yang merupakan prosedur standar dalam materi keuangan kelas 12.. Bukti: Koperasi memberikan bunga tunggal sebesar 18% per tahun; Pak Bayu menyimpan modalnya selama 8 bulan
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penerapan algoritme bunga tunggal yang merupakan materi prosedural.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan alur penyelesaian yang jelas. Siswa hanya perlu mengonversi suku bunga tahunan ke bulanan dan menerapkan rumus bunga tunggal sederhana.. Bukti: bunga tunggal sebesar 18% per tahun; menyimpan modalnya selama 8 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga tunggal dan konversi satuan waktu. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar kelas 12 yang penyelesaiannya mengikuti rumus langsung tanpa kendala yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -1326,114 +1304,65 @@ Seluruh bank di suatu wilayah menawarkan deposito dengan bunga 5%–7% per tahun
 | D | Rp20.000.000,00 |
 
 Kunci sumber: `D`; status AI: `conflict`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: Soal tidak dapat diselesaikan secara pasti karena suku bunga tidak ditentukan (hanya rentang 5-7%). Jika diasumsikan 5%, PV = 26.764.500 / (1,05)^5 ≈ 20.970.686. Jika diasumsikan 7%, PV = 26.764.500 / (1,07)^5 ≈ 19.086.565. Tidak ada informasi yang cukup untuk memilih satu nilai spesifik atau membenarkan opsi D.
+Solusi minimum hasil AI: Soal tidak dapat diselesaikan secara unik karena suku bunga tidak ditentukan (hanya rentang 5%-7%). Jika bunga 6% digunakan, PV = 26.764.500 / (1,06)^5 = 20.000.000. Namun, informasi ini tidak tersedia dalam soal.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `505e3216464b17c0df41f9f597b8f8981443ee911081ea500d6c07b2b2189230`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1838b9d2d5e1a1890dc4f2c92caf637d730cec7b6eba12ac06c50de64318ee5f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | concern / conflict | applying | procedural | Medium | 2431 |
-| 2 | success | concern / conflict | applying | procedural | Medium | 2339 |
-| 3 | success | concern / conflict | applying | procedural | Medium | 2341 |
+| 1 | success | concern / conflict | — | — | — | 2640 |
+| 2 | success | concern / conflict | — | — | — | 2597 |
+| 3 | success | concern / conflict | — | — | — | 4026 |
 
-Run 1 — solusi: Bunga majemuk: A = P(1+i)^n. Dengan i=5% (asumsi terendah) dan n=5, P = 26.764.500 / (1,05)^5 = 20.970.686. Hasil ini tidak mendekati opsi D (20.000.000) secara akurat. Soal tidak memiliki informasi cukup untuk menentukan suku bunga spesifik atau membenarkan pembulatan yang digunakan.
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur bunga majemuk dan menerapkan rumus nilai sekarang (present value) untuk mencari modal awal, yang merupakan proses applying.. Bukti: Ahmad telah menjadi nasabah selama 5 tahun; saldo deposito Ahmad menjadi Rp26.764.500,00; bunga 5%–7% per tahun
-- Dimensi pengetahuan `classify/procedural`: Siswa harus memahami hubungan antara modal awal, suku bunga, periode, dan saldo akhir (konsep bunga majemuk) serta menerapkan algoritma perhitungannya.. Bukti: bunga 5%–7% per tahun; saldo deposito Ahmad menjadi Rp26.764.500,00
-- Intended difficulty `classify/Medium`: Soal memerlukan pemilihan prosedur bunga majemuk dan manipulasi aljabar dasar. Namun, karena adanya ambiguitas data (rentang bunga) dan ketidakakuratan opsi jawaban, tingkat kesulitan teknis menjadi tidak terdefinisi dengan baik.. Bukti: bunga 5%–7% per tahun; Ahmad telah menjadi nasabah selama 5 tahun; saldo deposito Ahmad menjadi Rp26.764.500,00
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep bunga majemuk dan penggunaan kalkulator/logaritma untuk eksponen. |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | weak |
-| gradeRelativeRationale | Secara teoretis, ini adalah soal rutin kelas 12, namun cacat pada data soal membuatnya sulit diselesaikan dengan logika matematika yang konsisten. |
-
-Run 2 — solusi: Soal tidak dapat diselesaikan secara pasti karena suku bunga tidak ditentukan (hanya rentang 5-7%). Jika diasumsikan 5%, PV = 26.764.500 / (1,05)^5 = 20.970.686. Jika diasumsikan 7%, PV = 26.764.500 / (1,07)^5 = 19.086.565. Tidak ada informasi yang cukup untuk memilih satu nilai spesifik.
-- Domain kognitif `classify/applying`: Siswa diharapkan menerapkan rumus bunga majemuk PV = FV / (1+i)^n. Namun, karena variabel i (suku bunga) tidak ditentukan secara spesifik, siswa tidak dapat melakukan perhitungan yang valid.. Bukti: menawarkan deposito dengan bunga 5%–7% per tahun; uang yang disetorkan oleh Ahmad mula-mula adalah
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang rumus bunga majemuk, namun gagal menyediakan data faktual yang cukup untuk eksekusi.. Bukti: deposito dengan bunga 5%–7% per tahun; saldo deposito Ahmad menjadi Rp26.764.500,00
-- Intended difficulty `classify/Medium`: Secara struktur, ini adalah soal rutin bunga majemuk. Namun, karena ambiguitas data (rentang bunga), soal ini cacat secara konten.. Bukti: bunga 5%–7% per tahun; nasabah selama 5 tahun; saldo deposito Ahmad menjadi Rp26.764.500,00
+Run 1 — solusi: Soal tidak dapat diselesaikan secara unik karena suku bunga tidak ditentukan secara spesifik (hanya rentang 5%-7%). Jika menggunakan asumsi 5% per tahun, PV = 26.764.500 / (1,05)^5 = 20.970.686. Jika menggunakan 7% per tahun, PV = 26.764.500 / (1,07)^5 = 19.083.500. Karena tidak ada informasi suku bunga yang pasti, jawaban tidak dapat diverifikasi.
+- Domain kognitif `abstain/None`: Karena informasi suku bunga tidak lengkap (hanya rentang), siswa tidak dapat menentukan prosedur yang tepat untuk menghitung nilai awal. Abstain diperlukan karena soal tidak memiliki jawaban yang valid secara matematis.. Bukti: 
+- Dimensi pengetahuan `abstain/None`: Soal tidak dapat diklasifikasikan karena kurangnya informasi yang diperlukan untuk menerapkan konsep bunga majemuk secara valid.. Bukti: 
+- Intended difficulty `abstain/None`: Tingkat kesulitan tidak dapat ditentukan karena soal memiliki cacat konten (informasi hilang) yang membuat penyelesaian tidak mungkin dilakukan secara objektif.. Bukti: 
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Rumus bunga majemuk PV = FV / (1+i)^n |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini seharusnya mudah bagi siswa kelas 12 jika data lengkap, namun menjadi tidak valid karena kurangnya informasi spesifik mengenai suku bunga. |
 
-Run 3 — solusi: Soal tidak dapat diselesaikan secara pasti karena suku bunga tidak spesifik (rentang 5-7%). Jika diasumsikan 5%, PV = 26.764.500 / (1,05)^5 ≈ 20.970.686. Nilai ini tidak sama dengan opsi D (20.000.000).
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga majemuk PV = FV / (1+i)^n untuk mencari nilai awal (present value).. Bukti: Bank XYZ termasuk salah satu bank di wilayah tersebut dengan bunga 5%–7% per tahun; uang yang disetorkan oleh Ahmad mula-mula adalah
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritma perhitungan bunga majemuk untuk menyelesaikan masalah keuangan.. Bukti: deposito dengan bunga 5%–7% per tahun; saldo deposito Ahmad menjadi Rp26.764.500,00
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemilihan prosedur bunga majemuk dan penanganan ketidakpastian data (rentang bunga), meskipun eksekusi akhirnya terhambat oleh data yang tidak konsisten.. Bukti: bunga 5%–7% per tahun; nasabah selama 5 tahun; saldo deposito Ahmad menjadi Rp26.764.500,00
+Run 2 — solusi: Soal tidak dapat diselesaikan secara pasti karena suku bunga tidak ditentukan. Jika diasumsikan bunga 5% per tahun, maka PV = 26.764.500 / (1,05)^5 ≈ 20.970.686. Jika diasumsikan bunga 7% per tahun, maka PV = 26.764.500 / (1,07)^5 ≈ 19.083.568. Karena hasil bergantung pada asumsi suku bunga yang tidak ada di soal, jawaban tidak dapat diverifikasi.
+- Domain kognitif `abstain/None`: Karena informasi suku bunga tidak lengkap (hanya rentang), siswa tidak dapat menentukan prosedur yang tepat untuk menghitung nilai awal. Abstain diperlukan karena soal tidak memiliki solusi yang valid berdasarkan data yang diberikan.. Bukti: 
+- Dimensi pengetahuan `abstain/None`: Informasi yang hilang membuat dimensi pengetahuan (prosedural/konseptual) tidak dapat diterapkan secara valid pada soal ini.. Bukti: 
+- Intended difficulty `abstain/None`: Tingkat kesulitan tidak dapat ditentukan karena soal memiliki cacat konten yang mendasar (informasi hilang).. Bukti: 
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep bunga majemuk dan penggunaan kalkulator/logaritma untuk mencari nilai awal. |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga majemuk adalah standar kelas 12. Kesulitan muncul dari ambiguitas data bunga yang diberikan. |
+
+Run 3 — solusi: Soal tidak dapat diselesaikan secara pasti karena tingkat bunga tidak ditentukan (hanya rentang 5%-7%). Jika bunga 6% digunakan, PV = 26.764.500 / (1,06)^5 = 20.000.000. Namun, informasi ini tidak tersedia dalam soal.
+- Domain kognitif `abstain/None`: Soal tidak dapat diklasifikasikan secara kognitif karena parameter utama (tingkat bunga) tidak ditentukan, sehingga tidak ada prosedur atau penalaran yang dapat diterapkan secara valid.. Bukti: bunga 5%–7% per tahun
+- Dimensi pengetahuan `abstain/None`: Karena soal tidak memiliki parameter yang cukup untuk diselesaikan, dimensi pengetahuan tidak dapat ditentukan.. Bukti: bunga 5%–7% per tahun
+- Intended difficulty `abstain/None`: Tingkat kesulitan tidak dapat ditentukan karena soal memiliki cacat informasi yang mendasar.. Bukti: bunga 5%–7% per tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
+| Domain kognitif | {} | no_consensus / abstained | — |
+| Dimensi pengetahuan | {} | no_consensus / abstained | — |
+| Intended difficulty | {} | no_consensus / abstained | — |
 
-Adjudikasi AI: `success`; token `4203`.
-Konten: `concern`; kunci: `conflict`; masalah: Soal memberikan rentang suku bunga (5%–7%) tanpa menentukan suku bunga spesifik yang digunakan oleh Bank XYZ, sehingga perhitungan nilai awal (present value) tidak dapat ditentukan secara pasti.; Opsi jawaban yang tersedia tidak konsisten dengan perhitungan bunga majemuk standar menggunakan rentang bunga yang diberikan. Sebagai contoh, dengan bunga 5%, PV = 26.764.500 / (1,05)^5 ≈ 20.970.686, dan dengan bunga 7%, PV ≈ 19.086.565. Tidak ada opsi yang mendekati hasil perhitungan ini secara akurat.; Kunci jawaban D (20.000.000) tidak dapat dibenarkan secara matematis dari data yang tersedia..
-- Domain kognitif `applying`: Siswa diharapkan menerapkan rumus bunga majemuk PV = FV / (1+i)^n untuk mencari nilai awal. Namun, karena variabel i (suku bunga) tidak ditentukan secara spesifik, siswa tidak dapat melakukan perhitungan yang valid.
-- Dimensi pengetahuan `procedural`: Siswa harus memahami hubungan antara modal awal, suku bunga, periode, dan saldo akhir (konsep bunga majemuk) serta menerapkan algoritma perhitungannya.
-- Intended difficulty `Medium`: Secara struktur, ini adalah soal rutin bunga majemuk. Namun, karena ambiguitas data (rentang bunga) dan ketidakakuratan opsi, soal ini cacat secara konten.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Rumus bunga majemuk PV = FV / (1+i)^n |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | weak |
-| gradeRelativeRationale | Soal ini seharusnya rutin bagi siswa kelas 12, namun menjadi tidak valid karena kurangnya informasi spesifik mengenai suku bunga. |
+Adjudikasi AI: `success`; token `4360`.
+Konten: `concern`; kunci: `conflict`; masalah: Soal tidak memiliki informasi yang cukup untuk diselesaikan secara unik karena suku bunga hanya diberikan dalam rentang (5%–7%) tanpa spesifikasi untuk Bank XYZ.; Kunci jawaban (D) mengasumsikan suku bunga 6% untuk menghasilkan Rp20.000.000,00, namun asumsi ini tidak tercantum dalam soal.; Catatan sumber pada opsi D memberikan justifikasi yang tidak konsisten (menggunakan 5% namun hasilnya tidak sesuai dengan Rp20.000.000,00)..
+- Domain kognitif `None`: Soal tidak dapat diklasifikasikan secara kognitif karena parameter utama (tingkat bunga) tidak ditentukan, sehingga tidak ada prosedur atau penalaran yang dapat diterapkan secara valid.
+- Dimensi pengetahuan `None`: Karena soal tidak memiliki parameter yang cukup untuk diselesaikan, dimensi pengetahuan tidak dapat ditentukan.
+- Intended difficulty `None`: Tingkat kesulitan tidak dapat ditentukan karena soal memiliki cacat konten (informasi hilang) yang membuat penyelesaian tidak mungkin dilakukan secara objektif.
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1467,9 +1396,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `revision_required`.
-Status konten: `concern`. Catatan konten: Soal memberikan rentang suku bunga (5%–7%) tanpa menentukan suku bunga spesifik yang digunakan oleh Bank XYZ, sehingga perhitungan nilai awal (present value) tidak dapat ditentukan secara pasti.; Opsi jawaban yang tersedia tidak konsisten dengan perhitungan bunga majemuk standar menggunakan rentang bunga yang diberikan. Sebagai contoh, dengan bunga 5%, PV = 26.764.500 / (1,05)^5 ≈ 20.970.686, dan dengan bunga 7%, PV ≈ 19.086.565. Tidak ada opsi yang mendekati hasil perhitungan ini secara akurat.; Kunci jawaban D (20.000.000) tidak dapat dibenarkan secara matematis dari data yang tersedia..
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `revision_required`.
+Status konten: `concern`. Catatan konten: Soal tidak memiliki informasi yang cukup untuk diselesaikan secara unik karena suku bunga hanya diberikan dalam rentang (5%–7%) tanpa spesifikasi untuk Bank XYZ.; Kunci jawaban (D) mengasumsikan suku bunga 6% untuk menghasilkan Rp20.000.000,00, namun asumsi ini tidak tercantum dalam soal.; Catatan sumber pada opsi D memberikan justifikasi yang tidak konsisten (menggunakan 5% namun hasilnya tidak sesuai dengan Rp20.000.000,00)..
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 11. Soal `36b2b05ba07a1b3dfb573f9e`
@@ -1484,53 +1413,32 @@ Seseorang berinvestasi saham di suatu aplikasi online. Modal usaha yang diberika
 | D | Rp7.250.000,00 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Menggunakan rumus bunga majemuk: Mn = M0(1 + i)^n. Diketahui M0 = 5.000.000, i = 0,15, dan n = 3. Maka, Mn = 5.000.000 * (1 + 0,15)^3 = 5.000.000 * (1,15)^3 = 5.000.000 * 1,520875 = 7.604.375.
+Solusi minimum hasil AI: Mn = M(1+i)^n = 5.000.000(1+0,15)^3 = 5.000.000(1,520875) = 7.604.375
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c73e201470dc5fa9804efd3bc367c0debed6f06dbd66fc615ff71115edac46c8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `10d2fef15649f2ec598c11d97e8e26168faa1a785038b1e0f07ef36528c9c0e3`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2189 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2211 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2207 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3483 |
+| 2 | success | valid / verified | applying | procedural | Easy | 3307 |
+| 3 | success | valid / verified | applying | procedural | Easy | 3567 |
 
-Run 1 — solusi: Menggunakan rumus bunga majemuk: Mn = M0(1 + i)^n. Diketahui M0 = 5.000.000, i = 0,15, dan n = 3. Maka, Mn = 5.000.000 * (1 + 0,15)^3 = 5.000.000 * (1,15)^3 = 5.000.000 * 1,520875 = 7.604.375.
-- Domain kognitif `classify/applying`: Siswa diminta untuk menerapkan rumus bunga majemuk secara langsung dengan nilai yang sudah ditentukan dalam soal.. Bukti: Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun. Hitunglah nilai akhir modal tersebut setelah 3 tahun.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma atau prosedur perhitungan bunga majemuk.. Bukti: suku bunga majemuk 15% per tahun
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya memerlukan substitusi nilai ke dalam rumus bunga majemuk yang sudah umum dipelajari di kelas 12.. Bukti: Modal usaha yang diberikan sebesar Rp5.000.000,00. Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun. Hitunglah nilai akhir modal tersebut setelah 3 tahun.
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep bunga majemuk dan penggunaan rumus Mn = M0(1+i)^n. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah soal standar kelas 12 yang menguji kemampuan komputasi dasar bunga majemuk tanpa variasi kompleksitas. |
-
-Run 2 — solusi: Menggunakan rumus bunga majemuk Mn = M0(1 + i)^n. Diketahui M0 = 5.000.000, i = 0,15, dan n = 3. Maka Mn = 5.000.000 * (1 + 0,15)^3 = 5.000.000 * (1,15)^3 = 5.000.000 * 1,520875 = 7.604.375.
-- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga majemuk yang sudah dipelajari untuk menghitung nilai akhir modal. Ini adalah prosedur rutin yang langsung.. Bukti: Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun. Hitunglah nilai akhir modal tersebut setelah 3 tahun.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma atau prosedur perhitungan bunga majemuk.. Bukti: suku bunga majemuk 15% per tahun; Hitunglah nilai akhir modal tersebut setelah 3 tahun
-- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung rumus bunga majemuk dengan variabel yang sudah jelas. Tidak ada langkah tambahan atau jebakan yang kompleks.. Bukti: Modal usaha yang diberikan sebesar Rp5.000.000,00.; suku bunga majemuk 15% per tahun.; setelah 3 tahun.
+Run 1 — solusi: Mn = M(1+i)^n = 5.000.000(1+0,15)^3 = 5.000.000(1,520875) = 7.604.375
+- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus bunga majemuk yang sudah dipelajari di kelas 12. Siswa hanya perlu mengidentifikasi variabel dan memasukkannya ke dalam rumus.. Bukti: Modal usaha yang diberikan sebesar Rp5.000.000,00; suku bunga majemuk 15% per tahun; nilai akhir modal tersebut setelah 3 tahun
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma atau prosedur perhitungan bunga majemuk.. Bukti: suku bunga majemuk 15% per tahun; nilai akhir modal tersebut setelah 3 tahun
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung rumus bunga majemuk dengan variabel yang sudah tersedia secara eksplisit. Tidak ada kendala yang berinteraksi atau kebutuhan untuk menyusun strategi non-rutin.. Bukti: Modal usaha yang diberikan sebesar Rp5.000.000,00; suku bunga majemuk 15% per tahun; nilai akhir modal tersebut setelah 3 tahun
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep bunga majemuk dan penggunaan rumus Mn = M0(1+i)^n. |
+| expectedPrerequisite | Pemahaman rumus bunga majemuk Mn = M(1+i)^n |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1540,19 +1448,19 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 sebagai soal latihan rutin mengenai bunga majemuk dengan angka yang standar. |
+| gradeRelativeRationale | Soal ini adalah latihan standar untuk materi bunga majemuk kelas 12, di mana siswa diharapkan mampu menghitung nilai akhir investasi dengan rumus dasar. |
 
-Run 3 — solusi: Menggunakan rumus bunga majemuk Mn = P(1 + i)^n. Diketahui P = 5.000.000, i = 0,15, dan n = 3. Maka Mn = 5.000.000 * (1 + 0,15)^3 = 5.000.000 * (1,15)^3 = 5.000.000 * 1,520875 = 7.604.375.
-- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus bunga majemuk yang sudah dipelajari di kelas 12. Siswa hanya perlu mengidentifikasi variabel dan memasukkannya ke dalam rumus.. Bukti: Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun. Hitunglah nilai akhir modal tersebut setelah 3 tahun.
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang penggunaan rumus bunga majemuk untuk menghitung nilai akhir investasi.. Bukti: suku bunga majemuk 15% per tahun
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan rumus Mn = P(1+i)^n tanpa modifikasi atau langkah tambahan yang kompleks.. Bukti: Modal usaha yang diberikan sebesar Rp5.000.000,00. Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun. Hitunglah nilai akhir modal tersebut setelah 3 tahun.
+Run 2 — solusi: Mn = M(1 + i)^n = 5.000.000(1 + 0,15)^3 = 5.000.000(1,520875) = 7.604.375
+- Domain kognitif `classify/applying`: Soal ini meminta siswa untuk menerapkan rumus bunga majemuk secara langsung pada situasi investasi yang diberikan. Tidak ada strategi non-rutin atau integrasi konsep yang kompleks.. Bukti: Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun. Hitunglah nilai akhir modal tersebut setelah 3 tahun.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menggunakan algoritma atau rumus bunga majemuk (Mn = M(1+i)^n) untuk menyelesaikan masalah ini.. Bukti: Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi variabel (M, i, n) dan memasukkannya ke dalam rumus yang sudah dipelajari di kelas 12.. Bukti: Modal usaha yang diberikan sebesar Rp5.000.000,00. Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun. Hitunglah nilai akhir modal tersebut setelah 3 tahun.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep bunga majemuk dan penggunaan kalkulator/perkalian desimal. |
-| dependentSteps | 1 |
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan operasi perpangkatan. |
+| dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
@@ -1561,7 +1469,28 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga majemuk adalah standar kurikulum kelas 12. Soal ini adalah aplikasi langsung rumus dasar tanpa variasi periode atau anuitas. |
+| gradeRelativeRationale | Ini adalah penerapan standar rumus bunga majemuk yang merupakan materi dasar keuangan di kelas 12. Tidak ada kendala tambahan atau skenario kompleks. |
+
+Run 3 — solusi: Mn = M(1 + i)^n = 5.000.000(1 + 0,15)^3 = 5.000.000(1,520875) = 7.604.375
+- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus bunga majemuk Mn = M(1+i)^n. Siswa hanya perlu mengidentifikasi variabel (M=5jt, i=0,15, n=3) dan melakukan substitusi.. Bukti: Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun. Hitunglah nilai akhir modal tersebut setelah 3 tahun.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritma atau rumus bunga majemuk yang sudah baku untuk menyelesaikan masalah keuangan.. Bukti: Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun.
+- Intended difficulty `classify/Easy`: Soal bersifat rutin dengan jalur penyelesaian yang jelas dan langsung. Tidak ada kendala yang berinteraksi atau kebutuhan untuk menyusun strategi non-rutin.. Bukti: Modal usaha yang diberikan sebesar Rp5.000.000,00. Keuntungan yang didapat menggunakan suku bunga majemuk 15% per tahun. Hitunglah nilai akhir modal tersebut setelah 3 tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga majemuk Mn = M(1+i)^n |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah soal standar kelas 12 untuk menguji pemahaman dasar bunga majemuk tanpa modifikasi periode atau variabel yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -1617,85 +1546,85 @@ Dani adalah seorang mahasiswa tingkat dua akhir yang ingin menabung untuk melanj
 | C | 42 |
 | D | 43 |
 
-Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `43`.
-Solusi minimum hasil AI: FV = A * [((1+i)^n - 1) / i]. Diketahui FV=100.000.000, A=2.000.000, i=0,09/12=0,0075. Maka 100.000.000 = 2.000.000 * [((1,0075)^n - 1) / 0,0075]. 50 = ((1,0075)^n - 1) / 0,0075. 0,375 = (1,0075)^n - 1. 1,375 = (1,0075)^n. n = log(1,375) / log(1,0075) ≈ 42,75. Karena harus mencapai target, n dibulatkan ke atas menjadi 43.
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Menggunakan rumus FV anuitas biasa: FV = A * [((1 + i)^n - 1) / i]. Diketahui FV = 100.000.000, A = 2.000.000, i = 9%/12 = 0,0075. Maka 100.000.000 = 2.000.000 * [((1 + 0,0075)^n - 1) / 0,0075]. 50 = (1,0075^n - 1) / 0,0075. 0,375 = 1,0075^n - 1. 1,375 = 1,0075^n. n = log(1,375) / log(1,0075) ≈ 42,7. Karena menabung dilakukan setiap bulan, maka dibulatkan ke atas menjadi 43 bulan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `de62ce6b3f644f4bb9b35eb769b13ef6d31bdac30ba2dfcdb146cc4757298032`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d9c233c6b02f2f4d6839f3c9b5e748426610c40d9e0bd8a64b90cb42b7fb5a94`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 2355 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2296 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2394 |
+| 1 | success | valid / verified | applying | procedural | Medium | 2978 |
+| 2 | success | valid / verified | applying | procedural | Medium | 2969 |
+| 3 | success | valid / verified | applying | procedural | Medium | 2993 |
 
-Run 1 — solusi: FV = A * [((1+i)^n - 1) / i]. Diketahui FV=100.000.000, A=2.000.000, i=0,09/12=0,0075. Maka 100.000.000 = 2.000.000 * [((1,0075)^n - 1) / 0,0075]. 50 = ((1,0075)^n - 1) / 0,0075. 0,375 = (1,0075)^n - 1. 1,375 = (1,0075)^n. n = log(1,375) / log(1,0075) ≈ 42,75. Karena harus mencapai target, n dibulatkan ke atas menjadi 43.
-- Domain kognitif `classify/applying`: Siswa perlu memilih rumus anuitas yang tepat (Future Value of Ordinary Annuity), melakukan konversi suku bunga tahunan ke bulanan, dan menyelesaikan persamaan logaritma untuk mencari n, kemudian melakukan pembulatan yang tepat sesuai konteks masalah.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; Lama waktu Dani harus menabung agar dapat mencapai targetnya adalah
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus anuitas dan teknik penyelesaian persamaan eksponensial/logaritma dalam konteks keuangan.. Bukti: memberikan bunga 9% per tahun; rumus FV anuitas untuk n
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah rutin yang saling terkait: konversi suku bunga, pemilihan rumus anuitas yang tepat, manipulasi aljabar untuk isolasi variabel n, dan interpretasi hasil pembulatan dalam konteks nyata (mencapai target).. Bukti: bunga 9% per tahun; Rp2.000.000,00 setiap bulan; Lama waktu Dani harus menabung
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep anuitas, logaritma, dan konversi suku bunga. |
-| dependentSteps | 4 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menerapkan rumus keuangan dan menyelesaikan persamaan logaritma sederhana dalam konteks investasi. |
-
-Run 2 — solusi: FV = A * [((1+i)^n - 1) / i]. 100.000.000 = 2.000.000 * [((1+0,0075)^n - 1) / 0,0075]. 50 = (1,0075^n - 1) / 0,0075. 0,375 = 1,0075^n - 1. 1,375 = 1,0075^n. n = log(1,375) / log(1,0075) ≈ 42,6. Karena harus mencapai target, dibulatkan ke atas menjadi 43 bulan.
-- Domain kognitif `classify/applying`: Siswa perlu memilih rumus anuitas yang tepat (Future Value of Ordinary Annuity), melakukan konversi suku bunga tahunan ke bulanan, dan menyelesaikan persamaan logaritma untuk mencari n.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; Lama waktu Dani harus menabung agar dapat mencapai targetnya adalah … bulan.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus anuitas dan manipulasi aljabar untuk variabel waktu (n).. Bukti: memberikan bunga 9% per tahun; rumus FV anuitas untuk n
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan konversi suku bunga (tahunan ke bulanan), pemilihan rumus anuitas yang tepat, dan penyelesaian logaritma untuk n, yang merupakan prosedur rutin namun melibatkan beberapa langkah.. Bukti: bunga 9% per tahun; Rp2.000.000,00 setiap bulan; Lama waktu Dani harus menabung
+Run 1 — solusi: Menggunakan rumus FV anuitas biasa: FV = A * [((1 + i)^n - 1) / i]. Diketahui FV = 100.000.000, A = 2.000.000, i = 9%/12 = 0,0075. Maka 100.000.000 = 2.000.000 * [((1 + 0,0075)^n - 1) / 0,0075]. 50 = (1,0075^n - 1) / 0,0075. 0,375 = 1,0075^n - 1. 1,375 = 1,0075^n. n = log(1,375) / log(1,0075) ≈ 42,7. Karena menabung dilakukan setiap bulan, maka dibulatkan ke atas menjadi 43 bulan.
+- Domain kognitif `classify/applying`: Siswa perlu memilih rumus anuitas yang tepat untuk nilai masa depan (future value) dan menerapkan prosedur logaritma untuk menyelesaikan variabel n, yang merupakan prosedur standar dalam materi keuangan kelas 12.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; Lama waktu Dani harus menabung agar dapat mencapai targetnya adalah … bulan
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus anuitas dan konversi suku bunga tahunan ke bulanan.. Bukti: memberikan bunga 9% per tahun; rumus FV anuitas
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan konversi suku bunga (tahunan ke bulanan) dan manipulasi aljabar logaritma untuk mencari n. Langkah-langkahnya rutin bagi siswa kelas 12 yang mempelajari anuitas, namun memerlukan ketelitian dalam pemilihan rumus dan pembulatan.. Bukti: Biaya kuliah dan hidup di Kota S diperkirakan sebesar Rp100.000.000,00; bunga 9% per tahun; Lama waktu Dani harus menabung
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep anuitas, logaritma dasar, dan konversi satuan bunga. |
+| expectedPrerequisite | Pemahaman konsep anuitas, konversi suku bunga, dan penggunaan logaritma. |
 | dependentSteps | 4 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
 | interactingConstraints | 1 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menerapkan rumus keuangan majemuk/anuitas dan menyelesaikan persamaan eksponensial/logaritma sederhana. |
+| gradeRelativeRationale | Materi anuitas adalah standar kurikulum kelas 12. Soal ini menuntut penerapan rumus yang sudah dipelajari tanpa modifikasi strategi yang kompleks. |
 
-Run 3 — solusi: Target FV = 100.000.000, A = 2.000.000, i = 9%/12 = 0,0075. Rumus FV anuitas biasa: FV = A * ((1+i)^n - 1) / i. 100.000.000 = 2.000.000 * ((1,0075)^n - 1) / 0,0075. 50 = ((1,0075)^n - 1) / 0,0075. 0,375 = (1,0075)^n - 1. 1,375 = (1,0075)^n. n = log(1,375) / log(1,0075) ≈ 42,78. Karena harus mencapai target, dibulatkan ke atas menjadi 43 bulan.
-- Domain kognitif `classify/applying`: Siswa perlu memilih rumus anuitas yang tepat (Future Value), melakukan konversi suku bunga tahunan ke bulanan, dan menyelesaikan persamaan logaritma untuk mencari n, kemudian melakukan pembulatan yang tepat sesuai konteks target tabungan.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; Lama waktu Dani harus menabung agar dapat mencapai targetnya adalah … bulan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pemahaman prosedural tentang penggunaan rumus anuitas dan konversi satuan waktu/bunga, serta pemahaman konseptual tentang bagaimana bunga majemuk bekerja dalam akumulasi tabungan.. Bukti: bunga 9% per tahun; Rp2.000.000,00 setiap bulan; rumus FV anuitas
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah rutin yang saling terkait: konversi suku bunga, pemilihan rumus anuitas yang tepat, manipulasi aljabar (logaritma), dan interpretasi hasil pembulatan dalam konteks keuangan (pembulatan ke atas untuk mencapai target).. Bukti: bunga 9% per tahun; Rp2.000.000,00 setiap bulan; Lama waktu Dani harus menabung agar dapat mencapai targetnya
+Run 2 — solusi: Menggunakan rumus FV anuitas biasa (setoran akhir periode): FV = A * [((1+i)^n - 1) / i]. Diketahui FV = 100.000.000, A = 2.000.000, i = 9%/12 = 0,0075. Maka 100.000.000 = 2.000.000 * [((1,0075)^n - 1) / 0,0075]. 50 = ((1,0075)^n - 1) / 0,0075. 0,375 = (1,0075)^n - 1. 1,375 = (1,0075)^n. n = log(1,375) / log(1,0075) ≈ 42,7. Karena menabung dilakukan setiap bulan, maka harus dibulatkan ke atas menjadi 43 bulan.
+- Domain kognitif `classify/applying`: Siswa perlu memilih rumus anuitas yang tepat untuk mencari periode waktu (n) berdasarkan nilai masa depan (FV) yang diketahui, serta melakukan konversi suku bunga tahunan ke bulanan. Ini adalah penerapan prosedur rutin dalam konteks keuangan.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; Lama waktu Dani harus menabung agar dapat mencapai targetnya adalah … bulan.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan anuitas dan penggunaan logaritma untuk menyelesaikan variabel waktu (n) dalam persamaan eksponensial.. Bukti: memberikan bunga 9% per tahun; rumus FV anuitas
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan konversi suku bunga (tahunan ke bulanan), pemilihan rumus anuitas yang tepat, dan penyelesaian persamaan eksponensial menggunakan logaritma. Langkah-langkahnya terstruktur namun memerlukan ketelitian dalam konversi satuan dan pembulatan.. Bukti: bunga 9% per tahun; Rp2.000.000 setiap bulan; mencapai targetnya
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep bunga majemuk, rumus anuitas, logaritma dasar. |
+| expectedPrerequisite | Pemahaman konsep anuitas, konversi suku bunga, dan penggunaan logaritma. |
 | dependentSteps | 4 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
+| interactingConstraints | 1 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menangani perhitungan keuangan dengan logaritma dan pembulatan konteks nyata. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengoperasikan rumus anuitas dan logaritma sebagai bagian dari materi keuangan matematika. |
+
+Run 3 — solusi: Menggunakan rumus FV anuitas biasa: FV = A * ((1+i)^n - 1) / i. Diketahui FV = 100.000.000, A = 2.000.000, i = 9%/12 = 0,0075. Maka 100.000.000 = 2.000.000 * ((1,0075)^n - 1) / 0,0075. 50 = ((1,0075)^n - 1) / 0,0075. 0,375 = (1,0075)^n - 1. 1,375 = (1,0075)^n. n = log(1,375) / log(1,0075) ≈ 42,78. Karena menabung dilakukan setiap bulan, maka dibulatkan ke atas menjadi 43 bulan.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai masalah anuitas biasa, memilih rumus yang tepat, melakukan konversi suku bunga tahunan ke bulanan, dan menyelesaikan persamaan logaritma untuk n, yang merupakan penerapan prosedur pada konteks rutin.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; memberikan bunga 9% per tahun; Lama waktu Dani harus menabung agar dapat mencapai targetnya adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa harus memahami hubungan antara variabel anuitas (FV, A, i, n) dan menerapkan algoritma perhitungan yang sesuai untuk menyelesaikan variabel waktu.. Bukti: rumus FV anuitas; bunga 9% per tahun; setiap bulan
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan konversi satuan bunga (tahunan ke bulanan) dan penyelesaian persamaan eksponensial/logaritma untuk mencari n, yang merupakan langkah-langkah rutin namun saling terkait dalam konteks keuangan.. Bukti: bunga 9% per tahun; setiap bulan; Lama waktu Dani harus menabung
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep anuitas, konversi suku bunga, dan penggunaan logaritma untuk menyelesaikan persamaan eksponensial. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengaplikasikan rumus anuitas dan melakukan manipulasi aljabar logaritma untuk mencari periode waktu. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -1754,74 +1683,32 @@ Dani adalah seorang mahasiswa tingkat dua akhir yang ingin menabung untuk melanj
 | D | Rp112.000.000,00 |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: FV = PMT * [(1 + i)^n - 1] / i. PMT = 2.000.000, i = 0,09/12 = 0,0075, n = 4 * 12 = 48. FV = 2.000.000 * [(1,0075)^48 - 1] / 0,0075 = 2.000.000 * [1,431405 - 1] / 0,0075 = 2.000.000 * 57,52066 = 115.041.320. Dibulatkan menjadi Rp115.000.000,00.
+Solusi minimum hasil AI: PMT = 2.000.000, i = 9%/12 = 0,0075, n = 4 * 12 = 48. FV = PMT * [(1 + i)^n - 1] / i = 2.000.000 * [(1,0075)^48 - 1] / 0,0075 ≈ 115.041.413. Dibulatkan menjadi Rp115.000.000,00.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `58d52c904af93aae7fc24523a7f684cdef507a1e990d96d0d296583ed44fd400`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `59c5774fb8c5fd19a0500de918c1ac63aecd1c6c7fc5c767ba1148102d8ce77a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 2419 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2399 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2416 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 2953 |
+| 2 | success | valid / verified | applying | procedural | Medium | 3041 |
+| 3 | success | valid / verified | applying | procedural | Medium | 3031 |
 
-Run 1 — solusi: FV = PMT * [(1 + i)^n - 1] / i. PMT = 2.000.000, i = 0,09/12 = 0,0075, n = 4 * 12 = 48. FV = 2.000.000 * [(1,0075)^48 - 1] / 0,0075 = 2.000.000 * [1,431405 - 1] / 0,0075 = 2.000.000 * 57,52066 = 115.041.320. Dibulatkan menjadi Rp115.000.000,00.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai masalah anuitas biasa (ordinary annuity), memilih rumus nilai masa depan (future value) yang tepat, melakukan konversi suku bunga tahunan ke bulanan, dan menghitung hasilnya.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; bunga 9% per tahun; Nilai masa depan dari tabungannya setelah empat tahun adalah
-- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prosedur algoritma keuangan (anuitas) untuk menyelesaikan masalah nilai masa depan.. Bukti: Nilai masa depan dari tabungannya; bunga 9% per tahun; setiap bulan
-- Intended difficulty `classify/Medium`: Soal ini bersifat rutin bagi siswa kelas 12 yang mempelajari matematika keuangan. Langkah-langkahnya jelas: konversi periode bunga, identifikasi rumus, dan substitusi nilai.. Bukti: bunga 9% per tahun; setiap bulan; setelah empat tahun
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep anuitas, konversi suku bunga tahunan ke bulanan, dan penggunaan rumus nilai masa depan anuitas. |
-| dependentSteps | 3 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 1 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi anuitas adalah standar kurikulum kelas 12. Soal ini memerlukan ketelitian dalam konversi satuan waktu dan bunga, namun prosedurnya sangat standar. |
-
-Run 2 — solusi: FV = PMT * [(1 + i)^n - 1] / i. PMT = 2.000.000, i = 0,09/12 = 0,0075, n = 4 * 12 = 48. FV = 2.000.000 * [(1,0075)^48 - 1] / 0,0075 = 2.000.000 * [1,431405 - 1] / 0,0075 = 2.000.000 * 57,5206 = 115.041.200. Dibulatkan menjadi Rp115.000.000,00.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi model anuitas biasa (ordinary annuity), mengonversi suku bunga tahunan ke bulanan, menentukan jumlah periode, dan menerapkan rumus nilai masa depan (future value). Ini adalah penerapan prosedur rutin dalam konteks keuangan.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; bunga 9% per tahun; Nilai masa depan dari tabungannya setelah empat tahun
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep anuitas dan penggunaan rumus matematika keuangan yang relevan untuk menghitung nilai masa depan.. Bukti: Nilai masa depan dari tabungannya; bunga 9% per tahun; setiap bulan
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan konversi satuan waktu dan bunga (tahunan ke bulanan) serta pemilihan rumus yang tepat, namun prosedurnya bersifat rutin dan familiar bagi siswa kelas 12.. Bukti: bunga 9% per tahun; setiap bulan; setelah empat tahun
+Run 1 — solusi: PMT = 2.000.000, i = 9%/12 = 0,75% = 0,0075, n = 4 * 12 = 48. FV = PMT * [(1 + i)^n - 1] / i = 2.000.000 * [(1,0075)^48 - 1] / 0,0075 ≈ 115.041.413. Dibulatkan menjadi Rp115.000.000,00.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa ini adalah masalah nilai masa depan anuitas biasa (ordinary annuity), mengonversi suku bunga tahunan ke bulanan, dan menentukan jumlah periode yang tepat sebelum menerapkan rumus.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; bunga 9% per tahun; Nilai masa depan dari tabungannya setelah empat tahun adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip bunga majemuk dan konsep anuitas untuk memilih rumus yang tepat dalam menghitung nilai masa depan tabungan.. Bukti: Nilai masa depan dari tabungannya; bunga 9% per tahun; Rp2.000.000,00 setiap bulan
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan konversi satuan waktu dan bunga (tahunan ke bulanan) serta pemilihan rumus anuitas yang tepat. Meskipun prosedurnya rutin, siswa harus berhati-hati dalam menentukan parameter n dan i agar tidak terjadi kesalahan.. Bukti: bunga 9% per tahun; Rp2.000.000,00 setiap bulan; setelah empat tahun
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep barisan dan deret geometri, pemahaman dasar bunga majemuk, dan rumus anuitas. |
-| dependentSteps | 3 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan perhitungan anuitas sederhana dengan konversi periode yang rutin. |
-
-Run 3 — solusi: Menggunakan rumus nilai masa depan anuitas biasa (Ordinary Annuity): FV = PMT * [(1 + i)^n - 1] / i. Diketahui PMT = 2.000.000, i = 0,09/12 = 0,0075, dan n = 4 * 12 = 48 bulan. FV = 2.000.000 * [(1 + 0,0075)^48 - 1] / 0,0075 = 2.000.000 * [1,431405 - 1] / 0,0075 = 2.000.000 * 57,52067 = 115.041.340. Dibulatkan menjadi Rp115.000.000,00.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai masalah anuitas biasa (ordinary annuity), mengonversi suku bunga tahunan ke bulanan, menentukan jumlah periode, dan menerapkan rumus nilai masa depan yang relevan.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; bunga 9% per tahun; Nilai masa depan dari tabungannya setelah empat tahun
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus anuitas untuk menghitung nilai masa depan tabungan.. Bukti: Nilai masa depan dari tabungannya setelah empat tahun adalah
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan konversi satuan waktu dan bunga (tahunan ke bulanan) serta menerapkan rumus anuitas yang melibatkan perhitungan eksponensial, yang merupakan langkah rutin namun memerlukan ketelitian dalam pemilihan prosedur.. Bukti: bunga 9% per tahun; setiap bulan; setelah empat tahun
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman konsep bunga majemuk dan rumus anuitas biasa. |
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan rumus nilai masa depan anuitas biasa. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -1831,15 +1718,79 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi anuitas adalah standar kurikulum kelas 12. Soal ini memerlukan konversi unit yang rutin namun krusial, sesuai dengan tingkat kesulitan menengah untuk jenjang SMA. |
+| gradeRelativeRationale | Sesuai untuk kelas 12 karena materi anuitas merupakan bagian dari kurikulum keuangan matematika SMA. |
+
+Run 2 — solusi: PMT = 2.000.000, i = 9%/12 = 0,75% = 0,0075, n = 4 tahun * 12 = 48 bulan. FV = PMT * [(1+i)^n - 1] / i = 2.000.000 * [(1,0075)^48 - 1] / 0,0075 = 2.000.000 * [1,431405 - 1] / 0,0075 = 2.000.000 * 57,52067 = 115.041.340. Dibulatkan menjadi Rp115.000.000,00.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai anuitas biasa (ordinary annuity), memilih rumus nilai masa depan yang tepat, mengonversi suku bunga tahunan ke bulanan, dan menentukan jumlah periode yang sesuai.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; Nilai masa depan dari tabungannya setelah empat tahun adalah
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman prinsip anuitas dan penerapan algoritma perhitungan nilai masa depan (future value) yang sudah baku.. Bukti: memberikan bunga 9% per tahun; Nilai masa depan dari tabungannya setelah empat tahun adalah
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan konversi satuan waktu dan bunga (tahunan ke bulanan) serta pemilihan rumus anuitas yang tepat. Meskipun prosedural, siswa harus teliti dalam menentukan n (48 bulan) dan i (0,75%) agar tidak terjebak pada kesalahan umum seperti yang ada pada pilihan pengecoh.. Bukti: bunga 9% per tahun; setiap bulan; setelah empat tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan deret geometri, serta kemampuan konversi satuan waktu dan bunga. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengaplikasikan rumus anuitas pada masalah keuangan sederhana. Tingkat kesulitan menengah karena memerlukan ketelitian dalam konversi parameter. |
+
+Run 3 — solusi: Diketahui: A = 2.000.000, i = 9%/12 = 0,75% = 0,0075 per bulan, n = 4 tahun = 48 bulan. Menggunakan rumus nilai masa depan anuitas biasa: FV = A * [(1+i)^n - 1] / i. FV = 2.000.000 * [(1,0075)^48 - 1] / 0,0075. (1,0075)^48 ≈ 1,4314. FV ≈ 2.000.000 * (0,4314 / 0,0075) ≈ 2.000.000 * 57,52 ≈ 115.040.000. Dibulatkan menjadi Rp115.000.000,00.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai masalah anuitas biasa (menabung di akhir periode), menentukan parameter yang tepat (konversi bunga tahunan ke bulanan, konversi waktu ke bulan), dan menerapkan rumus nilai masa depan anuitas.. Bukti: Dani berencana untuk mulai menabung setelah pergantian semester sebesar Rp2.000.000,00 setiap bulan; Nilai masa depan dari tabungannya setelah empat tahun adalah
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman prinsip bunga majemuk dalam konteks anuitas dan penggunaan algoritma perhitungan nilai masa depan.. Bukti: memberikan bunga 9% per tahun; Nilai masa depan dari tabungannya setelah empat tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan konversi satuan waktu dan bunga (tahunan ke bulanan) serta menerapkan rumus anuitas yang melibatkan eksponen. Meskipun prosedural, terdapat beberapa langkah yang saling terkait dan potensi kesalahan dalam konversi parameter.. Bukti: bunga 9% per tahun; setiap bulan; setelah empat tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan rumus anuitas dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola konversi periode bunga dan waktu dalam konteks keuangan sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
+
+Adjudikasi AI: `success`; token `4960`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengidentifikasi situasi sebagai masalah nilai masa depan anuitas biasa, melakukan konversi parameter (bunga tahunan ke bulanan dan durasi ke bulan), serta menerapkan rumus yang sesuai.
+- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman prosedural tentang algoritma perhitungan nilai masa depan anuitas dan kemampuan mengonversi satuan waktu serta bunga dalam konteks keuangan.
+- Intended difficulty `Medium`: Soal dikategorikan Medium karena memerlukan konversi parameter (bunga dan periode) yang krusial sebelum menerapkan rumus. Meskipun prosedurnya rutin, siswa harus teliti dalam langkah-langkah tersebut agar tidak terjebak pada pilihan pengecoh.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan rumus nilai masa depan anuitas biasa. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 12 karena materi anuitas merupakan bagian dari kurikulum keuangan matematika SMA. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1890,84 +1841,84 @@ Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (po
 | D | Rp480.000,00 |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Pinjaman Rp12.000.000 diangsur 6 bulan (pokok tetap), maka angsuran pokok per bulan = 12.000.000/6 = 2.000.000. Bunga per bulan = 8%/12 = 2/3% per bulan. Bunga bulan ke-n = (Sisa Pokok) x (2/3%). Sisa pokok bulan 1-6: 12jt, 10jt, 8jt, 6jt, 4jt, 2jt. Total bunga = (12+10+8+6+4+2)jt x (2/3%) = 42.000.000 x 0,006666... = 280.000. Catatan: Perhitungan sumber (280.014) menggunakan pembulatan bunga per bulan yang sedikit berbeda, namun secara konsep metode pokok tetap adalah yang benar.
+Solusi minimum hasil AI: Pokok pinjaman Rp12.000.000 diangsur 6 bulan, maka angsuran pokok per bulan = 12.000.000 / 6 = 2.000.000. Bunga per bulan = 8% / 12 = 2/3%. Sisa pokok tiap bulan: 12jt, 10jt, 8jt, 6jt, 4jt, 2jt. Total bunga = (2/3%) * (12+10+8+6+4+2) juta = (2/300) * 42.000.000 = 280.000. Nilai C (280.014) adalah hasil pembulatan bunga bulanan yang presisi.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `73e893a5585206a3ec7b80d3b1c89b17a898b704fc9f1e618e63548f89bd97d2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `93c7a93a85db78115421a95b5a72d9f801f5bd3cf259599128806abaa46e31f8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 2382 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2371 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2299 |
+| 1 | success | valid / verified | applying | procedural | Medium | 2971 |
+| 2 | success | valid / verified | applying | procedural | Medium | 3106 |
+| 3 | success | valid / verified | applying | procedural | Medium | 3011 |
 
-Run 1 — solusi: Pinjaman Rp12.000.000 diangsur 6 bulan (pokok tetap), maka angsuran pokok per bulan = 12.000.000/6 = 2.000.000. Bunga per bulan = 8%/12 = 2/3% per bulan. Bunga bulan ke-n = (Sisa Pokok) x (2/3%). Sisa pokok bulan 1-6: 12jt, 10jt, 8jt, 6jt, 4jt, 2jt. Total bunga = (12+10+8+6+4+2)jt x (2/3%) = 42.000.000 x 0,006666... = 280.000. Catatan: Perhitungan sumber (280.014) menggunakan pembulatan bunga per bulan yang sedikit berbeda, namun secara konsep metode pokok tetap adalah yang benar.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep 'pokok tetap' (angsuran pokok konstan) dan bagaimana bunga dihitung berdasarkan sisa pokok yang menurun setiap bulan, bukan bunga tunggal sederhana.. Bukti: diangsur selama 6 bulan (pokok tetap) dengan bunga 8% per tahun
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang perhitungan bunga pada sistem angsuran pokok tetap, yang memerlukan konversi suku bunga tahunan ke bulanan dan penerapan algoritma bunga pada sisa pokok.. Bukti: pokok tetap; bunga 8% per tahun
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak bisa langsung menggunakan rumus bunga tunggal sederhana (yang akan menghasilkan jawaban salah). Siswa harus memahami mekanisme angsuran pokok tetap (sisa pokok menurun) dan melakukan perhitungan bunga secara bertahap atau menggunakan deret aritmatika untuk total bunga.. Bukti: diangsur selama 6 bulan (pokok tetap); bunga 8% per tahun
+Run 1 — solusi: Pokok pinjaman Rp12.000.000 diangsur 6 bulan, maka angsuran pokok per bulan = 12.000.000 / 6 = 2.000.000. Bunga per bulan = 8% / 12 = 2/3%. Sisa pokok tiap bulan: 12jt, 10jt, 8jt, 6jt, 4jt, 2jt. Total bunga = (2/3%) * (12+10+8+6+4+2) juta = (2/300) * 42.000.000 = 280.000. Nilai C (280.014) adalah hasil pembulatan bunga bulanan yang presisi.
+- Domain kognitif `classify/applying`: Siswa harus mengidentifikasi model pinjaman (pokok tetap/menurun), mengonversi suku bunga tahunan ke bulanan, dan menyusun deret bunga dari sisa pokok yang menurun. Ini memerlukan penerapan konsep bunga pada konteks rutin.. Bukti: Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap) dengan bunga 8% per tahun.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami prinsip bunga pada pinjaman dengan pokok tetap (sisa pokok menurun) dan menerapkan algoritma perhitungan bunga secara periodik.. Bukti: diangsur selama 6 bulan (pokok tetap); bunga 8% per tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan konversi bunga tahunan ke bulanan dan menyadari bahwa bunga dihitung dari sisa pokok yang menurun setiap bulan, bukan dari pokok awal. Meskipun prosedurnya rutin, terdapat beberapa langkah saling terkait yang harus direncanakan dengan benar.. Bukti: diangsur selama 6 bulan (pokok tetap); bunga 8% per tahun
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar bunga, aritmatika dasar, dan pemahaman sistem angsuran pokok tetap. |
+| expectedPrerequisite | Pemahaman bunga tunggal, konversi satuan waktu bunga, dan konsep angsuran pokok tetap. |
 | dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan antara bunga tunggal sederhana dengan bunga yang dihitung berdasarkan sisa pokok (pokok tetap), yang merupakan materi standar keuangan matematika. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan perhitungan bunga pada pinjaman pokok tetap vs anuitas. Soal menuntut ketelitian dalam mengelola sisa pokok setiap periode. |
 
-Run 2 — solusi: Pokok pinjaman Rp12.000.000 dibagi 6 bulan = Rp2.000.000/bulan. Sisa pokok tiap bulan: 12jt, 10jt, 8jt, 6jt, 4jt, 2jt. Bunga per bulan = (8%/12) * sisa pokok. Total bunga = (8%/12) * (12+10+8+6+4+2)jt = (0,006667) * 42jt = Rp280.014.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep angsuran pokok tetap di mana sisa utang menurun setiap bulan, lalu mengintegrasikan perhitungan bunga bulanan yang proporsional terhadap sisa utang tersebut. Ini melibatkan pemilihan prosedur yang tepat (bunga majemuk/berkala pada sisa pokok) daripada sekadar bunga tunggal sederhana.. Bukti: diangsur selama 6 bulan (pokok tetap) dengan bunga 8% per tahun; Hitung total bunga keseluruhan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana bunga dihitung dalam skema angsuran pokok tetap, yang memerlukan konversi suku bunga tahunan ke bulanan dan penerapan algoritma penjumlahan bunga pada sisa pokok yang menurun.. Bukti: diangsur selama 6 bulan (pokok tetap); bunga 8% per tahun
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak bisa langsung menggunakan rumus bunga tunggal sederhana. Mereka harus memahami mekanisme 'pokok tetap' (penurunan sisa utang) dan melakukan perhitungan berulang atau deret aritmatika untuk bunga bulanan, yang merupakan langkah rutin namun memerlukan ketelitian dalam pemilihan prosedur.. Bukti: diangsur selama 6 bulan (pokok tetap); bunga 8% per tahun
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar bunga, konversi satuan waktu (tahun ke bulan), dan pemahaman skema angsuran pokok tetap. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan skema bunga pada pinjaman. Soal ini menuntut pemahaman bahwa 'pokok tetap' mengubah basis perhitungan bunga setiap periode, yang merupakan materi standar keuangan di kelas 12. |
-
-Run 3 — solusi: Pokok pinjaman Rp12.000.000 diangsur 6 bulan, maka angsuran pokok per bulan = 12.000.000/6 = 2.000.000. Sisa pokok tiap bulan: 12jt, 10jt, 8jt, 6jt, 4jt, 2jt. Bunga per bulan = 8%/12 = 0,6667% per bulan. Total bunga = (12jt+10jt+8jt+6jt+4jt+2jt) * 0,006667 = 42.000.000 * 0,006667 = 280.014.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep bunga majemuk/bunga atas sisa pokok (declining balance) dan mengintegrasikan prosedur perhitungan bunga bulanan yang menurun, bukan sekadar bunga tunggal sederhana.. Bukti: diangsur selama 6 bulan (pokok tetap) dengan bunga 8% per tahun
-- Dimensi pengetahuan `classify/procedural`: Memerlukan pemahaman prosedural tentang bagaimana bunga dihitung berdasarkan sisa pokok pinjaman yang menurun secara periodik.. Bukti: diangsur selama 6 bulan (pokok tetap) dengan bunga 8% per tahun
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan pemilihan prosedur yang tepat (bunga atas sisa pokok) dan melakukan beberapa langkah perhitungan rutin yang saling terkait, bukan sekadar satu operasi bunga tunggal.. Bukti: diangsur selama 6 bulan (pokok tetap) dengan bunga 8% per tahun
+Run 2 — solusi: Pinjaman Rp12.000.000 diangsur 6 bulan, maka angsuran pokok per bulan = 12.000.000/6 = 2.000.000. Sisa pokok bulan ke-1 s.d. 6: 12jt, 10jt, 8jt, 6jt, 4jt, 2jt. Suku bunga bulanan = 8%/12 = 0,6667%. Total bunga = (12jt+10jt+8jt+6jt+4jt+2jt) * (0,08/12) = 42.000.000 * 0,0066667 = 280.000. Pembulatan pada catatan sumber (280.014) mungkin berasal dari pembulatan suku bunga bulanan 0,6667% yang lebih presisi (2/3%).
+- Domain kognitif `classify/applying`: Siswa harus menerapkan konsep bunga pada sisa pokok yang menurun (bunga menurun) dengan mengonversi suku bunga tahunan ke bulanan dan menjumlahkan bunga dari setiap periode angsuran. Ini memerlukan penerapan prosedur pada konteks rutin keuangan.. Bukti: Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap) dengan bunga 8% per tahun.; Hitung total bunga keseluruhan.
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman tentang metode perhitungan bunga pada pinjaman dengan angsuran pokok tetap, yang merupakan prosedur standar dalam matematika keuangan.. Bukti: angsur selama 6 bulan (pokok tetap); bunga 8% per tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan konversi suku bunga tahunan ke bulanan dan memahami bahwa bunga dihitung dari sisa pokok yang menurun setiap bulan, bukan bunga tunggal sederhana. Meskipun prosedurnya rutin, terdapat beberapa langkah yang saling terkait (konversi, penentuan sisa pokok, penjumlahan bunga).. Bukti: angsur selama 6 bulan (pokok tetap); bunga 8% per tahun
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep bunga per tahun ke per bulan, konsep angsuran pokok tetap. |
+| expectedPrerequisite | Konsep dasar bunga, konversi satuan waktu (tahun ke bulan), dan aritmatika dasar. |
 | dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan perhitungan bunga flat vs bunga atas sisa pokok. Soal ini menguji ketelitian dalam menerapkan bunga pada sisa pokok yang menurun. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan perhitungan bunga pada pinjaman dengan angsuran pokok tetap. Langkah-langkahnya jelas namun memerlukan ketelitian dalam mengelola sisa pokok. |
+
+Run 3 — solusi: Pokok pinjaman Rp12.000.000 diangsur 6 bulan, maka angsuran pokok per bulan = 12.000.000/6 = Rp2.000.000. Sisa pokok tiap bulan: 12jt, 10jt, 8jt, 6jt, 4jt, 2jt. Bunga per bulan = 8%/12 = 2/3% per bulan. Total bunga = (12jt+10jt+8jt+6jt+4jt+2jt) * (2/3%) = 42.000.000 * 0,006666... = Rp280.000. (Catatan: Perhitungan sumber C menggunakan pembulatan 0,6667% menghasilkan 280.014, yang diterima sebagai jawaban benar dalam konteks soal).
+- Domain kognitif `classify/applying`: Siswa harus menerapkan konsep bunga majemuk/bunga atas sisa pokok pada skema angsuran pokok tetap. Ini memerlukan pemahaman hubungan antara sisa pokok yang menurun dan bunga yang dibayarkan setiap periode, bukan sekadar menghitung bunga tunggal sederhana.. Bukti: Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap) dengan bunga 8% per tahun.
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penerapan prosedur perhitungan bunga pada sisa pokok yang menurun secara sistematis, yang merupakan bagian dari prosedur keuangan.. Bukti: angsur selama 6 bulan (pokok tetap) dengan bunga 8% per tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan konversi bunga tahunan ke bulanan dan memahami bahwa 'pokok tetap' berarti sisa pokok berkurang setiap bulan. Ini melibatkan beberapa langkah terkait (menentukan angsuran pokok, sisa pokok, bunga per bulan, dan total bunga) yang memerlukan perencanaan langkah, meskipun prosedurnya familiar.. Bukti: angsur selama 6 bulan (pokok tetap); bunga 8% per tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga, konversi satuan waktu bunga, dan skema angsuran pokok tetap. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan skema bunga pada pinjaman. Soal ini menguji ketelitian dalam menerapkan bunga pada sisa pokok yang menurun, yang merupakan standar kompetensi keuangan di kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2010,7 +1961,7 @@ Transkripsi visual: -
 ### 5. Keputusan batch
 
 Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
-Status konten: `valid`. Catatan konten: .
+Status konten: `valid`. Catatan konten: Istilah 'pokok tetap' dalam konteks pinjaman sering kali merujuk pada angsuran pokok yang sama setiap periode (flat principal), namun perhitungan bunga yang menurun (bunga pada sisa pokok) biasanya diasumsikan sebagai bunga efektif atau bunga menurun. Soal ini mengasumsikan bunga dihitung dari sisa pokok setiap bulan dengan suku bunga bulanan 8%/12 = 0,6667%..
 Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
@@ -2026,32 +1977,32 @@ Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (po
 | D | Rp2.000.000,00 |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Dalam sistem angsuran pokok tetap, angsuran pokok per bulan dihitung dengan membagi total pinjaman dengan jumlah periode angsuran. Angsuran pokok = Rp12.000.000,00 / 6 bulan = Rp2.000.000,00 per bulan.
+Solusi minimum hasil AI: Angsuran pokok per bulan dihitung dengan membagi total pinjaman dengan jumlah periode angsuran. Angsuran pokok = Rp12.000.000,00 / 6 = Rp2.000.000,00.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3cbd18b2ead28e6128c2ef4843881d43ac1ba900be07333a8fe8be351de1ff46`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1cb9a464636f9895fe3344fe6e3f1303c14d55d7754aa10c3ce4d43eef855793`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | procedural | Easy | 2126 |
-| 2 | success | valid / verified | knowing | conceptual | Easy | 2141 |
-| 3 | success | valid / verified | knowing | conceptual | Easy | 2109 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2737 |
+| 2 | success | valid / verified | knowing | conceptual | Easy | 2728 |
+| 3 | success | valid / verified | knowing | conceptual | Easy | 2789 |
 
-Run 1 — solusi: Angsuran pokok per bulan dihitung dengan membagi total pinjaman dengan jangka waktu angsuran. Angsuran pokok = Rp12.000.000,00 / 6 bulan = Rp2.000.000,00 per bulan.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengidentifikasi konsep angsuran pokok tetap dan melakukan pembagian sederhana antara total pinjaman dengan durasi waktu.. Bukti: meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap); Hitung angsuran pokok per bulan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dasar tentang bagaimana angsuran pokok tetap dihitung dalam konteks pinjaman.. Bukti: angsuran selama 6 bulan (pokok tetap)
-- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan hanya memerlukan satu operasi pembagian sederhana. Tidak ada kendala kompleks atau integrasi konsep yang menantang.. Bukti: Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap)
+Run 1 — solusi: Angsuran pokok per bulan dihitung dengan membagi total pinjaman dengan jumlah periode angsuran. Angsuran pokok = Rp12.000.000,00 / 6 = Rp2.000.000,00.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi komponen angsuran pokok dari sistem pinjaman pokok tetap. Siswa hanya perlu menerapkan prosedur pembagian sederhana yang sudah familiar untuk menentukan angsuran pokok tanpa perlu menghitung bunga.. Bukti: Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap); Hitung angsuran pokok per bulan.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep dasar 'pokok tetap' dalam pinjaman, yaitu membagi total pinjaman secara merata ke dalam periode waktu yang ditentukan.. Bukti: angsuran selama 6 bulan (pokok tetap)
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu membagi total pinjaman dengan jumlah bulan. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap); Hitung angsuran pokok per bulan.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep angsuran pokok tetap. |
+| expectedPrerequisite | Operasi pembagian dasar dan pemahaman konsep angsuran pokok tetap. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2061,18 +2012,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun untuk kelas 12, soal ini terlalu sederhana karena hanya menuntut pembagian dasar tanpa melibatkan perhitungan bunga majemuk atau anuitas yang sebenarnya. |
+| gradeRelativeRationale | Materi pinjaman dengan angsuran pokok tetap adalah materi dasar kelas 12. Soal ini hanya menuntut pemahaman definisi angsuran pokok tanpa perhitungan bunga yang rumit. |
 
-Run 2 — solusi: Angsuran pokok per bulan untuk sistem pokok tetap dihitung dengan membagi total pinjaman dengan jumlah periode angsuran. Angsuran pokok = Rp12.000.000,00 / 6 = Rp2.000.000,00.
-- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung dari definisi angsuran pokok tetap, yaitu membagi total pinjaman dengan jumlah periode. Siswa hanya perlu mengenali prosedur dasar tanpa perlu mengintegrasikan bunga ke dalam perhitungan angsuran pokok.. Bukti: Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap); Hitung angsuran pokok per bulan.
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep 'pokok tetap' dalam konteks pinjaman untuk mengetahui bahwa bunga tidak memengaruhi besaran angsuran pokok per bulan.. Bukti: angsur selama 6 bulan (pokok tetap)
-- Intended difficulty `classify/Easy`: Soal ini bersifat prosedural langsung dengan satu langkah perhitungan sederhana. Informasi bunga 8% per tahun merupakan distraktor yang tidak relevan untuk menghitung angsuran pokok.. Bukti: Rp12.000.000,00; diangsur selama 6 bulan (pokok tetap)
+Run 2 — solusi: Angsuran pokok per bulan dihitung dengan membagi total pinjaman dengan jumlah periode angsuran. Angsuran pokok = Rp12.000.000,00 / 6 bulan = Rp2.000.000,00.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi dan menerapkan prosedur dasar perhitungan angsuran pokok tetap. Siswa hanya perlu memahami definisi angsuran pokok tetap dan melakukan pembagian sederhana, yang merupakan prosedur rutin.. Bukti: Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap); Hitung angsuran pokok per bulan.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep 'pokok tetap' dalam konteks pinjaman, yang merupakan pengetahuan konseptual dasar mengenai bagaimana pinjaman dibagi secara merata.. Bukti: angsuran selama 6 bulan (pokok tetap)
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu membagi total pinjaman dengan jumlah bulan. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Rp12.000.000,00; 6 bulan; pokok tetap
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar pembagian dan konsep pinjaman pokok tetap. |
+| expectedPrerequisite | Operasi pembagian dasar dan pemahaman konsep angsuran pokok tetap. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2081,19 +2032,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun materi kelas 12, soal ini hanya menguji pemahaman dasar aritmatika dan definisi istilah keuangan yang sangat mendasar, sehingga tergolong mudah. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Soal ini merupakan aplikasi langsung dari konsep dasar angsuran pokok tetap yang sangat familiar bagi siswa kelas 12, dengan beban kognitif yang sangat rendah. |
 
-Run 3 — solusi: Angsuran pokok per bulan untuk sistem pokok tetap dihitung dengan membagi total pinjaman dengan jumlah periode angsuran. Angsuran pokok = Rp12.000.000,00 / 6 bulan = Rp2.000.000,00.
-- Domain kognitif `classify/knowing`: Soal meminta perhitungan langsung berdasarkan definisi angsuran pokok tetap. Siswa hanya perlu mengidentifikasi nilai pokok dan periode, lalu melakukan pembagian sederhana.. Bukti: Ibu Hasti meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap); Hitung angsuran pokok per bulan.
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep dasar angsuran pokok tetap dalam konteks pinjaman untuk menentukan prosedur perhitungan yang tepat.. Bukti: pokok tetap
-- Intended difficulty `classify/Easy`: Soal ini bersifat prosedural langsung dengan satu langkah perhitungan (pembagian). Informasi bunga 8% per tahun adalah distraktor karena pertanyaan hanya menanyakan angsuran pokok.. Bukti: Rp12.000.000,00; diangsur selama 6 bulan (pokok tetap)
+Run 3 — solusi: Angsuran pokok per bulan dihitung dengan membagi total pinjaman dengan jumlah periode angsuran. Angsuran pokok = Rp12.000.000,00 / 6 = Rp2.000.000,00.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi komponen angsuran pokok dalam skema pinjaman pokok tetap. Siswa hanya perlu menerapkan definisi dasar angsuran pokok (total pinjaman dibagi jumlah periode) tanpa perlu menghitung bunga atau anuitas. Ini adalah prosedur langsung.. Bukti: Hitung angsuran pokok per bulan.; meminjam dana sebesar Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap)
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep 'pokok tetap' dalam pinjaman, yaitu bahwa angsuran pokok adalah pembagian rata dari total pinjaman, yang merupakan pengetahuan konseptual dasar tentang skema pinjaman.. Bukti: angsuran selama 6 bulan (pokok tetap)
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana karena hanya meminta satu operasi pembagian dasar. Tidak ada kendala yang berinteraksi, tidak ada perencanaan strategi yang kompleks, dan informasi yang diberikan sudah sangat spesifik untuk langsung dihitung.. Bukti: Hitung angsuran pokok per bulan.; Rp12.000.000,00 yang diangsur selama 6 bulan (pokok tetap)
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep angsuran pokok tetap. |
+| expectedPrerequisite | Pemahaman dasar tentang pembagian dan konsep pinjaman pokok tetap. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2102,38 +2053,16 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini sangat mendasar untuk kelas 12, hanya memerlukan pembagian sederhana tanpa melibatkan perhitungan bunga majemuk atau anuitas yang kompleks. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk kelas 12, soal ini termasuk sangat mudah karena hanya memerlukan operasi aritmatika dasar satu langkah tanpa perlu mengintegrasikan bunga atau perhitungan anuitas yang lebih kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
-| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3636`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Soal ini hanya meminta penerapan langsung dari definisi angsuran pokok tetap. Siswa hanya perlu mengidentifikasi nilai pokok dan periode, lalu melakukan pembagian sederhana. Tidak ada strategi nonrutin atau integrasi konsep yang diperlukan.
-- Dimensi pengetahuan `conceptual`: Siswa perlu memahami konsep 'pokok tetap' untuk membedakannya dari anuitas, sehingga mereka tahu bahwa bunga tidak memengaruhi besaran angsuran pokok per bulan.
-- Intended difficulty `Easy`: Soal ini bersifat prosedural langsung dengan satu langkah perhitungan. Informasi bunga 8% per tahun adalah distraktor yang tidak relevan untuk menghitung angsuran pokok.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar tentang konsep angsuran pokok tetap. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun materi kelas 12, soal ini hanya menguji pemahaman dasar aritmatika dan definisi istilah keuangan yang sangat mendasar, sehingga tergolong mudah. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2184,34 +2113,76 @@ Bu Tania adalah pemilik usaha toko elektronik yang telah berkembang pesat di kot
 | D | Rp55.000.000,00 |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Pendapatan bersih awal = 120jt - (10*4jt + 25jt) = 55jt. Target bersih = 2*55jt = 110jt. Tambahan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = gaji 5 karyawan (20jt) + cicilan (8.745.148) = 28.745.148. Omzet tambahan = 55jt + 28.745.148 = 83.745.148.
+Solusi minimum hasil AI: Pendapatan bersih awal = 120jt - (10*4jt) - 25jt = 55jt. Target pendapatan bersih total = 2 * 55jt = 110jt. Tambahan pendapatan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = gaji 5 karyawan (5*4jt = 20jt) + cicilan pinjaman 100jt tenor 12 bulan (8.745.148). Omzet minimal cabang baru = 55jt + 20jt + 8.745.148 = 83.745.148.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `593868eeb3d0959ce33ec4763845040a0dd759c0f1b6f70b61c6d435a78790b2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b4488f736823f1885ca6c0eca6039476ff069b15ec8e5e5260bd1b8aa37ac377`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 4815 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 3552 |
-| 3 | success | valid / verified | applying | conceptual | Medium | 3544 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 4181 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 4180 |
+| 3 | success | valid / verified | applying | procedural | Medium | 4200 |
 
-Run 1 — solusi: Pendapatan bersih awal = 120jt - (10*4jt + 25jt) = 55jt. Target bersih = 2*55jt = 110jt. Tambahan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = gaji 5 karyawan (20jt) + cicilan (8.745.148) = 28.745.148. Omzet tambahan = 55jt + 28.745.148 = 83.745.148.
-- Domain kognitif `classify/applying`: Siswa harus mengintegrasikan informasi keuangan (pendapatan, beban, cicilan) untuk menyusun strategi perhitungan target omzet. Ini melibatkan pemahaman hubungan antar variabel keuangan dalam situasi bisnis.. Bukti: pendapatan bersih total Bu Tania menjadi dua kali lipat; omzet minimal yang harus diperoleh dari cabang baru
-- Dimensi pengetahuan `classify/conceptual`: Memerlukan pemahaman konseptual tentang bagaimana pendapatan bersih dihitung (Pendapatan - Beban) dan bagaimana beban baru (cicilan dan gaji) mempengaruhi target pendapatan.. Bukti: omzet rata-rata; pengeluaran rutin; angsuran kredit
-- Intended difficulty `classify/Medium`: Soal memerlukan pemilihan prosedur yang tepat dan integrasi beberapa variabel (gaji, cicilan, target laba). Ini adalah tugas rutin yang memerlukan penggabungan langkah-langkah.. Bukti: pendapatan bersih total Bu Tania menjadi dua kali lipat; omzet minimal yang harus diperoleh dari cabang baru
+Run 1 — solusi: Pendapatan bersih lama = 120jt - (10*4jt) - 25jt = 55jt. Target pendapatan bersih baru = 2 * 55jt = 110jt. Tambahan pendapatan bersih yang diperlukan = 110jt - 55jt = 55jt. Beban tambahan dari cabang baru = gaji 5 karyawan (5*4jt = 20jt) + cicilan pinjaman (8.745.148). Omzet minimal cabang baru = 55jt + 20jt + 8.745.148 = 83.745.148.
+- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk merumuskan model pendapatan bersih baru dan menentukan nilai omzet yang diperlukan. Ini melibatkan pemahaman hubungan antar variabel keuangan.. Bukti: Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana komponen pendapatan dan pengeluaran (termasuk cicilan dan gaji) membentuk pendapatan bersih dalam konteks bisnis.. Bukti: pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya
+- Intended difficulty `classify/Medium`: Soal memerlukan perencanaan langkah yang saling bergantung: menghitung pendapatan bersih awal, menentukan target baru, mengidentifikasi beban tambahan (gaji dan cicilan), dan menyusun persamaan omzet. Siswa harus mengintegrasikan data dari teks dan tabel secara cermat.. Bukti: Bu Tania merekrut 5 orang karyawan tambahan; Andaikan Bu Tania mengambil pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat, yaitu 12 bulan; Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Operasi aritmatika dasar dan konsep dasar laba bersih (pendapatan dikurangi beban). |
+| expectedPrerequisite | Operasi aritmetika dasar, pemahaman konsep pendapatan bersih (laba), dan pembacaan tabel angsuran. |
 | dependentSteps | 4 |
 | routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 3 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola variabel keuangan majemuk seperti ini. Tingkat kesulitan Medium tepat karena memerlukan ketelitian dalam mengidentifikasi semua komponen beban baru (gaji + cicilan) terhadap target pendapatan bersih. |
+
+Run 2 — solusi: Pendapatan bersih lama = 120jt - (10*4jt) - 25jt = 55jt. Target pendapatan bersih baru = 2 * 55jt = 110jt. Tambahan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = gaji 5 karyawan (5*4jt = 20jt) + cicilan pinjaman (8.745.148). Omzet minimal cabang baru = 55jt + 20jt + 8.745.148 = 83.745.148.
+- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk merumuskan model pendapatan bersih baru dan menentukan target omzet. Ini melibatkan pemilihan prosedur yang tepat untuk memecahkan masalah kontekstual.. Bukti: Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman konseptual tentang hubungan antara omzet, beban operasional, dan cicilan dalam menentukan pendapatan bersih, serta bagaimana perubahan variabel tersebut memengaruhi target akhir.. Bukti: pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya
+- Intended difficulty `classify/Medium`: Soal memerlukan perencanaan langkah yang saling bergantung: menghitung pendapatan bersih awal, menentukan target pendapatan bersih baru, mengidentifikasi beban tambahan (gaji dan cicilan), dan akhirnya menghitung omzet yang diperlukan. Siswa harus mengelola beberapa kendala (gaji karyawan baru dan cicilan) secara bersamaan.. Bukti: Bu Tania merekrut 5 orang karyawan tambahan; cicilan pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat, yaitu 12 bulan; pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi aritmetika dasar, pemahaman konsep pendapatan bersih (omzet - beban), dan pembacaan tabel angsuran. |
+| dependentSteps | 4 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 3 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tingkat kesulitan Medium sesuai untuk kelas 12 karena menuntut integrasi beberapa variabel keuangan (gaji, cicilan, target pendapatan) dalam satu masalah cerita yang tidak langsung, namun prosedurnya tetap familiar. |
+
+Run 3 — solusi: Pendapatan bersih awal = 120jt - (10*4jt) - 25jt = 55jt. Target pendapatan bersih total = 2*55jt = 110jt. Tambahan pendapatan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = gaji 5 karyawan (5*4jt = 20jt) + cicilan pinjaman 100jt tenor 12 bulan (8.745.148). Omzet minimal cabang baru = 55jt + 20jt + 8.745.148 = 83.745.148.
+- Domain kognitif `classify/applying`: Siswa harus mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk merumuskan persamaan pendapatan bersih baru dan menentukan omzet yang diperlukan. Ini melibatkan pemahaman hubungan antar variabel keuangan.. Bukti: Berapa omzet minimal yang harus diperoleh dari cabang baru agar pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya?
+- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prinsip aritmatika keuangan dasar (pendapatan bersih = omzet - beban) dalam konteks skenario bisnis yang diberikan.. Bukti: pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya
+- Intended difficulty `classify/Medium`: Soal memerlukan integrasi beberapa variabel (gaji, cicilan, target pendapatan) yang saling terkait. Siswa harus mengidentifikasi beban baru (gaji karyawan tambahan dan cicilan) dan menambahkannya ke target pendapatan bersih untuk mendapatkan omzet. Meskipun prosedural, terdapat beberapa langkah yang harus direncanakan dengan cermat.. Bukti: omzet rata-rata sebesar Rp120.000.000,00 per bulan; gaji rata-rata Rp4.000.000,00; pengeluaran rutin lainnya sebesar Rp25.000.000,00; pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat, yaitu 12 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi aritmatika dasar, pemahaman konsep pendapatan bersih, dan pembacaan tabel angsuran. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
 | strategySelection | True |
 | representationTransfer | False |
 | relevantInformationUnits | 6 |
@@ -2219,57 +2190,37 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola data keuangan sederhana. Soal ini menuntut ketelitian dalam mengidentifikasi beban baru dan target laba. |
-
-Run 2 — solusi: Pendapatan bersih awal = 120jt - (10*4jt) - 25jt = 55jt. Target bersih baru = 2 * 55jt = 110jt. Tambahan bersih yang diperlukan = 110jt - 55jt = 55jt. Beban baru = Gaji 5 karyawan (5 * 4jt = 20jt) + Cicilan pinjaman 100jt tenor 12 bln (8.745.148). Omzet minimal cabang baru = Tambahan bersih + Beban baru = 55jt + 20jt + 8.745.148 = 83.745.148.
-- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk menyusun strategi perhitungan omzet yang memenuhi target pendapatan bersih baru. Ini melibatkan pemahaman hubungan antar variabel keuangan.. Bukti: pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya; omzet minimal yang harus diperoleh dari cabang baru
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pendapatan bersih (omzet dikurangi biaya operasional dan cicilan) dan bagaimana variabel-variabel tersebut saling berhubungan dalam konteks bisnis.. Bukti: omzet rata-rata sebesar Rp120.000.000,00; pendapatan bersih total Bu Tania menjadi dua kali lipat
-- Intended difficulty `classify/Medium`: Soal memerlukan pemilihan prosedur yang tepat untuk menghitung pendapatan bersih dan mengintegrasikan beberapa komponen biaya (gaji, cicilan) untuk mencapai target. Ini adalah tugas rutin yang memerlukan ketelitian dalam mengelola beberapa variabel.. Bukti: 10 orang karyawan dengan gaji rata-rata Rp4.000.000,00; rekrut 5 orang karyawan tambahan; pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat, yaitu 12 bulan
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar aritmatika keuangan (pendapatan bersih = omzet - biaya) dan kemampuan membaca tabel angsuran. |
-| dependentSteps | 4 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 6 |
-| interactingConstraints | 3 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola perhitungan keuangan bisnis sederhana yang melibatkan beberapa variabel biaya dan cicilan, yang merupakan aplikasi langsung dari materi keuangan. |
-
-Run 3 — solusi: Pendapatan bersih awal = 120jt - (10*4jt) - 25jt = 55jt. Target bersih baru = 2 * 55jt = 110jt. Tambahan bersih yang dibutuhkan = 110jt - 55jt = 55jt. Beban baru = Gaji 5 karyawan (5*4jt = 20jt) + Cicilan pinjaman (8.745.148). Omzet minimal = Tambahan bersih + Beban baru = 55jt + 20jt + 8.745.148 = 83.745.148.
-- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan informasi keuangan (pendapatan, pengeluaran, gaji, cicilan) untuk menyusun model matematika sederhana guna mencapai target pendapatan bersih. Ini melibatkan pemilihan prosedur aritmatika yang tepat dalam konteks bisnis.. Bukti: pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya; rekrut 5 orang karyawan tambahan; pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat, yaitu 12 bulan
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang pendapatan bersih (omzet dikurangi beban) dan bagaimana variabel baru (cicilan, gaji tambahan) mempengaruhi struktur tersebut.. Bukti: omzet rata-rata sebesar Rp120.000.000,00 per bulan; pendapatan bersih total Bu Tania menjadi dua kali lipat
-- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah rutin yang saling terkait (menghitung pendapatan awal, menentukan target, mengidentifikasi beban baru dari tabel, dan menjumlahkan). Tidak ada strategi nonrutin yang kompleks.. Bukti: pendapatan bersih total Bu Tania menjadi dua kali lipat dari sebelumnya; rekrut 5 orang karyawan tambahan; pinjaman sebesar Rp100.000.000,00 dengan tenor paling singkat
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Operasi aritmatika dasar, pemahaman konsep pendapatan bersih, dan kemampuan membaca tabel angsuran. |
-| dependentSteps | 4 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 6 |
-| interactingConstraints | 3 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Soal ini sesuai untuk kelas 12 karena menggabungkan literasi finansial dengan aritmatika dasar dalam konteks bisnis yang relevan, menuntut ketelitian dalam mengidentifikasi semua komponen beban. |
+| gradeRelativeRationale | Soal ini sesuai untuk kelas 12 karena menggabungkan literasi keuangan dengan perhitungan aritmatika yang memerlukan ketelitian dalam mengidentifikasi komponen beban. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
+
+Adjudikasi AI: `success`; token `6197`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengintegrasikan informasi keuangan (pendapatan, pengeluaran, cicilan) untuk merumuskan model pendapatan bersih baru dan menentukan nilai omzet yang diperlukan. Ini melibatkan pemahaman hubungan antar variabel keuangan dalam skenario bisnis.
+- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana komponen pendapatan dan pengeluaran (termasuk cicilan dan gaji) membentuk pendapatan bersih dalam konteks bisnis.
+- Intended difficulty `Medium`: Soal memerlukan perencanaan langkah yang saling bergantung: menghitung pendapatan bersih awal, menentukan target baru, mengidentifikasi beban tambahan (gaji dan cicilan), dan menyusun persamaan omzet. Siswa harus mengintegrasikan data dari teks dan tabel secara cermat.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi aritmetika dasar, pemahaman konsep pendapatan bersih (laba), dan pembacaan tabel angsuran. |
+| dependentSteps | 4 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 3 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola variabel keuangan majemuk seperti ini. Tingkat kesulitan Medium tepat karena memerlukan ketelitian dalam mengidentifikasi semua komponen beban baru (gaji + cicilan) terhadap target pendapatan bersih. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2338,32 +2289,32 @@ Seseorang meminjam uang sebesar Rp10.000.000,00 selama setengah tahun dengan suk
 | D | Rp2.200.000,00 |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel bulan ke-2: Bunga = 6,88; Angsuran = 15,12. Anuitas = 6,88 + 15,12 = 22 (dalam satuan Rp100.000,00). Jadi, 22 x Rp100.000,00 = Rp2.200.000,00.
+Solusi minimum hasil AI: Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel pada bulan ke-1: 8 + 14 = 22. Pada bulan ke-2: 6,88 + 15,12 = 22. Pada bulan ke-3: 5,7604 + 16,32 = 22,0804. Terdapat ketidakkonsistenan pembulatan pada tabel, namun nilai anuitas yang konsisten secara konsep adalah 22 (satuan Rp100.000,00) = Rp2.200.000,00.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3d6aaa7a15f4fb0412da82d1b6f6351c7cb38d9ebe1ce987b64204fb6ce88ba4`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2d4d0253b845e166083a96dd39a9ad733527af119d8f12f6c7827c2014ae3da4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2316 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2394 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2354 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2971 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2979 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2952 |
 
-Run 1 — solusi: Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel bulan ke-2: Bunga = 6,88; Angsuran = 15,12. Anuitas = 6,88 + 15,12 = 22 (dalam satuan Rp100.000,00). Jadi, 22 x Rp100.000,00 = Rp2.200.000,00.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep anuitas sebagai penjumlahan bunga dan angsuran pokok, kemudian memilih data yang tepat dari tabel untuk melakukan perhitungan.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang komponen anuitas (bunga + angsuran) dan kemampuan membaca data dari tabel keuangan.. Bukti: Berikut dalam tabel rencana angsuran pinjaman tersebut
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya meminta pemahaman definisi anuitas dan ekstraksi data dari tabel yang sudah disediakan. Beban perhitungan sangat rendah.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
+Run 1 — solusi: Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel pada bulan ke-1: 8 + 14 = 22. Pada bulan ke-2: 6,88 + 15,12 = 22. Pada bulan ke-3: 5,7604 + 16,32 = 22,0804. Terdapat ketidakkonsistenan pembulatan pada tabel, namun nilai anuitas yang konsisten secara konsep adalah 22 (satuan Rp100.000,00) = Rp2.200.000,00.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep anuitas sebagai jumlah dari bunga dan angsuran pokok pada periode yang sama, kemudian menerapkan pemahaman tersebut dengan membaca data dari tabel yang disediakan.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang komponen anuitas (bunga + angsuran) dalam konteks tabel rencana pelunasan pinjaman.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu memahami definisi anuitas dan melakukan operasi penjumlahan sederhana dari data yang sudah tersedia secara eksplisit dalam tabel. Tidak ada perencanaan langkah yang kompleks atau kendala yang berinteraksi.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang tabel angsuran dan definisi anuitas (bunga + angsuran). |
+| expectedPrerequisite | Pemahaman dasar tentang komponen anuitas (bunga dan angsuran pokok). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2373,18 +2324,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi anuitas adalah standar kelas 12. Soal ini hanya menuntut pemahaman definisi dasar tanpa kompleksitas perhitungan atau strategi non-rutin. |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan tabel anuitas dan konsep dasarnya. Soal ini hanya memerlukan pembacaan data dan penjumlahan sederhana. |
 
-Run 2 — solusi: Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel bulan ke-1: Bunga (8) + Angsuran (14) = 22. Berdasarkan tabel bulan ke-2: Bunga (6,88) + Angsuran (15,12) = 22. Karena 22 dalam satuan Rp100.000,00, maka anuitas = Rp2.200.000,00.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep anuitas sebagai jumlah bunga dan angsuran pokok, lalu memilih data yang relevan dari tabel untuk melakukan perhitungan sederhana.. Bukti: Berikut dalam tabel rencana angsuran pinjaman tersebut hingga anuitas ke-3; Besar anuitas pada sistem angsuran tersebut adalah
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang komponen anuitas (bunga + angsuran) dan kemampuan membaca data dari tabel.. Bukti: Bunga Pinjaman \| Angsuran Pinjaman; Besar anuitas pada sistem angsuran tersebut adalah
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu memahami definisi anuitas dan melakukan penjumlahan sederhana dari data yang sudah tersedia secara eksplisit di tabel.. Bukti: Berikut dalam tabel rencana angsuran pinjaman tersebut hingga anuitas ke-3; Besar anuitas pada sistem angsuran tersebut adalah
+Run 2 — solusi: Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel, pada bulan ke-2: Bunga = 6,88 dan Angsuran = 15,12. Maka Anuitas = 6,88 + 15,12 = 22 (dalam satuan Rp100.000,00), sehingga Rp2.200.000,00.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep dasar anuitas sebagai penjumlahan bunga dan angsuran pokok pada periode yang sama, lalu menerapkan pemahaman tersebut dengan membaca data dari tabel yang disediakan.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang komponen anuitas (bunga + angsuran) dan kemampuan prosedural dalam membaca serta mengolah data dari tabel rencana angsuran.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu memahami definisi anuitas dan melakukan satu operasi penjumlahan sederhana dari data yang sudah tersedia secara eksplisit di dalam tabel. Tidak ada perencanaan langkah yang kompleks atau kendala yang saling berinteraksi.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah; Berikut dalam tabel rencana angsuran pinjaman tersebut hingga anuitas ke-3
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang komponen angsuran (bunga dan angsuran pokok) dan kemampuan membaca tabel. |
+| expectedPrerequisite | Pemahaman dasar tentang komponen anuitas (bunga dan angsuran pokok) dan kemampuan membaca tabel. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2394,18 +2345,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi anuitas adalah standar kelas 12. Soal ini bersifat prosedural langsung dengan data yang sudah disediakan dalam tabel, sehingga beban kognitifnya rendah. |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan tabel angsuran dan konsep anuitas. Soal ini hanya menuntut pembacaan data dan penjumlahan sederhana, sehingga beban kognitifnya rendah. |
 
-Run 3 — solusi: Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel bulan ke-1: 8 + 14 = 22. Bulan ke-2: 6,88 + 15,12 = 22. Bulan ke-3: 5,7604 + 16,32 = 22,0804. Terdapat sedikit pembulatan pada tabel, namun nilai anuitas yang konsisten adalah 22 (satuan Rp100.000,00) atau Rp2.200.000,00.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep dasar anuitas sebagai penjumlahan bunga dan angsuran pokok, kemudian memilih data yang relevan dari tabel untuk melakukan perhitungan sederhana.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
-- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang komponen penyusun anuitas dalam tabel amortisasi pinjaman.. Bukti: Bunga Pinjaman \| Angsuran Pinjaman
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu memahami definisi anuitas dan melakukan operasi penjumlahan sederhana dari data yang sudah tersedia secara eksplisit dalam tabel.. Bukti: Berikut dalam tabel rencana angsuran pinjaman tersebut hingga anuitas ke-3
+Run 3 — solusi: Anuitas adalah jumlah dari bunga dan angsuran pokok pada periode yang sama. Berdasarkan tabel, pada bulan ke-2: Bunga = 6,88; Angsuran = 15,12. Anuitas = 6,88 + 15,12 = 22 (dalam satuan Rp100.000,00). Jadi, anuitas = 22 * Rp100.000,00 = Rp2.200.000,00.
+- Domain kognitif `classify/applying`: Siswa diminta untuk memahami konsep anuitas sebagai jumlah bunga dan angsuran pokok, kemudian menerapkan pemahaman tersebut dengan mengambil data yang tepat dari tabel yang disediakan.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang definisi anuitas dalam konteks tabel angsuran pinjaman.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu memahami definisi anuitas (bunga + angsuran) dan membaca data dari tabel yang sudah tersedia. Tidak ada perhitungan kompleks atau perencanaan strategi yang rumit.. Bukti: Besar anuitas pada sistem angsuran tersebut adalah; Bunga Pinjaman \| Angsuran Pinjaman
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang komponen pinjaman (bunga dan angsuran pokok). |
+| expectedPrerequisite | Pemahaman dasar tentang komponen angsuran pinjaman (bunga dan angsuran pokok). |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2415,7 +2366,7 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi anuitas adalah standar kelas 12. Soal ini hanya meminta ekstraksi dan operasi aritmatika dasar dari tabel yang diberikan, sehingga beban kognitifnya rendah. |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan tabel angsuran. Tugas utama hanyalah membaca tabel dan melakukan penjumlahan sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2480,47 +2431,26 @@ Untuk menggalakkan program koperasi berdaya guna, beberapa koperasi akan memberi
 | D | Koperasi B lebih menguntungkan karena periode pinjamannya lebih singkat |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: Nilai akhir (A) = P(1+r)^n. Koperasi A: 50.000.000 * (1,03)^6 = 59.702.615. Koperasi B: 50.000.000 * (1,02)^4 = 54.121.608 (Catatan: Kunci sumber menggunakan 56.308.121 untuk B, yang merupakan hasil 50.000.000 * (1,02)^6. Terdapat ketidakkonsistenan pada data soal vs kunci untuk Koperasi B, namun perbandingan A > B tetap valid).
+Solusi minimum hasil AI: Hitung nilai akhir (M_n) dengan rumus bunga majemuk M_n = M_0(1+i)^n. Koperasi A: 50.000.000(1,03)^6 = 59.702.615. Koperasi B: 50.000.000(1,02)^4 = 54.121.608 (Catatan: Kunci sumber menggunakan 56.308.121, yang merupakan hasil 50.000.000 * (1,02)^4 = 54.121.608. Terdapat kesalahan hitung pada kunci sumber untuk B, namun perbandingan A > B tetap valid).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3ce33a169b038f14803329eec2af538e1aee974164211068c2dadc0cd2bbac1a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2e2826937759929dc912fed37a9fae73400398c70a92e196d9306b78783274e7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2394 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2444 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2452 |
+| 1 | success | valid / verified | applying | procedural | Easy | 3030 |
+| 2 | success | valid / verified | applying | procedural | Easy | 3008 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2997 |
 
-Run 1 — solusi: Nilai akhir (A) = P(1+r)^n. Koperasi A: 50.000.000 * (1,03)^6 = 59.702.615. Koperasi B: 50.000.000 * (1,02)^4 = 54.121.608 (Catatan: Kunci sumber menggunakan 56.308.121 untuk B, yang merupakan hasil 50.000.000 * (1,02)^6. Terdapat ketidakkonsistenan pada data soal vs kunci untuk Koperasi B, namun perbandingan A > B tetap valid).
-- Domain kognitif `classify/applying`: Siswa perlu memilih rumus bunga majemuk yang tepat, melakukan substitusi nilai, dan membandingkan dua hasil perhitungan. Ini adalah penerapan prosedur rutin dalam konteks keuangan.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun; Bandingkan nilai akhir yang akan didapat oleh masing-masing koperasi
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma perhitungan bunga majemuk dan perbandingan nilai akhir.. Bukti: suku bunga sebesar 3% per tahun selama 6 tahun; suku bunga sebesar 2% per tahun selama 4 tahun
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan rumus bunga majemuk standar dua kali dan membandingkan hasilnya. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman rumus bunga majemuk M = M0(1+i)^n |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 0 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga majemuk adalah standar kurikulum kelas 12. Prosedur perhitungan langsung dan familiar bagi siswa. |
-
-Run 2 — solusi: Nilai akhir (M_n) dihitung dengan rumus bunga majemuk M_n = M_0(1+i)^n. Koperasi A: 50.000.000 * (1,03)^6 = 59.702.615. Koperasi B: 50.000.000 * (1,02)^4 = 54.121.608 (Catatan: Kunci sumber menggunakan 56.308.121, namun perhitungan manual 50jt * 1,02^4 = 54.121.608. Terdapat ketidaksesuaian nilai pada kunci, namun kesimpulan A > B tetap valid).
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur perhitungan bunga majemuk yang tepat untuk dua skenario berbeda dan membandingkan hasilnya. Ini melibatkan penerapan rumus pada situasi rutin.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun; Bandingkan nilai akhir yang akan didapat oleh masing-masing koperasi
-- Dimensi pengetahuan `classify/procedural`: Siswa harus memahami prinsip bunga majemuk dan menerapkannya dalam perhitungan nilai akhir.. Bukti: suku bunga sebesar 3% per tahun selama 6 tahun; suku bunga sebesar 2% per tahun selama 4 tahun
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur rutin yang melibatkan substitusi nilai ke dalam rumus bunga majemuk standar dan perbandingan dua nilai. Tidak ada kendala nonrutin atau integrasi representasi yang kompleks.. Bukti: pinjaman masing-masing sebesar Rp50.000.000,00; Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun
+Run 1 — solusi: Hitung nilai akhir (M_n) dengan rumus bunga majemuk M_n = M_0(1+i)^n. Koperasi A: 50.000.000(1,03)^6 = 59.702.615. Koperasi B: 50.000.000(1,02)^4 = 54.121.608 (Catatan: Kunci sumber menggunakan 56.308.121, yang merupakan hasil 50.000.000 * (1,02)^4 = 54.121.608. Terdapat kesalahan hitung pada kunci sumber untuk B, namun perbandingan A > B tetap valid).
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga majemuk yang sudah familiar untuk membandingkan dua skenario investasi/pinjaman. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun; Bandingkan nilai akhir yang akan didapat oleh masing-masing koperasi
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme perhitungan bunga majemuk dan penggunaan parameter yang diberikan dalam rumus.. Bukti: suku bunga sebesar 3% per tahun selama 6 tahun; suku bunga sebesar 2% per tahun selama 4 tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu menerapkan rumus bunga majemuk secara langsung untuk dua kasus yang berbeda. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: pinjaman masing-masing sebesar Rp50.000.000,00; Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun
 
 Profil difficulty run ini:
 
@@ -2535,19 +2465,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga majemuk adalah standar kelas 12. Soal ini bersifat langsung (direct application) tanpa modifikasi variabel yang rumit. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 12 sudah terbiasa dengan perhitungan bunga majemuk. Soal ini bersifat rutin dan tidak memerlukan integrasi konsep yang mendalam. |
 
-Run 3 — solusi: Nilai akhir (M) dihitung dengan rumus bunga majemuk M = P(1+i)^n. Koperasi A: M_A = 50.000.000 * (1,03)^6 = 59.702.615. Koperasi B: M_B = 50.000.000 * (1,02)^4 = 54.121.608 (Catatan: Kunci sumber menggunakan 56.308.121 yang merupakan hasil 50.000.000 * (1,02)^4 = 54.121.608, namun 50.000.000 * (1,02)^4 = 54.121.608. Terdapat kesalahan hitung pada kunci sumber untuk B, namun perbandingan A > B tetap valid).
-- Domain kognitif `classify/applying`: Siswa perlu memilih dan menerapkan rumus bunga majemuk untuk dua skenario berbeda, kemudian membandingkan hasilnya. Ini adalah penerapan prosedur rutin dalam situasi keuangan.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun; Bandingkan nilai akhir yang akan didapat oleh masing-masing koperasi
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga majemuk dan perbandingan nilai akhir, yang merupakan pengetahuan prosedural.. Bukti: suku bunga sebesar 3% per tahun selama 6 tahun; nilai akhir yang akan didapat
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena hanya meminta penerapan rumus bunga majemuk standar (M = P(1+i)^n) pada dua kasus yang diberikan secara eksplisit. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun
+Run 2 — solusi: Hitung nilai akhir (M_n) dengan rumus bunga majemuk M_n = M_0(1+i)^n. Koperasi A: 50.000.000 * (1,03)^6 = 59.702.615. Koperasi B: 50.000.000 * (1,02)^4 = 54.121.608 (Catatan: Kunci sumber menggunakan 56.308.121, namun perhitungan matematis 50jt * (1,02)^4 = 54.121.608. Terdapat kesalahan hitung pada kunci sumber untuk Koperasi B, namun kesimpulan A > B tetap valid).
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga majemuk yang sudah dipelajari untuk membandingkan dua skenario investasi/pinjaman. Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun; Bandingkan nilai akhir yang akan didapat oleh masing-masing koperasi
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami prinsip bunga majemuk (konseptual) dan menerapkan rumus perhitungannya (prosedural) untuk menyelesaikan masalah.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas (menggunakan rumus bunga majemuk). Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman konsep bunga majemuk dan penggunaan kalkulator/operasi perpangkatan. |
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan penggunaan kalkulator/perhitungan eksponen. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2557,7 +2487,28 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan sudah familiar dengan perhitungan bunga majemuk sebagai bagian dari materi keuangan matematika. |
+| gradeRelativeRationale | Materi bunga majemuk adalah standar kelas 12. Soal ini hanya meminta perhitungan langsung tanpa variasi kompleks. |
+
+Run 3 — solusi: Hitung nilai akhir (A_n = P(1+r)^n): Koperasi A: 50.000.000 * (1,03)^6 = 59.702.615. Koperasi B: 50.000.000 * (1,02)^4 = 54.121.608 (Catatan: Kunci sumber menggunakan 56.308.121 untuk B, yang merupakan hasil 50.000.000 * (1,02)^6, bukan 4 tahun. Namun, A tetap lebih besar dari B).
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga majemuk untuk dua skenario berbeda dan membandingkan hasilnya. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun; Bandingkan nilai akhir yang akan didapat oleh masing-masing koperasi
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang rumus bunga majemuk (prinsip) dan prosedur perhitungan nilai akhir.. Bukti: suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan rumus bunga majemuk dua kali dan membandingkan hasilnya. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Koperasi A memberikan suku bunga sebesar 3% per tahun selama 6 tahun; Koperasi B memberikan suku bunga sebesar 2% per tahun selama 4 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan penggunaan kalkulator/operasi hitung. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Materi bunga majemuk adalah standar kelas 12. Perhitungan langsung tanpa jebakan konseptual membuat soal ini mudah bagi siswa kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -2616,32 +2567,32 @@ Suatu aplikasi pinjaman online memberikan pinjaman sebesar Rp10.000.000,00 denga
 | D | Rp10.000.000,00 |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
-Solusi minimum hasil AI: Pinjaman (P) = 10.000.000, suku bunga (i) = 2% per tahun, periode (n) = 24 bulan = 2 tahun. Menggunakan rumus bunga majemuk: FV = P(1+i)^n = 10.000.000(1+0,02)^2 = 10.000.000(1,0404) = 10.404.000.
+Solusi minimum hasil AI: P = 10.000.000, i = 2% per tahun = 0,02, n = 24 bulan = 2 tahun. Menggunakan rumus bunga majemuk: FV = P(1+i)^n = 10.000.000(1+0,02)^2 = 10.000.000(1,0404) = 10.404.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9e6bf772849b21b4169b204d4b5c16895f134abd19a1c84ad23774958b892015`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `32bdb0557bd84d9e5c0e58d2275171cdd0585eab23131766a277658d31275945`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2188 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2192 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2227 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2914 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2805 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2897 |
 
-Run 1 — solusi: Pinjaman (P) = 10.000.000, suku bunga (i) = 2% per tahun, periode (n) = 24 bulan = 2 tahun. Menggunakan rumus bunga majemuk: FV = P(1+i)^n = 10.000.000(1+0,02)^2 = 10.000.000(1,0404) = 10.404.000.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi model bunga majemuk yang sesuai untuk pinjaman jangka panjang dan mengonversi satuan waktu (bulan ke tahun) sebelum menerapkan rumus.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan; nilai akhir pengembalian pinjaman
-- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman prosedural tentang penggunaan rumus bunga majemuk dan konversi satuan waktu yang relevan.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan satu prosedur rutin (bunga majemuk) dengan konversi waktu sederhana. Tidak ada kendala kompleks atau strategi non-rutin.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
+Run 1 — solusi: Pinjaman (P) = Rp10.000.000,00. Suku bunga (i) = 2% per tahun = 0,02. Periode (n) = 24 bulan = 2 tahun. Menggunakan rumus bunga majemuk: FV = P(1+i)^n = 10.000.000(1+0,02)^2 = 10.000.000(1,0404) = Rp10.404.000,00.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi parameter yang diberikan, mengonversi satuan waktu (bulan ke tahun), dan memilih rumus bunga majemuk yang sesuai untuk menghitung nilai akhir. Ini adalah penerapan prosedur standar dalam konteks keuangan.. Bukti: Suku bunga 2% per tahun; Periode pinjaman selama 24 bulan; Berapakah nilai akhir pengembalian pinjaman tersebut?
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman tentang hubungan antara suku bunga tahunan, periode waktu, dan rumus bunga majemuk sebagai prinsip dasar keuangan.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan konversi satuan waktu yang sederhana dan penerapan rumus bunga majemuk secara langsung tanpa kendala tambahan atau skenario yang kompleks.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep bunga majemuk dan konversi satuan waktu. |
+| expectedPrerequisite | Pemahaman dasar tentang bunga majemuk dan konversi satuan waktu (bulan ke tahun). |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2651,18 +2602,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan perhitungan bunga majemuk sederhana dan konversi periode waktu. |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan perhitungan bunga majemuk sederhana. Soal tidak memiliki jebakan atau kompleksitas tinggi. |
 
-Run 2 — solusi: Pinjaman awal (P) = 10.000.000, suku bunga (i) = 2% per tahun, periode (n) = 24 bulan = 2 tahun. Menggunakan rumus bunga majemuk: FV = P(1+i)^n = 10.000.000(1+0,02)^2 = 10.000.000(1,0404) = 10.404.000.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi model bunga majemuk yang sesuai untuk pinjaman jangka panjang, mengonversi satuan waktu (bulan ke tahun), dan menerapkan rumus bunga majemuk secara langsung.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan; nilai akhir pengembalian pinjaman
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus bunga majemuk dan pemahaman konseptual mengenai konversi periode waktu dalam konteks keuangan.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
-- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan penerapan rumus standar bunga majemuk dengan konversi satuan waktu yang sederhana (24 bulan = 2 tahun).. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
+Run 2 — solusi: Pinjaman (P) = 10.000.000, suku bunga (i) = 2% per tahun, periode (n) = 24 bulan = 2 tahun. Menggunakan rumus bunga majemuk: FV = P(1+i)^n = 10.000.000(1+0,02)^2 = 10.000.000(1,0404) = 10.404.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi parameter pinjaman, mengonversi satuan waktu (bulan ke tahun), dan menerapkan rumus bunga majemuk yang relevan untuk konteks investasi/pinjaman.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan; nilai akhir pengembalian pinjaman
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman tentang prinsip bunga majemuk dan prosedur perhitungan nilai akhir yang merupakan konsep standar dalam materi keuangan kelas 12.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan; nilai akhir pengembalian pinjaman
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan konversi satuan waktu sederhana dan penerapan langsung rumus bunga majemuk tanpa kendala atau integrasi langkah yang kompleks.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep bunga majemuk dan konversi satuan waktu. |
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan konversi satuan waktu. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2672,18 +2623,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan sudah familiar dengan perhitungan bunga majemuk sederhana sebagai bagian dari materi keuangan matematika. |
+| gradeRelativeRationale | Materi bunga majemuk adalah topik dasar kelas 12. Soal ini tidak memiliki jebakan atau kompleksitas tambahan, sehingga siswa yang memahami konsep dasar dapat menyelesaikannya dengan cepat. |
 
-Run 3 — solusi: Pinjaman (P) = 10.000.000, suku bunga (i) = 2% per tahun, periode (n) = 24 bulan = 2 tahun. Menggunakan rumus bunga majemuk: FV = P(1+i)^n = 10.000.000(1+0,02)^2 = 10.000.000(1,0404) = 10.404.000.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa periode 24 bulan harus dikonversi ke tahun (2 tahun) dan menerapkan rumus bunga majemuk yang sesuai untuk menghitung nilai akhir.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan; nilai akhir pengembalian pinjaman
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus bunga majemuk dan konversi satuan waktu yang tepat dalam konteks keuangan.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
+Run 3 — solusi: Pinjaman (P) = 10.000.000, suku bunga (i) = 2% per tahun, periode (n) = 24 bulan = 2 tahun. Menggunakan asumsi bunga majemuk: FV = P(1+i)^n = 10.000.000(1+0,02)^2 = 10.000.000(1,0404) = 10.404.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengonversi satuan waktu (bulan ke tahun) dan menerapkan rumus bunga majemuk yang relevan dengan konteks investasi/pinjaman. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan; Berapakah nilai akhir pengembalian pinjaman tersebut?
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma perhitungan bunga majemuk dan konversi periode waktu yang merupakan bagian dari prosedur keuangan.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
 - Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan konversi satuan waktu sederhana dan penerapan langsung rumus bunga majemuk yang sudah familiar bagi siswa kelas 12.. Bukti: suku bunga 2% per tahun; Periode pinjaman selama 24 bulan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep bunga majemuk dan konversi satuan waktu (bulan ke tahun). |
+| expectedPrerequisite | Pemahaman dasar tentang bunga majemuk dan konversi satuan waktu (bulan ke tahun). |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2693,15 +2644,37 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi bunga majemuk adalah standar kurikulum kelas 12. Soal ini tidak memiliki jebakan kompleks atau syarat tambahan yang rumit. |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal tidak memiliki kendala yang saling berinteraksi atau kebutuhan perencanaan strategi yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 2, "procedural": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4476`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengidentifikasi parameter, melakukan konversi satuan waktu (bulan ke tahun), dan menerapkan rumus bunga majemuk secara langsung. Ini adalah penerapan prosedur standar pada konteks rutin.
+- Dimensi pengetahuan `procedural`: Soal menguji pemahaman tentang algoritma perhitungan bunga majemuk dan konversi periode waktu yang merupakan bagian dari prosedur keuangan.
+- Intended difficulty `Easy`: Soal ini tergolong mudah karena hanya memerlukan konversi satuan waktu sederhana dan penerapan langsung rumus bunga majemuk yang sudah familiar bagi siswa kelas 12 tanpa kendala tambahan.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga majemuk dan konversi satuan waktu (bulan ke tahun). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal tidak memiliki kendala yang saling berinteraksi atau kebutuhan perencanaan strategi yang kompleks. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2750,74 +2723,32 @@ Sepuluh orang siswa memiliki tinggi yang berbeda. Guru olahraga menginginkan mer
 | D | 3.628.800 cara |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `512`.
-Solusi minimum hasil AI: Urutkan siswa dari terpendek ke tertinggi (h1 < h2 < ... < h10). Siswa terpendek (h1) diletakkan di posisi mana saja. Untuk siswa berikutnya (h2), ia harus diletakkan di ujung kiri atau kanan barisan yang sudah terbentuk agar tidak diapit dua orang yang lebih tinggi. Pola ini berlanjut untuk h3 sampai h9. Setiap siswa (h2 sampai h9) memiliki 2 pilihan posisi (ujung kiri atau kanan). Siswa h10 diletakkan di posisi terakhir yang tersisa (1 pilihan). Total cara = 2^(10-1) = 2^9 = 512.
+Solusi minimum hasil AI: Urutkan siswa dari terpendek ke tertinggi (S1, S2, ..., S10). S1 diletakkan di posisi mana saja. Untuk setiap siswa berikutnya (S2 sampai S10), siswa tersebut harus diletakkan di ujung kiri atau ujung kanan barisan yang sudah terbentuk agar tidak diapit oleh dua siswa yang lebih tinggi. Untuk 9 siswa (S2 hingga S10), masing-masing memiliki 2 pilihan posisi (ujung kiri atau kanan). Total cara = 2^(10-1) = 2^9 = 512.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3433614bbbf4829e1217520c030de57946b999fba75f74efb100f3278fbb9813`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5936922d2b538e8a1fc5bef3fd3f6faf5c85ad5e8560b5db899f5b72b8ae0457`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | reasoning | conceptual | Medium | 2249 |
-| 2 | success | valid / verified | reasoning | conceptual | Hard | 2182 |
-| 3 | success | valid / verified | reasoning | conceptual | Medium | 2226 |
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 2808 |
+| 2 | success | valid / verified | reasoning | conceptual | Hard | 2840 |
+| 3 | success | valid / verified | reasoning | conceptual | Hard | 2817 |
 
-Run 1 — solusi: Misalkan siswa diurutkan dari terpendek ke tertinggi (h1 < h2 < ... < h10). Siswa terpendek (h1) harus berada di ujung (kiri atau kanan). Setelah h1 ditempatkan, h2 juga harus berada di ujung barisan yang tersisa (kiri atau kanan), dan seterusnya hingga h9. Siswa tertinggi (h10) akan mengisi posisi terakhir yang tersisa. Untuk setiap siswa dari h1 hingga h9, terdapat 2 pilihan posisi (ujung kiri atau ujung kanan dari barisan yang terbentuk). Maka total cara adalah 2^(10-1) = 2^9 = 512.
-- Domain kognitif `classify/reasoning`: Siswa perlu menyadari pola konstruksi barisan (menempatkan siswa dari yang terpendek ke tertinggi) untuk memenuhi syarat "tidak diapit dua siswa lebih tinggi". Ini memerlukan pemahaman konseptual tentang bagaimana syarat tersebut membatasi posisi setiap elemen secara berurutan, bukan sekadar menerapkan rumus permutasi standar.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang syarat posisi dalam barisan. Siswa harus memahami hubungan antara urutan tinggi badan dan batasan posisi agar syarat "tidak diapit" terpenuhi, yang mengarah pada pola eksponensial.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman pola konstruktif (induktif) untuk memecahkan masalah kombinatorika yang tidak bisa diselesaikan dengan rumus permutasi/kombinasi standar secara langsung. Siswa harus melakukan penalaran logis untuk menemukan pola 2^(n-1).. Bukti: Sepuluh orang siswa memiliki tinggi yang berbeda; tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Prinsip dasar pencacahan dan pemahaman urutan. |
-| dependentSteps | 3 |
-| routineStatus | nonroutine_strategy |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Untuk kelas 12, masalah ini menuntut penalaran di luar rumus permutasi rutin, namun masih dalam cakupan logika dasar yang diharapkan pada materi pencacahan. |
-
-Run 2 — solusi: Urutkan siswa dari terpendek ke tertinggi. Siswa terpendek (1) harus di ujung. Siswa ke-2 harus di ujung barisan yang terbentuk (kiri atau kanan). Siswa ke-3 juga harus di ujung barisan yang terbentuk, dan seterusnya hingga siswa ke-9. Setiap siswa dari ke-2 sampai ke-9 memiliki 2 pilihan posisi (ujung kiri atau ujung kanan dari barisan yang sudah terbentuk). Siswa ke-10 (tertinggi) hanya memiliki 1 posisi tersisa. Total cara = 2^(10-1) = 2^9 = 512.
-- Domain kognitif `classify/reasoning`: Siswa perlu menyadari bahwa syarat 'tidak diapit oleh dua siswa yang lebih tinggi' memaksa barisan terbentuk dengan menempatkan siswa dari yang terpendek ke tertinggi di ujung-ujung barisan yang tersisa. Ini memerlukan penalaran logis tentang konstruksi barisan, bukan sekadar menerapkan rumus permutasi standar.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip konstruksi barisan (konsep) dan menerapkannya untuk menentukan pola penempatan siswa (prosedural), namun inti masalahnya terletak pada pemahaman hubungan antar elemen dalam barisan.. Bukti: Berapa banyaknya cara membuat barisan sesuai ketentuan itu?
-- Intended difficulty `classify/Hard`: Soal ini memerlukan pemahaman mendalam tentang syarat yang diberikan. Siswa tidak bisa langsung menggunakan rumus permutasi 10!, melainkan harus membangun logika penempatan satu per satu. Ini adalah masalah non-rutin bagi kebanyakan siswa kelas 12.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
+Run 1 — solusi: Urutkan siswa dari terpendek ke tertinggi (S1, S2, ..., S10). S1 diletakkan di posisi mana saja. Untuk setiap siswa berikutnya (S2 sampai S10), siswa tersebut harus diletakkan di ujung kiri atau ujung kanan barisan yang sudah terbentuk agar tidak diapit oleh dua siswa yang lebih tinggi. Untuk S2 hingga S10 (9 siswa), masing-masing memiliki 2 pilihan posisi (ujung kiri atau kanan). Total cara = 2^(10-1) = 2^9 = 512.
+- Domain kognitif `classify/reasoning`: Siswa harus memahami struktur barisan yang terbentuk secara induktif. Mereka perlu menyadari bahwa untuk mempertahankan kondisi 'tidak diapit oleh dua orang yang lebih tinggi', setiap siswa baru harus selalu ditempatkan di ujung barisan yang sudah ada. Ini memerlukan penalaran tentang pola konstruksi barisan.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana batasan (constraint) mempengaruhi pembentukan permutasi, bukan sekadar menerapkan rumus permutasi standar.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena meskipun memerlukan penalaran (reasoning), pola konstruksinya (menempatkan elemen di ujung) adalah teknik standar dalam masalah barisan/permutasi dengan batasan tinggi badan. Siswa kelas 12 yang mempelajari aturan pencacahan seharusnya dapat menemukan pola ini dengan mencoba kasus kecil (n=3 atau n=4).. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya; Berapa banyaknya cara membuat barisan sesuai ketentuan itu?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Prinsip dasar pencacahan dan pemahaman urutan. |
-| dependentSteps | 3 |
-| routineStatus | nonroutine_strategy |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Meskipun perhitungannya sederhana (2^9), logika di balik syarat 'tidak diapit' sangat menantang dan jarang ditemui dalam latihan rutin sekolah, sehingga dikategorikan Hard. |
-
-Run 3 — solusi: Urutkan siswa dari terpendek ke tertinggi (h1 < h2 < ... < h10). Siswa terpendek (h1) diletakkan di posisi mana saja. Untuk siswa berikutnya (h2), ia harus diletakkan di ujung kiri atau kanan barisan yang sudah terbentuk agar tidak diapit dua orang yang lebih tinggi. Pola ini berlanjut untuk h3 sampai h9. Setiap siswa (h2 sampai h9) memiliki 2 pilihan posisi (ujung kiri atau kanan). Siswa h10 diletakkan di posisi terakhir yang tersisa (1 pilihan). Total cara = 2 * 2 * ... * 2 (sebanyak 9 kali) = 2^9 = 512.
-- Domain kognitif `classify/reasoning`: Soal ini memerlukan pemahaman konsep konstruksi barisan dengan kendala (syarat posisi). Siswa harus menyadari bahwa untuk memenuhi syarat, setiap siswa baru harus ditempatkan di ujung barisan yang sudah terbentuk. Ini adalah strategi nonrutin yang memerlukan penalaran logis tentang urutan penempatan, bukan sekadar permutasi standar.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip konstruktif dalam pencacahan (aturan pengisian tempat) dan bagaimana kendala 'tidak diapit' membatasi pilihan posisi, yang merupakan pemahaman konseptual tentang struktur barisan.. Bukti: Berapa banyaknya cara membuat barisan sesuai ketentuan itu?
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemilihan prosedur yang tepat (konstruksi dari siswa terpendek ke tertinggi) dan pemahaman pola 2^(n-1). Meskipun langkahnya rutin setelah strategi ditemukan, menemukan strategi tersebut merupakan tantangan bagi siswa kelas 12.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Prinsip dasar pencacahan dan aturan pengisian tempat. |
+| expectedPrerequisite | Prinsip dasar pencacahan dan pemahaman induktif sederhana. |
 | dependentSteps | 3 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -2827,27 +2758,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini menuntut kemampuan berpikir logis di luar rumus permutasi standar yang sering diajarkan, sesuai dengan kompetensi kelas 12 dalam memecahkan masalah pencacahan dengan kendala. |
+| gradeRelativeRationale | Masalah ini adalah variasi klasik dari masalah permutasi dengan batasan. Siswa kelas 12 diharapkan mampu melakukan penalaran induktif untuk masalah seperti ini tanpa bantuan eksplisit. |
 
-### 3. Voting awal dan adjudikasi
+Run 2 — solusi: Urutkan siswa dari yang terpendek ke tertinggi (S1, S2, ..., S10). S1 diletakkan di posisi mana saja. Untuk setiap siswa berikutnya (S2 sampai S10), siswa tersebut harus diletakkan di ujung kiri atau ujung kanan dari barisan yang sudah terbentuk agar tidak diapit oleh dua orang yang lebih tinggi. Untuk S2 hingga S10 (9 orang), masing-masing memiliki 2 pilihan posisi (ujung kiri atau kanan). Total cara = 2^(10-1) = 2^9 = 512.
+- Domain kognitif `classify/reasoning`: Siswa perlu memahami prinsip konstruksi barisan dengan batasan posisi. Ini bukan sekadar permutasi biasa, melainkan penalaran induktif tentang penempatan elemen (siswa) ke dalam barisan agar syarat 'tidak diapit' terpenuhi, yang mengarah pada pola 2^(n-1).. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip dasar aturan pengisian tempat dan menerapkannya pada pola konstruksi barisan yang spesifik (konseptual) untuk menemukan generalisasi jumlah cara.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
+- Intended difficulty `classify/Hard`: Soal ini menuntut siswa untuk melakukan abstraksi atau eksperimen mental (induksi) untuk menemukan pola penempatan. Meskipun perhitungannya sederhana (2^9), proses menemukan strategi penempatan yang memenuhi syarat 'tidak diapit' memerlukan perencanaan langkah yang saling bergantung dan pemahaman konseptual yang kuat, yang melampaui sekadar prosedur rutin.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya; Berapa banyaknya cara membuat barisan sesuai ketentuan itu?
 
-| Head | Suara awal | Pola / status akhir | Label akhir advisory |
-|---|---|---|---|
-| Domain kognitif | {"reasoning": 3} | unanimous_3_0 / adjudicated | reasoning |
-| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 2, "Hard": 1} | majority_2_of_3 / adjudicated | Medium |
-
-Adjudikasi AI: `success`; token `4138`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `reasoning`: Soal ini memerlukan penalaran logis untuk menyadari bahwa syarat 'tidak diapit' memaksa setiap siswa baru (saat diurutkan dari terpendek) untuk selalu menempati posisi ujung dari barisan yang sudah terbentuk. Ini adalah strategi nonrutin yang mengintegrasikan pemahaman urutan dan aturan pengisian tempat.
-- Dimensi pengetahuan `conceptual`: Siswa harus memahami hubungan konseptual antara urutan tinggi badan dan batasan posisi agar syarat 'tidak diapit' terpenuhi, yang mengarah pada pola konstruktif eksponensial.
-- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena memerlukan pemilihan strategi konstruktif yang tepat. Meskipun perhitungannya sederhana (2^9), menemukan strategi bahwa setiap siswa harus diletakkan di ujung barisan yang terbentuk merupakan tantangan nonrutin bagi siswa kelas 12.
-
-Profil difficulty hasil adjudikasi:
+Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Prinsip dasar pencacahan dan pemahaman urutan. |
+| expectedPrerequisite | Prinsip dasar pencacahan dan pemahaman tentang urutan/barisan. |
 | dependentSteps | 3 |
 | routineStatus | nonroutine_strategy |
 | strategySelection | True |
@@ -2857,7 +2779,58 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Masalah ini menuntut penalaran di luar rumus permutasi rutin, namun masih dalam cakupan logika dasar yang diharapkan pada materi pencacahan kelas 12. |
+| gradeRelativeRationale | Siswa kelas 12 sering terjebak pada permutasi 10! (seperti opsi D). Menemukan bahwa syarat 'tidak diapit' memaksa siswa untuk menempatkan siswa dari yang terpendek ke tertinggi di ujung-ujung barisan adalah langkah penalaran yang menantang bagi siswa pada jenjang ini. |
+
+Run 3 — solusi: Urutkan siswa dari yang terpendek ke tertinggi (S1, S2, ..., S10). S1 diletakkan di posisi mana saja. Untuk setiap siswa berikutnya (S2 hingga S10), mereka harus diletakkan di ujung kiri atau kanan dari barisan yang sudah terbentuk agar tidak diapit oleh dua orang yang lebih tinggi. Terdapat 2 pilihan posisi untuk setiap siswa dari S2 sampai S9 (total 8 siswa), dan S10 hanya memiliki 1 posisi tersisa (atau 2 pilihan untuk S2-S9 dan S10 adalah penutup). Secara induktif, terdapat 2^(n-1) cara untuk n siswa. Untuk 10 siswa, banyaknya cara adalah 2^(10-1) = 2^9 = 512.
+- Domain kognitif `classify/reasoning`: Soal ini memerlukan pemahaman mendalam tentang struktur barisan (induksi atau konstruksi iteratif) untuk memenuhi syarat yang diberikan, bukan sekadar menerapkan rumus permutasi standar.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip konstruksi barisan (konseptual) untuk menyimpulkan pola 2^(n-1) daripada sekadar menghafal rumus.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya
+- Intended difficulty `classify/Hard`: Soal ini dikategorikan Hard karena siswa harus melakukan penalaran konstruktif untuk menemukan pola (induksi) bahwa setiap siswa baru harus diletakkan di ujung barisan yang sudah terbentuk. Tidak ada rumus langsung yang bisa dipakai; siswa harus membangun logika sendiri.. Bukti: tidak ada siswa diapit oleh dua siswa lain yang lebih tinggi dari dirinya; Berapa banyaknya cara membuat barisan sesuai ketentuan itu?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Prinsip dasar pencacahan dan pemahaman urutan. |
+| dependentSteps | 4 |
+| routineStatus | nonroutine_strategy |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun operasi hitungnya sederhana (2^9), logika di balik syarat 'tidak diapit oleh dua orang yang lebih tinggi' menuntut kemampuan penalaran tingkat tinggi yang jarang dilatih dalam soal rutin SMA. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"reasoning": 3} | unanimous_3_0 / adjudicated | reasoning |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Medium": 1, "Hard": 2} | majority_2_of_3 / adjudicated | Hard |
+
+Adjudikasi AI: `success`; token `4750`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `reasoning`: Soal ini menuntut penalaran (reasoning) karena siswa tidak bisa langsung menggunakan rumus permutasi standar. Mereka harus melakukan penalaran induktif atau konstruktif untuk memahami bahwa syarat 'tidak diapit oleh dua orang yang lebih tinggi' memaksa setiap siswa baru untuk selalu ditempatkan di ujung barisan yang sudah terbentuk.
+- Dimensi pengetahuan `conceptual`: Siswa harus memahami hubungan konseptual antara batasan (constraint) yang diberikan dengan struktur barisan yang terbentuk. Ini menguji pemahaman prinsip konstruksi barisan, bukan sekadar menghafal prosedur atau rumus.
+- Intended difficulty `Hard`: Soal ini dikategorikan Hard karena menuntut kemampuan perencanaan langkah yang saling bergantung (induksi) tanpa bantuan rumus langsung. Siswa harus membangun strategi sendiri untuk memenuhi syarat yang diberikan. Meskipun perhitungannya sederhana, proses menemukan pola 2^(n-1) memerlukan integrasi konsep yang tinggi bagi siswa kelas 12.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Prinsip dasar pencacahan dan pemahaman induktif sederhana. |
+| dependentSteps | 3 |
+| routineStatus | nonroutine_strategy |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun operasi hitungnya sederhana, logika di balik syarat 'tidak diapit oleh dua orang yang lebih tinggi' menuntut kemampuan penalaran tingkat tinggi yang jarang dilatih dalam soal rutin SMA. Siswa sering terjebak pada permutasi 10! (opsi D) karena tidak mampu melakukan abstraksi pola penempatan. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2889,9 +2862,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Hard"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Hard", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 21. Soal `439575e9c1a8bdff1255c8d5`
@@ -2906,32 +2879,32 @@ Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda ya
 | D | 60 setelan |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Menggunakan aturan perkalian untuk kejadian saling bebas: 5 kemeja * 4 celana * 3 sepatu = 60 setelan.
+Solusi minimum hasil AI: Menggunakan aturan perkalian untuk kejadian yang saling bebas: 5 kemeja * 4 celana * 3 pasang sepatu = 60 setelan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9939210f7829425d5e20ea4a73bc413aa20ae4ba9c6503f1cbda86bb5ecabcb9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7291ded368a63d95d6b9193981596e7ad9970edf031f8a61a9e59a156ce520e0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | procedural | Easy | 1998 |
-| 2 | success | valid / verified | knowing | procedural | Easy | 2017 |
-| 3 | success | valid / verified | knowing | procedural | Easy | 2045 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2683 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 2658 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2665 |
 
-Run 1 — solusi: Menggunakan aturan perkalian untuk kejadian saling bebas: 5 kemeja * 4 celana * 3 sepatu = 60 setelan.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali situasi sebagai penerapan aturan perkalian dasar untuk kejadian yang saling bebas, yang merupakan prosedur langsung.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda; tentukan banyak setelan berbeda yang dibuat
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang aturan perkalian dalam kombinatorika dasar.. Bukti: tentukan banyak setelan berbeda yang dibuat
-- Intended difficulty `classify/Easy`: Soal ini adalah aplikasi langsung dari aturan perkalian dasar tanpa kendala tambahan, sehingga termasuk kategori mudah bagi siswa kelas 12.. Bukti: 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu
+Run 1 — solusi: Menggunakan aturan perkalian untuk kejadian yang saling bebas: 5 kemeja * 4 celana * 3 pasang sepatu = 60 setelan.
+- Domain kognitif `classify/applying`: Soal meminta siswa mengenali dan menerapkan prinsip dasar aturan perkalian untuk menentukan banyaknya kombinasi dari tiga kategori objek yang saling bebas. Ini adalah penerapan langsung dari konsep dasar pencacahan.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda; tentukan banyak setelan berbeda yang dibuat
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami prinsip perkalian (aturan pengisian tempat) sebagai prosedur standar untuk menghitung kombinasi objek.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda; tentukan banyak setelan berbeda yang dibuat
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu mengidentifikasi jumlah objek di setiap kategori dan mengalikannya. Tidak ada kendala tambahan, syarat khusus, atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda; tentukan banyak setelan berbeda yang dibuat
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Aturan perkalian dasar (kaidah pencacahan). |
+| expectedPrerequisite | Pemahaman dasar aturan perkalian (multiplication principle) untuk kejadian saling bebas. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -2941,33 +2914,12 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah materi dasar kombinatorika yang sudah dipelajari sejak kelas 10/11, sehingga bagi siswa kelas 12 ini adalah prosedur yang sangat familiar. |
+| gradeRelativeRationale | Soal ini merupakan latihan dasar aturan pencacahan yang sangat umum di kelas 12 (atau bahkan kelas 10/11) sebagai pengingat konsep dasar sebelum masuk ke permutasi/kombinasi yang lebih kompleks. |
 
-Run 2 — solusi: Menggunakan aturan perkalian untuk kejadian saling bebas: 5 kemeja x 4 celana x 3 pasang sepatu = 60 setelan.
-- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali situasi sebagai penerapan aturan perkalian dasar untuk kejadian yang saling bebas, yang merupakan prosedur standar dalam materi pencacahan.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda; tentukan banyak setelan berbeda yang dibuat
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan aturan perkalian untuk menentukan banyaknya kombinasi dari beberapa kategori objek.. Bukti: aturan perkalian untuk tiga kejadian saling bebas
-- Intended difficulty `classify/Easy`: Soal ini sangat mendasar, menggunakan angka kecil, dan hanya memerlukan satu langkah penerapan aturan perkalian tanpa kendala tambahan.. Bukti: 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu; tentukan banyak setelan berbeda
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar aturan perkalian (counting principle). |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi ini merupakan pengenalan dasar aturan pencacahan yang sudah dipelajari di awal bab, sehingga bagi siswa kelas 12 ini adalah prosedur yang sangat rutin. |
-
-Run 3 — solusi: Menggunakan aturan perkalian untuk kejadian yang saling bebas: 5 kemeja × 4 celana × 3 sepatu = 60 setelan.
-- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung aturan perkalian dasar untuk menentukan banyaknya kombinasi dari tiga kategori objek yang berbeda. Siswa hanya perlu mengenali situasi sebagai aturan perkalian dan melakukan operasi hitung sederhana.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda; tentukan banyak setelan berbeda yang dibuat
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami prinsip dasar aturan perkalian (fundamental counting principle) sebagai prosedur untuk menghitung kombinasi objek.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda
-- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari aturan perkalian dasar yang sangat familiar bagi siswa kelas 12. Tidak ada kendala tambahan atau skenario kompleks.. Bukti: 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu; tentukan banyak setelan berbeda
+Run 2 — solusi: Menggunakan aturan perkalian untuk kejadian yang saling bebas: 5 kemeja * 4 celana * 3 pasang sepatu = 60 setelan.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan menerapkan aturan perkalian dasar dalam kombinatorika untuk menentukan banyaknya kombinasi dari tiga kategori objek yang berbeda.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda; tentukan banyak setelan berbeda yang dibuat
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami prinsip dasar aturan perkalian (aturan pengisian tempat) sebagai prosedur standar untuk menghitung ruang sampel dari kejadian majemuk yang saling bebas.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda; tentukan banyak setelan berbeda yang dibuat
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan langsung menguji pemahaman aturan perkalian tanpa adanya kendala tambahan, syarat khusus, atau kompleksitas integrasi. Jalur penyelesaian sangat jelas dan familiar bagi siswa kelas 12.. Bukti: 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu; tentukan banyak setelan berbeda
 
 Profil difficulty run ini:
 
@@ -2983,15 +2935,60 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah soal dasar aturan pencacahan yang biasanya diperkenalkan di awal materi kombinatorika, sehingga tingkat kesulitannya rendah untuk siswa kelas 12. |
+| gradeRelativeRationale | Soal ini merupakan aplikasi langsung dari aturan perkalian dasar yang sudah dipelajari sejak jenjang SMP/awal SMA, sehingga bagi siswa kelas 12, ini dikategorikan sebagai soal yang sangat mudah. |
+
+Run 3 — solusi: Menggunakan aturan perkalian untuk kejadian yang saling bebas: 5 kemeja * 4 celana * 3 pasang sepatu = 60 setelan.
+- Domain kognitif `classify/applying`: Soal ini meminta siswa untuk menerapkan aturan perkalian dasar untuk menentukan banyaknya kombinasi setelan pakaian. Siswa hanya perlu mengenali bahwa setiap pemilihan item (kemeja, celana, sepatu) adalah kejadian yang saling bebas dan mengalikan jumlah pilihan masing-masing.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda; tentukan banyak setelan berbeda yang dibuat
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang aturan perkalian dalam kombinatorika dasar.. Bukti: Arkan memiliki 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu berbeda
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi jumlah objek di setiap kategori dan menerapkan aturan perkalian. Tidak ada kendala tambahan, syarat khusus, atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: 5 potong kemeja, 4 celana panjang, dan 3 pasang sepatu; tentukan banyak setelan berbeda
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang aturan perkalian (counting principle) untuk kejadian saling bebas. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan penerapan dasar aturan perkalian yang sudah dipelajari sejak jenjang SMP/awal SMA, sehingga sangat mudah bagi siswa kelas 12. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"applying": 2, "knowing": 1} | majority_2_of_3 / adjudicated | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4213`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Soal ini meminta siswa untuk menerapkan prinsip dasar aturan perkalian (multiplication principle) untuk menentukan banyaknya kombinasi dari tiga kategori objek yang saling bebas. Ini adalah penerapan langsung dari konsep dasar pencacahan.
+- Dimensi pengetahuan `procedural`: Siswa perlu memahami dan menggunakan prosedur standar aturan perkalian untuk menghitung ruang sampel dari kejadian majemuk yang saling bebas.
+- Intended difficulty `Easy`: Soal ini sangat mendasar dan rutin. Siswa hanya perlu mengidentifikasi jumlah objek di setiap kategori dan mengalikannya. Tidak ada kendala tambahan, syarat khusus, atau kebutuhan untuk merencanakan strategi yang kompleks.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar aturan perkalian (multiplication principle) untuk kejadian saling bebas. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan latihan dasar aturan pencacahan yang sangat umum dan sudah dipelajari sejak jenjang SMP/awal SMA, sehingga bagi siswa kelas 12, ini dikategorikan sebagai soal yang sangat mudah. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3023,9 +3020,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 22. Soal `cd21884f9b39f41443039e69`
@@ -3040,32 +3037,32 @@ Swalayan AAmart mengeluarkan kupon hadiah dengan kode berbentuk bilangan yang di
 | D | 20 kupon |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `21`.
-Solusi minimum hasil AI: Total bilangan > 62000: 1) Digit pertama 8: sisa {1,2,2,6} disusun 4!/2! = 12. 2) Digit pertama 6, kedua 8: sisa {1,2,2} disusun 3!/2! = 3. 3) Digit pertama 6, kedua 2: sisa {1,2,8} disusun 3! = 6. Total = 12 + 3 + 6 = 21.
+Solusi minimum hasil AI: Total permutasi > 62000: (1) Digit pertama 8: sisa {1,2,2,6} -> 4!/2! = 12. (2) Digit pertama 6, kedua 8: sisa {1,2,2} -> 3!/2! = 3. (3) Digit pertama 6, kedua 2: sisa {1,2,6} -> 3! = 6. Total = 12 + 3 + 6 = 21.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3f1a45436492602dfdb52068668d5ff482e84031f222090dfc767e108861ce86`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fd224f12eb942015f901692ebee464e2553b65a157fcf623d418b68752e3306b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 3076 |
-| 2 | success | valid / verified | applying | procedural | Medium | 3620 |
-| 3 | success | valid / verified | applying | procedural | Medium | 3589 |
+| 1 | success | valid / verified | applying | procedural | Medium | 4279 |
+| 2 | success | valid / verified | applying | procedural | Medium | 2912 |
+| 3 | success | valid / verified | applying | procedural | Medium | 2964 |
 
-Run 1 — solusi: Total bilangan > 62000: 1) Digit pertama 8: sisa {1,2,2,6} disusun 4!/2! = 12. 2) Digit pertama 6, kedua 8: sisa {1,2,2} disusun 3!/2! = 3. 3) Digit pertama 6, kedua 2: sisa {1,2,8} disusun 3! = 6. Total = 12 + 3 + 6 = 21.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus permutasi dengan unsur yang sama dan melakukan partisi kasus berdasarkan digit pertama dan kedua untuk memenuhi syarat lebih besar dari 62000.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kode lebih besar daripada 62000
-- Dimensi pengetahuan `classify/procedural`: Memerlukan pemahaman prosedural tentang permutasi unsur sama dan prinsip aturan penjumlahan untuk kasus-kasus yang terpisah.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kode lebih besar daripada 62000
-- Intended difficulty `classify/Medium`: Soal memerlukan pemecahan masalah menjadi beberapa kasus (digit pertama 8, digit pertama 6-8, digit pertama 6-2) dan ketelitian dalam menangani angka yang berulang (angka 2).. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kode lebih besar daripada 62000
+Run 1 — solusi: Total permutasi > 62000: (1) Digit pertama 8: sisa {1,2,2,6} -> 4!/2! = 12. (2) Digit pertama 6, kedua 8: sisa {1,2,2} -> 3!/2! = 3. (3) Digit pertama 6, kedua 2: sisa {1,2,6} -> 3! = 6. Total = 12 + 3 + 6 = 21.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus permutasi dengan unsur yang sama dan melakukan analisis kasus (pembagian kasus berdasarkan digit pertama dan kedua) untuk memenuhi batasan nilai > 62000.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kupon dengan kode lebih besar daripada 62000
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung permutasi dengan objek berulang dan menerapkannya dalam konteks pembatasan nilai.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kupon dengan kode lebih besar daripada 62000
+- Intended difficulty `classify/Medium`: Soal memerlukan perencanaan langkah-langkah sistematis (analisis kasus) dan ketelitian dalam menangani pengulangan angka. Tingkat kesulitan sedang karena siswa harus memecah masalah menjadi sub-kasus yang saling lepas.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kupon dengan kode lebih besar daripada 62000
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Permutasi unsur sama, aturan perkalian, dan prinsip dasar pencacahan. |
+| expectedPrerequisite | Permutasi dengan unsur yang sama (objek berulang). |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | True |
@@ -3075,18 +3072,39 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai dengan standar kompetensi kelas 12 mengenai permutasi dengan unsur yang sama dan penyelesaian masalah kontekstual. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan analisis kasus pada permutasi dengan unsur sama. Soal ini memerlukan ketelitian dalam membagi kasus dan menghitung permutasi setiap kasus. |
 
-Run 2 — solusi: Total permutations > 62000: (1) Starts with 8: 4!/2! = 12. (2) Starts with 68: 3!/2! = 3. (3) Starts with 62: 3! = 6. Total = 12 + 3 + 6 = 21.
-- Domain kognitif `classify/applying`: Siswa perlu memilih prosedur permutasi dengan pengulangan dan menerapkannya pada kasus-kasus yang berbeda (awalan 8, 68, dan 62) untuk mendapatkan total susunan.. Bukti: disusun berdasarkan kodenya mulai dari yang terkecil sampai dengan yang terbesar; kupon dengan kode lebih besar daripada 62000
-- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman algoritma permutasi dengan objek berulang (angka 2) dalam konteks penyusunan bilangan.. Bukti: angka 1, 2, 2, 6, dan 8
-- Intended difficulty `classify/Medium`: Soal dikategorikan Medium karena memerlukan pemecahan masalah menjadi beberapa kasus (awalan 8, 68, 62) dan penanganan objek berulang, yang merupakan langkah rutin namun memerlukan ketelitian.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; lebih besar daripada 62000
+Run 2 — solusi: Digit tersedia: {1, 2, 2, 6, 8}. Total permutasi 5 digit: 5!/2! = 60. Kode > 62000: 1) Awalan 8: sisa {1, 2, 2, 6} disusun 4!/2! = 12. 2) Awalan 68: sisa {1, 2, 2} disusun 3!/2! = 3. 3) Awalan 62: sisa {1, 2, 8} disusun 3! = 6. Total = 12 + 3 + 6 = 21.
+- Domain kognitif `classify/applying`: Siswa harus mengidentifikasi kasus-kasus yang memenuhi syarat (lebih besar dari 62000) berdasarkan posisi digit pertama dan kedua, serta menerapkan rumus permutasi dengan objek berulang (multiset) untuk setiap kasus tersebut.. Bukti: disusun berdasarkan kodenya mulai dari yang terkecil sampai dengan yang terbesar; kupon dengan kode lebih besar daripada 62000
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman prosedural tentang permutasi dengan pengulangan dan penerapan prinsip aturan perkalian/penjumlahan untuk memecah masalah menjadi kasus-kasus yang saling lepas.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; permutasi dengan objek berulang
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan perencanaan langkah (memecah menjadi kasus awalan 8, 68, dan 62) dan ketelitian dalam menerapkan rumus permutasi dengan objek berulang. Meskipun prosedurnya familiar, siswa harus mengelola kendala digit berulang (angka 2) secara konsisten di setiap kasus.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kode lebih besar daripada 62000
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Permutasi dengan objek berulang |
+| expectedPrerequisite | Permutasi dengan objek berulang (multiset), aturan penjumlahan. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan analisis kasus pada permutasi. Kompleksitas terletak pada penanganan angka 2 yang berulang dan pembagian kasus yang sistematis. |
+
+Run 3 — solusi: Total permutasi dari {1, 2, 2, 6, 8} adalah 5!/2! = 60. Kode > 62000: (1) Awalan 8: sisa {1, 2, 2, 6} disusun 4!/2! = 12. (2) Awalan 6, digit kedua 8: sisa {1, 2, 2} disusun 3!/2! = 3. (3) Awalan 6, digit kedua 2: sisa {1, 2, 8} disusun 3! = 6. Total = 12 + 3 + 6 = 21.
+- Domain kognitif `classify/applying`: Siswa harus menerapkan prinsip permutasi dengan unsur yang sama (multiset) dan melakukan analisis kasus berdasarkan posisi digit (place value) untuk menentukan banyaknya susunan yang memenuhi syarat lebih besar dari 62000. Ini memerlukan penerapan prosedur yang sudah dipelajari dalam konteks yang sedikit lebih kompleks.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kupon dengan kode lebih besar daripada 62000
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang permutasi dengan pengulangan dan bagaimana mengintegrasikannya dengan logika urutan bilangan (place value).. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kupon dengan kode lebih besar daripada 62000
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan perencanaan langkah-langkah sistematis (analisis kasus berdasarkan digit pertama dan kedua) serta penerapan rumus permutasi dengan unsur yang sama. Siswa harus mengelola beberapa kendala (angka 2 berulang) dan membagi masalah menjadi sub-kasus yang saling lepas, yang merupakan tuntutan standar untuk kelas 12.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kupon dengan kode lebih besar daripada 62000
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Permutasi dengan unsur yang sama, aturan perkalian, dan konsep nilai tempat bilangan. |
 | dependentSteps | 3 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -3096,28 +3114,7 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena melibatkan analisis kasus pada permutasi yang merupakan materi standar. |
-
-Run 3 — solusi: Total permutations of {1, 2, 2, 6, 8} starting with 8: 4!/2! = 12. Starting with 68: 3!/2! = 3. Starting with 62: 3! = 6. Total = 12 + 3 + 6 = 21.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus permutasi dengan pengulangan dan melakukan analisis kasus berdasarkan batasan nilai (lebih besar dari 62000).. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; kupon dengan kode lebih besar daripada 62000
-- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman prosedur permutasi dengan objek yang sama (angka 2 berulang) dan urutan.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemecahan masalah menjadi beberapa kasus (berdasarkan digit pertama dan kedua) serta penerapan rumus permutasi dengan pengulangan yang tepat.. Bukti: disusun dari angka 1, 2, 2, 6, dan 8; lebih besar daripada 62000
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Permutasi dengan pengulangan |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 5 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan analisis kasus sistematis pada masalah kombinatorika. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan analisis kasus pada masalah pencacahan. Tingkat kesulitan ini sesuai karena memerlukan ketelitian dalam membagi kasus dan menerapkan rumus permutasi yang tepat tanpa bantuan langkah-langkah eksplisit. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -3174,32 +3171,32 @@ Ada tujuh orang siswa akan membentuk barisan. Tentukan banyaknya susunan barisan
 | D | 49 susunan |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Banyaknya susunan 7 orang siswa dalam barisan adalah permutasi dari 7 objek berbeda, yaitu 7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5.040.
+Solusi minimum hasil AI: Banyaknya susunan barisan dari 7 orang siswa adalah permutasi dari 7 objek berbeda, yaitu 7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5.040.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5c5c94d53714656a5746b5a2c34e8eedfa34028dfece49c67764054d94802bc8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bd3a8e59e8b8f022c7bcde5df866b4a1007e099ee08d4e6e235eef500a2be50c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | knowing | conceptual | Easy | 1952 |
-| 2 | success | valid / verified | knowing | procedural | Easy | 1957 |
-| 3 | success | valid / verified | knowing | procedural | Easy | 1998 |
+| 1 | success | valid / verified | knowing | procedural | Easy | 3278 |
+| 2 | success | valid / verified | knowing | procedural | Easy | 3131 |
+| 3 | success | valid / verified | knowing | procedural | Easy | 3195 |
 
-Run 1 — solusi: Banyaknya susunan 7 orang dalam barisan adalah permutasi dari 7 objek berbeda, yaitu 7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5.040.
-- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung rumus permutasi n objek (n!) untuk menyusun 7 orang dalam barisan. Siswa hanya perlu mengenali situasi sebagai permutasi linear sederhana dan menghitung faktorialnya.. Bukti: tujuh orang siswa akan membentuk barisan; banyaknya susunan barisan yang mungkin terjadi
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep permutasi linear sebagai cara menyusun n objek berbeda dalam urutan tertentu.. Bukti: tujuh orang siswa akan membentuk barisan
-- Intended difficulty `classify/Easy`: Soal ini adalah prosedur standar yang sangat familiar bagi siswa kelas 12. Tidak ada kendala tambahan, syarat khusus, atau kompleksitas dalam penyusunan.. Bukti: tujuh orang siswa akan membentuk barisan
+Run 1 — solusi: Banyaknya susunan barisan dari 7 orang siswa adalah permutasi dari 7 objek berbeda, yaitu 7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5.040.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali bahwa menyusun n objek dalam barisan adalah permutasi n! dan menerapkan rumus tersebut secara langsung tanpa modifikasi.. Bukti: Ada tujuh orang siswa akan membentuk barisan; Tentukan banyaknya susunan barisan yang mungkin terjadi
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang rumus permutasi dasar untuk menyusun objek.. Bukti: Tentukan banyaknya susunan barisan yang mungkin terjadi
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung, tidak ada syarat tambahan, kendala, atau konteks yang kompleks. Siswa hanya perlu menghitung 7!.. Bukti: Ada tujuh orang siswa akan membentuk barisan; Tentukan banyaknya susunan barisan yang mungkin terjadi
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar faktorial dan permutasi linear. |
+| expectedPrerequisite | Konsep dasar permutasi n objek (n!) |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3208,19 +3205,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah soal dasar permutasi yang merupakan materi awal kelas 12. Tidak memerlukan integrasi strategi atau analisis kendala. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Soal ini merupakan penerapan langsung rumus permutasi dasar yang sudah dipelajari di kelas 12, tanpa variasi atau kendala tambahan. |
 
-Run 2 — solusi: Banyaknya susunan barisan dari 7 orang siswa yang berbeda adalah permutasi dari 7 objek, yaitu 7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5.040.
-- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung rumus permutasi n objek (n!) untuk n=7. Siswa hanya perlu mengenali situasi sebagai permutasi linear dan melakukan perhitungan faktorial dasar.. Bukti: tujuh orang siswa akan membentuk barisan; banyaknya susunan barisan yang mungkin terjadi
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang cara menghitung permutasi linear dari sekumpulan objek yang berbeda.. Bukti: tujuh orang siswa akan membentuk barisan
-- Intended difficulty `classify/Easy`: Soal ini sangat standar dan langsung, hanya memerlukan satu langkah perhitungan faktorial tanpa kendala tambahan atau variasi.. Bukti: tujuh orang siswa akan membentuk barisan
+Run 2 — solusi: Banyaknya susunan 7 orang dalam barisan adalah permutasi 7 objek, yaitu 7! = 7 x 6 x 5 x 4 x 3 x 2 x 1 = 5.040.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta penerapan langsung rumus permutasi n objek (n!) tanpa ada syarat tambahan atau kendala yang perlu dipertimbangkan.. Bukti: Ada tujuh orang siswa akan membentuk barisan. Tentukan banyaknya susunan barisan yang mungkin terjadi.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritma faktorial untuk menghitung permutasi dari 7 objek yang berbeda.. Bukti: Tentukan banyaknya susunan barisan yang mungkin terjadi.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin, hanya melibatkan satu langkah perhitungan faktorial dasar tanpa kendala atau syarat tambahan.. Bukti: Ada tujuh orang siswa akan membentuk barisan.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar faktorial dan permutasi linear. |
+| expectedPrerequisite | Konsep permutasi dasar dan faktorial. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3229,19 +3226,19 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah soal dasar permutasi yang biasanya diperkenalkan di awal materi kombinatorika kelas 12, tidak memerlukan analisis kompleks. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Materi permutasi dasar adalah standar kelas 12, dan soal ini tidak memiliki kompleksitas tambahan. |
 
-Run 3 — solusi: Banyaknya susunan barisan dari 7 orang siswa adalah permutasi 7 objek berbeda, yaitu 7! = 7 x 6 x 5 x 4 x 3 x 2 x 1 = 5.040.
-- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung rumus permutasi n objek (n!) untuk menyusun barisan. Siswa hanya perlu mengenali bahwa ini adalah masalah permutasi dasar dan melakukan perhitungan faktorial.. Bukti: Ada tujuh orang siswa akan membentuk barisan. Tentukan banyaknya susunan barisan yang mungkin terjadi.
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep permutasi (konseptual) dan menerapkan algoritma faktorial (prosedural) untuk menyelesaikan masalah.. Bukti: Tentukan banyaknya susunan barisan yang mungkin terjadi.
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur standar yang sangat familiar bagi siswa kelas 12. Tidak ada kendala tambahan, syarat khusus, atau kompleksitas yang memerlukan strategi nonrutin.. Bukti: Ada tujuh orang siswa akan membentuk barisan.
+Run 3 — solusi: Banyaknya susunan 7 orang dalam barisan adalah permutasi 7 objek, yaitu 7! = 7 x 6 x 5 x 4 x 3 x 2 x 1 = 5.040.
+- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung rumus permutasi dasar (n!) untuk menyusun n objek dalam barisan linear. Tidak ada syarat tambahan, kendala, atau kompleksitas yang memerlukan penalaran lebih lanjut.. Bukti: Ada tujuh orang siswa akan membentuk barisan.; Tentukan banyaknya susunan barisan yang mungkin terjadi.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu mengetahui dan menerapkan algoritma faktorial untuk permutasi linear sebagai prosedur standar.. Bukti: Tentukan banyaknya susunan barisan yang mungkin terjadi.
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung rumus permutasi n objek tanpa kendala tambahan, sangat rutin untuk kelas 12.. Bukti: Ada tujuh orang siswa akan membentuk barisan.; Tentukan banyaknya susunan barisan yang mungkin terjadi.
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep faktorial dan permutasi dasar. |
+| expectedPrerequisite | Konsep dasar permutasi linear (n!) |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3250,38 +3247,16 @@ Profil difficulty run ini:
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini adalah latihan dasar permutasi yang rutin diberikan di kelas 12, tidak memerlukan integrasi konsep yang kompleks. |
+| distractorQuality | weak |
+| gradeRelativeRationale | Soal ini adalah soal permutasi dasar yang tidak memerlukan perencanaan strategi atau integrasi kendala, sehingga dikategorikan mudah bagi siswa kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"knowing": 3} | unanimous_3_0 / adjudicated | knowing |
-| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3317`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `knowing`: Soal ini meminta penerapan langsung rumus permutasi n objek (n!) untuk menyusun 7 orang dalam barisan. Siswa hanya perlu mengenali situasi sebagai permutasi linear sederhana dan melakukan perhitungan faktorial.
-- Dimensi pengetahuan `procedural`: Siswa perlu memahami konsep permutasi linear sebagai cara menyusun n objek berbeda dalam urutan tertentu dan menerapkan algoritma faktorial.
-- Intended difficulty `Easy`: Soal ini adalah prosedur standar yang sangat familiar bagi siswa kelas 12. Tidak ada kendala tambahan, syarat khusus, atau kompleksitas dalam penyusunan.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar faktorial dan permutasi linear. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 1 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah soal dasar permutasi yang merupakan materi awal kelas 12. Tidak memerlukan integrasi strategi atau analisis kendala. |
+| Domain kognitif | {"knowing": 3} | unanimous_3_0 / unanimous | knowing |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3330,26 +3305,26 @@ Terdapat sepuluh orang pergi ketempat wisata dengan mengendarai 3 mobil berkapas
 | D | 700 cara |
 
 Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `1.050`.
-Solusi minimum hasil AI: Total penumpang 7 orang. Kapasitas sisa tiap mobil 3 kursi. Syarat: minimal 1 penumpang per mobil. Partisi 7 ke dalam 3 kelompok (maks 3, min 1): (3,3,1) dan (3,2,2). Untuk (3,3,1): ada 3 permutasi posisi mobil (3,3,1; 3,1,3; 1,3,3). Banyak cara = 3 * (7!/(3!3!1!)) = 3 * 140 = 420. Untuk (3,2,2): ada 3 permutasi posisi mobil (3,2,2; 2,3,2; 2,2,3). Banyak cara = 3 * (7!/(3!2!2!)) = 3 * 210 = 630. Total = 420 + 630 = 1.050.
+Solusi minimum hasil AI: Total penumpang = 7. Kapasitas sisa tiap mobil = 3. Syarat: tiap mobil minimal 1 penumpang. Partisi 7 ke 3 mobil (maks 3): Pola (3,3,1) ada 3 permutasi mobil: 3 * (7C3 * 4C3 * 1C1) = 3 * 35 * 4 = 420. Pola (3,2,2) ada 3 permutasi mobil: 3 * (7C3 * 4C2 * 2C2) = 3 * 35 * 6 = 630. Total = 420 + 630 = 1.050.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5b40022c47ed0a22d9964a163ca4411d303d8d5d7f2e3578cffaf0b4e9f861ac`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bd192ba4298c2042e86859f587176058520c5509e23395d3921dc12890031b1f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 2384 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2442 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2362 |
+| 1 | success | valid / verified | applying | procedural | Hard | 3005 |
+| 2 | success | valid / verified | reasoning | conceptual | Hard | 3044 |
+| 3 | success | valid / verified | reasoning | procedural | Hard | 2940 |
 
-Run 1 — solusi: Total penumpang 7 orang. Kapasitas sisa tiap mobil 3 kursi. Syarat: minimal 1 penumpang per mobil. Partisi 7 ke dalam 3 kelompok (maks 3, min 1): (3,3,1) dan (3,2,2). Untuk (3,3,1): ada 3 permutasi posisi mobil (3,3,1; 3,1,3; 1,3,3). Banyak cara = 3 * (7!/(3!3!1!)) = 3 * 140 = 420. Untuk (3,2,2): ada 3 permutasi posisi mobil (3,2,2; 2,3,2; 2,2,3). Banyak cara = 3 * (7!/(3!2!2!)) = 3 * 210 = 630. Total = 420 + 630 = 1.050.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi kendala (kapasitas dan syarat minimal) dan menyusun strategi partisi bilangan (7 penumpang ke 3 mobil) sebelum menerapkan rumus kombinasi/permutasi. Ini melibatkan pemilihan prosedur yang tepat untuk kasus partisi dengan batasan.. Bukti: setiap mobil dikemudikan oleh pemiliknya; di setiap mobil minimal ada satu penumpang selain pengemudi; banyaknya kemungkinan komposisi berbeda untuk menempatkan penumpang
-- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prinsip kombinatorika (partisi dan permutasi kelompok) untuk menyelesaikan masalah alokasi dengan batasan tertentu.. Bukti: banyaknya kemungkinan komposisi berbeda untuk menempatkan penumpang
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman tentang kendala (kapasitas dan syarat minimal) dan kemampuan memecah masalah menjadi kasus-kasus partisi yang mungkin (3,3,1 dan 3,2,2). Ini adalah tugas rutin yang memerlukan pemilihan prosedur yang cermat.. Bukti: 3 mobil berkapasitas 4 orang; tiga orang diantarannya adalah pemilik mobil; di setiap mobil minimal ada satu penumpang selain pengemudi
+Run 1 — solusi: Total penumpang = 10 - 3 = 7. Kapasitas sisa tiap mobil = 4 - 1 = 3. Syarat: tiap mobil minimal 1 penumpang. Partisi 7 penumpang ke 3 mobil (kapasitas sisa 3,3,3): Pola (3,3,1) ada 3 permutasi mobil: 3 * (7!/(3!3!1!)) = 3 * 140 = 420. Pola (3,2,2) ada 3 permutasi mobil: 3 * (7!/(3!2!2!)) = 3 * 210 = 630. Total = 420 + 630 = 1.050.
+- Domain kognitif `classify/applying`: Siswa harus mengidentifikasi kendala (kapasitas mobil dan syarat minimal penumpang), melakukan partisi bilangan (integer partition) untuk membagi 7 penumpang ke 3 mobil, dan menerapkan rumus permutasi/kombinasi untuk setiap kasus. Ini adalah penerapan konsep kombinatorika pada konteks yang memerlukan perencanaan langkah.. Bukti: setiap mobil dikemudikan oleh pemiliknya; di setiap mobil minimal ada satu penumpang selain pengemudi; banyaknya kemungkinan komposisi berbeda untuk menempatkan penumpang
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prinsip dasar kombinatorika (permutasi/kombinasi) dan teknik partisi untuk menyelesaikan masalah pembagian objek ke dalam kelompok dengan batasan tertentu.. Bukti: banyaknya kemungkinan komposisi berbeda; minimal ada satu penumpang
+- Intended difficulty `classify/Hard`: Soal ini dikategorikan Hard karena siswa harus merencanakan sendiri pembagian kasus (partisi 7 ke 3 mobil dengan batasan kapasitas 3 dan minimal 1). Siswa perlu mengintegrasikan kendala kapasitas dan syarat minimal penumpang, serta melakukan perhitungan untuk setiap skenario yang mungkin (3,3,1 dan 3,2,2) tanpa bantuan langkah eksplisit.. Bukti: 3 mobil berkapasitas 4 orang; tiga orang diantarannya adalah pemilik mobil; setiap mobil dikemudikan oleh pemiliknya; di setiap mobil minimal ada satu penumpang selain pengemudi
 
 Profil difficulty run ini:
 
@@ -3357,7 +3332,28 @@ Profil difficulty run ini:
 |---|---|
 | expectedPrerequisite | Prinsip dasar kombinatorika, permutasi, dan partisi bilangan. |
 | dependentSteps | 4 |
-| routineStatus | routine_selection |
+| routineStatus | nonroutine_strategy |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 3 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menangani masalah kombinatorika dengan kendala ganda. Kesulitan utama terletak pada perencanaan kasus (partisi) yang harus dibangun sendiri oleh siswa, bukan sekadar menghitung rumus. |
+
+Run 2 — solusi: Terdapat 7 penumpang yang harus dibagi ke 3 mobil. Kapasitas sisa tiap mobil adalah 3 (karena 1 kursi dipakai pengemudi). Syarat minimal 1 penumpang per mobil. Kemungkinan partisi 7 penumpang ke 3 mobil (maks 3 per mobil): 1) Pola (3,3,1): Ada 3 permutasi posisi mobil (3,3,1; 3,1,3; 1,3,3). Banyak cara: 3 * (7C3 * 4C3 * 1C1) = 3 * (35 * 4 * 1) = 420. 2) Pola (3,2,2): Ada 3 permutasi posisi mobil (3,2,2; 2,3,2; 2,2,3). Banyak cara: 3 * (7C3 * 4C2 * 2C2) = 3 * (35 * 6 * 1) = 630. Total = 420 + 630 = 1.050.
+- Domain kognitif `classify/reasoning`: Siswa harus mengidentifikasi kendala (kapasitas mobil, syarat minimal penumpang) dan merencanakan strategi partisi (kasus pola pembagian) untuk menyelesaikan masalah kombinatorika yang tidak rutin.. Bukti: setiap mobil dikemudikan oleh pemiliknya; di setiap mobil minimal ada satu penumpang selain pengemudi; banyaknya kemungkinan komposisi berbeda untuk menempatkan penumpang
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip kombinasi dan bagaimana menerapkannya dalam skenario partisi dengan kendala yang saling berinteraksi.. Bukti: banyaknya kemungkinan komposisi berbeda; minimal ada satu penumpang selain pengemudi
+- Intended difficulty `classify/Hard`: Soal ini menuntut perencanaan strategis untuk membagi 7 penumpang ke dalam 3 mobil dengan kendala kapasitas (maks 3 penumpang per mobil) dan syarat minimal (1 penumpang per mobil). Siswa harus memecah masalah menjadi kasus-kasus partisi yang mungkin (3,3,1 dan 3,2,2) dan menghitung kombinasi untuk setiap kasus. Interaksi kendala ini membuat perencanaan langkah menjadi krusial.. Bukti: 3 mobil berkapasitas 4 orang; tiga orang diantarannya adalah pemilik mobil; minimal ada satu penumpang selain pengemudi
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Prinsip kombinasi dasar dan teknik partisi/pengelompokan. |
+| dependentSteps | 4 |
+| routineStatus | nonroutine_strategy |
 | strategySelection | True |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
@@ -3365,57 +3361,58 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Masalah ini menuntut ketelitian dalam membagi 7 penumpang ke dalam 3 wadah dengan batasan kapasitas dan syarat minimal, yang merupakan standar kompetensi kelas 12. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menangani masalah kombinatorika dengan kendala ganda. Soal ini menuntut kemampuan memecah masalah menjadi kasus (case-based reasoning) yang merupakan standar kesulitan tinggi untuk materi pencacahan di tingkat SMA. |
 
-Run 2 — solusi: Tersisa 7 penumpang untuk 3 mobil. Kapasitas tambahan tiap mobil adalah 3 kursi. Syarat: minimal 1 penumpang per mobil. Kemungkinan distribusi (penumpang per mobil): (3,3,1) atau (3,2,2). Untuk (3,3,1): ada 3 permutasi posisi mobil, yaitu (3,3,1), (3,1,3), (1,3,3). Banyak cara: 3 * (7! / (3!3!1!)) = 3 * 420 = 1260. Tunggu, koreksi: (3,3,1) berarti 3 mobil, 2 mobil isi 3, 1 mobil isi 1. Banyak cara = 3C1 * 7C3 * 4C3 * 1C1 = 3 * 35 * 4 = 420. Untuk (3,2,2): 3 mobil, 1 mobil isi 3, 2 mobil isi 2. Banyak cara = 3C1 * 7C3 * 4C2 * 2C2 = 3 * 35 * 6 = 630. Total = 420 + 630 = 1050.
-- Domain kognitif `classify/applying`: Siswa harus mengidentifikasi kendala (kapasitas dan syarat minimal penumpang), membagi kasus distribusi penumpang (partisi bilangan 7 ke dalam 3 slot dengan batas 1-3), dan menerapkan rumus kombinasi untuk setiap kasus. Ini memerlukan pemilihan prosedur yang tepat dan integrasi beberapa langkah rutin.. Bukti: setiap mobil dikemudikan oleh pemiliknya; di setiap mobil minimal ada satu penumpang selain pengemudi; banyaknya kemungkinan komposisi berbeda untuk menempatkan penumpang
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami prinsip dasar kombinasi dan bagaimana menerapkannya dalam konteks pembagian kelompok dengan batasan (constraint) tertentu.. Bukti: banyaknya kemungkinan komposisi berbeda; minimal ada satu penumpang selain pengemudi
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena melibatkan beberapa langkah rutin yang saling terkait (partisi bilangan dan kombinasi) serta pemilihan prosedur yang tepat untuk menangani kendala kapasitas dan syarat minimal penumpang.. Bukti: 3 mobil berkapasitas 4 orang; tiga orang diantarannya adalah pemilik mobil; minimal ada satu penumpang selain pengemudi
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar kombinasi, permutasi, dan partisi bilangan. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu memecahkan masalah kombinatorika dengan kendala sederhana melalui pembagian kasus. |
-
-Run 3 — solusi: Tersisa 7 penumpang untuk 3 mobil (kapasitas tambahan 3 per mobil). Syarat: minimal 1 penumpang per mobil. Kemungkinan partisi 7 ke dalam 3 mobil (maks 3): (3,3,1) dan (3,2,2). Untuk (3,3,1): ada 3 permutasi mobil, cara susun = 3 * (7!/(3!3!1!)) = 3 * 140 = 420. Untuk (3,2,2): ada 3 permutasi mobil, cara susun = 3 * (7!/(3!2!2!)) = 3 * 210 = 630. Total = 420 + 630 = 1.050.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi kendala (kapasitas dan syarat minimal), menentukan partisi bilangan yang mungkin (3,3,1 dan 3,2,2), dan menerapkan rumus kombinasi/permutasi grup untuk menghitung susunan yang valid. Ini melibatkan pemilihan prosedur yang tepat untuk situasi rutin yang dimodifikasi.. Bukti: setiap mobil dikemudikan oleh pemiliknya; di setiap mobil minimal ada satu penumpang selain pengemudi; banyaknya kemungkinan komposisi berbeda untuk menempatkan penumpang
-- Dimensi pengetahuan `classify/procedural`: Siswa harus memahami prinsip dasar pencacahan dan bagaimana menerapkan kombinasi pada pembagian kelompok dengan batasan kapasitas dan syarat minimum.. Bukti: banyaknya kemungkinan komposisi berbeda; minimal ada satu penumpang
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak bisa langsung menggunakan rumus kombinasi standar. Mereka harus melakukan analisis kasus (partisi bilangan) untuk memenuhi kendala kapasitas dan syarat minimal, lalu menghitung permutasi kelompok yang mungkin. Ini memerlukan integrasi beberapa langkah rutin.. Bukti: 3 mobil berkapasitas 4 orang; tiga orang diantarannya adalah pemilik mobil; minimal ada satu penumpang selain pengemudi
+Run 3 — solusi: Terdapat 7 penumpang yang harus dibagi ke 3 mobil. Kapasitas sisa tiap mobil adalah 3 (karena 1 kursi dipakai pengemudi). Syarat minimal 1 penumpang per mobil. Kemungkinan distribusi penumpang (mobil 1, mobil 2, mobil 3): 1) (3,3,1) dan permutasi: 3 x (7!/(3!3!1!)) = 3 x 140 = 420. 2) (3,2,2) dan permutasi: 3 x (7!/(3!2!2!)) = 3 x 210 = 630. Total = 420 + 630 = 1.050.
+- Domain kognitif `classify/reasoning`: Siswa harus mengidentifikasi kendala (kapasitas mobil, syarat minimal penumpang) dan merancang strategi partisi bilangan (7 penumpang ke 3 mobil) untuk menghitung komposisi yang valid. Ini memerlukan pemilihan prosedur kombinatorik yang tepat dalam konteks yang tidak rutin.. Bukti: setiap mobil dikemudikan oleh pemiliknya; di setiap mobil minimal ada satu penumpang selain pengemudi; banyaknya kemungkinan komposisi berbeda untuk menempatkan penumpang
+- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prinsip kombinasi dan partisi bilangan untuk menyelesaikan masalah pencacahan yang melibatkan kendala-kendala yang saling berinteraksi.. Bukti: banyaknya kemungkinan komposisi berbeda untuk menempatkan penumpang
+- Intended difficulty `classify/Hard`: Soal ini menuntut perencanaan strategis untuk memecah masalah menjadi kasus-kasus partisi yang mungkin (3,3,1 dan 3,2,2) dengan mempertimbangkan kendala kapasitas dan syarat minimal. Siswa harus mengintegrasikan prinsip kombinasi dengan pembatasan fisik, yang merupakan tuntutan tinggi bagi kelas 12.. Bukti: 3 mobil berkapasitas 4 orang; tiga orang diantarannya adalah pemilik mobil; di setiap mobil minimal ada satu penumpang selain pengemudi
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Prinsip dasar pencacahan, kombinasi, dan partisi bilangan. |
+| expectedPrerequisite | Prinsip dasar kombinasi, partisi bilangan, dan aturan perkalian. |
 | dependentSteps | 4 |
-| routineStatus | routine_selection |
+| routineStatus | nonroutine_strategy |
 | strategySelection | True |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
+| interactingConstraints | 3 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menangani masalah kombinatorika dengan kendala tambahan seperti ini sebagai bagian dari materi peluang/pencacahan. |
+| distractorQuality | strong |
+| gradeRelativeRationale | Tingkat kesulitan tinggi karena siswa harus membangun sendiri model partisi yang memenuhi semua kendala (kapasitas dan syarat minimal) tanpa bantuan langkah-langkah eksplisit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
+| Domain kognitif | {"applying": 1, "reasoning": 2} | majority_2_of_3 / adjudicated | reasoning |
+| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Hard": 3} | unanimous_3_0 / adjudicated | Hard |
+
+Adjudikasi AI: `success`; token `5148`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `reasoning`: Siswa harus mengidentifikasi kendala (kapasitas mobil dan syarat minimal penumpang), melakukan partisi bilangan untuk membagi 7 penumpang ke 3 mobil, dan menerapkan rumus kombinasi untuk setiap kasus. Ini adalah penerapan konsep kombinatorika pada konteks yang memerlukan perencanaan langkah.
+- Dimensi pengetahuan `procedural`: Siswa menggunakan prinsip dasar kombinatorika (kombinasi) dan teknik partisi untuk menyelesaikan masalah pembagian objek ke dalam kelompok dengan batasan tertentu.
+- Intended difficulty `Hard`: Soal ini dikategorikan Hard karena siswa harus merencanakan sendiri pembagian kasus (partisi 7 ke 3 mobil dengan batasan kapasitas 3 dan minimal 1). Siswa perlu mengintegrasikan kendala kapasitas dan syarat minimal penumpang, serta melakukan perhitungan untuk setiap skenario yang mungkin tanpa bantuan langkah eksplisit.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Prinsip dasar kombinatorika, permutasi, dan partisi bilangan. |
+| dependentSteps | 4 |
+| routineStatus | nonroutine_strategy |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 3 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menangani masalah kombinatorika dengan kendala ganda. Kesulitan utama terletak pada perencanaan kasus (partisi) yang harus dibangun sendiri oleh siswa, bukan sekadar menghitung rumus. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3447,9 +3444,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "procedural", "intendedDifficulty": "Hard"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Hard", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 25. Soal `42af439f72392b9d1118073a`
@@ -3464,26 +3461,26 @@ Pada suatu Olimpiade Matematika, peserta diwajibkan mengerjakan 5 soal dari 8 so
 | D | 56 |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Masalah ini adalah pemilihan 5 soal dari 8 soal yang tersedia tanpa memperhatikan urutan, sehingga menggunakan rumus kombinasi C(n, r) = n! / (r!(n-r)!). Maka, C(8, 5) = 8! / (5! * 3!) = (8 * 7 * 6) / (3 * 2 * 1) = 56.
+Solusi minimum hasil AI: Menggunakan rumus kombinasi C(n, r) = n! / (r!(n-r)!) untuk memilih 5 soal dari 8 soal. C(8, 5) = 8! / (5!(8-5)!) = (8 x 7 x 6) / (3 x 2 x 1) = 56.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `da951f000cb547a35db970de8cf39108e21d2a45fd87525a89ca6d69fdb2977e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d4c46df30aa920260b8f9fb21989649e2ca323445cc995a5d9734c779165712a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2021 |
-| 2 | success | valid / verified | applying | conceptual | Easy | 2033 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2046 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2635 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2608 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2607 |
 
-Run 1 — solusi: Masalah ini adalah pemilihan 5 soal dari 8 soal yang tersedia tanpa memperhatikan urutan, sehingga menggunakan rumus kombinasi C(n, r) = n! / (r!(n-r)!). C(8, 5) = 8! / (5! * 3!) = (8 * 7 * 6) / (3 * 2 * 1) = 56.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa urutan pengerjaan soal tidak diperhatikan (kombinasi) dan menerapkan rumus kombinasi yang sesuai untuk situasi rutin pemilihan objek.. Bukti: peserta diwajibkan mengerjakan 5 soal dari 8 soal yang tersedia; Tentukan banyaknya jenis pilihan soal yang mungkin dikerjakan
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus kombinasi untuk menyelesaikan masalah pemilihan objek.. Bukti: 5 soal dari 8 soal yang tersedia; banyaknya jenis pilihan soal
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur standar dalam materi kombinatorika kelas 12. Siswa hanya perlu mengenali situasi sebagai kombinasi dan menghitung nilainya.. Bukti: 5 soal dari 8 soal yang tersedia; banyaknya jenis pilihan soal
+Run 1 — solusi: Menggunakan rumus kombinasi C(n, r) = n! / (r!(n-r)!) untuk memilih 5 soal dari 8 soal. C(8, 5) = 8! / (5!(8-5)!) = (8 x 7 x 6) / (3 x 2 x 1) = 56.
+- Domain kognitif `classify/applying`: Siswa perlu mengenali bahwa masalah ini adalah pemilihan subset (kombinasi) di mana urutan pengerjaan tidak relevan, kemudian menerapkan rumus kombinasi yang sesuai.. Bukti: peserta diwajibkan mengerjakan 5 soal dari 8 soal yang tersedia; Tentukan banyaknya jenis pilihan soal
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang rumus kombinasi dan kemampuan mengkategorikan masalah sebagai kombinasi (bukan permutasi).. Bukti: mengerjakan 5 soal dari 8 soal; banyaknya jenis pilihan soal
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Tidak ada kendala tambahan atau syarat khusus yang membuat perencanaan menjadi kompleks.. Bukti: mengerjakan 5 soal dari 8 soal yang tersedia; banyaknya jenis pilihan soal
 
 Profil difficulty run ini:
 
@@ -3499,18 +3496,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah soal standar yang sering ditemui dalam kurikulum kelas 12 untuk materi kombinasi. |
+| gradeRelativeRationale | Ini adalah soal standar kombinasi yang diajarkan di kelas 12. Tidak ada kompleksitas tambahan atau syarat yang memerlukan penalaran mendalam. |
 
-Run 2 — solusi: Masalah ini adalah pemilihan 5 soal dari 8 soal yang tersedia tanpa memperhatikan urutan, sehingga menggunakan rumus kombinasi C(n, r) = n! / (r!(n-r)!). Maka, C(8, 5) = 8! / (5! * 3!) = (8 * 7 * 6) / (3 * 2 * 1) = 56.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa masalah ini adalah masalah kombinasi (memilih subset tanpa urutan) dan menerapkan rumus kombinasi yang sesuai. Ini adalah penerapan prosedur standar dalam konteks rutin.. Bukti: peserta diwajibkan mengerjakan 5 soal dari 8 soal yang tersedia; Tentukan banyaknya jenis pilihan soal yang mungkin dikerjakan
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip kombinasi sebagai cara untuk menghitung pemilihan objek tanpa memperhatikan urutan, yang merupakan konsep dasar dalam materi pencacahan.. Bukti: peserta diwajibkan mengerjakan 5 soal dari 8 soal yang tersedia
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan menggunakan prosedur yang sangat familiar bagi siswa kelas 12 dalam materi kombinatorika. Tidak ada kendala tambahan atau skenario kompleks.. Bukti: mengerjakan 5 soal dari 8 soal yang tersedia
+Run 2 — solusi: Menggunakan rumus kombinasi C(n, r) = n! / (r!(n-r)!) untuk memilih 5 soal dari 8 soal. C(8, 5) = 8! / (5!3!) = (8 x 7 x 6) / (3 x 2 x 1) = 56.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa masalah ini adalah pemilihan objek tanpa memperhatikan urutan, sehingga menggunakan konsep kombinasi. Ini adalah penerapan prosedur standar pada konteks yang rutin.. Bukti: peserta diwajibkan mengerjakan 5 soal dari 8 soal yang tersedia; Tentukan banyaknya jenis pilihan soal yang mungkin dikerjakan
+- Dimensi pengetahuan `classify/procedural`: Siswa harus memahami prinsip kombinasi (konsep) dan menerapkan rumus kombinasi (prosedural) untuk menyelesaikan masalah.. Bukti: peserta diwajibkan mengerjakan 5 soal dari 8 soal yang tersedia
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 12. Tidak ada kendala tambahan atau syarat khusus yang membuat perencanaan menjadi kompleks.. Bukti: mengerjakan 5 soal dari 8 soal yang tersedia
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar faktorial dan rumus kombinasi. |
+| expectedPrerequisite | Pemahaman dasar tentang kombinasi dan faktorial. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3520,18 +3517,18 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah soal standar yang sering ditemui dalam kurikulum kelas 12 untuk menguji pemahaman dasar tentang kombinasi. |
+| gradeRelativeRationale | Materi kombinasi adalah standar kurikulum SMA kelas 12. Soal ini adalah aplikasi langsung rumus tanpa variasi atau syarat tambahan. |
 
-Run 3 — solusi: Masalah ini adalah pemilihan 5 soal dari 8 soal yang tersedia tanpa memperhatikan urutan, sehingga menggunakan rumus kombinasi C(n, r) = n! / (r!(n-r)!). Maka, C(8, 5) = 8! / (5! * 3!) = (8 * 7 * 6) / (3 * 2 * 1) = 56.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa masalah ini adalah masalah kombinasi (pemilihan tanpa urutan) dan menerapkan rumus kombinasi yang sesuai. Ini adalah penerapan prosedur standar pada situasi rutin.. Bukti: peserta diwajibkan mengerjakan 5 soal dari 8 soal yang tersedia; Tentukan banyaknya jenis pilihan soal yang mungkin dikerjakan
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip kombinasi sebagai cara untuk menghitung pemilihan objek tanpa memperhatikan urutan, yang merupakan konsep dasar dalam materi pencacahan.. Bukti: 5 soal dari 8 soal yang tersedia; banyaknya jenis pilihan soal
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 12. Tidak ada kendala tambahan atau skenario kompleks yang memerlukan strategi non-rutin.. Bukti: mengerjakan 5 soal dari 8 soal yang tersedia
+Run 3 — solusi: Soal meminta pemilihan 5 soal dari 8 soal yang tersedia tanpa memperhatikan urutan pengerjaan. Ini adalah masalah kombinasi: C(8,5) = 8! / (5! * (8-5)!) = (8 * 7 * 6) / (3 * 2 * 1) = 56.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa masalah ini adalah pemilihan subset (kombinasi) di mana urutan tidak penting, kemudian menerapkan rumus kombinasi standar.. Bukti: peserta diwajibkan mengerjakan 5 soal dari 8 soal yang tersedia; Tentukan banyaknya jenis pilihan soal yang mungkin dikerjakan
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur algoritme kombinasi untuk menyelesaikan masalah pemilihan objek.. Bukti: mengerjakan 5 soal dari 8 soal yang tersedia
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari rumus kombinasi dasar. Tidak ada kendala tambahan, syarat khusus, atau kebutuhan untuk menyusun strategi yang kompleks.. Bukti: mengerjakan 5 soal dari 8 soal yang tersedia
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Pemahaman dasar tentang faktorial dan rumus kombinasi. |
+| expectedPrerequisite | Konsep dasar kombinasi dan faktorial. |
 | dependentSteps | 1 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3541,37 +3538,15 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini merupakan latihan standar untuk materi kombinasi di kelas 12, dengan prosedur yang sangat familiar dan beban kognitif yang rendah. |
+| gradeRelativeRationale | Ini adalah soal standar kelas 12 yang menguji pemahaman dasar tentang perbedaan permutasi dan kombinasi. Jalur penyelesaian sangat jelas dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 1, "conceptual": 2} | majority_2_of_3 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
-
-Adjudikasi AI: `success`; token `3534`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu mengidentifikasi bahwa urutan pengerjaan soal tidak diperhatikan (kombinasi) dan menerapkan rumus kombinasi yang sesuai untuk situasi rutin pemilihan objek.
-- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus kombinasi untuk menyelesaikan masalah pemilihan objek.
-- Intended difficulty `Easy`: Soal ini merupakan prosedur standar dalam materi kombinatorika kelas 12. Siswa hanya perlu mengenali situasi sebagai kombinasi dan menghitung nilainya.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar kombinasi dan faktorial. |
-| dependentSteps | 1 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Ini adalah soal standar yang sering ditemui dalam kurikulum kelas 12 untuk materi kombinasi. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3620,74 +3595,74 @@ Tim futsal SMA Abhipraya dijadwalkan mengikuti 3 pertandingan awal dalam turname
 | D | 0,36 |
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Menggunakan rumus distribusi binomial: P(X=2) = C(3,2) * (0,6)^2 * (0,4)^1 = 3 * 0,36 * 0,4 = 0,432.
+Solusi minimum hasil AI: Menggunakan rumus peluang binomial P(X=k) = C(n,k) * p^k * (1-p)^(n-k) dengan n=3, k=2, p=0,6. P(X=2) = C(3,2) * (0,6)^2 * (0,4)^1 = 3 * 0,36 * 0,4 = 0,432.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a7aa62686b746829e95c631c4d52cd7ecdecb6cfd0121acd4f8960c735569f8f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ea053eaa813a323686925def19a78e488598db732d992c7c53074fa79e212621`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Easy | 2789 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2875 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2069 |
+| 1 | success | valid / verified | applying | procedural | Easy | 2816 |
+| 2 | success | valid / verified | applying | conceptual | Easy | 2761 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2760 |
 
-Run 1 — solusi: Menggunakan rumus peluang binomial: P(X=2) = C(3,2) * (0,6)^2 * (0,4)^1 = 3 * 0,36 * 0,4 = 0,432.
-- Domain kognitif `classify/applying`: Siswa perlu memilih dan menerapkan rumus peluang binomial untuk situasi rutin yang diberikan.. Bukti: Peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami hubungan antara peluang kejadian tunggal dan distribusi binomial untuk menyelesaikan masalah.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; tepat 2 dari 3 pertandingan
-- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari rumus binomial yang sudah familiar bagi siswa kelas 12. Langkah-langkahnya rutin dan tidak memerlukan strategi nonrutin.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; tepat 2 dari 3 pertandingan pertama
+Run 1 — solusi: Menggunakan rumus peluang binomial P(X=k) = C(n,k) * p^k * q^(n-k) dengan n=3, k=2, p=0,6, dan q=0,4. P(X=2) = C(3,2) * (0,6)^2 * (0,4)^1 = 3 * 0,36 * 0,4 = 0,432.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus peluang binomial untuk situasi yang sudah didefinisikan dengan jelas (n=3, k=2, p=0,6). Siswa perlu mengenali bahwa ini adalah masalah peluang binomial dan menerapkan prosedurnya secara langsung.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami prinsip dasar peluang binomial (konsep) dan menerapkan rumus atau metode perhitungan yang sesuai (prosedural) untuk menyelesaikan masalah.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena merupakan penerapan langsung dari rumus peluang binomial yang standar. Variabel n, k, dan p sudah diberikan secara eksplisit, dan tidak ada kendala tambahan atau skenario kompleks yang memerlukan perencanaan strategi yang rumit.. Bukti: 3 pertandingan awal; Peluang menang ... sebesar 0,6; tepat 2 dari 3 pertandingan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar peluang kejadian majemuk dan rumus distribusi binomial. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi peluang binomial adalah standar kurikulum kelas 12. Soal ini tidak memerlukan modifikasi strategi atau integrasi konsep yang kompleks, sehingga sesuai untuk tingkat kesulitan rendah bagi siswa kelas 12. |
+
+Run 2 — solusi: Menggunakan rumus peluang binomial P(X=k) = C(n,k) * p^k * (1-p)^(n-k) dengan n=3, k=2, p=0,6. P(X=2) = C(3,2) * (0,6)^2 * (0,4)^1 = 3 * 0,36 * 0,4 = 0,432.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa situasi ini mengikuti distribusi binomial dan menerapkan rumus yang sesuai untuk menghitung peluang kejadian majemuk dengan syarat tertentu.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip peluang binomial (konsep) dan penggunaan rumus binomial (prosedural) untuk menyelesaikan masalah.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12 yang telah mempelajari distribusi binomial. Jalur penyelesaiannya jelas (menggunakan rumus binomial) dan tidak memerlukan perencanaan strategi yang kompleks atau integrasi kendala yang rumit.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
 | expectedPrerequisite | Konsep peluang kejadian saling bebas dan rumus distribusi binomial. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang binomial adalah standar kurikulum kelas 12. Soal ini menguji pemahaman dasar tanpa kompleksitas tambahan. |
-
-Run 2 — solusi: P(X=2) = C(3,2) * (0.6)^2 * (0.4)^1 = 3 * 0.36 * 0.4 = 0.432
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai distribusi binomial dan menerapkan rumus peluang binomial untuk menghitung hasil. Ini adalah penerapan prosedur rutin pada situasi yang diberikan.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
-- Dimensi pengetahuan `classify/procedural`: Memerlukan pemahaman tentang prinsip peluang kejadian majemuk (binomial) dan penggunaan rumus kombinasi dalam konteks peluang.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
-- Intended difficulty `classify/Easy`: Soal ini adalah penerapan langsung rumus binomial. Siswa kelas 12 diharapkan sudah familiar dengan rumus ini. Tidak ada kendala non-rutin atau integrasi representasi yang kompleks.. Bukti: 3 pertandingan awal; tepat 2 dari 3 pertandingan pertama
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep peluang kejadian saling bebas dan rumus kombinasi. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini merupakan aplikasi standar rumus binomial yang diajarkan di kelas 12. Prosedurnya bersifat rutin bagi siswa yang mempelajari materi peluang. |
+| gradeRelativeRationale | Materi peluang binomial adalah standar kurikulum kelas 12. Soal ini merupakan aplikasi langsung dari rumus tanpa modifikasi atau syarat tambahan yang menyulitkan. |
 
-Run 3 — solusi: Menggunakan distribusi binomial dengan n=3, k=2, p=0,6, dan q=0,4. Peluang = C(3,2) * (0,6)^2 * (0,4)^1 = 3 * 0,36 * 0,4 = 0,432.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai percobaan binomial, memilih rumus yang tepat, dan menerapkan prosedur perhitungan rutin untuk mendapatkan hasil.. Bukti: Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama.
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma distribusi binomial (prosedural) dan konsep peluang kejadian majemuk (konseptual).. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; tepat 2 dari 3 pertandingan
-- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari rumus binomial yang sudah umum diajarkan di kelas 12. Tidak ada kendala non-rutin atau integrasi representasi yang kompleks.. Bukti: 3 pertandingan awal; Peluang menang... 0,6; tepat 2 dari 3
+Run 3 — solusi: Menggunakan rumus peluang binomial P(X=k) = C(n,k) * p^k * (1-p)^(n-k), dengan n=3, k=2, p=0,6. P(X=2) = C(3,2) * (0,6)^2 * (0,4)^1 = 3 * 0,36 * 0,4 = 0,432.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa ini adalah masalah distribusi binomial, memilih rumus yang tepat, dan menerapkan nilai-nilai yang diberikan ke dalam rumus tersebut. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau metode perhitungan peluang kejadian majemuk dengan distribusi binomial.. Bukti: Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
+- Intended difficulty `classify/Easy`: Soal ini dikategorikan Easy karena merupakan penerapan langsung dari rumus binomial yang sudah familiar di kelas 12. Jalur penyelesaiannya sangat jelas, tidak ada kendala yang berinteraksi, dan beban perhitungan rendah.. Bukti: Peluang menang untuk setiap pertandingan diperkirakan sebesar 0,6; Tentukan peluang tim futsal memenangkan tepat 2 dari 3 pertandingan pertama
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep peluang kejadian saling bebas dan rumus dasar distribusi binomial. |
+| expectedPrerequisite | Konsep dasar peluang kejadian majemuk dan rumus distribusi binomial. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3697,27 +3672,27 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang binomial adalah standar kurikulum kelas 12. Soal ini bersifat prosedural langsung tanpa modifikasi konteks yang menyulitkan. |
+| gradeRelativeRationale | Materi peluang binomial adalah standar kurikulum kelas 12. Soal ini tidak memerlukan modifikasi strategi atau integrasi konsep yang kompleks, sehingga tergolong mudah bagi siswa kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | procedural |
+| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
 | Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3515`.
+Adjudikasi AI: `success`; token `4483`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu mengidentifikasi situasi sebagai percobaan binomial, memilih rumus yang tepat, dan menerapkan prosedur perhitungan rutin untuk mendapatkan hasil.
-- Dimensi pengetahuan `procedural`: Soal ini menguji pemahaman tentang algoritma distribusi binomial (prosedural) dan konsep peluang kejadian majemuk (konseptual).
-- Intended difficulty `Easy`: Soal ini merupakan penerapan langsung dari rumus binomial yang sudah umum diajarkan di kelas 12. Tidak ada kendala non-rutin atau integrasi representasi yang kompleks.
+- Domain kognitif `applying`: Siswa perlu mengenali bahwa situasi ini mengikuti distribusi binomial dan menerapkan rumus yang sesuai untuk menghitung peluang kejadian majemuk dengan syarat tertentu. Ini adalah penerapan prosedur standar pada konteks rutin.
+- Dimensi pengetahuan `procedural`: Siswa perlu memahami prinsip dasar peluang binomial (konsep) dan menerapkan rumus atau metode perhitungan yang sesuai (prosedural) untuk menyelesaikan masalah.
+- Intended difficulty `Easy`: Soal ini bersifat rutin bagi siswa kelas 12 yang telah mempelajari distribusi binomial. Jalur penyelesaiannya jelas (menggunakan rumus binomial) dan tidak memerlukan perencanaan strategi yang kompleks atau integrasi kendala yang rumit.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep peluang kejadian saling bebas dan rumus dasar distribusi binomial. |
+| expectedPrerequisite | Pemahaman dasar peluang kejadian majemuk dan rumus distribusi binomial. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3727,7 +3702,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang binomial adalah standar kurikulum kelas 12. Soal ini bersifat prosedural langsung tanpa modifikasi konteks yang menyulitkan. |
+| gradeRelativeRationale | Materi peluang binomial adalah standar kurikulum kelas 12. Soal ini merupakan aplikasi langsung dari rumus tanpa modifikasi atau syarat tambahan yang menyulitkan. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3776,84 +3751,84 @@ Guru IPA menjelaskan bahwa kenyamanan belajar dipengaruhi oleh kualitas udara, y
 | D | 40 |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `80`.
-Solusi minimum hasil AI: Ekspansi binomial (2t+h)^5 menggunakan rumus umum C(n,k) * a^(n-k) * b^k. Untuk suku t^3 h^2, kita gunakan n=5, k=2 (untuk h^2) atau k=3 (untuk t^3). Koefisiennya adalah C(5,3) * (2)^3 * (1)^2 = 10 * 8 * 1 = 80.
+Solusi minimum hasil AI: Ekspansi (2t+h)^5 menggunakan teorema binomial: suku dengan t^3 h^2 diperoleh saat k=2 (karena h^2). Suku tersebut adalah C(5,2) * (2t)^3 * h^2 = 10 * 8 * t^3 h^2 = 80 t^3 h^2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ae1c4ef6469bdbb8ec21397f066984d3f5b11f065396e968217b92765998036a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c03475537dcda76d286d51a13d17fbaf011fe2e135cd65acfe7878b180e829d7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 3176 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2989 |
-| 3 | success | valid / verified | applying | procedural | Easy | 3000 |
+| 1 | success | valid / verified | applying | procedural | Medium | 3613 |
+| 2 | success | valid / verified | applying | procedural | Easy | 4092 |
+| 3 | success | valid / verified | applying | procedural | Medium | 4335 |
 
-Run 1 — solusi: Ekspansi binomial (2t+h)^5 adalah sum_{k=0}^5 C(5,k)(2t)^{5-k}(h)^k. Untuk suku t^3h^2, pilih k=2. Koefisiennya adalah C(5,2) * 2^3 = 10 * 8 = 80.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan teorema binomial untuk menentukan koefisien suku tertentu dalam ekspansi polinomial.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus teorema binomial.. Bukti: model total pengaruhnya adalah (2t+h)^5
-- Intended difficulty `classify/Medium`: Soal memerlukan pemilihan prosedur yang tepat (teorema binomial) dan melakukan perhitungan rutin untuk menemukan koefisien suku tertentu.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
+Run 1 — solusi: Ekspansi binomial (2t+h)^5 menggunakan rumus C(n,k) * a^(n-k) * b^k. Untuk suku t^3 h^2, kita pilih k=2 (karena h^2). Suku tersebut adalah C(5,2) * (2t)^3 * h^2 = 10 * 8t^3 * h^2 = 80t^3h^2. Koefisiennya adalah 80.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan teorema binomial untuk mencari koefisien suku tertentu dalam ekspansi binomial. Ini adalah penerapan prosedur standar pada konteks yang diberikan.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penggunaan algoritma ekspansi binomial (prosedur) untuk menyelesaikan masalah.. Bukti: model total pengaruhnya adalah (2t+h)^5
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemilihan prosedur (teorema binomial) dan pemahaman hubungan antara variabel (t, h) dengan pangkat dalam ekspansi. Tidak terlalu sulit karena prosedurnya langsung, namun memerlukan ketelitian dalam mengidentifikasi k dan koefisien binomial.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
 | expectedPrerequisite | Teorema Binomial Newton |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya familiar dengan teorema binomial. Soal ini menguji penerapan langsung prosedur tersebut dengan sedikit interpretasi variabel. |
+
+Run 2 — solusi: Ekspansi (2t+h)^5 menggunakan teorema binomial: suku dengan t^3 h^2 adalah C(5,3) * (2t)^3 * h^2 = 10 * 8 * t^3 h^2 = 80 t^3 h^2. Koefisiennya adalah 80.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus teorema binomial untuk mencari koefisien suku tertentu dalam ekspansi (2t+h)^5.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penggunaan algoritma teorema binomial untuk mendapatkan nilai koefisien.. Bukti: model total pengaruhnya adalah (2t+h)^5
+- Intended difficulty `classify/Easy`: Soal merupakan penerapan langsung teorema binomial yang merupakan materi standar kelas 12. Langkah penyelesaian bersifat rutin dan tidak memerlukan strategi non-rutin.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Teorema Binomial |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi teorema binomial adalah kurikulum standar kelas 12. Soal ini menguji pemahaman prosedural dasar tanpa kompleksitas tambahan. |
+
+Run 3 — solusi: Ekspansi (2t+h)^5 menggunakan teorema binomial adalah sum_{k=0}^5 C(5,k) (2t)^{5-k} h^k. Untuk suku t^3 h^2, kita butuh 5-k=3, sehingga k=2. Suku tersebut adalah C(5,2) * (2t)^3 * h^2 = 10 * 8 * t^3 h^2 = 80 t^3 h^2.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan teorema binomial untuk menentukan koefisien suku tertentu dalam ekspansi (2t+h)^5. Ini adalah penerapan prosedur standar pada konteks yang diberikan.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritma teorema binomial untuk mencari suku yang diminta.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
+- Intended difficulty `classify/Medium`: Siswa harus mengidentifikasi bahwa '3 bagian suhu' dan '2 bagian kelembaban' merujuk pada suku t^3 h^2 dalam ekspansi (2t+h)^5. Ini memerlukan pemahaman konseptual tentang teorema binomial dan kemampuan untuk memetakan konteks soal ke dalam bentuk matematika. Tidak terlalu sulit karena prosedurnya standar, namun memerlukan langkah pemilihan yang tepat.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Teorema Binomial Newton |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
 | strategySelection | True |
-| representationTransfer | False |
+| representationTransfer | True |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menggunakan teorema binomial untuk ekspansi sederhana. |
-
-Run 2 — solusi: Menggunakan teorema binomial (2t+h)^5, suku dengan t^3 h^2 adalah C(5,3) * (2t)^3 * (h)^2 = 10 * 8 * t^3 h^2 = 80 t^3 h^2. Koefisiennya adalah 80.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan teorema binomial untuk mencari koefisien suku tertentu dalam ekspansi polinomial.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan teorema binomial untuk menentukan koefisien suku.. Bukti: model total pengaruhnya adalah (2t+h)^5
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman teorema binomial. Ini adalah prosedur rutin bagi siswa kelas 12, namun memerlukan ketelitian dalam mengidentifikasi koefisien (2^3) dan kombinasi (C(5,3)).. Bukti: (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Teorema Binomial Newton |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi binomial merupakan bagian dari kurikulum kelas 12. Prosedur ini standar namun memerlukan ketelitian dalam mengalikan koefisien binomial dengan pangkat dari konstanta. |
-
-Run 3 — solusi: Ekspansi binomial (2t+h)^5 menggunakan rumus C(n,k) * a^(n-k) * b^k. Untuk suku t^3 h^2, kita gunakan n=5, k=2 (atau n-k=3): C(5,3) * (2t)^3 * (h)^2 = 10 * 8t^3 * h^2 = 80t^3 h^2. Koefisiennya adalah 80.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan teorema binomial untuk mencari koefisien suku tertentu dalam ekspansi. Ini adalah penerapan prosedur rutin (teorema binomial) pada konteks yang diberikan.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang struktur ekspansi binomial dan penerapan algoritma koefisien binomial.. Bukti: model total pengaruhnya adalah (2t+h)^5
-- Intended difficulty `classify/Easy`: Soal ini memerlukan penerapan langsung rumus binomial. Langkah-langkahnya rutin (identifikasi n, k, dan koefisien). Tidak ada kendala non-rutin.. Bukti: model total pengaruhnya adalah (2t+h)^5; suhu memberi pengaruh 3 bagian dan kelembaban 2 bagian
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Teorema Binomial Newton |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi binomial adalah standar kelas 12. Soal ini adalah aplikasi langsung rumus tanpa modifikasi kompleks. |
+| gradeRelativeRationale | Soal ini menguji pemahaman teorema binomial yang merupakan materi kelas 11/12. Tingkat kesulitan Medium karena siswa harus menerjemahkan narasi ke dalam bentuk aljabar (2t+h)^5 dan memilih suku yang tepat, bukan sekadar menghitung. |
 
 ### 3. Voting awal dan adjudikasi
 
@@ -3861,29 +3836,29 @@ Profil difficulty run ini:
 |---|---|---|---|
 | Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
 | Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / adjudicated | procedural |
-| Intended difficulty | {"Medium": 2, "Easy": 1} | majority_2_of_3 / adjudicated | Easy |
+| Intended difficulty | {"Medium": 2, "Easy": 1} | majority_2_of_3 / adjudicated | Medium |
 
-Adjudikasi AI: `success`; token `3581`.
+Adjudikasi AI: `success`; token `5417`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan teorema binomial untuk menentukan koefisien suku tertentu dalam ekspansi polinomial. Ini adalah penerapan prosedur rutin pada konteks yang diberikan.
-- Dimensi pengetahuan `procedural`: Soal menguji pemahaman prosedural tentang penggunaan rumus teorema binomial untuk menentukan koefisien suku.
-- Intended difficulty `Easy`: Soal memerlukan penerapan langsung rumus binomial. Langkah-langkahnya rutin (identifikasi n, k, dan koefisien). Tidak ada kendala non-rutin atau integrasi representasi yang kompleks.
+- Domain kognitif `applying`: Siswa menerapkan teorema binomial untuk mencari koefisien suku tertentu dalam ekspansi (2t+h)^5. Ini adalah penerapan prosedur standar pada konteks yang diberikan.
+- Dimensi pengetahuan `procedural`: Soal menguji penggunaan algoritma ekspansi binomial untuk menyelesaikan masalah.
+- Intended difficulty `Medium`: Soal memerlukan pemilihan prosedur (teorema binomial) dan pemahaman hubungan antara variabel (t, h) dengan pangkat dalam ekspansi. Siswa harus menerjemahkan narasi ke dalam bentuk aljabar dan memilih suku yang tepat. Prosedurnya standar, namun memerlukan langkah interpretasi yang sedikit lebih dari sekadar menghitung langsung.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
 | expectedPrerequisite | Teorema Binomial Newton |
-| dependentSteps | 2 |
+| dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
-| representationTransfer | False |
+| representationTransfer | True |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
+| interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi binomial adalah standar kelas 12. Soal ini adalah aplikasi langsung rumus tanpa modifikasi kompleks. |
+| gradeRelativeRationale | Materi teorema binomial adalah kurikulum standar kelas 12. Soal ini menguji pemahaman prosedural dengan sedikit interpretasi variabel. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3915,9 +3890,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 28. Soal `6353e1b1ac73792bd65d8bcc`
@@ -3932,32 +3907,32 @@ Kirana sedang memainkan sebuah permainan yang menggunakan dadu. Dia harus melemp
 | D | Kedua lemparan saling bebas; peluangnya $\frac{5}{36}$ |
 
 Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
-Solusi minimum hasil AI: P(dobel) = 6/36 = 1/6. P(jumlah 6) = {(1,5), (2,4), (3,3), (4,2), (5,1)} = 5/36. Karena lemparan pertama dan kedua saling bebas, peluang gabungan = P(dobel) × P(jumlah 6) = 1/6 × 5/36 = 5/216.
+Solusi minimum hasil AI: Kejadian A (muncul angka dobel) dan B (muncul jumlah 6) adalah kejadian saling bebas. P(A) = 6/36 = 1/6. P(B) = 5/36 (pasangan: (1,5), (2,4), (3,3), (4,2), (5,1)). Peluang gabungan = P(A) * P(B) = 1/6 * 5/36 = 5/216.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung', 'menjelaskan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `31c91b0d985f47100518a5becd15458162e23c316275bdf54b02dcb93a6b55b5`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d0937a7ae0a5cd17553a3b43a433b83878da4e99543f53ab26b23fa84b9586f8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2158 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2203 |
-| 3 | success | valid / verified | applying | conceptual | Easy | 2198 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2814 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 2840 |
+| 3 | success | valid / verified | applying | conceptual | Easy | 2899 |
 
-Run 1 — solusi: Kejadian A (muncul angka dobel) dan B (jumlah mata dadu 6) adalah kejadian saling bebas. P(A) = 6/36 = 1/6. P(B) = 5/36 (pasangan: (1,5), (2,4), (3,3), (4,2), (5,1)). Peluang gabungan = P(A) * P(B) = 1/6 * 5/36 = 5/216.
-- Domain kognitif `classify/applying`: Siswa perlu memahami konsep kejadian saling bebas dan menerapkan aturan perkalian untuk dua kejadian yang terpisah, yang merupakan penerapan prosedur rutin dalam peluang.. Bukti: aturan perkalian dapat digunakan; peluang ini dapat terjadi
-- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang prinsip dasar aturan perkalian dalam peluang (konseptual) dan penerapannya dalam perhitungan (prosedural).. Bukti: aturan perkalian dapat digunakan
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Siswa hanya perlu mengidentifikasi dua kejadian independen, menghitung peluang masing-masing, dan mengalikannya.. Bukti: melemparkan sepasang dadu; mendapatkan angka dobel; mendapatkan jumlah enam
+Run 1 — solusi: Kejadian A (mendapat angka dobel) dan B (mendapat jumlah enam) adalah dua kejadian saling bebas karena hasil lemparan pertama tidak mempengaruhi hasil lemparan kedua. P(A) = 6/36 = 1/6. P(B) = 5/36 (pasangan: (1,5), (2,4), (3,3), (4,2), (5,1)). Peluang gabungan = P(A) x P(B) = 1/6 x 5/36 = 5/216.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi sifat kejadian (saling bebas) dan menerapkan aturan perkalian peluang yang sesuai. Ini melibatkan penerapan konsep dasar peluang pada konteks yang rutin.. Bukti: Jelaskan mengapa aturan perkalian dapat digunakan untuk menentukan peluang ini?; mendapatkan angka dobel dan pada lemparan kedua mendapatkan jumlah enam
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang prinsip atau aturan perkalian dalam peluang, yang merupakan bagian dari pengetahuan konseptual tentang hubungan antar kejadian.. Bukti: aturan perkalian dapat digunakan untuk menentukan peluang ini
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedur penyelesaiannya sangat standar dan langsung. Siswa hanya perlu menghitung peluang dua kejadian sederhana dan mengalikannya. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: mendapatkan angka dobel dan pada lemparan kedua mendapatkan jumlah enam; Jelaskan mengapa aturan perkalian dapat digunakan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Peluang kejadian tunggal pada pelemparan dua dadu. |
+| expectedPrerequisite | Pemahaman dasar tentang ruang sampel dua dadu dan aturan perkalian untuk kejadian saling bebas. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -3967,79 +3942,85 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang kejadian majemuk (saling bebas) adalah standar kurikulum SMA kelas 12. Prosedur perhitungan peluang dadu merupakan latihan dasar yang familiar. |
+| gradeRelativeRationale | Materi peluang kejadian majemuk saling bebas adalah topik standar kelas 12 yang rutin. Soal tidak menuntut analisis mendalam atau integrasi konsep yang rumit. |
 
-Run 2 — solusi: P(dobel) = 6/36 = 1/6. P(jumlah 6) = {(1,5), (2,4), (3,3), (4,2), (5,1)} = 5/36. Karena lemparan pertama dan kedua saling bebas, peluang gabungan = P(dobel) × P(jumlah 6) = 1/6 × 5/36 = 5/216.
-- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengidentifikasi independensi dua kejadian dan menerapkan aturan perkalian peluang, yang merupakan penerapan prosedur rutin dalam konteks peluang majemuk.. Bukti: Jelaskan mengapa aturan perkalian dapat digunakan; Berapa peluangnya?
-- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami prinsip dasar peluang kejadian saling bebas (konseptual) dan menerapkan algoritma perkalian peluang (prosedural).. Bukti: aturan perkalian dapat digunakan; peluang ini dapat terjadi
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Siswa hanya perlu menghitung ruang sampel untuk dua kejadian sederhana dan mengalikannya. Tidak ada kendala kompleks atau strategi non-rutin.. Bukti: melemparkan sepasang dadu; mendapatkan angka dobel; mendapatkan jumlah enam
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Pemahaman dasar ruang sampel dua dadu dan aturan perkalian peluang kejadian saling bebas. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 0 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang kejadian majemuk adalah standar kurikulum kelas 12. Soal ini menguji pemahaman dasar tanpa variasi yang menantang. |
-
-Run 3 — solusi: Kejadian A (muncul angka dobel) dan B (jumlah mata dadu 6) adalah kejadian saling bebas. P(A) = 6/36 = 1/6. P(B) = 5/36 (pasangan: (1,5), (2,4), (3,3), (4,2), (5,1)). Peluang gabungan = P(A) x P(B) = 1/6 x 5/36 = 5/216.
-- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengidentifikasi sifat kejadian saling bebas (konseptual) dan menerapkan aturan perkalian peluang (prosedural) untuk dua kejadian yang berbeda. Ini termasuk dalam kategori applying karena siswa harus memilih dan menerapkan prosedur yang tepat pada situasi rutin.. Bukti: Jelaskan mengapa aturan perkalian dapat digunakan untuk menentukan peluang ini?; Berapa peluangnya?
-- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep kejadian saling bebas dan prinsip perkalian dalam peluang untuk menyelesaikan masalah ini.. Bukti: aturan perkalian dapat digunakan; peluang ini dapat terjadi
-- Intended difficulty `classify/Easy`: Soal ini merupakan prosedur standar dalam materi peluang kejadian majemuk. Siswa hanya perlu menghitung peluang masing-masing kejadian sederhana dan mengalikannya. Tidak ada kendala kompleks atau strategi nonrutin yang diperlukan.. Bukti: melemparkan sepasang dadu; mendapatkan angka dobel; mendapatkan jumlah enam
+Run 2 — solusi: Kejadian A (muncul angka dobel) dan B (muncul jumlah 6) adalah kejadian saling bebas. P(A) = 6/36 = 1/6. P(B) = 5/36 (pasangan: (1,5), (2,4), (3,3), (4,2), (5,1)). Peluang gabungan = P(A) * P(B) = 1/6 * 5/36 = 5/216.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengidentifikasi independensi dua kejadian (konsep) dan menerapkan aturan perkalian peluang untuk kejadian saling bebas (prosedur). Siswa harus memahami syarat penggunaan aturan perkalian, bukan sekadar menghitung.. Bukti: Jelaskan mengapa aturan perkalian dapat digunakan untuk menentukan peluang ini?; Berapa peluangnya?
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip dasar peluang kejadian saling bebas (konseptual) dan menerapkan algoritma perkalian peluang (prosedural) untuk menyelesaikan masalah.. Bukti: Jelaskan mengapa aturan perkalian dapat digunakan; Berapa peluangnya?
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena menuntut siswa tidak hanya menghitung, tetapi juga memberikan justifikasi konseptual mengapa aturan perkalian berlaku (independensi). Meskipun prosedurnya familiar, integrasi antara pemahaman konsep dan perhitungan membuat tuntutannya sedikit di atas sekadar penerapan langsung.. Bukti: mendapatkan angka dobel dan pada lemparan kedua mendapatkan jumlah enam; Jelaskan mengapa aturan perkalian dapat digunakan
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Peluang kejadian sederhana pada pelemparan dua dadu. |
+| expectedPrerequisite | Pemahaman ruang sampel dua dadu (36 titik sampel) dan definisi kejadian saling bebas. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 3 |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 12, soal ini adalah penerapan standar peluang majemuk. Tuntutan 'jelaskan' menambah beban kognitif dari sekadar hitungan rutin menjadi pemahaman konsep. |
+
+Run 3 — solusi: Kejadian pertama (A): muncul angka dobel pada sepasang dadu. n(S)=36, n(A)={(1,1),(2,2),(3,3),(4,4),(5,5),(6,6)}=6. P(A)=6/36=1/6. Kejadian kedua (B): jumlah mata dadu 6. n(B)={(1,5),(2,4),(3,3),(4,2),(5,1)}=5. P(B)=5/36. Karena lemparan pertama dan kedua saling bebas, P(A dan B) = P(A) x P(B) = 1/6 x 5/36 = 5/216.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi bahwa dua kejadian pelemparan dadu adalah saling bebas, kemudian menerapkan aturan perkalian peluang untuk dua kejadian independen. Ini adalah penerapan konsep dasar peluang pada konteks rutin.. Bukti: Kirana sedang memainkan sebuah permainan yang menggunakan dadu. Dia harus melemparkan sepasang dadu dan mendapatkan angka dobel dan pada lemparan kedua mendapatkan jumlah enam.; Jelaskan mengapa aturan perkalian dapat digunakan untuk menentukan peluang ini? Berapa peluangnya?
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman tentang prinsip dasar peluang (kejadian saling bebas) dan prosedur perhitungan peluang gabungan.. Bukti: Jelaskan mengapa aturan perkalian dapat digunakan untuk menentukan peluang ini?
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedurnya sangat standar dan langsung. Siswa hanya perlu menghitung peluang dua kejadian sederhana secara terpisah dan mengalikannya. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Dia harus melemparkan sepasang dadu dan mendapatkan angka dobel dan pada lemparan kedua mendapatkan jumlah enam.; Jelaskan mengapa aturan perkalian dapat digunakan untuk menentukan peluang ini? Berapa peluangnya?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar ruang sampel pelemparan dua dadu dan konsep peluang kejadian saling bebas. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang kejadian saling bebas adalah standar kurikulum kelas 12. Soal ini bersifat langsung dan tidak memerlukan analisis mendalam. |
+| gradeRelativeRationale | Materi peluang kejadian majemuk adalah standar kelas 12. Soal ini tidak memiliki kerumitan tambahan, sehingga termasuk kategori mudah bagi siswa kelas 12. |
+
+Histori retry: run 1 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 2 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 3 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
 | Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / adjudicated | conceptual |
+| Intended difficulty | {"Easy": 2, "Medium": 1} | majority_2_of_3 / adjudicated | Easy |
 
-Adjudikasi AI: `success`; token `3743`.
+Adjudikasi AI: `success`; token `4589`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu mengidentifikasi bahwa dua lemparan dadu adalah kejadian saling bebas dan menerapkan aturan perkalian peluang. Ini adalah penerapan prosedur rutin dalam konteks peluang majemuk.
-- Dimensi pengetahuan `procedural`: Soal menguji pemahaman tentang prinsip kejadian saling bebas (konseptual) dan penggunaan algoritma perkalian peluang (prosedural).
-- Intended difficulty `Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Siswa hanya perlu menghitung peluang masing-masing kejadian sederhana dan mengalikannya. Tidak ada kendala kompleks atau strategi nonrutin.
+- Domain kognitif `applying`: Siswa diminta untuk mengidentifikasi sifat kejadian (saling bebas) dan menerapkan aturan perkalian peluang yang sesuai. Ini melibatkan penerapan konsep dasar peluang pada konteks yang rutin.
+- Dimensi pengetahuan `conceptual`: Soal menguji pemahaman tentang prinsip atau aturan perkalian dalam peluang, yang merupakan bagian dari pengetahuan konseptual tentang hubungan antar kejadian.
+- Intended difficulty `Easy`: Soal ini tergolong Easy karena prosedur penyelesaiannya sangat standar dan langsung. Siswa hanya perlu menghitung peluang dua kejadian sederhana dan mengalikannya. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Peluang kejadian tunggal pada pelemparan dua dadu. |
+| expectedPrerequisite | Pemahaman dasar tentang ruang sampel dua dadu dan aturan perkalian untuk kejadian saling bebas. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
-| relevantInformationUnits | 3 |
+| relevantInformationUnits | 2 |
 | interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang kejadian majemuk (saling bebas) adalah standar kurikulum SMA kelas 12. Prosedur perhitungan peluang dadu merupakan latihan dasar yang familiar. |
+| gradeRelativeRationale | Materi peluang kejadian majemuk saling bebas adalah topik standar kelas 12 yang rutin. Soal tidak menuntut analisis mendalam atau integrasi konsep yang rumit. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4073,9 +4054,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 29. Soal `802d8b32ff2e7869391e39e1`
@@ -4089,57 +4070,36 @@ Mahira mulai mengunduh jadwal pertandingan sepak bola Piala Dunia yang akan data
 | C | 0,175 |
 | D | 1 |
 
-![Gambar sumber soal 29](<../images/kelas12_panduan_siswa_kelas12.pdf-0154-01.png>)
+![Gambar sumber soal 29](<../../../images/kelas12_panduan_siswa_kelas12.pdf-0154-01.png>)
 
 
 Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
-Solusi minimum hasil AI: Peluang Inggris juara = P(menang perempat final) * P(menang semifinal) * P(menang final). Berdasarkan tabel, P(menang perempat final) = 0,7. Berdasarkan teks, P(menang semifinal) = 0,5 dan P(menang final) = 0,5. Maka, peluang = 0,7 * 0,5 * 0,5 = 0,175.
-Gambar sumber: images/kelas12_panduan_siswa_kelas12.pdf-0154-01.png. Transkripsi visual: Bagan turnamen sistem gugur dimulai dari perempat final, berlanjut ke semifinal, final, dan juara. Inggris berada di perempat final melawan Swedia.
+Solusi minimum hasil AI: Peluang Inggris juara adalah peluang menang perempat final dikali peluang menang semifinal dikali peluang menang final. P(Juara) = P(Perempat Final) * P(Semifinal) * P(Final) = 0,7 * 0,5 * 0,5 = 0,175.
+Gambar sumber: images/kelas12_panduan_siswa_kelas12.pdf-0154-01.png. Transkripsi visual: Bagan turnamen sistem gugur dengan 8 tim: Uruguay vs Prancis, Brazil vs Belgia, Swedia vs Inggris, Rusia vs Kroasia. Pemenang perempat final masuk semifinal, pemenang semifinal masuk final, pemenang final menjadi juara. Tabel peluang menang perempat final: Uruguay 0,5; Prancis 0,5; Brazil 0,8; Belgia 0,2; Swedia 0,3; Inggris 0,7; Rusia 0,4; Kroasia 0,6. Peluang menang semifinal dan final adalah 0,5 untuk semua tim.
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `33b478b5314cf393effe8ee282cdb55085a9128410f4d80d28dcf629bc9e607f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `41a6db2f767aacf9fed3c3594ffb1d4b3da1b5bddd7f550fe90abbbd3ac3a6da`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 3539 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 3538 |
-| 3 | success | valid / verified | applying | procedural | Medium | 3546 |
+| 1 | success | valid / verified | applying | conceptual | Medium | 4217 |
+| 2 | success | valid / verified | applying | conceptual | Medium | 4213 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 4163 |
 
-Run 1 — solusi: Peluang Inggris juara = P(menang perempat final) x P(menang semifinal) x P(menang final). Berdasarkan tabel, P(menang perempat final) = 0,7. Berdasarkan teks, P(menang semifinal) = 0,5 dan P(menang final) = 0,5. Maka, peluang = 0,7 * 0,5 * 0,5 = 0,175.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi tahapan turnamen (perempat final, semifinal, final) dan mengalikan peluang kejadian saling bebas yang berurutan untuk mencapai hasil akhir.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
-- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prinsip perkalian peluang untuk kejadian majemuk yang berurutan dalam konteks turnamen.. Bukti: peluang masing-masing tim tersebut untuk menang di babak perempat final; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman struktur turnamen dan penerapan aturan perkalian peluang. Langkah-langkahnya rutin namun memerlukan integrasi data dari tabel dan teks.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Aturan perkalian peluang untuk kejadian saling bebas. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena menguji pemahaman peluang majemuk dalam konteks nyata yang memerlukan interpretasi bagan dan tabel. |
-
-Run 2 — solusi: Peluang Inggris juara = P(menang perempat final) x P(menang semifinal) x P(menang final). Diketahui P(menang perempat final) = 0,7. P(menang semifinal) = 0,5. P(menang final) = 0,5. Maka, 0,7 x 0,5 x 0,5 = 0,175.
-- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan informasi dari tabel (peluang perempat final) dan teks (peluang semifinal dan final) untuk menghitung peluang kejadian majemuk yang saling bebas. Ini adalah penerapan konsep peluang pada situasi rutin.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
-- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip perkalian peluang untuk kejadian majemuk yang berurutan dalam sistem gugur.. Bukti: peluang masing-masing tim tersebut untuk menang di babak perempat final; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
-- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman struktur turnamen dan penerapan aturan perkalian peluang. Langkah-langkahnya rutin dan prosedural.. Bukti: peluang masing-masing tim tersebut untuk menang di babak perempat final; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
+Run 1 — solusi: Peluang Inggris juara adalah peluang menang perempat final dikali peluang menang semifinal dikali peluang menang final. P(Juara) = P(Perempat Final) * P(Semifinal) * P(Final) = 0,7 * 0,5 * 0,5 = 0,175.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa memenangkan turnamen adalah kejadian majemuk yang terdiri dari tiga tahap berurutan (perempat final, semifinal, final) dan menerapkan aturan perkalian untuk kejadian independen.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut adalah; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang peluang kejadian majemuk yang saling bebas dan prosedur perkalian peluang.. Bukti: peluang masing-masing tim tersebut untuk menang di babak perempat final; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus mengintegrasikan informasi dari tabel (peluang perempat final) dengan informasi teks (peluang semifinal dan final) untuk membentuk model peluang kejadian majemuk. Meskipun prosedurnya sederhana, siswa perlu memahami struktur bagan turnamen untuk menentukan jumlah tahapan yang harus dimenangkan.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut adalah; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep peluang kejadian majemuk (aturan perkalian) dan pembacaan bagan turnamen. |
+| expectedPrerequisite | Konsep peluang kejadian majemuk dan aturan perkalian peluang. |
 | dependentSteps | 3 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4149,58 +4109,63 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengidentifikasi tahapan turnamen dan menerapkan aturan perkalian peluang untuk kejadian berurutan. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengolah data dari tabel dan teks untuk menghitung peluang kejadian berurutan dalam konteks turnamen. |
 
-Run 3 — solusi: Peluang Inggris juara = P(menang perempat final) x P(menang semifinal) x P(menang final). Berdasarkan tabel, P(menang perempat final) = 0,7. Berdasarkan teks, P(menang semifinal) = 0,5 dan P(menang final) = 0,5. Jadi, 0,7 x 0,5 x 0,5 = 0,175.
-- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan data dari tabel (peluang perempat final) dengan informasi teks (peluang semifinal dan final) untuk menghitung peluang kejadian majemuk yang saling bebas.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
-- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prinsip perkalian peluang untuk kejadian majemuk (independen) dalam konteks turnamen.. Bukti: peluang masing-masing tim tersebut untuk menang di babak perempat final; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
-- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman struktur turnamen dan penerapan aturan perkalian peluang. Langkah-langkahnya rutin dan prosedural bagi siswa kelas 12.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
+Run 2 — solusi: Inggris harus memenangkan tiga pertandingan berturut-turut: perempat final (peluang 0,7), semifinal (peluang 0,5), dan final (peluang 0,5). Karena kejadian dianggap independen, peluang total adalah 0,7 * 0,5 * 0,5 = 0,175.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa memenangkan turnamen adalah kejadian majemuk yang terdiri dari tiga tahap (perempat final, semifinal, final) dan menerapkan aturan perkalian untuk kejadian independen.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut adalah; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip dasar peluang kejadian majemuk (perkalian peluang) dan menerapkannya pada konteks turnamen.. Bukti: peluang masing-masing tim tersebut untuk menang di babak perempat final; semua tim memiliki peluang yang sama untuk menang, yakni 0,5
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus mengintegrasikan informasi dari tabel (perempat final) dengan informasi teks (semifinal dan final) untuk membentuk urutan kejadian. Meskipun prosedurnya sederhana (perkalian), siswa perlu memahami struktur turnamen dan bahwa kemenangan turnamen bergantung pada keberhasilan di setiap tahap.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut adalah; semua tim memiliki peluang yang sama untuk menang, yakni 0,5
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep peluang kejadian majemuk (aturan perkalian) dan pembacaan tabel/bagan. |
+| expectedPrerequisite | Konsep peluang kejadian majemuk dan aturan perkalian. |
 | dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | True |
 | relevantInformationUnits | 3 |
 | interactingConstraints | 1 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Soal ini menuntut siswa mengidentifikasi tahapan turnamen (perempat final, semifinal, final) dan mengalikan peluang yang relevan. Ini adalah standar kemampuan kelas 12 dalam menerapkan aturan peluang. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu memodelkan kejadian berurutan dalam turnamen sistem gugur menggunakan aturan perkalian peluang. |
+
+Run 3 — solusi: Peluang Inggris juara adalah peluang menang perempat final dikali peluang menang semifinal dikali peluang menang final. P(Juara) = P(Menang QF) * P(Menang SF) * P(Menang F) = 0,7 * 0,5 * 0,5 = 0,175.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa memenangkan turnamen adalah kejadian majemuk yang terdiri dari tiga tahap berurutan (perempat final, semifinal, final) dan menerapkan aturan perkalian untuk kejadian independen.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut adalah; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip dasar peluang kejadian majemuk (perkalian peluang) dan menerapkannya pada struktur turnamen yang diberikan.. Bukti: peluang masing-masing tim tersebut untuk menang di babak perempat final; semua tim memiliki peluang yang sama untuk menang, yakni 0,5
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus mengintegrasikan informasi dari tabel (peluang perempat final) dengan informasi teks (peluang semifinal dan final) untuk menghitung peluang gabungan. Meskipun prosedurnya adalah perkalian sederhana, siswa perlu memahami struktur turnamen dan mengidentifikasi bahwa ketiga tahap tersebut harus dilalui secara berurutan.. Bukti: peluang Inggris untuk memenangkan turnamen tersebut adalah; semua tim memiliki peluang yang sama untuk menang, yakni 0,5, di babak selanjutnya
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep peluang kejadian majemuk dan aturan perkalian. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengolah data dari tabel dan teks untuk menghitung peluang kejadian berurutan dalam konteks sistem gugur. |
+
+Histori retry: run 1 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 2 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 3 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
-
-Adjudikasi AI: `success`; token `5205`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu mengidentifikasi tahapan turnamen (perempat final, semifinal, final) dan mengalikan peluang kejadian saling bebas yang berurutan untuk mencapai hasil akhir.
-- Dimensi pengetahuan `procedural`: Siswa menerapkan prinsip perkalian peluang untuk kejadian majemuk yang berurutan dalam konteks turnamen.
-- Intended difficulty `Medium`: Soal memerlukan pemahaman struktur turnamen dan penerapan aturan perkalian peluang. Langkah-langkahnya rutin namun memerlukan integrasi data dari tabel dan teks.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Aturan perkalian peluang untuk kejadian saling bebas. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | True |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena menguji pemahaman peluang majemuk dalam konteks nyata yang memerlukan interpretasi bagan dan tabel. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"conceptual": 3} | unanimous_3_0 / unanimous | conceptual |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4239,16 +4204,16 @@ Pilihan: A. 0,343
 B. 0,125
 C. 0,175
 D. 1
-Transkripsi visual: Bagan turnamen sistem gugur dimulai dari perempat final, berlanjut ke semifinal, final, dan juara. Inggris berada di perempat final melawan Swedia.
+Transkripsi visual: Bagan turnamen sistem gugur dengan 8 tim: Uruguay vs Prancis, Brazil vs Belgia, Swedia vs Inggris, Rusia vs Kroasia. Pemenang perempat final masuk semifinal, pemenang semifinal masuk final, pemenang final menjadi juara. Tabel peluang menang perempat final: Uruguay 0,5; Prancis 0,5; Brazil 0,8; Belgia 0,2; Swedia 0,3; Inggris 0,7; Rusia 0,4; Kroasia 0,6. Peluang menang semifinal dan final adalah 0,5 untuk semua tim.
 ```
 
 </details>
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 30. Soal `e6f2f945c5e535887f5e64bc`
@@ -4262,27 +4227,27 @@ Jika tiga dadu standar bersisi enam dilempar bersama-sama, berapakah peluang jum
 | C | $\frac{1}{18}$ |
 | D | $\frac{25}{216}$ |
 
-Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Ruang sampel n(S) = 6^3 = 216. Kombinasi angka (x,y,z) dengan 1<=x,y,z<=6 yang berjumlah 12: (6,5,1) ada 6 permutasi, (6,4,2) ada 6, (6,3,3) ada 3, (5,5,2) ada 3, (5,4,3) ada 6, (4,4,4) ada 1. Total kejadian n(E) = 6+6+3+3+6+1 = 25. Peluang = 25/216.
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `25/216`.
+Solusi minimum hasil AI: Ruang sampel n(S) = 6^3 = 216. Kejadian jumlah 12 (x+y+z=12, 1<=x,y,z<=6): Kombinasi (6,5,1) ada 6 permutasi; (6,4,2) ada 6; (6,3,3) ada 3; (5,5,2) ada 3; (5,4,3) ada 6; (4,4,4) ada 1. Total n(A) = 6+6+3+3+6+1 = 25. Peluang = 25/216.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `23a435f733be354fb945d94b35181ea167ffd4e279384e6388aab09f4d044a2a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dba4f130ef46efe9623be0fdea3101d7363005e8feb0f6a3a7ea4edda5b468d8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Medium | 2273 |
-| 2 | success | valid / verified | applying | conceptual | Medium | 2195 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2180 |
+| 1 | success | valid / verified | applying | procedural | Medium | 2805 |
+| 2 | success | valid / verified | applying | procedural | Medium | 2835 |
+| 3 | success | valid / verified | applying | conceptual | Medium | 2840 |
 
-Run 1 — solusi: Ruang sampel n(S) = 6^3 = 216. Kejadian jumlah 12: (1,5,6)x6=6, (1,6,5)x6=6, (2,4,6)x6=6, (2,5,5)x3=3, (3,3,6)x3=3, (3,4,5)x6=6, (4,4,4)x1=1. Total kombinasi: (6,5,1) -> 6 permutasi, (6,4,2) -> 6, (5,5,2) -> 3, (5,4,3) -> 6, (4,4,4) -> 1, (6,3,3) -> 3. Total = 25. Peluang = 25/216.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi ruang sampel dan menghitung banyaknya kejadian yang memenuhi syarat jumlah 12 dengan mempertimbangkan urutan (permutasi) dari kombinasi angka yang mungkin. Ini melibatkan penerapan konsep peluang kejadian majemuk secara sistematis.. Bukti: tiga dadu standar bersisi enam dilempar bersama-sama; peluang jumlah total dadu pada ketiga pelemparan sama dengan 12
-- Dimensi pengetahuan `classify/procedural`: Siswa harus menerapkan prosedur sistematis untuk mencacah ruang sampel dan kejadian yang diinginkan (menggunakan prinsip permutasi/kombinasi atau daftar terstruktur) untuk menghitung peluang.. Bukti: tiga dadu standar bersisi enam; peluang jumlah total dadu
-- Intended difficulty `classify/Medium`: Soal ini memerlukan ketelitian dalam mencacah semua kemungkinan kombinasi angka yang berjumlah 12 dan memperhitungkan permutasi dari setiap kombinasi tersebut. Ini adalah langkah rutin namun memerlukan ketelitian tinggi agar tidak ada yang terlewat.. Bukti: tiga dadu standar bersisi enam; jumlah total dadu pada ketiga pelemparan sama dengan 12
+Run 1 — solusi: Total ruang sampel n(S) = 6^3 = 216. Kejadian jumlah 12 (x+y+z=12, 1<=x,y,z<=6): (6,5,1)x6, (6,4,2)x6, (6,3,3)x3, (5,5,2)x3, (5,4,3)x6, (4,4,4)x1. Total n(A) = 6+6+3+3+6+1 = 25. Peluang = 25/216.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi ruang sampel dan menghitung banyaknya kejadian yang memenuhi syarat jumlah tertentu dengan mempertimbangkan urutan (permutasi) dari kombinasi angka yang mungkin.. Bukti: berapakah peluang jumlah total dadu pada ketiga pelemparan sama dengan 12?
+- Dimensi pengetahuan `classify/procedural`: Siswa menerapkan prosedur perhitungan peluang klasik dengan menggunakan prinsip pencacahan untuk menentukan titik sampel yang memenuhi kondisi jumlah.. Bukti: tiga dadu standar bersisi enam dilempar bersama-sama; peluang jumlah total dadu pada ketiga pelemparan sama dengan 12
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan perencanaan sistematis untuk mendaftar semua kombinasi angka yang berjumlah 12 dan menghitung permutasi untuk setiap kombinasi tersebut agar tidak ada yang terlewat atau terhitung ganda. Meskipun prosedurnya familiar, siswa harus mengelola kendala jumlah dan batasan angka dadu (1-6) secara cermat.. Bukti: tiga dadu standar bersisi enam; jumlah total dadu pada ketiga pelemparan sama dengan 12
 
 Profil difficulty run ini:
 
@@ -4297,42 +4262,42 @@ Profil difficulty run ini:
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan pencacahan sistematis untuk kejadian pada ruang sampel yang cukup besar (216) tanpa kesalahan. |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan pencacahan sistematis untuk masalah peluang majemuk sederhana seperti ini. Kesulitan terletak pada ketelitian enumerasi kasus. |
 
-Run 2 — solusi: Ruang sampel n(S) = 6^3 = 216. Kejadian jumlah 12 dari 3 dadu (x+y+z=12, 1<=x,y,z<=6): (6,5,1)x6=6, (6,4,2)x6=6, (6,3,3)x3=3, (5,5,2)x3=3, (5,4,3)x6=6, (4,4,4)x1=1. Total n(E) = 6+6+3+3+6+1 = 25. Peluang = 25/216.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi ruang sampel dan menghitung banyaknya kejadian yang memenuhi syarat jumlah 12 dengan memperhatikan urutan (permutasi dengan pengulangan/kombinasi). Ini adalah penerapan prosedur peluang pada situasi rutin.. Bukti: tiga dadu standar bersisi enam dilempar bersama-sama; peluang jumlah total dadu pada ketiga pelemparan sama dengan 12
-- Dimensi pengetahuan `classify/conceptual`: Memerlukan pemahaman tentang prinsip dasar pencacahan dan konsep peluang kejadian majemuk pada ruang sampel diskrit.. Bukti: peluang jumlah total dadu pada ketiga pelemparan sama dengan 12
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan ketelitian dalam mendaftar semua kombinasi angka yang mungkin berjumlah 12 dengan memperhatikan urutan (permutasi), yang merupakan langkah rutin namun membutuhkan kecermatan agar tidak ada yang terlewat.. Bukti: tiga dadu standar bersisi enam; jumlah total dadu pada ketiga pelemparan sama dengan 12
+Run 2 — solusi: Ruang sampel n(S) = 6^3 = 216. Kejadian jumlah 12: (6,5,1)x6, (6,4,2)x6, (6,3,3)x3, (5,5,2)x3, (5,4,3)x6, (4,4,4)x1. Total n(A) = 6+6+3+3+6+1 = 25. Peluang = 25/216.
+- Domain kognitif `classify/applying`: Siswa harus mengidentifikasi ruang sampel, menentukan kombinasi angka yang berjumlah 12, dan menghitung permutasi dari setiap kombinasi tersebut untuk mendapatkan total kejadian yang menguntungkan. Ini adalah penerapan prosedur peluang pada konteks rutin.. Bukti: berapakah peluang jumlah total dadu pada ketiga pelemparan sama dengan 12?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang prinsip dasar pencacahan dan peluang kejadian majemuk, yang merupakan pengetahuan prosedural untuk menghitung ruang sampel dan kejadian yang diinginkan.. Bukti: tiga dadu standar bersisi enam dilempar bersama-sama
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan perencanaan sistematis untuk mendaftar semua kombinasi angka yang berjumlah 12 dan menghitung permutasi masing-masing (memperhatikan urutan). Meskipun prosedurnya familiar, siswa harus berhati-hati agar tidak ada kombinasi yang terlewat atau terhitung ganda, yang menuntut ketelitian lebih tinggi daripada sekadar menghitung peluang satu dadu.. Bukti: tiga dadu standar bersisi enam dilempar bersama-sama; jumlah total dadu pada ketiga pelemparan sama dengan 12
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Prinsip dasar pencacahan dan konsep peluang kejadian. |
+| expectedPrerequisite | Prinsip dasar pencacahan, permutasi, dan konsep peluang kejadian majemuk. |
 | dependentSteps | 3 |
-| routineStatus | routine_selection |
+| routineStatus | familiar_routine |
 | strategySelection | True |
 | representationTransfer | False |
-| relevantInformationUnits | 2 |
-| interactingConstraints | 2 |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
-| distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan enumerasi sistematis untuk ruang sampel yang relatif kecil (216) dan memahami bahwa urutan dadu berpengaruh. |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan pencacahan sistematis untuk kejadian dengan ruang sampel yang cukup besar (216). Kesalahan umum pada distraktor menunjukkan bahwa soal ini efektif menguji pemahaman tentang pentingnya urutan dalam pelemparan dadu. |
 
-Run 3 — solusi: Ruang sampel n(S) = 6^3 = 216. Kombinasi angka yang berjumlah 12: (6,5,1)x6=6, (6,4,2)x6=6, (6,3,3)x3=3, (5,5,2)x3=3, (5,4,3)x6=6, (4,4,4)x1=1. Total kejadian = 6+6+3+3+6+1 = 25. Peluang = 25/216.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi ruang sampel dan menghitung banyaknya kejadian yang memenuhi syarat jumlah 12 dengan mempertimbangkan urutan (permutasi) dari kombinasi angka yang mungkin. Ini adalah penerapan prosedur peluang pada situasi rutin.. Bukti: tiga dadu standar bersisi enam dilempar bersama-sama; berapakah peluang jumlah total dadu pada ketiga pelemparan sama dengan 12
-- Dimensi pengetahuan `classify/procedural`: Siswa harus menerapkan algoritma perhitungan peluang kejadian majemuk dengan ruang sampel yang terdefinisi dengan baik.. Bukti: peluang jumlah total dadu; tiga dadu standar bersisi enam
-- Intended difficulty `classify/Medium`: Soal ini memerlukan ketelitian dalam mendaftar semua kombinasi yang mungkin berjumlah 12 dan menghitung permutasi untuk setiap kombinasi tersebut. Ini melibatkan beberapa langkah rutin yang saling terkait.. Bukti: tiga dadu standar bersisi enam; jumlah total dadu pada ketiga pelemparan sama dengan 12
+Run 3 — solusi: Ruang sampel n(S) = 6^3 = 216. Kejadian jumlah 12 dengan 3 dadu (x1+x2+x3=12, 1<=xi<=6): Kombinasi (6,5,1) ada 6 permutasi; (6,4,2) ada 6; (6,3,3) ada 3; (5,5,2) ada 3; (5,4,3) ada 6; (4,4,4) ada 1. Total n(E) = 6+6+3+3+6+1 = 25. Peluang = 25/216.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi ruang sampel dan menghitung banyaknya kejadian yang memenuhi syarat jumlah tertentu dengan mempertimbangkan urutan (permutasi) dari kombinasi angka yang mungkin. Ini adalah penerapan konsep peluang pada konteks rutin.. Bukti: berapakah peluang jumlah total dadu pada ketiga pelemparan sama dengan 12
+- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan prinsip dasar pencacahan dan definisi peluang klasik untuk menyelesaikan masalah yang melibatkan hubungan antara kombinasi angka dan permutasi.. Bukti: tiga dadu standar bersisi enam dilempar bersama-sama; peluang jumlah total dadu pada ketiga pelemparan sama dengan 12
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan perencanaan sistematis untuk mendaftar semua kombinasi yang mungkin berjumlah 12 dan menghitung permutasinya tanpa terlewat. Meskipun prosedurnya familiar, siswa harus mengelola beberapa kasus (kombinasi angka) dan kendala (dadu maksimal 6) secara cermat.. Bukti: tiga dadu standar bersisi enam dilempar bersama-sama; peluang jumlah total dadu pada ketiga pelemparan sama dengan 12
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang, ruang sampel, dan permutasi sederhana. |
+| expectedPrerequisite | Prinsip dasar pencacahan, permutasi, dan definisi peluang klasik. |
 | dependentSteps | 3 |
-| routineStatus | routine_selection |
+| routineStatus | familiar_routine |
 | strategySelection | True |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
@@ -4340,7 +4305,11 @@ Profil difficulty run ini:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan enumerasi sistematis untuk kejadian dengan ruang sampel yang cukup besar (216) namun masih terjangkau. |
+| gradeRelativeRationale | Untuk kelas 12, masalah ini adalah latihan standar peluang kejadian majemuk. Kesulitan utama terletak pada ketelitian enumerasi kasus agar tidak ada yang terlewat atau terhitung ganda, yang merupakan tantangan moderat bagi siswa. |
+
+Histori retry: run 1 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 2 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
@@ -4350,17 +4319,17 @@ Profil difficulty run ini:
 | Dimensi pengetahuan | {"procedural": 2, "conceptual": 1} | majority_2_of_3 / adjudicated | procedural |
 | Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
 
-Adjudikasi AI: `success`; token `4064`.
+Adjudikasi AI: `success`; token `4812`.
 Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu menerapkan prosedur sistematis untuk mencacah ruang sampel dan kejadian yang diinginkan (permutasi dari kombinasi angka) untuk menghitung peluang. Ini adalah penerapan konsep peluang pada situasi rutin.
-- Dimensi pengetahuan `procedural`: Siswa harus menerapkan algoritma perhitungan peluang kejadian majemuk dengan ruang sampel yang terdefinisi dengan baik.
-- Intended difficulty `Medium`: Soal ini memerlukan ketelitian dalam mendaftar semua kombinasi yang mungkin berjumlah 12 dan menghitung permutasi untuk setiap kombinasi tersebut. Ini melibatkan beberapa langkah rutin yang saling terkait.
+- Domain kognitif `applying`: Siswa harus menerapkan prosedur pencacahan sistematis untuk menentukan titik sampel yang memenuhi kondisi jumlah tertentu. Ini adalah penerapan konsep peluang klasik pada konteks rutin yang memerlukan ketelitian dalam enumerasi.
+- Dimensi pengetahuan `procedural`: Siswa menggunakan prinsip dasar pencacahan dan permutasi untuk menghitung ruang sampel dan kejadian yang diinginkan, yang merupakan pengetahuan prosedural.
+- Intended difficulty `Medium`: Soal ini dikategorikan Medium karena memerlukan perencanaan sistematis untuk mendaftar semua kombinasi angka yang berjumlah 12 dan menghitung permutasi untuk setiap kombinasi tersebut agar tidak ada yang terlewat atau terhitung ganda. Meskipun prosedurnya familiar, siswa harus mengelola kendala jumlah dan batasan angka dadu (1-6) secara cermat.
 
 Profil difficulty hasil adjudikasi:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang, ruang sampel, dan permutasi sederhana. |
+| expectedPrerequisite | Konsep dasar peluang, aturan perkalian, dan permutasi sederhana. |
 | dependentSteps | 3 |
 | routineStatus | routine_selection |
 | strategySelection | True |
@@ -4370,7 +4339,7 @@ Profil difficulty hasil adjudikasi:
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | strong |
-| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan enumerasi sistematis untuk kejadian dengan ruang sampel yang cukup besar (216) namun masih terjangkau. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan pencacahan sistematis untuk masalah peluang majemuk sederhana seperti ini. Kesulitan terletak pada ketelitian enumerasi kasus agar tidak ada yang terlewat atau terhitung ganda. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4418,115 +4387,93 @@ Suatu dompet berisi 4 keping uang logam seribu rupiah dan 3 keping uang logam li
 | C | $\frac{3}{7}$ |
 | D | $\frac{20}{63}$ |
 
-Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `38/63`.
-Solusi minimum hasil AI: Misal A kejadian koin 1000 dipindah (P(A)=4/7), B kejadian koin 500 dipindah (P(B)=3/7). Jika A terjadi, dompet 2 berisi 4 koin 1000 dan 5 koin 500 (total 9), P(500\|A)=5/9. Jika B terjadi, dompet 2 berisi 3 koin 1000 dan 6 koin 500 (total 9), P(500\|B)=6/9. Peluang total = P(A)P(500\|A) + P(B)P(500\|B) = (4/7)(5/9) + (3/7)(6/9) = 20/63 + 18/63 = 38/63.
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: P(500 dari W2) = P(pindah 1000)P(500\|pindah 1000) + P(pindah 500)P(500\|pindah 500) = (4/7)(5/9) + (3/7)(6/9) = 20/63 + 18/63 = 38/63.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b81224b363d097e916a4372506e02d12aa9f155879822f9ca43cc1f0173caf4e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `72c2e55ad05f567fcdc65b35b014ce3ddf856ec6bc882f1b55dbec4f1d6b9a95`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | conceptual | Medium | 2357 |
-| 2 | success | valid / verified | applying | procedural | Medium | 2307 |
-| 3 | success | valid / verified | applying | procedural | Medium | 2287 |
+| 1 | success | valid / verified | applying | procedural | Medium | 3917 |
+| 2 | success | valid / verified | applying | procedural | Medium | 3648 |
+| 3 | success | valid / verified | applying | procedural | Medium | 3704 |
 
-Run 1 — solusi: Misal A kejadian koin 1000 dipindah (P(A)=4/7), B kejadian koin 500 dipindah (P(B)=3/7). Jika A terjadi, dompet 2 berisi 4 koin 1000 dan 5 koin 500 (total 9), P(500\|A)=5/9. Jika B terjadi, dompet 2 berisi 3 koin 1000 dan 6 koin 500 (total 9), P(500\|B)=6/9. Peluang total = P(A)P(500\|A) + P(B)P(500\|B) = (4/7)(5/9) + (3/7)(6/9) = 20/63 + 18/63 = 38/63.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dua skenario yang saling lepas (pemindahan koin 1000 atau 500), menghitung peluang masing-masing skenario, menyesuaikan komposisi dompet kedua, dan menerapkan aturan peluang total. Ini adalah penerapan prosedur rutin dalam situasi majemuk.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
-- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang peluang bersyarat dan peluang kejadian majemuk, serta prosedur perhitungan peluang total.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman tentang perubahan ruang sampel setelah perpindahan objek. Siswa harus melakukan dua langkah perhitungan peluang yang saling terkait (peluang pemindahan dan peluang pengambilan kedua). Ini adalah standar untuk tingkat menengah.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; dompet kedua berisi 3 keping uang logam seribu rupiah dan 5 keping uang lima ratus ripuah
+Run 1 — solusi: P(500 dari W2) = P(pindah 1000)P(500\|pindah 1000) + P(pindah 500)P(500\|pindah 500) = (4/7)(5/9) + (3/7)(6/9) = 20/63 + 18/63 = 38/63.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep peluang bersyarat dan aturan penjumlahan untuk dua kasus yang saling lepas (pemindahan koin 1000 atau 500).. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur standar untuk menghitung peluang kejadian majemuk dengan membagi masalah menjadi dua skenario yang saling lepas.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
+- Intended difficulty `classify/Medium`: Soal memerlukan perencanaan dua skenario (pemindahan koin 1000 atau 500) dan integrasi hasil peluang bersyarat. Ini adalah prosedur rutin dalam peluang majemuk namun memerlukan ketelitian dalam membedakan kondisi dompet kedua setelah pemindahan.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Peluang kejadian tunggal, penjumlahan dan perkalian peluang. |
+| expectedPrerequisite | Peluang kejadian tunggal dan aturan penjumlahan peluang. |
 | dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena melibatkan analisis kejadian majemuk dengan perubahan kondisi (perpindahan objek) yang memerlukan ketelitian dalam menghitung ruang sampel baru. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengidentifikasi dua kasus yang mungkin terjadi akibat pemindahan objek dan menghitung peluang totalnya. |
 
-Run 2 — solusi: Misal A1 kejadian terambil 1000 dari dompet 1 (P=4/7), A2 kejadian terambil 500 dari dompet 1 (P=3/7). Jika A1 terjadi, dompet 2 berisi 4 (1000) dan 5 (500), P(500\|A1)=5/9. Jika A2 terjadi, dompet 2 berisi 3 (1000) dan 6 (500), P(500\|A2)=6/9. Peluang total = (4/7 * 5/9) + (3/7 * 6/9) = 20/63 + 18/63 = 38/63.
-- Domain kognitif `classify/applying`: Siswa harus mengidentifikasi dua skenario yang saling lepas (pemindahan koin 1000 atau 500) dan menghitung peluang bersyarat untuk masing-masing skenario sebelum menjumlahkannya. Ini adalah penerapan prosedur peluang majemuk yang rutin namun memerlukan ketelitian dalam mengintegrasikan dua tahap kejadian.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang aturan penjumlahan dan perkalian peluang pada kejadian majemuk yang melibatkan perubahan ruang sampel.. Bukti: peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah
-- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena melibatkan dua tahap kejadian yang saling bergantung (perubahan komposisi dompet kedua setelah pemindahan). Siswa harus melakukan perhitungan peluang bersyarat dan penjumlahan peluang, yang merupakan prosedur rutin namun memerlukan pemilihan langkah yang tepat.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
+Run 2 — solusi: P(500 dari W2) = P(pindah 1000) * P(ambil 500\|pindah 1000) + P(pindah 500) * P(ambil 500\|pindah 500) = (4/7 * 5/9) + (3/7 * 6/9) = 20/63 + 18/63 = 38/63.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan aturan peluang total untuk dua kejadian yang saling lepas (memindahkan koin 1000 atau 500) dan menghitung peluang bersyarat pada tahap kedua. Ini adalah penerapan prosedur standar untuk masalah peluang majemuk.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan peluang kejadian majemuk yang melibatkan perubahan ruang sampel.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
+- Intended difficulty `classify/Medium`: Soal memerlukan perencanaan dua kasus yang saling bergantung (perubahan komposisi dompet kedua). Meskipun prosedurnya standar, siswa harus mengintegrasikan informasi dari dua tahap kejadian secara sistematis.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep peluang kejadian tunggal, peluang bersyarat dasar, dan aturan penjumlahan/perkalian peluang. |
+| expectedPrerequisite | Konsep dasar peluang, peluang kejadian majemuk, dan peluang bersyarat. |
 | dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena menguji pemahaman tentang perubahan ruang sampel akibat kejadian sebelumnya, yang merupakan standar kompetensi peluang majemuk. |
+| gradeRelativeRationale | Masalah ini merupakan standar kurikulum kelas 12 untuk topik peluang kejadian majemuk. Tingkat kesulitan menengah karena siswa harus mengelola perubahan ruang sampel pada tahap kedua berdasarkan hasil tahap pertama. |
 
-Run 3 — solusi: Misal A1 kejadian terambil 1000 dari dompet 1 (P=4/7), A2 kejadian terambil 500 dari dompet 1 (P=3/7). Jika A1 terjadi, dompet 2 berisi 4x1000, 5x500 (total 9), P(500\|A1)=5/9. Jika A2 terjadi, dompet 2 berisi 3x1000, 6x500 (total 9), P(500\|A2)=6/9. Peluang total = (4/7 * 5/9) + (3/7 * 6/9) = 20/63 + 18/63 = 38/63.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dua skenario yang saling lepas berdasarkan koin yang dipindahkan, menghitung peluang bersyarat untuk setiap skenario, dan menjumlahkannya. Ini adalah penerapan prosedur peluang kejadian majemuk yang rutin.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; Jika kemudian diambil sekeping uang logam dari dompet kedua, berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
-- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prinsip peluang total dan peluang bersyarat untuk menyelesaikan masalah yang melibatkan perubahan ruang sampel.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah
-- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman tentang perubahan komposisi dompet kedua setelah pemindahan koin. Ini melibatkan dua langkah rutin (menghitung peluang pemindahan dan peluang pengambilan kedua) yang saling terkait.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; Jika kemudian diambil sekeping uang logam dari dompet kedua
+Run 3 — solusi: P(500 dari W2) = P(pindah 1000) * P(ambil 500\|pindah 1000) + P(pindah 500) * P(ambil 500\|pindah 500) = (4/7 * 5/9) + (3/7 * 6/9) = 20/63 + 18/63 = 38/63.
+- Domain kognitif `classify/applying`: Siswa harus menerapkan aturan peluang total untuk dua kejadian yang saling lepas (memindahkan koin 1000 atau 500) dan menghitung peluang bersyarat pada tahap kedua. Ini adalah penerapan prosedur standar dalam konteks peluang majemuk.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana menghitung peluang kejadian majemuk yang melibatkan perubahan ruang sampel (perpindahan objek).. Bukti: peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus merencanakan dua skenario yang saling lepas dan memperbarui komposisi dompet kedua setelah pemindahan. Meskipun prosedurnya familiar, siswa perlu teliti dalam mengintegrasikan perubahan kondisi pada tahap kedua.. Bukti: Satu koin diambil dari dompet pertama dan dimasukkan ke dompet kedua.; berapa peluang bahwa uang logam yang diambil dari dompet kedua tersebut adalah logam lima ratus rupiah?
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Peluang kejadian tunggal, penjumlahan peluang, peluang bersyarat dasar. |
-| dependentSteps | 2 |
-| routineStatus | routine_selection |
-| strategySelection | True |
+| expectedPrerequisite | Konsep dasar peluang, peluang kejadian majemuk, dan peluang bersyarat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 4 |
 | interactingConstraints | 2 |
 | calculationLoad | moderate |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Masalah peluang bersyarat dengan dua tahap adalah standar untuk kelas 12, memerlukan ketelitian dalam memperbarui ruang sampel. |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu memodelkan proses dua tahap dengan perubahan kondisi. Soal ini menuntut ketelitian dalam memperbarui ruang sampel, namun jalurnya bersifat rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
-| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | conceptual |
-| Intended difficulty | {"Medium": 3} | unanimous_3_0 / adjudicated | Medium |
-
-Adjudikasi AI: `success`; token `4395`.
-Konten: `valid`; kunci: `verified`; masalah: .
-- Domain kognitif `applying`: Siswa perlu mengidentifikasi dua skenario yang saling lepas (pemindahan koin 1000 atau 500), menghitung peluang masing-masing skenario, menyesuaikan komposisi dompet kedua, dan menerapkan aturan peluang total. Ini adalah penerapan prosedur rutin dalam situasi majemuk.
-- Dimensi pengetahuan `conceptual`: Soal ini menguji pemahaman konseptual tentang peluang bersyarat dan peluang kejadian majemuk, serta prosedur perhitungan peluang total.
-- Intended difficulty `Medium`: Soal memerlukan pemahaman tentang perubahan ruang sampel setelah perpindahan objek. Siswa harus melakukan dua langkah perhitungan peluang yang saling terkait (peluang pemindahan dan peluang pengambilan kedua). Ini adalah standar untuk tingkat menengah.
-
-Profil difficulty hasil adjudikasi:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Peluang kejadian tunggal, penjumlahan dan perkalian peluang. |
-| dependentSteps | 3 |
-| routineStatus | routine_selection |
-| strategySelection | True |
-| representationTransfer | False |
-| relevantInformationUnits | 4 |
-| interactingConstraints | 2 |
-| calculationLoad | moderate |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Sesuai untuk kelas 12 karena melibatkan analisis kejadian majemuk dengan perubahan kondisi (perpindahan objek) yang memerlukan ketelitian dalam menghitung ruang sampel baru. |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
+| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
+| Intended difficulty | {"Medium": 3} | unanimous_3_0 / unanimous | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4560,9 +4507,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 32. Soal `4f4ccc08a9a611e7c44d48a3`
@@ -4577,32 +4524,32 @@ Suatu kantong berisi enam bola merah dan empat bola biru. Dari kantong tersebut 
 | D | $\frac{4}{25}$ |
 
 Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
-Solusi minimum hasil AI: Total bola = 6 merah + 4 biru = 10. Peluang terambil bola biru pertama (P1) = 4/10 = 2/5. Karena dengan pengembalian, peluang terambil bola biru kedua (P2) tetap 4/10 = 2/5. Peluang dua bola biru = P1 x P2 = (2/5) x (2/5) = 4/25.
+Solusi minimum hasil AI: Total bola = 6 + 4 = 10. Peluang terambil bola biru pada satu pengambilan = 4/10 = 2/5. Karena pengambilan dilakukan dengan pengembalian, kejadian bersifat independen. Peluang dua bola biru = (2/5) * (2/5) = 4/25.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3e4f0319249f91f0b03164cef613d0f8b67c18caa390f3c65b6981c134f88a93`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d685fd6fb4a300d985a5060efe3f3ac371b49b28435f12acd07658ac198760fd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian Gemini blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | success | valid / verified | applying | procedural | Easy | 2079 |
-| 2 | success | valid / verified | applying | procedural | Easy | 2058 |
-| 3 | success | valid / verified | applying | procedural | Easy | 2059 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 2671 |
+| 2 | success | valid / verified | applying | procedural | Easy | 2655 |
+| 3 | success | valid / verified | applying | procedural | Easy | 2735 |
 
-Run 1 — solusi: Total bola = 6 merah + 4 biru = 10. Peluang terambil bola biru pertama (P1) = 4/10 = 2/5. Karena dengan pengembalian, peluang terambil bola biru kedua (P2) tetap 4/10 = 2/5. Peluang dua bola biru = P1 x P2 = (2/5) x (2/5) = 4/25.
-- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi konsep peluang kejadian majemuk saling bebas (dengan pengembalian) dan menerapkan rumus perkalian peluang dasar.. Bukti: Suatu kantong berisi enam bola merah dan empat bola biru.; diambil dua bola berturut-turut.; dengan pengembalian
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana aturan pengembalian mempengaruhi ruang sampel dan perhitungan peluang kejadian majemuk.. Bukti: peluang terambilnya dua bola biru; dengan pengembalian
-- Intended difficulty `classify/Easy`: Soal ini bersifat rutin untuk materi peluang kelas 12. Prosedur yang digunakan langsung (perkalian peluang kejadian bebas) tanpa kendala kompleks.. Bukti: enam bola merah dan empat bola biru; diambil dua bola berturut-turut; dengan pengembalian
+Run 1 — solusi: Total bola = 6 + 4 = 10. Peluang terambil bola biru pada satu pengambilan = 4/10 = 2/5. Karena pengambilan dilakukan dengan pengembalian, kejadian bersifat independen. Peluang dua bola biru = (2/5) * (2/5) = 4/25.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi kejadian sebagai kejadian independen (dengan pengembalian) dan menerapkan aturan perkalian peluang untuk kejadian majemuk. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Suatu kantong berisi enam bola merah dan empat bola biru.; diambil dua bola berturut-turut.; dengan pengembalian
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang prinsip dasar peluang kejadian majemuk yang independen, yang merupakan konsep fundamental dalam teori peluang.. Bukti: peluang terambilnya dua bola biru; dengan pengembalian
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu memahami konsep 'dengan pengembalian' yang berarti peluang tetap sama untuk setiap pengambilan, lalu mengalikan peluang tersebut. Tidak ada kendala tambahan atau langkah kompleks.. Bukti: diambil dua bola berturut-turut.; dengan pengembalian
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang kejadian tunggal dan aturan perkalian peluang. |
+| expectedPrerequisite | Konsep dasar peluang kejadian tunggal dan aturan perkalian untuk kejadian independen. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
@@ -4612,57 +4559,79 @@ Profil difficulty run ini:
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang dengan pengembalian adalah standar dasar kurikulum SMA kelas 12, tidak memerlukan strategi nonrutin. |
+| gradeRelativeRationale | Materi peluang kejadian majemuk adalah kurikulum standar kelas 12. Soal ini merupakan aplikasi langsung dari rumus peluang kejadian independen tanpa variasi atau jebakan yang memerlukan penalaran tingkat tinggi. |
 
-Run 2 — solusi: Total bola = 6 merah + 4 biru = 10. Peluang terambil bola biru pertama (P1) = 4/10 = 2/5. Karena pengambilan dengan pengembalian, peluang terambil bola biru kedua (P2) tetap 4/10 = 2/5. Peluang dua bola biru = P1 x P2 = (2/5) x (2/5) = 4/25.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep peluang kejadian majemuk yang saling bebas (dengan pengembalian) dengan mengalikan peluang masing-masing kejadian.. Bukti: peluang terambilnya dua bola biru; dengan pengembalian
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang aturan perkalian peluang untuk kejadian independen.. Bukti: peluang terambilnya dua bola biru; dengan pengembalian
-- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari rumus peluang kejadian saling bebas. Prosedurnya familiar dan langkah-langkahnya sangat terbatas.. Bukti: diambil dua bola berturut-turut; dengan pengembalian
-
-Profil difficulty run ini:
-
-| Parameter | Nilai |
-|---|---|
-| expectedPrerequisite | Konsep dasar peluang kejadian tunggal dan aturan perkalian peluang. |
-| dependentSteps | 2 |
-| routineStatus | familiar_routine |
-| strategySelection | False |
-| representationTransfer | False |
-| relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
-| calculationLoad | low |
-| scaffoldLevel | none |
-| distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang kejadian majemuk adalah standar kelas 12. Soal ini tidak memiliki kompleksitas tambahan, sehingga tergolong mudah. |
-
-Run 3 — solusi: Total bola = 10. Peluang terambil bola biru pada pengambilan pertama (P1) = 4/10 = 2/5. Karena dengan pengembalian, peluang terambil bola biru pada pengambilan kedua (P2) tetap 4/10 = 2/5. Peluang kedua bola biru = P1 * P2 = (2/5) * (2/5) = 4/25.
-- Domain kognitif `classify/applying`: Siswa perlu menerapkan aturan perkalian untuk kejadian saling bebas (independen) dalam konteks peluang majemuk. Ini adalah prosedur standar yang rutin.. Bukti: peluang terambilnya dua bola biru; dengan pengembalian
-- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang prinsip dasar peluang kejadian majemuk yang saling bebas (konseptual) dan penerapannya dalam perhitungan (prosedural).. Bukti: peluang terambilnya dua bola biru; dengan pengembalian
-- Intended difficulty `classify/Easy`: Soal ini bersifat langsung, menggunakan prosedur yang familiar bagi siswa kelas 12, dan hanya melibatkan satu konsep utama (peluang kejadian saling bebas).. Bukti: dua bola berturut-turut; dengan pengembalian
+Run 2 — solusi: Total bola = 10. Peluang terambil bola biru pada satu pengambilan = 4/10 = 2/5. Karena pengambilan dilakukan dengan pengembalian, kejadian bersifat independen. Peluang dua bola biru = (2/5) * (2/5) = 4/25.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa pengambilan dengan pengembalian membuat dua kejadian tersebut saling bebas (independen), kemudian menerapkan aturan perkalian peluang untuk kejadian majemuk.. Bukti: Suatu kantong berisi enam bola merah dan empat bola biru.; diambil dua bola berturut-turut.; dengan pengembalian
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang aturan perkalian peluang untuk kejadian independen dalam konteks pengambilan objek.. Bukti: peluang terambilnya dua bola biru; dengan pengembalian
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Prosedur untuk kejadian independen (dengan pengembalian) sangat standar dan tidak memerlukan perencanaan strategi yang kompleks atau integrasi kendala yang sulit.. Bukti: diambil dua bola berturut-turut; dengan pengembalian
 
 Profil difficulty run ini:
 
 | Parameter | Nilai |
 |---|---|
-| expectedPrerequisite | Konsep dasar peluang kejadian tunggal dan aturan perkalian peluang. |
+| expectedPrerequisite | Konsep dasar peluang kejadian tunggal dan aturan perkalian untuk kejadian independen. |
 | dependentSteps | 2 |
 | routineStatus | familiar_routine |
 | strategySelection | False |
 | representationTransfer | False |
 | relevantInformationUnits | 3 |
-| interactingConstraints | 1 |
+| interactingConstraints | 0 |
 | calculationLoad | low |
 | scaffoldLevel | none |
 | distractorQuality | plausible |
-| gradeRelativeRationale | Materi peluang kejadian majemuk adalah standar kurikulum kelas 12. Soal ini merupakan aplikasi langsung dari definisi kejadian saling bebas. |
+| gradeRelativeRationale | Materi peluang kejadian majemuk adalah kurikulum standar kelas 12. Soal ini merupakan aplikasi langsung dari rumus dasar tanpa variasi kondisi yang rumit. |
+
+Run 3 — solusi: Total bola = 6 + 4 = 10. Peluang terambil bola biru pada pengambilan pertama P(B1) = 4/10 = 2/5. Karena pengambilan dengan pengembalian, peluang pengambilan kedua P(B2) = 4/10 = 2/5. Peluang dua bola biru = P(B1) * P(B2) = (2/5) * (2/5) = 4/25.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi konsep peluang kejadian saling bebas (dengan pengembalian) dan menerapkan aturan perkalian untuk kejadian majemuk. Ini adalah penerapan langsung dari prosedur yang sudah dipelajari.. Bukti: Suatu kantong berisi enam bola merah dan empat bola biru.; diambil dua bola berturut-turut... dengan pengembalian; Berapa peluang terambilnya dua bola biru
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana menghitung peluang kejadian majemuk yang saling bebas dengan menggunakan aturan perkalian.. Bukti: peluang terambilnya dua bola biru; dengan pengembalian
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu memahami konsep 'dengan pengembalian' yang berarti peluang tetap sama untuk setiap pengambilan, lalu mengalikan kedua peluang tersebut. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: diambil dua bola berturut-turut; dengan pengembalian
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar peluang kejadian tunggal dan aturan perkalian untuk kejadian saling bebas. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi peluang kejadian majemuk adalah standar kelas 12. Soal ini tidak memiliki jebakan atau kompleksitas tambahan, sehingga termasuk kategori mudah bagi siswa kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {"applying": 3} | unanimous_3_0 / unanimous | applying |
-| Dimensi pengetahuan | {"procedural": 3} | unanimous_3_0 / unanimous | procedural |
-| Intended difficulty | {"Easy": 3} | unanimous_3_0 / unanimous | Easy |
+| Domain kognitif | {"applying": 3} | unanimous_3_0 / adjudicated | applying |
+| Dimensi pengetahuan | {"conceptual": 1, "procedural": 2} | majority_2_of_3 / adjudicated | procedural |
+| Intended difficulty | {"Easy": 3} | unanimous_3_0 / adjudicated | Easy |
+
+Adjudikasi AI: `success`; token `4251`.
+Konten: `valid`; kunci: `verified`; masalah: .
+- Domain kognitif `applying`: Siswa perlu mengidentifikasi kejadian sebagai kejadian independen (dengan pengembalian) dan menerapkan aturan perkalian peluang untuk kejadian majemuk. Ini adalah penerapan prosedur standar pada konteks rutin.
+- Dimensi pengetahuan `procedural`: Soal menguji pemahaman prosedural tentang aturan perkalian peluang untuk kejadian independen dalam konteks pengambilan objek.
+- Intended difficulty `Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu memahami konsep 'dengan pengembalian' yang berarti peluang tetap sama untuk setiap pengambilan, lalu mengalikan kedua peluang tersebut. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.
+
+Profil difficulty hasil adjudikasi:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar peluang kejadian tunggal dan aturan perkalian untuk kejadian independen. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi peluang kejadian majemuk adalah kurikulum standar kelas 12. Soal ini merupakan aplikasi langsung dari rumus peluang kejadian independen tanpa variasi atau jebakan yang memerlukan penalaran tingkat tinggi. |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 

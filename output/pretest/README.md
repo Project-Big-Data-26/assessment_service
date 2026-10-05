@@ -2,9 +2,9 @@
 
 Laporan aktif mencakup **580 soal** reguler kelas 1-12 dan TL kelas 11-12: **1,740/1,740 run awal sukses**, **0 adjudikasi tertunda**. Label operasional memakai `ai_silver` tanpa persetujuan pelabel manusia.
 
-**562 soal silver_ready**, **17 soal revision_required**, **1 soal needs_ai_review**. Soal yang memerlukan revisi atau penilaian ulang ditahan dari snapshot delivery.
+**562 soal silver_ready**, **15 soal revision_required**, **3 soal needs_ai_review**. Soal yang memerlukan revisi atau penilaian ulang ditahan dari snapshot delivery.
 
-Label kesulitan seluruh soal: **420 Easy, 153 Medium, 5 Hard, 2 undecided**.
+Label kesulitan seluruh soal: **428 Easy, 142 Medium, 7 Hard, 3 undecided**.
 
 | Kelas | Soal | Run sukses | Easy | Medium | Hard | Silver siap | Revisi | AI review |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -17,10 +17,10 @@ Label kesulitan seluruh soal: **420 Easy, 153 Medium, 5 Hard, 2 undecided**.
 | [kelas7](kelas7/hasil_validasi/README.md) | 49 | 147 | 32 | 16 | 1 | 48 | 1 | 0 |
 | [kelas8](kelas8/hasil_validasi/README.md) | 42 | 126 | 26 | 16 | 0 | 41 | 1 | 0 |
 | [kelas9](kelas9/hasil_validasi/README.md) | 42 | 126 | 30 | 12 | 0 | 39 | 3 | 0 |
-| [kelas10](kelas10/hasil_validasi/README.md) | 46 | 138 | 29 | 17 | 0 | 46 | 0 | 0 |
-| [kelas11](kelas11/hasil_validasi/README.md) | 22 | 66 | 15 | 6 | 1 | 21 | 1 | 0 |
-| [kelas11_tl](kelas11_tl/hasil_validasi/README.md) | 55 | 165 | 44 | 11 | 0 | 54 | 1 | 0 |
-| [kelas12](kelas12/hasil_validasi/README.md) | 32 | 96 | 19 | 13 | 0 | 31 | 1 | 0 |
+| [kelas10](kelas10/hasil_validasi/README.md) | 46 | 138 | 33 | 13 | 0 | 46 | 0 | 0 |
+| [kelas11](kelas11/hasil_validasi/README.md) | 22 | 66 | 18 | 4 | 0 | 20 | 0 | 2 |
+| [kelas11_tl](kelas11_tl/hasil_validasi/README.md) | 55 | 165 | 46 | 8 | 1 | 55 | 0 | 0 |
+| [kelas12](kelas12/hasil_validasi/README.md) | 32 | 96 | 18 | 11 | 2 | 31 | 1 | 0 |
 | [kelas12_tl](kelas12_tl/hasil_validasi/README.md) | 41 | 123 | 30 | 11 | 0 | 40 | 1 | 0 |
 
 [Snapshot silver](silver_operational/dataset_snapshot_v2.json) `operational-silver-20261003-v2` memuat **571 versi qualified**. Jika laporan berubah, bangun dan daftarkan snapshot baru melalui `scripts/build_operational_silver.py`; snapshot yang sudah terdaftar tetap immutable. Gate training/test dan dukungan tiap label tetap berlaku.
