@@ -11,7 +11,8 @@ OPTION_IDS = ["A", "B", "C", "D"]
 
 def susun(data) -> Dict[str, Tuple[List[dict], str]]:
     """data: ExerciseFile. Return {soal_id: (options, correct_option_id)}."""
-    rng = random.Random(f"opsi-v1-{data.book}-{data.bab_no}-{data.subbab}-{data.level}-{data.batch}")
+    rng = random.Random(f"opsi-v1-{data.book}-{data.bab_no}-{data.subbab}-{data.level}-{data.batch}"
+                        + ("-gambar" if getattr(data, "bergambar", False) else ""))
     # Awal rotasi diacak per file: tanpa ini, 15 soal selalu menghasilkan 4/4/4/3 dan "sisa" selalu jatuh ke D
     # sehingga jawaban D lebih jarang benar (bias yang bisa ditebak siswa).
     awal = rng.randrange(4)

@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import re
 import sys
 from difflib import SequenceMatcher
@@ -30,7 +31,7 @@ from pydantic import ValidationError
 
 from app.services.exercise import config as C
 from app.services.exercise.dedup import cek_kembar
-from app.services.exercise.refs import (acuan_key, load_exercise, load_pretest, norm_answer,
+from app.services.exercise.refs import (acuan_key, gambar_path, load_exercise, load_pretest, norm_answer,
                                         numbers, soal_text)
 from app.services.exercise.schema import ExerciseFile
 from app.services.pretest.agentic import kurikulum
@@ -140,15 +141,22 @@ def validate_file(path: str, partial: bool = False):
         return data, [f"subbab {data.subbab} tidak ada di {bab.bab_id}: {[k for k, _ in bab.subbab]}"], []
 
     book = get_book(data.book)
-    kuota = C.KUOTA_PER_LEVEL[book.jenjang]
+    kuota = C.KUOTA_GAMBAR_MAKS if data.bergambar else C.KUOTA_PER_LEVEL[book.jenjang]
     spec = C.LEVEL_SPEC[data.level]
-    prefix = f"{data.book}-b{data.bab_no:02d}-{data.subbab.lower()}-{data.level}-bt{data.batch:02d}-"
+    prefix = f"{data.book}-b{data.bab_no:02d}-{data.subbab.lower()}-{data.level}-bt{data.batch:02d}-{'g' if data.bergambar else ''}"
 
     ids = [s.id for s in data.soal]
     if len(set(ids)) != len(ids):
         errors.append("id soal ganda")
     n = len(data.soal)
-    if data.kapasitas_kurang:
+    if data.bergambar:
+        if data.kapasitas_kurang or data.alasan_kapasitas:
+            errors.append("berkas bergambar tidak memakai kapasitas_kurang (jumlah bebas 1..maks)")
+        if n > kuota:
+            errors.append(f"jumlah soal bergambar {n} > maks {kuota}")
+        if n == 0 and not partial:
+            errors.append("berkas bergambar kosong")
+    elif data.kapasitas_kurang:
         if not data.alasan_kapasitas:
             errors.append("kapasitas_kurang=true wajib disertai alasan_kapasitas")
         if n >= kuota:
@@ -157,7 +165,7 @@ def validate_file(path: str, partial: bool = False):
             errors.append("kapasitas_kurang=true tetapi tidak ada soal")
     elif data.alasan_kapasitas:
         errors.append("alasan_kapasitas diisi tetapi kapasitas_kurang tidak true")
-    if n > kuota or (n != kuota and not partial and not data.kapasitas_kurang):
+    if not data.bergambar and (n > kuota or (n != kuota and not partial and not data.kapasitas_kurang)):
         errors.append(f"jumlah soal {n} != kuota {kuota} ({book.jenjang}, level {data.level})")
     n_var = sum(1 for s in data.soal if s.tipe_generate == "variasi")
     # Kapasitas kurang: porsi dihitung dari jumlah soal yang ADA, bukan kuota penuh (kalau tidak, 16 soal
@@ -168,13 +176,14 @@ def validate_file(path: str, partial: bool = False):
     # "variasi" membuat soal orisinal yang bagus diubah hanya demi lolos validator.
     # Sama bila kapasitas_kurang: kekurangan itu sendiri biasanya karena acuan variasi habis.
     batas_bawah = 0 if (data.level == "hard" or data.kapasitas_kurang) else max(0, target_var - C.TOLERANSI_PORSI)
-    if not partial and not (batas_bawah <= n_var <= target_var + C.TOLERANSI_PORSI):
+    if not data.bergambar and not partial and not (batas_bawah <= n_var <= target_var + C.TOLERANSI_PORSI):
         errors.append(f"variasi {n_var} soal, target {target_var} ±{C.TOLERANSI_PORSI} dari {kuota}"
                       f"{' (hard: tanpa batas bawah)' if data.level == 'hard' else ''}")
 
     pages = Pages(book)
     pretest = load_pretest(data.book)
     pakai: dict = {}
+    pakai_gambar: dict = {}
     for s in data.soal:
         if not s.id.startswith(prefix):
             errors.append(f"{s.id}: id harus diawali '{prefix}'")
@@ -183,7 +192,14 @@ def validate_file(path: str, partial: bool = False):
         lo, hi = spec["langkah"]
         if not lo <= s.jumlah_langkah <= hi:
             errors.append(f"{s.id}: jumlah_langkah {s.jumlah_langkah} di luar {lo}-{hi} untuk {data.level}")
-        if _GAMBAR_RE.search(soal_text(s.stimulus, s.pertanyaan)):
+        if bool(s.gambar) != data.bergambar:
+            errors.append(f"{s.id}: " + ("soal tanpa gambar di berkas bergambar" if data.bergambar
+                                         else "gambar hanya boleh di berkas bergambar (_gambar.json)"))
+        for g in s.gambar:
+            if not os.path.exists(gambar_path(data.book, g)):
+                errors.append(f"{s.id}: berkas gambar tidak ada: {g}")
+            pakai_gambar[g] = pakai_gambar.get(g, 0) + 1
+        if not s.gambar and _GAMBAR_RE.search(soal_text(s.stimulus, s.pertanyaan)):
             errors.append(f"{s.id}: soal merujuk gambar/buku, padahal gambar belum didukung -- tulis datanya di stimulus")
         _opsi_unik(s, errors, warns)
         teks_a, jaw_a = _cek_acuan(s, pages, pretest, errors)
@@ -191,6 +207,9 @@ def validate_file(path: str, partial: bool = False):
             _cek_variasi(s, teks_a, jaw_a, errors)
             k = acuan_key(s.acuan.model_dump())
             pakai[k] = pakai.get(k, 0) + 1
+    for g, v in pakai_gambar.items():
+        if v > C.MAKS_PAKAI_GAMBAR:
+            errors.append(f"gambar {g} dipakai {v}x (maks {C.MAKS_PAKAI_GAMBAR})")
     for k, v in pakai.items():
         if v > C.MAKS_VARIASI_PER_ACUAN:
             errors.append(f"acuan {k} dipakai {v}x (maks {C.MAKS_VARIASI_PER_ACUAN})")

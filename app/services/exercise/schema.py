@@ -42,7 +42,7 @@ class Acuan(_Strict):
 
 
 class Soal(_Strict):
-    id: str = Field(pattern=r"^[a-z0-9_]+-b\d{2}-[a-z]-(easy|medium|hard)-bt\d{2}-\d{3}$")
+    id: str = Field(pattern=r"^[a-z0-9_]+-b\d{2}-[a-z]-(easy|medium|hard)-bt\d{2}-g?\d{3}$")
     tipe_generate: Literal["variasi", "orisinal"]
     variasi_cara: Optional[Literal["angka", "konteks"]] = None
     acuan: Acuan
@@ -53,6 +53,10 @@ class Soal(_Strict):
     jumlah_langkah: int = Field(ge=1, le=8, description="langkah penyelesaian minimal yang dibutuhkan siswa")
     alasan_level: str = Field(min_length=5, description="satu kalimat kenapa soal ini pantas di level ini")
     stimulus: Optional[str] = None
+    # Soal bergambar: path gambar relatif terhadap data/processed/pretest_md/<buku>/siswa/ (mis. "img/xxx.png").
+    # deskripsi_gambar = fakta yang dibaca generator dari gambar (angka, label, bentuk); TIDAK diberikan ke solver.
+    gambar: List[str] = []
+    deskripsi_gambar: Optional[str] = Field(None, min_length=10)
     pertanyaan: str = Field(min_length=3)
     jawaban_benar: str = Field(min_length=1)
     alasan_benar: str = Field(min_length=3)
@@ -66,6 +70,10 @@ class Soal(_Strict):
     @model_validator(mode="after")
     def _cek_acuan(self):
         a = self.acuan
+        if self.gambar and not self.deskripsi_gambar:
+            raise ValueError("soal bergambar wajib mengisi deskripsi_gambar")
+        if self.deskripsi_gambar and not self.gambar:
+            raise ValueError("deskripsi_gambar diisi tetapi gambar kosong")
         if self.tipe_generate == "variasi":
             if self.variasi_cara is None:
                 raise ValueError("variasi wajib mengisi variasi_cara ('angka' atau 'konteks')")
@@ -90,6 +98,10 @@ class ExerciseFile(_Strict):
     batch: int = Field(ge=1)
     # versi SKILL.md yang menghasilkan file ini (kosong = dibuat sebelum v1)
     skill_versi: Optional[str] = Field(None, pattern=r"^v\d+$")
+    # Pembuat file: "9router:<model>" untuk pipeline otomatis; kosong = agen Claude Code / sebelum field ini ada.
+    generator: Optional[str] = Field(None, min_length=3, max_length=120)
+    # True = berkas soal BERGAMBAR (<K>_<level>_gambar.json): id memakai awalan "g", semua soal wajib punya gambar.
+    bergambar: bool = False
     # Kapasitas kurang: bahan subbab tidak cukup untuk kuota tanpa soal nyaris kembar / di luar materi.
     # Harus DINYATAKAN di sini (bukan kebetulan kurang), lengkap dengan alasan.
     kapasitas_kurang: bool = False

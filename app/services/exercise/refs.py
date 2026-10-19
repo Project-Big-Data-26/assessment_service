@@ -22,6 +22,12 @@ def numbers(text: str) -> List[str]:
     return _NUM_RE.findall(_HTML_RE.sub(" ", text or ""))
 
 
+def gambar_path(book: str, rel: str) -> str:
+    """Path berkas gambar soal (rel = 'img/xxx.png' dari image_refs pretest)."""
+    from app.services.exercise.config import GAMBAR_ROOT
+    return os.path.join(GAMBAR_ROOT, book, "siswa", rel)
+
+
 def soal_text(stimulus: Optional[str], pertanyaan: str) -> str:
     return f"{stimulus.strip()}\n\n{pertanyaan.strip()}" if stimulus else pertanyaan.strip()
 

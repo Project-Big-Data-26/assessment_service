@@ -38,7 +38,8 @@ def prepare(path: str) -> str:
     opsi = susun(data)
     out = {"petunjuk": "Kerjakan setiap soal sendiri. Tulis pilihan (A-D) dan jumlah langkah penyelesaianmu.",
            "soal": [{"id": s.id, "soal": soal_text(s.stimulus, s.pertanyaan),
-                     "opsi": {o["option_id"]: o["text"] for o in opsi[s.id][0]}} for s in data.soal]}
+                     "opsi": {o["option_id"]: o["text"] for o in opsi[s.id][0]},
+                     **({"gambar": s.gambar} if s.gambar else {})} for s in data.soal]}
     dest = _side(path, ".blind.json")
     with open(dest, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
