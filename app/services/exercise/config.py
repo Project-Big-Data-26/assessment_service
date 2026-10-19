@@ -8,6 +8,12 @@ from app.services.pretest.agentic.books import ROOT
 
 OUT_ROOT = os.path.join(ROOT, "output", "exercise")
 
+# Soal BERGAMBAR (gambar diambil dari soal pretest bergambar subbab itu): jumlah soal per level per subbab
+# bebas 1..maks (dibatasi ketersediaan gambar), tanpa porsi variasi/kapasitas_kurang.
+KUOTA_GAMBAR_MAKS = 5
+MAKS_PAKAI_GAMBAR = 2               # satu gambar maksimal dipakai N soal per level
+GAMBAR_ROOT = "data/processed/pretest_md"   # gambar: <GAMBAR_ROOT>/<buku>/siswa/<img/...png>
+
 LEVELS = ("easy", "medium", "hard")
 
 # Soal per LEVEL per subbab per batch (= ukuran sesi latihan; bank per batch = 3x).

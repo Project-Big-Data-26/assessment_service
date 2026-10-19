@@ -1,0 +1,333 @@
+{
+  "book": "kelas9",
+  "bab_no": 2,
+  "subbab": "A",
+  "level": "easy",
+  "batch": 9,
+  "skill_versi": "v1",
+  "generator": "9router:gemini/gemini-3.5-flash",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "generator otomatis hanya memperoleh 8 soal lolos validator setelah 6 putaran; belum ditinjau apakah bahan subbab memang tidak cukup",
+  "soal": [
+    {
+      "id": "kelas9-b02-a-easy-bt09-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 69,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "S+T-R= 2"
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "perhitungan Euler",
+      "jumlah_langkah": 1,
+      "alasan_level": "Soal ini meminta siswa menerapkan satu rumus langsung (rumus Euler) untuk mencari jumlah titik sudut.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah polihedron memiliki $8$ sisi dan $12$ rusuk. Berdasarkan rumus polihedron Euler $S + T - R = 2$, banyak titik sudut ($T$) pada polihedron tersebut adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Menggunakan rumus Euler: $S + T - R = 2 \\implies 8 + T - 12 = 2 \\implies T - 4 = 2 \\implies T = 6$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Siswa salah mengoperasikan persamaan menjadi $T = 12 - 8 - 2$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Siswa mengira jumlah titik sudut selalu sama dengan jumlah sisi"
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Siswa menjumlahkan semua variabel tanpa memperhatikan tanda kurang: $8 + 12 - 2$"
+        }
+      ],
+      "pembahasan": "Diketahui $S = 8$ dan $R = 12$. Berdasarkan rumus Euler:\n$S + T - R = 2$\n$8 + T - 12 = 2$\n$T - 4 = 2$\n$T = 6$.\nJadi, banyak titik sudut pada polihedron tersebut adalah $6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-easy-bt09-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b02-p0069-latihan-a-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "definisi jaring-jaring",
+      "jumlah_langkah": 1,
+      "alasan_level": "Soal ini menguji ingatan siswa mengenai definisi dasar jaring-jaring bangun ruang melalui konteks pembongkaran kemasan.",
+      "stimulus": null,
+      "pertanyaan": "Ketika kita membuka sebuah kardus kemasan berbentuk bangun ruang dengan cara memotong sepanjang rusuk-rusuknya hingga rebah dan membentuk gabungan bangun datar pada satu bidang, pola datar yang terbentuk tersebut dinamakan ....",
+      "jawaban_benar": "jaring-jaring bangun ruang",
+      "alasan_benar": "Jaring-jaring adalah gabungan bangun datar yang terbentuk dari pembelahan bangun ruang menurut rusuk-rusuknya.",
+      "distraktor": [
+        {
+          "teks": "kerangka bangun ruang",
+          "alasan": "Kerangka hanya terdiri dari rusuk-rusuk (garis), bukan gabungan bidang datar"
+        },
+        {
+          "teks": "proyeksi bangun ruang",
+          "alasan": "Proyeksi adalah gambar representasi tiga dimensi pada bidang dua dimensi dari sudut pandang tertentu"
+        },
+        {
+          "teks": "luas permukaan bangun ruang",
+          "alasan": "Luas permukaan adalah ukuran kuantitatif dari seluruh area luar, bukan nama pola datarnya"
+        }
+      ],
+      "pembahasan": "Pola datar yang diperoleh dari memotong rusuk-rusuk bangun ruang lalu merebahkannya pada satu bidang datar disebut jaring-jaring bangun ruang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-easy-bt09-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b02-p0069-latihan-a-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "karakteristik bola",
+      "jumlah_langkah": 1,
+      "alasan_level": "Soal ini menguji pemahaman konseptual siswa tentang alasan geometris mengapa bola tidak memiliki jaring-jaring datar sempurna.",
+      "stimulus": null,
+      "pertanyaan": "Berdasarkan karakteristik permukaannya, bangun ruang bola tidak dapat dibuat jaring-jaringnya secara sempurna pada bidang datar tanpa adanya kerutan atau peregangan. Hal ini disebabkan karena bola ....",
+      "jawaban_benar": "tidak memiliki permukaan datar sama sekali",
+      "alasan_benar": "Seluruh permukaan bola berupa bidang lengkung dua arah (double curvature), sehingga tidak bisa direbahkan menjadi bidang datar tanpa distorsi.",
+      "distraktor": [
+        {
+          "teks": "memiliki terlalu banyak titik sudut",
+          "alasan": "Bola tidak memiliki titik sudut sama sekali"
+        },
+        {
+          "teks": "memiliki rusuk yang berbentuk lingkaran",
+          "alasan": "Bola tidak memiliki rusuk"
+        },
+        {
+          "teks": "memiliki diameter yang tidak konstan",
+          "alasan": "Diameter bola selalu konstan ke segala arah"
+        }
+      ],
+      "pembahasan": "Bola sepenuhnya dibatasi oleh satu bidang lengkung dan tidak memiliki permukaan datar sama sekali, sehingga permukaannya tidak dapat dibentangkan menjadi jaring-jaring datar yang sempurna tanpa mengalami robekan atau kerutan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-easy-bt09-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 67,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "a. Kubus b. Prisma segitiga c. Prisma segi enam d. Limas segi empat"
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "identifikasi jaring-jaring",
+      "jumlah_langkah": 1,
+      "alasan_level": "Soal ini meminta siswa mengidentifikasi bangun ruang berdasarkan deskripsi komponen jaring-jaringnya.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah jaring-jaring bangun ruang terdiri atas $6$ buah persegi yang kongruen. Jika jaring-jaring tersebut dirangkai, bangun ruang yang terbentuk adalah ....",
+      "jawaban_benar": "kubus",
+      "alasan_benar": "Kubus adalah bangun ruang yang dibatasi oleh 6 buah sisi berbentuk persegi yang kongruen.",
+      "distraktor": [
+        {
+          "teks": "balok",
+          "alasan": "Balok umumnya dibatasi oleh persegi panjang, tidak harus 6 persegi kongruen"
+        },
+        {
+          "teks": "prisma segitiga",
+          "alasan": "Prisma segitiga memiliki jaring-jaring yang terdiri dari segitiga dan persegi panjang"
+        },
+        {
+          "teks": "limas segi empat",
+          "alasan": "Limas segi empat memiliki jaring-jaring yang terdiri dari satu persegi dan empat segitiga"
+        }
+      ],
+      "pembahasan": "Bangun ruang yang memiliki $6$ sisi berbentuk persegi yang kongruen adalah kubus. Oleh karena itu, jaring-jaring yang terdiri atas $6$ persegi kongruen akan membentuk kubus.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-easy-bt09-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 64,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "ⓐ Tabung ⓑ Kerucut terpotong ⓒ Limas ⓓ Kerucut ⓔ Prisma ⓕ Balok ⓖ Bola ⓗ Kubus"
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "klasifikasi bangun ruang",
+      "jumlah_langkah": 1,
+      "alasan_level": "Soal ini menguji kemampuan dasar siswa dalam mengklasifikasikan bangun ruang sisi datar.",
+      "stimulus": null,
+      "pertanyaan": "Di antara kelompok bangun ruang berikut, yang seluruh anggotanya merupakan bangun ruang sisi datar (tidak memiliki sisi lengkung) adalah ....",
+      "jawaban_benar": "prisma dan limas",
+      "alasan_benar": "Prisma dan limas seluruh sisinya dibatasi oleh poligon (bidang datar).",
+      "distraktor": [
+        {
+          "teks": "tabung dan kerucut",
+          "alasan": "Tabung dan kerucut memiliki sisi lengkung"
+        },
+        {
+          "teks": "bola dan tabung",
+          "alasan": "Bola dan tabung memiliki sisi lengkung"
+        },
+        {
+          "teks": "kerucut dan bola",
+          "alasan": "Kerucut dan bola memiliki sisi lengkung"
+        }
+      ],
+      "pembahasan": "Bangun ruang sisi datar adalah bangun ruang yang seluruh permukaannya dibatasi oleh bidang datar. Contohnya adalah prisma dan limas. Sedangkan tabung, kerucut, dan bola memiliki komponen sisi lengkung.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-easy-bt09-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 67,
+        "bagian": "Contoh 2.2",
+        "nomor": "c",
+        "teks": "Tentukan bangun ruang apa saja yang terbentuk dari jaring-jaring terkait. ... c. Prisma segi enam",
+        "jawaban": "Prisma segi enam",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "identifikasi jaring-jaring",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengidentifikasi bangun ruang dari deskripsi jaring-jaringnya secara langsung.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah jaring-jaring bangun ruang terdiri atas dua daerah segi delapan beraturan yang kongruen dan delapan daerah persegi panjang. Bangun ruang yang terbentuk jika jaring-jaring tersebut dirangkai adalah ....",
+      "jawaban_benar": "prisma segi delapan",
+      "alasan_benar": "Jaring-jaring yang terdiri dari dua segi delapan kongruen sebagai alas dan tutup serta delapan persegi panjang sebagai sisi tegak akan membentuk prisma segi delapan.",
+      "distraktor": [
+        {
+          "teks": "limas segi delapan",
+          "alasan": "Siswa mengira jaring-jaring dengan alas segi delapan akan membentuk limas, padahal limas hanya memiliki satu alas dan sisi tegaknya berbentuk segitiga"
+        },
+        {
+          "teks": "prisma segi enam",
+          "alasan": "Siswa salah menghitung jumlah persegi panjang pengikat yang berjumlah delapan"
+        },
+        {
+          "teks": "balok",
+          "alasan": "Siswa hanya fokus pada bentuk persegi panjang tanpa memperhatikan alas segi delapan"
+        }
+      ],
+      "pembahasan": "Prisma segi-$n$ memiliki jaring-jaring yang terdiri dari dua buah segi-$n$ kongruen sebagai alas dan tutup, serta $n$ buah persegi panjang sebagai sisi tegak. Karena jaring-jaring terdiri dari dua segi delapan dan delapan persegi panjang, bangun yang terbentuk adalah prisma segi delapan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-easy-bt09-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 69,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "S+T-R= 2"
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "perhitungan Euler",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menghitung salah satu unsur polihedron menggunakan rumus Euler secara langsung.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah polihedron memiliki $12$ sisi dan $20$ titik sudut. Berdasarkan rumus polihedron Euler $S + T - R = 2$, banyak rusuk ($R$) pada polihedron tersebut adalah ....",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Menggunakan rumus Euler: $12 + 20 - R = 2 \\implies 32 - R = 2 \\implies R = 30$.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Siswa salah menggunakan rumus menjadi $R = S + T + 2$ sehingga $12 + 20 + 2 = 34$"
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Siswa salah melakukan operasi aljabar sehingga menghasilkan nilai yang tidak logis"
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Siswa salah menghitung hasil pengurangan $12 + 20 - 2$ menjadi $28$"
+        }
+      ],
+      "pembahasan": "Diketahui banyak sisi $S = 12$ dan banyak titik sudut $T = 20$.\nHubungan Euler:\n$S + T - R = 2$\n$12 + 20 - R = 2$\n$32 - R = 2$\n$R = 32 - 2 = 30$.\nJadi, banyak rusuk polihedron tersebut adalah $30$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-easy-bt09-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 68,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "bangun ruang yang semua sisinya adalah poligon beraturan yang sama persis disebut dengan bangun ruang Platonic"
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "klasifikasi bangun ruang",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengidentifikasi contoh bangun ruang Platonic berdasarkan definisinya.",
+      "stimulus": null,
+      "pertanyaan": "Di antara bangun ruang berikut, yang merupakan contoh dari bangun ruang Platonic adalah ....",
+      "jawaban_benar": "kubus",
+      "alasan_benar": "Kubus memiliki 6 sisi yang semuanya berupa persegi (poligon beraturan) yang kongruen (sama persis), sehingga memenuhi definisi bangun ruang Platonic.",
+      "distraktor": [
+        {
+          "teks": "balok",
+          "alasan": "Siswa mengira balok termasuk Platonic karena bentuknya mirip kubus, padahal sisi-sisi balok tidak harus berupa poligon beraturan yang sama persis"
+        },
+        {
+          "teks": "prisma segitiga siku-siku",
+          "alasan": "Siswa terkecoh karena mengira semua prisma dengan sisi datar adalah bangun Platonic"
+        },
+        {
+          "teks": "limas segi empat",
+          "alasan": "Siswa salah mengira limas segi empat memiliki semua sisi yang sama persis"
+        }
+      ],
+      "pembahasan": "Bangun ruang Platonic adalah bangun ruang yang semua sisinya berupa poligon beraturan yang sama persis (kongruen). Di antara pilihan yang diberikan, hanya kubus yang memenuhi syarat ini karena keenam sisinya berupa persegi yang kongruen.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -28,7 +28,7 @@ import sys
 
 from app.services.exercise import config as C
 from app.services.exercise.options import susun
-from app.services.exercise.refs import soal_text
+from app.services.exercise.refs import gambar_path, soal_text
 from app.services.exercise.validate import validate_file
 from app.services.pretest.agentic import kurikulum
 from app.services.pretest.agentic.books import get_book
@@ -60,13 +60,14 @@ def export_batch(book: str, batch: int) -> dict:
         opsi = susun(data)
         spec = C.LEVEL_SPEC[data.level]
         kuota = C.KUOTA_PER_LEVEL[get_book(book).jenjang]
-        kurang = ({"jumlah": len(data.soal), "kuota": kuota, "alasan": data.alasan_kapasitas}
+        kurang = None if data.bergambar else ({"jumlah": len(data.soal), "kuota": kuota, "alasan": data.alasan_kapasitas}
                   if data.kapasitas_kurang else None)
         for s in data.soal:
             options, benar = opsi[s.id]
             row = {
                 "_id": _oid(s.id), "berkas_id": None, "subbab_id": bab.subbab_nama(data.subbab),
-                "kelas_id": book, "soal_text": soal_text(s.stimulus, s.pertanyaan), "image_url": [],
+                "kelas_id": book, "soal_text": soal_text(s.stimulus, s.pertanyaan),
+                "image_url": [gambar_path(book, g).replace(os.sep, "/") for g in s.gambar],
                 "soal_type": "Pilihan Ganda", "options": options, "matching_pairs": None, "jawaban": benar,
                 "cognitive_level": None, "cognitive_score": None, "status": None,
                 "created_at": now, "updated_at": now, "confidence_score": None,
@@ -84,6 +85,8 @@ def export_batch(book: str, batch: int) -> dict:
                 "jumlah_langkah": s.jumlah_langkah, "jenis_soal": s.jenis_soal,
                 "pembahasan": s.pembahasan, "catatan": s.catatan, "dipaksa_kuota": s.dipaksa_kuota,
                 "kapasitas_kurang": kurang, "skill_versi": data.skill_versi or "pra-v1",
+                "generator": data.generator or "tidak-tercatat",
+                "bergambar": data.bergambar, "gambar": s.gambar, "deskripsi_gambar": s.deskripsi_gambar,
                 "warning": [w for w in warns if s.id in w],
             }
     with open(os.path.join(base, "soal_exercise_db.json"), "w", encoding="utf-8") as f:
