@@ -1,0 +1,644 @@
+{
+  "book": "kelas7",
+  "bab_no": 6,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas7-b06-c-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0227-latihan-6-3-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi klaim diagram",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa mengevaluasi kebenaran klaim rasio performa berdasarkan perbandingan visual panjang batang yang terpotong skala.",
+      "stimulus": "| Peserta | Skor Hasil Tes | Tinggi Batang pada Diagram |\n|---|---|---|\n| Anita | 60 | $4\\text{ cm}$ |\n| Bima | 90 | $10\\text{ cm}$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah diagram batang menyajikan skor tes dua peserta seperti pada tabel di atas. Seorang pengamat mengklaim: \"Kemampuan Bima adalah $2{,}5$ kali lipat kemampuan Anita karena batangnya $2{,}5$ kali lebih tinggi ($10\\text{ cm} : 4\\text{ cm}$).\" Evaluasi yang tepat terhadap klaim tersebut adalah ....",
+      "jawaban_benar": "Salah, karena diagram tidak dimulai dari angka $0$, perbandingan kemampuan sebenarnya adalah $\\frac{90}{60} = 1{,}5$ kali lipat",
+      "alasan_benar": "Rasio visual $10 : 4 = 2{,}5$ terjadi akibat pemotongan sumbu vertikal (dimulai dari 40). Nilai sebenarnya adalah 90 dan 60 dengan rasio $90 : 60 = 1{,}5$.",
+      "distraktor": [
+        {
+          "teks": "Benar, karena perbandingan panjang batang pada diagram selalu mencerminkan perbandingan data yang akurat",
+          "alasan": "Siswa mengabaikan syarat skala sumbu harus mulai dari 0 untuk menjaga proporsi visual."
+        },
+        {
+          "teks": "Salah, karena perbandingan kemampuan sebenarnya adalah selisih skor dibagi skor Anita, yaitu $0{,}5$ kali lipat",
+          "alasan": "Siswa keliru membagi selisih nilai terhadap nilai awal alih-alih rasio perbandingan langsung."
+        },
+        {
+          "teks": "Benar, karena tinggi batang diperoleh dari rumus penskalaan yang seragam sehingga rasio nilai tetap $2{,}5$",
+          "alasan": "Siswa menganggap transformasi linier dengan konstanta tak nol mempertahankan sifat perbandingan proporsional."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan nilai dasar sumbu $y_0$. Jika tinggi batang $h = k(y - y_0)$, maka $4 = k(60 - y_0)$ dan $10 = k(90 - y_0)$.\nLangkah 2: Bagi kedua persamaan: $\\frac{10}{4} = \\frac{90 - y_0}{60 - y_0} \\Rightarrow 2{,}5(60 - y_0) = 90 - y_0 \\Rightarrow 150 - 2{,}5y_0 = 90 - y_0 \\Rightarrow 1{,}5y_0 = 60 \\Rightarrow y_0 = 40$.\nLangkah 3: Hitung rasio nilai sebenarnya: $\\frac{90}{60} = 1{,}5$.\nLangkah 4: Evaluasi klaim: klaim pengamat salah karena pemotongan sumbu di angka 40 membuat batang tampak $2{,}5$ kali lebih tinggi, padahal rasio nilai sebenarnya hanya $1{,}5$ kali.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kalian bisa memperhatikan bahwa jarak antar skala selalu konsisten, dimulai dari 0, 2, 4, 6, 8 dan 10. Selalu berjarak konsisten dan dimulai dari angka 0."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis skala sumbu",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa menganalisis distorsi batang diagram akibat sumbu vertikal yang dipotong dan menentukan angka awal sumbu.",
+      "stimulus": "| Nama Pegawai | Jumlah Penjualan (unit) | Tinggi Batang (cm) |\n|---|---|---|\n| Pak Rahmat | 50 | 6 |\n| Bu Sinta | 70 | 14 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada pembuatan diagram batang penjualan, pembuat diagram sengaja memotong sumbu vertikal (tidak dimulai dari 0) namun tetap menjaga skala berjarak konsisten. Akibatnya, tinggi batang yang tergambar tercantum pada tabel di atas. Berdasarkan data tersebut, sumbu vertikal diagram dimulai dari angka ....",
+      "jawaban_benar": "35",
+      "alasan_benar": "Selisih nilai $70 - 50 = 20$ unit setara dengan $14 - 6 = 8\\text{ cm}$, maka $1\\text{ cm} = 2{,}5$ unit. Tinggi $6\\text{ cm}$ mewakili $6 \\times 2{,}5 = 15$ unit di atas titik awal. Titik awal = $50 - 15 = 35$.",
+      "distraktor": [
+        {
+          "teks": "25",
+          "alasan": "Siswa salah menghitung skala dengan membagi 50 dengan 6 lalu mengira titik awalnya 25."
+        },
+        {
+          "teks": "30",
+          "alasan": "Siswa menghitung selisih 20 unit untuk 14 cm sehingga salah menentukan gradien skala."
+        },
+        {
+          "teks": "40",
+          "alasan": "Siswa mengurangkan selisih tinggi $14 - 6 = 8$ dikalikan bilangan bulat terdekat dari 50."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung selisih tinggi batang: $\\Delta h = 14\\text{ cm} - 6\\text{ cm} = 8\\text{ cm}$.\nLangkah 2: Hitung selisih penjualan: $\\Delta y = 70 - 50 = 20\\text{ unit}$.\nLangkah 3: Tentukan faktor skala: $k = \\frac{\\Delta y}{\\Delta h} = \\frac{20}{8} = 2{,}5\\text{ unit per cm}$.\nLangkah 4: Hitung nilai awal sumbu vertikal ($y_0$): $y_0 = 50 - (6\\text{ cm} \\times 2{,}5\\text{ unit/cm}) = 50 - 15 = 35$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 223,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Namun, tanpa keterampilan membaca diagram, kalian bisa salah mengartikan diagram itu atau tidak terlalu mengerti dengan apa yang ditampilkan oleh diagram itu."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemecahan masalah diagram",
+      "jumlah_langkah": 5,
+      "alasan_level": "Siswa memecahkan masalah inversi data diagram batang rangkap untuk menemukan selisih penambahan agar rasio target tercapai.",
+      "stimulus": "| Komoditas | Gudang P (ton) | Gudang Q (ton) |\n|---|---|---|\n| Beras | 48 | 32 |\n| Jagung | 36 | 44 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan diagram perbandingan stok komoditas di atas, pemilik ingin menambahkan stok beras hanya pada Gudang Q sedemikian rupa sehingga perbandingan total stok beras (Gudang P + Gudang Q) terhadap total stok jagung (Gudang P + Gudang Q) menjadi tepat $3 : 2$. Berapa ton beras yang harus ditambahkan ke Gudang Q?",
+      "jawaban_benar": "40 ton",
+      "alasan_benar": "Total jagung = $36 + 44 = 80\\text{ ton}$. Rasio beras : jagung = $3 : 2$, maka total beras yang dibutuhkan = $\\frac{3}{2} \\times 80 = 120\\text{ ton}$. Stok beras saat ini = $48 + 32 = 80\\text{ ton}$. Tambahan yang dibutuhkan = $120 - 80 = 40\\text{ ton}$.",
+      "distraktor": [
+        {
+          "teks": "24 ton",
+          "alasan": "Siswa keliru menghitung target rasio beras hanya dibandingkan terhadap stok jagung Gudang Q ($44\\text{ ton}$)."
+        },
+        {
+          "teks": "32 ton",
+          "alasan": "Siswa menyamakan tambahan dengan stok awal beras Gudang Q tanpa memperhatikan rasio target $3 : 2$."
+        },
+        {
+          "teks": "48 ton",
+          "alasan": "Siswa menyamakan stok akhir Gudang Q dengan stok Gudang P alih-alih menghitung rasio gabungan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung total stok jagung gabungan kedua gudang: $36 + 44 = 80\\text{ ton}$.\nLangkah 2: Tentukan target total stok beras dari perbandingan $3 : 2$: $\\text{Total Beras Target} = \\frac{3}{2} \\times 80 = 120\\text{ ton}$.\nLangkah 3: Hitung total stok beras yang sudah ada saat ini: $48 + 32 = 80\\text{ ton}$.\nLangkah 4: Hitung kekurangan stok beras gabungan: $120 - 80 = 40\\text{ ton}$.\nLangkah 5: Karena penambahan hanya dilakukan pada Gudang Q, maka beras yang harus ditambahkan ke Gudang Q adalah tepat $40\\text{ ton}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0225-ayo-berpikir-kritis-5",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "interpretasi kritis kuota",
+      "jumlah_langkah": 5,
+      "alasan_level": "Melibatkan pembacaan bertingkat, penentuan selisih batas kritis batas kuota, dan kalkulasi biaya tambahan.",
+      "stimulus": "| Bulan | Konsumsi Listrik (kWh) |\n|---|---|\n| Juli | 320 |\n| Agustus | 365 |\n| September | 340 |\n| Oktober | 390 |\n| November | 385 |\n| Desember | 350 |\n\nSebuah kantor cabang mendapatkan jatah kuota listrik hemat dari kantor pusat sebesar $350\\text{ kWh}$ per bulan. Jika konsumsi bulanan melebihi jatah tersebut, kantor cabang harus membayar denda kelebihan sebesar $\\text{Rp}1.500$ per $\\text{kWh}$ kelebihan.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan diagram konsumsi listrik tersebut, total denda kelebihan kuota listrik yang harus dibayar kantor cabang selama periode Juli hingga Desember adalah ....",
+      "jawaban_benar": "$\\text{Rp}135.000$",
+      "alasan_benar": "Bulan melebihi 350 kWh adalah Agustus (kelebihan 15 kWh), Oktober (kelebihan 40 kWh), dan November (kelebihan 35 kWh). Total kelebihan = 15 + 40 + 35 = 90 kWh. Total denda = 90 × Rp1.500 = Rp135.000.",
+      "distraktor": [
+        {
+          "teks": "$\\text{Rp}120.000$",
+          "alasan": "Hanya menghitung kelebihan bulan Oktober dan November (75 kWh × Rp1.500 = Rp112.500 atau salah hitung selisih Agustus)."
+        },
+        {
+          "teks": "$\\text{Rp}150.000$",
+          "alasan": "Keliru menganggap kelebihan Agustus adalah 25 kWh (365 - 340) sehingga total 100 kWh."
+        },
+        {
+          "teks": "$\\text{Rp}90.000$",
+          "alasan": "Hanya mengalikan total selisih 90 kWh dengan Rp1.000 atau hanya mengambil angka total kelebihan kWh tanpa pengali penuh."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi bulan-bulan yang pemakaiannya melebihi kuota $350\\text{ kWh}$:\n- Agustus: $365 - 350 = 15\\text{ kWh}$\n- Oktober: $390 - 350 = 40\\text{ kWh}$\n- November: $385 - 350 = 35\\text{ kWh}$\n(Bulan Juli, September, dan Desember $\\le 350\\text{ kWh}$, denda = $0$).\n\nLangkah 2: Jumlahkan seluruh kelebihan daya:\nTotal kelebihan $= 15 + 40 + 35 = 90\\text{ kWh}$.\n\nLangkah 3: Hitung total denda:\nTotal denda $= 90 \\times \\text{Rp}1.500 = \\text{Rp}135.000$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 225,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diagram batang rangkap ini biasanya sangat membantu ketika kalian ingin membandingkan 2 kumpulan data."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "validasi klaim data ganda",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perbandingan dua kumpulan data pada diagram rangkap dengan menghitung selisih dan persentase untuk membuktikan klaim.",
+      "stimulus": "| Divisi | Target Produksi (unit) | Realisasi Produksi (unit) |\n|---|---|---|\n| Divisi A | 200 | 250 |\n| Divisi B | 150 | 180 |\n| Divisi C | 250 | 290 |\n| Divisi D | 100 | 130 |\n\nManajer pabrik membaca diagram batang rangkap target dan realisasi produksi empat divisi di atas.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan data diagram batang rangkap tersebut, divisi yang berhasil mencatatkan persentase kelebihan produksi terbesar di atas targetnya adalah ....",
+      "jawaban_benar": "Divisi D",
+      "alasan_benar": "Divisi D memiliki persentase kelebihan (130 - 100)/100 = 30%. Divisi A: 50/200 = 25%. Divisi B: 30/150 = 20%. Divisi C: 40/250 = 16%.",
+      "distraktor": [
+        {
+          "teks": "Divisi A",
+          "alasan": "Terkecoh oleh selisih nilai absolut kelebihan terbesar kedua (50 unit) dengan persentase 25%."
+        },
+        {
+          "teks": "Divisi C",
+          "alasan": "Terkecoh karena batang realisasi Divisi C paling tinggi (290 unit) meskipun persentase kelebihannya paling rendah (16%)."
+        },
+        {
+          "teks": "Divisi B",
+          "alasan": "Keliru membagi selisih 30 dengan realisasi 180 bukan terhadap target 150."
+        }
+      ],
+      "pembahasan": "Untuk membandingkan performa divisi terhadap target masing-masing secara objektif, hitung persentase kelebihan produksi:\n- Divisi A: $\\frac{250 - 200}{200} \\times 100\\% = \\frac{50}{200} \\times 100\\% = 25\\%$\n- Divisi B: $\\frac{180 - 150}{150} \\times 100\\% = \\frac{30}{150} \\times 100\\% = 20\\%$\n- Divisi C: $\\frac{290 - 250}{250} \\times 100\\% = \\frac{40}{250} \\times 100\\% = 16\\%$\n- Divisi D: $\\frac{130 - 100}{100} \\times 100\\% = \\frac{30}{100} \\times 100\\% = 30\\%$\n\nPersentase kelebihan produksi tertinggi dicapai oleh Divisi D ($30\\%$).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0228-ayo-berpikir-kritis-3b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi visualisasi diagram",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pembentukan sistem persamaan untuk menemukan titik dasar skala yang terpotong dan mengevaluasi kesalahan visual diagram.",
+      "stimulus": "| Karyawan | Perolehan Bonus (juta rupiah) | Tinggi Batang pada Diagram | |\n|---|---|---|\n| Hendra | 12 | $4\\text{ cm}$ |\n| Irwan | 15 | $10\\text{ cm}$ |\n| Joko | 18 | $16\\text{ cm}$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang manajer menyajikan diagram batang perolehan bonus tiga karyawan dengan data pada tabel. Manajer mengklaim bahwa kinerja Irwan $2,5$ kali lipat lebih baik daripada Hendra karena tinggi batang Irwan $2,5$ kali tinggi batang Hendra ($10\\text{ cm}$ dibanding $4\\text{ cm}$). Evaluasilah kelemahan penyajian diagram batang tersebut!",
+      "jawaban_benar": "Diagram salah karena skala vertikal tidak dimulai dari $0$ melainkan dari $10\\text{ juta rupiah}$, sehingga membesar-besarkan perbedaan data secara visual.",
+      "alasan_benar": "Hubungan tinggi batang memenuhi $h = k(V - b)$. Dari perbandingan Hendra dan Irwan diperoleh $\\frac{15 - b}{12 - b} = 2,5 \\implies b = 10$. Karena sumbu vertikal dimulai dari $10$ bukan $0$, perbandingan visual menjadi keliru.",
+      "distraktor": [
+        {
+          "teks": "Diagram sudah benar karena perbandingan tinggi batang $10\\text{ cm} : 4\\text{ cm}$ tepat sama dengan perbandingan kinerja nyata kedua karyawan.",
+          "alasan": "Siswa hanya melihat perbandingan fisik batang tanpa membandingkan rasio nilai data asli ($15/12 = 1,25$ kali)."
+        },
+        {
+          "teks": "Diagram salah karena jarak antarskalanilai tidak konsisten dan berubah-ubah sebesar $6\\text{ cm}$ tiap kategori.",
+          "alasan": "Siswa keliru mengira selisih tinggi batang antarpegawai sebagai jarak antarskalanilai pada sumbu."
+        },
+        {
+          "teks": "Diagram salah karena skala vertikal dimulai dari angka negatif sehingga batang Hendra terlihat lebih pendek dari seharusnya.",
+          "alasan": "Siswa salah menganalisis efek pemotongan sumbu dan menduga titik awal berada di bawah nol."
+        }
+      ],
+      "pembahasan": "Pada diagram batang yang benar, tinggi batang harus sebanding langsung dengan nilai data ($h = k \\cdot V$), yang mensyaratkan sumbu vertikal dimulai dari $0$. Jika sumbu dimulai dari nilai dasar $b$, tinggi batang adalah $h = k(V - b)$.\n1. Dari data Hendra: $4 = k(12 - b)$.\n2. Dari data Irwan: $10 = k(15 - b)$.\n3. Membagi kedua persamaan: $\\frac{10}{4} = \\frac{15 - b}{12 - b} \\implies 2,5(12 - b) = 15 - b \\implies 30 - 2,5b = 15 - b \\implies 1,5b = 15 \\implies b = 10$.\nSumbu vertikal dimulai dari nilai $10\\text{ juta rupiah}$, bukan $0$. Akibatnya, nilai asli yang sebenarnya hanya berselisih $25\\%$ ($15$ dibanding $12$) tampak seolah-olah menjadi $250\\%$ ($10\\text{ cm}$ dibanding $4\\text{ cm}$). Diagram tersebut membesar-besarkan perbedaan data secara visual.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap diagram seharusnya memiliki fitur judul, label pada setiap sumbu atau bagian, skala pada sumbu atau bagian yang sama besar. Skala ini juga harus konsisten dan satuan yang digunakan terlihat pada diagram."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis skala terpotong",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis nilai satuan skala konsisten dan memadukannya dengan konsep nilai rata-rata untuk menentukan posisi garis kisi diagram.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada sebuah diagram batang peminjaman buku perpustakaan, garis-garis skala pada sumbu vertikal berjarak konsisten dan dimulai dari angka $0$, tetapi label angkanya terhapus. Kategori Novel berada tepat pada garis skala ke-4 dengan nilai peminjaman $48\\text{ buku}$. Dua kategori lainnya adalah Komik pada garis skala ke-7 dan Ensiklopedia pada garis skala ke-$n$. Jika rata-rata peminjaman ketiga jenis buku tersebut adalah $80\\text{ buku}$, pada garis skala ke berapakah letak ujung batang Ensiklopedia ($n$)?",
+      "jawaban_benar": "Garis skala ke-9",
+      "alasan_benar": "Nilai tiap skala adalah $48 / 4 = 12\\text{ buku}$. Total ketiga kategori $= 3 \\times 80 = 240\\text{ buku}$. Komik $= 7 \\times 12 = 84\\text{ buku}$. Ensiklopedia $= 240 - (48 + 84) = 108\\text{ buku}$. Posisi garis skala $n = 108 / 12 = 9$.",
+      "distraktor": [
+        {
+          "teks": "Garis skala ke-8",
+          "alasan": "Siswa salah melakukan pengurangan total data: $240 - 144 = 96$, sehingga $96 / 12 = 8$."
+        },
+        {
+          "teks": "Garis skala ke-10",
+          "alasan": "Siswa mengabaikan nilai Novel dan langsung membagi total rata-rata dengan nilai per skala: $(80 + 40)/12 = 10$."
+        },
+        {
+          "teks": "Garis skala ke-11",
+          "alasan": "Siswa salah menjumlahkan garis $4 + 7 = 11$ dan menganggap posisi Ensiklopedia sama dengan jumlah garis kategori lain."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai per satu interval garis skala.\nKarena skala berjarak konsisten dan dimulai dari $0$, nilai tiap interval adalah:\n$s = \\frac{48}{4} = 12\\text{ buku per garis skala}$.\n\nLangkah 2: Menghitung banyak buku Komik (garis ke-7).\n$\\text{Komik} = 7 \\times 12 = 84\\text{ buku}$.\n\nLangkah 3: Menghitung total peminjaman dari nilai rata-rata.\n$\\text{Total} = 3 \\times 80 = 240\\text{ buku}$.\n\nLangkah 4: Menghitung banyak buku Ensiklopedia.\n$\\text{Ensiklopedia} = 240 - (48 + 84) = 240 - 132 = 108\\text{ buku}$.\n\nLangkah 5: Menentukan posisi garis skala Ensiklopedia ($n$).\n$n = \\frac{108}{12} = 9$.\nJadi, ujung batang Ensiklopedia berada pada garis skala ke-9.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 227,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Melihat diagram batang ini, apakah kalian menemukan pola pertumbuhan jumlah pengunjung wisata setiap tahunnya? Jelaskan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis pola pertumbuhan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Siswa harus mengekstrak pola beda tetap dari deret data diagram batang, mengubah laju pertumbuhannya berdasarkan syarat baru, dan memprediksi total multi-periode.",
+      "stimulus": "| Tahun | Jumlah Pengunjung (orang) |\n|---|---|\n| 2020 | 12.000 |\n| 2021 | 15.500 |\n| 2022 | 19.000 |\n| 2023 | 22.500 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan diagram pertumbuhan pengunjung tempat rekreasi pada tabel, pengelola menemukan bahwa jumlah pengunjung bertambah dengan pola konstan setiap tahun. Mulai tahun 2024, pengelola menargetkan penambahan tahunan menjadi $1,5$ kali lipat dari pola penambahan tahunan sebelumnya. Jika target tersebut konsisten tercapai pada tahun 2024 dan 2025, berapakah total gabungan jumlah pengunjung pada tahun 2024 dan 2025?",
+      "jawaban_benar": "$60.750\\text{ orang}$",
+      "alasan_benar": "Pola penambahan lama $= 15.500 - 12.000 = 3.500\\text{ orang/tahun}$. Penambahan baru $= 1,5 \\times 3.500 = 5.250\\text{ orang/tahun}$. Pengunjung $2024 = 22.500 + 5.250 = 27.750$, pengunjung $2025 = 27.750 + 5.250 = 33.000$. Total gabungan $= 27.750 + 33.000 = 60.750\\text{ orang}$.",
+      "distraktor": [
+        {
+          "teks": "$55.500\\text{ orang}$",
+          "alasan": "Siswa lupa mengalikan $1,5$ dan tetap memakai penambahan lama $3.500\\text{ orang/tahun}$ ($26.000 + 29.500 = 55.500$)."
+        },
+        {
+          "teks": "$33.000\\text{ orang}$",
+          "alasan": "Siswa hanya menghitung pengunjung pada tahun 2025 saja, tidak menjumlahkan tahun 2024 dan 2025."
+        },
+        {
+          "teks": "$58.500\\text{ orang}$",
+          "alasan": "Siswa salah menambahkan $5.250$ hanya satu kali untuk kedua tahun ($27.750 + 27.750 = 55.500$ lalu ditambah $3.000$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan pola pertumbuhan tahunan sebelumnya.\n$15.500 - 12.000 = 3.500$\n$19.000 - 15.500 = 3.500$\n$22.500 - 19.000 = 3.500$\nPenambahan tahunan lama adalah $3.500\\text{ orang/tahun}$.\n\nLangkah 2: Menghitung laju penambahan baru mulai tahun 2024.\n$\\text{Laju baru} = 1,5 \\times 3.500 = 5.250\\text{ orang/tahun}$.\n\nLangkah 3: Menghitung proyeksi pengunjung tahun 2024.\n$\\text{Pengunjung 2024} = 22.500 + 5.250 = 27.750\\text{ orang}$.\n\nLangkah 4: Menghitung proyeksi pengunjung tahun 2025.\n$\\text{Pengunjung 2025} = 27.750 + 5.250 = 33.000\\text{ orang}$.\n\nLangkah 5: Menghitung total gabungan tahun 2024 dan 2025.\n$\\text{Total} = 27.750 + 33.000 = 60.750\\text{ orang}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 225,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diagram batang rangkap ini biasanya sangat membantu ketika kalian ingin membandingkan 2 kumpulan data."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "optimasi data ganda",
+      "jumlah_langkah": 5,
+      "alasan_level": "Melibatkan evaluasi perbandingan dua variabel berbeda pada diagram batang rangkap menggunakan fungsi bobot insentif dan penalti.",
+      "stimulus": "| Kurir | Pengiriman Berhasil (paket) | Pengiriman Gagal (paket) |\n|---|---|---|\n| Kurir A | 85 | 15 |\n| Kurir B | 95 | 20 |\n| Kurir C | 75 | 5 |\n| Kurir D | 110 | 30 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah perusahaan logistik menyajikan data kinerja empat kurir melalui diagram batang rangkap seperti pada tabel. Perusahaan memberikan insentif $\\text{Rp}4.000$ untuk setiap paket yang berhasil dikirim, tetapi memotong denda $\\text{Rp}8.000$ untuk setiap paket yang gagal dikirim. Kurir yang memperoleh penghasilan bersih (insentif dikurangi denda) tertinggi berhak mendapat bonus bulanan. Kurir manakah yang berhak memperoleh bonus tersebut beserta besar penghasilan bersihnya?",
+      "jawaban_benar": "Kurir C dengan penghasilan bersih $\\text{Rp}260.000$",
+      "alasan_benar": "Penghasilan C: $(75 \\times 4.000) - (5 \\times 8.000) = 300.000 - 40.000 = \\text{Rp}260.000$. Nilai ini lebih tinggi daripada Kurir A ($\\text{Rp}220.000$), Kurir B ($\\text{Rp}220.000$), dan Kurir D ($\\text{Rp}200.000$).",
+      "distraktor": [
+        {
+          "teks": "Kurir D dengan penghasilan bersih $\\text{Rp}200.000$",
+          "alasan": "Siswa langsung memilih kurir dengan pengiriman berhasil terbanyak tanpa memperhitungkan penalti yang besar."
+        },
+        {
+          "teks": "Kurir B dengan penghasilan bersih $\\text{Rp}220.000$",
+          "alasan": "Siswa salah menghitung hasil penalti Kurir B dan salah membandingkan nilai akhir."
+        },
+        {
+          "teks": "Kurir C dengan penghasilan bersih $\\text{Rp}300.000$",
+          "alasan": "Siswa hanya menghitung insentif pengiriman berhasil Kurir C tanpa mengurangkan denda pengiriman gagal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung penghasilan bersih Kurir A.\n$(85 \\times 4.000) - (15 \\times 8.000) = 340.000 - 120.000 = \\text{Rp}220.000$.\n\nLangkah 2: Menghitung penghasilan bersih Kurir B.\n$(95 \\times 4.000) - (20 \\times 8.000) = 380.000 - 160.000 = \\text{Rp}220.000$.\n\nLangkah 3: Menghitung penghasilan bersih Kurir C.\n$(75 \\times 4.000) - (5 \\times 8.000) = 300.000 - 40.000 = \\text{Rp}260.000$.\n\nLangkah 4: Menghitung penghasilan bersih Kurir D.\n$(110 \\times 4.000) - (30 \\times 8.000) = 440.000 - 240.000 = \\text{Rp}200.000$.\n\nLangkah 5: Membandingkan seluruh nilai.\nPenghasilan tertinggi diperoleh oleh Kurir C dengan nilai $\\text{Rp}260.000$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kalian bisa memperhatikan bahwa jarak antar skala selalu konsisten, dimulai dari 0, 2, 4, 6, 8 dan 10. Selalu berjarak konsisten dan dimulai dari angka 0."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan skala diagram",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perancangan skala sumbu diagram baru berdasarkan batasan fisik kertas petak dan aturan kelipatan skala konsisten.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang siswa merancang diagram batang pada kertas berpetak. Tinggi vertikal yang tersedia adalah $20\\text{ petak}$. Data nilai frekuensi tertinggi yang harus digambar adalah $340\\text{ unit}$. Sumbu vertikal harus dimulai dari angka $0$, dan nilai tiap petak harus konsisten menggunakan bilangan bulat kelipatan $5$ ($5, 10, 15, 20, \\dots$). Tentukan nilai skala terkecil per petak yang dapat dipilih agar seluruh data termuat, serta tinggi batang yang terbentuk jika digunakan untuk menggambar data bernilai $270\\text{ unit}$!",
+      "jawaban_benar": "$20\\text{ unit per petak dan tinggi batang }13,5\\text{ petak}$",
+      "alasan_benar": "Batas minimal skala per petak: $340 / 20 = 17\\text{ unit/petak}$. Kelipatan 5 terkecil yang $\\ge 17$ adalah $20$. Dengan skala $20\\text{ unit/petak}$, data 270 digambar setinggi $270 / 20 = 13,5\\text{ petak}$.",
+      "distraktor": [
+        {
+          "teks": "$15\\text{ unit per petak dan tinggi batang }18\\text{ petak}$",
+          "alasan": "Siswa memilih kelipatan 5 yang lebih kecil dari 17 sehingga data 340 tidak akan termuat dalam 20 petak ($20 \\times 15 = 300 < 340$)."
+        },
+        {
+          "teks": "$20\\text{ unit per petak dan tinggi batang }14\\text{ petak}$",
+          "alasan": "Siswa sudah menemukan skala 20 namun salah melakukan pembulatan nilai $13,5$ menjadi $14$ padahal kertas petak dapat digambar pecahan desimal."
+        },
+        {
+          "teks": "$25\\text{ unit per petak dan tinggi batang }10,8\\text{ petak}$",
+          "alasan": "Siswa tidak memilih kelipatan terkecil yang memenuhi syarat batas minimal $17$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung kapasitas minimal tiap petak.\nTinggi vertikal $= 20\\text{ petak}$ dan data maksimum $= 340\\text{ unit}$.\n$\\text{Skala minimal} = \\frac{340}{20} = 17\\text{ unit per petak}$.\n\nLangkah 2: Menentukan kelipatan 5 bilangan bulat terkecil yang $\\ge 17$.\nKelipatan 5 yang tersedia: $5, 10, 15, 20, 25, \\dots$\nNilai terkecil yang lebih dari atau sama dengan $17$ adalah $20\\text{ unit per petak}$.\n\nLangkah 3: Menghitung tinggi batang untuk data bernilai $270\\text{ unit}$.\n$\\text{Tinggi batang} = \\frac{270}{20} = 13,5\\text{ petak}$.\n\nLangkah 4: Memastikan seluruh data termuat.\nKarena $13,5 \\le 20$, batang untuk nilai 270 dapat termuat sempurna pada diagram.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0227-latihan-6-3-2d",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "prediksi pola berlanjut",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa menganalisis pola penambahan data historis, memproyeksikan data ke tahun berikutnya, lalu mengevaluasi pemenuhan kapasitas tampung.",
+      "stimulus": "| Tahun | Sampah Terolah (ton) |\n|---|---|\n| 2020 | 180 |\n| 2021 | 225 |\n| 2022 | 270 |\n| 2023 | 315 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan diagram batang pengolahan sampah di sebuah fasilitas daur ulang pada tabel di atas, volume sampah yang terolah mengalami pertumbuhan tetap tiap tahun. Jika pola pertumbuhan ini terus berlanjut dan kapasitas maksimum fasilitas tersebut adalah $420\\text{ ton}$ per tahun, pada tahun keberapakah volume sampah yang masuk mulai melampaui kapasitas maksimum fasilitas?",
+      "jawaban_benar": "2026",
+      "alasan_benar": "Pertambahan per tahun adalah $225 - 180 = 45\\text{ ton}$. Proyeksi volume: 2024 = $360\\text{ ton}$, 2025 = $405\\text{ ton}$, 2026 = $450\\text{ ton}$. Volume $450\\text{ ton} > 420\\text{ ton}$ terjadi pertama kali pada tahun 2026.",
+      "distraktor": [
+        {
+          "teks": "2025",
+          "alasan": "Siswa salah mengira nilai pada tahun 2025 ($405\\text{ ton}$) sudah melampaui $420\\text{ ton}$."
+        },
+        {
+          "teks": "2027",
+          "alasan": "Siswa menghitung satu tahun terlambat karena salah memulai indeks tahun proyeksi."
+        },
+        {
+          "teks": "2024",
+          "alasan": "Siswa hanya menambahkan satu langkah selisih dari tahun 2023 tanpa membandingkan dengan batas kapasitas $420\\text{ ton}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan selisih pertumbuhan tahunan.\n$\\Delta = 225 - 180 = 45\\text{ ton/tahun}$.\n\nLangkah 2: Proyeksikan data untuk tahun-tahun berikutnya:\n- Tahun 2024: $315 + 45 = 360\\text{ ton}$\n- Tahun 2025: $360 + 45 = 405\\text{ ton}$\n- Tahun 2026: $405 + 45 = 450\\text{ ton}$\n\nLangkah 3: Evaluasi terhadap batas kapasitas $420\\text{ ton}$:\nPada tahun 2025 volume baru mencapai $405\\text{ ton}$ (belum melampaui). Pada tahun 2026 volume mencapai $450\\text{ ton}$, yang bernilai lebih dari $420\\text{ ton}$. Maka kapasitas mulai terlampaui pada tahun 2026.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap diagram seharusnya memiliki fitur judul, label pada setiap sumbu atau bagian, skala pada sumbu atau bagian yang sama besar. Skala ini juga harus konsisten dan satuan yang digunakan terlihat pada diagram."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi nilai diagram",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemecahan masalah bertingkat dan pembentukan persamaan aljabar dari karakteristik skala diagram untuk merekonstruksi nilai data sebenarnya.",
+      "stimulus": "| Kelompok | Tinggi Batang pada Garis Kisi |\n|---|---|\n| Kelompok P | Garis kisi ke-4 |\n| Kelompok Q | Garis kisi ke-7 |\n| Kelompok R | Garis kisi ke-10 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah diagram batang digambar dengan sumbu vertikal dimulai dari $0$ dan jarak antarsetiap garis kisi skala konsisten sebesar $k\\text{ peserta}$. Jika jumlah peserta pada Kelompok P dan Kelompok Q digabungkan menghasilkan $88\\text{ peserta}$, berapakah selisih banyaknya peserta antara Kelompok R dan Kelompok P?",
+      "jawaban_benar": "48 peserta",
+      "alasan_benar": "Nilai P $= 4k$ dan Q $= 7k$. $4k + 7k = 88 \\Rightarrow 11k = 88 \\Rightarrow k = 8$. Selisih R dan P adalah $(10 - 4)k = 6k = 6 \\times 8 = 48\\text{ peserta}$.",
+      "distraktor": [
+        {
+          "teks": "56 peserta",
+          "alasan": "Siswa menghitung selisih antara R dan kelompok Q, yaitu $7k = 56$, bukan antara R dan P."
+        },
+        {
+          "teks": "32 peserta",
+          "alasan": "Siswa menghitung nilai kelompok P ($4 \\times 8 = 32$), bukan selisih antara R dan P."
+        },
+        {
+          "teks": "40 peserta",
+          "alasan": "Siswa salah menghitung selisih kisi menjadi $5k = 5 \\times 8 = 40$ karena kesalahan pengurangan $10 - 5$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Representasikan nilai masing-masing kelompok berdasarkan garis kisi ke-$n$ dengan interval $k$:\n$P = 4k$, $Q = 7k$, $R = 10k$.\n\nLangkah 2: Gunakan informasi gabungan Kelompok P dan Q:\n$P + Q = 88$\n$4k + 7k = 88$\n$11k = 88 \\Rightarrow k = 8$.\n\nLangkah 3: Hitung selisih antara Kelompok R dan Kelompok P:\n$\\text{Selisih} = R - P = 10k - 4k = 6k$.\n\nLangkah 4: Substitusikan nilai $k$:\n$\\text{Selisih} = 6 \\times 8 = 48\\text{ peserta}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 225,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diagram batang rangkap ini biasanya sangat membantu ketika kalian ingin membandingkan 2 kumpulan data."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis persentase laba",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa mengevaluasi performa empat stan dari diagram batang rangkap dengan mengintegrasikan konsep keuntungan dan persentase laba terhadap modal.",
+      "stimulus": "| Stan | Modal (ratus ribu rupiah) | Pendapatan (ratus ribu rupiah) |\n|---|---|---|\n| Stan 1 | 20 | 28 |\n| Stan 2 | 25 | 36 |\n| Stan 3 | 40 | 54 |\n| Stan 4 | 50 | 66 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah diagram batang rangkap menyajikan data modal dan pendapatan dari empat stan pada bazar kewirausahaan sekolah seperti tabel di atas. Berdasarkan data tersebut, stan manakah yang memperoleh persentase keuntungan (terhadap modal) paling tinggi?",
+      "jawaban_benar": "Stan 2",
+      "alasan_benar": "Persentase keuntungan Stan 2 adalah $\\frac{36 - 25}{25} \\times 100\\% = \\frac{11}{25} \\times 100\\% = 44\\%$, lebih tinggi dibandingkan Stan 1 ($40\\%$), Stan 3 ($35\\%$), dan Stan 4 ($32\\%$).",
+      "distraktor": [
+        {
+          "teks": "Stan 4",
+          "alasan": "Siswa terkecoh memilih stan dengan nilai nominal keuntungan terbesar ($66 - 50 = 16\\text{ ratus ribu rupiah}$), bukan persentase keuntungan terhadap modal."
+        },
+        {
+          "teks": "Stan 1",
+          "alasan": "Siswa salah dalam perhitungan rasio atau mengira rasio 8/20 bernilai paling besar."
+        },
+        {
+          "teks": "Stan 3",
+          "alasan": "Siswa hanya membandingkan selisih nominal Stan 3 ($14$) yang lebih besar dari Stan 2 ($11$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Pahami rumus persentase keuntungan terhadap modal:\n$\\text{Persentase} = \\frac{\\text{Pendapatan} - \\text{Modal}}{\\text{Modal}} \\times 100\\%$.\n\nLangkah 2: Hitung persentase tiap stan:\n- Stan 1: $\\frac{28 - 20}{20} \\times 100\\% = \\frac{8}{20} \\times 100\\% = 40\\%$\n- Stan 2: $\\frac{36 - 25}{25} \\times 100\\% = \\frac{11}{25} \\times 100\\% = 44\\%$\n- Stan 3: $\\frac{54 - 40}{40} \\times 100\\% = \\frac{14}{40} \\times 100\\% = 35\\%$\n- Stan 4: $\\frac{66 - 50}{50} \\times 100\\% = \\frac{16}{50} \\times 100\\% = 32\\%$\n\nLangkah 3: Bandingkan persentase yang diperoleh:\n$44\\% > 40\\% > 35\\% > 32\\%$.\n\nMaka persentase keuntungan tertinggi diperoleh Stan 2.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 225,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diagram batang rangkap ini biasanya sangat membantu ketika kalian ingin membandingkan 2 kumpulan data."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi multikriteria diagram",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi ganda terhadap data diagram batang rangkap dengan menghitung selisih laba bersih dan persentase laba untuk menentukan kategori kelayakan.",
+      "stimulus": "| Unit Usaha | Biaya Operasional (juta rupiah) | Pendapatan (juta rupiah) |\n|---|---|---|\n| Unit P | 40 | 56 |\n| Unit Q | 60 | 78 |\n| Unit R | 50 | 70 |\n| Unit S | 80 | 108 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah koperasi menyajikan data biaya operasional dan pendapatan dari empat unit usahanya dalam diagram batang rangkap sebagaimana tercantum pada tabel di atas. Manajemen koperasi menetapkan bahwa suatu unit usaha berhak mendapat predikat \"Sangat Baik\" jika memenuhi dua kriteria sekaligus:\n1. Memperoleh laba bersih (pendapatan dikurangi biaya operasional) minimal $\\text{Rp}18.000.000,00$, dan\n2. Menghasilkan persentase laba terhadap biaya operasional minimal $35\\%$.\n\nBerdasarkan kriteria evaluasi tersebut, unit usaha yang berhak memperoleh predikat \"Sangat Baik\" adalah ....",
+      "jawaban_benar": "Unit R dan Unit S",
+      "alasan_benar": "Unit R memperoleh laba 20 juta (40%) dan Unit S memperoleh laba 28 juta (35%), keduanya memenuhi batas minimal laba 18 juta rupiah dan persentase laba 35%.",
+      "distraktor": [
+        {
+          "teks": "Unit Q, Unit R, dan Unit S",
+          "alasan": "Siswa hanya mengevaluasi kriteria 1 (laba bersih $\\ge 18\\text{ juta}$), tanpa menyadari persentase laba Unit Q hanya $30\\%$ sehingga gugur pada kriteria 2."
+        },
+        {
+          "teks": "Unit P, Unit R, dan Unit S",
+          "alasan": "Siswa hanya mengevaluasi kriteria 2 (persentase laba $\\ge 35\\%$) di mana Unit P mencapai $40\\%$, tetapi lupa bahwa laba bersih Unit P hanya $16\\text{ juta}$ (gugur kriteria 1)."
+        },
+        {
+          "teks": "Hanya Unit R",
+          "alasan": "Siswa salah menafsirkan kata \"minimal $35\\%$\" menjadi \"lebih besar dari $35\\%$\", sehingga Unit S yang tepat bernilai $35\\%$ dianggap tidak memenuhi syarat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung laba bersih masing-masing unit (Pendapatan - Biaya Operasional):\\n- Unit P: $56 - 40 = 16\\text{ juta rupiah}$\\n- Unit Q: $78 - 60 = 18\\text{ juta rupiah}$\\n- Unit R: $70 - 50 = 20\\text{ juta rupiah}$\\n- Unit S: $108 - 80 = 28\\text{ juta rupiah}$\\n\\nLangkah 2: Menguji Kriteria 1 (laba bersih $\\ge 18\\text{ juta rupiah}$):\\n- Unit P gugur karena $16 < 18$.\\n- Unit Q, R, dan S lolos Kriteria 1.\\n\\nLangkah 3: Menghitung persentase laba terhadap biaya operasional $\\left(\\frac{\\text{Laba}}{\\text{Biaya}} \\times 100\\%\\right)$:\\n- Unit Q: $\\frac{18}{60} \\times 100\\% = 30\\%$\\n- Unit R: $\\frac{20}{50} \\times 100\\% = 40\\%$\\n- Unit S: $\\frac{28}{80} \\times 100\\% = \\frac{7}{20} \\times 100\\% = 35\\%$\\n\\nLangkah 4: Menguji Kriteria 2 (persentase laba $\\ge 35\\%$):\\n- Unit Q gugur karena $30\\% < 35\\%$.\\n- Unit R lolos karena $40\\% \\ge 35\\%$.\\n- Unit S lolos karena $35\\% \\ge 35\\%$.\\n\\nLangkah 5: Simpulan unit yang memenuhi kedua kriteria:\\nUnit yang berhak memperoleh predikat \"Sangat Baik\" adalah Unit R dan Unit S.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-c-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 225,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diagram batang rangkap ini biasanya sangat membantu ketika kalian ingin membandingkan 2 kumpulan data."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kelayakan data ganda",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi multi-tahap dengan menghitung total, rasio persentase cacat, serta menguji dua kriteria kelayakan sekaligus.",
+      "stimulus": "| Mesin | Produk Baik (potong) | Produk Cacat (potong) |\n|---|---|---|\n| Mesin 1 | 180 | 20 |\n| Mesin 2 | 240 | 10 |\n| Mesin 3 | 285 | 15 |\n| Mesin 4 | 171 | 9 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pabrik menyajikan data hasil kerja harian empat mesin menggunakan diagram batang rangkap seperti pada tabel di atas. Manajemen menetapkan bahwa mesin dinyatakan layak beroperasi jika memenuhi dua kriteria sekaligus:\n1. Total produksi (gabungan produk baik dan produk cacat) minimal $200\\text{ potong}$.\n2. Tingkat produk cacat tidak melebihi $5\\%$ dari total produksi mesin tersebut.\n\nBerdasarkan kriteria tersebut, mesin manakah yang dinyatakan layak beroperasi?",
+      "jawaban_benar": "Mesin 2 dan Mesin 3",
+      "alasan_benar": "Mesin 2 memiliki total produksi $240 + 10 = 250\\text{ potong}$ (memenuhi) dengan persentase cacat $\\frac{10}{250} \\times 100\\% = 4\\%$ (memenuhi). Mesin 3 memiliki total produksi $285 + 15 = 300\\text{ potong}$ (memenuhi) dengan persentase cacat $\\frac{15}{300} \\times 100\\% = 5\\%$ (memenuhi). Keduanya memenuhi kedua kriteria.",
+      "distraktor": [
+        {
+          "teks": "Mesin 1, Mesin 2, dan Mesin 3",
+          "alasan": "Hanya memeriksa kriteria total produksi tanpa menguji persentase cacat Mesin 1 yang mencapai 10%."
+        },
+        {
+          "teks": "Mesin 2, Mesin 3, dan Mesin 4",
+          "alasan": "Hanya menghitung persentase cacat (semuanya <= 5%) tetapi lalai memeriksa syarat minimal total produksi untuk Mesin 4 yang hanya 180 potong."
+        },
+        {
+          "teks": "Mesin 2 saja",
+          "alasan": "Mengira batas 'tidak melebihi 5%' berarti harus di bawah 5%, sehingga mendiskualifikasi Mesin 3 yang persentase cacatnya tepat 5%."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung total produksi tiap mesin:\n- Mesin 1: $180 + 20 = 200\\text{ potong}$\n- Mesin 2: $240 + 10 = 250\\text{ potong}$\n- Mesin 3: $285 + 15 = 300\\text{ potong}$\n- Mesin 4: $171 + 9 = 180\\text{ potong}$\n\nLangkah 2: Uji kriteria 1 (total produksi $\\ge 200\\text{ potong}$):\nMesin 1, 2, dan 3 lolos kriteria 1, sedangkan Mesin 4 gugur karena total produksi hanya $180\\text{ potong}$.\n\nLangkah 3: Hitung persentase produk cacat terhadap total produksi:\n- Mesin 1: $\\frac{20}{200} \\times 100\\% = 10\\%$\n- Mesin 2: $\\frac{10}{250} \\times 100\\% = 4\\%$\n- Mesin 3: $\\frac{15}{300} \\times 100\\% = 5\\%$\n\nLangkah 4: Uji kriteria 2 (persentase cacat $\\le 5\\%$):\n- Mesin 1 gugur karena $10\\% > 5\\%$.\n- Mesin 2 lolos karena $4\\% \\le 5\\%$.\n- Mesin 3 lolos karena $5\\% \\le 5\\%$.\n\nJadi, mesin yang memenuhi kedua kriteria kelayakan adalah Mesin 2 dan Mesin 3.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

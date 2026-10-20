@@ -86,6 +86,10 @@ def test_ekspor_mengisi_image_url(tmp_path, monkeypatch):
     s["jawaban_benar"] = "ratusan (angka 9)"      # beda dari jawaban acuan agar lolos validator
     (base / "A_easy_gambar.json").write_text(json.dumps(_file([s])), encoding="utf-8")
     monkeypatch.setattr(C, "OUT_ROOT", str(tmp_path))
+    hasil = export.export_batch("kelas5", 1)
+    assert any("belum dicek" in x for x in hasil["file_dilewati"])    # tanpa sidecar: tidak diekspor
+    (base / "A_easy_gambar.tanpagambar.json").write_text(
+        json.dumps({"tanpa_gambar_cocok": [], "butuh_gambar": [s["id"]]}), encoding="utf-8")
     export.export_batch("kelas5", 1)
     db = json.loads((tmp_path / "kelas5" / "batch01" / "soal_exercise_db.json").read_text(encoding="utf-8"))
     meta = json.loads((tmp_path / "kelas5" / "batch01" / "soal_exercise_meta.json").read_text(encoding="utf-8"))
@@ -97,3 +101,17 @@ def test_ekspor_mengisi_image_url(tmp_path, monkeypatch):
 
 def test_exercisefile_bergambar_default_false():
     assert ExerciseFile.model_validate(_file([], bergambar=False)).bergambar is False
+
+
+@butuh_data
+def test_ekspor_membuang_soal_yang_bisa_dijawab_tanpa_gambar(tmp_path, monkeypatch):
+    base = tmp_path / "kelas5" / "batch01" / "bab01"
+    base.mkdir(parents=True)
+    s = _soal()
+    s["jawaban_benar"] = "ratusan (angka 9)"
+    (base / "A_easy_gambar.json").write_text(json.dumps(_file([s])), encoding="utf-8")
+    (base / "A_easy_gambar.tanpagambar.json").write_text(
+        json.dumps({"tanpa_gambar_cocok": [s["id"]], "butuh_gambar": []}), encoding="utf-8")
+    monkeypatch.setattr(C, "OUT_ROOT", str(tmp_path))
+    hasil = export.export_batch("kelas5", 1)
+    assert hasil["total"] == 0 and any("tanpa gambar" in x for x in hasil["file_dilewati"])
