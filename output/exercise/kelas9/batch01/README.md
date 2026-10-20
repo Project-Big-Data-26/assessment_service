@@ -1,6 +1,6 @@
 # Serah-terima batch 01 — kelas9
 
-Total **270 soal**, pipeline `exercise-2026-10-01`, skill: pra-v1 (270)
+Total **764 soal**, pipeline `exercise-2026-10-01`, skill: pra-v1 (270), v1 (494)
 
 ## File
 
@@ -25,9 +25,9 @@ Catatan untuk kalibrasi:
 ## Penanda khusus
 
 - `dipaksa_kuota` (2 soal): soal tambahan agar kuota penuh saat bahan tipis; rentan nyaris kembar. Perlu perhatian ekstra.
-- `kapasitas_kurang` (0 subbab-level): jumlah soal di bawah kuota karena bahan subbab habis (alasan di meta dan lembar koreksi):
+- `kapasitas_kurang` (1 subbab-level): jumlah soal di bawah kuota karena bahan subbab habis (alasan di meta dan lembar koreksi):
 
-  - (tidak ada)
+  - SMP9-B3 subbab E hard: 14/15 — 4 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis
 
 ## Ringkasan per subbab
 
@@ -35,6 +35,17 @@ Catatan untuk kalibrasi:
 |---|---|---|---|---|
 | SMP9-B1 | A. Persamaan Linear Dua Variabel | 15 | 15 | 15 |
 | SMP9-B1 | B. Sistem Persamaan Linear Dua Variabel | 15 | 15 | 15 |
+| SMP9-B2 | A. Klasifikasi Bangun Ruang dan Jaring-Jaring | 15 | 15 | 15 |
+| SMP9-B2 | B. Luas Permukaan Bangun Ruang Sisi Datar | 15 | 15 | 15 |
+| SMP9-B2 | C. Volume Bangun Ruang Sisi Datar | 15 | 15 | 15 |
+| SMP9-B2 | D. Lingkaran | 15 | 15 | 15 |
+| SMP9-B2 | E. Luas Permukaan Bangun Ruang Sisi Lengkung | 15 | 15 | 15 |
+| SMP9-B2 | F. Volume Bangun Ruang Sisi Lengkung | 15 | 15 | 15 |
+| SMP9-B3 | A. Translasi (Pergeseran) | 15 | 15 | 15 |
+| SMP9-B3 | B. Refleksi (Pencerminan) | 15 | 15 | 15 |
+| SMP9-B3 | C. Rotasi (Perputaran) | 15 | 15 | 15 |
+| SMP9-B3 | D. Kekongruenan | 15 | 15 | 15 |
+| SMP9-B3 | E. Dilatasi | 15 | 15 | 14 |
 | SMP9-B4 | A. Peluang | 15 | 15 | 15 |
 | SMP9-B4 | B. Peluang Empiris | 15 | 15 | 15 |
 | SMP9-B4 | C. Frekuensi Harapan | 15 | 15 | 15 |

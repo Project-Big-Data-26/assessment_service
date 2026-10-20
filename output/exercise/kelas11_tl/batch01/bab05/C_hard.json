@@ -1,0 +1,854 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 5,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 254,
+        "bagian": "Uji Kompetensi Bab 5",
+        "nomor": "21",
+        "teks": "Tentukan peta dari kurva y = 2 x^2 – 3 x + 5 yang ditransformasikan dengan pencerminan terhadap garis y = x dilanjutkan dengan rotasi sebesar 90° 4 terhadap titik pusat O , kemudian ditranslasikan oleh vektor - = 5G .",
+        "jawaban": "x = -2y^2 - 17y - 30",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "transformasi kurva",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan sintesis komposisi tiga transformasi berurutan (refleksi, rotasi, translasi) pada bentuk fungsi aljabar non-linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan bayangan dari kurva parabola $y = x^2 - 6x + 8$ oleh pencerminan terhadap sumbu-$x$ dilanjutkan rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$, kemudian dilanjutkan dengan translasi oleh vektor $\\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}$ adalah ....",
+      "jawaban_benar": "$x = y^2 + 4y + 5$",
+      "alasan_benar": "Matriks refleksi sumbu-$x$ adalah $M_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ dan rotasi $90^\\circ$ adalah $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$. Komposisi dua matriks awal: $M = R M_1 = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$, yang memetakan $\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} y \\\\ x \\end{pmatrix}$. Setelah ditranslasi dengan $\\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}$, diperoleh $x'' = y + 2 \\implies y = x'' - 2$ dan $y'' = x - 5 \\implies x = y'' + 5$. Substitusi ke parabola $y = x^2 - 6x + 8$: $x - 2 = (y + 5)^2 - 6(y + 5) + 8 = y^2 + 10y + 25 - 6y - 30 + 8 = y^2 + 4y + 3 \\implies x = y^2 + 4y + 5$.",
+      "distraktor": [
+        {
+          "teks": "$x = y^2 + 4y + 1$",
+          "alasan": "Siswa salah memindahkan konstanta translasi $-2$ dengan mengurangkannya di ruas kanan bukan menjumlahkannya."
+        },
+        {
+          "teks": "$y = x^2 + 4x + 5$",
+          "alasan": "Siswa tidak menukar peubah $x$ dan $y$ yang dihasilkan dari komposisi refleksi dan rotasi."
+        },
+        {
+          "teks": "$x = y^2 - 16y + 61$",
+          "alasan": "Siswa terbalik mensubstitusikan pergeseran translasi dengan $x = y'' - 5$ dan $y = x'' + 2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan matriks komposisi refleksi terhadap sumbu-$x$ dilanjutkan rotasi $90^\\circ$:\n$$M = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nLangkah 2: Hubungan koordinat setelah rotasi:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} y \\\\ x \\end{pmatrix}$$\n\nLangkah 3: Terapkan translasi $\\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}$:\n$$x'' = x' + 2 = y + 2 \\implies y = x'' - 2$$\n$$y'' = y' - 5 = x - 5 \\implies x = y'' + 5$$\n\nLangkah 4: Substitusikan ke persamaan kurva semula $y = x^2 - 6x + 8$:\n$$x'' - 2 = (y'' + 5)^2 - 6(y'' + 5) + 8$$\n$$x'' - 2 = y''^2 + 10y'' + 25 - 6y'' - 30 + 8$$\n$$x'' - 2 = y''^2 + 4y'' + 3$$\n$$x'' = y''^2 + 4y'' + 5$$\n\nJadi, bayangan kurva adalah $x = y^2 + 4y + 5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Mari Berpikir Kritis",
+        "nomor": "2",
+        "teks": "Misalkan sebuah matriks M berordo 2 × 2, merepresentasikan suatu transformasi T pada bidang Kartesius. Tentukan matriks transformasi % % % T yang diterapkan sebanyak 99 kali dan dinotasikan T 1444444 T 2444444 ... T 3. 99 kali",
+        "jawaban": "M^99",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "komposisi berulang",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus menganalisis periodisitas matriks komposisi dari penerapan transformasi berulang berkali-kali.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah transformasi $T$ merupakan komposisi dari rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik asal $O(0, 0)$ yang dilanjutkan dengan pencerminan terhadap garis $y = x$. Jika transformasi $T$ tersebut diterapkan secara berulang sebanyak $2025$ kali berturut-turut pada titik $P(5, -3)$, koordinat bayangan akhir titik $P$ adalah ....",
+      "jawaban_benar": "$(5, 3)$",
+      "alasan_benar": "Matriks rotasi $90^\\circ$ adalah $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$ dan refleksi garis $y = x$ adalah $M = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$. Matriks satu siklus $T = MR = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Karena $T^2 = I$, maka $T^{2025} = (T^2)^{1012} \\cdot T = T = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Bayangan titik $(5, -3)$ adalah $\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}\\begin{pmatrix} 5 \\\\ -3 \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 3 \\end{pmatrix}$.",
+      "distraktor": [
+        {
+          "teks": "$(5, -3)$",
+          "alasan": "Siswa keliru menganggap $T^{2025} = I$ karena membagi $2025$ langsung dengan pangkat identitas tanpa menyisakan satu faktor transformasi."
+        },
+        {
+          "teks": "(-5, 3)",
+          "alasan": "Siswa mengira matriks komposisi menghasilkan rotasi $180^\\circ$ bukan refleksi sumbu-$x$."
+        },
+        {
+          "teks": "(3, 5)",
+          "alasan": "Siswa terbalik urutan perkalian matriks sehingga menghitung $RM$ bukan $MR$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Cari matriks transformasi tunggal untuk $T$:\nRotasi $90^\\circ$: $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$\nRefleksi $y = x$: $M = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$\nMatriks komposisi $T$ (rotasi dilanjutkan refleksi):\n$$A = M R = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nLangkah 2: Amati pola perpangkatan matriks $A$:\n$$A^2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix} = I$$\n\nLangkah 3: Hitung $A^{2025}$:\n$$A^{2025} = (A^2)^{1012} \\cdot A = I^{1012} \\cdot A = A = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nLangkah 4: Hitung koordinat bayangan titik $P(5, -3)$:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 5 \\\\ -3 \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 3 \\end{pmatrix}$$\n\nJadi, bayangan akhirnya adalah $(5, 3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada sifat sebelumnya, kita belum mengetahui apakah operasi perkalian yang melibatkan dua matriks komposisi dari dua transformasi adalah komutatif atau tidak. Selidikilah, kapan sifat komutatif berlaku benar."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi komutativitas",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap klaim aljabar matriks serta penentuan syarat sudut trigonometri agar dua transformasi bersifat komutatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan dua transformasi: $T_1$ adalah pencerminan terhadap sumbu-$x$, dan $T_2$ adalah rotasi sebesar sudut $\\theta$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$. Seorang siswa menyatakan bahwa kedua transformasi tersebut selalu bersifat komutatif ($T_2 \\circ T_1 = T_1 \\circ T_2$) untuk sembarang nilai $\\theta$. Pernyataan berikut yang paling tepat mengevaluasi klaim siswa tersebut untuk interval $0 \\le \\theta < 2\\pi$ adalah ....",
+      "jawaban_benar": "Klaim salah, karena $T_2 \\circ T_1 = T_1 \\circ T_2$ hanya terpenuhi ketika $\\theta = 0$ atau $\\theta = \\pi$",
+      "alasan_benar": "Matriks $T_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ dan $T_2 = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$. Hasil $T_2 T_1 = \\begin{pmatrix} \\cos\\theta & \\sin\\theta \\\\ \\sin\\theta & -\\cos\\theta \\end{pmatrix}$, sedangkan $T_1 T_2 = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ -\\sin\\theta & -\\cos\\theta \\end{pmatrix}$. Kedua matriks sama jika dan hanya jika $\\sin\\theta = -\\sin\\theta \\iff 2\\sin\\theta = 0 \\iff \\sin\\theta = 0$. Pada $0 \\le \\theta < 2\\pi$, nilai yang memenuhi hanyalah $\\theta = 0$ atau $\\theta = \\pi$.",
+      "distraktor": [
+        {
+          "teks": "Klaim benar, karena matriks rotasi dan refleksi selalu menghasilkan determinan yang sama",
+          "alasan": "Siswa keliru menyamakan kesamaan determinan dengan sifat komutatif perkalian matriks."
+        },
+        {
+          "teks": "Klaim salah, karena tidak ada satupun nilai $\\theta$ yang memenuhi sifat komutatif tersebut",
+          "alasan": "Siswa mengabaikan solusi khusus ketika sinus bernilai nol."
+        },
+        {
+          "teks": "Klaim salah, karena sifat komutatif hanya terpenuhi ketika $\\theta = \\frac{\\pi}{2}$ atau $\\theta = \\frac{3\\pi}{2}$",
+          "alasan": "Siswa terbalik menguji syarat dengan mencari pembuat nol nilai kosinus bukan sinus."
+        }
+      ],
+      "pembahasan": "Langkah 1: Nyatakan masing-masing matriks transformasi:\n$$T_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n$$T_2 = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$$\n\nLangkah 2: Kalikan kedua matriks untuk kedua urutan komposisi:\n$$T_2 T_1 = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} \\cos\\theta & \\sin\\theta \\\\ \\sin\\theta & -\\cos\\theta \\end{pmatrix}$$\n$$T_1 T_2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix} = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ -\\sin\\theta & -\\cos\\theta \\end{pmatrix}$$\n\nLangkah 3: Samakan elemen-elemen matriks:\n$$\\sin\\theta = -\\sin\\theta \\implies 2\\sin\\theta = 0 \\implies \\sin\\theta = 0$$\n\nLangkah 4: Tentukan himpunan nilai $\\theta$ pada selang $0 \\le \\theta < 2\\pi$:\n$$\\theta = 0 \\quad \\text{atau} \\quad \\theta = \\pi$$\n\nDengan demikian, klaim siswa salah karena persamaan tidak berlaku untuk sembarang $\\theta$, melainkan hanya untuk $\\theta = 0$ atau $\\theta = \\pi$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan matriks transformasi T 1 dan T 2 berturut-turut adalah [p q; r s] dan [t u; v w] . Dengan demikian, matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut. [t u; v w][p q; r s]"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "garis invarian",
+      "jumlah_langkah": 4,
+      "alasan_level": "Melibatkan penentuan nilai parameter dari kondisi invarian garis pada komposisi dua transformasi matriks.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan matriks transformasi $T_1 = \\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix}$ dan $T_2 = \\begin{pmatrix} a & 0 \\\\ 1 & b \\end{pmatrix}$. Komposisi transformasi $T = T_2 \\circ T_1$ memetakan setiap titik pada garis $y = 2x$ tepat ke dirinya sendiri. Jika $a$ dan $b$ adalah bilangan real, nilai dari $a + 2b$ adalah ....",
+      "jawaban_benar": "$-2{,}8$",
+      "alasan_benar": "Matriks komposisi $M = T_2 T_1 = \\begin{pmatrix} a & 0 \\\\ 1 & b \\end{pmatrix}\\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} a & 2a \\\\ 1 & 2+b \\end{pmatrix}$. Titik pada garis adalah $(x, 2x)^T$. Karena dipetakan ke dirinya sendiri, $\\begin{pmatrix} a & 2a \\\\ 1 & 2+b \\end{pmatrix}\\begin{pmatrix} x \\\\ 2x \\end{pmatrix} = \\begin{pmatrix} x \\\\ 2x \\end{pmatrix}$. Baris pertama: $ax + 4ax = 5ax = x \\implies 5a = 1 \\implies a = 0{,}2$. Baris kedua: $x + (2+b)(2x) = (5 + 2b)x = 2x \\implies 5 + 2b = 2 \\implies 2b = -3 \\implies b = -1{,}5$. Maka nilai $a + 2b = 0{,}2 + 2(-1{,}5) = 0{,}2 - 3 = -2{,}8$.",
+      "distraktor": [
+        {
+          "teks": "$-1{,}3$",
+          "alasan": "Siswa salah menjumlahkan $a + b$ dan bukan $a + 2b$ ($0{,}2 - 1{,}5 = -1{,}3$)."
+        },
+        {
+          "teks": "$3{,}2$",
+          "alasan": "Siswa salah tanda saat menyelesaikan $5 + 2b = 2$, menghitungnya menjadi $2b = 3$ sehingga $0{,}2 + 3 = 3{,}2$."
+        },
+        {
+          "teks": "$-0{,}8$",
+          "alasan": "Siswa keliru menghitung perkalian baris pertama menjadi $3ax = x$ sehingga $a = \\frac{1}{3}$ lalu salah mengalikan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan matriks komposisi $T = T_2 \\circ T_1$:\n$$M = T_2 T_1 = \\begin{pmatrix} a & 0 \\\\ 1 & b \\end{pmatrix} \\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} a & 2a \\\\ 1 & 2+b \\end{pmatrix}$$\n\nLangkah 2: Terapkan syarat bahwa setiap titik pada garis $y = 2x$, yaitu $\\begin{pmatrix} x \\\\ 2x \\end{pmatrix}$, dipetakan ke dirinya sendiri:\n$$\\begin{pmatrix} a & 2a \\\\ 1 & 2+b \\end{pmatrix} \\begin{pmatrix} x \\\\ 2x \\end{pmatrix} = \\begin{pmatrix} x \\\\ 2x \\end{pmatrix}$$\n\nLangkah 3: Selesaikan sistem persamaan untuk nilai $a$ dan $b$:\nDari baris pertama:\n$$ax + 2a(2x) = x \\implies 5ax = x \\implies 5a = 1 \\implies a = \\frac{1}{5} = 0{,}2$$\n\nDari baris kedua:\n$$x + (2+b)(2x) = 2x \\implies (1 + 4 + 2b)x = 2x \\implies 5 + 2b = 2 \\implies 2b = -3 \\implies b = -1{,}5$$\n\nLangkah 4: Hitung nilai $a + 2b$:\n$$a + 2b = 0{,}2 + 2(-1{,}5) = 0{,}2 - 3 = -2{,}8$$\n\nJadi, nilai $a + 2b$ adalah $-2{,}8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita akan membatasi pembahasan pada transformasi-transformasi yang dapat direpresentasikan dengan matriks berordo 2 × 2."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perubahan luas daerah",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan nilai mutlak determinan dari matriks komposisi tiga transformasi dan pemilihan solusi berdasarkan batasan pertidaksamaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah daerah datar $\\mathcal{D}$ memiliki luas $12\\text{ satuan luas}$. Daerah tersebut ditransformasikan berturut-turut oleh:\n1. Transformasi yang bersesuaian dengan matriks $M_1 = \\begin{pmatrix} 2 & k \\\\ -1 & 3 \\end{pmatrix}$,\n2. Pencerminan terhadap garis $y = -x$,\n3. Rotasi sebesar $90^\\circ$ searah jarum jam terhadap titik asal $O(0, 0)$.\n\nJika luas bayangan akhir dari daerah tersebut menjadi $120\\text{ satuan luas}$ dan diketahui $k < 0$, nilai $k$ adalah ....",
+      "jawaban_benar": "$-16$",
+      "alasan_benar": "Faktor pengali luas dari transformasi matriks adalah $|\\det(M)|$. Matriks refleksi garis $y = -x$ memiliki determinan $-1$, rotasi $-90^\\circ$ memiliki determinan $1$, dan $\\det(M_1) = 2(3) - (k)(-1) = 6 + k$. Determinan total adalah $|1 \\cdot (-1) \\cdot (6 + k)| = |6 + k|$. Luas bayangan: $L' = |6 + k| \\times 12 = 120 \\implies |6 + k| = 10$. Karena $k < 0$, kemungkinannya adalah $6 + k = 10 \\implies k = 4$ (tidak memenuhi karena positif) atau $6 + k = -10 \\implies k = -16$ (memenuhi $k < 0$).",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Siswa menyelesaikan $|6 + k| = 10$ hanya dari cabang positif $6 + k = 10$ dan mengabaikan syarat $k < 0$."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Siswa salah menentukan determinan matriks $M_1$ menjadi $6 - k$ lalu menyelesaikan $6 - k = 10$."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Siswa langsung mengambil nilai $-10$ tanpa memperhitungkan konstanta $6$ dari determinan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan determinan masing-masing transformasi:\n- Matriks $M_1$: $\\det(M_1) = (2)(3) - (k)(-1) = 6 + k$\n- Matriks pencerminan terhadap garis $y = -x$: $\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$, determinannya $= 0 - 1 = -1$\n- Matriks rotasi $90^\\circ$ searah jarum jam ($-90^\\circ$): $\\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$, determinannya $= 0 - (-1) = 1$\n\nLangkah 2: Tentukan determinan matriks komposisi total $M$:\n$$|\\det(M)| = |\\det(M_3) \\cdot \\det(M_2) \\cdot \\det(M_1)| = |1 \\cdot (-1) \\cdot (6 + k)| = |6 + k|$$\n\nLangkah 3: Gunakan hubungan luas awal dan luas bayangan:\n$$\\text{Luas akhir} = |\\det(M)| \\times \\text{Luas awal}$$\n$$120 = |6 + k| \\times 12 \\implies |6 + k| = 10$$\n\nLangkah 4: Selesaikan persamaan nilai mutlak dengan syarat $k < 0$:\n$$6 + k = 10 \\implies k = 4 \\quad (\\text{tidak memenuhi karena } k < 0)$$\n$$6 + k = -10 \\implies k = -16 \\quad (\\text{memenuhi})$$\n\nJadi, nilai $k$ adalah $-16$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan matriks transformasi T 1 dan T 2 berturut-turut adalah p q r s dan t u v w . Dengan demikian, matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan transformasi gabungan",
+      "jumlah_langkah": 6,
+      "alasan_level": "Siswa harus merekonstruksi dan merancang matriks transformasi kedua yang tidak diketahui berdasarkan transformasi awal dan target pemetaan akhir.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah transformasi $T_1$ adalah rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal $O(0, 0)$. Diinginkan sebuah transformasi linear $T_2$ yang bersesuaian dengan matriks $A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$ sedemikian sehingga komposisi $T_2 \\circ T_1$ ekuivalen dengan pencerminan terhadap sumbu-$x$. Matriks $A$ yang memenuhi rancangan tersebut adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$",
+      "alasan_benar": "Matriks rotasi $90^\\circ$ adalah $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$. Matriks pencerminan sumbu-$x$ adalah $M_x = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Komposisi $T_2 \\circ T_1$ memiliki matriks $A R = M_x$. Maka $A = M_x R^{-1}$. Karena $R^{-1} = \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$, diperoleh $A = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$.",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$",
+          "alasan": "Siswa salah menghitung invers matriks rotasi dengan membiarkan tanda negatif pada elemen yang salah."
+        },
+        {
+          "teks": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$",
+          "alasan": "Siswa mengalikan matriks dengan urutan terbalik $R M_x$ bukannya $M_x R^{-1}$."
+        },
+        {
+          "teks": "$\\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$",
+          "alasan": "Siswa hanya menggunakan matriks invers rotasi tanpa mengalikannya dengan matriks refleksi sumbu-$x$."
+        }
+      ],
+      "pembahasan": "Matriks untuk rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal adalah:\n$$M_{T_1} = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$$\nMatriks untuk pencerminan terhadap sumbu-$x$ adalah:\n$$M_{\\text{target}} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\nKarena komposisi transformasi adalah $T_2 \\circ T_1$, matriks komposisinya dirumuskan oleh:\n$$A \\cdot M_{T_1} = M_{\\text{target}}$$\nUntuk mencari matriks $A$, kedua ruas dikalikan dengan invers dari $M_{T_1}$ dari sebelah kanan:\n$$A = M_{\\text{target}} \\cdot (M_{T_1})^{-1}$$\nInvers dari matriks rotasi $90^\\circ$ (rotasi sejauh $-90^\\circ$) adalah:\n$$(M_{T_1})^{-1} = \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$$\nKalikan kedua matriks tersebut:\n$$A = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\nJadi, matriks $A$ yang memenuhi adalah $\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada sifat sebelumnya, kita belum mengetahui apakah operasi perkalian yang melibatkan dua matriks komposisi dari dua transformasi adalah komutatif atau tidak. Selidikilah, kapan sifat komutatif berlaku benar."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi pernyataan transformasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembuktian kebenaran aljabar matriks untuk beberapa pasang komposisi transformasi guna menentukan pernyataan yang tepat secara deduktif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan beberapa pernyataan mengenai sifat komposisi transformasi pada bidang Kartesius:\n(1) Pencerminan terhadap sumbu-$x$ bersifat komutatif dengan pencerminan terhadap sumbu-$y$.\n(2) Rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik asal bersifat komutatif dengan pencerminan terhadap garis $y = x$.\n(3) Dilatasi berpusat di titik asal $O(0, 0)$ dengan faktor skala $k$ selalu bersifat komutatif terhadap sembarang transformasi linear yang berpusat di titik asal.\nPernyataan yang bernilai benar adalah ....",
+      "jawaban_benar": "(1) dan (3) saja",
+      "alasan_benar": "Pernyataan (1): Matriks refleksi sumbu-$x$ adalah $\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ dan sumbu-$y$ adalah $\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$. Hasil kalinya adalah $\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ pada kedua urutan perkalian, sehingga komutatif (BENAR). Pernyataan (2): Rotasi $90^\\circ$ memiliki matriks $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$ dan refleksi $y = x$ adalah $M = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$. $RM = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$, sedangkan $MR = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Karena $RM \\neq MR$, tidak komutatif (SALAH). Pernyataan (3): Matriks dilatasi adalah $D = \\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix} = kI$. Karena skalar identitas $kI$ komutatif dengan sembarang matriks persegi $A$, maka $(kI)A = A(kI) = kA$ selalu berlaku (BENAR). Jadi, pernyataan (1) dan (3) benar.",
+      "distraktor": [
+        {
+          "teks": "(1), (2), dan (3)",
+          "alasan": "Siswa mengira seluruh pasangan transformasi dasar selalu bersifat komutatif."
+        },
+        {
+          "teks": "(1) dan (2) saja",
+          "alasan": "Siswa keliru menganggap rotasi dan refleksi garis selalu dapat bertukar urutan tanpa mengubah hasil bayangan."
+        },
+        {
+          "teks": "(3) saja",
+          "alasan": "Siswa mengira perkalian dua matriks refleksi yang berbeda selalu tidak komutatif."
+        }
+      ],
+      "pembahasan": "Analisis kebenaran setiap pernyataan:\n1. Pernyataan (1):\nMatriks pencerminan terhadap sumbu-$x$ adalah $M_x = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ dan terhadap sumbu-$y$ adalah $M_y = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$.\n$$M_x M_y = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n$$M_y M_x = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\nKarena $M_x M_y = M_y M_x$, pernyataan (1) BENAR.\n\n2. Pernyataan (2):\nMatriks rotasi $90^\\circ$ adalah $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$ dan pencerminan terhadap garis $y = x$ adalah $M = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$.\n$$R M = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$$\n$$M R = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\nKarena $R M \\neq M R$, pernyataan (2) SALAH.\n\n3. Pernyataan (3):\nMatriks dilatasi berpusat di $O$ dengan faktor skala $k$ adalah $D = \\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix} = k \\cdot I_2$, dengan $I_2$ matriks identitas. Untuk sembarang matriks transformasi $A$ berordo $2 \\times 2$:\n$$D A = (k I_2) A = k (I_2 A) = k A$$\n$$A D = A (k I_2) = k (A I_2) = k A$$\nKarena $D A = A D$, pernyataan (3) BENAR.\n\nDengan demikian, pernyataan yang benar adalah (1) dan (3) saja.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 254,
+        "bagian": "Penalaran",
+        "nomor": "23",
+        "teks": "Buktikan dengan perkalian matriks bahwa operasi dilatasi DO, 2 (dilabeli dengan transformasi D ) dan pencerminan terhadap sumbu- y (dilabeli dengan transformasi C ) memenuhi D ◦ C = C ◦ D .",
+        "jawaban": "D ◦ C = C ◦ D terbukti karena perkalian matriks skalar bersifat komutatif terhadap sembarang matriks transformasi",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi komutativitas transformasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa mengevaluasi sifat komutatif antara rotasi setengah putaran dan pencerminan garis sembarang melalui titik asal secara analitis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan transformasi $R$ yaitu rotasi sebesar $180^\\circ$ terhadap titik asal $O(0, 0)$, serta transformasi $M$ yaitu pencerminan terhadap suatu garis sembarang $y = mx$ yang melalui titik asal. Pernyataan yang benar mengenai hubungan komposisi $R \\circ M$ dan $M \\circ R$ adalah ....",
+      "jawaban_benar": "$R \\circ M = M \\circ R$ untuk setiap nilai gradien $m$",
+      "alasan_benar": "Matriks rotasi $180^\\circ$ adalah $R = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} = -I$. Karena $-I$ adalah matriks skalar, maka $(-I)M = M(-I) = -M$ selalu berlaku untuk sembarang matriks $M$.",
+      "distraktor": [
+        {
+          "teks": "$R \\circ M \\neq M \\circ R$ untuk setiap nilai gradien $m$",
+          "alasan": "Mengira rotasi dan refleksi tidak pernah komutatif karena perkalian matriks pada umumnya tidak komutatif."
+        },
+        {
+          "teks": "$R \\circ M = M \\circ R$ hanya terpenuhi jika garis cermin tegak lurus, yaitu $m = 1$ atau $m = -1$",
+          "alasan": "Mengira komutativitas hanya berlaku untuk garis simetri khusus $y = x$ atau $y = -x$."
+        },
+        {
+          "teks": "$R \\circ M = -(M \\circ R)$ untuk setiap nilai gradien $m$",
+          "alasan": "Keliru memproses perkalian matriks $-I$ sehingga mengira kedua komposisi saling berlawanan tanda."
+        }
+      ],
+      "pembahasan": "Matriks untuk rotasi $180^\\circ$ terhadap titik asal adalah:\n$$R = \\begin{pmatrix} \\cos 180^\\circ & -\\sin 180^\\circ \\\\ \\sin 180^\\circ & \\cos 180^\\circ \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} = -I$$\nUntuk sembarang garis $y = mx$, matriks pencerminannya dapat dinyatakan sebagai suatu matriks $2 \\times 2$, yaitu $M$.\nKomposisi $R \\circ M$ bersesuaian dengan perkalian matriks:\n$$R \\cdot M = (-I) \\cdot M = -M$$\nSedangkan komposisi $M \\circ R$ bersesuaian dengan perkalian matriks:\n$$M \\cdot R = M \\cdot (-I) = -M$$\nKarena perkalian matriks skalar $-I$ bersifat komutatif terhadap sembarang matriks persegi, maka $R \\cdot M = M \\cdot R = -M$ selalu terpenuhi untuk setiap nilai gradien $m$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan matriks transformasi T 1 dan T 2 berturut-turut adalah p q r s G dan t u v w G . Dengan demikian, matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "konstruksi matriks transformasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan sistem persamaan matriks dari dua pasang titik prapeta dan peta komposisi untuk menentukan elemen matriks yang belum diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah komposisi transformasi didefinisikan sebagai pencerminan terhadap sumbu-$x$ dilanjutkan dengan transformasi linear yang bersesuaian dengan matriks $A$. Jika komposisi tersebut memetakan titik $(1, 2)$ ke $(5, -1)$ dan memetakan titik $(2, -1)$ ke $(4, 3)$, maka matriks $A$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} \\frac{13}{5} & -\\frac{6}{5} \\\\ 1 & 1 \\end{pmatrix}$",
+      "alasan_benar": "Bayangan perantara pencerminan sumbu-$x$ adalah $(1, -2)$ dan $(2, 1)$. Persamaan matriks $A \\begin{pmatrix} 1 & 2 \\\\ -2 & 1 \\end{pmatrix} = \\begin{pmatrix} 5 & 4 \\\\ -1 & 3 \\end{pmatrix}$ menghasilkan $A = \\begin{pmatrix} 5 & 4 \\\\ -1 & 3 \\end{pmatrix} \\cdot \\frac{1}{5}\\begin{pmatrix} 1 & -2 \\\\ 2 & 1 \\end{pmatrix} = \\begin{pmatrix} \\frac{13}{5} & -\\frac{6}{5} \\\\ 1 & 1 \\end{pmatrix}$.",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} \\frac{13}{5} & \\frac{6}{5} \\\\ 1 & -1 \\end{pmatrix}$",
+          "alasan": "Lupa mengubah tanda ordinat saat melakukan pencerminan terhadap sumbu-$x$ pada prapeta."
+        },
+        {
+          "teks": "$\\begin{pmatrix} \\frac{11}{3} & -\\frac{2}{3} \\\\ \\frac{5}{3} & \\frac{1}{3} \\end{pmatrix}$",
+          "alasan": "Keliru menghitung determinan matriks transisi menjadi $1(1) - 2(2) = -3$ bukannya 5."
+        },
+        {
+          "teks": "$\\begin{pmatrix} 1 & 1 \\\\ \\frac{13}{5} & -\\frac{6}{5} \\end{pmatrix}$",
+          "alasan": "Tertukar antara baris pertama dan baris kedua dari matriks hasil."
+        }
+      ],
+      "pembahasan": "Misalkan matriks pencerminan terhadap sumbu-$x$ adalah $M_x = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$.\nLangkah 1: Tentukan bayangan titik oleh pencerminan sumbu-$x$:\n- Untuk titik $P_1(1, 2)$: $M_x \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ -2 \\end{pmatrix}$\n- Untuk titik $P_2(2, -1)$: $M_x \\begin{pmatrix} 2 \\\\ -1 \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 1 \\end{pmatrix}$\n\nLangkah 2: Susun persamaan transformasi oleh matriks $A$:\n$$A \\begin{pmatrix} 1 & 2 \\\\ -2 & 1 \\end{pmatrix} = \\begin{pmatrix} 5 & 4 \\\\ -1 & 3 \\end{pmatrix}$$\n\nLangkah 3: Cari invers matriks prapeta $B = \\begin{pmatrix} 1 & 2 \\\\ -2 & 1 \\end{pmatrix}$:\n$$\\det(B) = (1)(1) - (2)(-2) = 1 + 4 = 5$$\n$$B^{-1} = \\frac{1}{5}\\begin{pmatrix} 1 & -2 \\\\ 2 & 1 \\end{pmatrix}$$\n\nLangkah 4: Kalikan untuk mencari matriks $A$:\n$$A = \\begin{pmatrix} 5 & 4 \\\\ -1 & 3 \\end{pmatrix} \\cdot \\frac{1}{5}\\begin{pmatrix} 1 & -2 \\\\ 2 & 1 \\end{pmatrix} = \\frac{1}{5}\\begin{pmatrix} 5(1) + 4(2) & 5(-2) + 4(1) \\\\ -1(1) + 3(2) & -1(-2) + 3(1) \\end{pmatrix}$$\n$$A = \\frac{1}{5}\\begin{pmatrix} 13 & -6 \\\\ 5 & 5 \\end{pmatrix} = \\begin{pmatrix} \\frac{13}{5} & -\\frac{6}{5} \\\\ 1 & 1 \\end{pmatrix}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan matriks transformasi T 1 dan T 2 berturut-turut adalah p q r s G dan t u v w G . Dengan demikian, matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "ekuivalensi sudut komposisi refleksi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa menganalisis komposisi dua matriks refleksi berpotongan untuk menemukan sudut rotasi ekuivalen.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Transformasi $T_1$ adalah pencerminan terhadap sumbu-$x$, dan $T_2$ adalah pencerminan terhadap garis $y = x\\sqrt{3}$. Komposisi transformasi $T_2 \\circ T_1$ ekuivalen dengan rotasi terhadap titik asal $O(0, 0)$ berlawanan arah jarum jam sebesar sudut $\\theta$. Nilai $\\theta$ yang memenuhi dengan $0^\\circ \\le \\theta < 360^\\circ$ adalah ....",
+      "jawaban_benar": "$120^\\circ$",
+      "alasan_benar": "Garis cermin pertama bersudut $0^\\circ$, garis cermin kedua bersudut $60^\\circ$. Komposisi dua refleksi berurutan menghasilkan rotasi sebesar dua kali sudut apit: $2(60^\\circ - 0^\\circ) = 120^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$60^\\circ$",
+          "alasan": "Mengira besar sudut rotasi sama dengan sudut antara kedua garis cermin tanpa dikalikan 2."
+        },
+        {
+          "teks": "$240^\\circ$",
+          "alasan": "Terbalik dalam urutan komposisi sehingga menghitung $360^\\circ - 120^\\circ$."
+        },
+        {
+          "teks": "$30^\\circ$",
+          "alasan": "Keliru menganggap sudut garis $y = x\\sqrt{3}$ adalah $30^\\circ$ lalu tidak mengalikan dua."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi sudut kemiringan kedua garis refleksi.\n- Sumbu-$x$ memiliki sudut $\\alpha_1 = 0^\\circ$.\n- Garis $y = x\\sqrt{3}$ memiliki gradien $m = \\sqrt{3} = \\tan 60^\\circ$, sehingga sudutnya $\\alpha_2 = 60^\\circ$.\n\nLangkah 2: Gunakan bentuk matriks pencerminan terhadap garis dengan sudut kemiringan $\\alpha$, yaitu:\n$$M_\\alpha = \\begin{pmatrix} \\cos 2\\alpha & \\sin 2\\alpha \\\\ \\sin 2\\alpha & -\\cos 2\\alpha \\end{pmatrix}$$\nUntuk $T_1$ ($\\alpha_1 = 0^\\circ$): $M_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$.\nUntuk $T_2$ ($\\alpha_2 = 60^\\circ$): $2\\alpha_2 = 120^\\circ$, sehingga $M_2 = \\begin{pmatrix} -\\frac{1}{2} & \\frac{\\sqrt{3}}{2} \\\\ \\frac{\\sqrt{3}}{2} & \\frac{1}{2} \\end{pmatrix}$.\n\nLangkah 3: Hitung matriks komposisi $T_2 \\circ T_1$:\n$$M_2 \\cdot M_1 = \\begin{pmatrix} -\\frac{1}{2} & \\frac{\\sqrt{3}}{2} \\\\ \\frac{\\sqrt{3}}{2} & \\frac{1}{2} \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} -\\frac{1}{2} & -\\frac{\\sqrt{3}}{2} \\\\ \\frac{\\sqrt{3}}{2} & -\\frac{1}{2} \\end{pmatrix}$$\n\nLangkah 4: Bandingkan dengan matriks rotasi $R_\\theta = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$:\n$$\\cos\\theta = -\\frac{1}{2} \\quad \\text{dan} \\quad \\sin\\theta = \\frac{\\sqrt{3}}{2}$$\nKarena $\\cos\\theta < 0$ dan $\\sin\\theta > 0$, maka $\\theta$ berada di kuadran II, sehingga $\\theta = 120^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada sifat sebelumnya, kita belum mengetahui apakah operasi perkalian yang melibatkan dua matriks komposisi dari dua transformasi adalah komutatif atau tidak. Selidikilah, kapan sifat komutatif berlaku benar."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter sudut komutatif",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa menganalisis persamaan kesamaan dua perkalian matriks secara aljabar untuk menentukan banyaknya solusi sudut rotasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Transformasi $T_1$ adalah pencerminan terhadap sumbu-$x$ dan $T_2$ adalah rotasi sebesar $\\theta$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$. Pada interval $0^\\circ \\le \\theta < 360^\\circ$, banyaknya nilai $\\theta$ yang menyebabkan komposisi kedua transformasi tersebut bersifat komutatif ($T_1 \\circ T_2 = T_2 \\circ T_1$) adalah ....",
+      "jawaban_benar": "2",
+      "alasan_benar": "$T_1 T_2 = T_2 T_1 \\iff \\sin\\theta = -\\sin\\theta \\iff \\sin\\theta = 0$. Pada $0^\\circ \\le \\theta < 360^\\circ$, penyelesaiannya adalah $\\theta = 0^\\circ$ dan $\\theta = 180^\\circ$, sehingga ada 2 nilai.",
+      "distraktor": [
+        {
+          "teks": "0",
+          "alasan": "Mengira rotasi dan refleksi tidak pernah komutatif untuk sudut berapa pun."
+        },
+        {
+          "teks": "1",
+          "alasan": "Hanya menghitung saat rotasi identitas $\\theta = 0^\\circ$ dan melewatkan $\\theta = 180^\\circ$."
+        },
+        {
+          "teks": "4",
+          "alasan": "Menyertakan sudut-sudut kuadran lain seperti $\\theta = 90^\\circ$ dan $270^\\circ$ yang sebenarnya membuat elemen berbeda tanda."
+        }
+      ],
+      "pembahasan": "Langkah 1: Nyatakan matriks masing-masing transformasi.\nMatriks pencerminan sumbu-$x$:\n$$M_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\nMatriks rotasi sebesar $\\theta$:\n$$M_2 = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$$\n\nLangkah 2: Kalikan kedua matriks pada kedua urutan:\n$$M_1 M_2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix} = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ -\\sin\\theta & -\\cos\\theta \\end{pmatrix}$$\n$$M_2 M_1 = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} \\cos\\theta & \\sin\\theta \\\\ \\sin\\theta & -\\cos\\theta \\end{pmatrix}$$\n\nLangkah 3: Samakan kedua matriks hasil ($M_1 M_2 = M_2 M_1$):\n$$\\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ -\\sin\\theta & -\\cos\\theta \\end{pmatrix} = \\begin{pmatrix} \\cos\\theta & \\sin\\theta \\\\ \\sin\\theta & -\\cos\\theta \\end{pmatrix}$$\nDari kesamaan elemen baris 1 kolom 2:\n$$-\\sin\\theta = \\sin\\theta \\implies 2\\sin\\theta = 0 \\implies \\sin\\theta = 0$$\n\nLangkah 4: Cari nilai $\\theta$ pada rentang $0^\\circ \\le \\theta < 360^\\circ$:\nNilai yang memenuhi adalah $\\theta = 0^\\circ$ dan $\\theta = 180^\\circ$.\nJadi, ada 2 nilai $\\theta$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan kita memiliki dua buah transformasi T 1 dan T 2. Transformasi T 1 merupakan pencerminan terhadap sumbu- y , sedangkan transformasi T 2 merupakan rotasi terhadap titik pusat O sebesar"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "transformasi kurva lingkaran",
+      "jumlah_langkah": 5,
+      "alasan_level": "Membutuhkan perkalian matriks komposisi transformasi untuk menentukan aturan pemetaan lalu menganalisis pergeseran persamaan lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran memiliki persamaan $(x - 3)^2 + (y + 1)^2 = 16$. Lingkaran tersebut ditransformasikan oleh transformasi $T = T_2 \\circ T_1$, dengan $T_1$ adalah rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal $O(0, 0)$ dan $T_2$ adalah pencerminan terhadap garis $y = -x$. Persamaan bayangan lingkaran tersebut adalah ....",
+      "jawaban_benar": "$(x + 3)^2 + (y + 1)^2 = 16$",
+      "alasan_benar": "Matriks komposisi $T_2 \\circ T_1 = \\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$. Transformasi ini memetakan $(x, y) \\to (-x, y)$, sehingga pusat $(3, -1)$ berpindah ke $(-3, -1)$ dengan jari-jari tetap.",
+      "distraktor": [
+        {
+          "teks": "$(x - 3)^2 + (y - 1)^2 = 16$",
+          "alasan": "Terbalik dalam urutan perkalian matriks ($T_1 \\circ T_2$ menghasilkan matriks pencerminan sumbu-$x$)."
+        },
+        {
+          "teks": "$(x + 1)^2 + (y - 3)^2 = 16$",
+          "alasan": "Tertukar antara variabel absis dan ordinat pada pusat lingkaran setelah transformasi."
+        },
+        {
+          "teks": "$(x - 1)^2 + (y + 3)^2 = 16$",
+          "alasan": "Hanya menerapkan rotasi $90^\\circ$ tanpa melanjutkan dengan pencerminan terhadap garis $y = -x$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan matriks transformasi $T_1$ dan $T_2$.\n- Matriks rotasi $90^\\circ$ terhadap pusat $O(0, 0)$:\n$$M_1 = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$$\n- Matriks pencerminan terhadap garis $y = -x$:\n$$M_2 = \\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$$\n\nLangkah 2: Tentukan matriks komposisi $T = T_2 \\circ T_1$:\n$$M = M_2 \\cdot M_1 = \\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} (-1)(1) & 0 \\\\ 0 & (-1)(-1) \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$$\n\nLangkah 3: Cari hubungan koordinat titik asal dan bayangan:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} -x \\\\ y \\end{pmatrix}$$\nDiperoleh $x = -x'$ dan $y = y'$.\n\nLangkah 4: Substitusikan ke persamaan lingkaran semula:\n$$(x - 3)^2 + (y + 1)^2 = 16$$\n$$(-x' - 3)^2 + (y' + 1)^2 = 16$$\n$$\\big(-(x' + 3)\\big)^2 + (y' + 1)^2 = 16$$\n$$(x' + 3)^2 + (y' + 1)^2 = 16$$\n\nJadi, persamaan bayangan lingkaran adalah $(x + 3)^2 + (y + 1)^2 = 16$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Mari Berpikir Kritis",
+        "nomor": "2",
+        "teks": "Misalkan sebuah matriks M berordo 2 × 2, merepresentasikan suatu transformasi T pada bidang Kartesius. Tentukan matriks transformasi % % % T yang diterapkan sebanyak 99 kali dan dinotasikan T 1444444 T 2444444 ... T 3. 99 kali",
+        "jawaban": "M^{99}",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "siklus komposisi transformasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis sifat perkalian berulang matriks transformasi gabungan dan pengenalan siklus periodik matriks identitas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah transformasi $T$ merupakan komposisi dari rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik asal $O(0, 0)$ yang dilanjutkan dengan pencerminan terhadap garis $y = x$. Jika transformasi $T$ diterapkan sebanyak 101 kali berturut-turut pada titik $P(8, -6)$, koordinat bayangan akhir titik $P$ adalah ....",
+      "jawaban_benar": "$(8, 6)$",
+      "alasan_benar": "Matriks rotasi $90^\\circ$ adalah $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$ dan pencerminan terhadap garis $y = x$ adalah $M = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$. Matriks satu siklus transformasi adalah $T = M R = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Karena $T^2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = I$, maka $T^{101} = (T^2)^{50} T = T$. Peta akhir titik $P(8, -6)$ adalah $\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 8 \\\\ -6 \\end{pmatrix} = \\begin{pmatrix} 8 \\\\ 6 \\end{pmatrix}$.",
+      "distraktor": [
+        {
+          "teks": "$(8, -6)$",
+          "alasan": "Menganggap penerapan genap kali atau transformasi bernilai identitas tanpa menghitung sisa perpangkatan."
+        },
+        {
+          "teks": "$(-8, -6)$",
+          "alasan": "Mengira matriks transformasi menghasilkan invers tanda penuh $(-I)$ setelah pemangkatan."
+        },
+        {
+          "teks": "$(6, 8)$",
+          "alasan": "Menukar posisi absis dan ordinat karena salah mengoperasikan matriks pencerminan."
+        }
+      ],
+      "pembahasan": "Matriks rotasi $90^\\circ$ berlawanan arah jarum jam:\n$$R_{90^\\circ} = \\begin{pmatrix} \\cos 90^\\circ & -\\sin 90^\\circ \\\\ \\sin 90^\\circ & \\cos 90^\\circ \\end{pmatrix} = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nMatriks pencerminan terhadap sumbu garis $y = x$:\n$$M_{y=x} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nMatriks transformasi tunggal $T = M_{y=x} \\circ R_{90^\\circ}$ adalah:\n$$T = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nSelidiki nilai perpangkatan dari matriks $T$:\n$$T^2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix} = I$$\n\nKarena $T^2 = I$, untuk pangkat 101 berlaku:\n$$T^{101} = (T^2)^{50} \\cdot T = I^{50} \\cdot T = T = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nBayangan dari titik $P(8, -6)$ adalah:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 8 \\\\ -6 \\end{pmatrix} = \\begin{pmatrix} 8 \\\\ 6 \\end{pmatrix}$$\n\nJadi, bayangan akhirnya adalah $(8, 6)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 254,
+        "bagian": "Penalaran",
+        "nomor": "24",
+        "teks": "Jelaskan mengapa suatu dilatasi terhadap titik pusat selalu komutatif dengan transformasi yang dapat dinyatakan dengan matriks 2 × 2.",
+        "jawaban": "Matriks dilatasi berpusat di O adalah matriks skalar kI, dan untuk setiap matriks 2 x 2 berlaku (kI)A = kA = A(kI).",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kondisi komutativitas transformasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus mengevaluasi kesamaan dua perkalian matriks secara aljabar untuk menemukan syarat perlu dan cukup agar sifat komutatif terpenuhi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Matriks $A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$ merepresentasikan suatu transformasi linear pada bidang Kartesius. Transformasi tersebut bersifat komutatif terhadap setiap transformasi rotasi $R_\\theta$ terhadap titik asal $O(0, 0)$ (yakni $A R_\\theta = R_\\theta A$ untuk setiap $\\theta \\in \\mathbb{R}$) jika dan hanya jika elemen-elemen matriks $A$ memenuhi syarat ....",
+      "jawaban_benar": "$a = d$ dan $b = -c$",
+      "alasan_benar": "Hasil kali $A R_\\theta$ memiliki elemen baris 1 kolom 1 sebesar $a\\cos\\theta + b\\sin\\theta$, sedangkan $R_\\theta A$ sebesar $a\\cos\\theta - c\\sin\\theta$, sehingga $b = -c$. Pada elemen baris 1 kolom 2, $-a\\sin\\theta + b\\cos\\theta = b\\cos\\theta - d\\sin\\theta$, sehingga $a = d$.",
+      "distraktor": [
+        {
+          "teks": "$a = d$ dan $b = c$",
+          "alasan": "Keliru pada tanda perbandingan komponen antidiagonal saat mengurangkan sinus."
+        },
+        {
+          "teks": "$a = -d$ dan $b = c$",
+          "alasan": "Tertukar relasi tanda pada komponen diagonal utama matriks."
+        },
+        {
+          "teks": "$a = -d$ dan $b = -c$",
+          "alasan": "Membuat semua diagonal berlawanan tanda tanpa memperhatikan kesamaan kosinus."
+        }
+      ],
+      "pembahasan": "Matriks rotasi $R_\\theta$ berpusat di titik asal dinyatakan dengan:\n$$R_\\theta = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$$\n\nHitung hasil kali $A R_\\theta$:\n$$A R_\\theta = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix} = \\begin{pmatrix} a\\cos\\theta + b\\sin\\theta & -a\\sin\\theta + b\\cos\\theta \\\\ c\\cos\\theta + d\\sin\\theta & -c\\sin\\theta + d\\cos\\theta \\end{pmatrix}$$\n\nHitung hasil kali $R_\\theta A$:\n$$R_\\theta A = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix} \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = \\begin{pmatrix} a\\cos\\theta - c\\sin\\theta & b\\cos\\theta - d\\sin\\theta \\\\ a\\sin\\theta + c\\cos\\theta & b\\sin\\theta + d\\cos\\theta \\end{pmatrix}$$\n\nAgar $A R_\\theta = R_\\theta A$ untuk setiap nilai $\\theta$, maka masing-masing elemen yang bersesuaian harus bernilai sama:\n1. Elemen baris 1 kolom 1:\n$$a\\cos\\theta + b\\sin\\theta = a\\cos\\theta - c\\sin\\theta \\iff b\\sin\\theta = -c\\sin\\theta \\iff b = -c$$\n2. Elemen baris 1 kolom 2:\n$$-a\\sin\\theta + b\\cos\\theta = b\\cos\\theta - d\\sin\\theta \\iff -a\\sin\\theta = -d\\sin\\theta \\iff a = d$$\n\nDengan demikian, syarat yang harus dipenuhi adalah $a = d$ dan $b = -c$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita akan membatasi pembahasan pada transformasi-transformasi yang dapat direpresentasikan dengan matriks berordo 2 × 2."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter pemetaan garis",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan koordinat garis invarian/terpetakan lewat perkalian matriks komposisi dan penyelesaian persamaan parameter linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Transformasi $T_1$ adalah pencerminan terhadap sumbu-$x$, kemudian dilanjutkan oleh transformasi $T_2$ yang bersesuaian dengan matriks $\\begin{pmatrix} 4 & 1 \\\\ p & 2 \\end{pmatrix}$. Jika komposisi transformasi $T = T_2 \\circ T_1$ memetakan seluruh titik pada garis $y = 3x$ menjadi garis $y = -x$, nilai parameter $p$ adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Matriks komposisi adalah $M = \\begin{pmatrix} 4 & 1 \\\\ p & 2 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 4 & -1 \\\\ p & -2 \\end{pmatrix}$. Titik $(t, 3t)$ dipetakan ke $x' = 4t - 3t = t$ dan $y' = pt - 6t = (p - 6)t$. Substitusi ke $y' = -x'$ menghasilkan $(p - 6)t = -t \\implies p - 6 = -1 \\implies p = 5$.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Salah tanda saat menyamakan persamaan garis bayangan sehingga menulis $p - 6 = 1$."
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "Terbalik urutan perkalian komposisi menjadi $T_1 \\circ T_2$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Keliru menjumlahkan komponen matriks saat mengalikan baris kedua."
+        }
+      ],
+      "pembahasan": "Matriks pencerminan terhadap sumbu-$x$ adalah:\n$$M_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nMatriks transformasi komposisi $T = T_2 \\circ T_1$ adalah:\n$$M_T = M_2 M_1 = \\begin{pmatrix} 4 & 1 \\\\ p & 2 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 4 & -1 \\\\ p & -2 \\end{pmatrix}$$\n\nAmbil sembarang titik pada garis $y = 3x$, yaitu $(t, 3t)$ dengan $t \\in \\mathbb{R}$. Petakan titik ini menggunakan matriks $M_T$:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 4 & -1 \\\\ p & -2 \\end{pmatrix} \\begin{pmatrix} t \\\\ 3t \\end{pmatrix} = \\begin{pmatrix} 4t - 3t \\\\ pt - 6t \\end{pmatrix} = \\begin{pmatrix} t \\\\ (p - 6)t \\end{pmatrix}$$\n\nBayangan titik tersebut terletak pada garis $y' = -x'$. Substitusikan koordinat peta:\n$$(p - 6)t = -t$$\n\nKarena berlaku untuk sembarang nilai $t \\neq 0$, diperoleh:\n$$p - 6 = -1 \\iff p = 5$$\n\nJadi, nilai parameter $p$ adalah $5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Sifat 5.5:"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan prapeta transformasi komposisi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perumusan matriks komposisi rotasi dan dilatasi serta operasi inversi matriks untuk merekonstruksi titik asal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah transformasi $T$ merupakan komposisi dari rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$ yang dilanjutkan dengan dilatasi berpusat di titik $O(0, 0)$ dengan faktor skala $2$. Jika bayangan titik $A$ oleh komposisi transformasi $T$ adalah $A'(6, -10)$, koordinat titik asal $A$ adalah ....",
+      "jawaban_benar": "$(-5, -3)$",
+      "alasan_benar": "Matriks komposisi adalah $M = \\begin{pmatrix} 2 & 0 \\\\ 0 & 2 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & -2 \\\\ 2 & 0 \\end{pmatrix}$. Persamaan $\\begin{pmatrix} 0 & -2 \\\\ 2 & 0 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -10 \\end{pmatrix}$ memberikan $-2y = 6 \\implies y = -3$ dan $2x = -10 \\implies x = -5$.",
+      "distraktor": [
+        {
+          "teks": "$(5, 3)$",
+          "alasan": "Kesalahan tanda negatif pada penyelesaian sistem persamaan linear prapeta."
+        },
+        {
+          "teks": "$(-3, 5)$",
+          "alasan": "Tertukar antara variabel absis dan ordinat pada pemetaan."
+        },
+        {
+          "teks": "$(3, -5)$",
+          "alasan": "Mengalikan langsung bayangan dengan matriks komposisi tanpa menggunakan invers."
+        }
+      ],
+      "pembahasan": "Matriks rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap $O(0, 0)$:\n$$R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nMatriks dilatasi berpusat di $O(0, 0)$ dengan faktor skala 2:\n$$D = \\begin{pmatrix} 2 & 0 \\\\ 0 & 2 \\end{pmatrix}$$\n\nMatriks komposisi transformasi $T = D \\circ R$ adalah:\n$$M = \\begin{pmatrix} 2 & 0 \\\\ 0 & 2 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & -2 \\\\ 2 & 0 \\end{pmatrix}$$\n\nMisalkan titik asal $A$ berkoordinat $(x, y)$. Hubungan titik asal dengan peta $A'(6, -10)$ adalah:\n$$\\begin{pmatrix} 0 & -2 \\\\ 2 & 0 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -10 \\end{pmatrix}$$\n\nDari perkalian baris diperoleh sistem persamaan:\n$$0x - 2y = 6 \\implies -2y = 6 \\implies y = -3$$\n$$2x + 0y = -10 \\implies 2x = -10 \\implies x = -5$$\n\nDengan demikian, koordinat titik asal $A$ adalah $(-5, -3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 251,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah translasi dapat dinyatakan sebagai komposisi dari dua pencerminan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis sifat komposisi geometri",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pengujian kebenaran teoretis dari berbagai pernyataan aljabar matriks komposisi geometri meliputi determinan, sudut, dan komutativitas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan pernyataan-pernyataan mengenai sifat matriks komposisi transformasi pada bidang Kartesius berikut:\n(1) Komposisi dari dua pencerminan terhadap dua garis yang saling tegak lurus selalu ekuivalen dengan rotasi sebesar $180^\\circ$ terhadap titik potong kedua garis tersebut.\n(2) Untuk setiap matriks transformasi pencerminan $M_1$ dan $M_2$, selalu berlaku sifat komutatif $M_1 M_2 = M_2 M_1$.\n(3) Jika suatu transformasi linear yang direpresentasikan oleh matriks $2 \\times 2$ memiliki determinan bernilai negatif, maka transformasi tersebut membalik orientasi bidang.\n(4) Komposisi dari dua rotasi yang masing-masing berpusat di titik asal $O(0, 0)$ selalu bersifat komutatif.\n\nPernyataan yang bernilai BENAR adalah ....",
+      "jawaban_benar": "(1), (3), dan (4)",
+      "alasan_benar": "Pernyataan (1) benar karena sudut antar garis $90^\\circ$ menghasilkan rotasi $2 \\times 90^\\circ = 180^\\circ$. Pernyataan (2) salah karena dua pencerminan hanya komutatif jika kedua cermin saling tegak lurus atau berimpit. Pernyataan (3) benar karena determinan negatif membalik orientasi (misal refleksi memiliki determinan -1). Pernyataan (4) benar karena $R_{\\theta_1} R_{\\theta_2} = R_{\\theta_1 + \\theta_2} = R_{\\theta_2} R_{\\theta_1}$.",
+      "distraktor": [
+        {
+          "teks": "(1), (2), dan (3)",
+          "alasan": "Mengira pencerminan selalu bersifat komutatif terhadap sembarang garis."
+        },
+        {
+          "teks": "(2) dan (4) saja",
+          "alasan": "Keliru menganggap sifat komutatif berlaku umum untuk semua jenis transformasi geometri."
+        },
+        {
+          "teks": "(1) dan (3) saja",
+          "alasan": "Mengira rotasi dengan sudut berbeda pada titik pusat yang sama tidak bersifat komutatif."
+        }
+      ],
+      "pembahasan": "Analisis setiap pernyataan:\n- Pernyataan (1): Dua garis yang saling tegak lurus membentuk sudut $\\alpha = 90^\\circ$. Komposisi dua refleksi terhadap garis berpotongan menghasilkan rotasi sebesar $2\\alpha = 2(90^\\circ) = 180^\\circ$ berpusat di titik potong kedua garis. Pernyataan (1) BENAR.\n- Pernyataan (2): Secara umum komposisi dua refleksi menghasilkan rotasi. Jika urutan pencerminan dibalik, arah rotasi menjadi berlawanan ($2\\alpha$ vs $-2\\alpha$), sehingga $M_1 M_2 \\neq M_2 M_1$, kecuali jika sudutnya $90^\\circ$ atau $0^\\circ$. Pernyataan (2) SALAH.\n- Pernyataan (3): Nilai determinan matriks transformasi menyatakan rasio orientasi dan perubahan luas. Jika determinan bertanda negatif, arah orientasi bidang Kartesius terbalik (seperti pada pencerminan tunggal dengan determinan $-1$). Pernyataan (3) BENAR.\n- Pernyataan (4): Matriks rotasi berpusat di $O(0, 0)$ memenuhi $R_{\\theta_1} R_{\\theta_2} = R_{\\theta_1 + \\theta_2} = R_{\\theta_2 + \\theta_1} = R_{\\theta_2} R_{\\theta_1}$, sehingga selalu komutatif. Pernyataan (4) BENAR.\n\nDengan demikian, pernyataan yang benar adalah (1), (3), dan (4).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 251,
+        "bagian": "Pemahaman Konsep",
+        "nomor": "1",
+        "teks": "Komposisi dari pencerminan terhadap garis y = x dan pencerminan terhadap garis y = – x ekuivalen dengan pencerminan terhadap sumbu- x .",
+        "jawaban": "Salah",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi ekuivalensi transformasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap klaim geometri dengan menganalisis hasil perkalian dua matriks transformasi serta mengidentifikasi arah rotasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan klaim berikut:\n\"Pencerminan terhadap sumbu-$x$ yang dilanjutkan dengan pencerminan terhadap garis $y = x$ ekuivalen dengan rotasi sebesar $90^\\circ$ searah jarum jam terhadap titik pusat $O(0, 0)$.\"\n\nEvaluasilah kebenaran klaim tersebut beserta alasannya!",
+      "jawaban_benar": "Salah, karena komposisi tersebut ekuivalen dengan rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$.",
+      "alasan_benar": "Matriks pencerminan sumbu-$x$ adalah $M_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ dan garis $y = x$ adalah $M_2 = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$. Komposisinya adalah $M_2 M_1 = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$, yang merupakan matriks rotasi sebesar $+90^\\circ$ (berlawanan arah jarum jam).",
+      "distraktor": [
+        {
+          "teks": "Benar, karena perkalian matriks pencerminan garis $y = x$ dengan sumbu-$x$ menghasilkan matriks rotasi dengan sudut $-90^\\circ$.",
+          "alasan": "Keliru menentukan tanda sudut rotasi dari matriks $\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$ sebagai $-90^\\circ$ bukannya $+90^\\circ$."
+        },
+        {
+          "teks": "Salah, karena komposisi dari dua pencerminan tersebut ekuivalen dengan pencerminan terhadap sumbu-$y$.",
+          "alasan": "Salah menduga bahwa komposisi dua pencerminan terhadap garis yang membentuk sudut $45^\\circ$ menghasilkan pencerminan lain, padahal menghasilkan rotasi."
+        },
+        {
+          "teks": "Salah, karena komposisi dari dua pencerminan tersebut ekuivalen dengan rotasi sebesar $180^\\circ$ terhadap titik pusat $O(0, 0)$.",
+          "alasan": "Mengira bahwa dua pencerminan yang saling tegak lurus terjadi di sini, padahal sudut antara sumbu-$x$ dan garis $y = x$ adalah $45^\\circ$, sehingga sudut rotasi adalah $2 \\times 45^\\circ = 90^\\circ$."
+        }
+      ],
+      "pembahasan": "Transformasi pertama $T_1$ adalah pencerminan terhadap sumbu-$x$ dengan matriks:\n$$M_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nTransformasi kedua $T_2$ adalah pencerminan terhadap garis $y = x$ dengan matriks:\n$$M_2 = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nMatriks komposisi $T_2 \\circ T_1$ diperoleh dari perkalian:\n$$M = M_2 M_1 = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nBentuk umum matriks rotasi terhadap $O(0, 0)$ sebesar sudut $\\theta$ (berlawanan arah jarum jam) adalah:\n$$R_\\theta = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$$\n\nUntuk $\\theta = 90^\\circ$:\n$$R_{90^\\circ} = \\begin{pmatrix} \\cos 90^\\circ & -\\sin 90^\\circ \\\\ \\sin 90^\\circ & \\cos 90^\\circ \\end{pmatrix} = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nSedangkan rotasi searah jarum jam bernilai $\\theta = -90^\\circ$, yang memiliki matriks $\\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$. Dengan demikian, klaim tersebut salah karena komposisi yang dimaksud menghasilkan rotasi sebesar $90^\\circ$ berlawanan arah jarum jam.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita akan membatasi pembahasan pada transformasi-transformasi yang dapat direpresentasikan dengan matriks berordo 2 × 2."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter involusi transformasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Membutuhkan analisis aljabar matriks tingkat tinggi dengan menghubungkan sifat involusi komposisi transformasi terhadap persamaan parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Transformasi $T_1$ adalah pencerminan terhadap sumbu-$y$, sedangkan transformasi $T_2$ bersesuaian dengan matriks $M = \\begin{pmatrix} 2 & k \\\\ k - 2 & 2 \\end{pmatrix}$. Komposisi transformasi $T = T_2 \\circ T_1$ memiliki sifat involusi, yaitu jika diterapkan dua kali berturut-turut pada sembarang titik pada bidang, titik tersebut kembali ke posisi semula ($T \\circ T = I$, dengan $I$ adalah matriks identitas). Nilai $k$ bulat positif yang memenuhi kondisi tersebut adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "Matriks $T_1 = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$, sehingga matriks komposisi $T = M T_1 = \\begin{pmatrix} -2 & k \\\\ 2 - k & 2 \\end{pmatrix}$. Syarat $T^2 = I$ menghasilkan persamaan $4 + k(2 - k) = 1 \\iff k^2 - 2k - 3 = 0$. Faktornya adalah $(k - 3)(k + 1) = 0$, sehingga nilai positifnya adalah $k = 3$.",
+      "distraktor": [
+        {
+          "teks": "1",
+          "alasan": "Keliru dalam memfaktorkan $k^2 - 2k - 3 = 0$ menjadi $(k - 1)(k + 3) = 0$ sehingga mengambil nilai positif $1$."
+        },
+        {
+          "teks": "2",
+          "alasan": "Mengabaikan angka 1 pada ruas kanan matriks identitas sehingga menyelesaikan $4 + k(2 - k) = 0$ atau $k(2 - k) = 0$."
+        },
+        {
+          "teks": "4",
+          "alasan": "Kesalahan tanda saat mengalikan matriks $M$ dengan $T_1$, menghasilkan persamaan $k^2 - 2k - 8 = 0$ dengan akar positif $4$."
+        }
+      ],
+      "pembahasan": "Matriks pencerminan terhadap sumbu-$y$ adalah:\n$$T_1 = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$$\n\nMatriks komposisi $T = T_2 \\circ T_1$ adalah:\n$$T = M T_1 = \\begin{pmatrix} 2 & k \\\\ k - 2 & 2 \\end{pmatrix} \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} -2 & k \\\\ -(k - 2) & 2 \\end{pmatrix} = \\begin{pmatrix} -2 & k \\\\ 2 - k & 2 \\end{pmatrix}$$\n\nTransformasi bersifat involusi jika $T^2 = I$:\n$$T^2 = \\begin{pmatrix} -2 & k \\\\ 2 - k & 2 \\end{pmatrix} \\begin{pmatrix} -2 & k \\\\ 2 - k & 2 \\end{pmatrix}$$\n$$T^2 = \\begin{pmatrix} 4 + k(2 - k) & -2k + 2k \\\\ -2(2 - k) + 2(2 - k) & k(2 - k) + 4 \\end{pmatrix} = \\begin{pmatrix} 4 + 2k - k^2 & 0 \\\\ 0 & 4 + 2k - k^2 \\end{pmatrix}$$\n\nAgar $T^2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$, maka:\n$$4 + 2k - k^2 = 1$$\n$$k^2 - 2k - 3 = 0$$\n$$(k - 3)(k + 1) = 0$$\n\nDiperoleh $k = 3$ atau $k = -1$. Karena disyaratkan nilai $k$ bulat positif, maka nilai yang memenuhi adalah $k = 3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan matriks transformasi T 1 dan T 2 berturut-turut adalah p q = r s G dan t u = v w G . Dengan demikian, matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan sudut rotasi komposisi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penyusunan perkalian matriks trigonometri dari komposisi transformasi dan pemecahan sistem persamaan trigonometri untuk mengevaluasi parameter sudut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan dua transformasi pada bidang Kartesius: transformasi $T_1$ adalah rotasi terhadap titik asal $O(0, 0)$ sebesar sudut $\\theta$ dengan $0^\\circ \\le \\theta < 360^\\circ$, dan transformasi $T_2$ adalah pencerminan terhadap garis $y = x$. Jika komposisi transformasi $T_2 \\circ T_1$ ($T_1$ dilanjutkan oleh $T_2$) ekuivalen dengan pencerminan terhadap sumbu-$x$, besar sudut $\\theta$ adalah ....",
+      "jawaban_benar": "$90^\\circ$",
+      "alasan_benar": "Matriks $T_1 = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$ dan matriks $T_2 = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$. Matriks komposisi $T_2 T_1 = \\begin{pmatrix} \\sin\\theta & \\cos\\theta \\\\ \\cos\\theta & -\\sin\\theta \\end{pmatrix}$. Menyamakan dengan matriks pencerminan sumbu-$x$, yaitu $\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$, menghasilkan $\\sin\\theta = 1$ dan $\\cos\\theta = 0$, sehingga $\\theta = 90^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$270^\\circ$",
+          "alasan": "Tertukar urutan komposisi menjadi $T_1 \\circ T_2$ sehingga menghasilkan persamaan $\\sin\\theta = -1$ dan $\\theta = 270^\\circ$."
+        },
+        {
+          "teks": "$180^\\circ$",
+          "alasan": "Mengira bahwa pencerminan sumbu-$x$ dan garis $y = x$ saling tegak lurus sehingga menghasilkan rotasi sudut $180^\\circ$."
+        },
+        {
+          "teks": "$45^\\circ$",
+          "alasan": "Mengambil sudut antara garis $y = x$ dengan sumbu-$x$ tanpa memperhitungkan relasi komposisi matriks."
+        }
+      ],
+      "pembahasan": "Matriks transformasi $T_1$ (rotasi sebesar $\\theta$ terhadap titik pusat $O$) adalah:\n$$M_1 = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$$\n\nMatriks transformasi $T_2$ (pencerminan terhadap garis $y = x$) adalah:\n$$M_2 = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nMatriks komposisi $T_2 \\circ T_1$ diperoleh dengan mengalikan $M_2 M_1$:\n$$M_{T_2 \\circ T_1} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix} = \\begin{pmatrix} \\sin\\theta & \\cos\\theta \\\\ \\cos\\theta & -\\sin\\theta \\end{pmatrix}$$\n\nTransformasi ini ekuivalen dengan pencerminan terhadap sumbu-$x$ yang memiliki matriks:\n$$M_x = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nDengan menyamakan elemen-elemen matriks yang bersesuaian:\n$$\\begin{pmatrix} \\sin\\theta & \\cos\\theta \\\\ \\cos\\theta & -\\sin\\theta \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nDari kesamaan tersebut didapat:\n$$\\sin\\theta = 1$$\n$$\\cos\\theta = 0$$\n\nUntuk rentang $0^\\circ \\le \\theta < 360^\\circ$, sudut yang memenuhi kedua persamaan tersebut adalah $\\theta = 90^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

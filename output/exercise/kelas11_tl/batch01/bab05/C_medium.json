@@ -1,0 +1,812 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 5,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "3 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 253,
+        "bagian": "Penerapan",
+        "nomor": "18",
+        "teks": "Tentukan peta dari titik (6, 5) jika dicerminkan terhadap garis y = – x, lalu dirotasikan sebesar 90°.",
+        "jawaban": "(6, -5)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peta titik beruntun",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan rumus matriks refleksi garis y = -x lalu dilanjutkan matriks rotasi 90 derajat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan peta dari titik $(7, -4)$ jika dicerminkan terhadap garis $y = -x$, lalu dirotasikan sebesar $90^\\circ$ terhadap titik pusat $O(0, 0)$ berlawanan arah jarum jam.",
+      "jawaban_benar": "$(7, 4)$",
+      "alasan_benar": "Pencerminan terhadap garis $y = -x$ memetakan $(x, y) \\to (-y, -x)$, sehingga $(7, -4) \\to (4, -7)$. Dilanjutkan rotasi $90^\\circ$ terhadap $O$ memetakan $(x', y') \\to (-y', x')$, sehingga $(4, -7) \\to (-(-7), 4) = (7, 4)$.",
+      "distraktor": [
+        {
+          "teks": "$(-7, -4)$",
+          "alasan": "Siswa menerapkan rotasi searah jarum jam (-90 derajat) bukan 90 derajat."
+        },
+        {
+          "teks": "$(4, 7)$",
+          "alasan": "Siswa menukar koordinat x dan y pada hasil akhir rotasi."
+        },
+        {
+          "teks": "$(-4, -7)$",
+          "alasan": "Siswa hanya melakukan langkah pertama pencerminan tanpa mengubah tanda secara lengkap lalu salah tanda rotasi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan bayangan titik $P(7, -4)$ oleh pencerminan terhadap garis $y = -x$.\n$$P'(x', y') = (-y, -x) = (-(-4), -7) = (4, -7)$$\n\nLangkah 2: Rotasikan titik $P'(4, -7)$ sebesar $90^\\circ$ terhadap $O(0, 0)$.\n$$P''(x'', y'') = (-y', x') = (-(-7), 4) = (7, 4)$$\n\nJadi, peta akhirnya adalah $(7, 4)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Mari Mencoba",
+        "nomor": "Mari Mencoba 5.17",
+        "teks": "Misalkan kita ingin melakukan tiga transformasi pada titik P(2, 5), yakni pencerminan terhadap sumbu- y , rotasi 180° terhadap titik pusat O , dan pencerminan terhadap garis y = x . Tentukan petanya.",
+        "jawaban": "(-5, 2)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "tiga transformasi titik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan tiga aturan transformasi berurutan pada sebuah titik di bidang koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah titik $P(-3, 6)$ ditransformasikan berturut-turut oleh pencerminan terhadap sumbu-$x$, rotasi $180^\\circ$ terhadap titik pusat $O(0, 0)$, dan pencerminan terhadap garis $y = x$. Peta akhir dari titik $P$ adalah ....",
+      "jawaban_benar": "$(6, 3)$",
+      "alasan_benar": "Pencerminan sumbu-$x$ memetakan $(-3, 6) \\to (-3, -6)$. Rotasi $180^\\circ$ memetakan $(-3, -6) \\to (3, 6)$. Pencerminan garis $y = x$ memetakan $(3, 6) \\to (6, 3)$.",
+      "distraktor": [
+        {
+          "teks": "$(-6, -3)$",
+          "alasan": "Siswa salah tanda pada saat rotasi 180 derajat atau keliru tanda saat refleksi y = x."
+        },
+        {
+          "teks": "$(3, 6)$",
+          "alasan": "Siswa hanya menyelesaikan langkah kedua (rotasi 180 derajat) dan lupa pencerminan ketiga."
+        },
+        {
+          "teks": "$(6, -3)$",
+          "alasan": "Siswa salah menerapkan aturan pencerminan sumbu-x sebagai pengubah tanda absis bukan ordinat."
+        }
+      ],
+      "pembahasan": "Langkah 1 (pencerminan sumbu-$x$):\n$$P_1 = (x, -y) = (-3, -6)$$\n\nLangkah 2 (rotasi $180^\\circ$ terhadap pusat $O$):\n$$P_2 = (-x_1, -y_1) = (-(-3), -(-6)) = (3, 6)$$\n\nLangkah 3 (pencerminan terhadap garis $y = x$):\n$$P_3 = (y_2, x_2) = (6, 3)$$\n\nJadi, peta akhir dari titik $P$ adalah $(6, 3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan matriks transformasi T 1 dan T 2 berturut-turut adalah p q r s G dan t u v w G . Dengan demikian, matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menentukan prapeta komposisi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis matriks komposisi dan membalikkan operasi (invers matriks/koordinat) untuk menemukan titik mula-mula.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(x, y)$ ditransformasikan oleh rotasi sejauh $90^\\circ$ terhadap titik pusat $O(0, 0)$ berlawanan arah jarum jam, kemudian dilanjutkan dengan pencerminan terhadap sumbu-$y$. Jika bayangan akhir titik tersebut adalah $A''(5, -3)$, koordinat titik $A$ mula-mula adalah ....",
+      "jawaban_benar": "$(-3, 5)$",
+      "alasan_benar": "Matriks komposisi $M = M_y R_{90^\\circ} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$. Karena $(x'', y'') = (y, x)$, maka $(5, -3) = (y, x)$, sehingga $x = -3$ dan $y = 5$.",
+      "distraktor": [
+        {
+          "teks": "$(5, -3)$",
+          "alasan": "Siswa mengira matriks komposisi merupakan matriks identitas."
+        },
+        {
+          "teks": "$(-5, 3)$",
+          "alasan": "Siswa menganggap transformasi ekuivalen dengan rotasi 180 derajat."
+        },
+        {
+          "teks": "$(3, -5)$",
+          "alasan": "Siswa salah menentukan tanda komponen saat menginvers hasil rotasi dan refleksi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan matriks komposisi $M = M_2 M_1$:\n$$M = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nLangkah 2: Tentukan hubungan titik asal dan bayangan:\n$$\\begin{pmatrix} x'' \\\\ y'' \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} y \\\\ x \\end{pmatrix}$$\nDiketahui $A''(5, -3)$, maka:\n$$y = 5 \\quad \\text{dan} \\quad x = -3$$\nJadi, koordinat titik $A$ mula-mula adalah $(-3, 5)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Sifat 5.5: Matriks komposisi pencerminan terhadap sumbu- x dilanjutkan pencerminan terhadap sumbu- y adalah"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "mencari parameter titik asal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengalikan matriks transformasi umum ordo 2x2 kemudian menyusun sistem persamaan untuk mencari parameter nilai variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Transformasi $T_1$ bersesuaian dengan matriks $\\begin{pmatrix} 1 & 2 \\\\ 0 & -1 \\end{pmatrix}$ dan transformasi $T_2$ bersesuaian dengan matriks $\\begin{pmatrix} 3 & 0 \\\\ -2 & 1 \\end{pmatrix}$. Jika komposisi transformasi $T_2 \\circ T_1$ memetakan titik $P(k, 2)$ ke titik $P'(3, -4)$, maka nilai $k$ adalah ....",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Matriks komposisi $M = T_2 T_1 = \\begin{pmatrix} 3 & 6 \\\\ -2 & -5 \\end{pmatrix}$. Hasil pemetaan: $x' = 3k + 6(2) = 3k + 12$. Diketahui $x' = 3$, maka $3k + 12 = 3 \\iff 3k = -9 \\iff k = -3$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Siswa salah tanda saat memindahkan ruas $3k = 3 + 12$ bukan $3 - 12$."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Siswa mengalikan matriks secara terbalik ($T_1 T_2$ alih-alih $T_2 T_1$)."
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "Siswa salah menghitung perkalian baris pertama matriks dengan vektor kolom."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung matriks komposisi $M = T_2 T_1$:\n$$M = \\begin{pmatrix} 3 & 0 \\\\ -2 & 1 \\end{pmatrix} \\begin{pmatrix} 1 & 2 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 3(1)+0(0) & 3(2)+0(-1) \\\\ -2(1)+1(0) & -2(2)+1(-1) \\end{pmatrix} = \\begin{pmatrix} 3 & 6 \\\\ -2 & -5 \\end{pmatrix}$$\n\nLangkah 2: Terapkan matriks komposisi ke titik $P(k, 2)$:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 3 & 6 \\\\ -2 & -5 \\end{pmatrix} \\begin{pmatrix} k \\\\ 2 \\end{pmatrix} = \\begin{pmatrix} 3k + 12 \\\\ -2k - 10 \\end{pmatrix}$$\n\nLangkah 3: Samakan dengan titik bayangan $P'(3, -4)$:\n$$3k + 12 = 3 \\implies 3k = -9 \\implies k = -3$$\nCek pada baris kedua: $-2(-3) - 10 = 6 - 10 = -4$ (sesuai).\nJadi, nilai $k = -3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 253,
+        "bagian": "Penerapan",
+        "nomor": "19",
+        "teks": "Tentukan peta dari titik ( x + 2, 3 y ) yang ditransformasikan dengan pencerminan terhadap sumbu- y dilanjutkan rotasi sebesar 180° terhadap titik pusat O .",
+        "jawaban": "(x + 2, –3y)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aljabar koordinat komposisi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengharuskan perkalian matriks komposisi dua transformasi geometri pada titik berkoordinat bentuk aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Peta dari titik $A(2a - 1, 4b)$ oleh pencerminan terhadap sumbu-$x$ dilanjutkan rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$ adalah ....",
+      "jawaban_benar": "$(4b, 2a - 1)$",
+      "alasan_benar": "Matriks komposisi adalah $M = R_{90^\\circ} M_{\\text{sb-}x} = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$, sehingga bayangan titik adalah $(4b, 2a - 1)$.",
+      "distraktor": [
+        {
+          "teks": "$(-4b, 2a - 1)$",
+          "alasan": "Siswa salah menerapkan tanda matriks rotasi $90^\\circ$ sehingga baris pertama bertanda negatif."
+        },
+        {
+          "teks": "$(2a - 1, -4b)",
+          "alasan": "Siswa hanya melakukan pencerminan terhadap sumbu-$x$ tanpa melanjutkan rotasi $90^\\circ$."
+        },
+        {
+          "teks": "$(-4b, 1 - 2a)$",
+          "alasan": "Siswa mengalikan urutan matriks terbalik dan salah tanda."
+        }
+      ],
+      "pembahasan": "Matriks pencerminan terhadap sumbu-$x$:\n$$M_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\nMatriks rotasi $90^\\circ$ terhadap $O(0, 0)$:\n$$M_2 = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$$\nMatriks komposisi transformasi $M = M_2 M_1$:\n$$M = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\nPeta titik $A(2a - 1, 4b)$:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 2a - 1 \\\\ 4b \\end{pmatrix} = \\begin{pmatrix} 4b \\\\ 2a - 1 \\end{pmatrix}$$\nJadi, petanya adalah $(4b, 2a - 1)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan matriks transformasi T 1 dan T 2 berturut-turut adalah p q r s dan t u v w . Dengan demikian, matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut. t u v w p q r s"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "mencari parameter matriks komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa harus menganalisis pemetaan titik oleh komposisi matriks dengan satu elemen yang belum diketahui lalu menyelesaikan persamaan linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Transformasi $T_1$ dan $T_2$ berturut-turut bersesuaian dengan matriks $\\begin{pmatrix} 2 & 1 \\\\ -1 & 3 \\end{pmatrix}$ dan $\\begin{pmatrix} 0 & -2 \\\\ 1 & k \\end{pmatrix}$. Jika komposisi transformasi $T_2 \\circ T_1$ memetakan titik $(1, 2)$ ke titik $(-10, 19)$, maka nilai $k$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Peta oleh $T_1$ adalah $\\begin{pmatrix} 2(1)+1(2) \\\\ -1(1)+3(2) \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ 5 \\end{pmatrix}$. Dilanjutkan oleh $T_2$: $\\begin{pmatrix} 0(4)-2(5) \\\\ 1(4)+k(5) \\end{pmatrix} = \\begin{pmatrix} -10 \\\\ 4+5k \\end{pmatrix}$. Dari $4+5k=19$ diperoleh $5k=15 \\iff k=3$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Siswa salah saat mengurangkan $19 - 4$ menjadi $10$ sebelum dibagi $5$."
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "Siswa membuat kesalahan tanda minus pada ruas kanan saat isolasi variabel $k$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Siswa salah menghitung peta antara $T_1(1, 2)$ menjadi $(4, 3)$ sehingga $4 + 3k = 19 \\implies k = 5$."
+        }
+      ],
+      "pembahasan": "Transformasi dilakukan bertahap sesuai komposisi $T_2 \\circ T_1$:\nLangkah 1: Menentukan hasil transformasi pertama terhadap titik $(1, 2)$:\n$$\\begin{pmatrix} x_1 \\\\ y_1 \\end{pmatrix} = \\begin{pmatrix} 2 & 1 \\\\ -1 & 3 \\end{pmatrix} \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix} = \\begin{pmatrix} 2(1) + 1(2) \\\\ -1(1) + 3(2) \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ 5 \\end{pmatrix}$$\n\nLangkah 2: Menerapkan transformasi $T_2$ pada hasil tersebut:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 0 & -2 \\\\ 1 & k \\end{pmatrix} \\begin{pmatrix} 4 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} 0(4) - 2(5) \\\\ 1(4) + k(5) \\end{pmatrix} = \\begin{pmatrix} -10 \\\\ 4 + 5k \\end{pmatrix}$$\n\nLangkah 3: Menyamakan dengan titik hasil $(-10, 19)$:\n$$4 + 5k = 19 \\iff 5k = 15 \\iff k = 3$$\nJadi, nilai $k$ adalah $3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita akan membatasi pembahasan pada transformasi-transformasi yang dapat direpresentasikan dengan matriks berordo 2 × 2."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "luas daerah bayangan komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis pengaruh komposisi dua matriks transformasi terhadap perubahan luas bangun datar menggunakan konsep determinan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu segitiga dengan luas $6\\text{ satuan luas}$ ditransformasikan oleh transformasi yang bersesuaian dengan matriks $A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 3 \\end{pmatrix}$, kemudian dilanjutkan oleh transformasi dengan matriks $B = \\begin{pmatrix} 3 & -1 \\\\ 2 & 2 \\end{pmatrix}$. Luas bayangan segitiga tersebut adalah ....",
+      "jawaban_benar": "$240\\text{ satuan luas}$",
+      "alasan_benar": "Determinan $A$ adalah $2(3) - 1(1) = 5$. Determinan $B$ adalah $3(2) - (-1)(2) = 8$. Faktor perbesaran luas adalah $|\\det(BA)| = |\\det(B)| \\cdot |\\det(A)| = 8 \\times 5 = 40$. Luas bayangan $= 6 \\times 40 = 240\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$78\\text{ satuan luas}$",
+          "alasan": "Siswa menjumlahkan determinan ($5 + 8 = 13$) lalu mengalikan dengan luas awal ($13 \\times 6 = 78$)."
+        },
+        {
+          "teks": "$48\\text{ satuan luas}$",
+          "alasan": "Siswa hanya memperhitungkan faktor skala dari matriks $B$ ($6 \\times 8 = 48$) dan mengabaikan matriks $A$."
+        },
+        {
+          "teks": "$120\\text{ satuan luas}$",
+          "alasan": "Siswa salah menghitung determinan matriks $B$ menjadi $3(2) - 2 = 4$, sehingga $6 \\times (5 \\times 4) = 120$."
+        }
+      ],
+      "pembahasan": "Faktor perbesaran luas dari transformasi dengan matriks $M$ dinyatakan oleh nilai absolut determinan matriks tersebut, yaitu $|\\det(M)|$.\n\nUntuk komposisi transformasi yang bersesuaian dengan matriks $B \\cdot A$:\n1. Hitung $\\det(A)$:\n$$\\det(A) = (2)(3) - (1)(1) = 6 - 1 = 5$$\n2. Hitung $\\det(B)$:\n$$\\det(B) = (3)(2) - (-1)(2) = 6 + 2 = 8$$\n3. Determinan matriks komposisi:\n$$|\\det(BA)| = |\\det(B)| \\cdot |\\det(A)| = 8 \\times 5 = 40$$\n\nMaka luas bayangan segitiga adalah:\n$$\\text{Luas}' = |\\det(BA)| \\times \\text{Luas awal} = 40 \\times 6 = 240\\text{ satuan luas}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": "Mari Mencoba",
+        "nomor": "5.16",
+        "teks": "Tentukan peta dari titik (–2, 3) yang ditransformasikan oleh komposisi dari pencerminan sumbu- y yang dilanjutkan dengan rotasi 180° terhadap titik pusat O .",
+        "jawaban": "(-2, -3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peta titik komposisi dua transformasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan dua matriks transformasi berturutan pada koordinat titik Kartesius.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan peta dari titik $(6, -8)$ yang ditransformasikan oleh pencerminan terhadap sumbu-$y$ dilanjutkan dengan rotasi $270^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$.",
+      "jawaban_benar": "$(-8, 6)$",
+      "alasan_benar": "Pencerminan sumbu-$y$ memetakan $(x, y) \\to (-x, y)$, sehingga $(6, -8) \\to (-6, -8)$. Dilanjutkan rotasi $270^\\circ$ berlawanan arah jarum jam: $(x', y') \\to (y', -x')$, sehingga $(-6, -8) \\to (-8, -(-6)) = (-8, 6)$.",
+      "distraktor": [
+        {
+          "teks": "$(8, -6)$",
+          "alasan": "Siswa salah menggunakan rumus rotasi searah jarum jam bukannya berlawanan arah jarum jam."
+        },
+        {
+          "teks": "$(8, 6)$",
+          "alasan": "Siswa lupa tanda negatif pada hasil ordinat rotasi."
+        },
+        {
+          "teks": "$(-6, 8)$",
+          "alasan": "Siswa menukar posisi absis dan ordinat pada hasil akhir."
+        }
+      ],
+      "pembahasan": "Matriks pencerminan terhadap sumbu-$y$ adalah $M_1 = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$. Matriks rotasi $270^\\circ$ terhadap $O(0,0)$ adalah $M_2 = \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$.\\n\\nMatriks komposisi:\\n$$M = M_2 M_1 = \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix} \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\\n\\nPeta dari titik $(6, -8)$:\\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 6 \\\\ -8 \\end{pmatrix} = \\begin{pmatrix} -8 \\\\ 6 \\end{pmatrix}$$\\n\\nJadi, petanya adalah $(-8, 6)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Mari Mencoba",
+        "nomor": "5.17",
+        "teks": "Misalkan kita ingin melakukan tiga transformasi pada titik P (2, 5), yakni pencerminan terhadap sumbu- y , rotasi 180° terhadap titik pusat O , dan pencerminan terhadap garis y = x . Tentukan petanya.",
+        "jawaban": "(-5, 2)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "komposisi tiga transformasi berurutan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan komposisi tiga transformasi berurutan pada sebuah titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P(-6, 9)$ ditransformasikan berturut-turut oleh pencerminan terhadap sumbu-$x$, rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$, dan pencerminan terhadap garis $y = x$. Peta akhir dari titik $P$ adalah ....",
+      "jawaban_benar": "$P'(-6, 9)$",
+      "alasan_benar": "Pencerminan sumbu-$x$ memetakan $(-6, 9) \\to (-6, -9)$. Rotasi $90^\\circ$ memetakan $(-6, -9) \\to (9, -6)$. Pencerminan $y = x$ memetakan $(9, -6) \\to (-6, 9)$.",
+      "distraktor": [
+        {
+          "teks": "$P'(6, -9)$",
+          "alasan": "Siswa salah tanda pada hasil akhir transformasi identitas."
+        },
+        {
+          "teks": "$P'(9, -6)$",
+          "alasan": "Siswa hanya menyelesaikan hingga langkah transformasi kedua (rotasi) dan lupa pencerminan terakhir."
+        },
+        {
+          "teks": "$P'(-9, 6)$",
+          "alasan": "Siswa salah menerapkan aturan pencerminan $y = x$ dengan menambahkan tanda negatif."
+        }
+      ],
+      "pembahasan": "Transformasi dilakukan berturut-turut pada $P(-6, 9)$:\\n1. Pencerminan terhadap sumbu-$x$:\\n   $$P_1(-6, -(9)) = P_1(-6, -9)$$\\n2. Rotasi $90^\\circ$ berlawanan arah jarum jam ($x' = -y, y' = x$):\\n   $$P_2(-(-9), -6) = P_2(9, -6)$$\\n3. Pencerminan terhadap garis $y = x$ ($x'' = y', y'' = x'$):\\n   $$P'( -6, 9)$$\\n\\nJadi, peta akhir dari titik $P$ adalah $P'(-6, 9)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita akan membatasi pembahasan pada transformasi-transformasi yang dapat direpresentasikan dengan matriks berordo 2 × 2."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "nilai ekspresi prapeta komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis matriks komposisi dan menyelesaikan sistem persamaan linear dua variabel untuk menentukan nilai ekspresi prapeta.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Transformasi $T_1$ bersesuaian dengan matriks $\\begin{pmatrix} 2 & 1 \\\\ 3 & 2 \\end{pmatrix}$ dan transformasi $T_2$ bersesuaian dengan matriks $\\begin{pmatrix} 1 & -1 \\\\ 2 & 1 \\end{pmatrix}$. Titik $P(x, y)$ ditransformasikan oleh komposisi $T_2 \\circ T_1$ menghasilkan bayangan $P'(3, 9)$. Nilai dari $x + y$ adalah ....",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Matriks komposisi $T_2 \\circ T_1 = \\begin{pmatrix} -1 & -1 \\\\ 7 & 4 \\end{pmatrix}$. Dari kesamaan matriks, baris pertama menghasilkan $-x - y = 3 \\iff x + y = -3$.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Siswa mengalikan matriks dengan urutan terbalik ($T_1 \\circ T_2$ alih-alih $T_2 \\circ T_1$)."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Siswa salah tanda saat membagi persamaan $-x - y = 3$ dengan $-1$."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Siswa menghitung nilai selisih $x - y = 7 - (-10) = 17$ bukan penjumlahan $x + y$."
+        }
+      ],
+      "pembahasan": "Matriks komposisi $T_2 \\circ T_1$ diperoleh dari perkalian matriks $T_2$ dengan matriks $T_1$:\\n$$M = \\begin{pmatrix} 1 & -1 \\\\ 2 & 1 \\end{pmatrix} \\begin{pmatrix} 2 & 1 \\\\ 3 & 2 \\end{pmatrix} = \\begin{pmatrix} (2 - 3) & (1 - 2) \\\\ (4 + 3) & (2 + 2) \\end{pmatrix} = \\begin{pmatrix} -1 & -1 \\\\ 7 & 4 \\end{pmatrix}$$\\n\\nPersamaan transformasi:\\n$$\\begin{pmatrix} -1 & -1 \\\\ 7 & 4 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ 9 \\end{pmatrix}$$\\n\\nDari baris pertama:\\n$$-x - y = 3 \\iff -(x + y) = 3 \\iff x + y = -3$$\\n\\nJadi, nilai dari $x + y$ adalah $-3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita akan membatasi pembahasan pada transformasi-transformasi yang dapat direpresentasikan dengan matriks berordo 2 × 2."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "faktor skala dilatasi pada komposisi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan komposisi matriks dilatasi dan rotasi berpusat di asal untuk menemukan nilai parameter faktor skala.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(4, -2)$ ditransformasikan oleh dilatasi dengan faktor skala $k$ berpusat di titik $O(0, 0)$, kemudian dilanjutkan dengan rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$. Jika hasil komposisi transformasi tersebut menghasilkan bayangan $A'(6, 12)$, nilai $k$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Dilatasi $[O, k]$ memetakan $(4, -2) \\to (4k, -2k)$. Rotasi $90^\\circ$ memetakan $(4k, -2k) \\to (2k, 4k)$. Diketahui bayangan $(6, 12)$, maka $2k = 6 \\implies k = 3$.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Siswa salah menerapkan tanda rumus rotasi $90^\\circ$ sehingga memperoleh persamaan $-2k = 6$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Siswa salah membagi koordinat bayangan dengan koordinat asal."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Siswa terbalik menghitung perbandingan dilatasi sebagai $\\frac{x}{x'}$ bukan $\\frac{x'}{x}$."
+        }
+      ],
+      "pembahasan": "Matriks dilatasi $[O, k]$ adalah $D = \\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}$ dan matriks rotasi $90^\\circ$ adalah $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$.\\n\\nMatriks komposisi:\\n$$M = R D = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix} = \\begin{pmatrix} 0 & -k \\\\ k & 0 \\end{pmatrix}$$\\n\\nPeta dari titik $A(4, -2)$:\\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 0 & -k \\\\ k & 0 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -2 \\end{pmatrix} = \\begin{pmatrix} 2k \\\\ 4k \\end{pmatrix}$$\\n\\nDiketahui bayangannya adalah $A'(6, 12)$:\\n$$2k = 6 \\implies k = 3$$\\n$$4k = 12 \\implies k = 3$$\\n\\nJadi, nilai $k$ adalah $3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": "Mari Mencoba 5.16",
+        "nomor": "5.16",
+        "teks": "Tentukan peta dari titik (–2, 3) yang ditransformasikan oleh komposisi dari pencerminan sumbu- y yang dilanjutkan dengan rotasi 180° terhadap titik pusat O .",
+        "jawaban": "(-2, -3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peta titik komposisi dua refleksi-rotasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan dua matriks transformasi berurutan pada sebuah titik koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan peta dari titik $(5, -7)$ yang ditransformasikan oleh komposisi dari pencerminan terhadap sumbu-$y$ dilanjutkan dengan rotasi $180^\\circ$ terhadap titik pusat $O(0, 0)$.",
+      "jawaban_benar": "$(5, 7)$",
+      "alasan_benar": "Matriks pencerminan terhadap sumbu-$y$ adalah $M_y = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$ dan matriks rotasi $180^\\circ$ terhadap $O$ adalah $R_{180^\\circ} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Matriks komposisinya adalah $R_{180^\\circ} M_y = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Peta dari $(5, -7)$ adalah $\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 5 \\\\ -7 \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 7 \\end{pmatrix}$.",
+      "distraktor": [
+        {
+          "teks": "$(-5, -7)$",
+          "alasan": "Hanya menerapkan rotasi $180^\\circ$ tanpa melakukan pencerminan terhadap sumbu-$y$."
+        },
+        {
+          "teks": "$(-5, 7)$",
+          "alasan": "Hanya menerapkan pencerminan terhadap sumbu-$y$ tanpa dilanjutkan dengan rotasi $180^\\circ$."
+        },
+        {
+          "teks": "$(7, 5)$",
+          "alasan": "Tertukar dengan komposisi refleksi terhadap garis $y = x$."
+        }
+      ],
+      "pembahasan": "Matriks pencerminan terhadap sumbu-$y$ adalah:\n$$M_y = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$$\nMatriks rotasi $180^\\circ$ terhadap pusat $O(0, 0)$ adalah:\n$$R_{180^\\circ} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\nMatriks komposisi transformasi (pencerminan terhadap sumbu-$y$ dilanjutkan rotasi $180^\\circ$) adalah:\n$$M = R_{180^\\circ} \\cdot M_y = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\nBayangan titik $(5, -7)$:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 5 \\\\ -7 \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 7 \\end{pmatrix}$$\nJadi, petanya adalah $(5, 7)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita akan membatasi pembahasan pada transformasi-transformasi yang dapat direpresentasikan dengan matriks berordo 2 × 2."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "matriks transformasi komponen",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penyelesaian persamaan matriks komposisi $T = T_2 T_1$ dengan menggunakan invers matriks.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Komposisi transformasi $T_1$ yang dilanjutkan dengan transformasi $T_2$ menghasilkan transformasi tunggal $T$. Jika matriks transformasi $T_1 = \\begin{pmatrix} 2 & 1 \\\\ 0 & 3 \\end{pmatrix}$ dan matriks transformasi komposisi $T = \\begin{pmatrix} 4 & 5 \\\\ 6 & 9 \\end{pmatrix}$, matriks transformasi $T_2$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 2 & 1 \\\\ 3 & 2 \\end{pmatrix}$",
+      "alasan_benar": "$T = T_2 \\cdot T_1 \\implies T_2 = T \\cdot T_1^{-1}$. Dengan $T_1^{-1} = \\frac{1}{6}\\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix}$, perkalian menghasilkan $T_2 = \\begin{pmatrix} 2 & 1 \\\\ 3 & 2 \\end{pmatrix}$.",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 2 & 1 \\\\ 0 & 3 \\end{pmatrix}$",
+          "alasan": "Mengira $T_2 = T_1$ tanpa melakukan inversi perkalian matriks."
+        },
+        {
+          "teks": "$\\begin{pmatrix} 8 & 19 \\\\ 12 & 33 \\end{pmatrix}$",
+          "alasan": "Salah melakukan operasi dengan mengalikan $T \\cdot T_1$ alih-alih $T \\cdot T_1^{-1}$."
+        },
+        {
+          "teks": "$\\begin{pmatrix} 1 & 2 \\\\ 2 & 3 \\end{pmatrix}$",
+          "alasan": "Tertukar urutan saat menghitung perkalian invers matriks $T_1^{-1} \\cdot T$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi komposisi transformasi:\n$$T = T_2 \\cdot T_1$$\nUntuk menentukan $T_2$, kedua ruas dikalikan dari kanan dengan $T_1^{-1}$:\n$$T_2 = T \\cdot T_1^{-1}$$\nMenentukan invers dari $T_1$:\n$$\\det(T_1) = (2)(3) - (1)(0) = 6$$\n$$T_1^{-1} = \\frac{1}{6} \\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix}$$\nMenghitung $T_2$:\n$$T_2 = \\begin{pmatrix} 4 & 5 \\\\ 6 & 9 \\end{pmatrix} \\left[ \\frac{1}{6} \\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix} \\right]$$\n$$T_2 = \\frac{1}{6} \\begin{pmatrix} 4(3) + 5(0) & 4(-1) + 5(2) \\\\ 6(3) + 9(0) & 6(-1) + 9(2) \\end{pmatrix}$$\n$$T_2 = \\frac{1}{6} \\begin{pmatrix} 12 & 6 \\\\ 18 & 12 \\end{pmatrix} = \\begin{pmatrix} 2 & 1 \\\\ 3 & 2 \\end{pmatrix}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada subbab sebelumnya, kamu telah mendalami transformasi dan transformasi dengan matriks. Pada subbab kali ini, kamu akan mempelajari komposisi transformasi menggunakan matriks."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "luas bayangan poligon oleh komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan luas segitiga awal, penentuan nilai mutlak determinan matriks komposisi, dan perkalian keduanya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga $ABC$ memiliki titik-titik sudut $A(1, 1)$, $B(4, 1)$, dan $C(1, 5)$. Segitiga tersebut ditransformasikan berturut-turut oleh pencerminan terhadap sumbu-$x$ kemudian dilanjutkan dengan dilatasi yang berpusat di $O(0, 0)$ dengan faktor skala $3$. Luas bayangan segitiga $ABC$ adalah ....",
+      "jawaban_benar": "$54\\text{ satuan luas}$",
+      "alasan_benar": "Luas segitiga awal adalah $\\frac{1}{2} \\times 3 \\times 4 = 6\\text{ satuan luas}$. Determinan matriks komposisi adalah $|\\det(M)| = |-1 \\times 3^2| = 9$. Luas bayangan adalah $6 \\times 9 = 54\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$18\\text{ satuan luas}$",
+          "alasan": "Lupa mengkuadratkan faktor skala dilatasi pada perhitungan perubahan luas bangun dua dimensi ($6 \\times 3 = 18$)."
+        },
+        {
+          "teks": "$27\\text{ satuan luas}$",
+          "alasan": "Salah menghitung luas awal segitiga menjadi $3$ satuan luas lalu mengalikan dengan $9$."
+        },
+        {
+          "teks": "$108\\text{ satuan luas}$",
+          "alasan": "Lupa mengalikan dengan faktor $\\frac{1}{2}$ saat menghitung luas segitiga siku-siku awal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung luas segitiga $ABC$ mula-mula.\nSegitiga $ABC$ siku-siku di $A(1, 1)$ dengan alas $AB = 4 - 1 = 3$ satuan dan tinggi $AC = 5 - 1 = 4$ satuan.\n$$\\text{Luas } ABC = \\frac{1}{2} \\times 3 \\times 4 = 6\\text{ satuan luas}$$\n\nLangkah 2: Menentukan determinan matriks komposisi transformasi.\nMatriks pencerminan terhadap sumbu-$x$ adalah $T_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$, dengan $\\det(T_1) = -1$.\nMatriks dilatasi $[O, 3]$ adalah $T_2 = \\begin{pmatrix} 3 & 0 \\\\ 0 & 3 \\end{pmatrix}$, dengan $\\det(T_2) = 3 \\times 3 = 9$.\nMatriks komposisi $T = T_2 \\cdot T_1$, sehingga:\n$$|\\det(T)| = |\\det(T_2) \\times \\det(T_1)| = |9 \\times (-1)| = 9$$\n\nLangkah 3: Menghitung luas bayangan.\n$$\\text{Luas bayangan} = |\\det(T)| \\times \\text{Luas } ABC = 9 \\times 6 = 54\\text{ satuan luas}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 253,
+        "bagian": "Penerapan",
+        "nomor": "18",
+        "teks": "Tentukan peta dari titik (6, 5) jika dicerminkan terhadap garis y = – x, lalu dirotasikan sebesar 90°.",
+        "jawaban": "(5, -6)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "koordinat bayangan komposisi refleksi dan rotasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan matriks refleksi dan rotasi serta mengalikannya secara berurutan untuk mencari koordinat bayangan titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan peta dari titik $(-4, 7)$ jika dicerminkan terhadap garis $y = -x$, lalu dirotasikan sebesar $270^\\circ$ terhadap titik pusat $O(0, 0)$ berlawanan arah jarum jam.",
+      "jawaban_benar": "$(4, 7)$",
+      "alasan_benar": "Pencerminan terhadap $y = -x$ memetakan $(-4, 7)$ ke $(-7, 4)$. Rotasi $270^\\circ$ memetakan $(x', y')$ ke $(y', -x')$, sehingga $(-7, 4)$ menjadi $(4, 7)$.",
+      "distraktor": [
+        {
+          "teks": "$(-4, -7)$",
+          "alasan": "Siswa salah menerapkan aturan rotasi 270 derajat menjadi rotasi 180 derajat."
+        },
+        {
+          "teks": "$(7, 4)$",
+          "alasan": "Siswa tertukar antara absis dan ordinat pada hasil rotasi."
+        },
+        {
+          "teks": "$(-7, -4)$",
+          "alasan": "Siswa lupa mengubah tanda komponen absis setelah menerapkan rumus rotasi."
+        }
+      ],
+      "pembahasan": "Matriks pencerminan terhadap garis $y = -x$ adalah $M_1 = \\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$.\nMatriks rotasi $270^\\circ$ terhadap pusat $O(0, 0)$ adalah $M_2 = \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$.\n\nMatriks komposisi transformasinya adalah:\n$M = M_2 M_1 = \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$\n\nBayangan dari titik $(-4, 7)$ adalah:\n$\\begin{pmatrix} x'' \\\\ y'' \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} -4 \\\\ 7 \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ 7 \\end{pmatrix}$\n\nJadi, peta dari titik tersebut adalah $(4, 7)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Contoh",
+        "nomor": "5.17",
+        "teks": "Misalkan kamu ingin melakukan tiga transformasi pada titik P (2, 5), yakni pencerminan terhadap sumbu- x , rotasi 90° terhadap titik pusat O , dan rotasi 180° terhadap titik pusat O . Tentukan petanya.",
+        "jawaban": "Pʹ(–5, –2)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "komposisi tiga transformasi pada titik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan tiga transformasi berurutan pada sebuah titik secara prosedural.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Misalkan dilakukan tiga transformasi berturut-turut pada titik $P(-3, 8)$, yakni pencerminan terhadap sumbu-$x$, rotasi $180^\\circ$ terhadap titik pusat $O(0, 0)$, dan rotasi $270^\\circ$ terhadap titik pusat $O(0, 0)$ berlawanan arah jarum jam. Peta akhir dari titik $P$ adalah ....",
+      "jawaban_benar": "$P'(8, -3)$",
+      "alasan_benar": "Pencerminan terhadap sumbu-x menghasilkan (-3, -8). Rotasi 180 derajat menghasilkan (3, 8). Rotasi 270 derajat menghasilkan (8, -3).",
+      "distraktor": [
+        {
+          "teks": "$P'(-8, 3)$",
+          "alasan": "Siswa salah menggunakan rumus rotasi 270 derajat searah jarum jam bukannya berlawanan arah jarum jam."
+        },
+        {
+          "teks": "$P'(3, -8)$",
+          "alasan": "Siswa menukar koordinat absis dan ordinat pada hasil akhir."
+        },
+        {
+          "teks": "$P'(-3, -8)$",
+          "alasan": "Siswa hanya melakukan transformasi pertama dan mengabaikan dua rotasi berikutnya."
+        }
+      ],
+      "pembahasan": "Transformasi dilakukan berturut-turut:\n1. Pencerminan terhadap sumbu-$x$:\n   $P(-3, 8) \\to P_1(-3, -8)$\n\n2. Rotasi $180^\\circ$ terhadap titik pusat $O(0, 0)$:\n   $P_1(-3, -8) \\to P_2(-(-3), -(-8)) = P_2(3, 8)$\n\n3. Rotasi $270^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$:\n   Aturan rotasi $270^\\circ$ adalah $(x, y) \\to (y, -x)$.\n   $P_2(3, 8) \\to P'(8, -3)$\n\nJadi, peta akhirnya adalah $P'(8, -3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita akan membatasi pembahasan pada transformasi-transformasi yang dapat direpresentasikan dengan matriks berordo 2 × 2."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "kombinasi linear koordinat prapeta komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hubungan prapeta dan peta melalui matriks komposisi serta menghitung nilai ekspresi aljabar koordinat prapeta.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Bayangan titik $Q(a, b)$ oleh rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$ yang dilanjutkan dengan pencerminan terhadap garis $y = x$ adalah $Q'(5, -3)$. Nilai dari $a + 2b$ adalah ....",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Matriks komposisi adalah My=x * R90 = [[1, 0], [0, -1]], memetakan (a, b) ke (a, -b). Dari Q'(5, -3), diperoleh a = 5 dan b = 3, sehingga a + 2b = 5 + 6 = 11.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Siswa salah menentukan nilai b = -3 sehingga menghitung 5 + 2(-3) = -1."
+        },
+        {
+          "teks": "$-11$",
+          "alasan": "Siswa membalik urutan perkalian matriks komposisi sehingga memperoleh a = -5 dan b = -3."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Siswa menukar nilai a dan b sehingga menghitung 3 + 2(5) = 13."
+        }
+      ],
+      "pembahasan": "Matriks rotasi $90^\\circ$ terhadap titik pusat $O(0, 0)$:\n$R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$\n\nMatriks pencerminan terhadap garis $y = x$:\n$M = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$\n\nMatriks komposisi transformasi ($R$ dilanjutkan $M$):\n$T = M \\cdot R = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$\n\nHubungan bayangan dan titik asal:\n$\\begin{pmatrix} 5 \\\\ -3 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} a \\\\ b \\end{pmatrix} = \\begin{pmatrix} a \\\\ -b \\end{pmatrix}$\n\nDiperoleh:\n$a = 5$\n$-b = -3 \\implies b = 3$\n\nMaka nilai dari $a + 2b$ adalah:\n$a + 2b = 5 + 2(3) = 5 + 6 = 11$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 253,
+        "bagian": "Penerapan",
+        "nomor": "20",
+        "teks": "Tentukan peta dari garis 2 x + 3 y – 5 = 0 yang ditransformasikan dengan pencerminan terhadap garis y = – x dilanjutkan dengan rotasi sebesar 180° terhadap titik pusat O .",
+        "jawaban": "3x + 2y - 5 = 0",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "transformasi garis komposisi refleksi rotasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perkalian matriks komposisi refleksi dan rotasi, menentukan hubungan koordinat prapeta, lalu mensubstitusikannya ke persamaan garis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan peta dari garis $4x - 7y + 12 = 0$ yang ditransformasikan dengan pencerminan terhadap garis $y = -x$ dilanjutkan dengan rotasi sebesar $180^\\circ$ terhadap titik pusat $O(0, 0)$.",
+      "jawaban_benar": "$7x - 4y - 12 = 0$",
+      "alasan_benar": "Matriks komposisi adalah $M = M_2 M_1 = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$, sehingga $x' = y$ dan $y' = x$. Substitusi $x = y'$ dan $y = x'$ ke $4x - 7y + 12 = 0$ menghasilkan $4y' - 7x' + 12 = 0 \\iff 7x - 4y - 12 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$7x - 4y + 12 = 0$",
+          "alasan": "Siswa lupa mengalikan konstanta dengan $-1$ saat mengubah $-7x + 4y + 12 = 0$ menjadi bentuk koefisien $x$ positif."
+        },
+        {
+          "teks": "$7x + 4y - 12 = 0$",
+          "alasan": "Siswa keliru menganggap rotasi $180^\\circ$ tidak mengubah tanda salah satu koordinat."
+        },
+        {
+          "teks": "$4x - 7y - 12 = 0$",
+          "alasan": "Siswa langsung mengganti tanda konstanta tanpa menukar variabel $x$ dan $y$ yang dihasilkan dari pemetaan komposisi."
+        }
+      ],
+      "pembahasan": "Matriks pencerminan terhadap garis $y = -x$ adalah:\n$$M_1 = \\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$$\n\nMatriks rotasi $180^\\circ$ terhadap titik pusat $O(0, 0)$ adalah:\n$$M_2 = \\begin{pmatrix} \\cos 180^\\circ & -\\sin 180^\\circ \\\\ \\sin 180^\\circ & \\cos 180^\\circ \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nMatriks komposisi transformasi $M = M_2 M_1$:\n$$M = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nHubungan bayangan dan prapeta:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} y \\\\ x \\end{pmatrix}$$\nDiperoleh $x' = y \\implies y = x'$ dan $y' = x \\implies x = y'$.\n\nSubstitusikan ke persamaan garis $4x - 7y + 12 = 0$:\n$$4(y') - 7(x') + 12 = 0$$\n$$-7x' + 4y' + 12 = 0$$\nKalikan kedua ruas dengan $-1$:\n$$7x' - 4y' - 12 = 0$$\n\nJadi, peta garis tersebut adalah $7x - 4y - 12 = 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persamaan bayangan garis komposisi matriks",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan matriks komposisi dari dua transformasi, pencarian hubungan variabel awal dan bayangan, serta substitusi ke persamaan garis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan bayangan dari garis $3x + 5y - 15 = 0$ oleh rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$ yang dilanjutkan dengan pencerminan terhadap sumbu-$y$ adalah ....",
+      "jawaban_benar": "$5x + 3y - 15 = 0$",
+      "alasan_benar": "Matriks rotasi $90^\\circ$ adalah $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$ dan matriks refleksi terhadap sumbu-$y$ adalah $M_y = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$. Matriks komposisi $T = M_y R = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$. Dari $\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} y \\\\ x \\end{pmatrix}$, diperoleh $x = y'$ dan $y = x'$. Substitusi ke persamaan garis awal menghasilkan $3(y') + 5(x') - 15 = 0 \\iff 5x' + 3y' - 15 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$3x + 5y - 15 = 0$",
+          "alasan": "Siswa tidak menukar variabel $x$ dan $y$, mengira matriks komposisinya adalah matriks identitas."
+        },
+        {
+          "teks": "$5x - 3y - 15 = 0$",
+          "alasan": "Siswa salah menentukan tanda pada elemen matriks komposisi sehingga menganggap $y = -x'$."
+        },
+        {
+          "teks": "$3x - 5y + 15 = 0$",
+          "alasan": "Siswa terbalik melakukan urutan perkalian matriks dan salah menentukan tanda pada transformasi rotasi."
+        }
+      ],
+      "pembahasan": "Misalkan transformasi rotasi sebesar $90^\\circ$ terhadap $O(0,0)$ adalah $T_1$ dan pencerminan terhadap sumbu-$y$ adalah $T_2$.\n\nMatriks transformasi masing-masing:\n$M_1 = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$\n$M_2 = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$\n\nMatriks komposisi transformasi $T_2 \\circ T_1$ adalah:\n$M = M_2 M_1 = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$\n\nHubungan titik prapeta $(x, y)$ dan bayangannya $(x', y')$:\n$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} y \\\\ x \\end{pmatrix}$\n\nDiperoleh:\n$x' = y \\implies y = x'$\n$y' = x \\implies x = y'$\n\nSubstitusikan nilai $x$ dan $y$ ke persamaan garis $3x + 5y - 15 = 0$:\n$3(y') + 5(x') - 15 = 0$\n$5x' + 3y' - 15 = 0$\n\nJadi, persamaan bayangan garis tersebut adalah $5x + 3y - 15 = 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

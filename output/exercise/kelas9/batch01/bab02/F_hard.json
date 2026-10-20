@@ -1,0 +1,644 @@
+{
+  "book": "kelas9",
+  "bab_no": 2,
+  "subbab": "F",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas9-b02-f-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 147,
+        "bagian": "Penerapan",
+        "nomor": "2",
+        "teks": "Sebuah bola diletakkan dalam sebuah kubus sehingga seluruh sisi kubus menempel pada bola (Gambar 2.80). Tentukan perbandingan antara volume bola dan volume kubus tersebut.",
+        "jawaban": "$\\pi : 6$",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "volume sisa ruang",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis geometris posisi bola di dalam kubus untuk menentukan batas jari-jari serta evaluasi selisih volume ruang antara dua bangun berbeda.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bola pejal dimasukkan ke dalam wadah berbentuk kubus dengan panjang rusuk $12\\text{ cm}$ sedemikian rupa sehingga bola menyinggung keenam bidang sisi kubus. Ke dalam wadah tersebut kemudian dituangkan air hingga penuh menyelimuti seluruh bagian bola yang tersisa. Berapakah volume air yang berhasil ditampung wadah tersebut?",
+      "jawaban_benar": "$1.728 - 288\\pi\\text{ cm}^3$",
+      "alasan_benar": "Rusuk kubus $s = 12\\text{ cm}$, maka volume kubus $V_{\\text{kubus}} = 12^3 = 1.728\\text{ cm}^3$. Karena bola menyinggung keenam sisi kubus, diameter bola sama dengan rusuk kubus, sehingga $r = 6\\text{ cm}$. Volume bola $V_{\\text{bola}} = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi (6^3) = 288\\pi\\text{ cm}^3$. Volume air yang mengisi ruang kosong adalah $V_{\\text{air}} = V_{\\text{kubus}} - V_{\\text{bola}} = 1.728 - 288\\pi\\text{ cm}^3$.",
+      "distraktor": [
+        {
+          "teks": "$1.728 - 576\\pi\\text{ cm}^3$",
+          "alasan": "Siswa keliru menggunakan diameter $12\\text{ cm}$ sebagai nilai jari-jari saat menghitung volume bola atau salah mengalikan dengan rumus luas."
+        },
+        {
+          "teks": "$1.728 - 144\\pi\\text{ cm}^3$",
+          "alasan": "Siswa salah menggunakan rumus volume bola dengan membagi volume tabung menjadi separuhnya ($r^3$ tanpa faktor $\\frac{4}{3}$)."
+        },
+        {
+          "teks": "$1.440 - 288\\pi\\text{ cm}^3$",
+          "alasan": "Siswa salah menghitung volume kubus sebagai keliling dikali tinggi atau salah memangkatkan $12^3$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung volume wadah kubus:\n$V_{\\text{kubus}} = s^3 = 12^3 = 1.728\\text{ cm}^3$.\n\nLangkah 2: Menentukan jari-jari bola dari hubungan geometri sentuhan bidang:\n$d = s = 12\\text{ cm} \\implies r = 6\\text{ cm}$.\n\nLangkah 3: Menghitung volume bola:\n$V_{\\text{bola}} = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi (6)^3 = \\frac{4}{3}\\pi (216) = 288\\pi\\text{ cm}^3$.\n\nLangkah 4: Menghitung volume air pengisi ruang tersisa:\n$V_{\\text{air}} = V_{\\text{kubus}} - V_{\\text{bola}} = 1.728 - 288\\pi\\text{ cm}^3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 139,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bumi memiliki lapisan permukaan yang disebut sebagai kerak bumi. Lapisan kerak bumi kurang lebih memiliki ketebalan 24 km sedangkan diameter bumi sekitar 12.750 km. Tentukan berapa persen volume bumi yang merupakan kerak bumi."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi persentase volume selongsong",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa mengevaluasi dua klaim berbeda terkait pembagian volume lapisan konsentris bola menggunakan penalaran relasi pangkat tiga bukan linier.",
+      "stimulus": "Sebuah model tiruan planet berbentuk bola padat memiliki diameter $20\\text{ cm}$. Di bagian pusatnya terdapat inti bola pejal berdiameter $10\\text{ cm}$, sedangkan bagian sisanya merupakan lapisan mantel.\n\nAli berpendapat: \"Karena tebal mantel adalah $5\\text{ cm}$, yaitu setengah dari jari-jari luar planet ($10\\text{ cm}$), maka mantel menempati tepat $50\\%$ dari volume total planet.\"\n\nBudi membantah: \"Volume sebanding dengan pangkat tiga dari jari-jari, sehingga mantel justru menempati $87,5\\%$ dari total volume planet.\"",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan prinsip volume bangun ruang sisi lengkung, bagaimanakah kebenaran dari kedua pendapat tersebut?",
+      "jawaban_benar": "Pendapat Budi benar karena volume mantel adalah $87,5\\%$ dari volume total planet.",
+      "alasan_benar": "Jari-jari total planet $R = 10\\text{ cm}$ dan jari-jari inti $r = 5\\text{ cm}$. Volume inti sebanding dengan $r^3 = 5^3 = 125$, sedangkan volume total sebanding dengan $R^3 = 10^3 = 1.000$. Volume mantel sebanding dengan $1.000 - 125 = 875$. Persentase volume mantel = $(875 / 1.000) \\times 100\\% = 87,5\\%$.",
+      "distraktor": [
+        {
+          "teks": "Pendapat Ali benar karena perbandingan volume kulit bola selalu sama dengan perbandingan tebal lapisannya.",
+          "alasan": "Siswa terjebak menganggap rasio volume bertumbuh secara linier terhadap dimensi panjang (jari-jari/tebal)."
+        },
+        {
+          "teks": "Kedua pendapat salah karena mantel menempati $75\\%$ dari volume total planet.",
+          "alasan": "Siswa keliru menggunakan perbandingan kuadrat ($10^2 - 5^2 = 75$) yang berlaku pada luas, bukan volume."
+        },
+        {
+          "teks": "Kedua pendapat salah karena mantel menempati $62,5\\%$ dari volume total planet.",
+          "alasan": "Siswa melakukan kesalahan perhitungan saat mengurangkan nilai perpangkatan tiga."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jari-jari luar dan jari-jari inti:\n$R = \\frac{20}{2} = 10\\text{ cm}$, $r = \\frac{10}{2} = 5\\text{ cm}$.\n\nLangkah 2: Menghitung volume total planet dan volume inti:\n$V_{\\text{total}} = \\frac{4}{3}\\pi R^3 = \\frac{4}{3}\\pi (10^3) = \\frac{4.000}{3}\\pi\\text{ cm}^3$.\n$V_{\\text{inti}} = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi (5^3) = \\frac{500}{3}\\pi\\text{ cm}^3$.\n\nLangkah 3: Menghitung volume mantel:\n$V_{\\text{mantel}} = V_{\\text{total}} - V_{\\text{inti}} = \\frac{3.500}{3}\\pi\\text{ cm}^3$.\n\nLangkah 4: Menghitung persentase volume mantel terhadap total:\n$\\text{Persentase} = \\frac{\\frac{3.500}{3}\\pi}{\\frac{4.000}{3}\\pi} \\times 100\\% = \\frac{3.500}{4.000} \\times 100\\% = 87,5\\%$.\n\nDengan demikian, klaim Budi sepenuhnya benar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 149,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kerucut terpancung adalah kerucut yang dipotong ujungnya seperti tampak pada Gambar 2.85. Diketahui jari-jari kerucut terpancung adalah r 1, jari-jari kerucut kecil adalah r 2, tinggi kerucut besar adalah h 1 dan tinggi kerucut yang terpotong adalah h 2."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "volume bangun ruang komposit/terpancung",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembuktian tinggi kerucut asal melalui rasio kesebangunan sebelum mengevaluasi volume bangun kerucut terpancung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah wadah berbentuk kerucut terpancung memiliki lingkaran alas atas dengan jari-jari $6\\text{ cm}$, lingkaran alas bawah dengan jari-jari $3\\text{ cm}$, dan tinggi wadah $4\\text{ cm}$. Berapakah kapasitas volume wadah tersebut dinyatakan dalam $\\pi$?",
+      "jawaban_benar": "$84\\pi\\text{ cm}^3$",
+      "alasan_benar": "Jika kerucut dilengkapi hingga ke puncaknya dengan tinggi bagian terpancung $h_2$, maka $\\frac{h_2 + 4}{h_2} = \\frac{6}{3} = 2 \\implies h_2 = 4\\text{ cm}$. Tinggi kerucut besar $h_1 = 8\\text{ cm}$. Volume wadah = $\\frac{1}{3}\\pi (6^2)(8) - \\frac{1}{3}\\pi (3^2)(4) = 96\\pi - 12\\pi = 84\\pi\\text{ cm}^3$.",
+      "distraktor": [
+        {
+          "teks": "$72\\pi\\text{ cm}^3$",
+          "alasan": "Siswa salah menghitung rata-rata luas alas dikalikan tinggi wadah."
+        },
+        {
+          "teks": "$96\\pi\\text{ cm}^3$",
+          "alasan": "Siswa hanya menghitung volume kerucut besar tanpa mengurangkan ujung kerucut yang terpotong."
+        },
+        {
+          "teks": "$108\\pi\\text{ cm}^3$",
+          "alasan": "Siswa menjumlahkan volume kerucut besar dan kerucut kecil alih-alih mengurangkannya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan tinggi puncak kerucut terpotong ($h_2$) dengan kesebangunan:\n$\\frac{h_1}{h_2} = \\frac{r_1}{r_2} \\implies \\frac{h_2 + 4}{h_2} = \\frac{6}{3} = 2$\n$h_2 + 4 = 2h_2 \\implies h_2 = 4\\text{ cm}$.\n\nLangkah 2: Menentukan tinggi kerucut utuh ($h_1$):\n$h_1 = 4 + 4 = 8\\text{ cm}$.\n\nLangkah 3: Menghitung volume kerucut besar:\n$V_1 = \\frac{1}{3}\\pi r_1^2 h_1 = \\frac{1}{3}\\pi (6)^2 (8) = \\frac{1}{3}\\pi (36)(8) = 96\\pi\\text{ cm}^3$.\n\nLangkah 4: Menghitung volume ujung kerucut kecil:\n$V_2 = \\frac{1}{3}\\pi r_2^2 h_2 = \\frac{1}{3}\\pi (3)^2 (4) = \\frac{1}{3}\\pi (9)(4) = 12\\pi\\text{ cm}^3$.\n\nLangkah 5: Menghitung selisih volume kerucut terpancung:\n$V = V_1 - V_2 = 96\\pi - 12\\pi = 84\\pi\\text{ cm}^3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 150,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah perusahaan pembuat bola golf, sedang melakukan riset untuk desain kemasan produk mereka. Dalam riset ini, mereka akan menentukan wadah yang cocok untuk tiga buah bola golf yang memiliki jari-jari 2,15 cm."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rasio efisiensi kemasan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Melibatkan formulasi hubungan spasial multi-objek pada kemasan tabung dan perhitungan rasio ruang kosong.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kaleng berbentuk tabung dirancang pas untuk memuat tiga buah bola tenis identik berjejari $r$ yang disusun bertumpuk vertikal. Dinding kaleng menyinggung sisi lengkung ketiga bola, serta tutup dan alas kaleng tepat menyinggung bola paling atas dan paling bawah. Berapakah rasio antara volume ruang kosong di dalam kaleng terhadap volume total kaleng tersebut?",
+      "jawaban_benar": "$1 : 3$",
+      "alasan_benar": "Tinggi tabung adalah $t = 3 \\times 2r = 6r$, sehingga $V_{\\text{tabung}} = \\pi r^2 (6r) = 6\\pi r^3$. Volume 3 bola adalah $3 \\times \\frac{4}{3}\\pi r^3 = 4\\pi r^3$. Volume ruang kosong adalah $6\\pi r^3 - 4\\pi r^3 = 2\\pi r^3$. Rasio ruang kosong terhadap volume kaleng = $2\\pi r^3 : 6\\pi r^3 = 1 : 3$.",
+      "distraktor": [
+        {
+          "teks": "$2 : 3$",
+          "alasan": "Siswa menentukan rasio volume ketiga bola terhadap volume tabung, bukan volume ruang kosong."
+        },
+        {
+          "teks": "$1 : 2$",
+          "alasan": "Siswa keliru menganggap volume ruang kosong sama dengan setengah dari volume bola."
+        },
+        {
+          "teks": "$1 : 4$",
+          "alasan": "Siswa salah memasukkan konstanta volume bola menjadi sepertiga bukan empat pertiga."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan dimensi tabung dalam variabel jari-jari bola $r$:\nJari-jari alas tabung = $r$.\nTinggi tabung = $3 \\times \\text{diameter bola} = 3 \\times (2r) = 6r$.\n\nLangkah 2: Menghitung volume total kaleng tabung:\n$V_{\\text{tabung}} = \\pi r^2 t = \\pi r^2 (6r) = 6\\pi r^3$.\n\nLangkah 3: Menghitung volume gabungan 3 buah bola:\n$V_{3\\text{ bola}} = 3 \\times \\left(\\frac{4}{3}\\pi r^3\\right) = 4\\pi r^3$.\n\nLangkah 4: Menghitung volume ruang kosong dan rasio terhadap kaleng:\n$V_{\\text{kosong}} = 6\\pi r^3 - 4\\pi r^3 = 2\\pi r^3$.\n$\\text{Rasio} = \\frac{V_{\\text{kosong}}}{V_{\\text{tabung}}} = \\frac{2\\pi r^3}{6\\pi r^3} = \\frac{1}{3} = 1 : 3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 147,
+        "bagian": "Penerapan",
+        "nomor": "2",
+        "teks": "Sebuah kerucut dan prisma persegi memiliki ukuran tinggi yang sama. Selain itu, panjang sisi alas prisma dan diameter kerucut memiliki ukuran yang sama.\n\nⓐ Tentukan perbandingan volume prisma dan kerucut tersebut\n\nⓑ Tentukan perbandingan luas prisma dan kerucut tersebut",
+        "jawaban": "Perbandingan volume prisma dan kerucut adalah 4 : π",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi rasio bangun ruang",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap pernyataan kelipatan volume dua bangun ruang berbeda melalui perbandingan formula aljabar berparameter tinggi dan diameter sama.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah cetakan cairan lilin memiliki dua tipe rongga dengan kedalaman tinggi yang sama. Rongga pertama berbentuk prisma tegak persegi (panjang sisi alas $s$), dan rongga kedua berbentuk kerucut dengan panjang diameter alas lingkaran sama dengan $s$. Seorang perancang cetakan mengklaim bahwa volume rongga prisma persegi tersebut adalah hampir empat kali lipat (tepatnya $\\frac{12}{\\pi} \\approx 3,82$ kali) dari volume rongga kerucut. Evaluasilah kebenaran klaim tersebut!",
+      "jawaban_benar": "Klaim benar, karena rasio perbandingan volume prisma terhadap volume kerucut adalah $12 : \\pi \\approx 3,82$.",
+      "alasan_benar": "Volume prisma adalah $V_p = s^2 t$. Jari-jari kerucut adalah $r = \\frac{s}{2}$, sehingga volume kerucut $V_k = \\frac{1}{3}\\pi r^2 t = \\frac{1}{3}\\pi \\left(\\frac{s}{2}\\right)^2 t = \\frac{\\pi}{12} s^2 t$. Rasio $\\frac{V_p}{V_k} = \\frac{s^2 t}{\\frac{\\pi}{12} s^2 t} = \\frac{12}{\\pi} \\approx 3,82$.",
+      "distraktor": [
+        {
+          "teks": "Klaim salah, karena perbandingan volume prisma terhadap kerucut yang benar adalah $4 : \\pi \\approx 1,27$.",
+          "alasan": "Siswa keliru mengira bangun pertama adalah limas persegi beraturan (membagi volume prisma dengan 3), sehingga menghasilkan $\\frac{4}{\\pi}$."
+        },
+        {
+          "teks": "Klaim salah, karena perbandingan volume prisma terhadap kerucut yang benar adalah $6 : \\pi \\approx 1,91$.",
+          "alasan": "Siswa salah mengkuadratkan jari-jari $r = \\frac{s}{2}$ menjadi $\\frac{s^2}{2}$ (bukan $\\frac{s^2}{4}$), sehingga memperoleh penyebut 6."
+        },
+        {
+          "teks": "Klaim salah, karena perbandingan volume prisma terhadap kerucut yang benar adalah $3 : \\pi \\approx 0,95$.",
+          "alasan": "Siswa mengabaikan pembagian diameter menjadi jari-jari ($r = s$), sehingga menghitung volume kerucut sebagai $\\frac{1}{3}\\pi s^2 t$."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi kedua rongga adalah $t$ dan panjang sisi alas prisma adalah $s$.\n1. Diameter alas kerucut sama dengan $s$, sehingga jari-jari kerucut adalah $r = \\frac{s}{2}$.\n2. Menghitung volume prisma persegi:\n   $$V_p = \\text{luas alas} \\times \\text{tinggi} = s^2 \\times t = s^2 t$$\n3. Menghitung volume kerucut:\n   $$V_k = \\frac{1}{3}\\pi r^2 t = \\frac{1}{3}\\pi \\left(\\frac{s}{2}\\right)^2 t = \\frac{1}{3}\\pi \\left(\\frac{s^2}{4}\\right) t = \\frac{\\pi}{12} s^2 t$$\n4. Menghitung rasio volume prisma terhadap kerucut:\n   $$\\frac{V_p}{V_k} = \\frac{s^2 t}{\\frac{\\pi}{12} s^2 t} = \\frac{1}{\\frac{\\pi}{12}} = \\frac{12}{\\pi}$$\n   Dengan $\\pi \\approx 3,14$, diperoleh nilai $\\frac{12}{3,14} \\approx 3,82$.\nJadi, volume rongga prisma memang sekitar $3,82$ kali volume kerucut, sehingga klaim perancang benar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 139,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika diketahui sebuah bola memiliki jari-jari r , maka volume bola tersebut dapat dicari dengan rumus: 4 Volume Bola = 3 π r 3"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rasio volume komparatif",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis relasi spasial antara tabung dan bola yang bersinggungan penuh untuk menentukan perbandingan sisa ruang terhadap volume bangun penyusunnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bola pejal dengan jari-jari $r$ dimasukkan ke dalam wadah tabung tertutup sedemikian rupa sehingga bola menyinggung sisi alas, sisi atas, dan selimut tabung secara tepat. Ruang kosong di dalam tabung yang tidak ditempati oleh bola tersebut kemudian diisi penuh dengan minyak. Perbandingan antara volume minyak dan volume bola pejal di dalam tabung tersebut adalah ....",
+      "jawaban_benar": "$1 : 2$",
+      "alasan_benar": "Tinggi tabung $t = 2r$ dan jari-jari tabung adalah $r$. $V_{\\text{tabung}} = \\pi r^2 (2r) = 2\\pi r^3$. $V_{\\text{bola}} = \\frac{4}{3}\\pi r^3$. Volume minyak $= 2\\pi r^3 - \\frac{4}{3}\\pi r^3 = \\frac{2}{3}\\pi r^3$. Rasio volume minyak terhadap volume bola adalah $\\frac{2}{3}\\pi r^3 : \\frac{4}{3}\\pi r^3 = 1 : 2$.",
+      "distraktor": [
+        {
+          "teks": "$1 : 3$",
+          "alasan": "Siswa keliru membandingkan volume minyak dengan volume tabung total ($\\frac{2}{3} : 2 = 1 : 3$)."
+        },
+        {
+          "teks": "$2 : 3$",
+          "alasan": "Siswa menuliskan perbandingan antara volume bola dengan volume tabung."
+        },
+        {
+          "teks": "$3 : 4$",
+          "alasan": "Siswa salah melakukan operasi pengurangan pecahan atau mengalikan terbalik konstanta volume bola."
+        }
+      ],
+      "pembahasan": "1. Karena bola menyinggung tepat alas, tutup, dan selimut tabung, maka:\n   - Jari-jari alas tabung $= r$\n   - Tinggi tabung $t = 2r$\n2. Menghitung volume tabung:\n   $$V_{\\text{tabung}} = \\pi r^2 t = \\pi r^2 (2r) = 2\\pi r^3$$\n3. Menghitung volume bola:\n   $$V_{\\text{bola}} = \\frac{4}{3}\\pi r^3$$\n4. Menghitung volume minyak (ruang kosong):\n   $$V_{\\text{minyak}} = V_{\\text{tabung}} - V_{\\text{bola}} = 2\\pi r^3 - \\frac{4}{3}\\pi r^3 = \\frac{2}{3}\\pi r^3$$\n5. Menentukan perbandingan volume minyak terhadap volume bola:\n   $$\\frac{V_{\\text{minyak}}}{V_{\\text{bola}}} = \\frac{\\frac{2}{3}\\pi r^3}{\\frac{4}{3}\\pi r^3} = \\frac{2}{4} = \\frac{1}{2}$$\nJadi, perbandingan volume minyak dan volume bola pejal adalah $1 : 2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 141,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah bangun ruang dibentuk dari gabungan kerucut dan setengah bola. Bentuk dan ukuran bangun ruang tersebut ditunjukkan pada Gambar 2.74."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "kapasitas tangki komposit bersyarat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengharuskan perancangan perhitungan kapasitas aman dari bangun komposit (gabungan tabung dan dua setengah bola) dengan memisahkan dimensi komponen dan menerapkan batas keamanan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tangki penyimpanan gas kimia berbentuk kapsul, yaitu gabungan sebuah tabung silinder di bagian tengah dan dua belahan setengah bola identik pada kedua ujungnya. Panjang total tangki dari ujung ke ujung terluar adalah $28\\text{ m}$, dan jari-jari belahan bola pada kedua ujungnya adalah $3\\text{ m}$. Demi keselamatan kerja terhadap batas tekanan gas, tangki tersebut hanya boleh diisi cairan kimia maksimal $80\\%$ dari kapasitas total tangki. Volume maksimum cairan kimia yang diizinkan untuk diisikan ke dalam tangki tersebut adalah ....",
+      "jawaban_benar": "$187,2\\pi\\text{ m}^3$",
+      "alasan_benar": "Panjang bagian tabung adalah $L = 28 - 2(3) = 22\\text{ m}$. Volume tabung $= \\pi (3)^2 (22) = 198\\pi\\text{ m}^3$. Volume dua ujung setengah bola sama dengan 1 bola penuh $= \\frac{4}{3}\\pi (3)^3 = 36\\pi\\text{ m}^3$. Volume total kapsul $= 198\\pi + 36\\pi = 234\\pi\\text{ m}^3$. Batas aman $80\\% = 0,8 \\times 234\\pi = 187,2\\pi\\text{ m}^3$.",
+      "distraktor": [
+        {
+          "teks": "$230,4\\pi\\text{ m}^3$",
+          "alasan": "Siswa tidak mengurangi kedua ujung jari-jari bola dari panjang total (menganggap panjang tabung tetap $28\\text{ m}$)."
+        },
+        {
+          "teks": "$234,0\\pi\\text{ m}^3$",
+          "alasan": "Siswa menghitung kapasitas volume penuh $100\\%$ dan lupa menerapkan batas keamanan $80\\%$."
+        },
+        {
+          "teks": "$208,8\\pi\\text{ m}^3$",
+          "alasan": "Siswa hanya mengurangkan satu kali jari-jari ($28 - 3 = 25\\text{ m}$) pada penentuan panjang tabung."
+        }
+      ],
+      "pembahasan": "1. Menentukan panjang bagian tabung silinder ($L$):\n   Karena di kedua ujung terdapat setengah bola dengan jari-jari $r = 3\\text{ m}$, maka panjang tabung adalah:\n   $$L = 28 - (2 \\times 3) = 28 - 6 = 22\\text{ m}$$\n2. Menghitung volume bagian tabung:\n   $$V_{\\text{tabung}} = \\pi r^2 L = \\pi \\times 3^2 \\times 22 = 9 \\times 22\\pi = 198\\pi\\text{ m}^3$$\n3. Menghitung volume kedua ujung setengah bola (setara dengan 1 bola utuh berjejari $3\\text{ m}$):\n   $$V_{\\text{bola}} = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi \\times 3^3 = 36\\pi\\text{ m}^3$$\n4. Menghitung volume total tangki:\n   $$V_{\\text{total}} = V_{\\text{tabung}} + V_{\\text{bola}} = 198\\pi + 36\\pi = 234\\pi\\text{ m}^3$$\n5. Menghitung batas aman volume pengisian ($80\\%$):\n   $$V_{\\text{izin}} = 80\\% \\times 234\\pi = 0,8 \\times 234\\pi = 187,2\\pi\\text{ m}^3$$\nJadi, volume cairan maksimum yang diizinkan adalah $187,2\\pi\\text{ m}^3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah bis beton berbentuk tabung. Jari-jari luar bis ini 100 cm, ketebalannya 10 cm, dan panjangnya 50 cm. Tentukan volume beton dari bis beton ini."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perhitungan volume material selongsong berongga",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi kebutuhan volume beton pada struktur silinder berongga dengan rasio ketebalan dinding tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah saluran air dibuat dari bis beton berbentuk tabung silinder berongga dengan panjang $2\\text{ m}$. Diameter luar saluran tersebut adalah $120\\text{ cm}$ dan ketebalan dinding betonnya adalah $10\\text{ cm}$. Untuk memperkuat konstruksi, bagian dalam saluran dilapisi lapisan kedap air setebal $2\\text{ cm}$ di sekeliling dinding dalamnya. Volume ruang kosong yang masih dapat dilalui air di dalam saluran tersebut adalah ....",
+      "jawaban_benar": "$460,8\\pi\\text{ liter}$",
+      "alasan_benar": "Jari-jari luar $= 60\\text{ cm}$. Jari-jari dalam beton $= 60 - 10 = 50\\text{ cm}$. Setelah dilapisi bahan kedap setebal $2\\text{ cm}$, jari-jari rongga air $= 50 - 2 = 48\\text{ cm}$. Panjang $t = 2\\text{ m} = 200\\text{ cm}$. Volume rongga air $= \\pi (48)^2 \\times 200 = 460.800\\pi\\text{ cm}^3 = 460,8\\pi\\text{ liter}$.",
+      "distraktor": [
+        {
+          "teks": "$500\\pi\\text{ liter}$",
+          "alasan": "Siswa tidak memperhitungkan ketebalan lapisan kedap air ($r = 50\\text{ cm}$)."
+        },
+        {
+          "teks": "$720\\pi\\text{ liter}$",
+          "alasan": "Siswa menghitung volume menggunakan jari-jari luar ($r = 60\\text{ cm}$)."
+        },
+        {
+          "teks": "$392\\pi\\text{ liter}$",
+          "alasan": "Siswa mengurangkan diameter bukan jari-jari dengan ketebalan dinding."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung jari-jari luar bis beton: $R = \\frac{120}{2} = 60\\text{ cm}$.\nLangkah 2: Menghitung jari-jari dalam setelah dikurangi ketebalan beton $10\\text{ cm}$: $r_1 = 60 - 10 = 50\\text{ cm}$.\nLangkah 3: Menghitung jari-jari efektif rongga yang dapat dilalui air setelah ditambah lapisan kedap air setebal $2\\text{ cm}$: $r_2 = 50 - 2 = 48\\text{ cm}$.\nLangkah 4: Mengonversi panjang saluran ke satuan cm: $t = 2\\text{ m} = 200\\text{ cm}$.\nLangkah 5: Menghitung volume ruang kosong rongga air:\n$$V = \\pi r_2^2 t = \\pi \\times (48)^2 \\times 200 = \\pi \\times 2.304 \\times 200 = 460.800\\pi\\text{ cm}^3$$\nKonversikan ke liter ($1\\text{ liter} = 1.000\\text{ cm}^3$):\n$$V = \\frac{460.800\\pi}{1.000} = 460,8\\pi\\text{ liter}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 149,
+        "bagian": "Penerapan",
+        "nomor": "L",
+        "teks": "Diketahui dua buah kerucut, A dan B, memiliki volume yang sama (Gambar 2.84). Jika keliling alas kerucut B adalah 55 cm, tentukan tinggi dari kerucut B.",
+        "jawaban": "tinggi kerucut B ditentukan dari perbandingan volume kerucut A dan B",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis kesetaraan dimensi kerucut",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis relasi kesetaraan volume dua bangun dan penurunan ukuran tinggi dari keliling alas yang diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah wadah kerucut, kerucut $X$ dan kerucut $Y$, memiliki volume yang sama besar. Wadah kerucut $X$ memiliki panjang jari-jari alas $9\\text{ cm}$ dan tinggi $16\\text{ cm}$. Jika keliling lingkaran alas wadah kerucut $Y$ diketahui sebesar $24\\pi\\text{ cm}$, tinggi wadah kerucut $Y$ adalah ....",
+      "jawaban_benar": "$9\\text{ cm}$",
+      "alasan_benar": "Dari keliling alas $Y$, $2\\pi r_Y = 24\\pi \\implies r_Y = 12\\text{ cm}$. Volume kerucut $X$ adalah $V_X = \\frac{1}{3}\\pi (9^2)(16) = 432\\pi\\text{ cm}^3$. Karena $V_Y = V_X$, maka $\\frac{1}{3}\\pi (12^2) t_Y = 432\\pi \\implies 48\\pi t_Y = 432\\pi \\implies t_Y = 9\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$12\\text{ cm}$",
+          "alasan": "Siswa salah menganggap tinggi kerucut $Y$ sama dengan panjang jari-jari alasnya."
+        },
+        {
+          "teks": "$18\\text{ cm}$",
+          "alasan": "Siswa lupa mengalikan koefisien sepertiga pada rumus volume salah satu kerucut."
+        },
+        {
+          "teks": "$6\\text{ cm}$",
+          "alasan": "Siswa salah menghitung jari-jari alas $Y$ sebagai $24\\text{ cm}$ bukan membaginya dengan $2\\pi$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jari-jari alas kerucut $Y$ dari keliling alasnya:\n$K = 2\\pi r_Y$\n$24\\pi = 2\\pi r_Y \\implies r_Y = 12\\text{ cm}$.\n\nLangkah 2: Menghitung volume kerucut $X$:\n$V_X = \\frac{1}{3}\\pi r_X^2 t_X = \\frac{1}{3}\\pi (9^2)(16) = \\frac{1}{3}\\pi (81)(16) = 432\\pi\\text{ cm}^3$.\n\nLangkah 3: Menghitung tinggi kerucut $Y$ dengan kesetaraan $V_Y = V_X$:\n$\\frac{1}{3}\\pi r_Y^2 t_Y = 432\\pi$\n$\\frac{1}{3}\\pi (12^2) t_Y = 432\\pi$\n$48\\pi t_Y = 432\\pi$\n$t_Y = \\frac{432\\pi}{48\\pi} = 9\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 132,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika diketahui sebuah tabung memiliki jari-jari alas r dan tinggi t , maka volume tabung tersebut dapat dicari dengan rumus sebagai berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi perbandingan kemasan multikomponen",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap klaim kesetaraan volume dua bangun ruang sisi lengkung dengan dimensi variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang perancang botol parfum membandingkan dua model wadah. Model $A$ berbentuk tabung dengan panjang jari-jari alas $r$ dan tinggi $t$. Model $B$ berbentuk kerucut dengan panjang jari-jari alas $2r$ dan tinggi $\\frac{1}{2}t$. Perancang tersebut mengklaim bahwa kapasitas wadah model $B$ lebih banyak $\\frac{1}{3}$ bagian dibandingkan kapasitas wadah model $A$. Manakah evaluasi yang benar mengenai klaim tersebut?",
+      "jawaban_benar": "Klaim salah, kapasitas wadah model $B$ seharusnya hanya $\\frac{2}{3}$ dari kapasitas model $A$.",
+      "alasan_benar": "Volume model $A = \\pi r^2 t$, sedangkan volume model $B = \\frac{1}{3}\\pi (2r)^2 (\\frac{1}{2}t) = \\frac{2}{3}\\pi r^2 t$. Jadi kapasitas model $B$ lebih kecil, tepatnya $\\frac{2}{3}$ dari model $A$.",
+      "distraktor": [
+        {
+          "teks": "Klaim benar, kapasitas wadah model $B$ adalah $\\frac{4}{3}$ kali kapasitas wadah model $A$.",
+          "alasan": "Siswa lupa mengalikan faktor $\\frac{1}{3}$ pada rumus volume kerucut sehingga menghitungnya sebagai $\\frac{4}{2} = 2$ atau salah menyederhanakan."
+        },
+        {
+          "teks": "Klaim salah, kapasitas kedua wadah tersebut persis sama besar.",
+          "alasan": "Siswa keliru mengira faktor $2$ pada jari-jari saling meniadakan dengan faktor $\\frac{1}{2}$ pada tinggi tanpa menguadratkan jari-jari."
+        },
+        {
+          "teks": "Klaim salah, kapasitas wadah model $B$ adalah $\\frac{1}{3}$ dari kapasitas model $A$.",
+          "alasan": "Siswa tidak memperhitungkan pengkuadratan jari-jari $2r$ yang menghasilkan faktor $4$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan volume tabung (model $A$):\n$V_A = \\pi r^2 t$.\n\nLangkah 2: Tentukan volume kerucut (model $B$):\n$V_B = \\frac{1}{3} \\pi (r_B)^2 t_B = \\frac{1}{3} \\pi (2r)^2 \\left(\\frac{1}{2}t\\right) = \\frac{1}{3} \\pi (4r^2) \\left(\\frac{1}{2}t\\right) = \\frac{2}{3} \\pi r^2 t$.\n\nLangkah 3: Evaluasi rasio $V_B$ terhadap $V_A$:\n$\\frac{V_B}{V_A} = \\frac{\\frac{2}{3}\\pi r^2 t}{\\pi r^2 t} = \\frac{2}{3}$.\n\nKarena $V_B = \\frac{2}{3}V_A$, volume wadah model $B$ lebih kecil dari model $A$, sehingga klaim perancang salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 135,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 2.18, kalian telah menentukan hubungan volume tabung dan kerucut. Dari kegiatan tersebut dapat disimpulkan bahwa rumus volume kerucut seperti yang disajikan pada Sifat 2.14."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi laju pengosongan wadah lengkung",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perbandingan rasio volume dua wadah berbeda bentuk sisi lengkung dan penarikan kesimpulan validitas waktu pengisian.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah keran air mengisi dua wadah kosong dengan debit aliran yang sama konstan. Wadah I berbentuk tabung dengan diameter alas $d$ dan tinggi $h$. Wadah II berbentuk kerucut dengan diameter alas $2d$ dan tinggi $h$. Jika Wadah I terisi penuh air dalam waktu $15\\text{ menit}$, seorang pekerja mengklaim bahwa Wadah II akan terisi penuh dalam waktu tepat $30\\text{ menit}$. Bagaimanakah kebenaran klaim tersebut?",
+      "jawaban_benar": "Klaim salah, waktu yang dibutuhkan untuk mengisi penuh Wadah II adalah $20\\text{ menit}$.",
+      "alasan_benar": "Volume Wadah I $= \\pi (\\frac{d}{2})^2 h = \\frac{1}{4}\\pi d^2 h$. Volume Wadah II $= \\frac{1}{3}\\pi d^2 h$. Rasio $V_{II} : V_I = \\frac{1}{3} : \\frac{1}{4} = 4 : 3$. Waktu untuk Wadah II $= \\frac{4}{3} \\times 15\\text{ menit} = 20\\text{ menit}$.",
+      "distraktor": [
+        {
+          "teks": "Klaim benar, karena diameter Wadah II dua kali diameter Wadah I sehingga waktunya menjadi dua kali lipat.",
+          "alasan": "Siswa mengabaikan pengaruh rumus volume kerucut yang memiliki pengali sepertiga dan mengabaikan pengkuadratan diameter."
+        },
+        {
+          "teks": "Klaim salah, waktu yang dibutuhkan untuk mengisi penuh Wadah II adalah $45\\text{ menit}$.",
+          "alasan": "Siswa salah memperlakukan rasio volume sebagai $3 : 1$ karena mengira volume tabung sepertiga kerucut."
+        },
+        {
+          "teks": "Klaim salah, waktu yang dibutuhkan untuk mengisi penuh Wadah II adalah $60\\text{ menit}$.",
+          "alasan": "Siswa menghitung volume kerucut berdiameter $2d$ sebagai $4$ kali volume tabung tanpa mengalikan faktor sepertiga."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan volume Wadah I (tabung):\nJari-jari $r_1 = \\frac{d}{2}$, tinggi $t_1 = h$.\n$V_1 = \\pi r_1^2 t_1 = \\pi \\left(\\frac{d}{2}\\right)^2 h = \\frac{1}{4}\\pi d^2 h$.\n\nLangkah 2: Menentukan volume Wadah II (kerucut):\nJari-jari $r_2 = \\frac{2d}{2} = d$, tinggi $t_2 = h$.\n$V_2 = \\frac{1}{3}\\pi r_2^2 t_2 = \\frac{1}{3}\\pi d^2 h$.\n\nLangkah 3: Menentukan perbandingan volume kedua wadah:\n$\\frac{V_2}{V_1} = \\frac{\\frac{1}{3}\\pi d^2 h}{\\frac{1}{4}\\pi d^2 h} = \\frac{\\frac{1}{3}}{\\frac{1}{4}} = \\frac{4}{3}$.\n\nLangkah 4: Menghitung waktu pengisian Wadah II:\nKarena debit sama, perbandingan waktu berbanding lurus dengan perbandingan volume:\n$t = \\frac{4}{3} \\times 15\\text{ menit} = 20\\text{ menit}$.\n\nMaka klaim pekerja bahwa waktu pengisian adalah $30\\text{ menit}$ salah, karena yang benar adalah $20\\text{ menit}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 132,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika diketahui sebuah tabung memiliki jari-jari alas r dan tinggi t , maka volume tabung tersebut dapat dicari dengan rumus sebagai berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi perancangan dimensi tabung",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan aljabar dari perubahan dua dimensi yang berlawanan serta evaluasi kebenaran klaim perubahan volume.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pabrik merancang tangki penyimpanan berbentuk tabung standar dengan jari-jari alas $r$ dan tinggi $t$. Tim teknik mengusulkan model tangki modifikasi yang jari-jari alasnya diperbesar $50\\%$ dari model standar, namun tingginya dipangkas $40\\%$ lebih rendah dari model standar. Kepala produksi menyatakan bahwa tangki modifikasi memiliki volume yang sama persis dengan tangki standar karena pembesaran jari-jari telah mengompensasi pemangkasan tingginya. Apakah pernyataan kepala produksi tersebut benar?",
+      "jawaban_benar": "Salah, karena volume tangki modifikasi justru $35\\%$ lebih besar dari volume tangki standar.",
+      "alasan_benar": "Volume tangki modifikasi adalah $V = \\pi (1,5r)^2(0,6t) = 1,35\\pi r^2 t = 1,35 V_{\\text{standar}}$, yang berarti volumenya bertambah $35\\%$.",
+      "distraktor": [
+        {
+          "teks": "Benar, karena penambahan dimensi jari-jari sebesar $50\\%$ sebanding dengan pengurangan tinggi sebesar $40\\%$ jika dibulatkan.",
+          "alasan": "Siswa berasumsi linear tanpa menerapkan pemangkatan kuadrat pada jari-jari tabung."
+        },
+        {
+          "teks": "Salah, karena volume tangki modifikasi adalah $10\\%$ lebih besar dari volume tangki standar.",
+          "alasan": "Siswa langsung menjumlahkan persentase perubahan $(+50\\% - 40\\% = +10\\%)$ tanpa menghitung volume bangun ruang."
+        },
+        {
+          "teks": "Salah, karena volume tangki modifikasi adalah $10\\%$ lebih kecil dari volume tangki standar.",
+          "alasan": "Siswa keliru mengalikan faktor linear $(1,5 \\times 0,6 = 0,90)$ tanpa menguadratkan rasio jari-jari alas."
+        }
+      ],
+      "pembahasan": "Misalkan volume tangki standar adalah $V_1 = \\pi r^2 t$.\n\nUntuk tangki modifikasi:\n- Jari-jari baru: $r_2 = r + 0,5r = 1,5r$\n- Tinggi baru: $t_2 = t - 0,4t = 0,6t$\n\nVolume tangki modifikasi:\n$V_2 = \\pi (r_2)^2 t_2$\n$V_2 = \\pi (1,5r)^2 (0,6t)$\n$V_2 = \\pi (2,25r^2) (0,6t)$\n$V_2 = 1,35\\pi r^2 t = 1,35 V_1$\n\nDengan demikian, volume tangki modifikasi menjadi $135\\%$ dari tangki standar, atau bertambah sebesar $35\\%$. Pernyataan kepala produksi bahwa volumenya sama persis adalah salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 139,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika diketahui sebuah bola memiliki jari-jari r , maka volume bola tersebut dapat dicari dengan rumus: 4 Volume Bola = 3 π r 3"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesetaraan kapasitas wadah lengkung",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis perbandingan aljabar volume dua bangun ruang sisi lengkung yang berbeda untuk mengevaluasi kebenaran klaim secara kritis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah wadah $A$ berbentuk setengah bola memiliki panjang jari-jari $r$. Air dari wadah $A$ yang terisi penuh akan dituangkan seluruhnya ke dalam wadah $B$ yang berbentuk kerucut dengan jari-jari alas sama dengan $r$. Seorang siswa menyatakan bahwa agar wadah $B$ dapat memuat seluruh air dari wadah $A$ tanpa tumpah, tinggi wadah kerucut $B$ minimal harus sama dengan panjang jari-jari alasnya ($t = r$). Evaluasilah kebenaran pernyataan siswa tersebut!",
+      "jawaban_benar": "Pernyataan salah, tinggi kerucut $B$ minimal harus sama dengan dua kali jari-jari alasnya ($t = 2r$).",
+      "alasan_benar": "Volume setengah bola adalah $V_A = \\frac{2}{3}\\pi r^3$. Volume kerucut adalah $V_B = \\frac{1}{3}\\pi r^2 t$. Agar $V_B \\ge V_A$, maka $\\frac{1}{3}\\pi r^2 t \\ge \\frac{2}{3}\\pi r^3 \\iff t \\ge 2r$. Jadi tinggi minimal kerucut harus $2r$.",
+      "distraktor": [
+        {
+          "teks": "Pernyataan benar, karena kedua wadah memiliki jari-jari $r$ sehingga tinggi $t = r$ sudah cukup menampung volume air.",
+          "alasan": "Siswa mengabaikan faktor konstanta rumus volume bola dan kerucut (menganggap rasio volumenya 1 : 1 jika $t = r$)."
+        },
+        {
+          "teks": "Pernyataan salah, tinggi kerucut $B$ minimal harus sama dengan empat kali jari-jari alasnya ($t = 4r$).",
+          "alasan": "Siswa keliru menggunakan rumus volume bola utuh $\\frac{4}{3}\\pi r^3$ alih-alih setengah bola."
+        },
+        {
+          "teks": "Pernyataan salah, tinggi kerucut $B$ minimal harus sama dengan tiga kali jari-jari alasnya ($t = 3r$).",
+          "alasan": "Siswa menyamakan volume setengah bola dengan volume tabung atau keliru membagi koefisien $\\frac{2}{3}$ dengan $\\frac{1}{3}$ menghasilkan 3 alih-alih 2."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Wadah $A$ (setengah bola): $V_A = \\frac{1}{2} \\times \\left(\\frac{4}{3}\\pi r^3\\right) = \\frac{2}{3}\\pi r^3$.\n- Wadah $B$ (kerucut): $V_B = \\frac{1}{3}\\pi r^2 t$.\n\nAgar air dari wadah $A$ dapat ditampung seluruhnya ke wadah $B$ tanpa tumpah, maka volume wadah $B$ harus minimal sama dengan volume wadah $A$:\n$$\nV_B \\ge V_A\n$$\n$$\n\\frac{1}{3}\\pi r^2 t \\ge \\frac{2}{3}\\pi r^3\n$$\nBagi kedua ruas dengan $\\frac{1}{3}\\pi r^2$ (karena $r > 0$):\n$$\nt \\ge 2r\n$$\nDengan demikian, tinggi wadah kerucut $B$ minimal harus sama dengan $2r$ (dua kali jari-jari alasnya). Pernyataan siswa tersebut salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 139,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 2.19, kalian dapat menuliskan rumus volume bola sebagai berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesetaraan volume komposit",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi klaim geometris pada bangun komposit dengan menyusun persamaan kesetaraan volume kerucut dan setengah bola.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pelampung suar dirancang dari gabungan sebuah kerucut pejal dan setengah bola pejal yang saling berimpit tepat pada lingkaran alasnya dengan jari-jari alas yang sama, yaitu $r$. Seorang perancang mengklaim bahwa agar volume bagian kerucut tepat sama besar dengan volume bagian setengah bola, tinggi kerucut ($t$) harus dibuat sama dengan diameter alasnya ($d = 2r$). Evaluasilah kebenaran klaim perancang tersebut!",
+      "jawaban_benar": "Klaim benar, karena volume setengah bola adalah $\\frac{2}{3}\\pi r^3$ dan volume kerucut adalah $\\frac{1}{3}\\pi r^2 t$, sehingga kesetaraan volume tercapai saat $t = 2r$.",
+      "alasan_benar": "Volume setengah bola adalah $V_1 = \\frac{1}{2} \\times \\frac{4}{3}\\pi r^3 = \\frac{2}{3}\\pi r^3$. Volume kerucut adalah $V_2 = \\frac{1}{3}\\pi r^2 t$. Menyamakan kedua volume: $\\frac{1}{3}\\pi r^2 t = \\frac{2}{3}\\pi r^3 \\iff t = 2r$. Karena diameter $d = 2r$, maka tinggi kerucut harus sama dengan diameter alasnya, sehingga klaim perancang terbukti benar.",
+      "distraktor": [
+        {
+          "teks": "Klaim salah, karena volume setengah bola sama dengan volume kerucut ketika tinggi kerucut tepat sama dengan jari-jari alasnya ($t = r$).",
+          "alasan": "Siswa mengira volume setengah bola adalah sepertiga bola atau lupa mengalikan faktor 2 pada rumus setengah bola terhadap sepertiga kerucut."
+        },
+        {
+          "teks": "Klaim salah, karena volume setengah bola adalah $\\frac{4}{3}\\pi r^3$ sehingga tinggi kerucut seharusnya empat kali panjang jari-jari alasnya ($t = 4r$).",
+          "alasan": "Siswa menggunakan rumus volume satu bola utuh untuk setengah bola."
+        },
+        {
+          "teks": "Klaim salah, karena volume kerucut tidak memiliki faktor $\\frac{1}{3}$ sehingga tinggi kerucut seharusnya bernilai $\\frac{2}{3}r$.",
+          "alasan": "Siswa keliru menggunakan rumus volume tabung $\\pi r^2 t$ untuk kerucut."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus volume setengah bola dengan jari-jari $r$.\n$$V_{\\text{setengah bola}} = \\frac{1}{2} \\times \\left(\\frac{4}{3}\\pi r^3\\right) = \\frac{2}{3}\\pi r^3$$\n\nLangkah 2: Menentukan rumus volume kerucut dengan jari-jari alas $r$ dan tinggi $t$.\n$$V_{\\text{kerucut}} = \\frac{1}{3}\\pi r^2 t$$\n\nLangkah 3: Menyamakan kedua volume sesuai syarat perancangan.\n$$V_{\\text{kerucut}} = V_{\\text{setengah bola}}$$\n$$\\frac{1}{3}\\pi r^2 t = \\frac{2}{3}\\pi r^3$$\n\nLangkah 4: Menyederhanakan persamaan untuk mencari hubungan antara $t$ dan $r$.\nBagi kedua ruas dengan $\\frac{1}{3}\\pi r^2$ (karena $r > 0$):\n$$t = 2r$$\nKarena diameter alas adalah $d = 2r$, maka tinggi kerucut memang harus sama dengan diameter alasnya. Jadi, klaim perancang tersebut benar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-f-hard-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 145,
+        "bagian": "Penerapan Konsep",
+        "nomor": "L",
+        "teks": "Tan memiliki usaha pengemasan garam beryodium. Mulanya, ada satu kemasan yang berbentuk tabung dengan ukuran diameter 10 cm dan tinggi 10 cm.  Akhirnya, Tan menginginkan kemasan lain yang sedikit lebih kecil sehingga harga jualnya lebih terjangkau. Dibuatlah kemasan tabung lain yang memiliki ukuran 0,75 dari ukuran semula. Tentukan berapa volume garam pada kemasan tabung besar dan tabung kecil. Tentukan pula perbandingan volume antara keduanya.",
+        "jawaban": "Volume tabung besar 250π cm³, volume tabung kecil 105,46875π cm³, perbandingan 64 : 27",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi faktor skala volume tabung",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap klaim asisten yang keliru memodelkan pengaruh faktor skala dimensi linier terhadap perubahan volume tabung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang perajin membuat lilin hias berbentuk tabung dengan diameter alas $12\\text{ cm}$ dan tinggi $15\\text{ cm}$. Untuk menghemat biaya, ia memproduksi lilin varian ekonomis dengan bentuk tabung sebangun yang seluruh dimensi liniernya (diameter dan tinggi) berukuran $0,6$ kali dari ukuran semula. Seorang asisten menduga bahwa lilin ekonomis tersebut membutuhkan bahan lilin sebanyak $36\\%$ dari lilin semula karena luas alasnya menyusut menjadi $(0,6)^2 = 0,36$ kali. Bagaimanakah evaluasi yang tepat terhadap dugaan asisten tersebut?",
+      "jawaban_benar": "Dugaan salah; lilin varian ekonomis membutuhkan $21,6\\%$ bahan dari lilin semula karena perubahan volume dipengaruhi oleh faktor skala tiga dimensi $(0,6)^3$.",
+      "alasan_benar": "Karena seluruh dimensi tabung (jari-jari dan tinggi) diskalakan dengan faktor $k = 0,6$, maka volume baru adalah $V' = \\pi (k r)^2 (k t) = k^3 \\pi r^2 t = (0,6)^3 V = 0,216 V = 21,6\\% V$. Asisten keliru karena hanya memperhitungkan penyusutan luas penampang tanpa mengalikan perubahan tinggi tabung.",
+      "distraktor": [
+        {
+          "teks": "Dugaan benar; kebutuhan bahan lilin hanya ditentukan oleh perubahan luas penampang alas sehingga tepat bernilai $(0,6)^2 \\times 100\\% = 36\\%$.",
+          "alasan": "Siswa mengabaikan perubahan dimensi tinggi tabung dan menganggap volume proporsional hanya terhadap luas alas."
+        },
+        {
+          "teks": "Dugaan salah; lilin varian ekonomis membutuhkan $60\\%$ bahan dari lilin semula karena perubahan volume sebanding secara linier dengan faktor skala $0,6$.",
+          "alasan": "Siswa keliru mengasumsikan volume berubah linier terhadap faktor skala $k$, bukan $k^3$."
+        },
+        {
+          "teks": "Dugaan salah; lilin varian ekonomis membutuhkan $12,96\\%$ bahan dari lilin semula karena faktor skala luas alas dipangkatkan dua kembali.",
+          "alasan": "Siswa salah menerapkan eksponen skala menjadi $(0,6)^4 = 0,1296 = 12,96\\%$."
+        }
+      ],
+      "pembahasan": "Diketahui:\nTabung mula-mula:\n- Jari-jari alas: $r = \\frac{12}{2} = 6\\text{ cm}$\n- Tinggi: $t = 15\\text{ cm}$\n- Volume mula-mula: $V = \\pi r^2 t = \\pi (6)^2 (15) = 540\\pi\\text{ cm}^3$\n\nTabung varian ekonomis:\nSeluruh dimensi linier diskalakan dengan faktor $k = 0,6$.\n- Jari-jari baru: $r' = 0,6 \\times 6 = 3,6\\text{ cm}$\n- Tinggi baru: $t' = 0,6 \\times 15 = 9\\text{ cm}$\n- Volume baru: $V' = \\pi (r')^2 t' = \\pi (3,6)^2 (9) = 116,64\\pi\\text{ cm}^3$\n\nPersentase volume lilin baru terhadap semula:\n$$\\frac{V'}{V} = \\frac{116,64\\pi}{540\\pi} = 0,216 = 21,6\\%$$\n\nSecara langsung melalui sifat skala bangun ruang sisi lengkung:\n$$V' = k^3 \\times V = (0,6)^3 \\times V = 0,216 V = 21,6\\% V$$\n\nDengan demikian, dugaan asisten salah karena ia hanya memperhitungkan faktor skala dua dimensi (luas alas $k^2 = 0,36$) dan melupakan faktor penyusutan pada tinggi tabung ($k = 0,6$). Lilin ekonomis sebenarnya hanya membutuhkan $21,6\\%$ bahan dari lilin semula.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -56,6 +56,17 @@ def export_batch(book: str, batch: int) -> dict:
         if errors or data is None:
             dilewati.append(f"{name}: validasi GAGAL ({len(errors)} error)")
             continue
+        tanpa_gambar_cocok: set = set()
+        if data.bergambar:
+            sidecar = path[:-len(".json")] + ".tanpagambar.json"
+            if not os.path.exists(sidecar):
+                dilewati.append(f"{name}: berkas bergambar belum dicek 'tanpa gambar' "
+                                f"(verify_exercise_9router.py --tanpa-gambar)")
+                continue
+            with open(sidecar, encoding="utf-8") as f:
+                tanpa_gambar_cocok = set(json.load(f).get("tanpa_gambar_cocok", []))
+            if tanpa_gambar_cocok:
+                dilewati.append(f"{name}: {len(tanpa_gambar_cocok)} soal tidak diekspor (bisa dijawab tanpa gambar)")
         bab = kurikulum.get(book, data.bab_no)
         opsi = susun(data)
         spec = C.LEVEL_SPEC[data.level]
@@ -63,6 +74,8 @@ def export_batch(book: str, batch: int) -> dict:
         kurang = None if data.bergambar else ({"jumlah": len(data.soal), "kuota": kuota, "alasan": data.alasan_kapasitas}
                   if data.kapasitas_kurang else None)
         for s in data.soal:
+            if s.id in tanpa_gambar_cocok:
+                continue
             options, benar = opsi[s.id]
             row = {
                 "_id": _oid(s.id), "berkas_id": None, "subbab_id": bab.subbab_nama(data.subbab),

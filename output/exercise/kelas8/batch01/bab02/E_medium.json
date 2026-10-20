@@ -1,0 +1,644 @@
+{
+  "book": "kelas8",
+  "bab_no": 2,
+  "subbab": "E",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas8-b02-e-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 111,
+        "bagian": "Soal Laihan 2.4",
+        "nomor": "3",
+        "teks": "Aldo dan Arjuna berdiri saling membelakangi untuk main tembaktembakan pistol bambu. Aldo berjalan 20 langkah ke depan kemudian 15 langkah ke kanan. Pada saat yang sama, Arjuna juga berjalan 16 langkah ke depan kemudian 12 langkah ke kanan. Pada titik terakhir, mereka berdua saling menembak.\n\n- a. Gambar situasi di atas dengan menggunakan bidang kartesius.\n\n- b. Berapa langkah jarak kalian berdua saat mereka saling menembak?",
+        "jawaban": "45 langkah",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak dua objek bergerak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemodelan posisi ke koordinat Cartesius sebelum menghitung jarak dua titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Doni dan Reno berdiri saling membelakangi di titik asal $(0, 0)$. Doni berjalan $9$ langkah ke utara kemudian $12$ langkah ke timur. Pada saat bersamaan, Reno berjalan $12$ langkah ke selatan kemudian $16$ langkah ke barat. Berapakah jarak lurus antara posisi Doni dan Reno pada titik pemberhentian mereka?",
+      "jawaban_benar": "$35$ langkah",
+      "alasan_benar": "Posisi Doni berada pada koordinat $(12, 9)$ dan posisi Reno berada pada koordinat $(-16, -12)$. Jarak lurus keduanya adalah $\\sqrt{(12 - (-16))^2 + (9 - (-12))^2} = \\sqrt{28^2 + 21^2} = \\sqrt{784 + 441} = \\sqrt{1225} = 35$ langkah.",
+      "distraktor": [
+        {
+          "teks": "$25$ langkah",
+          "alasan": "Mengurangkan nilai mutlak koordinat kedua anak alih-alih mengurangkan koordinat bertanda."
+        },
+        {
+          "teks": "$49$ langkah",
+          "alasan": "Hanya menjumlahkan semua langkah perjalanan tanpa menggunakan Teorema Pythagoras."
+        },
+        {
+          "teks": "$28$ langkah",
+          "alasan": "Salah menghitung nilai kuadrat selisih absis dan ordinat."
+        }
+      ],
+      "pembahasan": "Misalkan titik mula-mula adalah $(0, 0)$:\n- Doni bergerak ke utara ($+y$) sejauh $9$ dan ke timur ($+x$) sejauh $12$, sehingga posisinya adalah $(12, 9)$.\n- Reno bergerak ke selatan ($-y$) sejauh $12$ dan ke barat ($-x$) sejauh $16$, sehingga posisinya adalah $(-16, -12)$.\n\nJarak lurus kedua anak:\n$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$\n$d = \\sqrt{(12 - (-16))^2 + (9 - (-12))^2}$\n$d = \\sqrt{28^2 + 21^2} = \\sqrt{784 + 441} = \\sqrt{1225} = 35$ langkah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0110-rumus-jarak-b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "total jarak perjalanan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan rumus jarak dua titik sebanyak dua kali lalu menjumlahkan hasilnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah drone pengantar bergerak dari titik pengisian daya $A(-3, -2)$ menuju ke titik penerima pertama $B(5, 4)$, kemudian melanjutkan rute ke titik penerima kedua $C(5, -1)$ pada bidang koordinat. Total jarak tempuh lintasan lurus yang dilalui drone dari $A$ ke $B$ lalu ke $C$ adalah ....",
+      "jawaban_benar": "$15$ satuan",
+      "alasan_benar": "Jarak $AB = \\sqrt{(5 - (-3))^2 + (4 - (-2))^2} = \\sqrt{8^2 + 6^2} = 10$. Jarak $BC = \\sqrt{(5 - 5)^2 + (-1 - 4)^2} = \\sqrt{0 + (-5)^2} = 5$. Total jarak tempuh adalah $10 + 5 = 15$ satuan.",
+      "distraktor": [
+        {
+          "teks": "$10$ satuan",
+          "alasan": "Hanya menghitung jarak segmen pertama dari titik $A$ ke $B$."
+        },
+        {
+          "teks": "$13$ satuan",
+          "alasan": "Keliru menggunakan nilai acuan tripel Pythagoras tanpa menghitung selisih koordinat sebenarnya."
+        },
+        {
+          "teks": "$19$ satuan",
+          "alasan": "Menjumlahkan langsung seluruh selisih koordinat mendatar dan vertikal tanpa menarik akar kuadrat."
+        }
+      ],
+      "pembahasan": "Hitung panjang masing-masing lintasan:\n1. Jarak $A(-3, -2)$ ke $B(5, 4)$:\n   $AB = \\sqrt{(5 - (-3))^2 + (4 - (-2))^2} = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$ satuan.\n2. Jarak $B(5, 4)$ ke $C(5, -1)$:\n   $BC = \\sqrt{(5 - 5)^2 + (-1 - 4)^2} = \\sqrt{0^2 + (-5)^2} = \\sqrt{25} = 5$ satuan.\n\nTotal jarak yang ditempuh drone:\n$\\text{Total} = AB + BC = 10 + 5 = 15$ satuan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 110,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena segitiga ABC adalah segitiga siku-siku, maka berlaku Teorema Pythagoras, sehingga jarak AB dapat diketahui menggunakan aturan berikut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menentukan koordinat titik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pembalikan rumus jarak dua titik untuk menyelesaikan persamaan aljabar satu variabel kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui jarak antara titik $A(2, -1)$ dan titik $B(x, 7)$ pada bidang koordinat Cartesius adalah $10$ satuan panjang. Jika $x$ merupakan bilangan bulat positif, berapakah nilai $x$?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Menggunakan rumus jarak: $(x - 2)^2 + (7 - (-1))^2 = 10^2 \\iff (x - 2)^2 + 64 = 100 \\iff (x - 2)^2 = 36$. Karena $x > 0$, maka $x - 2 = 6 \\iff x = 8$.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Menganggap nilai $x$ sama dengan hasil akar dari $36$ tanpa menambahkan absis titik $A$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Memilih penyelesaian $x - 2 = -6$ sehingga didapat $x = -4$ lalu mengabaikan tanda negatifnya."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Salah menjumlahkan konstanta pada langkah aljabar terakhir."
+        }
+      ],
+      "pembahasan": "Gunakan rumus jarak antara dua titik:\n$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$\n$10 = \\sqrt{(x - 2)^2 + (7 - (-1))^2}$\n\nKuadratkan kedua ruas:\n$100 = (x - 2)^2 + 8^2$\n$100 = (x - 2)^2 + 64$\n$(x - 2)^2 = 36$\n\nMaka:\n$x - 2 = 6$ atau $x - 2 = -6$\n$x = 8$ atau $x = -4$\n\nKarena disyaratkan $x$ merupakan bilangan bulat positif, maka nilai $x = 8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 110,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "AC, AB , dan BC merupakan sisi-sisi segitiga, dengan sisi AC = x 2 - x 1 dan BC = y 2 - y 1"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "keliling bangun datar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan panjang ketiga sisi segitiga dari koordinatnya sebelum menjumlahkannya menjadi keliling.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik-titik sudut segitiga $PQR$ pada bidang Cartesius adalah $P(-2, 1)$, $Q(6, 1)$, dan $R(2, 4)$. Keliling segitiga $PQR$ tersebut adalah ....",
+      "jawaban_benar": "$18$ satuan",
+      "alasan_benar": "Sisi $PQ = |6 - (-2)| = 8$ satuan. Sisi $PR = \\sqrt{(2 - (-2))^2 + (4 - 1)^2} = \\sqrt{4^2 + 3^2} = 5$ satuan. Sisi $QR = \\sqrt{(2 - 6)^2 + (4 - 1)^2} = \\sqrt{(-4)^2 + 3^2} = 5$ satuan. Keliling $= 8 + 5 + 5 = 18$ satuan.",
+      "distraktor": [
+        {
+          "teks": "$13$ satuan",
+          "alasan": "Hanya menjumlahkan dua sisi segitiga ($PQ + QR$)."
+        },
+        {
+          "teks": "$16$ satuan",
+          "alasan": "Salah menghitung panjang sisi alas mendatar menjadi $6$ satuan."
+        },
+        {
+          "teks": "$24$ satuan",
+          "alasan": "Tertukar dengan perhitungan dua kali luas segitiga."
+        }
+      ],
+      "pembahasan": "Hitung panjang setiap sisi segitiga $PQR$:\n1. Panjang $PQ$ (sisi horizontal):\n   $PQ = \\sqrt{(6 - (-2))^2 + (1 - 1)^2} = \\sqrt{8^2 + 0} = 8$ satuan.\n2. Panjang $PR$:\n   $PR = \\sqrt{(2 - (-2))^2 + (4 - 1)^2} = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$ satuan.\n3. Panjang $QR$:\n   $QR = \\sqrt{(2 - 6)^2 + (4 - 1)^2} = \\sqrt{(-4)^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$ satuan.\n\nKeliling segitiga $PQR$:\n$\\text{Keliling} = PQ + PR + QR = 8 + 5 + 5 = 18$ satuan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0111-soal-laihan-2-4-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "identifikasi jenis segitiga",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan kuadrat ketiga jarak sisi lalu menganalisis kebenaran Teorema Pythagoras untuk menentukan jenis segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui sebuah segitiga $PQR$ memiliki koordinat titik-titik sudut $P(-3, 6)$, $Q(5, 10)$, dan $R(7, 6)$. Jenis segitiga $PQR$ yang terbentuk adalah ....",
+      "jawaban_benar": "segitiga siku-siku di $Q$",
+      "alasan_benar": "$PQ^2 = (5 - (-3))^2 + (10 - 6)^2 = 80$, $QR^2 = (7 - 5)^2 + (6 - 10)^2 = 20$, dan $PR^2 = (7 - (-3))^2 + (6 - 6)^2 = 100$. Karena $PQ^2 + QR^2 = 80 + 20 = 100 = PR^2$, segitiga tersebut siku-siku di $Q$.",
+      "distraktor": [
+        {
+          "teks": "segitiga siku-siku di $P$",
+          "alasan": "Siswa salah menentukan sisi miring dan menduga titik sudut siku-siku berada di depan sisi $QR$."
+        },
+        {
+          "teks": "segitiga siku-siku di $R$",
+          "alasan": "Siswa salah menjumlahkan kuadrat sisi sehingga mengira $PR^2 + QR^2 = PQ^2$."
+        },
+        {
+          "teks": "segitiga lancip sembarang",
+          "alasan": "Siswa salah menghitung selisih koordinat dengan tanda negatif sehingga kuadrat sisi tidak memenuhi Teorema Pythagoras."
+        }
+      ],
+      "pembahasan": "Hitung kuadrat panjang setiap sisi menggunakan rumus jarak:\n1. $PQ^2 = (5 - (-3))^2 + (10 - 6)^2 = 8^2 + 4^2 = 64 + 16 = 80$\n2. $QR^2 = (7 - 5)^2 + (6 - 10)^2 = 2^2 + (-4)^2 = 4 + 16 = 20$\n3. $PR^2 = (7 - (-3))^2 + (6 - 6)^2 = 10^2 + 0^2 = 100$\n\nPeriksa Teorema Pythagoras:\n$PQ^2 + QR^2 = 80 + 20 = 100 = PR^2$\nKarena kuadrat sisi terpanjang sama dengan jumlah kuadrat dua sisi lainnya, maka segitiga $PQR$ adalah segitiga siku-siku dengan hipotenusa $PR$, sehingga sudut siku-siku berada di titik $Q$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0110-rumus-jarak-b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak dua titik",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan rumus jarak dua titik dengan koordinat bertanda negatif melalui dua tahap operasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Panjang ruas garis yang menghubungkan titik $K(-4, -7)$ dan titik $L(4, 8)$ pada bidang Cartesius adalah ....",
+      "jawaban_benar": "$17$ satuan",
+      "alasan_benar": "$d = \\sqrt{(4 - (-4))^2 + (8 - (-7))^2} = \\sqrt{8^2 + 15^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$.",
+      "distraktor": [
+        {
+          "teks": "$15$ satuan",
+          "alasan": "Siswa hanya mengambil nilai selisih koordinat $y$ tanpa melibatkan koordinat $x$."
+        },
+        {
+          "teks": "$23$ satuan",
+          "alasan": "Siswa menjumlahkan langsung selisih mendatar dan tegak $(8 + 15 = 23)$ tanpa mengakar kuadratkan."
+        },
+        {
+          "teks": "$13$ satuan",
+          "alasan": "Siswa salah menghitung selisih koordinat negatif: $4 - (-4) = 0$ atau salah menggunakan tripel Pythagoras $5, 12, 13$."
+        }
+      ],
+      "pembahasan": "Gunakan rumus jarak antara dua titik:\n$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$\n$d = \\sqrt{(4 - (-4))^2 + (8 - (-7))^2}$\n$d = \\sqrt{(4 + 4)^2 + (8 + 7)^2}$\n$d = \\sqrt{8^2 + 15^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$\nJadi, panjang ruas garis $KL$ adalah $17$ satuan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 111,
+        "bagian": "Soal Laihan 2.4",
+        "nomor": "3",
+        "teks": "Aldo dan Arjuna berdiri saling membelakangi untuk main tembaktembakan pistol bambu. Aldo berjalan 20 langkah ke depan kemudian 15 langkah ke kanan. Pada saat yang sama, Arjuna juga berjalan 16 langkah ke depan kemudian 12 langkah ke kanan. Pada titik terakhir, mereka berdua saling menembak. \n\n   - a. Gambar situasi di atas dengan menggunakan bidang kartesius. \n\n   - b. Berapa langkah jarak kalian berdua saat mereka saling menembak?",
+        "jawaban": "45 langkah",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "jarak perpindahan posisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis pergerakan dua objek pada bidang Cartesius untuk menentukan koordinat akhir lalu menghitung jaraknya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dika dan Fani berdiri saling membelakangi di titik asal $(0, 0)$. Dika berjalan $7\\text{ meter}$ ke depan kemudian $9\\text{ meter}$ ke kanan. Pada saat yang sama, Fani berjalan $5\\text{ meter}$ ke depan kemudian $7\\text{ meter}$ ke kanan (relatif terhadap arah hadapnya masing-masing). Jarak lurus antara Dika dan Fani pada posisi akhir adalah ....",
+      "jawaban_benar": "$20\\text{ meter}$",
+      "alasan_benar": "Posisi Dika $(9, 7)$ dan Fani $(-7, -5)$. Jarak $= \\sqrt{(9 - (-7))^2 + (7 - (-5))^2} = \\sqrt{16^2 + 12^2} = \\sqrt{256 + 144} = \\sqrt{400} = 20\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$28\\text{ meter}$",
+          "alasan": "Siswa menjumlahkan total perpindahan secara skalar $(16 + 12 = 28)$."
+        },
+        {
+          "teks": "$14\\text{ meter}$",
+          "alasan": "Siswa mengurangkan posisi koordinat tanpa memperhatikan arah yang berlawanan."
+        },
+        {
+          "teks": "$25\\text{ meter}$",
+          "alasan": "Siswa salah menerapkan tripel Pythagoras yang mengira $12$ dan $16$ berpasangan dengan $25$."
+        }
+      ],
+      "pembahasan": "Misalkan arah hadap Dika adalah sumbu $+y$, maka kanan Dika adalah sumbu $+x$:\n- Posisi akhir Dika: $(9, 7)$\nKarena Fani menghadap arah berlawanan (sumbu $-y$), maka kanan Fani adalah sumbu $-x$:\n- Posisi akhir Fani: $(-7, -5)$\n\nHitung jarak lurus kedua posisi:\n$\\Delta x = 9 - (-7) = 16\\text{ meter}$\n$\\Delta y = 7 - (-5) = 12\\text{ meter}$\n\nJarak $= \\sqrt{\\Delta x^2 + \\Delta y^2} = \\sqrt{16^2 + 12^2} = \\sqrt{256 + 144} = \\sqrt{400} = 20\\text{ meter}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 110,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena segitiga ABC adalah segitiga siku-siku, maka berlaku Teorema Pythagoras, sehingga jarak AB dapat diketahui menggunakan aturan berikut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "panjang diagonal bangun datar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan rumus jarak dua titik koordinat untuk menghitung panjang diagonal persegi panjang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah persegi panjang $PQRS$ memiliki titik-titik sudut $P(-2, 3)$, $Q(6, 3)$, $R(6, 9)$, dan $S(-2, 9)$ pada bidang Cartesius. Panjang diagonal $PR$ dari persegi panjang tersebut adalah ....",
+      "jawaban_benar": "$10$ satuan",
+      "alasan_benar": "$PR = \\sqrt{(6 - (-2))^2 + (9 - 3)^2} = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$.",
+      "distraktor": [
+        {
+          "teks": "$14$ satuan",
+          "alasan": "Siswa menjumlahkan panjang sisi panjang dan sisi lebar $(8 + 6 = 14)$."
+        },
+        {
+          "teks": "$8$ satuan",
+          "alasan": "Siswa hanya menyebutkan panjang sisi horizontal $PQ$ sebagai diagonal."
+        },
+        {
+          "teks": "$12$ satuan",
+          "alasan": "Siswa salah menghitung selisih koordinat $x$ menjadi $6 - (-2) = 4$ dan menjumlahkannya dengan nilai lain."
+        }
+      ],
+      "pembahasan": "Panjang diagonal $PR$ dihitung dari jarak titik $P(-2, 3)$ ke titik $R(6, 9)$:\n$d = \\sqrt{(x_R - x_P)^2 + (y_R - y_P)^2}$\n$d = \\sqrt{(6 - (-2))^2 + (9 - 3)^2}$\n$d = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$ satuan.\nJadi, panjang diagonal persegi panjang tersebut adalah $10$ satuan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 110,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena segitiga ABC adalah segitiga siku-siku, maka berlaku Teorema Pythagoras, sehingga jarak AB dapat diketahui menggunakan aturan berikut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "diameter lingkaran pada koordinat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung jarak titik pusat ke titik tepi lingkaran sebagai jari-jari kemudian mengalikannya untuk mencari diameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran berpusat di titik $P(3, -2)$ dan melalui titik $Q(8, 10)$ pada bidang koordinat. Panjang diameter lingkaran tersebut adalah ....",
+      "jawaban_benar": "$26$ satuan",
+      "alasan_benar": "Jari-jari $r = \\sqrt{(8 - 3)^2 + (10 - (-2))^2} = \\sqrt{5^2 + 12^2} = 13$, sehingga diameter $d = 2 \\times 13 = 26$ satuan.",
+      "distraktor": [
+        {
+          "teks": "$13$ satuan",
+          "alasan": "Siswa hanya menghitung panjang jari-jari $r$ dan lupa mengalikannya dengan dua untuk mencari diameter."
+        },
+        {
+          "teks": "$17$ satuan",
+          "alasan": "Siswa menjumlahkan selisih komponen $x$ dan $y$ yaitu $5 + 12 = 17$."
+        },
+        {
+          "teks": "$52$ satuan",
+          "alasan": "Siswa salah mengalikan nilai jari-jari dengan empat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan jari-jari lingkaran ($r$) sebagai jarak titik pusat $P(3, -2)$ ke titik $Q(8, 10)$:\n$r = \\sqrt{(8 - 3)^2 + (10 - (-2))^2}$\n$r = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$ satuan.\n\nLangkah 2: Tentukan panjang diameter ($d$):\n$d = 2 \\times r = 2 \\times 13 = 26$ satuan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 111,
+        "bagian": "Soal Laihan 2.4",
+        "nomor": "4",
+        "teks": "Seorang atlet tenis mengajukan pertanyaan kepada wasit. Suara atlet mampu didengar wasit hanya pada jarak maksimum 30 kaki. Berdasarkan posisi wasit dan atlet tenis pada gambar berikut, dapatkah wasit mendengar suara sang atlet? Jelaskan jawaban kalian.",
+        "jawaban": "Wasit dapat mendengar suara atlet karena jarak keduanya 25 kaki (kurang dari batas 30 kaki).",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jangkauan sinyal dua posisi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penghitungan jarak dua titik koordinat kemudian membandingkannya dengan batas jangkauan maksimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua regu penyelamat saling berkomunikasi menggunakan perangkat radio genggam yang memiliki jangkauan sinyal maksimum $25\\text{ meter}$. Jika Regu A berada pada koordinat $(3, 4)$ dan Regu B berada pada koordinat $(15, 20)$ dalam satuan meter, apakah kedua regu tersebut dapat saling berkomunikasi?",
+      "jawaban_benar": "Dapat, karena jarak kedua regu adalah $20\\text{ meter}$",
+      "alasan_benar": "Jarak kedua regu dihitung dengan $\\sqrt{(15 - 3)^2 + (20 - 4)^2} = \\sqrt{12^2 + 16^2} = \\sqrt{144 + 256} = \\sqrt{400} = 20\\text{ m}$. Karena $20\\text{ m} \\le 25\\text{ m}$, sinyal radio dapat terhubung.",
+      "distraktor": [
+        {
+          "teks": "Tidak dapat, karena jarak kedua regu adalah $28\\text{ meter}$",
+          "alasan": "Siswa menjumlahkan selisih koordinat secara langsung tanpa rumus Pythagoras: $(15 - 3) + (20 - 4) = 12 + 16 = 28\\text{ m}$."
+        },
+        {
+          "teks": "Tidak dapat, karena jarak kedua regu adalah $26\\text{ meter}$",
+          "alasan": "Siswa salah menghitung $12^2 + 16^2 = 144 + 256 = 400$ tetapi salah memperkirakan nilai akarnya atau keliru mengira lebih besar dari batas."
+        },
+        {
+          "teks": "Dapat, karena jarak kedua regu adalah $15\\text{ meter}$",
+          "alasan": "Siswa salah melakukan operasi pengurangan pada koordinat mendatar dan tegak."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung jarak antara Regu A $(3, 4)$ dan Regu B $(15, 20)$ menggunakan rumus jarak.\n$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$\n$d = \\sqrt{(15 - 3)^2 + (20 - 4)^2} = \\sqrt{12^2 + 16^2} = \\sqrt{144 + 256} = \\sqrt{400} = 20\\text{ meter}$\n\nLangkah 2: Bandingkan jarak kedua regu dengan jangkauan sinyal maksimum.\nKarena jarak nyata ($20\\text{ meter}$) kurang dari batas jangkauan maksimum radio ($25\\text{ meter}$), kedua regu dapat saling berkomunikasi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 110,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena segitiga ABC adalah segitiga siku-siku, maka berlaku Teorema Pythagoras, sehingga jarak AB dapat diketahui menggunakan aturan berikut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "titik berjarak sama pada sumbu koordinat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pembentukan persamaan kuadrat jarak dari titik pada sumbu-X dan penyelesaian aljabar linier.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah titik $P$ terletak pada sumbu-$X$ dan memiliki jarak yang sama terhadap titik $A(2, 5)$ dan titik $B(6, 1)$. Koordinat titik $P$ tersebut adalah ....",
+      "jawaban_benar": "$(1, 0)$",
+      "alasan_benar": "Misalkan $P(x, 0)$. Maka $PA^2 = PB^2 \\implies (x - 2)^2 + (0 - 5)^2 = (x - 6)^2 + (0 - 1)^2 \\implies x^2 - 4x + 29 = x^2 - 12x + 37 \\implies 8x = 8 \\implies x = 1$. Jadi koordinatnya $(1, 0)$.",
+      "distraktor": [
+        {
+          "teks": "$(2, 0)$",
+          "alasan": "Siswa salah saat mengoperasikan suku-suku konstan sehingga memperoleh $8x = 16$."
+        },
+        {
+          "teks": "$(4, 0)$",
+          "alasan": "Siswa mengambil titik tengah nilai $x$ antara titik $A$ dan $B$, yaitu $\\frac{2 + 6}{2} = 4$ tanpa memperhitungkan ordinat titik."
+        },
+        {
+          "teks": "$(0, 1)$",
+          "alasan": "Siswa tertukar antara sumbu-$X$ dan sumbu-$Y$ sehingga meletakkan nilai pada ordinat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan bentuk umum koordinat titik $P$.\nKarena titik $P$ terletak pada sumbu-$X$, ordinatnya bernilai $0$, sehingga $P(x, 0)$.\n\nLangkah 2: Susun persamaan jarak $PA = PB$ atau $PA^2 = PB^2$.\n$PA^2 = (x - 2)^2 + (0 - 5)^2 = x^2 - 4x + 4 + 25 = x^2 - 4x + 29$\n$PB^2 = (x - 6)^2 + (0 - 1)^2 = x^2 - 12x + 36 + 1 = x^2 - 12x + 37$\n\nLangkah 3: Selesaikan nilai $x$.\n$x^2 - 4x + 29 = x^2 - 12x + 37$\n$-4x + 12x = 37 - 29$\n$8x = 8 \\implies x = 1$\n\nMaka koordinat titik $P$ adalah $(1, 0)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 110,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "AC, AB , dan BC merupakan sisi-sisi segitiga, dengan sisi AC = x 2 - x 1 dan BC = y 2 - y 1 ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "keliling belah ketupat koordinat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penghitungan panjang satu sisi miring bangun datar pada bidang koordinat lalu menghitung kelilingnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah belah ketupat $ABCD$ memiliki titik-titik sudut berurutan $A(2, 1)$, $B(5, 5)$, $C(2, 9)$, dan $D(-1, 5)$ pada bidang Cartesius. Keliling belah ketupat $ABCD$ tersebut adalah ....",
+      "jawaban_benar": "$20$ satuan",
+      "alasan_benar": "Panjang sisi $AB = \\sqrt{(5 - 2)^2 + (5 - 1)^2} = \\sqrt{3^2 + 4^2} = 5$ satuan. Karena keempat sisi belah ketupat sama panjang, kelilingnya adalah $4 \\times 5 = 20$ satuan.",
+      "distraktor": [
+        {
+          "teks": "$16$ satuan",
+          "alasan": "Siswa keliru mengira panjang sisi belah ketupat adalah $4$ satuan."
+        },
+        {
+          "teks": "$24$ satuan",
+          "alasan": "Siswa menjumlahkan panjang diagonal mendatar ($6$) dan vertikal ($8$) dikali dua atau salah menghitung nilai hipotenusa."
+        },
+        {
+          "teks": "$25$ satuan",
+          "alasan": "Siswa menghitung luas persegi dari panjang sisi ($5^2 = 25$) bukan keliling belah ketupat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung panjang salah satu sisi belah ketupat, misalnya sisi $AB$ dari titik $A(2, 1)$ ke $B(5, 5)$.\n$s = AB = \\sqrt{(5 - 2)^2 + (5 - 1)^2} = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5\\text{ satuan}$\n\nLangkah 2: Hitung keliling belah ketupat.\n$\\text{Keliling} = 4 \\times s = 4 \\times 5 = 20\\text{ satuan}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 110,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada koordinat kartesius terdapat koordinat negatif, apakah aturan di atas juga berlaku pada korrdinat titik yang semuanya negatif? Jelaskan."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menentukan absis titik berjarak tertentu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan rumus jarak dari titik pangkal dengan syarat posisi kuadran bernilai negatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $M(a, 6)$ memiliki jarak $10$ satuan dari titik pangkal $O(0, 0)$. Jika titik $M$ terletak di kuadran II pada bidang Cartesius, nilai $a$ adalah ....",
+      "jawaban_benar": "$-8$",
+      "alasan_benar": "Jarak titik $M$ ke $O$ adalah $\\sqrt{a^2 + 6^2} = 10 \\implies a^2 + 36 = 100 \\implies a^2 = 64 \\implies a = \\pm 8$. Karena berada di kuadran II, absis bernilai negatif, sehingga $a = -8$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Siswa mengabaikan syarat letak di kuadran II sehingga memilih nilai positif."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Siswa melakukan kesalahan aljabar dengan mengurangkan langsung $10 - 6 = 4$ lalu menambahkan tanda negatif."
+        },
+        {
+          "teks": "$-16$",
+          "alasan": "Siswa salah saat menghitung $100 - 36$ atau keliru menarik akar kuadrat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Gunakan rumus jarak dari titik pangkal $O(0, 0)$ ke titik $M(a, 6)$.\n$OM = \\sqrt{(a - 0)^2 + (6 - 0)^2} = \\sqrt{a^2 + 36}$\nDiketahui jarak $OM = 10$ satuan, maka:\n$\\sqrt{a^2 + 36} = 10$\n$a^2 + 36 = 100$\n$a^2 = 64$\n\nLangkah 2: Tentukan nilai $a$ berdasarkan syarat kuadran.\n$a = \\pm\\sqrt{64} = \\pm 8$\nKarena titik $M$ berada di kuadran II, nilai absis $x = a$ harus bernilai negatif ($a < 0$). Maka diperoleh $a = -8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0111-soal-laihan-2-4-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "uji jenis segitiga pada koordinat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan panjang ketiga sisi menggunakan rumus jarak lalu menguji kebalikan Teorema Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui $\\triangle KLM$ memiliki titik-titik sudut $K(0, 7)$, $L(8, 7)$, dan $M(6, 11)$ pada bidang koordinat Cartesius. Apakah $\\triangle KLM$ merupakan segitiga siku-siku?",
+      "jawaban_benar": "Bukan, karena kuadrat sisi terpanjang lebih kecil dari jumlah kuadrat dua sisi lainnya ($64 < 72$)",
+      "alasan_benar": "Kuadrat ketiga sisi adalah $KL^2 = 64$, $LM^2 = 20$, dan $KM^2 = 52$. Karena $KL^2 \\neq LM^2 + KM^2$ ($64 < 20 + 52$), segitiga tersebut bukan segitiga siku-siku melainkan segitiga lancip.",
+      "distraktor": [
+        {
+          "teks": "Ya, segitiga siku-siku di $M$ karena $LM^2 + KM^2 = 72$",
+          "alasan": "Mengira jumlah kuadrat dua sisi otomatis menentukan kesikusikuan tanpa membandingkannya dengan kuadrat sisi terpanjang."
+        },
+        {
+          "teks": "Bukan, karena ketiga sisinya memiliki panjang yang sama",
+          "alasan": "Keliru mengidentifikasi bahwa segitiga tersebut adalah segitiga sama sisi padahal panjang sisinya berbeda-beda."
+        },
+        {
+          "teks": "Ya, segitiga siku-siku di $K$ karena $KL^2 + KM^2 > LM^2$",
+          "alasan": "Salah memahami syarat Teorema Pythagoras dengan menganggap ketidaksamaan lebih besar sebagai syarat siku-siku."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung kuadrat panjang tiap sisi menggunakan rumus jarak:\n$KL^2 = (8 - 0)^2 + (7 - 7)^2 = 8^2 + 0^2 = 64$\n$LM^2 = (6 - 8)^2 + (11 - 7)^2 = (-2)^2 + 4^2 = 4 + 16 = 20$\n$KM^2 = (6 - 0)^2 + (11 - 7)^2 = 6^2 + 4^2 = 36 + 16 = 52$\n\nLangkah 2: Menentukan sisi terpanjang, yaitu $KL$ dengan $KL^2 = 64$.\n\nLangkah 3: Menguji hubungan Pythagoras:\n$LM^2 + KM^2 = 20 + 52 = 72$\nKarena $KL^2 < LM^2 + KM^2$ ($64 < 72$), maka $\\triangle KLM$ bukan merupakan segitiga siku-siku (melainkan segitiga lancip).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-e-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 111,
+        "bagian": "Soal Laihan 2.4",
+        "nomor": "4",
+        "teks": "Seorang atlet tenis mengajukan pertanyaan kepada wasit. Suara atlet mampu didengar wasit hanya pada jarak maksimum 30 kaki. Berdasarkan posisi wasit dan atlet tenis pada gambar berikut, dapatkah wasit mendengar suara sang atlet? Jelaskan jawaban kalian.",
+        "jawaban": "Dapat, karena jarak wasit dan atlet adalah 25 kaki yang kurang dari 30 kaki",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "jangkauan pendengaran posisi bertingkat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis jarak langsung dua posisi berbeda ketinggian dengan Teorema Pythagoras lalu mengevaluasi keterjangkauan bunyi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang petugas pos pengawas memanggil seorang pendaki menggunakan pelantang suara dengan jarak jangkauan dengar maksimum $50\\text{ meter}$. Posisi petugas berada di menara pengawas pada ketinggian $45\\text{ meter}$, sedangkan pendaki berada di permukaan tanah pada jarak mendatar $28\\text{ meter}$ dari kaki menara. Dapatkah pendaki tersebut mendengar suara panggilan petugas pos pengawas?",
+      "jawaban_benar": "Tidak dapat, karena jarak langsung antara petugas dan pendaki adalah $53\\text{ meter}$",
+      "alasan_benar": "Jarak langsung dihitung menggunakan Teorema Pythagoras: $\\sqrt{28^2 + 45^2} = \\sqrt{784 + 2025} = \\sqrt{2809} = 53\\text{ meter}$. Karena $53\\text{ meter} > 50\\text{ meter}$, suara berada di luar jangkauan maksimum.",
+      "distraktor": [
+        {
+          "teks": "Dapat, karena jarak langsung antara petugas dan pendaki adalah $45\\text{ meter}$",
+          "alasan": "Hanya memperhitungkan ketinggian menara secara vertikal dan mengabaikan jarak mendatar."
+        },
+        {
+          "teks": "Dapat, karena jarak langsung antara petugas dan pendaki adalah $35\\text{ meter}$",
+          "alasan": "Melakukan pengurangan kuadrat $\\sqrt{45^2 - 28^2} = \\sqrt{2025 - 784} = \\sqrt{1241} \\approx 35{,}2\\text{ meter}$ alih-alih menjumlahkannya."
+        },
+        {
+          "teks": "Tidak dapat, karena jarak langsung antara petugas dan pendaki adalah $73\\text{ meter}$",
+          "alasan": "Menjumlahkan jarak vertikal dan horizontal secara langsung ($45 + 28 = 73$) tanpa menggunakan Teorema Pythagoras."
+        }
+      ],
+      "pembahasan": "Langkah 1: Mengidentifikasi sisi-sisi siku-siku dari segitiga yang terbentuk antara posisi petugas dan pendaki:\nJarak vertikal ($a$) = $45\\text{ meter}$\nJarak mendatar ($b$) = $28\\text{ meter}$\n\nLangkah 2: Menghitung jarak langsung ($c$) antara petugas dan pendaki:\n$c = \\sqrt{a^2 + b^2}$\n$c = \\sqrt{28^2 + 45^2}$\n$c = \\sqrt{784 + 2025} = \\sqrt{2809} = 53\\text{ meter}$\n\nLangkah 3: Membandingkan jarak langsung dengan jangkauan maksimum pelantang suara:\nKarena jarak langsung ($53\\text{ meter}$) lebih besar dari jangkauan dengar maksimum ($50\\text{ meter}$), maka pendaki tidak dapat mendengar suara panggilan tersebut.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

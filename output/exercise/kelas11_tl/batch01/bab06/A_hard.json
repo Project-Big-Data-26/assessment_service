@@ -1,0 +1,812 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 6,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "5 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b06-p0273-latihan-a-8",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan tekanan atmosfer",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan dua kondisi ketinggian terpisah menggunakan fungsi logaritma alami dan mengevaluasi selisih keduanya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara tekanan udara $P$ (dalam kPa) dan ketinggian suatu tempat $h$ (dalam km) dimodelkan oleh fungsi logaritma alami $\\ln\\left(\\frac{P}{104}\\right) = -\\frac{h}{8}$. Sebuah stasiun pengamatan $A$ berada pada ketinggian tertentu dengan tekanan udara tercatat sebesar $52\\text{ kPa}$. Stasiun pengamatan $B$ berada di puncak gunung yang lebih tinggi dengan tekanan udara tepat separuh dari tekanan di stasiun $A$, yaitu $26\\text{ kPa}$. Jika diketahui $\\ln 2 \\approx 0,693$, selisih ketinggian antara stasiun $B$ dan stasiun $A$ adalah ....",
+      "jawaban_benar": "$5,544\\text{ km}$",
+      "alasan_benar": "Dari model, $h = -8\\ln(P/104)$. Untuk stasiun $A$, $h_A = -8\\ln(52/104) = -8\\ln(1/2) = 8\\ln 2$. Untuk stasiun $B$, $h_B = -8\\ln(26/104) = -8\\ln(1/4) = 16\\ln 2$. Selisih ketinggian $\\Delta h = h_B - h_A = 16\\ln 2 - 8\\ln 2 = 8\\ln 2 \\approx 8 \\times 0,693 = 5,544\\text{ km}$.",
+      "distraktor": [
+        {
+          "teks": "$2,772\\text{ km}$",
+          "alasan": "Siswa salah mengalikan koefisien dengan mengambil $4\\ln 2$ bukannya $8\\ln 2$."
+        },
+        {
+          "teks": "$11,088\\text{ km}$",
+          "alasan": "Siswa menjumlahkan kedua ketinggian ($h_A + h_B = 24\\ln 2$) alih-alih mencari selisihnya."
+        },
+        {
+          "teks": "$3,696\\text{ km}$",
+          "alasan": "Siswa salah menghitung $\\ln(26/52)$ dengan membagi 8 menjadi $16/3$ atau salah substitusi basis."
+        }
+      ],
+      "pembahasan": "Diketahui model: $\\ln\\left(\\frac{P}{104}\\right) = -\\frac{h}{8} \\iff h = -8\\ln\\left(\\frac{P}{104}\\right)$.\n\n1. Ketinggian stasiun $A$ ($P_A = 52\\text{ kPa}$):\n$$h_A = -8\\ln\\left(\\frac{52}{104}\\right) = -8\\ln\\left(\\frac{1}{2}\\right) = -8(-\\ln 2) = 8\\ln 2$$\n\n2. Ketinggian stasiun $B$ ($P_B = 26\\text{ kPa}$):\n$$h_B = -8\\ln\\left(\\frac{26}{104}\\right) = -8\\ln\\left(\\frac{1}{4}\\right) = -8(-2\\ln 2) = 16\\ln 2$$\n\n3. Selisih ketinggian:\n$$\\Delta h = h_B - h_A = 16\\ln 2 - 8\\ln 2 = 8\\ln 2$$\n$$\\Delta h \\approx 8 \\times 0,693 = 5,544\\text{ km}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 273,
+        "bagian": "Pemahaman Konsep",
+        "nomor": "5",
+        "teks": "Apakah pernyataan berikut Benar atau Salah? Jika b log M < b log N , maka M < N .",
+        "jawaban": "Salah, karena hanya berlaku untuk b > 1. Untuk 0 < b < 1, berlaku sebaliknya yaitu M > N.",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis sifat kemonotonan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi terhadap validitas argumen matematis terkait pengaruh nilai basis terhadap pertidaksamaan logaritma.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang guru memberikan pernyataan berikut kepada kelasnya:\n\"Untuk setiap bilangan real positif $M$ dan $N$, jika ${}^b\\log M < {}^b\\log N$, maka selalu berlaku $M < N$.\"\n\nEmpat siswa memberikan evaluasi terhadap pernyataan guru tersebut:\n- Andi: \"Pernyataan selalu benar untuk semua basis $b > 0, b \\neq 1$, karena daerah asal logaritma selalu bilangan real positif.\"\n- Budi: \"Pernyataan bernilai salah untuk semua nilai basis $b$, karena tanda ketidaksamaan logaritma selalu berbalik.\"\n- Candra: \"Pernyataan bernilai benar jika $b > 1$, tetapi salah jika $0 < b < 1$ karena fungsi logaritma dengan $0 < b < 1$ monoton turun sehingga berakibat $M > N$.\"\n- Dodi: \"Pernyataan bernilai benar jika $0 < b < 1$, tetapi salah jika $b > 1$ karena kurva fungsi dengan basis $b > 1$ berada di bawah sumbu-$x$.\"\n\nSiswa yang memberikan evaluasi dan alasan paling tepat adalah ....",
+      "jawaban_benar": "Candra",
+      "alasan_benar": "Sifat 6.3 dan 6.1 menyatakan bahwa untuk $b > 1$, fungsi monoton naik sehingga ${}^b\\log M < {}^b\\log N \\implies M < N$. Sedangkan untuk $0 < b < 1$, fungsi monoton turun sehingga tanda ketaksamaan berbalik menjadi $M > N$.",
+      "distraktor": [
+        {
+          "teks": "Andi",
+          "alasan": "Siswa mengabaikan sifat kemonotonan kurva untuk basis pecahan antara 0 dan 1."
+        },
+        {
+          "teks": "Budi",
+          "alasan": "Siswa keliru menganggap pembalikan tanda berlaku untuk semua jenis basis."
+        },
+        {
+          "teks": "Dodi",
+          "alasan": "Siswa tertukar antara karakteristik basis $b > 1$ dan $0 < b < 1$."
+        }
+      ],
+      "pembahasan": "Berdasarkan Sifat 6.3 pada Buku Siswa:\n1. Jika $b > 1$, fungsi logaritma bersifat monoton naik, sehingga jika ${}^b\\log M < {}^b\\log N$, maka $M < N$.\n2. Jika $0 < b < 1$, fungsi logaritma bersifat monoton turun, sehingga jika ${}^b\\log M < {}^b\\log N$, maka $M > N$.\n\nOleh karena itu, pernyataan guru tidak selalu benar. Pernyataan tersebut hanya benar jika $b > 1$, dan menjadi salah jika $0 < b < 1$. Evaluasi yang tepat diberikan oleh Candra.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 268,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kekuatan kata sandi acak yang diukur dengan entropi informasi adalah logaritma basis 2 atau log 2 dari banyak kata sandi yang mungkin, dengan asumsi setiap simbol dalam kata sandi dihasilkan secara independen. Jadi, entropi informasi kata sandi acak ( H ) diberikan oleh rumus berikut. H = 2 log N L = L 2 log N"
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "rancang bangun keamanan kata sandi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Melibatkan perancangan parameter panjang kata sandi baru untuk memenuhi target kenaikan entropi informasi sistem.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tim keamanan siber merancang dua skema kata sandi acak. Skema $A$ menggunakan panjang $L_A = 6$ simbol yang dipilih dari sekumpulan $N_A = 64$ simbol unik. Skema $B$ hanya dapat menggunakan sekumpulan $N_B = 16$ simbol unik karena keterbatasan perangkat input. Tim tersebut menginginkan Skema $B$ memiliki entropi informasi ($H$) setidaknya $25\\%$ lebih kuat daripada Skema $A$. Berdasarkan rumus $H = L \\cdot {}^2\\log N$, panjang minimal simbol ($L_B$) yang harus dirancang untuk Skema $B$ adalah ....",
+      "jawaban_benar": "$12\\text{ simbol}$",
+      "alasan_benar": "$H_A = 6 \\times {}^2\\log 64 = 6 \\times 6 = 36\\text{ bit}$. Target $H_B \\ge 1,25 \\times 36 = 45\\text{ bit}$. Untuk Skema $B$, $H_B = L_B \\times {}^2\\log 16 = 4 L_B$. Maka $4 L_B \\ge 45 \\implies L_B \\ge 11,25$. Karena panjang simbol harus bilangan bulat, $L_B$ minimal adalah 12.",
+      "distraktor": [
+        {
+          "teks": "$11\\text{ simbol}$",
+          "alasan": "Siswa melakukan pembulatan ke bawah dari 11,25 sehingga entropinya belum mencapai target 45 bit."
+        },
+        {
+          "teks": "$9\\text{ simbol}$",
+          "alasan": "Siswa hanya menyamakan entropi $H_B = H_A = 36\\text{ bit}$ ($36/4 = 9$) tanpa memperhitungkan kenaikan 25%."
+        },
+        {
+          "teks": "$15\\text{ simbol}$",
+          "alasan": "Siswa salah menghitung kenaikan dengan mengalikan panjang simbol langsung $6 \\times 1,25$ lalu dikali basis."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung entropi Skema $A$ ($N_A = 64 = 2^6$, $L_A = 6$):\n$$H_A = L_A \\cdot {}^2\\log N_A = 6 \\cdot {}^2\\log(2^6) = 6 \\cdot 6 = 36\\text{ bit}$$\n\nLangkah 2: Tentukan target entropi Skema $B$ (minimal $25\\%$ lebih besar):\n$$H_B \\ge H_A + 0,25 H_A = 36 + 9 = 45\\text{ bit}$$\n\nLangkah 3: Hitung panjang $L_B$ untuk Skema $B$ ($N_B = 16 = 2^4$):\n$$H_B = L_B \\cdot {}^2\\log 16 = L_B \\cdot 4$$\n$$4 L_B \\ge 45 \\implies L_B \\ge \\frac{45}{4} = 11,25$$\n\nLangkah 4: Karena panjang karakter harus bilangan bulat, ambil pembulatan ke atas terkecil:\n$$L_B = 12\\text{ simbol}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 266,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "jika 0 < b < 1 dan b log M < b log N , maka M > N"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pertidaksamaan logaritma bersyarat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis syarat numerus ganda, pembalikan tanda akibat basis pecahan, dan penentuan irisan himpunan bilangan bulat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Banyaknya bilangan bulat $x$ yang memenuhi pertidaksamaan logaritma:\n$${}^{\\frac{1}{2}}\\log(x^2 - 2x - 3) \\ge -3$$\nadalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Syarat numerus: $x^2 - 2x - 3 > 0 \\implies x < -1$ atau $x > 3$. Pertidaksamaan: basis $1/2 < 1$ membalik tanda menjadi $x^2 - 2x - 3 \\le (1/2)^{-3} = 8 \\implies x^2 - 2x - 11 \\le 0 \\implies 1 - 2\\sqrt{3} \\le x \\le 1 + 2\\sqrt{3}$ (kira-kira $-2,46 \\le x \\le 4,46$). Irisannya adalah $[-2,46; -1) \\cup (3; 4,46]$. Bilangan bulat di dalamnya adalah $x = -2$ dan $x = 4$, yaitu sebanyak 2.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Siswa lupa menguji syarat numerus $x^2 - 2x - 3 > 0$ sehingga menghitung seluruh bilangan bulat dari $-2$ sampai $4$."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Siswa memasukkan nilai $-1$ atau $3$ yang seharusnya tidak termasuk karena numerus harus strictly positif."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Siswa tidak membalik tanda pertidaksamaan pada basis pecahan sehingga menghasilkan daerah tanpa irisan."
+        }
+      ],
+      "pembahasan": "Langkah 1 (Syarat numerus):\n$$x^2 - 2x - 3 > 0 \\iff (x - 3)(x + 1) > 0$$\n$$x < -1 \\quad \\text{atau} \\quad x > 3$$\n\nLangkah 2 (Penyelesaian pertidaksamaan):\nKarena basis $b = \\frac{1}{2}$ berada pada interval $0 < b < 1$, tanda pertidaksamaan berbalik:\n$${}^{\\frac{1}{2}}\\log(x^2 - 2x - 3) \\ge -3 \\iff x^2 - 2x - 3 \\le \\left(\\frac{1}{2}\\right)^{-3}$$\n$$x^2 - 2x - 3 \\le 8$$\n$$x^2 - 2x - 11 \\le 0$$\n\nAkar-akar persamaan $x^2 - 2x - 11 = 0$:\n$$x = \\frac{2 \\pm \\sqrt{4 - 4(1)(-11)}}{2} = 1 \\pm 2\\sqrt{3}$$\nKarena $2\\sqrt{3} \\approx 3,46$, batas nilai $x$ adalah:\n$$1 - 3,46 \\le x \\le 1 + 3,46 \\iff -2,46 \\le x \\le 4,46$$\n\nLangkah 3 (Irisan solusi dan syarat numerus):\n$$x \\in [-2,46; -1) \\cup (3; 4,46]$$\n\nLangkah 4 (Menentukan bilangan bulat):\n- Pada interval $[-2,46; -1)$, bilangan bulat yang memenuhi adalah $x = -2$.\n- Pada interval $(3; 4,46]$, bilangan bulat yang memenuhi adalah $x = 4$.\n\nJadi, terdapat tepat 2 bilangan bulat yang memenuhi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 271,
+        "bagian": "Contoh 6.7",
+        "nomor": "-",
+        "teks": "Tentukan lama waktu untuk mengisi daya baterai yang kosong hingga menjadi 90% penuh dengan k = 0,02.",
+        "jawaban": "sekitar 115 menit",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis rasio pengisian baterai",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi perbandingan waktu non-linear dari fungsi logaritma alami dengan menyederhanakan bentuk pangkat pada numerus.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Lama waktu $t$ (dalam menit) yang diperlukan untuk mengisi daya suatu baterai dari kondisi kosong hingga mencapai daya $C$ dimodelkan oleh fungsi logaritma alami $t = -\\frac{1}{k}\\ln\\left(1 - \\frac{C}{C_0}\\right)$, dengan $C_0$ adalah kapasitas daya maksimum dan $k$ adalah konstanta pengisian. Rasio lama waktu yang diperlukan untuk mengisi daya baterai hingga $87,5\\%$ penuh terhadap lama waktu hingga $50\\%$ penuh dengan konstanta $k$ yang sama adalah ....",
+      "jawaban_benar": "$3 : 1$",
+      "alasan_benar": "Waktu hingga $50\\%$ penuh adalah $t_1 = -\\frac{1}{k}\\ln(1 - 0,5) = -\\frac{1}{k}\\ln(0,5) = \\frac{\\ln 2}{k}$. Waktu hingga $87,5\\%$ penuh adalah $t_2 = -\\frac{1}{k}\\ln(1 - 0,875) = -\\frac{1}{k}\\ln(0,125) = -\\frac{1}{k}\\ln\\left(2^{-3}\\right) = \\frac{3\\ln 2}{k}$. Maka rasionya adalah $\\frac{t_2}{t_1} = \\frac{3\\ln 2 / k}{\\ln 2 / k} = \\frac{3}{1}$.",
+      "distraktor": [
+        {
+          "teks": "$1,75 : 1$",
+          "alasan": "Menganggap hubungan pengisian bersifat linear sehingga membagi langsung persentase kapasitas $87,5 : 50 = 1,75$."
+        },
+        {
+          "teks": "$2 : 1$",
+          "alasan": "Keliru mengira pengisian $87,5\\%$ setara dengan pengisian $75\\%$ di mana $\\ln(0,25) = -2\\ln 2$."
+        },
+        {
+          "teks": "$4 : 1$",
+          "alasan": "Salah menghitung pemangkatan basis pecahan dengan menganggap $0,125 = 2^{-4}$."
+        }
+      ],
+      "pembahasan": "Diketahui model waktu pengisian daya baterai:\n$$t = -\\frac{1}{k}\\ln\\left(1 - \\frac{C}{C_0}\\right)$$\n\n1. Waktu untuk mengisi hingga $50\\%$ penuh ($C = 0,5C_0$):\n$$t_{50\\%} = -\\frac{1}{k}\\ln(1 - 0,5) = -\\frac{1}{k}\\ln\\left(\\frac{1}{2}\\right) = -\\frac{1}{k}(-\\ln 2) = \\frac{\\ln 2}{k}$$\n\n2. Waktu untuk mengisi hingga $87,5\\%$ penuh ($C = 0,875C_0$):\n$$t_{87,5\\%} = -\\frac{1}{k}\\ln(1 - 0,875) = -\\frac{1}{k}\\ln(0,125) = -\\frac{1}{k}\\ln\\left(\\frac{1}{8}\\right) = -\\frac{1}{k}\\ln\\left(2^{-3}\\right) = \\frac{3\\ln 2}{k}$$\n\n3. Rasio kedua waktu pengisian:\n$$\\frac{t_{87,5\\%}}{t_{50\\%}} = \\frac{\\frac{3\\ln 2}{k}}{\\frac{\\ln 2}{k}} = 3$$\n\nJadi, rasio waktu yang diperlukan adalah $3 : 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 264,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Daerah asal f dan g adalah himpunan semua bilangan real positif."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi perpotongan grafik fungsi logaritma",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi argumen mengenai titik potong dua grafik fungsi logaritma dengan memeriksa validitas numerus pada masing-masing akar persamaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua grafik fungsi logaritma $f(x) = {}^2\\log(x + 4)$ dan $g(x) = {}^2\\log(x^2 - 2x - 4)$ diselidiki titik potongnya. Dua orang siswa memberikan argumen berikut:\n- **Arya:** \"Kedua grafik berpotongan di dua titik karena persamaan $x + 4 = x^2 - 2x - 4$ memiliki dua akar real berbeda dan kedua akar tersebut menghasilkan nilai numerus yang positif.\"\n- **Bella:** \"Kedua grafik hanya berpotongan di satu titik karena salah satu akar persamaan bernilai negatif, dan bilangan negatif tidak boleh menjadi nilai $x$ pada fungsi logaritma.\"\n\nPernyataan evaluasi yang benar mengenai kedua argumen tersebut adalah ....",
+      "jawaban_benar": "Argumen Arya benar karena kedua nilai $x$ memenuhi syarat numerus $x + 4 > 0$ dan $x^2 - 2x - 4 > 0$",
+      "alasan_benar": "Persamaan $x + 4 = x^2 - 2x - 4$ menghasilkan $x^2 - 3x - 8 = 0$ dengan akar-akar $x_1 = \\frac{3 + \\sqrt{41}}{2} \\approx 4,70$ dan $x_2 = \\frac{3 - \\sqrt{41}}{2} \\approx -1,70$. Kedua nilai $x$ ini memenuhi syarat numerus $x > -4$, sehingga numerus $x + 4 > 0$ dan otomatis $x^2 - 2x - 4 = x + 4 > 0$. Nilai $x$ boleh negatif asalkan nilai numerus $(x + 4)$ tetap positif.",
+      "distraktor": [
+        {
+          "teks": "Argumen Bella benar karena nilai $x$ pada daerah asal fungsi logaritma selalu disyaratkan harus bernilai positif ($x > 0$)",
+          "alasan": "Keliru mengira syarat numerus positif selalu berarti variabel $x > 0$, padahal numerusnya adalah $x + 4 > 0$."
+        },
+        {
+          "teks": "Kedua argumen salah karena persamaan kuadrat yang terbentuk tidak memiliki akar real pada himpunan bilangan real",
+          "alasan": "Salah menghitung nilai diskriminan $D = (-3)^2 - 4(1)(-8) = 41 > 0$."
+        },
+        {
+          "teks": "Argumen Arya salah karena titik potong hanya ada jika kedua fungsi memiliki nilai basis yang berbeda",
+          "alasan": "Miskonsepsi bahwa penyamaan numerus hanya berlaku untuk basis logaritma yang tidak sama."
+        }
+      ],
+      "pembahasan": "1. Titik potong diperoleh saat $f(x) = g(x)$:\n$${}^2\\log(x + 4) = {}^2\\log(x^2 - 2x - 4)$$\nBerdasarkan identitas logaritma jika ${}^b\\log M = {}^b\\log N$, maka $M = N$:\n$$x + 4 = x^2 - 2x - 4 \\iff x^2 - 3x - 8 = 0$$\n\n2. Menentukan akar-akar persamaan kuadrat:\n$$x = \\frac{-(-3) \\pm \\sqrt{(-3)^2 - 4(1)(-8)}}{2(1)} = \\frac{3 \\pm \\sqrt{41}}{2}$$\nDiperoleh $x_1 = \\frac{3 + \\sqrt{41}}{2} \\approx 4,70$ dan $x_2 = \\frac{3 - \\sqrt{41}}{2} \\approx -1,70$.\n\n3. Uji syarat numerus:\n- Syarat fungsi $f(x)$: $x + 4 > 0 \\implies x > -4$.\nKarena $-1,70 > -4$ dan $4,70 > -4$, kedua nilai $x$ memenuhi syarat numerus $f(x)$.\n- Karena pada absis titik potong berlaku $x^2 - 2x - 4 = x + 4$, maka nilai $x^2 - 2x - 4$ juga pasti bernilai positif untuk kedua nilai $x$ tersebut.\n\n4. Kesimpulan:\nNilai variabel $x$ boleh bertanda negatif asalkan membuat bentuk numerus bernilai positif. Oleh karena itu, kedua grafik berpotongan di dua titik dan argumen Arya benar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 268,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "entropi informasi kata sandi acak ( H ) diberikan oleh rumus berikut. log N H = 2 log N^L = L 2 log N = L log 2"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rancang bangun kebijakan keamanan kata sandi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Melibatkan formulasi sistem persamaan linier dari pemodelan entropi logaritma untuk menentukan kombinasi panjang kata sandi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah administrator sistem membandingkan dua opsi kebijakan pembuatan kata sandi acak:\n- **Kebijakan X:** Menggunakan simbol dari himpunan heksadesimal ($N_X = 16$ simbol) dengan panjang kata sandi $L_X$ karakter.\n- **Kebijakan Y:** Menggunakan simbol dari himpunan Base64 ($N_Y = 64$ simbol) dengan panjang kata sandi $L_Y$ karakter.\n\nDiketahui panjang kata sandi Kebijakan Y dirancang $3$ karakter lebih pendek daripada Kebijakan X ($L_Y = L_X - 3$), namun menghasilkan entropi informasi $6\\text{ bit}$ lebih besar daripada Kebijakan X ($H_Y - H_X = 6$). Jumlah panjang karakter dari kedua kebijakan kata sandi tersebut ($L_X + L_Y$) adalah ....",
+      "jawaban_benar": "$21\\text{ karakter}$",
+      "alasan_benar": "$H_X = L_X \\cdot {}^2\\log 16 = 4L_X$ dan $H_Y = (L_X - 3) \\cdot {}^2\\log 64 = 6(L_X - 3)$. Persamaan $6(L_X - 3) - 4L_X = 6 \\implies 2L_X - 18 = 6 \\implies 2L_X = 24 \\implies L_X = 12$. Maka $L_Y = 12 - 3 = 9$, sehingga $L_X + L_Y = 12 + 9 = 21$.",
+      "distraktor": [
+        {
+          "teks": "$17\\text{ karakter}$",
+          "alasan": "Salah memformulasikan selisih entropi menjadi $6(L_X - 3) - 4L_X = 0$, menghasilkan $L_X = 9$ dan $L_Y = 6$, total 15, lalu menambah 2."
+        },
+        {
+          "teks": "$25\\text{ karakter}$",
+          "alasan": "Keliru pada tanda kurung saat distribusi menjadi $6L_X - 18 - 4L_X = 6$ dihitung $2L_X = 28 \\implies L_X = 14$ dan $L_Y = 11$, total 25."
+        },
+        {
+          "teks": "$27\\text{ karakter}$",
+          "alasan": "Tertukar menghitung basis logaritma dengan menganggap ${}^2\\log 16 = 2$ dan ${}^2\\log 64 = 3$."
+        }
+      ],
+      "pembahasan": "1. Rumus entropi informasi kata sandi acak:\n$$H = L \\cdot {}^2\\log N$$\n\n2. Menentukan fungsi entropi untuk masing-masing kebijakan:\n- Kebijakan X: $N_X = 16 = 2^4$\n$$H_X = L_X \\cdot {}^2\\log(2^4) = 4L_X$$\n- Kebijakan Y: $N_Y = 64 = 2^6$ dan $L_Y = L_X - 3$\n$$H_Y = (L_X - 3) \\cdot {}^2\\log(2^6) = 6(L_X - 3) = 6L_X - 18$$\n\n3. Membentuk persamaan berdasarkan informasi $H_Y - H_X = 6\\text{ bit}$:\n$$(6L_X - 18) - 4L_X = 6$$\n$$2L_X - 18 = 6$$\n$$2L_X = 24 \\iff L_X = 12$$\n\n4. Menghitung panjang kata sandi Kebijakan Y:\n$$L_Y = L_X - 3 = 12 - 3 = 9$$\n\n5. Menghitung jumlah panjang kedua kebijakan:\n$$L_X + L_Y = 12 + 9 = 21\\text{ karakter}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 264,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "fungsi f monoton naik, sedangkan fungsi g monoton turun."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter fungsi logaritma",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis kemonotonan fungsi logaritma dan sifat nilai ekstrim fungsi kuadrat pada numerus untuk menentukan nilai parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi logaritma $f(x) = {}^a\\log(x^2 - 2bx + c)$ dengan $a > 1$. Grafik fungsi $f(x)$ mencapai nilai minimum sebesar $2$ pada saat $x = 4$. Jika grafik fungsi $f(x)$ memotong sumbu-$y$ di titik $(0, {}^a\\log 25)$, nilai dari $a + b + c$ adalah ....",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Nilai numerus minimum dicapai pada sumbu simetri $x = b = 4$. Memotong sumbu-$y$ di $x = 0$ menghasilkan numerus $c = 25$. Nilai numerus saat $x = 4$ adalah $4^2 - 2(4)(4) + 25 = 9$. Karena $a > 1$, nilai minimum $f(x)$ tercapai saat numerus minimum: ${}^a\\log 9 = 2 \\implies a^2 = 9 \\implies a = 3$. Maka $a + b + c = 3 + 4 + 25 = 32$.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Lupa menjumlahkan konstanta basis $a$, hanya menghitung $b + c = 4 + 25 = 29$."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Keliru menentukan basis $a$ dengan menyelesaikan $2a = 9 \\implies a = 4,5$ lalu membulatkannya."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Keliru menghitung nilai minimum numerus menjadi $16 - 8 + 25 = 33$ sehingga salah memperoleh nilai parameter."
+        }
+      ],
+      "pembahasan": "1. Misalkan $g(x) = x^2 - 2bx + c$. Karena $a > 1$, fungsi $f(x) = {}^a\\log(g(x))$ monoton naik terhadap $g(x)$, sehingga $f(x)$ mencapai nilai minimum saat fungsi kuadrat $g(x)$ mencapai nilai minimum.\n\n2. Nilai minimum dari $g(x) = x^2 - 2bx + c$ terjadi pada absis titik puncak:\n$$x_p = -\\frac{-2b}{2(1)} = b$$\nDiketahui nilai minimum dicapai pada $x = 4$, maka $b = 4$.\n\n3. Grafik memotong sumbu-$y$ saat $x = 0$:\n$$f(0) = {}^a\\log(0^2 - 2b(0) + c) = {}^a\\log c$$\nDiketahui titik potong adalah $(0, {}^a\\log 25)$, maka $c = 25$.\n\n4. Menghitung nilai minimum dari $g(x)$ pada $x = 4$:\n$$g(4) = 4^2 - 2(4)(4) + 25 = 16 - 32 + 25 = 9$$\n\n5. Menentukan nilai basis $a$:\n$$f(4) = {}^a\\log(g(4)) = {}^a\\log 9 = 2$$\nSesuai definisi logaritma:\n$$a^2 = 9 \\implies a = 3 \\quad (\\text{karena } a > 1)$$\n\n6. Menghitung nilai $a + b + c$:\n$$a + b + c = 3 + 4 + 25 = 32$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 269,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Besar kekuatan gempa bumi (dalam skala Richter) dengan intensitas I dapat ditentukan dengan rumus berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis penggabungan intensitas gempa bumi",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan manipulasi bentuk eksponen dan logaritma untuk menghitung kekuatan gempa gabungan dari dua sumber intensitas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua peristiwa gempa bumi tercatat pada stasiun pengamatan seismik. Gempa bumi pertama berkekuatan $M_1 = 6,2$ skala Richter, sedangkan gempa bumi kedua berkekuatan $M_2 = 7,2$ skala Richter. Besar kekuatan gempa ditentukan oleh rumus $M = \\log\\left(\\frac{I}{I_0}\\right)$, dengan $I$ adalah intensitas gempa dan $I_0$ adalah intensitas gempa tingkat nol. Jika suatu gempa ketiga memiliki intensitas sebesar jumlah intensitas kedua gempa tersebut ($I_3 = I_1 + I_2$), dan diketahui $\\log 1,1 \\approx 0,041$, kekuatan gempa ketiga dalam skala Richter adalah sekitar ....",
+      "jawaban_benar": "$7,241\\text{ skala Richter}$",
+      "alasan_benar": "$I_1 = I_0 \\cdot 10^{6,2}$ dan $I_2 = I_0 \\cdot 10^{7,2} = 10 I_1$. Maka $I_3 = 11 I_1 = 11 \\cdot I_0 \\cdot 10^{6,2}$. Kekuatan gempa $M_3 = \\log(11 \\cdot 10^{6,2}) = 6,2 + \\log 11 = 6,2 + \\log(1,1 \\times 10) = 6,2 + 1 + 0,041 = 7,241$ skala Richter.",
+      "distraktor": [
+        {
+          "teks": "$6,700\\text{ skala Richter}$",
+          "alasan": "Menghitung rata-rata aritmetika dari kedua skala gempa $\\frac{6,2 + 7,2}{2} = 6,7$."
+        },
+        {
+          "teks": "$7,204\\text{ skala Richter}$",
+          "alasan": "Lupa mengalikan faktor $10$ pada penguraian $\\log 11$ sehingga hanya menambahkan $\\log 1,1 = 0,041$ ke $M_1$."
+        },
+        {
+          "teks": "$13,400\\text{ skala Richter}$",
+          "alasan": "Langsung menjumlahkan nilai skala Richter $6,2 + 7,2 = 13,4$ tanpa memperhitungkan skala logaritmik."
+        }
+      ],
+      "pembahasan": "1. Hubungan skala Richter dan intensitas gempa:\n$$M = \\log\\left(\\frac{I}{I_0}\\right) \\iff \\frac{I}{I_0} = 10^M \\iff I = I_0 \\cdot 10^M$$\n\n2. Nyatakan intensitas gempa pertama dan kedua:\n$$I_1 = I_0 \\cdot 10^{6,2}$$\n$$I_2 = I_0 \\cdot 10^{7,2} = I_0 \\cdot 10^{6,2 + 1} = I_0 \\cdot 10^{6,2} \\cdot 10^1 = 10 I_1$$\n\n3. Menentukan intensitas gempa ketiga ($I_3$):\n$$I_3 = I_1 + I_2 = I_1 + 10 I_1 = 11 I_1 = 11 \\cdot I_0 \\cdot 10^{6,2}$$\n\n4. Menghitung skala Richter gempa ketiga ($M_3$):\n$$M_3 = \\log\\left(\\frac{I_3}{I_0}\\right) = \\log\\left(\\frac{11 \\cdot I_0 \\cdot 10^{6,2}}{I_0}\\right) = \\log(11 \\cdot 10^{6,2})$$\n\n5. Menerapkan sifat perkalian logaritma:\n$$M_3 = \\log 11 + \\log(10^{6,2}) = \\log(1,1 \\times 10) + 6,2$$\n$$M_3 = \\log 1,1 + \\log 10 + 6,2$$\n\n6. Substitusikan nilai $\\log 1,1 \\approx 0,041$ dan $\\log 10 = 1$:\n$$M_3 \\approx 0,041 + 1 + 6,2 = 7,241\\text{ skala Richter}$$\n\nJadi, kekuatan gempa ketiga adalah sekitar $7,241$ skala Richter.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 273,
+        "bagian": "Penerapan Konsep",
+        "nomor": "10",
+        "teks": "Perkembangbiakan Bakteri . Suatu jenis bakteri membelah diri setiap 2 jam. Jika koloni bakteri tersebut awalnya sebanyak 50 bakteri, waktu t (dalam jam) yang diperlukan agar banyaknya bakteri tersebut menjadi N dapat ditentukan dengan rumus berikut. Tentukan waktu yang diperlukan agar terdapat sejuta bakteri dalam koloni tersebut.",
+        "jawaban": "28,58 jam",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan kesetaraan waktu pertumbuhan bakteri",
+      "jumlah_langkah": 4,
+      "alasan_level": "Melibatkan penyusunan dan penyetaraan dua model fungsi logaritma dengan basis dan laju pembelahan berbeda untuk menemukan titik temu populasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua kultur mikroorganisme diteliti dalam laboratorium. Kultur $A$ membelah diri setiap $2$ jam dengan populasi awal $25$ sel, sehingga waktu yang dibutuhkan untuk mencapai populasi $N$ dirumuskan oleh $t = 2 \\cdot {}^2\\log\\left(\\frac{N}{25}\\right)$ jam. Kultur $B$ membelah diri setiap $3$ jam dengan populasi awal $200$ sel, dengan waktu yang dibutuhkan memenuhi $t = 3 \\cdot {}^2\\log\\left(\\frac{N}{200}\\right)$ jam. Jika kedua kultur berkembang biak secara bersamaan dari waktu $t = 0$, lama waktu $t$ yang dibutuhkan hingga kedua kultur memiliki banyak populasi yang sama ($N$) adalah ....",
+      "jawaban_benar": "$18\\text{ jam}$",
+      "alasan_benar": "Menyetarakan kedua fungsi waktu: $2 \\cdot {}^2\\log\\left(\\frac{N}{25}\\right) = 3 \\cdot {}^2\\log\\left(\\frac{N}{200}\\right) \\iff \\left(\\frac{N}{25}\\right)^2 = \\left(\\frac{N}{200}\\right)^3$. Diperoleh $\\frac{N^2}{625} = \\frac{N^3}{8.000.000} \\iff N = \\frac{8.000.000}{625} = 12.800$. Substitusi nilai $N$ ke rumus waktu: $t = 2 \\cdot {}^2\\log\\left(\\frac{12.800}{25}\\right) = 2 \\cdot {}^2\\log(512) = 2 \\cdot 9 = 18\\text{ jam}$.",
+      "distraktor": [
+        {
+          "teks": "$12\\text{ jam}$",
+          "alasan": "Siswa salah mengoperasikan pangkat identitas logaritma menjadi perkalian koefisien, menghasilkan nilai $N$ yang keliru sehingga $t = 12\\text{ jam}$."
+        },
+        {
+          "teks": "$24\\text{ jam}$",
+          "alasan": "Siswa menyamakan argumen tanpa memangkatkan dengan koefisien: $\\frac{N}{25} = \\frac{N}{200}$, lalu mengambil KPK waktu pembelahan $2 \\times 3 \\times 4$."
+        },
+        {
+          "teks": "$9\\text{ jam}$",
+          "alasan": "Siswa menghitung nilai ${}^2\\log(512) = 9$, tetapi lupa mengalikan dengan pengali 2 pada rumus waktu."
+        }
+      ],
+      "pembahasan": "Diketahui:\n$$t = 2 \\cdot {}^2\\log\\left(\\frac{N}{25}\\right)$$\n$$t = 3 \\cdot {}^2\\log\\left(\\frac{N}{200}\\right)$$\n\nKarena waktu $t$ dan populasi $N$ sama, samakan kedua persamaan:\n$$2 \\cdot {}^2\\log\\left(\\frac{N}{25}\\right) = 3 \\cdot {}^2\\log\\left(\\frac{N}{200}\\right)$$\n\nGunakan sifat logaritma $p \\cdot {}^b\\log M = {}^b\\log(M^p)$:\n$${}^2\\log\\left(\\left(\\frac{N}{25}\\right)^2\\right) = {}^2\\log\\left(\\left(\\frac{N}{200}\\right)^3\\right)$$\n$$\\left(\\frac{N}{25}\\right)^2 = \\left(\\frac{N}{200}\\right)^3$$\n$$\\frac{N^2}{625} = \\frac{N^3}{8.000.000}$$\n\nBagi kedua ruas dengan $N^2$ ($N \\ne 0$):\n$$\\frac{1}{625} = \\frac{N}{8.000.000} \\implies N = \\frac{8.000.000}{625} = 12.800$$\n\nSubstitusikan $N = 12.800$ ke salah satu rumus waktu:\n$$t = 2 \\cdot {}^2\\log\\left(\\frac{12.800}{25}\\right) = 2 \\cdot {}^2\\log(512) = 2 \\cdot 9 = 18\\text{ jam}$$\n\nJadi, waktu yang dibutuhkan adalah $18\\text{ jam}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 266,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "jika 0 < b < 1 dan b log M < b log N , maka M > N"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pertidaksamaan logaritma bersarang",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis syarat numerus bertingkat dan pembalikan tanda pertidaksamaan akibat basis pecahan serta menentukan banyak solusi bilangan bulat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Banyaknya bilangan bulat $x$ yang memenuhi pertidaksamaan logaritma bersarang:\n$${}^{\\frac{1}{2}}\\log\\left({}^3\\log(x^2 - 7)\\right) \\ge -1$$\nadalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Syarat numerus luar: ${}^3\\log(x^2 - 7) > 0 \\iff x^2 - 7 > 1 \\iff x^2 > 8$. Menyelesaikan pertidaksamaan utama dengan basis $0 < \\frac{1}{2} < 1$: tanda berbalik sehingga ${}^3\\log(x^2 - 7) \\le \\left(\\frac{1}{2}\\right)^{-1} = 2$. Karena basis $3 > 1$, didapat $x^2 - 7 \\le 3^2 = 9 \\iff x^2 \\le 16$. Irisan keduanya menghasilkan $8 < x^2 \\le 16$. Nilai bilangan bulat $x$ yang memenuhi adalah $x \\in \\{-4, -3, 3, 4\\}$, sehingga totalnya ada 4 bilangan bulat.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Siswa hanya memperhitungkan nilai bulat positif $x \\in \\{3, 4\\}$ dan mengabaikan nilai negatif."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Siswa memakai syarat numerus terdalam $x^2 - 7 > 0 \\implies x^2 > 7$, sehingga memasukkan nilai yang keliru atau salah mengiriskan rentang."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Siswa tidak membalik tanda pertidaksamaan pada basis $\\frac{1}{2}$ sehingga batas penyelesaian menjadi kacau."
+        }
+      ],
+      "pembahasan": "Selesaikan pertidaksamaan secara bertahap:\n1. Syarat numerus terdalam:\n$$x^2 - 7 > 0 \\iff x^2 > 7$$\n\n2. Syarat numerus terluar:\n$${}^3\\log(x^2 - 7) > 0 \\iff x^2 - 7 > 3^0 \\iff x^2 - 7 > 1 \\iff x^2 > 8$$\nIrisan syarat numerus adalah $x^2 > 8$.\n\n3. Pertidaksamaan utama:\n$${}^{\\frac{1}{2}}\\log\\left({}^3\\log(x^2 - 7)\\right) \\ge -1$$\nKarena basis $b = \\frac{1}{2}$ berada pada interval $0 < b < 1$, arah pertidaksamaan berbalik:\n$${}^3\\log(x^2 - 7) \\le \\left(\\frac{1}{2}\\right)^{-1}$$\n$${}^3\\log(x^2 - 7) \\le 2$$\n\nKarena basis $3 > 1$, arah pertidaksamaan tetap:\n$$x^2 - 7 \\le 3^2 \\iff x^2 - 7 \\le 9 \\iff x^2 \\le 16$$\n\n4. Menggabungkan hasil pertidaksamaan dan syarat numerus:\n$$8 < x^2 \\le 16$$\n\n5. Menentukan bilangan bulat $x$:\nNilai $x^2$ yang memenuhi dengan $x \\in \\mathbb{Z}$ adalah $x^2 = 9$ atau $x^2 = 16$.\n- Untuk $x^2 = 9 \\implies x = -3$ atau $x = 3$\n- Untuk $x^2 = 16 \\implies x = -4$ atau $x = 4$\n\nNilai bulat yang memenuhi adalah $\\{-4, -3, 3, 4\\}$, yaitu ada sebanyak $4$ bilangan bulat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 264,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "1. Daerah asal f dan g adalah himpunan semua bilangan real positif."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter fungsi logaritma ekstremum",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis kemonotonan kurva logaritma, sumbu simetri fungsi kuadrat pada numerus, dan penentuan konstanta fungsi secara terintegrasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan suatu fungsi logaritma $f(x) = {}^a\\log(kx - x^2)$ dengan basis $a > 1$ dan $k$ adalah konstanta real positif. Grafik fungsi $f(x)$ memiliki sumbu simetri pada garis $x = 6$ serta mencapai nilai maksimum sebesar $2$. Nilai dari $a + k$ adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Numerus $g(x) = kx - x^2$ merupakan parabola membuka ke bawah dengan sumbu simetri $x = -\\frac{k}{2(-1)} = \\frac{k}{2}$. Karena sumbu simetri $x = 6$, didapat $\\frac{k}{2} = 6 \\iff k = 12$. Nilai maksimum numerus terjadi pada $x = 6$, yaitu $g(6) = 12(6) - 6^2 = 36$. Karena basis $a > 1$, fungsi logaritma monoton naik sehingga nilai maksimum $f(x)$ terjadi saat numerus maksimum: $f_{\\max} = {}^a\\log(36) = 2 \\iff a^2 = 36$. Karena $a > 1$, maka $a = 6$. Diperoleh $a + k = 6 + 12 = 18$.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Siswa salah mengira $k = 6$ (mengambil langsung dari sumbu simetri tanpa membagi 2), sehingga $a + k = 6 + 6 = 12$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Siswa menghitung $k = 12$, tetapi menyimpulkan $a = \\sqrt{144} = 12$ akibat salah menghitung nilai puncak numerus."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Siswa salah menentukan nilai puncak numerus menjadi $64$ sehingga $a^2 = 64 \\implies a = 8$, lalu $k = 6$ menghasilkan $14$."
+        }
+      ],
+      "pembahasan": "Misalkan $g(x) = kx - x^2 = -x^2 + kx$ adalah numerus dari $f(x)$.\n\n1. Sumbu simetri dari fungsi kuadrat $g(x)$ adalah:\n$$x = -\\frac{b}{2a_{\\text{kuadrat}}} = -\\frac{k}{2(-1)} = \\frac{k}{2}$$\nDiketahui sumbu simetri berada di $x = 6$:\n$$\\frac{k}{2} = 6 \\implies k = 12$$\n\n2. Fungsi numerus menjadi $g(x) = 12x - x^2$. Nilai maksimum numerus tercapai pada sumbu simetrinya ($x = 6$):\n$$g(6) = 12(6) - 6^2 = 72 - 36 = 36$$\n\n3. Karena basis $a > 1$, fungsi logaritma $f(x) = {}^a\\log(g(x))$ bersifat monoton naik. Oleh karena itu, $f(x)$ mencapai nilai maksimum ketika $g(x)$ mencapai nilai maksimumnya:\n$$f_{\\max} = {}^a\\log(36)$$\n\nDiketahui $f_{\\max} = 2$, sehingga:\n$${}^a\\log(36) = 2 \\iff a^2 = 36$$\nKarena syarat basis logaritma $a > 1$, maka $a = 6$.\n\n4. Menghitung nilai $a + k$:\n$$a + k = 6 + 12 = 18$$\n\nJadi, nilai dari $a + k$ adalah $18$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 273,
+        "bagian": "Penerapan Konsep",
+        "nomor": "9",
+        "teks": "Menurut Harry George Armstrong, daerah yang sesuai dengan tubuh manusia adalah daerah berketinggian maksimum 14,9 km di atas permukaan laut. Berapa tekanan atmosfer yang masih dapat diterima manusia?",
+        "jawaban": "sekitar 11,9 kPa",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi rasio tekanan atmosfer",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis relasi logaritma alami dua titik ketinggian berbeda untuk mengevaluasi rasio tekanan udara tanpa menghitung nilai eksponensial mentah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara tekanan udara $P$ (dalam $\\text{kPa}$) dan ketinggian tempat $h$ (dalam $\\text{km}$) di atas permukaan laut dimodelkan oleh persamaan logaritma alami:\n$$\\ln\\left(\\frac{P}{100}\\right) = -\\frac{h}{7}$$\nSebuah wahana penelitian mengukur tekanan udara pada ketinggian $h_1 = 2,1\\text{ km}$ dan mencatat tekanan sebesar $P_1$. Wahana tersebut kemudian naik ke ketinggian $h_2 = 9,1\\text{ km}$ dan mencatat tekanan sebesar $P_2$. Rasio tekanan udara $\\frac{P_2}{P_1}$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{e}$",
+      "alasan_benar": "Pengurangan kedua persamaan logaritma menghasilkan $\\ln(P_2/P_1) = -(9,1 - 2,1)/7 = -1$, sehingga rasio $P_2/P_1 = e^{-1} = \\frac{1}{e}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{e^2}$",
+          "alasan": "Salah menghitung selisih ketinggian menjadi 14 km sehingga didapat pangkat -2."
+        },
+        {
+          "teks": "$e$",
+          "alasan": "Terbalik menempatkan pembilang dan penyebut pada rasio tekanan sehingga menghasilkan nilai resiprokal."
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "Keliru menganggap basis fungsi adalah logaritma umum (basis 10) bukan logaritma alami (basis e)."
+        }
+      ],
+      "pembahasan": "Diketahui model: $\\ln\\left(\\frac{P}{100}\\right) = -\\frac{h}{7}$.\n1. Untuk ketinggian $h_1 = 2,1\\text{ km}$:\n$$\\ln P_1 - \\ln 100 = -\\frac{2,1}{7} = -0,3$$\n2. Untuk ketinggian $h_2 = 9,1\\text{ km}$:\n$$\\ln P_2 - \\ln 100 = -\\frac{9,1}{7} = -1,3$$\n3. Kurangkan kedua persamaan:\n$$(\\ln P_2 - \\ln 100) - (\\ln P_1 - \\ln 100) = -1,3 - (-0,3)$$\n$$\\ln\\left(\\frac{P_2}{P_1}\\right) = -1,0 = -1$$\n4. Berdasarkan definisi logaritma alami (basis $e$):\n$$\\frac{P_2}{P_1} = e^{-1} = \\frac{1}{e}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 265,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan b adalah bilangan positif dengan b ≠ 1. Jika M, N, dan p sembarang bilangan real dengan M > 0 dan N > 0, maka berlaku: jika b log M = b log N, maka M = N"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi validitas penyelesaian logaritma",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi keabsahan argumen penyelesaian matematika dengan mengidentifikasi pelanggaran syarat numerus fungsi logaritma.",
+      "stimulus": "Seorang siswa menyelesaikan persamaan logaritma ${}^3\\log(x - 2) + {}^3\\log(x - 4) = 1$ dengan tahapan berikut:\n- **Langkah 1:** Menggunakan sifat penjumlahan: ${}^3\\log((x - 2)(x - 4)) = 1$\n- **Langkah 2:** Mengubah ke bentuk eksponen: $(x - 2)(x - 4) = 3^1$\n- **Langkah 3:** Menjabarkan persamaan kuadrat: $x^2 - 6x + 8 = 3 \\iff x^2 - 6x + 5 = 0$\n- **Langkah 4:** Memfaktorkan: $(x - 5)(x - 1) = 0$, diperoleh $x = 5$ atau $x = 1$\n- **Langkah 5:** Menyimpulkan bahwa himpunan penyelesaian persamaan tersebut adalah $\\{1, 5\\}$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Evaluasi yang tepat terhadap hasil penyelesaian siswa tersebut adalah ....",
+      "jawaban_benar": "Kesimpulan salah pada Langkah 5 karena $x = 1$ menyebabkan numerus bernilai negatif sehingga penyelesaiannya hanya $x = 5$",
+      "alasan_benar": "Untuk $x = 1$, nilai numerus $(x - 2) = -1 < 0$ dan $(x - 4) = -3 < 0$, melanggar syarat numerus logaritma real.",
+      "distraktor": [
+        {
+          "teks": "Kesimpulan benar karena kedua nilai $x = 1$ dan $x = 5$ memenuhi persamaan kuadrat pada Langkah 3",
+          "alasan": "Mengabaikan syarat eksistensi numerus fungsi logaritma awal dan hanya terpaku pada persamaan kuadrat turunan."
+        },
+        {
+          "teks": "Kesimpulan salah sejak Langkah 1 karena sifat penjumlahan logaritma hanya berlaku jika basisnya berbeda",
+          "alasan": "Keliru memahami sifat penjumlahan logaritma yang justru mewajibkan basisnya bernilai sama."
+        },
+        {
+          "teks": "Kesimpulan salah pada Langkah 2 karena seharusnya bentuk eksponennya adalah $(x - 2)(x - 4) = 1^3$",
+          "alasan": "Tertukar antara penempatan basis dan hasil nilai logaritma saat konversi ke bentuk eksponensial."
+        }
+      ],
+      "pembahasan": "1. Pada Langkah 1 hingga 4 aljabar penyelesaian telah benar.\n2. Namun, berdasarkan Definisi dan Sifat 6.2, fungsi ${}^3\\log(u)$ hanya terdefinisi untuk numerus positif ($u > 0$).\n3. Syarat numerus:\n- $x - 2 > 0 \\implies x > 2$\n- $x - 4 > 0 \\implies x > 4$\nIrisan kedua syarat mengharuskan $x > 4$.\n4. Uji nilai yang diperoleh:\n- Untuk $x = 5$: $5 > 4$ (memenuhi syarat).\n- Untuk $x = 1$: $1 < 4$, menyebabkan $(1 - 2) = -1 < 0$ (tidak memenuhi syarat numerus).\n5. Jadi, Langkah 5 salah menarik kesimpulan karena $x = 1$ bukan penyelesaian valid; solusinya hanya $x = 5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 268,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kekuatan kata sandi acak yang diukur dengan entropi informasi adalah logaritma basis 2 atau log 2 dari banyak kata sandi yang mungkin, dengan asumsi setiap simbol dalam kata sandi dihasilkan secara independen. Jadi, entropi informasi kata sandi acak ( H ) diberikan oleh rumus berikut. H = 2 log N L = L 2 log N"
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan optimasi entropi kata sandi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perancangan panjang karakter kata sandi baru untuk mengimbangi pengurangan ruang simbol agar entropi keamanan tetap terjaga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah sistem autentikasi perbankan awalnya menggunakan kata sandi dengan panjang $L_1 = 8$ karakter yang dipilih secara acak dari sekumpulan $N_1 = 64$ simbol. Untuk mempermudah input pengguna pada perangkat layar sentuh, penyedia layanan memutuskan untuk mempersempit pilihan simbol menjadi hanya $N_2 = 8$ simbol. Agar entropi informasi ($H$) dari kata sandi baru minimal sama dengan kekuatan kata sandi lama, panjang karakter minimal ($L_2$) yang harus dirancang adalah ....",
+      "jawaban_benar": "$16\\text{ karakter}$",
+      "alasan_benar": "$H_1 = 8 \\cdot {}^2\\log 64 = 8 \\times 6 = 48\\text{ bit}$. Untuk sistem baru: $L_2 \\cdot {}^2\\log 8 \\ge 48 \\iff 3L_2 \\ge 48 \\iff L_2 \\ge 16$.",
+      "distraktor": [
+        {
+          "teks": "$12\\text{ karakter}$",
+          "alasan": "Keliru membagi $48$ dengan $4$ bukan dengan basis logaritma ${}^2\\log 8 = 3$."
+        },
+        {
+          "teks": "$64\\text{ karakter}$",
+          "alasan": "Menggunakan perkalian linear proporsi simbol tanpa menerapkan relasi logaritmik."
+        },
+        {
+          "teks": "$24\\text{ karakter}$",
+          "alasan": "Keliru menganggap ${}^2\\log 8 = 2$ sehingga $48 / 2 = 24$."
+        }
+      ],
+      "pembahasan": "Rumus entropi informasi: $H = L \\cdot {}^2\\log N$.\n1. Hitung entropi sistem mula-mula:\n$$H_1 = L_1 \\cdot {}^2\\log(N_1) = 8 \\cdot {}^2\\log(64)$$\nKarena $64 = 2^6$, maka ${}^2\\log 64 = 6$.\n$$H_1 = 8 \\times 6 = 48\\text{ bit}$$\n2. Tentukan syarat entropi sistem baru:\n$$H_2 \\ge H_1 \\implies L_2 \\cdot {}^2\\log(N_2) \\ge 48$$\n3. Diketahui $N_2 = 8 = 2^3$, sehingga ${}^2\\log 8 = 3$:\n$$L_2 \\cdot 3 \\ge 48$$\n$$L_2 \\ge \\frac{48}{3} = 16$$\nJadi, panjang karakter minimal yang harus dirancang adalah $16$ karakter.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b06-p0273-latihan-a-8",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis selisih ketinggian model atmosfer",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis perbandingan ketinggian dari rasio dua nilai tekanan atmosfer menggunakan sifat operasi logaritma alami.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara tekanan udara $P$ (dalam kPa) dan ketinggian tempat $h$ (dalam km) di atas permukaan laut dimodelkan oleh persamaan logaritma alami:\n$$\\ln\\left(\\frac{P}{120}\\right) = -\\frac{h}{8}$$\nDua stasiun meteorologi $A$ dan $B$ mengukur tekanan udara pada saat yang sama. Stasiun $A$ mencatat tekanan udara sebesar $60\\text{ kPa}$, sedangkan stasiun $B$ yang berada pada tempat lebih tinggi mencatat tekanan udara sebesar $15\\text{ kPa}$. Selisih ketinggian antara stasiun $B$ dan stasiun $A$ ($h_B - h_A$) adalah ....",
+      "jawaban_benar": "$16\\ln 2\\text{ km}$",
+      "alasan_benar": "Dari model $\\ln(P/120) = -h/8$, diperoleh fungsi ketinggian $h = -8\\ln(P/120) = 8\\ln(120/P)$. Maka $h_A = 8\\ln(120/60) = 8\\ln 2$ dan $h_B = 8\\ln(120/15) = 8\\ln 8 = 8\\ln(2^3) = 24\\ln 2$. Selisih ketinggiannya adalah $h_B - h_A = 24\\ln 2 - 8\\ln 2 = 16\\ln 2\\text{ km}$.",
+      "distraktor": [
+        {
+          "teks": "$8\\ln 2\\text{ km}$",
+          "alasan": "Siswa hanya menghitung ketinggian stasiun $A$ ($8\\ln 2$) dan lupa mengurangkannya dari ketinggian stasiun $B$."
+        },
+        {
+          "teks": "$24\\ln 2\\text{ km}$",
+          "alasan": "Siswa hanya menghitung ketinggian stasiun $B$ ($24\\ln 2$) tanpa menghitung selisihnya terhadap stasiun $A$."
+        },
+        {
+          "teks": "$32\\ln 2\\text{ km}$",
+          "alasan": "Siswa menjumlahkan kedua ketinggian ($h_B + h_A = 24\\ln 2 + 8\\ln 2$) bukan mencari selisihnya."
+        }
+      ],
+      "pembahasan": "Dari rumus pemodelan:\n$$\\ln\\left(\\frac{P}{120}\\right) = -\\frac{h}{8} \\iff h = 8\\ln\\left(\\frac{120}{P}\\right)$$\nKetinggian stasiun $A$ ($P_A = 60\\text{ kPa}$):\n$$h_A = 8\\ln\\left(\\frac{120}{60}\\right) = 8\\ln 2$$\nKetinggian stasiun $B$ ($P_B = 15\\text{ kPa}$):\n$$h_B = 8\\ln\\left(\\frac{120}{15}\\right) = 8\\ln 8 = 8\\ln(2^3) = 24\\ln 2$$\nSelisih ketinggian antara stasiun $B$ dan stasiun $A$:\n$$h_B - h_A = 24\\ln 2 - 8\\ln 2 = 16\\ln 2\\text{ km}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 266,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "jika 0 < b < 1 dan b log M < b log N , maka M > N"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis pertidaksamaan logaritma rasional",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi pertidaksamaan logaritma dengan basis pecahan antara 0 dan 1 yang melibatkan fungsi rasional dan pengujian syarat numerus.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Himpunan semua bilangan real $x$ yang memenuhi pertidaksamaan logaritma:\n$${}^{\\frac{1}{3}}\\log\\left(\\frac{x - 1}{x + 5}\\right) \\ge -1$$\nadalah ....",
+      "jawaban_benar": "$\\{x \\mid x \\le -8 \\text{ atau } x > 1,\\, x \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Syarat numerus mengharuskan $(x - 1)/(x + 5) > 0$, yaitu $x < -5$ atau $x > 1$. Karena basis $b = 1/3$ berada pada interval $0 < b < 1$, tanda pertidaksamaan berbalik menjadi $(x - 1)/(x + 5) \\le (1/3)^{-1} = 3$. Penyelesaian dari $(x - 1)/(x + 5) - 3 \\le 0$ menghasilkan $(x + 8)/(x + 5) \\ge 0$, yaitu $x \\le -8$ atau $x > -5$. Irisan kedua syarat tersebut adalah $x \\le -8$ atau $x > 1$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\mid x \\le -8 \\text{ atau } x > -5,\\, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa lupa mengiriskan hasil pertidaksamaan dengan syarat keberadaan numerus logaritma $((x - 1)/(x + 5) > 0)$."
+        },
+        {
+          "teks": "$\\{x \\mid -8 \\le x < -5,\\, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa lupa membalik tanda pertidaksamaan saat mengoperasikan basis antara 0 dan 1, sehingga menyelesaikan $(x - 1)/(x + 5) \\ge 3$."
+        },
+        {
+          "teks": "$\\{x \\mid x < -5 \\text{ atau } x \\ge 8,\\, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa melakukan kesalahan tanda aljabar saat memindahkan konstanta 3 sehingga mendapatkan pembuat nol $x = 8$ bukan $x = -8$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan syarat numerus:\n$$\\frac{x - 1}{x + 5} > 0 \\iff x < -5 \\text{ atau } x > 1$$\n\nLangkah 2: Selesaikan pertidaksamaan logaritma. Karena basis $0 < \\frac{1}{3} < 1$, arah pertidaksamaan berbalik:\n$${}^{\\frac{1}{3}}\\log\\left(\\frac{x - 1}{x + 5}\\right) \\ge -1 \\iff \\frac{x - 1}{x + 5} \\le \\left(\\frac{1}{3}\\right)^{-1} = 3$$\n\nLangkah 3: Selesaikan pertidaksamaan pecahan:\n$$\\frac{x - 1}{x + 5} - 3 \\le 0 \\iff \\frac{x - 1 - 3(x + 5)}{x + 5} \\le 0$$\n$$\\frac{-2x - 16}{x + 5} \\le 0 \\iff \\frac{-2(x + 8)}{x + 5} \\le 0 \\iff \\frac{x + 8}{x + 5} \\ge 0$$\nPembuat nol adalah $x = -8$ dan $x = -5$. Nilai yang memenuhi adalah $x \\le -8$ atau $x > -5$.\n\nLangkah 4: Iriskan dengan syarat numerus:\n$$(x \\le -8 \\text{ atau } x > -5) \\cap (x < -5 \\text{ atau } x > 1)$$\n- Untuk $x \\le -8$, seluruh interval ini terletak pada $x < -5$, sehingga memenuhi.\n- Untuk interval $(-5, \\infty)$, irisannya dengan $(x < -5 \\text{ atau } x > 1)$ adalah $x > 1$.\n\nDengan demikian, himpunan penyelesaiannya adalah $\\{x \\mid x \\le -8 \\text{ atau } x > 1,\\, x \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 264,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Grafik fungsi f dan g mendekati sumbu- y , tetapi tidak menyentuh sumbu- y . Dengan demikian, sumbu- y (atau x = 0) merupakan asimtot tegak dari f dan g ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi fungsi logaritma kurva",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi geometris beberapa karakteristik grafik sekaligus untuk merekonstruksi parameter fungsi dan menghitung nilai fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu fungsi logaritma memiliki bentuk umum $f(x) = {}^a\\log(x - h) + k$ dengan $a > 0$ dan $a \\ne 1$. Grafik fungsi $f(x)$ memiliki asimtot tegak pada garis $x = 3$, memotong sumbu-$x$ di titik $(7, 0)$, serta melalui titik $(19, 2)$. Nilai dari $f(67)$ adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Dari asimtot tegak diperoleh $h = 3$. Titik potong sumbu-$x$ memberikan $k = -{}^a\\log 4$, dan titik $(19, 2)$ menghasilkan persamaan ${}^a\\log 16 - {}^a\\log 4 = 2 \\iff {}^a\\log 4 = 2 \\iff a = 2$. Dengan demikian $k = -2$, sehingga $f(67) = {}^2\\log(67 - 3) - 2 = 6 - 2 = 4$.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Siswa lupa memperhitungkan translasi vertikal $k = -2$, sehingga hanya menghitung nilai ${}^2\\log 64 = 6$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Siswa keliru menentukan tanda pergeseran vertikal menjadi $k = +2$, menghasilkan $6 + 2 = 8$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Siswa melakukan kesalahan perhitungan logaritma dasar dengan menganggap ${}^2\\log 64 = 4$, lalu mengurangkannya dengan 2."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai $h$.\nAsimtot tegak grafik fungsi logaritma terjadi ketika nilai numerus sama dengan nol, yaitu $x - h = 0$. Karena diketahui garis asimtot tegaknya adalah $x = 3$, maka diperoleh:\n$$h = 3$$\nFungsi menjadi $f(x) = {}^a\\log(x - 3) + k$.\n\nLangkah 2: Menggunakan titik potong sumbu-$x$ pada $(7, 0)$.\n$$f(7) = {}^a\\log(7 - 3) + k = 0$$\n$${}^a\\log(4) + k = 0 \\implies k = -{}^a\\log 4$$\n\nLangkah 3: Menggunakan titik $(19, 2)$ untuk mencari basis $a$ dan nilai $k$.\n$$f(19) = {}^a\\log(19 - 3) + k = 2$$\n$${}^a\\log(16) + (-{}^a\\log 4) = 2$$\nBerdasarkan identitas logaritma pembagian:\n$${}^a\\log\\left(\\frac{16}{4}\\right) = 2$$\n$${}^a\\log 4 = 2 \\implies a^2 = 4$$\nKarena basis $a > 0$ dan $a \\ne 1$, diperoleh $a = 2$.\nMaka nilai pergeseran vertikal adalah:\n$$k = -{}^2\\log 4 = -2$$\nRumus fungsi secara lengkap adalah $f(x) = {}^2\\log(x - 3) - 2$.\n\nLangkah 4: Menghitung nilai $f(67)$.\n$$f(67) = {}^2\\log(67 - 3) - 2 = {}^2\\log(64) - 2 = 6 - 2 = 4$$\nJadi, nilai dari $f(67)$ adalah $4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 265,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "jika b log M = b log N , maka M = N"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi keabsahan akar persamaan logaritma",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap keabsahan argumen dua pihak mengenai banyaknya akar penyelesaian berdasarkan syarat batas numerus fungsi logaritma.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua orang siswa, Budi dan Sinta, menganalisis banyaknya penyelesaian real dari persamaan logaritma:\n$${}^2\\log(x^2 - 2x) = {}^2\\log(4x - 5)$$\nBudi menyatakan ada 2 penyelesaian real, yaitu $x = 1$ dan $x = 5$, karena kedua nilai tersebut diperoleh dari persamaan aljabar $x^2 - 2x = 4x - 5$.\nSinta menyatakan hanya ada 1 penyelesaian real, yaitu $x = 5$, karena $x = 1$ tidak memenuhi syarat numerus logaritma.\n\nEvaluasi yang paling tepat terhadap pernyataan kedua siswa tersebut adalah ....",
+      "jawaban_benar": "Argumen Sinta benar karena untuk $x = 1$ nilai numerus menjadi negatif sehingga fungsi logaritma tidak terdefinisi pada bilangan real.",
+      "alasan_benar": "Menyamakan numerus menghasilkan $x^2 - 6x + 5 = 0$ dengan akar $x = 1$ dan $x = 5$. Namun, syarat numerus mensyaratkan $x^2 - 2x > 0$ dan $4x - 5 > 0$. Nilai $x = 1$ menghasilkan $1^2 - 2(1) = -1 < 0$, sehingga bukan solusi yang sah.",
+      "distraktor": [
+        {
+          "teks": "Argumen Budi benar karena pemfaktoran persamaan kuadrat telah dilakukan secara benar dan menghasilkan dua nilai real berbeda.",
+          "alasan": "Siswa mengabaikan syarat keharusan numerus bernilai positif pada fungsi logaritma."
+        },
+        {
+          "teks": "Argumen keduanya salah karena persamaan kuadrat $x^2 - 6x + 5 = 0$ memiliki nilai diskriminan negatif sehingga tidak memiliki akar real.",
+          "alasan": "Siswa salah menghitung diskriminan persamaan kuadrat ($D = 36 - 20 = 16 > 0$)."
+        },
+        {
+          "teks": "Argumen keduanya salah karena baik $x = 1$ maupun $x = 5$ tidak memenuhi persamaan awal jika disubstitusikan kembali.",
+          "alasan": "Siswa keliru menguji nilai $x = 5$, padahal $x = 5$ menghasilkan ${}^2\\log(15) = {}^2\\log(15)$ yang valid."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan penyelesaian persamaan aljabar dari kesamaan numerus.\nBerdasarkan identitas jika ${}^b\\log M = {}^b\\log N$, maka $M = N$, diperoleh:\n$$x^2 - 2x = 4x - 5$$\n$$x^2 - 6x + 5 = 0$$\n$$(x - 1)(x - 5) = 0$$\nMaka diperoleh calon penyelesaian $x = 1$ atau $x = 5$.\n\nLangkah 2: Menentukan syarat numerus fungsi logaritma.\nDefinisi fungsi logaritma mengharuskan numerus bernilai positif ($M > 0$ dan $N > 0$):\n1) $x^2 - 2x > 0 \\iff x(x - 2) > 0 \\iff x < 0$ atau $x > 2$\n2) $4x - 5 > 0 \\iff x > \\frac{5}{4}$\nIrisan kedua syarat tersebut adalah $x > 2$.\n\nLangkah 3: Menguji calon penyelesaian terhadap syarat numerus.\n- Untuk $x = 1$:\nNumerus pertama: $1^2 - 2(1) = -1 \\le 0$ (tidak memenuhi syarat numerus).\nNumerus kedua: $4(1) - 5 = -1 \\le 0$ (tidak memenuhi syarat numerus).\nKarena logaritma dari bilangan negatif tidak terdefinisi pada himpunan bilangan real, $x = 1$ bukan penyelesaian.\n- Untuk $x = 5$:\nNumerus pertama: $5^2 - 2(5) = 15 > 0$ (memenuhi).\nNumerus kedua: $4(5) - 5 = 15 > 0$ (memenuhi).\nNilai $x = 5$ berada dalam daerah $x > 2$, sehingga $x = 5$ merupakan penyelesaian yang sah.\n\nLangkah 4: Mengevaluasi klaim.\nArgumen Sinta benar karena memperhitungkan syarat numerus yang menggugurkan $x = 1$, sedangkan Budi salah karena mengabaikan syarat domain logaritma.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

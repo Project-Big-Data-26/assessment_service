@@ -17,6 +17,10 @@ from dotenv import dotenv_values
 from .config import PROJECT_ROOT
 
 
+# Koneksi putus di tengah jalan (ReadError/ConnectError/timeout) sering terjadi lewat proxy; ulangi otomatis.
+NETWORK_RETRIES = 3
+
+
 class NineRouterError(RuntimeError):
     pass
 
@@ -163,6 +167,16 @@ class NineRouterClient:
         if json_mode:
             payload["response_format"] = {"type": "json_object"}
         started = time.monotonic()
+        for attempt in range(NETWORK_RETRIES + 1):
+            try:
+                return self._chat_once(payload, started)
+            except NineRouterError as exc:
+                if not isinstance(exc.__cause__, httpx.TransportError) or attempt == NETWORK_RETRIES:
+                    raise
+                time.sleep(3 * (attempt + 1))
+        raise NineRouterError("tidak tercapai")    # pragma: no cover
+
+    def _chat_once(self, payload: dict[str, Any], started: float) -> ChatResult:
         try:
             if self.settings.stream:
                 text, model_name, usage, finish = self._read_stream(payload)
