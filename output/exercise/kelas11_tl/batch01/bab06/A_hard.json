@@ -7,8 +7,8 @@
   "skill_versi": "v1",
   "generator": "9router:ag/gemini-3.8-flash",
   "bergambar": false,
-  "kapasitas_kurang": true,
-  "alasan_kapasitas": "5 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
   "soal": [
     {
       "id": "kelas11_tl-b06-a-hard-bt01-001",
@@ -805,6 +805,48 @@
         }
       ],
       "pembahasan": "Langkah 1: Menentukan penyelesaian persamaan aljabar dari kesamaan numerus.\nBerdasarkan identitas jika ${}^b\\log M = {}^b\\log N$, maka $M = N$, diperoleh:\n$$x^2 - 2x = 4x - 5$$\n$$x^2 - 6x + 5 = 0$$\n$$(x - 1)(x - 5) = 0$$\nMaka diperoleh calon penyelesaian $x = 1$ atau $x = 5$.\n\nLangkah 2: Menentukan syarat numerus fungsi logaritma.\nDefinisi fungsi logaritma mengharuskan numerus bernilai positif ($M > 0$ dan $N > 0$):\n1) $x^2 - 2x > 0 \\iff x(x - 2) > 0 \\iff x < 0$ atau $x > 2$\n2) $4x - 5 > 0 \\iff x > \\frac{5}{4}$\nIrisan kedua syarat tersebut adalah $x > 2$.\n\nLangkah 3: Menguji calon penyelesaian terhadap syarat numerus.\n- Untuk $x = 1$:\nNumerus pertama: $1^2 - 2(1) = -1 \\le 0$ (tidak memenuhi syarat numerus).\nNumerus kedua: $4(1) - 5 = -1 \\le 0$ (tidak memenuhi syarat numerus).\nKarena logaritma dari bilangan negatif tidak terdefinisi pada himpunan bilangan real, $x = 1$ bukan penyelesaian.\n- Untuk $x = 5$:\nNumerus pertama: $5^2 - 2(5) = 15 > 0$ (memenuhi).\nNumerus kedua: $4(5) - 5 = 15 > 0$ (memenuhi).\nNilai $x = 5$ berada dalam daerah $x > 2$, sehingga $x = 5$ merupakan penyelesaian yang sah.\n\nLangkah 4: Mengevaluasi klaim.\nArgumen Sinta benar karena memperhitungkan syarat numerus yang menggugurkan $x = 1$, sedangkan Budi salah karena mengabaikan syarat domain logaritma.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-a-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 271,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Selain untuk pemodelan pertumbuhan, fungsi logaritma juga digunakan dalam pemodelan peluruhan/penurunan dengan rumus"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan kesetaraan peluruhan nilai",
+      "jumlah_langkah": 5,
+      "alasan_level": "Soal menuntut siswa memformulasikan dua fungsi peluruhan eksponensial-logaritma dengan parameter berbeda, lalu menganalisis dan mengevaluasi titik temu kesetaraan nilai kedua fungsi melalui persamaan logaritma.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai jual dua unit mesin pabrik, yaitu mesin A dan mesin B, mengalami penyusutan seiring berjalannya waktu $t$ (dalam tahun) mengikuti model peluruhan $H(t) = c e^{-kt}$. Mesin A dibeli baru seharga Rp80 juta dan setelah 2 tahun nilainya menjadi Rp40 juta. Sementara itu, mesin B dibeli baru seharga Rp270 juta dan setelah 2 tahun nilainya menjadi Rp90 juta. Jika laju peluruhan masing-masing mesin konstan, setelah berapa tahun pemakaian nilai jual kedua mesin tersebut akan bernilai sama?",
+      "jawaban_benar": "$6\\text{ tahun}$",
+      "alasan_benar": "Menyamakan kedua fungsi peluruhan $H_A(t) = H_B(t)$ menghasilkan $80 \\cdot 2^{-t/2} = 270 \\cdot 3^{-t/2}$, yang ekuivalen dengan $(2/3)^{t/2} = 8/27 = (2/3)^3$, sehingga $t/2 = 3$ atau $t = 6\\text{ tahun}$.",
+      "distraktor": [
+        {
+          "teks": "$3\\text{ tahun}$",
+          "alasan": "Siswa lupa memperhitungkan faktor periode 2 tahun pada eksponen, sehingga langsung menyimpulkan $t = 3$ dari pangkat $(2/3)^3$."
+        },
+        {
+          "teks": "$4\\text{ tahun}$",
+          "alasan": "Siswa salah saat menyederhanakan rasio perpangkatan dan mengira eksponen yang terbentuk adalah $t/2 = 2$ sehingga $t = 4$."
+        },
+        {
+          "teks": "$8\\text{ tahun}$",
+          "alasan": "Siswa keliru mengidentifikasi $8/27$ sebagai $(2/3)^4$ sehingga menyimpulkan $t/2 = 4$ atau $t = 8$."
+        }
+      ],
+      "pembahasan": "Berdasarkan model peluruhan $H(t) = c e^{-kt}$:\n\n1. **Untuk Mesin A:**\n- Pada saat $t = 0$, $H_A(0) = c_A = 80$.\n- Pada saat $t = 2$, $H_A(2) = 80 e^{-2k_A} = 40 \\implies e^{-2k_A} = \\frac{1}{2} \\implies e^{-k_A} = 2^{-1/2}$.\n- Rumus fungsi nilainya adalah $H_A(t) = 80(2^{-1/2})^t = 80 \\cdot 2^{-t/2}$.\n\n2. **Untuk Mesin B:**\n- Pada saat $t = 0$, $H_B(0) = c_B = 270$.\n- Pada saat $t = 2$, $H_B(2) = 270 e^{-2k_B} = 90 \\implies e^{-2k_B} = \\frac{1}{3} \\implies e^{-k_B} = 3^{-1/2}$.\n- Rumus fungsi nilainya adalah $H_B(t) = 270(3^{-1/2})^t = 270 \\cdot 3^{-t/2}$.\n\n3. **Menentukan Waktu Nilai Jual Sama ($H_A(t) = H_B(t)$):**\n$$\n\\begin{aligned}\n80 \\cdot 2^{-t/2} &= 270 \\cdot 3^{-t/2} \\\\\n\\frac{80}{270} &= \\frac{3^{-t/2}}{2^{-t/2}} \\\\\n\\frac{8}{27} &= \\left(\\frac{2}{3}\\right)^{t/2} \\\\\n\\left(\\frac{2}{3}\\right)^3 &= \\left(\\frac{2}{3}\\right)^{t/2}\n\\end{aligned}\n$$\n\nKarena bilangan pokok kedua ruas sama, diperoleh:\n$$\n\\frac{t}{2} = 3 \\implies t = 6\n$$\n\nJadi, nilai jual kedua mesin tersebut akan bernilai sama setelah $6\\text{ tahun}$ pemakaian.",
       "catatan": null,
       "dipaksa_kuota": false
     }
