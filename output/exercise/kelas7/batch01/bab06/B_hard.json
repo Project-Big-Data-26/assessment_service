@@ -7,8 +7,8 @@
   "skill_versi": "v1",
   "generator": "9router:ag/gemini-3.8-flash",
   "bergambar": false,
-  "kapasitas_kurang": true,
-  "alasan_kapasitas": "7 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
   "soal": [
     {
       "id": "kelas7-b06-b-hard-bt01-001",
@@ -553,6 +553,90 @@
         }
       ],
       "pembahasan": "Langkah-langkah evaluasi:\n1. **Identifikasi Variabel**:\n   - Tabel 1: Variabel yang diukur adalah 'Banyak Aplikasi Permainan Online'. Data ini berupa bilangan hasil pencacahan (kuantitas nyata), sehingga merupakan **data numerik**.\n   - Tabel 2: Variabel yang diukur adalah 'Nama Aplikasi Permainan Online Favorit'. Data ini berbentuk kata/kualitatif (nama objek), sehingga merupakan **data kategorik**.\n2. **Evaluasi Pernyataan Alif**: Salah. Nama aplikasi adalah data kategorik, sehingga tidak memiliki nilai rata-rata jenis aplikasi.\n3. **Evaluasi Pernyataan Cahyo**: Salah. Angka 0 hingga 6 pada Tabel 1 bukan label identitas (seperti nomor urut absen atau urutan kelas), melainkan banyaknya unit aplikasi yang dimiliki tiap siswa.\n4. **Evaluasi Pernyataan Dina**: Salah. Pengurangan frekuensi hanya membandingkan banyak pemilih, bukan mengubah variabel 'nama aplikasi' menjadi data numerik.\n5. **Evaluasi Pernyataan Bima**: Benar. Karena banyak aplikasi adalah data numerik, operasi perkalian nilai variabel dengan frekuensinya serta penjumlahannya bermakna matematis:\n   $$\\text{Total} = (0 \\times 1) + (1 \\times 3) + (2 \\times 7) + (3 \\times 10) + (4 \\times 8) + (5 \\times 2) + (6 \\times 1)$$\n   $$\\text{Total} = 0 + 3 + 14 + 30 + 32 + 10 + 6 = 95 \\text{ aplikasi}$$\n\nDengan demikian, pernyataan Bima adalah evaluasi yang paling tepat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk urutan kelas data 7-1, 7-2, 7-3, walaupun jawabannya berupa bilangan yaitu urutan kelas, jenis data ini adalah data kategorik, bukan numerik karena bilangan pada peringkat tidak dapat dioperasikan dengan operasi matematika seperti operasi tambah atau kurang. Contoh data kategorik lainnya yang berupa bilangan adalah nomor absen siswa di kelas kalian."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "investigasi kesesuaian jenis data",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap keabsahan penerapan operasi rata-rata pada data numerik dibandingkan dengan data kategorik berbentuk bilangan angka kode label.",
+      "stimulus": "Dalam kegiatan survei literasi terhadap 30 siswa Kelas 7, diperoleh dua ringkasan data berikut:\n\n**Data A (Banyak Novel yang Dibaca dalam Sebulan)**\n| Banyak Novel | Frekuensi Siswa |\n| :---: | :---: |\n| 1 | 8 |\n| 2 | 12 |\n| 3 | 6 |\n| 4 | 4 |\n\n**Data B (Kode Genre Novel Paling Diminati Siswa)**\n| Kode Genre | Keterangan Genre | Frekuensi Siswa |\n| :---: | :---: | :---: |\n| 1 | Fantasi | 10 |\n| 2 | Misteri | 11 |\n| 3 | Sains | 9 |\n\nSeorang siswa menghitung nilai rata-rata dari kedua kelompok data tersebut dan menyatakan bahwa:\n1. Rata-rata Data A adalah $2,2$ novel per siswa.\n2. Rata-rata Data B adalah $1,97$ sehingga genre rata-rata siswa mendekati genre Misteri (Kode 2).",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan sifat dan kaidah matematis jenis data, bagaimanakah evaluasi yang tepat terhadap analisis siswa tersebut?",
+      "jawaban_benar": "Analisis Data A tepat dan absah karena merupakan data numerik, sedangkan analisis Data B tidak absah secara matematis karena angka kode tersebut adalah data kategorik.",
+      "alasan_benar": "Data A menyajikan banyak novel (data numerik hasil pencacahan) sehingga perhitungan total novel $(8+24+18+16=66)$ dan rata-rata $(66/30=2,2)$ bermakna matematis. Data B menyajikan kode pengenal kelompok/genre (data kategorik) yang tidak dapat dikenai operasi matematika seperti penjumlahan atau pembagian nilai kode.",
+      "distraktor": [
+        {
+          "teks": "Kedua analisis tepat dan absah secara matematis karena seluruh nilainya berupa angka yang dapat dijumlahkan dan dibagi total frekuensi.",
+          "alasan": "Siswa mengabaikan konsep bahwa bilangan kode pada data kategorik hanya berfungsi sebagai label pembeda kategori, bukan nilai besaran yang dapat dihitung rata-ratanya."
+        },
+        {
+          "teks": "Analisis Data B tepat dan absah karena menunjukkan kecenderungan minat genre, sedangkan Data A tidak absah karena nilainya berupa bilangan bulat.",
+          "alasan": "Siswa keliru mengira bahwa data diskret tidak dapat dihitung rata-rata desimalnya serta salah memahami bahwa label kategorik dapat dicari nilai rata-ratanya."
+        },
+        {
+          "teks": "Kedua analisis tidak absah secara matematis karena perhitungan rata-rata hanya boleh dilakukan jika seluruh data dikumpulkan dari minimal 100 orang responden.",
+          "alasan": "Siswa mengasumsikan aturan ukuran sampel secara subjektif tanpa dasar konsep klasifikasi data numerik dan kategorik."
+        }
+      ],
+      "pembahasan": "Langkah evaluasi:\n1. Identifikasi Data A: Banyak novel yang dibaca merupakan data numerik (kuantitatif). Operasi perkalian frekuensi dan pembagian total frekuensi absah secara matematis:\n$\\text{Total novel} = (1 \\times 8) + (2 \\times 12) + (3 \\times 6) + (4 \\times 4) = 8 + 24 + 18 + 16 = 66$.\n$\\text{Rata-rata} = \\frac{66}{30} = 2,2$ novel per siswa (analisis absah).\n2. Identifikasi Data B: Kode genre novel (1, 2, 3) adalah data kategorik yang dinyatakan dengan bilangan sebagai label nama kelompok, bukan ukuran kuantitas.\n3. Berdasarkan konsep buku teks, data kategorik berupa bilangan tidak dapat dioperasikan secara matematika (tambah, kurang, atau bagi).\n4. Oleh karena itu, operasi rata-rata pada Data B tidak memiliki interpretasi atau makna matematis yang absah.\nKesimpulan: Analisis Data A absah, sedangkan analisis Data B tidak absah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Data Numerik : Data yang selalu berbentuk angka, misalnya tinggi badan, panjang nama, jumlah medali dalam olimpiade, jumlah gol dalam pertandingan sepakbola, suhu badan, dan lainnya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis komparasi representasi data",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penelaahan sifat dua representasi data berangka, pemilahan kelayakan operasi agregasi kuantitatif, dan penghitungan nilai rata-rata tertimbang.",
+      "stimulus": "Pelatih tim futsal sekolah mencatat performa dan identitas 20 siswa dalam dua tabel berikut:\n\n**Tabel 1: Banyak Gol Selama Turnamen**\n| Banyak Gol ($x$) | Frekuensi Pemain ($f$) |\n| :---: | :---: |\n| 1 | 5 |\n| 2 | 8 |\n| 3 | 4 |\n| 4 | 2 |\n| 5 | 1 |\n\n**Tabel 2: Nomor Punggung Pemain Berdasarkan Posisi Utama**\n| Posisi | Nomor Punggung yang Dipakai | Frekuensi Pemain |\n| :---: | :---: | :---: |\n| Kiper | 1, 20 | 2 |\n| Bertahan | 2, 3, 4, 5, 12, 14 | 6 |\n| Sayap | 6, 7, 8, 11, 13, 15, 17 | 7 |\n| Penyerang | 9, 10, 16, 18, 19 | 5 |\n\nPelatih bermaksud menghitung dua besaran:\n- Besaran I: Rata-rata banyak gol yang dicetak per pemain dari 20 pemain tersebut.\n- Besaran II: Rata-rata nomor punggung pemain untuk menentukan representasi nomor tengah tim.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan konsep klasifikasi data, evaluasilah besaran manakah yang absah secara matematis untuk dihitung serta berapakah nilainya jika absah?",
+      "jawaban_benar": "Hanya Besaran I yang absah dihitung, dengan nilai rata-rata sebesar $2,3$ gol per pemain.",
+      "alasan_benar": "Banyak gol adalah data numerik sehingga absah dihitung rata-ratanya: total gol adalah $(1\\times 5)+(2\\times 8)+(3\\times 4)+(4\\times 2)+(5\\times 1) = 5+16+12+8+5 = 46$, dan rata-ratanya $46/20 = 2,3$. Nomor punggung pada Tabel 2 adalah data kategorik (identitas pengenal), sehingga operasi rata-rata pada Besaran II tidak bermakna secara matematis.",
+      "distraktor": [
+        {
+          "teks": "Hanya Besaran I yang absah dihitung, dengan nilai rata-rata sebesar $3,0$ gol per pemain.",
+          "alasan": "Siswa salah menghitung rata-rata dengan hanya merata-ratakan nilai sumbu $x$ yaitu $(1+2+3+4+5)/5 = 3,0$ tanpa memperhitungkan bobot frekuensi tiap nilai."
+        },
+        {
+          "teks": "Kedua besaran absah dihitung karena keduanya disajikan dalam bentuk angka pada tabel.",
+          "alasan": "Siswa terkecoh menganggap semua data yang berwujud bilangan merupakan data numerik yang dapat dioperasikan secara matematis."
+        },
+        {
+          "teks": "Hanya Besaran II yang absah dihitung, karena nomor punggung memiliki rentang nilai yang seragam dari 1 sampai 20.",
+          "alasan": "Siswa tertukar antara makna data numerik dan data kategorik, serta mengabaikan bahwa banyak gol adalah data kuantitas yang sah untuk dihitung rata-ratanya."
+        }
+      ],
+      "pembahasan": "Langkah evaluasi dan penyelesaian:\n1. Tinjau Besaran I (Tabel 1): Variabel banyak gol merupakan data numerik (menyatakan jumlah/kuantitas capaian). Perhitungan rata-rata absah secara matematis.\n2. Hitung total gol dari seluruh pemain:\n$\\text{Total gol} = (1 \\times 5) + (2 \\times 8) + (3 \\times 4) + (4 \\times 2) + (5 \\times 1) = 5 + 16 + 12 + 8 + 5 = 46$ gol.\n3. Hitung rata-rata banyak gol per pemain:\n$\\text{Rata-rata} = \\frac{46}{20} = 2,3$ gol per pemain.\n4. Tinjau Besaran II (Tabel 2): Nomor punggung pemain berbentuk angka, namun berfungsi sebagai penanda/identitas pemain (data kategorik). Sesuai kaidah statistika, data kategorik tidak dapat dikenai operasi aritmetika (seperti jumlah atau rata-rata) karena hasilnya tidak memiliki makna kuantitas.\n5. Kesimpulan: Hanya Besaran I yang absah secara matematis dengan nilai $2,3$ gol per pemain.",
       "catatan": null,
       "dipaksa_kuota": false
     }

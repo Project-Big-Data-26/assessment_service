@@ -7,8 +7,8 @@
   "skill_versi": "v1",
   "generator": "9router:ag/gemini-3.8-flash",
   "bergambar": false,
-  "kapasitas_kurang": true,
-  "alasan_kapasitas": "3 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
   "soal": [
     {
       "id": "kelas11_tl-b05-c-medium-bt01-001",
@@ -106,48 +106,6 @@
         "nomor": null,
         "teks": null,
         "jawaban": null,
-        "kutipan": "Misalkan matriks transformasi T 1 dan T 2 berturut-turut adalah p q r s G dan t u v w G . Dengan demikian, matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut."
-      },
-      "cognitive_c": "C3",
-      "jenis_soal": "menentukan prapeta komposisi",
-      "jumlah_langkah": 2,
-      "alasan_level": "Menganalisis matriks komposisi dan membalikkan operasi (invers matriks/koordinat) untuk menemukan titik mula-mula.",
-      "stimulus": null,
-      "gambar": [],
-      "deskripsi_gambar": null,
-      "pertanyaan": "Titik $A(x, y)$ ditransformasikan oleh rotasi sejauh $90^\\circ$ terhadap titik pusat $O(0, 0)$ berlawanan arah jarum jam, kemudian dilanjutkan dengan pencerminan terhadap sumbu-$y$. Jika bayangan akhir titik tersebut adalah $A''(5, -3)$, koordinat titik $A$ mula-mula adalah ....",
-      "jawaban_benar": "$(-3, 5)$",
-      "alasan_benar": "Matriks komposisi $M = M_y R_{90^\\circ} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$. Karena $(x'', y'') = (y, x)$, maka $(5, -3) = (y, x)$, sehingga $x = -3$ dan $y = 5$.",
-      "distraktor": [
-        {
-          "teks": "$(5, -3)$",
-          "alasan": "Siswa mengira matriks komposisi merupakan matriks identitas."
-        },
-        {
-          "teks": "$(-5, 3)$",
-          "alasan": "Siswa menganggap transformasi ekuivalen dengan rotasi 180 derajat."
-        },
-        {
-          "teks": "$(3, -5)$",
-          "alasan": "Siswa salah menentukan tanda komponen saat menginvers hasil rotasi dan refleksi."
-        }
-      ],
-      "pembahasan": "Langkah 1: Tentukan matriks komposisi $M = M_2 M_1$:\n$$M = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$$\n\nLangkah 2: Tentukan hubungan titik asal dan bayangan:\n$$\\begin{pmatrix} x'' \\\\ y'' \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} y \\\\ x \\end{pmatrix}$$\nDiketahui $A''(5, -3)$, maka:\n$$y = 5 \\quad \\text{dan} \\quad x = -3$$\nJadi, koordinat titik $A$ mula-mula adalah $(-3, 5)$.",
-      "catatan": null,
-      "dipaksa_kuota": false
-    },
-    {
-      "id": "kelas11_tl-b05-c-medium-bt01-004",
-      "tipe_generate": "orisinal",
-      "variasi_cara": null,
-      "acuan": {
-        "sumber": "siswa",
-        "id": null,
-        "halaman": 249,
-        "bagian": null,
-        "nomor": null,
-        "teks": null,
-        "jawaban": null,
         "kutipan": "Berdasarkan Sifat 5.5: Matriks komposisi pencerminan terhadap sumbu- x dilanjutkan pencerminan terhadap sumbu- y adalah"
       },
       "cognitive_c": "C3",
@@ -179,7 +137,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-005",
+      "id": "kelas11_tl-b05-c-medium-bt01-004",
       "tipe_generate": "variasi",
       "variasi_cara": "angka",
       "acuan": {
@@ -221,7 +179,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-006",
+      "id": "kelas11_tl-b05-c-medium-bt01-005",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -263,7 +221,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-007",
+      "id": "kelas11_tl-b05-c-medium-bt01-006",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -305,7 +263,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-008",
+      "id": "kelas11_tl-b05-c-medium-bt01-007",
       "tipe_generate": "variasi",
       "variasi_cara": "angka",
       "acuan": {
@@ -347,7 +305,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-009",
+      "id": "kelas11_tl-b05-c-medium-bt01-008",
       "tipe_generate": "variasi",
       "variasi_cara": "angka",
       "acuan": {
@@ -389,7 +347,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-010",
+      "id": "kelas11_tl-b05-c-medium-bt01-009",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -431,7 +389,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-011",
+      "id": "kelas11_tl-b05-c-medium-bt01-010",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -473,7 +431,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-012",
+      "id": "kelas11_tl-b05-c-medium-bt01-011",
       "tipe_generate": "variasi",
       "variasi_cara": "angka",
       "acuan": {
@@ -515,7 +473,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-013",
+      "id": "kelas11_tl-b05-c-medium-bt01-012",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -557,7 +515,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-014",
+      "id": "kelas11_tl-b05-c-medium-bt01-013",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -599,7 +557,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-015",
+      "id": "kelas11_tl-b05-c-medium-bt01-014",
       "tipe_generate": "variasi",
       "variasi_cara": "angka",
       "acuan": {
@@ -641,7 +599,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-016",
+      "id": "kelas11_tl-b05-c-medium-bt01-015",
       "tipe_generate": "variasi",
       "variasi_cara": "angka",
       "acuan": {
@@ -683,7 +641,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-017",
+      "id": "kelas11_tl-b05-c-medium-bt01-016",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -725,7 +683,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-018",
+      "id": "kelas11_tl-b05-c-medium-bt01-017",
       "tipe_generate": "variasi",
       "variasi_cara": "angka",
       "acuan": {
@@ -767,7 +725,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11_tl-b05-c-medium-bt01-019",
+      "id": "kelas11_tl-b05-c-medium-bt01-018",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -805,6 +763,90 @@
         }
       ],
       "pembahasan": "Misalkan transformasi rotasi sebesar $90^\\circ$ terhadap $O(0,0)$ adalah $T_1$ dan pencerminan terhadap sumbu-$y$ adalah $T_2$.\n\nMatriks transformasi masing-masing:\n$M_1 = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$\n$M_2 = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$\n\nMatriks komposisi transformasi $T_2 \\circ T_1$ adalah:\n$M = M_2 M_1 = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$\n\nHubungan titik prapeta $(x, y)$ dan bayangannya $(x', y')$:\n$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} y \\\\ x \\end{pmatrix}$\n\nDiperoleh:\n$x' = y \\implies y = x'$\n$y' = x \\implies x = y'$\n\nSubstitusikan nilai $x$ dan $y$ ke persamaan garis $3x + 5y - 15 = 0$:\n$3(y') + 5(x') - 15 = 0$\n$5x' + 3y' - 15 = 0$\n\nJadi, persamaan bayangan garis tersebut adalah $5x + 3y - 15 = 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 253,
+        "bagian": "Penerapan",
+        "nomor": "19",
+        "teks": "Tentukan peta dari titik ( x + 2, 3 y ) yang ditransformasikan dengan pencerminan terhadap sumbu- y dilanjutkan rotasi sebesar 180° terhadap titik pusat O .",
+        "jawaban": "(x + 2, -3y)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aljabar koordinat peta komposisi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan matriks komposisi dari refleksi dan rotasi lalu mengalikannya dengan koordinat aljabar titik prapeta.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan peta dari titik $(3x - 4, 5y + 1)$ yang ditransformasikan dengan pencerminan terhadap sumbu-$y$ dilanjutkan dengan rotasi sebesar $180^\\circ$ terhadap titik pusat $O(0, 0)$.",
+      "jawaban_benar": "$(3x - 4, -5y - 1)$",
+      "alasan_benar": "Matriks pencerminan terhadap sumbu-$y$ adalah $M_y = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$ dan matriks rotasi $180^\\circ$ adalah $R_{180^\\circ} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Matriks komposisi transformasinya adalah $M = R_{180^\\circ} M_y = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Diterapkan pada titik $(3x - 4, 5y + 1)$, diperoleh peta $\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 3x - 4 \\\\ 5y + 1 \\end{pmatrix} = \\begin{pmatrix} 3x - 4 \\\\ -5y - 1 \\end{pmatrix}$.",
+      "distraktor": [
+        {
+          "teks": "$(-3x + 4, 5y + 1)$",
+          "alasan": "Siswa salah mengalikan matriks komposisi, menghasilkan pencerminan terhadap sumbu-$y$ bukan terhadap sumbu-$x$."
+        },
+        {
+          "teks": "$(-3x + 4, -5y - 1)$",
+          "alasan": "Siswa hanya menerapkan rotasi $180^\\circ$ dan mengabaikan pencerminan terhadap sumbu-$y$."
+        },
+        {
+          "teks": "$(3x - 4, -5y + 1)$",
+          "alasan": "Siswa lupa mendistribusikan tanda negatif ke seluruh suku ordinat $(- (5y + 1) = -5y - 1)$."
+        }
+      ],
+      "pembahasan": "Matriks transformasi pencerminan terhadap sumbu-$y$:\n$$M_1 = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$$\n\nMatriks transformasi rotasi $180^\\circ$ terhadap titik pusat $O(0, 0)$:\n$$M_2 = \\begin{pmatrix} \\cos 180^\\circ & -\\sin 180^\\circ \\\\ \\sin 180^\\circ & \\cos 180^\\circ \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nMatriks komposisi $M = M_2 M_1$:\n$$M = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nPeta dari titik $(3x - 4, 5y + 1)$:\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} 3x - 4 \\\\ 5y + 1 \\end{pmatrix} = \\begin{pmatrix} 3x - 4 \\\\ -(5y + 1) \\end{pmatrix} = \\begin{pmatrix} 3x - 4 \\\\ -5y - 1 \\end{pmatrix}$$\n\nJadi, peta dari titik tersebut adalah $(3x - 4, -5y - 1)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b05-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dengan demikian, matriks komposisi transformasi T 2 ◦ T 1 (transformasi T 1 dilanjutkan dengan T 2) adalah sebagai berikut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "titik pusat bayangan lingkaran komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik pusat awal lingkaran, perkalian matriks komposisi transformasi, serta penentuan koordinat titik pusat bayangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran memiliki persamaan $(x - 3)^2 + (y - 5)^2 = 16$. Lingkaran tersebut ditransformasikan oleh rotasi $180^\\circ$ terhadap titik asal $O(0, 0)$ yang dilanjutkan dengan pencerminan terhadap sumbu-$x$. Koordinat titik pusat dari bayangan lingkaran tersebut adalah ....",
+      "jawaban_benar": "$(-3, 5)$",
+      "alasan_benar": "Pusat awal lingkaran adalah $(3, 5)$. Matriks rotasi $180^\\circ$ adalah $T_1 = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ dan matriks pencerminan terhadap sumbu-$x$ adalah $T_2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$. Matriks komposisi $T = T_2 \\circ T_1 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$. Bayangan pusat adalah $\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} 3 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} -3 \\\\ 5 \\end{pmatrix}$.",
+      "distraktor": [
+        {
+          "teks": "$(3, -5)$",
+          "alasan": "Siswa salah mengalikan matriks atau menganggap komposisi ekuivalen dengan pencerminan terhadap sumbu-x saja."
+        },
+        {
+          "teks": "$(-3, -5)$",
+          "alasan": "Siswa hanya menerapkan rotasi 180° dan lupa melakukan pencerminan terhadap sumbu-x."
+        },
+        {
+          "teks": "$(5, -3)$",
+          "alasan": "Siswa keliru menukar posisi koordinat x dan y (tertukar dengan pencerminan terhadap garis y = x)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan pusat lingkaran awal.\nDari persamaan $(x - 3)^2 + (y - 5)^2 = 16$, diperoleh pusat lingkaran di titik $P(3, 5)$.\n\nLangkah 2: Menentukan matriks komposisi transformasi.\nTransformasi pertama ($T_1$) adalah rotasi $180^\\circ$ terhadap pusat $O(0, 0)$:\n$$M_1 = \\begin{pmatrix} \\cos 180^\\circ & -\\sin 180^\\circ \\\\ \\sin 180^\\circ & \\cos 180^\\circ \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nTransformasi kedua ($T_2$) adalah pencerminan terhadap sumbu-$x$:\n$$M_2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nMatriks komposisi $M = M_2 M_1$:\n$$M = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$$\n\nLangkah 3: Menentukan bayangan titik pusat $P'(x', y')$.\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} 3 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} -3 \\\\ 5 \\end{pmatrix}$$\n\nJadi, koordinat titik pusat lingkaran bayangannya adalah $(-3, 5)$.",
       "catatan": null,
       "dipaksa_kuota": false
     }
