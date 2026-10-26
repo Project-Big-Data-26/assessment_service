@@ -1,0 +1,644 @@
+{
+  "book": "kelas8",
+  "bab_no": 5,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas8-b05-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 236,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Menentukan titik potong pada sumbu- x , yang berarti y = 0 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "parameter geometri garis",
+      "jumlah_langkah": 4,
+      "alasan_level": "Melibatkan penentuan titik potong berparameter dan evaluasi nilai konstanta berdasarkan luas daerah bidang datar yang terbentuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik persamaan garis lurus $(2k - 1)x + 3y = 18$ memotong sumbu-$x$ di titik $A$ dan memotong sumbu-$y$ di titik $B$. Jika titik $O(0, 0)$ merupakan pusat koordinat dan luas daerah segitiga $AOB$ yang terbentuk di kuadran I adalah $18\\text{ satuan luas}$, maka nilai $k$ adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Titik potong sumbu-$y$ ($x = 0$): $3y = 18 \\iff y = 6$, sehingga tinggi segitiga $OB = 6$. Luas segitiga $AOB = \\frac{1}{2} \\times OA \\times OB = 18 \\iff \\frac{1}{2} \\times OA \\times 6 = 18 \\iff OA = 6$. Karena titik potong sumbu-$x$ berada di kuadran I, maka koordinat $A$ adalah $(6, 0)$. Substitusi $(6, 0)$ ke persamaan garis: $(2k - 1)(6) + 3(0) = 18 \\iff 6(2k - 1) = 18 \\iff 2k - 1 = 3 \\iff 2k = 4 \\iff k = 2$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Siswa salah mengubah tanda pada 2k - 1 = 3 menjadi 2k = 2 sehingga diperoleh k = 1."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Siswa mengabaikan faktor 1/2 pada rumus luas segitiga sehingga memperoleh OA = 3 dan 2k - 1 = 6 lalu membulatkannya."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Siswa menganggap panjang OA = 18 / 6 = 3 dan menyamakan 2k - 1 = 7."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik potong terhadap sumbu-$y$ dengan mensubstitusikan $x = 0$:\n$$(2k - 1)(0) + 3y = 18 \\implies 3y = 18 \\implies y = 6$$\nMaka titik potong sumbu-$y$ adalah $B(0, 6)$, dengan panjang $OB = 6$.\n\nLangkah 2: Menggunakan luas segitiga untuk mencari panjang alas $OA$:\n$$\\text{Luas } \\triangle AOB = \\frac{1}{2} \\times OA \\times OB$$\n$$18 = \\frac{1}{2} \\times OA \\times 6$$\n$$18 = 3 \\times OA \\implies OA = 6$$\nKarena titik berada di kuadran I, absis titik $A$ adalah $6$, sehingga $A(6, 0)$.\n\nLangkah 3: Titik potong terhadap sumbu-$x$ diperoleh dengan substitusi $y = 0$:\n$$(2k - 1)x + 3(0) = 18 \\implies (2k - 1)x = 18$$\nSubstitusikan $x = 6$:\n$$(2k - 1)(6) = 18$$\n$$2k - 1 = 3$$\n$$2k = 4 \\implies k = 2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 234,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Persamaan y = 3 x + 2 dapat dinyatakan dalam bentuk umumnya sebagai y = mx + c , di mana x dan y adalah variabel, c adalah konstanta, dan m adalah kemiringan atau koeisien arah."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas daerah berbatas garis",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis titik potong dari dua grafik garis lurus serta perpotongannya terhadap sumbu koordinat untuk menghitung luas bangun.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan dua garis lurus dengan persamaan $g_1: 2x - y = 2$ dan $g_2: x + y = 7$. Garis $g_1$ memotong sumbu-$x$ di titik $A$, garis $g_2$ memotong sumbu-$x$ di titik $B$, dan kedua garis tersebut saling berpotongan di titik $C$. Luas daerah segitiga $ABC$ adalah ....",
+      "jawaban_benar": "$12\\text{ satuan luas}$",
+      "alasan_benar": "Titik potong garis $g_1$ terhadap sumbu-$x$ ($y = 0$) adalah $2x = 2 \\iff x = 1$, sehingga $A(1, 0)$. Titik potong garis $g_2$ terhadap sumbu-$x$ ($y = 0$) adalah $x = 7$, sehingga $B(7, 0)$. Titik potong $g_1$ dan $g_2$: dari $g_1$ diperoleh $y = 2x - 2$, substitusi ke $g_2$: $x + (2x - 2) = 7 \\iff 3x = 9 \\iff x = 3$. Nilai $y = 2(3) - 2 = 4$, sehingga $C(3, 4)$. Alas segitiga adalah jarak $AB = 7 - 1 = 6$. Tinggi segitiga adalah ordinat titik $C$, yaitu $t = 4$. Luas segitiga $ABC = \\frac{1}{2} \\times 6 \\times 4 = 12\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$24\\text{ satuan luas}$",
+          "alasan": "Siswa lupa mengalikan dengan 1/2 pada rumus luas segitiga (hanya menghitung alas kali tinggi: 6 x 4 = 24)."
+        },
+        {
+          "teks": "$14\\text{ satuan luas}$",
+          "alasan": "Siswa salah menghitung panjang alas dengan memakai absis titik B saja yaitu 7, sehingga luas = 1/2 x 7 x 4 = 14."
+        },
+        {
+          "teks": "$16\\text{ satuan luas}$",
+          "alasan": "Siswa salah menentukan titik potong sumbu-x garis pertama menjadi (-1, 0) sehingga panjang alas menjadi 7 - (-1) = 8 dan luas = 1/2 x 8 x 4 = 16."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik potong $g_1$ terhadap sumbu-$x$ ($y = 0$):\n$$2x - 0 = 2 \\implies 2x = 2 \\implies x = 1$$\nJadi titik $A$ adalah $(1, 0)$.\n\nLangkah 2: Menentukan titik potong $g_2$ terhadap sumbu-$x$ ($y = 0$):\n$$x + 0 = 7 \\implies x = 7$$\nJadi titik $B$ adalah $(7, 0)$.\n\nLangkah 3: Menentukan titik potong kedua garis ($C$):\nDari $g_1$, nyatakan $y = 2x - 2$. Substitusikan ke dalam persamaan $g_2$:\n$$x + (2x - 2) = 7$$\n$$3x - 2 = 7$$\n$$3x = 9 \\implies x = 3$$\nSubstitusikan nilai $x = 3$ untuk mencari $y$:\n$$y = 2(3) - 2 = 4$$\nJadi titik potong kedua garis adalah $C(3, 4)$.\n\nLangkah 4: Menentukan panjang alas dan tinggi segitiga $ABC$:\n- Panjang alas pada sumbu-$x$: $AB = x_B - x_A = 7 - 1 = 6$ satuan.\n- Tinggi segitiga tegak lurus terhadap sumbu-$x$, yaitu nilai ordinat dari titik puncak $C$: $t = y_C = 4$ satuan.\n\nLangkah 5: Menghitung luas segitiga $ABC$:\n$$\\text{Luas } = \\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi} = \\frac{1}{2} \\times 6 \\times 4 = 12\\text{ satuan luas}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 238,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dengan mensubstitusikan nilai y = 0, maka akan menghasilkan titik perpotongan garis dengan sumbu- x ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan persamaan garis",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan dua persamaan garis lurus penyusutan aset dan evaluasi titik potong sumbu-x berdasarkan parameter persekutuan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pabrik membeli dua unit mesin, yaitu Mesin A dan Mesin B. Persamaan penurunan nilai Mesin A dinyatakan oleh $y = 60.000.000 - 5.000.000x$, dengan $y$ adalah nilai mesin (rupiah) dan $x$ adalah usia pemakaian (tahun). Mesin B dibeli dengan harga baru $\\text{Rp}45.000.000,00$ dan mengalami penyusutan nilai tahunan yang konstan. Jika grafik penurunan harga kedua mesin tersebut berpotongan tepat pada saat usia pemakaian $4\\text{ tahun}$, pada usia berapakah nilai Mesin B menyusut habis hingga mencapai $\\text{Rp}0,00$?",
+      "jawaban_benar": "$36\\text{ tahun}$",
+      "alasan_benar": "Nilai Mesin A pada $x = 4$ tahun adalah $y = 60.000.000 - 5.000.000(4) = 40.000.000$. Karena berpotongan pada saat $x = 4$, nilai Mesin B juga bernilai $\\text{Rp}40.000.000,00$. Persamaan garis penyusutan Mesin B adalah $y = 45.000.000 - px$. Substitusi $(4, 40.000.000)$: $40.000.000 = 45.000.000 - 4p \\iff 4p = 5.000.000 \\iff p = 1.250.000$ per tahun. Nilai Mesin B habis ($y = 0$): $0 = 45.000.000 - 1.250.000x \\iff x = \\frac{45.000.000}{1.250.000} = 36\\text{ tahun}$.",
+      "distraktor": [
+        {
+          "teks": "$30\\text{ tahun}$",
+          "alasan": "Siswa salah menghitung laju penyusutan Mesin B menjadi 1.500.000 per tahun sehingga 45.000.000 / 1.500.000 = 30 tahun."
+        },
+        {
+          "teks": "$25\\text{ tahun}$",
+          "alasan": "Siswa mengurangkan harga baru Mesin B dengan sisa nilai Mesin A (45 - 40 = 5 juta) lalu membagi 45 juta dengan 1,8 juta."
+        },
+        {
+          "teks": "$4\\text{ tahun}$",
+          "alasan": "Siswa salah membaca pertanyaan dan hanya mengambil titik temu saat kedua mesin bernilai sama."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung nilai Mesin A saat usia pemakaian $4$ tahun ($x = 4$):\n$$y = 60.000.000 - 5.000.000(4) = 60.000.000 - 20.000.000 = 40.000.000$$\n\nLangkah 2: Menentukan laju penyusutan tahunan Mesin B ($p$):\nKarena grafik kedua mesin berpotongan pada saat $x = 4$, maka pada saat itu nilai Mesin B juga $\\text{Rp}40.000.000,00$.\nPersamaan penyusutan Mesin B adalah $y = 45.000.000 - px$.\nSubstitusikan titik $(4, 40.000.000)$:\n$$40.000.000 = 45.000.000 - 4p$$\n$$4p = 45.000.000 - 40.000.000 = 5.000.000$$\n$$p = \\frac{5.000.000}{4} = 1.250.000\\text{ per tahun}$$\n\nLangkah 3: Menyusun persamaan garis untuk Mesin B:\n$$y = 45.000.000 - 1.250.000x$$\n\nLangkah 4: Menentukan usia saat nilai Mesin B menjadi $\\text{Rp}0,00$ (titik potong dengan sumbu-$x$, yaitu saat $y = 0$):\n$$0 = 45.000.000 - 1.250.000x$$\n$$1.250.000x = 45.000.000$$\n$$x = \\frac{45.000.000}{1.250.000} = 36\\text{ tahun}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 241,
+        "bagian": "Soal Latihan 5.1",
+        "nomor": "6",
+        "teks": "Garis lurus l 1 melalui titik (1, 3) dan (11, 12). Persamaan Garis l 2 adalah 3 y + 4 x - 30 = 0 . a. Tentukan persamaan untuk l 1 dalam bentuk ax + by + c = 0 , di mana a , b , dan c adalah bilangan bulat. b. Tentukan koordinat titik potong l 1 dan l 2 .",
+        "jawaban": "(6, 2)",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "titik potong dua garis",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan persamaan garis dari dua titik, penyusunan sistem persamaan linear, pencarian koordinat titik potong, dan evaluasi nilai fungsi objektif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis lurus $l_1$ melalui titik $(2, 5)$ dan $(8, 17)$. Persamaan garis lurus $l_2$ adalah $2x + y - 29 = 0$. Jika $(x_0, y_0)$ merupakan koordinat titik potong antara garis $l_1$ dan garis $l_2$, berapakah nilai dari $2x_0 - y_0$?",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "Gradien garis $l_1$ adalah $m = \\frac{17 - 5}{8 - 2} = \\frac{12}{6} = 2$. Persamaan garis $l_1$ adalah $y - 5 = 2(x - 2) \\Leftrightarrow y = 2x + 1$ atau $2x - y = -1$. Eliminasi dengan $l_2: 2x + y = 29$ menghasilkan $4x = 28 \\Rightarrow x_0 = 7$ dan $y_0 = 2(7) + 1 = 15$. Nilai $2x_0 - y_0 = 2(7) - 15 = 14 - 15 = -1$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Terbalik dalam pengurangan yaitu menghitung $y_0 - 2x_0 = 15 - 14$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Menjumlahkan nilai koordinat titik potong $x_0 + y_0 = 7 + 15$."
+        },
+        {
+          "teks": "$-23$",
+          "alasan": "Tertukar koefisien perhitungan menjadi $x_0 - 2y_0 = 7 - 30$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan gradien garis $l_1$ melalui $(2, 5)$ dan $(8, 17)$:\n$$m = \\frac{17 - 5}{8 - 2} = \\frac{12}{6} = 2$$\n\nLangkah 2: Menentukan persamaan garis $l_1$:\n$$y - 5 = 2(x - 2) \\Rightarrow y = 2x + 1 \\Rightarrow 2x - y = -1$$\n\nLangkah 3: Menentukan titik potong dengan garis $l_2: 2x + y = 29$ menggunakan eliminasi/substitusi:\n$$2x + (2x + 1) = 29$$\n$$4x + 1 = 29$$\n$$4x = 28 \\Rightarrow x_0 = 7$$\n\nLangkah 4: Menghitung nilai $y_0$:\n$$y_0 = 2(7) + 1 = 15$$\nTitik potong kedua garis adalah $(7, 15)$.\n\nLangkah 5: Menghitung nilai $2x_0 - y_0$:\n$$2(7) - 15 = 14 - 15 = -1$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 242,
+        "bagian": "Soal Latihan 5.1",
+        "nomor": "9",
+        "teks": "P (4, 3), Q (a, 1), R (1, 2), S (b, 2), dan T (4, c) merupakan lima titik koordinat yang membentuk garis lurus, tentukan nilai a , b , dan c .",
+        "jawaban": "a = 2, b = 1, c = 3",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kesegarisan titik",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan rekonstruksi persamaan garis dari pasangan titik yang diketahui, penyelesaian tiga variabel nilai absis/ordinat yang hilang, dan penggabungan hasilnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik-titik $A(5, 14)$, $B(8, 26)$, $C(a, 18)$, $D(7, b)$, dan $E(c, -10)$ terletak pada satu garis lurus yang sama pada bidang koordinat Cartesius. Nilai dari $a + b - c$ adalah ....",
+      "jawaban_benar": "$29$",
+      "alasan_benar": "Gradien garis dari titik $A$ dan $B$ adalah $m = \\frac{26 - 14}{8 - 5} = 4$. Persamaan garisnya $y = 4x - 6$. Dari titik $C(a, 18)$, diperoleh $18 = 4a - 6 \\Rightarrow a = 6$. Dari titik $D(7, b)$, diperoleh $b = 4(7) - 6 = 22$. Dari titik $E(c, -10)$, diperoleh $-10 = 4c - 6 \\Rightarrow c = -1$. Maka $a + b - c = 6 + 22 - (-1) = 29$.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Kesalahan tanda aljabar saat mengurangi bilangan negatif dengan menghitung $a + b + c = 6 + 22 + (-1)$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Salah menentukan nilai $b$ akibat kesalahan operasi $4(7) - 6 = 18$ sehingga total menjadi $6 + 18 - (-1) = 25$."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Salah menghitung nilai $a$ menjadi $8$ dari $4a = 32$ sehingga menghasilkan $8 + 22 - (-1) = 31$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung gradien garis melalui titik $A(5, 14)$ dan $B(8, 26)$:\n$$m = \\frac{26 - 14}{8 - 5} = \\frac{12}{3} = 4$$\n\nLangkah 2: Menentukan persamaan garis lurus:\n$$y - 14 = 4(x - 5) \\Rightarrow y = 4x - 6$$\n\nLangkah 3: Menentukan nilai $a$, $b$, dan $c$ dengan mensubstitusikan masing-masing titik:\n- Titik $C(a, 18)$:\n$$18 = 4a - 6 \\Rightarrow 4a = 24 \\Rightarrow a = 6$$\n- Titik $D(7, b)$:\n$$b = 4(7) - 6 = 28 - 6 = 22$$\n- Titik $E(c, -10)$:\n$$-10 = 4c - 6 \\Rightarrow 4c = -4 \\Rightarrow c = -1$$\n\nLangkah 4: Menghitung nilai $a + b - c$:\n$$a + b - c = 6 + 22 - (-1) = 28 + 1 = 29$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 236,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dengan menentukan titik perpotongan pada sumbu- x dan sumbu- y , gambarkan graiknya dari persamaan y =- 12 x - 1 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "titik potong sumbu koordinat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis gradien dari dua titik, titik potong sumbu garis lain, perancangan persamaan garis baru, dan pencarian titik potongnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis $g_1$ melalui titik $A(3, 8)$ dan memotong sumbu-$y$ di titik $(0, -4)$. Garis $g_2$ memiliki persamaan $y = -2x + 10$ dan memotong sumbu-$x$ di titik $B$. Garis $g_3$ memiliki nilai kemiringan yang sama dengan garis $g_1$ dan melalui titik $B$. Koordinat titik potong garis $g_3$ terhadap sumbu-$y$ adalah ....",
+      "jawaban_benar": "$(0, -20)$",
+      "alasan_benar": "Kemiringan garis $g_1$ adalah $m_1 = \\frac{8 - (-4)}{3 - 0} = 4$. Titik potong $g_2$ pada sumbu-$x$ diperoleh saat $y = 0$, yaitu $0 = -2x + 10 \\Rightarrow x = 5$, sehingga $B(5, 0)$. Garis $g_3$ memiliki kemiringan $m_3 = 4$ dan melalui $B(5, 0)$, sehingga persamaannya $y - 0 = 4(x - 5) \\Rightarrow y = 4x - 20$. Titik potong $g_3$ terhadap sumbu-$y$ diperoleh saat $x = 0$, yaitu $(0, -20)$.",
+      "distraktor": [
+        {
+          "teks": "$(0, 20)$",
+          "alasan": "Kesalahan tanda saat melakukan perkalian $4 \\times (-5)$ menjadi positif $20$."
+        },
+        {
+          "teks": "$(0, -10)$",
+          "alasan": "Keliru menggunakan nilai kemiringan dari garis $g_2$ yaitu $-2$ alih-alih kemiringan garis $g_1$."
+        },
+        {
+          "teks": "$(-20, 0)$",
+          "alasan": "Tertukar antara nilai absis dan ordinat pada titik potong sumbu-$y$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan kemiringan garis $g_1$ yang melalui $(0, -4)$ dan $(3, 8)$:\n$$m_1 = \\frac{8 - (-4)}{3 - 0} = \\frac{12}{3} = 4$$\n\nLangkah 2: Menentukan koordinat titik potong garis $g_2$ terhadap sumbu-$x$ ($y = 0$):\n$$0 = -2x + 10 \\Rightarrow 2x = 10 \\Rightarrow x = 5$$\nMaka titik $B$ adalah $(5, 0)$.\n\nLangkah 3: Menentukan persamaan garis $g_3$ yang memiliki kemiringan $m_3 = m_1 = 4$ dan melalui titik $B(5, 0)$:\n$$y - y_1 = m(x - x_1)$$\n$$y - 0 = 4(x - 5)$$\n$$y = 4x - 20$$\n\nLangkah 4: Menentukan titik potong garis $g_3$ terhadap sumbu-$y$ dengan mensubstitusikan $x = 0$:\n$$y = 4(0) - 20 = -20$$\nJadi, koordinat titik potongnya adalah $(0, -20)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 231,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "CV. Spirit 45 menghabiskan Rp360.000.000,00 untuk sebuah truk baru. Nilai truk akan turun Rp12.000.000,00 setiap tahun. Harga kendaraan dinyatakan dalam persamaan penyusutan y = 360 000 000. . - 12 000 000. . x , dengan x adalah umur truk dalam tahun."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "aplikasi penyusutan linear",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan komparasi dari dua fungsi linear penyusutan aset, penyelesaian aljabar titik temu bersyarat, dan evaluasi nilai fungsi pada waktu yang diperoleh.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah perusahaan mengoperasikan dua unit armada kendaraan, yaitu Mobil A dan Mobil B. Nilai jual Mobil A setelah $x$ tahun dinyatakan oleh persamaan garis $y_A = 300.000.000 - 15.000.000x$, sedangkan nilai jual Mobil B dinyatakan oleh $y_B = 200.000.000 - 20.000.000x$, dengan $y$ dalam satuan rupiah. Berapakah nilai jual Mobil A tepat pada saat nilai Mobil A tersebut sama dengan dua kali lipat nilai Mobil B?",
+      "jawaban_benar": "$\\text{Rp}240.000.000,00$",
+      "alasan_benar": "Kondisi $y_A = 2y_B$ menghasilkan persamaan $300.000.000 - 15.000.000x = 2(200.000.000 - 20.000.000x)$. Dibagi $1.000.000$ menjadi $300 - 15x = 400 - 40x \\Rightarrow 25x = 100 \\Rightarrow x = 4\\text{ tahun}$. Nilai jual Mobil A saat $x = 4$ adalah $y_A = 300.000.000 - 15.000.000(4) = \\text{Rp}240.000.000,00$.",
+      "distraktor": [
+        {
+          "teks": "$\\text{Rp}120.000.000,00$",
+          "alasan": "Menghitung nilai jual Mobil B pada saat tersebut alih-alih nilai jual Mobil A."
+        },
+        {
+          "teks": "$\\text{Rp}225.000.000,00$",
+          "alasan": "Salah menghitung usia kendaraan menjadi $x = 5$ tahun sehingga $300.000.000 - 15.000.000(5) = 225.000.000$."
+        },
+        {
+          "teks": "$\\text{Rp}270.000.000,00$",
+          "alasan": "Salah menyelesaikan persamaan linear sehingga memperoleh $x = 2$ tahun."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menuliskan hubungan antara nilai Mobil A dan Mobil B sesuai syarat pada soal:\n$$y_A = 2 \\cdot y_B$$\n\nLangkah 2: Mensubstitusikan persamaan garis depresiasi kedua mobil:\n$$300.000.000 - 15.000.000x = 2(200.000.000 - 20.000.000x)$$\n\nLangkah 3: Menyederhanakan persamaan dengan membagi kedua ruas dengan $1.000.000$:\n$$300 - 15x = 2(200 - 20x)$$\n$$300 - 15x = 400 - 40x$$\n\nLangkah 4: Menyelesaikan nilai $x$ (waktu dalam tahun):\n$$-15x + 40x = 400 - 300$$\n$$25x = 100$$\n$$x = 4\\text{ tahun}$$\n\nLangkah 5: Menghitung nilai jual Mobil A saat $x = 4$:\n$$y_A = 300.000.000 - 15.000.000(4)$$\n$$y_A = 300.000.000 - 60.000.000 = \\text{Rp}240.000.000,00$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 242,
+        "bagian": "Soal Laihan 5.1",
+        "nomor": "9",
+        "teks": "P ^ 4, 3h, Q ^ a , 1h, R ^1, 2h, S ^ b , 2h, dan T ^4, c h merupakan lima titik koordinat yang membentuk garis lurus, tentukan nilai a , b , dan c .",
+        "jawaban": "a = -2, b = 1, c = 3",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kesegarisan titik koordinat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan rekonstruksi persamaan garis dari dua titik pasti lalu menganalisis dan menghitung tiga nilai variabel yang belum diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P(-2, -5)$, $Q(a, 1)$, $R(2, 7)$, $S(b, 13)$, dan $T(5, c)$ merupakan titik-titik koordinat yang terletak pada satu garis lurus yang sama. Nilai dari $2a + 3b - c$ adalah ....",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "Gradien garis melalui $P(-2, -5)$ dan $R(2, 7)$ adalah $m = \\frac{7 - (-5)}{2 - (-2)} = 3$. Persamaan garisnya $y = 3x + 1$. Untuk $Q(a, 1)$, diperoleh $1 = 3a + 1 \\Rightarrow a = 0$. Untuk $S(b, 13)$, diperoleh $13 = 3b + 1 \\Rightarrow b = 4$. Untuk $T(5, c)$, diperoleh $c = 3(5) + 1 = 16$. Maka $2a + 3b - c = 2(0) + 3(4) - 16 = -4$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Terbalik tanda saat menghitung selisih $12 - 16$ menjadi $16 - 12$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hanya menjumlahkan nilai ketiga parameter $a + b + c = 0 + 4 + 16 = 20$ tanpa menerapkan koefisien pada pertanyaan."
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "Salah menentukan nilai gradien garis sehingga nilai $a$, $b$, dan $c$ keliru."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan persamaan garis melalui dua titik yang diketahui lengkap, yaitu $P(-2, -5)$ dan $R(2, 7)$:\n$$m = \\frac{7 - (-5)}{2 - (-2)} = \\frac{12}{4} = 3$$\n$$y - 7 = 3(x - 2) \\Rightarrow y = 3x + 1$$\n\nLangkah 2: Menentukan nilai $a$, $b$, dan $c$ dengan mensubstitusikan koordinat titik ke persamaan garis:\n- Titik $Q(a, 1)$: $1 = 3a + 1 \\Rightarrow 3a = 0 \\Rightarrow a = 0$\n- Titik $S(b, 13)$: $13 = 3b + 1 \\Rightarrow 3b = 12 \\Rightarrow b = 4$\n- Titik $T(5, c)$: $c = 3(5) + 1 \\Rightarrow c = 16$\n\nLangkah 3: Menghitung nilai dari $2a + 3b - c$:\n$$2(0) + 3(4) - 16 = 0 + 12 - 16 = -4$$\n\nJadi, nilai dari $2a + 3b - c$ adalah $-4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 236,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dengan menentukan titik perpotongan pada sumbu- x dan sumbu- y , gambarkan graiknya dari persamaan y =- 12 x - 1 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis garis parameter",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan nilai parameter dari kondisi geometris jarak titik potong sumbu koordinat kemudian menentukan titik potong lainnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis $k$ memiliki persamaan $(2p + 1)x + (p - 1)y = 28$. Garis tersebut memotong sumbu-$x$ di titik $A$ yang berjarak $4\\text{ satuan}$ di sebelah kanan titik asal $O(0, 0)$. Koordinat titik potong garis $k$ terhadap sumbu-$y$ adalah ....",
+      "jawaban_benar": "$(0, 14)$",
+      "alasan_benar": "Titik $A$ memiliki koordinat $(4, 0)$. Substitusi ke persamaan garis: $(2p + 1)(4) + (p - 1)(0) = 28 \\Rightarrow 4(2p + 1) = 28 \\Rightarrow 2p + 1 = 7 \\Rightarrow p = 3$. Persamaan garis menjadi $7x + 2y = 28$. Titik potong sumbu-$y$ terjadi saat $x = 0$, sehingga $2y = 28 \\Rightarrow y = 14$. Titik potongnya adalah $(0, 14)$.",
+      "distraktor": [
+        {
+          "teks": "$(0, 7)$",
+          "alasan": "Salah membagi nilai konstanta dengan koefisien variabel $x$."
+        },
+        {
+          "teks": "$(0, 28)$",
+          "alasan": "Lupa membagi konstanta ruas kanan dengan koefisien variabel $y$."
+        },
+        {
+          "teks": "$(0, -14)$",
+          "alasan": "Keliru memberi tanda negatif pada saat menghitung ordinat titik potong."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat titik potong sumbu-$x$:\nKarena berada $4\\text{ satuan}$ di sebelah kanan titik asal, maka koordinat titik $A$ adalah $(4, 0)$.\n\nLangkah 2: Menentukan nilai parameter $p$ dengan mensubstitusikan titik $A(4, 0)$ ke persamaan garis:\n$$(2p + 1)(4) + (p - 1)(0) = 28$$\n$$4(2p + 1) = 28$$\n$$2p + 1 = 7 \\Rightarrow 2p = 6 \\Rightarrow p = 3$$\n\nLangkah 3: Menuliskan persamaan garis dengan nilai $p = 3$:\n$$(2(3) + 1)x + (3 - 1)y = 28 \\Rightarrow 7x + 2y = 28$$\n\nLangkah 4: Menentukan titik potong terhadap sumbu-$y$ (mensubstitusikan $x = 0$):\n$$7(0) + 2y = 28 \\Rightarrow 2y = 28 \\Rightarrow y = 14$$\n\nJadi, koordinat titik potong garis $k$ terhadap sumbu-$y$ adalah $(0, 14)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 231,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "y = 360 000 000. . - 12 000 000. . x , dengan x adalah umur truk dalam tahun. Bagaimana cara kalain dapat mencari letak perpotongan garis dengan sumbu- x dan sumbu- y ?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi model linear",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pembentukan fungsi garis lurus dari data selisih waktu dan volume lalu menganalisis titik potong sumbu waktu saat air habis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tangki air mengalami kebocoran konstan sehingga sisa air di dalamnya menyusut secara linear mengikuti persamaan garis lurus antara volume $V$ (dalam liter) dan waktu $t$ (dalam jam). Pada jam ke-$2$, volume air tersisa $420\\text{ liter}$, dan pada jam ke-$5$, volume air tersisa $240\\text{ liter}$. Waktu total yang dihitung sejak awal kebocoran hingga air di dalam tangki habis seluruhnya adalah ....",
+      "jawaban_benar": "$9\\text{ jam}$",
+      "alasan_benar": "Laju kebocoran air per jam adalah $k = \\frac{420 - 240}{5 - 2} = 60\\text{ liter/jam}$. Persamaan penyusutan volume adalah $V = -60t + c$. Pada $t = 2$: $420 = -60(2) + c \\Rightarrow c = 540\\text{ liter}$. Air habis saat $V = 0$, yaitu $0 = -60t + 540 \\Rightarrow 60t = 540 \\Rightarrow t = 9\\text{ jam}$.",
+      "distraktor": [
+        {
+          "teks": "$7\\text{ jam}$",
+          "alasan": "Hanya menghitung waktu tambahan setelah jam ke-2 ($240/60 = 4$, lalu $4 + 3 = 7$) tanpa memperhitungkan waktu total dari titik awal."
+        },
+        {
+          "teks": "$8\\text{ jam}$",
+          "alasan": "Salah membagi selisih volume dengan rentang waktu sehingga laju kebocoran keliru."
+        },
+        {
+          "teks": "$10\\text{ jam}$",
+          "alasan": "Salah menentukan volume awal mula tangki ($c = 600$ liter)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan laju penurunan volume (kemiringan garis $m$):\n$$m = \\frac{V_2 - V_1}{t_2 - t_1} = \\frac{240 - 420}{5 - 2} = \\frac{-180}{3} = -60\\text{ liter/jam}$$\n\nLangkah 2: Menentukan volume mula-mula saat $t = 0$ ($c$):\n$$V = -60t + c$$\n$$420 = -60(2) + c \\Rightarrow 420 = -120 + c \\Rightarrow c = 540\\text{ liter}$$\n\nLangkah 3: Persamaan linear penyusutan volume tangki adalah:\n$$V = 540 - 60t$$\n\nLangkah 4: Menentukan waktu saat air habis seluruhnya (titik potong dengan sumbu-$t$, yaitu saat $V = 0$):\n$$0 = 540 - 60t$$\n$$60t = 540 \\Rightarrow t = 9\\text{ jam}$$\n\nJadi, waktu total hingga air habis seluruhnya adalah $9\\text{ jam}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 241,
+        "bagian": "Soal Laihan 5.1",
+        "nomor": "6",
+        "teks": "6. Garis lurus l 1 melalui titik ^ 1, 3h dan ^11, 12h. Persamaan Garis l 2 adalah 3 y + 4 x - 30 = 0 . a. Tentukan persamaan untuk l 1 dalam bentuk ax + by + c = 0 , di mana a , b , dan c adalah bilangan bulat. b. Tentukan koordinat titik potong l 1 dan l 2 .",
+        "jawaban": "(6, 2)",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "sistem perpotongan garis",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan gradien, formulasi persamaan garis dari dua titik, substitusi ke garis lain, serta penyelesaian sistem persamaan linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis lurus $l_1$ melalui titik $(2, 8)$ dan $(7, 23)$. Persamaan garis lurus $l_2$ adalah $5x + 2y - 48 = 0$. Jika kedua garis tersebut berpotongan di titik $(x_0, y_0)$, maka nilai dari $x_0 + y_0$ adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Gradien garis $l_1$ adalah $m = \\frac{23 - 8}{7 - 2} = \\frac{15}{5} = 3$. Persamaan garis $l_1$ adalah $y - 8 = 3(x - 2) \\implies y = 3x + 2$. Substitusikan $y = 3x + 2$ ke dalam persamaan garis $l_2$: $5x + 2(3x + 2) - 48 = 0 \\implies 11x - 44 = 0 \\implies x_0 = 4$. Nilai $y_0 = 3(4) + 2 = 14$. Jadi, $x_0 + y_0 = 4 + 14 = 18$.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Siswa melakukan kesalahan perhitungan saat menentukan konstanta garis $l_1$ menjadi $y = 3x$, sehingga memperoleh titik potong $(4, 12)$ dengan jumlah $16$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Siswa salah menjumlahkan suku sejenis pada substitusi menjadi $11x - 48 = 0$ lalu membulatkan secara keliru atau salah tanda operasi."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Siswa menghitung nilai $2x_0 + y_0 = 2(4) + 14 = 22$, bukan $x_0 + y_0$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan gradien garis $l_1$:\n$$m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{23 - 8}{7 - 2} = \\frac{15}{5} = 3$$\n\nLangkah 2: Menentukan persamaan garis $l_1$:\n$$y - y_1 = m(x - x_1)$$\n$$y - 8 = 3(x - 2)$$\n$$y = 3x + 2$$\n\nLangkah 3: Menentukan titik potong dengan mensubstitusikan $y = 3x + 2$ ke garis $l_2$ ($5x + 2y - 48 = 0$):\n$$5x + 2(3x + 2) - 48 = 0$$\n$$5x + 6x + 4 - 48 = 0$$\n$$11x - 44 = 0$$\n$$11x = 44 \\implies x_0 = 4$$\n\nLangkah 4: Menghitung nilai $y_0$:\n$$y_0 = 3(4) + 2 = 14$$\n\nLangkah 5: Menghitung nilai $x_0 + y_0$:\n$$x_0 + y_0 = 4 + 14 = 18$$\n\nJadi, nilai dari $x_0 + y_0$ adalah $18$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 234,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Persamaan y = 3 x + 2 dapat dinyatakan dalam bentuk umumnya sebagai y = mx + c , di mana x dan y adalah variabel, c adalah konstanta, dan m adalah kemiringan atau koeisien arah."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis segmen vertikal garis",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis perpotongan dua garis berbeda dengan garis vertikal berparameter dan evaluasi panjang segmen garis berdasar selisih ordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan dua buah garis lurus $g_1: y = 2x - 4$ dan $g_2: y = -x + 5$. Sebuah garis vertikal $x = k$ dengan $k > 3$ memotong garis $g_1$ di titik $P$ dan memotong garis $g_2$ di titik $Q$. Jika panjang ruas garis $PQ$ adalah $9\\text{ satuan}$, maka nilai $k$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Untuk $x = k$, koordinat titik $P$ adalah $(k, 2k - 4)$ dan titik $Q$ adalah $(k, -k + 5)$. Karena $k > 3$, ordinat $P$ lebih besar daripada ordinat $Q$, sehingga panjang ruas garis vertikal $PQ$ adalah $y_P - y_Q = (2k - 4) - (-k + 5) = 3k - 9$. Diketahui $PQ = 9$, maka $3k - 9 = 9 \\implies 3k = 18 \\implies k = 6$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Siswa salah mengurangkan ordinat menjadi $(2k - 4) - (-k + 5) = k - 9$ lalu menyelesaikan $k - 9 = 9$ secara salah atau menganggap selisihnya adalah $(2k - 4) + (-k + 5) = k + 1$ sehingga $k = 8 - 4 = 4$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Siswa salah mendistribusikan tanda minus menjadi $(2k - 4) - (-k + 5) = 3k + 1$, lalu menyelesaikan $3k + 1 = 9$ dan membulatkan ke nilai bulat terdekat."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Siswa menjumlahkan ordinat kedua titik alih-alih mengurangkannya: $(2k - 4) + (-k + 5) = k + 1 = 9 \\implies k = 8$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat titik potong garis vertikal $x = k$ dengan masing-masing garis:\n- Pada garis $g_1$: $y_P = 2k - 4$, sehingga titik $P(k, 2k - 4)$.\n- Pada garis $g_2$: $y_Q = -k + 5$, sehingga titik $Q(k, -k + 5)$.\n\nLangkah 2: Menentukan hubungan ordinat untuk $k > 3$:\nKedua garis berpotongan di $2x - 4 = -x + 5 \\implies 3x = 9 \\implies x = 3$.\nUntuk $x = k > 3$, garis $g_1$ berada di atas garis $g_2$, sehingga $y_P > y_Q$.\n\nLangkah 3: Menghitung panjang ruas garis vertikal $PQ$:\n$$PQ = y_P - y_Q$$\n$$PQ = (2k - 4) - (-k + 5)$$\n$$PQ = 2k - 4 + k - 5 = 3k - 9$$\n\nLangkah 4: Menyelesaikan nilai $k$ dengan diketahui $PQ = 9$:\n$$3k - 9 = 9$$\n$$3k = 18$$\n$$k = 6$$\n\nJadi, nilai $k$ yang memenuhi adalah $6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 241,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jelaskan dampak perubahan dari perubahan graik berikut:"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis pergeseran grafik",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan dua titik potong dari pasangan garis yang bergeser kemudian mengevaluasi kombinasi linear titik tengahnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua garis sejajar memiliki persamaan $g_1: y = 3x + 12$ dan $g_2: y = 3x - 8$. Sebuah garis ketiga $g_3: y = -x + 4$ memotong garis $g_1$ di titik $A$ dan memotong garis $g_2$ di titik $B$. Jika titik $M(x_M, y_M)$ merupakan titik tengah dari segmen garis $AB$, maka nilai dari $2x_M + 4y_M$ adalah ....",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Titik potong $g_1$ dan $g_3$ adalah $A(-2, 6)$ dan titik potong $g_2$ dan $g_3$ adalah $B(3, 1)$. Titik tengahnya adalah $M\\left(\\frac{1}{2}, \\frac{7}{2}\\right)$, sehingga $2x_M + 4y_M = 2\\left(\\frac{1}{2}\\right) + 4\\left(\\frac{7}{2}\\right) = 1 + 14 = 15$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Siswa salah menjumlahkan absis titik tengah menjadi $x_M = -1/2$ akibat kekeliruan tanda pada $3 - 2$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Siswa langsung menjumlahkan koordinat kedua titik potong tanpa membaginya dengan dua untuk mencari titik tengah."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Siswa hanya menghitung nilai $x_M + 2y_M$ alih-alih $2x_M + 4y_M$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat titik potong $A$ antara $g_1$ dan $g_3$:\n$$3x + 12 = -x + 4$$\n$$4x = -8 \\implies x = -2$$\nSubstitusi ke $g_3$: $y = -(-2) + 4 = 6$. Maka, $A(-2, 6)$.\n\nLangkah 2: Menentukan koordinat titik potong $B$ antara $g_2$ dan $g_3$:\n$$3x - 8 = -x + 4$$\n$$4x = 12 \\implies x = 3$$\nSubstitusi ke $g_3$: $y = -(3) + 4 = 1$. Maka, $B(3, 1)$.\n\nLangkah 3: Menentukan koordinat titik tengah $M(x_M, y_M)$ dari segmen $AB$:\n$$x_M = \\frac{-2 + 3}{2} = \\frac{1}{2}$$\n$$y_M = \\frac{6 + 1}{2} = \\frac{7}{2}$$\n\nLangkah 4: Menghitung nilai $2x_M + 4y_M$:\n$$2\\left(\\frac{1}{2}\\right) + 4\\left(\\frac{7}{2}\\right) = 1 + 14 = 15$$\n\nJadi, nilai dari $2x_M + 4y_M$ adalah $15$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 236,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dengan menentukan titik perpotongan pada sumbu- x dan sumbu- y , gambarkan graiknya dari persamaan y =- 12 x - 1 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perpotongan segitiga koordinat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan titik potong garis pada kedua sumbu serta pemodelan luas segitiga koordinat untuk menentukan posisi titik pada sumbu-x.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik persamaan garis lurus $2x + 3y = 18$ memotong sumbu-$x$ di titik $A$ dan memotong sumbu-$y$ di titik $B$. Garis lain memotong sumbu-$x$ di titik $C(c, 0)$ dan melalui titik $B$. Jika luas daerah segitiga $ABC$ adalah $15\\text{ satuan luas}$ dan titik $C$ terletak di sebelah kanan titik $A$, maka nilai $c$ adalah ....",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Titik potong garis adalah $A(9, 0)$ dan $B(0, 6)$. Segitiga $ABC$ beralaskan $AC$ sepanjang $c - 9$ dan bertinggi $6$. Luas segitiga $\\frac{1}{2}(c - 9)(6) = 15 \\implies 3(c - 9) = 15 \\implies c - 9 = 5 \\implies c = 14$.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Siswa lupa mengalikan faktor 1/2 pada rumus luas segitiga sehingga menghitung $6(c - 9) = 15$ lalu dibulatkan atau salah membagi."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Siswa mengira 15 satuan luas adalah luas segitiga OBC dari titik pusat sehingga menghitung (1/2) * c * 6 = 15."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Siswa keliru menempatkan titik C di sebelah kiri titik A sehingga menghitung 9 - 5 = 4."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat titik potong $2x + 3y = 18$ dengan sumbu-$x$ ($y = 0$):\n$$2x + 3(0) = 18 \\implies 2x = 18 \\implies x = 9$$\nJadi, koordinat titik $A$ adalah $(9, 0)$.\n\nLangkah 2: Menentukan koordinat titik potong dengan sumbu-$y$ ($x = 0$):\n$$2(0) + 3y = 18 \\implies 3y = 18 \\implies y = 6$$\nJadi, koordinat titik $B$ adalah $(0, 6)$.\n\nLangkah 3: Menggunakan rumus luas segitiga $ABC$:\nAlas segitiga terletak pada sumbu-$x$, yaitu segmen $AC$ dengan panjang $c - 9$ (karena titik $C$ berada di sebelah kanan titik $A$, $c > 9$).\nTinggi segitiga adalah jarak tegak titik $B(0, 6)$ ke sumbu-$x$, yaitu $t = 6$.\n$$\\text{Luas } \\triangle ABC = \\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi}$$\n$$15 = \\frac{1}{2} \\times (c - 9) \\times 6$$\n$$15 = 3(c - 9)$$\n\nLangkah 4: Menentukan nilai $c$:\n$$c - 9 = 5 \\implies c = 14$$\n\nJadi, nilai $c$ adalah $14$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b05-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 234,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Persamaan y = 3 x + 2 dapat dinyatakan dalam bentuk umumnya sebagai y = mx + c , di mana x dan y adalah variabel, c adalah konstanta, dan m adalah kemiringan atau koeisien arah."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi persamaan garis",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan sintesis titik potong antargaris dan perpotongan sumbu untuk membentuk persamaan garis baru serta mengevaluasi parameter garisnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah garis lurus $k$ melalui titik potong antara garis $g_1: 2x - y = 4$ dan garis $g_2: x + y = 5$. Selain itu, garis $k$ juga memotong sumbu-$x$ di titik yang sama dengan titik potong garis $g_3: 3x - 4y = 27$ terhadap sumbu-$x$. Jika garis $k$ dinyatakan dalam bentuk umum $y = mx + c$, maka nilai dari $3(m + c)$ adalah ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Titik potong $g_1$ dan $g_2$ adalah $(3, 2)$, dan titik potong $g_3$ pada sumbu-$x$ adalah $(9, 0)$. Garis $k$ memiliki gradien $m = -1/3$ dan konstanta $c = 3$. Maka $3(m + c) = 3(-1/3 + 3) = 3(8/3) = 8$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Siswa salah menghitung bentuk aljabar menjadi 3m + c alih-alih 3(m + c), menghasilkan 3(-1/3) + 3 = 2."
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "Siswa salah menghitung tanda gradien menjadi positif sehingga diperoleh m = 1/3 dan c = -3, menghasilkan 3(1/3 - 3) = -8."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Siswa keliru tanda gradien menjadi positif m = 1/3 namun tetap menggunakan c = 3, menghasilkan 3(1/3 + 3) = 10."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik potong antara $g_1$ dan $g_2$:\nEliminasi persamaan:\n$$2x - y = 4$$\n$$x + y = 5$$\nJumlahkan kedua persamaan:\n$$3x = 9 \\implies x = 3$$\nSubstitusikan ke persamaan kedua:\n$$3 + y = 5 \\implies y = 2$$\nTitik potong pertama adalah $P(3, 2)$.\n\nLangkah 2: Menentukan titik potong $g_3: 3x - 4y = 27$ dengan sumbu-$x$ ($y = 0$):\n$$3x - 4(0) = 27 \\implies 3x = 27 \\implies x = 9$$\nTitik potong kedua adalah $Q(9, 0)$.\n\nLangkah 3: Menentukan persamaan garis $k$ yang melalui $(3, 2)$ dan $(9, 0)$:\nKemiringan garis $m$:\n$$m = \\frac{0 - 2}{9 - 3} = \\frac{-2}{6} = -\\frac{1}{3}$$\nSubstitusikan ke persamaan $y = mx + c$ menggunakan titik $(9, 0)$:\n$$0 = -\\frac{1}{3}(9) + c \\implies 0 = -3 + c \\implies c = 3$$\n\nLangkah 4: Menghitung nilai dari $3(m + c)$:\n$$3(m + c) = 3\\left(-\\frac{1}{3} + 3\\right) = 3\\left(\\frac{8}{3}\\right) = 8$$\n\nJadi, nilai dari $3(m + c)$ adalah $8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

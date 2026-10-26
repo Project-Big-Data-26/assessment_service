@@ -17,7 +17,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from app.llm.ninerouter import NineRouterClient, NineRouterSettings
-from app.services.exercise.llm_verify import verifikasi_buta
+from app.services.exercise.llm_verify import cek_butuh_gambar, verifikasi_buta
 
 
 def main() -> int:
@@ -25,6 +25,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("file")
     ap.add_argument("--model", help="override NINEROUTER_MODEL_SOLVER")
+    ap.add_argument("--tanpa-gambar", action="store_true",
+                    help="berkas bergambar: kerjakan TANPA gambar; soal yang tetap benar ditandai (gambar hanya hiasan)")
     ap.add_argument("--allow-same-model", action="store_true",
                     help="izinkan solver = generator (TIDAK independen; hanya untuk uji)")
     a = ap.parse_args()
@@ -45,6 +47,14 @@ def main() -> int:
               f"(pakai model lain, atau --allow-same-model untuk uji)")
         return 2
 
+    if a.tanpa_gambar:
+        with NineRouterClient(settings) as client:
+            r = cek_butuh_gambar(a.file, client, model)
+        print(f"\nCEK TANPA GAMBAR ({model}): {len(r.butuh_gambar)}/{r.total} soal memang butuh gambar")
+        for sid in r.tanpa_gambar_cocok:
+            print("  TIDAK BUTUH GAMBAR (tetap benar tanpa gambar) ", sid)
+        print("Detail:", r.path)
+        return 0
     print(f"Verifikasi buta {a.file}\n  generator={generator or 'tidak tercatat'}  solver={model}")
     with NineRouterClient(settings) as client:
         res = verifikasi_buta(a.file, client, model)

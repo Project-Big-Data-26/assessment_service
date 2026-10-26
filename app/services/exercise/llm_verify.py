@@ -61,7 +61,8 @@ def _extract_json(text: str) -> Any:
     return json.loads(text[start:end + 1])
 
 
-def _ask(client: NineRouterClient, model: str, soal: List[dict], book: str = "") -> Dict[str, dict]:
+def _ask(client: NineRouterClient, model: str, soal: List[dict], book: str = "",
+         system: str = SYSTEM) -> Dict[str, dict]:
     ids = [s["id"] for s in soal]
     prompt = "Soal yang harus dikerjakan (id harus persis sama di balasan):\n" + json.dumps(
         [{k: v for k, v in s.items() if k != "gambar"} for s in soal], ensure_ascii=False, indent=1)
@@ -72,7 +73,7 @@ def _ask(client: NineRouterClient, model: str, soal: List[dict], book: str = "")
             for g in s.get("gambar") or []:
                 content.append({"type": "text", "text": f"Gambar untuk soal {s['id']}:"})
                 content.append(image_part(gambar_path(book, g)))
-    res = client.chat([{"role": "system", "content": SYSTEM}, {"role": "user", "content": content}],
+    res = client.chat([{"role": "system", "content": system}, {"role": "user", "content": content}],
                       model=model, temperature=0.0, json_mode=True)
     jawab = _extract_json(res.text)["jawaban"]
     out = {i: jawab[i] for i in ids if isinstance(jawab.get(i), dict)}
@@ -114,3 +115,44 @@ def verifikasi_buta(path: str, client: NineRouterClient, model: str, *, progress
     tidak_terjawab = [k for k, v in hasil.items() if v["pilihan_solver"] is None]
     return VerifyResult(sum(1 for v in hasil.values() if v["cocok"]), len(hasil), tidak_cocok, tidak_terjawab,
                         tok_in, tok_out, round(time.monotonic() - started, 1), solver_path, ver_path)
+
+
+SYSTEM_TANPA_GAMBAR = SYSTEM.split("Sebagian soal disertai gambar")[0] + """Soal-soal ini aslinya disertai gambar, tetapi gambarnya TIDAK diberikan kepadamu.
+Kerjakan hanya dari teks. Kalau jawabannya tidak dapat ditentukan tanpa gambar, tulis "pilihan": null
+(jangan menebak)."""
+
+
+@dataclass
+class CekGambarResult:
+    total: int
+    tanpa_gambar_cocok: List[str]      # tetap benar tanpa gambar -> gambar kemungkinan hiasan
+    butuh_gambar: List[str]            # null atau salah tanpa gambar -> gambar memang dibutuhkan
+    path: str
+
+
+def cek_butuh_gambar(path: str, client: NineRouterClient, model: str, *, progress=print) -> CekGambarResult:
+    """Solver mengerjakan soal bergambar TANPA gambar. Soal yang tetap cocok dengan kunci = tidak butuh gambar."""
+    from app.services.exercise.options import susun
+    from app.services.exercise.schema import ExerciseFile
+
+    with open(path, encoding="utf-8") as f:
+        data = ExerciseFile.model_validate(json.load(f))
+    if not data.bergambar:
+        raise ValueError("berkas ini bukan berkas bergambar")
+    kunci = {sid: v[1] for sid, v in susun(data).items()}
+    blind_path = verify.prepare(path)
+    with open(blind_path, encoding="utf-8") as f:
+        blind = [{k: v for k, v in s.items() if k != "gambar"} for s in json.load(f)["soal"]]
+    jawaban: Dict[str, dict] = {}
+    for i in range(0, len(blind), CHUNK):
+        got = _ask(client, model, blind[i:i + CHUNK], data.book, SYSTEM_TANPA_GAMBAR)
+        got.pop("__usage__", None)
+        jawaban.update(got)
+        progress(f"  tanpa gambar: {min(i + CHUNK, len(blind))}/{len(blind)} soal dikerjakan")
+    hiasan = [sid for sid, k in kunci.items() if (jawaban.get(sid) or {}).get("pilihan") == k]
+    butuh = [sid for sid in kunci if sid not in hiasan]
+    out = path[:-len(".json")] + ".tanpagambar.json"
+    with open(out, "w", encoding="utf-8") as f:
+        json.dump({"model": model, "tanpa_gambar_cocok": hiasan, "butuh_gambar": butuh, "jawaban": jawaban},
+                  f, ensure_ascii=False, indent=2)
+    return CekGambarResult(len(kunci), hiasan, butuh, out)

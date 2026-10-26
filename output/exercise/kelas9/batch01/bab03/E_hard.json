@@ -1,0 +1,602 @@
+{
+  "book": "kelas9",
+  "bab_no": 3,
+  "subbab": "E",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "4 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas9-b03-e-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 218,
+        "bagian": "Ayo Mencoba",
+        "nomor": "-",
+        "teks": "Diketahui persegi panjang KLMN dengan K(4,-2), L(4,-4), M(4,6) dan N(2,4). Tentukan bayangan persegi panjang tersebut yang didilatasikan terhadap [P(2,2), -2]! Gambarkan segi empat tersebut beserta bayangannya pada bidang koordinat!",
+        "jawaban": "Bayangan titik sudut persegi panjang",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi koordinat dilatasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi kebenaran klaim koordinat titik tengah dari hasil dilatasi titik-titik sudut terhadap pusat non-asal berfaktor skala negatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $D(5, -1)$ dan $E(-3, 7)$ didilatasikan terhadap pusat $P(1, 3)$ dengan faktor skala $k = -2$ berturut-turut menghasilkan bayangan $D'$ dan $E'$. Seorang siswa menyatakan bahwa titik tengah ruas garis yang menghubungkan bayangan $D'$ dan $E'$ terletak di titik $(-1, 3)$. Evaluasi yang tepat terhadap pernyataan siswa tersebut adalah ....",
+      "jawaban_benar": "salah, titik tengah ruas garis $D'E'$ yang sebenarnya berada di titik $(1, 3)$",
+      "alasan_benar": "Koordinat bayangan $D'$ adalah $(-2(5-1)+1, -2(-1-3)+3) = (-7, 11)$ dan bayangan $E'$ adalah $(-2(-3-1)+1, -2(7-3)+3) = (9, -5)$. Titik tengah ruas garis $D'E'$ adalah $(\\frac{-7+9}{2}, \\frac{11+(-5)}{2}) = (1, 3)$, sehingga klaim siswa salah.",
+      "distraktor": [
+        {
+          "teks": "benar, titik tengah ruas garis $D'E'$ memang terletak di titik $(-1, 3)$",
+          "alasan": "Siswa salah menghitung tanda saat mencari rata-rata absis bayangan $(-7+9)/2$ menjadi $-1$."
+        },
+        {
+          "teks": "salah, titik tengah ruas garis $D'E'$ yang sebenarnya berada di titik $(1, -3)$",
+          "alasan": "Siswa salah menerapkan tanda positif pada koordinat pusat saat menghitung titik tengah."
+        },
+        {
+          "teks": "salah, titik tengah ruas garis $D'E'$ yang sebenarnya berada di titik $(-7, 11)$",
+          "alasan": "Siswa keliru mengira titik bayangan pertama sebagai titik tengah ruas garis."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan bayangan titik $D(5, -1)$ oleh dilatasi $[P(1, 3), -2]$:\n$x_{D'} = -2(5 - 1) + 1 = -2(4) + 1 = -7$\n$y_{D'} = -2(-1 - 3) + 3 = -2(-4) + 3 = 11$\nDiperoleh $D'(-7, 11)$.\n\nLangkah 2: Menentukan bayangan titik $E(-3, 7)$ oleh dilatasi $[P(1, 3), -2]$:\n$x_{E'} = -2(-3 - 1) + 1 = -2(-4) + 1 = 9$\n$y_{E'} = -2(7 - 3) + 3 = -2(4) + 3 = -5$\nDiperoleh $E'(9, -5)$.\n\nLangkah 3: Menghitung koordinat titik tengah ruas garis $D'E'$:\n$x_m = \\frac{-7 + 9}{2} = \\frac{2}{2} = 1$\n$y_m = \\frac{11 + (-5)}{2} = \\frac{6}{2} = 3$\nTitik tengah ruas garis $D'E'$ adalah $(1, 3)$.\n\nLangkah 4: Evaluasi klaim:\nKlaim siswa bahwa titik tengah berada di $(-1, 3)$ bernilai salah. Koordinat yang tepat adalah $(1, 3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 216,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A(x,y) yang didilatasikan terhadap pusat O(0,0) dengan faktor skala k adalah A'(kx, ky)."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi garis invarian",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi kebenaran beberapa pernyataan matematis terkait garis bayangan, gradien, kesejajaran, dan jarak pada dilatasi garis berpusat di titik asal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis $g$ memiliki persamaan $2x - 3y + 6 = 0$. Garis tersebut didilatasikan dengan faktor skala $k = -3$ terhadap pusat titik asal $O(0,0)$ menghasilkan bayangan garis $g'$. Perhatikan pernyataan-pernyataan berikut:\n(1) Gradien garis bayangan $g'$ berlawanan tanda dengan gradien garis $g$.\n(2) Persamaan bayangan garis $g'$ adalah $2x - 3y - 18 = 0$.\n(3) Garis $g$ sejajar dengan garis bayangan $g'$.\n(4) Jarak titik asal $O(0,0)$ ke garis bayangan $g'$ adalah 3 kali jarak titik asal ke garis $g$.\n\nPernyataan yang bernilai BENAR adalah ....",
+      "jawaban_benar": "(2), (3), dan (4)",
+      "alasan_benar": "Substitusi $x = -\\frac{x'}{3}$ dan $y = -\\frac{y'}{3}$ ke $2x-3y+6=0$ menghasilkan $2x'-3y'-18=0$ (pernyataan (2) benar). Dilatasi memetakan garis ke garis yang sejajar dengannya, sehingga gradien garis sama dan pernyataan (3) benar, sedangkan (1) salah. Jarak garis ke pusat dilatasi berubah sesuai $|k| = 3$ kali (pernyataan (4) benar).",
+      "distraktor": [
+        {
+          "teks": "(1), (2), dan (3)",
+          "alasan": "Siswa mengira tanda negatif pada faktor skala dilatasi membalikkan nilai kemiringan/gradien garis."
+        },
+        {
+          "teks": "(1) dan (3) saja",
+          "alasan": "Siswa salah dalam aljabar penentuan persamaan bayangan garis serta menganggap pernyataan (1) benar."
+        },
+        {
+          "teks": "(2) dan (4) saja",
+          "alasan": "Siswa keliru mengira garis bayangan tidak sejajar karena orientasi bayangan berlawanan arah dari pusat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan hubungan koordinat awal $(x, y)$ dan bayangan $(x', y')$ oleh dilatasi $[O, -3]$:\n$x' = -3x \\Rightarrow x = -\\frac{x'}{3}$\n$y' = -3y \\Rightarrow y = -\\frac{y'}{3}$.\n\nLangkah 2: Menentukan persamaan bayangan garis $g'$:\nSubstitusikan ke persamaan $2x - 3y + 6 = 0$:\n$2\\left(-\\frac{x'}{3}\\right) - 3\\left(-\\frac{y'}{3}\\right) + 6 = 0$\n$-\\frac{2}{3}x' + y' + 6 = 0$\nKalikan kedua ruas dengan $-3$:\n$2x' - 3y' - 18 = 0$.\nMaka pernyataan (2) BENAR.\n\nLangkah 3: Menganalisis gradien dan kedudukan garis:\nGradien garis $g$ adalah $m = -\\frac{2}{-3} = \\frac{2}{3}$.\nGradien garis $g'$ adalah $m' = -\\frac{2}{-3} = \\frac{2}{3}$.\nKarena gradiennya sama ($m = m'$), kedua garis saling sejajar (pernyataan (3) BENAR) dan pernyataan (1) SALAH.\n\nLangkah 4: Menganalisis jarak dari titik asal ke garis:\nPada transformasi dilatasi dengan pusat $O(0,0)$ dan faktor skala $k$, jarak setiap titik dan garis bayangan terhadap titik pusat menjadi $|k|$ kali jarak semula. Karena $|k| = |-3| = 3$, jarak titik pusat ke garis $g'$ adalah 3 kali jarak ke garis $g$ (pernyataan (4) BENAR).\n\nJadi, pernyataan yang bernilai benar adalah (2), (3), dan (4).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A(x,y) yang didilatasikan terhadap pusat P(a,b) dan faktor skala k adalah A'(k(x-a)+a,k(y-b)+b)."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kombinasi dilatasi dan translasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menganalisis dan memecahkan nilai variabel parameter dari komposisi transformasi dilatasi terhadap pusat sebarang yang dilanjutkan translasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(p, 4)$ didilatasikan terhadap titik pusat $P(2, -1)$ dengan faktor skala $k = 3$ menghasilkan bayangan $A'$. Selanjutnya, titik $A'$ ditranslasikan oleh $\\begin{pmatrix} -4 \\\\ 5 \\end{pmatrix}$ sehingga menghasilkan bayangan akhir $A''(4, q)$. Nilai dari $2p - q$ adalah ....",
+      "jawaban_benar": "-11",
+      "alasan_benar": "Dari translasi, absis bayangan pertama $x_{A'} - 4 = 4 \\Rightarrow x_{A'} = 8$. Menggunakan rumus dilatasi: $8 = 3(p - 2) + 2 \\Rightarrow 6 = 3(p - 2) \\Rightarrow p = 4$. Ordinat dilatasi: $y_{A'} = 3(4 - (-1)) + (-1) = 3(5) - 1 = 14$. Ordinat akhir setelah translasi: $q = 14 + 5 = 19$. Maka $2p - q = 2(4) - 19 = 8 - 19 = -11$.",
+      "distraktor": [
+        {
+          "teks": "-3",
+          "alasan": "Siswa salah menghitung rumus ordinat bayangan dilatasi menjadi $3(4) - 1 = 11$, sehingga $q = 16$ dan $2p - q = 8 - 16 = -8$ atau salah substitusi lainnya."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa salah tanda saat translasi atau keliru mengurangkan pada langkah akhir."
+        },
+        {
+          "teks": "-19",
+          "alasan": "Siswa lupa mengalikan $p$ dengan koefisien 2 sehingga hanya menghitung $p - q = 4 - 19 = -15$ atau salah perhitungan aljabar."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat $A'(x', y')$ dari proses translasi ke bayangan akhir $A''(4, q)$:\n$x'' = x' + (-4) \\Rightarrow 4 = x' - 4 \\Rightarrow x' = 8$.\n$y'' = y' + 5 \\Rightarrow q = y' + 5$.\n\nLangkah 2: Menentukan nilai $p$ dari dilatasi titik asal $A(p, 4)$ dengan pusat $P(2, -1)$ dan $k = 3$:\n$x' = k(x - a) + a$\n$8 = 3(p - 2) + 2$\n$6 = 3(p - 2)$\n$p - 2 = 2$\n$p = 4$.\n\nLangkah 3: Menentukan ordinat hasil dilatasi $y'$:\n$y' = k(y - b) + b$\n$y' = 3(4 - (-1)) + (-1)$\n$y' = 3(5) - 1$\n$y' = 14$.\n\nLangkah 4: Menentukan nilai $q$:\n$q = y' + 5 = 14 + 5 = 19$.\n\nLangkah 5: Menghitung nilai $2p - q$:\n$2p - q = 2(4) - 19 = 8 - 19 = -11$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": "Uji Pemahaman",
+        "nomor": "I",
+        "teks": "Jika suatu persegi didilatasikan dengan faktor skala 2 maka luas bayangan menjadi 2 kali dari luas persegi awal.",
+        "jawaban": "Salah, luas bayangan menjadi 4 kali dari luas persegi awal.",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi sifat dilatasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap pernyataan terkait pengaruh faktor skala negatif pada luas bangun dan orientasi letak bayangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan pernyataan berikut:\n\"Jika suatu segitiga sama sisi didilatasikan terhadap titik pusat asal $O(0,0)$ dengan faktor skala $k = -3$, maka luas bayangan segitiga tersebut menjadi $9$ kali luas segitiga awal dan letak bayangannya berlawanan arah terhadap pusat dilatasi dari posisi awal.\"\n\nEvaluasi yang paling tepat mengenai kebenaran pernyataan tersebut beserta alasannya adalah ....",
+      "jawaban_benar": "Benar, karena perbandingan luas bayangan dengan luas awal adalah $k^2 = (-3)^2 = 9$ dan tanda negatif pada faktor skala menunjukkan letak bayangan berlawanan arah dari titik pusat dilatasi.",
+      "alasan_benar": "Rasio luas bayangan terhadap luas awal adalah $k^2 = (-3)^2 = 9$, dan faktor skala negatif $k < 0$ menunjukkan letak bayangan berlawanan arah terhadap pusat dari titik asal.",
+      "distraktor": [
+        {
+          "teks": "Salah, karena faktor skala bernilai negatif sehingga luas bayangan seharusnya bernilai negatif, yaitu $-9$ kali luas segitiga awal.",
+          "alasan": "Siswa keliru menganggap nilai luas bangun dapat bertanda negatif akibat faktor skala bernilai negatif."
+        },
+        {
+          "teks": "Salah, karena perbesaran luas sebanding langsung dengan nilai mutlak faktor skala, sehingga luas bayangan seharusnya hanya menjadi $3$ kali luas segitiga awal.",
+          "alasan": "Siswa keliru menganggap rasio luas sebanding dengan $|k|$, bukan $k^2$."
+        },
+        {
+          "teks": "Salah, karena tanda negatif pada faktor skala selalu menyebabkan bayangan mengalami pengecilan ukuran dari bentuk aslinya.",
+          "alasan": "Siswa keliru mengira tanda minus selalu berarti pengecilan ukuran, tanpa melihat bahwa $|k| = 3 > 1$."
+        }
+      ],
+      "pembahasan": "Pada transformasi dilatasi dengan faktor skala $k$:\n1. Hubungan luas bayangan ($L'$) dengan luas awal ($L$) memenuhi rumus perbandingan luas $L' = k^2 \\times L$. Dengan $k = -3$, diperoleh $L' = (-3)^2 \\times L = 9L$. Jadi, luas bayangan benar menjadi 9 kali luas semula.\n2. Berdasarkan Sifat 3.9, faktor skala bernilai negatif ($k < 0$) menunjukkan bahwa arah posisi titik bayangan $A'$ berlawanan arah dengan ruas garis $OA$ terhadap titik pusat $O$.\nOleh karena kedua bagian klaim tepat, maka pernyataan tersebut bernilai benar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0221-latihan-e-6",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perhitungan selisih luas dilatasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengharuskan penentuan luas bangun datar, analisis perbesaran luas dengan skala pecahan negatif, dan penghitungan selisih luas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu trapesium siku-siku $ABCD$ memiliki panjang sisi sejajar $AB = 10\\text{ cm}$ dan $CD = 6\\text{ cm}$, serta tinggi $AD = 8\\text{ cm}$. Trapesium $A'B'C'D'$ merupakan hasil dilatasi dari trapesium $ABCD$ dengan faktor skala $k = -\\frac{5}{2}$. Selisih luas antara trapesium bayangan $A'B'C'D'$ dan trapesium mula-mula $ABCD$ adalah ....",
+      "jawaban_benar": "$336\\text{ cm}^2$",
+      "alasan_benar": "Luas awal $= 64\\text{ cm}^2$, luas bayangan $= 64 \\times (-\\frac{5}{2})^2 = 400\\text{ cm}^2$, sehingga selisihnya $= 400 - 64 = 336\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$400\\text{ cm}^2$",
+          "alasan": "Siswa hanya menghitung luas trapesium bayangan tanpa menghitung selisihnya terhadap trapesium awal."
+        },
+        {
+          "teks": "$96\\text{ cm}^2$",
+          "alasan": "Siswa keliru mengalikan luas dengan $|k| = 2{,}5$ bukan $k^2 = 6{,}25$, sehingga $160 - 64 = 96\\text{ cm}^2$."
+        },
+        {
+          "teks": "$464\\text{ cm}^2$",
+          "alasan": "Siswa keliru menjumlahkan luas bayangan dan luas awal alih-alih mencari selisihnya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung luas trapesium awal $ABCD$.\n$L = \\frac{AB + CD}{2} \\times AD = \\frac{10 + 6}{2} \\times 8 = 8 \\times 8 = 64\\text{ cm}^2$.\n\nLangkah 2: Tentukan faktor pengali luas oleh dilatasi dengan $k = -\\frac{5}{2}$.\nPengali luas $= k^2 = \\left(-\\frac{5}{2}\\right)^2 = \\frac{25}{4}$.\n\nLangkah 3: Hitung luas trapesium bayangan $A'B'C'D'$.\n$L' = \\frac{25}{4} \\times 64 = 25 \\times 16 = 400\\text{ cm}^2$.\n\nLangkah 4: Hitung selisih luas trapesium bayangan dan trapesium awal.\n$\\Delta L = L' - L = 400\\text{ cm}^2 - 64\\text{ cm}^2 = 336\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 216,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A(x,y) yang didilatasikan terhadap pusat O(0,0) dengan faktor skala k adalah A'(kx, ky)."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi komposisi dilatasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi kebenaran beberapa pernyataan hasil dilatasi bertingkat meliputi perbesaran linier, luasan, dan koordinat titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan empat pernyataan berikut terkait segitiga $ABC$ dengan koordinat $A(1, 2)$, $B(5, 2)$, dan $C(3, 6)$ yang didilatasikan berturut-turut terhadap pusat titik asal $O(0,0)$ dengan faktor skala $k_1 = -2$ menghasilkan $\\Delta A_1B_1C_1$, kemudian bayangan tersebut didilatasikan kembali terhadap pusat $O(0,0)$ dengan faktor skala $k_2 = \\frac{3}{2}$ menghasilkan $\\Delta A_2B_2C_2$:\n(1) Faktor skala total dilatasi dari segitiga awal ke segitiga $\\Delta A_2B_2C_2$ adalah $-3$.\n(2) Luas $\\Delta A_2B_2C_2$ adalah $9$ kali luas $\\Delta ABC$.\n(3) Koordinat titik sudut $C_2$ adalah $(-9, -18)$.\n(4) Keliling $\\Delta A_2B_2C_2$ adalah $-3$ kali keliling $\\Delta ABC$.\n\nPernyataan yang benar adalah ....",
+      "jawaban_benar": "(1), (2), dan (3)",
+      "alasan_benar": "Pernyataan (1), (2), dan (3) benar; sedangkan (4) salah karena keliling merupakan besaran panjang geometris yang selalu bernilai positif sehingga perbandingannya adalah $|k| = 3$.",
+      "distraktor": [
+        {
+          "teks": "(1) dan (3) saja",
+          "alasan": "Siswa keliru mengira luas bayangan tidak mengikuti aturan kuadrat faktor skala total."
+        },
+        {
+          "teks": "(2) dan (4) saja",
+          "alasan": "Siswa keliru menganggap rasio keliling boleh bernilai negatif dan salah menganalisis faktor skala total."
+        },
+        {
+          "teks": "(1), (2), (3), dan (4)",
+          "alasan": "Siswa tidak menyadari bahwa panjang dan keliling tidak mungkin bernilai rasio negatif terhadap ukuran awal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan faktor skala total.\nKomposisi dua dilatasi berturut-turut terhadap pusat yang sama memiliki faktor skala total:\n$k = k_1 \\times k_2 = (-2) \\times \\frac{3}{2} = -3$. (Pernyataan 1 BENAR)\n\nLangkah 2: Menentukan rasio luas.\nRasio perbesaran luas dari dilatasi adalah $k^2 = (-3)^2 = 9$.\nJadi luas $\\Delta A_2B_2C_2 = 9 \\times \\text{luas } \\Delta ABC$. (Pernyataan 2 BENAR)\n\nLangkah 3: Menentukan koordinat bayangan titik $C$.\nKoordinat titik $C(3, 6)$ didilatasikan dengan faktor skala $k = -3$ terhadap pusat $O(0,0)$:\n$C_2 = (-3 \\times 3, -3 \\times 6) = (-9, -18)$. (Pernyataan 3 BENAR)\n\nLangkah 4: Menentukan rasio keliling.\nKeliling merupakan ukuran panjang, sehingga faktor pengali keliling adalah nilai mutlak dari faktor skala, yaitu $|k| = |-3| = 3$. Ukuran keliling tidak dapat berbanding negatif. (Pernyataan 4 SALAH)\n\nDengan demikian, pernyataan yang benar adalah (1), (2), dan (3).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 221,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hitunglah luas bangun awal dan bayangannya!"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis perbandingan luas bertingkat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan rasio luas setelah dua dilatasi berturut-turut pada bangun datar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persegi panjang $ABCD$ berukuran panjang $12\\text{ cm}$ dan lebar $8\\text{ cm}$. Persegi panjang tersebut didilatasikan oleh $[P, -\\frac{3}{2}]$ menghasilkan $A'B'C'D'$. Selanjutnya, $A'B'C'D'$ didilatasikan kembali oleh $[Q, \\frac{1}{3}]$ menghasilkan $A''B''C''D''$. Selisih luas antara bangun awal $ABCD$ dan bangun akhir $A''B''C''D''$ adalah ....",
+      "jawaban_benar": "$72\\text{ cm}^2$",
+      "alasan_benar": "Luas awal $L_0 = 12 \\times 8 = 96\\text{ cm}^2$. Luas setelah dilatasi pertama: $L_1 = k_1^2 \\times L_0 = (-\\frac{3}{2})^2 \\times 96 = \\frac{9}{4} \\times 96 = 216\\text{ cm}^2$. Luas akhir: $L_2 = k_2^2 \\times L_1 = (\\frac{1}{3})^2 \\times 216 = \\frac{1}{9} \\times 216 = 24\\text{ cm}^2$. Selisih luas bangun awal dan akhir = $|96 - 24| = 72\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$48\\text{ cm}^2$",
+          "alasan": "Menggunakan faktor linear bukan kuadrat: $k = (3/2) \\times (1/3) = 1/2$, $L_2 = 96 \\times (1/2) = 48$, selisih $96 - 48 = 48$"
+        },
+        {
+          "teks": "$64\\text{ cm}^2$",
+          "alasan": "Salah mengalikan kuadrat pecahan skala"
+        },
+        {
+          "teks": "$120\\text{ cm}^2$",
+          "alasan": "Menjumlahkan luas awal dan luas akhir"
+        }
+      ],
+      "pembahasan": "Luas awal $L_0 = 12 \\times 8 = 96\\text{ cm}^2$. Faktor skala gabungan kedua dilatasi pada luas adalah $K = k_1^2 \\times k_2^2 = (-\\frac{3}{2})^2 \\times (\\frac{1}{3})^2 = \\frac{9}{4} \\times \\frac{1}{9} = \\frac{1}{4}$. Luas bayangan akhir $L_2 = \\frac{1}{4} \\times 96 = 24\\text{ cm}^2$. Selisih luas awal dan akhir $= 96 - 24 = 72\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0221-latihan-e-6",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan faktor skala dilatasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan luas awal dari koordinat titik sudut segitiga, perumusan rasio luas bayangan, serta evaluasi tanda faktor skala berdasarkan arah bayangan terhadap pusat dilatasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga $KLM$ memiliki koordinat titik-titik sudut $K(4, 2)$, $L(10, 2)$, dan $M(7, 6)$. Segitiga tersebut didilatasikan terhadap titik pusat $P(-1, 5)$ dengan faktor skala $k$ sehingga menghasilkan segitiga $K'L'M'$. Jika luas bayangan segitiga $K'L'M'$ adalah $192\\text{ satuan luas}$ dan letak bangun bayangan berlawanan arah dengan bangun awal terhadap titik pusat dilatasi, maka nilai faktor skala $k$ adalah ....",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "Luas awal segitiga adalah $\\frac{1}{2} \\times (10 - 4) \\times (6 - 2) = 12\\text{ satuan luas}$. Dari hubungan luas dilatasi, $k^2 = \\frac{192}{12} = 16$. Karena letak bayangan berlawanan arah terhadap pusat dilatasi, faktor skala bernilai negatif, yaitu $k = -4$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Siswa mengabaikan keterangan letak bayangan berlawanan arah sehingga hanya mengambil akar kuadrat positif."
+        },
+        {
+          "teks": "$-16$",
+          "alasan": "Siswa keliru menganggap rasio luas sebanding secara linier dengan $k$ (bukan $k^2$) lalu memberi tanda negatif."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Siswa menganggap rasio luas bayangan terhadap luas mula-mula adalah faktor skala dilatasi itu sendiri."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan panjang alas segitiga $KLM$.\nKarena titik $K(4, 2)$ dan $L(10, 2)$ memiliki ordinat sama, panjang alasnya adalah:\n$\\text{alas} = 10 - 4 = 6\\text{ satuan}$.\n\nLangkah 2: Menentukan tinggi segitiga $KLM$.\nTinggi segitiga adalah jarak vertikal dari titik puncak $M(7, 6)$ ke garis alas $y = 2$:\n$\\text{tinggi} = 6 - 2 = 4\\text{ satuan}$.\n\nLangkah 3: Menghitung luas awal segitiga $KLM$.\n$L = \\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi} = \\frac{1}{2} \\times 6 \\times 4 = 12\\text{ satuan luas}$.\n\nLangkah 4: Menghitung nilai $k^2$ menggunakan hubungan luas dilatasi.\n$L' = k^2 \\times L$\n$192 = k^2 \\times 12$\n$k^2 = \\frac{192}{12} = 16$\n$k = 4$ atau $k = -4$.\n\nLangkah 5: Mengevaluasi nilai $k$ berdasarkan arah bayangan.\nBerdasarkan sifat dilatasi, jika letak bayangan berlawanan arah dengan letak bangun awal terhadap titik pusat dilatasi, maka faktor skala harus bernilai negatif ($k < 0$).\nOleh karena itu, nilai faktor skala yang memenuhi adalah $k = -4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A ( x,y ) yang didilatasikan terhadap pusat P ( a,b ) dan faktor skala k adalah A' ( k ( x-a ) +a,k ( y-b ) +b )."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis jarak bayangan dilatasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan bayangan dilatasi berpusat di titik sebarang P(a,b) dilanjutkan penerapan rumus jarak Euclidean dua titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(4, 6)$ didilatasikan terhadap titik pusat $P(1, 2)$ dengan faktor skala $k = -3$ sehingga menghasilkan bayangan titik $A'$. Jarak antara titik bayangan $A'$ dengan titik $C(4, -5)$ adalah ....",
+      "jawaban_benar": "$13\\text{ satuan}$",
+      "alasan_benar": "Koordinat bayangan adalah $A'(-3(4 - 1) + 1, -3(6 - 2) + 2) = A'(-8, -10)$. Jarak $A'$ ke $C(4, -5)$ adalah $\\sqrt{(4 - (-8))^2 + (-5 - (-10))^2} = \\sqrt{12^2 + 5^2} = 13\\text{ satuan}$.",
+      "distraktor": [
+        {
+          "teks": "$15\\text{ satuan}$",
+          "alasan": "Menghitung jarak bayangan $A'$ ke pusat dilatasi $P$, bukan ke titik $C$."
+        },
+        {
+          "teks": "$17\\text{ satuan}$",
+          "alasan": "Menjumlahkan langsung selisih koordinat $|12| + |5| = 17$ tanpa menggunakan rumus jarak Euclidean."
+        },
+        {
+          "teks": "$11\\text{ satuan}$",
+          "alasan": "Menghitung jarak titik awal $A(4, 6)$ ke titik $C(4, -5)$, yaitu $|6 - (-5)| = 11$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat bayangan $A'$ hasil dilatasi titik $A(4, 6)$ terhadap pusat $P(1, 2)$ dengan faktor skala $k = -3$:\n$$x' = k(x - a) + a = -3(4 - 1) + 1 = -3(3) + 1 = -9 + 1 = -8$$\n$$y' = k(y - b) + b = -3(6 - 2) + 2 = -3(4) + 2 = -12 + 2 = -10$$\nDiperoleh $A'(-8, -10)$.\n\nLangkah 2: Menghitung jarak antara titik $A'(-8, -10)$ dan titik $C(4, -5)$:\n$$d = \\sqrt{(x_C - x')^2 + (y_C - y')^2}$$\n$$d = \\sqrt{(4 - (-8))^2 + (-5 - (-10))^2}$$\n$$d = \\sqrt{12^2 + 5^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13\\text{ satuan}$$\n\nJadi, jarak antara titik $A'$ dan titik $C$ adalah $13\\text{ satuan}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 216,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A ( x,y ) yang didilatasikan terhadap pusat O (0,0) dengan faktor skala k adalah A' ( kx, ky )."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemecahan masalah keliling dilatasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan faktor skala dilatasi dari perubahan luas belah ketupat, lalu menghitung keliling bangun bayangan menggunakan teorema Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Belah ketupat $ABCD$ memiliki koordinat titik-titik sudut $A(-4, 0)$, $B(0, 3)$, $C(4, 0)$, dan $D(0, -3)$. Belah ketupat tersebut didilatasikan terhadap pusat $O(0,0)$ dengan faktor skala $k$ sehingga menghasilkan bayangan $A'B'C'D'$. Jika luas belah ketupat $A'B'C'D'$ adalah $216\\text{ satuan luas}$, keliling dari belah ketupat bayangan $A'B'C'D'$ adalah ....",
+      "jawaban_benar": "$60\\text{ satuan}$",
+      "alasan_benar": "Luas awal adalah $\\frac{1}{2} \\times 8 \\times 6 = 24$. Faktor skala memenuhi $k^2 = \\frac{216}{24} = 9 \\implies |k| = 3$. Panjang sisi awal adalah $\\sqrt{4^2 + 3^2} = 5$, sehingga keliling awal $4 \\times 5 = 20$. Keliling bayangan adalah $|k| \\times 20 = 3 \\times 20 = 60\\text{ satuan}$.",
+      "distraktor": [
+        {
+          "teks": "$180\\text{ satuan}$",
+          "alasan": "Mengalikan keliling awal dengan perbandingan luas $k^2 = 9$, bukan dengan faktor skala $|k| = 3$."
+        },
+        {
+          "teks": "$20\\text{ satuan}$",
+          "alasan": "Hanya menghitung keliling belah ketupat awal dan lupa mengalikannya dengan faktor skala dilatasi."
+        },
+        {
+          "teks": "$84\\text{ satuan}$",
+          "alasan": "Salah menghitung panjang sisi dengan menjumlahkan langsung setengah diagonal $4 + 3 = 7$ tanpa menggunakan rumus Pythagoras, lalu mengalikannya dengan 4 dan $|k| = 3$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung panjang diagonal dan luas belah ketupat awal $ABCD$:\n$$d_1 = AC = 4 - (-4) = 8$$\n$$d_2 = BD = 3 - (-3) = 6$$\n$$L_0 = \\frac{1}{2} \\times d_1 \\times d_2 = \\frac{1}{2} \\times 8 \\times 6 = 24\\text{ satuan luas}$$\n\nLangkah 2: Menentukan nilai mutlak faktor skala $|k|$ dari perbandingan luas:\n$$L' = k^2 \\times L_0$$\n$$216 = k^2 \\times 24$$\n$$k^2 = \\frac{216}{24} = 9 \\implies |k| = 3$$\n\nLangkah 3: Menghitung panjang sisi dan keliling belah ketupat awal:\n$$s = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5\\text{ satuan}$$\n$$K_0 = 4 \\times s = 4 \\times 5 = 20\\text{ satuan}$$\n\nLangkah 4: Menghitung keliling belah ketupat bayangan $A'B'C'D'$:\n$$K' = |k| \\times K_0 = 3 \\times 20 = 60\\text{ satuan}$$\n\nJadi, keliling belah ketupat bayangan adalah $60\\text{ satuan}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A(x,y) yang didilatasikan terhadap pusat P(a,b) dan faktor skala k adalah A'(k(x-a)+a,k(y-b)+b)."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi koordinat dilatasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemecahan masalah bertingkat untuk menemukan koordinat titik pusat dilatasi terlebih dahulu sebelum merekonstruksi koordinat titik awal dari bayangannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(4, -1)$ didilatasikan terhadap titik pusat $P(a, b)$ dengan faktor skala $-2$ menghasilkan bayangan $A'(-5, 8)$. Titik lain, yaitu $B(p, q)$, didilatasikan terhadap titik pusat $P(a, b)$ yang sama dengan faktor skala 3 sehingga menghasilkan bayangan $B'(13, -10)$. Nilai dari $p - q$ adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "Dari dilatasi titik $A$ diperoleh pusat $P(1, 2)$. Dari dilatasi titik $B$ dengan pusat $P(1, 2)$ dan faktor skala 3 diperoleh $p = 5$ dan $q = -2$, sehingga nilai $p - q = 5 - (-2) = 7$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Siswa menjumlahkan nilai $p$ dan $q$ alih-alih mengurangkannya ($5 + (-2) = 3$)."
+        },
+        {
+          "teks": "-7",
+          "alasan": "Siswa terbalik melakukan pengurangan koordinat menjadi $q - p = -2 - 5 = -7$."
+        },
+        {
+          "teks": "11",
+          "alasan": "Siswa melakukan kesalahan tanda saat memindahkan ruas pada persamaan $3q - 4 = -10$ sehingga diperoleh $q = -6$, lalu menghitung $5 - (-6) = 11$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat pusat dilatasi $P(a, b)$ menggunakan titik $A(4, -1)$, faktor skala $k_1 = -2$, dan bayangan $A'(-5, 8)$:\n$x_{A'} = k_1(x_A - a) + a$\n$-5 = -2(4 - a) + a$\n$-5 = -8 + 2a + a$\n$-5 = 3a - 8$\n$3a = 3 \\implies a = 1$\n\n$y_{A'} = k_1(y_A - b) + b$\n$8 = -2(-1 - b) + b$\n$8 = 2 + 2b + b$\n$8 = 3b + 2$\n$3b = 6 \\implies b = 2$\nDiperoleh pusat dilatasi $P(1, 2)$.\n\nLangkah 2: Menentukan koordinat titik awal $B(p, q)$ dari bayangan $B'(13, -10)$ dengan pusat $P(1, 2)$ dan faktor skala $k_2 = 3$:\n$x_{B'} = k_2(p - a) + a$\n$13 = 3(p - 1) + 1$\n$13 = 3p - 3 + 1$\n$13 = 3p - 2$\n$3p = 15 \\implies p = 5$\n\n$y_{B'} = k_2(q - b) + b$\n$-10 = 3(q - 2) + 2$\n$-10 = 3q - 6 + 2$\n$-10 = 3q - 4$\n$3q = -6 \\implies q = -2$\n\nLangkah 3: Menghitung nilai $p - q$:\n$p - q = 5 - (-2) = 5 + 2 = 7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A ( x,y ) yang didilatasikan terhadap pusat P ( a,b ) dan faktor skala k adalah A' ( k ( x-a ) +a,k ( y-b ) +b )."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis sistem dilatasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis relasi vektor bayangan untuk menemukan faktor skala negatif serta penyusunan dan penyelesaian persamaan linear dua variabel guna menentukan koordinat titik pusat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(3, 5)$ dan $B(-1, 4)$ didilatasikan terhadap titik pusat yang sama, yaitu $P(a, b)$, dengan faktor skala $k$. Dilatasi tersebut menghasilkan bayangan berturut-turut $A'(-3, -4)$ dan $B'(5, -2)$. Nilai dari $k + a + b$ adalah ....",
+      "jawaban_benar": "1",
+      "alasan_benar": "Perubahan koordinat dari $A$ ke $B$ adalah $\\Delta x = -1 - 3 = -4$ dan $\\Delta y = 4 - 5 = -1$. Perubahan koordinat dari $A'$ ke $B'$ adalah $\\Delta x' = 5 - (-3) = 8$ dan $\\Delta y' = -2 - (-4) = 2$. Faktor skala diperoleh dari perbandingan: $k = \\frac{8}{-4} = \\frac{2}{-1} = -2$. Menggunakan rumus dilatasi terhadap $P(a, b)$: $x_{A'} = k(x_A - a) + a \\implies -3 = -2(3 - a) + a \\implies -3 = -6 + 3a \\implies 3a = 3 \\implies a = 1$. Lalu, $y_{A'} = k(y_A - b) + b \\implies -4 = -2(5 - b) + b \\implies -4 = -10 + 3b \\implies 3b = 6 \\implies b = 2$. Jadi, $k + a + b = -2 + 1 + 2 = 1$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Siswa hanya menjumlahkan koordinat titik pusat $a + b = 1 + 2 = 3$ dan lupa mengikutsertakan nilai $k$."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa mengabaikan tanda negatif pada faktor skala sehingga mengambil nilai mutlak $k = 2$, lalu menghitung $2 + 1 + 2 = 5$."
+        },
+        {
+          "teks": "7",
+          "alasan": "Siswa melakukan kesalahan aljabar saat membagi koefisien variabel pusat: $3a = 3$ disimpulkan $a = 3$ dan $3b = 6$ disimpulkan $b = 6$, sehingga $-2 + 3 + 6 = 7$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan komponen pergeseran titik awal dan titik bayangan.\n$\\vec{AB} = (-1 - 3, 4 - 5) = (-4, -1)$\n$\\vec{A'B'} = (5 - (-3), -2 - (-4)) = (8, 2)$\n\nLangkah 2: Menentukan nilai faktor skala $k$.\n$\\vec{A'B'} = k \\cdot \\vec{AB} \\implies (8, 2) = k(-4, -1) \\implies k = -2$\n\nLangkah 3: Menentukan koordinat pusat dilatasi $P(a, b)$ dari bayangan titik $A(3, 5) \\to A'(-3, -4)$.\n$x' = k(x - a) + a$\n$-3 = -2(3 - a) + a$\n$-3 = -6 + 2a + a$\n$-3 + 6 = 3a$\n$3a = 3 \\implies a = 1$\n\n$y' = k(y - b) + b$\n$-4 = -2(5 - b) + b$\n$-4 = -10 + 2b + b$\n$-4 + 10 = 3b$\n$3b = 6 \\implies b = 2$\n\nLangkah 4: Menghitung nilai $k + a + b$.\n$k + a + b = -2 + 1 + 2 = 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 214,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Faktor skala dapat bernilai negatif jika AO ' berlawanan arah dengan AO ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kebenaran sifat dilatasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pembuktian dan evaluasi terhadap beberapa sifat geometri (koordinat, luas, keliling, orientasi arah) bangun hasil dilatasi berskala negatif.",
+      "stimulus": "Persegi panjang $PQRS$ memiliki koordinat titik-titik sudut $P(-1, 1)$, $Q(5, 1)$, $R(5, 4)$, dan $S(-1, 4)$. Bangun tersebut didilatasikan terhadap titik pusat $T(2, 2)$ dengan faktor skala $k = -\\frac{1}{2}$ menghasilkan bayangan $P'Q'R'S'$.\n\nPerhatikan pernyataan-pernyataan berikut:\n(1) Koordinat titik bayangan $R'$ adalah $(0,5; 1)$.\n(2) Luas persegi panjang bayangan $P'Q'R'S'$ adalah $4,5\\text{ satuan luas}$.\n(3) Keliling persegi panjang bayangan $P'Q'R'S'$ adalah $9\\text{ satuan}$.\n(4) Letak bangun bayangan $P'Q'R'S'$ searah dengan letak bangun awal terhadap titik pusat $T$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pernyataan yang benar berdasarkan stimulus tersebut ditunjukkan oleh nomor ....",
+      "jawaban_benar": "(1), (2), dan (3)",
+      "alasan_benar": "Pernyataan (1) benar karena $R'(0,5; 1)$, pernyataan (2) benar karena luas bayangan $(-1/2)^2 \\times 18 = 4,5$, dan pernyataan (3) benar karena keliling bayangan $|-1/2| \\times 18 = 9$. Pernyataan (4) salah karena nilai $k$ negatif menyebabkan letak bayangan berlawanan arah terhadap pusat.",
+      "distraktor": [
+        {
+          "teks": "(1) dan (3) saja",
+          "alasan": "Siswa keliru mengira perbandingan luas berbanding lurus dengan nilai $|k|$, bukan $k^2$."
+        },
+        {
+          "teks": "(2) dan (4) saja",
+          "alasan": "Siswa salah memahami konsep arah faktor skala negatif, mengira tanda negatif tidak membalik arah letak bangun."
+        },
+        {
+          "teks": "(1), (2), (3), dan (4)",
+          "alasan": "Siswa menganggap semua pernyataan benar tanpa mengevaluasi implikasi arah dari faktor skala negatif pada pernyataan (4)."
+        }
+      ],
+      "pembahasan": "Evaluasi tiap pernyataan:\n1. Titik $R(5, 4)$ didilatasikan oleh $[T(2, 2), -\\frac{1}{2}]$:\n$x' = -\\frac{1}{2}(5 - 2) + 2 = -\\frac{1}{2}(3) + 2 = -1,5 + 2 = 0,5$\n$y' = -\\frac{1}{2}(4 - 2) + 2 = -\\frac{1}{2}(2) + 2 = -1 + 2 = 1$\nKoordinat $R'$ adalah $(0,5; 1)$. (Pernyataan 1 BENAR)\n\n2. Panjang awal $= 5 - (-1) = 6$, lebar awal $= 4 - 1 = 3$.\nLuas awal $= 6 \\times 3 = 18\\text{ satuan luas}$.\nLuas bayangan $= k^2 \\times \\text{luas awal} = \\left(-\\frac{1}{2}\\right)^2 \\times 18 = \\frac{1}{4} \\times 18 = 4,5\\text{ satuan luas}$. (Pernyataan 2 BENAR)\n\n3. Keliling awal $= 2(6 + 3) = 18\\text{ satuan}$.\nKeliling bayangan $= |k| \\times \\text{keliling awal} = \\left|-\\frac{1}{2}\\right| \\times 18 = 9\\text{ satuan}$. (Pernyataan 3 BENAR)\n\n4. Karena faktor skala $k = -\\frac{1}{2} < 0$, letak bangun bayangan berlawanan arah dengan letak bangun awal terhadap titik pusat $T$. (Pernyataan 4 SALAH)\n\nJadi, pernyataan yang benar adalah (1), (2), dan (3).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A ( x,y ) yang didilatasikan terhadap pusat P ( a,b ) dan faktor skala k adalah A' ( k ( x-a ) +a,k ( y-b ) +b )."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi titik asal dilatasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penalaran multi-langkah untuk menentukan faktor skala, merekonstruksi koordinat titik pusat, lalu mencari titik asal yang belum diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(1, 2)$ dan $B(4, 5)$ didilatasikan terhadap titik pusat yang sama $P(a, b)$ dengan faktor skala $k$ berturut-turut menghasilkan bayangan $A'(-7, -10)$ dan $B'(2, -1)$. Jika titik $C$ didilatasikan terhadap pusat $P$ dan faktor skala $k$ yang sama menghasilkan bayangan $C'(-1, -4)$, koordinat titik $C$ adalah ....",
+      "jawaban_benar": "$(3, 4)$",
+      "alasan_benar": "Menentukan faktor skala $k = \\frac{x_{B'} - x_{A'}}{x_B - x_A} = \\frac{2 - (-7)}{4 - 1} = 3$. Menentukan titik pusat $P(a, b)$ melalui rumus bayangan: $-7 = 3(1 - a) + a \\Rightarrow -7 = 3 - 2a \\Rightarrow a = 5$, serta $-10 = 3(2 - b) + b \\Rightarrow -10 = 6 - 2b \\Rightarrow b = 8$, sehingga $P(5, 8)$. Mencari koordinat titik awal $C(x, y)$: $-1 = 3(x - 5) + 5 \\Rightarrow -6 = 3(x - 5) \\Rightarrow x - 5 = -2 \\Rightarrow x = 3$, dan $-4 = 3(y - 8) + 8 \\Rightarrow -12 = 3(y - 8) \\Rightarrow y - 8 = -4 \\Rightarrow y = 4$. Jadi, $C(3, 4)$.",
+      "distraktor": [
+        {
+          "teks": "$(-7, -12)$",
+          "alasan": "Siswa melakukan kesalahan tanda pada pemindahan ruas aljabar terakhir, yaitu $x = -2 - 5 = -7$ dan $y = -4 - 8 = -12$."
+        },
+        {
+          "teks": "$(4, 3)$",
+          "alasan": "Siswa tertukar posisi absis dan ordinat ketika menentukan koordinat titik $C$."
+        },
+        {
+          "teks": "$(-2, -4)$",
+          "alasan": "Siswa keliru menggunakan rumus tanpa mengurangkan pusat terlebih dahulu, menganggap $C' = kC + P$ sehingga $3x + 5 = -1$ dan $3y + 8 = -4$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai faktor skala $k$.\nSelisih koordinat absis bayangan sebanding dengan selisih koordinat awal dikalikan faktor skala:\n$$x_{B'} - x_{A'} = k(x_B - x_A)$$\n$$2 - (-7) = k(4 - 1)$$\n$$9 = 3k \\implies k = 3$$\n\nLangkah 2: Menentukan koordinat pusat dilatasi $P(a, b)$.\nBerdasarkan rumus dilatasi titik terhadap pusat $P(a, b)$:\n$$x' = k(x - a) + a$$\n$$-7 = 3(1 - a) + a$$\n$$-7 = 3 - 2a \\implies 2a = 10 \\implies a = 5$$\n\n$$y' = k(y - b) + b$$\n$$-10 = 3(2 - b) + b$$\n$$-10 = 6 - 2b \\implies 2b = 16 \\implies b = 8$$\nPusat dilatasi adalah $P(5, 8)$.\n\nLangkah 3: Menentukan titik awal $C(x, y)$ dari bayangan $C'(-1, -4)$.\n$$-1 = 3(x - 5) + 5$$\n$$-6 = 3(x - 5)$$\n$$x - 5 = -2 \\implies x = 3$$\n\n$$-4 = 3(y - 8) + 8$$\n$$-12 = 3(y - 8)$$\n$$y - 8 = -4 \\implies y = 4$$\n\nDengan demikian, koordinat titik $C$ adalah $(3, 4)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

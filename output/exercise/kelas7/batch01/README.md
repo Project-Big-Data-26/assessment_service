@@ -1,6 +1,6 @@
 # Serah-terima batch 01 — kelas7
 
-Total **617 soal**, pipeline `exercise-2026-10-01`, skill: v1 (617)
+Total **842 soal**, pipeline `exercise-2026-10-01`, skill: v1 (842)
 
 ## File
 
@@ -59,6 +59,11 @@ Catatan untuk kalibrasi:
 | SMP7-B5 | A. Hubungan Antar Sudut | 12 | 10 | 6 |
 | SMP7-B5 | B. Arti Kesebangunan | 10 | 12 | 8 |
 | SMP7-B5 | C. Kesebangunan pada Segitiga | 15 | 13 | 7 |
+| SMP7-B6 | A. Investigasi Statistika | 15 | 15 | 15 |
+| SMP7-B6 | B. Macam-Macam Data | 15 | 15 | 15 |
+| SMP7-B6 | C. Diagram dalam Statistika | 15 | 15 | 15 |
+| SMP7-B6 | D. Diagram Batang | 15 | 15 | 15 |
+| SMP7-B6 | E. Diagram Lingkaran | 15 | 15 | 15 |
 
 ## Aturan pemakaian
 

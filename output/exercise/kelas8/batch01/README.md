@@ -1,6 +1,6 @@
 # Serah-terima batch 01 — kelas8
 
-Total **538 soal**, pipeline `exercise-2026-10-01`, skill: v1 (538)
+Total **853 soal**, pipeline `exercise-2026-10-01`, skill: v1 (853)
 
 ## File
 
@@ -37,6 +37,11 @@ Catatan untuk kalibrasi:
 | SMP8-B1 | A. Bilangan Berpangkat Bulat | 15 | 15 | 15 |
 | SMP8-B1 | B. Bilangan Bentuk Akar | 15 | 15 | 15 |
 | SMP8-B1 | C. Penulisan Bentuk Baku | 15 | 15 | 14 |
+| SMP8-B2 | A. Menemukan Konsep Pythagoras | 15 | 15 | 15 |
+| SMP8-B2 | B. Tripel Pythagoras | 15 | 15 | 15 |
+| SMP8-B2 | C. Segitiga Istimewa | 15 | 15 | 15 |
+| SMP8-B2 | D. Penerapan Teorema Pythagoras | 15 | 15 | 15 |
+| SMP8-B2 | E. Rumus Jarak (Pengayaan) | 15 | 15 | 15 |
 | SMP8-B3 | A. Memahami Konsep Persamaan Linier Satu Variabel | 15 | 15 | 15 |
 | SMP8-B3 | B. Menyelesaikan Persamaan Linier Satu Variabel | 15 | 15 | 15 |
 | SMP8-B3 | C. Menemukan Konsep Pertidaksamaan Linier Satu Variabel | 15 | 15 | 15 |
@@ -44,6 +49,8 @@ Catatan untuk kalibrasi:
 | SMP8-B4 | A. Memahami Relasi | 15 | 15 | 15 |
 | SMP8-B4 | B. Memahami Fungsi | 15 | 15 | 15 |
 | SMP8-B4 | C. Korespondensi Satu-satu (Pengayaan) | 15 | 15 | 14 |
+| SMP8-B5 | A. Grafik Persamaan Garis Lurus | 15 | 15 | 15 |
+| SMP8-B5 | B. Pengertian Kemiringan | 15 | 15 | 15 |
 | SMP8-B6 | A. Pemusatan Data | 15 | 15 | 15 |
 | SMP8-B6 | B. Penyebaran Data | 15 | 15 | 15 |
 

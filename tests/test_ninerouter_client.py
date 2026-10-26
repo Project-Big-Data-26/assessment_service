@@ -72,3 +72,32 @@ def test_stream_http_error_is_wrapped_without_key():
     with pytest.raises(NineRouterError) as err:
         client.chat([{"role": "user", "content": "hai"}])
     assert "503" in str(err.value) and "secret-key" not in str(err.value)
+
+
+def test_koneksi_putus_diulang_otomatis(monkeypatch):
+    monkeypatch.setattr("app.llm.ninerouter.time.sleep", lambda *_: None)
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        if calls["n"] < 3:
+            raise httpx.ReadError("koneksi diputus", request=request)
+        return httpx.Response(200, json={"model": "m1", "choices": [{"message": {"content": "siap"}}]})
+
+    client = NineRouterClient(_settings(stream=False), transport=httpx.MockTransport(handler))
+    assert client.chat([{"role": "user", "content": "hai"}]).text == "siap"
+    assert calls["n"] == 3
+
+
+def test_galat_http_tidak_diulang(monkeypatch):
+    monkeypatch.setattr("app.llm.ninerouter.time.sleep", lambda *_: None)
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        return httpx.Response(429, text="kuota habis")
+
+    client = NineRouterClient(_settings(stream=False), transport=httpx.MockTransport(handler))
+    with pytest.raises(NineRouterError):
+        client.chat([{"role": "user", "content": "hai"}])
+    assert calls["n"] == 1

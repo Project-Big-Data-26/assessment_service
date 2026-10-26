@@ -1,0 +1,644 @@
+{
+  "book": "kelas9",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas9-b03-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0191-latihan-c-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rotasi segitiga 90 derajat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah perhitungan koordinat bayangan untuk tiap titik sudut segitiga menggunakan aturan rotasi 90 derajat berlawanan arah jarum jam.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui $\\Delta DEF$ memiliki titik-titik sudut di $D(-4, 6)$, $E(7, 3)$, dan $F(-2, -5)$. Bayangan $\\Delta DEF$ dari hasil rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0,0)$ adalah ....",
+      "jawaban_benar": "$D'(-6, -4)$, $E'(-3, 7)$, dan $F'(5, -2)$",
+      "alasan_benar": "Rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap $O(0,0)$ memetakan $(x, y) \\to (-y, x)$. Diperoleh $D(-4, 6) \\to D'(-6, -4)$, $E(7, 3) \\to E'(-3, 7)$, dan $F(-2, -5) \\to F'(5, -2)$.",
+      "distraktor": [
+        {
+          "teks": "$D'(6, 4)$, $E'(3, -7)$, dan $F'(-5, 2)$",
+          "alasan": "Menggunakan aturan rotasi $-90^\\circ$ yaitu $(y, -x)$ bukannya $(-y, x)$."
+        },
+        {
+          "teks": "$D'(-6, 4)$, $E'(-3, -7)$, dan $F'(5, 2)$",
+          "alasan": "Hanya menukar posisi variabel menjadi $(-y, -x)$."
+        },
+        {
+          "teks": "$D'(4, -6)$, $E'(-7, -3)$, dan $F'(2, 5)$",
+          "alasan": "Menggunakan aturan rotasi $180^\\circ$ yaitu $(-x, -y)$."
+        }
+      ],
+      "pembahasan": "Aturan rotasi terhadap titik pusat $O(0,0)$ sebesar $90^\\circ$ berlawanan arah jarum jam:\n$(x, y) \\to (-y, x)$\n\nMenerapkan aturan pada masing-masing titik:\n1. $D(-4, 6) \\to D'(-6, -4)$\n2. $E(7, 3) \\to E'(-3, 7)$\n3. $F(-2, -5) \\to F'(-(-5), -2) = F'(5, -2)$\n\nJadi, bayangan segitiga tersebut adalah $D'(-6, -4)$, $E'(-3, 7)$, dan $F'(5, -2)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 189,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 3.12 Rotasi 90° Terhadap O(0,0)"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "nilai aljabar koordinat asal rotasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan analisis mundur dari koordinat bayangan ke koordinat asal lalu menghitung nilai bentuk aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P(a, b)$ dirotasikan sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan $P'(-8, 5)$. Nilai dari $2a + b$ adalah ....",
+      "jawaban_benar": "18",
+      "alasan_benar": "Rumus rotasi $90^\\circ$ adalah $(x, y) \\to (-y, x)$. Maka $(-b, a) = (-8, 5)$, sehingga $b = 8$ dan $a = 5$. Nilai $2a + b = 2(5) + 8 = 18$.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Keliru mengidentifikasi $a = -8$ dan $b = 5$, lalu menghitung $2(-8) + 5$ yang mendekati atau salah tanda $-16 + 5$."
+        },
+        {
+          "teks": "-1",
+          "alasan": "Tertukar rumus rotasi menjadi $(y, -x)$ sehingga $b = -8$ dan $a = -5$, $2(-5) + 8 = -2$ atau keliru aljabar."
+        },
+        {
+          "teks": "21",
+          "alasan": "Menghitung $a + 2b = 5 + 2(8) = 21$ karena tertukar koefisien."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan nilai $a$ dan $b$.\nRotasi sebesar $90^\\circ$ berlawanan jarum jam terhadap $O(0,0)$ memetakan $(x, y) \\to (-y, x)$.\nBayangan dari $P(a, b)$ adalah $P'(-b, a)$.\nDiketahui $P'(-8, 5)$, maka:\n$-b = -8 \\Rightarrow b = 8$\n$a = 5$\n\nLangkah 2: Hitung nilai $2a + b$.\n$2a + b = 2(5) + 8 = 10 + 8 = 18$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 188,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 3.11 Hasil Rotasi Titik ( x,y )"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rotasi berurutan dua sudut",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengharuskan penyelesaian dua tahap rotasi secara berurutan pada bidang koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $M(-6, 9)$ dirotasikan terhadap titik pusat $O(0,0)$ sebesar $90^\\circ$ berlawanan arah jarum jam, kemudian hasilnya dirotasikan kembali sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$. Koordinat akhir bayangan titik $M$ adalah ....",
+      "jawaban_benar": "$(9, 6)$",
+      "alasan_benar": "Rotasi pertama $90^\\circ$ menghasilkan $M'(-9, -6)$. Rotasi kedua $180^\\circ$ memetakan $(-x, -y)$ sehingga menghasilkan $M''(9, 6)$.",
+      "distraktor": [
+        {
+          "teks": "$(-9, -6)$",
+          "alasan": "Hanya melakukan rotasi pertama sebesar $90^\\circ$ tanpa melanjutkan rotasi $180^\\circ$."
+        },
+        {
+          "teks": "$(-6, -9)$",
+          "alasan": "Salah menerapkan aturan rotasi $180^\\circ$ atau tertukar tanda absis dan ordinat."
+        },
+        {
+          "teks": "$(6, -9)$",
+          "alasan": "Hanya melakukan rotasi kedua sebesar $180^\\circ$ langsung dari titik awal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Rotasi pertama sebesar $90^\\circ$ berlawanan arah jarum jam terhadap $O(0,0)$.\nAturan: $(x, y) \\to (-y, x)$\n$M(-6, 9) \\to M'(-9, -6)$\n\nLangkah 2: Rotasi kedua sebesar $180^\\circ$ terhadap $O(0,0)$.\nAturan: $(x, y) \\to (-x, -y)$\n$M'(-9, -6) \\to M''(-(-9), -(-6)) = M''(9, 6)$\n\nJadi, bayangan akhir titik $M$ adalah $(9, 6)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0191-latihan-c-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rotasi segi empat 180 derajat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan aturan rotasi 180 derajat pada empat titik sudut segi empat secara mandiri.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui segi empat $ABCD$ memiliki koordinat titik sudut di $A(-4, 7)$, $B(-8, 5)$, $C(-6, -2)$, dan $D(-2, -5)$. Koordinat bayangan titik-titik sudut segi empat $ABCD$ setelah dirotasikan sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ adalah ....",
+      "jawaban_benar": "$A'(4, -7)$, $B'(8, -5)$, $C'(6, 2)$, dan $D'(2, 5)$",
+      "alasan_benar": "Aturan rotasi $180^\\circ$ terhadap pusat $O(0,0)$ adalah $(x, y) \\to (-x, -y)$. Menerapkan aturan ini pada tiap titik menghasilkan tanda koordinat berlawanan: $A'(4, -7)$, $B'(8, -5)$, $C'(6, 2)$, dan $D'(2, 5)$.",
+      "distraktor": [
+        {
+          "teks": "$A'(-4, -7)$, $B'(-8, -5)$, $C'(-6, 2)$, dan $D'(-2, 5)$",
+          "alasan": "Hanya mengubah tanda koordinat $y$ (refleksi terhadap sumbu-$X$), bukan kedua koordinat."
+        },
+        {
+          "teks": "$A'(7, -4)$, $B'(5, -8)$, $C'(-2, -6)$, dan $D'(-5, -2)$",
+          "alasan": "Menukar letak absis dan ordinat serta mengubah tanda seperti aturan rotasi searah jarum jam $90^\\circ$."
+        },
+        {
+          "teks": "$A'(-7, 4)$, $B'(-5, 8)$, $C'(2, 6)$, dan $D'(5, 2)$",
+          "alasan": "Menggunakan aturan rotasi $90^\\circ$ berlawanan arah jarum jam alih-alih $180^\\circ$."
+        }
+      ],
+      "pembahasan": "Rotasi sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ memiliki rumus transformasi:\n$(x, y) \\xrightarrow{[O, 180^\\circ]} (-x, -y)$\n\nKoordinat bayangan masing-masing titik:\n1. $A(-4, 7) \\to A'(-(-4), -(7)) = A'(4, -7)$\n2. $B(-8, 5) \\to B'(-(-8), -(5)) = B'(8, -5)$\n3. $C(-6, -2) \\to C'(-(-6), -(-2)) = C'(6, 2)$\n4. $D(-2, -5) \\to D'(-(-2), -(-5)) = D'(2, 5)$\n\nJadi, bayangan segi empat $ABCD$ adalah $A'(4, -7)$, $B'(8, -5)$, $C'(6, 2)$, dan $D'(2, 5)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0191-latihan-c-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rotasi objek segitiga kontekstual 90 derajat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerjemahkan konteks pemetaan posisi pos ke bidang koordinat dan menghitung hasil rotasi positif 90 derajat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tiga pos pemantauan $P$, $Q$, dan $R$ pada peta pengawasan hutan masing-masing berada pada koordinat $P(4, 7)$, $Q(9, 6)$, dan $R(3, 2)$. Petugas memutar radar navigasi sebesar $90^\\circ$ berlawanan arah perputaran jarum jam dengan pusat putaran $O(0,0)$. Koordinat baru ketiga pos pemantauan tersebut pada layar navigasi adalah ....",
+      "jawaban_benar": "$P'(-7, 4)$, $Q'(-6, 9)$, dan $R'(-2, 3)$",
+      "alasan_benar": "Rotasi sebesar $90^\\circ$ berlawanan arah jarum jam berpusat di $O(0,0)$ memiliki aturan $(x, y) \\to (-y, x)$. Menghasilkan $P'(-7, 4)$, $Q'(-6, 9)$, dan $R'(-2, 3)$.",
+      "distraktor": [
+        {
+          "teks": "$P'(7, -4)$, $Q'(6, -9)$, dan $R'(2, -3)$",
+          "alasan": "Menggunakan aturan rotasi searah jarum jam $-90^\\circ$ yaitu $(y, -x)$."
+        },
+        {
+          "teks": "$P'(-4, -7)$, $Q'(-9, -6)$, dan $R'(-3, -2)$",
+          "alasan": "Menerapkan rumus rotasi $180^\\circ$ yaitu $(-x, -y)$."
+        },
+        {
+          "teks": "$P'(7, 4)$, $Q'(6, 9)$, dan $R'(2, 3)$",
+          "alasan": "Hanya menukar posisi absis dan ordinat $(y, x)$ tanpa mengubah tanda salah satunya."
+        }
+      ],
+      "pembahasan": "Rotasi sebesar $90^\\circ$ berlawanan arah perputaran jarum jam terhadap titik asal $O(0,0)$ dinyatakan dengan:\n$(x, y) \\xrightarrow{[O, 90^\\circ]} (-y, x)$\n\nPerhitungan koordinat baru:\n1. Titik $P(4, 7) \\to P'(-7, 4)$\n2. Titik $Q(9, 6) \\to Q'(-6, 9)$\n3. Titik $R(3, 2) \\to R'(-2, 3)$\n\nJadi, koordinat baru ketiga pos pemantauan adalah $P'(-7, 4)$, $Q'(-6, 9)$, dan $R'(-2, 3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 187,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan ∆ A'OB' merupakan hasil rotasi sebesar - 90º ( searah perputaran jarum jam), sedangkan ∆ A\"OB\" merupakan hasil rotasi sebesar 90º ( berlawanan arah jarum jam)."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "menentukan nilai aljabar dari koordinat asal rotasi negatif",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis koordinat asal dari bayangan rotasi negatif 90 derajat secara terbalik kemudian menghitung operasi aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $K(p, q)$ dirotasikan sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan $K'(7, -4)$. Nilai dari $2p - 3q$ adalah ....",
+      "jawaban_benar": "-13",
+      "alasan_benar": "Aturan rotasi $-90^\\circ$ adalah $(x, y) \\to (y, -x)$. Maka $(q, -p) = (7, -4)$, diperoleh $q = 7$ dan $p = 4$. Hasil $2(4) - 3(7) = 8 - 21 = -13$.",
+      "distraktor": [
+        {
+          "teks": "26",
+          "alasan": "Tertukar menganggap aturan bayangan adalah $(p, q) = (7, -4)$ sehingga menghitung $2(7) - 3(-4) = 14 + 12 = 26$."
+        },
+        {
+          "teks": "-29",
+          "alasan": "Tertukar menganggap $p = -4$ dan $q = 7$ sehingga menghitung $2(-4) - 3(7) = -8 - 21 = -29$."
+        },
+        {
+          "teks": "13",
+          "alasan": "Salah tanda pengurangan pada bentuk aljabar, menghitung $21 - 8 = 13$."
+        }
+      ],
+      "pembahasan": "Rotasi sebesar $-90^\\circ$ terhadap titik pusat $O(0,0)$ memiliki aturan transformasi:\n$(x, y) \\xrightarrow{[O, -90^\\circ]} (y, -x)$\n\nDiketahui titik awal adalah $K(p, q)$ dan bayangannya $K'(7, -4)$:\n$(q, -p) = (7, -4)$\n\nDari kesamaan koordinat diperoleh:\n$q = 7$\n$-p = -4 \\implies p = 4$\n\nMenghitung nilai $2p - 3q$:\n$2p - 3q = 2(4) - 3(7) = 8 - 21 = -13$\n\nJadi, nilai dari $2p - 3q$ adalah $-13$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 185,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Rotasi merupakan salah satu bentuk transformasi dengan memutarkan suatu objek (titik, garis, atau bangun) berdasarkan sudut dan arah tertentu terhadap pusat rotasinya."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "titik potong diagonal bangun datar hasil rotasi 180 derajat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik potong diagonal dari bangun sebelum dan sesudah dikenai transformasi rotasi 180 derajat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persegi panjang $PQRS$ memiliki titik-titik sudut di $P(1, 1)$, $Q(7, 1)$, $R(7, 5)$, dan $S(1, 5)$. Jika persegi panjang tersebut dirotasikan sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ menghasilkan bayangan $P'Q'R'S'$, koordinat titik potong kedua diagonal bayangan persegi panjang tersebut adalah ....",
+      "jawaban_benar": "$(-4, -3)$",
+      "alasan_benar": "Titik potong diagonal persegi panjang awal adalah titik tengahnya, yaitu $((1+7)/2, (1+5)/2) = (4, 3)$. Rotasi $180^\\circ$ terhadap $(0,0)$ memetakan $(x, y) \\to (-x, -y)$, sehingga bayangan titik potong diagonal adalah $(-4, -3)$.",
+      "distraktor": [
+        {
+          "teks": "$(4, 3)$",
+          "alasan": "Hanya menghitung titik potong diagonal bangun awal tanpa merotasikannya."
+        },
+        {
+          "teks": "$(-3, -4)$",
+          "alasan": "Tertukar nilai absis dan ordinat pada koordinat bayangan."
+        },
+        {
+          "teks": "$(-4, 3)$",
+          "alasan": "Hanya mengubah tanda absis $x$ dan lupa mengubah tanda ordinat $y$."
+        }
+      ],
+      "pembahasan": "Titik potong kedua diagonal persegi panjang terletak tepat pada titik tengah bangun datar tersebut.\n\nLangkah 1: Menentukan titik potong diagonal mula-mula (titik tengah antara $P(1,1)$ dan $R(7,5)$):\n$M = \\left(\\frac{x_P + x_R}{2}, \\frac{y_P + y_R}{2}\\right) = \\left(\\frac{1 + 7}{2}, \\frac{1 + 5}{2}\\right) = (4, 3)$\n\nLangkah 2: Merotasikan titik pusat simetri $M(4, 3)$ sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$:\n$(x, y) \\xrightarrow{[O, 180^\\circ]} (-x, -y)$\n$M'(4, 3) \\to M'(-4, -3)$\n\nJadi, koordinat titik potong kedua diagonal bayangan persegi panjang tersebut adalah $(-4, -3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0191-latihan-c-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rotasi segi empat koordinat baru 180 derajat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan koordinat bayangan keempat titik sudut segi empat setelah rotasi 180 derajat terhadap pusat O(0,0).",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui segi empat $PQRS$ memiliki titik-titik sudut di $P(7, 4)$, $Q(9, -6)$, $R(5, -8)$, dan $S(2, -3)$. Koordinat bayangan hasil rotasi segi empat $PQRS$ sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ adalah ....",
+      "jawaban_benar": "$P'(-7, -4)$, $Q'(-9, 6)$, $R'(-5, 8)$, dan $S'(-2, 3)$",
+      "alasan_benar": "Aturan rotasi $180^\\circ$ terhadap $O(0,0)$ adalah $(x, y) \\to (-x, -y)$, sehingga tanda setiap komponen koordinat dibalik.",
+      "distraktor": [
+        {
+          "teks": "$P'(-4, 7)$, $Q'(6, 9)$, $R'(8, 5)$, dan $S'(3, 2)$",
+          "alasan": "Siswa menerapkan rumus rotasi $90^\\circ$ berlawanan arah jarum jam $(-y, x)$ alih-alih $180^\\circ$."
+        },
+        {
+          "teks": "$P'(4, -7)$, $Q'(-6, -9)$, $R'(-8, -5)$, dan $S'(-3, -2)$",
+          "alasan": "Siswa menerapkan rumus rotasi $-90^\\circ$ searah jarum jam $(y, -x)$ alih-alih $180^\\circ$."
+        },
+        {
+          "teks": "$P'(-7, 4)$, $Q'(-9, -6)$, $R'(-5, -8)$, dan $S'(-2, -3)$",
+          "alasan": "Siswa hanya menegasikan nilai absis $x$ dan lupa mengubah tanda ordinat $y$."
+        }
+      ],
+      "pembahasan": "Rumus rotasi titik $(x, y)$ sebesar $180^\\circ$ terhadap pusat $O(0,0)$ adalah $(x', y') = (-x, -y)$.\n1. $P(7, 4) \\to P'(-7, -4)$\n2. $Q(9, -6) \\to Q'(-9, -(-6)) = Q'(-9, 6)$\n3. $R(5, -8) \\to R'(-5, -(-8)) = R'(-5, 8)$\n4. $S(2, -3) \\to S'(-2, -(-3)) = S'(-2, 3)$\nJadi, koordinat bayangan segi empat adalah $P'(-7, -4)$, $Q'(-9, 6)$, $R'(-5, 8)$, dan $S'(-2, 3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 189,
+        "bagian": "Ayo Mencoba",
+        "nomor": "",
+        "teks": "Tentukan bayangan segitiga KLM pada bidang koordinat dengan K(2,3), L(4,2) dan M(3,5) yang dirotasikan sebesar -90º ( searah jarum jam)! Gambarkan segitiga KLM beserta bayangannya!",
+        "jawaban": "K'(3,-2), L'(2,-4), M'(5,-3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rotasi segitiga koordinat baru searah jarum jam",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan rumus rotasi titik sebesar -90 derajat pada ketiga titik sudut segitiga di bidang koordinat Cartesius.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Bayangan segitiga $ABC$ dengan titik sudut $A(7, 5)$, $B(9, -4)$, dan $C(-6, 8)$ yang dirotasikan sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap titik pusat $O(0,0)$ adalah ....",
+      "jawaban_benar": "$A'(5, -7)$, $B'(-4, -9)$, dan $C'(8, 6)$",
+      "alasan_benar": "Aturan rotasi $-90^\\circ$ terhadap $O(0,0)$ adalah $(x, y) \\to (y, -x)$.",
+      "distraktor": [
+        {
+          "teks": "$A'(-5, 7)$, $B'(4, 9)$, dan $C'(-8, -6)$",
+          "alasan": "Siswa menerapkan aturan rotasi $+90^\\circ$ berlawanan arah jarum jam $(-y, x)$."
+        },
+        {
+          "teks": "$A'(-7, -5)$, $B'(-9, 4)$, dan $C'(6, -8)$",
+          "alasan": "Siswa menerapkan aturan rotasi $180^\\circ$ $(-x, -y)$."
+        },
+        {
+          "teks": "$A'(5, 7)$, $B'(-4, 9)$, dan $C'(8, -6)$",
+          "alasan": "Siswa menukar absis dan ordinat $(y, x)$ tanpa mengubah tanda salah satu koordinat."
+        }
+      ],
+      "pembahasan": "Rumus rotasi $-90^\\circ$ (searah jarum jam) terhadap pusat $O(0,0)$ adalah $(x', y') = (y, -x)$.\n1. $A(7, 5) \\to A'(5, -7)$\n2. $B(9, -4) \\to B'(-4, -(9)) = B'(-4, -9)$\n3. $C(-6, 8) \\to C'(8, -(-6)) = C'(8, 6)$\nJadi, koordinat bayangannya adalah $A'(5, -7)$, $B'(-4, -9)$, dan $C'(8, 6)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 189,
+        "bagian": "Contoh",
+        "nomor": "3.9",
+        "teks": "Tentukan bayangan segitiga PQR dengan P(5,-3), Q(4,4) dan R(-3,1),  yang dirotasikan sebesar 90º berlawanan arah jarum jam terhadap titik pusat (0,0)! Gambarkan segitiga PQR beserta bayangannya pada bidang koordinat!",
+        "jawaban": "P'(3,5), Q'(-4,4), R'(-1,-3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rotasi formasi posisi kontekstual 90 derajat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerjemahkan situasi posisi formasi kapal ke bidang koordinat dan menghitung hasil rotasi 90 derajat berlawanan jarum jam.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tiga kapal survei berada di posisi koordinat $A(6, 2)$, $B(-5, 7)$, dan $C(-4, -8)$. Untuk mendeteksi arah sinyal baru, formasi ketiga kapal tersebut diputar sejauh $90^\\circ$ berlawanan arah perputaran jarum jam dengan pusat mercusuar $O(0,0)$. Posisi baru ketiga kapal survei tersebut berturut-turut adalah ....",
+      "jawaban_benar": "$A'(-2, 6)$, $B'(-7, -5)$, dan $C'(8, -4)$",
+      "alasan_benar": "Aturan rotasi $+90^\\circ$ berlawanan arah jarum jam terhadap titik asal adalah $(x, y) \\to (-y, x)$.",
+      "distraktor": [
+        {
+          "teks": "$A'(2, -6)$, $B'(7, 5)$, dan $C'(-8, 4)$",
+          "alasan": "Siswa menerapkan aturan rotasi searah jarum jam $(y, -x)$."
+        },
+        {
+          "teks": "$A'(-6, -2)$, $B'(5, -7)$, dan $C'(4, 8)$",
+          "alasan": "Siswa menerapkan rumus rotasi $180^\\circ$ $(-x, -y)$."
+        },
+        {
+          "teks": "$A'(-2, -6)$, $B'(-7, 5)$, dan $C'(8, 4)$",
+          "alasan": "Siswa salah mengubah tanda absis baru dan mempertahankan tanda ordinat lama."
+        }
+      ],
+      "pembahasan": "Rotasi $90^\\circ$ berlawanan arah jarum jam terhadap pusat $O(0,0)$ memetakan setiap titik $(x, y)$ ke $(-y, x)$.\n1. Kapal $A(6, 2) \\to A'(-2, 6)$\n2. Kapal $B(-5, 7) \\to B'(-7, -5)$\n3. Kapal $C(-4, -8) \\to C'(-(-8), -4) = C'(8, -4)$\nJadi, posisi baru ketiga kapal adalah $A'(-2, 6)$, $B'(-7, -5)$, dan $C'(8, -4)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 185,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Rotasi merupakan salah satu bentuk transformasi dengan memutarkan suatu objek (titik, garis, atau bangun) berdasarkan sudut dan arah tertentu terhadap pusat rotasinya."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "panjang ruas garis setelah rotasi koordinat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan koordinat bayangan kedua ujung ruas garis setelah rotasi lalu menghitung titik tengahnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui ruas garis $AB$ dengan koordinat titik $A(-2, 5)$ dan $B(6, -1)$. Ruas garis tersebut dirotasikan sebesar $-90^\\circ$ (searah jarum jam) terhadap titik pusat $O(0,0)$ sehingga menghasilkan ruas garis $A'B'$. Koordinat titik tengah dari ruas garis $A'B'$ adalah ....",
+      "jawaban_benar": "$(2, -2)$",
+      "alasan_benar": "Bayangan ujung-ujung ruas garis adalah $A'(5, 2)$ dan $B'(-1, -6)$, sehingga titik tengahnya adalah $((5+(-1))/2, (2+(-6))/2) = (2, -2)$.",
+      "distraktor": [
+        {
+          "teks": "$(-2, 2)$",
+          "alasan": "Siswa menerapkan aturan rotasi berlawanan arah jarum jam $+90^\\circ$ sehingga menghasilkan bayangan $(-2, 2)$."
+        },
+        {
+          "teks": "$(2, 2)$",
+          "alasan": "Siswa menghitung titik tengah ruas garis awal $AB$ sebelum dirotasikan."
+        },
+        {
+          "teks": "$(-2, -2)$",
+          "alasan": "Siswa menerapkan rotasi $180^\\circ$ pada titik tengah ruas garis."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat bayangan $A$ dan $B$.\nAturan rotasi $-90^\\circ$ terhadap pusat $O(0,0)$ adalah $(x, y) \\to (y, -x)$.\n$A(-2, 5) \\to A'(5, -(-2)) = A'(5, 2)$\n$B(6, -1) \\to B'(-1, -6)$\n\nLangkah 2: Menghitung koordinat titik tengah ruas garis $A'B'$.\n$x_m = \\frac{5 + (-1)}{2} = \\frac{4}{2} = 2$\n$y_m = \\frac{2 + (-6)}{2} = \\frac{-4}{2} = -2$\n\nJadi, koordinat titik tengah ruas garis $A'B'$ adalah $(2, -2)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 189,
+        "bagian": "Ayo Mencoba",
+        "nomor": "1",
+        "teks": "Tentukan bayangan segitiga KLM pada bidang koordinat dengan K(2,3), L(4,2) dan M(3,5) yang dirotasikan sebesar -90º ( searah jarum jam)! Gambarkan segitiga KLM beserta bayangannya!",
+        "jawaban": "K'(3,-2), L'(2,-4), dan M'(5,-3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rotasi segitiga searah jarum jam sudut negatif",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan rumus rotasi searah jarum jam terhadap titik pusat tiga kali untuk ketiga titik sudut segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Bayangan segitiga $XYZ$ dengan koordinat titik sudut $X(-5, 4)$, $Y(-8, -2)$, dan $Z(-1, -6)$ yang dirotasikan sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap titik pusat $O(0,0)$ adalah ....",
+      "jawaban_benar": "$X'(4, 5)$, $Y'(-2, 8)$, dan $Z'(-6, 1)$",
+      "alasan_benar": "Rumus rotasi sebesar $-90^\\circ$ terhadap pusat $O(0,0)$ adalah $(x, y) \\to (y, -x)$. Diperoleh $X'=(4, -(-5)) = (4, 5)$, $Y'=(-2, -(-8)) = (-2, 8)$, dan $Z'=(-6, -(-1)) = (-6, 1)$.",
+      "distraktor": [
+        {
+          "teks": "$X'(-4, -5)$, $Y'(2, -8)$, dan $Z'(6, -1)$",
+          "alasan": "Siswa menggunakan rumus rotasi $+90^\\circ$ berlawanan arah jarum jam, yaitu $(x, y) \\to (-y, x)$."
+        },
+        {
+          "teks": "$X'(5, -4)$, $Y'(8, 2)$, dan $Z'(1, 6)$",
+          "alasan": "Siswa menerapkan rumus rotasi $180^\\circ$, yaitu $(x, y) \\to (-x, -y)$."
+        },
+        {
+          "teks": "$X'(4, -5)$, $Y'(-2, -8)$, dan $Z'(-6, -1)$",
+          "alasan": "Siswa menukar absis dan ordinat tanpa mengubah tanda absis asal, yaitu $(x, y) \\to (y, x)$."
+        }
+      ],
+      "pembahasan": "Rotasi suatu titik $(x, y)$ sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap titik pusat $O(0,0)$ memiliki aturan transformasi:\n$$(x, y) \\to (y, -x)$$\n\nTransformasikan setiap titik sudut segitiga $XYZ$:\n1. Titik $X(-5, 4) \\to X'(4, -(-5)) = X'(4, 5)$\n2. Titik $Y(-8, -2) \\to Y'(-2, -(-8)) = Y'(-2, 8)$\n3. Titik $Z(-1, -6) \\to Z'(-6, -(-1)) = Z'(-6, 1)$\n\nJadi, bayangan segitiga $XYZ$ adalah $X'(4, 5)$, $Y'(-2, 8)$, dan $Z'(-6, 1)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 186,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Rotasi merupakan salah satu bentuk transformasi dengan memutarkan suatu objek (titik, garis, atau bangun) berdasarkan sudut dan arah tertentu terhadap pusat rotasinya."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "persamaan aljabar koordinat rotasi 180 derajat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis relasi koordinat hasil rotasi 180 derajat yang dipadukan dengan penyelesaian persamaan linier satu variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(3m - 2, 2n + 5)$ dirotasikan sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan $A'(-7, -1)$. Nilai dari $2m + n$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Rotasi $180^\\circ$ terhadap $O(0,0)$ memetakan $(x, y) \\to (-x, -y)$. Didapat $-(3m - 2) = -7 \\implies 3m = 9 \\implies m = 3$, dan $-(2n + 5) = -1 \\implies 2n = -4 \\implies n = -2$. Nilai $2m + n = 2(3) + (-2) = 4$.",
+      "distraktor": [
+        {
+          "teks": "1",
+          "alasan": "Siswa menghitung nilai $m + n = 3 + (-2) = 1$, lupa mengalikan $m$ dengan 2."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa keliru menghitung nilai $2m - n = 6 - (-2) = 8$."
+        },
+        {
+          "teks": "3",
+          "alasan": "Siswa melakukan kesalahan tanda pada persamaan ordinat sehingga memperoleh $n = -3$, lalu menghitung $2(3) + (-3) = 3$."
+        }
+      ],
+      "pembahasan": "Rotasi titik $(x, y)$ sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ menghasilkan bayangan:\n$$(x', y') = (-x, -y)$$\n\nDiketahui $A(3m - 2, 2n + 5)$ dan $A'(-7, -1)$:\n1. Mencari nilai $m$:\n$$-(3m - 2) = -7$$\n$$3m - 2 = 7$$\n$$3m = 9$$\n$$m = 3$$\n\n2. Mencari nilai $n$:\n$$-(2n + 5) = -1$$\n$$2n + 5 = 1$$\n$$2n = 1 - 5$$\n$$2n = -4$$\n$$n = -2$$\n\n3. Menghitung nilai $2m + n$:\n$$2m + n = 2(3) + (-2) = 6 - 2 = 4$$\n\nJadi, nilai dari $2m + n$ adalah 4.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 186,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Besar sudut dari bayangan objek terhadap posisi awalnya disebut sudut rotasi ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aljabar koordinat asal rotasi 270 derajat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemahaman aturan rotasi 270 derajat terhadap titik asal dan penyelesaian persamaan linier dua variabel sederhana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $K(2a - 5, b + 4)$ dirotasikan sebesar $270^\\circ$ berlawanan arah perputaran jarum jam terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan $K'(6, -7)$. Nilai dari $a + b$ adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "Aturan rotasi sebesar $270^\\circ$ berlawanan arah jarum jam terhadap $O(0,0)$ memetakan $(x, y) \\to (y, -x)$. Diperoleh $b + 4 = 6 \\implies b = 2$ dan $-(2a - 5) = -7 \\implies 2a - 5 = 7 \\implies a = 6$, sehingga $a + b = 6 + 2 = 8$.",
+      "distraktor": [
+        {
+          "teks": "-11",
+          "alasan": "Siswa keliru menerapkan rumus rotasi 90 derajat berlawanan arah jarum jam $(-y, x)$ sehingga menghasilkan $b = -10$ dan $a = -1$."
+        },
+        {
+          "teks": "1",
+          "alasan": "Siswa lupa tanda negatif pada ordinat bayangan dan menganggap hasil rotasi adalah $(y, x)$ sehingga memperoleh $a = -1$ dan $b = 2$."
+        },
+        {
+          "teks": "-4",
+          "alasan": "Siswa keliru menerapkan aturan bayangan menjadi $(-y, -x)$ sehingga memperoleh $a = 6$ dan $b = -10$."
+        }
+      ],
+      "pembahasan": "Rotasi suatu titik $(x, y)$ sebesar $270^\\circ$ berlawanan arah perputaran jarum jam terhadap titik pusat $O(0,0)$ menghasilkan bayangan $(x', y') = (y, -x)$.\n\nBerdasarkan soal:\n1. $x' = y \\implies 6 = b + 4 \\implies b = 6 - 4 = 2$\n2. $y' = -x \\implies -7 = -(2a - 5) \\implies 2a - 5 = 7 \\implies 2a = 12 \\implies a = 6$\n\nDengan demikian, nilai dari $a + b = 6 + 2 = 8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 189,
+        "bagian": "Ayo Mencoba",
+        "nomor": "",
+        "teks": "Tentukan bayangan segitiga KLM pada bidang koordinat dengan K(2,3), L(4,2) dan M(3,5) yang dirotasikan sebesar -90º (searah jarum jam)! Gambarkan segitiga KLM beserta bayangannya!",
+        "jawaban": "K'(3,-2), L'(2,-4), M'(5,-3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemetaan bayangan segitiga rotasi negatif",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan aturan rotasi -90 derajat pada tiga titik koordinat segitiga sekaligus secara bertahap.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Bayangan segitiga $TUV$ dengan titik-titik sudut $T(-7, 8)$, $U(5, -6)$, dan $V(-4, -9)$ yang dirotasikan sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap titik pusat $O(0,0)$ adalah ....",
+      "jawaban_benar": "$T'(8, 7)$, $U'(-6, -5)$, dan $V'(-9, 4)$",
+      "alasan_benar": "Rumus rotasi sebesar $-90^\\circ$ terhadap pusat $(0,0)$ adalah $(x, y) \\to (y, -x)$. Maka $T(-7, 8) \\to T'(8, -(-7)) = T'(8, 7)$, $U(5, -6) \\to U'(-6, -5)$, dan $V(-4, -9) \\to V'(-9, -(-4)) = V'(-9, 4)$.",
+      "distraktor": [
+        {
+          "teks": "$T'(-8, -7)$, $U'(6, 5)$, dan $V'(9, -4)$",
+          "alasan": "Menggunakan rumus rotasi $+90^\\circ$ berlawanan arah jarum jam, yaitu $(x, y) \\to (-y, x)$."
+        },
+        {
+          "teks": "$T'(8, -7)$, $U'(-6, 5)$, dan $V'(-9, -4)$",
+          "alasan": "Hanya menukar posisi absis dan ordinat tanpa mengubah tanda, yaitu $(x, y) \\to (y, x)$."
+        },
+        {
+          "teks": "$T'(-8, 7)$, $U'(6, -5)$, dan $V'(9, 4)$",
+          "alasan": "Menukar posisi variabel sekaligus membalik tanda pada koordinat $x$ baru, yaitu $(x, y) \\to (-y, -x)$."
+        }
+      ],
+      "pembahasan": "Rotasi suatu titik $(x, y)$ sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap titik pusat $O(0,0)$ memiliki aturan pemetaan:\n$$(x, y) \\to (y, -x)$$\n\nLangkah-langkah transformasi untuk setiap titik sudut:\n1. Titik $T(-7, 8)$:\n   $x = -7$, $y = 8$\n   $T' = (y, -x) = (8, -(-7)) = (8, 7)$\n\n2. Titik $U(5, -6)$:\n   $x = 5$, $y = -6$\n   $U' = (y, -x) = (-6, -5)$\n\n3. Titik $V(-4, -9)$:\n   $x = -4$, $y = -9$\n   $V' = (y, -x) = (-9, -(-4)) = (-9, 4)$\n\nJadi, bayangan segitiga $TUV$ adalah $T'(8, 7)$, $U'(-6, -5)$, dan $V'(-9, 4)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

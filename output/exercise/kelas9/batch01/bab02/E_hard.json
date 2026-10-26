@@ -1,0 +1,644 @@
+{
+  "book": "kelas9",
+  "bab_no": 2,
+  "subbab": "E",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas9-b02-e-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 123,
+        "bagian": "Ayo Mencoba",
+        "nomor": null,
+        "teks": "Dengan konteks yang sama seperti soal di atas (biaya oksidasi dan estimasi banyak oksidator per inci untuk luas permukaan), tentukan biaya dari oksidasi tembaga kerucut sebanyak 100 buah dengan ukuran jari-jari alas 50 inci dan panjang sisi miring dari sisi lengkung 60 inci.",
+        "jawaban": "Rp150.720.000,00",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "masalah kontekstual kerucut",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perhitungan garis pelukis, luas selimut, konversi kapasitas pelapis, dan penentuan batas atas jumlah unit berdasarkan anggaran dana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bengkel kerajinan memproduksi kap corong lampu tanpa alas berbentuk kerucut terbuka dari pelat seng dengan ukuran jari-jari alas $15\\text{ cm}$ dan tinggi $20\\text{ cm}$. Bagian luar kap lampu tersebut akan dilapisi cairan pelindung khusus. Setiap $1\\text{ liter}$ cairan pelindung dapat melapisi area seluas $12.500\\text{ cm}^2$ dan dijual dengan harga $\\text{Rp}150.000,00$ per liter. Jika bengkel memiliki anggaran maksimal sebesar $\\text{Rp}750.000,00$ untuk membeli cairan pelindung tersebut, berapa banyak kap corong lampu paling banyak yang dapat dilapisi seluruh bagian luarnya secara penuh? (Gunakan $\\pi = 3,14$)",
+      "jawaban_benar": "$53\\text{ buah}$",
+      "alasan_benar": "Menghitung panjang garis pelukis kap kerucut $s = \\sqrt{15^2 + 20^2} = \\sqrt{225 + 400} = 25\\text{ cm}$. Luas sisi lengkung (luas permukaan luar tanpa alas) satu kap adalah $L = \\pi r s = 3,14 \\times 15 \\times 25 = 1.177,5\\text{ cm}^2$. Dengan dana $\\text{Rp}750.000,00$, cairan pelindung yang dapat dibeli adalah $\\frac{750.000}{150.000} = 5\\text{ liter}$, yang mampu melapisi total area seluas $5 \\times 12.500 = 62.500\\text{ cm}^2$. Kapasitas maksimal kap lampu yang dapat dilapisi utuh adalah $\\lfloor \\frac{62.500}{1.177,5} \\rfloor = \\lfloor 53,078... \\rfloor = 53\\text{ buah}$.",
+      "distraktor": [
+        {
+          "teks": "$54\\text{ buah}$",
+          "alasan": "Melakukan pembulatan ke atas terhadap hasil pembagian $53,078$ tanpa mempertimbangkan bahwa cairan tidak mencukupi untuk kap ke-54."
+        },
+        {
+          "teks": "$66\\text{ buah}$",
+          "alasan": "Keliru menggunakan tinggi kerucut $t = 20\\text{ cm}$ sebagai garis pelukis sehingga luas selimut dihitung $3,14 \\times 15 \\times 20 = 942\\text{ cm}^2$."
+        },
+        {
+          "teks": "$33\\text{ buah}$",
+          "alasan": "Keliru menganggap kerucut memiliki alas tertutup sehingga luas dihitung $\\pi r (r + s) = 3,14 \\times 15 \\times 40 = 1.884\\text{ cm}^2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan garis pelukis kap kerucut:\n$s = \\sqrt{r^2 + t^2} = \\sqrt{15^2 + 20^2} = \\sqrt{625} = 25\\text{ cm}$.\n\nLangkah 2: Menghitung luas permukaan luar satu kap kerucut tanpa alas:\n$L = \\pi r s = 3,14 \\times 15 \\times 25 = 1.177,5\\text{ cm}^2$.\n\nLangkah 3: Menghitung volume cairan yang dapat dibeli:\n$\\text{Volume} = \\frac{\\text{Rp}750.000,00}{\\text{Rp}150.000,00/\\text{liter}} = 5\\text{ liter}$.\n\nLangkah 4: Menghitung daya sebar total cairan:\n$\\text{Luas total} = 5 \\times 12.500\\text{ cm}^2 = 62.500\\text{ cm}^2$.\n\nLangkah 5: Menentukan banyak kap lampu maksimal:\n$n = \\frac{62.500}{1.177,5} \\approx 53,08\\text{ buah}$.\nKarena harus terlapisi penuh, banyak kap maksimal adalah $53\\text{ buah}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 118,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "2 × Luas Alas + Luas Sisi Tegak = 2(π r^2 ) + (2π rt )"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "bangun ruang gabungan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan matematis luas permukaan luar gabungan tabung dan kubah setengah bola serta manipulasi aljabar untuk menentukan diameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bangunan tempat penyimpanan dirancang dengan menggabungkan tabung silinder tegak berjari-jari $r$ dan tinggi $t = 2r$ dengan kubah berbentuk setengah bola di bagian atasnya yang berjari-jari sama. Bagian alas tabung tertutup di tanah, sedangkan bagian atas tabung dibiarkan terbuka langsung menuju ke bagian dalam kubah (tidak memiliki sekat atap). Jika seluruh permukaan bagian luar bangunan tersebut memiliki luas total $1.078\\text{ m}^2$, maka panjang diameter tabung tersebut adalah ... (Gunakan $\\pi = \\frac{22}{7}$)",
+      "jawaban_benar": "$14\\text{ m}$",
+      "alasan_benar": "Luas permukaan luar terdiri dari 1 alas tabung, selimut tabung, dan kubah setengah bola: $L = \\pi r^2 + 2\\pi r(2r) + 2\\pi r^2 = 7\\pi r^2$. Dengan $7\\pi r^2 = 1.078$, diperoleh $22r^2 = 1.078 \\Rightarrow r^2 = 49 \\Rightarrow r = 7\\text{ m}$. Diameter tabung adalah $d = 2r = 14\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$7\\text{ m}$",
+          "alasan": "Hanya menghitung nilai jari-jari $r$, lupa mengalikan dua untuk mendapatkan diameter tabung."
+        },
+        {
+          "teks": "$21\\text{ m}$",
+          "alasan": "Salah menjumlahkan komponen luas permukaan menjadi $3\\pi r^2$ sehingga diperoleh nilai $r$ yang salah."
+        },
+        {
+          "teks": "$28\\text{ m}$",
+          "alasan": "Menghitung diameter sebagai empat kali jari-jari karena tertukar dengan hubungan tinggi tabung $t = 2r$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi komponen luas permukaan luar bangunan:\n- Luas 1 alas tabung = $\\pi r^2$\n- Luas selimut tabung = $2\\pi r t = 2\\pi r(2r) = 4\\pi r^2$\n- Luas kubah setengah bola = $2\\pi r^2$\n\nLangkah 2: Menjumlahkan seluruh luas permukaan luar:\n$L_{\\text{luar}} = \\pi r^2 + 4\\pi r^2 + 2\\pi r^2 = 7\\pi r^2$.\n\nLangkah 3: Mensubstitusikan nilai yang diketahui:\n$7 \\times \\frac{22}{7} \\times r^2 = 1.078$\n$22 r^2 = 1.078$.\n\nLangkah 4: Menentukan panjang jari-jari $r$:\n$r^2 = \\frac{1.078}{22} = 49 \\Rightarrow r = 7\\text{ m}$.\n\nLangkah 5: Menentukan panjang diameter tabung:\n$d = 2r = 2 \\times 7\\text{ m} = 14\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 129,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "jika sebuah bangun diubah ukurannya dengan skala k , maka luas permukaannya akan berubah dengan skala k^2"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pengaruh skala luas permukaan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi dan membandingkan efek perubahan dimensi parsial (hanya jari-jari) terhadap perubahan skala penuh pada luas permukaan tabung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua kaleng biskuit tertutup berbentuk tabung mula-mula identik dengan panjang jari-jari alas $r$ dan tinggi $t = r$. Kaleng pertama diperbesar dengan mengalikan jari-jari alasnya saja dengan faktor $3$ sementara tingginya tetap. Kaleng kedua diperbesar dengan menerapkan faktor skala $3$ ke seluruh dimensinya (jari-jari alas dan tinggi diperbesar $3$ kali lipat). Perbandingan luas permukaan seluruh kaleng pertama terhadap kaleng kedua setelah perubahan tersebut adalah ...",
+      "jawaban_benar": "$2 : 3$",
+      "alasan_benar": "Untuk kaleng pertama, $r_1 = 3r$ dan $t_1 = r$, sehingga luas permukaan $L_1 = 2\\pi r_1(r_1 + t_1) = 2\\pi(3r)(3r + r) = 24\\pi r^2$. Untuk kaleng kedua, skala diperbesar 3 kali seluruhnya sehingga luasnya menjadi $3^2 = 9$ kali luas mula-mula. Luas awal $= 2\\pi r(r + r) = 4\\pi r^2$, sehingga $L_2 = 9 \\times 4\\pi r^2 = 36\\pi r^2$. Perbandingannya adalah $L_1 : L_2 = 24\\pi r^2 : 36\\pi r^2 = 2 : 3$.",
+      "distraktor": [
+        {
+          "teks": "$1 : 3$",
+          "alasan": "Mengira perbandingan luas permukaan sama dengan perbandingan rasio tingginya saja yaitu $r : 3r = 1 : 3$."
+        },
+        {
+          "teks": "$4 : 9$",
+          "alasan": "Mengkuadratkan rasio $2 : 3$ karena keliru menerapkan aturan skala luas terhadap hasil akhir."
+        },
+        {
+          "teks": "$1 : 1$",
+          "alasan": "Mengira kedua tabung menghasilkan luas yang sama karena keduanya sama-sama dipengaruhi faktor pengali 3."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan luas permukaan kaleng pertama setelah diubah:\nJari-jari baru $r_1 = 3r$, tinggi baru $t_1 = r$.\n$L_1 = 2\\pi r_1^2 + 2\\pi r_1 t_1 = 2\\pi (3r)^2 + 2\\pi (3r)(r) = 18\\pi r^2 + 6\\pi r^2 = 24\\pi r^2$.\n\nLangkah 2: Menentukan luas permukaan awal kaleng:\n$L_0 = 2\\pi r(r + t) = 2\\pi r(r + r) = 4\\pi r^2$.\n\nLangkah 3: Menentukan luas permukaan kaleng kedua (skala $k = 3$ pada seluruh dimensi):\nSesuai sifat skala, jika semua dimensi diubah dengan faktor $k$, maka luas permukaan berubah dengan skala $k^2$:\n$L_2 = k^2 \\times L_0 = 3^2 \\times 4\\pi r^2 = 36\\pi r^2$.\n\nLangkah 4: Menghitung perbandingan luas permukaan $L_1$ terhadap $L_2$:\n$\\frac{L_1}{L_2} = \\frac{24\\pi r^2}{36\\pi r^2} = \\frac{2}{3} = 2 : 3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 126,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika diketahui sebuah bola memiliki jari-jari r , maka luas permukaan bola tersebut dapat dicari dengan rumus: Luas Permukaan Bola = 4π r^2 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "geometri pemotongan bola",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menganalisis kemunculan bidang-bidang penampang baru dari hasil pemotongan beruntun benda pejal dan mengevaluasi persentase pertambahannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bola pejal (padat) terbuat dari kayu memiliki jari-jari $r$ dan luas permukaan mula-mula sebesar $L$. Bola tersebut dipotong tepat pada bidang diameternya menjadi dua belahan setengah bola pejal yang kongruen. Salah satu belahan setengah bola dibiarkan utuh, sedangkan belahan lainnya dipotong kembali tepat di sepanjang sumbu simetri tegaknya menjadi dua bagian kuadran bola pejal yang kongruen. Berapa persentase pertambahan total luas permukaan dari ketiga potongan kayu yang terbentuk dibandingkan dengan luas permukaan bola mula-mula?",
+      "jawaban_benar": "$75\\%$",
+      "alasan_benar": "Luas awal bola pejal adalah $L = 4\\pi r^2$. Pemotongan pertama menghasilkan 2 bidang lingkaran alas seluas $2 \\times \\pi r^2 = 2\\pi r^2$. Pemotongan belahan kedua menghasilkan 2 bidang setengah lingkaran baru yang saling berimpit, yaitu seluas $2 \\times (\\frac{1}{2}\\pi r^2) = \\pi r^2$. Total penampang baru yang muncul adalah $2\\pi r^2 + \\pi r^2 = 3\\pi r^2$. Persentase pertambahan terhadap luas awal adalah $\\frac{3\\pi r^2}{4\\pi r^2} \\times 100\\% = 75\\%$.",
+      "distraktor": [
+        {
+          "teks": "$50\\%$",
+          "alasan": "Hanya memperhitungkan luas penampang baru pada pemotongan pertama dan mengabaikan penampang dari potongan kedua."
+        },
+        {
+          "teks": "$100\\%$",
+          "alasan": "Mengira pemotongan kedua membelah seluruh bola menjadi empat bagian sehingga penampang bertambah $4\\pi r^2$."
+        },
+        {
+          "teks": "$175\\%$",
+          "alasan": "Menghitung rasio luas akhir terhadap luas awal tanpa mengurangkannya dengan luas mula-mula."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan luas permukaan bola pejal mula-mula:\n$L_{\\text{awal}} = 4\\pi r^2$.\n\nLangkah 2: Menentukan luas belahan setengah bola pertama yang tidak dipotong lagi:\n$L_A = \\text{luas lengkung} + \\text{luas penampang lingkaran} = 2\\pi r^2 + \\pi r^2 = 3\\pi r^2$.\n\nLangkah 3: Menentukan luas masing-masing dari dua kuadran bola pejal hasil pemotongan kedua:\nTiap kuadran memiliki satu permukaan lengkung sebesar $\\frac{1}{4}(4\\pi r^2) = \\pi r^2$, satu alas setengah lingkaran $\\frac{1}{2}\\pi r^2$, dan satu penampang setengah lingkaran $\\frac{1}{2}\\pi r^2$.\nLuas satu kuadran $= \\pi r^2 + \\frac{1}{2}\\pi r^2 + \\frac{1}{2}\\pi r^2 = 2\\pi r^2$.\nKarena ada 2 kuadran, total luas keduanya adalah $2 \\times 2\\pi r^2 = 4\\pi r^2$.\n\nLangkah 4: Menghitung total luas seluruh permukaan ketiga potongan:\n$L_{\\text{akhir}} = 3\\pi r^2 + 4\\pi r^2 = 7\\pi r^2$.\n\nLangkah 5: Menghitung persentase pertambahan luas permukaan:\n$\\Delta L = 7\\pi r^2 - 4\\pi r^2 = 3\\pi r^2$.\n$\\text{Persentase} = \\frac{3\\pi r^2}{4\\pi r^2} \\times 100\\% = 75\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Keliling lingkaran alas kerucut sama dengan panjang busur juring yang menjadi selimutnya."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "rekonstruksi jaring-jaring kerucut",
+      "jumlah_langkah": 5,
+      "alasan_level": "Merancang dan merekonstruksi dimensi bangun ruang kerucut dari jaring-jaring juring lingkaran sudut tertentu hingga menghitung luas total permukaannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah wadah berbentuk kerucut tertutup dibuat dari selembar bahan karton tipis. Bagian sisi tegak (selimut) kerucut dibentuk dari sebuah juring lingkaran yang memiliki jari-jari $20\\text{ cm}$ dan sudut pusat $216^\\circ$. Setelah selimut terbentuk, sebuah alas berbentuk lingkaran dibuat sedemikian rupa sehingga tepat menutup bagian dasar kerucut tersebut. Luas seluruh permukaan kerucut tertutup yang dihasilkan adalah ... (Gunakan $\\pi = 3,14$)",
+      "jawaban_benar": "$1.205,76\\text{ cm}^2$",
+      "alasan_benar": "Panjang garis pelukis kerucut adalah jari-jari juring, $s = 20\\text{ cm}$. Panjang busur juring adalah keliling lingkaran alas kerucut: $2\\pi r = \\frac{216^\\circ}{360^\\circ} \\times 2\\pi(20) \\Rightarrow r = \\frac{3}{5} \\times 20 = 12\\text{ cm}$. Luas alas kerucut $= \\pi r^2 = 3,14 \\times 12^2 = 452,16\\text{ cm}^2$. Luas selimut kerucut $= \\pi r s = 3,14 \\times 12 \\times 20 = 753,60\\text{ cm}^2$. Luas seluruh permukaan kerucut tertutup $= 452,16 + 753,60 = 1.205,76\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$753,60\\text{ cm}^2$",
+          "alasan": "Hanya menghitung luas selimut kerucut saja, lupa menambahkan luas lingkaran alas penutup."
+        },
+        {
+          "teks": "$1.055,04\\text{ cm}^2$",
+          "alasan": "Keliru menganggap jari-jari alas kerucut adalah setengah dari jari-jari juring ($r = 10\\text{ cm}$)."
+        },
+        {
+          "teks": "$1.657,92\\text{ cm}^2$",
+          "alasan": "Keliru menambahkan dua kali luas alas lingkaran karena menganggap rumusnya sama seperti tabung tertutup."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jari-jari juring sebagai garis pelukis kerucut:\n$s = R_{\\text{juring}} = 20\\text{ cm}$.\n\nLangkah 2: Menghitung jari-jari alas kerucut ($r$) dari panjang busur juring:\nKeliling alas = Panjang busur juring\n$2\\pi r = \\frac{216^\\circ}{360^\\circ} \\times 2\\pi s$\n$r = \\frac{3}{5} \\times 20\\text{ cm} = 12\\text{ cm}$.\n\nLangkah 3: Menghitung luas sisi lengkung (selimut kerucut):\n$L_{\\text{selimut}} = \\pi r s = 3,14 \\times 12 \\times 20 = 753,60\\text{ cm}^2$.\n\nLangkah 4: Menghitung luas lingkaran alas kerucut:\n$L_{\\text{alas}} = \\pi r^2 = 3,14 \\times 12^2 = 3,14 \\times 144 = 452,16\\text{ cm}^2$.\n\nLangkah 5: Menghitung luas seluruh permukaan kerucut tertutup:\n$L_{\\text{total}} = L_{\\text{selimut}} + L_{\\text{alas}} = 753,60 + 452,16 = 1.205,76\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 120,
+        "bagian": "Ayo Mencoba",
+        "nomor": "1",
+        "teks": "Dengan konteks yang sama seperti soal di atas, berapa liter cat MowiPaint yang dibutuhkan Kabo, jika drum pertamina yang digunakan memiliki ukuran diameter 55 cm dan tinggi 90 cm?",
+        "jawaban": "0,23 liter",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis kebutuhan bahan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perhitungan luas permukaan drum tertutup dalam meter persegi, penerapan rumus kimia pelapisan DFT/VS%, evaluasi toleransi rugi pengecatan 10%, dan pembulatan ke satuan kaleng terkecil.",
+      "stimulus": "Rumus kebutuhan cat:\n$$\\text{Volume cat (liter)} = \\frac{\\text{Luas permukaan (m}^2\\text{)} \\times \\text{DFT}}{\\text{VS}\\% \\times 10}$$\nDiketahui spesifikasi cat memiliki $\\text{DFT} = 60$ mikron dan $\\text{VS}\\% = 48\\%$. Saat pengerjaan, terdapat estimasi cat terbuang (*wastage factor*) sebesar $10\\%$ dari kebutuhan teoritis. Cat tersebut dijual dalam kaleng berukuran $0,5\\text{ liter}$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bengkel akan mengecat seluruh permukaan luar dari $4$ buah drum minyak tertutup berbentuk tabung. Setiap drum memiliki panjang diameter $70\\text{ cm}$ dan tinggi $115\\text{ cm}$. Menggunakan $\\pi = \\frac{22}{7}$, berapa jumlah kaleng cat minimum yang harus dibeli?",
+      "jawaban_benar": "4 kaleng",
+      "alasan_benar": "Luas satu drum: $r = 35\\text{ cm} = 0,35\\text{ m}$, $t = 115\\text{ cm} = 1,15\\text{ m}$. Luas permukaan satu drum $= 2\\pi r(r + t) = 2 \\times \\frac{22}{7} \\times 0,35 \\times (0,35 + 1,15) = 2,2 \\times 1,5 = 3,3\\text{ m}^2$. Total luas $4$ drum $= 4 \\times 3,3 = 13,2\\text{ m}^2$. Kebutuhan teoritis volume cat $= \\frac{13,2 \\times 60}{48 \\times 10} = \\frac{792}{480} = 1,65\\text{ liter}$. Ditambah cat terbuang $10\\%$, total volume $= 1,65 \\times 1,10 = 1,815\\text{ liter}$. Jumlah kaleng ukuran $0,5\\text{ liter}$ yang dibutuhkan $= \\lceil\\frac{1,815}{0,5}\\rceil = \\lceil 3,63\\rceil = 4\\text{ kaleng}$.",
+      "distraktor": [
+        {
+          "teks": "3 kaleng",
+          "alasan": "Siswa melakukan pembulatan ke bawah dari 3,63 kaleng menjadi 3 kaleng sehingga cat tidak mencukupi."
+        },
+        {
+          "teks": "5 kaleng",
+          "alasan": "Siswa menghitung volume cat dengan mengalikan luas selimut saja ditambah dua kali luas alas terpisah dengan rumus keliling yang salah."
+        },
+        {
+          "teks": "2 kaleng",
+          "alasan": "Siswa lupa mengalikan dengan 4 drum dan hanya menghitung untuk 1 drum lalu dibulatkan ke atas."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung luas permukaan satu drum tertutup berbentuk tabung.\nPanjang jari-jari $r = \\frac{70}{2} = 35\\text{ cm} = 0,35\\text{ m}$, tinggi $t = 115\\text{ cm} = 1,15\\text{ m}$.\n$$L_1 = 2\\pi r(r + t) = 2 \\times \\frac{22}{7} \\times 0,35 \\times (0,35 + 1,15) = 2,2 \\times 1,5 = 3,3\\text{ m}^2$$\n\nLangkah 2: Menghitung total luas permukaan 4 buah drum.\n$$L_{\\text{total}} = 4 \\times 3,3\\text{ m}^2 = 13,2\\text{ m}^2$$\n\nLangkah 3: Menghitung volume cat secara teoritis.\n$$\\text{Volume} = \\frac{13,2 \\times 60}{48 \\times 10} = \\frac{792}{480} = 1,65\\text{ liter}$$\n\nLangkah 4: Menghitung total cat dengan tambahan faktor terbuang (*wastage*) $10\\%$.\n$$\\text{Total cat} = 1,65 \\times (1 + 0,10) = 1,65 \\times 1,10 = 1,815\\text{ liter}$$\n\nLangkah 5: Menentukan jumlah kaleng cat ukuran $0,5\\text{ liter}$.\n$$\\text{Banyak kaleng} = \\frac{1,815}{0,5} = 3,63$$\nKarena cat dibeli dalam kaleng utuh, dibulatkan ke atas menjadi $4\\text{ kaleng}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b02-p0130-latihan-e-7",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi efisiensi luas permukaan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Melibatkan teorema Pythagoras untuk garis pelukis kerucut terpancung/utuh, perhitungan luas selimut, analisis luas lembaran dengan overlap tumpang tindih, dan evaluasi sisa bahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kerucut tumpeng padat memiliki diameter alas $24\\text{ cm}$ dan tinggi $16\\text{ cm}$. Seluruh bidang lengkung (selimut) tumpeng tersebut akan ditutup rapat dengan potongan-potongan daun pisang berbentuk persegi berukuran $10\\text{ cm} \\times 10\\text{ cm}$. Karena pemasangan daun pisang saling bertumpuk (tumpang tindih), efektifitas luas tiap potongan daun pisang berkurang sebesar $20\\%$. Jika digunakan $\\pi = 3,14$, berapa lembar daun pisang utuh minimum yang harus disiapkan?",
+      "jawaban_benar": "10 lembar",
+      "alasan_benar": "Jari-jari alas $r = 12\\text{ cm}$, tinggi $t = 16\\text{ cm}$. Garis pelukis $s = \\sqrt{12^2 + 16^2} = \\sqrt{144 + 256} = \\sqrt{400} = 20\\text{ cm}$. Luas selimut kerucut $L_s = \\pi r s = 3,14 \\times 12 \\times 20 = 753,6\\text{ cm}^2$. Luas 1 lembar daun $= 100\\text{ cm}^2$, luas efektif $= 100 \\times (1 - 0,20) = 80\\text{ cm}^2$. Jumlah lembar $= \\lceil\\frac{753,6}{80}\\rceil = \\lceil 9,42\\rceil = 10\\text{ lembar}$.",
+      "distraktor": [
+        {
+          "teks": "8 lembar",
+          "alasan": "Siswa membagi luas selimut langsung dengan luas kotor 100 cm² tanpa memperhitungkan tumpang tindih 20% (753,6 / 100 = 7,536 -> 8)."
+        },
+        {
+          "teks": "9 lembar",
+          "alasan": "Siswa melakukan pemotongan atau pembulatan ke bawah dari 9,42 lembar menjadi 9 lembar sehingga luas belum tertutup sempurna."
+        },
+        {
+          "teks": "12 lembar",
+          "alasan": "Siswa salah menghitung garis pelukis dengan menjumlahkan langsung r + t = 28 cm."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jari-jari alas kerucut.\n$$r = \\frac{24}{2} = 12\\text{ cm}$$\n\nLangkah 2: Menghitung garis pelukis ($s$) kerucut menggunakan teorema Pythagoras.\n$$s = \\sqrt{r^2 + t^2} = \\sqrt{12^2 + 16^2} = \\sqrt{144 + 256} = \\sqrt{400} = 20\\text{ cm}$$\n\nLangkah 3: Menghitung luas selimut kerucut yang akan ditutupi daun pisang.\n$$L_s = \\pi \\times r \\times s = 3,14 \\times 12 \\times 20 = 753,6\\text{ cm}^2$$\n\nLangkah 4: Menghitung luas efektif satu lembar daun pisang setelah dikurangi tumpang tindih $20\\%$.\n$$L_{\\text{efektif}} = (10\\text{ cm} \\times 10\\text{ cm}) \\times (1 - 0,20) = 100 \\times 0,80 = 80\\text{ cm}^2$$\n\nLangkah 5: Menghitung jumlah minimum daun pisang yang diperlukan.\n$$\\text{Banyak daun} = \\frac{753,6}{80} = 9,42$$\nKarena lembaran daun pisang harus utuh dan menutupi seluruh permukaan, hasilnya dibulatkan ke atas menjadi $10\\text{ lembar}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jaring-jaring sebuah kerucut tertutup terdiri dari lingkaran (sebagai alasnya) dan juring lingkaran (sebagai selimutnya). Keliling lingkaran alas kerucut sama dengan panjang busur juring yang menjadi selimutnya."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "rekonstruksi jaring-jaring kerucut",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan perancangan sudut pusat juring selimut, penyusunan persamaan hubungan luas selimut dan luas alas, penentuan perbandingan tinggi dan jari-jari melalui Phytagoras, serta evaluasi sifat geometri kerucut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah wadah berbentuk kerucut tertutup direncanakan memiliki luas selimut tepat $2,6$ kali luas lingkaran alasnya. Jika selimut kerucut tersebut dibuat dari bentangan juring lingkaran dengan sudut pusat $\\theta$ dan panjang garis pelukis $s$, serta tinggi kerucut dinyatakan dengan $t$ dan jari-jari alas dinyatakan dengan $r$, manakah perbandingan nilai $\\frac{t}{r}$ dan besar sudut pusat juring $\\theta$ yang tepat?",
+      "jawaban_benar": "$\\frac{t}{r} = 2,4$ dan $\\theta = 138,46^\\circ$",
+      "alasan_benar": "Luas selimut $L_s = \\pi r s$, luas alas $L_a = \\pi r^2$. Diketahui $L_s = 2,6 L_a \\implies \\pi r s = 2,6 \\pi r^2 \\implies s = 2,6r$. Dari Phytagoras: $t = \\sqrt{s^2 - r^2} = \\sqrt{(2,6r)^2 - r^2} = \\sqrt{6,76r^2 - r^2} = \\sqrt{5,76r^2} = 2,4r$, sehingga $\\frac{t}{r} = 2,4$. Panjang busur juring $= 2\\pi r = \\frac{\\theta}{360^\\circ} \\times 2\\pi s \\implies \\theta = \\frac{r}{s} \\times 360^\\circ = \\frac{r}{2,6r} \\times 360^\\circ = \\frac{360^\\circ}{2,6} \\approx 138,46^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{t}{r} = 1,6$ dan $\\theta = 138,46^\\circ$",
+          "alasan": "Siswa salah menghitung akar selisih kuadrat dengan langsung mengurangkan $2,6 - 1 = 1,6$."
+        },
+        {
+          "teks": "$\\frac{t}{r} = 2,4$ dan $\\theta = 93,6^\\circ$",
+          "alasan": "Siswa salah menghitung sudut pusat juring dengan mengalikan $2,6 \\times 36^\\circ$ bukannya $\\frac{360^\\circ}{2,6}$."
+        },
+        {
+          "teks": "$\\frac{t}{r} = 2,6$ dan $\\theta = 144^\\circ$",
+          "alasan": "Siswa menganggap tinggi $t$ sama dengan garis pelukis $s$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghubungkan garis pelukis $s$ dan jari-jari alas $r$ dari perbandingan luas.\n$$L_s = 2,6 \\times L_a$$\n$$\\pi r s = 2,6 \\times \\pi r^2 \\implies s = 2,6r$$\n\nLangkah 2: Menghitung tinggi kerucut $t$ menggunakan teorema Pythagoras.\n$$t^2 = s^2 - r^2 = (2,6r)^2 - r^2 = 6,76r^2 - r^2 = 5,76r^2$$\n$$t = \\sqrt{5,76r^2} = 2,4r$$\n\nLangkah 3: Menentukan perbandingan $\\frac{t}{r}$.\n$$\\frac{t}{r} = \\frac{2,4r}{r} = 2,4$$\n\nLangkah 4: Menentukan besar sudut pusat juring selimut ($\\theta$).\nPanjang busur juring selimut sama dengan keliling lingkaran alas kerucut:\n$$\\frac{\\theta}{360^\\circ} \\times 2\\pi s = 2\\pi r$$\n$$\\theta = \\frac{r}{s} \\times 360^\\circ = \\frac{r}{2,6r} \\times 360^\\circ = \\frac{360^\\circ}{2,6} \\approx 138,46^\\circ$$\n\nJadi, diperoleh $\\frac{t}{r} = 2,4$ dan $\\theta = 138,46^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 130,
+        "bagian": "Penerapan Konsep",
+        "nomor": "G",
+        "teks": "Perkirakan berapa banyak bola dengan jari-jari 10 cm yang dapat dibungkus dengan material pembungkus yang berukuran 1 meter persegi?",
+        "jawaban": "7 bola",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "efisiensi kebutuhan bahan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi kebutuhan bahan pembungkus bola dengan memperhitungkan toleransi sisa perekat dan konversi satuan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah industri suvenir membungkus miniatur bola kaca pejal dengan panjang jari-jari $5\\text{ cm}$. Lembaran plastik pembungkus yang disediakan seluas $1,8\\text{ m}^2$. Karena adanya bagian lipatan dan perekat sambungan, setiap miniatur bola memerlukan bahan pembungkus $25\\%$ lebih luas daripada luas permukaan bola sebenarnya. Banyaknya miniatur bola paling banyak yang dapat dibungkus secara utuh dengan bahan tersebut adalah ... (Gunakan $\\pi = 3,14$)",
+      "jawaban_benar": "$45\\text{ bola}$",
+      "alasan_benar": "Luas permukaan satu bola adalah $L = 4\\pi r^2 = 4 \\times 3,14 \\times 5^2 = 314\\text{ cm}^2$. Kebutuhan plastik per bola dengan toleransi $25\\%$ adalah $1,25 \\times 314\\text{ cm}^2 = 392,5\\text{ cm}^2$. Luas total lembaran plastik adalah $1,8\\text{ m}^2 = 18.000\\text{ cm}^2$. Banyaknya bola yang dapat dibungkus utuh adalah $\\lfloor 18.000 \\div 392,5 \\rfloor = \\lfloor 45,86 \\rfloor = 45\\text{ bola}$.",
+      "distraktor": [
+        {
+          "teks": "$57\\text{ bola}$",
+          "alasan": "Mengabaikan toleransi lipatan $25\\%$ sehingga membagi $18.000$ langsung dengan $314$ ($18.000 \\div 314 \\approx 57,32$)."
+        },
+        {
+          "teks": "$46\\text{ bola}$",
+          "alasan": "Membulatkan hasil pembagian ke atas ($45,86$ dibulatkan menjadi $46$), padahal bahan tersisa tidak mencukupi untuk satu bola utuh."
+        },
+        {
+          "teks": "$36\\text{ bola}$",
+          "alasan": "Salah menggunakan rumus luas permukaan bola sebagai rumus luas tabung pejal dengan tinggi sama dengan jari-jari ($5\\pi r^2$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung luas permukaan satu bola pejal.\n$$L = 4\\pi r^2 = 4 \\times 3,14 \\times (5\\text{ cm})^2 = 314\\text{ cm}^2$$\n\nLangkah 2: Menghitung luas bahan plastik yang dibutuhkan untuk membungkus satu bola dengan memperhitungkan tambahan lipatan $25\\%$.\n$$L_{\\text{bahan}} = 314 + (25\\% \\times 314) = 1,25 \\times 314 = 392,5\\text{ cm}^2$$\n\nLangkah 3: Mengonversi satuan luas plastik yang tersedia ke $\\text{cm}^2$.\n$$1,8\\text{ m}^2 = 1,8 \\times 10.000\\text{ cm}^2 = 18.000\\text{ cm}^2$$\n\nLangkah 4: Menentukan kapasitas pembungkusan bola secara utuh.\n$$\\text{Banyak bola} = \\left\\lfloor \\frac{18.000}{392,5} \\right\\rfloor = \\lfloor 45,859... \\rfloor = 45\\text{ bola}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 122,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika diketahui sebuah kerucut memiliki jari-jari alas r dan tinggi t , maka luas permukaan kerucut tersebut dapat dicari dengan rumus berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas permukaan bangun gabungan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menganalisis dan menghitung luas permukaan luar dari gabungan kerucut dan tabung serta mengevaluasi total biaya pelapisan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah wadah logam kedap udara dirancang berbentuk gabungan tabung dan kerucut pada bagian atasnya. Bagian alas kerucut berimpit tepat dengan bidang tutup tabung sehingga bagian dalam wadah menyatu tanpa sekat. Wadah tersebut memiliki jari-jari alas $7\\text{ cm}$, tinggi tabung $24\\text{ cm}$, dan tinggi kerucut $24\\text{ cm}$. Jika seluruh permukaan luar wadah tersebut akan dilapisi cairan antikorosi dengan biaya $\\text{Rp}50,00$ per $\\text{cm}^2$, biaya yang diperlukan untuk melapisi seluruh permukaan luar wadah tersebut adalah ... (Gunakan $\\pi = \\frac{22}{7}$)",
+      "jawaban_benar": "$\\text{Rp}88.000,00$",
+      "alasan_benar": "Garis pelukis kerucut $s = \\sqrt{7^2 + 24^2} = 25\\text{ cm}$. Luas luar terdiri dari selimut kerucut ($\\pi r s = 550\\text{ cm}^2$), selimut tabung ($2\\pi r t = 1.056\\text{ cm}^2$), dan satu alas lingkaran tabung ($\\pi r^2 = 154\\text{ cm}^2$). Total luas luar $= 550 + 1.056 + 154 = 1.760\\text{ cm}^2$. Total biaya $= 1.760 \\times \\text{Rp}50,00 = \\text{Rp}88.000,00$.",
+      "distraktor": [
+        {
+          "teks": "$\\text{Rp}95.700,00$",
+          "alasan": "Keliru menjumlahkan bidang batas perimpitan kerucut dan tabung ke dalam luas permukaan luar ($1.760 + 154 = 1.914\\text{ cm}^2 \\times \\text{Rp}50,00$)."
+        },
+        {
+          "teks": "$\\text{Rp}80.300,00$",
+          "alasan": "Lupa menghitung luas alas bawah tabung sehingga luasnya hanya selimut kerucut ditambah selimut tabung ($1.606\\text{ cm}^2 \\times \\text{Rp}50,00$)."
+        },
+        {
+          "teks": "$\\text{Rp}103.400,00$",
+          "alasan": "Menghitung luas permukaan tabung lengkap tertutup ditambah luas selimut dan alas kerucut ($2.068\\text{ cm}^2 \\times \\text{Rp}50,00$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung panjang garis pelukis ($s$) bagian kerucut menggunakan teorema Pythagoras.\n$$s = \\sqrt{r^2 + t_{\\text{kerucut}}^2} = \\sqrt{7^2 + 24^2} = \\sqrt{49 + 576} = \\sqrt{625} = 25\\text{ cm}$$\n\nLangkah 2: Menghitung luas selimut kerucut.\n$$L_{\\text{selimut kerucut}} = \\pi r s = \\frac{22}{7} \\times 7 \\times 25 = 550\\text{ cm}^2$$\n\nLangkah 3: Menghitung luas selimut tabung dan luas satu alas bawah tabung.\n$$L_{\\text{selimut tabung}} = 2\\pi r t_{\\text{tabung}} = 2 \\times \\frac{22}{7} \\times 7 \\times 24 = 1.056\\text{ cm}^2$$\n$$L_{\\text{alas tabung}} = \\pi r^2 = \\frac{22}{7} \\times 7^2 = 154\\text{ cm}^2$$\n\nLangkah 4: Menghitung total luas permukaan luar wadah (perhatikan bahwa bidang pertemuan tabung dan kerucut berada di dalam wadah sehingga tidak dilapisi).\n$$L_{\\text{total}} = 550 + 1.056 + 154 = 1.760\\text{ cm}^2$$\n\nLangkah 5: Menghitung total biaya pelapisan antikorosi.\n$$\\text{Biaya} = 1.760 \\times \\text{Rp}50,00 = \\text{Rp}88.000,00$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Keliling lingkaran alas kerucut sama dengan panjang busur juring yang menjadi selimutnya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi selimut kerucut",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan rekonstruksi ukuran juring pembentuk selimut kerucut ke dimensi kerucut tertutup untuk menghitung luas seluruh permukaannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kerucut tertutup dirangkai dari selembar bahan pelat tipis. Bagian selimut kerucut dibentuk dari sebuah juring lingkaran yang memiliki jari-jari $15\\text{ cm}$ dan sudut pusat $216^\\circ$. Selanjutnya, dibuat bidang lingkaran yang berukuran tepat untuk menutup bagian alas kerucut tersebut. Luas seluruh permukaan kerucut tertutup yang terbentuk adalah ... (Gunakan $\\pi = 3,14$)",
+      "jawaban_benar": "$678,24\\text{ cm}^2$",
+      "alasan_benar": "Panjang jari-jari juring merupakan garis pelukis kerucut, $s = 15\\text{ cm}$. Panjang busur juring $= \\frac{216^\\circ}{360^\\circ} \\times 2\\pi(15) = 18\\pi\\text{ cm}$. Karena busur juring sama dengan keliling lingkaran alas, maka $2\\pi r = 18\\pi \\implies r = 9\\text{ cm}$. Luas selimut kerucut $= \\pi r s = \\pi(9)(15) = 135\\pi\\text{ cm}^2$. Luas alas kerucut $= \\pi r^2 = \\pi(9^2) = 81\\pi\\text{ cm}^2$. Luas seluruh permukaan kerucut tertutup $= 135\\pi + 81\\pi = 216\\pi = 216 \\times 3,14 = 678,24\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$423,90\\text{ cm}^2$",
+          "alasan": "Hanya menghitung luas selimut kerucut saja ($135\\pi = 423,90\\text{ cm}^2$) dan lupa menambahkan luas lingkaran alasnya."
+        },
+        {
+          "teks": "$508,68\\text{ cm}^2$",
+          "alasan": "Keliru menganggap jari-jari juring ($15\\text{ cm}$) sebagai diameter lingkaran juring sehingga memperoleh $r = 4,5\\text{ cm}$."
+        },
+        {
+          "teks": "$942,00\\text{ cm}^2$",
+          "alasan": "Salah mengira bahwa jari-jari alas kerucut sama dengan jari-jari juring ($r = 15\\text{ cm}$), sehingga luasnya dihitung $\\pi(15)(15 + 15) = 450\\pi$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan garis pelukis kerucut ($s$).\nJari-jari juring pembentuk selimut merupakan garis pelukis kerucut, sehingga $s = 15\\text{ cm}$.\n\nLangkah 2: Menghitung panjang busur juring selimut.\n$$\\text{Panjang busur} = \\frac{\\theta}{360^\\circ} \\times 2\\pi s = \\frac{216^\\circ}{360^\\circ} \\times 2\\pi (15) = \\frac{3}{5} \\times 30\\pi = 18\\pi\\text{ cm}$$\n\nLangkah 3: Menentukan panjang jari-jari alas kerucut ($r$) dari keliling alas.\n$$\\text{Keliling alas} = \\text{Panjang busur}$$\n$$2\\pi r = 18\\pi \\implies r = 9\\text{ cm}$$\n\nLangkah 4: Menghitung luas selimut dan luas alas kerucut.\n$$L_{\\text{selimut}} = \\pi r s = \\pi \\times 9 \\times 15 = 135\\pi\\text{ cm}^2$$\n$$L_{\\text{alas}} = \\pi r^2 = \\pi \\times 9^2 = 81\\pi\\text{ cm}^2$$\n\nLangkah 5: Menghitung luas seluruh permukaan kerucut tertutup.\n$$L_{\\text{total}} = L_{\\text{selimut}} + L_{\\text{alas}} = 135\\pi + 81\\pi = 216\\pi\\text{ cm}^2$$\n$$L_{\\text{total}} = 216 \\times 3,14 = 678,24\\text{ cm}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 117,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kali ini, kita akan mempelajari luas permukaan bangun ruang sisi lengkung yakni tabung, kerucut, dan bola."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis perubahan dimensi tabung",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis dampak pengubahan dua parameter dimensi secara serempak terhadap luas sisi tegak (selimut) tabung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tangki penyimpanan gas berbentuk tabung silinder memiliki panjang jari-jari alas $r$ dan tinggi $t$. Dalam rangka perancangan ulang model baru, insinyur memperbesar panjang jari-jari alas sebesar $50\\%$, namun memperpendek tingginya sebesar $20\\%$. Pengaruh perubahan ukuran tersebut terhadap luas sisi tegak (selimut) tangki adalah ...",
+      "jawaban_benar": "bertambah sebesar $20\\%$ dari luas semula",
+      "alasan_benar": "Luas selimut semula $L_1 = 2\\pi r t$. Jari-jari baru $r' = 1,5r$ dan tinggi baru $t' = 0,8t$. Luas selimut baru $L_2 = 2\\pi r' t' = 2\\pi (1,5r)(0,8t) = (1,5 \\times 0,8)(2\\pi r t) = 1,20 L_1$. Nilai ini menunjukkan pertambahan sebesar $(1,20 - 1) \\times 100\\% = 20\\%$.",
+      "distraktor": [
+        {
+          "teks": "bertambah sebesar $30\\%$ dari luas semula",
+          "alasan": "Hanya mengurangkan persentase perubahan secara langsung ($50\\% - 20\\% = 30\\%$) tanpa melakukan operasi perkalian faktor skala."
+        },
+        {
+          "teks": "tidak mengalami perubahan sama sekali",
+          "alasan": "Mengasumsikan bahwa kenaikan pada salah satu dimensi langsung diimbangi oleh penurunan dimensi lainnya sehingga nilainya tetap."
+        },
+        {
+          "teks": "bertambah sebesar $25\\%$ dari luas semula",
+          "alasan": "Keliru dalam operasi perkalian desimal faktor pengali ($1,5 \\times 0,8$ dihitung keliru sebagai $1,25$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menuliskan rumus luas sisi tegak (selimut) tabung mula-mula.\n$$L_1 = 2\\pi r t$$\n\nLangkah 2: Menentukan ukuran jari-jari baru ($r'$) dan tinggi baru ($t'$) berdasarkan persentase perubahan yang diberikan.\n$$r' = r + (50\\% \\times r) = 1,5r$$\n$$t' = t - (20\\% \\times t) = 0,8t$$\n\nLangkah 3: Menghitung luas sisi tegak tabung setelah perubahan dimensi.\n$$L_2 = 2\\pi r' t' = 2\\pi (1,5r)(0,8t) = (1,5 \\times 0,8)(2\\pi r t) = 1,20 (2\\pi r t) = 1,20 L_1$$\n\nLangkah 4: Menentukan persentase perubahan luas sisi tegak tabung.\n$$\\text{Perubahan} = \\frac{L_2 - L_1}{L_1} \\times 100\\% = \\frac{1,20 L_1 - L_1}{L_1} \\times 100\\% = 0,20 \\times 100\\% = 20\\%$$\nDengan demikian, luas sisi tegak bertambah sebesar $20\\%$ dari ukuran semula.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 119,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pertama-tama kalian harus menentukan luas permukaan satu drum."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis proporsi tabung",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi hubungan luas permukaan total terhadap dimensi tabung untuk menentukan perbandingan luas selimut kedua tabung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah tabung tertutup A dan B dirancang memiliki luas seluruh permukaan yang sama besar. Tabung A memiliki panjang jari-jari alas $r$ dan tinggi $t_A = 7r$. Tabung B memiliki panjang jari-jari alas dua kali jari-jari alas tabung A ($r_B = 2r$). Berapakah perbandingan antara luas selimut tabung A dan luas selimut tabung B ($L_{sA} : L_{sB}$)?",
+      "jawaban_benar": "$7 : 4$",
+      "alasan_benar": "Luas permukaan tabung A adalah $L_A = 2\\pi r(r + 7r) = 16\\pi r^2$, dengan luas selimut $L_{sA} = 2\\pi r(7r) = 14\\pi r^2$. Karena $L_B = L_A = 16\\pi r^2$, maka $2\\pi(2r)(2r + t_B) = 16\\pi r^2 \\iff 4\\pi r(2r + t_B) = 16\\pi r^2 \\iff 2r + t_B = 4r \\iff t_B = 2r$. Luas selimut tabung B adalah $L_{sB} = 2\\pi(2r)(2r) = 8\\pi r^2$. Perbandingannya adalah $14\\pi r^2 : 8\\pi r^2 = 7 : 4$.",
+      "distraktor": [
+        {
+          "teks": "$7 : 2$",
+          "alasan": "Siswa membandingkan tinggi tabung $t_A : t_B$ ($7r : 2r$) bukan membandingkan luas selimutnya."
+        },
+        {
+          "teks": "$7 : 8$",
+          "alasan": "Siswa salah memperhitungkan jari-jari saat menghitung luas selimut tabung B."
+        },
+        {
+          "teks": "$1 : 1$",
+          "alasan": "Siswa keliru menganggap bahwa luas permukaan total yang sama berarti luas selimutnya juga sama."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung luas permukaan total dan luas selimut tabung A.\n$$L_A = 2\\pi r^2 + 2\\pi r(7r) = 16\\pi r^2$$\n$$L_{sA} = 2\\pi r(7r) = 14\\pi r^2$$\n\nLangkah 2: Menentukan tinggi tabung B dari kesamaan luas total permukaan.\n$$L_B = 2\\pi(2r)^2 + 2\\pi(2r)t_B = 8\\pi r^2 + 4\\pi r t_B$$\n$$16\\pi r^2 = 8\\pi r^2 + 4\\pi r t_B \\implies 4\\pi r t_B = 8\\pi r^2 \\implies t_B = 2r$$\n\nLangkah 3: Menghitung luas selimut tabung B.\n$$L_{sB} = 2\\pi(2r)(2r) = 8\\pi r^2$$\n\nLangkah 4: Menentukan perbandingan $L_{sA} : L_{sB}$.\n$$\\frac{L_{sA}}{L_{sB}} = \\frac{14\\pi r^2}{8\\pi r^2} = \\frac{7}{4}$$\n\nJadi, perbandingan luas selimut tabung A terhadap luas selimut tabung B adalah $7 : 4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Keliling lingkaran alas kerucut sama dengan panjang busur juring yang menjadi selimutnya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis jaring-jaring kerucut",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan rekonstruksi dimensi kerucut tertutup dari juring selimutnya dan mengevaluasi perbandingan luas permukaan kedua kerucut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah kerucut tertutup A dan B dibuat dari lembaran karton. Selimut kerucut A dibentuk dari juring lingkaran dengan jari-jari $30\\text{ cm}$ dan sudut pusat $120^\\circ$. Selimut kerucut B dibentuk dari juring lingkaran dengan jari-jari $20\\text{ cm}$ dan sudut pusat $270^\\circ$. Kedua kerucut tersebut masing-masing dipasangi bidang alas lingkaran yang sesuai hingga tertutup sempurna. Perbandingan luas seluruh permukaan kerucut A terhadap luas seluruh permukaan kerucut B adalah ...",
+      "jawaban_benar": "$16 : 21$",
+      "alasan_benar": "Panjang busur selimut A adalah $\\frac{120}{360} \\times 2\\pi(30) = 20\\pi\\text{ cm}$, sehingga $r_A = 10\\text{ cm}$. Luas alas A $= \\pi(10^2) = 100\\pi$, luas selimut A $= \\frac{1}{3}\\pi(30^2) = 300\\pi$, total luas A $= 400\\pi\\text{ cm}^2$. Panjang busur selimut B adalah $\\frac{270}{360} \\times 2\\pi(20) = 30\\pi\\text{ cm}$, sehingga $r_B = 15\\text{ cm}$. Luas alas B $= \\pi(15^2) = 225\\pi$, luas selimut B $= \\frac{3}{4}\\pi(20^2) = 300\\pi$, total luas B $= 525\\pi\\text{ cm}^2$. Rasio luas total $= 400\\pi : 525\\pi = 16 : 21$.",
+      "distraktor": [
+        {
+          "teks": "$1 : 1$",
+          "alasan": "Siswa hanya membandingkan luas selimut kedua kerucut yang kebetulan sama besar ($300\\pi : 300\\pi$) dan lupa menjumlahkannya dengan luas alas."
+        },
+        {
+          "teks": "$4 : 9$",
+          "alasan": "Siswa hanya membandingkan luas alas kedua kerucut ($100\\pi : 225\\pi$)."
+        },
+        {
+          "teks": "$2 : 3$",
+          "alasan": "Siswa hanya membandingkan panjang jari-jari alas kedua kerucut ($10 : 15$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jari-jari alas kerucut A.\nPanjang busur juring A $= \\frac{120^\\circ}{360^\\circ} \\times 2\\pi(30) = 20\\pi\\text{ cm}$.\nKarena keliling alas $= 2\\pi r_A$, maka $2\\pi r_A = 20\\pi \\implies r_A = 10\\text{ cm}$.\n\nLangkah 2: Menghitung luas permukaan total kerucut A.\n$$L_{\\text{alas A}} = \\pi(10)^2 = 100\\pi\\text{ cm}^2$$\n$$L_{\\text{selimut A}} = \\frac{120^\\circ}{360^\\circ} \\times \\pi(30)^2 = 300\\pi\\text{ cm}^2$$\n$$L_{\\text{total A}} = 100\\pi + 300\\pi = 400\\pi\\text{ cm}^2$$\n\nLangkah 3: Menentukan jari-jari alas kerucut B.\nPanjang busur juring B $= \\frac{270^\\circ}{360^\\circ} \\times 2\\pi(20) = 30\\pi\\text{ cm}$.\nKeliling alas $= 2\\pi r_B = 30\\pi \\implies r_B = 15\\text{ cm}$.\n\nLangkah 4: Menghitung luas permukaan total kerucut B.\n$$L_{\\text{alas B}} = \\pi(15)^2 = 225\\pi\\text{ cm}^2$$\n$$L_{\\text{selimut B}} = \\frac{270^\\circ}{360^\\circ} \\times \\pi(20)^2 = 300\\pi\\text{ cm}^2$$\n$$L_{\\text{total B}} = 225\\pi + 300\\pi = 525\\pi\\text{ cm}^2$$\n\nLangkah 5: Menghitung perbandingan luas seluruh permukaan A dan B.\n$$\\frac{L_{\\text{total A}}}{L_{\\text{total B}}} = \\frac{400\\pi}{525\\pi} = \\frac{16}{21}$$\n\nJadi, perbandingan luas seluruh permukaan kerucut A terhadap kerucut B adalah $16 : 21$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-e-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 126,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bumi memiliki diameter sekitar 12.750 km."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "geometri pemotongan bola",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi bidang-bidang penampang baru yang terbentuk akibat pemotongan ganda pada bola pejal untuk menghitung kenaikan luas permukaannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bola pejal terbuat dari kayu memiliki diameter $28\\text{ cm}$. Bola tersebut dipotong tepat pada bidang diameternya menjadi dua belahan setengah bola yang identik. Selanjutnya, kedua belahan tersebut masing-masing dipotong kembali menjadi dua bagian yang sama besar melalui bidang datar yang tegak lurus terhadap bidang pemotongan pertama, sehingga terbentuk empat potongan yang sama persis. Dengan menggunakan $\\pi = \\frac{22}{7}$, pertambahan luas seluruh permukaan dari keempat potongan tersebut dibandingkan luas permukaan bola mula-mula adalah ...",
+      "jawaban_benar": "$2.464\\text{ cm}^2$",
+      "alasan_benar": "Jari-jari bola adalah $r = 14\\text{ cm}$. Luas permukaan bola mula-mula adalah $L_{\\text{awal}} = 4\\pi r^2$. Setiap pemotongan menghasilkan bidang datar baru: pemotongan pertama memunculkan 2 lingkaran penuh (luas $2\\pi r^2$), dan pemotongan kedua memunculkan 4 setengah lingkaran yang setara dengan 2 lingkaran penuh (luas $2\\pi r^2$). Total luas bidang baru yang bertambah adalah $2\\pi r^2 + 2\\pi r^2 = 4\\pi r^2 = 4 \\times \\frac{22}{7} \\times 14^2 = 2.464\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$4.928\\text{ cm}^2$",
+          "alasan": "Siswa menghitung total luas seluruh permukaan keempat potongan ($8\\pi r^2$), bukan nilai pertambahannya."
+        },
+        {
+          "teks": "$1.232\\text{ cm}^2$",
+          "alasan": "Siswa hanya menghitung pertambahan luas dari pemotongan pertama saja ($2\\pi r^2$)."
+        },
+        {
+          "teks": "$3.696\\text{ cm}^2$",
+          "alasan": "Siswa keliru menghitung luas penampang baru sebagai $6\\pi r^2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jari-jari bola.\n$$r = \\frac{1}{2} \\times 28 = 14\\text{ cm}$$\n\nLangkah 2: Menghitung luas permukaan bola mula-mula.\n$$L_{\\text{awal}} = 4\\pi r^2 = 4 \\times \\frac{22}{7} \\times 14 \\times 14 = 2.464\\text{ cm}^2$$\n\nLangkah 3: Menganalisis luas permukaan setelah pemotongan.\nKetika bola dipotong menjadi 4 bagian identik melalui 2 bidang yang saling tegak lurus:\n- Masing-masing dari 4 potongan memiliki bagian kulit lengkung sebesar $\\frac{1}{4} \\times 4\\pi r^2 = \\pi r^2$.\n- Masing-masing potongan memiliki dua sisi datar berbentuk setengah lingkaran dengan jari-jari $r$, dengan luas $2 \\times \\left(\\frac{1}{2}\\pi r^2\\right) = \\pi r^2$.\n- Luas permukaan 1 potongan $= \\pi r^2 + \\pi r^2 = 2\\pi r^2$.\n- Total luas permukaan 4 potongan $= 4 \\times 2\\pi r^2 = 8\\pi r^2 = 4.928\\text{ cm}^2$.\n\nLangkah 4: Menghitung pertambahan luas permukaan.\n$$\\Delta L = 8\\pi r^2 - 4\\pi r^2 = 4\\pi r^2 = 2.464\\text{ cm}^2$$\n\nJadi, pertambahan luas seluruh permukaan dari keempat potongan tersebut adalah $2.464\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -1,0 +1,644 @@
+{
+  "book": "kelas8",
+  "bab_no": 2,
+  "subbab": "D",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas8-b02-d-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 107,
+        "bagian": "Contoh 2.6",
+        "nomor": "2.6",
+        "teks": "Suatu hari Aldo melihat dua perahu, yaitu perahu wisata dan perahu nelayan, seperti yang ditunjukkan pada gambar. Jika kecepatan rata-rata kedua perahu untuk mendekati pantai adalah 30 km/jam, tentukan selisih waktu yang ditempuh kedua perahu tersebut untuk mendekati pantai.",
+        "jawaban": "20 menit",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kecepatan dan waktu tempuh",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan jarak miring dengan Teorema Pythagoras, perhitungan waktu tempuh kapal acuan, dan penentuan kecepatan kapal kedua agar tiba bersamaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah menara pantai memantau posisi Kapal Patroli dan Kapal Medis di laut. Jarak lurus menara ke Kapal Patroli adalah $48\\text{ km}$, sedangkan jarak antara Kapal Patroli dan Kapal Medis adalah $20\\text{ km}$. Posisi menara pantai, Kapal Patroli, dan Kapal Medis membentuk segitiga siku-siku dengan sudut siku-siku di Kapal Patroli. Jika Kapal Patroli melaju lurus menuju menara dengan kecepatan konstan $60\\text{ km/jam}$, berapakah kecepatan konstan yang harus dipacu oleh Kapal Medis agar kedua kapal tiba di menara pada waktu yang bersamaan?",
+      "jawaban_benar": "$65\\text{ km/jam}$",
+      "alasan_benar": "Jarak Kapal Medis ke menara dihitung dengan Teorema Pythagoras: $\\sqrt{48^2 + 20^2} = \\sqrt{2304 + 400} = \\sqrt{2704} = 52\\text{ km}$. Waktu tempuh Kapal Patroli adalah $\\frac{48\\text{ km}}{60\\text{ km/jam}} = 0,8\\text{ jam}$. Agar tiba bersamaan dalam $0,8\\text{ jam}$, kecepatan Kapal Medis harus $\\frac{52\\text{ km}}{0,8\\text{ jam}} = 65\\text{ km/jam}$.",
+      "distraktor": [
+        {
+          "teks": "$60\\text{ km/jam}$",
+          "alasan": "Mengira kecepatan kedua kapal harus sama tanpa memperhitungkan perbedaan jarak tempuh."
+        },
+        {
+          "teks": "$52\\text{ km/jam}$",
+          "alasan": "Hanya menghitung jarak tempuh hipotenusa ($52\\text{ km}$) dan membaginya dengan $1\\text{ jam}$."
+        },
+        {
+          "teks": "$75\\text{ km/jam}$",
+          "alasan": "Melakukan kesalahan perhitungan perbandingan waktu atau membagi jarak dengan nilai selisih waktu."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jarak Kapal Medis ke menara pantai.\nKarena posisi menara, Kapal Patroli, dan Kapal Medis membentuk segitiga siku-siku di Kapal Patroli, jarak Kapal Medis ke menara merupakan hipotenusa:\n$$\\text{Jarak} = \\sqrt{48^2 + 20^2} = \\sqrt{2304 + 400} = \\sqrt{2704} = 52\\text{ km}$$\n\nLangkah 2: Menghitung waktu yang ditempuh Kapal Patroli menuju menara:\n$$t = \\frac{\\text{jarak}}{\\text{kecepatan}} = \\frac{48\\text{ km}}{60\\text{ km/jam}} = 0,8\\text{ jam}$$\n\nLangkah 3: Menentukan kecepatan yang harus dipacu oleh Kapal Medis agar menempuh $52\\text{ km}$ dalam waktu $0,8\\text{ jam}$:\n$$v = \\frac{s}{t} = \\frac{52\\text{ km}}{0,8\\text{ jam}} = 65\\text{ km/jam}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 106,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk mengukur panjang ruas garis yang menghubungkan dua titik pada bidang koordinat, kita dapat menggambar titik-titik tersebut. Setelah itu, kita menentukan panjang setiap ruas garis."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "optimasi lintasan terpendek",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan refleksi koordinat untuk merancang lintasan optimum dua titik yang memantul di sumbu koordinat menggunakan Teorema Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah robot pembersih bergerak pada lantai dengan sistem koordinat kartesius (skala dalam meter). Robot berangkat dari titik pengisian daya $A(2, 9)$, wajib menyentuh garis batas di sumbu-$x$ tepat pada suatu titik $P(x, 0)$ untuk mengaktifkan sensor, kemudian melanjutkan perjalanan ke stasiun akhir $B(14, 7)$. Berapakah panjang lintasan terpendek $AP + PB$ yang dapat ditempuh oleh robot tersebut?",
+      "jawaban_benar": "$20\\text{ meter}$",
+      "alasan_benar": "Dengan mencerminkan titik $A(2, 9)$ terhadap sumbu-$x$ diperoleh titik bayangan $A'(2, -9)$. Panjang lintasan minimum sama dengan jarak lurus $A'B = \\sqrt{(14 - 2)^2 + (7 - (-9))^2} = \\sqrt{12^2 + 16^2} = \\sqrt{144 + 256} = \\sqrt{400} = 20\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{148}\\text{ meter}$",
+          "alasan": "Hanya menghitung jarak langsung antara titik $A$ dan titik $B$ tanpa memperhitungkan syarat menyentuh sumbu-$x$."
+        },
+        {
+          "teks": "$28\\text{ meter}$",
+          "alasan": "Menjumlahkan jarak proyeksi vertikal dan horizontal secara tegak lurus ($9 + 12 + 7$) bukan lintasan lurus miring."
+        },
+        {
+          "teks": "$25\\text{ meter}$",
+          "alasan": "Salah melakukan perhitungan jarak ordinat bayangan menjadi $\\sqrt{12^2 + (9+7-some)^2}$ atau keliru menerapkan tripel Pythagoras."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menggunakan prinsip garis lurus untuk mencari lintasan terpendek. Titik $A(2, 9)$ dicerminkan terhadap sumbu-$x$ menghasilkan titik $A'(2, -9)$. Panjang lintasan $AP + PB$ akan bernilai minimum ketika titik $A'$, $P$, dan $B$ berada pada satu garis lurus.\n\nLangkah 2: Menghitung selisih koordinat mendatar dan vertikal antara $A'$ dan $B$:\n$$\\Delta x = 14 - 2 = 12\\text{ m}$$\n$$\\Delta y = 7 - (-9) = 16\\text{ m}$$\n\nLangkah 3: Menerapkan Teorema Pythagoras untuk menghitung jarak lurus $A'B$:\n$$A'B = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{12^2 + 16^2} = \\sqrt{144 + 256} = \\sqrt{400} = 20\\text{ meter}$$\nJadi, lintasan minimum yang dapat ditempuh robot adalah $20\\text{ meter}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 109,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menentukan panjang CD, terlebih dahulu kita akan menentukan panjang BC dan BD."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi pengukuran sonar",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi klaim kesalahan konsep pengurangan langsung pada hipotenusa serta menghitung jarak vertikal dua objek bertingkat melalui dua segitiga siku-siku.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kapal survei laut berada di permukaan air pada jarak mendatar $60\\text{ m}$ dari suatu tiang vertikal sensor bawah laut. Pada tiang tersebut terpasang Sensor A dan Sensor B (Sensor B berada lebih dalam daripada Sensor A). Alat sonar pada kapal mendeteksi jarak lurus dari kapal ke Sensor A adalah $65\\text{ m}$ dan jarak lurus ke Sensor B adalah $100\\text{ m}$. Seorang teknisi magang menyatakan bahwa selisih kedalaman antara Sensor A dan Sensor B adalah $35\\text{ m}$ yang diperoleh dari $100\\text{ m} - 65\\text{ m}$. Bagaimanakah evaluasi yang tepat terhadap pernyataan teknisi tersebut?",
+      "jawaban_benar": "Pernyataan salah; selisih jarak lurus tidak sama dengan selisih kedalaman, dan jarak vertikal sebenarnya adalah $55\\text{ m}$",
+      "alasan_benar": "Kedalaman Sensor A adalah $\\sqrt{65^2 - 60^2} = 25\\text{ m}$, sedangkan kedalaman Sensor B adalah $\\sqrt{100^2 - 60^2} = 80\\text{ m}$. Selisih kedalaman sebenarnya adalah $80\\text{ m} - 25\\text{ m} = 55\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "Pernyataan benar; jarak kedua sensor dapat diperoleh langsung dari selisih jarak pantul sonar yaitu $35\\text{ m}$",
+          "alasan": "Membenarkan miskonsepsi pengurangan langsung pada sisi hipotenusa segitiga siku-siku."
+        },
+        {
+          "teks": "Pernyataan salah; jarak vertikal sebenarnya antara kedua sensor adalah $45\\text{ m}$",
+          "alasan": "Salah menghitung kedalaman salah satu sensor akibat kekeliruan tripel Pythagoras."
+        },
+        {
+          "teks": "Pernyataan salah; jarak vertikal sebenarnya antara kedua sensor adalah $105\\text{ m}$",
+          "alasan": "Keliru menjumlahkan kedua kedalaman ($25 + 80$) alih-alih mengurangkannya untuk mencari selisih."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan kedalaman Sensor A ($d_A$) menggunakan Teorema Pythagoras:\n$$d_A = \\sqrt{65^2 - 60^2} = \\sqrt{4225 - 3600} = \\sqrt{625} = 25\\text{ m}$$\n\nLangkah 2: Menentukan kedalaman Sensor B ($d_B$) menggunakan Teorema Pythagoras:\n$$d_B = \\sqrt{100^2 - 60^2} = \\sqrt{10000 - 3600} = \\sqrt{6400} = 80\\text{ m}$$\n\nLangkah 3: Menghitung selisih kedalaman vertikal kedua sensor:\n$$\\Delta d = d_B - d_A = 80\\text{ m} - 25\\text{ m} = 55\\text{ m}$$\n\nLangkah 4: Evaluasi klaim teknisi.\nPengurangan langsung jarak miring ($100 - 65 = 35$) adalah keliru karena garis miring memiliki kemiringan yang berbeda terhadap garis dasar mendatar. Jadi, pernyataan teknisi salah dan selisih kedalaman sebenarnya adalah $55\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 105,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sehingga kalian bisa menentukan jarak dua titik pada bidang kartesius dengan menggunakan Teorema Pythagoras."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas daerah segitiga koordinat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perhitungan jarak ketiga sisi pada bidang koordinat, pembuktian sifat siku-siku melalui kebalikan Teorema Pythagoras, dan penentuan luas bangun datar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tiga pos pengawas dalam permainan bentengan ditandai pada bidang koordinat kartesius pada titik $K(-3, 2)$, $L(5, -4)$, dan $M(3, 10)$ (satuan koordinat dalam meter). Daerah di dalam segitiga $KLM$ ditetapkan sebagai zona bebas serang. Berapakah luas zona bebas serang segitiga $KLM$ tersebut?",
+      "jawaban_benar": "$50\\text{ m}^2$",
+      "alasan_benar": "Panjang sisi-sisinya adalah $KL = \\sqrt{8^2 + (-6)^2} = 10\\text{ m}$, $KM = \\sqrt{6^2 + 8^2} = 10\\text{ m}$, dan $LM = \\sqrt{(-2)^2 + 14^2} = \\sqrt{200}\\text{ m}$. Karena $KL^2 + KM^2 = 100 + 100 = 200 = LM^2$, segitiga tersebut siku-siku di $K$, sehingga luasnya adalah $\\frac{1}{2} \\times 10 \\times 10 = 50\\text{ m}^2$.",
+      "distraktor": [
+        {
+          "teks": "$100\\text{ m}^2$",
+          "alasan": "Mengalikan kedua sisi tegak ($10 \\times 10$) tetapi lupa membaginya dengan 2."
+        },
+        {
+          "teks": "$25\\sqrt{2}\\text{ m}^2$",
+          "alasan": "Salah memasukkan sisi hipotenusa ke dalam rumus alas dan tinggi segitiga siku-siku."
+        },
+        {
+          "teks": "$70\\text{ m}^2$",
+          "alasan": "Melakukan kesalahan perhitungan jarak antar titik pada bidang koordinat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung panjang ruas garis $KL$:\n$$KL = \\sqrt{(5 - (-3))^2 + (-4 - 2)^2} = \\sqrt{8^2 + (-6)^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10\\text{ m}$$\n\nLangkah 2: Menghitung panjang ruas garis $KM$:\n$$KM = \\sqrt{(3 - (-3))^2 + (10 - 2)^2} = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ m}$$\n\nLangkah 3: Menghitung panjang ruas garis $LM$:\n$$LM = \\sqrt{(3 - 5)^2 + (10 - (-4))^2} = \\sqrt{(-2)^2 + 14^2} = \\sqrt{4 + 196} = \\sqrt{200}\\text{ m}$$\n\nLangkah 4: Memeriksa jenis segitiga:\n$$KL^2 + KM^2 = 10^2 + 10^2 = 100 + 100 = 200$$\n$$LM^2 = (\\sqrt{200})^2 = 200$$\nKarena $KL^2 + KM^2 = LM^2$, maka segitiga $KLM$ adalah segitiga siku-siku di titik $K$ dengan sisi tegak $KL$ dan $KM$.\n\nLangkah 5: Menghitung luas segitiga $KLM$:\n$$\\text{Luas} = \\frac{1}{2} \\times KL \\times KM = \\frac{1}{2} \\times 10 \\times 10 = 50\\text{ m}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 104,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pemanfaatan Teorema Pythagoras sering kali kita jumpai dalam kehidupan sehari-hari, mulai dari aktivitas yang membantu pekerjaan dan juga aktivitas bermain yang dilakukan oleh anak-anak."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi pergeseran tangga",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi miskonsepsi pergeseran linier 1 banding 1 pada tangga bersandar melalui dua kali penerapan Teorema Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tangga darurat dengan panjang $25\\text{ m}$ disandarkan pada dinding vertikal sebuah bangunan. Pada mulanya, ujung atas tangga tepat menyentuh ambang jendela setinggi $24\\text{ m}$ dari tanah datar. Demi keselamatan evakuasi, petugas kemudian menggeser ujung bawah (kaki) tangga menjauhi dinding sejauh $8\\text{ m}$. Seorang pekerja menduga bahwa ujung atas tangga otomatis akan merosot turun sejauh $8\\text{ m}$ juga karena panjang tangga tidak berubah. Manakah evaluasi berikut yang paling tepat mengenai dugaan pekerja tersebut?",
+      "jawaban_benar": "Dugaan salah, karena ujung atas tangga hanya merosot turun sejauh $4\\text{ m}$",
+      "alasan_benar": "Jarak mula-mula kaki tangga ke dinding adalah $\\sqrt{25^2 - 24^2} = 7\\text{ m}$. Setelah digeser sejauh $8\\text{ m}$, jarak kaki tangga menjadi $7 + 8 = 15\\text{ m}$. Ketinggian baru ujung atas tangga adalah $\\sqrt{25^2 - 15^2} = 20\\text{ m}$. Penurunan ujung atas tangga adalah $24 - 20 = 4\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "Dugaan benar, karena panjang tangga tetap sehingga jarak geser horizontal pasti sama dengan jarak turun vertikal",
+          "alasan": "Membenarkan miskonsepsi hubungan linier satu banding satu pada pergeseran segitiga siku-siku."
+        },
+        {
+          "teks": "Dugaan salah, karena ujung atas tangga merosot turun sejauh $5\\text{ m}$",
+          "alasan": "Keliru mengurangkan panjang tangga dengan tinggi baru ($25 - 20 = 5$) alih-alih tinggi awal dikurangi tinggi baru."
+        },
+        {
+          "teks": "Dugaan salah, karena ujung atas tangga merosot turun sejauh $9\\text{ m}$",
+          "alasan": "Salah melakukan operasi akar kuadrat pada tripel Pythagoras baru."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jarak awal ujung bawah tangga ke dinding ($x_1$):\n$$x_1 = \\sqrt{25^2 - 24^2} = \\sqrt{625 - 576} = \\sqrt{49} = 7\\text{ m}$$\n\nLangkah 2: Menentukan jarak baru ujung bawah tangga ke dinding ($x_2$) setelah digeser sejauh $8\\text{ m}$ menjauhi dinding:\n$$x_2 = 7 + 8 = 15\\text{ m}$$\n\nLangkah 3: Menentukan ketinggian baru ujung atas tangga pada dinding ($y_2$):\n$$y_2 = \\sqrt{25^2 - 15^2} = \\sqrt{625 - 225} = \\sqrt{400} = 20\\text{ m}$$\n\nLangkah 4: Menghitung jarak turunnya ujung atas tangga:\n$$\\Delta y = y_1 - y_2 = 24\\text{ m} - 20\\text{ m} = 4\\text{ m}$$\n\nLangkah 5: Evaluasi dugaan pekerja.\nPerubahan posisi horizontal dan vertikal pada tangga tidak berbanding lurus secara linier melainkan terikat oleh persamaan kuadrat Teorema Pythagoras $x^2 + y^2 = L^2$. Oleh karena itu, dugaan pekerja salah, dan ujung atas tangga hanya merosot turun sejauh $4\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 108,
+        "bagian": "Contoh 2.7",
+        "nomor": "2.7",
+        "teks": "Dua pesawat sedang terbang melintasi kapal induk. Suatu radar yang berlokasi sejauh 9 km dari kapal induk mendeteksi bahwa posisi kedua pesawat tempur tersebut berjarak 10 km dan 12 km dari radar. Tentukan jarak kedua pesawat diukur berdasarkan ketinggiannya.",
+        "jawaban": "3,58 km",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi batas ketinggian",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perhitungan dua ketinggian vertikal bertingkat lalu mengevaluasi pemenuhan standar keselamatan penerbangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah menara kendali mendeteksi dua drone, Drone A dan Drone B, yang terbang tepat di atas satu tiang sensor vertikal. Jarak mendatar dari menara kendali ke dasar tiang sensor adalah $36\\text{ m}$. Menara kendali mencatat jarak lurus pandang ke Drone A adalah $39\\text{ m}$ dan jarak lurus pandang ke Drone B adalah $60\\text{ m}$. Regulasi penerbangan mewajibkan selisih ketinggian vertikal minimum antar-drone adalah $30\\text{ m}$. Apakah posisi kedua drone tersebut telah memenuhi regulasi keselamatan penerbangan?",
+      "jawaban_benar": "Memenuhi regulasi, karena selisih ketinggian kedua drone adalah $33\\text{ m}$.",
+      "alasan_benar": "Ketinggian Drone A adalah $\\sqrt{39^2 - 36^2} = 15\\text{ m}$ dan ketinggian Drone B adalah $\\sqrt{60^2 - 36^2} = 48\\text{ m}$. Selisih ketinggiannya adalah $48 - 15 = 33\\text{ m}$, yang memenuhi batas minimal $30\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "Tidak memenuhi regulasi, karena selisih ketinggian kedua drone hanya $21\\text{ m}$.",
+          "alasan": "Siswa mengurangkan langsung kedua jarak pandang radar ($60 - 39 = 21$) tanpa menghitung tinggi masing-masing drone."
+        },
+        {
+          "teks": "Tidak memenuhi regulasi, karena selisih ketinggian kedua drone hanya $27\\text{ m}$.",
+          "alasan": "Siswa melakukan kesalahan perhitungan saat mengakar kuadrat selisih kuadrat salah satu drone."
+        },
+        {
+          "teks": "Memenuhi regulasi, karena selisih ketinggian kedua drone adalah $48\\text{ m}$.",
+          "alasan": "Siswa hanya menggunakan ketinggian Drone B sebagai selisih tanpa mengurangkan ketinggian Drone A."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung ketinggian Drone A ($h_A$):\n$h_A = \\sqrt{39^2 - 36^2} = \\sqrt{1.521 - 1.296} = \\sqrt{225} = 15\\text{ m}$.\n\nLangkah 2: Menghitung ketinggian Drone B ($h_B$):\n$h_B = \\sqrt{60^2 - 36^2} = \\sqrt{3.600 - 1.296} = \\sqrt{2.304} = 48\\text{ m}$.\n\nLangkah 3: Menghitung selisih ketinggian kedua drone:\n$\\Delta h = h_B - h_A = 48\\text{ m} - 15\\text{ m} = 33\\text{ m}$.\n\nLangkah 4: Evaluasi regulasi keselamatan:\nRegulasi mensyaratkan selisih minimal $30\\text{ m}$. Karena $33\\text{ m} \\ge 30\\text{ m}$, penerbangan tersebut memenuhi regulasi keselamatan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 104,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika Kalian berada 4 meter sebelah utara dan 3 meter sebelah timur dari benteng kalian. Benteng lawan kalian berada di 6 meter sebelah utara dan 8 meter sebelah timur dari benteng kalian. Bagaimanakah menentukan jarak kalian dengan benteng lawan kalian?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rute navigasi darurat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan koordinat pergerakan kapal di tengah lintasan lurus lalu menghitung jarak titik belok ke lokasi darurat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kapal feri berlayar dari pelabuhan $A(0, 0)$ mengikuti garis lurus menuju pelabuhan $B$ yang berlokasi di $40\\text{ km}$ sebelah timur dan $30\\text{ km}$ sebelah utara dari pelabuhan $A$. Ketika kapal feri telah menempuh tepat setengah dari total jarak lurus perjalanan menuju pelabuhan $B$, nakhoda menerima panggilan darurat dari sebuah perahu nelayan yang mogok di koordinat $8\\text{ km}$ sebelah timur dan $20\\text{ km}$ sebelah utara dari pelabuhan $A$. Berapakah jarak lurus terpendek yang harus ditempuh kapal feri dari posisinya saat menerima sinyal darurat menuju ke perahu nelayan tersebut?",
+      "jawaban_benar": "$13\\text{ km}$",
+      "alasan_benar": "Posisi kapal saat setengah perjalanan adalah titik tengah antara $(0, 0)$ dan $(40, 30)$, yaitu $(20, 15)$. Jarak dari $(20, 15)$ ke perahu nelayan $(8, 20)$ dihitung dengan Teorema Pythagoras: $\\sqrt{(20 - 8)^2 + (15 - 20)^2} = \\sqrt{12^2 + (-5)^2} = \\sqrt{144 + 25} = 13\\text{ km}$.",
+      "distraktor": [
+        {
+          "teks": "$17\\text{ km}$",
+          "alasan": "Siswa menjumlahkan langsung selisih absis dan ordinat ($12 + 5 = 17$) tanpa Teorema Pythagoras."
+        },
+        {
+          "teks": "$25\\text{ km}$",
+          "alasan": "Siswa menghitung jarak yang sudah ditempuh kapal feri dari pelabuhan $A$ (setengah dari jarak $AB = 50\\text{ km}$), bukan jarak menuju perahu nelayan."
+        },
+        {
+          "teks": "$15\\text{ km}$",
+          "alasan": "Siswa salah memasukkan komponen koordinat atau keliru menghitung nilai akar kuadrat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat tujuan pelabuhan $B$, yaitu $(40, 30)$.\n\nLangkah 2: Menentukan posisi kapal feri saat menempuh setengah jarak lurus dari $A(0, 0)$ ke $B(40, 30)$:\n$P = \\left(\\frac{0 + 40}{2}, \\frac{0 + 30}{2}\\right) = (20, 15)$.\n\nLangkah 3: Menentukan posisi perahu nelayan $N$, yaitu $(8, 20)$.\n\nLangkah 4: Menghitung jarak lurus dari $P(20, 15)$ ke $N(8, 20)$ menggunakan Teorema Pythagoras:\n$\\Delta x = |20 - 8| = 12\\text{ km}$\n$\\Delta y = |15 - 20| = 5\\text{ km}$\n$d = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{12^2 + 5^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13\\text{ km}$.\n\nJadi, jarak terpendek yang harus ditempuh adalah $13\\text{ km}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 105,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap ruas garis yang tidak sejajar dengan sumbu- x maupun sumbu- y adalah hipotenusa dari segitiga siku-siku dari dua sisi yang sejajar dengan sumbu- x dan sumbu- y. Sehingga kalian bisa menentukan jarak dua titik pada bidang kartesius dengan menggunakan Teorema Pythagoras."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "penentuan koordinat bersyarat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perancangan letak stasiun penerima pada sumbu koordinat agar membentuk segitiga siku-siku menggunakan relasi Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada denah sistem navigasi bidang kartesius (dalam satuan kilometer), sebuah stasiun relai ditempatkan di titik $P(4, 6)$ dan stasiun pemancar ditempatkan di titik $Q(8, 12)$. Sebuah stasiun penerima $R$ akan dibangun di suatu titik sepanjang garis pantai yang berimpit dengan sumbu-$x$, sehingga koordinatnya adalah $(x, 0)$ dengan $x > 0$. Posisi ketiga stasiun tersebut dirancang sedemikian rupa sehingga membentuk segitiga siku-siku di titik $P$ (sudut $\\angle QPR = 90^\\circ$). Berapakah nilai absis $x$ dari lokasi stasiun penerima $R$ tersebut?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Berdasarkan Teorema Pythagoras pada segitiga siku-siku di $P$, berlaku $QR^2 = PQ^2 + PR^2$. Diperoleh persamaan $(x - 8)^2 + 144 = 52 + (x - 4)^2 + 36$. Setelah diselesaikan, didapatkan persamaan linear $-8x = -104$, sehingga $x = 13$.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Siswa melakukan kesalahan tanda pada penguraian kuadrat suku aljabar."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Siswa salah dalam mengurangkan konstanta pada kedua ruas persamaan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Siswa salah menentukan hipotenusa, menganggap segitiga siku-siku di titik $Q$ alih-alih di titik $P$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung kuadrat jarak $PQ$:\n$PQ^2 = (8 - 4)^2 + (12 - 6)^2 = 4^2 + 6^2 = 16 + 36 = 52$.\n\nLangkah 2: Menuliskan kuadrat jarak $PR$ dalam variabel $x$:\n$PR^2 = (x - 4)^2 + (0 - 6)^2 = (x^2 - 8x + 16) + 36 = x^2 - 8x + 52$.\n\nLangkah 3: Menuliskan kuadrat jarak $QR$ dalam variabel $x$:\n$QR^2 = (x - 8)^2 + (0 - 12)^2 = (x^2 - 16x + 64) + 144 = x^2 - 16x + 208$.\n\nLangkah 4: Karena segitiga siku-siku di $P$, sisi miringnya adalah $QR$, sehingga berlaku:\n$QR^2 = PQ^2 + PR^2$\n$x^2 - 16x + 208 = 52 + (x^2 - 8x + 52)$\n$x^2 - 16x + 208 = x^2 - 8x + 104$.\n\nLangkah 5: Menyelesaikan persamaan aljabar:\n$-16x + 8x = 104 - 208$\n$-8x = -104$\n$x = \\frac{-104}{-8} = 13$.\n\nJadi, nilai absis $x$ adalah $13$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 107,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika kecepatan rata-rata kedua perahu untuk mendekati pantai adalah 30 km/jam, tentukan selisih waktu yang ditempuh kedua perahu tersebut untuk mendekati pantai."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis efisiensi rute tempuh",
+      "jumlah_langkah": 5,
+      "alasan_level": "Membandingkan dua skenario rute tempuh berbeda yang mengombinasikan Teorema Pythagoras dan rumus waktu gerak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pos SAR di tepi pantai lurus mendeteksi perahu nelayan yang mati mesin di tengah laut. Posisi perahu berada tegak lurus sejauh $24\\text{ km}$ dari garis pantai di titik $T$. Pos SAR berada di titik $P$ di sepanjang garis pantai sejauh $32\\text{ km}$ dari $T$. Tim SAR merancang dua opsi rute evakuasi:\n- Opsi 1: Berlayar langsung dari $P$ memotong perairan menuju perahu nelayan dengan kecepatan rata-rata $50\\text{ km/jam}$.\n- Opsi 2: Mengendarai mobil penyelamat menyusuri pesisir dari $P$ ke $T$ dengan kecepatan $80\\text{ km/jam}$, kemudian melanjutkan perjalanan menggunakan perahu cepat dari $T$ tegak lurus ke posisi nelayan dengan kecepatan $48\\text{ km/jam}$.\nBerdasarkan pertimbangan waktu tercepat, opsi manakah yang paling efisien dan berapakah selisih waktu tempuhnya?",
+      "jawaban_benar": "Opsi 1 lebih cepat dengan selisih waktu $6\\text{ menit}$",
+      "alasan_benar": "Waktu tempuh Opsi 1 adalah $48\\text{ menit}$, sedangkan total waktu tempuh Opsi 2 adalah $54\\text{ menit}$ ($24\\text{ menit} + 30\\text{ menit}$).",
+      "distraktor": [
+        {
+          "teks": "Opsi 2 lebih cepat dengan selisih waktu $6\\text{ menit}$",
+          "alasan": "Terbalik dalam menyimpulkan opsi tercepat meskipun angka selisihnya benar."
+        },
+        {
+          "teks": "Opsi 1 lebih cepat dengan selisih waktu $14\\text{ menit}$",
+          "alasan": "Salah menghitung jarak Opsi 1 dengan menjumlahkan aljabar biasa $32 + 24 = 56\\text{ km}$."
+        },
+        {
+          "teks": "Kedua opsi membutuhkan waktu yang sama persis, yaitu $48\\text{ menit}$",
+          "alasan": "Keliru membagi kecepatan pada rute laut Opsi 2 menjadi $60\\text{ km/jam}$ bukan $48\\text{ km/jam}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung jarak tempuh langsung Opsi 1.\nPosisi pos $P$, titik pantai $T$, dan perahu nelayan $N$ membentuk segitiga siku-siku di $T$.\nPanjang $PT = 32\\text{ km}$, $TN = 24\\text{ km}$.\nJarak langsung $PN = \\sqrt{PT^2 + TN^2} = \\sqrt{32^2 + 24^2} = \\sqrt{1024 + 576} = \\sqrt{1600} = 40\\text{ km}$.\n\nLangkah 2: Menghitung waktu tempuh Opsi 1.\n$t_1 = \\frac{40\\text{ km}}{50\\text{ km/jam}} = 0,8\\text{ jam} = 0,8 \\times 60\\text{ menit} = 48\\text{ menit}$.\n\nLangkah 3: Menghitung waktu tempuh Opsi 2.\n- Rute pesisir pantai ($P$ ke $T$): $t_{\\text{pantai}} = \\frac{32\\text{ km}}{80\\text{ km/jam}} = 0,4\\text{ jam} = 24\\text{ menit}$.\n- Rute laut ($T$ ke $N$): $t_{\\text{laut}} = \\frac{24\\text{ km}}{48\\text{ km/jam}} = 0,5\\text{ jam} = 30\\text{ menit}$.\n- Total waktu Opsi 2: $t_2 = 24\\text{ menit} + 30\\text{ menit} = 54\\text{ menit}$.\n\nLangkah 4: Evaluasi selisih waktu tempuh.\nSelisih waktu = $54\\text{ menit} - 48\\text{ menit} = 6\\text{ menit}$.\nJadi, Opsi 1 lebih cepat dengan selisih waktu $6\\text{ menit}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 109,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan gambar di atas, jarak kedua pesawat yang dimaksud adalah panjang CD. Untuk menentukan panjang CD, terlebih dahulu kita akan menentukan panjang BC dan BD."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi jarak vertikal radar",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi selisih ketinggian dua objek vertikal berdasarkan pembacaan jarak miring radar menggunakan Teorema Pythagoras berganda.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah stasiun radar BMKG terletak di tanah datar berjarak mendatar $36\\text{ m}$ dari dasar landasan peluncuran balon cuaca. Radar mendeteksi dua balon cuaca, Balon A dan Balon B, yang mengudara tepat pada satu garis vertikal di atas landasan tersebut. Jarak lurus langsung dari radar ke Balon A terukur $45\\text{ m}$, sedangkan jarak lurus radar ke Balon B terukur $60\\text{ m}$. Petugas radar menduga bahwa jarak vertikal antara kedua balon tersebut melebihi $25\\text{ m}$. Apakah dugaan petugas tersebut benar?",
+      "jawaban_benar": "Dugaan salah, karena jarak vertikal kedua balon sebenarnya adalah $21\\text{ m}$",
+      "alasan_benar": "Ketinggian Balon A adalah $27\\text{ m}$ dan Balon B adalah $48\\text{ m}$, sehingga jarak vertikalnya $48 - 27 = 21\\text{ m} \\le 25\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "Dugaan benar, karena jarak vertikal kedua balon sebenarnya adalah $27\\text{ m}$",
+          "alasan": "Mengira ketinggian Balon A sebagai jarak vertikal antarkedua balon."
+        },
+        {
+          "teks": "Dugaan benar, karena jarak vertikal kedua balon sebenarnya adalah $33\\text{ m}$",
+          "alasan": "Salah menghitung pengurangan jarak miring langsung $60 - 45 = 15$ lalu ditambahkan nilai dasar."
+        },
+        {
+          "teks": "Dugaan salah, karena jarak vertikal kedua balon sebenarnya adalah $15\\text{ m}$",
+          "alasan": "Hanya mengurangkan jarak miring radar ke kedua balon ($60 - 45 = 15\\text{ m}$) tanpa menghitung komponen tinggi vertikal."
+        }
+      ],
+      "pembahasan": "Misalkan posisi radar adalah $R$, dasar landasan peluncuran adalah $O$, posisi Balon A adalah $A$, dan posisi Balon B adalah $B$. Terbentuk dua segitiga siku-siku di $O$, yaitu $\\triangle ROA$ dan $\\triangle ROB$ dengan panjang $RO = 36\\text{ m}$.\n\n1. Menghitung ketinggian Balon A ($OA$):\n$OA = \\sqrt{RA^2 - RO^2} = \\sqrt{45^2 - 36^2} = \\sqrt{2025 - 1296} = \\sqrt{729} = 27\\text{ m}$.\n\n2. Menghitung ketinggian Balon B ($OB$):\n$OB = \\sqrt{RB^2 - RO^2} = \\sqrt{60^2 - 36^2} = \\sqrt{3600 - 1296} = \\sqrt{2304} = 48\\text{ m}$.\n\n3. Menghitung jarak vertikal antara Balon A dan Balon B ($AB$):\n$AB = OB - OA = 48\\text{ m} - 27\\text{ m} = 21\\text{ m}$.\n\nKarena jarak sebenarnya adalah $21\\text{ m}$ (tidak melebihi $25\\text{ m}$), maka dugaan petugas radar salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 105,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Titik awal yang digunakan untuk perhitungan adalah titik tumpu tiang pada tanah. Sehingga jarak antara titik awal dengan posisi kalian, serta jarak antara titik awal ke pohon sebagai daerah lawan yaitu titik tumpu pohon pada tanah dapat dihitung, bisa dengan memanfaatkan tripel Pythagoras."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "optimasi penempatan pos pantau",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menentukan koordinat titik batas berjarak sama ke dua markas melalui persamaan Pythagoras, lalu mengevaluasi keterjangkauan jarak pandang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam simulasi permainan bentengan pada bidang kartesius (skala dalam meter), Markas Regu Merah berada di koordinat $A(0, 9)$ dan Markas Regu Biru berada di koordinat $B(21, 12)$. Panitia ingin mendirikan pos wasit di titik $P(x, 0)$ pada garis batas mendatar (sumbu-$x$) sedemikian sehingga jarak pos wasit ke Markas Merah sama dengan jaraknya ke Markas Biru. Jika pengawas di pos wasit memiliki batas jarak pandang jelas maksimum $16\\text{ meter}$, apakah pengawas dapat memantau kedua markas tersebut dengan jelas dari pos $P$?",
+      "jawaban_benar": "Dapat, karena koordinat pos wasit adalah $(12, 0)$ dengan jarak lurus $15\\text{ meter}$ ke masing-masing markas",
+      "alasan_benar": "Persamaan jarak menghasilkan $x = 12$, dan jarak titik $P(12, 0)$ ke markas adalah $\\sqrt{12^2 + 9^2} = 15\\text{ m} \\le 16\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "Tidak dapat, karena koordinat pos wasit adalah $(14, 0)$ dengan jarak lurus $17\\text{ meter}$ ke masing-masing markas",
+          "alasan": "Keliru menyelesaikan persamaan linear sehingga memperoleh nilai absis $14$."
+        },
+        {
+          "teks": "Dapat, karena koordinat pos wasit adalah $(10, 0)$ dengan jarak lurus $\\sqrt{181}\\text{ meter}$ ke masing-masing markas",
+          "alasan": "Salah menghitung penguraian bentuk kuadrat suku dua $(x - 21)^2$."
+        },
+        {
+          "teks": "Tidak dapat, karena koordinat pos wasit adalah $(12, 0)$ dengan jarak lurus $21\\text{ meter}$ ke masing-masing markas",
+          "alasan": "Menjumlahkan koordinat secara linear ($12 + 9 = 21$) bukan menghitung sisi miring segitiga siku-siku."
+        }
+      ],
+      "pembahasan": "1. Menyusun persamaan jarak dari $P(x, 0)$ ke titik $A(0, 9)$ dan $B(21, 12)$:\n$PA^2 = (x - 0)^2 + (0 - 9)^2 = x^2 + 81$\n$PB^2 = (x - 21)^2 + (0 - 12)^2 = x^2 - 42x + 441 + 144 = x^2 - 42x + 585$\n\n2. Menentukan absis $x$ dengan syarat $PA = PB$ (sehingga $PA^2 = PB^2$):\n$x^2 + 81 = x^2 - 42x + 585$\n$42x = 585 - 81$\n$42x = 504$\n$x = 12$\nJadi, koordinat pos wasit adalah $P(12, 0)$.\n\n3. Menghitung jarak dari pos wasit ke markas:\n$PA = \\sqrt{12^2 + 9^2} = \\sqrt{144 + 81} = \\sqrt{225} = 15\\text{ meter}$.\n\n4. Evaluasi jangkauan penglihatan:\nKarena jarak lurus ke markas ($15\\text{ meter}$) kurang dari batas maksimum ($16\\text{ meter}$), maka wasit dapat memantau kedua markas dengan jelas.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0111-soal-laihan-2-4-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi jangkauan sinyal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi ketercapaian sinyal berdasarkan perbandingan batas jangkauan dengan jarak lurus ruang dua objek.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perangkat pemancar darurat di sebuah pelabuhan memiliki batas jangkauan nirkabel maksimum sejauh $60\\text{ m}$. Petugas pemantau memasang antena pemancar di puncak gardu pada ketinggian $45\\text{ m}$ dari tanah. Seorang teknisi yang membawa alat penerima berdiri di atas tumpukan peti kemas setinggi $6\\text{ m}$ dari tanah. Jika jarak mendatar dari dasar gardu ke posisi peti kemas tersebut adalah $52\\text{ m}$, apakah alat penerima teknisi masih dapat menangkap sinyal dari antena pemancar?",
+      "jawaban_benar": "Tidak dapat, karena jarak lurus keduanya $65\\text{ m}$ sehingga melebihi batas jangkauan maksimum.",
+      "alasan_benar": "Selisih ketinggian antara antena dan alat penerima adalah $45 - 6 = 39\\text{ m}$. Jarak lurus keduanya dihitung dengan Teorema Pythagoras: $\\sqrt{52^2 + 39^2} = \\sqrt{2.704 + 1.521} = \\sqrt{4.225} = 65\\text{ m}$. Karena $65\\text{ m} > 60\\text{ m}$, sinyal tidak dapat terhubung.",
+      "distraktor": [
+        {
+          "teks": "Dapat, karena jarak lurus keduanya $55\\text{ m}$ sehingga masih dalam batas jangkauan maksimum.",
+          "alasan": "Siswa salah menjumlahkan kuadrat sisi tegak atau salah menarik akar dari tripel Pythagoras."
+        },
+        {
+          "teks": "Tidak dapat, karena jarak lurus keduanya $68\\text{ m}$ sehingga melebihi batas jangkauan maksimum.",
+          "alasan": "Siswa langsung menggunakan ketinggian gardu $45\\text{ m}$ tanpa mengurangkan ketinggian peti kemas $6\\text{ m}$ (menghitung $\\sqrt{52^2 + 45^2} \\approx 68{,}77$ lalu dibulatkan ke $68$)."
+        },
+        {
+          "teks": "Dapat, karena jarak lurus keduanya $52\\text{ m}$ sehingga masih dalam batas jangkauan maksimum.",
+          "alasan": "Siswa hanya memperhitungkan jarak mendatar di tanah tanpa memperhitungkan selisih ketinggian vertikal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung selisih ketinggian vertikal (sisi tegak vertikal):\n$$\\Delta y = 45\\text{ m} - 6\\text{ m} = 39\\text{ m}$$\n\nLangkah 2: Menghitung jarak lurus menggunakan Teorema Pythagoras dengan jarak mendatar $x = 52\\text{ m}$:\n$$s = \\sqrt{x^2 + (\\Delta y)^2} = \\sqrt{52^2 + 39^2} = \\sqrt{2.704 + 1.521} = \\sqrt{4.225} = 65\\text{ m}$$\n\nLangkah 3: Mengevaluasi jangkauan sinyal:\nKarena jarak lurus aktual ($65\\text{ m}$) lebih besar dari batas jangkauan maksimum alat ($60\\text{ m}$), alat penerima teknisi tidak dapat menangkap sinyal pemancar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 105,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap ruas garis yang tidak sejajar dengan sumbu- x maupun sumbu- y adalah hipotenusa dari segitiga siku-siku dari dua sisi yang sejajar dengan sumbu- x dan sumbu- y. Sehingga kalian bisa menentukan jarak dua titik pada bidang kartesius dengan menggunakan Teorema Pythagoras."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan lokasi stasiun pemancar",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan jarak dua titik berparameter pada bidang kartesius, penyeleksian nilai koordinat sesuai batasan arah, dan kalkulasi jarak akhir.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada sistem pemetaan koordinat kartesius (skala dalam kilometer), Pos Pantau $P$ berada pada koordinat $(-6, 2)$ dan Pos Pantau $Q$ berada pada koordinat $(10, 14)$. Sebuah menara relai sinyal baru $R$ akan dibangun pada garis $y = 2$ dengan koordinat $(k, 2)$ sedemikian sehingga jarak dari menara $R$ ke Pos Pantau $Q$ tepat $15\\text{ km}$. Jika lokasi menara $R$ disyaratkan berada lebih ke timur dibandingkan Pos Pantau $Q$ ($k > 10$), berapakah jarak dari menara relai $R$ ke Pos Pantau $P$?",
+      "jawaban_benar": "$25\\text{ km}$",
+      "alasan_benar": "Jarak $QR = \\sqrt{(10 - k)^2 + (14 - 2)^2} = 15 \\implies (10 - k)^2 + 144 = 225 \\implies (10 - k)^2 = 81$. Karena $k > 10$, maka $k - 10 = 9 \\implies k = 19$. Koordinat $R$ adalah $(19, 2)$. Jarak $PR = \\sqrt{(19 - (-6))^2 + (2 - 2)^2} = 19 + 6 = 25\\text{ km}$.",
+      "distraktor": [
+        {
+          "teks": "$7\\text{ km}$",
+          "alasan": "Siswa memilih nilai penyelesaian lain $10 - k = 9 \\implies k = 1$ (mengabaikan syarat $k > 10$) sehingga menghitung jarak $PR = 1 - (-6) = 7\\text{ km}$."
+        },
+        {
+          "teks": "$19\\text{ km}$",
+          "alasan": "Siswa berhenti pada penemuan nilai absis titik $R$ yaitu $k = 19$ dan menganggapnya sebagai jarak ke pos $P$."
+        },
+        {
+          "teks": "$13\\text{ km}$",
+          "alasan": "Siswa salah menghitung selisih koordinat dengan mengurangkan $19 - 6 = 13$ alih-alih $19 - (-6)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan persamaan jarak antara titik $Q(10, 14)$ dan $R(k, 2)$ menggunakan Teorema Pythagoras:\n$$QR = \\sqrt{(k - 10)^2 + (2 - 14)^2} = 15$$\n\nLangkah 2: Menyelesaikan nilai parameter $k$:\n$$(k - 10)^2 + (-12)^2 = 15^2$$\n$$(k - 10)^2 + 144 = 225$$\n$$(k - 10)^2 = 81$$\n$$k - 10 = 9 \\quad \\text{atau} \\quad k - 10 = -9$$\n$$k = 19 \\quad \\text{atau} \\quad k = 1$$\n\nLangkah 3: Memilih nilai $k$ yang memenuhi batasan soal:\nKarena lokasi menara $R$ disyaratkan berada lebih ke timur dari Pos Pantau $Q$ ($k > 10$), maka nilai yang memenuhi adalah $k = 19$. Jadi koordinat menara relai $R$ adalah $(19, 2)$.\n\nLangkah 4: Menghitung jarak dari menara relai $R(19, 2)$ ke Pos Pantau $P(-6, 2)$:\n$$PR = \\sqrt{(19 - (-6))^2 + (2 - 2)^2} = \\sqrt{25^2 + 0^2} = 25\\text{ km}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0111-soal-laihan-2-4-3b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi jarak dua objek bergerak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan orientasi arah berlawanan, pemetaan vektor posisi dua objek, penerapan Teorema Pythagoras, dan evaluasi terhadap klaim nilai jarak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua unit drone survei, Drone X dan Drone Y, diterbangkan dari landasan yang sama dengan posisi awal saling membelakangi. Drone X terbang lurus ke depan sejauh $28\\text{ m}$, kemudian berbelok tegak lurus ke arah kanannya sejauh $8\\text{ m}$. Pada saat bersamaan, Drone Y terbang lurus ke depan sejauh $20\\text{ m}$, kemudian berbelok tegak lurus ke arah kanannya sejauh $6\\text{ m}$. Operator menduga jarak lurus antara kedua drone pada posisi akhir adalah $48\\text{ m}$. Bagaimana evaluasi yang tepat terhadap dugaan operator tersebut?",
+      "jawaban_benar": "Dugaan salah, karena jarak lurus sebenarnya adalah $50\\text{ m}$.",
+      "alasan_benar": "Berdasarkan acuan titik awal $(0, 0)$, posisi Drone X adalah $(8, 28)$ dan posisi Drone Y adalah $(-6, -20)$. Selisih absis $\\Delta x = 8 - (-6) = 14\\text{ m}$ dan selisih ordinat $\\Delta y = 28 - (-20) = 48\\text{ m}$. Jarak lurus keduanya adalah $\\sqrt{14^2 + 48^2} = \\sqrt{196 + 2304} = \\sqrt{2500} = 50\\text{ m}$, sehingga dugaan $48\\text{ m}$ salah.",
+      "distraktor": [
+        {
+          "teks": "Dugaan benar, karena selisih total lintasan vertikal kedua drone tepat $48\\text{ m}$.",
+          "alasan": "Siswa hanya menghitung perpindahan vertikal (ordinat) $28 + 20 = 48\\text{ m}$ dan mengabaikan perpindahan horizontal."
+        },
+        {
+          "teks": "Dugaan salah, karena jarak lurus sebenarnya adalah $62\\text{ m}$.",
+          "alasan": "Siswa menjumlahkan seluruh panjang lintasan tempuh kedua drone ($28 + 8 + 20 + 6 = 62\\text{ m}$) alih-alih menghitung jarak lurus menggunakan Teorema Pythagoras."
+        },
+        {
+          "teks": "Dugaan salah, karena jarak lurus sebenarnya adalah $56\\text{ m}$.",
+          "alasan": "Siswa melakukan kesalahan perhitungan pada Teorema Pythagoras atau menjumlahkan perpindahan diagonal secara keliru."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan titik acuan awal di landasan sebagai $(0, 0)$. Asumsikan Drone X menghadap ke arah sumbu-$y$ positif (utara). Drone X terbang ke depan $28\\text{ m}$ ($y = 28$), lalu belok kanan (timur, sumbu-$x$ positif) sejauh $8\\text{ m}$ ($x = 8$). Posisi akhir Drone X adalah $(8, 28)$.\n\nLangkah 2: Drone Y awalnya membelakangi Drone X, sehingga Drone Y menghadap ke arah sumbu-$y$ negatif (selatan). Drone Y terbang ke depan $20\\text{ m}$ ($y = -20$), lalu belok kanan (barat, sumbu-$x$ negatif) sejauh $6\\text{ m}$ ($x = -6$). Posisi akhir Drone Y adalah $(-6, -20)$.\n\nLangkah 3: Hitung selisih jarak horizontal dan vertikal kedua drone:\n$\\Delta x = 8 - (-6) = 14\\text{ m}$\n$\\Delta y = 28 - (-20) = 48\\text{ m}$\n\nLangkah 4: Hitung jarak lurus menggunakan Teorema Pythagoras:\n$\\text{Jarak} = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{14^2 + 48^2} = \\sqrt{196 + 2304} = \\sqrt{2500} = 50\\text{ m}$.\n\nDengan demikian, dugaan operator salah karena jarak lurus sebenarnya adalah $50\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 105,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sehingga kalian bisa menentukan jarak dua titik pada bidang kartesius dengan menggunakan Teorema Pythagoras."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi keliling poligon koordinat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan panjang empat sisi poligon pada bidang koordinat dengan Teorema Pythagoras, penjumlahan keliling, dan evaluasi terhadap klaim estimasi mandor.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebidang taman berbentuk trapesium sama kaki digambar pada bidang kartesius dengan patok sudut di titik $A(-6, -2)$, $B(14, -2)$, $C(8, 6)$, dan $D(0, 6)$ (skala dalam meter). Mandor memperkirakan panjang kawat pembatas yang dibutuhkan untuk memagari sekeliling taman tersebut tepat $44\\text{ meter}$. Bagaimana evaluasi yang tepat terhadap perkiraan mandor tersebut?",
+      "jawaban_benar": "Dugaan salah, karena panjang kawat sebenarnya adalah $48\\text{ meter}$.",
+      "alasan_benar": "Panjang sisi-sisi trapesium adalah $AB = 20\\text{ m}$, $CD = 8\\text{ m}$, $AD = \\sqrt{6^2 + 8^2} = 10\\text{ m}$, dan $BC = \\sqrt{(-6)^2 + 8^2} = 10\\text{ m}$. Keliling total adalah $20 + 10 + 8 + 10 = 48\\text{ meter}$, sehingga dugaan $44\\text{ meter}$ salah.",
+      "distraktor": [
+        {
+          "teks": "Dugaan benar, karena sisi miring trapesium memiliki panjang yang sama dengan tinggi trapesium.",
+          "alasan": "Siswa keliru menganggap panjang sisi miring sama dengan tinggi trapesium ($8\\text{ m}$), sehingga menghasilkan keliling $20 + 8 + 8 + 8 = 44\\text{ m}$."
+        },
+        {
+          "teks": "Dugaan salah, karena panjang kawat sebenarnya adalah $38\\text{ meter}$.",
+          "alasan": "Siswa lupa memperhitungkan salah satu sisi miring trapesium ($20 + 8 + 10 = 38\\text{ m}$)."
+        },
+        {
+          "teks": "Dugaan salah, karena panjang kawat sebenarnya adalah $52\\text{ meter}$.",
+          "alasan": "Siswa salah menghitung panjang sisi miring $AD$ dan $BC$ menjadi masing-masing $12\\text{ m}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung panjang sisi alas $AB$ (sejajar sumbu-$x$):\n$AB = |14 - (-6)| = 20\\text{ m}$.\n\nLangkah 2: Hitung panjang sisi atas $CD$ (sejajar sumbu-$x$):\n$CD = |8 - 0| = 8\\text{ m}$.\n\nLangkah 3: Hitung panjang sisi miring $AD$ dengan Teorema Pythagoras:\n$\\Delta x_{AD} = 0 - (-6) = 6$\n$\\Delta y_{AD} = 6 - (-2) = 8$\n$AD = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ m}$.\n\nLangkah 4: Hitung panjang sisi miring $BC$ dengan Teorema Pythagoras:\n$\\Delta x_{BC} = 8 - 14 = -6$\n$\\Delta y_{BC} = 6 - (-2) = 8$\n$BC = \\sqrt{(-6)^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ m}$.\n\nLangkah 5: Hitung keliling taman:\n$\\text{Keliling} = AB + BC + CD + DA = 20 + 10 + 8 + 10 = 48\\text{ meter}$.\n\nJadi, perkiraan mandor salah karena panjang kawat sebenarnya adalah $48\\text{ meter}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

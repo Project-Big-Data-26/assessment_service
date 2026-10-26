@@ -17,6 +17,7 @@ import math
 import os
 import re
 import time
+from difflib import SequenceMatcher
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -55,6 +56,15 @@ def _norm(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", text.lower()).strip()
 
 
+def _judul_cocok(nama: str, judul: str) -> bool:
+    """Nama subbab kurikulum vs judul di buku: abaikan keterangan '(...)' dan toleran salah ketik konversi PDF."""
+    a = _norm(re.sub(r"\(.*?\)", " ", nama))
+    b = _norm(re.sub(r"\(.*?\)", " ", judul))
+    if not a or not b:
+        return False
+    return a in b or b in a or SequenceMatcher(None, a, b).ratio() >= 0.85
+
+
 def subbab_pages(book_name: str, bab_no: int, kode: str) -> Tuple[int, int]:
     """Rentang halaman Buku Siswa untuk subbab: dari judul 'K. <nama>' sampai sebelum judul subbab berikutnya."""
     book = get_book(book_name)
@@ -75,8 +85,19 @@ def subbab_pages(book_name: str, bab_no: int, kode: str) -> Tuple[int, int]:
     for p in in_bab:
         for h in pages[str(p)]["headings"]:
             m = _HEAD_RE.match(h.replace("~~", "").strip())
-            if m and m.group(1) in nama and _norm(nama[m.group(1)]) in _norm(m.group(2)):
+            if m and m.group(1) in nama and _judul_cocok(nama[m.group(1)], m.group(2)):
                 starts.setdefault(m.group(1), p)
+    for k_lain in nama:           # cadangan: judul tercetak sebagai baris biasa di teks halaman (bukan heading)
+        if k_lain in starts:
+            continue
+        for p in in_bab:
+            for line in page_text(book_name, p).splitlines():
+                m = _HEAD_RE.match(re.sub(r"[#*~]", "", line).strip())
+                if m and m.group(1) == k_lain and _judul_cocok(nama[k_lain], m.group(2)):
+                    starts[k_lain] = p
+                    break
+            if k_lain in starts:
+                break
     if kode not in starts:
         raise GenerateError(f"judul subbab {kode} tidak terdeteksi di halaman bab {bab_no}")
     later = [p for k, p in starts.items() if p > starts[kode]]
@@ -146,7 +167,11 @@ memakai data di gambar, tetapi:
 - Kalau gambar tidak terbaca jelas atau ambigu, JANGAN buat soalnya.
 - Jangan membuat soal yang jawabannya sudah tertulis di gambar secara harfiah kecuali tingkat easy.
 - Satu gambar boleh untuk beberapa soal, tetapi sudut pertanyaannya HARUS berbeda dan jawabannya berbeda dari soal pretest pemilik gambar.
-- Tulis juga datanya penting di deskripsi_gambar; solver TIDAK melihat deskripsi itu, hanya gambar."""
+- GAMBAR HARUS PENTING: data yang dibutuhkan untuk menjawab (angka, jumlah objek, panjang sisi, label, posisi)
+  hanya boleh ada di gambar, JANGAN diulang di kalimat soal atau stimulus. Soal yang tetap bisa dijawab dari teks
+  saja akan DIBUANG oleh pemeriksa (solver mengerjakannya tanpa gambar). Tanyakan hal yang menuntut siswa membaca
+  gambar: "berapa ...", "yang manakah ...", "bandingkan ...", "bagian mana ...".
+- Tulis datanya di deskripsi_gambar; solver TIDAK melihat deskripsi itu, hanya gambar."""
 
 
 def _short(text: str, n: int = 160) -> str:
@@ -383,12 +408,12 @@ def _next_number(accepted: List[Soal]) -> int:
     return max((int(s.id.rsplit("-", 1)[1].lstrip("g")) for s in accepted), default=0) + 1
 
 
-def generate(job: Job, client: NineRouterClient, *, progress=print) -> Result:
+def generate(job: Job, client: NineRouterClient, *, progress=print, umpan_awal: Optional[List[str]] = None) -> Result:
     started = time.monotonic()
     ctx = _Context(job)
     generator = f"9router:{client.settings.model}"
     accepted: List[Soal] = []
-    umpan: List[str] = []
+    umpan: List[str] = list(umpan_awal or [])
     tok_in = tok_out = 0
     max_rounds = math.ceil(ctx.kuota / CHUNK) + MAX_ROUNDS_EXTRA
     rounds = 0
