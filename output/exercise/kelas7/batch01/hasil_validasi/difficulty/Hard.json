@@ -4,7 +4,136 @@
   "subjectTrack": "regular",
   "intendedDifficulty": "Hard",
   "researchOnly": true,
-  "advisoryCount": 0,
-  "contentQualifiedCount": 0,
-  "items": []
+  "advisoryCount": 2,
+  "contentQualifiedCount": 2,
+  "items": [
+    {
+      "question": {
+        "questionId": "a66310052e17d3e668fa92b7",
+        "questionVersionId": "a66310052e17d3e668fa92b7:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "eac75ac8397e24f019aafcc0cb3c5245d031e610d8ccd2c8a48cc76b7f633266",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Faktor Bilangan Bulat",
+        "questionType": "multiple_choice",
+        "stem": "Panitia memiliki 96 buku dan 144 pensil. Semuanya dibagi ke dalam paket yang isinya sama (banyak buku sama dan banyak pensil sama di tiap paket) tanpa sisa. Tiap paket harus berisi paling sedikit 6 buku dan paling banyak 12 pensil. Banyak paket terbanyak yang dapat dibuat adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "24 paket"
+          },
+          {
+            "label": "B",
+            "text": "48 paket"
+          },
+          {
+            "label": "C",
+            "text": "8 paket"
+          },
+          {
+            "label": "D",
+            "text": "16 paket"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan n adalah banyak paket. n harus merupakan faktor persekutuan dari 96 dan 144. Faktor persekutuan dari 96 dan 144 adalah {1, 2, 3, 4, 6, 8, 12, 16, 24, 48}. Syarat: buku per paket = 96/n >= 6 (maka n <= 16) dan pensil per paket = 144/n <= 12 (maka n >= 12). Nilai n yang memenuhi 12 <= n <= 16 adalah 12, 16. Nilai terbanyak adalah 16.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "a66310052e17d3e668fa92b7",
+          "subchapter": "Faktor Bilangan Bulat",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: tiap paket hanya 4 buku, kurang dari 6",
+            "B": "Salah: memakai FPB tanpa memeriksa syarat; tiap paket hanya 2 buku",
+            "C": "Salah: tiap paket berisi 18 pensil, lebih dari 12",
+            "D": "Benar: banyak paket harus faktor persekutuan 96 dan 144; syarat memberi 12 <= paket <= 16, terbanyak 16"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "7bf287c0ef65b5154854aea7",
+        "questionVersionId": "7bf287c0ef65b5154854aea7:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "0bc9142110838a2241b5deccdd35494ae2c1b1d6696a001a3903e1073780391b",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Di Antara Dua Bilangan Bulat",
+        "questionType": "multiple_choice",
+        "stem": "Sebuah bilangan rasional berbentuk $\\frac{a}{b}$ dengan $a$ dan $b$ bilangan bulat positif harus terletak di antara $2,1$ dan $2,2$ (kedua batas tidak termasuk). Nilai $b$ terkecil yang memungkinkan hal itu adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "7"
+          },
+          {
+            "label": "B",
+            "text": "6"
+          },
+          {
+            "label": "C",
+            "text": "10"
+          },
+          {
+            "label": "D",
+            "text": "5"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Kita mencari a/b sedemikian sehingga 2,1 < a/b < 2,2, atau 21/10 < a/b < 22/10. Ini setara dengan 21b < 10a < 22b. Untuk b=1, 2, 3, 4, 5, tidak ada bilangan bulat a yang memenuhi. Untuk b=6, kita mencari a sehingga 12,6 < a < 13,2. Nilai a=13 memenuhi (13/6 = 2,166...). Jadi b terkecil adalah 6.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "7bf287c0ef65b5154854aea7",
+          "subchapter": "Di Antara Dua Bilangan Bulat",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: $\\frac{15}{7} \\approx 2,14$ memang masuk rentang, tetapi bukan penyebut terkecil",
+            "B": "Benar: bagian pecahan harus di antara $0,1$ dan $0,2$; penyebut 1 sampai 5 menghasilkan $0$, $0,2$, $0,25$, $0,33$, dst. yang tidak masuk, sedangkan $b = 6$ memberi $\\frac{13}{6} = 2,1666\\ldots$",
+            "C": "Salah: memilih $\\frac{21}{10} = 2,1$ yang merupakan batas bawah, padahal batas tidak termasuk",
+            "D": "Salah: memilih $\\frac{11}{5} = 2,2$ yang merupakan batas atas, padahal batas tidak termasuk"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    }
+  ]
 }

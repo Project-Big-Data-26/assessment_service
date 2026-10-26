@@ -21,6 +21,7 @@ Label `intendedDifficulty` berasal dari penilaian isi soal relatif kelas. `ctt.e
 | [34 PPT](34_PPT_SUMMARY.md) | Materi presentasi |
 | [36 migrasi](36_SILVER_OPERATIONAL_INTEGRATION.md) | Perubahan kontrak dan contoh integrasi |
 | [38 validasi exercise](38_EXERCISE_BATCH_VALIDATION.md) | Runner batch, hasil yang terhubung ke metadata, resume dan batas scope IndoBERT |
+| [39 otomasi malam](39_NIGHTLY_VALIDATION_AND_IRT.md) | Handoff ekstraksi, N=1, bank seimbang, scheduler 01.00 WIB dan difficulty empiris |
 
 Seluruh 580 soal reguler kelas 1-12 dan kelas 11-12 TL memiliki 1.740 run awal sukses. `silver_ready` hanya diberikan pada konten yang memenuhi qualification; soal yang membutuhkan revisi tetap ditahan. Lihat [laporan aktif](../output/pretest/README.md).
 

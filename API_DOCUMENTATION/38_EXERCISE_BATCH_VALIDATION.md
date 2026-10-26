@@ -1,5 +1,8 @@
 # Validasi exercise per kelas dan batch
 
+Otomasi Gemini N=1, handoff ekstraksi, bank operasional seimbang dan CTT/IRT
+terjadwal tersedia di [runbook 39](39_NIGHTLY_VALIDATION_AND_IRT.md).
+
 Implementasi: [`scripts/validate_exercise_batch.py`](../scripts/validate_exercise_batch.py). Data exercise diproses melalui mekanisme silver pretest yang aktif, dengan sumber, checkpoint dan hasil terpisah. Script tidak mengubah `soal_exercise_db.json`, `soal_exercise_meta.json`, hasil pretest, artifact model atau database assessment.
 
 ## Sumber yang tersedia
