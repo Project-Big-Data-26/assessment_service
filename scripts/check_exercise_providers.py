@@ -9,7 +9,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from app.llm.providers import settings_for, has_credentials
+from app.llm.providers import settings_for, has_credentials, key_slots
+from app.llm.credentials import use_credential_slot
 from scripts.generate_silver_labels_kelas1 import atomic_write
 
 
@@ -39,23 +40,39 @@ def check(provider, *, execute=False, model=None):
         response = adapter.label_once(item, [], run_index=1, grade=8)
     finally:
         adapter.client.close()
-    result.update(apiCalls=1, passed=(response.status == "success" and response.output.answerKeyStatus == "verified"
-                                    and response.output.verifiedAnswerKey == "B"),
+    # A verified option value (5) is also correct; the schema permits either
+    # the option identifier or the independently computed answer text.
+    result.update(apiCalls=1, passed=probe_passed(response),
                   errorCode=response.errorCode, providerFailureReason=response.providerFailureReason,
                   quotaDailyExhausted=response.quotaDailyExhausted, quotaLimits=response.quotaLimits,
                   tokenUsage=response.usage.model_dump(mode="json"))
     return result
 
 
+def probe_passed(response):
+    output = response.output
+    return bool(response.status == "success" and output and output.answerKeyStatus == "verified"
+                and str(output.verifiedAnswerKey).strip().casefold() in {"b", "5"})
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--providers", nargs="+", choices=("gemini", "groq"), default=["gemini", "groq"])
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--all-keys", action="store_true", help="Check each configured distinct key slot")
     parser.add_argument("--gemini-model", help="Optional diagnostic model override; does not edit .env")
     args = parser.parse_args()
     results = []
     for provider in args.providers:
-        results.append(check(provider, execute=args.execute, model=args.gemini_model if provider == "gemini" else None))
+        if args.all_keys and key_slots(provider):
+            for slot in key_slots(provider):
+                with use_credential_slot(provider, slot):
+                    result = check(provider, execute=args.execute, model=args.gemini_model if provider == "gemini" else None)
+                results.append({**result, "keySlot": slot})
+                if str(result.get("errorCode", "")).endswith(":503"):
+                    break
+        else:
+            results.append(check(provider, execute=args.execute, model=args.gemini_model if provider == "gemini" else None))
         if str(results[-1].get("errorCode", "")).endswith(":503"):
             break
     result = {"checkedAt": datetime.now(timezone.utc).isoformat(), "diagnosticOnly": True, "results": results}
@@ -63,7 +80,7 @@ def main():
     path.parent.mkdir(parents=True, exist_ok=True)
     atomic_write(result, path)
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    return 0 if all(r["passed"] is True for r in results) else 2
+    return 0 if not args.execute or all(r["passed"] is True for r in results) else 2
 
 
 if __name__ == "__main__":

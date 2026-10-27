@@ -19,6 +19,40 @@ gagal schema, retry dibatasi dan soal tetap draft bila belum berhasil.
 ## Key dan pemeriksaan
 
 Simpan key hanya di `.env` lokal dengan nama `GEMINI_API_KEY` dan `GROQ_API_KEY`.
+Masing-masing provider juga mendukung tiga slot:
+
+```dotenv
+GEMINI_API_KEY_1=
+GEMINI_API_KEY_2=
+GEMINI_API_KEY_3=
+GROQ_API_KEY_1=
+GROQ_API_KEY_2=
+GROQ_API_KEY_3=
+```
+
+Slot 1 memakai nama lama ketika `_1` kosong. `_1` yang diisi menggantikan nama
+lama; nama lama bukan slot keempat. Slot kosong dan key duplikat dalam provider
+yang sama dilewati. Dengan urutan provider di atas, runner mencoba Gemini 1–3,
+lalu Groq 1–3. Pada 429 runner melanjutkan slot berikutnya, tanpa mengulang soal
+selesai atau mereset anggaran API. Slot terkena kuota tidak dicoba lagi dalam run
+yang sama. Error autentikasi tetap menghentikan run; error sementara mengikuti
+kebijakan retry yang ada. `providerAttempts[].keySlot` dan `activeKeySlot` pada
+laporan nightly hanya memuat nomor slot, tanpa nilai key. Slot dipilih lewat
+environment internal dan diwariskan ke worker, tidak lewat argumen berisi key.
+Rotasi otomatis ini dilakukan oleh runner nightly; CLI validasi langsung memakai
+satu slot terpilih (default slot pertama yang terisi).
+
+Periksa semua slot tanpa panggilan API:
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 scripts/check_exercise_providers.py --providers gemini groq --all-keys
+```
+
+Tambahkan `--execute` untuk satu probe koneksi per slot. Kuota Gemini berlaku per
+project, bukan per key: beberapa key dalam project yang sama tetap berbagi kuota
+([dokumentasi Google](https://ai.google.dev/gemini-api/docs/rate-limits)). Beberapa
+key Groq juga tidak menjamin kuota terpisah jika organisasinya sama.
+
 Gunakan model yang tersedia untuk masing-masing akun. Jalankan satu probe schema
 per provider dengan soal diagnostik kecil:
 

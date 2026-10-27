@@ -4,8 +4,8 @@
   "subjectTrack": "regular",
   "intendedDifficulty": "Hard",
   "researchOnly": true,
-  "advisoryCount": 10,
-  "contentQualifiedCount": 10,
+  "advisoryCount": 13,
+  "contentQualifiedCount": 13,
   "items": [
     {
       "question": {
@@ -636,6 +636,198 @@
             "B": "Salah: hanya menghitung satu pasangan untuk tiap anggota $A$",
             "C": "Salah: mengira semua $3! = 6$ korespondensi ada padahal $R$ tidak memuat semuanya",
             "D": "Salah: mengalikan 2 pilihan tiap anggota $A$ tanpa memeriksa pasangan ganda ($2 \\times 2 \\times 2$)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "b6b2c8a01577b2f6c12b5931",
+        "questionVersionId": "b6b2c8a01577b2f6c12b5931:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "e36a667e8b3989636a641dc5ec0f8ddc7223ec5914028d48a776b1c0954611d8",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Pengertian Kemiringan",
+        "questionType": "multiple_choice",
+        "stem": "Titik $A(2, 1)$, $B(6, k)$, dan $C(k + 7, 5)$ terletak pada satu garis lurus yang sama dengan $k > 0$. Sebuah garis lain, yaitu garis $h$, tegak lurus terhadap garis yang memuat ketiga titik tersebut dan melalui titik $(5, 4)$. Koordinat titik potong garis $h$ dengan sumbu-$x$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$(7, 0)$"
+          },
+          {
+            "label": "B",
+            "text": "$(0, 14)$"
+          },
+          {
+            "label": "C",
+            "text": "$(3, 0)$"
+          },
+          {
+            "label": "D",
+            "text": "$(13, 0)$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Kemiringan garis melalui A(2,1) dan B(6,k) adalah m = (k-1)/(6-2) = (k-1)/4. Kemiringan melalui B(6,k) dan C(k+7,5) adalah m = (5-k)/(k+7-6) = (5-k)/(k+1). Karena segaris, (k-1)/4 = (5-k)/(k+1) => k^2-1 = 20-4k => k^2+4k-21=0 => (k+7)(k-3)=0. Karena k>0, k=3. Kemiringan garis asal m = (3-1)/4 = 1/2. Garis h tegak lurus, m_h = -2. Persamaan h: y-4 = -2(x-5) => y = -2x + 14. Titik potong sumbu-x (y=0): 0 = -2x + 14 => x = 7. Titik (7,0).",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "b6b2c8a01577b2f6c12b5931",
+          "subchapter": "Pengertian Kemiringan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: Dari kesamaan kemiringan didapat k = 3, kemiringan garis asal adalah 1/2 sehingga kemiringan garis h adalah -2, dan persamaan garis h menghasilkan titik potong sumbu-x di (7, 0).",
+            "B": "Salah: Siswa menentukan titik potong terhadap sumbu-y, bukan terhadap sumbu-x.",
+            "C": "Salah: Siswa salah memakai kemiringan garis h sebesar 2 (lupa tanda negatif pada kebalikan kemiringan tegak lurus).",
+            "D": "Salah: Siswa memakai kemiringan garis asal (1/2) alih-alih kemiringan garis tegak lurus (-2)."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "5031fa0804a370d61afbe32d",
+        "questionVersionId": "5031fa0804a370d61afbe32d:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "e775c54d455360f19b050de1cbedf6b20da6a11e1525345fef23f0903565c920",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Pengertian Kemiringan",
+        "questionType": "multiple_choice",
+        "stem": "Garis $g_1$ melalui titik $A(2, -1)$ dan titik $B(6, 7)$. Garis $g_2$ tegak lurus terhadap garis $g_1$ dan melalui titik $C(9, 3)$. Garis $g_1$ dan garis $g_2$ berpotongan di titik $D$. Jika garis $g_3$ sejajar dengan garis $g_1$ serta melalui titik tengah ruas garis $CD$, maka koordinat titik potong garis $g_3$ dengan sumbu-$y$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$(0, -5)$"
+          },
+          {
+            "label": "B",
+            "text": "$(0, -10)$"
+          },
+          {
+            "label": "C",
+            "text": "$(0, -15)$"
+          },
+          {
+            "label": "D",
+            "text": "$(0, 10)$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Kemiringan g1: m1 = (7 - (-1)) / (6 - 2) = 2. Persamaan g1: y - 7 = 2(x - 6) -> y = 2x - 5. Persamaan g2 (tegak lurus g1, melalui C(9,3)): y - 3 = -1/2(x - 9) -> x + 2y = 15. Titik potong D(g1, g2): x + 2(2x - 5) = 15 -> 5x = 25 -> x = 5, y = 5. Titik tengah CD: M = ((9+5)/2, (3+5)/2) = (7, 4). Garis g3 sejajar g1 (m=2) melalui M(7,4): y - 4 = 2(x - 7) -> y = 2x - 10. Titik potong sumbu-y (x=0) adalah (0, -10).",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "5031fa0804a370d61afbe32d",
+          "subchapter": "Pengertian Kemiringan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa tidak mencari titik tengah ruas garis $CD$ dan langsung menggunakan koordinat titik potong $D(5, 5)$ untuk menyusun garis $g_3$.",
+            "B": "Benar: Kemiringan garis $g_1$ adalah $m_1 = \\frac{7 - (-1)}{6 - 2} = 2$. Garis $g_2$ tegak lurus $g_1$, sehingga $m_2 = -\\frac{1}{2}$. Persamaan garis $g_1$ adalah $y = 2x - 5$ dan garis $g_2$ adalah $y - 3 = -\\frac{1}{2}(x - 9) \\iff x + 2y = 15$. Substitusi $y = 2x - 5$ menghasilkan $x + 2(2x - 5) = 15 \\implies 5x = 25 \\implies x = 5$ dan $y = 5$, sehingga titik potong $D(5, 5)$. Titik tengah ruas garis $CD$ dengan $C(9, 3)$ dan $D(5, 5)$ adalah $M\\left(\\frac{9+5}{2}, \\frac{3+5}{2}\\right) = (7, 4)$. Garis $g_3$ sejajar $g_1$ ($m_3 = 2$) dan melalui $M(7, 4)$, persamaannya $y - 4 = 2(x - 7) \\iff y = 2x - 10$. Titik potong garis $g_3$ terhadap sumbu-$y$ adalah $(0, -10)$.",
+            "C": "Salah: Siswa langsung memakai titik $C(9, 3)$ alih-alih titik tengah ruas garis $CD$ saat menentukan persamaan garis $g_3$.",
+            "D": "Salah: Siswa keliru dalam operasi aljabar perpindahan ruas konstanta sehingga mendapatkan persamaan garis $y = 2x + 10$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "4c348c6ba1c8513bf9b03985",
+        "questionVersionId": "4c348c6ba1c8513bf9b03985:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "ba6baaced88508dbaee52cb979d0b0503e85c7b69bf1959410b7855cbc7bceb9",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Penyebaran Data",
+        "questionType": "multiple_choice",
+        "stem": "Delapan bilangan bulat berbeda $x_1 < x_2 < \\ldots < x_8$ memiliki kuartil bawah 20 dan kuartil atas 30. Nilai terkecil yang mungkin untuk jangkauan data tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "16"
+          },
+          {
+            "label": "B",
+            "text": "14"
+          },
+          {
+            "label": "C",
+            "text": "12"
+          },
+          {
+            "label": "D",
+            "text": "10"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Data: x1 < x2 < ... < x8. Q1 = (x2 + x3)/2 = 20 => x2 + x3 = 40. Q3 = (x6 + x7)/2 = 30 => x6 + x7 = 60. Agar jangkauan (x8 - x1) minimum, x1 harus sebesar mungkin dan x8 sekecil mungkin. Karena x1 < x2 < x3, x2+x3=40, x2 max 19, maka x1 max 18. Karena x6 < x7 < x8, x6+x7=60, x7 min 31, maka x8 min 32. Jangkauan = 32 - 18 = 14.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "4c348c6ba1c8513bf9b03985",
+          "subchapter": "Penyebaran Data",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memilih $x_2 = 18$, $x_3 = 22$ dan $x_7 = 32$ sehingga tidak yang paling kecil",
+            "B": "Benar: $x_2 + x_3 = 40$ dan $x_6 + x_7 = 60$; dengan data berbeda $x_2 \\leq 19$ sehingga $x_1 \\leq 18$, dan $x_7 \\geq 31$ sehingga $x_8 \\geq 32$; jangkauan minimum 32 - 18 = 14",
+            "C": "Salah: memakai $x_1 = x_2 = 19$ dan $x_7 = x_8 = 31$, melanggar syarat data berbeda",
+            "D": "Salah: mengira jangkauan sama dengan jangkauan antarkuartil (30 - 20) dan mengabaikan syarat data berbeda"
           }
         }
       },

@@ -9,6 +9,8 @@ from urllib.parse import urlparse
 
 from dotenv import dotenv_values
 
+from .credentials import selected_api_key
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 OFFICIAL_GEMINI_HOST = "generativelanguage.googleapis.com"
 
@@ -71,7 +73,7 @@ class GeminiSettings:
 
         return cls(
             provider=value("LLM_PROVIDER", "gemini").strip().casefold(),
-            api_key=value("GEMINI_API_KEY", ""),
+            api_key=selected_api_key("gemini", file_values),
             model=value("GEMINI_MODEL", ""),
             api_base_url=value(
                 "GEMINI_API_BASE_URL", f"https://{OFFICIAL_GEMINI_HOST}"

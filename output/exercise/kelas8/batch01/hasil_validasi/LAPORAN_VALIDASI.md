@@ -1,17 +1,15 @@
 # Validasi ulang soal kelas 8 — LLM blind N=1 lanjutan dengan hasil N=3 terdahulu dan diagnostik IndoBERT
 
-**Batch belum selesai:** 728/859 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
-
-Model penilai: `openai/gpt-oss-120b`. Prompt: `gemini-silver-math-3x4x3-v10-blind-smp8-key-verified`. Rubrik: `math-rubric-3x4x3-v8-smp8-grade-aware`.
+Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v10-blind-smp8-key-verified`. Rubrik: `math-rubric-3x4x3-v8-smp8-grade-aware`.
 
 Soal lanjutan dinilai satu kali (N=1), tanpa adjudikasi otomatis; hasil N=3 terdahulu dipertahankan. Isi, kunci, solusi dan tiga label tetap diperiksa. Temuan konten atau abstain tetap inactive. Confidence N=1 pada JSON memakai round(100 * min(probabilitas label akhir LLM tiap head IndoBERT)); ini dukungan model, bukan konsistensi antar-run atau akurasi terukur; bukti ini tidak memenuhi provenance training N=3.
 
 Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Artifact berada di luar cakupan kelas 8, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
 
-Jumlah soal: 853; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 149, "applying": 540, "reasoning": 33, "undecided": 131}, "knowledgeDimension": {"conceptual": 298, "procedural": 397, "factual": 27, "undecided": 131, "metacognitive": 0}, "intendedDifficulty": {"Easy": 483, "Medium": 229, "Hard": 10, "undecided": 131}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 149, "applying": 539, "reasoning": 33}, "knowledgeDimension": {"conceptual": 298, "procedural": 396, "factual": 27, "metacognitive": 0}, "intendedDifficulty": {"Easy": 482, "Medium": 229, "Hard": 10}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"silver_ready": 721, "needs_ai_review": 132}`.
-Run awal sukses: 728/859; adjudikasi: 2; token sukses tercatat: 2,226,784.
+Jumlah soal: 853; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 170, "applying": 642, "reasoning": 41}, "knowledgeDimension": {"conceptual": 342, "procedural": 482, "factual": 29, "metacognitive": 0}, "intendedDifficulty": {"Easy": 542, "Medium": 298, "Hard": 13}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 170, "applying": 641, "reasoning": 41}, "knowledgeDimension": {"conceptual": 342, "procedural": 481, "factual": 29, "metacognitive": 0}, "intendedDifficulty": {"Easy": 541, "Medium": 298, "Hard": 13}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"silver_ready": 852, "needs_ai_review": 1}`.
+Run awal sukses: 859/859; adjudikasi: 2; token sukses tercatat: 2,602,586.
 
 Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -24,9 +22,9 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 483 | 482 | [Easy.json](difficulty/Easy.json) |
-| Medium | 229 | 229 | [Medium.json](difficulty/Medium.json) |
-| Hard | 10 | 10 | [Hard.json](difficulty/Hard.json) |
+| Easy | 542 | 541 | [Easy.json](difficulty/Easy.json) |
+| Medium | 298 | 298 | [Medium.json](difficulty/Medium.json) |
+| Hard | 13 | 13 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
 
@@ -65239,30 +65237,55 @@ Kemiringan (gradien) dari garis dengan persamaan $y = -5x + 7$ adalah ....
 | C | $-7$ |
 | D | $-5$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `-5`.
+Solusi minimum hasil AI: Garis dalam bentuk y = mx + c memiliki gradien m. Pada persamaan y = -5x + 7, koefisien x adalah -5, sehingga gradien = -5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `20012987bcae8c1ce6fc58768674965d3e4635eac5ea27b971c6169ddd536688`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `06859f8a240ff37dfc8ffa5a00744789955b6f974dd453283a581023fc8a0ec0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | failed | — / — | — | — | — | 0 |
+| 1 | success | valid / verified | applying | factual | Easy | 4521 |
 
-Run 1 gagal: `ClientError:429`; tidak dihitung sebagai suara.
+Run 1 — solusi: Garis dalam bentuk y = mx + c memiliki gradien m. Pada persamaan y = -5x + 7, koefisien x adalah -5, sehingga gradien = -5.
+- Domain kognitif `classify/applying`: Soal meminta mengidentifikasi gradien dari persamaan linear yang sudah dalam bentuk slope-intercept; siswa hanya membaca koefisien x.. Bukti: koefisien x pada persamaan y = mx + c merupakan gradien
+- Dimensi pengetahuan `classify/factual`: Mengetahui fakta bahwa m pada y = mx + c adalah gradien.. Bukti: gradien merupakan koefisien x dalam y = mx + c
+- Intended difficulty `classify/Easy`: Penyelesaian hanya memerlukan satu langkah membaca koefisien; tidak ada perpindahan representasi atau pilihan strategi, beban kognitif rendah untuk siswa kelas 8.. Bukti: identifikasi koefisien x secara langsung
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami bentuk persamaan garis y = mx + c dan bahwa m adalah gradien. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah diajarkan identifikasi gradien dari persamaan slope-intercept; tugas hanya membaca nilai koefisien, sehingga mudah. |
+
+Histori retry: run 1 sebelumnya `failed` / `ClientError:429`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ClientError:401`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ClientError:401`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"factual": 1} | single_run / single_run | factual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65294,9 +65317,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 723. Soal `a780f11f524ade072abdf117`
@@ -65310,27 +65333,49 @@ Kemiringan garis yang melalui titik $P(6, 8)$ dan titik $Q(9, 20)$ adalah ....
 | C | 3 |
 | D | $\frac{1}{4}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `4`.
+Solusi minimum hasil AI: m = (y2 - y1)/(x2 - x1) = (20 - 8)/(9 - 6) = 12/3 = 4, sehingga kemiringan = 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4f7905615de573f583778cf77d171390bc3f151565ce7a9cac063cb70ab660bd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9f7e2acdba402a5208fab5e7ce83492be6d014a5e72518e16de1c34a7e99b142`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4503 |
+
+Run 1 — solusi: m = (y2 - y1)/(x2 - x1) = (20 - 8)/(9 - 6) = 12/3 = 4, sehingga kemiringan = 4.
+- Domain kognitif `classify/applying`: Soal meminta menghitung kemiringan; siswa cukup menerapkan rumus langsung tanpa pilihan strategi.. Bukti: m = (20 - 8)/(9 - 6) = 12/3 = 4
+- Dimensi pengetahuan `classify/procedural`: Mengetahui prosedur menghitung kemiringan merupakan pengetahuan prosedural.. Bukti: rumus kemiringan m = (y2 - y1)/(x2 - x1)
+- Intended difficulty `classify/Easy`: Hanya satu langkah prosedural, tidak ada pemilihan strategi atau integrasi konsep tambahan; beban kognitif rendah bagi siswa kelas 8.. Bukti: rumus kemiringan langsung diterapkan pada dua titik yang diberikan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengerti koordinat titik dan rumus kemiringan m = (y2 - y1)/(x2 - x1). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Kesulitan hanya pada penerapan rumus standar, cocok untuk tingkat Easy pada kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65362,9 +65407,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 724. Soal `313be72be16855dee76ce800`
@@ -65378,27 +65423,49 @@ Persamaan garis yang memiliki kemiringan $4$ dan melalui titik $(6, 7)$ adalah .
 | C | $y = 4x - 31$ |
 | D | $y = 4x - 17$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `y = 4x - 17`.
+Solusi minimum hasil AI: Gunakan rumus titik-selip y - y1 = m(x - x1). Substitusi m=4, (x1,y1)=(6,7): y - 7 = 4(x - 6) → y - 7 = 4x - 24 → y = 4x - 17.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a0bba08fb140c54ec287eb64021c74924b360fb7e70ba89f58b8fe90256cdc0f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `84837e8932925713e75e8da6e1bc613008373deaf4b874bb738b3c41d641f09e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4722 |
+
+Run 1 — solusi: Gunakan rumus titik-selip y - y1 = m(x - x1). Substitusi m=4, (x1,y1)=(6,7): y - 7 = 4(x - 6) → y - 7 = 4x - 24 → y = 4x - 17.
+- Domain kognitif `classify/applying`: Soal meminta menuliskan persamaan garis dari kemiringan dan satu titik; siswa cukup menerapkan prosedur standar tanpa memilih strategi lain.. Bukti: Gunakan rumus titik-selip y - y1 = m(x - x1) dengan m=4 dan titik (6,7)
+- Dimensi pengetahuan `classify/procedural`: Soal menguji prosedur mengubah bentuk titik-selip ke bentuk kemiringan‑intersep, yang merupakan pengetahuan prosedural.. Bukti: Penggunaan rumus titik-selip untuk memperoleh persamaan garis
+- Intended difficulty `classify/Easy`: Hanya dua langkah berurutan, tidak ada pilihan strategi, beban perhitungan rendah, dan prosedur sudah sangat familiar bagi siswa kelas 8.. Bukti: Langkah substitusi langsung dan penyederhanaan aljabar sederhana
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengetahui rumus titik-selip y - y1 = m(x - x1) serta cara menyederhanakan persamaan linear. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Kebutuhan hanya substitusi nilai dan penyederhanaan aritmetika dasar; cocok untuk tingkat kelas 8 tanpa bantuan tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65430,9 +65497,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 725. Soal `c03f6d7918afa4908a370986`
@@ -65446,27 +65513,49 @@ Garis lurus yang posisinya sejajar dengan sumbu-$x$ memiliki nilai kemiringan se
 | C | $1$ |
 | D | $0$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Garis yang sejajar dengan sumbu-x adalah garis horizontal. Persamaan garisnya berbentuk y = k. Karena nilai y konstan, perubahan vertikal (delta y) adalah 0. Kemiringan (m) didefinisikan sebagai delta y / delta x, sehingga m = 0 / delta x = 0.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d26bfb0f919f95eca03c1b2722715b621f444721d597ce34b66e1f88dad45f32`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `793311069629cebb5680ab8d528c8eee958c5ee231408933eea0a036f8070218`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3010 |
+
+Run 1 — solusi: Garis yang sejajar dengan sumbu-x adalah garis horizontal. Persamaan garisnya berbentuk y = k. Karena nilai y konstan, perubahan vertikal (delta y) adalah 0. Kemiringan (m) didefinisikan sebagai delta y / delta x, sehingga m = 0 / delta x = 0.
+- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman dasar mengenai sifat kemiringan garis horizontal. Siswa hanya perlu mengingat atau memahami definisi kemiringan untuk garis yang sejajar dengan sumbu-x.. Bukti: Garis lurus yang posisinya sejajar dengan sumbu-x memiliki nilai kemiringan sebesar
+- Dimensi pengetahuan `classify/conceptual`: Soal ini berkaitan dengan pemahaman konsep kemiringan garis lurus dalam sistem koordinat Kartesius.. Bukti: Garis lurus yang posisinya sejajar dengan sumbu-x memiliki nilai kemiringan sebesar
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari definisi kemiringan garis horizontal yang merupakan materi dasar kelas 8. Tidak ada langkah kompleks atau integrasi konsep yang diperlukan.. Bukti: Garis lurus yang posisinya sejajar dengan sumbu-x memiliki nilai kemiringan sebesar
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi kemiringan (gradien) dan pemahaman garis horizontal pada koordinat Kartesius. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah pertanyaan standar mengenai properti garis lurus yang diajarkan di kelas 8, di mana siswa diharapkan langsung mengenali sifat kemiringan garis horizontal. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65498,9 +65587,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 726. Soal `5f6654a4a19e3bbd7c5aad4d`
@@ -65514,27 +65603,51 @@ Garis dengan persamaan $y = 4x - 8$ memotong sumbu-$y$ di titik ....
 | C | $(0, 4)$ |
 | D | $(0, 8)$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Titik potong sumbu-y terjadi saat x = 0. Substitusi x = 0 ke persamaan y = 4x - 8 menghasilkan y = 4(0) - 8 = -8. Jadi, titik potongnya adalah (0, -8).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `97e93057470e08e294b9aca49fb10bfa383d798def3ec416b782d61e12021450`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7115078612732d64d7887e6786d80ee82b5495c90fde787d3e6e2ceaa7209fee`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2587 |
+
+Run 1 — solusi: Titik potong sumbu-y terjadi saat x = 0. Substitusi x = 0 ke persamaan y = 4x - 8 menghasilkan y = 4(0) - 8 = -8. Jadi, titik potongnya adalah (0, -8).
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk menerapkan prosedur standar dalam menentukan titik potong sumbu-y dari persamaan garis linear yang diberikan dalam bentuk y = mx + c. Siswa hanya perlu memahami definisi titik potong sumbu-y (x=0) atau mengenali bentuk umum persamaan garis.. Bukti: Garis dengan persamaan y = 4x - 8 memotong sumbu-y di titik ....
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep dasar persamaan garis lurus dan bagaimana menginterpretasikan konstanta dalam bentuk y = mx + c sebagai titik potong sumbu-y.. Bukti: Garis dengan persamaan y = 4x - 8 memotong sumbu-y di titik ....
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (straightforward). Siswa hanya perlu melakukan satu langkah substitusi atau mengingat konsep bentuk y=mx+c. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Garis dengan persamaan y = 4x - 8 memotong sumbu-y di titik ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang koordinat kartesius dan persamaan garis lurus y = mx + c. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi ini merupakan dasar dari topik persamaan garis lurus di kelas 8. Soal ini menguji pemahaman prosedural dasar tanpa memerlukan manipulasi aljabar yang rumit. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65566,9 +65679,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 727. Soal `92cce93e9782cab0fe44ba6a`
@@ -65582,27 +65695,53 @@ Sebuah tangga gedung memiliki 16 anak tangga dengan total tinggi keseluruhan $30
 | C | $19\text{ cm}$ |
 | D | $18\text{ cm}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Tinggi setiap anak tangga diperoleh dengan membagi total tinggi tangga dengan jumlah anak tangga: 304 cm / 16 = 19 cm.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bdf7da19f32df6334c0815942a1aa840fe36bee42b08b2a48e81f029753e53ec`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `19bda2a9e73f184e2fbeed06de6519017a3441ad72731dc7db823733c197c1c8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2564 |
+
+Run 1 — solusi: Tinggi setiap anak tangga diperoleh dengan membagi total tinggi tangga dengan jumlah anak tangga: 304 cm / 16 = 19 cm.
+- Domain kognitif `classify/applying`: Soal ini meminta siswa untuk menerapkan prosedur pembagian sederhana untuk menemukan nilai per unit (tinggi per anak tangga) dari total yang diberikan. Ini adalah penerapan langsung dari konsep rasio/pembagian yang familiar.. Bukti: Sebuah tangga gedung memiliki 16 anak tangga dengan total tinggi keseluruhan 304 cm.; tinggi untuk setiap anak tangga adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menggunakan algoritme pembagian (prosedur) untuk menyelesaikan masalah yang berkaitan dengan konsep rasio tinggi per anak tangga.. Bukti: tinggi untuk setiap anak tangga adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu melakukan satu operasi pembagian untuk mendapatkan jawaban. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Sebuah tangga gedung memiliki 16 anak tangga dengan total tinggi keseluruhan 304 cm.; tinggi untuk setiap anak tangga adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi pembagian bilangan bulat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi pembagian dan konsep rasio sederhana sudah dikuasai siswa kelas 8. Soal ini tidak menuntut pemahaman mendalam tentang kemiringan (slope) secara abstrak, melainkan hanya perhitungan aritmatika dasar. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65634,9 +65773,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 728. Soal `4e3dff372cd9543a96899e30`
@@ -65650,27 +65789,51 @@ Kemiringan garis lurus yang melalui titik $(3, -2)$ dan titik $(7, -14)$ adalah 
 | C | $3$ |
 | D | $-\frac{1}{3}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Kemiringan (m) garis yang melalui (x1, y1) dan (x2, y2) adalah m = (y2 - y1) / (x2 - x1). Substitusi titik (3, -2) dan (7, -14): m = (-14 - (-2)) / (7 - 3) = (-14 + 2) / 4 = -12 / 4 = -3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b6e3eac74b1eebeca6a06205f4f7a89e05ed2b4e6f9747096c5635522ed2a798`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c39a790d80c9bb0845504752b954776d071b78e3b6d0e90207f5cdac0d8bcecf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2613 |
+
+Run 1 — solusi: Kemiringan (m) garis yang melalui (x1, y1) dan (x2, y2) adalah m = (y2 - y1) / (x2 - x1). Substitusi titik (3, -2) dan (7, -14): m = (-14 - (-2)) / (7 - 3) = (-14 + 2) / 4 = -12 / 4 = -3.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus kemiringan garis (gradien) secara langsung dengan menggunakan dua titik yang diketahui. Ini adalah prosedur standar yang diajarkan di kelas 8.. Bukti: Kemiringan garis lurus yang melalui titik (3, -2) dan titik (7, -14) adalah ....
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami dan menggunakan algoritma atau rumus gradien m = (y2-y1)/(x2-x1) untuk menyelesaikan masalah.. Bukti: Kemiringan garis lurus yang melalui titik (3, -2) dan titik (7, -14)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan rumus gradien dengan substitusi nilai koordinat yang diberikan. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Kemiringan garis lurus yang melalui titik (3, -2) dan titik (7, -14)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman koordinat kartesius dan operasi bilangan bulat (termasuk pengurangan bilangan negatif). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi gradien adalah materi dasar kelas 8. Soal ini merupakan penerapan langsung rumus tanpa modifikasi atau konteks cerita yang rumit. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65702,9 +65865,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 729. Soal `22287d8938fb2bfe231e86ed`
@@ -65718,27 +65881,49 @@ Sebuah garis lurus melalui titik $(a, b)$ dan $(c, d)$. Jika diketahui $a + 4 = 
 | C | $6$ |
 | D | $-6$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Kemiringan (m) garis yang melalui (a, b) dan (c, d) adalah m = (d - b) / (c - a). Dari persamaan a + 4 = c, diperoleh c - a = 4. Dari persamaan b + 24 = d, diperoleh d - b = 24. Maka, m = 24 / 4 = 6.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5c7aef9b981769202ac0f79492a97261ad04a10ca6fa3e4e5d03d09906ae7743`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c97d4b75277cc8e551df8e601a59a2eb76c57de1af800d1d7bba7fc3b27d18e0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2637 |
+
+Run 1 — solusi: Kemiringan (m) garis yang melalui (a, b) dan (c, d) adalah m = (d - b) / (c - a). Dari persamaan a + 4 = c, diperoleh c - a = 4. Dari persamaan b + 24 = d, diperoleh d - b = 24. Maka, m = 24 / 4 = 6.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan definisi kemiringan (m = Δy/Δx) dengan memanipulasi persamaan aljabar sederhana untuk menemukan perubahan nilai x dan y. Ini adalah penerapan prosedur pada konteks yang sedikit abstrak namun rutin.. Bukti: Jika diketahui a + 4 = c dan b + 24 = d, maka kemiringan garis tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep kemiringan sebagai rasio perubahan vertikal terhadap horizontal dan menggunakan prosedur aljabar untuk menentukan nilai perubahan tersebut.. Bukti: kemiringan garis tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu melakukan manipulasi aljabar dasar (pindah ruas) untuk mendapatkan Δx dan Δy, lalu menerapkan rumus kemiringan langsung. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Jika diketahui a + 4 = c dan b + 24 = d, maka kemiringan garis tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar kemiringan garis (m = Δy/Δx) dan manipulasi aljabar satu variabel. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari persamaan garis lurus dan kemiringan. Soal ini menguji pemahaman definisi kemiringan dengan variabel, yang merupakan standar untuk tingkat kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65770,9 +65955,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 730. Soal `2e7755039f05ea9a3cda9064`
@@ -65786,27 +65971,49 @@ Pada sistem koordinat Cartesius, jika suatu garis lurus memiliki nilai kemiringa
 | C | miring ke kiri atas |
 | D | sejajar sumbu-y |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Gradien (m) didefinisikan sebagai perubahan y dibagi perubahan x (delta y / delta x). Jika m > 0, maka kenaikan nilai x akan diikuti oleh kenaikan nilai y. Secara visual, ini berarti garis bergerak dari kiri bawah ke kanan atas, atau miring ke kanan atas.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ab7cf2ed1432b4a4cf3afef734bcf30b3e60b94823945874f28c2333d428c2ff`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0c425c2e35e23dae607818f03f5199ff42f71036a3904c1fc3b321d24e443dd0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2525 |
+
+Run 1 — solusi: Gradien (m) didefinisikan sebagai perubahan y dibagi perubahan x (delta y / delta x). Jika m > 0, maka kenaikan nilai x akan diikuti oleh kenaikan nilai y. Secara visual, ini berarti garis bergerak dari kiri bawah ke kanan atas, atau miring ke kanan atas.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali karakteristik visual dari konsep gradien positif. Ini adalah pemahaman dasar tentang hubungan antara nilai gradien dan arah garis pada koordinat Cartesius.. Bukti: jika suatu garis lurus memiliki nilai kemiringan positif, maka arah grafik garis tersebut selalu
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep gradien (kemiringan) sebagai properti garis lurus dan bagaimana nilai tersebut memengaruhi representasi visual garis pada bidang koordinat.. Bukti: nilai kemiringan positif; arah grafik garis tersebut
+- Intended difficulty `classify/Easy`: Soal ini bersifat konseptual dasar. Siswa hanya perlu mengingat atau memahami definisi gradien positif tanpa perlu melakukan perhitungan atau perencanaan langkah yang kompleks.. Bukti: jika suatu garis lurus memiliki nilai kemiringan positif, maka arah grafik garis tersebut selalu
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang sistem koordinat Cartesius dan definisi gradien (kemiringan) garis. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah materi standar kelas 8. Soal menanyakan definisi langsung tanpa manipulasi aljabar atau analisis grafik yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65838,9 +66045,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 731. Soal `dfbcecc7d95d52007c14e452`
@@ -65854,27 +66061,49 @@ Kemiringan garis lurus yang melalui titik $A(4, 7)$ dan $B(10, 9)$ adalah ....
 | C | $\frac{1}{3}$ |
 | D | $3$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Gradien (m) garis yang melalui titik (x1, y1) dan (x2, y2) dihitung dengan rumus m = (y2 - y1) / (x2 - x1). Substitusi titik A(4, 7) dan B(10, 9) menghasilkan m = (9 - 7) / (10 - 4) = 2 / 6 = 1/3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `935bac5f922fc7b3938d4d03774b5c035ba3fcece010f191313016fb0606398c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5527cfd46c9c711a3811c887249b4f70e1d7b148ade20b6b12fcb60d790491d7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2631 |
+
+Run 1 — solusi: Gradien (m) garis yang melalui titik (x1, y1) dan (x2, y2) dihitung dengan rumus m = (y2 - y1) / (x2 - x1). Substitusi titik A(4, 7) dan B(10, 9) menghasilkan m = (9 - 7) / (10 - 4) = 2 / 6 = 1/3.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk menerapkan rumus gradien secara langsung pada dua titik yang diberikan. Ini adalah prosedur standar yang diajarkan di kelas 8.. Bukti: Kemiringan garis lurus yang melalui titik A(4, 7) dan B(10, 9) adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menggunakan algoritma atau rumus gradien (prosedural) untuk menyelesaikan masalah ini.. Bukti: Kemiringan garis lurus yang melalui titik A(4, 7) dan B(10, 9)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mensubstitusi nilai koordinat ke dalam rumus gradien yang sudah dikenal. Tidak ada kendala tambahan atau langkah kompleks yang diperlukan.. Bukti: Kemiringan garis lurus yang melalui titik A(4, 7) dan B(10, 9) adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang koordinat kartesius dan rumus gradien garis lurus. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi gradien adalah topik inti kelas 8. Soal ini menguji penerapan rumus dasar tanpa modifikasi, sehingga dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65906,9 +66135,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 732. Soal `e36fcf158d49569eeb54e848`
@@ -65922,27 +66151,49 @@ Kemiringan garis lurus yang melalui titik $(4, 3)$ dan $(-2, 27)$ adalah ....
 | C | $-4$ |
 | D | $4$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Kemiringan (m) garis yang melalui titik (x1, y1) = (4, 3) dan (x2, y2) = (-2, 27) dihitung dengan rumus m = (y2 - y1) / (x2 - x1). Substitusi nilai: m = (27 - 3) / (-2 - 4) = 24 / -6 = -4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `da637a6918e79bf20efa323ef88f1b511d7d67ccd9461e5aa17c9c4b2c049ee7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `65898eb153dffb3781f1f0a5dc7583051e651fcf1d104051ff2dbb14c9e956ca`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2594 |
+
+Run 1 — solusi: Kemiringan (m) garis yang melalui titik (x1, y1) = (4, 3) dan (x2, y2) = (-2, 27) dihitung dengan rumus m = (y2 - y1) / (x2 - x1). Substitusi nilai: m = (27 - 3) / (-2 - 4) = 24 / -6 = -4.
+- Domain kognitif `classify/applying`: Soal ini meminta siswa untuk menerapkan rumus kemiringan garis (gradien) secara langsung dengan menggunakan dua titik yang diketahui. Tidak ada langkah non-rutin atau integrasi konsep yang kompleks.. Bukti: Kemiringan garis lurus yang melalui titik (4, 3) dan (-2, 27) adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami dan menerapkan algoritma atau prosedur untuk menghitung gradien garis lurus berdasarkan dua titik koordinat.. Bukti: Kemiringan garis lurus yang melalui titik (4, 3) dan (-2, 27) adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mensubstitusi nilai ke dalam rumus gradien yang sudah familiar di kelas 8. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: Kemiringan garis lurus yang melalui titik (4, 3) dan (-2, 27) adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang koordinat kartesius dan operasi bilangan bulat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung gradien dari dua titik adalah prosedur standar dan mendasar dalam materi persamaan garis lurus kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -65974,9 +66225,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 733. Soal `4623e6d91a69604590b29a1c`
@@ -65990,27 +66241,49 @@ Kemiringan garis dan titik potong sumbu-$y$ dari persamaan garis $y = 6x - 15$ b
 | C | $6$ dan $(0, 15)$ |
 | D | $-15$ dan $(0, 6)$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Persamaan garis diberikan dalam bentuk y = mx + c, yaitu y = 6x - 15. Dengan membandingkan kedua bentuk tersebut, diperoleh gradien (m) = 6 dan konstanta (c) = -15. Titik potong sumbu-y terjadi saat x = 0, sehingga koordinatnya adalah (0, c) = (0, -15).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e17fe978471d99a96ea04aa31634204bec0ba20c3acf6cd1d3558746e2be8b5d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a941cd7f488abd09230abba2c7fc7301c477e3455c528195df4ac2fe1218ccd9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2645 |
+
+Run 1 — solusi: Persamaan garis diberikan dalam bentuk y = mx + c, yaitu y = 6x - 15. Dengan membandingkan kedua bentuk tersebut, diperoleh gradien (m) = 6 dan konstanta (c) = -15. Titik potong sumbu-y terjadi saat x = 0, sehingga koordinatnya adalah (0, c) = (0, -15).
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi nilai gradien dan titik potong sumbu-y dari persamaan linear yang sudah diberikan dalam bentuk eksplisit y = mx + c. Ini adalah prosedur langsung yang melibatkan pengenalan komponen dasar persamaan garis.. Bukti: Kemiringan garis dan titik potong sumbu-y dari persamaan garis y = 6x - 15 berturut-turut adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara koefisien dalam persamaan garis y = mx + c dengan karakteristik geometris garis tersebut (gradien dan titik potong).. Bukti: y = 6x - 15
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mencocokkan persamaan yang diberikan dengan bentuk umum y = mx + c tanpa memerlukan manipulasi aljabar yang kompleks atau perencanaan strategi yang rumit.. Bukti: Kemiringan garis dan titik potong sumbu-y dari persamaan garis y = 6x - 15
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman bentuk umum persamaan garis lurus y = mx + c. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi ini merupakan dasar dari topik persamaan garis lurus di kelas 8. Soal tidak menuntut manipulasi atau penalaran lebih lanjut, sehingga tergolong mudah bagi siswa kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66042,9 +66315,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 734. Soal `2a5d5d1f49f1a14ec1d4ffc4`
@@ -66058,27 +66331,51 @@ Diberikan empat buah garis pada bidang koordinat dengan ketentuan sebagai beriku
 | C | (i), (ii), dan (iii) |
 | D | (i), (ii), (iii), dan (iv) |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: g1: m = (4-4)/(5-(-3)) = 0 (i benar). g2: m = (7-(-6))/(2-2) = 13/0 (tak terdefinisi, ii benar). g3: 2x - 5y + 10 = 0 -> y = (2/5)x + 2, m3 = 2/5. g4: 5x + 2y - 8 = 0 -> y = (-5/2)x + 4, m4 = -5/2. m3 * m4 = (2/5) * (-5/2) = -1 (iii benar). Garis tegak lurus g1 (horizontal) adalah garis vertikal (kemiringan tak terdefinisi), bukan negatif (iv salah). Jadi (i), (ii), (iii) benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5ebb3764402cafc1d66476c1aab6daa7267cceafae2db88fdc21d0f783a649da`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a3e8acf870e92c0c758a74c42c033ebec401ea5d7f8a9d4a73c43918bc4ac5eb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3189 |
+
+Run 1 — solusi: g1: m = (4-4)/(5-(-3)) = 0 (i benar). g2: m = (7-(-6))/(2-2) = 13/0 (tak terdefinisi, ii benar). g3: 2x - 5y + 10 = 0 -> y = (2/5)x + 2, m3 = 2/5. g4: 5x + 2y - 8 = 0 -> y = (-5/2)x + 4, m4 = -5/2. m3 * m4 = (2/5) * (-5/2) = -1 (iii benar). Garis tegak lurus g1 (horizontal) adalah garis vertikal (kemiringan tak terdefinisi), bukan negatif (iv salah). Jadi (i), (ii), (iii) benar.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi sifat kemiringan dari berbagai representasi (titik dan persamaan), menghitung gradien, dan memahami hubungan tegak lurus. Ini melibatkan penerapan konsep gradien pada berbagai kondisi rutin.. Bukti: Nilai kemiringan garis g1 sama dengan 0; Garis g2 tidak memiliki nilai kemiringan; Garis g3 dan g4 saling tegak lurus karena hasil kali kemiringannya sama dengan -1; Setiap garis yang tegak lurus dengan garis g1 selalu memiliki nilai kemiringan negatif
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman prinsip-prinsip gradien (konseptual) dan prosedur perhitungan gradien dari titik serta persamaan garis (prosedural).. Bukti: Nilai kemiringan garis g1 sama dengan 0; Garis g2 tidak memiliki nilai kemiringan; Garis g3 dan g4 saling tegak lurus; Setiap garis yang tegak lurus dengan garis g1
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pengecekan empat pernyataan berbeda yang mencakup berbagai aspek gradien. Siswa harus melakukan perhitungan rutin untuk setiap pernyataan. Meskipun ada empat langkah, setiap langkah bersifat standar dan familiar bagi siswa kelas 8, sehingga beban integrasi tidak tinggi.. Bukti: Garis g1 melalui titik (-3, 4) dan (5, 4); Garis g2 melalui titik (2, -6) dan (2, 7); Garis g3 memiliki persamaan 2x - 5y + 10 = 0; Garis g4 memiliki persamaan 5x + 2y - 8 = 0
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep gradien, rumus gradien dari dua titik, mengubah persamaan ke bentuk y=mx+c, syarat dua garis tegak lurus. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung gradien dan memahami sifat garis sejajar/tegak lurus. Soal ini menguji pemahaman komprehensif melalui empat pernyataan, yang merupakan standar untuk tingkat menengah. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66122,9 +66419,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 735. Soal `b6b2c8a01577b2f6c12b5931`
@@ -66138,27 +66435,49 @@ Titik $A(2, 1)$, $B(6, k)$, dan $C(k + 7, 5)$ terletak pada satu garis lurus yan
 | C | $(3, 0)$ |
 | D | $(13, 0)$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Kemiringan garis melalui A(2,1) dan B(6,k) adalah m = (k-1)/(6-2) = (k-1)/4. Kemiringan melalui B(6,k) dan C(k+7,5) adalah m = (5-k)/(k+7-6) = (5-k)/(k+1). Karena segaris, (k-1)/4 = (5-k)/(k+1) => k^2-1 = 20-4k => k^2+4k-21=0 => (k+7)(k-3)=0. Karena k>0, k=3. Kemiringan garis asal m = (3-1)/4 = 1/2. Garis h tegak lurus, m_h = -2. Persamaan h: y-4 = -2(x-5) => y = -2x + 14. Titik potong sumbu-x (y=0): 0 = -2x + 14 => x = 7. Titik (7,0).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4dc8598b78a6d180f2229b82e180207d09a281ff523f5ebdd6e50fae8eb466ed`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e36a667e8b3989636a641dc5ec0f8ddc7223ec5914028d48a776b1c0954611d8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | procedural | Hard | 3034 |
+
+Run 1 — solusi: Kemiringan garis melalui A(2,1) dan B(6,k) adalah m = (k-1)/(6-2) = (k-1)/4. Kemiringan melalui B(6,k) dan C(k+7,5) adalah m = (5-k)/(k+7-6) = (5-k)/(k+1). Karena segaris, (k-1)/4 = (5-k)/(k+1) => k^2-1 = 20-4k => k^2+4k-21=0 => (k+7)(k-3)=0. Karena k>0, k=3. Kemiringan garis asal m = (3-1)/4 = 1/2. Garis h tegak lurus, m_h = -2. Persamaan h: y-4 = -2(x-5) => y = -2x + 14. Titik potong sumbu-x (y=0): 0 = -2x + 14 => x = 7. Titik (7,0).
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep kemiringan garis (gradien) untuk titik-titik segaris, sifat garis tegak lurus (m1*m2 = -1), dan persamaan garis lurus untuk menemukan titik potong sumbu-x. Ini melibatkan beberapa langkah yang saling bergantung.. Bukti: Titik A(2, 1), B(6, k), dan C(k + 7, 5) terletak pada satu garis lurus; garis h, tegak lurus terhadap garis yang memuat ketiga titik tersebut; Koordinat titik potong garis h dengan sumbu-x
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman prosedural tentang rumus gradien dan persamaan garis, serta pemahaman konseptual tentang hubungan gradien garis yang tegak lurus.. Bukti: Titik A(2, 1), B(6, k), dan C(k + 7, 5) terletak pada satu garis lurus; garis h, tegak lurus terhadap garis yang memuat ketiga titik tersebut
+- Intended difficulty `classify/Hard`: Soal ini menuntut perencanaan langkah yang cukup kompleks: mencari nilai k dari kondisi kolinear, menentukan gradien garis asal, menentukan gradien garis tegak lurus, menyusun persamaan garis h, dan mencari titik potong. Langkah-langkah ini saling bergantung.. Bukti: Titik A(2, 1), B(6, k), dan C(k + 7, 5) terletak pada satu garis lurus; garis h, tegak lurus terhadap garis yang memuat ketiga titik tersebut; Koordinat titik potong garis h dengan sumbu-x
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep gradien, persamaan garis lurus, dan sifat garis tegak lurus. |
+| dependentSteps | 5 |
+| routineStatus | nonroutine_strategy |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 3 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Meskipun topiknya standar kelas 8, integrasi antara kondisi kolinear (yang melibatkan variabel k pada koordinat) dengan sifat garis tegak lurus dan pencarian titik potong memerlukan perencanaan yang cukup tinggi bagi siswa kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Hard": 1} | single_run / single_run | Hard |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66190,9 +66509,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "procedural", "intendedDifficulty": "Hard"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Hard", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 736. Soal `af8bd68f8cad239685c785d0`
@@ -66206,27 +66525,49 @@ Titik $A(-3, 9)$, $C$, dan $B(5, -7)$ terletak pada satu garis lurus dengan $C$ 
 | C | $x + 2y - 3 = 0$ |
 | D | $x - 2y + 1 = 0$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Titik tengah C dari AB adalah (( -3+5)/2, (9-7)/2) = (1, 1). Gradien garis ACB adalah m = (-7-9)/(5-(-3)) = -16/8 = -2. Gradien garis tegak lurus DCE adalah m' = -1/m = -1/(-2) = 1/2. Persamaan garis DCE melalui (1, 1) dengan gradien 1/2 adalah y - 1 = 1/2(x - 1) => 2y - 2 = x - 1 => x - 2y + 1 = 0.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `73c35501133ec1217cde886119fe8b6d4f74c31b3153d8c93543d7d8eb161dfd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2df78f3d54d2d97196f6f88522d004c003d28c5e5426a18f4fda8e65f1e07672`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2879 |
+
+Run 1 — solusi: Titik tengah C dari AB adalah (( -3+5)/2, (9-7)/2) = (1, 1). Gradien garis ACB adalah m = (-7-9)/(5-(-3)) = -16/8 = -2. Gradien garis tegak lurus DCE adalah m' = -1/m = -1/(-2) = 1/2. Persamaan garis DCE melalui (1, 1) dengan gradien 1/2 adalah y - 1 = 1/2(x - 1) => 2y - 2 = x - 1 => x - 2y + 1 = 0.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan prosedur mencari titik tengah, menentukan gradien garis yang saling tegak lurus, dan menyusun persamaan garis. Ini adalah penerapan konsep linear yang rutin bagi kelas 8.. Bukti: C merupakan titik tengah ruas garis AB; garis DCE tegak lurus terhadap garis ACB; persamaan garis DCE adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami hubungan antara gradien garis tegak lurus (konseptual) dan menerapkan algoritma untuk mencari titik tengah serta persamaan garis (prosedural).. Bukti: titik tengah ruas garis; garis tegak lurus; persamaan garis
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling bergantung (mencari titik tengah, mencari gradien, mencari gradien tegak lurus, menyusun persamaan). Meskipun prosedural, siswa harus mengintegrasikan beberapa konsep linear tanpa bantuan langkah demi langkah.. Bukti: Titik A(-3, 9), C, dan B(5, -7) terletak pada satu garis lurus; C merupakan titik tengah ruas garis AB; garis DCE tegak lurus terhadap garis ACB
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep titik tengah, gradien, dan hubungan gradien garis tegak lurus. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi persamaan garis lurus adalah standar kelas 8. Soal ini menuntut ketelitian dalam operasi bilangan bulat dan pemahaman hubungan gradien, namun jalurnya sangat jelas dan familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66258,9 +66599,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 737. Soal `2a94afe536867474070454eb`
@@ -66274,27 +66615,49 @@ Sebuah pesawat terbang bergerak turun membentuk lintasan garis lurus dengan kemi
 | C | Tidak memenuhi kedua syarat karena ketinggian awal bernilai $1.150\text{ meter}$ dan mendarat pada detik ke-$115$ |
 | D | Hanya memenuhi syarat waktu pendaratan (detik ke-$105$), tetapi melanggar batas ketinggian awal karena bernilai $1.150\text{ meter}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Gradien (m) = (550 - 850) / (50 - 20) = -300 / 30 = -10 m/detik. Persamaan: h(t) - 850 = -10(t - 20) => h(t) = -10t + 1050. Syarat 1: t=0, h(0) = 1050 m (<= 1100 m, terpenuhi). Syarat 2: h(t)=0 => 0 = -10t + 1050 => 10t = 1050 => t = 105 detik (100 <= 105 <= 110, terpenuhi).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `['mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ed7619c73a3bb47abe7e78e35c8ceedeadbd8d41928c86d150dcc59f62423594`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2c9a1b9542896946797ae8bafb563040f7e1dd418d015813d057050cc5c938ad`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3140 |
+
+Run 1 — solusi: Gradien (m) = (550 - 850) / (50 - 20) = -300 / 30 = -10 m/detik. Persamaan: h(t) - 850 = -10(t - 20) => h(t) = -10t + 1050. Syarat 1: t=0, h(0) = 1050 m (<= 1100 m, terpenuhi). Syarat 2: h(t)=0 => 0 = -10t + 1050 => 10t = 1050 => t = 105 detik (100 <= 105 <= 110, terpenuhi).
+- Domain kognitif `classify/applying`: Siswa perlu mengonstruksi model fungsi linear dari dua titik yang diberikan, lalu menerapkan model tersebut untuk mengevaluasi dua kondisi (syarat) yang berbeda. Ini melibatkan penerapan konsep kemiringan dan persamaan garis pada konteks masalah nyata.. Bukti: Sebuah pesawat terbang bergerak turun membentuk lintasan garis lurus dengan kemiringan konstan; Pada detik ke-20 setelah roda pendaratan dikeluarkan, pesawat berada pada ketinggian 850 meter; Pada detik ke-50, ketinggiannya turun menjadi 550 meter
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menentukan persamaan garis lurus dari dua titik dan pemahaman konseptual tentang bagaimana fungsi linear memodelkan situasi dunia nyata.. Bukti: kemiringan konstan; menetapkan dua syarat keselamatan
+- Intended difficulty `classify/Medium`: Soal ini memerlukan beberapa langkah logis: menentukan gradien, menyusun persamaan linear, dan menguji dua kondisi berbeda. Meskipun prosedurnya standar, siswa harus mengintegrasikan hasil perhitungan ke dalam evaluasi syarat keselamatan. Ini adalah tugas rutin yang memerlukan perencanaan langkah-langkah yang saling terkait.. Bukti: Pada detik ke-20 setelah roda pendaratan dikeluarkan, pesawat berada pada ketinggian 850 meter. Pada detik ke-50, ketinggiannya turun menjadi 550 meter.; Menara pengawas lalu lintas udara menetapkan dua syarat keselamatan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep kemiringan (gradien) dan persamaan garis lurus y = mx + c. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari persamaan garis lurus. Soal ini menuntut penerapan prosedur tersebut dalam konteks pemecahan masalah yang memerlukan ketelitian dalam perhitungan dan interpretasi hasil terhadap batasan yang diberikan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66330,9 +66693,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 738. Soal `46d2d8902c3900a2b8d2e99f`
@@ -66346,27 +66709,51 @@ Titik-titik sudut segitiga $PQR$ pada bidang koordinat adalah $P(-2, 1)$, $Q(4, 
 | C | 5 |
 | D | 35 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Gradien PQ (m1) = (3 - 1) / (4 - (-2)) = 2 / 6 = 1/3. Karena siku-siku di Q, maka gradien QR (m2) harus -3 (tegak lurus). Gradien QR = (9 - 3) / (a - 4) = 6 / (a - 4). Maka 6 / (a - 4) = -3, sehingga a - 4 = -2, didapat a = 2. Nilai a^2 - 2a + 5 = (2)^2 - 2(2) + 5 = 4 - 4 + 5 = 5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `429f3995400040381749cbda303a20df4eac50296659326a4f038a9365e66a0a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `81c05e7b4ddeff51aac56023875a9df05e35bced167ec807636904797d132ec9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2847 |
+
+Run 1 — solusi: Gradien PQ (m1) = (3 - 1) / (4 - (-2)) = 2 / 6 = 1/3. Karena siku-siku di Q, maka gradien QR (m2) harus -3 (tegak lurus). Gradien QR = (9 - 3) / (a - 4) = 6 / (a - 4). Maka 6 / (a - 4) = -3, sehingga a - 4 = -2, didapat a = 2. Nilai a^2 - 2a + 5 = (2)^2 - 2(2) + 5 = 4 - 4 + 5 = 5.
+- Domain kognitif `classify/applying`: Siswa perlu menghubungkan konsep gradien garis tegak lurus dengan kondisi segitiga siku-siku, kemudian menerapkan prosedur aljabar untuk mencari nilai variabel dan mengevaluasi bentuk aljabar.. Bukti: Jika segitiga PQR siku-siku di titik Q; nilai dari a^2 - 2a + 5 adalah
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman prosedural tentang rumus gradien dan hubungan gradien dua garis tegak lurus (m1*m2 = -1) untuk menyelesaikan masalah koordinat.. Bukti: Titik-titik sudut segitiga PQR pada bidang koordinat; Jika segitiga PQR siku-siku di titik Q
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah utama yang saling bergantung: menentukan gradien PQ dan menggunakan syarat tegak lurus untuk mencari koordinat R, sebelum akhirnya menghitung nilai ekspresi aljabar. Siswa harus merencanakan langkah-langkah tersebut secara berurutan.. Bukti: Jika segitiga PQR siku-siku di titik Q; nilai dari a^2 - 2a + 5 adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep gradien garis, hubungan gradien garis tegak lurus, dan substitusi nilai ke dalam bentuk aljabar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi gradien dan garis tegak lurus adalah standar kelas 8. Soal menuntut integrasi konsep geometri koordinat dan aljabar yang sesuai dengan tingkat kemampuan siswa kelas 8. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66398,9 +66785,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 739. Soal `8770bab509139e36db781d45`
@@ -66414,27 +66801,49 @@ Tiga buah garis $g_1$, $g_2$, dan $g_3$ memiliki kemiringan berturut-turut $2$, 
 | C | 4 |
 | D | 6 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `12`.
+Solusi minimum hasil AI: Persamaan garis dengan kemiringan m dan titik potong sumbu-y (0, c) adalah y = mx + c. Titik potong sumbu-x terjadi saat y = 0, sehingga x = -c/m. Untuk ketiga garis: x1 = -c/2, x2 = -c/3, x3 = -c/6. Jumlah x-intercept: -c/2 - c/3 - c/6 = -c(3/6 + 2/6 + 1/6) = -c(6/6) = -c. Diketahui jumlahnya -12, maka -c = -12, sehingga c = 12.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8c26516860d42ba83745b0760658049a07156a6c909c7aaed6fc96ac74f1430b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2bc0ceefb8ffb3b232b05e176d6fbdd0cf209d533eeeaa74305c92ba04981008`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2982 |
+
+Run 1 — solusi: Persamaan garis dengan kemiringan m dan titik potong sumbu-y (0, c) adalah y = mx + c. Titik potong sumbu-x terjadi saat y = 0, sehingga x = -c/m. Untuk ketiga garis: x1 = -c/2, x2 = -c/3, x3 = -c/6. Jumlah x-intercept: -c/2 - c/3 - c/6 = -c(3/6 + 2/6 + 1/6) = -c(6/6) = -c. Diketahui jumlahnya -12, maka -c = -12, sehingga c = 12.
+- Domain kognitif `classify/applying`: Siswa perlu mengonstruksi persamaan garis dari informasi kemiringan dan titik potong, menentukan titik potong sumbu-x, lalu melakukan manipulasi aljabar untuk menyelesaikan persamaan linear satu variabel. Ini melibatkan penerapan konsep fungsi linear dalam konteks yang sedikit lebih abstrak.. Bukti: Tiga buah garis g1, g2, dan g3 memiliki kemiringan berturut-turut 2, 3, dan 6.; Ketiga garis tersebut memotong sumbu-y pada titik yang sama, yaitu (0, c); jumlah koordinat-x dari titik potong ketiga garis tersebut dengan sumbu-x adalah -12
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana menentukan titik potong sumbu-x dari persamaan garis dan kemampuan mengintegrasikan konsep tersebut ke dalam model aljabar.. Bukti: persamaan garis y = mx + c; titik potong sumbu-x diperoleh saat y = 0
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: (1) membentuk persamaan garis, (2) mencari titik potong sumbu-x untuk setiap garis, (3) menjumlahkan pecahan aljabar, dan (4) menyelesaikan persamaan linear. Meskipun prosedurnya familiar, integrasi langkah-langkah ini menuntut perencanaan yang lebih dari sekadar substitusi langsung.. Bukti: jumlah koordinat-x dari titik potong ketiga garis tersebut dengan sumbu-x adalah -12
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman persamaan garis lurus y = mx + c dan konsep titik potong sumbu. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari persamaan garis lurus. Soal ini menuntut kemampuan manipulasi aljabar pecahan yang merupakan standar kompetensi kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66466,9 +66875,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 740. Soal `545761ef2eede21917ac27a2`
@@ -66482,27 +66891,49 @@ Sebuah jalur trotoar pejalan kaki dibuat dalam dua segmen tanjakan yang bersambu
 | C | $8\text{ meter}$ |
 | D | $4\text{ meter}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Syarat 1: Kemiringan Segmen II (m2) = 1,3/x <= 0,325. Maka x >= 1,3/0,325 = 4 meter. Syarat 2: Kemiringan total (mtot) = (2,6 + 1,3) / (12 + x) <= 0,25. Maka 3,9 / (12 + x) <= 0,25, sehingga 12 + x >= 3,9 / 0,25 = 15,6, yang berarti x >= 3,6 meter. Untuk memenuhi kedua syarat (x >= 4 dan x >= 3,6), nilai minimum x adalah 4 meter.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c17e7f9d39ec327af096971caa30828e5cfbba2ac9c7fed8416e0fbf93928d20`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `74030de13e5526f68dfe0cce1b8fd054cd42901c36a231475c9ae42675a09098`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3158 |
+
+Run 1 — solusi: Syarat 1: Kemiringan Segmen II (m2) = 1,3/x <= 0,325. Maka x >= 1,3/0,325 = 4 meter. Syarat 2: Kemiringan total (mtot) = (2,6 + 1,3) / (12 + x) <= 0,25. Maka 3,9 / (12 + x) <= 0,25, sehingga 12 + x >= 3,9 / 0,25 = 15,6, yang berarti x >= 3,6 meter. Untuk memenuhi kedua syarat (x >= 4 dan x >= 3,6), nilai minimum x adalah 4 meter.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep kemiringan (slope) dan menerapkannya pada dua kondisi yang berbeda (segmen individu dan keseluruhan) untuk menentukan nilai minimum variabel x. Ini melibatkan pemilihan prosedur yang tepat dan integrasi dua pertidaksamaan.. Bukti: kemiringan tanjakan pada Segmen II tidak boleh lebih dari 0,325; kemiringan rata-rata keseluruhan trotoar ... tidak boleh lebih dari 0,25; Panjang mendatar horizontal minimum x pada Segmen II yang memenuhi kedua syarat tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang kemiringan sebagai rasio vertikal terhadap horizontal dan prosedur untuk menyelesaikan pertidaksamaan linear.. Bukti: kemiringan tanjakan pada Segmen II tidak boleh lebih dari 0,325; kemiringan rata-rata keseluruhan trotoar (dari titik awal Segmen I hingga ujung Segmen II) tidak boleh lebih dari 0,25
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus mengelola dua kendala (syarat kemiringan segmen dan total) yang saling berinteraksi. Meskipun prosedurnya familiar, siswa perlu merencanakan langkah untuk kedua kondisi dan memilih nilai yang memenuhi keduanya (irisan himpunan penyelesaian).. Bukti: kemiringan tanjakan pada Segmen II tidak boleh lebih dari 0,325; kemiringan rata-rata keseluruhan trotoar (dari titik awal Segmen I hingga ujung Segmen II) tidak boleh lebih dari 0,25
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep kemiringan (slope) sebagai perbandingan vertikal/horizontal dan penyelesaian pertidaksamaan linear satu variabel. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari kemiringan dan pertidaksamaan. Tantangan terletak pada integrasi dua syarat yang berbeda, bukan pada kompleksitas rumus itu sendiri. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66538,9 +66969,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 741. Soal `49ad05bbb16e0d916f5ed8af`
@@ -66554,27 +66985,51 @@ Perhatikan empat pernyataan evaluasi terhadap pendapat tentang kemiringan garis 
 | C | (1), (2), dan (3) |
 | D | (1), (2), dan (4) |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Pernyataan (1) benar: garis vertikal memiliki $\Delta x = 0$, sehingga gradien $m = \Delta y / \Delta x$ tidak terdefinisi. Pernyataan (2) benar: garis horizontal memiliki $\Delta y = 0$, sehingga $m = 0 / \Delta x = 0$. Pernyataan (3) salah: aturan $m_1 \cdot m_2 = -1$ tidak berlaku jika salah satu garis vertikal (gradien tak terdefinisi). Pernyataan (4) benar: $x=5$ (vertikal) dan $y=-2$ (horizontal) tegak lurus, namun perkalian gradiennya (tak terdefinisi $\cdot 0$) tidak menghasilkan $-1$. Jadi, (1), (2), dan (4) benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `['mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `664c89e9a253a0999319d1acbcb0be1a282fb0edb38f90963d5e98aa69d74c77`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `94ba8fbffba159d6f32609107ba795b2a13a36a1ec6f02b3269bc0001de8e68e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3147 |
+
+Run 1 — solusi: Pernyataan (1) benar: garis vertikal memiliki $\Delta x = 0$, sehingga gradien $m = \Delta y / \Delta x$ tidak terdefinisi. Pernyataan (2) benar: garis horizontal memiliki $\Delta y = 0$, sehingga $m = 0 / \Delta x = 0$. Pernyataan (3) salah: aturan $m_1 \cdot m_2 = -1$ tidak berlaku jika salah satu garis vertikal (gradien tak terdefinisi). Pernyataan (4) benar: $x=5$ (vertikal) dan $y=-2$ (horizontal) tegak lurus, namun perkalian gradiennya (tak terdefinisi $\cdot 0$) tidak menghasilkan $-1$. Jadi, (1), (2), dan (4) benar.
+- Domain kognitif `classify/reasoning`: Soal menuntut siswa untuk mengevaluasi kebenaran konsep gradien (kemiringan) pada kasus khusus (garis vertikal/horizontal) dan batasan berlakunya rumus perkalian gradien garis tegak lurus. Siswa harus menghubungkan definisi gradien dengan sifat geometris garis, bukan sekadar menghitung.. Bukti: Garis yang sejajar sumbu-y tidak memiliki nilai kemiringan; Garis yang sejajar sumbu-x memiliki nilai kemiringan nol; hasil kali kemiringan dua garis yang saling tegak lurus selalu sama dengan -1; Garis dengan persamaan x = 5 dan garis dengan persamaan y = -2 saling tegak lurus
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang definisi gradien dan syarat berlakunya prinsip perkalian gradien pada garis tegak lurus, yang merupakan struktur dasar dalam geometri analitik.. Bukti: rasio perubahan vertikal terhadap horizontal melibatkan pembagian dengan nol; hasil kali kemiringan dua garis yang saling tegak lurus selalu sama dengan -1
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium. Siswa perlu memahami konsep gradien secara mendalam, termasuk kasus khusus yang sering diabaikan (garis vertikal/horizontal). Meskipun prosedurnya tidak panjang, siswa harus mengevaluasi validitas pernyataan teoritis yang sering dianggap mutlak, yang memerlukan pemahaman konseptual yang kuat.. Bukti: Pernyataan (1) ... (2) ... (3) ... (4); hasil kali kemiringan dua garis yang saling tegak lurus selalu sama dengan -1 berlaku untuk semua pasangan garis tegak lurus
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi gradien (m = delta y / delta x), sifat garis sejajar sumbu koordinat, dan syarat tegak lurus garis. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari gradien. Soal ini menguji pemahaman konseptual di luar perhitungan rutin, menuntut ketelitian dalam membedakan kasus umum dan kasus khusus. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66612,9 +67067,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 742. Soal `a15856927645136e6ed80e36`
@@ -66628,27 +67083,51 @@ Garis $g_1$ dan garis $g_2$ saling berpotongan di titik $A(3, 5)$. Garis $g_1$ j
 | C | 8 |
 | D | 12 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Kemiringan g1 (m1) = (5-1)/(3-1) = 2. Kemiringan g2 (m2) = 0.5 * 2 = 1. Persamaan g2 melalui (3,5) adalah y-5 = 1(x-3) -> y = x+2. Titik B(k,11) pada g2: 11 = k+2 -> k=9. Persamaan g1 melalui (3,5) adalah y-5 = 2(x-3) -> y = 2x-1. Titik C(m,-3) pada g1: -3 = 2m-1 -> 2m = -2 -> m=-1. Nilai k+m = 9 + (-1) = 8.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `498f7af39b934885a076066c1776acbad819ddfe0c093276a1ee48ed2166a0fb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6d5ef3ecf1b9ebdf604224427d71d866818472656c3ec1c5c0cca8997e40dc1c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3196 |
+
+Run 1 — solusi: Kemiringan g1 (m1) = (5-1)/(3-1) = 2. Kemiringan g2 (m2) = 0.5 * 2 = 1. Persamaan g2 melalui (3,5) adalah y-5 = 1(x-3) -> y = x+2. Titik B(k,11) pada g2: 11 = k+2 -> k=9. Persamaan g1 melalui (3,5) adalah y-5 = 2(x-3) -> y = 2x-1. Titik C(m,-3) pada g1: -3 = 2m-1 -> 2m = -2 -> m=-1. Nilai k+m = 9 + (-1) = 8.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep kemiringan, menyusun persamaan garis, dan menyelesaikan sistem linear untuk mencari koordinat titik yang tidak diketahui. Ini melibatkan penerapan prosedur pada konteks yang sedikit lebih kompleks dari sekadar menghitung kemiringan.. Bukti: Kemiringan garis g2 besarnya tepat setengah dari kemiringan garis g1; Jika titik B(k, 11) terletak pada garis g2 dan titik C(m, -3) terletak pada garis g1
+- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pemahaman prosedural tentang cara menentukan persamaan garis lurus dari titik dan kemiringan, serta pemahaman konseptual tentang hubungan kemiringan dua garis.. Bukti: Kemiringan garis g2 besarnya tepat setengah dari kemiringan garis g1; Persamaan g2 melalui (3, 5) dengan m = 1 adalah y - 5 = 1(x - 3)
+- Intended difficulty `classify/Medium`: Soal ini memerlukan beberapa langkah yang saling bergantung: menghitung kemiringan g1, menentukan kemiringan g2, menyusun dua persamaan garis yang berbeda, dan menyelesaikan untuk variabel k dan m. Meskipun prosedurnya familiar, integrasi langkah-langkah ini menuntut perencanaan yang cukup bagi siswa kelas 8.. Bukti: Garis g1 dan garis g2 saling berpotongan di titik A(3, 5); Kemiringan garis g2 besarnya tepat setengah dari kemiringan garis g1; nilai dari k + m adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep kemiringan garis, persamaan garis lurus y-y1 = m(x-x1), dan substitusi titik ke persamaan. |
+| dependentSteps | 5 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini berada pada tingkat menengah karena memerlukan multi-langkah yang terstruktur (menghitung m1, m2, persamaan g1, persamaan g2, lalu mencari k dan m) tanpa bantuan langkah antara, namun prosedurnya merupakan standar kurikulum kelas 8. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66680,9 +67159,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 743. Soal `b8aaff9fe09cd0d5648b6096`
@@ -66696,27 +67175,49 @@ Titik $P(-3, 1)$ dan $R(5, 7)$ merupakan titik-titik sudut yang saling berhadapa
 | C | $3x + 4y - 23 = 0$ |
 | D | $4x + 3y - 23 = 0$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Karena sisi sejajar sumbu koordinat, titik sudut lainnya adalah Q(5, 1) dan S(-3, 7). Gradien garis QS adalah m = (7 - 1) / (-3 - 5) = 6 / -8 = -3/4. Persamaan garis melalui (5, 1) dengan m = -3/4 adalah y - 1 = -3/4(x - 5), yang disederhanakan menjadi 4y - 4 = -3x + 15 atau 3x + 4y - 19 = 0.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a6434705e0125d0432dde63d06e34643d6d0a1dd550ebba3a605b1b800d1fcb3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `73ce06b471bae27fd5456d0f214cf308c690afa4d9d509384333ae30a73bbe5d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2948 |
+
+Run 1 — solusi: Karena sisi sejajar sumbu koordinat, titik sudut lainnya adalah Q(5, 1) dan S(-3, 7). Gradien garis QS adalah m = (7 - 1) / (-3 - 5) = 6 / -8 = -3/4. Persamaan garis melalui (5, 1) dengan m = -3/4 adalah y - 1 = -3/4(x - 5), yang disederhanakan menjadi 4y - 4 = -3x + 15 atau 3x + 4y - 19 = 0.
+- Domain kognitif `classify/applying`: Siswa perlu memahami sifat persegi panjang dengan sisi sejajar sumbu koordinat untuk menentukan koordinat titik Q dan S, kemudian menerapkan rumus gradien dan persamaan garis lurus. Ini adalah penerapan konsep pada konteks rutin.. Bukti: Jika sisi-sisi persegi panjang tersebut sejajar dengan sumbu-sumbu koordinat; persamaan garis lurus yang melalui titik Q dan S
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman tentang hubungan antara geometri (persegi panjang) dan aljabar (persamaan garis), yang merupakan pengetahuan konseptual.. Bukti: sisi-sisi persegi panjang tersebut sejajar dengan sumbu-sumbu koordinat; persamaan garis lurus yang melalui titik Q dan S
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: menentukan koordinat titik sudut lainnya berdasarkan sifat persegi panjang, menghitung gradien, dan menyusun persamaan garis. Meskipun prosedurnya familiar, siswa harus mengintegrasikan informasi geometri untuk menentukan titik-titik yang diperlukan sebelum melakukan perhitungan aljabar.. Bukti: titik-titik sudut yang saling berhadapan pada persegi panjang PQRS; sisi-sisi persegi panjang tersebut sejajar dengan sumbu-sumbu koordinat
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman koordinat kartesius, sifat persegi panjang, rumus gradien, dan persamaan garis lurus. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari persamaan garis lurus dan koordinat. Menentukan titik sudut dari diagonal persegi panjang yang sejajar sumbu adalah tantangan standar yang memerlukan pemahaman konsep geometri dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66748,9 +67249,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 744. Soal `37486e68a66908d71ac82eba`
@@ -66764,27 +67265,49 @@ Garis $g$ melalui titik $A(-2, 3)$ dan $B(4, 6)$. Garis $h$ tegak lurus terhadap
 | C | (-8, 0) |
 | D | $(14, 0)$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Gradien garis g (m_g) = (6-3)/(4-(-2)) = 3/6 = 1/2. Karena h tegak lurus g, gradien h (m_h) = -1/m_g = -2. Persamaan garis h melalui B(4, 6) adalah y - 6 = -2(x - 4), yang disederhanakan menjadi y = -2x + 14. Titik potong sumbu-x terjadi saat y = 0, maka 0 = -2x + 14, sehingga 2x = 14, x = 7. Titik potongnya adalah (7, 0).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `95a608bf0b102cccc23662e51427248129c402b637f910daa57167d1c2bd1b50`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c28b85e2442e95aad31d841162cc676aa504e93b0a51314e87ecf7c9ab3a5a3a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2999 |
+
+Run 1 — solusi: Gradien garis g (m_g) = (6-3)/(4-(-2)) = 3/6 = 1/2. Karena h tegak lurus g, gradien h (m_h) = -1/m_g = -2. Persamaan garis h melalui B(4, 6) adalah y - 6 = -2(x - 4), yang disederhanakan menjadi y = -2x + 14. Titik potong sumbu-x terjadi saat y = 0, maka 0 = -2x + 14, sehingga 2x = 14, x = 7. Titik potongnya adalah (7, 0).
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep hubungan gradien dua garis tegak lurus, menyusun persamaan garis, dan menentukan titik potong sumbu-x. Ini adalah penerapan prosedur rutin pada konteks geometri analitik.. Bukti: Garis h tegak lurus terhadap garis g; Titik potong garis h terhadap sumbu-x adalah
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang algoritme mencari gradien, hubungan gradien garis tegak lurus, dan persamaan garis lurus.. Bukti: Garis g melalui titik A(-2, 3) dan B(4, 6); Garis h tegak lurus terhadap garis g
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: menghitung gradien garis g, menentukan gradien garis h (konsep tegak lurus), menyusun persamaan garis h, dan mencari titik potong sumbu-x. Langkah-langkah ini familiar bagi siswa kelas 8, namun memerlukan ketelitian dalam integrasi.. Bukti: Garis h tegak lurus terhadap garis g dan berpotongan dengan garis g tepat pada titik B; Titik potong garis h terhadap sumbu-x
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep gradien, persamaan garis lurus, dan hubungan gradien dua garis tegak lurus. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari materi persamaan garis lurus dan gradien. Soal ini menguji pemahaman prosedural standar tanpa memerlukan strategi non-rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66816,9 +67339,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 745. Soal `ff6851fcf56aff9f6fe8a1c0`
@@ -66832,27 +67355,49 @@ Sebuah gedung merancang jalur landai (ramp) untuk menghubungkan lantai dasar ke 
 | C | $7,6\text{ meter}$ |
 | D | $8,4\text{ meter}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Tinggi total 105 cm = 1,05 m. Karena ada dua tanjakan seragam, tinggi tiap tanjakan adalah 1,05 m / 2 = 0,525 m. Dengan kemiringan (m) = 0,15, panjang horizontal tiap tanjakan (x) adalah x = tinggi / m = 0,525 / 0,15 = 3,5 m. Total panjang horizontal = (2 * 3,5 m) + 1,4 m (bordes) = 7,0 m + 1,4 m = 8,4 m.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d875b7e0c2055a1c716d6d0fd13036604e6ef59d4a831a60d55b164017ab25fa`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6abfa9a72d5b1c5d1c5569135f22606ea750c75c9bbb42d8292b12c7f1dd5d9a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3124 |
+
+Run 1 — solusi: Tinggi total 105 cm = 1,05 m. Karena ada dua tanjakan seragam, tinggi tiap tanjakan adalah 1,05 m / 2 = 0,525 m. Dengan kemiringan (m) = 0,15, panjang horizontal tiap tanjakan (x) adalah x = tinggi / m = 0,525 / 0,15 = 3,5 m. Total panjang horizontal = (2 * 3,5 m) + 1,4 m (bordes) = 7,0 m + 1,4 m = 8,4 m.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep kemiringan (slope) dalam konteks pemodelan nyata. Mereka harus membagi tinggi total, menerapkan rumus kemiringan untuk mencari panjang horizontal tiap bagian, dan menjumlahkannya dengan panjang bordes. Ini adalah penerapan prosedur pada konteks rutin.. Bukti: Rancangan tersebut membagi lintasan menjadi dua tanjakan seragam; kemiringan masing-masing tanjakan ditetapkan tepat pada batas maksimum standar keselamatan kursi roda, yaitu 0,15; total panjang horizontal keseluruhan yang dibutuhkan
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang hubungan antara kemiringan, tinggi vertikal, dan panjang horizontal, serta kemampuan mengintegrasikan komponen-komponen tersebut (tanjakan dan bordes) dalam satu model.. Bukti: kemiringan masing-masing tanjakan ditetapkan tepat pada batas maksimum standar keselamatan kursi roda, yaitu 0,15; total panjang horizontal keseluruhan
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: membagi tinggi total, menghitung panjang horizontal per tanjakan, dan menambahkan panjang bordes. Siswa harus mengelola beberapa informasi (tinggi, kemiringan, jumlah tanjakan, panjang bordes) tanpa bantuan langkah demi langkah, namun prosedurnya bersifat rutin dan familiar bagi siswa kelas 8.. Bukti: membagi lintasan menjadi dua tanjakan seragam; dipisahkan oleh satu bordes (area datar horizontal untuk istirahat) sepanjang 1,4 meter; total panjang horizontal keseluruhan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep kemiringan (slope) sebagai perbandingan tinggi dan alas, operasi aritmatika dasar, dan konversi satuan. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari kemiringan garis lurus. Soal ini menuntut ketelitian dalam mengintegrasikan komponen-komponen (dua tanjakan + satu bordes) yang merupakan aplikasi standar dari konsep tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66884,9 +67429,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 746. Soal `e922a750721ba635447e1ecd`
@@ -66900,27 +67445,49 @@ Garis $l$ memiliki nilai kemiringan $-\frac{3}{2}$ dan melalui titik $(4, 3)$. G
 | C | $27\text{ satuan luas}$ |
 | D | $13,5\text{ satuan luas}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Persamaan garis dengan gradien m = -3/2 melalui (4, 3) adalah y - 3 = -3/2(x - 4), yang disederhanakan menjadi y = -3/2x + 9. Titik potong sumbu-y (x=0) adalah Q(0, 9), maka OQ = 9. Titik potong sumbu-x (y=0) adalah 0 = -3/2x + 9, sehingga x = 6, maka P(6, 0) dan OP = 6. Luas segitiga POQ = 1/2 * OP * OQ = 1/2 * 6 * 9 = 27.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3c43f5c13f88d74f104584bdcc918bff60cc3ba29101095c7e5344c89f70d3bd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9d9d8ed61a91706800121c7bc8c58f0c0035767297ea5bf26b049a7d33e2a3b1`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3045 |
+
+Run 1 — solusi: Persamaan garis dengan gradien m = -3/2 melalui (4, 3) adalah y - 3 = -3/2(x - 4), yang disederhanakan menjadi y = -3/2x + 9. Titik potong sumbu-y (x=0) adalah Q(0, 9), maka OQ = 9. Titik potong sumbu-x (y=0) adalah 0 = -3/2x + 9, sehingga x = 6, maka P(6, 0) dan OP = 6. Luas segitiga POQ = 1/2 * OP * OQ = 1/2 * 6 * 9 = 27.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep persamaan garis lurus (titik-gradien) untuk menentukan persamaan garis, kemudian mencari titik potong sumbu (prosedur rutin), dan akhirnya menghitung luas segitiga. Ini adalah penerapan konsep pada konteks rutin.. Bukti: Garis l memiliki nilai kemiringan -3/2 dan melalui titik (4, 3).; Garis l memotong sumbu-x di titik P dan memotong sumbu-y di titik Q.; luas segitiga POQ adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme mencari persamaan garis dan titik potong, yang merupakan pengetahuan prosedural.. Bukti: Garis l memiliki nilai kemiringan -3/2 dan melalui titik (4, 3).; Garis l memotong sumbu-x di titik P dan memotong sumbu-y di titik Q.
+- Intended difficulty `classify/Medium`: Soal ini memerlukan beberapa langkah yang saling terkait (menentukan persamaan garis, mencari dua titik potong, menghitung luas), namun prosedurnya sangat standar dan familiar bagi siswa kelas 8. Tidak ada kendala yang kompleks atau strategi non-rutin yang diperlukan.. Bukti: Garis l memiliki nilai kemiringan -3/2 dan melalui titik (4, 3).; Garis l memotong sumbu-x di titik P dan memotong sumbu-y di titik Q.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Persamaan garis lurus, gradien, titik potong sumbu, luas segitiga. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi persamaan garis lurus dan aplikasinya pada koordinat kartesius adalah kurikulum standar kelas 8. Langkah-langkahnya jelas dan terstruktur. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -66952,9 +67519,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 747. Soal `5031fa0804a370d61afbe32d`
@@ -66968,27 +67535,49 @@ Garis $g_1$ melalui titik $A(2, -1)$ dan titik $B(6, 7)$. Garis $g_2$ tegak luru
 | C | $(0, -15)$ |
 | D | $(0, 10)$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Kemiringan g1: m1 = (7 - (-1)) / (6 - 2) = 2. Persamaan g1: y - 7 = 2(x - 6) -> y = 2x - 5. Persamaan g2 (tegak lurus g1, melalui C(9,3)): y - 3 = -1/2(x - 9) -> x + 2y = 15. Titik potong D(g1, g2): x + 2(2x - 5) = 15 -> 5x = 25 -> x = 5, y = 5. Titik tengah CD: M = ((9+5)/2, (3+5)/2) = (7, 4). Garis g3 sejajar g1 (m=2) melalui M(7,4): y - 4 = 2(x - 7) -> y = 2x - 10. Titik potong sumbu-y (x=0) adalah (0, -10).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `606f8cadbeead6d64a8710f30a1beceb6d887fcd79c2b5afdca0f8efb5ca2cc7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e775c54d455360f19b050de1cbedf6b20da6a11e1525345fef23f0903565c920`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | procedural | Hard | 3377 |
+
+Run 1 — solusi: Kemiringan g1: m1 = (7 - (-1)) / (6 - 2) = 2. Persamaan g1: y - 7 = 2(x - 6) -> y = 2x - 5. Persamaan g2 (tegak lurus g1, melalui C(9,3)): y - 3 = -1/2(x - 9) -> x + 2y = 15. Titik potong D(g1, g2): x + 2(2x - 5) = 15 -> 5x = 25 -> x = 5, y = 5. Titik tengah CD: M = ((9+5)/2, (3+5)/2) = (7, 4). Garis g3 sejajar g1 (m=2) melalui M(7,4): y - 4 = 2(x - 7) -> y = 2x - 10. Titik potong sumbu-y (x=0) adalah (0, -10).
+- Domain kognitif `classify/reasoning`: Soal menuntut siswa untuk mengintegrasikan beberapa konsep: kemiringan garis, syarat tegak lurus, sistem persamaan linear dua variabel untuk mencari titik potong, konsep titik tengah, dan persamaan garis lurus. Siswa harus merencanakan langkah-langkah yang saling bergantung secara berurutan.. Bukti: Garis g1 melalui titik A(2, -1) dan titik B(6, 7). Garis g2 tegak lurus terhadap garis g1 dan melalui titik C(9, 3).; Garis g1 dan garis g2 berpotongan di titik D. Jika garis g3 sejajar dengan garis g1 serta melalui titik tengah ruas garis CD
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami hubungan antar konsep (konseptual) dan menerapkan algoritma/prosedur yang tepat (prosedural) untuk menyelesaikan masalah yang melibatkan beberapa tahapan.. Bukti: kemiringan garis; tegak lurus; titik tengah ruas garis; persamaan garis lurus
+- Intended difficulty `classify/Hard`: Soal ini dikategorikan Hard karena menuntut perencanaan langkah yang panjang dan saling bergantung (mencari m1, m2, persamaan g1, g2, titik potong D, titik tengah M, lalu persamaan g3). Siswa harus mengintegrasikan banyak konsep tanpa bantuan langkah-langkah perantara.. Bukti: Garis g1 melalui titik A(2, -1) dan titik B(6, 7). Garis g2 tegak lurus terhadap garis g1 dan melalui titik C(9, 3).; Garis g1 dan garis g2 berpotongan di titik D. Jika garis g3 sejajar dengan garis g1 serta melalui titik tengah ruas garis CD
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Persamaan garis lurus, kemiringan, syarat tegak lurus/sejajar, titik tengah, sistem persamaan linear dua variabel. |
+| dependentSteps | 6 |
+| routineStatus | nonroutine_strategy |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 4 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Meskipun topiknya standar kelas 8, kompleksitas integrasi dari 6 langkah yang saling bergantung (menentukan m, persamaan garis, titik potong, titik tengah, persamaan garis baru) menjadikannya tantangan tinggi bagi siswa. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Hard": 1} | single_run / single_run | Hard |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67020,9 +67609,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "procedural", "intendedDifficulty": "Hard"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Hard", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 748. Soal `2f3f8c3fc86f29ed636eba22`
@@ -67036,27 +67625,49 @@ Titik $P(-7, 8)$ dan $R(5, -1)$ merupakan titik-titik sudut yang saling berhadap
 | C | $3x + 4y - 11 = 0$ |
 | D | $3x + 4y + 17 = 0$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: 3x - 4y + 17 = 0
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6601bca6fb88cb391d49d802d8fb9d7971e73b21d874c3da2d51511ecb9d6101`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `550127036746e9a976900185ed2877d86b1ce05716c2421d6940f810442569a4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4774 |
+
+Run 1 — solusi: 3x - 4y + 17 = 0
+- Domain kognitif `classify/applying`: Soal meminta persamaan garis diagonal QS; siswa cukup menghitung kemiringan dan menerapkan titik‑kemiringan, langkah rutin.. Bukti: Menghitung kemiringan QS dengan rumus m = (8-(-1))/(5-(-7)) dan menyusun persamaan garis melalui Q dan S.
+- Dimensi pengetahuan `classify/procedural`: Mengaplikasikan prosedur standar koordinat kartesius (slope, point‑slope).. Bukti: Penggunaan rumus kemiringan dan persamaan garis lurus dalam koordinat kartesius.
+- Intended difficulty `classify/Easy`: Hanya memerlukan dua operasi aritmatika dan penerapan rumus standar; tidak ada interaksi kendala atau perencanaan kompleks.. Bukti: Langkah menghitung kemiringan dan menulis persamaan garis bersifat langsung tanpa keputusan strategi tambahan.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep titik, kemiringan, dan persamaan garis dalam koordinat kartesius. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi rutin bagi siswa kelas 8; solusi minimal jelas dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67088,9 +67699,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 749. Soal `501f375186d1a97794b12e35`
@@ -67104,27 +67715,49 @@ Apabila kemiringan garis yang melalui titik $(6, 3k)$ dan $(2, k)$ sama dengan k
 | C | $4$ |
 | D | $-8$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Gradien garis 1: m1 = (k - 3k) / (2 - 6) = -2k / -4 = k/2. Gradien garis 2: m2 = (2 - 8) / (7 - 4) = -6 / 3 = -2. Karena m1 = m2, maka k/2 = -2, sehingga k = -4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `240e9ed2e8c82080a26aa7695b5fd40407e50783ccc92b404140390fb50ac086`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f8e815f3b58d0e83f5b77025e769421923b91b12afabbd34958da76f592c59f1`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2646 |
+
+Run 1 — solusi: Gradien garis 1: m1 = (k - 3k) / (2 - 6) = -2k / -4 = k/2. Gradien garis 2: m2 = (2 - 8) / (7 - 4) = -6 / 3 = -2. Karena m1 = m2, maka k/2 = -2, sehingga k = -4.
+- Domain kognitif `classify/applying`: Siswa harus memilih dan menerapkan rumus gradien (kemiringan) pada dua pasang titik koordinat yang berbeda dalam konteks rutin untuk menemukan nilai variabel yang tidak diketahui.. Bukti: kemiringan garis yang melalui titik (6, 3k) dan (2, k) sama dengan kemiringan garis yang melalui titik (4, 8) dan (7, 2)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pengetahuan tentang prosedur atau algoritma penghitungan gradien garis melalui dua titik (y2-y1)/(x2-x1).. Bukti: kemiringan garis yang melalui titik
+- Intended difficulty `classify/Medium`: Soal ini termasuk kategori Medium karena memerlukan beberapa langkah yang saling bergantung: menghitung gradien pertama (dengan variabel), menghitung gradien kedua (numerik), dan menyamakan keduanya dalam persamaan linear satu variabel. Meskipun prosedurnya familiar, terdapat integrasi antara konsep gradien dan manipulasi aljabar sederhana.. Bukti: kemiringan garis yang melalui titik (6, 3k) dan (2, k) sama dengan kemiringan garis yang melalui titik (4, 8) dan (7, 2)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus gradien garis melalui dua titik dan penyelesaian persamaan linear satu variabel. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tingkat kesulitan sesuai untuk kelas 8 karena menggabungkan dua topik dasar (gradien dan aljabar) tanpa bantuan langkah-langkah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67156,9 +67789,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 750. Soal `63018731f7fadd661f90429d`
@@ -67172,27 +67805,49 @@ Sebuah jalur landai (ramp) dibangun untuk mempermudah akses kursi roda menuju la
 | C | $11,25\text{ m}$ |
 | D | $0,5\text{ m}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Kemiringan (m) = tinggi / jarak horizontal (x). Syarat: m <= 0,15. Maka 75 / x <= 0,15. x >= 75 / 0,15 = 500 cm. Konversi ke meter: 500 cm = 5 m. Jadi, panjang horizontal terpendek adalah 5 m.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e7be87f0086228ce4064a01d29a1cc11e1117f5dc43bd925036a40ddd7c9bdec`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `aeb725fe8ec11405832b8249dbe7950d745262d8a8ba3fc017825c7e1a5cdb15`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2702 |
+
+Run 1 — solusi: Kemiringan (m) = tinggi / jarak horizontal (x). Syarat: m <= 0,15. Maka 75 / x <= 0,15. x >= 75 / 0,15 = 500 cm. Konversi ke meter: 500 cm = 5 m. Jadi, panjang horizontal terpendek adalah 5 m.
+- Domain kognitif `classify/applying`: Siswa harus menerapkan konsep kemiringan (gradien) pada konteks nyata dengan batasan pertidaksamaan sederhana untuk menentukan nilai minimum.. Bukti: kemiringan jalan landai untuk pengguna kursi roda tidak boleh melebihi 0,15; Panjang lintasan mendatar (horizontal) terpendek yang harus dibuat
+- Dimensi pengetahuan `classify/procedural`: Soal ini berkaitan dengan pemahaman konsep kemiringan sebagai rasio vertikal terhadap horizontal dan prosedur perhitungan untuk mencari salah satu komponennya.. Bukti: kemiringan jalan landai; tingginya 75 cm; tidak boleh melebihi 0,15
+- Intended difficulty `classify/Medium`: Soal ini termasuk kategori Medium karena memerlukan pemilihan strategi untuk menghubungkan konsep kemiringan dengan pertidaksamaan, serta memerlukan ketelitian dalam konversi satuan (cm ke m) dan pembagian desimal.. Bukti: tingginya 75 cm; kemiringan ... tidak boleh melebihi 0,15; Panjang lintasan mendatar (horizontal) terpendek
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep kemiringan, pembagian desimal, dan konversi satuan panjang. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Tuntutan untuk mengintegrasikan batasan (tidak melebihi 0,15) ke dalam model matematika dan melakukan konversi satuan menjadikannya tingkat menengah bagi kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67224,9 +67879,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 751. Soal `9617a584020fdc964d29adc7`
@@ -67240,27 +67895,49 @@ Persamaan garis yang sejajar dengan garis $6x - 2y + 9 = 0$ dan melalui titik $(
 | C | $y = 3x - 11$ |
 | D | $y = -3x + 11$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: 1. Cari gradien garis 6x - 2y + 9 = 0: -2y = -6x - 9 => y = 3x + 4,5. Maka m1 = 3.<br>2. Karena sejajar, m2 = m1 = 3.<br>3. Persamaan garis melalui (4, -1): y - (-1) = 3(x - 4) => y + 1 = 3x - 12 => y = 3x - 13.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `934cb19a9e3850b88e8b0b73fbf951ed4095d24d1a2dc4e3920af8b3cbda1fae`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `836aef0c759bc883c8eb7d814ba8e3b2ffe6ccd74943dde27aec9cc8a13cc76c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2727 |
+
+Run 1 — solusi: 1. Cari gradien garis 6x - 2y + 9 = 0: -2y = -6x - 9 => y = 3x + 4,5. Maka m1 = 3.<br>2. Karena sejajar, m2 = m1 = 3.<br>3. Persamaan garis melalui (4, -1): y - (-1) = 3(x - 4) => y + 1 = 3x - 12 => y = 3x - 13.
+- Domain kognitif `classify/applying`: Siswa harus memilih dan menerapkan prosedur rutin untuk menentukan gradien dari persamaan garis dan menggunakannya untuk menyusun persamaan garis baru yang sejajar melalui titik tertentu.. Bukti: sejajar dengan garis 6x - 2y + 9 = 0; melalui titik (4, -1)
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pengetahuan tentang algoritme/prosedur untuk mengubah bentuk persamaan garis dan rumus persamaan garis melalui satu titik dengan gradien tertentu.. Bukti: sejajar; melalui titik (4, -1); 6x - 2y + 9 = 0
+- Intended difficulty `classify/Medium`: Soal ini termasuk kategori Medium karena melibatkan beberapa langkah yang saling bergantung: menentukan gradien dari bentuk implisit, menerapkan syarat garis sejajar, dan menyusun persamaan garis baru. Meskipun prosedurnya familiar bagi kelas 8, terdapat perpindahan representasi dari bentuk implisit ke eksplisit dan integrasi koordinat titik ke dalam rumus.. Bukti: sejajar dengan garis 6x - 2y + 9 = 0; melalui titik (4, -1)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami gradien dari persamaan garis ax + by + c = 0 dan rumus y - y1 = m(x - x1). |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Tingkat kesulitan sesuai untuk kelas 8 karena menguji integrasi konsep gradien dan persamaan garis tanpa bantuan langkah-langkah (scaffolding). |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67292,9 +67969,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 752. Soal `df5c30024742c1f49223ce22`
@@ -67308,27 +67985,49 @@ Sebuah garis lurus melalui titik $(p, q)$ dan titik $(r, s)$. Jika diketahui hub
 | C | 3 |
 | D | -\frac{1}{3} |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Kemiringan m = (s - q) / (r - p). Dari p + 6 = r, maka r - p = 6. Dari q - 18 = s, maka s - q = -18. Substitusi: m = -18 / 6 = -3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `['menganalisis']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `721d9a9806debb4e0dd216280fac19f04a7e5eed800e6fcdb25d399397f33a7d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7a2ed620c722cfe37f08e1023e490b8ef0d33f19aebe8afb75b4ae56fdb1bb3d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2483 |
+
+Run 1 — solusi: Kemiringan m = (s - q) / (r - p). Dari p + 6 = r, maka r - p = 6. Dari q - 18 = s, maka s - q = -18. Substitusi: m = -18 / 6 = -3.
+- Domain kognitif `classify/applying`: Siswa harus memilih dan menerapkan rumus kemiringan garis melalui dua titik dengan memanipulasi hubungan variabel yang diberikan.. Bukti: kemiringan garis tersebut adalah; p + 6 = r dan q - 18 = s
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang cara menghitung gradien menggunakan perbedaan ordinat dan absis dari hubungan aljabar.. Bukti: kemiringan garis; melalui titik (p, q) dan titik (r, s)
+- Intended difficulty `classify/Medium`: Soal ini berada pada tingkat Medium karena meskipun prosedurnya familiar (rumus gradien), siswa harus melakukan manipulasi aljabar sederhana terlebih dahulu untuk menemukan nilai selisih x dan y, bukan sekadar substitusi angka langsung.. Bukti: p + 6 = r dan q - 18 = s; kemiringan garis tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep gradien garis melalui dua titik dan manipulasi aljabar dasar. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tuntutan manipulasi variabel sebelum substitusi ke rumus gradien meningkatkan kesulitan dari Easy ke Medium bagi siswa kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67360,9 +68059,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 753. Soal `4bc862900a6656f3ba09fa0d`
@@ -67376,27 +68075,49 @@ Sebuah garis lurus melalui titik $(7, p)$ dan titik $(-5, 9)$ dengan kemiringan 
 | C | 29 |
 | D | -19 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: m = (y2 - y1) / (x2 - x1). Diketahui m = 5/6, (x1, y1) = (7, p), (x2, y2) = (-5, 9). Maka 5/6 = (9 - p) / (-5 - 7) => 5/6 = (9 - p) / -12. Kali silang: 6(9 - p) = -60 => 54 - 6p = -60 => -6p = -114 => p = 19.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `00e51a7ef6e2e22591cb5dafcd91b6a2d7c30a8d995760530972b523757690e6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `348aaeb526391e0ee86aec24ede108f3896549e7e2d67977da94a000dccbf21d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2554 |
+
+Run 1 — solusi: m = (y2 - y1) / (x2 - x1). Diketahui m = 5/6, (x1, y1) = (7, p), (x2, y2) = (-5, 9). Maka 5/6 = (9 - p) / (-5 - 7) => 5/6 = (9 - p) / -12. Kali silang: 6(9 - p) = -60 => 54 - 6p = -60 => -6p = -114 => p = 19.
+- Domain kognitif `classify/applying`: Siswa memilih dan menerapkan rumus kemiringan garis pada konteks rutin untuk mencari variabel koordinat yang tidak diketahui.. Bukti: melalui titik (7, p) dan titik (-5, 9) dengan kemiringan sebesar 5/6
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritme perhitungan kemiringan dan manipulasi aljabar linear untuk menemukan nilai variabel.. Bukti: kemiringan sebesar 5/6; Nilai p yang memenuhi
+- Intended difficulty `classify/Medium`: Soal ini termasuk kategori Medium karena meskipun prosedurnya familiar, siswa harus melakukan manipulasi aljabar satu variabel dari rumus kemiringan yang melibatkan bilangan negatif dan operasi pembagian/perkalian silang, bukan sekadar substitusi langsung untuk mencari m.. Bukti: melalui titik (7, p) dan titik (-5, 9); kemiringan sebesar 5/6
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus kemiringan garis lurus, operasi bilangan bulat, dan persamaan linear satu variabel. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Tuntutan manipulasi aljabar pada rumus kemiringan dengan koordinat negatif merupakan standar tingkat kesulitan menengah untuk kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67428,9 +68149,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 754. Soal `4eecb61b9561f65b8a140ae4`
@@ -67444,27 +68165,49 @@ Garis dengan persamaan $4x + 6y - 15 = 0$ memiliki kemiringan $m$ dan memotong s
 | C | -3 |
 | D | 3 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Ubah ke bentuk y = mx + c: 6y = -4x + 15 => y = (-4/6)x + 15/6 => y = (-2/3)x + 5/2. Maka m = -2/3 dan c = 5/2. Nilai 3m + 2c = 3(-2/3) + 2(5/2) = -2 + 5 = 3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `34e1b852d5425b4ca1955f631b16905151f44e244feef55c071b5a36870c2bea`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0688da377973ffe5dc26e5a6ac90b32083821b26e55be2bd246c5ed14e74adde`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2604 |
+
+Run 1 — solusi: Ubah ke bentuk y = mx + c: 6y = -4x + 15 => y = (-4/6)x + 15/6 => y = (-2/3)x + 5/2. Maka m = -2/3 dan c = 5/2. Nilai 3m + 2c = 3(-2/3) + 2(5/2) = -2 + 5 = 3.
+- Domain kognitif `classify/applying`: Siswa harus memilih dan menerapkan prosedur manipulasi aljabar untuk menentukan gradien dan intersep dari persamaan garis lurus dalam konteks rutin.. Bukti: memiliki kemiringan m dan memotong sumbu-y di titik (0, c); Nilai dari 3m + 2c
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pengetahuan tentang algoritme mengubah bentuk implisit ke eksplisit untuk mengidentifikasi parameter garis.. Bukti: persamaan 4x + 6y - 15 = 0; kemiringan m; memotong sumbu-y di titik (0, c)
+- Intended difficulty `classify/Medium`: Soal ini berkategori Medium karena memerlukan beberapa langkah yang saling bergantung: manipulasi persamaan ke bentuk standar, ekstraksi dua nilai parameter (m dan c), dan substitusi ke ekspresi aljabar baru. Meskipun prosedurnya familiar bagi kelas 8, integrasi antara identifikasi komponen dan perhitungan akhir memberikan tuntutan sedang.. Bukti: 4x + 6y - 15 = 0; 3m + 2c
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi aljabar dasar dan bentuk umum persamaan garis lurus y = mx + c. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Tingkat kesulitan sesuai untuk kelas 8 karena menguji pemahaman parameter garis melalui manipulasi aljabar standar tanpa bantuan langkah-langkah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67496,9 +68239,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 755. Soal `655f0980e5ea35d94b33fcff`
@@ -67512,27 +68255,49 @@ Sebuah lereng bukit memiliki kemiringan konstan yang menghubungkan pos dasar dan
 | C | 70 m |
 | D | 140 m |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Kemiringan lereng (m) = tinggi / jarak mendatar = 180 / 720 = 1/4. Ketinggian pos peristirahatan pada jarak mendatar 280 m adalah h = m * 280 = 1/4 * 280 = 70 m.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8dd39a2f99f6dd5b163ad535a36c36e52496951028be1cfbfcfd38071befbf24`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `60bb432a1c2a1ebb6d3c569faa3d71023515fa24f2b035d611ea4ddeffe2a1e7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2605 |
+
+Run 1 — solusi: Kemiringan lereng (m) = tinggi / jarak mendatar = 180 / 720 = 1/4. Ketinggian pos peristirahatan pada jarak mendatar 280 m adalah h = m * 280 = 1/4 * 280 = 70 m.
+- Domain kognitif `classify/applying`: Siswa harus memilih dan menerapkan konsep kemiringan (gradien) atau perbandingan senilai pada konteks rutin untuk menentukan ketinggian di titik tertentu pada sebuah garis lurus.. Bukti: kemiringan konstan; pos peristirahatan dibangun di lereng tersebut pada jarak mendatar 280 m; berada pada ketinggian
+- Dimensi pengetahuan `classify/procedural`: Soal ini berkaitan dengan pemahaman konsep kemiringan sebagai rasio antara perubahan vertikal dan horizontal serta prosedur penghitungannya.. Bukti: kemiringan konstan; ketinggian; jarak mendatar
+- Intended difficulty `classify/Easy`: Soal ini termasuk kategori Easy karena menggunakan penerapan langsung dari konsep kemiringan atau perbandingan senilai yang sangat familiar bagi siswa kelas 8. Langkah-langkahnya jelas (mencari rasio lalu mengalikannya), tidak ada kendala yang berinteraksi secara kompleks, dan informasi yang diberikan langsung dapat digunakan tanpa perlu manipulasi representasi yang sulit.. Bukti: ketinggian 180 m; jarak mendatar 720 m; jarak mendatar 280 m
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep perbandingan senilai atau kemiringan garis lurus. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tuntutan soal hanya berupa penerapan rasio linear sederhana yang merupakan materi inti kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67564,9 +68329,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 756. Soal `a39ab107db108093f9f47afe`
@@ -67580,27 +68345,49 @@ Titik $P(-1, -3)$ dan $R(5, 5)$ merupakan titik sudut yang berhadapan pada sisi 
 | C | $3x + 4y - 11 = 0$ |
 | D | $4x + 3y - 11 = 0$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Karena sisi sejajar sumbu koordinat, titik Q dan S adalah (5, -3) dan (-1, 5). Gradien QS: m = (5 - (-3)) / (-1 - 5) = 8 / -6 = -4/3. Persamaan garis: y - 5 = -4/3(x + 1) => 3y - 15 = -4x - 4 => 4x + 3y - 11 = 0.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `166b33b48b6163c3fa1cbc93336a38bc79d7a400264408854c6efc0caebc970e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `977984b3bc7e470a3f91bb8f10f321c95064bda62f6a47f2f5d9b240da95b604`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2755 |
+
+Run 1 — solusi: Karena sisi sejajar sumbu koordinat, titik Q dan S adalah (5, -3) dan (-1, 5). Gradien QS: m = (5 - (-3)) / (-1 - 5) = 8 / -6 = -4/3. Persamaan garis: y - 5 = -4/3(x + 1) => 3y - 15 = -4x - 4 => 4x + 3y - 11 = 0.
+- Domain kognitif `classify/applying`: Siswa harus mengintegrasikan konsep koordinat persegi panjang yang sejajar sumbu untuk menentukan titik Q dan S, lalu menerapkan prosedur penentuan persamaan garis.. Bukti: sejajar dengan sumbu-sumbu koordinat; Persamaan garis yang melalui titik Q dan S
+- Dimensi pengetahuan `classify/procedural`: Memerlukan pemahaman konseptual tentang sifat geometri persegi panjang di bidang koordinat dan pengetahuan prosedural untuk menghitung gradien serta persamaan garis.. Bukti: sejajar dengan sumbu-sumbu koordinat; Persamaan garis
+- Intended difficulty `classify/Medium`: Soal ini masuk kategori Medium karena siswa harus melakukan langkah awal yang tidak dinyatakan eksplisit (menentukan koordinat Q dan S dari P dan R) sebelum menerapkan rumus persamaan garis. Terdapat ketergantungan antar langkah (koordinat -> gradien -> persamaan) dan perpindahan representasi dari deskripsi geometris ke aljabar, namun prosedurnya tetap rutin bagi kelas 8.. Bukti: titik sudut yang berhadapan; sejajar dengan sumbu-sumbu koordinat; melalui titik Q dan S
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Koordinat Kartesius, sifat persegi panjang, gradien, dan persamaan garis lurus. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Tingkat kesulitan sesuai untuk kelas 8 karena menggabungkan dua topik (koordinat dan garis lurus) tanpa bantuan langkah-langkah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67632,9 +68419,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 757. Soal `f0a79f0249fc1cea05f7080c`
@@ -67648,27 +68435,49 @@ Dua lintasan rel kereta api digambarkan pada bidang koordinat dan saling berpoto
 | C | $y = \frac{5}{2}x - 11$ |
 | D | $y = \frac{5}{2}x - 9$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Gradien garis pertama m1 = -2/5. Karena tegak lurus, gradien garis kedua m2 = -1/m1 = 5/2. Persamaan garis melalui (4, 1) adalah y - 1 = (5/2)(x - 4) => y = (5/2)x - 10 + 1 => y = (5/2)x - 9.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8e6406509240aff1bb5987c89fa69c7be5f1f4769de6bd39be4ce2f5093495b3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `987b65e05277567f09c8c0956ab80f275fd4246ee90b8d8907a1caf8f6dcc6c3`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2724 |
+
+Run 1 — solusi: Gradien garis pertama m1 = -2/5. Karena tegak lurus, gradien garis kedua m2 = -1/m1 = 5/2. Persamaan garis melalui (4, 1) adalah y - 1 = (5/2)(x - 4) => y = (5/2)x - 10 + 1 => y = (5/2)x - 9.
+- Domain kognitif `classify/applying`: Siswa harus memilih dan menerapkan konsep hubungan gradien garis tegak lurus (m1.m2 = -1) dan rumus persamaan garis melalui satu titik dalam konteks rutin.. Bukti: saling berpotongan tegak lurus; melewati stasiun S yang terletak pada koordinat (4, 1)
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut penerapan algoritme atau prosedur standar untuk menentukan persamaan garis lurus berdasarkan hubungan geometris tertentu.. Bukti: persamaan lintasan rel kedua
+- Intended difficulty `classify/Medium`: Soal ini termasuk kategori Medium karena memerlukan dua langkah prosedural yang saling bergantung: pertama menentukan gradien baru dari hubungan tegak lurus, kemudian menyusun persamaan garis. Meskipun prosedurnya familiar bagi kelas 8, terdapat perpindahan dari representasi persamaan ke gradien dan kembali ke persamaan dengan manipulasi aljabar sedang.. Bukti: y = -2/5x + 8; berpotongan tegak lurus; melewati stasiun S (4, 1)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep gradien dari persamaan y=mx+c, hubungan gradien garis tegak lurus, dan persamaan garis melalui satu titik. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Tuntutan integrasi antara hubungan gradien tegak lurus dan penyusunan persamaan garis merupakan standar kompetensi kelas 8 yang melampaui substitusi langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67700,9 +68509,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 758. Soal `77affbd7db55644231218e83`
@@ -67716,27 +68525,49 @@ Pengelola gedung merancang jalur tanjakan kendaraan menuju area parkir di lantai
 | C | $7,2\text{ meter}$ |
 | D | $4,5\text{ meter}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Kemiringan (m) = tinggi / jarak mendatar. Diketahui m <= 0,25 dan tinggi = 1,8 m. Maka 1,8 / x <= 0,25, sehingga x >= 1,8 / 0,25 = 7,2 meter. Jarak mendatar minimum adalah 7,2 meter.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0e9474e134094f8be89e9f4fb4870a537dbc945be2c11be1a9a686576d9291e8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6352451ed0e40da392e85eb58fbe1d4f21c6c1ba77f6d29429be85f67dac569c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2652 |
+
+Run 1 — solusi: Kemiringan (m) = tinggi / jarak mendatar. Diketahui m <= 0,25 dan tinggi = 1,8 m. Maka 1,8 / x <= 0,25, sehingga x >= 1,8 / 0,25 = 7,2 meter. Jarak mendatar minimum adalah 7,2 meter.
+- Domain kognitif `classify/applying`: Siswa harus menerapkan konsep kemiringan (gradien) pada konteks nyata dengan batasan pertidaksamaan untuk menentukan nilai minimum.. Bukti: kemiringan jalur tanjakan di area parkir tidak boleh melebihi 0,25; Panjang jarak mendatar minimum dari jalur tanjakan yang harus dibuat adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini berkaitan dengan prosedur perhitungan nilai variabel menggunakan rumus kemiringan dalam konteks teknis.. Bukti: kemiringan jalur tanjakan; jarak mendatar
+- Intended difficulty `classify/Medium`: Soal ini termasuk kategori Medium karena memerlukan pemodelan hubungan antara tinggi, jarak mendatar, dan kemiringan dalam bentuk pertidaksamaan atau persamaan sederhana. Meskipun prosedurnya familiar bagi kelas 8, terdapat langkah interpretasi kata 'tidak boleh melebihi' dan 'minimum' yang memerlukan ketelitian dalam menentukan posisi variabel dalam pembagian.. Bukti: tingginya 1,8 meter; kemiringan... tidak boleh melebihi 0,25; jarak mendatar minimum
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep kemiringan sebagai perbandingan vertikal dan horizontal, pembagian desimal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tuntutan utama adalah membagi tinggi dengan kemiringan, yang merupakan variasi rutin dari rumus gradien di kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67768,9 +68599,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 759. Soal `93481ea55a1910bf13fb8ec9`
@@ -67784,27 +68615,49 @@ Garis $g$ melalui titik $A(2, 5)$ dan $B(-1, -4)$. Garis $h$ tegak lurus terhada
 | C | 15 |
 | D | 7 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: 1. Gradien g (m_g) = (-4 - 5) / (-1 - 2) = -9 / -3 = 3. 2. Karena h tegak lurus g, maka m_h = -1/m_g = -1/3. 3. Gradien h melalui P(6, -2) dan Q(k, 1) adalah (1 - (-2)) / (k - 6) = 3 / (k - 6). 4. Persamaan: 3 / (k - 6) = -1/3 => 9 = -(k - 6) => 9 = -k + 6 => k = 6 - 9 = -3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `27bb88fd59dc9022b8c8afa0f142d29b64ddea22bd52ce1b2b85492e71ba30a0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bbab18d388b6fe471c2285971db52293382eee304c6aa380acb953aa57528f48`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2796 |
+
+Run 1 — solusi: 1. Gradien g (m_g) = (-4 - 5) / (-1 - 2) = -9 / -3 = 3. 2. Karena h tegak lurus g, maka m_h = -1/m_g = -1/3. 3. Gradien h melalui P(6, -2) dan Q(k, 1) adalah (1 - (-2)) / (k - 6) = 3 / (k - 6). 4. Persamaan: 3 / (k - 6) = -1/3 => 9 = -(k - 6) => 9 = -k + 6 => k = 6 - 9 = -3.
+- Domain kognitif `classify/applying`: Siswa harus memilih dan menerapkan konsep gradien melalui dua titik serta hubungan gradien dua garis tegak lurus untuk menyelesaikan masalah dalam konteks rutin.. Bukti: Garis h tegak lurus terhadap garis g; maka nilai k adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji prosedur perhitungan gradien dan penggunaan kriteria hubungan antar garis (tegak lurus) untuk menemukan variabel yang tidak diketahui.. Bukti: tegak lurus; melalui titik
+- Intended difficulty `classify/Medium`: Soal ini termasuk Medium karena memerlukan integrasi beberapa langkah yang saling bergantung: menghitung gradien pertama, menentukan gradien kedua berdasarkan hubungan tegak lurus, dan menyusun serta menyelesaikan persamaan aljabar untuk mencari nilai k. Meskipun prosedurnya familiar bagi kelas 8, terdapat beberapa titik keputusan dan manipulasi aljabar yang harus dilakukan secara berurutan tanpa bantuan langkah perantara.. Bukti: Garis g melalui titik A(2, 5) dan B(-1, -4); Garis h tegak lurus terhadap garis g; melalui titik P(6, -2) dan Q(k, 1)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus gradien melalui dua titik, hubungan gradien garis tegak lurus, penyelesaian persamaan linear satu variabel. |
+| dependentSteps | 4 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Tuntutan integrasi konsep gradien dan aljabar tanpa scaffolding menjadikannya tingkat menengah untuk siswa kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67836,9 +68689,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 760. Soal `ac3c696fa2208f5529765c46`
@@ -67852,27 +68705,49 @@ Sebuah garis lurus melalui titik $(k, -7)$ dan titik $(9, 13)$. Jika kemiringan 
 | C | 3 |
 | D | 1 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `1`.
+Solusi minimum hasil AI: Gunakan rumus kemiringan m = (y2 - y1)/(x2 - x1). Substitusi m=5/2, (y2,y1)=(13,-7), (x2)=9, (x1)=k: 5/2 = (13-(-7))/(9-k) = 20/(9-k). Cross‑multiply: 5(9-k)=40 → 45-5k=40 → 5k=5 → k=1.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4bd6b7a87240f5075de15e588b239ca5135c87304da03f1db6e7535071b526e2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `62354fd31ca0292733b758d36b95632563e50a49b89830440ae17f1caaedc8fb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4852 |
+
+Run 1 — solusi: Gunakan rumus kemiringan m = (y2 - y1)/(x2 - x1). Substitusi m=5/2, (y2,y1)=(13,-7), (x2)=9, (x1)=k: 5/2 = (13-(-7))/(9-k) = 20/(9-k). Cross‑multiply: 5(9-k)=40 → 45-5k=40 → 5k=5 → k=1.
+- Domain kognitif `classify/applying`: Soal meminta menghitung nilai k dengan menerapkan prosedur standar menghitung kemiringan; tidak memerlukan pemilihan strategi non‑rutin.. Bukti: Rumus kemiringan garis adalah m = (y2 - y1)/(x2 - x1); Diberikan m = 5/2, titik (k, -7) dan (9, 13)
+- Dimensi pengetahuan `classify/procedural`: Menuntut prosedur aljabar yang dikenal (menghitung selisih, menyelesaikan persamaan linear).. Bukti: Penggunaan rumus kemiringan; Manipulasi aljabar sederhana untuk menyelesaikan k
+- Intended difficulty `classify/Easy`: Solusi membutuhkan hanya satu keputusan utama (menyusun persamaan) dan operasi aljabar dasar; beban perencanaan dan integrasi rendah, sehingga termasuk Easy.. Bukti: Langkah terbatas: menghitung selisih ordinat, menulis persamaan, menyelesaikan satu persamaan linear; Tidak ada pilihan strategi, semua langkah diarahkan oleh soal
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Siswa kelas 8 harus menguasai rumus kemiringan garis dan penyelesaian persamaan linear sederhana. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi dan operasi berada dalam ruang lingkup kurikulum kelas 8; solusi langsung tanpa kebutuhan perencanaan tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67904,9 +68779,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 761. Soal `e40b64582cb110c8fcae6690`
@@ -67920,27 +68795,49 @@ Sebuah trotoar pejalan kaki dibangun untuk menghubungkan dua area dengan perbeda
 | C | $2\text{ meter}$ |
 | D | $2,5\text{ meter}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Kemiringan (m) didefinisikan sebagai rasio jarak vertikal (v) terhadap jarak horizontal (h), yaitu m = v/h. Diketahui v = 65 cm dan m <= 0,325. Maka, 65/h <= 0,325, yang berarti h >= 65 / 0,325. Hasilnya h >= 200 cm. Karena 200 cm = 2 meter, maka jarak horizontal paling pendek adalah 2 meter.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7c09fb16d94bf0050345781ad5821fa192a627a29f51469d83612c950dbf79c6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `966f396ed36f147453efea6ada99c45588741914f830b437ea298bda9df36b27`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2765 |
+
+Run 1 — solusi: Kemiringan (m) didefinisikan sebagai rasio jarak vertikal (v) terhadap jarak horizontal (h), yaitu m = v/h. Diketahui v = 65 cm dan m <= 0,325. Maka, 65/h <= 0,325, yang berarti h >= 65 / 0,325. Hasilnya h >= 200 cm. Karena 200 cm = 2 meter, maka jarak horizontal paling pendek adalah 2 meter.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep kemiringan sebagai rasio jarak vertikal terhadap horizontal dan menerapkan pertidaksamaan untuk menentukan batas minimum jarak horizontal. Ini adalah penerapan konsep pada konteks rutin.. Bukti: kemiringan trotoar untuk pejalan kaki tidak boleh lebih besar dari 0,325; Jarak mendatar (horizontal) paling pendek yang dapat dibangun
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip kemiringan (konsep) dan penggunaan algoritma pembagian untuk menyelesaikan masalah (prosedural).. Bukti: kemiringan trotoar untuk pejalan kaki tidak boleh lebih besar dari 0,325; jarak vertikal (jarak vertikal) sebesar 65 cm
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan konversi satuan (cm ke meter) dan pemahaman hubungan rasio dalam pertidaksamaan, namun prosedurnya bersifat rutin dan familiar bagi siswa kelas 8.. Bukti: perbedaan ketinggian (jarak vertikal) sebesar 65 cm; kemiringan trotoar untuk pejalan kaki tidak boleh lebih besar dari 0,325
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rasio, konsep kemiringan, dan operasi pembagian bilangan desimal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengaitkan konsep kemiringan dengan situasi nyata dan melakukan perhitungan rasio sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -67972,9 +68869,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 762. Soal `49f4c1de0d7aab313c4159d0`
@@ -67988,27 +68885,49 @@ Persamaan garis yang tegak lurus dengan garis $y = -\frac{5}{8}x + 15$ dan melal
 | C | $y = -\frac{8}{5}x + 9$ |
 | D | $y = \frac{8}{5}x - 9$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Gradien garis $y = -\frac{5}{8}x + 15$ adalah $m_1 = -\frac{5}{8}$. Karena tegak lurus, gradien garis baru $m_2 = -\frac{1}{m_1} = \frac{8}{5}$. Persamaan garis melalui $(10, -7)$ dengan $m = \frac{8}{5}$ adalah $y - (-7) = \frac{8}{5}(x - 10) \implies y + 7 = \frac{8}{5}x - 16 \implies y = \frac{8}{5}x - 23$.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `638040c9e2e59abd829668e5c6d319cdbac130fa1ef6902b56cac1217a556d03`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4278dcf4a0a3e8c39f0ebf65bfab0c89ab9c07c10a34daff111c41e5c21b9293`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2911 |
+
+Run 1 — solusi: Gradien garis $y = -\frac{5}{8}x + 15$ adalah $m_1 = -\frac{5}{8}$. Karena tegak lurus, gradien garis baru $m_2 = -\frac{1}{m_1} = \frac{8}{5}$. Persamaan garis melalui $(10, -7)$ dengan $m = \frac{8}{5}$ adalah $y - (-7) = \frac{8}{5}(x - 10) \implies y + 7 = \frac{8}{5}x - 16 \implies y = \frac{8}{5}x - 23$.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep hubungan gradien dua garis tegak lurus ($m_1 \cdot m_2 = -1$) dan menggunakan rumus persamaan garis melalui satu titik. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Persamaan garis yang tegak lurus dengan garis $y = -\frac{5}{8}x + 15$ dan melalui titik $(10, -7)$ adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme mencari persamaan garis lurus dengan syarat gradien tertentu, yang merupakan pengetahuan prosedural.. Bukti: Persamaan garis yang tegak lurus dengan garis $y = -\frac{5}{8}x + 15$ dan melalui titik $(10, -7)$ adalah ....
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah prosedural yang saling terkait: menentukan gradien tegak lurus dan menyusun persamaan garis. Meskipun prosedurnya familiar, siswa harus melakukan manipulasi aljabar pecahan dengan cermat.. Bukti: Persamaan garis yang tegak lurus dengan garis $y = -\frac{5}{8}x + 15$ dan melalui titik $(10, -7)$ adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman gradien garis lurus, hubungan gradien garis tegak lurus, dan rumus persamaan garis $y - y_1 = m(x - x_1)$. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi persamaan garis lurus adalah kurikulum standar kelas 8. Soal ini menuntut ketelitian dalam operasi pecahan dan tanda, yang sesuai dengan tingkat kesulitan menengah untuk jenjang ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68040,9 +68959,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 763. Soal `ded1c55f90623b54b0cf6c2d`
@@ -68056,27 +68975,49 @@ Titik $P(4, 9)$ dan $R(12, 3)$ merupakan titik sudut yang saling berhadapan pada
 | C | $3x + 4y - 24 = 0$ |
 | D | $3x - 4y + 24 = 0$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Karena sisi persegi panjang sejajar sumbu koordinat, titik sudut lainnya adalah Q(12, 9) dan S(4, 3). Gradien garis QS adalah m = (9-3)/(12-4) = 6/8 = 3/4. Persamaan garis melalui (4, 3) dengan m = 3/4 adalah y - 3 = 3/4(x - 4), yang disederhanakan menjadi 4y - 12 = 3x - 12 atau 3x - 4y = 0.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4c14fc5ff3767c6810930044d4354200b837a4c2c60098fa31a98efc2b0647cd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6efe0ba7952773861cdbaf5cabe8fc75f6f74e49799bcd069fcc85f8feb28d63`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2895 |
+
+Run 1 — solusi: Karena sisi persegi panjang sejajar sumbu koordinat, titik sudut lainnya adalah Q(12, 9) dan S(4, 3). Gradien garis QS adalah m = (9-3)/(12-4) = 6/8 = 3/4. Persamaan garis melalui (4, 3) dengan m = 3/4 adalah y - 3 = 3/4(x - 4), yang disederhanakan menjadi 4y - 12 = 3x - 12 atau 3x - 4y = 0.
+- Domain kognitif `classify/applying`: Siswa perlu memahami sifat geometri persegi panjang dengan sisi sejajar sumbu koordinat untuk menentukan koordinat titik Q dan S, kemudian menerapkan rumus gradien dan persamaan garis lurus. Ini melibatkan penerapan konsep pada konteks rutin.. Bukti: titik sudut yang saling berhadapan pada persegi panjang PQRS yang sisi-sisinya sejajar dengan sumbu-sumbu koordinat; Persamaan garis lurus yang melalui titik Q dan S
+- Dimensi pengetahuan `classify/conceptual`: Soal memerlukan pemahaman hubungan antara sifat geometri (persegi panjang sejajar sumbu) dengan representasi aljabar (koordinat dan persamaan garis).. Bukti: sisi-sisinya sejajar dengan sumbu-sumbu koordinat; Persamaan garis lurus yang melalui titik Q dan S
+- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman konsep geometri untuk menentukan koordinat titik Q dan S sebelum menghitung persamaan garis. Meskipun prosedurnya standar, siswa harus melakukan deduksi koordinat terlebih dahulu, yang meningkatkan tuntutan kognitif di atas sekadar substitusi langsung.. Bukti: titik sudut yang saling berhadapan pada persegi panjang PQRS yang sisi-sisinya sejajar dengan sumbu-sumbu koordinat; Persamaan garis lurus yang melalui titik Q dan S
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman koordinat kartesius, sifat persegi panjang, rumus gradien, dan persamaan garis lurus. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari persamaan garis lurus dan koordinat. Menentukan koordinat titik sudut dari diagonal persegi panjang yang sejajar sumbu adalah aplikasi konsep yang sesuai untuk tingkat kesulitan menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68108,9 +69049,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 764. Soal `7c94bbaad4d436f86f5c429b`
@@ -68124,27 +69065,51 @@ Tentukan rata-rata dari data berikut ini. 9, 12, 13, 15, 18, 21, 24
 | C | 16 |
 | D | 16,5 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Rata-rata = (9 + 12 + 13 + 15 + 18 + 21 + 24) / 7 = 112 / 7 = 16.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a91c275bc15133829e8281b2f8f45d32fb25374b99ea2f196fa6ff1d7f1358fa`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2ee5d37f4a9ab8f534c05a8d81733c6236ba9100ee4d4dea1e74541c44220547`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2581 |
+
+Run 1 — solusi: Rata-rata = (9 + 12 + 13 + 15 + 18 + 21 + 24) / 7 = 112 / 7 = 16.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk menghitung rata-rata dari sekumpulan data yang diberikan. Ini adalah prosedur standar dan langsung dalam statistik dasar, yang termasuk dalam domain knowing.. Bukti: Tentukan rata-rata dari data berikut ini. 9, 12, 13, 15, 18, 21, 24
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritme atau prosedur perhitungan rata-rata (menjumlahkan data lalu membagi dengan banyaknya data).. Bukti: Tentukan rata-rata dari data berikut ini. 9, 12, 13, 15, 18, 21, 24
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menjumlahkan 7 angka dan membaginya dengan 7. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Tentukan rata-rata dari data berikut ini. 9, 12, 13, 15, 18, 21, 24
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan bulat dan pembagian dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 7 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah sangat familiar dengan konsep rata-rata dan operasi hitung yang diperlukan. Soal tidak menuntut analisis lebih lanjut. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68176,9 +69141,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 765. Soal `45507effc28427e71e48acd0`
@@ -68192,27 +69157,51 @@ Banyak buku yang dipinjam sembilan siswa dalam sebulan adalah 33, 25, 29, 40, 25
 | C | 29 |
 | D | 25 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Jumlah data = 33 + 25 + 29 + 40 + 25 + 31 + 22 + 36 + 20 = 261. Banyak data = 9. Rata-rata = 261 / 9 = 29.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `765c02e225f17f3310660ce55e786c4b07f46a7ac45dc2fd5b5da7af54ff905c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c672c7db58ffc9789565d2717752ead67f56d90b660cda7234e58b62a02f2773`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2596 |
+
+Run 1 — solusi: Jumlah data = 33 + 25 + 29 + 40 + 25 + 31 + 22 + 36 + 20 = 261. Banyak data = 9. Rata-rata = 261 / 9 = 29.
+- Domain kognitif `classify/knowing`: Siswa diminta untuk menghitung rata-rata dari sekumpulan data yang diberikan. Ini adalah prosedur standar yang langsung, yaitu menjumlahkan semua nilai dan membaginya dengan banyaknya data.. Bukti: Rata-rata banyak buku yang dipinjam adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penerapan algoritma dasar untuk menghitung rata-rata (mean) dari data tunggal.. Bukti: Rata-rata banyak buku yang dipinjam adalah ....
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menjumlahkan 9 data dan membaginya dengan 9. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: 33, 25, 29, 40, 25, 31, 22, 36, dan 20
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan bulat dan pembagian bilangan bulat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 9 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung rata-rata adalah materi dasar kelas 8 yang sangat familiar. Jumlah data yang kecil (9) membuat beban kalkulasi moderat namun tetap dalam batas kemampuan siswa kelas 8. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68244,9 +69233,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 766. Soal `1bbb89809a4b56e29281acb5`
@@ -68260,27 +69249,49 @@ Tentukan rata-rata dari data berikut ini. 62, 75, 58, 81, 66, 75, 90, 54, 70, 74
 | C | 75 |
 | D | 70,5 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Jumlah data = 62 + 75 + 58 + 81 + 66 + 75 + 90 + 54 + 70 + 74 = 705. Banyak data (n) = 10. Rata-rata = 705 / 10 = 70,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3f2faff1804a169c08a6dce80e1889b4984a8a82013709be2c33b4cdebc0c76e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0425cd389bf85a38afb46ef359555db1016cae66935175c8706c28bcc130261d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2644 |
+
+Run 1 — solusi: Jumlah data = 62 + 75 + 58 + 81 + 66 + 75 + 90 + 54 + 70 + 74 = 705. Banyak data (n) = 10. Rata-rata = 705 / 10 = 70,5.
+- Domain kognitif `classify/knowing`: Soal meminta siswa melakukan prosedur standar untuk menghitung rata-rata (mean) dari sekumpulan data yang diberikan. Ini adalah penerapan langsung dari definisi dan rumus rata-rata.. Bukti: Tentukan rata-rata dari data berikut ini. 62, 75, 58, 81, 66, 75, 90, 54, 70, 74
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami algoritme atau prosedur perhitungan rata-rata (menjumlahkan semua nilai lalu membagi dengan banyaknya data).. Bukti: Tentukan rata-rata dari data berikut ini.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menjumlahkan 10 data dan membaginya dengan 10. Tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi non-rutin. Tingkat kesulitan rendah karena prosedur sangat familiar bagi siswa kelas 8.. Bukti: 62, 75, 58, 81, 66, 75, 90, 54, 70, 74
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan bulat dan pembagian bilangan desimal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 10 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung rata-rata adalah materi dasar kelas 8. Prosedur langsung, tidak ada jebakan konseptual yang kompleks, dan beban hitung moderat sesuai untuk tingkat kelas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68312,9 +69323,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 767. Soal `31f47f70a988f52eb7611a83`
@@ -68328,27 +69339,51 @@ Tinggi delapan tanaman (dalam cm) adalah 2,5; 4,1; 3,8; 6,2; 4,1; 5,3; 3,6; dan 
 | C | 4,35 |
 | D | 4,25 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Jumlahkan seluruh data: 2,5 + 4,1 + 3,8 + 6,2 + 4,1 + 5,3 + 3,6 + 4,4 = 34,0. Banyak data adalah 8. Rata-rata = 34,0 / 8 = 4,25.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4028e023161119bbace32b3c2a3e7c08d124723ca9d3afc93b3c5e91b4836075`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3c52ff9929c246f21179609ac7905c74493f925b57d485957a482f51ad76dabc`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2628 |
+
+Run 1 — solusi: Jumlahkan seluruh data: 2,5 + 4,1 + 3,8 + 6,2 + 4,1 + 5,3 + 3,6 + 4,4 = 34,0. Banyak data adalah 8. Rata-rata = 34,0 / 8 = 4,25.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk menghitung rata-rata dari sekumpulan data yang diberikan. Ini adalah prosedur standar yang langsung, yaitu menjumlahkan semua nilai dan membaginya dengan banyaknya data.. Bukti: Rata-rata tinggi tanaman tersebut adalah ... cm.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritma atau prosedur standar untuk menghitung rata-rata (mean) dari data yang diberikan.. Bukti: Rata-rata tinggi tanaman tersebut adalah ... cm.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu melakukan penjumlahan dan pembagian bilangan desimal. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: Tinggi delapan tanaman (dalam cm) adalah 2,5; 4,1; 3,8; 6,2; 4,1; 5,3; 3,6; dan 4,4.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan desimal dan konsep dasar rata-rata (mean). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi rata-rata adalah materi dasar kelas 8 yang prosedural. Soal ini tidak memerlukan interpretasi data yang mendalam, hanya komputasi dasar. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68380,9 +69415,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 768. Soal `ec4cd9295163dc3c635b8508`
@@ -68396,27 +69431,51 @@ Terdapat 30 siswa yang mengikuti tes. Siswa yang memperoleh nilai 55 ada 2 orang
 | C | 75 |
 | D | 78,6 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Hitung total nilai: (55*2) + (65*6) + (75*12) + (85*7) + (95*3) = 110 + 390 + 900 + 595 + 285 = 2280. Bagi total nilai dengan jumlah siswa: 2280 / 30 = 76.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `459ae6e620f3542185e9e4fb3de4ad282d2fde8265d13fbce0e44bc14d8898da`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8d880de0af350d8c2c503c221217fd82d781b16d9af396e071d8230dd35c38f0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2652 |
+
+Run 1 — solusi: Hitung total nilai: (55*2) + (65*6) + (75*12) + (85*7) + (95*3) = 110 + 390 + 900 + 595 + 285 = 2280. Bagi total nilai dengan jumlah siswa: 2280 / 30 = 76.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menerapkan prosedur standar menghitung rata-rata data berkelompok (mean) dengan mengalikan nilai dengan frekuensinya, menjumlahkannya, lalu membagi dengan total frekuensi. Ini adalah prosedur rutin.. Bukti: Nilai rata-rata tes tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau metode perhitungan rata-rata data yang disajikan dalam tabel frekuensi.. Bukti: Nilai rata-rata tes tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu melakukan perkalian dan penjumlahan dasar untuk mendapatkan total nilai, kemudian pembagian sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Nilai rata-rata tes tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi hitung dasar (perkalian, penjumlahan, pembagian) dan konsep rata-rata data. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung rata-rata data berkelompok adalah materi standar kelas 8 yang bersifat prosedural langsung. Beban kognitif rendah karena langkah-langkahnya sudah jelas dan familiar. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68448,9 +69507,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 769. Soal `1437932e1fb766ce0bea7911`
@@ -68464,27 +69523,49 @@ Banyak kartu yang dimiliki sembilan anak adalah 7, 15, 5, 9, 15, 6, 8, 11, dan 3
 | C | 15 |
 | D | 8,8 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data diurutkan: 3, 5, 6, 7, 8, 9, 11, 15, 15. Karena ada 9 data (ganjil), median adalah data ke-(9+1)/2 = data ke-5. Data ke-5 adalah 8.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f505ab5b3aac4f504c990a1550a0998abf9553bde28369031808517ff94bf55f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5270cf7f16e4e6337864ab5ddf42f88727e837b6ed4a60e2a1745781946552ef`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2513 |
+
+Run 1 — solusi: Data diurutkan: 3, 5, 6, 7, 8, 9, 11, 15, 15. Karena ada 9 data (ganjil), median adalah data ke-(9+1)/2 = data ke-5. Data ke-5 adalah 8.
+- Domain kognitif `classify/knowing`: Soal meminta siswa menerapkan prosedur standar untuk menentukan median dari sekumpulan data yang diberikan. Ini adalah prosedur rutin yang dipelajari di kelas 8.. Bukti: Median data tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami definisi median dan menerapkan algoritma pengurutan data serta pemilihan nilai tengah.. Bukti: Median data tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (straightforward). Siswa hanya perlu mengurutkan data dan mencari nilai tengah. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: 7, 15, 5, 9, 15, 6, 8, 11, dan 3
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep median dan kemampuan mengurutkan bilangan bulat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 9 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan median adalah materi dasar kelas 8. Prosedur pengurutan dan pemilihan nilai tengah adalah tugas rutin tanpa kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68516,9 +69597,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 770. Soal `7da168bfdc8dfe7d8d5ce607`
@@ -68532,27 +69613,49 @@ Banyak pengunjung perpustakaan selama 8 hari adalah 45, 38, 52, 41, 60, 47, 55, 
 | C | 47 |
 | D | 49 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data diurutkan: 38, 41, 45, 47, 49, 52, 55, 60. Karena jumlah data genap (n=8), median adalah rata-rata dari data ke-4 dan ke-5: (47 + 49) / 2 = 96 / 2 = 48.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3cb5e243df61e1bb3ae95b7ab97d46ded5ff8c13f5441277c4a5343f678192ec`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8d9a8cc8ba282906cc59c1113cdc8e9cbac7c13c0e8c213c56d4b9d2820ef10d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2599 |
+
+Run 1 — solusi: Data diurutkan: 38, 41, 45, 47, 49, 52, 55, 60. Karena jumlah data genap (n=8), median adalah rata-rata dari data ke-4 dan ke-5: (47 + 49) / 2 = 96 / 2 = 48.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan prosedur standar untuk menentukan median dari sekumpulan data yang diberikan, yang merupakan prosedur rutin dalam statistika dasar.. Bukti: Median data tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami algoritme atau metode untuk mencari median, khususnya menangani data genap dengan merata-ratakan dua nilai tengah.. Bukti: Median data tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengurutkan data dan menerapkan rumus median untuk data genap. Tidak ada kendala kompleks atau integrasi konsep yang sulit.. Bukti: 45, 38, 52, 41, 60, 47, 55, 49
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan bilangan bulat dan menghitung rata-rata dua bilangan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan median adalah materi dasar kelas 8. Prosedur pengurutan dan perhitungan rata-rata dua nilai tengah adalah standar dan familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68584,9 +69687,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 771. Soal `c525c175a595b0748cb90995`
@@ -68600,27 +69703,49 @@ Berat badan (dalam kg) dua belas siswa kelas 8 adalah 48, 52, 45, 50, 52, 47, 49
 | C | 45 |
 | D | 52 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data: 48, 52, 45, 50, 52, 47, 49, 52, 46, 45, 53, 52. Frekuensi: 45 (2x), 46 (1x), 47 (1x), 48 (1x), 49 (1x), 50 (1x), 52 (4x), 53 (1x). Modus adalah nilai dengan frekuensi tertinggi, yaitu 52.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c8f99b653e7e12f65650762d3683d6c3ec4f4faf729d4c26ba896e468c711fc8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e89524cadf5dff58ab533b40a31b342888d28c448accc5ceef6f9a086b64455e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2617 |
+
+Run 1 — solusi: Data: 48, 52, 45, 50, 52, 47, 49, 52, 46, 45, 53, 52. Frekuensi: 45 (2x), 46 (1x), 47 (1x), 48 (1x), 49 (1x), 50 (1x), 52 (4x), 53 (1x). Modus adalah nilai dengan frekuensi tertinggi, yaitu 52.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengidentifikasi nilai yang paling sering muncul (frekuensi tertinggi) dari sekumpulan data yang diberikan. Ini adalah prosedur langsung untuk menentukan modus.. Bukti: Modus dari data tersebut adalah ... kg.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman definisi modus sebagai nilai yang paling sering muncul dalam kumpulan data.. Bukti: Modus dari data tersebut adalah ... kg.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menghitung frekuensi setiap nilai dan memilih yang tertinggi. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks.. Bukti: Berat badan (dalam kg) dua belas siswa kelas 8 adalah 48, 52, 45, 50, 52, 47, 49, 52, 46, 45, 53, 52.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep modus dan kemampuan menghitung frekuensi data. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 12 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan modus dari data tunggal adalah materi dasar statistik kelas 8 yang sangat rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68652,9 +69777,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 772. Soal `ef4490360846d6757bd6f732`
@@ -68668,27 +69793,49 @@ Bu Sari mempunyai dua anak yang berumur 9 tahun dan 15 tahun. Rata-rata umur ked
 | C | 24 tahun |
 | D | 12 tahun |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Rata-rata = (9 + 15) / 2 = 24 / 2 = 12 tahun.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `56cba0e87e34cac793206c445d52a6b4f501d31f6c5164babb37f0bf3984d1ee`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1cfc29d4d21bcfc88fabc665c2be17ebffd0bb65f0f2a46ddb5f6f5c5fe9004c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2476 |
+
+Run 1 — solusi: Rata-rata = (9 + 15) / 2 = 24 / 2 = 12 tahun.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk menghitung rata-rata dari dua data yang diberikan. Ini adalah prosedur standar dan langsung untuk menghitung mean (rata-rata) dari sekumpulan data kecil.. Bukti: Rata-rata umur kedua anak Bu Sari adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami definisi rata-rata (mean) sebagai jumlah data dibagi banyaknya data, yang merupakan konsep dasar dalam statistika.. Bukti: Rata-rata umur kedua anak Bu Sari adalah
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu menjumlahkan dua angka dan membaginya dengan dua. Tidak ada kendala, langkah yang kompleks, atau kebutuhan untuk memilih strategi. Ini adalah penerapan langsung dari definisi rata-rata.. Bukti: Bu Sari mempunyai dua anak yang berumur 9 tahun dan 15 tahun.; Rata-rata umur kedua anak Bu Sari adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan dan pembagian bilangan bulat dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini berada di bawah tingkat kesulitan rata-rata kelas 8 karena hanya melibatkan operasi aritmatika dasar pada dua titik data, yang biasanya sudah dikuasai jauh sebelum kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68720,9 +69867,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 773. Soal `b2ea1f15f78a60ffe71dde69`
@@ -68736,27 +69883,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | 36 |
 | D | 15 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Modus adalah nilai yang paling sering muncul, yaitu nilai dengan frekuensi tertinggi. Berdasarkan tabel, frekuensi tertinggi adalah 15, yang berkorespondensi dengan ukuran sepatu 39.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1e13221f1974f3bb0611daef54582e24e5a74570c9568864343b0037dda78f65`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f3e006e0b1f120e4a537cf589f5b29086618ebdcd8aeccc35715d4a38886cc22`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2507 |
+
+Run 1 — solusi: Modus adalah nilai yang paling sering muncul, yaitu nilai dengan frekuensi tertinggi. Berdasarkan tabel, frekuensi tertinggi adalah 15, yang berkorespondensi dengan ukuran sepatu 39.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi nilai dengan frekuensi tertinggi dari tabel frekuensi yang diberikan. Ini adalah prosedur langsung untuk menentukan modus dari data tunggal yang disajikan dalam tabel.. Bukti: Modus dari data ukuran sepatu tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami definisi modus sebagai nilai yang paling sering muncul (konseptual) dan menerapkan prosedur pembacaan tabel frekuensi untuk menemukannya (prosedural).. Bukti: Modus dari data ukuran sepatu tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu membandingkan nilai frekuensi untuk menemukan yang terbesar dan membaca nilai data yang bersesuaian. Tidak ada langkah tambahan atau integrasi konsep yang kompleks.. Bukti: Modus dari data ukuran sepatu tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami definisi modus dan cara membaca tabel frekuensi. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi modus data tunggal adalah materi dasar kelas 8. Soal ini menguji pemahaman definisi dasar tanpa modifikasi atau jebakan yang memerlukan penalaran tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68797,9 +69966,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 774. Soal `06d2516c95f3248f26f1698f`
@@ -68813,27 +69982,49 @@ Pernyataan yang benar tentang median adalah ....
 | C | jumlah semua data dibagi banyak data |
 | D | nilai tengah dari data sebelum diurutkan |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Median didefinisikan sebagai nilai tengah dari suatu kumpulan data setelah data tersebut diurutkan dari yang terkecil hingga terbesar. Pilihan A secara akurat mendeskripsikan definisi ini, sementara pilihan B adalah modus, pilihan C adalah rata-rata (mean), dan pilihan D salah karena pengurutan adalah syarat mutlak.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4d325cb9f946e267f001ceb475d4e23a9694f7a58ecf660419ae2824d3c2b856`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b5b0b59466db78cde758e78ad7042c91cb1fa70b73c824ca07ee68f4b7926802`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2433 |
+
+Run 1 — solusi: Median didefinisikan sebagai nilai tengah dari suatu kumpulan data setelah data tersebut diurutkan dari yang terkecil hingga terbesar. Pilihan A secara akurat mendeskripsikan definisi ini, sementara pilihan B adalah modus, pilihan C adalah rata-rata (mean), dan pilihan D salah karena pengurutan adalah syarat mutlak.
+- Domain kognitif `classify/knowing`: Soal ini menuntut siswa untuk mengenali definisi konseptual dari median. Tidak ada perhitungan atau penerapan prosedur kompleks yang diperlukan, hanya pemahaman terminologi dasar statistik.. Bukti: Pernyataan yang benar tentang median adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap konsep dasar statistik (median) dan membedakannya dari konsep lain seperti modus dan mean.. Bukti: Pernyataan yang benar tentang median adalah ....
+- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung (recall). Siswa hanya perlu mengetahui definisi median tanpa perlu melakukan langkah perencanaan, integrasi, atau perhitungan. Ini adalah pengetahuan dasar yang diajarkan di kelas 8.. Bukti: Pernyataan yang benar tentang median adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang ukuran pemusatan data (mean, median, modus). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan pertanyaan definisi standar yang sangat mendasar untuk kurikulum kelas 8, sehingga dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68865,9 +70056,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 775. Soal `84516381c23076681dab61a2`
@@ -68881,27 +70072,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | 6 |
 | D | 8 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Data berjumlah 15. Median adalah data ke-(15+1)/2 = data ke-8. Frekuensi kumulatif: nilai 5 (3 siswa), nilai 6 (3+4=7 siswa), nilai 7 (7+2=9 siswa). Karena data ke-8 berada dalam rentang frekuensi kumulatif 9, maka median adalah 7.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ee3c725771133f114bca522d55fc10723c64f0b1882d78b42fc44e7903a8386e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8f812c140bb05a23a7a65cc62a6a57e7b2f6dec48e1b58046f6e69b7713c8932`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2613 |
+
+Run 1 — solusi: Data berjumlah 15. Median adalah data ke-(15+1)/2 = data ke-8. Frekuensi kumulatif: nilai 5 (3 siswa), nilai 6 (3+4=7 siswa), nilai 7 (7+2=9 siswa). Karena data ke-8 berada dalam rentang frekuensi kumulatif 9, maka median adalah 7.
+- Domain kognitif `classify/applying`: Siswa diminta menentukan median dari data tabel frekuensi. Ini adalah prosedur standar untuk mencari nilai tengah data berkelompok sederhana, yang termasuk dalam domain applying karena menerapkan prosedur statistik pada data yang diberikan.. Bukti: Median dari data nilai kuis tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau metode untuk menentukan median dari data yang disajikan dalam bentuk tabel frekuensi, yang merupakan pengetahuan prosedural.. Bukti: Median dari data nilai kuis tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 8. Langkah-langkahnya jelas: menghitung total frekuensi, menentukan posisi median, dan mencari nilai pada posisi tersebut menggunakan frekuensi kumulatif. Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: Tabel di atas menunjukkan nilai kuis 15 siswa. Median dari data nilai kuis tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami konsep median dan cara membaca tabel frekuensi. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan median dari tabel frekuensi adalah materi dasar kelas 8. Soal ini tidak memerlukan analisis mendalam atau perencanaan kompleks, sehingga dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -68941,9 +70154,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 776. Soal `6fd842d43621d26a71860660`
@@ -68957,27 +70170,49 @@ Jumlah berat 6 karung beras adalah 270 kg. Rata-rata berat tiap karung beras ada
 | C | 45 |
 | D | 264 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Rata-rata = Total berat / Jumlah karung = 270 kg / 6 = 45 kg.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5f82646f8eabba15a30bed590febd63c2f979ecf9de4f9ec2f5325b1d29f4bfe`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `459368c02dc1434b85797d3cb72a01566de5d5fa5b817039882e4baa157409e2`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2473 |
+
+Run 1 — solusi: Rata-rata = Total berat / Jumlah karung = 270 kg / 6 = 45 kg.
+- Domain kognitif `classify/knowing`: Soal meminta siswa menerapkan definisi rata-rata (mean) secara langsung dengan membagi total nilai dengan banyaknya data. Ini adalah prosedur standar yang sangat familiar.. Bukti: Rata-rata berat tiap karung beras adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep rata-rata sebagai hasil bagi antara jumlah total dengan banyaknya data (prosedural) dan menerapkan algoritma pembagian sederhana.. Bukti: Jumlah berat 6 karung beras adalah 270 kg; Rata-rata berat tiap karung beras
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu melakukan satu operasi pembagian (270 dibagi 6). Tidak ada kendala yang berinteraksi, tidak ada pemilihan strategi yang kompleks, dan prosedurnya sangat rutin.. Bukti: Jumlah berat 6 karung beras adalah 270 kg. Rata-rata berat tiap karung beras adalah ... kg.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep rata-rata dan operasi pembagian bilangan bulat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 8, menghitung rata-rata dari data yang diberikan secara eksplisit adalah tugas yang sangat mudah dan rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69009,9 +70244,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 777. Soal `6af932f80187dbc0cbe09213`
@@ -69025,27 +70260,49 @@ Pemilik toko sepatu ingin mengetahui ukuran sepatu yang paling banyak terjual bu
 | C | median |
 | D | rata-rata |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Ukuran sepatu yang paling banyak terjual merujuk pada frekuensi kemunculan terbanyak dalam suatu data. Dalam statistika, nilai yang paling sering muncul atau memiliki frekuensi tertinggi disebut modus.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `423dd892ef123c03d4ee4303d70dbbbfb7c4f7e317a38c273c5572389b485ec8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `de2f23924af9ce86cee427f6b2c2a952b9ae6de79ae83f685f9f9411f543b335`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2485 |
+
+Run 1 — solusi: Ukuran sepatu yang paling banyak terjual merujuk pada frekuensi kemunculan terbanyak dalam suatu data. Dalam statistika, nilai yang paling sering muncul atau memiliki frekuensi tertinggi disebut modus.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi ukuran pemusatan data yang sesuai dengan konteks 'paling banyak terjual' (frekuensi tertinggi). Siswa hanya perlu mengenali definisi modus sebagai nilai yang paling sering muncul.. Bukti: ukuran sepatu yang paling banyak terjual; Ukuran pemusatan data yang tepat digunakan adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual mengenai definisi dan kegunaan dari ukuran pemusatan data (modus, median, mean) dalam situasi nyata.. Bukti: ukuran sepatu yang paling banyak terjual; Ukuran pemusatan data yang tepat digunakan
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (straightforward) karena hanya menanyakan definisi operasional dari ukuran pemusatan data yang paling relevan dengan konteks frekuensi terbanyak. Tidak ada perhitungan atau langkah kompleks yang diperlukan.. Bukti: ukuran sepatu yang paling banyak terjual; Ukuran pemusatan data yang tepat digunakan adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang definisi mean, median, dan modus. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari ukuran pemusatan data. Soal ini adalah aplikasi langsung dari definisi dasar yang diajarkan di tingkat tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69077,9 +70334,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 778. Soal `570e91796dc51e882593d96f`
@@ -69093,27 +70350,51 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | 4,5 |
 | D | 4 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Total data n=20 (genap). Median adalah rata-rata data ke-10 dan ke-11. Frekuensi kumulatif: 3, 7, 10, 17, 20. Data ke-10 bernilai 4, data ke-11 bernilai 5. Median = (4+5)/2 = 4,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `14061f7aae22330258ec0057d118c36031c772aebce53c2f6ca9f91759d1aad3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `388ce039d842122de5d7fe5a1ef5a3e4c9651808dcffd5dc69f5e051dea8bc2a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2612 |
+
+Run 1 — solusi: Total data n=20 (genap). Median adalah rata-rata data ke-10 dan ke-11. Frekuensi kumulatif: 3, 7, 10, 17, 20. Data ke-10 bernilai 4, data ke-11 bernilai 5. Median = (4+5)/2 = 4,5.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur menentukan median untuk data berkelompok sederhana (tabel frekuensi) dengan jumlah data genap, yang memerlukan pemahaman konsep urutan data dan rata-rata dua nilai tengah.. Bukti: Median dari data tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang cara menghitung median dari tabel frekuensi, termasuk menangani data genap.. Bukti: Tabel di atas menunjukkan banyak buku yang dibaca 20 siswa
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena siswa harus melakukan langkah-langkah berurutan: menghitung frekuensi kumulatif, mengidentifikasi posisi median (data ke-10 dan ke-11), dan menghitung rata-ratanya. Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling bergantung dan potensi kesalahan jika siswa hanya mengambil nilai tengah frekuensi atau rata-rata.. Bukti: Median dari data tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep median dan cara membaca tabel frekuensi. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menentukan median dari tabel frekuensi. Soal ini memerlukan ketelitian dalam menentukan posisi median pada data genap, yang merupakan standar kompetensi kelas 8. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69153,9 +70434,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 779. Soal `8ac80e24be27dbd7a4f17e57`
@@ -69169,27 +70450,49 @@ Dini mengklaim: "Jika rata-rata suatu kumpulan data adalah 80, maka pasti ada da
 | C | 75, 80, 85 |
 | D | 70, 85, 85 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Klaim Dini: rata-rata 80 berarti ada data 80. Penyangkal harus memiliki rata-rata 80 tetapi tidak memuat angka 80. Opsi D: data {70, 85, 85}. Rata-rata = (70 + 85 + 85) / 3 = 240 / 3 = 80. Tidak ada angka 80 dalam data tersebut. Maka D adalah penyangkal yang benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0027a702c5cfe89beec240c0f3dcdd0aac320f80f1e973f268d2d95b10ed8428`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1da1e5dc7f7f850eac98cdc21dc313c8f2878d9da1e21ecd62270cf4ee7f8f36`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2782 |
+
+Run 1 — solusi: Klaim Dini: rata-rata 80 berarti ada data 80. Penyangkal harus memiliki rata-rata 80 tetapi tidak memuat angka 80. Opsi D: data {70, 85, 85}. Rata-rata = (70 + 85 + 85) / 3 = 240 / 3 = 80. Tidak ada angka 80 dalam data tersebut. Maka D adalah penyangkal yang benar.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk memahami konsep rata-rata dan logika penyangkal (counterexample). Siswa harus mengevaluasi setiap opsi untuk melihat apakah rata-ratanya 80 dan apakah angka 80 tidak ada dalam kumpulan data tersebut. Ini melibatkan penerapan konsep rata-rata dalam konteks logika matematika.. Bukti: Dini mengklaim: "Jika rata-rata suatu kumpulan data adalah 80, maka pasti ada data yang bernilai 80."; Kumpulan data yang menjadi contoh penyangkal klaim Dini adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara definisi rata-rata (konsep) dan bagaimana menggunakannya untuk menguji kebenaran suatu pernyataan (prosedural).. Bukti: rata-rata suatu kumpulan data adalah 80; contoh penyangkal klaim
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya menghitung rata-rata, tetapi harus memahami logika penyangkal. Siswa perlu menguji setiap opsi (beberapa langkah) untuk memverifikasi dua kondisi: rata-rata 80 dan ketiadaan nilai 80. Ini memerlukan perencanaan langkah yang saling terkait.. Bukti: rata-rata suatu kumpulan data adalah 80; contoh penyangkal klaim
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep rata-rata (mean) dan kemampuan melakukan operasi hitung dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari rata-rata. Menemukan penyangkal memerlukan pemahaman konseptual yang sedikit lebih dalam daripada sekadar menghitung rata-rata, sehingga tingkat kesulitan Medium tepat. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69221,9 +70524,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 780. Soal `441079cfb0971f6abf5a34cf`
@@ -69237,27 +70540,49 @@ Gaji bulanan (dalam jutaan rupiah) tujuh orang di sebuah bengkel adalah 4, 5, 4,
 | C | median, yaitu Rp4,5 juta |
 | D | modus, yaitu Rp4 juta |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Data gaji: 4, 5, 4, 42, 6, 4, 5. Urutan data: 4, 4, 4, 5, 5, 6, 42. Banyak data (n) = 7 (ganjil). Median adalah nilai tengah pada urutan ke-(n+1)/2 = ke-4. Data ke-4 adalah 5. Median (5 juta) tidak terpengaruh nilai ekstrem 42, sedangkan rata-rata (70/7 = 10 juta) terpengaruh.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4558239103bd30978db7e1ef97ae74a4aeba24671682bc16263a0ca6946a4be1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e95cb24933824aa297681dbcbfc4268b61d07453fb0b749d0595e158467d23a6`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2749 |
+
+Run 1 — solusi: Data gaji: 4, 5, 4, 42, 6, 4, 5. Urutan data: 4, 4, 4, 5, 5, 6, 42. Banyak data (n) = 7 (ganjil). Median adalah nilai tengah pada urutan ke-(n+1)/2 = ke-4. Data ke-4 adalah 5. Median (5 juta) tidak terpengaruh nilai ekstrem 42, sedangkan rata-rata (70/7 = 10 juta) terpengaruh.
+- Domain kognitif `classify/applying`: Soal meminta siswa memilih ukuran pemusatan yang tepat berdasarkan karakteristik data (adanya nilai ekstrem) dan definisi ukuran pemusatan (median sebagai nilai tengah). Ini adalah penerapan konsep pada konteks yang diberikan.. Bukti: Bu Ina ingin melaporkan satu ukuran pemusatan yang tidak terpengaruh gaji pemilik yang sangat tinggi dan menunjukkan nilai tengah data yang telah diurutkan
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep median, rata-rata, dan modus, serta bagaimana nilai ekstrem memengaruhi ukuran-ukuran tersebut (konsep statistik).. Bukti: ukuran pemusatan yang tidak terpengaruh gaji pemilik yang sangat tinggi; menunjukkan nilai tengah data yang telah diurutkan
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu mengurutkan data sederhana dan memahami definisi dasar median serta sifatnya terhadap nilai ekstrem. Prosedur sangat langsung dan familiar bagi kelas 8.. Bukti: Gaji bulanan (dalam jutaan rupiah) tujuh orang di sebuah bengkel adalah 4, 5, 4, 42, 6, 4, 5; ukuran pemusatan yang tidak terpengaruh gaji pemilik yang sangat tinggi
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data dan menghitung median data ganjil. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi median dan pengaruh nilai ekstrem adalah standar kurikulum kelas 8. Soal tidak menuntut perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69289,9 +70614,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 781. Soal `7f439474502e9962cc093104`
@@ -69305,27 +70630,49 @@ Rina menentukan median data 12, 5, 9, 7, 15, 8, 6 dengan mengambil data ke-4 dar
 | C | Salah; median yang benar 9, yaitu data ke-5 setelah diurutkan |
 | D | Salah, data belum diurutkan; median yang benar 8 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data: 12, 5, 9, 7, 15, 8, 6. Urutan data: 5, 6, 7, 8, 9, 12, 15. Banyak data (n) = 7. Median adalah data ke-(n+1)/2 = data ke-4. Data ke-4 setelah diurutkan adalah 8. Rina salah karena tidak mengurutkan data terlebih dahulu.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `76e312c96a1ee1912442255c8a0814874a09dcf5c9f361e2f8b48d7e345089dd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b0c12d0b9d3aa9a15ee95cdf5b514318fb66ffcc5df874f29ebd6032a0f25f0f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2743 |
+
+Run 1 — solusi: Data: 12, 5, 9, 7, 15, 8, 6. Urutan data: 5, 6, 7, 8, 9, 12, 15. Banyak data (n) = 7. Median adalah data ke-(n+1)/2 = data ke-4. Data ke-4 setelah diurutkan adalah 8. Rina salah karena tidak mengurutkan data terlebih dahulu.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengevaluasi prosedur yang salah dalam menentukan median. Siswa perlu memahami konsep median (nilai tengah setelah data diurutkan) dan mengidentifikasi kesalahan Rina (tidak mengurutkan data). Ini melibatkan penerapan konsep pada situasi rutin.. Bukti: Rina menentukan median data 12, 5, 9, 7, 15, 8, 6 dengan mengambil data ke-4 dari deretan tersebut; Pernyataan yang tepat adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus menerapkan prosedur pengurutan data dan penentuan nilai tengah sebagai bagian dari konsep median yang dipelajari di kelas 8.. Bukti: median data 12, 5, 9, 7, 15, 8, 6; mengambil data ke-4 dari deretan tersebut
+- Intended difficulty `classify/Easy`: Soal ini menguji pemahaman konseptual tentang median. Siswa hanya perlu mengurutkan data (7 angka) dan menentukan nilai tengahnya. Prosedur ini sangat familiar dan rutin bagi siswa kelas 8. Tidak ada kendala yang berinteraksi atau perencanaan kompleks.. Bukti: Rina menentukan median data 12, 5, 9, 7, 15, 8, 6 dengan mengambil data ke-4 dari deretan tersebut; Pernyataan yang tepat adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami definisi median dan cara mengurutkan data. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 7 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan sudah mahir mengurutkan data kecil dan menentukan median. Soal ini bersifat prosedural dasar dengan pengecekan konsep. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69357,9 +70704,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 782. Soal `8710df976643d1e9d3165b73`
@@ -69373,27 +70720,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | Salah; rata-rata yang benar 3,3, yaitu rata-rata frekuensi |
 | D | Salah, frekuensi tidak diperhitungkan; rata-rata yang benar 6,9 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Total nilai = (6*3) + (7*5) + (8*2) = 18 + 35 + 16 = 69. Banyak siswa = 3 + 5 + 2 = 10. Rata-rata = 69 / 10 = 6,9. Dani salah karena tidak mengalikan nilai dengan frekuensinya.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bc25de314d1fb643f6d98640526aee4d1f5d9585598d53b3b7512da280fdd19b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `883288df69f1ee7c3c276feafdde31324702888872ed03a9f676632f26be0e8f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2725 |
+
+Run 1 — solusi: Total nilai = (6*3) + (7*5) + (8*2) = 18 + 35 + 16 = 69. Banyak siswa = 3 + 5 + 2 = 10. Rata-rata = 69 / 10 = 6,9. Dani salah karena tidak mengalikan nilai dengan frekuensinya.
+- Domain kognitif `classify/applying`: Soal meminta siswa mengevaluasi kesalahan prosedur perhitungan rata-rata data berkelompok (tabel frekuensi). Siswa harus memahami konsep rata-rata tertimbang dan mengidentifikasi kesalahan umum (mengabaikan frekuensi), yang merupakan penerapan konsep dasar rata-rata.. Bukti: Dani menghitung rata-rata dengan (6+7+8):3=7; Pernyataan yang tepat adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara nilai dan frekuensi dalam tabel distribusi frekuensi untuk menghitung rata-rata yang benar, yang merupakan pemahaman konseptual tentang rata-rata tertimbang.. Bukti: Tabel di atas menunjukkan nilai kuis 10 siswa; rata-rata dengan (6+7+8):3=7
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedur rata-rata adalah materi dasar kelas 8. Siswa hanya perlu mengenali kesalahan umum (mengabaikan frekuensi) dan melakukan perhitungan rata-rata yang benar dengan data yang sudah tersedia. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Dani menghitung rata-rata dengan (6+7+8):3=7; Pernyataan yang tepat adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep rata-rata (mean) dan cara membaca tabel frekuensi sederhana. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi rata-rata data tunggal/tabel frekuensi sederhana adalah standar kelas 8. Soal ini menguji pemahaman konsep dasar dengan meminta koreksi atas kesalahan prosedur yang umum dilakukan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69431,9 +70800,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 783. Soal `2a2e26480c77200764b317b9`
@@ -69605,27 +70974,49 @@ Sebuah kumpulan lima data harus memiliki rata-rata 7, median 6, dan modus 5. Kum
 | C | 5, 5, 7, 8, 10 |
 | D | 5, 6, 6, 7, 11 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Misalkan data terurut adalah x1, x2, x3, x4, x5. Syarat: (1) Median x3 = 6. (2) Modus 5, maka x1=5 dan x2=5. (3) Rata-rata 7, maka total = 5 * 7 = 35. x1+x2+x3+x4+x5 = 5+5+6+x4+x5 = 16+x4+x5 = 35, sehingga x4+x5 = 19. Opsi A: 5, 5, 6, 8, 11. Median 6, modus 5, rata-rata 35/5=7. Memenuhi.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9bf6e705abe8b5ada1842e3a2116dd38dd260369f3b1974bab0cf00ec70fbf9b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8d9a6f901fb39efa502de5d59cdf12b285cf10d35e33c37eb1c440c94ce12a1b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2697 |
+
+Run 1 — solusi: Misalkan data terurut adalah x1, x2, x3, x4, x5. Syarat: (1) Median x3 = 6. (2) Modus 5, maka x1=5 dan x2=5. (3) Rata-rata 7, maka total = 5 * 7 = 35. x1+x2+x3+x4+x5 = 5+5+6+x4+x5 = 16+x4+x5 = 35, sehingga x4+x5 = 19. Opsi A: 5, 5, 6, 8, 11. Median 6, modus 5, rata-rata 35/5=7. Memenuhi.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan definisi rata-rata, median, dan modus secara simultan untuk memverifikasi opsi yang diberikan. Ini adalah penerapan konsep pada konteks rutin.. Bukti: Sebuah kumpulan lima data harus memiliki rata-rata 7, median 6, dan modus 5.
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang hubungan dan prinsip dasar statistik (pemusatan data) yang merupakan konsep fundamental.. Bukti: rata-rata 7, median 6, dan modus 5
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus mengintegrasikan tiga syarat (rata-rata, median, modus) secara bersamaan untuk setiap opsi. Meskipun prosedurnya familiar, terdapat beberapa langkah pengecekan yang saling terkait dan kendala yang harus dipenuhi secara simultan.. Bukti: Sebuah kumpulan lima data harus memiliki rata-rata 7, median 6, dan modus 5.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi rata-rata, median, dan modus untuk data tunggal. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 3 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu memverifikasi data terhadap syarat statistik dasar. Memeriksa tiga syarat sekaligus memberikan beban kognitif yang sesuai untuk tingkat Medium. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69657,9 +71048,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 785. Soal `2b3cb38dfef6982c79c51c92`
@@ -69673,27 +71064,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | Rata-rata keduanya 74, tetapi median Q (75) lebih tinggi daripada median P (70) |
 | D | Rata-rata keduanya 74, tetapi median P (75) lebih tinggi daripada median Q (70) |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Kelompok P: Data terurut {60, 70, 70, 80, 90}. Rata-rata = (60+70+70+80+90)/5 = 370/5 = 74. Median = 70. Kelompok Q: Data terurut {50, 70, 75, 80, 95}. Rata-rata = (50+70+75+80+95)/5 = 370/5 = 74. Median = 75. Karena 75 > 70, maka median Q lebih tinggi daripada median P.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `906bd3e9ff412784b7b51fa25a70fcb0b43207e27231e7a1e12c2d5b6137eaaf`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `141fe6203bff9be71b6bbe13f081ed2c24016b5538c7d3716994940bc71070a6`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2794 |
+
+Run 1 — solusi: Kelompok P: Data terurut {60, 70, 70, 80, 90}. Rata-rata = (60+70+70+80+90)/5 = 370/5 = 74. Median = 70. Kelompok Q: Data terurut {50, 70, 75, 80, 95}. Rata-rata = (50+70+75+80+95)/5 = 370/5 = 74. Median = 75. Karena 75 > 70, maka median Q lebih tinggi daripada median P.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menghitung rata-rata dan median dari dua set data yang berbeda, kemudian membandingkan hasilnya. Ini adalah penerapan langsung dari prosedur statistik dasar yang dipelajari di kelas 8.. Bukti: Tabel di atas menunjukkan nilai lima siswa kelompok P dan lima siswa kelompok Q.; Pernyataan yang benar adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung rata-rata dan median, serta pengetahuan konseptual tentang bagaimana nilai-nilai tersebut merepresentasikan pusat data.. Bukti: Rata-rata Q 75 lebih tinggi daripada rata-rata P 70; median Q (75) lebih tinggi daripada median P (70)
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena melibatkan prosedur standar (menghitung rata-rata dan median) pada set data kecil (5 data per kelompok). Langkah-langkahnya rutin, jelas, dan tidak memerlukan strategi kompleks atau integrasi konsep yang sulit.. Bukti: Tabel di atas menunjukkan nilai lima siswa kelompok P dan lima siswa kelompok Q.; Pernyataan yang benar adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rata-rata (mean) dan median, serta kemampuan mengurutkan data. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 10 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung rata-rata dan median dari data tunggal dengan jumlah kecil secara rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69733,9 +71146,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 786. Soal `60abeae160a46b6ce157d100`
@@ -69749,27 +71162,49 @@ Data nilai: 6, 8, 8, 10, 13. Setiap nilai dikalikan 2 lalu dikurangi 3. Pernyata
 | C | rata-rata 9, median 13, dan modus 13 |
 | D | rata-rata 18, median 16, dan modus 16 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data awal: 6, 8, 8, 10, 13. Rata-rata awal = (6+8+8+10+13)/5 = 45/5 = 9. Median awal = 8. Modus awal = 8. Transformasi linear y = 2x - 3 berlaku untuk semua ukuran pemusatan. Rata-rata baru = 2(9) - 3 = 15. Median baru = 2(8) - 3 = 13. Modus baru = 2(8) - 3 = 13.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ddc8f56fe938b9f061e7d4cc67ac9e29664675d83d845d84fb175fcd0688d719`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5d41af53ea1d2257afa0317bc0096380e30cad9320f351d2215e0e9add869109`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2665 |
+
+Run 1 — solusi: Data awal: 6, 8, 8, 10, 13. Rata-rata awal = (6+8+8+10+13)/5 = 45/5 = 9. Median awal = 8. Modus awal = 8. Transformasi linear y = 2x - 3 berlaku untuk semua ukuran pemusatan. Rata-rata baru = 2(9) - 3 = 15. Median baru = 2(8) - 3 = 13. Modus baru = 2(8) - 3 = 13.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan sifat transformasi linear pada ukuran pemusatan data (rata-rata, median, modus). Ini adalah penerapan prosedur yang sudah dipelajari dalam konteks rutin.. Bukti: Setiap nilai dikalikan 2 lalu dikurangi 3; Pernyataan yang benar mengenai data baru adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa menggunakan pemahaman tentang bagaimana operasi aritmatika pada data memengaruhi ukuran pemusatan (konsep transformasi linear pada statistik).. Bukti: Setiap nilai dikalikan 2 lalu dikurangi 3
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 8 yang telah mempelajari statistik. Langkah penyelesaiannya jelas: menghitung ukuran awal lalu menerapkan transformasi, atau langsung menerapkan transformasi pada ukuran awal. Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: Setiap nilai dikalikan 2 lalu dikurangi 3
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rata-rata, median, modus, dan operasi aritmatika dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengoperasikan data statistik sederhana dan memahami sifat transformasi linear pada ukuran pemusatan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69801,9 +71236,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 787. Soal `10e23abb86c646f8360024ba`
@@ -69817,27 +71252,49 @@ Lima nilai ulangan Lia adalah 60, 70, 75, 80, dan 90. Nilai ulangan keenam yang 
 | C | 77 |
 | D | 82 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data awal: 60, 70, 75, 80, 90. Setelah ditambah nilai x, data diurutkan. Median data genap (6 nilai) adalah rata-rata data ke-3 dan ke-4. Agar median 76, maka (data ke-3 + data ke-4)/2 = 76. Jika x di antara 75 dan 80, urutan menjadi 60, 70, 75, x, 80, 90. Data ke-3 adalah 75, data ke-4 adalah x. Maka (75 + x)/2 = 76, sehingga 75 + x = 152, x = 77.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9331c0ae8118576fcbcf876a1b413420f5368e9b5ef185c626974d9f1083c488`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `67c72994aad5a587d1139e36455b11e7ef0624c74b0c7debfed62004bfb3ae43`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2692 |
+
+Run 1 — solusi: Data awal: 60, 70, 75, 80, 90. Setelah ditambah nilai x, data diurutkan. Median data genap (6 nilai) adalah rata-rata data ke-3 dan ke-4. Agar median 76, maka (data ke-3 + data ke-4)/2 = 76. Jika x di antara 75 dan 80, urutan menjadi 60, 70, 75, x, 80, 90. Data ke-3 adalah 75, data ke-4 adalah x. Maka (75 + x)/2 = 76, sehingga 75 + x = 152, x = 77.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep median untuk data genap dan melakukan analisis posisi nilai baru dalam urutan data untuk menentukan persamaan yang tepat.. Bukti: Nilai ulangan keenam yang membuat median keenam nilai tepat 76 adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang median data genap dan prosedur aljabar untuk mencari nilai yang tidak diketahui.. Bukti: median keenam nilai tepat 76
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman tentang bagaimana penambahan data memengaruhi posisi median. Siswa harus menguji asumsi posisi nilai baru (di antara 75 dan 80) agar median menjadi rata-rata dua nilai tengah. Ini adalah langkah yang saling terkait namun prosedurnya familiar bagi siswa kelas 8.. Bukti: Nilai ulangan keenam yang membuat median keenam nilai tepat 76 adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep median, pengurutan data, dan rata-rata dua bilangan. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengelola data statistik sederhana. Menentukan nilai yang hilang untuk mencapai median tertentu adalah tugas standar namun memerlukan ketelitian dalam menempatkan nilai baru dalam urutan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69869,9 +71326,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 788. Soal `147e0a991e9b2338232d2c8d`
@@ -69885,27 +71342,49 @@ Data: 9, 6, 11, 9, 5, 7, 9, 8, 10, 6. Pernyataan yang benar tentang ukuran pemus
 | C | rata-rata lebih kecil daripada median, dan median lebih kecil daripada modus |
 | D | modus lebih kecil daripada rata-rata, dan rata-rata lebih kecil daripada median |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data terurut: 5, 6, 6, 7, 8, 9, 9, 9, 10, 11. Jumlah data = 80, n = 10. Rata-rata = 80/10 = 8. Median = (data ke-5 + data ke-6)/2 = (8+9)/2 = 8,5. Modus = 9 (muncul 3 kali). Perbandingan: 8 < 8,5 < 9 (rata-rata < median < modus).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `11c4e913484e33cd54848e82380e6ac8ede6b511a9aebfc2ef3db065d683c5be`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `594c37c0a5e4d076b777f3a200a20833e830e057a1feab1e69d59eee5f8a6e1f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2644 |
+
+Run 1 — solusi: Data terurut: 5, 6, 6, 7, 8, 9, 9, 9, 10, 11. Jumlah data = 80, n = 10. Rata-rata = 80/10 = 8. Median = (data ke-5 + data ke-6)/2 = (8+9)/2 = 8,5. Modus = 9 (muncul 3 kali). Perbandingan: 8 < 8,5 < 9 (rata-rata < median < modus).
+- Domain kognitif `classify/applying`: Siswa perlu menghitung rata-rata, median, dan modus dari sekumpulan data yang diberikan, kemudian membandingkan ketiga nilai tersebut untuk menentukan pernyataan yang benar. Ini adalah prosedur standar dalam statistika dasar.. Bukti: Pernyataan yang benar tentang ukuran pemusatan data tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme perhitungan rata-rata, median, dan modus (prosedural) serta konsep ukuran pemusatan data (konseptual).. Bukti: ukuran pemusatan data
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 8. Langkah-langkahnya jelas: mengurutkan data, menghitung rata-rata, mencari median, dan menentukan modus. Tidak ada kendala yang saling berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Data: 9, 6, 11, 9, 5, 7, 9, 8, 10, 6
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rata-rata, median, dan modus. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 10 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Perhitungan statistik dasar seperti ini merupakan materi standar kelas 8 yang bersifat prosedural langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -69937,9 +71416,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 789. Soal `e46364e2ec2d00cf4ded0063`
@@ -69953,27 +71432,49 @@ Seorang ketua kelas mencatat warna kaus olahraga favorit 30 siswa, yaitu merah, 
 | C | modus |
 | D | rata-rata dan median sekaligus |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data warna adalah data kategorikal (nominal). Ukuran pemusatan yang tepat untuk data kategorikal adalah modus, yaitu nilai yang paling sering muncul (frekuensi terbanyak). Median dan rata-rata memerlukan data numerik yang dapat diurutkan atau dijumlahkan, sehingga tidak dapat digunakan untuk data warna.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b3bf78e856781bd7b0a284700f8c53075771f4c9e818123569b10f4e8cf8446f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a4c8ecce840d6e05d52bc3ebd34a1caf83c4385fe80d8259e26245d6feac26a8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2578 |
+
+Run 1 — solusi: Data warna adalah data kategorikal (nominal). Ukuran pemusatan yang tepat untuk data kategorikal adalah modus, yaitu nilai yang paling sering muncul (frekuensi terbanyak). Median dan rata-rata memerlukan data numerik yang dapat diurutkan atau dijumlahkan, sehingga tidak dapat digunakan untuk data warna.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk memilih ukuran pemusatan data yang tepat berdasarkan jenis data (kategorikal). Siswa perlu memahami definisi dan syarat penggunaan modus, median, dan rata-rata. Ini termasuk dalam domain applying karena siswa menerapkan konsep statistik pada konteks data kategorikal.. Bukti: Ukuran pemusatan yang bermakna untuk menyimpulkan warna yang paling diminati adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami hubungan antara jenis data (kategorikal/nominal) dengan ukuran pemusatan yang sesuai (modus). Ini melibatkan pemahaman prinsip statistik dasar, sehingga dikategorikan sebagai pengetahuan konseptual.. Bukti: warna kaus olahraga favorit 30 siswa; Ukuran pemusatan yang bermakna
+- Intended difficulty `classify/Easy`: Soal ini bersifat konseptual dan langsung. Siswa hanya perlu mengidentifikasi bahwa data warna tidak bisa dihitung rata-ratanya atau diurutkan untuk median. Tidak ada perhitungan kompleks atau langkah yang saling bergantung. Ini adalah penerapan konsep dasar yang familiar bagi siswa kelas 8.. Bukti: warna kaus olahraga favorit 30 siswa; Ukuran pemusatan yang bermakna
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jenis data (kategorikal vs numerik) dan definisi modus, median, serta rata-rata. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan sudah memahami perbedaan antara data kategorikal dan numerik dalam materi statistika dasar. Soal ini menguji pemahaman teoretis tanpa beban komputasi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70005,9 +71506,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 790. Soal `feeaa2f9bd8112ee348ea3d1`
@@ -70021,27 +71522,49 @@ Rata-rata nilai kelompok P adalah 62 dan rata-rata nilai kelompok Q adalah 78. B
 | C | tepat 70 |
 | D | dapat lebih besar dari 78 jika kelompok Q lebih sedikit |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Rata-rata gabungan (x_gab) adalah rata-rata tertimbang: x_gab = (n_P * 62 + n_Q * 78) / (n_P + n_Q). Karena n_P, n_Q > 0, maka 62 < x_gab < 78. Nilai gabungan tidak mungkin sama dengan salah satu rata-rata kelompok (karena n berbeda) dan tidak mungkin di luar rentang tersebut.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2b96619d2a8c49d1196b2e9cb26777a5c8baba2a20b025156a021f4913d09d45`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0a4acee28c6255cfdede99fd7301e1d6c84ec276868e2ddd4fcb747804f3a904`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 2713 |
+
+Run 1 — solusi: Rata-rata gabungan (x_gab) adalah rata-rata tertimbang: x_gab = (n_P * 62 + n_Q * 78) / (n_P + n_Q). Karena n_P, n_Q > 0, maka 62 < x_gab < 78. Nilai gabungan tidak mungkin sama dengan salah satu rata-rata kelompok (karena n berbeda) dan tidak mungkin di luar rentang tersebut.
+- Domain kognitif `classify/reasoning`: Soal ini menuntut pemahaman konseptual tentang sifat rata-rata gabungan sebagai rata-rata tertimbang. Siswa harus memahami bahwa rata-rata gabungan selalu berada di antara nilai rata-rata kedua kelompok yang digabungkan, tidak bisa sama dengan salah satu (jika jumlah anggota berbeda) atau di luar rentang tersebut.. Bukti: Rata-rata nilai kelompok P adalah 62 dan rata-rata nilai kelompok Q adalah 78.; Pernyataan yang pasti benar tentang rata-rata nilai gabungan kedua kelompok adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip rata-rata tertimbang (konsep) untuk menentukan rentang nilai yang mungkin bagi rata-rata gabungan, bukan sekadar menghitung angka.. Bukti: rata-rata nilai gabungan kedua kelompok
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena menuntut pemahaman konseptual tentang rata-rata tertimbang tanpa memberikan angka jumlah anggota. Siswa harus melakukan penalaran logis mengenai rentang nilai rata-rata gabungan. Meskipun prosedurnya tidak rumit, pemilihan jawaban yang benar memerlukan pemahaman mendalam tentang sifat rata-rata, bukan sekadar kalkulasi.. Bukti: Banyak anggota kedua kelompok berbeda dan tidak diketahui.; Pernyataan yang pasti benar tentang rata-rata nilai gabungan kedua kelompok adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rata-rata (mean) dan konsep rata-rata tertimbang. |
+| dependentSteps | 2 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan memahami konsep rata-rata. Soal ini menguji pemahaman konseptual di atas sekadar menghitung rata-rata, yang sesuai dengan tingkat kesulitan menengah untuk jenjang SMP. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70073,9 +71596,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 791. Soal `4ac2354e1d58ff2f0073cac2`
@@ -70089,27 +71612,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | 9 |
 | D | 8 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Frekuensi awal nilai 6 adalah 8 dan nilai 7 adalah 5. Misalkan k adalah jumlah siswa baru bernilai 7. Frekuensi nilai 7 menjadi 5 + k. Agar modus menjadi 7 saja, maka frekuensi nilai 7 harus lebih besar dari frekuensi nilai 6 (8). Jadi, 5 + k > 8, yang berarti k > 3. Nilai bulat terkecil k adalah 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6214538eba474503d6efe35ba60e57d793c3ccfaa4930181262343d93f866b53`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `194e9b4136dbdfa1c25ced1a125bc52c7f2ec2800b6ef7a5116add92cbf9841f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2608 |
+
+Run 1 — solusi: Frekuensi awal nilai 6 adalah 8 dan nilai 7 adalah 5. Misalkan k adalah jumlah siswa baru bernilai 7. Frekuensi nilai 7 menjadi 5 + k. Agar modus menjadi 7 saja, maka frekuensi nilai 7 harus lebih besar dari frekuensi nilai 6 (8). Jadi, 5 + k > 8, yang berarti k > 3. Nilai bulat terkecil k adalah 4.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep modus (nilai dengan frekuensi terbanyak) dan membandingkan frekuensi setelah penambahan data untuk memenuhi kondisi yang diberikan. Ini melibatkan penerapan konsep pada situasi baru yang memerlukan penalaran sederhana.. Bukti: Beberapa siswa baru bernilai 7 ditambahkan. Banyak siswa baru paling sedikit agar modus data menjadi 7 saja adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang modus dalam data berkelompok/tabel frekuensi dan bagaimana perubahan frekuensi memengaruhi modus.. Bukti: Tabel di atas menunjukkan nilai 20 siswa dengan modus 6. Beberapa siswa baru bernilai 7 ditambahkan.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan analisis perbandingan frekuensi (5+k > 8) dan memahami syarat 'modus tunggal'. Meskipun prosedurnya sederhana, siswa perlu merencanakan langkah untuk memastikan kondisi 'modus 7 saja' terpenuhi, bukan sekadar menghitung.. Bukti: Banyak siswa baru paling sedikit agar modus data menjadi 7 saja adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang modus dan perbandingan bilangan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menganalisis perubahan data pada tabel frekuensi sederhana untuk menentukan nilai modus. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70148,9 +71693,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 792. Soal `0dafd5e8dc4c7b7f35c21dee`
@@ -70164,27 +71709,49 @@ Rata-rata nilai 12 siswa semula dicatat 73. Setelah diperiksa, nilai Andi yang s
 | C | 71,5 |
 | D | 74,5 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Jumlah nilai awal = 12 * 73 = 876. Koreksi nilai: Andi (85 -> 58, selisih -27), Beni (49 -> 94, selisih +45). Total perubahan = -27 + 45 = +18. Jumlah nilai benar = 876 + 18 = 894. Rata-rata benar = 894 / 12 = 74,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1d70720e57c648afaf65946652c9daf2256606afe182be4549bd5b0db1211394`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7b85cfebae950eb9315e581e07ad7fa5083b964e2334e16c4ef94da8396ce832`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2735 |
+
+Run 1 — solusi: Jumlah nilai awal = 12 * 73 = 876. Koreksi nilai: Andi (85 -> 58, selisih -27), Beni (49 -> 94, selisih +45). Total perubahan = -27 + 45 = +18. Jumlah nilai benar = 876 + 18 = 894. Rata-rata benar = 894 / 12 = 74,5.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep rata-rata dan bagaimana perubahan nilai data memengaruhi total jumlah data, kemudian menerapkan prosedur aritmetika untuk mengoreksi rata-rata tersebut. Ini adalah penerapan konsep rata-rata pada konteks rutin.. Bukti: Rata-rata nilai 12 siswa semula dicatat 73.; Setelah diperiksa, nilai Andi yang seharusnya 58 tertulis 85, dan nilai Beni yang seharusnya 94 tertulis 49.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung rata-rata dan mengoreksi data yang salah dalam kumpulan data.. Bukti: Rata-rata nilai 12 siswa semula dicatat 73.; Rata-rata nilai yang benar adalah ....
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena melibatkan beberapa langkah yang saling terkait (menghitung total awal, menghitung selisih koreksi, memperbarui total, dan menghitung rata-rata baru). Meskipun prosedurnya familiar, siswa harus teliti dalam mengelola dua koreksi nilai yang berbeda arah (satu berkurang, satu bertambah) agar tidak terjadi kesalahan tanda.. Bukti: Rata-rata nilai 12 siswa semula dicatat 73.; nilai Andi yang seharusnya 58 tertulis 85, dan nilai Beni yang seharusnya 94 tertulis 49.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep rata-rata (mean) dan operasi aritmetika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari rata-rata. Soal ini menuntut ketelitian dalam mengoreksi data, yang merupakan variasi rutin dari perhitungan rata-rata. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70216,9 +71783,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 793. Soal `981d5f6c072069810bfb1d06`
@@ -70232,27 +71799,49 @@ Empat nilai ulangan Tia adalah 60, 70, 85, dan 90. Nilai ulangan kelima $x$ adal
 | C | 26 |
 | D | 11 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Data: 60, 70, 85, 90, x. Urutan data (asumsi x): 60, 70, x, 85, 90 (jika 70 <= x <= 85). Median adalah x. Syarat median >= 80, maka x >= 80. Jika x > 85, median 85 (memenuhi). Jika x < 70, median 70 (tidak memenuhi). Jadi x >= 80. Syarat rata-rata <= 80: (60+70+85+90+x)/5 <= 80 => 305+x <= 400 => x <= 95. Irisan: 80 <= x <= 95. Banyak nilai x = 95 - 80 + 1 = 16.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0d74b34d224c34516e685b550cff2ccb1ea2d1ae89a59d86179ea769c6315aa6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `74d8c63ca4b348ed5221b79f5f94af4b8fcc80fd3e462b1e5ee5f5b9ec86507b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 2884 |
+
+Run 1 — solusi: Data: 60, 70, 85, 90, x. Urutan data (asumsi x): 60, 70, x, 85, 90 (jika 70 <= x <= 85). Median adalah x. Syarat median >= 80, maka x >= 80. Jika x > 85, median 85 (memenuhi). Jika x < 70, median 70 (tidak memenuhi). Jadi x >= 80. Syarat rata-rata <= 80: (60+70+85+90+x)/5 <= 80 => 305+x <= 400 => x <= 95. Irisan: 80 <= x <= 95. Banyak nilai x = 95 - 80 + 1 = 16.
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan dua syarat (median dan rata-rata) yang saling membatasi nilai x. Ini melibatkan pemahaman konsep median pada data ganjil dan rata-rata, serta kemampuan memecahkan pertidaksamaan sederhana untuk menentukan rentang nilai yang memenuhi kedua kondisi tersebut.. Bukti: Agar median kelima nilai paling sedikit 80; rata-rata kelima nilai paling tinggi 80
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman konseptual tentang bagaimana median dan rata-rata berubah terhadap nilai data baru, serta prosedur untuk menentukan irisan dari dua batasan yang diberikan.. Bukti: median kelima nilai paling sedikit 80; rata-rata kelima nilai paling tinggi 80
+- Intended difficulty `classify/Medium`: Soal ini memerlukan perencanaan langkah: menentukan syarat median, menentukan syarat rata-rata, lalu mencari irisan kedua rentang tersebut. Siswa harus menguji posisi x dalam urutan data untuk median. Ini melibatkan beberapa langkah saling terkait dan kendala yang berinteraksi, namun prosedurnya masih dalam jangkauan kelas 8.. Bukti: median kelima nilai paling sedikit 80; rata-rata kelima nilai paling tinggi 80; banyak nilai x yang mungkin
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar median, rata-rata, dan pertidaksamaan linear satu variabel. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari rata-rata dan median. Tantangan utama adalah mengintegrasikan dua batasan (median dan rata-rata) untuk menemukan rentang nilai x yang valid, yang merupakan penerapan konsep yang sedikit lebih kompleks daripada sekadar menghitung nilai tunggal. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70284,9 +71873,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 794. Soal `3ef8ca75e9b068afe2a8aa83`
@@ -70300,27 +71889,49 @@ Rata-rata berat badan 14 anak adalah 48 kg. Jika berat badan Tito dimasukkan dal
 | C | 66 |
 | D | 18 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Total berat 14 anak = 14 * 48 = 672 kg. Total berat 15 anak (termasuk Tito) = 15 * 49,2 = 738 kg. Berat Tito = 738 - 672 = 66 kg.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0b7c130a32181b453f5636e126ff8fe0a81d7e65fafbf10f307eb77d16728578`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ece2a5d221f852a21df22270f415a0cc515b68b16a73f6778cbe88c689882d49`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2690 |
+
+Run 1 — solusi: Total berat 14 anak = 14 * 48 = 672 kg. Total berat 15 anak (termasuk Tito) = 15 * 49,2 = 738 kg. Berat Tito = 738 - 672 = 66 kg.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rata-rata untuk mencari total nilai dari data yang ada, kemudian mencari selisih antara dua kondisi (sebelum dan sesudah penambahan data). Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Rata-rata berat badan 14 anak adalah 48 kg; rata-ratanya menjadi 49,2 kg; Berat badan Tito adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana rata-rata dihitung dan bagaimana memanipulasi total data untuk menemukan nilai yang hilang.. Bukti: Rata-rata berat badan 14 anak adalah 48 kg; rata-ratanya menjadi 49,2 kg
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedurnya sangat standar dan familiar bagi siswa kelas 8. Jalur penyelesaiannya jelas: hitung total awal, hitung total baru, lalu cari selisihnya. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Rata-rata berat badan 14 anak adalah 48 kg; rata-ratanya menjadi 49,2 kg
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar rata-rata (mean) dan operasi perkalian bilangan desimal. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah terbiasa dengan soal rata-rata gabungan atau penambahan data. Prosedur perkalian dan pengurangan yang diperlukan berada dalam jangkauan kemampuan siswa tanpa kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70352,9 +71963,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 795. Soal `281335ccd6e69b3822079035`
@@ -70368,27 +71979,49 @@ Rata-rata nilai ulangan 7 siswa adalah 72. Setelah nilai Rani dimasukkan, rata-r
 | C | 16 |
 | D | 88 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Total nilai 7 siswa = 7 * 72 = 504. Total nilai 8 siswa = 8 * 74 = 592. Nilai Rani = 592 - 504 = 88.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e9c2052266444f071ca5c89b31415a97ce3b810f08c174e6c17532bb10b182a4`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f9e82ddf495650865213842287fd72e041d870315c026c98591e3417d7e74cd9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2599 |
+
+Run 1 — solusi: Total nilai 7 siswa = 7 * 72 = 504. Total nilai 8 siswa = 8 * 74 = 592. Nilai Rani = 592 - 504 = 88.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rata-rata untuk mencari total nilai sebelum dan sesudah penambahan data, kemudian menghitung selisihnya. Ini adalah penerapan prosedur yang rutin bagi siswa kelas 8.. Bukti: Rata-rata nilai ulangan 7 siswa adalah 72.; Setelah nilai Rani dimasukkan, rata-rata nilai 8 siswa menjadi 74.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan rata-rata (mean) dan hubungan antara rata-rata dengan jumlah total data.. Bukti: Rata-rata nilai ulangan 7 siswa adalah 72.; Setelah nilai Rani dimasukkan, rata-rata nilai 8 siswa menjadi 74.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah penyelesaian yang jelas (mencari dua total nilai dan selisihnya). Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: Rata-rata nilai ulangan 7 siswa adalah 72.; Setelah nilai Rani dimasukkan, rata-rata nilai 8 siswa menjadi 74.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar rata-rata (mean) dan operasi perkalian/pengurangan bilangan bulat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah terbiasa dengan soal rata-rata gabungan atau penambahan data. Prosedur penyelesaian sangat langsung dan tidak memerlukan perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70420,9 +72053,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 796. Soal `2bbc703419aebea6a1a48a46`
@@ -70436,27 +72069,49 @@ Rata-rata nilai 15 siswa adalah 70. Setelah ditambah 5 siswa baru, rata-rata nil
 | C | 90 |
 | D | 22,5 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Total nilai 15 siswa = 15 * 70 = 1050. Total nilai 20 siswa = 20 * 75 = 1500. Total nilai 5 siswa baru = 1500 - 1050 = 450. Rata-rata 5 siswa baru = 450 / 5 = 90.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `eca97feeed99c59036a34ca47416220e1091d8f41b4499f1e3e0b11dfdb6ed2e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0d1779558b52ba296b84d3d7aa187b98ebfa279fc3afc7f40cab6c487dfdf857`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2725 |
+
+Run 1 — solusi: Total nilai 15 siswa = 15 * 70 = 1050. Total nilai 20 siswa = 20 * 75 = 1500. Total nilai 5 siswa baru = 1500 - 1050 = 450. Rata-rata 5 siswa baru = 450 / 5 = 90.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rata-rata gabungan dengan memanipulasi total nilai (jumlah data) untuk menemukan nilai rata-rata kelompok baru. Ini adalah penerapan prosedur standar rata-rata dalam konteks yang sedikit dimodifikasi.. Bukti: Rata-rata nilai 15 siswa adalah 70.; Setelah ditambah 5 siswa baru, rata-rata nilai seluruh siswa menjadi 75.; Rata-rata nilai 5 siswa baru tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana rata-rata dihitung dan bagaimana hubungan antara jumlah data, rata-rata, dan total nilai bekerja.. Bukti: Rata-rata nilai 15 siswa adalah 70.; Setelah ditambah 5 siswa baru, rata-rata nilai seluruh siswa menjadi 75.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah logis yang saling terkait (menghitung total awal, total akhir, selisih, lalu rata-rata baru) tanpa bantuan langkah eksplisit. Siswa harus memahami hubungan antara rata-rata dan total nilai, yang merupakan konsep rutin namun memerlukan perencanaan langkah yang tepat.. Bukti: Rata-rata nilai 15 siswa adalah 70.; Setelah ditambah 5 siswa baru, rata-rata nilai seluruh siswa menjadi 75.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar rata-rata (mean) dan operasi hitung dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah familiar dengan konsep rata-rata. Soal ini menuntut pemahaman hubungan total nilai dan rata-rata, yang merupakan standar kompetensi kelas 8, namun memerlukan ketelitian dalam urutan langkah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70488,9 +72143,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 797. Soal `76e55f652a5a78426fee30a2`
@@ -70504,27 +72159,49 @@ Rata-rata berat badan 8 atlet adalah 60 kg. Setelah 4 atlet pemula bergabung, ra
 | C | 16 |
 | D | 48 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Total berat 8 atlet = 8 * 60 = 480 kg. Total berat 12 atlet = 12 * 56 = 672 kg. Total berat 4 atlet pemula = 672 - 480 = 192 kg. Rata-rata 4 atlet pemula = 192 / 4 = 48 kg.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `eae49230f87d07fbe494e589732c5143657a02997e18e1c4c89d8efb786c3d30`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `973a000de5d0555f5b998d703a81aededc6338c602cae15805e1d77a7b6eac37`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2706 |
+
+Run 1 — solusi: Total berat 8 atlet = 8 * 60 = 480 kg. Total berat 12 atlet = 12 * 56 = 672 kg. Total berat 4 atlet pemula = 672 - 480 = 192 kg. Rata-rata 4 atlet pemula = 192 / 4 = 48 kg.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rata-rata gabungan dengan memanipulasi total data (jumlah berat badan) untuk menemukan nilai rata-rata kelompok baru. Ini adalah penerapan prosedur rata-rata pada konteks rutin.. Bukti: Rata-rata berat badan 8 atlet adalah 60 kg.; Setelah 4 atlet pemula bergabung, rata-rata berat badan seluruh atlet menjadi 56 kg.; Rata-rata berat badan 4 atlet pemula adalah ... kg.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritme rata-rata (mean) dan hubungan antara jumlah data, rata-rata, dan total nilai (total = rata-rata * n).. Bukti: Rata-rata berat badan 8 atlet adalah 60 kg.; Setelah 4 atlet pemula bergabung, rata-rata berat badan seluruh atlet menjadi 56 kg.
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman hubungan rata-rata dan total. Siswa harus melakukan dua perhitungan total dan satu pengurangan sebelum menghitung rata-rata akhir. Langkah-langkahnya rutin dan jelas bagi siswa kelas 8.. Bukti: Rata-rata berat badan 8 atlet adalah 60 kg.; Setelah 4 atlet pemula bergabung, rata-rata berat badan seluruh atlet menjadi 56 kg.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep rata-rata (mean) dan operasi hitung dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah variasi standar dari masalah rata-rata gabungan yang umum di kelas 8. Tingkat kesulitan Medium diberikan karena memerlukan beberapa langkah berurutan (menghitung total awal, total akhir, selisih, lalu rata-rata baru) tanpa bantuan langkah eksplisit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70556,9 +72233,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 798. Soal `8ad912ab8ce8dca8c341096f`
@@ -70572,27 +72249,49 @@ Sembilan karyawan sebuah toko memiliki gaji per bulan. Empat orang bergaji Rp3.2
 | C | Rp3.000.000,00 |
 | D | Rp11.600.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Total gaji 9 karyawan = 9 * 3.000.000 = 27.000.000. Total gaji 8 karyawan yang diketahui = (4 * 3.200.000) + (4 * 2.600.000) = 12.800.000 + 10.400.000 = 23.200.000. Gaji karyawan ke-9 = 27.000.000 - 23.200.000 = 3.800.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e63968488737c28b0b7100bc2058c6bb624bf549e24e7d4a471d1d0bd5ba5b41`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7359362acadcc327c8cda820844ebfd83b273ab138fef4c9b18b2b1b2124bb23`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2817 |
+
+Run 1 — solusi: Total gaji 9 karyawan = 9 * 3.000.000 = 27.000.000. Total gaji 8 karyawan yang diketahui = (4 * 3.200.000) + (4 * 2.600.000) = 12.800.000 + 10.400.000 = 23.200.000. Gaji karyawan ke-9 = 27.000.000 - 23.200.000 = 3.800.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rata-rata (mean) untuk mencari nilai data yang hilang. Prosedur ini rutin dan langsung, melibatkan pemahaman hubungan antara rata-rata, jumlah data, dan total nilai.. Bukti: Jika rata-rata gaji 9 karyawan tersebut adalah Rp3.000.000,00, gaji karyawan yang belum diketahui adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang cara menghitung nilai yang hilang dalam sekumpulan data menggunakan rumus rata-rata.. Bukti: rata-rata gaji 9 karyawan tersebut adalah Rp3.000.000,00
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena menggunakan prosedur standar yang familiar bagi siswa kelas 8. Langkah-langkah penyelesaiannya jelas (menghitung total, menghitung jumlah yang diketahui, mencari selisih) tanpa kendala yang saling berinteraksi atau kebutuhan strategi non-rutin.. Bukti: Empat orang bergaji Rp3.200.000,00, empat orang bergaji Rp2.600.000,00, dan satu orang lagi belum diketahui gajinya.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep rata-rata (mean) dan operasi hitung dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah terbiasa dengan perhitungan rata-rata sederhana. Soal ini tidak memerlukan perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70624,9 +72323,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 799. Soal `4a0fe8554181bae7b4c4580d`
@@ -70640,27 +72339,49 @@ Tujuh pekerja kebun menerima upah harian. Dua orang menerima Rp80.000,00, empat 
 | C | Rp495.000,00 |
 | D | Rp50.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Total upah 7 pekerja = 7 * 95.000 = 665.000. Total upah 6 pekerja yang diketahui = (2 * 80.000) + (4 * 90.000) = 160.000 + 360.000 = 520.000. Upah pekerja ke-7 = 665.000 - 520.000 = 145.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7004cd80eeb67784947ba35dad4e02110bedc93f9746cb61e548872b414b1c3e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fbdbbc03bdfeabe3b5773884cd5814be1bdd7324b948fe0b9aeda6842cb59382`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2780 |
+
+Run 1 — solusi: Total upah 7 pekerja = 7 * 95.000 = 665.000. Total upah 6 pekerja yang diketahui = (2 * 80.000) + (4 * 90.000) = 160.000 + 360.000 = 520.000. Upah pekerja ke-7 = 665.000 - 520.000 = 145.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rata-rata (mean) untuk mencari nilai yang belum diketahui dalam sekumpulan data. Ini melibatkan prosedur rutin menghitung total data dari rata-rata dan mengurangkannya dengan jumlah data yang diketahui.. Bukti: Jika rata-rata upah harian 7 pekerja tersebut adalah Rp95.000,00, upah pekerja yang belum diketahui adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung rata-rata gabungan dan memanipulasi rumus rata-rata untuk menemukan nilai yang hilang.. Bukti: rata-rata upah harian 7 pekerja tersebut adalah Rp95.000,00
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait (menghitung total, menjumlahkan data parsial, dan mencari selisih) meskipun prosedurnya familiar bagi siswa kelas 8.. Bukti: Dua orang menerima Rp80.000,00, empat orang menerima Rp90.000,00, dan satu orang lagi belum diketahui upahnya; rata-rata upah harian 7 pekerja tersebut adalah Rp95.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar rata-rata (mean) dan operasi aritmetika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menyelesaikan masalah rata-rata dengan data yang hilang melalui langkah-langkah sistematis. Beban hitung moderat dan alur penyelesaian yang jelas menempatkannya di level Medium. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70692,9 +72413,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 800. Soal `1066b6f57bc06c1d815fe5e0`
@@ -70708,27 +72429,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | Benar; rata-rata kelas P 74 dan kelas Q 75,2 |
 | D | Benar; rata-rata kelas P 74 dan kelas Q 94 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Mean P = ((60*4)+(70*6)+(80*8)+(90*2))/20 = (240+420+640+180)/20 = 1480/20 = 74. Mean Q = ((60*3)+(70*10)+(80*8)+(90*4))/25 = (180+700+640+360)/25 = 1880/25 = 75.2. Since 75.2 > 74, Rudi is correct.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cb12c923bdbeadecf80724c4a6800403673c5eccc3e015c1789cefba00e30b56`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `647a32ce6167597e6c6b518a8d5826cc0460fbc45cc430704b63f46fcefad3d9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2792 |
+
+Run 1 — solusi: Mean P = ((60*4)+(70*6)+(80*8)+(90*2))/20 = (240+420+640+180)/20 = 1480/20 = 74. Mean Q = ((60*3)+(70*10)+(80*8)+(90*4))/25 = (180+700+640+360)/25 = 1880/25 = 75.2. Since 75.2 > 74, Rudi is correct.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menghitung rata-rata dari dua set data yang disajikan dalam tabel frekuensi dan membandingkan hasilnya untuk memverifikasi pernyataan. Ini adalah penerapan prosedur statistik dasar (rata-rata tertimbang) pada konteks data yang diberikan.. Bukti: Rudi mengatakan bahwa rata-rata nilai kelas Q lebih tinggi daripada kelas P; Tabel di atas menunjukkan nilai ulangan kelas P dan kelas Q
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep rata-rata (mean) dan prosedur perhitungan rata-rata data berkelompok/frekuensi, yang merupakan pengetahuan prosedural.. Bukti: rata-rata nilai kelas Q lebih tinggi daripada kelas P
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan perhitungan rata-rata untuk dua kelompok data yang berbeda (dua langkah perhitungan terpisah) dan membandingkannya. Meskipun prosedurnya rutin, siswa harus teliti dalam menjumlahkan frekuensi dan nilai total untuk masing-masing kelas agar tidak terjadi kesalahan perhitungan.. Bukti: Tabel di atas menunjukkan nilai ulangan kelas P dan kelas Q; Rudi mengatakan bahwa rata-rata nilai kelas Q lebih tinggi daripada kelas P
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep rata-rata (mean) dan operasi hitung dasar. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung rata-rata data frekuensi. Beban perhitungan moderat karena melibatkan perkalian dan pembagian bilangan dua digit dengan frekuensi yang berbeda. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70767,9 +72510,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 801. Soal `8b30f04625328cd6c0f714c0`
@@ -70783,27 +72526,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | Salah; median kelas X 75 dan kelas Y 85 |
 | D | Benar; median kedua kelas sama-sama 75 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Total siswa per kelas adalah 20. Median adalah rata-rata data ke-10 dan ke-11. Kelas X: Frekuensi kumulatif 2, 7, 15. Data ke-10 dan ke-11 berada di nilai 75. Kelas Y: Frekuensi kumulatif 1, 4, 9, 17. Data ke-10 dan ke-11 berada di nilai 85. Jadi, median kelas X adalah 75 dan kelas Y adalah 85. Pernyataan Ayu salah.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5460ed1255aa8674af67aef950b2c5558c7c6bd1682f5e89c7976e10a775414b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `27cd4dbf96e58d79af261d545e358dab1806832f38024eff337fa913963b0a35`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2782 |
+
+Run 1 — solusi: Total siswa per kelas adalah 20. Median adalah rata-rata data ke-10 dan ke-11. Kelas X: Frekuensi kumulatif 2, 7, 15. Data ke-10 dan ke-11 berada di nilai 75. Kelas Y: Frekuensi kumulatif 1, 4, 9, 17. Data ke-10 dan ke-11 berada di nilai 85. Jadi, median kelas X adalah 75 dan kelas Y adalah 85. Pernyataan Ayu salah.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur menentukan median dari data berkelompok (tabel frekuensi) untuk memverifikasi pernyataan. Ini melibatkan pemahaman konsep median (nilai tengah) dan prosedur frekuensi kumulatif.. Bukti: Ayu mengatakan bahwa median kelas Y sama dengan median kelas X.; Tabel di atas menunjukkan nilai tes kelas X dan kelas Y, masing-masing 20 siswa.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung median dari tabel distribusi frekuensi sederhana.. Bukti: median kelas Y sama dengan median kelas X; Tabel di atas menunjukkan nilai tes kelas X dan kelas Y
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah terstruktur: menghitung frekuensi kumulatif untuk kedua kelas, mengidentifikasi posisi median (data ke-10 dan ke-11), dan membandingkan hasilnya. Meskipun prosedurnya rutin, siswa harus teliti dalam mengelola dua set data yang berbeda secara bersamaan.. Bukti: median kelas Y sama dengan median kelas X; Tabel di atas menunjukkan nilai tes kelas X dan kelas Y, masing-masing 20 siswa.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep median dan cara membaca tabel frekuensi. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 10 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengolah data statistik sederhana. Soal ini menuntut ketelitian dalam menentukan posisi median pada tabel frekuensi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70843,9 +72608,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 802. Soal `5409ee3cba70a94fca79e5cb`
@@ -70859,27 +72624,49 @@ Rata-rata nilai 20 siswa kelas 8A adalah 72 dan rata-rata nilai 30 siswa kelas 8
 | C | 76 |
 | D | 78 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Rata-rata gabungan = (n1*x1 + n2*x2) / (n1 + n2) = (20*72 + 30*82) / (20 + 30) = (1440 + 2460) / 50 = 3900 / 50 = 78.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `890472e7a003ca8ea7d439e766b554a411cfc032babb72ed012d3cbfb789c4e2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f51beecd104aad998af4e72b11bc9491a11d41823492d632f2bfeaddbfe1f7d3`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2698 |
+
+Run 1 — solusi: Rata-rata gabungan = (n1*x1 + n2*x2) / (n1 + n2) = (20*72 + 30*82) / (20 + 30) = (1440 + 2460) / 50 = 3900 / 50 = 78.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rata-rata gabungan (weighted mean) yang merupakan prosedur rutin dalam materi pemusatan data kelas 8. Tidak diperlukan strategi nonrutin atau justifikasi kompleks.. Bukti: Rata-rata nilai 20 siswa kelas 8A adalah 72 dan rata-rata nilai 30 siswa kelas 8B adalah 82. Rata-rata nilai seluruh siswa kedua kelas adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma rata-rata gabungan, yang termasuk dalam kategori pengetahuan prosedural.. Bukti: Rata-rata nilai 20 siswa kelas 8A adalah 72 dan rata-rata nilai 30 siswa kelas 8B adalah 82.
+- Intended difficulty `classify/Easy`: Soal ini dikategorikan Easy karena merupakan penerapan langsung dari rumus rata-rata gabungan yang umum diajarkan. Jalur penyelesaian sangat jelas, hanya melibatkan operasi perkalian dan penjumlahan dasar, serta tidak ada kendala yang saling berinteraksi.. Bukti: Rata-rata nilai 20 siswa kelas 8A adalah 72 dan rata-rata nilai 30 siswa kelas 8B adalah 82.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep rata-rata (mean) dan operasi hitung dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah latihan standar untuk materi rata-rata gabungan di kelas 8. Tidak ada tuntutan perencanaan tinggi atau integrasi konsep yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70911,9 +72698,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 803. Soal `1ed778671c303867ae580acb`
@@ -70927,27 +72714,49 @@ Nilai empat ulangan Dani adalah 72, 80, 68, dan 76. Nilai minimal ulangan kelima
 | C | 76 |
 | D | 74 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Misalkan nilai kelima adalah x. Rata-rata 5 ulangan minimal 76 berarti (72+80+68+76+x)/5 >= 76. Maka 296 + x >= 380. x >= 380 - 296, sehingga x >= 84.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `29896e5e7283b3ac668a897b320d3aed5dc4a6e720884a57f78a62f18e58eb45`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0e865a0e18f594e5cfbd75994d3034378287350830fe87af443351815d0774fd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2624 |
+
+Run 1 — solusi: Misalkan nilai kelima adalah x. Rata-rata 5 ulangan minimal 76 berarti (72+80+68+76+x)/5 >= 76. Maka 296 + x >= 380. x >= 380 - 296, sehingga x >= 84.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rata-rata (mean) untuk menentukan nilai yang tidak diketahui dalam suatu kumpulan data agar memenuhi syarat ketidaksamaan tertentu. Ini melibatkan pemilihan prosedur yang tepat dan manipulasi aljabar sederhana.. Bukti: Nilai minimal ulangan kelima agar rata-rata kelima ulangan paling sedikit 76 adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung rata-rata dan memanipulasi rumus rata-rata untuk mencari nilai yang hilang.. Bukti: rata-rata kelima ulangan paling sedikit 76
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus memahami hubungan antara rata-rata, jumlah total data, dan nilai yang dicari. Meskipun prosedurnya familiar, siswa perlu merencanakan langkah (menjumlahkan data yang ada, mengalikan rata-rata target dengan jumlah data, lalu mencari selisihnya) tanpa bantuan langkah demi langkah.. Bukti: Nilai minimal ulangan kelima agar rata-rata kelima ulangan paling sedikit 76
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep rata-rata (mean) dan operasi aljabar dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 8, menuntut pemahaman konsep rata-rata yang lebih dari sekadar menghitung rata-rata dari data yang sudah lengkap. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -70979,9 +72788,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 804. Soal `6fbaccd0eb1fec7b1f6d0998`
@@ -70995,27 +72804,49 @@ Data nilai lima siswa: 14, 16, 17, 17, 21. Kemudian ditambahkan satu data baru b
 | C | rata-rata naik menjadi 25, median menjadi 19, dan modus tetap 17 |
 | D | rata-rata naik menjadi 25, median dan modus tetap 17 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data awal: 14, 16, 17, 17, 21 (n=5, sum=85). Data baru: 14, 16, 17, 17, 21, 65 (n=6, sum=150). Rata-rata baru = 150/6 = 25. Data terurut: 14, 16, 17, 17, 21, 65. Median adalah rata-rata dua nilai tengah: (17+17)/2 = 17. Modus adalah nilai yang paling sering muncul: 17. Pernyataan D benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `37c098bb8bd090a8eb929821d9be4ca9a58d902d9592c66e9bc5a83ab80a0585`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `98a4d48252d8376a02cb287f9792bdeb5272f19af1495e724902103de57853d2`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2790 |
+
+Run 1 — solusi: Data awal: 14, 16, 17, 17, 21 (n=5, sum=85). Data baru: 14, 16, 17, 17, 21, 65 (n=6, sum=150). Rata-rata baru = 150/6 = 25. Data terurut: 14, 16, 17, 17, 21, 65. Median adalah rata-rata dua nilai tengah: (17+17)/2 = 17. Modus adalah nilai yang paling sering muncul: 17. Pernyataan D benar.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur perhitungan rata-rata, median, dan modus pada kumpulan data yang berubah. Ini adalah penerapan konsep statistik dasar yang rutin bagi siswa kelas 8.. Bukti: Data nilai lima siswa: 14, 16, 17, 17, 21. Kemudian ditambahkan satu data baru bernilai 65.; Pernyataan yang benar mengenai ukuran pemusatan data setelah penambahan tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme dan kriteria perhitungan ukuran pemusatan data (rata-rata, median, modus).. Bukti: rata-rata, median, dan modus
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan beberapa langkah berurutan (menghitung rata-rata baru, mengurutkan data, menentukan median, menentukan modus) dan ketelitian dalam menangani perubahan jumlah data (n=5 menjadi n=6).. Bukti: Data nilai lima siswa: 14, 16, 17, 17, 21. Kemudian ditambahkan satu data baru bernilai 65.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rata-rata, median, dan modus. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung ukuran pemusatan data. Soal ini menuntut ketelitian dalam langkah-langkah prosedural tanpa memerlukan strategi non-rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71047,9 +72878,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 805. Soal `53b7c883c997088c71e92488`
@@ -71063,27 +72894,49 @@ Data terurut: 4, 8, $x$, 12, 16 dengan $x$ bilangan bulat. Jika rata-rata data s
 | C | 20 |
 | D | 8 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `10`.
+Solusi minimum hasil AI: Data terurut: 4, 8, x, 12, 16. Median adalah x. Rata-rata adalah (4+8+x+12+16)/5 = (40+x)/5. Karena rata-rata = median, maka (40+x)/5 = x. 40+x = 5x, sehingga 4x = 40, x = 10.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `35066760032433b30b7b3492b14be4916a61e85f9c6489edbccd6049725399f8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4ef108a5ee8f1f3e5c2b6ca1592c146963a4c5e61855b8d26c87528ac023dd2e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2575 |
+
+Run 1 — solusi: Data terurut: 4, 8, x, 12, 16. Median adalah x. Rata-rata adalah (4+8+x+12+16)/5 = (40+x)/5. Karena rata-rata = median, maka (40+x)/5 = x. 40+x = 5x, sehingga 4x = 40, x = 10.
+- Domain kognitif `classify/applying`: Siswa perlu memahami definisi median dan rata-rata, lalu menyusun persamaan aljabar berdasarkan kondisi yang diberikan. Ini adalah penerapan prosedur pada konteks rutin.. Bukti: Jika rata-rata data sama dengan median, nilai x adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara rata-rata dan median dalam sekumpulan data, serta kemampuan prosedural untuk menyelesaikan persamaan linear satu variabel.. Bukti: rata-rata data sama dengan median
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi dua konsep statistik (rata-rata dan median) ke dalam satu persamaan aljabar. Meskipun prosedurnya familiar, siswa harus mampu mengidentifikasi median dari data terurut yang mengandung variabel dan menyusun persamaan dengan benar.. Bukti: Data terurut: 4, 8, x, 12, 16; rata-rata data sama dengan median
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rata-rata, median, dan penyelesaian persamaan linear satu variabel. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari statistika dan aljabar dasar. Soal ini menuntut penggabungan kedua materi tersebut dalam satu langkah penyelesaian yang terstruktur. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71115,9 +72968,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 806. Soal `3dc8ca5113fec62c99b9a0e5`
@@ -71131,27 +72984,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | 14 |
 | D | 16 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Total data n=30. Median terletak di antara data ke-15 dan ke-16. Frekuensi kumulatif: nilai 5 (3), nilai 6 (8), nilai 7 (16). Data ke-15 dan ke-16 keduanya bernilai 7, sehingga median = 7. Siswa yang remedial adalah yang nilainya < 7, yaitu siswa dengan nilai 5 dan 6. Jumlah = 3 + 5 = 8 siswa.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e772af772df1093879bc8fdaa25551b8ee4089a64dc7b9bd27f1330097a95373`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a9c93993a0c13ff2fd0ab8c1f613a40b67136a52ddad8dbc44c50e62bdac2fa2`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2635 |
+
+Run 1 — solusi: Total data n=30. Median terletak di antara data ke-15 dan ke-16. Frekuensi kumulatif: nilai 5 (3), nilai 6 (8), nilai 7 (16). Data ke-15 dan ke-16 keduanya bernilai 7, sehingga median = 7. Siswa yang remedial adalah yang nilainya < 7, yaitu siswa dengan nilai 5 dan 6. Jumlah = 3 + 5 = 8 siswa.
+- Domain kognitif `classify/applying`: Soal meminta siswa menentukan median dari data berkelompok sederhana dan menerapkan kriteria (kurang dari median) untuk menghitung frekuensi. Ini adalah penerapan prosedur statistik dasar yang rutin.. Bukti: Siswa yang nilainya kurang dari median mengikuti remedial.; Tabel di atas menunjukkan nilai ulangan 30 siswa.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep median (nilai tengah) dan bagaimana menghitungnya dari tabel frekuensi, yang merupakan pengetahuan konseptual tentang pemusatan data.. Bukti: median; Frekuensi
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedurnya sangat standar (mencari median, lalu menjumlahkan frekuensi). Tidak ada kendala yang berinteraksi atau strategi non-rutin yang diperlukan. Siswa hanya perlu memahami definisi median dan membaca tabel frekuensi.. Bukti: Siswa yang nilainya kurang dari median mengikuti remedial.; Tabel di atas menunjukkan nilai ulangan 30 siswa.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang median dan frekuensi kumulatif. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi median adalah kurikulum standar kelas 8. Prosedur yang diminta sangat langsung dan familiar bagi siswa. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71192,9 +73067,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 807. Soal `10777afa2efea00d8daeceba`
@@ -71208,27 +73083,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | 4 |
 | D | 7 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Mean = (6*4 + 7*p + 8*8 + 9*3) / (4 + p + 8 + 3) = 7.5. (24 + 7p + 64 + 27) / (15 + p) = 7.5. (115 + 7p) / (15 + p) = 7.5. 115 + 7p = 7.5(15 + p). 115 + 7p = 112.5 + 7.5p. 2.5 = 0.5p. p = 5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fc186a865efc4be7a4f3a051d3696a9eca7fd54ba46cdac1a708feab2b2f0741`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `712fd55a290167a653b95f69d8fb70c83d11c41c10887a5481410f55a810950a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2670 |
+
+Run 1 — solusi: Mean = (6*4 + 7*p + 8*8 + 9*3) / (4 + p + 8 + 3) = 7.5. (24 + 7p + 64 + 27) / (15 + p) = 7.5. (115 + 7p) / (15 + p) = 7.5. 115 + 7p = 7.5(15 + p). 115 + 7p = 112.5 + 7.5p. 2.5 = 0.5p. p = 5.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur menghitung rata-rata data berkelompok dengan variabel yang tidak diketahui (p) dan menyelesaikan persamaan linear satu variabel yang dihasilkan.. Bukti: Jika rata-rata nilai kuis adalah 7,5, nilai p adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung rata-rata (mean) dari data dalam tabel frekuensi dan kemampuan memanipulasi aljabar untuk menemukan nilai yang hilang.. Bukti: rata-rata nilai kuis adalah 7,5
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: menyusun persamaan rata-rata, melakukan perkalian silang, dan menyelesaikan persamaan linear satu variabel. Meskipun prosedurnya standar, siswa harus mengintegrasikan variabel p ke dalam rumus rata-rata dengan benar.. Bukti: Jika rata-rata nilai kuis adalah 7,5, nilai p adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep rata-rata (mean) dan penyelesaian persamaan linear satu variabel (PLSV). |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari rata-rata dan PLSV. Soal ini menuntut ketelitian dalam menyusun persamaan dari tabel frekuensi, yang merupakan standar kompetensi kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71267,9 +73164,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 808. Soal `a73489eb1da4f5140c7883a9`
@@ -71283,27 +73180,51 @@ Data terurut: 6, 7, 9, $x$, 13, 14, 15, 16. Jika median data tersebut 12, nilai 
 | C | 12 |
 | D | 24 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data terurut: 6, 7, 9, x, 13, 14, 15, 16. Karena n=8 (genap), median adalah rata-rata data ke-4 dan ke-5. Median = (x + 13) / 2 = 12. Maka, x + 13 = 24, sehingga x = 11.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5ea5950545dec3545ad4dd0ffb25f13f103f9af7700b8f78afed72a129a6708c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `47ae1fcdc2cca8b6c518485b94c5ba1ea24f0ad8191d88e763597f6c09c227cd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2584 |
+
+Run 1 — solusi: Data terurut: 6, 7, 9, x, 13, 14, 15, 16. Karena n=8 (genap), median adalah rata-rata data ke-4 dan ke-5. Median = (x + 13) / 2 = 12. Maka, x + 13 = 24, sehingga x = 11.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur mencari median untuk data genap dengan variabel yang tidak diketahui. Ini adalah penerapan langsung dari konsep median pada data terurut.. Bukti: Data terurut: 6, 7, 9, $x$, 13, 14, 15, 16. Jika median data tersebut 12, nilai $x$ adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang cara menghitung median pada kumpulan data genap yang melibatkan variabel.. Bukti: median data tersebut 12
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu menerapkan rumus median untuk data genap (rata-rata dua nilai tengah) dan menyelesaikan persamaan linear satu variabel sederhana. Tidak ada kendala kompleks atau langkah yang saling bergantung secara rumit.. Bukti: Data terurut: 6, 7, 9, $x$, 13, 14, 15, 16. Jika median data tersebut 12
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep median data genap dan penyelesaian persamaan linear satu variabel dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi median adalah kurikulum standar kelas 8. Soal ini merupakan aplikasi langsung dari definisi median tanpa modifikasi atau konteks yang menyulitkan. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71335,9 +73256,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 809. Soal `bc2fe094d5fe35f86f4fe6ff`
@@ -71351,27 +73272,49 @@ Banyak pengunjung perpustakaan sekolah selama 12 hari berturut-turut: 24, 31, 27
 | C | 26,5 |
 | D | 33 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `34`.
+Solusi minimum hasil AI: Urutkan data: 22, 24, 26, 27, 28, 29, 30, 31, 33, 35, 36, 38. Karena n=12, data dibagi menjadi dua kelompok (masing-masing 6 data). Kelompok atas adalah 30, 31, 33, 35, 36, 38. Q3 adalah median dari kelompok atas: (33 + 35) / 2 = 34.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f2134e5e633be4b6a25430dc135540f999a2cfa2b81c463d35a52f6bba04eb43`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `28cddfa794cae383b671d8645a6297ce49e2eb95cc6ce3a9e20d2bc6d9cb5a3e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2737 |
+
+Run 1 — solusi: Urutkan data: 22, 24, 26, 27, 28, 29, 30, 31, 33, 35, 36, 38. Karena n=12, data dibagi menjadi dua kelompok (masing-masing 6 data). Kelompok atas adalah 30, 31, 33, 35, 36, 38. Q3 adalah median dari kelompok atas: (33 + 35) / 2 = 34.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik untuk menentukan kuartil atas dari sekumpulan data. Prosedur ini merupakan penerapan rutin dari konsep statistik yang dipelajari di kelas 8.. Bukti: Kuartil atas (Q3) dari data banyak pengunjung tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau metode perhitungan kuartil pada data tunggal, yang merupakan pengetahuan prosedural.. Bukti: Kuartil atas (Q3) dari data banyak pengunjung tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa perlu mengurutkan data (12 data) dan menerapkan rumus median untuk kelompok data atas. Langkah-langkahnya jelas dan familiar bagi siswa kelas 8.. Bukti: 24, 31, 27, 35, 29, 22, 38, 33, 26, 30, 36, 28; Kuartil atas (Q3)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data dan menentukan median. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 12 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan kuartil adalah materi standar kelas 8. Prosedur pengurutan dan pembagian data menjadi dua bagian untuk mencari kuartil adalah tugas rutin tanpa kendala yang saling berinteraksi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71405,9 +73348,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 810. Soal `a10a3b8b4ede7eb7e6e0ed1d`
@@ -71421,27 +73364,49 @@ Berat badan 12 siswa kelas 8 (kg): 45, 52, 48, 60, 55, 47, 58, 50, 62, 49, 53, 5
 | C | 52,5 |
 | D | 48 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data terurut: 45, 47, 48, 49, 50, 52, 53, 55, 57, 58, 60, 62. Karena n=12 (genap), data dibagi dua kelompok: 6 data terkecil (45, 47, 48, 49, 50, 52) dan 6 data terbesar. Q1 adalah median dari 6 data terkecil, yaitu rata-rata data ke-3 dan ke-4: (48 + 49) / 2 = 48,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `35f147bd752fd4dbe845d0964fc39565468c1c2b3dd7ab9d827538239dd1a343`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d7820c25823eebf4b70ec65ef8cb4801183f1ec7355887eacd69afc61a4798cf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2794 |
+
+Run 1 — solusi: Data terurut: 45, 47, 48, 49, 50, 52, 53, 55, 57, 58, 60, 62. Karena n=12 (genap), data dibagi dua kelompok: 6 data terkecil (45, 47, 48, 49, 50, 52) dan 6 data terbesar. Q1 adalah median dari 6 data terkecil, yaitu rata-rata data ke-3 dan ke-4: (48 + 49) / 2 = 48,5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik untuk menentukan kuartil bawah dari sekumpulan data. Ini adalah penerapan prosedur standar yang familiar dalam kurikulum kelas 8.. Bukti: Kuartil bawah (Q1) dari data berat badan tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau metode perhitungan kuartil (prosedural) yang didasarkan pada konsep pengurutan data dan pembagian kelompok data (konseptual).. Bukti: Kuartil bawah (Q1) dari data berat badan tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini termasuk Easy karena prosedurnya rutin dan familiar bagi siswa kelas 8. Langkah-langkahnya jelas: mengurutkan data, membagi data menjadi dua bagian, dan menghitung rata-rata dua nilai tengah untuk kelompok bawah. Tidak ada kendala yang saling berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Berat badan 12 siswa kelas 8 (kg): 45, 52, 48, 60, 55, 47, 58, 50, 62, 49, 53, 57.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan mengurutkan data dan menghitung rata-rata dua bilangan. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 12 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan kuartil adalah materi standar kelas 8. Prosedur pengurutan dan pembagian data adalah rutinitas yang diharapkan sudah dikuasai. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71475,9 +73440,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 811. Soal `77776219ab93aaff774a6942`
@@ -71491,27 +73456,49 @@ Tinggi 14 tanaman (cm): 120, 135, 128, 142, 135, 150, 128, 145, 138, 130, 125, 1
 | C | 14 |
 | D | 270 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data terurut: 120, 125, 128, 128, 130, 135, 135, 135, 138, 140, 142, 145, 148, 150. n=14. Q1 adalah median dari 7 data pertama (120, 125, 128, 128, 130, 135, 135), yaitu 128. Q3 adalah median dari 7 data terakhir (135, 138, 140, 142, 145, 148, 150), yaitu 142. Jangkauan antarkuartil (IQR) = Q3 - Q1 = 142 - 128 = 14.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `820f66f19511e1a652ab04771b6bfe98af847558f01899d8024fcfced60cdf3e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f829e63d94a2ea8b348ff1a6d23f3067c57595d9b822f6915aacfada82395e62`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2904 |
+
+Run 1 — solusi: Data terurut: 120, 125, 128, 128, 130, 135, 135, 135, 138, 140, 142, 145, 148, 150. n=14. Q1 adalah median dari 7 data pertama (120, 125, 128, 128, 130, 135, 135), yaitu 128. Q3 adalah median dari 7 data terakhir (135, 138, 140, 142, 145, 148, 150), yaitu 142. Jangkauan antarkuartil (IQR) = Q3 - Q1 = 142 - 128 = 14.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik untuk menentukan jangkauan antarkuartil dari sekumpulan data. Ini adalah penerapan langsung dari definisi dan prosedur kuartil yang dipelajari di kelas 8.. Bukti: Jangkauan antarkuartil dari data tinggi tanaman tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme atau metode untuk menghitung kuartil dan jangkauan antarkuartil dari data tunggal.. Bukti: Jangkauan antarkuartil dari data tinggi tanaman tersebut adalah
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan ketelitian dalam mengurutkan data (14 data) dan menentukan posisi kuartil dengan benar. Meskipun prosedurnya rutin, jumlah data yang cukup banyak meningkatkan beban kognitif dan risiko kesalahan langkah.. Bukti: Tinggi 14 tanaman (cm): 120, 135, 128, 142, 135, 150, 128, 145, 138, 130, 125, 140, 135, 148.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data dan menentukan median/kuartil data tunggal. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 14 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Mengurutkan 14 data dan menentukan kuartil adalah tugas standar kelas 8, namun memerlukan ketelitian prosedural yang cukup tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71545,9 +73532,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 812. Soal `0eac5d996ec736eab725442e`
@@ -71561,27 +73548,51 @@ Banyak soal yang dikerjakan 12 siswa dalam latihan harian: 8, 15, 11, 20, 13, 17
 | C | 3 |
 | D | 12 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data terurut: 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20. Banyak data (n) = 12. Q1 adalah median dari 6 data pertama (8, 9, 10, 11, 12, 13), yaitu (10+11)/2 = 10,5. Q3 adalah median dari 6 data terakhir (14, 15, 16, 17, 18, 20), yaitu (16+17)/2 = 16,5. Simpangan kuartil = 0,5 * (Q3 - Q1) = 0,5 * (16,5 - 10,5) = 0,5 * 6 = 3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d879c6e9fd8952703bbde92a9453ee5f0abd7f1bcb2d5da57dc5388f40f85742`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5032374f720f299af83e326c4d6f4903de0e6f3172879eba2eb11e09ba177f84`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2824 |
+
+Run 1 — solusi: Data terurut: 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20. Banyak data (n) = 12. Q1 adalah median dari 6 data pertama (8, 9, 10, 11, 12, 13), yaitu (10+11)/2 = 10,5. Q3 adalah median dari 6 data terakhir (14, 15, 16, 17, 18, 20), yaitu (16+17)/2 = 16,5. Simpangan kuartil = 0,5 * (Q3 - Q1) = 0,5 * (16,5 - 10,5) = 0,5 * 6 = 3.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur statistik untuk menentukan kuartil pertama (Q1) dan kuartil ketiga (Q3) dari data yang tidak terurut, kemudian menghitung simpangan kuartil. Ini adalah penerapan prosedur rutin dalam statistika deskriptif.. Bukti: Simpangan kuartil dari data tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme atau metode perhitungan simpangan kuartil (jangkauan interkuartil dibagi dua), yang merupakan pengetahuan prosedural.. Bukti: Simpangan kuartil dari data tersebut adalah
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah berurutan: mengurutkan data, menentukan posisi Q1 dan Q3, menghitung nilai Q1 dan Q3, lalu menghitung simpangan kuartil. Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling bergantung dan potensi kesalahan perhitungan (seperti salah menentukan median data genap atau lupa membagi dua jangkauan interkuartil).. Bukti: 8, 15, 11, 20, 13, 17, 9, 12, 18, 14, 16, 10
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data, menentukan median data genap, konsep kuartil. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 12 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengolah data statistik sederhana. Soal ini menuntut ketelitian dalam pengurutan dan perhitungan kuartil, yang merupakan standar kompetensi kelas 8. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71615,9 +73626,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 813. Soal `b066dff90c984b3b649c744c`
@@ -71631,27 +73642,51 @@ Nilai kuis 30 siswa kelas 8 disajikan pada tabel berikut.<br><br>\|Nilai\|Frekue
 | C | 80 |
 | D | 24 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Total data (n) = 30. Posisi Q3 = 3/4 * (n + 1) = 3/4 * 31 = 23,25. Menggunakan konvensi data ke-23 atau interpolasi, data ke-23 berada pada rentang nilai 80 (frekuensi kumulatif 60: 3, 70: 12, 80: 24). Jadi, Q3 = 80.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `03071e3fe4fa8878e876dae60327370c13d485f738066b2e3bc95b9a2ba6fcbd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cebb907bb27fd671c64ce5166b019ba0f52f40c9b93f5fb19c53031bdd3f03bb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2628 |
+
+Run 1 — solusi: Total data (n) = 30. Posisi Q3 = 3/4 * (n + 1) = 3/4 * 31 = 23,25. Menggunakan konvensi data ke-23 atau interpolasi, data ke-23 berada pada rentang nilai 80 (frekuensi kumulatif 60: 3, 70: 12, 80: 24). Jadi, Q3 = 80.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik untuk menentukan kuartil dari data berkelompok sederhana. Ini adalah penerapan prosedur standar yang rutin dalam kurikulum kelas 8.. Bukti: Kuartil atas (Q3) dari data nilai kuis tersebut adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau metode perhitungan kuartil pada data yang disajikan dalam tabel frekuensi.. Bukti: Nilai kuis 30 siswa kelas 8 disajikan pada tabel berikut.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menghitung frekuensi kumulatif dan menentukan posisi kuartil ke-3. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Kuartil atas (Q3) dari data nilai kuis tersebut adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang tabel frekuensi dan konsep kuartil data tunggal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan kuartil dari tabel frekuensi adalah materi standar kelas 8. Prosedur penentuan posisi kuartil (n+1) atau n/4 sudah umum diajarkan. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71692,9 +73727,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 814. Soal `3059a29e192e4b053d05a9e5`
@@ -71708,27 +73743,49 @@ Nilai tes 10 peserta pelatihan adalah 55, 48, 62, 70, 58, 66, 52, 74, 60, 64. Ni
 | C | 58; 62; 64 |
 | D | 55; 61; 66 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data terurut: 48, 52, 55, 58, 60, 62, 64, 66, 70, 74. Median (Q2) = (60+62)/2 = 61. Data bawah: 48, 52, 55, 58, 60. Q1 (median data bawah) = 55. Data atas: 62, 64, 66, 70, 74. Q3 (median data atas) = 66. Hasil: 55, 61, 66.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f434f656f29c108c1c8e35e24e34cc97fdf14d3b7324968a62ee1daef504e61c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `71d04e3e299829dae6afcebbe6aec8b26b5d12b1d30129600da2ad576bf35747`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2836 |
+
+Run 1 — solusi: Data terurut: 48, 52, 55, 58, 60, 62, 64, 66, 70, 74. Median (Q2) = (60+62)/2 = 61. Data bawah: 48, 52, 55, 58, 60. Q1 (median data bawah) = 55. Data atas: 62, 64, 66, 70, 74. Q3 (median data atas) = 66. Hasil: 55, 61, 66.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan prosedur standar untuk menentukan kuartil dari sekumpulan data. Ini adalah penerapan prosedur yang rutin dalam statistik deskriptif kelas 8.. Bukti: Nilai kuartil pertama, kuartil kedua, dan kuartil ketiga berturut-turut adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami algoritma pengurutan data dan metode penentuan median untuk kuartil (prosedural) serta konsep posisi kuartil dalam distribusi data (konseptual).. Bukti: Nilai kuartil pertama, kuartil kedua, dan kuartil ketiga
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengurutkan data dan menerapkan definisi kuartil. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan. Beban perhitungan rendah.. Bukti: Nilai tes 10 peserta pelatihan adalah 55, 48, 62, 70, 58, 66, 52, 74, 60, 64.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data dan menentukan median. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 10 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan kuartil adalah materi standar kelas 8. Prosedur pengurutan dan pembagian data menjadi dua bagian untuk mencari median (Q1, Q2, Q3) adalah tugas rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71760,9 +73817,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 815. Soal `9fbc21a2a47b7a6f443c4d69`
@@ -71776,27 +73833,49 @@ Tinggi delapan tanaman cabai (dalam cm) setelah dua bulan ditanam dicatat: 15, 1
 | C | 16 cm |
 | D | 15 cm |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Data terurut: 12, 13, 14, 15, 16, 18, 19, 20. Karena jumlah data (n=8) genap, kuartil kedua (Q2) atau median adalah rata-rata dari data ke-4 dan ke-5: (15 + 16) / 2 = 15,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `52e8240f119309664ac27496913974ee1f767cb4d8cba572f04a1f4a56f7c3cd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ed2945d9127a7b78cb333f43af1301b8818db7e3e88951b87a19eb0199a8194f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2676 |
+
+Run 1 — solusi: Data terurut: 12, 13, 14, 15, 16, 18, 19, 20. Karena jumlah data (n=8) genap, kuartil kedua (Q2) atau median adalah rata-rata dari data ke-4 dan ke-5: (15 + 16) / 2 = 15,5.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menerapkan prosedur standar dalam menentukan median (kuartil kedua) dari sekumpulan data yang diberikan. Prosedur ini merupakan penerapan langsung dari konsep statistik dasar yang dipelajari di kelas 8.. Bukti: Kuartil kedua dari tinggi tanaman tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau metode untuk mencari nilai tengah (median) dari data yang tidak terurut, yang merupakan pengetahuan prosedural.. Bukti: Kuartil kedua dari tinggi tanaman tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengurutkan data dan menerapkan rumus median untuk data genap. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Tinggi delapan tanaman cabai (dalam cm) setelah dua bulan ditanam dicatat: 15, 12, 18, 14, 20, 16, 13, 19.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Kemampuan mengurutkan bilangan dan menghitung rata-rata dua bilangan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan median adalah materi standar kelas 8. Prosedur pengurutan dan perhitungan rata-rata dua nilai tengah adalah langkah rutin yang diharapkan dikuasai siswa. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71828,9 +73907,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 816. Soal `791f54e833a7ee0567ba7a9e`
@@ -71844,27 +73923,49 @@ Berat badan delapan atlet renang (dalam kg) adalah 45, 52, 48, 56, 50, 60, 47, 5
 | C | 105 kg |
 | D | 15 kg |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data: 45, 52, 48, 56, 50, 60, 47, 54. Data terbesar = 60. Data terkecil = 45. Jangkauan = 60 - 45 = 15.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9a0d47a6581541a217e70647cd7a8f01d485cc5285222018b36e7efed151327a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9e9e985534d0875d00b035ac51f0bb5418902e916f418898b8957abdefaf13c0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2599 |
+
+Run 1 — solusi: Data: 45, 52, 48, 56, 50, 60, 47, 54. Data terbesar = 60. Data terkecil = 45. Jangkauan = 60 - 45 = 15.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk menghitung jangkauan (range) dari sekumpulan data. Ini adalah prosedur langsung yang melibatkan identifikasi nilai maksimum dan minimum, kemudian melakukan pengurangan. Tidak ada strategi nonrutin yang diperlukan.. Bukti: Jangkauan berat badan para atlet tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami definisi jangkauan sebagai selisih antara nilai terbesar dan terkecil dalam kumpulan data, yang merupakan konsep dasar dalam statistika deskriptif.. Bukti: Jangkauan berat badan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengurutkan atau memindai data untuk menemukan nilai ekstrem dan melakukan satu operasi pengurangan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk perencanaan strategi yang kompleks.. Bukti: Berat badan delapan atlet renang (dalam kg) adalah 45, 52, 48, 56, 50, 60, 47, 54.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami konsep jangkauan data dan operasi pengurangan bilangan bulat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi jangkauan data adalah topik dasar kelas 8. Soal ini menguji pemahaman definisi dasar tanpa kerumitan tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71896,9 +73997,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 817. Soal `aa3957e598ed5b7f6d302017`
@@ -71912,27 +74013,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | 13 |
 | D | 17 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data awal: 24, 30, 18, 27, 35, 40, 22. Jika data hari Sabtu (40) dikeluarkan, data menjadi: 24, 30, 18, 27, 35, 22. Nilai terbesar adalah 35 dan nilai terkecil adalah 18. Jangkauan = 35 - 18 = 17.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f3ab5e16b7b99e2ae39354e5da16a5c65c07abc675ece682217d6070402c3ad1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8be8605761edef2860227e7b5480afa8c1c150dc51660a5dbe4d35fe2d435916`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2625 |
+
+Run 1 — solusi: Data awal: 24, 30, 18, 27, 35, 40, 22. Jika data hari Sabtu (40) dikeluarkan, data menjadi: 24, 30, 18, 27, 35, 22. Nilai terbesar adalah 35 dan nilai terkecil adalah 18. Jangkauan = 35 - 18 = 17.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep jangkauan (range) dan melakukan prosedur modifikasi data (mengeluarkan satu nilai) sebelum menghitung kembali jangkauan. Ini adalah penerapan prosedur statistik dasar pada konteks yang sedikit dimodifikasi.. Bukti: Jika data hari Sabtu dikeluarkan, jangkauan data yang baru adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme perhitungan jangkauan (selisih nilai maksimum dan minimum) dan bagaimana perubahan data memengaruhi hasil perhitungan tersebut.. Bukti: jangkauan data yang baru adalah
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu mengidentifikasi nilai ekstrem baru setelah satu data dihapus. Prosedurnya familiar, langkah-langkahnya linear, dan tidak ada kendala yang saling berinteraksi atau kebutuhan untuk strategi nonrutin.. Bukti: Jika data hari Sabtu dikeluarkan, jangkauan data yang baru adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jangkauan data (range) sebagai selisih nilai maksimum dan minimum. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 7 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengolah data sederhana dan memahami dampak perubahan data terhadap statistik dasar seperti jangkauan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -71968,9 +74091,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 818. Soal `d1f0b3e499df89e0be6b52e8`
@@ -71984,27 +74107,49 @@ Banyak pembeli harian selama enam hari di dua toko.<br><br>\|Hari\|1\|2\|3\|4\|5
 | C | Toko X, jangkauan 11 |
 | D | Toko X, jangkauan 7 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Jangkauan adalah selisih nilai maksimum dan minimum. Toko X: 35 - 28 = 7. Toko Y: 38 - 27 = 11. Karena 11 > 7, maka Toko Y memiliki jangkauan lebih besar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `68b7a001081771bd8de34e3b1896de0d0b2db0780c44777197ca2485eea62e09`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `71b73cf1c78612c66ddb306c8f69c20b3406b0a3efe5d59541bc8e2d2bf6347b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2623 |
+
+Run 1 — solusi: Jangkauan adalah selisih nilai maksimum dan minimum. Toko X: 35 - 28 = 7. Toko Y: 38 - 27 = 11. Karena 11 > 7, maka Toko Y memiliki jangkauan lebih besar.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi nilai maksimum dan minimum dari dua set data, menghitung jangkauan masing-masing, dan membandingkannya. Ini adalah prosedur rutin yang langsung.. Bukti: Toko dengan jangkauan banyak pembeli yang lebih besar dan nilai jangkauannya adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang konsep jangkauan (range) dalam statistika dan penerapan algoritma pengurangannya.. Bukti: Toko dengan jangkauan banyak pembeli yang lebih besar
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu melakukan operasi pengurangan sederhana pada dua set data yang sudah tersedia dalam tabel. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Toko dengan jangkauan banyak pembeli yang lebih besar dan nilai jangkauannya adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang operasi pengurangan dan konsep jangkauan data (selisih nilai terbesar dan terkecil). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 12 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung jangkauan adalah materi dasar statistika kelas 8. Prosedur ini sangat standar dan tidak memerlukan langkah penalaran tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72043,9 +74188,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 819. Soal `f886c5f6d57fe82841db4702`
@@ -72059,27 +74204,49 @@ Pada sebuah data nilai ulangan diketahui kuartil bawah 62 dan kuartil atas 85. J
 | C | 147 |
 | D | 11,5 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Jangkauan kuartil (interquartile range) didefinisikan sebagai selisih antara kuartil atas (Q3) dan kuartil bawah (Q1). Maka, Jangkauan Kuartil = Q3 - Q1 = 85 - 62 = 23.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d46a5d129b71591c7fed45cfb5410835c89ef3ca86b9249eca286e8077c408b8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f3d157f3f60d259692f9000ef5dba5ee549ff22722db42655bd2518d46588bfe`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2596 |
+
+Run 1 — solusi: Jangkauan kuartil (interquartile range) didefinisikan sebagai selisih antara kuartil atas (Q3) dan kuartil bawah (Q1). Maka, Jangkauan Kuartil = Q3 - Q1 = 85 - 62 = 23.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengingat definisi jangkauan kuartil (interquartile range) dan menerapkan rumus tersebut secara langsung pada nilai yang diberikan. Tidak ada langkah tambahan atau analisis kompleks yang diperlukan.. Bukti: diketahui kuartil bawah 62 dan kuartil atas 85; Jangkauan kuartil data tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep statistik dasar mengenai ukuran penyebaran data, khususnya definisi jangkauan kuartil sebagai selisih antara kuartil atas dan kuartil bawah.. Bukti: Jangkauan kuartil data tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu mengetahui rumus jangkauan kuartil dan melakukan satu operasi pengurangan sederhana. Tidak ada kendala atau langkah yang saling bergantung.. Bukti: diketahui kuartil bawah 62 dan kuartil atas 85; Jangkauan kuartil data tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang statistik deskriptif, khususnya definisi kuartil dan jangkauan kuartil. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi statistika dasar (kuartil) adalah bagian dari kurikulum kelas 8. Soal ini menguji pemahaman definisi secara langsung tanpa modifikasi atau konteks yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72111,9 +74278,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 820. Soal `b2929a790a01039851f9eb95`
@@ -72127,27 +74294,49 @@ Jangkauan kuartil dari suatu kumpulan data adalah 26. Simpangan kuartil data ter
 | C | 13 |
 | D | 6,5 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Simpangan kuartil (Qd) didefinisikan sebagai setengah dari jangkauan interkuartil (IQR). Diketahui IQR = 26, maka Qd = 1/2 * 26 = 13.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `846f0a14e1463a0f46eb064771772d5e46071ea0ae6e4130059551e7776519cd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c6fcdbb83eddc3a8a116802ce97b9bd0c2622277f73cfe1bb71cca69440afbb8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2550 |
+
+Run 1 — solusi: Simpangan kuartil (Qd) didefinisikan sebagai setengah dari jangkauan interkuartil (IQR). Diketahui IQR = 26, maka Qd = 1/2 * 26 = 13.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengingat dan menerapkan definisi atau rumus dasar simpangan kuartil (jangkauan semi-interkuartil) yang merupakan materi standar kelas 8. Tidak ada langkah kompleks atau penalaran non-rutin yang diperlukan.. Bukti: Jangkauan kuartil dari suatu kumpulan data adalah 26. Simpangan kuartil data tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman terhadap istilah statistik dasar dan hubungan antar konsep (definisi simpangan kuartil sebagai setengah dari jangkauan interkuartil).. Bukti: Jangkauan kuartil; Simpangan kuartil
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu mengetahui rumus simpangan kuartil (Qd = 1/2 * IQR) dan melakukan satu operasi pembagian sederhana. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang diperlukan.. Bukti: Jangkauan kuartil dari suatu kumpulan data adalah 26. Simpangan kuartil data tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang ukuran penyebaran data (jangkauan kuartil dan simpangan kuartil). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi statistik dasar ini adalah bagian dari kurikulum kelas 8. Soal bersifat recall/prosedural langsung tanpa kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72179,9 +74368,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 821. Soal `62bcb9e9a6f79188b87b8a21`
@@ -72195,27 +74384,49 @@ Kuartil kedua ($Q_2$) dari suatu data selalu sama dengan ukuran data yang disebu
 | C | modus |
 | D | rata-rata hitung |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Kuartil kedua (Q2) adalah nilai tengah dari sekumpulan data yang telah diurutkan, yang secara definisi sama dengan median.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ca8736b1bd9b5582284bda5e66d692a0df140956cc501e7f27401dfcbe42af23`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1be2e76b50cab2d03aa3156e0445f939a2c432161b8e72e80efae9d39dfc465f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 2451 |
+
+Run 1 — solusi: Kuartil kedua (Q2) adalah nilai tengah dari sekumpulan data yang telah diurutkan, yang secara definisi sama dengan median.
+- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konseptual dasar mengenai definisi statistik. Siswa hanya perlu mengenali istilah yang setara dengan kuartil kedua tanpa melakukan perhitungan atau prosedur kompleks.. Bukti: Kuartil kedua ($Q_2$) dari suatu data selalu sama dengan ukuran data yang disebut ....
+- Dimensi pengetahuan `classify/factual`: Soal ini berfokus pada pemahaman definisi istilah statistik (fakta/konsep dasar) dalam materi penyebaran data.. Bukti: Kuartil kedua ($Q_2$) dari suatu data selalu sama dengan ukuran data yang disebut ....
+- Intended difficulty `classify/Easy`: Soal ini bersifat sangat langsung dan menguji pengetahuan terminologi dasar yang diajarkan di kelas 8. Tidak ada langkah perhitungan atau perencanaan strategi yang diperlukan.. Bukti: Kuartil kedua ($Q_2$) dari suatu data selalu sama dengan ukuran data yang disebut ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang ukuran pemusatan data (median) dan kuartil. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Definisi median sebagai Q2 adalah konsep fundamental dalam statistik tingkat SMP yang diajarkan secara eksplisit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"factual": 1} | single_run / single_run | factual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72247,9 +74458,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 822. Soal `0ba169afa869781f4fb5ddf0`
@@ -72263,27 +74474,49 @@ Seorang guru mengurutkan 20 nilai ujian, lalu menentukan tiga kuartil yang memba
 | C | 4 nilai |
 | D | 7 nilai |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Kuartil membagi data terurut menjadi empat bagian yang sama besar. Jika terdapat 20 data, maka banyak data pada setiap kelompok adalah 20 dibagi 4, yaitu 5 data.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9ca4f955117c453e29c7fdf16fcdb970cb33598d5f52199068ef001ef947f935`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8ced805d62aca1d5f3b5d4287a785eb4c6ee0d6664bd8ed106f481a544bace40`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2470 |
+
+Run 1 — solusi: Kuartil membagi data terurut menjadi empat bagian yang sama besar. Jika terdapat 20 data, maka banyak data pada setiap kelompok adalah 20 dibagi 4, yaitu 5 data.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa memahami definisi kuartil sebagai pembagi data menjadi empat bagian yang sama banyak. Siswa hanya perlu menerapkan konsep dasar pembagian data untuk mendapatkan jawaban, sehingga termasuk dalam domain knowing.. Bukti: menentukan tiga kuartil yang membagi nilai menjadi empat kelompok sama banyak; Banyak nilai pada setiap kelompok adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang apa itu kuartil dalam statistik, yaitu konsep pembagian data menjadi empat bagian yang sama besar.. Bukti: menentukan tiga kuartil yang membagi nilai menjadi empat kelompok sama banyak
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan hanya memerlukan pemahaman definisi kuartil serta operasi pembagian sederhana. Tidak ada langkah kompleks atau kendala yang berinteraksi.. Bukti: 20 nilai ujian; membagi nilai menjadi empat kelompok sama banyak
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang pembagian dan konsep kuartil sebagai pembagi data. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari statistika dasar termasuk kuartil. Soal ini adalah penerapan definisi yang sangat mendasar tanpa memerlukan analisis data yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72315,9 +74548,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 823. Soal `66c8ee939f494147f5a08fdf`
@@ -72331,27 +74564,49 @@ Data usia (tahun) delapan peserta lomba yang sudah terurut: 12, 14, 15, 18, 21, 
 | C | 5,25 |
 | D | 10,5 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data: 12, 14, 15, 18, 21, 24, 26, 30 (n=8). Q1 adalah median dari 4 data pertama (12, 14, 15, 18), yaitu (14+15)/2 = 14,5. Q3 adalah median dari 4 data terakhir (21, 24, 26, 30), yaitu (24+26)/2 = 25. Jangkauan kuartil (IQR) = Q3 - Q1 = 25 - 14,5 = 10,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6571ab5cfdd0e009b7673cb2b3cce53e5545b169d1331914507b7f894872dd63`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c942c0bedc29e6eb01906b8a9ff01fc3ceabfc998952ebc89bc3313e64879c45`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2741 |
+
+Run 1 — solusi: Data: 12, 14, 15, 18, 21, 24, 26, 30 (n=8). Q1 adalah median dari 4 data pertama (12, 14, 15, 18), yaitu (14+15)/2 = 14,5. Q3 adalah median dari 4 data terakhir (21, 24, 26, 30), yaitu (24+26)/2 = 25. Jangkauan kuartil (IQR) = Q3 - Q1 = 25 - 14,5 = 10,5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik untuk menghitung jangkauan kuartil (IQR) dari data yang sudah terurut. Ini adalah penerapan langsung dari rumus IQR = Q3 - Q1.. Bukti: Jangkauan kuartil data tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme atau metode perhitungan statistik (kuartil dan jangkauan kuartil).. Bukti: Jangkauan kuartil data tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena data sudah terurut, jumlah data genap (n=8) adalah kasus standar yang umum diajarkan, dan langkah-langkahnya bersifat rutin (menentukan Q1, Q3, lalu selisihnya). Tidak ada kendala kompleks atau integrasi konsep yang sulit.. Bukti: Data usia (tahun) delapan peserta lomba yang sudah terurut: 12, 14, 15, 18, 21, 24, 26, 30.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang median dan kuartil pada data genap. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menghitung kuartil untuk data genap adalah materi standar kelas 8. Prosedur sangat langsung dan tidak memerlukan perencanaan strategi yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72383,9 +74638,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 824. Soal `4585b205c48b3f1f3eb9ebef`
@@ -72399,27 +74654,49 @@ Nilai tes Kelompok A (8 siswa): 78, 60, 92, 65, 55, 74, 70, 62.<br>Nilai tes Kel
 | C | Benar menurut jangkauan (41 > 37), tetapi menurut jangkauan antarkuartil Kelompok A lebih beragam (15 > 12). |
 | D | Benar menurut jangkauan, dan jangkauan antarkuartil kedua kelompok sama besar. |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Kelompok A (n=8): Terurut 55, 60, 62, 65, 70, 74, 78, 92. Jangkauan = 92-55 = 37. Q1 = 60,5 (rata-rata 60,62), Q3 = 76 (rata-rata 74,78). JAK = 76-61 = 15. Kelompok B (n=12): Terurut 44, 58, 60, 63, 65, 66, 68, 70, 72, 75, 80, 85. Jangkauan = 85-44 = 41. Q1 = 61,5, Q3 = 73,5. JAK = 73,5-61,5 = 12. Pernyataan Rina salah karena JAK A (15) > JAK B (12), meskipun jangkauan B (41) > A (37). Opsi C tepat.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `56e81de0ec11b31e509f68c09ba5665d4cd9ed052b3b10fcb0c73398818c43bd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `be2a9720325d4614101efd92f6479448ec1103353cd317eea2659409339d43a8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3251 |
+
+Run 1 — solusi: Kelompok A (n=8): Terurut 55, 60, 62, 65, 70, 74, 78, 92. Jangkauan = 92-55 = 37. Q1 = 60,5 (rata-rata 60,62), Q3 = 76 (rata-rata 74,78). JAK = 76-61 = 15. Kelompok B (n=12): Terurut 44, 58, 60, 63, 65, 66, 68, 70, 72, 75, 80, 85. Jangkauan = 85-44 = 41. Q1 = 61,5, Q3 = 73,5. JAK = 73,5-61,5 = 12. Pernyataan Rina salah karena JAK A (15) > JAK B (12), meskipun jangkauan B (41) > A (37). Opsi C tepat.
+- Domain kognitif `classify/applying`: Siswa perlu mengolah data mentah untuk menghitung jangkauan dan jangkauan antarkuartil (JAK) dari dua kelompok data yang berbeda, lalu membandingkan hasil tersebut untuk mengevaluasi pernyataan. Ini melibatkan penerapan prosedur statistik pada konteks data.. Bukti: Nilai tes Kelompok A (8 siswa): 78, 60, 92, 65, 55, 74, 70, 62.; Nilai tes Kelompok B (12 siswa): 70, 85, 58, 66, 44, 72, 63, 80, 60, 68, 75, 65.; Penilaian yang paling tepat terhadap pernyataan Rina adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman dan penggunaan algoritme statistik (jangkauan dan kuartil) untuk membandingkan sebaran data.. Bukti: jangkauannya lebih besar; jangkauan antarkuartil
+- Intended difficulty `classify/Medium`: Soal memerlukan perhitungan statistik untuk dua set data yang berbeda (n=8 dan n=12). Siswa harus mengurutkan data, menentukan kuartil, menghitung JAK, dan membandingkannya. Terdapat beberapa langkah yang saling terkait (pengurutan, penentuan kuartil, perhitungan JAK, perbandingan) dengan beban kalkulasi moderat.. Bukti: Nilai tes Kelompok A (8 siswa); Nilai tes Kelompok B (12 siswa); Penilaian yang paling tepat terhadap pernyataan Rina adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jangkauan, kuartil, dan jangkauan antarkuartil. |
+| dependentSteps | 6 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 20 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung ukuran penyebaran data. Soal ini menuntut ketelitian dalam pengurutan dan perhitungan kuartil untuk dua kelompok data yang berbeda, yang merupakan tugas standar namun memerlukan beberapa langkah prosedural. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72455,9 +74732,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 825. Soal `4753f4e4ae2b9603be7417aa`
@@ -72471,27 +74748,49 @@ Data 12 siswa: 41, 28, 52, 34, 25, 49, 38, 30, 56, 43, 36, 44.<br>Budi mengerjak
 | C | $Q_1$ dan $Q_3$ sudah benar, tetapi hasilnya harus dibagi dua; JAK = 7. |
 | D | $Q_1$ seharusnya data ke-4 = 34 dan $Q_3$ data ke-10 = 49; JAK = 15. |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data terurut (n=12): 25, 28, 30, 34, 36, 38, 41, 43, 44, 49, 52, 56. Data dibagi dua kelompok (masing-masing 6 data): (25, 28, 30, 34, 36, 38) dan (41, 43, 44, 49, 52, 56). Q1 adalah rata-rata data ke-3 dan ke-4 dari kelompok pertama: (30+34)/2 = 32. Q3 adalah rata-rata data ke-3 dan ke-4 dari kelompok kedua: (44+49)/2 = 46,5. JAK = Q3 - Q1 = 46,5 - 32 = 14,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `56614c8a9eab8a0d959c7579bcf2a011fb23ea57f6ecb2071fa7b212d774958f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d44b7ba8e52cad29b675c14a4c3a834a6ffa4b6ae6055f77d5a1f4e7f47713e9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3177 |
+
+Run 1 — solusi: Data terurut (n=12): 25, 28, 30, 34, 36, 38, 41, 43, 44, 49, 52, 56. Data dibagi dua kelompok (masing-masing 6 data): (25, 28, 30, 34, 36, 38) dan (41, 43, 44, 49, 52, 56). Q1 adalah rata-rata data ke-3 dan ke-4 dari kelompok pertama: (30+34)/2 = 32. Q3 adalah rata-rata data ke-3 dan ke-4 dari kelompok kedua: (44+49)/2 = 46,5. JAK = Q3 - Q1 = 46,5 - 32 = 14,5.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengevaluasi prosedur perhitungan kuartil yang salah dan menentukan prosedur yang benar untuk data genap (n=12). Ini memerlukan pemahaman konseptual tentang pembagian data menjadi dua kelompok dan perhitungan rata-rata untuk kuartil pada data genap.. Bukti: Kesalahan Budi dan jangkauan antarkuartil yang benar adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman algoritme perhitungan kuartil (prosedural) dan prinsip pembagian data pada statistik (konseptual).. Bukti: data diurutkan menjadi 25, 28, 30, 34, 36, 38, 41, 43, 44, 49, 52, 56; Q1 = (30 + 34)/2 = 32; Q3 = (44 + 49)/2 = 46,5
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus mengidentifikasi kesalahan prosedural dalam metode Budi (yang menggunakan posisi data tunggal untuk n=12) dan menerapkan metode yang benar (rata-rata dua data tengah). Terdapat beberapa langkah terkait (mengurutkan, membagi kelompok, menghitung rata-rata kuartil, menghitung selisih).. Bukti: Kesalahan Budi dan jangkauan antarkuartil yang benar adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data, memahami konsep kuartil untuk data genap, menghitung rata-rata. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 12 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan memahami cara menentukan kuartil untuk data genap. Soal ini menuntut ketelitian dalam membedakan metode yang benar dari metode yang salah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72526,9 +74825,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 826. Soal `02f6144a63503c9896563642`
@@ -72542,27 +74841,49 @@ Seorang siswa menyatakan: "Menambahkan satu data baru ke suatu kumpulan data sel
 | C | 8 |
 | D | 21 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Jangkauan awal = 30 - 12 = 18. Agar jangkauan tidak bertambah, data baru (x) harus memenuhi 12 <= x <= 30. Pilihan A (33) membuat jangkauan 33-12=21. Pilihan B (5) membuat jangkauan 30-5=25. Pilihan C (8) membuat jangkauan 30-8=22. Pilihan D (21) berada di rentang [12, 30], sehingga jangkauan tetap 30-12=18.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2b831c46dad88607da6cfb325af0a987501bf6ec08a7d38602a21c29b841e072`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `68908b33201cdbfd7f090d5522c8cbbc971e042334cfc46bdb0af37332894c41`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2782 |
+
+Run 1 — solusi: Jangkauan awal = 30 - 12 = 18. Agar jangkauan tidak bertambah, data baru (x) harus memenuhi 12 <= x <= 30. Pilihan A (33) membuat jangkauan 33-12=21. Pilihan B (5) membuat jangkauan 30-5=25. Pilihan C (8) membuat jangkauan 30-8=22. Pilihan D (21) berada di rentang [12, 30], sehingga jangkauan tetap 30-12=18.
+- Domain kognitif `classify/applying`: Siswa perlu memahami definisi jangkauan (selisih nilai maksimum dan minimum) dan menguji pernyataan dengan konsep penyangkal (counterexample). Ini melibatkan penerapan konsep pada situasi yang menuntut pemahaman relasional, bukan sekadar prosedur rutin.. Bukti: Menambahkan satu data baru ke suatu kumpulan data selalu menambah jangkauannya.; Data baru yang menjadi contoh penyangkal pernyataan itu adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana nilai ekstrem (maksimum dan minimum) memengaruhi jangkauan dalam statistik.. Bukti: Menambahkan satu data baru ke suatu kumpulan data selalu menambah jangkauannya.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus memahami hubungan antara data baru dengan nilai ekstrem yang ada untuk menentukan apakah jangkauan berubah atau tidak. Meskipun prosedurnya sederhana, siswa harus melakukan evaluasi terhadap setiap opsi untuk menemukan penyangkal yang tepat, yang melibatkan integrasi konsep jangkauan.. Bukti: Data awal: 12, 15, 18, 20, 22, 25, 27, 30.; Data baru yang menjadi contoh penyangkal pernyataan itu adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jangkauan (range) data statistik. |
+| dependentSteps | 2 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menganalisis sifat statistik sederhana. Soal ini menuntut pemahaman konseptual tentang jangkauan, bukan sekadar menghitung, sehingga tingkat kesulitan Medium sesuai untuk menguji pemahaman tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72594,9 +74915,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 827. Soal `f93ed38eac1314d55f176549`
@@ -72610,27 +74931,49 @@ Delapan data terurut dari kecil ke besar: 5, 9, 12, $a$, $b$, 26, 30, 41 dengan 
 | C | 19 |
 | D | 18 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Data terurut: 5, 9, 12, a, b, 26, 30, 41. Median adalah rata-rata data ke-4 dan ke-5: (a + b)/2 = 18, sehingga a + b = 36. Karena a < b dan data terurut, maka 12 <= a < b <= 26. Agar a terbesar, kita pilih b sekecil mungkin yang memenuhi a < b. Jika a = 17, maka b = 19. Karena 12 <= 17 < 19 <= 26, kondisi terpenuhi. Jika a = 18, maka b = 18, melanggar a < b. Jadi, a terbesar adalah 17.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `20051e5746badeaee7b31382522bdc9ad52f13e5ed27b113ab370651c90b72ed`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f1a122caa45c342e48a00cbef31bcb2180e833bf8ba7a87c270a6adc453e65fc`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2774 |
+
+Run 1 — solusi: Data terurut: 5, 9, 12, a, b, 26, 30, 41. Median adalah rata-rata data ke-4 dan ke-5: (a + b)/2 = 18, sehingga a + b = 36. Karena a < b dan data terurut, maka 12 <= a < b <= 26. Agar a terbesar, kita pilih b sekecil mungkin yang memenuhi a < b. Jika a = 17, maka b = 19. Karena 12 <= 17 < 19 <= 26, kondisi terpenuhi. Jika a = 18, maka b = 18, melanggar a < b. Jadi, a terbesar adalah 17.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep median untuk data genap, menyusun persamaan, dan menerapkan kendala urutan data (12 <= a < b <= 26) untuk mencari nilai maksimum variabel. Ini melibatkan penerapan konsep pada konteks rutin.. Bukti: median data 18; a < b; Nilai a terbesar yang mungkin adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang median dan hubungan antar data dalam urutan, serta prosedur aljabar untuk menyelesaikan sistem persamaan dengan kendala.. Bukti: median data 18; a < b
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman median data genap dan kendala urutan. Siswa harus mengintegrasikan persamaan (a+b=36) dengan batasan urutan (12 <= a < b <= 26). Meskipun prosedurnya familiar, pemilihan nilai a terbesar dengan kendala b > a memerlukan perencanaan langkah yang saling terkait.. Bukti: median data 18; a < b; a dan b bilangan bulat
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep median data genap, pertidaksamaan dasar, dan pemahaman urutan data. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari median dan pengurutan data. Menentukan nilai variabel dengan kendala urutan adalah tantangan standar untuk tingkat menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72662,9 +75005,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 828. Soal `4c348c6ba1c8513bf9b03985`
@@ -72678,27 +75021,49 @@ Delapan bilangan bulat berbeda $x_1 < x_2 < \ldots < x_8$ memiliki kuartil bawah
 | C | 12 |
 | D | 10 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data: x1 < x2 < ... < x8. Q1 = (x2 + x3)/2 = 20 => x2 + x3 = 40. Q3 = (x6 + x7)/2 = 30 => x6 + x7 = 60. Agar jangkauan (x8 - x1) minimum, x1 harus sebesar mungkin dan x8 sekecil mungkin. Karena x1 < x2 < x3, x2+x3=40, x2 max 19, maka x1 max 18. Karena x6 < x7 < x8, x6+x7=60, x7 min 31, maka x8 min 32. Jangkauan = 32 - 18 = 14.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `37068ff38d2a6a3232cbd7586494371100a8a768f4a12310b8185ed9a96a52ab`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ba6baaced88508dbaee52cb979d0b0503e85c7b69bf1959410b7855cbc7bceb9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Hard | 2881 |
+
+Run 1 — solusi: Data: x1 < x2 < ... < x8. Q1 = (x2 + x3)/2 = 20 => x2 + x3 = 40. Q3 = (x6 + x7)/2 = 30 => x6 + x7 = 60. Agar jangkauan (x8 - x1) minimum, x1 harus sebesar mungkin dan x8 sekecil mungkin. Karena x1 < x2 < x3, x2+x3=40, x2 max 19, maka x1 max 18. Karena x6 < x7 < x8, x6+x7=60, x7 min 31, maka x8 min 32. Jangkauan = 32 - 18 = 14.
+- Domain kognitif `classify/reasoning`: Siswa harus memahami definisi kuartil untuk data genap (rata-rata dua nilai tengah) dan menerapkan kendala bilangan bulat berbeda untuk meminimalkan selisih nilai ekstrem (jangkauan). Ini memerlukan penalaran tentang hubungan antar variabel dalam statistik.. Bukti: Delapan bilangan bulat berbeda x1 < x2 < ... < x8 memiliki kuartil bawah 20 dan kuartil atas 30.; Nilai terkecil yang mungkin untuk jangkauan data tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang definisi kuartil pada data genap dan bagaimana batasan (bilangan bulat berbeda) memengaruhi nilai ekstrem data.. Bukti: kuartil bawah 20 dan kuartil atas 30; Delapan bilangan bulat berbeda
+- Intended difficulty `classify/Hard`: Soal ini menuntut perencanaan langkah yang saling bergantung: menentukan batasan nilai x2, x3, x6, x7 berdasarkan definisi kuartil, lalu meminimalkan x1 dan memaksimalkan x8 dengan kendala bilangan bulat berbeda. Ini adalah masalah optimasi sederhana yang memerlukan integrasi konsep statistik dan aljabar.. Bukti: Delapan bilangan bulat berbeda; kuartil bawah 20 dan kuartil atas 30; Nilai terkecil yang mungkin untuk jangkauan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi kuartil data genap, konsep ketidaksamaan bilangan bulat. |
+| dependentSteps | 4 |
+| routineStatus | nonroutine_strategy |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 3 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun topiknya standar, menuntut siswa membangun model ketidaksamaan sendiri untuk meminimalkan jangkauan tanpa bantuan langkah-langkah prosedural menjadikannya tantangan tinggi untuk kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Hard": 1} | single_run / single_run | Hard |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72730,9 +75095,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Hard"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Hard", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 829. Soal `2bfb3cdba335109daffaf30b`
@@ -72746,27 +75111,49 @@ Data 8 siswa: 36, 52, 44, 60, 40, 56, 48, 64.<br>Tia mengerjakan: $Q_1$ = 42 dan
 | C | Data tidak boleh diurutkan sebelum kuartil ditentukan. |
 | D | Hasil 16 adalah jangkauan antarkuartil dan hasil 8 adalah simpangan kuartil; namanya tertukar. |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data terurut: 36, 40, 44, 48, 52, 56, 60, 64. Q1 = (40+44)/2 = 42. Q3 = (56+60)/2 = 58. Jangkauan antarkuartil (JAK) = Q3 - Q1 = 58 - 42 = 16. Simpangan kuartil = 1/2 * JAK = 1/2 * 16 = 8. Tia menukar definisi JAK dan simpangan kuartil.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `93ddd425127f80e2ab594c4ee1197cc1d005b3eeaab50afbb6f4a5dae1f734cc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f9585e93b7a15c5999998676075c139746bc3c65e75f1356777609717edf6b0e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2937 |
+
+Run 1 — solusi: Data terurut: 36, 40, 44, 48, 52, 56, 60, 64. Q1 = (40+44)/2 = 42. Q3 = (56+60)/2 = 58. Jangkauan antarkuartil (JAK) = Q3 - Q1 = 58 - 42 = 16. Simpangan kuartil = 1/2 * JAK = 1/2 * 16 = 8. Tia menukar definisi JAK dan simpangan kuartil.
+- Domain kognitif `classify/applying`: Soal meminta siswa mengevaluasi prosedur statistik yang dilakukan orang lain. Siswa harus mengidentifikasi kesalahan konseptual (pertukaran definisi) setelah melakukan verifikasi perhitungan kuartil, yang merupakan penerapan prosedur rutin.. Bukti: Tia mengerjakan: Q1 = 42 dan Q3 = 58. Simpangan kuartil = 58 - 42 = 16. Jangkauan antarkuartil = 16 : 2 = 8.; Kesalahan Tia adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme dan definisi statistik (kuartil, jangkauan antarkuartil, simpangan kuartil) serta kemampuan menerapkan prosedur tersebut untuk mendeteksi kesalahan.. Bukti: Simpangan kuartil = 58 - 42 = 16. Jangkauan antarkuartil = 16 : 2 = 8.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan verifikasi perhitungan (mengurutkan data, mencari kuartil) sebelum dapat mengevaluasi kesalahan konseptual. Meskipun prosedurnya rutin, terdapat beberapa langkah yang saling terkait dan memerlukan ketelitian dalam membedakan istilah statistik.. Bukti: Data 8 siswa: 36, 52, 44, 60, 40, 56, 48, 64.; Kesalahan Tia adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data, menentukan kuartil data genap, definisi jangkauan antarkuartil dan simpangan kuartil. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung kuartil dan memahami ukuran penyebaran data. Soal ini menuntut ketelitian dalam verifikasi langkah demi langkah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72801,9 +75188,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 830. Soal `6d70ea4539451f6887699103`
@@ -72817,27 +75204,49 @@ Harga delapan barang di sebuah toko memiliki jangkauan Rp60.000, jangkauan antar
 | C | Rp72.000; Rp30.000; Rp43.000 |
 | D | Rp67.000; Rp25.000; Rp43.000 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Transformasi data: x' = 1,2x - 5.000. Jangkauan (R) dan Jangkauan Antarkuartil (JAK) adalah ukuran penyebaran, sehingga hanya dipengaruhi oleh perkalian (skala): R' = 1,2 * 60.000 = 72.000; JAK' = 1,2 * 25.000 = 30.000. Kuartil bawah (Q1) adalah ukuran letak, dipengaruhi oleh perkalian dan pengurangan: Q1' = (1,2 * 40.000) - 5.000 = 48.000 - 5.000 = 43.000. Hasil: 72.000; 30.000; 43.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e5df9d15732c3685db6923faddb366d6030b56a8d4dcd9c920d34ce3df01c8e6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1f73e11cd3df4f40c4f40f2eff34e7016145bb45e21669530407b84d19f6eb07`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3115 |
+
+Run 1 — solusi: Transformasi data: x' = 1,2x - 5.000. Jangkauan (R) dan Jangkauan Antarkuartil (JAK) adalah ukuran penyebaran, sehingga hanya dipengaruhi oleh perkalian (skala): R' = 1,2 * 60.000 = 72.000; JAK' = 1,2 * 25.000 = 30.000. Kuartil bawah (Q1) adalah ukuran letak, dipengaruhi oleh perkalian dan pengurangan: Q1' = (1,2 * 40.000) - 5.000 = 48.000 - 5.000 = 43.000. Hasil: 72.000; 30.000; 43.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan pemahaman konseptual tentang bagaimana transformasi linear (perkalian dan pengurangan) memengaruhi ukuran penyebaran (jangkauan, JAK) dan ukuran letak (kuartil). Ini bukan sekadar prosedur rutin karena siswa harus membedakan sifat ukuran penyebaran yang invarian terhadap pergeseran (penambahan/pengurangan) dan ukuran letak yang berubah.. Bukti: Harga delapan barang di sebuah toko memiliki jangkauan Rp60.000, jangkauan antarkuartil Rp25.000, dan kuartil bawah Rp40.000.; Semua harga naik 20%, lalu setiap barang mendapat potongan Rp5.000.; Setelah itu, jangkauan, jangkauan antarkuartil, dan kuartil bawahnya berturut-turut adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip statistik mengenai pengaruh transformasi data terhadap ukuran statistik, yang merupakan pengetahuan konseptual.. Bukti: jangkauan Rp60.000, jangkauan antarkuartil Rp25.000, dan kuartil bawah Rp40.000; Semua harga naik 20%, lalu setiap barang mendapat potongan Rp5.000
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konseptual tentang sifat statistik (penyebaran vs letak) terhadap transformasi data. Siswa harus merencanakan langkah untuk setiap ukuran secara terpisah (mengalikan saja untuk penyebaran, mengalikan dan mengurangi untuk letak). Meskipun prosedurnya familiar, integrasi konsep ini menuntut lebih dari sekadar aplikasi langsung.. Bukti: Semua harga naik 20%, lalu setiap barang mendapat potongan Rp5.000.; jangkauan, jangkauan antarkuartil, dan kuartil bawahnya berturut-turut adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jangkauan, kuartil, dan pengaruh operasi aritmatika pada data statistik. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan memahami statistik deskriptif. Membedakan pengaruh transformasi pada ukuran penyebaran dan letak adalah tantangan standar yang memerlukan pemahaman konseptual di atas sekadar menghitung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72869,9 +75278,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 831. Soal `d09ae41db1d64075ffcfd75d`
@@ -72885,27 +75294,49 @@ Delapan data terurut dari kecil ke besar: 12, 18, $p$, 30, 34, $q$, 50, 62.<br><
 | C | 40 |
 | D | 45 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Diketahui Q1+Q3=68 dan Q3‑Q1=22, sehingga Q1=23 dan Q3=45. Karena Q1 merupakan median dari 18 dan p (posisi ke‑3 dan ke‑4), maka (18+p)/2=23 sehingga p=28.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4fdbcb98f820c738df6d384f55aaddf464401fcb49f2375b39565c356fc5d560`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `78661bbfafb6c5170b87e1b52b0526032479fda984694f515554647a54bf68e8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4737 |
+
+Run 1 — solusi: Diketahui Q1+Q3=68 dan Q3‑Q1=22, sehingga Q1=23 dan Q3=45. Karena Q1 merupakan median dari 18 dan p (posisi ke‑3 dan ke‑4), maka (18+p)/2=23 sehingga p=28.
+- Domain kognitif `classify/applying`: Soal meminta menghitung nilai p dengan menggunakan definisi kuartil, langkahnya langsung dan rutin.. Bukti: Q1+Q3=68 dan Q3‑Q1=22; (18+p)/2=23
+- Dimensi pengetahuan `classify/procedural`: Melibatkan prosedur menghitung kuartil dan menyelesaikan persamaan linear sederhana.. Bukti: menghitung Q1 dan Q3 dari data terurut; menentukan p dari Q1
+- Intended difficulty `classify/Easy`: Penyelesaian hanya membutuhkan pemahaman kuartil (prasyarat) dan penerapan prosedur rutin; tidak ada perencanaan kompleks atau interaksi kendala.. Bukti: dua persamaan linear sederhana; tidak ada pilihan strategi; semua langkah diarahkan oleh soal
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami definisi kuartil Q1 dan Q3 serta cara menghitung median pada data berurutan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 8, menghitung kuartil dan menyelesaikan persamaan linear sederhana merupakan prosedur yang sudah diajarkan dan mudah dipahami. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -72939,9 +75370,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 832. Soal `7a6adcbff5ca5295cddba083`
@@ -72955,27 +75386,49 @@ Seorang siswa menyatakan: "Jika jangkauan antarkuartil suatu data sama dengan 0,
 | C | 8, 9, 10, 10, 10, 11, 12, 14 |
 | D | 3, 10, 10, 10, 10, 10, 10, 25 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Untuk data D = {3,10,10,10,10,10,10,25}, susun naik: 3,10,10,10,10,10,10,25. Q1 = median dari 4 nilai pertama = (10+10)/2 = 10. Q3 = median dari 4 nilai terakhir = (10+10)/2 = 10. Jadi jangkauan antar kuartil = Q3‑Q1 = 0, namun data tidak semua sama (ada 3 dan 25).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8a9eb168255210e3ebf8f393abf4ee66e9c82d69cb2e20579a545a488d2a4327`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8f1e4af8c2baf5f1512c704be5486a7e0feddc18c60630cbdd135eab9aa60256`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Easy | 4817 |
+
+Run 1 — solusi: Untuk data D = {3,10,10,10,10,10,10,25}, susun naik: 3,10,10,10,10,10,10,25. Q1 = median dari 4 nilai pertama = (10+10)/2 = 10. Q3 = median dari 4 nilai terakhir = (10+10)/2 = 10. Jadi jangkauan antar kuartil = Q3‑Q1 = 0, namun data tidak semua sama (ada 3 dan 25).
+- Domain kognitif `classify/reasoning`: Soal meminta menghitung kuartil pertama dan ketiga, langkahnya standar sehingga termasuk reasoning karena harus memilih prosedur yang tepat.. Bukti: Q1 = (10 + 10)/2 = 10 dan Q3 = (10 + 10)/2 = 10 sehingga JAK = 0
+- Dimensi pengetahuan `classify/conceptual`: Membutuhkan pemahaman konsep kuartil dan interquartile range, termasuk hubungan nilai median pada subset data.. Bukti: Pengertian jangkauan antar kuartil (Q3‑Q1) dan cara menghitung Q1, Q3
+- Intended difficulty `classify/Easy`: Langkah terbatas pada dua perhitungan kuartil yang rutin bagi siswa kelas 8; tidak ada perencanaan kompleks atau interaksi kendala, sehingga tergolong Easy.. Bukti: Menghitung Q1 dan Q3 dari 8 nilai terurut, kemudian membandingkan dengan pernyataan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Siswa harus memahami cara mengurutkan data, menghitung median, kuartil pertama dan ketiga, serta konsep jangkauan antar kuartil. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi kuartil biasanya diajarkan di kelas 8; perhitungan Q1 dan Q3 langsung dari data terurut, sehingga beban kognitif rendah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73007,9 +75460,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 833. Soal `6d61e3774bca7adf95a28b7b`
@@ -73023,27 +75476,49 @@ Hasil ujian dua kelas masing-masing 40 siswa:<br><br>\|Kelas\|$Q_1$\|$Q_3$\|<br>
 | C | Nilai terendah kelas X lebih rendah daripada nilai terendah kelas Y. |
 | D | Setengah banyak siswa di bagian tengah kelas Y nilainya terkumpul pada rentang yang lebih sempit daripada kelas X. |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Jangkauan Antar Kuartil (JAK) didefinisikan sebagai Q3 - Q1. Untuk kelas X, JAK = 70 - 50 = 20. Untuk kelas Y, JAK = 74 - 62 = 12. JAK merepresentasikan rentang nilai di mana 50% data tengah berada. Karena 12 < 20, maka data tengah kelas Y lebih terkumpul (lebih sempit rentangnya) dibandingkan kelas X.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `['menyimpulkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `81686a662354fb4dc6d2436641d22559e323e30c4bf0a4519d0ea677fca695f8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4346027773e587b699d93a5dc69dcf8db2c64727ee3c3170fd82bf18a23def87`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2796 |
+
+Run 1 — solusi: Jangkauan Antar Kuartil (JAK) didefinisikan sebagai Q3 - Q1. Untuk kelas X, JAK = 70 - 50 = 20. Untuk kelas Y, JAK = 74 - 62 = 12. JAK merepresentasikan rentang nilai di mana 50% data tengah berada. Karena 12 < 20, maka data tengah kelas Y lebih terkumpul (lebih sempit rentangnya) dibandingkan kelas X.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep Jangkauan Antar Kuartil (JAK) sebagai ukuran penyebaran data yang mencakup 50% data tengah. Siswa harus menghitung dan membandingkan nilai JAK untuk menarik kesimpulan tentang sebaran data, yang merupakan penerapan konsep pada konteks data statistik.. Bukti: Kesimpulan yang pasti benar berdasarkan tabel tersebut adalah; JAK X = 70 - 50 = 20 dan JAK Y = 74 - 62 = 12
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang definisi dan interpretasi Jangkauan Antar Kuartil (JAK) sebagai ukuran penyebaran data, yang merupakan bagian dari pengetahuan konseptual dalam statistika.. Bukti: JAK X = 70 - 50 = 20 dan JAK Y = 74 - 62 = 12
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena siswa harus memahami interpretasi statistik dari JAK (bukan sekadar menghitung) dan mengevaluasi pernyataan yang benar di antara pengecoh yang menguji miskonsepsi umum (seperti menganggap Q1 menentukan nilai terendah).. Bukti: Kesimpulan yang pasti benar berdasarkan tabel tersebut adalah; JAK X = 70 - 50 = 20 dan JAK Y = 74 - 62 = 12
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang kuartil dan Jangkauan Antar Kuartil (JAK). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menginterpretasikan ukuran penyebaran data. Soal ini menuntut pemahaman konsep JAK untuk membedakan antara sebaran data dan nilai absolut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73082,9 +75557,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 834. Soal `e9414b3d6bf301e005383b73`
@@ -73098,27 +75573,49 @@ Data: 30, 34, 37, 40, 44, 47, 50, 52. Satu data baru $x$ ditambahkan sehingga ja
 | C | 82 |
 | D | 8 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `60`.
+Solusi minimum hasil AI: Data awal: 30, 34, 37, 40, 44, 47, 50, 52. Jangkauan awal = 52 - 30 = 22. Jika x ditambahkan, jangkauan baru = 30. Kasus 1: x menjadi data terbesar, maka x - 30 = 30, sehingga x = 60. Kasus 2: x menjadi data terkecil, maka 52 - x = 30, sehingga x = 22. Nilai x terbesar yang mungkin adalah 60.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `09d129ebe2b86e2d468b6a56ac132adff452d8df85c4232af94e9a30f91b604b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2b00c00b0ee91f105c1a55f0efe2cfead13457eb405cf7b18070919f9ab99868`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 2742 |
+
+Run 1 — solusi: Data awal: 30, 34, 37, 40, 44, 47, 50, 52. Jangkauan awal = 52 - 30 = 22. Jika x ditambahkan, jangkauan baru = 30. Kasus 1: x menjadi data terbesar, maka x - 30 = 30, sehingga x = 60. Kasus 2: x menjadi data terkecil, maka 52 - x = 30, sehingga x = 22. Nilai x terbesar yang mungkin adalah 60.
+- Domain kognitif `classify/reasoning`: Siswa perlu memahami konsep jangkauan (selisih nilai maksimum dan minimum) dan bagaimana penambahan data memengaruhi jangkauan tersebut. Siswa harus menganalisis dua skenario (x sebagai nilai maksimum atau minimum) untuk menentukan nilai x terbesar, yang merupakan proses penalaran matematis.. Bukti: Satu data baru x ditambahkan sehingga jangkauan data menjadi 30. Nilai x terbesar yang mungkin adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang definisi jangkauan dalam statistik dan bagaimana perubahan data memengaruhi nilai tersebut.. Bukti: jangkauan data menjadi 30
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya menerapkan rumus jangkauan secara langsung, tetapi harus mempertimbangkan dua kemungkinan posisi x (sebagai nilai maksimum atau minimum) untuk memenuhi kondisi jangkauan baru. Perencanaan langkah ini memerlukan pemahaman hubungan antar data yang lebih dari sekadar prosedur rutin.. Bukti: Satu data baru x ditambahkan sehingga jangkauan data menjadi 30. Nilai x terbesar yang mungkin adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi jangkauan data (selisih nilai terbesar dan terkecil). |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu memahami konsep statistik dasar seperti jangkauan. Soal ini menuntut analisis kondisi (kasus x terbesar vs terkecil) yang sesuai dengan tingkat kognitif kelas 8. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73150,9 +75647,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 835. Soal `f10c3d04004cf13d32ed6392`
@@ -73166,27 +75663,49 @@ Banyak buku yang dibaca 12 siswa dalam setahun: 62, 95, 52, 30, 70, 58, 85, 55, 
 | C | Jangkauan turun 47 dan jangkauan antarkuartil turun 5,5. |
 | D | Jangkauan turun 47 dan jangkauan antarkuartil turun 10. |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data awal (n=12): 30, 35, 52, 55, 58, 60, 62, 65, 68, 70, 85, 95. Jangkauan=95-30=65. Q1=53,5; Q3=69; JAK=15,5. Data baru (n=8): 52, 55, 58, 60, 62, 65, 68, 70. Jangkauan=70-52=18. Penurunan jangkauan=65-18=47. Q1=56,5; Q3=66,5; JAK=10. Penurunan JAK=15,5-10=5,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2cf4104063062d14f04acbb881f968e04068970deed04c031c684145e7b9477f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6aff65d05dd59a292922274aba4ae25a70f69c760f05e60c7af64692a897d976`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2953 |
+
+Run 1 — solusi: Data awal (n=12): 30, 35, 52, 55, 58, 60, 62, 65, 68, 70, 85, 95. Jangkauan=95-30=65. Q1=53,5; Q3=69; JAK=15,5. Data baru (n=8): 52, 55, 58, 60, 62, 65, 68, 70. Jangkauan=70-52=18. Penurunan jangkauan=65-18=47. Q1=56,5; Q3=66,5; JAK=10. Penurunan JAK=15,5-10=5,5.
+- Domain kognitif `classify/applying`: Siswa perlu melakukan serangkaian prosedur statistik (mengurutkan data, menghitung jangkauan dan kuartil, lalu membandingkan nilai sebelum dan sesudah pemotongan data). Ini adalah penerapan prosedur pada konteks data yang diberikan.. Bukti: Dua data terkecil dan dua data terbesar tidak diikutkan lagi. Pernyataan yang benar tentang perubahan ukuran penyebaran adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme perhitungan jangkauan dan jangkauan antarkuartil (prosedural) serta pemahaman konsep statistik dasar (konseptual).. Bukti: perubahan ukuran penyebaran; Jangkauan; jangkauan antarkuartil
+- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah berurutan: mengurutkan data, menghitung statistik awal, memotong data, menghitung statistik baru, dan menghitung selisih. Meskipun prosedural, terdapat banyak langkah yang saling bergantung (dependent steps) dan potensi kesalahan hitung yang moderat.. Bukti: Dua data terkecil dan dua data terbesar tidak diikutkan lagi.; Pernyataan yang benar tentang perubahan ukuran penyebaran adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jangkauan, kuartil, dan pengurutan data. |
+| dependentSteps | 6 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 12 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung statistik sederhana. Soal ini menuntut ketelitian dalam beberapa tahap perhitungan yang saling terkait, namun metodenya standar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73220,9 +75739,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 836. Soal `8dd14f8b0c711c44741c4c40`
@@ -73236,27 +75755,49 @@ Ukuran sepatu 24 siswa:<br><br>\|Ukuran\|36\|37\|38\|39\|40\|41\|<br>\|---\|---\
 | C | 2; $Q_3$ seharusnya 39 karena memakai data ke-17, bukan data ke-18. |
 | D | 3,5; $Q_1$ seharusnya 36,5 karena data ke-6 dan ke-7 bernilai 36 dan 37. |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Total data n=24. Q1 position is between data 6 and 7. Data 6 is 37, data 7 is 38. Q1 = (37+38)/2 = 37.5. Q3 position is between data 18 and 19. Data 18 is 40, data 19 is 40. Q3 = (40+40)/2 = 40. IQR = Q3 - Q1 = 40 - 37.5 = 2.5. Budi incorrectly identified Q1 as just data 6.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `69ee8baf7185aa6e67e8ed8257f6f807360fd90dd6cbd6757b5b3e594c7a2b24`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2306bc168d2d3efcf2222cca64afc2908cb9a054a4fd73e12b2abb6a455b020f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3063 |
+
+Run 1 — solusi: Total data n=24. Q1 position is between data 6 and 7. Data 6 is 37, data 7 is 38. Q1 = (37+38)/2 = 37.5. Q3 position is between data 18 and 19. Data 18 is 40, data 19 is 40. Q3 = (40+40)/2 = 40. IQR = Q3 - Q1 = 40 - 37.5 = 2.5. Budi incorrectly identified Q1 as just data 6.
+- Domain kognitif `classify/applying`: Siswa harus menerapkan prosedur perhitungan kuartil pada data kelompok (frekuensi) dan mengevaluasi kesalahan prosedural yang dilakukan oleh Budi. Ini melibatkan pemahaman konsep kuartil untuk data genap.. Bukti: Jangkauan antarkuartil yang benar dan kesalahan Budi adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung kuartil pada data frekuensi dan kemampuan untuk mendiagnosis kesalahan dalam penerapan algoritma tersebut.. Bukti: Ukuran sepatu 24 siswa; Jangkauan antarkuartil yang benar dan kesalahan Budi adalah
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya menghitung nilai, tetapi harus melakukan analisis kesalahan (error analysis) terhadap metode yang digunakan Budi. Siswa perlu memahami konvensi kuartil untuk data genap (rata-rata dua nilai tengah) dan menerapkannya dengan cermat pada tabel frekuensi kumulatif.. Bukti: Budi mengerjakan: Q1 = data ke-6 = 37 dan Q3 = data ke-18 = 40; Jangkauan antarkuartil yang benar dan kesalahan Budi adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tabel frekuensi, penentuan posisi kuartil, dan perhitungan rata-rata dua data tengah untuk data genap. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung kuartil. Analisis kesalahan menambah beban kognitif dibandingkan sekadar menghitung, namun prosedurnya tetap standar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73296,9 +75837,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 837. Soal `6c2958aad52a9c7eda68081a`
@@ -73312,27 +75853,49 @@ Data terurut dari kecil ke besar: 8, 12, $x$, 18, 21, 27, 30, 36 dengan $x$ bila
 | C | 3 |
 | D | 5 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data: 8, 12, x, 18, 21, 27, 30, 36. Q1 = (12+x)/2. Q3 = (27+30)/2 = 28,5. Jangkauan Antarkuartil (JAK) = Q3 - Q1 = 28,5 - (12+x)/2 = (57 - 12 - x)/2 = (45 - x)/2. Agar JAK bulat, (45 - x) harus genap, maka x harus ganjil. Karena data terurut, 12 <= x <= 18. Nilai x ganjil yang memenuhi: 13, 15, 17. Total ada 3 nilai.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f3d294ae52d0b69c840dc1c1120df3c42f3f39252c03ec6e6902f511acd2a610`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e65e4c98b30a7a219d8c625ad34e4ddf710de1a03d8cb8a1f1438ec43fa32e17`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2824 |
+
+Run 1 — solusi: Data: 8, 12, x, 18, 21, 27, 30, 36. Q1 = (12+x)/2. Q3 = (27+30)/2 = 28,5. Jangkauan Antarkuartil (JAK) = Q3 - Q1 = 28,5 - (12+x)/2 = (57 - 12 - x)/2 = (45 - x)/2. Agar JAK bulat, (45 - x) harus genap, maka x harus ganjil. Karena data terurut, 12 <= x <= 18. Nilai x ganjil yang memenuhi: 13, 15, 17. Total ada 3 nilai.
+- Domain kognitif `classify/applying`: Siswa perlu memahami definisi kuartil untuk data genap, menghitung JAK, dan menerapkan syarat bilangan bulat pada ekspresi aljabar yang dihasilkan. Ini melibatkan penerapan konsep statistik pada konteks yang sedikit dimodifikasi.. Bukti: Banyak nilai x yang membuat jangkauan antarkuartilnya juga bilangan bulat adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang statistik (kuartil dan JAK) dan prosedur aljabar untuk menentukan nilai variabel yang memenuhi syarat tertentu.. Bukti: Data terurut dari kecil ke besar: 8, 12, x, 18, 21, 27, 30, 36; jangkauan antarkuartilnya juga bilangan bulat
+- Intended difficulty `classify/Medium`: Soal memerlukan pemahaman tentang posisi kuartil pada data genap dan manipulasi aljabar sederhana. Siswa harus menghubungkan syarat 'bilangan bulat' dengan paritas variabel x. Langkah-langkahnya terstruktur dan tidak memerlukan strategi non-rutin yang kompleks.. Bukti: Banyak nilai x yang membuat jangkauan antarkuartilnya juga bilangan bulat
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi kuartil data genap, operasi aljabar dasar, konsep bilangan ganjil/genap. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 sudah mempelajari statistik dan aljabar. Menentukan kuartil dan memanipulasi ekspresi untuk syarat bilangan bulat adalah tugas yang sesuai untuk tingkat menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73364,9 +75927,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 838. Soal `c7ca1655e72b68ebe11c8387`
@@ -73380,27 +75943,51 @@ Kelompok X: 22, 10, 18, 14. Kelompok Y: 30, 34, 38, 42.<br>Seorang siswa menyata
 | C | 8 |
 | D | 16 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Data gabungan: 10, 14, 18, 22, 30, 34, 38, 42. Banyak data (n) = 8. Q1 adalah rata-rata data ke-2 dan ke-3: (14+18)/2 = 16. Q3 adalah rata-rata data ke-6 dan ke-7: (34+38)/2 = 36. Jangkauan antarkuartil (JAK) = Q3 - Q1 = 36 - 16 = 20.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `498a47e673a43d44713d2a5086057fa5539b854de465792f1e9b6508be5d5204`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `afc938911da78ae9f4396673c8c58dc0d42fa0eac2fc82cbb30e4767b59ae90a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2780 |
+
+Run 1 — solusi: Data gabungan: 10, 14, 18, 22, 30, 34, 38, 42. Banyak data (n) = 8. Q1 adalah rata-rata data ke-2 dan ke-3: (14+18)/2 = 16. Q3 adalah rata-rata data ke-6 dan ke-7: (34+38)/2 = 36. Jangkauan antarkuartil (JAK) = Q3 - Q1 = 36 - 16 = 20.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik (menentukan kuartil dan jangkauan antarkuartil) pada kumpulan data gabungan. Ini adalah penerapan konsep yang rutin dalam materi statistika kelas 8.. Bukti: Jangkauan antarkuartil seluruh delapan data gabungan adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang cara menghitung jangkauan antarkuartil (JAK) dari sekumpulan data yang diberikan.. Bukti: Jangkauan antarkuartil seluruh delapan data gabungan adalah
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan penggabungan dua set data, pengurutan ulang, dan penerapan prosedur kuartil pada data genap (n=8) yang melibatkan rata-rata dua nilai tengah untuk Q1 dan Q3. Langkah-langkahnya jelas namun memerlukan ketelitian dalam prosedur.. Bukti: Kelompok X: 22, 10, 18, 14. Kelompok Y: 30, 34, 38, 42.; Jangkauan antarkuartil seluruh delapan data gabungan adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep kuartil, jangkauan antarkuartil, dan pengurutan data. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung kuartil dari data tunggal. Proses penggabungan dan penghitungan JAK pada data genap adalah standar untuk tingkat ini. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73435,9 +76022,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 839. Soal `7ea141493c9ffd9b6a422ff0`
@@ -73451,27 +76038,51 @@ Nilai tes seleksi 16 peserta: 72, 85, 64, 90, 78, 68, 85, 72, 95, 60, 78, 85, 70
 | C | 8 |
 | D | 16 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data terurut: 60, 64, 66, 68, 70, 72, 72, 78, 78, 78, 85, 85, 85, 90, 92, 95. Banyak data n=16. Median membagi data menjadi dua kelompok masing-masing 8 data. Q1 adalah median dari 8 data pertama (60, 64, 66, 68, 70, 72, 72, 78), yaitu (68+70)/2 = 69. Q3 adalah median dari 8 data terakhir (78, 78, 85, 85, 85, 90, 92, 95), yaitu (85+85)/2 = 85. Jangkauan antarkuartil = Q3 - Q1 = 85 - 69 = 16.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6ce507cd8f5166dde2d0997961b7d7b9abcd8f81324dde58356ed8024ad526e4`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b8ed16730d159026a7b654acc348d7fb24484ec74e1ff3acfc9373b89ad1c07e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2934 |
+
+Run 1 — solusi: Data terurut: 60, 64, 66, 68, 70, 72, 72, 78, 78, 78, 85, 85, 85, 90, 92, 95. Banyak data n=16. Median membagi data menjadi dua kelompok masing-masing 8 data. Q1 adalah median dari 8 data pertama (60, 64, 66, 68, 70, 72, 72, 78), yaitu (68+70)/2 = 69. Q3 adalah median dari 8 data terakhir (78, 78, 85, 85, 85, 90, 92, 95), yaitu (85+85)/2 = 85. Jangkauan antarkuartil = Q3 - Q1 = 85 - 69 = 16.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur statistik untuk menghitung jangkauan antarkuartil dari sekumpulan data yang diberikan. Ini adalah penerapan langsung dari definisi dan prosedur statistik yang dipelajari di kelas 8.. Bukti: Jangkauan antarkuartil dari nilai tes tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme atau metode untuk menentukan kuartil dan menghitung jangkauan antarkuartil.. Bukti: Jangkauan antarkuartil
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan ketelitian dalam mengurutkan data (16 data) dan menerapkan prosedur kuartil yang benar (merata-ratakan dua nilai tengah untuk n genap). Meskipun prosedurnya rutin, jumlah data yang cukup banyak meningkatkan beban kognitif dan risiko kesalahan hitung.. Bukti: Nilai tes seleksi 16 peserta: 72, 85, 64, 90, 78, 68, 85, 72, 95, 60, 78, 85, 70, 92, 66, 78.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data, menentukan median, dan menghitung kuartil. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 16 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengolah data statistik dasar. Menghitung kuartil dari 16 data adalah tugas standar namun menuntut ketelitian prosedural. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73505,9 +76116,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 840. Soal `667d272a475fc544e383cb06`
@@ -73521,27 +76132,49 @@ Waktu tempuh (menit) 16 pengantar paket dari gudang ke pelanggan: 24, 31, 28, 35
 | C | 5,5 |
 | D | 37 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data terurut: 24, 25, 26, 27, 28, 29, 31, 31, 32, 33, 35, 36, 38, 40, 42, 45. n=16. Q2 (median) = (31+32)/2 = 31,5. Q3 (median data ke-13 dan ke-14) = (36+38)/2 = 37. Selisih Q3 - Q2 = 37 - 31,5 = 5,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `24f37956e2d7c6888d1d16f4734dadcdfa8a64f5c4467a40277d4bb5e128f121`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2b76a6cf1ce8efddb3544bcbfe6dde16c7d5f86ac818c3cbb1c6b15066482eae`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2913 |
+
+Run 1 — solusi: Data terurut: 24, 25, 26, 27, 28, 29, 31, 31, 32, 33, 35, 36, 38, 40, 42, 45. n=16. Q2 (median) = (31+32)/2 = 31,5. Q3 (median data ke-13 dan ke-14) = (36+38)/2 = 37. Selisih Q3 - Q2 = 37 - 31,5 = 5,5.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan prosedur statistik standar untuk mencari kuartil dari sekumpulan data yang diberikan, yang merupakan prosedur rutin dalam kurikulum kelas 8.. Bukti: Selisih kuartil atas (Q3) dan kuartil kedua (Q2) dari waktu tempuh tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami definisi dan algoritma perhitungan kuartil (prosedural) serta bagaimana mengurutkan data untuk menentukan posisi kuartil (konseptual).. Bukti: Selisih kuartil atas (Q3) dan kuartil kedua (Q2)
+- Intended difficulty `classify/Medium`: Soal ini bersifat rutin. Siswa hanya perlu mengurutkan data (16 data) dan menerapkan rumus kuartil. Tidak ada kendala yang berinteraksi atau strategi non-rutin yang diperlukan. Beban perhitungan moderat karena jumlah data cukup banyak namun prosedurnya standar.. Bukti: 24, 31, 28, 35, 26, 40, 31, 29, 45, 33, 38, 27, 36, 42, 25, 32
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data, menentukan median, dan membagi data menjadi empat bagian sama besar (kuartil). |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 16 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun prosedurnya rutin, mengurutkan 16 data dan menghitung kuartil dengan presisi adalah tugas standar kelas 8 yang memerlukan ketelitian, sehingga dikategorikan Medium. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73575,9 +76208,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 841. Soal `bea9b31a349dd184f8464068`
@@ -73591,27 +76224,49 @@ Banyak sampah (kg) yang terkumpul di sebuah bank sampah selama 24 minggu: 18, 25
 | C | $Q_1$ = 26,5 dan $Q_3$ = 29,5 |
 | D | $Q_1$ = 23 dan $Q_3$ = 31 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data terurut (n=24): 18, 19, 20, 21, 22, 23, 24, 25, 25, 26, 27, 27, 28, 29, 29, 30, 31, 31, 32, 33, 34, 35, 36, 38. Q1 adalah median dari 12 data pertama (data ke-6 dan ke-7): (23+24)/2 = 23,5. Q3 adalah median dari 12 data terakhir (data ke-18 dan ke-19): (31+32)/2 = 31,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `89470fb067468ac88f818c3f9d6653d93ff7dba1ae5fae1fdbe8192704bba6f1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `99a42893ee416f1baf90ffa885caa13929f88bb3f299e319c5c160224e4831ae`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3075 |
+
+Run 1 — solusi: Data terurut (n=24): 18, 19, 20, 21, 22, 23, 24, 25, 25, 26, 27, 27, 28, 29, 29, 30, 31, 31, 32, 33, 34, 35, 36, 38. Q1 adalah median dari 12 data pertama (data ke-6 dan ke-7): (23+24)/2 = 23,5. Q3 adalah median dari 12 data terakhir (data ke-18 dan ke-19): (31+32)/2 = 31,5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur standar untuk menentukan kuartil dari sekumpulan data yang diberikan. Ini adalah penerapan langsung dari algoritma statistik yang dipelajari di kelas 8.. Bukti: Kuartil bawah dan kuartil atas dari data tersebut berturut-turut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau metode perhitungan kuartil (prosedural) dalam statistika.. Bukti: Kuartil bawah dan kuartil atas
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena meskipun prosedurnya rutin, siswa harus melakukan pengurutan data yang cukup panjang (24 data) dengan teliti untuk menghindari kesalahan hitung, yang meningkatkan beban kognitif dalam eksekusi prosedur.. Bukti: Banyak sampah (kg) yang terkumpul di sebuah bank sampah selama 24 minggu: 18, 25, 31, 22, 27, 35, 29, 20, 24, 33, 28, 26, 38, 21, 30, 23, 34, 19, 32, 27, 36, 25, 29, 31.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data dan menentukan median. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 24 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tugas mengurutkan 24 data dan menghitung rata-rata dua nilai tengah adalah tugas standar kelas 8, namun beban administratif pengurutan data membuat tingkat kesulitannya berada di level Medium. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73645,9 +76300,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 842. Soal `d982609a836c53bdf3dedc98`
@@ -73661,27 +76316,49 @@ Harga (ribu rupiah) 20 jenis buku di sebuah toko: 45, 60, 52, 75, 48, 66, 58, 80
 | C | 8,25 |
 | D | 16,5 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data terurut: 45, 48, 50, 52, 54, 55, 56, 58, 60, 60, 62, 64, 66, 68, 70, 72, 75, 78, 80, 85. Banyak data n=20. Q1 terletak di antara data ke-5 dan ke-6: (54+55)/2 = 54,5. Q3 terletak di antara data ke-15 dan ke-16: (70+72)/2 = 71. Simpangan kuartil = (Q3 - Q1)/2 = (71 - 54,5)/2 = 16,5/2 = 8,25.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c110edcc1b73aec77331282e7fb89c2f5c766184825b3c62c3bf5dbee74d24fc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e7f95ce6d377b4f0b6023be51b9f6ae7f35bd73faf8eba32951431e4c86eef2f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2917 |
+
+Run 1 — solusi: Data terurut: 45, 48, 50, 52, 54, 55, 56, 58, 60, 60, 62, 64, 66, 68, 70, 72, 75, 78, 80, 85. Banyak data n=20. Q1 terletak di antara data ke-5 dan ke-6: (54+55)/2 = 54,5. Q3 terletak di antara data ke-15 dan ke-16: (70+72)/2 = 71. Simpangan kuartil = (Q3 - Q1)/2 = (71 - 54,5)/2 = 16,5/2 = 8,25.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur statistik untuk menentukan kuartil dari data yang belum terurut, kemudian menghitung simpangan kuartil. Ini adalah penerapan prosedur rutin dalam statistik.. Bukti: Simpangan kuartil dari harga buku tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme atau metode perhitungan simpangan kuartil (jangkauan interkuartil dibagi dua) pada data tunggal.. Bukti: Simpangan kuartil dari harga buku tersebut adalah
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan ketelitian dalam mengurutkan 20 data, menentukan posisi kuartil, dan melakukan operasi hitung. Meskipun prosedurnya rutin, jumlah data yang cukup banyak (20) meningkatkan beban kognitif dan risiko kesalahan langkah jika tidak terencana dengan baik.. Bukti: Harga (ribu rupiah) 20 jenis buku; Simpangan kuartil dari harga buku tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang median, kuartil, dan pengurutan data. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 20 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengolah data statistik sederhana. Mengurutkan 20 data dan menghitung kuartil adalah tugas standar namun menuntut ketelitian tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73715,9 +76392,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 843. Soal `dd5ad6d1dff15d35406b0d26`
@@ -73731,27 +76408,49 @@ Panjang delapan ikan lele dalam sebuah kolam ditunjukkan pada tabel.<br><br>\|Ik
 | C | 9 cm |
 | D | 11 cm |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data awal: 24, 27, 22, 30, 26, 33, 25, 29. Data baru: A(29), B(32), C(34), D(35), E(31), F(38), G(30), H(34). Nilai maksimum adalah 38 (ikan F), nilai minimum adalah 29 (ikan A). Jangkauan = 38 - 29 = 9 cm.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5e3128b16ba7bdb56a2bc46d4d628456e634026ac9edc4bddbf8d8cc923722ac`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3d740d96d45fbfd5fbba65d177adce03b2aa72bf5c78c89a34435c8ca324431d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2772 |
+
+Run 1 — solusi: Data awal: 24, 27, 22, 30, 26, 33, 25, 29. Data baru: A(29), B(32), C(34), D(35), E(31), F(38), G(30), H(34). Nilai maksimum adalah 38 (ikan F), nilai minimum adalah 29 (ikan A). Jangkauan = 38 - 29 = 9 cm.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur perhitungan jangkauan (selisih nilai maksimum dan minimum) setelah melakukan transformasi data yang berbeda pada elemen-elemen tertentu. Ini adalah penerapan konsep statistik pada konteks rutin.. Bukti: Tiga bulan lagi panjang semua ikan bertambah 5 cm, kecuali ikan C yang bertambah 12 cm. Jangkauan panjang ikan pada saat itu adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang cara menghitung jangkauan data setelah perubahan nilai pada elemen-elemen tertentu dalam kumpulan data.. Bukti: Jangkauan panjang ikan pada saat itu adalah
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan transformasi data secara selektif (semua +5, satu +12) sebelum menentukan jangkauan. Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling terkait dan potensi kesalahan jika siswa tidak teliti dalam memperbarui nilai minimum dan maksimum setelah perubahan.. Bukti: Tiga bulan lagi panjang semua ikan bertambah 5 cm, kecuali ikan C yang bertambah 12 cm.; Jangkauan panjang ikan pada saat itu adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep jangkauan data dan operasi penjumlahan dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengelola transformasi data sederhana dan menghitung statistik dasar. Tantangan utama adalah ketelitian dalam memperbarui nilai minimum dan maksimum setelah perubahan yang tidak seragam. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73789,9 +76488,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 844. Soal `259a9f121fee4ece24b3948d`
@@ -73805,27 +76504,49 @@ Harga (dalam ribu rupiah) delapan barang di sebuah toko: 50, 60, 75, 80, 90, 100
 | C | Rp125.000 |
 | D | Rp100.000 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Data awal: 50, 60, 75, 80, 90, 100, 120, 150. Kenaikan 10% untuk semua kecuali 120 (naik 50%). Harga baru: 50*1.1=55, 60*1.1=66, 75*1.1=82.5, 80*1.1=88, 90*1.1=99, 100*1.1=110, 120*1.5=180, 150*1.1=165. Data baru: 55, 66, 82.5, 88, 99, 110, 165, 180. Jangkauan = Max - Min = 180 - 55 = 125.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5df0faf658e1a9f43ea969048f71e6644d20c55af6f1719daf0efba189630855`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a61d5de950106ea8141606a5635c5f499b3ecfbae18edadfa41e8ad69567eaca`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2888 |
+
+Run 1 — solusi: Data awal: 50, 60, 75, 80, 90, 100, 120, 150. Kenaikan 10% untuk semua kecuali 120 (naik 50%). Harga baru: 50*1.1=55, 60*1.1=66, 75*1.1=82.5, 80*1.1=88, 90*1.1=99, 100*1.1=110, 120*1.5=180, 150*1.1=165. Data baru: 55, 66, 82.5, 88, 99, 110, 165, 180. Jangkauan = Max - Min = 180 - 55 = 125.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur persentase pada setiap data, mengidentifikasi pengecualian, mengurutkan kembali (atau mencari nilai ekstrem baru), dan menghitung jangkauan. Ini adalah penerapan konsep statistik pada konteks rutin.. Bukti: Bulan depan harga semua barang naik 10%, kecuali barang yang harganya Rp120.000 naik 50%. Jangkauan harga barang bulan depan adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur perhitungan persentase dan definisi jangkauan (selisih nilai maksimum dan minimum) untuk menyelesaikan masalah.. Bukti: Jangkauan harga barang bulan depan adalah
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan ketelitian dalam menerapkan dua aturan persentase yang berbeda pada data yang diberikan dan menentukan nilai ekstrem baru. Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling terkait (menghitung setiap nilai, mengidentifikasi max/min baru, menghitung selisih) yang meningkatkan beban kognitif dibandingkan soal satu langkah.. Bukti: Bulan depan harga semua barang naik 10%, kecuali barang yang harganya Rp120.000 naik 50%.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi hitung persentase dan konsep jangkauan data. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 8 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengelola operasi persentase pada sekumpulan data dan memahami konsep jangkauan. Soal ini menuntut ketelitian operasional tanpa memerlukan strategi non-rutin yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73859,9 +76580,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 845. Soal `fdeb810ea97b4b3b29bc9a09`
@@ -73875,27 +76596,49 @@ Tinggi badan 36 siswa kelas 8 disajikan pada tabel berikut.<br><br>\|Tinggi (cm)
 | C | 7,5 |
 | D | 5 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Total data N=36. Q1 is the average of data 9 and 10. Cumulative frequencies: 150(3), 155(9), 160(19). Data 9 is 155, data 10 is 160. Q1 = (155+160)/2 = 157.5. Q3 is the average of data 27 and 28. Cumulative frequencies: 165(27), 170(33). Data 27 is 165, data 28 is 170. Q3 = (165+170)/2 = 167.5. IQR = Q3 - Q1 = 167.5 - 157.5 = 10.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4bc0fc55641061dfdaea0037d68f7008b3a666124f58145888e45656606780d7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f4e2b2127286770c88da1f36482c4832a828254dc24e18b7801c83d67cd40c8f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2895 |
+
+Run 1 — solusi: Total data N=36. Q1 is the average of data 9 and 10. Cumulative frequencies: 150(3), 155(9), 160(19). Data 9 is 155, data 10 is 160. Q1 = (155+160)/2 = 157.5. Q3 is the average of data 27 and 28. Cumulative frequencies: 165(27), 170(33). Data 27 is 165, data 28 is 170. Q3 = (165+170)/2 = 167.5. IQR = Q3 - Q1 = 167.5 - 157.5 = 10.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur statistik untuk menentukan kuartil pertama (Q1) dan kuartil ketiga (Q3) dari data berkelompok/tabel frekuensi, kemudian menghitung selisihnya. Ini adalah penerapan prosedur rutin dalam statistika.. Bukti: Jangkauan antarkuartil dari data tinggi badan tersebut adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma atau metode perhitungan statistik (kuartil) yang merupakan bagian dari pengetahuan prosedural.. Bukti: Jangkauan antarkuartil dari data tinggi badan tersebut adalah ....
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait: menentukan posisi kuartil, mencari nilai kuartil dari tabel frekuensi, dan menghitung selisihnya. Meskipun prosedurnya rutin, siswa harus teliti dalam menentukan posisi data ke-n pada tabel frekuensi kumulatif.. Bukti: Tinggi badan 36 siswa kelas 8 disajikan pada tabel berikut.; Jangkauan antarkuartil dari data tinggi badan tersebut adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tabel frekuensi, konsep kuartil, dan operasi hitung dasar. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 8, menguji pemahaman statistik dasar dengan data yang cukup untuk menuntut ketelitian tanpa kerumitan konsep yang tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -73938,9 +76681,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 846. Soal `d979c0e5f2f3c95e763b1691`
@@ -73954,27 +76697,49 @@ Kadar gula darah (mg/dL) 16 pasien: 110, 95, 130, 102, 98, 145, 120, 105, 115, 9
 | C | 102; 125; 23 |
 | D | 101; 127,5; 13,25 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data terurut: 92, 95, 98, 100, 102, 105, 108, 110, 115, 118, 120, 125, 130, 138, 145, 150. n=16. Q1 adalah rata-rata data ke-4 dan ke-5: (100+102)/2 = 101. Q3 adalah rata-rata data ke-12 dan ke-13: (125+130)/2 = 127,5. Jangkauan antarkuartil (IQR) = Q3 - Q1 = 127,5 - 101 = 26,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d2efcf626025132143e67cc7a8e4a42310b30a5810ad6533dd99c437bea140ab`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e7ec0ab05e7090c32d0d4cc205d4daa08bace493eec469d7810fcd7636be8350`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2975 |
+
+Run 1 — solusi: Data terurut: 92, 95, 98, 100, 102, 105, 108, 110, 115, 118, 120, 125, 130, 138, 145, 150. n=16. Q1 adalah rata-rata data ke-4 dan ke-5: (100+102)/2 = 101. Q3 adalah rata-rata data ke-12 dan ke-13: (125+130)/2 = 127,5. Jangkauan antarkuartil (IQR) = Q3 - Q1 = 127,5 - 101 = 26,5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur standar untuk menentukan kuartil dari data genap dan menghitung jangkauan antarkuartil. Ini adalah penerapan algoritma statistik yang rutin.. Bukti: Kuartil bawah, kuartil atas, dan jangkauan antarkuartil data tersebut berturut-turut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma perhitungan statistik (kuartil dan IQR) yang merupakan prosedur standar dalam kurikulum.. Bukti: Kuartil bawah, kuartil atas, dan jangkauan antarkuartil
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena melibatkan pengurutan data yang cukup panjang (16 data) dan perhitungan kuartil untuk data genap yang memerlukan rata-rata dua nilai tengah, yang memiliki potensi kesalahan hitung lebih tinggi daripada data ganjil, namun prosedurnya sangat rutin.. Bukti: 16 pasien; Kuartil bawah, kuartil atas, dan jangkauan antarkuartil
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data dan menghitung rata-rata dua nilai tengah untuk kuartil data genap. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 16 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengolah data statistik dasar. Beban kognitif berasal dari jumlah data yang cukup banyak (16) yang menuntut ketelitian dalam pengurutan dan penentuan posisi kuartil. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -74008,9 +76773,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 847. Soal `4345974d7a10019a2f7809ef`
@@ -74024,27 +76789,49 @@ Nilai delapan siswa dalam sebuah tes: 52, 60, 48, 55, 58, 50, 56, 62. Kemudian d
 | C | Jangkauan tetap 14, sedangkan jangkauan antarkuartil naik 2. |
 | D | Jangkauan naik 61, sedangkan jangkauan antarkuartil hanya naik 2. |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data awal (n=8): 48, 50, 52, 55, 56, 58, 60, 62. Jangkauan = 62-48=14. Q1=50, Q3=58 (atau 51/59 tergantung konvensi, namun selisih tetap konsisten). Data akhir (n=10): 20, 48, 50, 52, 55, 56, 58, 60, 62, 95. Jangkauan = 95-20=75. Kenaikan jangkauan = 75-14=61. Data terurut: 20, 48, 50, 52, 55, 56, 58, 60, 62, 95. Q1 (data ke-2.75) = 50, Q3 (data ke-8.25) = 60. Jangkauan antarkuartil (IQR) = 60-50=10. IQR awal (n=8): Q1=50, Q3=58, IQR=8. Kenaikan IQR = 10-8=2. Jadi, jangkauan naik 61, IQR naik 2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `08b1c38c9b06562d07aa6e185c5e0817f37153eed2d17ff5b02a673c86c15c14`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `454bf9f870fa8c0f0f14038e89e3f2c2c4c3409abf5287c58405737f24e0f335`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3165 |
+
+Run 1 — solusi: Data awal (n=8): 48, 50, 52, 55, 56, 58, 60, 62. Jangkauan = 62-48=14. Q1=50, Q3=58 (atau 51/59 tergantung konvensi, namun selisih tetap konsisten). Data akhir (n=10): 20, 48, 50, 52, 55, 56, 58, 60, 62, 95. Jangkauan = 95-20=75. Kenaikan jangkauan = 75-14=61. Data terurut: 20, 48, 50, 52, 55, 56, 58, 60, 62, 95. Q1 (data ke-2.75) = 50, Q3 (data ke-8.25) = 60. Jangkauan antarkuartil (IQR) = 60-50=10. IQR awal (n=8): Q1=50, Q3=58, IQR=8. Kenaikan IQR = 10-8=2. Jadi, jangkauan naik 61, IQR naik 2.
+- Domain kognitif `classify/applying`: Siswa perlu melakukan prosedur statistik (mengurutkan data, menghitung jangkauan, menentukan kuartil) pada dua set data yang berbeda dan membandingkan hasilnya. Ini adalah penerapan prosedur statistik pada konteks rutin.. Bukti: Pernyataan yang benar tentang perubahan ukuran penyebaran setelah dua nilai susulan ditambahkan adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme perhitungan ukuran penyebaran data (jangkauan dan jangkauan antarkuartil) dan bagaimana perubahan data memengaruhi ukuran tersebut.. Bukti: perubahan ukuran penyebaran; Jangkauan naik 61, sedangkan jangkauan antarkuartil hanya naik 2
+- Intended difficulty `classify/Medium`: Soal memerlukan ketelitian dalam mengurutkan data dan menghitung kuartil untuk dua set data yang berbeda. Meskipun prosedurnya familiar, siswa harus melakukan beberapa langkah perhitungan yang saling terkait (mengurutkan, mencari Q1/Q3, menghitung selisih) tanpa bantuan langkah, yang menuntut ketelitian sedang bagi siswa kelas 8.. Bukti: Nilai delapan siswa dalam sebuah tes: 52, 60, 48, 55, 58, 50, 56, 62. Kemudian dua siswa susulan mengikuti tes dengan nilai 20 dan 95.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang jangkauan, kuartil, dan pengurutan data. |
+| dependentSteps | 6 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 10 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengolah data statistik sederhana. Tugas ini melibatkan dua set data yang harus dibandingkan, yang meningkatkan beban kerja kognitif namun tetap dalam cakupan rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -74078,9 +76865,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 848. Soal `4a645a2cee392d1be669930c`
@@ -74094,27 +76881,49 @@ Nilai ulangan delapan siswa dari dua kelas.<br><br>\|Siswa\|1\|2\|3\|4\|5\|6\|7\
 | C | Kelas A, selisih 11 |
 | D | Kelas B, selisih 5,5 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Data Kelas A (terurut): 60, 65, 70, 75, 80, 85, 88, 90. Q1 = 67,5; Q3 = 86,5; IQR = 86,5 - 67,5 = 19. Data Kelas B (terurut): 62, 70, 72, 74, 76, 78, 80, 98. Q1 = 71; Q3 = 79; IQR = 79 - 71 = 8. Kelas B memiliki IQR lebih kecil (lebih seragam). Selisih = 19 - 8 = 11.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5a0ff0986c87dad770fca796d0bb56922224045cc5a578b94ee110f4fecc9072`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4cccd5363ce0961efc3c4060ad23b296bd89640b5b806b4a34a4afb0e9ebcd3f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2892 |
+
+Run 1 — solusi: Data Kelas A (terurut): 60, 65, 70, 75, 80, 85, 88, 90. Q1 = 67,5; Q3 = 86,5; IQR = 86,5 - 67,5 = 19. Data Kelas B (terurut): 62, 70, 72, 74, 76, 78, 80, 98. Q1 = 71; Q3 = 79; IQR = 79 - 71 = 8. Kelas B memiliki IQR lebih kecil (lebih seragam). Selisih = 19 - 8 = 11.
+- Domain kognitif `classify/applying`: Siswa perlu mengurutkan data, menentukan kuartil (Q1 dan Q3), menghitung jangkauan antarkuartil (IQR), dan membandingkan hasilnya. Ini adalah penerapan prosedur statistik yang rutin namun memerlukan beberapa langkah berurutan.. Bukti: Berdasarkan jangkauan antarkuartil, kelas yang nilai bagian tengahnya lebih seragam dan selisih jangkauan antarkuartil kedua kelas adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang prosedur statistik (menghitung IQR) dan konsep penyebaran data.. Bukti: Berdasarkan jangkauan antarkuartil
+- Intended difficulty `classify/Medium`: Soal memerlukan pengurutan data, penentuan posisi kuartil, perhitungan IQR untuk dua set data, dan perbandingan. Langkah-langkahnya jelas dan rutin, namun melibatkan banyak operasi hitung yang saling terkait, sehingga dikategorikan Medium.. Bukti: Nilai ulangan delapan siswa dari dua kelas.; Berdasarkan jangkauan antarkuartil
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengurutkan data, menentukan median dan kuartil data tunggal. |
+| dependentSteps | 6 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 16 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung ukuran penyebaran data. Soal ini menuntut ketelitian dalam pengurutan dan perhitungan kuartil, namun prosedurnya standar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -74153,9 +76962,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 849. Soal `e7c0dd9f5fed79249248f46e`
@@ -74169,27 +76978,49 @@ Nilai ujian 52 siswa semuanya berbeda. Kuartil bawah ($Q_1$) dan kuartil atas ($
 | C | 13 |
 | D | 26 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data dibagi menjadi 4 kelompok sama besar oleh kuartil. Banyak data = 52. Setiap kelompok (di bawah Q1, antara Q1-Q2, antara Q2-Q3, di atas Q3) berisi 52/4 = 13 siswa. Siswa dengan nilai < Q1 ada 13 siswa. Siswa dengan nilai > Q3 ada 13 siswa. Total = 13 + 13 = 26 siswa.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8481d594cceca5094837e9ace22ada288d9208c18a053ceee334344ceff9c22d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `80c85a13e850092945a29764be84bb4c16d0231f8dfc5400ee59531775124a36`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2719 |
+
+Run 1 — solusi: Data dibagi menjadi 4 kelompok sama besar oleh kuartil. Banyak data = 52. Setiap kelompok (di bawah Q1, antara Q1-Q2, antara Q2-Q3, di atas Q3) berisi 52/4 = 13 siswa. Siswa dengan nilai < Q1 ada 13 siswa. Siswa dengan nilai > Q3 ada 13 siswa. Total = 13 + 13 = 26 siswa.
+- Domain kognitif `classify/applying`: Soal ini meminta siswa menerapkan pemahaman konseptual tentang definisi kuartil sebagai pembagi data menjadi empat bagian yang sama besar. Siswa perlu mengaitkan jumlah total data dengan proporsi kuartil untuk menentukan jumlah siswa di wilayah tertentu.. Bukti: Nilai ujian 52 siswa semuanya berbeda.; Kuartil bawah (Q1) dan kuartil atas (Q3) telah ditentukan.; Banyak siswa yang nilainya kurang dari Q1 atau lebih dari Q3 adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip dasar statistik mengenai pembagian data oleh kuartil (konsep) dan menerapkan prosedur pembagian sederhana untuk mendapatkan jawaban.. Bukti: Kuartil bawah (Q1) dan kuartil atas (Q3) telah ditentukan.; Banyak siswa yang nilainya kurang dari Q1 atau lebih dari Q3
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena konsep kuartil sebagai pembagi data menjadi 4 bagian yang sama besar adalah materi standar kelas 8. Jalur penyelesaian sangat langsung (52/4 = 13, lalu 13+13=26) tanpa kendala yang saling berinteraksi atau kebutuhan strategi nonrutin.. Bukti: Nilai ujian 52 siswa semuanya berbeda.; Banyak siswa yang nilainya kurang dari Q1 atau lebih dari Q3
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang kuartil sebagai pembagi data menjadi 4 kelompok sama besar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Konsep kuartil adalah materi kurikulum kelas 8. Soal ini menguji pemahaman definisi tanpa komplikasi perhitungan atau interpretasi data yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -74221,9 +77052,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 850. Soal `eaf99da10f75a1021aa4c51c`
@@ -74237,27 +77068,49 @@ Suatu data memiliki kuartil bawah 46 dan simpangan kuartil 8,5. Kuartil atas dat
 | C | 37,5 |
 | D | 17 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Simpangan kuartil (Qd) dirumuskan sebagai Qd = (Q3 - Q1) / 2. Diketahui Q1 = 46 dan Qd = 8,5. Maka, 8,5 = (Q3 - 46) / 2. Kalikan kedua ruas dengan 2: 17 = Q3 - 46. Sehingga, Q3 = 46 + 17 = 63.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `00fb11866f535f755f22d57d90c7a8141a200aec915be977fd220773d7b41dd3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f16fd6658240693f92d132c69a45f2a71d451f477c47e6479fb0e5f7a59e50f7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2630 |
+
+Run 1 — solusi: Simpangan kuartil (Qd) dirumuskan sebagai Qd = (Q3 - Q1) / 2. Diketahui Q1 = 46 dan Qd = 8,5. Maka, 8,5 = (Q3 - 46) / 2. Kalikan kedua ruas dengan 2: 17 = Q3 - 46. Sehingga, Q3 = 46 + 17 = 63.
+- Domain kognitif `classify/applying`: Siswa perlu memahami definisi simpangan kuartil dan hubungan matematisnya dengan kuartil atas dan bawah. Ini adalah penerapan prosedur yang langsung setelah memahami konsep dasar statistik tersebut.. Bukti: Suatu data memiliki kuartil bawah 46 dan simpangan kuartil 8,5.; Kuartil atas data tersebut adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep statistik (simpangan kuartil) dan prosedur perhitungan untuk mencari nilai kuartil atas.. Bukti: simpangan kuartil 8,5; kuartil bawah 46
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pemahaman rumus dasar simpangan kuartil dan substitusi nilai yang diketahui. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Suatu data memiliki kuartil bawah 46 dan simpangan kuartil 8,5.; Kuartil atas data tersebut adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman definisi simpangan kuartil (jangkauan semi-interkuartil) dan operasi aljabar dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi statistik dasar (kuartil) adalah kurikulum standar kelas 8. Soal ini bersifat rutin dan langsung menguji pemahaman definisi tanpa langkah tambahan yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -74289,9 +77142,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 851. Soal `128ce341b5c5e69a92bcaf6a`
@@ -74305,27 +77158,49 @@ Banyak halaman yang dibaca 12 siswa dalam seminggu: 34, 52, 41, 60, 45, 38, 56, 
 | C | 30 |
 | D | 13,5 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Data terurut: 34, 38, 40, 41, 43, 45, 48, 50, 52, 56, 60, 64. Jangkauan = 64 - 34 = 30. Q1 (kuartil bawah) = (40+41)/2 = 40,5. Q3 (kuartil atas) = (52+56)/2 = 54. Jangkauan antarkuartil (IQR) = 54 - 40,5 = 13,5. Selisih = 30 - 13,5 = 16,5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `df0f1a6bcbcd5b1736b79bd3445cb754e0660976c2436bd7fb1ca72c6e901d5e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `296fc15d1e67cc981b727c8fbcb22e4f2e373fa8230d2829cd8312c30c9686e1`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2831 |
+
+Run 1 — solusi: Data terurut: 34, 38, 40, 41, 43, 45, 48, 50, 52, 56, 60, 64. Jangkauan = 64 - 34 = 30. Q1 (kuartil bawah) = (40+41)/2 = 40,5. Q3 (kuartil atas) = (52+56)/2 = 54. Jangkauan antarkuartil (IQR) = 54 - 40,5 = 13,5. Selisih = 30 - 13,5 = 16,5.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur statistik untuk menghitung jangkauan dan jangkauan antarkuartil dari sekumpulan data yang diberikan, kemudian melakukan operasi pengurangan.. Bukti: Selisih antara jangkauan dan jangkauan antarkuartil dari data tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme dan metode statistik (jangkauan dan kuartil) untuk mengolah data.. Bukti: Selisih antara jangkauan dan jangkauan antarkuartil
+- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah prosedural (mengurutkan, mencari Q1, Q3, menghitung jangkauan, menghitung IQR, lalu selisih). Meskipun prosedural, langkah-langkahnya rutin dan jelas bagi siswa kelas 8.. Bukti: 34, 52, 41, 60, 45, 38, 56, 48, 64, 43, 50, 40; Selisih antara jangkauan dan jangkauan antarkuartil
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang pengurutan data, penentuan kuartil (Q1, Q3) pada data genap, dan definisi jangkauan. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 12 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengolah data statistik dasar. Langkah-langkahnya berurutan dan tidak memerlukan strategi non-rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -74359,9 +77234,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 852. Soal `78eeb1f0e115a6f42ee0da71`
@@ -74375,27 +77250,49 @@ Pada kelompok A, nilai terendahnya 52 dan jangkauannya 25. Pada kelompok B, nila
 | C | 18 |
 | D | 56 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Kelompok A: Min=52, Max=52+25=77. Kelompok B: Max=90, Min=90-31=59. Gabungan: Min=min(52, 59)=52, Max=max(77, 90)=90. Jangkauan gabungan = 90 - 52 = 38.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f83c62e332f0448043cf1bc44e3fcf2904505db58fcc7da2df3c8d3d628e13a9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4e7d6709fd0e05eb6573b389b5d09881e93eef9198de3b303f2bce6a441e1651`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2712 |
+
+Run 1 — solusi: Kelompok A: Min=52, Max=52+25=77. Kelompok B: Max=90, Min=90-31=59. Gabungan: Min=min(52, 59)=52, Max=max(77, 90)=90. Jangkauan gabungan = 90 - 52 = 38.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep jangkauan (range) sebagai selisih nilai maksimum dan minimum, lalu menerapkan pemahaman tersebut untuk menentukan nilai ekstrem dari dua kelompok data yang berbeda sebelum menghitung jangkauan gabungan.. Bukti: Pada kelompok A, nilai terendahnya 52 dan jangkauannya 25.; Pada kelompok B, nilai tertingginya 90 dan jangkauannya 31.; Jika kedua kelompok digabung, jangkauan seluruh nilai adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang definisi jangkauan data dan bagaimana nilai ekstrem (maksimum dan minimum) dari dua kelompok data menentukan jangkauan gabungan.. Bukti: jangkauannya 25; jangkauannya 31; jangkauan seluruh nilai adalah
+- Intended difficulty `classify/Medium`: Soal ini memerlukan beberapa langkah logis: mencari nilai maksimum A, mencari nilai minimum B, membandingkan nilai-nilai tersebut untuk menentukan ekstrem gabungan, dan menghitung selisihnya. Ini adalah prosedur rutin dalam statistik dasar kelas 8.. Bukti: nilai terendahnya 52 dan jangkauannya 25; nilai tertingginya 90 dan jangkauannya 31; jangkauan seluruh nilai adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi jangkauan (range) = nilai maksimum - nilai minimum. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu mengolah data statistik sederhana. Soal ini menuntut ketelitian dalam mengidentifikasi nilai ekstrem gabungan dari dua set data yang diberikan secara terpisah, yang merupakan tantangan menengah bagi tingkat ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -74427,9 +77324,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 853. Soal `66d5d5e61a5ee43e9876c9a4`
@@ -74443,27 +77340,49 @@ Data terurut dari kecil ke besar: 14, 16, 18, 21, 24, $x$, 30, 33 dengan 24 $\le
 | C | 26 |
 | D | 28 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Data: 14, 16, 18, 21, 24, x, 30, 33 (n=8). Q1 adalah rata-rata data ke-2 dan ke-3: (16+18)/2 = 17. Q3 adalah rata-rata data ke-6 dan ke-7: (x+30)/2. Jangkauan antarkuartil (IQR) = Q3 - Q1 = 12. Maka (x+30)/2 - 17 = 12. (x+30)/2 = 29. x+30 = 58. x = 28.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 8 / Matematika SMP Kelas 8. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0542f28d59c7f8afb66a1f6b2e3478eafa366e86052e1c438050048cc3417eaf`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `63cc07aab50171a8c48e39809b274f417d238306c21c3c7edf0e7f47e9cd7647`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2834 |
+
+Run 1 — solusi: Data: 14, 16, 18, 21, 24, x, 30, 33 (n=8). Q1 adalah rata-rata data ke-2 dan ke-3: (16+18)/2 = 17. Q3 adalah rata-rata data ke-6 dan ke-7: (x+30)/2. Jangkauan antarkuartil (IQR) = Q3 - Q1 = 12. Maka (x+30)/2 - 17 = 12. (x+30)/2 = 29. x+30 = 58. x = 28.
+- Domain kognitif `classify/applying`: Siswa harus menerapkan prosedur statistik untuk menentukan kuartil pada data genap dan menyelesaikan persamaan linear satu variabel untuk mencari nilai x yang tidak diketahui.. Bukti: Jika jangkauan antarkuartilnya 12, nilai x adalah
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman prosedural tentang cara menghitung kuartil pada kumpulan data genap dan konsep jangkauan antarkuartil.. Bukti: Data terurut dari kecil ke besar: 14, 16, 18, 21, 24, x, 30, 33
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus memahami konvensi penentuan kuartil untuk data genap (merata-ratakan dua nilai tengah) dan mengintegrasikannya ke dalam persamaan aljabar. Langkah-langkahnya terstruktur namun memerlukan ketelitian dalam menentukan posisi kuartil.. Bukti: Data terurut dari kecil ke besar: 14, 16, 18, 21, 24, x, 30, 33; jangkauan antarkuartilnya 12
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep kuartil data genap dan operasi aljabar dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 8 diharapkan mampu menghitung kuartil dan menyelesaikan persamaan linear. Kesulitan terletak pada penentuan Q1 dan Q3 yang melibatkan variabel x. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -74495,9 +77414,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
-Provider aktif: groq. 711 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.
+Provider aktif: gemini. 832 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.

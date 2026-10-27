@@ -24,7 +24,8 @@ sys.path.insert(0, str(ROOT))
 
 from dotenv import load_dotenv
 from app.llm.config import GeminiSettings
-from app.llm.providers import PROVIDERS, settings_for, has_credentials
+from app.llm.providers import PROVIDERS, settings_for, has_credentials, key_slots
+from app.llm.credentials import use_credential_slot
 from app.llm.silver import silver_rubric
 from app.assessment.store import AssessmentError, AssessmentStore
 from app.psychometrics.analysis import load_policy
@@ -349,6 +350,10 @@ def validate_with_provider_retries(job, config, state, budget, directory, *, on_
     raise AssertionError("unreachable retry loop")
 
 
+def uses_key_failover(config):
+    return bool(config.get("fallbackProviders")) or len(key_slots(config.get("provider", "gemini"))) > 1
+
+
 def validate_with_provider_failover(job, config, state, budget, directory, *, on_retry=None):
     """Switch on quota or configured service errors; retry only temporarily unavailable providers."""
     from scripts.provider_failover import activate_checkpoint, select_provider, ProviderFailoverError
@@ -358,63 +363,64 @@ def validate_with_provider_failover(job, config, state, budget, directory, *, on
     order = [config.get("provider", "gemini"), *config.get("fallbackProviders", [])]
     delays = config.get("providerRetryDelaysSeconds", [15, 30, 60]) if config.get("fallbackOn503") else []
     result = None
-    candidates = order
+    candidates = [(provider, slot) for provider in order for slot in (key_slots(provider) or [1])]
     round_index, no_progress_rounds = 0, 0
     while candidates:
         temporary_providers = []
         made_progress = False
-        for provider in candidates:
-            select_provider(provider)
-            if not has_credentials(provider):
-                attempts.append({"provider": provider, "status": "skipped_not_enabled", "apiCalls": 0})
-                continue
-            try:
-                settings = settings_for(provider)
-            except Exception as exc:
-                raise ProviderFailoverError(budget) from exc
-            if not settings.api_key.strip() or not settings.live_enabled:
-                attempts.append({"provider": provider, "status": "skipped_not_enabled", "apiCalls": 0})
-                continue
-            if budget <= 0:
-                break
-            try:
-                activate_checkpoint(job["class"], job["batch"], provider)
-            except Exception as exc:
-                raise ProviderFailoverError(budget) from exc
-            current = {**config, "provider": provider}
-            before = budget
-            checkpoint = exercise.paths(job["class"], job["batch"])["checkpoint"]
-            previous_state = load(checkpoint) if checkpoint.exists() else {}
-            previous_calls = previous_state.get("apiAttempts", 0)
-            previous_complete = sum(exercise.complete(previous_state, [qid]) for qid in previous_state.get("items", {}))
-            if on_retry is not None:
-                on_retry({"status": "running", "activeProvider": provider, "providerAttempts": list(attempts),
-                          "apiCallsThisRun": initial_budget - budget})
-            try:
-                result, budget = validate_with_provider_retries(job, current, state, budget, directory, on_retry=on_retry)
-            except Exception as exc:
-                current_calls = load(checkpoint).get("apiAttempts", 0) if checkpoint.exists() else previous_calls
-                raise ProviderFailoverError(budget - max(0, current_calls - previous_calls)) from exc
-            current_state = load(checkpoint) if checkpoint.exists() else {}
-            current_complete = sum(exercise.complete(current_state, [qid]) for qid in current_state.get("items", {}))
-            made_progress = made_progress or current_complete > previous_complete
-            attempts.append({"provider": provider, "status": result["status"], "round": round_index + 1,
-                             "apiCalls": before - budget, "providerStop": result.get("providerStop")})
-            result.update(activeProvider=provider, providerAttempts=list(attempts), apiCallsThisRun=initial_budget - budget)
-            if result.get("status") == "completed":
-                return result, budget
-            stop = result.get("providerStop", {})
-            quota = (result.get("exitCode") == 3 and
-                     (stop.get("errorCode", "").endswith(":429") or stop.get("status") == "blocked_provider_daily_quota"))
-            temporary = bool(config.get("fallbackOn503") and result.get("exitCode") == 3 and
-                             (stop.get("errorCode", "").endswith(":503") or
-                              stop.get("status") == "blocked_provider_temporarily_unavailable"))
-            if not (quota or temporary) or budget <= 0:
-                return result, budget
-            if temporary:
-                temporary_providers.append(provider)
-            if on_retry is not None:
-                on_retry({**result, "status": "switching_provider_after_service_error" if temporary else "switching_provider_after_quota"})
+        for provider, key_slot in candidates:
+            with use_credential_slot(provider, key_slot):
+                select_provider(provider)
+                if not has_credentials(provider):
+                    attempts.append({"provider": provider, "keySlot": key_slot, "status": "skipped_not_enabled", "apiCalls": 0})
+                    continue
+                try:
+                    settings = settings_for(provider)
+                except Exception as exc:
+                    raise ProviderFailoverError(budget) from exc
+                if not settings.api_key.strip() or not settings.live_enabled:
+                    attempts.append({"provider": provider, "keySlot": key_slot, "status": "skipped_not_enabled", "apiCalls": 0})
+                    continue
+                if budget <= 0:
+                    break
+                try:
+                    activate_checkpoint(job["class"], job["batch"], provider)
+                except Exception as exc:
+                    raise ProviderFailoverError(budget) from exc
+                current = {**config, "provider": provider}
+                before = budget
+                checkpoint = exercise.paths(job["class"], job["batch"])["checkpoint"]
+                previous_state = load(checkpoint) if checkpoint.exists() else {}
+                previous_calls = previous_state.get("apiAttempts", 0)
+                previous_complete = sum(exercise.complete(previous_state, [qid]) for qid in previous_state.get("items", {}))
+                if on_retry is not None:
+                    on_retry({"status": "running", "activeProvider": provider, "activeKeySlot": key_slot, "providerAttempts": list(attempts),
+                              "apiCallsThisRun": initial_budget - budget})
+                try:
+                    result, budget = validate_with_provider_retries(job, current, state, budget, directory, on_retry=on_retry)
+                except Exception as exc:
+                    current_calls = load(checkpoint).get("apiAttempts", 0) if checkpoint.exists() else previous_calls
+                    raise ProviderFailoverError(budget - max(0, current_calls - previous_calls)) from exc
+                current_state = load(checkpoint) if checkpoint.exists() else {}
+                current_complete = sum(exercise.complete(current_state, [qid]) for qid in current_state.get("items", {}))
+                made_progress = made_progress or current_complete > previous_complete
+                attempts.append({"provider": provider, "keySlot": key_slot, "status": result["status"], "round": round_index + 1,
+                                 "apiCalls": before - budget, "providerStop": result.get("providerStop")})
+                result.update(activeProvider=provider, activeKeySlot=key_slot, providerAttempts=list(attempts), apiCallsThisRun=initial_budget - budget)
+                if result.get("status") == "completed":
+                    return result, budget
+                stop = result.get("providerStop", {})
+                quota = (result.get("exitCode") == 3 and
+                         (stop.get("errorCode", "").endswith(":429") or stop.get("status") == "blocked_provider_daily_quota"))
+                temporary = bool(config.get("fallbackOn503") and result.get("exitCode") == 3 and
+                                 (stop.get("errorCode", "").endswith(":503") or
+                                  stop.get("status") == "blocked_provider_temporarily_unavailable"))
+                if not (quota or temporary) or budget <= 0:
+                    return result, budget
+                if temporary:
+                    temporary_providers.append((provider, key_slot))
+                if on_retry is not None:
+                    on_retry({**result, "status": "switching_provider_after_service_error" if temporary else "switching_provider_after_quota"})
         if not temporary_providers or not delays or budget <= 0:
             break
         # Backoff limits consecutive rounds with no completed questions. A recovered
@@ -425,7 +431,8 @@ def validate_with_provider_failover(job, config, state, budget, directory, *, on
         delay = delays[max(0, no_progress_rounds - 1)]
         if on_retry is not None:
             on_retry({**(result or {}), "status": "waiting_for_provider_recovery", "retryInSeconds": delay,
-                      "retryProviders": list(temporary_providers), "providerAttempts": list(attempts)})
+                      "retryProviders": list(dict.fromkeys(p for p, _ in temporary_providers)),
+                      "retryKeySlots": [{"provider": p, "keySlot": slot} for p, slot in temporary_providers], "providerAttempts": list(attempts)})
         time.sleep(delay)
         candidates = temporary_providers
         round_index += 1
@@ -532,7 +539,7 @@ def run(config, output):
                     report["jobs"][key] = result
                     atomic_write(report, output / "latest.json")
 
-                validator = validate_with_provider_failover if config.get("fallbackProviders") else validate_with_provider_retries
+                validator = validate_with_provider_failover if uses_key_failover(config) else validate_with_provider_retries
                 result, budget = validator(
                     job, config, state["jobs"], budget, directory, on_retry=report_retry)
                 if result["status"] == "completed":
@@ -596,7 +603,7 @@ def main():
         result = mark_ready(args.name, args.batch) if args.command == "ready" else publish_balance(args.name, args.batch)
     else:
         config = read_config(local_path(args.config))
-        exercise.set_namespace("failover" if config.get("fallbackProviders") else None)
+        exercise.set_namespace("failover" if uses_key_failover(config) else None)
         exercise.set_provider(config.get("provider", "gemini"))
         os.environ["LLM_PROVIDER"] = config.get("provider", "gemini")
         if args.command == "run":

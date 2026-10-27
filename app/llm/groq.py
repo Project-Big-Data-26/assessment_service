@@ -7,6 +7,7 @@ from dotenv import dotenv_values
 
 from .config import PROJECT_ROOT, _as_bool
 from .deepseek import DeepSeekSilverAdapter
+from .credentials import selected_api_key
 
 
 @dataclass(frozen=True)
@@ -39,7 +40,7 @@ class GroqSettings:
         values = dotenv_values(PROJECT_ROOT / ".env")
         def value(name, default):
             return str(os.environ.get(name, values.get(name) or default))
-        return cls(api_key=value("GROQ_API_KEY", ""), model=value("GROQ_MODEL", "openai/gpt-oss-120b"),
+        return cls(api_key=selected_api_key("groq", values), model=value("GROQ_MODEL", "openai/gpt-oss-120b"),
                    api_base_url=value("GROQ_API_BASE_URL", "https://api.groq.com/openai/v1").rstrip("/"),
                    live_enabled=_as_bool(value("GROQ_LIVE_ENABLED", "false"), default=False),
                    timeout_seconds=int(value("GROQ_TIMEOUT_SECONDS", "120")),

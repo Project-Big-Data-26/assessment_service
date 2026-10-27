@@ -13,6 +13,8 @@ from app.assessment.store import AssessmentStore
 
 @pytest.fixture
 def workspace(tmp_path, monkeypatch):
+    # Routing tests use one fake credential, independently of private .env slots.
+    monkeypatch.setattr(nightly, 'key_slots', lambda provider: [1])
     monkeypatch.setattr(nightly, 'ROOT', tmp_path)
     monkeypatch.setattr(exercise, 'ROOT', tmp_path)
     p = exercise.paths('kelas7', 'batch01')

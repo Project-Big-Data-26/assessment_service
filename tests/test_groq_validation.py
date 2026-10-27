@@ -106,6 +106,9 @@ def test_groq_resume_preserves_gemini_and_only_requests_pending(migration, monke
 @pytest.mark.parametrize("key,enabled,status", [("", "false", "waiting_for_credentials"),
     ("test-private", "false", "waiting_for_provider_enablement")])
 def test_groq_nightly_waits_without_network(migration, monkeypatch, key, enabled, status):
+    for slot in (1, 2, 3):
+        monkeypatch.setenv(f"GROQ_API_KEY_{slot}", "")
+    monkeypatch.delenv("EXERCISE_GROQ_KEY_SLOT", raising=False)
     monkeypatch.setattr(exercise, "VALIDATION_PROVIDER", "groq")
     exercise.seed_from_gemini("kelas8", "batch01")
     monkeypatch.setenv("GROQ_API_KEY", key)

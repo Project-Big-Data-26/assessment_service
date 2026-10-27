@@ -23,6 +23,9 @@ def enabled(monkeypatch, tmp_path):
     monkeypatch.setattr(exercise, "VALIDATION_PROVIDER", "gemini")
     monkeypatch.setenv("LLM_PROVIDER", "gemini")
     for provider, model in (("GEMINI", "gemini-next"), ("GROQ", "openai/gpt-oss-120b")):
+        for slot in (1, 2, 3):
+            monkeypatch.setenv(f"{provider}_API_KEY_{slot}", "")
+        monkeypatch.delenv(f"EXERCISE_{provider}_KEY_SLOT", raising=False)
         monkeypatch.setenv(provider + "_API_KEY", "test-private")
         monkeypatch.setenv(provider + "_LIVE_ENABLED", "true")
         monkeypatch.setenv(provider + "_MODEL", model)

@@ -4,15 +4,19 @@ import os
 from dotenv import dotenv_values
 
 from .config import PROJECT_ROOT, GeminiSettings
+from .credentials import credential_slots
 
 PROVIDERS = ("gemini", "deepseek", "groq")
 
 
 def has_credentials(provider):
-    values = dotenv_values(PROJECT_ROOT / ".env")
-    name = provider.upper() + "_API_KEY"
-    value = os.environ.get(name, values.get(name) or "")
-    return bool(str(value).strip())
+    return bool(key_slots(provider))
+
+
+def key_slots(provider):
+    slots = credential_slots(provider, dotenv_values(PROJECT_ROOT / ".env"))
+    selected = os.getenv(f"EXERCISE_{provider.upper()}_KEY_SLOT")
+    return [slot for slot in slots if str(slot) == selected] if selected is not None else slots
 
 
 def provider_name():
