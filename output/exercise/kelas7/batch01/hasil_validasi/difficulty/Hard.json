@@ -4,8 +4,8 @@
   "subjectTrack": "regular",
   "intendedDifficulty": "Hard",
   "researchOnly": true,
-  "advisoryCount": 2,
-  "contentQualifiedCount": 2,
+  "advisoryCount": 10,
+  "contentQualifiedCount": 10,
   "items": [
     {
       "question": {
@@ -122,6 +122,527 @@
             "B": "Benar: bagian pecahan harus di antara $0,1$ dan $0,2$; penyebut 1 sampai 5 menghasilkan $0$, $0,2$, $0,25$, $0,33$, dst. yang tidak masuk, sedangkan $b = 6$ memberi $\\frac{13}{6} = 2,1666\\ldots$",
             "C": "Salah: memilih $\\frac{21}{10} = 2,1$ yang merupakan batas bawah, padahal batas tidak termasuk",
             "D": "Salah: memilih $\\frac{11}{5} = 2,2$ yang merupakan batas atas, padahal batas tidak termasuk"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "502a381f8fad355927b8331f",
+        "questionVersionId": "502a381f8fad355927b8331f:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "d59e2a96e574d0572d377b7ad67771fa52e50cfa057d9d5f0d2c1e43e5911e4d",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Hubungan Antar Sudut",
+        "questionType": "multiple_choice",
+        "stem": "Besar tiga sudut sebuah segitiga adalah $x^\\circ$, $(2x)^\\circ$, dan $(180 - 3x)^\\circ$ dengan $x$ bilangan bulat positif. Banyak nilai $x$ yang membuat segitiga itu tumpul (salah satu sudutnya lebih dari $90^\\circ$) adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$14$"
+          },
+          {
+            "label": "B",
+            "text": "$43$"
+          },
+          {
+            "label": "C",
+            "text": "$29$"
+          },
+          {
+            "label": "D",
+            "text": "$44$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Syarat sudut segitiga: semua sudut > 0. Maka x > 0, 2x > 0, 180 - 3x > 0 (x < 60). Segitiga tumpul jika salah satu sudut > 90. Kasus 1: x > 90 (tidak mungkin karena x < 60). Kasus 2: 2x > 90 -> x > 45. Karena x < 60, maka x = 46, 47, ..., 59 (ada 14 nilai). Kasus 3: 180 - 3x > 90 -> 90 > 3x -> x < 30. Karena x > 0, maka x = 1, 2, ..., 29 (ada 29 nilai). Total nilai x = 14 + 29 = 43.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "43",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "502a381f8fad355927b8331f",
+          "subchapter": "Hubungan Antar Sudut",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya menghitung kasus sudut $(2x)^\\circ$ tumpul",
+            "B": "Benar: semua sudut positif: $x < 60$. Tumpul bila $2x > 90$ ($x = 46, \\dots, 59$: 14 nilai) atau $180 - 3x > 90$ ($x = 1, \\dots, 29$: 29 nilai); sudut $x$ tidak pernah lebih dari $90^\\circ$. Total $14 + 29 = 43$",
+            "C": "Salah: hanya menghitung kasus sudut $(180 - 3x)^\\circ$ tumpul",
+            "D": "Salah: memasukkan $x = 45$ (sudut $90^\\circ$, siku-siku, bukan tumpul)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "51fa81d855aac02a1c701bc8",
+        "questionVersionId": "51fa81d855aac02a1c701bc8:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "edf57a6f4bda99e3f360270e6978c104824371a95f07018f2f597d1bf18ec25d",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Diagram dalam Statistika",
+        "questionType": "multiple_choice",
+        "stem": "| Nama Pegawai | Jumlah Penjualan (unit) | Tinggi Batang (cm) |\n|---|---|---|\n| Pak Rahmat | 50 | 6 |\n| Bu Sinta | 70 | 14 |\n\nPada pembuatan diagram batang penjualan, pembuat diagram sengaja memotong sumbu vertikal (tidak dimulai dari 0) namun tetap menjaga skala berjarak konsisten. Akibatnya, tinggi batang yang tergambar tercantum pada tabel di atas. Berdasarkan data tersebut, sumbu vertikal diagram dimulai dari angka ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "35"
+          },
+          {
+            "label": "B",
+            "text": "30"
+          },
+          {
+            "label": "C",
+            "text": "25"
+          },
+          {
+            "label": "D",
+            "text": "40"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan titik awal sumbu vertikal adalah x. Skala diagram adalah k unit/cm. Maka: 50 = x + 6k dan 70 = x + 14k. Selisih: 70 - 50 = (x + 14k) - (x + 6k) => 20 = 8k => k = 2,5 unit/cm. Substitusi k ke persamaan pertama: 50 = x + 6(2,5) => 50 = x + 15 => x = 35.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "51fa81d855aac02a1c701bc8",
+          "subchapter": "Diagram dalam Statistika",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: Selisih nilai $70 - 50 = 20$ unit setara dengan $14 - 6 = 8\\text{ cm}$, maka $1\\text{ cm} = 2{,}5$ unit. Tinggi $6\\text{ cm}$ mewakili $6 \\times 2{,}5 = 15$ unit di atas titik awal. Titik awal = $50 - 15 = 35$.",
+            "B": "Salah: Siswa menghitung selisih 20 unit untuk 14 cm sehingga salah menentukan gradien skala.",
+            "C": "Salah: Siswa salah menghitung skala dengan membagi 50 dengan 6 lalu mengira titik awalnya 25.",
+            "D": "Salah: Siswa mengurangkan selisih tinggi $14 - 6 = 8$ dikalikan bilangan bulat terdekat dari 50."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "415c07bb7bc07d8ee7f5c0f8",
+        "questionVersionId": "415c07bb7bc07d8ee7f5c0f8:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "e5d117c06de1bbba7297f10fca284be6d7a7dfeab3e0b3cfc38446b1c805181a",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Diagram dalam Statistika",
+        "questionType": "multiple_choice",
+        "stem": "| Karyawan | Perolehan Bonus (juta rupiah) | Tinggi Batang pada Diagram | |\n|---|---|---|\n| Hendra | 12 | $4\\text{ cm}$ |\n| Irwan | 15 | $10\\text{ cm}$ |\n| Joko | 18 | $16\\text{ cm}$ |\n\nSeorang manajer menyajikan diagram batang perolehan bonus tiga karyawan dengan data pada tabel. Manajer mengklaim bahwa kinerja Irwan $2,5$ kali lipat lebih baik daripada Hendra karena tinggi batang Irwan $2,5$ kali tinggi batang Hendra ($10\\text{ cm}$ dibanding $4\\text{ cm}$). Evaluasilah kelemahan penyajian diagram batang tersebut!",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Diagram sudah benar karena perbandingan tinggi batang $10\\text{ cm} : 4\\text{ cm}$ tepat sama dengan perbandingan kinerja nyata kedua karyawan."
+          },
+          {
+            "label": "B",
+            "text": "Diagram salah karena jarak antarskalanilai tidak konsisten dan berubah-ubah sebesar $6\\text{ cm}$ tiap kategori."
+          },
+          {
+            "label": "C",
+            "text": "Diagram salah karena skala vertikal dimulai dari angka negatif sehingga batang Hendra terlihat lebih pendek dari seharusnya."
+          },
+          {
+            "label": "D",
+            "text": "Diagram salah karena skala vertikal tidak dimulai dari $0$ melainkan dari $10\\text{ juta rupiah}$, sehingga membesar-besarkan perbedaan data secara visual."
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "The relationship between bonus value (V) and bar height (h) follows a linear equation h = k(V - b). Using the data: 4 = k(12 - b) and 10 = k(15 - b). Dividing the equations: 10/4 = (15 - b)/(12 - b) => 2.5 = (15 - b)/(12 - b) => 2.5(12 - b) = 15 - b => 30 - 2.5b = 15 - b => 15 = 1.5b => b = 10. Since the intercept b is 10, the vertical axis starts at 10 million, not 0, which distorts the visual representation of the ratios.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "mengevaluasi"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "415c07bb7bc07d8ee7f5c0f8",
+          "subchapter": "Diagram dalam Statistika",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa hanya melihat perbandingan fisik batang tanpa membandingkan rasio nilai data asli ($15/12 = 1,25$ kali).",
+            "B": "Salah: Siswa keliru mengira selisih tinggi batang antarpegawai sebagai jarak antarskalanilai pada sumbu.",
+            "C": "Salah: Siswa salah menganalisis efek pemotongan sumbu dan menduga titik awal berada di bawah nol.",
+            "D": "Benar: Hubungan tinggi batang memenuhi $h = k(V - b)$. Dari perbandingan Hendra dan Irwan diperoleh $\\frac{15 - b}{12 - b} = 2,5 \\implies b = 10$. Karena sumbu vertikal dimulai dari $10$ bukan $0$, perbandingan visual menjadi keliru."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "f213cf913fa127ff5976c7c4",
+        "questionVersionId": "f213cf913fa127ff5976c7c4:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "2327e18a5cb96ee79cdc6cca119e7770317e51203bbae88df804ae5dc77bbb50",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Diagram Batang",
+        "questionType": "multiple_choice",
+        "stem": "Sebuah survei mencatat kepemilikan gawai tablet di sebuah komunitas pada dua periode survei:\n\n| Periode | Total Anggota Komunitas | Persentase Pemilik Tablet |\n|---|---|---|\n| Periode 1 | $200$ orang | $40\\%$ |\n| Periode 2 | $300$ orang | $50\\%$ |\n\nSeorang pengamat mengklaim bahwa persentase pertumbuhan jumlah pemilik tablet dari Periode 1 ke Periode 2 adalah sebesar $10\\%$, yang diperoleh langsung dari $50\\% - 40\\%$.\n\nBerdasarkan data tersebut, bagaimanakah evaluasi yang tepat terhadap klaim pengamat dan berapakah persentase kenaikan jumlah pemilik tablet yang sebenarnya?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Klaim salah; persentase kenaikan sebenarnya adalah $87,5\\%$ karena basis jumlah total anggota pada kedua periode berbeda."
+          },
+          {
+            "label": "B",
+            "text": "Klaim benar; persentase kenaikan dihitung langsung dari selisih persentase kedua periode yaitu $50\\% - 40\\% = 10\\%$."
+          },
+          {
+            "label": "C",
+            "text": "Klaim salah; persentase kenaikan sebenarnya adalah $46,7\\%$ yang dihitung dari perbandingan pertambahan terhadap total di Periode 2."
+          },
+          {
+            "label": "D",
+            "text": "Klaim salah; persentase kenaikan sebenarnya adalah $70\\%$ karena jumlah pemilik bertambah $70$ orang."
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Jumlah pemilik tablet Periode 1 = 40% * 200 = 80 orang. Jumlah pemilik tablet Periode 2 = 50% * 300 = 150 orang. Kenaikan jumlah pemilik = 150 - 80 = 70 orang. Persentase kenaikan = (70 / 80) * 100% = 87,5%. Klaim pengamat salah karena hanya menghitung selisih poin persentase, bukan persentase pertumbuhan nilai absolut.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "mengevaluasi"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "f213cf913fa127ff5976c7c4",
+          "subchapter": "Diagram Batang",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: Pemilik tablet Periode 1: $40\\% \\times 200 = 80$ orang. Periode 2: $50\\% \\times 300 = 150$ orang. Kenaikan = $150 - 80 = 70$ orang. Persentase kenaikan sebenarnya = $\\frac{70}{80} \\times 100\\% = 87,5\\%$. Selisih $10\\%$ hanyalah selisih poin persentase, bukan persentase pertumbuhan pemilik tablet.",
+            "B": "Salah: Siswa keliru menyamakan selisih poin persentase dengan laju perubahan nilai riil.",
+            "C": "Salah: Siswa membagi kenaikan dengan nilai akhir ($70 / 150 \\approx 46,7\\%$) bukan terhadap nilai awal.",
+            "D": "Salah: Siswa mengira pertambahan nilai absolut ($70$ orang) langsung bernilai $70\\%$ tanpa membaginya dengan nilai awal ($80$ orang)."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "4d7c95dd05e2ed6afc72caeb",
+        "questionVersionId": "4d7c95dd05e2ed6afc72caeb:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "82d67fdf23827509908a3c277b2d9bc59952f210ca5d73486786d54e1f0f0a62",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Diagram Batang",
+        "questionType": "multiple_choice",
+        "stem": "Diagram batang frekuensi peminjaman buku fiksi di perpustakaan sekolah pada empat genre tercatat sebagai berikut:\n- Komik: $32$ siswa\n- Novel: $28$ siswa\n- Cerpen: $24$ siswa\n- Dongeng: $16$ siswa\n\nPengelola perpustakaan mendata $N$ orang siswa baru yang hanya meminjam buku genre Novel atau Cerpen (setiap siswa baru memilih tepat satu genre). Setelah penambahan $N$ siswa tersebut:\n1. Novel menjadi kategori dengan batang tertinggi tunggal (modus tunggal baru, melampaui Komik).\n2. Rasio frekuensi akhir buku Novel terhadap Cerpen menjadi tepat $3 : 2$.\n\nBerapakah banyak siswa baru minimal ($N$) yang perlu ditambahkan?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$8$ siswa"
+          },
+          {
+            "label": "B",
+            "text": "$5$ siswa"
+          },
+          {
+            "label": "C",
+            "text": "$13$ siswa"
+          },
+          {
+            "label": "D",
+            "text": "$10$ siswa"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan tambahan Novel = a dan Cerpen = b. Syarat 1 (Novel > Komik): 28 + a > 32, maka a >= 5. Syarat 2 (Rasio Novel:Cerpen = 3:2): (28 + a) / (24 + b) = 3/2. Persamaan menjadi 2(28 + a) = 3(24 + b) atau 56 + 2a = 72 + 3b, sehingga 2a - 3b = 16. Untuk mencari N = a + b minimal, kita cari nilai a dan b terkecil yang memenuhi a >= 5 dan 2a - 3b = 16. Jika b = 0, 2a = 16, a = 8. N = 8 + 0 = 8. Jika b = 2, 2a = 22, a = 11, N = 13. Nilai minimal N adalah 8.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "4d7c95dd05e2ed6afc72caeb",
+          "subchapter": "Diagram Batang",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: Misalkan tambahan Novel = $a$ dan Cerpen = $b$. Syarat modus: $28 + a > 32 \\Rightarrow a \\ge 5$. Syarat rasio: $\\frac{28 + a}{24 + b} = \\frac{3}{2} \\Rightarrow 2a - 3b = 16$. Nilai $a, b$ bilangan cacah: jika $b = 0$, maka $2a = 16 \\Rightarrow a = 8$ (memenuhi $a \\ge 5$). Frekuensi Novel menjadi $36 > 32$. Maka $N = a + b = 8 + 0 = 8$.",
+            "B": "Salah: Siswa hanya memenuhi syarat Novel melampaui Komik ($28 + 5 = 33$) tanpa memeriksa pemenuhan rasio 3 : 2.",
+            "C": "Salah: Siswa memilih solusi pasangan berikutnya saat $b = 2$ dan $a = 11$, bukan nilai minimal.",
+            "D": "Salah: Siswa keliru menetapkan rasio dari selisih awal 4 sehingga mengalikan 2,5 secara sembarangan."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "20cf998da80475c87cb1d7e1",
+        "questionVersionId": "20cf998da80475c87cb1d7e1:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "6e21bf35c39a8b48e72dd4579ed6a66711cd52998e1f337d2cdabb131f77a946",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Diagram Batang",
+        "questionType": "multiple_choice",
+        "stem": "Data penjualan dua merek laptop di sebuah toko komputer pada bulan lalu dicatat sebagai berikut:\n\n| Merek Laptop | Banyak Penjualan (unit) |\n|---|---|\n| Merek Alfa | $80$ |\n| Merek Beta | $110$ |\n\nSeorang staf membuat diagram batang tegak untuk menyajikan data tersebut, tetapi ia melanggar aturan penyajian data karena tidak memulai skala sumbu vertikal dari angka $0$. Ia memulai sumbu vertikal dari suatu nilai dasar $k$ ($k > 0$) dengan skala yang tetap, sehingga tinggi visual batang Merek Beta tampak tepat $3$ kali tinggi visual batang Merek Alfa. Nilai dasar skala sumbu vertikal ($k$) yang digunakan staf tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$50$"
+          },
+          {
+            "label": "B",
+            "text": "$55$"
+          },
+          {
+            "label": "C",
+            "text": "$40$"
+          },
+          {
+            "label": "D",
+            "text": "$65$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan tinggi visual batang adalah selisih nilai data dengan nilai dasar k. Tinggi visual Alfa = 80 - k. Tinggi visual Beta = 110 - k. Diketahui tinggi visual Beta = 3 * tinggi visual Alfa, maka 110 - k = 3(80 - k). 110 - k = 240 - 3k. 2k = 130. k = 65.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "65",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "20cf998da80475c87cb1d7e1",
+          "subchapter": "Diagram Batang",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa hanya mengurangkan nilai data Merek Alfa dengan selisih kedua data, yaitu $80 - (110 - 80) = 50$.",
+            "B": "Salah: Siswa keliru menggunakan setengah dari data terbesar, yaitu $\\frac{110}{2} = 55$.",
+            "C": "Salah: Siswa keliru membagi data terkecil menjadi dua bagian, yaitu $\\frac{80}{2} = 40$.",
+            "D": "Benar: Tinggi visual batang sebanding dengan selisih nilai data terhadap nilai awal skala $k$, sehingga $(110 - k) = 3(80 - k)$ yang menghasilkan $k = 65$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "3f0896ab0944d393491f21db",
+        "questionVersionId": "3f0896ab0944d393491f21db:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "a0598593cf989098e85baad47aa40794f08a9db1054df81f1060636eced9db43",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Diagram Lingkaran",
+        "questionType": "multiple_choice",
+        "stem": "Diagram lingkaran menyajikan keanggotaan 120 siswa dalam tiga klub sains di sekolah: Klub Fisika ($108^\\circ$), Klub Biologi ($144^\\circ$), dan Klub Astronomi ($108^\\circ$). Sekolah akan membuka pendaftaran anggota baru khusus untuk Klub Astronomi tanpa ada anggota lama yang keluar. Panitia mengklaim: \"Cukup ditambahkan minimal 13 siswa baru ke Klub Astronomi agar juringnya menjadi yang terbesar pada diagram lingkaran yang baru.\"\n\nBerdasarkan stimulus tersebut, evaluasilah kebenaran klaim panitia!",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Klaim panitia salah, karena penambahan siswa baru memperbesar total keseluruhan sehingga sudut pusat Astronomi justru menyusut."
+          },
+          {
+            "label": "B",
+            "text": "Klaim panitia benar, karena penambahan 13 siswa membuat anggota Astronomi menjadi 49 orang, melampaui anggota terbanyak sebelumnya yaitu Biologi (48 orang)."
+          },
+          {
+            "label": "C",
+            "text": "Klaim panitia benar, karena penambahan 13 siswa membuat persentase Astronomi langsung mencapai tepat $50\\%$ dari total anggota baru."
+          },
+          {
+            "label": "D",
+            "text": "Klaim panitia salah, karena juring Astronomi baru menjadi yang terbesar jika sudut pusatnya melebihi $180^\\circ$."
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "1. Hitung jumlah anggota awal: Fisika = (108/360)*120 = 36, Biologi = (144/360)*120 = 48, Astronomi = (108/360)*120 = 36. 2. Agar juring Astronomi menjadi yang terbesar, jumlah anggotanya harus melebihi jumlah anggota Biologi (48 orang). 3. Jumlah minimal anggota Astronomi = 49 orang. 4. Penambahan siswa = 49 - 36 = 13 siswa. Klaim benar.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "mengevaluasi"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "3f0896ab0944d393491f21db",
+          "subchapter": "Diagram Lingkaran",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa salah memahami konsep proporsi dan mengabaikan bahwa pembilang bertambah secara eksklusif pada klub Astronomi.",
+            "B": "Benar: Anggota awal: Fisika = (108/360) × 120 = 36 orang, Biologi = (144/360) × 120 = 48 orang, Astronomi = 36 orang. Agar juring Astronomi terbesar, frekuensinya harus lebih besar dari frekuensi Biologi (48 orang), sehingga minimal 49 orang. Penambahan minimal = 49 - 36 = 13 orang.",
+            "C": "Salah: Siswa salah menghitung persentase baru (49/133 ≈ 36,8%, bukan 50%).",
+            "D": "Salah: Siswa keliru mengira juring terbesar harus mencakup lebih dari setengah lingkaran (mayoritas mutlak)."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "8dea3dc4c2ae60dc041cdc01",
+        "questionVersionId": "8dea3dc4c2ae60dc041cdc01:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "3b9275ca4f584798db22c77eade62495513a7ac6c333e860ce76f7866fb363f2",
+        "grade": 7,
+        "topic": "Matematika SMP Kelas 7",
+        "subtopic": "Diagram Lingkaran",
+        "questionType": "multiple_choice",
+        "stem": "Diagram lingkaran peminatan vokasi dari 180 siswa kelas VII menyajikan data sudut pusat sebagai berikut:\n- Tata Boga: $120^\\circ$\n- Multimedia: $90^\\circ$\n- Otomotif: $80^\\circ$\n- Elektronika: $70^\\circ$\n\nSebanyak 20 siswa pindahan kemudian mendaftar, dengan rincian 10 siswa memilih bidang Multimedia dan 10 siswa memilih bidang Elektronika. Pengurus OSIS mengklaim bahwa karena kedua bidang sama-sama mendapat tambahan 10 siswa, maka sudut pusat juring Multimedia dan juring Elektronika pada diagram lingkaran yang baru akan bertambah dengan besar derajat yang sama.\n\nBerdasarkan analisis perhitungan diagram lingkaran yang baru, bagaimana evaluasi yang tepat terhadap klaim pengurus OSIS tersebut?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Klaim salah; sudut pusat juring Multimedia berkurang $9^\\circ$, sedangkan sudut pusat juring Elektronika bertambah $11^\\circ$."
+          },
+          {
+            "label": "B",
+            "text": "Klaim benar; kedua juring sama-sama bertambah sebesar $18^\\circ$ karena masing-masing memperoleh 10 siswa dari total penambahan 20 siswa baru."
+          },
+          {
+            "label": "C",
+            "text": "Klaim benar; kedua juring bertambah sebesar $10^\\circ$ karena penambahan siswa bernilai sama untuk kedua bidang peminatan."
+          },
+          {
+            "label": "D",
+            "text": "Klaim salah; sudut pusat juring Multimedia bertambah $9^\\circ$, sedangkan sudut pusat juring Elektronika bertambah $11^\\circ$."
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Siswa awal Multimedia = (90/360)*180 = 45. Siswa baru = 45+10 = 55. Sudut baru = (55/200)*360 = 99 derajat (bertambah 9 derajat). Siswa awal Elektronika = (70/360)*180 = 35. Siswa baru = 35+10 = 45. Sudut baru = (45/200)*360 = 81 derajat (bertambah 11 derajat). Klaim salah.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "menganalisis",
+          "mengevaluasi"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "8dea3dc4c2ae60dc041cdc01",
+          "subchapter": "Diagram Lingkaran",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas7_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa salah menentukan arah perubahan juring Multimedia menjadi berkurang akibat pembagi total yang membesar, padahal sudut akhirnya ($99^\\circ$) lebih besar dari sudut semula ($90^\\circ$).",
+            "B": "Salah: Siswa salah mengira perubahan sudut hanya dihitung dari proporsi tambahan siswa terhadap penambahan total: $(10/20) \\times 36^\\circ$ tanpa memperhitungkan total data keseluruhan yang baru.",
+            "C": "Salah: Siswa menyamakan nilai pertambahan frekuensi (10 siswa) secara langsung sebagai pertambahan besar sudut pusat ($10^\\circ$).",
+            "D": "Benar: Siswa awal Multimedia = $(90/360) \\times 180 = 45$, siswa baru = 55. Sudut baru Multimedia = $(55/200) \\times 360^\\circ = 99^\\circ$ (bertambah $9^\\circ$). Siswa awal Elektronika = $(70/360) \\times 180 = 35$, siswa baru = 45. Sudut baru Elektronika = $(45/200) \\times 360^\\circ = 81^\\circ$ (bertambah $11^\\circ$)."
           }
         }
       },

@@ -47,7 +47,9 @@ def publish(source: Path, bundle: Path, version: dict, *, grade: int, track: str
     if version_manifest["sourceQuestionHash"] != info(source_bytes)["sha256"]:
         raise ValueError("operational export source hash differs")
     balanced = (directory / "validation_results.json").read_bytes()
-    expected, allocation = allocate(json.loads(original), decisions["items"])
+    audit_bytes = (directory / "balance_audit.json").read_bytes()
+    allocation_policy = json.loads(audit_bytes).get("allocationPolicy")
+    expected, allocation = allocate(json.loads(original), decisions["items"], allocation_policy=allocation_policy)
     if json.loads(balanced) != expected:
         raise ValueError("operational array differs from original evidence")
     rows = json.loads(source_bytes)
@@ -56,7 +58,6 @@ def publish(source: Path, bundle: Path, version: dict, *, grade: int, track: str
             {"cognitive_level", "cognitive_score", "confidence_score", "status"})
             for a, b in zip(rows, expected)):
         raise ValueError("operational array changed source schema or content")
-    audit_bytes = (directory / "balance_audit.json").read_bytes()
     ai_file = bundle / "ai_validation_results.json"
     if old_manifest["databaseExport"].get("operationalBalance") and ai_file.read_bytes() != original:
         raise ValueError("original AI archive differs")
@@ -70,6 +71,9 @@ def publish(source: Path, bundle: Path, version: dict, *, grade: int, track: str
               "versionDirectory": str(directory), "sourceRubricVersions": versions,
               "newRubricValidationComplete": versions == [silver_rubric(grade, track=track).version],
               "trainingLabelSource": "ai_validation_results.json", "empiricalIrtCalibration": False}
+    if allocation_policy is not None:
+        policy["allocationPolicy"] = allocation_policy
+        policy["chapterDistributions"] = allocation["groups"]
     manifest["databaseExport"]["operationalBalance"] = policy
     manifest["activeDatabaseLabelProvenance"] = "relative_bank_quota"
     manifest["outputs"]["validation_results.json"] = info(balanced)

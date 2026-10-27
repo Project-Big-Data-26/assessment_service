@@ -1,17 +1,17 @@
-# Validasi ulang soal kelas 12 — Gemini blind N=3 dan diagnostik IndoBERT
+# Validasi ulang soal kelas 12 — Gemini blind N=1 lanjutan dengan hasil N=3 terdahulu dan diagnostik IndoBERT
 
-**Batch belum selesai:** 9/2508 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
+**Batch belum selesai:** 9/842 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
 
 Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v10-blind-sma12-key-verified`. Rubrik: `math-rubric-3x4x3-v8-sma12-grade-aware`.
 
-Ketiga run menilai soal beserta gambar, kunci sumber, dan rubrik kelas 12 tanpa menerima prediksi IndoBERT. Keputusan awal 3–0 diterima sebagai silver; ketidaksepakatan, abstention, dan persoalan konten diperiksa dalam adjudikasi AI terpisah. Adjudikasi tetap berasal dari Gemini yang sama dan menjadi keputusan silver operasional.
+Soal lanjutan dinilai satu kali (N=1), tanpa adjudikasi otomatis; hasil N=3 terdahulu dipertahankan. Isi, kunci, solusi dan tiga label tetap diperiksa. Temuan konten atau abstain tetap inactive. Confidence N=1 pada JSON memakai round(100 * min(probabilitas label akhir Gemini tiap head IndoBERT)); ini dukungan model, bukan konsistensi antar-run atau akurasi terukur; bukti ini tidak memenuhi provenance training N=3.
 
 Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Artifact berada di luar cakupan kelas 12, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
 
 Jumlah soal: 836; distribusi label advisory: `{"mathCognitiveDomain": {"undecided": 833, "applying": 3, "knowing": 0, "reasoning": 0}, "knowledgeDimension": {"undecided": 833, "procedural": 2, "conceptual": 1, "factual": 0, "metacognitive": 0}, "intendedDifficulty": {"undecided": 833, "Easy": 2, "Medium": 1, "Hard": 0}}`.
 Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 3, "knowing": 0, "reasoning": 0}, "knowledgeDimension": {"procedural": 2, "conceptual": 1, "factual": 0, "metacognitive": 0}, "intendedDifficulty": {"Easy": 2, "Medium": 1, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
 Routing: `{"needs_ai_review": 833, "silver_ready": 3}`.
-Run awal sukses: 9/2508; adjudikasi: 3; token sukses tercatat: 40,351.
+Run awal sukses: 9/842; adjudikasi: 3; token sukses tercatat: 40,351.
 
 Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -32,7 +32,7 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 Untuk kelas 12, encoder dan head IndoBERT tidak dijalankan karena cakupan artifact adalah kelas [1, 2, 3, 4, 5, 6], jalur ['regular']. Probabilitas kosong, label/confidence/entropy null, dan action abstain berasal dari pemeriksaan scope runtime. Suara Gemini adalah bukti penilaian advisory, bukan probabilitas IndoBERT.
 
-Suara awal LLM dihitung dari label yang benar-benar diberikan tiap run; abstain tidak menjadi suara kelas. Policy saat ini menerima 3–0 langsung dan meminta adjudikasi untuk kasus lainnya. Majority awal minimal 2/3 dicatat sebagai bukti, bukan confidence probabilistik. Label adjudikasi yang berbeda dari mayoritas awal tetap disimpan dengan alasan dan tidak disamarkan menjadi voting 3–0.
+Jumlah run dan mode disimpan per soal. N=1 tidak mengukur kesepakatan antar-run dan tidak menambah adjudikasi otomatis. Pada N=3, suara 3–0 diterima langsung dan kasus lain meminta adjudikasi; dukungan suara bukan probabilitas akurasi. Abstain tidak menjadi suara kelas.
 
 Cakupan artifact: kelas [1, 2, 3, 4, 5, 6], jalur ['regular']. Untuk kelas 12, diagnostik mengembalikan `out_of_scope` dan `abstain`: label, confidence, dan entropy null serta probabilitas kosong. Label advisory mengikuti Gemini blind dengan rubrik SMA kelas 12.
 
@@ -65,9 +65,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -133,9 +133,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -201,9 +201,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -269,9 +269,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -337,9 +337,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -405,9 +405,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -473,9 +473,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -541,9 +541,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -609,9 +609,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -677,9 +677,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -745,9 +745,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -821,9 +821,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -889,9 +889,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -957,9 +957,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1025,9 +1025,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1093,9 +1093,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1161,9 +1161,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1229,9 +1229,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1297,9 +1297,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1365,9 +1365,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1433,9 +1433,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1501,9 +1501,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1569,9 +1569,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1637,9 +1637,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1705,9 +1705,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1773,9 +1773,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1841,9 +1841,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1909,9 +1909,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -1977,9 +1977,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2045,9 +2045,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2113,9 +2113,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2181,9 +2181,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2249,9 +2249,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2317,9 +2317,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2385,9 +2385,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2453,9 +2453,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2521,9 +2521,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2589,9 +2589,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2657,9 +2657,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2725,9 +2725,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2793,9 +2793,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2861,9 +2861,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2929,9 +2929,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -2997,9 +2997,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3065,9 +3065,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3133,9 +3133,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3201,9 +3201,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3269,9 +3269,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3337,9 +3337,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3405,9 +3405,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3473,9 +3473,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3541,9 +3541,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3609,9 +3609,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3677,9 +3677,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3745,9 +3745,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3813,9 +3813,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3881,9 +3881,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -3949,9 +3949,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4017,9 +4017,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4085,9 +4085,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4153,9 +4153,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4221,9 +4221,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4289,9 +4289,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4357,9 +4357,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4425,9 +4425,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4493,9 +4493,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4561,9 +4561,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4629,9 +4629,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4697,9 +4697,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4765,9 +4765,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4833,9 +4833,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4901,9 +4901,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -4969,9 +4969,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5037,9 +5037,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5105,9 +5105,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5173,9 +5173,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5241,9 +5241,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5309,9 +5309,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5383,9 +5383,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5451,9 +5451,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5519,9 +5519,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5587,9 +5587,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5655,9 +5655,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5723,9 +5723,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5791,9 +5791,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5859,9 +5859,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5927,9 +5927,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -5995,9 +5995,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6063,9 +6063,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6131,9 +6131,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6199,9 +6199,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6267,9 +6267,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6335,9 +6335,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6403,9 +6403,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6471,9 +6471,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6539,9 +6539,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6607,9 +6607,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6675,9 +6675,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6743,9 +6743,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6811,9 +6811,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6879,9 +6879,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -6947,9 +6947,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7015,9 +7015,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7083,9 +7083,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7151,9 +7151,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7219,9 +7219,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7287,9 +7287,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7355,9 +7355,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7423,9 +7423,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7491,9 +7491,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7559,9 +7559,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7627,9 +7627,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7695,9 +7695,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7763,9 +7763,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7831,9 +7831,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7899,9 +7899,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -7967,9 +7967,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8035,9 +8035,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8103,9 +8103,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8171,9 +8171,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8239,9 +8239,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8307,9 +8307,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8375,9 +8375,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8443,9 +8443,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8511,9 +8511,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8579,9 +8579,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8647,9 +8647,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8715,9 +8715,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8783,9 +8783,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8851,9 +8851,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8919,9 +8919,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -8987,9 +8987,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9055,9 +9055,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9123,9 +9123,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9191,9 +9191,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9259,9 +9259,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9327,9 +9327,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9395,9 +9395,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9463,9 +9463,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9531,9 +9531,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9599,9 +9599,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9667,9 +9667,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9735,9 +9735,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9803,9 +9803,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9871,9 +9871,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -9939,9 +9939,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10007,9 +10007,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10075,9 +10075,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10143,9 +10143,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10211,9 +10211,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10279,9 +10279,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10347,9 +10347,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10415,9 +10415,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10483,9 +10483,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10551,9 +10551,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10619,9 +10619,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10687,9 +10687,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10755,9 +10755,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10823,9 +10823,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10891,9 +10891,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -10959,9 +10959,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11185,9 +11185,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11253,9 +11253,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11321,9 +11321,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11389,9 +11389,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11457,9 +11457,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11525,9 +11525,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11593,9 +11593,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11661,9 +11661,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11729,9 +11729,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11797,9 +11797,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11865,9 +11865,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -11933,9 +11933,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12001,9 +12001,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12069,9 +12069,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12137,9 +12137,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12205,9 +12205,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12273,9 +12273,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12341,9 +12341,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12409,9 +12409,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12477,9 +12477,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12545,9 +12545,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12613,9 +12613,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12681,9 +12681,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12749,9 +12749,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12817,9 +12817,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12885,9 +12885,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12953,9 +12953,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13021,9 +13021,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13089,9 +13089,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13157,9 +13157,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13225,9 +13225,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13293,9 +13293,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13361,9 +13361,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13429,9 +13429,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13497,9 +13497,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13565,9 +13565,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13633,9 +13633,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13701,9 +13701,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13769,9 +13769,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13837,9 +13837,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13905,9 +13905,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13973,9 +13973,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14041,9 +14041,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14109,9 +14109,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14177,9 +14177,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14245,9 +14245,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14313,9 +14313,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14381,9 +14381,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14449,9 +14449,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14517,9 +14517,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14585,9 +14585,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14653,9 +14653,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14721,9 +14721,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14789,9 +14789,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14857,9 +14857,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14932,9 +14932,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15000,9 +15000,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15068,9 +15068,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15136,9 +15136,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15204,9 +15204,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15272,9 +15272,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15340,9 +15340,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15415,9 +15415,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15483,9 +15483,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15551,9 +15551,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15619,9 +15619,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15687,9 +15687,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15755,9 +15755,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15823,9 +15823,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15898,9 +15898,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15966,9 +15966,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16034,9 +16034,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16102,9 +16102,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16170,9 +16170,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16238,9 +16238,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16306,9 +16306,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16382,9 +16382,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16450,9 +16450,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16518,9 +16518,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16586,9 +16586,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16654,9 +16654,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16731,9 +16731,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16799,9 +16799,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16874,9 +16874,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16942,9 +16942,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17019,9 +17019,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17087,9 +17087,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17162,9 +17162,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17230,9 +17230,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17298,9 +17298,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17373,9 +17373,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17441,9 +17441,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17509,9 +17509,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17577,9 +17577,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17645,9 +17645,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17713,9 +17713,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17781,9 +17781,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17849,9 +17849,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17917,9 +17917,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17985,9 +17985,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18053,9 +18053,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18121,9 +18121,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18189,9 +18189,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18257,9 +18257,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18325,9 +18325,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18393,9 +18393,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18461,9 +18461,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18529,9 +18529,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18597,9 +18597,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18665,9 +18665,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18733,9 +18733,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18801,9 +18801,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18869,9 +18869,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18937,9 +18937,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19005,9 +19005,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19073,9 +19073,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19141,9 +19141,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19209,9 +19209,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19277,9 +19277,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19345,9 +19345,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19413,9 +19413,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19481,9 +19481,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19549,9 +19549,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19617,9 +19617,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19685,9 +19685,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19753,9 +19753,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19821,9 +19821,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19889,9 +19889,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19957,9 +19957,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20025,9 +20025,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20093,9 +20093,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20161,9 +20161,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20229,9 +20229,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20297,9 +20297,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20365,9 +20365,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20433,9 +20433,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20501,9 +20501,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20569,9 +20569,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20637,9 +20637,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20705,9 +20705,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20773,9 +20773,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20841,9 +20841,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20909,9 +20909,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20977,9 +20977,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21045,9 +21045,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21113,9 +21113,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21181,9 +21181,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21249,9 +21249,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21317,9 +21317,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21385,9 +21385,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21453,9 +21453,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21521,9 +21521,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21589,9 +21589,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21657,9 +21657,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21725,9 +21725,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21793,9 +21793,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21861,9 +21861,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21929,9 +21929,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21997,9 +21997,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22065,9 +22065,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22133,9 +22133,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22201,9 +22201,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22269,9 +22269,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22337,9 +22337,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22411,9 +22411,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22479,9 +22479,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22547,9 +22547,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22615,9 +22615,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22683,9 +22683,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22751,9 +22751,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22819,9 +22819,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22887,9 +22887,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22955,9 +22955,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23023,9 +23023,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23098,9 +23098,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23166,9 +23166,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23234,9 +23234,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23302,9 +23302,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23370,9 +23370,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23438,9 +23438,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23506,9 +23506,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23574,9 +23574,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23642,9 +23642,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23710,9 +23710,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23778,9 +23778,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23846,9 +23846,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23914,9 +23914,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -23982,9 +23982,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24050,9 +24050,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24118,9 +24118,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24186,9 +24186,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24254,9 +24254,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24322,9 +24322,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24390,9 +24390,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24458,9 +24458,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24526,9 +24526,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24594,9 +24594,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24662,9 +24662,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24730,9 +24730,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24798,9 +24798,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24866,9 +24866,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -24934,9 +24934,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25002,9 +25002,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25070,9 +25070,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25138,9 +25138,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25206,9 +25206,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25274,9 +25274,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25342,9 +25342,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25410,9 +25410,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25478,9 +25478,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25546,9 +25546,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25614,9 +25614,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25690,9 +25690,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25765,9 +25765,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25833,9 +25833,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25901,9 +25901,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -25969,9 +25969,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26037,9 +26037,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26105,9 +26105,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26173,9 +26173,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26241,9 +26241,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26309,9 +26309,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26384,9 +26384,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26452,9 +26452,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26520,9 +26520,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26744,9 +26744,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26812,9 +26812,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26880,9 +26880,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -26948,9 +26948,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27023,9 +27023,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27091,9 +27091,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27159,9 +27159,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27227,9 +27227,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27295,9 +27295,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27363,9 +27363,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27431,9 +27431,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27499,9 +27499,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27576,9 +27576,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27644,9 +27644,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27712,9 +27712,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27780,9 +27780,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27848,9 +27848,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27916,9 +27916,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -27992,9 +27992,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28068,9 +28068,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28138,9 +28138,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28208,9 +28208,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28284,9 +28284,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28359,9 +28359,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28427,9 +28427,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28495,9 +28495,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28563,9 +28563,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28631,9 +28631,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28699,9 +28699,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28767,9 +28767,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28835,9 +28835,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28910,9 +28910,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -28978,9 +28978,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29046,9 +29046,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29114,9 +29114,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29182,9 +29182,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29250,9 +29250,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29318,9 +29318,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29386,9 +29386,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29454,9 +29454,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29524,9 +29524,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29592,9 +29592,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29660,9 +29660,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29730,9 +29730,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29800,9 +29800,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29870,9 +29870,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -29940,9 +29940,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30008,9 +30008,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30076,9 +30076,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30144,9 +30144,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30212,9 +30212,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30280,9 +30280,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30348,9 +30348,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30416,9 +30416,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30484,9 +30484,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30560,9 +30560,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30628,9 +30628,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30696,9 +30696,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30766,9 +30766,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30834,9 +30834,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30902,9 +30902,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -30970,9 +30970,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31038,9 +31038,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31114,9 +31114,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31182,9 +31182,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31250,9 +31250,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31318,9 +31318,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31386,9 +31386,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31461,9 +31461,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31536,9 +31536,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31604,9 +31604,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31672,9 +31672,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31740,9 +31740,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31810,9 +31810,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31878,9 +31878,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -31948,9 +31948,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32016,9 +32016,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32086,9 +32086,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32154,9 +32154,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32224,9 +32224,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32294,9 +32294,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32364,9 +32364,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32434,9 +32434,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32502,9 +32502,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32570,9 +32570,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32638,9 +32638,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32713,9 +32713,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32781,9 +32781,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32849,9 +32849,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32919,9 +32919,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -32989,9 +32989,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33057,9 +33057,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33125,9 +33125,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33193,9 +33193,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33263,9 +33263,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33331,9 +33331,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33399,9 +33399,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33467,9 +33467,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33535,9 +33535,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33603,9 +33603,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33671,9 +33671,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33739,9 +33739,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33807,9 +33807,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33875,9 +33875,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -33943,9 +33943,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34011,9 +34011,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34079,9 +34079,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34147,9 +34147,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34215,9 +34215,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34283,9 +34283,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34351,9 +34351,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34419,9 +34419,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34487,9 +34487,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34555,9 +34555,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34623,9 +34623,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34691,9 +34691,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34759,9 +34759,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34827,9 +34827,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34895,9 +34895,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -34963,9 +34963,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35031,9 +35031,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35099,9 +35099,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35167,9 +35167,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35235,9 +35235,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35303,9 +35303,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35371,9 +35371,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35439,9 +35439,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35507,9 +35507,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35575,9 +35575,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35643,9 +35643,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35711,9 +35711,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35779,9 +35779,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35847,9 +35847,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35915,9 +35915,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -35983,9 +35983,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36051,9 +36051,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36119,9 +36119,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36187,9 +36187,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36255,9 +36255,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36323,9 +36323,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36391,9 +36391,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36459,9 +36459,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36527,9 +36527,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36595,9 +36595,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36663,9 +36663,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36731,9 +36731,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36799,9 +36799,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36867,9 +36867,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -36935,9 +36935,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37003,9 +37003,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37071,9 +37071,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37139,9 +37139,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37207,9 +37207,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37275,9 +37275,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37343,9 +37343,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37411,9 +37411,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37479,9 +37479,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37547,9 +37547,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37615,9 +37615,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37683,9 +37683,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37751,9 +37751,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37819,9 +37819,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37887,9 +37887,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -37955,9 +37955,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38023,9 +38023,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38091,9 +38091,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38159,9 +38159,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38227,9 +38227,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38295,9 +38295,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38363,9 +38363,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38431,9 +38431,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38499,9 +38499,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38567,9 +38567,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38635,9 +38635,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38703,9 +38703,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38771,9 +38771,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38839,9 +38839,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38907,9 +38907,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -38975,9 +38975,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39043,9 +39043,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39111,9 +39111,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39179,9 +39179,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39247,9 +39247,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39315,9 +39315,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39383,9 +39383,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39451,9 +39451,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39519,9 +39519,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39587,9 +39587,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39655,9 +39655,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39723,9 +39723,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39791,9 +39791,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39859,9 +39859,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39927,9 +39927,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -39995,9 +39995,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40063,9 +40063,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40131,9 +40131,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40199,9 +40199,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40267,9 +40267,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40335,9 +40335,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40403,9 +40403,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40471,9 +40471,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40539,9 +40539,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40607,9 +40607,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40675,9 +40675,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40743,9 +40743,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40811,9 +40811,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40879,9 +40879,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -40947,9 +40947,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41015,9 +41015,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41083,9 +41083,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41151,9 +41151,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41219,9 +41219,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41287,9 +41287,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41355,9 +41355,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41423,9 +41423,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41491,9 +41491,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41559,9 +41559,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41627,9 +41627,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41695,9 +41695,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41763,9 +41763,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41831,9 +41831,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41899,9 +41899,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -41967,9 +41967,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42035,9 +42035,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42103,9 +42103,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42171,9 +42171,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42239,9 +42239,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42307,9 +42307,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42375,9 +42375,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42443,9 +42443,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42511,9 +42511,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42579,9 +42579,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42647,9 +42647,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42715,9 +42715,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42783,9 +42783,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42851,9 +42851,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42919,9 +42919,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -42987,9 +42987,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43055,9 +43055,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43123,9 +43123,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43191,9 +43191,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43259,9 +43259,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43327,9 +43327,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43395,9 +43395,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43463,9 +43463,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43531,9 +43531,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43599,9 +43599,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43667,9 +43667,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43735,9 +43735,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43803,9 +43803,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43871,9 +43871,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -43939,9 +43939,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44007,9 +44007,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44075,9 +44075,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44143,9 +44143,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44211,9 +44211,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44279,9 +44279,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44347,9 +44347,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44415,9 +44415,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44483,9 +44483,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44551,9 +44551,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44619,9 +44619,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44687,9 +44687,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44755,9 +44755,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44823,9 +44823,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44891,9 +44891,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -44959,9 +44959,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45027,9 +45027,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45095,9 +45095,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45163,9 +45163,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45231,9 +45231,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45299,9 +45299,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45367,9 +45367,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45435,9 +45435,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45503,9 +45503,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45571,9 +45571,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45639,9 +45639,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45707,9 +45707,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45775,9 +45775,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45843,9 +45843,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45911,9 +45911,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -45979,9 +45979,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46047,9 +46047,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46115,9 +46115,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46183,9 +46183,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46251,9 +46251,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46319,9 +46319,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46387,9 +46387,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46455,9 +46455,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46523,9 +46523,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46591,9 +46591,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46659,9 +46659,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46727,9 +46727,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46795,9 +46795,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46863,9 +46863,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46931,9 +46931,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -46999,9 +46999,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47067,9 +47067,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47135,9 +47135,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47203,9 +47203,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47271,9 +47271,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47339,9 +47339,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47407,9 +47407,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47475,9 +47475,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47543,9 +47543,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47611,9 +47611,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47679,9 +47679,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47747,9 +47747,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47815,9 +47815,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47883,9 +47883,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -47951,9 +47951,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48019,9 +48019,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48087,9 +48087,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48155,9 +48155,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48223,9 +48223,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48291,9 +48291,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48359,9 +48359,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48427,9 +48427,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48495,9 +48495,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48563,9 +48563,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48631,9 +48631,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48699,9 +48699,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48767,9 +48767,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48835,9 +48835,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48903,9 +48903,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -48971,9 +48971,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49039,9 +49039,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49107,9 +49107,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49175,9 +49175,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49243,9 +49243,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49311,9 +49311,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49379,9 +49379,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49447,9 +49447,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49515,9 +49515,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49583,9 +49583,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49651,9 +49651,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49719,9 +49719,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49787,9 +49787,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49855,9 +49855,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49923,9 +49923,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -49991,9 +49991,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50059,9 +50059,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50127,9 +50127,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50195,9 +50195,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50263,9 +50263,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50331,9 +50331,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50399,9 +50399,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50467,9 +50467,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50535,9 +50535,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50603,9 +50603,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50671,9 +50671,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50739,9 +50739,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50807,9 +50807,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50875,9 +50875,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -50943,9 +50943,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51011,9 +51011,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51079,9 +51079,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51147,9 +51147,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51215,9 +51215,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51283,9 +51283,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51351,9 +51351,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51419,9 +51419,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51487,9 +51487,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51555,9 +51555,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51623,9 +51623,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51691,9 +51691,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51759,9 +51759,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51827,9 +51827,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51895,9 +51895,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -51963,9 +51963,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52031,9 +52031,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52099,9 +52099,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52167,9 +52167,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52235,9 +52235,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52303,9 +52303,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52371,9 +52371,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52443,9 +52443,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52511,9 +52511,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52579,9 +52579,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52647,9 +52647,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52715,9 +52715,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52783,9 +52783,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52851,9 +52851,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52919,9 +52919,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -52987,9 +52987,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53055,9 +53055,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53123,9 +53123,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53191,9 +53191,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53259,9 +53259,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53327,9 +53327,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53395,9 +53395,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53463,9 +53463,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53531,9 +53531,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53599,9 +53599,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53667,9 +53667,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53735,9 +53735,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53803,9 +53803,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53871,9 +53871,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -53939,9 +53939,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54007,9 +54007,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54083,9 +54083,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54151,9 +54151,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54219,9 +54219,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54287,9 +54287,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54355,9 +54355,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54423,9 +54423,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54491,9 +54491,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54559,9 +54559,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54627,9 +54627,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54695,9 +54695,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54763,9 +54763,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54831,9 +54831,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54899,9 +54899,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -54967,9 +54967,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55035,9 +55035,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55103,9 +55103,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55171,9 +55171,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55239,9 +55239,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55314,9 +55314,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55382,9 +55382,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55450,9 +55450,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55518,9 +55518,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55586,9 +55586,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55654,9 +55654,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55722,9 +55722,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55790,9 +55790,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55858,9 +55858,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55926,9 +55926,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -55994,9 +55994,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56062,9 +56062,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56130,9 +56130,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56198,9 +56198,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56266,9 +56266,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56334,9 +56334,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56410,9 +56410,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56486,9 +56486,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56561,9 +56561,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56629,9 +56629,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56697,9 +56697,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56765,9 +56765,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56833,9 +56833,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -56901,9 +56901,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -57125,9 +57125,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -57193,9 +57193,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -57261,9 +57261,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -57329,9 +57329,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -57397,9 +57397,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_consensus / incomplete | — |
-| Dimensi pengetahuan | {} | no_consensus / incomplete | — |
-| Intended difficulty | {} | no_consensus / incomplete | — |
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 

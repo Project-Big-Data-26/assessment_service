@@ -13,15 +13,18 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import sqlite3
 import subprocess
 import sys
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from dotenv import load_dotenv
 from app.llm.config import GeminiSettings
+from app.llm.providers import PROVIDERS, settings_for, has_credentials
 from app.llm.silver import silver_rubric
 from app.assessment.store import AssessmentError, AssessmentStore
 from app.psychometrics.analysis import load_policy
@@ -84,6 +87,12 @@ def read_config(path):
     config = load(path)
     if config.get("schemaVersion") != "nightly-exercise-v1":
         raise ValueError("unsupported nightly config")
+    if config.get("provider", "gemini") not in PROVIDERS:
+        raise ValueError("unsupported validation provider")
+    fallbacks = config.get("fallbackProviders", [])
+    if (not isinstance(fallbacks, list) or any(p not in ("gemini", "groq") for p in fallbacks)
+            or len(set([config.get("provider", "gemini"), *fallbacks])) != len(fallbacks) + 1):
+        raise ValueError("fallbackProviders must contain unique Gemini/Groq providers excluding the primary")
     if config.get("timezone") != "Asia/Jakarta" or config.get("schedule") != "01:00":
         raise ValueError("this scheduler uses 01:00 Asia/Jakarta")
     if not config.get("classes") or not set(config["classes"]) <= set(exercise.CLASSES):
@@ -94,6 +103,16 @@ def read_config(path):
         raise ValueError("maxOutputTokens must be 128..4096")
     if config.get("irtModel") not in ("rasch", "2pl", "3pl"):
         raise ValueError("unsupported IRT model")
+    delays = config.get("providerRetryDelaysSeconds", [15, 30, 60])
+    if (not isinstance(delays, list) or len(delays) > 5
+            or any(type(delay) is not int or not 1 <= delay <= 60 for delay in delays)):
+        raise ValueError("providerRetryDelaysSeconds must contain at most five integer delays of 1..60 seconds")
+    if type(config.get("stopOn503", False)) is not bool:
+        raise ValueError("stopOn503 must be boolean")
+    if type(config.get("fallbackOn503", False)) is not bool:
+        raise ValueError("fallbackOn503 must be boolean")
+    if config.get("fallbackOn503") and not fallbacks:
+        raise ValueError("fallbackOn503 requires fallbackProviders")
     return config
 
 
@@ -142,6 +161,42 @@ def discover_jobs(config):
     return list(jobs.values()), problems
 
 
+def waiting_classes(config, jobs):
+    """Distinguish absent exercise data from classes ready for paid validation."""
+    discovered = {job["class"] for job in jobs}
+    pending = []
+    for name in config["classes"]:
+        if name in discovered:
+            continue
+        directory = ROOT / "output/exercise" / name
+        paired = any(source.with_name("soal_exercise_meta.json").is_file()
+                     for source in directory.glob("batch*/soal_exercise_db.json"))
+        pending.append({"class": name, "status": "waiting_for_ready" if paired else "waiting_for_source",
+                        "directory": str(directory),
+                        "requiredFiles": ["soal_exercise_db.json", "soal_exercise_meta.json", "extraction_ready.json"]})
+    return pending
+
+
+def provider_stop_notice(checkpoint):
+    status = checkpoint.get("executionStatus", "")
+    if not status.startswith("blocked_provider"):
+        return None
+    raw_code = str((checkpoint.get("stopReason") or {}).get("errorCode") or "")
+    code = raw_code if re.fullmatch(r"[A-Za-z][A-Za-z0-9_.]*:\d{3}", raw_code) else "provider_error"
+    label = {"deepseek": "DeepSeek", "groq": "Groq"}.get(checkpoint.get("provider"), "Gemini")
+    if status == "blocked_provider_http_503":
+        message = "Validasi berhenti pada HTTP 503 Gemini. Hasil sukses dan checkpoint tersimpan."
+    elif status == "blocked_provider_daily_quota":
+        message = "Validasi berhenti karena kuota harian Gemini habis. Hasil sukses dan checkpoint tersimpan."
+    elif status == "blocked_provider_quota_or_rate_limit":
+        message = "Validasi berhenti karena batas kuota/rate limit Gemini. Hasil sukses dan checkpoint tersimpan."
+    else:
+        message = "Validasi berhenti karena konfigurasi/koneksi layanan Gemini. Hasil sukses dan checkpoint tersimpan."
+    if (checkpoint.get("stopReason") or {}).get("providerFailureReason") == "insufficient_balance":
+        message = f"Validasi berhenti karena saldo/kredit API {label} tidak cukup. Checkpoint tersimpan."
+    return {"status": status, "errorCode": code, "message": message.replace("Gemini", label)}
+
+
 def verify_completed(p):
     verify_bundle(p["source"], p["final"])
     if not load(p["final"] / "export_status.json").get("fullComplete"):
@@ -152,11 +207,18 @@ def publish_balance(name, batch):
     p = exercise.paths(name, batch)
     verify_completed(p)
     grade, track = exercise.CLASSES[name]
-    version = export_verified_operational_balance(p["source"], p["final"], grade=grade, track=track)
+    meta = load(p["exercise"] / "soal_exercise_meta.json")
+    allocation_policy = {"version": "chapter-relative-30-40-30-v1", "groupBy": "bab_id",
+                         "weights": {"easy": 3, "medium": 4, "hard": 3},
+                         "groupsByQuestionId": {qid: info.get("bab_id") for qid, info in meta.items()}}
+    version = export_verified_operational_balance(p["source"], p["final"], grade=grade, track=track,
+                                                 allocation_policy=allocation_policy)
     publish(p["source"], p["final"], version, grade=grade, track=track)
     # Metadata and the main DB export must expose the same operational labels.
     meta_path = p["final"] / "validation_results_meta.json"
     meta = load(meta_path)
+    audit = load(p["final"] / "bukti_validasi/operational_balance_audit.json")
+    evidence = {str(item["questionId"]): item for item in audit["items"]}
     for row in load(p["final"] / "validation_results.json"):
         result = meta[str(row["_id"])]["validasi"]
         result.setdefault("ai_cognitive_level", result["cognitive_level"])
@@ -165,9 +227,29 @@ def publish_balance(name, batch):
         result["difficulty_provenance"] = "relative_bank_quota" if row["status"] == "active" else "ai_silver"
         result["level_sesuai_target"] = (None if row["cognitive_level"] is None else
                                         row["cognitive_level"] == meta[str(row["_id"])]["level_target"])
+        detail = evidence.get(str(row["_id"]), {})
+        if "confidenceMethod" in detail:
+            result.setdefault("ai_confidence_final_label_probabilities", result.get("confidence_final_label_probabilities"))
+            result.update(confidence_method=detail["confidenceMethod"],
+                          confidence_available=detail["confidenceAvailable"],
+                          confidence_final_label_probabilities=detail["finalLabelProbabilities"],
+                          confidence_status="indobert_label_support" if detail["confidenceAvailable"] else "model_support_unavailable")
     atomic_write(meta, meta_path)
     manifest = load(p["final"] / "manifest.json")
     manifest["outputs"][meta_path.name] = {"sha256": digest(meta_path), "bytes": meta_path.stat().st_size}
+    summary_path = p["final"] / "RINGKASAN_VALIDASI.md"
+    marker = "\n<!-- operational-chapter-balance -->"
+    summary = summary_path.read_text(encoding="utf-8").split(marker)[0]
+    lines = [marker, "", "## Distribusi operasional per bab", "",
+             "Array utama memakai sekitar 30% easy, 40% medium, 30% hard per bab, diranking dari profil bukti. "
+             "Label AI asli tetap ada di `ai_validation_results.json`. Soal inactive tidak masuk kuota. "
+             "Confidence N=1 memakai dukungan IndoBERT untuk label operasional (0 jika tidak tersedia), bukan konsistensi satu run.", "",
+             "| Bab | Active | Easy | Medium | Hard |", "|---|---:|---:|---:|---:|"]
+    for chapter, group in audit["groups"].items():
+        targets = group["targets"]
+        lines.append(f"| {chapter} | {group['activeQuestionCount']} | {targets['easy']} | {targets['medium']} | {targets['hard']} |")
+    summary_path.write_text(summary + "\n".join(lines) + "\n", encoding="utf-8")
+    manifest["outputs"][summary_path.name] = {"sha256": digest(summary_path), "bytes": summary_path.stat().st_size}
     atomic_write(manifest, p["final"] / "manifest.json")
     # Public handoff lives with the original batch, even though evidence is staged.
     atomic_write(version, p["exercise"] / "operational_balance.json")
@@ -178,7 +260,10 @@ def publish_balance(name, batch):
 def job_identity(job, config):
     grade, track = exercise.CLASSES[job["class"]]
     rubric = silver_rubric(grade, track=track)
-    return fingerprint({**job, "model": GeminiSettings.from_environment().model, "runs": 1,
+    settings = settings_for(config.get("provider", "gemini"))
+    return fingerprint({**job, **({"provider": settings.provider} if settings.provider != "gemini" else {}),
+                        "model": settings.model, "runs": 1,
+                        "balancePolicy": "chapter-relative-30-40-30-v1",
                         "rubricHash": digest(rubric.path), "promptVersion": rubric.prompt_version,
                         "maxOutputTokens": config["maxOutputTokens"]})
 
@@ -193,13 +278,34 @@ def validate_job(job, config, state, budget, directory):
         verify_completed(p)
         verify_operational_export(Path(previous["operational"]["directory"]))
         return {**previous, "reused": True}, budget
+    # A policy-only publication change does not need any more paid calls.
+    if p["checkpoint"].exists():
+        checkpoint = load(p["checkpoint"])
+        ids = [str(item["_id"]) for item in load(p["source"])]
+        if exercise.complete(checkpoint, ids):
+            exercise.package(name, batch)
+            return {"identity": identity, "updatedAt": timestamp(), "exitCode": 0,
+                    "apiCallsThisRun": 0, "status": "completed",
+                    "operational": publish_balance(name, batch)}, budget
     if budget <= 0:
         return {"status": "waiting_for_budget", "identity": identity}, budget
+    provider = config.get("provider", "gemini")
+    if provider in ("deepseek", "groq"):
+        settings = settings_for(provider)
+        if not settings.api_key.strip():
+            return {"status": "waiting_for_credentials", "identity": identity, "provider": provider,
+                    "reason": f"{provider.upper()}_API_KEY is missing", "apiCallsThisRun": 0}, budget
+        if not settings.live_enabled:
+            return {"status": "waiting_for_provider_enablement", "identity": identity, "provider": provider,
+                    "reason": f"Set {provider.upper()}_LIVE_ENABLED=true after reviewing account limits and billing", "apiCallsThisRun": 0}, budget
     before = load(p["checkpoint"]).get("apiAttempts", 0) if p["checkpoint"].exists() else 0
     with (directory / f"{name}_{batch}.log").open("a", encoding="utf-8") as log:
         process = subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "scripts/validate_exercise_batch.py"),
             "run", "--classes", name, "--batch", batch, "--runs", "1", "--max-api-calls", str(budget),
-            "--max-output-tokens", str(config["maxOutputTokens"]), "--execute"], cwd=ROOT,
+            "--max-output-tokens", str(config["maxOutputTokens"]), "--execute",
+            "--provider", provider,
+            *(["--checkpoint-namespace", exercise.VALIDATION_NAMESPACE] if exercise.VALIDATION_NAMESPACE else []),
+            *(["--stop-on-503"] if config.get("stopOn503", False) else [])], cwd=ROOT,
             stdout=log, stderr=subprocess.STDOUT)
     after = load(p["checkpoint"]).get("apiAttempts", 0) if p["checkpoint"].exists() else before
     budget -= max(0, after - before)
@@ -207,9 +313,126 @@ def validate_job(job, config, state, budget, directory):
         raise ValueError("source changed during validation; publish a new batch")
     result = {"identity": identity, "updatedAt": timestamp(), "exitCode": process.returncode,
               "apiCallsThisRun": max(0, after - before), "status": "validation_incomplete"}
+    if p["checkpoint"].exists():
+        checkpoint = load(p["checkpoint"])
+        notice = provider_stop_notice(checkpoint)
+        if notice:
+            result["providerStop"] = notice
     if process.returncode == 0:
         result.update(status="completed", operational=publish_balance(name, batch))
     return result, budget
+
+
+def validate_with_provider_retries(job, config, state, budget, directory, *, on_retry=None):
+    """Resume transient provider failures; quota/auth stops never enter this loop."""
+    delays = config.get("providerRetryDelaysSeconds", [15, 30, 60])
+    initial_budget, retries = budget, []
+    for attempt in range(len(delays) + 1):
+        result, budget = validate_job(job, config, state, budget, directory)
+        result = {**result, "apiCallsThisRun": initial_budget - budget}
+        if retries:
+            result["transientRetries"] = list(retries)
+        if config.get("stopOn503", False) and result.get("providerStop", {}).get("errorCode", "").endswith(":503"):
+            return result, budget
+        temporary = (result.get("exitCode") == 3 and
+                     result.get("providerStop", {}).get("status") == "blocked_provider_temporarily_unavailable"
+                     and not result["providerStop"]["errorCode"].endswith(":429"))
+        if not temporary or budget <= 0 or attempt == len(delays):
+            return result, budget
+        retry = {"retryIndex": attempt + 1, "delaySeconds": delays[attempt],
+                 "errorCode": result["providerStop"]["errorCode"], "scheduledAt": timestamp()}
+        retries.append(retry)
+        if on_retry is not None:
+            on_retry({**result, "status": "retrying_provider", "transientRetries": list(retries),
+                      "retryInSeconds": delays[attempt]})
+        time.sleep(delays[attempt])
+    raise AssertionError("unreachable retry loop")
+
+
+def validate_with_provider_failover(job, config, state, budget, directory, *, on_retry=None):
+    """Switch on quota or configured service errors; retry only temporarily unavailable providers."""
+    from scripts.provider_failover import activate_checkpoint, select_provider, ProviderFailoverError
+    if budget <= 0:
+        return {"status": "waiting_for_budget", "apiCallsThisRun": 0}, budget
+    initial_budget, attempts = budget, []
+    order = [config.get("provider", "gemini"), *config.get("fallbackProviders", [])]
+    delays = config.get("providerRetryDelaysSeconds", [15, 30, 60]) if config.get("fallbackOn503") else []
+    result = None
+    candidates = order
+    round_index, no_progress_rounds = 0, 0
+    while candidates:
+        temporary_providers = []
+        made_progress = False
+        for provider in candidates:
+            select_provider(provider)
+            if not has_credentials(provider):
+                attempts.append({"provider": provider, "status": "skipped_not_enabled", "apiCalls": 0})
+                continue
+            try:
+                settings = settings_for(provider)
+            except Exception as exc:
+                raise ProviderFailoverError(budget) from exc
+            if not settings.api_key.strip() or not settings.live_enabled:
+                attempts.append({"provider": provider, "status": "skipped_not_enabled", "apiCalls": 0})
+                continue
+            if budget <= 0:
+                break
+            try:
+                activate_checkpoint(job["class"], job["batch"], provider)
+            except Exception as exc:
+                raise ProviderFailoverError(budget) from exc
+            current = {**config, "provider": provider}
+            before = budget
+            checkpoint = exercise.paths(job["class"], job["batch"])["checkpoint"]
+            previous_state = load(checkpoint) if checkpoint.exists() else {}
+            previous_calls = previous_state.get("apiAttempts", 0)
+            previous_complete = sum(exercise.complete(previous_state, [qid]) for qid in previous_state.get("items", {}))
+            if on_retry is not None:
+                on_retry({"status": "running", "activeProvider": provider, "providerAttempts": list(attempts),
+                          "apiCallsThisRun": initial_budget - budget})
+            try:
+                result, budget = validate_with_provider_retries(job, current, state, budget, directory, on_retry=on_retry)
+            except Exception as exc:
+                current_calls = load(checkpoint).get("apiAttempts", 0) if checkpoint.exists() else previous_calls
+                raise ProviderFailoverError(budget - max(0, current_calls - previous_calls)) from exc
+            current_state = load(checkpoint) if checkpoint.exists() else {}
+            current_complete = sum(exercise.complete(current_state, [qid]) for qid in current_state.get("items", {}))
+            made_progress = made_progress or current_complete > previous_complete
+            attempts.append({"provider": provider, "status": result["status"], "round": round_index + 1,
+                             "apiCalls": before - budget, "providerStop": result.get("providerStop")})
+            result.update(activeProvider=provider, providerAttempts=list(attempts), apiCallsThisRun=initial_budget - budget)
+            if result.get("status") == "completed":
+                return result, budget
+            stop = result.get("providerStop", {})
+            quota = (result.get("exitCode") == 3 and
+                     (stop.get("errorCode", "").endswith(":429") or stop.get("status") == "blocked_provider_daily_quota"))
+            temporary = bool(config.get("fallbackOn503") and result.get("exitCode") == 3 and
+                             (stop.get("errorCode", "").endswith(":503") or
+                              stop.get("status") == "blocked_provider_temporarily_unavailable"))
+            if not (quota or temporary) or budget <= 0:
+                return result, budget
+            if temporary:
+                temporary_providers.append(provider)
+            if on_retry is not None:
+                on_retry({**result, "status": "switching_provider_after_service_error" if temporary else "switching_provider_after_quota"})
+        if not temporary_providers or not delays or budget <= 0:
+            break
+        # Backoff limits consecutive rounds with no completed questions. A recovered
+        # service that still adds valid results should continue working toward completion.
+        no_progress_rounds = 0 if made_progress else no_progress_rounds + 1
+        if no_progress_rounds > len(delays):
+            break
+        delay = delays[max(0, no_progress_rounds - 1)]
+        if on_retry is not None:
+            on_retry({**(result or {}), "status": "waiting_for_provider_recovery", "retryInSeconds": delay,
+                      "retryProviders": list(temporary_providers), "providerAttempts": list(attempts)})
+        time.sleep(delay)
+        candidates = temporary_providers
+        round_index += 1
+    if any(a["status"] != "skipped_not_enabled" for a in attempts):
+        result.update(providerAttempts=attempts, apiCallsThisRun=initial_budget - budget)
+        return result, budget
+    return {"status": "waiting_for_provider", "providerAttempts": attempts, "apiCallsThisRun": 0}, budget
 
 
 def effective_labels(analysis, decisions):
@@ -290,15 +513,28 @@ def run(config, output):
         state_path = output / "state.json"
         state = load(state_path) if state_path.exists() else {"jobs": {}}
         report = {"schemaVersion": "nightly-report-v1", "startedAt": timestamp(), "timezone": "Asia/Jakarta",
-                  "provider": "gemini", "requestedRuns": 1, "jobs": {}, "handoffErrors": problems}
+                  "provider": config.get("provider", "gemini"), "requestedRuns": 1, "jobs": {}, "handoffErrors": problems,
+                  "stopOn503": config.get("stopOn503", False),
+                  "waitingClasses": waiting_classes(config, jobs)}
+        if config.get("fallbackProviders"):
+            report["providerOrder"] = [config.get("provider", "gemini"), *config["fallbackProviders"]]
+            report["fallbackOn503"] = config.get("fallbackOn503", False)
         budget = config["maxApiCalls"]
         for job in jobs:
             key = f"{job['class']}/{job['batch']}"
             checkpoint = exercise.paths(job['class'], job['batch'])["checkpoint"]
             before = load(checkpoint).get("apiAttempts", 0) if checkpoint.exists() else 0
             budget_before = budget
+            report["jobs"][key] = {"status": "running", "startedAt": timestamp()}
+            atomic_write(report, output / "latest.json")
             try:
-                result, budget = validate_job(job, config, state["jobs"], budget, directory)
+                def report_retry(result):
+                    report["jobs"][key] = result
+                    atomic_write(report, output / "latest.json")
+
+                validator = validate_with_provider_failover if config.get("fallbackProviders") else validate_with_provider_retries
+                result, budget = validator(
+                    job, config, state["jobs"], budget, directory, on_retry=report_retry)
                 if result["status"] == "completed":
                     p = exercise.paths(job["class"], job["batch"])
                     initialization = build_initialization_report(p["final"],
@@ -307,7 +543,7 @@ def run(config, output):
                     atomic_write(initialization, directory / f"{job['class']}_{job['batch']}_irt.json")
             except Exception as exc:
                 after = load(checkpoint).get("apiAttempts", 0) if checkpoint.exists() else before
-                budget = budget_before - max(0, after - before)
+                budget = getattr(exc, "remaining_budget", budget_before - max(0, after - before))
                 result = {"status": "failed", "errorType": type(exc).__name__}
                 # Technical traceback remains local; reports do not echo private rows/keys.
                 import traceback
@@ -316,13 +552,27 @@ def run(config, output):
             state["jobs"][key] = result
             report["jobs"][key] = result
             atomic_write(state, state_path)
+            atomic_write(report, output / "latest.json")
+            stop = result.get("providerStop", {})
+            hard_stop = (not config.get("stopOn503", False)
+                         or stop.get("errorCode", "").endswith((":503", ":429", ":401", ":403"))
+                         or stop.get("status") in {"blocked_provider_daily_quota", "blocked_provider_configuration"})
+            if result.get("exitCode") == 3 and hard_stop:
+                # A shared provider stop must not trigger calls for later classes.
+                report["providerStoppedAt"] = key
+                report["stopNotice"] = result.get("providerStop", {
+                    "message": "Validasi Gemini berhenti; periksa stopReason pada checkpoint kelas terkait."})
+                for pending in jobs[jobs.index(job) + 1:]:
+                    report["jobs"][f"{pending['class']}/{pending['batch']}"] = {"status": "waiting_for_provider"}
+                break
         # Response-based analysis runs even when extraction/LLM validation is blocked.
         try:
             report["psychometrics"] = screen_assessments(config, output)
         except Exception as exc:
             report["psychometrics"] = {"status": "failed", "errorType": type(exc).__name__}
         report.update(finishedAt=timestamp(), remainingApiCalls=budget)
-        report["success"] = (not problems and all(j["status"] == "completed" for j in report["jobs"].values())
+        report["success"] = (not problems and not report["waitingClasses"]
+                             and all(j["status"] == "completed" for j in report["jobs"].values())
                              and report["psychometrics"]["status"] != "failed"
                              and all(a["status"] != "failed" for a in report["psychometrics"].get("assessments", [])))
         atomic_write(report, directory / "report.json")
@@ -346,9 +596,12 @@ def main():
         result = mark_ready(args.name, args.batch) if args.command == "ready" else publish_balance(args.name, args.batch)
     else:
         config = read_config(local_path(args.config))
+        exercise.set_namespace("failover" if config.get("fallbackProviders") else None)
+        exercise.set_provider(config.get("provider", "gemini"))
+        os.environ["LLM_PROVIDER"] = config.get("provider", "gemini")
         if args.command == "run":
             if not args.execute:
-                parser.error("run makes live Gemini calls and requires --execute")
+                parser.error("run makes live provider calls and requires --execute")
             result = run(config, local_path(args.output))
         else:
             jobs, problems = discover_jobs(config)
@@ -361,9 +614,20 @@ def main():
                         "complete": sum(exercise.complete(checkpoint, [qid]) for qid in ids),
                         "requestedRuns": checkpoint.get("requestedRuns", 3),
                         "executionStatus": checkpoint.get("executionStatus"),
-                        "apiAttempts": checkpoint.get("apiAttempts", 0)}
+                        "apiAttempts": checkpoint.get("apiAttempts", 0),
+                        "updatedAt": checkpoint.get("updatedAt"),
+                        "tokenUsage": {field: checkpoint.get("summary", {}).get(field, 0)
+                                       for field in ("promptTokens", "outputTokens", "thinkingTokens", "totalTokens")},
+                        "providerStop": provider_stop_notice(checkpoint)}
             result = {"jobs": jobs, "handoffErrors": problems, "schedule": "01:00 Asia/Jakarta",
+                      "provider": config.get("provider", "gemini"),
+                      "stopOn503": config.get("stopOn503", False),
+                      "waitingClasses": waiting_classes(config, jobs),
                       "latestReport": str(local_path(args.output) / "latest.json")}
+            result["checkedAt"] = timestamp()
+            status_directory = local_path(args.output)
+            status_directory.mkdir(parents=True, exist_ok=True)
+            atomic_write(result, status_directory / "status.json")
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if result.get("success", True) else 1
 

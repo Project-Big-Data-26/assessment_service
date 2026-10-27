@@ -18,6 +18,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from app.llm.config import GeminiSettings  # noqa: E402
+from app.llm.providers import PROVIDERS, provider_name, settings_for
+from app.llm.provenance import verify_retained_record
 from app.llm.silver import (  # noqa: E402
     SUPPORTED_SILVER_GRADES,
     GeminiSilverAdapter,
@@ -69,11 +71,13 @@ def store_run_result(record: dict, result: dict) -> None:
 
 def load_checkpoint(
     path: Path, source: Path, source_hash: str, model: str, runs: int, grade: int,
-    *, track: str = "regular",
+    *, track: str = "regular", provider: str = "gemini",
 ) -> dict:
     rubric = silver_rubric(grade, track=track)
     if path.is_file():
         checkpoint = json.loads(path.read_text(encoding="utf-8"))
+        if checkpoint.get("provider", "gemini") != provider:
+            raise ValueError("checkpoint provider differs; use a separate provider checkpoint")
         if checkpoint.get("subjectTrack", "regular") != track:
             raise ValueError("checkpoint subject track differs; use another output path")
         if checkpoint.get("sourceHash") != source_hash:
@@ -86,12 +90,12 @@ def load_checkpoint(
             raise ValueError("checkpoint rubric hash differs; preserve history and use another output path")
         return checkpoint
     return {
-        "schemaVersion": "gemini-silver-labels-v3-blind-key-verified",
+        "schemaVersion": "gemini-silver-labels-v3-blind-key-verified" if provider == "gemini" else "silver-labels-v4-provider-aware",
         "source": source.relative_to(ROOT).as_posix(),
         "sourceHash": source_hash,
         "sourceGrade": grade,
         "subjectTrack": track,
-        "provider": "gemini",
+        "provider": provider,
         "model": model,
         "promptVersion": rubric.prompt_version,
         "adjudicationPromptVersion": rubric.adjudication_version,
@@ -170,11 +174,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--source", type=Path, default=SOURCE)
     parser.add_argument("--grade", type=int, choices=SUPPORTED_SILVER_GRADES, default=1)
     parser.add_argument("--track", choices=("regular", "tl"), default="regular")
+    parser.add_argument("--provider", choices=PROVIDERS, default=provider_name())
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--runs", type=int, default=3, choices=(1, 3))
     parser.add_argument("--limit", type=int)
     parser.add_argument("--question-id", action="append", help="Pilot IDs from the unchanged source; reuse its checkpoint for the full batch.")
     parser.add_argument("--stop-on-quota", action="store_true", help="Stop immediately on any 429, including short-term limits.")
+    parser.add_argument("--stop-on-503", action="store_true",
+                        help="Stop on the first HTTP 503; other transient failures remain per-item drafts after bounded retries.")
     parser.add_argument("--max-consecutive-provider-failures", type=int, default=0,
                         help="Stop on repeated transport/5xx failures; 0 keeps the legacy retry behavior.")
     parser.add_argument("--max-api-calls", type=int, help="Maximum new application requests in this invocation, including adjudication and retries.")
@@ -213,19 +220,29 @@ def main() -> int:
         items = items[: args.limit]
     max_calls = getattr(args, "max_api_calls", None)
     stop_on_quota = getattr(args, "stop_on_quota", False)
+    stop_on_503 = getattr(args, "stop_on_503", False)
     max_provider_failures = getattr(args, "max_consecutive_provider_failures", 0)
     if max_provider_failures < 0:
         raise ValueError("max-consecutive-provider-failures must be nonnegative")
     if max_calls is not None and max_calls < 1:
         raise ValueError("max-api-calls must be positive")
-    if (max_calls is not None or stop_on_quota or max_provider_failures) and args.workers != 1:
+    if (max_calls is not None or stop_on_quota or stop_on_503 or max_provider_failures) and args.workers != 1:
         raise ValueError("bounded quota-safe execution requires one worker")
     source_hash = hashlib.sha256(args.source.read_bytes()).hexdigest()
-    settings = replace(GeminiSettings.from_environment(), live_enabled=True)
-    adapter = GeminiSilverAdapter(settings)
+    provider = getattr(args, "provider", "gemini")
+    settings = settings_for(provider)
+    if provider == "gemini":
+        settings = replace(settings, live_enabled=True)
+        adapter = GeminiSilverAdapter(settings, **({"stop_on_503": True} if stop_on_503 else {}))
+    elif provider == "deepseek":
+        from app.llm.deepseek import DeepSeekSilverAdapter
+        adapter = DeepSeekSilverAdapter(settings, stop_on_503=stop_on_503)
+    else:
+        from app.llm.groq import GroqSilverAdapter
+        adapter = GroqSilverAdapter(settings, stop_on_503=stop_on_503)
     checkpoint = load_checkpoint(
         args.output, args.source, source_hash, settings.model, args.runs, args.grade,
-        track=track,
+        track=track, **({"provider": provider} if provider != "gemini" else {}),
     )
     checkpoint["executionStatus"] = "running"
     checkpoint.pop("stopReason", None)
@@ -248,9 +265,12 @@ def main() -> int:
         temporary = code.startswith(("ConnectError:", "ConnectTimeout:", "ReadTimeout:",
                                      "RemoteProtocolError:", "ServerError:"))
         consecutive_provider_failures = consecutive_provider_failures + 1 if temporary else 0
-        provider_unavailable = bool(max_provider_failures and consecutive_provider_failures >= max_provider_failures)
+        provider_unavailable = ((code.endswith(":503") if stop_on_503 else
+                                 bool(max_provider_failures and consecutive_provider_failures >= max_provider_failures)))
 
     def block_status(result) -> str:
+        if stop_on_503 and (result.errorCode or "").endswith(":503"):
+            return "blocked_provider_http_503"
         if result.quotaDailyExhausted:
             return "blocked_provider_daily_quota"
         if (result.errorCode or "").endswith(":429"):
@@ -263,7 +283,8 @@ def main() -> int:
         details = {"errorCode": result.errorCode, "quotaLimits": result.quotaLimits,
                    "providerFailureReason": result.providerFailureReason}
         if provider_unavailable:
-            details.update(stopCategory="network_or_service", consecutiveProviderFailures=consecutive_provider_failures)
+            details.update(stopCategory="http_503" if stop_on_503 else "network_or_service",
+                           consecutiveProviderFailures=consecutive_provider_failures)
         return details
 
     def save_progress() -> None:
@@ -280,12 +301,18 @@ def main() -> int:
             save_progress()
             return True
 
+    retained_cache = {}
     for ordinal, item in enumerate(items, start=1):
         item_id = str(item["_id"])
         digest = input_hash(item)
         record = checkpoint["items"].get(item_id)
         if record and record.get("inputHash") != digest:
             raise ValueError(f"input changed for {item_id}")
+        if record and (record.get("retainedProviderEvidence")
+                       or record.get("provider", checkpoint["provider"]) != provider
+                       or record.get("model", checkpoint["model"]) != settings.model):
+            verify_retained_record(args.source, item_id, record, retained_cache)
+            continue
         if record is None:
             record = {
                 "index": ordinal,
@@ -296,6 +323,8 @@ def main() -> int:
                 "adjudication": None,
             }
             checkpoint["items"][item_id] = record
+            if provider != "gemini" or checkpoint.get("providerFailover"):
+                record.update(provider=provider, model=settings.model)
         required_runs = requested_runs_for(checkpoint, record)
         required_indices = requested_run_indices(record, required_runs)
         completed = {run["runIndex"] for run in record["runs"] if run["status"] == "success"}

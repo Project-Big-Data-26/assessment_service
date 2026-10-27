@@ -1,4 +1,4 @@
-"""Validate exercise batches with Gemini blind N=1 or N=3 and IndoBERT diagnostics.
+"""Validate exercise batches with blind LLM N=1 or N=3 and IndoBERT diagnostics.
 
 The exercise source is an envelope (`items`) in `batch01/soal_exercise_db.json`; the pretest scripts read a
 plain array. Each class is staged under `runs/exercise_validation/<batch>/<class>_exercise_<batch>/`, validated
@@ -6,7 +6,7 @@ with the shared pretest workflow, and the verified bundle is copied to
 `output/exercise/<class>/<batch>/hasil_validasi/`. A meta-oriented view keyed by `_id`
 (same keys as `soal_exercise_meta.json`) is written beside it.
 
-Subcommands: run (pilot + full + publication), stage, pilot, full, package,
+Subcommands: run (pilot + full + publication), extend, stage, pilot, full, package,
 progress (publish complete and draft items), meta, status. Live commands require --execute.
 """
 from __future__ import annotations
@@ -24,10 +24,13 @@ import shutil
 import subprocess
 import sys
 
+from dotenv import dotenv_values
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from app.llm.config import GeminiSettings
+from app.llm.providers import PROVIDERS, provider_name, settings_for
 from app.silver.exports import confidence_policy_for
 from app.llm.silver import (silver_rubric, SilverRunResult, aggregate_silver_runs,
                            requested_runs_for, requested_run_indices)
@@ -38,21 +41,51 @@ from scripts.export_revalidation_progress import export_class
 from scripts.build_blind_validation_bundle import source_class_matches
 
 CLASSES = {"kelas5": (5, "regular"), "kelas7": (7, "regular"), "kelas8": (8, "regular"),
-           "kelas9": (9, "regular"), "kelas10": (10, "regular"), "kelas11_tl": (11, "tl"),
-           "kelas12": (12, "regular")}
+           "kelas9": (9, "regular"), "kelas10": (10, "regular"), "kelas11": (11, "regular"),
+           "kelas11_tl": (11, "tl"), "kelas12": (12, "regular"), "kelas12_tl": (12, "tl")}
 LEVELS = ("easy", "medium", "hard")
+VALIDATION_PROVIDER = "gemini"
+VALIDATION_NAMESPACE = None
 
 
-def paths(name: str, batch: str) -> dict[str, Path]:
+def set_namespace(namespace):
+    global VALIDATION_NAMESPACE
+    if namespace not in (None, "failover"):
+        raise ValueError("unsupported checkpoint namespace")
+    VALIDATION_NAMESPACE = namespace
+
+
+def set_provider(provider):
+    global VALIDATION_PROVIDER
+    if provider not in PROVIDERS:
+        raise ValueError("unsupported exercise provider")
+    VALIDATION_PROVIDER = provider
+
+
+def paths(name: str, batch: str, *, provider: str | None = None) -> dict[str, Path]:
     if name not in CLASSES or not re.fullmatch(r"batch[0-9]+", batch):
         raise ValueError("class must be supported and batch must have the form batch01")
     exercise = ROOT / "output/exercise" / name / batch
-    stage = ROOT / "runs/exercise_validation" / batch / f"{name}_exercise_{batch}"
+    selected = provider or VALIDATION_PROVIDER
+    if selected not in PROVIDERS:
+        raise ValueError("unsupported exercise provider")
+    scope = ROOT / "runs/exercise_validation"
+    if provider is None and VALIDATION_NAMESPACE:
+        scope /= VALIDATION_NAMESPACE
+    elif selected != "gemini":
+        scope /= selected
+    stage = scope / batch / f"{name}_exercise_{batch}"
     return {"exercise": exercise, "stage": stage, "source": stage / "soal_exercise_db.json",
             "checkpoint": stage / "silver_labels.json", "final": exercise / "hasil_validasi"}
 
 
-def stage_class(name: str, batch: str) -> list[dict]:
+def available_classes(batch: str) -> list[str]:
+    """Default CLI scope includes only exercise sources with their paired metadata."""
+    return [name for name in CLASSES if all((paths(name, batch)["exercise"] / filename).is_file()
+            for filename in ("soal_exercise_db.json", "soal_exercise_meta.json"))]
+
+
+def validated_source(name: str, batch: str) -> list[dict]:
     p = paths(name, batch)
     envelope = load(p["exercise"] / "soal_exercise_db.json")
     items = envelope["items"]
@@ -69,14 +102,87 @@ def stage_class(name: str, batch: str) -> list[dict]:
     assert set(meta) == set(ids), f"meta/db mismatch in {name}"
     if any(info.get("batch") != int(batch[5:]) or info.get("level_target") not in LEVELS for info in meta.values()):
         raise ValueError("exercise metadata has an invalid batch or target level")
+    return items
+
+
+def stage_class(name: str, batch: str) -> list[dict]:
+    p = paths(name, batch)
+    items = validated_source(name, batch)
     p["stage"].mkdir(parents=True, exist_ok=True)
     target = p["source"]
     text = json.dumps(items, ensure_ascii=False, indent=2) + "\n"
     if not target.exists() or target.read_text(encoding="utf-8") != text:
         if p["checkpoint"].exists():
             raise ValueError("source changed after checkpoint creation; use a new batch name")
-        target.write_text(text, encoding="utf-8")
+        target.write_text(text, encoding="utf-8", newline="\n")
     return items
+
+
+def extend_class(name: str, batch: str) -> dict:
+    """Explicitly adopt appended questions; never relabel or edit paid old inputs."""
+    p = paths(name, batch)
+    items = validated_source(name, batch)
+    if not p["checkpoint"].exists():
+        stage_class(name, batch)
+        return {"class": name, "extended": False, "total": len(items)}
+    source_bytes, checkpoint_bytes = p["source"].read_bytes(), p["checkpoint"].read_bytes()
+    previous = json.loads(source_bytes)
+    if previous == items:
+        verify_evidence(p["source"], p["checkpoint"], CLASSES[name][0])
+        return {"class": name, "extended": False, "total": len(items)}
+    old_ids = {str(item["_id"]) for item in previous}
+    retained = [item for item in items if str(item["_id"]) in old_ids]
+    if not previous or len(items) <= len(previous) or retained != previous:
+        raise ValueError("source extension requires unchanged old questions/order; edited, removed or reordered questions need a new batch")
+    verify_evidence(p["source"], p["checkpoint"], CLASSES[name][0])
+    manifest_path = p["final"] / "manifest.json"
+    if manifest_path.exists():
+        # The upstream envelope/meta have already grown. All other original
+        # inputs and every published byte must still match their old manifest.
+        manifest = load(manifest_path)
+        for key, info in manifest["sourceFiles"].items():
+            if key not in {"exerciseEnvelope", "exerciseMetadata"} and digest(Path(info["path"])) != info["sha256"]:
+                raise ValueError(f"source extension found changed evidence: {key}")
+        for key, info in manifest["outputs"].items():
+            target = p["final"] / key
+            if digest(target) != info["sha256"] or target.stat().st_size != info["bytes"]:
+                raise ValueError(f"source extension found changed output: {key}")
+    new_bytes = (json.dumps(items, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    old_hash, new_hash = hashlib.sha256(source_bytes).hexdigest(), hashlib.sha256(new_bytes).hexdigest()
+    archive = p["stage"] / "history" / f"source_extension_{old_hash[:12]}_{new_hash[:12]}"
+    for target in (p["final"], archive):
+        if not target.resolve().is_relative_to(ROOT.resolve()):
+            raise ValueError("extension paths must stay inside the workspace")
+    archive.mkdir(parents=True, exist_ok=True)
+    for filename, contents in (("soal_exercise_db.json", source_bytes), ("silver_labels.json", checkpoint_bytes)):
+        target = archive / filename
+        if target.exists() and target.read_bytes() != contents:
+            raise ValueError("source extension archive differs")
+        target.write_bytes(contents)
+    checkpoint = json.loads(checkpoint_bytes)
+    extension = {"createdAt": datetime.now(timezone.utc).isoformat(),
+                 "previousSourceHash": old_hash, "sourceHash": new_hash,
+                 "previousQuestionCount": len(previous), "questionCount": len(items),
+                 "addedQuestionCount": len(items) - len(previous), "archive": str(archive),
+                 "paidEvidencePreserved": True}
+    checkpoint.setdefault("sourceExtensions", []).append(extension)
+    checkpoint.update(sourceHash=new_hash, updatedAt=extension["createdAt"], executionStatus="queued_source_extension")
+    moved = False
+    try:
+        if p["final"].exists():
+            p["final"].rename(archive / "hasil_validasi")
+            moved = True
+        p["source"].write_bytes(new_bytes)
+        atomic_write(checkpoint, p["checkpoint"])
+        verify_evidence(p["source"], p["checkpoint"], CLASSES[name][0])
+        atomic_write(extension, archive / "extension.json")
+    except Exception:
+        p["source"].write_bytes(source_bytes)
+        p["checkpoint"].write_bytes(checkpoint_bytes)
+        if moved:
+            (archive / "hasil_validasi").rename(p["final"])
+        raise
+    return {"class": name, "extended": True, **extension}
 
 
 def pilot_ids(items: list[dict], meta: dict, count: int) -> list[str]:
@@ -90,24 +196,36 @@ def pilot_ids(items: list[dict], meta: dict, count: int) -> list[str]:
     return chosen[:count]
 
 
-def run_labeler(name: str, batch: str, extra: list[str], max_calls: int, max_output_tokens: int = 4096) -> int:
+def run_labeler(name: str, batch: str, extra: list[str], max_calls: int, max_output_tokens: int = 4096,
+                *, stop_on_503: bool = False) -> int:
     grade, track = CLASSES[name]
     p = paths(name, batch)
+    pause = settings_for(VALIDATION_PROVIDER).request_pause_seconds if VALIDATION_PROVIDER == "groq" else 0.5
+    if VALIDATION_PROVIDER == "gemini":
+        values = dotenv_values(ROOT / ".env")
+        pause = float(os.getenv("GEMINI_REQUEST_PAUSE_SECONDS", values.get("GEMINI_REQUEST_PAUSE_SECONDS") or "0.5"))
+        if not 0 <= pause <= 300:
+            raise ValueError("GEMINI_REQUEST_PAUSE_SECONDS must be 0..300")
     args = [sys.executable, str(ROOT / "scripts/generate_silver_labels_kelas1.py"), "--source", str(p["source"]),
             "--output", str(p["checkpoint"]), "--grade", str(grade), "--track", track,
             "--runs", str(load(p["checkpoint"]).get("requestedRuns", 3)),
-            "--workers", "1", "--attempts", "2", "--pause", "0.5", "--stop-on-quota",
+            "--workers", "1", "--attempts", "2", "--pause", str(pause), "--stop-on-quota",
             "--max-consecutive-provider-failures", "3",
             "--max-api-calls", str(max_calls), "--execute", *extra]
+    if stop_on_503:
+        args.append("--stop-on-503")
+    args += ["--provider", VALIDATION_PROVIDER]
     log = p["stage"] / "labeling.log"
     # Higher-grade reasoning consumed the previous 1200-token cap before JSON
     # was complete. Keep this override local to exercise, without editing .env.
-    environment = dict(os.environ, GEMINI_MAX_OUTPUT_TOKENS=str(max_output_tokens))
+    token_setting = VALIDATION_PROVIDER.upper() + "_MAX_OUTPUT_TOKENS"
+    environment = dict(os.environ, **{token_setting: str(max_output_tokens)})
     with log.open("a", encoding="utf-8") as stream:
         return subprocess.run(args, cwd=ROOT, env=environment, stdout=stream, stderr=subprocess.STDOUT).returncode
 
 
-def label_phase(name: str, batch: str, selected: list[str], budget: int, max_output_tokens: int) -> tuple[int, int]:
+def label_phase(name: str, batch: str, selected: list[str], budget: int, max_output_tokens: int,
+                *, stop_on_503: bool = False) -> tuple[int, int]:
     """Retry incomplete responses without repeating paid successes or crossing quota stops."""
     p = paths(name, batch)
     all_ids = [str(item["_id"]) for item in load(p["source"])]
@@ -119,7 +237,8 @@ def label_phase(name: str, batch: str, selected: list[str], budget: int, max_out
             return 0, budget
         if budget <= 0:
             return 4, budget
-        code = run_labeler(name, batch, extra, budget, max_output_tokens)
+        code = run_labeler(name, batch, extra, budget, max_output_tokens,
+                           **({"stop_on_503": True} if stop_on_503 else {}))
         after = load(p["checkpoint"])
         spent = after.get("apiAttempts", 0) - before.get("apiAttempts", 0)
         budget -= spent
@@ -191,18 +310,71 @@ def migrate_to_single_run(name: str, batch: str) -> dict:
 def init_checkpoint(name: str, batch: str, runs: int | None = None) -> dict:
     grade, track = CLASSES[name]
     p = paths(name, batch)
-    settings = GeminiSettings.from_environment()
+    settings = settings_for(VALIDATION_PROVIDER)
     existing = load(p["checkpoint"]) if p["checkpoint"].exists() else {}
     requested = runs if runs is not None else existing.get("requestedRuns", 3)
     if requested == 1 and existing.get("requestedRuns") == 3:
         if existing.get("model") != settings.model:
             raise ValueError("model differs from the existing paid checkpoint")
         migrate_to_single_run(name, batch)
-    checkpoint = load_checkpoint(p["checkpoint"], p["source"], digest(p["source"]), settings.model, requested, grade, track=track)
+    checkpoint = load_checkpoint(p["checkpoint"], p["source"], digest(p["source"]), settings.model, requested, grade,
+                                 track=track, **({"provider": VALIDATION_PROVIDER} if VALIDATION_PROVIDER != "gemini" else {}))
     if not p["checkpoint"].exists():
         checkpoint.update(executionStatus="queued", summary=summarize(checkpoint))
         atomic_write(checkpoint, p["checkpoint"])
     return checkpoint
+
+
+def seed_from_gemini(name: str, batch: str) -> dict:
+    """Copy completed Gemini decisions into a separate target-provider namespace."""
+    if VALIDATION_PROVIDER not in ("deepseek", "groq"):
+        raise ValueError("provider seeding requires a non-Gemini target namespace")
+    stage_class(name, batch)
+    target, previous = paths(name, batch), paths(name, batch, provider="gemini")
+    if target["checkpoint"].exists():
+        current = load(target["checkpoint"])
+        verify_evidence(target["source"], target["checkpoint"], CLASSES[name][0])
+        if current.get("providerMigration"):
+            return {"class": name, "seeded": False, "retainedItems": current["providerMigration"]["retainedCompletedItems"]}
+        if current.get("items") or current.get("apiAttempts", 0):
+            raise ValueError("existing provider evidence cannot be overwritten by provider seeding")
+    verify_evidence(previous["source"], previous["checkpoint"], CLASSES[name][0])
+    if target["source"].read_bytes() != previous["source"].read_bytes():
+        if target["checkpoint"].exists() or load(target["source"]) != load(previous["source"]):
+            raise ValueError("provider migration requires identical source questions and order")
+        # Preserve the exact historic source hash, including newline encoding.
+        target["source"].write_bytes(previous["source"].read_bytes())
+    if (previous["final"] / "manifest.json").exists():
+        verify_bundle(previous["source"], previous["final"])
+    previous_bytes = previous["checkpoint"].read_bytes()
+    original = json.loads(previous_bytes)
+    if original.get("provider", "gemini") != "gemini":
+        raise ValueError("the source provider checkpoint must be Gemini")
+    archive = target["stage"] / "history" / ("gemini_" + hashlib.sha256(previous_bytes).hexdigest()[:20])
+    archive.mkdir(parents=True, exist_ok=True)
+    locked = archive / "silver_labels.json"
+    if locked.exists() and locked.read_bytes() != previous_bytes:
+        raise ValueError("provider archive checksum differs")
+    locked.write_bytes(previous_bytes)
+    if previous["final"].exists() and not (archive / "hasil_validasi").exists():
+        shutil.copytree(previous["final"], archive / "hasil_validasi")
+    checkpoint = init_checkpoint(name, batch, 1)
+    for qid, record in original["items"].items():
+        if not complete(original, [qid]):
+            continue
+        retained = deepcopy(record)
+        retained.update(provider="gemini", model=original["model"],
+                        retainedProviderEvidence={"path": str(locked), "sha256": digest(locked)})
+        checkpoint["items"][qid] = retained
+    checkpoint["providerMigration"] = {
+        "fromProvider": "gemini", "toProvider": VALIDATION_PROVIDER, "createdAt": datetime.now(timezone.utc).isoformat(),
+        "previousCheckpoint": str(locked), "previousCheckpointSha256": digest(locked),
+        "retainedCompletedItems": len(checkpoint["items"]), "previousApiAttempts": original.get("apiAttempts", 0),
+        "newApiCalls": 0, "originalGeminiCheckpointModified": False}
+    checkpoint.update(executionStatus=f"waiting_for_{VALIDATION_PROVIDER}_credentials", summary=summarize(checkpoint))
+    atomic_write(checkpoint, target["checkpoint"])
+    verify_evidence(target["source"], target["checkpoint"], CLASSES[name][0])
+    return {"class": name, "seeded": True, "retainedItems": len(checkpoint["items"]), "newApiCalls": 0}
 
 
 def meta_view(name: str, batch: str) -> dict:
@@ -234,6 +406,9 @@ def meta_view(name: str, batch: str) -> dict:
             "missing_run_indices": item_progress.get("missingRunIndices", []),
             "needs_adjudication": item_progress.get("needsAdjudication", False)}}
         requested = item_progress.get("requestedRuns", 3)
+        for key in ("validation_provider", "validation_model"):
+            if key in extra:
+                out[qid]["validasi"][key] = extra[key]
         out[qid]["validasi"].update(
             requested_runs=requested, validation_method=item_progress.get("validationMethod", "blind_n3_with_ai_adjudication"),
             consistency_measured=item_progress.get("consistencyMeasured", False),
@@ -351,11 +526,21 @@ def package(name: str, batch: str, *, allow_partial: bool = False) -> dict:
         manifest["exercise"]["runPolicyMigration"] = migration
         manifest["sourceFiles"]["previousN3Checkpoint"] = {
             "path": migration["previousCheckpoint"], "sha256": migration["previousCheckpointSha256"]}
+    if checkpoint.get("providerMigration"):
+        migration = checkpoint["providerMigration"]
+        manifest["exercise"]["providerMigration"] = migration
+        manifest["sourceFiles"]["previousProviderCheckpoint"] = {
+            "path": migration["previousCheckpoint"], "sha256": migration["previousCheckpointSha256"]}
+        for filename in ("README.md", "RINGKASAN_VALIDASI.md", "LAPORAN_VALIDASI.md"):
+            document = p["final"] / filename
+            document.write_text(document.read_text(encoding="utf-8").replace("Gemini", "LLM") +
+                f"\nProvider aktif: {checkpoint['provider']}. {migration['retainedCompletedItems']} keputusan provider sebelumnya "
+                "dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.\n", encoding="utf-8")
     for key, filename in (("exerciseEnvelope", "soal_exercise_db.json"), ("exerciseMetadata", "soal_exercise_meta.json")):
         original = p["exercise"] / filename
         manifest["sourceFiles"][key] = {"path": str(original), "sha256": digest(original)}
     for filename in ("validation_results.json", "validation_results_meta.json", "RINGKASAN_VALIDASI.md", "export_status.json",
-                     "bukti_validasi/silver_labels.json", "bukti_validasi/pilot_audit.json", "bukti_validasi/PILOT_AUDIT.md", "README.md"):
+                     "bukti_validasi/silver_labels.json", "bukti_validasi/pilot_audit.json", "bukti_validasi/PILOT_AUDIT.md", "README.md", "LAPORAN_VALIDASI.md"):
         target = p["final"] / filename
         manifest["outputs"][filename] = {"sha256": digest(target), "bytes": target.stat().st_size}
     atomic_write(manifest, p["final"] / "manifest.json")
@@ -373,7 +558,10 @@ def publish_progress(classes: list[str], batch: str) -> None:
         report = package(name, batch, allow_partial=True)
         reports.append(report)
         print(json.dumps(report, ensure_ascii=False), flush=True)
-    destination = ROOT / "runs/exercise_validation" / batch
+    destination = ROOT / "runs/exercise_validation"
+    if VALIDATION_PROVIDER != "gemini":
+        destination /= VALIDATION_PROVIDER
+    destination /= batch
     previous_path = destination / "progress.json"
     if previous_path.exists():
         previous = {r["class"]: r for r in load(previous_path).get("classes", [])}
@@ -385,7 +573,7 @@ def publish_progress(classes: list[str], batch: str) -> None:
                               "draftItems": sum(r["progress"]["draftItems"] for r in reports),
                               "apiAttempts": sum(r["apiAttempts"] for r in reports),
                               "allClassesComplete": all(r["fullComplete"] for r in reports)}}, destination / "progress.json")
-    lines = [f"# Progres validasi exercise {batch}", "", "Gemini blind sesuai mode per soal (N=1 atau N=3) → qualification → IndoBERT diagnostik.", "",
+    lines = [f"# Progres validasi exercise {batch}", "", f"Provider {VALIDATION_PROVIDER}; blind sesuai mode per soal (N=1 atau N=3), qualification, IndoBERT diagnostik.", "",
              "| Kelas | Soal | Final | Draft | Active | Status checkpoint |", "|---|---:|---:|---:|---:|---|"]
     for report in reports:
         folder = ROOT / report["outputDirectory"]
@@ -407,19 +595,30 @@ def publish_progress(classes: list[str], batch: str) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("command", choices=("stage", "pilot", "full", "package", "progress", "run", "meta", "status"))
-    ap.add_argument("--classes", nargs="+", default=list(CLASSES), choices=list(CLASSES))
+    ap.add_argument("command", choices=("seed", "extend", "stage", "pilot", "full", "package", "progress", "run", "meta", "status"))
+    ap.add_argument("--provider", choices=PROVIDERS, default=provider_name())
+    ap.add_argument("--checkpoint-namespace", choices=("failover",), default=os.getenv("EXERCISE_CHECKPOINT_NAMESPACE") or None)
+    ap.add_argument("--classes", nargs="+", choices=list(CLASSES),
+                    help="Defaults to classes with exercise DB and metadata for this batch.")
     ap.add_argument("--batch", default="batch01")
     ap.add_argument("--max-api-calls", type=int, default=2500)
     ap.add_argument("--max-output-tokens", type=int, default=4096, choices=range(128, 4097), metavar="128..4096")
     ap.add_argument("--pilot-count", type=int, default=3)
     ap.add_argument("--runs", type=int, choices=(1, 3),
                     help="Initial evaluations per new item; preserve the current checkpoint mode when omitted. N=1 retains completed N=3 history.")
-    ap.add_argument("--execute", action="store_true", help="Required for live Gemini calls")
+    ap.add_argument("--execute", action="store_true", help="Required for live provider calls")
+    ap.add_argument("--stop-on-503", action="store_true", help="Stop the batch immediately on HTTP 503; continue other transient errors as drafts.")
     args = ap.parse_args()
+    set_provider(args.provider)
+    set_namespace(args.checkpoint_namespace)
+    os.environ["LLM_PROVIDER"] = args.provider
+    if args.classes is None:
+        args.classes = available_classes(args.batch)
+        if not args.classes:
+            ap.error("no paired exercise sources are available for this batch")
     live = args.command in ("pilot", "full", "run")
     if live and not args.execute:
-        ap.error("pilot/full make paid Gemini calls and require --execute")
+        ap.error("live validation requires --execute")
     budget = args.max_api_calls
     if live and budget < 1:
         ap.error("max-api-calls must be positive")
@@ -438,7 +637,8 @@ def main() -> int:
                     selected = pilot_ids(items, load(p["exercise"] / "soal_exercise_meta.json"), args.pilot_count) if phase == "pilot" else ids
                     if complete(load(p["checkpoint"]), selected):
                         continue
-                    code, budget = label_phase(name, args.batch, selected, budget, args.max_output_tokens)
+                    code, budget = label_phase(name, args.batch, selected, budget, args.max_output_tokens,
+                                               **({"stop_on_503": True} if args.stop_on_503 else {}))
                     if code == 5:
                         print(f"{name}: {phase} remains incomplete after bounded retries; retained as draft", flush=True)
                         unresolved = True
@@ -465,6 +665,12 @@ def main() -> int:
     for name in args.classes:
         grade, track = CLASSES[name]
         silver_rubric(grade, track=track)
+        if args.command == "seed":
+            print(json.dumps(seed_from_gemini(name, args.batch), ensure_ascii=False))
+            continue
+        if args.command == "extend":
+            print(json.dumps(extend_class(name, args.batch), ensure_ascii=False))
+            continue
         items = stage_class(name, args.batch)
         p = paths(name, args.batch)
         ids = [str(i["_id"]) for i in items]
@@ -485,7 +691,8 @@ def main() -> int:
                 print(f"{name}: {args.command} sudah lengkap")
                 continue
             before = load(p["checkpoint"]).get("apiAttempts", 0)
-            code = run_labeler(name, args.batch, extra, budget, args.max_output_tokens)
+            code = run_labeler(name, args.batch, extra, budget, args.max_output_tokens,
+                               **({"stop_on_503": True} if args.stop_on_503 else {}))
             after = load(p["checkpoint"])
             budget -= after.get("apiAttempts", 0) - before
             print(f"{name}: exit={code} status={after.get('executionStatus')} apiAttempts={after.get('apiAttempts')}")

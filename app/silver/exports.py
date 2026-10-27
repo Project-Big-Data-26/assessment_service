@@ -32,6 +32,12 @@ CONFIDENCE_POLICY = {
 
 
 def confidence_policy_for(decisions: list[dict], *, legacy_single_run_null: bool = False) -> dict:
+    if any(d["llmAdvisory"].get("provider", "gemini") != "gemini" for d in decisions):
+        originals = [{**d, "llmAdvisory": {**d["llmAdvisory"], "provider": "gemini"}} for d in decisions]
+        policy = confidence_policy_for(originals, legacy_single_run_null=legacy_single_run_null)
+        policy = json.loads(json.dumps(policy).replace("Gemini", "LLM"))
+        policy["version"] += "-provider-aware"
+        return policy
     if any(decision["llmAdvisory"].get("requestedRuns", 3) == 1 for decision in decisions):
         if legacy_single_run_null:
             return {**CONFIDENCE_POLICY, "version": "final-label-run-support-with-single-run-null-v2",
@@ -212,4 +218,7 @@ def compact_items(originals: list[dict], decisions: list[dict], questions: list[
                 items[-1]["ai_metadata"].update(
                     confidence_method=details["method"], confidence_available=details["available"],
                     confidence_final_label_probabilities=details["final_label_probabilities"])
+        if checkpoint.get("provider", "gemini") != "gemini" or checkpoint.get("providerFailover"):
+            items[-1]["ai_metadata"].update(validation_provider=decision["llmAdvisory"].get("provider", checkpoint["provider"]),
+                validation_model=decision["llmAdvisory"].get("model", checkpoint["model"]))
     return items

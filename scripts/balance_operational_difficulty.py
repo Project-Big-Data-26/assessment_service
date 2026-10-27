@@ -18,7 +18,7 @@ import uuid
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from app.silver.exports import SCORE_POLICY, final_label_support, load_decision_bundle, ai_validation_path
+from app.silver.exports import SCORE_POLICY, confidence_details, final_label_support, load_decision_bundle, ai_validation_path
 from scripts.generate_silver_labels_kelas1 import atomic_write
 from scripts.refresh_ai_validation_reports import verify_bundle
 
@@ -41,7 +41,13 @@ def profile_score(profile: dict) -> float:
             - {"none": 0, "partial": 0.5, "strong": 1}[profile["scaffoldLevel"]])
 
 
-def allocate(rows: list[dict], decisions: list[dict]) -> tuple[list[dict], dict]:
+def allocate(rows: list[dict], decisions: list[dict], *, allocation_policy: dict | None = None) -> tuple[list[dict], dict]:
+    if allocation_policy is not None:
+        return allocate_chapters(rows, decisions, allocation_policy)
+    return _allocate_bank(rows, decisions)
+
+
+def _allocate_bank(rows: list[dict], decisions: list[dict], *, weights: dict | None = None) -> tuple[list[dict], dict]:
     by_id = {decision["questionId"]: decision for decision in decisions}
     if len(by_id) != len(decisions) or len({str(row["_id"]) for row in rows}) != len(rows) or set(by_id) != {str(row["_id"]) for row in rows}:
         raise ValueError("source and audited decision coverage differs")
@@ -58,6 +64,15 @@ def allocate(rows: list[dict], decisions: list[dict]) -> tuple[list[dict], dict]
     quotient, remainder = divmod(len(ranked), 3)
     targets = {label: quotient + int(index < remainder)
                for index, label in enumerate(("easy", "medium", "hard"))}
+    if weights:
+        # Largest remainder, with medium first for exact ties in tiny chapters.
+        total_weight = sum(weights.values())
+        targets = {label: len(ranked) * weights[label] // total_weight for label in ("easy", "medium", "hard")}
+        priority = {"medium": 0, "easy": 1, "hard": 2}
+        order = sorted(weights, key=lambda label: (
+            -(len(ranked) * weights[label] % total_weight), priority[label]))
+        for label in order[:len(ranked) - sum(targets.values())]:
+            targets[label] += 1
     outputs = deepcopy(rows)
     evidence, boundaries = [], []
     cursor = 0
@@ -71,6 +86,10 @@ def allocate(rows: list[dict], decisions: list[dict]) -> tuple[list[dict], dict]
             decision["llmAdvisory"]["advisoryLabels"]["intendedDifficulty"] = label.title()
             support = final_label_support(decision)
             confidence = round(100 * min(support.values()) / decision["llmAdvisory"]["requestedRuns"])
+            details = None
+            if weights and decision["llmAdvisory"]["requestedRuns"] == 1:
+                details = confidence_details(decision)
+                confidence = details["score"]
             outputs[ordinal].update(cognitive_level=label,
                                     cognitive_score=SCORE_POLICY["mapping"][label.title()],
                                     confidence_score=confidence)
@@ -83,11 +102,49 @@ def allocate(rows: list[dict], decisions: list[dict]) -> tuple[list[dict], dict]
                              "requestedRuns": decision["llmAdvisory"]["requestedRuns"],
                              "labelChanged": label != original["cognitive_level"],
                              "provenance": "relative_bank_quota", "eligibleForAiSilverTraining": False})
+            if details:
+                evidence[-1].update(confidenceMethod=details["method"],
+                                    confidenceAvailable=details["available"],
+                                    finalLabelProbabilities=details["final_label_probabilities"])
         cursor += count
     return outputs, {"targets": targets, "activeQuestionCount": len(ranked),
                      "changedLabels": sum(item["labelChanged"] for item in evidence),
                      "zeroAiSupportLabels": sum(item["aiSupportConfidence"] == 0 for item in evidence),
                      "tieBoundaries": boundaries, "items": evidence}
+
+
+def allocate_chapters(rows: list[dict], decisions: list[dict], policy: dict) -> tuple[list[dict], dict]:
+    """Rank qualified content within its actual chapter, keeping source order/schema."""
+    if (policy.get("version") != "chapter-relative-30-40-30-v1" or policy.get("groupBy") != "bab_id"
+            or policy.get("weights") != {"easy": 3, "medium": 4, "hard": 3}):
+        raise ValueError("unsupported chapter allocation policy")
+    by_id = {decision["questionId"]: decision for decision in decisions}
+    ids = {str(row["_id"]) for row in rows}
+    groups = policy.get("groupsByQuestionId", {})
+    if (len(ids) != len(rows) or len(by_id) != len(decisions) or set(by_id) != ids
+            or set(groups) != ids or any(not isinstance(value, str) or not value.strip() for value in groups.values())):
+        raise ValueError("chapter/source/decision coverage differs")
+    chapters = {}
+    for row in rows:
+        chapters.setdefault(groups[str(row["_id"])], []).append(row)
+    balanced, summaries, evidence, boundaries = {}, {}, [], []
+    totals = {label: 0 for label in ("easy", "medium", "hard")}
+    for chapter, originals in chapters.items():
+        outputs, audit = _allocate_bank(originals, [by_id[str(row["_id"])] for row in originals],
+                                        weights=policy["weights"])
+        balanced.update((str(row["_id"]), row) for row in outputs)
+        summaries[chapter] = {key: value for key, value in audit.items() if key not in ("items", "tieBoundaries")}
+        summaries[chapter]["questionCount"] = len(originals)
+        for label, count in audit["targets"].items():
+            totals[label] += count
+        evidence.extend({**item, "bab_id": chapter} for item in audit["items"])
+        boundaries.extend({**boundary, "bab_id": chapter} for boundary in audit["tieBoundaries"])
+    return [balanced[str(row["_id"])] for row in rows], {
+        "allocationPolicy": deepcopy(policy), "groups": summaries, "targets": totals,
+        "activeQuestionCount": sum(totals.values()),
+        "changedLabels": sum(item["labelChanged"] for item in evidence),
+        "zeroAiSupportLabels": sum(item["aiSupportConfidence"] == 0 for item in evidence),
+        "tieBoundaries": boundaries, "items": evidence}
 
 
 def _canonical_hash(value: dict | list) -> str:
@@ -129,7 +186,7 @@ def verify_operational_export(directory: Path) -> dict:
     decisions = json.loads((directory / "ai_decisions.json").read_text(encoding="utf-8"))
     actual = json.loads((directory / "validation_results.json").read_text(encoding="utf-8"))
     audit = json.loads((directory / "balance_audit.json").read_text(encoding="utf-8"))
-    expected, allocation = allocate(originals, decisions["items"])
+    expected, allocation = allocate(originals, decisions["items"], allocation_policy=audit.get("allocationPolicy"))
     if actual != expected or any(audit[key] != value for key, value in allocation.items()):
         raise ValueError("operational export differs from retained AI evidence")
     identity = {"policyVersion": BALANCE_POLICY_VERSION,
@@ -137,6 +194,8 @@ def verify_operational_export(directory: Path) -> dict:
                 "sourceValidationResultsHash": _canonical_hash(originals),
                 "sourceDecisionAuditHash": _canonical_hash(decisions),
                 "grade": audit["grade"], "subjectTrack": audit["subjectTrack"]}
+    if audit.get("allocationPolicy"):
+        identity["allocationPolicy"] = audit["allocationPolicy"]
     if manifest.get("identity") != identity or _canonical_hash(identity) != manifest["sourceFingerprint"]:
         raise ValueError("operational export source fingerprint differs")
     for original, output in zip(originals, actual):
@@ -149,6 +208,7 @@ def verify_operational_export(directory: Path) -> dict:
 def export_verified_operational_balance(
     source: Path, bundle: Path, *, grade: int, track: str,
     output_name: str = "operational_balance_v2",
+    allocation_policy: dict | None = None,
 ) -> dict:
     """Export a complete verified AI bundle to an immutable relative-label version.
 
@@ -174,12 +234,14 @@ def export_verified_operational_balance(
         raise ValueError("source AI bundle grade differs")
     if source_manifest["databaseExport"].get("subjectTrack", "regular") != track:
         raise ValueError("source AI bundle subject track differs")
-    balanced, evidence = allocate(rows, decisions["items"])
+    balanced, evidence = allocate(rows, decisions["items"], allocation_policy=allocation_policy)
     identity = {"policyVersion": BALANCE_POLICY_VERSION,
                 "sourceQuestionHash": _file_info(source)["sha256"],
                 "sourceValidationResultsHash": _canonical_hash(rows),
                 "sourceDecisionAuditHash": _canonical_hash(decisions),
                 "grade": grade, "subjectTrack": track}
+    if allocation_policy is not None:
+        identity["allocationPolicy"] = allocation_policy
     fingerprint = _canonical_hash(identity)
     export_root = source.parent / output_name
     destination = export_root / f"source_{fingerprint}"
@@ -207,6 +269,10 @@ def export_verified_operational_balance(
                         "confidencePolicy": "Actual original blind-run support for the operational label; can be zero.",
                         "inactivePolicy": "Inactive content retains original label, score, confidence and inactive status.",
                         **evidence}
+            if allocation_policy is not None:
+                metadata.update(
+                    meaning="Relative 30/40/30 categories within each chapter's active bank.",
+                    confidencePolicy="N=1: IndoBERT support for operational labels (0 if unavailable); N=3: original blind-run support.")
             atomic_write(metadata, staging / "balance_audit.json")
             (staging / "README.md").write_text(
                 "# Kategori operasional relatif\n\n"
@@ -217,6 +283,15 @@ def export_verified_operational_balance(
                 "ai_validation_results.json dan ai_decisions.json mempertahankan label serta bukti keputusan AI asli.\n"
                 "Versi ini tidak mengubah bundle AI, status aktif, isi soal, data training atau kalibrasi IRT.\n",
                 encoding="utf-8")
+            if allocation_policy is not None:
+                (staging / "README.md").write_text(
+                    "# Kategori operasional per bab\n\n"
+                    "Soal active diranking menurut profil bukti Gemini dalam bab yang sama, lalu dibagi sekitar 30% easy, 40% medium, 30% hard.\n"
+                    "Pembulatan memakai largest remainder; bab kecil dapat tidak memiliki semua kategori. Soal inactive tidak masuk kuota.\n"
+                    "Label bersifat relatif per bab. Label AI asli dan bukti disimpan terpisah; isi, kunci dan status soal dipertahankan.\n"
+                    "Confidence N=1 memakai probabilitas IndoBERT untuk label operasional; 0 bila model di luar cakupan atau probabilitas tidak tersedia.\n"
+                    "Confidence N=3 memakai dukungan run asli. Ini bukan probabilitas kebenaran, label training baru, atau estimasi IRT.\n",
+                    encoding="utf-8")
             filenames = ("validation_results.json", "balance_audit.json", "ai_validation_results.json",
                          "ai_decisions.json", "source_manifest.json", "README.md")
             atomic_write({"schemaVersion": BALANCE_POLICY_VERSION,
