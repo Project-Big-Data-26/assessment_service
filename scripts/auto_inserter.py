@@ -3,12 +3,15 @@ auto_inserter.py — Pemantau Otomatis & Auto-Import Soal ke MongoDB
 ===================================================================
 Skrip ini berjalan secara kontinu di latar belakang untuk memantau direktori `output/`.
 Fitur:
-  1. Sinkronisasi Awal Super Cepat (Initial Sync): memeriksa berkas yang sudah ada
+  1. Filter Khusus 'hasil_validasi': hanya memproses file `validation_results.json`
+     yang berada langsung di dalam direktori `hasil_validasi/`. File lain (audit,
+     bundle, operational_balance, backup) diabaikan secara otomatis.
+  2. Sinkronisasi Awal Super Cepat (Initial Sync): memeriksa berkas resmi yang sudah ada
      dan meng-insert soal yang belum ada di database tanpa hambatan.
-  2. Batch Duplicate Check: mencegah duplikasi berbasis _id secara instan (0.05 detik)
-     tanpa N+1 serial query ke cloud.
-  3. Dynamic Kelas & Subbab Lookup: memetakan kelas_id dan subbab_id langsung dari memori.
-  4. Real-time Continuous Watcher: memantau berkas baru / pembaruan dari LLM dengan
+  3. Batch Duplicate Check & Auto-Update: mencegah duplikasi berbasis _id secara instan (0.05 detik),
+     serta otomatis memperbarui skor kognitif jika ada hasil validasi baru dari LLM.
+  4. Dynamic Kelas & Subbab Lookup: memetakan kelas_id dan subbab_id langsung dari memori.
+  5. Real-time Continuous Watcher: memantau berkas baru / pembaruan dari LLM dengan
      indikator heartbeat agar terminal tidak terlihat stuck/membeku.
 
 Jalankan:
@@ -51,6 +54,7 @@ DB_NAME = "nolla_experiment"
 
 WATCH_DIR = _PROJECT_ROOT / "output"
 TARGET_FILENAME = "validation_results.json"
+TARGET_PARENT_DIR = "hasil_validasi"  # Hanya proses file di dalam folder hasil_validasi
 POLL_INTERVAL_SEC = 5
 HEARTBEAT_INTERVAL_SEC = 30  # Tampilkan sinyal aktif tiap 30 detik jika standby
 
@@ -206,7 +210,7 @@ async def process_file(
 ) -> int:
     """
     Membaca berkas validation_results.json, mengecek duplikasi,
-    dan meng-insert soal baru ke database.
+    meng-insert soal baru, dan memperbarui skor kognitif soal lama.
     """
     rel_path = file_path.relative_to(_PROJECT_ROOT) if file_path.is_relative_to(_PROJECT_ROOT) else file_path
 
@@ -305,20 +309,28 @@ async def process_file(
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-#  Pemindai Direktori
+#  Pemindai Direktori (Hanya Memantau Folder 'hasil_validasi')
 # ═══════════════════════════════════════════════════════════════════════════
 
 def scan_all_targets(root: Path) -> Dict[Path, float]:
-    """Menemukan semua path dan mtime validation_results.json."""
+    """
+    Menemukan semua path dan mtime validation_results.json yang berada
+    langsung di dalam folder TARGET_PARENT_DIR ('hasil_validasi').
+    File validation_results.json di folder lain (seperti audit, bundle, operational_balance, dll.)
+    secara otomatis diabaikan.
+    """
     targets: Dict[Path, float] = {}
     try:
         for dirpath, _, filenames in os.walk(root):
             if TARGET_FILENAME in filenames:
-                fp = Path(dirpath) / TARGET_FILENAME
-                try:
-                    targets[fp] = fp.stat().st_mtime
-                except OSError:
-                    pass
+                dir_path = Path(dirpath)
+                # Hanya sertakan file jika folder induknya bernama 'hasil_validasi'
+                if dir_path.name.lower() == TARGET_PARENT_DIR.lower():
+                    fp = dir_path / TARGET_FILENAME
+                    try:
+                        targets[fp] = fp.stat().st_mtime
+                    except OSError:
+                        pass
     except Exception as exc:
         log.warning("Gagal memindai direktori %s: %s", root, exc)
     return targets
@@ -340,14 +352,14 @@ async def run_watcher(skip_initial_sync: bool = False) -> None:
     kelas_map = await load_kelas_map(db)
     subbab_map = await load_subbab_map()
 
-    # Temukan semua file yang ada saat ini
+    # Temukan semua file resmi di dalam folder 'hasil_validasi'
     known_files = scan_all_targets(WATCH_DIR)
     total_found = len(known_files)
 
     # ── Tahap 1: Sinkronisasi Awal ──────────────────────────────────────────
     if not skip_initial_sync and total_found > 0:
         log.info("=" * 60)
-        log.info("🔍 [Sinkronisasi Awal] Ditemukan %d berkas validation_results.json", total_found)
+        log.info("🔍 [Sinkronisasi Awal] Ditemukan %d berkas hasil_validasi/validation_results.json", total_found)
         log.info("   Memeriksa dan mengimpor soal yang belum tersimpan di DB...")
         log.info("=" * 60)
 
@@ -355,18 +367,18 @@ async def run_watcher(skip_initial_sync: bool = False) -> None:
         for idx, fp in enumerate(known_files.keys(), start=1):
             inserted = await process_file(fp, subbab_map, kelas_map, silent_if_no_new=True)
             total_inserted += inserted
-            # Tampilkan progress setiap 25 file atau jika ada insert
-            if inserted > 0 or idx % 25 == 0 or idx == total_found:
-                log.info("📊 Progress Sinkronisasi: [%d/%d berkas diperiksa] | +%d soal baru", idx, total_found, total_inserted)
+            # Tampilkan progress setiap file baru / kelipatan
+            if inserted > 0 or idx % 5 == 0 or idx == total_found:
+                log.info("📊 Progress Sinkronisasi: [%d/%d berkas] | +%d soal baru/diperbarui", idx, total_found, total_inserted)
 
         log.info("=" * 60)
-        log.info("✅ [Sinkronisasi Selesai] Total %d soal baru berhasil dimasukkan ke DB!", total_inserted)
+        log.info("✅ [Sinkronisasi Selesai] Total %d soal diproses ke DB!", total_inserted)
         log.info("=" * 60)
     else:
         log.info("Melewati sinkronisasi awal (%d berkas existing dicatat).", total_found)
 
     # ── Tahap 2: Pemantauan Real-time ───────────────────────────────────────
-    log.info("👀 [Watcher Aktif] Memantau folder '%s' (setiap %ds)", WATCH_DIR.name, POLL_INTERVAL_SEC)
+    log.info("👀 [Watcher Aktif] Memantau berkas 'hasil_validasi/%s' di folder '%s' (setiap %ds)", TARGET_FILENAME, WATCH_DIR.name, POLL_INTERVAL_SEC)
     log.info("💡 Tekan Ctrl+C di terminal kapan saja untuk menghentikan.")
 
     heartbeat_counter = 0
@@ -401,7 +413,7 @@ async def run_watcher(skip_initial_sync: bool = False) -> None:
             if not any_change:
                 heartbeat_counter += POLL_INTERVAL_SEC
                 if heartbeat_counter >= HEARTBEAT_INTERVAL_SEC:
-                    log.info("💓 [Standby] Pemantau aktif, menunggu berkas baru / pembaruan di output/ ...")
+                    log.info("💓 [Standby] Pemantau aktif, menunggu berkas baru di hasil_validasi/ ...")
                     heartbeat_counter = 0
             else:
                 heartbeat_counter = 0
@@ -431,7 +443,7 @@ def main() -> None:
         "\n"
         "╔══════════════════════════════════════════════════════════╗\n"
         "║     🚀 AUTO-INSERTER & CONTINUOUS FILE WATCHER           ║\n"
-        "║     Memantau output/ dan auto-import ke MongoDB          ║\n"
+        "║     Khusus folder: hasil_validasi/validation_results.json║\n"
         "╚══════════════════════════════════════════════════════════╝\n"
     )
 
