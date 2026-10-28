@@ -382,7 +382,7 @@ def failed_response_evidence(exc: Exception, response: Any | None) -> dict[str, 
 
 
 class GeminiSilverAdapter:
-    def __init__(self, settings: GeminiSettings, *, client: Any | None = None) -> None:
+    def __init__(self, settings: GeminiSettings, *, client: Any | None = None, stop_on_503: bool = False) -> None:
         self.settings = settings
         self.client = client or genai.Client(
             api_key=settings.api_key,
@@ -393,7 +393,8 @@ class GeminiSilverAdapter:
                     attempts=2,
                     initial_delay=1.0,
                     max_delay=4.0,
-                    http_status_codes=[408, 500, 502, 503, 504],
+                    http_status_codes=[code for code in (408, 500, 502, 503, 504)
+                                       if code != 503 or not stop_on_503],
                 ),
             ),
         )

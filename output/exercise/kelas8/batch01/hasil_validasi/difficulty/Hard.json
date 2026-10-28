@@ -4,7 +4,842 @@
   "subjectTrack": "regular",
   "intendedDifficulty": "Hard",
   "researchOnly": true,
-  "advisoryCount": 0,
-  "contentQualifiedCount": 0,
-  "items": []
+  "advisoryCount": 13,
+  "contentQualifiedCount": 13,
+  "items": [
+    {
+      "question": {
+        "questionId": "589a0ff8286c5f1ef7463427",
+        "questionVersionId": "589a0ff8286c5f1ef7463427:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "39b5519776b8a5a31a42408efe3c1b23dd1f2abf1ac7bfc061d4c2591a7d035d",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Tripel Pythagoras",
+        "questionType": "multiple_choice",
+        "stem": "Tiga sisi sebuah segitiga dinyatakan berturut-turut oleh $(x - 2)\\text{ cm}$, $(x + 5)\\text{ cm}$, dan $(x + 7)\\text{ cm}$, dengan $(x + 7)\\text{ cm}$ merupakan sisi terpanjang. Berdasarkan kebalikan Teorema Pythagoras dan ketaksamaan segitiga, agar segitiga tersebut merupakan segitiga tumpul, banyaknya nilai $x$ bilangan bulat yang memenuhi adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$5$"
+          },
+          {
+            "label": "B",
+            "text": "$9$"
+          },
+          {
+            "label": "C",
+            "text": "$4$"
+          },
+          {
+            "label": "D",
+            "text": "$7$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Syarat sisi positif: x-2>0 -> x>2. Syarat ketaksamaan segitiga: (x-2)+(x+5)>(x+7) -> x>4. Syarat segitiga tumpul: (x+7)^2 > (x-2)^2 + (x+5)^2 -> x^2+14x+49 > 2x^2+6x+29 -> x^2-8x-20 < 0 -> (x-10)(x+2) < 0 -> -2 < x < 10. Irisan syarat: 4 < x < 10. Nilai x bulat: {5, 6, 7, 8, 9}, total 5 nilai.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "589a0ff8286c5f1ef7463427",
+          "subchapter": "Tripel Pythagoras",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: Syarat panjang sisi positif: $x - 2 > 0 \\implies x > 2$. Syarat ketaksamaan segitiga: $(x - 2) + (x + 5) > (x + 7) \\implies 2x + 3 > x + 7 \\implies x > 4$. Syarat segitiga tumpul ($c^2 > a^2 + b^2$): $(x + 7)^2 > (x - 2)^2 + (x + 5)^2 \\implies x^2 + 14x + 49 > 2x^2 + 6x + 29 \\implies x^2 - 8x - 20 < 0 \\implies (x - 10)(x + 2) < 0 \\implies -2 < x < 10$. Irisan semua syarat adalah $4 < x < 10$. Bilangan bulat yang memenuhi: $x \\in \\{5, 6, 7, 8, 9\\}$, ada sebanyak 5 nilai.",
+            "B": "Salah: Siswa hanya menggunakan batas atas $x < 10$ dan menganggap semua bilangan bulat dari $1$ sampai $9$ memenuhi.",
+            "C": "Salah: Siswa salah menentukan batas ketidaksamaan menjadi $5 < x < 10$ sehingga hanya menghitung 4 bilangan bulat.",
+            "D": "Salah: Siswa lupa menguji syarat ketaksamaan segitiga ($x > 4$), hanya memakai $x > 2$ sehingga mengambil $x \\in \\{3, 4, 5, 6, 7, 8, 9\\}$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "b2a44b97f423e7e2efd45e1f",
+        "questionVersionId": "b2a44b97f423e7e2efd45e1f:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "73e8b1942021708edc6955c11118fc79f76893f8b4f7e401b029ee3e3ae2aa6f",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Segitiga Istimewa",
+        "questionType": "multiple_choice",
+        "stem": "Persegi panjang $ABCD$ memiliki ukuran panjang $AB = 12\\text{ cm}$. Sebuah garis ditarik dari titik $A$ memotong sisi $CD$ di titik $E$ sehingga terbentuk sudut $\\angle DAE = 30^\\circ$. Selanjutnya, ditarik garis dari $E$ ke titik $B$ sedemikian sehingga $\\angle AEB = 90^\\circ$. Panjang sisi $AD$ dari persegi panjang tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$6\\sqrt{3}\\text{ cm}$"
+          },
+          {
+            "label": "B",
+            "text": "$4\\sqrt{3}\\text{ cm}$"
+          },
+          {
+            "label": "C",
+            "text": "$3\\text{ cm}$"
+          },
+          {
+            "label": "D",
+            "text": "$3\\sqrt{3}\\text{ cm}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "1. Pada segitiga siku-siku ABE (siku-siku di E), sudut EAB = sudut DEA (berseberangan dalam) = 60 derajat. Maka AE = AB * cos(60) = 12 * 0,5 = 6 cm. 2. Pada segitiga siku-siku ADE (siku-siku di D), sudut DAE = 30 derajat dan AE = 6 cm (hipotenusa). Maka AD = AE * cos(30) = 6 * (sqrt(3)/2) = 3*sqrt(3) cm.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "b2a44b97f423e7e2efd45e1f",
+          "subchapter": "Segitiga Istimewa",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Mengira hipotenusa $\\triangle ADE$ adalah $12\\text{ cm}$ bukan $6\\text{ cm}$.",
+            "B": "Salah: Salah membagi proporsi sisi segitiga istimewa dengan rasio sepertiga hipotenusa.",
+            "C": "Salah: Menghitung panjang sisi $DE$ (sisi depan $30^\\circ$) bukan sisi $AD$.",
+            "D": "Benar: Perhatikan bahwa $\\angle DAE = 30^\\circ$, maka pada segitiga siku-siku $\\triangle ADE$ (siku-siku di $D$), $\\angle DEA = 60^\\circ$. Garis $CD$ lurus, karena $\\angle AEB = 90^\\circ$, maka $\\angle BEC = 180^\\circ - (60^\\circ + 90^\\circ) = 30^\\circ$. Pada $\\triangle EAB$, siku-siku di $E$ dengan hipotenusa $AB = 12\\text{ cm}$. Karena garis $AB \\parallel CD$, maka $\\angle EAB = \\angle DEA = 60^\\circ$ (sudut dalam bersebrangan). Dengan demikian, pada $\\triangle ABE$, $\\angle EBA = 30^\\circ$, sehingga sisi $AE$ di depan $30^\\circ$ bernilai $AE = \\frac{1}{2} AB = 6\\text{ cm}$. Pada $\\triangle ADE$, $AE$ merupakan hipotenusa dengan panjang $6\\text{ cm}$. Sisi $AD$ berada di samping sudut $30^\\circ$, sehingga $AD = AE \\times \\cos 30^\\circ = 6 \\times \\frac{\\sqrt{3}}{2} = 3\\sqrt{3}\\text{ cm}$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "2721c0056f8593cde5833bce",
+        "questionVersionId": "2721c0056f8593cde5833bce:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "ed45afe43bb80a8e37754ae103c04284634e6982635475f74a480163a240d5bd",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Segitiga Istimewa",
+        "questionType": "multiple_choice",
+        "stem": "Pada segitiga siku-siku $ABC$ yang siku-siku di $B$, titik $D$ terletak pada sisi alas $AB$ sedemikian sehingga $\\angle BDC = 60^\\circ$ dan $\\angle A = 30^\\circ$. Jika jarak $AD = 12\\text{ cm}$, maka panjang sisi tegak $BC$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$4\\sqrt{3}\\text{ cm}$"
+          },
+          {
+            "label": "B",
+            "text": "$12\\sqrt{3}\\text{ cm}$"
+          },
+          {
+            "label": "C",
+            "text": "$6\\sqrt{3}\\text{ cm}$"
+          },
+          {
+            "label": "D",
+            "text": "$6\\text{ cm}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pada segitiga ADC, sudut luar BDC = 60 dan sudut A = 30, maka sudut ACD = 60 - 30 = 30. Karena sudut A = sudut ACD, maka segitiga ADC sama kaki sehingga CD = AD = 12 cm. Pada segitiga siku-siku BCD, BC = CD * sin(60) = 12 * (1/2)sqrt(3) = 6sqrt(3) cm.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "2721c0056f8593cde5833bce",
+          "subchapter": "Segitiga Istimewa",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa salah membagi panjang hipotenusa CD dengan 3 bukan mengalikan perbandingan sinus.",
+            "B": "Salah: Siswa menganggap panjang AD sebagai sisi samping dari sudut 30 derajat pada segitiga siku-siku besar.",
+            "C": "Benar: Pada $\\triangle ADC$, $\\angle BDC = 60^\\circ$ merupakan sudut luar, sehingga $\\angle ACD = \\angle BDC - \\angle A = 60^\\circ - 30^\\circ = 30^\\circ$. Karena $\\angle A = \\angle ACD = 30^\\circ$, maka $\\triangle ADC$ sama kaki dengan $CD = AD = 12\\text{ cm}$. Pada $\\triangle BCD$ siku-siku di $B$ dengan $\\angle BDC = 60^\\circ$, sisi tegak $BC = CD \\times \\sin 60^\\circ = 12 \\times \\frac{\\sqrt{3}}{2} = 6\\sqrt{3}\\text{ cm}$.",
+            "D": "Salah: Siswa menghitung panjang sisi BD pada segitiga BCD, bukan panjang sisi tegak BC."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "c015814356ad105c51b5adc4",
+        "questionVersionId": "c015814356ad105c51b5adc4:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "58f0cecee01cd8d7ec66d6cb4bc4599078b3e32eb8e300fa5bc881ebc6ac0a37",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Segitiga Istimewa",
+        "questionType": "multiple_choice",
+        "stem": "Seorang surveyor mengukur tinggi tebing tegak $BC$ dari dua patok $A$ dan $D$ yang berada di atas tanah datar dan segaris lurus dengan kaki tebing $B$. Patok $D$ terletak di antara patok $A$ dan kaki tebing $B$. Dari patok $A$, puncak tebing $C$ terlihat dengan sudut elevasi $30^\\circ$, sedangkan dari patok $D$, puncak tebing $C$ terlihat dengan sudut elevasi $45^\\circ$. Jika jarak antara patok $A$ dan patok $D$ adalah $10(\\sqrt{3}-1)\\text{ m}$, tentukan jarak langsung dari patok $A$ ke puncak tebing $C$.",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$10\\sqrt{2}\\text{ m}$"
+          },
+          {
+            "label": "B",
+            "text": "$20\\text{ m}$"
+          },
+          {
+            "label": "C",
+            "text": "$10\\text{ m}$"
+          },
+          {
+            "label": "D",
+            "text": "$10\\sqrt{3}\\text{ m}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misal BC = t. Pada segitiga BDC (45-45-90), BD = BC = t. Pada segitiga ABC (30-60-90), AB = t√3. Diketahui AD = AB - BD = t√3 - t = t(√3 - 1). Karena AD = 10(√3 - 1), maka t = 10 m. Jarak AC adalah hipotenusa segitiga ABC dengan sudut 30 derajat, maka AC = 2 * BC = 2 * 10 = 20 m.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "mengidentifikasi"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "c015814356ad105c51b5adc4",
+          "subchapter": "Segitiga Istimewa",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa keliru menghitung jarak dari patok $D$ ke puncak $C$ ($CD$) bukan dari patok $A$.",
+            "B": "Benar: Pada $\\triangle BDC$, sudut elevasi $45^\\circ$ menghasilkan segitiga siku-siku sama kaki sehingga $BD = BC = t$. Pada $\\triangle ABC$, sudut elevasi $30^\\circ$ menghasilkan perbandingan $AB : BC = \\sqrt{3} : 1$, sehingga $AB = t\\sqrt{3}$. Karena $AD = AB - BD = t(\\sqrt{3} - 1) = 10(\\sqrt{3}-1)\\text{ m}$, diperoleh tinggi tebing $t = 10\\text{ m}$. Jarak patok $A$ ke puncak tebing $C$ adalah hipotenusa $AC = 2 \\times BC = 2 \\times 10 = 20\\text{ m}$.",
+            "C": "Salah: Siswa hanya menyelesaikan langkah kedua untuk mencari tinggi tebing $BC$ tanpa melipatgandakan untuk hipotenusa.",
+            "D": "Salah: Siswa keliru menghitung panjang sisi alas mendatar $AB$ alih-alih hipotenusa $AC$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "fd01d030cab8c90ddfff39f5",
+        "questionVersionId": "fd01d030cab8c90ddfff39f5:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "ad4a5e6497b1d64c30073c9dfe1866d983b76fa2ed56d8aae36a2dded4a0963e",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Segitiga Istimewa",
+        "questionType": "multiple_choice",
+        "stem": "Sebuah lahan taman berbentuk segitiga siku-siku $ABC$ siku-siku di $B$ dengan besar $\\angle A = 60^\\circ$ dan $\\angle C = 30^\\circ$. Di dalam lahan tersebut dibangun sebuah kolam ikan berbentuk persegi $BDEF$ dengan titik $D$ terletak pada sisi $AB$, titik $E$ pada hipotenusa $AC$, dan titik $F$ pada sisi $BC$. Jika panjang sisi lahan $AB = 6(\\sqrt{3}+1)\\text{ meter}$, berapakah keliling kolam ikan $BDEF$ tersebut?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$6\\sqrt{3}\\text{ meter}$"
+          },
+          {
+            "label": "B",
+            "text": "$24\\sqrt{3}\\text{ meter}$"
+          },
+          {
+            "label": "C",
+            "text": "$24\\text{ meter}$"
+          },
+          {
+            "label": "D",
+            "text": "$12\\sqrt{3}\\text{ meter}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan sisi persegi BDEF adalah s. Karena BDEF persegi, maka DE // BC dan DE = s. Pada segitiga ADE, siku-siku di D (karena AB tegak lurus BC dan DE // BC), sudut A = 60 derajat. Maka tan 60 = DE/AD, sehingga AD = s/tan 60 = s/sqrt(3). Diketahui AB = AD + DB = s/sqrt(3) + s = s(1/sqrt(3) + 1) = s((1+sqrt(3))/sqrt(3)). Substitusi AB = 6(sqrt(3)+1): 6(sqrt(3)+1) = s(sqrt(3)+1)/sqrt(3). Maka s = 6*sqrt(3). Keliling persegi = 4s = 4 * 6*sqrt(3) = 24*sqrt(3) meter.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "fd01d030cab8c90ddfff39f5",
+          "subchapter": "Segitiga Istimewa",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa hanya menghitung panjang satu sisi kolam ikan ($s$) dan lupa mengalikan dengan $4$ untuk keliling.",
+            "B": "Benar: Misalkan panjang sisi persegi adalah $s$. Maka $BD = DE = s$. Pada $\\triangle ADE$ yang siku-siku di $D$, berlaku $\\angle A = 60^\\circ$, sehingga $AD = \\frac{s}{\\sqrt{3}} = \\frac{s\\sqrt{3}}{3}$. Panjang sisi $AB = AD + DB = \\frac{s}{\\sqrt{3}} + s = s\\left(\\frac{\\sqrt{3}+1}{\\sqrt{3}}\\right)$. Karena $AB = 6(\\sqrt{3}+1)$, didapat $s = 6\\sqrt{3}\\text{ meter}$. Keliling persegi adalah $4s = 4(6\\sqrt{3}) = 24\\sqrt{3}\\text{ meter}$.",
+            "C": "Salah: Siswa mengabaikan faktor rasionalisasi $\\sqrt{3}$ sehingga menganggap panjang sisi kolam adalah $6\\text{ meter}$.",
+            "D": "Salah: Siswa salah menghitung rumus keliling persegi menjadi $2s$ layaknya setengah keliling."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "cf61c3f520231413147a58eb",
+        "questionVersionId": "cf61c3f520231413147a58eb:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "4c018ae6c7aa68044773363bee9cf3b7d9f94444b51fb4a7694f17406cb3dc9e",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Segitiga Istimewa",
+        "questionType": "multiple_choice",
+        "stem": "Segitiga sama sisi $ABC$ memiliki panjang sisi $12\\text{ cm}$. Titik $D$ terletak pada perpanjangan ruas garis $BC$ melalui $C$ sedemikian sehingga terbentuk segitiga siku-siku $ABD$ dengan sudut siku-siku di $A$. Jarak terpendek dari titik $C$ ke ruas garis $AD$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$8\\text{ cm}$"
+          },
+          {
+            "label": "B",
+            "text": "$6\\text{ cm}$"
+          },
+          {
+            "label": "C",
+            "text": "$6\\sqrt{3}\\text{ cm}$"
+          },
+          {
+            "label": "D",
+            "text": "$4\\sqrt{3}\\text{ cm}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "1. Segitiga ABC sama sisi, maka AB=BC=AC=12 dan ∠B=60°. 2. Segitiga ABD siku-siku di A dengan ∠B=60°, maka ∠D=30°. 3. BD = AB/cos(60°) = 12/0.5 = 24 cm. 4. CD = BD - BC = 24 - 12 = 12 cm. 5. Karena AC=CD=12, maka ∆ACD sama kaki. 6. AD = AB*tan(60°) = 12√3. 7. Luas ∆ACD = Luas ∆ABD - Luas ∆ABC = (1/2 * 12 * 12√3) - (1/2 * 12 * 6√3) = 36√3. 8. Jarak C ke AD (t): 1/2 * AD * t = 36√3 => 1/2 * 12√3 * t = 36√3 => 6√3 * t = 36√3 => t = 6 cm.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "cf61c3f520231413147a58eb",
+          "subchapter": "Segitiga Istimewa",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa salah menerapkan rasio trigonometri dengan membagi panjang sisi penyiku dengan faktor $\\frac{3}{2}$.",
+            "B": "Benar: Pada segitiga siku-siku $ABD$, besar $\\angle B = 60^\\circ$ sehingga $\\angle BDA = 30^\\circ$. Sisi $AB = 12\\text{ cm}$ berada di hadapan sudut $30^\\circ$, sehingga hipotenusa $BD = 2 \\times 12 = 24\\text{ cm}$ dan sisi $AD = 12\\sqrt{3}\\text{ cm}$. Karena $B, C, D$ segaris dengan $BC = 12\\text{ cm}$, diperoleh $CD = 24 - 12 = 12\\text{ cm}$. Segitiga $ACD$ sama kaki dengan $AC = CD = 12\\text{ cm}$. Luas $\\triangle ACD = \\text{Luas } \\triangle ABD - \\text{Luas } \\triangle ABC = \\frac{1}{2}(12)(12\\sqrt{3}) - \\frac{1}{2}(12)(6\\sqrt{3}) = 36\\sqrt{3}\\text{ cm}^2$. Jarak terpendek titik $C$ ke $AD$ adalah tinggi $t$ terhadap alas $AD$, yaitu $t = \\frac{2 \\times \\text{Luas } \\triangle ACD}{AD} = \\frac{72\\sqrt{3}}{12\\sqrt{3}} = 6\\text{ cm}$.",
+            "C": "Salah: Siswa menganggap jarak titik $C$ ke $AD$ sama dengan tinggi segitiga sama sisi $ABC$ ke alas $BC$.",
+            "D": "Salah: Siswa keliru membagi panjang ruas garis $AD$ dengan 3."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "583ad495fda20ee3b725f519",
+        "questionVersionId": "583ad495fda20ee3b725f519:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "22d2dc2b9b1574e9ebf757768c16b8d97a72fa195f88695db9152b8ab1bc550f",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Segitiga Istimewa",
+        "questionType": "multiple_choice",
+        "stem": "Kerangka atap rumah tampak depan berbentuk segitiga sama kaki $ABC$ dengan panjang $AB = AC$ dan besar sudut puncak $\\angle BAC = 120^\\circ$. Tiang penyangga vertikal $AD$ dipasang tegak lurus terhadap alas $BC$ (titik $D$ pada $BC$). Dari titik $D$ dipasang dua batang penguat tambahan yaitu $DE$ tegak lurus $AB$ di $E$, dan $DF$ tegak lurus $AC$ di $F$. Jika panjang bentang sisi alas $BC = 12\\sqrt{3}\\text{ meter}$, total panjang seluruh batang material kerangka tersebut ($AB + AC + BC + AD + DE + DF$) adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$(30 + 18\\sqrt{3})\\text{ meter}$"
+          },
+          {
+            "label": "B",
+            "text": "$(30 + 12\\sqrt{3})\\text{ meter}$"
+          },
+          {
+            "label": "C",
+            "text": "$(36 + 18\\sqrt{3})\\text{ meter}$"
+          },
+          {
+            "label": "D",
+            "text": "$(24 + 18\\sqrt{3})\\text{ meter}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "1. Simetri: D titik tengah BC, BD = 6√3. 2. Segitiga ABD (30-60-90): ∠B = (180-120)/2 = 30°. AD = BD/tan(60°) = 6√3/√3 = 6 m. AB = AC = 2*AD = 12 m. 3. Segitiga BDE (30-60-90): DE = BD * sin(30°) = 6√3 * 0,5 = 3√3 m. DF = DE = 3√3 m. 4. Total = AB+AC+BC+AD+DE+DF = 12+12+12√3+6+3√3+3√3 = 30 + 18√3 m.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "583ad495fda20ee3b725f519",
+          "subchapter": "Segitiga Istimewa",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: Karena simetri, $D$ membagi $BC$ sama panjang sehingga $BD = 6\\sqrt{3}\\text{ m}$. Pada $\\triangle ABD$, sudut siku-siku di $D$, $\\angle B = 30^\\circ$, dan $\\angle BAD = 60^\\circ$. Sisi di hadapan $60^\\circ$ adalah $BD = 6\\sqrt{3}\\text{ m}$, sehingga $AD = \\frac{6\\sqrt{3}}{\\sqrt{3}} = 6\\text{ m}$ dan $AB = 2 \\times 6 = 12\\text{ m}$. Maka $AC = 12\\text{ m}$. Pada $\\triangle BDE$ yang siku-siku di $E$ dengan $\\angle B = 30^\\circ$, hipotenusa $BD = 6\\sqrt{3}\\text{ m}$, sehingga sisi di hadapan $30^\\circ$ adalah $DE = \\frac{1}{2}(6\\sqrt{3}) = 3\\sqrt{3}\\text{ m}$. Berdasarkan simetri, $DF = 3\\sqrt{3}\\text{ m}$. Total panjang batang = $12 + 12 + 12\\sqrt{3} + 6 + 3\\sqrt{3} + 3\\sqrt{3} = 30 + 18\\sqrt{3}\\text{ meter}$.",
+            "B": "Salah: Siswa tidak menghitung panjang dua batang penguat $DE$ dan $DF$.",
+            "C": "Salah: Siswa salah menganggap panjang $AB = AC = 15\\text{ m}$ akibat kekeliruan perhitungan perbandingan hipotenusa.",
+            "D": "Salah: Siswa lupa memperhitungkan tiang penopang vertikal $AD$ ke dalam jumlah total panjang kerangka."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "3afc2f00c2e7c3813b68d772",
+        "questionVersionId": "3afc2f00c2e7c3813b68d772:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "fb30a04b49d24241a0d14ef53a5d86833f0f74843ecd535ee163c4cf46e97791",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Penerapan Teorema Pythagoras",
+        "questionType": "multiple_choice",
+        "stem": "Sebuah robot pembersih bergerak pada lantai dengan sistem koordinat kartesius (skala dalam meter). Robot berangkat dari titik pengisian daya $A(2, 9)$, wajib menyentuh garis batas di sumbu-$x$ tepat pada suatu titik $P(x, 0)$ untuk mengaktifkan sensor, kemudian melanjutkan perjalanan ke stasiun akhir $B(14, 7)$. Berapakah panjang lintasan terpendek $AP + PB$ yang dapat ditempuh oleh robot tersebut?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$25\\text{ meter}$"
+          },
+          {
+            "label": "B",
+            "text": "$28\\text{ meter}$"
+          },
+          {
+            "label": "C",
+            "text": "$20\\text{ meter}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\sqrt{148}\\text{ meter}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Untuk mencari lintasan terpendek AP + PB dengan P pada sumbu-x, cerminkan titik A(2, 9) terhadap sumbu-x menjadi A'(2, -9). Lintasan terpendek adalah panjang garis lurus A'B. Jarak A'B = sqrt((14 - 2)^2 + (7 - (-9))^2) = sqrt(12^2 + 16^2) = sqrt(144 + 256) = sqrt(400) = 20 meter.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "20 meter",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "3afc2f00c2e7c3813b68d772",
+          "subchapter": "Penerapan Teorema Pythagoras",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Salah melakukan perhitungan jarak ordinat bayangan menjadi $\\sqrt{12^2 + (9+7-some)^2}$ atau keliru menerapkan tripel Pythagoras.",
+            "B": "Salah: Menjumlahkan jarak proyeksi vertikal dan horizontal secara tegak lurus ($9 + 12 + 7$) bukan lintasan lurus miring.",
+            "C": "Benar: Dengan mencerminkan titik $A(2, 9)$ terhadap sumbu-$x$ diperoleh titik bayangan $A'(2, -9)$. Panjang lintasan minimum sama dengan jarak lurus $A'B = \\sqrt{(14 - 2)^2 + (7 - (-9))^2} = \\sqrt{12^2 + 16^2} = \\sqrt{144 + 256} = \\sqrt{400} = 20\\text{ meter}$.",
+            "D": "Salah: Hanya menghitung jarak langsung antara titik $A$ dan titik $B$ tanpa memperhitungkan syarat menyentuh sumbu-$x$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "14a18706724d72ddcc8331a2",
+        "questionVersionId": "14a18706724d72ddcc8331a2:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "f627004aa0a60112da9ebb95dd3c7feca96320117a6f3ba685282ecb9d02c7b1",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Penerapan Teorema Pythagoras",
+        "questionType": "multiple_choice",
+        "stem": "Pada denah sistem navigasi bidang kartesius (dalam satuan kilometer), sebuah stasiun relai ditempatkan di titik $P(4, 6)$ dan stasiun pemancar ditempatkan di titik $Q(8, 12)$. Sebuah stasiun penerima $R$ akan dibangun di suatu titik sepanjang garis pantai yang berimpit dengan sumbu-$x$, sehingga koordinatnya adalah $(x, 0)$ dengan $x > 0$. Posisi ketiga stasiun tersebut dirancang sedemikian rupa sehingga membentuk segitiga siku-siku di titik $P$ (sudut $\\angle QPR = 90^\\circ$). Berapakah nilai absis $x$ dari lokasi stasiun penerima $R$ tersebut?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$11$"
+          },
+          {
+            "label": "B",
+            "text": "$15$"
+          },
+          {
+            "label": "C",
+            "text": "$9$"
+          },
+          {
+            "label": "D",
+            "text": "$13$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui P(4,6), Q(8,12), R(x,0). Karena siku-siku di P, maka vektor PQ tegak lurus PR. Vektor PQ = (8-4, 12-6) = (4, 6). Vektor PR = (x-4, 0-6) = (x-4, -6). Syarat tegak lurus: dot product PQ . PR = 0. (4)(x-4) + (6)(-6) = 0. 4x - 16 - 36 = 0. 4x = 52. x = 13.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "14a18706724d72ddcc8331a2",
+          "subchapter": "Penerapan Teorema Pythagoras",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa melakukan kesalahan tanda pada penguraian kuadrat suku aljabar.",
+            "B": "Salah: Siswa salah dalam mengurangkan konstanta pada kedua ruas persamaan.",
+            "C": "Salah: Siswa salah menentukan hipotenusa, menganggap segitiga siku-siku di titik $Q$ alih-alih di titik $P$.",
+            "D": "Benar: Berdasarkan Teorema Pythagoras pada segitiga siku-siku di $P$, berlaku $QR^2 = PQ^2 + PR^2$. Diperoleh persamaan $(x - 8)^2 + 144 = 52 + (x - 4)^2 + 36$. Setelah diselesaikan, didapatkan persamaan linear $-8x = -104$, sehingga $x = 13$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "1fde03ae7d8ee36de36c3df3",
+        "questionVersionId": "1fde03ae7d8ee36de36c3df3:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "7ff95810ec5d7dc2286ca08a639cf1931a8b72e0f8ba594d66af58e1beb2b9f5",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Korespondensi Satu-satu (Pengayaan)",
+        "questionType": "multiple_choice",
+        "stem": "Diketahui $A = \\{1, 2, 3\\}$, $B = \\{a, b, c\\}$, dan relasi $R = \\{(1, a); (1, b); (2, b); (2, c); (3, c); (3, a)\\}$. Banyak himpunan bagian dari $R$ yang merupakan korespondensi satu-satu dari $A$ ke $B$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$2$"
+          },
+          {
+            "label": "B",
+            "text": "$3$"
+          },
+          {
+            "label": "C",
+            "text": "$6$"
+          },
+          {
+            "label": "D",
+            "text": "$8$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Korespondensi satu-satu dari A ke B adalah himpunan pasangan berurutan {(1,x), (2,y), (3,z)} di mana x, y, z adalah permutasi dari {a, b, c} dan setiap pasangan harus ada di R. Jika (1,a) dipilih, maka (2,b) dan (3,c) harus dipilih (karena 2 tidak bisa ke a, 3 tidak bisa ke a). Jika (1,b) dipilih, maka (2,c) dan (3,a) harus dipilih. Total ada 2 kemungkinan: {(1,a), (2,b), (3,c)} dan {(1,b), (2,c), (3,a)}.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "1fde03ae7d8ee36de36c3df3",
+          "subchapter": "Korespondensi Satu-satu (Pengayaan)",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: jika 1 dipasangkan $a$, maka 3 harus $c$ dan 2 harus $b$; jika 1 dipasangkan $b$, maka 2 harus $c$ dan 3 harus $a$; tidak ada kemungkinan lain",
+            "B": "Salah: hanya menghitung satu pasangan untuk tiap anggota $A$",
+            "C": "Salah: mengira semua $3! = 6$ korespondensi ada padahal $R$ tidak memuat semuanya",
+            "D": "Salah: mengalikan 2 pilihan tiap anggota $A$ tanpa memeriksa pasangan ganda ($2 \\times 2 \\times 2$)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "b6b2c8a01577b2f6c12b5931",
+        "questionVersionId": "b6b2c8a01577b2f6c12b5931:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "e36a667e8b3989636a641dc5ec0f8ddc7223ec5914028d48a776b1c0954611d8",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Pengertian Kemiringan",
+        "questionType": "multiple_choice",
+        "stem": "Titik $A(2, 1)$, $B(6, k)$, dan $C(k + 7, 5)$ terletak pada satu garis lurus yang sama dengan $k > 0$. Sebuah garis lain, yaitu garis $h$, tegak lurus terhadap garis yang memuat ketiga titik tersebut dan melalui titik $(5, 4)$. Koordinat titik potong garis $h$ dengan sumbu-$x$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$(7, 0)$"
+          },
+          {
+            "label": "B",
+            "text": "$(0, 14)$"
+          },
+          {
+            "label": "C",
+            "text": "$(3, 0)$"
+          },
+          {
+            "label": "D",
+            "text": "$(13, 0)$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Kemiringan garis melalui A(2,1) dan B(6,k) adalah m = (k-1)/(6-2) = (k-1)/4. Kemiringan melalui B(6,k) dan C(k+7,5) adalah m = (5-k)/(k+7-6) = (5-k)/(k+1). Karena segaris, (k-1)/4 = (5-k)/(k+1) => k^2-1 = 20-4k => k^2+4k-21=0 => (k+7)(k-3)=0. Karena k>0, k=3. Kemiringan garis asal m = (3-1)/4 = 1/2. Garis h tegak lurus, m_h = -2. Persamaan h: y-4 = -2(x-5) => y = -2x + 14. Titik potong sumbu-x (y=0): 0 = -2x + 14 => x = 7. Titik (7,0).",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "b6b2c8a01577b2f6c12b5931",
+          "subchapter": "Pengertian Kemiringan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: Dari kesamaan kemiringan didapat k = 3, kemiringan garis asal adalah 1/2 sehingga kemiringan garis h adalah -2, dan persamaan garis h menghasilkan titik potong sumbu-x di (7, 0).",
+            "B": "Salah: Siswa menentukan titik potong terhadap sumbu-y, bukan terhadap sumbu-x.",
+            "C": "Salah: Siswa salah memakai kemiringan garis h sebesar 2 (lupa tanda negatif pada kebalikan kemiringan tegak lurus).",
+            "D": "Salah: Siswa memakai kemiringan garis asal (1/2) alih-alih kemiringan garis tegak lurus (-2)."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "5031fa0804a370d61afbe32d",
+        "questionVersionId": "5031fa0804a370d61afbe32d:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "e775c54d455360f19b050de1cbedf6b20da6a11e1525345fef23f0903565c920",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Pengertian Kemiringan",
+        "questionType": "multiple_choice",
+        "stem": "Garis $g_1$ melalui titik $A(2, -1)$ dan titik $B(6, 7)$. Garis $g_2$ tegak lurus terhadap garis $g_1$ dan melalui titik $C(9, 3)$. Garis $g_1$ dan garis $g_2$ berpotongan di titik $D$. Jika garis $g_3$ sejajar dengan garis $g_1$ serta melalui titik tengah ruas garis $CD$, maka koordinat titik potong garis $g_3$ dengan sumbu-$y$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$(0, -5)$"
+          },
+          {
+            "label": "B",
+            "text": "$(0, -10)$"
+          },
+          {
+            "label": "C",
+            "text": "$(0, -15)$"
+          },
+          {
+            "label": "D",
+            "text": "$(0, 10)$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Kemiringan g1: m1 = (7 - (-1)) / (6 - 2) = 2. Persamaan g1: y - 7 = 2(x - 6) -> y = 2x - 5. Persamaan g2 (tegak lurus g1, melalui C(9,3)): y - 3 = -1/2(x - 9) -> x + 2y = 15. Titik potong D(g1, g2): x + 2(2x - 5) = 15 -> 5x = 25 -> x = 5, y = 5. Titik tengah CD: M = ((9+5)/2, (3+5)/2) = (7, 4). Garis g3 sejajar g1 (m=2) melalui M(7,4): y - 4 = 2(x - 7) -> y = 2x - 10. Titik potong sumbu-y (x=0) adalah (0, -10).",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "5031fa0804a370d61afbe32d",
+          "subchapter": "Pengertian Kemiringan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: Siswa tidak mencari titik tengah ruas garis $CD$ dan langsung menggunakan koordinat titik potong $D(5, 5)$ untuk menyusun garis $g_3$.",
+            "B": "Benar: Kemiringan garis $g_1$ adalah $m_1 = \\frac{7 - (-1)}{6 - 2} = 2$. Garis $g_2$ tegak lurus $g_1$, sehingga $m_2 = -\\frac{1}{2}$. Persamaan garis $g_1$ adalah $y = 2x - 5$ dan garis $g_2$ adalah $y - 3 = -\\frac{1}{2}(x - 9) \\iff x + 2y = 15$. Substitusi $y = 2x - 5$ menghasilkan $x + 2(2x - 5) = 15 \\implies 5x = 25 \\implies x = 5$ dan $y = 5$, sehingga titik potong $D(5, 5)$. Titik tengah ruas garis $CD$ dengan $C(9, 3)$ dan $D(5, 5)$ adalah $M\\left(\\frac{9+5}{2}, \\frac{3+5}{2}\\right) = (7, 4)$. Garis $g_3$ sejajar $g_1$ ($m_3 = 2$) dan melalui $M(7, 4)$, persamaannya $y - 4 = 2(x - 7) \\iff y = 2x - 10$. Titik potong garis $g_3$ terhadap sumbu-$y$ adalah $(0, -10)$.",
+            "C": "Salah: Siswa langsung memakai titik $C(9, 3)$ alih-alih titik tengah ruas garis $CD$ saat menentukan persamaan garis $g_3$.",
+            "D": "Salah: Siswa keliru dalam operasi aljabar perpindahan ruas konstanta sehingga mendapatkan persamaan garis $y = 2x + 10$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "4c348c6ba1c8513bf9b03985",
+        "questionVersionId": "4c348c6ba1c8513bf9b03985:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "ba6baaced88508dbaee52cb979d0b0503e85c7b69bf1959410b7855cbc7bceb9",
+        "grade": 8,
+        "topic": "Matematika SMP Kelas 8",
+        "subtopic": "Penyebaran Data",
+        "questionType": "multiple_choice",
+        "stem": "Delapan bilangan bulat berbeda $x_1 < x_2 < \\ldots < x_8$ memiliki kuartil bawah 20 dan kuartil atas 30. Nilai terkecil yang mungkin untuk jangkauan data tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "16"
+          },
+          {
+            "label": "B",
+            "text": "14"
+          },
+          {
+            "label": "C",
+            "text": "12"
+          },
+          {
+            "label": "D",
+            "text": "10"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Data: x1 < x2 < ... < x8. Q1 = (x2 + x3)/2 = 20 => x2 + x3 = 40. Q3 = (x6 + x7)/2 = 30 => x6 + x7 = 60. Agar jangkauan (x8 - x1) minimum, x1 harus sebesar mungkin dan x8 sekecil mungkin. Karena x1 < x2 < x3, x2+x3=40, x2 max 19, maka x1 max 18. Karena x6 < x7 < x8, x6+x7=60, x7 min 31, maka x8 min 32. Jangkauan = 32 - 18 = 14.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "4c348c6ba1c8513bf9b03985",
+          "subchapter": "Penyebaran Data",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas8_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memilih $x_2 = 18$, $x_3 = 22$ dan $x_7 = 32$ sehingga tidak yang paling kecil",
+            "B": "Benar: $x_2 + x_3 = 40$ dan $x_6 + x_7 = 60$; dengan data berbeda $x_2 \\leq 19$ sehingga $x_1 \\leq 18$, dan $x_7 \\geq 31$ sehingga $x_8 \\geq 32$; jangkauan minimum 32 - 18 = 14",
+            "C": "Salah: memakai $x_1 = x_2 = 19$ dan $x_7 = x_8 = 31$, melanggar syarat data berbeda",
+            "D": "Salah: mengira jangkauan sama dengan jangkauan antarkuartil (30 - 20) dan mengabaikan syarat data berbeda"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    }
+  ]
 }

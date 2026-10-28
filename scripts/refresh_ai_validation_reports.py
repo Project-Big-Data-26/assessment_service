@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from app.llm.silver import SilverLabelOutput, build_silver_prompt  # noqa: E402
+from app.llm.provenance import verify_retained_record
 from app.silver.exports import (COMPACT_SCHEMA, DATABASE_SCHEMA, PREVIOUS_DATABASE_SCHEMA, LEGACY_DATABASE_SCHEMA,
                                STATUS_POLICY, LEVEL_POLICY, SCORE_POLICY, CONFIDENCE_POLICY,
                                compact_items, database_items, final_label_support, load_decision_bundle, ai_validation_path,
@@ -42,10 +43,16 @@ def write(path: Path, value: dict | list) -> None:
 def verify_evidence(source: Path, checkpoint: Path, grade: int) -> None:
     silver = load(checkpoint)
     track = silver.get("subjectTrack", "regular")
-    load_checkpoint(checkpoint, source, digest(source), silver["model"], silver.get("requestedRuns", 3), grade, track=track)
+    load_checkpoint(checkpoint, source, digest(source), silver["model"], silver.get("requestedRuns", 3), grade,
+                    track=track, provider=silver.get("provider", "gemini"))
     questions = {str(q["_id"]): q for q in load(source)}
     assert set(silver["items"]) <= set(questions), "checkpoint contains unknown questions"
+    retained_cache = {}
     for qid, record in silver["items"].items():
+        if (record.get("retainedProviderEvidence")
+                or record.get("provider", silver.get("provider", "gemini")) != silver.get("provider", "gemini")
+                or record.get("model", silver["model"]) != silver["model"]):
+            verify_retained_record(source, qid, record, retained_cache)
         question = questions[qid]
         assert record["inputHash"] == input_hash(question), qid
         prompt = build_silver_prompt(question, grade=grade, track=track)
@@ -127,7 +134,7 @@ def verify_bundle(source: Path, bundle: Path) -> None:
             from scripts.balance_operational_difficulty import allocate
             policy = export["operationalBalance"]
             assert policy["provenance"] == "relative_bank_quota"
-            expected_active, allocation = allocate(document, results)
+            expected_active, allocation = allocate(document, results, allocation_policy=policy.get("allocationPolicy"))
             assert active_document == expected_active, "active operational array differs from retained AI evidence"
             assert policy["activeDistribution"] == allocation["targets"]
             reference = policy["audit"]

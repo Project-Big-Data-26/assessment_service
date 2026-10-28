@@ -100,6 +100,7 @@ def test_invalid_responses_remain_drafts_after_bounded_retries(tmp_path, monkeyp
 
 def test_global_quota_stop_publishes_all_classes_without_next_live_call(monkeypatch):
     monkeypatch.setattr(exercise, "CLASSES", {"kelas5": (5, "regular"), "kelas7": (7, "regular")})
+    monkeypatch.setattr(exercise, "available_classes", lambda batch: list(exercise.CLASSES))
     monkeypatch.setattr(exercise, "stage_class", lambda *args: None)
     monkeypatch.setattr(exercise, "init_checkpoint", lambda *args: None)
     monkeypatch.setattr(exercise, "paths", lambda name, batch: {

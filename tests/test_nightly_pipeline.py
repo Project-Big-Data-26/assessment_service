@@ -13,6 +13,8 @@ from app.assessment.store import AssessmentStore
 
 @pytest.fixture
 def workspace(tmp_path, monkeypatch):
+    # Routing tests use one fake credential, independently of private .env slots.
+    monkeypatch.setattr(nightly, 'key_slots', lambda provider: [1])
     monkeypatch.setattr(nightly, 'ROOT', tmp_path)
     monkeypatch.setattr(exercise, 'ROOT', tmp_path)
     p = exercise.paths('kelas7', 'batch01')
@@ -111,6 +113,58 @@ def test_irt_runs_even_when_validation_fails_and_failure_remains_visible(workspa
     assert not report['success'] and calls == [True]
     assert report['jobs']['kelas7/batch01']['errorType'] == 'ValueError'
     assert (root / 'runs/nightly/latest.json').exists()
+
+
+def test_shared_provider_stop_defers_later_classes_but_still_screens(workspace, monkeypatch):
+    root, _ = workspace
+    cfg = config()
+    jobs = [{'class': 'kelas7', 'batch': 'batch01'}, {'class': 'kelas8', 'batch': 'batch01'}]
+    monkeypatch.setattr(nightly, 'discover_jobs', lambda config: (jobs, []))
+    calls = []
+    def blocked(job, config, state, budget, directory):
+        calls.append(job['class'])
+        return {'status': 'validation_incomplete', 'exitCode': 3,
+                'providerStop': {'message': 'Kuota Gemini habis; checkpoint tersimpan.'}}, budget - 1
+    monkeypatch.setattr(nightly, 'validate_job', blocked)
+    monkeypatch.setattr(nightly, 'screen_assessments', lambda *args: {'status': 'waiting_for_data'})
+    result = nightly.run(cfg, root / 'runs/nightly')
+    assert calls == ['kelas7']
+    assert result['jobs']['kelas8/batch01']['status'] == 'waiting_for_provider'
+    assert result['remainingApiCalls'] == 9 and result['success'] is False
+    assert result['psychometrics']['status'] == 'waiting_for_data'
+    assert result['stopNotice']['message'] == 'Kuota Gemini habis; checkpoint tersimpan.'
+
+
+def test_real_checkpoint_stop_reason_is_attached_to_job_result(workspace, monkeypatch):
+    root, p = workspace
+    job = nightly.source_identity('kelas7', 'batch01')
+    monkeypatch.setattr(nightly, 'job_identity', lambda *args: 'quota-test')
+    def stopped(*args, **kwargs):
+        p['stage'].mkdir(parents=True)
+        p['checkpoint'].write_text(json.dumps({'items': {}, 'apiAttempts': 1,
+            'executionStatus': 'blocked_provider_daily_quota', 'stopReason': {'errorCode': 'ClientError:429'}}), encoding='utf-8')
+        return SimpleNamespace(returncode=3)
+    monkeypatch.setattr(nightly.subprocess, 'run', stopped)
+    result, budget = nightly.validate_job(job, config(), {}, 10, root)
+    assert budget == 9 and result['exitCode'] == 3
+    assert result['providerStop']['status'] == 'blocked_provider_daily_quota'
+    assert result['providerStop']['errorCode'] == 'ClientError:429'
+
+
+def test_completed_evidence_can_be_rebalanced_with_zero_paid_budget(workspace, monkeypatch):
+    root, p = workspace
+    p['stage'].mkdir(parents=True)
+    p['source'].write_text('[{"_id": "q1"}]', encoding='utf-8')
+    p['checkpoint'].write_text('{"items": {}}', encoding='utf-8')
+    monkeypatch.setattr(exercise, 'complete', lambda *args: True)
+    monkeypatch.setattr(nightly, 'job_identity', lambda *args: 'new-chapter-policy')
+    calls = []
+    monkeypatch.setattr(exercise, 'package', lambda *args: calls.append('package'))
+    monkeypatch.setattr(nightly, 'publish_balance', lambda *args: {'policy': 'per-chapter'})
+    monkeypatch.setattr(nightly.subprocess, 'run', lambda *args, **kwargs: pytest.fail('duplicate paid run'))
+    result, budget = nightly.validate_job({'class': 'kelas7', 'batch': 'batch01'}, config(), {}, 0, root)
+    assert result['status'] == 'completed' and result['apiCallsThisRun'] == 0
+    assert result['operational']['policy'] == 'per-chapter' and budget == 0 and calls == ['package']
 
 
 def test_os_lock_rejects_overlap_and_can_resume_after_release(tmp_path):

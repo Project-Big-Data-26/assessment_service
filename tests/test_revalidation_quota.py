@@ -24,7 +24,7 @@ def setup_runner(tmp_path, monkeypatch, adapter, **options):
     monkeypatch.setattr(generator, "parse_args", lambda: Namespace(**args))
     monkeypatch.setattr(generator.GeminiSettings, "from_environment",
                         lambda: GeminiSettings(api_key="test-only", model="test-model"))
-    monkeypatch.setattr(generator, "GeminiSilverAdapter", lambda settings: adapter)
+    monkeypatch.setattr(generator, "GeminiSilverAdapter", lambda settings, **kwargs: adapter)
     monkeypatch.setattr(generator.time, "sleep", lambda _: None)
     return output
 

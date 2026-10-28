@@ -1,9 +1,25 @@
 # Otomasi exercise pukul 01.00 WIB dan pembaruan difficulty empiris
 
 Implementasi: `scripts/nightly_pipeline.py`, konfigurasi `configs/nightly_pipeline.json`.
-Provider **Gemini langsung**, **N=1** untuk soal yang belum selesai. Konfigurasi
-awal memproses exercise `kelas7`; `batch01` menjadi pekerjaan awal yang dilanjutkan.
+Provider exercise mendukung prioritas **Gemini lalu Groq** saat kuota habis
+atau layanan mengalami 503 (`fallbackOn503=true`),
+**N=1** untuk soal baru. Provider tanpa key/live mode dilewati sebelum panggilan API.
+Setup key Groq ada di [41_GROQ_EXERCISE_VALIDATION.md](41_GROQ_EXERCISE_VALIDATION.md);
+alur pergantian dan checkpoint bersama ada di
+[42_GEMINI_GROQ_FAILOVER.md](42_GEMINI_GROQ_FAILOVER.md). Konfigurasi
+aktif saat ini hanya memproses **`kelas8/batch01`**, sesuai pembatasan sementara
+pada 27 Oktober 2026. Kelas lain menunggu instruksi berikutnya. Konfigurasi
+sebelum pembatasan disimpan di `runs/nightly_pipeline/config_before_kelas8_*.json`.
+Runner tetap mendukung `kelas5`, `kelas7`, `kelas8`, `kelas9`, `kelas10`, `kelas11`,
+`kelas11_tl`, `kelas12`, dan `kelas12_tl`. Kelas 6 belum memiliki sumber exercise.
 Ini runner CLI lokal, bukan endpoint HTTP ekstraksi async baru.
+
+Kelas 11 reguler dan 12 TL sudah didukung sebagai jalur terpisah. Pada inventaris
+27 Oktober 2026, kedua jalur itu belum mempunyai sumber exercise. `status` dan
+run baru mencatat `waitingClasses[].status=waiting_for_source`; file pretest tidak
+dipakai sebagai pengganti exercise. Setelah sumber tersedia, gunakan `ready`
+untuk kelas/jalur yang sesuai agar batch ditemukan. CLI `validate_exercise_batch`
+tanpa `--classes` hanya memilih sumber exercise beserta metadata yang tersedia.
 
 ```mermaid
 flowchart LR
@@ -39,7 +55,8 @@ flowchart LR
 3. Runner menemukan folder berpenanda untuk `classes` yang diaktifkan pada
    konfigurasi. Folder tanpa penanda dilewati, kecuali `bootstrapJobs` yang
    secara eksplisit diaktifkan. Jangan mengubah sumber setelah checkpoint
-   dibuat; gunakan batch baru untuk revisi. Penanda dengan hash salah ditolak.
+   dibuat; gunakan batch baru untuk revisi isi atau `extend` untuk tambahan soal
+   dengan seluruh soal lama tetap sama. Penanda dengan hash salah ditolak.
 4. Batch yang siap sebelum pukul 01.00 diproses pada jadwal harian. Jika
    ekstraksi selesai setelah itu dan perlu langsung divalidasi, pasang post-hook
    setelah `ready` sukses:
@@ -54,20 +71,54 @@ flowchart LR
    pada batch yang sedang dikerjakan task.
 
 `ready` dan `status` tidak memanggil Gemini. `run --execute` menggunakan `.env`
-atau environment. `maxApiCalls` awal 1.300 adalah anggaran **bersama untuk semua
+atau environment. `maxApiCalls` 6.500 adalah anggaran **bersama untuk semua
 batch dalam satu run**. Retry gagal tetap menghitung anggaran; N=1 berarti satu
 evaluasi sukses, bukan larangan retry API/JSON. Resume memakai hasil sukses
-yang tersimpan. Kuota/koneksi bermasalah menghentikan panggilan dengan checkpoint.
+yang tersimpan. Gangguan layanan/koneksi sementara dicoba ulang dengan checkpoint.
 Tiga keputusan N=3 kelas 7 terdahulu dipertahankan beserta arsipnya. Soal baru
 memakai N=1 tanpa adjudikasi otomatis dan tidak memenuhi gate training N=3.
+
+Kuota harian habis atau respons 429 menghentikan panggilan ke kelas berikutnya;
+checkpoint menyimpan `executionStatus` dan `stopReason`. Pada run baru,
+`latest.json.stopNotice` menjelaskan alasan berhenti. `nightly_pipeline.py status`
+juga menulis `runs/nightly_pipeline/status.json` berisi progres checkpoint terbaru,
+`providerStop`, token sukses yang tercatat, dan kelas yang menunggu sumber.
+Angka token tersebut bukan saldo akun atau jaminan sisa kuota provider.
+
+Konfigurasi saat ini memakai **`stopOn503: true`**:
+
+- HTTP **503 langsung menghentikan run**, sebelum soal/kelas berikutnya dipanggil.
+  SDK juga tidak mengulang HTTP 503. Checkpoint mencatat
+  `executionStatus=blocked_provider_http_503` dan `stopCategory=http_503`.
+- HTTP 504, 500, timeout dan gangguan sementara lain dicoba ulang per soal.
+  Bila percobaan terbatas belum berhasil, soal tetap draft/inactive dan proses
+  berlanjut ke soal lain. Retry soal yang tertunda tetap dibatasi oleh lintasan
+  validasi dan anggaran bersama; error tidak diubah menjadi hasil sukses.
+- Kuota habis/429, key atau izin ditolak, serta batas anggaran tetap menghentikan
+  panggilan. Perbaikan sumber/kredensial yang diperlukan dicatat sebagai blocker.
+
+Flag diteruskan sebagai `--stop-on-503` ke adapter exercise dan labeler Gemini.
+Hasil sukses terdahulu tetap dipakai kembali. Jika `stopOn503` dinonaktifkan,
+mekanisme lama untuk `blocked_provider_temporarily_unavailable` tersedia dengan
+jeda `providerRetryDelaysSeconds: [15, 30, 60]` dan status `retrying_provider`.
+
+Validasi ini **tidak melatih ulang IndoBERT**. Gemini N=1 memeriksa konten/kunci
+dan memberi label sesuai rubrik kelas; artifact IndoBERT dipakai untuk diagnostik.
+Artifact lokal hanya mencakup SD kelas 1–6, sehingga kelas 7–12 menghasilkan
+`out_of_scope`/abstain dari model tersebut. Label relatif 30/40/30 di ekspor
+operasional merupakan alokasi bank, bukan fine-tuning bobot model. Bukti N=1
+tidak otomatis memenuhi gate provenance training N=3.
 
 ## Output bank seimbang
 
 Setelah `fullComplete=true`, profil bukti yang dikunci dipakai untuk meranking
-soal **active** lalu membaginya ke easy/medium/hard dengan selisih paling banyak
-satu soal. Item inactive tidak dipaksa masuk kuota. Skor sama di batas kategori
-diputuskan berdasarkan urutan sumber dan dicatat pada audit. Label ini relatif
-terhadap bank kelas, bukan klaim bahwa LLM memberi tiga label sama banyak.
+soal **active dalam setiap bab**, lalu membaginya sekitar **30% easy, 40% medium,
+30% hard**. Bab diambil dari `soal_exercise_meta.json[_id].bab_id`; target generator
+tidak masuk prompt Gemini. Pembulatan memakai largest remainder, dengan medium
+didahulukan saat sisa sama. Bab kecil dapat tidak memiliki ketiga kategori.
+Item inactive tidak masuk kuota. Skor sama di batas kategori diputuskan berdasarkan
+urutan sumber dan dicatat pada audit. Label ini relatif terhadap bab dan jenjang;
+label AI asli tetap disimpan terpisah.
 
 | File | Isi |
 |---|---|
@@ -83,11 +134,36 @@ terhadap bank kelas, bukan klaim bahwa LLM memberi tiga label sama banyak.
 `difficulty_groups.json`, `difficulty/*.json`, laporan AI dan
 `manifest.databaseExport.metadataByQuestionId` tetap menyimpan **label AI asli**.
 Gunakan array utama dan audit operasional untuk bank seimbang. Confidence
-operasional mengukur dukungan run asli untuk label operasional dan bisa 0.
+operasional N=3 mengukur dukungan run asli. Untuk N=1, confidence memakai
+`round(100 * min(P(label operasional tiap head IndoBERT)))`, sesuai mekanisme
+kelas 5. Probabilitas tidak tersedia menghasilkan 0 dan `confidence_available=false`.
 IndoBERT lokal mencakup SD 1–6, sehingga N=1 kelas 7 tidak mempunyai dukungan
 probabilitas dari artifact itu. Periksa `status`, `fullComplete` dan provenance;
 confidence 0 sendiri tidak membuktikan kegagalan. Skor 600/1000/1400 adalah skor
 awal, bukan parameter IRT.
+
+## Melanjutkan sumber yang ditambahi bab
+
+Perintah `extend` menerima soal baru jika seluruh soal lama, konten, ID dan urutan
+relatifnya tetap sama. Metadata dan identitas kelas diperiksa terlebih dahulu.
+Sumber staging, checkpoint dan bundle terdahulu diarsipkan di
+`runs/exercise_validation/batch01/<kelas>_exercise_batch01/history/source_extension_*/`.
+Run Gemini sukses, biaya dan keputusan N=3 lama dipertahankan. Soal yang diedit,
+dihapus atau diurutkan ulang ditolak dan harus memakai batch baru.
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 scripts/validate_exercise_batch.py extend --classes kelas7 kelas8 kelas9 kelas10 kelas11_tl
+.\.venv\Scripts\python.exe -X utf8 scripts/validate_exercise_batch.py progress --runs 1
+# Jalankan ready untuk setiap kelas yang sumbernya bertambah, lalu:
+.\.venv\Scripts\python.exe -X utf8 scripts/nightly_pipeline.py run --execute
+```
+
+`progress` menulis semua ID sumber dalam `validation_results.json`; soal yang
+belum selesai tetap draft/inactive, confidence 0, level dan skor null. Setelah
+seluruh penilaian suatu kelas lengkap, runner menerbitkan balancing per bab.
+`latest.json` mencatat kelas yang sedang berjalan; jumlah soal terkini dapat
+diperiksa dengan `nightly_pipeline.py status`. Provider stop menghentikan request
+untuk kelas berikutnya dan hasil sukses dipakai kembali pada run berikutnya.
 
 ## IRT dan update label otomatis
 

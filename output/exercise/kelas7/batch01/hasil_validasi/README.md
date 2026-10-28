@@ -1,16 +1,14 @@
 # Hasil validasi ulang kelas 7
 
-**Batch belum selesai:** 356/623 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
-
 Model LLM: `gemini-3.1-flash-lite`; metode lanjutan blind N=1 dengan hasil N=3 terdahulu dipertahankan, rubrik kelas sasaran, verifikasi kunci/solusi, dan adjudikasi AI bila diperlukan. Label terkunci sebelum diagnostik IndoBERT.
 
 Gunakan [validation_results.json](validation_results.json) untuk data hasil dan `cognitive_level`, `cognitive_score`, `confidence_score` dan `status` pada setiap dokumen soal. Baca [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk soal, perhitungan confidence/entropy, run sesuai mode tiap soal, profil difficulty, adjudikasi, serta hasil akhir per soal. [questions.json](questions.json) memuat sumber dan spesifikasi jawaban terbatas; [indobert_predictions.json](indobert_predictions.json) memuat diagnostik artifact yang dipilih.
 
-Distribusi: `{"mathCognitiveDomain": {"knowing": 91, "applying": 222, "reasoning": 37, "undecided": 267}, "knowledgeDimension": {"conceptual": 188, "factual": 6, "procedural": 156, "undecided": 267, "metacognitive": 0}, "intendedDifficulty": {"Easy": 214, "Medium": 134, "Hard": 2, "undecided": 267}}`. Routing: `{"silver_ready": 347, "needs_ai_review": 269, "revision_required": 1}`.
+Distribusi: `{"mathCognitiveDomain": {"knowing": 213, "applying": 548, "reasoning": 81}, "knowledgeDimension": {"conceptual": 476, "factual": 45, "procedural": 321, "metacognitive": 0}, "intendedDifficulty": {"Easy": 488, "Medium": 344, "Hard": 10}}`. Routing: `{"silver_ready": 831, "needs_ai_review": 9, "revision_required": 2}`.
 
-Token sukses tercatat: 914,499; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Label tetap silver AI; CTT/IRT belum dihitung. Artifact diagnostik `indobert-3x4x3-silver-kelas1-v1` memakai dataset `kelas1-gemini-silver-n3-v1`. Packaging ini tidak melatih atau mempromosikan model; diagnostik tidak menentukan label blind.
+Token sukses tercatat: 2,189,841; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Label tetap silver AI; CTT/IRT belum dihitung. Artifact diagnostik `indobert-3x4x3-silver-kelas1-v1` memakai dataset `kelas1-gemini-silver-n3-v1`. Packaging ini tidak melatih atau mempromosikan model; diagnostik tidak menentukan label blind.
 
-Audit tidak menyetujui ekspansi/training bila gate belum lolos. Gate batch: `{"allExpectedItemsPresent": false, "threeSuccessfulRunsAtLeast90Percent": false, "insufficientOrAbstainedBelow10Percent": false, "blindPromptLeakageAbsent": true, "checkpointSourceAndInputsMatch": true, "promptAndRubricVersionMatch": true, "requiredEvidenceComplete": true, "boundaryAnalysisClear": true}`.
+Audit tidak menyetujui ekspansi/training bila gate belum lolos. Gate batch: `{"allExpectedItemsPresent": true, "threeSuccessfulRunsAtLeast90Percent": false, "insufficientOrAbstainedBelow10Percent": false, "blindPromptLeakageAbsent": true, "checkpointSourceAndInputsMatch": true, "promptAndRubricVersionMatch": true, "requiredEvidenceComplete": false, "boundaryAnalysisClear": true}`.
 
 N=1 memeriksa konten, kunci, solusi dan tiga label satu kali tanpa adjudikasi otomatis. Confidence numerik memakai dukungan IndoBERT untuk label akhir Gemini; konsistensi antar-run tidak terukur; bukti satu run tidak memenuhi gate provenance training N=3.
 

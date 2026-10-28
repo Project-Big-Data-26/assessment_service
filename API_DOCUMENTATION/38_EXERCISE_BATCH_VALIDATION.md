@@ -7,20 +7,20 @@ Implementasi: [`scripts/validate_exercise_batch.py`](../scripts/validate_exercis
 
 ## Sumber yang tersedia
 
-Inventaris `batch01` pada 5 Oktober 2026:
+Inventaris `batch01` pada 26 Oktober 2026:
 
 | Folder | Kelas/track | Soal |
 |---|---|---:|
 | kelas5 | 5 reguler | 916 |
-| kelas7 | 7 reguler | 617 |
-| kelas8 | 8 reguler | 538 |
-| kelas9 | 9 reguler | 270 |
-| kelas10 | 10 reguler | 473 |
-| kelas11_tl | 11 TL | 264 |
+| kelas7 | 7 reguler | 842 |
+| kelas8 | 8 reguler | 853 |
+| kelas9 | 9 reguler | 764 |
+| kelas10 | 10 reguler | 1.037 |
+| kelas11_tl | 11 TL | 1.191 |
 | kelas12 | 12 reguler | 836 |
-| **Total** | **7 folder** | **3.914** |
+| **Total** | **7 folder** | **6.439** |
 
-Kelas lain, termasuk kelas 12 TL, belum memiliki sumber exercise `batch01` pada inventaris ini. Script memeriksa identitas kelas dan track secara persis, kesesuaian batch, ID unik, serta relasi satu-ke-satu DB dan metadata. Ia tidak membuat soal atau folder kelas yang belum tersedia.
+Kelas 11 reguler dan kelas 12 TL sudah didukung runner, tetapi belum memiliki sumber exercise `batch01` pada inventaris ini. Keduanya dicatat sebagai `waiting_for_source`; CLI default memilih pasangan DB/metadata exercise yang tersedia. Script memeriksa identitas kelas dan track secara persis, kesesuaian batch, ID unik, serta relasi satu-ke-satu DB dan metadata. Ia tidak membuat soal atau folder kelas yang belum tersedia.
 
 `soal_exercise_db.json` memiliki envelope `{pipeline_version, book, batch, items}`. Labeler pretest menerima array, sehingga adapter membuat salinan `items` di `runs/exercise_validation/batch01/<kelas>_exercise_batch01/soal_exercise_db.json`. Staging tidak menyisipkan target atau pembahasan generator ke prompt.
 
@@ -134,4 +134,4 @@ Respons format tidak valid diulang maksimal dua percobaan per run dalam labeler;
 
 Snapshot immutable berada di `runs/exercise_validation/batch01/<kelas>_exercise_batch01/snapshots/<hash-checkpoint>/`. Hasil publikasi diperiksa terhadap hash input, prompt, respons, rubrik dan bundle sebelum serta sesudah disalin. Ringkasan seluruh kelas tersedia di [`runs/exercise_validation/batch01/README.md`](../runs/exercise_validation/batch01/README.md) dan `progress.json`.
 
-Sumber yang berubah setelah checkpoint ditolak. Gunakan batch baru untuk revisi isi soal; jangan mengubah source atau membuang checkpoint untuk sekadar melanjutkan quota.
+Sumber yang berubah setelah checkpoint ditolak oleh staging biasa. Penambahan soal/bab dapat diadopsi dengan subcommand `extend` jika seluruh soal lama dan urutan relatifnya tetap sama; sumber, checkpoint dan bundle lama diarsipkan dan run sukses dipertahankan. Lihat [mekanisme extend dan balancing 30/40/30 per bab](39_NIGHTLY_VALIDATION_AND_IRT.md#melanjutkan-sumber-yang-ditambahi-bab). Gunakan batch baru untuk revisi isi soal; jangan membuang checkpoint untuk sekadar melanjutkan quota.

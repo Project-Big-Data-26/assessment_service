@@ -70,6 +70,9 @@ def current_decision(original: dict, record: dict, source_dir: Path, *, requeste
                                 "runs": serialized_runs}}
     if "requestedRunIndices" in record:
         decision["llmAdvisory"]["requestedRunIndices"] = sorted(required)
+    for key in ("provider", "model"):
+        if key in record:
+            decision["llmAdvisory"][key] = record[key]
     progress = {"questionId": str(original["_id"]), "inputHash": input_hash(original),
                 "status": "final" if final else "draft", "fullComplete": final,
                 "successfulRunIndices": sorted(successful), "missingRunIndices": missing,
@@ -99,6 +102,10 @@ def export_class(source: Path, checkpoint: Path, output_dir: Path, *, grade: int
         record = payload["items"].get(str(original["_id"]), {})
         decision, progress = current_decision(original, record, source.parent,
                                               requested_runs=requested_runs_for(payload, record))
+        if payload.get("provider", "gemini") != "gemini" or payload.get("providerFailover"):
+            decision["llmAdvisory"].setdefault("provider", payload["provider"])
+            decision["llmAdvisory"].setdefault("model", payload["model"])
+            progress.update(provider=decision["llmAdvisory"]["provider"], model=decision["llmAdvisory"]["model"])
         decisions.append(decision)
         item_progress.append(progress)
     # Reuse only diagnostics locked to this exact checkpoint. Progress exports

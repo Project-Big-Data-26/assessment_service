@@ -2,10 +2,28 @@
   "schemaVersion": "nightly-exercise-v1",
   "timezone": "Asia/Jakarta",
   "schedule": "01:00",
-  "classes": ["kelas7"],
-  "bootstrapJobs": [{"class": "kelas7", "batch": "batch01"}],
-  "maxApiCalls": 1300,
+  "classes": [
+    "kelas9"
+  ],
+  "bootstrapJobs": [
+    {
+      "class": "kelas9",
+      "batch": "batch01"
+    }
+  ],
+  "maxApiCalls": 6500,
   "maxOutputTokens": 4096,
+  "providerRetryDelaysSeconds": [
+    15,
+    30,
+    60
+  ],
+  "stopOn503": false,
   "irtModel": "rasch",
-  "screeningRequests": []
+  "screeningRequests": [],
+  "provider": "gemini",
+  "fallbackProviders": [
+    "groq"
+  ],
+  "fallbackOn503": true
 }
