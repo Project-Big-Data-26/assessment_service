@@ -25,4 +25,4 @@ Mode lanjutan N=1: `confidence_score = round(100 * min(P(label akhir LLM) tiap h
 
 Exercise: lihat `RINGKASAN_VALIDASI.md`, `validation_results_meta.json` dan `export_status.json`. Metadata asli terhubung lewat `_id`. Periksa fullComplete sebelum menyatakan batch selesai.
 
-Provider aktif: groq. 209 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.
+Provider aktif: groq. 224 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.
