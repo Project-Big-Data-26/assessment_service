@@ -2,11 +2,11 @@
 
 Status: **BERHENTI UNTUK ANALISIS**
 
-- Item diproses: 3/764
+- Item diproses: 225/764
 - Tiga run sukses: 0.4%
 - Insufficient/abstain: 99.6%
-- Dominasi difficulty: 66.7%
-- Distribusi difficulty: `{"Easy": 2, "Medium": 1}`
+- Dominasi difficulty: 63.4%
+- Distribusi difficulty: `{"Easy": 142, "Medium": 78, "Hard": 4}`
 
 ## Gate
 
@@ -17,8 +17,4 @@ Status: **BERHENTI UNTUK ANALISIS**
 - PASS -- `checkpointSourceAndInputsMatch`
 - PASS -- `promptAndRubricVersionMatch`
 - PASS -- `requiredEvidenceComplete`
-- FAIL -- `boundaryAnalysisClear`
-
-## Boundary analysis wajib
-
-- `difficulty_Hard_absent`
+- PASS -- `boundaryAnalysisClear`
