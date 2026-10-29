@@ -4,7 +4,200 @@
   "subjectTrack": "regular",
   "intendedDifficulty": "Hard",
   "researchOnly": true,
-  "advisoryCount": 0,
-  "contentQualifiedCount": 0,
-  "items": []
+  "advisoryCount": 3,
+  "contentQualifiedCount": 3,
+  "items": [
+    {
+      "question": {
+        "questionId": "f4a14b0485ac5e9365d9a8ce",
+        "questionVersionId": "f4a14b0485ac5e9365d9a8ce:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "d14c0ca46b07575c36e7d5daf7bd46adb30f54126bfe14d397d891de1c6d92ab",
+        "grade": 10,
+        "topic": "Matematika SMA Kelas 10",
+        "subtopic": "Perbandingan Trigonometri",
+        "questionType": "multiple_choice",
+        "stem": "Klaim: \"Jika dua segitiga siku-siku memiliki sinus sudut lancip $\\theta$ yang sama, maka cosinus sudut lancip $\\theta$ pada kedua segitiga itu juga sama.\" Penilaian dan alasan yang tepat adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Salah, karena cosinus hanya ditentukan oleh panjang sisi miring pada kedua segitiga itu"
+          },
+          {
+            "label": "B",
+            "text": "Salah, karena panjang sisi samping kedua segitiga itu bisa berbeda walaupun sinusnya sama"
+          },
+          {
+            "label": "C",
+            "text": "Benar, karena sinus sama berarti depan : miring sama, sehingga samping : miring juga sama menurut Pythagoras"
+          },
+          {
+            "label": "D",
+            "text": "Benar, tetapi hanya jika kedua segitiga itu kongruen dan memiliki ukuran sisi yang sama"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui sin θ = depan/miring = k. Berdasarkan teorema Pythagoras, samping = sqrt(miring^2 - depan^2). Maka cos θ = samping/miring = sqrt(miring^2 - depan^2)/miring = sqrt(1 - (depan/miring)^2) = sqrt(1 - k^2). Karena nilai cos θ hanya bergantung pada nilai sin θ (k), maka jika sin θ sama, cos θ pasti sama.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "f4a14b0485ac5e9365d9a8ce",
+          "subchapter": "Perbandingan Trigonometri",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas10_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: cos melibatkan sisi samping dan sisi miring",
+            "B": "Salah: cos adalah perbandingan sehingga tidak bergantung pada panjang sisi",
+            "C": "Benar: jika depan/miring sama maka (samping/miring)^2 = 1 - (depan/miring)^2 juga sama",
+            "D": "Salah: tidak perlu kongruen, cukup sudutnya sama"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "d25dbbcb0e6eac88c60f58a7",
+        "questionVersionId": "d25dbbcb0e6eac88c60f58a7:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "aabd66799b68df8019d0fa49a461c7ffd2280698545fb14e034239cd9c973009",
+        "grade": 10,
+        "topic": "Matematika SMA Kelas 10",
+        "subtopic": "Sistem Persamaan Linear",
+        "questionType": "multiple_choice",
+        "stem": "Harga satu pulpen, satu buku, dan satu pensil (dalam ribu rupiah) berturut-turut adalah $x$, $y$, dan $z$. Dua transaksi tercatat: 2 pulpen, 1 buku, dan 1 pensil seharga Rp11.000,00; serta 1 pulpen, 2 buku, dan 1 pensil seharga Rp10.000,00. Seorang kasir ingin menentukan harga masing-masing barang secara tepat dan hanya boleh menambahkan satu informasi (satu persamaan baru) yang benar.\n\nInformasi tambahan yang cukup untuk menentukan harga ketiga barang secara tunggal adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "harga pulpen Rp1.000,00 lebih mahal daripada harga buku ($x - y = 1$)"
+          },
+          {
+            "label": "B",
+            "text": "tiga pulpen, tiga buku, dan dua pensil seharga Rp21.000,00"
+          },
+          {
+            "label": "C",
+            "text": "empat pulpen, lima buku, dan tiga pensil seharga Rp31.000,00"
+          },
+          {
+            "label": "D",
+            "text": "satu pulpen, satu buku, dan satu pensil seluruhnya seharga Rp8.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Sistem awal: (1) 2x+y+z=11 dan (2) x+2y+z=10. Eliminasi (1)-(2) menghasilkan x-y=1 atau x=y+1. Substitusi ke (1): 2(y+1)+y+z=11 => 3y+z=9. Agar solusi tunggal, persamaan tambahan tidak boleh merupakan kombinasi linear dari (1) dan (2). Opsi D: x+y+z=8. Substitusi x=y+1: (y+1)+y+z=8 => 2y+z=7. Sistem baru: 3y+z=9 dan 2y+z=7. Kurangi: y=2, maka x=3, z=3. Solusi tunggal ditemukan.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "d25dbbcb0e6eac88c60f58a7",
+          "subchapter": "Sistem Persamaan Linear",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas10_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: persamaan itu sama dengan (1) dikurangi (2), jadi tidak memberi informasi baru",
+            "B": "Salah: persamaan itu sama dengan (1) ditambah (2), jadi tidak memberi informasi baru",
+            "C": "Salah: persamaan itu sama dengan (1) ditambah 2 kali (2), jadi tidak memberi informasi baru",
+            "D": "Benar: $x+y+z=8$ bukan kombinasi dua persamaan yang ada, sehingga mengunci $x=3$, $y=2$, $z=3$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "3bbca7792c13440e879c5ec7",
+        "questionVersionId": "3bbca7792c13440e879c5ec7:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "79905560fde4df8a331cbf15c819248f54cd4ada0c6f4c910508727e905d05c7",
+        "grade": 10,
+        "topic": "Matematika SMA Kelas 10",
+        "subtopic": "Persamaan Kuadrat",
+        "questionType": "multiple_choice",
+        "stem": "Persamaan kuadrat $x^2 - kx + (k + 3) = 0$ memiliki dua akar real yang berbeda dan keduanya positif. Bilangan bulat $k$ terkecil yang memenuhi adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$1$"
+          },
+          {
+            "label": "B",
+            "text": "$6$"
+          },
+          {
+            "label": "C",
+            "text": "$-3$"
+          },
+          {
+            "label": "D",
+            "text": "$7$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Syarat akar real berbeda: D = (-k)^2 - 4(1)(k+3) > 0 => k^2 - 4k - 12 > 0 => (k-6)(k+2) > 0. Solusi: k < -2 atau k > 6. Syarat akar positif: x1+x2 = k > 0 dan x1*x2 = k+3 > 0 => k > -3. Irisan dari k < -2 atau k > 6 dengan k > 0 adalah k > 6. Bilangan bulat terkecil k > 6 adalah 7.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "7",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "3bbca7792c13440e879c5ec7",
+          "subchapter": "Persamaan Kuadrat",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas10_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya memeriksa jumlah dan hasil kali positif, lupa $D > 0$ ($k=1$ memberi $D=-15$)",
+            "B": "Salah: $k=6$ menghasilkan $D = 0$ (akar kembar), padahal diminta berbeda",
+            "C": "Salah: hanya memakai $D > 0$ ($k<-2$), mengabaikan syarat akar positif ($k=-3$ memberi jumlah akar $-3$)",
+            "D": "Benar: $D = k^2 - 4k - 12 = (k-6)(k+2) > 0$, jumlah akar $k > 0$, hasil kali $k + 3 > 0$; gabungannya $k > 6$ sehingga $k$ bulat terkecil $7$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    }
+  ]
 }

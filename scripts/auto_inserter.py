@@ -201,7 +201,6 @@ def _build_soal(
 
     return Pertanyaan(**kwargs)
 
-
 async def process_file(
     file_path: Path,
     subbab_map: Dict[str, ObjectId],
